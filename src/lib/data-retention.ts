@@ -1,4 +1,5 @@
 // Cycle 7 / Identity PR-3: lookups prefer supabaseUserId over email.
+import { Prisma } from '@prisma/client'
 import { prisma } from '@/lib/prisma'
 import { sendEmail } from '@/lib/email'
 import { createServiceRoleClient } from '@/lib/supabase/server'
@@ -42,6 +43,19 @@ export const RETENTION_PERIODS = {
   /** Safeguarding records: until user turns 25 or 7 years (whichever is longer) */
   SAFEGUARDING_MIN_AGE: 25,
   SAFEGUARDING_MIN_YEARS: 7,
+
+  /**
+   * School bulk-upload error detail (`BulkUploadJob.errors_json`): 30 days.
+   * The messages can name a pupil's email address. A month is long enough
+   * for a school to read a failed upload and fix the file.
+   */
+  BULK_UPLOAD_ERRORS_DAYS: 30,
+
+  /**
+   * School bulk-upload records (`BulkUploadJob` rows: counts, file name, the
+   * uploading admin): 12 months, matching USAGE_DATA_MONTHS.
+   */
+  BULK_UPLOAD_RECORD_MONTHS: 12,
 } as const
 
 // ─── Types ──────────────────────────────────────────────────────────────
@@ -59,6 +73,10 @@ export interface CleanupSummary {
   expiredMarketingConsents: number
   /** Expired examiner marking runs deleted. Children's handwriting (PAY-9). */
   expiredExaminerRuns: number
+  /** BulkUploadJob rows whose error detail was cleared by the 30-day sweep */
+  bulkUploadErrorsCleared: number
+  /** BulkUploadJob rows deleted by the 12-month sweep */
+  bulkUploadRecordsPurged: number
   childrenPriorityCleanups: number
   /** Children's Code Standard 8 - dormant child account processing */
   childDormancy: DormancyResult | null
@@ -560,6 +578,7 @@ export async function compileSupabaseNativeSubjectData(
  *   4. Usage/analytics data older than 12 months
  *   5. Support tickets older than 2 years
  *   6. Expired marketing consent records
+ *   7. School bulk-upload records (error detail after 30 days, rows after 12 months)
  */
 export async function cleanupExpiredData(): Promise<CleanupSummary> {
   const summary: CleanupSummary = {
@@ -573,6 +592,8 @@ export async function cleanupExpiredData(): Promise<CleanupSummary> {
     supportTicketsArchived: 0,
     expiredMarketingConsents: 0,
     expiredExaminerRuns: 0,
+    bulkUploadErrorsCleared: 0,
+    bulkUploadRecordsPurged: 0,
     childrenPriorityCleanups: 0,
     childDormancy: null,
     errors: [],
@@ -888,6 +909,45 @@ export async function cleanupExpiredData(): Promise<CleanupSummary> {
     })
   }
 
+  // ── 7. School bulk-upload records ──────────────────────────────────
+  //
+  // One BulkUploadJob row per school upload. Its errors_json can name a
+  // pupil's email address, so that detail is cleared after 30 days; the row
+  // itself goes after 12 months. Calum asked for this rule on 11 October 2026,
+  // before the table first existed in production, so the table never holds
+  // pupil data without a retention rule. Clearing filters on rows that still
+  // hold detail, so the audit counts what changed tonight, not every old row.
+
+  try {
+    const errorsCutoff = daysAgo(RETENTION_PERIODS.BULK_UPLOAD_ERRORS_DAYS)
+    const cleared = await prisma.bulkUploadJob.updateMany({
+      where: { createdAt: { lte: errorsCutoff }, errorsJson: { not: Prisma.DbNull } },
+      data: { errorsJson: Prisma.DbNull },
+    })
+
+    const recordsCutoff = monthsAgo(RETENTION_PERIODS.BULK_UPLOAD_RECORD_MONTHS)
+    const purged = await prisma.bulkUploadJob.deleteMany({
+      where: { createdAt: { lte: recordsCutoff } },
+    })
+
+    summary.bulkUploadErrorsCleared = cleared.count
+    summary.bulkUploadRecordsPurged = purged.count
+
+    if (cleared.count > 0 || purged.count > 0) {
+      await auditRetentionAction('BULK_UPLOAD_RECORDS_PURGED', null, {
+        errorDetailCleared: cleared.count,
+        recordsPurged: purged.count,
+        errorsCutoffDate: errorsCutoff.toISOString(),
+        recordsCutoffDate: recordsCutoff.toISOString(),
+      })
+    }
+  } catch (err) {
+    summary.errors.push({
+      step: 'bulk_upload_cleanup',
+      message: err instanceof Error ? err.message : String(err),
+    })
+  }
+
   summary.completedAt = new Date().toISOString()
 
   // ── Final audit entry for the entire run ───────────────────────────
@@ -901,6 +961,8 @@ export async function cleanupExpiredData(): Promise<CleanupSummary> {
       freeAllowanceRowsPurged: summary.freeAllowanceRowsPurged,
       supportTicketsArchived: summary.supportTicketsArchived,
       expiredMarketingConsents: summary.expiredMarketingConsents,
+      bulkUploadErrorsCleared: summary.bulkUploadErrorsCleared,
+      bulkUploadRecordsPurged: summary.bulkUploadRecordsPurged,
       childrenPriorityCleanups: summary.childrenPriorityCleanups,
       errorCount: summary.errors.length,
     },
