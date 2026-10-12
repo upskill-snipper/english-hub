@@ -44,6 +44,7 @@
 import crypto from 'crypto'
 import { createServiceRoleClient } from '@/lib/supabase/server'
 import { rateLimit } from '@/lib/rate-limit'
+import { PARENTAL_CONSENT_AGE } from '@/lib/identity'
 
 // ─── Policy constants ───────────────────────────────────────────────────
 
@@ -51,12 +52,21 @@ import { rateLimit } from '@/lib/rate-limit'
 export const GUARDIAN_CONSENT_MANDATORY_UNDER = 16
 
 /**
- * The AI gate (checkParentalConsent) blocks every account flagged as a
- * minor, which is under-18 at signup. Anyone that gate blocks must have a
- * way to unblock themselves, so a request can be raised for any minor -
- * not only the under-16s for whom it is a legal requirement.
+ * The age below which the AI gate asks for a guardian: the same
+ * PARENTAL_CONSENT_AGE that checkParentalConsent applies through
+ * requiresGuardianConsent (src/lib/identity/age.ts). Anyone that gate blocks
+ * must have a way to unblock themselves, so a request can be raised for
+ * exactly that population.
+ *
+ * A DEFECT, FIXED 12 OCTOBER 2026: this was 18, from when the gate blocked
+ * every minor. The gate moved to age bands, with 16 and 17 year-olds
+ * consenting for themselves, and this constant stayed behind, so
+ * /consent/status told a 16 or 17 year-old that a parent's consent was
+ * required for something the gate was already letting them do. An account
+ * with no date of birth still follows its is_minor flag below, as the gate's
+ * imprecise band does.
  */
-export const GUARDIAN_CONSENT_GATE_UNDER = 18
+export const GUARDIAN_CONSENT_GATE_UNDER = PARENTAL_CONSENT_AGE
 
 /** How long an emailed consent link stays usable. */
 export const GUARDIAN_CONSENT_LINK_TTL_DAYS = 7

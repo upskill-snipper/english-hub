@@ -124,6 +124,28 @@ describe('the register page', () => {
   })
 })
 
+describe('the login page', () => {
+  it('keeps the destination when a visitor with no account goes on to register', () => {
+    const login = readFileSync(join(process.cwd(), 'src/app/auth/login/page.tsx'), 'utf8')
+    expect(login).toContain('/auth/register?next=${encodeURIComponent(redirectTo)}')
+  })
+})
+
+describe('the date of birth on the register form', () => {
+  const page = readFileSync(join(process.cwd(), 'src/app/auth/register/page.tsx'), 'utf8')
+
+  it('tells an under-13 why the form will not submit, and points somewhere that exists', () => {
+    // The button is disabled for them, so a validation message alone never showed.
+    expect(page).toContain("accountType === 'student' && isUnder13 && !fieldErrors.dob")
+    // /parent cannot create a child's account; it only links an existing one.
+    expect(lookup('form.under_13_blocked', 'en')).not.toContain('/parent')
+  })
+
+  it('refuses a date that does not exist rather than sending it on to be dropped', () => {
+    expect((page.match(/isRealDate\(dobDay, dobMonth, dobYear\)/g) ?? []).length).toBe(2)
+  })
+})
+
 describe('the age check', () => {
   it('lets a class sharing one school IP sign up together', async () => {
     const seen: Array<{ limit: number; windowSeconds: number }> = []

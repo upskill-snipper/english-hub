@@ -107,15 +107,17 @@ export async function POST(request: NextRequest) {
   let needsVerification = false
   let alreadyVerified = false
   try {
-    // Supabase JS v2: admin.listUsers supports filtering server-side
-    // via `email` in newer versions, but we fall back to scanning the
-    // first page (perPage 1000) in case the deployed SDK is older.
-    // For accounts at scale, the email-scoped filter is the right path.
-    const { data, error } = await admin.auth.admin.listUsers({
-      page: 1,
-      perPage: 1000,
-    })
-    if (!error && data?.users) {
+    // Supabase JS v2's admin.listUsers has no email filter, so scan it.
+    //
+    // This used to read page 1 only (1,000 accounts) and treat anyone past
+    // it as unregistered: no email, and the same generic "if an account
+    // exists" reply, so nobody would ever have noticed. Latent at 357
+    // accounts on 12 October 2026; it pages now, up to a ceiling far above
+    // the user base, stopping at the first short page.
+    const PER_PAGE = 1000
+    for (let page = 1; page <= 50; page++) {
+      const { data, error } = await admin.auth.admin.listUsers({ page, perPage: PER_PAGE })
+      if (error || !data?.users) break
       const target = data.users.find((u) => u.email?.toLowerCase() === email)
       // `email_confirmed_at` is null until the user clicks the link.
       if (target) {
@@ -124,7 +126,9 @@ export async function POST(request: NextRequest) {
         } else {
           needsVerification = true
         }
+        break
       }
+      if (data.users.length < PER_PAGE) break
     }
   } catch (err) {
     // Log + swallow - caller still gets 200. We don't want a transient

@@ -148,6 +148,14 @@ function RegisterForm() {
     return age
   }
 
+  // 31 February rolls over to 3 March in a JavaScript Date, so the age looked
+  // fine while the string sent to sign-up was impossible. handle_new_user()
+  // drops a date it cannot cast, and the person was asked for their date of
+  // birth again at their first AI request (12 October 2026).
+  const isRealDate = (day: string, month: string, year: string): boolean => {
+    const d = new Date(parseInt(year), parseInt(month) - 1, parseInt(day))
+    return d.getMonth() === parseInt(month) - 1 && d.getDate() === parseInt(day)
+  }
   const userAge = calculateAge(dobDay, dobMonth, dobYear)
   const isUnder13 = userAge !== null && userAge < 13
   const isUnder16 = userAge !== null && userAge >= 13 && userAge < 16
@@ -180,9 +188,11 @@ function RegisterForm() {
 
     if (accountType === 'student') {
       if (!dobDay || !dobMonth || !dobYear) errors.dob = t('form.dob_required')
+      else if (!isRealDate(dobDay, dobMonth, dobYear)) errors.dob = t('form.dob_not_a_real_date')
       if (isUnder13) {
-        // ICO Children's Code: under-13s cannot self-sign-up. They must be
-        // routed to the parent-linked flow at /parent.
+        // ICO Children's Code: under-13s cannot self-sign-up. A school can
+        // provision a pupil's account; /parent cannot create one, so the
+        // message no longer sends them there.
         errors.dob = t('form.under_13_blocked')
       }
       if (isUnder16 && !parentGuardianEmail) {
@@ -195,6 +205,7 @@ function RegisterForm() {
       // the Prisma projection row (/api/auth/register) requires it, and it
       // lets us enforce the 18+ rule honestly rather than on trust.
       if (!dobDay || !dobMonth || !dobYear) errors.dob = t('form.dob_required')
+      else if (!isRealDate(dobDay, dobMonth, dobYear)) errors.dob = t('form.dob_not_a_real_date')
       else if (userAge !== null && userAge < 18) errors.dob = t('form.must_be_18')
     }
 
@@ -779,6 +790,15 @@ function RegisterForm() {
                   {fieldErrors.dob && (
                     <p id="dob-error" className="text-sm text-destructive mt-1">
                       {fieldErrors.dob}
+                    </p>
+                  )}
+                  {/* The submit button is disabled for an under-13 student, so
+                      the validation message above could never appear: the
+                      form just stopped working with no reason given (found 12
+                      October 2026). Say it as soon as the date is entered. */}
+                  {accountType === 'student' && isUnder13 && !fieldErrors.dob && (
+                    <p role="status" className="text-sm text-destructive mt-1">
+                      {t('form.under_13_blocked')}
                     </p>
                   )}
                 </fieldset>

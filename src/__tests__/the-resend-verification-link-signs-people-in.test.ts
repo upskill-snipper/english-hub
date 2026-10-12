@@ -20,7 +20,8 @@ import { beforeEach, describe, expect, it, vi } from 'vitest'
  *
  * MUTATIONS RUN, each verified to have altered the file first: sending
  * `action_link` again fails the first case; dropping 'magiclink' from the
- * callback's first-session landing fails the round trip.
+ * callback's first-session landing fails the round trip; scanning one page of
+ * accounts again fails the thousand-accounts case.
  */
 
 const SITE = 'https://theenglishhub.app'
@@ -131,6 +132,26 @@ describe('the re-verification email', () => {
     expect(res.headers.get('location')).toBe(`${SITE}/dashboard?welcome=true`)
     expect(stamp).toHaveBeenCalledWith('uuid-unconfirmed')
     expect(provision).toHaveBeenCalledWith('uuid-unconfirmed')
+  })
+
+  it('finds an account past the first thousand', async () => {
+    const filler = Array.from({ length: 1000 }, (_, i) => ({
+      id: `uuid-${i}`,
+      email: `someone${i}@example.com`,
+      email_confirmed_at: '2026-01-01T00:00:00Z',
+    }))
+    listUsers.mockImplementation(async ({ page }: { page: number }) => ({
+      data: {
+        users:
+          page === 1
+            ? filler
+            : [{ id: 'uuid-unconfirmed', email: ADDRESS, email_confirmed_at: null }],
+      },
+      error: null,
+    }))
+    await POST(resendRequest())
+    expect(listUsers).toHaveBeenCalledTimes(2)
+    expect(sent).toHaveLength(1)
   })
 
   it('sends nothing when Supabase returns no token, rather than a link that cannot work', async () => {

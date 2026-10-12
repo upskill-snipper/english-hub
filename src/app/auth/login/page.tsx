@@ -320,7 +320,18 @@ function LoginForm() {
                 variant="link"
                 size="sm"
                 className="h-auto p-0 font-medium"
-                render={<Link href="/auth/register" />}
+                // Keep the destination: a signed-out visitor sent here from
+                // /marking/submit with no account would otherwise lose the
+                // way back once they had registered (12 October 2026).
+                render={
+                  <Link
+                    href={
+                      redirectTo === '/dashboard'
+                        ? '/auth/register'
+                        : `/auth/register?next=${encodeURIComponent(redirectTo)}`
+                    }
+                  />
+                }
               >
                 {t('auth.start_free_trial')}
               </Button>

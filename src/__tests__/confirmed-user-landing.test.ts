@@ -50,7 +50,9 @@ describe('the auth callback', () => {
   it('reads the role from the profile rather than guessing', () => {
     // The 18 September trigger is what makes `role` trustworthy here. Before
     // it, every profile in production read 'student' including the teachers.
-    expect(callback).toMatch(/\.select\(\s*'role, exam_board'\s*\)/)
+    // date_of_birth joined the read on 12 October 2026 (the complete-profile
+    // step); the role still comes from the same profile row.
+    expect(callback).toMatch(/\.select\(\s*'role, exam_board(, date_of_birth)?'\s*\)/)
   })
 
   it('seeds the board cookie when the signup captured one', () => {

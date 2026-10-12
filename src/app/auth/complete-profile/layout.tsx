@@ -1,0 +1,10 @@
+import type { Metadata } from 'next'
+
+export const metadata: Metadata = {
+  title: 'One more step',
+  robots: { index: false, follow: false },
+}
+
+export default function CompleteProfileLayout({ children }: { children: React.ReactNode }) {
+  return children
+}

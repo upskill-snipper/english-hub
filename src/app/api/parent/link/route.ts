@@ -15,6 +15,7 @@ import { sendEmail } from '@/lib/email'
 import { parentLinkedEmail, studentLinkedNotificationEmail } from '@/lib/email-templates'
 import { keepAlive } from '@/lib/keep-alive'
 import { rateLimit } from '@/lib/rate-limit'
+import { tryPrismaUserId } from '@/lib/identity'
 
 // ─── Validation ─────────────────────────────────────────────────────────
 
@@ -40,6 +41,13 @@ export async function POST(request: NextRequest) {
       return NextResponse.json({ error: 'Authentication required.' }, { status: 401 })
     }
 
+    // Project the Prisma row first if this account has none. Most accounts
+    // never get one until something forces it, and this route used to answer
+    // a signed-in parent with no row "Session expired. Please log in again.",
+    // whose sign-in button only sent them back to the dashboard
+    // (12 October 2026). tryPrismaUserId is the sanctioned resolver: it
+    // creates or adopts the row and never throws.
+    await tryPrismaUserId(authUser.id)
     const dbUserBySupabaseId = await prisma.user.findUnique({
       where: { supabaseUserId: authUser.id },
       select: {
@@ -225,6 +233,8 @@ export async function DELETE(request: NextRequest) {
       return NextResponse.json({ error: 'Authentication required.' }, { status: 401 })
     }
 
+    // Same projection as POST: a parent with no Prisma row is not "expired".
+    await tryPrismaUserId(authUserDel.id)
     const dbUserDelBySupabaseId = await prisma.user.findUnique({
       where: { supabaseUserId: authUserDel.id },
       select: {
@@ -328,6 +338,8 @@ export async function GET(request: NextRequest) {
       return NextResponse.json({ error: 'Authentication required.' }, { status: 401 })
     }
 
+    // Same projection as POST: a parent with no Prisma row is not "expired".
+    await tryPrismaUserId(authUserGet.id)
     const dbUserGetBySupabaseId = await prisma.user.findUnique({
       where: { supabaseUserId: authUserGet.id },
       select: {

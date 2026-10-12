@@ -127,13 +127,20 @@ export async function GET(request: NextRequest) {
    * one board is written, and never over a valid board this browser already
    * holds.
    */
+  // Set by landingFor from the same profile read: true only when the read
+  // succeeded and found no date of birth. A failed read leaves it false, so
+  // the extra step below is skipped rather than shown on a guess.
+  let profileHasNoDateOfBirth = false
+
   const landingFor = async (userId: string): Promise<string> => {
     try {
       const { data: profile } = await supabase
         .from('profiles')
-        .select('role, exam_board')
+        .select('role, exam_board, date_of_birth')
         .eq('id', userId)
         .single()
+
+      profileHasNoDateOfBirth = !!profile && !profile.date_of_birth
 
       const boardId = BOARD_ID_FOR_PROFILE_LABEL[String(profile?.exam_board ?? '')]
       const heldBoard = request.cookies.get('english-hub-board')?.value
@@ -171,20 +178,33 @@ export async function GET(request: NextRequest) {
    * created or confirmed is a first session.
    *
    * An explicit `next` still wins, because whoever built the link asked for it.
+   *
+   * A first session with no date of birth on the profile goes through
+   * /auth/complete-profile once, carrying the destination with it. Google and
+   * Apple collect no date of birth, and the AI gate refuses every request
+   * until one is held; that page explains why and saves it, and can be
+   * skipped.
    */
   const landingAfterSignIn = async (user: User, confirmedSignup: boolean): Promise<string> => {
     const firstSession =
       confirmedSignup ||
       isWithinFirstSessionWindow(user.created_at) ||
       isWithinFirstSessionWindow(user.email_confirmed_at)
+    // Always read the profile: it decides the role landing, seeds the board
+    // cookie and says whether a date of birth is held.
+    const roleLanding = await landingFor(user.id)
     let target = safeNext
     if (rawNext === '/dashboard' || !searchParams.get('next')) {
-      target = await landingFor(user.id)
+      target = roleLanding
     }
     if (!firstSession) return target
     // The dashboards read welcome=true to show their first-visit message.
     const separator = target.includes('?') ? '&' : '?'
-    return `${target}${separator}welcome=true`
+    const welcomed = `${target}${separator}welcome=true`
+    if (profileHasNoDateOfBirth) {
+      return `/auth/complete-profile?next=${encodeURIComponent(welcomed)}`
+    }
+    return welcomed
   }
 
   /**

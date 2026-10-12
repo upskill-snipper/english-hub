@@ -22,7 +22,8 @@ import { beforeEach, describe, expect, it, vi } from 'vitest'
  * welcome flag on `type === 'signup'` again fails the Google welcome case;
  * writing profiles.exam_board raw again fails the Edexcel and AQA cases;
  * dropping the provider check from applySignupRole fails the email case;
- * dropping the ten-minute window fails the returning-account case.
+ * dropping the ten-minute window fails the returning-account case; skipping
+ * the complete-profile wrap fails the first two date-of-birth cases.
  */
 
 const NOW = Date.now()
@@ -41,7 +42,8 @@ vi.mock('@/lib/auth/stamp-login', () => ({
   },
 }))
 
-let profile: { role: string; exam_board: string | null } | null = null
+let profile: { role: string; exam_board: string | null; date_of_birth?: string | null } | null =
+  null
 const exchangeCodeForSession = vi.fn()
 const verifyOtp = vi.fn()
 vi.mock('@supabase/ssr', () => ({
@@ -105,8 +107,10 @@ async function signIn(query: string, user: TestUser, cookie?: string) {
   }
 }
 
+const HELD_DOB = '2008-03-01'
+
 beforeEach(() => {
-  profile = { role: 'student', exam_board: null }
+  profile = { role: 'student', exam_board: null, date_of_birth: HELD_DOB }
   calls.length = 0
   roleWrites.length = 0
   provision.mockClear()
@@ -122,7 +126,7 @@ describe('landing after a Google, Apple or email-link sign-in', () => {
   })
 
   it('routes by role even without a type, and a returning account is not welcomed again', async () => {
-    profile = { role: 'parent', exam_board: null }
+    profile = { role: 'parent', exam_board: null, date_of_birth: HELD_DOB }
     expect((await signIn('?code=g', googleUser(0))).landing).toBe('/dashboard/parent?welcome=true')
     expect((await signIn('?code=g', googleUser(60 * 24 * 30))).landing).toBe('/dashboard/parent')
   })
@@ -134,27 +138,52 @@ describe('landing after a Google, Apple or email-link sign-in', () => {
   })
 
   it('still lets an explicit next win', async () => {
-    profile = { role: 'teacher', exam_board: null }
+    profile = { role: 'teacher', exam_board: null, date_of_birth: HELD_DOB }
     const { landing } = await signIn('?code=g&next=%2Fpricing', googleUser(0))
     expect(landing).toBe('/pricing?welcome=true')
   })
 })
 
+describe('a first session with no date of birth', () => {
+  it('goes through the one-step date-of-birth page, keeping where it was going', async () => {
+    profile = { role: 'teacher', exam_board: null, date_of_birth: null }
+    const { landing } = await signIn('?code=g', googleUser(0))
+    expect(landing).toBe(
+      `/auth/complete-profile?next=${encodeURIComponent('/dashboard/teacher?welcome=true')}`,
+    )
+  })
+
+  it('carries an explicit next through it too', async () => {
+    profile = { role: 'student', exam_board: null, date_of_birth: null }
+    const { landing } = await signIn('?code=g&next=%2Fpricing', googleUser(0))
+    expect(landing).toBe(
+      `/auth/complete-profile?next=${encodeURIComponent('/pricing?welcome=true')}`,
+    )
+  })
+
+  it('is not sent there on a later sign-in, or when the profile could not be read', async () => {
+    profile = { role: 'student', exam_board: null, date_of_birth: null }
+    expect((await signIn('?code=g', googleUser(60 * 24))).landing).toBe('/dashboard')
+    profile = null
+    expect((await signIn('?code=g', googleUser(0))).landing).toBe('/dashboard?welcome=true')
+  })
+})
+
 describe('the board cookie', () => {
   it('is written as a board id, not the profile label', async () => {
-    profile = { role: 'student', exam_board: 'AQA' }
+    profile = { role: 'student', exam_board: 'AQA', date_of_birth: HELD_DOB }
     expect((await signIn('?code=g', googleUser(0))).board).toBe('aqa')
   })
 
   it('is not guessed from a label that names several boards, or none', async () => {
-    profile = { role: 'student', exam_board: 'Edexcel' }
+    profile = { role: 'student', exam_board: 'Edexcel', date_of_birth: HELD_DOB }
     expect((await signIn('?code=g', googleUser(0))).board).toBeUndefined()
-    profile = { role: 'student', exam_board: 'Other' }
+    profile = { role: 'student', exam_board: 'Other', date_of_birth: HELD_DOB }
     expect((await signIn('?code=g', googleUser(0))).board).toBeUndefined()
   })
 
   it('never replaces a valid board this browser already holds', async () => {
-    profile = { role: 'student', exam_board: 'AQA' }
+    profile = { role: 'student', exam_board: 'AQA', date_of_birth: HELD_DOB }
     const { board } = await signIn('?code=g', googleUser(0), 'english-hub-board=edexcel-igcse')
     expect(board).toBeUndefined()
   })
