@@ -15,20 +15,27 @@ import { join } from 'node:path'
  * policies before the fix, and refused after it.
  *
  * supabase/migrations/20261012_profiles_users_edit_only_their_details.sql
- * now grants UPDATE on five columns only. These tests pin that list from both
- * ends: the migration grants nothing that matters, and every user-run write
- * in the app stays inside the list, so a new field on the /account form fails
- * here rather than in production with "permission denied".
+ * granted UPDATE on five columns only, and its _2 follow-up took the Stripe
+ * customer id away once checkout and promo redeem saved it through the
+ * service role, leaving four. These tests pin that list from both ends: the
+ * migration grants nothing that matters, and every user-run write in the app
+ * stays inside the list, so a new field on the /account form fails here
+ * rather than in production with "permission denied".
  *
  * MUTATIONS RUN, each verified to have altered the file first: adding
- * subscription_status to the GRANT fails the first case; adding
- * school_name to the /account form's update fails the second.
+ * subscription_status, or stripe_customer_id, back to the GRANT fails the
+ * first case; adding school_name to the /account form's update fails the
+ * second; saving the customer id with the user's client in promo redeem
+ * fails the third.
  */
 
 const root = process.cwd()
 const read = (rel: string) => readFileSync(join(root, rel), 'utf8')
 
-const MIGRATION = 'supabase/migrations/20261012_profiles_users_edit_only_their_details.sql'
+// The second file took stripe_customer_id away once checkout and promo redeem
+// saved it through the service role. It sorts after the first, so it is the
+// grant in force.
+const MIGRATION = 'supabase/migrations/20261012_profiles_users_edit_only_their_details_2.sql'
 
 function grantedColumns(sql: string): string[] {
   const code = sql
@@ -56,10 +63,9 @@ describe('what a signed-in user may update on their profile', () => {
 
   it('takes the table-wide grant away and gives back only the details users edit', () => {
     expect(sql).toMatch(/REVOKE\s+UPDATE\s+ON\s+public\.profiles\s+FROM\s+anon,\s*authenticated/i)
-    expect([...granted].sort()).toEqual(
-      ['exam_board', 'full_name', 'stripe_customer_id', 'updated_at', 'year_group'].sort(),
-    )
+    expect([...granted].sort()).toEqual(['exam_board', 'full_name', 'updated_at', 'year_group'])
     for (const forbidden of [
+      'stripe_customer_id',
       'subscription_status',
       'subscription_end_date',
       'ielts_status',
@@ -118,7 +124,7 @@ describe('what a signed-in user may update on their profile', () => {
     // table-wide grant exists.
     const later = readdirSync(join(root, 'supabase/migrations'))
       .filter(
-        (f) => f.endsWith('.sql') && f > '20261012_profiles_users_edit_only_their_details.sql',
+        (f) => f.endsWith('.sql') && f > '20261012_profiles_users_edit_only_their_details_2.sql',
       )
       .map((f) => read(`supabase/migrations/${f}`))
     for (const body of later) {
