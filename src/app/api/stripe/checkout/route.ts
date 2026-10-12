@@ -226,7 +226,15 @@ export async function POST(request: NextRequest) {
 
       stripeCustomerId = customer.id
 
-      const { error: updateError } = await supabase
+      // Saved through the service role, not the user's own client (12 October
+      // 2026). profiles.stripe_customer_id is what /api/stripe/portal opens a
+      // billing session for, so while a signed-in user could write it, anyone
+      // who learned another customer's id could point their profile at it and
+      // see that customer's invoices and subscription. Users can no longer
+      // write the column at all (migration
+      // 20261012_profiles_users_edit_only_their_details_2.sql); this is the only
+      // way it gets set. user.id is the Supabase uuid, which is profiles.id.
+      const { error: updateError } = await createServiceRoleClient()
         .from('profiles')
         .update({ stripe_customer_id: stripeCustomerId })
         .eq('id', user.id)

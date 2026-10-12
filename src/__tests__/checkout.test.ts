@@ -53,7 +53,7 @@ vi.mock('@/lib/rate-limit', () => ({
 
 // Chainable Supabase mock
 function createSupabaseMock() {
-  const singleFn = vi.fn(() => ({
+  const singleFn = vi.fn((): { data: { stripe_customer_id: string | null }; error: null } => ({
     data: { stripe_customer_id: 'cus_existing_123' },
     error: null,
   }))
@@ -93,8 +93,30 @@ function createSupabaseMock() {
 
 let supabaseMock: ReturnType<typeof createSupabaseMock>
 
+// The service-role client. Since 12 October 2026 the route saves a new
+// customer's Stripe id through it, because signed-in users can no longer
+// write profiles.stripe_customer_id with their own client.
+function createServiceMock() {
+  const updates: Array<{ values: unknown; column: string; value: unknown }> = []
+  let updateError: unknown = null
+  const client = {
+    from: vi.fn(() => ({
+      update: (values: unknown) => ({
+        eq: (column: string, value: unknown) => {
+          updates.push({ values, column, value })
+          return { error: updateError }
+        },
+      }),
+    })),
+  }
+  return { client, updates, failUpdates: (err: unknown) => (updateError = err) }
+}
+
+let serviceMock: ReturnType<typeof createServiceMock>
+
 vi.mock('@/lib/supabase/server', () => ({
   createServerSupabaseClient: () => supabaseMock,
+  createServiceRoleClient: () => serviceMock.client,
 }))
 
 // ---------------------------------------------------------------------------
@@ -132,8 +154,9 @@ describe('POST /api/stripe/checkout', () => {
     mockRateLimit.mockResolvedValue({ success: true, resetAt: Date.now() + 300_000 })
     mockGetClientIp.mockReturnValue('127.0.0.1')
 
-    // Fresh supabase mock per test
+    // Fresh supabase mocks per test
     supabaseMock = createSupabaseMock()
+    serviceMock = createServiceMock()
 
     // Default session create response
     mockSessionCreate.mockResolvedValue({ url: 'https://checkout.stripe.com/session_123' })
@@ -274,5 +297,38 @@ describe('POST /api/stripe/checkout', () => {
 
     const params = mockSessionCreate.mock.calls[0][0]
     expect(params.metadata.rewardful_referral).toBe('ref_abc123')
+  })
+
+  // ---- 10. A first-time customer's Stripe id is saved by the server ----
+  it("saves a new customer's Stripe id through the service role, never the user's own client", async () => {
+    supabaseMock._mocks.singleFn.mockReturnValue({
+      data: { stripe_customer_id: null },
+      error: null,
+    })
+    mockCustomerCreate.mockResolvedValue({ id: 'cus_new_456' })
+
+    const res = await POST(buildRequest({ priceId: 'price_monthly_123', mode: 'subscription' }))
+
+    expect(res.status).toBe(200)
+    expect(serviceMock.updates).toEqual([
+      { values: { stripe_customer_id: 'cus_new_456' }, column: 'id', value: 'user-abc' },
+    ])
+    expect(supabaseMock._mocks.updateFn).not.toHaveBeenCalled()
+    expect(mockSessionCreate.mock.calls[0][0].customer).toBe('cus_new_456')
+  })
+
+  it('stops checkout rather than carrying on when that save fails', async () => {
+    supabaseMock._mocks.singleFn.mockReturnValue({
+      data: { stripe_customer_id: null },
+      error: null,
+    })
+    mockCustomerCreate.mockResolvedValue({ id: 'cus_new_456' })
+    serviceMock.failUpdates({ message: 'database unavailable' })
+    vi.spyOn(console, 'error').mockImplementation(() => {})
+
+    const res = await POST(buildRequest({ priceId: 'price_monthly_123', mode: 'subscription' }))
+
+    expect(res.status).toBe(500)
+    expect(mockSessionCreate).not.toHaveBeenCalled()
   })
 })

@@ -300,7 +300,10 @@ export async function POST(request: NextRequest) {
         metadata: { userId: user.id },
       })
       stripeCustomerId = customer.id
-      const { error: updateError } = await supabase
+      // Through the service role, as in /api/stripe/checkout: users cannot
+      // write profiles.stripe_customer_id themselves since 12 October 2026,
+      // because the billing portal opens whatever customer it names.
+      const { error: updateError } = await createServiceRoleClient()
         .from('profiles')
         .update({ stripe_customer_id: stripeCustomerId })
         .eq('id', user.id)

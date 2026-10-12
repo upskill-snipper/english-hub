@@ -77,13 +77,11 @@ describe('what a signed-in user may update on their profile', () => {
   })
 
   it('covers every write the app makes as the user', () => {
-    // The three user-privileged writers found on 12 October 2026. Anything
-    // else that writes profiles uses the service role.
-    const writers = [
-      'src/app/account/page.tsx',
-      'src/app/api/stripe/checkout/route.ts',
-      'src/app/api/promo/redeem/route.ts',
-    ]
+    // The user-privileged writers found on 12 October 2026: the /account
+    // form, and until later that day checkout and promo redeem, which now
+    // save the Stripe customer id through the service role (next case).
+    // Anything else that writes profiles uses the service role.
+    const writers = ['src/app/account/page.tsx']
     for (const file of writers) {
       const updates = profileUpdateKeys(read(file))
       expect(
@@ -93,6 +91,24 @@ describe('what a signed-in user may update on their profile', () => {
       for (const keys of updates) {
         for (const key of keys) expect(granted, `${file} writes ${key}`).toContain(key)
       }
+    }
+  })
+
+  it('saves the Stripe customer id only through the service role', () => {
+    // /api/stripe/portal opens a billing session for whatever customer the
+    // profile names, so the id must never be written with the user's client.
+    for (const file of [
+      'src/app/api/stripe/checkout/route.ts',
+      'src/app/api/promo/redeem/route.ts',
+    ]) {
+      const src = read(file)
+      const writes = [...src.matchAll(/([\w.()]+)\s*\.from\(\s*'profiles'\s*\)\s*\.update\(/g)]
+      expect(
+        writes.length,
+        `${file} no longer saves the customer id; revisit this test`,
+      ).toBeGreaterThan(0)
+      for (const w of writes)
+        expect(w[1], `${file} writes profiles through ${w[1]}`).toBe('createServiceRoleClient()')
     }
   })
 
