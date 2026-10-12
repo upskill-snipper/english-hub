@@ -37,7 +37,7 @@ export interface ChallengeProps {
 }
 
 /** A translated sentence with {placeholders} filled by nodes (names stay marked English). */
-export { fill, fillText } from '@/components/games/text/parts'
+export { fill, fillText } from '@/components/games/fill'
 
 export function Question({
   headingRef,

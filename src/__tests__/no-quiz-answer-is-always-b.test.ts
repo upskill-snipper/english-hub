@@ -487,16 +487,12 @@ describe('every surface that marks a clicked option', () => {
     const wrapper = readFileSync('src/lib/ielts/objective.ts', 'utf8')
     expect(wrapper).toMatch(/import \{ shuffledOptionsFor \} from '@\/lib\/quiz\/shuffle'/)
     expect(wrapper).toMatch(/return shuffledOptionsFor\(/)
-    // The guided text games deal each round through dealRound, which shuffles
-    // every question's options with the same shared shuffle (10 October 2026).
-    // Held to delegating, as the IELTS wrapper is.
-    const games = readFileSync('src/lib/games/text-games/arrange.ts', 'utf8')
-    expect(games).toMatch(/import \{ shuffleOptionsDeterministic \} from '@\/lib\/quiz\/shuffle'/)
-    expect(games).toMatch(/options: shuffleOptionsDeterministic\(item\.options,/)
     // Text quests (12 October 2026) deal every level and review through
     // dealLevel and dealReview, and each challenge's options through
     // dealChallenge, with the same shared shuffle. The player deals; the views
-    // render `dealt.options` in the order dealt. Held to delegating, likewise.
+    // render `dealt.options` in the order dealt. Held to delegating, as the
+    // IELTS wrapper is. (The guided path's dealRound was allowed the same way
+    // until it was retired with the path, the same day.)
     const quests = readFileSync('src/lib/games/quest/deal.ts', 'utf8')
     expect(quests).toMatch(/import \{ shuffleOptionsDeterministic \} from '@\/lib\/quiz\/shuffle'/)
     expect(quests).toMatch(/options: shuffleOptionsDeterministic\(options,/)
@@ -511,9 +507,6 @@ describe('every surface that marks a clicked option', () => {
         return (
           !/from '@\/lib\/quiz\/shuffle'/.test(src) &&
           !/\bshownMcqOptions\b/.test(src) &&
-          !/import \{[^}]*\bdealRound\b[^}]*\} from '@\/lib\/games\/text-games\/arrange'/.test(
-            src,
-          ) &&
           !dealsQuest(src)
         )
       })

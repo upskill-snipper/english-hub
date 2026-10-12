@@ -39,10 +39,14 @@ import type { Level, Quest } from '@/lib/games/quest/types'
  * the assertions name what each screen says without depending on its English.
  */
 
-vi.mock('@/lib/i18n/use-t', () => ({ useT: () => (key: string) => key }))
+// Keys come back as themselves, except the one whose number is asserted.
+vi.mock('@/lib/i18n/use-t', () => ({
+  useT: () => (key: string) => (key === 'quest.progress.stars' ? 'Stars: {n}' : key),
+}))
 
 const { loadQuest } = await import('@/lib/games/quest/load')
 const { QuestMap } = await import('@/components/games/quest/QuestMap')
+const { TextGameProgressNote } = await import('@/components/games/text/TextGameProgressNote')
 
 /** A public-domain text with comic panels, portraits and every kind of challenge. */
 const SLUG = 'macbeth'
@@ -338,6 +342,32 @@ describe('the full-screen views keep the keyboard inside them', () => {
   })
 })
 
+describe('the index of text games', () => {
+  it('shows the stars a student has earned in a text, and nothing for one not played', async () => {
+    // The note on each card of /games/texts. Until 12 October 2026 it counted
+    // the guided path's rounds; it reads the quest's store now, and had no
+    // test of its own until the path's code was retired.
+    localStorage.setItem(
+      `teh-quest:v1:${SLUG}`,
+      JSON.stringify({
+        v: 1,
+        levels: {
+          'chapter-1': { stars: 2, best: 0.8, plays: 1 },
+          cast: { stars: 3, best: 1, plays: 2 },
+        },
+        items: {},
+        inked: [],
+        reviews: 0,
+      }),
+    )
+    const played = render(<TextGameProgressNote slug={SLUG} />)
+    const fresh = render(<TextGameProgressNote slug="hamlet" />)
+    await act(async () => {})
+    expect(played.container.textContent).toBe('Stars: 5')
+    expect(fresh.container.textContent).toBe('')
+  })
+})
+
 describe('the finale, and the comic', () => {
   it('keeps the finale shut until every part has a star', async () => {
     render(<QuestMap quest={quest} />)
@@ -417,4 +447,8 @@ describe('the finale, and the comic', () => {
  *   - every panel shown inked in the comic (ComicBook.tsx).
  *   - no focus trap in the player (LevelPlayer.tsx): "sends Tab from the
  *     last control to the first".
+ *   - the index note counting levels played instead of stars
+ *     (TextGameProgressNote.tsx): "shows the stars a student has earned".
+ *   - in a-quest-scores-and-remembers-what-it-says.test.ts, a refused write
+ *     not kept in memory (progress.ts): "plays on when storage throws".
  */

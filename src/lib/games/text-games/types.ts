@@ -122,9 +122,12 @@ export type GameItem = ChoiceItem | OrderItem
 export interface Round {
   kind: RoundKind
   /**
-   * Every item the guide supports for this round, up to a pool's worth. A play
-   * of the round deals ROUND_SIZE of them (see arrange.ts), so a second play
-   * can ask different questions without the page carrying the whole guide.
+   * Every item the guide supports for this round, up to a pool's worth
+   * (POOL_MAX, more when a quest asks: build.ts). Since 12 October 2026 the
+   * rounds are no longer played as rounds: the text quests take their items
+   * into levels and deal a play from them (src/lib/games/quest/deal.ts), so a
+   * second play can ask different questions without the page carrying the
+   * whole guide.
    */
   items: GameItem[]
 }

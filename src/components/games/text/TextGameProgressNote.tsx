@@ -3,10 +3,9 @@
 import { useEffect, useState } from 'react'
 import { Star } from 'lucide-react'
 
+import { fillText } from '@/components/games/fill'
 import { readQuestProgress } from '@/lib/games/quest/progress'
 import { useT } from '@/lib/i18n/use-t'
-
-import { fillText } from './parts'
 
 /**
  * On the index of text games, how far this student has got with one text:

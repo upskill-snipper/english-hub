@@ -293,16 +293,17 @@ describe('a play of a level', () => {
   it('puts the right answer in every position about as often, across every quest', async () => {
     // The site's rule (no-quiz-answer-is-always-b.test.ts) checks that a
     // surface uses the shared shuffle. This measures what students meet: the
-    // right answer's position in every dealt choice, two plays of every level
-    // of every quest.
-    const at = new Map<number, number>()
+    // right answer's position in every four-option choice, over three plays
+    // of every level of every quest. The guides list each answer first, so a
+    // deal in authored order would put it at A every time.
+    const counts = [0, 0, 0, 0]
     let n = 0
     for (const slug of slugs) {
       const q = await questFor(slug)
       for (const l of q.levels)
-        for (const play of [0, 1])
+        for (const play of [0, 1, 2])
           for (const d of dealLevel(q, l, play)) {
-            if (d.options.length < 3) continue
+            if (d.options.length !== 4) continue
             const c = d.challenge
             const answer =
               c.type === 'item'
@@ -310,14 +311,56 @@ describe('a play of a level', () => {
                 : (c as { answer: string }).answer
             const i = d.options.indexOf(answer)
             expect(i, `${slug} ${c.id}`).toBeGreaterThanOrEqual(0)
-            at.set(i, (at.get(i) ?? 0) + 1)
+            counts[i]++
             n++
           }
     }
     expect(n).toBeGreaterThan(5000)
-    // Four options: a fair shuffle gives each first three positions about a
-    // quarter (the fourth slightly less, as some choices have three).
-    for (const i of [0, 1, 2]) expect((at.get(i) ?? 0) / n, `position ${i}`).toBeLessThan(0.3)
+    for (const [i, k] of counts.entries()) {
+      expect(k / n, `answer in position ${'ABCD'[i]}`).toBeGreaterThan(0.18)
+      expect(k / n, `answer in position ${'ABCD'[i]}`).toBeLessThan(0.32)
+    }
+  }, 300_000)
+
+  it('deals every option and card, and never a story order or quotation already solved', async () => {
+    // Carried over from the guided path's dealer when it was retired
+    // (text-games-are-built-from-the-guides.test.ts, 12 October 2026).
+    let decks = 0
+    for (const slug of slugs) {
+      const q = await questFor(slug)
+      for (const l of q.levels)
+        for (const play of [0, 1])
+          for (const d of dealLevel(q, l, play)) {
+            const c = d.challenge
+            const where = `${slug} ${l.id} play ${play} ${c.id}`
+            const n =
+              c.type === 'rebuild'
+                ? c.words.length
+                : c.type === 'item' && c.item.kind === 'order'
+                  ? c.item.moments.length
+                  : 0
+            if (n > 0) {
+              expect(
+                [...d.deck].sort((a, b) => a - b),
+                where,
+              ).toEqual(Array.from({ length: n }, (_, i) => i))
+              if (n > 1)
+                expect(
+                  d.deck.every((v, i) => v === i),
+                  `${where} dealt solved`,
+                ).toBe(false)
+              decks++
+            }
+            const offered =
+              c.type === 'item'
+                ? ((c.item as { options?: string[] }).options ?? [])
+                : 'options' in c
+                  ? c.options
+                  : []
+            expect([...d.options].sort(), where).toEqual([...offered].sort())
+          }
+    }
+    expect(decks).toBeGreaterThan(1000)
   }, 300_000)
 
   it('is the same deal for the same play, and a different one for the next', async () => {
@@ -358,6 +401,9 @@ describe('a play of a level', () => {
  *   - the deal's shuffle removed (deal.ts): "puts the right answer in every
  *     position" (position 0 at 100%), and "shuffles its options" in
  *     no-quiz-answer-is-always-b.test.ts.
+ *   - a story order or quotation allowed to be dealt already solved
+ *     (deal.ts, shuffledDeck): "deals every option and card, and never a
+ *     story order or quotation already solved".
  *
  * The player's own mutations (scoring, review order, storage, the map, the
  * keyboard, marking, the comic) are listed in

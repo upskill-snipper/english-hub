@@ -356,6 +356,27 @@ describe('storage', () => {
     expect(readQuestProgress('cleared')).toEqual(emptyQuest())
   })
 
+  it('plays on when storage throws, as in a private window, and keeps the page’s progress', () => {
+    // Carried over from the guided path's score store when it was retired
+    // (text-games-are-built-from-the-guides.test.ts, 12 October 2026). A
+    // window whose storage refuses every read and write, unlike the case
+    // above, where there is no window at all.
+    vi.stubGlobal('window', {
+      localStorage: {
+        getItem: () => {
+          throw new Error('denied')
+        },
+        setItem: () => {
+          throw new Error('denied')
+        },
+      },
+    })
+    const p = recordAnswer(emptyQuest(), 'q4', true, NOW)
+    expect(() => writeQuestProgress('private-window', p)).not.toThrow()
+    expect(readQuestProgress('private-window')).toEqual(p)
+    expect(() => readPlayer()).not.toThrow()
+  })
+
   it('starts afresh rather than trusting a store it cannot read', () => {
     const store = new Map<string, string>([
       ['teh-quest:v1:broken', '{not json'],

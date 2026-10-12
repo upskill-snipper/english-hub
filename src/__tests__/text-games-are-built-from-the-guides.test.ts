@@ -1,10 +1,9 @@
-import { afterEach, beforeAll, beforeEach, describe, expect, it } from 'vitest'
+import { beforeAll, describe, expect, it } from 'vitest'
 import { existsSync, readdirSync } from 'node:fs'
 import { join } from 'node:path'
 
 import { STUDY_GUIDE_LOADERS } from '@/data/study-guides'
 import { getSetText } from '@/lib/board/set-texts'
-import { dealReview, dealRound, ROUND_SIZE } from '@/lib/games/text-games/arrange'
 import { buildTextGame, heldEdition, MIN_ITEMS } from '@/lib/games/text-games/build'
 import { loadGameArt, loadHeldEdition, loadTextGame } from '@/lib/games/text-games/load'
 import {
@@ -13,7 +12,6 @@ import {
   textGameTitle,
   TITLE_LIMIT,
 } from '@/lib/games/text-games/meta'
-import { finishRound, finishRun, readProgress, startRound } from '@/lib/games/text-games/progress'
 import { overTheLimits, quotedInGame } from '@/lib/games/text-games/quoted'
 import { hasTextGame, LEFT_OUT_OF_TEXT_GAMES, textGameSlugs } from '@/lib/games/text-games/slugs'
 import {
@@ -341,26 +339,6 @@ describe.each(slugs)('%s', (slug) => {
     expect(JSON.stringify(game).length).toBeLessThan(120_000)
   })
 
-  it('deals the same questions from the same seed, and differently on a replay', () => {
-    const { game } = get(slug)
-    for (const round of game.rounds) {
-      const a = dealRound(slug, round, 0)
-      expect(dealRound(slug, round, 0)).toEqual(a)
-      expect(a.length).toBe(Math.min(ROUND_SIZE[round.kind], round.items.length))
-      for (const d of a) {
-        if (d.item.kind === 'order') {
-          expect([...d.deck].sort()).toEqual(d.item.moments.map((_, i) => i))
-          expect(
-            d.deck.every((v, i) => v === i),
-            'dealt already solved',
-          ).toBe(false)
-        } else expect([...d.options].sort()).toEqual([...d.item.options].sort())
-      }
-    }
-    const review = game.rounds.flatMap((r) => r.items).slice(0, 4)
-    expect(dealReview(slug, review, 2)).toEqual(dealReview(slug, review, 2))
-  })
-
   it('quotes nothing its guide does not, and for a text in copyright stays inside the limits', () => {
     const { game, guide } = get(slug)
     expect(overTheLimits(game, guide)).toEqual([])
@@ -472,37 +450,6 @@ describe('the build', () => {
     WARM_MS,
   )
 
-  it('puts the right answer in every position about equally, over many plays', () => {
-    // The guides list each answer first among its options, so a round dealt
-    // in authored order would be answered by always choosing A, which is the
-    // fault no-quiz-answer-is-always-b.test.ts was written for (10 October
-    // 2026). Counted over every choice question of every path and 20 plays.
-    const counts = [0, 0, 0, 0]
-    let total = 0
-    for (const slug of slugs)
-      for (const round of get(slug).game.rounds)
-        for (let play = 0; play < 20; play++)
-          for (const d of dealRound(slug, round, play)) {
-            if (d.item.kind === 'order' || d.options.length !== 4) continue
-            counts[d.options.indexOf(d.item.answer)]++
-            total++
-          }
-    expect(total).toBeGreaterThan(2000)
-    for (const [i, n] of counts.entries())
-      expect(n / total, `answer in position ${'ABCD'[i]}`).toBeGreaterThan(0.18)
-    for (const [i, n] of counts.entries())
-      expect(n / total, `answer in position ${'ABCD'[i]}`).toBeLessThan(0.32)
-  })
-
-  it('replays deal differently somewhere, or the seed is not reaching the shuffle', () => {
-    const differs = slugs.some((slug) =>
-      get(slug).game.rounds.some(
-        (r) => JSON.stringify(dealRound(slug, r, 0)) !== JSON.stringify(dealRound(slug, r, 1)),
-      ),
-    )
-    expect(differs).toBe(true)
-  })
-
   it('keeps a refrain out of "Where is it?" when the held edition prints it twice', () => {
     // A made-up poem, so no set text is quoted here.
     const guide = {
@@ -579,68 +526,18 @@ describe('the opening of a guide entry', () => {
   })
 })
 
-describe('scores stay in this browser, and a broken store never breaks the game', () => {
-  const store = new Map<string, string>()
-  const fake = {
-    getItem: (k: string) => store.get(k) ?? null,
-    setItem: (k: string, v: string) => void store.set(k, v),
-    removeItem: (k: string) => void store.delete(k),
-  }
-  beforeEach(() => {
-    store.clear()
-    ;(globalThis as { window?: unknown }).window = { localStorage: fake }
-  })
-  afterEach(() => {
-    delete (globalThis as { window?: unknown }).window
-  })
-
-  it('counts plays, keeps a best per round and per path, and calls a first finish a best', () => {
-    expect(startRound('macbeth', 'who', 5)).toBe(0)
-    expect(startRound('macbeth', 'who', 5)).toBe(1)
-    expect(finishRound('macbeth', 'who', 3, 6).newBest).toBe(true)
-    expect(finishRound('macbeth', 'who', 2, 6).newBest).toBe(false)
-    expect(finishRound('macbeth', 'who', 5, 6).newBest).toBe(true)
-    const p = readProgress('macbeth')
-    expect(p.rounds.who).toEqual({ best: 5, max: 6, plays: 2, done: true })
-    expect(p.total).toBe(5)
-    expect(finishRun('macbeth', 20, 27).newBest).toBe(true)
-    expect(finishRun('macbeth', 19, 27).newBest).toBe(false)
-    expect(readProgress('macbeth').bestRun).toEqual({ score: 20, max: 27 })
-    // Its own keys, never the skills games' eh_game_ prefix.
-    expect([...store.keys()]).toEqual(['eh_textgame_macbeth'])
-  })
-
-  it('reads an edited or corrupt record as a fresh one', () => {
-    store.set('eh_textgame_macbeth', '{not json')
-    expect(readProgress('macbeth').rounds).toEqual({})
-    store.set(
-      'eh_textgame_macbeth',
-      JSON.stringify({ v: 1, rounds: { who: { best: 9, max: 6, plays: 1 } } }),
-    )
-    expect(readProgress('macbeth').rounds.who).toBeUndefined()
-  })
-
-  it('plays on when storage throws, as in a private window', () => {
-    ;(globalThis as { window?: unknown }).window = {
-      localStorage: {
-        getItem: () => {
-          throw new Error('denied')
-        },
-        setItem: () => {
-          throw new Error('denied')
-        },
-      },
-    }
-    expect(() => startRound('macbeth', 'who', 5)).not.toThrow()
-    expect(finishRound('macbeth', 'who', 3, 6).newBest).toBe(true)
-    expect(readProgress('macbeth').rounds).toEqual({})
-  })
-
-  it('and with no window at all, on the server', () => {
-    delete (globalThis as { window?: unknown }).window
-    expect(readProgress('macbeth').rounds).toEqual({})
-  })
-})
+/*
+ * RETIRED WITH THE GUIDED PATH (12 October 2026). This file also held the
+ * round dealer (text-games/arrange.ts) and the round score store
+ * (text-games/progress.ts) to: the same deal from the same seed and a fresh
+ * one on a replay, no story order dealt already solved, the right answer
+ * spread evenly over the positions, and scores kept in this browser under
+ * their own key, surviving a corrupt record, a private window and a server
+ * render. The pages now play text quests, which deal and keep score
+ * themselves, and the same guarantees are held there:
+ * a-text-quest-is-built-from-checked-material.test.ts ("a play of a level")
+ * and a-quest-scores-and-remembers-what-it-says.test.ts ("storage").
+ */
 
 describe('the interface copy', () => {
   const entries = Object.entries(TEXT_GAMES_DICTIONARY)
