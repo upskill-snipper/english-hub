@@ -31,6 +31,7 @@ import { useSearchParams } from 'next/navigation'
 import { trackEvent } from '@/lib/gtag'
 import { capture as phCapture, EVENTS as PH_EVENTS } from '@/lib/posthog'
 import { useAuthStore } from '@/store/auth-store'
+import { usePaidAccess } from '@/hooks/usePaidAccess'
 import { FirstWeekCard } from '@/components/dashboard/FirstWeekCard'
 import { isFirstWeek } from '@/lib/dashboard/first-week'
 // The dashboard renders course cards and an activity feed: it needs titles,
@@ -151,6 +152,7 @@ function ActivitySkeleton() {
 export default function DashboardPage() {
   const t = useT()
   const { user, profile, isLoading } = useAuthStore()
+  const access = usePaidAccess()
 
   /**
    * Inside the first fortnight, the checklist replaces nothing and sits above
@@ -354,13 +356,24 @@ export default function DashboardPage() {
       color: 'text-blue-600',
       bg: 'bg-blue-500/10',
     },
-    {
-      label: t('dash.qa.essay_feedback'),
-      href: '/dashboard/essay-feedback',
-      icon: Sparkles,
-      color: 'text-amber-600',
-      bg: 'bg-amber-500/10',
-    },
+    // A school pupil's essays go through Mark an essay, where their teacher
+    // sees them; the standalone feedback stores work no teacher can see
+    // (12 October 2026, src/lib/marking/school-route.ts).
+    access?.schoolPupil
+      ? {
+          label: t('header.nav.marking'),
+          href: '/marking/submit',
+          icon: Sparkles,
+          color: 'text-amber-600',
+          bg: 'bg-amber-500/10',
+        }
+      : {
+          label: t('dash.qa.essay_feedback'),
+          href: '/dashboard/essay-feedback',
+          icon: Sparkles,
+          color: 'text-amber-600',
+          bg: 'bg-amber-500/10',
+        },
     {
       label: t('dash.qa.mock_exams'),
       href: '/dashboard/mock-exam',

@@ -35,6 +35,9 @@ import { AiGeneratedNotice } from '@/components/ai/AiGeneratedNotice'
 import { RequestHumanReviewButton } from '@/components/ai/RequestHumanReviewButton'
 import { InlineAIConsentPrompt } from '@/components/consent/InlineAIConsentPrompt'
 import { readConsentRefusal, type AIConsentRefusal } from '@/components/consent/ai-consent-refusal'
+import { SchoolMarkingRedirect } from '@/components/marking/SchoolMarkingRedirect'
+import { isSchoolMarkingRefusal } from '@/lib/marking/school-route'
+import { usePaidAccess } from '@/hooks/usePaidAccess'
 import { ReadAloudButton } from '@/components/speech/ReadAloudButton'
 import { DictationButton } from '@/components/speech/DictationButton'
 import { capture as phCapture, EVENTS as PH_EVENTS } from '@/lib/posthog'
@@ -153,6 +156,12 @@ export default function EssayFeedbackPage() {
   // instead of the old 'unknown-essay-feedback' placeholder).
   const [essayId, setEssayId] = useState<string | null>(null)
   const [remaining, setRemaining] = useState<number | null>(null)
+  // A pupil of a live school marks essays through Mark an essay, where their
+  // teacher sees the work; this page stores feedback where no teacher can
+  // (12 October 2026, src/lib/marking/school-route.ts). Known up front from
+  // /api/user/access, or from the route's own refusal on submit.
+  const access = usePaidAccess()
+  const [schoolRefused, setSchoolRefused] = useState(false)
 
   // Auto-populate board from global board-gate selection. The site board id
   // ("edexcel-igcse-lang") is translated into the marking vocabulary
@@ -261,6 +270,10 @@ export default function EssayFeedbackPage() {
       if (!res.ok) {
         // Switched on the machine-readable code, never the status: 403 is
         // also "not a subscriber" and "AI switched off for this account".
+        if (isSchoolMarkingRefusal(res.status, data)) {
+          setSchoolRefused(true)
+          return
+        }
         const refusal = readConsentRefusal(res.status, data)
         if (refusal) {
           setConsentRefusal(refusal)
@@ -318,6 +331,28 @@ export default function EssayFeedbackPage() {
 
   if (!user) {
     return null // Will redirect via useEffect
+  }
+
+  if (access?.schoolPupil || schoolRefused) {
+    return (
+      <div className="min-h-screen bg-background">
+        <div className="mx-auto max-w-4xl px-4 py-6 sm:px-6 lg:px-8">
+          <Button
+            variant="ghost"
+            size="sm"
+            className="mb-3 gap-1.5"
+            render={<Link href="/dashboard" />}
+          >
+            <ArrowLeft className="h-3.5 w-3.5" />
+            {t('dashboard.essay_feedback.back')}
+          </Button>
+          <h1 className="mb-4 text-2xl font-bold tracking-tight text-foreground sm:text-3xl">
+            {t('dashboard.essay_feedback.title')}
+          </h1>
+          <SchoolMarkingRedirect essay={essay} />
+        </div>
+      </div>
+    )
   }
 
   // ── Render ─────────────────────────────────────────────────────────────────

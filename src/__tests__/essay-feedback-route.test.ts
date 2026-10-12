@@ -27,6 +27,12 @@ vi.mock('@/lib/supabase/server', () => ({
   createServerSupabaseClient: () => ({ auth: { getUser: mockGetUser } }),
 }))
 vi.mock('@/lib/course-access', () => ({ hasActiveSubscription: vi.fn().mockResolvedValue(true) }))
+// 12 October 2026: a pupil of a live school is sent to Mark an essay instead.
+// Not a pupil unless a test says so.
+const mockGetPupilSchoolAccess = vi.fn()
+vi.mock('@/lib/school-entitlement', () => ({
+  getPupilSchoolAccess: (...args: unknown[]) => mockGetPupilSchoolAccess(...args),
+}))
 vi.mock('@/lib/consent-check', () => ({
   checkMinorAIConsent: vi.fn().mockResolvedValue({ allowed: true }),
 }))
@@ -119,6 +125,29 @@ beforeEach(() => {
   mockGetUser.mockResolvedValue({ data: { user: { id: UUID, email: null } }, error: null })
   mockFindUnique.mockResolvedValue({ id: 'cuid-test-user' })
   mockEssayCreate.mockResolvedValue({ id: 'essay-1' })
+  mockGetPupilSchoolAccess.mockResolvedValue(null)
+})
+
+describe('a pupil of a live school (12 October 2026)', () => {
+  // This route stores its feedback where no teacher can see it, and Calum
+  // decided a school pupil's teacher reviews their AI feedback. The pages hide
+  // the entry points; this is the backstop for any that were missed.
+  it('is refused with the code the pages switch on, before anything is sent or stored', async () => {
+    mockGetPupilSchoolAccess.mockResolvedValue({ schoolId: 'school-1', aiAuthorised: true })
+    const { status, json } = await post({
+      board: 'AQA',
+      paper: 'Paper 1',
+      questionType: 'Essay',
+      questionText: QUESTION,
+      essay: ESSAY,
+    })
+    expect(status).toBe(403)
+    expect(json.code).toBe('school_pupil_uses_marking')
+    expect(json.error).toContain('/marking/submit')
+    expect(mockGetPupilSchoolAccess).toHaveBeenCalledWith(UUID)
+    expect(mockCreate).not.toHaveBeenCalled()
+    expect(mockEssayCreate).not.toHaveBeenCalled()
+  })
 })
 
 afterEach(() => {

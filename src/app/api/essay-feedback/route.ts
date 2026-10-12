@@ -32,6 +32,8 @@ import {
 } from '@/lib/api-response'
 import { checkMinorAIConsent } from '@/lib/consent-check'
 import { hasActiveSubscription } from '@/lib/course-access'
+import { getPupilSchoolAccess } from '@/lib/school-entitlement'
+import { SCHOOL_MARKING_PATH, SCHOOL_MARKING_ROUTE_CODE } from '@/lib/marking/school-route'
 import {
   enforceTrialAllowance,
   refundTrialAllowance,
@@ -202,6 +204,18 @@ export async function POST(request: NextRequest) {
       return unauthorizedResponse('You must be signed in to use essay feedback.')
     }
 
+    // 1a. A pupil of a live school marks essays through Mark an essay, where
+    //     their teacher can see the work; this route stores its result where
+    //     no teacher can. See src/lib/marking/school-route.ts for why, and
+    //     why it is enforced here as well as hidden in the pages. Asked before
+    //     the paywall so that a school pupil is never told to upgrade.
+    if (await getPupilSchoolAccess(user.id)) {
+      return forbiddenResponse(
+        `Your school marks essays through Mark an essay, so your teacher can see your work. Open ${SCHOOL_MARKING_PATH} to get your feedback.`,
+        { code: SCHOOL_MARKING_ROUTE_CODE },
+      )
+    }
+
     // 1b. Subscription check - essay feedback is a Premium feature
     const isPremium = await hasActiveSubscription(supabase, user.id)
     if (!isPremium) {
@@ -323,6 +337,7 @@ export async function POST(request: NextRequest) {
       consentSnapshot: {
         aiOptOut: false,
         aiProcessingConsentOk: true,
+        parentalConsentBasis: consentCheck.basis,
       },
       ipAddress: request.headers.get('x-forwarded-for'),
     }

@@ -20,6 +20,9 @@ import { AiGeneratedNotice } from '@/components/ai/AiGeneratedNotice'
 import { InlineAIConsentPrompt } from '@/components/consent/InlineAIConsentPrompt'
 import { readConsentRefusal, type AIConsentRefusal } from '@/components/consent/ai-consent-refusal'
 import type { MockQuestionRef, PracticeQuestionRef } from '@/lib/marking/essay-feedback-targets'
+import { SchoolMarkingRedirect } from '@/components/marking/SchoolMarkingRedirect'
+import { isSchoolMarkingRefusal } from '@/lib/marking/school-route'
+import { usePaidAccess } from '@/hooks/usePaidAccess'
 
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
 import { Badge } from '@/components/ui/badge'
@@ -174,6 +177,12 @@ export default function EssayFeedbackInline({
   const [markedAgainst, setMarkedAgainst] = useState<MarkedAgainst | null>(null)
   const [remaining, setRemaining] = useState<number | null>(null)
   const autoSubmitTriggered = useRef(false)
+  // A pupil of a live school marks essays through Mark an essay, where their
+  // teacher sees the work (12 October 2026, src/lib/marking/school-route.ts).
+  // Known up front from /api/user/access, or from the route's own refusal if
+  // the answer had not arrived when the essay was sent.
+  const access = usePaidAccess()
+  const [schoolRefused, setSchoolRefused] = useState(false)
 
   // Use existingAnswer if provided, otherwise use local textarea value
   const essayText = existingAnswer ?? essay
@@ -220,6 +229,10 @@ export default function EssayFeedbackInline({
         // Switched on the machine-readable code, never the status: a 403
         // here also means "not a subscriber" and "AI switched off for this
         // account", and the consent panel must not appear for those.
+        if (isSchoolMarkingRefusal(res.status, data)) {
+          setSchoolRefused(true)
+          return
+        }
         const refusal = readConsentRefusal(res.status, data)
         if (refusal) {
           setConsentRefusal(refusal)
@@ -269,6 +282,11 @@ export default function EssayFeedbackInline({
   }
 
   const canSubmit = wordCount >= 100 && !submitting
+
+  // ── A school pupil: Mark an essay, carrying the answer they have written ──
+  if (access?.schoolPupil || schoolRefused) {
+    return <SchoolMarkingRedirect essay={essayText} className={className} />
+  }
 
   // ── Auto-submit mode: render directly without collapsible wrapper ──
   if (autoSubmit) {
