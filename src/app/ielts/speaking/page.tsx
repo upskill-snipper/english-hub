@@ -36,7 +36,11 @@ import {
 import { useAuthStore } from '@/store/auth-store'
 import { useT } from '@/lib/i18n/use-t'
 import { InlineAIConsentPrompt } from '@/components/consent/InlineAIConsentPrompt'
-import { readConsentRefusal, type AIConsentRefusal } from '@/components/consent/ai-consent-refusal'
+import {
+  isAiOptOutRefusal,
+  readConsentRefusal,
+  type AIConsentRefusal,
+} from '@/components/consent/ai-consent-refusal'
 import { cn } from '@/lib/utils'
 import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
@@ -261,7 +265,7 @@ export default function IeltsSpeakingPage() {
               ? data.error
               : t('ielts.speaking.error.bad_request')
           setError(message)
-          if (res.status === 403) setErrorStep('plans')
+          if (res.status === 403 && !isAiOptOutRefusal(res.status, data)) setErrorStep('plans')
           return
         }
 

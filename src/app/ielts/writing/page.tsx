@@ -39,7 +39,11 @@ import type { Band, CriterionFeedback, TaskFeedback, WritingPrompt } from '@/lib
 import { isAiOptedOut } from '@/lib/ai-preferences'
 import { useT } from '@/lib/i18n/use-t'
 import { InlineAIConsentPrompt } from '@/components/consent/InlineAIConsentPrompt'
-import { readConsentRefusal, type AIConsentRefusal } from '@/components/consent/ai-consent-refusal'
+import {
+  isAiOptOutRefusal,
+  readConsentRefusal,
+  type AIConsentRefusal,
+} from '@/components/consent/ai-consent-refusal'
 import { TrackToggle, useIeltsTrack } from '../_components/TrackToggle'
 import { WRITING_PROMPTS } from './writing-prompts'
 import { WritingChart } from './_components/WritingChart'
@@ -264,7 +268,7 @@ export default function IeltsWritingPage() {
           setIsSubmitting(false)
           return
         }
-        if (res.status === 403) setPaywalled(true)
+        if (res.status === 403 && !isAiOptOutRefusal(res.status, body)) setPaywalled(true)
         if (res.status === 401) setSignInNeeded(true)
         setError(friendlyError(t, res.status, message))
         setIsSubmitting(false)

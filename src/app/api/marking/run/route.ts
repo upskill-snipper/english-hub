@@ -67,6 +67,7 @@ import { cachedSystemBlocks } from '@/lib/ai/cached-system'
 import { logAiDecision, aiAuditTokenUsage } from '@/lib/ai-audit-log'
 import { captureVersions } from '@/lib/marking/versioning-capture'
 import { loadSubmission, applyAiResult, deriveUncertaintyFlags } from '@/lib/marking/persistence'
+import { AI_OPT_OUT_CODE } from '@/lib/consent-codes'
 
 export const dynamic = 'force-dynamic'
 
@@ -288,6 +289,7 @@ export async function POST(request: NextRequest) {
         runByStaff
           ? "AI features are turned off for this pupil's account, so their essay cannot be marked."
           : 'AI features are currently disabled for your account. To re-enable them, visit your privacy settings or ask a parent/guardian to update your preferences.',
+        { code: AI_OPT_OUT_CODE },
       )
     }
 

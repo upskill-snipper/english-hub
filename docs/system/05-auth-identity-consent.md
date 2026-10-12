@@ -194,15 +194,20 @@ An `UNKNOWN` band does **not** raise a guardian request (line 240). We do not kn
 
 403 is also returned for "not a subscriber" and for the Children's Code AI opt-out, so the client cannot infer a consent problem from the status alone. [`src/lib/consent-codes.ts`](../../src/lib/consent-codes.ts) exists for that, and has **no imports on purpose** so both server and client can use it. The values are an API contract: add codes, never rename them.
 
-| Code                             | Set when                        | Client offer                                 |
-| -------------------------------- | ------------------------------- | -------------------------------------------- |
-| `ai_processing_consent_required` | no active `AI_PROCESSING` row   | self-grant, in place                         |
-| `parental_consent_required`      | child with no guardian approval | guardian route only - **never** a self-grant |
-| `date_of_birth_required`         | band `UNKNOWN`                  | ask for the date, then retry                 |
+| Code                             | Set when                        | Client offer                                             |
+| -------------------------------- | ------------------------------- | -------------------------------------------------------- |
+| `ai_processing_consent_required` | no active `AI_PROCESSING` row   | self-grant, in place                                     |
+| `parental_consent_required`      | child with no guardian approval | guardian route only - **never** a self-grant             |
+| `date_of_birth_required`         | band `UNKNOWN`                  | ask for the date, then retry                             |
+| `ai_opted_out`                   | `PrivacySettings.aiOptOut` true | the sentence only: never a plan, never the consent panel |
+
+`ai_opted_out` is a separate constant, `AI_OPT_OUT_CODE`, and deliberately not one of `CONSENT_REFUSAL_CODES`: nothing is missing that the learner could grant on the spot, so `readConsentRefusal` returns null for it and the pages ask `isAiOptOutRefusal` before offering a plan. Added 12 October 2026; until then the opt-out 403 carried no code, and pages that read a 403 with no code as "not a subscriber" offered "See plans" beside "AI features are currently disabled". `src/__tests__/an-ai-opt-out-is-never-sold-a-plan.test.ts` fails if any call to `isAiOptedOutServer` refuses without it.
 
 Routes attach the code only if the gate set one: `forbiddenResponse(reason, code ? {code} : undefined)` ([`mark/route.ts:94-102`](../../src/app/api/mark/route.ts)). A client can therefore never be told the wrong reason.
 
 Every refusal message names a control that actually exists. The previous AI-processing message said "update your consent preferences in settings" and no such control existed anywhere - the consent page could only withdraw, and the ledger could not hold the row in any case ([`consent-check.ts:82-88`](../../src/lib/consent-check.ts)).
+
+**Except the AI opt-out, found 12 October 2026.** Its sentence says "visit your privacy settings or ask a parent/guardian to update your preferences", and nothing in the product can set or clear `aiOptOut`. [`/dashboard/privacy`](../../src/app/dashboard/privacy/page.tsx) has no switch for it, no parent page has one, and the mobile app's switch is stored on the phone only (a TODO in its `app/settings/privacy.tsx` says it should be sent to the server). `PATCH /api/privacy/settings` accepts the field, so only a direct API call can set it, which is why no one has opted out. Adding the switch is a consent-screen change and is the owner's to approve.
 
 ### A defect in the leg next door (fixed 12 October 2026)
 

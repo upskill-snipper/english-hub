@@ -27,7 +27,11 @@ import { CEFR_LABEL } from '@/lib/eal/cefr'
 import type { CEFRAssessmentResult } from '@/lib/eal/assess'
 import { AiGeneratedNotice } from '@/components/ai/AiGeneratedNotice'
 import { InlineAIConsentPrompt } from '@/components/consent/InlineAIConsentPrompt'
-import { readConsentRefusal, type AIConsentRefusal } from '@/components/consent/ai-consent-refusal'
+import {
+  isAiOptOutRefusal,
+  readConsentRefusal,
+  type AIConsentRefusal,
+} from '@/components/consent/ai-consent-refusal'
 
 type Skill = 'writing' | 'speaking'
 
@@ -128,7 +132,7 @@ export function CEFRAssessClient({ slug, skill }: { slug: string; skill: Skill }
           (isAr ? 'حدث خطأ. حاول مرة أخرى.' : 'Something went wrong. Please try again.')
         let kind: ErrState['kind'] = 'generic'
         if (res.status === 401) kind = 'auth'
-        else if (res.status === 403) kind = 'subscription'
+        else if (res.status === 403 && !isAiOptOutRefusal(res.status, data)) kind = 'subscription'
         else if (res.status === 429) kind = 'rate'
         setErr({ kind, message })
         return

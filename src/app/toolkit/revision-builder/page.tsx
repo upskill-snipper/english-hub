@@ -22,7 +22,11 @@ import { getSetTextsForBoard } from '@/lib/board/set-texts'
 import { Badge } from '@/components/ui/badge'
 import { AiGeneratedNotice } from '@/components/ai/AiGeneratedNotice'
 import { InlineAIConsentPrompt } from '@/components/consent/InlineAIConsentPrompt'
-import { readConsentRefusal, type AIConsentRefusal } from '@/components/consent/ai-consent-refusal'
+import {
+  isAiOptOutRefusal,
+  readConsentRefusal,
+  type AIConsentRefusal,
+} from '@/components/consent/ai-consent-refusal'
 import { Button } from '@/components/ui/button'
 import {
   LS_KEYS,
@@ -140,7 +144,7 @@ export default function RevisionBuilderPage() {
           return
         }
         if (res.status === 401) setErrorStep('signin')
-        else if (res.status === 403) setErrorStep('plans')
+        else if (res.status === 403 && !isAiOptOutRefusal(res.status, data)) setErrorStep('plans')
         throw new Error((data as { error?: string } | null)?.error || 'Failed to generate notes')
       }
 

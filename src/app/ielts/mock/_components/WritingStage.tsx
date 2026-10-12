@@ -31,7 +31,11 @@ import { Button } from '@/components/ui/button'
 import { Textarea } from '@/components/ui/textarea'
 import { Tabs, TabsList, TabsTrigger } from '@/components/ui/tabs'
 import { InlineAIConsentPrompt } from '@/components/consent/InlineAIConsentPrompt'
-import { readConsentRefusal, type AIConsentRefusal } from '@/components/consent/ai-consent-refusal'
+import {
+  isAiOptOutRefusal,
+  readConsentRefusal,
+  type AIConsentRefusal,
+} from '@/components/consent/ai-consent-refusal'
 import type {
   Band,
   CriterionFeedback,
@@ -119,6 +123,8 @@ async function scoreTask(
       if (refusal) return { kind: 'refused', refusal }
       persistSubmitted(prompt, trimmed)
       if (res.status === 401) return { kind: 'unscored', nextStep: 'signin' }
+      // The AI opt-out (code ai_opted_out) is never offered a plan.
+      if (res.status === 403 && isAiOptOutRefusal(res.status, body)) return { kind: 'unscored' }
       if (res.status === 403) return { kind: 'unscored', nextStep: 'plans' }
       return { kind: 'unscored' }
     }

@@ -150,7 +150,7 @@ import { EMPTY_RESULTS, type TaskResult } from '@/app/ielts/mock/mock-types'
 import { WRITING_PROMPTS } from '@/app/ielts/writing/writing-prompts'
 import { SPEAKING_CUES } from '@/app/ielts/speaking/speaking-cues'
 import { saveMarkingDraft, clearMarkingDraft } from '@/lib/marking/draft-store'
-import { CONSENT_REFUSAL_CODES } from '@/lib/consent-codes'
+import { AI_OPT_OUT_CODE, CONSENT_REFUSAL_CODES } from '@/lib/consent-codes'
 
 // ─── fetch double ───────────────────────────────────────────────────────
 
@@ -1012,5 +1012,81 @@ describe('the mock band report', () => {
     expect(screen.getByText('No band this time.')).toBeTruthy()
     expect(screen.queryByRole('link', { name: 'Sign in' })).toBeNull()
     expect(screen.queryByRole('link', { name: 'See IELTS plans' })).toBeNull()
+  })
+})
+
+// ─── The AI opt-out (12 October 2026) ───────────────────────────────────
+//
+// Until 12 October the opt-out 403 carried no code, so every page above read
+// it as "not a subscriber" and offered a plan beside "AI features are
+// currently disabled". It now carries 'ai_opted_out', which is not a consent
+// code either: the server's sentence is shown, and nothing is offered.
+
+const OPTED_OUT: Reply = {
+  status: 403,
+  body: {
+    error: 'AI features are currently disabled for your account.',
+    code: AI_OPT_OUT_CODE,
+  },
+}
+
+describe('the AI opt-out, on every page that offers plans', () => {
+  it('/marking/submit shows the sentence, with no plans and no consent panel', async () => {
+    window.history.pushState({}, '', '/marking/submit')
+    responders['/api/submissions'] = OPTED_OUT
+    const { container } = await renderMarkingForm()
+    submitMarkingForm(container)
+
+    expect(await screen.findByText(/AI features are currently disabled/)).toBeTruthy()
+    expect(screen.queryByRole('link', { name: 'See plans' })).toBeNull()
+    expect(screen.queryByRole('region', { name: /date of birth/i })).toBeNull()
+  })
+
+  it('IELTS Writing does not offer the plans', async () => {
+    responders[WRITING_URL] = OPTED_OUT
+    await writeIeltsAndSubmit()
+
+    expect(await screen.findByText(/AI features are currently disabled/)).toBeTruthy()
+    expect(screen.queryByRole('link', { name: 'View Premium plans' })).toBeNull()
+  })
+
+  it('IELTS Speaking does not offer the plans', async () => {
+    responders[SPEAKING_URL] = OPTED_OUT
+    await speakAndSubmit()
+
+    expect(await screen.findByText(/AI features are currently disabled/)).toBeTruthy()
+    expect(screen.queryByRole('link', { name: 'See IELTS plans' })).toBeNull()
+  })
+
+  it('the personal-statement coach does not offer the plans', async () => {
+    responders[STATEMENT_URL] = OPTED_OUT
+    await draftStatementAndSubmit()
+
+    expect(await screen.findByText(/AI features are currently disabled/)).toBeTruthy()
+    expect(screen.queryByRole('link', { name: 'View Premium plans' })).toBeNull()
+  })
+
+  it('the EAL CEFR assessor does not say "Upgrade to Premium"', async () => {
+    responders[CEFR_URL] = OPTED_OUT
+    await assessCefr()
+
+    expect(await screen.findByText(/AI features are currently disabled/)).toBeTruthy()
+    expect(screen.queryByRole('link', { name: 'Upgrade to Premium' })).toBeNull()
+  })
+
+  it('the revision-notes builder does not offer the plans', async () => {
+    responders[NOTES_URL] = OPTED_OUT
+    await generateNotes()
+
+    expect(await screen.findByText(/AI features are currently disabled/)).toBeTruthy()
+    expect(screen.queryByRole('link', { name: 'See plans' })).toBeNull()
+  })
+
+  it('essay feedback does not offer the plans', async () => {
+    responders[FEEDBACK_URL] = OPTED_OUT
+    await requestEssayFeedback()
+
+    expect(await screen.findByText(/AI features are currently disabled/)).toBeTruthy()
+    expect(screen.queryByRole('link', { name: 'See plans' })).toBeNull()
   })
 })

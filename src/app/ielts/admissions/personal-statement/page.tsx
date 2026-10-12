@@ -36,7 +36,11 @@ import { isAiOptedOut } from '@/lib/ai-preferences'
 import { setApplicationPsScores } from '@/lib/ielts/readiness-store'
 import { useT } from '@/lib/i18n/use-t'
 import { InlineAIConsentPrompt } from '@/components/consent/InlineAIConsentPrompt'
-import { readConsentRefusal, type AIConsentRefusal } from '@/components/consent/ai-consent-refusal'
+import {
+  isAiOptOutRefusal,
+  readConsentRefusal,
+  type AIConsentRefusal,
+} from '@/components/consent/ai-consent-refusal'
 
 // ─── Public response contract (kept in sync with the API route) ──────────────
 
@@ -251,7 +255,7 @@ export default function PersonalStatementCoachPage() {
           setIsSubmitting(false)
           return
         }
-        if (res.status === 403) setPaywalled(true)
+        if (res.status === 403 && !isAiOptOutRefusal(res.status, body)) setPaywalled(true)
         if (res.status === 401) setSignInNeeded(true)
         setError(friendlyError(res.status, message, t))
         setIsSubmitting(false)

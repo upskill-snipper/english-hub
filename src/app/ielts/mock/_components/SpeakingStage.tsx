@@ -28,7 +28,11 @@ import { Mic, Check, Loader2, Timer, AlertTriangle } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import { Textarea } from '@/components/ui/textarea'
 import { InlineAIConsentPrompt } from '@/components/consent/InlineAIConsentPrompt'
-import { readConsentRefusal, type AIConsentRefusal } from '@/components/consent/ai-consent-refusal'
+import {
+  isAiOptOutRefusal,
+  readConsentRefusal,
+  type AIConsentRefusal,
+} from '@/components/consent/ai-consent-refusal'
 import type {
   Band,
   CriterionFeedback,
@@ -225,6 +229,16 @@ export default function SpeakingStage({
         }
         if (res.status === 401) {
           recordSubmitted(t('ielts.speaking.error.sign_in'), 'signin')
+          return
+        }
+        // The AI opt-out says so in its own words and is never offered a plan.
+        if (isAiOptOutRefusal(res.status, body)) {
+          const said = (body as { error?: unknown }).error
+          recordSubmitted(
+            typeof said === 'string' && said
+              ? said
+              : t('ielts.mock.speaking.note_service_unavailable'),
+          )
           return
         }
         recordSubmitted(

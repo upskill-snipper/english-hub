@@ -12,7 +12,11 @@ import { isSpecVerified } from '@/lib/marking/examiner/verification'
 import { useT } from '@/lib/i18n/use-t'
 import { DictationButton } from '@/components/speech/DictationButton'
 import { InlineAIConsentPrompt } from '@/components/consent/InlineAIConsentPrompt'
-import { readConsentRefusal, type AIConsentRefusal } from '@/components/consent/ai-consent-refusal'
+import {
+  isAiOptOutRefusal,
+  readConsentRefusal,
+  type AIConsentRefusal,
+} from '@/components/consent/ai-consent-refusal'
 import { markingBoardFor, readSiteBoardCookie } from '@/lib/board/marking-board-map'
 import { PRICING } from '@/constants/pricing'
 import { saveMarkingDraft, takeMarkingDraft } from '@/lib/marking/draft-store'
@@ -188,10 +192,12 @@ function friendlyError(status: number, body: string): string {
  * Which way out of a refusal to offer. Asked only after readConsentRefusal has
  * had its turn, so a 403 carrying a consent code never reaches here and
  * 'upgrade' is left for the 403 with no code ("AI marking is a Premium
- * feature").
+ * feature"). The AI opt-out gets no way out offered at all: its sentence says
+ * what is true, and a plan is the one thing it must not be sold.
  */
-function refusalKindFor(status: number): 'upgrade' | 'signin' | null {
+function refusalKindFor(status: number, body: unknown): 'upgrade' | 'signin' | null {
   if (status === 401) return 'signin'
+  if (isAiOptOutRefusal(status, body)) return null
   if (status === 403) return 'upgrade'
   return null
 }
@@ -457,7 +463,7 @@ export default function SubmitEssayPage() {
         if (refusal) return { consentRefusal: refusal }
         return {
           failed: friendlyError(createRes.status, message),
-          refusalKind: refusalKindFor(createRes.status),
+          refusalKind: refusalKindFor(createRes.status, body),
         }
       }
 
@@ -510,7 +516,7 @@ export default function SubmitEssayPage() {
           if (refusal) return { consentRefusal: refusal }
           return {
             failed: friendlyError(runRes.status, message),
-            refusalKind: refusalKindFor(runRes.status),
+            refusalKind: refusalKindFor(runRes.status, body),
           }
         }
       } catch {
@@ -676,7 +682,7 @@ export default function SubmitEssayPage() {
             setIsSubmitting(false)
             return
           }
-          refuse(refusalKindFor(res.status), friendlyError(res.status, message))
+          refuse(refusalKindFor(res.status, errBody), friendlyError(res.status, message))
           return
         }
 

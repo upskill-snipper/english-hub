@@ -15,6 +15,7 @@ import { checkMinorAIConsent } from '@/lib/consent-check'
 import { isAiOptedOutServer } from '@/lib/ai-preferences'
 import { ANTHROPIC_MODEL } from '@/lib/anthropic-client'
 import { generateTemplateNotes, notesProvenanceFooter } from './notes-template'
+import { AI_OPT_OUT_CODE } from '@/lib/consent-codes'
 
 export const maxDuration = 60
 
@@ -93,6 +94,7 @@ export async function POST(request: NextRequest) {
       {
         error:
           'AI features are currently disabled for your account. To re-enable AI revision notes, visit your privacy settings or ask a parent/guardian to update your preferences.',
+        code: AI_OPT_OUT_CODE,
       },
       { status: 403 },
     )

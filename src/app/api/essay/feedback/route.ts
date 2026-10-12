@@ -33,6 +33,7 @@ import {
 import { applyAllowanceHeaders } from '@/lib/usage/free-allowance'
 import { withArabicDirective, resolveLocaleFromRequest } from '@/lib/i18n/ai-language-directive'
 import { logAiDecision } from '@/lib/ai-audit-log'
+import { AI_OPT_OUT_CODE } from '@/lib/consent-codes'
 
 // ─── Types ──────────────────────────────────────────────────────────────
 
@@ -260,6 +261,7 @@ export async function POST(request: NextRequest) {
     if (aiOptedOut) {
       return forbiddenResponse(
         'AI features are currently disabled for your account. To re-enable AI feedback, visit your privacy settings or ask a parent/guardian to update your preferences.',
+        { code: AI_OPT_OUT_CODE },
       )
     }
 

@@ -39,6 +39,7 @@ import { findEALTopic } from '@/lib/eal/curriculum'
 import { CEFR_PRODUCT_BANDS, type CEFRBand } from '@/lib/eal/cefr'
 import { buildCEFRAssessPrompt, parseCEFRAssessment } from '@/lib/eal/assess'
 import { logAiDecision } from '@/lib/ai-audit-log'
+import { AI_OPT_OUT_CODE } from '@/lib/consent-codes'
 
 export const maxDuration = 60
 
@@ -104,6 +105,7 @@ export async function POST(request: NextRequest) {
     if (aiOptedOut) {
       return forbiddenResponse(
         'AI features are currently disabled for your account. To re-enable AI assessment, visit your privacy settings or ask a parent/guardian to update your preferences.',
+        { code: AI_OPT_OUT_CODE },
       )
     }
 

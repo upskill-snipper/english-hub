@@ -13,7 +13,22 @@
  * showing the server's message as an ordinary error.
  */
 
-import { isConsentRefusalCode, type ConsentRefusalCode } from '@/lib/consent-codes'
+import { isAiOptOutCode, isConsentRefusalCode, type ConsentRefusalCode } from '@/lib/consent-codes'
+
+/**
+ * True when a refusal is the Children's Code AI opt-out (code 'ai_opted_out').
+ *
+ * Callers ask this before offering a plan for a 403 with no consent code: the
+ * learner, or a parent or guardian, switched AI off, and showing "See plans"
+ * beside "AI features are currently disabled" would sell a child something
+ * they have been opted out of (12 October 2026). It is not a consent refusal
+ * either, so readConsentRefusal returns null for it and the consent panel
+ * never appears. Show the server's sentence and nothing more.
+ */
+export function isAiOptOutRefusal(status: number, body: unknown): boolean {
+  if (status !== 403 || !body || typeof body !== 'object') return false
+  return isAiOptOutCode((body as { code?: unknown }).code)
+}
 
 export interface AIConsentRefusal {
   code: ConsentRefusalCode

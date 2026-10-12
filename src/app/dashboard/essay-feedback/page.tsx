@@ -34,7 +34,11 @@ import { cn } from '@/lib/utils'
 import { AiGeneratedNotice } from '@/components/ai/AiGeneratedNotice'
 import { RequestHumanReviewButton } from '@/components/ai/RequestHumanReviewButton'
 import { InlineAIConsentPrompt } from '@/components/consent/InlineAIConsentPrompt'
-import { readConsentRefusal, type AIConsentRefusal } from '@/components/consent/ai-consent-refusal'
+import {
+  isAiOptOutRefusal,
+  readConsentRefusal,
+  type AIConsentRefusal,
+} from '@/components/consent/ai-consent-refusal'
 import { SchoolMarkingRedirect } from '@/components/marking/SchoolMarkingRedirect'
 import { isSchoolMarkingRefusal } from '@/lib/marking/school-route'
 import { usePaidAccess } from '@/hooks/usePaidAccess'
@@ -287,7 +291,7 @@ export default function EssayFeedbackPage() {
         // Only now, with the school and consent codes ruled out, is a 403
         // the paywall.
         if (res.status === 401) setErrorStep('signin')
-        else if (res.status === 403) setErrorStep('plans')
+        else if (res.status === 403 && !isAiOptOutRefusal(res.status, data)) setErrorStep('plans')
         setError(data.error || 'Something went wrong. Please try again.')
         return
       }

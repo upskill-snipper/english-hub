@@ -304,8 +304,9 @@ export default function IeltsDiagnosticPage() {
           return
         }
 
-        // Anything else, including a 403 with no code, which on this free
-        // route can only be the AI opt-out, so it is not dressed up as a plan.
+        // Anything else, including the AI opt-out (code ai_opted_out, the
+        // only 403 this free route sends besides consent), shown as the
+        // server's sentence and never dressed up as a plan.
         const message =
           typeof body.error === 'string' ? body.error : t('ielts.diagnostic.assess.error')
         setState({ status: 'error', error: message })

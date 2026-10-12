@@ -52,6 +52,7 @@ import { SPEAKING_CRITERIA } from '@/lib/ielts/band-descriptors'
 import { roundToBand } from '@/lib/ielts/bands'
 import type { Band, CriterionFeedback, SpeakingCriterion, TaskFeedback } from '@/lib/ielts/types'
 import { IELTS_LIMITS } from '@/constants/ielts-limits'
+import { AI_OPT_OUT_CODE } from '@/lib/consent-codes'
 
 // ─── Request contract ───────────────────────────────────────────────────────
 
@@ -417,6 +418,7 @@ export async function POST(request: NextRequest) {
     if (aiOptedOut) {
       return forbiddenResponse(
         'AI features are currently disabled for your account. To re-enable AI feedback, visit your privacy settings or ask a parent/guardian to update your preferences.',
+        { code: AI_OPT_OUT_CODE },
       )
     }
 

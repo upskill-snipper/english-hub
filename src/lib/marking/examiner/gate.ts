@@ -33,6 +33,7 @@ import {
   EMPTY_TRIAL_GATE,
   type TrialAllowanceGate,
 } from '@/lib/usage/trial-allowance'
+import { AI_OPT_OUT_CODE } from '@/lib/consent-codes'
 
 export interface ExaminerGateOk {
   ok: true
@@ -108,6 +109,7 @@ export async function examinerGate(
         {
           error:
             'AI features are switched off for this account. Turn them back on in your privacy settings to use the examiner marking tool.',
+          code: AI_OPT_OUT_CODE,
         },
         { status: 403 },
       ),
