@@ -168,11 +168,11 @@ Note that a join-code pupil has no `school_members` row, so `getSchoolAccess` re
 
 ### The join-code column mismatch
 
-[`/api/school/join-codes`](../../src/app/api/school/join-codes/route.ts) creates a code with a **`type`** column, and the portal reads `code.type`. [`/api/school/join`](../../src/app/api/school/join/route.ts) branches on **`joinCode.role`**, defaulting to `'student'`.
+[`/api/school/join-codes`](../../src/app/api/school/join-codes/route.ts) creates a code with a **`type`** column, and the portal reads `code.type`. [`/api/school/join`](../../src/app/api/school/join/route.ts) used to branch on **`joinCode.role`**, defaulting to `'student'`.
 
 **Settled on 12 October 2026: production had neither column**, so creating any join code failed. The `information_schema` check showed this. [`20261012_school_join_codes_type.sql`](../../supabase/migrations/20261012_school_join_codes_type.sql) adds `type`, a text column that is either `student` or `teacher` and defaults to `student`.
 
-**Fixed 12 October 2026:** `/api/school/join` now reads `type`. Before that every code redeemed as a pupil code, so a teacher join code enrolled the teacher as a pupil. Only an exact `'teacher'` takes the staff path; anything else, a missing value included, is a pupil code. Note that this lands with the pupil-side school work: until it is deployed, teacher codes still redeem as pupil codes.
+**Fixed 12 October 2026:** `/api/school/join` now reads `type`. Before that every code redeemed as a pupil code, so a teacher join code enrolled the teacher as a pupil. Only an exact `'teacher'` takes the staff path; anything else, a missing value included, is a pupil code. Deployed with the pupil-side school work on 12 October 2026 (5267e704).
 
 **Enrolment no longer writes a subscription (12 October 2026).** The join route and `POST /api/school/classes/[classId]/students` used to write `'pro'` to a pupil's `profiles.subscription_status`; neither does now, because a pupil's access comes from the school's live pilot, checked at use (chapter 06). The class-students route is also staff-only now (admin, head of department, teacher): enrolment confers AI access and, at a school that has recorded its AI authorisation, stands in for a parent's consent, and it used to admit any member, pupils included.
 
