@@ -192,6 +192,17 @@ const COLLOCATION_BANK: Collocation[] = [
 
 const ROUND_SIZE = 15
 
+/**
+ * The collocation family, shown only once the question has been answered.
+ *
+ * WHAT WAS WRONG (found 13 October 2026). This label sat in a badge beside the
+ * accuracy figure for as long as each question was open. For the 57 make, do,
+ * have and take items the family IS the answer, so "MAKE" appeared above "I
+ * need to ? a decision" and the student only had to press the button with the
+ * same word on it. It now appears with the feedback.
+ * a-collocation-hides-its-answer-until-it-is-given.test.tsx plays a round and
+ * fails if anything outside the options names the answer before it is given.
+ */
 const GROUP_LABEL: Record<CollocationGroup, string> = {
   make: 'MAKE',
   do: 'DO',
@@ -330,10 +341,13 @@ export default function CollocationsChallengePage() {
                 </span>
                 <div className="flex items-center gap-3">
                   <span>{accuracyPct}% accuracy</span>
-                  <span className="inline-flex items-center gap-1 rounded-full border border-primary/30 bg-primary/10 px-2 py-0.5 text-xs font-semibold text-primary">
-                    <Link2 className="size-3" />
-                    {GROUP_LABEL[currentQuestion.collocationGroup]}
-                  </span>
+                  {/* After the answer only: see GROUP_LABEL. */}
+                  {feedback && (
+                    <span className="inline-flex items-center gap-1 rounded-full border border-primary/30 bg-primary/10 px-2 py-0.5 text-xs font-semibold text-primary">
+                      <Link2 className="size-3" />
+                      {GROUP_LABEL[currentQuestion.collocationGroup]}
+                    </span>
+                  )}
                 </div>
               </div>
 

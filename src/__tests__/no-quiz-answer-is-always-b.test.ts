@@ -77,8 +77,18 @@ type McqQuestion = Extract<ObjectiveQuestion, { type: 'mcq' }>
  * survived every rule above. Section 4 drives the real banks through the real
  * marker instead of reading source, and kills them.
  *
- * ELEVEN MUTATIONS RUN, each verified to have altered the file first, all
- * eleven killed:
+ * AND A STORED ANSWER CAN BE CALLED ANYTHING (13 October 2026). Rule 3 knew a
+ * stored answer only by name, so /games/speed-analysis, which marked against
+ * `correctDevice`, was never in scope. It rendered its options as written, the
+ * answer first in 29 of 30 questions, and clicking the first button every time
+ * scored about 97 per cent and a GCSE grade 9. The rule now also recognises the
+ * comparison itself (answerFieldComparison). That brought eighteen surfaces in:
+ * three already exempt, speed-analysis, a teacher's editor, and thirteen games
+ * that shuffle their own options when a round is dealt, each now listed with
+ * the code that does it.
+ *
+ * FOURTEEN MUTATIONS RUN, each verified to have altered the file first, all
+ * fourteen killed:
  *   - shuffleOptionsDeterministic returning its input: section 1 fails at 86.4%.
  *   - the Fisher-Yates bound `i > 0` changed to `i > 1`: the per-slot uniformity
  *     check fails, because position 0 never receives.
@@ -92,6 +102,11 @@ type McqQuestion = Extract<ObjectiveQuestion, { type: 'mcq' }>
  *   - the IELTS wrapper no longer delegating to the shared shuffle.
  *   - the mock rendering its options in authored order again.
  *   - the reading page recording a position instead of the option text.
+ *   - /games/speed-analysis restored exactly as it was before 13 October 2026,
+ *     options as written: "shuffles its options" names it.
+ *   - answerFieldComparison returning null: three tests fail, the dealt-order
+ *     list among them, because its thirteen games fall out of scope.
+ *   - days-months-seasons dealing `q.options` unshuffled.
  */
 
 // ─── 1. The strategy no longer works ───────────────────────────────────────
@@ -395,6 +410,57 @@ const RENDERS_OPTIONS =
  */
 const STORED_INDEX =
   /\b(correctIndex|answerIndex|correctAnswerIndex)\b|\.correct\b|\bcorrect\s*:\s*\d|\b(shownMcqOptions|isSingleAnswerCorrect)\b/
+
+/**
+ * The stored answer again, recognised by what the page does with it rather
+ * than by what it is called.
+ *
+ * THE HOLE (found 13 October 2026). /games/speed-analysis rendered
+ * `currentQ.options.map(` in the order the options were written, with the
+ * right device first in 29 of its 30 questions, and marked `opt ===
+ * currentQ.correctDevice`. Clicking the first button every time scored about
+ * 97 per cent and showed a GCSE grade 9, and this rule never saw the page:
+ * STORED_INDEX knows a stored answer only by name, and `correctDevice` is not
+ * a name it knows. That is the RENDERS_OPTIONS lesson a second time. A list of
+ * names is escaped by the next name nobody listed.
+ *
+ * So a surface is also in scope when the option that a `.map(` over its
+ * options hands to the callback is compared, inside that callback, with a
+ * field of a record: `opt === currentQ.correctDevice`, `option ===
+ * current.answer`, `device === currentQuestion.device`. The field may be called
+ * anything. A comparison with a bare variable, such as `opt === answered`, is
+ * the student's own choice and does not count. A comparison made somewhere
+ * else, in a helper the callback calls, is not seen.
+ */
+const MAPS_OPTIONS =
+  /\b[\w.?[\]]*(?:[Oo]ptions|[Cc]hoices|[Aa]nswers|[Dd]istractors)\b[^\n]{0,40}?\.map\(\s*(?:\(\s*([A-Za-z_$][\w$]*)|([A-Za-z_$][\w$]*)\s*=>|function\s*\(\s*([A-Za-z_$][\w$]*))/g
+const COMPARED = '(?:===|!==|==|!=)'
+/** `a.b`, `a?.b.c`, `list[i].answer`: ends in a named field, and is not a call. */
+const FIELD = '(?<![\\w$.])[\\w$]+[\\w$.?[\\]]*\\.[\\w$]+(?![\\w$.?[\\]]|\\s*\\()'
+
+/** The first such comparison in a file, for the failure message, or null. */
+function answerFieldComparison(body: string): string | null {
+  for (const m of body.matchAll(MAPS_OPTIONS)) {
+    const item = m[1] ?? m[2] ?? m[3]
+    if (!item) continue
+    // The callback runs from the bracket after `.map` to the one closing it.
+    const open = (m.index ?? 0) + m[0].indexOf('.map(') + 4
+    let depth = 0
+    let close = open
+    for (; close < body.length; close++) {
+      if (body[close] === '(') depth++
+      else if (body[close] === ')' && --depth === 0) break
+    }
+    const callback = body.slice(open, close)
+    const own = `(?<![\\w$.])${item.replace(/\$/g, '\\$')}(?:\\??\\.[\\w$]+)*(?![\\w$])`
+    const hit =
+      new RegExp(`${own}\\s*${COMPARED}\\s*${FIELD}`).exec(callback) ??
+      new RegExp(`${FIELD}\\s*${COMPARED}\\s*${own}`).exec(callback)
+    if (hit) return hit[0].replace(/\s+/g, ' ')
+  }
+  return null
+}
+
 const CLICKABLE = /onClick=|onSelect|handleSelect|handleAnswer/
 
 /**
@@ -437,6 +503,53 @@ const KEEPS_ITS_OWN_ORDER: Record<string, string> = {
     'setShuffledOptions(shuffleArray(q.options)) per question, scores against the answer text',
   'src/app/resources/study-tools/quote-tester/page.tsx':
     'buildOptions returns shuffle([correct, ...wrongs]), scores answer === correct (a string)',
+  // Brought into scope by answerFieldComparison on 13 October 2026. It is the
+  // teacher's quiz editor: the button beside each option SETS the answer
+  // (`updateField('correctAnswer', opt)`). Nothing is asked and nothing marked.
+  'src/components/school/QuizBuilder.tsx':
+    'teacher quiz editor - clicking an option sets the answer, nothing is marked',
+}
+
+/**
+ * Surfaces that deal their own option order, brought into scope on 13 October
+ * 2026 when the stored answer stopped needing a particular name.
+ *
+ * Each shuffles its option list with a local shuffle when a round or question
+ * is dealt and marks the option itself, like dictionary-skills above, so there
+ * is no authored order left to give away. Each was read before being listed.
+ * Unlike the prose above, each value is the code that does the shuffling, and
+ * the test asserts it is still there, so an entry cannot outlive its reason.
+ *
+ * The difference to check before adding a line: speed-analysis also called a
+ * local shuffle, on its QUESTION pool (`shuffle(QUESTIONS)`), and rendered every
+ * question's options as written. A shuffle in the file proves nothing until
+ * you have seen what it shuffles.
+ */
+const SHUFFLED_WHEN_DEALT: Record<string, string[]> = {
+  'src/app/games/classroom-objects/page.tsx': [
+    'options: shuffle(PREP_OPTIONS)',
+    'options: shuffle([item.word, ...item.distractors])',
+  ],
+  'src/app/games/collocations-challenge/page.tsx': ['picked.map((q) => shuffle(q.options))'],
+  'src/app/games/comparatives-superlatives/page.tsx': ['return shuffle([answer, ...picked])'],
+  'src/app/games/days-months-seasons/page.tsx': ['options: shuffle(q.options)'],
+  'src/app/games/figurative-language-finder/page.tsx': [
+    'return shuffle([correct, ...distractors])',
+  ],
+  'src/app/games/numbers-and-time/page.tsx': [
+    'options: shuffle([item.answer, ...item.distractors])',
+  ],
+  'src/app/games/phrasal-verbs-match/page.tsx': [
+    'return shuffle([currentQuestion.meaning, ...currentQuestion.distractors])',
+  ],
+  'src/app/games/picture-word-match/page.tsx': [
+    'options: shuffle([item.word, ...item.distractors])',
+  ],
+  'src/app/games/prefix-suffix-lab/page.tsx': ['return shuffle([answer, ...distractors])'],
+  'src/app/games/prepositions-of-place/page.tsx': ['options: shuffle(q.options)'],
+  'src/app/games/quote-detective/page.tsx': ['return shuffle([correctText, ...wrong])'],
+  'src/app/games/vocabulary-builder/page.tsx': ['return shuffle(opts)'],
+  'src/app/games/word-class-sorter/page.tsx': ['return shuffle([correct, ...distractors])'],
 }
 
 function inScope(): string[] {
@@ -445,7 +558,11 @@ function inScope(): string[] {
     .filter((f) => f.endsWith('.tsx') && !f.startsWith('src/__tests__/'))
     .filter((f) => {
       const body = code(readFileSync(f, 'utf8'))
-      return RENDERS_OPTIONS.test(body) && STORED_INDEX.test(body) && CLICKABLE.test(body)
+      return (
+        RENDERS_OPTIONS.test(body) &&
+        CLICKABLE.test(body) &&
+        (STORED_INDEX.test(body) || answerFieldComparison(body) !== null)
+      )
     })
     .sort()
 }
@@ -473,9 +590,26 @@ describe('every surface that marks a clicked option', () => {
       'src/app/learn/[courseId]/[moduleId]/client-page.tsx',
       'src/app/learn/[courseId]/assessment/client-page.tsx',
       'src/app/resources/teaching/assessment/page.tsx',
+      'src/app/games/speed-analysis/page.tsx',
     ]) {
       expect(found, `${must} dropped out of scope`).toContain(must)
     }
+  })
+
+  it('and recognises a stored answer whatever it is called', () => {
+    // The render that escaped until 13 October 2026, as /games/speed-analysis
+    // had it. Kept here because the page itself no longer has this shape.
+    const escaped = [
+      '{currentQ.options.map((opt) => {',
+      '  const isCorrect = opt === currentQ.correctDevice',
+      '  return <button onClick={() => handleAnswer(opt)}>{opt}</button>',
+      '})}',
+    ].join('\n')
+    expect(STORED_INDEX.test(escaped), 'this no longer tests the field rule').toBe(false)
+    expect(answerFieldComparison(escaped)).toBe('opt === currentQ.correctDevice')
+    // The student's own choice is not a stored answer, and nor is a method call.
+    expect(answerFieldComparison('{options.map((o) => (o === answered ? 1 : 0))}')).toBeNull()
+    expect(answerFieldComparison('{options.map((o) => o === t.format(o))}')).toBeNull()
   })
 
   it('shuffles its options', () => {
@@ -501,7 +635,7 @@ describe('every surface that marks a clicked option', () => {
       (/from '@\/lib\/games\/quest\/deal'/.test(src) && /\bdealt\.options\b/.test(src))
 
     const offences = inScope()
-      .filter((f) => !(f in KEEPS_ITS_OWN_ORDER))
+      .filter((f) => !(f in KEEPS_ITS_OWN_ORDER) && !(f in SHUFFLED_WHEN_DEALT))
       .filter((f) => {
         const src = readFileSync(f, 'utf8')
         return (
@@ -511,6 +645,23 @@ describe('every surface that marks a clicked option', () => {
         )
       })
     expect(offences).toEqual([])
+  })
+
+  it('or deals its own order, and still does', () => {
+    // An entry for a file out of scope excuses nothing. None of these names
+    // its answer in a way STORED_INDEX knows, so this is also what holds
+    // answerFieldComparison to the thirteen surfaces it found.
+    const found = inScope()
+    for (const [file, shuffles] of Object.entries(SHUFFLED_WHEN_DEALT)) {
+      expect(found, `${file} is listed but no longer in scope`).toContain(file)
+      // Whitespace removed, so a reformat does not read as a deletion.
+      const body = code(readFileSync(file, 'utf8')).replace(/\s+/g, '')
+      for (const shuffle of shuffles) {
+        expect(body, `${file} no longer deals with ${shuffle}`).toContain(
+          shuffle.replace(/\s+/g, ''),
+        )
+      }
+    }
   })
 
   it('and never compares a clicked position against the stored index', () => {
@@ -550,7 +701,7 @@ describe('every surface that marks a clicked option', () => {
     // An allow-list entry for a file that no longer exists is a rule nobody is
     // enforcing and nobody can see is gone.
     const tracked = new Set(execSync('git ls-files src', { encoding: 'utf8' }).split('\n'))
-    for (const file of Object.keys(KEEPS_ITS_OWN_ORDER)) {
+    for (const file of [...Object.keys(KEEPS_ITS_OWN_ORDER), ...Object.keys(SHUFFLED_WHEN_DEALT)]) {
       expect(tracked.has(file), `${file} is exempted but not tracked`).toBe(true)
     }
   })

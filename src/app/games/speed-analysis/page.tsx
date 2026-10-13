@@ -1,6 +1,6 @@
 'use client'
 
-import { useState, useCallback, useEffect, useRef } from 'react'
+import { useState, useCallback, useEffect, useMemo, useRef } from 'react'
 import Link from 'next/link'
 import GameShell, { type GameState } from '@/components/games/GameShell'
 import { Button } from '@/components/ui/button'
@@ -8,6 +8,7 @@ import { cn } from '@/lib/utils'
 import { ArrowLeft, Clock, Sparkles } from 'lucide-react'
 import { useBoard } from '@/hooks/useBoard'
 import { getBoardConfig } from '@/lib/board/board-store'
+import { shuffledOptionsFor, newSessionSalt } from '@/lib/quiz/shuffle'
 
 // ─── Data ──────────────────────────────────────────────────────────────────────
 
@@ -211,6 +212,7 @@ const QUESTIONS: AnalysisQuestion[] = [
 
 const SECONDS_PER_QUESTION = 30
 const QUESTIONS_PER_ROUND = 20
+const PROMPT = 'What literary device is being used?'
 
 // ─── Helpers ───────────────────────────────────────────────────────────────────
 
@@ -235,9 +237,37 @@ export default function SpeedAnalysisPage() {
   const [score, setScore] = useState(0)
   const [answered, setAnswered] = useState<string | null>(null)
   const [timer, setTimer] = useState(SECONDS_PER_QUESTION)
+  const [sessionSalt, setSessionSalt] = useState('')
   const timerRef = useRef<ReturnType<typeof setInterval> | null>(null)
 
   const currentQ = questions[qIdx] ?? null
+
+  /**
+   * The options as the student sees them, plus the right device's VALUE.
+   *
+   * WHAT WAS WRONG (found 13 October 2026). The QUESTION pool was shuffled and
+   * each question's OPTIONS were rendered as written, with the right device
+   * first in 29 of the 30 questions and second in the other. A student who
+   * clicked the first button every time, reading nothing, scored about 97 per
+   * cent and was shown a GCSE grade 9. Marking was already by value; the order
+   * alone gave the answer away. The options are now shuffled per attempt, and
+   * a click is marked by the option itself against `view.correctValue`, never
+   * by where it sits.
+   */
+  const view = useMemo(
+    () =>
+      currentQ
+        ? shuffledOptionsFor(
+            currentQ.options,
+            currentQ.options.indexOf(currentQ.correctDevice),
+            // A question has no id, and no two extracts are the same.
+            `speed|${currentQ.extract}`,
+            sessionSalt,
+            PROMPT,
+          )
+        : { options: [] as string[], correctValue: '' },
+    [currentQ, sessionSalt],
+  )
 
   // Timer countdown per question
   useEffect(() => {
@@ -258,6 +288,9 @@ export default function SpeedAnalysisPage() {
   }, [gameState, qIdx, answered])
 
   const handleStart = useCallback(() => {
+    // Minted here rather than during render: newSessionSalt calls Math.random,
+    // which would not agree between the server and client paint.
+    setSessionSalt(newSessionSalt())
     const shuffled = shuffle(QUESTIONS).slice(0, QUESTIONS_PER_ROUND)
     setQuestions(shuffled)
     setQIdx(0)
@@ -277,7 +310,7 @@ export default function SpeedAnalysisPage() {
       if (answered) return
       if (timerRef.current) clearInterval(timerRef.current)
       setAnswered(choice)
-      if (choice && currentQ && choice === currentQ.correctDevice) {
+      if (choice && choice === view.correctValue) {
         setScore((s) => s + 1)
       }
       // Auto-advance after a short delay
@@ -291,7 +324,7 @@ export default function SpeedAnalysisPage() {
         }
       }, 1200)
     },
-    [answered, currentQ, qIdx, questions.length],
+    [answered, view.correctValue, qIdx, questions.length],
   )
 
   const timerColor =
@@ -356,14 +389,12 @@ export default function SpeedAnalysisPage() {
                 <p className="mt-2 text-xs text-muted-foreground">{currentQ.source}</p>
               </div>
 
-              <p className="text-center text-sm font-semibold text-muted-foreground">
-                What literary device is being used?
-              </p>
+              <p className="text-center text-sm font-semibold text-muted-foreground">{PROMPT}</p>
 
               {/* Options */}
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-                {currentQ.options.map((opt) => {
-                  const isCorrect = opt === currentQ.correctDevice
+                {view.options.map((opt) => {
+                  const isCorrect = opt === view.correctValue
                   const isChosen = opt === answered
                   let optClass = 'border-border hover:border-primary/50 hover:bg-primary/5'
                   if (answered) {

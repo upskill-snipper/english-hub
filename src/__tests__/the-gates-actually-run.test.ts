@@ -266,10 +266,17 @@ describe('what the suite runs in', () => {
     // screens are tested in the node environment, in
     // a-quest-scores-and-remembers-what-it-says.test.ts and
     // a-text-quest-is-built-from-checked-material.test.ts.
+    //
+    // Then to 32 on 13 October 2026 for
+    // a-collocation-hides-its-answer-until-it-is-given.test.tsx. The
+    // Collocations Challenge named each verb item's answer in a badge while the
+    // question was open. A question exists only once Start has been clicked
+    // and a round dealt, so rendered to a string the page is idle, shows no
+    // question at all, and the page with the badge passes.
     expect(
       annotated.length,
       'more files now claim to need a DOM - check each one',
-    ).toBeLessThanOrEqual(31)
+    ).toBeLessThanOrEqual(32)
   })
 })
 
