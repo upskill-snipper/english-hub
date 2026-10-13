@@ -52,6 +52,7 @@ import { cn } from '@/lib/utils'
 import { textGamesHref } from '@/lib/revision/text-games-href'
 import type { Band, GameAnalytics, SkillStat, TextStat, Trend } from '@/lib/game-results/analytics'
 import type { NextStep } from '@/lib/game-results/next-steps'
+import { CoachCard, type CoachState } from '@/components/learning/CoachCard'
 import { SKILL_GROUPS, isQuestKind } from '@/lib/game-results/skills'
 
 export interface AnalyticsPayload {
@@ -59,6 +60,8 @@ export interface AnalyticsPayload {
   names: Record<string, string>
   suggestions: { allowed: boolean }
   nextSteps: NextStep[] | null
+  /** Present only with suggestions on: the AI coach card's state. */
+  coach?: CoachState | null
 }
 
 type T = (key: string) => string
@@ -701,7 +704,7 @@ export function GameAnalyticsBody({
   )
 }
 
-export default function GameAnalyticsView({ coach }: { coach?: ReactNode }) {
+export default function GameAnalyticsView() {
   const t = useT()
   const [data, setData] = useState<AnalyticsPayload | null>(null)
   const [state, setState] = useState<'loading' | 'ready' | 'error'>('loading')
@@ -795,6 +798,20 @@ export default function GameAnalyticsView({ coach }: { coach?: ReactNode }) {
   }
 
   return (
-    <GameAnalyticsBody data={data} t={t} onSuggestionsChanged={() => void load()} coach={coach} />
+    <GameAnalyticsBody
+      data={data}
+      t={t}
+      onSuggestionsChanged={() => void load()}
+      coach={
+        data.suggestions.allowed && data.coach ? (
+          <CoachCard
+            state={data.coach}
+            answered={data.analytics.totals.answered}
+            t={t}
+            onWritten={() => {}}
+          />
+        ) : undefined
+      }
+    />
   )
 }

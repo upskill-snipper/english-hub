@@ -8260,7 +8260,8 @@ export const ES_MESSAGES: Record<string, string> = {
   'legal_long.privacy.s2.learn_li1':
     'Progreso en los cursos, resultados de cuestionarios y exámenes de prueba y, cuando ha iniciado sesión, sus respuestas en los juegos de repaso: qué preguntas acertó o falló y, si eligió una opción equivocada de una lista, cuál eligió. Nunca nada de lo que escriba en un juego.',
   'legal_long.privacy.s2.learn_li2': 'Ensayos y respuestas escritas enviadas',
-  'legal_long.privacy.s2.learn_li3': 'Retroalimentación generada por IA sobre su trabajo',
+  'legal_long.privacy.s2.learn_li3':
+    'Retroalimentación generada por IA sobre su trabajo, incluido, cuando lo pida, un informe del coach escrito a partir de sus resultados en los juegos (solo cifras: nunca su nombre, su correo ni nada de lo que haya escrito)',
   'legal_long.privacy.s2.learn_li4': 'Tiempo dedicado a las actividades de aprendizaje',
   'legal_long.privacy.s2.h3_billing': 'Información de facturación',
   'legal_long.privacy.s2.bill_li1':
@@ -21079,9 +21080,29 @@ export const ES_MESSAGES: Record<string, string> = {
   'ga.next.link.game': 'Jugar',
   'ga.next.link.quests': 'Elegir un texto',
   'ga.next.learn': 'Apréndelo antes',
+  'ga.coach.title': 'Tu coach de IA',
+  'ga.coach.lead':
+    'Un informe breve sobre tus resultados: qué va bien, qué trabajar y qué hacer después en la web.',
+  'ga.coach.ask': 'Escribe mi informe',
+  'ga.coach.again': 'Escribe un informe nuevo',
+  'ga.coach.writing': 'Escribiendo tu informe. Puede tardar hasta un minuto.',
+  'ga.coach.strengths': 'Va bien',
+  'ga.coach.work_on': 'Para trabajar',
+  'ga.coach.next': 'Qué hacer ahora',
+  'ga.coach.go': 'Ir allí',
+  'ga.coach.label':
+    'Escrito por IA el {date} a partir de tus resultados en los juegos ({n} preguntas respondidas). Ninguna persona lo ha revisado y no es una predicción de ningún resultado de examen.',
+  'ga.coach.needs_plan':
+    'El coach de IA forma parte de un plan o llega a través de tu colegio. Tus resultados y su análisis siguen siendo gratis.',
+  'ga.coach.plans': 'Sobre los planes',
+  'ga.coach.too_few':
+    'El coach necesita al menos {n} preguntas respondidas para escribir un informe útil. Llevas {have}.',
+  'ga.coach.cooldown':
+    'Puedes pedir un informe nuevo al día. El siguiente estará disponible a partir del {time}.',
+  'ga.coach.failed': 'El coach no ha podido escribir un informe ahora. Inténtalo más tarde.',
   'ga.suggest.off_title': 'Las sugerencias están desactivadas',
   'ga.suggest.off_body':
-    'Podemos sugerirte qué repasar a continuación a partir de tus resultados. Para ello usamos tus resultados para preparar sugerencias solo para ti, así que está desactivado hasta que lo actives. Puedes desactivarlo de nuevo cuando quieras, y tus resultados se quedan igual.',
+    'Podemos sugerirte qué repasar a continuación a partir de tus resultados y, con un plan o a través de tu colegio, el coach de IA puede escribirte un informe. Para ello usamos tus resultados para preparar sugerencias solo para ti, así que está desactivado hasta que lo actives. Puedes desactivarlo de nuevo cuando quieras, y tus resultados se quedan igual.',
   'ga.suggest.turn_on': 'Activar sugerencias',
   'ga.suggest.turn_off': 'Desactivar sugerencias',
   'ga.suggest.on_note':

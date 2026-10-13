@@ -5,6 +5,8 @@ import { readRounds } from '@/lib/game-results/store'
 import { analyseRounds } from '@/lib/game-results/analytics'
 import { nextSteps } from '@/lib/game-results/next-steps'
 import { activityNames } from '@/lib/game-results/names'
+import { hasActiveSubscription } from '@/lib/course-access'
+import { COACH_COOLDOWN_HOURS, COACH_MIN_ANSWERS, type CoachReport } from '@/lib/game-results/coach'
 
 export const dynamic = 'force-dynamic'
 
@@ -57,6 +59,33 @@ export async function GET() {
     allowed = false
   }
 
+  // The coach card: the latest report the student asked for, and whether
+  // they could ask for one. Reads only: the consent gate, which can email a
+  // guardian, runs when the student actually asks (POST /api/games/coach).
+  let latest: { report: CoachReport; createdAt: string; answersUsed: number } | null = null
+  let planned = false
+  if (allowed) {
+    try {
+      const { data } = await createServiceRoleClient()
+        .from('coach_reports')
+        .select('report, created_at, answers_used')
+        .eq('user_id', user.id)
+        .eq('audience', 'student')
+        .order('created_at', { ascending: false })
+        .limit(1)
+        .maybeSingle<{ report: CoachReport; created_at: string; answers_used: number }>()
+      if (data)
+        latest = { report: data.report, createdAt: data.created_at, answersUsed: data.answers_used }
+    } catch {
+      latest = null
+    }
+    try {
+      planned = await hasActiveSubscription(supabase, user.id)
+    } catch {
+      planned = false
+    }
+  }
+
   const steps = allowed ? nextSteps(analytics) : null
   const stepGames = (steps ?? []).flatMap((s) =>
     typeof s.params.game === 'string' ? [s.params.game] : [],
@@ -68,6 +97,9 @@ export async function GET() {
       names: activityNames(analytics, stepGames),
       suggestions: { allowed },
       nextSteps: steps,
+      coach: allowed
+        ? { latest, planned, minAnswers: COACH_MIN_ANSWERS, cooldownHours: COACH_COOLDOWN_HOURS }
+        : null,
     },
     { headers: { 'Cache-Control': 'no-store' } },
   )

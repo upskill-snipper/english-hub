@@ -1067,10 +1067,11 @@ export const LEGAL_LONG_DICTIONARY: Dictionary = {
     ar: 'المقالات والإجابات المكتوبة المُقدَّمة',
     es: 'Ensayos y respuestas escritas enviadas',
   },
+  // 13 October 2026: the games' AI coach (src/app/api/games/coach).
   'legal_long.privacy.s2.learn_li3': {
-    en: 'AI-generated feedback on your work',
-    ar: 'التقييم المُولَّد بالذكاء الاصطناعي على عملك',
-    es: 'Retroalimentación generada por IA sobre su trabajo',
+    en: 'AI-generated feedback on your work, including, when you ask for it, a coach report written from your game results (figures only: never your name, email or anything you typed)',
+    ar: 'التقييم المُولَّد بالذكاء الاصطناعي على عملك، ويشمل، عند طلبك، تقرير مدرّب يُكتب من نتائجك في الألعاب (أرقام فقط: لا اسمك ولا بريدك الإلكتروني ولا أي شيء كتبته)',
+    es: 'Retroalimentación generada por IA sobre su trabajo, incluido, cuando lo pida, un informe del coach escrito a partir de sus resultados en los juegos (solo cifras: nunca su nombre, su correo ni nada de lo que haya escrito)',
   },
   'legal_long.privacy.s2.learn_li4': {
     en: 'Time spent on learning activities',

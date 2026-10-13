@@ -7,6 +7,7 @@ vi.mock('@/lib/supabase/server', () => ({
 }))
 vi.mock('@/lib/rate-limit', () => ({ rateLimit: vi.fn() }))
 vi.mock('@/lib/game-results/store', () => ({ readRounds: vi.fn() }))
+vi.mock('@/lib/course-access', () => ({ hasActiveSubscription: vi.fn(async () => true) }))
 
 import { GET } from './route'
 import { createServerSupabaseClient, createServiceRoleClient } from '@/lib/supabase/server'
@@ -92,6 +93,19 @@ describe('GET /api/games/analytics', () => {
     expect(body.nextSteps).toBeNull()
     // The analysis itself is still there: it describes, it does not suggest.
     expect(body.analytics.workOn.length).toBeGreaterThan(0)
+  })
+
+  it('gives the coach card nothing while suggestions are off', async () => {
+    signedIn(ACCOUNT)
+    suggestions(false)
+    expect((await (await GET()).json()).coach).toBeNull()
+  })
+
+  it('gives the coach card its plan status once suggestions are on', async () => {
+    signedIn(ACCOUNT)
+    suggestions(true)
+    const coach = (await (await GET()).json()).coach
+    expect(coach).toMatchObject({ planned: true, minAnswers: 20, cooldownHours: 20 })
   })
 
   it('gives next steps once they are on', async () => {

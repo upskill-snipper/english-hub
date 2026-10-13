@@ -150,6 +150,9 @@ export type AiAuditFeature =
   | 'examiner/transcribe'
   | 'examiner/mark'
   | 'examiner/split'
+  // 13 October 2026: the games coach (src/app/api/games/coach). Figures about
+  // a student's game answers in, a short feedback report out.
+  | 'games/coach'
 
 /** Token usage, when the SDK surfaces it (streaming/raw-fetch paths may not). */
 export interface AiAuditTokenUsage {

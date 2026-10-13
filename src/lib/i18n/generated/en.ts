@@ -8065,7 +8065,8 @@ export const EN_MESSAGES: Record<string, string> = {
   'legal_long.privacy.s2.learn_li1':
     'Course progress, quiz and mock-exam results, and, when you are signed in, your answers in the revision games: which questions you got right or wrong and, for a wrong choice from a list, the option you chose. Never anything you type into a game.',
   'legal_long.privacy.s2.learn_li2': 'Essay and written-response submissions',
-  'legal_long.privacy.s2.learn_li3': 'AI-generated feedback on your work',
+  'legal_long.privacy.s2.learn_li3':
+    'AI-generated feedback on your work, including, when you ask for it, a coach report written from your game results (figures only: never your name, email or anything you typed)',
   'legal_long.privacy.s2.learn_li4': 'Time spent on learning activities',
   'legal_long.privacy.s2.h3_billing': 'Billing information',
   'legal_long.privacy.s2.bill_li1':
@@ -20563,9 +20564,29 @@ export const EN_MESSAGES: Record<string, string> = {
   'ga.next.link.game': 'Play',
   'ga.next.link.quests': 'Choose a set text',
   'ga.next.learn': 'Learn it first',
+  'ga.coach.title': 'Your AI coach',
+  'ga.coach.lead':
+    'A short report on your results: what is going well, what to work on, and what to do next on the site.',
+  'ga.coach.ask': 'Write my report',
+  'ga.coach.again': 'Write a new report',
+  'ga.coach.writing': 'Writing your report. This can take up to a minute.',
+  'ga.coach.strengths': 'Going well',
+  'ga.coach.work_on': 'To work on',
+  'ga.coach.next': 'What to do next',
+  'ga.coach.go': 'Go there',
+  'ga.coach.label':
+    'Written by AI on {date} from your results in the games ({n} answered questions). No person has checked it, and it is not a prediction of any exam result.',
+  'ga.coach.needs_plan':
+    'The AI coach is part of a plan, or comes through your school. Your results and their analysis above are free.',
+  'ga.coach.plans': 'About plans',
+  'ga.coach.too_few':
+    'The coach needs at least {n} answered questions to write a useful report. You have answered {have} so far.',
+  'ga.coach.cooldown':
+    'You can ask for one new report a day. The next one is available from {time}.',
+  'ga.coach.failed': 'The coach could not write a report just now. Try again later.',
   'ga.suggest.off_title': 'Suggestions are switched off',
   'ga.suggest.off_body':
-    'We can suggest what to revise next from your results above. To do that we use your results to work out suggestions just for you, so this stays off until you switch it on. You can switch it off again at any time, and your results stay either way.',
+    'We can suggest what to revise next from your results above, and with a plan or school access the AI coach can write you a report. To do that we use your results to work out suggestions just for you, so this stays off until you switch it on. You can switch it off again at any time, and your results stay either way.',
   'ga.suggest.turn_on': 'Switch suggestions on',
   'ga.suggest.turn_off': 'Switch suggestions off',
   'ga.suggest.on_note': 'Suggestions are on. They are worked out from your results only.',

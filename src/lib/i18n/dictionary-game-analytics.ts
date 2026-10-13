@@ -340,6 +340,55 @@ export const GAME_ANALYTICS_DICTIONARY: Record<string, { en: string; ar?: string
   'ga.next.link.quests': { en: 'Choose a set text', ar: 'اختر نص مقرر', es: 'Elegir un texto' },
   'ga.next.learn': { en: 'Learn it first', ar: 'تعلّمها أول', es: 'Apréndelo antes' },
 
+  // ── The AI coach (POST /api/games/coach; src/components/learning/CoachCard.tsx)
+  'ga.coach.title': { en: 'Your AI coach', ar: 'مدرّبك بالذكاء الاصطناعي', es: 'Tu coach de IA' },
+  'ga.coach.lead': {
+    en: 'A short report on your results: what is going well, what to work on, and what to do next on the site.',
+    ar: 'تقرير قصير عن نتايجك: شنو ماشي زين، وعلى شنو تشتغل، وشنو تسوي بعدين في الموقع.',
+    es: 'Un informe breve sobre tus resultados: qué va bien, qué trabajar y qué hacer después en la web.',
+  },
+  'ga.coach.ask': { en: 'Write my report', ar: 'اكتب تقريري', es: 'Escribe mi informe' },
+  'ga.coach.again': {
+    en: 'Write a new report',
+    ar: 'اكتب تقرير جديد',
+    es: 'Escribe un informe nuevo',
+  },
+  'ga.coach.writing': {
+    en: 'Writing your report. This can take up to a minute.',
+    ar: 'جاري كتابة تقريرك. ممكن ياخذ لين دقيقة.',
+    es: 'Escribiendo tu informe. Puede tardar hasta un minuto.',
+  },
+  'ga.coach.strengths': { en: 'Going well', ar: 'ماشي زين', es: 'Va bien' },
+  'ga.coach.work_on': { en: 'To work on', ar: 'تحتاج شغل', es: 'Para trabajar' },
+  'ga.coach.next': { en: 'What to do next', ar: 'شنو تسوي بعدين', es: 'Qué hacer ahora' },
+  'ga.coach.go': { en: 'Go there', ar: 'روح لها', es: 'Ir allí' },
+  'ga.coach.label': {
+    en: 'Written by AI on {date} from your results in the games ({n} answered questions). No person has checked it, and it is not a prediction of any exam result.',
+    ar: 'كتبه الذكاء الاصطناعي في {date} من نتايجك في الألعاب ({n} سؤال جاوبته). ما راجعه أي شخص، وهو مو توقّع لأي نتيجة امتحان.',
+    es: 'Escrito por IA el {date} a partir de tus resultados en los juegos ({n} preguntas respondidas). Ninguna persona lo ha revisado y no es una predicción de ningún resultado de examen.',
+  },
+  'ga.coach.needs_plan': {
+    en: 'The AI coach is part of a plan, or comes through your school. Your results and their analysis above are free.',
+    ar: 'المدرّب بالذكاء الاصطناعي جزء من الاشتراك، أو يجيك عن طريق مدرستك. نتايجك وتحليلها اللي فوق ببلاش.',
+    es: 'El coach de IA forma parte de un plan o llega a través de tu colegio. Tus resultados y su análisis siguen siendo gratis.',
+  },
+  'ga.coach.plans': { en: 'About plans', ar: 'عن الاشتراكات', es: 'Sobre los planes' },
+  'ga.coach.too_few': {
+    en: 'The coach needs at least {n} answered questions to write a useful report. You have answered {have} so far.',
+    ar: 'المدرّب يحتاج على الأقل {n} سؤال مجاوب عشان يكتب تقرير مفيد. جاوبت {have} للحين.',
+    es: 'El coach necesita al menos {n} preguntas respondidas para escribir un informe útil. Llevas {have}.',
+  },
+  'ga.coach.cooldown': {
+    en: 'You can ask for one new report a day. The next one is available from {time}.',
+    ar: 'تقدر تطلب تقرير جديد واحد كل يوم. التقرير الجاي متوفر من {time}.',
+    es: 'Puedes pedir un informe nuevo al día. El siguiente estará disponible a partir del {time}.',
+  },
+  'ga.coach.failed': {
+    en: 'The coach could not write a report just now. Try again later.',
+    ar: 'المدرّب ما قدر يكتب تقرير الحين. جرّب بعدين.',
+    es: 'El coach no ha podido escribir un informe ahora. Inténtalo más tarde.',
+  },
+
   // ── The suggestions switch (PUT /api/games/suggestions) ─────────────────
   'ga.suggest.off_title': {
     en: 'Suggestions are switched off',
@@ -347,9 +396,9 @@ export const GAME_ANALYTICS_DICTIONARY: Record<string, { en: string; ar?: string
     es: 'Las sugerencias están desactivadas',
   },
   'ga.suggest.off_body': {
-    en: 'We can suggest what to revise next from your results above. To do that we use your results to work out suggestions just for you, so this stays off until you switch it on. You can switch it off again at any time, and your results stay either way.',
-    ar: 'نقدر نقترح عليك شنو تراجع بعدين من نتايجك اللي فوق. عشان نسوي هذا نستخدم نتايجك ونطلع اقتراحات خاصة فيك، فيبقى مطفي لين تشغّله انت. تقدر تطفيه مرة ثانية متى ما بغيت، ونتايجك تبقى في الحالتين.',
-    es: 'Podemos sugerirte qué repasar a continuación a partir de tus resultados. Para ello usamos tus resultados para preparar sugerencias solo para ti, así que está desactivado hasta que lo actives. Puedes desactivarlo de nuevo cuando quieras, y tus resultados se quedan igual.',
+    en: 'We can suggest what to revise next from your results above, and with a plan or school access the AI coach can write you a report. To do that we use your results to work out suggestions just for you, so this stays off until you switch it on. You can switch it off again at any time, and your results stay either way.',
+    ar: 'نقدر نقترح عليك شنو تراجع بعدين من نتايجك اللي فوق، ومع الاشتراك أو عن طريق المدرسة يقدر المدرّب بالذكاء الاصطناعي يكتب لك تقرير. عشان نسوي هذا نستخدم نتايجك ونطلع اقتراحات خاصة فيك، فيبقى مطفي لين تشغّله انت. تقدر تطفيه مرة ثانية متى ما بغيت، ونتايجك تبقى في الحالتين.',
+    es: 'Podemos sugerirte qué repasar a continuación a partir de tus resultados y, con un plan o a través de tu colegio, el coach de IA puede escribirte un informe. Para ello usamos tus resultados para preparar sugerencias solo para ti, así que está desactivado hasta que lo actives. Puedes desactivarlo de nuevo cuando quieras, y tus resultados se quedan igual.',
   },
   'ga.suggest.turn_on': {
     en: 'Switch suggestions on',
