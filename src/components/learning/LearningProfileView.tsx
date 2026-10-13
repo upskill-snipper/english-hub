@@ -8,8 +8,11 @@
  * `variant="full"`  → the dashboard page (all sections).
  * `variant="compact"` → an embeddable summary card (totals + top focus).
  *
- * Client-only: the profile is built from localStorage so it works for
- * guests and offline, then syncs server-side via /api/progress/games.
+ * Client-only: the profile is built from localStorage, so it is per browser
+ * and works for guests and offline. It never synced anywhere: the route it
+ * named, /api/progress/games, refused every write. A signed-in student's
+ * results are saved question by question since 13 October 2026 and shown by
+ * GameAnalyticsView; this view remains for guests on /games.
  */
 
 import { useEffect, useState } from 'react'

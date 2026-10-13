@@ -20,6 +20,7 @@
     "certificates": "001_initial_schema.sql",
     "class_students": "003_school_analytics.sql",
     "classes": "003_school_analytics.sql",
+    "coach_reports": "20261013_game_rounds.sql",
     "consent_tokens": "20260419_consent_tokens_table.sql",
     "contact_submissions": "20260322_new_features.sql",
     "courses": "001_initial_schema.sql",
@@ -31,6 +32,7 @@
     "examiner_marking_runs": "20260918_examiner_marking_tool.sql",
     "feedback_entries": "20260918_public_form_tables.sql",
     "free_allowance_usage": "20260917_free_allowance_usage.sql",
+    "game_rounds": "20261013_game_rounds.sql",
     "human_review_requests": "20260420_human_review_requests.sql",
     "import_results": "20260404_school_promo_and_access.sql",
     "marker_batches": "20260519_marker_drive.sql",
@@ -174,6 +176,7 @@
     "examiner_mark_schemes": "src/app/api/examiner/schemes/route.ts",
     "examiner_marking_runs": "src/app/api/examiner/runs/route.ts",
     "feedback_entries": "src/app/api/feedback/route.ts",
+    "game_rounds": "src/lib/game-results/store.ts",
     "games": "src/lib/analytics/aggregate-progress.ts",
     "human_review_requests": "src/app/api/review/route.ts",
     "import_jobs": "src/app/api/school/export/logins/route.ts",
@@ -296,6 +299,7 @@
     "classes:school_admin_hod_insert_classes": "004_fix_school_rls.sql",
     "classes:school_staff_update_classes": "004_fix_school_rls.sql",
     "classes:students_select_own_classes": "004_fix_school_rls.sql",
+    "coach_reports:service_role_full_access": "20261013_game_rounds.sql",
     "consent:service_role_full_access": "20260506_enable_rls_on_prisma_tables.sql",
     "cookieconsent:service_role_full_access": "20260506_enable_rls_on_prisma_tables.sql",
     "creator_applications:creator_applications_service_role_all": "20260918_public_form_tables.sql",
@@ -308,6 +312,7 @@
     "examiner_marking_runs:examiner_marking_runs_owner_select": "20260918_examiner_marking_tool.sql",
     "examiner_marking_runs:examiner_marking_runs_service_role_all": "20260918_examiner_marking_tool.sql",
     "feedback_entries:feedback_entries_service_role_all": "20260918_public_form_tables.sql",
+    "game_rounds:service_role_full_access": "20261013_game_rounds.sql",
     "humanreviewrequest:service_role_full_access": "20260506_enable_rls_on_prisma_tables.sql",
     "ielts_attempts:ielts_attempts_owner_insert": "20260918_ielts_attempts_rls.sql",
     "ielts_attempts:ielts_attempts_owner_select": "20260918_ielts_attempts_rls.sql",
@@ -409,6 +414,14 @@
       "file": "20260919_cancellation_feedback.sql",
       "table": "cancellation_feedback"
     },
+    "coach_reports_created_idx": {
+      "file": "20261013_game_rounds.sql",
+      "table": "coach_reports"
+    },
+    "coach_reports_user_created_idx": {
+      "file": "20261013_game_rounds.sql",
+      "table": "coach_reports"
+    },
     "creator_applications_email_idx": {
       "file": "20260918_public_form_tables.sql",
       "table": "creator_applications"
@@ -448,6 +461,18 @@
     "free_allowance_usage_subject_idx": {
       "file": "20260917_free_allowance_usage.sql",
       "table": "free_allowance_usage"
+    },
+    "game_rounds_finished_idx": {
+      "file": "20261013_game_rounds.sql",
+      "table": "game_rounds"
+    },
+    "game_rounds_user_client_round_key": {
+      "file": "20261013_game_rounds.sql",
+      "table": "game_rounds"
+    },
+    "game_rounds_user_finished_idx": {
+      "file": "20261013_game_rounds.sql",
+      "table": "game_rounds"
     },
     "idx_affiliate_accounts_code": {
       "file": "20260420_affiliates_v2.sql",

@@ -1,14 +1,16 @@
 /**
- * A student's quest progress, in this browser only: stars per level, the
- * panels they have inked, spaced review of what they missed, XP and the
- * achievements they have earned.
+ * A student's quest progress in this browser: stars per level, the panels
+ * they have inked, spaced review of what they missed, XP and the achievements
+ * they have earned.
  *
- * WHY THE DEVICE AND NOT THE ACCOUNT. Saving game progress to the account
- * keeps a record about a student, most of whom are children; document 16
- * (Games: the plan, and the decisions that are yours, 10 October 2026) put
- * that to the founder as decision A, and it is not yet decided. Until it is,
- * nothing here leaves the browser. The shape is kept small and versioned so
- * that, once approved, it can be sent to the account as it is.
+ * THE DEVICE AND THE ACCOUNT. Document 16 (10 October 2026) put saving game
+ * progress to the account to the founder as decision A, and on 13 October
+ * 2026 he decided yes, for signed-in students. What reaches the account is
+ * not this store but each answered question, sent by LevelPlayer through
+ * src/components/games/game-round.tsx when a level or review ends, and only
+ * for a signed-in student (src/lib/game-results). This store stays in the
+ * browser for everyone: it is what the map, the stars and the review run on,
+ * and a guest's play never leaves it.
  *
  * WHAT IT DOES NOT HOLD, by design (src/lib/privacy/child-defaults.ts): no
  * streak, no "days since you played", nothing that rewards coming back on a

@@ -25,6 +25,16 @@ export const RETENTION_PERIODS = {
   USAGE_DATA_MONTHS: 12,
 
   /**
+   * Saved game rounds (`game_rounds`): 24 months, because a GCSE course is two
+   * years and a student's record of it is the point. Older rounds are deleted
+   * by cleanupExpiredData step 1d. Added 13 October 2026.
+   */
+  GAME_ROUNDS_DAYS: 730,
+
+  /** AI feedback reports on those rounds (`coach_reports`): 12 months. */
+  COACH_REPORTS_DAYS: 365,
+
+  /**
    * Free-allowance counters (`free_allowance_usage`): 90 days.
    *
    * Deliberately much shorter than USAGE_DATA_MONTHS. The 'ip' rows hold a
@@ -73,6 +83,10 @@ export interface CleanupSummary {
   expiredMarketingConsents: number
   /** Expired examiner marking runs deleted. Children's handwriting (PAY-9). */
   expiredExaminerRuns: number
+  /** game_rounds rows past GAME_ROUNDS_DAYS, deleted by step 1d. */
+  gameRoundsPurged: number
+  /** coach_reports rows past COACH_REPORTS_DAYS, deleted by step 1d. */
+  coachReportsPurged: number
   /** BulkUploadJob rows whose error detail was cleared by the 30-day sweep */
   bulkUploadErrorsCleared: number
   /** BulkUploadJob rows deleted by the 12-month sweep */
@@ -254,6 +268,30 @@ export const SUPABASE_SUBJECT_TABLES: ReadonlyArray<SubjectTable> = [
       'payout_email',
     ],
     note: 'Bank account name, sort code and account number are held and are omitted from this self-service download. They are the data of the account holder and are available from the DPO on a verified request - a downloadable file is the wrong place to put a full account number.',
+  },
+
+  // ── Added 13 October 2026: game results and the feedback written on them ──
+  // Rounds of skills games and set-text quests saved to a signed-in student's
+  // account (supabase/migrations/20261013_game_rounds.sql). Every column is
+  // the student's own play. A coach report is about the student even when a
+  // teacher asked for it, so it is theirs to see; only who asked, and from
+  // which school, is left out, as identifiers of other people.
+
+  { table: 'game_rounds', column: 'user_id' },
+  {
+    table: 'coach_reports',
+    column: 'user_id',
+    columns: [
+      'id',
+      'audience',
+      'window_start',
+      'window_end',
+      'answers_used',
+      'report',
+      'model',
+      'created_at',
+    ],
+    note: 'Each feedback report written about you is included in full. Where a teacher asked for one, which teacher and which school asked is left out, as the identifiers of other people.',
   },
 
   // ── Keyed to the subject, but ABOUT somebody else's child ─────────────────
@@ -565,6 +603,69 @@ export async function compileSupabaseNativeSubjectData(
   }
 }
 
+/**
+ * Step 1d of cleanupExpiredData: saved game rounds older than 24 months and AI
+ * coach reports older than 12 months, deleted by date alone, whoever they
+ * belong to (supabase/migrations/20261013_game_rounds.sql).
+ *
+ * Added with the tables on 13 October 2026, so the retention promise and the
+ * data arrive together; a period written in a privacy notice with no sweep
+ * behind it is a promise the code does not keep (PAY-9). Each deletion that
+ * removes anything leaves an audit row, and a failure is returned as an
+ * error, never swallowed. Rows also go with the account: both tables cascade
+ * from auth.users.
+ */
+export async function purgeExpiredLearningRecords(now: Date = new Date()): Promise<{
+  gameRoundsPurged: number
+  coachReportsPurged: number
+  errors: { step: string; message: string }[]
+}> {
+  const out = {
+    gameRoundsPurged: 0,
+    coachReportsPurged: 0,
+    errors: [] as { step: string; message: string }[],
+  }
+  const sweeps = [
+    {
+      table: 'game_rounds',
+      column: 'finished_at',
+      days: RETENTION_PERIODS.GAME_ROUNDS_DAYS,
+      field: 'gameRoundsPurged',
+    },
+    {
+      table: 'coach_reports',
+      column: 'created_at',
+      days: RETENTION_PERIODS.COACH_REPORTS_DAYS,
+      field: 'coachReportsPurged',
+    },
+  ] as const
+  for (const sweep of sweeps) {
+    const step = `${sweep.table}_retention`
+    try {
+      const cutoff = new Date(now.getTime() - sweep.days * 86_400_000).toISOString()
+      const { count, error } = await createServiceRoleClient()
+        .from(sweep.table)
+        .delete({ count: 'exact' })
+        .lt(sweep.column, cutoff)
+      if (error) {
+        out.errors.push({ step, message: error.message })
+        continue
+      }
+      out[sweep.field] = count ?? 0
+      if ((count ?? 0) > 0) {
+        await auditRetentionAction('LEARNING_RECORDS_EXPIRED', null, {
+          table: sweep.table,
+          deleted: count,
+          reason: `older than ${sweep.days} days`,
+        })
+      }
+    } catch (err) {
+      out.errors.push({ step, message: err instanceof Error ? err.message : String(err) })
+    }
+  }
+  return out
+}
+
 // ─── Main cleanup function ──────────────────────────────────────────────
 
 /**
@@ -573,6 +674,7 @@ export async function compileSupabaseNativeSubjectData(
  *
  * Processing order:
  *   1. Children's data (priority cleanup per ICO guidance)
+ *   1d. Saved game rounds after 24 months, AI coach reports after 12
  *   2. Soft-deleted accounts past 30-day grace period
  *   3. Inactive accounts (2 years)
  *   4. Usage/analytics data older than 12 months
@@ -592,6 +694,8 @@ export async function cleanupExpiredData(): Promise<CleanupSummary> {
     supportTicketsArchived: 0,
     expiredMarketingConsents: 0,
     expiredExaminerRuns: 0,
+    gameRoundsPurged: 0,
+    coachReportsPurged: 0,
     bulkUploadErrorsCleared: 0,
     bulkUploadRecordsPurged: 0,
     childrenPriorityCleanups: 0,
@@ -706,6 +810,16 @@ export async function cleanupExpiredData(): Promise<CleanupSummary> {
       step: 'examiner_runs_expiry',
       message: err instanceof Error ? err.message : String(err),
     })
+  }
+
+  // ── 1d. Saved game rounds and the feedback written on them ─────────
+  // See purgeExpiredLearningRecords.
+
+  {
+    const learning = await purgeExpiredLearningRecords()
+    summary.gameRoundsPurged = learning.gameRoundsPurged
+    summary.coachReportsPurged = learning.coachReportsPurged
+    summary.errors.push(...learning.errors)
   }
 
   // ── 2. Hard-delete soft-deleted accounts past 30-day grace period ───

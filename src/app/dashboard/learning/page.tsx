@@ -2,7 +2,7 @@
 
 import Link from 'next/link'
 import { ArrowLeft, Brain } from 'lucide-react'
-import LearningProfileView from '@/components/learning/LearningProfileView'
+import GameAnalyticsView from '@/components/learning/GameAnalyticsView'
 import { useT } from '@/lib/i18n/use-t'
 
 export default function LearningProfilePage() {
@@ -27,8 +27,11 @@ export default function LearningProfilePage() {
       </h1>
       <p className="mt-2 max-w-2xl text-sm text-muted-foreground">{t('dash.learning.intro')}</p>
 
+      {/* Since 13 October 2026 this reads the results saved to the account,
+          question by question (src/lib/game-results). The browser-only
+          profile appears inside it only for someone with nothing saved yet. */}
       <div className="mt-8">
-        <LearningProfileView variant="full" />
+        <GameAnalyticsView />
       </div>
 
       <p className="mt-10 border-t border-border/60 pt-4 text-xs text-muted-foreground">

@@ -11,6 +11,9 @@ import {
 } from '@/lib/grades'
 import { saveGameScore, getHighScore, scoreToGrade } from '@/lib/game-scores'
 import { useT } from '@/lib/i18n/use-t'
+import { getGameTaxon } from '@/lib/learning-profile/taxonomy'
+import type { RoundItem } from '@/lib/game-results/types'
+import { RecordAnswerProvider, sendRound, toItem, type AnswerReport } from './game-round'
 
 // ─── Types ──────────────────────────────────────────────────────────────────
 
@@ -338,6 +341,28 @@ export default function GameShell({
     }
   }, [gameState, timeLimitSeconds, onFinish])
 
+  // The round's answers, one per question, as the page reports them
+  // (useRecordAnswer in ./game-round). Emptied whenever a new round starts.
+  const answersRef = useRef<RoundItem[]>([])
+  const lastStateRef = useRef<GameState>(gameState)
+  useEffect(() => {
+    if (
+      gameState === 'playing' &&
+      lastStateRef.current !== 'paused' &&
+      lastStateRef.current !== 'playing'
+    ) {
+      answersRef.current = []
+    }
+    lastStateRef.current = gameState
+  }, [gameState])
+  const fallbackKind = getGameTaxon(gameId).skill
+  const recordAnswer = useCallback(
+    (a: AnswerReport) => {
+      answersRef.current.push(toItem(a, fallbackKind))
+    },
+    [fallbackKind],
+  )
+
   // Save score when game finishes
   useEffect(() => {
     if (gameState === 'finished' && !hasFinishedRef.current) {
@@ -346,22 +371,22 @@ export default function GameShell({
       // weight effort and detect rushing vs. careful play.
       saveGameScore(gameId, score, maxScore, elapsed)
       setHighScore(getHighScore(gameId))
-      // Best-effort server sync for signed-in students (guests 401 - we
-      // swallow it; the localStorage profile still works for everyone).
-      try {
-        fetch('/api/progress/games', {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({
-            slug: gameId,
-            score: Math.max(0, Math.round(score)),
-            timeSeconds: Math.min(3600, Math.max(0, Math.round(elapsed))),
-          }),
-          keepalive: true,
-        }).catch(() => {})
-      } catch {
-        // ignore - never block the results screen on a network error
-      }
+      // The round, to a signed-in student's account (nothing for a guest).
+      //
+      // WHAT THIS REPLACED (13 October 2026). A POST of {slug, score, time} to
+      // /api/progress/games, which wrote the Supabase uuid into a table that
+      // only admits the Prisma cuid: every write since May was refused, and
+      // this effect swallowed the refusal. It also sent guests' scores to the
+      // server to be turned away. sendRound sends signed-in students' rounds
+      // only, with each question the page recorded.
+      sendRound({
+        source: 'skills',
+        activity: gameId,
+        score: Math.max(0, Math.round(score)),
+        maxScore: Math.max(0, Math.round(maxScore)),
+        durationSeconds: Math.min(14_400, Math.max(0, Math.round(elapsed))),
+        items: answersRef.current,
+      })
     }
     if (gameState !== 'finished') {
       hasFinishedRef.current = false
@@ -371,12 +396,16 @@ export default function GameShell({
   const handleStart = useCallback(() => {
     setTimeLeft(timeLimitSeconds ?? 0)
     setElapsed(0)
+    // Restart mid-round stays 'playing', so the state change alone would not
+    // empty the answers.
+    answersRef.current = []
     onStart()
   }, [timeLimitSeconds, onStart])
 
   const handlePlayAgain = useCallback(() => {
     setTimeLeft(timeLimitSeconds ?? 0)
     setElapsed(0)
+    answersRef.current = []
     onStart()
   }, [timeLimitSeconds, onStart])
 
@@ -527,7 +556,7 @@ export default function GameShell({
 
             {/* Game content */}
             <div className={gameState === 'paused' ? 'pointer-events-none opacity-40' : ''}>
-              {children}
+              <RecordAnswerProvider value={recordAnswer}>{children}</RecordAnswerProvider>
             </div>
           </>
         )}

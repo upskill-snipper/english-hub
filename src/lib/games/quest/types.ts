@@ -28,7 +28,8 @@
  * WHAT IT DELIBERATELY DOES NOT DO, for a site most of whose users are
  * children (src/lib/privacy/child-defaults.ts): no timer, no streak, no "come
  * back tomorrow", no leaderboard, no lives to lose. Progress stays in this
- * browser (./progress.ts) until saving to the account is approved.
+ * browser (./progress.ts); since 13 October 2026 a signed-in student's
+ * answers are also saved to their account (src/lib/game-results).
  *
  * Plain data only: the page hands it to the client player.
  */

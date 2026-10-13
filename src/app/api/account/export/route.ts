@@ -93,11 +93,10 @@ export async function POST(request: NextRequest) {
     // 4. Compile the export payload using the shared DSAR helper. This
     //    pulls profile, consents, essays + AI feedback (marking history),
     //    privacy settings, subscription, prior data requests, and audit
-    //    log entries - covering everything the task asks for ("profile,
-    //    board choice, quiz scores, game scores, marking history,
-    //    consents"). Quiz/game progress tables don't exist in the current
-    //    schema; if/when they're added, extend `compileUserData` so all
-    //    DSAR surfaces stay in sync.
+    //    log entries, and since 13 October 2026 its `platform` section: the
+    //    profile row and every table in SUPABASE_SUBJECT_TABLES, including
+    //    quiz answers and the game results this page promises ("quiz scores
+    //    and game scores"). Until then this branch left all of those out.
     const payload = await compileUserData(prismaUser.id)
 
     // 5. Stream as a JSON attachment. Pretty-print with 2-space indent so

@@ -153,6 +153,8 @@ import { REV_POETRY2_DICTIONARY } from './dictionary-rev-poetry2'
 import { TEXT_NAV_DICTIONARY } from './dictionary-text-nav'
 // 2026-10-10: guided text games (text_games.*). See src/lib/games/text-games/.
 import { TEXT_GAMES_DICTIONARY } from './dictionary-text-games'
+// 2026-10-13: game analytics in the hub (ga.*). See src/lib/game-results/.
+import { GAME_ANALYTICS_DICTIONARY } from './dictionary-game-analytics'
 // 2026-06-08: landing-page hero rebuild chrome (home.lp.*).
 import { HOME_LP_DICTIONARY } from './dictionary-home-hero'
 
@@ -25778,6 +25780,7 @@ export const DICTIONARY_CHAIN: Dictionary[] = [
   REV_POETRY2_DICTIONARY,
   TEXT_NAV_DICTIONARY,
   TEXT_GAMES_DICTIONARY,
+  GAME_ANALYTICS_DICTIONARY,
   HOME_LP_DICTIONARY,
   IGCSE_PAGES_DICTIONARY,
   KS3_PAGES_DICTIONARY,

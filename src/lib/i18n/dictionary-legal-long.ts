@@ -926,9 +926,9 @@ export const LEGAL_LONG_DICTIONARY: Dictionary = {
     es: ' - un nombre comercial de Upskill Energy Limited',
   },
   'legal_long.privacy.updated': {
-    en: 'Last updated: 12 May 2026',
-    ar: 'آخر تحديث: 12 مايو 2026',
-    es: 'Última actualización: 12 May 2026',
+    en: 'Last updated: 13 October 2026',
+    ar: 'آخر تحديث: 13 أكتوبر 2026',
+    es: 'Última actualización: 13 de octubre de 2026',
   },
   'legal_long.privacy.summary_box': {
     en: 'This policy explains who is responsible for your personal data, how to contact our Data Protection Officer (DPO) and Designated Safeguarding Lead (DSL), how to make a complaint to the ICO, and how to exercise your rights to access, export, or delete your data.',
@@ -1055,10 +1055,12 @@ export const LEGAL_LONG_DICTIONARY: Dictionary = {
     ar: 'بيانات التعلّم',
     es: 'Datos de aprendizaje',
   },
+  // 13 October 2026: game results are saved to signed-in accounts
+  // (src/lib/game-results; supabase/migrations/20261013_game_rounds.sql).
   'legal_long.privacy.s2.learn_li1': {
-    en: 'Course progress, quiz and mock-exam results',
-    ar: 'التقدّم في المقررات، ونتائج الاختبارات والامتحانات التجريبية',
-    es: 'Progreso en los cursos, resultados de cuestionarios y exámenes de prueba',
+    en: 'Course progress, quiz and mock-exam results, and, when you are signed in, your answers in the revision games: which questions you got right or wrong and, for a wrong choice from a list, the option you chose. Never anything you type into a game.',
+    ar: 'التقدّم في المقررات، ونتائج الاختبارات والامتحانات التجريبية، وإجاباتك في ألعاب المراجعة لما تكون مسجّل دخول: أي الأسئلة جاوبتها صح أو غلط، وعند اختيار إجابة غلط من قائمة، الخيار اللي اخترته. وأبداً ما نحفظ أي شي تكتبه داخل لعبة.',
+    es: 'Progreso en los cursos, resultados de cuestionarios y exámenes de prueba y, cuando ha iniciado sesión, sus respuestas en los juegos de repaso: qué preguntas acertó o falló y, si eligió una opción equivocada de una lista, cuál eligió. Nunca nada de lo que escriba en un juego.',
   },
   'legal_long.privacy.s2.learn_li2': {
     en: 'Essay and written-response submissions',
@@ -1544,9 +1546,9 @@ export const LEGAL_LONG_DICTIONARY: Dictionary = {
     es: 'Envíos de aprendizaje y retroalimentación de IA: ',
   },
   'legal_long.privacy.s6.li2_text': {
-    en: 'retained for the duration of your account so you can review past work; erased within 30 days of account deletion.',
-    ar: 'تُحفَظ طوال مدة وجود حسابك لتمكينك من مراجعة أعمالك السابقة، وتُمحى في غضون 30 يوماً من حذف الحساب.',
-    es: 'se conservan mientras dure su cuenta para que pueda revisar trabajos anteriores; se borran en un plazo de 30 días desde la eliminación de la cuenta.',
+    en: 'retained for the duration of your account so you can review past work; erased within 30 days of account deletion. Results from the revision games are kept for 24 months and then deleted, and are deleted with your account.',
+    ar: 'تُحفَظ طوال مدة وجود حسابك لتمكينك من مراجعة أعمالك السابقة، وتُمحى في غضون 30 يوماً من حذف الحساب. أما نتائج ألعاب المراجعة فتُحفَظ 24 شهراً ثم تُحذف، وتُحذف أيضاً مع حسابك.',
+    es: 'se conservan mientras dure su cuenta para que pueda revisar trabajos anteriores; se borran en un plazo de 30 días desde la eliminación de la cuenta. Los resultados de los juegos de repaso se conservan 24 meses y después se borran, y se borran también con su cuenta.',
   },
   'legal_long.privacy.s6.li3_strong': {
     en: 'Billing records: ',

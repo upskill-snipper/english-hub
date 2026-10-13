@@ -16,7 +16,11 @@ import {
   XP_PERFECT,
 } from '@/lib/games/quest/progress'
 import type { Level, Quest } from '@/lib/games/quest/types'
+import { questKind } from '@/lib/game-results/quest-kind'
+import { itemId, type RoundItem } from '@/lib/game-results/types'
 import { cn } from '@/lib/utils'
+
+import { sendRound } from '../game-round'
 
 import { ItemView } from './challenges/ItemView'
 import {
@@ -90,6 +94,10 @@ export function LevelPlayer({
   const [summary, setSummary] = useState<LevelSummary | null>(null)
   const headingRef = useRef<HTMLHeadingElement | null>(null)
   const root = useRef<HTMLDivElement>(null)
+  // For the round saved to a signed-in student's account (../game-round).
+  const startedAt = useRef(Date.now())
+  const roundId = useRef<string | null>(null)
+  const sentAll = useRef(false)
   const dialog = useRef<HTMLDivElement>(null)
   useFocusTrap(dialog)
 
@@ -131,10 +139,47 @@ export function LevelPlayer({
     [answers, at, streak, current, quest.slug, sfx],
   )
 
+  /**
+   * The answers given so far, as a round for the student's account: sent when
+   * the level or review is finished, and, if they leave part-way, with what
+   * they had answered, since a missed question is evidence whether or not the
+   * level was finished. One round id, so the server stores it once. Nothing is
+   * sent for a guest (sendRound checks).
+   */
+  const sendAnswers = useCallback(
+    (given: (QuestAnswer | null)[], complete: boolean) => {
+      if (sentAll.current) return
+      const items: RoundItem[] = []
+      dealt.forEach((d, i) => {
+        const a = given[i]
+        if (a)
+          items.push({ i: itemId(d.challenge.id), k: questKind(d.challenge), c: a.correct ? 1 : 0 })
+      })
+      if (items.length === 0) return
+      roundId.current =
+        sendRound({
+          clientRoundId: roundId.current ?? undefined,
+          source: 'quest',
+          activity: quest.slug,
+          level: run.mode === 'level' ? run.level.id : 'review',
+          durationSeconds: Math.min(14_400, Math.round((Date.now() - startedAt.current) / 1000)),
+          items,
+        }) ?? roundId.current
+      if (complete) sentAll.current = true
+    },
+    [dealt, quest.slug, run],
+  )
+
+  const close = useCallback(() => {
+    sendAnswers(answers, false)
+    onClose()
+  }, [sendAnswers, answers, onClose])
+
   const finish = useCallback(() => {
     const right = answers.filter((a) => a?.correct).length
     const total = dealt.length
     const now = Date.now()
+    sendAnswers(answers, true)
     if (run.mode === 'level') {
       const f = finishLevel(
         quest,
@@ -176,7 +221,7 @@ export function LevelPlayer({
       })
     }
     sfx.play('complete')
-  }, [answers, dealt.length, run, quest, xp, rebuilt, bestStreak, sfx])
+  }, [answers, dealt.length, run, quest, xp, rebuilt, bestStreak, sfx, sendAnswers])
 
   const onContinue = useCallback(() => {
     if (at < dealt.length - 1) setAt((i) => i + 1)
@@ -188,7 +233,7 @@ export function LevelPlayer({
     const onKey = (e: KeyboardEvent) => {
       if (e.altKey || e.ctrlKey || e.metaKey) return
       if (e.key === 'Escape') {
-        onClose()
+        close()
         return
       }
       if (summary) return
@@ -210,7 +255,7 @@ export function LevelPlayer({
     }
     window.addEventListener('keydown', onKey)
     return () => window.removeEventListener('keydown', onKey)
-  }, [answered, onClose, summary])
+  }, [answered, close, summary])
 
   if (dealt.length === 0) return null
 
@@ -231,7 +276,7 @@ export function LevelPlayer({
         <div className="mx-auto flex max-w-xl items-center gap-3 px-4 py-3 sm:px-6">
           <button
             type="button"
-            onClick={onClose}
+            onClick={close}
             aria-label={t('quest.leave')}
             className="rounded-full p-1.5 text-muted-foreground hover:bg-muted hover:text-foreground"
           >

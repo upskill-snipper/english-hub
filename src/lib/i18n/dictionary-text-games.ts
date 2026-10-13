@@ -38,10 +38,14 @@ export const TEXT_GAMES_DICTIONARY: Record<string, { en: string; ar?: string; es
   'text_games.index.your_course': { en: 'On your course', ar: 'من مقررك', es: 'De tu curso' },
   'text_games.index.comics': { en: 'Comic art', ar: 'رسومات كوميك', es: 'Con ilustraciones' },
   'text_games.index.play': { en: 'Play', ar: 'العب', es: 'Jugar' },
+  // 13 October 2026: the founder decided game results are saved to signed-in
+  // students' accounts (document 16, decision A). This line said "Nothing is
+  // sent to us" for everyone; it is still true for a guest, and only for one.
+  // src/components/games/game-round.tsx sends nothing unless signed in.
   'text_games.privacy': {
-    en: 'Your scores are kept in this browser only. Nothing is sent to us, and nobody else can see them.',
-    ar: 'نتايجك محفوظة في هالمتصفح بس. ما يوصلنا شي، ومحد غيرك يقدر يشوفها.',
-    es: 'Tus puntuaciones se guardan solo en este navegador. No se nos envía nada y nadie más puede verlas.',
+    en: 'Signed in, your answers are saved to your account so you can see your progress in your hub. Not signed in, your scores stay in this browser and nothing is sent to us. Nobody else can see them.',
+    ar: 'إذا انت مسجّل دخول، إجاباتك تنحفظ في حسابك عشان تشوف تقدّمك في الـ Hub مالك. وإذا مو مسجّل دخول، نتايجك تبقى في هالمتصفح وما يوصلنا شي. ومحد غيرك يقدر يشوفها.',
+    es: 'Con la sesión iniciada, tus respuestas se guardan en tu cuenta para que veas tu progreso en tu Hub. Sin iniciar sesión, tus puntuaciones se quedan en este navegador y no se nos envía nada. Nadie más puede verlas.',
   },
 
   // ── One text's page: /games/texts/<slug> ────────────────────────────────

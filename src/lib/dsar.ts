@@ -1,4 +1,8 @@
 import { prisma } from '@/lib/prisma'
+import {
+  compileSupabaseNativeSubjectData,
+  type SupabaseNativeSubjectData,
+} from '@/lib/data-retention'
 
 // ─── Types ─────────────────────────────────────────────────────────────
 
@@ -20,6 +24,18 @@ export interface CompiledUserData {
   subscription: Record<string, unknown> | null
   dataAccessRequests: Record<string, unknown>[]
   auditLog: Record<string, unknown>[]
+  /**
+   * Everything held against the account's Supabase identity: its profile row
+   * and every table in SUPABASE_SUBJECT_TABLES (school work, quiz answers,
+   * practice, game results and more). See compileUserData.
+   */
+  platform:
+    | {
+        status: 'read'
+        profile: SupabaseNativeSubjectData['profile']
+        records: SupabaseNativeSubjectData['records']
+      }
+    | { status: 'not-linked' | 'could-not-be-read'; note: string }
 }
 
 // ─── Reference Number Generator ────────────────────────────────────────
@@ -53,6 +69,17 @@ export function daysUntilDeadline(requestedAt: Date): number {
 /**
  * Gathers all personal data held about a user.
  * Used for both ACCESS (Art. 15) and PORTABILITY (Art. 20) requests.
+ *
+ * THE PLATFORM SECTION (13 October 2026). This function read the Prisma store
+ * only. Since 12 October every sign-in projects a Prisma row, so this became
+ * the usual export path, and it left out everything held against the
+ * Supabase identity: the profile with its date of birth and year group, a
+ * pupil's school essays and AI marks, quiz answers, practice, and the game
+ * results this date began saving. The account page meanwhile promised "Quiz
+ * scores and game scores". The export now carries the same records the
+ * Supabase-only branch has always read, from the same list, so the two
+ * branches cannot drift apart again. A failure to read them is stated in the
+ * file, never left as an absence.
  */
 export async function compileUserData(userId: string): Promise<CompiledUserData> {
   const user = await prisma.user.findUniqueOrThrow({
@@ -90,6 +117,26 @@ export async function compileUserData(userId: string): Promise<CompiledUserData>
       modelVersion: e.aiFeedback!.modelVersion,
       createdAt: e.aiFeedback!.createdAt.toISOString(),
     }))
+
+  let platform: CompiledUserData['platform']
+  if (!user.supabaseUserId) {
+    platform = {
+      status: 'not-linked',
+      note: 'This account has no linked sign-in identity, so no records are held against one.',
+    }
+  } else {
+    try {
+      const native = await compileSupabaseNativeSubjectData(user.supabaseUserId)
+      platform = { status: 'read', profile: native.profile, records: native.records }
+    } catch (err) {
+      platform = {
+        status: 'could-not-be-read',
+        note: `These records could not be read when this file was made (${
+          err instanceof Error ? err.message : String(err)
+        }). Ask the data protection officer for a complete copy.`,
+      }
+    }
+  }
 
   return {
     exportedAt: new Date().toISOString(),
@@ -177,6 +224,7 @@ export async function compileUserData(userId: string): Promise<CompiledUserData>
       resourceId: a.resourceId,
       timestamp: a.timestamp.toISOString(),
     })),
+    platform,
   }
 }
 

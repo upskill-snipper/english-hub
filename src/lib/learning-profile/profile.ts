@@ -17,9 +17,10 @@
  * This is what directs future learning: it names where a student is
  * strong, where they should focus next, and gives a one-tap action.
  *
- * Pure + client-only (reads localStorage). Server sync is handled
- * separately via /api/progress/games; this engine works offline and for
- * guests too.
+ * Pure + client-only (reads localStorage), so per browser; it works offline
+ * and for guests. It is not the account's record: since 13 October 2026 a
+ * signed-in student's answers are saved question by question and analysed by
+ * src/lib/game-results/analytics.ts.
  */
 
 import { listPlayedGameIds, getAllAttempts, type GameAttempt } from '@/lib/game-scores'

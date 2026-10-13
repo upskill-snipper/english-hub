@@ -340,24 +340,28 @@ export const DASHBOARD_CHROME_DICTIONARY: Record<string, { en: string; ar?: stri
     /* ─── Learning profile (dashboard/learning) ──────────────────── */
     'dash.learning.back': { en: 'Back to dashboard', ar: 'ارجع للوحة', es: 'Volver al panel' },
     'dash.learning.eyebrow': {
-      en: 'Learning profile',
-      ar: 'ملف التعلّم',
-      es: 'Perfil de aprendizaje',
+      en: 'Your results',
+      ar: 'نتايجك',
+      es: 'Tus resultados',
     },
     'dash.learning.title': {
-      en: 'Your strengths & what to focus on next',
-      ar: 'نقاط قوّتك وعلى شنو تركّز بعدها',
-      es: 'Tus fortalezas y en qué centrarte a continuación',
+      en: 'Your strengths and what to work on next',
+      ar: 'نقاط قوّتك وعلى شنو تشتغل بعدين',
+      es: 'Tus fortalezas y qué trabajar a continuación',
     },
+    // 13 October 2026: this page now reads the results saved to the account
+    // (src/lib/game-results). The old intro and footer described a profile
+    // built in the browser that "syncs to your account"; the sync never
+    // stored a row, and the profile was per device.
     'dash.learning.intro': {
-      en: 'Built from the time you spend and the accuracy you reach in every game. We weight your most recent rounds most heavily, track whether each skill is improving or slipping, and recommend the next best practice - so revision goes where it counts.',
-      ar: 'مبني على الوقت اللي تقضيه والدقّة اللي توصلها في كل لعبة. نعطي جولاتك الأخيرة وزن أكبر، نتابع إذا كل مهارة تتحسّن ولا تتراجع، ونرشّح لك أفضل تمرين جاي - عشان المراجعة تروح للمكان المهم.',
-      es: 'Creado a partir del tiempo que dedicas y la precisión que alcanzas en cada juego. Damos más peso a tus rondas más recientes, vigilamos si cada destreza mejora o decae y te recomendamos la mejor práctica siguiente, para que el repaso vaya donde de verdad cuenta.',
+      en: 'Built from every question you answer in the skills games and set text games while you are signed in. Each skill is judged on your last 30 answers on it, so this shows where you are now, and whether each skill is improving or slipping.',
+      ar: 'مبني من كل سؤال تجاوبه في ألعاب المهارات وألعاب النصوص المقررة وانت مسجّل دخول. كل مهارة تنقاس على آخر 30 إجابة لك فيها، عشان يوضّح وين انت الحين، وإذا كل مهارة تتحسّن ولا تتراجع.',
+      es: 'Creado a partir de cada pregunta que respondes en los juegos de destrezas y los juegos de los textos con la sesión iniciada. Cada destreza se juzga por tus últimas 30 respuestas, así que muestra dónde estás ahora y si cada destreza mejora o baja.',
     },
     'dash.learning.footer': {
-      en: 'This profile is built on your device from every game you play and syncs to your account when you’re signed in. Strengths are skills you score 80%+ on consistently; focus areas are below 60% or slipping.',
-      ar: 'هالملف ينبني على جهازك من كل لعبة تلعبها ويتزامن مع حسابك لما تسجّل دخول. نقاط القوّة هي المهارات اللي تجيب فيها +80% باستمرار؛ ومناطق التركيز تحت 60% ولا تتراجع.',
-      es: 'Este perfil se construye en tu dispositivo a partir de cada juego que juegas y se sincroniza con tu cuenta cuando has iniciado sesión. Las fortalezas son destrezas en las que puntúas un 80%+ de forma constante; las áreas de enfoque están por debajo del 60% o en declive.',
+      en: 'Saved to your account from 13 October 2026, for the games you play while signed in, and kept for 24 months. We save which questions you got right or wrong and, for a wrong choice from a list, the option you chose: never anything you type. Games played without signing in stay in that browser and nothing is sent to us. No result here is a grade or a prediction of one.',
+      ar: 'تنحفظ في حسابك من 13 أكتوبر 2026، للألعاب اللي تلعبها وانت مسجّل دخول، وتنحفظ 24 شهر. نحفظ أي أسئلة جاوبتها صح ولا غلط، ولما تختار إجابة غلط من قائمة نحفظ الخيار اللي اخترته، وأبد ما نحفظ شي تكتبه. الألعاب اللي تلعبها بدون تسجيل دخول تبقى في المتصفح ذاك وما ينرسل لنا شي. ولا نتيجة هني درجة ولا توقّع درجة.',
+      es: 'Se guardan en tu cuenta desde el 13 de octubre de 2026, para los juegos a los que juegas con la sesión iniciada, y se conservan 24 meses. Guardamos qué preguntas acertaste o fallaste y, si eliges una opción equivocada de una lista, cuál elegiste: nunca nada de lo que escribes. Los juegos sin iniciar sesión se quedan en ese navegador y no se nos envía nada. Ningún resultado de aquí es una nota ni una predicción de nota.',
     },
 
     /* ─── All essays list (dashboard/essays) ─────────────────────── */
