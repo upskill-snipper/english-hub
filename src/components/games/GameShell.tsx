@@ -11,9 +11,7 @@ import {
 } from '@/lib/grades'
 import { saveGameScore, getHighScore, scoreToGrade } from '@/lib/game-scores'
 import { useT } from '@/lib/i18n/use-t'
-import { getGameTaxon } from '@/lib/learning-profile/taxonomy'
-import type { RoundItem } from '@/lib/game-results/types'
-import { RecordAnswerProvider, sendRound, toItem, type AnswerReport } from './game-round'
+import { RecordAnswerProvider, sendRound, useGameRound, type GameRound } from './game-round'
 
 // ─── Types ──────────────────────────────────────────────────────────────────
 
@@ -71,6 +69,20 @@ export interface GameShellProps {
   children: React.ReactNode
   /** Optional extra className on the outer wrapper */
   className?: string
+  /**
+   * The page's round recorder (useGameRound in ./game-round). The page calls
+   * round.record() for each answered question; the shell empties it when a
+   * round starts and sends it when the round ends. Without it the shell keeps
+   * its own, which only components inside the shell can reach.
+   */
+  round?: GameRound
+  /**
+   * Holds the round's countdown (timeLimitSeconds) while true, without the
+   * paused overlay: for a game showing the explanation of an answer, so the
+   * time a student spends reading it is not taken from the round. Time on
+   * task (elapsed) still counts, because reading the explanation is study.
+   */
+  holdClock?: boolean
 }
 
 // ─── Difficulty Badge ───────────────────────────────────────────────────────
@@ -292,6 +304,8 @@ export default function GameShell({
   gameState,
   children,
   className,
+  round,
+  holdClock = false,
 }: GameShellProps) {
   const t = useT()
   // Fails closed: no audience, no grade. See GameAudience.
@@ -300,6 +314,9 @@ export default function GameShell({
   const [elapsed, setElapsed] = useState(0)
   const timerRef = useRef<ReturnType<typeof setInterval> | null>(null)
   const hasFinishedRef = useRef(false)
+  // Read inside the interval, so holding the clock does not restart it.
+  const holdClockRef = useRef(holdClock)
+  holdClockRef.current = holdClock
 
   // High score from localStorage
   const [highScore, setHighScore] = useState<{
@@ -319,7 +336,7 @@ export default function GameShell({
     if (gameState === 'playing') {
       timerRef.current = setInterval(() => {
         setElapsed((e) => e + 1)
-        if (timeLimitSeconds) {
+        if (timeLimitSeconds && !holdClockRef.current) {
           setTimeLeft((t) => {
             if (t <= 1) {
               // Time's up - trigger finish
@@ -341,9 +358,11 @@ export default function GameShell({
     }
   }, [gameState, timeLimitSeconds, onFinish])
 
-  // The round's answers, one per question, as the page reports them
-  // (useRecordAnswer in ./game-round). Emptied whenever a new round starts.
-  const answersRef = useRef<RoundItem[]>([])
+  // The round's answers, one per question, as the page reports them: the
+  // page's own recorder when it passes one, else the shell's (for components
+  // inside it, through RecordAnswerProvider). Emptied whenever a round starts.
+  const ownRound = useGameRound(gameId)
+  const activeRound = round ?? ownRound
   const lastStateRef = useRef<GameState>(gameState)
   useEffect(() => {
     if (
@@ -351,17 +370,10 @@ export default function GameShell({
       lastStateRef.current !== 'paused' &&
       lastStateRef.current !== 'playing'
     ) {
-      answersRef.current = []
+      activeRound.reset()
     }
     lastStateRef.current = gameState
-  }, [gameState])
-  const fallbackKind = getGameTaxon(gameId).skill
-  const recordAnswer = useCallback(
-    (a: AnswerReport) => {
-      answersRef.current.push(toItem(a, fallbackKind))
-    },
-    [fallbackKind],
-  )
+  }, [gameState, activeRound])
 
   // Save score when game finishes
   useEffect(() => {
@@ -385,29 +397,29 @@ export default function GameShell({
         score: Math.max(0, Math.round(score)),
         maxScore: Math.max(0, Math.round(maxScore)),
         durationSeconds: Math.min(14_400, Math.max(0, Math.round(elapsed))),
-        items: answersRef.current,
+        items: activeRound.items.current,
       })
     }
     if (gameState !== 'finished') {
       hasFinishedRef.current = false
     }
-  }, [gameState, gameId, score, maxScore, elapsed])
+  }, [gameState, gameId, score, maxScore, elapsed, activeRound])
 
   const handleStart = useCallback(() => {
     setTimeLeft(timeLimitSeconds ?? 0)
     setElapsed(0)
     // Restart mid-round stays 'playing', so the state change alone would not
     // empty the answers.
-    answersRef.current = []
+    activeRound.reset()
     onStart()
-  }, [timeLimitSeconds, onStart])
+  }, [timeLimitSeconds, onStart, activeRound])
 
   const handlePlayAgain = useCallback(() => {
     setTimeLeft(timeLimitSeconds ?? 0)
     setElapsed(0)
-    answersRef.current = []
+    activeRound.reset()
     onStart()
-  }, [timeLimitSeconds, onStart])
+  }, [timeLimitSeconds, onStart, activeRound])
 
   const handlePauseResume = useCallback(() => {
     if (gameState === 'playing') {
@@ -556,7 +568,7 @@ export default function GameShell({
 
             {/* Game content */}
             <div className={gameState === 'paused' ? 'pointer-events-none opacity-40' : ''}>
-              <RecordAnswerProvider value={recordAnswer}>{children}</RecordAnswerProvider>
+              <RecordAnswerProvider value={activeRound.record}>{children}</RecordAnswerProvider>
             </div>
           </>
         )}

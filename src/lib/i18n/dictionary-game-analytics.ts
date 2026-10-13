@@ -18,6 +18,19 @@
 // Structural type inline rather than `import type { Dictionary }`, matching
 // every other supplement: dictionary.ts imports this file.
 export const GAME_ANALYTICS_DICTIONARY: Record<string, { en: string; ar?: string; es?: string }> = {
+  // ── The explanation after each skills game answer
+  // (src/components/games/AnswerExplanation.tsx). The explanation itself is
+  // English content and is not translated; these are its headings.
+  'games.deep.title': { en: 'Explained', ar: 'الشرح', es: 'Explicación' },
+  'games.deep.why': { en: 'The answer:', ar: 'الإجابة:', es: 'La respuesta:' },
+  'games.deep.why_not': {
+    en: 'Why not “{chosen}”:',
+    ar: 'ليش مو «{chosen}»:',
+    es: 'Por qué no «{chosen}»:',
+  },
+  'games.deep.more': { en: 'Going deeper:', ar: 'أعمق شوي:', es: 'Para ir más allá:' },
+  'games.deep.tip': { en: 'Use it:', ar: 'استخدمها:', es: 'Úsalo:' },
+
   // ── States ──────────────────────────────────────────────────────────────
   'ga.loading': {
     en: 'Loading your results',

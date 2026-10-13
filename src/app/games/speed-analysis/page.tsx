@@ -5,210 +5,18 @@ import Link from 'next/link'
 import GameShell, { type GameState } from '@/components/games/GameShell'
 import { Button } from '@/components/ui/button'
 import { cn } from '@/lib/utils'
-import { ArrowLeft, Clock, Sparkles } from 'lucide-react'
+import { ArrowLeft, ArrowRight, Clock, Sparkles } from 'lucide-react'
 import { useBoard } from '@/hooks/useBoard'
 import { getBoardConfig } from '@/lib/board/board-store'
 import { shuffledOptionsFor, newSessionSalt } from '@/lib/quiz/shuffle'
+import { AnswerExplanation } from '@/components/games/AnswerExplanation'
+import { useGameRound } from '@/components/games/game-round'
+import { BANK, QUESTIONS, type AnalysisQuestion } from '@/data/games/banks/speed-analysis'
 
 // ─── Data ──────────────────────────────────────────────────────────────────────
-
-interface AnalysisQuestion {
-  extract: string
-  source: string
-  correctDevice: string
-  options: string[]
-}
-
-const QUESTIONS: AnalysisQuestion[] = [
-  {
-    extract: '"The sea was a boiling cauldron of fury."',
-    source: 'Example prose',
-    correctDevice: 'Metaphor',
-    options: ['Metaphor', 'Simile', 'Personification', 'Hyperbole'],
-  },
-  {
-    extract: '"Her smile was like the sun breaking through clouds."',
-    source: 'Example prose',
-    correctDevice: 'Simile',
-    options: ['Metaphor', 'Simile', 'Personification', 'Alliteration'],
-  },
-  {
-    extract: '"The wind howled and the trees groaned under its weight."',
-    source: 'Example prose',
-    correctDevice: 'Personification',
-    options: ['Personification', 'Pathetic fallacy', 'Onomatopoeia', 'Metaphor'],
-  },
-  {
-    extract: '"Peter Piper picked a peck of pickled peppers."',
-    source: 'Traditional tongue-twister',
-    correctDevice: 'Alliteration',
-    options: ['Alliteration', 'Assonance', 'Sibilance', 'Consonance'],
-  },
-  {
-    extract: '"The rain set early in to-night,\nThe sullen wind was soon awake."',
-    source: "Porphyria's Lover - Browning",
-    correctDevice: 'Pathetic fallacy',
-    options: ['Pathetic fallacy', 'Personification', 'Imagery', 'Symbolism'],
-  },
-  {
-    extract: '"My love is like a red, red rose\nThat\'s newly sprung in June."',
-    source: 'A Red, Red Rose - Burns',
-    correctDevice: 'Simile',
-    options: ['Simile', 'Metaphor', 'Symbolism', 'Alliteration'],
-  },
-  {
-    extract: '"I have told you a million times to clean your room!"',
-    source: 'Example dialogue',
-    correctDevice: 'Hyperbole',
-    options: ['Hyperbole', 'Irony', 'Rhetorical question', 'Metaphor'],
-  },
-  {
-    extract: '"The soft, silky sound of the stream slipped through the stones."',
-    source: 'Example prose',
-    correctDevice: 'Sibilance',
-    options: ['Sibilance', 'Alliteration', 'Onomatopoeia', 'Assonance'],
-  },
-  {
-    extract: '"The buzz of bees and the hiss of the kettle filled the kitchen."',
-    source: 'Example prose',
-    correctDevice: 'Onomatopoeia',
-    options: ['Onomatopoeia', 'Alliteration', 'Sibilance', 'Personification'],
-  },
-  {
-    extract: '"Is this a dagger which I see before me,\nThe handle toward my hand?"',
-    source: 'Macbeth - Shakespeare',
-    correctDevice: 'Rhetorical question',
-    options: ['Rhetorical question', 'Soliloquy', 'Metaphor', 'Allusion'],
-  },
-  {
-    extract:
-      '"Bent double, like old beggars under sacks,\nKnock-kneed, coughing like hags, we cursed through sludge."',
-    source: 'Dulce et Decorum Est - Owen',
-    correctDevice: 'Simile',
-    options: ['Simile', 'Metaphor', 'Hyperbole', 'Imagery'],
-  },
-  {
-    extract: '"Look on my Works, ye Mighty, and despair!\nNothing beside remains."',
-    source: 'Ozymandias - Shelley',
-    correctDevice: 'Irony',
-    options: ['Irony', 'Hyperbole', 'Imperative', 'Juxtaposition'],
-  },
-  {
-    extract: '"I wandered lonely as a cloud\nThat floats on high o\'er vales and hills."',
-    source: 'Daffodils - Wordsworth',
-    correctDevice: 'Simile',
-    options: ['Simile', 'Personification', 'Metaphor', 'Pathetic fallacy'],
-  },
-  {
-    extract: '"Out, out, brief candle!"',
-    source: 'Macbeth - Shakespeare',
-    correctDevice: 'Metaphor',
-    options: ['Metaphor', 'Personification', 'Imperative', 'Apostrophe'],
-  },
-  {
-    extract: '"It was the best of times,\nit was the worst of times."',
-    source: 'A Tale of Two Cities - Dickens',
-    correctDevice: 'Juxtaposition',
-    options: ['Juxtaposition', 'Oxymoron', 'Irony', 'Parallelism'],
-  },
-  {
-    extract: '"The child is father of the man."',
-    source: 'My Heart Leaps Up - Wordsworth',
-    correctDevice: 'Paradox',
-    options: ['Paradox', 'Oxymoron', 'Irony', 'Metaphor'],
-  },
-  {
-    extract: '"A deafening silence filled the room after the verdict."',
-    source: 'Example prose',
-    correctDevice: 'Oxymoron',
-    options: ['Oxymoron', 'Paradox', 'Hyperbole', 'Juxtaposition'],
-  },
-  {
-    extract: '"The stars danced playfully in the moonlit sky."',
-    source: 'Example prose',
-    correctDevice: 'Personification',
-    options: ['Personification', 'Metaphor', 'Simile', 'Pathetic fallacy'],
-  },
-  {
-    extract:
-      '"Let us go then, you and I,\nWhen the evening is spread out against the sky\nLike a patient etherised upon a table."',
-    source: 'Prufrock - Eliot',
-    correctDevice: 'Simile',
-    options: ['Simile', 'Metaphor', 'Enjambment', 'Imagery'],
-  },
-  {
-    extract: '"My mother bore me in the southern wild,\nAnd I am black, but O! my soul is white."',
-    source: 'The Little Black Boy - Blake',
-    correctDevice: 'Juxtaposition',
-    options: ['Juxtaposition', 'Irony', 'Metaphor', 'Oxymoron'],
-  },
-  {
-    extract: '"I celebrate myself, and sing myself,\nAnd what I assume you shall assume."',
-    source: 'Song of Myself - Whitman',
-    correctDevice: 'Anaphora',
-    options: ['Anaphora', 'Repetition', 'Parallelism', 'Alliteration'],
-  },
-  {
-    extract: '"The fog comes\non little cat feet."',
-    source: 'Fog - Sandburg',
-    correctDevice: 'Metaphor',
-    options: ['Metaphor', 'Simile', 'Personification', 'Imagery'],
-  },
-  {
-    extract: '"Season of mists and mellow fruitfulness,\nClose bosom-friend of the maturing sun."',
-    source: 'To Autumn - Keats',
-    correctDevice: 'Personification',
-    options: ['Personification', 'Alliteration', 'Pathetic fallacy', 'Apostrophe'],
-  },
-  {
-    extract: '"Half a league, half a league,\nHalf a league onward,"',
-    source: 'Charge of the Light Brigade - Tennyson',
-    correctDevice: 'Repetition',
-    options: ['Repetition', 'Anaphora', 'Alliteration', 'Rhythm'],
-  },
-  {
-    extract: '"Meanwhile the mind, from pleasure less,\nWithdraws into its happiness."',
-    source: 'The Garden - Marvell',
-    correctDevice: 'Paradox',
-    options: ['Paradox', 'Irony', 'Oxymoron', 'Enjambment'],
-  },
-  {
-    extract: '"Tyger Tyger, burning bright,\nIn the forests of the night."',
-    source: 'The Tyger - Blake',
-    correctDevice: 'Metaphor',
-    options: ['Metaphor', 'Alliteration', 'Repetition', 'Symbolism'],
-  },
-  {
-    // UK rights notice: Robert Frost died 1963; UK copyright (CDPA 1988 §12: life
-    // + 70 years) expires 31 December 2033. Frost is public domain in the United
-    // States, but not in the UK. The quotation below is a 14-word fair-dealing
-    // extract for criticism/teaching; do not expand it without legal review.
-    extract: '"And miles to go before I sleep,\nAnd miles to go before I sleep."',
-    source:
-      '"Stopping by Woods on a Snowy Evening" - Robert Frost (fair-dealing extract; UK copyright until 2034)',
-    correctDevice: 'Repetition',
-    options: ['Repetition', 'Anaphora', 'Refrain', 'Enjambment'],
-  },
-  {
-    extract: '"The yellow smoke that rubs its muzzle on the window-panes."',
-    source: 'Prufrock - Eliot',
-    correctDevice: 'Personification',
-    options: ['Personification', 'Metaphor', 'Imagery', 'Simile'],
-  },
-  {
-    extract:
-      '"I should have been a pair of ragged claws\nScuttling across the floors of silent seas."',
-    source: 'Prufrock - Eliot',
-    correctDevice: 'Metaphor',
-    options: ['Metaphor', 'Simile', 'Synecdoche', 'Imagery'],
-  },
-  {
-    extract: '"No man is an island,\nEntire of itself."',
-    source: 'Devotions - Donne',
-    correctDevice: 'Metaphor',
-    options: ['Metaphor', 'Simile', 'Personification', 'Allusion'],
-  },
-]
+// The questions are in src/data/games/banks/speed-analysis.ts (moved there on
+// 13 October 2026), and the explanation for each in
+// src/data/games/explanations/speed-analysis.ts.
 
 const SECONDS_PER_QUESTION = 30
 const QUESTIONS_PER_ROUND = 20
@@ -236,7 +44,10 @@ export default function SpeedAnalysisPage() {
   const [qIdx, setQIdx] = useState(0)
   const [score, setScore] = useState(0)
   const [answered, setAnswered] = useState<string | null>(null)
+  // True once the question is over: answered, or out of time with no answer.
+  const [revealed, setRevealed] = useState(false)
   const [timer, setTimer] = useState(SECONDS_PER_QUESTION)
+  const round = useGameRound('speed-analysis')
   const [sessionSalt, setSessionSalt] = useState('')
   const timerRef = useRef<ReturnType<typeof setInterval> | null>(null)
 
@@ -269,23 +80,17 @@ export default function SpeedAnalysisPage() {
     [currentQ, sessionSalt],
   )
 
-  // Timer countdown per question
+  // Timer countdown per question. The clock only counts; running out is
+  // handled below, outside the state updater, which React may call twice.
   useEffect(() => {
-    if (gameState !== 'playing' || answered) return
+    if (gameState !== 'playing' || revealed) return
     timerRef.current = setInterval(() => {
-      setTimer((t) => {
-        if (t <= 1) {
-          // Time up for this question - skip
-          handleAnswer(null)
-          return SECONDS_PER_QUESTION
-        }
-        return t - 1
-      })
+      setTimer((t) => Math.max(0, t - 1))
     }, 1000)
     return () => {
       if (timerRef.current) clearInterval(timerRef.current)
     }
-  }, [gameState, qIdx, answered])
+  }, [gameState, qIdx, revealed])
 
   const handleStart = useCallback(() => {
     // Minted here rather than during render: newSessionSalt calls Math.random,
@@ -296,6 +101,7 @@ export default function SpeedAnalysisPage() {
     setQIdx(0)
     setScore(0)
     setAnswered(null)
+    setRevealed(false)
     setTimer(SECONDS_PER_QUESTION)
     setGameState('playing')
   }, [])
@@ -305,27 +111,51 @@ export default function SpeedAnalysisPage() {
     setGameState('finished')
   }, [])
 
+  /**
+   * A click, or the timer running out (null). The question is marked, recorded
+   * for the student's account, and then left on screen with its explanation
+   * until they choose to go on.
+   *
+   * WHAT CHANGED (13 October 2026). The game used to move to the next extract
+   * 1.2 seconds after an answer, showing only red or green. The founder found
+   * the answers too shallow; each now comes with why it is right and why the
+   * option chosen is not (src/data/games/explanations/speed-analysis.ts), and a
+   * student cannot read that in 1.2 seconds. The 30-second clock stops when the
+   * question is answered, so reading time is never taken from the next one.
+   */
   const handleAnswer = useCallback(
     (choice: string | null) => {
-      if (answered) return
+      if (revealed || !currentQ) return
       if (timerRef.current) clearInterval(timerRef.current)
+      const correct = choice !== null && choice === view.correctValue
       setAnswered(choice)
-      if (choice && choice === view.correctValue) {
-        setScore((s) => s + 1)
-      }
-      // Auto-advance after a short delay
-      setTimeout(() => {
-        if (qIdx + 1 >= questions.length) {
-          setGameState('finished')
-        } else {
-          setQIdx((i) => i + 1)
-          setAnswered(null)
-          setTimer(SECONDS_PER_QUESTION)
-        }
-      }, 1200)
+      setRevealed(true)
+      if (correct) setScore((s) => s + 1)
+      round.record({
+        question: BANK.key(currentQ),
+        correct,
+        tag: currentQ.correctDevice,
+        chose: choice ?? undefined,
+      })
     },
-    [answered, view.correctValue, qIdx, questions.length],
+    [revealed, currentQ, view.correctValue, round],
   )
+
+  // Out of time: the question is over, unanswered, and counts as missed.
+  useEffect(() => {
+    if (gameState === 'playing' && !revealed && timer === 0) handleAnswer(null)
+  }, [timer, gameState, revealed, handleAnswer])
+
+  const handleNext = useCallback(() => {
+    if (qIdx + 1 >= questions.length) {
+      setGameState('finished')
+      return
+    }
+    setQIdx((i) => i + 1)
+    setAnswered(null)
+    setRevealed(false)
+    setTimer(SECONDS_PER_QUESTION)
+  }, [qIdx, questions.length])
 
   const timerColor =
     timer <= 5 ? 'text-red-400' : timer <= 15 ? 'text-clay-600' : 'text-muted-foreground'
@@ -356,6 +186,7 @@ export default function SpeedAnalysisPage() {
           onStart={handleStart}
           onFinish={handleFinish}
           gameState={gameState}
+          round={round}
         >
           {currentQ && (
             <div className="space-y-6">
@@ -397,7 +228,7 @@ export default function SpeedAnalysisPage() {
                   const isCorrect = opt === view.correctValue
                   const isChosen = opt === answered
                   let optClass = 'border-border hover:border-primary/50 hover:bg-primary/5'
-                  if (answered) {
+                  if (revealed) {
                     if (isCorrect)
                       optClass = 'border-emerald-500 bg-emerald-500/10 text-emerald-400'
                     else if (isChosen) optClass = 'border-red-500 bg-red-500/10 text-red-400'
@@ -408,7 +239,7 @@ export default function SpeedAnalysisPage() {
                     <button
                       key={opt}
                       onClick={() => handleAnswer(opt)}
-                      disabled={!!answered}
+                      disabled={revealed}
                       className={cn(
                         'rounded-lg border px-4 py-3 text-sm font-medium transition-all duration-150 text-start',
                         optClass,
@@ -419,6 +250,28 @@ export default function SpeedAnalysisPage() {
                   )
                 })}
               </div>
+
+              {revealed && (
+                <div>
+                  {answered === null && (
+                    <p className="text-sm font-medium text-clay-600">
+                      Out of time. The answer was {view.correctValue}.
+                    </p>
+                  )}
+                  <AnswerExplanation
+                    game="speed-analysis"
+                    question={BANK.key(currentQ)}
+                    correct={answered === view.correctValue}
+                    chosen={answered}
+                  />
+                  <div className="mt-4 flex justify-end">
+                    <Button onClick={handleNext} autoFocus>
+                      {qIdx + 1 >= questions.length ? 'See your results' : 'Next question'}
+                      <ArrowRight className="size-4 ms-1" />
+                    </Button>
+                  </div>
+                </div>
+              )}
             </div>
           )}
         </GameShell>

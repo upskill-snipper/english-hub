@@ -1,7 +1,15 @@
 'use client'
 
-import { createContext, useContext } from 'react'
+import {
+  createContext,
+  useCallback,
+  useContext,
+  useMemo,
+  useRef,
+  type MutableRefObject,
+} from 'react'
 import { useAuthStore } from '@/store/auth-store'
+import { getGameTaxon } from '@/lib/learning-profile/taxonomy'
 import {
   CHOSEN_RE,
   ITEM_KIND_RE,
@@ -15,10 +23,13 @@ import {
  * How a game tells the site what happened in a round, and how the round
  * reaches a signed-in student's account (src/lib/game-results/types.ts).
  *
- * A skills game page calls useRecordAnswer() once per answered question.
- * GameShell collects the answers and, when the round ends, sends them with
- * sendRound(). A quest's LevelPlayer builds its own items and calls
- * sendRound() directly.
+ * A skills game page holds its round with useGameRound(slug), passes it to
+ * GameShell as `round`, and calls round.record() once per answered question.
+ * GameShell empties it when a round starts and sends it with sendRound() when
+ * the round ends. (A page's own logic runs outside GameShell, so it cannot
+ * reach a context GameShell provides; useRecordAnswer() is for components
+ * rendered inside the shell.) A quest's LevelPlayer builds its own items and
+ * calls sendRound() directly.
  *
  * THE GUEST RULE. sendRound() sends nothing at all unless a student is signed
  * in. A guest's scores stay in their browser, as every game page tells them;
@@ -40,6 +51,33 @@ export interface AnswerReport {
   tag?: string
   /** For a wrong choice from a fixed list of short labels: the label chosen. Never typed text. */
   chose?: string
+}
+
+/** One round's answers, held by the page that plays it and sent by GameShell. */
+export interface GameRound {
+  record: (a: AnswerReport) => void
+  reset: () => void
+  items: MutableRefObject<RoundItem[]>
+}
+
+/**
+ * A round recorder for the skills game `slug`. Pass it to GameShell as
+ * `round`; call record() for every answered question, right or wrong, timed
+ * out included (correct: false, no `chose`).
+ */
+export function useGameRound(slug: string): GameRound {
+  const items = useRef<RoundItem[]>([])
+  const fallbackKind = getGameTaxon(slug).skill
+  const record = useCallback(
+    (a: AnswerReport) => {
+      items.current.push(toItem(a, fallbackKind))
+    },
+    [fallbackKind],
+  )
+  const reset = useCallback(() => {
+    items.current = []
+  }, [])
+  return useMemo(() => ({ record, reset, items }), [record, reset])
 }
 
 const RecordAnswerContext = createContext<((a: AnswerReport) => void) | null>(null)
