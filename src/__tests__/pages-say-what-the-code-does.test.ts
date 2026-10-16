@@ -735,4 +735,12 @@ describe('the exam-technique examples are true to the texts and the terms', () =
     expect(page).not.toMatch(/until the third chapter/)
     expect(page).toMatch(/Full Statement of the Case/)
   })
+
+  it('does not call a parallel sentence chiasmus (F25)', () => {
+    // "I am malicious because I am miserable" repeats its order; chiasmus
+    // reverses it.
+    const page = code('src/app/revision/exam-technique/common-mistakes/page.tsx')
+    expect(page).not.toMatch(/chiasm/i)
+    expect(page).toMatch(/parallel structure/)
+  })
 })

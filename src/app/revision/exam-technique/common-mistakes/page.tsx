@@ -174,8 +174,12 @@ const MISTAKES: {
       'Sympathy is a valid reader response, but naming it without explaining how the writer engineers it is weak. Show the mechanism: what specific craft choice triggers the emotional response?',
     wrong:
       'This makes the reader feel sorry for the Creature because he is lonely and has no friends.',
+    // Corrected 16 October 2026: this called "I am malicious because I am
+    // miserable" chiastic. Chiasmus reverses its terms (A B, B A); this
+    // sentence repeats them in the same order, two matching clauses joined by
+    // "because": a parallel structure, bound by alliteration.
     right:
-      'Shelley engineers pathos through the Creature\'s acquisition of language: his increasingly eloquent appeals -- "I am malicious because I am miserable" -- force the reader to recognise an intelligence and emotional depth that Frankenstein refuses to acknowledge. The chiasmic structure of the sentence mirrors the Creature\'s argument that cause (misery) and effect (malice) are inseparable.',
+      'Shelley engineers pathos through the Creature\'s acquisition of language: his increasingly eloquent appeals, such as "I am malicious because I am miserable", force the reader to recognise an intelligence and emotional depth that Frankenstein refuses to acknowledge. The sentence\'s parallel structure, two matching clauses joined by "because" and bound by alliteration, presents the Creature\'s malice as the direct product of his misery.',
   },
   {
     number: 14,
