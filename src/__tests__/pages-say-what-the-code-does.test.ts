@@ -615,3 +615,31 @@ describe('/for-parents describes the parent dashboard that exists', () => {
     expect(close.ar).not.toMatch(/تتبّع التقدّم/)
   })
 })
+
+// ─── E20: the human review request ──────────────────────────────────────────
+
+describe('a human review request promises no reviewer, reply or deadline', () => {
+  // The request is saved to human_review_requests, which no staff screen,
+  // cron job or email reads.
+  const PROMISE =
+    /a human will|will review your work|qualified reviewer|school days|notify you by email|revisará tu trabajo|te responderá|بيراجع|بيشيكه|مراجع مؤهّل/i
+
+  it.each([
+    'ai_oversight.dialog_description',
+    'ai_oversight.success',
+    'ai_oversight.success_with_ref',
+    'dash.review_req.done_body',
+  ])('%s promises no human reply', (key) => {
+    const copy = inEveryLocale(key)
+    for (const locale of LOCALES) expect(copy[locale], `${key}/${locale}`).not.toMatch(PROMISE)
+  })
+
+  it('the API gives no response time, and the button falls back to the same copy', () => {
+    expect(code('src/app/api/review/route.ts')).not.toMatch(/school days/)
+    const button = code('src/components/ai/RequestHumanReviewButton.tsx')
+    expect(button).not.toMatch(PROMISE)
+    expect(code('src/app/dashboard/review/request/page.tsx')).not.toContain(
+      'dash.review_req.email_notify',
+    )
+  })
+})

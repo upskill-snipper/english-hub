@@ -646,10 +646,12 @@ export const DASHBOARD_CHROME_DICTIONARY: Record<string, { en: string; ar?: stri
       ar: 'تم إرسال طلب المراجعة',
       es: 'Solicitud de revisión enviada',
     },
+    // 16 October 2026: promised "A qualified reviewer will look at your
+    // essay". Nobody reads human_review_requests yet; see /api/review.
     'dash.review_req.done_body': {
-      en: 'Your request has been received. A qualified reviewer will look at your essay and the AI feedback.',
-      ar: 'استلمنا طلبك. مراجع مؤهّل بيشوف مقالتك وملاحظات الـ AI.',
-      es: 'Hemos recibido tu solicitud. Un revisor cualificado examinará tu ensayo y los comentarios de la AI.',
+      en: 'Your request is saved with your essay. Review requests are not yet seen by our team, so we cannot promise a reply.',
+      ar: 'انحفظ طلبك مع مقالتك. طلبات المراجعة ما يشوفها فريقنا للحين، فما نقدر نوعدك برد.',
+      es: 'Tu solicitud se ha guardado con tu ensayo. Nuestro equipo todavía no ve las solicitudes de revisión, así que no podemos prometerte una respuesta.',
     },
     'dash.review_req.ref_label': {
       en: 'Your reference number',
@@ -661,11 +663,8 @@ export const DASHBOARD_CHROME_DICTIONARY: Record<string, { en: string; ar?: stri
       ar: 'الوقت المتوقّع للرد:',
       es: 'Tiempo de respuesta estimado:',
     },
-    'dash.review_req.email_notify': {
-      en: 'We’ll notify you by email when the review is complete.',
-      ar: 'بنبلّغك بالإيميل لما تخلص المراجعة.',
-      es: 'Te avisaremos por correo cuando la revisión esté completa.',
-    },
+    // 'dash.review_req.email_notify' ("We'll notify you by email when the review is
+    // complete") was removed on 16 October 2026: no email is ever sent.
     'dash.review_req.back_dash': {
       en: 'Back to Dashboard',
       ar: 'ارجع للوحة',

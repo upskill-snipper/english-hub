@@ -14901,16 +14901,18 @@ export const ES_MESSAGES: Record<string, string> = {
   'ai_oversight.button': 'Solicitar una revisión humana',
   'ai_oversight.dialog_title': 'Solicitar una revisión humana',
   'ai_oversight.dialog_description':
-    'Esta nota y los comentarios fueron generados por IA. Es una nota estimada, no un resultado oficial. Si algo parece incorrecto, pide a un miembro de nuestro equipo que lo revise: una persona comprobará tu trabajo y te responderá.',
+    'Esta nota y los comentarios los ha escrito la IA. La nota es una estimación para practicar, no un resultado oficial. Puedes guardar una solicitud de revisión con esta redacción, pero nuestro equipo todavía no ve las solicitudes de revisión, así que no podemos prometerte una respuesta. Si estás en una clase de la web, tu profesor puede revisar tu nota.',
   'ai_oversight.reason_label': 'Dinos qué parece incorrecto (opcional)',
   'ai_oversight.reason_placeholder':
     'Por ejemplo: la nota parece demasiado baja, o los comentarios omiten parte de mi respuesta. Puedes dejarlo en blanco.',
   'ai_oversight.cancel': 'Cancelar',
   'ai_oversight.submit': 'Solicitar revisión',
-  'ai_oversight.submitting': 'Enviando…',
-  'ai_oversight.success': 'Tu solicitud ha sido enviada. Una persona revisará tu trabajo.',
-  'ai_oversight.success_with_ref': 'Solicitud enviada. Tu número de referencia es {ref}.',
-  'ai_oversight.error': 'No se pudo enviar tu solicitud. Inténtalo de nuevo.',
+  'ai_oversight.submitting': 'Guardando…',
+  'ai_oversight.success':
+    'Tu solicitud se ha guardado con esta redacción. Todavía no podemos prometerte una respuesta.',
+  'ai_oversight.success_with_ref':
+    'Solicitud guardada. Tu número de referencia es {ref}. Todavía no podemos prometerte una respuesta.',
+  'ai_oversight.error': 'No se pudo guardar tu solicitud. Inténtalo de nuevo.',
   'ai_oversight.default_detail_marking':
     'Por favor, haz que una persona revise esta nota de corrección estimada por IA.',
   'ai_oversight.default_detail_essay-feedback':
@@ -16945,10 +16947,9 @@ export const ES_MESSAGES: Record<string, string> = {
   'dash.review_req.reason.other': 'Otro',
   'dash.review_req.done_title': 'Solicitud de revisión enviada',
   'dash.review_req.done_body':
-    'Hemos recibido tu solicitud. Un revisor cualificado examinará tu ensayo y los comentarios de la AI.',
+    'Tu solicitud se ha guardado con tu ensayo. Nuestro equipo todavía no ve las solicitudes de revisión, así que no podemos prometerte una respuesta.',
   'dash.review_req.ref_label': 'Tu número de referencia',
   'dash.review_req.est_response': 'Tiempo de respuesta estimado:',
-  'dash.review_req.email_notify': 'Te avisaremos por correo cuando la revisión esté completa.',
   'dash.review_req.back_dash': 'Volver al panel',
   'dash.review_req.track': 'Seguir esta solicitud',
   'dash.review_status.err.not_found':

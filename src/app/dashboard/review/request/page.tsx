@@ -25,7 +25,7 @@ interface Essay {
 
 interface SubmissionResult {
   referenceNumber: string
-  estimatedResponse: string
+  estimatedResponse: string | null
 }
 
 export default function ReviewRequestPage() {
@@ -136,14 +136,17 @@ export default function ReviewRequestPage() {
             </p>
           </div>
 
-          <div className="mt-4 rounded-lg bg-accent/5 border border-accent/20 p-4 text-sm text-foreground">
-            <p>
-              <strong>{t('dash.review_req.est_response')}</strong> {result.estimatedResponse}
-            </p>
-            <p className="mt-1 text-xs text-muted-foreground">
-              {t('dash.review_req.email_notify')}
-            </p>
-          </div>
+          {/* The estimate and the email promise show only if the API ever
+              gives an estimate again. It said "3 school days" and "We'll
+              notify you by email" until 16 October 2026, while nobody read
+              the requests and no email was sent. */}
+          {result.estimatedResponse && (
+            <div className="mt-4 rounded-lg bg-accent/5 border border-accent/20 p-4 text-sm text-foreground">
+              <p>
+                <strong>{t('dash.review_req.est_response')}</strong> {result.estimatedResponse}
+              </p>
+            </div>
+          )}
 
           <div className="mt-8 flex flex-col sm:flex-row items-center justify-center gap-3">
             <Link href="/dashboard" className="btn-primary text-sm">

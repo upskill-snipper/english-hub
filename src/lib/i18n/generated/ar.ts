@@ -14183,16 +14183,16 @@ export const AR_MESSAGES: Record<string, string> = {
   'ai_oversight.button': 'اطلب مراجعة بشرية',
   'ai_oversight.dialog_title': 'اطلب مراجعة بشرية',
   'ai_oversight.dialog_description':
-    'هالدرجة والملاحظات تكوّنت بالذكاء الاصطناعي. هذي درجة تقديرية، مو نتيجة رسمية. إذا فيه شي ما يبيّن صحيح، اطلب من فريقنا يراجعه - بيشيكه شخص بشري ويرد عليك.',
+    'هالدرجة والملاحظات كتبها الذكاء الاصطناعي. الدرجة تقدير للتدريب، مو نتيجة رسمية. تقدر تحفظ طلب مراجعة مع هالمقال، بس طلبات المراجعة ما يشوفها فريقنا للحين، فما نقدر نوعدك برد. وإذا انت في صف على الموقع، معلمك يقدر يراجع درجتك.',
   'ai_oversight.reason_label': 'قل لنا وش اللي ما يبيّن صحيح (اختياري)',
   'ai_oversight.reason_placeholder':
     'مثلاً: الدرجة تبيّن واطية وايد، أو الملاحظات فاتها جزء من جوابي. تقدر تتركها فاضية.',
   'ai_oversight.cancel': 'إلغاء',
   'ai_oversight.submit': 'اطلب المراجعة',
-  'ai_oversight.submitting': 'يتم الإرسال…',
-  'ai_oversight.success': 'انرسل طلبك. بيراجع شغلك شخص بشري.',
-  'ai_oversight.success_with_ref': 'انرسل الطلب. رقمك المرجعي هو {ref}.',
-  'ai_oversight.error': 'ما قدرنا نرسل طلبك. حاول مرة ثانية.',
+  'ai_oversight.submitting': 'يتم الحفظ…',
+  'ai_oversight.success': 'انحفظ طلبك مع هالمقال. ما نقدر نوعدك برد للحين.',
+  'ai_oversight.success_with_ref': 'انحفظ الطلب. رقمك المرجعي هو {ref}. ما نقدر نوعدك برد للحين.',
+  'ai_oversight.error': 'ما قدرنا نحفظ طلبك. حاول مرة ثانية.',
   'ai_oversight.default_detail_marking':
     'الرجاء مراجعة هذي الدرجة المقدّرة بالذكاء الاصطناعي من قبل شخص بشري.',
   'ai_oversight.default_detail_essay-feedback':
@@ -16085,10 +16085,10 @@ export const AR_MESSAGES: Record<string, string> = {
   'dash.review_req.reason.missed_points': 'الـ AI فوّت نقاط مهمة',
   'dash.review_req.reason.other': 'شي ثاني',
   'dash.review_req.done_title': 'تم إرسال طلب المراجعة',
-  'dash.review_req.done_body': 'استلمنا طلبك. مراجع مؤهّل بيشوف مقالتك وملاحظات الـ AI.',
+  'dash.review_req.done_body':
+    'انحفظ طلبك مع مقالتك. طلبات المراجعة ما يشوفها فريقنا للحين، فما نقدر نوعدك برد.',
   'dash.review_req.ref_label': 'رقمك المرجعي',
   'dash.review_req.est_response': 'الوقت المتوقّع للرد:',
-  'dash.review_req.email_notify': 'بنبلّغك بالإيميل لما تخلص المراجعة.',
   'dash.review_req.back_dash': 'ارجع للوحة',
   'dash.review_req.track': 'تابع هالطلب',
   'dash.review_status.err.not_found': 'ما لقينا طلب المراجعة. تأكّد من رقمك المرجعي.',

@@ -130,10 +130,14 @@ export async function POST(request: NextRequest) {
       )
     }
 
+    // No estimate. This returned '3 school days' until 16 October 2026,
+    // while nothing reads human_review_requests: no staff screen, cron job
+    // or email, so no reply could come in three days or at all. The field is
+    // kept, as null, so a client that reads it does not break.
     return NextResponse.json(
       {
         referenceNumber,
-        estimatedResponse: '3 school days',
+        estimatedResponse: null,
       },
       { status: 201 },
     )
