@@ -586,7 +586,7 @@ export const AR_MESSAGES: Record<string, string> = {
   'audience.parents.hero.title': 'ساعد طفلك ينجح في GCSE أو',
   'audience.parents.hero.title_emphasis': 'IGCSE English',
   'audience.parents.hero.sub':
-    'احصل على رؤى لحظية لتقدّم طفلك في المراجعة وجاهزيته للامتحان والمجالات اللي يحتاج يحسّنها. بلا تخمين - شوف بالضبط شنو يتعلّم ووين يحتاج مساعدة.',
+    'اربط حسابك بحساب طفلك، ووافق على ملاحظات الذكاء الاصطناعي على مقالاته إذا عمره من ١٣ لـ ١٥، وتطمّن إن إعدادات خصوصيته شغّالة من البداية.',
   'audience.parents.cta.start_trial': 'ابدأ التجربة المجانية لطفلك',
   'audience.parents.cta.reading_check': 'سوِّ فحص عمر القراءة في ٢٠ دقيقة (ببلاش، بلا بطاقة)',
   'audience.parents.cta.see_how': 'شوف كيف يشتغل',
@@ -596,7 +596,7 @@ export const AR_MESSAGES: Record<string, string> = {
   'audience.parents.pricing.plan_desc': 'وصول كامل لولدك + لوحة ولي الأمر',
   'audience.parents.final.title': 'جاهز تدعم نجاحه؟',
   'audience.parents.final.sub':
-    'ابدأ بتجربة مجانية وشوف شلون يكون تتبّع التقدّم الحقيقي لمراجعة GCSE و IGCSE English.',
+    'خلّ طفلك يبدأ بتجربة مجانية لمراجعة GCSE و IGCSE English، واربط حسابك كولي أمر بحسابه.',
   'audience.parents.final.dashboard': 'روح للوحة ولي الأمر',
   'audience.parents.contact.title': 'عندك سؤال؟',
   'audience.parents.contact.body':

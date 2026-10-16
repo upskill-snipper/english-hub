@@ -62,6 +62,16 @@ export const metadata: Metadata = {
  * so this page can stay a server component and export `metadata`.
  * FAQ list extended with parent-targeted entries (safety, tutor
  * comparison, data, progress visibility) per SEO/integrity pass.
+ *
+ * 16 October 2026: this page described a parent dashboard that does not
+ * exist. It promised a child's "Working At Grade" and a "progress estimate",
+ * modules completed, quiz scores, study time, weak areas, weak-area alerts,
+ * progress charts, recommended next steps, a real-time activity feed and an
+ * exam readiness score. The parent dashboard (src/app/dashboard/parent) shows
+ * the children a parent is linked to, by an invite code each child gives,
+ * and weekly summaries that are not produced yet; its own header lists
+ * working-at grades and exam-readiness scores as deliberately absent. The
+ * copy below says that, and the FAQs also lose an unsourced tutor price.
  */
 
 const faqs = [
@@ -73,42 +83,42 @@ const faqs = [
   {
     question: 'How is this different from a private tutor?',
     answer:
-      'A private tutor typically costs £25 to £50 per hour and is available in scheduled sessions. The English Hub is available 24/7 for the price of a monthly subscription, and our AI marks practice essays against AQA, Edexcel, OCR, WJEC Eduqas, and Cambridge IGCSE assessment objectives. It is best used alongside school teaching, not as a replacement for it.',
+      'A private tutor works in scheduled sessions. The English Hub is there whenever your child wants to revise, for the price of a subscription, and our AI marks practice essays against AQA, Edexcel, OCR, WJEC Eduqas, and Cambridge IGCSE assessment objectives. It is best used alongside school teaching, not as a replacement for it.',
   },
   {
     question: "Will my child's data be sold?",
     answer:
-      'No. We do not sell student data to third parties. Full detail on what we collect, why, and how long we keep it is in our privacy policy at /privacy-policy.',
+      'No. We do not sell student data to third parties. Full detail on what we collect, why, and how long we keep it is in our privacy policy at /legal/privacy.',
   },
   {
     question: "Can I see my child's progress?",
     answer:
-      "Yes. Once you link to your child from your parent dashboard, you can see modules completed, quiz scores, study time, and the weak areas the platform has identified. You will not see the text of your child's written answers. (Weekly email summaries are being finalised and are not sent yet.)",
+      "Once you link to your child, your parent dashboard shows the account you are linked to. Weekly summaries of their practice are being finalised and are not sent yet, so it does not yet show scores, time spent or weak areas. You will not see the text of your child's written answers.",
   },
   {
     question: 'What data can I see as a parent?',
     answer:
-      'You can see modules completed, quiz scores, time spent studying, course progress and weak areas identified by our system. You cannot see the content of any written answers your child submits. (Weekly activity summaries are being finalised and are not produced yet.)',
+      "Today, the children you are linked to: each one's name, school and plan. Weekly summaries of their practice are being finalised and are not produced yet. You cannot see the content of any written answers your child submits.",
   },
   {
     question: 'Can my child see that I am monitoring their progress?',
     answer:
-      'Yes. Transparency is important to us. Your child will see a small indicator on their dashboard showing that a parent account is linked. We believe this builds trust and encourages accountability.',
+      'Yes. When you link, your child is told that a parent has been linked to their account. We believe this builds trust.',
   },
   {
     question: 'Can I link more than one child?',
     answer:
-      'Not yet, but multi-child support is on our roadmap. For now, each parent account links to one child account. You can create a separate parent account for each child if needed.',
+      'Yes. Each child gives you their own invite code, and every child you link appears in your parent dashboard. A child can be linked to one parent account at a time.',
   },
   {
     question: 'What if my child already has an account?',
     answer:
-      'No problem. Simply enter their email address or invite code in your parent dashboard, and we will send them a link request. They must accept it before you can see their data.',
+      'No problem. Your child can find their invite code in their account and give it to you; enter it in your parent dashboard to link. Nothing is linked without that code.',
   },
   {
-    question: 'What are Working At Grade and the progress estimate?',
+    question: 'Will I see a grade for my child?',
     answer:
-      "Working At Grade reflects your child's recent quiz and assessment scores, shown on the UK GCSE 1-9 scale. What is the progress estimate? It is the platform's internal estimate of where your child may be heading, based on their practice on the site. It is a guide to help focus revision - not an official grade, not a prediction of exam results, and not used by any exam board.",
+      'No. The parent dashboard shows no working-at grade, predicted grade or progress estimate. When your child gets AI feedback on an essay, it shows them a practice grade, labelled as AI, in their own account.',
   },
   {
     question: 'Can I cancel anytime?',
@@ -302,13 +312,13 @@ export default async function ForParentsPage() {
                 step: 2,
                 icon: Link2,
                 title: 'Link your parent account to theirs',
-                desc: "Create your own parent account and link it to your child using their email or a unique invite code. They accept the link request and you're connected.",
+                desc: "Create your own parent account and enter the invite code your child gives you from their account. Once it is entered, you're connected.",
               },
               {
                 step: 3,
                 icon: BarChart3,
-                title: 'See their progress dashboard',
-                desc: 'View modules completed, practice scores, time spent, and the weak areas the platform has identified - all in your parent dashboard.',
+                title: 'See who you are linked to',
+                desc: 'Your parent dashboard shows the children you are linked to. Weekly summaries of their practice are being finalised and are not sent yet.',
               },
             ].map((item) => (
               <Card
@@ -339,50 +349,49 @@ export default async function ForParentsPage() {
       <section className="py-24 sm:py-32">
         <div className="max-w-6xl mx-auto px-6">
           <div className="text-center mb-16">
-            <h2 className="text-foreground">Everything You Need to Support Their Success</h2>
+            <h2 className="text-foreground">What a Parent Account Does</h2>
             <p className="mt-4 text-muted-foreground max-w-xl mx-auto text-body-lg">
-              Powerful insights that help you help them &mdash; without hovering over their
-              shoulder.
+              Honest about what you see, and careful with your child&rsquo;s data.
             </p>
           </div>
 
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
             {[
               {
-                icon: BarChart3,
+                icon: Eye,
                 color: 'text-primary bg-primary/10',
-                title: 'Progress you can follow',
-                desc: 'A clear view of what your child has studied, their scores, and where they are improving - updated as they work, in your parent dashboard.',
+                title: 'Link with an invite code',
+                desc: 'Your child gives you the invite code from their account. Your parent dashboard then shows the children you are linked to, and you can unlink at any time.',
               },
               {
                 icon: Target,
                 color: 'text-emerald-400 bg-emerald-500/10',
-                title: 'Working At Grade & progress estimate',
-                desc: 'See your child’s Working At Grade (based on recent performance, on the GCSE 1-9 scale) and a progress estimate - the platform’s internal guide to where they may be heading. It helps focus revision and is not an official grade or a prediction of exam results.',
+                title: 'No invented grades',
+                desc: 'The parent dashboard shows no working-at grade, predicted grade or exam-readiness score. AI feedback on your child’s essays carries a practice grade, labelled as AI.',
               },
               {
-                icon: Bell,
+                icon: Zap,
                 color: 'text-clay-600 bg-amber-500/10',
-                title: 'Weak Area Alerts',
-                desc: 'Get notified when our system identifies areas your child is struggling with. "Your child needs more work on creative writing" or "Poetry analysis scores are below average."',
+                title: 'Your say on AI feedback',
+                desc: 'If your child is 13 to 15, AI feedback on their essays is switched on only with a parent’s approval, or their school’s.',
               },
               {
                 icon: LineChart,
                 color: 'text-blue-400 bg-blue-500/10',
-                title: 'Progress Charts',
-                desc: 'Week-by-week activity charts showing study time, modules completed, and score trends. See the trajectory at a glance.',
+                title: 'Private by default',
+                desc: 'Under-18s start with streaks, personalised suggestions, reminder nudges and marketing switched off, and product analytics never record a signed-in child.',
               },
               {
-                icon: Zap,
+                icon: BarChart3,
                 color: 'text-purple-400 bg-purple-500/10',
-                title: 'Recommended Next Steps',
-                desc: 'Personalised suggestions for what your child should focus on next, based on their performance data and upcoming exam dates.',
+                title: 'Their writing stays theirs',
+                desc: 'You never see the text of what your child writes. Parent access is limited to the account you are linked to.',
               },
               {
-                icon: Eye,
+                icon: Bell,
                 color: 'text-red-400 bg-red-500/10',
-                title: 'Real-Time Activity Feed',
-                desc: 'See what your child completed today, yesterday, and this week. Know they are putting in the work without having to ask.',
+                title: 'Weekly summaries, being finalised',
+                desc: 'Weekly summaries of your child’s practice are being finalised. None are sent yet.',
               },
             ].map((item) => (
               <Card
@@ -457,9 +466,7 @@ export default async function ForParentsPage() {
                   'Full access to every course, KS3 to IGCSE',
                   'Exam-style practice questions and mock papers',
                   '2,000+ revision flashcards',
-                  'Parent progress dashboard',
-                  'Weak area visibility & recommendations',
-                  'Exam readiness score',
+                  'Parent dashboard for the children you link',
                   'Verifiable completion certificates',
                   `${PRICING.TRIAL_DAYS}-day free trial`,
                 ].map((feature) => (

@@ -574,3 +574,44 @@ describe('/resources/study-tools says where its tools save', () => {
     }
   })
 })
+
+// ─── E19: /for-parents ──────────────────────────────────────────────────────
+
+describe('/for-parents describes the parent dashboard that exists', () => {
+  // The parent dashboard shows the children a parent is linked to (by each
+  // child's invite code) and weekly summaries that are not produced yet. Its
+  // own header lists working-at grades and exam-readiness scores as
+  // deliberately absent (src/app/dashboard/parent/page.tsx).
+  const page = code('src/app/for-parents/page.tsx')
+
+  it('promises no grade, estimate, alert, chart or feed the dashboard lacks', () => {
+    for (const gone of [
+      /Working At Grade/i,
+      /a progress estimate -/i,
+      /Exam readiness score/i,
+      /Weak Area Alerts/i,
+      /Progress Charts/i,
+      /Real-Time Activity Feed/i,
+      /Recommended Next Steps/i,
+      /modules completed, quiz scores/i,
+      /their email or a unique invite code/i,
+    ]) {
+      expect(page, String(gone)).not.toMatch(gone)
+    }
+  })
+
+  it('quotes no unsourced tutor price', () => {
+    expect(page).not.toMatch(/£\d+ to £\d+ per hour/)
+  })
+
+  it('says the same in the translated hero and closing lines', () => {
+    const hero = inEveryLocale('audience.parents.hero.sub')
+    expect(hero.en).not.toMatch(/real-time|exam readiness/i)
+    expect(hero.es).not.toMatch(/tiempo real|preparación para el examen/i)
+    expect(hero.ar).not.toMatch(/لحظية|جاهزيته للامتحان/)
+    const close = inEveryLocale('audience.parents.final.sub')
+    expect(close.en).not.toMatch(/progress tracking/i)
+    expect(close.es).not.toMatch(/seguimiento del progreso/i)
+    expect(close.ar).not.toMatch(/تتبّع التقدّم/)
+  })
+})

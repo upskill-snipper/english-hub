@@ -1968,10 +1968,14 @@ export const DICTIONARY: Dictionary = {
     ar: 'IGCSE English',
     es: 'IGCSE English',
   },
+  // 16 October 2026: promised "real-time insights into your child's revision
+  // progress, exam readiness, and areas for improvement". The parent dashboard
+  // shows the children a parent is linked to; weekly summaries are not
+  // produced yet, and it shows no readiness score (see /for-parents).
   'audience.parents.hero.sub': {
-    en: "Get real-time insights into your child's revision progress, exam readiness, and areas for improvement. No more guessing - see exactly what they're learning and where they need help.",
-    ar: 'احصل على رؤى لحظية لتقدّم طفلك في المراجعة وجاهزيته للامتحان والمجالات اللي يحتاج يحسّنها. بلا تخمين - شوف بالضبط شنو يتعلّم ووين يحتاج مساعدة.',
-    es: 'Obtén información en tiempo real sobre el progreso del repaso de tu hijo, su preparación para el examen y sus áreas de mejora. Se acabó adivinar: ve exactamente qué está aprendiendo y dónde necesita ayuda.',
+    en: "Link to your child's account, approve AI feedback on their essays if they are 13 to 15, and know their privacy settings are on from the start.",
+    ar: 'اربط حسابك بحساب طفلك، ووافق على ملاحظات الذكاء الاصطناعي على مقالاته إذا عمره من ١٣ لـ ١٥، وتطمّن إن إعدادات خصوصيته شغّالة من البداية.',
+    es: 'Vincúlate a la cuenta de tu hijo, aprueba el feedback con IA sobre sus redacciones si tiene entre 13 y 15 años y ten la tranquilidad de que su configuración de privacidad está activa desde el principio.',
   },
   'audience.parents.cta.start_trial': {
     en: "Start Your Child's Free Trial",
@@ -2014,9 +2018,9 @@ export const DICTIONARY: Dictionary = {
     es: '¿Listo para apoyar su éxito?',
   },
   'audience.parents.final.sub': {
-    en: 'Start with a free trial and see what real progress tracking looks like for GCSE and IGCSE English revision.',
-    ar: 'ابدأ بتجربة مجانية وشوف شلون يكون تتبّع التقدّم الحقيقي لمراجعة GCSE و IGCSE English.',
-    es: 'Empieza con una prueba gratuita y descubre cómo es un seguimiento del progreso real para el repaso de inglés GCSE e IGCSE.',
+    en: 'Start your child on a free trial of GCSE and IGCSE English revision, and link your parent account to theirs.',
+    ar: 'خلّ طفلك يبدأ بتجربة مجانية لمراجعة GCSE و IGCSE English، واربط حسابك كولي أمر بحسابه.',
+    es: 'Empieza con una prueba gratuita del repaso de inglés GCSE e IGCSE para tu hijo y vincula tu cuenta de padre a la suya.',
   },
   'audience.parents.final.dashboard': {
     en: 'Go to Parent Dashboard',

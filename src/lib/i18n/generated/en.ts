@@ -591,7 +591,7 @@ export const EN_MESSAGES: Record<string, string> = {
   'audience.parents.hero.title': 'Help your child succeed in GCSE or',
   'audience.parents.hero.title_emphasis': 'IGCSE English',
   'audience.parents.hero.sub':
-    "Get real-time insights into your child's revision progress, exam readiness, and areas for improvement. No more guessing - see exactly what they're learning and where they need help.",
+    "Link to your child's account, approve AI feedback on their essays if they are 13 to 15, and know their privacy settings are on from the start.",
   'audience.parents.cta.start_trial': "Start Your Child's Free Trial",
   'audience.parents.cta.reading_check': 'Run a 20-minute reading-age check (free, no card)',
   'audience.parents.cta.see_how': 'See How It Works',
@@ -601,7 +601,7 @@ export const EN_MESSAGES: Record<string, string> = {
   'audience.parents.pricing.plan_desc': 'Full access for your child + parent dashboard',
   'audience.parents.final.title': 'Ready to Support Their Success?',
   'audience.parents.final.sub':
-    'Start with a free trial and see what real progress tracking looks like for GCSE and IGCSE English revision.',
+    'Start your child on a free trial of GCSE and IGCSE English revision, and link your parent account to theirs.',
   'audience.parents.final.dashboard': 'Go to Parent Dashboard',
   'audience.parents.contact.title': 'Have a Question?',
   'audience.parents.contact.body':

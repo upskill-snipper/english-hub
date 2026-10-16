@@ -602,7 +602,7 @@ export const ES_MESSAGES: Record<string, string> = {
   'audience.parents.hero.title': 'Ayuda a tu hijo a tener éxito en el GCSE o',
   'audience.parents.hero.title_emphasis': 'IGCSE English',
   'audience.parents.hero.sub':
-    'Obtén información en tiempo real sobre el progreso del repaso de tu hijo, su preparación para el examen y sus áreas de mejora. Se acabó adivinar: ve exactamente qué está aprendiendo y dónde necesita ayuda.',
+    'Vincúlate a la cuenta de tu hijo, aprueba el feedback con IA sobre sus redacciones si tiene entre 13 y 15 años y ten la tranquilidad de que su configuración de privacidad está activa desde el principio.',
   'audience.parents.cta.start_trial': 'Empieza la prueba gratuita de tu hijo',
   'audience.parents.cta.reading_check':
     'Realiza una prueba de edad lectora de 20 minutos (gratis, sin tarjeta)',
@@ -614,7 +614,7 @@ export const ES_MESSAGES: Record<string, string> = {
   'audience.parents.pricing.plan_desc': 'Acceso completo para tu hijo + panel para padres',
   'audience.parents.final.title': '¿Listo para apoyar su éxito?',
   'audience.parents.final.sub':
-    'Empieza con una prueba gratuita y descubre cómo es un seguimiento del progreso real para el repaso de inglés GCSE e IGCSE.',
+    'Empieza con una prueba gratuita del repaso de inglés GCSE e IGCSE para tu hijo y vincula tu cuenta de padre a la suya.',
   'audience.parents.final.dashboard': 'Ir al panel para padres',
   'audience.parents.contact.title': '¿Tienes una pregunta?',
   'audience.parents.contact.body':
