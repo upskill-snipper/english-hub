@@ -199,17 +199,16 @@ export const EXPLANATIONS: GameExplanations = {
     more: 'Dancing, playful stars create a light, joyful and magical night scene.',
     tip: "Link the device to mood: 'Personifying the stars as dancing creates a joyful atmosphere.'",
   },
-  '"Let us go then, you and I,\nWhen the evening is spread out against the sky\nLike a patient etherised upon a table."':
-    {
-      why: "The evening is compared to 'a patient etherised upon a table' using 'like', so this is a simile.",
-      not: {
-        Onomatopoeia: 'No word here imitates a sound.',
-        Oxymoron: 'No two words here contradict each other.',
-        Paradox: 'No statement here seems to contradict itself.',
-      },
-      more: 'Comparing an evening sky to an unconscious patient on an operating table is jarring. It suggests stillness, numbness and illness, an uneasy, unromantic mood.',
-      tip: "Comment on the surprise: 'The unexpected simile replaces romance with numbness and unease.'",
+  '"When the evening is spread out ...\nLike a patient etherised upon a table."': {
+    why: "The evening is compared to 'a patient etherised upon a table' using 'like', so this is a simile.",
+    not: {
+      Onomatopoeia: 'No word here imitates a sound.',
+      Oxymoron: 'No two words here contradict each other.',
+      Paradox: 'No statement here seems to contradict itself.',
     },
+    more: 'Comparing an evening to an unconscious patient on an operating table is jarring. It suggests stillness, numbness and illness, an uneasy, unromantic mood.',
+    tip: "Comment on the surprise: 'The unexpected simile replaces romance with numbness and unease.'",
+  },
   '"My mother bore me in the southern wild,\nAnd I am black, but O! my soul is white."': {
     why: "'Black' and 'white' are placed side by side in the same line, setting the boy's skin against his soul. Placing contrasting ideas together is juxtaposition.",
     not: {
@@ -301,7 +300,7 @@ export const EXPLANATIONS: GameExplanations = {
     more: 'The cat-like smoke curling round the city creates a lazy, creeping and slightly unpleasant atmosphere.',
     tip: "Be precise about the comparison: 'The metaphor presents the smoke as a cat, creeping lazily through the city.'",
   },
-  '"I should have been a pair of ragged claws\nScuttling across the floors of silent seas."': {
+  '"I should have been a pair of ragged claws\nScuttling across ... silent seas."': {
     why: "The speaker says he should have been 'a pair of ragged claws', as if he were a crab, without 'like' or 'as'. That is a metaphor.",
     not: {
       Simile: "There is no 'like' or 'as': he imagines being the claws.",

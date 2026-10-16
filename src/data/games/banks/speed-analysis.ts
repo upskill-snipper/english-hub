@@ -34,6 +34,17 @@ import type { GameBank } from '@/lib/games/explanations/types'
  * contain, so exactly one answer is right; 28 of the 30 had at least one
  * option replaced. The extracts, their sources and the devices asked about are
  * unchanged except for those two answers.
+ *
+ * TWO EXTRACTS SHORTENED (16 October 2026). Eliot died in 1965, so Prufrock
+ * is in UK copyright until the end of 2035, and the site quotes a text in
+ * copyright to at most FAIR_DEALING.quoteWords words and
+ * FAIR_DEALING.poemQuoteLines lines of a poem
+ * (src/lib/study-guides/fair-dealing.ts). The etherised evening was 23 words
+ * over three lines, and the ragged claws 16 words. Both were cut by deletion
+ * only, marked with an ellipsis, keeping the comparison each question asks
+ * about: the evening still lies "Like a patient etherised upon a table", and
+ * the speaker still should have been "a pair of ragged claws".
+ * src/__tests__/no-game-quotes-over-the-fair-dealing-limit.test.ts holds them.
  */
 
 export interface AnalysisQuestion {
@@ -154,8 +165,7 @@ export const QUESTIONS: AnalysisQuestion[] = [
     options: ['Personification', 'Simile', 'Onomatopoeia', 'Oxymoron'],
   },
   {
-    extract:
-      '"Let us go then, you and I,\nWhen the evening is spread out against the sky\nLike a patient etherised upon a table."',
+    extract: '"When the evening is spread out ...\nLike a patient etherised upon a table."',
     source: 'Prufrock - Eliot',
     correctDevice: 'Simile',
     options: ['Simile', 'Onomatopoeia', 'Oxymoron', 'Paradox'],
@@ -216,8 +226,7 @@ export const QUESTIONS: AnalysisQuestion[] = [
     options: ['Metaphor', 'Simile', 'Onomatopoeia', 'Oxymoron'],
   },
   {
-    extract:
-      '"I should have been a pair of ragged claws\nScuttling across the floors of silent seas."',
+    extract: '"I should have been a pair of ragged claws\nScuttling across ... silent seas."',
     source: 'Prufrock - Eliot',
     correctDevice: 'Metaphor',
     options: ['Metaphor', 'Simile', 'Onomatopoeia', 'Oxymoron'],
