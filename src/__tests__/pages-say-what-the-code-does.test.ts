@@ -466,3 +466,55 @@ describe('no page promises how fast AI marking is', () => {
     expect(code('src/app/page.tsx')).not.toMatch(/trusted by schools/i)
   })
 })
+
+// ─── E16: /mock-exams ───────────────────────────────────────────────────────
+
+describe('/mock-exams says what a mock paper does', () => {
+  // The paper page marks multiple choice only and hands a written answer to
+  // /marking/submit; no grade-boundary table is verified; the paper page has
+  // one model answer; answers live in the page until submitted. TEHC-079
+  // states no mock-paper count.
+  const CLAIMS =
+    /\d{2,}|٣|٧|٦٠|seconds|segundos|ثانية|instant|instantáne|فوري|real exam board grade boundaries|accurate grade boundaries|notas de corte (reales|precisas)|saved automatically|se guardan automáticamente|تنحفظ تلقائياً|Grade 4-5, Grade 6-7|single most effective/i
+
+  const KEYS = [
+    'mock.hero_headline',
+    'mock.hero_subhead',
+    'mock.stat_papers',
+    'mock.how_mocks_help_desc',
+    'mock.step_track_title',
+    'mock.step_track_desc',
+    'mock.step_model_desc',
+    'mock.step_weak_desc',
+    'mock.step_ai_desc',
+    'mock.choose_paper_prefix',
+    'mock.choose_paper_suffix',
+    'mock.more_papers_note',
+    'mock.cond_autosave',
+  ]
+
+  it.each(KEYS)('%s claims no count, speed, grade boundary or autosave', (key) => {
+    const copy = inEveryLocale(key)
+    for (const locale of LOCALES) expect(copy[locale], `${key}/${locale}`).not.toMatch(CLAIMS)
+  })
+
+  it('prints no count of extra papers on the page', () => {
+    const page = code('src/app/mock-exams/page.tsx')
+    expect(page).not.toMatch(/more_papers_(prefix|middle|suffix)/)
+    expect(page).toContain("t('mock.more_papers_note')")
+  })
+
+  it('does not say a submitted mock is marked by AI trained on mark schemes, on /faqs either', async () => {
+    const AI_TRAINED =
+      /trained on (official|real) mark schemes|entrenada con esquemas|مدرّب على مخططات/i
+    for (const key of ['faqs.c2.a', 'faqs.g7.a']) {
+      const copy = inEveryLocale(key)
+      for (const locale of LOCALES) {
+        expect(copy[locale], `${key}/${locale}`).not.toMatch(AI_TRAINED)
+        expect(copy[locale], `${key}/${locale}`).not.toMatch(/unmatched|inigualable|ما لها مثيل/i)
+      }
+    }
+    const { FAQ_JSON_LD_DATA } = await import('@/app/faqs/faq-data')
+    for (const f of FAQ_JSON_LD_DATA) expect(f.answer).not.toMatch(AI_TRAINED)
+  })
+})

@@ -1925,10 +1925,10 @@ export const ES_MESSAGES: Record<string, string> = {
   'marking.report_issue': 'Informar de un problema',
   'mock.mock_exams': 'Exámenes de prueba',
   'mock.gcse_mock_exams': 'Exámenes de prueba de GCSE',
-  'mock.hero_headline': '172 exámenes de prueba completos en 6 juntas.',
+  'mock.hero_headline': 'Exámenes de prueba completos, por junta.',
   'mock.hero_subhead':
-    'Corregidos con IA en 60 segundos. Formato de examen auténtico. Esquemas de calificación alineados con la junta.',
-  'mock.stat_papers': '4 exámenes',
+    'Exámenes con el formato de tu junta, con sus esquemas de calificación. Envía una respuesta escrita a la corrección con IA cuando quieras feedback sobre ella.',
+  'mock.stat_papers': 'Exámenes tipo examen',
   'mock.stat_timed': 'Condiciones cronometradas',
   'mock.stat_grades': 'Notas 1-9',
   'mock.stat_ai_feedback': 'Feedback con IA',
@@ -1937,30 +1937,28 @@ export const ES_MESSAGES: Record<string, string> = {
   'mock.how_it_works': 'Cómo funciona',
   'mock.how_mocks_help': 'Cómo te ayudan los exámenes de prueba a triunfar',
   'mock.how_mocks_help_desc':
-    'Practicar en condiciones reales de examen es la forma más eficaz de mejorar tu nota de inglés de GCSE. Nuestros exámenes de prueba replican el formato exacto que usan AQA, Edexcel, OCR y WJEC.',
+    'Practicar en condiciones de examen cronometradas te muestra cómo se sienten los exámenes reales antes del día. Nuestros exámenes de prueba siguen el formato de los exámenes de AQA, Edexcel, OCR y WJEC.',
   'mock.step_simulate_title': 'Simula condiciones reales de examen',
   'mock.step_simulate_desc':
     'Cada examen de prueba refleja el formato, los tiempos y la asignación de puntos exactos del examen real de GCSE. Te enfrentarás a los mismos tipos de pregunta y a la misma presión de tiempo.',
   'mock.step_time_title': 'Desarrolla habilidades de gestión del tiempo',
   'mock.step_time_desc':
     'Aprende a distribuir tu tiempo de forma eficaz entre las secciones. El Language Paper 1 te da 1 hora y 45 minutos para 5 preguntas - saber cuándo pasar a la siguiente es crucial.',
-  'mock.step_track_title': 'Haz seguimiento de tu progreso en las notas 1-9',
+  'mock.step_track_title': 'Guarda un registro de cada intento',
   'mock.step_track_desc':
-    'Después de cada intento, consulta tu nota estimada de GCSE según las notas de corte reales de la junta examinadora. Observa cómo mejora tu nota con cada intento.',
+    'Con la sesión iniciada, cada examen que entregas se guarda en tu cuenta. Las preguntas de opción múltiple se corrigen solas; las respuestas escritas no reciben nota aquí.',
   'mock.step_model_title': 'Aprende de las respuestas modelo',
   'mock.step_model_desc':
-    'Cada pregunta incluye respuestas modelo de Grade 4-5, Grade 6-7 y Grade 8-9 para que veas exactamente qué buscan los correctores en cada nivel.',
+    'Muchas preguntas del modo examen de prueba incluyen respuestas modelo de más de un nivel, para que compares tu escritura con cada una.',
   'mock.step_weak_title': 'Identifica tus áreas débiles',
   'mock.step_weak_desc':
-    'Los desgloses detallados de puntos muestran si necesitas mejorar tu análisis de lectura, tu escritura creativa o tu técnica de redacción.',
+    'El feedback con IA sobre una respuesta escrita muestra qué objetivos de evaluación te están costando puntos: análisis de lectura, escritura creativa o técnica de redacción.',
   'mock.step_ai_title': 'Obtén feedback con IA',
   'mock.step_ai_desc':
-    'Envía tus respuestas escritas para recibir feedback instantáneo con IA que califica tu trabajo y ofrece mejoras concretas y prácticas.',
+    'Envía una respuesta escrita a la corrección con IA para recibir una nota por cada objetivo de evaluación y mejoras concretas, señaladas como generadas por IA, con una nota de práctica. La corrección con IA viene con un plan o con la prueba gratuita.',
   'mock.exam_papers': 'Exámenes',
-  'mock.choose_paper_prefix':
-    'Elige un examen para empezar. Cada examen de prueba sigue exactamente la',
-  'mock.choose_paper_suffix':
-    'especificación con preguntas realistas, tiempos adecuados y notas de corte precisas.',
+  'mock.choose_paper_prefix': 'Elige un examen para empezar. Cada examen de prueba sigue la',
+  'mock.choose_paper_suffix': 'especificación con preguntas realistas y tiempos adecuados.',
   'mock.tab_all': 'Todos los exámenes',
   'mock.language': 'Lengua',
   'mock.literature': 'Literatura',
@@ -1972,9 +1970,8 @@ export const ES_MESSAGES: Record<string, string> = {
   'mock.coming_soon_suffix':
     'Mientras tanto, puedes seguir usando nuestras tarjetas de estudio, respuestas modelo y apuntes de repaso.',
   'mock.go_to_revision': 'Ir al Centro de repaso',
-  'mock.more_papers_prefix': 'También tenemos',
-  'mock.more_papers_middle': 'exámenes de prueba adicionales en',
-  'mock.more_papers_suffix': 'juntas examinadoras, incluidas Edexcel, OCR, WJEC y CAIE.',
+  'mock.more_papers_note':
+    'Hay más exámenes de prueba de tu junta, incluidas Edexcel, OCR, WJEC y CAIE, en el modo examen de prueba, gratis con una cuenta.',
   'mock.signup_full_access': 'Regístrate para acceso completo',
   'mock.understanding_grades': 'Entender las notas 1-9 del GCSE',
   'mock.understanding_grades_desc':
@@ -2019,7 +2016,8 @@ export const ES_MESSAGES: Record<string, string> = {
   'mock.exam_conditions': 'Condiciones del examen',
   'mock.cond_timer_start': 'El cronómetro empezará en cuanto hagas clic en "Empezar el examen"',
   'mock.cond_nav_questions': 'Puedes navegar entre las preguntas en cualquier momento',
-  'mock.cond_autosave': 'Tus respuestas se guardan automáticamente mientras escribes',
+  'mock.cond_autosave':
+    'Tus respuestas se quedan en esta página hasta que entregues, así que no la actualices ni la cierres',
   'mock.cond_pause':
     'Puedes pausar el cronómetro si lo necesitas (no permitido en los exámenes reales)',
   'mock.cond_submit_finish':
@@ -5108,7 +5106,7 @@ export const ES_MESSAGES: Record<string, string> = {
     'No. The English Hub es una aplicación web que funciona en cualquier navegador moderno en portátiles, ordenadores de sobremesa, tabletas y smartphones. Solo tienes que visitar theenglishhub.app e iniciar sesión - sin descargas ni instalaciones.',
   'faqs.g7.q': '¿En qué se diferencia The English Hub de otras webs de repaso?',
   'faqs.g7.a':
-    'A diferencia de las plataformas de repaso genéricas, cada pieza de contenido de The English Hub está escrita específicamente para tu junta examinadora. Nuestros exámenes de prueba usan una IA entrenada con esquemas de calificación reales para darte feedback detallado y referido a los criterios. Nos centramos exclusivamente en el inglés, por lo que la profundidad y la calidad de nuestro contenido son inigualables.',
+    'A diferencia de las plataformas de repaso genéricas, The English Hub está construido en torno a las juntas de inglés de GCSE e IGCSE: sus exámenes, objetivos de evaluación y textos obligatorios. La corrección con IA da feedback referido a los criterios sobre cada objetivo de evaluación, señalado como generado por IA. Nos centramos solo en el inglés.',
   'faqs.p1.q': '¿Cuánto cuesta The English Hub?',
   'faqs.p2.q': '¿Hay una prueba gratuita? ¿Necesito tarjeta?',
   'faqs.p2.a':
@@ -5130,7 +5128,7 @@ export const ES_MESSAGES: Record<string, string> = {
     'Ofrecemos cursos de GCSE English Language y GCSE English Literature para todas las principales juntas examinadoras. Cada curso cubre todos los temas que exige tu junta examinadora con lecciones estructuradas, ejemplos resueltos y actividades de práctica.',
   'faqs.c2.q': '¿Cómo funcionan los exámenes de prueba?',
   'faqs.c2.a':
-    'Nuestros exámenes de prueba replican el formato, los tiempos y los estilos de pregunta de los exámenes reales de tu junta examinadora concreta. Tras enviar tus respuestas, nuestra IA (entrenada con esquemas de calificación oficiales) ofrece una nota, una estimación de nota y feedback detallado de cada respuesta - destacando los puntos fuertes y las áreas de mejora.',
+    'Nuestros exámenes de prueba siguen el formato, los tiempos y los estilos de pregunta de los exámenes reales de tu junta. Las preguntas de opción múltiple se corrigen solas. Puedes enviar una respuesta escrita a la corrección con IA, con un plan o con la prueba gratuita, para recibir una nota por cada objetivo de evaluación y qué mejorar, señalado como generado por IA.',
   'faqs.c3.q': '¿Qué son las preguntas de práctica?',
   'faqs.c3.a':
     'Las preguntas de práctica te permiten centrarte en tipos de pregunta concretos (p. ej. análisis del lenguaje, escritura creativa, respuestas de redacción). Cada pregunta viene con una respuesta modelo para que puedas comparar tu respuesta con un ejemplo de nota alta y entender qué obtiene las mejores notas.',

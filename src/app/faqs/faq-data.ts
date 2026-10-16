@@ -66,7 +66,7 @@ export const FAQ_SECTIONS: FaqSection[] = [
       {
         question: 'How is The English Hub different from other revision sites?',
         answer:
-          'Unlike generic revision platforms, every piece of content on The English Hub is written specifically for your exam board. Our mock exams use AI trained on real mark schemes to give you detailed, criteria-referenced feedback. We focus exclusively on English, so the depth and quality of our content is unmatched.',
+          'Unlike generic revision platforms, The English Hub is built around the GCSE and IGCSE English boards: their papers, assessment objectives and set texts. AI marking gives criteria-referenced feedback on each assessment objective, labelled as AI. We focus only on English.',
       },
     ],
   },
@@ -116,7 +116,7 @@ export const FAQ_SECTIONS: FaqSection[] = [
       {
         question: 'How do mock exams work?',
         answer:
-          'Our mock exams replicate the format, timing, and question styles of real exams for your specific exam board. After you submit your responses, our AI (trained on official mark schemes) provides a mark, grade estimate, and detailed feedback on each answer - highlighting strengths and areas for improvement.',
+          "Our mock exams follow the format, timing and question styles of your board's real papers. Multiple-choice answers are marked for you. You can send a written answer to AI marking, with a plan or the free trial, for a mark on each assessment objective and what to improve, labelled as AI.",
       },
       {
         question: 'What are practice questions?',

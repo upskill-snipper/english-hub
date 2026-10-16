@@ -966,10 +966,10 @@ export default function MockExamsPage() {
         {/* Additional boards note */}
         {totalPapers > 4 && (
           <div className="mt-10 rounded-xl border border-border/40 bg-muted/30 p-6 text-center">
-            <p className="text-sm text-muted-foreground mb-3">
-              {t('mock.more_papers_prefix')} {totalPapers - 4}+ {t('mock.more_papers_middle')}{' '}
-              {allBoards.length} {t('mock.more_papers_suffix')}
-            </p>
+            {/* No count (16 October 2026): this printed "We also have 171+
+                additional mock papers across 5 exam boards", and TEHC-079
+                states no mock-paper count. */}
+            <p className="text-sm text-muted-foreground mb-3">{t('mock.more_papers_note')}</p>
             <Button variant="secondary" render={<Link href="/auth/register" />}>
               {t('mock.signup_full_access')} <ArrowRight className="ms-2 h-4 w-4" />
             </Button>

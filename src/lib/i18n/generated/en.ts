@@ -1859,9 +1859,10 @@ export const EN_MESSAGES: Record<string, string> = {
   'marking.report_issue': 'Report Issue',
   'mock.mock_exams': 'Mock Exams',
   'mock.gcse_mock_exams': 'GCSE Mock Exams',
-  'mock.hero_headline': '172 full mock papers across 6 boards.',
-  'mock.hero_subhead': 'AI-marked in 60 seconds. Authentic exam format. Board-aligned markschemes.',
-  'mock.stat_papers': '4 exam papers',
+  'mock.hero_headline': 'Full mock papers, by exam board.',
+  'mock.hero_subhead':
+    "Exam-style papers in your board's format, with mark schemes. Send a written answer to AI marking when you want feedback on it.",
+  'mock.stat_papers': 'Exam-style papers',
   'mock.stat_timed': 'Timed conditions',
   'mock.stat_grades': 'Grades 1-9',
   'mock.stat_ai_feedback': 'AI feedback',
@@ -1870,29 +1871,28 @@ export const EN_MESSAGES: Record<string, string> = {
   'mock.how_it_works': 'How It Works',
   'mock.how_mocks_help': 'How Mock Exams Help You Succeed',
   'mock.how_mocks_help_desc':
-    'Practising under real exam conditions is the single most effective way to improve your GCSE English grade. Our mocks replicate the exact format used by AQA, Edexcel, OCR, and WJEC.',
+    'Practising under timed exam conditions shows you how the real papers feel before the day. Our mocks follow the format of AQA, Edexcel, OCR and WJEC papers.',
   'mock.step_simulate_title': 'Simulate real exam conditions',
   'mock.step_simulate_desc':
     'Each mock mirrors the exact format, timing, and mark allocation of the real GCSE exam. You will face the same question types and time pressure.',
   'mock.step_time_title': 'Build time management skills',
   'mock.step_time_desc':
     'Learn to allocate your time effectively across sections. Language Paper 1 gives you 1 hour 45 minutes for 5 questions - knowing when to move on is crucial.',
-  'mock.step_track_title': 'Track your progress in grades 1-9',
+  'mock.step_track_title': 'Keep a record of each attempt',
   'mock.step_track_desc':
-    'After each attempt, see your estimated GCSE grade based on real exam board grade boundaries. Watch your grade improve with each attempt.',
+    'Signed in, each paper you submit is saved to your account. Multiple-choice answers are marked for you; written answers are not given a grade here.',
   'mock.step_model_title': 'Learn from model answers',
   'mock.step_model_desc':
-    'Every question includes model answers at Grade 4-5, Grade 6-7, and Grade 8-9 so you can see exactly what markers are looking for at each level.',
+    'Many questions in Mock Exam Mode come with model answers at more than one level, so you can compare your writing with each.',
   'mock.step_weak_title': 'Identify your weak areas',
   'mock.step_weak_desc':
-    'Detailed mark breakdowns show whether you need to improve your reading analysis, creative writing, or essay technique.',
+    'AI feedback on a written answer shows which assessment objectives are costing you marks: reading analysis, creative writing or essay technique.',
   'mock.step_ai_title': 'Get AI-powered feedback',
   'mock.step_ai_desc':
-    'Submit your written responses for instant AI feedback that grades your work and provides specific, actionable improvements.',
+    'Send a written answer to AI marking for a mark on each assessment objective and specific improvements, labelled as AI, with a practice grade. AI marking comes with a plan or the free trial.',
   'mock.exam_papers': 'Exam Papers',
-  'mock.choose_paper_prefix': 'Choose a paper to start. Each mock follows the exact',
-  'mock.choose_paper_suffix':
-    'specification with realistic questions, proper timing, and accurate grade boundaries.',
+  'mock.choose_paper_prefix': 'Choose a paper to start. Each mock follows the',
+  'mock.choose_paper_suffix': 'specification with realistic questions and proper timing.',
   'mock.tab_all': 'All Papers',
   'mock.language': 'Language',
   'mock.literature': 'Literature',
@@ -1903,9 +1903,8 @@ export const EN_MESSAGES: Record<string, string> = {
   'mock.coming_soon_suffix':
     'In the meantime, you can still use our flashcards, model answers, and revision notes.',
   'mock.go_to_revision': 'Go to Revision Hub',
-  'mock.more_papers_prefix': 'We also have',
-  'mock.more_papers_middle': 'additional mock papers across',
-  'mock.more_papers_suffix': 'exam boards including Edexcel, OCR, WJEC, and CAIE.',
+  'mock.more_papers_note':
+    'More mock papers for your board, including Edexcel, OCR, WJEC and CAIE, are in Mock Exam Mode, free with an account.',
   'mock.signup_full_access': 'Sign Up for Full Access',
   'mock.understanding_grades': 'Understanding GCSE Grades 1-9',
   'mock.understanding_grades_desc':
@@ -1949,7 +1948,8 @@ export const EN_MESSAGES: Record<string, string> = {
   'mock.exam_conditions': 'Exam Conditions',
   'mock.cond_timer_start': 'The timer will start as soon as you click "Start Exam"',
   'mock.cond_nav_questions': 'You can navigate between questions at any time',
-  'mock.cond_autosave': 'Your answers are saved automatically as you type',
+  'mock.cond_autosave':
+    "Your answers stay on this page until you submit, so don't refresh or close it",
   'mock.cond_pause': 'You can pause the timer if needed (not allowed in real exams)',
   'mock.cond_submit_finish':
     'Click "Submit Exam" when finished to check your answers against the mark scheme',
@@ -4979,7 +4979,7 @@ export const EN_MESSAGES: Record<string, string> = {
     'No. The English Hub is a web application that works in any modern browser on laptops, desktops, tablets, and smartphones. Just visit theenglishhub.app and log in - no downloads or installations required.',
   'faqs.g7.q': 'How is The English Hub different from other revision sites?',
   'faqs.g7.a':
-    'Unlike generic revision platforms, every piece of content on The English Hub is written specifically for your exam board. Our mock exams use AI trained on real mark schemes to give you detailed, criteria-referenced feedback. We focus exclusively on English, so the depth and quality of our content is unmatched.',
+    'Unlike generic revision platforms, The English Hub is built around the GCSE and IGCSE English boards: their papers, assessment objectives and set texts. AI marking gives criteria-referenced feedback on each assessment objective, labelled as AI. We focus only on English.',
   'faqs.p1.q': 'How much does The English Hub cost?',
   'faqs.p2.q': 'Is there a free trial? Do I need a card?',
   'faqs.p2.a':
@@ -5001,7 +5001,7 @@ export const EN_MESSAGES: Record<string, string> = {
     'We offer courses for GCSE English Language and GCSE English Literature across all major exam boards. Each course covers every topic required by your exam board with structured lessons, worked examples, and practice activities.',
   'faqs.c2.q': 'How do mock exams work?',
   'faqs.c2.a':
-    'Our mock exams replicate the format, timing, and question styles of real exams for your specific exam board. After you submit your responses, our AI (trained on official mark schemes) provides a mark, grade estimate, and detailed feedback on each answer - highlighting strengths and areas for improvement.',
+    "Our mock exams follow the format, timing and question styles of your board's real papers. Multiple-choice answers are marked for you. You can send a written answer to AI marking, with a plan or the free trial, for a mark on each assessment objective and what to improve, labelled as AI.",
   'faqs.c3.q': 'What are practice questions?',
   'faqs.c3.a':
     'Practice questions let you focus on individual question types (e.g. language analysis, creative writing, essay responses). Each question comes with a model answer so you can compare your response against a top-grade example and understand what earns top marks.',

@@ -6430,17 +6430,31 @@ export const DICTIONARY: Dictionary = {
     ar: 'امتحانات GCSE التجريبية',
     es: 'Exámenes de prueba de GCSE',
   },
+  // /mock-exams, corrected 16 October 2026. It said "172 full mock papers
+  // across 6 boards" (the bank holds 175 under 5 board tags, and "Start Exam"
+  // opens 8 of them), "AI-marked in 60 seconds" and "instant AI feedback that
+  // grades your work" (the paper page marks only multiple choice; a written
+  // answer is handed to /marking/submit, which takes longer), "real exam board
+  // grade boundaries" (every table is unverified and the paper page shows no
+  // grade), model answers "at Grade 4-5, Grade 6-7, and Grade 8-9" on every
+  // question (the paper page has one), and answers "saved automatically as you
+  // type" (they live in the page's memory until submitted). TEHC-079: state no
+  // count of mock papers.
   'mock.hero_headline': {
-    en: '172 full mock papers across 6 boards.',
-    ar: '١٧٢ ورقة امتحان تجريبية بكل تفاصيلها على ٦ هيئات.',
-    es: '172 exámenes de prueba completos en 6 juntas.',
+    en: 'Full mock papers, by exam board.',
+    ar: 'أوراق امتحان تجريبية كاملة، حسب البورد.',
+    es: 'Exámenes de prueba completos, por junta.',
   },
   'mock.hero_subhead': {
-    en: 'AI-marked in 60 seconds. Authentic exam format. Board-aligned markschemes.',
-    ar: 'تصحيح بالذكاء الاصطناعي في ٦٠ ثانية. شكل الامتحان الأصلي. سلم علامات متطابق مع الهيئة.',
-    es: 'Corregidos con IA en 60 segundos. Formato de examen auténtico. Esquemas de calificación alineados con la junta.',
+    en: "Exam-style papers in your board's format, with mark schemes. Send a written answer to AI marking when you want feedback on it.",
+    ar: 'أوراق على نمط الامتحان بشكل البورد مالك، مع سلّم العلامات. وأرسل إجابتك المكتوبة للتصحيح بالذكاء الاصطناعي إذا تبغى ملاحظات عليها.',
+    es: 'Exámenes con el formato de tu junta, con sus esquemas de calificación. Envía una respuesta escrita a la corrección con IA cuando quieras feedback sobre ella.',
   },
-  'mock.stat_papers': { en: '4 exam papers', ar: '٤ أوراق امتحان', es: '4 exámenes' },
+  'mock.stat_papers': {
+    en: 'Exam-style papers',
+    ar: 'أوراق على نمط الامتحان',
+    es: 'Exámenes tipo examen',
+  },
   'mock.stat_timed': {
     en: 'Timed conditions',
     ar: 'ظروف بوقت محدد',
@@ -6465,9 +6479,11 @@ export const DICTIONARY: Dictionary = {
     es: 'Cómo te ayudan los exámenes de prueba a triunfar',
   },
   'mock.how_mocks_help_desc': {
-    en: 'Practising under real exam conditions is the single most effective way to improve your GCSE English grade. Our mocks replicate the exact format used by AQA, Edexcel, OCR, and WJEC.',
-    ar: 'التدرب بظروف امتحان حقيقية هو أحسن طريقة ترفع فيها درجتك في إنجليزي GCSE. التجريبيات مالنا تطابق شكل امتحانات AQA و Edexcel و OCR و WJEC بالضبط.',
-    es: 'Practicar en condiciones reales de examen es la forma más eficaz de mejorar tu nota de inglés de GCSE. Nuestros exámenes de prueba replican el formato exacto que usan AQA, Edexcel, OCR y WJEC.',
+    // 16 October 2026: said timed practice is "the single most effective way
+    // to improve your GCSE English grade", a grade promise with no source.
+    en: 'Practising under timed exam conditions shows you how the real papers feel before the day. Our mocks follow the format of AQA, Edexcel, OCR and WJEC papers.',
+    ar: 'التدرب بظروف امتحان بوقت محدد يوريك إحساس الأوراق الحقيقية قبل يوم الامتحان. التجريبيات مالنا تتبع شكل أوراق AQA و Edexcel و OCR و WJEC.',
+    es: 'Practicar en condiciones de examen cronometradas te muestra cómo se sienten los exámenes reales antes del día. Nuestros exámenes de prueba siguen el formato de los exámenes de AQA, Edexcel, OCR y WJEC.',
   },
   'mock.step_simulate_title': {
     en: 'Simulate real exam conditions',
@@ -6490,14 +6506,14 @@ export const DICTIONARY: Dictionary = {
     es: 'Aprende a distribuir tu tiempo de forma eficaz entre las secciones. El Language Paper 1 te da 1 hora y 45 minutos para 5 preguntas - saber cuándo pasar a la siguiente es crucial.',
   },
   'mock.step_track_title': {
-    en: 'Track your progress in grades 1-9',
-    ar: 'تابع تقدمك بدرجات ١-٩',
-    es: 'Haz seguimiento de tu progreso en las notas 1-9',
+    en: 'Keep a record of each attempt',
+    ar: 'احتفظ بسجل لكل محاولة',
+    es: 'Guarda un registro de cada intento',
   },
   'mock.step_track_desc': {
-    en: 'After each attempt, see your estimated GCSE grade based on real exam board grade boundaries. Watch your grade improve with each attempt.',
-    ar: 'بعد كل محاولة، شوف الدرجة المتوقعة بناءً على حدود درجات الهيئة الحقيقية. شوف درجتك تتحسن مع كل محاولة.',
-    es: 'Después de cada intento, consulta tu nota estimada de GCSE según las notas de corte reales de la junta examinadora. Observa cómo mejora tu nota con cada intento.',
+    en: 'Signed in, each paper you submit is saved to your account. Multiple-choice answers are marked for you; written answers are not given a grade here.',
+    ar: 'إذا انت مسجّل دخول، كل ورقة تسلّمها تنحفظ في حسابك. أسئلة الاختيار من متعدد تتصحّح لك، والإجابات المكتوبة ما تاخذ درجة هنا.',
+    es: 'Con la sesión iniciada, cada examen que entregas se guarda en tu cuenta. Las preguntas de opción múltiple se corrigen solas; las respuestas escritas no reciben nota aquí.',
   },
   'mock.step_model_title': {
     en: 'Learn from model answers',
@@ -6505,9 +6521,9 @@ export const DICTIONARY: Dictionary = {
     es: 'Aprende de las respuestas modelo',
   },
   'mock.step_model_desc': {
-    en: 'Every question includes model answers at Grade 4-5, Grade 6-7, and Grade 8-9 so you can see exactly what markers are looking for at each level.',
-    ar: 'كل سؤال فيه إجابات نموذجية لدرجات ٤-٥ و٦-٧ و٨-٩، عشان تشوف بالضبط شنو يدوّر عليه المُصحِّح بكل مستوى.',
-    es: 'Cada pregunta incluye respuestas modelo de Grade 4-5, Grade 6-7 y Grade 8-9 para que veas exactamente qué buscan los correctores en cada nivel.',
+    en: 'Many questions in Mock Exam Mode come with model answers at more than one level, so you can compare your writing with each.',
+    ar: 'أسئلة كثيرة في وضع الامتحان التجريبي معها إجابات نموذجية بأكثر من مستوى، عشان تقارن كتابتك بكل وحدة.',
+    es: 'Muchas preguntas del modo examen de prueba incluyen respuestas modelo de más de un nivel, para que compares tu escritura con cada una.',
   },
   'mock.step_weak_title': {
     en: 'Identify your weak areas',
@@ -6515,9 +6531,9 @@ export const DICTIONARY: Dictionary = {
     es: 'Identifica tus áreas débiles',
   },
   'mock.step_weak_desc': {
-    en: 'Detailed mark breakdowns show whether you need to improve your reading analysis, creative writing, or essay technique.',
-    ar: 'تفصيل العلامات يبيّن إذا تحتاج تحسّن تحليل القراءة أو الكتابة الإبداعية أو أسلوب المقالة.',
-    es: 'Los desgloses detallados de puntos muestran si necesitas mejorar tu análisis de lectura, tu escritura creativa o tu técnica de redacción.',
+    en: 'AI feedback on a written answer shows which assessment objectives are costing you marks: reading analysis, creative writing or essay technique.',
+    ar: 'ملاحظات الذكاء الاصطناعي على إجابتك المكتوبة تبيّن أي أهداف تقييم تنقّص من درجاتك: تحليل القراءة أو الكتابة الإبداعية أو أسلوب المقالة.',
+    es: 'El feedback con IA sobre una respuesta escrita muestra qué objetivos de evaluación te están costando puntos: análisis de lectura, escritura creativa o técnica de redacción.',
   },
   'mock.step_ai_title': {
     en: 'Get AI-powered feedback',
@@ -6525,20 +6541,20 @@ export const DICTIONARY: Dictionary = {
     es: 'Obtén feedback con IA',
   },
   'mock.step_ai_desc': {
-    en: 'Submit your written responses for instant AI feedback that grades your work and provides specific, actionable improvements.',
-    ar: 'سلّم إجاباتك المكتوبة وخذ ملاحظات فورية من الذكاء الاصطناعي تعطيك درجة واقتراحات تحسين عملية.',
-    es: 'Envía tus respuestas escritas para recibir feedback instantáneo con IA que califica tu trabajo y ofrece mejoras concretas y prácticas.',
+    en: 'Send a written answer to AI marking for a mark on each assessment objective and specific improvements, labelled as AI, with a practice grade. AI marking comes with a plan or the free trial.',
+    ar: 'أرسل إجابتك المكتوبة للتصحيح بالذكاء الاصطناعي وخذ درجة لكل هدف تقييم وتحسينات محددة، مكتوب عليها إنها من الذكاء الاصطناعي، مع درجة للتدريب. التصحيح بالذكاء الاصطناعي يجي مع الباقة أو التجربة المجانية.',
+    es: 'Envía una respuesta escrita a la corrección con IA para recibir una nota por cada objetivo de evaluación y mejoras concretas, señaladas como generadas por IA, con una nota de práctica. La corrección con IA viene con un plan o con la prueba gratuita.',
   },
   'mock.exam_papers': { en: 'Exam Papers', ar: 'أوراق الامتحان', es: 'Exámenes' },
   'mock.choose_paper_prefix': {
-    en: 'Choose a paper to start. Each mock follows the exact',
+    en: 'Choose a paper to start. Each mock follows the',
     ar: 'اختر ورقة وابدأ. كل امتحان تجريبي يتبع منهج',
-    es: 'Elige un examen para empezar. Cada examen de prueba sigue exactamente la',
+    es: 'Elige un examen para empezar. Cada examen de prueba sigue la',
   },
   'mock.choose_paper_suffix': {
-    en: 'specification with realistic questions, proper timing, and accurate grade boundaries.',
-    ar: 'بالضبط، بأسئلة واقعية ووقت محدد وحدود درجات دقيقة.',
-    es: 'especificación con preguntas realistas, tiempos adecuados y notas de corte precisas.',
+    en: 'specification with realistic questions and proper timing.',
+    ar: 'بأسئلة واقعية ووقت محدد.',
+    es: 'especificación con preguntas realistas y tiempos adecuados.',
   },
   'mock.tab_all': { en: 'All Papers', ar: 'كل الأوراق', es: 'Todos los exámenes' },
   'mock.language': { en: 'Language', ar: 'اللغة', es: 'Lengua' },
@@ -6569,16 +6585,13 @@ export const DICTIONARY: Dictionary = {
     ar: 'روح لمركز المراجعة',
     es: 'Ir al Centro de repaso',
   },
-  'mock.more_papers_prefix': { en: 'We also have', ar: 'عندنا كمان', es: 'También tenemos' },
-  'mock.more_papers_middle': {
-    en: 'additional mock papers across',
-    ar: 'ورقة امتحان إضافية على',
-    es: 'exámenes de prueba adicionales en',
-  },
-  'mock.more_papers_suffix': {
-    en: 'exam boards including Edexcel, OCR, WJEC, and CAIE.',
-    ar: 'هيئات امتحان منها Edexcel و OCR و WJEC و CAIE.',
-    es: 'juntas examinadoras, incluidas Edexcel, OCR, WJEC y CAIE.',
+  // Replaces 'mock.more_papers_prefix', '_middle' and '_suffix', which built
+  // "We also have 171+ additional mock papers across 5 exam boards ..." from
+  // the bank's count (16 October 2026: no mock-paper count is stated).
+  'mock.more_papers_note': {
+    en: 'More mock papers for your board, including Edexcel, OCR, WJEC and CAIE, are in Mock Exam Mode, free with an account.',
+    ar: 'فيه أوراق امتحان تجريبية أكثر للبورد مالك، منها Edexcel و OCR و WJEC و CAIE، في وضع الامتحان التجريبي، ببلاش مع حساب.',
+    es: 'Hay más exámenes de prueba de tu junta, incluidas Edexcel, OCR, WJEC y CAIE, en el modo examen de prueba, gratis con una cuenta.',
   },
   'mock.signup_full_access': {
     en: 'Sign Up for Full Access',
@@ -6725,10 +6738,12 @@ export const DICTIONARY: Dictionary = {
     ar: 'تقدر تتنقل بين الأسئلة بأي وقت',
     es: 'Puedes navegar entre las preguntas en cualquier momento',
   },
+  // 16 October 2026: said answers are "saved automatically as you type".
+  // They are held in the page until you submit; a refresh loses them.
   'mock.cond_autosave': {
-    en: 'Your answers are saved automatically as you type',
-    ar: 'إجاباتك تنحفظ تلقائياً وأنت تكتب',
-    es: 'Tus respuestas se guardan automáticamente mientras escribes',
+    en: "Your answers stay on this page until you submit, so don't refresh or close it",
+    ar: 'إجاباتك تبقى في هالصفحة لين تسلّم، فلا تحدّث الصفحة ولا تسكّرها',
+    es: 'Tus respuestas se quedan en esta página hasta que entregues, así que no la actualices ni la cierres',
   },
   'mock.cond_pause': {
     en: 'You can pause the timer if needed (not allowed in real exams)',
@@ -16724,9 +16739,12 @@ export const DICTIONARY: Dictionary = {
     es: '¿En qué se diferencia The English Hub de otras webs de repaso?',
   },
   'faqs.g7.a': {
-    en: 'Unlike generic revision platforms, every piece of content on The English Hub is written specifically for your exam board. Our mock exams use AI trained on real mark schemes to give you detailed, criteria-referenced feedback. We focus exclusively on English, so the depth and quality of our content is unmatched.',
-    ar: 'مو زي منصات المراجعة العامة، كل محتوى في The English Hub مكتوب خصيصاً للبورد مالك. الامتحانات التجريبية تستخدم AI مدرّب على مخططات تصحيح حقيقية لتعطيك ملاحظات تفصيلية مرتبطة بالمعايير. نركّز حصرياً على الإنجليزي، فعمق وجودة محتوانا ما لها مثيل.',
-    es: 'A diferencia de las plataformas de repaso genéricas, cada pieza de contenido de The English Hub está escrita específicamente para tu junta examinadora. Nuestros exámenes de prueba usan una IA entrenada con esquemas de calificación reales para darte feedback detallado y referido a los criterios. Nos centramos exclusivamente en el inglés, por lo que la profundidad y la calidad de nuestro contenido son inigualables.',
+    // 16 October 2026: said the mocks "use AI trained on real mark schemes"
+    // and the content is "unmatched". The mocks mark multiple choice only, the
+    // AI is not trained on mark schemes, and "unmatched" is a boast.
+    en: 'Unlike generic revision platforms, The English Hub is built around the GCSE and IGCSE English boards: their papers, assessment objectives and set texts. AI marking gives criteria-referenced feedback on each assessment objective, labelled as AI. We focus only on English.',
+    ar: 'مو زي منصات المراجعة العامة، The English Hub مبني حول بوردات GCSE و IGCSE للإنجليزي: أوراقهم وأهداف التقييم والنصوص المقررة. والتصحيح بالذكاء الاصطناعي يعطيك ملاحظات مرتبطة بالمعايير على كل هدف تقييم، مكتوب عليها إنها من الذكاء الاصطناعي. ونركّز على الإنجليزي بس.',
+    es: 'A diferencia de las plataformas de repaso genéricas, The English Hub está construido en torno a las juntas de inglés de GCSE e IGCSE: sus exámenes, objetivos de evaluación y textos obligatorios. La corrección con IA da feedback referido a los criterios sobre cada objetivo de evaluación, señalado como generado por IA. Nos centramos solo en el inglés.',
   },
   'faqs.p1.q': {
     en: 'How much does The English Hub cost?',
@@ -16799,9 +16817,14 @@ export const DICTIONARY: Dictionary = {
     es: '¿Cómo funcionan los exámenes de prueba?',
   },
   'faqs.c2.a': {
-    en: 'Our mock exams replicate the format, timing, and question styles of real exams for your specific exam board. After you submit your responses, our AI (trained on official mark schemes) provides a mark, grade estimate, and detailed feedback on each answer - highlighting strengths and areas for improvement.',
-    ar: 'الامتحانات التجريبية مالنا تحاكي صيغة وتوقيت وأنماط أسئلة الامتحانات الحقيقية للبورد مالك. بعد ما تسلّم، الـ AI (المدرّب على مخططات تصحيح رسمية) يعطيك درجة وتقدير وملاحظات تفصيلية على كل إجابة - يبرز نقاط القوة والمواضع اللي تحتاج تحسين.',
-    es: 'Nuestros exámenes de prueba replican el formato, los tiempos y los estilos de pregunta de los exámenes reales de tu junta examinadora concreta. Tras enviar tus respuestas, nuestra IA (entrenada con esquemas de calificación oficiales) ofrece una nota, una estimación de nota y feedback detallado de cada respuesta - destacando los puntos fuertes y las áreas de mejora.',
+    // 16 October 2026: said that after you submit a mock, "our AI (trained on
+    // official mark schemes) provides a mark, grade estimate, and detailed
+    // feedback on each answer". A mock marks multiple choice only; a written
+    // answer goes to AI marking separately, and the AI is not trained on
+    // mark schemes.
+    en: "Our mock exams follow the format, timing and question styles of your board's real papers. Multiple-choice answers are marked for you. You can send a written answer to AI marking, with a plan or the free trial, for a mark on each assessment objective and what to improve, labelled as AI.",
+    ar: 'الامتحانات التجريبية مالنا تتبع صيغة وتوقيت وأنماط أسئلة الأوراق الحقيقية للبورد مالك. أسئلة الاختيار من متعدد تتصحّح لك. وتقدر ترسل إجابتك المكتوبة للتصحيح بالذكاء الاصطناعي، مع الباقة أو التجربة المجانية، وتاخذ درجة لكل هدف تقييم ووش تحسّن، مكتوب عليها إنها من الذكاء الاصطناعي.',
+    es: 'Nuestros exámenes de prueba siguen el formato, los tiempos y los estilos de pregunta de los exámenes reales de tu junta. Las preguntas de opción múltiple se corrigen solas. Puedes enviar una respuesta escrita a la corrección con IA, con un plan o con la prueba gratuita, para recibir una nota por cada objetivo de evaluación y qué mejorar, señalado como generado por IA.',
   },
   'faqs.c3.q': {
     en: 'What are practice questions?',
