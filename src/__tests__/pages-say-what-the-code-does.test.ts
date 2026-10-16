@@ -744,3 +744,18 @@ describe('the exam-technique examples are true to the texts and the terms', () =
     expect(page).toMatch(/parallel structure/)
   })
 })
+
+// ─── F27: Ozymandias as AQA's anthology prints it ───────────────────────────
+
+describe('the AQA Ozymandias quotations follow the anthology', () => {
+  // AQA prints "king of kings:" and "Look on my works" in lower case
+  // (src/data/aqa-poetry-power-conflict.ts, note of 2 October 2026).
+  it.each(['src/data/comparison-essay-guide.ts', 'src/data/analysis/category-context.ts'])(
+    '%s',
+    (rel) => {
+      const src = code(rel)
+      expect(src).not.toMatch(/Look on my Works/)
+      expect(src).not.toMatch(/king of kings;/)
+    },
+  )
+})

@@ -415,7 +415,8 @@ export const CATEGORY_CONTEXT: Record<string, CategoryContext> = {
     ],
     keyQuotes: [
       {
-        quote: '"Look on my Works, ye Mighty, and despair!"',
+        // "works" in lower case, as AQA's anthology prints it (16 October 2026).
+        quote: '"Look on my works, ye Mighty, and despair!"',
         source: 'Ozymandias, Percy Bysshe Shelley',
         analysis:
           'Imperative + archaic vocative + oxymoron. The dead pharaoh\'s command survives him but its meaning inverts - the emptiness of the surrounding desert makes "despair" self-referential.',
