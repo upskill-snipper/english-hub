@@ -1,7 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server'
 import { createServerSupabaseClient, createServiceRoleClient } from '@/lib/supabase/server'
-import { verifySchoolMember } from '@/lib/school-auth'
-import { verifyStudentInSchool } from '@/lib/school-student-auth'
+import { canViewPupil, classInScope, resolveStaffScope } from '../../_lib/staff-scope'
 import { rateLimit, getClientIp } from '@/lib/rate-limit'
 
 export const dynamic = 'force-dynamic'
@@ -108,9 +107,15 @@ export async function GET(request: NextRequest) {
     // email, progress and predicted grade across every school (the route uses
     // the service-role client, which bypasses RLS). Gate to staff for both
     // branches; scope the target to the caller's school below.
-    const member = await verifySchoolMember(user.id, ['admin', 'head_of_department', 'teacher'])
-    if (!member) {
-      return NextResponse.json({ error: 'Forbidden: not a school member' }, { status: 403 })
+    //
+    // AND (16 October 2026): staff, but any teacher could still read any
+    // class's or any pupil's insights in the school. The class and the pupil
+    // must now be in the caller's scope (resolveStaffScope, classInScope,
+    // canViewPupil), as on the pupil page. The response is unchanged for
+    // staff, so the mobile contract is too.
+    const resolved = await resolveStaffScope(createServiceRoleClient(), user.id)
+    if (!resolved.ok) {
+      return NextResponse.json({ error: resolved.error }, { status: resolved.status })
     }
 
     const { searchParams } = new URL(request.url)
@@ -128,15 +133,7 @@ export async function GET(request: NextRequest) {
     let targetStudentIds: string[] = []
 
     if (classId) {
-      // Verify class belongs to school
-      const { data: classData } = await admin
-        .from('classes')
-        .select('id')
-        .eq('id', classId)
-        .eq('school_id', member.school_id)
-        .single()
-
-      if (!classData) {
+      if (!classInScope(resolved.scope, classId)) {
         return NextResponse.json({ error: 'Class not found' }, { status: 404 })
       }
 
@@ -150,7 +147,7 @@ export async function GET(request: NextRequest) {
     } else if (studentId) {
       // Confirm the requested pupil actually belongs to the caller's school
       // before returning their PII - mirrors students/[studentId]/trends.
-      if (!(await verifyStudentInSchool(studentId, member.school_id))) {
+      if (!(await canViewPupil(admin, resolved.scope, studentId))) {
         return NextResponse.json({ error: 'Student not found' }, { status: 404 })
       }
       targetStudentIds = [studentId]

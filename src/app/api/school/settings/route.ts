@@ -51,9 +51,12 @@ export async function GET(request: NextRequest) {
       return NextResponse.json({ error: 'Unauthorized' }, { status: 401 })
     }
 
-    const member = await verifySchoolMember(user.id)
+    // Staff only (16 October 2026): this admitted any member, a pupil
+    // included, to the school's address, contact details and plan. Its only
+    // caller is the staff settings page.
+    const member = await verifySchoolMember(user.id, ['admin', 'head_of_department', 'teacher'])
     if (!member) {
-      return NextResponse.json({ error: 'Forbidden: not a school member' }, { status: 403 })
+      return NextResponse.json({ error: 'Forbidden: school staff only' }, { status: 403 })
     }
 
     const admin = createServiceRoleClient()

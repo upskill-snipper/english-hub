@@ -202,6 +202,19 @@ describe('what the page is given', () => {
     expect(body.objectives.weakest.ao).toBe('AO2')
   })
 
+  it('never says how the pupil or their family paid for a course (16 October 2026)', async () => {
+    state.fake!.tables.enrolments.push({
+      user_id: 'p1',
+      course_id: 'c-x',
+      enrolled_at: '2026-09-01T00:00:00Z',
+      payment_type: 'subscription',
+    })
+    const { body } = await open('u-t1', 'p1')
+    expect(body.enrolments).toHaveLength(1)
+    expect(body.enrolments[0]).not.toHaveProperty('payment_type')
+    expect(JSON.stringify(body)).not.toContain('subscription')
+  })
+
   it('never turns a quiz average into a predicted grade', async () => {
     const { body } = await open('u-t1', 'p1')
     expect(body.analytics.avg_quiz_score).toBe(95)

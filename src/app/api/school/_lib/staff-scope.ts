@@ -53,6 +53,8 @@ export interface StaffScope {
   schoolId: string
   /** The viewer's own school_members.id. */
   memberId: string
+  /** The viewer's name as the school holds it. */
+  fullName: string | null
   role: StaffRole
   /** True for admin and head of department. */
   wholeSchool: boolean
@@ -71,7 +73,7 @@ export type ScopeResult =
 
 /** Resolve what this user may see. Never throws. */
 export async function resolveStaffScope(svc: SupabaseClient, userId: string): Promise<ScopeResult> {
-  let member: { id?: unknown; school_id?: unknown; role?: unknown } | null
+  let member: { id?: unknown; school_id?: unknown; role?: unknown; full_name?: unknown } | null
   try {
     member = (await verifySchoolMember(userId, [...STAFF_ROLES])) as typeof member
   } catch (err) {
@@ -119,6 +121,7 @@ export async function resolveStaffScope(svc: SupabaseClient, userId: string): Pr
       userId,
       schoolId,
       memberId,
+      fullName: typeof member.full_name === 'string' ? member.full_name : null,
       role,
       wholeSchool,
       classes: (data ?? []) as ScopedClass[],
@@ -129,6 +132,67 @@ export async function resolveStaffScope(svc: SupabaseClient, userId: string): Pr
 /** Ids of the classes in scope. */
 export function scopedClassIds(scope: StaffScope): string[] {
   return scope.classes.map((c) => c.id)
+}
+
+/**
+ * Is this class one the viewer may see or change? A teacher's own class, or
+ * any class of the school for whole-school staff.
+ *
+ * WHY (16 October 2026). Several routes asked only whether a class belonged
+ * to the caller's school, so any teacher could read or change any class: list
+ * its pupils, enrol and remove them, read its analytics, set its assignments.
+ * A class outside scope is answered as not found, so its existence is not
+ * confirmed to someone who may not see it.
+ */
+export function classInScope(scope: StaffScope, classId: string): ScopedClass | null {
+  return scope.classes.find((c) => c.id === classId) ?? null
+}
+
+/**
+ * Which of these accounts are pupils of this school: a school_members row with
+ * role 'student' (bulk upload), or a school_students row that has not been
+ * removed (join code).
+ *
+ * WHY (16 October 2026). Enrolling an account in a class makes it a pupil of
+ * a live school: AI marking paid for by the school and, where the school has
+ * recorded its AI authorisation, a basis that stands in for a parent's
+ * consent (src/lib/consent-check.ts). The class route enrolled ANY account on
+ * the platform, by id or by an email looked up across every profile, so a
+ * teacher could pull a stranger's child into their class and read their work.
+ * Only the school's own pupils may now be enrolled, and the email path looks
+ * only among them. Throws on a failed read.
+ */
+export async function pupilsOfSchool(
+  svc: SupabaseClient,
+  schoolId: string,
+  userIds: readonly string[],
+): Promise<Set<string>> {
+  const out = new Set<string>()
+  for (const chunk of chunks(userIds, IN_CHUNK)) {
+    const [members, joined] = await Promise.all([
+      svc
+        .from('school_members')
+        .select('user_id')
+        .eq('school_id', schoolId)
+        .eq('role', 'student')
+        .in('user_id', chunk),
+      svc
+        .from('school_students')
+        .select('user_id')
+        .eq('school_id', schoolId)
+        .neq('status', 'removed')
+        .in('user_id', chunk),
+    ])
+    if (members.error) throw new Error(`school_members read failed: ${members.error.message}`)
+    if (joined.error) throw new Error(`school_students read failed: ${joined.error.message}`)
+    for (const r of (members.data ?? []) as Array<{ user_id: string | null }>) {
+      if (r.user_id) out.add(r.user_id)
+    }
+    for (const r of (joined.data ?? []) as Array<{ user_id: string | null }>) {
+      if (r.user_id) out.add(r.user_id)
+    }
+  }
+  return out
 }
 
 /**

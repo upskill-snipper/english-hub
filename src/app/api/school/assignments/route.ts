@@ -2,6 +2,7 @@ import { NextRequest, NextResponse } from 'next/server'
 import { createServerSupabaseClient } from '@/lib/supabase/server'
 import { prisma } from '@/lib/prisma'
 import { verifySchoolMember } from '@/lib/school-auth'
+import { classInScope, resolveStaffScope } from '../_lib/staff-scope'
 import { rateLimit, getClientIp } from '@/lib/rate-limit'
 
 export const dynamic = 'force-dynamic'
@@ -29,73 +30,72 @@ export async function GET(request: NextRequest) {
     if (!rl.success) {
       return NextResponse.json(
         { error: 'Too many requests. Please try again later.' },
-        { status: 429, headers: { 'Retry-After': String(Math.ceil((rl.resetAt - Date.now()) / 1000)) } }
+        {
+          status: 429,
+          headers: { 'Retry-After': String(Math.ceil((rl.resetAt - Date.now()) / 1000)) },
+        },
       )
     }
 
     const supabase = createServerSupabaseClient()
-    const { data: { user }, error: authError } = await supabase.auth.getUser()
+    const {
+      data: { user },
+      error: authError,
+    } = await supabase.auth.getUser()
     if (authError || !user) {
       return NextResponse.json({ error: 'Unauthorized' }, { status: 401 })
     }
 
-    const member = await verifySchoolMember(user.id)
-    if (!member) {
-      return NextResponse.json({ error: 'Forbidden: not a school member' }, { status: 403 })
-    }
-
     const { searchParams } = new URL(request.url)
     const classId = searchParams.get('classId')
-    const statusFilter = searchParams.get('status')?.toUpperCase() as AssignmentStatusValue | undefined
+    const statusFilter = searchParams.get('status')?.toUpperCase() as
+      | AssignmentStatusValue
+      | undefined
 
-    // Determine which class IDs this user may view
+    // Which classes may this caller see?
+    //
+    // FIXED 16 OCTOBER 2026. A member of any role could pass ?classId= for
+    // any class in the school, so a pupil, or another teacher, could read any
+    // class's assignments and scores. And the pupil branch matched
+    // class_students.student_id (an auth uuid) against school_members.id, so
+    // a pupil never saw their own classes at all. Staff now see their scope
+    // (resolveStaffScope); anyone else sees the classes they are actively
+    // enrolled in, by their own auth id, and nothing else.
+    const { createServiceRoleClient } = await import('@/lib/supabase/server')
+    const admin = createServiceRoleClient()
     let classIds: string[] = []
-
-    if (classId) {
-      // Verify class belongs to the member's school (via Supabase, since classes live there)
-      const { createServiceRoleClient } = await import('@/lib/supabase/server')
-      const admin = createServiceRoleClient()
-      const { data: classData } = await admin
-        .from('classes')
-        .select('id')
-        .eq('id', classId)
-        .eq('school_id', member.school_id)
-        .single()
-
-      if (!classData) {
-        return NextResponse.json({ error: 'Class not found' }, { status: 404 })
-      }
-      classIds = [classId]
-    } else {
-      // Fetch classes from Supabase
-      const { createServiceRoleClient } = await import('@/lib/supabase/server')
-      const admin = createServiceRoleClient()
-
-      if (member.role === 'student') {
-        // Student: get classes they are enrolled in
-        const { data: enrollments } = await admin
-          .from('class_students')
-          .select('class_id')
-          .eq('student_id', member.id)
-          .eq('is_active', true)
-        classIds = (enrollments || []).map((e: { class_id: string }) => e.class_id)
-      } else if (STAFF_ROLES.includes(member.role)) {
-        // Admin / HoD: all school classes
-        const { data: classes } = await admin
-          .from('classes')
-          .select('id')
-          .eq('school_id', member.school_id)
-          .eq('is_active', true)
-        classIds = (classes || []).map((c: { id: string }) => c.id)
+    let pupil = false
+    const resolved = await resolveStaffScope(admin, user.id)
+    if (resolved.ok) {
+      if (classId) {
+        if (!classInScope(resolved.scope, classId)) {
+          return NextResponse.json({ error: 'Class not found' }, { status: 404 })
+        }
+        classIds = [classId]
       } else {
-        // Teacher: only their classes
-        const { data: classes } = await admin
-          .from('classes')
-          .select('id')
-          .eq('school_id', member.school_id)
-          .eq('teacher_id', member.id)
-          .eq('is_active', true)
-        classIds = (classes || []).map((c: { id: string }) => c.id)
+        classIds = resolved.scope.classes.filter((c) => c.is_active !== false).map((c) => c.id)
+      }
+    } else if (resolved.status === 500) {
+      return NextResponse.json({ error: resolved.error }, { status: 500 })
+    } else {
+      pupil = true
+      const { data: enrolments, error: enrolError } = await admin
+        .from('class_students')
+        .select('class_id')
+        .eq('student_id', user.id)
+        .eq('is_active', true)
+      if (enrolError) {
+        console.error('Assignments enrolment read error:', enrolError)
+        return NextResponse.json({ error: 'Internal server error' }, { status: 500 })
+      }
+      const mine = (enrolments || []).map((e: { class_id: string }) => e.class_id)
+      if (classId) {
+        if (!mine.includes(classId)) {
+          return NextResponse.json({ error: 'Class not found' }, { status: 404 })
+        }
+        classIds = [classId]
+      } else {
+        classIds = mine
       }
     }
 
@@ -129,9 +129,7 @@ export async function GET(request: NextRequest) {
     // Map to response shape
     const mapped = assignments.map((a) => {
       const submitted = a.submissions.filter((s) => s.status !== 'PENDING')
-      const scores = a.submissions
-        .filter((s) => s.score !== null)
-        .map((s) => s.score as number)
+      const scores = a.submissions.filter((s) => s.score !== null).map((s) => s.score as number)
 
       return {
         id: a.id,
@@ -148,9 +146,11 @@ export async function GET(request: NextRequest) {
         updatedAt: a.updatedAt.toISOString(),
         submissionsCount: submitted.length,
         totalStudents: a.submissions.length,
-        avgScore: scores.length > 0
-          ? Math.round((scores.reduce((x, y) => x + y, 0) / scores.length) * 100) / 100
-          : null,
+        // A pupil is not shown their classmates' average.
+        avgScore:
+          !pupil && scores.length > 0
+            ? Math.round((scores.reduce((x, y) => x + y, 0) / scores.length) * 100) / 100
+            : null,
       }
     })
 
@@ -174,12 +174,18 @@ export async function POST(request: NextRequest) {
     if (!rl.success) {
       return NextResponse.json(
         { error: 'Too many requests. Please try again later.' },
-        { status: 429, headers: { 'Retry-After': String(Math.ceil((rl.resetAt - Date.now()) / 1000)) } }
+        {
+          status: 429,
+          headers: { 'Retry-After': String(Math.ceil((rl.resetAt - Date.now()) / 1000)) },
+        },
       )
     }
 
     const supabase = createServerSupabaseClient()
-    const { data: { user }, error: authError } = await supabase.auth.getUser()
+    const {
+      data: { user },
+      error: authError,
+    } = await supabase.auth.getUser()
     if (authError || !user) {
       return NextResponse.json({ error: 'Unauthorized' }, { status: 401 })
     }
@@ -191,7 +197,10 @@ export async function POST(request: NextRequest) {
 
     // Students cannot create assignments
     if (member.role === 'student') {
-      return NextResponse.json({ error: 'Forbidden: students cannot create assignments' }, { status: 403 })
+      return NextResponse.json(
+        { error: 'Forbidden: students cannot create assignments' },
+        { status: 403 },
+      )
     }
 
     let body: {
@@ -211,7 +220,16 @@ export async function POST(request: NextRequest) {
       return NextResponse.json({ error: 'Invalid request body' }, { status: 400 })
     }
 
-    const { class_id, title, description, course_id, module_ids, type, due_date, status: assignmentStatus } = body
+    const {
+      class_id,
+      title,
+      description,
+      course_id,
+      module_ids,
+      type,
+      due_date,
+      status: assignmentStatus,
+    } = body
 
     // ── Validation ──
 
@@ -231,7 +249,7 @@ export async function POST(request: NextRequest) {
     if (!upperType || !VALID_TYPES.includes(upperType)) {
       return NextResponse.json(
         { error: `type must be one of: ${VALID_TYPES.join(', ')}` },
-        { status: 422 }
+        { status: 422 },
       )
     }
 
@@ -239,7 +257,10 @@ export async function POST(request: NextRequest) {
     if (due_date) {
       parsedDueDate = new Date(due_date)
       if (isNaN(parsedDueDate.getTime())) {
-        return NextResponse.json({ error: 'due_date must be a valid ISO date string' }, { status: 422 })
+        return NextResponse.json(
+          { error: 'due_date must be a valid ISO date string' },
+          { status: 422 },
+        )
       }
     }
 
@@ -247,7 +268,7 @@ export async function POST(request: NextRequest) {
     if (!VALID_STATUSES.includes(upperStatus)) {
       return NextResponse.json(
         { error: `status must be one of: ${VALID_STATUSES.join(', ')}` },
-        { status: 422 }
+        { status: 422 },
       )
     }
 
@@ -271,7 +292,7 @@ export async function POST(request: NextRequest) {
     if (!STAFF_ROLES.includes(member.role) && classData.teacher_id !== member.id) {
       return NextResponse.json(
         { error: 'Forbidden: you can only create assignments for your own classes' },
-        { status: 403 }
+        { status: 403 },
       )
     }
 
@@ -283,7 +304,9 @@ export async function POST(request: NextRequest) {
       .eq('class_id', class_id)
       .eq('is_active', true)
 
-    const studentIds: string[] = (classStudents || []).map((cs: { student_id: string }) => cs.student_id)
+    const studentIds: string[] = (classStudents || []).map(
+      (cs: { student_id: string }) => cs.student_id,
+    )
 
     // ── Create assignment + submissions in a transaction ──
 
@@ -298,16 +321,17 @@ export async function POST(request: NextRequest) {
         courseId: course_id || null,
         moduleIds: module_ids || [],
         dueDate: parsedDueDate || null,
-        submissions: studentIds.length > 0
-          ? {
-            createMany: {
-              data: studentIds.map((studentId) => ({
-                studentId,
-                status: 'PENDING' as const,
-              })),
-            },
-          }
-          : undefined,
+        submissions:
+          studentIds.length > 0
+            ? {
+                createMany: {
+                  data: studentIds.map((studentId) => ({
+                    studentId,
+                    status: 'PENDING' as const,
+                  })),
+                },
+              }
+            : undefined,
       },
       include: {
         submissions: {
@@ -320,25 +344,28 @@ export async function POST(request: NextRequest) {
       },
     })
 
-    return NextResponse.json({
-      assignment: {
-        id: assignment.id,
-        classId: assignment.classId,
-        teacherId: assignment.teacherId,
-        title: assignment.title,
-        description: assignment.description,
-        type: assignment.type,
-        status: assignment.status,
-        courseId: assignment.courseId,
-        moduleIds: assignment.moduleIds,
-        dueDate: assignment.dueDate?.toISOString() ?? null,
-        createdAt: assignment.createdAt.toISOString(),
-        updatedAt: assignment.updatedAt.toISOString(),
-        submissionsCount: 0,
-        totalStudents: assignment.submissions.length,
-        avgScore: null,
+    return NextResponse.json(
+      {
+        assignment: {
+          id: assignment.id,
+          classId: assignment.classId,
+          teacherId: assignment.teacherId,
+          title: assignment.title,
+          description: assignment.description,
+          type: assignment.type,
+          status: assignment.status,
+          courseId: assignment.courseId,
+          moduleIds: assignment.moduleIds,
+          dueDate: assignment.dueDate?.toISOString() ?? null,
+          createdAt: assignment.createdAt.toISOString(),
+          updatedAt: assignment.updatedAt.toISOString(),
+          submissionsCount: 0,
+          totalStudents: assignment.submissions.length,
+          avgScore: null,
+        },
       },
-    }, { status: 201 })
+      { status: 201 },
+    )
   } catch (error) {
     console.error('Assignment create error:', error)
     return NextResponse.json({ error: 'Internal server error' }, { status: 500 })

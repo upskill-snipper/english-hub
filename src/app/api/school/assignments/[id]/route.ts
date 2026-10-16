@@ -2,6 +2,7 @@ import { NextRequest, NextResponse } from 'next/server'
 import { createServerSupabaseClient } from '@/lib/supabase/server'
 import { prisma } from '@/lib/prisma'
 import { verifySchoolMember } from '@/lib/school-auth'
+import { classInScope, resolveStaffScope } from '../../_lib/staff-scope'
 import { rateLimit, getClientIp } from '@/lib/rate-limit'
 
 export const dynamic = 'force-dynamic'
@@ -42,11 +43,6 @@ export async function GET(request: NextRequest, props: { params: Promise<{ id: s
       return NextResponse.json({ error: 'Unauthorized' }, { status: 401 })
     }
 
-    const member = await verifySchoolMember(user.id)
-    if (!member) {
-      return NextResponse.json({ error: 'Forbidden: not a school member' }, { status: 403 })
-    }
-
     const assignment = await prisma.assignment.findUnique({
       where: { id: params.id },
       include: {
@@ -58,24 +54,45 @@ export async function GET(request: NextRequest, props: { params: Promise<{ id: s
       return NextResponse.json({ error: 'Assignment not found' }, { status: 404 })
     }
 
-    // Verify the assignment's class belongs to this member's school
+    // Who may read it, and how much.
+    //
+    // FIXED 16 OCTOBER 2026. Any member of the school, a pupil included, could
+    // read any assignment with every pupil's submission: their score and the
+    // teacher's feedback. Staff now need the class in scope; a pupil needs to
+    // be actively enrolled in it, and sees their own submission only.
     const { createServiceRoleClient } = await import('@/lib/supabase/server')
     const admin = createServiceRoleClient()
-    const { data: classData } = await admin
-      .from('classes')
-      .select('id')
-      .eq('id', assignment.classId)
-      .eq('school_id', member.school_id)
-      .single()
-
-    if (!classData) {
-      return NextResponse.json({ error: 'Assignment not found' }, { status: 404 })
+    let ownOnly = false
+    const resolved = await resolveStaffScope(admin, user.id)
+    if (resolved.ok) {
+      if (!classInScope(resolved.scope, assignment.classId)) {
+        return NextResponse.json({ error: 'Assignment not found' }, { status: 404 })
+      }
+    } else if (resolved.status === 500) {
+      return NextResponse.json({ error: resolved.error }, { status: 500 })
+    } else {
+      const { data: enrolled, error: enrolError } = await admin
+        .from('class_students')
+        .select('class_id')
+        .eq('class_id', assignment.classId)
+        .eq('student_id', user.id)
+        .eq('is_active', true)
+        .limit(1)
+      if (enrolError) {
+        console.error('Assignment enrolment read error:', enrolError)
+        return NextResponse.json({ error: 'Internal server error' }, { status: 500 })
+      }
+      if (!enrolled || enrolled.length === 0) {
+        return NextResponse.json({ error: 'Assignment not found' }, { status: 404 })
+      }
+      ownOnly = true
     }
+    const visible = ownOnly
+      ? assignment.submissions.filter((s) => s.studentId === user.id)
+      : assignment.submissions
 
-    const submitted = assignment.submissions.filter((s) => s.status !== 'PENDING')
-    const scores = assignment.submissions
-      .filter((s) => s.score !== null)
-      .map((s) => s.score as number)
+    const submitted = visible.filter((s) => s.status !== 'PENDING')
+    const scores = visible.filter((s) => s.score !== null).map((s) => s.score as number)
 
     return NextResponse.json({
       assignment: {
@@ -92,12 +109,12 @@ export async function GET(request: NextRequest, props: { params: Promise<{ id: s
         createdAt: assignment.createdAt.toISOString(),
         updatedAt: assignment.updatedAt.toISOString(),
         submissionsCount: submitted.length,
-        totalStudents: assignment.submissions.length,
+        totalStudents: visible.length,
         avgScore:
-          scores.length > 0
+          !ownOnly && scores.length > 0
             ? Math.round((scores.reduce((x, y) => x + y, 0) / scores.length) * 100) / 100
             : null,
-        submissions: assignment.submissions.map((s) => ({
+        submissions: visible.map((s) => ({
           id: s.id,
           studentId: s.studentId,
           status: s.status,

@@ -51,6 +51,7 @@ import { mapWithConcurrency } from '@/lib/concurrency'
 import type { StudentRow, ParseError } from '@/lib/school/csv-parse'
 import { classKey, loadActiveClasses, type ActiveClass } from '@/lib/school/school-classes'
 import { isUuid } from '@/lib/school/is-uuid'
+import { getChildProfileDefaults } from '@/lib/privacy/child-defaults'
 
 // ─── The time budget (11 October 2026) ──────────────────────────────────────
 // The commit route could not have handled a real school. It created each
@@ -610,6 +611,42 @@ export async function commitBulkUpload(
       createdCount++
       outcomes.push({ row: row.row, email, action: 'created' })
       welcomes.push({ email, firstName: row.firstName, tempPassword: attempt.tempPassword })
+    }
+
+    // 5b2. The Children's Code defaults for every new pupil account.
+    //
+    // FIXED 16 OCTOBER 2026. An uploaded pupil's auth user carries no date of
+    // birth, so the signup trigger (supabase/migrations/
+    // 20260918_handle_new_user_reads_signup_metadata.sql) gave them the ADULT
+    // column defaults: personalised recommendations, streaks, streak and nudge
+    // notifications all switched on, for a school's Year 7 pupils. A school's
+    // pupils are children until shown otherwise, so the child defaults
+    // (src/lib/privacy/child-defaults.ts) are written here. No date of birth
+    // is invented and is_minor is left as it is: a pupil can still give their
+    // date of birth, and a sixth-former of 16 or over can still consent for
+    // themselves where the school has not authorised AI. A failure undoes the
+    // upload, as every other failure in this step does: an account must not
+    // exist with the adult defaults.
+    if (accounts.length > 0) {
+      const defaults = getChildProfileDefaults()
+      const ids = accounts.map((a) => a.authId)
+      for (let i = 0; i < ids.length; i += 150) {
+        const { error: defaultsErr } = await admin
+          .from('profiles')
+          .update(defaults)
+          .in('id', ids.slice(i, i + 150))
+        if (defaultsErr) {
+          console.error('bulk-upload.commit: child defaults not applied', defaultsErr.message)
+          await revokeCreatedAccounts()
+          await failJob(
+            'The privacy defaults for new pupils could not be applied; nothing was saved.',
+          )
+          return {
+            status: 500,
+            body: { error: 'Commit failed. No accounts were created. Please retry.' },
+          }
+        }
+      }
     }
 
     // 5c. Record the new pupils and complete the job: one transaction, two

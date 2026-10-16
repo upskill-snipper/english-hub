@@ -1,6 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server'
 import { createServerSupabaseClient, createServiceRoleClient } from '@/lib/supabase/server'
-import { verifySchoolMember } from '@/lib/school-auth'
+import { classInScope, resolveStaffScope } from '../../_lib/staff-scope'
 import { rateLimit, getClientIp } from '@/lib/rate-limit'
 
 export const dynamic = 'force-dynamic'
@@ -98,9 +98,19 @@ export async function GET(request: NextRequest) {
       return NextResponse.json({ error: 'Unauthorized' }, { status: 401 })
     }
 
-    const member = await verifySchoolMember(user.id)
-    if (!member) {
-      return NextResponse.json({ error: 'Forbidden: not a school member' }, { status: 403 })
+    // FIXED 16 OCTOBER 2026. This called verifySchoolMember with no roles
+    // and checked only that the class was the school's, so any member, a pupil
+    // included, could read any class's performance. Staff only now, and the
+    // class must be in the caller's scope. (Mobile contract: the response is
+    // unchanged for staff.)
+    const resolved = await resolveStaffScope(createServiceRoleClient(), user.id)
+    if (!resolved.ok) {
+      return NextResponse.json({ error: resolved.error }, { status: resolved.status })
+    }
+    const member = {
+      school_id: resolved.scope.schoolId,
+      id: resolved.scope.memberId,
+      role: resolved.scope.role,
     }
 
     const { searchParams } = new URL(request.url)
@@ -108,6 +118,9 @@ export async function GET(request: NextRequest) {
 
     if (!classId) {
       return NextResponse.json({ error: 'classId query parameter is required' }, { status: 400 })
+    }
+    if (!classInScope(resolved.scope, classId)) {
+      return NextResponse.json({ error: 'Class not found' }, { status: 404 })
     }
 
     const admin = createServiceRoleClient()

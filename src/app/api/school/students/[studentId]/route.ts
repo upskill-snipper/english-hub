@@ -149,10 +149,10 @@ export async function GET(
           'module_id, course_id, quiz_score, completed, quiz_attempts, time_spent_seconds, completed_at',
         )
         .eq('user_id', studentId),
-      svc
-        .from('enrolments')
-        .select('course_id, enrolled_at, payment_type')
-        .eq('user_id', studentId),
+      // Never payment_type (FIXED 16 OCTOBER 2026): how a pupil or their family
+      // paid for a course is not the school's business, and this route handed
+      // it to every teacher who could open the pupil.
+      svc.from('enrolments').select('course_id, enrolled_at').eq('user_id', studentId),
       svc
         .from('assessment_attempts')
         .select('id, course_id, score, passed, time_taken_seconds, attempted_at')

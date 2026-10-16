@@ -1,6 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server'
 import { createServerSupabaseClient, createServiceRoleClient } from '@/lib/supabase/server'
-import { verifySchoolMember } from '@/lib/school-auth'
+import { classInScope, resolveStaffScope } from '../../_lib/staff-scope'
 import { rateLimit, getClientIp } from '@/lib/rate-limit'
 
 export const dynamic = 'force-dynamic'
@@ -144,19 +144,39 @@ export async function POST(request: NextRequest) {
     if (!rl.success) {
       return NextResponse.json(
         { error: 'Too many requests. Please try again later.' },
-        { status: 429, headers: { 'Retry-After': String(Math.ceil((rl.resetAt - Date.now()) / 1000)) } }
+        {
+          status: 429,
+          headers: { 'Retry-After': String(Math.ceil((rl.resetAt - Date.now()) / 1000)) },
+        },
       )
     }
 
     const supabase = createServerSupabaseClient()
-    const { data: { user }, error: authError } = await supabase.auth.getUser()
+    const {
+      data: { user },
+      error: authError,
+    } = await supabase.auth.getUser()
     if (authError || !user) {
       return NextResponse.json({ error: 'Unauthorized' }, { status: 401 })
     }
 
-    const member = await verifySchoolMember(user.id)
-    if (!member) {
-      return NextResponse.json({ error: 'Forbidden: not a school member' }, { status: 403 })
+    // FIXED 16 OCTOBER 2026. This called verifySchoolMember with no roles, so
+    // any member, a pupil included, could generate reports. Worse, a student
+    // or parent report checked only that the class was the school's and then
+    // read ANY platform profile by student_id: a name, email, year and module
+    // results for any child on the site, inside a report. Now: staff only;
+    // the class must be in the caller's scope; the pupil must be actively
+    // enrolled in that class; and a department report is for whole-school
+    // staff.
+    const resolved = await resolveStaffScope(createServiceRoleClient(), user.id)
+    if (!resolved.ok) {
+      return NextResponse.json({ error: resolved.error }, { status: resolved.status })
+    }
+    const member = {
+      school_id: resolved.scope.schoolId,
+      id: resolved.scope.memberId,
+      full_name: resolved.scope.fullName,
+      role: resolved.scope.role as string,
     }
 
     let body: ReportRequest
@@ -173,7 +193,7 @@ export async function POST(request: NextRequest) {
     if (!type || !validTypes.includes(type)) {
       return NextResponse.json(
         { error: `Invalid report type. Must be one of: ${validTypes.join(', ')}` },
-        { status: 422 }
+        { status: 422 },
       )
     }
 
@@ -181,21 +201,48 @@ export async function POST(request: NextRequest) {
     if (type === 'hod' && !['admin', 'head_of_department'].includes(member.role)) {
       return NextResponse.json(
         { error: 'Forbidden: HoD reports require admin or head of department role' },
-        { status: 403 }
+        { status: 403 },
       )
     }
 
     // class, student, parent reports require a class_id
     if (['class', 'student', 'parent'].includes(type) && !class_id) {
-      return NextResponse.json({ error: 'class_id is required for this report type' }, { status: 422 })
+      return NextResponse.json(
+        { error: 'class_id is required for this report type' },
+        { status: 422 },
+      )
     }
 
     // student and parent reports require a student_id
     if (['student', 'parent'].includes(type) && !student_id) {
-      return NextResponse.json({ error: 'student_id is required for this report type' }, { status: 422 })
+      return NextResponse.json(
+        { error: 'student_id is required for this report type' },
+        { status: 422 },
+      )
     }
 
     const admin = createServiceRoleClient()
+
+    if (class_id && !classInScope(resolved.scope, class_id)) {
+      return NextResponse.json({ error: 'Class not found' }, { status: 404 })
+    }
+    if (['student', 'parent'].includes(type)) {
+      const { data: enrolled, error: enrolError } = await admin
+        .from('class_students')
+        .select('student_id')
+        .eq('class_id', class_id!)
+        .eq('student_id', student_id!)
+        .eq('is_active', true)
+        .limit(1)
+      if (enrolError) {
+        console.error('Report enrolment read error:', enrolError)
+        return NextResponse.json({ error: 'Internal server error' }, { status: 500 })
+      }
+      if (!enrolled || enrolled.length === 0) {
+        return NextResponse.json({ error: 'Pupil not found in this class' }, { status: 404 })
+      }
+    }
+
     const now = new Date()
     const defaultFrom = new Date(now.getFullYear(), now.getMonth() - 3, 1).toISOString()
     const reportPeriod = {
@@ -223,7 +270,13 @@ export async function POST(request: NextRequest) {
     }
 
     if (type === 'student') {
-      const report = await generateStudentReport(admin, member, class_id!, student_id!, reportPeriod)
+      const report = await generateStudentReport(
+        admin,
+        member,
+        class_id!,
+        student_id!,
+        reportPeriod,
+      )
       if ('error' in report) {
         return NextResponse.json({ error: report.error }, { status: report.status })
       }
@@ -309,7 +362,7 @@ async function generateClassReport(
   admin: AdminClient,
   member: SchoolMember,
   classId: string,
-  period: { from: string; to: string }
+  period: { from: string; to: string },
 ): Promise<ClassReportData | { error: string; status: number }> {
   const { data: classData } = await admin
     .from('classes')
@@ -359,54 +412,67 @@ async function generateClassReport(
 
   const [profilesResult, progressResult] = await Promise.all([
     admin.from('profiles').select('id, full_name, email').in('id', studentIds),
-    admin.from('module_progress')
+    admin
+      .from('module_progress')
       .select('user_id, quiz_score, completed, completed_at')
       .in('user_id', studentIds)
       .gte('completed_at', period.from)
       .lte('completed_at', period.to),
   ])
 
-  const profiles = (profilesResult.data || []) as Array<{ id: string; full_name: string | null; email: string }>
-  const profileMap = new Map(profiles.map(p => [p.id, p]))
+  const profiles = (profilesResult.data || []) as Array<{
+    id: string
+    full_name: string | null
+    email: string
+  }>
+  const profileMap = new Map(profiles.map((p) => [p.id, p]))
   const progress = (progressResult.data || []) as Array<{
-    user_id: string; quiz_score: number | null; completed: boolean; completed_at: string | null
+    user_id: string
+    quiz_score: number | null
+    completed: boolean
+    completed_at: string | null
   }>
 
   // Per-student stats
-  const studentRows = studentIds.map(sid => {
-    const profile = profileMap.get(sid)
-    const sp = progress.filter(p => p.user_id === sid)
-    const scores = sp.filter(p => p.quiz_score !== null).map(p => p.quiz_score as number)
-    const completed = sp.filter(p => p.completed).length
-    const avg = scores.length > 0 ? Math.round(scores.reduce((a, b) => a + b, 0) / scores.length) : 0
+  const studentRows = studentIds
+    .map((sid) => {
+      const profile = profileMap.get(sid)
+      const sp = progress.filter((p) => p.user_id === sid)
+      const scores = sp.filter((p) => p.quiz_score !== null).map((p) => p.quiz_score as number)
+      const completed = sp.filter((p) => p.completed).length
+      const avg =
+        scores.length > 0 ? Math.round(scores.reduce((a, b) => a + b, 0) / scores.length) : 0
 
-    return {
-      name: profile?.full_name || profile?.email || 'Unknown',
-      avg_score: avg,
-      modules_completed: completed,
-      completion_rate: sp.length > 0 ? Math.round((completed / sp.length) * 100) : 0,
-      trajectory: computeTrajectory(scores),
-      grade_estimate: gradeFromAvg(avg || null),
-      _scores: scores, // internal, stripped later
-    }
-  }).sort((a, b) => b.avg_score - a.avg_score)
+      return {
+        name: profile?.full_name || profile?.email || 'Unknown',
+        avg_score: avg,
+        modules_completed: completed,
+        completion_rate: sp.length > 0 ? Math.round((completed / sp.length) * 100) : 0,
+        trajectory: computeTrajectory(scores),
+        grade_estimate: gradeFromAvg(avg || null),
+        _scores: scores, // internal, stripped later
+      }
+    })
+    .sort((a, b) => b.avg_score - a.avg_score)
 
-  const allScores = progress.filter(p => p.quiz_score !== null).map(p => p.quiz_score as number)
+  const allScores = progress.filter((p) => p.quiz_score !== null).map((p) => p.quiz_score as number)
   const sorted = [...allScores].sort((a, b) => a - b)
-  const avg = allScores.length > 0
-    ? Math.round(allScores.reduce((a, b) => a + b, 0) / allScores.length) : 0
+  const avg =
+    allScores.length > 0 ? Math.round(allScores.reduce((a, b) => a + b, 0) / allScores.length) : 0
   let median: number | null = null
   if (sorted.length > 0) {
     const mid = Math.floor(sorted.length / 2)
-    median = sorted.length % 2 !== 0
-      ? sorted[mid] : Math.round((sorted[mid - 1] + sorted[mid]) / 2)
+    median = sorted.length % 2 !== 0 ? sorted[mid] : Math.round((sorted[mid - 1] + sorted[mid]) / 2)
   }
 
-  const topPerformers = studentRows.filter(s => s.avg_score >= 70).slice(0, 5)
-    .map(s => ({ name: s.name, avg_score: s.avg_score }))
+  const topPerformers = studentRows
+    .filter((s) => s.avg_score >= 70)
+    .slice(0, 5)
+    .map((s) => ({ name: s.name, avg_score: s.avg_score }))
 
-  const studentsNeedingSupport = studentRows.filter(s => s.avg_score > 0 && s.avg_score < 50)
-    .map(s => {
+  const studentsNeedingSupport = studentRows
+    .filter((s) => s.avg_score > 0 && s.avg_score < 50)
+    .map((s) => {
       const issues: string[] = []
       if (s.avg_score < 30) issues.push('Very low scores')
       if (s.trajectory === 'declining') issues.push('Declining trajectory')
@@ -424,10 +490,14 @@ async function generateClassReport(
     student_count: studentIds.length,
     avg_score: avg,
     median_score: median,
-    pass_rate: allScores.length > 0
-      ? Math.round((allScores.filter(s => s >= 40).length / allScores.length) * 100) : 0,
-    completion_rate: progress.length > 0
-      ? Math.round((progress.filter(p => p.completed).length / progress.length) * 100) : 0,
+    pass_rate:
+      allScores.length > 0
+        ? Math.round((allScores.filter((s) => s >= 40).length / allScores.length) * 100)
+        : 0,
+    completion_rate:
+      progress.length > 0
+        ? Math.round((progress.filter((p) => p.completed).length / progress.length) * 100)
+        : 0,
     top_performers: topPerformers,
     students_needing_support: studentsNeedingSupport,
     student_rows: studentRows.map(({ _scores, ...rest }) => rest),
@@ -439,7 +509,7 @@ async function generateStudentReport(
   member: SchoolMember,
   classId: string,
   studentId: string,
-  period: { from: string; to: string }
+  period: { from: string; to: string },
 ): Promise<StudentReportData | { error: string; status: number }> {
   const { data: classData } = await admin
     .from('classes')
@@ -452,8 +522,11 @@ async function generateStudentReport(
 
   const [profileResult, progressResult, modulesResult, coursesResult] = await Promise.all([
     admin.from('profiles').select('id, full_name, email, year_group').eq('id', studentId).single(),
-    admin.from('module_progress')
-      .select('user_id, module_id, course_id, quiz_score, completed, time_spent_seconds, completed_at')
+    admin
+      .from('module_progress')
+      .select(
+        'user_id, module_id, course_id, quiz_score, completed, time_spent_seconds, completed_at',
+      )
       .eq('user_id', studentId)
       .gte('completed_at', period.from)
       .lte('completed_at', period.to)
@@ -462,25 +535,37 @@ async function generateStudentReport(
     admin.from('courses').select('id, title'),
   ])
 
-  const profile = profileResult.data as { id: string; full_name: string | null; email: string; year_group: string | null } | null
+  const profile = profileResult.data as {
+    id: string
+    full_name: string | null
+    email: string
+    year_group: string | null
+  } | null
   if (!profile) return { error: 'Student not found', status: 404 }
 
   const progress = (progressResult.data || []) as Array<{
-    user_id: string; module_id: string; course_id: string;
-    quiz_score: number | null; completed: boolean;
-    time_spent_seconds: number; completed_at: string | null
+    user_id: string
+    module_id: string
+    course_id: string
+    quiz_score: number | null
+    completed: boolean
+    time_spent_seconds: number
+    completed_at: string | null
   }>
   const moduleMap = new Map(
-    (modulesResult.data || []).map((m: { id: string; title: string; course_id: string }) => [m.id, m])
+    (modulesResult.data || []).map((m: { id: string; title: string; course_id: string }) => [
+      m.id,
+      m,
+    ]),
   )
   const courseMap = new Map(
-    (coursesResult.data || []).map((c: { id: string; title: string }) => [c.id, c.title])
+    (coursesResult.data || []).map((c: { id: string; title: string }) => [c.id, c.title]),
   )
 
-  const scores = progress.filter(p => p.quiz_score !== null).map(p => p.quiz_score as number)
-  const avg = scores.length > 0
-    ? Math.round(scores.reduce((a, b) => a + b, 0) / scores.length) : null
-  const completed = progress.filter(p => p.completed).length
+  const scores = progress.filter((p) => p.quiz_score !== null).map((p) => p.quiz_score as number)
+  const avg =
+    scores.length > 0 ? Math.round(scores.reduce((a, b) => a + b, 0) / scores.length) : null
+  const completed = progress.filter((p) => p.completed).length
 
   // Identify strengths and weaknesses by course
   const courseScores = new Map<string, number[]>()
@@ -492,16 +577,23 @@ async function generateStudentReport(
     }
   }
 
-  const courseAvgs = Array.from(courseScores.entries()).map(([name, s]) => ({
-    name,
-    avg: Math.round(s.reduce((a, b) => a + b, 0) / s.length),
-  })).sort((a, b) => b.avg - a.avg)
+  const courseAvgs = Array.from(courseScores.entries())
+    .map(([name, s]) => ({
+      name,
+      avg: Math.round(s.reduce((a, b) => a + b, 0) / s.length),
+    }))
+    .sort((a, b) => b.avg - a.avg)
 
-  const strengths = courseAvgs.filter(c => c.avg >= 60).slice(0, 3).map(c => `${c.name} (${c.avg}%)`)
-  const areasForImprovement = courseAvgs.filter(c => c.avg < 60).slice(0, 3)
-    .map(c => `${c.name} (${c.avg}%) - needs additional practice`)
+  const strengths = courseAvgs
+    .filter((c) => c.avg >= 60)
+    .slice(0, 3)
+    .map((c) => `${c.name} (${c.avg}%)`)
+  const areasForImprovement = courseAvgs
+    .filter((c) => c.avg < 60)
+    .slice(0, 3)
+    .map((c) => `${c.name} (${c.avg}%) - needs additional practice`)
 
-  const moduleResults: ModuleResult[] = progress.map(p => {
+  const moduleResults: ModuleResult[] = progress.map((p) => {
     const mod = moduleMap.get(p.module_id) as { title: string; course_id: string } | undefined
     return {
       module_id: p.module_id,
@@ -527,8 +619,10 @@ async function generateStudentReport(
     grade_estimate: gradeFromAvg(avg),
     trajectory: computeTrajectory(scores),
     strengths: strengths.length > 0 ? strengths : ['Not enough data to determine strengths yet'],
-    areas_for_improvement: areasForImprovement.length > 0
-      ? areasForImprovement : ['Not enough data to determine areas for improvement'],
+    areas_for_improvement:
+      areasForImprovement.length > 0
+        ? areasForImprovement
+        : ['Not enough data to determine areas for improvement'],
     module_results: moduleResults,
     teacher_comment_placeholder: '[ Teacher comment to be added before sending to student/parent ]',
   }
@@ -539,7 +633,7 @@ async function generateParentReport(
   member: SchoolMember,
   classId: string,
   studentId: string,
-  period: { from: string; to: string }
+  period: { from: string; to: string },
 ): Promise<ParentReportData | { error: string; status: number }> {
   // Re-use the student report data, then reformat for parent audience
   const studentReport = await generateStudentReport(admin, member, classId, studentId, period)
@@ -554,32 +648,34 @@ async function generateParentReport(
   else if (sr.completion_rate < 40) effort = 'needs_improvement'
 
   // Build parent-friendly summary
-  const gradeDesc = sr.overall_avg_score !== null && sr.overall_avg_score >= 50
-    ? 'meeting expectations'
-    : sr.overall_avg_score !== null
-      ? 'working towards meeting expectations'
-      : 'still in the early stages of the course'
+  const gradeDesc =
+    sr.overall_avg_score !== null && sr.overall_avg_score >= 50
+      ? 'meeting expectations'
+      : sr.overall_avg_score !== null
+        ? 'working towards meeting expectations'
+        : 'still in the early stages of the course'
 
-  const summary = `${sr.student_name} is currently ${gradeDesc} in English. ` +
+  const summary =
+    `${sr.student_name} is currently ${gradeDesc} in English. ` +
     `They have completed ${sr.modules_completed} out of ${sr.total_modules} learning modules ` +
     `during this reporting period, achieving an overall score of ${sr.overall_avg_score ?? 'N/A'}%.`
 
   // Simplified subject areas
   const subjectsSummary = sr.strengths
-    .filter(s => s !== 'Not enough data to determine strengths yet')
-    .map(s => ({
+    .filter((s) => s !== 'Not enough data to determine strengths yet')
+    .map((s) => ({
       area: s.split(' (')[0],
       performance: 'Strong',
       comment: `${sr.student_name} shows good understanding in this area.`,
     }))
     .concat(
       sr.areas_for_improvement
-        .filter(s => s !== 'Not enough data to determine areas for improvement')
-        .map(s => ({
+        .filter((s) => s !== 'Not enough data to determine areas for improvement')
+        .map((s) => ({
           area: s.split(' (')[0],
           performance: 'Developing',
           comment: `Additional practice in this area would help ${sr.student_name} improve.`,
-        }))
+        })),
     )
 
   // Get teacher name from class
@@ -601,7 +697,9 @@ async function generateParentReport(
 
   const nextSteps: string[] = []
   if (sr.completion_rate < 60) {
-    nextSteps.push(`Encourage ${sr.student_name} to complete outstanding learning modules regularly.`)
+    nextSteps.push(
+      `Encourage ${sr.student_name} to complete outstanding learning modules regularly.`,
+    )
   }
   if (sr.overall_avg_score !== null && sr.overall_avg_score < 50) {
     nextSteps.push('Consider additional revision sessions or tutoring to reinforce key concepts.')
@@ -610,7 +708,9 @@ async function generateParentReport(
     nextSteps.push('We have noticed a recent dip in performance and will monitor this closely.')
   }
   if (nextSteps.length === 0) {
-    nextSteps.push(`${sr.student_name} is making good progress. Continue to encourage regular study habits.`)
+    nextSteps.push(
+      `${sr.student_name} is making good progress. Continue to encourage regular study habits.`,
+    )
   }
 
   return {
@@ -631,17 +731,19 @@ async function generateParentReport(
 async function generateHodReport(
   admin: AdminClient,
   member: SchoolMember,
-  period: { from: string; to: string }
+  period: { from: string; to: string },
 ): Promise<HodReportData | { error: string; status: number }> {
   const schoolId = member.school_id
 
   const [schoolResult, classesResult, membersResult] = await Promise.all([
     admin.from('schools').select('name').eq('id', schoolId).single(),
-    admin.from('classes')
+    admin
+      .from('classes')
       .select('id, name, year_group, teacher_id')
       .eq('school_id', schoolId)
       .eq('is_active', true),
-    admin.from('school_members')
+    admin
+      .from('school_members')
       .select('id, full_name, role')
       .eq('school_id', schoolId)
       .eq('invite_status', 'accepted'),
@@ -650,12 +752,15 @@ async function generateHodReport(
   if (!schoolResult.data) return { error: 'School not found', status: 404 }
 
   const classes = (classesResult.data || []) as Array<{
-    id: string; name: string; year_group: string | null; teacher_id: string | null
+    id: string
+    name: string
+    year_group: string | null
+    teacher_id: string | null
   }>
   const memberMap = new Map(
-    (membersResult.data || []).map((m: { id: string; full_name: string | null }) => [m.id, m])
+    (membersResult.data || []).map((m: { id: string; full_name: string | null }) => [m.id, m]),
   )
-  const classIds = classes.map(c => c.id)
+  const classIds = classes.map((c) => c.id)
 
   if (classIds.length === 0) {
     return {
@@ -678,8 +783,11 @@ async function generateHodReport(
     .in('class_id', classIds)
     .eq('is_active', true)
 
-  const classStudentsData = (allClassStudents || []) as Array<{ student_id: string; class_id: string }>
-  const allStudentIds = Array.from(new Set(classStudentsData.map(cs => cs.student_id)))
+  const classStudentsData = (allClassStudents || []) as Array<{
+    student_id: string
+    class_id: string
+  }>
+  const allStudentIds = Array.from(new Set(classStudentsData.map((cs) => cs.student_id)))
 
   const studentsByClass = new Map<string, string[]>()
   for (const cs of classStudentsData) {
@@ -688,7 +796,10 @@ async function generateHodReport(
   }
 
   let progressData: Array<{
-    user_id: string; quiz_score: number | null; completed: boolean; completed_at: string | null
+    user_id: string
+    quiz_score: number | null
+    completed: boolean
+    completed_at: string | null
   }> = []
 
   if (allStudentIds.length > 0) {
@@ -703,10 +814,27 @@ async function generateHodReport(
   }
 
   // Per-student aggregates
-  const studentAgg = new Map<string, { totalScore: number; count: number; completed: number; total: number; firstScores: number[]; lastScores: number[] }>()
+  const studentAgg = new Map<
+    string,
+    {
+      totalScore: number
+      count: number
+      completed: number
+      total: number
+      firstScores: number[]
+      lastScores: number[]
+    }
+  >()
   for (const p of progressData) {
     if (!studentAgg.has(p.user_id)) {
-      studentAgg.set(p.user_id, { totalScore: 0, count: 0, completed: 0, total: 0, firstScores: [], lastScores: [] })
+      studentAgg.set(p.user_id, {
+        totalScore: 0,
+        count: 0,
+        completed: 0,
+        total: 0,
+        firstScores: [],
+        lastScores: [],
+      })
     }
     const agg = studentAgg.get(p.user_id)!
     agg.total++
@@ -721,45 +849,47 @@ async function generateHodReport(
   }
 
   // Class rankings
-  const classRankings = classes.map(cls => {
-    const sids = studentsByClass.get(cls.id) || []
-    let totalScore = 0
-    let scoreCount = 0
-    let completedCount = 0
-    let progressCount = 0
-    let totalChange = 0
-    let changeStudents = 0
+  const classRankings = classes
+    .map((cls) => {
+      const sids = studentsByClass.get(cls.id) || []
+      let totalScore = 0
+      let scoreCount = 0
+      let completedCount = 0
+      let progressCount = 0
+      let totalChange = 0
+      let changeStudents = 0
 
-    for (const sid of sids) {
-      const agg = studentAgg.get(sid)
-      if (agg) {
-        totalScore += agg.totalScore
-        scoreCount += agg.count
-        completedCount += agg.completed
-        progressCount += agg.total
-        if (agg.firstScores.length >= 2 && agg.lastScores.length >= 2) {
-          const firstAvg = agg.firstScores.reduce((a, b) => a + b, 0) / agg.firstScores.length
-          const lastAvg = agg.lastScores.reduce((a, b) => a + b, 0) / agg.lastScores.length
-          totalChange += lastAvg - firstAvg
-          changeStudents++
+      for (const sid of sids) {
+        const agg = studentAgg.get(sid)
+        if (agg) {
+          totalScore += agg.totalScore
+          scoreCount += agg.count
+          completedCount += agg.completed
+          progressCount += agg.total
+          if (agg.firstScores.length >= 2 && agg.lastScores.length >= 2) {
+            const firstAvg = agg.firstScores.reduce((a, b) => a + b, 0) / agg.firstScores.length
+            const lastAvg = agg.lastScores.reduce((a, b) => a + b, 0) / agg.lastScores.length
+            totalChange += lastAvg - firstAvg
+            changeStudents++
+          }
         }
       }
-    }
 
-    const teacher = cls.teacher_id ? memberMap.get(cls.teacher_id) : null
-    return {
-      class_name: cls.name,
-      teacher_name: teacher?.full_name || null,
-      avg_score: scoreCount > 0 ? Math.round(totalScore / scoreCount) : 0,
-      completion_rate: progressCount > 0 ? Math.round((completedCount / progressCount) * 100) : 0,
-      value_added: changeStudents > 0 ? Math.round((totalChange / changeStudents) * 10) / 10 : 0,
-    }
-  }).sort((a, b) => b.avg_score - a.avg_score)
+      const teacher = cls.teacher_id ? memberMap.get(cls.teacher_id) : null
+      return {
+        class_name: cls.name,
+        teacher_name: teacher?.full_name || null,
+        avg_score: scoreCount > 0 ? Math.round(totalScore / scoreCount) : 0,
+        completion_rate: progressCount > 0 ? Math.round((completedCount / progressCount) * 100) : 0,
+        value_added: changeStudents > 0 ? Math.round((totalChange / changeStudents) * 10) / 10 : 0,
+      }
+    })
+    .sort((a, b) => b.avg_score - a.avg_score)
 
   // Year group summaries
-  const yearGroups = Array.from(new Set(classes.map(c => c.year_group || 'Unknown')))
-  const yearGroupSummary = yearGroups.map(yg => {
-    const ygClasses = classes.filter(c => (c.year_group || 'Unknown') === yg)
+  const yearGroups = Array.from(new Set(classes.map((c) => c.year_group || 'Unknown')))
+  const yearGroupSummary = yearGroups.map((yg) => {
+    const ygClasses = classes.filter((c) => (c.year_group || 'Unknown') === yg)
     let totalScore = 0
     let scoreCount = 0
     let totalStudents = 0
@@ -788,25 +918,33 @@ async function generateHodReport(
   })
 
   // Department-wide stats
-  const allScores = progressData.filter(p => p.quiz_score !== null).map(p => p.quiz_score as number)
-  const deptAvg = allScores.length > 0
-    ? Math.round(allScores.reduce((a, b) => a + b, 0) / allScores.length) : 0
-  const deptPassRate = allScores.length > 0
-    ? Math.round((allScores.filter(s => s >= 40).length / allScores.length) * 100) : 0
+  const allScores = progressData
+    .filter((p) => p.quiz_score !== null)
+    .map((p) => p.quiz_score as number)
+  const deptAvg =
+    allScores.length > 0 ? Math.round(allScores.reduce((a, b) => a + b, 0) / allScores.length) : 0
+  const deptPassRate =
+    allScores.length > 0
+      ? Math.round((allScores.filter((s) => s >= 40).length / allScores.length) * 100)
+      : 0
 
   // Key concerns
   const keyConcerns: string[] = []
-  const lowPerformingClasses = classRankings.filter(c => c.avg_score > 0 && c.avg_score < 50)
+  const lowPerformingClasses = classRankings.filter((c) => c.avg_score > 0 && c.avg_score < 50)
   if (lowPerformingClasses.length > 0) {
-    keyConcerns.push(`${lowPerformingClasses.length} class(es) averaging below 50%: ${lowPerformingClasses.map(c => c.class_name).join(', ')}`)
+    keyConcerns.push(
+      `${lowPerformingClasses.length} class(es) averaging below 50%: ${lowPerformingClasses.map((c) => c.class_name).join(', ')}`,
+    )
   }
-  const lowCompletionClasses = classRankings.filter(c => c.completion_rate < 50)
+  const lowCompletionClasses = classRankings.filter((c) => c.completion_rate < 50)
   if (lowCompletionClasses.length > 0) {
     keyConcerns.push(`${lowCompletionClasses.length} class(es) with completion rates below 50%`)
   }
-  const negativeValueAdded = classRankings.filter(c => c.value_added < -5)
+  const negativeValueAdded = classRankings.filter((c) => c.value_added < -5)
   if (negativeValueAdded.length > 0) {
-    keyConcerns.push(`${negativeValueAdded.length} class(es) showing negative value-added (declining student scores)`)
+    keyConcerns.push(
+      `${negativeValueAdded.length} class(es) showing negative value-added (declining student scores)`,
+    )
   }
   if (keyConcerns.length === 0) {
     keyConcerns.push('No critical concerns identified in this reporting period')
@@ -815,17 +953,25 @@ async function generateHodReport(
   // Recommendations
   const recommendations: string[] = []
   if (lowPerformingClasses.length > 0) {
-    recommendations.push('Schedule lesson observations or collaborative planning sessions for classes averaging below 50%.')
+    recommendations.push(
+      'Schedule lesson observations or collaborative planning sessions for classes averaging below 50%.',
+    )
   }
   if (negativeValueAdded.length > 0) {
-    recommendations.push('Investigate declining performance trends and consider providing additional CPD or resources.')
+    recommendations.push(
+      'Investigate declining performance trends and consider providing additional CPD or resources.',
+    )
   }
-  const highPerformers = classRankings.filter(c => c.avg_score >= 70 && c.value_added > 5)
+  const highPerformers = classRankings.filter((c) => c.avg_score >= 70 && c.value_added > 5)
   if (highPerformers.length > 0) {
-    recommendations.push(`Share best practice from high-performing classes: ${highPerformers.map(c => c.class_name).join(', ')}.`)
+    recommendations.push(
+      `Share best practice from high-performing classes: ${highPerformers.map((c) => c.class_name).join(', ')}.`,
+    )
   }
   if (recommendations.length === 0) {
-    recommendations.push('Continue monitoring performance data and schedule regular department reviews.')
+    recommendations.push(
+      'Continue monitoring performance data and schedule regular department reviews.',
+    )
   }
 
   return {

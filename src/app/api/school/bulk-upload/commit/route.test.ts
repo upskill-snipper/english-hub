@@ -350,6 +350,47 @@ describe('POST /api/school/bulk-upload/commit', () => {
     expect(jobs[0].completedAt).not.toBeNull()
   })
 
+  it('gives every new pupil the Children’s Code defaults, not the adult ones (16 October 2026)', async () => {
+    // The signup trigger sees no date of birth on an uploaded pupil and writes
+    // the adult column defaults. The commit must overwrite them for every
+    // account it created, and never touch an account that already existed.
+    for (const u of [
+      { id: 'authid-1', email: 'amara@example.school.uk' },
+      { id: 'authid-2', email: 'priya@example.school.uk' },
+    ]) {
+      fake.seed('profiles', [
+        { id: u.id, email: u.email, personalised_recommendations: true, streaks_enabled: true },
+      ])
+    }
+    const res = await POST(makeRequest(freshBody()))
+    expect(res.status).toBe(200)
+    for (const id of ['authid-1', 'authid-2']) {
+      const row = fake.rows('profiles').find((r) => r.id === id)!
+      expect(row).toMatchObject({
+        personalised_recommendations: false,
+        streaks_enabled: false,
+        streak_notifications: false,
+        nudge_notifications: false,
+        analytics_opt_in: false,
+        marketing_opt_in: false,
+        social_share_nudge: false,
+      })
+      // No age is invented.
+      expect(row.is_minor).toBeUndefined()
+    }
+  })
+
+  it('creates no account at all if the child defaults cannot be written', async () => {
+    fake.failOn('profiles', 'update', {
+      code: '42501',
+      message: 'permission denied for table profiles',
+    })
+    const res = await POST(makeRequest(freshBody()))
+    expect(res.status).toBe(500)
+    expect(users).toHaveLength(0)
+    expect(deletedAuthUserIds.sort()).toEqual(createdAuthUsers.map((u) => u.id).sort())
+  })
+
   it('is idempotent: the same key twice returns the cached response without re-creating users', async () => {
     const body = freshBody({ idempotencyKey: 'idem-fixed-key-12345' })
     const first = await POST(makeRequest(body))

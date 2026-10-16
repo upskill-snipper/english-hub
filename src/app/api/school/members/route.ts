@@ -5,6 +5,25 @@ import { rateLimit, getClientIp } from '@/lib/rate-limit'
 
 export const dynamic = 'force-dynamic'
 
+// ─── Who may use this route ──────────────────────────────────────────────────
+//
+// FIXED 16 OCTOBER 2026. Both handlers called verifySchoolMember with no role
+// list, and every uploaded pupil is a school_members row with role 'student',
+// so:
+//   * GET gave any pupil every member's name, email, role and last activity,
+//     pupils included. The 12 October RLS change closed that at the database,
+//     but this route reads with the service role;
+//   * POST refused only 'teacher' (and a head of department inviting an
+//     admin), so a PUPIL could create an ADMIN invitation and was handed its
+//     invite_url. Accepting checks only that the signing-in email matches, so
+//     a pupil could invite an address they control and take the school.
+// GET is now for staff and lists staff only: its three callers (/school/
+// classes, /school/teachers, /school/settings) are staff pages that show
+// staff, and pupils are listed by /api/school/students. POST is for admins
+// and heads of department, named, not "anyone but a teacher".
+const STAFF_ROLES = ['admin', 'head_of_department', 'teacher']
+const INVITER_ROLES = ['admin', 'head_of_department']
+
 export async function GET(request: NextRequest) {
   try {
     const ip = getClientIp(request.headers)
@@ -12,26 +31,35 @@ export async function GET(request: NextRequest) {
     if (!rl.success) {
       return NextResponse.json(
         { error: 'Too many requests. Please try again later.' },
-        { status: 429, headers: { 'Retry-After': String(Math.ceil((rl.resetAt - Date.now()) / 1000)) } }
+        {
+          status: 429,
+          headers: { 'Retry-After': String(Math.ceil((rl.resetAt - Date.now()) / 1000)) },
+        },
       )
     }
 
     const supabase = createServerSupabaseClient()
-    const { data: { user }, error: authError } = await supabase.auth.getUser()
+    const {
+      data: { user },
+      error: authError,
+    } = await supabase.auth.getUser()
     if (authError || !user) {
       return NextResponse.json({ error: 'Unauthorized' }, { status: 401 })
     }
 
-    const member = await verifySchoolMember(user.id)
+    const member = await verifySchoolMember(user.id, STAFF_ROLES)
     if (!member) {
-      return NextResponse.json({ error: 'Forbidden: not a school member' }, { status: 403 })
+      return NextResponse.json({ error: 'Forbidden: school staff only' }, { status: 403 })
     }
 
     const admin = createServiceRoleClient()
     const { data: members, error: membersError } = await admin
       .from('school_members')
-      .select('id, user_id, role, full_name, email, department, invite_status, last_active_at, created_at')
+      .select(
+        'id, user_id, role, full_name, email, department, invite_status, last_active_at, created_at',
+      )
       .eq('school_id', member.school_id)
+      .in('role', STAFF_ROLES)
       .order('created_at', { ascending: true })
 
     if (membersError) {
@@ -53,24 +81,30 @@ export async function POST(request: NextRequest) {
     if (!rl.success) {
       return NextResponse.json(
         { error: 'Too many requests. Please try again later.' },
-        { status: 429, headers: { 'Retry-After': String(Math.ceil((rl.resetAt - Date.now()) / 1000)) } }
+        {
+          status: 429,
+          headers: { 'Retry-After': String(Math.ceil((rl.resetAt - Date.now()) / 1000)) },
+        },
       )
     }
 
     const supabase = createServerSupabaseClient()
-    const { data: { user }, error: authError } = await supabase.auth.getUser()
+    const {
+      data: { user },
+      error: authError,
+    } = await supabase.auth.getUser()
     if (authError || !user) {
       return NextResponse.json({ error: 'Unauthorized' }, { status: 401 })
     }
 
-    const member = await verifySchoolMember(user.id)
+    // Admins and heads of department only, by name: a check that refused only
+    // 'teacher' let a pupil through (see the note at the top).
+    const member = await verifySchoolMember(user.id, INVITER_ROLES)
     if (!member) {
-      return NextResponse.json({ error: 'Forbidden: not a school member' }, { status: 403 })
-    }
-
-    // Only admins and HoDs can invite teachers
-    if (member.role === 'teacher') {
-      return NextResponse.json({ error: 'Forbidden: insufficient role to invite members' }, { status: 403 })
+      return NextResponse.json(
+        { error: 'Forbidden: insufficient role to invite members' },
+        { status: 403 },
+      )
     }
 
     let body: { email?: string; name?: string; role?: string }
@@ -92,7 +126,10 @@ export async function POST(request: NextRequest) {
 
     const validRoles = ['admin', 'head_of_department', 'teacher']
     if (!validRoles.includes(role)) {
-      return NextResponse.json({ error: `Role must be one of: ${validRoles.join(', ')}` }, { status: 422 })
+      return NextResponse.json(
+        { error: `Role must be one of: ${validRoles.join(', ')}` },
+        { status: 422 },
+      )
     }
 
     // Non-admins can only invite teachers
@@ -150,10 +187,13 @@ export async function POST(request: NextRequest) {
     // In a production system, you would send an email here with the invite token.
     // For now, we return the token so the frontend can construct the invite link.
 
-    return NextResponse.json({
-      member: newMember,
-      invite_url: `${process.env.NEXT_PUBLIC_APP_URL}/school/invite/${inviteToken}`,
-    }, { status: 201 })
+    return NextResponse.json(
+      {
+        member: newMember,
+        invite_url: `${process.env.NEXT_PUBLIC_APP_URL}/school/invite/${inviteToken}`,
+      },
+      { status: 201 },
+    )
   } catch (error) {
     console.error('Invite member error:', error)
     return NextResponse.json({ error: 'Internal server error' }, { status: 500 })

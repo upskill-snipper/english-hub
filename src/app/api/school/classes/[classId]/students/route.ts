@@ -1,7 +1,7 @@
 import { NextRequest, NextResponse } from 'next/server'
 import { createServerSupabaseClient, createServiceRoleClient } from '@/lib/supabase/server'
-import { verifySchoolMember } from '@/lib/school-auth'
 import { rateLimit, getClientIp } from '@/lib/rate-limit'
+import { classInScope, pupilsOfSchool, resolveStaffScope } from '../../../_lib/staff-scope'
 
 export const dynamic = 'force-dynamic'
 
@@ -17,17 +17,41 @@ export const dynamic = 'force-dynamic'
 // for a parent's consent. Enrolment is therefore a staff act, matching the
 // class_students access rules in 20261012_school_access_rules.sql. Every
 // caller of this route is a /school portal page, which admits staff only.
-const STAFF_ROLES = ['admin', 'head_of_department', 'teacher']
+//
+// FIXED AGAIN 16 OCTOBER 2026, two more holes:
+//   * the class only had to belong to the caller's school, so ANY teacher
+//     could list, enrol into and remove from ANY class. Now the class must be
+//     in the caller's scope (their own class, or any for whole-school staff);
+//   * enrolment took ANY account on the platform, by id or by an email looked
+//     up across every profile. Enrolment makes someone a pupil of a live
+//     school (school-paid AI, and the school's consent basis), so a teacher
+//     could pull a stranger's child into a class and read their work. Only the
+//     school's own pupils may be enrolled now, and the email path looks among
+//     them only (pupilsOfSchool in ../../../_lib/staff-scope.ts).
 
-async function verifyClassBelongsToSchool(classId: string, schoolId: string) {
-  const admin = createServiceRoleClient()
-  const { data, error } = await admin
-    .from('classes')
-    .select('id')
-    .eq('id', classId)
-    .eq('school_id', schoolId)
-    .single()
-  return !error && !!data
+/**
+ * The gate every handler here shares: staff, and the class in scope. A class
+ * outside scope is "not found", so its existence is not confirmed.
+ */
+async function staffWithClass(
+  userId: string,
+  classId: string,
+): Promise<
+  | { ok: true; member: { school_id: string; id: string; role: string } }
+  | { ok: false; response: NextResponse }
+> {
+  const resolved = await resolveStaffScope(createServiceRoleClient(), userId)
+  if (!resolved.ok) {
+    return {
+      ok: false,
+      response: NextResponse.json({ error: resolved.error }, { status: resolved.status }),
+    }
+  }
+  if (!classInScope(resolved.scope, classId)) {
+    return { ok: false, response: NextResponse.json({ error: 'Class not found' }, { status: 404 }) }
+  }
+  const { schoolId, memberId, role } = resolved.scope
+  return { ok: true, member: { school_id: schoolId, id: memberId, role } }
 }
 
 function getTrajectory(
@@ -69,15 +93,10 @@ export async function GET(request: NextRequest, props: { params: Promise<{ class
       return NextResponse.json({ error: 'Unauthorized' }, { status: 401 })
     }
 
-    const member = await verifySchoolMember(user.id, STAFF_ROLES)
-    if (!member) {
-      return NextResponse.json({ error: 'Forbidden: school staff only' }, { status: 403 })
-    }
-
     const { classId } = params
-    if (!(await verifyClassBelongsToSchool(classId, member.school_id))) {
-      return NextResponse.json({ error: 'Class not found' }, { status: 404 })
-    }
+    const gate = await staffWithClass(user.id, classId)
+    if (!gate.ok) return gate.response
+    const member = gate.member
 
     const admin = createServiceRoleClient()
     const { data: classStudents } = await admin
@@ -211,15 +230,10 @@ export async function POST(request: NextRequest, props: { params: Promise<{ clas
       return NextResponse.json({ error: 'Unauthorized' }, { status: 401 })
     }
 
-    const member = await verifySchoolMember(user.id, STAFF_ROLES)
-    if (!member) {
-      return NextResponse.json({ error: 'Forbidden: school staff only' }, { status: 403 })
-    }
-
     const { classId } = params
-    if (!(await verifyClassBelongsToSchool(classId, member.school_id))) {
-      return NextResponse.json({ error: 'Class not found' }, { status: 404 })
-    }
+    const gate = await staffWithClass(user.id, classId)
+    if (!gate.ok) return gate.response
+    const member = gate.member
 
     let body: { studentIds?: string[]; studentId?: string; email?: string }
     try {
@@ -247,22 +261,59 @@ export async function POST(request: NextRequest, props: { params: Promise<{ clas
     } else if (body.studentId && typeof body.studentId === 'string') {
       studentIds = [body.studentId.trim()]
     } else if (body.email && typeof body.email === 'string') {
-      // Legacy single-by-email path
-      const { data: profile } = await admin
-        .from('profiles')
-        .select('id')
-        .eq('email', body.email.toLowerCase().trim())
-        .single()
-      if (!profile) {
-        return NextResponse.json({ error: 'No user found with that email' }, { status: 404 })
+      // By email, as the class page sends it, but only among this school's
+      // pupils: an address is looked up in the school's own pupil records and
+      // in the profiles of accounts that are pupils of this school, never
+      // across the platform.
+      const email = body.email.toLowerCase().trim()
+      const { data: byMember } = await admin
+        .from('school_members')
+        .select('user_id')
+        .eq('school_id', member.school_id)
+        .eq('role', 'student')
+        .eq('email', email)
+        .not('user_id', 'is', null)
+        .limit(1)
+      let found = ((byMember ?? []) as Array<{ user_id: string | null }>)[0]?.user_id ?? null
+      if (!found) {
+        const { data: profiles } = await admin
+          .from('profiles')
+          .select('id')
+          .eq('email', email)
+          .limit(1)
+        const candidate = ((profiles ?? []) as Array<{ id: string }>)[0]?.id ?? null
+        if (
+          candidate &&
+          (await pupilsOfSchool(admin, member.school_id, [candidate])).has(candidate)
+        ) {
+          found = candidate
+        }
       }
-      studentIds = [profile.id]
+      if (!found) {
+        return NextResponse.json(
+          { error: 'No pupil of your school has that email address' },
+          { status: 404 },
+        )
+      }
+      studentIds = [found]
     } else {
       return NextResponse.json({ error: 'studentIds is required' }, { status: 422 })
     }
 
     // Dedup incoming IDs so duplicates in the request body don't get double-counted.
-    const uniqueStudentIds = Array.from(new Set(studentIds))
+    const requestedIds = Array.from(new Set(studentIds))
+
+    // Only this school's own pupils can be enrolled. Anyone else is refused
+    // by name in `errors`, never silently dropped.
+    const ownPupils = await pupilsOfSchool(admin, member.school_id, requestedIds)
+    const notOurs = requestedIds.filter((id) => !ownPupils.has(id))
+    const uniqueStudentIds = requestedIds.filter((id) => ownPupils.has(id))
+    if (uniqueStudentIds.length === 0) {
+      return NextResponse.json(
+        { error: 'Only pupils of your school can be added to a class', refused: notOurs },
+        { status: 422 },
+      )
+    }
 
     // Fetch school + all class IDs in this school IN PARALLEL (2 reads).
     const [schoolResult, schoolClassesResult] = await Promise.all([
@@ -275,7 +326,7 @@ export async function POST(request: NextRequest, props: { params: Promise<{ clas
 
     const added: string[] = []
     const skipped: string[] = []
-    const errors: string[] = []
+    const errors: string[] = notOurs.map((id) => `${id}: not a pupil of this school`)
 
     // ── Step 1: batched membership lookup ──
     // In a single query per predicate, find:
@@ -521,15 +572,10 @@ export async function DELETE(
       return NextResponse.json({ error: 'Unauthorized' }, { status: 401 })
     }
 
-    const member = await verifySchoolMember(user.id, STAFF_ROLES)
-    if (!member) {
-      return NextResponse.json({ error: 'Forbidden: school staff only' }, { status: 403 })
-    }
-
     const { classId } = params
-    if (!(await verifyClassBelongsToSchool(classId, member.school_id))) {
-      return NextResponse.json({ error: 'Class not found' }, { status: 404 })
-    }
+    const gate = await staffWithClass(user.id, classId)
+    if (!gate.ok) return gate.response
+    const member = gate.member
 
     let body: { studentId?: string; student_id?: string }
     try {

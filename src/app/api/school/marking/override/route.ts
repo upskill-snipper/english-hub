@@ -18,7 +18,7 @@
 
 import { NextRequest, NextResponse } from 'next/server'
 import { createServerSupabaseClient, createServiceRoleClient } from '@/lib/supabase/server'
-import { verifySchoolMember } from '@/lib/school-auth'
+import { canSeeSubmission, resolveStaffScope } from '../../_lib/staff-scope'
 import { rateLimit, getClientIp } from '@/lib/rate-limit'
 import {
   badRequestResponse,
@@ -117,11 +117,14 @@ export async function POST(request: NextRequest) {
     })
     if (!rl.success) return rateLimitResponse(rl.resetAt)
 
-    // 3. Must be a school staff member.
-    const member = await verifySchoolMember(user.id, ['admin', 'head_of_department', 'teacher'])
-    if (!member) {
-      return forbiddenResponse('Only school staff can override marking.')
+    // 3. Must be a school staff member, with their scope.
+    const resolved = await resolveStaffScope(createServiceRoleClient(), user.id)
+    if (!resolved.ok) {
+      return resolved.status === 500
+        ? serverErrorResponse(resolved.error)
+        : forbiddenResponse('Only school staff can override marking.')
     }
+    const member = { id: resolved.scope.memberId, school_id: resolved.scope.schoolId }
 
     // 4. Parse + validate body.
     let body: unknown
@@ -140,7 +143,7 @@ export async function POST(request: NextRequest) {
     const admin = createServiceRoleClient()
     const { data: submission, error: subErr } = await admin
       .from('marking_submissions')
-      .select('id, student_id, school_id, ai_grade, ai_score, ai_feedback')
+      .select('id, student_id, school_id, class_id, ai_grade, ai_score, ai_feedback')
       .eq('id', submissionId)
       .single()
 
@@ -148,50 +151,22 @@ export async function POST(request: NextRequest) {
       return notFoundResponse('Submission not found.')
     }
 
-    // 6. Authorise - submission must belong to the same school, and the
-    //    caller must either be admin/head_of_department, or be the teacher of
-    //    a class containing the submission's student.
-    const submissionSchoolId = (submission as { school_id: string | null }).school_id
-    if (submissionSchoolId && submissionSchoolId !== member.school_id) {
-      return forbiddenResponse('Submission belongs to another school.')
+    // 6. Authorise: the same rule the marking queue lists by (canSeeSubmission
+    //    in ../../_lib/staff-scope.ts), so a teacher can act on exactly the
+    //    work they can see: the submission is this school's, and for a
+    //    teacher it was written in one of their classes.
+    //
+    // FIXED 16 OCTOBER 2026. The school check here ran only when the
+    // submission HAD a school ("if (submissionSchoolId && ...)"). A consumer
+    // essay (source b2c_self) has none, so any school admin or head of
+    // department could read and overwrite the mark of any student on the
+    // platform, and a teacher could for anyone enrolled in one of their
+    // classes, school work or not. A submission with no school is now never
+    // a school's to override.
+    const row = submission as { school_id: string | null; class_id: string | null }
+    if (!canSeeSubmission(resolved.scope, row)) {
+      return notFoundResponse('Submission not found.')
     }
-
-    const role = member.role as string
-    if (role === 'teacher') {
-      // Find classes owned by this teacher.
-      const { data: teacherClasses, error: classesErr } = await admin
-        .from('classes')
-        .select('id')
-        .eq('school_id', member.school_id)
-        .eq('teacher_id', member.id)
-
-      if (classesErr) {
-        console.error('[marking/override] classes lookup failed', classesErr)
-        return serverErrorResponse('Failed to verify teacher access.')
-      }
-
-      const classIds = (teacherClasses ?? []).map((c: { id: string }) => c.id)
-      if (classIds.length === 0) {
-        return forbiddenResponse('You do not teach any classes containing this student.')
-      }
-
-      const { count, error: linkErr } = await admin
-        .from('class_students')
-        .select('student_id', { count: 'exact', head: true })
-        .eq('student_id', (submission as { student_id: string }).student_id)
-        .eq('is_active', true)
-        .in('class_id', classIds)
-
-      if (linkErr) {
-        console.error('[marking/override] class_students lookup failed', linkErr)
-        return serverErrorResponse('Failed to verify teacher access.')
-      }
-      if (!count || count === 0) {
-        return forbiddenResponse('You do not teach any classes containing this student.')
-      }
-    }
-    // Admins / heads of department implicitly authorised once same-school
-    // check above passes.
 
     // 7. Persist override. Columns expected on `marking_submissions`:
     //    teacher_grade, teacher_comment, teacher_reviewed_by, teacher_reviewed_at, status

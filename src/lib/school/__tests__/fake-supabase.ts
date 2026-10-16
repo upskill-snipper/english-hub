@@ -117,7 +117,27 @@ export const LIVE_TABLES: Record<string, TableSpec> = {
     defaults: { status: 'active', year_group: null, class_name: null },
   },
   profiles: {
-    columns: ['id', 'email', 'full_name', 'role', 'year_group', 'school_name', 'created_at'],
+    // The Children's Code columns (20260918_profiles_signup_privacy_columns.sql)
+    // were added on 16 October 2026, when bulk upload began writing the child
+    // defaults; all seven, and is_minor, confirmed in production's
+    // information_schema that day.
+    columns: [
+      'id',
+      'email',
+      'full_name',
+      'role',
+      'year_group',
+      'school_name',
+      'created_at',
+      'is_minor',
+      'streaks_enabled',
+      'personalised_recommendations',
+      'streak_notifications',
+      'nudge_notifications',
+      'analytics_opt_in',
+      'marketing_opt_in',
+      'social_share_nudge',
+    ],
     unique: [],
   },
 }

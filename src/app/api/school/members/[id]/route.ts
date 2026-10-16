@@ -2,6 +2,7 @@ import { NextRequest, NextResponse } from 'next/server'
 import { createServerSupabaseClient, createServiceRoleClient } from '@/lib/supabase/server'
 import { verifySchoolMember } from '@/lib/school-auth'
 import { rateLimit, getClientIp } from '@/lib/rate-limit'
+import { canViewPupil, resolveStaffScope } from '../../_lib/staff-scope'
 
 export const dynamic = 'force-dynamic'
 
@@ -37,17 +38,21 @@ export async function GET(request: NextRequest, props: RouteParams) {
       return NextResponse.json({ error: 'Unauthorized' }, { status: 401 })
     }
 
-    const actor = await verifySchoolMember(user.id)
-    if (!actor) {
-      return NextResponse.json({ error: 'Forbidden: not a school member' }, { status: 403 })
+    // FIXED 16 OCTOBER 2026. This called verifySchoolMember with no roles, so
+    // any member, a pupil included, could read any other member's name, email
+    // and activity, other pupils' among them. Staff only now, and a pupil's
+    // record only to staff who may see that pupil (canViewPupil).
+    const admin = createServiceRoleClient()
+    const resolved = await resolveStaffScope(admin, user.id)
+    if (!resolved.ok) {
+      return NextResponse.json({ error: resolved.error }, { status: resolved.status })
     }
+    const actor = { school_id: resolved.scope.schoolId }
 
     const memberId = params.id
     if (!memberId) {
       return NextResponse.json({ error: 'Member ID is required' }, { status: 400 })
     }
-
-    const admin = createServiceRoleClient()
 
     const { data: member, error: fetchError } = await admin
       .from('school_members')
@@ -64,6 +69,13 @@ export async function GET(request: NextRequest, props: RouteParams) {
       }
       console.error('Member fetch error:', fetchError)
       return NextResponse.json({ error: 'Failed to fetch member' }, { status: 500 })
+    }
+
+    if (member.role === 'student') {
+      const pupilId = typeof member.user_id === 'string' ? member.user_id : ''
+      if (!pupilId || !(await canViewPupil(admin, resolved.scope, pupilId))) {
+        return NextResponse.json({ error: 'Member not found' }, { status: 404 })
+      }
     }
 
     return NextResponse.json({ member })

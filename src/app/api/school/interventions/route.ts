@@ -1,6 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server'
 import { createServerSupabaseClient, createServiceRoleClient } from '@/lib/supabase/server'
-import { verifySchoolMember } from '@/lib/school-auth'
+import { classInScope, resolveStaffScope } from '../_lib/staff-scope'
 import { rateLimit, getClientIp } from '@/lib/rate-limit'
 
 export const dynamic = 'force-dynamic'
@@ -87,19 +87,33 @@ export async function GET(request: NextRequest) {
     if (!rl.success) {
       return NextResponse.json(
         { error: 'Too many requests. Please try again later.' },
-        { status: 429, headers: { 'Retry-After': String(Math.ceil((rl.resetAt - Date.now()) / 1000)) } }
+        {
+          status: 429,
+          headers: { 'Retry-After': String(Math.ceil((rl.resetAt - Date.now()) / 1000)) },
+        },
       )
     }
 
     const supabase = createServerSupabaseClient()
-    const { data: { user }, error: authError } = await supabase.auth.getUser()
+    const {
+      data: { user },
+      error: authError,
+    } = await supabase.auth.getUser()
     if (authError || !user) {
       return NextResponse.json({ error: 'Unauthorized' }, { status: 401 })
     }
 
-    const member = await verifySchoolMember(user.id)
-    if (!member) {
-      return NextResponse.json({ error: 'Forbidden: not a school member' }, { status: 403 })
+    // FIXED 16 OCTOBER 2026: staff only (this admitted any member, a pupil
+    // included), and classes from the caller's own scope.
+    const resolved = await resolveStaffScope(createServiceRoleClient(), user.id)
+    if (!resolved.ok) {
+      return NextResponse.json({ error: resolved.error }, { status: resolved.status })
+    }
+    const member = {
+      school_id: resolved.scope.schoolId,
+      id: resolved.scope.memberId,
+      role: resolved.scope.role as string,
+      full_name: resolved.scope.fullName,
     }
 
     const { searchParams } = new URL(request.url)
@@ -109,28 +123,22 @@ export async function GET(request: NextRequest) {
 
     const admin = createServiceRoleClient()
 
-    // Get accessible classes
-    const staffRoles = ['admin', 'head_of_department']
-    let classQuery = admin.from('classes')
-      .select('id, name, teacher_id')
-      .eq('school_id', member.school_id)
-      .eq('is_active', true)
-
-    if (classId) {
-      classQuery = classQuery.eq('id', classId)
-    } else if (!staffRoles.includes(member.role)) {
-      classQuery = classQuery.eq('teacher_id', member.id)
+    // The classes the caller may see. `?classId` used to replace the teacher
+    // filter outright, so any teacher, or a pupil, could read any class's
+    // at-risk pupils by name and email; it now narrows the caller's scope.
+    if (classId && !classInScope(resolved.scope, classId)) {
+      return NextResponse.json({ error: 'Class not found' }, { status: 404 })
     }
-
-    const { data: classes } = await classQuery
-    const classesData = (classes || []) as Array<{ id: string; name: string; teacher_id: string | null }>
+    const classesData = resolved.scope.classes
+      .filter((c) => c.is_active !== false && (!classId || c.id === classId))
+      .map((c) => ({ id: c.id, name: c.name ?? '', teacher_id: c.teacher_id }))
 
     if (classesData.length === 0) {
       return NextResponse.json({ interventions: [], total: 0 })
     }
 
-    const classIds = classesData.map(c => c.id)
-    const classMap = new Map(classesData.map(c => [c.id, c]))
+    const classIds = classesData.map((c) => c.id)
+    const classMap = new Map(classesData.map((c) => [c.id, c]))
 
     // Fetch students in these classes
     const { data: classStudentsData } = await admin
@@ -139,21 +147,26 @@ export async function GET(request: NextRequest) {
       .in('class_id', classIds)
       .eq('is_active', true)
 
-    const classStudents = (classStudentsData || []) as Array<{ class_id: string; student_id: string }>
-    const allStudentIds = Array.from(new Set(classStudents.map(cs => cs.student_id)))
+    const classStudents = (classStudentsData || []) as Array<{
+      class_id: string
+      student_id: string
+    }>
+    const allStudentIds = Array.from(new Set(classStudents.map((cs) => cs.student_id)))
 
     // Fetch profiles and progress for at-risk detection
     let profiles: Array<{ id: string; full_name: string | null; email: string }> = []
     let progressData: Array<{
-      user_id: string; quiz_score: number | null; completed: boolean; completed_at: string | null
+      user_id: string
+      quiz_score: number | null
+      completed: boolean
+      completed_at: string | null
     }> = []
 
     if (allStudentIds.length > 0) {
       const [profilesResult, progressResult] = await Promise.all([
-        admin.from('profiles')
-          .select('id, full_name, email')
-          .in('id', allStudentIds),
-        admin.from('module_progress')
+        admin.from('profiles').select('id, full_name, email').in('id', allStudentIds),
+        admin
+          .from('module_progress')
           .select('user_id, quiz_score, completed, completed_at')
           .in('user_id', allStudentIds),
       ])
@@ -161,7 +174,7 @@ export async function GET(request: NextRequest) {
       progressData = (progressResult.data || []) as typeof progressData
     }
 
-    const profileMap = new Map(profiles.map(p => [p.id, p]))
+    const profileMap = new Map(profiles.map((p) => [p.id, p]))
 
     // Build per-student score aggregates
     const studentAgg = new Map<string, { avg: number; count: number }>()
@@ -191,12 +204,12 @@ export async function GET(request: NextRequest) {
 
     for (const cls of classesData) {
       const classStudentIds = studentsByClass.get(cls.id) || []
-      const atRiskStudents = classStudentIds.filter(sid => {
+      const atRiskStudents = classStudentIds.filter((sid) => {
         const agg = studentAgg.get(sid)
         return agg && agg.avg < 50
       })
 
-      const decliningStudents = classStudentIds.filter(sid => {
+      const decliningStudents = classStudentIds.filter((sid) => {
         const scores = studentScores.get(sid)
         if (!scores || scores.length < 4) return false
         const mid = Math.floor(scores.length / 2)
@@ -209,15 +222,15 @@ export async function GET(request: NextRequest) {
 
       // Generate interventions for at-risk students
       if (atRiskStudents.length > 0) {
-        const targetNames = atRiskStudents.map(sid => {
+        const targetNames = atRiskStudents.map((sid) => {
           const p = profileMap.get(sid)
           return p?.full_name || p?.email || 'Unknown'
         })
 
         // Determine the weakest area for these students
-        const avgScoreForGroup = atRiskStudents
-          .map(sid => studentAgg.get(sid)?.avg || 0)
-          .reduce((a, b) => a + b, 0) / atRiskStudents.length
+        const avgScoreForGroup =
+          atRiskStudents.map((sid) => studentAgg.get(sid)?.avg || 0).reduce((a, b) => a + b, 0) /
+          atRiskStudents.length
 
         const intervention: Intervention = {
           id: `${cls.id}-intervention-atrisk`,
@@ -229,7 +242,8 @@ export async function GET(request: NextRequest) {
           priority: avgScoreForGroup < 30 ? 'urgent' : 'high',
           status: 'planned',
           title: `Support for underperforming students in ${cls.name}`,
-          description: `${atRiskStudents.length} student(s) averaging below 50%. ` +
+          description:
+            `${atRiskStudents.length} student(s) averaging below 50%. ` +
             `Targeted support needed to close the gap before the next assessment window.`,
           target_student_ids: atRiskStudents,
           target_student_names: targetNames,
@@ -252,9 +266,9 @@ export async function GET(request: NextRequest) {
       }
 
       // Generate intervention for declining students (if different from at-risk)
-      const decliningOnly = decliningStudents.filter(sid => !atRiskStudents.includes(sid))
+      const decliningOnly = decliningStudents.filter((sid) => !atRiskStudents.includes(sid))
       if (decliningOnly.length > 0) {
-        const targetNames = decliningOnly.map(sid => {
+        const targetNames = decliningOnly.map((sid) => {
           const p = profileMap.get(sid)
           return p?.full_name || p?.email || 'Unknown'
         })
@@ -269,7 +283,8 @@ export async function GET(request: NextRequest) {
           priority: 'medium',
           status: 'planned',
           title: `Address declining performance in ${cls.name}`,
-          description: `${decliningOnly.length} student(s) showing a declining trajectory. ` +
+          description:
+            `${decliningOnly.length} student(s) showing a declining trajectory. ` +
             `Early intervention recommended to prevent further drops.`,
           target_student_ids: decliningOnly,
           target_student_names: targetNames,
@@ -292,9 +307,9 @@ export async function GET(request: NextRequest) {
       }
 
       // Low-engagement intervention
-      const noActivityStudents = classStudentIds.filter(sid => !studentScores.has(sid))
+      const noActivityStudents = classStudentIds.filter((sid) => !studentScores.has(sid))
       if (noActivityStudents.length > 0) {
-        const targetNames = noActivityStudents.map(sid => {
+        const targetNames = noActivityStudents.map((sid) => {
           const p = profileMap.get(sid)
           return p?.full_name || p?.email || 'Unknown'
         })
@@ -309,7 +324,8 @@ export async function GET(request: NextRequest) {
           priority: 'medium',
           status: 'planned',
           title: `Engagement follow-up for ${cls.name}`,
-          description: `${noActivityStudents.length} student(s) have no recorded quiz activity. ` +
+          description:
+            `${noActivityStudents.length} student(s) have no recorded quiz activity. ` +
             `Contact parents/guardians to ensure students can access the platform.`,
           target_student_ids: noActivityStudents,
           target_student_names: targetNames,
@@ -317,7 +333,8 @@ export async function GET(request: NextRequest) {
           start_date: new Date().toISOString().split('T')[0],
           review_date: new Date(Date.now() + 7 * 24 * 60 * 60 * 1000).toISOString().split('T')[0],
           notes: null,
-          success_criteria: 'All targeted students complete at least one module within review period',
+          success_criteria:
+            'All targeted students complete at least one module within review period',
           baseline_score: 0,
           outcome_score: null,
           created_at: new Date().toISOString(),
@@ -334,11 +351,15 @@ export async function GET(request: NextRequest) {
 
     // Sort by priority (urgent first), then by created_at
     const priorityOrder: Record<InterventionPriority, number> = {
-      urgent: 0, high: 1, medium: 2, low: 3,
+      urgent: 0,
+      high: 1,
+      medium: 2,
+      low: 3,
     }
-    interventions.sort((a, b) =>
-      priorityOrder[a.priority] - priorityOrder[b.priority] ||
-      new Date(b.created_at).getTime() - new Date(a.created_at).getTime()
+    interventions.sort(
+      (a, b) =>
+        priorityOrder[a.priority] - priorityOrder[b.priority] ||
+        new Date(b.created_at).getTime() - new Date(a.created_at).getTime(),
     )
 
     return NextResponse.json({
@@ -365,23 +386,40 @@ export async function GET(request: NextRequest) {
 export async function POST(request: NextRequest) {
   try {
     const ip = getClientIp(request.headers)
-    const rl = await rateLimit(`school-interventions-create:${ip}`, { limit: 10, windowSeconds: 60 })
+    const rl = await rateLimit(`school-interventions-create:${ip}`, {
+      limit: 10,
+      windowSeconds: 60,
+    })
     if (!rl.success) {
       return NextResponse.json(
         { error: 'Too many requests. Please try again later.' },
-        { status: 429, headers: { 'Retry-After': String(Math.ceil((rl.resetAt - Date.now()) / 1000)) } }
+        {
+          status: 429,
+          headers: { 'Retry-After': String(Math.ceil((rl.resetAt - Date.now()) / 1000)) },
+        },
       )
     }
 
     const supabase = createServerSupabaseClient()
-    const { data: { user }, error: authError } = await supabase.auth.getUser()
+    const {
+      data: { user },
+      error: authError,
+    } = await supabase.auth.getUser()
     if (authError || !user) {
       return NextResponse.json({ error: 'Unauthorized' }, { status: 401 })
     }
 
-    const member = await verifySchoolMember(user.id)
-    if (!member) {
-      return NextResponse.json({ error: 'Forbidden: not a school member' }, { status: 403 })
+    // FIXED 16 OCTOBER 2026: staff only (this admitted any member, a pupil
+    // included), and classes from the caller's own scope.
+    const resolved = await resolveStaffScope(createServiceRoleClient(), user.id)
+    if (!resolved.ok) {
+      return NextResponse.json({ error: resolved.error }, { status: resolved.status })
+    }
+    const member = {
+      school_id: resolved.scope.schoolId,
+      id: resolved.scope.memberId,
+      role: resolved.scope.role as string,
+      full_name: resolved.scope.fullName,
     }
 
     let body: CreateInterventionRequest
@@ -392,8 +430,15 @@ export async function POST(request: NextRequest) {
     }
 
     const {
-      class_id, type, priority, title, description,
-      target_student_ids, target_area, start_date, review_date,
+      class_id,
+      type,
+      priority,
+      title,
+      description,
+      target_student_ids,
+      target_area,
+      start_date,
+      review_date,
       success_criteria,
     } = body
 
@@ -415,24 +460,40 @@ export async function POST(request: NextRequest) {
     }
 
     const validTypes: InterventionType[] = [
-      'one_to_one', 'small_group', 'differentiated_resources',
-      'peer_tutoring', 'parent_contact', 'referral', 'revision_session', 'other',
+      'one_to_one',
+      'small_group',
+      'differentiated_resources',
+      'peer_tutoring',
+      'parent_contact',
+      'referral',
+      'revision_session',
+      'other',
     ]
     if (!type || !validTypes.includes(type)) {
       return NextResponse.json(
         { error: `type must be one of: ${validTypes.join(', ')}` },
-        { status: 422 }
+        { status: 422 },
       )
     }
 
-    if (!target_student_ids || !Array.isArray(target_student_ids) || target_student_ids.length === 0) {
-      return NextResponse.json({ error: 'target_student_ids must be a non-empty array' }, { status: 422 })
+    if (
+      !target_student_ids ||
+      !Array.isArray(target_student_ids) ||
+      target_student_ids.length === 0
+    ) {
+      return NextResponse.json(
+        { error: 'target_student_ids must be a non-empty array' },
+        { status: 422 },
+      )
     }
 
     if (review_date) {
       const parsed = new Date(review_date)
       if (isNaN(parsed.getTime())) {
-        return NextResponse.json({ error: 'review_date must be a valid ISO date string' }, { status: 422 })
+        return NextResponse.json(
+          { error: 'review_date must be a valid ISO date string' },
+          { status: 422 },
+        )
       }
     }
 
@@ -455,7 +516,7 @@ export async function POST(request: NextRequest) {
     if (!staffRoles.includes(member.role) && classData.teacher_id !== member.id) {
       return NextResponse.json(
         { error: 'Forbidden: you can only create interventions for your own classes' },
-        { status: 403 }
+        { status: 403 },
       )
     }
 
@@ -468,12 +529,12 @@ export async function POST(request: NextRequest) {
       .in('student_id', target_student_ids)
 
     const validStudentIds = (classStudents || []).map((s: { student_id: string }) => s.student_id)
-    const invalidStudents = target_student_ids.filter(id => !validStudentIds.includes(id))
+    const invalidStudents = target_student_ids.filter((id) => !validStudentIds.includes(id))
 
     if (invalidStudents.length > 0) {
       return NextResponse.json(
         { error: `${invalidStudents.length} student ID(s) not found in this class` },
-        { status: 422 }
+        { status: 422 },
       )
     }
 
@@ -484,9 +545,12 @@ export async function POST(request: NextRequest) {
       .in('id', validStudentIds)
 
     const profileMap = new Map(
-      (profilesData || []).map((p: { id: string; full_name: string | null; email: string }) => [p.id, p])
+      (profilesData || []).map((p: { id: string; full_name: string | null; email: string }) => [
+        p.id,
+        p,
+      ]),
     )
-    const studentNames = validStudentIds.map(sid => {
+    const studentNames = validStudentIds.map((sid) => {
       const p = profileMap.get(sid)
       return p?.full_name || p?.email || 'Unknown'
     })
@@ -502,7 +566,9 @@ export async function POST(request: NextRequest) {
 
       const scores = (progressData || []).map((p: { quiz_score: number }) => p.quiz_score)
       if (scores.length > 0) {
-        baselineScore = Math.round(scores.reduce((a: number, b: number) => a + b, 0) / scores.length)
+        baselineScore = Math.round(
+          scores.reduce((a: number, b: number) => a + b, 0) / scores.length,
+        )
       }
     }
 

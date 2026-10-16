@@ -40,6 +40,11 @@ let member: { school_id: string; role: string; id: string } | null = null
 const verifyCalls: unknown[][] = []
 
 function respond(op: Op, mode: 'single' | 'maybeSingle' | 'many') {
+  if (op.table === 'school_members' && op.op === 'select' && mode === 'many') {
+    // The pupil being enrolled is one of the school's own: since 16 October
+    // 2026 only a school's own pupils can be put in its classes.
+    return { data: [{ user_id: USER }], error: null }
+  }
   if (op.table === 'school_join_codes' && op.op === 'select') {
     return { data: joinCodeRow, error: null }
   }
@@ -101,6 +106,8 @@ vi.mock('@/lib/supabase/server', () => ({
           return chain
         },
         eq: () => chain,
+        neq: () => chain,
+        not: () => chain,
         in: () => chain,
         lt: () => chain,
         limit: () => chain,
