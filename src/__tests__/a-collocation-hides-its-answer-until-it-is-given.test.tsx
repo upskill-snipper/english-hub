@@ -3,7 +3,7 @@
 // Renders the real page and plays a whole round: what leaked was text on
 // screen while a question was open, so that is what is asserted.
 import { describe, it, expect, vi, beforeEach, afterEach } from 'vitest'
-import { render, screen, fireEvent, act } from '@testing-library/react'
+import { render, screen, fireEvent } from '@testing-library/react'
 
 /**
  * A collocation question does not name its answer before it is given.
@@ -105,8 +105,13 @@ describe('a collocation question', () => {
       // The feedback quotes the answer, so this is where the test learns it.
       const answer = /“([^”]+)”/.exec(document.body.textContent ?? '')?.[1] ?? ''
       expect(answer, `question ${asked + 1} gave no feedback`).not.toBe('')
+      // "go" stands in where a fourth verb was also right (the bank says which).
+      // The description names make, do, have and take, not "go", and that gives
+      // nothing away, because "go" never takes these nouns. A text that names
+      // the answer without naming the other verbs is still caught.
+      const alike = offered.filter((o) => o !== 'go')
       const singlesOut = (text: string) =>
-        names(text, answer) && !offered.every((o) => names(text, o))
+        names(text, answer) && !alike.every((o) => names(text, o))
 
       for (const text of before.filter(singlesOut)) leaks.push(`${answer}: "${text}"`)
       // Vacuity guard. Answered, the page does name it (the gap fills in), so
@@ -114,11 +119,13 @@ describe('a collocation question', () => {
       expect(textOutside(buttons).some(singlesOut), `question ${asked + 1}`).toBe(true)
 
       asked++
-      if (VERBS.every((v) => offered.includes(v))) verbItems++
-      // Past the page's pause before the next question.
-      act(() => {
-        vi.advanceTimersByTime(5000)
-      })
+      // A verb item offers the four verbs, or three of them and "go" where the
+      // fourth was also right (src/data/games/banks/collocations-challenge.ts).
+      if (VERBS.filter((v) => offered.includes(v)).length >= 3) verbItems++
+      // The page waits for the student to go on (16 October 2026): it used to
+      // move to the next question by itself after a pause, which left no time
+      // to read the explanation.
+      fireEvent.click(screen.getByRole('button', { name: /^(Next question|See your results)$/ }))
     }
 
     // Vacuity guards: a whole round was played, and it held verb items, the

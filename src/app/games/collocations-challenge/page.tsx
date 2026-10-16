@@ -5,190 +5,23 @@ import Link from 'next/link'
 import GameShell, { type GameState } from '@/components/games/GameShell'
 import { Button } from '@/components/ui/button'
 import { cn } from '@/lib/utils'
-import { ArrowLeft, CheckCircle, XCircle, Sparkles, Link2 } from 'lucide-react'
+import { ArrowLeft, ArrowRight, CheckCircle, XCircle, Sparkles, Link2 } from 'lucide-react'
 import { useBoard } from '@/hooks/useBoard'
 import { getBoardConfig } from '@/lib/board/board-store'
+import { AnswerExplanation } from '@/components/games/AnswerExplanation'
+import { useGameRound } from '@/components/games/game-round'
+import {
+  BANK,
+  COLLOCATION_BANK,
+  type Collocation,
+  type CollocationGroup,
+} from '@/data/games/banks/collocations-challenge'
 
 // ─── Data ──────────────────────────────────────────────────────────────────────
 
-type CollocationGroup = 'make' | 'do' | 'have' | 'take' | 'noun'
-
-interface Collocation {
-  /** Sentence containing a "___" gap */
-  sentence: string
-  /** Four answer choices */
-  options: string[]
-  /** The correct choice */
-  answer: string
-  /** Which collocation family this item belongs to */
-  collocationGroup: CollocationGroup
-}
-
-const VERBS = ['make', 'do', 'have', 'take']
-
-/** Helper to build a standard make/do/have/take verb question. */
-function v(sentence: string, answer: string, group: CollocationGroup): Collocation {
-  return { sentence, options: [...VERBS], answer, collocationGroup: group }
-}
-
-const COLLOCATION_BANK: Collocation[] = [
-  // ── MAKE ──────────────────────────────────────────────────────────────────
-  v('I need to ___ a decision about the job offer by Friday.', 'make', 'make'),
-  v('Please try not to ___ a mistake on the application form.', 'make', 'make'),
-  v('Could you ___ an effort to arrive on time tomorrow?', 'make', 'make'),
-  v('She wants to ___ a good impression at the interview.', 'make', 'make'),
-  v('They are going to ___ a complaint about the noisy neighbours.', 'make', 'make'),
-  v('Let me ___ a suggestion before we finish the meeting.', 'make', 'make'),
-  v('We should ___ a plan for the weekend trip.', 'make', 'make'),
-  v("Don't ___ a noise - the baby is sleeping.", 'make', 'make'),
-  v('He had to ___ an appointment to see the dentist.', 'make', 'make'),
-  v('I always ___ a list before I go food shopping.', 'make', 'make'),
-  v('They want to ___ progress on the project this month.', 'make', 'make'),
-  v('Can you ___ a phone call to the office for me?', 'make', 'make'),
-  v('She tried to ___ friends on her first day at school.', 'make', 'make'),
-  v('We need to ___ a reservation at the restaurant tonight.', 'make', 'make'),
-  v('He promised to ___ an exception just this once.', 'make', 'make'),
-
-  // ── DO ────────────────────────────────────────────────────────────────────
-  v('I have to ___ my homework before I can watch television.', 'do', 'do'),
-  v('Could you ___ me a favour and post this letter?', 'do', 'do'),
-  v('She needs to ___ the washing-up after dinner.', 'do', 'do'),
-  v('They ___ business with several companies in Europe.', 'do', 'do'),
-  v('He tries to ___ exercise every morning before work.', 'do', 'do'),
-  v('We must ___ some research before writing the report.', 'do', 'do'),
-  v("It's my turn to ___ the housework this week.", 'do', 'do'),
-  v('Please ___ your best in the exam tomorrow.', 'do', 'do'),
-  v('I need to ___ the shopping on my way home.', 'do', 'do'),
-  v("She's going to ___ a course in graphic design.", 'do', 'do'),
-  v('Can you ___ the cooking while I clean the kitchen?', 'do', 'do'),
-  v('They had to ___ the laundry at the weekend.', 'do', 'do'),
-  v('He wants to ___ something useful with his free time.', 'do', 'do'),
-  v("Let's ___ the dishes together so it's quicker.", 'do', 'do'),
-
-  // ── HAVE ──────────────────────────────────────────────────────────────────
-  v("I'd like to ___ a shower before we go out.", 'have', 'have'),
-  v('We usually ___ breakfast at about eight o’clock.', 'have', 'have'),
-  v('She wants to ___ a rest after the long journey.', 'have', 'have'),
-  v("Let's ___ a chat about the holiday plans later.", 'have', 'have'),
-  v('They are going to ___ a party for his birthday.', 'have', 'have'),
-  v('Can I ___ a look at your photographs from the trip?', 'have', 'have'),
-  v('He needs to ___ a word with his manager about the rota.', 'have', 'have'),
-  v("I think I'll ___ a cup of tea before bed.", 'have', 'have'),
-  v('We should ___ a meeting to discuss the budget.', 'have', 'have'),
-  v('Did you ___ a good time at the concert last night?', 'have', 'have'),
-  v('She is going to ___ a baby in the spring.', 'have', 'have'),
-  v("Let's ___ a break - we've been working for hours.", 'have', 'have'),
-  v('I need to ___ a holiday; I feel exhausted.', 'have', 'have'),
-  v('Could we ___ a conversation about this in private?', 'have', 'have'),
-
-  // ── TAKE ──────────────────────────────────────────────────────────────────
-  v("Don't forget to ___ a photo of the sunset.", 'take', 'take'),
-  v('She had to ___ a taxi because she missed the bus.', 'take', 'take'),
-  v('I always ___ notes during important lectures.', 'take', 'take'),
-  v('We should ___ a break and have some coffee.', 'take', 'take'),
-  v('He needs to ___ his medicine twice a day.', 'take', 'take'),
-  v('Please ___ care when you cross the busy road.', 'take', 'take'),
-  v('They decided to ___ a risk and start a business.', 'take', 'take'),
-  v('Can you ___ a message if she rings while I’m out?', 'take', 'take'),
-  v("I'll ___ responsibility for organising the event.", 'take', 'take'),
-  v('She wants to ___ a course in photography next term.', 'take', 'take'),
-  v('We need to ___ action before the problem gets worse.', 'take', 'take'),
-  v('He likes to ___ a walk in the park after lunch.', 'take', 'take'),
-  v('Let me ___ a seat and I’ll explain everything.', 'take', 'take'),
-  v('You should ___ advantage of the free training offer.', 'take', 'take'),
-
-  // ── NOUN PARTNER (choose the noun that collocates) ─────────────────────────
-  {
-    sentence: 'After the accident he had to make a difficult ___ about his career.',
-    options: ['decision', 'homework', 'shower', 'photo'],
-    answer: 'decision',
-    collocationGroup: 'noun',
-  },
-  {
-    sentence: 'Every evening the children do their ___ at the kitchen table.',
-    options: ['homework', 'decision', 'mistake', 'walk'],
-    answer: 'homework',
-    collocationGroup: 'noun',
-  },
-  {
-    sentence: 'I always take a ___ of the whiteboard before the lesson ends.',
-    options: ['photo', 'decision', 'favour', 'breakfast'],
-    answer: 'photo',
-    collocationGroup: 'noun',
-  },
-  {
-    sentence: 'She likes to have a hot ___ as soon as she gets home from the gym.',
-    options: ['shower', 'mistake', 'photo', 'research'],
-    answer: 'shower',
-    collocationGroup: 'noun',
-  },
-  {
-    sentence: 'Could you do me a ___ and lock the door on your way out?',
-    options: ['favour', 'decision', 'photo', 'rest'],
-    answer: 'favour',
-    collocationGroup: 'noun',
-  },
-  {
-    sentence: 'He made a silly ___ in his essay and lost several marks.',
-    options: ['mistake', 'shower', 'walk', 'favour'],
-    answer: 'mistake',
-    collocationGroup: 'noun',
-  },
-  {
-    sentence: 'They take a long ___ along the beach every Sunday morning.',
-    options: ['walk', 'decision', 'homework', 'mistake'],
-    answer: 'walk',
-    collocationGroup: 'noun',
-  },
-  {
-    sentence: 'We need to do some ___ before we choose a new supplier.',
-    options: ['research', 'shower', 'photo', 'party'],
-    answer: 'research',
-    collocationGroup: 'noun',
-  },
-  {
-    sentence: 'After such a tiring week she just wants to have a quiet ___.',
-    options: ['rest', 'mistake', 'favour', 'research'],
-    answer: 'rest',
-    collocationGroup: 'noun',
-  },
-  {
-    sentence: 'The manager will make an important ___ at the meeting tomorrow.',
-    options: ['announcement', 'homework', 'taxi', 'shower'],
-    answer: 'announcement',
-    collocationGroup: 'noun',
-  },
-  {
-    sentence: 'They are going to have a big ___ to celebrate their anniversary.',
-    options: ['party', 'mistake', 'research', 'photo'],
-    answer: 'party',
-    collocationGroup: 'noun',
-  },
-  {
-    sentence: 'You should take more ___ when you handle the fragile glasses.',
-    options: ['care', 'homework', 'favour', 'party'],
-    answer: 'care',
-    collocationGroup: 'noun',
-  },
-  {
-    sentence: 'I always make a shopping ___ so I don’t forget anything.',
-    options: ['list', 'shower', 'walk', 'rest'],
-    answer: 'list',
-    collocationGroup: 'noun',
-  },
-  {
-    sentence: 'He had to take a ___ to the airport because the train was cancelled.',
-    options: ['taxi', 'decision', 'homework', 'favour'],
-    answer: 'taxi',
-    collocationGroup: 'noun',
-  },
-  {
-    sentence: "Let's have a short ___ about the report before lunch.",
-    options: ['chat', 'mistake', 'photo', 'taxi'],
-    answer: 'chat',
-    collocationGroup: 'noun',
-  },
-]
+// The questions are in src/data/games/banks/collocations-challenge.ts (moved there on
+// 16 October 2026), and the explanation for each in
+// src/data/games/explanations/collocations-challenge.ts.
 
 const ROUND_SIZE = 15
 
@@ -223,12 +56,12 @@ function shuffle<T>(arr: T[]): T[] {
 }
 
 const ENCOURAGE = [
-  'Brilliant!',
-  'Well done!',
-  'Spot on!',
-  'Great choice!',
-  'Excellent!',
-  'Perfect!',
+  'Brilliant.',
+  'Well done.',
+  'Spot on.',
+  'Great choice.',
+  'Excellent.',
+  'Perfect.',
 ]
 
 // ─── Component ─────────────────────────────────────────────────────────────────
@@ -246,6 +79,7 @@ export default function CollocationsChallengePage() {
   const [selected, setSelected] = useState<string | null>(null)
   const [feedback, setFeedback] = useState<'correct' | 'wrong' | null>(null)
   const [praise, setPraise] = useState('')
+  const round = useGameRound('collocations-challenge')
 
   const currentQuestion = questions[qIdx] ?? null
   const currentOptions = optionOrders[qIdx] ?? []
@@ -274,6 +108,19 @@ export default function CollocationsChallengePage() {
     setGameState('finished')
   }, [])
 
+  /**
+   * A click. The question is marked, recorded for the student's account, and
+   * then left on screen with its explanation until they choose to go on
+   * (handleNext).
+   *
+   * WHAT CHANGED (16 October 2026). The game used to move to the next sentence
+   * 1.9 seconds after an answer. The founder found the answers too shallow; each
+   * now comes with why the word partner is right and why each other word is not
+   * (src/data/games/explanations/collocations-challenge.ts), and a student
+   * cannot read that in 1.9 seconds. Nothing that names the answer is shown
+   * before the answer is given: the explanation and the family badge both wait
+   * for the feedback.
+   */
   const handleSelect = useCallback(
     (option: string) => {
       if (!currentQuestion || feedback) return
@@ -288,20 +135,26 @@ export default function CollocationsChallengePage() {
       } else {
         setFeedback('wrong')
       }
-
-      setTimeout(() => {
-        if (qIdx + 1 >= questions.length) {
-          setGameState('finished')
-        } else {
-          setQIdx((i) => i + 1)
-          setSelected(null)
-          setFeedback(null)
-          setPraise('')
-        }
-      }, 1900)
+      round.record({
+        question: BANK.key(currentQuestion),
+        correct: isCorrect,
+        tag: BANK.tag?.(currentQuestion),
+        chose: isCorrect ? undefined : option,
+      })
     },
-    [currentQuestion, feedback, qIdx, questions.length],
+    [currentQuestion, feedback, round],
   )
+
+  const handleNext = useCallback(() => {
+    if (qIdx + 1 >= questions.length) {
+      setGameState('finished')
+      return
+    }
+    setQIdx((i) => i + 1)
+    setSelected(null)
+    setFeedback(null)
+    setPraise('')
+  }, [qIdx, questions.length])
 
   const accuracyPct = totalAnswered > 0 ? Math.round((score / totalAnswered) * 100) : 0
 
@@ -324,13 +177,14 @@ export default function CollocationsChallengePage() {
           gameId="collocations-challenge"
           audience="eal"
           title="Collocations Challenge"
-          description="Choose the verb or noun that fits the sentence. Master make, do, have and take - the trickiest English word partners."
+          description="Choose the verb or noun that fits the sentence. Master make, do, have and take: the trickiest English word partners."
           difficulty="Crossover"
           score={score}
           maxScore={totalAnswered || questions.length || ROUND_SIZE}
           onStart={handleStart}
           onFinish={handleFinish}
           gameState={gameState}
+          round={round}
         >
           {currentQuestion && (
             <div className="space-y-6">
@@ -399,28 +253,42 @@ export default function CollocationsChallengePage() {
                 })}
               </div>
 
-              {/* Feedback */}
+              {/* Feedback, then why, then the way on */}
               {feedback && (
-                <div
-                  className={cn(
-                    'flex items-center justify-center gap-2 rounded-lg px-4 py-2.5 text-sm font-medium',
-                    feedback === 'correct'
-                      ? 'text-emerald-400 bg-emerald-500/10'
-                      : 'text-red-400 bg-red-500/10',
-                  )}
-                >
-                  {feedback === 'correct' ? (
-                    <>
-                      <CheckCircle className="size-4" /> {praise} &ldquo;{currentQuestion.answer}
-                      &rdquo; is the right partner.
-                    </>
-                  ) : (
-                    <>
-                      <XCircle className="size-4" /> Not quite. The correct answer is{' '}
-                      <span className="font-bold">&ldquo;{currentQuestion.answer}&rdquo;</span>.
-                      Keep going!
-                    </>
-                  )}
+                <div>
+                  <div
+                    className={cn(
+                      'flex items-center justify-center gap-2 rounded-lg px-4 py-2.5 text-sm font-medium',
+                      feedback === 'correct'
+                        ? 'text-emerald-400 bg-emerald-500/10'
+                        : 'text-red-400 bg-red-500/10',
+                    )}
+                  >
+                    {feedback === 'correct' ? (
+                      <>
+                        <CheckCircle className="size-4" /> {praise} &ldquo;{currentQuestion.answer}
+                        &rdquo; is the right partner.
+                      </>
+                    ) : (
+                      <>
+                        <XCircle className="size-4" /> Not quite. The correct answer is{' '}
+                        <span className="font-bold">&ldquo;{currentQuestion.answer}&rdquo;</span>.
+                        Keep going.
+                      </>
+                    )}
+                  </div>
+                  <AnswerExplanation
+                    game="collocations-challenge"
+                    question={BANK.key(currentQuestion)}
+                    correct={feedback === 'correct'}
+                    chosen={selected}
+                  />
+                  <div className="mt-4 flex justify-end">
+                    <Button onClick={handleNext} autoFocus>
+                      {qIdx + 1 >= questions.length ? 'See your results' : 'Next question'}
+                      <ArrowRight className="size-4 ms-1" />
+                    </Button>
+                  </div>
                 </div>
               )}
             </div>

@@ -5,208 +5,18 @@ import Link from 'next/link'
 import GameShell, { type GameState } from '@/components/games/GameShell'
 import { Button } from '@/components/ui/button'
 import { cn } from '@/lib/utils'
-import { ArrowLeft, CheckCircle, XCircle, Sparkles, RotateCcw, Lightbulb } from 'lucide-react'
+import { ArrowLeft, ArrowRight, CheckCircle, XCircle, Sparkles, RotateCcw } from 'lucide-react'
 import { useBoard } from '@/hooks/useBoard'
 import { getBoardConfig } from '@/lib/board/board-store'
+import { AnswerExplanation } from '@/components/games/AnswerExplanation'
+import { useGameRound } from '@/components/games/game-round'
+import { BANK, QUESTION_BANK, type QuestionItem } from '@/data/games/banks/question-formation'
 
 // ─── Data ──────────────────────────────────────────────────────────────────────
 
-interface QuestionItem {
-  /** The full, correct question (UK English). */
-  correct: string
-  /** A short grammar note shown after answering. */
-  note: string
-}
-
-// Words are derived by splitting `correct`, then shuffled at runtime.
-const QUESTION_BANK: QuestionItem[] = [
-  // ── Wh- questions with do/does/did support ──
-  { correct: 'Where do you live?', note: 'Wh- word + auxiliary "do" + subject + base verb.' },
-  {
-    correct: 'What time does the train leave?',
-    note: '"Does" is used for third-person singular subjects.',
-  },
-  {
-    correct: 'When did you arrive in London?',
-    note: '"Did" carries the past tense, so the main verb stays in its base form.',
-  },
-  {
-    correct: 'Why does she always arrive late?',
-    note: 'Adverbs of frequency sit between the subject and the main verb.',
-  },
-  {
-    correct: 'How often do you go to the gym?',
-    note: '"How often" asks about frequency; it takes "do" + base verb.',
-  },
-  {
-    correct: 'What did they say about the plan?',
-    note: '"Did" + base verb "say" forms the past simple question.',
-  },
-  {
-    correct: 'Which book do you recommend?',
-    note: '"Which" + noun begins a question about a limited choice.',
-  },
-  {
-    correct: 'How much does this jacket cost?',
-    note: '"How much" is used with uncountable ideas like price.',
-  },
-  {
-    correct: 'Who did you meet at the conference?',
-    note: 'When "who" is the object, we still need "did" + base verb.',
-  },
-  {
-    correct: 'How long did the meeting last?',
-    note: '"How long" asks about duration; "did" forms the past question.',
-  },
-  {
-    correct: 'Where does your sister work?',
-    note: 'Third-person singular "sister" requires "does".',
-  },
-  {
-    correct: 'What do these words mean?',
-    note: 'Plural subject "words" takes "do" + base verb "mean".',
-  },
-
-  // ── Be / present & past continuous & states ──
-  {
-    correct: 'Are you ready to go?',
-    note: 'With "be", the verb itself moves in front of the subject.',
-  },
-  {
-    correct: 'Is she coming to the party?',
-    note: 'Present continuous question: "is" + subject + verb-ing.',
-  },
-  {
-    correct: 'Were they at home yesterday?',
-    note: '"Were" is the past form of "be" for plural subjects.',
-  },
-  {
-    correct: 'Why are you so tired today?',
-    note: 'Wh- word + "be" + subject for an adjective complement.',
-  },
-  {
-    correct: 'What are you doing this weekend?',
-    note: 'Present continuous can describe a future arrangement.',
-  },
-  {
-    correct: 'Where was the meeting held?',
-    note: 'Passive past question: "was" + subject + past participle.',
-  },
-  { correct: 'Is this seat free?', note: 'Yes/no question with "be" + subject + adjective.' },
-  { correct: 'How are your parents?', note: '"How" + "be" asks about wellbeing or condition.' },
-
-  // ── Modal verbs ──
-  {
-    correct: 'Can you help me with this?',
-    note: 'Modals like "can" go before the subject; no "do" is needed.',
-  },
-  {
-    correct: 'Could you repeat that, please?',
-    note: '"Could" makes a polite request more formal.',
-  },
-  {
-    correct: 'Should I bring anything to the party?',
-    note: '"Should" asks for advice; the main verb stays in base form.',
-  },
-  { correct: 'Would you like some tea?', note: '"Would you like" is a polite offer.' },
-  { correct: 'May I open the window?', note: '"May" asks for formal permission.' },
-  {
-    correct: 'Will you be at the office tomorrow?',
-    note: '"Will" forms questions about the future.',
-  },
-  {
-    correct: 'Must we finish this today?',
-    note: '"Must" expresses strong obligation in questions.',
-  },
-  {
-    correct: 'Can she speak three languages?',
-    note: 'Modals never take an "-s" for third-person singular.',
-  },
-
-  // ── Present perfect ──
-  {
-    correct: 'Have you ever been to Spain?',
-    note: 'Present perfect: "have" + subject + past participle.',
-  },
-  {
-    correct: 'Has he finished his homework?',
-    note: 'Third-person singular uses "has" in the present perfect.',
-  },
-  {
-    correct: 'How long have you known her?',
-    note: '"How long" + present perfect asks about duration up to now.',
-  },
-  { correct: 'What have you done today?', note: '"Done" is the past participle of "do" here.' },
-  { correct: 'Have they arrived yet?', note: '"Yet" often ends present perfect questions.' },
-
-  // ── Subject vs object questions ──
-  { correct: 'Who broke the window?', note: 'When "who" is the subject, no auxiliary is needed.' },
-  {
-    correct: 'What happened at the end?',
-    note: 'Subject question with "what" - no "did" required.',
-  },
-  { correct: 'Who is knocking at the door?', note: 'Subject "who" with continuous "is knocking".' },
-  {
-    correct: 'Which team won the match?',
-    note: 'Subject question: "which team" acts as the subject.',
-  },
-
-  // ── Question tags ──
-  { correct: 'You are coming, are not you?', note: 'A positive statement takes a negative tag.' },
-  {
-    correct: 'She does not eat meat, does she?',
-    note: 'A negative statement takes a positive tag.',
-  },
-  {
-    correct: 'It is a lovely day, is not it?',
-    note: 'The tag mirrors the auxiliary of the main clause.',
-  },
-  {
-    correct: 'They have left already, have not they?',
-    note: 'Present perfect statements use a "have" tag.',
-  },
-  {
-    correct: 'You can swim, can not you?',
-    note: 'Modal statements take the same modal in the tag.',
-  },
-  {
-    correct: 'He did not call you, did he?',
-    note: 'A negative "did not" clause takes a positive "did" tag.',
-  },
-
-  // ── Indirect / longer questions ──
-  {
-    correct: 'Do you know where the station is?',
-    note: 'In indirect questions the word order stays statement-like.',
-  },
-  {
-    correct: 'Could you tell me how this works?',
-    note: 'After "tell me how", use statement word order.',
-  },
-  {
-    correct: 'I wonder why she left so early?',
-    note: 'Embedded questions keep subject before verb.',
-  },
-  {
-    correct: 'Do you have any idea what time it is?',
-    note: 'No inversion after "what time" in an indirect question.',
-  },
-
-  // ── More everyday questions ──
-  { correct: 'How do you spell your surname?', note: '"How" + "do" asks about manner or method.' },
-  {
-    correct: 'What does this word mean?',
-    note: 'Singular "word" takes "does" + base verb "mean".',
-  },
-  {
-    correct: 'Where did you buy that bag?',
-    note: '"Did" forms the past simple; "buy" stays in base form.',
-  },
-  {
-    correct: 'Are there any tickets left?',
-    note: '"Are there" questions existence with plural nouns.',
-  },
-]
+// The questions are in src/data/games/banks/question-formation.ts (moved there on
+// 16 October 2026), and the explanation for each in
+// src/data/games/explanations/question-formation.ts.
 
 // ─── Helpers ───────────────────────────────────────────────────────────────────
 
@@ -252,6 +62,7 @@ export default function QuestionFormationPage() {
   const [pool, setPool] = useState<Token[]>([])
   const [answer, setAnswer] = useState<Token[]>([])
   const [feedback, setFeedback] = useState<'correct' | 'wrong' | null>(null)
+  const round = useGameRound('question-formation')
 
   const currentItem = items[qIdx] ?? null
 
@@ -278,12 +89,12 @@ export default function QuestionFormationPage() {
   }, [])
 
   const handleStart = useCallback(() => {
-    const round = shuffle(QUESTION_BANK).slice(0, ROUND_SIZE)
-    setItems(round)
+    const picked = shuffle(QUESTION_BANK).slice(0, ROUND_SIZE)
+    setItems(picked)
     setQIdx(0)
     setScore(0)
     setTotalAnswered(0)
-    if (round[0]) loadQuestion(round[0])
+    if (picked[0]) loadQuestion(picked[0])
     setGameState('playing')
   }, [loadQuestion])
 
@@ -324,21 +135,33 @@ export default function QuestionFormationPage() {
     }
   }, [qIdx, items, loadQuestion])
 
+  /**
+   * Marks the built question, records it for the student's account and leaves it
+   * on screen, with its explanation, until they choose to go on (advance).
+   *
+   * WHAT CHANGED (16 October 2026). The game used to move to the next question
+   * 2.4 seconds after the check, showing a one-line note. The founder found the
+   * answers too shallow; each now comes with why the word order is right
+   * (src/data/games/explanations/question-formation.ts), and a student cannot
+   * read that in 2.4 seconds. Only whether the question was built right is
+   * recorded; the words the student placed are never sent.
+   */
   const handleCheck = useCallback(() => {
     if (!currentItem || feedback || answer.length === 0) return
     const attempt = answer.map((t) => t.text).join(' ')
     const target = correctTokens.join(' ')
+    const correct = attempt === target
     setTotalAnswered((n) => n + 1)
 
-    if (attempt === target) {
+    if (correct) {
       setScore((s) => s + 1)
       setFeedback('correct')
     } else {
       setFeedback('wrong')
     }
 
-    setTimeout(advance, 2400)
-  }, [currentItem, feedback, answer, correctTokens, advance])
+    round.record({ question: BANK.key(currentItem), correct, tag: BANK.tag?.(currentItem) })
+  }, [currentItem, feedback, answer, correctTokens, round])
 
   const accuracyPct = totalAnswered > 0 ? Math.round((score / totalAnswered) * 100) : 0
 
@@ -361,13 +184,14 @@ export default function QuestionFormationPage() {
           gameId="question-formation"
           audience="eal"
           title="Build the Question"
-          description="Tap the scrambled words in the correct order to form a grammatical English question. Watch your word order, auxiliaries and tags!"
+          description="Tap the scrambled words in the correct order to form a grammatical English question. Watch your word order, auxiliaries and tags."
           difficulty="Crossover"
           score={score}
           maxScore={totalAnswered || items.length || ROUND_SIZE}
           onStart={handleStart}
           onFinish={handleFinish}
           gameState={gameState}
+          round={round}
         >
           {currentItem && (
             <div className="space-y-6">
@@ -421,7 +245,7 @@ export default function QuestionFormationPage() {
                 <div className="flex flex-wrap gap-2">
                   {pool.length === 0 && !feedback ? (
                     <p className="py-2 text-sm text-muted-foreground">
-                      All words used - check your answer!
+                      All words used: check your answer.
                     </p>
                   ) : (
                     pool.map((token) => (
@@ -455,7 +279,7 @@ export default function QuestionFormationPage() {
                   <div className="flex items-center gap-2 font-medium">
                     {feedback === 'correct' ? (
                       <>
-                        <CheckCircle className="size-4" /> Brilliant - that&apos;s spot on!
+                        <CheckCircle className="size-4" /> Brilliant, that&apos;s spot on.
                       </>
                     ) : (
                       <>
@@ -466,10 +290,23 @@ export default function QuestionFormationPage() {
                   {feedback === 'wrong' && (
                     <p className="font-bold text-foreground">{currentItem.correct}</p>
                   )}
-                  <p className="flex items-start gap-2 text-muted-foreground">
-                    <Lightbulb className="mt-0.5 size-4 shrink-0 text-clay-600" />
-                    {currentItem.note}
-                  </p>
+                </div>
+              )}
+
+              {/* Why the order is right, and the way on */}
+              {feedback && (
+                <div>
+                  <AnswerExplanation
+                    game="question-formation"
+                    question={BANK.key(currentItem)}
+                    correct={feedback === 'correct'}
+                  />
+                  <div className="mt-4 flex justify-end">
+                    <Button onClick={advance} autoFocus>
+                      {qIdx + 1 >= items.length ? 'See your results' : 'Next question'}
+                      <ArrowRight className="size-4 ms-1" />
+                    </Button>
+                  </div>
                 </div>
               )}
 
