@@ -407,9 +407,14 @@ const RENDERS_OPTIONS =
  * outside this rule entirely while 429 Reading MCQs at 67.1% B and 302
  * Listening MCQs at 86.1% B stayed exploitable through them. The rule saw
  * nothing because it was reading the wrong file.
+ *
+ * `answer: number` joined on 16 October 2026. /games/reading-detective held
+ * each question's right option as a numeric `answer` and marked a click with
+ * `idx === currentQuestion.answer`, a position, never shuffled: the right
+ * answer sat at A 17 times, B 16, C 3 and D never, and no name here knew it.
  */
 const STORED_INDEX =
-  /\b(correctIndex|answerIndex|correctAnswerIndex)\b|\.correct\b|\bcorrect\s*:\s*\d|\b(shownMcqOptions|isSingleAnswerCorrect)\b/
+  /\b(correctIndex|answerIndex|correctAnswerIndex)\b|\.correct\b|\bcorrect\s*:\s*\d|\banswer\s*:\s*number\b|\b(shownMcqOptions|isSingleAnswerCorrect)\b/
 
 /**
  * The stored answer again, recognised by what the page does with it rather
@@ -681,7 +686,10 @@ describe('every surface that marks a clicked option', () => {
       const body = code(readFileSync(file, 'utf8'))
       const correctIsAnIndex =
         /\[\s*[\w.?]*\bcorrect\b\s*\]/.test(body) || /\bcorrect\s*:\s*number\b/.test(body)
-      const names = `correctIndex|answerIndex|correctAnswerIndex${correctIsAnIndex ? '|correct' : ''}`
+      // An `answer` declared as a number is an index too (Reading Detective,
+      // 16 October 2026); an `answer` that is the option's text is not.
+      const answerIsAnIndex = /\banswer\s*:\s*number\b/.test(body)
+      const names = `correctIndex|answerIndex|correctAnswerIndex${correctIsAnIndex ? '|correct' : ''}${answerIsAnIndex ? '|answer' : ''}`
       const patterns = [
         new RegExp(`(===|!==|==|!=)\\s*[\\w.?[\\]]*\\.(${names})\\b(?!\\s*\\])`),
         new RegExp(`[\\w.?[\\]]*\\.(${names})\\b(?!\\s*\\])\\s*(===|!==|==|!=)`),

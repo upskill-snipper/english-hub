@@ -1,6 +1,7 @@
 ﻿'use client'
 
-import { useState, use } from 'react'
+import { useMemo, useState, use } from 'react'
+import { newSessionSalt, shuffledOptionsFor } from '@/lib/quiz/shuffle'
 import { useT } from '@/lib/i18n/use-t'
 import Link from 'next/link'
 import {
@@ -965,16 +966,30 @@ function QuizView({
   onClose: () => void
 }) {
   const t = useT()
-  const [answers, setAnswers] = useState<(number | null)[]>(Array(quiz.length).fill(null))
+  // FIXED 16 OCTOBER 2026. The options were shown as written and a click was
+  // marked by its position (`oi === q.answer`); the right answer was option B
+  // in 64 of the 80 questions, so always clicking B scored 80 per cent. Each
+  // question's options now go through the site's shared shuffle once per
+  // visit, and a choice is marked by the option itself
+  // (src/__tests__/no-quiz-answer-is-always-b.test.ts holds it).
+  const [salt] = useState(() => newSessionSalt())
+  const views = useMemo(
+    () =>
+      quiz.map((q, qi) =>
+        shuffledOptionsFor(q.options, q.answer, `demo-quiz-${qi}`, salt, q.question),
+      ),
+    [quiz, salt],
+  )
+  const [answers, setAnswers] = useState<(string | null)[]>(Array(quiz.length).fill(null))
   const [submitted, setSubmitted] = useState(false)
 
-  const score = submitted ? answers.filter((a, i) => a === quiz[i].answer).length : 0
+  const score = submitted ? answers.filter((a, i) => a === views[i].correctValue).length : 0
 
-  function select(qi: number, oi: number) {
+  function select(qi: number, option: string) {
     if (submitted) return
     setAnswers((prev) => {
       const next = [...prev]
-      next[qi] = oi
+      next[qi] = option
       return next
     })
   }
@@ -1000,15 +1015,16 @@ function QuizView({
             {qi + 1}. {q.question}
           </p>
           <div className="space-y-2">
-            {q.options.map((opt, oi) => {
+            {views[qi].options.map((opt, oi) => {
+              const isRight = opt === views[qi].correctValue
               let optStyle = 'border-border/60 bg-card hover:border-border hover:bg-secondary'
-              if (answers[qi] === oi && !submitted) {
+              if (answers[qi] === opt && !submitted) {
                 optStyle = 'border-primary/30 bg-primary/10'
               }
               if (submitted) {
-                if (oi === q.answer) {
+                if (isRight) {
                   optStyle = 'border-primary/30 bg-primary/10'
-                } else if (answers[qi] === oi && oi !== q.answer) {
+                } else if (answers[qi] === opt) {
                   optStyle = 'border-red-500/30 bg-red-500/10'
                 } else {
                   optStyle = 'border-border/60 bg-card opacity-50'
@@ -1016,15 +1032,15 @@ function QuizView({
               }
               return (
                 <button
-                  key={oi}
-                  onClick={() => select(qi, oi)}
+                  key={opt}
+                  onClick={() => select(qi, opt)}
                   className={`w-full text-start rounded-lg border px-4 py-2.5 text-sm text-foreground transition-all ${optStyle}`}
                 >
                   <span className="text-muted-foreground me-2">
                     {String.fromCharCode(65 + oi)}.
                   </span>
                   {opt}
-                  {submitted && oi === q.answer && (
+                  {submitted && isRight && (
                     <CheckCircle2 className="inline h-4 w-4 text-primary ms-2" />
                   )}
                 </button>
