@@ -43,21 +43,29 @@ import {
 // Feature data lives as i18n keys; the actual EN/AR copy is resolved
 // inside <PricingContent /> via useT() so /ar visitors get Arabic strings
 // without duplicating structural metadata (icons, included flag).
+// "Always free" is what stays free after the trial (corrected 16 October
+// 2026). It said "Exam-board aligned courses", but only the first module of
+// each course is free; and the Premium list held mock exams and exam-technique
+// guides, which are free: the guides need no account, and Mock Exam Mode's
+// papers by board need only a free one. What a plan adds to those is model
+// answers and the rest of every course.
 const STUDENT_FREE_FEATURE_KEYS = [
   { key: 'pricing.feat.student_free.exam_aligned', included: true },
   { key: 'pricing.feat.student_free.revision_notes', included: true },
   { key: 'pricing.feat.student_free.flashcards', included: true },
+  { key: 'pricing.feat.student_free.exam_technique', included: true },
+  { key: 'pricing.feat.student_free.mock_papers', included: true },
 ]
 
 const STUDENT_PREMIUM_FEATURE_KEYS = [
   { key: 'pricing.feat.student_premium.essay_marking', icon: PenTool },
+  { key: 'pricing.feat.student_premium.model_answers', icon: FileText },
+  { key: 'pricing.feat.student_premium.course_modules', icon: Target },
   { key: 'pricing.feat.student_premium.revision_notes', icon: BookOpen },
   { key: 'pricing.feat.student_premium.custom_tests', icon: ClipboardList },
-  { key: 'pricing.feat.student_premium.mock_exams', icon: ClipboardList },
   { key: 'pricing.feat.student_premium.feedback_reports', icon: FileText },
   { key: 'pricing.feat.student_premium.study_recs', icon: Brain },
   { key: 'pricing.feat.student_premium.progress_analytics', icon: BarChart3 },
-  { key: 'pricing.feat.student_premium.exam_technique', icon: Target },
 ]
 
 // The Teacher card lists what a Teacher plan unlocks, and nothing else
@@ -329,9 +337,14 @@ function PricingContent() {
 
   // 21 April 2026 pricing pivot: two-tier Early Access / Standard with anchor.
   //   Students: Early Access £3.99/mo · £29.99/yr · £20/yr with affiliate code or 2026ENGLISH
-  //             Standard (from Aug 2026) £7.99/mo · £69.99/yr - shown as strikethrough anchor
+  //             Planned standard £7.99/mo · £69.99/yr
   //   Teachers: Early Access £6.99/mo · £67.99/yr
-  //             Standard (from Aug 2026) £11.99/mo · £99/yr - shown as strikethrough anchor
+  //             Planned standard £11.99/mo · £99/yr
+  //   16 October 2026: the planned standard prices were struck through, with
+  //   no label on the monthly ones and "(was £99/year)" on the Teacher annual.
+  //   They have never been charged (PRICE_INCREASE_DATE is 1 August 2027), so
+  //   a struck-through price told a reader they once cost more. They are now
+  //   labelled "planned standard" and not struck through.
   //   Schools:  Founding £4,000 (first 10 only) vs Standard £8,000 (projected, Aug 2026)
   //   Trial:    7-day free trial - card required, auto-converts.
   //   Urgency:  Every banner carries "Prices increasing August 2026".
@@ -669,8 +682,8 @@ function PricingContent() {
                     {PRICING.STUDENT_MONTHLY}
                   </span>
                   <span className="text-muted-foreground text-base">{t('pricing.per_month')}</span>
-                  <span className="text-sm text-muted-foreground line-through decoration-amber-500/60">
-                    {PRICING.CURRENCY}
+                  <span className="text-xs text-muted-foreground">
+                    {t('pricing.planned_standard_prefix')} {PRICING.CURRENCY}
                     {PRICING.STUDENT_MONTHLY_STANDARD}
                   </span>
                 </div>
@@ -755,9 +768,14 @@ function PricingContent() {
                   onClick={() => handleCheckout('student_annual')}
                   disabled={checkoutLoading !== null}
                 >
+                  {/* With a code applied this button goes to /api/promo/redeem,
+                      which charges the year at once: no free days, so no
+                      "free trial" label (16 October 2026). */}
                   {checkoutLoading === 'student_annual'
                     ? t('pricing.starting_checkout')
-                    : t('pricing.start_7day_trial')}
+                    : codeField.appliedCode
+                      ? t('pricing.pay_with_code')
+                      : t('pricing.start_7day_trial')}
                   <ArrowRight className="w-4 h-4 ms-1" />
                 </Button>
                 <button
@@ -807,8 +825,8 @@ function PricingContent() {
                     {PRICING.TEACHER_MONTHLY}
                   </span>
                   <span className="text-muted-foreground text-base">{t('pricing.per_month')}</span>
-                  <span className="text-sm text-muted-foreground line-through decoration-amber-500/60">
-                    {PRICING.CURRENCY}
+                  <span className="text-xs text-muted-foreground">
+                    {t('pricing.planned_standard_prefix')} {PRICING.CURRENCY}
                     {PRICING.TEACHER_MONTHLY_STANDARD}
                   </span>
                 </div>
@@ -820,13 +838,9 @@ function PricingContent() {
                     {t('pricing.per_year_long')}
                   </span>{' '}
                   <span className="text-muted-foreground-subtle">
-                    ({t('pricing.was_strikethrough_prefix')}{' '}
-                    <span className="line-through decoration-amber-500/60">
-                      {PRICING.CURRENCY}
-                      {PRICING.TEACHER_ANNUAL_STANDARD}
-                      {t('pricing.per_year_long')}
-                    </span>
-                    )
+                    ({t('pricing.planned_standard_prefix')} {PRICING.CURRENCY}
+                    {PRICING.TEACHER_ANNUAL_STANDARD}
+                    {t('pricing.per_year_long')})
                   </span>
                   {teacherAnnualSavingsVsMonthly > 0 && (
                     <span className="text-muted-foreground-subtle">
@@ -900,7 +914,9 @@ function PricingContent() {
                 >
                   {checkoutLoading === 'teacher_annual'
                     ? t('pricing.starting_checkout')
-                    : t('pricing.start_7day_trial')}
+                    : codeField.appliedCode
+                      ? t('pricing.pay_with_code')
+                      : t('pricing.start_7day_trial')}
                   <ArrowRight className="w-4 h-4 ms-1" />
                 </Button>
                 <button
@@ -1088,14 +1104,15 @@ function PricingContent() {
                 icon: Sparkles,
                 color: 'text-purple-600 bg-purple-500/10 border-purple-500/20',
                 title: 'Explore',
-                desc: `Your 7-day free trial includes every premium feature. Try AI marking, mock exams, lesson plans, and more.`,
+                // Named lesson plans (school portal only) until 16 October 2026.
+                desc: `Your 7-day free trial includes AI essay marking, the examiner marking tool, model answers and every course module, within a fair-use limit.`,
               },
               {
                 step: '3',
                 icon: Zap,
                 color: 'text-emerald-700 bg-emerald-500/10 border-emerald-500/20',
                 title: 'Upgrade',
-                desc: 'When you\u2019re ready, choose a plan. It begins with 7 free days with your card on file - cancel before day 7 at no cost, or it converts automatically.',
+                desc: 'When you\u2019re ready, choose a plan. It begins with 7 free days with your card on file - cancel before day 7 at no cost, or it converts automatically. An annual plan bought with a discount code is charged at once, with no free days.',
               },
             ].map((item) => (
               <Card key={item.step} className="p-6 text-center border-border/40">

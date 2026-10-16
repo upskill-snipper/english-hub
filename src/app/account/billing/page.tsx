@@ -389,15 +389,18 @@ export default function BillingPage() {
                     {PRICING.STUDENT_ANNUAL}
                     {t('account.billing.per_year')}
                   </p>
+                  {/* Planned prices, labelled as planned and not struck
+                      through (16 October 2026): struck through, they read as
+                      former prices, and they have never been charged. */}
                   <p className="text-[11px] text-muted-foreground-subtle mb-1">
                     {t('account.billing.standard')}{' '}
-                    <span className="line-through">
+                    <span>
                       {PRICING.CURRENCY}
                       {PRICING.STUDENT_MONTHLY_STANDARD}
                       {t('account.billing.per_month')}
                     </span>{' '}
                     / {PRICING.CURRENCY}
-                    <span className="line-through">
+                    <span>
                       {PRICING.STUDENT_ANNUAL_STANDARD}
                       {t('account.billing.per_year')}
                     </span>
@@ -459,13 +462,13 @@ export default function BillingPage() {
                   </p>
                   <p className="text-[11px] text-muted-foreground-subtle mb-1">
                     {t('account.billing.standard')}{' '}
-                    <span className="line-through">
+                    <span>
                       {PRICING.CURRENCY}
                       {PRICING.TEACHER_MONTHLY_STANDARD}
                       {t('account.billing.per_month')}
                     </span>{' '}
                     / {PRICING.CURRENCY}
-                    <span className="line-through">
+                    <span>
                       {PRICING.TEACHER_ANNUAL_STANDARD}
                       {t('account.billing.per_year')}
                     </span>

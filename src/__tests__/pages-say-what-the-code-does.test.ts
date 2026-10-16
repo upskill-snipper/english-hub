@@ -202,3 +202,61 @@ describe('a teacher is sold only what a Teacher plan gives', () => {
     expect(gate).toContain('hasActiveSubscription(')
   })
 })
+
+// ─── D12: /pricing ──────────────────────────────────────────────────────────
+
+describe('/pricing says what is free, what a price was and when there is a trial', () => {
+  const page = code('src/app/pricing/page.tsx')
+
+  it('calls only the first module of each course free', () => {
+    // "Exam-board aligned courses" sat under "Always free"; modules 2 onwards
+    // need a plan.
+    const copy = inEveryLocale('pricing.feat.student_free.exam_aligned')
+    expect(copy.en).toMatch(/first module/i)
+    for (const key of ['pricing.faq.a1']) {
+      const en = lookup(key, 'en')
+      expect(en).toMatch(/first module of every course/)
+      expect(en).not.toMatch(/lesson plans/i)
+    }
+  })
+
+  it('lists exam technique and mock papers by board as free, not Premium', () => {
+    expect(page).not.toContain('student_premium.mock_exams')
+    expect(page).not.toContain('student_premium.exam_technique')
+    expect(page).toContain("'pricing.feat.student_free.exam_technique'")
+    expect(page).toContain("'pricing.feat.student_free.mock_papers'")
+    inEveryLocale('pricing.feat.student_free.exam_technique')
+    inEveryLocale('pricing.feat.student_free.mock_papers')
+  })
+
+  it('never strikes through a planned price or calls it what a plan "was"', () => {
+    // £7.99, £11.99 and "(was £99/year)" had never been charged.
+    expect(page).not.toContain('was_strikethrough_prefix')
+    expect(page).not.toMatch(/line-through/)
+    expect(code('src/app/account/billing/page.tsx')).not.toMatch(/line-through/)
+    expect(lookup('pricing.planned_standard_prefix', 'en')).toBe('planned standard')
+    expect(lookup('account.billing.standard', 'en')).toMatch(/planned/i)
+  })
+
+  it('does not promise a free trial on every paid plan', () => {
+    // A discounted annual plan is charged at once (/api/promo/redeem).
+    const layout = code('src/app/pricing/layout.tsx')
+    expect(layout).not.toMatch(/every paid plan|every\+paid\+plan/i)
+    expect(layout).toMatch(/new account starts with a 7-day free trial/)
+    const press = inEveryLocale('press.product.pricing.pupil_body')
+    expect(press.en).not.toMatch(/all paid plans/i)
+    expect(press.es).not.toMatch(/todos los planes de pago/i)
+    expect(press.ar).not.toMatch(/كل الباقات المدفوعة/)
+    for (const key of ['pricing.trial_line_card_on_file', 'pricing.faq.a2']) {
+      expect(lookup(key, 'en'), key).toMatch(/discount code.*charged at once/)
+    }
+  })
+
+  it('does not label a code purchase "Start 7-day free trial"', () => {
+    // Both annual buttons switch label once a code is applied.
+    const switches =
+      page.match(/codeField\.appliedCode\s*\?\s*t\('pricing\.pay_with_code'\)/g) ?? []
+    expect(switches).toHaveLength(2)
+    inEveryLocale('pricing.pay_with_code')
+  })
+})

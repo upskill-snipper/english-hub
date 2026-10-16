@@ -197,10 +197,12 @@ export const TRUST_DICTIONARY: Record<string, { en: string; ar: string; es?: str
 
   'press.product.pricing.h3': { en: 'Pricing', ar: 'الأسعار', es: 'Precios' },
   'press.product.pricing.pupil_strong': { en: 'Students', ar: 'الطلاب', es: 'Estudiantes' },
+  // 16 October 2026: said "A 7-day free trial applies to all paid plans". An
+  // annual plan bought with a discount code is charged at once, with no trial.
   'press.product.pricing.pupil_body': {
-    en: 'Early Access £3.99/month or £29.99/year (planned standard £7.99/month or £69.99/year). A 7-day free trial applies to all paid plans.',
-    ar: 'الوصول المبكّر £3.99/شهر أو £29.99/سنة (العادي المخطط له £7.99/شهر أو £69.99/سنة). فيه تجربة مجانية ٧ أيام على كل الباقات المدفوعة.',
-    es: 'Acceso anticipado £3.99/mes o £29.99/año (estándar previsto £7.99/mes o £69.99/año). Se aplica una prueba gratuita de 7 días a todos los planes de pago.',
+    en: 'Early Access £3.99/month or £29.99/year (planned standard £7.99/month or £69.99/year). A new account starts with a 7-day free trial, no card needed; a plan bought at checkout starts with 7 free days, except an annual plan bought with a discount code, which is charged at once.',
+    ar: 'الوصول المبكّر £3.99/شهر أو £29.99/سنة (العادي المخطط له £7.99/شهر أو £69.99/سنة). الحساب الجديد يبدأ بتجربة مجانية ٧ أيام بدون بطاقة؛ والخطة اللي تنشرى من صفحة الدفع تبدأ بـ ٧ أيام مجانية، إلا الخطة السنوية اللي تنشرى بكود خصم، هذي تنخصم على طول.',
+    es: 'Acceso anticipado £3.99/mes o £29.99/año (estándar previsto £7.99/mes o £69.99/año). Una cuenta nueva empieza con una prueba gratuita de 7 días, sin tarjeta; un plan comprado en el checkout empieza con 7 días gratis, salvo un plan anual comprado con un código de descuento, que se cobra en el momento.',
   },
   'press.product.pricing.teacher_strong': { en: 'Teachers', ar: 'المعلّمون', es: 'Profesores' },
   'press.product.pricing.teacher_body': {

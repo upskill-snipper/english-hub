@@ -5354,7 +5354,13 @@ export const DICTIONARY: Dictionary = {
   'account.billing.per_month': { en: '/month', ar: '/شهر', es: '/mes' },
   'account.billing.or_per_year_prefix': { en: 'or', ar: 'أو', es: 'o' },
   'account.billing.per_year': { en: '/year', ar: '/سنة', es: '/año' },
-  'account.billing.standard': { en: 'Standard', ar: 'السعر العادي', es: 'Estándar' },
+  // 16 October 2026: was "Standard", beside the planned prices struck through,
+  // so they read as former prices. They have never been charged.
+  'account.billing.standard': {
+    en: 'Planned standard',
+    ar: 'السعر العادي المخطط',
+    es: 'Estándar previsto',
+  },
   'account.billing.from_date_prefix': { en: 'from', ar: 'من تاريخ', es: 'desde' },
   'account.billing.feature_all_courses': {
     en: 'All courses included',
@@ -21060,10 +21066,26 @@ export const DICTIONARY: Dictionary = {
   // Wires the still-hardcoded "deeper" surfaces on /pricing - competitor
   // comparison table cells, the "Always free / Premium" feature lists,
   // step labels under "How free access works", and the full FAQ body.
+  // The Student card's "Always free" list, corrected 16 October 2026. It
+  // said "Exam-board aligned courses" were always free: only module 1 of each
+  // course is (modules 2 onwards need a plan). It also listed mock exams and
+  // exam-technique guides as Premium, while the exam-technique pages need no
+  // account and the mock papers by board in Mock Exam Mode need only a free
+  // one. The key keeps its name so the page needs no rename.
   'pricing.feat.student_free.exam_aligned': {
-    en: 'Exam-board aligned courses',
-    ar: 'كورسات متوافقة مع بورد الامتحان',
-    es: 'Cursos alineados con la junta examinadora',
+    en: 'The first module of every course',
+    ar: 'أول وحدة من كل كورس',
+    es: 'El primer módulo de cada curso',
+  },
+  'pricing.feat.student_free.exam_technique': {
+    en: 'Exam-technique guides',
+    ar: 'أدلّة أسلوب الامتحان',
+    es: 'Guías de técnica de examen',
+  },
+  'pricing.feat.student_free.mock_papers': {
+    en: 'Mock papers by board, with a free account',
+    ar: 'امتحانات تجريبية حسب البورد، مع حساب مجاني',
+    es: 'Exámenes de prueba por junta, con una cuenta gratuita',
   },
   'pricing.feat.student_free.revision_notes': {
     en: 'Revision notes',
@@ -21090,10 +21112,15 @@ export const DICTIONARY: Dictionary = {
     ar: 'توليد اختبارات مخصّصة',
     es: 'Generación de tests personalizados',
   },
-  'pricing.feat.student_premium.mock_exams': {
-    en: 'Mock Exams',
-    ar: 'امتحانات تجريبية',
-    es: 'Exámenes de prueba',
+  'pricing.feat.student_premium.model_answers': {
+    en: 'Model Answers',
+    ar: 'إجابات نموذجية',
+    es: 'Respuestas modelo',
+  },
+  'pricing.feat.student_premium.course_modules': {
+    en: 'Every Course Module',
+    ar: 'كل وحدات الكورسات',
+    es: 'Todos los módulos de los cursos',
   },
   'pricing.feat.student_premium.feedback_reports': {
     en: 'Feedback Reports',
@@ -21109,11 +21136,6 @@ export const DICTIONARY: Dictionary = {
     en: 'Full Progress Analytics',
     ar: 'تحليلات تقدّم كاملة',
     es: 'Analíticas de progreso completas',
-  },
-  'pricing.feat.student_premium.exam_technique': {
-    en: 'Exam Technique Guides',
-    ar: 'أدلّة أسلوب الامتحان',
-    es: 'Guías de técnica de examen',
   },
   'pricing.feat.teacher_free.browse_resources': {
     en: 'Browse resources',
@@ -21246,7 +21268,16 @@ export const DICTIONARY: Dictionary = {
   'pricing.per_year_long': { en: '/year', ar: '/سنة', es: '/año' },
   'pricing.per_month': { en: '/month', ar: '/شهر', es: '/mes' },
   'pricing.limited_time': { en: 'limited time', ar: 'وقت محدود', es: 'tiempo limitado' },
-  'pricing.was_strikethrough_prefix': { en: 'was', ar: 'كان', es: 'antes' },
+  // Replaces 'pricing.was_strikethrough_prefix' ("was"), 16 October 2026.
+  // The Teacher card printed "(was £99/year)" struck through, and both cards
+  // struck through £7.99 and £11.99 with no label. Those are planned standard
+  // prices that have never been charged (PRICE_INCREASE_DATE is 1 August
+  // 2027), so they are labelled as planned and never shown as former prices.
+  'pricing.planned_standard_prefix': {
+    en: 'planned standard',
+    ar: 'السعر العادي المخطط',
+    es: 'estándar previsto',
+  },
   'pricing.save_vs_monthly_prefix': { en: 'save', ar: 'وفّر', es: 'ahorra' },
   'pricing.save_vs_monthly_suffix': {
     en: 'vs monthly',
@@ -21263,10 +21294,18 @@ export const DICTIONARY: Dictionary = {
   },
   // What the paid cards actually do. The genuine no-card trial is the one you
   // get by creating an account, and it is stated in the green banner above.
+  // 16 October 2026: now says what happens with a discount code. An annual
+  // plan bought with a code goes through /api/promo/redeem, which charges at
+  // once with no free days, under a button that said "Start 7-day free trial".
   'pricing.trial_line_card_on_file': {
-    en: 'Paid plans start with 7 free days, card on file - cancel before day 7 and you are not charged',
-    ar: 'الخطط المدفوعة تبدأ بـ 7 أيام مجانية مع حفظ الكارت - ألغِ قبل اليوم السابع وما ينخصم منك شيء',
-    es: 'Los planes de pago empiezan con 7 días gratis con tarjeta guardada: cancela antes del día 7 y no se te cobra',
+    en: 'Paid plans start with 7 free days, card on file - cancel before day 7 and you are not charged. An annual plan bought with a discount code is charged at once, with no free days.',
+    ar: 'الخطط المدفوعة تبدأ بـ 7 أيام مجانية مع حفظ الكارت - ألغِ قبل اليوم السابع وما ينخصم منك شيء. والخطة السنوية اللي تشتريها بكود خصم تنخصم على طول، بدون أيام مجانية.',
+    es: 'Los planes de pago empiezan con 7 días gratis con tarjeta guardada: cancela antes del día 7 y no se te cobra. Un plan anual comprado con un código de descuento se cobra en el momento, sin días gratis.',
+  },
+  'pricing.pay_with_code': {
+    en: 'Continue to payment',
+    ar: 'كمّل للدفع',
+    es: 'Continuar al pago',
   },
   // Replaces the "Compare to competitors" table. Section 5 of the positioning
   // house forbids any comparison table carrying a competitor's name; this is
@@ -21398,10 +21437,13 @@ export const DICTIONARY: Dictionary = {
     ar: 'شنو اللي أحصل عليه ببلاش قبل ما أشترك؟',
     es: '¿Qué obtengo gratis antes de suscribirme?',
   },
+  // 16 October 2026: said the trial includes "lesson plans" (school portal
+  // only) and that "exam-board aligned courses" stay free after it (only
+  // module 1 of each course does).
   'pricing.faq.a1': {
-    en: 'Creating a free account starts a 7-day trial of the full product - AI essay marking, mock exams, lesson plans and more - with no card needed. Exam-board aligned courses, revision notes, and flashcards remain free with a registered account even after the trial ends.',
-    ar: 'لما تسوي حساب مجاني تبدأ تجربة ٧ أيام للمنتج كامل - التصحيح الذكي والامتحانات التجريبية وخطط الدروس وغيرها - بدون بطاقة. وكورسات بورد الامتحان وملخصات المراجعة والبطاقات تبقى ببلاش مع حساب مسجّل حتى بعد انتهاء التجربة.',
-    es: 'Al crear una cuenta gratuita comienza una prueba de 7 días del producto completo - corrección de redacciones con IA, exámenes de prueba, planes de clase y más - sin tarjeta. Los cursos alineados con la junta examinadora, los apuntes de repaso y las tarjetas de estudio siguen siendo gratuitos con una cuenta registrada incluso después de la prueba.',
+    en: 'Creating a free account starts a 7-day trial with no card needed: AI essay marking, the examiner marking tool, model answers and every course module, within a fair-use limit. After the trial, the first module of every course, the study guides, revision notes, flashcards, games and exam-technique guides stay free, and so do the mock papers by board with your account.',
+    ar: 'لما تسوي حساب مجاني تبدأ تجربة ٧ أيام بدون بطاقة: تصحيح المقالات بالذكاء الاصطناعي وأداة المصحّح والإجابات النموذجية وكل وحدات الكورسات، ضمن حد استخدام معقول. وبعد التجربة، أول وحدة من كل كورس وأدلة الدراسة وملخصات المراجعة والبطاقات والألعاب وأدلة أسلوب الامتحان تبقى ببلاش، ونفس الشي الامتحانات التجريبية حسب البورد مع حسابك.',
+    es: 'Al crear una cuenta gratuita empieza una prueba de 7 días sin tarjeta: corrección de redacciones con IA, la herramienta de examinador, respuestas modelo y todos los módulos de los cursos, dentro de un límite de uso razonable. Después de la prueba, el primer módulo de cada curso, las guías de estudio, los apuntes de repaso, las tarjetas, los juegos y las guías de técnica de examen siguen siendo gratuitos, igual que los exámenes de prueba por junta con tu cuenta.',
   },
   'pricing.faq.q2': {
     en: 'Do I need a credit card to start the 7-day trial?',
@@ -21409,9 +21451,9 @@ export const DICTIONARY: Dictionary = {
     es: '¿Necesito una tarjeta de crédito para empezar la prueba de 7 días?',
   },
   'pricing.faq.a2': {
-    en: 'No. Creating an account starts your 7-day free trial with no payment details taken. If you later begin a paid plan at checkout, that plan starts with 7 free days with your card on file - cancel before day 7 and you will not be charged; otherwise it converts automatically.',
-    ar: 'لا. لما تسوي حساب تبدأ تجربتك المجانية ٧ أيام بدون أي بيانات دفع. وإذا بديت خطة مدفوعة من صفحة الدفع بعدين، الخطة تبدأ بـ ٧ أيام مجانية مع كارتك المحفوظ - ألغِ قبل اليوم السابع وما رح تتحاسب؛ وإلا تنتقل تلقائياً.',
-    es: 'No. Al crear una cuenta empieza tu prueba gratuita de 7 días sin datos de pago. Si más tarde inicias un plan de pago en el checkout, ese plan comienza con 7 días gratuitos con tu tarjeta registrada - cancela antes del día 7 y no se te cobrará; de lo contrario se convierte automáticamente.',
+    en: 'No. Creating an account starts your 7-day free trial with no payment details taken. If you later begin a paid plan at checkout, that plan starts with 7 free days with your card on file - cancel before day 7 and you will not be charged; otherwise it converts automatically. The exception is an annual plan bought with a discount code, which is charged at once, with no free days.',
+    ar: 'لا. لما تسوي حساب تبدأ تجربتك المجانية ٧ أيام بدون أي بيانات دفع. وإذا بديت خطة مدفوعة من صفحة الدفع بعدين، الخطة تبدأ بـ ٧ أيام مجانية مع كارتك المحفوظ - ألغِ قبل اليوم السابع وما رح تتحاسب؛ وإلا تنتقل تلقائياً. الاستثناء هو الخطة السنوية اللي تشتريها بكود خصم، هذي تنخصم على طول بدون أيام مجانية.',
+    es: 'No. Al crear una cuenta empieza tu prueba gratuita de 7 días sin datos de pago. Si más tarde inicias un plan de pago en el checkout, ese plan comienza con 7 días gratuitos con tu tarjeta registrada - cancela antes del día 7 y no se te cobrará; de lo contrario se convierte automáticamente. La excepción es un plan anual comprado con un código de descuento, que se cobra en el momento, sin días gratis.',
   },
   'pricing.faq.q3': {
     en: 'What does the Student plan cost?',
