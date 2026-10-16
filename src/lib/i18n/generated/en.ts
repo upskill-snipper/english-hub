@@ -4823,7 +4823,7 @@ export const EN_MESSAGES: Record<string, string> = {
     'Yes. With a school license, teachers can assign specific practice questions, revision topics, or mock exams to individual students or entire classes, with due dates and progress tracking.',
   'help.pa.q1.q': "How can I track my child's progress?",
   'help.pa.q1.a':
-    "Parents can link to their child's account to receive weekly progress reports via email. These reports cover time spent studying, topics completed, mock exam grades, and areas that need attention. Visit our For Parents page to learn more.",
+    "Parents can link to their child's account and manage consent preferences from the parent dashboard, which shows the linked account. Weekly progress summaries are still being finalised, so none are sent yet. Visit our For Parents page to learn more.",
   'help.pa.q2.q': 'Is the content safe and appropriate?',
   'help.pa.q2.a':
     'All content on The English Hub is educational and aligned with the national curriculum. Set texts are those prescribed by exam boards. Our platform contains no advertising, social features, or inappropriate content.',

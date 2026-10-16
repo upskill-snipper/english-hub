@@ -4947,7 +4947,7 @@ export const ES_MESSAGES: Record<string, string> = {
     'Sí. Con una licencia de colegio, los profesores pueden asignar preguntas de práctica, temas de repaso o exámenes de prueba concretos a estudiantes individuales o a clases enteras, con fechas de entrega y seguimiento del progreso.',
   'help.pa.q1.q': '¿Cómo puedo hacer seguimiento del progreso de mi hijo?',
   'help.pa.q1.a':
-    'Los padres pueden vincularse a la cuenta de su hijo para recibir informes de progreso semanales por correo. Estos informes cubren el tiempo dedicado a estudiar, los temas completados, las notas de los exámenes de prueba y las áreas que necesitan atención. Visita nuestra página For Parents para más información.',
+    'Los padres pueden vincularse a la cuenta de su hijo y gestionar las preferencias de consentimiento desde el panel para padres, que muestra la cuenta vinculada. Los resúmenes semanales de progreso se están finalizando, así que todavía no se envía ninguno. Visita nuestra página For Parents para más información.',
   'help.pa.q2.q': '¿Es el contenido seguro y apropiado?',
   'help.pa.q2.a':
     'Todo el contenido de The English Hub es educativo y está alineado con el currículo nacional. Los textos fijados son los prescritos por las juntas examinadoras. Nuestra plataforma no contiene publicidad, funciones sociales ni contenido inapropiado.',

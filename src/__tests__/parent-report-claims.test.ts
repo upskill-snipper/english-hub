@@ -2,6 +2,8 @@ import { describe, it, expect } from 'vitest'
 import { readFileSync } from 'node:fs'
 import { join } from 'node:path'
 
+import { EN_MESSAGES } from '@/lib/i18n/generated/en'
+
 /**
  * Public copy must not promise parents an email the product does not send.
  *
@@ -19,6 +21,12 @@ import { join } from 'node:path'
  * the code: while the kill switch is in place, no public page may say a
  * parent receives one. When the feature genuinely ships, the switch goes and
  * this test stops asking.
+ *
+ * 16 October 2026: the test read only the two files below, so /help, whose
+ * parents' answer (help.pa.q1.a) comes from the i18n dictionary, kept
+ * telling parents they would get weekly progress reports by email while this
+ * test passed. It now also checks every string in the resolved English
+ * message map, which is what every page renders.
  */
 
 function read(relative: string): string {
@@ -54,6 +62,15 @@ describe('weekly parent report claims', () => {
       }
     })
   }
+
+  it('no translated string on any page promises a weekly report while none is sent', () => {
+    if (!sendsAreOff) return
+    for (const [key, text] of Object.entries(EN_MESSAGES)) {
+      for (const promise of PROMISES) {
+        expect(text, `${key} matches ${promise}`).not.toMatch(promise)
+      }
+    }
+  })
 
   it('the FAQ says plainly that weekly summaries are not sent yet', () => {
     if (!sendsAreOff) return

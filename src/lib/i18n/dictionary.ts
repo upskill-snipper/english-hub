@@ -16192,9 +16192,14 @@ export const DICTIONARY: Dictionary = {
     es: '¿Cómo puedo hacer seguimiento del progreso de mi hijo?',
   },
   'help.pa.q1.a': {
-    en: "Parents can link to their child's account to receive weekly progress reports via email. These reports cover time spent studying, topics completed, mock exam grades, and areas that need attention. Visit our For Parents page to learn more.",
-    ar: 'أولياء الأمور يقدرون يربطون حسابهم بحساب ولدهم عشان يستلمون تقارير تقدم أسبوعية بالإيميل. التقارير تغطي الوقت المستثمر في الدراسة، المواضيع المنجزة، درجات الامتحانات التجريبية، والنقاط اللي تحتاج اهتمام. شوف صفحة For Parents لمزيد من المعلومات.',
-    es: 'Los padres pueden vincularse a la cuenta de su hijo para recibir informes de progreso semanales por correo. Estos informes cubren el tiempo dedicado a estudiar, los temas completados, las notas de los exámenes de prueba y las áreas que necesitan atención. Visita nuestra página For Parents para más información.',
+    // 16 October 2026: promised parents weekly progress reports by email,
+    // covering study time, topics, mock grades and areas needing attention.
+    // None is sent: the weekly-parent-reports cron stays off behind
+    // WEEKLY_PARENT_REPORTS_ENABLED (parent-report-claims.test.ts). The same
+    // correction as faqs.pr5.a.
+    en: "Parents can link to their child's account and manage consent preferences from the parent dashboard, which shows the linked account. Weekly progress summaries are still being finalised, so none are sent yet. Visit our For Parents page to learn more.",
+    ar: 'أولياء الأمور يقدرون يربطون حسابهم بحساب ولدهم ويديرون تفضيلات الموافقات من لوحة ولي الأمر، اللي تعرض الحساب المربوط. الملخصات الأسبوعية للتقدّم قيد الإعداد، فما تُرسل حالياً. شوف صفحة For Parents لمزيد من المعلومات.',
+    es: 'Los padres pueden vincularse a la cuenta de su hijo y gestionar las preferencias de consentimiento desde el panel para padres, que muestra la cuenta vinculada. Los resúmenes semanales de progreso se están finalizando, así que todavía no se envía ninguno. Visita nuestra página For Parents para más información.',
   },
   'help.pa.q2.q': {
     en: 'Is the content safe and appropriate?',

@@ -313,13 +313,23 @@ describe('/faqs makes no promise the code does not keep', () => {
   })
 
   it('promises parents no weekly report that is never sent', async () => {
-    for (const key of ['faqs.g2.a', 'faqs.pr3.a', 'faqs.pr5.a']) {
+    for (const key of ['faqs.g2.a', 'faqs.pr3.a', 'faqs.pr5.a', 'help.pa.q1.a']) {
       const en = lookup(key, 'en')
       const promises = /weekly progress reports/i.test(en) && !/not sent|finalised/i.test(en)
       expect(promises, key).toBe(false)
     }
     for (const text of await answers()) {
       expect(/for weekly progress reports/i.test(text), text.slice(0, 60)).toBe(false)
+    }
+  })
+
+  it('/help tells parents, in every language, that no weekly summary is sent yet', () => {
+    const copy = inEveryLocale('help.pa.q1.a')
+    expect(copy.en).toMatch(/none are sent yet/)
+    expect(copy.es).toMatch(/todavía no se envía ninguno/)
+    expect(copy.ar).toMatch(/ما تُرسل حالياً/)
+    for (const locale of LOCALES) {
+      expect(copy[locale], locale).not.toMatch(/via email|por correo|بالإيميل/i)
     }
   })
 })
