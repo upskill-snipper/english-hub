@@ -693,3 +693,35 @@ describe('every text drawn as a comic shows its extracts on its guide page', () 
     }
   })
 })
+
+// ─── F23: Animal Farm is in the UK public domain ────────────────────────────
+
+describe('no page calls Animal Farm restricted', () => {
+  // Calum ruled on 26 September 2026 that the site works to UK law only.
+  // Orwell died in 1950; UK copyright ended on 31 December 2020.
+  const RESTRICTED =
+    /estate-enforced|estate-licensed|UK rights still active|Estate of George Orwell|actively manages educational use|Animal Farm[^.]{0,60}restricted|restricted \(Orwell estate\)/i
+
+  it.each([
+    'src/app/revision/common-errors/page.tsx',
+    'src/app/resources/authors/page.tsx',
+    'src/app/resources/revision-notes/animal-farm/page.tsx',
+    'src/app/resources/english-literature/edexcel/animal-farm/page.tsx',
+  ])('%s', (rel) => {
+    expect(code(rel)).not.toMatch(RESTRICTED)
+  })
+
+  it.each([
+    'rev.texts.af.extract.rights_notice',
+    'rev.texts.af.rights_notice',
+    'rev.texts.af.rights_notice_short',
+  ])('%s says public domain and nothing of the estate or the US', (key) => {
+    const copy = inEveryLocale(key)
+    expect(copy.en).toMatch(/public domain in the UK since 1 January 2021/)
+    for (const locale of LOCALES) {
+      expect(copy[locale], `${key}/${locale}`).not.toMatch(
+        /AM Heath|2041|United States|Estados Unidos/,
+      )
+    }
+  })
+})

@@ -286,7 +286,7 @@ const keyQuotes = [
     chapter: 'Chapter 1',
     speaker: 'Old Major',
     analysis:
-      "Old Major's Marxist analysis of exploitation, paraphrased here from his opening speech (Ch. 1): he lists the ways in which Man takes from the animals without contributing - no milk, no eggs, no labour, no hunting - yet rules them all. The listing creates a logical argument for revolution. The irony is that by Chapter 10, the pigs consume without producing, exactly replicating the human behaviour Old Major condemned. Orwell shows how revolutionary rhetoric can be used to replace one exploitative class with another. (Teacher note: Source: Orwell, *Animal Farm* (1945) - quoted under estate-licensed extracts. For longer extracts, students should refer to a licensed school edition.)",
+      "Old Major's Marxist analysis of exploitation, paraphrased here from his opening speech (Ch. 1): he lists the ways in which Man takes from the animals without contributing - no milk, no eggs, no labour, no hunting - yet rules them all. The listing creates a logical argument for revolution. The irony is that by Chapter 10, the pigs consume without producing, exactly replicating the human behaviour Old Major condemned. Orwell shows how revolutionary rhetoric can be used to replace one exploitative class with another. (Teacher note: Source: Orwell, *Animal Farm* (1945), in the UK public domain since 2021.)",
   },
   {
     quote: 'Surely, comrades, you do not want Jones back?',
@@ -300,7 +300,7 @@ const keyQuotes = [
     chapter: 'Chapter 2',
     speaker: 'The Seventh Commandment',
     analysis:
-      "The foundation of Animalism, painted on the barn wall. The full set of Seven Commandments (paraphrased): the animals declare humans an enemy, four-legged or winged creatures friends, and forbid clothes, beds, alcohol, killing of fellow animals, and inequality between animals. Each commandment is systematically violated and altered by the pigs. The commandments' simplicity makes their corruption all the more visible. Orwell uses them as a measure of the revolution's decay: each alteration marks a further betrayal of the original ideals. (Teacher note: Source: Orwell, *Animal Farm* (1945) - quoted under estate-licensed extracts. For longer extracts, students should refer to a licensed school edition.)",
+      "The foundation of Animalism, painted on the barn wall. The full set of Seven Commandments (paraphrased): the animals declare humans an enemy, four-legged or winged creatures friends, and forbid clothes, beds, alcohol, killing of fellow animals, and inequality between animals. Each commandment is systematically violated and altered by the pigs. The commandments' simplicity makes their corruption all the more visible. Orwell uses them as a measure of the revolution's decay: each alteration marks a further betrayal of the original ideals. (Teacher note: Source: Orwell, *Animal Farm* (1945), in the UK public domain since 2021.)",
   },
   {
     quote: 'All that year the animals worked like slaves.',
@@ -341,7 +341,7 @@ const keyQuotes = [
     chapter: 'Chapter 7',
     speaker: "Narrator, describing Clover's thoughts",
     analysis:
-      "Clover's reflection after the show trials is the novel's most poignant expression of betrayed idealism. Orwell paraphrases her dim, half-remembered hopes for the revolution: a world without hunger or violence in which each animal works according to its capacity and the strong protect the weak. The description of her original vision echoes Marxist principles ('each working according to his capacity'). The gap between this gentle vision and the reality of executions and terror measures the full extent of the revolution's corruption. (Teacher note: Source: Orwell, *Animal Farm* (1945) - quoted under estate-licensed extracts. For longer extracts, students should refer to a licensed school edition.)",
+      "Clover's reflection after the show trials is the novel's most poignant expression of betrayed idealism. Orwell paraphrases her dim, half-remembered hopes for the revolution: a world without hunger or violence in which each animal works according to its capacity and the strong protect the weak. The description of her original vision echoes Marxist principles ('each working according to his capacity'). The gap between this gentle vision and the reality of executions and terror measures the full extent of the revolution's corruption. (Teacher note: Source: Orwell, *Animal Farm* (1945), in the UK public domain since 2021.)",
   },
   {
     quote: 'No animal shall kill any other animal WITHOUT CAUSE.',
@@ -386,7 +386,7 @@ const keyQuotes = [
     chapter: 'Chapter 7',
     speaker: "Narrator, describing Clover's thoughts",
     analysis:
-      "Orwell's narrator, giving Clover's thoughts (Ch. 7), describes the conditions of terror under Napoleon's rule: animals afraid to speak, growling dogs patrolling, and public executions of confessed 'traitors'. The tricolon (silence, surveillance, public execution) mirrors the mechanisms of Stalinist repression. The narrator's detached register conveys the animals' helplessness, and the staged confessions echo the Soviet show trials of the 1930s. (Teacher note: Source: Orwell, *Animal Farm* (1945) - quoted under estate-licensed extracts. For longer extracts, students should refer to a licensed school edition.)",
+      "Orwell's narrator, giving Clover's thoughts (Ch. 7), describes the conditions of terror under Napoleon's rule: animals afraid to speak, growling dogs patrolling, and public executions of confessed 'traitors'. The tricolon (silence, surveillance, public execution) mirrors the mechanisms of Stalinist repression. The narrator's detached register conveys the animals' helplessness, and the staged confessions echo the Soviet show trials of the 1930s. (Teacher note: Source: Orwell, *Animal Farm* (1945), in the UK public domain since 2021.)",
   },
   {
     quote: 'Twelve voices were shouting in anger, and they were all alike.',
@@ -948,14 +948,16 @@ export default function AnimalFarmStudyGuide() {
         </Link>
       </div>
 
-      {/* Rights / fair-dealing notice */}
+      {/* Rights notice. Until 16 October 2026 it treated the novella as the
+          Orwell estate's to license ("© The Estate of George Orwell"). Under
+          UK law, which this site follows (Calum, 26 September 2026), it has
+          been in the public domain since 1 January 2021. */}
       <footer className="mt-8 border-t border-border pt-4 text-xs text-muted-foreground">
         <p className="mx-auto max-w-3xl">
-          <strong>Rights notice:</strong> While <em>Animal Farm</em> entered UK public domain in
-          2021, the Orwell estate (AM Heath) actively manages educational use. Quotations on this
-          page are short fair-dealing extracts; longer engagement should use a school-licensed
-          edition. <em>Animal Farm</em> &copy; The Estate of George Orwell. Short quotations are
-          used for criticism and review under fair dealing (CDPA&nbsp;1988, s.30).
+          <strong>Rights notice:</strong> George Orwell died in 1950, so <em>Animal Farm</em> has
+          been in the public domain in the UK since 1 January 2021, and this site works to UK law.
+          Quotations follow the text the site&apos;s reader prints; a printed edition may differ in
+          punctuation.
         </p>
       </footer>
     </div>

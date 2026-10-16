@@ -18804,7 +18804,7 @@ export const AR_MESSAGES: Record<string, string> = {
   'rev.texts.af.extract.zoom_helper': 'تراجع خطوة للسياق والرمزية والأطروحة الأوسع.',
   'rev.texts.af.extract.model_para_h': 'الفقرة النموذجية (~250 كلمة)',
   'rev.texts.af.extract.rights_notice':
-    'إشعار حقوق: Animal Farm دخلت الملكية العامة في UK في 2021 (بعد 70 سنة من وفاة Orwell في 1950) لكنها لا تزال محفوظة الحقوق في United States حتى 2041. وبما إن The English Hub يخدم طلاباً دوليين، المقتطف فوق مُعاد إنتاجه كاقتباس قصير ضمن الاستخدام العادل بموجب Copyright, Designs and Patents Act 1988 (s.30) لغرض النقد والمراجعة والدراسة التعليمية. Animal Farm تأليف George Orwell صادرة عن Penguin Books؛ the Orwell estate يديره AM Heath. على الطلاب خارج UK الرجوع لطبعة مرخّصة للمدارس.',
+    'إشعار حقوق: George Orwell توفّى في 1950، فـ Animal Farm صارت ملكية عامة في UK من 1 يناير 2021، وهذا الموقع يشتغل حسب قانون UK. الاقتباسات تتبع النص اللي يطبعه قارئ الموقع، نسخة Project Gutenberg Australia؛ والطبعة المطبوعة، مثل طبعة Penguin، ممكن تختلف في علامات الترقيم.',
   'rev.texts.af.essays.intro':
     'خمس خطط مقالات منظّمة تغطّي أكثر أسئلة امتحان GCSE شيوعاً عن Animal Farm. كل خطة تشمل صياغة أطروحة، وإرشاد على مستوى الفقرة بالدليل والتحليل، وخاتمة، ونصيحة للامتحان.',
   'rev.texts.af.characters.intro':
@@ -18812,9 +18812,9 @@ export const AR_MESSAGES: Record<string, string> = {
   'rev.texts.af.chapters.intro':
     'كل الـ 10 فصول محلّلة مع الأحداث المفتاحية وتطوّر الشخصيات والتوازيات الرمزية والاقتباسات القصيرة. استخدمها كرفيق مراجعة مفصّل جنب نسختك المشروحة.',
   'rev.texts.af.rights_notice':
-    'إشعار حقوق: مع إن Animal Farm دخلت الملكية العامة في UK في 2021، إلا إن the Orwell estate (AM Heath) يدير الاستخدام التعليمي بفاعلية. الاقتباسات في هذي الصفحة مقتطفات قصيرة ضمن الاستخدام العادل؛ التعامل الأطول لازم يستخدم طبعة مرخّصة للمدارس. اقتباسات قصيرة (كل واحد أقل من 15 كلمة) منسوخة بموجب بند الاستخدام العادل من Copyright, Designs and Patents Act 1988 (s.30) لغرض النقد والمراجعة والدراسة التعليمية. Animal Farm تأليف George Orwell صادرة عن Penguin Books. النص الكامل متوفر من مدرستك أو مكتبتك المحلية.',
+    'إشعار حقوق: George Orwell توفّى في 1950، فـ Animal Farm صارت ملكية عامة في UK من 1 يناير 2021، وهذا الموقع يشتغل حسب قانون UK. الاقتباسات تتبع النص اللي يطبعه قارئ الموقع، نسخة Project Gutenberg Australia؛ والطبعة المطبوعة، مثل طبعة Penguin، ممكن تختلف في علامات الترقيم.',
   'rev.texts.af.rights_notice_short':
-    'إشعار حقوق: مع إن Animal Farm دخلت الملكية العامة في UK في 2021، إلا إن the Orwell estate (AM Heath) يدير الاستخدام التعليمي بفاعلية. الاقتباسات في هذي الصفحة مقتطفات قصيرة ضمن الاستخدام العادل؛ التعامل الأطول لازم يستخدم طبعة مرخّصة للمدارس. اقتباسات قصيرة منسوخة بموجب بند الاستخدام العادل من Copyright, Designs and Patents Act 1988 (s.30) للنقد والمراجعة. النص الكامل متوفر من مدرستك أو مكتبتك المحلية.',
+    'إشعار حقوق: George Orwell توفّى في 1950، فـ Animal Farm صارت ملكية عامة في UK من 1 يناير 2021. الاقتباسات تتبع النص اللي يطبعه قارئ الموقع.',
   'rev.texts.common.context_link': 'رابط السياق',
   'rev.texts.common.exam_tip_sc': 'نصيحة للامتحان',
   'rev.texts.common.character_study': 'دراسة الشخصيات',

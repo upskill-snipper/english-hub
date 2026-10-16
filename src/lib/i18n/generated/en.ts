@@ -19314,7 +19314,7 @@ export const EN_MESSAGES: Record<string, string> = {
   'rev.texts.af.extract.zoom_helper': 'Step back to context, allegory and the broader thesis.',
   'rev.texts.af.extract.model_para_h': 'Model Paragraph (~250 words)',
   'rev.texts.af.extract.rights_notice':
-    'Rights notice: Animal Farm entered the UK public domain in 2021 (70 years after Orwell’s death in 1950) but remains in copyright in the United States until 2041. As The English Hub serves international students, the extract above is reproduced as a short fair-dealing quotation under the Copyright, Designs and Patents Act 1988 (s.30) for the purpose of criticism, review and educational study. Animal Farm by George Orwell is published by Penguin Books; the Orwell estate is administered by AM Heath. Students outside the UK should consult a school-licensed edition.',
+    'Rights notice: George Orwell died in 1950, so Animal Farm has been in the public domain in the UK since 1 January 2021, and this site works to UK law. Quotations follow the text the site’s reader prints, Project Gutenberg Australia’s transcription; a printed edition, such as Penguin’s, may differ in punctuation.',
   'rev.texts.af.essays.intro':
     'Five structured essay plans covering the most common GCSE exam questions on Animal Farm. Each plan includes a thesis statement, paragraph-level guidance with evidence and analysis, a conclusion and an exam tip.',
   'rev.texts.af.characters.intro':
@@ -19322,9 +19322,9 @@ export const EN_MESSAGES: Record<string, string> = {
   'rev.texts.af.chapters.intro':
     'All 10 chapters analysed with key events, character development, allegorical parallels and short quotations. Use this as a detailed revision companion alongside your own annotated copy.',
   'rev.texts.af.rights_notice':
-    'Rights notice: While Animal Farm entered UK public domain in 2021, the Orwell estate (AM Heath) actively manages educational use. Quotations on this page are short fair-dealing extracts; longer engagement should use a school-licensed edition. Short quotations (each under 15 words) reproduced under the fair dealing provision of the Copyright, Designs and Patents Act 1988 (s.30) for the purpose of criticism, review and educational study. Animal Farm by George Orwell is published by Penguin Books. Full text available from your school or local library.',
+    'Rights notice: George Orwell died in 1950, so Animal Farm has been in the public domain in the UK since 1 January 2021, and this site works to UK law. Quotations follow the text the site’s reader prints, Project Gutenberg Australia’s transcription; a printed edition, such as Penguin’s, may differ in punctuation.',
   'rev.texts.af.rights_notice_short':
-    'Rights notice: While Animal Farm entered UK public domain in 2021, the Orwell estate (AM Heath) actively manages educational use. Quotations on this page are short fair-dealing extracts; longer engagement should use a school-licensed edition. Short quotations reproduced under the fair dealing provision of the Copyright, Designs and Patents Act 1988 (s.30) for criticism and review. Full text available from your school or local library.',
+    'Rights notice: George Orwell died in 1950, so Animal Farm has been in the public domain in the UK since 1 January 2021. Quotations follow the text the site’s reader prints.',
   'rev.texts.common.context_link': 'Context link',
   'rev.texts.common.exam_tip_sc': 'Exam tip',
   'rev.texts.common.character_study': 'Character Study',

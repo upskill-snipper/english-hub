@@ -19817,7 +19817,7 @@ export const ES_MESSAGES: Record<string, string> = {
     'Da un paso atrás hacia el contexto, la alegoría y la tesis más amplia.',
   'rev.texts.af.extract.model_para_h': 'Párrafo modelo (~250 palabras)',
   'rev.texts.af.extract.rights_notice':
-    'Aviso de derechos: Animal Farm entró en el dominio público del Reino Unido en 2021 (70 años después de la muerte de Orwell en 1950), pero sigue protegida por derechos de autor en los Estados Unidos hasta 2041. Como The English Hub atiende a estudiantes internacionales, el extracto anterior se reproduce como una cita breve de uso legítimo conforme a la Copyright, Designs and Patents Act 1988 (s.30) con fines de crítica, reseña y estudio educativo. Animal Farm de George Orwell está publicada por Penguin Books; el patrimonio de Orwell lo administra AM Heath. Los estudiantes fuera del Reino Unido deben consultar una edición con licencia escolar.',
+    'Aviso de derechos: George Orwell murió en 1950, así que Animal Farm es de dominio público en el Reino Unido desde el 1 de enero de 2021, y esta web se rige por la ley del Reino Unido. Las citas siguen el texto que imprime el lector de la web, la transcripción de Project Gutenberg Australia; una edición impresa, como la de Penguin, puede diferir en la puntuación.',
   'rev.texts.af.essays.intro':
     'Cinco planes de ensayo estructurados que cubren las preguntas de examen GCSE más comunes sobre Animal Farm. Cada plan incluye una declaración de tesis, orientación a nivel de párrafo con evidencia y análisis, una conclusión y un consejo de examen.',
   'rev.texts.af.characters.intro':
@@ -19825,9 +19825,9 @@ export const ES_MESSAGES: Record<string, string> = {
   'rev.texts.af.chapters.intro':
     'Los 10 capítulos analizados con eventos clave, desarrollo de personajes, paralelismos alegóricos y citas breves. Úsalo como compañero de repaso detallado junto a tu propia copia anotada.',
   'rev.texts.af.rights_notice':
-    'Aviso de derechos: Aunque Animal Farm entró en el dominio público del Reino Unido en 2021, el patrimonio de Orwell (AM Heath) gestiona activamente el uso educativo. Las citas de esta página son extractos breves de uso legítimo; para un uso más extenso conviene una edición con licencia escolar. Citas breves (cada una de menos de 15 palabras) reproducidas conforme a la disposición de uso legítimo de la Copyright, Designs and Patents Act 1988 (s.30) con fines de crítica, reseña y estudio educativo. Animal Farm de George Orwell está publicada por Penguin Books. Texto completo disponible en tu colegio o biblioteca local.',
+    'Aviso de derechos: George Orwell murió en 1950, así que Animal Farm es de dominio público en el Reino Unido desde el 1 de enero de 2021, y esta web se rige por la ley del Reino Unido. Las citas siguen el texto que imprime el lector de la web, la transcripción de Project Gutenberg Australia; una edición impresa, como la de Penguin, puede diferir en la puntuación.',
   'rev.texts.af.rights_notice_short':
-    'Aviso de derechos: Aunque Animal Farm entró en el dominio público del Reino Unido en 2021, el patrimonio de Orwell (AM Heath) gestiona activamente el uso educativo. Las citas de esta página son extractos breves de uso legítimo; para un uso más extenso conviene una edición con licencia escolar. Citas breves reproducidas conforme a la disposición de uso legítimo de la Copyright, Designs and Patents Act 1988 (s.30) para crítica y reseña. Texto completo disponible en tu colegio o biblioteca local.',
+    'Aviso de derechos: George Orwell murió en 1950, así que Animal Farm es de dominio público en el Reino Unido desde el 1 de enero de 2021. Las citas siguen el texto que imprime el lector de la web.',
   'rev.texts.common.context_link': 'Vínculo de contexto',
   'rev.texts.common.exam_tip_sc': 'Consejo de examen',
   'rev.texts.common.character_study': 'Estudio de personajes',

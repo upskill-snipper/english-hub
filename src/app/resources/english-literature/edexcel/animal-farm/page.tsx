@@ -858,13 +858,12 @@ export default function AnimalFarmPage() {
 
       <ExamBoardDisclaimer variant="content" className="mx-auto max-w-5xl px-4 py-8" />
 
-      {/* Rights / fair-dealing notice */}
+      {/* Rights notice, corrected 16 October 2026: it treated the novella as
+          the Orwell estate's to license. Under UK law, which this site
+          follows, it has been in the public domain since 1 January 2021. */}
       <p className="mx-auto max-w-5xl px-4 pb-8 text-xs text-muted-foreground">
-        <strong>Rights notice:</strong> While <em>Animal Farm</em> entered UK public domain in 2021,
-        the Orwell estate (AM Heath) actively manages educational use. Quotations on this page are
-        short fair-dealing extracts; longer engagement should use a school-licensed edition. Short
-        quotations reproduced under the fair dealing provision of the Copyright, Designs and Patents
-        Act 1988 (s.30) for the purpose of criticism, review and educational study.{' '}
+        <strong>Rights notice:</strong> George Orwell died in 1950, so <em>Animal Farm</em> has been
+        in the public domain in the UK since 1 January 2021, and this site works to UK law.{' '}
         <em>Animal Farm</em> by George Orwell is published by Penguin Books. Quotations follow the
         wording of the text the site&apos;s reader prints, Project Gutenberg Australia&apos;s
         transcription; a printed edition may differ in punctuation.

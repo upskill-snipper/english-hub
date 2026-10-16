@@ -117,8 +117,10 @@ const NOVELISTS_DRAMATISTS: AuthorEntry[] = [
       'Animal Farm (1945) - Edexcel Lit (modern prose option)',
       'Nineteen Eighty-Four (1949) - wider reading',
     ],
+    // Corrected 16 October 2026: said "estate-enforced; UK rights still
+    // active". Orwell died in 1950; UK copyright ended on 31 December 2020.
     examNote:
-      'Animal Farm is estate-enforced; UK rights still active. Use short fair-dealing extracts only.',
+      'Animal Farm has been in the UK public domain since 1 January 2021 (Orwell died in 1950).',
   },
 ]
 
@@ -423,8 +425,10 @@ const TWENTIETH_CENTURY_POETS: AuthorEntry[] = [
       'Refugee Boy (2001) - wider reading',
       "Young and dyslexic? You've got it going on - Edexcel IGCSE Language anthology",
     ],
+    // Corrected 16 October 2026, as common-errors entry 26 was on 26
+    // September: the anthology's acknowledgements name no estate.
     examNote:
-      "Rights to Zephaniah's work are now held by his estate via Pearson Education. Use short fair-dealing extracts only.",
+      'The Edexcel IGCSE anthology prints his poem by permission of Jessica Kingsley Publishers. His work is in copyright: quote only short extracts.',
   },
   {
     name: 'Jane Weir',
@@ -467,7 +471,7 @@ const NON_FICTION_AUTHORS: AuthorEntry[] = [
       'A Passage to Africa (2001) - memoir extracted in the Edexcel IGCSE Language anthology',
     ],
     examNote:
-      "Rights to Alagiah's work are now held by his estate via Pearson Education. Quote only short fair-dealing extracts.",
+      'The Edexcel IGCSE anthology prints his memoir by permission of Little, Brown Book Group and the author, care of The Hanbury Agency. His work is in copyright: quote only short extracts.',
   },
 ]
 

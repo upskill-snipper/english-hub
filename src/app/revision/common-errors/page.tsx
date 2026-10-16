@@ -339,11 +339,17 @@ const ERROR_GROUPS: ErrorGroup[] = [
       },
       {
         number: 23,
-        text: 'Animal Farm (cross-board, platform rights flag) - restricted (Orwell estate)',
-        wrong: 'Assuming Animal Farm is freely usable because it is UK public domain.',
+        // Until 16 October 2026 this told students to treat Animal Farm as
+        // "restricted (Orwell estate)", with "Assuming Animal Farm is freely
+        // usable because it is UK public domain" as the error. Calum ruled on
+        // 26 September 2026 that the site works to UK law only: Orwell died
+        // in 1950, so UK copyright ended on 31 December 2020, and the novella
+        // is marked public domain in the set-text registry.
+        text: 'Animal Farm (cross-board, platform rights flag) - UK public domain since 2021',
+        wrong: 'Assuming Animal Farm is still in UK copyright.',
         right:
-          'The Orwell estate actively enforces rights despite the UK PD status. Treat as restricted on this platform.',
-        why: "Cross-board platform rights flag - not exam-specific. This affects what we can publish, not what you write. Quote freely in your own exam answer - this flag is for the platform's rights handling.",
+          'George Orwell died in 1950, so UK copyright in Animal Farm ended on 31 December 2020. It has been in the UK public domain since 1 January 2021, and this site works to UK law, so you can read the full text here.',
+        why: 'Cross-board platform rights flag - not exam-specific. It affects what we can publish, not what you write: quote any set text freely in your own exam answer.',
       },
       {
         number: 24,
