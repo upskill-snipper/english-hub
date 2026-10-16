@@ -518,3 +518,19 @@ describe('/mock-exams says what a mock paper does', () => {
     for (const f of FAQ_JSON_LD_DATA) expect(f.answer).not.toMatch(AI_TRAINED)
   })
 })
+
+// ─── E17: who can see a pupil's game results ────────────────────────────────
+
+describe('/games/texts says who can see a pupil’s game results', () => {
+  it('no longer tells a pupil nobody else can see them, and names the teacher', () => {
+    // Since 747b7b7e a class teacher (and the school's heads of department
+    // and administrators) can see a pupil's game results from the day the
+    // pupil joined the class.
+    const copy = inEveryLocale('text_games.privacy')
+    expect(copy.en).not.toMatch(/nobody else/i)
+    expect(copy.es).not.toMatch(/nadie más/i)
+    expect(copy.ar).not.toMatch(/محد غيرك/)
+    expect(copy.en).toMatch(/your teacher/)
+    expect(copy.en).toMatch(/nothing is sent to us/)
+  })
+})

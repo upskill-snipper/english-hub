@@ -20316,7 +20316,7 @@ export const EN_MESSAGES: Record<string, string> = {
   'text_games.index.comics': 'Comic art',
   'text_games.index.play': 'Play',
   'text_games.privacy':
-    'Signed in, your answers are saved to your account so you can see your progress in your hub. Not signed in, your scores stay in this browser and nothing is sent to us. Nobody else can see them.',
+    "Signed in, your answers are saved to your account so you can see your progress in your hub. If you are in a class on the site through your school, your teacher, and your school's heads of department and administrators, can see your game results from the day you joined the class. Not signed in, your scores stay in this browser and nothing is sent to us.",
   'text_games.page.eyebrow': 'Text game',
   'text_games.page.by': 'by {author}',
   'text_games.page.guide_link': 'Open the study guide',

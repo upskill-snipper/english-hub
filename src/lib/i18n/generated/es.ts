@@ -20825,7 +20825,7 @@ export const ES_MESSAGES: Record<string, string> = {
   'text_games.index.comics': 'Con ilustraciones',
   'text_games.index.play': 'Jugar',
   'text_games.privacy':
-    'Con la sesión iniciada, tus respuestas se guardan en tu cuenta para que veas tu progreso en tu Hub. Sin iniciar sesión, tus puntuaciones se quedan en este navegador y no se nos envía nada. Nadie más puede verlas.',
+    'Con la sesión iniciada, tus respuestas se guardan en tu cuenta para que veas tu progreso en tu Hub. Si estás en una clase de la web a través de tu colegio, tu profesor y los jefes de departamento y administradores de tu colegio pueden ver los resultados de tus juegos desde el día en que te uniste a la clase. Sin iniciar sesión, tus puntuaciones se quedan en este navegador y no se nos envía nada.',
   'text_games.page.eyebrow': 'Juego del texto',
   'text_games.page.by': 'de {author}',
   'text_games.page.guide_link': 'Abrir la guía de estudio',

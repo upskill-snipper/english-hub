@@ -42,10 +42,16 @@ export const TEXT_GAMES_DICTIONARY: Record<string, { en: string; ar?: string; es
   // students' accounts (document 16, decision A). This line said "Nothing is
   // sent to us" for everyone; it is still true for a guest, and only for one.
   // src/components/games/game-round.tsx sends nothing unless signed in.
+  //
+  // 16 October 2026: it also ended "Nobody else can see them". Since 747b7b7e
+  // the teacher of a pupil's class on the site, and the school's heads of
+  // department and administrators, can see that pupil's game results from the
+  // day the pupil joined the class (/api/school/classes/[classId]/games and
+  // /api/school/students/[studentId]/games).
   'text_games.privacy': {
-    en: 'Signed in, your answers are saved to your account so you can see your progress in your hub. Not signed in, your scores stay in this browser and nothing is sent to us. Nobody else can see them.',
-    ar: 'إذا انت مسجّل دخول، إجاباتك تنحفظ في حسابك عشان تشوف تقدّمك في الـ Hub مالك. وإذا مو مسجّل دخول، نتايجك تبقى في هالمتصفح وما يوصلنا شي. ومحد غيرك يقدر يشوفها.',
-    es: 'Con la sesión iniciada, tus respuestas se guardan en tu cuenta para que veas tu progreso en tu Hub. Sin iniciar sesión, tus puntuaciones se quedan en este navegador y no se nos envía nada. Nadie más puede verlas.',
+    en: "Signed in, your answers are saved to your account so you can see your progress in your hub. If you are in a class on the site through your school, your teacher, and your school's heads of department and administrators, can see your game results from the day you joined the class. Not signed in, your scores stay in this browser and nothing is sent to us.",
+    ar: 'إذا انت مسجّل دخول، إجاباتك تنحفظ في حسابك عشان تشوف تقدّمك في الـ Hub مالك. وإذا انت في صف على الموقع عن طريق مدرستك، معلمك ورؤساء الأقسام والإداريين في مدرستك يقدرون يشوفون نتايج ألعابك من يوم انضمامك للصف. وإذا مو مسجّل دخول، نتايجك تبقى في هالمتصفح وما يوصلنا شي.',
+    es: 'Con la sesión iniciada, tus respuestas se guardan en tu cuenta para que veas tu progreso en tu Hub. Si estás en una clase de la web a través de tu colegio, tu profesor y los jefes de departamento y administradores de tu colegio pueden ver los resultados de tus juegos desde el día en que te uniste a la clase. Sin iniciar sesión, tus puntuaciones se quedan en este navegador y no se nos envía nada.',
   },
 
   // ── One text's page: /games/texts/<slug> ────────────────────────────────
