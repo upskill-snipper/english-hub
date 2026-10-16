@@ -2,315 +2,21 @@
 
 import { useState, useCallback, useMemo } from 'react'
 import Link from 'next/link'
-import { ArrowLeft, Sparkles } from 'lucide-react'
+import { ArrowLeft, ArrowRight, Sparkles } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import { cn } from '@/lib/utils'
 import GameShell, { type GameState } from '@/components/games/GameShell'
 import { useBoard } from '@/hooks/useBoard'
 import { getBoardConfig } from '@/lib/board/board-store'
 import { getSetTextsForBoard } from '@/lib/board/set-texts'
+import { AnswerExplanation } from '@/components/games/AnswerExplanation'
+import { useGameRound } from '@/components/games/game-round'
+import { BANK, QUOTE_BANK, ALL_TEXTS } from '@/data/games/banks/quote-detective'
 
-// ─── Quote Bank (30+ quotes from GCSE set texts) ──────────────────────────────
-
-interface QuoteEntry {
-  quote: string
-  text: string
-}
-
-const QUOTE_BANK: QuoteEntry[] = [
-  // Macbeth
-  { quote: 'Is this a dagger which I see before me, the handle toward my hand?', text: 'Macbeth' },
-  { quote: "Out, out, brief candle! Life's but a walking shadow.", text: 'Macbeth' },
-  { quote: "Look like the innocent flower, but be the serpent under't.", text: 'Macbeth' },
-  { quote: "Will all great Neptune's ocean wash this blood clean from my hand?", text: 'Macbeth' },
-  { quote: 'Fair is foul, and foul is fair.', text: 'Macbeth' },
-  // An Inspector Calls
-  {
-    quote: 'We are members of one body. We are responsible for each other.',
-    text: 'An Inspector Calls',
-  },
-  { quote: 'They will be taught it in fire and blood and anguish.', text: 'An Inspector Calls' },
-  { quote: "The young ones. They're more impressionable.", text: 'An Inspector Calls' },
-  { quote: 'We are all responsible for each other.', text: 'An Inspector Calls' },
-  // A Christmas Carol. Corrected 2 October 2026 against the held edition (Project
-  // Gutenberg #46, src/data/full-texts/a-christmas-carol.ts). Scrooge's Stave One
-  // questions are "Are there no prisons?" and "And the Union workhouses?"; "Are
-  // there no workhouses?" is the Spirit's, in Stave Three. The chain speech had
-  // lost its speech tag with no ellipsis, and the edition prints "grind-stone".
-  { quote: 'Are there no prisons? ... And the Union workhouses?', text: 'A Christmas Carol' },
-  {
-    quote: 'I wear the chain I forged in life... I made it link by link',
-    text: 'A Christmas Carol',
-  },
-  {
-    quote: 'Mankind was my business. The common welfare was my business.',
-    text: 'A Christmas Carol',
-  },
-  { quote: 'He was as solitary as an oyster.', text: 'A Christmas Carol' },
-  {
-    quote: 'I will honour Christmas in my heart, and try to keep it all the year.',
-    text: 'A Christmas Carol',
-  },
-  // Jekyll & Hyde
-  // Corrected 2 October 2026 against the held edition (Project Gutenberg #43,
-  // src/data/full-texts/jekyll-and-hyde.ts): Utterson's pun runs across a speech tag,
-  // which the ellipsis marks, and two later Jekyll and Hyde lines had lost "as I have
-  // said" and "as we meet them" with no ellipsis. The second is restored; the first is
-  // marked as cut, because restoring it would break this page's fifteen-word limit.
-  { quote: 'Man is not truly one, but truly two.', text: 'Jekyll and Hyde' },
-  { quote: 'If he be Mr Hyde... I shall be Mr Seek.', text: 'Jekyll and Hyde' },
-  { quote: "Satan's signature upon a face.", text: 'Jekyll and Hyde' },
-  { quote: 'I felt younger, lighter, happier in body.', text: 'Jekyll and Hyde' },
-  // Romeo & Juliet
-  { quote: 'But soft, what light through yonder window breaks?', text: 'Romeo and Juliet' },
-  { quote: "A plague o' both your houses!", text: 'Romeo and Juliet' },
-  { quote: 'These violent delights have violent ends.', text: 'Romeo and Juliet' },
-  { quote: 'My only love sprung from my only hate!', text: 'Romeo and Juliet' },
-  { quote: 'Parting is such sweet sorrow.', text: 'Romeo and Juliet' },
-  // Animal Farm
-  {
-    quote: 'All animals are equal, but some animals are more equal than others.',
-    text: 'Animal Farm',
-  },
-  { quote: 'Four legs good, two legs bad.', text: 'Animal Farm' },
-  {
-    quote: 'The creatures outside looked from pig to man, and from man to pig.',
-    text: 'Animal Farm',
-  },
-  { quote: 'Napoleon is always right.', text: 'Animal Farm' },
-  // Lord of the Flies
-  { quote: "Maybe there is a beast... maybe it's only us.", text: 'Lord of the Flies' },
-  {
-    quote: "The thing is -- fear can't hurt you any more than a dream.",
-    text: 'Lord of the Flies',
-  },
-  {
-    quote: "Ralph wept for the end of innocence, the darkness of man's heart.",
-    text: 'Lord of the Flies',
-  },
-  { quote: 'Kill the beast! Cut his throat! Spill his blood!', text: 'Lord of the Flies' },
-  // Of Mice and Men
-  {
-    quote: "A guy needs somebody ... A guy goes nuts if he ain't got nobody.",
-    text: 'Of Mice and Men',
-  },
-  {
-    quote: 'I got you to look after me, and you got me to look after you.',
-    text: 'Of Mice and Men',
-  },
-  {
-    quote: 'Guys like us, that work on ranches, are the loneliest guys in the world.',
-    text: 'Of Mice and Men',
-  },
-  { quote: 'Tell me about the rabbits, George.', text: 'Of Mice and Men' },
-
-  // ── Additional Macbeth quotes (public domain) ──────────────────────────────
-  {
-    quote: 'Stars, hide your fires; let not light see my black and deep desires.',
-    text: 'Macbeth',
-  },
-  { quote: 'Come, you spirits that tend on mortal thoughts, unsex me here.', text: 'Macbeth' },
-  { quote: 'I dare do all that may become a man; who dares do more is none.', text: 'Macbeth' },
-  { quote: 'By the pricking of my thumbs, something wicked this way comes.', text: 'Macbeth' },
-  {
-    quote: "Yet do I fear thy nature; ... too full o' th' milk of human kindness.",
-    text: 'Macbeth',
-  },
-  { quote: "What's done cannot be undone.", text: 'Macbeth' },
-  { quote: 'Double, double toil and trouble; fire burn and cauldron bubble.', text: 'Macbeth' },
-  { quote: "There's daggers in men's smiles.", text: 'Macbeth' },
-  {
-    quote: 'It is a tale told by an idiot, full of sound and fury, signifying nothing.',
-    text: 'Macbeth',
-  },
-  {
-    quote: "I am in blood stepp'd in so far",
-    text: 'Macbeth',
-  },
-  { quote: 'So foul and fair a day I have not seen.', text: 'Macbeth' },
-  { quote: "Screw your courage to the sticking place, and we'll not fail.", text: 'Macbeth' },
-  { quote: 'All the perfumes of Arabia will not sweeten this little hand.', text: 'Macbeth' },
-  {
-    quote: 'Tomorrow, and tomorrow, and tomorrow, creeps in this petty pace from day to day.',
-    text: 'Macbeth',
-  },
-  { quote: 'Full of scorpions is my mind, dear wife!', text: 'Macbeth' },
-
-  // ── Additional An Inspector Calls quotes (<=15 words, fair dealing) ────────
-  {
-    quote: 'Public men, Mr Birling, have responsibilities as well as privileges.',
-    text: 'An Inspector Calls',
-  },
-  {
-    quote: "You're not the kind of father a chap could go to when he's in trouble.",
-    text: 'An Inspector Calls',
-  },
-  {
-    quote: 'If we were all responsible for everything ... it would be very awkward.',
-    text: 'An Inspector Calls',
-  },
-  { quote: "I'm ashamed of you as well - yes both of you.", text: 'An Inspector Calls' },
-  { quote: "The girl had been happy - hadn't she?", text: 'An Inspector Calls' },
-  { quote: 'Just used her for the end of a stupid drunken evening.', text: 'An Inspector Calls' },
-  { quote: "You began to learn something. And now you've stopped.", text: 'An Inspector Calls' },
-  {
-    quote: 'A man has to mind his own business and look after himself.',
-    text: 'An Inspector Calls',
-  },
-  { quote: "We don't live alone. We are members of one body.", text: 'An Inspector Calls' },
-  { quote: 'Each of you helped to kill her.', text: 'An Inspector Calls' },
-
-  // ── Additional A Christmas Carol quotes (public domain) ────────────────────
-  {
-    quote: 'Oh! But he was a tight-fisted hand at the grind-stone, Scrooge!',
-    text: 'A Christmas Carol',
-  },
-  { quote: 'Bah! Humbug!', text: 'A Christmas Carol' },
-  { quote: 'Old Marley was as dead as a door-nail.', text: 'A Christmas Carol' },
-  { quote: 'I will live in the Past, the Present, and the Future.', text: 'A Christmas Carol' },
-  {
-    quote: 'The cold within him froze his old features, nipped his pointed nose.',
-    text: 'A Christmas Carol',
-  },
-  { quote: 'God bless us, every one!', text: 'A Christmas Carol' },
-  { quote: 'Darkness is cheap, and Scrooge liked it.', text: 'A Christmas Carol' },
-  { quote: 'No warmth could warm, no wintry weather chill him.', text: 'A Christmas Carol' },
-  { quote: 'He carried his own low temperature always about with him.', text: 'A Christmas Carol' },
-  {
-    quote: 'I am as light as a feather, ... I am as merry as a schoolboy.',
-    text: 'A Christmas Carol',
-  },
-
-  // ── Additional Jekyll and Hyde quotes (public domain) ──────────────────────
-  {
-    quote: 'I learned to recognise the thorough and primitive duality of man.',
-    text: 'Jekyll and Hyde',
-  },
-  {
-    quote: 'that man is not truly one, but truly two.',
-    text: 'Jekyll and Hyde',
-  },
-  {
-    quote: 'The pleasures which I made haste to seek in my disguise were... undignified.',
-    text: 'Jekyll and Hyde',
-  },
-  {
-    quote: 'He had always been known for charities; he was now no less distinguished for religion.',
-    text: 'Jekyll and Hyde',
-  },
-  {
-    quote: 'All human beings, as we meet them, are commingled out of good and evil.',
-    text: 'Jekyll and Hyde',
-  },
-  { quote: 'The moment I choose, I can be rid of Mr Hyde.', text: 'Jekyll and Hyde' },
-  {
-    quote: 'He is not easy to describe. There is something wrong with his appearance.',
-    text: 'Jekyll and Hyde',
-  },
-  {
-    quote: 'That child of Hell had nothing human; nothing lived in him but fear and hatred.',
-    text: 'Jekyll and Hyde',
-  },
-  { quote: 'I was slowly losing hold of my original and better self.', text: 'Jekyll and Hyde' },
-  { quote: 'The fog still slept on the wing above the drowned city.', text: 'Jekyll and Hyde' },
-
-  // ── Additional Romeo and Juliet quotes (public domain) ─────────────────────
-  { quote: 'O Romeo, Romeo! Wherefore art thou Romeo?', text: 'Romeo and Juliet' },
-  {
-    quote: 'That which we call a rose by any other name would smell as sweet.',
-    text: 'Romeo and Juliet',
-  },
-  {
-    quote: 'For never was a story of more woe than this of Juliet and her Romeo.',
-    text: 'Romeo and Juliet',
-  },
-  { quote: 'O, she doth teach the torches to burn bright!', text: 'Romeo and Juliet' },
-  { quote: 'Wisely and slow; they stumble that run fast.', text: 'Romeo and Juliet' },
-  {
-    quote: 'Good night, good night! Parting is such sweet sorrow',
-    text: 'Romeo and Juliet',
-  },
-  { quote: 'Do you bite your thumb at us, sir?', text: 'Romeo and Juliet' },
-  { quote: 'Thus with a kiss I die.', text: 'Romeo and Juliet' },
-  { quote: 'Then I defy you, stars!', text: 'Romeo and Juliet' },
-  { quote: 'My bounty is as boundless as the sea, my love as deep.', text: 'Romeo and Juliet' },
-
-  // ── Additional Animal Farm quotes (<=15 words, fair dealing) ───────────────
-  { quote: 'The only good human being is a dead one.', text: 'Animal Farm' },
-  { quote: 'I will work harder!', text: 'Animal Farm' },
-  { quote: 'All animals are equal.', text: 'Animal Farm' },
-  { quote: 'Man serves the interests of no creature except himself.', text: 'Animal Farm' },
-  {
-    quote: 'Donkeys live a long time. None of you has ever seen a dead donkey.',
-    text: 'Animal Farm',
-  },
-
-  // ── Additional Lord of the Flies quotes (<=15 words, fair dealing) ─────────
-  { quote: "The rules! You're breaking the rules!", text: 'Lord of the Flies' },
-  { quote: 'What are we? Humans? Or animals? Or savages?', text: 'Lord of the Flies' },
-  {
-    quote: "We've got to have rules and obey them. After all, we're not savages.",
-    text: 'Lord of the Flies',
-  },
-  {
-    quote: 'Fancy thinking the Beast was something you could hunt and kill!',
-    text: 'Lord of the Flies',
-  },
-  {
-    quote: 'The world, that understandable and lawful world, was slipping away.',
-    text: 'Lord of the Flies',
-  },
-
-  // ── Additional Of Mice and Men quotes (<=15 words, fair dealing) ───────────
-  {
-    quote: "every damn one of 'em's got a little piece of land in his head.",
-    text: 'Of Mice and Men',
-  },
-  {
-    quote: "A guy sets alone out here at night, maybe readin' books or thinkin'.",
-    text: 'Of Mice and Men',
-  },
-  {
-    quote: "I could get you strung up on a tree so easy it ain't even funny.",
-    text: 'Of Mice and Men',
-  },
-  { quote: "We could live offa the fatta the lan'.", text: 'Of Mice and Men' },
-  { quote: "Ain't many guys travel around together. I don't know why.", text: 'Of Mice and Men' },
-
-  // ── To Kill a Mockingbird quotes (<=15 words, fair dealing) ────────────────
-  {
-    quote: 'You never really understand a person until you climb into his skin.',
-    text: 'To Kill a Mockingbird',
-  },
-  {
-    quote: "Mockingbirds don't do one thing but sing their hearts out for us.",
-    text: 'To Kill a Mockingbird',
-  },
-  {
-    quote: "The one thing that doesn't abide by majority rule is a person's conscience.",
-    text: 'To Kill a Mockingbird',
-  },
-  {
-    quote: 'what real courage is, ... courage is a man with a gun.',
-    text: 'To Kill a Mockingbird',
-  },
-  {
-    quote: 'People generally see what they look for, and hear what they listen for.',
-    text: 'To Kill a Mockingbird',
-  },
-]
-
-const ALL_TEXTS = [
-  'Macbeth',
-  'An Inspector Calls',
-  'A Christmas Carol',
-  'Jekyll and Hyde',
-  'Romeo and Juliet',
-  'Animal Farm',
-  'Lord of the Flies',
-  'Of Mice and Men',
-  'To Kill a Mockingbird',
-]
+// ─── Quote Bank ───────────────────────────────────────────────────────────────
+// The quotations and the titles they are drawn from are in
+// src/data/games/banks/quote-detective.ts (moved there on 16 October 2026), and
+// the explanation for each in src/data/games/explanations/quote-detective.ts.
 
 // Map the quote bank's simplified display titles to canonical set-text slugs.
 const TEXT_TO_SLUG: Record<string, string> = {
@@ -375,8 +81,13 @@ export default function QuoteDetectivePage() {
   const [score, setScore] = useState(0)
   const [selected, setSelected] = useState<string | null>(null)
   const [showFeedback, setShowFeedback] = useState(false)
+  const round = useGameRound('quote-detective')
 
   const currentQ = questions[currentIndex] ?? null
+  // The question as the bank names it (BANK.key), for the record and the explanation.
+  const questionKey = currentQ
+    ? BANK.key({ quote: currentQ.quote, text: currentQ.correctText })
+    : ''
 
   const handleStart = useCallback(() => {
     // Sample size - if filtered pool has fewer than 20 quotes, repeat the pool to reach
@@ -404,6 +115,18 @@ export default function QuoteDetectivePage() {
     setGameState('finished')
   }, [])
 
+  /**
+   * A click on a title. The question is marked, recorded for the student's
+   * account, and left on screen with its explanation until they choose to go on.
+   *
+   * WHAT CHANGED (16 October 2026). The game used to move to the next quotation
+   * 1.2 seconds after an answer, showing only red or green. Each answer now
+   * comes with who says the line, where, and what it shows
+   * (src/data/games/explanations/quote-detective.ts), which cannot be read in
+   * 1.2 seconds, so the student goes on when ready and the round's clock is
+   * held while the explanation is open (GameShell's holdClock). The titles
+   * offered are drawn at random, so no wrong choice is recorded.
+   */
   const handleSelect = useCallback(
     (option: string) => {
       if (showFeedback || !currentQ) return
@@ -411,19 +134,20 @@ export default function QuoteDetectivePage() {
       setShowFeedback(true)
       const correct = option === currentQ.correctText
       if (correct) setScore((s) => s + 1)
-
-      setTimeout(() => {
-        if (currentIndex + 1 >= questions.length) {
-          setGameState('finished')
-        } else {
-          setCurrentIndex((i) => i + 1)
-          setSelected(null)
-          setShowFeedback(false)
-        }
-      }, 1200)
+      round.record({ question: questionKey, correct, tag: currentQ.correctText })
     },
-    [showFeedback, currentQ, currentIndex, questions.length],
+    [showFeedback, currentQ, questionKey, round],
   )
+
+  const handleNext = useCallback(() => {
+    if (currentIndex + 1 >= questions.length) {
+      setGameState('finished')
+      return
+    }
+    setCurrentIndex((i) => i + 1)
+    setSelected(null)
+    setShowFeedback(false)
+  }, [currentIndex, questions.length])
 
   return (
     <div className="mx-auto max-w-5xl px-4 py-8">
@@ -452,6 +176,8 @@ export default function QuoteDetectivePage() {
         onStart={handleStart}
         onFinish={handleFinish}
         gameState={gameState}
+        round={round}
+        holdClock={showFeedback}
       >
         {currentQ && (
           <div className="flex flex-col items-center gap-8">
@@ -505,6 +231,23 @@ export default function QuoteDetectivePage() {
                 )
               })}
             </div>
+
+            {showFeedback && (
+              <div className="w-full max-w-xl">
+                <AnswerExplanation
+                  game="quote-detective"
+                  question={questionKey}
+                  correct={selected === currentQ.correctText}
+                  chosen={selected}
+                />
+                <div className="mt-4 flex justify-end">
+                  <Button onClick={handleNext} autoFocus>
+                    {currentIndex + 1 >= questions.length ? 'See your results' : 'Next question'}
+                    <ArrowRight className="size-4 ms-1" />
+                  </Button>
+                </div>
+              </div>
+            )}
           </div>
         )}
       </GameShell>

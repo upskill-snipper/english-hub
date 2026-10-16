@@ -9,33 +9,16 @@ import { ArrowLeft, Check, X, Sparkles } from 'lucide-react'
 import { useBoard } from '@/hooks/useBoard'
 import { getBoardConfig } from '@/lib/board/board-store'
 import { getSetTextsForBoard } from '@/lib/board/set-texts'
+import { AnswerExplanation } from '@/components/games/AnswerExplanation'
+import { useGameRound } from '@/components/games/game-round'
+import { BANK, THEME_DATA, ALL_TEXTS, type ThemeRound } from '@/data/games/banks/theme-matcher'
 
 // ─── Data ──────────────────────────────────────────────────────────────────────
 
-interface ThemeRound {
-  theme: string
-  /** Every text where this theme is present */
-  correctTexts: string[]
-}
-
-const ALL_TEXTS = [
-  'Macbeth',
-  'A Christmas Carol',
-  'An Inspector Calls',
-  'Jekyll and Hyde',
-  'Romeo and Juliet',
-  'Lord of the Flies',
-  'Animal Farm',
-  'Great Expectations',
-  'Jane Eyre',
-  'Frankenstein',
-  'The Tempest',
-  'Much Ado About Nothing',
-  'Ozymandias',
-  'London (Blake)',
-  'War Photographer',
-  'Tissue',
-] as const
+// The themes, the texts they are drawn from and the texts each theme appears
+// in are in src/data/games/banks/theme-matcher.ts (moved there on 16 October
+// 2026), and the explanation for each in
+// src/data/games/explanations/theme-matcher.ts.
 
 // Map theme-matcher's display labels to canonical set-text slugs.
 // Poetry titles (e.g. Ozymandias, London) are not individual set texts - they belong
@@ -59,129 +42,6 @@ const TEXT_TO_SLUG: Record<string, string | null> = {
   'War Photographer': null,
   Tissue: null,
 }
-
-const THEME_DATA: ThemeRound[] = [
-  {
-    theme: 'Social inequality',
-    correctTexts: [
-      'A Christmas Carol',
-      'An Inspector Calls',
-      'Great Expectations',
-      'London (Blake)',
-    ],
-  },
-  {
-    theme: 'Ambition',
-    correctTexts: ['Macbeth', 'Ozymandias', 'Great Expectations', 'Frankenstein'],
-  },
-  {
-    theme: 'Redemption',
-    correctTexts: ['A Christmas Carol', 'Great Expectations', 'The Tempest'],
-  },
-  {
-    theme: 'Good vs Evil',
-    correctTexts: ['Jekyll and Hyde', 'Macbeth', 'Lord of the Flies', 'Frankenstein'],
-  },
-  {
-    theme: 'Love and relationships',
-    correctTexts: ['Romeo and Juliet', 'Much Ado About Nothing', 'Jane Eyre', 'Great Expectations'],
-  },
-  {
-    theme: 'Power and control',
-    correctTexts: ['Macbeth', 'Animal Farm', 'An Inspector Calls', 'Ozymandias', 'The Tempest'],
-  },
-  {
-    theme: 'Guilt and conscience',
-    correctTexts: ['Macbeth', 'An Inspector Calls', 'A Christmas Carol', 'War Photographer'],
-  },
-  {
-    theme: 'The supernatural',
-    correctTexts: [
-      'Macbeth',
-      'Jekyll and Hyde',
-      'A Christmas Carol',
-      'Frankenstein',
-      'The Tempest',
-    ],
-  },
-  {
-    theme: 'Isolation and loneliness',
-    correctTexts: ['Frankenstein', 'Jane Eyre', 'Jekyll and Hyde', 'War Photographer'],
-  },
-  {
-    theme: 'Conflict and violence',
-    correctTexts: [
-      'Romeo and Juliet',
-      'Macbeth',
-      'Lord of the Flies',
-      'Animal Farm',
-      'War Photographer',
-    ],
-  },
-  {
-    theme: 'Appearance vs Reality',
-    correctTexts: [
-      'Macbeth',
-      'Jekyll and Hyde',
-      'Much Ado About Nothing',
-      'An Inspector Calls',
-      'Great Expectations',
-    ],
-  },
-  {
-    theme: 'Family and duty',
-    correctTexts: [
-      'Romeo and Juliet',
-      'An Inspector Calls',
-      'A Christmas Carol',
-      'Great Expectations',
-    ],
-  },
-  {
-    theme: 'Justice and morality',
-    correctTexts: ['An Inspector Calls', 'Animal Farm', 'A Christmas Carol', 'The Tempest'],
-  },
-  {
-    theme: 'Identity and self-discovery',
-    correctTexts: ['Jekyll and Hyde', 'Jane Eyre', 'Great Expectations', 'Frankenstein', 'Tissue'],
-  },
-  {
-    theme: 'Nature and the environment',
-    correctTexts: [
-      'Frankenstein',
-      'Lord of the Flies',
-      'The Tempest',
-      'London (Blake)',
-      'Ozymandias',
-    ],
-  },
-  {
-    theme: 'Corruption of innocence',
-    correctTexts: ['Lord of the Flies', 'Macbeth', 'A Christmas Carol', 'Great Expectations'],
-  },
-  {
-    theme: 'Fate vs Free will',
-    correctTexts: ['Romeo and Juliet', 'Macbeth', 'An Inspector Calls'],
-  },
-  {
-    theme: 'Revolution and rebellion',
-    correctTexts: ['Animal Farm', 'An Inspector Calls', 'London (Blake)', 'The Tempest'],
-  },
-  {
-    theme: 'Memory and the past',
-    correctTexts: [
-      'A Christmas Carol',
-      'War Photographer',
-      'Ozymandias',
-      'Great Expectations',
-      'Tissue',
-    ],
-  },
-  {
-    theme: 'Science and responsibility',
-    correctTexts: ['Frankenstein', 'Jekyll and Hyde'],
-  },
-]
 
 const TOTAL_ROUNDS = 15
 
@@ -232,6 +92,8 @@ export default function ThemeMatcherPage() {
   const [maxScore, setMaxScore] = useState(0)
   const [selected, setSelected] = useState<Set<string>>(new Set())
   const [submitted, setSubmitted] = useState(false)
+  // Records each answered theme for the student's account (GameShell sends it).
+  const round = useGameRound('theme-matcher')
 
   const currentRound = rounds[roundIdx] ?? null
 
@@ -278,6 +140,13 @@ export default function ThemeMatcherPage() {
     }
     setScore((s) => s + roundCorrect)
     setMaxScore((m) => m + allowedTexts.length)
+    // Recorded as right only when every text in the grid was placed right. The
+    // student picks texts rather than one option, so no choice is recorded.
+    round.record({
+      question: BANK.key(currentRound),
+      correct: roundCorrect === allowedTexts.length,
+      tag: currentRound.theme,
+    })
   }
 
   const handleNext = () => {
@@ -316,6 +185,7 @@ export default function ThemeMatcherPage() {
           onStart={handleStart}
           onFinish={handleFinish}
           gameState={gameState}
+          round={round}
         >
           {currentRound && (
             <div className="space-y-6">
@@ -375,6 +245,17 @@ export default function ThemeMatcherPage() {
                   )
                 })}
               </div>
+
+              {/* How the theme shows in each text that has it (16 October 2026). */}
+              {submitted && (
+                <AnswerExplanation
+                  game="theme-matcher"
+                  question={BANK.key(currentRound)}
+                  correct={allowedTexts.every(
+                    (t) => currentRound.correctTexts.includes(t) === selected.has(t),
+                  )}
+                />
+              )}
 
               {/* Submit / Next */}
               <div className="flex justify-center">
