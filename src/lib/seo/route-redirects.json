@@ -1,7 +1,8 @@
 {
   "$comment": "Generated from next.config.js on 19 September 2026 (CUI-9). Edit here, not there.",
   "$notes": {
-    "/llms-full.txt": "public/llms-full.txt was generated on 23 May 2026 and nothing in the build regenerated it. By 20 September it omitted 213 current routes including the whole A-Level section, listed 58 URLs that redirect (45 of them .ar filename artefacts that were never URLs), and pointed AI crawlers at three blog posts held back as drafts and served noindex. llms.txt is regenerated on every build by scripts/generate-llms-txt.mjs and is the accurate index, so the URL points there. A real llms-full.txt under the llmstxt.org convention carries full page CONTENT, which for this site means handing copyrighted set-text commentary to AI crawlers wholesale - a rights decision, not an engineering one."
+    "/llms-full.txt": "public/llms-full.txt was generated on 23 May 2026 and nothing in the build regenerated it. By 20 September it omitted 213 current routes including the whole A-Level section, listed 58 URLs that redirect (45 of them .ar filename artefacts that were never URLs), and pointed AI crawlers at three blog posts held back as drafts and served noindex. llms.txt is regenerated on every build by scripts/generate-llms-txt.mjs and is the accurate index, so the URL points there. A real llms-full.txt under the llmstxt.org convention carries full page CONTENT, which for this site means handing copyrighted set-text commentary to AI crawlers wholesale - a rights decision, not an engineering one.",
+    "/privacy": "Added 16 October 2026. /privacy was a 404 while the mobile app (mobile/app/account.tsx and profile.tsx) opens https://theenglishhub.app/privacy as its privacy link, and the policy lives at /legal/privacy. /compliance, /dpa and /sub-processors are left as 404s: nothing on the site links to them, no DPIA is published, and /data-processing waits on the data-location correction (site claims fix list, item B6)."
   },
   "redirects": [
     {
@@ -31,6 +32,11 @@
     },
     {
       "source": "/privacy-policy",
+      "destination": "/legal/privacy",
+      "permanent": true
+    },
+    {
+      "source": "/privacy",
       "destination": "/legal/privacy",
       "permanent": true
     },

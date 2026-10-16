@@ -643,3 +643,24 @@ describe('a human review request promises no reviewer, reply or deadline', () =>
     )
   })
 })
+
+// ─── E21: links to pages that do not exist ──────────────────────────────────
+
+describe('no privacy or compliance link leads to a 404', () => {
+  it('sends /privacy to the policy, which lives at /legal/privacy', async () => {
+    // The mobile app opens https://theenglishhub.app/privacy as its privacy
+    // link; until 16 October 2026 that was a 404.
+    const { default: table } = await import('@/lib/seo/route-redirects.json')
+    const rule = (table.redirects as { source: string; destination: string }[]).find(
+      (r) => r.source === '/privacy',
+    )
+    expect(rule?.destination).toBe('/legal/privacy')
+  })
+
+  it('points no FAQ or page at /compliance, /dpa or /sub-processors', () => {
+    for (const locale of LOCALES) {
+      expect(lookup('faqs.pr1.a', locale)).not.toMatch(/\/compliance|\/dpa\b|\/sub-processors/)
+    }
+    expect(code('src/app/faqs/faq-data.ts')).not.toMatch(/\/compliance|\/dpa\b|\/sub-processors/)
+  })
+})
