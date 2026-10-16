@@ -5093,7 +5093,7 @@ export const ES_MESSAGES: Record<string, string> = {
     'The English Hub es una plataforma de aprendizaje en línea diseñada específicamente para estudiantes de inglés de GCSE e IGCSE. Ofrecemos cursos específicos de cada junta, exámenes de prueba con feedback mediante IA, preguntas de práctica con respuestas modelo y materiales de repaso completos para English Language y English Literature.',
   'faqs.g2.q': '¿Para quién es The English Hub?',
   'faqs.g2.a':
-    'The English Hub está creado para estudiantes de inglés de GCSE e IGCSE (normalmente de 14 a 16 años), pero también lo usan estudiantes de KS3 que quieren adelantarse. Los profesores usan nuestras licencias de colegio para asignar tareas y hacer seguimiento del progreso de la clase, y los padres pueden vincularse a la cuenta de su hijo para recibir informes de progreso semanales.',
+    'The English Hub está creado para estudiantes de inglés de GCSE e IGCSE (normalmente de 14 a 16 años), pero también lo usan estudiantes de KS3 que quieren adelantarse. Los profesores usan nuestras licencias de colegio para asignar tareas y hacer seguimiento del progreso de la clase, y los padres pueden vincularse a la cuenta de su hijo para gestionar las preferencias de consentimiento.',
   'faqs.g3.q': '¿Qué juntas examinadoras se admiten?',
   'faqs.g3.a':
     'AQA, Edexcel (GCSE + International), OCR, WJEC / Eduqas, Cambridge IGCSE (0500 + 0475) y Pearson Edexcel International. Construido en torno a cómo corrigen realmente los examinadores, de modo que cada curso, examen de prueba, pregunta de práctica y apunte de repaso está adaptado a tu junta y especificación concretas.',
@@ -5142,13 +5142,13 @@ export const ES_MESSAGES: Record<string, string> = {
     'Actualizamos continuamente nuestro contenido para reflejar los últimos requisitos de las juntas examinadoras, los esquemas de calificación y las orientaciones publicadas. Cuando las juntas examinadoras introducen cambios, actualizamos nuestros materiales con prontitud para que siempre repases el contenido correcto.',
   'faqs.a1.q': '¿Cómo corrige la IA mi redacción?',
   'faqs.a1.a':
-    'Claude (Anthropic) lee la redacción, la compara con los descriptores de AO publicados de tu junta y devuelve puntuaciones más feedback de mejora concreto en 20-40 segundos. Cada respuesta se marca con su nivel de confianza y puede ser revisada por una persona si se solicita.',
+    'Claude, un modelo de IA de Anthropic, lee tu redacción según los objetivos de evaluación del examen de tu junta. Recibes una nota para cada objetivo de evaluación, lo que salió bien, qué mejorar y qué practicar después. Lo escribe la IA y se señala como tal, y su nota es una estimación para practicar, no un resultado oficial.',
   'faqs.a2.q': '¿Y si la IA se equivoca en la nota?',
   'faqs.a2.a':
-    "Cada redacción corregida con IA tiene una opción de 'solicitar revisión humana' con un solo clic. Un examinador humano vuelve a corregirla en un plazo de 48 horas. Somos transparentes en que la corrección con IA es orientativa, no definitiva - el esquema de calificación sigue siendo del examinador.",
-  'faqs.a3.q': '¿Corregís redacciones en tiempo real en clase?',
+    'La corrección con IA puede equivocarse; por eso cada resultado se señala como generado por IA y su nota se presenta como una estimación para practicar. Nadie vuelve a corregir las redacciones a mano. Si estás en una clase de la web a través de tu colegio, las redacciones que envías en la página Corregir una redacción llegan a tu profesor, que puede aprobar o cambiar la nota, y verás su decisión. Si no, compara el feedback con el esquema de calificación de tu junta y toma la nota como una orientación, no como un resultado oficial.',
+  'faqs.a3.q': '¿Pueden los profesores corregir las redacciones de toda una clase?',
   'faqs.a3.a':
-    'Sí. Los profesores pueden enviar 30 redacciones de forma masiva y recibir feedback alineado con los AO por estudiante en menos de 10 minutos - normalmente mientras la clase aún está en marcha.',
+    'Sí, con la herramienta de examinador. Sube un lote escaneado o fotos de los exámenes de una clase, comprueba cómo los ha separado por alumno y los corrige uno tras otro según la tabla de niveles del examen, señalando las palabras que no ha podido leer con seguridad. Su nota es una segunda opinión, nunca la calificación final. Viene con cualquier plan de pago o con la prueba gratuita, dentro de un límite de uso razonable.',
   'faqs.t1.q': '¿Qué navegadores y dispositivos se admiten?',
   'faqs.t1.a':
     'The English Hub funciona en cualquier dispositivo con un navegador web moderno. Admitimos las últimas versiones de Chrome, Safari, Firefox y Microsoft Edge en Windows, macOS, iOS, Android y ChromeOS.',
@@ -5166,19 +5166,19 @@ export const ES_MESSAGES: Record<string, string> = {
     'The English Hub requiere una conexión a internet para acceder a los cursos, enviar exámenes de prueba y recibir feedback. Recomendamos una conexión estable de banda ancha o de datos móviles para la mejor experiencia.',
   'faqs.pr1.q': '¿Cómo se protegen mis datos?',
   'faqs.pr1.a':
-    "Cumplimos con el UK GDPR, estamos registrados ante la ICO (registro ZC016690), alojamos todos los datos en regiones de la UE (Supabase + Vercel) y tratamos a cada usuario menor de 18 años conforme a los 15 estándares del Children's Code de la ICO. Hay una DPIA completa disponible en /compliance.",
+    "Cumplimos con el UK GDPR, estamos registrados ante la ICO (registro ZC016690), alojamos todos los datos en regiones de la UE (Supabase + Vercel) y tratamos a cada usuario menor de 18 años conforme a los 15 estándares del Children's Code de la ICO.",
   'faqs.pr2.q': '¿Están mis datos seguros y son privados?',
   'faqs.pr2.a':
     'Sí. Todos los datos se cifran en tránsito y en reposo. Cumplimos con el UK GDPR y nunca vendemos tu información personal. Para más detalles, lee nuestra Política de Privacidad. Los estudiantes menores de 16 años deben tener su cuenta gestionada por un padre o tutor.',
   'faqs.pr3.q': '¿Qué controles parentales hay disponibles?',
   'faqs.pr3.a':
-    'Los padres pueden vincularse a la cuenta de su hijo para recibir informes de progreso semanales. Para los estudiantes menores de 16 años, exigimos el consentimiento parental durante el registro. Los padres pueden ver la actividad de aprendizaje de su hijo y solicitar el acceso o la eliminación de los datos en cualquier momento. Consulta nuestra Política de Privacidad para ver todos los detalles sobre cómo protegemos los datos de los menores.',
+    'Los padres pueden vincularse a la cuenta de su hijo desde el panel para padres y gestionar allí las preferencias de consentimiento. Los resúmenes semanales de progreso se están finalizando, así que todavía no se envía ninguno. Para los estudiantes menores de 16 años, exigimos el consentimiento parental durante el registro. Los padres pueden solicitar el acceso o la eliminación de los datos en cualquier momento. Consulta nuestra Política de Privacidad para ver todos los detalles sobre cómo protegemos los datos de los menores.',
   'faqs.pr4.q': '¿Pueden los padres hacer seguimiento del progreso de su hijo?',
   'faqs.pr4.a':
     "Sí - los padres reciben un panel vinculado al hijo con los módulos completados, las notas de los cuestionarios, el tiempo de estudio y las áreas débiles. Los resúmenes semanales por correo se están finalizando y todavía no se envían. Se aplican en todo momento los controles parentales y los ajustes predeterminados del Children's Code de la ICO.",
   'faqs.pr5.q': '¿Cómo vinculo mi cuenta de padre con la de mi hijo?',
   'faqs.pr5.a':
-    'Tu hijo puede enviarte una invitación de vinculación desde la configuración de su cuenta, o puedes contactar con info@upskillenergy.com indicando el correo registrado de tu hijo. Una vez vinculado, recibirás informes de progreso semanales y podrás gestionar las preferencias de consentimiento.',
+    'Tu hijo puede enviarte una invitación de vinculación desde la configuración de su cuenta, o puedes contactar con info@upskillenergy.com indicando el correo registrado de tu hijo. Una vez vinculado, tu panel para padres muestra la cuenta vinculada y te permite gestionar las preferencias de consentimiento. Los resúmenes semanales de progreso se están finalizando y todavía no se envían.',
   'faqs.s1.q': '¿Puede mi colegio comprar una licencia?',
   'faqs.s2.q': '¿Ofrecéis una prueba gratuita para colegios?',
   'faqs.s2.a':

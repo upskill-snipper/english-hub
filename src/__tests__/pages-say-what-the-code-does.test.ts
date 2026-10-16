@@ -260,3 +260,66 @@ describe('/pricing says what is free, what a price was and when there is a trial
     inEveryLocale('pricing.pay_with_code')
   })
 })
+
+// ─── D13: /faqs ─────────────────────────────────────────────────────────────
+
+describe('/faqs makes no promise the code does not keep', () => {
+  // The visible answers come from faqs.* keys; faq-data.ts is the English
+  // FAQPage JSON-LD that search engines read. Both are checked.
+  const VISIBLE = [
+    'faqs.g2.a',
+    'faqs.a1.a',
+    'faqs.a2.a',
+    'faqs.a3.q',
+    'faqs.a3.a',
+    'faqs.pr1.a',
+    'faqs.pr3.a',
+    'faqs.pr5.a',
+  ]
+
+  const BROKEN_PROMISES: [RegExp, string][] = [
+    [/20-40|٢٠-٤٠/, 'a marking time'],
+    [
+      /under 10 minutes|menos de 10 minutos|أقل من ١٠ دقايق|real time|tiempo real/i,
+      'a class marked in minutes',
+    ],
+    [/confidence level|nivel de confianza|مستوى ثقة/i, 'a confidence flag on every response'],
+    [/re-?marks? within|48 hours|48 horas|٤٨ ساعة|human-reviewed on request/i, 'a human re-mark'],
+    [/\/compliance/, 'a DPIA at a page that is a 404'],
+    [
+      /lesson planning|worksheet builder|class analytics/i,
+      'Teacher-plan features in the school portal',
+    ],
+    [
+      /you only add payment when the trial ends|every plan starts with a/i,
+      'one trial for every plan',
+    ],
+  ]
+
+  async function answers(): Promise<string[]> {
+    const { FAQ_JSON_LD_DATA } = await import('@/app/faqs/faq-data')
+    return FAQ_JSON_LD_DATA.flatMap((f) => [f.question, f.answer])
+  }
+
+  it.each(BROKEN_PROMISES)('the visible FAQ makes no %s claim (%s)', (pattern) => {
+    for (const key of VISIBLE) {
+      const copy = inEveryLocale(key)
+      for (const locale of LOCALES) expect(copy[locale], `${key}/${locale}`).not.toMatch(pattern)
+    }
+  })
+
+  it.each(BROKEN_PROMISES)('the FAQ JSON-LD makes no %s claim (%s)', async (pattern) => {
+    for (const text of await answers()) expect(text).not.toMatch(pattern)
+  })
+
+  it('promises parents no weekly report that is never sent', async () => {
+    for (const key of ['faqs.g2.a', 'faqs.pr3.a', 'faqs.pr5.a']) {
+      const en = lookup(key, 'en')
+      const promises = /weekly progress reports/i.test(en) && !/not sent|finalised/i.test(en)
+      expect(promises, key).toBe(false)
+    }
+    for (const text of await answers()) {
+      expect(/for weekly progress reports/i.test(text), text.slice(0, 60)).toBe(false)
+    }
+  })
+})

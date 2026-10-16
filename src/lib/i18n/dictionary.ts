@@ -16658,9 +16658,12 @@ export const DICTIONARY: Dictionary = {
     es: '¿Para quién es The English Hub?',
   },
   'faqs.g2.a': {
-    en: "The English Hub is built for GCSE and IGCSE English students (typically aged 14-16), but is also used by KS3 students who want to get ahead. Teachers use our school licences to set assignments and track class progress, and parents can link to their child's account for weekly progress reports.",
-    ar: 'The English Hub معمول لطلاب GCSE و IGCSE English (عادة ١٤-١٦ سنة)، لكن يستخدمه كمان طلاب KS3 اللي يبغون يتقدمون. المعلمين يستخدمون تراخيص المدارس عشان يكلّفون المهام ويتابعون تقدم الصف، وأولياء الأمور يقدرون يربطون حسابهم بحساب الولد للحصول على تقارير أسبوعية.',
-    es: 'The English Hub está creado para estudiantes de inglés de GCSE e IGCSE (normalmente de 14 a 16 años), pero también lo usan estudiantes de KS3 que quieren adelantarse. Los profesores usan nuestras licencias de colegio para asignar tareas y hacer seguimiento del progreso de la clase, y los padres pueden vincularse a la cuenta de su hijo para recibir informes de progreso semanales.',
+    // 16 October 2026: no longer promises parents weekly progress reports,
+    // which have never been sent (promises-match-the-product.test.ts). The
+    // teachers' clause belongs to the schools offer, left for Calum.
+    en: "The English Hub is built for GCSE and IGCSE English students (typically aged 14-16), but is also used by KS3 students who want to get ahead. Teachers use our school licences to set assignments and track class progress, and parents can link to their child's account to manage consent preferences.",
+    ar: 'The English Hub معمول لطلاب GCSE و IGCSE English (عادة ١٤-١٦ سنة)، لكن يستخدمه كمان طلاب KS3 اللي يبغون يتقدمون. المعلمين يستخدمون تراخيص المدارس عشان يكلّفون المهام ويتابعون تقدم الصف، وأولياء الأمور يقدرون يربطون حسابهم بحساب الولد عشان يديرون تفضيلات الموافقة.',
+    es: 'The English Hub está creado para estudiantes de inglés de GCSE e IGCSE (normalmente de 14 a 16 años), pero también lo usan estudiantes de KS3 que quieren adelantarse. Los profesores usan nuestras licencias de colegio para asignar tareas y hacer seguimiento del progreso de la clase, y los padres pueden vincularse a la cuenta de su hijo para gestionar las preferencias de consentimiento.',
   },
   'faqs.g3.q': {
     en: 'Which exam boards are supported?',
@@ -16822,10 +16825,16 @@ export const DICTIONARY: Dictionary = {
     ar: 'كيف الـ AI يصحّح مقالي؟',
     es: '¿Cómo corrige la IA mi redacción?',
   },
+  // The /faqs AI answers, corrected 16 October 2026. They promised feedback
+  // "in 20-40 seconds" (the marking route's own measurements put the AI's
+  // writing alone at 17 to 46 seconds, with more work around it), a
+  // confidence flag on every response (GCSE marking writes ai_confidence:
+  // null, src/lib/marking/persistence.ts), and a human re-mark "within 48
+  // hours" (a review request is saved to a table no staff screen reads).
   'faqs.a1.a': {
-    en: 'Claude (Anthropic) reads the essay, compares it against the published AO descriptors for your board, and returns scores plus specific improvement feedback in 20-40 seconds. Every response is flagged with its confidence level and can be human-reviewed on request.',
-    ar: 'Claude (من Anthropic) يقرأ المقال، يقارنه بأوصاف الـ AO المنشورة للبورد مالك، ويعطيك درجات مع ملاحظات تحسين محددة في ٢٠-٤٠ ثانية. كل رد عليه مستوى ثقة وممكن يراجعه إنسان عند الطلب.',
-    es: 'Claude (Anthropic) lee la redacción, la compara con los descriptores de AO publicados de tu junta y devuelve puntuaciones más feedback de mejora concreto en 20-40 segundos. Cada respuesta se marca con su nivel de confianza y puede ser revisada por una persona si se solicita.',
+    en: "Claude, an AI model made by Anthropic, reads your essay against the assessment objectives for your board's paper. You get a mark for each assessment objective, what went well, what to improve and what to practise next. It is written by AI and labelled as AI, and its grade is a practice estimate, not an official result.",
+    ar: 'Claude، نموذج ذكاء اصطناعي من Anthropic، يقرأ مقالك حسب أهداف التقييم لورقة البورد مالك. تاخذ درجة لكل هدف تقييم، ووش كان زين، ووش تحسّن، ووش تتدرّب عليه بعدين. يكتبه الذكاء الاصطناعي ومكتوب عليه إنه منه، والدرجة فيه تقدير للتدريب، مو نتيجة رسمية.',
+    es: 'Claude, un modelo de IA de Anthropic, lee tu redacción según los objetivos de evaluación del examen de tu junta. Recibes una nota para cada objetivo de evaluación, lo que salió bien, qué mejorar y qué practicar después. Lo escribe la IA y se señala como tal, y su nota es una estimación para practicar, no un resultado oficial.',
   },
   'faqs.a2.q': {
     en: 'What if the AI gets the mark wrong?',
@@ -16833,19 +16842,23 @@ export const DICTIONARY: Dictionary = {
     es: '¿Y si la IA se equivoca en la nota?',
   },
   'faqs.a2.a': {
-    en: "Every AI-marked essay has a one-click 'request human review' option. A human examiner re-marks within 48 hours. We're transparent that AI marking is indicative, not authoritative - the mark scheme remains the examiner's.",
-    ar: "كل مقال صحّحه AI فيه خيار 'طلب مراجعة بشرية' بضغطة واحدة. مصحّح بشري يعيد التصحيح خلال ٤٨ ساعة. إحنا شفّافين إن تصحيح الـ AI استرشادي مو نهائي - مخطط التصحيح يضل ملك المصحّح.",
-    es: "Cada redacción corregida con IA tiene una opción de 'solicitar revisión humana' con un solo clic. Un examinador humano vuelve a corregirla en un plazo de 48 horas. Somos transparentes en que la corrección con IA es orientativa, no definitiva - el esquema de calificación sigue siendo del examinador.",
+    en: "AI marking can be wrong, which is why every result is labelled as AI and its grade is called a practice estimate. Nobody re-marks essays by hand. If you are in a class on the site through your school, essays you submit on the Mark an essay page go to your teacher, who can approve or change the mark, and you will see their decision. Otherwise, compare the feedback with your board's mark scheme and treat the mark as a guide, not an official result.",
+    ar: 'تصحيح الذكاء الاصطناعي ممكن يغلط، وعشان كذا كل نتيجة مكتوب عليها إنها من الذكاء الاصطناعي والدرجة فيها تقدير للتدريب. ما في أحد يعيد تصحيح المقالات بيده. إذا انت في صف على الموقع عن طريق مدرستك، المقالات اللي تسلّمها في صفحة "صحّح مقالة" تروح لمعلمك، ويقدر يعتمد الدرجة أو يغيّرها، وبتشوف قراره. غير كذا، قارن الملاحظات بسلّم التصحيح حق البورد مالك وخذ الدرجة كمؤشر، مو نتيجة رسمية.',
+    es: 'La corrección con IA puede equivocarse; por eso cada resultado se señala como generado por IA y su nota se presenta como una estimación para practicar. Nadie vuelve a corregir las redacciones a mano. Si estás en una clase de la web a través de tu colegio, las redacciones que envías en la página Corregir una redacción llegan a tu profesor, que puede aprobar o cambiar la nota, y verás su decisión. Si no, compara el feedback con el esquema de calificación de tu junta y toma la nota como una orientación, no como un resultado oficial.',
   },
+  // 16 October 2026: asked about marking "in real time in class" and answered
+  // "30 essays ... in under 10 minutes". Nothing measures that. The examiner
+  // tool does take a whole class from one scan, and marks the scripts one
+  // after another (src/components/examiner/BulkPanel.tsx).
   'faqs.a3.q': {
-    en: 'Do you mark essays in real time in class?',
-    ar: 'تصحّحون المقالات في الفصل بشكل فوري؟',
-    es: '¿Corregís redacciones en tiempo real en clase?',
+    en: "Can teachers mark a whole class's essays?",
+    ar: 'يقدر المعلم يصحّح مقالات صف كامل؟',
+    es: '¿Pueden los profesores corregir las redacciones de toda una clase?',
   },
   'faqs.a3.a': {
-    en: 'Yes. Teachers can bulk-submit 30 essays and receive AO-aligned feedback per student in under 10 minutes - usually while the lesson is still running.',
-    ar: 'إيه. المعلمين يقدرون يسلّمون ٣٠ مقال دفعة واحدة ويستلمون ملاحظات حسب الـ AO لكل طالب في أقل من ١٠ دقايق - عادة وقت ما الدرس لسا شغّال.',
-    es: 'Sí. Los profesores pueden enviar 30 redacciones de forma masiva y recibir feedback alineado con los AO por estudiante en menos de 10 minutos - normalmente mientras la clase aún está en marcha.',
+    en: "Yes, with the examiner marking tool. Drop in a scanned batch or photographs of a class's scripts, check how the tool has split them into candidates, and it marks them one after another against the paper's level grid, flagging words it could not read with confidence. Its mark is a second opinion, never the award. It comes with any paid plan or the free trial, within a fair-use limit.",
+    ar: 'إيه، عن طريق أداة المصحّح. حط ملف مسحوب أو صور لأوراق الصف، وتأكد من طريقة تقسيم الأداة لها على الطلاب، وبعدها تصحّحها وحدة ورا الثانية حسب جدول المستويات للورقة، وتعلّم على الكلمات اللي ما قدرت تقراها بثقة. درجتها رأي ثاني، مو الدرجة النهائية. تجي مع أي باقة مدفوعة أو التجربة المجانية، ضمن حد استخدام معقول.',
+    es: 'Sí, con la herramienta de examinador. Sube un lote escaneado o fotos de los exámenes de una clase, comprueba cómo los ha separado por alumno y los corrige uno tras otro según la tabla de niveles del examen, señalando las palabras que no ha podido leer con seguridad. Su nota es una segunda opinión, nunca la calificación final. Viene con cualquier plan de pago o con la prueba gratuita, dentro de un límite de uso razonable.',
   },
   'faqs.t1.q': {
     en: 'What browsers and devices are supported?',
@@ -16903,9 +16916,13 @@ export const DICTIONARY: Dictionary = {
     es: '¿Cómo se protegen mis datos?',
   },
   'faqs.pr1.a': {
-    en: "We're UK GDPR compliant, registered with the ICO (registration ZC016690), host all data in EU regions (Supabase + Vercel), and treat every under-18 user under the ICO Children's Code 15 standards. A full DPIA is available at /compliance.",
-    ar: "نمتثل لقانون UK GDPR، ومسجّلون لدى ICO (رقم التسجيل ZC016690)، ونستضيف جميع البيانات في مناطق الاتحاد الأوروبي (Supabase + Vercel)، ونعامل كل مستخدم دون ١٨ سنة وفقاً لمعايير ICO Children's Code الـ١٥. تقييم تأثير حماية البيانات (DPIA) الكامل متاح على /compliance.",
-    es: "Cumplimos con el UK GDPR, estamos registrados ante la ICO (registro ZC016690), alojamos todos los datos en regiones de la UE (Supabase + Vercel) y tratamos a cada usuario menor de 18 años conforme a los 15 estándares del Children's Code de la ICO. Hay una DPIA completa disponible en /compliance.",
+    // "A full DPIA is available at /compliance" was removed on 16 October
+    // 2026: /compliance is a 404 and no DPIA is published. The hosting
+    // sentence is left for Calum's decision on the data location (the
+    // database is not in the EU); see the site claims fix list, item B6.
+    en: "We're UK GDPR compliant, registered with the ICO (registration ZC016690), host all data in EU regions (Supabase + Vercel), and treat every under-18 user under the ICO Children's Code 15 standards.",
+    ar: "نمتثل لقانون UK GDPR، ومسجّلون لدى ICO (رقم التسجيل ZC016690)، ونستضيف جميع البيانات في مناطق الاتحاد الأوروبي (Supabase + Vercel)، ونعامل كل مستخدم دون ١٨ سنة وفقاً لمعايير ICO Children's Code الـ١٥.",
+    es: "Cumplimos con el UK GDPR, estamos registrados ante la ICO (registro ZC016690), alojamos todos los datos en regiones de la UE (Supabase + Vercel) y tratamos a cada usuario menor de 18 años conforme a los 15 estándares del Children's Code de la ICO.",
   },
   'faqs.pr2.q': {
     en: 'Is my data safe and private?',
@@ -16923,9 +16940,12 @@ export const DICTIONARY: Dictionary = {
     es: '¿Qué controles parentales hay disponibles?',
   },
   'faqs.pr3.a': {
-    en: "Parents can link to their child's account to receive weekly progress reports. For students under 16, we require parental consent during registration. Parents can view their child's learning activity, and request data access or deletion at any time. See our Privacy Policy for full details on how we protect children's data.",
-    ar: 'يستطيع أولياء الأمور ربط حسابهم بحساب الطفل لاستلام تقارير تقدم أسبوعية. للطلاب دون ١٦ سنة، نشترط موافقة ولي الأمر عند التسجيل. يمكن لولي الأمر الاطلاع على نشاط التعلّم، وطلب الوصول إلى البيانات أو حذفها في أي وقت. راجع سياسة الخصوصية للتفاصيل الكاملة حول كيفية حماية بيانات الأطفال.',
-    es: 'Los padres pueden vincularse a la cuenta de su hijo para recibir informes de progreso semanales. Para los estudiantes menores de 16 años, exigimos el consentimiento parental durante el registro. Los padres pueden ver la actividad de aprendizaje de su hijo y solicitar el acceso o la eliminación de los datos en cualquier momento. Consulta nuestra Política de Privacidad para ver todos los detalles sobre cómo protegemos los datos de los menores.',
+    // 16 October 2026: promised weekly progress reports (never sent) and that
+    // parents can "view their child's learning activity" (the parent
+    // dashboard shows the linked account, src/app/dashboard/parent).
+    en: "Parents can link to their child's account from the parent dashboard and manage consent preferences there. Weekly progress summaries are still being finalised, so none are sent yet. For students under 16, we require parental consent during registration. Parents can request data access or deletion at any time. See our Privacy Policy for full details on how we protect children's data.",
+    ar: 'يستطيع أولياء الأمور ربط حسابهم بحساب الطفل من لوحة ولي الأمر وإدارة تفضيلات الموافقة منها. الملخصات الأسبوعية للتقدّم قيد الإعداد، فما تُرسل حالياً. للطلاب دون ١٦ سنة، نشترط موافقة ولي الأمر عند التسجيل. ويمكن لولي الأمر طلب الوصول إلى البيانات أو حذفها في أي وقت. راجع سياسة الخصوصية للتفاصيل الكاملة حول كيفية حماية بيانات الأطفال.',
+    es: 'Los padres pueden vincularse a la cuenta de su hijo desde el panel para padres y gestionar allí las preferencias de consentimiento. Los resúmenes semanales de progreso se están finalizando, así que todavía no se envía ninguno. Para los estudiantes menores de 16 años, exigimos el consentimiento parental durante el registro. Los padres pueden solicitar el acceso o la eliminación de los datos en cualquier momento. Consulta nuestra Política de Privacidad para ver todos los detalles sobre cómo protegemos los datos de los menores.',
   },
   'faqs.pr4.q': {
     en: "Can parents track their child's progress?",
@@ -16949,9 +16969,10 @@ export const DICTIONARY: Dictionary = {
     es: '¿Cómo vinculo mi cuenta de padre con la de mi hijo?',
   },
   'faqs.pr5.a': {
-    en: "Your child can send you a linking invitation from their account settings, or you can contact info@upskillenergy.com with your child's registered email. Once linked, you'll receive weekly progress reports and can manage consent preferences.",
-    ar: 'ولدك يقدر يرسل لك دعوة ربط من إعدادات حسابه، أو تقدر تتواصل معانا على info@upskillenergy.com وتعطينا الإيميل المسجل لولدك. بعد الربط، بتستلم تقارير أسبوعية وتدير تفضيلات الموافقات.',
-    es: 'Tu hijo puede enviarte una invitación de vinculación desde la configuración de su cuenta, o puedes contactar con info@upskillenergy.com indicando el correo registrado de tu hijo. Una vez vinculado, recibirás informes de progreso semanales y podrás gestionar las preferencias de consentimiento.',
+    // 16 October 2026: promised weekly progress reports, never sent.
+    en: "Your child can send you a linking invitation from their account settings, or you can contact info@upskillenergy.com with your child's registered email. Once linked, your parent dashboard shows the linked account and lets you manage consent preferences. Weekly progress summaries are still being finalised and are not sent yet.",
+    ar: 'ولدك يقدر يرسل لك دعوة ربط من إعدادات حسابه، أو تقدر تتواصل معانا على info@upskillenergy.com وتعطينا الإيميل المسجل لولدك. بعد الربط، لوحة ولي الأمر تعرض الحساب المربوط وتخليك تدير تفضيلات الموافقات. الملخصات الأسبوعية قيد الإعداد وما تُرسل حالياً.',
+    es: 'Tu hijo puede enviarte una invitación de vinculación desde la configuración de su cuenta, o puedes contactar con info@upskillenergy.com indicando el correo registrado de tu hijo. Una vez vinculado, tu panel para padres muestra la cuenta vinculada y te permite gestionar las preferencias de consentimiento. Los resúmenes semanales de progreso se están finalizando y todavía no se envían.',
   },
   'faqs.s1.q': {
     en: 'Can my school buy a licence?',

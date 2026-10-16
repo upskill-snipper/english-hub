@@ -17,6 +17,16 @@ export interface FaqSection {
  * Server-rendered on the page (in <details>/<summary>) and flattened into
  * FAQPage JSON-LD via the layout. Keep question text unique across all
  * sections - we dedupe by question string when building the JSON-LD feed.
+ *
+ * WHAT THE PAGE ITSELF SHOWS comes from the faqs.* dictionary keys
+ * (src/app/faqs/page.tsx); this file is the English JSON-LD that search
+ * engines read. Both must say the same, and on 16 October 2026 both said
+ * what the code does not do: a 7-day free trial on every plan with payment
+ * only when it ends (a discount-code annual plan is charged at once), AI
+ * feedback "in 20-40 seconds" with a confidence flag on every response, a
+ * human re-mark on request, 30 essays marked "in under 10 minutes", Teacher
+ * plan features that exist only in the school portal, weekly parent reports
+ * that are never sent, and a DPIA at /compliance, which is a 404.
  */
 export const FAQ_SECTIONS: FaqSection[] = [
   {
@@ -31,7 +41,7 @@ export const FAQ_SECTIONS: FaqSection[] = [
       {
         question: 'Who is The English Hub for?',
         answer:
-          "The English Hub is built for GCSE and IGCSE English students (typically aged 14-16), but is also used by KS3 students who want to get ahead. Teachers use our school licences to set assignments and track class progress, and parents can link to their child's account for weekly progress reports.",
+          "The English Hub is built for GCSE and IGCSE English students (typically aged 14-16), but is also used by KS3 students who want to get ahead. Teachers use our school licences to set assignments and track class progress, and parents can link to their child's account to manage consent preferences.",
       },
       {
         question: 'Which exam boards are supported?',
@@ -66,7 +76,7 @@ export const FAQ_SECTIONS: FaqSection[] = [
     items: [
       {
         question: 'How much does The English Hub cost?',
-        answer: `Early Access / Founding pricing, available now: Students £${PRICING.STUDENT_MONTHLY}/month or £${PRICING.STUDENT_ANNUAL}/year (or £${PRICING.STUDENT_ANNUAL_WITH_CODE}/year with any affiliate code or the public code ${PRICING.AFFILIATE_PROMO_CODE} - save £${PRICING.STUDENT_ANNUAL_SAVINGS}). Teachers £${PRICING.TEACHER_MONTHLY}/month or £${PRICING.TEACHER_ANNUAL}/year (includes lesson planning, AI marking, worksheet builder, class analytics). Schools: Founding Schools Programme £${PRICING.FOUNDER_SCHOOL_MIN.toLocaleString('en-GB')} per year - first ${PRICING.FOUNDER_SCHOOL_LIMIT} schools only. Planned standard pricing, which will apply to new signups ${PRICING.PRICE_INCREASE_DATE}: Students £${PRICING.STUDENT_MONTHLY_STANDARD}/month or £${PRICING.STUDENT_ANNUAL_STANDARD}/year. Teachers £${PRICING.TEACHER_MONTHLY_STANDARD}/month or £${PRICING.TEACHER_ANNUAL_STANDARD}/year. Schools £${PRICING.SCHOOL_STANDARD.toLocaleString('en-GB')}/year. Your rate is locked from the day you subscribe. Every plan starts with a ${PRICING.TRIAL_TEXT} - no card required to start; you only add payment when the trial ends and you choose to continue. You can also browse all revision content before signing up. Prices shown in GBP.`,
+        answer: `Early Access / Founding pricing, available now: Students £${PRICING.STUDENT_MONTHLY}/month or £${PRICING.STUDENT_ANNUAL}/year (or £${PRICING.STUDENT_ANNUAL_WITH_CODE}/year with any affiliate code or the public code ${PRICING.AFFILIATE_PROMO_CODE} - save £${PRICING.STUDENT_ANNUAL_SAVINGS}). Teachers £${PRICING.TEACHER_MONTHLY}/month or £${PRICING.TEACHER_ANNUAL}/year (on the website, the same access as the Student plan). Schools: Founding Schools Programme £${PRICING.FOUNDER_SCHOOL_MIN.toLocaleString('en-GB')} per year - first ${PRICING.FOUNDER_SCHOOL_LIMIT} schools only. Planned standard pricing, which will apply to new signups ${PRICING.PRICE_INCREASE_DATE}: Students £${PRICING.STUDENT_MONTHLY_STANDARD}/month or £${PRICING.STUDENT_ANNUAL_STANDARD}/year. Teachers £${PRICING.TEACHER_MONTHLY_STANDARD}/month or £${PRICING.TEACHER_ANNUAL_STANDARD}/year. Schools £${PRICING.SCHOOL_STANDARD.toLocaleString('en-GB')}/year. Your rate is locked from the day you subscribe. A new account starts with a ${PRICING.TRIAL_TEXT} with no card. A plan bought at checkout starts with ${PRICING.TRIAL_DAYS} free days with your card on file, except an annual plan bought with a discount code, which is charged at once. You can also browse the free revision content before signing up. Prices shown in GBP.`,
       },
       {
         question: 'Is there a free trial? Do I need a card?',
@@ -132,17 +142,17 @@ export const FAQ_SECTIONS: FaqSection[] = [
       {
         question: 'How does the AI mark my essay?',
         answer:
-          'Claude (Anthropic) reads the essay, compares it against the published AO descriptors for your board, and returns scores plus specific improvement feedback in 20-40 seconds. Every response is flagged with its confidence level and can be human-reviewed on request.',
+          "Claude, an AI model made by Anthropic, reads your essay against the assessment objectives for your board's paper. You get a mark for each assessment objective, what went well, what to improve and what to practise next. It is written by AI and labelled as AI, and its grade is a practice estimate, not an official result.",
       },
       {
         question: 'What if the AI gets the mark wrong?',
         answer:
-          "Every AI-marked essay has a one-click ‘request human review’ option. A qualified reviewer will re-mark your work and respond as quickly as possible - see our AI Transparency page for the current service commitment. We're transparent that AI marking is indicative, not authoritative.",
+          "AI marking can be wrong, which is why every result is labelled as AI and its grade is called a practice estimate. Nobody re-marks essays by hand. If you are in a class on the site through your school, essays you submit on the Mark an essay page go to your teacher, who can approve or change the mark, and you will see their decision. Otherwise, compare the feedback with your board's mark scheme and treat the mark as a guide, not an official result.",
       },
       {
-        question: 'Do you mark essays in real time in class?',
+        question: "Can teachers mark a whole class's essays?",
         answer:
-          'Yes. Teachers can bulk-submit 30 essays and receive AO-aligned feedback per student in under 10 minutes - usually while the lesson is still running.',
+          "Yes, with the examiner marking tool. Drop in a scanned batch or photographs of a class's scripts, check how the tool has split them into candidates, and it marks them one after another against the paper's level grid, flagging words it could not read with confidence. Its mark is a second opinion, never the award. It comes with any paid plan or the free trial, within a fair-use limit.",
       },
     ],
   },
@@ -184,7 +194,7 @@ export const FAQ_SECTIONS: FaqSection[] = [
       {
         question: 'How is my data protected?',
         answer:
-          "We're UK GDPR compliant, registered with the ICO (registration ZC016690), host all data in EU regions (Supabase + Vercel), and treat every under-18 user under the ICO Children's Code 15 standards. A full DPIA is available at /compliance.",
+          "We're UK GDPR compliant, registered with the ICO (registration ZC016690), host all data in EU regions (Supabase + Vercel), and treat every under-18 user under the ICO Children's Code 15 standards.",
       },
       {
         question: 'Is my data safe and private?',

@@ -4964,7 +4964,7 @@ export const EN_MESSAGES: Record<string, string> = {
     'The English Hub is an online learning platform designed specifically for GCSE and IGCSE English students. We provide board-specific courses, mock exams with AI-powered feedback, practice questions with model answers, and comprehensive revision materials for English Language and English Literature.',
   'faqs.g2.q': 'Who is The English Hub for?',
   'faqs.g2.a':
-    "The English Hub is built for GCSE and IGCSE English students (typically aged 14-16), but is also used by KS3 students who want to get ahead. Teachers use our school licences to set assignments and track class progress, and parents can link to their child's account for weekly progress reports.",
+    "The English Hub is built for GCSE and IGCSE English students (typically aged 14-16), but is also used by KS3 students who want to get ahead. Teachers use our school licences to set assignments and track class progress, and parents can link to their child's account to manage consent preferences.",
   'faqs.g3.q': 'Which exam boards are supported?',
   'faqs.g3.a':
     'AQA, Edexcel (GCSE + International), OCR, WJEC / Eduqas, Cambridge IGCSE (0500 + 0475), and Pearson Edexcel International. Built around how examiners actually mark, so every course, mock exam, practice question, and revision note is tailored to your specific board and specification.',
@@ -5013,13 +5013,13 @@ export const EN_MESSAGES: Record<string, string> = {
     "We continuously update our content to reflect the latest exam board requirements, mark schemes, and published guidance. When exam boards make changes, we update our materials promptly so you're always revising the right content.",
   'faqs.a1.q': 'How does the AI mark my essay?',
   'faqs.a1.a':
-    'Claude (Anthropic) reads the essay, compares it against the published AO descriptors for your board, and returns scores plus specific improvement feedback in 20-40 seconds. Every response is flagged with its confidence level and can be human-reviewed on request.',
+    "Claude, an AI model made by Anthropic, reads your essay against the assessment objectives for your board's paper. You get a mark for each assessment objective, what went well, what to improve and what to practise next. It is written by AI and labelled as AI, and its grade is a practice estimate, not an official result.",
   'faqs.a2.q': 'What if the AI gets the mark wrong?',
   'faqs.a2.a':
-    "Every AI-marked essay has a one-click 'request human review' option. A human examiner re-marks within 48 hours. We're transparent that AI marking is indicative, not authoritative - the mark scheme remains the examiner's.",
-  'faqs.a3.q': 'Do you mark essays in real time in class?',
+    "AI marking can be wrong, which is why every result is labelled as AI and its grade is called a practice estimate. Nobody re-marks essays by hand. If you are in a class on the site through your school, essays you submit on the Mark an essay page go to your teacher, who can approve or change the mark, and you will see their decision. Otherwise, compare the feedback with your board's mark scheme and treat the mark as a guide, not an official result.",
+  'faqs.a3.q': "Can teachers mark a whole class's essays?",
   'faqs.a3.a':
-    'Yes. Teachers can bulk-submit 30 essays and receive AO-aligned feedback per student in under 10 minutes - usually while the lesson is still running.',
+    "Yes, with the examiner marking tool. Drop in a scanned batch or photographs of a class's scripts, check how the tool has split them into candidates, and it marks them one after another against the paper's level grid, flagging words it could not read with confidence. Its mark is a second opinion, never the award. It comes with any paid plan or the free trial, within a fair-use limit.",
   'faqs.t1.q': 'What browsers and devices are supported?',
   'faqs.t1.a':
     'The English Hub works on any device with a modern web browser. We support the latest versions of Chrome, Safari, Firefox, and Microsoft Edge on Windows, macOS, iOS, Android, and ChromeOS.',
@@ -5037,19 +5037,19 @@ export const EN_MESSAGES: Record<string, string> = {
     'The English Hub requires an internet connection to access courses, submit mock exams, and receive feedback. We recommend a stable broadband or mobile data connection for the best experience.',
   'faqs.pr1.q': 'How is my data protected?',
   'faqs.pr1.a':
-    "We're UK GDPR compliant, registered with the ICO (registration ZC016690), host all data in EU regions (Supabase + Vercel), and treat every under-18 user under the ICO Children's Code 15 standards. A full DPIA is available at /compliance.",
+    "We're UK GDPR compliant, registered with the ICO (registration ZC016690), host all data in EU regions (Supabase + Vercel), and treat every under-18 user under the ICO Children's Code 15 standards.",
   'faqs.pr2.q': 'Is my data safe and private?',
   'faqs.pr2.a':
     'Yes. All data is encrypted in transit and at rest. We comply with UK GDPR and never sell your personal information. For full details, read our Privacy Policy. Students under 16 should have a parent or guardian manage their account.',
   'faqs.pr3.q': 'What parental controls are available?',
   'faqs.pr3.a':
-    "Parents can link to their child's account to receive weekly progress reports. For students under 16, we require parental consent during registration. Parents can view their child's learning activity, and request data access or deletion at any time. See our Privacy Policy for full details on how we protect children's data.",
+    "Parents can link to their child's account from the parent dashboard and manage consent preferences there. Weekly progress summaries are still being finalised, so none are sent yet. For students under 16, we require parental consent during registration. Parents can request data access or deletion at any time. See our Privacy Policy for full details on how we protect children's data.",
   'faqs.pr4.q': "Can parents track their child's progress?",
   'faqs.pr4.a':
     "Yes - parents get a child-linked dashboard showing modules completed, quiz scores, study time and weak areas. Weekly email summaries are being finalised and are not sent yet. Parental controls and ICO Children's Code defaults apply throughout.",
   'faqs.pr5.q': "How do I link my parent account to my child's?",
   'faqs.pr5.a':
-    "Your child can send you a linking invitation from their account settings, or you can contact info@upskillenergy.com with your child's registered email. Once linked, you'll receive weekly progress reports and can manage consent preferences.",
+    "Your child can send you a linking invitation from their account settings, or you can contact info@upskillenergy.com with your child's registered email. Once linked, your parent dashboard shows the linked account and lets you manage consent preferences. Weekly progress summaries are still being finalised and are not sent yet.",
   'faqs.s1.q': 'Can my school buy a licence?',
   'faqs.s2.q': 'Do you offer a free trial for schools?',
   'faqs.s2.a':
