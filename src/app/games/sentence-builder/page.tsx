@@ -5,312 +5,22 @@ import Link from 'next/link'
 import GameShell, { type GameState } from '@/components/games/GameShell'
 import { Button } from '@/components/ui/button'
 import { cn } from '@/lib/utils'
-import { ArrowLeft, CheckCircle, XCircle, Sparkles, Eye, RotateCcw } from 'lucide-react'
+import { ArrowLeft, ArrowRight, CheckCircle, XCircle, Sparkles, Eye, RotateCcw } from 'lucide-react'
 import { useBoard } from '@/hooks/useBoard'
 import { getBoardConfig } from '@/lib/board/board-store'
+import { AnswerExplanation } from '@/components/games/AnswerExplanation'
+import { useGameRound } from '@/components/games/game-round'
+import {
+  BANK,
+  SENTENCE_BANK,
+  type SentenceItem,
+  type SentenceType,
+} from '@/data/games/banks/sentence-builder'
 
 // ─── Data ──────────────────────────────────────────────────────────────────────
-
-type SentenceType = 'simple' | 'compound' | 'complex'
-
-interface SentenceItem {
-  tiles: string[]
-  correct: string
-  type: SentenceType
-  note: string
-}
-
-// Original sentence bank. `correct` is the target word order;
-// tiles are presented scrambled at runtime.
-const SENTENCE_BANK: SentenceItem[] = [
-  // ── Simple sentences (A2) ──────────────────────────────────────────────────
-  {
-    tiles: ['She', 'walks', 'to', 'school', 'every', 'morning'],
-    correct: 'She walks to school every morning',
-    type: 'simple',
-    note: 'A simple sentence has one subject and one verb.',
-  },
-  {
-    tiles: ['The', 'cat', 'is', 'sleeping', 'on', 'the', 'sofa'],
-    correct: 'The cat is sleeping on the sofa',
-    type: 'simple',
-    note: 'Use "is + verb-ing" for an action happening now.',
-  },
-  {
-    tiles: ['My', 'brother', 'plays', 'football', 'at', 'the', 'weekend'],
-    correct: 'My brother plays football at the weekend',
-    type: 'simple',
-    note: 'In UK English we say "at the weekend".',
-  },
-  {
-    tiles: ['We', 'had', 'lunch', 'in', 'the', 'park'],
-    correct: 'We had lunch in the park',
-    type: 'simple',
-    note: '"Had" is the past tense of "have".',
-  },
-  {
-    tiles: ['They', 'are', 'watching', 'a', 'film', 'tonight'],
-    correct: 'They are watching a film tonight',
-    type: 'simple',
-    note: 'UK English prefers "film" over "movie".',
-  },
-  {
-    tiles: ['I', 'bought', 'a', 'new', 'jumper', 'yesterday'],
-    correct: 'I bought a new jumper yesterday',
-    type: 'simple',
-    note: 'A "jumper" is a knitted top in UK English.',
-  },
-  {
-    tiles: ['The', 'train', 'leaves', 'at', 'nine', "o'clock"],
-    correct: "The train leaves at nine o'clock",
-    type: 'simple',
-    note: 'Use the present simple for timetables.',
-  },
-  {
-    tiles: ['Our', 'teacher', 'gave', 'us', 'some', 'homework'],
-    correct: 'Our teacher gave us some homework',
-    type: 'simple',
-    note: '"Homework" is uncountable, so use "some".',
-  },
-  {
-    tiles: ['She', 'has', 'a', 'small', 'garden', 'behind', 'the', 'house'],
-    correct: 'She has a small garden behind the house',
-    type: 'simple',
-    note: 'Adjectives like "small" go before the noun.',
-  },
-  {
-    tiles: ['He', 'speaks', 'three', 'languages', 'very', 'well'],
-    correct: 'He speaks three languages very well',
-    type: 'simple',
-    note: '"Very well" describes how he speaks.',
-  },
-  {
-    tiles: ['The', 'children', 'are', 'playing', 'in', 'the', 'garden'],
-    correct: 'The children are playing in the garden',
-    type: 'simple',
-    note: '"Children" is the irregular plural of "child".',
-  },
-  {
-    tiles: ['I', 'usually', 'have', 'tea', 'in', 'the', 'afternoon'],
-    correct: 'I usually have tea in the afternoon',
-    type: 'simple',
-    note: 'Adverbs of frequency like "usually" go before the main verb.',
-  },
-  {
-    tiles: ['My', 'phone', 'is', 'on', 'the', 'kitchen', 'table'],
-    correct: 'My phone is on the kitchen table',
-    type: 'simple',
-    note: '"On" shows position on a surface.',
-  },
-  {
-    tiles: ['We', 'visited', 'our', 'grandparents', 'last', 'summer'],
-    correct: 'We visited our grandparents last summer',
-    type: 'simple',
-    note: '"Last summer" places the action in the past.',
-  },
-  {
-    tiles: ['The', 'shop', 'opens', 'at', 'eight', 'every', 'day'],
-    correct: 'The shop opens at eight every day',
-    type: 'simple',
-    note: 'Add "s" to the verb after "the shop" (he/she/it).',
-  },
-  {
-    tiles: ['She', 'is', 'reading', 'an', 'interesting', 'book'],
-    correct: 'She is reading an interesting book',
-    type: 'simple',
-    note: 'Use "an" before a vowel sound: "an interesting".',
-  },
-
-  // ── Compound sentences (A2-B1) ─────────────────────────────────────────────
-  {
-    tiles: ['I', 'wanted', 'to', 'go', 'out', 'but', 'it', 'was', 'raining'],
-    correct: 'I wanted to go out but it was raining',
-    type: 'compound',
-    note: '"But" joins two ideas that contrast.',
-  },
-  {
-    tiles: ['She', 'studied', 'hard', 'so', 'she', 'passed', 'the', 'exam'],
-    correct: 'She studied hard so she passed the exam',
-    type: 'compound',
-    note: '"So" shows a result.',
-  },
-  {
-    tiles: ['We', 'can', 'walk', 'or', 'we', 'can', 'take', 'the', 'bus'],
-    correct: 'We can walk or we can take the bus',
-    type: 'compound',
-    note: '"Or" offers a choice between two options.',
-  },
-  {
-    tiles: ['He', 'made', 'dinner', 'and', 'she', 'washed', 'the', 'dishes'],
-    correct: 'He made dinner and she washed the dishes',
-    type: 'compound',
-    note: '"And" joins two equal ideas.',
-  },
-  {
-    tiles: ['The', 'film', 'was', 'long', 'but', 'it', 'was', 'exciting'],
-    correct: 'The film was long but it was exciting',
-    type: 'compound',
-    note: 'Use a comma before "but" in longer sentences.',
-  },
-  {
-    tiles: ['I', 'was', 'tired', 'so', 'I', 'went', 'to', 'bed', 'early'],
-    correct: 'I was tired so I went to bed early',
-    type: 'compound',
-    note: '"So" connects a cause to its result.',
-  },
-  {
-    tiles: ['You', 'can', 'have', 'tea', 'or', 'you', 'can', 'have', 'coffee'],
-    correct: 'You can have tea or you can have coffee',
-    type: 'compound',
-    note: '"Or" presents alternatives.',
-  },
-  {
-    tiles: ['She', 'plays', 'the', 'piano', 'and', 'he', 'sings'],
-    correct: 'She plays the piano and he sings',
-    type: 'compound',
-    note: 'Both clauses can stand alone as sentences.',
-  },
-  {
-    tiles: ['It', 'was', 'cold', 'so', 'we', 'lit', 'the', 'fire'],
-    correct: 'It was cold so we lit the fire',
-    type: 'compound',
-    note: '"Lit" is the past tense of "light".',
-  },
-  {
-    tiles: ['He', 'tried', 'his', 'best', 'but', 'he', 'did', 'not', 'win'],
-    correct: 'He tried his best but he did not win',
-    type: 'compound',
-    note: '"But" introduces an unexpected outcome.',
-  },
-  {
-    tiles: ['We', 'finished', 'early', 'so', 'we', 'went', 'for', 'a', 'walk'],
-    correct: 'We finished early so we went for a walk',
-    type: 'compound',
-    note: 'UK English: "went for a walk".',
-  },
-  {
-    tiles: ['I', 'like', 'cricket', 'and', 'my', 'sister', 'likes', 'rugby'],
-    correct: 'I like cricket and my sister likes rugby',
-    type: 'compound',
-    note: '"And" links two related facts.',
-  },
-  {
-    tiles: ['The', 'sun', 'came', 'out', 'so', 'we', 'went', 'to', 'the', 'beach'],
-    correct: 'The sun came out so we went to the beach',
-    type: 'compound',
-    note: '"So" signals consequence.',
-  },
-  {
-    tiles: ['She', 'spoke', 'quietly', 'but', 'everyone', 'could', 'hear', 'her'],
-    correct: 'She spoke quietly but everyone could hear her',
-    type: 'compound',
-    note: '"But" contrasts the two clauses.',
-  },
-  {
-    tiles: ['You', 'should', 'revise', 'now', 'or', 'you', 'will', 'forget'],
-    correct: 'You should revise now or you will forget',
-    type: 'compound',
-    note: '"Or" can warn of a result.',
-  },
-
-  // ── Complex sentences (B1) ─────────────────────────────────────────────────
-  {
-    tiles: ['Because', 'it', 'was', 'late', 'we', 'went', 'home'],
-    correct: 'Because it was late we went home',
-    type: 'complex',
-    note: '"Because" introduces a subordinate clause giving a reason.',
-  },
-  {
-    tiles: ['When', 'the', 'bell', 'rang', 'the', 'pupils', 'left'],
-    correct: 'When the bell rang the pupils left',
-    type: 'complex',
-    note: '"When" introduces a clause about time.',
-  },
-  {
-    tiles: ['Although', 'she', 'was', 'tired', 'she', 'kept', 'working'],
-    correct: 'Although she was tired she kept working',
-    type: 'complex',
-    note: '"Although" shows contrast within one sentence.',
-  },
-  {
-    tiles: ['If', 'it', 'rains', 'tomorrow', 'we', 'will', 'stay', 'inside'],
-    correct: 'If it rains tomorrow we will stay inside',
-    type: 'complex',
-    note: 'First conditional: "If + present, will + verb".',
-  },
-  {
-    tiles: ['The', 'book', 'that', 'I', 'read', 'was', 'fascinating'],
-    correct: 'The book that I read was fascinating',
-    type: 'complex',
-    note: '"That I read" is a relative clause describing the book.',
-  },
-  {
-    tiles: ['While', 'he', 'was', 'cooking', 'she', 'set', 'the', 'table'],
-    correct: 'While he was cooking she set the table',
-    type: 'complex',
-    note: '"While" links two actions at the same time.',
-  },
-  {
-    tiles: ['She', 'smiled', 'because', 'she', 'had', 'won', 'the', 'prize'],
-    correct: 'She smiled because she had won the prize',
-    type: 'complex',
-    note: 'The subordinate clause can follow the main clause.',
-  },
-  {
-    tiles: ['After', 'we', 'had', 'eaten', 'we', 'watched', 'television'],
-    correct: 'After we had eaten we watched television',
-    type: 'complex',
-    note: '"After" shows which action happened first.',
-  },
-  {
-    tiles: ['The', 'man', 'who', 'lives', 'next', 'door', 'is', 'a', 'doctor'],
-    correct: 'The man who lives next door is a doctor',
-    type: 'complex',
-    note: '"Who lives next door" tells us which man.',
-  },
-  {
-    tiles: ['Before', 'you', 'leave', 'please', 'close', 'the', 'window'],
-    correct: 'Before you leave please close the window',
-    type: 'complex',
-    note: '"Before" introduces a time clause.',
-  },
-  {
-    tiles: ['Even', 'though', 'it', 'was', 'expensive', 'they', 'bought', 'it'],
-    correct: 'Even though it was expensive they bought it',
-    type: 'complex',
-    note: '"Even though" emphasises a strong contrast.',
-  },
-  {
-    tiles: ['Since', 'we', 'moved', 'here', 'we', 'have', 'made', 'new', 'friends'],
-    correct: 'Since we moved here we have made new friends',
-    type: 'complex',
-    note: '"Since" can mean "from that time" with the present perfect.',
-  },
-  {
-    tiles: ['Unless', 'you', 'hurry', 'you', 'will', 'miss', 'the', 'train'],
-    correct: 'Unless you hurry you will miss the train',
-    type: 'complex',
-    note: '"Unless" means "if not".',
-  },
-  {
-    tiles: ['The', 'café', 'where', 'we', 'met', 'has', 'now', 'closed'],
-    correct: 'The café where we met has now closed',
-    type: 'complex',
-    note: '"Where we met" is a relative clause about a place.',
-  },
-  {
-    tiles: ['As', 'soon', 'as', 'the', 'film', 'ended', 'we', 'left'],
-    correct: 'As soon as the film ended we left',
-    type: 'complex',
-    note: '"As soon as" means immediately after.',
-  },
-  {
-    tiles: ['Whenever', 'I', 'visit', 'London', 'I', 'see', 'the', 'museums'],
-    correct: 'Whenever I visit London I see the museums',
-    type: 'complex',
-    note: '"Whenever" means "every time that".',
-  },
-]
+// The sentences are in src/data/games/banks/sentence-builder.ts (moved there on
+// 16 October 2026), and the explanation for each in
+// src/data/games/explanations/sentence-builder.ts.
 
 const TYPE_META: Record<SentenceType, { label: string; cls: string }> = {
   simple: { label: 'Simple', cls: 'text-emerald-400 border-emerald-500/30 bg-emerald-500/10' },
@@ -359,6 +69,7 @@ export default function SentenceBuilderPage() {
   const [totalAnswered, setTotalAnswered] = useState(0)
   const [feedback, setFeedback] = useState<'correct' | 'wrong' | null>(null)
   const [revealed, setRevealed] = useState(false)
+  const round = useGameRound('sentence-builder')
 
   const current = items[idx] ?? null
 
@@ -390,18 +101,15 @@ export default function SentenceBuilderPage() {
     setGameState('finished')
   }, [])
 
-  const advance = useCallback(() => {
-    setItems((curItems) => {
-      if (idx + 1 >= curItems.length) {
-        setGameState('finished')
-      } else {
-        const next = curItems[idx + 1]
-        setIdx((i) => i + 1)
-        loadItem(next)
-      }
-      return curItems
-    })
-  }, [idx, loadItem])
+  /** Goes on to the next sentence once the student has read the explanation. */
+  const handleNext = useCallback(() => {
+    if (idx + 1 >= items.length) {
+      setGameState('finished')
+      return
+    }
+    setIdx(idx + 1)
+    loadItem(items[idx + 1])
+  }, [idx, items, loadItem])
 
   // Tap a pool tile → append to the built sentence.
   const placeTile = (poolPos: number) => {
@@ -428,6 +136,21 @@ export default function SentenceBuilderPage() {
     loadItem(current)
   }
 
+  /**
+   * Check, or Reveal. The sentence is marked and recorded for the student's
+   * account, and then left on screen with its explanation
+   * (src/data/games/explanations/sentence-builder.ts) until they choose to go on.
+   *
+   * WHAT CHANGED (16 October 2026). The game used to move on by itself 2.2
+   * seconds after a check (2.6 after a reveal), which is too quick to read an
+   * explanation. Nothing the student built is recorded, only whether it was
+   * right.
+   *
+   * WHAT DID NOT. A build is right only if it is `correct`, as before. The bank
+   * lists in `alsoCorrect` other orders of the same tiles that are also correct
+   * English; whether to accept them changes what counts as right, which is the
+   * founder's decision, so this page does not read them.
+   */
   const checkAnswer = () => {
     if (!current || feedback || revealed) return
     const attempt = built.join(' ')
@@ -439,7 +162,7 @@ export default function SentenceBuilderPage() {
     } else {
       setFeedback('wrong')
     }
-    setTimeout(advance, 2200)
+    round.record({ question: BANK.key(current), correct: isCorrect, tag: current.type })
   }
 
   const reveal = () => {
@@ -448,7 +171,7 @@ export default function SentenceBuilderPage() {
     setTotalAnswered((t) => t + 1)
     setBuilt(current.correct.split(' '))
     setPool([])
-    setTimeout(advance, 2600)
+    round.record({ question: BANK.key(current), correct: false, tag: current.type })
   }
 
   const accuracyPct = totalAnswered > 0 ? Math.round((score / totalAnswered) * 100) : 0
@@ -480,6 +203,7 @@ export default function SentenceBuilderPage() {
           onStart={handleStart}
           onFinish={handleFinish}
           gameState={gameState}
+          round={round}
         >
           {current && (
             <div className="space-y-6">
@@ -569,7 +293,7 @@ export default function SentenceBuilderPage() {
                 >
                   {feedback === 'correct' ? (
                     <span className="flex items-center gap-2">
-                      <CheckCircle className="size-4" /> Brilliant - that&apos;s exactly right!
+                      <CheckCircle className="size-4" /> Brilliant. That&apos;s exactly right.
                     </span>
                   ) : (
                     <>
@@ -579,7 +303,6 @@ export default function SentenceBuilderPage() {
                       <span className="font-bold text-foreground">{current.correct}.</span>
                     </>
                   )}
-                  <span className="mt-1 text-xs text-muted-foreground">{current.note}</span>
                 </div>
               )}
 
@@ -587,7 +310,22 @@ export default function SentenceBuilderPage() {
                 <div className="flex flex-col items-center gap-1 rounded-lg bg-primary/10 px-4 py-3 text-center text-sm">
                   <span className="font-semibold text-primary">Here&apos;s the answer:</span>
                   <span className="font-bold text-foreground">{current.correct}.</span>
-                  <span className="mt-1 text-xs text-muted-foreground">{current.note}</span>
+                </div>
+              )}
+
+              {locked && (
+                <div>
+                  <AnswerExplanation
+                    game="sentence-builder"
+                    question={BANK.key(current)}
+                    correct={feedback === 'correct'}
+                  />
+                  <div className="mt-4 flex justify-center">
+                    <Button onClick={handleNext} autoFocus>
+                      {idx + 1 >= items.length ? 'See your results' : 'Next question'}
+                      <ArrowRight className="size-4 ms-1" />
+                    </Button>
+                  </div>
                 </div>
               )}
 

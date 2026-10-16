@@ -146,12 +146,7 @@ describe.each(BANK_SLUGS)('%s', (slug) => {
  * not hidden in a skipped test: the founder asked for every game, and this
  * list must end empty. Remove a game when its bank lands.
  */
-const PENDING: readonly string[] = [
-  'apostrophe-ace',
-  'punctuation-repair',
-  'sentence-builder',
-  'word-class-sorter',
-]
+const PENDING: readonly string[] = []
 
 describe('the whole set', () => {
   it('every explained game has its bank, or is named as still to do', () => {
