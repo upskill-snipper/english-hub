@@ -40,9 +40,11 @@ export const IELTS_PARTNERS_DICTIONARY: Dictionary = {
     es: 'Lleva la preparación de IELTS corregida con IA a tus estudiantes',
   },
   'ielts.partners.overview.hero.lede': {
-    en: 'The English Hub is an IELTS Academic preparation platform built for schools, exam-prep centres and education agencies - with bulk access, a centre dashboard, bilingual English / Arabic delivery and instant AI band feedback.',
-    ar: 'The English Hub منصّة تحضير IELTS Academic مبنية للمدارس ومراكز التحضير للامتحانات ووكالات التعليم - مع وصول جماعي، ولوحة تحكّم للمركز، وتجربة ثنائية اللغة إنجليزي / عربي، وتغذية راجعة فورية للـ band بالذكاء الاصطناعي.',
-    es: 'The English Hub es una plataforma de preparación de IELTS Academic creada para colegios, centros de preparación de exámenes y agencias educativas, con acceso por volumen, un panel de centro, una experiencia bilingüe inglés / árabe y feedback de banda instantáneo con IA.',
+    // 16 October 2026: these partner lines said "instant", "in seconds" and
+    // "official descriptors"; TEHC-079 section 6.2 rules all three out.
+    en: 'The English Hub is an IELTS Academic preparation platform built for schools, exam-prep centres and education agencies - with bulk access, a centre dashboard, bilingual English / Arabic delivery and AI band feedback.',
+    ar: 'The English Hub منصّة تحضير IELTS Academic مبنية للمدارس ومراكز التحضير للامتحانات ووكالات التعليم - مع وصول جماعي، ولوحة تحكّم للمركز، وتجربة ثنائية اللغة إنجليزي / عربي، وتغذية راجعة للـ band بالذكاء الاصطناعي.',
+    es: 'The English Hub es una plataforma de preparación de IELTS Academic creada para colegios, centros de preparación de exámenes y agencias educativas, con acceso por volumen, un panel de centro, una experiencia bilingüe inglés / árabe y feedback de banda con IA.',
   },
   'ielts.partners.overview.hero.cta_primary': {
     en: 'Talk to us about partnering',
@@ -123,14 +125,14 @@ export const IELTS_PARTNERS_DICTIONARY: Dictionary = {
     es: 'Cada pantalla que ve el estudiante funciona en inglés o árabe, para que las instrucciones nunca se interpongan en la práctica de los estudiantes del Golfo que avanzan hacia un futuro en inglés.',
   },
   'ielts.partners.overview.offer.feedback.title': {
-    en: 'Instant AI band feedback',
-    ar: 'تغذية راجعة فورية للـ band بالذكاء الاصطناعي',
-    es: 'Feedback de banda instantáneo con IA',
+    en: 'AI band feedback',
+    ar: 'تغذية راجعة للـ band بالذكاء الاصطناعي',
+    es: 'Feedback de banda con IA',
   },
   'ielts.partners.overview.offer.feedback.body': {
-    en: 'Writing and Speaking responses are scored against the official band descriptors in seconds, with targeted next steps - extending your teachers rather than replacing them.',
-    ar: 'إجابات Writing و Speaking تتصحّح حسب واصفات الـ band الرسمية بثواني، مع خطوات تالية محدّدة - تعزّز مدرّسينك بدل ما تستبدلهم.',
-    es: 'Las respuestas de Writing y Speaking se puntúan según los descriptores oficiales de banda en segundos, con próximos pasos concretos, ampliando a tus profesores en lugar de reemplazarlos.',
+    en: 'Writing and Speaking responses get an AI-estimated band against the published band descriptors, with targeted next steps - extending your teachers rather than replacing them.',
+    ar: 'إجابات Writing و Speaking تاخذ band تقديري بالذكاء الاصطناعي حسب واصفات الـ band المنشورة، مع خطوات تالية محدّدة - تعزّز مدرّسينك بدل ما تستبدلهم.',
+    es: 'Las respuestas de Writing y Speaking reciben una banda estimada con IA según los descriptores de banda publicados, con próximos pasos concretos, ampliando a tus profesores en lugar de reemplazarlos.',
   },
   'ielts.partners.overview.offer.progress.title': {
     en: 'Progress you can report on',
@@ -509,14 +511,14 @@ export const IELTS_PARTNERS_DICTIONARY: Dictionary = {
     es: 'Asigna el ciclo completo de aprendizaje de IELTS Academic (diagnóstico, plan, práctica de las cuatro destrezas y simulacros) a cada estudiante bajo un único acuerdo.',
   },
   'ielts.partners.schools.features.feedback.title': {
-    en: 'Instant AI band feedback',
-    ar: 'تغذية راجعة فورية للـ band بالذكاء الاصطناعي',
-    es: 'Feedback de banda instantáneo con IA',
+    en: 'AI band feedback',
+    ar: 'تغذية راجعة للـ band بالذكاء الاصطناعي',
+    es: 'Feedback de banda con IA',
   },
   'ielts.partners.schools.features.feedback.body': {
-    en: 'Writing and Speaking are scored against the official descriptors in seconds, with concrete next steps your teachers can build a lesson around.',
-    ar: 'Writing و Speaking يتصحّحون حسب الواصفات الرسمية بثواني، مع خطوات تالية ملموسة يقدر مدرّسينك يبنون درس حولها.',
-    es: 'El Writing y el Speaking se puntúan según los descriptores oficiales en segundos, con próximos pasos concretos en torno a los que tus profesores pueden construir una clase.',
+    en: 'Writing and Speaking get an AI-estimated band against the published descriptors, with concrete next steps your teachers can build a lesson around.',
+    ar: 'Writing و Speaking ياخذون band تقديري بالذكاء الاصطناعي حسب الواصفات المنشورة، مع خطوات تالية ملموسة يقدر مدرّسينك يبنون درس حولها.',
+    es: 'El Writing y el Speaking reciben una banda estimada con IA según los descriptores publicados, con próximos pasos concretos en torno a los que tus profesores pueden construir una clase.',
   },
   'ielts.partners.schools.features.dashboard.title': {
     en: 'A coordinator dashboard',
@@ -785,14 +787,14 @@ export const IELTS_PARTNERS_DICTIONARY: Dictionary = {
     es: 'Los simulacros completos cronometrados y la puntuación por destreza producen una banda global predicha defendible que puedes usar para aconsejar a los estudiantes y respaldar las solicitudes.',
   },
   'ielts.partners.agencies.features.feedback.title': {
-    en: 'Instant AI feedback',
-    ar: 'تغذية راجعة فورية بالذكاء الاصطناعي',
-    es: 'Feedback instantáneo con IA',
+    en: 'AI feedback',
+    ar: 'تغذية راجعة بالذكاء الاصطناعي',
+    es: 'Feedback con IA',
   },
   'ielts.partners.agencies.features.feedback.body': {
-    en: 'Writing and Speaking are marked against the official descriptors in seconds, so applicants improve quickly without waiting on a tutor.',
-    ar: 'Writing و Speaking يتصحّحون حسب الواصفات الرسمية بثواني، عشان المتقدّمين يتحسّنون بسرعة بدون ما ينتظرون مدرّس.',
-    es: 'El Writing y el Speaking se corrigen según los descriptores oficiales en segundos, para que los solicitantes mejoren rápido sin esperar a un tutor.',
+    en: 'Writing and Speaking get an AI-estimated band against the published descriptors, so applicants can keep practising without waiting on a tutor.',
+    ar: 'Writing و Speaking ياخذون band تقديري بالذكاء الاصطناعي حسب الواصفات المنشورة، عشان المتقدّمين يكمّلون تدريبهم بدون ما ينتظرون مدرّس.',
+    es: 'El Writing y el Speaking reciben una banda estimada con IA según los descriptores publicados, para que los solicitantes sigan practicando sin esperar a un tutor.',
   },
   'ielts.partners.agencies.features.bilingual.title': {
     en: 'Bilingual English / Arabic',

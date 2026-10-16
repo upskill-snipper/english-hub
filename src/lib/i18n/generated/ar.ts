@@ -1423,7 +1423,7 @@ export const AR_MESSAGES: Record<string, string> = {
   'dash.qa.join_school': 'انضم لمدرسة',
   'dash.marking_cta.title': 'صحّح مقالك',
   'dash.marking_cta.badge': 'تصحيح بالذكاء الاصطناعي',
-  'dash.marking_cta.blurb': 'حط مقالك وخذ ملاحظات بأسلوب المصحح خلال دقايق.',
+  'dash.marking_cta.blurb': 'حط مقالك وخذ ملاحظات بالذكاء الاصطناعي على كل هدف تقييم.',
   'sub.free': 'ببلاش',
   'sub.premium': 'بريميوم',
   'sub.cancelled': 'ملغى',
@@ -1719,7 +1719,7 @@ export const AR_MESSAGES: Record<string, string> = {
   'marking.reviews_remaining_singular': 'مراجعة باقية اليوم',
   'marking.reviews_remaining_plural': 'مراجعات باقية اليوم',
   'marking.marking_in_progress': 'يحلّل إجابتك…',
-  'marking.marking_takes_seconds': 'عادةً ياخذ ثواني بس.',
+  'marking.marking_takes_seconds': 'ممكن ياخذ شوي وقت. لا تسكّر الصفحة.',
   'marking.retry': 'حاول مرة ثانية',
   'marking.min_words_error': 'لازم تكتب ١٠٠ كلمة على الأقل عشان تحصل على ملاحظات الذكاء الاصطناعي.',
   'marking.network_error': 'خطأ في الشبكة. شيك على الاتصال وحاول مرة ثانية.',
@@ -2573,7 +2573,7 @@ export const AR_MESSAGES: Record<string, string> = {
   'text_hub.study_subheading': 'كل اللي تحتاجه في مكان واحد - اقرا وراجع وتدرب واختبر نفسك.',
   'text_hub.generate_personalised_notes': 'سوِّ ملاحظات مخصصة',
   'text_hub.ready_for_exam': 'جاهز للتدريب على الامتحان؟',
-  'text_hub.exam_blurb': 'اكتب مقال بوقت محدد وخذ ملاحظات فورية من الذكاء الاصطناعي مع تفصيل AO',
+  'text_hub.exam_blurb': 'اكتب مقال بوقت محدد وخذ ملاحظات من الذكاء الاصطناعي على كل هدف تقييم',
   'text_hub.build_test': 'سوِّ اختبار',
   'text_hub.write_mark_essay': 'اكتب المقال وصحّحه',
   'poem_viewer.tab_context': 'السياق',
@@ -2802,7 +2802,7 @@ export const AR_MESSAGES: Record<string, string> = {
     'دروس وأنظمة تصحيح وإجابات نموذجية متطابقة مباشرة مع بوردات AQA, Edexcel, OCR, WJEC Eduqas, و Cambridge IGCSE.',
   'about.approach.ai.name': 'ملاحظات على المقالات بالذكاء الاصطناعي',
   'about.approach.ai.desc':
-    'سلّم مقالات تدريب وخذ ملاحظات مفصَّلة على معايير التصحيح في ثواني، تساعد الطالب يفهم كيف يتحسّن قبل الامتحان الحقيقي.',
+    'سلّم مقالات تدريب وخذ ملاحظات مفصَّلة على معايير التصحيح، مكتوب عليها إنها من الذكاء الاصطناعي، تساعد الطالب يفهم كيف يتحسّن قبل الامتحان الحقيقي.',
   'about.approach.mock.name': 'تدريب على الامتحانات التجريبية',
   'about.approach.mock.desc':
     'أسئلة بتوقيت محدَّد وبأسلوب الامتحان نفسه، شكل وصياغة وتوزيع درجات مثل اللي بيشوفه الطالب يوم الامتحان.',
@@ -2828,7 +2828,7 @@ export const AR_MESSAGES: Record<string, string> = {
   'about.glance.h2': 'نظرة سريعة',
   'about.glance.courses_label': 'كورسات منظَّمة من KS3 إلى IGCSE',
   'about.glance.boards_label': 'بوردات امتحان مدعومة',
-  'about.glance.ai_label': 'ملاحظات على المقال في ثواني',
+  'about.glance.ai_label': 'ملاحظات بالذكاء الاصطناعي على مقالات التدريب',
   'about.glance.mock_label': 'أسئلة تجريبية وتدريب بوقت محدَّد',
   'about.glance.ai_value': 'بالذكاء الاصطناعي',
   'about.glance.mock_value': 'بأسلوب الامتحان',
@@ -3092,7 +3092,7 @@ export const AR_MESSAGES: Record<string, string> = {
     'GCSE English بشرح بسيط، كيف تساعد في المراجعة، والفرق بين Language و Literature.',
   'analysis.revision.footer.h2': 'احصل على ملاحظات شخصية',
   'analysis.revision.footer.body':
-    'ارفع مقال واحصل على ملاحظات بأسلوب المصححين على الـ AOs خلال دقائق - معايرة على بورد امتحانك.',
+    'ارفع مقال واحصل على ملاحظات بالذكاء الاصطناعي على كل هدف تقييم، حسب ورقة بورد امتحانك.',
   'analysis.revision.footer.cta_primary': 'سوِّ حساب ببلاش',
   'analysis.revision.footer.cta_secondary': 'افتح مركز المراجعة',
   'analysis.ai_feedback.breadcrumb_current': 'ملاحظات الذكاء الاصطناعي: مقارنة مباشرة',
@@ -3119,7 +3119,7 @@ export const AR_MESSAGES: Record<string, string> = {
   'analysis.slug.applying_body':
     'استخدم التحليل فوق كقالب بناء لإجابتك - اختر اقتباسين أو ثلاثة، الصق تحليل الأسلوب، وادمج سياق التقييم في خاتمتك.',
   'analysis.slug.cta_block_prompt':
-    'جاهز تجرّبه على كتابتك؟ ارفع مقال واحصل على ملاحظات بأسلوب المصححين خلال دقائق.',
+    'جاهز تجرّبه على كتابتك؟ ارفع مقال واحصل على ملاحظات بالذكاء الاصطناعي على كل هدف تقييم.',
   'analysis.slug.cta_get_feedback': 'احصل على ملاحظات المصححين',
   'analysis.slug.cta_see_pricing': 'شوف الأسعار',
   'analysis.slug.faqs_h2': 'أسئلة شائعة',
@@ -4751,7 +4751,7 @@ export const AR_MESSAGES: Record<string, string> = {
     "اضغط 'Log In' بعدين 'Forgot Password'. ادخل إيميلك ونرسل لك رابط إعادة تعيين الباسوورد. الرابط ينتهي بعد ٢٤ ساعة. إذا سجّلت بـ Google، استخدم 'Sign in with Google' بدل.",
   'help.te.q4.q': 'ملاحظات الامتحان التجريبي ما تبيّن. وش أسوّي؟',
   'help.te.q4.a':
-    'الملاحظات عادة تطلع خلال ثواني من تسليم الامتحان. إذا ما طلعت بعد دقيقة، حدّث الصفحة. إذا المشكلة استمرت، تواصل مع الدعم واذكر اسم الامتحان ووقت التسليم.',
+    'ملاحظات الذكاء الاصطناعي ممكن تاخذ شوي وقت عشان تنكتب، فخلّ الصفحة مفتوحة. إذا ما طلعت بعد كم دقيقة، حدّث الصفحة. إذا المشكلة استمرت، تواصل مع الدعم واذكر اسم الامتحان ووقت التسليم.',
   'help.contact.title': 'تواصل معانا',
   'help.contact.lead':
     'لو عندك سؤال أو مشكلة أو بس تبغى تسلّم -- اختر القناة المناسبة تحت، ونرد عليك بأسرع ما يمكن.',
@@ -11339,7 +11339,7 @@ export const AR_MESSAGES: Record<string, string> = {
   'analytics.grade_band.below': 'تحت النجاح (1-3)',
   'marking.h1': 'تصحيح المقالات بالذكاء الاصطناعي',
   'marking.lead':
-    'سلّم إجابة على نمط الامتحان وخذ ملاحظات فورية على معايير المجلس مع مؤشّر للدرجة.',
+    'سلّم إجابة على نمط الامتحان وخذ ملاحظات بالذكاء الاصطناعي على معايير المجلس مع درجة للتدريب.',
   'marking.cta.new': 'صحّح مقالة جديدة',
   'marking.cta.history': 'شوف السجل',
   'marking.recent.h2': 'آخر المقالات',
@@ -11957,7 +11957,7 @@ export const AR_MESSAGES: Record<string, string> = {
     'GCSE في اللغة الإنجليزية ينمّي قدرتك على القراءة النقدية وتحليل كيف يستخدم الكتّاب اللغة والبنية، وإنتاج كتاباتك الخاصة عالية الجودة عبر أشكال وأغراض متنوعة. هو مؤهل أساسي تطلبه معظم جهات العمل ومزودو التعليم العالي، والدرجة 4 أو أعلى مطلوبة عادةً لدخول الصف السادس والكلية والتدريب المهني.',
   'resources.eng_lang.what_covers.p2':
     'يُقيَّم المساق من خلال امتحانات كتابية (ومكوّن اللغة المنطوقة في معظم البوردات). ستدرس مزيجاً من النصوص الخيالية وغير الخيالية وتطوّر مهارات الكتابة التحليلية والإبداعية التي يمكن نقلها إلى المرحلة A Level وما بعدها.',
-  'resources.eng_lang.ai.h2': 'احصل على ملاحظات فورية بالذكاء الاصطناعي على إجاباتك',
+  'resources.eng_lang.ai.h2': 'احصل على ملاحظات بالذكاء الاصطناعي على إجاباتك',
   'resources.eng_lang.ai.sub':
     'تدرّب على أسئلة بأسلوب الامتحان واحصل على ملاحظات مفصّلة ومتوافقة مع دليل التصحيح مدعومة بالذكاء الاصطناعي. يحلّل نظامنا إجابتك مقارنةً بأهداف التقييم لبوردك المحدد ويقدّم اقتراحات تحسين مستهدفة.',
   'resources.eng_lang.ai.cta_try': 'جرّب أسئلة التدريب',
@@ -11996,7 +11996,7 @@ export const AR_MESSAGES: Record<string, string> = {
   'resources.eng_lit.example.effective_label': 'شو اللي يخلّيها فعّالة:',
   'resources.eng_lit.ai.h2': 'احصل على ملاحظات مقال بالذكاء الاصطناعي',
   'resources.eng_lit.ai.sub':
-    'الصق مقالك الأدبي واحصل على ملاحظات فورية ومفصّلة على حجّتك واستخدام الأدلة وتحليل اللغة وتقنية الامتحان. مصحّح الذكاء الاصطناعي مالتنا معايَر وفق أدلة تصحيح GCSE.',
+    'الصق مقالك الأدبي واحصل على ملاحظات مفصّلة بالذكاء الاصطناعي على حجّتك واستخدام الأدلة وتحليل اللغة وتقنية الامتحان، حسب أهداف التقييم للبورد مالك.',
   'resources.eng_lit.ai.cta': 'جرّبه ببلاش',
   'resources.eng_lit.more.h2': 'مصادر مراجعة أكثر',
   'resources.eng_lit.more.sub': 'قوِّ المهارات المحددة التي يكافئها المصحّحون أكثر.',
@@ -12079,11 +12079,11 @@ export const AR_MESSAGES: Record<string, string> = {
   'marking.submit.word': 'كلمة',
   'marking.submit.words': 'كلمة',
   'marking.submit.min_50': '(الحد الأدنى 50 كلمة)',
-  'marking.submit.no_upper_limit': 'بدون حد أعلى',
+  'marking.submit.no_upper_limit': 'لحد ٣٠٬٠٠٠ حرف',
   'marking.submit.btn_cancel': 'إلغاء',
   'marking.submit.btn_submit': 'سلّم للتصحيح',
   'marking.submit.btn_marking': 'يصحّح مقالتك…',
-  'marking.submit.wait_note': 'التصحيح عادةً يأخذ 5-15 ثانية. لا تسكر الصفحة الحين.',
+  'marking.submit.wait_note': 'مقالك ينصحّح الحين. ممكن ياخذ شوي وقت، فلا تسكّر الصفحة.',
   'marking.history.breadcrumb': 'السجل',
   'marking.history.awaiting': 'بانتظار التصحيح',
   'marking.history.title': 'سجل التصحيح',
@@ -14563,14 +14563,14 @@ export const AR_MESSAGES: Record<string, string> = {
   'admin.mqa.gold_fail': 'ما قدرنا نعلّم هذا التسليم كـ Gold.',
   'mkt.schools.meta.title': 'تقييم الإنجليزي والتدخّل والتقارير للمدارس',
   'mkt.schools.meta.description':
-    'منصّة إنجليزي جاهزة للمدارس تساعد المعلّمين يوفّرون وقتهم، والطلاب ياخذون تمارين أكثر مع ملاحظات فورية، والقادة يفهمون وين يحتاج الدعم - في English Language وLiterature وEAL.',
+    'منصّة إنجليزي جاهزة للمدارس تساعد المعلّمين يوفّرون وقتهم، والطلاب ياخذون تمارين أكثر مع ملاحظات بالذكاء الاصطناعي، والقادة يفهمون وين يحتاج الدعم - في English Language وLiterature وEAL.',
   'mkt.schools.meta.og_title': 'The English Hub للمدارس',
   'mkt.schools.meta.og_description': 'ذكاء قسم الإنجليزي والتقييم والتدخّل في منصّة واحدة.',
   'mkt.schools.meta.og_alt': 'The English Hub للمدارس',
   'mkt.schools.hero.eyebrow': 'The English Hub للمدارس',
   'mkt.schools.hero.title': 'ذكاء قسم الإنجليزي والتقييم والتدخّل في منصّة واحدة',
   'mkt.schools.hero.lede':
-    'منصّة جاهزة للمدارس تساعد المعلّمين يوفّرون وقتهم، والطلاب ياخذون تمارين أكثر مع ملاحظات فورية، والقادة يفهمون وين يحتاج الدعم.',
+    'منصّة جاهزة للمدارس تساعد المعلّمين يوفّرون وقتهم، والطلاب ياخذون تمارين أكثر مع ملاحظات بالذكاء الاصطناعي، والقادة يفهمون وين يحتاج الدعم.',
   'mkt.schools.hero.cta_primary': 'ابدأ تجربة المدرسة 90 يوم',
   'mkt.schools.hero.cta_secondary': 'شوف كيف تشتغل التجربة',
   'mkt.schools.hero.lozenge.language_literature': 'English Language و Literature',
@@ -16194,7 +16194,7 @@ export const AR_MESSAGES: Record<string, string> = {
   'ielts.hub.eyebrow': 'IELTS أكاديمي',
   'ielts.hub.title': 'IELTS أكاديمي - من البداية للجاهزية للامتحان',
   'ielts.hub.subtitle':
-    'مسار تعلّم واحد: حدّد مستواك، اتبع خطة مخصصة لك، تدرّب على المهارات الأربع، خذ تقييم Band فوري بالذكاء الاصطناعي، وبعدها أثبت جاهزيتك باختبار تجريبي كامل.',
+    'مسار تعلّم واحد: حدّد مستواك، اتبع خطة مخصصة لك، تدرّب على المهارات الأربع، خذ تقييم Band بالذكاء الاصطناعي للكتابة والمحادثة، وبعدها أثبت جاهزيتك باختبار تجريبي كامل.',
   'ielts.skill.listening': 'الاستماع',
   'ielts.skill.reading': 'القراءة',
   'ielts.skill.writing': 'الكتابة',
@@ -16346,7 +16346,7 @@ export const AR_MESSAGES: Record<string, string> = {
   'ielts.writing.hero.badge': 'تقييم Band بالذكاء الاصطناعي - IELTS أكاديمي',
   'ielts.writing.hero.title': 'IELTS أكاديمي - الكتابة',
   'ielts.writing.hero.subtitle':
-    'اختر سؤال Task 1 أو Task 2، واكتب جوابك بوقت محدد إذا تبغى، وخذ Band متوقع فوري لكل معيار من معايير التصحيح الأربعة - مع نقاط قوة وتحسينات وتقنيات محددة تطلّعك Band أعلى.',
+    'اختر سؤال Task 1 أو Task 2، واكتب جوابك بوقت محدد إذا تبغى، وخذ Band تقديري بالذكاء الاصطناعي لكل معيار من معايير التصحيح الأربعة - مع نقاط قوة وتحسينات وتقنيات محددة تطلّعك Band أعلى.',
   'ielts.writing.hero.word_minutes_note':
     'Task 1 يطلب 150 كلمة على الأقل بحدود 20 دقيقة؛ وTask 2 يطلب 250 كلمة على الأقل بحدود 40 دقيقة.',
   'ielts.writing.tab.task1': 'Task 1 - تقرير',
@@ -16373,7 +16373,7 @@ export const AR_MESSAGES: Record<string, string> = {
   'ielts.writing.words.too_short': 'اكتب على الأقل بضع جمل عشان نقدر نقيّم.',
   'ielts.writing.submit.cta': 'خذ تقييم الـ Band',
   'ielts.writing.submit.loading': 'نقيّم كتابتك…',
-  'ielts.writing.submit.loading_note': 'عادة ياخذ 15-30 ثانية. لا تسكّر الصفحة من فضلك.',
+  'ielts.writing.submit.loading_note': 'ممكن ياخذ شوي وقت. لا تسكّر الصفحة من فضلك.',
   'ielts.writing.error.401': 'سجّل دخولك عشان تاخذ تقييم Band بالذكاء الاصطناعي على كتابتك.',
   'ielts.writing.error.403': 'تقييم كتابة IELTS ميزة Premium. رقِّ اشتراكك عشان تستخدمها.',
   'ielts.writing.error.429': 'وصلت حد التقييمات لليوم. جرّب باچر مرة ثانية.',
@@ -16644,7 +16644,7 @@ export const AR_MESSAGES: Record<string, string> = {
   'ielts.hubx.loop.practise.detail':
     'اشتغل على مهام Academic في Listening وReading وWriting وSpeaking.',
   'ielts.hubx.loop.feedback.detail':
-    'Writing وSpeaking ياخذون Band فوري بالـ AI حسب المعايير الرسمية.',
+    'Writing وSpeaking ياخذون Band تقديري بالـ AI حسب واصفات الـ Band المنشورة.',
   'ielts.hubx.loop.mock.detail':
     'سوِّ اختبار تجريبي كامل ومؤقّت بظروف امتحان حقيقية أول ما تكون جاهز.',
   'ielts.hubx.loop.predict.detail': 'شوف Band الكلي المتوقع مالك وبالضبط شنو اللي بيرفعه أعلى.',
@@ -16666,10 +16666,10 @@ export const AR_MESSAGES: Record<string, string> = {
   'ielts.hubx.skills.body':
     'Listening وReading يتصحّحون تلقائياً. Writing وSpeaking يتقيّمون بالـ AI حسب أوصاف Band الرسمية - عشان دايماً تعرف وين موقفك.',
   'ielts.hubx.why.eyebrow': 'ليش The English Hub',
-  'ielts.hubx.why.heading': 'تقييم كان يحتاج مدرّس قبل - الحين فوري',
-  'ielts.hubx.why.instant.title': 'تقييم Band فوري بالـ AI',
+  'ielts.hubx.why.heading': 'تقييم بدون ما تنتظر مدرّس',
+  'ielts.hubx.why.instant.title': 'تقييم Band بالـ AI',
   'ielts.hubx.why.instant.body':
-    'ما في انتظار لمدرّس. إجابات Writing وSpeaking ياخذون Band وخطوات تالية محددة في ثواني.',
+    'ما في انتظار لمدرّس. إجابات Writing وSpeaking ياخذون Band تقديري بالـ AI وخطوات تالية محددة.',
   'ielts.hubx.why.bilingual.title': 'مبني ثنائي اللغة لمتعلّمي الخليج',
   'ielts.hubx.why.bilingual.body':
     'كل صفحة تشتغل بالإنجليزي أو العربي، عشان التعليمات ما تعطّلك عن التدريب أبداً.',
@@ -16680,7 +16680,7 @@ export const AR_MESSAGES: Record<string, string> = {
   'ielts.hubx.more.heading': 'من Band المستهدف مالك لين مقعدك بالجامعة',
   'ielts.hubx.more.admissions.title': 'مدرّب القبول في بريطانيا والـ statement',
   'ielts.hubx.more.admissions.body':
-    'خطّط طلب UCAS مالك وخذ تقييم فوري بالـ AI على الـ personal statement مالك.',
+    'خطّط طلب UCAS مالك وخذ تقييم بالـ AI على الـ personal statement مالك.',
   'ielts.hubx.more.centre.title': 'للمدرّسين والمراكز',
   'ielts.hubx.more.centre.body': 'تابع Band طلابك في كل مهارة من لوحة وحدة.',
   'ielts.hubx.more.partners.title': 'اشترك معانا',
@@ -16808,7 +16808,7 @@ export const AR_MESSAGES: Record<string, string> = {
   'ielts.guide.faq.q4.answer_b': 'IELTS مقبول من',
   'ielts.guide.cta.heading': 'افهم الامتحان. الحين ابنِ الـ Band.',
   'ielts.guide.cta.body':
-    'ابدأ باختبار تشخيصي ببلاش عشان تلاقي أضعف مهارة عندك، وبعدها اتبع مسار مخصص من التدريب والتقييم الفوري بالـ AI في الأقسام الأربعة كلها.',
+    'ابدأ باختبار تشخيصي ببلاش عشان تلاقي أضعف مهارة عندك، وبعدها اتبع مسار مخصص من التدريب في الأقسام الأربعة كلها، مع تقييم بالـ AI للكتابة والمحادثة.',
   'ielts.guide.cta.cta_diagnostic': 'سوِّ الاختبار التشخيصي ببلاش',
   'ielts.guide.cta.cta_learn': 'ادرس المهارات',
   'ielts.admissions.back_to_ielts': 'رجوع لـ IELTS',
@@ -16897,7 +16897,7 @@ export const AR_MESSAGES: Record<string, string> = {
   'ielts.admissions.hub.english.tier4.courses':
     'السنوات التأسيسية الدولية ومسارات الإنجليزي التمهيدية (pre-sessional) اللي توصّل لدرجة جامعية.',
   'ielts.admissions.hub.english.cta.text':
-    'لِسّه ما وصلت الـ Band المستهدف؟ تدرّب على وحدة Academic وخذ Band متوقّع فوري بالذكاء الاصطناعي للكتابة والمحادثة.',
+    'لِسّه ما وصلت الـ Band المستهدف؟ تدرّب على وحدة Academic وخذ Band تقديري بالذكاء الاصطناعي للكتابة والمحادثة.',
   'ielts.admissions.hub.english.cta.button': 'افتح مسار IELTS',
   'ielts.admissions.hub.ps.eyebrow': 'الـ personal statement',
   'ielts.admissions.hub.ps.title': 'وين يكسب المتقدّمون من برّا مقاعدهم',
@@ -16974,7 +16974,7 @@ export const AR_MESSAGES: Record<string, string> = {
   'ielts.admissions.ps.view_premium': 'شوف باقات Premium',
   'ielts.admissions.ps.submitting': 'يقرأ الـ statement حقّك…',
   'ielts.admissions.ps.submit': 'خذ التقييم',
-  'ielts.admissions.ps.submitting_note': 'عادةً ياخذ 15-30 ثانية. لا تسكّر الصفحة لو سمحت.',
+  'ielts.admissions.ps.submitting_note': 'ممكن ياخذ شوي وقت. لا تسكّر الصفحة لو سمحت.',
   'ielts.admissions.ps.privacy_note':
     'مسودّتك تنرسل بس عشان نطلّع التقييم. هذا إرشاد للتحضير للدراسة في بريطانيا، مو خدمة رسمية من UCAS ولا من جامعة.',
   'ielts.admissions.ps.err.401': 'سجّل دخولك عشان تجيك ملاحظات على الـ personal statement حقّك.',
@@ -17062,7 +17062,7 @@ export const AR_MESSAGES: Record<string, string> = {
   'ielts.partners.overview.hero.eyebrow': 'الشراكات',
   'ielts.partners.overview.hero.h1': 'وفّر لطلابك تحضير IELTS مع تصحيح بالذكاء الاصطناعي',
   'ielts.partners.overview.hero.lede':
-    'The English Hub منصّة تحضير IELTS Academic مبنية للمدارس ومراكز التحضير للامتحانات ووكالات التعليم - مع وصول جماعي، ولوحة تحكّم للمركز، وتجربة ثنائية اللغة إنجليزي / عربي، وتغذية راجعة فورية للـ band بالذكاء الاصطناعي.',
+    'The English Hub منصّة تحضير IELTS Academic مبنية للمدارس ومراكز التحضير للامتحانات ووكالات التعليم - مع وصول جماعي، ولوحة تحكّم للمركز، وتجربة ثنائية اللغة إنجليزي / عربي، وتغذية راجعة للـ band بالذكاء الاصطناعي.',
   'ielts.partners.overview.hero.cta_primary': 'كلّمنا عن الشراكة',
   'ielts.partners.overview.hero.cta_secondary': 'شوف منصّة IELTS',
   'ielts.partners.overview.hero.pill_schools': 'المدارس والكليّات',
@@ -17082,9 +17082,9 @@ export const AR_MESSAGES: Record<string, string> = {
   'ielts.partners.overview.offer.bilingual.title': 'ثنائي اللغة إنجليزي / عربي',
   'ielts.partners.overview.offer.bilingual.body':
     'كل شاشة يشوفها الطالب تشتغل بالإنجليزي أو العربي، عشان التعليمات ما تصير حاجز قدّام التدريب لطلاب الخليج اللي يبنون مستقبلهم بلغة دراسة إنجليزية.',
-  'ielts.partners.overview.offer.feedback.title': 'تغذية راجعة فورية للـ band بالذكاء الاصطناعي',
+  'ielts.partners.overview.offer.feedback.title': 'تغذية راجعة للـ band بالذكاء الاصطناعي',
   'ielts.partners.overview.offer.feedback.body':
-    'إجابات Writing و Speaking تتصحّح حسب واصفات الـ band الرسمية بثواني، مع خطوات تالية محدّدة - تعزّز مدرّسينك بدل ما تستبدلهم.',
+    'إجابات Writing و Speaking تاخذ band تقديري بالذكاء الاصطناعي حسب واصفات الـ band المنشورة، مع خطوات تالية محدّدة - تعزّز مدرّسينك بدل ما تستبدلهم.',
   'ielts.partners.overview.offer.progress.title': 'تقدّم تقدر ترفع عنه تقرير',
   'ielts.partners.overview.offer.progress.body':
     'الـ bands لكل مهارة وخطوط الاتجاه تعطيك الدليل تورّي فيه الطلاب والأهالي والمعنيين شلون التحضير يتحوّل لتقدّم ملموس.',
@@ -17182,9 +17182,9 @@ export const AR_MESSAGES: Record<string, string> = {
   'ielts.partners.schools.features.cohort.title': 'سجّل دفعة كاملة',
   'ielts.partners.schools.features.cohort.body':
     'عيّن حلقة تعلّم IELTS Academic الكاملة - التشخيص، والخطة، وتدريب المهارات الأربع، والامتحانات التجريبية - لكل طالب تحت اتفاقية وحدة.',
-  'ielts.partners.schools.features.feedback.title': 'تغذية راجعة فورية للـ band بالذكاء الاصطناعي',
+  'ielts.partners.schools.features.feedback.title': 'تغذية راجعة للـ band بالذكاء الاصطناعي',
   'ielts.partners.schools.features.feedback.body':
-    'Writing و Speaking يتصحّحون حسب الواصفات الرسمية بثواني، مع خطوات تالية ملموسة يقدر مدرّسينك يبنون درس حولها.',
+    'Writing و Speaking ياخذون band تقديري بالذكاء الاصطناعي حسب الواصفات المنشورة، مع خطوات تالية ملموسة يقدر مدرّسينك يبنون درس حولها.',
   'ielts.partners.schools.features.dashboard.title': 'لوحة تحكّم للمنسّق',
   'ielts.partners.schools.features.dashboard.body':
     'شوف الـ bands الابتدائية، ونشاط التدريب، والـ band الإجمالي المتوقّع عبر الدفعة - عشان تكتشف الطلاب اللي يحتاجون دعم قبل يوم الامتحان.',
@@ -17254,9 +17254,9 @@ export const AR_MESSAGES: Record<string, string> = {
   'ielts.partners.agencies.features.evidence.title': 'دليل الـ band المتوقّع',
   'ielts.partners.agencies.features.evidence.body':
     'الامتحانات التجريبية الكاملة والمؤقّتة والتصحيح لكل مهارة تنتج band إجمالي متوقّع تقدر تدافع عنه وتستخدمه لنصح الطلاب ودعم الطلبات.',
-  'ielts.partners.agencies.features.feedback.title': 'تغذية راجعة فورية بالذكاء الاصطناعي',
+  'ielts.partners.agencies.features.feedback.title': 'تغذية راجعة بالذكاء الاصطناعي',
   'ielts.partners.agencies.features.feedback.body':
-    'Writing و Speaking يتصحّحون حسب الواصفات الرسمية بثواني، عشان المتقدّمين يتحسّنون بسرعة بدون ما ينتظرون مدرّس.',
+    'Writing و Speaking ياخذون band تقديري بالذكاء الاصطناعي حسب الواصفات المنشورة، عشان المتقدّمين يكمّلون تدريبهم بدون ما ينتظرون مدرّس.',
   'ielts.partners.agencies.features.bilingual.title': 'ثنائي اللغة إنجليزي / عربي',
   'ielts.partners.agencies.features.bilingual.body':
     'تجربة ثنائية اللغة بالكامل تعني المتقدّمين من الخليج يقدرون يتحضّرون باللغة اللي يتنقّلون فيها بأريحية، لين جاهزية الامتحان.',
@@ -18214,11 +18214,11 @@ export const AR_MESSAGES: Record<string, string> = {
   'study.skills.ws.tips.subtitle': 'استراتيجيات كتابة عامة تنفع لأي ورقة، أي بورد، كل مرة.',
   'study.skills.ws.ai.title': 'تغذية راجعة بالذكاء الاصطناعي بكل إجابة',
   'study.skills.ws.ai.body':
-    'كل سؤال تدريب يايه تغذية راجعة فورية ومخصصة بالذكاء الاصطناعي. أرسل إجابتك وبتوصلك ملاحظات مفصّلة عن اختياراتك للمفردات وبناء الجمل واستخدام التقنيات و SPaG، مع اقتراحات عملية تدفع كتابتك للباند الأعلى.',
+    'كل سؤال تدريب يايه تغذية راجعة مخصصة بالذكاء الاصطناعي. أرسل إجابتك وبتوصلك ملاحظات مفصّلة عن اختياراتك للمفردات وبناء الجمل واستخدام التقنيات و SPaG، مع اقتراحات عملية تدفع كتابتك للباند الأعلى.',
   'study.skills.ws.ai.cta': 'جرّب سؤال تدريب',
   'study.skills.ws.practice.title': 'التدريب يصنع الإتقان',
   'study.skills.ws.practice.subtitle':
-    'اختبر مهاراتك بأسئلة على نمط الامتحان واحصل على تغذية راجعة فورية بالذكاء الاصطناعي على إجاباتك.',
+    'اختبر مهاراتك بأسئلة على نمط الامتحان واحصل على تغذية راجعة بالذكاء الاصطناعي على إجاباتك.',
   'study.skills.ws.practice.start': 'ابدأ التدريب',
   'study.skills.ws.practice.creative.label': 'أسئلة الكتابة الإبداعية',
   'study.skills.ws.practice.creative.desc':

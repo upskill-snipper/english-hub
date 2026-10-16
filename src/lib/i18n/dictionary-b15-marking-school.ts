@@ -129,10 +129,12 @@ export const B15_MARKING_SCHOOL_DICTIONARY: Record<
     ar: '(الحد الأدنى 50 كلمة)',
     es: '(mínimo 50 palabras)',
   },
+  // 16 October 2026: was "No upper limit". /api/submissions refuses an
+  // answer over 30,000 characters (MAX_ANSWER_CHARS), as /api/mark does.
   'marking.submit.no_upper_limit': {
-    en: 'No upper limit',
-    ar: 'بدون حد أعلى',
-    es: 'Sin límite máximo',
+    en: 'Up to 30,000 characters',
+    ar: 'لحد ٣٠٬٠٠٠ حرف',
+    es: 'Hasta 30.000 caracteres',
   },
   'marking.submit.btn_cancel': { en: 'Cancel', ar: 'إلغاء', es: 'Cancelar' },
   'marking.submit.btn_submit': {
@@ -145,10 +147,13 @@ export const B15_MARKING_SCHOOL_DICTIONARY: Record<
     ar: 'يصحّح مقالتك…',
     es: 'Corrigiendo tu redacción…',
   },
+  // 16 October 2026: was "AI marking usually takes 5-15 seconds". By
+  // /api/marking/run's own measurements the AI's writing alone takes about 17
+  // to 46 seconds, with up to 23 seconds of work around it. No time is given.
   'marking.submit.wait_note': {
-    en: "AI marking usually takes 5-15 seconds. Please don't close this page.",
-    ar: 'التصحيح عادةً يأخذ 5-15 ثانية. لا تسكر الصفحة الحين.',
-    es: 'La corrección con IA suele tardar entre 5 y 15 segundos. Por favor, no cierres esta página.',
+    en: "Your essay is being marked. This can take a little while, so please don't close this page.",
+    ar: 'مقالك ينصحّح الحين. ممكن ياخذ شوي وقت، فلا تسكّر الصفحة.',
+    es: 'Se está corrigiendo tu redacción. Puede tardar un poco, así que no cierres esta página.',
   },
 
   // ─── /marking/history ────────────────────────────────────────────────────

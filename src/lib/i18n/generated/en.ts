@@ -1450,7 +1450,7 @@ export const EN_MESSAGES: Record<string, string> = {
   'dash.qa.join_school': 'Join School',
   'dash.marking_cta.title': 'Mark an essay',
   'dash.marking_cta.badge': 'AI marking',
-  'dash.marking_cta.blurb': 'Paste your essay and get examiner-style feedback in minutes.',
+  'dash.marking_cta.blurb': 'Paste your essay and get AI feedback on each assessment objective.',
   'sub.free': 'Free',
   'sub.premium': 'Premium',
   'sub.cancelled': 'Cancelled',
@@ -1752,7 +1752,7 @@ export const EN_MESSAGES: Record<string, string> = {
   'marking.reviews_remaining_singular': 'review remaining today',
   'marking.reviews_remaining_plural': 'reviews remaining today',
   'marking.marking_in_progress': 'Analysing your answer...',
-  'marking.marking_takes_seconds': 'This usually takes a few seconds.',
+  'marking.marking_takes_seconds': "This can take a little while. Please don't close this page.",
   'marking.retry': 'Retry',
   'marking.min_words_error': 'Your answer must be at least 100 words to get AI feedback.',
   'marking.network_error': 'Network error. Please check your connection and try again.',
@@ -2625,7 +2625,7 @@ export const EN_MESSAGES: Record<string, string> = {
     'Everything you need in one place - read, revise, practise, and test yourself.',
   'text_hub.generate_personalised_notes': 'Generate personalised notes',
   'text_hub.ready_for_exam': 'Ready for exam practice?',
-  'text_hub.exam_blurb': 'Write a timed essay and get instant AI feedback with AO breakdown',
+  'text_hub.exam_blurb': 'Write a timed essay and get AI feedback on each assessment objective',
   'text_hub.build_test': 'Build a Test',
   'text_hub.write_mark_essay': 'Write & Mark Essay',
   'poem_viewer.tab_context': 'Context',
@@ -2860,7 +2860,7 @@ export const EN_MESSAGES: Record<string, string> = {
     'lessons, mark schemes, and model answers mapped directly to AQA, Edexcel, OCR, WJEC Eduqas, and Cambridge IGCSE exam boards.',
   'about.approach.ai.name': 'AI-powered essay feedback',
   'about.approach.ai.desc':
-    'submit practice essays and receive detailed, criteria-referenced feedback in seconds, helping students understand how to improve before their real exam.',
+    'submit practice essays and receive detailed, criteria-referenced feedback, labelled as AI, helping students understand how to improve before their real exam.',
   'about.approach.mock.name': 'Mock exam practice',
   'about.approach.mock.desc':
     'timed, exam-style questions that mirror the format, wording, and mark allocation students will encounter on the day.',
@@ -2886,7 +2886,7 @@ export const EN_MESSAGES: Record<string, string> = {
   'about.glance.h2': 'At a Glance',
   'about.glance.courses_label': 'Structured courses from KS3 to IGCSE',
   'about.glance.boards_label': 'Exam boards supported',
-  'about.glance.ai_label': 'Essay feedback in seconds',
+  'about.glance.ai_label': 'AI feedback on practice essays',
   'about.glance.mock_label': 'Mock questions and timed practice',
   'about.glance.ai_value': 'AI-Powered',
   'about.glance.mock_value': 'Exam-Style',
@@ -3155,7 +3155,7 @@ export const EN_MESSAGES: Record<string, string> = {
     'GCSE English explained, how to help with revision and the difference between Language and Literature.',
   'analysis.revision.footer.h2': 'Get personalised feedback',
   'analysis.revision.footer.body':
-    'Upload an essay and get marker-style feedback on your AOs in minutes - calibrated to your exam board.',
+    "Upload an essay and get AI feedback on each assessment objective, against your exam board's paper.",
   'analysis.revision.footer.cta_primary': 'Create a free account',
   'analysis.revision.footer.cta_secondary': 'Open the Revision Hub',
   'analysis.ai_feedback.breadcrumb_current': 'AI Feedback: Head to Head',
@@ -3182,7 +3182,7 @@ export const EN_MESSAGES: Record<string, string> = {
   'analysis.slug.applying_body':
     'Use the analysis above as a structural frame for your own response - pick two or three quotations, attach the methods analysis, and weave the assessment context into your conclusion.',
   'analysis.slug.cta_block_prompt':
-    'Ready to test it on your own writing? Upload an essay and get marker-style feedback in minutes.',
+    'Ready to test it on your own writing? Upload an essay and get AI feedback on each assessment objective.',
   'analysis.slug.cta_get_feedback': 'Get marker feedback',
   'analysis.slug.cta_see_pricing': 'See pricing',
   'analysis.slug.faqs_h2': 'Frequently asked questions',
@@ -4841,7 +4841,7 @@ export const EN_MESSAGES: Record<string, string> = {
     'Click "Log In" then "Forgot Password". Enter your email address and we\'ll send you a password reset link. The link expires after 24 hours. If you signed up with Google, use the "Sign in with Google" option instead.',
   'help.te.q4.q': "My mock exam feedback isn't showing. What should I do?",
   'help.te.q4.a':
-    "Feedback is usually generated within a few seconds of submitting your exam. If it hasn't appeared after a minute, try refreshing the page. If the problem continues, contact our support team with the exam name and the time you submitted it.",
+    "AI feedback can take a little while to write, so keep the page open while it works. If it still hasn't appeared after a few minutes, try refreshing the page. If the problem continues, contact our support team with the exam name and the time you submitted it.",
   'help.contact.title': 'Get in Touch',
   'help.contact.lead':
     'Whether you have a question, a problem, or just want to say hi - pick the right channel below and we will get back to you as quickly as we can.',
@@ -11591,7 +11591,7 @@ export const EN_MESSAGES: Record<string, string> = {
   'analytics.grade_band.below': 'Below pass (1-3)',
   'marking.h1': 'AI Essay Marking',
   'marking.lead':
-    'Submit an exam-style answer and get instant, board-aligned feedback with a grade indication.',
+    'Submit an exam-style answer and get board-aligned AI feedback with a practice grade.',
   'marking.cta.new': 'Mark New Essay',
   'marking.cta.history': 'View History',
   'marking.recent.h2': 'Recent Essays',
@@ -12228,7 +12228,7 @@ export const EN_MESSAGES: Record<string, string> = {
     'GCSE English Language develops your ability to read critically, analyse how writers use language and structure, and produce your own high-quality writing across a range of forms and purposes. It is a core qualification required by most employers and further education providers, and a grade 4 or above is typically needed for sixth form, college, and apprenticeship entry.',
   'resources.eng_lang.what_covers.p2':
     'The course is assessed through written examinations (and a spoken language component in most boards). You will study a mix of fiction and non-fiction texts and develop both analytical and creative writing skills that are transferable to A Level and beyond.',
-  'resources.eng_lang.ai.h2': 'Get instant AI feedback on your answers',
+  'resources.eng_lang.ai.h2': 'Get AI feedback on your answers',
   'resources.eng_lang.ai.sub':
     'Practice exam-style questions and receive detailed, marking-guide-aligned feedback powered by AI. Our system analyses your response against the assessment objectives for your specific exam board and provides targeted improvement suggestions.',
   'resources.eng_lang.ai.cta_try': 'Try practice questions',
@@ -12267,7 +12267,7 @@ export const EN_MESSAGES: Record<string, string> = {
   'resources.eng_lit.example.effective_label': 'What makes this effective:',
   'resources.eng_lit.ai.h2': 'Get AI-powered essay feedback',
   'resources.eng_lit.ai.sub':
-    'Paste your literature essay and receive instant, detailed feedback on your argument, use of evidence, analysis of language, and exam technique. Our AI marker is calibrated to GCSE marking guides.',
+    "Paste your literature essay and receive detailed AI feedback on your argument, use of evidence, analysis of language, and exam technique, marked against your board's assessment objectives.",
   'resources.eng_lit.ai.cta': 'Try it free',
   'resources.eng_lit.more.h2': 'More revision resources',
   'resources.eng_lit.more.sub': 'Strengthen specific skills that markers reward most highly.',
@@ -12350,12 +12350,12 @@ export const EN_MESSAGES: Record<string, string> = {
   'marking.submit.word': 'word',
   'marking.submit.words': 'words',
   'marking.submit.min_50': '(minimum 50 words)',
-  'marking.submit.no_upper_limit': 'No upper limit',
+  'marking.submit.no_upper_limit': 'Up to 30,000 characters',
   'marking.submit.btn_cancel': 'Cancel',
   'marking.submit.btn_submit': 'Submit for marking',
   'marking.submit.btn_marking': 'Marking your essay…',
   'marking.submit.wait_note':
-    "AI marking usually takes 5-15 seconds. Please don't close this page.",
+    "Your essay is being marked. This can take a little while, so please don't close this page.",
   'marking.history.breadcrumb': 'History',
   'marking.history.awaiting': 'Awaiting mark',
   'marking.history.title': 'Marking history',
@@ -14922,7 +14922,7 @@ export const EN_MESSAGES: Record<string, string> = {
   'admin.mqa.gold_fail': 'Could not mark this submission as gold.',
   'mkt.schools.meta.title': 'English assessment, intervention and reporting for schools',
   'mkt.schools.meta.description':
-    'A school-ready English platform helping teachers save time, students get more practice with instant feedback and leaders understand where support is needed across English Language, Literature and EAL.',
+    'A school-ready English platform helping teachers save time, students get more practice with AI feedback and leaders understand where support is needed across English Language, Literature and EAL.',
   'mkt.schools.meta.og_title': 'The English Hub for Schools',
   'mkt.schools.meta.og_description':
     'English department intelligence, assessment and intervention in one platform.',
@@ -14931,7 +14931,7 @@ export const EN_MESSAGES: Record<string, string> = {
   'mkt.schools.hero.title':
     'English department intelligence, assessment and intervention in one platform',
   'mkt.schools.hero.lede':
-    'A school-ready platform helping teachers save time, students get more practice with instant feedback and leaders understand where support is needed.',
+    'A school-ready platform helping teachers save time, students get more practice with AI feedback and leaders understand where support is needed.',
   'mkt.schools.hero.cta_primary': 'Start a 90-Day School Pilot',
   'mkt.schools.hero.cta_secondary': 'See how the pilot works',
   'mkt.schools.hero.lozenge.language_literature': 'English Language & Literature',
@@ -16624,7 +16624,7 @@ export const EN_MESSAGES: Record<string, string> = {
   'ielts.hub.eyebrow': 'IELTS Academic',
   'ielts.hub.title': 'IELTS Academic - from starter to exam-ready',
   'ielts.hub.subtitle':
-    'One learning loop: find your level, follow a personalised plan, practise all four skills, get instant AI band feedback, then prove it on a full mock test.',
+    'One learning loop: find your level, follow a personalised plan, practise all four skills, get AI band feedback on Writing and Speaking, then prove it on a full mock test.',
   'ielts.skill.listening': 'Listening',
   'ielts.skill.reading': 'Reading',
   'ielts.skill.writing': 'Writing',
@@ -16780,7 +16780,7 @@ export const EN_MESSAGES: Record<string, string> = {
   'ielts.writing.hero.badge': 'AI band feedback - IELTS Academic',
   'ielts.writing.hero.title': 'IELTS Academic Writing',
   'ielts.writing.hero.subtitle':
-    'Choose a Task 1 or Task 2 question, write your response under timed conditions if you like, and get an instant predicted band for each of the four marking criteria - plus specific strengths, improvements and techniques to move up a band.',
+    'Choose a Task 1 or Task 2 question, write your response under timed conditions if you like, and get an AI-estimated band for each of the four marking criteria - plus specific strengths, improvements and techniques to move up a band.',
   'ielts.writing.hero.word_minutes_note':
     'Task 1 asks for at least 150 words in ~20 minutes; Task 2 asks for at least 250 words in ~40 minutes.',
   'ielts.writing.tab.task1': 'Task 1 - Report',
@@ -16809,8 +16809,7 @@ export const EN_MESSAGES: Record<string, string> = {
   'ielts.writing.words.too_short': 'Write at least a few sentences to assess.',
   'ielts.writing.submit.cta': 'Get my band feedback',
   'ielts.writing.submit.loading': 'Assessing your writing…',
-  'ielts.writing.submit.loading_note':
-    'This usually takes 15-30 seconds. Please don’t close the page.',
+  'ielts.writing.submit.loading_note': 'This can take a little while. Please don’t close the page.',
   'ielts.writing.error.401': 'Please sign in to get AI band feedback on your writing.',
   'ielts.writing.error.403':
     'IELTS Writing feedback is a Premium feature. Please upgrade to access it.',
@@ -17091,7 +17090,7 @@ export const EN_MESSAGES: Record<string, string> = {
   'ielts.hubx.loop.practise.detail':
     'Work through Academic Listening, Reading, Writing and Speaking tasks.',
   'ielts.hubx.loop.feedback.detail':
-    'Writing and Speaking get an instant AI band against the official criteria.',
+    'Writing and Speaking get an AI-estimated band against the published band descriptors.',
   'ielts.hubx.loop.mock.detail':
     'Sit a full, timed mock under real exam conditions when you are ready.',
   'ielts.hubx.loop.predict.detail':
@@ -17115,10 +17114,10 @@ export const EN_MESSAGES: Record<string, string> = {
   'ielts.hubx.skills.body':
     'Listening and Reading are marked automatically. Writing and Speaking are scored by AI against the official band descriptors - so you always know where you stand.',
   'ielts.hubx.why.eyebrow': 'Why The English Hub',
-  'ielts.hubx.why.heading': 'Feedback that used to need a tutor - instantly',
-  'ielts.hubx.why.instant.title': 'Instant AI band feedback',
+  'ielts.hubx.why.heading': 'Feedback without waiting for a tutor',
+  'ielts.hubx.why.instant.title': 'AI band feedback',
   'ielts.hubx.why.instant.body':
-    'No waiting for a tutor. Writing and Speaking responses get a band and targeted next steps in seconds.',
+    'No waiting for a tutor. Writing and Speaking responses get an AI-estimated band and targeted next steps.',
   'ielts.hubx.why.bilingual.title': 'Built bilingual for Gulf learners',
   'ielts.hubx.why.bilingual.body':
     'Every page works in English or Arabic, so instructions never get in the way of the practice.',
@@ -17129,7 +17128,7 @@ export const EN_MESSAGES: Record<string, string> = {
   'ielts.hubx.more.heading': 'From your target band to your university place',
   'ielts.hubx.more.admissions.title': 'UK admissions & statement coach',
   'ielts.hubx.more.admissions.body':
-    'Plan your UCAS application and get instant AI feedback on your personal statement.',
+    'Plan your UCAS application and get AI feedback on your personal statement.',
   'ielts.hubx.more.centre.title': 'For tutors & centres',
   'ielts.hubx.more.centre.body':
     'Track your students’ bands across every skill from one dashboard.',
@@ -17265,7 +17264,7 @@ export const EN_MESSAGES: Record<string, string> = {
   'ielts.guide.faq.q4.answer_b': 'IELTS is accepted by',
   'ielts.guide.cta.heading': 'Know the exam. Now build the band.',
   'ielts.guide.cta.body':
-    'Start with a free diagnostic to find your weakest skill, then follow a personalised path of practice and instant AI feedback across all four sections.',
+    'Start with a free diagnostic to find your weakest skill, then follow a personalised path of practice across all four sections, with AI feedback on Writing and Speaking.',
   'ielts.guide.cta.cta_diagnostic': 'Take the free diagnostic',
   'ielts.guide.cta.cta_learn': 'Study the skills',
   'ielts.admissions.back_to_ielts': 'Back to IELTS',
@@ -17354,7 +17353,7 @@ export const EN_MESSAGES: Record<string, string> = {
   'ielts.admissions.hub.english.tier4.courses':
     'International foundation years and pre-sessional English pathways that lead into a degree.',
   'ielts.admissions.hub.english.cta.text':
-    'Not at your target band yet? Practise the Academic module and get an instant AI-predicted band on Writing and Speaking.',
+    'Not at your target band yet? Practise the Academic module and get an AI-estimated band on Writing and Speaking.',
   'ielts.admissions.hub.english.cta.button': 'Open the IELTS loop',
   'ielts.admissions.hub.ps.eyebrow': 'The personal statement',
   'ielts.admissions.hub.ps.title': 'Where applicants from abroad win places',
@@ -17436,7 +17435,7 @@ export const EN_MESSAGES: Record<string, string> = {
   'ielts.admissions.ps.submitting': 'Reading your statement…',
   'ielts.admissions.ps.submit': 'Get feedback',
   'ielts.admissions.ps.submitting_note':
-    'This usually takes 15-30 seconds. Please don’t close the page.',
+    'This can take a little while. Please don’t close the page.',
   'ielts.admissions.ps.privacy_note':
     'Your draft is sent only to generate feedback. This is guidance for UK-study preparation, not an official UCAS or university service.',
   'ielts.admissions.ps.err.401': 'Please sign in to get feedback on your personal statement.',
@@ -17528,7 +17527,7 @@ export const EN_MESSAGES: Record<string, string> = {
   'ielts.partners.overview.hero.eyebrow': 'Partnerships',
   'ielts.partners.overview.hero.h1': 'Bring AI-marked IELTS preparation to your learners',
   'ielts.partners.overview.hero.lede':
-    'The English Hub is an IELTS Academic preparation platform built for schools, exam-prep centres and education agencies - with bulk access, a centre dashboard, bilingual English / Arabic delivery and instant AI band feedback.',
+    'The English Hub is an IELTS Academic preparation platform built for schools, exam-prep centres and education agencies - with bulk access, a centre dashboard, bilingual English / Arabic delivery and AI band feedback.',
   'ielts.partners.overview.hero.cta_primary': 'Talk to us about partnering',
   'ielts.partners.overview.hero.cta_secondary': 'Explore the IELTS platform',
   'ielts.partners.overview.hero.pill_schools': 'Schools & colleges',
@@ -17549,9 +17548,9 @@ export const EN_MESSAGES: Record<string, string> = {
   'ielts.partners.overview.offer.bilingual.title': 'Bilingual English / Arabic',
   'ielts.partners.overview.offer.bilingual.body':
     'Every learner-facing screen works in English or Arabic, so instructions never get in the way of the practice for Gulf students building towards an English-medium future.',
-  'ielts.partners.overview.offer.feedback.title': 'Instant AI band feedback',
+  'ielts.partners.overview.offer.feedback.title': 'AI band feedback',
   'ielts.partners.overview.offer.feedback.body':
-    'Writing and Speaking responses are scored against the official band descriptors in seconds, with targeted next steps - extending your teachers rather than replacing them.',
+    'Writing and Speaking responses get an AI-estimated band against the published band descriptors, with targeted next steps - extending your teachers rather than replacing them.',
   'ielts.partners.overview.offer.progress.title': 'Progress you can report on',
   'ielts.partners.overview.offer.progress.body':
     'Per-skill bands and trend lines give you the evidence to show learners, parents and stakeholders how preparation is translating into measurable gains.',
@@ -17653,9 +17652,9 @@ export const EN_MESSAGES: Record<string, string> = {
   'ielts.partners.schools.features.cohort.title': 'Onboard a whole cohort',
   'ielts.partners.schools.features.cohort.body':
     'Assign the full IELTS Academic learning loop - diagnostic, plan, four-skill practice and mocks - to every student under a single agreement.',
-  'ielts.partners.schools.features.feedback.title': 'Instant AI band feedback',
+  'ielts.partners.schools.features.feedback.title': 'AI band feedback',
   'ielts.partners.schools.features.feedback.body':
-    'Writing and Speaking are scored against the official descriptors in seconds, with concrete next steps your teachers can build a lesson around.',
+    'Writing and Speaking get an AI-estimated band against the published descriptors, with concrete next steps your teachers can build a lesson around.',
   'ielts.partners.schools.features.dashboard.title': 'A coordinator dashboard',
   'ielts.partners.schools.features.dashboard.body':
     'See starting bands, practice activity and predicted overall bands across the cohort - so you spot the students who need support before test day.',
@@ -17726,9 +17725,9 @@ export const EN_MESSAGES: Record<string, string> = {
   'ielts.partners.agencies.features.evidence.title': 'Predicted band evidence',
   'ielts.partners.agencies.features.evidence.body':
     'Full timed mocks and per-skill scoring produce a defensible predicted overall band you can use to advise students and support applications.',
-  'ielts.partners.agencies.features.feedback.title': 'Instant AI feedback',
+  'ielts.partners.agencies.features.feedback.title': 'AI feedback',
   'ielts.partners.agencies.features.feedback.body':
-    'Writing and Speaking are marked against the official descriptors in seconds, so applicants improve quickly without waiting on a tutor.',
+    'Writing and Speaking get an AI-estimated band against the published descriptors, so applicants can keep practising without waiting on a tutor.',
   'ielts.partners.agencies.features.bilingual.title': 'Bilingual English / Arabic',
   'ielts.partners.agencies.features.bilingual.body':
     'A fully bilingual experience means Gulf applicants can prepare in the language they navigate most comfortably, right up to test readiness.',
@@ -18711,11 +18710,11 @@ export const EN_MESSAGES: Record<string, string> = {
     'Universal writing strategies you can apply to any paper, any board, every time.',
   'study.skills.ws.ai.title': 'AI Feedback Built Into Every Answer',
   'study.skills.ws.ai.body':
-    'Every practice question comes with instant, personalised AI feedback. Submit your response and receive detailed commentary on your vocabulary choices, sentence structures, technique usage, and SPaG - with actionable suggestions to push your writing into the top band.',
+    'Every practice question comes with personalised AI feedback. Submit your response and receive detailed commentary on your vocabulary choices, sentence structures, technique usage, and SPaG - with actionable suggestions to push your writing into the top band.',
   'study.skills.ws.ai.cta': 'Try a Practice Question',
   'study.skills.ws.practice.title': 'Practice Makes Perfect',
   'study.skills.ws.practice.subtitle':
-    'Put your skills to the test with exam-style questions and get instant AI feedback on your responses.',
+    'Put your skills to the test with exam-style questions and get AI feedback on your responses.',
   'study.skills.ws.practice.start': 'Start practising',
   'study.skills.ws.practice.creative.label': 'Creative Writing Questions',
   'study.skills.ws.practice.creative.desc':

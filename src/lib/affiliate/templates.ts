@@ -350,7 +350,7 @@ Link with the code applied: {URL}
 
 ## How the AI essay marking compares to a teacher
 
-[Your honest take after testing it. Useful angles: turnaround speed vs. a teacher (instant vs. weeks), how the band/comments map to the real mark scheme, where it's strongest, where a human teacher still wins.]
+[Your honest take after testing it. Useful angles: how the band/comments map to the real mark scheme, where it's strongest, where a human teacher still wins.]
 
 ## Who it's actually for
 

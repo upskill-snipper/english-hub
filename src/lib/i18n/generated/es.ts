@@ -1503,7 +1503,7 @@ export const ES_MESSAGES: Record<string, string> = {
   'dash.marking_cta.title': 'Corrige una redacción',
   'dash.marking_cta.badge': 'Corrección con IA',
   'dash.marking_cta.blurb':
-    'Pega tu redacción y recibe comentarios al estilo del examinador en minutos.',
+    'Pega tu redacción y recibe feedback con IA sobre cada objetivo de evaluación.',
   'sub.free': 'Gratis',
   'sub.premium': 'Premium',
   'sub.cancelled': 'Cancelado',
@@ -1814,7 +1814,7 @@ export const ES_MESSAGES: Record<string, string> = {
   'marking.reviews_remaining_singular': 'revisión restante hoy',
   'marking.reviews_remaining_plural': 'revisiones restantes hoy',
   'marking.marking_in_progress': 'Analizando tu respuesta...',
-  'marking.marking_takes_seconds': 'Esto suele tardar unos segundos.',
+  'marking.marking_takes_seconds': 'Puede tardar un poco. No cierres esta página.',
   'marking.retry': 'Reintentar',
   'marking.min_words_error':
     'Tu respuesta debe tener al menos 100 palabras para obtener feedback con IA.',
@@ -2707,7 +2707,7 @@ export const ES_MESSAGES: Record<string, string> = {
   'text_hub.generate_personalised_notes': 'Genera apuntes personalizados',
   'text_hub.ready_for_exam': '¿Listo para practicar el examen?',
   'text_hub.exam_blurb':
-    'Escribe una redacción cronometrada y recibe feedback instantáneo con IA y desglose por AO',
+    'Escribe una redacción cronometrada y recibe feedback con IA sobre cada objetivo de evaluación',
   'text_hub.build_test': 'Crear un test',
   'text_hub.write_mark_essay': 'Escribir y corregir la redacción',
   'poem_viewer.tab_context': 'Contexto',
@@ -2943,7 +2943,7 @@ export const ES_MESSAGES: Record<string, string> = {
     'lecciones, esquemas de calificación y respuestas modelo asignados directamente a las juntas examinadoras AQA, Edexcel, OCR, WJEC Eduqas y Cambridge IGCSE.',
   'about.approach.ai.name': 'Feedback de redacciones con IA',
   'about.approach.ai.desc':
-    'envía redacciones de práctica y recibe feedback detallado y referido a los criterios en segundos, lo que ayuda a los estudiantes a entender cómo mejorar antes de su examen real.',
+    'envía redacciones de práctica y recibe feedback detallado y referido a los criterios, señalado como generado por IA, lo que ayuda a los estudiantes a entender cómo mejorar antes de su examen real.',
   'about.approach.mock.name': 'Práctica con exámenes de prueba',
   'about.approach.mock.desc':
     'preguntas cronometradas de tipo examen que reflejan el formato, la redacción y la asignación de puntos que los estudiantes encontrarán el día del examen.',
@@ -2969,7 +2969,7 @@ export const ES_MESSAGES: Record<string, string> = {
   'about.glance.h2': 'De un vistazo',
   'about.glance.courses_label': 'Cursos estructurados desde KS3 hasta IGCSE',
   'about.glance.boards_label': 'Juntas examinadoras admitidas',
-  'about.glance.ai_label': 'Feedback de redacciones en segundos',
+  'about.glance.ai_label': 'Feedback con IA sobre redacciones de práctica',
   'about.glance.mock_label': 'Preguntas de prueba y práctica cronometrada',
   'about.glance.ai_value': 'Con IA',
   'about.glance.mock_value': 'De tipo examen',
@@ -3242,7 +3242,7 @@ export const ES_MESSAGES: Record<string, string> = {
     'El inglés de GCSE explicado, cómo ayudar con el repaso y la diferencia entre Language y Literature.',
   'analysis.revision.footer.h2': 'Obtén feedback personalizado',
   'analysis.revision.footer.body':
-    'Sube una redacción y obtén feedback al estilo de un corrector sobre tus AO en minutos - calibrado según tu junta examinadora.',
+    'Sube una redacción y obtén feedback con IA sobre cada objetivo de evaluación, según el examen de tu junta.',
   'analysis.revision.footer.cta_primary': 'Crea una cuenta gratuita',
   'analysis.revision.footer.cta_secondary': 'Abrir el Centro de repaso',
   'analysis.ai_feedback.breadcrumb_current': 'Feedback con IA: cara a cara',
@@ -3269,7 +3269,7 @@ export const ES_MESSAGES: Record<string, string> = {
   'analysis.slug.applying_body':
     'Usa el análisis de arriba como marco estructural para tu propia respuesta - elige dos o tres citas, añade el análisis de los recursos y entrelaza el contexto de evaluación en tu conclusión.',
   'analysis.slug.cta_block_prompt':
-    '¿Listo para probarlo con tu propia escritura? Sube una redacción y obtén feedback al estilo de un corrector en minutos.',
+    '¿Listo para probarlo con tu propia escritura? Sube una redacción y obtén feedback con IA sobre cada objetivo de evaluación.',
   'analysis.slug.cta_get_feedback': 'Obtener feedback de un corrector',
   'analysis.slug.cta_see_pricing': 'Ver precios',
   'analysis.slug.faqs_h2': 'Preguntas frecuentes',
@@ -4967,7 +4967,7 @@ export const ES_MESSAGES: Record<string, string> = {
     'Haz clic en "Log In" y luego en "Forgot Password". Introduce tu correo electrónico y te enviaremos un enlace para restablecer la contraseña. El enlace caduca a las 24 horas. Si te registraste con Google, usa la opción "Sign in with Google" en su lugar.',
   'help.te.q4.q': 'El feedback de mi examen de prueba no aparece. ¿Qué debo hacer?',
   'help.te.q4.a':
-    'El feedback suele generarse a los pocos segundos de enviar tu examen. Si no ha aparecido después de un minuto, prueba a actualizar la página. Si el problema continúa, contacta con nuestro equipo de soporte indicando el nombre del examen y la hora a la que lo enviaste.',
+    'El feedback con IA puede tardar un poco en escribirse, así que mantén la página abierta mientras trabaja. Si después de unos minutos no ha aparecido, prueba a actualizar la página. Si el problema continúa, contacta con nuestro equipo de soporte indicando el nombre del examen y la hora a la que lo enviaste.',
   'help.contact.title': 'Ponte en contacto',
   'help.contact.lead':
     'Tanto si tienes una pregunta, un problema o simplemente quieres saludar -- elige el canal adecuado abajo y te responderemos lo antes posible.',
@@ -11885,7 +11885,7 @@ export const ES_MESSAGES: Record<string, string> = {
   'analytics.grade_band.below': 'Por debajo del aprobado (1-3)',
   'marking.h1': 'Corrección de redacciones con IA',
   'marking.lead':
-    'Envía una respuesta con formato de examen y obtén retroalimentación instantánea alineada con la junta, junto con una indicación de nota.',
+    'Envía una respuesta con formato de examen y obtén retroalimentación con IA alineada con la junta, junto con una nota de práctica.',
   'marking.cta.new': 'Corregir nueva redacción',
   'marking.cta.history': 'Ver historial',
   'marking.recent.h2': 'Redacciones recientes',
@@ -12548,7 +12548,7 @@ export const ES_MESSAGES: Record<string, string> = {
     'GCSE English Language desarrolla tu capacidad de leer de forma crítica, analizar cómo usan los escritores el lenguaje y la estructura, y producir tu propia escritura de alta calidad en una variedad de formas y propósitos. Es una titulación fundamental que exigen la mayoría de los empleadores y proveedores de educación superior, y normalmente se necesita una nota de 4 o superior para acceder al sixth form, la universidad y los programas de formación profesional.',
   'resources.eng_lang.what_covers.p2':
     'El curso se evalúa mediante exámenes escritos (y un componente de lengua hablada en la mayoría de las juntas). Estudiarás una mezcla de textos de ficción y de no ficción y desarrollarás destrezas de escritura tanto analítica como creativa que son transferibles a A Level y más allá.',
-  'resources.eng_lang.ai.h2': 'Recibe comentarios con IA instantáneos sobre tus respuestas',
+  'resources.eng_lang.ai.h2': 'Recibe comentarios con IA sobre tus respuestas',
   'resources.eng_lang.ai.sub':
     'Practica preguntas de tipo examen y recibe comentarios detallados y alineados con la guía de calificación impulsados por IA. Nuestro sistema analiza tu respuesta según los objetivos de evaluación de tu junta examinadora concreta y ofrece sugerencias de mejora específicas.',
   'resources.eng_lang.ai.cta_try': 'Prueba las preguntas de práctica',
@@ -12587,7 +12587,7 @@ export const ES_MESSAGES: Record<string, string> = {
   'resources.eng_lit.example.effective_label': 'Qué lo hace eficaz:',
   'resources.eng_lit.ai.h2': 'Recibe comentarios de ensayo impulsados por IA',
   'resources.eng_lit.ai.sub':
-    'Pega tu ensayo de literatura y recibe comentarios instantáneos y detallados sobre tu argumento, el uso de evidencias, el análisis del lenguaje y la técnica de examen. Nuestro corrector con IA está calibrado según las guías de calificación de GCSE.',
+    'Pega tu ensayo de literatura y recibe comentarios detallados con IA sobre tu argumento, el uso de evidencias, el análisis del lenguaje y la técnica de examen, según los objetivos de evaluación de tu junta.',
   'resources.eng_lit.ai.cta': 'Pruébalo gratis',
   'resources.eng_lit.more.h2': 'Más recursos de repaso',
   'resources.eng_lit.more.sub':
@@ -12671,12 +12671,12 @@ export const ES_MESSAGES: Record<string, string> = {
   'marking.submit.word': 'palabra',
   'marking.submit.words': 'palabras',
   'marking.submit.min_50': '(mínimo 50 palabras)',
-  'marking.submit.no_upper_limit': 'Sin límite máximo',
+  'marking.submit.no_upper_limit': 'Hasta 30.000 caracteres',
   'marking.submit.btn_cancel': 'Cancelar',
   'marking.submit.btn_submit': 'Enviar para corregir',
   'marking.submit.btn_marking': 'Corrigiendo tu redacción…',
   'marking.submit.wait_note':
-    'La corrección con IA suele tardar entre 5 y 15 segundos. Por favor, no cierres esta página.',
+    'Se está corrigiendo tu redacción. Puede tardar un poco, así que no cierres esta página.',
   'marking.history.breadcrumb': 'Historial',
   'marking.history.awaiting': 'Pendiente de nota',
   'marking.history.title': 'Historial de correcciones',
@@ -15295,7 +15295,7 @@ export const ES_MESSAGES: Record<string, string> = {
   'admin.mqa.gold_fail': 'No se pudo marcar este envío como Gold.',
   'mkt.schools.meta.title': 'Evaluación, intervención e informes de inglés para colegios',
   'mkt.schools.meta.description':
-    'Una plataforma de inglés lista para colegios que ayuda a los profesores a ahorrar tiempo, a los estudiantes a practicar más con feedback instantáneo y a los directivos a entender dónde se necesita apoyo en English Language, Literature y EAL.',
+    'Una plataforma de inglés lista para colegios que ayuda a los profesores a ahorrar tiempo, a los estudiantes a practicar más con feedback con IA y a los directivos a entender dónde se necesita apoyo en English Language, Literature y EAL.',
   'mkt.schools.meta.og_title': 'The English Hub para colegios',
   'mkt.schools.meta.og_description':
     'Inteligencia, evaluación e intervención del departamento de inglés en una sola plataforma.',
@@ -15304,7 +15304,7 @@ export const ES_MESSAGES: Record<string, string> = {
   'mkt.schools.hero.title':
     'Inteligencia, evaluación e intervención del departamento de inglés en una sola plataforma',
   'mkt.schools.hero.lede':
-    'Una plataforma lista para colegios que ayuda a los profesores a ahorrar tiempo, a los estudiantes a practicar más con feedback instantáneo y a los directivos a entender dónde se necesita apoyo.',
+    'Una plataforma lista para colegios que ayuda a los profesores a ahorrar tiempo, a los estudiantes a practicar más con feedback con IA y a los directivos a entender dónde se necesita apoyo.',
   'mkt.schools.hero.cta_primary': 'Inicia un piloto escolar de 90 días',
   'mkt.schools.hero.cta_secondary': 'Descubre cómo funciona el piloto',
   'mkt.schools.hero.lozenge.language_literature': 'English Language y Literature',
@@ -17065,7 +17065,7 @@ export const ES_MESSAGES: Record<string, string> = {
   'ielts.hub.eyebrow': 'IELTS Academic',
   'ielts.hub.title': 'IELTS Academic: de principiante a listo para el examen',
   'ielts.hub.subtitle':
-    'Un único ciclo de aprendizaje: descubre tu nivel, sigue un plan personalizado, practica las cuatro destrezas, recibe feedback de Band instantáneo con IA y luego demuéstralo en un examen de prueba completo.',
+    'Un único ciclo de aprendizaje: descubre tu nivel, sigue un plan personalizado, practica las cuatro destrezas, recibe feedback de Band con IA en Writing y Speaking y luego demuéstralo en un examen de prueba completo.',
   'ielts.skill.listening': 'Listening',
   'ielts.skill.reading': 'Reading',
   'ielts.skill.writing': 'Writing',
@@ -17226,7 +17226,7 @@ export const ES_MESSAGES: Record<string, string> = {
   'ielts.writing.hero.badge': 'Feedback de Band con IA - IELTS Academic',
   'ielts.writing.hero.title': 'IELTS Academic Writing',
   'ielts.writing.hero.subtitle':
-    'Elige una pregunta de Task 1 o Task 2, escribe tu respuesta con tiempo cronometrado si quieres y obtén una Band prevista al instante para cada uno de los cuatro criterios de corrección, además de puntos fuertes, mejoras y técnicas concretas para subir de Band.',
+    'Elige una pregunta de Task 1 o Task 2, escribe tu respuesta con tiempo cronometrado si quieres y obtén una Band estimada con IA para cada uno de los cuatro criterios de corrección, además de puntos fuertes, mejoras y técnicas concretas para subir de Band.',
   'ielts.writing.hero.word_minutes_note':
     'La Task 1 pide al menos 150 palabras en unos 20 minutos; la Task 2 pide al menos 250 palabras en unos 40 minutos.',
   'ielts.writing.tab.task1': 'Task 1 - Informe',
@@ -17255,8 +17255,7 @@ export const ES_MESSAGES: Record<string, string> = {
   'ielts.writing.words.too_short': 'Escribe al menos unas frases para poder evaluar.',
   'ielts.writing.submit.cta': 'Obtener mi feedback de Band',
   'ielts.writing.submit.loading': 'Evaluando tu escrito…',
-  'ielts.writing.submit.loading_note':
-    'Esto suele tardar de 15 a 30 segundos. Por favor, no cierres la página.',
+  'ielts.writing.submit.loading_note': 'Puede tardar un poco. Por favor, no cierres la página.',
   'ielts.writing.error.401': 'Inicia sesión para obtener feedback de Band con IA sobre tu escrito.',
   'ielts.writing.error.403':
     'El feedback de IELTS Writing es una función Premium. Mejora tu plan para acceder a ella.',
@@ -17547,7 +17546,7 @@ export const ES_MESSAGES: Record<string, string> = {
   'ielts.hubx.loop.practise.detail':
     'Trabaja tareas de Academic en Listening, Reading, Writing y Speaking.',
   'ielts.hubx.loop.feedback.detail':
-    'Writing y Speaking reciben una Band instantánea con IA según los criterios oficiales.',
+    'Writing y Speaking reciben una Band estimada con IA según los descriptores de banda publicados.',
   'ielts.hubx.loop.mock.detail':
     'Haz un examen de prueba completo y cronometrado en condiciones reales cuando estés listo.',
   'ielts.hubx.loop.predict.detail':
@@ -17571,10 +17570,10 @@ export const ES_MESSAGES: Record<string, string> = {
   'ielts.hubx.skills.body':
     'Listening y Reading se corrigen automáticamente. Writing y Speaking los califica la IA según los descriptores oficiales de Band, así que siempre sabes dónde estás.',
   'ielts.hubx.why.eyebrow': 'Por qué The English Hub',
-  'ielts.hubx.why.heading': 'El feedback que antes requería un profesor, al instante',
-  'ielts.hubx.why.instant.title': 'Feedback de Band instantáneo con IA',
+  'ielts.hubx.why.heading': 'Feedback sin esperar a un profesor',
+  'ielts.hubx.why.instant.title': 'Feedback de Band con IA',
   'ielts.hubx.why.instant.body':
-    'Sin esperar a un profesor. Las respuestas de Writing y Speaking reciben una Band y próximos pasos concretos en segundos.',
+    'Sin esperar a un profesor. Las respuestas de Writing y Speaking reciben una Band estimada con IA y próximos pasos concretos.',
   'ielts.hubx.why.bilingual.title': 'Creado en dos idiomas para los estudiantes del Golfo',
   'ielts.hubx.why.bilingual.body':
     'Cada página funciona en inglés o árabe, para que las instrucciones nunca interfieran con la práctica.',
@@ -17585,7 +17584,7 @@ export const ES_MESSAGES: Record<string, string> = {
   'ielts.hubx.more.heading': 'De tu Band objetivo a tu plaza universitaria',
   'ielts.hubx.more.admissions.title': 'Asesor de admisiones del Reino Unido y del statement',
   'ielts.hubx.more.admissions.body':
-    'Planifica tu solicitud de UCAS y obtén feedback instantáneo con IA sobre tu personal statement.',
+    'Planifica tu solicitud de UCAS y obtén feedback con IA sobre tu personal statement.',
   'ielts.hubx.more.centre.title': 'Para profesores y centros',
   'ielts.hubx.more.centre.body':
     'Sigue las Band de tus estudiantes en cada destreza desde un único panel.',
@@ -17724,7 +17723,7 @@ export const ES_MESSAGES: Record<string, string> = {
   'ielts.guide.faq.q4.answer_b': 'IELTS es aceptado por',
   'ielts.guide.cta.heading': 'Conoce el examen. Ahora construye tu Band.',
   'ielts.guide.cta.body':
-    'Empieza con un diagnóstico gratuito para encontrar tu destreza más débil y luego sigue una ruta personalizada de práctica y feedback instantáneo con IA en las cuatro secciones.',
+    'Empieza con un diagnóstico gratuito para encontrar tu destreza más débil y luego sigue una ruta personalizada de práctica en las cuatro secciones, con feedback con IA en Writing y Speaking.',
   'ielts.guide.cta.cta_diagnostic': 'Haz el diagnóstico gratuito',
   'ielts.guide.cta.cta_learn': 'Estudia las destrezas',
   'ielts.admissions.back_to_ielts': 'Volver a IELTS',
@@ -17814,7 +17813,7 @@ export const ES_MESSAGES: Record<string, string> = {
   'ielts.admissions.hub.english.tier4.courses':
     'Años de fundación internacionales e itinerarios de inglés pre-sessional que dan acceso a un grado.',
   'ielts.admissions.hub.english.cta.text':
-    '¿Aún no estás en tu banda objetivo? Practica el módulo Academic y obtén una banda predicha al instante con IA en Writing y Speaking.',
+    '¿Aún no estás en tu banda objetivo? Practica el módulo Academic y obtén una banda estimada con IA en Writing y Speaking.',
   'ielts.admissions.hub.english.cta.button': 'Abrir el ciclo de IELTS',
   'ielts.admissions.hub.ps.eyebrow': 'El personal statement',
   'ielts.admissions.hub.ps.title': 'Donde los solicitantes del extranjero ganan plazas',
@@ -17897,8 +17896,7 @@ export const ES_MESSAGES: Record<string, string> = {
   'ielts.admissions.ps.view_premium': 'Ver planes Premium',
   'ielts.admissions.ps.submitting': 'Leyendo tu statement…',
   'ielts.admissions.ps.submit': 'Obtener feedback',
-  'ielts.admissions.ps.submitting_note':
-    'Esto suele tardar 15-30 segundos. No cierres la página, por favor.',
+  'ielts.admissions.ps.submitting_note': 'Puede tardar un poco. No cierres la página, por favor.',
   'ielts.admissions.ps.privacy_note':
     'Tu borrador se envía solo para generar feedback. Esto es orientación para la preparación de estudios en el Reino Unido, no un servicio oficial de UCAS ni de una universidad.',
   'ielts.admissions.ps.err.401': 'Inicia sesión para obtener feedback sobre tu personal statement.',
@@ -17993,7 +17991,7 @@ export const ES_MESSAGES: Record<string, string> = {
   'ielts.partners.overview.hero.h1':
     'Lleva la preparación de IELTS corregida con IA a tus estudiantes',
   'ielts.partners.overview.hero.lede':
-    'The English Hub es una plataforma de preparación de IELTS Academic creada para colegios, centros de preparación de exámenes y agencias educativas, con acceso por volumen, un panel de centro, una experiencia bilingüe inglés / árabe y feedback de banda instantáneo con IA.',
+    'The English Hub es una plataforma de preparación de IELTS Academic creada para colegios, centros de preparación de exámenes y agencias educativas, con acceso por volumen, un panel de centro, una experiencia bilingüe inglés / árabe y feedback de banda con IA.',
   'ielts.partners.overview.hero.cta_primary': 'Habla con nosotros sobre alianzas',
   'ielts.partners.overview.hero.cta_secondary': 'Explora la plataforma de IELTS',
   'ielts.partners.overview.hero.pill_schools': 'Colegios y centros educativos',
@@ -18014,9 +18012,9 @@ export const ES_MESSAGES: Record<string, string> = {
   'ielts.partners.overview.offer.bilingual.title': 'Bilingüe inglés / árabe',
   'ielts.partners.overview.offer.bilingual.body':
     'Cada pantalla que ve el estudiante funciona en inglés o árabe, para que las instrucciones nunca se interpongan en la práctica de los estudiantes del Golfo que avanzan hacia un futuro en inglés.',
-  'ielts.partners.overview.offer.feedback.title': 'Feedback de banda instantáneo con IA',
+  'ielts.partners.overview.offer.feedback.title': 'Feedback de banda con IA',
   'ielts.partners.overview.offer.feedback.body':
-    'Las respuestas de Writing y Speaking se puntúan según los descriptores oficiales de banda en segundos, con próximos pasos concretos, ampliando a tus profesores en lugar de reemplazarlos.',
+    'Las respuestas de Writing y Speaking reciben una banda estimada con IA según los descriptores de banda publicados, con próximos pasos concretos, ampliando a tus profesores en lugar de reemplazarlos.',
   'ielts.partners.overview.offer.progress.title': 'Un progreso del que puedes informar',
   'ielts.partners.overview.offer.progress.body':
     'Las bandas por destreza y las líneas de tendencia te dan la evidencia para mostrar a estudiantes, familias y partes interesadas cómo la preparación se traduce en avances medibles.',
@@ -18123,9 +18121,9 @@ export const ES_MESSAGES: Record<string, string> = {
   'ielts.partners.schools.features.cohort.title': 'Incorpora a un grupo completo',
   'ielts.partners.schools.features.cohort.body':
     'Asigna el ciclo completo de aprendizaje de IELTS Academic (diagnóstico, plan, práctica de las cuatro destrezas y simulacros) a cada estudiante bajo un único acuerdo.',
-  'ielts.partners.schools.features.feedback.title': 'Feedback de banda instantáneo con IA',
+  'ielts.partners.schools.features.feedback.title': 'Feedback de banda con IA',
   'ielts.partners.schools.features.feedback.body':
-    'El Writing y el Speaking se puntúan según los descriptores oficiales en segundos, con próximos pasos concretos en torno a los que tus profesores pueden construir una clase.',
+    'El Writing y el Speaking reciben una banda estimada con IA según los descriptores publicados, con próximos pasos concretos en torno a los que tus profesores pueden construir una clase.',
   'ielts.partners.schools.features.dashboard.title': 'Un panel para el coordinador',
   'ielts.partners.schools.features.dashboard.body':
     'Consulta las bandas de partida, la actividad de práctica y las bandas globales predichas de todo el grupo, para detectar a los estudiantes que necesitan apoyo antes del día del examen.',
@@ -18199,9 +18197,9 @@ export const ES_MESSAGES: Record<string, string> = {
   'ielts.partners.agencies.features.evidence.title': 'Evidencia de banda predicha',
   'ielts.partners.agencies.features.evidence.body':
     'Los simulacros completos cronometrados y la puntuación por destreza producen una banda global predicha defendible que puedes usar para aconsejar a los estudiantes y respaldar las solicitudes.',
-  'ielts.partners.agencies.features.feedback.title': 'Feedback instantáneo con IA',
+  'ielts.partners.agencies.features.feedback.title': 'Feedback con IA',
   'ielts.partners.agencies.features.feedback.body':
-    'El Writing y el Speaking se corrigen según los descriptores oficiales en segundos, para que los solicitantes mejoren rápido sin esperar a un tutor.',
+    'El Writing y el Speaking reciben una banda estimada con IA según los descriptores publicados, para que los solicitantes sigan practicando sin esperar a un tutor.',
   'ielts.partners.agencies.features.bilingual.title': 'Bilingüe inglés / árabe',
   'ielts.partners.agencies.features.bilingual.body':
     'Una experiencia totalmente bilingüe significa que los solicitantes del Golfo pueden prepararse en el idioma en el que se manejan con más comodidad, hasta la preparación para el examen.',
@@ -19212,11 +19210,11 @@ export const ES_MESSAGES: Record<string, string> = {
     'Estrategias de escritura universales que puedes aplicar a cualquier examen, cualquier junta, siempre.',
   'study.skills.ws.ai.title': 'Comentarios con IA integrados en cada respuesta',
   'study.skills.ws.ai.body':
-    'Cada pregunta de práctica incluye comentarios con IA instantáneos y personalizados. Envía tu respuesta y recibe comentarios detallados sobre tus elecciones de vocabulario, las estructuras de tus oraciones, el uso de técnicas y SPaG, con sugerencias prácticas para llevar tu escritura a la banda más alta.',
+    'Cada pregunta de práctica incluye comentarios con IA personalizados. Envía tu respuesta y recibe comentarios detallados sobre tus elecciones de vocabulario, las estructuras de tus oraciones, el uso de técnicas y SPaG, con sugerencias prácticas para llevar tu escritura a la banda más alta.',
   'study.skills.ws.ai.cta': 'Prueba una pregunta de práctica',
   'study.skills.ws.practice.title': 'La práctica hace al maestro',
   'study.skills.ws.practice.subtitle':
-    'Pon a prueba tus destrezas con preguntas de tipo examen y recibe comentarios con IA instantáneos sobre tus respuestas.',
+    'Pon a prueba tus destrezas con preguntas de tipo examen y recibe comentarios con IA sobre tus respuestas.',
   'study.skills.ws.practice.start': 'Empezar a practicar',
   'study.skills.ws.practice.creative.label': 'Preguntas de escritura creativa',
   'study.skills.ws.practice.creative.desc':

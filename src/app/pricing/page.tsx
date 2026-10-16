@@ -578,7 +578,7 @@ function PricingContent() {
             badge={t('pricing.hero.badge')}
             badgeIcon={Sparkles}
             title="AI-supported English revision for GCSE and IGCSE - built by English teachers."
-            subtitle="A structured revision platform with instant, criteria-referenced practice feedback. We are at launch stage and onboarding our first Founding Schools now."
+            subtitle="A structured revision platform with criteria-referenced practice feedback, labelled as AI. We are at launch stage and onboarding our first Founding Schools now."
           />
           <div className="mt-6 flex justify-center">
             <TrustBox variant="micro-star" />

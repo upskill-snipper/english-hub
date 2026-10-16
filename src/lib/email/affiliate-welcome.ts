@@ -125,21 +125,27 @@ export async function sendAffiliateWelcomeEmail(
 }
 
 // ─── Template bodies ────────────────────────────────────────────────────────
+//
+// The same four posts as the starter kit on the partner page, and corrected
+// with them on 16 October 2026: no "in 60 seconds", no "Built by real
+// examiners", no "real examiner mark schemes", no "as many essays as you
+// want" (every plan is capped), and no "code ... for 7 days free" (a code buys
+// the annual plan, charged at once; the trial comes with a new account).
 
 function tiktokTemplate(code: string, url: string): string {
-  return `POV: you found the GCSE English revision tool that actually marks your essays 🔥\n\nThe English Hub gives you AO-aligned feedback in 60 seconds. Built by real examiners (AQA, Pearson, Cambridge, OCR, WJEC).\n\nGrab a trial - code ${code} at checkout for 7 days free.\n\n👉 ${url}\n\n#GCSE #GCSE2026 #GCSEenglish #revision #studytok #ad`
+  return `POV: you found the GCSE English revision tool that actually marks your essays 🔥\n\nThe English Hub gives you AI feedback on each assessment objective, for AQA, Pearson Edexcel, OCR, Eduqas and Cambridge papers.\n\nStart with a 7-day free trial, no card needed. Code ${code} gets you the annual plan for less at checkout.\n\n👉 ${url}\n\n#GCSE #GCSE2026 #GCSEenglish #revision #studytok #ad`
 }
 
 function instagramTemplate(code: string, url: string): string {
-  return `If you're revising for GCSE English, stop scrolling 🧵\n\nThe English Hub lets you write an essay, submit it, and get a predicted grade + AO-level feedback in a minute. No teacher, no tutor - instant feedback, as many essays as you want.\n\nUse code ${code} for a 7-day free trial. Link: ${url}\n\n#GCSE #GCSEenglish #revision #TeamEnglish #ad`
+  return `If you're revising for GCSE English, stop scrolling 🧵\n\nThe English Hub lets you write an essay, submit it, and get AI feedback on each assessment objective, with a practice grade.\n\nStart with a 7-day free trial, no card needed. Code ${code} gets you the annual plan for less at checkout. Link: ${url}\n\n#GCSE #GCSEenglish #revision #TeamEnglish #ad`
 }
 
 function xTemplate(code: string, url: string): string {
-  return `Revising for GCSE English? @theenglishhub marks your essays against real AQA / Edexcel / OCR / Eduqas / Cambridge mark schemes in ~60s.\n\nCode ${code} gets you a 7-day free trial.\n\n${url}\n\n#GCSE #ad`
+  return `Revising for GCSE English? @theenglishhub gives AI feedback on your essays against the AQA / Edexcel / OCR / Eduqas / Cambridge assessment objectives.\n\nStart with a 7-day free trial, no card needed, and use code ${code} for the annual plan.\n\n${url}\n\n#GCSE #ad`
 }
 
 function whatsappTemplate(code: string, url: string): string {
-  return `Came across this - The English Hub marks GCSE English essays using real examiner mark schemes. Might be useful. Code ${code} for 7 days free: ${url} (#ad)`
+  return `Came across this - The English Hub gives AI feedback on GCSE English essays against each board's assessment objectives. Might be useful. 7-day free trial with no card, and code ${code} for the annual plan: ${url} (#ad)`
 }
 
 function renderTemplate(platform: string, body: string): string {

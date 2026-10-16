@@ -216,7 +216,8 @@ export default async function RevisionNotesPlaceholder({ params }: { params: Pro
                 </CardTitle>
               </div>
               <CardDescription className="mt-2">
-                Submit any practice essay on {title} and get AO-aligned feedback in under a minute.
+                Submit any practice essay on {title} and get AI feedback on each assessment
+                objective.
               </CardDescription>
             </CardHeader>
             <CardContent>

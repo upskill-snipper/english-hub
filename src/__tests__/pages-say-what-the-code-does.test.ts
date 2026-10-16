@@ -370,3 +370,99 @@ describe('the partner pages describe the commission the code pays', () => {
     expect(code('src/app/creators/layout.tsx')).not.toMatch(/thousands|publish courses/i)
   })
 })
+
+// ─── E15: no time is promised for AI marking ────────────────────────────────
+
+describe('no page promises how fast AI marking is', () => {
+  // By /api/marking/run's own measurements the AI's writing alone takes about
+  // 17 to 46 seconds, with up to 23 seconds of work around it. The pages said
+  // "5-15 seconds", "a few seconds", "20-40 seconds", "in seconds", "in
+  // minutes", "under a minute", "in 60 seconds" and "instant". TEHC-079
+  // section 9: state no time at all.
+  const SPEED =
+    /\d+\s*-\s*\d+\s*(seconds|segundos|ثانية)|\d+ a \d+ segundos|seconds|segundos|ثواني|in minutes|en minutos|دقايق|دقائق|under a minute|in a minute|instant|al instante|instantáne|فوري/i
+
+  const KEYS = [
+    'marking.submit.wait_note',
+    'marking.marking_takes_seconds',
+    'marking.lead',
+    'about.approach.ai.desc',
+    'about.glance.ai_label',
+    'help.te.q4.a',
+    'dash.marking_cta.blurb',
+    'analysis.revision.footer.body',
+    'analysis.slug.cta_block_prompt',
+    'text_hub.exam_blurb',
+    'mkt.schools.meta.description',
+    'mkt.schools.hero.lede',
+    'resources.eng_lit.ai.sub',
+    'resources.eng_lang.ai.h2',
+    'study.skills.ws.ai.body',
+    'study.skills.ws.practice.subtitle',
+    'ielts.writing.hero.subtitle',
+    'ielts.writing.submit.loading_note',
+    'ielts.hubx.loop.feedback.detail',
+    'ielts.hubx.why.heading',
+    'ielts.hubx.why.instant.title',
+    'ielts.hubx.why.instant.body',
+    'ielts.hubx.more.admissions.body',
+    'ielts.hub.subtitle',
+    'ielts.guide.cta.body',
+    'ielts.partners.overview.hero.lede',
+    'ielts.partners.overview.offer.feedback.title',
+    'ielts.partners.overview.offer.feedback.body',
+    'ielts.partners.schools.features.feedback.title',
+    'ielts.partners.schools.features.feedback.body',
+    'ielts.partners.agencies.features.feedback.title',
+    'ielts.partners.agencies.features.feedback.body',
+  ]
+
+  it.each(KEYS)('%s states no time for AI feedback, in any locale', (key) => {
+    const copy = inEveryLocale(key)
+    for (const locale of LOCALES) expect(copy[locale], `${key}/${locale}`).not.toMatch(SPEED)
+  })
+
+  it('gives the real length limit, not "No upper limit"', () => {
+    // /api/submissions refuses answers over 30,000 characters.
+    expect(lookup('marking.submit.no_upper_limit', 'en')).toMatch(/30,000/)
+    expect(lookup('marking.submit.no_upper_limit', 'es')).toMatch(/30\.000/)
+  })
+
+  // Hardcoded copy: metadata, page text, the school welcome email and the
+  // posts partners copy and publish.
+  const AI_SPEED =
+    /instant(ly)?,?[^.\n`]{0,40}(feedback|marking|band)|(feedback|marking|marks|grades?|band)[^.\n`]{0,80}(in seconds|within (a few )?seconds|in a minute|under a minute|60 seconds|~60s|in minutes)/i
+
+  it.each([
+    'src/app/marking/layout.tsx',
+    'src/app/page.tsx',
+    'src/app/pricing/page.tsx',
+    'src/app/practice/layout.tsx',
+    'src/app/for-teachers/free-resources/page.tsx',
+    'src/app/toolkit/critic/layout.tsx',
+    'src/app/for-parents/page.tsx',
+    'src/app/resources/revision-notes/[slug]/page.tsx',
+    'src/app/ielts/writing/layout.tsx',
+    'src/app/ielts/partners/page.tsx',
+    'src/app/ielts/partners/for-schools/layout.tsx',
+    'src/lib/email-templates.ts',
+    'src/components/affiliates/AffiliatePublicPage.tsx',
+    'src/components/affiliates/AffiliateResources.tsx',
+    'src/lib/email/affiliate-welcome.ts',
+  ])('%s promises no speed for AI feedback', (rel) => {
+    expect(code(rel)).not.toMatch(AI_SPEED)
+  })
+
+  it('gives partners no post that claims examiners built the site or a code gives a trial', () => {
+    for (const rel of [
+      'src/components/affiliates/AffiliatePublicPage.tsx',
+      'src/lib/email/affiliate-welcome.ts',
+    ]) {
+      const src = code(rel)
+      expect(src, rel).not.toMatch(/Built by real examiners|real examiner mark schemes/)
+      expect(src, rel).not.toMatch(/code \$\{code\}[^`]{0,40}(7 days free|7-day free trial)/)
+      expect(src, rel).not.toMatch(/as many essays as you want/)
+    }
+    expect(code('src/app/page.tsx')).not.toMatch(/trusted by schools/i)
+  })
+})

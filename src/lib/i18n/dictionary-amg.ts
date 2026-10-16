@@ -243,10 +243,11 @@ export const AMG_DICTIONARY: Record<string, { en: string; ar: string; es?: strin
     ar: 'تصحيح المقالات بالذكاء الاصطناعي',
     es: 'Corrección de redacciones con IA',
   },
+  // 16 October 2026: no longer "instant"; AI marking takes a while.
   'marking.lead': {
-    en: 'Submit an exam-style answer and get instant, board-aligned feedback with a grade indication.',
-    ar: 'سلّم إجابة على نمط الامتحان وخذ ملاحظات فورية على معايير المجلس مع مؤشّر للدرجة.',
-    es: 'Envía una respuesta con formato de examen y obtén retroalimentación instantánea alineada con la junta, junto con una indicación de nota.',
+    en: 'Submit an exam-style answer and get board-aligned AI feedback with a practice grade.',
+    ar: 'سلّم إجابة على نمط الامتحان وخذ ملاحظات بالذكاء الاصطناعي على معايير المجلس مع درجة للتدريب.',
+    es: 'Envía una respuesta con formato de examen y obtén retroalimentación con IA alineada con la junta, junto con una nota de práctica.',
   },
   'marking.cta.new': {
     en: 'Mark New Essay',

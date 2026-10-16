@@ -9,7 +9,7 @@ import type { Metadata } from 'next'
 export const metadata: Metadata = {
   title: 'IELTS Prep for Schools & Exam Centres - The English Hub',
   description:
-    'Add an AI-marked IELTS Academic pathway to your school or exam-prep centre: bulk learner access, a centre dashboard and instant band feedback.',
+    'Add an AI-marked IELTS Academic pathway to your school or exam-prep centre: bulk learner access, a centre dashboard and AI band feedback.',
   alternates: { canonical: 'https://theenglishhub.app/ielts/partners/for-schools' },
   keywords: [
     'IELTS preparation for schools',

@@ -49,7 +49,7 @@ const twitterTemplates: Template[] = [
     id: 'tw-thread',
     body: `#ad - Here's how my GCSE English students prep with The English Hub. \u{1F9F5}
 
-It's a UK-built revision app with AI essay marking, a structured course library, and instant feedback. Annual subscription works out under £2/month with my code {CODE}.
+It's a UK-built revision app with AI essay marking and a structured course library. Annual subscription works out under £2/month with my code {CODE}.
 
 7-day free trial, then £20/year (saves £9.99). Annual plan only.
 
@@ -74,7 +74,7 @@ Revising for GCSE English without losing your mind - this is what's actually wor
 
 The English Hub is a UK-built revision app and I genuinely rate it:
 
-• AI essay marker grades your work in seconds and tells you exactly what to fix
+• AI essay marker gives feedback on each assessment objective and what to work on next
 • Full GCSE English Language + Literature courses, broken into bite-sized lessons
 • Practice papers with model answers, so you can see what a Grade 7+ response looks like
 
@@ -89,7 +89,7 @@ const tiktokTemplates: Template[] = [
     id: 'tt-caption',
     body: `#ad The GCSE English revision app I wish I'd had \u{1F62D}
 
-AI essay marking, full courses, instant feedback. 7-day free trial, then £20/year with code {CODE} (saves £9.99). Annual subscription only.
+AI essay marking, full courses and model answers. 7-day free trial, then £20/year with code {CODE} (saves £9.99). Annual subscription only.
 
 \u{1F517} Link in bio
 
@@ -112,7 +112,7 @@ Quick one this week - if you've got a child revising for GCSE English (or you're
 
 It's a UK-built revision platform with three things going for it:
 
-1. An AI essay marker that grades your work in seconds and gives paragraph-by-paragraph feedback. No waiting a week for your teacher to mark it.
+1. An AI essay marker that gives feedback on each assessment objective, labelled as AI. Useful practice between the essays a teacher marks.
 2. Full courses for GCSE English Language and Literature, mapped to the AQA and Edexcel specs.
 3. Practice papers with model answers so students can see what a Grade 7, 8 or 9 response actually looks like.
 
@@ -134,7 +134,7 @@ const blogTemplates: Template[] = [
 
 The English Hub is a UK-built revision app aimed squarely at GCSE English students and their teachers. I've spent the last few months testing it and recommending it to revision groups, and it's one of the few tools I've come across that earns its place on the shortlist.
 
-The headline feature is the AI essay marker. You paste in a response, it grades it against the AQA / Edexcel mark scheme, and it gives paragraph-by-paragraph feedback within seconds. For students who can't get a tutor in front of them, it's the closest thing to instant, structured marking. It's paired with a full course library covering Language Paper 1 and 2 and the major Literature texts, plus a practice-paper bank with model answers so students can calibrate what a Grade 7, 8 or 9 response actually looks like.
+The headline feature is the AI essay marker. You paste in a response, it marks it against the assessment objectives for the paper, and it gives feedback on each one, labelled as AI. For students who can't get a tutor in front of them, it is useful, structured practice. It's paired with a full course library covering Language Paper 1 and 2 and the major Literature texts, plus a practice-paper bank with model answers so students can calibrate what a Grade 7, 8 or 9 response actually looks like.
 
 You can trial it free for 7 days. After that, the Student Annual plan is £29.99 - with my code {CODE} it drops to £20 for the year, which saves £9.99. The discount applies to the annual subscription only; monthly is unaffected.
 

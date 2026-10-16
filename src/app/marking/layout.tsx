@@ -26,15 +26,18 @@ import { selfCanonical } from '@/lib/seo/canonical'
  * `/marking/submit` and `/marking/history` stay out of the sitemap and keep
  * their own noindex - they are logged-in tools, not landing pages.
  */
+// 16 October 2026: both descriptions said "instant feedback". AI marking takes
+// a while (the route's own measurements put the writing alone at 17 to 46
+// seconds), and the grade is a practice estimate.
 export const metadata: Metadata = {
   title: 'AI Essay Marking for GCSE & IGCSE English',
   description:
-    'Submit an exam-style answer and get instant feedback against the assessment objectives for your board, with a grade. AQA, Edexcel, OCR, Eduqas and Cambridge.',
+    "Submit an exam-style answer and get AI feedback against your board's assessment objectives, with a practice grade. AQA, Edexcel, OCR, Eduqas and Cambridge.",
   alternates: { canonical: selfCanonical('/marking') },
   openGraph: {
     title: 'AI Essay Marking for GCSE & IGCSE English',
     description:
-      'Submit an exam-style answer and get instant feedback marked against your board’s assessment objectives, with a grade indication.',
+      'Submit an exam-style answer and get AI feedback marked against your board’s assessment objectives, with a practice grade.',
     images: [
       {
         url: '/api/og?title=AI+Essay+Marking+for+GCSE+%26+IGCSE+English',

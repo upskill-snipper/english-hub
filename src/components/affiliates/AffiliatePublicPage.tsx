@@ -973,22 +973,30 @@ function PostTemplates({ code, referralUrl }: { code: string; referralUrl: strin
   const t = useT()
   // The template bodies stay in English-language source - they are content the
   // affiliate copies to share on social. Surrounding chrome is i18n'd.
+  // Corrected 16 October 2026. These are posts a partner copies and publishes,
+  // so what they claim reaches the public under our name. They said feedback
+  // comes "in 60 seconds" or "in a minute" (AI marking takes longer), that the
+  // site was "Built by real examiners (AQA, Pearson, Cambridge, OCR, WJEC)"
+  // (unverified, and read as an exam-board endorsement), that it uses "real
+  // examiner mark schemes", and that a code gives "7 days free". A code buys
+  // the annual plan and is charged at once; the free trial comes with a new
+  // account, no card needed.
   const templates = [
     {
       platform: 'TikTok (15-30s)',
-      body: `POV: you found the GCSE English revision tool that actually marks your essays 🔥\n\nThe English Hub gives you AO-aligned feedback in 60 seconds. Built by real examiners (AQA, Pearson, Cambridge, OCR, WJEC).\n\nGrab a trial - code ${code} at checkout for 7 days free.\n\n👉 ${referralUrl}\n\n#GCSE #GCSE2026 #GCSEenglish #revision #studytok #ad`,
+      body: `POV: you found the GCSE English revision tool that actually marks your essays 🔥\n\nThe English Hub gives you AI feedback on each assessment objective, for AQA, Pearson Edexcel, OCR, Eduqas and Cambridge papers.\n\nStart with a 7-day free trial, no card needed. Code ${code} gets you the annual plan for less at checkout.\n\n👉 ${referralUrl}\n\n#GCSE #GCSE2026 #GCSEenglish #revision #studytok #ad`,
     },
     {
       platform: 'Instagram (caption)',
-      body: `If you're revising for GCSE English, stop scrolling 🧵\n\nThe English Hub lets you write an essay, submit it, and get a predicted grade + AO-level feedback in a minute. No teacher, no tutor - instant feedback on your essay in about a minute.\n\nUse code ${code} for a 7-day free trial. Link: ${referralUrl}\n\n#GCSE #GCSEenglish #revision #TeamEnglish #ad`,
+      body: `If you're revising for GCSE English, stop scrolling 🧵\n\nThe English Hub lets you write an essay, submit it, and get AI feedback on each assessment objective, with a practice grade.\n\nStart with a 7-day free trial, no card needed. Code ${code} gets you the annual plan for less at checkout. Link: ${referralUrl}\n\n#GCSE #GCSEenglish #revision #TeamEnglish #ad`,
     },
     {
       platform: 'X / Twitter',
-      body: `Revising for GCSE English? @theenglishhub marks your essays against real AQA / Edexcel / OCR / Eduqas / Cambridge mark schemes in ~60s.\n\nCode ${code} gets you a 7-day free trial.\n\n${referralUrl}\n\n#GCSE #ad`,
+      body: `Revising for GCSE English? @theenglishhub gives AI feedback on your essays against the AQA / Edexcel / OCR / Eduqas / Cambridge assessment objectives.\n\nStart with a 7-day free trial, no card needed, and use code ${code} for the annual plan.\n\n${referralUrl}\n\n#GCSE #ad`,
     },
     {
       platform: 'WhatsApp / text message',
-      body: `Came across this - The English Hub marks GCSE English essays using real examiner mark schemes. Might be useful. Code ${code} for 7 days free: ${referralUrl} (#ad)`,
+      body: `Came across this - The English Hub gives AI feedback on GCSE English essays against each board's assessment objectives. Might be useful. 7-day free trial with no card, and code ${code} for the annual plan: ${referralUrl} (#ad)`,
     },
   ]
 

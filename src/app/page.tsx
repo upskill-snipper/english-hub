@@ -40,13 +40,17 @@ import { getSetTextsForBoard } from '@/lib/board/set-texts'
 import { TEXT_GAMES_INDEX, textGamesHref } from '@/lib/revision/text-games-href'
 import { t } from '@/lib/i18n/t'
 
+// 16 October 2026: the descriptions said "instant AI marking", one marked
+// "against the real exam mark scheme", and the Open Graph line ended "trusted
+// by schools". AI marking is not instant, its mark schemes are the site's own
+// reading of each board's, and no school uses the site yet.
 const OG =
-  '/api/og?title=GCSE+%26+IGCSE+English+Revision,+AI-marked&subtitle=Practice+papers,+model+answers+and+instant+AI+feedback+for+students,+parents+and+schools'
+  '/api/og?title=GCSE+%26+IGCSE+English+Revision,+AI-marked&subtitle=Practice+papers,+model+answers+and+AI+feedback+for+students,+parents+and+schools'
 
 export const metadata: Metadata = {
   title: 'GCSE & IGCSE English Revision, AI-marked',
   description:
-    'Revise GCSE and IGCSE English with practice papers, model answers and instant AI marking against your board: AQA, Edexcel, OCR, Eduqas and Cambridge.',
+    'Revise GCSE and IGCSE English with practice papers, model answers and AI marking against your board: AQA, Edexcel, OCR, Eduqas and Cambridge.',
   alternates: { canonical: 'https://theenglishhub.app' },
   keywords: [
     'GCSE English revision',
@@ -63,7 +67,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'GCSE & IGCSE English Revision, AI-marked - The English Hub',
     description:
-      'Practice papers, model answers and instant AI marking against the real exam mark scheme. For students and parents, trusted by schools.',
+      'Practice papers, model answers and AI marking against the assessment objectives for your board. For students, parents and schools.',
     url: 'https://theenglishhub.app',
     images: [
       {

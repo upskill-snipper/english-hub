@@ -66,9 +66,11 @@ export const IELTS_HUBPROGRESS_DICTIONARY: Record<
     es: 'Trabaja tareas de Academic en Listening, Reading, Writing y Speaking.',
   },
   'ielts.hubx.loop.feedback.detail': {
-    en: 'Writing and Speaking get an instant AI band against the official criteria.',
-    ar: 'Writing وSpeaking ياخذون Band فوري بالـ AI حسب المعايير الرسمية.',
-    es: 'Writing y Speaking reciben una Band instantánea con IA según los criterios oficiales.',
+    // 16 October 2026: these IELTS lines said "instant", "in seconds" and
+    // "official"; TEHC-079 section 6.2 rules all three out.
+    en: 'Writing and Speaking get an AI-estimated band against the published band descriptors.',
+    ar: 'Writing وSpeaking ياخذون Band تقديري بالـ AI حسب واصفات الـ Band المنشورة.',
+    es: 'Writing y Speaking reciben una Band estimada con IA según los descriptores de banda publicados.',
   },
   'ielts.hubx.loop.mock.detail': {
     en: 'Sit a full, timed mock under real exam conditions when you are ready.',
@@ -148,19 +150,19 @@ export const IELTS_HUBPROGRESS_DICTIONARY: Record<
     es: 'Por qué The English Hub',
   },
   'ielts.hubx.why.heading': {
-    en: 'Feedback that used to need a tutor - instantly',
-    ar: 'تقييم كان يحتاج مدرّس قبل - الحين فوري',
-    es: 'El feedback que antes requería un profesor, al instante',
+    en: 'Feedback without waiting for a tutor',
+    ar: 'تقييم بدون ما تنتظر مدرّس',
+    es: 'Feedback sin esperar a un profesor',
   },
   'ielts.hubx.why.instant.title': {
-    en: 'Instant AI band feedback',
-    ar: 'تقييم Band فوري بالـ AI',
-    es: 'Feedback de Band instantáneo con IA',
+    en: 'AI band feedback',
+    ar: 'تقييم Band بالـ AI',
+    es: 'Feedback de Band con IA',
   },
   'ielts.hubx.why.instant.body': {
-    en: 'No waiting for a tutor. Writing and Speaking responses get a band and targeted next steps in seconds.',
-    ar: 'ما في انتظار لمدرّس. إجابات Writing وSpeaking ياخذون Band وخطوات تالية محددة في ثواني.',
-    es: 'Sin esperar a un profesor. Las respuestas de Writing y Speaking reciben una Band y próximos pasos concretos en segundos.',
+    en: 'No waiting for a tutor. Writing and Speaking responses get an AI-estimated band and targeted next steps.',
+    ar: 'ما في انتظار لمدرّس. إجابات Writing وSpeaking ياخذون Band تقديري بالـ AI وخطوات تالية محددة.',
+    es: 'Sin esperar a un profesor. Las respuestas de Writing y Speaking reciben una Band estimada con IA y próximos pasos concretos.',
   },
   'ielts.hubx.why.bilingual.title': {
     en: 'Built bilingual for Gulf learners',
@@ -200,9 +202,9 @@ export const IELTS_HUBPROGRESS_DICTIONARY: Record<
     es: 'Asesor de admisiones del Reino Unido y del statement',
   },
   'ielts.hubx.more.admissions.body': {
-    en: 'Plan your UCAS application and get instant AI feedback on your personal statement.',
-    ar: 'خطّط طلب UCAS مالك وخذ تقييم فوري بالـ AI على الـ personal statement مالك.',
-    es: 'Planifica tu solicitud de UCAS y obtén feedback instantáneo con IA sobre tu personal statement.',
+    en: 'Plan your UCAS application and get AI feedback on your personal statement.',
+    ar: 'خطّط طلب UCAS مالك وخذ تقييم بالـ AI على الـ personal statement مالك.',
+    es: 'Planifica tu solicitud de UCAS y obtén feedback con IA sobre tu personal statement.',
   },
   'ielts.hubx.more.centre.title': {
     en: 'For tutors & centres',

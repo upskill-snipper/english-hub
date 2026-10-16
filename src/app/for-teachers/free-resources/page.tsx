@@ -264,7 +264,7 @@ const subscriptionFeatures = [
   {
     icon: PenTool,
     title: 'AI Essay Marking',
-    description: 'Instant, specification-aligned feedback on student essays',
+    description: 'Specification-aligned AI feedback on student essays',
   },
   {
     icon: BarChart3,

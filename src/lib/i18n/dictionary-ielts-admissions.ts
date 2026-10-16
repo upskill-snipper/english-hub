@@ -336,9 +336,9 @@ export const IELTS_ADMISSIONS_DICTIONARY: Record<string, { en: string; ar?: stri
       es: 'Años de fundación internacionales e itinerarios de inglés pre-sessional que dan acceso a un grado.',
     },
     'ielts.admissions.hub.english.cta.text': {
-      en: 'Not at your target band yet? Practise the Academic module and get an instant AI-predicted band on Writing and Speaking.',
-      ar: 'لِسّه ما وصلت الـ Band المستهدف؟ تدرّب على وحدة Academic وخذ Band متوقّع فوري بالذكاء الاصطناعي للكتابة والمحادثة.',
-      es: '¿Aún no estás en tu banda objetivo? Practica el módulo Academic y obtén una banda predicha al instante con IA en Writing y Speaking.',
+      en: 'Not at your target band yet? Practise the Academic module and get an AI-estimated band on Writing and Speaking.',
+      ar: 'لِسّه ما وصلت الـ Band المستهدف؟ تدرّب على وحدة Academic وخذ Band تقديري بالذكاء الاصطناعي للكتابة والمحادثة.',
+      es: '¿Aún no estás en tu banda objetivo? Practica el módulo Academic y obtén una banda estimada con IA en Writing y Speaking.',
     },
     'ielts.admissions.hub.english.cta.button': {
       en: 'Open the IELTS loop',
@@ -620,9 +620,9 @@ export const IELTS_ADMISSIONS_DICTIONARY: Record<string, { en: string; ar?: stri
     },
     'ielts.admissions.ps.submit': { en: 'Get feedback', ar: 'خذ التقييم', es: 'Obtener feedback' },
     'ielts.admissions.ps.submitting_note': {
-      en: 'This usually takes 15-30 seconds. Please don’t close the page.',
-      ar: 'عادةً ياخذ 15-30 ثانية. لا تسكّر الصفحة لو سمحت.',
-      es: 'Esto suele tardar 15-30 segundos. No cierres la página, por favor.',
+      en: 'This can take a little while. Please don’t close the page.',
+      ar: 'ممكن ياخذ شوي وقت. لا تسكّر الصفحة لو سمحت.',
+      es: 'Puede tardar un poco. No cierres la página, por favor.',
     },
     'ielts.admissions.ps.privacy_note': {
       en: 'Your draft is sent only to generate feedback. This is guidance for UK-study preparation, not an official UCAS or university service.',

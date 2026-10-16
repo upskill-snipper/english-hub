@@ -36,9 +36,11 @@ export const IELTS_WRITING_DICTIONARY: Record<string, { en: string; ar?: string;
     es: 'IELTS Academic Writing',
   },
   'ielts.writing.hero.subtitle': {
-    en: 'Choose a Task 1 or Task 2 question, write your response under timed conditions if you like, and get an instant predicted band for each of the four marking criteria - plus specific strengths, improvements and techniques to move up a band.',
-    ar: 'اختر سؤال Task 1 أو Task 2، واكتب جوابك بوقت محدد إذا تبغى، وخذ Band متوقع فوري لكل معيار من معايير التصحيح الأربعة - مع نقاط قوة وتحسينات وتقنيات محددة تطلّعك Band أعلى.',
-    es: 'Elige una pregunta de Task 1 o Task 2, escribe tu respuesta con tiempo cronometrado si quieres y obtén una Band prevista al instante para cada uno de los cuatro criterios de corrección, además de puntos fuertes, mejoras y técnicas concretas para subir de Band.',
+    // 16 October 2026: no longer an "instant" band (the checker writes for
+    // a while) - see the IELTS notes in TEHC-079 section 6.2.
+    en: 'Choose a Task 1 or Task 2 question, write your response under timed conditions if you like, and get an AI-estimated band for each of the four marking criteria - plus specific strengths, improvements and techniques to move up a band.',
+    ar: 'اختر سؤال Task 1 أو Task 2، واكتب جوابك بوقت محدد إذا تبغى، وخذ Band تقديري بالذكاء الاصطناعي لكل معيار من معايير التصحيح الأربعة - مع نقاط قوة وتحسينات وتقنيات محددة تطلّعك Band أعلى.',
+    es: 'Elige una pregunta de Task 1 o Task 2, escribe tu respuesta con tiempo cronometrado si quieres y obtén una Band estimada con IA para cada uno de los cuatro criterios de corrección, además de puntos fuertes, mejoras y técnicas concretas para subir de Band.',
   },
   'ielts.writing.hero.word_minutes_note': {
     en: 'Task 1 asks for at least 150 words in ~20 minutes; Task 2 asks for at least 250 words in ~40 minutes.',
@@ -146,9 +148,9 @@ export const IELTS_WRITING_DICTIONARY: Record<string, { en: string; ar?: string;
     es: 'Evaluando tu escrito…',
   },
   'ielts.writing.submit.loading_note': {
-    en: 'This usually takes 15-30 seconds. Please don’t close the page.',
-    ar: 'عادة ياخذ 15-30 ثانية. لا تسكّر الصفحة من فضلك.',
-    es: 'Esto suele tardar de 15 a 30 segundos. Por favor, no cierres la página.',
+    en: 'This can take a little while. Please don’t close the page.',
+    ar: 'ممكن ياخذ شوي وقت. لا تسكّر الصفحة من فضلك.',
+    es: 'Puede tardar un poco. Por favor, no cierres la página.',
   },
 
   // ── Errors / paywall ──────────────────────────────────────────────────────

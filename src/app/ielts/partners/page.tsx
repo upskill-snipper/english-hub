@@ -168,7 +168,7 @@ const FAQS = [
   {
     question: 'What does a partnership give our learners?',
     answer:
-      'Bulk access to the full IELTS Academic learning loop, a centre dashboard for tracking cohort progress and predicted bands, bilingual English / Arabic delivery, and instant AI feedback on Writing and Speaking against the official band descriptors.',
+      'Bulk access to the full IELTS Academic learning loop, a centre dashboard for tracking cohort progress and predicted bands, bilingual English / Arabic delivery, and AI feedback on Writing and Speaking against the published band descriptors.',
   },
   {
     question: 'Can teachers see how their cohort is progressing?',

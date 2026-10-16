@@ -216,9 +216,10 @@ export const STUDY_SKILLS_DICTIONARY: Record<string, { en: string; ar?: string; 
     es: 'Comentarios con IA integrados en cada respuesta',
   },
   'study.skills.ws.ai.body': {
-    en: 'Every practice question comes with instant, personalised AI feedback. Submit your response and receive detailed commentary on your vocabulary choices, sentence structures, technique usage, and SPaG - with actionable suggestions to push your writing into the top band.',
-    ar: 'كل سؤال تدريب يايه تغذية راجعة فورية ومخصصة بالذكاء الاصطناعي. أرسل إجابتك وبتوصلك ملاحظات مفصّلة عن اختياراتك للمفردات وبناء الجمل واستخدام التقنيات و SPaG، مع اقتراحات عملية تدفع كتابتك للباند الأعلى.',
-    es: 'Cada pregunta de práctica incluye comentarios con IA instantáneos y personalizados. Envía tu respuesta y recibe comentarios detallados sobre tus elecciones de vocabulario, las estructuras de tus oraciones, el uso de técnicas y SPaG, con sugerencias prácticas para llevar tu escritura a la banda más alta.',
+    // 16 October 2026: no longer "instant".
+    en: 'Every practice question comes with personalised AI feedback. Submit your response and receive detailed commentary on your vocabulary choices, sentence structures, technique usage, and SPaG - with actionable suggestions to push your writing into the top band.',
+    ar: 'كل سؤال تدريب يايه تغذية راجعة مخصصة بالذكاء الاصطناعي. أرسل إجابتك وبتوصلك ملاحظات مفصّلة عن اختياراتك للمفردات وبناء الجمل واستخدام التقنيات و SPaG، مع اقتراحات عملية تدفع كتابتك للباند الأعلى.',
+    es: 'Cada pregunta de práctica incluye comentarios con IA personalizados. Envía tu respuesta y recibe comentarios detallados sobre tus elecciones de vocabulario, las estructuras de tus oraciones, el uso de técnicas y SPaG, con sugerencias prácticas para llevar tu escritura a la banda más alta.',
   },
   'study.skills.ws.ai.cta': {
     en: 'Try a Practice Question',
@@ -232,9 +233,9 @@ export const STUDY_SKILLS_DICTIONARY: Record<string, { en: string; ar?: string; 
     es: 'La práctica hace al maestro',
   },
   'study.skills.ws.practice.subtitle': {
-    en: 'Put your skills to the test with exam-style questions and get instant AI feedback on your responses.',
-    ar: 'اختبر مهاراتك بأسئلة على نمط الامتحان واحصل على تغذية راجعة فورية بالذكاء الاصطناعي على إجاباتك.',
-    es: 'Pon a prueba tus destrezas con preguntas de tipo examen y recibe comentarios con IA instantáneos sobre tus respuestas.',
+    en: 'Put your skills to the test with exam-style questions and get AI feedback on your responses.',
+    ar: 'اختبر مهاراتك بأسئلة على نمط الامتحان واحصل على تغذية راجعة بالذكاء الاصطناعي على إجاباتك.',
+    es: 'Pon a prueba tus destrezas con preguntas de tipo examen y recibe comentarios con IA sobre tus respuestas.',
   },
   'study.skills.ws.practice.start': {
     en: 'Start practising',

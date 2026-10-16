@@ -368,9 +368,9 @@ export const IELTS_MOCK_DICTIONARY: Record<string, { en: string; ar?: string; es
     es: '· mínimo alcanzado',
   },
   'ielts.mock.writing.marking_notice': {
-    en: 'Marking your writing… this can take a few seconds. Please wait.',
-    ar: 'نصحّح كتابتك… ممكن تاخذ ثواني. لحظة من فضلك.',
-    es: 'Corrigiendo tu escritura… esto puede tardar unos segundos. Espera, por favor.',
+    en: 'Marking your writing… this can take a little while. Please wait.',
+    ar: 'نصحّح كتابتك… ممكن تاخذ شوي وقت. لحظة من فضلك.',
+    es: 'Corrigiendo tu escritura… esto puede tardar un poco. Espera, por favor.',
   },
   'ielts.mock.writing.finish_warning': {
     en: 'Submitting marks both tasks and moves you on to Speaking. You cannot return to Writing.',
@@ -469,9 +469,9 @@ export const IELTS_MOCK_DICTIONARY: Record<string, { en: string; ar?: string; es
     es: 'Escribe un poco de lo que dijiste (opcional, pero necesario para una banda)…',
   },
   'ielts.mock.speaking.marking_notice': {
-    en: 'Assessing your speaking… this can take a few seconds. Please wait.',
-    ar: 'نقيّم كلامك… ممكن تاخذ ثواني. لحظة من فضلك.',
-    es: 'Evaluando tu expresión oral… esto puede tardar unos segundos. Espera, por favor.',
+    en: 'Assessing your speaking… this can take a little while. Please wait.',
+    ar: 'نقيّم كلامك… ممكن تاخذ شوي وقت. لحظة من فضلك.',
+    es: 'Evaluando tu expresión oral… esto puede tardar un poco. Espera, por favor.',
   },
   // Footer - wraps a {n}-words count token: "…Typed {n} words so far across the three parts."
   'ielts.mock.speaking.finish_warning': {

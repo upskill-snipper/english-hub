@@ -744,7 +744,7 @@ export function studentWelcomeEmail(params: {
     subject,
     `<h2 style="color:${BRAND_COLOR};margin:0 0 16px 0;">Hi ${studentName}, your account is ready!</h2>
 <p style="font-size:16px;line-height:1.6;">
-  Your school, <strong>${schoolName}</strong>, has set up an English Hub account for you. You can now submit essays and get instant AI-powered feedback on your English Language and Literature work.
+  Your school, <strong>${schoolName}</strong>, has set up an English Hub account for you. You can now submit essays and get AI feedback on your English Language and Literature work.
 </p>
 <p style="font-size:16px;line-height:1.6;font-weight:600;">Your login details</p>
 <div style="background:${BRAND_LIGHT};border-radius:8px;padding:20px;margin:16px 0;">
@@ -765,7 +765,7 @@ export function studentWelcomeEmail(params: {
 ${ctaButton('Log in and get started', loginUrl)}
 <p style="font-size:16px;line-height:1.6;font-weight:600;">What you can do</p>
 <ul style="font-size:15px;line-height:1.8;padding-left:20px;margin:0 0 20px 0;">
-  <li>Submit essays for instant AI feedback</li>
+  <li>Submit essays for AI feedback</li>
   <li>See detailed marks and suggestions for improvement</li>
   <li>Track your progress over time</li>
   <li>Practise for your GCSE and A Level exams</li>
@@ -791,7 +791,7 @@ ${ctaButton('Log in and get started', loginUrl)}
     `Log in here: ${loginUrl}`,
     '',
     'What you can do:',
-    '- Submit essays for instant AI feedback',
+    '- Submit essays for AI feedback',
     '- See detailed marks and suggestions for improvement',
     '- Track your progress over time',
     '- Practise for your GCSE and A Level exams',

@@ -308,9 +308,9 @@ export const B1_RESOURCES_DICTIONARY: Record<string, { en: string; ar?: string; 
   },
   // AI feedback callout
   'resources.eng_lang.ai.h2': {
-    en: 'Get instant AI feedback on your answers',
-    ar: 'احصل على ملاحظات فورية بالذكاء الاصطناعي على إجاباتك',
-    es: 'Recibe comentarios con IA instantáneos sobre tus respuestas',
+    en: 'Get AI feedback on your answers',
+    ar: 'احصل على ملاحظات بالذكاء الاصطناعي على إجاباتك',
+    es: 'Recibe comentarios con IA sobre tus respuestas',
   },
   'resources.eng_lang.ai.sub': {
     en: 'Practice exam-style questions and receive detailed, marking-guide-aligned feedback powered by AI. Our system analyses your response against the assessment objectives for your specific exam board and provides targeted improvement suggestions.',
@@ -457,9 +457,12 @@ export const B1_RESOURCES_DICTIONARY: Record<string, { en: string; ar?: string; 
     es: 'Recibe comentarios de ensayo impulsados por IA',
   },
   'resources.eng_lit.ai.sub': {
-    en: 'Paste your literature essay and receive instant, detailed feedback on your argument, use of evidence, analysis of language, and exam technique. Our AI marker is calibrated to GCSE marking guides.',
-    ar: 'الصق مقالك الأدبي واحصل على ملاحظات فورية ومفصّلة على حجّتك واستخدام الأدلة وتحليل اللغة وتقنية الامتحان. مصحّح الذكاء الاصطناعي مالتنا معايَر وفق أدلة تصحيح GCSE.',
-    es: 'Pega tu ensayo de literatura y recibe comentarios instantáneos y detallados sobre tu argumento, el uso de evidencias, el análisis del lenguaje y la técnica de examen. Nuestro corrector con IA está calibrado según las guías de calificación de GCSE.',
+    // 16 October 2026: was "instant" feedback from an AI marker "calibrated
+    // to GCSE marking guides". No time is promised, and the marking has been
+    // checked against the board's material for only 3 of its 22 papers.
+    en: "Paste your literature essay and receive detailed AI feedback on your argument, use of evidence, analysis of language, and exam technique, marked against your board's assessment objectives.",
+    ar: 'الصق مقالك الأدبي واحصل على ملاحظات مفصّلة بالذكاء الاصطناعي على حجّتك واستخدام الأدلة وتحليل اللغة وتقنية الامتحان، حسب أهداف التقييم للبورد مالك.',
+    es: 'Pega tu ensayo de literatura y recibe comentarios detallados con IA sobre tu argumento, el uso de evidencias, el análisis del lenguaje y la técnica de examen, según los objetivos de evaluación de tu junta.',
   },
   'resources.eng_lit.ai.cta': { en: 'Try it free', ar: 'جرّبه ببلاش', es: 'Pruébalo gratis' },
   // More revision resources

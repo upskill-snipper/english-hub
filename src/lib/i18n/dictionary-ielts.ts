@@ -15,9 +15,10 @@ export const IELTS_DICTIONARY: Record<string, { en: string; ar?: string; es?: st
     es: 'IELTS Academic: de principiante a listo para el examen',
   },
   'ielts.hub.subtitle': {
-    en: 'One learning loop: find your level, follow a personalised plan, practise all four skills, get instant AI band feedback, then prove it on a full mock test.',
-    ar: 'مسار تعلّم واحد: حدّد مستواك، اتبع خطة مخصصة لك، تدرّب على المهارات الأربع، خذ تقييم Band فوري بالذكاء الاصطناعي، وبعدها أثبت جاهزيتك باختبار تجريبي كامل.',
-    es: 'Un único ciclo de aprendizaje: descubre tu nivel, sigue un plan personalizado, practica las cuatro destrezas, recibe feedback de Band instantáneo con IA y luego demuéstralo en un examen de prueba completo.',
+    // 16 October 2026: no longer "instant" band feedback.
+    en: 'One learning loop: find your level, follow a personalised plan, practise all four skills, get AI band feedback on Writing and Speaking, then prove it on a full mock test.',
+    ar: 'مسار تعلّم واحد: حدّد مستواك، اتبع خطة مخصصة لك، تدرّب على المهارات الأربع، خذ تقييم Band بالذكاء الاصطناعي للكتابة والمحادثة، وبعدها أثبت جاهزيتك باختبار تجريبي كامل.',
+    es: 'Un único ciclo de aprendizaje: descubre tu nivel, sigue un plan personalizado, practica las cuatro destrezas, recibe feedback de Band con IA en Writing y Speaking y luego demuéstralo en un examen de prueba completo.',
   },
 
   // Skills

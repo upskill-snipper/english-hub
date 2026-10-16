@@ -348,9 +348,11 @@ export const IELTS_GUIDE_DICTIONARY: Record<string, { en: string; ar?: string; e
     es: 'Conoce el examen. Ahora construye tu Band.',
   },
   'ielts.guide.cta.body': {
-    en: 'Start with a free diagnostic to find your weakest skill, then follow a personalised path of practice and instant AI feedback across all four sections.',
-    ar: 'ابدأ باختبار تشخيصي ببلاش عشان تلاقي أضعف مهارة عندك، وبعدها اتبع مسار مخصص من التدريب والتقييم الفوري بالـ AI في الأقسام الأربعة كلها.',
-    es: 'Empieza con un diagnóstico gratuito para encontrar tu destreza más débil y luego sigue una ruta personalizada de práctica y feedback instantáneo con IA en las cuatro secciones.',
+    // 16 October 2026: said "instant AI feedback across all four sections";
+    // the AI band is for Writing and Speaking, and it is not instant.
+    en: 'Start with a free diagnostic to find your weakest skill, then follow a personalised path of practice across all four sections, with AI feedback on Writing and Speaking.',
+    ar: 'ابدأ باختبار تشخيصي ببلاش عشان تلاقي أضعف مهارة عندك، وبعدها اتبع مسار مخصص من التدريب في الأقسام الأربعة كلها، مع تقييم بالـ AI للكتابة والمحادثة.',
+    es: 'Empieza con un diagnóstico gratuito para encontrar tu destreza más débil y luego sigue una ruta personalizada de práctica en las cuatro secciones, con feedback con IA en Writing y Speaking.',
   },
   'ielts.guide.cta.cta_diagnostic': {
     en: 'Take the free diagnostic',

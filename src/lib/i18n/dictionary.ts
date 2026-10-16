@@ -5139,10 +5139,12 @@ export const DICTIONARY: Dictionary = {
     ar: 'تصحيح بالذكاء الاصطناعي',
     es: 'Corrección con IA',
   },
+  // 16 October 2026: was "examiner-style feedback in minutes": no time is
+  // promised, and the feedback is AI's, not an examiner's.
   'dash.marking_cta.blurb': {
-    en: 'Paste your essay and get examiner-style feedback in minutes.',
-    ar: 'حط مقالك وخذ ملاحظات بأسلوب المصحح خلال دقايق.',
-    es: 'Pega tu redacción y recibe comentarios al estilo del examinador en minutos.',
+    en: 'Paste your essay and get AI feedback on each assessment objective.',
+    ar: 'حط مقالك وخذ ملاحظات بالذكاء الاصطناعي على كل هدف تقييم.',
+    es: 'Pega tu redacción y recibe feedback con IA sobre cada objetivo de evaluación.',
   },
   'sub.free': { en: 'Free', ar: 'ببلاش', es: 'Gratis' },
   'sub.premium': { en: 'Premium', ar: 'بريميوم', es: 'Premium' },
@@ -6074,10 +6076,13 @@ export const DICTIONARY: Dictionary = {
     ar: 'يحلّل إجابتك…',
     es: 'Analizando tu respuesta...',
   },
+  // 16 October 2026: was "This usually takes a few seconds". AI feedback
+  // takes far longer than that (see marking.submit.wait_note). The key keeps
+  // its name so EssayFeedbackInline needs no rename.
   'marking.marking_takes_seconds': {
-    en: 'This usually takes a few seconds.',
-    ar: 'عادةً ياخذ ثواني بس.',
-    es: 'Esto suele tardar unos segundos.',
+    en: "This can take a little while. Please don't close this page.",
+    ar: 'ممكن ياخذ شوي وقت. لا تسكّر الصفحة.',
+    es: 'Puede tardar un poco. No cierres esta página.',
   },
   'marking.retry': { en: 'Retry', ar: 'حاول مرة ثانية', es: 'Reintentar' },
   'marking.min_words_error': {
@@ -8654,10 +8659,11 @@ export const DICTIONARY: Dictionary = {
     ar: 'جاهز للتدريب على الامتحان؟',
     es: '¿Listo para practicar el examen?',
   },
+  // 16 October 2026: was "...get instant AI feedback with AO breakdown".
   'text_hub.exam_blurb': {
-    en: 'Write a timed essay and get instant AI feedback with AO breakdown',
-    ar: 'اكتب مقال بوقت محدد وخذ ملاحظات فورية من الذكاء الاصطناعي مع تفصيل AO',
-    es: 'Escribe una redacción cronometrada y recibe feedback instantáneo con IA y desglose por AO',
+    en: 'Write a timed essay and get AI feedback on each assessment objective',
+    ar: 'اكتب مقال بوقت محدد وخذ ملاحظات من الذكاء الاصطناعي على كل هدف تقييم',
+    es: 'Escribe una redacción cronometrada y recibe feedback con IA sobre cada objetivo de evaluación',
   },
   'text_hub.build_test': { en: 'Build a Test', ar: 'سوِّ اختبار', es: 'Crear un test' },
   'text_hub.write_mark_essay': {
@@ -9415,9 +9421,10 @@ export const DICTIONARY: Dictionary = {
     es: 'Feedback de redacciones con IA',
   },
   'about.approach.ai.desc': {
-    en: 'submit practice essays and receive detailed, criteria-referenced feedback in seconds, helping students understand how to improve before their real exam.',
-    ar: 'سلّم مقالات تدريب وخذ ملاحظات مفصَّلة على معايير التصحيح في ثواني، تساعد الطالب يفهم كيف يتحسّن قبل الامتحان الحقيقي.',
-    es: 'envía redacciones de práctica y recibe feedback detallado y referido a los criterios en segundos, lo que ayuda a los estudiantes a entender cómo mejorar antes de su examen real.',
+    // 16 October 2026: no longer "in seconds"; AI marking takes longer.
+    en: 'submit practice essays and receive detailed, criteria-referenced feedback, labelled as AI, helping students understand how to improve before their real exam.',
+    ar: 'سلّم مقالات تدريب وخذ ملاحظات مفصَّلة على معايير التصحيح، مكتوب عليها إنها من الذكاء الاصطناعي، تساعد الطالب يفهم كيف يتحسّن قبل الامتحان الحقيقي.',
+    es: 'envía redacciones de práctica y recibe feedback detallado y referido a los criterios, señalado como generado por IA, lo que ayuda a los estudiantes a entender cómo mejorar antes de su examen real.',
   },
   'about.approach.mock.name': {
     en: 'Mock exam practice',
@@ -9493,10 +9500,11 @@ export const DICTIONARY: Dictionary = {
     ar: 'بوردات امتحان مدعومة',
     es: 'Juntas examinadoras admitidas',
   },
+  // 16 October 2026: was "Essay feedback in seconds".
   'about.glance.ai_label': {
-    en: 'Essay feedback in seconds',
-    ar: 'ملاحظات على المقال في ثواني',
-    es: 'Feedback de redacciones en segundos',
+    en: 'AI feedback on practice essays',
+    ar: 'ملاحظات بالذكاء الاصطناعي على مقالات التدريب',
+    es: 'Feedback con IA sobre redacciones de práctica',
   },
   'about.glance.mock_label': {
     en: 'Mock questions and timed practice',
@@ -10399,9 +10407,12 @@ export const DICTIONARY: Dictionary = {
     es: 'Obtén feedback personalizado',
   },
   'analysis.revision.footer.body': {
-    en: 'Upload an essay and get marker-style feedback on your AOs in minutes - calibrated to your exam board.',
-    ar: 'ارفع مقال واحصل على ملاحظات بأسلوب المصححين على الـ AOs خلال دقائق - معايرة على بورد امتحانك.',
-    es: 'Sube una redacción y obtén feedback al estilo de un corrector sobre tus AO en minutos - calibrado según tu junta examinadora.',
+    // 16 October 2026: promised feedback "in minutes" and "calibrated to your
+    // exam board". No time is promised, and the marking has been checked
+    // against the board's material for only 3 of its 22 papers.
+    en: "Upload an essay and get AI feedback on each assessment objective, against your exam board's paper.",
+    ar: 'ارفع مقال واحصل على ملاحظات بالذكاء الاصطناعي على كل هدف تقييم، حسب ورقة بورد امتحانك.',
+    es: 'Sube una redacción y obtén feedback con IA sobre cada objetivo de evaluación, según el examen de tu junta.',
   },
   'analysis.revision.footer.cta_primary': {
     en: 'Create a free account',
@@ -10503,9 +10514,9 @@ export const DICTIONARY: Dictionary = {
     es: 'Usa el análisis de arriba como marco estructural para tu propia respuesta - elige dos o tres citas, añade el análisis de los recursos y entrelaza el contexto de evaluación en tu conclusión.',
   },
   'analysis.slug.cta_block_prompt': {
-    en: 'Ready to test it on your own writing? Upload an essay and get marker-style feedback in minutes.',
-    ar: 'جاهز تجرّبه على كتابتك؟ ارفع مقال واحصل على ملاحظات بأسلوب المصححين خلال دقائق.',
-    es: '¿Listo para probarlo con tu propia escritura? Sube una redacción y obtén feedback al estilo de un corrector en minutos.',
+    en: 'Ready to test it on your own writing? Upload an essay and get AI feedback on each assessment objective.',
+    ar: 'جاهز تجرّبه على كتابتك؟ ارفع مقال واحصل على ملاحظات بالذكاء الاصطناعي على كل هدف تقييم.',
+    es: '¿Listo para probarlo con tu propia escritura? Sube una redacción y obtén feedback con IA sobre cada objetivo de evaluación.',
   },
   'analysis.slug.cta_get_feedback': {
     en: 'Get marker feedback',
@@ -16217,9 +16228,11 @@ export const DICTIONARY: Dictionary = {
     es: 'El feedback de mi examen de prueba no aparece. ¿Qué debo hacer?',
   },
   'help.te.q4.a': {
-    en: "Feedback is usually generated within a few seconds of submitting your exam. If it hasn't appeared after a minute, try refreshing the page. If the problem continues, contact our support team with the exam name and the time you submitted it.",
-    ar: 'الملاحظات عادة تطلع خلال ثواني من تسليم الامتحان. إذا ما طلعت بعد دقيقة، حدّث الصفحة. إذا المشكلة استمرت، تواصل مع الدعم واذكر اسم الامتحان ووقت التسليم.',
-    es: 'El feedback suele generarse a los pocos segundos de enviar tu examen. Si no ha aparecido después de un minuto, prueba a actualizar la página. Si el problema continúa, contacta con nuestro equipo de soporte indicando el nombre del examen y la hora a la que lo enviaste.',
+    // 16 October 2026: said feedback comes "within a few seconds", and to
+    // refresh "after a minute", while AI marking alone can run past a minute.
+    en: "AI feedback can take a little while to write, so keep the page open while it works. If it still hasn't appeared after a few minutes, try refreshing the page. If the problem continues, contact our support team with the exam name and the time you submitted it.",
+    ar: 'ملاحظات الذكاء الاصطناعي ممكن تاخذ شوي وقت عشان تنكتب، فخلّ الصفحة مفتوحة. إذا ما طلعت بعد كم دقيقة، حدّث الصفحة. إذا المشكلة استمرت، تواصل مع الدعم واذكر اسم الامتحان ووقت التسليم.',
+    es: 'El feedback con IA puede tardar un poco en escribirse, así que mantén la página abierta mientras trabaja. Si después de unos minutos no ha aparecido, prueba a actualizar la página. Si el problema continúa, contacta con nuestro equipo de soporte indicando el nombre del examen y la hora a la que lo enviaste.',
   },
 
   // ─── Help / Contact (/help/contact) ───────────────────────────────────

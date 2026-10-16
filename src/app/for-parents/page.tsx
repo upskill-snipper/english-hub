@@ -73,7 +73,7 @@ const faqs = [
   {
     question: 'How is this different from a private tutor?',
     answer:
-      'A private tutor typically costs £25 to £50 per hour and is available in scheduled sessions. The English Hub is available 24/7 for the price of a monthly subscription, and our AI marks practice essays against AQA, Edexcel, OCR, WJEC Eduqas, and Cambridge IGCSE assessment objectives in seconds. It is best used alongside school teaching, not as a replacement for it.',
+      'A private tutor typically costs £25 to £50 per hour and is available in scheduled sessions. The English Hub is available 24/7 for the price of a monthly subscription, and our AI marks practice essays against AQA, Edexcel, OCR, WJEC Eduqas, and Cambridge IGCSE assessment objectives. It is best used alongside school teaching, not as a replacement for it.',
   },
   {
     question: "Will my child's data be sold?",
