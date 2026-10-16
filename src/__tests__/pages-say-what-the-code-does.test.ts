@@ -97,6 +97,38 @@ describe('the Self-Study panel names no grade it cannot know', () => {
     expect(en).toMatch(/not A level/)
     expect(en).toMatch(/plan/)
   })
+
+  it.each(['quiz.good_progress', 'quiz.more_revision'])(
+    '%s uses no spaced hyphen as a dash, in any locale',
+    (key) => {
+      const copy = inEveryLocale(key)
+      for (const locale of LOCALES) {
+        expect(copy[locale], `${key}/${locale}`).not.toMatch(/ [-\u2013\u2014] /)
+      }
+    },
+  )
+
+  it('sends a pupil with a low score to the topic breakdown, which is always shown', () => {
+    // The Revise tab appears only when a text has revision topics.
+    const en = lookup('quiz.more_revision', 'en')
+    expect(en).not.toMatch(/revision notes tab/i)
+    expect(en).toMatch(/topics below/)
+  })
+})
+
+// ─── The guide pages' "Ready for exam practice?" box ────────────────────────
+
+describe("the guide pages' exam practice box promises only what its button gives", () => {
+  it('promises no timing and no speed, in any locale', () => {
+    // Its button goes to /marking/submit, which has no timer, or to one of
+    // four /marking/sample pages of model essays.
+    const copy = inEveryLocale('text_hub.exam_blurb')
+    for (const locale of LOCALES) {
+      expect(copy[locale], locale).not.toMatch(
+        /timed|instant|cronometrad|instantáne|بوقت محدد|فوري/i,
+      )
+    }
+  })
 })
 
 // ─── A2: the /revision sidebar's target grade ───────────────────────────────

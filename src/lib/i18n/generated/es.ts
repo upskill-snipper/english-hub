@@ -2705,7 +2705,7 @@ export const ES_MESSAGES: Record<string, string> = {
   'text_hub.generate_personalised_notes': 'Genera apuntes personalizados',
   'text_hub.ready_for_exam': '¿Listo para practicar el examen?',
   'text_hub.exam_blurb':
-    'Escribe una redacción cronometrada y recibe feedback con IA sobre cada objetivo de evaluación',
+    'Escribe una redacción y recibe feedback con IA sobre cada objetivo de evaluación',
   'text_hub.build_test': 'Crear un test',
   'text_hub.write_mark_essay': 'Escribir y corregir la redacción',
   'poem_viewer.tab_context': 'Contexto',
@@ -2770,8 +2770,9 @@ export const ES_MESSAGES: Record<string, string> = {
   'quiz.available_at_level': 'preguntas disponibles en este nivel',
   'quiz.start': 'Empezar el cuestionario',
   'quiz.excellent_understanding': 'Comprensión excelente',
-  'quiz.good_progress': 'Buen progreso - repasa los temas de abajo',
-  'quiz.more_revision': 'Hace falta más repaso - prueba la pestaña de apuntes de repaso',
+  'quiz.good_progress': 'Buen progreso: repasa los temas de abajo',
+  'quiz.more_revision':
+    'Hace falta más repaso: repasa los temas de abajo y luego haz otro cuestionario',
   'quiz.topic_breakdown': 'Desglose por temas',
   'quiz.take_another': 'Hacer otro cuestionario',
   'quiz.explanation': 'Explicación',

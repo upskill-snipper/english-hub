@@ -8680,9 +8680,13 @@ export const DICTIONARY: Dictionary = {
   },
   // 16 October 2026: was "...get instant AI feedback with AO breakdown".
   'text_hub.exam_blurb': {
-    en: 'Write a timed essay and get AI feedback on each assessment objective',
-    ar: 'اكتب مقال بوقت محدد وخذ ملاحظات من الذكاء الاصطناعي على كل هدف تقييم',
-    es: 'Escribe una redacción cronometrada y recibe feedback con IA sobre cada objetivo de evaluación',
+    // 16 October 2026: said "Write a timed essay" (and, until c412ff9c, "get
+    // instant AI feedback"). Nothing behind the button times an essay:
+    // /marking/submit has no timer, and the four /marking/sample pages are
+    // model essays with a link on to it.
+    en: 'Write an essay and get AI feedback on each assessment objective',
+    ar: 'اكتب مقال وخذ ملاحظات من الذكاء الاصطناعي على كل هدف تقييم',
+    es: 'Escribe una redacción y recibe feedback con IA sobre cada objetivo de evaluación',
   },
   'text_hub.build_test': { en: 'Build a Test', ar: 'سوِّ اختبار', es: 'Crear un test' },
   'text_hub.write_mark_essay': {
@@ -8811,15 +8815,19 @@ export const DICTIONARY: Dictionary = {
     ar: 'فهم ممتاز',
     es: 'Comprensión excelente',
   },
+  // 16 October 2026: both used a spaced hyphen as a dash. quiz.more_revision
+  // also sent the pupil to "the revision notes tab": the tab is labelled
+  // Revise and appears only when a text has revision topics, while the topic
+  // breakdown below this line is always shown.
   'quiz.good_progress': {
-    en: 'Good progress - review the topics below',
-    ar: 'تقدّم زين - راجع المواضيع تحت',
-    es: 'Buen progreso - repasa los temas de abajo',
+    en: 'Good progress: review the topics below',
+    ar: 'تقدّم زين: راجع المواضيع تحت',
+    es: 'Buen progreso: repasa los temas de abajo',
   },
   'quiz.more_revision': {
-    en: 'More revision needed - try the revision notes tab',
-    ar: 'تحتاج مراجعة أكثر - جرّب تبويب ملاحظات المراجعة',
-    es: 'Hace falta más repaso - prueba la pestaña de apuntes de repaso',
+    en: 'More revision needed: revise the topics below, then take another quiz',
+    ar: 'تحتاج مراجعة أكثر: راجع المواضيع تحت، وبعدين سوِّ اختبار ثاني',
+    es: 'Hace falta más repaso: repasa los temas de abajo y luego haz otro cuestionario',
   },
   'quiz.topic_breakdown': { en: 'Topic Breakdown', ar: 'تفصيل المواضيع', es: 'Desglose por temas' },
   'quiz.take_another': {
