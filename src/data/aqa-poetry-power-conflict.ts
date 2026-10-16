@@ -684,6 +684,9 @@ The final image: a bronze of the god Neptune (power) <em>taming</em> a sea-horse
       // given, which prints Tennyson's "Some one had blunder'd", "Storm'd at with shot and
       // shell" and "Flash'd all their sabres bare"; these had "Someone", "Stormed" and
       // "Flashed".
+      // 16 October 2026: the metre was given as anapaestic dimeter (da-da-DUM) with a dactylic
+      // refrain. The poem is predominantly dactylic dimeter (DUM-da-da), refrain included. The
+      // rhyme of reply, why and die was called internal; the three words end their lines.
       content: `
 <h2>The Charge of the Light Brigade - Alfred, Lord Tennyson (1854)</h2>
 
@@ -692,12 +695,12 @@ The final image: a bronze of the god Neptune (power) <em>taming</em> a sea-horse
 
 <p>As Poet Laureate, Tennyson had a quasi-official role to respond to national events. The poem honours the soldiers' bravery and obedience while implicitly questioning the competence of their commanders.</p>
 
-<div class="key-term"><strong>Key Term: Anapaestic Dimeter</strong> - A metrical pattern of two unstressed syllables followed by a stressed one (da-da-DUM), with two such feet per line. Tennyson uses this rhythm - alongside a dactylic refrain ("Rode the six hundred") - to mimic the galloping of horses charging into battle.</div>
+<div class="key-term"><strong>Key Term: Dactylic Dimeter</strong> - A metrical pattern of a stressed syllable followed by two unstressed ones (DUM-da-da), with two such feet per line. Tennyson uses this rhythm - "Half a league, half a league", "Rode the six hundred" - to mimic the galloping of horses charging into battle.</div>
 
 <h3>Form &amp; Structure</h3>
 <ul>
   <li><strong>Six stanzas</strong> of varying length - the irregular structure mirrors the chaos and disorder of battle.</li>
-  <li><strong>Anapaestic dimeter (with dactylic refrain):</strong> The body of the poem is largely anapaestic dimeter (da-da-DUM da-da-DUM), while the refrain "Rode the six hundred" falls in dactyls. The opening line "Half a league, half a league" is a dactylic flourish that sets the gallop in motion.</li>
+  <li><strong>Dactylic dimeter:</strong> The poem is predominantly dactylic dimeter (DUM-da-da DUM-da-da), from the opening line "Half a league, half a league" to the refrain "Rode the six hundred", which drops the last unstressed syllable (DUM-da-da DUM-da).</li>
   <li><strong>End-stopped lines:</strong> Most lines end with punctuation, reinforcing the drumbeat regularity of the charge.</li>
   <li><strong>Repetition and anaphora:</strong> Phrases like "Cannon to right of them" and "Into the valley of Death" are repeated, creating a sense of inevitability and entrapment.</li>
   <li><strong>Narrative structure:</strong> The poem follows the charge chronologically - approach, attack, retreat - before ending with a tribute. This mirrors the arc of the event itself.</li>
@@ -724,7 +727,7 @@ An allusion to Psalm 23 ("the valley of the shadow of death"). The capitalised <
 An unusually blunt, colloquial admission that the order was a mistake. Tennyson briefly acknowledges the failure of command before returning to praise of the soldiers.</p>
 
 <p><strong>4. "Theirs not to make reply, / Theirs not to reason why, / Theirs but to do and die"</strong><br/>
-The triple structure, parallel syntax, and internal rhyme (<em>reply / why / die</em>) hammer home the soldiers' absolute obedience. The shift from <em>reason</em> to <em>die</em> is brutally stark.</p>
+The triple structure, parallel syntax, and end rhyme (<em>reply / why / die</em>) hammer home the soldiers' absolute obedience. The shift from <em>reason</em> to <em>die</em> is brutally stark.</p>
 
 <p><strong>5. "Cannon to right of them, / Cannon to left of them, / Cannon in front of them"</strong><br/>
 The anaphora (repetition of <em>Cannon</em>) and the spatial language create a sense of total encirclement - the soldiers are surrounded by death.</p>
@@ -769,8 +772,7 @@ The imperative directly addresses the reader, demanding respect and remembrance.
         },
         {
           id: 'aqa-pc-m5-q2',
-          question:
-            'What effect does the galloping metre (anapaestic dimeter with a dactylic refrain) create?',
+          question: 'What effect does the galloping metre (predominantly dactylic dimeter) create?',
           options: [
             'A slow, mournful pace',
             'A galloping, relentless momentum',
@@ -779,7 +781,7 @@ The imperative directly addresses the reader, demanding respect and remembrance.
           ],
           correct: 1,
           explanation:
-            'The body of the poem is in anapaestic dimeter (da-da-DUM) and the refrain "Rode the six hundred" in dactyls (DUM-da-da). Together they mimic the thundering gallop of horses charging into battle, creating a relentless forward momentum that drives the poem.',
+            'The poem is predominantly in dactylic dimeter (DUM-da-da DUM-da-da), from "Half a league, half a league" to the refrain "Rode the six hundred". The falling beat mimics the thundering gallop of horses charging into battle, creating a relentless forward momentum that drives the poem.',
         },
         {
           id: 'aqa-pc-m5-q3',
@@ -814,13 +816,17 @@ The imperative directly addresses the reader, demanding respect and remembrance.
       // 2 October 2026: this module's sections were checked for the poem they discuss.
       // It also carried a copy of Poppies' poet-context sections, about Jane Weir; they are
       // now in that module, and the copy is removed.
+      // 16 October 2026: the form section had every stanza end on "But nothing happens". The
+      // refrain ends four of the eight, stanzas 1, 3, 4 and 8. The context set the poem's cold
+      // in the winter of 1917-18, which Owen spent in Scarborough; he was in the front line of
+      // the Somme sector in January 1917, and the poem draws on that winter.
       title: 'Exposure - Wilfred Owen',
       duration: '55 min',
       content: `
 <h2>Exposure - Wilfred Owen (1917-18)</h2>
 
 <h3>Context</h3>
-<p>Wilfred Owen (1893-1918) is widely regarded as the greatest poet of the First World War. He served on the Western Front and experienced the horrors of trench warfare firsthand. <strong>Exposure</strong> was drafted during the winter of 1917-18, one of the coldest on record, when soldiers suffered as much from the freezing conditions as from enemy fire. Owen was killed in action on 4 November 1918 - just one week before the Armistice.</p>
+<p>Wilfred Owen (1893-1918) is widely regarded as the greatest poet of the First World War. He served on the Western Front and experienced the horrors of trench warfare firsthand. <strong>Exposure</strong> was drafted in 1917-18 and draws on the winter of 1916-17, one of the coldest of the war, when Owen was in the front line of the Somme sector and soldiers suffered as much from the freezing conditions as from enemy fire. Owen was killed in action on 4 November 1918 - just one week before the Armistice.</p>
 
 <p>Owen sought to tell the truth about war. His preface stated: "My subject is War, and the pity of War." <em>Exposure</em> focuses not on dramatic battle but on the slow, demoralising suffering of soldiers waiting in the trenches, exposed to the elements.</p>
 
@@ -830,7 +836,7 @@ The imperative directly addresses the reader, demanding respect and remembrance.
 <ul>
   <li><strong>Eight stanzas of five lines:</strong> The regularity suggests the monotonous, repetitive nature of trench life.</li>
   <li><strong>Pararhyme:</strong> Half-rhymes like "silent" / "salient" create dissonance, reflecting the wrongness and discomfort of the experience.</li>
-  <li><strong>Refrain:</strong> Each stanza ends with a short, indented half-line - "But nothing happens" - reinforcing the agonising stasis. The soldiers endure but achieve nothing.</li>
+  <li><strong>Refrain:</strong> Each stanza ends with a short, indented half-line, and four of them (stanzas 1, 3, 4 and 8) are the refrain "But nothing happens", reinforcing the agonising stasis. The soldiers endure but achieve nothing.</li>
   <li><strong>Present tense:</strong> "Our brains ache" - we are placed in the moment, experiencing the suffering as it happens.</li>
   <li><strong>Cyclical structure:</strong> The poem returns repeatedly to the same refrain, mimicking the unending, circular nature of the soldiers' ordeal.</li>
 </ul>

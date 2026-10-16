@@ -666,7 +666,10 @@ const poetryQuestions: QuizQuestion[] = [
   {
     id: 'p124',
     topic: 'poetry',
-    question: 'What is the effect of the short final stanza in "Exposure" by Wilfred Owen?',
+    // Until 16 October 2026 this asked about "the short final stanza". Every stanza of
+    // Exposure has five lines; what is short is the last line of each.
+    question:
+      'What is the effect of the short final line that ends each stanza of "Exposure" by Wilfred Owen?',
     options: [
       'It creates a sense of resolution',
       "It mirrors the soldiers' fading energy and impending death",
@@ -675,7 +678,7 @@ const poetryQuestions: QuizQuestion[] = [
     ],
     correctIndex: 1,
     explanation:
-      "The shorter final stanza mirrors the soldiers' diminishing strength and the gradual approach of death through exposure to the cold.",
+      "Each stanza ends on a short half-line after four long ones. The dwindling line mirrors the soldiers' diminishing strength and the gradual approach of death through exposure to the cold.",
     boards: ['aqa'],
   },
   {

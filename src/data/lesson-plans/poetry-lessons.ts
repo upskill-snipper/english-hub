@@ -626,11 +626,14 @@ export const poetryLessonPlans: LessonPlan[] = [
         marks: 6,
       },
       {
+        // Until 16 October 2026 the question and answer had every stanza end on "But nothing
+        // happens". All eight end on a short line; the refrain is four of them (stanzas 1, 3,
+        // 4 and 8), and three of the others end on "dying".
         question:
-          "What is the effect of the shortened final line in each stanza - 'But nothing happens'?",
+          "What is the effect of the shortened final line of each stanza, four of them 'But nothing happens'?",
         lines: 5,
         modelAnswer:
-          "The refrain 'But nothing happens' creates a powerful anticlimax at the end of each stanza. After building tension through descriptions of suffering and fear, the short final line deflates all expectation. Structurally, the shortened line mirrors the emptiness the soldiers feel - there is no resolution, no action, no relief. The repetition across the poem reinforces the agonising monotony of trench warfare, where soldiers waited endlessly in terrible conditions. It also conveys futility: all this suffering is for nothing.",
+          "The refrain 'But nothing happens' creates a powerful anticlimax at the end of four of the eight stanzas, and three of the others end just as bleakly, on 'dying'. After building tension through descriptions of suffering and fear, the short final line deflates all expectation. Structurally, the shortened line mirrors the emptiness the soldiers feel - there is no resolution, no action, no relief. The repetition across the poem reinforces the agonising monotony of trench warfare, where soldiers waited endlessly in terrible conditions. It also conveys futility: all this suffering is for nothing.",
         marks: 5,
       },
       {

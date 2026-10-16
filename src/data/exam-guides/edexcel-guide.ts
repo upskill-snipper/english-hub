@@ -937,8 +937,9 @@ export const edexcelGuide: BoardExamGuide = {
       era: 'Victorian',
       themes: ['Duty', 'Heroism', 'Military blunders', 'Honour'],
       topComparison: 'Exposure',
+      // "Predominantly anapaestic dimeter (da-da-DUM da-da-DUM)" until 16 October 2026.
       formAnalysis:
-        'Predominantly anapaestic dimeter (da-da-DUM da-da-DUM) with a dactylic refrain ("Rode the six hundred") - the galloping rhythm imitates horses charging. End-stopped lines, anaphora and repetition create relentless, driving momentum across six irregular stanzas.',
+        'Predominantly dactylic dimeter (DUM-da-da DUM-da-da), from "Half a league, half a league" to the refrain "Rode the six hundred" - the galloping rhythm imitates horses charging. End-stopped lines, anaphora and repetition create relentless, driving momentum across six irregular stanzas.',
       // 2 October 2026: the Pearson Edexcel anthology prints "Their's"; this had AQA's "Theirs".
       keyQuotation: '"Their\'s not to reason why, / Their\'s but to do and die"',
     },

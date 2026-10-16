@@ -371,6 +371,10 @@ export const poetryPowerConflictLessons: LessonPlan[] = [
   // ─────────────────────────────────────────────
   // LESSON 3: Charge of the Light Brigade & Exposure
   // ─────────────────────────────────────────────
+  // 16 October 2026: the Charge's metre was taught as anapaestic dimeter (da-da-DUM) with a
+  // dactylic refrain. It is predominantly dactylic dimeter (DUM-da-da), refrain included. The context
+  // answer also had Owen writing "from the trenches" in 1917-18; he wrote from his experience
+  // of them, mostly in Britain.
   {
     id: 'ppc-03-charge-exposure',
     title: 'The Charge of the Light Brigade & Exposure: War & Suffering',
@@ -393,7 +397,7 @@ export const poetryPowerConflictLessons: LessonPlan[] = [
     keywords: [
       'heroism',
       'futility',
-      'anapaestic dimeter',
+      'dactylic dimeter',
       'dactylic refrain',
       'repetition',
       'half-rhyme',
@@ -474,7 +478,7 @@ export const poetryPowerConflictLessons: LessonPlan[] = [
           "How does the rhythm of 'The Charge of the Light Brigade' reflect its subject matter?",
         lines: 5,
         modelAnswer:
-          "Tennyson opens with dactyls (DUM-da-da) - 'Half a league, half a league' - but the body of the poem moves into anapaestic dimeter (da-da-DUM da-da-DUM), with the refrain 'Rode the six hundred' returning to dactyls. Together they create a galloping rhythm that mimics the sound of horses charging, immersing the reader in the energy and momentum of the cavalry attack. The relentless, end-stopped rhythm also suggests the soldiers' unquestioning obedience - they charge forward without hesitation.",
+          "Tennyson writes predominantly in dactylic dimeter (DUM-da-da DUM-da-da), from the opening 'Half a league, half a league' to the refrain 'Rode the six hundred'. The falling beat creates a galloping rhythm that mimics the sound of horses charging, immersing the reader in the energy and momentum of the cavalry attack. The relentless, end-stopped rhythm also suggests the soldiers' unquestioning obedience - they charge forward without hesitation.",
         marks: 4,
       },
       {
@@ -504,7 +508,7 @@ export const poetryPowerConflictLessons: LessonPlan[] = [
         question: 'Why is context essential when comparing these two poems?',
         lines: 5,
         modelAnswer:
-          'Tennyson wrote in 1854 as Poet Laureate in response to a newspaper report - he had not witnessed the battle himself. His purpose was public memorialisation. Owen wrote from the trenches of WWI in 1917-18, having witnessed the horror first-hand. Understanding this context explains why their attitudes to war differ so dramatically: Tennyson could romanticise the charge, while Owen, suffering from shell shock, felt a moral duty to expose the reality of warfare.',
+          'Tennyson wrote in 1854 as Poet Laureate in response to a newspaper report - he had not witnessed the battle himself. His purpose was public memorialisation. Owen wrote in 1917-18 from his own experience of the trenches of WWI, having witnessed the horror first-hand. Understanding this context explains why their attitudes to war differ so dramatically: Tennyson could romanticise the charge, while Owen, suffering from shell shock, felt a moral duty to expose the reality of warfare.',
         marks: 4,
       },
       {
@@ -519,7 +523,7 @@ export const poetryPowerConflictLessons: LessonPlan[] = [
     teacherNotes: [
       'This is a high-contrast pairing that works well for teaching comparison skills - the poems share the subject of war but differ in attitude, form, and context.',
       'Be sensitive to students who may have family members in the armed forces.',
-      "The galloping metre in 'The Charge of the Light Brigade' (anapaestic dimeter with a dactylic refrain) is best demonstrated through choral reading.",
+      "The galloping metre in 'The Charge of the Light Brigade' (predominantly dactylic dimeter, DUM-da-da DUM-da-da) is best demonstrated through choral reading.",
       "Owen's half-rhyme can be tricky for students to identify - consider a brief phonics exercise comparing full and half-rhyme before the main activity.",
       'This lesson pairs with Lesson 4 (Bayonet Charge & Remains) to build a war poetry cluster.',
     ],

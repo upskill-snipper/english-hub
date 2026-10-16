@@ -189,7 +189,8 @@ const COMPARISON_DATA: {
     type: 'Victorian',
     themes: 'War, honour, duty, patriotism',
     tone: 'Admiring, energetic, mournful',
-    form: 'Anapaestic dimeter (with dactylic refrain), six irregular stanzas, end-stopped lines',
+    // "Anapaestic dimeter (with dactylic refrain)" until 16 October 2026; the poem is dactylic.
+    form: 'Predominantly dactylic dimeter, six irregular stanzas, end-stopped lines',
   },
   {
     poem: 'Exposure',
@@ -1018,16 +1019,16 @@ export default function PowerAndConflictPage() {
 
               <SubSection title="Form &amp; Structure">
                 <p className="text-sm text-muted-foreground leading-relaxed">
-                  Six stanzas of varying length, predominantly in anapaestic dimeter (two unstressed
-                  syllables followed by a stressed: da-da-DUM da-da-DUM), with the recurring refrain
-                  &ldquo;Rode the six hundred&rdquo; falling in dactyls (DUM-da-da). The lines are
-                  largely end-stopped, reinforcing a galloping, drumbeat effect that mimics horses
-                  charging. Heavy repetition (&ldquo;Cannon to right of them,&rdquo; &ldquo;rode the
-                  six hundred&rdquo;) creates a ritualistic, memorial quality. The poem&apos;s
-                  structure mirrors the charge: stanzas 1&ndash;3 ride into the valley, stanzas
-                  4&ndash;5 describe the fighting and retreat, and stanza 6 serves as a eulogy. The
-                  narrowing and expanding stanza lengths mirror the advance into and retreat from
-                  the valley.
+                  Six stanzas of varying length, predominantly in dactylic dimeter (a stressed
+                  syllable followed by two unstressed: DUM-da-da DUM-da-da), from the opening
+                  &ldquo;Half a league, half a league&rdquo; to the recurring refrain &ldquo;Rode
+                  the six hundred&rdquo;. The lines are largely end-stopped, reinforcing a
+                  galloping, drumbeat effect that mimics horses charging. Heavy repetition
+                  (&ldquo;Cannon to right of them,&rdquo; &ldquo;rode the six hundred&rdquo;)
+                  creates a ritualistic, memorial quality. The poem&apos;s structure mirrors the
+                  charge: stanzas 1&ndash;3 ride into the valley, stanzas 4&ndash;5 describe the
+                  fighting and retreat, and stanza 6 serves as a eulogy. The narrowing and expanding
+                  stanza lengths mirror the advance into and retreat from the valley.
                 </p>
               </SubSection>
 
@@ -1101,8 +1102,8 @@ export default function PowerAndConflictPage() {
                   enduring the brutal cold. The real enemy is not the opposing army but the weather
                   itself: freezing winds, snow, and rain that slowly drain the soldiers of life and
                   hope. The poem conveys the monotony, futility, and psychological torment of trench
-                  warfare. The soldiers question what they are fighting for, and each stanza returns
-                  to the same bleak refrain: &ldquo;But nothing happens.&rdquo;
+                  warfare. The soldiers question what they are fighting for, and four of the eight
+                  stanzas end on the same bleak refrain: &ldquo;But nothing happens.&rdquo;
                 </p>
               </SubSection>
 

@@ -65,19 +65,12 @@ export const y8Term2WorkbookExercises: WorkbookExercise[] = [
       '<li>How does Tennyson present the soldiers as simultaneously heroic and powerless? Use two quotations. (6 marks)</li>' +
       '</ol>',
     modelAnswer:
-      'The poem uses a predominantly anapaestic dimeter (da-da-DUM da-da-DUM), with the refrain "Rode the six hundred" sustaining the same propulsive metre. Together these features propel the reader forward, replicating the relentless gallop of horses into battle. The irregular line lengths create a sense of chaos and urgency. ' +
+      'The poem uses a predominantly dactylic dimeter (DUM-da-da DUM-da-da), as in "Half a league, half a league", with the refrain "Rode the six hundred" sustaining the same propulsive metre. Together these features propel the reader forward, replicating the relentless gallop of horses into battle. The irregular line lengths create a sense of chaos and urgency. ' +
       'The repeated phrase "Into the valley of Death" functions as an anaphora that builds a sense of doom. Each repetition deepens the reader\'s awareness that the soldiers are riding to certain destruction, making their courage more admirable and the tragedy more acute. ' +
       'The soldiers are heroic: "Theirs not to reason why, / Theirs but to do and die" presents unquestioning obedience as noble. Yet they are simultaneously powerless: they ride into "the jaws of Death," imagery that frames them as prey consumed by forces beyond their control. Tennyson honours their sacrifice while implicitly critiquing the commanders who ordered a doomed charge.',
     marks: 12,
     difficulty: 'developing',
-    keywords: [
-      'conflict poetry',
-      'anaphora',
-      'anapaestic dimeter',
-      'refrain',
-      'heroism',
-      'Tennyson',
-    ],
+    keywords: ['conflict poetry', 'anaphora', 'dactylic dimeter', 'refrain', 'heroism', 'Tennyson'],
     linkedObjectives: ['Y8.R5', 'Y8.R7', 'Y8.R8'],
   },
   // 2. comparison

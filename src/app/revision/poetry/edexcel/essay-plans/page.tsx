@@ -63,7 +63,8 @@ const ESSAY_PLANS: EssayPlan[] = [
       {
         topic: 'How the poets establish the reality of the battlefield',
         poemAPoint:
-          'Tennyson uses the driving anapaestic metre to convey the momentum of the charge.',
+          // "anapaestic" until 16 October 2026; the poem is predominantly dactylic dimeter.
+          'Tennyson uses the driving dactylic metre to convey the momentum of the charge.',
         poemAEvidence:
           '"Half a league, half a league, / Half a league onward" \u2014 the repetition creates a drumbeat rhythm.',
         poemAAnalysis:

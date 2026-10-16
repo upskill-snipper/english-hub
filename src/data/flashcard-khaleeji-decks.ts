@@ -451,11 +451,13 @@ export const khaleejiVocabDecks: FlashcardDeck[] = [
     cards: [
       {
         id: 'kh-pc-1',
+        // Until 16 October 2026 the example was "But nothing happens.", whose full stop ends
+        // the line: it is a line of its own, so there is no caesura in it.
         front: 'Caesura',
         frontAr: 'سيزورا / وقفة وسط البيت (Caesura)',
-        back: 'Definition: A pause in the middle of a line of poetry, usually created by punctuation.\n\nExample (Exposure, Owen): "But nothing happens." - the full stop creates an emphatic mid-line stop.\n\nEffect on reader: Disrupts rhythm, forces reflection, mirrors hesitation, exhaustion, or sudden realisation.\n\nWhen to mention in essays: Always name the punctuation mark and link it to meaning.',
+        back: 'Definition: A pause in the middle of a line of poetry, usually created by punctuation.\n\nExample (Exposure, Owen): "Pause over half-known faces. All their eyes are ice," - the full stop in the middle of the line halts the burying party, and the reader, before the stark "All their eyes are ice".\n\nEffect on reader: Disrupts rhythm, forces reflection, mirrors hesitation, exhaustion, or sudden realisation.\n\nWhen to mention in essays: Always name the punctuation mark and link it to meaning.',
         backAr:
-          'التعريف: وقفة وسط بيت الشعر، تتسبّب فيها علامة ترقيم - فاصلة، نقطة، شرطة، علامة استفهام. الكلمة لاتينية معناها "قطع."\n\nبشعر "السلطة و الصراع"، السيزورا تستخدم بشكل قوي عشان تكسر إيقاع البيت و تجبر القارئ يتوقّف:\n\n- بقصيدة "Exposure" لـ Owen: "But nothing happens." - النقطة بنص البيت توري إن لا شي يصير بمعركة الجنود ضد البرد. الإيقاع ينقطع زي ما الأمل ينقطع.\n- بقصيدة "Bayonet Charge" لـ Hughes: السيزورا تعكس تشتّت الجندي و ارتباكه بساحة المعركة.\n- بقصيدة "Remains" لـ Armitage: الوقفات الكثيرة تعكس صدمة الجندي بعد القتل (PTSD).\n\nالاستخدام: لمّا تحلّل، احطّ اسم علامة الترقيم بالضبط - "الفاصلة المنقوطة بعد كذا تخلق caesura يعكس..."',
+          'التعريف: وقفة وسط بيت الشعر، تتسبّب فيها علامة ترقيم - فاصلة، نقطة، شرطة، علامة استفهام. الكلمة لاتينية معناها "قطع."\n\nبشعر "السلطة و الصراع"، السيزورا تستخدم بشكل قوي عشان تكسر إيقاع البيت و تجبر القارئ يتوقّف:\n\n- بقصيدة "Exposure" لـ Owen: "Pause over half-known faces. All their eyes are ice," - النقطة بنص البيت توقّف فرقة الدفن، والقارئ وياها، قبل الصورة القاسية "All their eyes are ice". الإيقاع ينقطع زي ما الأمل ينقطع.\n- بقصيدة "Bayonet Charge" لـ Hughes: السيزورا تعكس تشتّت الجندي و ارتباكه بساحة المعركة.\n- بقصيدة "Remains" لـ Armitage: الوقفات الكثيرة تعكس صدمة الجندي بعد القتل (PTSD).\n\nالاستخدام: لمّا تحلّل، احطّ اسم علامة الترقيم بالضبط - "الفاصلة المنقوطة بعد كذا تخلق caesura يعكس..."',
       },
       {
         id: 'kh-pc-2',

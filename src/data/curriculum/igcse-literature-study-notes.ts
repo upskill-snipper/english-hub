@@ -1153,9 +1153,11 @@ export const igcseLiteratureStudyNotes: StudyNote[] = [
         // ellipses, which mark words left out where none are. The held edition
         // (src/data/full-texts/my-last-duchess.ts, lines 21 to 23) has dashes, and its line
         // 23 runs on after "impressed" with a semicolon, not a full stop.
+        // 16 October 2026: the analysis called "too easily" anapaestic (da-da-DUM). "Easily"
+        // is stressed on its first syllable, so the phrase falls; it is not an anapaest.
         quote: 'She had / A heart - how shall I say? - too soon made glad, / Too easily impressed',
         analysis:
-          "The Duke's 'how shall I say' performs deliberate understatement, as if searching for the most moderate phrasing for what he considers a devastating flaw. 'Too soon made glad' and 'too easily impressed' - qualities most people would consider virtues (warmth, delight in small things) - are presented as dangerous in a duchess. The anapaestic 'too easily' has a dismissive, almost contemptuous rhythm.",
+          "The Duke's 'how shall I say' performs deliberate understatement, as if searching for the most moderate phrasing for what he considers a devastating flaw. 'Too soon made glad' and 'too easily impressed' - qualities most people would consider virtues (warmth, delight in small things) - are presented as dangerous in a duchess. The falling rhythm of 'too easily', stressed on 'eas-', has a dismissive, almost contemptuous sound.",
       },
       {
         quote: 'I gave commands; / Then all smiles stopped together.',

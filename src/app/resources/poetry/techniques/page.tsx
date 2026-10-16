@@ -399,8 +399,10 @@ const TECHNIQUES: Technique[] = [
     category: 'Sound Devices',
     definition:
       "Consonant sounds produced by a sudden burst of air: 'b', 'd', 'g', 'p', 't', 'k'. They create a harsh, explosive, or aggressive effect when repeated.",
+    // Until 16 October 2026 this spoke of "the repeated 'b' and 't' sounds"; the phrase has one
+    // of each, in "But".
     example:
-      "\"but nothing happens\" -- the repeated 'b' and 't' sounds create a blunt, deadened rhythm",
+      '"But nothing happens" -- the plosive \'b\' and \'t\' of "But" and the \'p\' of "happens" create a blunt, deadened rhythm',
     poem: 'Exposure by Wilfred Owen',
     effect:
       'The plosive sounds mirror the sudden violence of warfare and the harsh conditions. Their abruptness can also convey frustration, anger, or the brutality of a situation.',
@@ -425,11 +427,13 @@ const TECHNIQUES: Technique[] = [
     category: 'Sound Devices',
     definition:
       'The pattern of stressed and unstressed syllables that creates the beat or pulse of a poem. Regular rhythm (metre) can create formality, momentum, or musicality; irregular rhythm can suggest disruption or chaos.',
+    // The poem is predominantly dactylic (DUM-da-da). Until 16 October 2026 this called its body
+    // anapaestic (da-da-DUM) and stressed the refrain "Rode the SIX HUN-dred".
     example:
-      '"HALF a league, HALF a league, HALF a league ONward" -- the opening dactyls give way to the body\'s anapaestic dimeter, with the refrain "Rode the SIX HUN-dred" returning to dactyls; the galloping rhythm mimics horses charging',
+      '"HALF a league, HALF a league, HALF a league ONward" -- dactyls (DUM-da-da), the poem\'s main foot from the opening to the refrain "RODE the six HUN-dred"; the galloping rhythm mimics horses charging',
     poem: 'The Charge of the Light Brigade by Alfred, Lord Tennyson',
     effect:
-      "The relentless rhythm - predominantly anapaestic dimeter with a dactylic refrain - mimics the thundering hooves of the cavalry charge. The unstoppable momentum reflects the soldiers' inability to turn back, driving both them and the reader inexorably forward.",
+      "The relentless rhythm - predominantly dactylic dimeter - mimics the thundering hooves of the cavalry charge. The unstoppable momentum reflects the soldiers' inability to turn back, driving both them and the reader inexorably forward.",
     sentenceStarter:
       'The [regular/irregular/galloping] rhythm of "[quote]" creates a sense of... This mirrors...',
   },
@@ -780,8 +784,10 @@ const FORM_STRUCTURE_GUIDE = [
     heading: 'Analyse shifts and patterns',
     description:
       'Look for changes in stanza length, metre, or line length. Where does the poem speed up, slow down, or break its own pattern? These moments are rich for analysis.',
-    good: "The shortened final stanza of 'Exposure' -- just two lines instead of the usual five -- mirrors the soldiers' diminished lives. The structure itself enacts the poem's message: war reduces everything.",
-    weak: 'The last stanza is shorter than the others.',
+    // Until 16 October 2026 this praised a "shortened final stanza" of two lines. All eight
+    // stanzas of Exposure have five lines; what shrinks is the last line of each.
+    good: "Each stanza of 'Exposure' ends on a short fifth line after four long ones, and that dwindling line mirrors the soldiers' diminished lives. Four of those lines are 'But nothing happens', and three in a row end on 'dying' instead: the structure itself enacts the poem's message, that waiting turns into dying.",
+    weak: 'The last line of each stanza is shorter than the others.',
   },
 ]
 

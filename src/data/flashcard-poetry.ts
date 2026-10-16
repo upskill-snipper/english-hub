@@ -443,7 +443,7 @@ export const poetryFlashcardDecks: FlashcardDeck[] = [
       {
         id: 'pt-15',
         front: 'Metre and Rhythm',
-        back: 'Definition: The pattern of stressed and unstressed syllables in a line of poetry. Common metres include iambic (da-DUM), trochaic (DUM-da), anapaestic (da-da-DUM), and dactylic (DUM-da-da).\n\nExample: "The Charge of the Light Brigade" is predominantly anapaestic dimeter (da-da-DUM da-da-DUM) with a dactylic refrain ("Rode the six hundred") - together they mimic galloping horses.\n\nEffect on reader: Rhythm controls pace, mood, and emphasis. Regular metre feels controlled; disrupted metre feels unsettling.\n\nWhen to mention in essays: Tap out the rhythm and link it to content - e.g., "The galloping metre creates relentless forward momentum that mirrors the cavalry charge."',
+        back: 'Definition: The pattern of stressed and unstressed syllables in a line of poetry. Common metres include iambic (da-DUM), trochaic (DUM-da), anapaestic (da-da-DUM), and dactylic (DUM-da-da).\n\nExample: "The Charge of the Light Brigade" is predominantly dactylic dimeter (DUM-da-da DUM-da-da), as in "Half a league, half a league" and the refrain "Rode the six hundred" - the rhythm mimics galloping horses.\n\nEffect on reader: Rhythm controls pace, mood, and emphasis. Regular metre feels controlled; disrupted metre feels unsettling.\n\nWhen to mention in essays: Tap out the rhythm and link it to content - e.g., "The galloping metre creates relentless forward momentum that mirrors the cavalry charge."',
       },
       {
         id: 'pt-16',

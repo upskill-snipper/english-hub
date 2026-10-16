@@ -524,7 +524,7 @@ export const modelAnswerBank: ModelAnswer[] = [
     ],
     wordCount: 282,
     examinersCommentary:
-      "A response that demonstrates qualities of both emerging and expected levels. The identification of multiple types of power within the poem shows developing analytical thinking, and the final paragraph's consideration of alternative reader responses is promising. However, the analysis needs more precision at word level, greater use of literary terminology, and engagement with the poem's formal features (anapaestic dimeter with a dactylic refrain, stanza structure) to reach a secure expected level.",
+      "A response that demonstrates qualities of both emerging and expected levels. The identification of multiple types of power within the poem shows developing analytical thinking, and the final paragraph's consideration of alternative reader responses is promising. However, the analysis needs more precision at word level, greater use of literary terminology, and engagement with the poem's formal features (predominantly dactylic dimeter, stanza structure) to reach a secure expected level.",
   },
 
   {

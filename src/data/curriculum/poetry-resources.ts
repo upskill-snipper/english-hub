@@ -283,7 +283,8 @@ export const poetryAnalysisGuides: PoetryAnalysisGuide[] = [
         definition:
           'The return of a word, phrase, or structure to build emphasis or a sense of futility',
         example:
-          "'But nothing happens' appears three times, each time undercutting any hope of action or relief",
+          // "appears three times" until 16 October 2026; it ends stanzas 1, 3, 4 and 8.
+          "'But nothing happens' appears four times, closing stanzas 1, 3, 4 and 8, each time undercutting any hope of action or relief",
       },
       {
         device: 'Pathetic fallacy',

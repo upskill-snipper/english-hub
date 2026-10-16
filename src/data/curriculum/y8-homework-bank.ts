@@ -7,10 +7,10 @@
 // =============================================================================
 
 export interface HomeworkTask {
-  id: string;
-  title: string;
-  yearGroup: 'Year 8';
-  termUnit: string;
+  id: string
+  title: string
+  yearGroup: 'Year 8'
+  termUnit: string
   type:
     | 'reading-response'
     | 'extended-writing'
@@ -19,18 +19,18 @@ export interface HomeworkTask {
     | 'revision'
     | 'vocabulary'
     | 'grammar-practice'
-    | 'analysis';
-  description: string;
-  instructions: string[];
-  estimatedTime: string;
-  dueLesson: number;
-  markingCriteria: string[];
-  parentGuidance: string;
+    | 'analysis'
+  description: string
+  instructions: string[]
+  estimatedTime: string
+  dueLesson: number
+  markingCriteria: string[]
+  parentGuidance: string
   differentiation: {
-    support: string;
-    core: string;
-    stretch: string;
-  };
+    support: string
+    core: string
+    stretch: string
+  }
 }
 
 // =============================================================================
@@ -84,7 +84,7 @@ const term1Tasks: HomeworkTask[] = [
     instructions: [
       'Use the internet, library, or any books at home to research the word "dystopia" and the dystopian fiction genre.',
       'Write a paragraph (8-10 sentences) in your exercise book defining what dystopia means and listing at least five conventions of the genre.',
-      'Find one other example of a dystopian novel or film (e.g. 1984, Divergent, The Maze Runner, The Handmaid\'s Tale) and briefly summarise its plot in 3-4 sentences.',
+      "Find one other example of a dystopian novel or film (e.g. 1984, Divergent, The Maze Runner, The Handmaid's Tale) and briefly summarise its plot in 3-4 sentences.",
       'Write a short paragraph explaining how The Hunger Games fits the dystopian genre, using at least two conventions you identified.',
       'Be ready to share your findings at the start of the next lesson.',
     ],
@@ -115,10 +115,10 @@ const term1Tasks: HomeworkTask[] = [
     description:
       'Analyse the motivations of Katniss Everdeen at the point she volunteers as tribute, considering her feelings, values, and the pressures she faces.',
     instructions: [
-      'Re-read the Reaping scene (Chapter 2) with a focus on Katniss\'s decision to volunteer.',
+      "Re-read the Reaping scene (Chapter 2) with a focus on Katniss's decision to volunteer.",
       'In your exercise book, create a "motivation map" for Katniss: draw a circle with her name in the middle and list at least six reasons or pressures that drive her decision around the outside.',
       'Choose the three most important motivations and write a short explanation (2-3 sentences each) for why you chose them, using evidence from the text.',
-      'Finally, write a paragraph answering: What does Katniss\'s decision reveal about her character? Use the Point-Evidence-Explain structure.',
+      "Finally, write a paragraph answering: What does Katniss's decision reveal about her character? Use the Point-Evidence-Explain structure.",
     ],
     estimatedTime: '40 minutes',
     dueLesson: 4,
@@ -148,7 +148,7 @@ const term1Tasks: HomeworkTask[] = [
       'Write a full analytical paragraph responding to the question: How does Collins use language to present the Capitol as powerful in Chapter 5?',
     instructions: [
       'Read Chapter 5 of The Hunger Games, focusing on descriptions of the Capitol.',
-      'Select one quotation that you think most effectively shows the Capitol\'s power.',
+      "Select one quotation that you think most effectively shows the Capitol's power.",
       'Write a single analytical paragraph of at least 150 words using the Point-Evidence-Explain-Link (PEEL) structure.',
       'Your paragraph must: make a clear point about how Collins presents power, embed your quotation, analyse specific words or techniques in the quotation, explain the effect on the reader, and link back to the wider theme of power in dystopian fiction.',
       'Underline the key term or technique you are analysing.',
@@ -169,7 +169,7 @@ const term1Tasks: HomeworkTask[] = [
         'Use the PEEL writing frame in the class booklet. The quotation has been pre-selected: "The Capitol is the most powerful city in all of Panem." Build your paragraph around this.',
       core: 'Select your own quotation and complete the paragraph independently.',
       stretch:
-        'Write two linked paragraphs, each analysing a different technique Collins uses to convey the Capitol\'s power, and compare the two techniques in a final concluding sentence.',
+        "Write two linked paragraphs, each analysing a different technique Collins uses to convey the Capitol's power, and compare the two techniques in a final concluding sentence.",
     },
   },
   {
@@ -223,7 +223,7 @@ const term1Tasks: HomeworkTask[] = [
     estimatedTime: '40 minutes',
     dueLesson: 7,
     markingCriteria: [
-      'All ten terms defined accurately in the student\'s own words.',
+      "All ten terms defined accurately in the student's own words.",
       'Example sentences are original (not copied from a dictionary) and context-appropriate.',
       'Three personal reflection sentences show genuine engagement with how the terms apply to the text.',
     ],
@@ -239,25 +239,25 @@ const term1Tasks: HomeworkTask[] = [
   },
   {
     id: 'y8-hw-t1-07',
-    title: 'Creative Writing: A Capitol Citizen\'s Perspective',
+    title: "Creative Writing: A Capitol Citizen's Perspective",
     yearGroup: 'Year 8',
     termUnit: 'T1: Dystopian Fiction - The Hunger Games',
     type: 'creative',
     description:
-      'Write a short creative piece from the perspective of a Capitol citizen watching the Reaping on television, exploring how their world-view differs from Katniss\'s.',
+      "Write a short creative piece from the perspective of a Capitol citizen watching the Reaping on television, exploring how their world-view differs from Katniss's.",
     instructions: [
       'Imagine you are a Capitol citizen watching the Reaping broadcast as entertainment.',
       'Write a first-person narrative of 200-300 words describing what you see, how you feel, and what your hopes are for the Games.',
-      'Your writing should reflect the Capitol\'s values: luxury, spectacle, and indifference to suffering.',
-      'Try to use at least one contrast between your character\'s reaction and how the reader knows Katniss feels.',
-      'Review your work and check: Have you written in first person? Have you shown the character\'s values through their thoughts and word choices rather than just telling the reader?',
+      "Your writing should reflect the Capitol's values: luxury, spectacle, and indifference to suffering.",
+      "Try to use at least one contrast between your character's reaction and how the reader knows Katniss feels.",
+      "Review your work and check: Have you written in first person? Have you shown the character's values through their thoughts and word choices rather than just telling the reader?",
     ],
     estimatedTime: '45 minutes',
     dueLesson: 8,
     markingCriteria: [
       'Convincing first-person voice established and maintained.',
       'Capitol values shown through specific details and language choices.',
-      'At least one contrast with District 12\'s perspective is apparent.',
+      "At least one contrast with District 12's perspective is apparent.",
       'Descriptive language used to evoke the spectacle of the broadcast.',
       'Writing falls within the 200-300 word range.',
     ],
@@ -283,7 +283,7 @@ const term1Tasks: HomeworkTask[] = [
       'Without looking at the book, answer the following ten questions in your exercise book.',
       'Q1: What is the name of the district Katniss lives in?',
       'Q2: What is the name of the annual event that selects tributes?',
-      'Q3: Name Katniss\'s sister and best friend.',
+      "Q3: Name Katniss's sister and best friend.",
       'Q4: What skill does Katniss use to feed her family?',
       'Q5: Who is the male tribute selected from District 12?',
       'Q6: What is a "tessera" and who uses them?',
@@ -379,7 +379,7 @@ const term1Tasks: HomeworkTask[] = [
         'After the timed section, spend an additional 10 minutes writing a third paragraph that considers how Collins uses the setting to heighten tension alongside the action.',
     },
   },
-];
+]
 
 // =============================================================================
 // TERM 2: Conflict Poetry & Macbeth (Tasks 11-20)
@@ -399,7 +399,7 @@ const term2Tasks: HomeworkTask[] = [
       'On a printed or written copy of the poem, annotate at least ten features. For each annotation, note: the technique used, the word or phrase that demonstrates it, and what effect it creates.',
       'Circle all the natural imagery in the poem. What does Owen suggest about nature and war through this imagery?',
       'Underline any words or phrases with powerful connotations. Note what they connote.',
-      'Write a two-to-three-sentence overall response at the bottom: What is Owen\'s central message about war in this poem?',
+      "Write a two-to-three-sentence overall response at the bottom: What is Owen's central message about war in this poem?",
     ],
     estimatedTime: '45 minutes',
     dueLesson: 13,
@@ -415,8 +415,10 @@ const term2Tasks: HomeworkTask[] = [
       support:
         'Annotate six features rather than ten. Use the technique glossary in the class booklet to help identify and name techniques.',
       core: 'Complete all steps as described with ten annotations.',
+      // "winter 1917-18" until 16 October 2026. The poem draws on January 1917; by the winter
+      // of 1917-18 Owen was in Scarborough.
       stretch:
-        'Research the context of the poem (the Western Front, trench warfare, winter 1917-18) and add three contextual annotations explaining how knowledge of the context deepens understanding of specific lines.',
+        'Research the context of the poem (the Western Front, trench warfare, the winter of 1916-17, when Owen was in the front line of the Somme sector) and add three contextual annotations explaining how knowledge of the context deepens understanding of specific lines.',
     },
   },
   {
@@ -483,7 +485,7 @@ const term2Tasks: HomeworkTask[] = [
         'Use the comparison writing frame in the class booklet. The sentence starters are provided: you just need to complete them with your own analysis.',
       core: 'Complete the paragraph independently as described.',
       stretch:
-        'Write a second comparison paragraph exploring a difference between the two poems\' presentations of war. Ensure both paragraphs together form a coherent mini-essay with a consistent argument.',
+        "Write a second comparison paragraph exploring a difference between the two poems' presentations of war. Ensure both paragraphs together form a coherent mini-essay with a consistent argument.",
     },
   },
   {
@@ -493,13 +495,13 @@ const term2Tasks: HomeworkTask[] = [
     termUnit: 'T2: Conflict Poetry & Macbeth',
     type: 'reading-response',
     description:
-      'Read Act 1 of Macbeth in your class edition and answer questions to demonstrate understanding of plot, character, and Shakespeare\'s language.',
+      "Read Act 1 of Macbeth in your class edition and answer questions to demonstrate understanding of plot, character, and Shakespeare's language.",
     instructions: [
       'Read Act 1 of Macbeth from beginning to end. You may use the class edition with notes, or an online version such as the one on the Folger Shakespeare Library website.',
       'Answer the following questions in full sentences.',
-      'Q1: How do the witches\' prophecies affect Macbeth? Give two specific effects.',
-      'Q2: What does Lady Macbeth\'s speech in Act 1 Scene 5 reveal about her character?',
-      'Q3: Find a quotation from Act 1 that shows Macbeth\'s ambition and one that shows his hesitation. Write both out and explain what each reveals.',
+      "Q1: How do the witches' prophecies affect Macbeth? Give two specific effects.",
+      "Q2: What does Lady Macbeth's speech in Act 1 Scene 5 reveal about her character?",
+      "Q3: Find a quotation from Act 1 that shows Macbeth's ambition and one that shows his hesitation. Write both out and explain what each reveals.",
       'Q4: How does Shakespeare establish a dark and unsettling atmosphere in Act 1? Give two methods.',
     ],
     estimatedTime: '55 minutes',
@@ -511,7 +513,7 @@ const term2Tasks: HomeworkTask[] = [
       'Responses go beyond plot summary to explore character and language.',
     ],
     parentGuidance:
-      'Shakespeare\'s language can be challenging. Encourage your child to read the scene summaries alongside the text if they find the language difficult. Understanding the plot and characters is the first priority; precise language analysis can develop in class with teacher support.',
+      "Shakespeare's language can be challenging. Encourage your child to read the scene summaries alongside the text if they find the language difficult. Understanding the plot and characters is the first priority; precise language analysis can develop in class with teacher support.",
     differentiation: {
       support:
         'Read Act 1 Scenes 1, 3, and 5 only (the most important scenes). Answer Q1 and Q2 only.',
@@ -527,11 +529,11 @@ const term2Tasks: HomeworkTask[] = [
     termUnit: 'T2: Conflict Poetry & Macbeth',
     type: 'analysis',
     description:
-      'Analyse Macbeth\'s dagger soliloquy (Act 2 Scene 1) in detail, exploring what it reveals about his mental state and Shakespeare\'s use of language.',
+      "Analyse Macbeth's dagger soliloquy (Act 2 Scene 1) in detail, exploring what it reveals about his mental state and Shakespeare's use of language.",
     instructions: [
       'Read Macbeth\'s soliloquy "Is this a dagger which I see before me" (Act 2 Scene 1, lines 33-64) carefully.',
       'Identify and annotate at least six language features (on a copy of the text or in note form).',
-      'Write two analytical paragraphs responding to the question: How does Shakespeare present Macbeth\'s psychological state in this soliloquy?',
+      "Write two analytical paragraphs responding to the question: How does Shakespeare present Macbeth's psychological state in this soliloquy?",
       'Each paragraph must: make a clear point, embed a quotation, name a technique, analyse the effect, and link to the theme of ambition or guilt.',
       'Write a final sentence explaining why Shakespeare uses a soliloquy (rather than dialogue) at this moment.',
     ],
@@ -545,13 +547,13 @@ const term2Tasks: HomeworkTask[] = [
       'Themes of ambition or guilt addressed.',
     ],
     parentGuidance:
-      'The soliloquy is available on any free Shakespeare website and in your child\'s class edition. If they find the language difficult, suggest they watch a short performance of this scene on YouTube first to gain a feel for the emotion and meaning.',
+      "The soliloquy is available on any free Shakespeare website and in your child's class edition. If they find the language difficult, suggest they watch a short performance of this scene on YouTube first to gain a feel for the emotion and meaning.",
     differentiation: {
       support:
         'Annotate the soliloquy with teacher-provided technique prompts from the class booklet. Write one analytical paragraph only.',
       core: 'Complete all steps as described.',
       stretch:
-        'Consider how Macbeth\'s language in this soliloquy echoes or contrasts with the witches\' language in Act 1. Write an additional sentence or short paragraph drawing this comparison.',
+        "Consider how Macbeth's language in this soliloquy echoes or contrasts with the witches' language in Act 1. Write an additional sentence or short paragraph drawing this comparison.",
     },
   },
   {
@@ -594,7 +596,7 @@ const term2Tasks: HomeworkTask[] = [
     termUnit: 'T2: Conflict Poetry & Macbeth',
     type: 'analysis',
     description:
-      'Produce a detailed character profile for Lady Macbeth, tracking how she is presented across the play and considering how Shakespeare shapes the audience\'s response to her.',
+      "Produce a detailed character profile for Lady Macbeth, tracking how she is presented across the play and considering how Shakespeare shapes the audience's response to her.",
     instructions: [
       'Create a character profile for Lady Macbeth in your exercise book.',
       'Include: a list of at least five adjectives that describe her character, with a quotation justifying each one.',
@@ -608,7 +610,7 @@ const term2Tasks: HomeworkTask[] = [
       'Five adjectives with supporting quotations.',
       'Character development across the play tracked with specific references.',
       'Opinion paragraph contains a clear argument supported by evidence.',
-      'Section on Shakespeare\'s purpose shows awareness of the play as a constructed text.',
+      "Section on Shakespeare's purpose shows awareness of the play as a constructed text.",
     ],
     parentGuidance:
       'Encourage your child to form their own opinion about Lady Macbeth rather than just researching what others have said. Their personal view, backed up by evidence from the text, is exactly what is valued in English Literature.',
@@ -678,11 +680,10 @@ const term2Tasks: HomeworkTask[] = [
     parentGuidance:
       'Mastery of technical vocabulary is one of the most reliable ways to improve English Literature grades. These terms will be used regularly for the rest of the course and at GCSE.',
     differentiation: {
-      support:
-        'Complete Section A (drama terms) only. Aim for six out of eight terms.',
+      support: 'Complete Section A (drama terms) only. Aim for six out of eight terms.',
       core: 'Complete all sixteen terms across both sections.',
       stretch:
-        'Write a short paragraph (5-6 sentences) that uses at least six of these terms correctly and naturally in the context of analysing a specific scene or poem from this term\'s study.',
+        "Write a short paragraph (5-6 sentences) that uses at least six of these terms correctly and naturally in the context of analysing a specific scene or poem from this term's study.",
     },
   },
   {
@@ -697,7 +698,7 @@ const term2Tasks: HomeworkTask[] = [
       'Set a timer for 30 minutes.',
       'Read the unseen poem in the class booklet (an additional conflict poem not studied in class).',
       'Spend 5 minutes reading and annotating. Then write your response.',
-      'Respond to the question: How does the poet present the speaker\'s attitude to war in this poem?',
+      "Respond to the question: How does the poet present the speaker's attitude to war in this poem?",
       'Write at least two analytical paragraphs using the PEEL structure, with quotations from the poem.',
       'When the timer stops, put your pen down.',
       'On a new line, write two things: one aspect of the poem you found interesting and one question you would want to explore further.',
@@ -707,7 +708,7 @@ const term2Tasks: HomeworkTask[] = [
     markingCriteria: [
       'At least two analytical paragraphs produced within the time limit.',
       'Quotations from the unseen poem used as evidence.',
-      'The speaker\'s attitude addressed specifically.',
+      "The speaker's attitude addressed specifically.",
       'Reflective comment shows genuine critical thinking.',
     ],
     parentGuidance:
@@ -720,7 +721,7 @@ const term2Tasks: HomeworkTask[] = [
         'After the timed section, write a third paragraph comparing the unseen poem to one of the poems from the class anthology, focusing on how both poets present the effects of war.',
     },
   },
-];
+]
 
 // =============================================================================
 // TERM 3: Rhetoric & Media (Tasks 21-30)
@@ -737,7 +738,7 @@ const term3Tasks: HomeworkTask[] = [
       'Listen to a famous speech and analyse the rhetorical techniques the speaker uses to persuade their audience.',
     instructions: [
       'Watch and listen to one of the following speeches (available on YouTube): Martin Luther King Jr. "I Have a Dream" (1963), Greta Thunberg "How Dare You" (2019 UN Climate Summit), or Winston Churchill "We Shall Fight on the Beaches" (audio recording, 1940).',
-      'As you listen, take notes on: the speaker\'s tone, any repeated phrases or patterns, any powerful images or examples used, and moments where the audience reacts strongly.',
+      "As you listen, take notes on: the speaker's tone, any repeated phrases or patterns, any powerful images or examples used, and moments where the audience reacts strongly.",
       'Watch or listen a second time and identify at least three specific rhetorical techniques by name (e.g. anaphora, rhetorical questions, tricolon, emotive language, direct address).',
       'Write a response of 150-200 words explaining which technique you found most effective and why, with a direct quote from the speech as evidence.',
     ],
@@ -797,7 +798,7 @@ const term3Tasks: HomeworkTask[] = [
     termUnit: 'T3: Rhetoric & Media',
     type: 'analysis',
     description:
-      'Apply Aristotle\'s rhetorical triangle (ethos, pathos, logos) to analyse how a persuasive text builds its argument across all three modes of persuasion.',
+      "Apply Aristotle's rhetorical triangle (ethos, pathos, logos) to analyse how a persuasive text builds its argument across all three modes of persuasion.",
     instructions: [
       'Using the persuasive text you found for the previous homework task, or a new text of your choice, apply the three Aristotelian appeals.',
       'Create a three-column table in your exercise book: Ethos (credibility/trust), Pathos (emotion), Logos (logic/evidence).',
@@ -833,7 +834,7 @@ const term3Tasks: HomeworkTask[] = [
       'Write a first draft of a persuasive speech on a topic you care about, applying the rhetorical techniques studied in class.',
     instructions: [
       'Choose a topic you genuinely care about (e.g. school uniform policy, climate action, animal welfare, social media age limits, homework reform).',
-      'Write a speech of 300-400 words addressed to a specific audience (e.g. your school\'s governors, your local MP, your year group).',
+      "Write a speech of 300-400 words addressed to a specific audience (e.g. your school's governors, your local MP, your year group).",
       'Your speech must include: a direct address to your audience, at least one rhetorical question, at least one example of the rule of three, at least one use of emotive language, and a call to action at the end.',
       'Annotate your own speech: highlight and label each of the four required techniques.',
       'This is a first draft: focus on getting your ideas and rhetoric on paper. You will refine it in a later homework.',
@@ -939,12 +940,12 @@ const term3Tasks: HomeworkTask[] = [
     estimatedTime: '45 minutes',
     dueLesson: 30,
     markingCriteria: [
-      'All fifteen terms defined accurately in the student\'s own words.',
+      "All fifteen terms defined accurately in the student's own words.",
       'Real-world examples are original and context-appropriate.',
       'Five "most useful" terms chosen with a reasoned explanation for each.',
     ],
     parentGuidance:
-      'These terms will support your child\'s analytical writing throughout the term and into GCSE. A quick verbal quiz (you read the definition, they supply the term) is an effective and low-effort way to reinforce their learning.',
+      "These terms will support your child's analytical writing throughout the term and into GCSE. A quick verbal quiz (you read the definition, they supply the term) is an effective and low-effort way to reinforce their learning.",
     differentiation: {
       support:
         'Complete ten of the fifteen terms (choose the ones that feel most familiar or useful). Use the glossary in the class booklet to check definitions.',
@@ -962,7 +963,7 @@ const term3Tasks: HomeworkTask[] = [
     description:
       'Redraft and improve your speech from the earlier homework task, incorporating teacher feedback and adding more sophisticated rhetorical techniques.',
     instructions: [
-      'Re-read your speech draft and your teacher\'s feedback carefully.',
+      "Re-read your speech draft and your teacher's feedback carefully.",
       'Write a redrafted version of your speech, aiming for 350-450 words.',
       'In your redraft, you must: act on all specific teacher feedback, improve at least two rhetorical techniques you used before (e.g. make the rule of three more powerful, sharpen the emotive language), and add at least one new technique not present in the first draft.',
       'Annotate your redraft to show all changes: put a star next to each improvement and write a brief note (1-2 words) explaining what you improved.',
@@ -1012,7 +1013,7 @@ const term3Tasks: HomeworkTask[] = [
       'Media piece shows creativity and deliberate decision-making.',
     ],
     parentGuidance:
-      'This creative task asks students to apply media knowledge by producing their own content, not just analysing others\' work. Any medium is acceptable (hand-drawn, cut-and-paste, or digital), so let your child choose the approach that suits them best.',
+      "This creative task asks students to apply media knowledge by producing their own content, not just analysing others' work. Any medium is acceptable (hand-drawn, cut-and-paste, or digital), so let your child choose the approach that suits them best.",
     differentiation: {
       support:
         'Focus on the campaign poster format as it has fewer required elements. Annotate three techniques rather than five. The design rationale can be 50 words.',
@@ -1056,16 +1057,12 @@ const term3Tasks: HomeworkTask[] = [
         'After the timed section, spend an additional 10 minutes writing a short reflective analysis (100 words) of your own writing: identify your most effective technique and explain why it works, then identify one technique that could be more sophisticated and explain how you would improve it.',
     },
   },
-];
+]
 
 // =============================================================================
 // COMBINED EXPORT
 // =============================================================================
 
-export const y8HomeworkBank: HomeworkTask[] = [
-  ...term1Tasks,
-  ...term2Tasks,
-  ...term3Tasks,
-];
+export const y8HomeworkBank: HomeworkTask[] = [...term1Tasks, ...term2Tasks, ...term3Tasks]
 
-export default y8HomeworkBank;
+export default y8HomeworkBank

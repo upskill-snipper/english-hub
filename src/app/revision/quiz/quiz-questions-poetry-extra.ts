@@ -181,7 +181,8 @@ export const poetryExtraQuestions: QuizQuestion[] = [
   {
     id: 'poetry-extra-012',
     topic: 'poetry',
-    question: 'What does the refrain "Theirs not to reason why,/Theirs but to do and die" express?',
+    // "the refrain" until 16 October 2026: the two lines come once, in stanza 2, and repeat nowhere.
+    question: 'What do the lines "Theirs not to reason why,/Theirs but to do and die" express?',
     options: [
       'The cowardice of the cavalry',
       'Unquestioning duty and the moral cost of obedience',
@@ -814,7 +815,7 @@ export const poetryExtraQuestions: QuizQuestion[] = [
     ],
     correctIndex: 0,
     explanation:
-      'Owen pairs near-rhymes such as "knive us / nervous" and ends most stanzas with refrains like "But nothing happens". The discordant pararhyme withholds resolution, mirroring the men\'s frozen, suspended suffering on the front (AO2).',
+      'Owen pairs near-rhymes such as "knive us / nervous" and ends four of his eight stanzas with the refrain "But nothing happens". The discordant pararhyme withholds resolution, mirroring the men\'s frozen, suspended suffering on the front (AO2).',
     boards: ['edexcel'],
   },
   {

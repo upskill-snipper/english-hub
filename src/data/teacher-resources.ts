@@ -1194,7 +1194,7 @@ EXPOSURE - Wilfred Owen
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 CHARGE OF THE LIGHT BRIGADE - Alfred Lord Tennyson
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-"Into the valley of Death / Rode the six hundred" → Biblical allusion (Psalm 23). The body is in anapaestic dimeter; the refrain "Rode the six hundred" falls in dactyls - the galloping rhythm mimics horses charging.
+"Into the valley of Death / Rode the six hundred" → Biblical allusion (Psalm 23). The poem is predominantly dactylic dimeter (DUM-da-da DUM-da-da), refrain included - the galloping rhythm mimics horses charging.
 "Theirs not to reason why, / Theirs but to do and die" → Obedience to authority, even unto death.
 "Cannon to right of them, / Cannon to left of them" → Repetition. Surrounded, trapped.`,
     printable: true,

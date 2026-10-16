@@ -54,7 +54,7 @@ const deck: FlashcardDeck = {
     {
       id: 'ecp-7',
       front: 'The Charge of the Light Brigade - Alfred, Lord Tennyson',
-      back: `Key quote: "Into the valley of Death / Rode the six hundred"\n\nThemes: Bravery, obedience, futility of war, honour, military blunder.\n\nContext: Battle of Balaclava, 25 October 1854 (Crimean War). A miscommunicated order sent ~670 cavalrymen against Russian artillery; ~110 killed, 161 wounded. Tennyson, then Poet Laureate, wrote the poem within weeks of reading the Times report.\n\nTechniques: Anapaestic dimeter with a dactylic refrain ("Rode the six hundred") - galloping rhythm; end-stopped lines; repetition ("six hundred"); biblical allusion ("valley of Death" = Psalm 23); anaphora ("Cannon to right... left... behind"); heroic tone despite tragedy.\n\nCompare with: The Destruction of Sennacherib (doomed forces), Exposure (contrasting tone about war).`,
+      back: `Key quote: "Into the valley of Death / Rode the six hundred"\n\nThemes: Bravery, obedience, futility of war, honour, military blunder.\n\nContext: Battle of Balaclava, 25 October 1854 (Crimean War). A miscommunicated order sent ~670 cavalrymen against Russian artillery; ~110 killed, 161 wounded. Tennyson, then Poet Laureate, wrote the poem within weeks of reading the Times report.\n\nTechniques: Predominantly dactylic dimeter ("Half a league, half a league", "Rode the six hundred") - galloping rhythm; end-stopped lines; repetition ("six hundred"); biblical allusion ("valley of Death" = Psalm 23); anaphora ("Cannon to right... left... behind"); heroic tone despite tragedy.\n\nCompare with: The Destruction of Sennacherib (doomed forces), Exposure (contrasting tone about war).`,
     },
     {
       id: 'ecp-8',

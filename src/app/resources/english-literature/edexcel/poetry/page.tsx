@@ -362,8 +362,10 @@ const CONFLICT_POEMS: PoemAnalysis[] = [
     themes: 'War, heroism, duty, the futility of war, honour',
     language:
       "Repetition ('Cannon to right of them... left of them... in front of them') creates the surrounding danger. Onomatopoeia ('Volley'd and thunder'd') evokes the noise of battle. The rhetorical question 'When can their glory fade?' demands the reader honour the soldiers.",
+    // Until 16 October 2026: "Predominantly anapaestic dimeter (da-da-DUM da-da-DUM)". The
+    // poem is dactylic, from its opening line to its refrain.
     structure:
-      "Predominantly anapaestic dimeter (da-da-DUM da-da-DUM) with a dactylic refrain ('Rode the six hundred'); the galloping rhythm mimics horses charging. Largely end-stopped lines reinforce the drumbeat regularity. Six stanzas of varying length create an irregular feel reflecting battle. Repetition of 'the six hundred' memorialises the soldiers as a collective.",
+      "Predominantly dactylic dimeter (DUM-da-da DUM-da-da), from 'Half a league, half a league' to the refrain 'Rode the six hundred'; the galloping rhythm mimics horses charging. Largely end-stopped lines reinforce the drumbeat regularity. Six stanzas of varying length create an irregular feel reflecting battle. Repetition of 'the six hundred' memorialises the soldiers as a collective.",
     // 2 October 2026: quoted as the Pearson Edexcel anthology prints the poem: "Their's",
     // "Volley'd and thunder'd", "Cannon to right of them". These had AQA's "Theirs", and
     // "Volleyed and thundered" and "Cannon to the right of them", which no anthology prints.
@@ -383,7 +385,7 @@ const CONFLICT_POEMS: PoemAnalysis[] = [
       "Soldiers in WWI trenches endure extreme cold, waiting for an attack that never comes. The real enemy is not the opposing army but the weather - 'the merciless iced east winds that knive us.' Owen shows war as monotonous suffering rather than heroic action.",
     themes: 'The reality of war, suffering, nature as enemy, futility, the forgotten soldier',
     language:
-      "Personification of weather ('winds that knive us,' 'dawn massing in the east her melancholy army') makes nature a hostile force. Half-rhyme (knife/knive, silent/salient) creates unease and incompleteness. The refrain 'But nothing happens' emphasises futility and monotony.",
+      "Personification of weather ('winds that knive us,' 'dawn massing in the east her melancholy army') makes nature a hostile force. Half-rhyme (knive us/nervous, silent/salient) creates unease and incompleteness. The refrain 'But nothing happens' emphasises futility and monotony.",
     structure:
       "Eight stanzas of five lines, each ending with a shortened final line. The truncated lines enact the soldiers' diminishment. The regular structure contrasts with the chaos of their experience. Circular structure - the poem ends as it begins.",
     keyQuotes: [
