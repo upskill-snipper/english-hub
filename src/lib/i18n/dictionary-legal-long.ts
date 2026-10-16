@@ -1057,10 +1057,12 @@ export const LEGAL_LONG_DICTIONARY: Dictionary = {
   },
   // 13 October 2026: game results are saved to signed-in accounts
   // (src/lib/game-results; supabase/migrations/20261013_game_rounds.sql).
+  // 16 October 2026: a pupil's teachers see them from the day the pupil
+  // joined their class (src/app/api/school/classes/[classId]/games).
   'legal_long.privacy.s2.learn_li1': {
-    en: 'Course progress, quiz and mock-exam results, and, when you are signed in, your answers in the revision games: which questions you got right or wrong and, for a wrong choice from a list, the option you chose. Never anything you type into a game.',
-    ar: 'التقدّم في المقررات، ونتائج الاختبارات والامتحانات التجريبية، وإجاباتك في ألعاب المراجعة لما تكون مسجّل دخول: أي الأسئلة جاوبتها صح أو غلط، وعند اختيار إجابة غلط من قائمة، الخيار اللي اخترته. وأبداً ما نحفظ أي شي تكتبه داخل لعبة.',
-    es: 'Progreso en los cursos, resultados de cuestionarios y exámenes de prueba y, cuando ha iniciado sesión, sus respuestas en los juegos de repaso: qué preguntas acertó o falló y, si eligió una opción equivocada de una lista, cuál eligió. Nunca nada de lo que escriba en un juego.',
+    en: 'Course progress, quiz and mock-exam results, and, when you are signed in, your answers in the revision games: which questions you got right or wrong and, for a wrong choice from a list, the option you chose. Never anything you type into a game. If you are in a school class on The English Hub, your teachers can see your game results from the day you joined their class.',
+    ar: 'التقدّم في المقررات، ونتائج الاختبارات والامتحانات التجريبية، وإجاباتك في ألعاب المراجعة لما تكون مسجّل دخول: أي الأسئلة جاوبتها صح أو غلط، وعند اختيار إجابة غلط من قائمة، الخيار اللي اخترته. وأبداً ما نحفظ أي شي تكتبه داخل لعبة. وإذا كنت في صف مدرسي على The English Hub، يقدر معلّموك يشوفون نتائجك في الألعاب من يوم انضمامك لصفهم.',
+    es: 'Progreso en los cursos, resultados de cuestionarios y exámenes de prueba y, cuando ha iniciado sesión, sus respuestas en los juegos de repaso: qué preguntas acertó o falló y, si eligió una opción equivocada de una lista, cuál eligió. Nunca nada de lo que escriba en un juego. Si está en una clase de un colegio en The English Hub, sus profesores pueden ver sus resultados en los juegos desde el día en que se unió a su clase.',
   },
   'legal_long.privacy.s2.learn_li2': {
     en: 'Essay and written-response submissions',
@@ -1942,10 +1944,12 @@ export const LEGAL_LONG_DICTIONARY: Dictionary = {
     ar: 'البريد الإلكتروني (الصادر عن المدرسة أو الشخصي، وفقاً لما تُقدّمه المدرسة)',
     es: 'Dirección de correo electrónico (institucional o personal, según la facilite el Colegio)',
   },
+  // 16 October 2026: game answers named, and who at the School sees them
+  // (src/app/api/school/classes/[classId]/games).
   'legal_long.data_processing.s3.st_li3': {
-    en: 'Learning progress and performance data (quiz scores, lesson completion, revision streaks)',
-    ar: 'بيانات التقدّم التعلّمي والأداء (درجات الاختبارات، وإنجاز الدروس، وسلاسل المراجعة)',
-    es: 'Datos de progreso y rendimiento del aprendizaje (puntuaciones de cuestionarios, finalización de lecciones, rachas de repaso)',
+    en: 'Learning progress and performance data (quiz scores, lesson completion, revision streaks, and answers in the revision games, which the School’s teachers see from the day a pupil joins their class)',
+    ar: 'بيانات التقدّم التعلّمي والأداء (درجات الاختبارات، وإنجاز الدروس، وسلاسل المراجعة، والإجابات في ألعاب المراجعة، التي يطّلع عليها معلّمو المدرسة من يوم انضمام الطالب إلى صفهم)',
+    es: 'Datos de progreso y rendimiento del aprendizaje (puntuaciones de cuestionarios, finalización de lecciones, rachas de repaso y respuestas en los juegos de repaso, que el profesorado del Centro ve desde el día en que el alumno se une a su clase)',
   },
   'legal_long.data_processing.s3.st_li4': {
     en: 'Essay and written response submissions',

@@ -33,6 +33,7 @@ import { useT } from '@/lib/i18n/use-t'
 import { useFormatDate } from '@/lib/i18n/use-format-date'
 import { StatusBadge } from '@/components/school/marking/StatusBadge'
 import { PupilStrengths } from '@/components/school/objectives/PupilStrengths'
+import { PupilGamesPanel } from '@/components/school/games/PupilGamesPanel'
 import type { PupilResponse } from '@/app/api/school/students/[studentId]/route'
 
 type LoadState =
@@ -224,6 +225,9 @@ export default function PupilPage() {
         </dl>
         <p className="mt-3 text-xs text-muted-foreground">{t('school.pupil.quiz_note')}</p>
       </GlassPanel>
+
+      {/* 16 October 2026: the pupil's game results, from the day they joined. */}
+      <PupilGamesPanel studentId={studentId} />
     </div>
   )
 }

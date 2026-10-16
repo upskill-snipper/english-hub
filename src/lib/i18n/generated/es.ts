@@ -8258,7 +8258,7 @@ export const ES_MESSAGES: Record<string, string> = {
   'legal_long.privacy.s2.acc_li4': 'Tipo de cuenta (estudiante, padre, profesor, colegio)',
   'legal_long.privacy.s2.h3_learning': 'Datos de aprendizaje',
   'legal_long.privacy.s2.learn_li1':
-    'Progreso en los cursos, resultados de cuestionarios y exámenes de prueba y, cuando ha iniciado sesión, sus respuestas en los juegos de repaso: qué preguntas acertó o falló y, si eligió una opción equivocada de una lista, cuál eligió. Nunca nada de lo que escriba en un juego.',
+    'Progreso en los cursos, resultados de cuestionarios y exámenes de prueba y, cuando ha iniciado sesión, sus respuestas en los juegos de repaso: qué preguntas acertó o falló y, si eligió una opción equivocada de una lista, cuál eligió. Nunca nada de lo que escriba en un juego. Si está en una clase de un colegio en The English Hub, sus profesores pueden ver sus resultados en los juegos desde el día en que se unió a su clase.',
   'legal_long.privacy.s2.learn_li2': 'Ensayos y respuestas escritas enviadas',
   'legal_long.privacy.s2.learn_li3':
     'Retroalimentación generada por IA sobre su trabajo, incluido, cuando lo pida, un informe del coach escrito a partir de sus resultados en los juegos (solo cifras: nunca su nombre, su correo ni nada de lo que haya escrito)',
@@ -8512,7 +8512,7 @@ export const ES_MESSAGES: Record<string, string> = {
   'legal_long.data_processing.s3.st_li2':
     'Dirección de correo electrónico (institucional o personal, según la facilite el Colegio)',
   'legal_long.data_processing.s3.st_li3':
-    'Datos de progreso y rendimiento del aprendizaje (puntuaciones de cuestionarios, finalización de lecciones, rachas de repaso)',
+    'Datos de progreso y rendimiento del aprendizaje (puntuaciones de cuestionarios, finalización de lecciones, rachas de repaso y respuestas en los juegos de repaso, que el profesorado del Centro ve desde el día en que el alumno se une a su clase)',
   'legal_long.data_processing.s3.st_li4': 'Ensayos y respuestas escritas enviadas',
   'legal_long.data_processing.s3.st_li5':
     'Retroalimentación generada por IA sobre el trabajo enviado',
@@ -21108,6 +21108,54 @@ export const ES_MESSAGES: Record<string, string> = {
   'ga.suggest.on_note':
     'Las sugerencias están activadas. Se calculan solo a partir de tus resultados.',
   'ga.suggest.failed': 'No se ha podido guardar el ajuste. Inténtalo de nuevo.',
+  'ga.tile.days.teacher': 'Días de juego',
+  'ga.strengths.empty.teacher':
+    'Todavía no hay nada consolidado. Una destreza está consolidada cuando el alumno acierta el 80% o más de sus respuestas recientes, en al menos 10 respuestas.',
+  'ga.work.empty.teacher': 'Nada destaca como flojo en las respuestas recientes del alumno.',
+  'ga.stat.recent.teacher': '{right} de sus últimas {n} bien',
+  'ga.kind.across_texts.teacher': '{kind}, en sus textos',
+  'ga.skills.title.teacher': 'Destrezas',
+  'ga.skills.lead.teacher':
+    'Cada pregunta cuenta para la destreza que más evalúa. La barra muestra el porcentaje de aciertos en las últimas 30 respuestas del alumno en esa destreza.',
+  'ga.mixups.lead.teacher': 'Respuestas equivocadas que el alumno ha elegido más de una vez.',
+  'ga.mixups.line.teacher': '{game}: eligió «{chose}» cuando era {kind}, {n} veces',
+  'ga.played.title.teacher': 'Todo lo que ha jugado',
+  'ga.teachers_see':
+    'Si estás en una clase de The English Hub, tus profesores pueden ver estos resultados desde el día en que te uniste a su clase.',
+  'school.games.tab': 'Juegos',
+  'school.games.title': 'Resultados de los juegos',
+  'school.games.lead':
+    'A partir de los juegos de cada alumno desde que se unió a esta clase. El nivel de un alumno en una destreza sale de sus propias últimas 30 respuestas en ella. Son porcentajes de preguntas acertadas, no notas de examen.',
+  'school.games.tile.pupils': 'Alumnos que juegan',
+  'school.games.tile.pupils_sub': '{n} de {total} en la clase',
+  'school.games.tile.week_sub': '{n} respuestas de {pupils} alumnos',
+  'school.games.skills.title': 'Destrezas en la clase',
+  'school.games.skills.lead':
+    'Cuántos alumnos tienen cada destreza consolidada, en desarrollo o por trabajar, y el porcentaje de respuestas acertadas de la clase en ella.',
+  'school.games.col.skill': 'Destreza',
+  'school.games.col.right': 'Aciertos',
+  'school.games.col.answers': 'Respuestas',
+  'school.games.col.pupil': 'Alumno',
+  'school.games.col.last': 'Última partida',
+  'school.games.mixups.title': 'Confusiones frecuentes',
+  'school.games.mixups.lead':
+    'Respuestas equivocadas que los alumnos eligieron más de una vez, primero las más extendidas.',
+  'school.games.mixups.line':
+    '{game}: eligieron «{chose}» cuando era {kind}, {pupils} alumnos, {n} veces',
+  'school.games.mixups.line_one': '{game}: un alumno eligió «{chose}» cuando era {kind}, {n} veces',
+  'school.games.tile.week_sub_one': '{n} respuestas de un alumno',
+  'school.games.mixups.none':
+    'Ningún alumno ha elegido la misma respuesta equivocada más de una vez.',
+  'school.games.pupils.title': 'Alumnos',
+  'school.games.not_yet': 'Aún no',
+  'school.games.no_date': 'Sin fecha de incorporación, así que no se muestra nada',
+  'school.games.nothing_weak': 'Nada destaca',
+  'school.games.empty': 'Ningún alumno de esta clase ha jugado desde que se unió a ella.',
+  'school.games.error': 'No se han podido cargar los resultados de los juegos.',
+  'school.games.pupil.lead':
+    'A partir de sus juegos desde el {date}, cuando se unió. Son porcentajes de preguntas acertadas, no notas de examen.',
+  'school.games.pupil.no_date': 'No se muestra nada porque no consta cuándo se unió este alumno.',
+  'school.games.pupil.empty': 'No ha jugado desde el {date}.',
   'home.lp.h1': 'Aprendizaje de inglés inteligente para todos',
   'home.lp.subtitle':
     'Personalizado, alineado con el examen y asistido por IA: desde los años 7-9 hasta GCSE, IGCSE e IELTS, además de apoyo estructurado de inglés para estudiantes EAL. Elige tu itinerario y explora la demo en vivo.',

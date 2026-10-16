@@ -82,7 +82,8 @@ const BAND_STYLE: Record<Band, { bar: string; chip: string }> = {
 const dateOf = (iso: string) =>
   new Date(iso).toLocaleDateString('en-GB', { day: 'numeric', month: 'numeric', year: 'numeric' })
 
-function humanTag(tag: string): string {
+/** A stored kind ('needs-work-type') as words; exported for the class view. */
+export function humanTag(tag: string): string {
   return tag.replace(/-/g, ' ')
 }
 
@@ -93,7 +94,11 @@ function kindLabel(kind: string | undefined, t: T): ReactNode {
 }
 
 /** What a stat is about, in words: a skill group, a kind within a text or game, or a kind across texts. */
-export function statLabel(s: SkillStat, t: T, names: Record<string, string>): ReactNode {
+export function statLabel(
+  s: Pick<SkillStat, 'group' | 'source' | 'activity' | 'kind'>,
+  t: T,
+  names: Record<string, string>,
+): ReactNode {
   if (s.source === 'quest' && s.activity) {
     return (
       <>
@@ -127,7 +132,8 @@ function TrendMark({ trend, t }: { trend: Trend | null; t: T }) {
   )
 }
 
-function BandChip({ band, t }: { band: Band; t: T }) {
+/** A band as a small labelled chip; exported for the teacher's class view. */
+export function BandChip({ band, t }: { band: Band; t: T }) {
   return (
     <span
       className={cn(
@@ -410,10 +416,24 @@ function WeekChart({ a, t }: { a: GameAnalytics; t: T }) {
   )
 }
 
+/** Keys whose wording speaks to the student, each with a ".teacher" twin. */
+const TEACHER_VOICE: ReadonlySet<string> = new Set([
+  'ga.tile.days',
+  'ga.strengths.empty',
+  'ga.work.empty',
+  'ga.stat.recent',
+  'ga.kind.across_texts',
+  'ga.skills.title',
+  'ga.skills.lead',
+  'ga.mixups.lead',
+  'ga.mixups.line',
+  'ga.played.title',
+])
+
 /** The view for a payload already loaded: exported so the teacher's pupil page can reuse it. */
 export function GameAnalyticsBody({
   data,
-  t,
+  t: tBase,
   onSuggestionsChanged,
   coach,
   audience = 'student',
@@ -425,6 +445,13 @@ export function GameAnalyticsBody({
   coach?: ReactNode
   audience?: 'student' | 'teacher'
 }) {
+  // A teacher reads about a pupil, so copy that speaks to the student ("your
+  // skills") is swapped for its third-person twin, the same key plus
+  // ".teacher" (16 October 2026). Sub-components are given this `t` too.
+  const t: T =
+    audience === 'teacher'
+      ? (key) => (TEACHER_VOICE.has(key) ? tBase(`${key}.teacher`) : tBase(key))
+      : tBase
   const { analytics: a, names } = data
   const literature = a.groups.filter((g) => SKILL_GROUPS[g.group].family === 'literature')
   const language = a.groups.filter((g) => SKILL_GROUPS[g.group].family === 'language')
@@ -700,6 +727,12 @@ export function GameAnalyticsBody({
           ))}
         </ul>
       </Section>
+
+      {/* Who else sees these results (16 October 2026): a pupil in a class is
+          told their teachers can, and from when. */}
+      {audience === 'student' && (
+        <p className="text-xs text-muted-foreground">{t('ga.teachers_see')}</p>
+      )}
     </div>
   )
 }

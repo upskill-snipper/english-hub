@@ -138,6 +138,19 @@ export const ANALYTICS_WINDOW_DAYS = 365
 export const ANALYTICS_MAX_ROUNDS = 2_000
 
 /**
+ * Rows asked for in one request.
+ *
+ * FIXED 16 OCTOBER 2026. readRounds asked for up to 2,000 rows in a single
+ * request, but Supabase's API returns at most 1,000 rows to any one request
+ * by default (the project's "max rows" setting), without an error. A student
+ * with more than 1,000 rounds in the window would have had the oldest
+ * dropped from their analytics with nothing to say so, and a teacher's view
+ * of them likewise. The rows are now read in pages well inside that cap, in
+ * a stable order, until a short page shows the end.
+ */
+export const ROUNDS_PAGE = 500
+
+/**
  * A student's rounds, newest first, from `since` (default: the analytics
  * window). Throws on a read error: a caller showing analytics must say it
  * could not load them, never show an empty record as if the student had
@@ -148,18 +161,29 @@ export async function readRounds(
   opts: { since?: Date; limit?: number } = {},
 ): Promise<StoredRound[]> {
   const since = opts.since ?? new Date(Date.now() - ANALYTICS_WINDOW_DAYS * 86_400_000)
+  const max = opts.limit ?? ANALYTICS_MAX_ROUNDS
   const admin = createServiceRoleClient()
-  const { data, error } = await admin
-    .from('game_rounds')
-    .select(
-      'source, activity, level, answered, correct, score, max_score, duration_seconds, items, finished_at',
-    )
-    .eq('user_id', userId)
-    .gte('finished_at', since.toISOString())
-    .order('finished_at', { ascending: false })
-    .limit(opts.limit ?? ANALYTICS_MAX_ROUNDS)
-  if (error) throw new Error(`game_rounds read failed: ${error.message}`)
-  return ((data ?? []) as RoundRow[]).map((r) => ({
+  const rows: RoundRow[] = []
+  for (let from = 0; from < max; from += ROUNDS_PAGE) {
+    const to = Math.min(from + ROUNDS_PAGE, max) - 1
+    const { data, error } = await admin
+      .from('game_rounds')
+      .select(
+        'source, activity, level, answered, correct, score, max_score, duration_seconds, items, finished_at',
+      )
+      .eq('user_id', userId)
+      .gte('finished_at', since.toISOString())
+      // `id` breaks ties, so a page boundary never repeats or skips a round
+      // that shares its finishing time with another.
+      .order('finished_at', { ascending: false })
+      .order('id', { ascending: true })
+      .range(from, to)
+    if (error) throw new Error(`game_rounds read failed: ${error.message}`)
+    const page = (data ?? []) as RoundRow[]
+    rows.push(...page)
+    if (page.length < to - from + 1) break
+  }
+  return rows.map((r) => ({
     source: r.source,
     activity: r.activity,
     level: r.level,

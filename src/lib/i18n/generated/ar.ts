@@ -7904,7 +7904,7 @@ export const AR_MESSAGES: Record<string, string> = {
   'legal_long.privacy.s2.acc_li4': 'نوع الحساب (طالب، وليّ أمر، معلّم، مدرسة)',
   'legal_long.privacy.s2.h3_learning': 'بيانات التعلّم',
   'legal_long.privacy.s2.learn_li1':
-    'التقدّم في المقررات، ونتائج الاختبارات والامتحانات التجريبية، وإجاباتك في ألعاب المراجعة لما تكون مسجّل دخول: أي الأسئلة جاوبتها صح أو غلط، وعند اختيار إجابة غلط من قائمة، الخيار اللي اخترته. وأبداً ما نحفظ أي شي تكتبه داخل لعبة.',
+    'التقدّم في المقررات، ونتائج الاختبارات والامتحانات التجريبية، وإجاباتك في ألعاب المراجعة لما تكون مسجّل دخول: أي الأسئلة جاوبتها صح أو غلط، وعند اختيار إجابة غلط من قائمة، الخيار اللي اخترته. وأبداً ما نحفظ أي شي تكتبه داخل لعبة. وإذا كنت في صف مدرسي على The English Hub، يقدر معلّموك يشوفون نتائجك في الألعاب من يوم انضمامك لصفهم.',
   'legal_long.privacy.s2.learn_li2': 'المقالات والإجابات المكتوبة المُقدَّمة',
   'legal_long.privacy.s2.learn_li3':
     'التقييم المُولَّد بالذكاء الاصطناعي على عملك، ويشمل، عند طلبك، تقرير مدرّب يُكتب من نتائجك في الألعاب (أرقام فقط: لا اسمك ولا بريدك الإلكتروني ولا أي شيء كتبته)',
@@ -8147,7 +8147,7 @@ export const AR_MESSAGES: Record<string, string> = {
   'legal_long.data_processing.s3.st_li2':
     'البريد الإلكتروني (الصادر عن المدرسة أو الشخصي، وفقاً لما تُقدّمه المدرسة)',
   'legal_long.data_processing.s3.st_li3':
-    'بيانات التقدّم التعلّمي والأداء (درجات الاختبارات، وإنجاز الدروس، وسلاسل المراجعة)',
+    'بيانات التقدّم التعلّمي والأداء (درجات الاختبارات، وإنجاز الدروس، وسلاسل المراجعة، والإجابات في ألعاب المراجعة، التي يطّلع عليها معلّمو المدرسة من يوم انضمام الطالب إلى صفهم)',
   'legal_long.data_processing.s3.st_li4': 'المقالات والإجابات الكتابية المُقدَّمة',
   'legal_long.data_processing.s3.st_li5':
     'التقييم المُولَّد بالذكاء الاصطناعي على الأعمال المُقدَّمة',
@@ -20067,6 +20067,50 @@ export const AR_MESSAGES: Record<string, string> = {
   'ga.suggest.turn_off': 'طفّ الاقتراحات',
   'ga.suggest.on_note': 'الاقتراحات شغّالة. تنحسب من نتايجك بس.',
   'ga.suggest.failed': 'ما انحفظ الإعداد. جرّب مرة ثانية.',
+  'ga.tile.days.teacher': 'أيام اللعب',
+  'ga.strengths.empty.teacher':
+    'ما فيه شي متمكّن منه للحين. تكون المهارة متمكّنة لما 80% أو أكثر من إجابات الطالب الأخيرة فيها صح، على الأقل في 10 إجابات.',
+  'ga.work.empty.teacher': 'ما فيه شي ضعيف واضح في إجابات الطالب الأخيرة.',
+  'ga.stat.recent.teacher': '{right} من آخر {n} صح',
+  'ga.kind.across_texts.teacher': '{kind}، في نصوصه المقررة',
+  'ga.skills.title.teacher': 'المهارات',
+  'ga.skills.lead.teacher':
+    'كل سؤال ينحسب للمهارة الوحدة اللي يختبرها أكثر شي. الشريط يوضّح نسبة الصح في آخر 30 إجابة للطالب في هالمهارة.',
+  'ga.mixups.lead.teacher': 'إجابات غلط اختارها الطالب أكثر من مرة.',
+  'ga.mixups.line.teacher': '{game}: اختار «{chose}» وهو {kind}، {n} مرات',
+  'ga.played.title.teacher': 'كل شي لعبه الطالب',
+  'ga.teachers_see':
+    'إذا كنت في صف على The English Hub، معلّمينك يقدرون يشوفون هالنتايج من يوم انضميت لصفهم.',
+  'school.games.tab': 'الألعاب',
+  'school.games.title': 'نتايج الألعاب',
+  'school.games.lead':
+    'من ألعاب كل طالب من يوم انضم لهالصف. مستوى الطالب في أي مهارة يجي من آخر 30 إجابة له فيها. هذي نسب أسئلة صح، مو درجات امتحان.',
+  'school.games.tile.pupils': 'الطلاب اللي يلعبون',
+  'school.games.tile.pupils_sub': '{n} من {total} في الصف',
+  'school.games.tile.week_sub': '{n} إجابة من {pupils} طلاب',
+  'school.games.skills.title': 'المهارات في الصف',
+  'school.games.skills.lead':
+    'كم طالب متمكّن، أو يتطوّر، أو يحتاج شغل في كل مهارة، ونسبة الصح من إجابات الصف فيها.',
+  'school.games.col.skill': 'المهارة',
+  'school.games.col.right': 'صح',
+  'school.games.col.answers': 'الإجابات',
+  'school.games.col.pupil': 'الطالب',
+  'school.games.col.last': 'آخر لعب',
+  'school.games.mixups.title': 'أخطاء متكررة',
+  'school.games.mixups.lead': 'إجابات غلط اختارها الطلاب أكثر من مرة، الأكثر انتشار أول.',
+  'school.games.mixups.line': '{game}: اختاروا «{chose}» وهو {kind}، {pupils} طلاب، {n} مرات',
+  'school.games.mixups.line_one': '{game}: اختار طالب واحد «{chose}» وهو {kind}، {n} مرات',
+  'school.games.tile.week_sub_one': '{n} إجابة من طالب واحد',
+  'school.games.mixups.none': 'ما فيه طالب اختار نفس الإجابة الغلط أكثر من مرة.',
+  'school.games.pupils.title': 'الطلاب',
+  'school.games.not_yet': 'للحين لا',
+  'school.games.no_date': 'ما فيه تاريخ انضمام، فما ينعرض شي',
+  'school.games.nothing_weak': 'ما فيه شي بارز',
+  'school.games.empty': 'ما فيه طالب في هالصف لعب أي لعبة من يوم انضم له.',
+  'school.games.error': 'ما قدرنا نحمّل نتايج الألعاب.',
+  'school.games.pupil.lead': 'من ألعابه من {date}، يوم انضم. هذي نسب أسئلة صح، مو درجات امتحان.',
+  'school.games.pupil.no_date': 'ما ينعرض شي، لأن ما فيه سجل متى انضم هالطالب.',
+  'school.games.pupil.empty': 'ما لعب أي لعبة من {date}.',
   'home.lp.h1': 'تعلُّم إنجليزي ذكي.. للجميع',
   'home.lp.subtitle':
     'مُخصّص ومتوافق مع الامتحان ومدعوم بالذكاء الاصطناعي: من السنوات 7-9 مرورًا بـ GCSE وIGCSE وIELTS، مع دعم منظّم للإنجليزي لطلاب EAL. اختر مسارك وجرّب العرض المباشر.',

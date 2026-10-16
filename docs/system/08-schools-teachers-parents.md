@@ -213,6 +213,22 @@ Two asymmetries to know about:
 - `teacher_moderations_school_select` ([`20260518:360-376`](../../supabase/migrations/20260518_smart_ip_marking.sql)) reads as if any accepted teacher could see moderation rows for any submission in the school. In practice it is class-scoped. Its subquery reads `marking_submissions` under that table's own RLS, so a teacher matches only the submissions they can already see. A local Postgres test of the 12 October rules confirmed this: a second teacher saw none of the first teacher's moderations.
 - `anyone_can_read_active_join_codes` from [`004_fix_school_rls.sql:322-325`](../../supabase/migrations/004_fix_school_rls.sql) let every authenticated user enumerate every school's live join codes. It was dropped again by [`20260419_drop_school_join_codes_select_policy.sql`](../../supabase/migrations/20260419_drop_school_join_codes_select_policy.sql). If you re-apply 004 wholesale you will reintroduce it.
 
+### 16 October 2026: pupils' game results, for their teachers
+
+A class has a Games tab ([`ClassGamesTab`](../../src/components/school/games/ClassGamesTab.tsx), `GET /api/school/classes/[classId]/games`), and a pupil's page has a Games panel ([`PupilGamesPanel`](../../src/components/school/games/PupilGamesPanel.tsx), `GET /api/school/students/[studentId]/games`).
+
+- **The numbers are the pupil's own.** Both views are built on `analyseRounds`, the function behind the pupil's hub, so a teacher and a pupil never disagree about a figure. The class view adds pupils up in [`class-view.ts`](../../src/lib/game-results/class-view.ts): shares are pooled over answers, pupils are counted per band (bands are never averaged), and a mix-up is counted once per pupil.
+- **Who sees it.** Staff in scope, as everywhere above, and the pupil must also be a pupil of the school (`pupilsOfSchool`). That second check matters until the database rules on branch `approval/school-rls-2026-10-16` are approved and applied: until then a teacher can still write a `class_students` row through the REST API, and such a row must not open another child's games.
+- **Which rounds.** Only rounds finished since the pupil joined ([`_lib/pupil-games.ts`](../../src/app/api/school/_lib/pupil-games.ts)):
+  - in the class view, the class enrolment's `joined_at`;
+  - on the pupil page, the earliest such date in a class the viewer can see, or, for whole-school staff, the date the pupil joined the school.
+
+  An enrolment with no date shows nothing. Whether teachers should see what a pupil played before joining is the founder's decision, still open.
+
+- **Figures only.** The pupil's next steps, suggestions switch and AI coach are theirs, and are not shown to staff. No AI writes anything for teachers yet.
+- **The pupil is told.** Their hub says their teachers can see these results from the day they joined the class, and so do the privacy notice and the schools' data-processing page.
+- `readRounds` reads in pages of 500 rows, because of the PostgREST 1,000-row cap described above.
+
 ### 12 October 2026: the school tables' RLS, proved broken and repaired
 
 Read on production with `pg_policies` and probed read-only. Each table was counted as role `authenticated`, inside a rolled-back READ ONLY transaction, using the method in `.tmp-rls/school-rls-probe.mjs` in the main checkout. Three faults:

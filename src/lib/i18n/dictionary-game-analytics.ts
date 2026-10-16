@@ -420,4 +420,171 @@ export const GAME_ANALYTICS_DICTIONARY: Record<string, { en: string; ar?: string
     ar: 'ما انحفظ الإعداد. جرّب مرة ثانية.',
     es: 'No se ha podido guardar el ajuste. Inténtalo de nuevo.',
   },
+  // ── A teacher reading about a pupil (16 October 2026) ─────────────────────
+  // GameAnalyticsBody in its teacher form (the pupil page) swaps copy that
+  // speaks to the student for these third-person twins: TEACHER_VOICE in
+  // src/components/learning/GameAnalyticsView.tsx lists the keys.
+  'ga.tile.days.teacher': { en: 'Days played', ar: 'أيام اللعب', es: 'Días de juego' },
+  'ga.strengths.empty.teacher': {
+    en: "Nothing to call secure yet. A skill is secure when 80% or more of the pupil's recent answers on it are right, over at least 10 answers.",
+    ar: 'ما فيه شي متمكّن منه للحين. تكون المهارة متمكّنة لما 80% أو أكثر من إجابات الطالب الأخيرة فيها صح، على الأقل في 10 إجابات.',
+    es: 'Todavía no hay nada consolidado. Una destreza está consolidada cuando el alumno acierta el 80% o más de sus respuestas recientes, en al menos 10 respuestas.',
+  },
+  'ga.work.empty.teacher': {
+    en: "Nothing stands out as weak in the pupil's recent answers.",
+    ar: 'ما فيه شي ضعيف واضح في إجابات الطالب الأخيرة.',
+    es: 'Nada destaca como flojo en las respuestas recientes del alumno.',
+  },
+  'ga.stat.recent.teacher': {
+    en: '{right} of their last {n} right',
+    ar: '{right} من آخر {n} صح',
+    es: '{right} de sus últimas {n} bien',
+  },
+  'ga.kind.across_texts.teacher': {
+    en: '{kind}, across their set texts',
+    ar: '{kind}، في نصوصه المقررة',
+    es: '{kind}, en sus textos',
+  },
+  'ga.skills.title.teacher': { en: 'Skills', ar: 'المهارات', es: 'Destrezas' },
+  'ga.skills.lead.teacher': {
+    en: "Each question counts towards the one skill it mostly tests. A bar shows the share right in the pupil's last 30 answers on that skill.",
+    ar: 'كل سؤال ينحسب للمهارة الوحدة اللي يختبرها أكثر شي. الشريط يوضّح نسبة الصح في آخر 30 إجابة للطالب في هالمهارة.',
+    es: 'Cada pregunta cuenta para la destreza que más evalúa. La barra muestra el porcentaje de aciertos en las últimas 30 respuestas del alumno en esa destreza.',
+  },
+  'ga.mixups.lead.teacher': {
+    en: 'Wrong answers the pupil has chosen more than once.',
+    ar: 'إجابات غلط اختارها الطالب أكثر من مرة.',
+    es: 'Respuestas equivocadas que el alumno ha elegido más de una vez.',
+  },
+  'ga.mixups.line.teacher': {
+    en: '{game}: chose “{chose}” when it was {kind}, {n} times',
+    ar: '{game}: اختار «{chose}» وهو {kind}، {n} مرات',
+    es: '{game}: eligió «{chose}» cuando era {kind}, {n} veces',
+  },
+  'ga.played.title.teacher': {
+    en: 'Everything played',
+    ar: 'كل شي لعبه الطالب',
+    es: 'Todo lo que ha jugado',
+  },
+
+  // ── Telling the student who else sees their results (16 October 2026) ────
+  'ga.teachers_see': {
+    en: 'If you are in a class on The English Hub, your teachers can see these results from the day you joined their class.',
+    ar: 'إذا كنت في صف على The English Hub، معلّمينك يقدرون يشوفون هالنتايج من يوم انضميت لصفهم.',
+    es: 'Si estás en una clase de The English Hub, tus profesores pueden ver estos resultados desde el día en que te uniste a su clase.',
+  },
+
+  // ── The school's view: a class's Games tab and a pupil's Games panel ──────
+  // (16 October 2026; src/components/school/games/). Bands reuse ga.band.*,
+  // skill names ga.group.*, tiles ga.tile.*. Figures are shares of questions
+  // right, never exam marks, as everywhere in the game analytics.
+  'school.games.tab': { en: 'Games', ar: 'الألعاب', es: 'Juegos' },
+  'school.games.title': {
+    en: 'Game results',
+    ar: 'نتايج الألعاب',
+    es: 'Resultados de los juegos',
+  },
+  'school.games.lead': {
+    en: "From each pupil's games since they joined this class. Where a pupil stands in a skill comes from their own last 30 answers in it. These are shares of questions right, not exam marks.",
+    ar: 'من ألعاب كل طالب من يوم انضم لهالصف. مستوى الطالب في أي مهارة يجي من آخر 30 إجابة له فيها. هذي نسب أسئلة صح، مو درجات امتحان.',
+    es: 'A partir de los juegos de cada alumno desde que se unió a esta clase. El nivel de un alumno en una destreza sale de sus propias últimas 30 respuestas en ella. Son porcentajes de preguntas acertadas, no notas de examen.',
+  },
+  'school.games.tile.pupils': {
+    en: 'Pupils playing',
+    ar: 'الطلاب اللي يلعبون',
+    es: 'Alumnos que juegan',
+  },
+  'school.games.tile.pupils_sub': {
+    en: '{n} of {total} in the class',
+    ar: '{n} من {total} في الصف',
+    es: '{n} de {total} en la clase',
+  },
+  'school.games.tile.week_sub': {
+    en: '{n} answers from {pupils} pupils',
+    ar: '{n} إجابة من {pupils} طلاب',
+    es: '{n} respuestas de {pupils} alumnos',
+  },
+  'school.games.skills.title': {
+    en: 'Skills across the class',
+    ar: 'المهارات في الصف',
+    es: 'Destrezas en la clase',
+  },
+  'school.games.skills.lead': {
+    en: "How many pupils are secure, developing or need work in each skill, and the share of the class's answers in it that were right.",
+    ar: 'كم طالب متمكّن، أو يتطوّر، أو يحتاج شغل في كل مهارة، ونسبة الصح من إجابات الصف فيها.',
+    es: 'Cuántos alumnos tienen cada destreza consolidada, en desarrollo o por trabajar, y el porcentaje de respuestas acertadas de la clase en ella.',
+  },
+  'school.games.col.skill': { en: 'Skill', ar: 'المهارة', es: 'Destreza' },
+  'school.games.col.right': { en: 'Right', ar: 'صح', es: 'Aciertos' },
+  'school.games.col.answers': { en: 'Answers', ar: 'الإجابات', es: 'Respuestas' },
+  'school.games.col.pupil': { en: 'Pupil', ar: 'الطالب', es: 'Alumno' },
+  'school.games.col.last': { en: 'Last played', ar: 'آخر لعب', es: 'Última partida' },
+  'school.games.mixups.title': {
+    en: 'Common mix-ups',
+    ar: 'أخطاء متكررة',
+    es: 'Confusiones frecuentes',
+  },
+  'school.games.mixups.lead': {
+    en: 'Wrong answers pupils chose more than once, the most widespread first.',
+    ar: 'إجابات غلط اختارها الطلاب أكثر من مرة، الأكثر انتشار أول.',
+    es: 'Respuestas equivocadas que los alumnos eligieron más de una vez, primero las más extendidas.',
+  },
+  'school.games.mixups.line': {
+    en: '{game}: “{chose}” chosen when it was {kind}, by {pupils} pupils, {n} times',
+    ar: '{game}: اختاروا «{chose}» وهو {kind}، {pupils} طلاب، {n} مرات',
+    es: '{game}: eligieron «{chose}» cuando era {kind}, {pupils} alumnos, {n} veces',
+  },
+  // One pupil: the class view picks these when the count is 1.
+  'school.games.mixups.line_one': {
+    en: '{game}: “{chose}” chosen when it was {kind}, by 1 pupil, {n} times',
+    ar: '{game}: اختار طالب واحد «{chose}» وهو {kind}، {n} مرات',
+    es: '{game}: un alumno eligió «{chose}» cuando era {kind}, {n} veces',
+  },
+  'school.games.tile.week_sub_one': {
+    en: '{n} answers from 1 pupil',
+    ar: '{n} إجابة من طالب واحد',
+    es: '{n} respuestas de un alumno',
+  },
+  'school.games.mixups.none': {
+    en: 'No pupil has chosen the same wrong answer more than once.',
+    ar: 'ما فيه طالب اختار نفس الإجابة الغلط أكثر من مرة.',
+    es: 'Ningún alumno ha elegido la misma respuesta equivocada más de una vez.',
+  },
+  'school.games.pupils.title': { en: 'Pupils', ar: 'الطلاب', es: 'Alumnos' },
+  'school.games.not_yet': { en: 'Not yet', ar: 'للحين لا', es: 'Aún no' },
+  'school.games.no_date': {
+    en: 'No joining date, so nothing is shown',
+    ar: 'ما فيه تاريخ انضمام، فما ينعرض شي',
+    es: 'Sin fecha de incorporación, así que no se muestra nada',
+  },
+  'school.games.nothing_weak': {
+    en: 'Nothing stands out',
+    ar: 'ما فيه شي بارز',
+    es: 'Nada destaca',
+  },
+  'school.games.empty': {
+    en: 'No pupil in this class has played a game since joining it.',
+    ar: 'ما فيه طالب في هالصف لعب أي لعبة من يوم انضم له.',
+    es: 'Ningún alumno de esta clase ha jugado desde que se unió a ella.',
+  },
+  'school.games.error': {
+    en: 'The game results could not be loaded.',
+    ar: 'ما قدرنا نحمّل نتايج الألعاب.',
+    es: 'No se han podido cargar los resultados de los juegos.',
+  },
+  'school.games.pupil.lead': {
+    en: 'From their games since {date}, when they joined. These are shares of questions right, not exam marks.',
+    ar: 'من ألعابه من {date}، يوم انضم. هذي نسب أسئلة صح، مو درجات امتحان.',
+    es: 'A partir de sus juegos desde el {date}, cuando se unió. Son porcentajes de preguntas acertadas, no notas de examen.',
+  },
+  'school.games.pupil.no_date': {
+    en: 'Nothing is shown, because there is no record of when this pupil joined.',
+    ar: 'ما ينعرض شي، لأن ما فيه سجل متى انضم هالطالب.',
+    es: 'No se muestra nada porque no consta cuándo se unió este alumno.',
+  },
+  'school.games.pupil.empty': {
+    en: 'No games played since {date}.',
+    ar: 'ما لعب أي لعبة من {date}.',
+    es: 'No ha jugado desde el {date}.',
+  },
 }

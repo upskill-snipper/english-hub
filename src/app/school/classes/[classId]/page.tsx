@@ -4,22 +4,23 @@ import { useState, useEffect, useCallback } from 'react'
 import { useParams } from 'next/navigation'
 import Link from 'next/link'
 import {
-  ArrowLeft,
-  Users,
-  BookOpen,
-  BarChart3,
-  Plus,
-  Download,
-  AlertTriangle,
-  TrendingUp,
-  UserMinus,
-  Search,
-  Loader2,
-  X,
-  GraduationCap,
   Activity,
+  AlertTriangle,
+  ArrowLeft,
+  BarChart3,
+  BookOpen,
   ChevronRight,
   ClipboardCheck,
+  Download,
+  Gamepad2,
+  GraduationCap,
+  Loader2,
+  Plus,
+  Search,
+  TrendingUp,
+  UserMinus,
+  Users,
+  X,
 } from 'lucide-react'
 import { toast } from 'sonner'
 import { cn } from '@/lib/utils'
@@ -29,6 +30,7 @@ import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs'
+import { ClassGamesTab } from '@/components/school/games/ClassGamesTab'
 import {
   GlassPanel,
   PanelEyebrow,
@@ -943,6 +945,10 @@ export default function ClassDetailPage() {
               <BarChart3 className="h-4 w-4" />
               {t('school.classes.detail.tab.analytics')}
             </TabsTrigger>
+            <TabsTrigger value="games" className="gap-1.5">
+              <Gamepad2 className="h-4 w-4" />
+              {t('school.games.tab')}
+            </TabsTrigger>
           </TabsList>
 
           {/* ── Students Tab ── */}
@@ -1123,6 +1129,11 @@ export default function ClassDetailPage() {
           {/* ── Analytics Tab ── */}
           <TabsContent value="analytics" className="mt-6">
             <AnalyticsTab students={displayStudents} t={t} />
+          </TabsContent>
+
+          {/* ── Games Tab (16 October 2026): the class's game results ── */}
+          <TabsContent value="games" className="mt-6">
+            <ClassGamesTab classId={classId} />
           </TabsContent>
         </Tabs>
       </div>

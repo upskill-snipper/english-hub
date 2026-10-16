@@ -8063,7 +8063,7 @@ export const EN_MESSAGES: Record<string, string> = {
   'legal_long.privacy.s2.acc_li4': 'Account type (student, parent, teacher, school)',
   'legal_long.privacy.s2.h3_learning': 'Learning data',
   'legal_long.privacy.s2.learn_li1':
-    'Course progress, quiz and mock-exam results, and, when you are signed in, your answers in the revision games: which questions you got right or wrong and, for a wrong choice from a list, the option you chose. Never anything you type into a game.',
+    'Course progress, quiz and mock-exam results, and, when you are signed in, your answers in the revision games: which questions you got right or wrong and, for a wrong choice from a list, the option you chose. Never anything you type into a game. If you are in a school class on The English Hub, your teachers can see your game results from the day you joined their class.',
   'legal_long.privacy.s2.learn_li2': 'Essay and written-response submissions',
   'legal_long.privacy.s2.learn_li3':
     'AI-generated feedback on your work, including, when you ask for it, a coach report written from your game results (figures only: never your name, email or anything you typed)',
@@ -8307,7 +8307,7 @@ export const EN_MESSAGES: Record<string, string> = {
   'legal_long.data_processing.s3.st_li2':
     'Email address (school-issued or personal, as provided by the School)',
   'legal_long.data_processing.s3.st_li3':
-    'Learning progress and performance data (quiz scores, lesson completion, revision streaks)',
+    'Learning progress and performance data (quiz scores, lesson completion, revision streaks, and answers in the revision games, which the School’s teachers see from the day a pupil joins their class)',
   'legal_long.data_processing.s3.st_li4': 'Essay and written response submissions',
   'legal_long.data_processing.s3.st_li5': 'AI-generated feedback on submitted work',
   'legal_long.data_processing.s3.st_li6': 'Course enrolment and subject selections',
@@ -20591,6 +20591,55 @@ export const EN_MESSAGES: Record<string, string> = {
   'ga.suggest.turn_off': 'Switch suggestions off',
   'ga.suggest.on_note': 'Suggestions are on. They are worked out from your results only.',
   'ga.suggest.failed': 'Your setting could not be saved. Try again.',
+  'ga.tile.days.teacher': 'Days played',
+  'ga.strengths.empty.teacher':
+    "Nothing to call secure yet. A skill is secure when 80% or more of the pupil's recent answers on it are right, over at least 10 answers.",
+  'ga.work.empty.teacher': "Nothing stands out as weak in the pupil's recent answers.",
+  'ga.stat.recent.teacher': '{right} of their last {n} right',
+  'ga.kind.across_texts.teacher': '{kind}, across their set texts',
+  'ga.skills.title.teacher': 'Skills',
+  'ga.skills.lead.teacher':
+    "Each question counts towards the one skill it mostly tests. A bar shows the share right in the pupil's last 30 answers on that skill.",
+  'ga.mixups.lead.teacher': 'Wrong answers the pupil has chosen more than once.',
+  'ga.mixups.line.teacher': '{game}: chose “{chose}” when it was {kind}, {n} times',
+  'ga.played.title.teacher': 'Everything played',
+  'ga.teachers_see':
+    'If you are in a class on The English Hub, your teachers can see these results from the day you joined their class.',
+  'school.games.tab': 'Games',
+  'school.games.title': 'Game results',
+  'school.games.lead':
+    "From each pupil's games since they joined this class. Where a pupil stands in a skill comes from their own last 30 answers in it. These are shares of questions right, not exam marks.",
+  'school.games.tile.pupils': 'Pupils playing',
+  'school.games.tile.pupils_sub': '{n} of {total} in the class',
+  'school.games.tile.week_sub': '{n} answers from {pupils} pupils',
+  'school.games.skills.title': 'Skills across the class',
+  'school.games.skills.lead':
+    "How many pupils are secure, developing or need work in each skill, and the share of the class's answers in it that were right.",
+  'school.games.col.skill': 'Skill',
+  'school.games.col.right': 'Right',
+  'school.games.col.answers': 'Answers',
+  'school.games.col.pupil': 'Pupil',
+  'school.games.col.last': 'Last played',
+  'school.games.mixups.title': 'Common mix-ups',
+  'school.games.mixups.lead':
+    'Wrong answers pupils chose more than once, the most widespread first.',
+  'school.games.mixups.line':
+    '{game}: “{chose}” chosen when it was {kind}, by {pupils} pupils, {n} times',
+  'school.games.mixups.line_one':
+    '{game}: “{chose}” chosen when it was {kind}, by 1 pupil, {n} times',
+  'school.games.tile.week_sub_one': '{n} answers from 1 pupil',
+  'school.games.mixups.none': 'No pupil has chosen the same wrong answer more than once.',
+  'school.games.pupils.title': 'Pupils',
+  'school.games.not_yet': 'Not yet',
+  'school.games.no_date': 'No joining date, so nothing is shown',
+  'school.games.nothing_weak': 'Nothing stands out',
+  'school.games.empty': 'No pupil in this class has played a game since joining it.',
+  'school.games.error': 'The game results could not be loaded.',
+  'school.games.pupil.lead':
+    'From their games since {date}, when they joined. These are shares of questions right, not exam marks.',
+  'school.games.pupil.no_date':
+    'Nothing is shown, because there is no record of when this pupil joined.',
+  'school.games.pupil.empty': 'No games played since {date}.',
   'home.lp.h1': 'Intelligent English Learning for Everyone',
   'home.lp.subtitle':
     'Personalised, exam-aligned and AI-assisted - from Years 7–9 through GCSE, IGCSE and IELTS, and structured English support for EAL learners. Pick your track to explore the live demo.',
