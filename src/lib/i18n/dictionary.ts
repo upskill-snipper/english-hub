@@ -16056,10 +16056,15 @@ export const DICTIONARY: Dictionary = {
     ar: 'كيف تتصحّح الامتحانات التجريبية مالي؟',
     es: '¿Cómo se corrigen mis exámenes de prueba?',
   },
+  // 16 October 2026: said mock exams are "marked using AI that has been
+  // trained on real examiner mark schemes and grade boundaries", with a mark
+  // and grade estimate on each answer. A mock marks multiple choice only; a
+  // written answer goes to AI marking separately, and the AI is not trained on
+  // mark schemes. The same correction as faqs.c2.a.
   'help.me.q3.a': {
-    en: 'Mock exams are marked using AI that has been trained on real examiner mark schemes and grade boundaries. You receive a mark, a grade estimate, and detailed feedback on each answer explaining what you did well and how to improve.',
-    ar: 'الامتحانات التجريبية تتصحح بواسطة AI مدرّب على مخططات تصحيح حقيقية وحدود الدرجات. تستلم درجة وتقدير وملاحظات تفصيلية على كل إجابة تشرح وش سويته زين وكيف تحسّن.',
-    es: 'Los exámenes de prueba se corrigen con una IA entrenada con esquemas de calificación y notas de corte de examinadores reales. Recibes una nota, una estimación de nota y feedback detallado de cada respuesta que explica lo que hiciste bien y cómo mejorar.',
+    en: 'Multiple-choice answers are marked for you. You can send a written answer to AI marking, with a plan or the free trial, for a mark on each assessment objective and what to improve. It is written by AI and labelled as AI, and its grade is a practice estimate, not an official result.',
+    ar: 'أسئلة الاختيار من متعدد تتصحّح لك. وتقدر ترسل إجابتك المكتوبة للتصحيح بالذكاء الاصطناعي، مع الباقة أو التجربة المجانية، وتاخذ درجة لكل هدف تقييم ووش تحسّن. يكتبه الذكاء الاصطناعي ومكتوب عليه إنه منه، والدرجة فيه تقدير للتدريب، مو نتيجة رسمية.',
+    es: 'Las preguntas de opción múltiple se corrigen solas. Puedes enviar una respuesta escrita a la corrección con IA, con un plan o con la prueba gratuita, para recibir una nota por cada objetivo de evaluación y qué mejorar. La escribe la IA y se señala como tal, y su nota es una estimación para practicar, no un resultado oficial.',
   },
   'help.me.q4.q': {
     en: 'Can I retake a mock exam?',

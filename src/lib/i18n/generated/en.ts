@@ -4784,7 +4784,7 @@ export const EN_MESSAGES: Record<string, string> = {
     'Yes. Each mock exam uses the same time allocation as the real exam so you can practise your time management. You can see a countdown timer during the exam. If you prefer, you can also attempt mocks in untimed "practice mode".',
   'help.me.q3.q': 'How are my mock exams marked?',
   'help.me.q3.a':
-    'Mock exams are marked using AI that has been trained on real examiner mark schemes and grade boundaries. You receive a mark, a grade estimate, and detailed feedback on each answer explaining what you did well and how to improve.',
+    'Multiple-choice answers are marked for you. You can send a written answer to AI marking, with a plan or the free trial, for a mark on each assessment objective and what to improve. It is written by AI and labelled as AI, and its grade is a practice estimate, not an official result.',
   'help.me.q4.q': 'Can I retake a mock exam?',
   'help.me.q4.a':
     'Yes, you can retake any mock exam as many times as you like. Each attempt is saved so you can track your improvement over time. We recommend reviewing the feedback from each attempt before retrying.',

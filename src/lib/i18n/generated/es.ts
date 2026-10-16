@@ -4908,7 +4908,7 @@ export const ES_MESSAGES: Record<string, string> = {
     'Sí. Cada examen de prueba usa la misma asignación de tiempo que el examen real para que puedas practicar tu gestión del tiempo. Durante el examen puedes ver una cuenta atrás. Si lo prefieres, también puedes hacer los exámenes de prueba en "modo de práctica" sin cronometrar.',
   'help.me.q3.q': '¿Cómo se corrigen mis exámenes de prueba?',
   'help.me.q3.a':
-    'Los exámenes de prueba se corrigen con una IA entrenada con esquemas de calificación y notas de corte de examinadores reales. Recibes una nota, una estimación de nota y feedback detallado de cada respuesta que explica lo que hiciste bien y cómo mejorar.',
+    'Las preguntas de opción múltiple se corrigen solas. Puedes enviar una respuesta escrita a la corrección con IA, con un plan o con la prueba gratuita, para recibir una nota por cada objetivo de evaluación y qué mejorar. La escribe la IA y se señala como tal, y su nota es una estimación para practicar, no un resultado oficial.',
   'help.me.q4.q': '¿Puedo repetir un examen de prueba?',
   'help.me.q4.a':
     'Sí, puedes repetir cualquier examen de prueba tantas veces como quieras. Cada intento se guarda para que puedas hacer seguimiento de tu mejora a lo largo del tiempo. Te recomendamos revisar el feedback de cada intento antes de volver a intentarlo.',

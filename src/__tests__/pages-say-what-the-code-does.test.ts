@@ -507,7 +507,7 @@ describe('/mock-exams says what a mock paper does', () => {
   it('does not say a submitted mock is marked by AI trained on mark schemes, on /faqs either', async () => {
     const AI_TRAINED =
       /trained on (official|real) mark schemes|entrenada con esquemas|مدرّب على مخططات/i
-    for (const key of ['faqs.c2.a', 'faqs.g7.a']) {
+    for (const key of ['faqs.c2.a', 'faqs.g7.a', 'help.me.q3.a']) {
       const copy = inEveryLocale(key)
       for (const locale of LOCALES) {
         expect(copy[locale], `${key}/${locale}`).not.toMatch(AI_TRAINED)
