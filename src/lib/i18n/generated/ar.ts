@@ -9890,14 +9890,15 @@ export const AR_MESSAGES: Record<string, string> = {
   'resources.poetry.ao.ao3.tip': 'اربط السياق ببيت محدّد، مو بس بسيرة الشاعر بشكل عام.',
   'resources.study_tools.title': 'أدوات المراجعة',
   'resources.study_tools.subtitle':
-    'خطّط مراجعتك، درّب الاسترجاع، وقيس وقتك في الأوراق السابقة - كل أداة تحت تنحفظ في حسابك.',
+    'خطّط مراجعتك، درّب الاسترجاع، وقيس وقتك في الأوراق السابقة - كل أداة تحت تنحفظ في هالمتصفح، بدون ما تحتاج حساب.',
   'resources.study_tools.cta.open': 'افتح الأداة',
   'resources.study_tools.rp.title': 'مخطّط المراجعة',
-  'resources.study_tools.rp.desc': 'اختر تاريخ امتحانك والمخطّط يبني لك جدول مراجعة حواليه.',
+  'resources.study_tools.rp.desc':
+    'دخّل تواريخ امتحاناتك: المخطّط يعدّ تنازلياً لكل امتحان، ويوريك تقويم وقائمة مواضيع للبورد مالك، ويعطيك نصايح للمرحلة اللي انت فيها.',
   'resources.study_tools.rp.feat.calendar': 'عرض التقويم',
   'resources.study_tools.rp.feat.countdown': 'العدّ التنازلي للامتحان',
-  'resources.study_tools.rp.feat.plan': 'خطّة متوازنة تلقائياً',
-  'resources.study_tools.rp.feat.checklist': 'قائمة تحقّق يومية',
+  'resources.study_tools.rp.feat.plan': 'نصايح لكل مرحلة',
+  'resources.study_tools.rp.feat.checklist': 'قائمة المواضيع',
   'resources.study_tools.fc.title': 'البطاقات التعليمية',
   'resources.study_tools.fc.desc':
     'بطاقات بالتكرار المتباعد للاقتباسات وتعريفات التقنيات والمصطلحات المهمة.',
@@ -9912,12 +9913,15 @@ export const AR_MESSAGES: Record<string, string> = {
   'resources.study_tools.qt.feat.sr': 'تكرار متباعد',
   'resources.study_tools.qt.feat.score': 'تتبّع النتيجة',
   'resources.study_tools.cl.title': 'قائمة تحقّق الامتحان',
-  'resources.study_tools.cl.desc':
-    'علّم على كل موضوع في منهجك - خاص بكل مجلس، ويتحفظ تلقائياً في حسابك.',
+  'resources.study_tools.cl.desc': 'علّم على كل موضوع في منهجك - خاص بكل مجلس، وينحفظ في هالمتصفح.',
   'resources.study_tools.cl.feat.aqa': 'تغطية منهج AQA',
   'resources.study_tools.cl.feat.edexcel': 'تغطية منهج Edexcel',
   'resources.study_tools.cl.feat.cambridge': 'تغطية Cambridge IGCSE',
-  'resources.study_tools.cl.feat.autosave': 'حفظ التقدّم تلقائياً',
+  'resources.study_tools.cl.feat.autosave': 'ينحفظ في هالمتصفح',
+  'resources.study_tools.cl.lang_suffix': 'مواضيع English Language',
+  'resources.study_tools.cl.lit_suffix': 'مواضيع English Literature',
+  'resources.study_tools.cl.topic_tracker': 'تعليم موضوع موضوع',
+  'resources.study_tools.cl.autosave_label': 'ينحفظ في هالمتصفح',
   'resources.study_tools.tip.title': 'كيف تستخدم هالأدوات صح',
   'resources.study_tools.tip.start.label': 'ابدأ بالمخطّط',
   'resources.study_tools.tip.start.body':
@@ -10133,7 +10137,7 @@ export const AR_MESSAGES: Record<string, string> = {
     'اختبر نفسك بالاقتباسات والشخصيات والثيمات المهمة عن طريق بطاقات بنظام التكرار المتباعد. تقدّمك في المجموعة ينحفظ على هذا الجهاز.',
   'resources.study_tools.planner.title': 'منظّم المراجعة',
   'resources.study_tools.planner.subtitle':
-    'أضف تواريخ امتحاناتك واحصل على خطة مراجعة مخصّصة مبنية على المراحل، مع تقويم وقائمة مواضيع. كل شي ينحفظ على هذا الجهاز.',
+    'أضف تواريخ امتحاناتك وخذ عدّ تنازلي لكل امتحان، وتقويم، وقائمة مواضيع، ونصايح للمرحلة اللي انت فيها. كل شي ينحفظ على هذا الجهاز.',
   'resources.study_tools.planner.your_exams': 'امتحاناتك',
   'resources.study_tools.planner.your_exams_hint':
     'أضف كل امتحان مع تاريخه عشان نحسب كم باقي لك ووش مرحلة المراجعة اللي إنت فيها.',

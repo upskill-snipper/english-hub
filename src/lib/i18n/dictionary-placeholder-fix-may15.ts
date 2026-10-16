@@ -658,9 +658,9 @@ export const PLACEHOLDER_FIX_MAY15: Dictionary = {
     es: 'Herramientas de estudio',
   },
   'resources.study_tools.subtitle': {
-    en: 'Plan revision, drill recall, and time your past papers - every tool below saves to your account.',
-    ar: 'خطّط للمراجعة، ودرّب على الاسترجاع، وحدد وقت الـ past papers - كل أداة تحت تنحفظ في حسابك.',
-    es: 'Planifica el repaso, ejercita la memoria y cronometra tus exámenes anteriores: cada herramienta de abajo se guarda en tu cuenta.',
+    en: 'Plan revision, drill recall, and time your past papers - every tool below saves in this browser, with no account needed.',
+    ar: 'خطّط مراجعتك، درّب الاسترجاع، وقيس وقتك في الأوراق السابقة - كل أداة تحت تنحفظ في هالمتصفح، بدون ما تحتاج حساب.',
+    es: 'Planifica el repaso, ejercita la memoria y cronometra tus exámenes anteriores: todas las herramientas de abajo se guardan en este navegador, sin necesidad de cuenta.',
   },
   'resources.study_tools.cta.open': { en: 'Open tool', ar: 'افتح الأداة', es: 'Abrir herramienta' },
   'resources.study_tools.rp.title': {
@@ -669,9 +669,9 @@ export const PLACEHOLDER_FIX_MAY15: Dictionary = {
     es: 'Planificador de repaso',
   },
   'resources.study_tools.rp.desc': {
-    en: 'Pick your exam date and the planner builds you a study schedule around it.',
-    ar: 'اختر تاريخ امتحانك والمخطط يبني لك جدول دراسة حوله.',
-    es: 'Elige la fecha de tu examen y el planificador te crea un horario de estudio en torno a ella.',
+    en: 'Enter your exam dates: the planner counts down to each one, shows a calendar and a topic checklist for your board, and gives tips for the stage you are at.',
+    ar: 'دخّل تواريخ امتحاناتك: المخطّط يعدّ تنازلياً لكل امتحان، ويوريك تقويم وقائمة مواضيع للبورد مالك، ويعطيك نصايح للمرحلة اللي انت فيها.',
+    es: 'Introduce las fechas de tus exámenes: el planificador hace la cuenta atrás de cada uno, muestra un calendario y una lista de temas de tu junta y te da consejos para la etapa en la que estás.',
   },
   'resources.study_tools.rp.feat.calendar': {
     en: 'Calendar view',
@@ -759,9 +759,9 @@ export const PLACEHOLDER_FIX_MAY15: Dictionary = {
     es: 'Lista de comprobación del examen',
   },
   'resources.study_tools.cl.desc': {
-    en: 'Tick off every topic on your spec - board-specific, autosaves to your account.',
-    ar: 'علّم على كل موضوع في الـ spec حقك - خاص بالهيئة، ويحفظ تلقائياً في حسابك.',
-    es: 'Marca cada tema de tu especificación: específica de tu junta, se guarda automáticamente en tu cuenta.',
+    en: 'Tick off every topic on your spec - board-specific, saved in this browser.',
+    ar: 'علّم على كل موضوع في منهجك - خاص بكل مجلس، وينحفظ في هالمتصفح.',
+    es: 'Marca cada tema de tu temario: específico de cada junta, se guarda en este navegador.',
   },
   'resources.study_tools.cl.feat.aqa': {
     en: 'AQA spec coverage',

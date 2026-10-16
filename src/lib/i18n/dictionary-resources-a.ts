@@ -297,10 +297,17 @@ export const RESOURCES_A_DICTIONARY: Record<string, { en: string; ar: string; es
     ar: 'أدوات المراجعة',
     es: 'Herramientas de estudio',
   },
+  // The study tools hub, corrected 16 October 2026. It said "every tool below
+  // saves to your account", the checklist "autosaves to your account", and the
+  // planner "builds you a study schedule" with an "Auto-balanced plan". The
+  // planner, checklists, flashcards and testers save in the browser only
+  // (localStorage; src/lib/progress/sync.ts carries none of their keys), and
+  // the planner counts down to the dates a student enters and gives the tips
+  // for that stage; it builds no schedule.
   'resources.study_tools.subtitle': {
-    en: 'Plan revision, drill recall, and time your past papers - every tool below saves to your account.',
-    ar: 'خطّط مراجعتك، درّب الاسترجاع، وقيس وقتك في الأوراق السابقة - كل أداة تحت تنحفظ في حسابك.',
-    es: 'Planifica el repaso, ejercita la memoria y cronometra tus exámenes anteriores: todas las herramientas de abajo se guardan en tu cuenta.',
+    en: 'Plan revision, drill recall, and time your past papers - every tool below saves in this browser, with no account needed.',
+    ar: 'خطّط مراجعتك، درّب الاسترجاع، وقيس وقتك في الأوراق السابقة - كل أداة تحت تنحفظ في هالمتصفح، بدون ما تحتاج حساب.',
+    es: 'Planifica el repaso, ejercita la memoria y cronometra tus exámenes anteriores: todas las herramientas de abajo se guardan en este navegador, sin necesidad de cuenta.',
   },
   'resources.study_tools.cta.open': { en: 'Open tool', ar: 'افتح الأداة', es: 'Abrir herramienta' },
   'resources.study_tools.rp.title': {
@@ -309,9 +316,9 @@ export const RESOURCES_A_DICTIONARY: Record<string, { en: string; ar: string; es
     es: 'Planificador de repaso',
   },
   'resources.study_tools.rp.desc': {
-    en: 'Pick your exam date and the planner builds you a study schedule around it.',
-    ar: 'اختر تاريخ امتحانك والمخطّط يبني لك جدول مراجعة حواليه.',
-    es: 'Elige la fecha de tu examen y el planificador te construye un calendario de estudio en torno a ella.',
+    en: 'Enter your exam dates: the planner counts down to each one, shows a calendar and a topic checklist for your board, and gives tips for the stage you are at.',
+    ar: 'دخّل تواريخ امتحاناتك: المخطّط يعدّ تنازلياً لكل امتحان، ويوريك تقويم وقائمة مواضيع للبورد مالك، ويعطيك نصايح للمرحلة اللي انت فيها.',
+    es: 'Introduce las fechas de tus exámenes: el planificador hace la cuenta atrás de cada uno, muestra un calendario y una lista de temas de tu junta y te da consejos para la etapa en la que estás.',
   },
   'resources.study_tools.rp.feat.calendar': {
     en: 'Calendar view',
@@ -324,14 +331,14 @@ export const RESOURCES_A_DICTIONARY: Record<string, { en: string; ar: string; es
     es: 'Cuenta atrás del examen',
   },
   'resources.study_tools.rp.feat.plan': {
-    en: 'Auto-balanced plan',
-    ar: 'خطّة متوازنة تلقائياً',
-    es: 'Plan equilibrado automáticamente',
+    en: 'Tips for each stage',
+    ar: 'نصايح لكل مرحلة',
+    es: 'Consejos para cada etapa',
   },
   'resources.study_tools.rp.feat.checklist': {
-    en: 'Daily checklist',
-    ar: 'قائمة تحقّق يومية',
-    es: 'Lista de verificación diaria',
+    en: 'Topic checklist',
+    ar: 'قائمة المواضيع',
+    es: 'Lista de temas',
   },
   'resources.study_tools.fc.title': {
     en: 'Flashcards',
@@ -399,9 +406,9 @@ export const RESOURCES_A_DICTIONARY: Record<string, { en: string; ar: string; es
     es: 'Lista de verificación del examen',
   },
   'resources.study_tools.cl.desc': {
-    en: 'Tick off every topic on your spec - board-specific, autosaves to your account.',
-    ar: 'علّم على كل موضوع في منهجك - خاص بكل مجلس، ويتحفظ تلقائياً في حسابك.',
-    es: 'Marca cada tema de tu temario: específico de cada junta, se autoguarda en tu cuenta.',
+    en: 'Tick off every topic on your spec - board-specific, saved in this browser.',
+    ar: 'علّم على كل موضوع في منهجك - خاص بكل مجلس، وينحفظ في هالمتصفح.',
+    es: 'Marca cada tema de tu temario: específico de cada junta, se guarda en este navegador.',
   },
   'resources.study_tools.cl.feat.aqa': {
     en: 'AQA spec coverage',
@@ -419,9 +426,33 @@ export const RESOURCES_A_DICTIONARY: Record<string, { en: string; ar: string; es
     es: 'Cobertura de Cambridge IGCSE',
   },
   'resources.study_tools.cl.feat.autosave': {
-    en: 'Autosave progress',
-    ar: 'حفظ التقدّم تلقائياً',
-    es: 'Guardado automático del progreso',
+    en: 'Saved in this browser',
+    ar: 'ينحفظ في هالمتصفح',
+    es: 'Se guarda en este navegador',
+  },
+  // The checklist card's board-tailored features. The page asked for these
+  // four keys and none existed, so with a board chosen the card printed
+  // "[[resources.study_tools.cl.lang_suffix]]" and its siblings (found 16
+  // October 2026). The card reads "<board> English Language topics" etc.
+  'resources.study_tools.cl.lang_suffix': {
+    en: 'English Language topics',
+    ar: 'مواضيع English Language',
+    es: 'Temas de English Language',
+  },
+  'resources.study_tools.cl.lit_suffix': {
+    en: 'English Literature topics',
+    ar: 'مواضيع English Literature',
+    es: 'Temas de English Literature',
+  },
+  'resources.study_tools.cl.topic_tracker': {
+    en: 'Topic-by-topic ticks',
+    ar: 'تعليم موضوع موضوع',
+    es: 'Marcas tema por tema',
+  },
+  'resources.study_tools.cl.autosave_label': {
+    en: 'Saved in this browser',
+    ar: 'ينحفظ في هالمتصفح',
+    es: 'Se guarda en este navegador',
   },
   'resources.study_tools.tip.title': {
     en: 'How to use these tools well',

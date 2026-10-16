@@ -249,10 +249,13 @@ export const MISC_T1_DICTIONARY: Record<string, { en: string; ar: string; es?: s
     ar: 'منظّم المراجعة',
     es: 'Planificador de repaso',
   },
+  // 16 October 2026: promised "a personalised, phase-based revision plan".
+  // The planner counts down to each date and shows the fixed tips for the
+  // nearest exam's stage (PHASE_TIPS); it builds no plan.
   'resources.study_tools.planner.subtitle': {
-    en: 'Add your exam dates and get a personalised, phase-based revision plan with a calendar and topic checklist. Everything is saved on this device.',
-    ar: 'أضف تواريخ امتحاناتك واحصل على خطة مراجعة مخصّصة مبنية على المراحل، مع تقويم وقائمة مواضيع. كل شي ينحفظ على هذا الجهاز.',
-    es: 'Añade las fechas de tus exámenes y obtén un plan de repaso personalizado por fases, con un calendario y una lista de temas. Todo se guarda en este dispositivo.',
+    en: 'Add your exam dates for a countdown to each, a calendar, a topic checklist and tips for the stage you are at. Everything is saved on this device.',
+    ar: 'أضف تواريخ امتحاناتك وخذ عدّ تنازلي لكل امتحان، وتقويم، وقائمة مواضيع، ونصايح للمرحلة اللي انت فيها. كل شي ينحفظ على هذا الجهاز.',
+    es: 'Añade las fechas de tus exámenes para tener una cuenta atrás de cada uno, un calendario, una lista de temas y consejos para la etapa en la que estás. Todo se guarda en este dispositivo.',
   },
   'resources.study_tools.planner.your_exams': {
     en: 'Your exams',

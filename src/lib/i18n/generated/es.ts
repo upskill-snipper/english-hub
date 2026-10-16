@@ -10345,15 +10345,15 @@ export const ES_MESSAGES: Record<string, string> = {
     'Vincula el contexto a un verso concreto, no solo a la biografía del poeta en general.',
   'resources.study_tools.title': 'Herramientas de estudio',
   'resources.study_tools.subtitle':
-    'Planifica el repaso, ejercita la memoria y cronometra tus exámenes anteriores: todas las herramientas de abajo se guardan en tu cuenta.',
+    'Planifica el repaso, ejercita la memoria y cronometra tus exámenes anteriores: todas las herramientas de abajo se guardan en este navegador, sin necesidad de cuenta.',
   'resources.study_tools.cta.open': 'Abrir herramienta',
   'resources.study_tools.rp.title': 'Planificador de repaso',
   'resources.study_tools.rp.desc':
-    'Elige la fecha de tu examen y el planificador te construye un calendario de estudio en torno a ella.',
+    'Introduce las fechas de tus exámenes: el planificador hace la cuenta atrás de cada uno, muestra un calendario y una lista de temas de tu junta y te da consejos para la etapa en la que estás.',
   'resources.study_tools.rp.feat.calendar': 'Vista de calendario',
   'resources.study_tools.rp.feat.countdown': 'Cuenta atrás del examen',
-  'resources.study_tools.rp.feat.plan': 'Plan equilibrado automáticamente',
-  'resources.study_tools.rp.feat.checklist': 'Lista de verificación diaria',
+  'resources.study_tools.rp.feat.plan': 'Consejos para cada etapa',
+  'resources.study_tools.rp.feat.checklist': 'Lista de temas',
   'resources.study_tools.fc.title': 'Tarjetas didácticas',
   'resources.study_tools.fc.desc':
     'Tarjetas de repetición espaciada para citas, definiciones de técnicas y términos clave.',
@@ -10370,11 +10370,15 @@ export const ES_MESSAGES: Record<string, string> = {
   'resources.study_tools.qt.feat.score': 'Seguimiento de la puntuación',
   'resources.study_tools.cl.title': 'Lista de verificación del examen',
   'resources.study_tools.cl.desc':
-    'Marca cada tema de tu temario: específico de cada junta, se autoguarda en tu cuenta.',
+    'Marca cada tema de tu temario: específico de cada junta, se guarda en este navegador.',
   'resources.study_tools.cl.feat.aqa': 'Cobertura del temario AQA',
   'resources.study_tools.cl.feat.edexcel': 'Cobertura del temario Edexcel',
   'resources.study_tools.cl.feat.cambridge': 'Cobertura de Cambridge IGCSE',
-  'resources.study_tools.cl.feat.autosave': 'Guardado automático del progreso',
+  'resources.study_tools.cl.feat.autosave': 'Se guarda en este navegador',
+  'resources.study_tools.cl.lang_suffix': 'Temas de English Language',
+  'resources.study_tools.cl.lit_suffix': 'Temas de English Literature',
+  'resources.study_tools.cl.topic_tracker': 'Marcas tema por tema',
+  'resources.study_tools.cl.autosave_label': 'Se guarda en este navegador',
   'resources.study_tools.tip.title': 'Cómo usar bien estas herramientas',
   'resources.study_tools.tip.start.label': 'Empieza por el planificador',
   'resources.study_tools.tip.start.body':
@@ -10596,7 +10600,7 @@ export const ES_MESSAGES: Record<string, string> = {
     'Autoevalúate sobre citas clave, personajes y temas con tarjetas de repetición espaciada. El progreso de tu mazo se guarda en este dispositivo.',
   'resources.study_tools.planner.title': 'Planificador de repaso',
   'resources.study_tools.planner.subtitle':
-    'Añade las fechas de tus exámenes y obtén un plan de repaso personalizado por fases, con un calendario y una lista de temas. Todo se guarda en este dispositivo.',
+    'Añade las fechas de tus exámenes para tener una cuenta atrás de cada uno, un calendario, una lista de temas y consejos para la etapa en la que estás. Todo se guarda en este dispositivo.',
   'resources.study_tools.planner.your_exams': 'Tus exámenes',
   'resources.study_tools.planner.your_exams_hint':
     'Añade cada examen con su fecha para que podamos calcular cuánto tiempo te queda y en qué fase de repaso estás.',

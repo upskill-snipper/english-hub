@@ -10099,15 +10099,15 @@ export const EN_MESSAGES: Record<string, string> = {
     "Tie context to a specific line, not just the poet's biography in general.",
   'resources.study_tools.title': 'Study tools',
   'resources.study_tools.subtitle':
-    'Plan revision, drill recall, and time your past papers - every tool below saves to your account.',
+    'Plan revision, drill recall, and time your past papers - every tool below saves in this browser, with no account needed.',
   'resources.study_tools.cta.open': 'Open tool',
   'resources.study_tools.rp.title': 'Revision planner',
   'resources.study_tools.rp.desc':
-    'Pick your exam date and the planner builds you a study schedule around it.',
+    'Enter your exam dates: the planner counts down to each one, shows a calendar and a topic checklist for your board, and gives tips for the stage you are at.',
   'resources.study_tools.rp.feat.calendar': 'Calendar view',
   'resources.study_tools.rp.feat.countdown': 'Exam countdown',
-  'resources.study_tools.rp.feat.plan': 'Auto-balanced plan',
-  'resources.study_tools.rp.feat.checklist': 'Daily checklist',
+  'resources.study_tools.rp.feat.plan': 'Tips for each stage',
+  'resources.study_tools.rp.feat.checklist': 'Topic checklist',
   'resources.study_tools.fc.title': 'Flashcards',
   'resources.study_tools.fc.desc':
     'Spaced-repetition flashcards for quotes, technique definitions and key terms.',
@@ -10124,11 +10124,15 @@ export const EN_MESSAGES: Record<string, string> = {
   'resources.study_tools.qt.feat.score': 'Score tracking',
   'resources.study_tools.cl.title': 'Exam checklist',
   'resources.study_tools.cl.desc':
-    'Tick off every topic on your spec - board-specific, autosaves to your account.',
+    'Tick off every topic on your spec - board-specific, saved in this browser.',
   'resources.study_tools.cl.feat.aqa': 'AQA spec coverage',
   'resources.study_tools.cl.feat.edexcel': 'Edexcel spec coverage',
   'resources.study_tools.cl.feat.cambridge': 'Cambridge IGCSE coverage',
-  'resources.study_tools.cl.feat.autosave': 'Autosave progress',
+  'resources.study_tools.cl.feat.autosave': 'Saved in this browser',
+  'resources.study_tools.cl.lang_suffix': 'English Language topics',
+  'resources.study_tools.cl.lit_suffix': 'English Literature topics',
+  'resources.study_tools.cl.topic_tracker': 'Topic-by-topic ticks',
+  'resources.study_tools.cl.autosave_label': 'Saved in this browser',
   'resources.study_tools.tip.title': 'How to use these tools well',
   'resources.study_tools.tip.start.label': 'Start with the planner',
   'resources.study_tools.tip.start.body':
@@ -10349,7 +10353,7 @@ export const EN_MESSAGES: Record<string, string> = {
     'Self-test key quotes, characters and themes with spaced-repetition flashcards. Your deck progress is saved on this device.',
   'resources.study_tools.planner.title': 'Revision Planner',
   'resources.study_tools.planner.subtitle':
-    'Add your exam dates and get a personalised, phase-based revision plan with a calendar and topic checklist. Everything is saved on this device.',
+    'Add your exam dates for a countdown to each, a calendar, a topic checklist and tips for the stage you are at. Everything is saved on this device.',
   'resources.study_tools.planner.your_exams': 'Your exams',
   'resources.study_tools.planner.your_exams_hint':
     'Add each exam with its date so we can work out how long you have and which revision phase you are in.',

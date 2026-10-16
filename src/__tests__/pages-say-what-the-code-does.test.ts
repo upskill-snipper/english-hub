@@ -534,3 +534,43 @@ describe('/games/texts says who can see a pupil’s game results', () => {
     expect(copy.en).toMatch(/nothing is sent to us/)
   })
 })
+
+// ─── E18: the study tools save in the browser ───────────────────────────────
+
+describe('/resources/study-tools says where its tools save', () => {
+  // The planner, checklists, flashcards and testers use localStorage only;
+  // progress sync carries none of their keys. The planner counts down and
+  // gives stage tips; it builds no schedule.
+  const ACCOUNT = /to your account|en tu cuenta|في حسابك/i
+  const SCHEDULE =
+    /builds you a study schedule|auto-balanced|personalised, phase-based revision plan|te construye|te crea un horario|يبني لك جدول/i
+
+  it.each([
+    'resources.study_tools.subtitle',
+    'resources.study_tools.rp.desc',
+    'resources.study_tools.rp.feat.plan',
+    'resources.study_tools.rp.feat.checklist',
+    'resources.study_tools.cl.desc',
+    'resources.study_tools.cl.feat.autosave',
+    'resources.study_tools.planner.subtitle',
+  ])('%s claims no account saving and no built schedule', (key) => {
+    const copy = inEveryLocale(key)
+    for (const locale of LOCALES) {
+      expect(copy[locale], `${key}/${locale}`).not.toMatch(ACCOUNT)
+      expect(copy[locale], `${key}/${locale}`).not.toMatch(SCHEDULE)
+    }
+  })
+
+  it('defines the checklist card keys the page asks for once a board is chosen', () => {
+    // Without them the card printed "[[resources.study_tools.cl.lang_suffix]]".
+    for (const key of [
+      'resources.study_tools.cl.lang_suffix',
+      'resources.study_tools.cl.lit_suffix',
+      'resources.study_tools.cl.topic_tracker',
+      'resources.study_tools.cl.autosave_label',
+    ]) {
+      const copy = inEveryLocale(key)
+      for (const locale of LOCALES) expect(copy[locale], `${key}/${locale}`).not.toMatch(ACCOUNT)
+    }
+  })
+})
