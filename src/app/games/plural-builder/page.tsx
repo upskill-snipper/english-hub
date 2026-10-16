@@ -5,100 +5,17 @@ import Link from 'next/link'
 import GameShell, { type GameState } from '@/components/games/GameShell'
 import { Button } from '@/components/ui/button'
 import { cn } from '@/lib/utils'
-import { ArrowLeft, CheckCircle, XCircle, Sparkles, Lightbulb } from 'lucide-react'
+import { ArrowLeft, ArrowRight, CheckCircle, XCircle, Sparkles } from 'lucide-react'
 import { useBoard } from '@/hooks/useBoard'
 import { getBoardConfig } from '@/lib/board/board-store'
+import { AnswerExplanation } from '@/components/games/AnswerExplanation'
+import { useGameRound } from '@/components/games/game-round'
+import { BANK, PLURAL_BANK, type PluralWord } from '@/data/games/banks/plural-builder'
 
 // ─── Data ──────────────────────────────────────────────────────────────────────
-
-interface PluralWord {
-  singular: string
-  plural: string
-  rule: string
-}
-
-const PLURAL_BANK: PluralWord[] = [
-  // Regular: add -s
-  { singular: 'book', plural: 'books', rule: 'Most nouns just add -s.' },
-  { singular: 'car', plural: 'cars', rule: 'Most nouns just add -s.' },
-  { singular: 'dog', plural: 'dogs', rule: 'Most nouns just add -s.' },
-  { singular: 'table', plural: 'tables', rule: 'Most nouns just add -s.' },
-  { singular: 'apple', plural: 'apples', rule: 'Most nouns just add -s.' },
-  { singular: 'window', plural: 'windows', rule: 'Most nouns just add -s.' },
-  { singular: 'phone', plural: 'phones', rule: 'Most nouns just add -s.' },
-  { singular: 'chair', plural: 'chairs', rule: 'Most nouns just add -s.' },
-  // Add -es after s, x, z, ch, sh
-  { singular: 'bus', plural: 'buses', rule: 'Nouns ending in -s, -x, -z, -ch or -sh add -es.' },
-  { singular: 'box', plural: 'boxes', rule: 'Nouns ending in -s, -x, -z, -ch or -sh add -es.' },
-  { singular: 'watch', plural: 'watches', rule: 'Nouns ending in -s, -x, -z, -ch or -sh add -es.' },
-  { singular: 'dish', plural: 'dishes', rule: 'Nouns ending in -s, -x, -z, -ch or -sh add -es.' },
-  { singular: 'glass', plural: 'glasses', rule: 'Nouns ending in -s, -x, -z, -ch or -sh add -es.' },
-  { singular: 'brush', plural: 'brushes', rule: 'Nouns ending in -s, -x, -z, -ch or -sh add -es.' },
-  { singular: 'fox', plural: 'foxes', rule: 'Nouns ending in -s, -x, -z, -ch or -sh add -es.' },
-  { singular: 'beach', plural: 'beaches', rule: 'Nouns ending in -s, -x, -z, -ch or -sh add -es.' },
-  { singular: 'class', plural: 'classes', rule: 'Nouns ending in -s, -x, -z, -ch or -sh add -es.' },
-  // Consonant + y → -ies
-  { singular: 'baby', plural: 'babies', rule: 'A consonant before -y: change -y to -ies.' },
-  { singular: 'city', plural: 'cities', rule: 'A consonant before -y: change -y to -ies.' },
-  { singular: 'story', plural: 'stories', rule: 'A consonant before -y: change -y to -ies.' },
-  { singular: 'party', plural: 'parties', rule: 'A consonant before -y: change -y to -ies.' },
-  { singular: 'country', plural: 'countries', rule: 'A consonant before -y: change -y to -ies.' },
-  { singular: 'family', plural: 'families', rule: 'A consonant before -y: change -y to -ies.' },
-  { singular: 'lady', plural: 'ladies', rule: 'A consonant before -y: change -y to -ies.' },
-  // Vowel + y → just add -s
-  { singular: 'boy', plural: 'boys', rule: 'A vowel before -y: just add -s.' },
-  { singular: 'key', plural: 'keys', rule: 'A vowel before -y: just add -s.' },
-  { singular: 'day', plural: 'days', rule: 'A vowel before -y: just add -s.' },
-  { singular: 'toy', plural: 'toys', rule: 'A vowel before -y: just add -s.' },
-  { singular: 'monkey', plural: 'monkeys', rule: 'A vowel before -y: just add -s.' },
-  // -f / -fe → -ves
-  { singular: 'leaf', plural: 'leaves', rule: 'Many nouns ending in -f or -fe change to -ves.' },
-  { singular: 'knife', plural: 'knives', rule: 'Many nouns ending in -f or -fe change to -ves.' },
-  { singular: 'wife', plural: 'wives', rule: 'Many nouns ending in -f or -fe change to -ves.' },
-  { singular: 'wolf', plural: 'wolves', rule: 'Many nouns ending in -f or -fe change to -ves.' },
-  { singular: 'shelf', plural: 'shelves', rule: 'Many nouns ending in -f or -fe change to -ves.' },
-  { singular: 'thief', plural: 'thieves', rule: 'Many nouns ending in -f or -fe change to -ves.' },
-  { singular: 'half', plural: 'halves', rule: 'Many nouns ending in -f or -fe change to -ves.' },
-  { singular: 'life', plural: 'lives', rule: 'Many nouns ending in -f or -fe change to -ves.' },
-  // -o → -es
-  { singular: 'tomato', plural: 'tomatoes', rule: 'Some nouns ending in -o add -es.' },
-  { singular: 'potato', plural: 'potatoes', rule: 'Some nouns ending in -o add -es.' },
-  { singular: 'hero', plural: 'heroes', rule: 'Some nouns ending in -o add -es.' },
-  // Irregular
-  { singular: 'child', plural: 'children', rule: 'Irregular plural - you must learn this one.' },
-  { singular: 'foot', plural: 'feet', rule: 'Irregular plural - you must learn this one.' },
-  { singular: 'mouse', plural: 'mice', rule: 'Irregular plural - you must learn this one.' },
-  { singular: 'person', plural: 'people', rule: 'Irregular plural - you must learn this one.' },
-  { singular: 'tooth', plural: 'teeth', rule: 'Irregular plural - you must learn this one.' },
-  { singular: 'man', plural: 'men', rule: 'Irregular plural - you must learn this one.' },
-  { singular: 'woman', plural: 'women', rule: 'Irregular plural - you must learn this one.' },
-  { singular: 'goose', plural: 'geese', rule: 'Irregular plural - you must learn this one.' },
-  // Unchanged
-  {
-    singular: 'sheep',
-    plural: 'sheep',
-    rule: 'No change - the plural is the same as the singular.',
-  },
-  { singular: 'fish', plural: 'fish', rule: 'No change - the plural is the same as the singular.' },
-  { singular: 'deer', plural: 'deer', rule: 'No change - the plural is the same as the singular.' },
-  {
-    singular: 'aircraft',
-    plural: 'aircraft',
-    rule: 'No change - the plural is the same as the singular.',
-  },
-  {
-    singular: 'series',
-    plural: 'series',
-    rule: 'No change - the plural is the same as the singular.',
-  },
-  // Latin / Greek
-  { singular: 'cactus', plural: 'cacti', rule: 'Latin origin - change -us to -i.' },
-  { singular: 'fungus', plural: 'fungi', rule: 'Latin origin - change -us to -i.' },
-  { singular: 'analysis', plural: 'analyses', rule: 'Greek origin - change -is to -es.' },
-  { singular: 'crisis', plural: 'crises', rule: 'Greek origin - change -is to -es.' },
-  { singular: 'criterion', plural: 'criteria', rule: 'Greek origin - change -on to -a.' },
-  { singular: 'phenomenon', plural: 'phenomena', rule: 'Greek origin - change -on to -a.' },
-]
+// The words are in src/data/games/banks/plural-builder.ts (moved there on
+// 16 October 2026), and the explanation for each in
+// src/data/games/explanations/plural-builder.ts.
 
 // ─── Helpers ───────────────────────────────────────────────────────────────────
 
@@ -126,6 +43,7 @@ export default function PluralBuilderPage() {
   const [totalAnswered, setTotalAnswered] = useState(0)
   const [input, setInput] = useState('')
   const [feedback, setFeedback] = useState<'correct' | 'wrong' | null>(null)
+  const round = useGameRound('plural-builder')
   const inputRef = useRef<HTMLInputElement>(null)
 
   const currentWord = words[wIdx] ?? null
@@ -151,6 +69,17 @@ export default function PluralBuilderPage() {
     setGameState('finished')
   }, [])
 
+  /**
+   * An answer is typed, so this records whether it was right and which rule
+   * the word shows, and nothing else. The word the student typed is never
+   * recorded or sent: it is their own text.
+   *
+   * WHAT CHANGED (16 October 2026). The game used to move to the next word 1.8
+   * seconds after a right answer and 2.6 after a wrong one, showing a single
+   * line of rule. Each answer now comes with an explanation
+   * (src/data/games/explanations/plural-builder.ts), and a student cannot read
+   * that in 2.6 seconds, so the word stays on screen until they choose to go on.
+   */
   const handleSubmit = useCallback(() => {
     if (!currentWord || feedback) return
     const trimmed = input.trim().toLowerCase()
@@ -164,20 +93,22 @@ export default function PluralBuilderPage() {
     } else {
       setFeedback('wrong')
     }
+    round.record({
+      question: BANK.key(currentWord),
+      correct: isCorrect,
+      tag: BANK.tag?.(currentWord),
+    })
+  }, [currentWord, feedback, input, round])
 
-    setTimeout(
-      () => {
-        if (wIdx + 1 >= words.length) {
-          setGameState('finished')
-        } else {
-          setWIdx((i) => i + 1)
-          setInput('')
-          setFeedback(null)
-        }
-      },
-      isCorrect ? 1800 : 2600,
-    )
-  }, [currentWord, feedback, input, wIdx, words.length])
+  const handleNext = useCallback(() => {
+    if (wIdx + 1 >= words.length) {
+      setGameState('finished')
+      return
+    }
+    setWIdx((i) => i + 1)
+    setInput('')
+    setFeedback(null)
+  }, [wIdx, words.length])
 
   const handleKeyDown = (e: React.KeyboardEvent) => {
     if (e.key === 'Enter') {
@@ -214,6 +145,7 @@ export default function PluralBuilderPage() {
           onStart={handleStart}
           onFinish={handleFinish}
           gameState={gameState}
+          round={round}
         >
           {currentWord && (
             <div className="space-y-6">
@@ -232,7 +164,7 @@ export default function PluralBuilderPage() {
                 </p>
                 <p className="text-3xl font-bold text-foreground">{currentWord.singular}</p>
                 <p className="text-sm text-muted-foreground">
-                  Now write the plural - more than one.
+                  Now write the plural: more than one.
                 </p>
               </div>
 
@@ -272,7 +204,7 @@ export default function PluralBuilderPage() {
                     >
                       {feedback === 'correct' ? (
                         <>
-                          <CheckCircle className="size-4" /> Brilliant! Spot on.
+                          <CheckCircle className="size-4" /> Brilliant. Spot on.
                         </>
                       ) : (
                         <>
@@ -281,14 +213,16 @@ export default function PluralBuilderPage() {
                         </>
                       )}
                     </div>
-                    <div className="flex items-start justify-center gap-2 rounded-lg border border-border bg-card px-4 py-2 text-sm text-muted-foreground">
-                      <Lightbulb className="size-4 shrink-0 text-primary mt-0.5" />
-                      <span>
-                        <span className="font-semibold text-foreground">
-                          {currentWord.singular} → {currentWord.plural}
-                        </span>{' '}
-                        - {currentWord.rule}
-                      </span>
+                    <AnswerExplanation
+                      game="plural-builder"
+                      question={BANK.key(currentWord)}
+                      correct={feedback === 'correct'}
+                    />
+                    <div className="flex justify-center pt-2">
+                      <Button onClick={handleNext} autoFocus>
+                        {wIdx + 1 >= words.length ? 'See your results' : 'Next question'}
+                        <ArrowRight className="size-4 ms-1" />
+                      </Button>
                     </div>
                   </div>
                 )}

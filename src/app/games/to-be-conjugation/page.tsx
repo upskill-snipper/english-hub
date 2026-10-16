@@ -5,361 +5,25 @@ import Link from 'next/link'
 import GameShell, { type GameState } from '@/components/games/GameShell'
 import { Button } from '@/components/ui/button'
 import { cn } from '@/lib/utils'
-import { ArrowLeft, CheckCircle, XCircle, Sparkles } from 'lucide-react'
+import { ArrowLeft, ArrowRight, CheckCircle, XCircle, Sparkles } from 'lucide-react'
 import { useBoard } from '@/hooks/useBoard'
 import { getBoardConfig } from '@/lib/board/board-store'
+import { AnswerExplanation } from '@/components/games/AnswerExplanation'
+import { useGameRound } from '@/components/games/game-round'
+import {
+  BANK,
+  VERB_BANK,
+  optionSet,
+  type Tense,
+  type VerbItem,
+} from '@/data/games/banks/to-be-conjugation'
 
 // ─── Data ──────────────────────────────────────────────────────────────────────
-
-type Tense = 'present' | 'past' | 'future' | 'short form'
-
-interface VerbItem {
-  sentence: string // contains ___
-  answer: string
-  tense: Tense
-  why: string
-}
+// The sentences are in src/data/games/banks/to-be-conjugation.ts (moved there on
+// 16 October 2026), and the explanation for each in
+// src/data/games/explanations/to-be-conjugation.ts.
 
 const ROUND_SIZE = 15
-
-// Original bank of 50+ sentences. Each gap is filled with a form of 'to be'.
-const VERB_BANK: VerbItem[] = [
-  // ── Present ───────────────────────────────────────────────────────
-  {
-    sentence: 'I ___ a student at the language school.',
-    answer: 'am',
-    tense: 'present',
-    why: 'Use "am" with the pronoun "I" in the present.',
-  },
-  {
-    sentence: 'She ___ my best friend from class.',
-    answer: 'is',
-    tense: 'present',
-    why: 'Use "is" with "he", "she" or "it" in the present.',
-  },
-  {
-    sentence: 'They ___ from Spain and Portugal.',
-    answer: 'are',
-    tense: 'present',
-    why: 'Use "are" with "they", "we" or "you" in the present.',
-  },
-  {
-    sentence: 'We ___ ready to begin the lesson.',
-    answer: 'are',
-    tense: 'present',
-    why: 'Use "are" with "we" in the present.',
-  },
-  {
-    sentence: 'He ___ a very kind teacher.',
-    answer: 'is',
-    tense: 'present',
-    why: 'Use "is" with "he" in the present.',
-  },
-  {
-    sentence: 'You ___ very good at grammar.',
-    answer: 'are',
-    tense: 'present',
-    why: 'Use "are" with "you", whether one person or many.',
-  },
-  {
-    sentence: 'The coffee ___ too hot to drink.',
-    answer: 'is',
-    tense: 'present',
-    why: 'A single thing ("the coffee") takes "is".',
-  },
-  {
-    sentence: 'My parents ___ at work right now.',
-    answer: 'are',
-    tense: 'present',
-    why: '"My parents" is plural, so use "are".',
-  },
-  {
-    sentence: 'It ___ a beautiful sunny day today.',
-    answer: 'is',
-    tense: 'present',
-    why: 'Use "is" with "it" in the present.',
-  },
-  {
-    sentence: 'The children ___ playing in the garden.',
-    answer: 'are',
-    tense: 'present',
-    why: '"The children" is plural, so use "are".',
-  },
-  {
-    sentence: 'I ___ happy to help you with English.',
-    answer: 'am',
-    tense: 'present',
-    why: 'Use "am" with "I".',
-  },
-  {
-    sentence: 'This book ___ very interesting.',
-    answer: 'is',
-    tense: 'present',
-    why: 'A single thing ("this book") takes "is".',
-  },
-  {
-    sentence: 'We ___ in the same class this term.',
-    answer: 'are',
-    tense: 'present',
-    why: 'Use "are" with "we".',
-  },
-  {
-    sentence: 'Tom and Lucy ___ brother and sister.',
-    answer: 'are',
-    tense: 'present',
-    why: 'Two people joined by "and" are plural, so use "are".',
-  },
-  {
-    sentence: 'The weather ___ cold in winter.',
-    answer: 'is',
-    tense: 'present',
-    why: '"The weather" is singular, so use "is".',
-  },
-
-  // ── Past ──────────────────────────────────────────────────────────
-  {
-    sentence: 'Yesterday I ___ very tired after work.',
-    answer: 'was',
-    tense: 'past',
-    why: 'Use "was" with "I" in the past.',
-  },
-  {
-    sentence: 'She ___ at the cinema last night.',
-    answer: 'was',
-    tense: 'past',
-    why: 'Use "was" with "she" in the past.',
-  },
-  {
-    sentence: 'They ___ on holiday in Italy last summer.',
-    answer: 'were',
-    tense: 'past',
-    why: 'Use "were" with "they" in the past.',
-  },
-  {
-    sentence: 'We ___ late for the bus this morning.',
-    answer: 'were',
-    tense: 'past',
-    why: 'Use "were" with "we" in the past.',
-  },
-  {
-    sentence: 'He ___ a footballer when he was young.',
-    answer: 'was',
-    tense: 'past',
-    why: 'Use "was" with "he" in the past.',
-  },
-  {
-    sentence: 'You ___ very helpful yesterday, thank you.',
-    answer: 'were',
-    tense: 'past',
-    why: 'Use "were" with "you" in the past.',
-  },
-  {
-    sentence: 'The film ___ really exciting.',
-    answer: 'was',
-    tense: 'past',
-    why: 'A single thing ("the film") takes "was" in the past.',
-  },
-  {
-    sentence: 'My grandparents ___ born in Wales.',
-    answer: 'were',
-    tense: 'past',
-    why: '"My grandparents" is plural, so use "were".',
-  },
-  {
-    sentence: 'It ___ raining when we left the house.',
-    answer: 'was',
-    tense: 'past',
-    why: 'Use "was" with "it" in the past.',
-  },
-  {
-    sentence: 'The shops ___ closed on Sunday.',
-    answer: 'were',
-    tense: 'past',
-    why: '"The shops" is plural, so use "were".',
-  },
-  {
-    sentence: 'I ___ born in nineteen ninety.',
-    answer: 'was',
-    tense: 'past',
-    why: 'Use "was" with "I" in the past.',
-  },
-  {
-    sentence: 'The students ___ quiet during the test.',
-    answer: 'were',
-    tense: 'past',
-    why: '"The students" is plural, so use "were".',
-  },
-  {
-    sentence: 'Last week ___ very busy at the office.',
-    answer: 'was',
-    tense: 'past',
-    why: '"Last week" is singular, so use "was".',
-  },
-
-  // ── Future ────────────────────────────────────────────────────────
-  {
-    sentence: 'I ___ at home this evening.',
-    answer: 'will be',
-    tense: 'future',
-    why: 'Use "will be" to talk about the future.',
-  },
-  {
-    sentence: 'She ___ ready in five minutes.',
-    answer: 'will be',
-    tense: 'future',
-    why: '"Will be" works for every subject in the future.',
-  },
-  {
-    sentence: 'They ___ here tomorrow morning.',
-    answer: 'will be',
-    tense: 'future',
-    why: 'Use "will be" for a future plan.',
-  },
-  {
-    sentence: 'We ___ on holiday next week.',
-    answer: 'will be',
-    tense: 'future',
-    why: 'Use "will be" to describe the future.',
-  },
-  {
-    sentence: 'It ___ sunny at the weekend, I hope.',
-    answer: 'will be',
-    tense: 'future',
-    why: 'Use "will be" for a future prediction.',
-  },
-  {
-    sentence: 'You ___ fine after a good rest.',
-    answer: 'will be',
-    tense: 'future',
-    why: 'Use "will be" for the future with "you".',
-  },
-  {
-    sentence: 'The exam ___ next Friday.',
-    answer: 'will be',
-    tense: 'future',
-    why: 'Use "will be" for a future event.',
-  },
-  {
-    sentence: 'He ___ twelve years old next month.',
-    answer: 'will be',
-    tense: 'future',
-    why: 'Use "will be" for the future with "he".',
-  },
-
-  // ── Perfect / continuous forms ────────────────────────────────────
-  {
-    sentence: 'I have ___ to London many times.',
-    answer: 'been',
-    tense: 'present',
-    why: 'After "have" or "has", use the past participle "been".',
-  },
-  {
-    sentence: 'She has ___ a teacher for ten years.',
-    answer: 'been',
-    tense: 'present',
-    why: 'After "has", use "been".',
-  },
-  {
-    sentence: 'They have ___ very busy this week.',
-    answer: 'been',
-    tense: 'present',
-    why: 'After "have", use "been".',
-  },
-  {
-    sentence: 'Have you ever ___ to Scotland?',
-    answer: 'been',
-    tense: 'present',
-    why: 'After "have", use the participle "been".',
-  },
-  {
-    sentence: 'The dog is ___ very noisy today.',
-    answer: 'being',
-    tense: 'present',
-    why: 'After "is", "are" or "am", use "being" for actions happening now.',
-  },
-  {
-    sentence: 'Why are you ___ so unkind to him?',
-    answer: 'being',
-    tense: 'present',
-    why: 'After "are", use "being" for behaviour happening now.',
-  },
-  {
-    sentence: 'You are ___ very patient with the class.',
-    answer: 'being',
-    tense: 'present',
-    why: 'After "are", use "being".',
-  },
-  {
-    sentence: 'He had ___ ill for a week before the trip.',
-    answer: 'been',
-    tense: 'past',
-    why: 'After "had", use the participle "been".',
-  },
-
-  // ── Short / contracted & negative forms ───────────────────────────
-  {
-    sentence: '___ a teacher, not a student. (I am)',
-    answer: "I'm",
-    tense: 'short form',
-    why: '"I am" is shortened to "I’m".',
-  },
-  {
-    sentence: 'She ___ very tall. (she is not)',
-    answer: "isn't",
-    tense: 'short form',
-    why: '"is not" is shortened to "isn’t".',
-  },
-  {
-    sentence: 'We ___ ready yet. (we are not)',
-    answer: "aren't",
-    tense: 'short form',
-    why: '"are not" is shortened to "aren’t".',
-  },
-  {
-    sentence: 'He ___ at school yesterday. (he was not)',
-    answer: "wasn't",
-    tense: 'short form',
-    why: '"was not" is shortened to "wasn’t".',
-  },
-  {
-    sentence: 'They ___ at home last night. (they were not)',
-    answer: "weren't",
-    tense: 'short form',
-    why: '"were not" is shortened to "weren’t".',
-  },
-  {
-    sentence: "You ___ late, don't worry. (you are not)",
-    answer: "aren't",
-    tense: 'short form',
-    why: '"are not" is shortened to "aren’t".',
-  },
-  {
-    sentence: 'It ___ very cold today. (it is not)',
-    answer: "isn't",
-    tense: 'short form',
-    why: '"is not" is shortened to "isn’t".',
-  },
-  {
-    sentence: '___ going to the party tonight. (We are)',
-    answer: "We're",
-    tense: 'short form',
-    why: '"We are" is shortened to "We’re".',
-  },
-  {
-    sentence: '___ a good friend of mine. (He is)',
-    answer: "He's",
-    tense: 'short form',
-    why: '"He is" is shortened to "He’s".',
-  },
-  {
-    sentence: '___ from a small village. (They are)',
-    answer: "They're",
-    tense: 'short form',
-    why: '"They are" is shortened to "They’re".',
-  },
-]
-
-const OPTIONS = ['am', 'is', 'are', 'was', 'were', 'will be', 'been', 'being'] as const
 
 // ─── Helpers ───────────────────────────────────────────────────────────────────
 
@@ -379,13 +43,12 @@ const TENSE_STYLES: Record<Tense, string> = {
   'short form': 'text-purple-400 border-purple-500/30 bg-purple-500/10',
 }
 
-// Build the on-screen options for an item: standard list, plus the answer
-// if it is a short form (so contractions are always selectable).
+// Build the on-screen options for an item: the bank's set, which for a short
+// form is the standard list plus the answer (so contractions are always
+// selectable), dealt in a new order each time.
 function optionsFor(item: VerbItem): string[] {
-  if (item.tense === 'short form') {
-    return shuffle(['am', 'is', 'are', 'was', 'were', 'will be', item.answer])
-  }
-  return [...OPTIONS]
+  const set = optionSet(item)
+  return item.tense === 'short form' ? shuffle(set) : set
 }
 
 // ─── Component ─────────────────────────────────────────────────────────────────
@@ -402,13 +65,14 @@ export default function ToBeConjugationPage() {
   const [totalAnswered, setTotalAnswered] = useState(0)
   const [selected, setSelected] = useState<string | null>(null)
   const [feedback, setFeedback] = useState<'correct' | 'wrong' | null>(null)
+  const round = useGameRound('to-be-conjugation')
 
   const current = items[idx] ?? null
 
   const handleStart = useCallback(() => {
-    const round = shuffle(VERB_BANK).slice(0, ROUND_SIZE)
-    setItems(round)
-    setOptions(round.length > 0 ? optionsFor(round[0]) : [])
+    const dealt = shuffle(VERB_BANK).slice(0, ROUND_SIZE)
+    setItems(dealt)
+    setOptions(dealt.length > 0 ? optionsFor(dealt[0]) : [])
     setIdx(0)
     setScore(0)
     setTotalAnswered(0)
@@ -421,6 +85,16 @@ export default function ToBeConjugationPage() {
     setGameState('finished')
   }, [])
 
+  /**
+   * A click. The sentence is marked, recorded for the student's account, and
+   * left on screen with its explanation until they choose to go on.
+   *
+   * WHAT CHANGED (16 October 2026). The game used to move to the next sentence
+   * 2.2 seconds after an answer, showing one line of rule. Each answer now
+   * comes with an explanation (src/data/games/explanations/to-be-conjugation.ts),
+   * and a student cannot read that in 2.2 seconds, so the sentence stays on
+   * screen until they choose to go on.
+   */
   const handleSelect = useCallback(
     (option: string) => {
       if (!current || feedback) return
@@ -433,21 +107,27 @@ export default function ToBeConjugationPage() {
       } else {
         setFeedback('wrong')
       }
-
-      setTimeout(() => {
-        if (idx + 1 >= items.length) {
-          setGameState('finished')
-        } else {
-          const next = idx + 1
-          setIdx(next)
-          setOptions(optionsFor(items[next]))
-          setSelected(null)
-          setFeedback(null)
-        }
-      }, 2200)
+      round.record({
+        question: BANK.key(current),
+        correct: isCorrect,
+        tag: BANK.tag?.(current),
+        chose: isCorrect ? undefined : option,
+      })
     },
-    [current, feedback, idx, items],
+    [current, feedback, round],
   )
+
+  const handleNext = useCallback(() => {
+    if (idx + 1 >= items.length) {
+      setGameState('finished')
+      return
+    }
+    const next = idx + 1
+    setIdx(next)
+    setOptions(optionsFor(items[next]))
+    setSelected(null)
+    setFeedback(null)
+  }, [idx, items])
 
   const accuracyPct = totalAnswered > 0 ? Math.round((score / totalAnswered) * 100) : 0
 
@@ -472,13 +152,14 @@ export default function ToBeConjugationPage() {
           gameId="to-be-conjugation"
           audience="eal"
           title="The Verb To Be"
-          description="Read each sentence and choose the correct form of the verb 'to be' - am, is, are, was, were, will be, been or being."
+          description="Read each sentence and choose the correct form of the verb 'to be': am, is, are, was, were, will be, been or being."
           difficulty="Foundation"
           score={score}
           maxScore={totalAnswered || items.length || ROUND_SIZE}
           onStart={handleStart}
           onFinish={handleFinish}
           gameState={gameState}
+          round={round}
         >
           {current && (
             <div className="space-y-6">
@@ -553,29 +234,44 @@ export default function ToBeConjugationPage() {
                 })}
               </div>
 
-              {/* Feedback */}
+              {/* Feedback + explanation */}
               {feedback && (
-                <div
-                  className={cn(
-                    'space-y-1 rounded-lg px-4 py-3 text-sm',
-                    feedback === 'correct'
-                      ? 'bg-emerald-500/10 text-emerald-400'
-                      : 'bg-red-500/10 text-red-400',
-                  )}
-                >
-                  <div className="flex items-center justify-center gap-2 font-medium">
-                    {feedback === 'correct' ? (
-                      <>
-                        <CheckCircle className="size-4" /> Well done - that&apos;s correct!
-                      </>
-                    ) : (
-                      <>
-                        <XCircle className="size-4" /> Not quite. The answer is{' '}
-                        <span className="font-bold">{current.answer}</span>.
-                      </>
+                <div className="space-y-3">
+                  <div
+                    className={cn(
+                      'rounded-lg px-4 py-3 text-sm',
+                      feedback === 'correct'
+                        ? 'bg-emerald-500/10 text-emerald-400'
+                        : 'bg-red-500/10 text-red-400',
                     )}
+                  >
+                    <div className="flex items-center justify-center gap-2 font-medium">
+                      {feedback === 'correct' ? (
+                        <>
+                          <CheckCircle className="size-4" /> Well done, that&apos;s correct.
+                        </>
+                      ) : (
+                        <>
+                          <XCircle className="size-4" /> Not quite. The answer is{' '}
+                          <span className="font-bold">{current.answer}</span>.
+                        </>
+                      )}
+                    </div>
                   </div>
-                  <p className="text-center text-muted-foreground">{current.why}</p>
+
+                  <AnswerExplanation
+                    game="to-be-conjugation"
+                    question={BANK.key(current)}
+                    correct={feedback === 'correct'}
+                    chosen={selected}
+                  />
+
+                  <div className="flex justify-center">
+                    <Button onClick={handleNext} autoFocus>
+                      {idx + 1 >= items.length ? 'See your results' : 'Next question'}
+                      <ArrowRight className="size-4 ms-1" />
+                    </Button>
+                  </div>
                 </div>
               )}
             </div>
