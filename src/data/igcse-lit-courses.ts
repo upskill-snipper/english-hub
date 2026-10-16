@@ -1368,6 +1368,9 @@ Aim for at least one sentence of integrated context (not separate context, but w
   // MODULE 8 - An Inspector Calls for IGCSE
   // ──────────────────────────────────────────────
   {
+    // 16 October 2026: the quotation bank put the Inspector's "Public men, Mr
+    // Birling, have responsibilities as well as privileges" in Act 1. He says it
+    // in Act 2, after Mrs Birling denies recognising the photograph.
     id: 'iglit-dp-m8',
     title: 'An Inspector Calls for IGCSE',
     duration: '60 min',
@@ -1438,8 +1441,8 @@ Aim for at least one sentence of integrated context (not separate context, but w
   <li><strong>"If men will not learn that lesson, then they will be taught it in fire and blood and anguish"</strong> (Inspector, Act 3) - warning, prophecy</li>
   <li><strong>"The fact remains that I did what I did"</strong> (Eric, Act 3) - acceptance of responsibility</li>
   <li><strong>"You're not the kind of father a chap could go to when he's in trouble"</strong> (Eric, Act 3) - family dysfunction, generational conflict</li>
-  <li><strong>"I'm ashamed of you as well - yes both of you"</strong> (Sheila, Act 3) - moral courage, generational divide</li>
-  <li><strong>"Public men, Mr Birling, have responsibilities as well as privileges"</strong> (Inspector, Act 1) - accountability</li>
+  <li><strong>"I'm ashamed of you as well - yes both of you"</strong> (Eric, Act 3) - moral courage, generational divide</li>
+  <li><strong>"Public men, Mr Birling, have responsibilities as well as privileges"</strong> (Inspector, Act 2) - accountability</li>
 </ol>
 
 <div class="common-mistake"><strong>Common Mistake:</strong> Spending too long debating whether the Inspector is "real". This is a thematic play, not a detective story. The Inspector's identity matters far less than his <em>function</em> - he is a device Priestley uses to expose the Birlings' guilt and deliver his message about social responsibility.</div>
@@ -1742,7 +1745,7 @@ Aim for at least one sentence of integrated context (not separate context, but w
   <li><strong>Sheila's introduction:</strong> "Mummy" / ring / superficiality - Priestley establishes her as a product of upper-class complacency before her transformation.</li>
   <li><strong>The Milwards incident:</strong> Jealousy, abuse of power over Eva - Sheila's complicity in the class system's exploitation of the vulnerable.</li>
   <li><strong>Sheila's awakening:</strong> "But these girls aren't cheap labour - they're people" - the moment she breaks from her family's worldview. Contrast with Mr Birling's philosophy.</li>
-  <li><strong>Sheila as moral voice:</strong> "I'm ashamed of you" - Sheila challenges her parents, aligning with the Inspector's position. Generational conflict as vehicle for Priestley's message.</li>
+  <li><strong>Sheila as moral voice:</strong> "It frightens me the way you talk" - Sheila challenges her parents, aligning with the Inspector's position. Generational conflict as vehicle for Priestley's message.</li>
   <li><strong>Sheila at the end:</strong> Her insistence that the lesson matters regardless of the Inspector's identity - she has internalised the message of collective responsibility.</li>
 </ol>
 

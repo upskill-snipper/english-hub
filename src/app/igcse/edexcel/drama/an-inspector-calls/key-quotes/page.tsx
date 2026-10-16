@@ -107,11 +107,14 @@ const quotes = [
       'Absolute denial. Priestley places the line just before the revelation about Eric, maximising ironic force.',
   },
   {
-    quote: '"the father of the child\u2026 is entirely responsible"',
+    // 16 October 2026: this card printed "the father of the child ... is
+    // entirely responsible", which is not a line in the play. These are Mrs
+    // Birling's words, as src/data/study-guides/an-inspector-calls.ts records.
+    quote: '"Then he\u2019d be entirely responsible"',
     speaker: 'Mrs Birling',
     context: 'Act 2 \u2014 unwittingly condemning Eric',
     analysis:
-      'Dramatic irony at its sharpest. Sybil demands punishment for her own son without knowing it.',
+      'Dramatic irony at its sharpest. "Entirely" leaves no share of the blame for Sybil or her committee: she lays all of it on the unknown father, her own son, without knowing it.',
   },
   {
     quote: '"I was in that state when a chap easily turns nasty"',
@@ -144,7 +147,9 @@ const quotes = [
   {
     quote: '"Public men have responsibilities as well as privileges"',
     speaker: 'Inspector Goole',
-    context: 'Act 1 \u2014 challenging Birling',
+    // 16 October 2026: this said Act 1. The Inspector says it in Act 2, after
+    // Mrs Birling denies recognising the photograph.
+    context: 'Act 2 \u2014 challenging Birling',
     analysis:
       'Reverses Birling\u2019s "every man for himself". The Inspector stages a different moral order.',
   },

@@ -162,10 +162,12 @@ export default async function WorksheetsPage() {
             Sheila: &ldquo;You mustn&apos;t try to build up a kind of wall between us and that
             girl.&rdquo; (Act 2)
           </li>
+          {/* Act 2, not Act 1 as this printed until 16 October 2026: the Inspector
+              says it after Mrs Birling denies recognising the photograph. */}
           <li className="flex gap-2">
             <span className="font-bold text-primary">3.</span>
             Inspector: &ldquo;Public men, Mr Birling, have responsibilities as well as
-            privileges.&rdquo; (Act 1)
+            privileges.&rdquo; (Act 2)
           </li>
         </ol>
       </div>

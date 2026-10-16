@@ -59,7 +59,7 @@ const keyQuotes = [
       "Refutes Birling's earlier claim that 'a man has to mind his own business'. The simple, declarative sentences carry the weight of moral certainty. Priestley positions community and collective responsibility as the antidote to the selfish individualism of the Birling class.",
   },
   {
-    quote: 'a man has to mind his own business and look after himself and his own',
+    quote: 'a man has to mind his own business ... look after himself and his own',
     speaker: 'Mr Birling',
     act: 'Act 1',
     analysis:
@@ -81,13 +81,13 @@ const keyQuotes = [
   },
   {
     quote: "I'm ashamed of you as well - yes, both of you",
-    speaker: 'Sheila Birling',
+    speaker: 'Eric Birling',
     act: 'Act 3',
     analysis:
-      "Sheila turns against her parents, representing the generational divide that is central to the play. Her willingness to accept guilt and learn from it contrasts with her parents' denial. Priestley uses the younger generation as a vehicle for hope that society can change.",
+      "Eric turns against his parents, representing the generational divide that is central to the play. 'As well' admits his own shame even as he condemns theirs, and that willingness to accept guilt contrasts with his parents' denial. Priestley uses the younger generation as a vehicle for hope that society can change.",
   },
   {
-    quote: "You're not the kind of father a chap could go to when he's in trouble",
+    quote: "You're not the kind of father a chap could go to",
     speaker: 'Eric Birling',
     act: 'Act 3',
     analysis:
@@ -115,11 +115,14 @@ const keyQuotes = [
       "Mrs Birling's prejudice against Eva is based on class snobbery rather than evidence. The non-sequitur logic (pretty, therefore undeserving of sympathy) exposes her moral blindness. Priestley shows how the upper classes dehumanise the poor to justify withholding help.",
   },
   {
-    quote: 'I was quite justified. The girl had begun by telling us a pack of lies',
+    // 16 October 2026: this card printed "I was quite justified", which is
+    // Arthur Birling's line in Act 1, run on into words no source gives her.
+    // Her own line, as src/data/study-guides/an-inspector-calls.ts records it:
+    quote: 'In the circumstances I think I was justified',
     speaker: 'Mrs Birling',
     act: 'Act 2',
     analysis:
-      "Mrs Birling refuses to accept any responsibility, hiding behind procedural justification. 'Quite justified' is clipped and self-assured. Priestley presents her as the most morally entrenched character: she represents the older generation's refusal to change.",
+      "Mrs Birling refuses to accept any responsibility, hiding behind procedural justification. 'In the circumstances' makes refusing a desperate girl sound reasonable, and 'I think I was justified' is self-assured rather than doubtful. Priestley presents her as the most morally entrenched character: she represents the older generation's refusal to change.",
   },
   {
     quote: "We all helped to kill her - and that's what matters",
@@ -129,9 +132,11 @@ const keyQuotes = [
       "Like Sheila, Eric grasps the Inspector's moral lesson. The blunt monosyllabic language ('dead', 'kill') strips away euphemism. 'That's what matters' rejects his parents' attempt to focus on reputation rather than morality. Priestley aligns the younger generation with truth and accountability.",
   },
   {
+    // 16 October 2026: this said Act 1. The Inspector says it in Act 2, after
+    // Mrs Birling denies recognising the photograph.
     quote: 'Public men, Mr Birling, have responsibilities as well as privileges',
     speaker: 'Inspector Goole',
-    act: 'Act 1',
+    act: 'Act 2',
     analysis:
       "Directly challenges the idea that wealth and status exempt people from moral obligation. The balanced structure ('responsibilities as well as privileges') implies the two should be equal. Priestley's socialist message is clear: power must come with accountability.",
   },

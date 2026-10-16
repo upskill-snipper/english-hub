@@ -170,8 +170,8 @@ export default function InspectorCallsRevisionPage() {
                   industrial city of Brumley in spring 1912. The family are celebrating the
                   engagement of Sheila Birling to Gerald Croft, a union that will merge two rival
                   businesses. Arthur Birling delivers a series of confident speeches, dismissing the
-                  possibility of war, praising the unsinkable Titanic, and insisting that &ldquo;a
-                  man has to mind his own business and look after himself and his own.&rdquo; The
+                  possibility of war, praising the unsinkable Titanic, and insisting that a man
+                  &ldquo;has to mind his own business and look after himself and his own.&rdquo; The
                   lighting is described as &ldquo;pink and intimate&rdquo; &mdash; a warm,
                   complacent glow that reflects the family&apos;s self-satisfaction.
                 </p>
@@ -373,10 +373,12 @@ export default function InspectorCallsRevisionPage() {
                     act="Act 3"
                     analysis="A prophetic warning that, for the 1945 audience, had already come true through two world wars. 'Fire and blood and anguish' evokes the trenches of WWI and the Blitz. The tricolon builds to a climax. For a 1912 setting, this is dramatic irony of devastating power."
                   />
+                  {/* Act 2, not Act 1 as this said until 16 October 2026: the Inspector
+                      says it after Mrs Birling denies recognising the photograph. */}
                   <Quote
                     text="Public men, Mr Birling, have responsibilities as well as privileges."
                     speaker="Inspector Goole"
-                    act="Act 1"
+                    act="Act 2"
                     analysis="A direct challenge to Birling's capitalist philosophy. The Inspector redefines 'public men' -- not as men of status, but as men with obligations to the public. This echoes socialist arguments about the duties of the wealthy."
                   />
                   <Quote
@@ -421,7 +423,7 @@ export default function InspectorCallsRevisionPage() {
                 </p>
                 <div className="mt-3 grid gap-3 sm:grid-cols-2">
                   <Quote
-                    text="a man has to mind his own business and look after himself and his own"
+                    text="a man has to mind his own business ... look after himself and his own"
                     speaker="Mr Birling"
                     act="Act 1"
                     analysis="Birling's capitalist philosophy distilled into a single sentence. The repetition of 'his own' emphasises selfishness. Priestley places this speech immediately before the Inspector's arrival so that it is dramatically undercut -- the Inspector's very existence disproves it."
@@ -478,7 +480,7 @@ export default function InspectorCallsRevisionPage() {
                     analysis="A dismissive phrase that reveals everything about Mrs Birling's worldview. 'That class' dehumanises Eva, reducing her to a social category. Mrs Birling cannot even conceive that a working-class girl might have genuine feelings or moral standards."
                   />
                   <Quote
-                    text="I did nothing wrong myself and I'm not going to be bullied into admitting it"
+                    text="I did nothing wrong myself ... I'm not going to be bullied into admitting it"
                     speaker="Mrs Birling"
                     act="Act 3"
                     analysis="Her stubborn refusal to accept any guilt, even after learning her son's involvement. 'Bullied' positions herself as the victim -- a privileged woman reframing moral accountability as persecution. She remains unchanged, representing Priestley's warning about the intransigence of the upper classes."
@@ -848,7 +850,7 @@ export default function InspectorCallsRevisionPage() {
                     analysis="Sheila identifies her parents' strategy: denial and regression. 'Pretending' accuses them of wilful self-deception. The generational conflict is at its sharpest here -- Sheila can see what her parents refuse to acknowledge."
                   />
                   <Quote
-                    text="The famous younger generation who know it all. And they can't even take a joke"
+                    text="The famous younger generation who know it all. ... they can't even take a joke"
                     speaker="Mr Birling"
                     act="Act 3"
                     analysis="Birling's dismissal of his children's moral seriousness. Calling the evening a 'joke' reveals his inability to treat moral questions seriously. 'The famous younger generation' is sarcastic, patronising, and ultimately self-defeating -- the audience sides with the young."
@@ -963,10 +965,11 @@ export default function InspectorCallsRevisionPage() {
                     act="Act 3"
                     analysis="Prophetic warning fulfilled by WWI and WWII. The tricolon 'fire and blood and anguish' escalates in intensity. 'Will be taught' -- the passive voice implies a force greater than human agency will enforce the lesson."
                   />
+                  {/* Act 2, not Act 1 as this said until 16 October 2026. */}
                   <Quote
                     text="Public men, Mr Birling, have responsibilities as well as privileges"
                     speaker="Inspector"
-                    act="Act 1"
+                    act="Act 2"
                     analysis="Directly challenges Birling's capitalist philosophy. The balance of 'responsibilities' against 'privileges' implies they are inseparable -- you cannot enjoy one without accepting the other."
                   />
                   <Quote
@@ -983,7 +986,7 @@ export default function InspectorCallsRevisionPage() {
                 <h3 className="text-base font-bold text-foreground mb-3">{tr(`Arthur Birling`)}</h3>
                 <div className="grid gap-3 sm:grid-cols-2">
                   <Quote
-                    text="a man has to mind his own business and look after himself and his own"
+                    text="a man has to mind his own business ... look after himself and his own"
                     speaker="Mr Birling"
                     act="Act 1"
                     analysis="Birling's capitalist creed. Repetition of 'his own' emphasises selfishness. Placed before the Inspector's entrance so it is immediately undercut. The audience is invited to reject this worldview."
@@ -1088,7 +1091,7 @@ export default function InspectorCallsRevisionPage() {
                     analysis="Blunt acceptance of collective guilt. 'We' is inclusive -- the whole family is complicit. 'All right' is grimly emphatic. Eric's directness opposes his parents' euphemisms and evasions."
                   />
                   <Quote
-                    text="you're not the kind of father a chap could go to when he's in trouble"
+                    text="you're not the kind of father a chap could go to"
                     speaker="Eric"
                     act="Act 3"
                     analysis="Exposes the Birling family's dysfunction. Despite Birling's paternalistic authority, Eric felt unable to ask for help. The family unit Birling claims to protect has failed from within."
@@ -1545,10 +1548,10 @@ export default function InspectorCallsRevisionPage() {
                   </p>
                   <p>
                     <strong>{tr(`Paragraph 3:`)}</strong> His treatment of Eva &mdash; sacking her
-                    for requesting fair wages. &ldquo;If you don&apos;t come down sharply on some of
-                    these people, they&apos;d soon be asking for the earth.&rdquo; Analyse
-                    &ldquo;these people&rdquo; (dehumanising), &ldquo;sharply&rdquo; (violent
-                    language for economic decisions).
+                    for requesting fair wages, and the defence that begins &ldquo;If you don&apos;t
+                    come down sharply on some of these people&rdquo;. Analyse &ldquo;these
+                    people&rdquo; (dehumanising), &ldquo;sharply&rdquo; (violent language for
+                    economic decisions).
                   </p>
                   <p>
                     <strong>{tr(`Paragraph 4:`)}</strong> His refusal to change. After the Inspector

@@ -66,7 +66,7 @@ const CHARACTERS = [
     description:
       "A wealthy factory owner, magistrate, and aspiring knight. He is pompous, self-important, and obsessed with status. His dramatic irony-laden speeches (dismissing the possibility of war, calling the Titanic 'unsinkable') expose his foolishness. He represents the capitalist class that Priestley criticises. He refuses to accept responsibility and is mainly concerned about a public scandal.",
     key_quotes: [
-      '"a man has to mind his own business and look after himself and his own"',
+      '"a man has to mind his own business ... look after himself and his own"',
       '"The Titanic... unsinkable, absolutely unsinkable"',
       '"a hard-headed, practical man of business"',
       '"I was quite justified"',
@@ -81,7 +81,7 @@ const CHARACTERS = [
       '"But these girls aren\'t cheap labour - they\'re people"',
       '"I know I\'m to blame - and I\'m desperately sorry"',
       '"You\'re pretending everything\'s just as it was before"',
-      '"I felt rotten about it at the time and now I feel a lot worse"',
+      '"I felt rotten about it at the time ... now I feel a lot worse"',
       '"No, he\'s giving us the rope - so that we\'ll hang ourselves"',
     ],
   },
@@ -102,7 +102,7 @@ const CHARACTERS = [
       "The Birlings' son. He is an alcoholic who forced himself on Eva, got her pregnant, and stole money to support her. Despite his serious flaws, Eric shows genuine remorse and sides with Sheila against their parents. Like Sheila, he represents the capacity of the younger generation to learn. His drinking problem hints at underlying unhappiness beneath the family's prosperous surface.",
     key_quotes: [
       '"I was in that state when a chap easily turns nasty"',
-      '"You\'re not the kind of father a chap could go to when he\'s in trouble"',
+      '"You\'re not the kind of father a chap could go to"',
       '"We did her in all right"',
       '"You don\'t understand anything. You never did"',
     ],
@@ -145,7 +145,7 @@ const THEMES = [
     quotes: [
       '"a girl of that sort"',
       '"But these girls aren\'t cheap labour - they\'re people"',
-      '"If you think you can bring any pressure to bear upon me, you\'re quite mistaken"',
+      '"If you think you can bring any pressure to bear ... you\'re quite mistaken"',
     ],
   },
   {
@@ -183,7 +183,7 @@ const THEMES = [
     description:
       "Birling represents capitalism: 'a man has to mind his own business.' The Inspector represents socialism: 'We are members of one body.' Priestley, a committed socialist, wrote the play in 1945 as Britain was electing a Labour government. He wanted the audience to reject Birling's selfish capitalism and embrace collective responsibility.",
     quotes: [
-      '"a man has to mind his own business and look after himself and his own"',
+      '"a man has to mind his own business ... look after himself and his own"',
       '"We don\'t live alone. We are members of one body"',
       '"lower costs and higher prices"',
     ],
@@ -192,7 +192,7 @@ const THEMES = [
 
 const KEY_QUOTES = [
   {
-    quote: '"a man has to mind his own business and look after himself and his own"',
+    quote: '"a man has to mind his own business ... look after himself and his own"',
     speaker: 'Birling (Act 1)',
     significance: "Birling's capitalist philosophy - rejected by the play as selfish and harmful.",
   },
@@ -256,7 +256,7 @@ const KEY_QUOTES = [
       "Eric's euphemistic confession of assault. 'That state' refers to drunkenness - his alcoholism enabled his violence.",
   },
   {
-    quote: '"You\'re not the kind of father a chap could go to when he\'s in trouble"',
+    quote: '"You\'re not the kind of father a chap could go to"',
     speaker: 'Eric (Act 3)',
     significance:
       "Eric exposes the dysfunction beneath the Birlings' respectable surface. Birling has failed as a father.",

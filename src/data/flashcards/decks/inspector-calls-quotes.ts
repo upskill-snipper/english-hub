@@ -68,7 +68,7 @@ const deck: FlashcardDeck = {
     {
       id: 'ic-11',
       front: '"I\'m ashamed of you as well - yes, both of you"',
-      back: `Act 3. Sheila to her parents. Generational reversal - the child judges the parents. "Ashamed" = strong moral condemnation. Priestley positions the younger generation as the moral future.`,
+      back: `Act 3. Eric to his parents. Generational reversal - the child judges the parents. "Ashamed" = strong moral condemnation. Priestley positions the younger generation as the moral future.`,
     },
     {
       id: 'ic-12',

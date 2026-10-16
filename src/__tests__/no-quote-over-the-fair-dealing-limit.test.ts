@@ -74,8 +74,9 @@ import { ROOT, ENTRIES, quotationsOn, sourcesUnder, type Quotation } from './hel
  * Brothers) are measured as quotations; whether they may be quoted at all is a
  * separate question.
  *
- * SITE-AUTHORED STATEMENTS. Eight places print the site's own words in
- * quotation marks: model sentences, an exam statement, an examiner's rewrite.
+ * SITE-AUTHORED STATEMENTS. Nine places print the site's own words in
+ * quotation marks: model sentences, an exam statement, two rewrites by an
+ * examiner.
  * They are listed in SITE_AUTHORED with the reason, matched by file and
  * opening words, and the list fails if an entry stops matching anything, so it
  * cannot quietly outlive the sentence it excused.
@@ -143,6 +144,11 @@ const SITE_AUTHORED: { file: string; opens: string; why: string }[] = [
   },
   {
     file: 'src/app/marking/sample/inspector-calls/page.tsx',
+    opens: 'Writing as a committed',
+    why: "the examiner's suggested rewrite of a student's sentence, introduced by e.g.",
+  },
+  {
+    file: 'src/app/marking/sample/inspector-calls/page.tsx',
     opens: 'Priestley, writing for a',
     why: "the examiner's suggested rewrite of a student's sentence",
   },
@@ -171,6 +177,19 @@ const ALIASES: Record<string, string[]> = {
   'lord-of-the-flies': ['lotf'],
   'to-kill-a-mockingbird': ['tkam'],
   'of-mice-and-men': ['omam'],
+  // Added 16 October 2026. The register's slug is 'an-inspector-calls', and
+  // eight directories of pages on the play are named otherwise, so the limit
+  // was never applied to them: the AQA, CAIE, Edexcel and OCR guides and the
+  // revision notes under src/app/resources, the marked sample under
+  // src/app/marking/sample (held only to its own "fifteen words" notice), the
+  // analysis under src/app/analysis, and a teacher's lesson plan on
+  // responsibility. They printed 32 quotations over the limit, 30 of them of
+  // 15 words, all since shortened by deletion. A 33rd was the site's own
+  // sentence, and is listed in SITE_AUTHORED.
+  'an-inspector-calls': ['inspector-calls', 'inspector-calls-responsibility'],
+  // Added 16 October 2026 for the same reason: the revision notes on the novel
+  // live under woman-in-black. They printed no quotation over the limit.
+  'the-woman-in-black': ['woman-in-black'],
 }
 
 function directories(root: string): string[] {

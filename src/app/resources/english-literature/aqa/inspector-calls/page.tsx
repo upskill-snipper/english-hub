@@ -32,7 +32,7 @@ const plotSummary = [
     title: 'The Birling Family Celebration',
     summary: [
       "The play opens in the Birling family's comfortable dining room in the industrial city of Brumley in spring 1912. They are celebrating the engagement of Sheila Birling to Gerald Croft, the son of a rival business owner. The family appears prosperous and confident.",
-      "Arthur Birling makes a series of speeches about the future, claiming the Titanic is 'unsinkable,' that war is impossible, and that a man's only responsibility is to himself and his family. He tells Gerald: 'a man has to mind his own business and look after himself and his own.'",
+      "Arthur Birling makes a series of speeches about the future, claiming the Titanic is 'unsinkable,' that war is impossible, and that a man's only responsibility is to himself and his family. He tells Gerald that a man 'has to mind his own business and look after himself and his own.'",
       'The doorbell rings. Inspector Goole arrives to investigate the death of a young woman called Eva Smith (also known as Daisy Renton), who has died by swallowing disinfectant. The Inspector begins questioning Mr Birling.',
     ],
   },
@@ -69,7 +69,7 @@ const plotSummary = [
     summary: [
       "Eric admits he met Eva at the Palace Bar, got her pregnant, and stole money from his father's business to support her. Eva refused the stolen money because she knew where it came from.",
       "Eric turns on his mother: 'You killed her - and the child she'd have had too.' The family is torn apart by mutual recrimination.",
-      "The Inspector delivers his final speech about social responsibility: 'We don't live alone. We are members of one body. We are responsible for each other.' He warns that if people do not learn this lesson, they will be 'taught it in fire and blood and anguish.'",
+      "The Inspector delivers his final speech about social responsibility: 'We are members of one body. We are responsible for each other.' He warns that if people do not learn this lesson, they will be 'taught it in fire and blood and anguish.'",
     ],
   },
   {
@@ -100,7 +100,7 @@ const characters = [
     ],
     keyQuotes: [
       "'The Titanic... unsinkable, absolutely unsinkable'",
-      "'A man has to mind his own business and look after himself and his own'",
+      "'A man has to mind his own business ... look after himself and his own'",
       "'I can't accept any responsibility'",
       "'The famous younger generation who know it all'",
     ],
@@ -159,7 +159,7 @@ const characters = [
       'Like Sheila, he accepts responsibility and cannot return to the way things were',
     ],
     keyQuotes: [
-      "'You're not the kind of father a chap could go to when he's in trouble'",
+      "'You're not the kind of father a chap could go to'",
       "'I was in that state when a chap easily turns nasty'",
       "'You killed her - and the child she'd have had too'",
       "'We did her in all right'",
@@ -261,7 +261,7 @@ const themes = [
     keyQuotes: [
       "'Girls of that class'",
       "'But these girls aren't cheap labour - they're people'",
-      "'come down sharply on some of these people, they'd soon be asking for the earth'",
+      "'come down sharply on some of these people, ... asking for the earth'",
     ],
   },
   {
@@ -331,13 +331,13 @@ const keyQuotations = [
       "Dramatic irony: the 1945 audience knows the Titanic sank in 1912. This immediately undermines Birling's authority and judgement. His absolute confidence ('absolutely') makes his wrongness even more damning. Priestley signals that everything Birling believes is wrong, including his views on social responsibility.",
   },
   {
-    quote: 'A man has to mind his own business and look after himself and his own',
+    quote: 'A man has to mind his own business ... look after himself and his own',
     speaker: 'Mr Birling (Act 1)',
     analysis:
       "Birling's individualist manifesto. This directly contradicts the Inspector's later message about collective responsibility. The repetition of 'his own' emphasises selfishness. The play systematically proves this philosophy wrong. Priestley wrote this to discredit the capitalist worldview.",
   },
   {
-    quote: "Come down sharply on some of these people, they'd soon be asking for the earth",
+    quote: 'Come down sharply on some of these people, ... asking for the earth',
     speaker: 'Mr Birling (Act 1)',
     analysis:
       "'These people' dehumanises the working class. 'Come down sharply' reveals the violence underlying class power. 'Asking for the earth' is hyperbole - Eva asked for a small wage increase. Birling's language exposes the cruelty masked by business respectability.",
@@ -379,7 +379,7 @@ const keyQuotations = [
       "Dramatic irony at its most devastating. Mrs Birling is unknowingly condemning her own son. She demands punishment for the father of Eva's child, not realising it is Eric. Her self-righteous certainty makes the revelation more powerful. This is Priestley's masterful use of dramatic structure.",
   },
   {
-    quote: "You're not the kind of father a chap could go to when he's in trouble",
+    quote: "You're not the kind of father a chap could go to",
     speaker: 'Eric (Act 3)',
     analysis:
       "Eric exposes the emotional coldness behind the Birlings' respectable facade. The family may be wealthy, but there is no genuine communication or support. This explains Eric's alcoholism and recklessness - he has no parental guidance. Priestley suggests the upper class neglects its own children as well as the poor.",
@@ -415,8 +415,10 @@ const keyQuotations = [
       "Sheila challenges her parents' attempt to dismiss the evening's events. 'Pretending' accuses them of deliberate self-deception. She understands that the moral truths revealed cannot be un-learned, regardless of whether the Inspector was real. This is the generational divide in action.",
   },
   {
+    // 16 October 2026: this said Act 1. The Inspector says it in Act 2, after
+    // Mrs Birling denies recognising the photograph.
     quote: 'Public men, Mr Birling, have responsibilities as well as privileges',
-    speaker: 'Inspector Goole (Act 1)',
+    speaker: 'Inspector Goole (Act 2)',
     analysis:
       "The Inspector directly challenges Birling's belief that power comes without obligation. 'Responsibilities as well as privileges' is the foundation of social democracy. The formal address ('Mr Birling') is controlled and authoritative. This sentence applies to every powerful institution in society.",
   },

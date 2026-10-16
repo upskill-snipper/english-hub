@@ -44,26 +44,28 @@ const keyQuotations = [
       "Sheila's recognition of the workers' humanity marks the beginning of her moral awakening. The dash creates a dramatic pause that emphasises the contrast between how the workers are treated ('cheap labour') and what they actually are ('people'). This line challenges her father's capitalist view that workers are merely a cost to be minimised.",
   },
   {
+    // 16 October 2026: this card gave the line to Mrs Birling in Act 2. It is
+    // Arthur Birling's, in Act 1, early in the Inspector's questioning about
+    // Eva's dismissal, and the analysis now reads it as his.
     quote: "It would be very awkward, wouldn't it?",
-    speaker: 'Mrs Birling (Act 2)',
+    speaker: 'Mr Birling (Act 1)',
     analysis:
-      "Mrs Birling's rhetorical question reveals her complete inability to accept social responsibility. The word 'awkward' is a striking understatement - she reduces the consequences of exploitation to mere social inconvenience. The tag question 'wouldn't it?' seeks validation from the audience, but Priestley intends the audience to reject her position entirely.",
+      "Birling's rhetorical question, asked as he refuses any responsibility for sacking Eva, reveals his complete inability to accept social responsibility. The word 'awkward' is a striking understatement - he reduces the consequences of exploitation to mere social inconvenience. The tag question 'wouldn't it?' assumes everyone will agree, but Priestley intends the audience to reject his position entirely, and the rest of the evening proves him wrong.",
   },
   {
-    quote:
-      "these cranks talk and write now, you'd think everybody has to look after everybody else",
+    quote: "cranks talk and write now, you'd think everybody has to look after everybody else",
     speaker: 'Mr Birling (Act 1)',
     analysis:
       "Birling dismisses socialist ideas as the work of 'cranks', revealing his contempt for collective responsibility. Priestley uses dramatic irony: the audience knows that Birling's confident predictions about the Titanic and no war are wrong, undermining his authority. His dismissal of social responsibility is positioned to be equally wrong.",
   },
   {
     quote: "I'm ashamed of you as well - yes both of you.",
-    speaker: 'Sheila Birling (Act 3)',
+    speaker: 'Eric Birling (Act 3)',
     analysis:
-      "Sheila turns against her parents, marking a generational divide. Her shame contrasts with her parents' refusal to accept responsibility. The emphatic 'yes both of you' shows her determination and moral clarity. She represents the younger generation that Priestley hopes will build a more just society after the war.",
+      "Eric turns on his parents when his mother says she is ashamed of him, marking a generational divide. 'As well' admits his own shame while refusing to let them escape theirs, and the emphatic 'yes both of you' leaves neither parent out. With Sheila, he represents the younger generation that Priestley hopes will build a more just society after the war.",
   },
   {
-    quote: "You're not the kind of father a chap could go to when he's in trouble",
+    quote: "You're not the kind of father a chap could go to",
     speaker: 'Eric Birling (Act 3)',
     analysis:
       "Eric's accusation exposes the failure of the Birling family unit. Despite their wealth and social standing, the family lacks genuine emotional connection. The colloquial 'chap' reveals Eric's vulnerability. Priestley suggests that capitalist values - prioritising profit and reputation over compassion - corrode even the most intimate human relationships.",
@@ -81,7 +83,7 @@ const keyQuotations = [
       "Eric's euphemistic confession about his assault on Eva Smith reveals his moral weakness. The phrase 'that state' avoids directly naming his drunkenness, and 'turns nasty' understates the violence of his actions. The passive construction ('turns') suggests a lack of agency, as though Eric is trying to distance himself from responsibility. Priestley shows how privilege enables men to avoid accountability.",
   },
   {
-    quote: 'Elaborate fine feelings and scruples that were simply absurd in a girl in her position',
+    quote: 'fine feelings and scruples that were simply absurd in a girl in her position',
     speaker: 'Mrs Birling (Act 2)',
     analysis:
       "Mrs Birling's snobbery is laid bare in this statement. She cannot accept that a working-class girl could possess moral principles ('fine feelings and scruples'). The word 'position' reveals her rigid class consciousness - she believes that moral sensibility is the preserve of the upper classes. Priestley exposes the hypocrisy: it is Mrs Birling, not Eva, who lacks moral feeling.",
@@ -93,8 +95,10 @@ const keyQuotations = [
       "Sheila's frustration with her parents' refusal to change is palpable. The tricolon ('You knew it then. You began to learn something. And now you've stopped.') builds in emotional intensity. The short sentences convey urgency. Sheila recognises that learning about one's own complicity in social injustice should lead to permanent change, not relief when the threat of exposure passes.",
   },
   {
+    // 16 October 2026: this said Act 1. The Inspector says it in Act 2, after
+    // Mrs Birling denies recognising the photograph.
     quote: 'Public men, Mr Birling, have responsibilities as well as privileges',
-    speaker: 'Inspector Goole (Act 1)',
+    speaker: 'Inspector Goole (Act 2)',
     analysis:
       "The Inspector directly challenges Birling's belief that wealth grants only privilege, not obligation. The pairing of 'responsibilities' and 'privileges' suggests they are inseparable. This reflects Priestley's socialist conviction that those with power and wealth owe a duty to the less fortunate. The formal address 'Mr Birling' maintains authority while delivering a moral rebuke.",
   },

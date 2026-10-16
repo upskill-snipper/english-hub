@@ -41,7 +41,7 @@ export const setTextFlashcardDecks: FlashcardDeck[] = [
       {
         id: 'aic-q5',
         front: '"I\'m ashamed of you as well - yes both of you."',
-        back: 'Speaker: Sheila Birling (Act 3)\n\nMeaning: Sheila turns on her parents, expressing moral disgust at their refusal to accept blame.\n\nTechniques: Repetition, dash for emphasis, inclusive condemnation, emotive language ("ashamed").\n\nThemes: Generational divide, morality, responsibility.\n\nExam point: The parent-child hierarchy inverts - Sheila now judges her parents rather than obeying them. Priestley uses this reversal to suggest that moral authority comes from conscience, not age or status. The younger generation must lead the change that the older generation refuses.',
+        back: 'Speaker: Eric Birling (Act 3)\n\nMeaning: Eric turns on his parents, ashamed of himself and of them, and condemns their refusal to accept blame.\n\nTechniques: Repetition, dash for emphasis, inclusive condemnation, emotive language ("ashamed").\n\nThemes: Generational divide, morality, responsibility.\n\nExam point: The parent-child hierarchy inverts - Eric now judges his parents rather than obeying them. Priestley uses this reversal to suggest that moral authority comes from conscience, not age or status. The younger generation must lead the change that the older generation refuses.',
       },
       {
         id: 'aic-q6',
@@ -70,9 +70,11 @@ export const setTextFlashcardDecks: FlashcardDeck[] = [
         back: 'Speaker: Mrs Birling (Act 2)\n\nMeaning: Mrs Birling refuses to accept any connection between her actions and Eva\'s death.\n\nTechniques: Dismissive noun "business," first person denial, dramatic irony.\n\nThemes: Denial, responsibility, class.\n\nExam point: The word "business" reduces Eva\'s death to an inconvenience - something Mrs Birling can distance herself from. Priestley shows that the upper classes protect themselves through wilful ignorance. Her denial becomes increasingly absurd as the Inspector reveals her direct involvement.',
       },
       {
+        // 16 October 2026: this card said Act 1. The Inspector says it in Act 2,
+        // after Mrs Birling denies recognising the photograph.
         id: 'aic-q11',
         front: '"Public men, Mr Birling, have responsibilities as well as privileges."',
-        back: 'Speaker: Inspector Goole (Act 1)\n\nMeaning: The Inspector reminds Birling that power comes with duty, not just entitlement.\n\nTechniques: Antithesis ("responsibilities" vs "privileges"), formal address, declarative.\n\nThemes: Responsibility, power, class.\n\nExam point: This directly challenges Birling\'s worldview that wealth entitles him to do as he pleases. Priestley connects this to the post-war welfare state debate - those with power and wealth must use them for the public good, not just personal gain.',
+        back: 'Speaker: Inspector Goole (Act 2)\n\nMeaning: The Inspector reminds Birling that power comes with duty, not just entitlement.\n\nTechniques: Antithesis ("responsibilities" vs "privileges"), formal address, declarative.\n\nThemes: Responsibility, power, class.\n\nExam point: This directly challenges Birling\'s worldview that wealth entitles him to do as he pleases. Priestley connects this to the post-war welfare state debate - those with power and wealth must use them for the public good, not just personal gain.',
       },
       {
         id: 'aic-q12',
