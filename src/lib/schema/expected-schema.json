@@ -169,6 +169,7 @@
     "certificates": "src/app/api/admin/stats/route.ts",
     "class_students": "src/app/api/marking/[submissionId]/review/route.ts",
     "classes": "src/app/api/admin/schools/route.ts",
+    "coach_reports": "src/app/api/games/analytics/route.ts",
     "contact_submissions": "src/app/api/contact/route.ts",
     "courses": "src/app/api/school/analytics/student-insights/route.ts",
     "creator_applications": "src/app/api/creator-apply/route.ts",
