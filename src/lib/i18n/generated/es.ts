@@ -694,7 +694,7 @@ export const ES_MESSAGES: Record<string, string> = {
     'Este correo ya está verificado - inicia sesión o restablece tu contraseña.',
   'auth.register.teacher_banner_q': '¿Eres profesor?',
   'auth.register.teacher_banner_body':
-    'Obtén planes de clase, corrección con IA y analíticas creados para educadores.',
+    'Obtén corrección de redacciones con IA, una herramienta de examinador y recursos didácticos gratuitos.',
   'auth.register.teacher_signup_cta': 'Registro de profesores',
   'auth.register.signup_takes_30s': 'El registro tarda 30 segundos. Sin tarjeta.',
   'auth.register.student_title': 'Crea tu cuenta gratuita',
@@ -702,7 +702,7 @@ export const ES_MESSAGES: Record<string, string> = {
   'auth.register.student_subtitle':
     'Sin tarjeta de crédito. Tu cuenta comienza una prueba gratuita de 7 días de todas las funciones premium.',
   'auth.register.teacher_subtitle':
-    'Ahorra más de 5 horas a la semana con la planificación de clases y la corrección con IA.',
+    'Corrección de redacciones con IA y una herramienta de examinador que da una segunda opinión sobre los exámenes de tus alumnos.',
   'auth.register.whats_included': 'Qué se incluye gratis',
   'auth.register.included_courses': 'Cursos, apuntes de repaso, tarjetas de estudio (ilimitados)',
   'auth.register.included_ai':
@@ -746,7 +746,7 @@ export const ES_MESSAGES: Record<string, string> = {
   'auth.register.trial_ready_body':
     'Tu prueba gratuita de 7 días incluye todas las funciones premium - corrección con IA, planes de clase y más.',
   'auth.register.teacher_after_verify':
-    'Una vez verificado, tendrás acceso al panel para profesores con planificación de clases, analíticas de estudiantes y herramientas de evaluación.',
+    'Una vez verificado, podrás abrir el espacio para profesores: la herramienta de examinador, la corrección de redacciones con IA, un generador de tests, apuntes de repaso y recursos didácticos. Las herramientas de IA son gratis durante 7 días y después vienen con un plan.',
   'auth.register.start_exploring': 'Empieza a explorar',
   'auth.register.terms_agreement_before': 'Al crear una cuenta, aceptas nuestros',
   'auth.register.terms_and': 'y',
@@ -771,7 +771,7 @@ export const ES_MESSAGES: Record<string, string> = {
   'auth.teacher.badge': 'Profesores',
   'auth.teacher.title': 'Crea tu cuenta gratuita de profesor',
   'auth.teacher.subtitle':
-    'Ahorra más de 5 horas a la semana con la planificación de clases y la corrección con IA. Todas las herramientas gratis durante 7 días. Mejora tu plan para uso ilimitado.',
+    'Corrige redacciones con IA, prueba la herramienta de examinador con los exámenes de tus alumnos y abre todos los cursos, gratis durante 7 días y sin tarjeta. Después, vienen con un plan.',
   'auth.teacher.pricing_line':
     'Desde £6.99/mes - prueba gratuita de 7 días, sin tarjeta para empezar',
   'auth.teacher.signup_takes': 'El registro tarda menos de un minuto. Sin tarjeta.',
@@ -791,7 +791,7 @@ export const ES_MESSAGES: Record<string, string> = {
     'para mantener tu cuenta segura - pero puedes seguir explorando mientras esperas.',
   'auth.teacher.demo_ready_lead': 'Acceso a la demo listo.',
   'auth.teacher.demo_ready_body':
-    'Tu prueba gratuita de 7 días incluye todas las funciones premium - corrección con IA, planes de clase y más. Cuando quieras mantener el acceso ilimitado, los planes empiezan desde £6.99/mes.',
+    'Tu prueba gratuita de 7 días incluye la corrección de redacciones con IA, la herramienta de examinador, las respuestas modelo y todos los módulos de los cursos, dentro de un límite de uso razonable. Para seguir usándolos después de la prueba, los planes empiezan desde £6.99 al mes.',
   'auth.teacher.open_preview': 'Abrir la vista previa del panel para profesores',
   'auth.teacher.school_interested_before':
     '¿Le interesa a tu colegio? Pide a tu jefe de departamento que',
@@ -802,12 +802,13 @@ export const ES_MESSAGES: Record<string, string> = {
   'auth.teacher.school_wide_body':
     'Registra tu colegio para una única suscripción que cubre a todo el personal.',
   'auth.teacher.learn_more': 'Más información',
-  'auth.teacher.benefit.lesson_plans': 'Más de 300 planes de clase listos para usar',
+  'auth.teacher.benefit.free_resources': 'Recursos didácticos gratuitos para consultar y descargar',
+  'auth.teacher.benefit.examiner':
+    'Una herramienta de examinador que da una segunda opinión sobre los exámenes de tus alumnos',
   'auth.teacher.benefit.ai_marking': 'Corrección de redacciones y feedback con IA',
-  'auth.teacher.benefit.analytics': 'Analíticas de estudiantes en tiempo real',
-  'auth.teacher.benefit.homework': 'Gestión de deberes',
-  'auth.teacher.benefit.mock_papers': 'Exámenes de prueba para todas las juntas',
-  'auth.teacher.benefit.free_ai_uses': 'Todas las herramientas de IA gratis durante 7 días',
+  'auth.teacher.benefit.mock_papers': 'Exámenes de prueba por junta',
+  'auth.teacher.benefit.free_ai_uses':
+    'Las herramientas de IA gratis durante 7 días, dentro de un límite de uso razonable',
   'form.fill_all_fields': 'Rellena todos los campos.',
   'form.email_required': 'El correo electrónico es obligatorio.',
   'form.full_name_required': 'El nombre completo es obligatorio.',
@@ -1290,7 +1291,8 @@ export const ES_MESSAGES: Record<string, string> = {
   'pricing.student.tagline_exams':
     'Todo lo que necesitas para aprobar tus exámenes con sobresaliente.',
   'pricing.teacher.tagline': 'Planifica, enseña y haz seguimiento - todo en un solo lugar.',
-  'pricing.teacher.tagline_hours': 'Herramientas con IA para ahorrar horas cada semana.',
+  'pricing.teacher.tagline_hours':
+    'Corrección de redacciones con IA y la herramienta de examinador, para un profesor que trabaja por su cuenta.',
   'pricing.school.tagline_unlimited': 'Estudiantes y profesores ilimitados',
   'pricing.school.custom_pricing': 'Precios personalizados',
   'pricing.school.tailored': 'Adaptado al tamaño de tu colegio',
@@ -6359,15 +6361,9 @@ export const ES_MESSAGES: Record<string, string> = {
   'pricing.feat.student_premium.progress_analytics': 'Analíticas de progreso completas',
   'pricing.feat.student_premium.exam_technique': 'Guías de técnica de examen',
   'pricing.feat.teacher_free.browse_resources': 'Explorar recursos',
-  'pricing.feat.teacher_free.view_student_list': 'Ver la lista de estudiantes',
-  'pricing.feat.teacher_premium.lesson_plans': 'Planes de clase con IA',
   'pricing.feat.teacher_premium.essay_marking': 'Corrección de redacciones con IA',
-  'pricing.feat.teacher_premium.worksheet_builder': 'Generador de fichas',
-  'pricing.feat.teacher_premium.mark_scheme_gen': 'Generador de esquemas de calificación',
-  'pricing.feat.teacher_premium.ppt_word_export': 'Exportación a PowerPoint/Word',
-  'pricing.feat.teacher_premium.class_analytics': 'Analíticas de la clase',
-  'pricing.feat.teacher_premium.student_reports': 'Informes de estudiantes',
-  'pricing.feat.teacher_premium.dept_benchmarking': 'Comparativas de departamento',
+  'pricing.feat.teacher_premium.examiner_tool': 'Herramienta de examinador',
+  'pricing.feat.teacher_premium.course_modules': 'Todos los módulos de los cursos',
   'pricing.feat.badge_free': 'Gratis',
   'pricing.feat.badge_n_free': '{n} gratis',
   'pricing.always_free_label': 'Siempre gratis',
@@ -6459,7 +6455,7 @@ export const ES_MESSAGES: Record<string, string> = {
     '£{monthly} al mes, o £{annual} al año. Con cualquier código de afiliado válido - o el código de la casa {code} - el plan anual baja a £{withCode} (un ahorro de £{savings}).',
   'pricing.faq.q4': '¿Cuánto cuesta el plan de profesor?',
   'pricing.faq.a4':
-    '£{monthly} al mes, o £{annual} al año. Los planes de profesor incluyen todo lo del plan de estudiante más planificación de clases con IA, corrección, analíticas y exportación de recursos.',
+    '£{monthly} al mes, o £{annual} al año. En la web, ahora mismo da el mismo acceso que el plan de estudiante: corrección de redacciones con IA, la herramienta de examinador, respuestas modelo y todos los módulos de los cursos. No añade clases, alumnos ni la biblioteca de planes de clase, que vienen con una plaza escolar.',
   'pricing.faq.q5': '¿Cómo funciona el descuento del código de afiliado?',
   'pricing.faq.a5':
     'Introduce cualquier código de afiliado válido en el pago para desbloquear la tarifa de estudiante de £{withCode}/año. O usa el código público {code} - funciona para todo el mundo y aplica el mismo descuento. Se aplica a la facturación anual de los planes de Estudiante y Profesor, no a la mensual.',

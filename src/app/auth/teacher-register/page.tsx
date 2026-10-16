@@ -18,7 +18,6 @@ import {
   EyeOff,
   ArrowLeft,
   BookOpen,
-  BarChart2,
   ClipboardList,
   FileText,
   Star,
@@ -40,12 +39,15 @@ import { Label } from '@/components/ui/label'
 import GoogleSignInButton from '@/components/auth/GoogleSignInButton'
 import AppleSignInButton from '@/components/auth/AppleSignInButton'
 
+// What a teacher's own sign-up gives, and nothing it does not (16 October
+// 2026). This list promised 300+ lesson plans, real-time student analytics
+// and homework management: all three are in the school portal, for staff of
+// a school with live access, and a teacher signing up here gets none of them.
 const BENEFIT_KEYS = [
-  { icon: BookOpen, key: 'auth.teacher.benefit.lesson_plans' as const },
   { icon: CheckSquare, key: 'auth.teacher.benefit.ai_marking' as const },
-  { icon: BarChart2, key: 'auth.teacher.benefit.analytics' as const },
-  { icon: ClipboardList, key: 'auth.teacher.benefit.homework' as const },
+  { icon: ClipboardList, key: 'auth.teacher.benefit.examiner' as const },
   { icon: FileText, key: 'auth.teacher.benefit.mock_papers' as const },
+  { icon: BookOpen, key: 'auth.teacher.benefit.free_resources' as const },
   { icon: Star, key: 'auth.teacher.benefit.free_ai_uses' as const },
 ]
 

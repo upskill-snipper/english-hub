@@ -28,8 +28,6 @@ import {
   Brain,
   ClipboardList,
   PenTool,
-  Presentation,
-  Download,
   Zap,
   ChevronDown,
   ArrowRight,
@@ -62,20 +60,22 @@ const STUDENT_PREMIUM_FEATURE_KEYS = [
   { key: 'pricing.feat.student_premium.exam_technique', icon: Target },
 ]
 
+// The Teacher card lists what a Teacher plan unlocks, and nothing else
+// (corrected 16 October 2026). It listed a student list, AI lesson plans, a
+// worksheet builder, a mark scheme generator, PowerPoint and Word export,
+// class analytics, student reports and department benchmarking. The student
+// list, worksheets, analytics and reports are school-portal features for staff
+// of a school with live access; the AI lesson planner, the generator and the
+// benchmarking do not exist; and the PowerPoint download needs no plan. On the
+// web a Teacher plan unlocks the same as a Student plan (course-access.ts).
 const TEACHER_FREE_FEATURE_KEYS = [
   { key: 'pricing.feat.teacher_free.browse_resources', included: true },
-  { key: 'pricing.feat.teacher_free.view_student_list', included: true },
 ]
 
 const TEACHER_PREMIUM_FEATURE_KEYS = [
-  { key: 'pricing.feat.teacher_premium.lesson_plans', icon: Layers },
   { key: 'pricing.feat.teacher_premium.essay_marking', icon: PenTool },
-  { key: 'pricing.feat.teacher_premium.worksheet_builder', icon: FileText },
-  { key: 'pricing.feat.teacher_premium.mark_scheme_gen', icon: ClipboardList },
-  { key: 'pricing.feat.teacher_premium.ppt_word_export', icon: Download },
-  { key: 'pricing.feat.teacher_premium.class_analytics', icon: BarChart3 },
-  { key: 'pricing.feat.teacher_premium.student_reports', icon: Users },
-  { key: 'pricing.feat.teacher_premium.dept_benchmarking', icon: Presentation },
+  { key: 'pricing.feat.teacher_premium.examiner_tool', icon: ClipboardList },
+  { key: 'pricing.feat.teacher_premium.course_modules', icon: Layers },
 ]
 
 const SCHOOL_RECEIVES_KEYS = [

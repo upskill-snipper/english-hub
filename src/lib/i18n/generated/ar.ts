@@ -666,7 +666,7 @@ export const AR_MESSAGES: Record<string, string> = {
   'auth.resend.already_verified': 'هذا الإيميل متأكد من قبل - سجّل دخول أو غيّر الرمز السري.',
   'auth.register.teacher_banner_q': 'أنت معلم؟',
   'auth.register.teacher_banner_body':
-    'خذ خطط دروس وتصحيح بالذكاء الاصطناعي وتحليلات مصممة للمعلمين.',
+    'خذ تصحيح المقالات بالذكاء الاصطناعي وأداة المصحّح وموارد تدريس مجانية.',
   'auth.register.teacher_signup_cta': 'تسجيل المعلمين',
   'auth.register.signup_takes_30s': 'التسجيل يستغرق ٣٠ ثانية. من غير بطاقة.',
   'auth.register.student_title': 'سوّ حسابك المجاني',
@@ -674,7 +674,7 @@ export const AR_MESSAGES: Record<string, string> = {
   'auth.register.student_subtitle':
     'من غير بطاقة. حسابك يبدأ بتجربة مجانية ٧ أيام لكل ميزات البريميوم.',
   'auth.register.teacher_subtitle':
-    'وفّر ٥ ساعات أو أكثر في الأسبوع مع تخطيط الدروس والتصحيح بالذكاء الاصطناعي.',
+    'تصحيح المقالات بالذكاء الاصطناعي، وأداة مصحّح تعطيك رأي ثاني في أوراق طلابك.',
   'auth.register.whats_included': 'شنو يدخل ببلاش',
   'auth.register.included_courses': 'كورسات وملخصات مراجعة وبطاقات (بلا حدود)',
   'auth.register.included_ai':
@@ -715,7 +715,7 @@ export const AR_MESSAGES: Record<string, string> = {
   'auth.register.trial_ready_body':
     'تجربتك المجانية ٧ أيام تشمل كل ميزات البريميوم - التصحيح بالذكاء الاصطناعي وخطط الدروس وأكثر.',
   'auth.register.teacher_after_verify':
-    'بعد ما تأكد الإيميل، بتدخل لوحة المعلم اللي فيها تخطيط الدروس وتحليلات الطلاب وأدوات التقييم.',
+    'بعد ما تأكد الإيميل، تقدر تفتح صفحة المعلم: أداة المصحّح وتصحيح المقالات بالذكاء الاصطناعي ومنشئ الاختبارات وملخصات المراجعة وموارد التدريس. أدوات الذكاء الاصطناعي ببلاش لمدة ٧ أيام، وبعدها تكون مع الباقة.',
   'auth.register.start_exploring': 'ابدأ تتصفح',
   'auth.register.terms_agreement_before': 'بإنشاء الحساب، أنت توافق على',
   'auth.register.terms_and': 'و',
@@ -737,7 +737,7 @@ export const AR_MESSAGES: Record<string, string> = {
   'auth.teacher.badge': 'المعلمين',
   'auth.teacher.title': 'ابدأ حساب المعلم المجاني',
   'auth.teacher.subtitle':
-    'وفّر ٥ ساعات أو أكثر بالأسبوع مع تخطيط الدروس والتصحيح بالذكاء الاصطناعي. كل الأدوات ببلاش لمدة ٧ أيام. اشترك للوصول بلا حدود.',
+    'صحّح المقالات بالذكاء الاصطناعي، وجرّب أداة المصحّح على أوراق طلابك، وافتح كل الكورسات، ببلاش لمدة ٧ أيام وبدون بطاقة. بعدها تكون مع الباقة.',
   'auth.teacher.pricing_line': 'من ٦٫٩٩ جنيه بالشهر - تجربة مجانية ٧ أيام، ما تحتاج بطاقة للبداية',
   'auth.teacher.signup_takes': 'التسجيل يستغرق أقل من دقيقة. من غير بطاقة.',
   'auth.teacher.your_details': 'بياناتك',
@@ -754,7 +754,7 @@ export const AR_MESSAGES: Record<string, string> = {
   'auth.teacher.welcome_suffix': 'عشان نحافظ على أمان حسابك - بس تقدر تكمّل تتصفح وأنت تنتظر.',
   'auth.teacher.demo_ready_lead': 'الوصول للديمو جاهز.',
   'auth.teacher.demo_ready_body':
-    'تجربتك المجانية ٧ أيام تشمل كل ميزات البريميوم - التصحيح بالذكاء الاصطناعي وخطط الدروس وأكثر. ولما تكون جاهز تكمّل بوصول بلا حدود، الباقات تبدأ من ٦٫٩٩ جنيه بالشهر.',
+    'تجربتك المجانية ٧ أيام تشمل تصحيح المقالات بالذكاء الاصطناعي وأداة المصحّح والإجابات النموذجية وكل وحدات الكورسات، ضمن حد استخدام معقول. وعشان تكمّل تستخدمها بعد التجربة، الباقات تبدأ من ٦٫٩٩ جنيه بالشهر.',
   'auth.teacher.open_preview': 'افتح معاينة لوحة المعلم',
   'auth.teacher.school_interested_before': 'مدرستك مهتمة؟ كلّم رئيس القسم عندك عشان',
   'auth.teacher.founding_schools_link': 'يعرف عن برنامج المدارس المؤسِّسة',
@@ -763,12 +763,12 @@ export const AR_MESSAGES: Record<string, string> = {
   'auth.teacher.need_school_wide': 'تحتاج وصول على مستوى المدرسة؟',
   'auth.teacher.school_wide_body': 'سجّل مدرستك باشتراك واحد يغطي كل الموظفين.',
   'auth.teacher.learn_more': 'اعرف أكثر',
-  'auth.teacher.benefit.lesson_plans': 'أكثر من ٣٠٠ خطة درس جاهزة',
+  'auth.teacher.benefit.free_resources': 'موارد تدريس مجانية تتصفحها وتنزّلها',
+  'auth.teacher.benefit.examiner': 'أداة مصحّح تعطيك رأي ثاني في أوراق طلابك',
   'auth.teacher.benefit.ai_marking': 'تصحيح مقالات وملاحظات بالذكاء الاصطناعي',
-  'auth.teacher.benefit.analytics': 'تحليلات الطلاب في الوقت الفعلي',
-  'auth.teacher.benefit.homework': 'إدارة الواجبات',
-  'auth.teacher.benefit.mock_papers': 'امتحانات تجريبية لكل البوردات',
-  'auth.teacher.benefit.free_ai_uses': 'كل أدوات الذكاء الاصطناعي ببلاش لمدة ٧ أيام',
+  'auth.teacher.benefit.mock_papers': 'امتحانات تجريبية حسب البورد',
+  'auth.teacher.benefit.free_ai_uses':
+    'أدوات الذكاء الاصطناعي ببلاش لمدة ٧ أيام، ضمن حد استخدام معقول',
   'form.fill_all_fields': 'لو سمحت عبّي كل الخانات.',
   'form.email_required': 'الإيميل مطلوب.',
   'form.full_name_required': 'الاسم الكامل مطلوب.',
@@ -1223,7 +1223,8 @@ export const AR_MESSAGES: Record<string, string> = {
   'pricing.student.tagline': 'وصول كامل للطلاب - ألغِ أي وقت تبغى.',
   'pricing.student.tagline_exams': 'كل اللي تحتاجه عشان تتفوّق في امتحاناتك.',
   'pricing.teacher.tagline': 'خطّط ودرّس وتابع - كله في مكان واحد.',
-  'pricing.teacher.tagline_hours': 'أدوات ذكاء اصطناعي توفّر لك ساعات كل أسبوع.',
+  'pricing.teacher.tagline_hours':
+    'تصحيح المقالات بالذكاء الاصطناعي وأداة المصحّح، للمعلم اللي يشتغل بنفسه.',
   'pricing.school.tagline_unlimited': 'طلاب ومعلمين بلا حدود',
   'pricing.school.custom_pricing': 'تسعير مخصّص',
   'pricing.school.tailored': 'مفصّل حسب حجم مدرستك',
@@ -6071,15 +6072,9 @@ export const AR_MESSAGES: Record<string, string> = {
   'pricing.feat.student_premium.progress_analytics': 'تحليلات تقدّم كاملة',
   'pricing.feat.student_premium.exam_technique': 'أدلّة أسلوب الامتحان',
   'pricing.feat.teacher_free.browse_resources': 'تصفّح الموارد',
-  'pricing.feat.teacher_free.view_student_list': 'شوف قائمة الطلاب',
-  'pricing.feat.teacher_premium.lesson_plans': 'خطط دروس بالذكاء الاصطناعي',
   'pricing.feat.teacher_premium.essay_marking': 'تصحيح المقالات بالذكاء الاصطناعي',
-  'pricing.feat.teacher_premium.worksheet_builder': 'منشئ أوراق العمل',
-  'pricing.feat.teacher_premium.mark_scheme_gen': 'منشئ سلم العلامات',
-  'pricing.feat.teacher_premium.ppt_word_export': 'تصدير PowerPoint و Word',
-  'pricing.feat.teacher_premium.class_analytics': 'تحليلات الصف',
-  'pricing.feat.teacher_premium.student_reports': 'تقارير الطلاب',
-  'pricing.feat.teacher_premium.dept_benchmarking': 'مقارنة أداء القسم',
+  'pricing.feat.teacher_premium.examiner_tool': 'أداة المصحّح',
+  'pricing.feat.teacher_premium.course_modules': 'كل وحدات الكورسات',
   'pricing.feat.badge_free': 'ببلاش',
   'pricing.feat.badge_n_free': '{n} ببلاش',
   'pricing.always_free_label': 'ببلاش دايماً',
@@ -6165,7 +6160,7 @@ export const AR_MESSAGES: Record<string, string> = {
     '£{monthly} شهرياً، أو £{annual} سنوياً. ومع أي كود شراكة صالح - أو الكود العام {code} - الخطة السنوية تنزل لـ £{withCode} (توفير £{savings}).',
   'pricing.faq.q4': 'شنو سعر خطة المعلم؟',
   'pricing.faq.a4':
-    '£{monthly} شهرياً، أو £{annual} سنوياً. خطط المعلم تشمل كل اللي في خطة الطالب بالإضافة للتخطيط الذكي للدروس والتصحيح والتحليلات وتصدير الموارد.',
+    '£{monthly} شهرياً، أو £{annual} سنوياً. على الموقع حالياً تعطيك نفس اللي تعطيه خطة الطالب: تصحيح المقالات بالذكاء الاصطناعي وأداة المصحّح والإجابات النموذجية وكل وحدات الكورسات. وما تضيف صفوف أو طلاب أو مكتبة خطط الدروس، هذي تجي مع مكان المدرسة.',
   'pricing.faq.q5': 'شلون يشتغل خصم كود الشراكة؟',
   'pricing.faq.a5':
     'ادخل أي كود شراكة صالح عند الدفع عشان تفتح سعر الطالب £{withCode} سنوياً. أو استخدم الكود العام {code} - يشتغل للكل ويطبّق نفس الخصم. ينطبق على الفوترة السنوية لخطط الطالب والمعلم، مو على الشهرية.',

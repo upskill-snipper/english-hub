@@ -2310,10 +2310,13 @@ export const DICTIONARY: Dictionary = {
     ar: 'أنت معلم؟',
     es: '¿Eres profesor?',
   },
+  // 16 October 2026: was "Get lesson plans, AI marking, and analytics built
+  // for educators". The lesson-plan library and class analytics are in the
+  // school portal only; a teacher's own account gets neither.
   'auth.register.teacher_banner_body': {
-    en: 'Get lesson plans, AI marking, and analytics built for educators.',
-    ar: 'خذ خطط دروس وتصحيح بالذكاء الاصطناعي وتحليلات مصممة للمعلمين.',
-    es: 'Obtén planes de clase, corrección con IA y analíticas creados para educadores.',
+    en: 'Get AI essay marking, an examiner marking tool and free teaching resources.',
+    ar: 'خذ تصحيح المقالات بالذكاء الاصطناعي وأداة المصحّح وموارد تدريس مجانية.',
+    es: 'Obtén corrección de redacciones con IA, una herramienta de examinador y recursos didácticos gratuitos.',
   },
   'auth.register.teacher_signup_cta': {
     en: 'Teacher sign-up',
@@ -2345,10 +2348,13 @@ export const DICTIONARY: Dictionary = {
     ar: 'من غير بطاقة. حسابك يبدأ بتجربة مجانية ٧ أيام لكل ميزات البريميوم.',
     es: 'Sin tarjeta de crédito. Tu cuenta comienza una prueba gratuita de 7 días de todas las funciones premium.',
   },
+  // 16 October 2026: was "Save 5+ hours per week with AI lesson planning and
+  // marking." No figure for hours saved has a source, and there is no AI
+  // lesson planner: the lesson-plan library is in the school portal only.
   'auth.register.teacher_subtitle': {
-    en: 'Save 5+ hours per week with AI lesson planning and marking.',
-    ar: 'وفّر ٥ ساعات أو أكثر في الأسبوع مع تخطيط الدروس والتصحيح بالذكاء الاصطناعي.',
-    es: 'Ahorra más de 5 horas a la semana con la planificación de clases y la corrección con IA.',
+    en: "AI essay marking, and an examiner tool that gives a second opinion on your pupils' scripts.",
+    ar: 'تصحيح المقالات بالذكاء الاصطناعي، وأداة مصحّح تعطيك رأي ثاني في أوراق طلابك.',
+    es: 'Corrección de redacciones con IA y una herramienta de examinador que da una segunda opinión sobre los exámenes de tus alumnos.',
   },
   'auth.register.whats_included': {
     en: "What's included free",
@@ -2461,10 +2467,13 @@ export const DICTIONARY: Dictionary = {
     ar: 'تجربتك المجانية ٧ أيام تشمل كل ميزات البريميوم - التصحيح بالذكاء الاصطناعي وخطط الدروس وأكثر.',
     es: 'Tu prueba gratuita de 7 días incluye todas las funciones premium - corrección con IA, planes de clase y más.',
   },
+  // 16 October 2026: promised "lesson planning, student analytics, and
+  // assessment tools". The teacher hub (src/app/dashboard/teacher/page.tsx)
+  // holds the tools below; its analytics page was removed on 18 August.
   'auth.register.teacher_after_verify': {
-    en: "Once verified, you'll have access to the Teacher Dashboard with lesson planning, student analytics, and assessment tools.",
-    ar: 'بعد ما تأكد الإيميل، بتدخل لوحة المعلم اللي فيها تخطيط الدروس وتحليلات الطلاب وأدوات التقييم.',
-    es: 'Una vez verificado, tendrás acceso al panel para profesores con planificación de clases, analíticas de estudiantes y herramientas de evaluación.',
+    en: 'Once verified, you can open the teacher hub: the examiner marking tool, AI essay marking, a test builder, revision notes and teaching resources. The AI tools are free for 7 days, then come with a plan.',
+    ar: 'بعد ما تأكد الإيميل، تقدر تفتح صفحة المعلم: أداة المصحّح وتصحيح المقالات بالذكاء الاصطناعي ومنشئ الاختبارات وملخصات المراجعة وموارد التدريس. أدوات الذكاء الاصطناعي ببلاش لمدة ٧ أيام، وبعدها تكون مع الباقة.',
+    es: 'Una vez verificado, podrás abrir el espacio para profesores: la herramienta de examinador, la corrección de redacciones con IA, un generador de tests, apuntes de repaso y recursos didácticos. Las herramientas de IA son gratis durante 7 días y después vienen con un plan.',
   },
   'auth.register.start_exploring': {
     en: 'Start exploring',
@@ -2544,10 +2553,14 @@ export const DICTIONARY: Dictionary = {
     ar: 'ابدأ حساب المعلم المجاني',
     es: 'Crea tu cuenta gratuita de profesor',
   },
+  // 16 October 2026: was "Save 5+ hours per week with AI lesson planning and
+  // marking. Every tool free for 7 days. Upgrade for unlimited." The hours had
+  // no source, there is no AI lesson planner, and every plan is capped
+  // (src/lib/usage/limits.ts), so nothing is unlimited.
   'auth.teacher.subtitle': {
-    en: 'Save 5+ hours per week with AI lesson planning and marking. Every tool free for 7 days. Upgrade for unlimited.',
-    ar: 'وفّر ٥ ساعات أو أكثر بالأسبوع مع تخطيط الدروس والتصحيح بالذكاء الاصطناعي. كل الأدوات ببلاش لمدة ٧ أيام. اشترك للوصول بلا حدود.',
-    es: 'Ahorra más de 5 horas a la semana con la planificación de clases y la corrección con IA. Todas las herramientas gratis durante 7 días. Mejora tu plan para uso ilimitado.',
+    en: "Mark essays with AI, try the examiner marking tool on your pupils' scripts and open every course, free for 7 days with no card. After that, they come with a plan.",
+    ar: 'صحّح المقالات بالذكاء الاصطناعي، وجرّب أداة المصحّح على أوراق طلابك، وافتح كل الكورسات، ببلاش لمدة ٧ أيام وبدون بطاقة. بعدها تكون مع الباقة.',
+    es: 'Corrige redacciones con IA, prueba la herramienta de examinador con los exámenes de tus alumnos y abre todos los cursos, gratis durante 7 días y sin tarjeta. Después, vienen con un plan.',
   },
   'auth.teacher.pricing_line': {
     en: 'From £6.99/month - 7-day free trial, no card required to start',
@@ -2615,10 +2628,12 @@ export const DICTIONARY: Dictionary = {
     ar: 'الوصول للديمو جاهز.',
     es: 'Acceso a la demo listo.',
   },
+  // 16 October 2026: no longer names lesson plans (school portal only) or
+  // "unlimited access" (every plan is capped).
   'auth.teacher.demo_ready_body': {
-    en: "Your 7-day free trial includes every premium feature - AI marking, lesson plans, and more. When you're ready to keep unlimited access, plans start from £6.99/month.",
-    ar: 'تجربتك المجانية ٧ أيام تشمل كل ميزات البريميوم - التصحيح بالذكاء الاصطناعي وخطط الدروس وأكثر. ولما تكون جاهز تكمّل بوصول بلا حدود، الباقات تبدأ من ٦٫٩٩ جنيه بالشهر.',
-    es: 'Tu prueba gratuita de 7 días incluye todas las funciones premium - corrección con IA, planes de clase y más. Cuando quieras mantener el acceso ilimitado, los planes empiezan desde £6.99/mes.',
+    en: 'Your 7-day free trial includes AI essay marking, the examiner marking tool, model answers and every course module, within a fair-use limit. To keep using them after the trial, plans start from £6.99 a month.',
+    ar: 'تجربتك المجانية ٧ أيام تشمل تصحيح المقالات بالذكاء الاصطناعي وأداة المصحّح والإجابات النموذجية وكل وحدات الكورسات، ضمن حد استخدام معقول. وعشان تكمّل تستخدمها بعد التجربة، الباقات تبدأ من ٦٫٩٩ جنيه بالشهر.',
+    es: 'Tu prueba gratuita de 7 días incluye la corrección de redacciones con IA, la herramienta de examinador, las respuestas modelo y todos los módulos de los cursos, dentro de un límite de uso razonable. Para seguir usándolos después de la prueba, los planes empiezan desde £6.99 al mes.',
   },
   'auth.teacher.open_preview': {
     en: 'Open the teacher dashboard preview',
@@ -2656,35 +2671,36 @@ export const DICTIONARY: Dictionary = {
     es: 'Registra tu colegio para una única suscripción que cubre a todo el personal.',
   },
   'auth.teacher.learn_more': { en: 'Learn more', ar: 'اعرف أكثر', es: 'Más información' },
-  'auth.teacher.benefit.lesson_plans': {
-    en: '300+ ready-made lesson plans',
-    ar: 'أكثر من ٣٠٠ خطة درس جاهزة',
-    es: 'Más de 300 planes de clase listos para usar',
+  // The teacher sign-up's benefit list, corrected 16 October 2026. It said
+  // "300+ ready-made lesson plans", "Real-time student analytics", "Homework
+  // management" and "Mock exam papers for all boards". The lesson plans,
+  // class analytics and homework are all in the school portal, for staff of a
+  // school with live access, and none comes with a teacher's own sign-up; the
+  // mock papers do not cover every board.
+  'auth.teacher.benefit.free_resources': {
+    en: 'Free teaching resources to browse and download',
+    ar: 'موارد تدريس مجانية تتصفحها وتنزّلها',
+    es: 'Recursos didácticos gratuitos para consultar y descargar',
+  },
+  'auth.teacher.benefit.examiner': {
+    en: "An examiner tool that gives a second opinion on your pupils' scripts",
+    ar: 'أداة مصحّح تعطيك رأي ثاني في أوراق طلابك',
+    es: 'Una herramienta de examinador que da una segunda opinión sobre los exámenes de tus alumnos',
   },
   'auth.teacher.benefit.ai_marking': {
     en: 'AI essay marking and feedback',
     ar: 'تصحيح مقالات وملاحظات بالذكاء الاصطناعي',
     es: 'Corrección de redacciones y feedback con IA',
   },
-  'auth.teacher.benefit.analytics': {
-    en: 'Real-time student analytics',
-    ar: 'تحليلات الطلاب في الوقت الفعلي',
-    es: 'Analíticas de estudiantes en tiempo real',
-  },
-  'auth.teacher.benefit.homework': {
-    en: 'Homework management',
-    ar: 'إدارة الواجبات',
-    es: 'Gestión de deberes',
-  },
   'auth.teacher.benefit.mock_papers': {
-    en: 'Mock exam papers for all boards',
-    ar: 'امتحانات تجريبية لكل البوردات',
-    es: 'Exámenes de prueba para todas las juntas',
+    en: 'Mock exam papers by board',
+    ar: 'امتحانات تجريبية حسب البورد',
+    es: 'Exámenes de prueba por junta',
   },
   'auth.teacher.benefit.free_ai_uses': {
-    en: 'Every AI tool free for 7 days',
-    ar: 'كل أدوات الذكاء الاصطناعي ببلاش لمدة ٧ أيام',
-    es: 'Todas las herramientas de IA gratis durante 7 días',
+    en: 'The AI tools free for 7 days, within a fair-use limit',
+    ar: 'أدوات الذكاء الاصطناعي ببلاش لمدة ٧ أيام، ضمن حد استخدام معقول',
+    es: 'Las herramientas de IA gratis durante 7 días, dentro de un límite de uso razonable',
   },
 
   // ─── Form additions (validation, placeholders, months) ───────────
@@ -4403,10 +4419,12 @@ export const DICTIONARY: Dictionary = {
     ar: 'خطّط ودرّس وتابع - كله في مكان واحد.',
     es: 'Planifica, enseña y haz seguimiento - todo en un solo lugar.',
   },
+  // 16 October 2026: was "AI-powered tools to save hours every week", a
+  // figure with no source. The key keeps its name so the page needs no rename.
   'pricing.teacher.tagline_hours': {
-    en: 'AI-powered tools to save hours every week.',
-    ar: 'أدوات ذكاء اصطناعي توفّر لك ساعات كل أسبوع.',
-    es: 'Herramientas con IA para ahorrar horas cada semana.',
+    en: 'AI essay marking and the examiner marking tool, for a teacher working on their own.',
+    ar: 'تصحيح المقالات بالذكاء الاصطناعي وأداة المصحّح، للمعلم اللي يشتغل بنفسه.',
+    es: 'Corrección de redacciones con IA y la herramienta de examinador, para un profesor que trabaja por su cuenta.',
   },
   'pricing.school.tagline_unlimited': {
     en: 'Unlimited students + teachers',
@@ -21102,50 +21120,29 @@ export const DICTIONARY: Dictionary = {
     ar: 'تصفّح الموارد',
     es: 'Explorar recursos',
   },
-  'pricing.feat.teacher_free.view_student_list': {
-    en: 'View student list',
-    ar: 'شوف قائمة الطلاب',
-    es: 'Ver la lista de estudiantes',
-  },
-  'pricing.feat.teacher_premium.lesson_plans': {
-    en: 'AI Lesson Plans',
-    ar: 'خطط دروس بالذكاء الاصطناعي',
-    es: 'Planes de clase con IA',
-  },
+  // The Teacher card, corrected 16 October 2026. It listed "View student
+  // list", "AI Lesson Plans", "Worksheet Builder", "Mark Scheme Generator",
+  // "PowerPoint/Word Export", "Class Analytics", "Student Reports" and
+  // "Department Benchmarking". The student list, worksheets, class analytics
+  // and reports are in the school portal only; there is no AI lesson planner,
+  // no mark scheme generator and no benchmarking; and the PowerPoint download
+  // on /for-teachers/free-resources needs no plan. On the web a Teacher plan unlocks exactly
+  // what a Student plan does (src/lib/course-access.ts), so the card lists
+  // only that.
   'pricing.feat.teacher_premium.essay_marking': {
     en: 'AI Essay Marking',
     ar: 'تصحيح المقالات بالذكاء الاصطناعي',
     es: 'Corrección de redacciones con IA',
   },
-  'pricing.feat.teacher_premium.worksheet_builder': {
-    en: 'Worksheet Builder',
-    ar: 'منشئ أوراق العمل',
-    es: 'Generador de fichas',
+  'pricing.feat.teacher_premium.examiner_tool': {
+    en: 'Examiner Marking Tool',
+    ar: 'أداة المصحّح',
+    es: 'Herramienta de examinador',
   },
-  'pricing.feat.teacher_premium.mark_scheme_gen': {
-    en: 'Mark Scheme Generator',
-    ar: 'منشئ سلم العلامات',
-    es: 'Generador de esquemas de calificación',
-  },
-  'pricing.feat.teacher_premium.ppt_word_export': {
-    en: 'PowerPoint/Word Export',
-    ar: 'تصدير PowerPoint و Word',
-    es: 'Exportación a PowerPoint/Word',
-  },
-  'pricing.feat.teacher_premium.class_analytics': {
-    en: 'Class Analytics',
-    ar: 'تحليلات الصف',
-    es: 'Analíticas de la clase',
-  },
-  'pricing.feat.teacher_premium.student_reports': {
-    en: 'Student Reports',
-    ar: 'تقارير الطلاب',
-    es: 'Informes de estudiantes',
-  },
-  'pricing.feat.teacher_premium.dept_benchmarking': {
-    en: 'Department Benchmarking',
-    ar: 'مقارنة أداء القسم',
-    es: 'Comparativas de departamento',
+  'pricing.feat.teacher_premium.course_modules': {
+    en: 'Every Course Module',
+    ar: 'كل وحدات الكورسات',
+    es: 'Todos los módulos de los cursos',
   },
   'pricing.feat.badge_free': { en: 'Free', ar: 'ببلاش', es: 'Gratis' },
   'pricing.feat.badge_n_free': { en: '{n} free', ar: '{n} ببلاش', es: '{n} gratis' },
@@ -21431,10 +21428,14 @@ export const DICTIONARY: Dictionary = {
     ar: 'شنو سعر خطة المعلم؟',
     es: '¿Cuánto cuesta el plan de profesor?',
   },
+  // 16 October 2026: said the Teacher plan adds "AI lesson planning, marking,
+  // analytics, and resource export" to the Student plan. It adds nothing on
+  // the web (src/lib/course-access.ts answers 'pro' for both), and classes,
+  // pupils and the lesson-plan library come only with a school place.
   'pricing.faq.a4': {
-    en: '£{monthly} per month, or £{annual} per year. Teacher plans include everything in Student plus AI lesson planning, marking, analytics, and resource export.',
-    ar: '£{monthly} شهرياً، أو £{annual} سنوياً. خطط المعلم تشمل كل اللي في خطة الطالب بالإضافة للتخطيط الذكي للدروس والتصحيح والتحليلات وتصدير الموارد.',
-    es: '£{monthly} al mes, o £{annual} al año. Los planes de profesor incluyen todo lo del plan de estudiante más planificación de clases con IA, corrección, analíticas y exportación de recursos.',
+    en: '£{monthly} per month, or £{annual} per year. On the website it currently gives the same access as the Student plan: AI essay marking, the examiner marking tool, model answers and every course module. It does not add classes, pupils or the lesson-plan library, which come with a school place.',
+    ar: '£{monthly} شهرياً، أو £{annual} سنوياً. على الموقع حالياً تعطيك نفس اللي تعطيه خطة الطالب: تصحيح المقالات بالذكاء الاصطناعي وأداة المصحّح والإجابات النموذجية وكل وحدات الكورسات. وما تضيف صفوف أو طلاب أو مكتبة خطط الدروس، هذي تجي مع مكان المدرسة.',
+    es: '£{monthly} al mes, o £{annual} al año. En la web, ahora mismo da el mismo acceso que el plan de estudiante: corrección de redacciones con IA, la herramienta de examinador, respuestas modelo y todos los módulos de los cursos. No añade clases, alumnos ni la biblioteca de planes de clase, que vienen con una plaza escolar.',
   },
   'pricing.faq.q5': {
     en: 'How does the affiliate code discount work?',

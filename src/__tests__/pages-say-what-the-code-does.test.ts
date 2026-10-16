@@ -145,3 +145,60 @@ describe('the /revision sidebar shows a target grade only when the student set o
     inEveryLocale('revision_page.pill.set_target')
   })
 })
+
+// ─── D11: the teacher sign-up and the /pricing Teacher card ─────────────────
+
+describe('a teacher is sold only what a Teacher plan gives', () => {
+  // A sign-up promising lesson plans, analytics and homework that live in the
+  // school portal, hours saved with no source, and "unlimited" use of capped
+  // tools. On the web a Teacher plan unlocks what a Student plan does.
+  const OVERCLAIM = /300\+|\b5\+|save hours|hours every week|unlimited|ilimitad|بلا حدود|ساعات/i
+
+  it.each([
+    'auth.teacher.subtitle',
+    'auth.register.teacher_subtitle',
+    'auth.teacher.demo_ready_body',
+    'auth.teacher.benefit.ai_marking',
+    'auth.teacher.benefit.examiner',
+    'auth.teacher.benefit.mock_papers',
+    'auth.teacher.benefit.free_resources',
+    'auth.teacher.benefit.free_ai_uses',
+    'auth.register.teacher_banner_body',
+    'auth.register.teacher_after_verify',
+    'pricing.teacher.tagline_hours',
+  ])('%s promises no hours, lesson-plan bank or unlimited use', (key) => {
+    const copy = inEveryLocale(key)
+    for (const locale of LOCALES) expect(copy[locale], `${key}/${locale}`).not.toMatch(OVERCLAIM)
+    expect(copy.en).not.toMatch(/lesson plan/i)
+  })
+
+  it('lists on the sign-up only what a teacher signing up gets', () => {
+    const page = code('src/app/auth/teacher-register/page.tsx')
+    expect(page).not.toMatch(/auth\.teacher\.benefit\.(lesson_plans|analytics|homework)/)
+    expect(page).toContain("'auth.teacher.benefit.examiner'")
+  })
+
+  it('lists on the Teacher card only features that exist and come with the plan', () => {
+    const page = code('src/app/pricing/page.tsx')
+    for (const gone of [
+      'view_student_list',
+      'lesson_plans',
+      'worksheet_builder',
+      'mark_scheme_gen',
+      'ppt_word_export',
+      'class_analytics',
+      'student_reports',
+      'dept_benchmarking',
+    ]) {
+      expect(page, gone).not.toContain(gone)
+    }
+    expect(lookup('pricing.faq.a4', 'en')).toMatch(/same access as the Student plan/)
+  })
+
+  it('does not tell a student the examiner tool is Teacher-plan only', () => {
+    // The gate checks for any paid plan or the trial, and nothing else.
+    const gate = code('src/lib/marking/examiner/gate.ts')
+    expect(gate).not.toMatch(/part of the Teacher plan/)
+    expect(gate).toContain('hasActiveSubscription(')
+  })
+})

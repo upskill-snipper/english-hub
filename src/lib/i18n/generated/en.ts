@@ -676,14 +676,15 @@ export const EN_MESSAGES: Record<string, string> = {
     'This email is already verified - sign in or reset your password.',
   'auth.register.teacher_banner_q': 'Are you a teacher?',
   'auth.register.teacher_banner_body':
-    'Get lesson plans, AI marking, and analytics built for educators.',
+    'Get AI essay marking, an examiner marking tool and free teaching resources.',
   'auth.register.teacher_signup_cta': 'Teacher sign-up',
   'auth.register.signup_takes_30s': 'Sign-up takes 30 seconds. No card required.',
   'auth.register.student_title': 'Create your free account',
   'auth.register.teacher_title': 'Start your free teacher account',
   'auth.register.student_subtitle':
     'No credit card required. Your account starts a 7-day free trial of every premium feature.',
-  'auth.register.teacher_subtitle': 'Save 5+ hours per week with AI lesson planning and marking.',
+  'auth.register.teacher_subtitle':
+    "AI essay marking, and an examiner tool that gives a second opinion on your pupils' scripts.",
   'auth.register.whats_included': "What's included free",
   'auth.register.included_courses': 'Courses, revision notes, flashcards (unlimited)',
   'auth.register.included_ai': 'Every AI tool free for 7 days (marking, lesson plans, and more)',
@@ -724,7 +725,7 @@ export const EN_MESSAGES: Record<string, string> = {
   'auth.register.trial_ready_body':
     'Your 7-day free trial includes every premium feature - AI marking, lesson plans, and more.',
   'auth.register.teacher_after_verify':
-    "Once verified, you'll have access to the Teacher Dashboard with lesson planning, student analytics, and assessment tools.",
+    'Once verified, you can open the teacher hub: the examiner marking tool, AI essay marking, a test builder, revision notes and teaching resources. The AI tools are free for 7 days, then come with a plan.',
   'auth.register.start_exploring': 'Start exploring',
   'auth.register.terms_agreement_before': 'By creating an account, you agree to our',
   'auth.register.terms_and': 'and',
@@ -747,7 +748,7 @@ export const EN_MESSAGES: Record<string, string> = {
   'auth.teacher.badge': 'Teachers',
   'auth.teacher.title': 'Start your free teacher account',
   'auth.teacher.subtitle':
-    'Save 5+ hours per week with AI lesson planning and marking. Every tool free for 7 days. Upgrade for unlimited.',
+    "Mark essays with AI, try the examiner marking tool on your pupils' scripts and open every course, free for 7 days with no card. After that, they come with a plan.",
   'auth.teacher.pricing_line': 'From £6.99/month - 7-day free trial, no card required to start',
   'auth.teacher.signup_takes': 'Sign-up takes under a minute. No card required.',
   'auth.teacher.your_details': 'Your details',
@@ -765,7 +766,7 @@ export const EN_MESSAGES: Record<string, string> = {
     'so we can keep your account safe - but you can keep exploring while you wait.',
   'auth.teacher.demo_ready_lead': 'Demo access ready.',
   'auth.teacher.demo_ready_body':
-    "Your 7-day free trial includes every premium feature - AI marking, lesson plans, and more. When you're ready to keep unlimited access, plans start from £6.99/month.",
+    'Your 7-day free trial includes AI essay marking, the examiner marking tool, model answers and every course module, within a fair-use limit. To keep using them after the trial, plans start from £6.99 a month.',
   'auth.teacher.open_preview': 'Open the teacher dashboard preview',
   'auth.teacher.school_interested_before':
     'Is your school interested? Ask your Head of Department to',
@@ -776,12 +777,12 @@ export const EN_MESSAGES: Record<string, string> = {
   'auth.teacher.school_wide_body':
     'Register your school for a single subscription that covers all staff.',
   'auth.teacher.learn_more': 'Learn more',
-  'auth.teacher.benefit.lesson_plans': '300+ ready-made lesson plans',
+  'auth.teacher.benefit.free_resources': 'Free teaching resources to browse and download',
+  'auth.teacher.benefit.examiner':
+    "An examiner tool that gives a second opinion on your pupils' scripts",
   'auth.teacher.benefit.ai_marking': 'AI essay marking and feedback',
-  'auth.teacher.benefit.analytics': 'Real-time student analytics',
-  'auth.teacher.benefit.homework': 'Homework management',
-  'auth.teacher.benefit.mock_papers': 'Mock exam papers for all boards',
-  'auth.teacher.benefit.free_ai_uses': 'Every AI tool free for 7 days',
+  'auth.teacher.benefit.mock_papers': 'Mock exam papers by board',
+  'auth.teacher.benefit.free_ai_uses': 'The AI tools free for 7 days, within a fair-use limit',
   'form.fill_all_fields': 'Please fill in all fields.',
   'form.email_required': 'Email address is required.',
   'form.full_name_required': 'Full name is required.',
@@ -1246,7 +1247,8 @@ export const EN_MESSAGES: Record<string, string> = {
   'pricing.student.tagline': 'Full access for learners - cancel anytime.',
   'pricing.student.tagline_exams': 'Everything you need to ace your exams.',
   'pricing.teacher.tagline': 'Plan, teach & track - all in one place.',
-  'pricing.teacher.tagline_hours': 'AI-powered tools to save hours every week.',
+  'pricing.teacher.tagline_hours':
+    'AI essay marking and the examiner marking tool, for a teacher working on their own.',
   'pricing.school.tagline_unlimited': 'Unlimited students + teachers',
   'pricing.school.custom_pricing': 'Custom Pricing',
   'pricing.school.tailored': 'Tailored to your school size',
@@ -6201,15 +6203,9 @@ export const EN_MESSAGES: Record<string, string> = {
   'pricing.feat.student_premium.progress_analytics': 'Full Progress Analytics',
   'pricing.feat.student_premium.exam_technique': 'Exam Technique Guides',
   'pricing.feat.teacher_free.browse_resources': 'Browse resources',
-  'pricing.feat.teacher_free.view_student_list': 'View student list',
-  'pricing.feat.teacher_premium.lesson_plans': 'AI Lesson Plans',
   'pricing.feat.teacher_premium.essay_marking': 'AI Essay Marking',
-  'pricing.feat.teacher_premium.worksheet_builder': 'Worksheet Builder',
-  'pricing.feat.teacher_premium.mark_scheme_gen': 'Mark Scheme Generator',
-  'pricing.feat.teacher_premium.ppt_word_export': 'PowerPoint/Word Export',
-  'pricing.feat.teacher_premium.class_analytics': 'Class Analytics',
-  'pricing.feat.teacher_premium.student_reports': 'Student Reports',
-  'pricing.feat.teacher_premium.dept_benchmarking': 'Department Benchmarking',
+  'pricing.feat.teacher_premium.examiner_tool': 'Examiner Marking Tool',
+  'pricing.feat.teacher_premium.course_modules': 'Every Course Module',
   'pricing.feat.badge_free': 'Free',
   'pricing.feat.badge_n_free': '{n} free',
   'pricing.always_free_label': 'Always free',
@@ -6297,7 +6293,7 @@ export const EN_MESSAGES: Record<string, string> = {
     '£{monthly} per month, or £{annual} per year. With any valid affiliate code - or the house code {code} - the annual plan drops to £{withCode} (a £{savings} saving).',
   'pricing.faq.q4': 'What does the Teacher plan cost?',
   'pricing.faq.a4':
-    '£{monthly} per month, or £{annual} per year. Teacher plans include everything in Student plus AI lesson planning, marking, analytics, and resource export.',
+    '£{monthly} per month, or £{annual} per year. On the website it currently gives the same access as the Student plan: AI essay marking, the examiner marking tool, model answers and every course module. It does not add classes, pupils or the lesson-plan library, which come with a school place.',
   'pricing.faq.q5': 'How does the affiliate code discount work?',
   'pricing.faq.a5':
     'Enter any valid affiliate code at checkout to unlock the £{withCode}/year student rate. Or use the public code {code} - this works for everyone and applies the same discount. It applies to annual billing on the Student and Teacher plans, not to monthly.',

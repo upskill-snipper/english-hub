@@ -74,6 +74,9 @@ export async function examinerGate(
     }
   }
 
+  // Any paid plan or the free trial opens the tool: hasActiveSubscription does
+  // not ask which plan. This message said "part of the Teacher plan" until 16
+  // October 2026, which the check above has never enforced.
   const isPremium = await hasActiveSubscription(supabase, user.id)
   if (!isPremium) {
     return {
@@ -81,7 +84,7 @@ export async function examinerGate(
       response: Res.json(
         {
           error:
-            'The examiner marking tool is part of the Teacher plan. Start the free trial or upgrade to mark scripts.',
+            'The examiner marking tool comes with any paid plan or the free trial. Start the free trial or choose a plan to mark scripts.',
           code: 'subscription_required',
         },
         { status: 403 },
