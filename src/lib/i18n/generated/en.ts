@@ -7078,7 +7078,7 @@ export const EN_MESSAGES: Record<string, string> = {
     'Film yourself revising with The English Hub open on screen. Great for long-form content.',
   'creators.ideas.swm.platform': 'YouTube / TikTok LIVE',
   'creators.benefits.h2': 'Partner Benefits',
-  'creators.benefits.recurring.title': 'Recurring commission',
+  'creators.benefits.recurring.title': 'A commission per referral',
   'creators.benefits.recurring.desc':
     'One programme, one set of terms. Your dashboard shows your real verified earnings.',
   'creators.benefits.cookie.title': 'Tracked referral window',
@@ -7142,7 +7142,7 @@ export const EN_MESSAGES: Record<string, string> = {
     'Yes. UK advertising rules (ASA/CAP) require you to include #ad in every promotional post. This must be clearly visible.',
   'creators.faq.q7': 'Is there a limit to how much I can earn?',
   'creators.faq.a7':
-    'No cap. The more students you refer, the more you earn. Commission is recurring for as long as each student stays subscribed.',
+    'No cap. The more students you refer, the more you earn. Each referral earns one commission, confirmed when the subscription is still active 60 days after checkout, and nothing more when it renews.',
   'school.landing.h1': 'The English Hub for schools and trusts',
   'school.landing.intro':
     'Department-wide GCSE and IGCSE English revision with AI marking, mark-scheme calibrated content, and teacher dashboards. Built for English departments, multi-academy trusts, and British international schools.',
@@ -9453,7 +9453,7 @@ export const EN_MESSAGES: Record<string, string> = {
   'homepage.board.edexcel_igcse_lit.blurb': 'Drama, Prose, Shakespeare, Unseen Poetry.',
   'homepage.board.edexcel_igcse_lang.blurb': 'Anthology, non-fiction, transactional writing.',
   'aff_comp.public.partnership_badge': 'Partner Programme',
-  'aff_comp.public.hero.title_part1': 'Earn recurring commission with',
+  'aff_comp.public.hero.title_part1': 'Earn a commission for each subscriber you refer to',
   'aff_comp.public.hero.title_brand': 'The English Hub',
   'aff_comp.public.hero.subtitle':
     "Partner with a launch-stage English revision platform. The English Hub is a new GCSE/IGCSE revision tool built by English teachers. We are recruiting our first cohort of partners now. We don't publish usage or earnings figures we can't yet evidence - your dashboard shows your real, verified referrals and commission from day one.",
@@ -9470,10 +9470,10 @@ export const EN_MESSAGES: Record<string, string> = {
     'Your agreement is signed and your partner account is active. Head to your dashboard to grab your referral link and start sharing.',
   'aff_comp.public.why.heading': 'Why partner with us',
   'aff_comp.public.why.subheading':
-    'A genuinely useful product for your audience, fair recurring rewards for you, and transparent tracking throughout.',
+    'A genuinely useful product for your audience, a fair commission for each referral, and transparent tracking throughout.',
   'aff_comp.public.why.reason1.title': 'One clear programme',
   'aff_comp.public.why.reason1.desc':
-    'One programme, one set of terms - paid monthly. Your dashboard shows your real verified referrals and earnings, and the current commission rate that applies to you.',
+    'One programme, one set of terms. Your dashboard shows your real verified referrals and earnings, and the commission that applies to you.',
   'aff_comp.public.why.reason2.title': 'A product parents actually trust',
   'aff_comp.public.why.reason2.desc':
     'Exam-board specific revision built by English teachers - not generic AI slop. Easy to recommend honestly.',
@@ -9492,15 +9492,15 @@ export const EN_MESSAGES: Record<string, string> = {
   'aff_comp.public.how.step3.title': 'Share it your way',
   'aff_comp.public.how.step3.desc':
     'Use our banners, screenshots and copy snippets - or write entirely your own. Whatever works for your audience.',
-  'aff_comp.public.how.step4.title': 'Get paid monthly',
+  'aff_comp.public.how.step4.title': 'Earn your commission',
   'aff_comp.public.how.step4.desc':
-    'Commissions are paid monthly via Stripe or PayPal - for as long as the customer stays. Your dashboard shows the exact payout date and your real verified earnings.',
+    'Each referred subscription earns one commission, confirmed once the subscription is still active 60 days after checkout. It is not paid again when the subscription renews. Your dashboard shows your pending and confirmed earnings.',
   'aff_comp.public.how.annual_only_lead': 'Annual plans only',
   'aff_comp.public.how.annual_only_body':
     'Commission is earned on referred annual subscriptions. This keeps rewards meaningful and aligned with families who commit to a full year of learning.',
   'aff_comp.public.commission.heading': 'Commission structure',
   'aff_comp.public.commission.subheading':
-    'Transparent recurring commission on every referred annual plan. One programme, one set of terms; your dashboard shows your real verified referrals and earnings.',
+    'One commission for each referred annual plan, from a published ladder. One programme, one set of terms; your dashboard shows your real verified referrals and earnings.',
   'aff_comp.public.commission.col_plan': 'Plan',
   'aff_comp.public.commission.col_commission': 'Commission',
   'aff_comp.public.commission.plan.student_monthly': 'Student · monthly',
@@ -9509,7 +9509,7 @@ export const EN_MESSAGES: Record<string, string> = {
   'aff_comp.public.commission.plan.teacher_annual': 'Teacher · annual',
   'aff_comp.public.commission.per_signup': 'per signup',
   'aff_comp.public.commission.footnote':
-    'Commission is recurring while the referred subscription stays active. One programme, one set of terms; the rate that applies to you and your real verified earnings are confirmed in your partner dashboard.',
+    'Commission is paid once per referred subscription, not again on renewal. One programme, one set of terms; the commission that applies to you and your real verified earnings are confirmed in your partner dashboard.',
   'aff_comp.public.impact.heading': 'The impact you help create',
   'aff_comp.public.impact.subheading':
     'Every referral helps a student build real confidence in English, from KS3 through GCSE, IGCSE and EAL.',
@@ -9526,7 +9526,7 @@ export const EN_MESSAGES: Record<string, string> = {
   'aff_comp.public.what_you_get.subheading':
     'Everything you need to share The English Hub with confidence and track your results.',
   'aff_comp.public.what_you_get.perk1':
-    'Recurring commission - the rate that applies to you is shown in your dashboard',
+    'A commission for each referral - the amount that applies to you is shown in your dashboard',
   'aff_comp.public.what_you_get.perk2': 'Referral tracking window confirmed in your dashboard',
   'aff_comp.public.what_you_get.perk3': 'Designed banner pack and screenshot library',
   'aff_comp.public.what_you_get.perk4': 'Pre-written email and social copy',
@@ -9541,7 +9541,7 @@ export const EN_MESSAGES: Record<string, string> = {
     'Create an account or sign in, then submit the short partner application describing your audience. Once approved, your partner dashboard unlocks instantly with a unique referral link, a code to share, marketing assets and real-time tracking. Most applications are reviewed quickly so you can start sharing without long delays.',
   'aff_comp.public.faq.q3.q': 'What happens if my audience is mainly outside the UK?',
   'aff_comp.public.faq.q3.a':
-    'Payouts are made monthly once your balance reaches the minimum threshold shown in your dashboard. Commission is confirmed after the referred annual subscription completes its standard refund window, which protects both partners and the programme. Your dashboard always shows pending and confirmed earnings clearly.',
+    'Payouts are made once your balance reaches the minimum threshold shown in your dashboard. Commission is confirmed once the referred subscription is still active 60 days after checkout, which protects both partners and the programme. Your dashboard always shows pending and confirmed earnings clearly.',
   'aff_comp.public.faq.q4.q': 'Can I promote on TikTok / Instagram / YouTube?',
   'aff_comp.public.faq.q4.a':
     'Referrals are tracked with a cookie that starts from the first click on your link, so someone who clicks today and subscribes later is still credited to you. The exact tracking window is one set of terms, confirmed in your partner dashboard.',
@@ -9553,7 +9553,7 @@ export const EN_MESSAGES: Record<string, string> = {
     'Your dashboard shows clicks on your link, sign-ups, completed annual subscriptions, pending and confirmed commission, and your current tier, all updated in real time. This gives you a clear, transparent view of how your referrals are performing at any moment.',
   'aff_comp.public.faq.q7.q': 'What happens if a referred customer cancels?',
   'aff_comp.public.faq.q7.a':
-    'Once your confirmed balance reaches the minimum payout threshold, earnings are paid out monthly using the payment details you set in your dashboard. You can track exactly when commission moves from pending to confirmed, so there are no surprises about what you will be paid and when.',
+    'If the referred subscription is no longer active 60 days after checkout, its commission is not confirmed and is not paid. Once your confirmed balance reaches the minimum payout threshold, earnings are paid using the payment details you set in your dashboard, where you can see when each commission moves from pending to confirmed.',
   'aff_comp.public.faq.q8.q': 'Where can I see my referrals and earnings?',
   'aff_comp.public.faq.q8.a':
     'Every partner has access to support by email, plus marketing assets and guidance to help you promote effectively. As your referral volume grows you unlock priority support and, at the top tier, a dedicated partner manager to help you get the most from the programme.',
@@ -9576,16 +9576,16 @@ export const EN_MESSAGES: Record<string, string> = {
     'A cookie tracks each referral from the first click, so you are credited even when someone subscribes later. The tracking window is one set of terms, confirmed in your dashboard.',
   'aff_comp.public.basics.min_payout.title': 'Low minimum payout',
   'aff_comp.public.basics.min_payout.desc':
-    'Reach a modest payout threshold and receive your earnings on a monthly schedule, with the current minimum shown in your dashboard.',
-  'aff_comp.public.basics.ltv.title': 'Recurring lifetime value',
+    'Reach a modest payout threshold to be paid, with the current minimum shown in your dashboard.',
+  'aff_comp.public.basics.ltv.title': 'A ladder that rises with you',
   'aff_comp.public.basics.ltv.desc':
-    'Commission keeps paying for as long as your referral stays subscribed, so each referral can earn well beyond the first year.',
-  'aff_comp.public.basics.commission.title': 'Recurring commission',
+    'The commission for each new referral rises as your total of confirmed referrals grows. Each referral is paid once, not again on renewal.',
+  'aff_comp.public.basics.commission.title': 'A commission per referral',
   'aff_comp.public.basics.commission.desc':
-    'Earn recurring commission on every referred annual plan. One programme, one set of terms; your dashboard shows your real verified referrals and earnings.',
+    'Earn one commission on every referred annual plan. One programme, one set of terms; your dashboard shows your real verified referrals and earnings.',
   'aff_comp.public.bottom_cta.heading': 'Ready to start earning',
   'aff_comp.public.bottom_cta.body':
-    'Join the partner programme, share The English Hub with the people who trust your recommendations, and earn recurring commission on every annual subscription you refer.',
+    'Join the partner programme, share The English Hub with the people who trust your recommendations, and earn a commission on every annual subscription you refer.',
   'aff_comp.public.bottom_cta.button': 'Get your referral code',
   'aff_comp.public.templates.heading': 'Starter post templates',
   'aff_comp.public.templates.intro_part1':
@@ -10329,9 +10329,9 @@ export const EN_MESSAGES: Record<string, string> = {
     'Revision for Pearson Edexcel A-Level English Literature and Language. Use the cross-board set-text analysis, essay technique and language-study tools below while full Edexcel A-Level guides are on our roadmap.',
   'affiliates.breadcrumb.home': 'Home',
   'affiliates.breadcrumb.self': 'Affiliates',
-  'affiliates.public.meta.title': 'Affiliate Programme - Earn Recurring Commission for Partners',
+  'affiliates.public.meta.title': 'Affiliate Programme - Earn a Commission for Each Referral',
   'affiliates.public.meta.description':
-    'Join The English Hub partner programme and earn recurring commission on every annual subscription you refer. Independent, exam-board aligned GCSE, IGCSE, KS3 and EAL English learning. 90-day tracking, monthly payouts, no minimum traffic.',
+    'Join The English Hub partner programme and earn a commission on every annual subscription you refer. Independent, exam-board aligned GCSE, IGCSE, KS3 and EAL English learning. No minimum traffic.',
   'affiliates.public.meta.og_image_alt': 'The English Hub affiliate programme',
   'affiliates.dashboard.meta.title': 'Affiliate Dashboard',
   'affiliates.payouts.meta.title': 'Affiliate Payouts',

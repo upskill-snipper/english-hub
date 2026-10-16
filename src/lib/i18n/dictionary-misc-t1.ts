@@ -108,15 +108,19 @@ export const MISC_T1_DICTIONARY: Record<string, { en: string; ar: string; es?: s
   // ─── /affiliates public landing metadata - verbatim from report-fix-may16b ──
   // NOTE: title is fed through the root metadata title.template
   // ('%s - The English Hub'), so it must NOT contain the brand itself.
+  // 16 October 2026: promised "recurring commission", "90-day tracking" and
+  // "monthly payouts". The programme pays one commission per referral, the
+  // referral cookie lasts 30 days (src/lib/affiliate/attribution-v2.ts), and
+  // the payout cadence is not settled, so none is stated.
   'affiliates.public.meta.title': {
-    en: 'Affiliate Programme - Earn Recurring Commission for Partners',
-    ar: 'برنامج الشركاء - اكسب عمولة متكررة للشركاء',
-    es: 'Programa de afiliados - Gana comisiones recurrentes para socios',
+    en: 'Affiliate Programme - Earn a Commission for Each Referral',
+    ar: 'برنامج الشركاء - اكسب عمولة على كل إحالة',
+    es: 'Programa de afiliados - Gana una comisión por cada referido',
   },
   'affiliates.public.meta.description': {
-    en: 'Join The English Hub partner programme and earn recurring commission on every annual subscription you refer. Independent, exam-board aligned GCSE, IGCSE, KS3 and EAL English learning. 90-day tracking, monthly payouts, no minimum traffic.',
-    ar: 'انضمّ لبرنامج شركاء The English Hub واكسب عمولة متكررة على كل اشتراك سنوي تحيله. تعلّم إنجليزي مستقل ومتوافق مع بوردات الامتحانات لـ GCSE و IGCSE و KS3 و EAL. تتبّع لمدة ٩٠ يوم، ومدفوعات شهرية، وبدون حد أدنى للزيارات.',
-    es: 'Únete al programa de socios de The English Hub y gana comisiones recurrentes por cada suscripción anual que refieras. Aprendizaje de inglés independiente y alineado con las juntas examinadoras para GCSE, IGCSE, KS3 y EAL. Seguimiento de 90 días, pagos mensuales, sin tráfico mínimo.',
+    en: 'Join The English Hub partner programme and earn a commission on every annual subscription you refer. Independent, exam-board aligned GCSE, IGCSE, KS3 and EAL English learning. No minimum traffic.',
+    ar: 'انضمّ لبرنامج شركاء The English Hub واكسب عمولة على كل اشتراك سنوي تحيله. تعلّم إنجليزي مستقل ومتوافق مع بوردات الامتحانات لـ GCSE و IGCSE و KS3 و EAL. بدون حد أدنى للزيارات.',
+    es: 'Únete al programa de socios de The English Hub y gana una comisión por cada suscripción anual que refieras. Aprendizaje de inglés independiente y alineado con las juntas examinadoras para GCSE, IGCSE, KS3 y EAL. Sin tráfico mínimo.',
   },
   'affiliates.public.meta.og_image_alt': {
     en: 'The English Hub affiliate programme',

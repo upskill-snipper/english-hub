@@ -24064,10 +24064,13 @@ export const DICTIONARY: Dictionary = {
     ar: 'مزايا الشريك',
     es: 'Ventajas para los socios',
   },
+  // 16 October 2026: was "Recurring commission". The programme pays one
+  // commission per referral and nothing on renewal (src/lib/affiliate/
+  // tiers.ts; invoice.paid books nothing). The key keeps its name.
   'creators.benefits.recurring.title': {
-    en: 'Recurring commission',
-    ar: 'عمولة متكرّرة',
-    es: 'Comisión recurrente',
+    en: 'A commission per referral',
+    ar: 'عمولة على كل إحالة',
+    es: 'Una comisión por referido',
   },
   'creators.benefits.recurring.desc': {
     en: 'One programme, one set of terms. Your dashboard shows your real verified earnings.',
@@ -24106,8 +24109,8 @@ export const DICTIONARY: Dictionary = {
   },
   'creators.benefits.payout.title': {
     en: 'Getting paid',
-    ar: 'دفعات شهرية',
-    es: 'Pagos mensuales',
+    ar: 'استلام أرباحك',
+    es: 'Cómo cobras',
   },
   'creators.benefits.payout.desc': {
     // 2026-08-25: the heading above this said "Monthly payouts" while the
@@ -24277,9 +24280,9 @@ export const DICTIONARY: Dictionary = {
     es: '¿Hay un límite a lo que puedo ganar?',
   },
   'creators.faq.a7': {
-    en: 'No cap. The more students you refer, the more you earn. Commission is recurring for as long as each student stays subscribed.',
-    ar: 'ما في سقف. كل ما توصّل طلاب أكثر، تكسب أكثر. العمولة متكرّرة طول ما كل طالب مشترك.',
-    es: 'Sin límite. Cuantos más estudiantes refieras, más ganas. La comisión es recurrente durante todo el tiempo que cada estudiante siga suscrito.',
+    en: 'No cap. The more students you refer, the more you earn. Each referral earns one commission, confirmed when the subscription is still active 60 days after checkout, and nothing more when it renews.',
+    ar: 'ما في سقف. كل ما توصّل طلاب أكثر، تكسب أكثر. كل إحالة تكسبك عمولة وحدة، تتأكّد إذا الاشتراك باقي فعّال بعد ٦٠ يوم من الدفع، وما في شي زيادة لما يتجدّد.',
+    es: 'Sin límite. Cuantos más estudiantes refieras, más ganas. Cada referido genera una comisión, que se confirma si la suscripción sigue activa 60 días después del pago, y nada más cuando se renueva.',
   },
 
   // ─── School landing (B2B) ───────────────────────────────────────────

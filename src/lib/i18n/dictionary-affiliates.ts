@@ -50,10 +50,18 @@ export const AFF_PUBLIC_DICTIONARY: Record<string, { en: string; ar: string; es?
     ar: 'برنامج الشركاء',
     es: 'Programa de socios',
   },
+  // The partner page, corrected 16 October 2026. It promised "recurring
+  // commission ... for as long as the customer stays", "recurring lifetime
+  // value" and payment "monthly". The programme pays one flat commission per
+  // converted checkout, from a ladder set by the partner's confirmed total
+  // (src/lib/affiliate/tiers.ts), confirmed after 60 days if the subscription
+  // is still active (cron/affiliate-confirm-v2) and never again on renewal
+  // (invoice.paid books nothing). The payout cadence appears in three
+  // different versions in the code, so the page states none.
   'aff_comp.public.hero.title_part1': {
-    en: 'Earn recurring commission with',
-    ar: 'اكسب عمولة متكرّرة مع',
-    es: 'Gana comisiones recurrentes con',
+    en: 'Earn a commission for each subscriber you refer to',
+    ar: 'اكسب عمولة على كل مشترك تجيبه لـ',
+    es: 'Gana una comisión por cada suscriptor que refieras a',
   },
   'aff_comp.public.hero.title_brand': {
     en: 'The English Hub',
@@ -115,9 +123,9 @@ export const AFF_PUBLIC_DICTIONARY: Record<string, { en: string; ar: string; es?
     es: 'Por qué asociarte con nosotros',
   },
   'aff_comp.public.why.subheading': {
-    en: 'A genuinely useful product for your audience, fair recurring rewards for you, and transparent tracking throughout.',
-    ar: 'منتج يفيد جمهورك فعلاً، ومكافآت متكرّرة وعادلة لك، وتتبّع شفّاف من أوّله لآخره.',
-    es: 'Un producto realmente útil para tu audiencia, recompensas recurrentes y justas para ti, y un seguimiento transparente en todo momento.',
+    en: 'A genuinely useful product for your audience, a fair commission for each referral, and transparent tracking throughout.',
+    ar: 'منتج يفيد جمهورك فعلاً، وعمولة عادلة على كل إحالة، وتتبّع شفّاف من أوّله لآخره.',
+    es: 'Un producto realmente útil para tu audiencia, una comisión justa por cada referido y un seguimiento transparente en todo momento.',
   },
   'aff_comp.public.why.reason1.title': {
     en: 'One clear programme',
@@ -125,9 +133,9 @@ export const AFF_PUBLIC_DICTIONARY: Record<string, { en: string; ar: string; es?
     es: 'Un programa claro',
   },
   'aff_comp.public.why.reason1.desc': {
-    en: 'One programme, one set of terms - paid monthly. Your dashboard shows your real verified referrals and earnings, and the current commission rate that applies to you.',
-    ar: 'برنامج واحد، مجموعة شروط واحدة - تنصرف لك شهرياً. لوحة تحكّمك تبيّن إحالاتك وأرباحك الحقيقية الموثّقة، ونسبة العمولة الحالية اللي تنطبّق عليك.',
-    es: 'Un programa, un único conjunto de términos, pagado mensualmente. Tu panel muestra tus referidos e ingresos reales y verificados, y la tasa de comisión actual que se te aplica.',
+    en: 'One programme, one set of terms. Your dashboard shows your real verified referrals and earnings, and the commission that applies to you.',
+    ar: 'برنامج واحد، مجموعة شروط واحدة. لوحة تحكّمك تبيّن إحالاتك وأرباحك الحقيقية الموثّقة، والعمولة اللي تنطبّق عليك.',
+    es: 'Un programa, un único conjunto de términos. Tu panel muestra tus referidos e ingresos reales y verificados, y la comisión que se te aplica.',
   },
   'aff_comp.public.why.reason2.title': {
     en: 'A product parents actually trust',
@@ -192,14 +200,14 @@ export const AFF_PUBLIC_DICTIONARY: Record<string, { en: string; ar: string; es?
     es: 'Usa nuestros banners, capturas de pantalla y fragmentos de texto, o escribe el tuyo por completo. Lo que funcione con tu audiencia.',
   },
   'aff_comp.public.how.step4.title': {
-    en: 'Get paid monthly',
-    ar: 'تستلم فلوسك شهرياً',
-    es: 'Cobra mensualmente',
+    en: 'Earn your commission',
+    ar: 'اكسب عمولتك',
+    es: 'Gana tu comisión',
   },
   'aff_comp.public.how.step4.desc': {
-    en: 'Commissions are paid monthly via Stripe or PayPal - for as long as the customer stays. Your dashboard shows the exact payout date and your real verified earnings.',
-    ar: 'العمولات تنصرف شهرياً عن طريق Stripe أو PayPal - طول ما العميل باقٍ مشترك. لوحة تحكّمك تبيّن تاريخ الصرف بالضبط وأرباحك الحقيقية الموثّقة.',
-    es: 'Las comisiones se pagan mensualmente mediante Stripe o PayPal, mientras el cliente siga suscrito. Tu panel muestra la fecha exacta de pago y tus ingresos reales y verificados.',
+    en: 'Each referred subscription earns one commission, confirmed once the subscription is still active 60 days after checkout. It is not paid again when the subscription renews. Your dashboard shows your pending and confirmed earnings.',
+    ar: 'كل اشتراك يجي عن طريقك يكسبك عمولة وحدة، تتأكّد إذا الاشتراك باقي فعّال بعد ٦٠ يوم من الدفع. وما تنصرف مرة ثانية لما يتجدّد الاشتراك. لوحة تحكّمك تبيّن أرباحك المعلّقة والمؤكّدة.',
+    es: 'Cada suscripción referida genera una comisión, que se confirma si la suscripción sigue activa 60 días después del pago. No se vuelve a pagar cuando la suscripción se renueva. Tu panel muestra tus ingresos pendientes y confirmados.',
   },
   'aff_comp.public.how.annual_only_lead': {
     en: 'Annual plans only',
@@ -219,9 +227,9 @@ export const AFF_PUBLIC_DICTIONARY: Record<string, { en: string; ar: string; es?
     es: 'Estructura de comisiones',
   },
   'aff_comp.public.commission.subheading': {
-    en: 'Transparent recurring commission on every referred annual plan. One programme, one set of terms; your dashboard shows your real verified referrals and earnings.',
-    ar: 'عمولة متكرّرة وشفّافة على كل خطّة سنوية تجي عن طريقك. برنامج واحد، مجموعة شروط واحدة؛ لوحة تحكّمك تبيّن إحالاتك وأرباحك الحقيقية الموثّقة.',
-    es: 'Comisión recurrente y transparente por cada plan anual referido. Un programa, un único conjunto de términos; tu panel muestra tus referidos e ingresos reales y verificados.',
+    en: 'One commission for each referred annual plan, from a published ladder. One programme, one set of terms; your dashboard shows your real verified referrals and earnings.',
+    ar: 'عمولة وحدة على كل خطّة سنوية تجي عن طريقك، حسب سلّم معلن. برنامج واحد، مجموعة شروط واحدة؛ لوحة تحكّمك تبيّن إحالاتك وأرباحك الحقيقية الموثّقة.',
+    es: 'Una comisión por cada plan anual referido, según una escala publicada. Un programa, un único conjunto de términos; tu panel muestra tus referidos e ingresos reales y verificados.',
   },
   'aff_comp.public.commission.col_plan': {
     en: 'Plan',
@@ -259,9 +267,9 @@ export const AFF_PUBLIC_DICTIONARY: Record<string, { en: string; ar: string; es?
     es: 'por registro',
   },
   'aff_comp.public.commission.footnote': {
-    en: 'Commission is recurring while the referred subscription stays active. One programme, one set of terms; the rate that applies to you and your real verified earnings are confirmed in your partner dashboard.',
-    ar: 'العمولة متكرّرة طول ما الاشتراك اللي جاء عن طريقك فعّال. برنامج واحد، مجموعة شروط واحدة؛ النسبة اللي تنطبّق عليك وأرباحك الحقيقية الموثّقة مؤكّدة لك في لوحة تحكّم الشريك حقّتك.',
-    es: 'La comisión es recurrente mientras la suscripción referida siga activa. Un programa, un único conjunto de términos; la tasa que se te aplica y tus ingresos reales y verificados se confirman en tu panel de socio.',
+    en: 'Commission is paid once per referred subscription, not again on renewal. One programme, one set of terms; the commission that applies to you and your real verified earnings are confirmed in your partner dashboard.',
+    ar: 'العمولة تنصرف مرة وحدة على كل اشتراك يجي عن طريقك، مو مرة ثانية عند التجديد. برنامج واحد، مجموعة شروط واحدة؛ العمولة اللي تنطبّق عليك وأرباحك الحقيقية الموثّقة مؤكّدة لك في لوحة تحكّم الشريك حقّتك.',
+    es: 'La comisión se paga una vez por cada suscripción referida, no de nuevo al renovarse. Un programa, un único conjunto de términos; la comisión que se te aplica y tus ingresos reales y verificados se confirman en tu panel de socio.',
   },
 
   /* ─── Your impact ──────────────────────────────────────────── */
@@ -328,9 +336,9 @@ export const AFF_PUBLIC_DICTIONARY: Record<string, { en: string; ar: string; es?
     es: 'Todo lo que necesitas para compartir The English Hub con confianza y seguir tus resultados.',
   },
   'aff_comp.public.what_you_get.perk1': {
-    en: 'Recurring commission - the rate that applies to you is shown in your dashboard',
-    ar: 'عمولة متكرّرة - النسبة اللي تنطبّق عليك مبيّنة في لوحة تحكّمك',
-    es: 'Comisión recurrente: la tasa que se te aplica se muestra en tu panel',
+    en: 'A commission for each referral - the amount that applies to you is shown in your dashboard',
+    ar: 'عمولة على كل إحالة - المبلغ اللي ينطبّق عليك مبيّن في لوحة تحكّمك',
+    es: 'Una comisión por cada referido: el importe que se te aplica se muestra en tu panel',
   },
   'aff_comp.public.what_you_get.perk2': {
     en: 'Referral tracking window confirmed in your dashboard',
@@ -390,9 +398,9 @@ export const AFF_PUBLIC_DICTIONARY: Record<string, { en: string; ar: string; es?
     es: '¿Qué pasa si mi audiencia está principalmente fuera del Reino Unido?',
   },
   'aff_comp.public.faq.q3.a': {
-    en: 'Payouts are made monthly once your balance reaches the minimum threshold shown in your dashboard. Commission is confirmed after the referred annual subscription completes its standard refund window, which protects both partners and the programme. Your dashboard always shows pending and confirmed earnings clearly.',
-    ar: 'المدفوعات تنصرف شهرياً أوّل ما رصيدك يوصل الحد الأدنى المبيّن في لوحة التحكّم. العمولة تتأكّد عقب ما الاشتراك السنوي اللي جاء عن طريقك يكمّل فترة الاسترداد الاعتيادية، وهذا يحمي الشركاء والبرنامج. لوحة تحكّمك تبيّن لك دايماً الأرباح المعلّقة والمؤكّدة بوضوح.',
-    es: 'Los pagos se realizan mensualmente una vez que tu saldo alcanza el umbral mínimo que se muestra en tu panel. La comisión se confirma después de que la suscripción anual referida complete su ventana estándar de reembolso, lo que protege tanto a los socios como al programa. Tu panel siempre muestra con claridad los ingresos pendientes y los confirmados.',
+    en: 'Payouts are made once your balance reaches the minimum threshold shown in your dashboard. Commission is confirmed once the referred subscription is still active 60 days after checkout, which protects both partners and the programme. Your dashboard always shows pending and confirmed earnings clearly.',
+    ar: 'المدفوعات تنصرف أوّل ما رصيدك يوصل الحد الأدنى المبيّن في لوحة التحكّم. العمولة تتأكّد إذا الاشتراك اللي جاء عن طريقك باقي فعّال بعد ٦٠ يوم من الدفع، وهذا يحمي الشركاء والبرنامج. لوحة تحكّمك تبيّن لك دايماً الأرباح المعلّقة والمؤكّدة بوضوح.',
+    es: 'Los pagos se realizan una vez que tu saldo alcanza el umbral mínimo que se muestra en tu panel. La comisión se confirma si la suscripción referida sigue activa 60 días después del pago, lo que protege tanto a los socios como al programa. Tu panel siempre muestra con claridad los ingresos pendientes y los confirmados.',
   },
   'aff_comp.public.faq.q4.q': {
     en: 'Can I promote on TikTok / Instagram / YouTube?',
@@ -430,9 +438,9 @@ export const AFF_PUBLIC_DICTIONARY: Record<string, { en: string; ar: string; es?
     es: '¿Qué pasa si un cliente referido cancela?',
   },
   'aff_comp.public.faq.q7.a': {
-    en: 'Once your confirmed balance reaches the minimum payout threshold, earnings are paid out monthly using the payment details you set in your dashboard. You can track exactly when commission moves from pending to confirmed, so there are no surprises about what you will be paid and when.',
-    ar: 'أوّل ما رصيدك المؤكّد يوصل الحد الأدنى للسحب، الأرباح تنصرف شهرياً على بيانات الدفع اللي حطّيتها في لوحة التحكّم. تقدر تتابع بالضبط متى تنتقل العمولة من معلّقة لمؤكّدة، فما في أي مفاجآت بخصوص كم بيوصلك ومتى.',
-    es: 'Una vez que tu saldo confirmado alcanza el umbral mínimo de pago, los ingresos se abonan mensualmente con los datos de pago que configures en tu panel. Puedes seguir exactamente cuándo pasa la comisión de pendiente a confirmada, así que no hay sorpresas sobre cuánto cobrarás y cuándo.',
+    en: 'If the referred subscription is no longer active 60 days after checkout, its commission is not confirmed and is not paid. Once your confirmed balance reaches the minimum payout threshold, earnings are paid using the payment details you set in your dashboard, where you can see when each commission moves from pending to confirmed.',
+    ar: 'إذا الاشتراك اللي جاء عن طريقك ما عاد فعّال بعد ٦٠ يوم من الدفع، عمولته ما تتأكّد وما تنصرف. وأوّل ما رصيدك المؤكّد يوصل الحد الأدنى للسحب، الأرباح تنصرف على بيانات الدفع اللي حطّيتها في لوحة التحكّم، وتقدر تشوف هناك متى تنتقل كل عمولة من معلّقة لمؤكّدة.',
+    es: 'Si la suscripción referida ya no está activa 60 días después del pago, su comisión no se confirma y no se paga. Una vez que tu saldo confirmado alcanza el umbral mínimo de pago, los ingresos se abonan con los datos de pago que configures en tu panel, donde puedes ver cuándo pasa cada comisión de pendiente a confirmada.',
   },
   'aff_comp.public.faq.q8.q': {
     en: 'Where can I see my referrals and earnings?',
@@ -514,29 +522,29 @@ export const AFF_PUBLIC_DICTIONARY: Record<string, { en: string; ar: string; es?
     es: 'Pago mínimo bajo',
   },
   'aff_comp.public.basics.min_payout.desc': {
-    en: 'Reach a modest payout threshold and receive your earnings on a monthly schedule, with the current minimum shown in your dashboard.',
-    ar: 'اوصل حد سحب بسيط واستلم أرباحك على جدول شهري، والحد الأدنى الحالي مبيّن لك في لوحة التحكّم.',
-    es: 'Alcanza un umbral de pago modesto y recibe tus ingresos con una periodicidad mensual; el mínimo actual se muestra en tu panel.',
+    en: 'Reach a modest payout threshold to be paid, with the current minimum shown in your dashboard.',
+    ar: 'اوصل حد سحب بسيط عشان تستلم أرباحك، والحد الأدنى الحالي مبيّن لك في لوحة التحكّم.',
+    es: 'Alcanza un umbral de pago modesto para cobrar; el mínimo actual se muestra en tu panel.',
   },
   'aff_comp.public.basics.ltv.title': {
-    en: 'Recurring lifetime value',
-    ar: 'قيمة متكرّرة مدى الحياة',
-    es: 'Valor recurrente de por vida',
+    en: 'A ladder that rises with you',
+    ar: 'سلّم يرتفع معك',
+    es: 'Una escala que sube contigo',
   },
   'aff_comp.public.basics.ltv.desc': {
-    en: 'Commission keeps paying for as long as your referral stays subscribed, so each referral can earn well beyond the first year.',
-    ar: 'العمولة تستمر تنصرف لك طول ما إحالتك باقية مشتركة، فكل إحالة ممكن تكسب لك أكثر بوايد من السنة الأولى.',
-    es: 'La comisión sigue pagándose mientras tu referido siga suscrito, así que cada referido puede generar mucho más allá del primer año.',
+    en: 'The commission for each new referral rises as your total of confirmed referrals grows. Each referral is paid once, not again on renewal.',
+    ar: 'العمولة على كل إحالة جديدة ترتفع كل ما زاد مجموع إحالاتك المؤكّدة. وكل إحالة تنصرف مرة وحدة، مو مرة ثانية عند التجديد.',
+    es: 'La comisión por cada nuevo referido sube a medida que crece tu total de referidos confirmados. Cada referido se paga una vez, no de nuevo al renovarse.',
   },
   'aff_comp.public.basics.commission.title': {
-    en: 'Recurring commission',
-    ar: 'عمولة متكرّرة',
-    es: 'Comisión recurrente',
+    en: 'A commission per referral',
+    ar: 'عمولة على كل إحالة',
+    es: 'Una comisión por referido',
   },
   'aff_comp.public.basics.commission.desc': {
-    en: 'Earn recurring commission on every referred annual plan. One programme, one set of terms; your dashboard shows your real verified referrals and earnings.',
-    ar: 'اكسب عمولة متكرّرة على كل خطّة سنوية تجي عن طريقك. برنامج واحد، مجموعة شروط واحدة؛ لوحة تحكّمك تبيّن إحالاتك وأرباحك الحقيقية الموثّقة.',
-    es: 'Gana comisión recurrente por cada plan anual referido. Un programa, un único conjunto de términos; tu panel muestra tus referidos e ingresos reales y verificados.',
+    en: 'Earn one commission on every referred annual plan. One programme, one set of terms; your dashboard shows your real verified referrals and earnings.',
+    ar: 'اكسب عمولة وحدة على كل خطّة سنوية تجي عن طريقك. برنامج واحد، مجموعة شروط واحدة؛ لوحة تحكّمك تبيّن إحالاتك وأرباحك الحقيقية الموثّقة.',
+    es: 'Gana una comisión por cada plan anual referido. Un programa, un único conjunto de términos; tu panel muestra tus referidos e ingresos reales y verificados.',
   },
 
   /* ─── Bottom CTA ───────────────────────────────────────────── */
@@ -546,9 +554,9 @@ export const AFF_PUBLIC_DICTIONARY: Record<string, { en: string; ar: string; es?
     es: 'Listo para empezar a ganar',
   },
   'aff_comp.public.bottom_cta.body': {
-    en: 'Join the partner programme, share The English Hub with the people who trust your recommendations, and earn recurring commission on every annual subscription you refer.',
-    ar: 'انضم لبرنامج الشركاء، وانشر The English Hub مع الناس اللي يثقون بترشيحاتك، واكسب عمولة متكرّرة على كل اشتراك سنوي يجي عن طريقك.',
-    es: 'Únete al programa de socios, comparte The English Hub con las personas que confían en tus recomendaciones y gana comisión recurrente por cada suscripción anual que refieras.',
+    en: 'Join the partner programme, share The English Hub with the people who trust your recommendations, and earn a commission on every annual subscription you refer.',
+    ar: 'انضم لبرنامج الشركاء، وانشر The English Hub مع الناس اللي يثقون بترشيحاتك، واكسب عمولة على كل اشتراك سنوي يجي عن طريقك.',
+    es: 'Únete al programa de socios, comparte The English Hub con las personas que confían en tus recomendaciones y gana una comisión por cada suscripción anual que refieras.',
   },
   'aff_comp.public.bottom_cta.button': {
     en: 'Get your referral code',

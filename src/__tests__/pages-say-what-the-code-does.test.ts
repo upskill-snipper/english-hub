@@ -323,3 +323,50 @@ describe('/faqs makes no promise the code does not keep', () => {
     }
   })
 })
+
+// ─── D14: /affiliates and /creators ─────────────────────────────────────────
+
+describe('the partner pages describe the commission the code pays', () => {
+  // One flat commission per converted checkout, confirmed after 60 days, never
+  // again on renewal (src/lib/affiliate/tiers.ts; invoice.paid books nothing).
+  // The payout cadence has three versions in the code, so none is stated.
+  const RECURRING =
+    /recurring|for as long as|lifetime|recurrente|mientras el cliente|متكرّرة|متكررة|طول ما/i
+  const CADENCE =
+    /paid monthly|monthly (payouts?|schedule)|get paid monthly|pagos? mensual|cobra mensualmente|periodicidad mensual|شهرياً|دفعات شهرية|جدول شهري/i
+
+  async function partnerKeys(): Promise<string[]> {
+    const { EN_MESSAGES } = await import('@/lib/i18n/generated/en')
+    return Object.keys(EN_MESSAGES).filter(
+      (k) =>
+        k.startsWith('aff_comp.public.') ||
+        k.startsWith('creators.') ||
+        k.startsWith('affiliates.public.meta.'),
+    )
+  }
+
+  it('found the partner copy to check', async () => {
+    expect((await partnerKeys()).length).toBeGreaterThan(80)
+  })
+
+  it('promises no recurring commission, in any locale', async () => {
+    for (const key of await partnerKeys()) {
+      for (const locale of LOCALES) {
+        expect(lookup(key, locale), `${key}/${locale}`).not.toMatch(RECURRING)
+      }
+    }
+  })
+
+  it('states no payout cadence, in any locale', async () => {
+    for (const key of await partnerKeys()) {
+      for (const locale of LOCALES) {
+        expect(lookup(key, locale), `${key}/${locale}`).not.toMatch(CADENCE)
+      }
+    }
+  })
+
+  it('claims no tracking window longer than the 30-day cookie, and no audience size', () => {
+    expect(lookup('affiliates.public.meta.description', 'en')).not.toMatch(/90-day/)
+    expect(code('src/app/creators/layout.tsx')).not.toMatch(/thousands|publish courses/i)
+  })
+})

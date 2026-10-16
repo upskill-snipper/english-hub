@@ -7253,7 +7253,7 @@ export const ES_MESSAGES: Record<string, string> = {
     'Grábate repasando con The English Hub abierto en pantalla. Estupendo para el contenido de larga duración.',
   'creators.ideas.swm.platform': 'YouTube / TikTok LIVE',
   'creators.benefits.h2': 'Ventajas para los socios',
-  'creators.benefits.recurring.title': 'Comisión recurrente',
+  'creators.benefits.recurring.title': 'Una comisión por referido',
   'creators.benefits.recurring.desc':
     'Un único programa, un único conjunto de condiciones. Tu panel muestra tus ganancias reales verificadas.',
   'creators.benefits.cookie.title': 'Ventana de referencia con seguimiento',
@@ -7265,7 +7265,7 @@ export const ES_MESSAGES: Record<string, string> = {
   'creators.benefits.codes.title': 'Códigos de descuento personalizados',
   'creators.benefits.codes.desc':
     'Ofrece a tu audiencia códigos de descuento exclusivos para impulsar las conversiones.',
-  'creators.benefits.payout.title': 'Pagos mensuales',
+  'creators.benefits.payout.title': 'Cómo cobras',
   'creators.benefits.payout.desc':
     'Las comisiones confirmadas se pagan mediante PayPal o transferencia bancaria. Tu panel muestra tus ganancias reales verificadas.',
   'creators.benefits.support.title': 'Soporte dedicado',
@@ -7317,7 +7317,7 @@ export const ES_MESSAGES: Record<string, string> = {
     'Sí. Las normas de publicidad del Reino Unido (ASA/CAP) exigen que incluyas #ad en cada publicación promocional. Debe ser claramente visible.',
   'creators.faq.q7': '¿Hay un límite a lo que puedo ganar?',
   'creators.faq.a7':
-    'Sin límite. Cuantos más estudiantes refieras, más ganas. La comisión es recurrente durante todo el tiempo que cada estudiante siga suscrito.',
+    'Sin límite. Cuantos más estudiantes refieras, más ganas. Cada referido genera una comisión, que se confirma si la suscripción sigue activa 60 días después del pago, y nada más cuando se renueva.',
   'school.landing.h1': 'The English Hub para colegios y trusts',
   'school.landing.intro':
     'Repaso de inglés GCSE e IGCSE para todo el departamento, con corrección con IA, contenido calibrado según los esquemas de calificación y paneles para profesores. Creado para departamentos de inglés, multi-academy trusts y colegios internacionales británicos.',
@@ -9687,7 +9687,7 @@ export const ES_MESSAGES: Record<string, string> = {
   'homepage.board.edexcel_igcse_lit.blurb': 'Drama, Prose, Shakespeare, Unseen Poetry.',
   'homepage.board.edexcel_igcse_lang.blurb': 'Antología, no ficción, escritura transaccional.',
   'aff_comp.public.partnership_badge': 'Programa de socios',
-  'aff_comp.public.hero.title_part1': 'Gana comisiones recurrentes con',
+  'aff_comp.public.hero.title_part1': 'Gana una comisión por cada suscriptor que refieras a',
   'aff_comp.public.hero.title_brand': 'The English Hub',
   'aff_comp.public.hero.subtitle':
     'Asóciate con una plataforma de repaso de inglés en fase de lanzamiento. The English Hub es una nueva herramienta de repaso de GCSE/IGCSE creada por profesores de inglés. Ahora mismo estamos reclutando nuestra primera promoción de socios. No publicamos cifras de uso o ingresos que aún no podemos demostrar: tu panel muestra tus referidos y comisiones reales y verificados desde el primer día.',
@@ -9704,10 +9704,10 @@ export const ES_MESSAGES: Record<string, string> = {
     'Tu acuerdo está firmado y tu cuenta de socio está activa. Ve a tu panel para conseguir tu enlace de referido y empezar a compartir.',
   'aff_comp.public.why.heading': 'Por qué asociarte con nosotros',
   'aff_comp.public.why.subheading':
-    'Un producto realmente útil para tu audiencia, recompensas recurrentes y justas para ti, y un seguimiento transparente en todo momento.',
+    'Un producto realmente útil para tu audiencia, una comisión justa por cada referido y un seguimiento transparente en todo momento.',
   'aff_comp.public.why.reason1.title': 'Un programa claro',
   'aff_comp.public.why.reason1.desc':
-    'Un programa, un único conjunto de términos, pagado mensualmente. Tu panel muestra tus referidos e ingresos reales y verificados, y la tasa de comisión actual que se te aplica.',
+    'Un programa, un único conjunto de términos. Tu panel muestra tus referidos e ingresos reales y verificados, y la comisión que se te aplica.',
   'aff_comp.public.why.reason2.title': 'Un producto en el que los padres confían de verdad',
   'aff_comp.public.why.reason2.desc':
     'Repaso específico por junta examinadora creado por profesores de inglés, no contenido genérico generado por IA. Fácil de recomendar con honestidad.',
@@ -9726,15 +9726,15 @@ export const ES_MESSAGES: Record<string, string> = {
   'aff_comp.public.how.step3.title': 'Compártelo a tu manera',
   'aff_comp.public.how.step3.desc':
     'Usa nuestros banners, capturas de pantalla y fragmentos de texto, o escribe el tuyo por completo. Lo que funcione con tu audiencia.',
-  'aff_comp.public.how.step4.title': 'Cobra mensualmente',
+  'aff_comp.public.how.step4.title': 'Gana tu comisión',
   'aff_comp.public.how.step4.desc':
-    'Las comisiones se pagan mensualmente mediante Stripe o PayPal, mientras el cliente siga suscrito. Tu panel muestra la fecha exacta de pago y tus ingresos reales y verificados.',
+    'Cada suscripción referida genera una comisión, que se confirma si la suscripción sigue activa 60 días después del pago. No se vuelve a pagar cuando la suscripción se renueva. Tu panel muestra tus ingresos pendientes y confirmados.',
   'aff_comp.public.how.annual_only_lead': 'Solo planes anuales',
   'aff_comp.public.how.annual_only_body':
     'La comisión se gana con las suscripciones anuales referidas. Esto mantiene las recompensas significativas y alineadas con las familias que se comprometen con un año completo de aprendizaje.',
   'aff_comp.public.commission.heading': 'Estructura de comisiones',
   'aff_comp.public.commission.subheading':
-    'Comisión recurrente y transparente por cada plan anual referido. Un programa, un único conjunto de términos; tu panel muestra tus referidos e ingresos reales y verificados.',
+    'Una comisión por cada plan anual referido, según una escala publicada. Un programa, un único conjunto de términos; tu panel muestra tus referidos e ingresos reales y verificados.',
   'aff_comp.public.commission.col_plan': 'Plan',
   'aff_comp.public.commission.col_commission': 'Comisión',
   'aff_comp.public.commission.plan.student_monthly': 'Estudiante · mensual',
@@ -9743,7 +9743,7 @@ export const ES_MESSAGES: Record<string, string> = {
   'aff_comp.public.commission.plan.teacher_annual': 'Profesor · anual',
   'aff_comp.public.commission.per_signup': 'por registro',
   'aff_comp.public.commission.footnote':
-    'La comisión es recurrente mientras la suscripción referida siga activa. Un programa, un único conjunto de términos; la tasa que se te aplica y tus ingresos reales y verificados se confirman en tu panel de socio.',
+    'La comisión se paga una vez por cada suscripción referida, no de nuevo al renovarse. Un programa, un único conjunto de términos; la comisión que se te aplica y tus ingresos reales y verificados se confirman en tu panel de socio.',
   'aff_comp.public.impact.heading': 'El impacto que ayudas a crear',
   'aff_comp.public.impact.subheading':
     'Cada referido ayuda a un estudiante a desarrollar verdadera confianza en inglés, desde KS3 hasta GCSE, IGCSE y EAL.',
@@ -9761,7 +9761,7 @@ export const ES_MESSAGES: Record<string, string> = {
   'aff_comp.public.what_you_get.subheading':
     'Todo lo que necesitas para compartir The English Hub con confianza y seguir tus resultados.',
   'aff_comp.public.what_you_get.perk1':
-    'Comisión recurrente: la tasa que se te aplica se muestra en tu panel',
+    'Una comisión por cada referido: el importe que se te aplica se muestra en tu panel',
   'aff_comp.public.what_you_get.perk2':
     'Ventana de seguimiento de referidos confirmada en tu panel',
   'aff_comp.public.what_you_get.perk3':
@@ -9780,7 +9780,7 @@ export const ES_MESSAGES: Record<string, string> = {
   'aff_comp.public.faq.q3.q':
     '¿Qué pasa si mi audiencia está principalmente fuera del Reino Unido?',
   'aff_comp.public.faq.q3.a':
-    'Los pagos se realizan mensualmente una vez que tu saldo alcanza el umbral mínimo que se muestra en tu panel. La comisión se confirma después de que la suscripción anual referida complete su ventana estándar de reembolso, lo que protege tanto a los socios como al programa. Tu panel siempre muestra con claridad los ingresos pendientes y los confirmados.',
+    'Los pagos se realizan una vez que tu saldo alcanza el umbral mínimo que se muestra en tu panel. La comisión se confirma si la suscripción referida sigue activa 60 días después del pago, lo que protege tanto a los socios como al programa. Tu panel siempre muestra con claridad los ingresos pendientes y los confirmados.',
   'aff_comp.public.faq.q4.q': '¿Puedo promocionar en TikTok / Instagram / YouTube?',
   'aff_comp.public.faq.q4.a':
     'Los referidos se rastrean con una cookie que se inicia desde el primer clic en tu enlace, así que alguien que hace clic hoy y se suscribe más tarde se te sigue acreditando. La ventana de seguimiento exacta forma parte de un único conjunto de términos, confirmado en tu panel de socio.',
@@ -9792,7 +9792,7 @@ export const ES_MESSAGES: Record<string, string> = {
     'Tu panel muestra los clics en tu enlace, los registros, las suscripciones anuales completadas, la comisión pendiente y confirmada, y tu nivel actual, todo actualizado en tiempo real. Esto te da una visión clara y transparente del rendimiento de tus referidos en cualquier momento.',
   'aff_comp.public.faq.q7.q': '¿Qué pasa si un cliente referido cancela?',
   'aff_comp.public.faq.q7.a':
-    'Una vez que tu saldo confirmado alcanza el umbral mínimo de pago, los ingresos se abonan mensualmente con los datos de pago que configures en tu panel. Puedes seguir exactamente cuándo pasa la comisión de pendiente a confirmada, así que no hay sorpresas sobre cuánto cobrarás y cuándo.',
+    'Si la suscripción referida ya no está activa 60 días después del pago, su comisión no se confirma y no se paga. Una vez que tu saldo confirmado alcanza el umbral mínimo de pago, los ingresos se abonan con los datos de pago que configures en tu panel, donde puedes ver cuándo pasa cada comisión de pendiente a confirmada.',
   'aff_comp.public.faq.q8.q': '¿Dónde puedo ver mis referidos e ingresos?',
   'aff_comp.public.faq.q8.a':
     'Todos los socios tienen acceso a soporte por correo electrónico, además de recursos de marketing y orientación para ayudarte a promocionar con eficacia. A medida que crece tu volumen de referidos desbloqueas soporte prioritario y, en el nivel más alto, un gestor de socios dedicado para ayudarte a sacar el máximo partido del programa.',
@@ -9815,16 +9815,16 @@ export const ES_MESSAGES: Record<string, string> = {
     'Una cookie rastrea cada referido desde el primer clic, así que se te acredita aunque alguien se suscriba más tarde. La ventana de seguimiento forma parte de un único conjunto de términos, confirmado en tu panel.',
   'aff_comp.public.basics.min_payout.title': 'Pago mínimo bajo',
   'aff_comp.public.basics.min_payout.desc':
-    'Alcanza un umbral de pago modesto y recibe tus ingresos con una periodicidad mensual; el mínimo actual se muestra en tu panel.',
-  'aff_comp.public.basics.ltv.title': 'Valor recurrente de por vida',
+    'Alcanza un umbral de pago modesto para cobrar; el mínimo actual se muestra en tu panel.',
+  'aff_comp.public.basics.ltv.title': 'Una escala que sube contigo',
   'aff_comp.public.basics.ltv.desc':
-    'La comisión sigue pagándose mientras tu referido siga suscrito, así que cada referido puede generar mucho más allá del primer año.',
-  'aff_comp.public.basics.commission.title': 'Comisión recurrente',
+    'La comisión por cada nuevo referido sube a medida que crece tu total de referidos confirmados. Cada referido se paga una vez, no de nuevo al renovarse.',
+  'aff_comp.public.basics.commission.title': 'Una comisión por referido',
   'aff_comp.public.basics.commission.desc':
-    'Gana comisión recurrente por cada plan anual referido. Un programa, un único conjunto de términos; tu panel muestra tus referidos e ingresos reales y verificados.',
+    'Gana una comisión por cada plan anual referido. Un programa, un único conjunto de términos; tu panel muestra tus referidos e ingresos reales y verificados.',
   'aff_comp.public.bottom_cta.heading': 'Listo para empezar a ganar',
   'aff_comp.public.bottom_cta.body':
-    'Únete al programa de socios, comparte The English Hub con las personas que confían en tus recomendaciones y gana comisión recurrente por cada suscripción anual que refieras.',
+    'Únete al programa de socios, comparte The English Hub con las personas que confían en tus recomendaciones y gana una comisión por cada suscripción anual que refieras.',
   'aff_comp.public.bottom_cta.button': 'Consigue tu código de referido',
   'aff_comp.public.templates.heading': 'Plantillas de publicación para empezar',
   'aff_comp.public.templates.intro_part1':
@@ -10578,9 +10578,9 @@ export const ES_MESSAGES: Record<string, string> = {
     'Repaso de Pearson Edexcel A-Level English Literature and Language. Usa las herramientas de análisis de textos prescritos, técnica de redacción y estudio de la lengua comunes a todas las juntas que hay abajo mientras las guías completas de Edexcel A-Level están en nuestra hoja de ruta.',
   'affiliates.breadcrumb.home': 'Inicio',
   'affiliates.breadcrumb.self': 'Afiliados',
-  'affiliates.public.meta.title': 'Programa de afiliados - Gana comisiones recurrentes para socios',
+  'affiliates.public.meta.title': 'Programa de afiliados - Gana una comisión por cada referido',
   'affiliates.public.meta.description':
-    'Únete al programa de socios de The English Hub y gana comisiones recurrentes por cada suscripción anual que refieras. Aprendizaje de inglés independiente y alineado con las juntas examinadoras para GCSE, IGCSE, KS3 y EAL. Seguimiento de 90 días, pagos mensuales, sin tráfico mínimo.',
+    'Únete al programa de socios de The English Hub y gana una comisión por cada suscripción anual que refieras. Aprendizaje de inglés independiente y alineado con las juntas examinadoras para GCSE, IGCSE, KS3 y EAL. Sin tráfico mínimo.',
   'affiliates.public.meta.og_image_alt': 'Programa de afiliados de The English Hub',
   'affiliates.dashboard.meta.title': 'Panel de afiliado',
   'affiliates.payouts.meta.title': 'Pagos de afiliado',
