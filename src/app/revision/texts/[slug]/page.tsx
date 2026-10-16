@@ -25,6 +25,9 @@ import { SET_TEXTS, getSetText, textAvailableForBoard, type SetText } from '@/li
 import { getServerBoard } from '@/lib/board/get-server-board'
 import { textBackLink } from '@/lib/revision/text-back-href'
 import { t } from '@/lib/i18n/t'
+import { COMIC_LOADERS } from '@/data/comics'
+import { loadStudyGuide } from '@/lib/study-guides/load'
+import { GuideSupplement } from '@/components/study-guide/guide-supplement'
 
 // ─── Static params ──────────────────────────────────────────────────────────
 
@@ -210,6 +213,19 @@ export default async function TextStudyGuidePage({ params }: { params: Promise<P
 
   const category = CATEGORY_META[text.category]
   const CategoryIcon = category.icon
+
+  // ── A text drawn as a comic shows its annotated extracts and panels ───
+  // Found 16 October 2026: 21 of the 22 comic texts' guide pages show their
+  // annotated key extracts and comic panels through GuideSupplement, and
+  // Antony and Cleopatra's did not, because its guide page is this catch-all
+  // (its full revision notes live at /resources/revision-notes/antony-and-
+  // cleopatra, where the same supplement is mounted). The rule is the
+  // comics register, not a slug, so a comic text served here can never again
+  // be the one without its extracts. The page stays a noindexed stub; only
+  // what a reader sees on it changes.
+  const comicGuide = Object.prototype.hasOwnProperty.call(COMIC_LOADERS, text.slug)
+    ? await loadStudyGuide(text.slug)
+    : null
 
   const revisionNotesSlug = REVISION_NOTES_SLUG_MAP[text.slug] ?? text.slug
   const hasRevisionNotes = REVISION_NOTES_AVAILABLE.has(revisionNotesSlug)
@@ -435,6 +451,8 @@ export default async function TextStudyGuidePage({ params }: { params: Promise<P
           checked, rather than a hedge.
       */}
       <ExamPlacementCard slug={text.slug} />
+
+      {comicGuide && <GuideSupplement guide={comicGuide} />}
 
       {/* ── Back to Hub ────────────────────────────────────────────── */}
       <div className="flex justify-center">

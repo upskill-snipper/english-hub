@@ -664,3 +664,32 @@ describe('no privacy or compliance link leads to a 404', () => {
     expect(code('src/app/faqs/faq-data.ts')).not.toMatch(/\/compliance|\/dpa\b|\/sub-processors/)
   })
 })
+
+// ─── F22: every comic text's guide page shows its annotated extracts ────────
+
+describe('every text drawn as a comic shows its extracts on its guide page', () => {
+  // Antony and Cleopatra's guide page is the catch-all stub, which mounted no
+  // guide, so it was the one comic text of 22 with no annotated extracts.
+  it('mounts the guide supplement wherever a comic text is served', async () => {
+    const { COMIC_LOADERS } = await import('@/data/comics')
+    const slugs = Object.keys(COMIC_LOADERS)
+    expect(slugs.length).toBeGreaterThanOrEqual(22)
+    const catchAll = code('src/app/revision/texts/[slug]/page.tsx')
+    for (const slug of slugs) {
+      const rel = `src/app/revision/texts/${slug}/page.tsx`
+      let own: string | null = null
+      try {
+        own = code(rel)
+      } catch {
+        own = null
+      }
+      if (own !== null) {
+        expect(own, rel).toMatch(/<GuideSupplement|<FullStudyGuide/)
+      } else {
+        expect(catchAll, `${slug} is served by the catch-all`).toMatch(
+          /hasOwnProperty\.call\(COMIC_LOADERS, text\.slug\)[\s\S]*<GuideSupplement guide=\{comicGuide\}/,
+        )
+      }
+    }
+  })
+})
