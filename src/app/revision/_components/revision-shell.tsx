@@ -35,7 +35,6 @@ import {
 import { cn } from '@/lib/utils'
 import { Button } from '@/components/ui/button'
 import { Sheet, SheetTrigger, SheetContent, SheetHeader, SheetTitle } from '@/components/ui/sheet'
-import { Progress, ProgressTrack, ProgressIndicator } from '@/components/ui/progress'
 import { Badge } from '@/components/ui/badge'
 
 import { useBoard } from '@/hooks/useBoard'
@@ -47,6 +46,7 @@ import { buildTextNav, textSlugFromPath } from '@/lib/revision/text-nav'
 import { canonicalTextSlug } from '@/lib/revision/text-slug-aliases'
 import { boardShelfHref } from '@/lib/board/board-landing'
 import { textBackLink } from '@/lib/revision/text-back-href'
+import { readExplicitTargetGrade, type TargetGrade } from '@/lib/revision/target-grade'
 
 import { SidebarLink } from './sidebar-link'
 import { TextScopedNav } from './text-scoped-nav'
@@ -168,79 +168,38 @@ const GROUPS: { key: Exclude<NavGroup, 'top'>; label: string }[] = [
   { key: 'board', label: 'revision.shell.group.board' },
 ]
 
-// ─── Progress from localStorage ─────────────────────────────────────────────
+// ─── Section visits, and the student's own target ───────────────────────────
 
 const PROGRESS_KEY = 'english-hub-revision-progress'
-const STUDY_PLAN_KEY = 'english-hub-study-plan'
-const TARGET_GRADE_KEY = 'english-hub-target-grade'
 
-type TargetGrade = 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9
-
-function clampGrade(n: number): TargetGrade {
-  if (n < 1) return 1
-  if (n > 9) return 9
-  return Math.round(n) as TargetGrade
-}
-
-// Derive a target grade from the Study Plan save first (user's most recent
-// explicit choice), then the direct target-grade override, then a sensible
-// default of 7 (high achiever but reachable for most students).
-function readTargetGrade(): TargetGrade {
-  try {
-    const direct = localStorage.getItem(TARGET_GRADE_KEY)
-    if (direct) {
-      const parsed = parseInt(direct, 10)
-      if (!Number.isNaN(parsed)) return clampGrade(parsed)
-    }
-    const plan = localStorage.getItem(STUDY_PLAN_KEY)
-    if (plan) {
-      const parsed = JSON.parse(plan) as { answers?: { grade?: string } }
-      const g = parsed?.answers?.grade
-      // Study Plan stores ranges: '4-5' | '6-7' | '8-9'. Take the UPPER value.
-      if (g === '4-5') return 5
-      if (g === '6-7') return 7
-      if (g === '8-9') return 9
-    }
-  } catch {
-    // ignore
-  }
-  return 7
-}
-
-interface ProgressSnapshot {
-  progress: number
-  target: TargetGrade
-  hasData: boolean
-}
-
-// Approximate 9-1 boundary % (board-agnostic averages) - used to convert the
-// raw performance score (0-100 avg of quiz correct rate + AI essay score)
-// into a "% of the way toward your target grade" fill. If you hit the
-// target's % threshold, the bar is 100% full; below lowest-visible grade
-// it's 0%. Matches boundaries table in src/lib/board/grade-boundaries.ts
-// averaged across boards.
-const GRADE_PERCENT_THRESHOLDS: Record<TargetGrade, number> = {
-  1: 10,
-  2: 20,
-  3: 30,
-  4: 40,
-  5: 50,
-  6: 60,
-  7: 70,
-  8: 80,
-  9: 88,
-}
-
-function useRevisionProgress(items: NavItem[]): ProgressSnapshot {
+/**
+ * Records which revision sections the student has opened, and reads the
+ * target grade they set, if they set one.
+ *
+ * WHAT WAS WRONG, fixed 16 October 2026. The status card at the top of this
+ * sidebar showed "Target grade: Grade 7" to every visitor who had not set a
+ * target, because its reader fell back to 7, and under it a bar running from
+ * "Grade 5" to "Grade 7". The bar never measured a grade. For a visitor it
+ * filled with the share of sidebar sections they had opened; for a signed-in
+ * student it divided an average of quiz answers and AI essay scores by
+ * invented "boundary" percentages (a 7 was 70%). So a child who had clicked
+ * round the menu was shown most of the way to a grade 7 they never chose.
+ *
+ * Now the target is shown only when the student set it, in the Study Plan,
+ * through the same reader as the hub's hero pill (src/lib/revision/
+ * target-grade.ts), and with no bar. A student without one is offered a link
+ * to set it. The visit record is still written as before, because progress
+ * sync and the flashcards read it.
+ */
+function useRevisionVisits(items: NavItem[]): { target: TargetGrade | null; ready: boolean } {
   const pathname = usePathname()
-  const [coverage, setCoverage] = useState(0)
-  const [perfScore, setPerfScore] = useState<number | null>(null)
-  const [target, setTarget] = useState<TargetGrade>(7)
+  // Null on the server and the first client render, so they agree; filled in
+  // from this device's storage once mounted.
+  const [target, setTarget] = useState<TargetGrade | null>(null)
+  const [ready, setReady] = useState(false)
 
-  // Track section visits - once visited, contributes to overall progress
   const sectionKeys = items.filter((i) => i.href !== '/revision').map((i) => i.href)
 
-  // Coverage % (revision sections visited) - immediate feedback loop
   useEffect(() => {
     try {
       const stored = localStorage.getItem(PROGRESS_KEY)
@@ -255,7 +214,6 @@ function useRevisionProgress(items: NavItem[]): ProgressSnapshot {
       const visibleVisited = Array.from(visited).filter((v) => sectionKeys.includes(v))
       const denominator = sectionKeys.length || 1
       const percentage = Math.round((visibleVisited.length / denominator) * 100)
-      setCoverage(Math.min(100, Math.max(0, percentage)))
 
       localStorage.setItem(
         PROGRESS_KEY,
@@ -264,38 +222,12 @@ function useRevisionProgress(items: NavItem[]): ProgressSnapshot {
     } catch {
       // ignore
     }
-    setTarget(readTargetGrade())
+    setTarget(readExplicitTargetGrade())
+    setReady(true)
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [pathname, sectionKeys.join('|')])
 
-  // Real performance score - quiz correct rate + AI essay overall score
-  // (server-aggregated via /api/profile/grade-progress). Fire once per
-  // shell mount; anon users 401 silently and fall back to coverage.
-  useEffect(() => {
-    let cancelled = false
-    fetch('/api/profile/grade-progress', { cache: 'no-store' })
-      .then((r) => (r.ok ? r.json() : null))
-      .then((j: { avgScore: number | null } | null) => {
-        if (cancelled) return
-        if (j && typeof j.avgScore === 'number') setPerfScore(j.avgScore)
-      })
-      .catch(() => {
-        // silent - coverage-only fallback is fine
-      })
-    return () => {
-      cancelled = true
-    }
-  }, [])
-
-  // Blend: prefer the real perf score once we have it (map it to
-  // % toward target grade); fall back to the coverage proxy otherwise.
-  const targetThreshold = GRADE_PERCENT_THRESHOLDS[target]
-  const progress =
-    perfScore !== null && targetThreshold > 0
-      ? Math.min(100, Math.max(0, (perfScore / targetThreshold) * 100))
-      : coverage
-
-  return { progress: Math.round(progress), target, hasData: perfScore !== null }
+  return { target, ready }
 }
 
 // ─── Sidebar content (shared between desktop & mobile) ──────────────────────
@@ -387,32 +319,19 @@ function SidebarNav({
   // would otherwise get a rail with a single link AND a folded-away site
   // menu - less navigation than before this feature existed, not more.
   const hasScopedSections = textSlug !== null && buildTextNav(textSlug).sectionCount > 0
-  const { progress, target, hasData } = useRevisionProgress(navItems)
+  const { target, ready: targetRead } = useRevisionVisits(navItems)
   const { board } = useBoard()
   const t = useT()
 
-  // Target + two grades below - e.g. target=7 → show 5, 6, 7 with fill
-  // reflecting how far through the 5→7 journey the student has travelled.
-  // If target ≤ 2 we show 1, 2, target so labels still make sense.
-  const gradeRight = target
-  const gradeMid = Math.max(1, target - 1) as TargetGrade
-  const gradeLeft = Math.max(1, target - 2) as TargetGrade
-
-  // Board-aware grade labels so IAL + A-Level render "A*/A/B" not "Grade 7/8/9"
-  // and Cambridge 0500 falls back to its A*-G letters. 9-1 boards keep
-  // "Grade N" as before.
-  const labelLeft = gradeDisplayLabel(
-    String(gradeLeft) as '1' | '2' | '3' | '4' | '5' | '6' | '7' | '8' | '9',
-    board,
-  )
-  const labelMid = gradeDisplayLabel(
-    String(gradeMid) as '1' | '2' | '3' | '4' | '5' | '6' | '7' | '8' | '9',
-    board,
-  )
-  const labelRight = gradeDisplayLabel(
-    String(gradeRight) as '1' | '2' | '3' | '4' | '5' | '6' | '7' | '8' | '9',
-    board,
-  )
+  // Board-aware, so IAL and A level show a letter rather than "Grade 7", and
+  // Cambridge 0500 its A*-G letters. Only ever the student's own target.
+  const targetLabel =
+    target === null
+      ? null
+      : gradeDisplayLabel(
+          String(target) as '1' | '2' | '3' | '4' | '5' | '6' | '7' | '8' | '9',
+          board,
+        )
 
   // Partition nav items by group - items without an explicit group fall back
   // to the top tier (defensive default keeps newly-added entries visible).
@@ -439,9 +358,9 @@ function SidebarNav({
     <nav className="flex flex-col gap-1">
       {textSlug && <TextScopedNav slug={textSlug} onNavigate={onNavigate} />}
       <RestOfSite collapsed={hasScopedSections} label={t('textnav.rest_of_site')}>
-        {/* Status card - exam board + target-grade progress merged into a
-          single richer panel. Visually anchors the top of the sidebar so
-          the long nav list below feels organised rather than open-ended. */}
+        {/* Status card - the exam board and the student's own target grade
+          in one panel. Visually anchors the top of the sidebar so the long
+          nav list below feels organised rather than open-ended. */}
         <div className="relative mb-4 overflow-hidden rounded-2xl border border-primary/25 bg-gradient-to-br from-primary/[0.06] via-card to-violet-500/[0.04] p-3.5">
           <div
             aria-hidden="true"
@@ -459,44 +378,31 @@ function SidebarNav({
               </div>
             )}
 
-            {/* Target-grade progress. Fill = student's weighted performance
-              score (quiz_responses correct rate + AIFeedback overallScore,
-              server-aggregated at /api/profile/grade-progress) mapped onto
-              the target-grade threshold. Falls back to a coverage proxy
-              (sections visited / total visible) until there's real data. */}
-            <div className="flex items-center justify-between">
-              <span className="font-mono text-[10px] uppercase tracking-[0.14em] text-muted-foreground">
-                {t('revision.shell.target_grade_label')}
-              </span>
-              <span className="font-heading text-base font-semibold text-primary">
-                {labelRight}
-              </span>
-            </div>
-            {/* aria-label since A11Y-7 (20 September 2026). The visible label
-                above is a separate element, so the bar itself announced as an
-                unnamed progressbar - axe reported it as a serious
-                aria-progressbar-name violation on every page inside the
-                revision shell. A screen reader read "x, progress bar" and no
-                indication of what was progressing. */}
-            <Progress
-              value={progress}
-              className="mt-2"
-              aria-label={t('revision.shell.target_grade_label')}
-            >
-              <ProgressTrack className="h-2 bg-border/40">
-                <ProgressIndicator className="rounded-full bg-gradient-to-r from-cyan-400 via-primary to-emerald-400" />
-              </ProgressTrack>
-            </Progress>
-            <div className="mt-1.5 flex justify-between text-[10px] font-medium text-muted-foreground">
-              <span>{labelLeft}</span>
-              <span>{labelMid}</span>
-              <span className="text-primary">{labelRight}</span>
-            </div>
-            {!hasData && (
-              <p className="mt-2 text-[10px] italic text-muted-foreground-subtle">
-                {t('revision.shell.progress_hint')}
-              </p>
-            )}
+            {/* The student's own target, or a way to set one. Never a
+              default and never a bar: see useRevisionVisits for the "Grade
+              7" every visitor was shown, and the bar that measured clicks.
+              Nothing renders until storage has been read, so a student with
+              a target does not see the "set one" link flash first. */}
+            {targetRead &&
+              (targetLabel !== null ? (
+                <div className="flex items-center justify-between">
+                  <span className="font-mono text-[10px] uppercase tracking-[0.14em] text-muted-foreground">
+                    {t('revision.shell.target_grade_label')}
+                  </span>
+                  <span className="font-heading text-base font-semibold text-primary">
+                    {targetLabel}
+                  </span>
+                </div>
+              ) : (
+                <Link
+                  href="/revision/study-plan"
+                  onClick={onNavigate}
+                  className="inline-flex items-center gap-1.5 text-xs font-medium text-muted-foreground transition-colors hover:text-foreground"
+                >
+                  <Target className="size-3" aria-hidden="true" />
+                  {t('revision_page.pill.set_target')}
+                </Link>
+              ))}
           </div>
         </div>
 

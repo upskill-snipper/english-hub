@@ -11557,7 +11557,6 @@ export const AR_MESSAGES: Record<string, string> = {
   'revision.shell.group.board': 'البورد مالك',
   'revision.igcse.faq_heading': 'IGCSE English: أسئلة شائعة',
   'revision.shell.target_grade_label': 'الدرجة المستهدفة',
-  'revision.shell.progress_hint': 'حلّ الكويزات وأرسل مقالاتك عشان تشوف تقدّمك الحقيقي.',
   'revision.shell.nav.your_hub': 'Hub مالك',
   'revision.shell.nav.mark_essay': 'صحّح مقالة',
   'revision.shell.nav.full_dashboard': 'اللوحة الكاملة',

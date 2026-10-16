@@ -19,31 +19,9 @@ import { useEffect, useState } from 'react'
 import Link from 'next/link'
 import { Target } from 'lucide-react'
 import { useT } from '@/lib/i18n/use-t'
-
-const STUDY_PLAN_KEY = 'english-hub-study-plan'
-const TARGET_GRADE_KEY = 'english-hub-target-grade'
-
-/** Returns the grade the student explicitly set, or null if they never did. */
-function readExplicitTargetGrade(): number | null {
-  try {
-    const direct = localStorage.getItem(TARGET_GRADE_KEY)
-    if (direct) {
-      const parsed = parseInt(direct, 10)
-      if (!Number.isNaN(parsed) && parsed >= 1 && parsed <= 9) return parsed
-    }
-    const plan = localStorage.getItem(STUDY_PLAN_KEY)
-    if (plan) {
-      const parsed = JSON.parse(plan) as { answers?: { grade?: string } }
-      const g = parsed?.answers?.grade
-      if (g === '4-5') return 5
-      if (g === '6-7') return 7
-      if (g === '8-9') return 9
-    }
-  } catch {
-    // no-op: absent or malformed storage means "not set"
-  }
-  return null
-}
+// Shared with the /revision sidebar since 16 October 2026, when the sidebar's
+// own reader was found defaulting to 7. One reader, so they cannot drift again.
+import { readExplicitTargetGrade } from '@/lib/revision/target-grade'
 
 export function HeroStatPills() {
   const t = useT()

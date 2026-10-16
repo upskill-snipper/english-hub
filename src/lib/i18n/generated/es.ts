@@ -12127,8 +12127,6 @@ export const ES_MESSAGES: Record<string, string> = {
   'revision.shell.group.board': 'Tu junta',
   'revision.igcse.faq_heading': 'IGCSE English: preguntas frecuentes',
   'revision.shell.target_grade_label': 'Nota objetivo',
-  'revision.shell.progress_hint':
-    'Haz cuestionarios y envía ensayos para ver tu progreso con datos reales.',
   'revision.shell.nav.your_hub': 'Tu Hub',
   'revision.shell.nav.mark_essay': 'Corregir una redacción',
   'revision.shell.nav.full_dashboard': 'Panel completo',

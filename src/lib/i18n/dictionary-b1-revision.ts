@@ -73,11 +73,9 @@ export const B1_REVISION_DICTIONARY: Record<string, { en: string; ar: string; es
     ar: 'الدرجة المستهدفة',
     es: 'Nota objetivo',
   },
-  'revision.shell.progress_hint': {
-    en: 'Sit quizzes and submit essays to see your real-data progress.',
-    ar: 'حلّ الكويزات وأرسل مقالاتك عشان تشوف تقدّمك الحقيقي.',
-    es: 'Haz cuestionarios y envía ensayos para ver tu progreso con datos reales.',
-  },
+  // 'revision.shell.progress_hint' ("Sit quizzes and submit essays to see your
+  // real-data progress") went on 16 October 2026 with the bar it captioned,
+  // which mapped clicks and quiz averages onto grades. See revision-shell.tsx.
 
   // Nav item labels
   'revision.shell.nav.your_hub': {
