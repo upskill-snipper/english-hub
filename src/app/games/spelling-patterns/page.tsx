@@ -5,362 +5,18 @@ import Link from 'next/link'
 import GameShell, { type GameState } from '@/components/games/GameShell'
 import { Button } from '@/components/ui/button'
 import { cn } from '@/lib/utils'
-import { ArrowLeft, CheckCircle, XCircle, Sparkles, Lightbulb } from 'lucide-react'
+import { ArrowLeft, CheckCircle, XCircle, Sparkles } from 'lucide-react'
 import { useBoard } from '@/hooks/useBoard'
 import { getBoardConfig } from '@/lib/board/board-store'
 import { shuffledOptionsFor, newSessionSalt } from '@/lib/quiz/shuffle'
+import { AnswerExplanation } from '@/components/games/AnswerExplanation'
+import { useGameRound } from '@/components/games/game-round'
+import { BANK, PATTERN_BANK, type PatternItem } from '@/data/games/banks/spelling-patterns'
 
 // ─── Data ──────────────────────────────────────────────────────────────────────
-
-interface PatternItem {
-  options: [string, string, string, string]
-  answerIndex: 0 | 1 | 2 | 3
-  rule: string
-}
-
-const PATTERN_BANK: PatternItem[] = [
-  // ── 'i before e except after c' ──────────────────────────────────────────
-  {
-    options: ['recieve', 'receive', 'receeve', 'receve'],
-    answerIndex: 1,
-    rule: "'i' before 'e' except after 'c' - so 'ceive', not 'cieve'.",
-  },
-  {
-    options: ['beleive', 'beleeve', 'believe', 'bilieve'],
-    answerIndex: 2,
-    rule: "'i' before 'e' when there is no 'c': bel-ieve.",
-  },
-  {
-    options: ['acheive', 'achieve', 'acheeve', 'acheve'],
-    answerIndex: 1,
-    rule: "'i' before 'e' (no 'c' here): ach-ieve.",
-  },
-  {
-    options: ['decieve', 'deceeve', 'deceive', 'deceve'],
-    answerIndex: 2,
-    rule: "After 'c', it is 'ei': dec-eive.",
-  },
-  {
-    options: ['cieling', 'ceiling', 'ceeling', 'celing'],
-    answerIndex: 1,
-    rule: "After 'c', use 'ei': c-eiling.",
-  },
-  {
-    options: ['peice', 'piece', 'peece', 'piecce'],
-    answerIndex: 1,
-    rule: "'i' before 'e' with no 'c': p-iece (a piece of pie).",
-  },
-  {
-    options: ['theif', 'theef', 'thief', 'thiefe'],
-    answerIndex: 2,
-    rule: "'i' before 'e' when not after 'c': th-ief.",
-  },
-  {
-    options: ['wieght', 'weight', 'weeght', 'waight'],
-    answerIndex: 1,
-    rule: "Exception: 'weight' uses 'ei' for the /ay/ sound.",
-  },
-  {
-    options: ['nieghbour', 'neighbour', 'neighbor', 'naighbour'],
-    answerIndex: 1,
-    rule: "Exception: 'ei' for the /ay/ sound; UK keeps the 'u' in -bour.",
-  },
-  {
-    // The fourth option used to be a second copy of 'weird'. Scoring by index
-    // marked that identical spelling wrong; scoring by value would mark two
-    // buttons right. Either way it is a misprint, so it is now a distractor.
-    options: ['wierd', 'weird', 'weerd', 'weired'],
-    answerIndex: 1,
-    rule: "Exception: 'weird' is spelled 'ei' though no 'c' precedes it.",
-  },
-  {
-    options: ['seize', 'sieze', 'seeze', 'seaze'],
-    answerIndex: 0,
-    rule: "Exception: 'seize' breaks the rule and uses 'ei'.",
-  },
-  {
-    options: ['protien', 'protein', 'proteen', 'protian'],
-    answerIndex: 1,
-    rule: "Exception: 'protein' uses 'ei' after a vowel.",
-  },
-
-  // ── Consonant doubling (1-1-1 rule) when adding -ing / -ed ────────────────
-  {
-    options: ['runing', 'running', 'runnning', 'runeing'],
-    answerIndex: 1,
-    rule: 'Short vowel + single final consonant: double it - run → running.',
-  },
-  {
-    options: ['stoped', 'stopped', 'stoppd', 'stopeed'],
-    answerIndex: 1,
-    rule: 'One syllable, one vowel, one consonant: double - stop → stopped.',
-  },
-  {
-    options: ['begining', 'beginning', 'beggining', 'beginnning'],
-    answerIndex: 1,
-    rule: "Stress on last syllable: double the 'n' - begin → beginning.",
-  },
-  {
-    options: ['planed', 'plannned', 'planned', 'plaaned'],
-    answerIndex: 2,
-    rule: 'Short vowel before single consonant: double - plan → planned.',
-  },
-  {
-    options: ['swiming', 'swimming', 'swimeing', 'swimmming'],
-    answerIndex: 1,
-    rule: "Short vowel + single 'm': double it - swim → swimming.",
-  },
-  {
-    options: ['prefered', 'preferred', 'preffered', 'prefferred'],
-    answerIndex: 1,
-    rule: "Stress on final syllable: double the 'r' - prefer → preferred.",
-  },
-  {
-    options: ['committed', 'comitted', 'commited', 'comited'],
-    answerIndex: 0,
-    rule: "Stressed final syllable: double 't' (and keep both 'm's) - commit → committed.",
-  },
-  {
-    options: ['controled', 'controlled', 'controled', 'controlld'],
-    answerIndex: 1,
-    rule: "UK English doubles the final 'l': control → controlled.",
-  },
-  {
-    options: ['traveling', 'travelling', 'travelng', 'travellling'],
-    answerIndex: 1,
-    rule: "UK English doubles the 'l' even when unstressed: travel → travelling.",
-  },
-  {
-    options: ['gardenning', 'gardening', 'gardning', 'gardenning'],
-    answerIndex: 1,
-    rule: 'Stress is NOT on the last syllable, so do not double: garden → gardening.',
-  },
-
-  // ── Drop the silent 'e' before a vowel suffix ────────────────────────────
-  {
-    options: ['makeing', 'making', 'makking', 'maing'],
-    answerIndex: 1,
-    rule: "Drop the silent 'e' before -ing: make → making.",
-  },
-  {
-    options: ['hopeing', 'hopping', 'hoping', 'hopeng'],
-    answerIndex: 2,
-    rule: "Drop the 'e' before -ing: hope → hoping (not 'hopping').",
-  },
-  {
-    options: ['writeing', 'writting', 'writing', 'wrighting'],
-    answerIndex: 2,
-    rule: "Drop the silent 'e' before -ing: write → writing.",
-  },
-  {
-    options: ['useable', 'usable', 'usabel', 'useible'],
-    answerIndex: 1,
-    rule: "Drop the 'e' before -able: use → usable.",
-  },
-  {
-    options: ['loveable', 'lovable', 'lovible', 'loveble'],
-    answerIndex: 1,
-    rule: "Drop the silent 'e' before -able: love → lovable.",
-  },
-  {
-    options: ['noticable', 'noticeable', 'noticeible', 'notisable'],
-    answerIndex: 1,
-    rule: "Keep the 'e' after soft 'c' to keep it soft: notice → noticeable.",
-  },
-  {
-    options: ['courageous', 'couragous', 'curageous', 'courageus'],
-    answerIndex: 0,
-    rule: "Keep the 'e' after 'g' to keep it soft: courage → courageous.",
-  },
-  {
-    options: ['hopful', 'hopeful', 'hopefull', 'hoppeful'],
-    answerIndex: 1,
-    rule: "Keep the 'e' before a consonant suffix: hope → hopeful.",
-  },
-  {
-    options: ['arguement', 'argument', 'arguemnt', 'argumant'],
-    answerIndex: 1,
-    rule: "Exception: drop the 'e' - argue → argument.",
-  },
-  {
-    options: ['truely', 'truly', 'trully', 'truley'],
-    answerIndex: 1,
-    rule: "Exception: drop the 'e' - true → truly.",
-  },
-
-  // ── Change 'y' to 'i' ────────────────────────────────────────────────────
-  {
-    options: ['happyness', 'happiness', 'hapiness', 'happieness'],
-    answerIndex: 1,
-    rule: "Consonant + 'y' → change 'y' to 'i': happy → happiness.",
-  },
-  {
-    options: ['cryed', 'cryd', 'cried', 'criede'],
-    answerIndex: 2,
-    rule: "Change 'y' to 'i' before -ed: cry → cried.",
-  },
-  {
-    options: ['carryed', 'carried', 'car ried', 'carriedd'],
-    answerIndex: 1,
-    rule: "Consonant + 'y' → 'i' before -ed: carry → carried.",
-  },
-  {
-    options: ['babys', 'babies', 'babyies', 'babes'],
-    answerIndex: 1,
-    rule: "Consonant + 'y' → 'ies' for plurals: baby → babies.",
-  },
-  {
-    options: ['beautyful', 'beautiful', 'beutiful', 'beautifull'],
-    answerIndex: 1,
-    rule: "Change 'y' to 'i' before a suffix: beauty → beautiful.",
-  },
-  {
-    options: ['studie', 'studying', 'studiing', 'studdying'],
-    answerIndex: 1,
-    rule: "Keep the 'y' before -ing (never 'ii'): study → studying.",
-  },
-  {
-    options: ['playd', 'plaied', 'played', 'plaiyed'],
-    answerIndex: 2,
-    rule: "Vowel + 'y' → keep the 'y': play → played.",
-  },
-  {
-    options: ['enjoyed', 'enjoied', 'enjoyd', 'enjoyyed'],
-    answerIndex: 0,
-    rule: "Vowel + 'y' → keep the 'y': enjoy → enjoyed.",
-  },
-  {
-    options: ['monkies', 'monkeys', 'monkys', 'monkyies'],
-    answerIndex: 1,
-    rule: "Vowel + 'y' → just add 's': monkey → monkeys.",
-  },
-
-  // ── -tion / -sion / -cian endings ────────────────────────────────────────
-  {
-    options: ['decision', 'desicion', 'decison', 'decistion'],
-    answerIndex: 0,
-    rule: 'After a /zh/ sound use -sion: decide → decision.',
-  },
-  {
-    options: ['informasion', 'information', 'informationn', 'informacion'],
-    answerIndex: 1,
-    rule: 'Most nouns from verbs use -tion: inform → information.',
-  },
-  {
-    options: ['expansion', 'expantion', 'expancion', 'expanssion'],
-    answerIndex: 0,
-    rule: "After 'n' the ending is often -sion: expand → expansion.",
-  },
-  {
-    options: ['discussion', 'discusion', 'discustion', 'discussian'],
-    answerIndex: 0,
-    rule: 'Verbs ending in -ss take -ion: discuss → discussion.',
-  },
-  {
-    options: ['musician', 'musicion', 'musition', 'musitian'],
-    answerIndex: 0,
-    rule: 'A person/job often takes -cian: music → musician.',
-  },
-  {
-    options: ['electrision', 'electricion', 'electrician', 'electritian'],
-    answerIndex: 2,
-    rule: 'Job ending uses -cian: electric → electrician.',
-  },
-  {
-    options: ['posession', 'possesion', 'possession', 'posesssion'],
-    answerIndex: 2,
-    rule: "Double 's' twice, then -ion: possess → possession.",
-  },
-  {
-    options: ['attension', 'attention', 'attencion', 'attentcion'],
-    answerIndex: 1,
-    rule: "Use -tion after 't': attend → attention.",
-  },
-  {
-    options: ['televsion', 'television', 'televistion', 'televicion'],
-    answerIndex: 1,
-    rule: 'After a long vowel sound use -sion: television.',
-  },
-
-  // ── Plurals: -f / -fe → -ves ─────────────────────────────────────────────
-  {
-    options: ['knifes', 'knives', 'knifves', 'knivs'],
-    answerIndex: 1,
-    rule: 'Words ending -fe often become -ves: knife → knives.',
-  },
-  {
-    options: ['leafs', 'leeves', 'leaves', 'leavs'],
-    answerIndex: 2,
-    rule: 'Many -f words become -ves: leaf → leaves.',
-  },
-  {
-    options: ['wifes', 'wives', 'wifves', 'wivs'],
-    answerIndex: 1,
-    rule: '-fe → -ves: wife → wives.',
-  },
-  {
-    options: ['halves', 'halfs', 'halfes', 'halvs'],
-    answerIndex: 0,
-    rule: '-f → -ves: half → halves.',
-  },
-  {
-    options: ['shelfs', 'shelfes', 'shelves', 'shelvs'],
-    answerIndex: 2,
-    rule: '-f → -ves: shelf → shelves.',
-  },
-  {
-    options: ['theifs', 'thiefs', 'thieves', 'thievs'],
-    answerIndex: 2,
-    rule: '-f → -ves: thief → thieves.',
-  },
-  {
-    options: ['rooves', 'roofs', 'roofes', 'roovs'],
-    answerIndex: 1,
-    rule: "Exception: 'roof' just adds 's' - roofs.",
-  },
-  {
-    options: ['cheifs', 'chiefs', 'chieves', 'chiefes'],
-    answerIndex: 1,
-    rule: "Exception: 'chief' just adds 's' - chiefs.",
-  },
-
-  // ── UK spelling distinctions ─────────────────────────────────────────────
-  {
-    options: ['color', 'colour', 'coler', 'colur'],
-    answerIndex: 1,
-    rule: "UK English keeps the 'u': colour, not 'color'.",
-  },
-  {
-    options: ['favorite', 'favourite', 'faverite', 'favourit'],
-    answerIndex: 1,
-    rule: "UK English keeps the 'u': favourite.",
-  },
-  {
-    options: ['practise', 'practice', 'practece', 'practiss'],
-    answerIndex: 1,
-    rule: "Noun = 'practice' with a 'c' (the verb is 'practise').",
-  },
-  {
-    options: ['practice the song', 'practise the song', 'practece the song', 'practiss the song'],
-    answerIndex: 1,
-    rule: "Verb = 'practise' with an 's' (the noun is 'practice').",
-  },
-  {
-    options: ['organize', 'organise', 'organyse', 'organiize'],
-    answerIndex: 1,
-    rule: 'UK English usually prefers -ise: organise.',
-  },
-  {
-    options: ['centre', 'center', 'centr', 'sentre'],
-    answerIndex: 0,
-    rule: "UK English uses -re: centre, not 'center'.",
-  },
-  {
-    options: ['licence to drive', 'license to drive', 'licanse to drive', 'lisence to drive'],
-    answerIndex: 0,
-    rule: "Noun = 'licence' with a 'c' in UK English.",
-  },
-]
+// The questions are in src/data/games/banks/spelling-patterns.ts (moved there on
+// 16 October 2026), and the explanation for each in
+// src/data/games/explanations/spelling-patterns.ts.
 
 // ─── Helpers ───────────────────────────────────────────────────────────────────
 
@@ -407,6 +63,7 @@ export default function SpellingPatternsPage() {
   const [revealed, setRevealed] = useState(false)
   /** Minted in the start handler, not in render: newSessionSalt calls Math.random. */
   const [salt, setSalt] = useState('')
+  const round = useGameRound('spelling-patterns')
 
   const current = items[idx] ?? null
 
@@ -439,17 +96,29 @@ export default function SpellingPatternsPage() {
     setGameState('finished')
   }, [])
 
+  /**
+   * A tap. The question is marked by the option's value, recorded for the
+   * student's account, and then left on screen with its explanation until they
+   * choose to go on (src/data/games/explanations/spelling-patterns.ts).
+   */
   const handleSelect = useCallback(
     (choice: number, value: string) => {
-      if (revealed || !view) return
+      if (revealed || !view || !current) return
+      const correct = value === view.correctValue
       setSelected(choice)
       setRevealed(true)
       setTotalAnswered((t) => t + 1)
-      if (value === view.correctValue) {
+      if (correct) {
         setScore((s) => s + 1)
       }
+      round.record({
+        question: BANK.key(current),
+        correct,
+        tag: BANK.tag?.(current),
+        chose: correct ? undefined : value,
+      })
     },
-    [revealed, view],
+    [revealed, view, current, round],
   )
 
   const handleNext = useCallback(() => {
@@ -492,6 +161,7 @@ export default function SpellingPatternsPage() {
           onStart={handleStart}
           onFinish={handleFinish}
           gameState={gameState}
+          round={round}
         >
           {current && view && (
             <div className="space-y-6">
@@ -557,7 +227,7 @@ export default function SpellingPatternsPage() {
                 })}
               </div>
 
-              {/* Feedback + rule reveal */}
+              {/* Feedback, then the explanation, then on when the student is ready */}
               {revealed && (
                 <div className="space-y-4">
                   <div
@@ -570,23 +240,22 @@ export default function SpellingPatternsPage() {
                   >
                     {answeredCorrectly ? (
                       <>
-                        <CheckCircle className="size-4" /> Spot on - great pattern spotting
+                        <CheckCircle className="size-4" /> Spot on. Great pattern spotting
                       </>
                     ) : (
                       <>
-                        <XCircle className="size-4" /> Not quite - the correct spelling is{' '}
+                        <XCircle className="size-4" /> Not quite. The correct spelling is{' '}
                         <span className="font-bold">{view.correctValue}</span>
                       </>
                     )}
                   </div>
 
-                  <div className="flex items-start gap-3 rounded-lg border border-primary/30 bg-primary/5 px-4 py-3 text-sm text-foreground">
-                    <Lightbulb className="size-4 shrink-0 mt-0.5 text-primary" />
-                    <span>
-                      <span className="font-semibold text-primary">Rule: </span>
-                      {current.rule}
-                    </span>
-                  </div>
+                  <AnswerExplanation
+                    game="spelling-patterns"
+                    question={BANK.key(current)}
+                    correct={answeredCorrectly}
+                    chosen={selectedValue}
+                  />
 
                   <div className="flex justify-center">
                     <Button onClick={handleNext}>
