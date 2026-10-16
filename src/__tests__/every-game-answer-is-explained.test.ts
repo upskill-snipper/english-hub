@@ -156,7 +156,6 @@ const PENDING: readonly string[] = [
   'comparatives-superlatives',
   'days-months-seasons',
   'everyday-vocab-flashcards',
-  'grade-climber',
   'greetings-dialogue',
   'homophone-hero',
   'numbers-and-time',
