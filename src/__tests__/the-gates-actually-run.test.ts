@@ -285,10 +285,18 @@ describe('what the suite runs in', () => {
     // empty page would pass every assertion. The rules behind the figures are
     // tested in the node environment, in class-view.test.ts and
     // teachers-see-game-results-only-since-pupils-joined.test.ts.
+    //
+    // Then to 34 on 16 October 2026 for
+    // the-self-study-panel-gives-no-grade.test.tsx. The Self-Study panel on 78
+    // guide and poem pages printed "Working at Grade 6-7" from an answer's word
+    // count, and a grade from a quiz percentage. Both existed only after a
+    // student typed and clicked, or answered every question: rendered to a
+    // string the panel shows its quiz settings and the old panel passes. Its
+    // source-text guards are in pages-say-what-the-code-does.test.ts.
     expect(
       annotated.length,
       'more files now claim to need a DOM - check each one',
-    ).toBeLessThanOrEqual(33)
+    ).toBeLessThanOrEqual(34)
   })
 })
 

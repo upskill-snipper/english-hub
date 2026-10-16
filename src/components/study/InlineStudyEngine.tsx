@@ -1,19 +1,35 @@
 'use client'
 
 /**
- * InlineStudyEngine - AI-powered self-study directly on any text/poem page.
+ * InlineStudyEngine - self-study directly on a text or poem page.
  *
  * No navigation away. Everything happens inline:
- * 1. Quiz Mode: Multiple choice + short answer with instant feedback
- * 2. Revision Notes: Generate key topic summaries on demand
- * 3. Essay Practice: Get a question, write a response, get feedback
- * 4. Understanding Tracker: Shows mastery across topics for this text
+ * 1. Quiz Mode: multiple-choice questions, each explained once answered
+ * 2. Revision Notes: the key topics for this text
+ * 3. Essay Practice: a question to answer, a checklist the student checks
+ *    their own answer against, and a way to take it to the real AI marker
+ * 4. Understanding Tracker: quiz scores by topic, kept on this device
  *
- * Data is pre-loaded from the text's quotations/characters/themes.
- * No API calls needed for the quiz - everything runs client-side.
+ * Data is pre-loaded from the text's quotations, characters and themes. The
+ * quiz runs in the browser, and nothing in this panel is marked by AI.
+ *
+ * WHAT WAS WRONG, fixed 16 October 2026. This header called the panel
+ * "AI-powered", and the panel printed grades it had no way of knowing:
+ *   - the Essay tab showed "Marking..." for 1.5 seconds, called nothing, and
+ *     printed "Working at Grade 6-7", "4-5" or "3-4" chosen by word count
+ *     alone (over 200 words was a 6-7, whatever the words were), with two
+ *     canned sentences, under the label "AI Feedback";
+ *   - the Quiz tab printed "Working at Grade {g}", mapping the percentage
+ *     straight onto 9 to 2.
+ * It is mounted by 28 set-text guides under /revision/texts and 50 poem pages,
+ * so a child on any of 78 pages could be told a grade by a word counter. Both
+ * grades are gone. The essay box now offers a checklist with no mark, and
+ * hands the answer to /marking/submit, where real AI marking says what it is.
+ * Do not put a grade back here: nothing on these pages can know one.
  */
 
 import { useState, useMemo, useCallback, useEffect } from 'react'
+import Link from 'next/link'
 import {
   Brain,
   Check,
@@ -32,6 +48,8 @@ import {
 import { events } from '@/lib/gtag'
 import { useT } from '@/lib/i18n/use-t'
 import { shuffledOptionsFor, newSessionSalt } from '@/lib/quiz/shuffle'
+import { saveMarkingDraft } from '@/lib/marking/draft-store'
+import { markingLink } from '@/lib/marking/submit-prefill'
 
 // ─── Types ─────────────────────────────────────────────────────────────────
 
@@ -284,31 +302,17 @@ function QuizMode({
   // Results screen
   if (finished) {
     const pct = Math.round((score / quizQuestions.length) * 100)
-    const grade =
-      pct >= 90
-        ? '9'
-        : pct >= 80
-          ? '8'
-          : pct >= 70
-            ? '7'
-            : pct >= 60
-              ? '6'
-              : pct >= 50
-                ? '5'
-                : pct >= 40
-                  ? '4'
-                  : pct >= 30
-                    ? '3'
-                    : '2'
+    // The score and the percentage, and no grade. Until 16 October 2026 this
+    // line read "Working at Grade {g}", with 90% printed as a 9 and 30% as a
+    // 3. A handful of multiple-choice questions on one text is not a GCSE
+    // grade, so the screen states only what the quiz measured.
     return (
       <div className="space-y-4">
         <div className="text-center py-4">
           <p className="font-serif text-5xl font-normal italic text-clay-600">
             {score}/{quizQuestions.length}
           </p>
-          <p className="text-sm text-ink-600 mt-1">
-            {pct}% &middot; {t('quiz.working_at_grade')} {grade}
-          </p>
+          <p className="text-sm text-ink-600 mt-1">{pct}%</p>
           {pct >= 70 && (
             <p className="text-xs text-teal-700 mt-1 font-medium">
               {t('quiz.excellent_understanding')}
@@ -480,34 +484,56 @@ function RevisionMode({
 
 // ─── Essay Practice Tab ────────────────────────────────────────────────────
 
+/**
+ * The essay box: write, check the answer against a list, and if a mark is
+ * wanted, take the answer to the real AI marker.
+ *
+ * WHAT THIS REPLACED, 16 October 2026. "Get Feedback" showed "Marking..." for
+ * 1.5 seconds and called nothing, then printed "Working at Grade 6-7", "4-5"
+ * or "3-4" by word count, under "AI Feedback". No AI and no mark scheme ever
+ * saw the answer.
+ *
+ * The checklist is the same for every answer because it is the same for every
+ * answer: it says what a strong answer does, and the student decides whether
+ * theirs does it. It names no assessment objective by number, because the
+ * boards behind these 78 pages do not all number them alike.
+ *
+ * The hand-off uses the tab-scoped draft store that the sign-in round trip
+ * and the mock papers already use (see draft-store.ts for why it is
+ * sessionStorage). It leaves the board, paper and question for the student to
+ * choose on the marking page: a prompt here belongs to a text, not to a paper,
+ * and guessing a paper would mark the answer against the wrong grid.
+ */
 function EssayMode({ prompts, textName }: { prompts: string[]; textName: string }) {
   const t = useT()
   const [currentPrompt, setCurrentPrompt] = useState(0)
   const [essay, setEssay] = useState('')
   const [wordCount, setWordCount] = useState(0)
-  const [submitted, setSubmitted] = useState(false)
-  const [feedback, setFeedback] = useState<string | null>(null)
-  const [loading, setLoading] = useState(false)
+  const [checking, setChecking] = useState(false)
+  const [ticked, setTicked] = useState<Record<number, boolean>>({})
+
+  const selfChecks = [
+    t('essay.self_check_1'),
+    t('essay.self_check_2'),
+    t('essay.self_check_3'),
+    t('essay.self_check_4'),
+    t('essay.self_check_5'),
+    t('essay.self_check_6'),
+  ]
 
   const handleEssayChange = (text: string) => {
     setEssay(text)
     setWordCount(text.trim() ? text.trim().split(/\s+/).length : 0)
   }
 
-  const handleSubmit = async () => {
+  const handleCheck = () => {
     if (wordCount < 50) return
-    setLoading(true)
-    // Simulate AI feedback (in production this would call /api/mark)
-    await new Promise((r) => setTimeout(r, 1500))
-    const grade = wordCount > 200 ? '6-7' : wordCount > 100 ? '4-5' : '3-4'
-    setFeedback(
-      `Working at Grade ${grade}. Your response shows ${wordCount > 200 ? 'good' : 'developing'} understanding of ${textName}. ` +
-        `${wordCount > 150 ? 'You embed quotations effectively.' : 'Try to embed more direct quotations to support your points.'} ` +
-        `${wordCount > 200 ? 'Your analysis of language is becoming sophisticated.' : 'Focus on analysing specific words and their effects (AO2).'} ` +
-        `To improve: integrate historical context (AO3) more naturally into your argument rather than bolting it on.`,
-    )
-    setSubmitted(true)
-    setLoading(false)
+    setTicked({})
+    setChecking(true)
+  }
+
+  const carryToMarking = () => {
+    saveMarkingDraft({ board: '', paper: '', question: '', title: textName, essay })
   }
 
   return (
@@ -525,15 +551,15 @@ function EssayMode({ prompts, textName }: { prompts: string[]; textName: string 
         onClick={() => {
           setCurrentPrompt((i) => (i + 1) % prompts.length)
           setEssay('')
-          setSubmitted(false)
-          setFeedback(null)
+          setWordCount(0)
+          setChecking(false)
         }}
         className="text-xs text-teal-700 font-medium hover:text-teal-800"
       >
         {t('essay.get_different_question')} &rarr;
       </button>
 
-      {!submitted ? (
+      {!checking ? (
         <>
           <textarea
             value={essay}
@@ -548,31 +574,62 @@ function EssayMode({ prompts, textName }: { prompts: string[]; textName: string 
               {wordCount} {t('essay.words')} {wordCount < 50 && t('essay.min_50_hint')}
             </span>
             <button
-              onClick={handleSubmit}
-              disabled={wordCount < 50 || loading}
+              onClick={handleCheck}
+              disabled={wordCount < 50}
               className="rounded-lg bg-clay-500 px-4 py-2 text-xs font-medium text-cream-50 hover:bg-clay-400 transition-colors disabled:opacity-50"
             >
-              {loading ? t('essay.marking') : t('essay.get_feedback')}
+              {t('essay.check_answer')}
             </button>
           </div>
         </>
       ) : (
         <div className="space-y-3">
-          <div className="rounded-lg border border-teal-800/20 bg-teal-800/5 p-4">
+          <div className="rounded-lg border border-ink-200 bg-cream-50 p-4">
             <p className="font-mono text-[9px] uppercase tracking-[0.2em] text-teal-700 mb-2">
-              {t('essay.ai_feedback')}
+              {t('essay.self_check_heading')}
             </p>
-            <p className="text-xs text-ink-700 leading-relaxed">{feedback}</p>
+            <p className="text-xs text-ink-600 leading-relaxed mb-3">
+              {t('essay.self_check_intro')}
+            </p>
+            <ul className="space-y-2">
+              {selfChecks.map((check, i) => (
+                <li key={i}>
+                  <label className="flex items-start gap-2.5 text-xs text-ink-700 leading-relaxed cursor-pointer">
+                    <input
+                      type="checkbox"
+                      checked={Boolean(ticked[i])}
+                      onChange={(e) => setTicked((prev) => ({ ...prev, [i]: e.target.checked }))}
+                      className="mt-0.5 size-3.5 shrink-0 accent-teal-700"
+                    />
+                    <span>{check}</span>
+                  </label>
+                </li>
+              ))}
+            </ul>
           </div>
+
+          <div className="rounded-lg border border-teal-800/20 bg-teal-800/5 p-4">
+            <p className="text-sm font-medium text-ink-900">{t('essay.ai_marking_heading')}</p>
+            <p className="text-xs text-ink-600 leading-relaxed mt-1">
+              {t('essay.ai_marking_body')}
+            </p>
+            <Link
+              href={markingLink({ text: textName, title: textName })}
+              onClick={carryToMarking}
+              className="mt-3 inline-flex items-center gap-1.5 rounded-lg bg-teal-800 px-4 py-2 text-xs font-medium text-cream-50 hover:bg-teal-700 transition-colors"
+            >
+              <PenLine className="size-3" /> {t('essay.ai_marking_link')}
+            </Link>
+            <p className="text-[11px] text-ink-500 leading-relaxed mt-2">
+              {t('essay.ai_marking_hint')}
+            </p>
+          </div>
+
           <button
-            onClick={() => {
-              setEssay('')
-              setSubmitted(false)
-              setFeedback(null)
-            }}
+            onClick={() => setChecking(false)}
             className="w-full flex items-center justify-center gap-2 rounded-lg border border-ink-200 bg-cream-50 py-2 text-xs font-medium text-ink-700 hover:bg-cream-100"
           >
-            <RotateCcw className="size-3" /> {t('essay.try_again')}
+            <RotateCcw className="size-3" /> {t('essay.back_to_answer')}
           </button>
         </div>
       )}

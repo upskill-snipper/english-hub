@@ -8754,11 +8754,13 @@ export const DICTIONARY: Dictionary = {
     es: 'preguntas disponibles en este nivel',
   },
   'quiz.start': { en: 'Start Quiz', ar: 'ابدأ الاختبار', es: 'Empezar el cuestionario' },
-  'quiz.working_at_grade': { en: 'Working at Grade', ar: 'مستواك درجة', es: 'Trabajando en Grade' },
+  // 'quiz.working_at_grade' ("Working at Grade") was removed on 16 October
+  // 2026 with the grade it labelled: InlineStudyEngine mapped a quiz
+  // percentage straight onto GCSE grades 9 to 2. See that file's docblock.
   'quiz.excellent_understanding': {
-    en: 'Excellent understanding!',
-    ar: 'فهم ممتاز!',
-    es: '¡Comprensión excelente!',
+    en: 'Excellent understanding',
+    ar: 'فهم ممتاز',
+    es: 'Comprensión excelente',
   },
   'quiz.good_progress': {
     en: 'Good progress - review the topics below',
@@ -8796,10 +8798,83 @@ export const DICTIONARY: Dictionary = {
     ar: '(الحد الأدنى ٥٠ للتسليم)',
     es: '(mín. 50 para enviar)',
   },
-  'essay.marking': { en: 'Marking...', ar: 'يصحّح…', es: 'Corrigiendo...' },
-  'essay.get_feedback': { en: 'Get Feedback', ar: 'خذ الملاحظات', es: 'Obtener feedback' },
-  'essay.ai_feedback': { en: 'AI Feedback', ar: 'ملاحظات الذكاء الاصطناعي', es: 'Feedback con IA' },
-  'essay.try_again': { en: 'Try again', ar: 'حاول مرة ثانية', es: 'Inténtalo de nuevo' },
+  // The Self-Study panel's essay check (InlineStudyEngine, 16 October 2026).
+  // These replace 'essay.marking', 'essay.get_feedback', 'essay.ai_feedback'
+  // and 'essay.try_again': the panel showed "Marking..." for 1.5 seconds,
+  // called nothing, and printed a grade chosen by word count under "AI
+  // Feedback". It now gives a checklist the student marks for themselves, and
+  // a way to take the answer to the real AI marker. Nothing here may name a
+  // grade or call itself AI.
+  'essay.check_answer': {
+    en: 'Check my answer',
+    ar: 'راجع إجابتي',
+    es: 'Revisar mi respuesta',
+  },
+  'essay.self_check_heading': {
+    en: 'Check your own answer',
+    ar: 'راجع إجابتك بنفسك',
+    es: 'Revisa tu propia respuesta',
+  },
+  'essay.self_check_intro': {
+    en: 'Read your answer again and tick each point it meets. This is a checklist for you, not a mark: nothing on this page grades your writing.',
+    ar: 'اقرأ إجابتك مرة ثانية وعلّم على كل نقطة تحققها. هذي قائمة تراجع فيها نفسك، مو درجة: ما في شي بهالصفحة يقيّم كتابتك.',
+    es: 'Vuelve a leer tu respuesta y marca cada punto que cumple. Es una lista para ti, no una nota: nada en esta página califica lo que escribes.',
+  },
+  'essay.self_check_1': {
+    en: 'Your opening sentence answers the question directly.',
+    ar: 'أول جملة عندك تجاوب على السؤال مباشرة.',
+    es: 'Tu primera frase responde directamente a la pregunta.',
+  },
+  'essay.self_check_2': {
+    en: 'You use short quotations, built into your own sentences.',
+    ar: 'تستخدم اقتباسات قصيرة داخل جملك أنت.',
+    es: 'Usas citas breves, integradas en tus propias frases.',
+  },
+  'essay.self_check_3': {
+    en: 'For each quotation, you pick out a word or a method and explain its effect.',
+    ar: 'مع كل اقتباس، تختار كلمة أو أسلوب وتشرح أثره.',
+    es: 'En cada cita, señalas una palabra o un recurso y explicas su efecto.',
+  },
+  'essay.self_check_4': {
+    en: "You link your ideas to the writer's purpose and to the context, where the question asks for it.",
+    ar: 'تربط أفكارك بهدف الكاتب وبالسياق، إذا السؤال يطلب هذا.',
+    es: 'Relacionas tus ideas con la intención del autor y con el contexto, cuando la pregunta lo pide.',
+  },
+  'essay.self_check_5': {
+    en: 'Every paragraph comes back to the words of the question.',
+    ar: 'كل فقرة ترجع لكلمات السؤال.',
+    es: 'Cada párrafo vuelve a las palabras de la pregunta.',
+  },
+  'essay.self_check_6': {
+    en: 'You have read it through for spelling, punctuation and grammar.',
+    ar: 'قرأتها مرة ثانية عشان الإملاء وعلامات الترقيم والقواعد.',
+    es: 'La has repasado para revisar la ortografía, la puntuación y la gramática.',
+  },
+  'essay.ai_marking_heading': {
+    en: 'Want it marked?',
+    ar: 'تبغاها تتصحّح؟',
+    es: '¿Quieres que la corrijan?',
+  },
+  'essay.ai_marking_body': {
+    en: 'AI marking gives a mark for each assessment objective and what to work on next. It is written by AI and labelled as AI, and its grade is a practice estimate, not an official result. It covers GCSE English papers and some International GCSE ones, not A level, and needs an account with a plan, the 7-day free trial or a school place.',
+    ar: 'التصحيح بالذكاء الاصطناعي يعطيك درجة لكل هدف تقييم وش تشتغل عليه بعدين. يكتبه الذكاء الاصطناعي ومكتوب عليه إنه منه، والدرجة فيه تقدير للتدريب، مو نتيجة رسمية. يغطي أوراق GCSE للإنجليزي وبعض أوراق International GCSE، مو A level، ويحتاج حساب فيه خطة أو التجربة المجانية ٧ أيام أو مكان عن طريق المدرسة.',
+    es: 'La corrección con IA da una nota para cada objetivo de evaluación y en qué trabajar a continuación. La escribe la IA y se señala como tal, y su nota es una estimación para practicar, no un resultado oficial. Cubre exámenes de inglés de GCSE y algunos de International GCSE, no de A level, y necesita una cuenta con un plan, la prueba gratuita de 7 días o una plaza escolar.',
+  },
+  'essay.ai_marking_link': {
+    en: 'Take this answer to AI marking',
+    ar: 'خذ هالإجابة للتصحيح بالذكاء الاصطناعي',
+    es: 'Llevar esta respuesta a la corrección con IA',
+  },
+  'essay.ai_marking_hint': {
+    en: 'Your answer goes with you in this tab. Choose your board, paper and question on the marking page.',
+    ar: 'إجابتك تنتقل معك بنفس التبويب. اختار البورد والورقة والسؤال في صفحة التصحيح.',
+    es: 'Tu respuesta te acompaña en esta pestaña. Elige tu junta, el examen y la pregunta en la página de corrección.',
+  },
+  'essay.back_to_answer': {
+    en: 'Back to my answer',
+    ar: 'ارجع لإجابتي',
+    es: 'Volver a mi respuesta',
+  },
   'study_progress.no_attempts': {
     en: 'No quiz attempts yet',
     ar: 'ما سوّيت أي اختبار بعد',
