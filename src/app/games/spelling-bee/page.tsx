@@ -5,133 +5,17 @@ import Link from 'next/link'
 import GameShell, { type GameState } from '@/components/games/GameShell'
 import { Button } from '@/components/ui/button'
 import { cn } from '@/lib/utils'
-import { ArrowLeft, Volume2, CheckCircle, XCircle, Sparkles } from 'lucide-react'
+import { ArrowLeft, ArrowRight, Volume2, CheckCircle, XCircle, Sparkles } from 'lucide-react'
 import { useBoard } from '@/hooks/useBoard'
 import { getBoardConfig } from '@/lib/board/board-store'
+import { AnswerExplanation } from '@/components/games/AnswerExplanation'
+import { useGameRound } from '@/components/games/game-round'
+import { BANK, SPELLING_BANK, type SpellingWord } from '@/data/games/banks/spelling-bee'
 
 // ─── Data ──────────────────────────────────────────────────────────────────────
-
-interface SpellingWord {
-  word: string
-  definition: string
-  difficulty: 1 | 2 | 3
-}
-
-const SPELLING_BANK: SpellingWord[] = [
-  // Difficulty 1 - Foundation
-  { word: 'definitely', definition: 'Without doubt; certainly', difficulty: 1 },
-  { word: 'separate', definition: 'To divide or keep apart', difficulty: 1 },
-  { word: 'necessary', definition: 'Required; essential', difficulty: 1 },
-  {
-    word: 'environment',
-    definition: 'The surroundings or conditions in which something exists',
-    difficulty: 1,
-  },
-  { word: 'beginning', definition: 'The start or first part of something', difficulty: 1 },
-  { word: 'occurred', definition: 'Happened or took place', difficulty: 1 },
-  { word: 'disappoint', definition: 'To fail to meet expectations', difficulty: 1 },
-  {
-    word: 'argument',
-    definition: 'A reason or set of reasons given in support of an idea',
-    difficulty: 1,
-  },
-  { word: 'receive', definition: 'To be given or presented with something', difficulty: 1 },
-  { word: 'achieve', definition: 'To successfully reach a goal', difficulty: 1 },
-  { word: 'conscience', definition: 'An inner feeling of right and wrong', difficulty: 1 },
-  { word: 'privilege', definition: 'A special right or advantage', difficulty: 1 },
-  { word: 'accommodate', definition: 'To provide space or lodging for', difficulty: 1 },
-  { word: 'embarrass', definition: 'To cause someone to feel awkward or ashamed', difficulty: 1 },
-  // Difficulty 2 - Crossover
-  {
-    word: 'metaphor',
-    definition: 'A figure of speech comparing two unlike things directly',
-    difficulty: 2,
-  },
-  { word: 'simile', definition: 'A comparison using "like" or "as"', difficulty: 2 },
-  {
-    word: 'allegory',
-    definition: 'A story with a hidden moral or political meaning',
-    difficulty: 2,
-  },
-  {
-    word: 'soliloquy',
-    definition: 'A speech where a character speaks thoughts aloud alone',
-    difficulty: 2,
-  },
-  {
-    word: 'juxtaposition',
-    definition: 'Placing two things side by side for contrast',
-    difficulty: 2,
-  },
-  { word: 'onomatopoeia', definition: 'Words that imitate the sound they describe', difficulty: 2 },
-  { word: 'alliteration', definition: 'Repetition of initial consonant sounds', difficulty: 2 },
-  {
-    word: 'personification',
-    definition: 'Giving human qualities to non-human things',
-    difficulty: 2,
-  },
-  { word: 'denouement', definition: 'The final resolution of a story', difficulty: 2 },
-  { word: 'protagonist', definition: 'The leading character in a story', difficulty: 2 },
-  { word: 'antagonist', definition: 'The character who opposes the protagonist', difficulty: 2 },
-  {
-    word: 'foreshadowing',
-    definition: 'Hints at what will happen later in the story',
-    difficulty: 2,
-  },
-  { word: 'verisimilitude', definition: 'The appearance of being true or real', difficulty: 2 },
-  {
-    word: 'enjambment',
-    definition: 'A sentence running over a line break in poetry',
-    difficulty: 2,
-  },
-  // Difficulty 3 - Higher
-  { word: 'sycophantic', definition: 'Behaving in a servile way to gain advantage', difficulty: 3 },
-  {
-    word: 'anachronism',
-    definition: 'Something placed in the wrong historical period',
-    difficulty: 3,
-  },
-  {
-    word: 'didacticism',
-    definition: 'The practice of conveying moral instruction in literature',
-    difficulty: 3,
-  },
-  {
-    word: 'catharsis',
-    definition: 'The release of strong emotions through art or drama',
-    difficulty: 3,
-  },
-  { word: 'polysyllabic', definition: 'Having many syllables', difficulty: 3 },
-  { word: 'ephemeral', definition: 'Lasting for only a short time', difficulty: 3 },
-  {
-    word: 'magnanimous',
-    definition: 'Generous or forgiving, especially towards a rival',
-    difficulty: 3,
-  },
-  { word: 'melancholic', definition: 'Feeling or expressing pensive sadness', difficulty: 3 },
-  {
-    word: 'idiosyncratic',
-    definition: 'Peculiar or individual in behaviour or style',
-    difficulty: 3,
-  },
-  { word: 'perfunctory', definition: 'Carried out without real interest or care', difficulty: 3 },
-  {
-    word: 'acquiesce',
-    definition: 'To accept something reluctantly without protest',
-    difficulty: 3,
-  },
-  {
-    word: 'bourgeoisie',
-    definition: 'The middle class, especially regarded as materialistic',
-    difficulty: 3,
-  },
-  { word: 'dichotomy', definition: 'A division into two contrasting things', difficulty: 3 },
-  {
-    word: 'quintessential',
-    definition: 'Representing the most perfect example of something',
-    difficulty: 3,
-  },
-]
+// The words are in src/data/games/banks/spelling-bee.ts (moved there on
+// 16 October 2026), and the explanation for each in
+// src/data/games/explanations/spelling-bee.ts.
 
 // ─── Helpers ───────────────────────────────────────────────────────────────────
 
@@ -168,6 +52,9 @@ export default function SpellingBeePage() {
   const [feedback, setFeedback] = useState<'correct' | 'wrong' | null>(null)
   const [correctAnswer, setCorrectAnswer] = useState('')
   const inputRef = useRef<HTMLInputElement>(null)
+  const round = useGameRound('spelling-bee')
+  // When the last spelling was checked, for handleNext.
+  const checkedAtRef = useRef(0)
 
   const currentWord = words[wIdx] ?? null
 
@@ -206,6 +93,16 @@ export default function SpellingBeePage() {
     setGameState('finished')
   }, [])
 
+  /**
+   * Checks the spelling, records the answer for the student's account, and
+   * leaves the word on screen with its explanation until they go on.
+   *
+   * WHAT CHANGED (16 October 2026). The page used to move to the next word two
+   * seconds after a check. Each word now has an explanation of how to spell it
+   * (src/data/games/explanations/spelling-bee.ts), so the student moves on with
+   * a button. Only whether the spelling was right is recorded, never the
+   * letters typed (src/components/games/game-round.tsx).
+   */
   const handleSubmit = useCallback(() => {
     if (!currentWord || feedback) return
     const trimmed = input.trim().toLowerCase()
@@ -219,18 +116,24 @@ export default function SpellingBeePage() {
     } else {
       setFeedback('wrong')
     }
+    round.record({ question: BANK.key(currentWord), correct: trimmed === correct })
+    checkedAtRef.current = Date.now()
+  }, [currentWord, feedback, input, round])
 
-    setTimeout(() => {
-      if (wIdx + 1 >= words.length) {
-        setGameState('finished')
-      } else {
-        setWIdx((i) => i + 1)
-        setInput('')
-        setFeedback(null)
-        setCorrectAnswer('')
-      }
-    }, 2000)
-  }, [currentWord, feedback, input, wIdx, words.length])
+  const handleNext = useCallback(() => {
+    // Enter checks the spelling, and the button below takes the focus at once,
+    // so the same keystroke, or a second one pressed by habit, could skip the
+    // explanation unread. A press in the first half-second is ignored.
+    if (Date.now() - checkedAtRef.current < 500) return
+    if (wIdx + 1 >= words.length) {
+      setGameState('finished')
+    } else {
+      setWIdx((i) => i + 1)
+      setInput('')
+      setFeedback(null)
+      setCorrectAnswer('')
+    }
+  }, [wIdx, words.length])
 
   const handleKeyDown = (e: React.KeyboardEvent) => {
     if (e.key === 'Enter') {
@@ -267,6 +170,7 @@ export default function SpellingBeePage() {
           onStart={handleStart}
           onFinish={handleFinish}
           gameState={gameState}
+          round={round}
         >
           {currentWord && (
             <div className="space-y-6">
@@ -352,6 +256,23 @@ export default function SpellingBeePage() {
                         <span className="font-bold">{correctAnswer}</span>
                       </>
                     )}
+                  </div>
+                )}
+
+                {feedback && (
+                  <div>
+                    {/* A typed answer: no option to explain, so no `chosen`. */}
+                    <AnswerExplanation
+                      game="spelling-bee"
+                      question={BANK.key(currentWord)}
+                      correct={feedback === 'correct'}
+                    />
+                    <div className="mt-4 flex justify-end">
+                      <Button onClick={handleNext} autoFocus>
+                        {wIdx + 1 >= words.length ? 'See your results' : 'Next word'}
+                        <ArrowRight className="size-4 ms-1" />
+                      </Button>
+                    </div>
                   </div>
                 )}
 

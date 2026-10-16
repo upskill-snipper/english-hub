@@ -154,7 +154,6 @@ const PENDING: readonly string[] = [
   'collocations-challenge',
   'common-error-fixer',
   'comparatives-superlatives',
-  'comprehension-challenge',
   'days-months-seasons',
   'dictionary-skills',
   'everyday-vocab-flashcards',
@@ -171,14 +170,12 @@ const PENDING: readonly string[] = [
   'question-formation',
   'quote-detective',
   'sentence-builder',
-  'spelling-bee',
   'spelling-patterns',
   'synonym-shuffle',
   'tense-timeline',
   'theme-matcher',
   'to-be-conjugation',
   'tricky-word-spelling',
-  'vocabulary-builder',
   'word-class-sorter',
 ]
 
