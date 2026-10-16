@@ -5,262 +5,39 @@ import Link from 'next/link'
 import GameShell, { type GameState } from '@/components/games/GameShell'
 import { Button } from '@/components/ui/button'
 import { cn } from '@/lib/utils'
-import { ArrowLeft, CheckCircle, XCircle, Sparkles, BookA } from 'lucide-react'
+import { ArrowLeft, ArrowRight, CheckCircle, XCircle, Sparkles, BookA } from 'lucide-react'
 import { useBoard } from '@/hooks/useBoard'
 import { getBoardConfig } from '@/lib/board/board-store'
+import { AnswerExplanation } from '@/components/games/AnswerExplanation'
+import { useGameRound } from '@/components/games/game-round'
+import {
+  ALPHA_BANK,
+  BANK,
+  DEFINE_BANK,
+  GUIDE_BANK,
+  POS_BANK,
+  POS_OPTIONS,
+  SUBTYPE_LABEL,
+  guideOptions,
+  promptFor,
+  type BankItem,
+  type Subtype,
+} from '@/data/games/banks/dictionary-skills'
 
 // ─── Data ──────────────────────────────────────────────────────────────────────
+// The questions are in src/data/games/banks/dictionary-skills.ts (moved there
+// on 16 October 2026), and the explanation for each in
+// src/data/games/explanations/dictionary-skills.ts.
 
-type Subtype = 'alpha' | 'guide' | 'define' | 'pos'
-
-interface AlphaItem {
-  type: 'alpha'
-  words: [string, string, string, string]
-  /** The word that comes first alphabetically */
-  answer: string
-}
-
-interface GuideItem {
-  type: 'guide'
-  left: string
-  right: string
-  word: string
-  /** True if `word` falls between `left` and `right` on the page */
-  answer: boolean
-}
-
-interface DefineItem {
-  type: 'define'
-  word: string
-  /** Correct definition */
-  answer: string
-  /** Three plausible but wrong definitions */
-  distractors: [string, string, string]
-}
-
-interface PosItem {
-  type: 'pos'
-  word: string
-  example: string
-  /** 'n.' | 'v.' | 'adj.' */
-  answer: string
-}
-
-type BankItem = AlphaItem | GuideItem | DefineItem | PosItem
-
-// Original content bank - UK English, 50+ items typed by subtype.
-const ALPHA_BANK: AlphaItem[] = [
-  { type: 'alpha', words: ['orchard', 'ocean', 'olive', 'oyster'], answer: 'ocean' },
-  { type: 'alpha', words: ['breeze', 'brick', 'branch', 'bridge'], answer: 'branch' },
-  { type: 'alpha', words: ['carpet', 'cabin', 'cellar', 'clutch'], answer: 'cabin' },
-  { type: 'alpha', words: ['stream', 'storm', 'stone', 'stove'], answer: 'stone' },
-  { type: 'alpha', words: ['planet', 'plaster', 'plank', 'platform'], answer: 'plank' },
-  { type: 'alpha', words: ['frost', 'fragment', 'frame', 'freckle'], answer: 'fragment' },
-  { type: 'alpha', words: ['thunder', 'thimble', 'thorn', 'throne'], answer: 'thimble' },
-  { type: 'alpha', words: ['velvet', 'vacant', 'vessel', 'vivid'], answer: 'vacant' },
-  { type: 'alpha', words: ['gravel', 'glance', 'glory', 'grain'], answer: 'glance' },
-  { type: 'alpha', words: ['mirror', 'meadow', 'mingle', 'mosaic'], answer: 'meadow' },
-  { type: 'alpha', words: ['ribbon', 'rhythm', 'rescue', 'ripple'], answer: 'rescue' },
-  { type: 'alpha', words: ['shadow', 'shallow', 'shatter', 'shelter'], answer: 'shadow' },
-  { type: 'alpha', words: ['drizzle', 'drama', 'driftwood', 'drowsy'], answer: 'drama' },
-  { type: 'alpha', words: ['anchor', 'amber', 'apron', 'awning'], answer: 'amber' },
-]
-
-const GUIDE_BANK: GuideItem[] = [
-  { type: 'guide', left: 'castle', right: 'cattle', word: 'casual', answer: true },
-  { type: 'guide', left: 'garden', right: 'gather', word: 'garlic', answer: true },
-  { type: 'guide', left: 'pebble', right: 'pepper', word: 'pencil', answer: true },
-  { type: 'guide', left: 'lemon', right: 'lever', word: 'mango', answer: false },
-  { type: 'guide', left: 'frost', right: 'fungus', word: 'fragment', answer: false },
-  { type: 'guide', left: 'marble', right: 'meadow', word: 'mayhem', answer: true },
-  { type: 'guide', left: 'noble', right: 'novel', word: 'nostril', answer: true },
-  { type: 'guide', left: 'sail', right: 'salt', word: 'scarf', answer: false },
-  { type: 'guide', left: 'tablet', right: 'talent', word: 'tackle', answer: true },
-  { type: 'guide', left: 'velvet', right: 'vessel', word: 'venom', answer: true },
-  { type: 'guide', left: 'brave', right: 'breeze', word: 'broom', answer: false },
-  { type: 'guide', left: 'orchard', right: 'ostrich', word: 'oregano', answer: true },
-  { type: 'guide', left: 'hammer', right: 'harvest', word: 'happen', answer: true },
-  { type: 'guide', left: 'dusk', right: 'dwell', word: 'cradle', answer: false },
-]
-
-const DEFINE_BANK: DefineItem[] = [
-  {
-    type: 'define',
-    word: 'meander',
-    answer: 'To follow a winding course; to wander without a fixed direction',
-    distractors: [
-      'To complain loudly about a small problem',
-      'To repair something using simple tools',
-      'To gather a crowd of people together',
-    ],
-  },
-  {
-    type: 'define',
-    word: 'brittle',
-    answer: 'Hard but easily broken or snapped',
-    distractors: [
-      'Soft and able to bend without breaking',
-      'Warm and pleasant to the touch',
-      'Heavy and difficult to lift',
-    ],
-  },
-  {
-    type: 'define',
-    word: 'vacant',
-    answer: 'Empty; not occupied or in use',
-    distractors: [
-      'Crowded with many people',
-      'Decorated for a celebration',
-      'Locked and impossible to enter',
-    ],
-  },
-  {
-    type: 'define',
-    word: 'summit',
-    answer: 'The highest point of a hill or mountain',
-    distractors: [
-      'A deep valley between two slopes',
-      'A path leading around a lake',
-      'The base where a journey begins',
-    ],
-  },
-  {
-    type: 'define',
-    word: 'fragile',
-    answer: 'Easily damaged or broken; delicate',
-    distractors: [
-      'Strong enough to carry heavy loads',
-      'Bright and colourful in appearance',
-      'Slow-moving but very steady',
-    ],
-  },
-  {
-    type: 'define',
-    word: 'drowsy',
-    answer: 'Sleepy and lacking energy or alertness',
-    distractors: [
-      'Excited and full of fresh energy',
-      'Angry and quick to argue',
-      'Curious about new surroundings',
-    ],
-  },
-  {
-    type: 'define',
-    word: 'gleam',
-    answer: 'To shine with a soft, steady light',
-    distractors: [
-      'To make a sudden loud noise',
-      'To move quickly out of sight',
-      'To fade slowly into darkness',
-    ],
-  },
-  {
-    type: 'define',
-    word: 'pursue',
-    answer: 'To follow or chase in order to catch or achieve something',
-    distractors: [
-      'To turn away and give up',
-      'To rest after a long effort',
-      'To explain an idea clearly',
-    ],
-  },
-  {
-    type: 'define',
-    word: 'scarce',
-    answer: 'Available only in small amounts; hard to find',
-    distractors: [
-      'Found everywhere in large numbers',
-      'Cheap and easy to buy',
-      'New and recently invented',
-    ],
-  },
-  {
-    type: 'define',
-    word: 'mimic',
-    answer: 'To copy the speech or actions of someone, often for amusement',
-    distractors: [
-      'To create something entirely new',
-      'To hide an object carefully',
-      'To measure the size of something',
-    ],
-  },
-  {
-    type: 'define',
-    word: 'feeble',
-    answer: 'Lacking strength; weak',
-    distractors: [
-      'Full of power and force',
-      'Tall and clearly visible',
-      'Calm and free from worry',
-    ],
-  },
-  {
-    type: 'define',
-    word: 'linger',
-    answer: 'To stay in a place longer than necessary; to be slow to leave',
-    distractors: [
-      'To rush ahead of others',
-      'To shout in order to be heard',
-      'To divide something into parts',
-    ],
-  },
-  {
-    type: 'define',
-    word: 'vivid',
-    answer: 'Producing strong, clear images; bright and intense',
-    distractors: [
-      'Dull and difficult to notice',
-      'Quiet and rarely spoken',
-      'Cold and unpleasant to touch',
-    ],
-  },
-  {
-    type: 'define',
-    word: 'sturdy',
-    answer: 'Strongly built and unlikely to break or fall',
-    distractors: [
-      'Thin and likely to bend',
-      'Light enough to float on water',
-      'Smooth and slippery to hold',
-    ],
-  },
-]
-
-const POS_BANK: PosItem[] = [
-  {
-    type: 'pos',
-    word: 'harbour',
-    example: 'The boats stayed safe inside the harbour.',
-    answer: 'n.',
-  },
-  { type: 'pos', word: 'whisper', example: 'She began to whisper the secret.', answer: 'v.' },
-  { type: 'pos', word: 'ancient', example: 'They explored the ancient ruins.', answer: 'adj.' },
-  { type: 'pos', word: 'lantern', example: 'A lantern glowed in the window.', answer: 'n.' },
-  { type: 'pos', word: 'scatter', example: 'The wind began to scatter the leaves.', answer: 'v.' },
-  { type: 'pos', word: 'fierce', example: 'A fierce storm crossed the coast.', answer: 'adj.' },
-  { type: 'pos', word: 'meadow', example: 'Cattle grazed in the open meadow.', answer: 'n.' },
-  { type: 'pos', word: 'tremble', example: 'His hands began to tremble.', answer: 'v.' },
-  { type: 'pos', word: 'gentle', example: 'A gentle breeze cooled the room.', answer: 'adj.' },
-  { type: 'pos', word: 'bridge', example: 'They crossed the old stone bridge.', answer: 'n.' },
-  { type: 'pos', word: 'gather', example: 'The class will gather in the hall.', answer: 'v.' },
-  {
-    type: 'pos',
-    word: 'curious',
-    example: 'The curious child asked many questions.',
-    answer: 'adj.',
-  },
-  {
-    type: 'pos',
-    word: 'cottage',
-    example: 'They rented a small cottage by the sea.',
-    answer: 'n.',
-  },
-  { type: 'pos', word: 'vanish', example: 'The fog will vanish by morning.', answer: 'v.' },
-  { type: 'pos', word: 'brilliant', example: 'The plan was a brilliant idea.', answer: 'adj.' },
-]
-
-const POS_OPTIONS = ['n.', 'v.', 'adj.']
 const ROUND_LENGTH = 15
+
+/**
+ * The kinds of question whose wrong picks are short fixed labels (a word, or
+ * "n."), the only ones that may be sent as `chose`
+ * (src/components/games/game-round.tsx). A wrong guide-words answer is just
+ * the opposite of the right one, and a definition is a whole phrase.
+ */
+const SENDS_CHOICE: ReadonlySet<Subtype> = new Set<Subtype>(['alpha', 'pos'])
 
 // ─── Helpers ───────────────────────────────────────────────────────────────────
 
@@ -274,6 +51,8 @@ function shuffle<T>(arr: T[]): T[] {
 }
 
 interface Question {
+  /** The bank item this was built from: its key names the question for its explanation. */
+  item: BankItem
   subtype: Subtype
   prompt: string
   hint: string
@@ -286,18 +65,21 @@ function buildQuestion(item: BankItem): Question {
   switch (item.type) {
     case 'alpha':
       return {
+        item,
         subtype: 'alpha',
-        prompt: 'Which word comes first in alphabetical order?',
+        prompt: promptFor(item),
         hint: 'Compare the letters from the start of each word.',
         options: shuffle(item.words),
         correct: item.answer,
       }
     case 'guide': {
-      const yes = `Yes - "${item.word}" is on this page`
-      const no = `No - "${item.word}" is not on this page`
+      // The two answers are worded in the bank, so the explanations name them
+      // exactly as they are shown here.
+      const { yes, no } = guideOptions(item)
       return {
+        item,
         subtype: 'guide',
-        prompt: `Guide words at the top of a page are "${item.left}" and "${item.right}". Would you find "${item.word}" on this page?`,
+        prompt: promptFor(item),
         hint: 'The word must come after the left guide word and before the right one.',
         options: [yes, no],
         correct: item.answer ? yes : no,
@@ -305,16 +87,18 @@ function buildQuestion(item: BankItem): Question {
     }
     case 'define':
       return {
+        item,
         subtype: 'define',
-        prompt: `Which definition correctly matches the word "${item.word}"?`,
+        prompt: promptFor(item),
         hint: 'Choose the meaning that fits how the word is normally used.',
         options: shuffle([item.answer, ...item.distractors]),
         correct: item.answer,
       }
     case 'pos':
       return {
+        item,
         subtype: 'pos',
-        prompt: `What part of speech is "${item.word}" in this sentence?`,
+        prompt: promptFor(item),
         hint: `"${item.example}"  ·  n. = noun, v. = verb, adj. = adjective`,
         options: POS_OPTIONS,
         correct: item.answer,
@@ -333,13 +117,6 @@ function buildRound(): Question[] {
   return shuffle(picks).slice(0, ROUND_LENGTH).map(buildQuestion)
 }
 
-const SUBTYPE_LABEL: Record<Subtype, string> = {
-  alpha: 'Alphabetical order',
-  guide: 'Guide words',
-  define: 'Definitions',
-  pos: 'Word classes',
-}
-
 // ─── Component ─────────────────────────────────────────────────────────────────
 
 export default function DictionarySkillsPage() {
@@ -353,6 +130,7 @@ export default function DictionarySkillsPage() {
   const [totalAnswered, setTotalAnswered] = useState(0)
   const [selected, setSelected] = useState<string | null>(null)
   const [feedback, setFeedback] = useState<'correct' | 'wrong' | null>(null)
+  const round = useGameRound('dictionary-skills')
 
   const currentQ = questions[qIdx] ?? null
 
@@ -370,6 +148,16 @@ export default function DictionarySkillsPage() {
     setGameState('finished')
   }, [])
 
+  /**
+   * An answer is marked, recorded for the student's account, and then left on
+   * screen with its explanation until they choose to go on.
+   *
+   * WHAT CHANGED (16 October 2026). The game used to move to the next question
+   * 1.8 seconds after an answer, showing only the right answer. Each answer now
+   * comes with an explanation (src/data/games/explanations/dictionary-skills.ts),
+   * which a student cannot read in 1.8 seconds, so they press a button to go on.
+   * There is no clock to hold: the game is untimed.
+   */
   const handleAnswer = useCallback(
     (option: string) => {
       if (!currentQ || feedback) return
@@ -382,19 +170,25 @@ export default function DictionarySkillsPage() {
       } else {
         setFeedback('wrong')
       }
-
-      setTimeout(() => {
-        if (qIdx + 1 >= questions.length) {
-          setGameState('finished')
-        } else {
-          setQIdx((i) => i + 1)
-          setSelected(null)
-          setFeedback(null)
-        }
-      }, 1800)
+      round.record({
+        question: BANK.key(currentQ.item),
+        correct: isCorrect,
+        tag: BANK.tag?.(currentQ.item),
+        chose: !isCorrect && SENDS_CHOICE.has(currentQ.subtype) ? option : undefined,
+      })
     },
-    [currentQ, feedback, qIdx, questions.length],
+    [currentQ, feedback, round],
   )
+
+  const handleNext = useCallback(() => {
+    if (qIdx + 1 >= questions.length) {
+      setGameState('finished')
+      return
+    }
+    setQIdx((i) => i + 1)
+    setSelected(null)
+    setFeedback(null)
+  }, [qIdx, questions.length])
 
   const accuracyPct = totalAnswered > 0 ? Math.round((score / totalAnswered) * 100) : 0
 
@@ -424,6 +218,7 @@ export default function DictionarySkillsPage() {
           onStart={handleStart}
           onFinish={handleFinish}
           gameState={gameState}
+          round={round}
         >
           {currentQ && (
             <div className="space-y-6">
@@ -485,26 +280,42 @@ export default function DictionarySkillsPage() {
                 })}
               </div>
 
-              {/* Feedback */}
+              {/* Feedback + explanation */}
               {feedback && (
-                <div
-                  className={cn(
-                    'flex items-center justify-center gap-2 rounded-lg px-4 py-2 text-sm font-medium',
-                    feedback === 'correct'
-                      ? 'text-emerald-400 bg-emerald-500/10'
-                      : 'text-red-400 bg-red-500/10',
-                  )}
-                >
-                  {feedback === 'correct' ? (
-                    <>
-                      <CheckCircle className="size-4" /> Well done - that&apos;s right!
-                    </>
-                  ) : (
-                    <>
-                      <XCircle className="size-4" /> Not quite. The answer was:{' '}
-                      <span className="font-bold">{currentQ.correct}</span>
-                    </>
-                  )}
+                <div className="space-y-3">
+                  <div
+                    className={cn(
+                      'flex items-center justify-center gap-2 rounded-lg px-4 py-2 text-sm font-medium',
+                      feedback === 'correct'
+                        ? 'text-emerald-400 bg-emerald-500/10'
+                        : 'text-red-400 bg-red-500/10',
+                    )}
+                  >
+                    {feedback === 'correct' ? (
+                      <>
+                        <CheckCircle className="size-4" /> Well done, that&apos;s right.
+                      </>
+                    ) : (
+                      <>
+                        <XCircle className="size-4" /> Not quite. The answer was:{' '}
+                        <span className="font-bold">{currentQ.correct}</span>
+                      </>
+                    )}
+                  </div>
+
+                  <AnswerExplanation
+                    game="dictionary-skills"
+                    question={BANK.key(currentQ.item)}
+                    correct={feedback === 'correct'}
+                    chosen={selected}
+                  />
+
+                  <div className="flex justify-center">
+                    <Button onClick={handleNext} autoFocus>
+                      {qIdx + 1 >= questions.length ? 'See your results' : 'Next question'}
+                      <ArrowRight className="size-4 ms-1" />
+                    </Button>
+                  </div>
                 </div>
               )}
             </div>
