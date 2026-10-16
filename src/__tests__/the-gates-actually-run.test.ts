@@ -293,10 +293,18 @@ describe('what the suite runs in', () => {
     // student typed and clicked, or answered every question: rendered to a
     // string the panel shows its quiz settings and the old panel passes. Its
     // source-text guards are in pages-say-what-the-code-does.test.ts.
+    //
+    // Then to 35, the same day, for
+    // a-game-never-says-the-answer-before-it-is-asked.test.tsx. In the
+    // Classroom and Numbers and Time spoke the answer aloud before the student
+    // had answered, from an effect on a timer after each question appeared.
+    // Whether anything is spoken, and when, exists only once the real page
+    // mounts and its effects and timers run; rendered to a string, no question
+    // is dealt and nothing is ever spoken, so the old pages pass.
     expect(
       annotated.length,
       'more files now claim to need a DOM - check each one',
-    ).toBeLessThanOrEqual(34)
+    ).toBeLessThanOrEqual(35)
   })
 })
 

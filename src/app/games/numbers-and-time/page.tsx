@@ -5,439 +5,23 @@ import Link from 'next/link'
 import GameShell, { type GameState } from '@/components/games/GameShell'
 import { Button } from '@/components/ui/button'
 import { cn } from '@/lib/utils'
-import { ArrowLeft, Volume2, CheckCircle, XCircle, Sparkles } from 'lucide-react'
+import { ArrowLeft, ArrowRight, Volume2, CheckCircle, XCircle, Sparkles } from 'lucide-react'
 import { useBoard } from '@/hooks/useBoard'
 import { getBoardConfig } from '@/lib/board/board-store'
+import { AnswerExplanation } from '@/components/games/AnswerExplanation'
+import { useGameRound } from '@/components/games/game-round'
+import {
+  BANK,
+  ITEM_BANK,
+  type ItemType,
+  type NumberItem,
+} from '@/data/games/banks/numbers-and-time'
 
 // ─── Data ──────────────────────────────────────────────────────────────────────
 
-type ItemType = 'cardinal' | 'ordinal' | 'clock' | 'date'
-
-interface NumberItem {
-  /** What the learner reads / sees as the prompt */
-  prompt: string
-  /** Short instruction shown above the prompt */
-  task: string
-  /** The correct answer (must also appear in options) */
-  answer: string
-  /** Distractor answers - must be plausible and the same shape as the answer */
-  distractors: string[]
-  type: ItemType
-}
-
-// Original bank - 56 items. UK English throughout.
-const ITEM_BANK: NumberItem[] = [
-  // ── Cardinal numbers: digits → words ──────────────────────────────────────
-  {
-    type: 'cardinal',
-    task: 'Read the number. Choose the words.',
-    prompt: '7',
-    answer: 'seven',
-    distractors: ['seventy', 'seventeen', 'eleven'],
-  },
-  {
-    type: 'cardinal',
-    task: 'Read the number. Choose the words.',
-    prompt: '13',
-    answer: 'thirteen',
-    distractors: ['thirty', 'thirteenth', 'three'],
-  },
-  {
-    type: 'cardinal',
-    task: 'Read the number. Choose the words.',
-    prompt: '30',
-    answer: 'thirty',
-    distractors: ['thirteen', 'three', 'thirtieth'],
-  },
-  {
-    type: 'cardinal',
-    task: 'Read the number. Choose the words.',
-    prompt: '15',
-    answer: 'fifteen',
-    distractors: ['fifty', 'five', 'fortyfive'],
-  },
-  {
-    type: 'cardinal',
-    task: 'Read the number. Choose the words.',
-    prompt: '50',
-    answer: 'fifty',
-    distractors: ['fifteen', 'five hundred', 'five'],
-  },
-  {
-    type: 'cardinal',
-    task: 'Read the number. Choose the words.',
-    prompt: '47',
-    answer: 'forty-seven',
-    distractors: ['fourty-seven', 'seventy-four', 'forty-eleven'],
-  },
-  {
-    type: 'cardinal',
-    task: 'Read the number. Choose the words.',
-    prompt: '82',
-    answer: 'eighty-two',
-    distractors: ['eighteen-two', 'twenty-eight', 'eighty-twelve'],
-  },
-  {
-    type: 'cardinal',
-    task: 'Read the number. Choose the words.',
-    prompt: '100',
-    answer: 'one hundred',
-    distractors: ['one thousand', 'a hundredth', 'ten hundred'],
-  },
-  {
-    type: 'cardinal',
-    task: 'Read the number. Choose the words.',
-    prompt: '1,000',
-    answer: 'one thousand',
-    distractors: ['one hundred', 'ten thousand', 'one million'],
-  },
-  {
-    type: 'cardinal',
-    task: 'Read the number. Choose the words.',
-    prompt: '21',
-    answer: 'twenty-one',
-    distractors: ['twelve', 'two-one', 'twenty-first'],
-  },
-  {
-    type: 'cardinal',
-    task: 'Read the number. Choose the words.',
-    prompt: '40',
-    answer: 'forty',
-    distractors: ['fourty', 'fourteen', 'four'],
-  },
-  {
-    type: 'cardinal',
-    task: 'Read the number. Choose the words.',
-    prompt: '66',
-    answer: 'sixty-six',
-    distractors: ['sixteen-six', 'sixty-sixth', 'six-six'],
-  },
-  {
-    type: 'cardinal',
-    task: 'Read the number. Choose the words.',
-    prompt: '90',
-    answer: 'ninety',
-    distractors: ['nineteen', 'ninty', 'nine'],
-  },
-  {
-    type: 'cardinal',
-    task: 'Read the number. Choose the words.',
-    prompt: '305',
-    answer: 'three hundred and five',
-    distractors: ['three hundred and fifty', 'three thousand and five', 'thirty-five'],
-  },
-  {
-    type: 'cardinal',
-    task: 'Read the words. Choose the number.',
-    prompt: 'sixteen',
-    answer: '16',
-    distractors: ['60', '6', '60,000'],
-  },
-  {
-    type: 'cardinal',
-    task: 'Read the words. Choose the number.',
-    prompt: 'ninety-nine',
-    answer: '99',
-    distractors: ['909', '19', '90'],
-  },
-  {
-    type: 'cardinal',
-    task: 'Read the words. Choose the number.',
-    prompt: 'two hundred and twelve',
-    answer: '212',
-    distractors: ['2,012', '220', '2,120'],
-  },
-
-  // ── Ordinal numbers ───────────────────────────────────────────────────────
-  {
-    type: 'ordinal',
-    task: 'Read the number. Choose the ordinal.',
-    prompt: '1st',
-    answer: 'first',
-    distractors: ['oneth', 'fourth', 'once'],
-  },
-  {
-    type: 'ordinal',
-    task: 'Read the number. Choose the ordinal.',
-    prompt: '2nd',
-    answer: 'second',
-    distractors: ['twoth', 'twelfth', 'twentieth'],
-  },
-  {
-    type: 'ordinal',
-    task: 'Read the number. Choose the ordinal.',
-    prompt: '3rd',
-    answer: 'third',
-    distractors: ['threeth', 'thirteenth', 'thirtieth'],
-  },
-  {
-    type: 'ordinal',
-    task: 'Read the number. Choose the ordinal.',
-    prompt: '5th',
-    answer: 'fifth',
-    distractors: ['fiveth', 'fifteenth', 'fiftieth'],
-  },
-  {
-    type: 'ordinal',
-    task: 'Read the number. Choose the ordinal.',
-    prompt: '8th',
-    answer: 'eighth',
-    distractors: ['eightth', 'eighteenth', 'eightieth'],
-  },
-  {
-    type: 'ordinal',
-    task: 'Read the number. Choose the ordinal.',
-    prompt: '9th',
-    answer: 'ninth',
-    distractors: ['nineth', 'nineteenth', 'ninetieth'],
-  },
-  {
-    type: 'ordinal',
-    task: 'Read the number. Choose the ordinal.',
-    prompt: '12th',
-    answer: 'twelfth',
-    distractors: ['twelveth', 'twentieth', 'twelve'],
-  },
-  {
-    type: 'ordinal',
-    task: 'Read the number. Choose the ordinal.',
-    prompt: '20th',
-    answer: 'twentieth',
-    distractors: ['twentyth', 'twelfth', 'second'],
-  },
-  {
-    type: 'ordinal',
-    task: 'Read the number. Choose the ordinal.',
-    prompt: '21st',
-    answer: 'twenty-first',
-    distractors: ['twenty-oneth', 'twelfth', 'twenty-one'],
-  },
-  {
-    type: 'ordinal',
-    task: 'Read the number. Choose the ordinal.',
-    prompt: '30th',
-    answer: 'thirtieth',
-    distractors: ['thirteenth', 'thirtyth', 'third'],
-  },
-  {
-    type: 'ordinal',
-    task: 'Read the number. Choose the ordinal.',
-    prompt: '100th',
-    answer: 'hundredth',
-    distractors: ['one hundred', 'hundreth', 'thousandth'],
-  },
-  {
-    type: 'ordinal',
-    task: 'Read the ordinal. Choose the number.',
-    prompt: 'fortieth',
-    answer: '40th',
-    distractors: ['14th', '4th', '40'],
-  },
-  {
-    type: 'ordinal',
-    task: 'Read the ordinal. Choose the number.',
-    prompt: 'seventh',
-    answer: '7th',
-    distractors: ['7', '17th', '70th'],
-  },
-
-  // ── Clock times: time → words ─────────────────────────────────────────────
-  {
-    type: 'clock',
-    task: 'Read the time. Choose how to say it.',
-    prompt: '3:00',
-    answer: "three o'clock",
-    distractors: ['three thirty', 'half past three', 'quarter past three'],
-  },
-  {
-    type: 'clock',
-    task: 'Read the time. Choose how to say it.',
-    prompt: '3:15',
-    answer: 'quarter past three',
-    distractors: ['quarter to three', 'half past three', 'three fifteen to'],
-  },
-  {
-    type: 'clock',
-    task: 'Read the time. Choose how to say it.',
-    prompt: '3:30',
-    answer: 'half past three',
-    distractors: ['half to three', 'half past four', 'quarter past three'],
-  },
-  {
-    type: 'clock',
-    task: 'Read the time. Choose how to say it.',
-    prompt: '3:45',
-    answer: 'quarter to four',
-    distractors: ['quarter past four', 'quarter to three', 'three forty-five past'],
-  },
-  {
-    type: 'clock',
-    task: 'Read the time. Choose how to say it.',
-    prompt: '9:05',
-    answer: 'five past nine',
-    distractors: ['five to nine', 'nine past five', 'five past ten'],
-  },
-  {
-    type: 'clock',
-    task: 'Read the time. Choose how to say it.',
-    prompt: '10:50',
-    answer: 'ten to eleven',
-    distractors: ['ten past eleven', 'ten to ten', 'fifty past ten'],
-  },
-  {
-    type: 'clock',
-    task: 'Read the time. Choose how to say it.',
-    prompt: '6:20',
-    answer: 'twenty past six',
-    distractors: ['twenty to six', 'six past twenty', 'twenty past seven'],
-  },
-  {
-    type: 'clock',
-    task: 'Read the time. Choose how to say it.',
-    prompt: '7:40',
-    answer: 'twenty to eight',
-    distractors: ['twenty past eight', 'twenty to seven', 'forty past seven'],
-  },
-  {
-    type: 'clock',
-    task: 'Read the time. Choose how to say it.',
-    prompt: '12:00',
-    answer: 'twelve midday',
-    distractors: ['twelve midnight', 'twelve past', 'half past twelve'],
-  },
-  {
-    type: 'clock',
-    task: 'Read the time. Choose how to say it.',
-    prompt: '2:25',
-    answer: 'twenty-five past two',
-    distractors: ['twenty-five to two', 'twenty-five past three', 'half past two'],
-  },
-  {
-    type: 'clock',
-    task: 'Read the time. Choose how to say it.',
-    prompt: '8:35',
-    answer: 'twenty-five to nine',
-    distractors: ['twenty-five past nine', 'twenty-five to eight', 'thirty-five past eight'],
-  },
-  {
-    type: 'clock',
-    task: 'Read the 24-hour time. Choose the 12-hour time.',
-    prompt: '14:00',
-    answer: '2:00 pm',
-    distractors: ['4:00 pm', '2:00 am', '12:00 pm'],
-  },
-  {
-    type: 'clock',
-    task: 'Read the 24-hour time. Choose the 12-hour time.',
-    prompt: '18:30',
-    answer: '6:30 pm',
-    distractors: ['8:30 pm', '6:30 am', '6:13 pm'],
-  },
-  {
-    type: 'clock',
-    task: 'Read the 24-hour time. Choose the 12-hour time.',
-    prompt: '23:15',
-    answer: '11:15 pm',
-    distractors: ['1:15 pm', '11:15 am', '11:50 pm'],
-  },
-  {
-    type: 'clock',
-    task: 'Read the time in words. Choose the clock.',
-    prompt: 'quarter past seven',
-    answer: '7:15',
-    distractors: ['7:45', '6:15', '7:50'],
-  },
-  {
-    type: 'clock',
-    task: 'Read the time in words. Choose the clock.',
-    prompt: 'half past ten',
-    answer: '10:30',
-    distractors: ['10:15', '11:30', '9:30'],
-  },
-  {
-    type: 'clock',
-    task: 'Read the time in words. Choose the clock.',
-    prompt: 'quarter to five',
-    answer: '4:45',
-    distractors: ['5:45', '4:15', '5:15'],
-  },
-
-  // ── Dates ─────────────────────────────────────────────────────────────────
-  {
-    type: 'date',
-    task: 'Read the date. Choose how to say it.',
-    prompt: '1 May',
-    answer: 'the first of May',
-    distractors: ['the first of March', 'May the one', 'the one of May'],
-  },
-  {
-    type: 'date',
-    task: 'Read the date. Choose how to say it.',
-    prompt: '3 June',
-    answer: 'the third of June',
-    distractors: ['the thirtieth of June', 'June the three', 'the third of July'],
-  },
-  {
-    type: 'date',
-    task: 'Read the date. Choose how to say it.',
-    prompt: '22 March',
-    answer: 'the twenty-second of March',
-    distractors: ['the twenty-two of March', 'the second of March', 'the twenty-second of May'],
-  },
-  {
-    type: 'date',
-    task: 'Read the date. Choose how to say it.',
-    prompt: '31 December',
-    answer: 'the thirty-first of December',
-    distractors: [
-      'the thirteenth of December',
-      'the thirty-one of December',
-      'the thirty-first of November',
-    ],
-  },
-  {
-    type: 'date',
-    task: 'Read the date. Choose the order of months.',
-    prompt: 'The month after April',
-    answer: 'May',
-    distractors: ['March', 'June', 'August'],
-  },
-  {
-    type: 'date',
-    task: 'Read the date. Choose the order of months.',
-    prompt: 'The month before September',
-    answer: 'August',
-    distractors: ['October', 'July', 'November'],
-  },
-  {
-    type: 'date',
-    task: 'Read the day. Choose the day after it.',
-    prompt: 'The day after Tuesday',
-    answer: 'Wednesday',
-    distractors: ['Monday', 'Thursday', 'Friday'],
-  },
-  {
-    type: 'date',
-    task: 'Read the day. Choose the day before it.',
-    prompt: 'The day before Sunday',
-    answer: 'Saturday',
-    distractors: ['Monday', 'Friday', 'Sunday'],
-  },
-  {
-    type: 'date',
-    task: 'Read the year. Choose how to say it.',
-    prompt: '1999',
-    answer: 'nineteen ninety-nine',
-    distractors: ['one thousand nine hundred', 'nineteen nine nine', 'one nine ninety-nine'],
-  },
-  {
-    type: 'date',
-    task: 'Read the year. Choose how to say it.',
-    prompt: '2008',
-    answer: 'two thousand and eight',
-    distractors: ['twenty eight', 'two thousand eighty', 'twenty oh eighty'],
-  },
-]
+// The questions are in src/data/games/banks/numbers-and-time.ts (moved there on
+// 16 October 2026), and the explanation for each in
+// src/data/games/explanations/numbers-and-time.ts.
 
 // ─── Helpers ───────────────────────────────────────────────────────────────────
 
@@ -460,6 +44,19 @@ function speak(text: string) {
 }
 
 const ROUND_SIZE = 15
+
+/**
+ * Whether reading the prompt aloud gives its answer away. Speech says figures as
+ * words: "7" as "seven", "1st" as "first", "1999" as "nineteen ninety-nine",
+ * "1 May" as "the first of May". Every question with figures in its prompt asks
+ * for those words, except the three 24-hour times, which ask for the 12-hour
+ * time; a voice may read 14:00 as "two pm", so they wait as well. A prompt
+ * already in words ("sixteen", "quarter past seven", "The day after Tuesday")
+ * sounds just as it reads, so hearing it gives nothing away.
+ */
+function speechGivesAnswer(item: NumberItem): boolean {
+  return /\d/.test(item.prompt)
+}
 
 const TYPE_LABELS: Record<ItemType, string> = {
   cardinal: 'Number',
@@ -508,15 +105,26 @@ export default function NumbersAndTimePage() {
   const [totalAnswered, setTotalAnswered] = useState(0)
   const [selected, setSelected] = useState<string | null>(null)
   const [feedback, setFeedback] = useState<'correct' | 'wrong' | null>(null)
+  const round = useGameRound('numbers-and-time')
 
   const currentQ = questions[qIdx] ?? null
 
-  // Auto-speak the prompt when a new question appears.
+  /**
+   * When the page reads the prompt aloud. A prompt in words is read when the
+   * question appears, as before. A prompt in figures is read only once the
+   * question has been answered, as part of the feedback (speechGivesAnswer).
+   *
+   * WHAT CHANGED (16 October 2026). The page used to read every prompt 0.3
+   * seconds after it appeared, and again on "Hear it", so "Read the number.
+   * Choose the words." under "7" was answered aloud with "seven" before the
+   * student chose. Scoring is unchanged.
+   */
   useEffect(() => {
-    if (gameState === 'playing' && currentQ && !feedback) {
-      const timer = setTimeout(() => speak(currentQ.item.prompt), 300)
-      return () => clearTimeout(timer)
-    }
+    if (gameState !== 'playing' || !currentQ) return
+    const answered = feedback !== null
+    if (speechGivesAnswer(currentQ.item) ? !answered : answered) return
+    const timer = setTimeout(() => speak(currentQ.item.prompt), 300)
+    return () => clearTimeout(timer)
   }, [qIdx, gameState, feedback, currentQ])
 
   const handleStart = useCallback(() => {
@@ -533,6 +141,17 @@ export default function NumbersAndTimePage() {
     setGameState('finished')
   }, [])
 
+  /**
+   * A tap on an option. The question is marked, recorded for the student's
+   * account, and then left on screen with its explanation until they choose to
+   * go on.
+   *
+   * WHAT CHANGED (16 October 2026). The game used to move to the next question
+   * 1.8 seconds after an answer, showing only the right answer. Each answer now
+   * comes with why it is right and why the option chosen is not
+   * (src/data/games/explanations/numbers-and-time.ts), and a learner cannot
+   * read that in 1.8 seconds.
+   */
   const handleAnswer = useCallback(
     (option: string) => {
       if (!currentQ || feedback) return
@@ -545,19 +164,25 @@ export default function NumbersAndTimePage() {
       } else {
         setFeedback('wrong')
       }
-
-      setTimeout(() => {
-        if (qIdx + 1 >= questions.length) {
-          setGameState('finished')
-        } else {
-          setQIdx((i) => i + 1)
-          setSelected(null)
-          setFeedback(null)
-        }
-      }, 1800)
+      round.record({
+        question: BANK.key(currentQ.item),
+        correct: isCorrect,
+        tag: currentQ.item.type,
+        chose: isCorrect ? undefined : option,
+      })
     },
-    [currentQ, feedback, qIdx, questions.length],
+    [currentQ, feedback, round],
   )
+
+  const handleNext = useCallback(() => {
+    if (qIdx + 1 >= questions.length) {
+      setGameState('finished')
+      return
+    }
+    setQIdx((i) => i + 1)
+    setSelected(null)
+    setFeedback(null)
+  }, [qIdx, questions.length])
 
   const accuracyPct = totalAnswered > 0 ? Math.round((score / totalAnswered) * 100) : 0
 
@@ -587,6 +212,7 @@ export default function NumbersAndTimePage() {
           onStart={handleStart}
           onFinish={handleFinish}
           gameState={gameState}
+          round={round}
         >
           {currentQ && (
             <div className="space-y-6">
@@ -609,9 +235,14 @@ export default function NumbersAndTimePage() {
                 <p className="text-4xl font-bold tracking-tight text-foreground break-words">
                   {currentQ.item.prompt}
                 </p>
+                {/* Where hearing the prompt is the answer, "Hear it" waits for the answer. */}
                 <button
                   onClick={() => speak(currentQ.item.prompt)}
-                  className="inline-flex items-center gap-2 rounded-lg border border-border px-4 py-2 text-sm font-medium text-foreground transition-colors hover:bg-accent"
+                  disabled={speechGivesAnswer(currentQ.item) && !feedback}
+                  className={cn(
+                    'inline-flex items-center gap-2 rounded-lg border border-border px-4 py-2 text-sm font-medium text-foreground transition-colors hover:bg-accent',
+                    speechGivesAnswer(currentQ.item) && !feedback && 'invisible',
+                  )}
                 >
                   <Volume2 className="size-4 text-primary" />
                   Hear it
@@ -651,24 +282,38 @@ export default function NumbersAndTimePage() {
 
               {/* Feedback */}
               {feedback && (
-                <div
-                  className={cn(
-                    'flex items-center justify-center gap-2 rounded-lg px-4 py-2 text-sm font-medium',
-                    feedback === 'correct'
-                      ? 'text-emerald-400 bg-emerald-500/10'
-                      : 'text-red-400 bg-red-500/10',
-                  )}
-                >
-                  {feedback === 'correct' ? (
-                    <>
-                      <CheckCircle className="size-4" /> Well done - that&apos;s right!
-                    </>
-                  ) : (
-                    <>
-                      <XCircle className="size-4" /> Not quite. The answer is:{' '}
-                      <span className="font-bold">{currentQ.item.answer}</span>
-                    </>
-                  )}
+                <div>
+                  <div
+                    className={cn(
+                      'flex items-center justify-center gap-2 rounded-lg px-4 py-2 text-sm font-medium',
+                      feedback === 'correct'
+                        ? 'text-emerald-400 bg-emerald-500/10'
+                        : 'text-red-400 bg-red-500/10',
+                    )}
+                  >
+                    {feedback === 'correct' ? (
+                      <>
+                        <CheckCircle className="size-4" /> Well done. That&apos;s right.
+                      </>
+                    ) : (
+                      <>
+                        <XCircle className="size-4" /> Not quite. The answer is:{' '}
+                        <span className="font-bold">{currentQ.item.answer}</span>
+                      </>
+                    )}
+                  </div>
+                  <AnswerExplanation
+                    game="numbers-and-time"
+                    question={BANK.key(currentQ.item)}
+                    correct={feedback === 'correct'}
+                    chosen={selected}
+                  />
+                  <div className="mt-4 flex justify-end">
+                    <Button onClick={handleNext} autoFocus>
+                      {qIdx + 1 >= questions.length ? 'See your results' : 'Next question'}
+                      <ArrowRight className="size-4 ms-1" />
+                    </Button>
+                  </div>
                 </div>
               )}
             </div>

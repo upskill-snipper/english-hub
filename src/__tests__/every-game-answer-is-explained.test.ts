@@ -148,18 +148,10 @@ describe.each(BANK_SLUGS)('%s', (slug) => {
  */
 const PENDING: readonly string[] = [
   'apostrophe-ace',
-  'classroom-objects',
-  'days-months-seasons',
-  'everyday-vocab-flashcards',
-  'homophone-hero',
-  'numbers-and-time',
   'phrasal-verbs-match',
-  'picture-word-match',
-  'prefix-suffix-lab',
   'prepositions-of-place',
   'punctuation-repair',
   'sentence-builder',
-  'spelling-patterns',
   'tense-timeline',
   'tricky-word-spelling',
   'word-class-sorter',

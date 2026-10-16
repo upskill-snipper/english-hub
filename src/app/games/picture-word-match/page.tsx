@@ -5,131 +5,18 @@ import Link from 'next/link'
 import GameShell, { type GameState } from '@/components/games/GameShell'
 import { Button } from '@/components/ui/button'
 import { cn } from '@/lib/utils'
-import { ArrowLeft, CheckCircle, XCircle, Sparkles } from 'lucide-react'
+import { ArrowLeft, ArrowRight, CheckCircle, XCircle, Sparkles } from 'lucide-react'
 import { useBoard } from '@/hooks/useBoard'
 import { getBoardConfig } from '@/lib/board/board-store'
+import { AnswerExplanation } from '@/components/games/AnswerExplanation'
+import { useGameRound } from '@/components/games/game-round'
+import { BANK, PICTURE_BANK, type PictureItem } from '@/data/games/banks/picture-word-match'
 
 // ─── Data ──────────────────────────────────────────────────────────────────────
 
-interface PictureItem {
-  emoji: string
-  word: string
-  topic: string
-  distractors: [string, string, string]
-}
-
-const PICTURE_BANK: PictureItem[] = [
-  // Food & drink
-  { emoji: '🍎', word: 'apple', topic: 'Food & drink', distractors: ['orange', 'banana', 'pear'] },
-  { emoji: '🍞', word: 'bread', topic: 'Food & drink', distractors: ['cheese', 'butter', 'rice'] },
-  { emoji: '🥛', word: 'milk', topic: 'Food & drink', distractors: ['water', 'juice', 'tea'] },
-  { emoji: '🧀', word: 'cheese', topic: 'Food & drink', distractors: ['egg', 'bread', 'ham'] },
-  {
-    emoji: '🍓',
-    word: 'strawberry',
-    topic: 'Food & drink',
-    distractors: ['cherry', 'grape', 'plum'],
-  },
-  {
-    emoji: '🥕',
-    word: 'carrot',
-    topic: 'Food & drink',
-    distractors: ['potato', 'onion', 'tomato'],
-  },
-  { emoji: '🍵', word: 'tea', topic: 'Food & drink', distractors: ['coffee', 'soup', 'milk'] },
-  { emoji: '🥚', word: 'egg', topic: 'Food & drink', distractors: ['cheese', 'bean', 'nut'] },
-
-  // Animals
-  { emoji: '🐶', word: 'dog', topic: 'Animals', distractors: ['cat', 'fox', 'wolf'] },
-  { emoji: '🐱', word: 'cat', topic: 'Animals', distractors: ['dog', 'rabbit', 'mouse'] },
-  { emoji: '🐮', word: 'cow', topic: 'Animals', distractors: ['sheep', 'horse', 'pig'] },
-  { emoji: '🐴', word: 'horse', topic: 'Animals', distractors: ['cow', 'donkey', 'goat'] },
-  { emoji: '🐑', word: 'sheep', topic: 'Animals', distractors: ['goat', 'cow', 'pig'] },
-  { emoji: '🐦', word: 'bird', topic: 'Animals', distractors: ['fish', 'bee', 'bat'] },
-  { emoji: '🐟', word: 'fish', topic: 'Animals', distractors: ['frog', 'crab', 'bird'] },
-  { emoji: '🐝', word: 'bee', topic: 'Animals', distractors: ['ant', 'fly', 'wasp'] },
-
-  // Family
-  { emoji: '👩', word: 'mother', topic: 'Family', distractors: ['sister', 'aunt', 'daughter'] },
-  { emoji: '👨', word: 'father', topic: 'Family', distractors: ['brother', 'uncle', 'son'] },
-  { emoji: '👶', word: 'baby', topic: 'Family', distractors: ['child', 'cousin', 'twin'] },
-  {
-    emoji: '👵',
-    word: 'grandmother',
-    topic: 'Family',
-    distractors: ['grandfather', 'aunt', 'mother'],
-  },
-  {
-    emoji: '👴',
-    word: 'grandfather',
-    topic: 'Family',
-    distractors: ['grandmother', 'uncle', 'father'],
-  },
-  { emoji: '👧', word: 'daughter', topic: 'Family', distractors: ['son', 'sister', 'niece'] },
-
-  // The home
-  { emoji: '🏠', word: 'house', topic: 'The home', distractors: ['garden', 'room', 'door'] },
-  { emoji: '🚪', word: 'door', topic: 'The home', distractors: ['window', 'wall', 'roof'] },
-  { emoji: '🛏️', word: 'bed', topic: 'The home', distractors: ['chair', 'sofa', 'table'] },
-  { emoji: '🪑', word: 'chair', topic: 'The home', distractors: ['bed', 'shelf', 'desk'] },
-  { emoji: '🛁', word: 'bath', topic: 'The home', distractors: ['sink', 'shower', 'mirror'] },
-  { emoji: '🕰️', word: 'clock', topic: 'The home', distractors: ['lamp', 'shelf', 'mirror'] },
-  { emoji: '🔑', word: 'key', topic: 'The home', distractors: ['lock', 'handle', 'bell'] },
-
-  // The body
-  { emoji: '✋', word: 'hand', topic: 'The body', distractors: ['foot', 'arm', 'leg'] },
-  { emoji: '👁️', word: 'eye', topic: 'The body', distractors: ['ear', 'nose', 'mouth'] },
-  { emoji: '👂', word: 'ear', topic: 'The body', distractors: ['eye', 'nose', 'chin'] },
-  { emoji: '👃', word: 'nose', topic: 'The body', distractors: ['mouth', 'eye', 'ear'] },
-  { emoji: '🦶', word: 'foot', topic: 'The body', distractors: ['hand', 'leg', 'knee'] },
-  { emoji: '🦷', word: 'tooth', topic: 'The body', distractors: ['tongue', 'lip', 'jaw'] },
-  { emoji: '💇', word: 'hair', topic: 'The body', distractors: ['head', 'face', 'neck'] },
-
-  // Clothes
-  { emoji: '👕', word: 'shirt', topic: 'Clothes', distractors: ['coat', 'jumper', 'dress'] },
-  { emoji: '👖', word: 'trousers', topic: 'Clothes', distractors: ['shorts', 'skirt', 'socks'] },
-  { emoji: '👗', word: 'dress', topic: 'Clothes', distractors: ['skirt', 'shirt', 'coat'] },
-  { emoji: '👟', word: 'shoes', topic: 'Clothes', distractors: ['socks', 'boots', 'gloves'] },
-  { emoji: '🧥', word: 'coat', topic: 'Clothes', distractors: ['jumper', 'shirt', 'scarf'] },
-  { emoji: '🧦', word: 'socks', topic: 'Clothes', distractors: ['shoes', 'gloves', 'shorts'] },
-  { emoji: '🧢', word: 'cap', topic: 'Clothes', distractors: ['hat', 'scarf', 'belt'] },
-
-  // Weather
-  { emoji: '☀️', word: 'sun', topic: 'Weather', distractors: ['rain', 'cloud', 'snow'] },
-  { emoji: '🌧️', word: 'rain', topic: 'Weather', distractors: ['snow', 'sun', 'wind'] },
-  { emoji: '❄️', word: 'snow', topic: 'Weather', distractors: ['rain', 'ice', 'fog'] },
-  { emoji: '⛅', word: 'cloud', topic: 'Weather', distractors: ['sun', 'rain', 'sky'] },
-  { emoji: '🌈', word: 'rainbow', topic: 'Weather', distractors: ['cloud', 'storm', 'sky'] },
-  { emoji: '⚡', word: 'lightning', topic: 'Weather', distractors: ['thunder', 'wind', 'rain'] },
-
-  // Transport
-  { emoji: '🚗', word: 'car', topic: 'Transport', distractors: ['bus', 'van', 'lorry'] },
-  { emoji: '🚌', word: 'bus', topic: 'Transport', distractors: ['car', 'train', 'taxi'] },
-  {
-    emoji: '🚲',
-    word: 'bicycle',
-    topic: 'Transport',
-    distractors: ['motorbike', 'scooter', 'car'],
-  },
-  {
-    emoji: '✈️',
-    word: 'aeroplane',
-    topic: 'Transport',
-    distractors: ['helicopter', 'rocket', 'boat'],
-  },
-  { emoji: '🚂', word: 'train', topic: 'Transport', distractors: ['tram', 'bus', 'lorry'] },
-  { emoji: '🚢', word: 'ship', topic: 'Transport', distractors: ['boat', 'plane', 'train'] },
-  { emoji: '🚕', word: 'taxi', topic: 'Transport', distractors: ['bus', 'car', 'van'] },
-
-  // School
-  { emoji: '📚', word: 'books', topic: 'School', distractors: ['pens', 'bags', 'rulers'] },
-  { emoji: '✏️', word: 'pencil', topic: 'School', distractors: ['pen', 'ruler', 'rubber'] },
-  { emoji: '🎒', word: 'bag', topic: 'School', distractors: ['book', 'desk', 'pencil case'] },
-  { emoji: '✂️', word: 'scissors', topic: 'School', distractors: ['glue', 'ruler', 'tape'] },
-  { emoji: '📏', word: 'ruler', topic: 'School', distractors: ['pencil', 'rubber', 'pen'] },
-  { emoji: '🖍️', word: 'crayon', topic: 'School', distractors: ['pencil', 'paint', 'chalk'] },
-  { emoji: '🧮', word: 'abacus', topic: 'School', distractors: ['calculator', 'clock', 'ruler'] },
-]
+// The questions are in src/data/games/banks/picture-word-match.ts (moved there on
+// 16 October 2026), and the explanation for each in
+// src/data/games/explanations/picture-word-match.ts.
 
 const QUESTIONS_PER_ROUND = 15
 
@@ -153,7 +40,8 @@ function buildQuestion(item: PictureItem): Question {
   return { item, options: shuffle([item.word, ...item.distractors]) }
 }
 
-const PRAISE = ['Brilliant!', 'Well done!', 'Great job!', 'Super!', 'Excellent!']
+// House style: no exclamation marks in what students read (16 October 2026).
+const PRAISE = ['Brilliant.', 'Well done.', 'Great job.', 'Super.', 'Excellent.']
 
 // ─── Component ─────────────────────────────────────────────────────────────────
 
@@ -168,6 +56,7 @@ export default function PictureWordMatchPage() {
   const [selected, setSelected] = useState<string | null>(null)
   const [feedback, setFeedback] = useState<'correct' | 'wrong' | null>(null)
   const [praise, setPraise] = useState('')
+  const round = useGameRound('picture-word-match')
 
   const currentQuestion = questions[qIdx] ?? null
 
@@ -186,6 +75,17 @@ export default function PictureWordMatchPage() {
     setGameState('finished')
   }, [])
 
+  /**
+   * A tap on a word. The question is marked, recorded for the student's
+   * account, and then left on screen with its explanation until they choose to
+   * go on.
+   *
+   * WHAT CHANGED (16 October 2026). The game used to move to the next picture
+   * 1.6 seconds after an answer, showing only the right word. Each answer now
+   * comes with why it is right and why the word chosen is not
+   * (src/data/games/explanations/picture-word-match.ts), and a learner cannot
+   * read that in 1.6 seconds.
+   */
   const handleAnswer = useCallback(
     (option: string) => {
       if (!currentQuestion || feedback) return
@@ -200,19 +100,26 @@ export default function PictureWordMatchPage() {
         setFeedback('wrong')
       }
 
-      setTimeout(() => {
-        if (qIdx + 1 >= questions.length) {
-          setGameState('finished')
-        } else {
-          setQIdx((i) => i + 1)
-          setSelected(null)
-          setFeedback(null)
-          setPraise('')
-        }
-      }, 1600)
+      round.record({
+        question: BANK.key(currentQuestion.item),
+        correct: isCorrect,
+        tag: currentQuestion.item.topic,
+        chose: isCorrect ? undefined : option,
+      })
     },
-    [currentQuestion, feedback, qIdx, questions.length],
+    [currentQuestion, feedback, round],
   )
+
+  const handleNext = useCallback(() => {
+    if (qIdx + 1 >= questions.length) {
+      setGameState('finished')
+      return
+    }
+    setQIdx((i) => i + 1)
+    setSelected(null)
+    setFeedback(null)
+    setPraise('')
+  }, [qIdx, questions.length])
 
   return (
     <div className="min-h-screen bg-background">
@@ -240,6 +147,7 @@ export default function PictureWordMatchPage() {
           onStart={handleStart}
           onFinish={handleFinish}
           gameState={gameState}
+          round={round}
         >
           {currentQuestion && (
             <div className="space-y-6">
@@ -299,24 +207,38 @@ export default function PictureWordMatchPage() {
 
               {/* Feedback */}
               {feedback && (
-                <div
-                  className={cn(
-                    'flex items-center justify-center gap-2 rounded-lg px-4 py-2 text-sm font-medium',
-                    feedback === 'correct'
-                      ? 'text-emerald-400 bg-emerald-500/10'
-                      : 'text-red-400 bg-red-500/10',
-                  )}
-                >
-                  {feedback === 'correct' ? (
-                    <>
-                      <CheckCircle className="size-4" /> {praise} That&apos;s right.
-                    </>
-                  ) : (
-                    <>
-                      <XCircle className="size-4" /> Not quite. The word is:{' '}
-                      <span className="font-bold capitalize">{currentQuestion.item.word}</span>
-                    </>
-                  )}
+                <div>
+                  <div
+                    className={cn(
+                      'flex items-center justify-center gap-2 rounded-lg px-4 py-2 text-sm font-medium',
+                      feedback === 'correct'
+                        ? 'text-emerald-400 bg-emerald-500/10'
+                        : 'text-red-400 bg-red-500/10',
+                    )}
+                  >
+                    {feedback === 'correct' ? (
+                      <>
+                        <CheckCircle className="size-4" /> {praise} That&apos;s right.
+                      </>
+                    ) : (
+                      <>
+                        <XCircle className="size-4" /> Not quite. The word is:{' '}
+                        <span className="font-bold capitalize">{currentQuestion.item.word}</span>
+                      </>
+                    )}
+                  </div>
+                  <AnswerExplanation
+                    game="picture-word-match"
+                    question={BANK.key(currentQuestion.item)}
+                    correct={feedback === 'correct'}
+                    chosen={selected}
+                  />
+                  <div className="mt-4 flex justify-end">
+                    <Button onClick={handleNext} autoFocus>
+                      {qIdx + 1 >= questions.length ? 'See your results' : 'Next question'}
+                      <ArrowRight className="size-4 ms-1" />
+                    </Button>
+                  </div>
                 </div>
               )}
             </div>

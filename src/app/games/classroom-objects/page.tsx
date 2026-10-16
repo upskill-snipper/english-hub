@@ -5,145 +5,25 @@ import Link from 'next/link'
 import GameShell, { type GameState } from '@/components/games/GameShell'
 import { Button } from '@/components/ui/button'
 import { cn } from '@/lib/utils'
-import { ArrowLeft, Volume2, CheckCircle, XCircle, Sparkles } from 'lucide-react'
+import { ArrowLeft, ArrowRight, Volume2, CheckCircle, XCircle, Sparkles } from 'lucide-react'
 import { useBoard } from '@/hooks/useBoard'
 import { getBoardConfig } from '@/lib/board/board-store'
+import { AnswerExplanation } from '@/components/games/AnswerExplanation'
+import { useGameRound } from '@/components/games/game-round'
+import {
+  BANK,
+  ITEM_BANK,
+  NAME_PROMPT,
+  PREP_OPTIONS,
+  whereQuestion,
+  type ClassroomQuestion,
+} from '@/data/games/banks/classroom-objects'
 
 // ─── Data ──────────────────────────────────────────────────────────────────────
 
-interface ClassroomItem {
-  emoji: string
-  word: string
-  distractors: [string, string, string]
-  /** Optional "Where is the ___?" preposition mini-round */
-  prepositionPrompt?: string
-}
-
-// Original bank of UK-English classroom & school vocabulary (A1-A2).
-const ITEM_BANK: ClassroomItem[] = [
-  {
-    emoji: '✏️',
-    word: 'pencil',
-    distractors: ['pen', 'crayon', 'marker'],
-    prepositionPrompt: 'The pencil is on the desk.',
-  },
-  { emoji: '🖊️', word: 'pen', distractors: ['pencil', 'brush', 'ruler'] },
-  {
-    emoji: '📏',
-    word: 'ruler',
-    distractors: ['pencil', 'rubber', 'stapler'],
-    prepositionPrompt: 'The ruler is in the pencil case.',
-  },
-  { emoji: '🧽', word: 'rubber', distractors: ['sponge', 'cloth', 'glue'] },
-  { emoji: '✂️', word: 'scissors', distractors: ['knife', 'stapler', 'clip'] },
-  {
-    emoji: '📚',
-    word: 'books',
-    distractors: ['boxes', 'bricks', 'bags'],
-    prepositionPrompt: 'The books are on the shelf.',
-  },
-  { emoji: '📖', word: 'textbook', distractors: ['notebook', 'diary', 'magazine'] },
-  { emoji: '📓', word: 'notebook', distractors: ['textbook', 'folder', 'envelope'] },
-  { emoji: '📒', word: 'exercise book', distractors: ['diary', 'wallet', 'poster'] },
-  {
-    emoji: '🎒',
-    word: 'school bag',
-    distractors: ['suitcase', 'basket', 'pocket'],
-    prepositionPrompt: 'The school bag is under the chair.',
-  },
-  { emoji: '🖍️', word: 'crayon', distractors: ['chalk', 'pen', 'pin'] },
-  { emoji: '🖌️', word: 'paintbrush', distractors: ['pencil', 'feather', 'broom'] },
-  { emoji: '🎨', word: 'paints', distractors: ['inks', 'dyes', 'crayons'] },
-  { emoji: '📐', word: 'set square', distractors: ['ruler', 'compass', 'protractor'] },
-  { emoji: '🧮', word: 'abacus', distractors: ['calculator', 'clock', 'till'] },
-  { emoji: '🗒️', word: 'notepad', distractors: ['letter', 'card', 'leaflet'] },
-  { emoji: '📝', word: 'worksheet', distractors: ['poster', 'ticket', 'receipt'] },
-  { emoji: '📎', word: 'paper clip', distractors: ['drawing pin', 'staple', 'peg'] },
-  { emoji: '📌', word: 'drawing pin', distractors: ['needle', 'nail', 'paper clip'] },
-  { emoji: '🗂️', word: 'folder', distractors: ['drawer', 'box', 'tray'] },
-  { emoji: '📁', word: 'file', distractors: ['folder', 'shelf', 'cupboard'] },
-  { emoji: '📋', word: 'clipboard', distractors: ['whiteboard', 'noticeboard', 'tray'] },
-  { emoji: '🖇️', word: 'stapler', distractors: ['hole punch', 'clip', 'tape'] },
-  { emoji: '📐', word: 'protractor', distractors: ['ruler', 'compass', 'set square'] },
-  { emoji: '🧴', word: 'glue', distractors: ['paint', 'ink', 'water'] },
-  { emoji: '🪣', word: 'bucket', distractors: ['bin', 'bowl', 'jug'] },
-  {
-    emoji: '🗑️',
-    word: 'bin',
-    distractors: ['bucket', 'box', 'basket'],
-    prepositionPrompt: 'The bin is next to the door.',
-  },
-  {
-    emoji: '🪑',
-    word: 'chair',
-    distractors: ['stool', 'bench', 'sofa'],
-    prepositionPrompt: 'The bag is under the chair.',
-  },
-  { emoji: '🛗', word: 'lift', distractors: ['stairs', 'door', 'ramp'] },
-  {
-    emoji: '🚪',
-    word: 'door',
-    distractors: ['window', 'wall', 'gate'],
-    prepositionPrompt: 'The teacher is next to the door.',
-  },
-  {
-    emoji: '🪟',
-    word: 'window',
-    distractors: ['door', 'mirror', 'screen'],
-    prepositionPrompt: 'The plant is on the window.',
-  },
-  {
-    emoji: '🕰️',
-    word: 'clock',
-    distractors: ['watch', 'timer', 'bell'],
-    prepositionPrompt: 'The clock is on the wall.',
-  },
-  { emoji: '🔔', word: 'bell', distractors: ['clock', 'horn', 'alarm'] },
-  { emoji: '💡', word: 'light', distractors: ['lamp', 'torch', 'candle'] },
-  {
-    emoji: '🖥️',
-    word: 'computer',
-    distractors: ['television', 'radio', 'phone'],
-    prepositionPrompt: 'The computer is on the desk.',
-  },
-  { emoji: '⌨️', word: 'keyboard', distractors: ['screen', 'mouse', 'printer'] },
-  { emoji: '🖱️', word: 'mouse', distractors: ['keyboard', 'remote', 'plug'] },
-  { emoji: '🖨️', word: 'printer', distractors: ['scanner', 'computer', 'speaker'] },
-  { emoji: '📽️', word: 'projector', distractors: ['camera', 'screen', 'torch'] },
-  {
-    emoji: '🗺️',
-    word: 'map',
-    distractors: ['poster', 'painting', 'chart'],
-    prepositionPrompt: 'The map is on the wall.',
-  },
-  {
-    emoji: '🌍',
-    word: 'globe',
-    distractors: ['ball', 'map', 'lamp'],
-    prepositionPrompt: 'The globe is on the shelf.',
-  },
-  { emoji: '🔬', word: 'microscope', distractors: ['telescope', 'camera', 'magnet'] },
-  { emoji: '🧲', word: 'magnet', distractors: ['battery', 'bell', 'clip'] },
-  { emoji: '🔭', word: 'telescope', distractors: ['microscope', 'binoculars', 'lamp'] },
-  { emoji: '🧪', word: 'test tube', distractors: ['bottle', 'jar', 'cup'] },
-  {
-    emoji: '📊',
-    word: 'chart',
-    distractors: ['map', 'list', 'photo'],
-    prepositionPrompt: 'The chart is on the noticeboard.',
-  },
-  { emoji: '🏫', word: 'school', distractors: ['library', 'office', 'shop'] },
-  { emoji: '🎓', word: 'graduation cap', distractors: ['hat', 'helmet', 'crown'] },
-  {
-    emoji: '🪧',
-    word: 'noticeboard',
-    distractors: ['whiteboard', 'clipboard', 'mirror'],
-    prepositionPrompt: 'The noticeboard is on the wall.',
-  },
-  { emoji: '📞', word: 'telephone', distractors: ['radio', 'speaker', 'remote'] },
-  { emoji: '🧹', word: 'broom', distractors: ['mop', 'brush', 'rake'] },
-  { emoji: '🪞', word: 'mirror', distractors: ['window', 'screen', 'frame'] },
-]
+// The questions are in src/data/games/banks/classroom-objects.ts (moved there on
+// 16 October 2026), and the explanation for each in
+// src/data/games/explanations/classroom-objects.ts.
 
 // ─── Helpers ───────────────────────────────────────────────────────────────────
 
@@ -167,42 +47,20 @@ function speak(text: string) {
 
 const QUESTIONS_PER_ROUND = 15
 
-type Mode = 'name' | 'preposition'
-
-interface Question {
-  mode: Mode
-  item: ClassroomItem
-  prompt: string
-  options: string[]
-  answer: string
-}
-
-const PREP_OPTIONS = ['on', 'in', 'under', 'next to']
+type Question = ClassroomQuestion
 
 function buildQuestions(): Question[] {
   const pool = shuffle(ITEM_BANK).slice(0, QUESTIONS_PER_ROUND)
   return pool.map((item, idx) => {
-    const usePrep = !!item.prepositionPrompt && idx % 3 === 1
-    if (usePrep && item.prepositionPrompt) {
-      // Extract the correct preposition from the example sentence.
-      const lower = item.prepositionPrompt.toLowerCase()
-      const correct = PREP_OPTIONS.find((p) => lower.includes(` ${p} `)) ?? 'on'
-      // "The clock is on the wall." → "Where is the clock? It is ___ the wall."
-      const place = item.prepositionPrompt
-        .replace(/^The .+? (is|are) (on|in|under|next to) (the .+)\.$/i, '$3')
-        .replace(/\.$/, '')
-      return {
-        mode: 'preposition' as const,
-        item,
-        prompt: `Where is the ${item.word}? It is ___ ${place}.`,
-        options: shuffle(PREP_OPTIONS),
-        answer: correct,
-      }
+    // Every third question asks "Where is it?" for an item that has a sentence for one.
+    const where = idx % 3 === 1 ? whereQuestion(item) : null
+    if (where) {
+      return { ...where, options: shuffle(PREP_OPTIONS) }
     }
     return {
       mode: 'name' as const,
       item,
-      prompt: 'Which word matches the picture?',
+      prompt: NAME_PROMPT,
       options: shuffle([item.word, ...item.distractors]),
       answer: item.word,
     }
@@ -222,16 +80,29 @@ export default function ClassroomObjectsPage() {
   const [totalAnswered, setTotalAnswered] = useState(0)
   const [selected, setSelected] = useState<string | null>(null)
   const [feedback, setFeedback] = useState<'correct' | 'wrong' | null>(null)
+  const round = useGameRound('classroom-objects')
 
   const currentQ = questions[qIdx] ?? null
 
-  // Auto-speak the prompt / word when a new question appears.
+  /**
+   * What the page says aloud. A "Where is it?" question is read out when it
+   * appears, as before: the sentence has a gap where the answer goes, so hearing
+   * it gives nothing away. A picture question's word is said only once the
+   * question has been answered, as part of the feedback.
+   *
+   * WHAT CHANGED (16 October 2026). The game asks the student to look at the
+   * picture and choose the word, and it used to say that word 0.3 seconds after
+   * each picture appeared, and again on Listen. A student could match the sound
+   * to the written option without knowing the picture, so the question did not
+   * test what it asked. Scoring is unchanged.
+   */
   useEffect(() => {
-    if (gameState === 'playing' && currentQ && !feedback) {
-      const phrase = currentQ.mode === 'name' ? currentQ.item.word : currentQ.prompt
-      const timer = setTimeout(() => speak(phrase), 300)
-      return () => clearTimeout(timer)
-    }
+    if (gameState !== 'playing' || !currentQ) return
+    const answered = feedback !== null
+    if (currentQ.mode === 'name' ? !answered : answered) return
+    const phrase = currentQ.mode === 'name' ? currentQ.item.word : currentQ.prompt
+    const timer = setTimeout(() => speak(phrase), 300)
+    return () => clearTimeout(timer)
   }, [qIdx, gameState, feedback]) // eslint-disable-line react-hooks/exhaustive-deps
 
   const handleStart = useCallback(() => {
@@ -248,6 +119,17 @@ export default function ClassroomObjectsPage() {
     setGameState('finished')
   }, [])
 
+  /**
+   * A tap on an option. The question is marked, recorded for the student's
+   * account, and then left on screen with its explanation until they choose to
+   * go on.
+   *
+   * WHAT CHANGED (16 October 2026). The game used to move to the next question
+   * 1.6 seconds after an answer, showing only the right word. Each answer now
+   * comes with why it is right and why the option chosen is not
+   * (src/data/games/explanations/classroom-objects.ts), and a learner cannot
+   * read that in 1.6 seconds.
+   */
   const handleAnswer = useCallback(
     (choice: string) => {
       if (!currentQ || feedback) return
@@ -260,19 +142,25 @@ export default function ClassroomObjectsPage() {
       } else {
         setFeedback('wrong')
       }
-
-      setTimeout(() => {
-        if (qIdx + 1 >= questions.length) {
-          setGameState('finished')
-        } else {
-          setQIdx((i) => i + 1)
-          setSelected(null)
-          setFeedback(null)
-        }
-      }, 1600)
+      round.record({
+        question: BANK.key(currentQ),
+        correct,
+        tag: BANK.tag?.(currentQ),
+        chose: correct ? undefined : choice,
+      })
     },
-    [currentQ, feedback, qIdx, questions.length],
+    [currentQ, feedback, round],
   )
+
+  const handleNext = useCallback(() => {
+    if (qIdx + 1 >= questions.length) {
+      setGameState('finished')
+      return
+    }
+    setQIdx((i) => i + 1)
+    setSelected(null)
+    setFeedback(null)
+  }, [qIdx, questions.length])
 
   const accuracyPct = totalAnswered > 0 ? Math.round((score / totalAnswered) * 100) : 0
 
@@ -295,13 +183,14 @@ export default function ClassroomObjectsPage() {
           gameId="classroom-objects"
           audience="eal"
           title="In the Classroom"
-          description="Look at the picture and choose the correct English word. Some rounds ask where things are - on, in, under or next to!"
+          description="Look at the picture and choose the correct English word. Some rounds ask where things are: on, in, under or next to."
           difficulty="Foundation"
           score={score}
           maxScore={totalAnswered || questions.length || QUESTIONS_PER_ROUND}
           onStart={handleStart}
           onFinish={handleFinish}
           gameState={gameState}
+          round={round}
         >
           {currentQ && (
             <div className="space-y-6">
@@ -331,11 +220,16 @@ export default function ClassroomObjectsPage() {
                   {currentQ.item.emoji}
                 </div>
                 <p className="text-base font-medium text-foreground">{currentQ.prompt}</p>
+                {/* A picture question's word is its answer, so Listen waits for the answer. */}
                 <button
                   onClick={() =>
                     speak(currentQ.mode === 'name' ? currentQ.item.word : currentQ.prompt)
                   }
-                  className="inline-flex items-center gap-2 rounded-lg border border-border px-4 py-2 text-sm font-medium text-foreground transition-colors hover:bg-accent"
+                  disabled={currentQ.mode === 'name' && !feedback}
+                  className={cn(
+                    'inline-flex items-center gap-2 rounded-lg border border-border px-4 py-2 text-sm font-medium text-foreground transition-colors hover:bg-accent',
+                    currentQ.mode === 'name' && !feedback && 'invisible',
+                  )}
                 >
                   <Volume2 className="size-4 text-primary" />
                   Listen
@@ -374,24 +268,38 @@ export default function ClassroomObjectsPage() {
 
               {/* Feedback */}
               {feedback && (
-                <div
-                  className={cn(
-                    'flex items-center justify-center gap-2 rounded-lg px-4 py-2 text-sm font-medium',
-                    feedback === 'correct'
-                      ? 'text-emerald-400 bg-emerald-500/10'
-                      : 'text-red-400 bg-red-500/10',
-                  )}
-                >
-                  {feedback === 'correct' ? (
-                    <>
-                      <CheckCircle className="size-4" /> Well done! That&apos;s right.
-                    </>
-                  ) : (
-                    <>
-                      <XCircle className="size-4" /> Not quite - the answer is{' '}
-                      <span className="font-bold">{currentQ.answer}</span>. Keep going!
-                    </>
-                  )}
+                <div>
+                  <div
+                    className={cn(
+                      'flex items-center justify-center gap-2 rounded-lg px-4 py-2 text-sm font-medium',
+                      feedback === 'correct'
+                        ? 'text-emerald-400 bg-emerald-500/10'
+                        : 'text-red-400 bg-red-500/10',
+                    )}
+                  >
+                    {feedback === 'correct' ? (
+                      <>
+                        <CheckCircle className="size-4" /> Well done. That&apos;s right.
+                      </>
+                    ) : (
+                      <>
+                        <XCircle className="size-4" /> Not quite. The answer is{' '}
+                        <span className="font-bold">{currentQ.answer}</span>. Keep going.
+                      </>
+                    )}
+                  </div>
+                  <AnswerExplanation
+                    game="classroom-objects"
+                    question={BANK.key(currentQ)}
+                    correct={feedback === 'correct'}
+                    chosen={selected}
+                  />
+                  <div className="mt-4 flex justify-end">
+                    <Button onClick={handleNext} autoFocus>
+                      {qIdx + 1 >= questions.length ? 'See your results' : 'Next question'}
+                      <ArrowRight className="size-4 ms-1" />
+                    </Button>
+                  </div>
                 </div>
               )}
             </div>
