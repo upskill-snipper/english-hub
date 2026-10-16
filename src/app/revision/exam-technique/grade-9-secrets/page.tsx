@@ -84,8 +84,14 @@ const TECHNIQUES: {
       'Discussing how a text is organised -- its shifts, openings, endings, and pacing -- is where many students miss easy marks.',
     detail:
       'Consider: How does the extract begin and end? Where does the tone shift? Why does the writer place this scene here in the narrative? Does sentence length change? Is there a volta, a climactic moment, or a cyclical structure? Structural analysis is often the difference between Grade 7 and Grade 9 because so few students attempt it well.',
+    // Corrected 16 October 2026. The example said Stevenson "delays Hyde's
+    // physical description until the third chapter". Enfield describes the
+    // "strong feeling of deformity" in Chapter 1, and Utterson sees Hyde,
+    // "pale and dwarfish", in Chapter 2, "Search for Mr. Hyde"
+    // (src/data/full-texts/jekyll-and-hyde.ts). What Stevenson does withhold,
+    // until the last two chapters, is the truth about who Hyde is.
     example:
-      'Grade 9 structural point: "Stevenson delays Hyde\'s physical description until the third chapter, structurally mirroring the novella\'s theme of concealment -- the reader, like Victorian society, is forced to confront what has been hidden."',
+      "Grade 9 structural point: \"Stevenson withholds the truth about Hyde until the last two chapters, Dr Lanyon's Narrative and Henry Jekyll's Full Statement of the Case. The reader, like Utterson, must piece the mystery together from fragments, so the structure itself mirrors the novella's theme of concealment.\"",
   },
   {
     number: 7,

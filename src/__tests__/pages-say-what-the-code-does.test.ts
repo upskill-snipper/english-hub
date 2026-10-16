@@ -725,3 +725,14 @@ describe('no page calls Animal Farm restricted', () => {
     }
   })
 })
+
+// ─── F24 and F25: two exam-technique examples that taught an error ──────────
+
+describe('the exam-technique examples are true to the texts and the terms', () => {
+  it('does not say Hyde is first described in the third chapter (F24)', () => {
+    // Utterson sees him, "pale and dwarfish", in Chapter 2.
+    const page = code('src/app/revision/exam-technique/grade-9-secrets/page.tsx')
+    expect(page).not.toMatch(/until the third chapter/)
+    expect(page).toMatch(/Full Statement of the Case/)
+  })
+})
