@@ -273,10 +273,22 @@ describe('what the suite runs in', () => {
     // question was open. A question exists only once Start has been clicked
     // and a round dealt, so rendered to a string the page is idle, shows no
     // question at all, and the page with the badge passes.
+    //
+    // Then to 33 on 16 October 2026 for
+    // a-teacher-sees-their-class-game-results.test.tsx. A class's Games tab
+    // and a pupil's Games panel fetch their figures in an effect and render
+    // loading, failed or ready. What is asserted (each pupil listed and
+    // linked, the singular wording for one pupil, the pupil's analytics in
+    // the teacher's wording with none of the pupil's own next steps or coach)
+    // exists only once that fetch has settled and the component has rendered
+    // again. Rendered to a string, both show only a loading skeleton, and an
+    // empty page would pass every assertion. The rules behind the figures are
+    // tested in the node environment, in class-view.test.ts and
+    // teachers-see-game-results-only-since-pupils-joined.test.ts.
     expect(
       annotated.length,
       'more files now claim to need a DOM - check each one',
-    ).toBeLessThanOrEqual(32)
+    ).toBeLessThanOrEqual(33)
   })
 })
 

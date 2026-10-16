@@ -194,10 +194,13 @@ describe('the whole set', () => {
     expect(PENDING.filter((s) => BANK_SLUGS.includes(s))).toEqual([])
   })
 
+  // Thirty seconds, not the default five: it imports every pending game's
+  // file in turn, and on 16 October 2026 that took more than five seconds on a
+  // busy machine and failed a push with nothing wrong.
   it('a pending game has no explanations yet, so none can ship unchecked', async () => {
     for (const slug of PENDING) {
       const ex = (await import(`../data/games/explanations/${slug}.ts`)).EXPLANATIONS
       expect(Object.keys(ex), slug).toEqual([])
     }
-  })
+  }, 30_000)
 })
