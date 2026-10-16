@@ -5,368 +5,17 @@ import Link from 'next/link'
 import GameShell, { type GameState } from '@/components/games/GameShell'
 import { Button } from '@/components/ui/button'
 import { cn } from '@/lib/utils'
-import { ArrowLeft, CheckCircle, XCircle, Sparkles, MapPin } from 'lucide-react'
+import { ArrowLeft, ArrowRight, CheckCircle, XCircle, Sparkles, MapPin } from 'lucide-react'
 import { useBoard } from '@/hooks/useBoard'
 import { getBoardConfig } from '@/lib/board/board-store'
+import { AnswerExplanation } from '@/components/games/AnswerExplanation'
+import { useGameRound } from '@/components/games/game-round'
+import { BANK, QUESTION_BANK, type Question } from '@/data/games/banks/prepositions-of-place'
 
 // ─── Data ──────────────────────────────────────────────────────────────────────
-
-interface Question {
-  scene: string
-  options: [string, string, string, string]
-  answer: string
-  why: string
-}
-
-const QUESTION_BANK: Question[] = [
-  // Place: in / on / under
-  {
-    scene: 'The milk is _____ the fridge.',
-    options: ['in', 'on', 'under', 'above'],
-    answer: 'in',
-    why: 'We use "in" for something inside a closed space like a fridge.',
-  },
-  {
-    scene: 'The book is _____ the table.',
-    options: ['on', 'in', 'under', 'between'],
-    answer: 'on',
-    why: 'We use "on" for a surface that something rests upon, like a table.',
-  },
-  {
-    scene: 'The cat is _____ the box, hiding completely.',
-    options: ['under', 'on', 'above', 'opposite'],
-    answer: 'under',
-    why: '"Under" means lower than and covered by something.',
-  },
-  {
-    scene: 'There is a lovely picture _____ the wall.',
-    options: ['on', 'in', 'at', 'under'],
-    answer: 'on',
-    why: 'Pictures hang flat against a surface, so we say "on the wall".',
-  },
-  {
-    scene: 'The keys are _____ my pocket.',
-    options: ['in', 'on', 'above', 'between'],
-    answer: 'in',
-    why: 'A pocket is an enclosed space, so we use "in".',
-  },
-  {
-    scene: 'The dog is sleeping _____ the bed.',
-    options: ['under', 'in', 'opposite', 'above'],
-    answer: 'under',
-    why: '"Under" shows the dog is in the space below the bed.',
-  },
-  {
-    scene: 'Write your name _____ the top of the page.',
-    options: ['at', 'in', 'under', 'behind'],
-    answer: 'at',
-    why: 'We use "at" for a specific point, such as the top of a page.',
-  },
-  {
-    scene: 'The spider is _____ the ceiling.',
-    options: ['on', 'in', 'under', 'next to'],
-    answer: 'on',
-    why: 'The spider is touching the ceiling surface, so "on" is correct.',
-  },
-  {
-    scene: 'My shoes are _____ the stairs.',
-    options: ['under', 'in', 'above', 'between'],
-    answer: 'under',
-    why: '"Under" places the shoes in the space beneath the stairs.',
-  },
-  {
-    scene: 'There is some money _____ my wallet.',
-    options: ['in', 'on', 'at', 'above'],
-    answer: 'in',
-    why: 'A wallet holds things inside it, so we use "in".',
-  },
-
-  // behind / in front of / next to
-  {
-    scene: 'The car is parked _____ the house, out of sight.',
-    options: ['behind', 'in front of', 'on', 'above'],
-    answer: 'behind',
-    why: '"Behind" means at the back of something, hidden from the front.',
-  },
-  {
-    scene: 'The bus stop is right _____ the school, by the gate.',
-    options: ['in front of', 'behind', 'under', 'in'],
-    answer: 'in front of',
-    why: '"In front of" means directly before or facing something.',
-  },
-  {
-    scene: 'Sara sits _____ me; our desks are side by side.',
-    options: ['next to', 'behind', 'under', 'above'],
-    answer: 'next to',
-    why: '"Next to" means immediately beside something.',
-  },
-  {
-    scene: 'The bin is _____ the door, just beside it.',
-    options: ['next to', 'in', 'above', 'opposite'],
-    answer: 'next to',
-    why: '"Next to" describes two things close together, side by side.',
-  },
-  {
-    scene: 'The garden is _____ the house, at the back.',
-    options: ['behind', 'in front of', 'on', 'at'],
-    answer: 'behind',
-    why: '"Behind" shows the garden is at the rear of the house.',
-  },
-  {
-    scene: 'A tall tree stands _____ the window, blocking the view outwards.',
-    options: ['in front of', 'behind', 'under', 'in'],
-    answer: 'in front of',
-    why: '"In front of" means positioned before and facing the window.',
-  },
-  {
-    scene: 'The chemist is _____ the bakery, right beside it.',
-    options: ['next to', 'above', 'under', 'opposite'],
-    answer: 'next to',
-    why: '"Next to" means directly adjacent to something.',
-  },
-  {
-    scene: 'He is hiding _____ the curtain so nobody can see him.',
-    options: ['behind', 'in front of', 'on', 'next to'],
-    answer: 'behind',
-    why: '"Behind" means at the back of the curtain, out of view.',
-  },
-
-  // between / above / below / opposite
-  {
-    scene: 'The letter B comes _____ A and C.',
-    options: ['between', 'next to', 'behind', 'above'],
-    answer: 'between',
-    why: '"Between" is used for a position with something on each side.',
-  },
-  {
-    scene: 'The lamp hangs _____ the table, higher up.',
-    options: ['above', 'under', 'in', 'between'],
-    answer: 'above',
-    why: '"Above" means at a higher level, not necessarily touching.',
-  },
-  {
-    scene: 'Sign your name _____ the dotted line, lower on the form.',
-    options: ['below', 'above', 'in', 'behind'],
-    answer: 'below',
-    why: '"Below" means at a lower level than something else.',
-  },
-  {
-    scene: 'The café is _____ the library, just across the street.',
-    options: ['opposite', 'next to', 'under', 'in'],
-    answer: 'opposite',
-    why: '"Opposite" means facing something from across a space.',
-  },
-  {
-    scene: 'The village lies _____ the two hills.',
-    options: ['between', 'above', 'on', 'behind'],
-    answer: 'between',
-    why: '"Between" describes a position with one thing on either side.',
-  },
-  {
-    scene: 'Birds are flying _____ the clouds.',
-    options: ['above', 'below', 'in', 'next to'],
-    answer: 'above',
-    why: '"Above" means higher than the clouds in the sky.',
-  },
-  {
-    scene: 'The car park is _____ ground level, underneath the shop.',
-    options: ['below', 'above', 'on', 'opposite'],
-    answer: 'below',
-    why: '"Below" means at a lower level, beneath the ground floor.',
-  },
-  {
-    scene: 'My house is _____ the park; I can see it from my front door.',
-    options: ['opposite', 'between', 'in', 'under'],
-    answer: 'opposite',
-    why: '"Opposite" means directly facing across the road.',
-  },
-  {
-    scene: 'The cat is sitting _____ the two cushions.',
-    options: ['between', 'above', 'on', 'behind'],
-    answer: 'between',
-    why: 'There is a cushion on each side, so we use "between".',
-  },
-  {
-    scene: 'The shelf is _____ the desk, fixed higher on the wall.',
-    options: ['above', 'under', 'in', 'next to'],
-    answer: 'above',
-    why: '"Above" shows the shelf is at a higher position than the desk.',
-  },
-
-  // Place: at / in / on (location contrast)
-  {
-    scene: 'I will meet you _____ the bus stop.',
-    options: ['at', 'in', 'on', 'under'],
-    answer: 'at',
-    why: 'We use "at" for a specific meeting point like a bus stop.',
-  },
-  {
-    scene: 'She lives _____ Manchester.',
-    options: ['in', 'at', 'on', 'above'],
-    answer: 'in',
-    why: 'We use "in" for towns, cities and countries.',
-  },
-  {
-    scene: 'My flat is _____ the third floor.',
-    options: ['on', 'in', 'at', 'under'],
-    answer: 'on',
-    why: 'We use "on" with floors of a building.',
-  },
-  {
-    scene: 'The children are _____ home this evening.',
-    options: ['at', 'in', 'on', 'behind'],
-    answer: 'at',
-    why: '"At home" is a fixed expression for being at one\'s house.',
-  },
-  {
-    scene: 'We stayed _____ a small hotel near the sea.',
-    options: ['in', 'on', 'at', 'above'],
-    answer: 'in',
-    why: 'We use "in" for being inside a building such as a hotel.',
-  },
-  {
-    scene: 'There is a famous painting _____ the museum.',
-    options: ['in', 'at', 'on', 'under'],
-    answer: 'in',
-    why: 'We use "in" for something inside a place like a museum.',
-  },
-  {
-    scene: 'He is waiting _____ the corner of the street.',
-    options: ['at', 'in', 'on', 'between'],
-    answer: 'at',
-    why: 'We use "at" for a precise point, such as a corner.',
-  },
-  {
-    scene: 'The shop is _____ the high street.',
-    options: ['on', 'in', 'at', 'under'],
-    answer: 'on',
-    why: 'In British English we say a shop is "on" a street.',
-  },
-  {
-    scene: 'The students are _____ the classroom now.',
-    options: ['in', 'at', 'on', 'above'],
-    answer: 'in',
-    why: 'We use "in" for being inside a room.',
-  },
-  {
-    scene: 'I saw her _____ the party last night.',
-    options: ['at', 'in', 'on', 'behind'],
-    answer: 'at',
-    why: 'We use "at" for events like a party or a concert.',
-  },
-
-  // Time: at / in / on
-  {
-    scene: "The lesson starts _____ nine o'clock.",
-    options: ['at', 'in', 'on', 'by'],
-    answer: 'at',
-    why: 'We use "at" with clock times, e.g. "at nine o\'clock".',
-  },
-  {
-    scene: 'My birthday is _____ July.',
-    options: ['in', 'at', 'on', 'under'],
-    answer: 'in',
-    why: 'We use "in" with months of the year.',
-  },
-  {
-    scene: 'We have a meeting _____ Monday.',
-    options: ['on', 'at', 'in', 'by'],
-    answer: 'on',
-    why: 'We use "on" with days of the week.',
-  },
-  {
-    scene: 'It often snows _____ winter.',
-    options: ['in', 'at', 'on', 'above'],
-    answer: 'in',
-    why: 'We use "in" with seasons of the year.',
-  },
-  {
-    scene: 'I usually read _____ night before sleeping.',
-    options: ['at', 'in', 'on', 'by'],
-    answer: 'at',
-    why: '"At night" is a fixed expression for that part of the day.',
-  },
-  {
-    scene: 'The shop opens _____ the morning.',
-    options: ['in', 'at', 'on', 'under'],
-    answer: 'in',
-    why: 'We say "in the morning", "in the afternoon", "in the evening".',
-  },
-  {
-    scene: "We always celebrate _____ New Year's Day.",
-    options: ['on', 'at', 'in', 'by'],
-    answer: 'on',
-    why: 'We use "on" with specific dates and named days.',
-  },
-  {
-    scene: 'She was born _____ 2009.',
-    options: ['in', 'at', 'on', 'by'],
-    answer: 'in',
-    why: 'We use "in" with years.',
-  },
-  {
-    scene: 'The train leaves _____ half past six.',
-    options: ['at', 'in', 'on', 'under'],
-    answer: 'at',
-    why: 'We use "at" with exact times of the clock.',
-  },
-  {
-    scene: 'Many people relax _____ the weekend.',
-    options: ['at', 'in', 'on', 'by'],
-    answer: 'at',
-    why: 'In British English we say "at the weekend".',
-  },
-  {
-    scene: 'The film begins _____ midnight.',
-    options: ['at', 'in', 'on', 'by'],
-    answer: 'at',
-    why: '"At midnight" uses "at" for a precise point in time.',
-  },
-  {
-    scene: 'We are going on holiday _____ August.',
-    options: ['in', 'at', 'on', 'under'],
-    answer: 'in',
-    why: 'We use "in" with months such as August.',
-  },
-  {
-    scene: 'My appointment is _____ Friday afternoon.',
-    options: ['on', 'at', 'in', 'by'],
-    answer: 'on',
-    why: 'We use "on" with a particular day, even with a part of it.',
-  },
-  {
-    scene: 'The library closes early _____ Christmas Eve.',
-    options: ['on', 'at', 'in', 'by'],
-    answer: 'on',
-    why: 'We use "on" with named days and dates.',
-  },
-
-  // Mixed place review
-  {
-    scene: 'The umbrella is _____ the bag, tucked inside.',
-    options: ['in', 'on', 'above', 'opposite'],
-    answer: 'in',
-    why: 'A bag is an enclosed container, so we use "in".',
-  },
-  {
-    scene: 'The clock is _____ the door, fixed higher up.',
-    options: ['above', 'under', 'in', 'next to'],
-    answer: 'above',
-    why: '"Above" shows it is at a higher position than the door.',
-  },
-  {
-    scene: 'The post office is _____ the bank and the chemist.',
-    options: ['between', 'on', 'under', 'opposite'],
-    answer: 'between',
-    why: 'There is a building on each side, so we use "between".',
-  },
-  {
-    scene: 'A small mat lies _____ the front door.',
-    options: ['in front of', 'behind', 'in', 'above'],
-    answer: 'in front of',
-    why: '"In front of" means directly before and facing the door.',
-  },
-]
+// The questions are in src/data/games/banks/prepositions-of-place.ts (moved there
+// on 16 October 2026), and the explanation for each in
+// src/data/games/explanations/prepositions-of-place.ts.
 
 // ─── Helpers ───────────────────────────────────────────────────────────────────
 
@@ -394,6 +43,7 @@ export default function PrepositionsOfPlacePage() {
   const [totalAnswered, setTotalAnswered] = useState(0)
   const [selected, setSelected] = useState<string | null>(null)
   const [feedback, setFeedback] = useState<'correct' | 'wrong' | null>(null)
+  const round = useGameRound('prepositions-of-place')
 
   const currentQuestion = questions[qIdx] ?? null
 
@@ -414,6 +64,16 @@ export default function PrepositionsOfPlacePage() {
     setGameState('finished')
   }, [])
 
+  /**
+   * A tap. The question is marked, recorded for the student's account, and then
+   * left on screen with its explanation until they choose to go on.
+   *
+   * WHAT CHANGED (16 October 2026). The game used to move to the next scene 2.2
+   * seconds after a tap, showing one line of why. Each answer now comes with
+   * where the thing is in this scene and why each other word does not fit
+   * (src/data/games/explanations/prepositions-of-place.ts), which cannot be read
+   * in 2.2 seconds. There is no clock in this game, so nothing else changes.
+   */
   const handleAnswer = useCallback(
     (option: string) => {
       if (!currentQuestion || feedback) return
@@ -426,19 +86,25 @@ export default function PrepositionsOfPlacePage() {
       } else {
         setFeedback('wrong')
       }
-
-      setTimeout(() => {
-        if (qIdx + 1 >= questions.length) {
-          setGameState('finished')
-        } else {
-          setQIdx((i) => i + 1)
-          setSelected(null)
-          setFeedback(null)
-        }
-      }, 2200)
+      round.record({
+        question: BANK.key(currentQuestion),
+        correct: isCorrect,
+        tag: currentQuestion.topic,
+        chose: isCorrect ? undefined : option,
+      })
     },
-    [currentQuestion, feedback, qIdx, questions.length],
+    [currentQuestion, feedback, round],
   )
+
+  const handleNext = useCallback(() => {
+    if (qIdx + 1 >= questions.length) {
+      setGameState('finished')
+      return
+    }
+    setQIdx((i) => i + 1)
+    setSelected(null)
+    setFeedback(null)
+  }, [qIdx, questions.length])
 
   const accuracyPct = totalAnswered > 0 ? Math.round((score / totalAnswered) * 100) : 0
 
@@ -468,6 +134,7 @@ export default function PrepositionsOfPlacePage() {
           onStart={handleStart}
           onFinish={handleFinish}
           gameState={gameState}
+          round={round}
         >
           {currentQuestion && (
             <div className="space-y-6">
@@ -520,29 +187,42 @@ export default function PrepositionsOfPlacePage() {
                 })}
               </div>
 
-              {/* Feedback */}
+              {/* Feedback + explanation, until the student goes on */}
               {feedback && (
-                <div
-                  className={cn(
-                    'space-y-1 rounded-lg px-4 py-3 text-sm',
-                    feedback === 'correct'
-                      ? 'bg-emerald-500/10 text-emerald-400'
-                      : 'bg-red-500/10 text-red-400',
-                  )}
-                >
-                  <div className="flex items-center gap-2 font-semibold">
-                    {feedback === 'correct' ? (
-                      <>
-                        <CheckCircle className="size-4" /> Well done - that&apos;s right!
-                      </>
-                    ) : (
-                      <>
-                        <XCircle className="size-4" /> Not quite. The answer is &ldquo;
-                        {currentQuestion.answer}&rdquo;.
-                      </>
+                <div>
+                  <div
+                    className={cn(
+                      'rounded-lg px-4 py-3 text-sm',
+                      feedback === 'correct'
+                        ? 'bg-emerald-500/10 text-emerald-400'
+                        : 'bg-red-500/10 text-red-400',
                     )}
+                  >
+                    <div className="flex items-center gap-2 font-semibold">
+                      {feedback === 'correct' ? (
+                        <>
+                          <CheckCircle className="size-4" /> Well done, that&apos;s right.
+                        </>
+                      ) : (
+                        <>
+                          <XCircle className="size-4" /> Not quite. The answer is &ldquo;
+                          {currentQuestion.answer}&rdquo;.
+                        </>
+                      )}
+                    </div>
                   </div>
-                  <p className="text-muted-foreground">{currentQuestion.why}</p>
+                  <AnswerExplanation
+                    game="prepositions-of-place"
+                    question={BANK.key(currentQuestion)}
+                    correct={feedback === 'correct'}
+                    chosen={selected}
+                  />
+                  <div className="mt-4 flex justify-end">
+                    <Button onClick={handleNext} autoFocus>
+                      {qIdx + 1 >= questions.length ? 'See your results' : 'Next question'}
+                      <ArrowRight className="size-4 ms-1" />
+                    </Button>
+                  </div>
                 </div>
               )}
             </div>
