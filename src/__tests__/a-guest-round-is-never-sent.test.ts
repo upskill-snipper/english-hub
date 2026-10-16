@@ -78,6 +78,8 @@ describe('an answer as it is stored', () => {
     const typed = 'i think its the one where he says the knocking at the gate bit'
     expect(toItem({ question: 'q', correct: false, chose: typed }, 'x').w).toBeUndefined()
     expect(toItem({ question: 'q', correct: false, chose: '<b>x</b>' }, 'x').w).toBeUndefined()
+    // A clock time picked from a list is a label (16 October 2026).
+    expect(toItem({ question: 'q', correct: false, chose: '7:45' }, 'x').w).toBe('7:45')
   })
 
   it('turns a tag into a stored kind, or falls back', () => {

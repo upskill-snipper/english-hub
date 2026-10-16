@@ -76,8 +76,13 @@ export const ITEM_KIND_RE = /^[a-z0-9][a-z0-9-]{0,39}$/
 export const ACTIVITY_RE = /^[a-z0-9][a-z0-9-]{0,79}$/
 export const LEVEL_RE = /^[A-Za-z0-9_.:-]{1,80}$/
 export const CLIENT_ROUND_ID_RE = /^[A-Za-z0-9-]{8,64}$/
-/** A chosen label: a device name, a word, "a" or "the". Letters, digits and light punctuation only. */
-export const CHOSEN_RE = /^[\p{L}\p{N} '’.,?()/-]{1,40}$/u
+/**
+ * A chosen label: a device name, a word, a clock time, "a" or "the". Letters,
+ * digits and light punctuation only. The colon was added on 16 October 2026:
+ * Numbers and Time offers times such as "7:45", and a wrong pick of one was
+ * being dropped, so a pupil's mix-ups never showed which time they confused.
+ */
+export const CHOSEN_RE = /^[\p{L}\p{N} '’.,:?()/-]{1,40}$/u
 
 /**
  * A question's id for storage: a 32-bit FNV-1a hash of its own id or prompt,
