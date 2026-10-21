@@ -21053,7 +21053,7 @@ export const ES_MESSAGES: Record<string, string> = {
   'home.story.hero.plate2_caption': 'Acto 1, escena 5. Lady Macbeth lee la carta.',
   'home.story.boards.heading': 'Elige tu junta examinadora',
   'home.story.boards.sub':
-    'Elegir tu junta es como el sitio te muestra los textos correctos: tu estantería solo lista los textos que fija tu junta, y el buscador muestra las juntas de cada resultado.',
+    'Elegir tu junta es como el sitio te muestra los textos correctos. Cada texto indica las juntas que lo fijan, y el buscador muestra las juntas de cada resultado.',
   'home.story.boards.gcse': 'GCSE',
   'home.story.boards.igcse': 'International GCSE',
   'home.story.boards.open_shelf': 'Ver sus textos prescritos',
@@ -21107,6 +21107,8 @@ export const ES_MESSAGES: Record<string, string> = {
   'home.story.play.p2':
     'Sin temporizadores, sin rachas diarias, sin clasificaciones, sin vidas; una llama cuenta las respuestas correctas seguidas. Con sesión iniciada, las respuestas se guardan; sin sesión, no se envía nada.',
   'home.story.play.link': 'Juega la misión de Macbeth',
+  'home.story.play.shot_alt':
+    'La página de la misión de Macbeth en un portátil: el título, el enlace para abrir la guía de estudio, la tarjeta de progreso con 0 de 21 estrellas, el botón Start: Part 1 y el primer nivel, que es el siguiente.',
   'home.story.play.phone_alt':
     'La parte 1 de la misión de Macbeth en un móvil: un reto de orden de la historia con cinco miniaturas del cómic para tocar en orden, un contador de llama a cero y un botón Check the order.',
   'home.story.play.caption': 'El mapa de la misión, y el primer nivel en un móvil.',
@@ -21125,7 +21127,7 @@ export const ES_MESSAGES: Record<string, string> = {
   'home.story.write.p1':
     'Elige la junta, el examen y la pregunta, pega la redacción y envíala. Recibe una nota por cada objetivo de evaluación, qué salió bien, qué mejorar y qué practicar después. Escrito por IA y etiquetado como IA; la nota es una estimación de práctica, no un resultado oficial.',
   'home.story.write.p2':
-    'La corrección con IA forma parte de la prueba gratuita de 7 días o de un plan. Los estudiantes de 13 a 15 años necesitan la aprobación de un padre, madre o de su colegio antes de activar el feedback de IA.',
+    'La corrección con IA forma parte de la prueba gratuita de 7 días o de un plan. Los estudiantes de 13 a 15 años necesitan la aprobación de un padre o madre, o la autorización registrada de su colegio antes de activar el feedback de IA.',
   'home.story.write.link': 'Envía una redacción para corregir',
   'home.story.write.shot_alt':
     'El formulario de envío de redacciones en un portátil: selectores de junta, examen y pregunta, un campo para la pregunta que respondiste, un título opcional y un cuadro para tu redacción, todos vacíos.',
@@ -21160,7 +21162,7 @@ export const ES_MESSAGES: Record<string, string> = {
     'KS3, GCSE, International GCSE, International A level (guías y misiones), IELTS, EAL',
   'home.story.also.parents.title': 'Padres',
   'home.story.also.parents.body':
-    'Tu hijo o hija puede usar las guías de estudio, las misiones, los juegos y los cómics sin cuenta. Los menores de 13 no pueden registrarse; los de 13 a 15 años necesitan la aprobación de un padre, madre o de su colegio antes de activar el feedback de IA.',
+    'Tu hijo o hija puede usar las guías de estudio, las misiones, los juegos y los cómics sin cuenta. Los menores de 13 no pueden registrarse; los de 13 a 15 años necesitan la aprobación de un padre o madre, o la autorización registrada de su colegio antes de activar el feedback de IA.',
   'home.story.also.parents.link': 'Para padres',
   'home.story.also.teachers.title': 'Profesores',
   'home.story.also.teachers.body':
@@ -21176,7 +21178,7 @@ export const ES_MESSAGES: Record<string, string> = {
   'home.story.also.ielts.link': 'Haz la prueba de nivel',
   'home.story.also.eal.title': 'EAL',
   'home.story.also.eal.body':
-    'Los 37 juegos de destrezas cubren EAL además de KS3 y GCSE, corregidos mientras juegas. Los 37 explican cada respuesta.',
+    '37 juegos para EAL, KS3 y GCSE, corregidos mientras juegas. Los 37 explican cada respuesta.',
   'home.story.also.eal.link': 'Para estudiantes EAL',
   'home.story.also.arabic.title': 'Árabe',
   'home.story.also.arabic.body':

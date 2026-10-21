@@ -141,9 +141,9 @@ export const HOME_STORY_DICTIONARY: Dictionary = {
   // sends "back" to the full library instead of the board shelf, so no warning
   // is promised here.
   'home.story.boards.sub': {
-    en: "Choosing your board is how the site shows the right texts: your shelf lists only the texts your board sets, and the text search shows each result's boards.",
-    ar: 'اختيار البورد هو الطريقة اللي يعرض فيها الموقع النصوص الصح: رفّك يعرض بس النصوص اللي يقررها بوردك، والبحث يبيّن لك بوردات كل نتيجة.',
-    es: 'Elegir tu junta es como el sitio te muestra los textos correctos: tu estantería solo lista los textos que fija tu junta, y el buscador muestra las juntas de cada resultado.',
+    en: "Choosing your board is how the site shows the right texts. Each text names the boards that set it, and the text search shows each result's boards.",
+    ar: 'اختيار البورد هو الطريقة اللي يعرض فيها الموقع النصوص الصح. كل نص يذكر البوردات اللي تقرره، والبحث يبيّن لك بوردات كل نتيجة.',
+    es: 'Elegir tu junta es como el sitio te muestra los textos correctos. Cada texto indica las juntas que lo fijan, y el buscador muestra las juntas de cada resultado.',
   },
   'home.story.boards.gcse': { en: 'GCSE', ar: 'GCSE', es: 'GCSE' },
   'home.story.boards.igcse': {
@@ -322,6 +322,11 @@ export const HOME_STORY_DICTIONARY: Dictionary = {
     ar: 'العب مهمة Macbeth',
     es: 'Juega la misión de Macbeth',
   },
+  'home.story.play.shot_alt': {
+    en: 'The Macbeth quest page on a laptop: the title, an Open the study guide link, a progress card at 0 of 21 stars, a Start: Part 1 button, and the first level, Part 1, which is up next.',
+    ar: 'صفحة مهمة Macbeth على اللابتوب: العنوان، ورابط فتح دليل الدراسة، وبطاقة التقدم على صفر من 21 نجمة، وزر البدء بالجزء الأول، والمستوى الأول وهو التالي.',
+    es: 'La página de la misión de Macbeth en un portátil: el título, el enlace para abrir la guía de estudio, la tarjeta de progreso con 0 de 21 estrellas, el botón Start: Part 1 y el primer nivel, que es el siguiente.',
+  },
   'home.story.play.phone_alt': {
     en: 'Part 1 of the Macbeth quest on a phone: a story-order challenge with five comic thumbnails to tap into order, a flame counter at zero, and a Check the order button.',
     ar: 'الجزء الأول من مهمة Macbeth على جوال: تحدي ترتيب القصة فيه خمس صور مصغّرة من القصة المصورة تضغطها بالترتيب، وعدّاد شعلة على صفر، وزر Check the order.',
@@ -387,9 +392,9 @@ export const HOME_STORY_DICTIONARY: Dictionary = {
     es: 'Elige la junta, el examen y la pregunta, pega la redacción y envíala. Recibe una nota por cada objetivo de evaluación, qué salió bien, qué mejorar y qué practicar después. Escrito por IA y etiquetado como IA; la nota es una estimación de práctica, no un resultado oficial.',
   },
   'home.story.write.p2': {
-    en: "AI marking is part of the 7-day free trial or a plan. 13 to 15-year-olds need a parent's or school's approval before AI feedback is switched on.",
-    ar: 'تصحيح الـ AI جزء من التجربة المجانية لمدة 7 أيام أو من الاشتراك. الطلاب من 13 إلى 15 سنة يحتاجون موافقة ولي الأمر أو المدرسة قبل ما تشتغل ملاحظات الـ AI.',
-    es: 'La corrección con IA forma parte de la prueba gratuita de 7 días o de un plan. Los estudiantes de 13 a 15 años necesitan la aprobación de un padre, madre o de su colegio antes de activar el feedback de IA.',
+    en: "AI marking is part of the 7-day free trial or a plan. 13 to 15-year-olds need a parent's approval or their school's recorded authorisation before AI feedback is switched on.",
+    ar: 'تصحيح الـ AI جزء من التجربة المجانية لمدة 7 أيام أو من الاشتراك. الطلاب من 13 إلى 15 سنة يحتاجون موافقة ولي الأمر أو إذن المدرسة المسجّل قبل ما تشتغل ملاحظات الـ AI.',
+    es: 'La corrección con IA forma parte de la prueba gratuita de 7 días o de un plan. Los estudiantes de 13 a 15 años necesitan la aprobación de un padre o madre, o la autorización registrada de su colegio antes de activar el feedback de IA.',
   },
   'home.story.write.link': {
     en: 'Send an essay for marking',
@@ -499,9 +504,9 @@ export const HOME_STORY_DICTIONARY: Dictionary = {
   },
   'home.story.also.parents.title': { en: 'Parents', ar: 'أولياء الأمور', es: 'Padres' },
   'home.story.also.parents.body': {
-    en: "Your child can use the study guides, quests, games and comics without an account. Under-13s cannot sign up; 13 to 15-year-olds need a parent's or school's approval before AI feedback is switched on.",
-    ar: 'ولدك أو بنتك يقدرون يستخدمون أدلة الدراسة والمهام والألعاب والقصص المصورة بدون حساب. اللي أعمارهم أقل من 13 ما يقدرون يسجلون؛ ومن 13 إلى 15 سنة يحتاجون موافقة ولي الأمر أو المدرسة قبل ما تشتغل ملاحظات الـ AI.',
-    es: 'Tu hijo o hija puede usar las guías de estudio, las misiones, los juegos y los cómics sin cuenta. Los menores de 13 no pueden registrarse; los de 13 a 15 años necesitan la aprobación de un padre, madre o de su colegio antes de activar el feedback de IA.',
+    en: "Your child can use the study guides, quests, games and comics without an account. Under-13s cannot sign up; 13 to 15-year-olds need a parent's approval or their school's recorded authorisation before AI feedback is switched on.",
+    ar: 'ولدك أو بنتك يقدرون يستخدمون أدلة الدراسة والمهام والألعاب والقصص المصورة بدون حساب. اللي أعمارهم أقل من 13 ما يقدرون يسجلون؛ ومن 13 إلى 15 سنة يحتاجون موافقة ولي الأمر أو إذن المدرسة المسجّل قبل ما تشتغل ملاحظات الـ AI.',
+    es: 'Tu hijo o hija puede usar las guías de estudio, las misiones, los juegos y los cómics sin cuenta. Los menores de 13 no pueden registrarse; los de 13 a 15 años necesitan la aprobación de un padre o madre, o la autorización registrada de su colegio antes de activar el feedback de IA.',
   },
   'home.story.also.parents.link': { en: 'For parents', ar: 'لأولياء الأمور', es: 'Para padres' },
   'home.story.also.teachers.title': { en: 'Teachers', ar: 'المعلمون', es: 'Profesores' },
@@ -531,9 +536,9 @@ export const HOME_STORY_DICTIONARY: Dictionary = {
   },
   'home.story.also.eal.title': { en: 'EAL', ar: 'EAL', es: 'EAL' },
   'home.story.also.eal.body': {
-    en: 'The 37 skills games cover EAL as well as KS3 and GCSE, marked as you play. All 37 explain every answer.',
+    en: '37 games for EAL, KS3 and GCSE, marked as you play. All 37 explain every answer.',
     ar: 'ألعاب المهارات الـ 37 تغطي EAL مع KS3 وGCSE، وتتصحح وإنت تلعب. كل الـ 37 تشرح كل إجابة.',
-    es: 'Los 37 juegos de destrezas cubren EAL además de KS3 y GCSE, corregidos mientras juegas. Los 37 explican cada respuesta.',
+    es: '37 juegos para EAL, KS3 y GCSE, corregidos mientras juegas. Los 37 explican cada respuesta.',
   },
   'home.story.also.eal.link': {
     en: 'For EAL learners',

@@ -20546,7 +20546,7 @@ export const EN_MESSAGES: Record<string, string> = {
   'home.story.hero.plate2_caption': 'Act 1, Scene 5. Lady Macbeth reads the letter.',
   'home.story.boards.heading': 'Pick your exam board to see its set texts',
   'home.story.boards.sub':
-    "Choosing your board is how the site shows the right texts: your shelf lists only the texts your board sets, and the text search shows each result's boards.",
+    "Choosing your board is how the site shows the right texts. Each text names the boards that set it, and the text search shows each result's boards.",
   'home.story.boards.gcse': 'GCSE',
   'home.story.boards.igcse': 'International GCSE',
   'home.story.boards.open_shelf': 'See its set texts',
@@ -20600,6 +20600,8 @@ export const EN_MESSAGES: Record<string, string> = {
   'home.story.play.p2':
     'No timers, no daily streaks, no leaderboards, no lives; a flame counts right answers in a row. Signed in, answers are saved; not signed in, nothing is sent.',
   'home.story.play.link': 'Play the Macbeth quest',
+  'home.story.play.shot_alt':
+    'The Macbeth quest page on a laptop: the title, an Open the study guide link, a progress card at 0 of 21 stars, a Start: Part 1 button, and the first level, Part 1, which is up next.',
   'home.story.play.phone_alt':
     'Part 1 of the Macbeth quest on a phone: a story-order challenge with five comic thumbnails to tap into order, a flame counter at zero, and a Check the order button.',
   'home.story.play.caption': 'The quest map, and the first level on a phone.',
@@ -20618,7 +20620,7 @@ export const EN_MESSAGES: Record<string, string> = {
   'home.story.write.p1':
     'Choose the board, paper and question, paste the essay and send it. Get a mark for each assessment objective, what went well, what to improve and what to practise next. Written by AI and labelled as AI; the grade is a practice estimate, not an official result.',
   'home.story.write.p2':
-    "AI marking is part of the 7-day free trial or a plan. 13 to 15-year-olds need a parent's or school's approval before AI feedback is switched on.",
+    "AI marking is part of the 7-day free trial or a plan. 13 to 15-year-olds need a parent's approval or their school's recorded authorisation before AI feedback is switched on.",
   'home.story.write.link': 'Send an essay for marking',
   'home.story.write.shot_alt':
     'The essay submission form on a laptop: exam board, paper and question selects, a field for the question you answered, an optional title and a box for your essay, all empty.',
@@ -20652,7 +20654,7 @@ export const EN_MESSAGES: Record<string, string> = {
     'KS3, GCSE, International GCSE, International A level (guides and quests), IELTS, EAL',
   'home.story.also.parents.title': 'Parents',
   'home.story.also.parents.body':
-    "Your child can use the study guides, quests, games and comics without an account. Under-13s cannot sign up; 13 to 15-year-olds need a parent's or school's approval before AI feedback is switched on.",
+    "Your child can use the study guides, quests, games and comics without an account. Under-13s cannot sign up; 13 to 15-year-olds need a parent's approval or their school's recorded authorisation before AI feedback is switched on.",
   'home.story.also.parents.link': 'For parents',
   'home.story.also.teachers.title': 'Teachers',
   'home.story.also.teachers.body':
@@ -20667,7 +20669,7 @@ export const EN_MESSAGES: Record<string, string> = {
   'home.story.also.ielts.link': 'Take the placement test',
   'home.story.also.eal.title': 'EAL',
   'home.story.also.eal.body':
-    'The 37 skills games cover EAL as well as KS3 and GCSE, marked as you play. All 37 explain every answer.',
+    '37 games for EAL, KS3 and GCSE, marked as you play. All 37 explain every answer.',
   'home.story.also.eal.link': 'For EAL learners',
   'home.story.also.arabic.title': 'Arabic',
   'home.story.also.arabic.body':
