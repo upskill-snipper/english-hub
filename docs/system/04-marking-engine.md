@@ -235,20 +235,22 @@ Structural differences from GCSE marking: whole/half bands 0-9 against four fixe
 
 Every live marking route maps provider failure to a 503 with a friendly string, and refunds the trial allowance unit before returning:
 
-| Condition                                                          | Response | Allowance           |
-| ------------------------------------------------------------------ | -------- | ------------------- |
-| Missing `ANTHROPIC_API_KEY`                                        | 503      | refunded            |
-| Anthropic timeout (`/api/marking/run`: one 95 s deadline)          | 503      | refunded            |
-| Anthropic 429                                                      | 503      | refunded            |
-| Any other Anthropic error, including a retired model id (HTTP 400) | 503      | refunded            |
-| `INVALID_SUBMISSION` / `OFF_TOPIC` sentinel                        | 400      | refunded            |
-| Unparseable JSON                                                   | 500      | refunded            |
-| Reply cut off at `max_tokens` (`TRUNCATED`; `/api/marking/run`)    | 500      | refunded            |
-| DB write failure after a successful mark                           | 500      | refunded, mark lost |
+| Condition                                                                                   | Response | Allowance           |
+| ------------------------------------------------------------------------------------------- | -------- | ------------------- |
+| Missing `ANTHROPIC_API_KEY`                                                                 | 503      | refunded            |
+| Anthropic timeout (`/api/marking/run`: one 95 s deadline)                                   | 503      | refunded            |
+| Anthropic 429                                                                               | 503      | refunded            |
+| Any other Anthropic error, including a retired model id or an empty account (both HTTP 400) | 503      | refunded            |
+| `INVALID_SUBMISSION` / `OFF_TOPIC` sentinel                                                 | 400      | refunded            |
+| Unparseable JSON                                                                            | 500      | refunded            |
+| Reply cut off at `max_tokens` (`TRUNCATED`; `/api/marking/run`)                             | 500      | refunded            |
+| DB write failure after a successful mark                                                    | 500      | refunded, mark lost |
 
 The timeout row holds only for `/api/marking/run`. `/api/mark` and `/api/essay-feedback` pass a 50-second timeout under a 60-second `maxDuration`, but the SDK applies `timeout` to each attempt and retries a timed-out attempt twice (`maxRetries` defaults to 2), so their timeout branch cannot run inside 60 seconds. Vercel ends the function first: the learner gets Vercel's 504, the allowance is not refunded and no audit row is written.
 
-That uniform 503 is exactly why two model-retirement outages ran undiagnosed for weeks: from the learner's side a retired model id is indistinguishable from an overloaded provider. The mitigations are `logAiDecision` ([`src/lib/ai-audit-log.ts`](../../src/lib/ai-audit-log.ts)), which records `errorClass` and the model actually called. Before 10 October 2026 it did not record every call. Most routes, the spine included, do not await it, so on Vercel a write still pending when the response went out waited for the function's next request or was lost: on the spine one record landed 193 seconds after its run, as the next essay arrived, and 2 of the 8 essays left unmarked to 10 October have no record at all. `logAiDecision` now hands its own write to Next's `after()`, which Vercel honours with `waitUntil`, so the function outlives the response until the row is written, whether or not the route awaits it. Treat counts from before that date as a floor. The other mitigation is `GET /api/health/ai`, which makes a real AI call and reports `shared` / `marker` / `escalation` / `classifier` ids. **Check that `/api/health/ai` is actually wired to a scheduled monitor** - the comment in [`src/lib/anthropic-client.ts:82`](../../src/lib/anthropic-client.ts) says "wire it to a cron/monitor" in the imperative, and I could not find a cron entry that calls it.
+That uniform 503 is exactly why two model-retirement outages ran undiagnosed for weeks: from the learner's side a retired model id is indistinguishable from an overloaded provider. The mitigations are `logAiDecision` ([`src/lib/ai-audit-log.ts`](../../src/lib/ai-audit-log.ts)), which records `errorClass` and the model actually called. Before 10 October 2026 it did not record every call. Most routes, the spine included, do not await it, so on Vercel a write still pending when the response went out waited for the function's next request or was lost: on the spine one record landed 193 seconds after its run, as the next essay arrived, and 2 of the 8 essays left unmarked to 10 October have no record at all. `logAiDecision` now hands its own write to Next's `after()`, which Vercel honours with `waitUntil`, so the function outlives the response until the row is written, whether or not the route awaits it. Treat counts from before that date as a floor. The other mitigation is `GET /api/health/ai`, which makes a real AI call per configured model and has run daily from `vercel.json` since 18 September 2026.
+
+Neither told anyone, which is how the third outage ran for nine days. The Anthropic account ran out of credit at 15:10 UTC on 12 October 2026; every call returned HTTP 400 "Your credit balance is too low to access the Anthropic API"; 12 learners, all new trial accounts on their first essay, left 37 saved and unmarked rows for 13 essays, because the page told them to try again and every Submit saved another copy. Since 21 October: both mitigations email `AI_ALERT_EMAIL` through [`src/lib/ops/ai-outage-alert.ts`](../../src/lib/ops/ai-outage-alert.ts) (`logAiDecision` on the first live failure that will not pass on its own, throttled to one email per kind every six hours; the probe every morning it fails); the spine's 503 says marking is unavailable, that the essay is not the problem and that it is saved; a second Submit of the same essay marks the saved copy instead of saving another; and an unmarked essay's own page has a "Mark this essay now" button that runs `/api/marking/run` on it.
 
 The streaming route has its own failure shape: it emits SSE `{type:'token'}` frames, then a single `{type:'done', result}` or `{type:'error', message}`. It refunds the allowance only if `accumulated.length === 0`, so a mid-stream failure after any text has arrived is charged. It also returns HTTP 200 even when the run fails, because the error is inside the stream.
 
@@ -324,5 +326,5 @@ A sixth implementation, teacher-facing, at `/toolkit/examiner`. It is deliberate
 - Whether the V2 columns are genuinely absent in the live database. I had no database access; the conclusion above is derived from the baseline-cutoff logic in `apply-migrations.mjs` plus the file names, and must be confirmed with `check-schema-drift.mjs`.
 - Whether `20260518_smart_ip_marking.sql` (also pre-cutoff, and the source of `source`, `ai_result`, `ai_score`, `mark_scheme_id` and friends) was hand-applied before the runner existed. The live spine appears to work, which suggests it was, but that is inference.
 - Whether the Cambridge 9-1 (0990) descriptors being identical to 0500 is correct exam practice.
-- Whether `/api/health/ai` is attached to any scheduled monitor.
+- ~~Whether `/api/health/ai` is attached to any scheduled monitor.~~ It is: daily at 06:30 UTC since 18 September 2026, emailing on failure since 21 October 2026 (section above). Whether `AI_ALERT_EMAIL` or `OPERATOR_DIGEST_EMAIL` is set in production could not be read from here.
 - Whether `training_data` rows carry licence or consent for their excerpts to be sent to Anthropic as calibration anchors.

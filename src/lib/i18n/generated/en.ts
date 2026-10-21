@@ -12360,6 +12360,7 @@ export const EN_MESSAGES: Record<string, string> = {
   'marking.submit.btn_marking': 'Marking your essay…',
   'marking.submit.wait_note':
     "Your essay is being marked. This can take a little while, so please don't close this page.",
+  'marking.submit.open_saved': 'Open your saved essay',
   'marking.history.breadcrumb': 'History',
   'marking.history.awaiting': 'Awaiting mark',
   'marking.history.title': 'Marking history',
@@ -14581,7 +14582,10 @@ export const EN_MESSAGES: Record<string, string> = {
   'marking.results.review.comments_label': 'Comments',
   'marking.results.unmarked_title': 'Not marked yet',
   'marking.results.unmarked_body':
-    'This essay was saved but has not been marked yet. If marking did not finish, submit it again from Mark an essay.',
+    'This essay is saved but has not been marked yet. You do not need to paste it again: choose Mark this essay now to have it marked.',
+  'marking.results.mark_now': 'Mark this essay now',
+  'marking.results.mark_now_failed':
+    'This essay could not be marked just now. It is still saved here, so you can try again later.',
   'marking.results.reviewing_title': 'Your teacher is reviewing this mark',
   'marking.results.reviewing_body':
     'Your teacher is checking the AI’s mark for this essay and may change it. Their decision will appear here when they have finished.',

@@ -65,6 +65,11 @@ import { generateFeedback } from '@/lib/marking/feedback-generator'
 import { resolveLocaleFromRequest } from '@/lib/i18n/ai-language-directive'
 import { cachedSystemBlocks } from '@/lib/ai/cached-system'
 import { logAiDecision, aiAuditTokenUsage } from '@/lib/ai-audit-log'
+import {
+  classifyAiProviderFailure,
+  readProviderError,
+  type AiProviderFailureKind,
+} from '@/lib/ai/provider-failure'
 import { captureVersions } from '@/lib/marking/versioning-capture'
 import { loadSubmission, applyAiResult, deriveUncertaintyFlags } from '@/lib/marking/persistence'
 import { AI_OPT_OUT_CODE } from '@/lib/consent-codes'
@@ -108,6 +113,46 @@ export const dynamic = 'force-dynamic'
 export const maxDuration = 120
 const MARKING_MAX_TOKENS = 8_000
 const MARKING_DEADLINE_MS = 95_000
+
+// ─── What the learner is told when the marker cannot be reached ─────────────
+// From 12 to 21 October 2026 the Anthropic account was out of credit and
+// every run failed here. Twelve learners, each on their first essay, were
+// told "The AI marking service is currently unavailable. Please try again
+// later." That was true, and it did not blame the essay, but it left out the
+// two things they needed: that the essay was already saved, and how to try
+// again without saving it again. Trying again meant pressing Submit on the
+// same form, and every press saved another copy: 37 saved rows for 13 essays,
+// one learner's essay saved 11 times in an hour and a half.
+//
+// So the sentence now says the essay is saved and where, and when the cause
+// is known to be ours (anything but an unclassified 400), that the essay is
+// not the problem. Pressing Submit again on the same essay now marks the saved
+// copy (src/app/marking/submit/page.tsx), and the saved copy has its own
+// "Mark this essay now" button (src/app/marking/results/[id]/page.tsx). A
+// member of staff marking a pupil's essay is told the same, about "the essay".
+function notMarked(cause: string, forStaff: boolean): string {
+  return `${cause}, so ${forStaff ? 'this essay has' : 'your essay has'} not been marked.`
+}
+
+function essayIsSaved(forStaff: boolean): string {
+  return forStaff
+    ? 'The essay is saved, so it can be marked later without being submitted again.'
+    : 'Your essay is saved in My marked essays, so you do not need to paste it again: you can have it marked from there.'
+}
+
+function markingUnavailable(kind: AiProviderFailureKind, forStaff: boolean): string {
+  return [
+    notMarked('AI marking is not working at the moment', forStaff),
+    // An unclassified failure might, in principle, be about this request, so
+    // it is not promised to be ours.
+    kind === 'other'
+      ? null
+      : `This is a problem on our side, not with ${forStaff ? 'the' : 'your'} essay.`,
+    essayIsSaved(forStaff),
+  ]
+    .filter(Boolean)
+    .join(' ')
+}
 
 interface RunRequestBody {
   submissionId: string
@@ -316,9 +361,7 @@ export async function POST(request: NextRequest) {
     if (!apiKey) {
       console.error('[api/marking/run] ANTHROPIC_API_KEY not configured')
       await refundTrialAllowance(trialGate)
-      return serviceUnavailableResponse(
-        'AI marking is temporarily unavailable. Please try again later.',
-      )
+      return serviceUnavailableResponse(markingUnavailable('not_configured', runByStaff))
     }
 
     // 9. Call Claude (shared client - privacy posture documented centrally).
@@ -365,6 +408,7 @@ export async function POST(request: NextRequest) {
     } catch (aiError: unknown) {
       const err = aiError as { status?: number; message?: string; error?: { type?: string } }
       const pastDeadline = deadline.signal.aborted
+      const provider = classifyAiProviderFailure(readProviderError(aiError))
       void logAiDecision({
         ...auditBase,
         requestStartedAt: aiRequestStartedAt,
@@ -378,6 +422,7 @@ export async function POST(request: NextRequest) {
           : typeof err.message === 'string'
             ? err.message.slice(0, 300)
             : null,
+        errorStatus: pastDeadline ? null : provider.status,
       })
       if (
         pastDeadline ||
@@ -387,20 +432,23 @@ export async function POST(request: NextRequest) {
       ) {
         console.error('[api/marking/run] Anthropic timeout')
         await refundTrialAllowance(trialGate)
-        return serviceUnavailableResponse('The AI service timed out. Please try again.')
+        return serviceUnavailableResponse(
+          `${notMarked('AI marking timed out', runByStaff)} ${essayIsSaved(runByStaff)}`,
+        )
       }
       if (err.status === 429) {
         console.error('[api/marking/run] Anthropic rate limit')
         await refundTrialAllowance(trialGate)
         return serviceUnavailableResponse(
-          'The AI service is temporarily overloaded. Please try again shortly.',
+          `${notMarked('AI marking is very busy at the moment', runByStaff)} ${essayIsSaved(runByStaff)}`,
         )
       }
-      console.error('[api/marking/run] Anthropic error', aiError)
-      await refundTrialAllowance(trialGate)
-      return serviceUnavailableResponse(
-        'The AI marking service is currently unavailable. Please try again later.',
+      console.error(
+        `[api/marking/run] Anthropic error: kind=${provider.kind} status=${provider.status ?? 'none'}`,
+        aiError,
       )
+      await refundTrialAllowance(trialGate)
+      return serviceUnavailableResponse(markingUnavailable(provider.kind, runByStaff))
     } finally {
       clearTimeout(deadlineTimer)
     }

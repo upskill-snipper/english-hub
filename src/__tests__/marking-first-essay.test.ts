@@ -303,8 +303,11 @@ describe('the conversion screen reports what happened', () => {
     // A first version of this checked only the first occurrence of each, and a
     // mutation that moved the legacy capture past its early return passed. So
     // this walks every branch and asserts a capture sits just above it.
+    // 21 October 2026: the run-stage branch also hands back the id of the
+    // essay it saved (`savedSubmissionId`), so a second Submit marks that copy
+    // rather than saving another. Extra fields are allowed; the branch is not.
     const branches = [
-      ...page.matchAll(/if \(refusal\) return \{ consentRefusal: refusal \}/g),
+      ...page.matchAll(/if \(refusal\) return \{ consentRefusal: refusal(?:, [^}]+)? \}/g),
       ...page.matchAll(/if \(refusal\) \{\s+setConsentRefusal\(refusal\)/g),
     ].map((m) => m.index ?? -1)
 

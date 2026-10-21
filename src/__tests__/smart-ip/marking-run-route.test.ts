@@ -550,3 +550,64 @@ describe('POST /api/marking/run - the reply budget', () => {
     expect(vi.getTimerCount()).toBe(0)
   })
 })
+
+// ─── What a learner reads when the AI cannot be reached ─────────────────────
+// 12 to 21 October 2026: the Anthropic account was out of credit and every
+// run failed with HTTP 400. Twelve learners read "The AI marking service is
+// currently unavailable. Please try again later." That was true and did not
+// blame the essay, but it did not say the essay was saved, and trying again
+// saved it again: 37 rows for 13 essays. The sentence must say marking is
+// unavailable, must not blame the essay, and must say it is saved.
+describe('POST /api/marking/run - the sentence read when the AI is down', () => {
+  const CREDIT =
+    'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'
+  const BODY = { type: 'error', error: { type: 'invalid_request_error', message: CREDIT } }
+  const creditError = () =>
+    Object.assign(new Error(`400 ${JSON.stringify(BODY)}`), { status: 400, error: BODY })
+
+  it('says marking is unavailable, that the essay is not the problem, and that it is saved', async () => {
+    vi.mocked(refundTrialAllowance).mockClear()
+    anthropicCreate.mockRejectedValueOnce(creditError())
+
+    const res = await POST(makeReq())
+
+    expect(res.status).toBe(503)
+    const { error } = await res.json()
+    expect(error).toMatch(/AI marking is not working at the moment/)
+    expect(error).toMatch(/not with your essay/)
+    expect(error).toMatch(/saved in My marked essays/)
+    expect(error).toMatch(/do not need to paste it again/)
+    expect(error).not.toMatch(/try again later/i)
+    expect(applyAiResultMock).not.toHaveBeenCalled()
+    expect(refundTrialAllowance).toHaveBeenCalledOnce()
+  })
+
+  it('records the provider status beside its message, so the record names the cause', async () => {
+    vi.mocked(logAiDecision).mockClear()
+    anthropicCreate.mockRejectedValueOnce(creditError())
+    await POST(makeReq())
+    expect(logAiDecision).toHaveBeenCalledWith(
+      expect.objectContaining({ success: false, errorStatus: 400 }),
+    )
+  })
+
+  it('does not promise the essay is fine when the cause is unknown', async () => {
+    anthropicCreate.mockRejectedValueOnce(
+      Object.assign(new Error('400 something about this request'), { status: 400 }),
+    )
+    const { error } = await (await POST(makeReq())).json()
+    expect(error).toMatch(/not working at the moment/)
+    expect(error).not.toMatch(/not with your essay/)
+    expect(error).toMatch(/saved/)
+  })
+
+  it('tells staff marking a pupil essay about "this essay", not "your essay"', async () => {
+    session = { user: { id: 'teacher-1' }, error: null }
+    loadedRow = baseRow({ source: 'b2b_class', school_id: 'sch-1', student_id: 'pupil-9' })
+    schoolMember = { school_id: 'sch-1', role: 'teacher', id: 'mem-1' }
+    anthropicCreate.mockRejectedValueOnce(creditError())
+    const { error } = await (await POST(makeReq())).json()
+    expect(error).toMatch(/this essay has not been marked/)
+    expect(error).not.toMatch(/your essay/i)
+  })
+})

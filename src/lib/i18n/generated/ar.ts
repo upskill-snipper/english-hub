@@ -12087,6 +12087,7 @@ export const AR_MESSAGES: Record<string, string> = {
   'marking.submit.btn_submit': 'سلّم للتصحيح',
   'marking.submit.btn_marking': 'يصحّح مقالتك…',
   'marking.submit.wait_note': 'مقالك ينصحّح الحين. ممكن ياخذ شوي وقت، فلا تسكّر الصفحة.',
+  'marking.submit.open_saved': 'افتح مقالتك المحفوظة',
   'marking.history.breadcrumb': 'السجل',
   'marking.history.awaiting': 'بانتظار التصحيح',
   'marking.history.title': 'سجل التصحيح',
@@ -14221,7 +14222,10 @@ export const AR_MESSAGES: Record<string, string> = {
   'marking.results.review.comments_label': 'الملاحظات',
   'marking.results.unmarked_title': 'ما تصحّحت للحين',
   'marking.results.unmarked_body':
-    'انحفظت هالمقالة بس ما تصحّحت للحين. إذا التصحيح ما خلص، سلّمها مرة ثانية من «صحّح مقالة».',
+    'هالمقالة محفوظة بس ما تصحّحت للحين. ما يحتاج تلصقها مرة ثانية: اضغط «صحّح هالمقالة الحين» عشان تتصحّح.',
+  'marking.results.mark_now': 'صحّح هالمقالة الحين',
+  'marking.results.mark_now_failed':
+    'ما قدرنا نصحّح هالمقالة الحين. للحين محفوظة هني، فتقدر تحاول مرة ثانية بعدين.',
   'marking.results.reviewing_title': 'معلّمك يراجع هالدرجة',
   'marking.results.reviewing_body':
     'معلّمك يشيّك درجة الذكاء الاصطناعي لهالمقالة وممكن يعدّلها. قراره بيبيّن هني أول ما يخلّص.',

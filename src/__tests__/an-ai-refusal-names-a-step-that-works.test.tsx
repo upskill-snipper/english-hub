@@ -135,6 +135,7 @@ vi.mock('@/components/ui/select', () => ({
 }))
 
 import SubmitEssayPage from '@/app/marking/submit/page'
+import MarkingResultsPage from '@/app/marking/results/[id]/page'
 import IeltsWritingPage from '@/app/ielts/writing/page'
 import IeltsSpeakingPage from '@/app/ielts/speaking/page'
 import PersonalStatementCoachPage from '@/app/ielts/admissions/personal-statement/page'
@@ -385,6 +386,174 @@ describe('/marking/submit, refused with a consent code (unchanged)', () => {
 
     await waitFor(() => expect(push).toHaveBeenCalledWith('/marking/results/sub_2'))
     await expectSameRequestSentAgain('/api/submissions')
+  })
+})
+
+// ═══ /marking/submit and the saved essay, when marking itself fails ═════
+//
+// 12 to 21 October 2026: the Anthropic account was out of credit. Every essay
+// was saved, then failed to mark, and the learner was told to try again.
+// Pressing Submit again saved the essay again: 12 learners left 37 saved rows
+// for 13 essays. Now the error links to the saved copy, a second Submit of the
+// same form marks that copy, and the copy's own page has a button to mark it.
+
+const AI_DOWN: Reply = {
+  status: 503,
+  body: {
+    error:
+      'AI marking is not working at the moment, so your essay has not been marked. This is a problem on our side, not with your essay.',
+  },
+}
+
+describe('/marking/submit, saved but not marked', () => {
+  beforeEach(() => window.history.pushState({}, '', '/marking/submit'))
+
+  it('links to the saved essay, and marks that copy when the same form is sent again', async () => {
+    responders['/api/submissions'] = { status: 201, body: { submissionId: 'sub_9' } }
+    responders['/api/marking/run'] = AI_DOWN
+    const { container } = await renderMarkingForm()
+    submitMarkingForm(container)
+
+    const saved = await screen.findByRole('link', { name: 'Open your saved essay' })
+    expect(saved.getAttribute('href')).toBe('/marking/results/sub_9')
+    expect(screen.getByText(/not with your essay/)).toBeTruthy()
+
+    // The AI is back, and the learner presses Submit again.
+    responders['/api/marking/run'] = { status: 200, body: { ok: true } }
+    submitMarkingForm(container)
+
+    await waitFor(() => expect(push).toHaveBeenCalledWith('/marking/results/sub_9'))
+    expect(sentTo('/api/submissions')).toHaveLength(1)
+    expect(sentTo('/api/marking/run').map((p) => JSON.parse(p.body).submissionId)).toEqual([
+      'sub_9',
+      'sub_9',
+    ])
+  })
+
+  it('saves a new copy once the essay has been changed', async () => {
+    let saves = 0
+    responders['/api/submissions'] = () => ({
+      status: 201,
+      body: { submissionId: `sub_${++saves}` },
+    })
+    responders['/api/marking/run'] = AI_DOWN
+    const { container } = await renderMarkingForm()
+    submitMarkingForm(container)
+    await screen.findByRole('link', { name: 'Open your saved essay' })
+
+    fireEvent.change(screen.getByDisplayValue(ESSAY), { target: { value: `${ESSAY} extra` } })
+    submitMarkingForm(container)
+
+    await waitFor(() => expect(sentTo('/api/submissions')).toHaveLength(2))
+    await waitFor(() => expect(sentTo('/api/marking/run')).toHaveLength(2))
+    expect(sentTo('/api/marking/run').map((p) => JSON.parse(p.body).submissionId)).toEqual([
+      'sub_1',
+      'sub_2',
+    ])
+  })
+
+  it('goes to the result when the saved copy has been marked meanwhile', async () => {
+    responders['/api/submissions'] = { status: 201, body: { submissionId: 'sub_9' } }
+    responders['/api/marking/run'] = AI_DOWN
+    const { container } = await renderMarkingForm()
+    submitMarkingForm(container)
+    await screen.findByRole('link', { name: 'Open your saved essay' })
+
+    responders['/api/marking/run'] = {
+      status: 400,
+      body: { error: 'Submission is not awaiting marking (status: ai_marked).' },
+    }
+    submitMarkingForm(container)
+
+    await waitFor(() => expect(push).toHaveBeenCalledWith('/marking/results/sub_9'))
+    expect(sentTo('/api/submissions')).toHaveLength(1)
+  })
+})
+
+describe("a saved essay's own page, not yet marked", () => {
+  const savedRow = (status: string, marked = false) => ({
+    submission: {
+      id: 'sub_9',
+      source: 'b2c_self',
+      status,
+      exam_board: 'AQA',
+      paper: 'Paper 1',
+      question_text: 'How does the writer use language to describe the storm?',
+      essay_text: ESSAY,
+      ai_result: marked
+        ? {
+            predictedGrade: '6',
+            gradeBand: 'Grade 6',
+            totalMarks: 5,
+            maxMarks: 8,
+            summary: 'A clear answer.',
+            strengths: [],
+            improvements: [],
+            nextStepsToNextGrade: [],
+            aoScores: [{ id: 'AO2', label: 'Language', marks: 5, maxMarks: 8 }],
+          }
+        : null,
+    },
+  })
+
+  async function renderSavedEssay() {
+    // A promise React's use() can read at once: it checks `status` and
+    // `value` before it suspends, as it does for a promise it has seen.
+    const params = Object.assign(Promise.resolve({ id: 'sub_9' }), {
+      status: 'fulfilled',
+      value: { id: 'sub_9' },
+    })
+    render(<MarkingResultsPage params={params} />)
+    return screen.findByRole('button', { name: 'Mark this essay now' })
+  }
+
+  it('marks it where it is, by its id, then shows the mark', async () => {
+    let status = 'submitted'
+    responders['/api/marking/sub_9'] = () => ({
+      status: 200,
+      body: savedRow(status, status !== 'submitted'),
+    })
+    responders['/api/marking/run'] = () => {
+      status = 'ai_marked'
+      return { status: 200, body: { ok: true } }
+    }
+
+    const button = await renderSavedEssay()
+    // No route back to pasting the essay in again.
+    expect(screen.queryByRole('link', { name: 'Mark an essay' })).toBeNull()
+    fireEvent.click(button)
+
+    await waitFor(() =>
+      expect(sentTo('/api/marking/run').map((p) => JSON.parse(p.body))).toEqual([
+        { submissionId: 'sub_9' },
+      ]),
+    )
+    // The essay is fetched again and its mark shown, not left on a loader.
+    expect(await screen.findByText('A clear answer.')).toBeTruthy()
+    const reads = vi.mocked(fetch).mock.calls.filter(([url]) => url === '/api/marking/sub_9')
+    expect(reads).toHaveLength(2)
+    expect(screen.queryByRole('button', { name: 'Mark this essay now' })).toBeNull()
+    expect(sentTo('/api/submissions')).toHaveLength(0)
+  })
+
+  it("keeps the essay and shows the route's sentence when marking still fails", async () => {
+    responders['/api/marking/sub_9'] = { status: 200, body: savedRow('submitted') }
+    responders['/api/marking/run'] = AI_DOWN
+
+    fireEvent.click(await renderSavedEssay())
+
+    const alert = await screen.findByRole('alert')
+    expect(alert.textContent).toMatch(/not with your essay/)
+    expect(screen.getByRole('button', { name: 'Mark this essay now' })).toBeTruthy()
+  })
+
+  it('offers the consent step in place when consent is missing', async () => {
+    responders['/api/marking/sub_9'] = { status: 200, body: savedRow('submitted') }
+    responders['/api/marking/run'] = DOB_REFUSAL
+
+    fireEvent.click(await renderSavedEssay())
+
+    expect(await screen.findByRole('region', { name: /date of birth/i })).toBeTruthy()
   })
 })
 

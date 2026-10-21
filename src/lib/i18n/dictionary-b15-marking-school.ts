@@ -155,6 +155,13 @@ export const B15_MARKING_SCHOOL_DICTIONARY: Record<
     ar: 'مقالك ينصحّح الحين. ممكن ياخذ شوي وقت، فلا تسكّر الصفحة.',
     es: 'Se está corrigiendo tu redacción. Puede tardar un poco, así que no cierres esta página.',
   },
+  // 21 October 2026: shown under a marking failure when the essay was saved,
+  // so the learner goes to the saved copy rather than saving another.
+  'marking.submit.open_saved': {
+    en: 'Open your saved essay',
+    ar: 'افتح مقالتك المحفوظة',
+    es: 'Abrir tu redacción guardada',
+  },
 
   // ─── /marking/history ────────────────────────────────────────────────────
   'marking.history.breadcrumb': { en: 'History', ar: 'السجل', es: 'Historial' },

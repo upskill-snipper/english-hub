@@ -12680,6 +12680,7 @@ export const ES_MESSAGES: Record<string, string> = {
   'marking.submit.btn_marking': 'Corrigiendo tu redacción…',
   'marking.submit.wait_note':
     'Se está corrigiendo tu redacción. Puede tardar un poco, así que no cierres esta página.',
+  'marking.submit.open_saved': 'Abrir tu redacción guardada',
   'marking.history.breadcrumb': 'Historial',
   'marking.history.awaiting': 'Pendiente de nota',
   'marking.history.title': 'Historial de correcciones',
@@ -14942,7 +14943,10 @@ export const ES_MESSAGES: Record<string, string> = {
   'marking.results.review.comments_label': 'Comentarios',
   'marking.results.unmarked_title': 'Aún sin corregir',
   'marking.results.unmarked_body':
-    'Esta redacción se guardó, pero aún no se ha corregido. Si la corrección no terminó, vuelve a enviarla desde Corregir redacción.',
+    'Esta redacción está guardada, pero aún no se ha corregido. No hace falta volver a pegarla: pulsa Corregir esta redacción ahora para que se corrija.',
+  'marking.results.mark_now': 'Corregir esta redacción ahora',
+  'marking.results.mark_now_failed':
+    'No se ha podido corregir esta redacción ahora mismo. Sigue guardada aquí, así que puedes volver a intentarlo más tarde.',
   'marking.results.reviewing_title': 'Tu profesor está revisando esta nota',
   'marking.results.reviewing_body':
     'Tu profesor está comprobando la nota de la IA para esta redacción y puede cambiarla. Su decisión aparecerá aquí cuando termine.',

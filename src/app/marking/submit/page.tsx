@@ -1,6 +1,6 @@
 'use client'
 
-import { useMemo, useState, useCallback, useEffect } from 'react'
+import { useMemo, useState, useCallback, useEffect, useRef } from 'react'
 import Link from 'next/link'
 import { useRouter } from 'next/navigation'
 import { isAiOptedOut } from '@/lib/ai-preferences'
@@ -212,6 +212,91 @@ function signInHref(): string {
   return `/auth/login?redirect=${encodeURIComponent(here)}`
 }
 
+/**
+ * How a submission attempt ended. `savedSubmissionId` is set when the essay
+ * was saved but not marked, so the page can mark that copy next time rather
+ * than save another (see `savedAttempt` in the page).
+ */
+type SpineResult =
+  | { submissionId: string }
+  | { unavailable: true }
+  | {
+      failed: string
+      refusalKind?: 'upgrade' | 'signin' | null
+      savedSubmissionId?: string
+    }
+  | { consentRefusal: AIConsentRefusal; savedSubmissionId?: string }
+
+/**
+ * Ask for the AI mark on an essay that is already saved.
+ *
+ * 2026-08-18: this used to swallow EVERY outcome (it never checked res.ok),
+ * then navigate to the results page, whose waiting state tells the student
+ * their essay is "waiting for your teacher to review it". A self-study
+ * student has no teacher, the results page never polls, and the failed
+ * attempt still counted against their 10-a-day cap - a 403 (lapsed trial),
+ * 429 (cap hit) or 503 (AI down; the exact state production was in) stranded
+ * them on that screen forever. A failed mark now surfaces as a real error on
+ * THIS page, before navigation.
+ *
+ * 2026-10-21: a function of its own, because a second Submit on the same
+ * essay now comes straight here with the copy already saved.
+ */
+async function runSavedSubmission(submissionId: string): Promise<SpineResult> {
+  try {
+    const runRes = await fetch('/api/marking/run', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ submissionId }),
+    })
+    if (!runRes.ok) {
+      let message = ''
+      let body: unknown = null
+      try {
+        body = await runRes.json()
+        message =
+          (body as { error?: string; message?: string })?.error ??
+          (body as { error?: string; message?: string })?.message ??
+          ''
+      } catch {
+        /* non-JSON */
+      }
+      // Marked since the last attempt, from the saved essay's own page or by
+      // us after an outage. The results page shows it.
+      if (runRes.status === 400 && /not awaiting marking/i.test(message)) {
+        return { submissionId }
+      }
+      const refusal = readConsentRefusal(runRes.status, body)
+      // The essay is saved by this point but unmarked, which is a
+      // different failure from being refused at the door and needs a
+      // different fix. Hence `stage`.
+      phCapture(PH_EVENTS.MARKING_REFUSED, {
+        status: runRes.status,
+        consentCode: refusal?.code ?? null,
+        stage: 'run',
+        surface: 'marking/submit',
+      })
+      if (refusal) return { consentRefusal: refusal, savedSubmissionId: submissionId }
+      return {
+        failed: friendlyError(runRes.status, message),
+        refusalKind: refusalKindFor(runRes.status, body),
+        savedSubmissionId: submissionId,
+      }
+    }
+  } catch {
+    // Network failure between saving and marking: the submission exists but
+    // is unmarked. Be honest about it rather than parking the student on a
+    // teacher-review screen.
+    return {
+      failed:
+        'Your essay is saved, but marking could not start because the connection dropped. Check your connection and submit again: the saved essay will be marked, not saved twice.',
+      savedSubmissionId: submissionId,
+    }
+  }
+
+  return { submissionId }
+}
+
 /* ─── Page ─────────────────────────────────────────────────── */
 
 export default function SubmitEssayPage() {
@@ -401,12 +486,7 @@ export default function SubmitEssayPage() {
       studentAnswer: string
       markSchemeId: string
       questionId: string
-    }): Promise<
-      | { submissionId: string }
-      | { unavailable: true }
-      | { failed: string; refusalKind?: 'upgrade' | 'signin' | null }
-      | { consentRefusal: AIConsentRefusal }
-    > => {
+    }): Promise<SpineResult> => {
       let createRes: Response
       try {
         createRes = await fetch('/api/submissions', {
@@ -476,63 +556,27 @@ export default function SubmitEssayPage() {
       }
       if (!submissionId) return { unavailable: true }
 
-      // Fire the AI mark. 2026-08-18: this used to swallow EVERY outcome
-      // (it never checked res.ok), then navigate to the results page, whose
-      // waiting state tells the student their essay is "waiting for your
-      // teacher to review it". A self-study student has no teacher, the
-      // results page never polls, and the failed attempt still counted
-      // against their 10-a-day cap - a 403 (lapsed trial), 429 (cap hit) or
-      // 503 (AI down; the exact state production was in) stranded them on
-      // that screen forever. A failed mark now surfaces as a real error on
-      // THIS page, before navigation.
-      try {
-        const runRes = await fetch('/api/marking/run', {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({ submissionId }),
-        })
-        if (!runRes.ok) {
-          let message = ''
-          let body: unknown = null
-          try {
-            body = await runRes.json()
-            message =
-              (body as { error?: string; message?: string })?.error ??
-              (body as { error?: string; message?: string })?.message ??
-              ''
-          } catch {
-            /* non-JSON */
-          }
-          const refusal = readConsentRefusal(runRes.status, body)
-          // The essay is saved by this point but unmarked, which is a
-          // different failure from being refused at the door and needs a
-          // different fix. Hence `stage`.
-          phCapture(PH_EVENTS.MARKING_REFUSED, {
-            status: runRes.status,
-            consentCode: refusal?.code ?? null,
-            stage: 'run',
-            surface: 'marking/submit',
-          })
-          if (refusal) return { consentRefusal: refusal }
-          return {
-            failed: friendlyError(runRes.status, message),
-            refusalKind: refusalKindFor(runRes.status, body),
-          }
-        }
-      } catch {
-        // Network failure between create and run: the submission exists but
-        // is unmarked. Be honest about it rather than parking the student
-        // on a teacher-review screen.
-        return {
-          failed:
-            'Your essay was saved, but marking could not start because the connection dropped. Check your connection and submit again - saved essays are listed under My marked essays.',
-        }
-      }
-
-      return { submissionId }
+      return runSavedSubmission(submissionId)
     },
     [],
   )
+
+  /**
+   * The essay of the last attempt that was saved but not marked, and the form
+   * it was saved from.
+   *
+   * THE DEFECT (21 October 2026). Every press of Submit saved a new copy of
+   * the essay before asking for a mark. While the AI was down (12 to 21
+   * October) a learner told to "try again later" pressed Submit again on the
+   * same form, and each press saved another copy: 37 saved rows for 13
+   * essays, one essay saved 11 times in an hour and a half, every copy then
+   * listed as "Awaiting mark". Now, when the form is exactly what was saved,
+   * Submit marks the saved copy instead of saving another. Any change to the
+   * essay, the question or the paper saves a new one, because the saved copy
+   * no longer matches what the learner wants marked.
+   */
+  const savedAttempt = useRef<{ submissionId: string; fingerprint: string } | null>(null)
+  const [savedSubmissionId, setSavedSubmissionId] = useState<string | null>(null)
 
   const handleSubmit = useCallback(
     async (e?: React.FormEvent) => {
@@ -542,6 +586,7 @@ export default function SubmitEssayPage() {
       setError(null)
       setRefusalKind(null)
       setConsentRefusal(null)
+      setSavedSubmissionId(null)
 
       const id = `mk_${Date.now().toString(36)}`
       const boardLabel = selectedBoard.label
@@ -575,7 +620,7 @@ export default function SubmitEssayPage() {
       // submissionId. Falls back to the legacy /api/mark + localStorage
       // path below if the spine is not available, so existing behaviour
       // (and offline history) keeps working.
-      const spine = await trySubmissionSpine({
+      const spineArgs = {
         examBoard: boardLabel,
         paper: paperLabel,
         questionText: askedQuestion,
@@ -584,7 +629,20 @@ export default function SubmitEssayPage() {
         studentAnswer: essay,
         markSchemeId,
         questionId: question,
-      })
+      }
+      // Everything the saved copy was saved from. When it all matches, the
+      // saved copy is marked rather than a new one saved (see savedAttempt).
+      const fingerprint = JSON.stringify(spineArgs)
+      const saved = savedAttempt.current
+      const spine =
+        saved && saved.fingerprint === fingerprint
+          ? await runSavedSubmission(saved.submissionId)
+          : await trySubmissionSpine(spineArgs)
+
+      const savedId =
+        'failed' in spine || 'consentRefusal' in spine ? spine.savedSubmissionId : undefined
+      savedAttempt.current = savedId ? { submissionId: savedId, fingerprint } : null
+      setSavedSubmissionId(savedId ?? null)
 
       if ('consentRefusal' in spine) {
         setConsentRefusal(spine.consentRefusal)
@@ -1103,6 +1161,16 @@ export default function SubmitEssayPage() {
                   }`}
                 >
                   <p>{error}</p>
+                  {savedSubmissionId && (
+                    <p className="mt-2">
+                      <Link
+                        href={`/marking/results/${savedSubmissionId}`}
+                        className="font-semibold underline underline-offset-2"
+                      >
+                        {tx('marking.submit.open_saved')}
+                      </Link>
+                    </p>
+                  )}
                   {refusalKind === 'upgrade' && (
                     <div className="mt-3 flex flex-wrap items-center gap-2">
                       <Link

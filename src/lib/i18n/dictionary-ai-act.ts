@@ -174,10 +174,24 @@ export const AI_ACT_DICTIONARY: Record<string, { en: string; ar: string; es?: st
     ar: 'ما تصحّحت للحين',
     es: 'Aún sin corregir',
   },
+  // 21 October 2026: was "If marking did not finish, submit it again from
+  // Mark an essay", which saved a second copy of the essay every time. While
+  // the AI was down (12 to 21 October) that left 37 saved rows for 13 essays.
+  // The saved copy now has its own button, marking.results.mark_now.
   'marking.results.unmarked_body': {
-    en: 'This essay was saved but has not been marked yet. If marking did not finish, submit it again from Mark an essay.',
-    ar: 'انحفظت هالمقالة بس ما تصحّحت للحين. إذا التصحيح ما خلص، سلّمها مرة ثانية من «صحّح مقالة».',
-    es: 'Esta redacción se guardó, pero aún no se ha corregido. Si la corrección no terminó, vuelve a enviarla desde Corregir redacción.',
+    en: 'This essay is saved but has not been marked yet. You do not need to paste it again: choose Mark this essay now to have it marked.',
+    ar: 'هالمقالة محفوظة بس ما تصحّحت للحين. ما يحتاج تلصقها مرة ثانية: اضغط «صحّح هالمقالة الحين» عشان تتصحّح.',
+    es: 'Esta redacción está guardada, pero aún no se ha corregido. No hace falta volver a pegarla: pulsa Corregir esta redacción ahora para que se corrija.',
+  },
+  'marking.results.mark_now': {
+    en: 'Mark this essay now',
+    ar: 'صحّح هالمقالة الحين',
+    es: 'Corregir esta redacción ahora',
+  },
+  'marking.results.mark_now_failed': {
+    en: 'This essay could not be marked just now. It is still saved here, so you can try again later.',
+    ar: 'ما قدرنا نصحّح هالمقالة الحين. للحين محفوظة هني، فتقدر تحاول مرة ثانية بعدين.',
+    es: 'No se ha podido corregir esta redacción ahora mismo. Sigue guardada aquí, así que puedes volver a intentarlo más tarde.',
   },
   'marking.results.reviewing_title': {
     en: 'Your teacher is reviewing this mark',

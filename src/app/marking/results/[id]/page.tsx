@@ -1,6 +1,6 @@
 'use client'
 
-import { useEffect, useState, use } from 'react'
+import { useCallback, useEffect, useState, use } from 'react'
 import { markResultOpened } from '@/lib/dashboard/first-week'
 import Link from 'next/link'
 import { Button } from '@/components/ui/button'
@@ -13,6 +13,8 @@ import { RequestHumanReviewButton } from '@/components/ai/RequestHumanReviewButt
 import { useT } from '@/lib/i18n/use-t'
 import { ReadAloudButton } from '@/components/speech/ReadAloudButton'
 import { ReviewDecisionCard, SchoolReviewNote } from '@/components/marking/ReviewDecisionCard'
+import { InlineAIConsentPrompt } from '@/components/consent/InlineAIConsentPrompt'
+import { readConsentRefusal, type AIConsentRefusal } from '@/components/consent/ai-consent-refusal'
 import {
   canStudentSeeFeedback,
   hiddenStateFor,
@@ -363,7 +365,7 @@ const HIDDEN_COPY: Record<HiddenState, { title: [string, string]; body: [string,
     title: ['marking.results.unmarked_title', 'Not marked yet'],
     body: [
       'marking.results.unmarked_body',
-      'This essay was saved but has not been marked yet. If marking did not finish, submit it again from Mark an essay.',
+      'This essay is saved but has not been marked yet. You do not need to paste it again: choose Mark this essay now to have it marked.',
     ],
   },
   reviewing: {
@@ -389,6 +391,100 @@ const HIDDEN_COPY: Record<HiddenState, { title: [string, string]; body: [string,
   },
 }
 
+const MARK_NOW_FAILED =
+  'This essay could not be marked just now. It is still saved here, so you can try again later.'
+
+/**
+ * Mark a saved essay from its own page.
+ *
+ * THE DEFECT (21 October 2026). An essay saved but not marked used to say
+ * "submit it again from Mark an essay", and the only way to do that was to
+ * paste it into the form and save a second copy. While the AI was down from
+ * 12 to 21 October, learners did exactly that: 37 saved rows for 13 essays,
+ * each extra copy listed as "Awaiting mark". This asks /api/marking/run to
+ * mark the copy that is already saved. The route applies every gate it
+ * applies to a new essay (plan, consent, AI opt-out, trial allowance), and it
+ * refuses an essay that is already marked, which this reads as "show it".
+ */
+function MarkSavedEssay({
+  tx,
+  submissionId,
+  onMarked,
+}: {
+  tx: (k: string) => string
+  submissionId: string
+  onMarked: () => void
+}) {
+  const [busy, setBusy] = useState(false)
+  const [problem, setProblem] = useState<string | null>(null)
+  const [consentRefusal, setConsentRefusal] = useState<AIConsentRefusal | null>(null)
+
+  const markNow = useCallback(async () => {
+    setBusy(true)
+    setProblem(null)
+    setConsentRefusal(null)
+    try {
+      const res = await fetch('/api/marking/run', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ submissionId }),
+      })
+      if (res.ok) {
+        onMarked()
+        return
+      }
+      const body: unknown = await res.json().catch(() => null)
+      const message = (body as { error?: string } | null)?.error ?? ''
+      // Marked since this page loaded, from another tab or by us.
+      if (res.status === 400 && /not awaiting marking/i.test(message)) {
+        onMarked()
+        return
+      }
+      const refusal = readConsentRefusal(res.status, body)
+      if (refusal) {
+        setConsentRefusal(refusal)
+        return
+      }
+      setProblem(message || withFallback(tx, 'marking.results.mark_now_failed', MARK_NOW_FAILED))
+    } catch {
+      setProblem(withFallback(tx, 'marking.results.mark_now_failed', MARK_NOW_FAILED))
+    } finally {
+      setBusy(false)
+    }
+  }, [submissionId, onMarked, tx])
+
+  return (
+    <div className="flex flex-col gap-3">
+      <div>
+        <Button onClick={() => void markNow()} disabled={busy}>
+          {busy
+            ? tx('marking.submit.btn_marking')
+            : withFallback(tx, 'marking.results.mark_now', 'Mark this essay now')}
+        </Button>
+      </div>
+      {busy && <p className="text-sm text-muted-foreground">{tx('marking.submit.wait_note')}</p>}
+      {consentRefusal && (
+        <InlineAIConsentPrompt
+          refusal={consentRefusal}
+          onResolved={() => {
+            setConsentRefusal(null)
+            void markNow()
+          }}
+          onDismiss={() => setConsentRefusal(null)}
+        />
+      )}
+      {problem && (
+        <p
+          role="alert"
+          className="rounded-lg border border-destructive/30 bg-destructive/10 px-4 py-3 text-sm text-destructive"
+        >
+          {problem}
+        </p>
+      )}
+    </div>
+  )
+}
+
 /**
  * A result the pupil may not see yet, with a message that is true for its
  * status. Until 12 October 2026 every such row, a self-study essay that had
@@ -401,11 +497,15 @@ function HiddenResultState({
   state,
   title,
   meta,
+  submissionId,
+  onMarked,
 }: {
   tx: (k: string) => string
   state: HiddenState
   title: string
   meta: string
+  submissionId: string
+  onMarked: () => void
 }) {
   const copy = HIDDEN_COPY[state]
   return (
@@ -434,14 +534,14 @@ function HiddenResultState({
           <CardTitle>{withFallback(tx, ...copy.title)}</CardTitle>
           <CardDescription>{withFallback(tx, ...copy.body)}</CardDescription>
         </CardHeader>
-        <CardContent>
+        <CardContent className="flex flex-col gap-4">
+          {state === 'unmarked' && (
+            <MarkSavedEssay tx={tx} submissionId={submissionId} onMarked={onMarked} />
+          )}
           <div className="flex flex-wrap gap-3">
             <Button variant="outline" render={<Link href="/marking/history" />}>
               {tx('marking.results.btn_back')}
             </Button>
-            {state === 'unmarked' && (
-              <Button render={<Link href="/marking/submit" />}>{tx('header.nav.marking')}</Button>
-            )}
           </div>
         </CardContent>
       </Card>
@@ -476,6 +576,13 @@ export default function ResultsPage({ params }: { params: Promise<{ id: string }
   )
   /** Terminal resolution failures get their own honest screens. */
   const [failure, setFailure] = useState<'not_found' | 'signin' | null>(null)
+  /** Bumped when a saved essay is marked from this page, to load the mark. */
+  const [reloadKey, setReloadKey] = useState(0)
+  const reloadAfterMarking = useCallback(() => {
+    setHidden(null)
+    setLoaded(false)
+    setReloadKey((k) => k + 1)
+  }, [])
 
   useEffect(() => {
     let cancelled = false
@@ -565,7 +672,7 @@ export default function ResultsPage({ params }: { params: Promise<{ id: string }
     return () => {
       cancelled = true
     }
-  }, [id])
+  }, [id, reloadKey])
 
   if (!loaded) {
     return (
@@ -577,7 +684,14 @@ export default function ResultsPage({ params }: { params: Promise<{ id: string }
 
   if (hidden) {
     return (
-      <HiddenResultState tx={tx} state={hidden.state} title={hidden.title} meta={hidden.meta} />
+      <HiddenResultState
+        tx={tx}
+        state={hidden.state}
+        title={hidden.title}
+        meta={hidden.meta}
+        submissionId={id}
+        onMarked={reloadAfterMarking}
+      />
     )
   }
 
