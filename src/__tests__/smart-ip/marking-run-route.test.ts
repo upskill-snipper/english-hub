@@ -575,7 +575,8 @@ describe('POST /api/marking/run - the sentence read when the AI is down', () => 
     const { error } = await res.json()
     expect(error).toMatch(/AI marking is not working at the moment/)
     expect(error).toMatch(/not with your essay/)
-    expect(error).toMatch(/saved in My marked essays/)
+    // The saved essays page's own title, so the learner can find it.
+    expect(error).toMatch(/saved in your Marking history/)
     expect(error).toMatch(/do not need to paste it again/)
     expect(error).not.toMatch(/try again later/i)
     expect(applyAiResultMock).not.toHaveBeenCalled()

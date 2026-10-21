@@ -137,7 +137,10 @@ function notMarked(cause: string, forStaff: boolean): string {
 function essayIsSaved(forStaff: boolean): string {
   return forStaff
     ? 'The essay is saved, so it can be marked later without being submitted again.'
-    : 'Your essay is saved in My marked essays, so you do not need to paste it again: you can have it marked from there.'
+    : // "Marking history" is the saved essays page's own title. "My marked
+      // essays", which this said until 21 October 2026, is not a label the
+      // learner can see anywhere.
+      'Your essay is saved in your Marking history, so you do not need to paste it again: you can have it marked from there.'
 }
 
 function markingUnavailable(kind: AiProviderFailureKind, forStaff: boolean): string {
