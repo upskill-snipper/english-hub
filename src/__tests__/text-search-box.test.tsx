@@ -157,15 +157,20 @@ describe('the search box', () => {
 })
 
 describe('the homepage', () => {
+  // 20 October 2026: the hero lives in src/components/home/story/HomeHero.tsx
+  // since the page became one scroll story, and the track grid it used to sit
+  // above is gone; the board picker strip is what now follows the search. The
+  // page file is still read, to prove the hero is what the homepage mounts.
   const HOME = readFileSync(join(process.cwd(), 'src/app/page.tsx'), 'utf8')
+  const HERO = readFileSync(join(process.cwd(), 'src/components/home/story/HomeHero.tsx'), 'utf8')
 
-  it('puts the search above the course picker', () => {
-    const search = HOME.indexOf('<TextSearchBox')
-    const picker = HOME.indexOf('{TRACKS.map(')
-    expect(search, 'the search is not on the homepage').toBeGreaterThan(-1)
-    expect(picker).toBeGreaterThan(-1)
-    expect(search).toBeLessThan(picker)
-    // And under the hero's own heading, not above it.
-    expect(search).toBeGreaterThan(HOME.indexOf('{heroH1}'))
+  it('puts the search under the H1 and above the board picker', () => {
+    expect(HOME, 'the homepage does not mount the hero').toContain('<HomeHero')
+    const heading = HERO.indexOf('<h1')
+    const search = HERO.indexOf('<TextSearchBox')
+    const picker = HERO.indexOf('<BoardPickerStrip')
+    expect(heading).toBeGreaterThan(-1)
+    expect(search, 'the search is not in the hero').toBeGreaterThan(heading)
+    expect(picker).toBeGreaterThan(search)
   })
 })

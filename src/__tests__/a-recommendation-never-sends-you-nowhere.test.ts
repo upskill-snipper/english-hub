@@ -82,6 +82,10 @@ function walkRoutes(dir: string, segs: string[]): void {
 }
 
 staticRoutes.add('/')
+// /ar has no page file: src/middleware.ts rewrites /ar and /ar/<path> onto the
+// same routes in Arabic (the rewrite block is headed by the pathname test on
+// '/ar'). The homepage's Arabic card links to it, and that is a real route.
+staticRoutes.add('/ar')
 walkRoutes(APP, [])
 
 /** A path is reachable if a page, a route handler or a public file serves it. */

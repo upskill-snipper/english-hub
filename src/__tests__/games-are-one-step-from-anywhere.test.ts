@@ -50,10 +50,15 @@ describe('the main navigation', () => {
 describe('the homepage', () => {
   const HOME = read('src/app/page.tsx')
 
-  it('puts Learn by playing straight after the hero', () => {
-    const hero = HOME.indexOf('{await HomeHero()}')
-    const play = HOME.indexOf('{await LearnByPlayingSection()}')
-    const next = HOME.indexOf('{await SchoolPlatformSection()}')
+  // 20 October 2026: the homepage was rebuilt as one scroll story. The games
+  // band (GamesBand) sits straight after the hero and before the chapters,
+  // and its six links are the GAME_LINKS list in page.tsx, which is what is
+  // read here. The old section and function names this test used to look for
+  // (LearnByPlayingSection, SchoolPlatformSection) are gone with the page.
+  it('puts the games band straight after the hero', () => {
+    const hero = HOME.indexOf('<HomeHero')
+    const play = HOME.indexOf('<GamesBand')
+    const next = HOME.indexOf('<StoryChapters')
     expect(hero).toBeGreaterThan(-1)
     expect(play).toBeGreaterThan(hero)
     expect(next).toBeGreaterThan(play)
@@ -68,7 +73,8 @@ describe('the homepage', () => {
     ]) {
       expect(HOME).toContain(`href: '${href}'`)
     }
-    expect(HOME).toContain('href={TEXT_GAMES_INDEX}')
+    expect(HOME).toContain('href: TEXT_GAMES_INDEX')
+    expect(HOME).toContain("href: '/games'")
   })
 })
 
@@ -119,9 +125,13 @@ describe('the revision area', () => {
 })
 
 describe('the copy added for all of this', () => {
+  // 20 October 2026: the homepage's copy moved from home.play.* (18 keys, a
+  // card grid) into one shard, home.story.*, when the page became one scroll
+  // story. The prefix reads that shard whole. Narrowing it to home.story.games.
+  // would have passed only by lowering this floor to 31, so the floor stays.
   const PREFIXES = [
     'header.nav.games',
-    'home.play.',
+    'home.story.',
     'games_page.texts.',
     'games_page.list.',
     'games_page.badge_free_games',

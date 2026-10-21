@@ -49,7 +49,10 @@ import { PLACEHOLDER_FIX_MAY15 } from './dictionary-placeholder-fix-may15'
 import { PLACEHOLDER_FIX_MAY16 } from './dictionary-placeholder-fix-may16'
 import { REPORT_FIX_MAY16B } from './dictionary-report-fix-may16b'
 import { PRESS_AND_VERIFIED_FIX } from './dictionary-press-verified'
-import { HOMEPAGE_DICTIONARY } from './dictionary-homepage'
+// dictionary-homepage (homepage.*) and dictionary-home-hero (home.lp.*,
+// home.play.*) were deleted on 20 October 2026: every key in both was read
+// only by the old src/app/page.tsx, replaced that day by the one-scroll-story
+// homepage, whose copy is dictionary-home-story.ts (home.story.*).
 import { AFF_PUBLIC_DICTIONARY } from './dictionary-affiliates'
 import { TRUST_DICTIONARY } from './dictionary-trust'
 import { PUBLIC_A_DICTIONARY } from './dictionary-public-a'
@@ -155,8 +158,8 @@ import { TEXT_NAV_DICTIONARY } from './dictionary-text-nav'
 import { TEXT_GAMES_DICTIONARY } from './dictionary-text-games'
 // 2026-10-13: game analytics in the hub (ga.*). See src/lib/game-results/.
 import { GAME_ANALYTICS_DICTIONARY } from './dictionary-game-analytics'
-// 2026-06-08: landing-page hero rebuild chrome (home.lp.*).
-import { HOME_LP_DICTIONARY } from './dictionary-home-hero'
+// 2026-10-20: the homepage as one scroll story (home.story.*).
+import { HOME_STORY_DICTIONARY } from './dictionary-home-story'
 
 export type Locale = 'en' | 'ar' | 'es'
 
@@ -25876,9 +25879,8 @@ export const DICTIONARY_CHAIN: Dictionary[] = [
   DASH_INTERNAL_DICTIONARY,
   DEMO_PAGES_DICTIONARY,
   POETRY_HUB_DICTIONARY,
-  HOMEPAGE_DICTIONARY,
-  // Curated bilingual /affiliates copy. Same tier as HOMEPAGE_DICTIONARY
-  // (curated overrides), placed BEFORE every placeholder/audit supplement
+  // Curated bilingual /affiliates copy. Same tier as the curated overrides
+  // above it, placed BEFORE every placeholder/audit supplement
   // so its genuine Khaleeji Arabic wins over the English-mirror
   // REPORT_FIX_MAY16B / PLACEHOLDER_FIX_* and the junk AUDIT_FIX values.
   AFF_PUBLIC_DICTIONARY,
@@ -25981,7 +25983,7 @@ export const DICTIONARY_CHAIN: Dictionary[] = [
   TEXT_NAV_DICTIONARY,
   TEXT_GAMES_DICTIONARY,
   GAME_ANALYTICS_DICTIONARY,
-  HOME_LP_DICTIONARY,
+  HOME_STORY_DICTIONARY,
   IGCSE_PAGES_DICTIONARY,
   KS3_PAGES_DICTIONARY,
   PRESS_AND_VERIFIED_FIX,

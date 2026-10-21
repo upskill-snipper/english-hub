@@ -9640,51 +9640,6 @@ export const ES_MESSAGES: Record<string, string> = {
   'poetry_hub.wl.theme_power_title': 'Poder y política',
   'poetry_hub.wl.theme_belonging_title': 'Pertenencia y migración',
   'poetry_hub.wl.priority_title': '¿Quieres priorizar un poema?',
-  'homepage.gcse.kicker': 'Elige tu junta examinadora para empezar',
-  'homepage.gcse.heading':
-    'Repaso de inglés GCSE e IGCSE, corregido por IA según el esquema de calificación AO.',
-  'homepage.gcse.subheading':
-    'Year 10-11, de 14 a 16 años. Toca tu junta y llegarás al programa exacto del que te vas a examinar.',
-  'homepage.ks3.kicker': 'Estudiantes más jóvenes (Years 7-9)',
-  'homepage.ks3.heading': 'Inglés KS3: el currículo previo al GCSE',
-  'homepage.ks3.subheading':
-    'De 11 a 14 años. Comprensión lectora, escritura creativa, fundamentos de gramática y programaciones año por año que preparan a los estudiantes para el inglés GCSE.',
-  'homepage.board.ks3.blurb':
-    'Programaciones de Years 7, 8 y 9: lecciones semanales, textos prescritos y evaluaciones.',
-  'homepage.igcse.heading': 'Juntas IGCSE (internacionales)',
-  'homepage.igcse.subheading':
-    'Rutas internacionales para el mismo grupo de edad. Elige el programa en el que te inscribe tu escuela.',
-  'homepage.faq.heading': 'Inglés GCSE e IGCSE: preguntas frecuentes',
-  'homepage.rail.kicker': 'Dos itinerarios junto a las juntas examinadoras',
-  'homepage.rail.heading': 'Prepárate para el IELTS o aprende inglés junto al árabe.',
-  'homepage.rail.intro':
-    'IELTS te ofrece práctica de Academic y General Training en las cuatro destrezas con valoración de Band instantánea. EAL es el itinerario bilingüe para estudiantes de habla árabe que se preparan para los exámenes del Reino Unido. Ambos funcionan de forma independiente de (y junto a) cualquier junta GCSE / IGCSE que elijas abajo.',
-  'homepage.rail.ielts.badge': 'Preparación de examen',
-  'homepage.rail.ielts.title': 'Preparación para IELTS',
-  'homepage.rail.ielts.subtitle': 'Academic y General Training · las cuatro destrezas',
-  'homepage.rail.ielts.body':
-    'Práctica de Reading, Listening, Writing y Speaking con exámenes de prueba completos, respuestas modelo y valoración de Band instantánea por IA. Alineado con los exámenes reales de IELTS Academic y General Training.',
-  'homepage.rail.ielts.cta': 'Abrir el centro de IELTS',
-  'homepage.rail.eal.badge': 'Bilingüe',
-  'homepage.rail.eal.title': 'Inglés para hablantes de árabe',
-  'homepage.rail.eal.subtitle': 'للناطقين بالعربية · explicaciones en árabe del Golfo',
-  'homepage.rail.eal.body':
-    'Lecciones centradas en los puntos en los que más suelen tropezar los estudiantes con árabe como L1: estructura de la oración (SVO frente a VSO), artículos, tiempos verbales, preposiciones y errores de transferencia comunes. Cada tema incluye ejemplos, corrección de errores y explicaciones en árabe del Golfo.',
-  'homepage.rail.eal.cta': 'Abrir la sección EAL',
-  'homepage.board.cta.ks3': 'Abrir KS3',
-  'homepage.board.cta.board': 'Abrir junta',
-  'homepage.board.help.text': '¿No sabes de qué programa se examina tu escuela?',
-  'homepage.board.help.link': 'Elige por nivel en su lugar.',
-  'homepage.board.eal_supported': 'Incluye apoyo EAL',
-  'homepage.board.eal_supported.aria':
-    'El apoyo para estudiantes EAL está disponible para esta junta',
-  'homepage.board.aqa.blurb': 'Power & Conflict, Love & Relationships, Worlds & Lives.',
-  'homepage.board.edexcel.blurb': 'Antología Time & Place, Conflict, Relationships.',
-  'homepage.board.ocr.blurb': 'Love and Relationships, Conflict, Youth and Age.',
-  'homepage.board.eduqas.blurb': 'La antología de Eduqas de 15 poemas, que se examina desde 2027.',
-  'homepage.board.cambridge.blurb': '0500 y 0990 - Reading, Composition, respuestas modelo.',
-  'homepage.board.edexcel_igcse_lit.blurb': 'Drama, Prose, Shakespeare, Unseen Poetry.',
-  'homepage.board.edexcel_igcse_lang.blurb': 'Antología, no ficción, escritura transaccional.',
   'aff_comp.public.partnership_badge': 'Programa de socios',
   'aff_comp.public.hero.title_part1': 'Gana una comisión por cada suscriptor que refieras a',
   'aff_comp.public.hero.title_brand': 'The English Hub',
@@ -15871,106 +15826,6 @@ export const ES_MESSAGES: Record<string, string> = {
   'mkt.biz.foot.privacy_link': 'Leer la política de privacidad',
   'mkt.biz.foot.schools':
     '¿Compras para un centro educativo y no para una empresa? La página de centros cubre pilotos, despliegue por departamento y precios para colegios.',
-  'home.students.eyebrow': 'Para estudiantes y padres',
-  'home.students.heading': '¿Estudias para un examen de inglés? Elige tu junta examinadora',
-  'home.students.body':
-    'Los estudiantes individuales y las familias pueden empezar de inmediato: elige tu junta examinadora y accede a un espacio de repaso personalizado.',
-  'home.hero.eyebrow': 'Repaso de inglés GCSE, IGCSE y KS3',
-  'home.hero.title':
-    'Repasa inglés GCSE e IGCSE, corregido con IA según el verdadero esquema de calificación',
-  'home.hero.body':
-    'Exámenes de práctica, respuestas modelo y comentarios instantáneos sobre tus redacciones, alineados con tu junta examinadora: AQA, Edexcel, OCR, Eduqas y Cambridge IGCSE. Gratis para empezar, creado para estudiantes y padres, y con la confianza de los colegios.',
-  'home.hero.cta_board': 'Elige tu junta examinadora',
-  'home.hero.cta_schools': 'Para colegios y profesores',
-  'home.hero.footnote':
-    'English Language, Literature y EAL. De KS3 a A-Level, alineado con tu temario.',
-  'home.audience.heading': 'Creado para estudiantes, profesores y colegios',
-  'home.audience.body':
-    'Una sola plataforma que apoya a todo el departamento de inglés: desde la práctica individual hasta la inteligencia de todo el departamento.',
-  'home.audience.students.title': 'Estudiantes',
-  'home.audience.students.body':
-    'Práctica estructurada, comentarios sobre las redacciones y repaso alineado con el temario que enseña su colegio.',
-  'home.audience.students.cta': 'Para estudiantes',
-  'home.audience.teachers.title': 'Profesores',
-  'home.audience.teachers.body':
-    'Comentarios asistidos por IA, asignación de deberes y una visión más clara de las debilidades de la clase, sin aumentar la carga de trabajo.',
-  'home.audience.teachers.cta': 'Para profesores',
-  'home.audience.schools.title': 'Colegios',
-  'home.audience.schools.body':
-    'Evaluación de todo el departamento, información sobre intervenciones e informes sobre los que los directivos pueden actuar.',
-  'home.audience.schools.cta': 'Para colegios',
-  'home.platform.eyebrow': 'Infraestructura escolar para departamentos de inglés',
-  'home.platform.heading':
-    'Del apoyo al repaso a la inteligencia de inglés de todo el departamento',
-  'home.platform.body':
-    'The English Hub está diseñado para integrarse en la forma de trabajar de un departamento de inglés: evaluación, comentarios, intervención e informes en un solo lugar, apoyando el criterio del profesor en lugar de sustituirlo.',
-  'home.benefits.heading': 'En qué ayuda a los colegios',
-  'home.benefits.workload.title': 'Reducir la carga de trabajo del profesor',
-  'home.benefits.workload.body':
-    'Reduce la carga de corrección repetitiva para que los profesores puedan dedicar más tiempo a enseñar.',
-  'home.benefits.intervention.title': 'Mejorar la visibilidad de las intervenciones',
-  'home.benefits.intervention.body':
-    'Identifica antes a los estudiantes que pueden necesitar apoyo, antes de que las carencias se agranden.',
-  'home.benefits.eal.title': 'Apoyar a los estudiantes de EAL',
-  'home.benefits.eal.body':
-    'Práctica estructurada diseñada para reforzar la confianza de los estudiantes de EAL en inglés.',
-  'home.benefits.readiness.title': 'Reforzar la preparación para el examen',
-  'home.benefits.readiness.body':
-    'Práctica alineada con el temario en English Language y Literature.',
-  'home.benefits.reports.title': 'Generar informes de estudiantes más claros',
-  'home.benefits.reports.body':
-    'Convierte la actividad del estudiante en resúmenes de progreso más claros y fáciles de compartir.',
-  'home.benefits.cohorts.title': 'Seguir el progreso entre promociones',
-  'home.benefits.cohorts.body':
-    'Ofrece a los directivos una visibilidad más clara entre clases y cursos.',
-  'home.capabilities.heading': 'Corrección asistida por IA, analíticas e intervención',
-  'home.capabilities.body':
-    'Diseñado para apoyar el criterio del profesor y mostrar dónde hace falta atención, no para sustituir la evaluación profesional.',
-  'home.capabilities.feedback.title': 'Corrección y comentarios asistidos por IA',
-  'home.capabilities.feedback.body':
-    'Los estudiantes reciben comentarios estructurados y referenciados a los criterios que los profesores pueden revisar y ampliar.',
-  'home.capabilities.analytics.title': 'Analíticas por clase y por curso',
-  'home.capabilities.analytics.body':
-    'Observa los patrones entre promociones y dónde debería centrarse el departamento a continuación.',
-  'home.capabilities.insights.title': 'Información sobre intervenciones',
-  'home.capabilities.insights.body':
-    'Detecta a los estudiantes que pueden necesitar apoyo más temprano en el trimestre.',
-  'home.capabilities.homework.title': 'Apoyo con deberes y fichas de trabajo',
-  'home.capabilities.homework.body': 'Asigna práctica y genera recursos alineados con el temario.',
-  'home.capabilities.reports.title': 'Informes de estudiantes',
-  'home.capabilities.reports.body':
-    'Resúmenes de progreso más claros para padres, revisiones y dirección.',
-  'home.capabilities.reading.title': 'Apoyo a la lectura y la comprensión',
-  'home.capabilities.reading.body':
-    'Práctica estructurada de comprensión y lectura en todas las etapas clave.',
-  'home.eal.heading': 'Apoyo estructurado de inglés para estudiantes de EAL',
-  'home.eal.body':
-    'Una prioridad creciente para los colegios internacionales y del Golfo. The English Hub está creado para ayudar a los estudiantes de EAL a desarrollar vocabulario, fluidez lectora, comprensión y confianza en la escritura, con visibilidad del profesor sobre el progreso y apoyo diferenciado.',
-  'home.eal.cta': 'Explora el apoyo de EAL',
-  'home.pilot.eyebrow': 'Programa de Colegios Fundadores',
-  'home.pilot.heading': 'Inicia un Pilotaje de Colegio Fundador de 90 días',
-  'home.pilot.body':
-    'La mayoría de los colegios empiezan con un pilotaje estructurado de un trimestre centrado en un curso o en el departamento de inglés. El pilotaje está diseñado para demostrar el valor antes de un despliegue más amplio.',
-  'home.pilot.cta_book': 'Reserva un Pilotaje Escolar',
-  'home.pilot.cta_deploy': 'Explora el Despliegue Escolar',
-  'home.pricing.heading': 'Precios',
-  'home.pricing.body':
-    'Acceso individual para estudiantes y profesores, y pilotajes estructurados y despliegue anual para colegios.',
-  'home.pricing.student.label': 'Estudiante',
-  'home.pricing.student.body': 'Acceso individual para el estudiante.',
-  'home.pricing.teacher.label': 'Profesor',
-  'home.pricing.teacher.body': 'Herramientas para el profesor y apoyo en el aula.',
-  'home.pricing.schools.label': 'Colegios',
-  'home.pricing.schools.pilots_prefix': 'Pilotajes',
-  'home.pricing.schools.annual_prefix': 'Despliegue anual',
-  'home.pricing.cta': 'Solicita los precios para colegios',
-  'home.pricing.cta_start': 'Empieza tu prueba gratuita',
-  'home.faq.school_leaders': 'Preguntas de los directivos escolares',
-  'home.final.heading': 'Habla de las necesidades de tu departamento de inglés',
-  'home.final.body':
-    'Habla con nosotros sobre un pilotaje, un despliegue anual o cómo The English Hub podría apoyar a tu departamento.',
-  'home.final.cta_book': 'Reserva un Pilotaje Escolar',
-  'home.final.cta_rollout': 'Habla sobre un Despliegue Escolar',
   'mkt.teachers.ft.feat.lesson_builder.title': 'Constructor de lecciones',
   'mkt.teachers.ft.feat.lesson_builder.desc':
     'Crea lecciones estructuradas y alineadas con el temario en minutos. Añade actividades de inicio, tareas principales y cierres con la sencillez de arrastrar y soltar, y luego compártelas al instante con cualquier clase.',
@@ -21172,45 +21027,161 @@ export const ES_MESSAGES: Record<string, string> = {
     'A partir de sus juegos desde el {date}, cuando se unió. Son porcentajes de preguntas acertadas, no notas de examen.',
   'school.games.pupil.no_date': 'No se muestra nada porque no consta cuándo se unió este alumno.',
   'school.games.pupil.empty': 'No ha jugado desde el {date}.',
-  'home.lp.h1': 'Aprendizaje de inglés inteligente para todos',
-  'home.lp.subtitle':
-    'Personalizado, alineado con el examen y asistido por IA: desde los años 7-9 hasta GCSE, IGCSE e IELTS, además de apoyo estructurado de inglés para estudiantes EAL. Elige tu itinerario y explora la demo en vivo.',
-  'home.lp.track.ielts.sub': 'Prepárate con confianza para el IELTS',
-  'home.lp.track.eal.sub': 'Domina el inglés con apoyo bilingüe',
-  'home.lp.track.ks3.sub': 'Construye una base sólida para el inglés de GCSE',
-  'home.lp.track.gcse.sub': 'Repaso fiel a tu junta examinadora, con feedback estilo examinador',
-  'home.lp.track.igcse.sub': 'Preparación estructurada para el inglés de IGCSE',
-  'home.lp.track.teachers.label': 'Profesores',
-  'home.lp.track.teachers.sub': 'Ahorra horas y llega a cada estudiante',
-  'home.lp.track.schools.label': 'Colegios',
-  'home.lp.track.schools.sub': 'Dirige un departamento de inglés más eficaz',
-  'home.lp.track.aria': 'Explora {label}: {sub}',
-  'home.lp.cta_pilot': 'Reserva una prueba piloto para tu colegio',
-  'home.lp.spec_note':
-    'Práctica personalizada y feedback asistido por IA alineados con las especificaciones de AQA, Edexcel, OCR, Eduqas, Cambridge IGCSE y Pearson Edexcel International.',
-  'home.play.eyebrow': 'Aprende jugando',
-  'home.play.heading': 'Repasa mientras juegas',
-  'home.play.body':
-    'Juegos guiados sobre los textos prescritos que estudias y juegos rápidos para practicar citas, temas y recursos para el examen.',
-  'home.play.texts.title': 'Juega con tus textos prescritos',
-  'home.play.texts.body':
-    'Juegos guiados creados a partir de nuestra guía de estudio de cada texto. Elige uno y apréndelo jugando.',
-  'home.play.texts.for_board': 'Tus textos de {board}:',
-  'home.play.texts.more': 'y {count} más',
-  'home.play.texts.cta': 'Elige un texto',
-  'home.play.play': 'Jugar',
-  'home.play.all_games': 'Ver todos los juegos',
-  'home.play.theme_matcher.title': 'Theme Matcher',
-  'home.play.theme_matcher.body':
-    'Elige todos los textos prescritos en los que aparece un tema, de la ambición al poder.',
-  'home.play.speed_analysis.title': 'Speed Analysis',
-  'home.play.speed_analysis.body':
-    'Identifica el recurso literario de cada fragmento antes de que se acabe el tiempo.',
-  'home.play.quote_detective.title': 'Quote Detective',
-  'home.play.quote_detective.body': 'Averigua de qué texto prescrito procede cada cita.',
-  'home.play.grade_climber.title': 'Grade Climber',
-  'home.play.grade_climber.body':
-    'Preguntas de estilo GCSE cada vez más difíciles: tres aciertos para subir de nota.',
+  'home.story.cta.primary': 'Empieza tu prueba gratuita de 7 días',
+  'home.story.cta.no_card': 'No hace falta tarjeta.',
+  'home.story.and': 'y',
+  'home.story.list_sep': ', ',
+  'home.story.library': 'Explora todos los textos prescritos',
+  'home.story.library_board': 'Explora tus textos prescritos de {board}',
+  'home.story.search_again': 'Busca otro texto',
+  'home.story.hero.eyebrow': 'Empieza tu antología.',
+  'home.story.hero.h1': 'Repaso de inglés, un texto prescrito cada vez.',
+  'home.story.hero.sub':
+    'Para GCSE e IGCSE, construido en torno a los textos prescritos. Guías de estudio, misiones y cómics, gratis y sin cuenta.',
+  'home.story.hero.quiet_before': '¿Aún no quieres una cuenta?',
+  'home.story.hero.quiet_link': 'Juega una misión',
+  'home.story.hero.quiet_after': 'sobre tu texto.',
+  'home.story.hero.you_study': 'Estudias con {board}.',
+  'home.story.hero.change_board': 'Cambiar de junta',
+  'home.story.hero.your_shelf': 'Ver tus textos prescritos de {board}',
+  'home.story.hero.your_hub': 'Abre tu página de {board}',
+  'home.story.hero.plate1_alt':
+    'Tres brujas en un páramo desnudo bajo una tormenta, dibujadas en negro y crema. Un rayo parte el cielo sobre ellas, un espino muerto se dobla con el viento a la izquierda y los fuegos de una batalla arden en el horizonte a la derecha.',
+  'home.story.hero.plate1_caption': 'Macbeth, acto 1, escena 1, del cómic del sitio.',
+  'home.story.hero.plate2_alt':
+    'Lady Macbeth sola en una cámara de piedra oscura, dibujada en negro y crema, con la carta de su marido en una mano bajada y el otro brazo alzado hacia una ventana alta, donde un cuervo se posa en las almenas y entra un humo negro.',
+  'home.story.hero.plate2_caption': 'Acto 1, escena 5. Lady Macbeth lee la carta.',
+  'home.story.boards.heading': 'Elige tu junta examinadora',
+  'home.story.boards.sub':
+    'Elegir tu junta es como el sitio te muestra los textos correctos: tu estantería solo lista los textos que fija tu junta, y el buscador muestra las juntas de cada resultado.',
+  'home.story.boards.gcse': 'GCSE',
+  'home.story.boards.igcse': 'International GCSE',
+  'home.story.boards.open_shelf': 'Ver sus textos prescritos',
+  'home.story.boards.open_hub': 'Abrir su página',
+  'home.story.games.eyebrow': 'Antes de la historia',
+  'home.story.games.heading': 'Calienta con un juego.',
+  'home.story.games.body':
+    '37 juegos para EAL, KS3 y GCSE, corregidos mientras juegas. Los 37 explican cada respuesta. Algunos tienen tiempo, y ninguno necesita cuenta.',
+  'home.story.games.quests': 'Misiones de los textos',
+  'home.story.games.theme_matcher': 'Theme Matcher',
+  'home.story.games.speed_analysis': 'Speed Analysis',
+  'home.story.games.quote_detective': 'Quote Detective',
+  'home.story.games.grade_climber': 'Grade Climber',
+  'home.story.games.all': 'Los 37 juegos',
+  'home.story.lede.eyebrow': 'Un texto, cinco capítulos',
+  'home.story.lede.body':
+    'Abajo, un estudiante lleva Macbeth desde la primera página hasta la sala de examen. Cada texto prescrito tiene una guía de estudio y misiones; el lector, el cómic, los exámenes de prueba y la corrección con IA están donde el texto los tiene.',
+  'home.story.index.label': 'Capítulos',
+  'home.story.index.read': 'Léelo',
+  'home.story.index.read_short': 'Leer',
+  'home.story.index.play': 'Juégalo',
+  'home.story.index.play_short': 'Jugar',
+  'home.story.index.revise': 'Repásalo',
+  'home.story.index.revise_short': 'Repasar',
+  'home.story.index.write': 'Escribe sobre él',
+  'home.story.index.write_short': 'Escribir',
+  'home.story.index.sit': 'Examínate',
+  'home.story.index.sit_short': 'Examen',
+  'home.story.chapter_eyebrow': 'Capítulo {n} de V. {title}',
+  'home.story.read.h2': 'Lee la obra entera, con las líneas clave marcadas.',
+  'home.story.read.p1':
+    'Macbeth es uno de los más de 30 textos prescritos que se pueden leer enteros gratis. Las citas clave están resaltadas en 22 textos, para que las líneas que merece la pena aprender destaquen mientras lees. Los extractos clave de Macbeth están anotados línea a línea.',
+  'home.story.read.p2':
+    'También es uno de los 22 textos prescritos dibujados como cómics de estilo linograbado: más de 400 viñetas, dentro de la guía de estudio.',
+  'home.story.read.boards': 'Macbeth lo fijan {boards}.',
+  'home.story.read.not_your_board':
+    '{board} no fija Macbeth, así que los textos que debes seguir son los tuyos.',
+  'home.story.read.link': 'Lee Macbeth entero',
+  'home.story.read.shot_alt':
+    "La página del lector de Macbeth en un portátil: el índice de 28 escenas junto al acto 1, escena 1, con la línea 'When the hurlyburly's done' resaltada como cita clave.",
+  'home.story.read.shot_caption': 'El lector, acto 1, escena 1, con una cita clave resaltada.',
+  'home.story.read.shot_phone_alt':
+    "Acto 1, escena 1 de Macbeth en el lector, con la línea 'When the hurlyburly's done' resaltada como cita clave.",
+  'home.story.read.shot_phone_caption': 'Una cita clave, resaltada en el lector.',
+  'home.story.read.plate_alt':
+    'Macbeth, un soldado con cota de malla y capa, retrocede ante tres brujas en un páramo, dibujado en negro y crema bajo un cielo partido entre tormenta y sol. La bruja más cercana le señala con un dedo largo, Banquo se mantiene firme detrás de él con una lanza, y una corona roja flota en el aire sobre la cabeza de Macbeth.',
+  'home.story.read.plate_caption': 'Acto 1, escena 3. Las profecías, del cómic.',
+  'home.story.play.h2': 'Juega el texto como una misión, parte por parte.',
+  'home.story.play.p1':
+    'Misiones para más de 100 textos prescritos: más de 600 niveles, más de 8.700 preguntas, la mayoría de las respuestas con el porqué. Ordena los momentos del acto 1 y luego avanza por los niveles; termina una parte y sus viñetas se dibujan en tu propia copia del cómic.',
+  'home.story.play.p2':
+    'Sin temporizadores, sin rachas diarias, sin clasificaciones, sin vidas; una llama cuenta las respuestas correctas seguidas. Con sesión iniciada, las respuestas se guardan; sin sesión, no se envía nada.',
+  'home.story.play.link': 'Juega la misión de Macbeth',
+  'home.story.play.phone_alt':
+    'La parte 1 de la misión de Macbeth en un móvil: un reto de orden de la historia con cinco miniaturas del cómic para tocar en orden, un contador de llama a cero y un botón Check the order.',
+  'home.story.play.caption': 'El mapa de la misión, y el primer nivel en un móvil.',
+  'home.story.play.phone_caption': 'El primer nivel de la misión de Macbeth, en un móvil.',
+  'home.story.revise.h2': 'Repásalo con la guía de estudio.',
+  'home.story.revise.p1':
+    'Más de 100 guías de estudio de textos prescritos. La de Macbeth tiene una visión general, los actos, los personajes, los temas, el contexto, las citas clave, tarjetas de repaso y un cuestionario. Al lado hay notas de repaso de más de 40 textos y más de 2.000 tarjetas, con técnica de examen y errores frecuentes.',
+  'home.story.revise.p2': 'Todo gratis y sin cuenta, así que el repaso puede empezar esta noche.',
+  'home.story.revise.link': 'Abre la guía de estudio de Macbeth',
+  'home.story.revise.shot_alt':
+    'La guía de estudio de Macbeth en un portátil: una cuadrícula de ocho fichas para el texto completo, el análisis acto por acto, personajes, temas, citas clave, contexto, planes de redacción y notas de repaso con IA, con un cuestionario rápido de citas, una tarjeta de práctica de redacción y una tarjeta de repaso debajo.',
+  'home.story.revise.caption': 'La página de la guía de estudio de Macbeth.',
+  'home.story.revise.phone_alt':
+    'La guía de estudio de Macbeth en un móvil: una fila de chips y la cuadrícula Study Macbeth de ocho fichas, de Read Full Text a AI Revision Notes.',
+  'home.story.write.h2': 'Escribe la redacción, y que te la corrijan.',
+  'home.story.write.p1':
+    'Elige la junta, el examen y la pregunta, pega la redacción y envíala. Recibe una nota por cada objetivo de evaluación, qué salió bien, qué mejorar y qué practicar después. Escrito por IA y etiquetado como IA; la nota es una estimación de práctica, no un resultado oficial.',
+  'home.story.write.p2':
+    'La corrección con IA forma parte de la prueba gratuita de 7 días o de un plan. Los estudiantes de 13 a 15 años necesitan la aprobación de un padre, madre o de su colegio antes de activar el feedback de IA.',
+  'home.story.write.link': 'Envía una redacción para corregir',
+  'home.story.write.shot_alt':
+    'El formulario de envío de redacciones en un portátil: selectores de junta, examen y pregunta, un campo para la pregunta que respondiste, un título opcional y un cuadro para tu redacción, todos vacíos.',
+  'home.story.write.caption': 'El formulario de corrección, antes de escribir nada.',
+  'home.story.write.phone_alt':
+    'El formulario de envío de redacciones en un móvil: selectores de junta, examen y pregunta y el campo para la pregunta que respondiste, todos vacíos.',
+  'home.story.sit.h2': 'Haz un examen de prueba.',
+  'home.story.sit.p1':
+    'Exámenes de prueba por junta, gratis con una cuenta. Haz un examen completo antes del real, y luego lleva lo que aprendiste de vuelta a la guía.',
+  'home.story.sit.link': 'Explora los exámenes de prueba',
+  'home.story.sit.shot_alt':
+    'La lista Exam Papers de la página de exámenes de prueba: filtros para todos los exámenes, lengua y literatura, y dos tarjetas de examen de English Language de AQA.',
+  'home.story.sit.caption': 'Exámenes de prueba, listados por junta y examen.',
+  'home.story.sit.phone_alt':
+    'La página de exámenes de prueba en un móvil: un botón View Exam Papers, un examen de muestra marcado como próximamente y el encabezado Exam Papers.',
+  'home.story.sit.phone_caption': 'La página de exámenes de prueba en un móvil.',
+  'home.story.end.eyebrow': 'Epílogo',
+  'home.story.end.h2': 'Empieza tu antología.',
+  'home.story.end.sub':
+    'Una prueba gratuita de 7 días del producto completo. Sin tarjeta. Incluye la corrección con IA, la herramienta del examinador, las respuestas modelo y los cursos.',
+  'home.story.end.guide': 'Lee una guía de estudio',
+  'home.story.end.quest': 'Juega una misión',
+  'home.story.end.free_label': 'Gratis y sin cuenta:',
+  'home.story.end.free_list':
+    'guías de estudio, misiones, juegos, cómics, textos completos, notas de repaso, tarjetas, herramientas de estudio, técnica de examen, el primer módulo de cada curso y la prueba de nivel de IELTS.',
+  'home.story.end.plan_label': 'Plan Estudiante',
+  'home.story.end.plan_price':
+    '{monthly} al mes o {annual} al año. Precio estándar previsto: {std_monthly} al mes o {std_annual} al año.',
+  'home.story.end.pricing_link': 'Ver precios',
+  'home.story.also.heading': 'También en el sitio',
+  'home.story.also.levels':
+    'KS3, GCSE, International GCSE, International A level (guías y misiones), IELTS, EAL',
+  'home.story.also.parents.title': 'Padres',
+  'home.story.also.parents.body':
+    'Tu hijo o hija puede usar las guías de estudio, las misiones, los juegos y los cómics sin cuenta. Los menores de 13 no pueden registrarse; los de 13 a 15 años necesitan la aprobación de un padre, madre o de su colegio antes de activar el feedback de IA.',
+  'home.story.also.parents.link': 'Para padres',
+  'home.story.also.teachers.title': 'Profesores',
+  'home.story.also.teachers.body':
+    'La herramienta del examinador corrige escritos mecanografiados o fotografiados según la tabla de niveles del examen. La nota de la IA es una segunda opinión, nunca la calificación. Plan Profesor: {monthly} al mes o {annual} al año.',
+  'home.story.also.teachers.link': 'Para profesores',
+  'home.story.also.schools.title': 'Colegios',
+  'home.story.also.schools.body':
+    'Estamos en fase de lanzamiento, con nuestros diez primeros Founding Schools. Como Founding School estaríais entre los primeros en usarlo, y lo ponemos en marcha con vosotros. Una plaza cubre todo el colegio por {price} al año escolar, frente a un precio estándar previsto de {std}.',
+  'home.story.also.schools.link': 'Para colegios',
+  'home.story.also.ielts.title': 'IELTS',
+  'home.story.also.ielts.body':
+    'Una prueba de nivel de IELTS gratuita, unos 12 minutos, sin cuenta.',
+  'home.story.also.ielts.link': 'Haz la prueba de nivel',
+  'home.story.also.eal.title': 'EAL',
+  'home.story.also.eal.body':
+    'Los 37 juegos de destrezas cubren EAL además de KS3 y GCSE, corregidos mientras juegas. Los 37 explican cada respuesta.',
+  'home.story.also.eal.link': 'Para estudiantes EAL',
+  'home.story.also.arabic.title': 'Árabe',
+  'home.story.also.arabic.body':
+    'El mismo sitio en árabe, de derecha a izquierda. El material de estudio sigue en inglés.',
+  'home.story.also.arabic.link': 'Abre el sitio en árabe',
   'igcse.page.back_to_lit': 'Volver a Edexcel IGCSE Literature',
   'igcse.page.back_to_edexcel_igcse': 'Volver a Edexcel IGCSE',
   'igcse.page.badge_edexcel_lit': 'Edexcel IGCSE Literature',
