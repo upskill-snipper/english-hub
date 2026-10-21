@@ -45,8 +45,13 @@ export const dynamic = 'force-dynamic'
  *     says it does not.
  *   • AI and marking health. `/api/health/ai`, `/api/health/marking` and
  *     `/api/health/schema` already run as their own crons at 06:30, 06:35 and
- *     06:40 and fail loudly on their own. Re-running them here would double
- *     the cost and add a second place for the result to disagree.
+ *     06:40. Re-running them here would double the cost and add a second
+ *     place for the result to disagree. This used to say they "fail loudly on
+ *     their own"; they failed into the Vercel cron log, and an empty Anthropic
+ *     account went unnoticed from 12 to 21 October 2026 while /api/health/ai
+ *     failed every morning. Since then /api/health/ai emails AI_ALERT_EMAIL
+ *     (or this digest's address) when it fails. The marking and schema probes
+ *     still report only to the log.
  *   • Webhook freshness. There is no stored last-event timestamp to read, and
  *     inventing one is a schema change rather than a digest.
  *

@@ -287,10 +287,15 @@ Ordered by what I would do first.
    alerts. `src/lib/email/resend.ts` already has `sendViaResend()`.
 1. ~~**Wire `/api/health/ai` to a cron** and make it probe all four model
    constants.~~ Done 18 September: it probes seven ids (shared, three marking
-   tiers, three examiner tiers) and runs at 06:30 UTC daily. What is still
-   missing is anyone being told: a failing run is a non-2xx in the Vercel cron
-   log and nowhere else. Point an external monitor at it with the
-   `CRON_SECRET` bearer, or add a Sentry DSN and raise from the route.
+   tiers, three examiner tiers) and runs at 06:30 UTC daily. ~~What is still
+   missing is anyone being told.~~ Done 21 October 2026, after it failed every
+   morning for nine days without anyone knowing: the Anthropic account ran out
+   of credit on 12 October and 12 trial learners' first essays went unmarked.
+   A failed run now emails `AI_ALERT_EMAIL` (or `OPERATOR_DIGEST_EMAIL`), and
+   `logAiDecision` sends the same alert on the first live failure that will
+   not pass on its own. **It reaches nobody until one of those two variables
+   is set in Vercel**, which is the owner's to do; the probe's response says
+   `alert.reason: 'no-recipient'` until then.
    1b. **Examiner tool follow-ups.** Add `examiner_marking_runs` expiry to
    `/api/cron/data-retention` and both examiner tables to the DSAR export;
    promote AQA 8700 Paper 1 and Paper 2 to exemplar-derived packs (the

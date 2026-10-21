@@ -34,6 +34,19 @@
 // operational. Same Bearer CRON_SECRET pattern as every other scheduled route.
 //
 // Cost: a handful of tokens per model per run. Daily is ample.
+//
+// 2026-10-21: the third outage, and the first that was not a model. The
+// Anthropic account ran out of credit on 12 October at 15:10 UTC and every
+// call returned HTTP 400 "Your credit balance is too low to access the
+// Anthropic API". This check failed at 06:30 every morning for nine days and
+// told nobody, and had anyone read it, it would have said the model had
+// "probably been retired", because it read every 400 that way. Two changes:
+//   - Each failure is classified by src/lib/ai/provider-failure.ts, which
+//     recognises an empty account by the provider's own sentence (it came as
+//     a 400, not the 402 the API reference lists) and says to top it up.
+//   - A failed run emails a person through src/lib/ops/ai-outage-alert.ts, to
+//     AI_ALERT_EMAIL (or OPERATOR_DIGEST_EMAIL). The response's `alert` field
+//     says whether it was sent, and why not when it was not.
 // ────────────────────────────────────────────────────────────────────────────
 
 import { NextRequest, NextResponse } from 'next/server'
@@ -45,6 +58,14 @@ import {
 import { MARKING_MODELS } from '@/lib/marking/engine/models'
 import { EXAMINER_MODELS } from '@/lib/marking/examiner/models'
 import { authoriseCronRequest } from '@/lib/cron/auth'
+import {
+  classifyAiProviderFailure,
+  mostSerious,
+  readProviderError,
+  type AiProviderFailure,
+  type AiProviderFailureKind,
+} from '@/lib/ai/provider-failure'
+import { sendAiOutageAlert } from '@/lib/ops/ai-outage-alert'
 
 export const dynamic = 'force-dynamic'
 export const maxDuration = 60
@@ -61,17 +82,11 @@ interface ProbeResult {
   reason?: string
   providerStatus?: number | null
   errorClass?: string
+  /** What kind of failure, from src/lib/ai/provider-failure.ts. */
+  kind?: AiProviderFailureKind
   likelyCause?: string
-}
-
-function likelyCause(status: number | undefined, notConfigured: boolean): string {
-  if (status === 400 || status === 404) {
-    return 'Model id rejected by the provider - it has probably been retired. Set the matching *_MODEL variable in Vercel to a current model id.'
-  }
-  if (status === 401) return 'API key rejected. Set a live ANTHROPIC_API_KEY in Vercel.'
-  if (status === 429) return 'Rate limited or over quota at the provider.'
-  if (notConfigured) return 'ANTHROPIC_API_KEY is missing from this environment.'
-  return 'Unclassified provider failure.'
+  /** Kept for the alert; not part of the response. */
+  failure?: AiProviderFailure
 }
 
 export async function GET(request: NextRequest) {
@@ -110,17 +125,25 @@ export async function GET(request: NextRequest) {
     Array.from(byModel.entries()).map(async ([model, usedBy]): Promise<ProbeResult> => {
       const t0 = Date.now()
       if (!client) {
+        const failure = classifyAiProviderFailure({
+          status: null,
+          type: null,
+          message: notConfigured
+            ? 'ANTHROPIC_API_KEY is not set'
+            : 'client could not be constructed',
+          name: notConfigured ? 'AnthropicNotConfiguredError' : 'Error',
+        })
         return {
           model,
           usedBy,
           status: 'failed',
           latencyMs: 0,
-          reason: notConfigured
-            ? 'ANTHROPIC_API_KEY is not set'
-            : 'client could not be constructed',
+          reason: failure.message ?? 'client could not be constructed',
           providerStatus: null,
-          errorClass: notConfigured ? 'AnthropicNotConfiguredError' : 'Error',
-          likelyCause: likelyCause(undefined, notConfigured),
+          errorClass: failure.name ?? 'Error',
+          kind: failure.kind,
+          likelyCause: failure.action,
+          failure,
         }
       }
       try {
@@ -144,39 +167,69 @@ export async function GET(request: NextRequest) {
           replied: text.slice(0, 40),
         }
       } catch (err: unknown) {
-        // A dead model and a dead key look identical to a learner and must not
-        // look identical here: report the provider's own class and status.
-        const e = err as { status?: number; name?: string; message?: string }
+        // A dead model, a dead key and an empty account look identical to a
+        // learner and must not look identical here: report the provider's own
+        // class, status and sentence, and what kind of failure that makes it.
+        const failure = classifyAiProviderFailure(readProviderError(err), { minimalRequest: true })
         return {
           model,
           usedBy,
           status: 'failed',
           latencyMs: Date.now() - t0,
-          reason: e.message ?? 'unknown error',
-          providerStatus: e.status ?? null,
-          errorClass: e.name ?? 'Error',
-          likelyCause: likelyCause(e.status, false),
+          reason: failure.message ?? 'unknown error',
+          providerStatus: failure.status,
+          errorClass: failure.name ?? 'Error',
+          kind: failure.kind,
+          likelyCause: failure.action,
+          failure,
         }
       }
     }),
   )
 
   const failed = results.filter((r) => r.status === 'failed')
-  const body = {
-    status: failed.length ? ('failed' as const) : ('ok' as const),
-    configured,
-    probes: results,
-    failedModels: failed.map((f) => f.model),
-    latencyMs: Date.now() - startedAt,
-    checkedAt: new Date().toISOString(),
-  }
+  const checkedAt = new Date()
 
+  let alert: { sent: boolean; reason?: string } | null = null
   if (failed.length) {
     for (const f of failed) {
       console.error(
-        `[health/ai] AI liveness FAILED: model=${f.model} roles=${f.usedBy.join(',')} status=${f.providerStatus} class=${f.errorClass}`,
+        `[health/ai] AI liveness FAILED: model=${f.model} roles=${f.usedBy.join(',')} status=${f.providerStatus} class=${f.errorClass} kind=${f.kind}`,
       )
     }
+    // One email for the run, named after the most serious failure. An empty
+    // account fails every model at once, and seven emails saying so would be
+    // read as noise.
+    const worst = mostSerious(
+      failed.flatMap((f) => (f.failure ? [{ ...f, kind: f.failure.kind }] : [])),
+    )
+    if (worst?.failure) {
+      const outcome = await sendAiOutageAlert({
+        source: 'health/ai',
+        failure: worst.failure,
+        model: worst.model,
+        lines: failed.map(
+          (f) =>
+            `${f.model} (${f.usedBy.join(', ')}): ${f.kind}, status ${f.providerStatus ?? 'none'}, ${(f.reason ?? '').slice(0, 160)}`,
+        ),
+        at: checkedAt,
+      })
+      alert = outcome.sent ? { sent: true } : { sent: false, reason: outcome.reason }
+    }
+  }
+
+  const body = {
+    status: failed.length ? ('failed' as const) : ('ok' as const),
+    configured,
+    // The classified failure is for the alert; the response carries its parts.
+    probes: results.map(({ failure: _failure, ...probe }) => probe),
+    failedModels: failed.map((f) => f.model),
+    latencyMs: Date.now() - startedAt,
+    checkedAt: checkedAt.toISOString(),
+    alert,
+  }
+
+  if (failed.length) {
     // 503 so an uptime monitor or the cron log treats it as down without any
     // extra configuration.
     return NextResponse.json(body, { status: 503 })

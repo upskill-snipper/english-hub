@@ -3,6 +3,7 @@ import { readFileSync } from 'node:fs'
 import { join } from 'node:path'
 import { NextRequest } from 'next/server'
 import { SET_TEXTS } from '@/lib/board/set-texts'
+import { logAiDecision } from '@/lib/ai-audit-log'
 import {
   generateTemplateNotes,
   notesProvenanceFooter,
@@ -269,6 +270,43 @@ describe('POST /api/toolkit/generate-notes', () => {
     expect(json.metadata.source).toBe('template')
     expect(json.notes).toContain('NOT AI-generated')
     expect(json.notes).not.toContain('written for you by an AI model')
+  })
+
+  it("records the provider's status and sentence when the model refuses the call", async () => {
+    // 12 October 2026: the Anthropic account ran out of credit, and this
+    // route's twelve records said `http_400` and nothing else, so only the
+    // marking route's records could say why. The sentence is what lets the
+    // audit log, and the alarm raised from it, name an empty account.
+    const credit =
+      'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'
+    process.env.ANTHROPIC_API_KEY = 'sk-test'
+    vi.stubGlobal(
+      'fetch',
+      vi.fn().mockResolvedValue({
+        ok: false,
+        status: 400,
+        text: async () =>
+          JSON.stringify({
+            type: 'error',
+            error: { type: 'invalid_request_error', message: credit },
+          }),
+      }),
+    )
+    const errorSpy = vi.spyOn(console, 'error').mockImplementation(() => {})
+
+    const { status, json } = await postNotes({ board: 'aqa', topic: 'Macbeth', targetGrade: 7 })
+
+    expect(status).toBe(200)
+    expect(json.metadata.source).toBe('template')
+    expect(logAiDecision).toHaveBeenCalledWith(
+      expect.objectContaining({
+        success: false,
+        errorClass: 'http_400',
+        errorStatus: 400,
+        errorMessage: credit,
+      }),
+    )
+    errorSpy.mockRestore()
   })
 
   it('labels genuine model output as AI work and names the provider', async () => {

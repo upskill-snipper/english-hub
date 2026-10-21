@@ -86,11 +86,24 @@
 // `details Json?` column carries the structured record below. `ipAddress` is
 // non-nullable on that model, so it always defaults to 'unknown' here, exactly
 // as the existing consent/data-retention audit writers do.
+//
+// ── Raising the alarm (21 October 2026) ─────────────────────────────────────
+// From 12 to 21 October 2026 every AI call failed because the Anthropic
+// account had run out of credit. This log recorded each failure faithfully,
+// 36 of them on /api/marking/run alone, with the provider's own sentence, and
+// nobody read it. Every AI route already reports its failures here, so this is
+// where a failure that will not pass on its own (an empty account, a rejected
+// key, a retired model) now also emails a person, through
+// src/lib/ops/ai-outage-alert.ts. A new route gets the alarm by logging, as it
+// gets the record. The alarm is limited to one email per kind every six hours,
+// runs after the row is written, inside the same keep-alive, and never throws
+// into the route.
 // ────────────────────────────────────────────────────────────────────────────
 
 import { createHash } from 'crypto'
 import { ANTHROPIC_MODEL } from '@/lib/anthropic-client'
 import { keepAlive } from '@/lib/keep-alive'
+import { classifyAiProviderFailure, readProviderRecord } from '@/lib/ai/provider-failure'
 import type { ParentalConsentBasis } from '@/lib/consent-check'
 
 // ─── Configuration ───────────────────────────────────────────────────────────
@@ -480,11 +493,47 @@ export function formatAuditPersistenceFailure(args: {
  * not add latency: the write registers itself with `after()`, so the function
  * outlives the response until the row is written (see "Outliving the response"
  * in the file header). The returned promise never rejects.
+ *
+ * A failure that will not pass on its own also raises the alarm (see "Raising
+ * the alarm" in the file header), after the row is written. It is part of the
+ * same promise, so `after()` keeps the function alive for both and a caller
+ * that awaits a failure's record also waits for the alarm, which costs nothing
+ * unless there is an alarm to raise.
  */
 export function logAiDecision(input: LogAiDecisionInput): Promise<void> {
   const write = writeAiDecision(input)
-  keepAlive(write, '[ai-audit-log] record')
-  return write
+  const work = input.success ? write : write.then(() => raiseProviderAlarm(input))
+  keepAlive(work, '[ai-audit-log] record')
+  return work
+}
+
+/**
+ * Email a person when this failure means every AI request will fail until
+ * somebody acts. Refusals of one essay (OFF_TOPIC, TRUNCATED), timeouts and
+ * overload pass on their own and raise nothing. Never rejects.
+ */
+async function raiseProviderAlarm(input: LogAiDecisionInput): Promise<void> {
+  try {
+    const failure = classifyAiProviderFailure(readProviderRecord(input))
+    if (!failure.needsHuman) return
+    // Dynamic for the same reason as Prisma: the alert reaches the database
+    // and the mail transport, and most callers never need either.
+    const { sendAiOutageAlert } = await import('@/lib/ops/ai-outage-alert')
+    await sendAiOutageAlert(
+      {
+        source: 'live-request',
+        failure,
+        feature: input.feature,
+        model: AI_AUDIT_MODEL,
+        at: input.responseFinishedAt,
+      },
+      { throttle: true },
+    )
+  } catch (err) {
+    console.error(
+      `[ai-audit-log] provider alarm failed: feature=${input.feature} ${describeError(err).errorMessage}`,
+    )
+  }
 }
 
 async function writeAiDecision(input: LogAiDecisionInput): Promise<void> {

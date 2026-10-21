@@ -71,11 +71,25 @@ to a fifteen-year-old mid-essay. The cost is that the product can be dead while 
 dashboard is green.
 
 [`src/app/api/health/ai/route.ts`](../../src/app/api/health/ai/route.ts) was written to
-close that gap. It makes one real eight-token call and reports which model answered.
-**It is not scheduled.** There is no entry for it in
-[`vercel.json`](../../vercel.json), so the detector for the failure mode that has cost
-twenty weeks is built and not plugged in. Wiring it is the first item in
-[`docs/HANDOVER.md`](../HANDOVER.md) §5.
+close that gap. It makes one real eight-token call per configured model and reports
+which answered. It has run daily at 06:30 UTC from [`vercel.json`](../../vercel.json)
+since 18 September 2026, and for a month it reported to nobody: a failure was a
+non-2xx in the Vercel cron log. The third outage was not a model. The Anthropic account
+ran out of credit at 15:10 UTC on 12 October 2026 and every call returned HTTP 400
+"Your credit balance is too low to access the Anthropic API" (a 400
+`invalid_request_error`, not the 402 `billing_error` the API reference lists). The probe
+failed every morning, and would have said the model had "probably been retired" had
+anyone read it. Twelve trial learners' first essays were saved and never marked before
+it was found by hand on 16 October.
+
+Since 21 October 2026 the failure is classified by
+[`src/lib/ai/provider-failure.ts`](../../src/lib/ai/provider-failure.ts), which knows an
+empty account by the provider's own sentence, and announced by
+[`src/lib/ops/ai-outage-alert.ts`](../../src/lib/ops/ai-outage-alert.ts): an email to
+`AI_ALERT_EMAIL` (or `OPERATOR_DIGEST_EMAIL`) through `sendEmail`, which uses Resend in
+production, from the daily probe and from `logAiDecision` on the first live failure that
+will not pass on its own. A Sentry event is raised too, which is a no-op until a DSN is
+set.
 
 `assertNotHaiku` runs at module load ([`src/lib/marking/engine/models.ts:170-171`](../../src/lib/marking/engine/models.ts))
 and hard-fails if the marker or escalation tier is pointed at a Haiku-class model. That
@@ -665,7 +679,9 @@ still advertises the old `@throws` behaviour; believe the code.
 
 **Email:** establish which of the five transports the failing path uses before anything
 else. **AI:** `GET /api/health/ai` with the `CRON_SECRET` bearer answers "are the model
-ids still callable" in one call; run it before reading code. **Billing:** confirm the
+ids still callable" in one call; run it before reading code. Each failed probe carries a
+`kind`, and `credit_exhausted` means the Anthropic account needs topping up, not a code
+change. **Billing:** confirm the
 Stripe dashboard is subscribed to all nine events in §4, and whether the customer holds
 more than one subscription. **Mobile entitlements:** look for a `RevenueCatEvent` row
 with a null `processedAt`; the payload survives even when reconciliation failed.

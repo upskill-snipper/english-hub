@@ -48,9 +48,23 @@ of which aggregates, so `USER_ERASURE_FAILED` was a GDPR obligation failing into
 a table nobody queries.
 
 **It does not check Stripe reconciliation, AI or marking health, or webhook
-freshness, and it says so in its own body.** The health probes already run and
-fail on their own; reconciliation needs live Stripe reads; there is no stored
-last-event timestamp to read for webhooks. A digest covering five things reads
+freshness, and it says so in its own body.** The health probes already run on
+their own; reconciliation needs live Stripe reads; there is no stored
+last-event timestamp to read for webhooks.
+
+The health probes used to fail only into the Vercel cron log, which is how an
+empty Anthropic account went unnoticed from 12 to 21 October 2026: every AI call
+returned HTTP 400 "Your credit balance is too low", `/api/health/ai` failed every
+morning, and 12 trial learners' first essays were saved and never marked. Since
+21 October `/api/health/ai` emails `AI_ALERT_EMAIL` (falling back to
+`OPERATOR_DIGEST_EMAIL`) whenever a model fails, every morning until it passes,
+and `logAiDecision` sends the same alert on the first live request that fails in
+a way that will not pass on its own (an empty account, a rejected key, a retired
+model), at most once per kind every six hours, using the cron lease table as the
+throttle. See [`src/lib/ops/ai-outage-alert.ts`](../../src/lib/ops/ai-outage-alert.ts).
+With neither variable set, nothing can be sent, and every attempt says so in the
+log and in the probe's response. `/api/health/marking` and `/api/health/schema`
+still report only to the log. A digest covering five things reads
 exactly like one covering everything when both say "nothing outstanding", so it
 names its own gaps every morning.
 

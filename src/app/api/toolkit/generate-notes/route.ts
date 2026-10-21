@@ -11,6 +11,7 @@ import {
 } from '@/lib/usage/trial-allowance'
 import { applyAllowanceHeaders } from '@/lib/usage/free-allowance'
 import { logAiDecision } from '@/lib/ai-audit-log'
+import { parseProviderErrorText } from '@/lib/ai/provider-failure'
 import { checkMinorAIConsent } from '@/lib/consent-check'
 import { isAiOptedOutServer } from '@/lib/ai-preferences'
 import { ANTHROPIC_MODEL } from '@/lib/anthropic-client'
@@ -286,6 +287,17 @@ Be specific, include example quotations, and give practical exam advice.`
             aiAuthored = true
           }
         } else {
+          // The provider's own sentence, not just its status. Until 21 October
+          // 2026 this branch recorded `http_400` and nothing else, so twelve
+          // failures from 12 October onwards could not say that the account
+          // had run out of credit; only the marking route's records could.
+          // With the message recorded, logAiDecision can also raise the alarm
+          // (src/lib/ai-audit-log.ts, "Raising the alarm").
+          const providerText = await response.text().catch(() => '')
+          const provider = parseProviderErrorText(providerText)
+          console.error(
+            `[toolkit/generate-notes] AI call failed: status=${response.status} type=${provider.type ?? 'unknown'} model=${ANTHROPIC_MODEL} message=${(provider.message ?? '').slice(0, 200)}`,
+          )
           void logAiDecision({
             ...auditBase,
             requestStartedAt: aiRequestStartedAt,
@@ -293,6 +305,8 @@ Be specific, include example quotations, and give practical exam advice.`
             success: false,
             outputSummary: { fellBackToTemplate: true },
             errorClass: `http_${response.status}`,
+            errorStatus: response.status,
+            errorMessage: provider.message ? provider.message.slice(0, 300) : null,
           })
           // Fallback to template
           // The learner is served the deterministic template, not the model, so the
@@ -301,7 +315,12 @@ Be specific, include example quotations, and give practical exam advice.`
           await refundTrialAllowance(trialGate)
           notes = generateTemplateNotes(topic, board || 'aqa', grade, weakAreas || [])
         }
-      } catch {
+      } catch (notesErr) {
+        // What was thrown, as well as that something was: a 45 s timeout
+        // (AbortError) and a network failure need different fixes.
+        const thrown =
+          notesErr instanceof Error ? `${notesErr.name}: ${notesErr.message}` : String(notesErr)
+        console.error(`[toolkit/generate-notes] AI call threw: ${thrown.slice(0, 200)}`)
         void logAiDecision({
           feature: 'toolkit/generate-notes',
           userId: user.id,
@@ -314,7 +333,10 @@ Be specific, include example quotations, and give practical exam advice.`
           success: false,
           outputSummary: { fellBackToTemplate: true },
           errorClass: 'NotesGenerationError',
-          errorMessage: 'Anthropic fetch threw; deterministic template used',
+          errorMessage: `Anthropic fetch threw; deterministic template used. ${thrown}`.slice(
+            0,
+            300,
+          ),
         })
         // The learner is served the deterministic template, not the model, so the
         // use is given back. A silent allowance burn during a provider outage is
