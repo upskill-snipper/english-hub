@@ -144,8 +144,10 @@ const keyQuotations = [
   {
     quote: 'Girls of that class -',
     speaker: 'Mrs Birling',
+    // 23 October 2026: this said the Inspector interrupts her. Sheila does,
+    // "urgently, cutting in", begging her mother to stop.
     analysis:
-      'The sentence the Inspector interrupts. The ellipsis is itself the play\u2019s point: Mrs Birling cannot see Eva as a full person.',
+      'The sentence Sheila cuts off. The ellipsis is itself the play\u2019s point: Mrs Birling cannot see Eva as a full person.',
   },
   {
     quote: 'I\u2019m not a child, don\u2019t forget. I\u2019ve a right to know.',
@@ -162,8 +164,11 @@ const keyQuotations = [
   {
     quote: 'Public men, Mr Birling, have responsibilities as well as privileges.',
     speaker: 'Inspector Goole',
+    // 23 October 2026: this quoted Birling as saying "every man for himself",
+    // which is not in the play. His words in Act 1 are that a man has to
+    // "look after himself and his own".
     analysis:
-      'Reverses Birling\u2019s "every man for himself". The Inspector is staging a genuinely different moral order.',
+      'Reverses Birling\u2019s "look after himself and his own". The Inspector is staging a genuinely different moral order.',
   },
   {
     quote: 'Millions and millions of Eva Smiths and John Smiths still left with us.',

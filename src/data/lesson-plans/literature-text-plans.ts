@@ -3042,8 +3042,12 @@ const inspectorBirlingCapitalism: LiteratureLesson = {
   mainActivity: {
     title: "Birling's Defense & Priestly's Critique",
     duration: '47 minutes',
+    // 23 October 2026: the three quotations in PART 1 and PART 2 were not
+    // Birling's words. "cheap labour keeps prices down", "every man for
+    // himself" and "The Titanic will never sink" are not in the play; what he
+    // says in Act 1 is quoted now.
     instructions:
-      'PART 1 (16 min): Read Act 1 where Birling discusses the wage cut for Eva Smith. Annotate for: his justifications ("cheap labour keeps prices down"), his dismissal of responsibility ("every man for himself"), his confidence in capitalist progress. PART 2 (18 min): Read his speech about war and capitalism ("The Titanic will never sink") and future prosperity. Annotate for: his confidence in progress, his blindness to consequences, his self-interest. PART 3 (13 min): Students create a two-column chart: Birling\'s Argument for Cutting Wages | Counter-argument from Social Responsibility. Write analytical paragraph: "How does Priestly use Birling\'s character to critique capitalist indifference to workers? What alternative does Priestly suggest?"',
+      'PART 1 (16 min): Read Act 1 where Birling discusses the wage cut for Eva Smith. Annotate for: his justifications ("it\'s my duty to keep labour costs down"), his dismissal of responsibility (a man has to "look after himself and his own"), his confidence in capitalist progress. PART 2 (18 min): Read his speech about war, progress and the Titanic ("unsinkable, absolutely unsinkable") and future prosperity. Annotate for: his confidence in progress, his blindness to consequences, his self-interest. PART 3 (13 min): Students create a two-column chart: Birling\'s Argument for Cutting Wages | Counter-argument from Social Responsibility. Write analytical paragraph: "How does Priestly use Birling\'s character to critique capitalist indifference to workers? What alternative does Priestly suggest?"',
     differentiation: {
       support: 'Annotated extracts. Chart template with prompts.',
       core: 'Independent annotation and response.',
@@ -3061,7 +3065,9 @@ const inspectorBirlingCapitalism: LiteratureLesson = {
   plenary: {
     title: 'Individual vs Collective Responsibility',
     duration: '4 minutes',
-    instructions: `Key message: "Priestly argues that we are interconnected. Birling's individualism - 'every man for himself' - causes Eva Smith's death. The play demands collective social responsibility." Link to post-WWII audience expectations.`,
+    // 23 October 2026: 'every man for himself' is not in the play; Birling's
+    // words are quoted now. "Priestly" was also misspelt.
+    instructions: `Key message: "Priestley argues that we are interconnected. Birling's individualism - a man has to 'look after himself and his own' - causes Eva Smith's death. The play demands collective social responsibility." Link to post-WWII audience expectations.`,
     differentiation: {
       support: 'Display key message.',
       core: 'Understand contrast between Birling and Inspector.',

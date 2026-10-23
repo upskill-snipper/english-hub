@@ -227,6 +227,9 @@ export const speedAnalysisPromptsExtra: SpeedAnalysisPromptExtra[] = [
 
   // ── An Inspector Calls (10) ────────────────────────────────────────────────
   {
+    // 23 October 2026: the model answer quoted Birling as saying "every man for
+    // himself", which is not in the play. His words are "a man has to mind his
+    // own business and look after himself and his own" (Act 1).
     id: 'sa-extra-aic-01',
     quote: 'We are responsible for each other.',
     text: 'An Inspector Calls',
@@ -240,7 +243,7 @@ export const speedAnalysisPromptsExtra: SpeedAnalysisPromptExtra[] = [
     ],
     expectedMethods: ['inclusive pronoun', 'declarative', 'didactic register'],
     modelAnswer:
-      'The inclusive "we" forcibly enrols the Birlings - and Priestley\'s 1945 audience - in collective ethics, dissolving Birling\'s "every man for himself". The declarative refuses debate; the verb "are" presents responsibility not as suggestion but ontological fact. Written immediately post-war, the line is Priestley\'s socialist manifesto, urging the audience towards the Welfare State then being legislated. The Inspector functions as moral chorus, his didactic register elevating ordinary speech to almost biblical commandment, recasting Christian "love thy neighbour" in collectivist terms.',
+      'The inclusive "we" forcibly enrols the Birlings - and Priestley\'s 1945 audience - in collective ethics, dissolving Birling\'s insistence that a man has to "look after himself and his own". The declarative refuses debate; the verb "are" presents responsibility not as suggestion but ontological fact. Written immediately post-war, the line is Priestley\'s socialist manifesto, urging the audience towards the Welfare State then being legislated. The Inspector functions as moral chorus, his didactic register elevating ordinary speech to almost biblical commandment, recasting Christian "love thy neighbour" in collectivist terms.',
     time: 90,
   },
   {

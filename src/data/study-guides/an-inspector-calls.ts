@@ -41,20 +41,39 @@ import type { StudyGuide } from '@/lib/study-guides/types'
  * NAMES. `who`, `relationships` and the theme chips on the timeline use the
  * character and theme names of the page above, exactly, so the two agree.
  *
- * THE PAGE ABOVE, checked while this was written, misattributes several lines,
- * and the corrections are reported rather than silently contradicted:
+ * THE PAGES ON THE PLAY, checked while this was written (26 September 2026),
+ * misattributed several lines. They were corrected on 16 and 23 October 2026,
+ * and the record is kept so that the next reader does not reintroduce them:
  * - "It's what happened to the girl and what we all did to her that matters"
- *   is ERIC's line in Act 3 (every source agrees), not Sheila's, as page.tsx
- *   and key-quotes/page.tsx have it. extract-walkthrough/page.tsx is right.
+ *   is ERIC's line in Act 3 (every source agrees). The pages under
+ *   /revision/texts/an-inspector-calls gave it to Sheila; all now say Eric.
  * - "Public men, Mr Birling, have responsibilities as well as privileges" is
- *   Act 2, after Mrs Birling denies recognising the photograph, not Act 1.
+ *   Act 2, after Mrs Birling denies recognising the photograph. The pages
+ *   said Act 1; all now say Act 2.
  * - "If we were all responsible for everything ... it would be very awkward"
- *   is Act 1, early in Birling's interview, not Act 3.
+ *   is Act 1, early in Birling's interview. The pages said Act 3.
  * - "I was quite justified." is Arthur Birling's, Act 1. Mrs Birling says "In
- *   the circumstances I think I was justified" and "perfectly justified".
+ *   the circumstances I think I was justified" and "perfectly justified". The
+ *   CAIE guide printed the first as hers and now prints her own line.
  * - "the father of the child ... is entirely responsible" is not a line: Mrs
- *   Birling says "then he'd be entirely responsible".
- * - context/page.tsx gives the Conservatives 164 seats in 1945; they won 197.
+ *   Birling says "then he'd be entirely responsible", which the pages print now.
+ * - context/page.tsx gave the Conservatives 164 seats in 1945; they won 197.
+ * - "But these girls aren't cheap labour - they're people" is SHEILA's, Act 1.
+ *   The CAIE guide gave it to the Inspector.
+ * - "We are members of one body": the CAIE guide printed "members of a
+ *   community", which is not in the play.
+ * - "they'd soon be asking for the earth" is Arthur Birling's, Act 1, on the
+ *   strikers. The analysis index and hub gave it to Mrs Birling as "she asked
+ *   for the earth", words nobody says. The slug of that URL still does.
+ * - "If there's nothing else, we'll have to share our guilt" is the
+ *   INSPECTOR's, to Sheila, Act 2. The IGCSE study notes gave it to Sheila.
+ * - "Girls of that class -" is cut off by SHEILA, "urgently, cutting in", not
+ *   by the Inspector, as the Edexcel IGCSE overview and the teacher
+ *   worksheets had it.
+ * - "every man for himself" is not in the play. Birling says a man has to
+ *   "look after himself and his own". Four pages quoted the invented phrase
+ *   as his and were corrected; a fifth, under src/app/games, was outside the
+ *   scope of the 23 October fix.
  *
  * COPYRIGHT. The play is in copyright. Quotations are held under 15 words and
  * the page total under the 400-word ceiling in fair-dealing.ts; the passages

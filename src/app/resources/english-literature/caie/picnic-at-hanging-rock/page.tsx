@@ -70,8 +70,8 @@ export default function PicnicAtHangingRockPage() {
                   Lindsay published the novel in 1967 but deliberately presented it as though it
                   were a factual account, blurring the boundary between fiction and reality. The
                   famous prefatory note &mdash; &ldquo;Whether{' '}
-                  <em>{tr(`Picnic at Hanging Rock`)}</em> is fact or fiction, my readers must decide
-                  for themselves&rdquo; &mdash; has fuelled decades of speculation.
+                  <em>{tr(`Picnic at Hanging Rock`)}</em> is fact or fiction, my readers must
+                  decide&rdquo; &mdash; has fuelled decades of speculation.
                 </p>
               </CardContent>
             </Card>
@@ -141,8 +141,8 @@ export default function PicnicAtHangingRockPage() {
                   cannot be contained by the rigid structures of Appleyard College.
                 </p>
                 <p className="text-sm italic border-s-2 border-primary/40 ps-3">
-                  Key quotation: &ldquo;Miranda was a doer, not a dreamer... she radiated happiness
-                  as a candle does light.&rdquo;
+                  Key quotation: &ldquo;a doer, not a dreamer... she radiated happiness as a candle
+                  does light.&rdquo;
                 </p>
               </CardContent>
             </Card>
@@ -167,7 +167,7 @@ export default function PicnicAtHangingRockPage() {
                 </p>
                 <p className="text-sm italic border-s-2 border-primary/40 ps-3">
                   Key quotation: &ldquo;The girl on the sofa had the languid elegance of a lazy
-                  kitten... Irma Leopold had always been a beautiful girl.&rdquo;
+                  kitten&rdquo;
                 </p>
               </CardContent>
             </Card>
@@ -219,8 +219,8 @@ export default function PicnicAtHangingRockPage() {
                   absorption into the ancient landscape.
                 </p>
                 <p className="text-sm italic border-s-2 border-primary/40 ps-3">
-                  Key quotation: &ldquo;Miss McCraw... was seen by two of the girls... without her
-                  skirt... apparently struggling through some dense bracken.&rdquo;
+                  Key quotation: &ldquo;Miss McCraw... was seen... without her skirt... struggling
+                  through some dense bracken.&rdquo;
                 </p>
               </CardContent>
             </Card>
@@ -246,8 +246,7 @@ export default function PicnicAtHangingRockPage() {
                   institutional system that was supposed to protect her.
                 </p>
                 <p className="text-sm italic border-s-2 border-primary/40 ps-3">
-                  Key quotation: &ldquo;Sara loved Miranda more than anyone else in the world... she
-                  was the one human being who had ever loved her.&rdquo;
+                  Key quotation: &ldquo;Sara loved Miranda more than anyone else in the world&rdquo;
                 </p>
               </CardContent>
             </Card>
@@ -275,8 +274,8 @@ export default function PicnicAtHangingRockPage() {
                   confronted with forces beyond their control.
                 </p>
                 <p className="text-sm italic border-s-2 border-primary/40 ps-3">
-                  Key quotation: &ldquo;The Doyen of an exclusive Ladies&rsquo; College... was able
-                  to command the instant obedience and respect of her subordinates.&rdquo;
+                  Key quotation: &ldquo;The Doyen of an exclusive Ladies&rsquo; College... instant
+                  obedience and respect&rdquo;
                 </p>
               </CardContent>
             </Card>
@@ -302,8 +301,7 @@ export default function PicnicAtHangingRockPage() {
                 </p>
                 <p className="text-sm italic border-s-2 border-primary/40 ps-3">
                   Key quotation: &ldquo;He could think of nothing but the girl with the golden
-                  hair... the unknown doings on the Rock filled his mind to the exclusion of all
-                  else.&rdquo;
+                  hair&rdquo;
                 </p>
               </CardContent>
             </Card>
@@ -357,8 +355,8 @@ export default function PicnicAtHangingRockPage() {
                   Australian landscape.
                 </p>
                 <p className="text-sm italic border-s-2 border-primary/40 ps-3">
-                  &ldquo;What we see and what we seem / Are but a dream, a dream within a
-                  dream.&rdquo; (The Poe epigraph used within the novel reinforces this theme.)
+                  &ldquo;What we see and what we seem / Are but a dream&rdquo; (The Poe epigraph
+                  used within the novel reinforces this theme.)
                 </p>
               </CardContent>
             </Card>
@@ -377,8 +375,8 @@ export default function PicnicAtHangingRockPage() {
                   corsets as they ascend symbolises the shedding of social constraints.
                 </p>
                 <p className="text-sm italic border-s-2 border-primary/40 ps-3">
-                  &ldquo;The hanging Rock itself had been a landmark for a million years... a
-                  million years is quite a long time.&rdquo;
+                  &ldquo;a landmark for a million years... a million years is quite a long
+                  time.&rdquo;
                 </p>
               </CardContent>
             </Card>
@@ -440,8 +438,8 @@ export default function PicnicAtHangingRockPage() {
                   unresolved loss corrodes individuals and communities alike.
                 </p>
                 <p className="text-sm italic border-s-2 border-primary/40 ps-3">
-                  &ldquo;The picnic... would be talked of for years to come... nobody would ever
-                  forget that Saturday afternoon.&rdquo;
+                  &ldquo;talked of for years to come... nobody would ever forget that Saturday
+                  afternoon.&rdquo;
                 </p>
               </CardContent>
             </Card>
@@ -461,8 +459,8 @@ export default function PicnicAtHangingRockPage() {
                   discover they understand nothing about it.
                 </p>
                 <p className="text-sm italic border-s-2 border-primary/40 ps-3">
-                  &ldquo;The vast landscape of the Australian bush closed in about the little group
-                  of humans.&rdquo;
+                  &ldquo;The vast landscape of the Australian bush closed in about the little
+                  group&rdquo;
                 </p>
               </CardContent>
             </Card>
@@ -498,8 +496,7 @@ export default function PicnicAtHangingRockPage() {
                   'The girls eat lunch in the shade; the atmosphere is drowsy and dreamlike.',
                   "Miss McCraw discourses on the Rock's geological age and formation.",
                 ],
-                quotation:
-                  '"The Doyen of an exclusive Ladies\' College... the Doyen was apt to lose her bearings in this strange country."',
+                quotation: '"the Doyen was apt to lose her bearings in this strange country."',
               },
               {
                 chapter: 'Chapter 3',
@@ -511,7 +508,7 @@ export default function PicnicAtHangingRockPage() {
                   'All watches stop at exactly twelve noon.',
                 ],
                 quotation:
-                  '"They were no longer in the everyday world... all four watches had stopped at exactly twelve o\'clock."',
+                  '"They were no longer in the everyday world... all four watches had stopped."',
               },
               {
                 chapter: 'Chapter 4',
@@ -546,7 +543,7 @@ export default function PicnicAtHangingRockPage() {
                   "Albert discovers that Irma's gold watch and corset are missing - mystery deepens.",
                 ],
                 quotation:
-                  '"She was lying across a slab of rock like a broken doll... she remembered nothing."',
+                  '"lying across a slab of rock like a broken doll... she remembered nothing."',
               },
               {
                 chapter: 'Chapters 13-15',
@@ -677,7 +674,7 @@ export default function PicnicAtHangingRockPage() {
                 </p>
                 <p className="text-sm italic border-s-2 border-primary/40 ps-3">
                   &ldquo;Doomed and beautiful, the Rock towers above the plain, dwarfing the
-                  insignificant human figures at its base.&rdquo;
+                  insignificant human figures&rdquo;
                 </p>
               </CardContent>
             </Card>

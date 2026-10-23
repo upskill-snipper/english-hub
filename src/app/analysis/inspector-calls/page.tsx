@@ -82,13 +82,15 @@ const QUOTE_PAGES: Entry[] = [
   },
   {
     href: '/analysis/inspector-calls/she-asked-for-the-earth',
-    title: "Mrs Birling's contempt for Eva Smith",
-    blurb: "How Mrs Birling frames Eva Smith's appeal as excessive - her class contempt unpacked.",
+    // 23 October 2026: these two cards gave "asking for the earth" to Mrs
+    // Birling. It is Arthur Birling's line in Act 1, on the strikers.
+    title: "Birling's contempt for the strikers",
+    blurb: 'How Birling frames a request for a small rise as greed - his class contempt unpacked.',
   },
   {
     href: '/analysis/inspector-calls/its-better-to-ask-for-the-earth',
     title: "It's better to ask for the earth",
-    blurb: "The Inspector's reversal of Mrs Birling's phrase.",
+    blurb: "The Inspector's reversal of Birling's phrase.",
   },
   {
     href: '/analysis/inspector-calls/we-dont-live-alone',

@@ -232,7 +232,10 @@ const themes = [
     analysis:
       "This is the central theme of the play. Priestley uses the Inspector to argue that we are all interconnected and responsible for each other's welfare. Mr Birling's individualist philosophy ('a man has to look after himself') is systematically dismantled as each character is shown the consequences of their selfishness. The play is a direct argument for socialism and the welfare state, written in 1945 just as the Labour government was creating the NHS and the modern welfare system.",
     keyPoints: [
-      "Birling's 'every man for himself' philosophy is discredited by dramatic irony and by the Inspector's revelations",
+      // 23 October 2026: this quoted Birling as saying 'every man for himself',
+      // which is not in the play. His words in Act 1 are that a man has to
+      // 'look after himself and his own'.
+      "Birling's 'look after himself and his own' philosophy is discredited by dramatic irony and by the Inspector's revelations",
       'Each Birling could have helped Eva at different points - individual acts of compassion could have saved her',
       "The Inspector's final speech ('We are members of one body') is Priestley's thesis: society must be collective, not individualist",
       "'Fire and blood and anguish' - the consequences of ignoring social responsibility are war and suffering (the 1945 audience had lived through both world wars)",

@@ -91,7 +91,7 @@ GRADE 7 MODEL ANSWER:
 
 Priestley presents Mr Birling as a symbol of capitalist selfishness and social irresponsibility, using him to criticise the attitudes of the Edwardian upper-middle class.
 
-From the outset, Birling is characterised by his confident, lecturing tone. His speech in Act 1 - "a man has to mind his own business and look after himself and his own" - establishes his philosophy of individualism. The tricolon structure ("mind," "look after," "his own") reinforces the narrow, self-centred worldview, while the imperative "has to" suggests he sees selfishness not as a choice but as an obligation. Priestley positions this speech early so the audience can measure Birling's certainty against the events that follow.
+From the outset, Birling is characterised by his confident, lecturing tone. His speech in Act 1 - "a man has to mind his own business ... look after himself and his own" - establishes his philosophy of individualism. The tricolon structure ("mind," "look after," "his own") reinforces the narrow, self-centred worldview, while the imperative "has to" suggests he sees selfishness not as a choice but as an obligation. Priestley positions this speech early so the audience can measure Birling's certainty against the events that follow.
 
 Birling's dramatic irony is central to Priestley's critique. His confident predictions - "the Titanic … unsinkable, absolutely unsinkable" and "I say there isn't a chance of war" - are historically absurd to the 1945 audience. Priestley uses the adverb "absolutely" to heighten Birling's foolish certainty. If Birling is so wrong about public events, the audience is invited to distrust his moral philosophy too.
 
@@ -887,7 +887,7 @@ Morality Play - A medieval dramatic form where characters represent moral qualit
 Fourth Wall - Priestley wanted the final phone call to make the audience feel implicated too, breaking the comfortable distance between stage and stalls.
 
 PRIESTLEY'S "LLANDINAM LETTER" (key quote):
-"We don't live alone. We are members of one body. We are responsible for each other." - This is essentially the Inspector's final speech, and Priestley's central thesis.`,
+"We are members of one body. We are responsible for each other." - This is essentially the Inspector's final speech, and Priestley's central thesis.`,
     printable: true,
     tags: [
       'An Inspector Calls',
@@ -989,7 +989,7 @@ POWER & KINGSHIP
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 MR BIRLING
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-"a man has to mind his own business and look after himself and his own" (Act 1)
+"a man has to mind his own business ... look after himself and his own" (Act 1)
 → Tricolon of selfishness. Dramatic irony: the Inspector will prove the opposite.
 
 "the Titanic … unsinkable, absolutely unsinkable" (Act 1)
@@ -1028,19 +1028,19 @@ SHEILA
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 THE INSPECTOR
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-"We don't live alone. We are members of one body. We are responsible for each other." (Act 3)
+"We are members of one body. We are responsible for each other." (Act 3)
 → Priestley's thesis statement. "One body" - society as a single organism.
 
-"And if men will not learn that lesson, then they will be taught it in fire and blood and anguish." (Act 3)
+"if men will not learn that lesson ... fire and blood and anguish." (Act 3)
 → Prophetic: WWI and WWII. "Fire and blood" - biblical apocalypse imagery.
 
-"One Eva Smith has gone - but there are millions and millions and millions of Eva Smiths" (Act 3)
+"there are millions and millions and millions of Eva Smiths" (Act 3)
 → Repetition of "millions" hammers home the scale. Eva is not an individual - she represents a class.
 
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 ERIC
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-"You're not the kind of father a chap could go to when he's in trouble" (Act 3)
+"You're not the kind of father a chap could go to" (Act 3)
 → Challenges Birling's authority. Reveals the family's dysfunction.
 
 "My God - I'm not likely to forget" (Act 3)
@@ -1887,7 +1887,7 @@ TECHNIQUES TO FIND: alliteration ("cold command"), listing ("frown … lip … s
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 EXTRACT 4 (Speech - Martin Luther King Jr.):
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-"I have a dream that one day this nation will rise up and live out the true meaning of its creed."
+"I have a dream that one day this nation will rise up"
 
 TECHNIQUES TO FIND: anaphora ("I have a dream"), metaphor ("rise up"), abstract nouns ("dream," "meaning," "creed"), inclusive language ("this nation")
 

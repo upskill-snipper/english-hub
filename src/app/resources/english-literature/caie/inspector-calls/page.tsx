@@ -45,14 +45,19 @@ const keyQuotes = [
       "A prophetic warning that alludes to the two World Wars. The 1945 audience would recognise that Priestley's warning came true: the ruling class's refusal to accept social responsibility led to catastrophic conflict. The tricolon 'fire and blood and anguish' is biblical in tone, positioning the Inspector as a moral prophet.",
   },
   {
+    // 23 October 2026: this card gave the line to the Inspector. It is
+    // Sheila's, in Act 1, answering her father's account of the sacking.
     quote: "But these girls aren't cheap labour - they're people",
-    speaker: 'Inspector Goole',
+    speaker: 'Sheila Birling',
     act: 'Act 1',
     analysis:
-      "Directly challenges Birling's capitalist view of workers as expendable commodities. The dash creates a dramatic pause that forces reconsideration. Priestley uses the Inspector to voice the argument that human dignity should take precedence over profit.",
+      "Directly challenges her father's capitalist view of workers as expendable commodities. The dash creates a dramatic pause that forces reconsideration. Priestley uses Sheila, the first Birling to see Eva as a person, to voice the argument that human dignity should take precedence over profit.",
   },
   {
-    quote: "We don't live alone. We are members of a community",
+    // 23 October 2026: this card printed "We are members of a community",
+    // which is not in the play. The Inspector's words are "members of one
+    // body", as the first card on this page has them.
+    quote: "We don't live alone. We are members of one body",
     speaker: 'Inspector Goole',
     act: 'Act 3',
     analysis:

@@ -71,7 +71,7 @@ export const inspectorCallsCourse: CourseData = {
 
 <p>In <strong>July 1945</strong>, the British public voted overwhelmingly for <strong>Clement Attlee's Labour government</strong>, rejecting Churchill's Conservatives. This government created the <strong>NHS</strong>, the <strong>welfare state</strong>, and nationalised key industries. Priestley's play was part of this cultural moment: it argued that the selfish, capitalist attitudes of 1912 had led to two catastrophic world wars, and that Britain must never return to such a society.</p>
 
-<p>When the 1945 audience watched Arthur Birling declare that "a man has to mind his own business and look after himself and his own," they understood that this philosophy had produced the very horrors they had just lived through. The Inspector's final speech - "We are members of one body" - articulated the hope for a new, more compassionate Britain.</p>
+<p>When the 1945 audience watched Arthur Birling declare that "a man has to mind his own business ... look after himself and his own," they understood that this philosophy had produced the very horrors they had just lived through. The Inspector's final speech - "We are members of one body" - articulated the hope for a new, more compassionate Britain.</p>
 
 <h3>The Class System in the Play</h3>
 
@@ -237,7 +237,7 @@ export const inspectorCallsCourse: CourseData = {
   <li><strong>"pink and intimate... brighter and harder"</strong> - stage directions, the lighting shift when the Inspector arrives.</li>
   <li><strong>"unsinkable, absolutely unsinkable"</strong> - Birling on the Titanic; dramatic irony for 1945 audience.</li>
   <li><strong>"I say there isn't a chance of war"</strong> - Birling's failed prediction about WWI.</li>
-  <li><strong>"a man has to mind his own business and look after himself and his own"</strong> - Birling's capitalist philosophy, the core statement the play refutes.</li>
+  <li><strong>"a man has to mind his own business ... look after himself and his own"</strong> - Birling's capitalist philosophy, the core statement the play refutes.</li>
   <li><strong>"If we were all responsible for everything... it would be very awkward"</strong> - Birling's moral blindness revealed.</li>
   <li><strong>"I was quite justified"</strong> - Birling showing no remorse for sacking Eva.</li>
   <li><strong>"I'll never, never do it again to anybody"</strong> - Sheila's immediate repentance, contrasting with her father.</li>
@@ -253,7 +253,7 @@ export const inspectorCallsCourse: CourseData = {
 
 <h3>The Engagement & Social Climbing</h3>
 
-<p>The engagement between Sheila and Gerald is not presented as a love match but as a <strong>business merger</strong>. Birling tells Gerald: "your father and I have been friendly rivals in business... and now you've brought us together." He is more excited about the business advantages than his daughter's happiness.</p>
+<p>The engagement between Sheila and Gerald is not presented as a love match but as a <strong>business merger</strong>. Birling tells Gerald: "friendly rivals in business... and now you've brought us together." He is more excited about the business advantages than his daughter's happiness.</p>
 
 <p>Birling also reveals his desperation for social advancement. He tells Gerald (in confidence) that he is expecting a <strong>knighthood</strong> in the next Honours List. He warns Gerald that a "scandal" could damage his chances. This is important because it shows that Birling's primary concern throughout the play is not morality but reputation - not doing the right thing but avoiding public embarrassment.</p>
 
@@ -277,7 +277,7 @@ export const inspectorCallsCourse: CourseData = {
 
 <p>The Inspector reveals that Eva Smith worked at <strong>Birling & Company</strong> - Arthur's factory. In September 1910, Eva and a group of workers went on <strong>strike</strong>, asking for a pay rise from twenty-two shillings and sixpence to twenty-five shillings a week. Birling <strong>refused</strong> and <strong>sacked the ringleaders</strong>, including Eva.</p>
 
-<p>Birling sees nothing wrong with this. He calls the strike "pitiful" and insists that he paid standard wages. He cannot understand why he should feel any responsibility: "If we were all responsible for everything that happened to everybody... it would be very awkward." This line crystallises Birling's entire worldview - responsibility is an inconvenience, not a moral obligation.</p>
+<p>Birling sees nothing wrong with this. He calls the strike "pitiful" and insists that he paid standard wages. He cannot understand why he should feel any responsibility: "If we were all responsible for everything ... it would be very awkward." This line crystallises Birling's entire worldview - responsibility is an inconvenience, not a moral obligation.</p>
 
 <p>Sheila, however, begins to react differently. She says the sacking was "a rotten shame" - an early sign that she, unlike her father, is capable of empathy and moral growth.</p>
 
@@ -312,7 +312,7 @@ export const inspectorCallsCourse: CourseData = {
 
 <div class="socialism-vs-capitalism" style="background: #ffe6e6; padding: 15px; margin: 15px 0; border-left: 4px solid #cc0000;">
 <strong>Priestley's Socialism vs Capitalism:</strong>
-<p>Act 1 presents two competing philosophies explicitly. Birling represents capitalism: "a man has to mind his own business and look after himself and his own." The Inspector (who hasn't yet revealed his philosophy) arrives to challenge this. By the end of the play, the Inspector articulates socialism: "We are members of one body. We are responsible for each other." Act 1 introduces the thesis; Acts 2-3 argue for the antithesis (socialism). Priestley's political position is not subtle - he wants audiences to choose sides.</p>
+<p>Act 1 presents two competing philosophies explicitly. Birling represents capitalism: "a man has to mind his own business ... look after himself and his own." The Inspector (who hasn't yet revealed his philosophy) arrives to challenge this. By the end of the play, the Inspector articulates socialism: "We are members of one body. We are responsible for each other." Act 1 introduces the thesis; Acts 2-3 argue for the antithesis (socialism). Priestley's political position is not subtle - he wants audiences to choose sides.</p>
 </div>
 
 <h3>Exam-Style Questions with Model Answers</h3>
@@ -560,7 +560,7 @@ export const inspectorCallsCourse: CourseData = {
 
 <h3>Eric's Confession</h3>
 
-<p>Eric enters at the start of Act 3, and the audience can see he has been drinking. His involvement with Eva is the most disturbing of all the characters' connections. He met Eva at the Palace Bar (the same location where Gerald met her). He was drunk, and he forced himself into her lodgings. The text strongly implies that he <strong>sexually assaulted</strong> her, though the 1945 language is euphemistic: Eva "didn't want me to go in but... I was in that state when a chap easily turns nasty."</p>
+<p>Eric enters at the start of Act 3, and the audience can see he has been drinking. His involvement with Eva is the most disturbing of all the characters' connections. He met Eva at the Palace Bar (the same location where Gerald met her). He was drunk, and he forced himself into her lodgings. The text strongly implies that he <strong>sexually assaulted</strong> her, though the 1945 language is euphemistic: Eva "didn't want me to go in but... a chap easily turns nasty."</p>
 
 <p>Eric saw Eva again, and she became <strong>pregnant</strong> with his child. He stole approximately <strong>fifty pounds</strong> from his father's office to support her, but Eva refused to accept the money when she realised it was stolen. She turned instead to the Brumley Women's Charity Organisation - where Mrs Birling rejected her.</p>
 
@@ -572,7 +572,7 @@ export const inspectorCallsCourse: CourseData = {
 
 <p>Eric is presented as deeply flawed - a heavy drinker who has committed serious crimes (theft and, implicitly, sexual assault). However, Priestley also shows that Eric, like Sheila, belongs to the <strong>younger generation</strong> that is capable of genuine remorse. Eric does not try to excuse himself or minimise what he has done. He accepts his guilt.</p>
 
-<p>Eric also challenges his parents' hypocrisy directly. He tells Birling: <strong>"You're not the kind of father a chap could go to when he's in trouble."</strong> This is a devastating indictment of the Birling family's values - they present themselves as respectable and close-knit, but in reality, there is no genuine emotional connection. Eric's alcoholism and reckless behaviour are, Priestley implies, symptoms of a family built on materialism rather than love.</p>
+<p>Eric also challenges his parents' hypocrisy directly. He tells Birling: <strong>"You're not the kind of father a chap could go to."</strong> This is a devastating indictment of the Birling family's values - they present themselves as respectable and close-knit, but in reality, there is no genuine emotional connection. Eric's alcoholism and reckless behaviour are, Priestley implies, symptoms of a family built on materialism rather than love.</p>
 
 <div class="examiner-tip"><strong>Top Tip:</strong> Eric's line about his father is crucial for essays on the theme of family or generations. It shows that the Birlings' apparent respectability is hollow - their wealth has not created a loving, supportive family but an environment in which a young man feels unable to ask for help.</div>
 
@@ -580,11 +580,11 @@ export const inspectorCallsCourse: CourseData = {
 
 <p>The Inspector's final speech is the thematic climax of the entire play and the most important passage for your AQA exam. It is Priestley's direct message to the audience, delivered through the Inspector as his mouthpiece:</p>
 
-<p><strong>"One Eva Smith has gone - but there are millions and millions and millions of Eva Smiths and John Smiths still left with us, with their lives, their hopes and fears, their suffering and chance of happiness, all intertwined with our lives, and what we think and say and do."</strong></p>
+<p><strong>"there are millions and millions and millions of Eva Smiths and John Smiths"</strong></p>
 
 <p>The repetition of <strong>"millions and millions and millions"</strong> expands Eva from a single individual to a representative of the entire working class. The listing of "their lives, their hopes and fears, their suffering and chance of happiness" humanises the working class - insisting that they are not statistics or problems to be managed but real people with real inner lives.</p>
 
-<p>The Inspector continues: <strong>"We don't live alone. We are members of one body. We are responsible for each other. And I tell you that the time will soon come when, if men will not learn that lesson, then they will be taught it in fire and blood and anguish."</strong></p>
+<p>The Inspector continues: <strong>"We are members of one body. We are responsible for each other."</strong></p>
 
 <div class="key-term"><strong>Key Term: Priestley's Mouthpiece</strong> - A character through whom the playwright directly communicates their views to the audience. The Inspector functions as Priestley's mouthpiece - his final speech is essentially a political sermon advocating socialism and collective responsibility.</div>
 
@@ -608,7 +608,7 @@ export const inspectorCallsCourse: CourseData = {
 
 <h3>The Final Phone Call</h3>
 
-<p>Just as the Birlings are celebrating their "escape," the telephone rings. Arthur answers and delivers the play's final line with shock: <strong>"a girl has just died - on her way to the Infirmary... A police inspector is on his way here - to ask some questions."</strong></p>
+<p>Just as the Birlings are celebrating their "escape," the telephone rings. Arthur answers and delivers the play's final line with shock: <strong>"a girl has just died... A police inspector is on his way here"</strong></p>
 
 <p>The curtain falls. The play ends with the family staring at each other in "guilt and panic" - the comfortable resolution they had constructed has been shattered.</p>
 
@@ -748,7 +748,7 @@ export const inspectorCallsCourse: CourseData = {
 
 <p>Birling's two key speeches in Act 1 establish the philosophy the play exists to destroy:</p>
 
-<p><strong>"a man has to mind his own business and look after himself and his own"</strong></p>
+<p><strong>"a man has to mind his own business ... look after himself and his own"</strong></p>
 
 <p>This is pure laissez-faire capitalism - the belief that individuals have no responsibility to anyone beyond themselves and their immediate family. Priestley has the Inspector arrive immediately after this speech, as a direct structural rebuttal.</p>
 
@@ -771,7 +771,7 @@ export const inspectorCallsCourse: CourseData = {
 
 <h3>Birling's Relationship with Eva Smith</h3>
 
-<p>Birling sacked Eva for leading a strike for higher wages. He sees nothing wrong with this. He calls the workers' demand "pitiful" and insists he paid standard wages. When the Inspector asks whether he might have some responsibility, Birling responds: <strong>"If we were all responsible for everything that happened to everybody... it would be very awkward."</strong></p>
+<p>Birling sacked Eva for leading a strike for higher wages. He sees nothing wrong with this. He calls the workers' demand "pitiful" and insists he paid standard wages. When the Inspector asks whether he might have some responsibility, Birling responds: <strong>"If we were all responsible for everything ... it would be very awkward."</strong></p>
 
 <p>The word <strong>"awkward"</strong> is revealing. Birling cannot even imagine responsibility in moral terms - he frames it purely as a practical inconvenience. This shows the depth of his moral blindness: he literally cannot see that treating workers as disposable has human consequences.</p>
 
@@ -803,7 +803,7 @@ export const inspectorCallsCourse: CourseData = {
 <h3>Key Quotation Bank - Arthur Birling</h3>
 <ol>
   <li><strong>"heavy-looking, rather portentous"</strong> - stage direction; self-importance.</li>
-  <li><strong>"a man has to mind his own business and look after himself and his own"</strong> - capitalist philosophy.</li>
+  <li><strong>"a man has to mind his own business ... look after himself and his own"</strong> - capitalist philosophy.</li>
   <li><strong>"community and all that nonsense"</strong> - dismissal of collective responsibility.</li>
   <li><strong>"unsinkable, absolutely unsinkable"</strong> - dramatic irony; arrogance.</li>
   <li><strong>"I can't accept any responsibility"</strong> - refusal to change.</li>
@@ -923,7 +923,7 @@ export const inspectorCallsCourse: CourseData = {
 
 <h3>Sheila as a Chorus Figure</h3>
 
-<p>From Act 2 onwards, Sheila functions as a <strong>chorus figure</strong> - commenting on the action, interpreting the Inspector's methods, and articulating the moral lessons for the audience. She tells her parents: "You mustn't try to build up a kind of wall between us and that girl." She warns Gerald not to lie. She sees through her mother's pretence of innocence.</p>
+<p>From Act 2 onwards, Sheila functions as a <strong>chorus figure</strong> - commenting on the action, interpreting the Inspector's methods, and articulating the moral lessons for the audience. She tells her parents: "You mustn't try to build up a kind of wall between us." She warns Gerald not to lie. She sees through her mother's pretence of innocence.</p>
 
 <p>In this role, Sheila becomes almost an extension of the Inspector himself. She has absorbed his message so completely that she can now advocate for it independently. When the Inspector leaves, Sheila does not need him - she has internalised his values. This is Priestley's most optimistic statement: the lesson has been learned, at least by the young.</p>
 
@@ -1106,7 +1106,7 @@ export const inspectorCallsCourse: CourseData = {
 
 <ul>
   <li><strong>"millions and millions and millions of Eva Smiths and John Smiths"</strong> - expanding Eva from individual to representative of the working class.</li>
-  <li><strong>"We don't live alone. We are members of one body. We are responsible for each other."</strong> - the core socialist message.</li>
+  <li><strong>"We are members of one body. We are responsible for each other."</strong> - the core socialist message.</li>
   <li><strong>"fire and blood and anguish"</strong> - the warning about the consequences of ignoring collective responsibility; dramatic irony referring to the two world wars.</li>
 </ul>
 
@@ -1226,7 +1226,7 @@ export const inspectorCallsCourse: CourseData = {
 
 <p>However, like Sheila, Eric is capable of genuine <strong>remorse</strong>. When he learns the full chain of events, he is devastated. His accusation to his mother - <strong>"Then - you killed her"</strong> - is explosive and raw. He does not try to minimise his own guilt but instead demands that others acknowledge theirs too.</p>
 
-<p>Eric's line <strong>"You're not the kind of father a chap could go to when he's in trouble"</strong> is one of the play's most revealing moments. It suggests that the Birlings' dysfunction is not just political but personal - their wealth and status have created a family in which genuine emotional connection is impossible. Eric's alcoholism and criminal behaviour are symptoms of this emotional poverty.</p>
+<p>Eric's line <strong>"You're not the kind of father a chap could go to"</strong> is one of the play's most revealing moments. It suggests that the Birlings' dysfunction is not just political but personal - their wealth and status have created a family in which genuine emotional connection is impossible. Eric's alcoholism and criminal behaviour are symptoms of this emotional poverty.</p>
 
 <div class="key-term"><strong>Key Term: Tragic Flaw</strong> - A character weakness that contributes to their downfall. Eric's tragic flaw is his inability to control his impulses - his drinking, his aggression, his theft. However, Priestley complicates the idea by suggesting that Eric's flaws are partly products of his environment - a family that values appearances over genuine care.</div>
 
@@ -1390,7 +1390,7 @@ export const inspectorCallsCourse: CourseData = {
 <p>Social responsibility is the play's <strong>central theme</strong> - the idea that every person has a duty to care about the welfare of others, not just themselves and their families. Priestley presents two opposing views:</p>
 
 <ul>
-  <li><strong>Birling's view (capitalism):</strong> "a man has to mind his own business and look after himself and his own." Individuals are responsible only for themselves. The poor are responsible for their own poverty.</li>
+  <li><strong>Birling's view (capitalism):</strong> "a man has to mind his own business ... look after himself and his own." Individuals are responsible only for themselves. The poor are responsible for their own poverty.</li>
   <li><strong>The Inspector's view (socialism):</strong> "We are members of one body. We are responsible for each other." Everyone is interconnected, and the suffering of one person is the responsibility of all.</li>
 </ul>
 
@@ -1991,7 +1991,7 @@ export const inspectorCallsCourse: CourseData = {
     {
       id: 'aic-aq15',
       question:
-        'What does Eric mean when he says "You\'re not the kind of father a chap could go to when he\'s in trouble"?',
+        'What does Eric mean when he says "You\'re not the kind of father a chap could go to"?',
       options: [
         'Birling is too busy with work to help',
         "The Birling family's focus on wealth and respectability has destroyed genuine emotional connection, leaving Eric unable to seek help",

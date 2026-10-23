@@ -95,13 +95,12 @@ const chapterSummary = [
       'The narrator arrives at Manderley and is immediately overwhelmed by its grandeur, its rituals, and the lingering presence of Rebecca. Mrs Danvers is cold and intimidating. The narrator discovers that Rebecca\u2019s possessions remain everywhere: her stationery, her handwriting in the visitors\u2019 book, her arrangements for the household. The narrator feels inadequate, comparing herself unfavourably to Rebecca at every turn. She explores the grounds and discovers the beach cottage.',
     quotations: [
       {
-        quote: 'I am Mrs de Winter now, I am Mrs de Winter. I would repeat it over and over again',
+        quote: 'I am Mrs de Winter now, I am Mrs de Winter',
         analysis:
           'The repetition reveals the narrator\u2019s desperation to convince herself of her own identity. The need to rehearse her married name suggests she does not feel it belongs to her. The title \u2018Mrs de Winter\u2019 connects her not to herself but to a role previously occupied by Rebecca.',
       },
       {
-        quote:
-          'A white slim hand was writing, writing, the tall sloping letters \u2014 R de W \u2014 R de W \u2014 R de W',
+        quote: 'A white slim hand was writing, writing ... R de W \u2014 R de W',
         analysis:
           'Rebecca\u2019s monogram becomes a haunting motif. The disembodied \u2018white slim hand\u2019 evokes a ghostly presence. The repetition of the initials suggests an inescapable brand of ownership: Manderley belongs to Rebecca even in death.',
       },
@@ -130,13 +129,12 @@ const chapterSummary = [
       'Mrs Danvers manipulates the narrator into wearing a costume identical to one Rebecca wore, causing Maxim\u2019s fury and the narrator\u2019s humiliation. That night, Mrs Danvers urges the narrator to jump from the window. A distress rocket interrupts, and a ship runs aground in the bay. Divers discover a boat on the sea bed \u2014 with Rebecca\u2019s body inside. Maxim confesses the truth to the narrator: he never loved Rebecca; she was cruel and manipulative; he shot her, placed her body in the boat, and sank it.',
     quotations: [
       {
-        quote: 'You thought I loved Rebecca? You thought I killed her loving her? I hated her',
+        quote: 'You thought I killed her loving her? I hated her',
         analysis:
-          'Maxim\u2019s confession shatters the narrator\u2019s (and the reader\u2019s) assumptions. The three short, emphatic sentences build to the devastating final declaration. The reversal from love to hatred reframes every earlier scene: Maxim\u2019s dark moods were not grief but guilt.',
+          'Maxim\u2019s confession shatters the narrator\u2019s (and the reader\u2019s) assumptions. The short, emphatic sentences of the speech build to the devastating final declaration. The reversal from love to hatred reframes every earlier scene: Maxim\u2019s dark moods were not grief but guilt.',
       },
       {
-        quote:
-          'It\u2019s gone forever, that funny, young, lost look I loved. It won\u2019t come back again. I killed that too, when I told you about Rebecca',
+        quote: 'that funny, young, lost look I loved ... I killed that too',
         analysis:
           'Maxim recognises that his confession has destroyed the narrator\u2019s innocence. The word \u2018killed\u2019 is chillingly double-edged, linking the metaphorical death of innocence to the literal death of Rebecca. The narrator\u2019s transformation from na\u00efvet\u00e9 to complicity is complete.',
       },
@@ -148,8 +146,7 @@ const chapterSummary = [
       'An inquest is held. The verdict is suicide, but Favell arrives and accuses Maxim of murder. He produces a note from Rebecca suggesting she had a motive to live. The investigation leads to Rebecca\u2019s London doctor, who reveals she had terminal cancer and only months to live \u2014 giving her a motive for provoking her own death. Maxim is cleared. On the drive home, the narrator sees the sky glowing red: Mrs Danvers has set Manderley ablaze. The house and everything it represented are destroyed.',
     quotations: [
       {
-        quote:
-          'The road to Manderley lay ahead. There was no moon. The sky above our heads was inky black',
+        quote: 'The road to Manderley lay ahead. There was no moon ... inky black',
         analysis:
           'Pathetic fallacy signals impending catastrophe. The absence of moonlight and the \u2018inky black\u2019 sky create a sense of foreboding and moral darkness. The road \u2018ahead\u2019 leads not to home but to destruction, inverting the expected journey of return.',
       },
@@ -523,8 +520,8 @@ export default function RebeccaStudyGuide() {
                 <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
                   Du Maurier presents the power of the past most vividly through the
                   narrator&rsquo;s obsessive encounter with Rebecca&rsquo;s monogram, describing how
-                  &ldquo;a white slim hand was writing, writing, the tall sloping letters &mdash; R
-                  de W &mdash; R de W&rdquo;{' '}
+                  &ldquo;a white slim hand was writing, writing &hellip; R de W &mdash; R de
+                  W&rdquo;{' '}
                   <span className="font-semibold text-foreground">
                     [Textual Knowledge: precise quotation]
                   </span>

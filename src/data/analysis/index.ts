@@ -689,10 +689,14 @@ export const ANALYSIS_PAGES: AnalysisPageEntry[] = [
     category: 'inspector-calls',
   },
   {
+    // 23 October 2026: the title and description gave this line to Mrs
+    // Birling as "she asked for the earth", which nobody says. It is Arthur
+    // Birling's, in Act 1, on the strikers: "they'd soon be asking for the
+    // earth". The slug is a live URL and is kept.
     slug: ['inspector-calls', 'she-asked-for-the-earth'],
-    title: 'She asked for the earth - meaning',
+    title: 'Asking for the earth - meaning',
     description:
-      'GCSE analysis of Mrs Birling\'s "she asked for the earth" line in An Inspector Calls. Class contempt, hyperbole and marker commentary.',
+      'GCSE analysis of Mr Birling\'s "they\'d soon be asking for the earth" in An Inspector Calls. Class contempt, hyperbole and marker commentary.',
     category: 'inspector-calls',
   },
   {

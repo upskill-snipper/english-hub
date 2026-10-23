@@ -623,9 +623,11 @@ export const igcseLiteratureStudyNotes: StudyNote[] = [
           "The Inspector directly counters Birling's equation of status with privilege-only. The parallel structure 'responsibilities as well as privileges' is precisely balanced: each position of power carries an equivalent obligation. This is Priestley's definition of what responsible capitalism or responsible citizenship looks like.",
       },
       {
+        // 23 October 2026: the analysis gave this line to Sheila. The
+        // Inspector says it, to Sheila, early in Act 2, and she agrees.
         quote: "If there\'s nothing else, we\'ll have to share our guilt.",
         analysis:
-          "Sheila's phrase 'share our guilt' introduces the collective moral framework that the play argues for. 'Share' - usually associated with positive communal acts - applied to 'guilt' creates a striking compound. Priestley suggests that acknowledging shared guilt is itself a form of moral progress, a precondition for shared responsibility.",
+          "The Inspector's phrase 'share our guilt', said to Sheila in Act 2, introduces the collective moral framework that the play argues for. 'Share' - usually associated with positive communal acts - applied to 'guilt' creates a striking compound. Priestley suggests that acknowledging shared guilt is itself a form of moral progress, a precondition for shared responsibility.",
       },
     ],
     examApplication:

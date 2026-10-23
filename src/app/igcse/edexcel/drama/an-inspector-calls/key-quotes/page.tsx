@@ -150,8 +150,11 @@ const quotes = [
     // 16 October 2026: this said Act 1. The Inspector says it in Act 2, after
     // Mrs Birling denies recognising the photograph.
     context: 'Act 2 \u2014 challenging Birling',
+    // 23 October 2026: this quoted Birling as saying "every man for himself",
+    // which is not in the play. His words in Act 1 are that a man has to
+    // "look after himself and his own".
     analysis:
-      'Reverses Birling\u2019s "every man for himself". The Inspector stages a different moral order.',
+      'Reverses Birling\u2019s "look after himself and his own". The Inspector stages a different moral order.',
   },
   {
     quote: '"You\u2019re beginning to pretend now that nothing\u2019s really happened"',

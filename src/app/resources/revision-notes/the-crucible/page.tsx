@@ -349,7 +349,7 @@ export default function CrucibleRevisionPage() {
                     analysis="Proctor's most famous line. His 'name' represents his identity, integrity, and legacy. The exclamation marks and repetition of 'because' show his desperate conviction. He would rather die honest than live a lie. This mirrors Eddie Carbone's obsession with his 'name' -- both Miller protagonists define themselves through reputation."
                   />
                   <Quote
-                    text="I have three children -- how may I teach them to walk like men in the world, and I sold my friends?"
+                    text="how may I teach them to walk like men ... and I sold my friends?"
                     speaker="Proctor"
                     act="Act 4"
                     analysis="Proctor refuses to name others in his confession. This connects personal morality to parenting and community responsibility. 'Walk like men' links honesty to masculinity in a healthy way -- unlike Eddie Carbone, Proctor defines manhood through moral courage."
@@ -376,13 +376,13 @@ export default function CrucibleRevisionPage() {
                 </p>
                 <div className="mt-3 grid gap-3 sm:grid-cols-2">
                   <Quote
-                    text="I have a sense for heat, John, and yours has drawn me to my window, and I have seen you looking up, burning in your loneliness"
+                    text="I have a sense for heat, John ... burning in your loneliness"
                     speaker="Abigail"
                     act="Act 1"
                     analysis="Abigail uses sensual language to try to reignite the affair. 'Heat' and 'burning' are metaphors for desire -- but also foreshadow the fires of the trials she will ignite. She is perceptive about Proctor's loneliness but uses that knowledge manipulatively."
                   />
                   <Quote
-                    text="I want the light of God, I want the sweet love of Jesus! I danced for the Devil; I saw him; I wrote in his book"
+                    text="I want the light of God ... I danced for the Devil; I saw him"
                     speaker="Abigail"
                     act="Act 1"
                     analysis="Abigail's false 'confession' is a masterclass in manipulation. She adopts religious language to present herself as a penitent sinner, gaining the adults' trust while deflecting blame onto others. The irony is that this is her most dishonest moment, performed in the language of spiritual truth."
@@ -455,7 +455,7 @@ export default function CrucibleRevisionPage() {
                   above truth. Even when the evidence collapses, he proceeds with the executions.
                 </p>
                 <Quote
-                  text="A person is either with this court or he must be counted against it, there be no road between"
+                  text="A person is either with this court or he must be counted against it"
                   speaker="Danforth"
                   act="Act 3"
                   analysis="Danforth's binary logic eliminates nuance and dissent. Anyone who questions the court is treated as an enemy. This mirrors McCarthyist rhetoric -- 'you're either with us or against us.' Miller shows how authority figures use false dichotomies to silence opposition and maintain power."
@@ -561,13 +561,13 @@ export default function CrucibleRevisionPage() {
                 </p>
                 <div className="mt-3 grid gap-3 sm:grid-cols-2">
                   <Quote
-                    text="How may I live without my name? I have given you my soul; leave me my name!"
+                    text="I have given you my soul; leave me my name!"
                     speaker="Proctor"
                     act="Act 4"
                     analysis="Proctor separates his external confession (giving his soul) from his public identity (his name). He is willing to lie privately but not to have that lie made public -- because a public lie would define him forever. This is the moment he reclaims his integrity by refusing to let his name be used to legitimise the trials."
                   />
                   <Quote
-                    text="I have fought here three long years to bend these stiff-necked people to me"
+                    text="fought here three long years to bend these stiff-necked people to me"
                     speaker="Parris"
                     act="Act 1"
                     analysis="Parris reveals his ministry is about power, not faith. 'Bend... to me' shows he wants submission, not genuine respect. His concern is entirely about his own authority, contrasting sharply with Proctor's concern for genuine moral standing."
@@ -711,7 +711,7 @@ export default function CrucibleRevisionPage() {
                     analysis="Proctor accuses the court of inverting the moral order: destroying the righteous (Heaven) and empowering the corrupt (Abigail). The violent imagery ('pulling down,' 'raising up') shows his fury. This is the play's most direct condemnation of the trials."
                   />
                   <Quote
-                    text="I am no good man. Nothing's spoiled by giving them this lie that were not rotten long before"
+                    text="Nothing's spoiled by giving them this lie that were not rotten long before"
                     speaker="Proctor"
                     act="Act 4"
                     analysis="Proctor considers false confession, arguing he is already morally compromised. This self-loathing shows his guilt over the affair. His eventual rejection of this logic -- choosing integrity over self-condemnation -- is his redemptive arc."
@@ -729,7 +729,7 @@ export default function CrucibleRevisionPage() {
                     analysis="Abigail accuses Elizabeth of damaging her reputation -- ironic since Abigail will use the trials to destroy Elizabeth. The focus on 'name' connects to the play's broader theme of reputation. Abigail projects her own behaviour onto Elizabeth."
                   />
                   <Quote
-                    text="Let either of you breathe a word, or the edge of a word, about the other things, and I will come to you in the black of some terrible night and I will bring a pointy reckoning"
+                    text="in the black of some terrible night ... I will bring a pointy reckoning"
                     speaker="Abigail"
                     act="Act 1"
                     analysis="Abigail threatens the other girls into silence. 'Pointy reckoning' is a threat of physical violence. This speech reveals her true nature before the adult world sees her performance of innocence. She is not a victim but a calculating manipulator."
@@ -741,7 +741,7 @@ export default function CrucibleRevisionPage() {
                 <h3 className="font-bold text-foreground mb-3">{tr(`Other Characters`)}</h3>
                 <div className="grid gap-3 sm:grid-cols-2">
                   <Quote
-                    text="We are what we always were in Salem, but now the little crazy children are jangling the keys of the kingdom"
+                    text="the little crazy children are jangling the keys of the kingdom"
                     speaker="Proctor"
                     act="Act 2"
                     analysis="Proctor points out that Salem hasn't changed -- the same grudges and sins existed before. The difference is that the girls now have power ('keys of the kingdom'). 'Jangling' is dismissive -- they are playing with power they do not understand."
@@ -759,7 +759,7 @@ export default function CrucibleRevisionPage() {
                     analysis="Giles's final words as he is pressed to death with stones. By refusing to enter a plea, he prevented the court from confiscating his land (protecting his sons' inheritance). 'More weight' is an act of extraordinary defiance -- he turns his own death into a protest. It also parallels Miller's refusal to name names."
                   />
                   <Quote
-                    text="I have sins of my own to count... I counted myself so plain, so poorly made, no honest love could come to me!"
+                    text="I counted myself so plain ... no honest love could come to me!"
                     speaker="Elizabeth"
                     act="Act 4"
                     analysis="Elizabeth's moment of self-reckoning. She admits that her coldness contributed to John's affair. This is not self-blame but genuine moral accounting. By acknowledging her own imperfection, she creates the space for genuine reconciliation with John."

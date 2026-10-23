@@ -8,7 +8,7 @@ export const metadata = { title: 'Printable Worksheets - Teacher Resources' }
 const QUOTES = [
   {
     character: 'Mr Birling',
-    quote: 'a man has to mind his own business and look after himself and his own',
+    quote: 'a man has to mind his own business ... look after himself and his own',
     act: 'Act 1',
     technique: 'Rule of three / declarative statement',
     effect:
@@ -38,8 +38,10 @@ const QUOTES = [
     quote: 'Girls of that class-',
     act: 'Act 2',
     technique: "Interrupted sentence / demonstrative pronoun 'that'",
+    // 23 October 2026: this said the Inspector cuts her off. Sheila does,
+    // "urgently, cutting in", begging her mother to stop.
     effect:
-      "The dismissive demonstrative 'that class' reveals Mrs Birling's deep-rooted snobbery. The interrupted sentence (cut off by the Inspector) symbolises how the upper class's prejudiced views are being challenged. Priestley denies Mrs Birling the chance to complete her sentence, structurally silencing her classism.",
+      "The dismissive demonstrative 'that class' reveals Mrs Birling's deep-rooted snobbery. The interrupted sentence (cut off by Sheila) symbolises how the upper class's prejudiced views are being challenged. Priestley denies Mrs Birling the chance to complete her sentence, structurally silencing her classism.",
     theme: 'Class prejudice / Gender',
   },
   {
@@ -159,8 +161,7 @@ export default async function WorksheetsPage() {
           </li>
           <li className="flex gap-2">
             <span className="font-bold text-primary">2.</span>
-            Sheila: &ldquo;You mustn&apos;t try to build up a kind of wall between us and that
-            girl.&rdquo; (Act 2)
+            Sheila: &ldquo;You mustn&apos;t try to build up a kind of wall between us&rdquo; (Act 2)
           </li>
           {/* Act 2, not Act 1 as this printed until 16 October 2026: the Inspector
               says it after Mrs Birling denies recognising the photograph. */}
