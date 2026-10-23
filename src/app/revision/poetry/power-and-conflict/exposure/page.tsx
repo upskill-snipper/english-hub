@@ -687,14 +687,19 @@ const exposureData: PoemData = {
   // 1916; Owen left for France at the end of that December and was in the front line of the
   // Somme sector, at Serre and then near Beaumont Hamel, in January 1917. The winter the poem
   // draws on is 1916-17. By the winter of 1917-18 he was in Scarborough.
+  // Until 23 October 2026 the third paragraph, in English and Arabic, also said that more men
+  // died of exposure, trench foot and hypothermia than in combat in many sectors of the Western
+  // Front. Nothing checked on 16 October 2026 supports that comparison, so both now say only
+  // what the poem and Owen's letters support: the cold was the worse torment, and in the poem
+  // nobody is shot.
   context: `<p><strong>Wilfred Owen</strong> (1893--1918) is widely regarded as the greatest poet of the First World War. He enlisted in 1915 and left for France at the end of December 1916, after the Battle of the Somme had ended. From January 1917, when he joined the front line in the Somme sector, he experienced the horrors of trench warfare on the Western Front first-hand.</p>
 <p><strong>"Exposure"</strong> was drafted in 1917-18 and draws on the winter of 1916-17, one of the coldest of the war, when Owen was in the trenches near Beaumont Hamel. The poem draws directly on his letters home, in which he described the unbearable cold as a greater torment than enemy fire.</p>
-<p>The poem\'s central argument is that the soldiers\' true enemy is not the opposing army but <strong>the weather itself</strong>. More men died from exposure, trench foot, and hypothermia than from direct combat in many sectors of the Western Front. Owen challenges the patriotic propaganda of the time by showing war as futile, purposeless suffering rather than glorious sacrifice.</p>
+<p>The poem\'s central argument is that the soldiers\' true enemy is not the opposing army but <strong>the weather itself</strong>. The poem bears out what his letters say: nobody in it is shot, and the men who die are killed by the cold. Owen challenges the patriotic propaganda of the time by showing war as futile, purposeless suffering rather than glorious sacrifice.</p>
 <p>Owen was killed in action on <strong>4 November 1918</strong>, just one week before the Armistice. "Exposure" was published posthumously in 1920.</p>`,
 
   contextAr: `<p><strong>Wilfred Owen</strong> (1893-1918) يعتبر أعظم شاعر كتب عن الحرب العالمية الأولى. تطوّع سنة 1915، وسافر لفرنسا آخر ديسمبر 1916، بعد ما انتهت معركة Somme. ومن يناير 1917، لمّا دخل خط الجبهة في قطاع Somme، عاش رعب حرب الخنادق على الجبهة الغربية بنفسه.</p>
 <p>قصيدة <strong>"Exposure"</strong> كتبت مسوّداتها في 1917-18، وهي ترجع لشتاء 1916-17، واحد من أبرد شتاءات الحرب، وقت ما كان Owen في الخنادق قريب من Beaumont Hamel. القصيدة تستند مباشرة على رسائله لأهله، اللي وصف فيها البرد كعذاب أصعب من نيران العدو.</p>
-<p>الفكرة الأساسية في القصيدة إن العدو الحقيقي للجنود مو الجيش المقابل، بل <strong>الطقس نفسه</strong>. في وايد قطاعات من الجبهة الغربية، عدد اللي ماتوا من البرد و"trench foot" والـhypothermia كان أكبر من اللي ماتوا في القتال المباشر. Owen يتحدّى الدعاية الوطنية في زمنه، ويبيّن إن الحرب معاناة بلا هدف، مو تضحية مجيدة.</p>
+<p>الفكرة الأساسية في القصيدة إن العدو الحقيقي للجنود مو الجيش المقابل، بل <strong>الطقس نفسه</strong>. والقصيدة تأكّد اللي قالته رسائله: ما فيها أحد ينضرب بطلقة، واللي يموتون فيها يموتون من البرد. Owen يتحدّى الدعاية الوطنية في زمنه، ويبيّن إن الحرب معاناة بلا هدف، مو تضحية مجيدة.</p>
 <p>Owen قُتل في المعركة في <strong>4 نوفمبر 1918</strong>، أسبوع واحد بس قبل هدنة (Armistice). قصيدة "Exposure" نُشرت بعد وفاته في 1920.</p>`,
 
   summary: `"Exposure" describes a group of soldiers waiting in the trenches during a freezing winter night. Nothing happens -- no attack comes, no relief arrives. Instead, the men endure the relentless assault of icy winds, snow, and frost.

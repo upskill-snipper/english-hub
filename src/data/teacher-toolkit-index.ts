@@ -522,16 +522,6 @@ export const teacherResourceIndex: TeacherResource[] = [
   },
 
   {
-    id: 'assess-caie-mock-literature',
-    title: 'CAIE Literature: Mock Examination',
-    category: 'Assessment',
-    description: 'Mock paper for Cambridge International IGCSE Literature.',
-    suitableFor: ['IGCSE', 'CAIE', 'Literature', 'International'],
-    fileRef: 'mock-exams-caie-lit.ts',
-    tags: ['IGCSE', 'Literature', 'Cambridge', 'Assessment'],
-  },
-
-  {
     id: 'assess-marking-rubrics-essays',
     title: 'Essay Assessment Rubrics: Comprehensive Guide',
     category: 'Assessment',
