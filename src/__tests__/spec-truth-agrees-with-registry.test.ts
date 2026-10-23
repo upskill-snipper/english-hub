@@ -202,6 +202,31 @@ describe('the corrections of 23 October 2026 hold', () => {
     expect(BY_SLUG.get('blood-brothers')?.ukRightsNotice).toMatch(/Stanley Thorne/)
   })
 
+  it('puts the 7712 comparative texts in Section C, where the specification examines them', () => {
+    // Version 1.7.1, page 9: "Section B: Unseen poetry: compulsory essay
+    // question on two unseen poems", "Section C: Comparing texts: one essay
+    // question linking two texts". For a few hours on 23 October 2026 the Love
+    // poetry anthology sat in "Section B: poetry", the AS 7711 structure.
+    const aqa = SPEC_TRUTH.find((s) => s.boardId === 'aqa-a-level')!
+    for (const slug of ['la-belle-dame-sans-merci', 'jane-eyre', 'the-great-gatsby']) {
+      const component = aqa.texts.find((t) => t.slug === slug)?.component
+      expect(component, slug).toMatch(/^Paper 1 .*Section C: comparing texts/)
+      expect(component, slug).not.toMatch(/Section B/)
+    }
+  })
+
+  it('a reason that says a document was read says which document', () => {
+    // The eduqas-a-level reason named titles from "the undated set texts list"
+    // and gave no URL, so nothing in it could be checked.
+    for (const spec of UNVERIFIED_SPECS) {
+      if (/\b(was|has been|were) read\b/.test(spec.why)) {
+        expect(spec.why, spec.boardId).toMatch(/https:\/\/|\.ts\b/)
+      }
+    }
+    const eduqas = UNVERIFIED_SPECS.find((s) => s.boardId === 'eduqas-a-level')!
+    expect(eduqas.why).toMatch(/https:\/\/www\.eduqas\.co\.uk\/media\/\S+\.pdf/)
+  })
+
   it('names the Edexcel GCSE collection for each tagged poem', () => {
     const edexcel = SPEC_TRUTH.find((s) => s.boardId === 'edexcel')!
     const poems = edexcel.texts.filter((t) => t.collection)

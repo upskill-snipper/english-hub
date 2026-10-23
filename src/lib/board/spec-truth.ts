@@ -686,20 +686,29 @@ export const SPEC_TRUTH: SpecTruth[] = [
         choice: 'one of four',
         sourcePage: '17',
       },
+      // The chosen comparative texts, poetry and prose alike, are examined in
+      // Section C, "Comparing texts: one essay question linking two texts"
+      // (page 9); Section B is "Unseen poetry: compulsory essay question on two
+      // unseen poems". Page 18: "Section C of the paper for this component is
+      // open book. Students may take a copy of their prose and poetry texts
+      // into the exam." For a few hours on 23 October 2026 this file put the
+      // anthology in "Section B: poetry", which is the AS 7711 Paper 1
+      // structure (page 8), not the A-level's. Corrected the same day against
+      // Version 1.7.1.
       {
         slug: 'la-belle-dame-sans-merci',
         component:
-          'Paper 1 Love through the ages, Section B: poetry (4.1.1 chosen comparative set texts)',
+          'Paper 1 Love through the ages, Section C: comparing texts, the poetry text (4.1.1 chosen comparative set texts)',
         collection: 'AQA Anthology of Love Poetry through the Ages: Pre-1900',
         choice: 'one poetry and one prose text, one of them pre-1900',
-        sourcePage: '17; the poem is named on p.27 (NEA prohibited texts)',
+        sourcePage: '9, 17 and 18; the poem is named on p.27 (NEA prohibited texts)',
       },
       ...['jane-eyre', 'the-great-gatsby'].map((slug) => ({
         slug,
         component:
-          'Paper 1 Love through the ages, Section C: prose (4.1.1 chosen comparative set texts)',
+          'Paper 1 Love through the ages, Section C: comparing texts, the prose text (4.1.1 chosen comparative set texts)',
         choice: 'one poetry and one prose text, one of them pre-1900',
-        sourcePage: '17',
+        sourcePage: '9, 17 and 18',
       })),
       {
         slug: 'journeys-end',
@@ -851,9 +860,12 @@ export const UNVERIFIED_SPECS: { boardId: ExamBoard; qualification: string; why:
     qualification: '9ET0 (board id also covers 9EN0, which sets no literary texts)',
     why: 'Issue 11 (August 2025) not read on 2026-10-23. Its Section B options are closed lists and the registry has no option field for them.',
   },
+  // The reason below names what one document says, so it names the document.
+  // For a few hours on 23 October 2026 it cited "the undated set texts list"
+  // with no URL, and a reader could confirm none of it.
   {
     boardId: 'eduqas-a-level',
     qualification: 'A720QS (board id also covers A710QS)',
-    why: 'Only the undated WJEC Eduqas GCE English Literature set texts list was read (Components 1 and 2 of A720). Othello, The Great Gatsby and The Handmaid’s Tale are not on it and may be A710 or Component 4 texts; The Tyger and Remember depend on the Blake and Rossetti selections, which were not read. Nothing asserted.',
+    why: 'Only the WJEC Eduqas GCE English Literature Set Texts List has been read (https://www.eduqas.co.uk/media/bi1ncxwx/wjec-eduqas-gce-english-literature-set-texts-list.pdf, three pages, no date or version printed; read 2026-10-23). For A level it covers Components 1 and 2 only (PDF pages 2 and 3). Hamlet, King Lear, Antony and Cleopatra and The Tempest are on the Component 2 Section A Shakespeare list; A Streetcar Named Desire is paired with The Duchess of Malfi in Component 2 Section B; T S Eliot Selected Poems, with The Waste Land a prescribed section, is paired with Hardy in Component 1 Section B. Othello, The Great Gatsby and The Handmaid’s Tale do not appear in it. The Tyger and Remember are not named in it: Component 1 Section A prescribes Blake, Poems selected by Patti Smith (Vintage), and Rossetti, Selected Poems (Penguin Classics), by edition, and neither selection has been read. The A720QS specification itself has not been read, so nothing is asserted.',
   },
 ]
