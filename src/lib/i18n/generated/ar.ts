@@ -11680,7 +11680,7 @@ export const AR_MESSAGES: Record<string, string> = {
   'revision.ial.hero_badge': 'Pearson Edexcel International A-Level',
   'revision.ial.hero_title': 'IAL Hub مالك',
   'revision.ial.hero_body':
-    'إرشادات وحدة بوحدة، حزم امتحانات تجريبية، مقالات مصحَّحة بالذكاء الاصطناعي، ودراسة النصوص المقرّرة لـ Pearson Edexcel International A-Level English Literature (YLE0) واللغة. كل قسم أدناه مبني على مواصفات IAL - مو مستعار من UK A-Level.',
+    'إرشادات وحدة بوحدة، حزم امتحانات تجريبية، مقالات مصحَّحة بالذكاء الاصطناعي، ودراسة النصوص المقرّرة لـ Pearson Edexcel International A-Level English Literature (XET01 / YET01) واللغة. كل قسم أدناه مبني على مواصفات IAL - مو مستعار من UK A-Level.',
   'revision.ial.cta_units': 'روح للوحدات',
   'revision.ial.cta_mocks': 'حزمة الامتحانات التجريبية',
   'revision.ial.cta_ai': 'التعلّم الذاتي بالذكاء الاصطناعي',
@@ -11716,7 +11716,7 @@ export const AR_MESSAGES: Record<string, string> = {
   'revision.ial.link.exam_technique.title': 'أسلوب الامتحان',
   'revision.ial.link.exam_technique.body': 'بنى المقالات والتوقيت',
   'revision.ial.footnote':
-    'متوافق مع مواصفات Pearson Edexcel International A-Level English Literature (YLE0) وEnglish Language (WEN0). دايماً راجع المواصفة الحية الحالية قبل التسجيل في الامتحان. يُضاف محتوى جديد وحزم تجريبية بانتظام.',
+    'متوافق مع مواصفات Pearson Edexcel International A-Level English Literature (XET01 / YET01، الإصدار ٧) وEnglish Language. دايماً راجع المواصفة الحية الحالية قبل التسجيل في الامتحان. يُضاف محتوى جديد وحزم تجريبية بانتظام.',
   'revision.common_errors.breadcrumb_label': 'الأخطاء الشائعة',
   'revision.common_errors.hero_badge': 'مكتبة موثّقة',
   'revision.common_errors.hero_title': '{count} خطأ يكلّفك درجات',

@@ -299,12 +299,26 @@ export const SET_TEXTS: SetText[] = [
   },
 
   // ── A-Level - Shakespeare tragedies & histories ────────────────────────────
+  // AQA A-LEVEL TAGS REMOVED 23 October 2026 from Hamlet, King Lear, A Doll's
+  // House and My Last Duchess. The aqa-a-level board is "AQA A-Level English
+  // Literature (7712) & Language (7702)" (board-config.ts). The 7712
+  // specification (Version 1.7.1, 1 October 2025) sets four Shakespeare plays
+  // for Love through the ages, Othello, The Taming of the Shrew, Measure for
+  // Measure and The Winter's Tale (page 12), and neither Hamlet nor King Lear
+  // appears anywhere in the document; A Doll's House appears only as a
+  // "possible" pre-1900 text for non-exam assessment (page 24), which is not a
+  // set text; My Last Duchess does not appear. All four ARE set by AQA English
+  // Literature B (7717, Version 1.4, 16 October 2021): King Lear in Aspects of
+  // tragedy (page 15), Hamlet and My Last Duchess in Elements of crime writing
+  // (page 24), A Doll's House in Elements of political and social protest
+  // writing (page 26). 7717 has no board id here, so the tag said 7712 sets
+  // them, which it does not. Splitting the id is separate work.
   {
     slug: 'hamlet',
     title: 'Hamlet',
     author: 'William Shakespeare',
     category: 'shakespeare',
-    boards: ['aqa-a-level', 'edexcel-a-level', 'ocr-a-level', 'eduqas-a-level', 'ial-edexcel'],
+    boards: ['edexcel-a-level', 'ocr-a-level', 'eduqas-a-level', 'ial-edexcel'],
     copyrightStatus: 'public-domain',
   },
   {
@@ -312,7 +326,7 @@ export const SET_TEXTS: SetText[] = [
     title: 'King Lear',
     author: 'William Shakespeare',
     category: 'shakespeare',
-    boards: ['aqa-a-level', 'edexcel-a-level', 'ocr-a-level', 'eduqas-a-level', 'ial-edexcel'],
+    boards: ['edexcel-a-level', 'ocr-a-level', 'eduqas-a-level', 'ial-edexcel'],
     copyrightStatus: 'public-domain',
   },
   {
@@ -330,7 +344,15 @@ export const SET_TEXTS: SetText[] = [
     title: 'The Waste Land',
     author: 'T.S. Eliot',
     category: 'poetry-anthology',
-    boards: ['edexcel-a-level', 'ocr-a-level', 'eduqas-a-level'],
+    // OCR A-LEVEL TAG REMOVED 23 October 2026. In OCR H472 (Version 2.1, July
+    // 2026) "The Waste Land and Other Poems" appears once, on page 42, in the
+    // Literature post-1900 non-exam assessment component's list of SUGGESTED
+    // texts, which page 41 calls "suggestions and exemplars" from which
+    // "centres and learners are free to choose their own texts". It is on no
+    // examined component's set text list. Eduqas A720 sets Eliot's Selected
+    // Poems, with The Waste Land a prescribed section, paired with Hardy
+    // (set texts list, page 2).
+    boards: ['edexcel-a-level', 'eduqas-a-level'],
     copyrightStatus: 'copyright',
   },
   {
@@ -361,8 +383,14 @@ export const SET_TEXTS: SetText[] = [
     slug: 'a-dolls-house',
     title: "A Doll's House",
     author: 'Henrik Ibsen',
+    // Filed under 'modern' although OCR H472 lists it as pre-1900 drama (page
+    // 6); the category is a site-wide label and changing it is recorded, not
+    // done, in the 23 October 2026 work.
     category: 'modern',
-    boards: ['aqa-a-level', 'ocr-a-level'],
+    // aqa-a-level removed 23 October 2026: see the note above Hamlet. OCR H472
+    // sets it in Component 01 Section 2, pre-1900 drama, in the list for
+    // examination until 2028 and in the list from 2029 (page 6).
+    boards: ['ocr-a-level'],
     copyrightStatus: 'public-domain',
   },
 
@@ -793,7 +821,10 @@ export const SET_TEXTS: SetText[] = [
     title: 'My Last Duchess',
     author: 'Robert Browning',
     category: 'poetry-anthology',
-    boards: ['edexcel-igcse', 'aqa', 'edexcel', 'ial-edexcel', 'aqa-a-level', 'edexcel-a-level'],
+    // aqa-a-level removed 23 October 2026: see the note above Hamlet. The
+    // 7712 anthology of love poetry through the ages does not include it; 7717
+    // sets it in Elements of crime writing (page 24).
+    boards: ['edexcel-igcse', 'aqa', 'edexcel', 'ial-edexcel', 'edexcel-a-level'],
     copyrightStatus: 'public-domain',
     year: '1842',
     keyThemes: ['Power', 'Jealousy', 'Control', 'Possession'],

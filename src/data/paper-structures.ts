@@ -1322,26 +1322,31 @@ const CAMBRIDGE_0475_PAPERS: Paper[] = [
 ]
 
 // ─── International A-Level Edexcel ─────────────────────────────────
+//
+// CORRECTED 23 October 2026 against Pearson Edexcel International Advanced
+// Subsidiary/Advanced Level in English Literature (XET01/YET01), Issue 7,
+// February 2026, pages 7-10. The three entries here carried the English
+// LANGUAGE unit codes (WEN01 to WEN03), gave Unit 1 as 2h 15m and 80 marks,
+// Unit 2 as 1h 30m and 60 marks with "Extract-based" questions, and called
+// Unit 3 "Coursework / Extended Essay". The Literature qualification has four
+// externally examined units, WET01/01 to WET04/01, each a two-hour, 50-mark,
+// open-book paper, and no coursework.
 
 const IAL_EDEXCEL_PAPERS: Paper[] = [
   {
     id: 'ial-unit1',
     name: 'Unit 1',
     subtitle: 'Post-2000 Poetry and Prose',
-    examCode: 'WEN01/01',
-    duration: '2h 15m',
-    totalMarks: 80,
+    examCode: 'WET01/01',
+    duration: '2h',
+    totalMarks: 50,
     colour: 'teal',
     sections: [
       {
         title: 'Section A: Post-2000 Poetry',
-        description: 'One comparative essay question on an unseen poem and a studied collection.',
+        description:
+          'One comparative essay, from a choice of two, on one named poem from Poems of the Decade and a second poem of your choice from the prescribed list (25 marks). Open book.',
         links: [
-          {
-            label: 'Unseen Poetry Practice',
-            href: '/revision/poetry/unseen-poetry',
-            type: 'practice',
-          },
           {
             label: 'Essay Structure Guide',
             href: '/revision/exam-technique/essay-structure',
@@ -1353,7 +1358,7 @@ const IAL_EDEXCEL_PAPERS: Paper[] = [
       {
         title: 'Section B: Post-2000 Prose',
         description:
-          'One essay question on a studied prose text - close reading and wider textual knowledge.',
+          'One essay, from a choice of two, on your prose text, chosen from five (25 marks). Open book.',
         links: [
           { label: 'Reading Skills Guide', href: '/revision/language/reading', type: 'technique' },
           {
@@ -1369,17 +1374,17 @@ const IAL_EDEXCEL_PAPERS: Paper[] = [
     id: 'ial-unit2',
     name: 'Unit 2',
     subtitle: 'Drama',
-    examCode: 'WEN02/01',
-    duration: '1h 30m',
-    totalMarks: 60,
+    examCode: 'WET02/01',
+    duration: '2h',
+    totalMarks: 50,
     colour: 'clay',
     sections: [
       {
-        title: 'Drama',
+        title: 'Section A: Pre-1900 Drama',
         description:
-          'One essay question on a studied drama text. Extract-based or discursive question.',
+          'One essay, from a choice of two, on your pre-1900 play, chosen from five (25 marks). Open book.',
         links: [
-          { label: 'Macbeth Study Guide', href: '/revision/texts/macbeth', type: 'text' },
+          { label: 'Othello Study Guide', href: '/revision/texts/othello', type: 'text' },
           {
             label: 'Essay Structure Guide',
             href: '/revision/exam-technique/essay-structure',
@@ -1388,30 +1393,80 @@ const IAL_EDEXCEL_PAPERS: Paper[] = [
           { label: 'IAL Mock Exams', href: '/mock-exams?paper=ial', type: 'mock' },
         ],
       },
+      {
+        title: 'Section B: Post-1900 Drama',
+        description:
+          'One essay, from a choice of two, on your post-1900 play, chosen from five (25 marks). Open book.',
+        links: [
+          {
+            label: 'A Streetcar Named Desire Study Guide',
+            href: '/revision/texts/a-streetcar-named-desire',
+            type: 'text',
+          },
+        ],
+      },
     ],
   },
   {
     id: 'ial-unit3',
     name: 'Unit 3',
-    subtitle: 'Coursework / Extended Essay',
-    examCode: 'WEN03/01',
-    duration: 'Coursework',
-    totalMarks: 60,
+    subtitle: 'Poetry and Prose',
+    examCode: 'WET03/01',
+    duration: '2h',
+    totalMarks: 50,
     colour: 'sage',
     sections: [
       {
-        title: 'Coursework Portfolio',
+        title: 'Section A: Poetry',
+        description: 'One essay on a post-1900 unseen poem (20 marks).',
+        links: [
+          {
+            label: 'Unseen Poetry Practice',
+            href: '/revision/poetry/unseen-poetry',
+            type: 'practice',
+          },
+        ],
+      },
+      {
+        title: 'Section B: Prose',
         description:
-          'Two essays: one re-creative piece with commentary and one comparative essay across two texts.',
+          'One comparative essay, from a choice of two, on your two prose texts from one theme (30 marks). Open book.',
         links: [
           {
             label: 'Essay Structure Guide',
             href: '/revision/exam-technique/essay-structure',
             type: 'technique',
           },
+        ],
+      },
+    ],
+  },
+  {
+    id: 'ial-unit4',
+    name: 'Unit 4',
+    subtitle: 'Shakespeare and Pre-1900 Poetry',
+    examCode: 'WET04/01',
+    duration: '2h',
+    totalMarks: 50,
+    colour: 'ochre',
+    sections: [
+      {
+        title: 'Section A: Shakespeare',
+        description:
+          'One essay, from a choice of two, on your play: Hamlet, King Lear, Measure for Measure or The Taming of the Shrew (25 marks). Open book.',
+        links: [
+          { label: 'Hamlet Study Guide', href: '/revision/texts/hamlet', type: 'text' },
+          { label: 'King Lear Study Guide', href: '/revision/texts/king-lear', type: 'text' },
+        ],
+      },
+      {
+        title: 'Section B: Pre-1900 Poetry',
+        description:
+          'One essay, from a choice of two, on your prescribed collection from one literary movement: Metaphysical Poets, the Victorians or the Romantics (25 marks). Open book.',
+        links: [
           {
-            label: 'Creative Writing Guide',
-            href: '/revision/language/writing',
+            label: 'Essay Structure Guide',
+            href: '/revision/exam-technique/essay-structure',
             type: 'technique',
           },
         ],

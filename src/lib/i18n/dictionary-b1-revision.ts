@@ -754,10 +754,14 @@ export const B1_REVISION_DICTIONARY: Record<string, { en: string; ar: string; es
     ar: 'IAL Hub مالك',
     es: 'Tu Hub de IAL',
   },
+  // "(YLE0)" until 23 October 2026. It is not a Pearson code. The
+  // specification's cover (Issue 7, February 2026) gives XET01 for the
+  // International Advanced Subsidiary and YET01 for the International
+  // Advanced Level.
   'revision.ial.hero_body': {
-    en: 'Unit-by-unit guidance, mock exam packs, AI-marked essays, and set-text study for Pearson Edexcel International A-Level English Literature (YLE0) and Language. Every section below is built around the IAL specification - not borrowed from UK A-Level.',
-    ar: 'إرشادات وحدة بوحدة، حزم امتحانات تجريبية، مقالات مصحَّحة بالذكاء الاصطناعي، ودراسة النصوص المقرّرة لـ Pearson Edexcel International A-Level English Literature (YLE0) واللغة. كل قسم أدناه مبني على مواصفات IAL - مو مستعار من UK A-Level.',
-    es: 'Orientación unidad por unidad, paquetes de exámenes de prueba, ensayos corregidos con IA y estudio de textos prescritos para Pearson Edexcel International A-Level English Literature (YLE0) y Language. Cada sección de abajo está construida en torno a la especificación de IAL, no tomada prestada del UK A-Level.',
+    en: 'Unit-by-unit guidance, mock exam packs, AI-marked essays, and set-text study for Pearson Edexcel International A-Level English Literature (XET01 / YET01) and Language. Every section below is built around the IAL specification - not borrowed from UK A-Level.',
+    ar: 'إرشادات وحدة بوحدة، حزم امتحانات تجريبية، مقالات مصحَّحة بالذكاء الاصطناعي، ودراسة النصوص المقرّرة لـ Pearson Edexcel International A-Level English Literature (XET01 / YET01) واللغة. كل قسم أدناه مبني على مواصفات IAL - مو مستعار من UK A-Level.',
+    es: 'Orientación unidad por unidad, paquetes de exámenes de prueba, ensayos corregidos con IA y estudio de textos prescritos para Pearson Edexcel International A-Level English Literature (XET01 / YET01) y Language. Cada sección de abajo está construida en torno a la especificación de IAL, no tomada prestada del UK A-Level.',
   },
   'revision.ial.cta_units': {
     en: 'Jump to units',
@@ -909,10 +913,14 @@ export const B1_REVISION_DICTIONARY: Record<string, { en: string; ar: string; es
     ar: 'بنى المقالات والتوقيت',
     es: 'Estructuras de ensayo + tiempo',
   },
+  // "(YLE0)" and "(WEN0)" until 23 October 2026. Neither is a specification
+  // code: the Literature codes are XET01 (IAS) and YET01 (IAL), Issue 7,
+  // February 2026, cover. WEN01 to WEN04 are the Language UNIT codes, and the
+  // Language specification was not read, so no code is printed for it.
   'revision.ial.footnote': {
-    en: 'Aligned with the Pearson Edexcel International A-Level English Literature (YLE0) and English Language (WEN0) specifications. Always cross-check with the current live specification before exam entry. New content and mock packs are added regularly.',
-    ar: 'متوافق مع مواصفات Pearson Edexcel International A-Level English Literature (YLE0) وEnglish Language (WEN0). دايماً راجع المواصفة الحية الحالية قبل التسجيل في الامتحان. يُضاف محتوى جديد وحزم تجريبية بانتظام.',
-    es: 'Alineado con las especificaciones de Pearson Edexcel International A-Level English Literature (YLE0) y English Language (WEN0). Coteja siempre con la especificación vigente actual antes de inscribirte en el examen. Se añaden contenido nuevo y paquetes de prueba con regularidad.',
+    en: 'Aligned with the Pearson Edexcel International A-Level English Literature (XET01 / YET01, Issue 7) and English Language specifications. Always cross-check with the current live specification before exam entry. New content and mock packs are added regularly.',
+    ar: 'متوافق مع مواصفات Pearson Edexcel International A-Level English Literature (XET01 / YET01، الإصدار ٧) وEnglish Language. دايماً راجع المواصفة الحية الحالية قبل التسجيل في الامتحان. يُضاف محتوى جديد وحزم تجريبية بانتظام.',
+    es: 'Alineado con las especificaciones de Pearson Edexcel International A-Level English Literature (XET01 / YET01, Issue 7) y English Language. Coteja siempre con la especificación vigente actual antes de inscribirte en el examen. Se añaden contenido nuevo y paquetes de prueba con regularidad.',
   },
 
   // ─── revision/common-errors/page.tsx (server) ────────────────────────────

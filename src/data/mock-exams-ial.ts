@@ -4,6 +4,17 @@
 // IAL exam: unseen + named-text comparisons, timed extended responses, and
 // AO5 critical-perspective prompts at A2.
 //
+// THAT PARAGRAPH IS NOT TRUE OF THE SPECIFICATION, recorded 23 October 2026.
+// Pearson's Issue 7 (February 2026, pages 7-10) has Unit 1 Post-2000 Poetry
+// and Prose, Unit 2 Drama, Unit 3 Poetry and Prose (unseen poem and a two-text
+// prose comparison) and Unit 4 Shakespeare and Pre-1900 Poetry, every unit two
+// hours, 50 marks and open book. These papers model older unit names, 2h 15m
+// and 1h 45m timings and 60- and 40-mark totals. The `spec` field below gave a
+// code, "YLE0", that Pearson has never used; it now gives the real ones
+// (XET01 for the IAS, YET01 for the IAL). Rewriting the papers to the real
+// units is content work and has not been done. src/app/revision/ial/page.tsx
+// now describes the real units; its mock cards still describe these papers.
+//
 // The extracts below are either public-domain (Victorian poetry, Shakespeare,
 // pre-1900 prose) or concise placeholder summaries of copyrighted source
 // material - the mock engine uses them for practice, not republication.
@@ -27,7 +38,7 @@ const WET01: MockExamPaper = {
   qualification: 'International A-Level',
   subject: 'English Literature',
   paper: 'Unit 1',
-  spec: 'Pearson Edexcel IAL YLE0',
+  spec: 'Pearson Edexcel IAL English Literature (XET01 / YET01)',
   description:
     'Section A: unseen post-1900 poem linked to a named anthology poem. Section B: open essay on a studied drama text. 2h 15m, 60 marks total.',
   sections: [
@@ -98,7 +109,7 @@ const WET02: MockExamPaper = {
   qualification: 'International A-Level',
   subject: 'English Literature',
   paper: 'Unit 2',
-  spec: 'Pearson Edexcel IAL YLE0',
+  spec: 'Pearson Edexcel IAL English Literature (XET01 / YET01)',
   description:
     'Single comparative essay on two prose texts from different time periods (one pre-1900, one post-1900), linked by a shared theme. 1h 45m, 40 marks.',
   sections: [
@@ -144,7 +155,7 @@ const WET03: MockExamPaper = {
   qualification: 'International A-Level',
   subject: 'English Literature',
   paper: 'Unit 3',
-  spec: 'Pearson Edexcel IAL YLE0',
+  spec: 'Pearson Edexcel IAL English Literature (XET01 / YET01)',
   description:
     'Section A: unseen pre-1900 poem linked to the pre-1900 anthology. Section B: prose essay with named critical perspective. A2 introduces AO5 - alternative interpretations. 2h 15m, 60 marks.',
   sections: [
@@ -217,7 +228,7 @@ const WET04: MockExamPaper = {
   qualification: 'International A-Level',
   subject: 'English Literature',
   paper: 'Unit 4',
-  spec: 'Pearson Edexcel IAL YLE0',
+  spec: 'Pearson Edexcel IAL English Literature (XET01 / YET01)',
   description:
     'Section A: Shakespeare essay with named critical perspective. Section B: pre-1900 drama essay with named critical perspective. Both sections assess AO1, AO2, AO3 and AO5. 2h 15m, 60 marks.',
   sections: [

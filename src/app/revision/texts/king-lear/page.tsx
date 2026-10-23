@@ -38,7 +38,11 @@ const data: TextGuideData = {
   author: 'William Shakespeare',
   year: 'c. 1605\u201306',
   category: 'Play',
-  badge: 'Edexcel A-Level / AQA A-Level / OCR A-Level / Eduqas A-Level / Edexcel IAL',
+  // Matches the registry row (spec-truth-agrees-with-registry.test.ts checks
+  // it). "AQA A-Level" removed 23 October 2026: AQA 7712 names King Lear
+  // nowhere (Version 1.7.1); it is an AQA 7717 Aspects of tragedy text
+  // (Version 1.4, page 15), and 7717 has no board id.
+  badge: 'Edexcel A-Level / OCR A-Level / Eduqas A-Level / Edexcel IAL',
   intro:
     'King Lear is about a king who gives away his power in exchange for flattery and then finds out what he is worth without it. Lear divides his kingdom between the two daughters who tell him what he wants to hear and disinherits Cordelia, the one who refuses, and within two acts the elder sisters have stripped him of every attendant and turned him out into a storm. Shakespeare tells the same story twice over: the Earl of Gloucester is also tricked into rejecting the child who loves him, and is blinded on stage for helping the King. It is his bleakest tragedy, and it asks what holds a family, a society or a mind together once authority has gone.',
   quickInfo: {

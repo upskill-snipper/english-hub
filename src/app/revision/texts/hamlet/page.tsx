@@ -47,9 +47,14 @@ const data: TextGuideData = {
   author: 'William Shakespeare',
   year: 'c. 1599\u20131601',
   category: 'Play',
-  badge: 'AQA A-Level / Edexcel A-Level / OCR A-Level / Eduqas A-Level / Edexcel IAL',
+  // Matches the registry row (spec-truth-agrees-with-registry.test.ts checks
+  // it). "AQA A-Level" removed 23 October 2026: AQA 7712 sets Othello, The
+  // Taming of the Shrew, Measure for Measure and The Winter's Tale (Version
+  // 1.7.1, page 12) and names Hamlet nowhere; Hamlet is an AQA 7717 text
+  // (Elements of crime writing, Version 1.4, page 24), and 7717 has no board id.
+  badge: 'Edexcel A-Level / OCR A-Level / Eduqas A-Level / Edexcel IAL',
   intro:
-    'Shakespeare\u2019s longest and most philosophically searching tragedy, Hamlet follows a young prince of Denmark commanded by his father\u2019s ghost to avenge a secret murder. Written around 1599\u20131601, at the turn of a new century and the end of the Elizabethan age, the play takes the conventions of the revenge tragedy and turns them inwards, producing a protagonist who cannot simply act. Hamlet delays, philosophises, stages a play, feigns madness, and agonises over the meaning of existence itself. The play explores the collapse of a court corrupted from within, the unstable boundary between performance and truth, and the tension between moral thought and violent action. Its central soliloquies \u2014 including "To be, or not to be" \u2014 have become defining statements of existential crisis in Western literature. Hamlet appears on every major A-Level specification and remains Shakespeare\u2019s most quoted and most debated play.',
+    'Shakespeare\u2019s longest and most philosophically searching tragedy, Hamlet follows a young prince of Denmark commanded by his father\u2019s ghost to avenge a secret murder. Written around 1599\u20131601, at the turn of a new century and the end of the Elizabethan age, the play takes the conventions of the revenge tragedy and turns them inwards, producing a protagonist who cannot simply act. Hamlet delays, philosophises, stages a play, feigns madness, and agonises over the meaning of existence itself. The play explores the collapse of a court corrupted from within, the unstable boundary between performance and truth, and the tension between moral thought and violent action. Its central soliloquies \u2014 including "To be, or not to be" \u2014 have become defining statements of existential crisis in Western literature. Hamlet is set by Edexcel, OCR and Eduqas at A-level and by Pearson\u2019s International A-level, though not by AQA\u2019s Literature A (7712), and remains Shakespeare\u2019s most quoted and most debated play.',
   quickInfo: {
     genre: 'Revenge tragedy',
     setting: 'Elsinore Castle, Denmark',

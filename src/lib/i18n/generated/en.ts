@@ -11946,7 +11946,7 @@ export const EN_MESSAGES: Record<string, string> = {
   'revision.ial.hero_badge': 'Pearson Edexcel International A-Level',
   'revision.ial.hero_title': 'Your IAL Hub',
   'revision.ial.hero_body':
-    'Unit-by-unit guidance, mock exam packs, AI-marked essays, and set-text study for Pearson Edexcel International A-Level English Literature (YLE0) and Language. Every section below is built around the IAL specification - not borrowed from UK A-Level.',
+    'Unit-by-unit guidance, mock exam packs, AI-marked essays, and set-text study for Pearson Edexcel International A-Level English Literature (XET01 / YET01) and Language. Every section below is built around the IAL specification - not borrowed from UK A-Level.',
   'revision.ial.cta_units': 'Jump to units',
   'revision.ial.cta_mocks': 'Mock exam pack',
   'revision.ial.cta_ai': 'AI self-learning',
@@ -11983,7 +11983,7 @@ export const EN_MESSAGES: Record<string, string> = {
   'revision.ial.link.exam_technique.title': 'Exam Technique',
   'revision.ial.link.exam_technique.body': 'Essay structures + timing',
   'revision.ial.footnote':
-    'Aligned with the Pearson Edexcel International A-Level English Literature (YLE0) and English Language (WEN0) specifications. Always cross-check with the current live specification before exam entry. New content and mock packs are added regularly.',
+    'Aligned with the Pearson Edexcel International A-Level English Literature (XET01 / YET01, Issue 7) and English Language specifications. Always cross-check with the current live specification before exam entry. New content and mock packs are added regularly.',
   'revision.common_errors.breadcrumb_label': 'Common Errors',
   'revision.common_errors.hero_badge': 'Verified library',
   'revision.common_errors.hero_title': '{count} Mistakes That Cost Marks',

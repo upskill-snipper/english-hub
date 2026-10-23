@@ -165,7 +165,11 @@ describe('the boards whose specification has not been read', () => {
     // So this now asserts the fix. If the four lists ever become identical
     // again, something has re-applied a blanket.
     const aLevel = SET_TEXTS.filter((t) => t.boards.includes('aqa-a-level'))
-    expect(aLevel.length, 'the AQA A-Level shelf has emptied').toBeGreaterThan(8)
+    // Eight on 23 October 2026, down from twelve: Hamlet, King Lear, A Doll's
+    // House and My Last Duchess were 7717 texts tagged to the 7712 board (see
+    // set-texts.ts). The floor is a vacuity guard, not a fact about AQA, and
+    // was lowered with the removal rather than left to block it.
+    expect(aLevel.length, 'the AQA A-Level shelf has emptied').toBeGreaterThan(7)
     const identical = aLevel.filter(
       (t) =>
         t.boards.includes('edexcel-a-level') &&

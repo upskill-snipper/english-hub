@@ -48,15 +48,28 @@ export const metadata: Metadata = {
   },
 }
 
-// ─── Unit structure (Pearson IAL English Literature YLE0 / WET04) ─────────
-// International A-Level English Literature is modular (AS + A2). Unit data
-// below is compiled from the Pearson IAL specification - always cross-check
-// against the current live specification before exam entry.
+// ─── Unit structure (Pearson IAL English Literature XET01 / YET01) ────────
+//
+// CORRECTED 23 October 2026 against the specification itself: Pearson Edexcel
+// International Advanced Subsidiary (XET01) and International Advanced Level
+// (YET01) in English Literature, Issue 7, February 2026, pages 7-12. Until
+// then this table described a qualification Pearson does not run. It called
+// Unit 1 "Poetry and Drama" (it is Post-2000 Poetry and Prose), Unit 2 "Prose"
+// (it is Drama), Unit 4 "Shakespeare and Pre-1900 Drama" (it is Shakespeare
+// and Pre-1900 Poetry); it made every unit closed book (all four are open
+// book, page 7, 8, 9 and 10); it gave durations of 2h 15m and 1h 45m (every
+// unit is a 2-hour, 50-mark paper); it weighted the units 40/60 (Units 1 and
+// 2 are each 50% of the IAS and 25% of the IAL; Units 3 and 4 are each 25% of
+// the IAL); and its heading named the code "YLE0", which is not a Pearson
+// code. The unit codes WET01/01 to WET04/01 were right.
+//
+// Nothing here is paraphrased from memory: the summaries use the
+// specification's own section names and AO lists.
 
 interface Unit {
   code: string
   name: string
-  level: 'AS' | 'A2'
+  level: 'IAS' | 'IA2'
   weight: string
   duration: string
   summary: string
@@ -67,66 +80,66 @@ interface Unit {
 const UNITS: Unit[] = [
   {
     code: 'WET01',
-    name: 'Poetry and Drama',
-    level: 'AS',
-    weight: '40% of AS / 20% of full IAL',
-    duration: '2h 15m',
+    name: 'Post-2000 Poetry and Prose',
+    level: 'IAS',
+    weight: '50% of IAS / 25% of IAL',
+    duration: '2 hours, 50 marks',
     summary:
-      'Closed-book. One post-1900 poetry collection and one drama text. Section A is an unseen poem comparison with a named anthology poem. Section B is an open essay on the drama text.',
-    assessedAOs: 'AO1, AO2, AO3, AO4',
+      'Open book. Section A, Post-2000 Poetry: one comparative essay from a choice of two on one named poem from Poems of the Decade plus a second poem of your choice from the prescribed list. Section B, Post-2000 Prose: one essay from a choice of two on your prose text, chosen from five.',
+    assessedAOs: 'Section A: AO1, AO2, AO4. Section B: AO1, AO2, AO3',
     keyComponents: [
-      'Unseen poem + anthology comparison (Section A)',
-      'Drama text essay (Section B) - choice of two questions',
-      'Handwritten essay responses',
-      'Accurate literary terminology and methods-focused analysis',
+      'Section A: Poems of the Decade, one named poem compared with one of your choice (25 marks)',
+      'Section B: one post-2000 novel from five (25 marks)',
+      'Open book: clean copies of the texts go into the exam',
+      'Available January and June',
     ],
   },
   {
     code: 'WET02',
-    name: 'Prose',
-    level: 'AS',
-    weight: '60% of AS / 30% of full IAL',
-    duration: '1h 45m',
+    name: 'Drama',
+    level: 'IAS',
+    weight: '50% of IAS / 25% of IAL',
+    duration: '2 hours, 50 marks',
     summary:
-      'Closed-book. Comparison essay on two prose texts from different time periods, linked by a shared theme. Strong comparative scaffolding is essential.',
-    assessedAOs: 'AO1, AO2, AO3, AO4',
+      'Open book. One pre-1900 drama text from a choice of five (Section A) and one post-1900 drama text from a choice of five (Section B), one essay from a choice of two on each.',
+    assessedAOs: 'AO1, AO2, AO3, AO5 in both sections',
     keyComponents: [
-      'Comparative essay - two prose texts on a shared theme',
-      'One pre-1900, one post-1900 (typical pairing)',
-      'Single extended response',
-      'Connections AND differences required across both texts',
+      'Section A: pre-1900 drama, including Othello and Twelfth Night (25 marks)',
+      'Section B: post-1900 drama, including A Streetcar Named Desire (25 marks)',
+      'AO5 is assessed here at IAS, not only at IA2',
+      'Open book: clean copies of the texts go into the exam',
     ],
   },
   {
     code: 'WET03',
-    name: 'Poetry and Prose (A2)',
-    level: 'A2',
-    weight: '40% of A2 / 20% of full IAL',
-    duration: '2h 15m',
+    name: 'Poetry and Prose',
+    level: 'IA2',
+    weight: '25% of IAL',
+    duration: '2 hours, 50 marks',
     summary:
-      'Closed-book. Pre-1900 poetry anthology (Section A, unseen + anthology link) and a prose-study question (Section B). Harder analytical expectations than AS.',
-    assessedAOs: 'AO1, AO2, AO3, AO4, AO5',
+      'Open book. Section A: one essay on a post-1900 unseen poem. Section B: one comparative essay from a choice of two on your two prose texts, chosen from three within one of four themes (Growing Up; Colonisation and After; Science and Society; Women and Society).',
+    assessedAOs: 'Section A: AO1, AO2. Section B: AO1, AO2, AO3, AO4',
     keyComponents: [
-      'Unseen pre-1900 poem linked to anthology (Section A)',
-      'Prose essay with named critical perspective (Section B)',
-      'AO5 - engagement with alternative interpretations',
-      'Historical context integrated, not bolted on',
+      'Section A: unseen post-1900 poem (20 marks)',
+      'Section B: two prose texts from one theme, compared (30 marks)',
+      'The themed lists include Great Expectations, Frankenstein, The Handmaid’s Tale and Never Let Me Go',
+      'Open book: clean copies of the texts go into the exam',
     ],
   },
   {
     code: 'WET04',
-    name: 'Shakespeare and Pre-1900 Drama',
-    level: 'A2',
-    weight: '60% of A2 / 30% of full IAL',
-    duration: '2h 15m',
+    name: 'Shakespeare and Pre-1900 Poetry',
+    level: 'IA2',
+    weight: '25% of IAL',
+    duration: '2 hours, 50 marks',
     summary:
-      'Closed-book. One Shakespeare play and one other pre-1900 drama text. Both essays require named critical perspectives and sustained contextual reading.',
-    assessedAOs: 'AO1, AO2, AO3, AO4, AO5',
+      'Open book. Section A: one essay from a choice of two on your Shakespeare play, chosen from Hamlet, King Lear, Measure for Measure and The Taming of the Shrew. Section B: one essay from a choice of two on your prescribed pre-1900 poetry collection, from one literary movement (Metaphysical Poets, the Victorians or the Romantics).',
+    assessedAOs: 'AO1, AO2, AO3, AO5 in both sections',
     keyComponents: [
-      'Shakespeare essay (Section A)',
-      'Pre-1900 drama essay (Section B)',
-      'AO5 - named critics or theoretical framings',
-      'Deep AO3 (context as argument, not backdrop)',
+      'Section A: Shakespeare, one of four plays (25 marks)',
+      'Section B: pre-1900 poetry from one movement (25 marks)',
+      'AO5: other readers’ interpretations, weighed against your own',
+      'Open book: clean copies of the texts go into the exam',
     ],
   },
 ]
@@ -171,8 +184,10 @@ const AOS: AO[] = [
   },
   {
     code: 'AO5',
-    name: 'Evaluate alternative interpretations (A2 only)',
-    weight: '~15% A2 papers',
+    // "(A2 only)" until 23 October 2026. The specification assesses AO5 in
+    // Unit 2 (Drama) at IAS as well as in Unit 4 (Issue 7, pages 8 and 10).
+    name: 'Explore other readers’ interpretations (Units 2 and 4)',
+    weight: 'Units 2 and 4',
     summary:
       "Name critics or critical positions, then defend your own reading against them. Feminist, Marxist, New Historicist, psychoanalytic frames all count - as long as they're used accurately.",
   },
@@ -297,13 +312,17 @@ const PITFALLS = [
     title: 'Treating IAL like UK A-Level',
     body: "IAL is MODULAR - four exams spread across AS + A2 - whereas UK A-Level since 2015 is linear. Your revision should target each unit at its own exam window; don't try to revise everything at once.",
   },
+  // Both of these said something the specification does not (corrected 23
+  // October 2026, Issue 7, pages 8-10): AO5 is assessed in Units 2 and 4, not
+  // in Unit 3; and the two-text comparison is Unit 3 Section B, two prose
+  // texts from one theme, not Unit 2, which is drama.
   {
-    title: 'Under-using AO5 at A2',
-    body: 'Unit 3 and Unit 4 markers award for engagement with critical perspectives. A single named critic or framing used well is worth more than a plot-heavy narrative. Learn 2-3 critics per A2 text.',
+    title: 'Under-using AO5 in the drama and Shakespeare units',
+    body: 'Unit 2 and Unit 4 markers award for engagement with other readers’ interpretations. A single named critic or framing used well is worth more than a plot-heavy narrative. Learn 2-3 critics per text in those units. Unit 3 does not assess AO5.',
   },
   {
-    title: 'Forgetting the cross-period pairing in Unit 2',
-    body: 'Unit 2 requires one pre-1900 and one post-1900 prose text, chosen by the student. Candidates who pair two similar texts miss easy AO4 comparative marks. Deliberately pick texts that contrast.',
+    title: 'Forgetting that Unit 3 Section B is a comparison',
+    body: 'Unit 3 Section B requires two prose texts from one theme, compared in a single essay. Candidates who treat it as two separate essays miss the AO4 marks. Plan the comparison before the first paragraph.',
   },
   {
     title: 'Context as a separate paragraph',

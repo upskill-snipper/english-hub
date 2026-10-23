@@ -12259,7 +12259,7 @@ export const ES_MESSAGES: Record<string, string> = {
   'revision.ial.hero_badge': 'Pearson Edexcel International A-Level',
   'revision.ial.hero_title': 'Tu Hub de IAL',
   'revision.ial.hero_body':
-    'Orientación unidad por unidad, paquetes de exámenes de prueba, ensayos corregidos con IA y estudio de textos prescritos para Pearson Edexcel International A-Level English Literature (YLE0) y Language. Cada sección de abajo está construida en torno a la especificación de IAL, no tomada prestada del UK A-Level.',
+    'Orientación unidad por unidad, paquetes de exámenes de prueba, ensayos corregidos con IA y estudio de textos prescritos para Pearson Edexcel International A-Level English Literature (XET01 / YET01) y Language. Cada sección de abajo está construida en torno a la especificación de IAL, no tomada prestada del UK A-Level.',
   'revision.ial.cta_units': 'Ir a las unidades',
   'revision.ial.cta_mocks': 'Paquete de exámenes de prueba',
   'revision.ial.cta_ai': 'Autoaprendizaje con IA',
@@ -12297,7 +12297,7 @@ export const ES_MESSAGES: Record<string, string> = {
   'revision.ial.link.exam_technique.title': 'Técnica de examen',
   'revision.ial.link.exam_technique.body': 'Estructuras de ensayo + tiempo',
   'revision.ial.footnote':
-    'Alineado con las especificaciones de Pearson Edexcel International A-Level English Literature (YLE0) y English Language (WEN0). Coteja siempre con la especificación vigente actual antes de inscribirte en el examen. Se añaden contenido nuevo y paquetes de prueba con regularidad.',
+    'Alineado con las especificaciones de Pearson Edexcel International A-Level English Literature (XET01 / YET01, Issue 7) y English Language. Coteja siempre con la especificación vigente actual antes de inscribirte en el examen. Se añaden contenido nuevo y paquetes de prueba con regularidad.',
   'revision.common_errors.breadcrumb_label': 'Errores comunes',
   'revision.common_errors.hero_badge': 'Biblioteca verificada',
   'revision.common_errors.hero_title': '{count} errores que cuestan puntos',
