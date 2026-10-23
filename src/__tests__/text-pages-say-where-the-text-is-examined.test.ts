@@ -120,6 +120,32 @@ describe('what the placement actually says', () => {
     expect(cambridge[0]!.source.version).toContain('2026:')
     expect(cambridge[0]!.source.version).toContain('2027:')
     expect(cambridge[1]!.source.version).toContain('2028:')
+    // Set in all three series (2026 syllabus p.12, 2027 p.12, 2028-2030 p.13),
+    // so neither card may say it is not set anywhere. For a few hours on 23
+    // October 2026 the note was computed per card and each card named the
+    // other's years as absent.
+    for (const p of cambridge) expect(p.detail, p.assessedIn).not.toContain('Not set')
+  })
+
+  it('names only the years a text is set NOWHERE, however many cards it has', () => {
+    // Princess & the Hustler: 2027 drama (2027 syllabus p.13) and 2028 drama
+    // (2028-2030 syllabus p.13) on differently named papers, so two cards. The
+    // only held series that does not set it is 2026.
+    const cambridge = examPlacements('princess-and-the-hustler').filter(
+      (p) => p.board === 'cambridge-0475',
+    )
+    expect(cambridge.map((p) => p.examYears)).toEqual([[2027], [2028]])
+    for (const p of cambridge) {
+      expect(p.detail, p.assessedIn).toContain('Not set for the 2026 series.')
+      expect(p.detail, p.assessedIn).not.toMatch(/2027 series|2028 series/)
+    }
+    // Blues for an Alabama Sky: drama in every held series (2026 p.13, 2027
+    // p.13, 2028-2030 p.13), two cards, nothing absent.
+    const blues = examPlacements('blues-for-an-alabama-sky').filter(
+      (p) => p.board === 'cambridge-0475',
+    )
+    expect(blues.flatMap((p) => p.examYears!).sort()).toEqual([2026, 2027, 2028])
+    for (const p of blues) expect(p.detail, p.assessedIn).not.toContain('Not set')
   })
 
   it('shows both placements for a text two boards set', () => {

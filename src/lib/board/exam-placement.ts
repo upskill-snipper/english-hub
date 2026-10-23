@@ -124,6 +124,19 @@ function listYears(years: number[]): string {
  * both years; a text that moves (the 2028 syllabus renames the papers) gets
  * one card per place. Each card also names the held series that do NOT set
  * the text, because a withdrawn text on a page is the hazard this guards.
+ *
+ * THE "NOT SET" NOTE IS A FACT ABOUT THE TEXT, NOT ABOUT THE CARD. For a few
+ * hours on 23 October 2026 it was computed per card, as the held years minus
+ * that card's years. A text that continues from 2027 into 2028 sits on two
+ * cards because the 2028 syllabus renames the papers, so each card told the
+ * reader the text was not set in the other card's years: Pride and Prejudice's
+ * 2026-2027 card said "Not set for the 2028 series" and its 2028 card said
+ * "Not set for the 2026 or 2027 series", when the syllabus sets it in all
+ * three (2026 syllabus page 12, 2027 syllabus page 12, 2028-2030 syllabus
+ * page 13). Six held texts were affected. The three asserted cases (The War
+ * of the Worlds, Antony and Cleopatra, An Inspector Calls) each sit in one
+ * place only, so the tests were green. The note is now the held years minus
+ * the union of every card's years for the slug.
  */
 function cambridge0475Placements(slug: string): ExamPlacement[] {
   const heldYears = CAMBRIDGE_0475.map((y) => y.examYear).sort((a, b) => a - b)
@@ -168,13 +181,19 @@ function cambridge0475Placements(slug: string): ExamPlacement[] {
     }
   }
 
+  // Every held year in which the text is set anywhere, across all its cards.
+  const setYears = new Set<number>()
+  for (const { placement } of byPlace.values()) {
+    for (const year of placement.examYears!) setYears.add(year)
+  }
+  const absent = heldYears.filter((y) => !setYears.has(y))
+  const note = absent.length > 0 ? `Not set for the ${listYears(absent)} series.` : undefined
+
   const out: ExamPlacement[] = []
   for (const { placement, versions } of byPlace.values()) {
     placement.examYears!.sort((a, b) => a - b)
     placement.source.version = versions.join('; ')
-    const absent = heldYears.filter((y) => !placement.examYears!.includes(y))
-    if (absent.length > 0) {
-      const note = `Not set for the ${listYears(absent)} series.`
+    if (note) {
       placement.detail = placement.detail ? `${placement.detail} ${note}` : note
     }
     out.push(placement)

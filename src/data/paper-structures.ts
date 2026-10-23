@@ -1195,7 +1195,10 @@ const CAMBRIDGE_0475_PAPERS: Paper[] = [
     ],
   },
   // Papers 2 and 3 corrected 23 October 2026 against the 0475 syllabus for
-  // examination in 2027 (Version 2, published October 2024), pages 8 and 13-15.
+  // examination in 2027 (Version 2, published October 2024): the assessment
+  // overview on page 8, the set texts on page 13, Papers 1 and 2 on page 14,
+  // Paper 3 on page 15, Paper 4 and the coursework component on page 16
+  // (which that page heads "Paper 5" and page 8 calls "Component 5").
   // Paper 2 said "One essay question on a studied drama text": it is two
   // questions on two different set texts, one passage-based and one essay.
   // "Paper 3" was labelled Coursework: Paper 3 is Drama (Open Text), 45 minutes
