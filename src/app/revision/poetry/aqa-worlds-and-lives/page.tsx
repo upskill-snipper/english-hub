@@ -34,8 +34,18 @@ interface AnthologyPoem {
 }
 
 // Official AQA Worlds and Lives cluster (first assessed 2025).
+//
+// CORRECTED 23 October 2026. The first poem read "Lines Composed a Few Miles
+// above Tintern Abbey", a different Wordsworth poem. AQA's own guide to the
+// cluster, "GCSE English Literature: Inspirational new texts and poetry"
+// (filestore.aqa.org.uk/resources/english/AQA-8702-COMP-GUIDE-TEXTS-POETRY.PDF),
+// page 9, "The cluster at a glance", prints "Lines Written in Early Spring /
+// William Wordsworth". The 8702 specification (v1.3, 28 September 2022,
+// section 3.2.2, page 13) names the cluster and requires all 15 poems; the
+// poem list itself is in the guide and the anthology. The theme paragraph
+// below named the same wrong poem and is corrected with it.
 const WORLDS_AND_LIVES: AnthologyPoem[] = [
-  { title: 'Lines Composed a Few Miles above Tintern Abbey', poet: 'William Wordsworth' },
+  { title: 'Lines Written in Early Spring', poet: 'William Wordsworth' },
   { title: 'England in 1819', poet: 'Percy Bysshe Shelley' },
   { title: 'Shall earth no more inspire thee?', poet: 'Emily Brontë' },
   { title: 'In a London Drawingroom', poet: 'George Eliot' },
@@ -237,8 +247,8 @@ export default async function AqaWorldsAndLivesHubPage() {
                 {await t('poetry_hub.wl.theme_place_title')}
               </h3>
               <p className="text-body-sm text-muted-foreground">
-                Landscapes as memory, refuge or critique - Tintern Abbey, In a London Drawingroom
-                and Homing.
+                Landscapes as memory, refuge or critique - Lines Written in Early Spring, In a
+                London Drawingroom and Homing.
               </p>
             </div>
             <div className="space-y-1">
