@@ -263,8 +263,15 @@ export const SET_TEXTS: SetText[] = [
     category: 'modern',
     boards: ['aqa', 'edexcel', 'eduqas'], // AQA prescribes the musical version; the tag was missing.
     copyrightStatus: 'copyright',
+    // EDITION NOTE ADDED 23 October 2026. Eduqas's prescribed texts list (GCSE
+    // English Literature specification, Version 4, August 2024, page 12) reads
+    // "Blood Brothers (Russell) (not Stanley Thorne edition)". AQA's list (8702
+    // specification v1.3, 28 September 2022, page 12) reads "Blood Brothers
+    // (musical version)". SetText has no edition field, so the two conditions
+    // are recorded here, in the notice a student reads, and in
+    // src/lib/board/spec-truth.ts.
     ukRightsNotice:
-      'Rights notice: © Methuen Drama / Bloomsbury Publishing on behalf of Willy Russell. Quotations are short fair-dealing extracts under CDPA 1988 §30 (criticism, review, quotation). For full text, students should consult the Methuen Drama Modern Classics edition or the AQA / Eduqas board-licensed school edition.',
+      'Rights notice: © Methuen Drama / Bloomsbury Publishing on behalf of Willy Russell. Quotations are short fair-dealing extracts under CDPA 1988 §30 (criticism, review, quotation). For full text, students should consult the Methuen Drama Modern Classics edition or the AQA / Eduqas board-licensed school edition. Edition note: Eduqas does not accept the Stanley Thorne edition (specification Version 4, August 2024, page 12), and AQA sets the musical version (8702 specification, page 12).',
   },
   {
     slug: 'anita-and-me',
