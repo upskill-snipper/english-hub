@@ -43,7 +43,7 @@ const chunks = [
   { file: 'src/lib/i18n/dictionary-dashboard.ts', start: 730, end: 923 },
   { file: 'src/lib/i18n/dictionary-demo-pages.ts', start: 30, end: 705 },
   { file: 'src/lib/i18n/dictionary-demo-pages.ts', start: 706, end: 943 },
-  { file: 'src/lib/i18n/dictionary-homepage.ts', start: 23, end: 230 },
+  { file: 'src/lib/i18n/dictionary-home-story.ts', start: 23, end: 554 },
   { file: 'src/lib/i18n/dictionary-ielts-admissions.ts', start: 26, end: 945 },
   { file: 'src/lib/i18n/dictionary-ielts-centre.ts', start: 13, end: 72 },
   { file: 'src/lib/i18n/dictionary-ielts-dashboard.ts', start: 29, end: 386 },

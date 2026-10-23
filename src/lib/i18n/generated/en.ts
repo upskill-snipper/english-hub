@@ -9409,49 +9409,6 @@ export const EN_MESSAGES: Record<string, string> = {
   'poetry_hub.wl.theme_power_title': 'Power and politics',
   'poetry_hub.wl.theme_belonging_title': 'Belonging and migration',
   'poetry_hub.wl.priority_title': 'Want a poem prioritised?',
-  'homepage.gcse.kicker': 'Pick your exam board to start',
-  'homepage.gcse.heading': 'GCSE and IGCSE English revision, AI marked against the AO mark scheme.',
-  'homepage.gcse.subheading':
-    'Year 10-11, ages 14-16. Tap your board and you’ll land on the exact specification you sit.',
-  'homepage.ks3.kicker': 'Younger learners (Years 7-9)',
-  'homepage.ks3.heading': 'KS3 English - the curriculum before GCSE',
-  'homepage.ks3.subheading':
-    'Ages 11-14. Reading comprehension, creative writing, grammar foundations and year-by-year schemes of work that prime students for GCSE English.',
-  'homepage.board.ks3.blurb':
-    'Years 7, 8 and 9 schemes of work - weekly lessons, set texts and assessments.',
-  'homepage.igcse.heading': 'IGCSE boards (international)',
-  'homepage.igcse.subheading':
-    'International routes for the same age group. Pick the spec your school enters.',
-  'homepage.faq.heading': 'GCSE & IGCSE English: common questions',
-  'homepage.rail.kicker': 'Two tracks alongside the exam boards',
-  'homepage.rail.heading': 'Prepare for IELTS, or learn English alongside Arabic.',
-  'homepage.rail.intro':
-    'IELTS gives you Academic and General Training practice across all four skills with instant band-score feedback. EAL is the bilingual track for Arabic-speaking students preparing for UK exams. Both run independently of (and alongside) any GCSE / IGCSE board you pick below.',
-  'homepage.rail.ielts.badge': 'Exam prep',
-  'homepage.rail.ielts.title': 'IELTS preparation',
-  'homepage.rail.ielts.subtitle': 'Academic & General Training · all four skills',
-  'homepage.rail.ielts.body':
-    'Reading, Listening, Writing and Speaking practice with full mock tests, model answers and instant AI band-score feedback. Aligned to the real IELTS Academic and General Training papers.',
-  'homepage.rail.ielts.cta': 'Open IELTS hub',
-  'homepage.rail.eal.badge': 'Bilingual',
-  'homepage.rail.eal.title': 'English for Arabic Speakers',
-  'homepage.rail.eal.subtitle': 'للناطقين بالعربية · Khaleeji explanations',
-  'homepage.rail.eal.body':
-    'Focused lessons on the points Arabic L1 students most often stumble on: sentence structure (SVO vs VSO), articles, tenses, prepositions, common transfer errors. Every topic has examples, error remediation, and Khaleeji-Arabic explanations.',
-  'homepage.rail.eal.cta': 'Open EAL section',
-  'homepage.board.cta.ks3': 'Open KS3',
-  'homepage.board.cta.board': 'Open board',
-  'homepage.board.help.text': 'Not sure which spec your school sits?',
-  'homepage.board.help.link': 'Choose by level instead.',
-  'homepage.board.eal_supported': 'EAL support included',
-  'homepage.board.eal_supported.aria': 'EAL learner support is available for this board',
-  'homepage.board.aqa.blurb': 'Power & Conflict, Love & Relationships, Worlds & Lives.',
-  'homepage.board.edexcel.blurb': 'Time & Place, Conflict, Relationships anthology.',
-  'homepage.board.ocr.blurb': 'Love and Relationships, Conflict, Youth and Age.',
-  'homepage.board.eduqas.blurb': 'The 15-poem Eduqas anthology, first examined in 2027.',
-  'homepage.board.cambridge.blurb': '0500 and 0990 - Reading, Composition, model answers.',
-  'homepage.board.edexcel_igcse_lit.blurb': 'Drama, Prose, Shakespeare, Unseen Poetry.',
-  'homepage.board.edexcel_igcse_lang.blurb': 'Anthology, non-fiction, transactional writing.',
   'aff_comp.public.partnership_badge': 'Partner Programme',
   'aff_comp.public.hero.title_part1': 'Earn a commission for each subscriber you refer to',
   'aff_comp.public.hero.title_brand': 'The English Hub',
@@ -15482,102 +15439,6 @@ export const EN_MESSAGES: Record<string, string> = {
   'mkt.biz.foot.privacy_link': 'Read the privacy policy',
   'mkt.biz.foot.schools':
     'Buying for a school rather than an organisation? The schools page covers pilots, departmental rollout and school pricing.',
-  'home.students.eyebrow': 'For students & parents',
-  'home.students.heading': 'Studying for an English exam? Choose your board',
-  'home.students.body':
-    'Individual learners and families can start straight away - pick your exam board and land in a personalised revision hub.',
-  'home.hero.eyebrow': 'GCSE, IGCSE & KS3 English revision',
-  'home.hero.title': 'Revise GCSE and IGCSE English, marked by AI against the real mark scheme',
-  'home.hero.body':
-    'Practice papers, model answers and instant feedback on your essays, aligned to your exam board: AQA, Edexcel, OCR, Eduqas and Cambridge IGCSE. Free to start, built for students and parents, and trusted by schools.',
-  'home.hero.cta_board': 'Choose your exam board',
-  'home.hero.cta_schools': 'For schools and teachers',
-  'home.hero.footnote':
-    'English Language, Literature and EAL. KS3 to A-Level, aligned to your specification.',
-  'home.audience.heading': 'Built for students, teachers and schools',
-  'home.audience.body':
-    'One platform that supports the whole English department - from individual practice to department-wide intelligence.',
-  'home.audience.students.title': 'Students',
-  'home.audience.students.body':
-    'Structured practice, essay feedback and revision aligned to the specification their school teaches.',
-  'home.audience.students.cta': 'For students',
-  'home.audience.teachers.title': 'Teachers',
-  'home.audience.teachers.body':
-    'AI-assisted feedback, homework setting and clearer insight into class weaknesses - without adding workload.',
-  'home.audience.teachers.cta': 'For teachers',
-  'home.audience.schools.title': 'Schools',
-  'home.audience.schools.body':
-    'Department-wide assessment, intervention insight and reporting that leaders can act on.',
-  'home.audience.schools.cta': 'For schools',
-  'home.platform.eyebrow': 'School infrastructure for English departments',
-  'home.platform.heading': 'From revision support to department-wide English intelligence',
-  'home.platform.body':
-    'The English Hub is designed to become embedded in how an English department works - assessment, feedback, intervention and reporting in one place, supporting teacher judgement rather than replacing it.',
-  'home.benefits.heading': 'What it helps schools do',
-  'home.benefits.workload.title': 'Reduce teacher workload',
-  'home.benefits.workload.body':
-    'Reduce repetitive marking workload so teachers can focus more time on teaching.',
-  'home.benefits.intervention.title': 'Improve intervention visibility',
-  'home.benefits.intervention.body':
-    'Identify students who may need support earlier, before gaps widen.',
-  'home.benefits.eal.title': 'Support EAL learners',
-  'home.benefits.eal.body':
-    'Structured practice designed to build EAL learners’ confidence in English.',
-  'home.benefits.readiness.title': 'Strengthen exam readiness',
-  'home.benefits.readiness.body':
-    'Specification-aligned practice across English Language and Literature.',
-  'home.benefits.reports.title': 'Generate clearer student reports',
-  'home.benefits.reports.body': 'Turn student activity into clearer, shareable progress summaries.',
-  'home.benefits.cohorts.title': 'Track progress across cohorts',
-  'home.benefits.cohorts.body': 'Give leaders clearer visibility across classes and year groups.',
-  'home.capabilities.heading': 'AI-assisted marking, analytics and intervention',
-  'home.capabilities.body':
-    'Designed to support teacher judgement and surface where attention is needed - not to replace professional assessment.',
-  'home.capabilities.feedback.title': 'AI-assisted marking & feedback',
-  'home.capabilities.feedback.body':
-    'Students receive structured, criteria-referenced feedback teachers can review and build on.',
-  'home.capabilities.analytics.title': 'Class & year-group analytics',
-  'home.capabilities.analytics.body':
-    'See patterns across cohorts and where the department should focus next.',
-  'home.capabilities.insights.title': 'Intervention insights',
-  'home.capabilities.insights.body': 'Surface students who may need support earlier in the term.',
-  'home.capabilities.homework.title': 'Homework & worksheet support',
-  'home.capabilities.homework.body':
-    'Set practice and generate resources aligned to the specification.',
-  'home.capabilities.reports.title': 'Student reports',
-  'home.capabilities.reports.body':
-    'Clearer progress summaries for parents, reviews and leadership.',
-  'home.capabilities.reading.title': 'Reading & comprehension support',
-  'home.capabilities.reading.body':
-    'Structured comprehension and reading practice across key stages.',
-  'home.eal.heading': 'Structured English support for EAL learners',
-  'home.eal.body':
-    'A growing priority for international and GCC schools. The English Hub is built to help EAL learners develop vocabulary, reading fluency, comprehension and writing confidence, with teacher visibility over progress and differentiated support.',
-  'home.eal.cta': 'Explore EAL support',
-  'home.pilot.eyebrow': 'Founder School Programme',
-  'home.pilot.heading': 'Start a 90-day Founder School Pilot',
-  'home.pilot.body':
-    'Most schools begin with a structured one-term pilot focused on one year group or the English department. The pilot is designed to prove value before wider rollout.',
-  'home.pilot.cta_book': 'Book a School Pilot',
-  'home.pilot.cta_deploy': 'Explore School Deployment',
-  'home.pricing.heading': 'Pricing',
-  'home.pricing.body':
-    'Individual access for learners and teachers, and structured pilots and annual deployment for schools.',
-  'home.pricing.student.label': 'Student',
-  'home.pricing.student.body': 'Individual learner access.',
-  'home.pricing.teacher.label': 'Teacher',
-  'home.pricing.teacher.body': 'Teacher tools and classroom support.',
-  'home.pricing.schools.label': 'Schools',
-  'home.pricing.schools.pilots_prefix': 'Pilots',
-  'home.pricing.schools.annual_prefix': 'Annual deployment',
-  'home.pricing.cta': 'Request School Pricing',
-  'home.pricing.cta_start': 'Start your free trial',
-  'home.faq.school_leaders': 'Questions from school leaders',
-  'home.final.heading': 'Discuss your English department’s needs',
-  'home.final.body':
-    'Talk to us about a pilot, an annual deployment, or how The English Hub could support your department.',
-  'home.final.cta_book': 'Book a School Pilot',
-  'home.final.cta_rollout': 'Discuss a School Rollout',
   'mkt.teachers.ft.feat.lesson_builder.title': 'Lesson Builder',
   'mkt.teachers.ft.feat.lesson_builder.desc':
     'Build structured, specification-aligned lessons in minutes. Add starter activities, main tasks, and plenaries with drag-and-drop ease, then share instantly with any class.',
@@ -20659,44 +20520,161 @@ export const EN_MESSAGES: Record<string, string> = {
   'school.games.pupil.no_date':
     'Nothing is shown, because there is no record of when this pupil joined.',
   'school.games.pupil.empty': 'No games played since {date}.',
-  'home.lp.h1': 'Intelligent English Learning for Everyone',
-  'home.lp.subtitle':
-    'Personalised, exam-aligned and AI-assisted - from Years 7–9 through GCSE, IGCSE and IELTS, and structured English support for EAL learners. Pick your track to explore the live demo.',
-  'home.lp.track.ielts.sub': 'Prepare with confidence for IELTS',
-  'home.lp.track.eal.sub': 'Master English with bilingual support',
-  'home.lp.track.ks3.sub': 'Build strong foundations for GCSE English',
-  'home.lp.track.gcse.sub': 'Exam-board-exact revision with examiner-style feedback',
-  'home.lp.track.igcse.sub': 'Structured IGCSE English preparation',
-  'home.lp.track.teachers.label': 'Teachers',
-  'home.lp.track.teachers.sub': 'Save hours and reach every student',
-  'home.lp.track.schools.label': 'Schools',
-  'home.lp.track.schools.sub': 'Run a sharper English department',
-  'home.lp.track.aria': 'Explore {label}: {sub}',
-  'home.lp.cta_pilot': 'Book a school pilot',
-  'home.lp.spec_note':
-    'Personalised practice + AI-assisted feedback aligned to AQA, Edexcel, OCR, Eduqas, Cambridge IGCSE and Pearson Edexcel International specifications.',
-  'home.play.eyebrow': 'Learn by playing',
-  'home.play.heading': 'Play your way through revision',
-  'home.play.body':
-    'Guided games on the set texts you study, and quick games that drill quotations, themes and techniques for the exam.',
-  'home.play.texts.title': 'Play your set texts',
-  'home.play.texts.body':
-    'Guided games built from our study guide to each text. Pick one and learn it as you play.',
-  'home.play.texts.for_board': 'Your {board} texts:',
-  'home.play.texts.more': 'and {count} more',
-  'home.play.texts.cta': 'Choose a text',
-  'home.play.play': 'Play',
-  'home.play.all_games': 'See all games',
-  'home.play.theme_matcher.title': 'Theme Matcher',
-  'home.play.theme_matcher.body': 'Pick every set text a theme appears in, from ambition to power.',
-  'home.play.speed_analysis.title': 'Speed Analysis',
-  'home.play.speed_analysis.body':
-    'Name the literary device in each extract before the timer runs out.',
-  'home.play.quote_detective.title': 'Quote Detective',
-  'home.play.quote_detective.body': 'Work out which set text each quotation comes from.',
-  'home.play.grade_climber.title': 'Grade Climber',
-  'home.play.grade_climber.body':
-    'GCSE-style questions that get harder as you go: three right to climb a grade.',
+  'home.story.cta.primary': 'Start your 7-day free trial',
+  'home.story.cta.no_card': 'No card needed.',
+  'home.story.and': 'and',
+  'home.story.list_sep': ', ',
+  'home.story.library': 'Browse every set text',
+  'home.story.library_board': 'Browse your {board} set texts',
+  'home.story.search_again': 'Search for another text',
+  'home.story.hero.eyebrow': 'Start your anthology.',
+  'home.story.hero.h1': 'English revision, one set text at a time.',
+  'home.story.hero.sub':
+    'For GCSE and IGCSE, built around the set texts. Study guides, quests and comics, free with no account.',
+  'home.story.hero.quiet_before': 'Not ready for an account?',
+  'home.story.hero.quiet_link': 'Play a quest',
+  'home.story.hero.quiet_after': 'on your text instead.',
+  'home.story.hero.you_study': 'You study {board}.',
+  'home.story.hero.change_board': 'Change board',
+  'home.story.hero.your_shelf': 'See your {board} set texts',
+  'home.story.hero.your_hub': 'Open your {board} hub',
+  'home.story.hero.plate1_alt':
+    'Three witches on a bare heath in a thunderstorm, drawn in black and cream. A bolt of lightning splits the sky above them, a dead thorn tree bends in the wind on the left, and the fires of a battle burn along the horizon on the right.',
+  'home.story.hero.plate1_caption': "Macbeth, Act 1, Scene 1, from the site's comic.",
+  'home.story.hero.plate2_alt':
+    "Lady Macbeth alone in a dark stone chamber, drawn in black and cream, holding her husband's letter lowered in one hand and raising her other arm towards a tall window, where a raven sits on the battlements and black smoke billows in.",
+  'home.story.hero.plate2_caption': 'Act 1, Scene 5. Lady Macbeth reads the letter.',
+  'home.story.boards.heading': 'Pick your exam board to see its set texts',
+  'home.story.boards.sub':
+    "Choosing your board is how the site shows the right texts. Each text names the boards that set it, and the text search shows each result's boards.",
+  'home.story.boards.gcse': 'GCSE',
+  'home.story.boards.igcse': 'International GCSE',
+  'home.story.boards.open_shelf': 'See its set texts',
+  'home.story.boards.open_hub': 'Open its hub',
+  'home.story.games.eyebrow': 'Before the story',
+  'home.story.games.heading': 'Warm up with a game.',
+  'home.story.games.body':
+    '37 games for EAL, KS3 and GCSE, marked as you play. All 37 explain every answer. Some are timed, and none needs an account.',
+  'home.story.games.quests': 'Set-text quests',
+  'home.story.games.theme_matcher': 'Theme Matcher',
+  'home.story.games.speed_analysis': 'Speed Analysis',
+  'home.story.games.quote_detective': 'Quote Detective',
+  'home.story.games.grade_climber': 'Grade Climber',
+  'home.story.games.all': 'All 37 games',
+  'home.story.lede.eyebrow': 'One text, five chapters',
+  'home.story.lede.body':
+    'Below, one student takes Macbeth from the first page to the exam room. Study guides and quests cover 100+ set texts. Some texts also have the full text to read, and a comic.',
+  'home.story.index.label': 'Chapters',
+  'home.story.index.read': 'Read it',
+  'home.story.index.read_short': 'Read',
+  'home.story.index.play': 'Play it',
+  'home.story.index.play_short': 'Play',
+  'home.story.index.revise': 'Revise it',
+  'home.story.index.revise_short': 'Revise',
+  'home.story.index.write': 'Write about it',
+  'home.story.index.write_short': 'Write',
+  'home.story.index.sit': 'Sit it',
+  'home.story.index.sit_short': 'Sit',
+  'home.story.chapter_eyebrow': 'Chapter {n} of V. {title}',
+  'home.story.read.h2': 'Read the whole play, with the key lines marked.',
+  'home.story.read.p1':
+    "Macbeth is one of 30+ set texts free to read in full. Key quotations are highlighted in 22 texts, so the lines worth learning stand out as you read. Macbeth's key extracts are annotated line by line.",
+  'home.story.read.p2':
+    'It is also one of 22 set texts drawn as linocut-style comics: 400+ panels, kept inside the study guide.',
+  'home.story.read.boards': 'Macbeth is set by {boards}.',
+  'home.story.read.not_your_board':
+    '{board} does not set Macbeth, so your own texts are the ones to follow.',
+  'home.story.read.link': 'Read Macbeth in full',
+  'home.story.read.shot_alt':
+    "The reader page for Macbeth on a laptop: the contents list of scenes beside Act 1, Scene 1, with the line 'When the hurlyburly's done' highlighted as a key quotation.",
+  'home.story.read.shot_caption': 'The reader, Act 1, Scene 1, with a key quotation highlighted.',
+  'home.story.read.shot_phone_alt':
+    "Act 1, Scene 1 of Macbeth in the reader, with the line 'When the hurlyburly's done' highlighted as a key quotation.",
+  'home.story.read.shot_phone_caption': 'A key quotation, highlighted in the reader.',
+  'home.story.read.plate_alt':
+    'Macbeth, a soldier in a mail shirt and cloak, starts back from three witches on a heath, drawn in black and cream under a sky split between storm and sun. The nearest witch points a long finger at him, Banquo stands his ground behind him with a spear, and a red crown hangs in the air above Macbeth’s head.',
+  'home.story.read.plate_caption': 'Act 1, Scene 3. The prophecies, from the comic.',
+  'home.story.play.h2': 'Play the text as a quest, one part at a time.',
+  'home.story.play.p1':
+    'Quests for 100+ set texts: 600+ levels, 8,700+ questions, most answers with the reason. Put the moments of Act 1 in order, then work through the levels. Finish a part and its panels ink in.',
+  'home.story.play.p2':
+    'No timers, no daily streaks, no leaderboards, no lives; a flame counts right answers in a row. Signed in, answers are saved; not signed in, nothing is sent.',
+  'home.story.play.link': 'Play the Macbeth quest',
+  'home.story.play.shot_alt':
+    'The Macbeth quest page on a laptop: the title, an Open the study guide link, a progress card at 0 of 21 stars, a Start: Part 1 button, and the first level, Part 1, which is up next.',
+  'home.story.play.phone_alt':
+    'Part 1 of the Macbeth quest on a phone: a story-order challenge with five comic thumbnails to tap into order, a flame counter at zero, and a Check the order button.',
+  'home.story.play.caption': 'The quest map, and the first level on a phone.',
+  'home.story.play.phone_caption': 'The first level of the Macbeth quest, on a phone.',
+  'home.story.revise.h2': 'Revise it with the study guide.',
+  'home.story.revise.p1':
+    "100+ set-text study guides. Macbeth's has an overview, the acts, characters, themes, context, key quotations, flashcards and a quiz. Revision notes for 40+ texts and 2,000+ flashcards sit alongside, with exam technique and common mistakes.",
+  'home.story.revise.p2': 'All of it is free with no account, so revision can start tonight.',
+  'home.story.revise.link': 'Open the Macbeth study guide',
+  'home.story.revise.shot_alt':
+    'The Macbeth study guide on a laptop: an eight-tile grid for the full text, act-by-act analysis, characters, themes, key quotes, context, essay plans and AI revision notes, with a quick quote quiz, an essay practice card and a flashcard below.',
+  'home.story.revise.caption': 'The study guide hub for Macbeth.',
+  'home.story.revise.phone_alt':
+    'The Macbeth study guide on a phone: a chip row and the eight-tile Study Macbeth grid, from Read Full Text to AI Revision Notes.',
+  'home.story.write.h2': 'Write the essay, and have it marked.',
+  'home.story.write.p1':
+    'Choose the board, paper and question, paste the essay and send it. Get a mark for each assessment objective, what went well, what to improve and what to practise next. Written by AI and labelled as AI; the grade is a practice estimate, not an official result.',
+  'home.story.write.p2':
+    "AI marking is part of the 7-day free trial or a plan. 13 to 15-year-olds need a parent's approval or their school's recorded authorisation before AI feedback is switched on.",
+  'home.story.write.link': 'Send an essay for marking',
+  'home.story.write.shot_alt':
+    'The essay submission form on a laptop: exam board, paper and question selects, a field for the question you answered, an optional title and a box for your essay, all empty.',
+  'home.story.write.caption': 'The marking form, before anything is typed.',
+  'home.story.write.phone_alt':
+    'The essay submission form on a phone: exam board, paper and question selects and the field for the question you answered, all empty.',
+  'home.story.sit.h2': 'Sit a mock paper.',
+  'home.story.sit.p1': 'Mock papers by board, free with an account.',
+  'home.story.sit.link': 'Browse the mock papers',
+  'home.story.sit.shot_alt':
+    'The Exam Papers list on the mock papers page: the filters for all papers, language and literature, and the tops of two AQA cards titled English Language Paper 1 and Paper 2.',
+  'home.story.sit.caption': 'Mock papers, listed by board and paper.',
+  'home.story.sit.phone_alt':
+    'The mock papers page on a phone, from its How It Works button down to the Exam Papers heading.',
+  'home.story.sit.phone_caption': 'The mock papers page on a phone.',
+  'home.story.end.eyebrow': 'Epilogue',
+  'home.story.end.h2': 'Start your anthology.',
+  'home.story.end.sub':
+    'A 7-day free trial of the full product. No card. It covers AI marking, the examiner tool, model answers and courses, but not the school portal.',
+  'home.story.end.guide': 'Read a study guide',
+  'home.story.end.quest': 'Play a quest',
+  'home.story.end.free_label': 'Free with no account:',
+  'home.story.end.free_list':
+    'study guides, quests, games, comics, full texts, revision notes, flashcards, study tools, exam technique, the first module of every course, and the IELTS placement test.',
+  'home.story.end.plan_label': 'Student plan',
+  'home.story.end.plan_price':
+    '{monthly} a month or {annual} a year. Planned standard pricing {std_monthly} a month or {std_annual} a year.',
+  'home.story.end.pricing_link': 'See pricing',
+  'home.story.also.heading': 'Also on the site',
+  'home.story.also.levels':
+    'KS3, GCSE, International GCSE, International A level (guides and quests), IELTS, EAL',
+  'home.story.also.parents.title': 'Parents',
+  'home.story.also.parents.body':
+    "Your child can use the study guides, quests, games and comics without an account. Under-13s cannot sign up; 13 to 15-year-olds need a parent's approval or their school's recorded authorisation before AI feedback is switched on.",
+  'home.story.also.parents.link': 'For parents',
+  'home.story.also.teachers.title': 'Teachers',
+  'home.story.also.teachers.body':
+    "The examiner tool marks typed or photographed scripts against the paper's level grid. The AI mark is a second opinion, never the award. Teacher plan {monthly} a month or {annual} a year.",
+  'home.story.also.teachers.link': 'For teachers',
+  'home.story.also.schools.title': 'Schools',
+  'home.story.also.schools.body':
+    'We are at launch stage, taking our first ten Founding Schools. As a Founding School you would be among the first to use it, and we set it up with you. A place covers the whole school at {price} a school year, against planned standard pricing of {std}.',
+  'home.story.also.schools.link': 'For schools',
+  'home.story.also.ielts.title': 'IELTS',
+  'home.story.also.ielts.body': 'A free IELTS placement test, about 12 minutes, no account.',
+  'home.story.also.ielts.link': 'Take the placement test',
+  'home.story.also.eal.title': 'EAL',
+  'home.story.also.eal.body':
+    '37 games for EAL, KS3 and GCSE, marked as you play. All 37 explain every answer.',
+  'home.story.also.eal.link': 'For EAL learners',
+  'home.story.also.arabic.title': 'Arabic',
+  'home.story.also.arabic.body':
+    'The same site in Arabic, right to left. Study material stays in English.',
+  'home.story.also.arabic.link': 'Open the Arabic site',
   'igcse.page.back_to_lit': 'Back to Edexcel IGCSE Literature',
   'igcse.page.back_to_edexcel_igcse': 'Back to Edexcel IGCSE',
   'igcse.page.badge_edexcel_lit': 'Edexcel IGCSE Literature',

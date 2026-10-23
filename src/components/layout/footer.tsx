@@ -29,6 +29,12 @@ type FooterSection = {
   links: FooterLink[]
 }
 
+// 20 October 2026: this footer is on every page, and it linked to the demo
+// pages (/demo, /demo/school, /demo/teacher, /demo/student), to /school-pilot
+// and to /data-processing. The claim sheet (section 9) forbids presenting the
+// demos as the product; /school-pilot sold a pilot the founder has withdrawn;
+// /data-processing states a data location that is not correct yet (note 23).
+// None of those links belongs here. Do not add them back.
 const FOOTER_SECTIONS: FooterSection[] = [
   {
     titleKey: 'footer.section.product',
@@ -110,16 +116,6 @@ const FOOTER_SECTIONS: FooterSection[] = [
     ],
   },
   {
-    titleKey: 'footer.section.demos',
-    generic: true,
-    links: [
-      { href: '/demo', labelKey: 'footer.link.demo_hub' },
-      { href: '/demo/school', labelKey: 'footer.link.demo_school' },
-      { href: '/demo/teacher', labelKey: 'footer.link.demo_teacher' },
-      { href: '/demo/student', labelKey: 'footer.link.demo_student' },
-    ],
-  },
-  {
     titleKey: 'footer.section.company',
     generic: true,
     links: [
@@ -127,7 +123,6 @@ const FOOTER_SECTIONS: FooterSection[] = [
       { href: '/about/verified-content', labelKey: 'footer.link.verified_content' },
       { href: '/about/content-verification', labelKey: 'footer.link.content_verification' },
       { href: '/schools', labelKey: 'header.nav.schools' },
-      { href: '/school-pilot', labelKey: 'header.nav.school_pilot' },
       { href: '/teachers', labelKey: 'header.nav.teachers' },
       { href: '/students', labelKey: 'header.nav.students' },
       { href: '/eal', labelKey: 'header.nav.eal' },
@@ -270,7 +265,7 @@ export function Footer({ lastUpdated }: { lastUpdated?: string }) {
               {t('footer.brand_tagline')}
             </p>
             {process.env.NEXT_PUBLIC_EDTECH_IMPACT_LIVE === 'true' && (
-              <div className="mt-3 flex items-center gap-2 text-[11px] font-mono tracking-wide text-[#B5B8B3]/70">
+              <div className="mt-3 flex items-center gap-2 text-xs font-mono tracking-wide text-[#B5B8B3]/70">
                 {/* Grey star icon */}
                 <svg width="12" height="12" viewBox="0 0 24 24" fill="#B5B8B3" aria-hidden="true">
                   <path d="M12 2l2.955 6.985L22 10.05l-5.27 4.94L18.18 22 12 18.27 5.82 22l1.45-7.01L2 10.05l7.045-1.065z" />
@@ -286,7 +281,7 @@ export function Footer({ lastUpdated }: { lastUpdated?: string }) {
               {colSections.map((section) => (
                 <div key={section.titleKey}>
                   <h3
-                    className="font-mono text-[11px] font-semibold uppercase tracking-[0.1em] mb-4"
+                    className="font-mono text-xs font-semibold uppercase tracking-[0.1em] mb-4"
                     style={{ color: '#FBF7F0' }}
                   >
                     {t(section.titleKey)}
@@ -327,12 +322,12 @@ export function Footer({ lastUpdated }: { lastUpdated?: string }) {
             override since the component defaults to text-muted-foreground
             which is tuned for light surfaces. */}
         <div className="border-t py-5" style={{ borderColor: 'rgba(255,255,255,0.08)' }}>
-          <ReviewedByline updated={lastUpdated} className="text-[11px] text-[#B5B8B3]/70" />
+          <ReviewedByline updated={lastUpdated} className="text-xs text-[#B5B8B3]/70" />
         </div>
 
         {/* Responsible-use disclaimer (institutional positioning) */}
         <div className="border-t py-5" style={{ borderColor: 'rgba(255,255,255,0.08)' }}>
-          <p className="max-w-3xl text-[11px] leading-relaxed text-[#B5B8B3]/75">
+          <p className="max-w-3xl text-xs leading-relaxed text-[#B5B8B3]/75">
             {t('footer.disclaimer.responsible')}
           </p>
         </div>
@@ -345,11 +340,11 @@ export function Footer({ lastUpdated }: { lastUpdated?: string }) {
           style={{ borderColor: 'rgba(255,255,255,0.08)' }}
         >
           <div className="flex flex-col sm:flex-row items-center gap-2 sm:gap-4 text-center sm:text-start">
-            <p className="font-mono text-[11px] tracking-wide text-[#B5B8B3]/75">
+            <p className="font-mono text-xs tracking-wide text-[#B5B8B3]/75">
               &copy; 2024&ndash;{new Date().getFullYear()} {t('footer.copyright_suffix')}
             </p>
             <span className="hidden sm:inline text-[#B5B8B3]/30">&middot;</span>
-            <p className="font-mono text-[11px] tracking-wide text-[#B5B8B3]/75">
+            <p className="font-mono text-xs tracking-wide text-[#B5B8B3]/75">
               {t('footer.company_registration')}
             </p>
           </div>
@@ -358,7 +353,7 @@ export function Footer({ lastUpdated }: { lastUpdated?: string }) {
               sideways. From 768 pixels it keeps one line, as before, and the
               copyright text beside it gives way instead; at 640 the Spanish
               line is 737 pixels wide, so it wraps until then. */}
-          <div className="flex flex-wrap items-center justify-center gap-x-4 gap-y-2 text-[11px] font-mono tracking-wide md:shrink-0 md:flex-nowrap md:justify-end">
+          <div className="flex flex-wrap items-center justify-center gap-x-4 gap-y-2 text-xs font-mono tracking-wide md:shrink-0 md:flex-nowrap md:justify-end">
             <Link
               href="/legal/privacy"
               className="text-[#B5B8B3]/75 hover:text-[#FBF7F0] transition-colors"
@@ -380,12 +375,6 @@ export function Footer({ lastUpdated }: { lastUpdated?: string }) {
               className="text-[#B5B8B3]/75 hover:text-[#FBF7F0] transition-colors"
             >
               {t('footer.bottom.safeguarding')}
-            </Link>
-            <Link
-              href="/data-processing"
-              className="text-[#B5B8B3]/75 hover:text-[#FBF7F0] transition-colors"
-            >
-              {t('footer.bottom.dpa')}
             </Link>
             <a
               href="mailto:info@upskillenergy.com"
