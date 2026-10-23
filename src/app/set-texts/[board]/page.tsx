@@ -29,7 +29,7 @@ import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
 import { BOARDS, getBoardConfig, type ExamBoard } from '@/lib/board/board-config'
 import { boardHasShelf, shelflessBoardHub, specHubHref } from '@/lib/board/board-landing'
-import { buildShelf, groupShelf, type ShelfEntry } from '@/lib/revision/shelf'
+import { buildShelf, groupShelfForBoard, type ShelfEntry } from '@/lib/revision/shelf'
 import { t } from '@/lib/i18n/t'
 
 const SITE = 'https://theenglishhub.app'
@@ -189,7 +189,10 @@ export default async function BoardShelfPage({ params }: { params: Promise<{ boa
   if (hub) permanentRedirect(hub)
 
   const entries = buildShelf(config.id)
-  const groups = groupShelf(entries)
+  // Grouped as the specification groups them. For 4ET1 that is the three
+  // choice lists and the anthology, with the choice rule in each heading, not
+  // "Shakespeare 3, 19th-Century Novel 3" (23 October 2026).
+  const groups = groupShelfForBoard(config.id, entries)
   const specHub = specHubHref(config.id)
 
   const labels: ShelfLabels = {

@@ -533,6 +533,14 @@ export default async function EdexcelIgcseHubPage() {
               <SectionCard key={section.heading} section={section} />
             ))}
           </div>
+
+          {/* Component 3, the coursework route, was not mentioned anywhere on
+              this page until 23 October 2026 (4ET1 specification Issue 3, page
+              8). A student whose school takes it was reading about a paper
+              they will not sit. */}
+          <p className="mt-4 max-w-3xl text-body-sm text-muted-foreground leading-relaxed">
+            {await t('edexcel.lit.component3.note')}
+          </p>
         </section>
 
         {/* ── Set Texts (full study guides) ───────────────────────────── */}

@@ -5754,11 +5754,13 @@ export const AR_MESSAGES: Record<string, string> = {
   'edexcel.lit.hero_lead_post':
     '. Paper 1 بنظام الكتاب المغلق، وفي Paper 2 تقدر تاخد معاك نسخ نظيفة من نصوصك المقرَّرة.',
   'edexcel.lit.duration_3h30': '٣ ساعات و٣٠ دقيقة إجمالاً',
-  'edexcel.lit.set_texts_count': '١١ نص مقرَّر + الـ Anthology',
+  'edexcel.lit.set_texts_count': '٣ نصوص مقرَّرة من ١٨، زائد ١٦ قصيدة من الـ Anthology',
   'edexcel.lit.paper1.title': 'Paper 1: الشعر والنثر الحديث',
   'edexcel.lit.paper1.meta': 'ساعتين · ٩٠ درجة · ٦٠٪ من المجموع',
   'edexcel.lit.paper2.title': 'Paper 2: الدراما الحديثة والتراث الأدبي',
   'edexcel.lit.paper2.meta': 'ساعة و٣٠ دقيقة · ٦٠ درجة · ٤٠٪ من المجموع',
+  'edexcel.lit.component3.note':
+    'Component 3 هو بديل الكورس وورك لـ Paper 2. يستخدم نفس القائمتين: مقالتين يحددهما المعلم بـ٣٠ درجة لكل واحدة، واحدة عن نص الدراما الحديثة وواحدة عن نص التراث الأدبي، تصحّحها مدرستك وتراجعها Pearson (مواصفة 4ET1، الإصدار ٣، صفحة ٨).',
   'edexcel.lit.set_texts.subtitle': 'كل نصوص Pearson Edexcel IGCSE Literature في صفحة وحدة',
   'edexcel.lit.set_texts.intro':
     'أدلّة مذاكرة كاملة لكل نص مقرَّر - الشخصيات، الثيمات، الاقتباسات الأساسية، السياق، وخطط المقالات. اختر النص عشان تفتح دليله الكامل.',
@@ -19617,6 +19619,12 @@ export const AR_MESSAGES: Record<string, string> = {
   'search.texts.go': 'روح للدليل',
   'search.texts.or_course': 'أو ابدأ من مسارك',
   'shelf.eyebrow': 'نصوصك المقررة',
+  'shelf.4et1.modern_prose': 'النثر الحديث - تدرس نص واحد من هذي النصوص (Paper 1 Section C)',
+  'shelf.4et1.modern_drama':
+    'الدراما الحديثة - تدرس نص واحد من هذي النصوص (Paper 2 Section A، أو الكورس وورك Component 3)',
+  'shelf.4et1.literary_heritage':
+    'التراث الأدبي - تدرس نص واحد من هذي النصوص (Paper 2 Section B، أو الكورس وورك Component 3)',
+  'shelf.4et1.anthology': 'شعر الأنثولوجي - كل الـ١٦ قصيدة في Part 3 (Paper 1 Section B)',
   'shelf.lead': 'كل النصوص اللي في منهجك. اختر واحد وافتح دليله الكامل.',
   'shelf.count_one': 'نص مقرر واحد',
   'shelf.count_other': '{n} نص مقرر',

@@ -6018,11 +6018,13 @@ export const ES_MESSAGES: Record<string, string> = {
   'edexcel.lit.hero_lead_post':
     '. El Paper 1 es a libro cerrado; en el Paper 2 puedes llevar ejemplares limpios de tus textos.',
   'edexcel.lit.duration_3h30': '3 h 30 min en total',
-  'edexcel.lit.set_texts_count': '11 textos fijados + antología',
+  'edexcel.lit.set_texts_count': '3 textos fijados de 18, más 16 poemas de la antología',
   'edexcel.lit.paper1.title': 'Paper 1: Poesía y prosa moderna',
   'edexcel.lit.paper1.meta': '2 horas · 90 puntos · 60% del total',
   'edexcel.lit.paper2.title': 'Paper 2: Teatro moderno y patrimonio literario',
   'edexcel.lit.paper2.meta': '1 hora 30 minutos · 60 puntos · 40% del total',
+  'edexcel.lit.component3.note':
+    'El Component 3 es la alternativa de trabajo de curso al Paper 2. Usa las mismas dos listas: dos ensayos de 30 puntos fijados por el profesor, uno sobre tu texto de teatro moderno y otro sobre tu texto del patrimonio literario, corregidos por tu centro y moderados por Pearson (especificación 4ET1, Issue 3, página 8).',
   'edexcel.lit.set_texts.subtitle':
     'Todos los textos de Pearson Edexcel IGCSE Literature en una página',
   'edexcel.lit.set_texts.intro':
@@ -20636,6 +20638,12 @@ export const ES_MESSAGES: Record<string, string> = {
   'search.texts.go': 'Ir a la guía',
   'search.texts.or_course': 'O empieza por tu curso',
   'shelf.eyebrow': 'Tus textos',
+  'shelf.4et1.modern_prose': 'Prosa moderna - estudias UNO de estos textos (Paper 1 Section C)',
+  'shelf.4et1.modern_drama':
+    'Teatro moderno - estudias UNO de estos textos (Paper 2 Section A, o el trabajo de curso Component 3)',
+  'shelf.4et1.literary_heritage':
+    'Patrimonio literario - estudias UNO de estos textos (Paper 2 Section B, o el trabajo de curso Component 3)',
+  'shelf.4et1.anthology': 'Poesía de la antología - los 16 poemas de Part 3 (Paper 1 Section B)',
   'shelf.lead': 'Todos los textos de tu especificación. Elige uno para abrir su guía completa.',
   'shelf.count_one': '1 texto',
   'shelf.count_other': '{n} textos',

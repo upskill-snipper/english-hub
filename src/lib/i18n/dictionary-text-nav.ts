@@ -143,6 +143,33 @@ export const TEXT_NAV_DICTIONARY: Record<string, { en: string; ar?: string; es?:
   // because a shelf that hides the gaps sends a third of its clicks into a
   // placeholder with no warning.
   'shelf.eyebrow': { en: 'Your set texts', ar: 'نصوصك المقررة', es: 'Tus textos' },
+  // The Pearson Edexcel International GCSE Literature (4ET1) shelf, grouped as
+  // the specification groups it (Issue 3, August 2025, pages 6-10). Until 23
+  // October 2026 it used the generic categories ("Shakespeare 3, 19th-Century
+  // Novel 3") with no choice rule, when the qualification has no Shakespeare
+  // paper: a candidate takes ONE modern prose text from seven, ONE modern
+  // drama text from five and ONE literary heritage text from six, plus all
+  // sixteen Part 3 poems. See groupShelfForBoard in src/lib/revision/shelf.ts.
+  'shelf.4et1.modern_prose': {
+    en: 'Modern prose - you study ONE of these (Paper 1 Section C)',
+    ar: 'النثر الحديث - تدرس نص واحد من هذي النصوص (Paper 1 Section C)',
+    es: 'Prosa moderna - estudias UNO de estos textos (Paper 1 Section C)',
+  },
+  'shelf.4et1.modern_drama': {
+    en: 'Modern drama - you study ONE of these (Paper 2 Section A, or Component 3 coursework)',
+    ar: 'الدراما الحديثة - تدرس نص واحد من هذي النصوص (Paper 2 Section A، أو الكورس وورك Component 3)',
+    es: 'Teatro moderno - estudias UNO de estos textos (Paper 2 Section A, o el trabajo de curso Component 3)',
+  },
+  'shelf.4et1.literary_heritage': {
+    en: 'Literary heritage - you study ONE of these (Paper 2 Section B, or Component 3 coursework)',
+    ar: 'التراث الأدبي - تدرس نص واحد من هذي النصوص (Paper 2 Section B، أو الكورس وورك Component 3)',
+    es: 'Patrimonio literario - estudias UNO de estos textos (Paper 2 Section B, o el trabajo de curso Component 3)',
+  },
+  'shelf.4et1.anthology': {
+    en: 'Anthology poetry - all 16 Part 3 poems (Paper 1 Section B)',
+    ar: 'شعر الأنثولوجي - كل الـ١٦ قصيدة في Part 3 (Paper 1 Section B)',
+    es: 'Poesía de la antología - los 16 poemas de Part 3 (Paper 1 Section B)',
+  },
   'shelf.lead': {
     en: 'Every text on your specification. Pick one to open its full guide.',
     ar: 'كل النصوص اللي في منهجك. اختر واحد وافتح دليله الكامل.',

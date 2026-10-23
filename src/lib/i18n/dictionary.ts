@@ -19891,10 +19891,14 @@ export const DICTIONARY: Dictionary = {
     ar: '٣ ساعات و٣٠ دقيقة إجمالاً',
     es: '3 h 30 min en total',
   },
+  // "11 set texts + anthology" until 23 October 2026. The 4ET1 specification
+  // (Issue 3, August 2025, pages 9-10) lists seven modern prose, five modern
+  // drama and six literary heritage texts, eighteen in all, and a candidate
+  // studies one from each list, plus the sixteen Part 3 anthology poems.
   'edexcel.lit.set_texts_count': {
-    en: '11 set texts + anthology',
-    ar: '١١ نص مقرَّر + الـ Anthology',
-    es: '11 textos fijados + antología',
+    en: '3 set texts from 18, plus 16 anthology poems',
+    ar: '٣ نصوص مقرَّرة من ١٨، زائد ١٦ قصيدة من الـ Anthology',
+    es: '3 textos fijados de 18, más 16 poemas de la antología',
   },
   'edexcel.lit.paper1.title': {
     en: 'Paper 1: Poetry and Modern Prose',
@@ -19918,6 +19922,18 @@ export const DICTIONARY: Dictionary = {
     en: '1 hour 30 minutes · 60 marks · 40% of total',
     ar: 'ساعة و٣٠ دقيقة · ٦٠ درجة · ٤٠٪ من المجموع',
     es: '1 hora 30 minutos · 60 puntos · 40% del total',
+  },
+  // ADDED 23 October 2026. The hub never mentioned Component 3, the
+  // non-examined alternative to Paper 2: 4ET1 specification Issue 3, page 8,
+  // "Component 3: Modern Drama and Literary Heritage Texts ... Internally
+  // assessed and externally moderated ... 40% of the total ... Assignment A -
+  // Modern Drama: one 30-mark essay response to a teacher-devised assignment
+  // on the studied text ... Assignment B - Literary Heritage Texts: one
+  // 30-mark essay response".
+  'edexcel.lit.component3.note': {
+    en: 'Component 3 is the coursework alternative to Paper 2. It uses the same two lists: two teacher-set essays of 30 marks each, one on your modern drama text and one on your literary heritage text, marked by your school and moderated by Pearson (4ET1 specification, Issue 3, page 8).',
+    ar: 'Component 3 هو بديل الكورس وورك لـ Paper 2. يستخدم نفس القائمتين: مقالتين يحددهما المعلم بـ٣٠ درجة لكل واحدة، واحدة عن نص الدراما الحديثة وواحدة عن نص التراث الأدبي، تصحّحها مدرستك وتراجعها Pearson (مواصفة 4ET1، الإصدار ٣، صفحة ٨).',
+    es: 'El Component 3 es la alternativa de trabajo de curso al Paper 2. Usa las mismas dos listas: dos ensayos de 30 puntos fijados por el profesor, uno sobre tu texto de teatro moderno y otro sobre tu texto del patrimonio literario, corregidos por tu centro y moderados por Pearson (especificación 4ET1, Issue 3, página 8).',
   },
   'edexcel.lit.set_texts.subtitle': {
     en: 'Every Pearson Edexcel IGCSE Literature text on one page',

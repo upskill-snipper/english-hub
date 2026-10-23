@@ -19,6 +19,7 @@
  */
 
 import type { ExamBoard } from '@/lib/board/board-config'
+import { LITERARY_HERITAGE, MODERN_DRAMA, MODERN_PROSE } from '@/lib/board/edexcel-igcse-literature'
 import { getSetTextsForBoard, type SetText, type TextCategory } from '@/lib/board/set-texts'
 import { GUIDE_LOCATIONS } from '@/lib/revision/guide-locations.generated'
 import { PLACEHOLDER_TEXT_SLUGS } from '@/lib/revision/placeholder-texts.generated'
@@ -155,14 +156,76 @@ export function buildShelf(board: ExamBoard): ShelfEntry[] {
 export function groupShelf(
   entries: ShelfEntry[],
 ): { category: TextCategory; labelKey: string; entries: ShelfEntry[] }[] {
-  const rank: Record<TextReadiness, number> = { full: 0, partial: 1, none: 2 }
   return CATEGORY_ORDER.map((category) => ({
     category,
     labelKey: categoryLabelKey(category),
-    entries: entries
-      .filter((e) => e.text.category === category)
-      .sort(
-        (a, b) => rank[a.readiness] - rank[b.readiness] || a.text.title.localeCompare(b.text.title),
-      ),
+    entries: entries.filter((e) => e.text.category === category).sort(teachableFirst),
   })).filter((g) => g.entries.length > 0)
+}
+
+export interface ShelfGroup {
+  /** A TextCategory, or the specification's own list name for a board grouped by its lists. */
+  category: string
+  labelKey: string
+  entries: ShelfEntry[]
+}
+
+const READINESS_RANK: Record<TextReadiness, number> = { full: 0, partial: 1, none: 2 }
+
+function teachableFirst(a: ShelfEntry, b: ShelfEntry): number {
+  return (
+    READINESS_RANK[a.readiness] - READINESS_RANK[b.readiness] ||
+    a.text.title.localeCompare(b.text.title)
+  )
+}
+
+/**
+ * The shelf grouped the way the student's specification groups it.
+ *
+ * WHY (23 October 2026). The Pearson Edexcel International GCSE Literature
+ * (4ET1) shelf was grouped by our generic categories: "Shakespeare 3,
+ * 19th-Century Novel 3, Modern Text 11", with no choice rule. 4ET1 has no
+ * Shakespeare paper. Its specification (Issue 3, August 2025, pages 6-10) sets
+ * ONE modern prose text from seven (Paper 1 Section C), ONE modern drama text
+ * from five and ONE literary heritage text from six (Paper 2, or Component 3
+ * coursework), and all sixteen Part 3 anthology poems (Paper 1 Section B). A
+ * candidate may take Austen, Dickens or Hawthorne and never open Shakespeare,
+ * and the old grouping told them the opposite. The lists come from
+ * src/lib/board/edexcel-igcse-literature.ts, read from the document, so the
+ * shelf and the placement card cannot disagree.
+ *
+ * Every other board still uses the category grouping. A 4ET1 row on none of
+ * the specification's lists is not hidden: it falls through to the category
+ * groups, and spec-truth-agrees-with-registry.test.ts fails on it.
+ */
+export function groupShelfForBoard(board: ExamBoard, entries: ShelfEntry[]): ShelfGroup[] {
+  if (board !== 'edexcel-igcse') return groupShelf(entries)
+
+  const lists = [
+    { category: '4et1-modern-prose', labelKey: 'shelf.4et1.modern_prose', list: MODERN_PROSE },
+    { category: '4et1-modern-drama', labelKey: 'shelf.4et1.modern_drama', list: MODERN_DRAMA },
+    {
+      category: '4et1-literary-heritage',
+      labelKey: 'shelf.4et1.literary_heritage',
+      list: LITERARY_HERITAGE,
+    },
+  ]
+  const placed = new Set<string>()
+  const groups: ShelfGroup[] = lists.map(({ category, labelKey, list }) => {
+    const slugs = new Set(list.entries.map((e) => e.slug))
+    const own = entries.filter((e) => slugs.has(e.text.slug)).sort(teachableFirst)
+    for (const e of own) placed.add(e.text.slug)
+    return { category, labelKey, entries: own }
+  })
+
+  const poems = entries
+    .filter((e) => !placed.has(e.text.slug) && e.text.category === 'poetry-anthology')
+    .sort(teachableFirst)
+  for (const e of poems) placed.add(e.text.slug)
+  groups.push({ category: '4et1-anthology', labelKey: 'shelf.4et1.anthology', entries: poems })
+
+  const leftover = entries.filter((e) => !placed.has(e.text.slug))
+  if (leftover.length > 0) groups.push(...groupShelf(leftover))
+
+  return groups.filter((g) => g.entries.length > 0)
 }

@@ -5873,11 +5873,13 @@ export const EN_MESSAGES: Record<string, string> = {
   'edexcel.lit.hero_lead_post':
     '. Paper 1 is closed book; for Paper 2 you may take in clean copies of your set texts.',
   'edexcel.lit.duration_3h30': '3h 30m total',
-  'edexcel.lit.set_texts_count': '11 set texts + anthology',
+  'edexcel.lit.set_texts_count': '3 set texts from 18, plus 16 anthology poems',
   'edexcel.lit.paper1.title': 'Paper 1: Poetry and Modern Prose',
   'edexcel.lit.paper1.meta': '2 hours · 90 marks · 60% of total',
   'edexcel.lit.paper2.title': 'Paper 2: Modern Drama and Literary Heritage',
   'edexcel.lit.paper2.meta': '1 hour 30 minutes · 60 marks · 40% of total',
+  'edexcel.lit.component3.note':
+    'Component 3 is the coursework alternative to Paper 2. It uses the same two lists: two teacher-set essays of 30 marks each, one on your modern drama text and one on your literary heritage text, marked by your school and moderated by Pearson (4ET1 specification, Issue 3, page 8).',
   'edexcel.lit.set_texts.subtitle': 'Every Pearson Edexcel IGCSE Literature text on one page',
   'edexcel.lit.set_texts.intro':
     'Full study guides for each prescribed text - characters, themes, key quotations, context and essay plans. Pick a text to open its complete revision guide.',
@@ -20131,6 +20133,12 @@ export const EN_MESSAGES: Record<string, string> = {
   'search.texts.go': 'Go to the guide',
   'search.texts.or_course': 'Or start with your course',
   'shelf.eyebrow': 'Your set texts',
+  'shelf.4et1.modern_prose': 'Modern prose - you study ONE of these (Paper 1 Section C)',
+  'shelf.4et1.modern_drama':
+    'Modern drama - you study ONE of these (Paper 2 Section A, or Component 3 coursework)',
+  'shelf.4et1.literary_heritage':
+    'Literary heritage - you study ONE of these (Paper 2 Section B, or Component 3 coursework)',
+  'shelf.4et1.anthology': 'Anthology poetry - all 16 Part 3 poems (Paper 1 Section B)',
   'shelf.lead': 'Every text on your specification. Pick one to open its full guide.',
   'shelf.count_one': '1 set text',
   'shelf.count_other': '{n} set texts',
