@@ -13,6 +13,7 @@ import {
   pricesOnInvoice,
   pricesOnSubscription,
 } from '@/lib/billing/duplicate-subscription-guard'
+import { subscriptionPeriodEnd } from '@/lib/billing/stripe-shapes'
 
 // Disable body parsing - we need the raw body for signature verification
 export const runtime = 'nodejs'
@@ -593,8 +594,8 @@ export async function POST(request: NextRequest) {
         // subscription_status write here for IELTS-only subs.
         const ieltsOnly = isIeltsOnlySubscription(subscription)
 
-        // eslint-disable-next-line @typescript-eslint/no-explicit-any
-        const periodEnd = (subscription as any).current_period_end as number | undefined
+        // Both API shapes: top-level on older payloads, per item under clover.
+        const periodEnd = subscriptionPeriodEnd(subscription)
         const subscriptionEndDate = periodEnd ? new Date(periodEnd * 1000).toISOString() : null
 
         const { error } = await supabase
@@ -843,8 +844,10 @@ async function handleCheckoutCompleted(
     // existing value (default 'free').
     const ieltsOnly = isIeltsOnlySubscription(subscription)
 
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
-    const cpEnd = (subscription as any).current_period_end as number | undefined
+    // This subscription was RETRIEVED through the pinned client, so it arrives
+    // in the clover shape with the period on its items. Reading the top-level
+    // field here meant checkout never wrote an end date.
+    const cpEnd = subscriptionPeriodEnd(subscription)
     const subscriptionEndDate = cpEnd ? new Date(cpEnd * 1000).toISOString() : null
 
     const { error } = await supabase
@@ -981,8 +984,10 @@ async function handleSubscriptionUpdated(
   }
 
   const subscriptionStatus = statusMap[subscription.status] ?? 'free'
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  const periodEndUpdate = (subscription as any).current_period_end as number | undefined
+  // Both API shapes. When neither carries a period the stored end date is
+  // left alone below: this handler used to write `subscription_end_date:
+  // null` for every clover-shaped payload, wiping a real date each renewal.
+  const periodEndUpdate = subscriptionPeriodEnd(subscription)
   const subscriptionEndDate = periodEndUpdate
     ? new Date(periodEndUpdate * 1000).toISOString()
     : null
@@ -1032,7 +1037,7 @@ async function handleSubscriptionUpdated(
     .from('profiles')
     .update({
       ...(ieltsOnly ? {} : { subscription_status: subscriptionStatus }),
-      subscription_end_date: subscriptionEndDate,
+      ...(subscriptionEndDate && { subscription_end_date: subscriptionEndDate }),
     })
     .eq('id', userId)
 
@@ -1073,7 +1078,7 @@ async function handleSubscriptionDeleted(
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const sub = subscription as any
   const endTimestamp: number | null | undefined =
-    sub.ended_at ?? sub.cancel_at ?? sub.current_period_end
+    sub.ended_at ?? sub.cancel_at ?? subscriptionPeriodEnd(subscription)
   const subscriptionEndDate = endTimestamp
     ? new Date(endTimestamp * 1000).toISOString()
     : new Date().toISOString()

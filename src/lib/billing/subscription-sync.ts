@@ -50,6 +50,7 @@ import * as Sentry from '@sentry/nextjs'
 import type Stripe from 'stripe'
 import { prisma } from '@/lib/prisma'
 import { IdentityConflict, IdentityUnresolved, requirePrismaUserId } from '@/lib/identity'
+import { subscriptionPeriodEnd, subscriptionPeriodStart } from './stripe-shapes'
 
 /**
  * The marker every unrecorded-subscription log line starts with.
@@ -132,8 +133,13 @@ export interface SubscriptionFacts {
 export function readSubscriptionFacts(subscription: Stripe.Subscription): SubscriptionFacts {
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const sub = subscription as any
-  const periodStart = sub.current_period_start as number | undefined
-  const periodEnd = sub.current_period_end as number | undefined
+  // The period lives on the subscription in older API versions and on each
+  // subscription item under the pinned `2026-02-25.clover` version. Reading
+  // only the top-level field is what wrote `now` into both period columns of
+  // six of the seven Stripe-linked rows in production (20 October 2026). The
+  // readers accept both shapes; see `./stripe-shapes.ts`.
+  const periodStart = subscriptionPeriodStart(subscription)
+  const periodEnd = subscriptionPeriodEnd(subscription)
   // `items` is sometimes absent on test fixtures and on certain Stripe event
   // shapes; tolerate that and default to MONTHLY.
   const interval = subscription.items?.data?.[0]?.price?.recurring?.interval
