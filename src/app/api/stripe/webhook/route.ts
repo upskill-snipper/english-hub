@@ -1047,6 +1047,39 @@ async function handleSubscriptionUpdated(
     }
   }
 
+  // ── Is this a duplicate's status, not the customer's? ──────────────────
+  // `profiles.subscription_status` is one field per person. The September
+  // 2026 duplicate (see handleSubscriptionDeleted) revoked a paid customer
+  // through invoice.payment_failed and .deleted, both of which now ask Stripe
+  // whether another live subscription covers the price. This handler did not
+  // ask, and it mirrors past_due, unpaid and cancelled straight onto the
+  // profile, so the same outcome stayed open here. It also wrote the
+  // duplicate over the Prisma row of the live subscription.
+  //
+  // So for any NON-live status: if the customer holds another live
+  // subscription carrying the same price, this event is about a duplicate.
+  // Write nothing - not the profile, not the IELTS flag, not the Prisma row -
+  // and say so. A live status needs no check and pays for no Stripe call.
+  const incomingIsLive = subscription.status === 'active' || subscription.status === 'trialing'
+  if (!incomingIsLive) {
+    const prices = pricesOnSubscription(subscription)
+    const covered = prices.length
+      ? await findDuplicateSubscription(stripe, subscription.customer as string, prices, {
+          excludeSubscriptionId: subscription.id,
+        })
+      : { duplicate: false, existing: null }
+    if (covered.duplicate) {
+      console.warn(
+        `[stripe/webhook] DUPLICATE_SUBSCRIPTION_UPDATED_IGNORED customer=${subscription.customer} ` +
+          `updated=${subscription.id} incomingStatus=${subscription.status} ` +
+          `coveredBy=${covered.existing?.id} status=${covered.existing?.status}. ` +
+          'Entitlement and Prisma row left intact: the customer holds another live subscription ' +
+          'for the same price, so this is a duplicate. Cancel it and void its open invoice.',
+      )
+      return
+    }
+  }
+
   // IELTS-only subscriptions must not touch the global subscription_status
   // (that would wrongly grant/clobber GCSE 'pro'); their entitlement is
   // ielts_status, synced below via syncIeltsEntitlement.
@@ -1157,14 +1190,23 @@ async function handleSubscriptionDeleted(
     throw error
   }
 
-  // IELTS standalone entitlement: clear ielts_status on cancellation of an
-  // IELTS subscription (no-op for non-IELTS subscriptions).
-  await syncIeltsEntitlement(userId, subscription, supabase)
+  if (!stillCovered.duplicate) {
+    // IELTS standalone entitlement: clear ielts_status on cancellation of an
+    // IELTS subscription (no-op for non-IELTS subscriptions). Skipped when
+    // covered: the live subscription carries the same prices, so clearing
+    // the flag here would take away what it still grants.
+    await syncIeltsEntitlement(userId, subscription, supabase)
 
-  // Mirror cancellation onto the Prisma `Subscription` row.
-  await recordSubscriptionRow(userId, subscription, 'customer.subscription.deleted', eventId)
+    // Mirror cancellation onto the Prisma `Subscription` row. Skipped when
+    // covered: one row per user, so this write would replace the live
+    // subscription's id, status and period with the duplicate's. That is
+    // exactly what happened on 18 September 2026 once the entitlement write
+    // above had been guarded and this one had not.
+    await recordSubscriptionRow(userId, subscription, 'customer.subscription.deleted', eventId)
+  }
 
-  // Void any pending/confirmed affiliate commissions for this subscription
+  // Void any pending/confirmed affiliate commissions for this subscription.
+  // Keyed on the subscription id, so it is correct for a duplicate too.
   const { error: voidError, count: voidedCount } = await supabase
     .from('affiliate_referrals')
     .update({

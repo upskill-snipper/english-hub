@@ -60,6 +60,13 @@ import { subscriptionPeriodEnd, subscriptionPeriodStart } from './stripe-shapes'
  */
 export const UNRECORDED_SUBSCRIPTION_MARKER = 'BILLING_SUBSCRIPTION_UNRECORDED'
 
+/**
+ * The marker logged when a write was REFUSED because the stored row is a
+ * live subscription and the incoming one is a dead stranger. Not an error:
+ * the row is right and the event was a duplicate's. Greppable all the same.
+ */
+export const LIVE_ROW_PROTECTED_MARKER = 'BILLING_LIVE_ROW_PROTECTED'
+
 export type SubscriptionSyncFailureReason =
   /**
    * No Prisma `User` row and none could be projected - a deleted auth
@@ -73,6 +80,12 @@ export type SubscriptionSyncFailureReason =
   | 'identity_conflict'
   /** Identity resolved, but the `Subscription` upsert itself failed. */
   | 'row_write_failed'
+  /**
+   * The stored row is a live subscription with a DIFFERENT Stripe id and the
+   * incoming subscription is not live. Writing it would replace the paid
+   * subscription's record with a dead duplicate's. Refused on purpose.
+   */
+  | 'live_row_protected'
 
 export type SubscriptionSyncResult =
   | { ok: true; prismaUserId: string }
@@ -273,7 +286,67 @@ export async function syncStripeSubscriptionToPrisma(
     return { ok: false, reason, message: err instanceof Error ? err.message : String(err) }
   }
 
-  // ── 2. Write the row ────────────────────────────────────────────────
+  // ── 2. Never let a dead duplicate overwrite the live subscription ───
+  //
+  // One row per user, so a second Stripe subscription does not appear as a
+  // second row: it REPLACES the first. On 18 September 2026 the deletion of a
+  // failing duplicate wrote CANCELLED, the duplicate's id and the duplicate's
+  // period over the row of a Teachers Annual subscription the customer had
+  // paid GBP 67.99 for and which Stripe showed Active until 2027.
+  //
+  // The webhook asks Stripe whether another live subscription covers the
+  // price before it calls this module, but that check fails open when Stripe
+  // is unreachable. This is the second layer, on our own evidence: if the
+  // stored row names a different subscription, is live, and its period has
+  // not yet run out, an incoming non-live subscription does not get to
+  // overwrite it. A stale ACTIVE row whose period has passed is not
+  // protected, because then the write is the correction.
+  const incomingIsLive = facts.status === 'ACTIVE' || facts.status === 'TRIALING'
+  if (!incomingIsLive) {
+    let existing: {
+      stripeSubscriptionId: string | null
+      status: string
+      currentPeriodEnd: Date
+    } | null = null
+    try {
+      existing = await prisma.subscription.findUnique({
+        where: { userId: prismaUserId },
+        select: { stripeSubscriptionId: true, status: true, currentPeriodEnd: true },
+      })
+    } catch (err) {
+      // The upsert below will report the same connection fault far more
+      // loudly if it is real; a failed read here must not block the write.
+      console.warn(`[billing] live-row check could not read the existing row: ${String(err)}`)
+    }
+    const existingIsLive =
+      existing !== null &&
+      (existing.status === 'ACTIVE' || existing.status === 'TRIALING') &&
+      existing.currentPeriodEnd.getTime() > Date.now()
+    if (
+      existing &&
+      existingIsLive &&
+      existing.stripeSubscriptionId &&
+      existing.stripeSubscriptionId !== facts.stripeSubscriptionId
+    ) {
+      const message =
+        `${LIVE_ROW_PROTECTED_MARKER} ${JSON.stringify({
+          marker: LIVE_ROW_PROTECTED_MARKER,
+          eventType: args.source,
+          eventId: args.eventId ?? null,
+          supabaseUserId: args.supabaseUserId,
+          keptSubscriptionId: existing.stripeSubscriptionId,
+          keptStatus: existing.status,
+          keptPeriodEnd: existing.currentPeriodEnd.toISOString(),
+          refusedSubscriptionId: facts.stripeSubscriptionId,
+          refusedStripeStatus: facts.stripeStatus,
+        })} The stored row is a live subscription and the incoming one is a dead ` +
+        'duplicate. Row left as it was. Check Stripe for two subscriptions on this customer.'
+      console.warn(message)
+      return { ok: false, reason: 'live_row_protected', message }
+    }
+  }
+
+  // ── 3. Write the row ────────────────────────────────────────────────
   //
   // `currentPeriodStart` / `currentPeriodEnd` are NOT NULL in the schema and
   // a create must supply both. When Stripe's payload carries no period (some
