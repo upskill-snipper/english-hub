@@ -169,6 +169,58 @@ describe('status mapping', () => {
   })
 })
 
+// ─── The real plan and price (webhook:D12, D13) ─────────────────────────
+//
+// The route answered `plan: 'MONTHLY'` for everyone and the page priced the
+// student monthly plan, so an annual subscriber and every teacher saw the
+// wrong plan and the wrong amount on their own plan page.
+
+describe('the plan and the price', () => {
+  function rowWith(over: Record<string, unknown>) {
+    return {
+      status: 'ACTIVE',
+      plan: 'MONTHLY',
+      isTeacherPlan: false,
+      grandfatheredPriceMinor: null,
+      currentPeriodStart: new Date('2026-09-12T00:00:00.000Z'),
+      currentPeriodEnd: new Date('2027-09-12T00:00:00.000Z'),
+      cancelledAt: null,
+      paymentCount: 1,
+      coolingOffWaived: false,
+      ...over,
+    }
+  }
+
+  it('reports an annual teacher plan as what it is, at the price locked at signup', async () => {
+    mockTryPrismaUserId.mockResolvedValue('cuid_1')
+    mockFindUnique.mockResolvedValue(
+      rowWith({ plan: 'ANNUAL', isTeacherPlan: true, grandfatheredPriceMinor: 6799 }),
+    )
+    const json = await (await GET()).json()
+    expect(json.plan).toBe('ANNUAL')
+    expect(json.interval).toBe('year')
+    expect(json.isTeacherPlan).toBe(true)
+    expect(json.priceMinor).toBe(6799)
+  })
+
+  it('falls back to the current list price for the plan and tier when no price was locked', async () => {
+    mockTryPrismaUserId.mockResolvedValue('cuid_1')
+    mockFindUnique.mockResolvedValue(rowWith({ plan: 'ANNUAL', grandfatheredPriceMinor: null }))
+    const json = await (await GET()).json()
+    expect(json.plan).toBe('ANNUAL')
+    // PRICING.STUDENT_ANNUAL, early access, in pence.
+    expect(json.priceMinor).toBe(2999)
+  })
+
+  it('answers student monthly when there is no row, which is what a trialist would pay', async () => {
+    const json = await (await GET()).json()
+    expect(json.plan).toBe('MONTHLY')
+    expect(json.interval).toBe('month')
+    expect(json.isTeacherPlan).toBe(false)
+    expect(json.priceMinor).toBe(399)
+  })
+})
+
 // ─── Shape ──────────────────────────────────────────────────────────────
 
 describe('the response', () => {
@@ -176,6 +228,9 @@ describe('the response', () => {
     const json = await (await GET()).json()
     for (const key of [
       'plan',
+      'interval',
+      'isTeacherPlan',
+      'priceMinor',
       'status',
       'currentPeriodStart',
       'currentPeriodEnd',

@@ -24,12 +24,23 @@
 //
 // CLAUDE.md structural fact 2 applies: `profiles.subscription_status` is one
 // field per PERSON, not per subscription. This route only reads it.
+//
+// THE PLAN AND THE PRICE (webhook:D12, D13, 23 October 2026)
+//
+// This route answered `plan: 'MONTHLY'` for everyone and the page priced the
+// student monthly plan, so an annual subscriber, and every teacher, saw the
+// wrong plan name and the wrong amount on their own plan page. The Prisma row
+// carries `plan`, `isTeacherPlan` and the price locked at signup
+// (`grandfatheredPriceMinor`); they are read here and the page renders what it
+// is given. Without a row the answer is the current student monthly list
+// price, which is what a no-card trialist would pay.
 // ────────────────────────────────────────────────────────────────────────────
 
 import { NextResponse } from 'next/server'
 import { prisma } from '@/lib/prisma'
 import { createServerSupabaseClient } from '@/lib/supabase/server'
 import { tryPrismaUserId } from '@/lib/identity'
+import { captureGrandfatherFields } from '@/lib/pricing/grandfather'
 
 export const dynamic = 'force-dynamic'
 
@@ -80,6 +91,9 @@ export async function GET() {
   // resolved, and every field it adds is optional detail.
   let row: {
     status: string
+    plan?: 'MONTHLY' | 'ANNUAL'
+    isTeacherPlan?: boolean
+    grandfatheredPriceMinor?: number | null
     currentPeriodStart: Date
     currentPeriodEnd: Date
     cancelledAt: Date | null
@@ -94,6 +108,9 @@ export async function GET() {
         where: { userId: prismaUserId },
         select: {
           status: true,
+          plan: true,
+          isTeacherPlan: true,
+          grandfatheredPriceMinor: true,
           currentPeriodStart: true,
           currentPeriodEnd: true,
           cancelledAt: true,
@@ -105,6 +122,15 @@ export async function GET() {
   } catch (err) {
     console.error('[api/user/subscription] Prisma enrichment failed:', err)
   }
+
+  // The plan, the tier and the price the customer actually pays. The locked
+  // signup price wins when the row has one; otherwise the current list price
+  // for that plan and tier.
+  const plan: 'MONTHLY' | 'ANNUAL' = row?.plan ?? 'MONTHLY'
+  const isTeacherPlan = row?.isTeacherPlan ?? false
+  const priceMinor =
+    row?.grandfatheredPriceMinor ??
+    captureGrandfatherFields(plan, isTeacherPlan ? 'teacher' : 'student').grandfatheredPriceMinor
 
   // The Prisma row is more precise about WHICH of the four states applies -
   // it distinguishes a trial from a paid subscription, where the profile
@@ -125,7 +151,10 @@ export async function GET() {
   const periodStart = row?.currentPeriodStart?.toISOString() ?? profile?.created_at ?? null
 
   return NextResponse.json({
-    plan: 'MONTHLY',
+    plan,
+    interval: plan === 'ANNUAL' ? 'year' : 'month',
+    isTeacherPlan,
+    priceMinor,
     status,
     currentPeriodStart: periodStart,
     currentPeriodEnd: periodEnd,

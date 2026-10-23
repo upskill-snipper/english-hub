@@ -15997,6 +15997,8 @@ export const AR_MESSAGES: Record<string, string> = {
   'dash.subscription.trial_banner_a': 'أنت الحين على تجربة مجانية. تجربتك تنتهي في',
   'dash.subscription.trial_banner_b': 'بعدها بنخصم منك',
   'dash.subscription.monthly_plan': 'الباقة الشهرية',
+  'dash.subscription.annual_plan': 'الباقة السنوية',
+  'dash.subscription.year': 'سنة',
   'dash.subscription.status.free_trial': 'تجربة مجانية',
   'dash.subscription.status.cancelled': 'ملغي',
   'dash.subscription.status.active': 'فعّال',

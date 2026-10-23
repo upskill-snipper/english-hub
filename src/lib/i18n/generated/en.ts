@@ -16418,6 +16418,8 @@ export const EN_MESSAGES: Record<string, string> = {
   'dash.subscription.trial_banner_a': 'You are currently on a free trial. Your trial ends on',
   'dash.subscription.trial_banner_b': 'After that, you will be charged',
   'dash.subscription.monthly_plan': 'Monthly Plan',
+  'dash.subscription.annual_plan': 'Annual Plan',
+  'dash.subscription.year': 'year',
   'dash.subscription.status.free_trial': 'Free trial',
   'dash.subscription.status.cancelled': 'Cancelled',
   'dash.subscription.status.active': 'Active',
