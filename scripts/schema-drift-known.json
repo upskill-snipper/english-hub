@@ -17,7 +17,12 @@
     "12 October 2026: five school policies from 004_fix_school_rls.sql added,",
     "because 20261012_school_access_rules.sql drops them deliberately (the",
     "manifest does not follow DROP POLICY). 35 entries. The fifth was missed",
-    "at first and reported as NEW drift by the post-deploy check, as it should."
+    "at first and reported as NEW drift by the post-deploy check, as it should.",
+    "",
+    "16 October 2026: nineteen school policies added, because",
+    "20261016_school_tables_server_writes_only.sql drops them deliberately.",
+    "54 entries. They travel in the same commit as that migration, so the",
+    "register and the database change together."
   ],
   "allow": [
     {
@@ -127,6 +132,101 @@
       "kind": "missing-policy",
       "object": "class_students:school_admin_delete_class_students",
       "why": "Deliberately dropped by 20261012_school_access_rules.sql and replaced by class_students_delete_admin, the same rule checked through get_class_school_id."
+    },
+    {
+      "kind": "missing-policy",
+      "object": "schools:school_admins_update",
+      "why": "Deliberately dropped by 20261016_school_tables_server_writes_only.sql. It let a school admin change every column of their school row from the browser, access_until, seat_limit and ai_authorised_at among them. The settings page saves six named fields through /api/school/settings with the service role."
+    },
+    {
+      "kind": "missing-policy",
+      "object": "school_members:school_admin_hod_insert_members",
+      "why": "Deliberately dropped by 20261016_school_tables_server_writes_only.sql. It checked the inserter's role, not the role written, so a head of department could write an admin, and any user id could be written in as a pupil. All writes go through the service role in API routes that check who is asking."
+    },
+    {
+      "kind": "missing-policy",
+      "object": "school_members:school_admin_update_members",
+      "why": "Deliberately dropped by 20261016_school_tables_server_writes_only.sql. An admin could rewrite any member row of their school, user_id included, and so claim any account as a pupil. All writes go through the service role in API routes that check who is asking."
+    },
+    {
+      "kind": "missing-policy",
+      "object": "school_members:school_admin_delete_members",
+      "why": "Deliberately dropped by 20261016_school_tables_server_writes_only.sql. Nothing deletes member rows through a user's session; removals go through /api/school/members/[id] and /api/school/roles."
+    },
+    {
+      "kind": "missing-policy",
+      "object": "classes:school_admin_hod_insert_classes",
+      "why": "Deliberately dropped by 20261016_school_tables_server_writes_only.sql. Classes are created through /api/school/classes and the operator routes; nothing writes them from the browser."
+    },
+    {
+      "kind": "missing-policy",
+      "object": "classes:school_staff_update_classes",
+      "why": "Deliberately dropped by 20261016_school_tables_server_writes_only.sql. Class edits go through /api/school/classes/[classId]; nothing writes them from the browser."
+    },
+    {
+      "kind": "missing-policy",
+      "object": "classes:school_admin_delete_classes",
+      "why": "Deliberately dropped by 20261016_school_tables_server_writes_only.sql. Classes are archived through /api/school/classes/[classId]; nothing deletes them from the browser."
+    },
+    {
+      "kind": "missing-policy",
+      "object": "class_students:class_students_insert_staff",
+      "why": "Deliberately dropped by 20261016_school_tables_server_writes_only.sql. Any teacher could insert any user id into any class of their school, around the API rule (16 October) that only the school's own pupils can be enrolled. All writes go through the service role in API routes that check who is asking."
+    },
+    {
+      "kind": "missing-policy",
+      "object": "class_students:class_students_update_staff",
+      "why": "Deliberately dropped by 20261016_school_tables_server_writes_only.sql. Any teacher could change any enrolment in their school, a colleague's class included. All writes go through the service role in API routes that check who is asking."
+    },
+    {
+      "kind": "missing-policy",
+      "object": "class_students:class_students_delete_admin",
+      "why": "Deliberately dropped by 20261016_school_tables_server_writes_only.sql. Nothing deletes enrolments through a user's session. All writes go through the service role in API routes that check who is asking."
+    },
+    {
+      "kind": "missing-policy",
+      "object": "school_join_codes:school_join_codes_select_staff",
+      "why": "Deliberately dropped by 20261016_school_tables_server_writes_only.sql and replaced by school_join_codes_select_admin_hod. Teachers could read the school's teacher join codes, which GET /api/school/join-codes shows only to admins and heads of department."
+    },
+    {
+      "kind": "missing-policy",
+      "object": "school_join_codes:school_admin_hod_insert_join_codes",
+      "why": "Deliberately dropped by 20261016_school_tables_server_writes_only.sql. Join codes are created through /api/school/join-codes. All writes go through the service role in API routes that check who is asking."
+    },
+    {
+      "kind": "missing-policy",
+      "object": "school_join_codes:school_admin_hod_update_join_codes",
+      "why": "Deliberately dropped by 20261016_school_tables_server_writes_only.sql. Join codes are changed through /api/school/join-codes/[code]. All writes go through the service role in API routes that check who is asking."
+    },
+    {
+      "kind": "missing-policy",
+      "object": "school_join_codes:school_admin_delete_join_codes",
+      "why": "Deliberately dropped by 20261016_school_tables_server_writes_only.sql. Join codes are deleted through /api/school/join-codes/[code]. All writes go through the service role in API routes that check who is asking."
+    },
+    {
+      "kind": "missing-policy",
+      "object": "school_students:school_admins_view_students",
+      "why": "Deliberately dropped by 20261016_school_tables_server_writes_only.sql and replaced by school_students_select_admin_hod. It was FOR ALL, so writable from the browser, and did not check that the membership had been accepted."
+    },
+    {
+      "kind": "missing-policy",
+      "object": "analytics_snapshots:school_staff_select_analytics",
+      "why": "Deliberately dropped by 20261016_school_tables_server_writes_only.sql and replaced by analytics_snapshots_select_admin_hod. Every accepted member, pupils included, could read every snapshot of the school."
+    },
+    {
+      "kind": "missing-policy",
+      "object": "bulk_import_jobs:school_admins_view_import_jobs",
+      "why": "Deliberately dropped by 20261016_school_tables_server_writes_only.sql. FOR ALL for any admin row, accepted or not. Nothing in src/ uses the table since bulk upload moved to BulkUploadJob; service role only."
+    },
+    {
+      "kind": "missing-policy",
+      "object": "import_results:school_admins_view_import_results",
+      "why": "Deliberately dropped by 20261016_school_tables_server_writes_only.sql. FOR ALL for any admin row, accepted or not, on a table built to hold pupils' temporary passwords. Nothing in src/ uses it; service role only."
+    },
+    {
+      "kind": "missing-policy",
+      "object": "promo_codes:promo_codes_public_read",
+      "why": "Deliberately dropped by 20261016_school_tables_server_writes_only.sql. Anyone, signed in or not, could list every active promo code. Both readers, /api/school/promo/validate and /api/school/register, use the service role."
     },
 
     {
