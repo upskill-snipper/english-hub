@@ -912,6 +912,30 @@ const EDEXCEL_IGCSE_PAPERS: Paper[] = [
 ]
 
 // ─── Cambridge 0500 (A*-G) ──────────────────────────────────────────
+//
+// CORRECTED 23 October 2026 against Cambridge's own syllabuses. Paper 1 was
+// shown as "Question 1: Directed Writing", "Question 2: Writer's Effect" and
+// "Question 3: Summary ... from two passages". No 0500 syllabus has that paper.
+// Directed writing is Paper 2 Section A, and the summary is one task on ONE
+// text (Text B).
+//
+// WHICH SYLLABUS. The structure below is the syllabus for examination in 2027,
+// 2028 and 2029 (Version 1, cambridgeinternational.org/Images/718783-2027-2029-
+// syllabus.pdf, pages 13-17), which is what src/lib/marking/mark-schemes/
+// cambridge-0500.ts already marks against: Paper 1 is FOUR questions of 20.
+// The 2024-2026 syllabus (Version 1, published September 2021,
+// cambridgeinternational.org/Images/635230-2024-2026-syllabus.pdf, pages
+// 13-15), which a November 2026 candidate still sits, has THREE Paper 1
+// questions: Q1 Comprehension and summary (30, Texts A and B), Q2 Short-answer
+// questions and language task (25, Text C), Q3 Extended response to reading
+// (25, Text C); and a single directed writing task in Paper 2 Section A. One
+// structure per paper cannot show both, and the expiring one would be wrong
+// for almost every reader, so it is recorded here rather than rendered.
+//
+// 0990 below mirrors 0500. The 0990 2027-2029 document was not re-read on 23
+// October 2026; the two were verified as the same papers under different
+// grading on 19 September 2026 (cambridge-0500-matches-the-syllabus.test.ts,
+// mark-schemes/cambridge-0990.ts), and nothing read since contradicts that.
 
 const CAMBRIDGE_0500_PAPERS: Paper[] = [
   {
@@ -924,9 +948,9 @@ const CAMBRIDGE_0500_PAPERS: Paper[] = [
     colour: 'teal',
     sections: [
       {
-        title: 'Question 1: Directed Writing',
+        title: 'Question 1: Comprehension (20 marks)',
         description:
-          'Read a passage and respond to it in a directed writing task (e.g. letter, report).',
+          'Short answers on Text A, testing understanding of explicit and implicit meanings.',
         links: [
           { label: 'Reading Skills Guide', href: '/revision/language/reading', type: 'technique' },
           { label: 'Cambridge Reading Hub', href: '/igcse/cambridge/reading', type: 'technique' },
@@ -934,8 +958,22 @@ const CAMBRIDGE_0500_PAPERS: Paper[] = [
         ],
       },
       {
-        title: "Question 2: Writer's Effect",
-        description: 'Analyse how language is used for effect in a passage.',
+        title: 'Question 2: Summary task (20 marks)',
+        description:
+          'On Text B: 2(a) a selective summary in your own words of no more than 120 words; 2(b) a short answer on attitudes and opinions.',
+        links: [
+          {
+            label: 'Time Management',
+            href: '/revision/exam-technique/time-management',
+            type: 'technique',
+          },
+          { label: 'Practice Questions', href: '/revision/quiz', type: 'practice' },
+        ],
+      },
+      {
+        title: 'Question 3: Short-answer questions and language task (20 marks)',
+        description:
+          'On Text C: short answers, then about 200-250 words on how the writer achieves effects.',
         links: [
           {
             label: 'Question Types',
@@ -950,15 +988,16 @@ const CAMBRIDGE_0500_PAPERS: Paper[] = [
         ],
       },
       {
-        title: 'Question 3: Summary',
-        description: 'Write a summary using information from two passages.',
+        title: 'Question 4: Extended response to reading (20 marks)',
+        description:
+          'About 250-300 words on Text C as a letter, report, journal, speech, interview or article.',
         links: [
           {
-            label: 'Time Management',
-            href: '/revision/exam-technique/time-management',
+            label: 'Transactional Writing Guide',
+            href: '/revision/language/writing',
             type: 'technique',
           },
-          { label: 'Practice Questions', href: '/revision/quiz', type: 'practice' },
+          { label: 'Cambridge Mock Exams', href: '/mock-exams?paper=cambridge', type: 'mock' },
         ],
       },
     ],
@@ -966,15 +1005,16 @@ const CAMBRIDGE_0500_PAPERS: Paper[] = [
   {
     id: 'cam0500-p2',
     name: 'Paper 2',
-    subtitle: 'Writing',
+    subtitle: 'Directed Writing and Composition',
     examCode: '0500/22',
     duration: '2h',
     totalMarks: 80,
     colour: 'clay',
     sections: [
       {
-        title: 'Section A: Argumentative/Discursive',
-        description: 'One argumentative, discursive, or persuasive writing task.',
+        title: 'Section A: Directed Writing (40 marks)',
+        description:
+          'One question in two parts on one or two texts: 1(a) a structured question on the text(s) (5 marks); 1(b) a discursive, argumentative or persuasive speech, letter, article or report of about 250-350 words using them.',
         links: [
           {
             label: 'Transactional Writing Guide',
@@ -989,8 +1029,9 @@ const CAMBRIDGE_0500_PAPERS: Paper[] = [
         ],
       },
       {
-        title: 'Section B: Descriptive/Narrative',
-        description: 'One descriptive or narrative composition task.',
+        title: 'Section B: Composition (40 marks)',
+        description:
+          'One composition of about 350-450 words from a choice of four titles: two descriptive and two narrative.',
         links: [
           {
             label: 'Creative Writing Guide',
@@ -1006,97 +1047,16 @@ const CAMBRIDGE_0500_PAPERS: Paper[] = [
 ]
 
 // ─── Cambridge 0990 (9-1) ───────────────────────────────────────────
+//
+// The same papers as 0500 under 9-1 grading (see the 0500 note above for the
+// basis). Derived from the 0500 structure so the two cannot drift apart, which
+// is how the old wrong Paper 1 came to exist twice.
 
-const CAMBRIDGE_0990_PAPERS: Paper[] = [
-  {
-    id: 'cam0990-p1',
-    name: 'Paper 1',
-    subtitle: 'Reading',
-    examCode: '0990/12',
-    duration: '2h',
-    totalMarks: 80,
-    colour: 'teal',
-    sections: [
-      {
-        title: 'Question 1: Directed Writing',
-        description: 'Read a passage and respond to it in a directed writing task.',
-        links: [
-          { label: 'Reading Skills Guide', href: '/revision/language/reading', type: 'technique' },
-          { label: 'Cambridge Reading Hub', href: '/igcse/cambridge/reading', type: 'technique' },
-          { label: 'Cambridge Mock Exams', href: '/mock-exams?paper=cambridge', type: 'mock' },
-        ],
-      },
-      {
-        title: "Question 2: Writer's Effect",
-        description: 'Analyse how language is used for effect in a passage.',
-        links: [
-          {
-            label: 'Question Types',
-            href: '/revision/exam-technique/question-types',
-            type: 'technique',
-          },
-          {
-            label: 'Essay Structure Guide',
-            href: '/revision/exam-technique/essay-structure',
-            type: 'technique',
-          },
-        ],
-      },
-      {
-        title: 'Question 3: Summary',
-        description: 'Write a summary comparing information from two passages.',
-        links: [
-          {
-            label: 'Time Management',
-            href: '/revision/exam-technique/time-management',
-            type: 'technique',
-          },
-          { label: 'Practice Questions', href: '/revision/quiz', type: 'practice' },
-        ],
-      },
-    ],
-  },
-  {
-    id: 'cam0990-p2',
-    name: 'Paper 2',
-    subtitle: 'Writing',
-    examCode: '0990/22',
-    duration: '2h',
-    totalMarks: 80,
-    colour: 'clay',
-    sections: [
-      {
-        title: 'Section A: Argumentative/Discursive',
-        description: 'One argumentative, discursive, or persuasive writing task.',
-        links: [
-          {
-            label: 'Transactional Writing Guide',
-            href: '/revision/language/writing',
-            type: 'technique',
-          },
-          {
-            label: 'Essay Structure',
-            href: '/revision/exam-technique/essay-structure',
-            type: 'technique',
-          },
-        ],
-      },
-      {
-        title: 'Section B: Descriptive/Narrative',
-        description: 'One descriptive or narrative composition task.',
-        links: [
-          {
-            label: 'Creative Writing Guide',
-            href: '/revision/language/writing',
-            type: 'technique',
-          },
-          { label: 'SPAG Guide', href: '/revision/language/spag', type: 'technique' },
-          { label: 'Cambridge Mock Exams', href: '/mock-exams?paper=cambridge', type: 'mock' },
-        ],
-      },
-    ],
-  },
-]
+const CAMBRIDGE_0990_PAPERS: Paper[] = CAMBRIDGE_0500_PAPERS.map((paper) => ({
+  ...paper,
+  id: paper.id.replace('cam0500', 'cam0990'),
+  examCode: paper.examCode.replace('0500', '0990'),
+}))
 
 // ─── Edexcel IGCSE Language (4EA1) ──────────────────────────────────
 
