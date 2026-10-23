@@ -14,7 +14,7 @@ export const EXPLANATIONS: GameExplanations = {
   },
   'The cat is sleeping on the sofa': {
     why: "'The cat' is the subject. 'Is sleeping' is the verb group for something happening now: the helping verb 'is' comes first, then the -ing verb. 'On the sofa' says where and usually goes last.",
-    more: "This is the present continuous: is or are plus a verb ending in -ing. The helping verb agrees with the subject: the cat is sleeping, but the cats are sleeping. 'The cat on the sofa is sleeping' is also correct English, but this game asks for the order shown.",
+    more: "This is the present continuous: is or are plus a verb ending in -ing. The helping verb agrees with the subject: the cat is sleeping, but the cats are sleeping. 'The cat on the sofa is sleeping' is also correct English, and this game accepts it too.",
     tip: "Use the present continuous for what is happening right now. For habits, use the present simple: 'The cat sleeps a lot.'",
   },
   'My brother plays football at the weekend': {
@@ -49,7 +49,7 @@ export const EXPLANATIONS: GameExplanations = {
   },
   'She has a small garden behind the house': {
     why: "'She' is the subject, 'has' is the verb and 'a small garden' is the object. 'Behind the house' says where the garden is, so it follows the noun it tells us about. 'Small' sits before 'garden'.",
-    more: "A place phrase can follow a noun to describe it: 'a garden behind the house'. Single adjectives such as 'small' come before the noun. 'She has a garden behind the small house' is also correct English, with a different meaning, but this game asks for the order shown.",
+    more: "A place phrase can follow a noun to describe it: 'a garden behind the house'. Single adjectives such as 'small' come before the noun. 'She has a garden behind the small house' is also correct English, with a different meaning, and this game accepts it too.",
     tip: "To enrich a noun, add one adjective in front and one place phrase behind: 'a small garden behind the house'.",
   },
   'He speaks three languages very well': {
@@ -59,17 +59,17 @@ export const EXPLANATIONS: GameExplanations = {
   },
   'The children are playing in the garden': {
     why: "'The children' is the subject and 'are playing' is the verb group. 'Are' goes with the plural 'children'. 'In the garden' says where and comes last.",
-    more: "'Children' is an irregular plural: the plural of 'child' is 'children', not 'childs'. Use 'are' with plural subjects and 'is' with singular ones. 'The children in the garden are playing' is also correct English, but this game asks for the order shown.",
+    more: "'Children' is an irregular plural: the plural of 'child' is 'children', not 'childs'. Use 'are' with plural subjects and 'is' with singular ones. 'The children in the garden are playing' is also correct English, and this game accepts it too.",
     tip: 'Match the helping verb to the subject: the child is playing, the children are playing.',
   },
   'I usually have tea in the afternoon': {
     why: "'I' is the subject, 'usually' is an adverb of frequency, 'have' is the verb and 'tea' is the object. Adverbs of frequency usually go before the main verb. 'In the afternoon' says when.",
-    more: "Other adverbs of frequency are always, often, sometimes and never. They usually go before the main verb but after the verb 'be': 'She is always late.' 'I have tea in the afternoon usually' is also correct English, but this game asks for the order shown.",
+    more: "Other adverbs of frequency are always, often, sometimes and never. They usually go before the main verb but after the verb 'be': 'She is always late.' 'I have tea in the afternoon usually' is also correct English, and this game accepts it too.",
     tip: "In a plain statement, put 'usually', 'often' and 'never' before the main verb. 'I have usually tea' is wrong.",
   },
   'My phone is on the kitchen table': {
     why: "'My phone' is the subject and 'is' is the verb 'to be'. 'On the kitchen table' says where the phone is. The preposition 'on' shows that it is resting on the top surface.",
-    more: "'Kitchen table' puts one noun before another, and the first describes the second. 'On' means touching a surface; 'in' would suggest the phone was inside the table. 'My kitchen phone is on the table' is also correct English, but this game asks for the order shown.",
+    more: "'Kitchen table' puts one noun before another, and the first describes the second. 'On' means touching a surface; 'in' would suggest the phone was inside the table. 'My kitchen phone is on the table' is also correct English, and this game accepts it too.",
     tip: "Use 'on' for surfaces (on the table), 'in' for enclosed spaces (in the box) and 'at' for points (at the door).",
   },
   'We visited our grandparents last summer': {
@@ -79,7 +79,7 @@ export const EXPLANATIONS: GameExplanations = {
   },
   'The shop opens at eight every day': {
     why: "'The shop' is the subject and 'opens' is the verb, with -s because the shop is one thing. 'At eight' says the exact time and 'every day' says how often. Both come after the verb.",
-    more: "The two time details can swap places: 'The shop opens every day at eight' is also correct English, but this game asks for the order shown.",
+    more: "The two time details can swap places: 'The shop opens every day at eight' is also correct English, and this game accepts it too.",
     tip: 'Add -s to the verb for he, she, it and singular nouns: the shop opens, but the shops open.',
   },
   'She is reading an interesting book': {
@@ -89,62 +89,62 @@ export const EXPLANATIONS: GameExplanations = {
   },
   'I wanted to go out but it was raining': {
     why: "'I wanted to go out' and 'it was raining' are two full clauses, and each has its own subject and verb. 'But' joins them and shows contrast, so it goes between them.",
-    more: "A compound sentence joins two main clauses with a coordinating conjunction: for, and, nor, but, or, yet or so. Each clause has its own subject and verb. 'I wanted to go but it was raining out' is also correct English, but this game asks for the order shown.",
+    more: "A compound sentence joins two main clauses with a coordinating conjunction: for, and, nor, but, or, yet or so. Each clause has its own subject and verb. 'I wanted to go but it was raining out' is also correct English, and this game accepts it too.",
     tip: "Written down, this sentence has a comma before 'but': 'I wanted to go out, but it was raining.'",
   },
   'She studied hard so she passed the exam': {
     why: "'She studied hard' is the cause and 'she passed the exam' is the result. 'So' joins them, and the order matters: the cause comes first, then 'so', then the result.",
-    more: "'So' as a conjunction means 'as a result'. Reversing the clauses would put the result before the cause. 'She studied so hard she passed the exam' is also correct English, with 'so hard' meaning 'very hard', but this game asks for the order shown.",
+    more: "'So' as a conjunction means 'as a result'. Reversing the clauses would put the result before the cause. 'She studied so hard she passed the exam' is also correct English, with 'so hard' meaning 'very hard', and this game accepts it too.",
     tip: "Written down, put a comma before 'so': 'She studied hard, so she passed the exam.'",
   },
   'We can walk or we can take the bus': {
     why: "'Or' joins two clauses that offer a choice. Each has its own subject and verb: 'we can walk' and 'we can take the bus'. 'Or' goes between them.",
-    more: "The two choices are equal, so they can change places: 'We can take the bus or we can walk' is also correct English, but this game asks for the order shown. The pattern is clause, 'or', clause.",
+    more: "The two choices are equal, so they can change places: 'We can take the bus or we can walk' is also correct English, and this game accepts it too. The pattern is clause, 'or', clause.",
     tip: "Use 'or' to offer choices. In writing, a comma before 'or' is optional between short clauses.",
   },
   'He made dinner and she washed the dishes': {
     why: "'And' joins two equal clauses, 'He made dinner' and 'she washed the dishes'. Each keeps the order subject, verb, object. The conjunction sits between the clauses.",
-    more: "The two ideas have equal weight, so the actions can swap: 'He washed the dishes and she made dinner' is also correct English, but this game asks for the order shown.",
+    more: "The two ideas have equal weight, so the actions can swap: 'He washed the dishes and she made dinner' is also correct English, and this game accepts it too.",
     tip: "A comma before 'and' is optional between short clauses, but it helps in longer ones.",
   },
   'The film was long but it was exciting': {
     why: "'But' joins two contrasting clauses, 'The film was long' and 'it was exciting'. Each has a subject and the verb 'was'. 'But' goes between them.",
-    more: "'The film was exciting but it was long' is also correct English, but this game asks for the order shown. Use a comma before 'but' when it joins two full clauses.",
+    more: "'The film was exciting but it was long' is also correct English, and this game accepts it too. Use a comma before 'but' when it joins two full clauses.",
     tip: "Contrast is useful in reviews. 'It was long, but it was exciting' gives a balanced opinion.",
   },
   'I was tired so I went to bed early': {
     why: "'I was tired' is the cause and 'I went to bed early' is the result. 'So' joins them. 'Early' is an adverb that says when, and it goes at the end.",
-    more: "'So' links a cause to its result, so the cause comes first. Compare 'because', which introduces the reason: 'I went to bed early because I was tired.' 'I was so tired I went to bed early' is also correct English, but this game asks for the order shown.",
+    more: "'So' links a cause to its result, so the cause comes first. Compare 'because', which introduces the reason: 'I went to bed early because I was tired.' 'I was so tired I went to bed early' is also correct English, and this game accepts it too.",
     tip: "Use 'so' to move from a reason to its result, and put a comma before it when you write.",
   },
   'You can have tea or you can have coffee': {
     why: "'Or' joins two clauses that offer a choice. Each has its own subject and verb: 'You can have tea' and 'you can have coffee'. 'Or' goes between them.",
-    more: "The two choices are equal, so they can change places: 'You can have coffee or you can have tea' is also correct English, but this game asks for the order shown. In everyday speech we shorten it to 'You can have tea or coffee.'",
+    more: "The two choices are equal, so they can change places: 'You can have coffee or you can have tea' is also correct English, and this game accepts it too. In everyday speech we shorten it to 'You can have tea or coffee.'",
     tip: 'Repeating the subject and verb makes a compound sentence. Leaving them out makes a simple one.',
   },
   'She plays the piano and he sings': {
     why: "'And' joins two complete clauses. 'She plays the piano' has a subject, a verb and an object, and 'he sings' has a subject and a verb. 'And' goes between them.",
-    more: "Both clauses could stand alone as sentences, which is why this sentence is compound. The actions can swap: 'She sings and he plays the piano' is also correct English, but this game asks for the order shown.",
+    more: "Both clauses could stand alone as sentences, which is why this sentence is compound. The actions can swap: 'She sings and he plays the piano' is also correct English, and this game accepts it too.",
     tip: "A clause needs a subject and a verb. If both halves have them, 'and' makes a compound sentence.",
   },
   'It was cold so we lit the fire': {
     why: "'It was cold' is the cause and 'we lit the fire' is the result, joined by 'so'. 'Lit' is the past tense of 'light', and it matches 'was': both clauses are in the past.",
-    more: "'Light' has two past forms, 'lit' and 'lighted', and 'lit' is the usual one for a fire or a candle. Here both clauses are in the past. 'It was so cold we lit the fire' is also correct English, but this game asks for the order shown.",
+    more: "'Light' has two past forms, 'lit' and 'lighted', and 'lit' is the usual one for a fire or a candle. Here both clauses are in the past. 'It was so cold we lit the fire' is also correct English, and this game accepts it too.",
     tip: "Written down, put a comma before 'so': 'It was cold, so we lit the fire.'",
   },
   'He tried his best but he did not win': {
     why: "'But' joins two contrasting clauses, 'He tried his best' and 'he did not win'. The second is an unexpected result. Each clause has its own subject and verb.",
-    more: "In the negative clause, 'did' is the helping verb and 'not' follows it, with the plain verb after: 'did not win', never 'did not won'. 'He did not win but he tried his best' is also correct English, but this game asks for the order shown.",
+    more: "In the negative clause, 'did' is the helping verb and 'not' follows it, with the plain verb after: 'did not win', never 'did not won'. 'He did not win but he tried his best' is also correct English, and this game accepts it too.",
     tip: "After 'did not', use the plain form of the verb: did not win, did not go, did not see.",
   },
   'We finished early so we went for a walk': {
     why: "'We finished early' is the cause and 'we went for a walk' is the result, joined by 'so'. 'Early' is an adverb that says when. 'Went for a walk' is the natural UK English phrase.",
-    more: "'Went' is the past tense of 'go'. In UK English we usually 'go for a walk'; 'take a walk' sounds more American. 'We finished so early we went for a walk' is also correct English, but this game asks for the order shown.",
+    more: "'Went' is the past tense of 'go'. In UK English we usually 'go for a walk'; 'take a walk' sounds more American. 'We finished so early we went for a walk' is also correct English, and this game accepts it too.",
     tip: 'Learn common verb phrases whole: go for a walk, have lunch, take a photo, make a mistake.',
   },
   'I like cricket and my sister likes rugby': {
     why: "'And' joins two clauses about different people. 'I like cricket' and 'my sister likes rugby' each have a subject, a verb and an object. The verb ends in -s for 'my sister', but not for 'I'.",
-    more: "The verb form changes with the subject: I like, she likes. The two sports can change places: 'I like rugby and my sister likes cricket' is also correct English, but this game asks for the order shown.",
+    more: "The verb form changes with the subject: I like, she likes. The two sports can change places: 'I like rugby and my sister likes cricket' is also correct English, and this game accepts it too.",
     tip: 'Check verb agreement in each clause separately. Every clause has its own subject, so each verb must match its own subject.',
   },
   'The sun came out so we went to the beach': {
@@ -154,12 +154,12 @@ export const EXPLANATIONS: GameExplanations = {
   },
   'She spoke quietly but everyone could hear her': {
     why: "'But' joins two contrasting clauses. 'She spoke quietly' has an adverb of manner after the verb, and 'everyone could hear her' is the surprising result. 'Her' is the object.",
-    more: "'Quietly' is an adverb of manner, so it usually follows the verb. 'She quietly spoke but everyone could hear her' is also correct English, but this game asks for the order shown. 'Could' is followed by the plain verb 'hear'.",
+    more: "'Quietly' is an adverb of manner, so it usually follows the verb. 'She quietly spoke but everyone could hear her' is also correct English, and this game accepts it too. 'Could' is followed by the plain verb 'hear'.",
     tip: "After 'could', 'can' and 'will', use the plain verb with no -s, -ed or -ing.",
   },
   'You should revise now or you will forget': {
     why: "'Or' here warns of a result: if you do not revise now, you will forget. The clauses are 'You should revise now' and 'you will forget', and 'or' goes between them.",
-    more: "'Or' can mean 'otherwise': the first clause says what to do, the second what happens if you do not. Reversed, 'You will forget or you should revise now' sounds odd. 'You should now revise or you will forget' is also correct English, but this game asks for the order shown.",
+    more: "'Or' can mean 'otherwise': the first clause says what to do, the second what happens if you do not. Reversed, 'You will forget or you should revise now' sounds odd. 'You should now revise or you will forget' is also correct English, and this game accepts it too.",
     tip: "A warning with 'or' is useful in advice and persuasive writing: 'Book now or you will miss out.'",
   },
   'Because it was late we went home': {
@@ -169,7 +169,7 @@ export const EXPLANATIONS: GameExplanations = {
   },
   'When the bell rang the pupils left': {
     why: "'When the bell rang' is a subordinate clause of time. It cannot stand alone, so it needs the main clause 'the pupils left'. The clause beginning with 'when' comes first here.",
-    more: "When, while, after and before begin time clauses. In writing, put a comma after the clause: 'When the bell rang, the pupils left.' 'When the pupils left the bell rang' is also correct English, with a different meaning, but this game asks for the order shown.",
+    more: "When, while, after and before begin time clauses. In writing, put a comma after the clause: 'When the bell rang, the pupils left.' 'When the pupils left the bell rang' is also correct English, with a different meaning, and this game accepts it too.",
     tip: "Look for a time word such as 'when', 'while', 'after' or 'before' at the start of a sentence. It marks a subordinate clause that needs a comma after it.",
   },
   'Although she was tired she kept working': {
@@ -179,7 +179,7 @@ export const EXPLANATIONS: GameExplanations = {
   },
   'If it rains tomorrow we will stay inside': {
     why: "This is the first conditional. 'If it rains tomorrow' uses the present simple for a possible future event, and 'we will stay inside' gives the result with 'will' plus the plain verb.",
-    more: "First conditional: 'if' plus the present simple, then 'will' plus a verb. We do not say 'if it will rain'. 'Tomorrow' can move: 'If it rains we will stay inside tomorrow' is also correct English, but this game asks for the order shown.",
+    more: "First conditional: 'if' plus the present simple, then 'will' plus a verb. We do not say 'if it will rain'. 'Tomorrow' can move: 'If it rains we will stay inside tomorrow' is also correct English, and this game accepts it too.",
     tip: "In writing, put a comma after the 'if' clause: 'If it rains tomorrow, we will stay inside.'",
   },
   'The book that I read was fascinating': {
@@ -189,12 +189,12 @@ export const EXPLANATIONS: GameExplanations = {
   },
   'While he was cooking she set the table': {
     why: "'While he was cooking' is a subordinate clause of time that shows two actions at once. 'She set the table' is the main clause. 'While' begins the sentence.",
-    more: "The past continuous ('was cooking') often shows the longer action in progress, and the past simple ('set') the action that happened during it. 'While she set the table he was cooking' is also correct English, but this game asks for the order shown.",
+    more: "The past continuous ('was cooking') often shows the longer action in progress, and the past simple ('set') the action that happened during it. 'While she set the table he was cooking' is also correct English, and this game accepts it too.",
     tip: "A comma after the 'while' clause helps the reader: 'While he was cooking, she set the table.'",
   },
   'She smiled because she had won the prize': {
     why: "'She smiled' is the main clause and 'because she had won the prize' gives the reason. When the subordinate clause comes second, no comma is needed. 'Had won' shows that the winning came first.",
-    more: "'Had won' is the past perfect. It shows that one past action happened before another: first she won, then she smiled. The same tiles make other correct sentences, such as 'She had smiled because she won the prize', but this game asks for the order shown.",
+    more: "'Had won' is the past perfect. It shows that one past action happened before another: first she won, then she smiled. The same tiles make other correct sentences, such as 'She had smiled because she won the prize', and this game accepts them too.",
     tip: 'Use the past perfect to show which of two past events came first.',
   },
   'After we had eaten we watched television': {
@@ -204,12 +204,12 @@ export const EXPLANATIONS: GameExplanations = {
   },
   'The man who lives next door is a doctor': {
     why: "'Who lives next door' is a relative clause that tells us which man. It sits straight after 'The man', and the main verb 'is' comes after it. 'Who' is used for people.",
-    more: "The relative clause identifies the man. The same tiles also build 'The man who is a doctor lives next door', which is correct English too, but this game asks for the order shown.",
+    more: "The relative clause identifies the man. The same tiles also build 'The man who is a doctor lives next door', which is correct English too, and this game accepts it.",
     tip: "Use 'who' for people, 'which' for things and 'that' for either. A relative clause comes right after the noun it describes.",
   },
   'Before you leave please close the window': {
     why: "'Before you leave' is a subordinate clause of time. It comes first, then the polite command 'please close the window'. The command has no stated subject, because 'you' is understood.",
-    more: "In a command the subject 'you' is understood. 'Please' can come before the verb or at the end: 'Before you leave close the window please' is also correct English, but this game asks for the order shown.",
+    more: "In a command the subject 'you' is understood. 'Please' can come before the verb or at the end: 'Before you leave close the window please' is also correct English, and this game accepts it too.",
     tip: "Written down, put a comma after the opening clause: 'Before you leave, please close the window.'",
   },
   'Even though it was expensive they bought it': {
@@ -219,7 +219,7 @@ export const EXPLANATIONS: GameExplanations = {
   },
   'Since we moved here we have made new friends': {
     why: "'Since we moved here' is a subordinate clause that gives a starting point in time. 'We have made new friends' is the main clause, in the present perfect. The past simple follows 'since' and the present perfect is in the main clause.",
-    more: "'Since' means 'from that time until now'. The present perfect ('have made') links the past to the present. 'Here' can move: 'Since we moved we have made new friends here' is also correct English, but this game asks for the order shown.",
+    more: "'Since' means 'from that time until now'. The present perfect ('have made') links the past to the present. 'Here' can move: 'Since we moved we have made new friends here' is also correct English, and this game accepts it too.",
     tip: "After 'since' and a past event, the main clause usually uses the present perfect: 'we have made', not 'we make'.",
   },
   'Unless you hurry you will miss the train': {
@@ -229,17 +229,17 @@ export const EXPLANATIONS: GameExplanations = {
   },
   'The café where we met has now closed': {
     why: "'Where we met' is a relative clause that tells us which café. It follows the noun 'café', and the main verb 'has closed' comes after it, with 'now' between 'has' and 'closed'.",
-    more: "'Where' is used for places. 'Has closed' is the present perfect: the closing affects the present. 'Now' can move: 'The café where we met has closed now' is also correct English, but this game asks for the order shown.",
+    more: "'Where' is used for places. 'Has closed' is the present perfect: the closing affects the present. 'Now' can move: 'The café where we met has closed now' is also correct English, and this game accepts it too.",
     tip: "Use 'where' to add detail about a place without starting a new sentence: 'the café where we met'.",
   },
   'As soon as the film ended we left': {
     why: "'As soon as the film ended' is a subordinate clause of time meaning 'immediately after'. 'We left' is the main clause. 'As soon as' is three words that act as one conjunction.",
-    more: "'As soon as' links two actions that follow each other closely. In writing, put a comma after the opening clause: 'As soon as the film ended, we left.' 'As soon as we left the film ended' is also correct English, with a different meaning, but this game asks for the order shown.",
+    more: "'As soon as' links two actions that follow each other closely. In writing, put a comma after the opening clause: 'As soon as the film ended, we left.' 'As soon as we left the film ended' is also correct English, with a different meaning, and this game accepts it too.",
     tip: "Use 'as soon as' to show that one thing happened straight after another, in stories and in accounts of events.",
   },
   'Whenever I visit London I see the museums': {
     why: "'Whenever I visit London' is a subordinate clause meaning 'every time that I visit London'. 'I see the museums' is the main clause. Both verbs are in the present simple, because this happens regularly.",
-    more: "'Whenever' means 'every time that'. In writing, put a comma after the opening clause. The tiles also make 'Whenever I see London I visit the museums', which is correct English too, but this game asks for the order shown.",
+    more: "'Whenever' means 'every time that'. In writing, put a comma after the opening clause. The tiles also make 'Whenever I see London I visit the museums', which is correct English too, and this game accepts it.",
     tip: "Use 'whenever' with the present simple for habits: 'Whenever it rains, I stay in.'",
   },
 }

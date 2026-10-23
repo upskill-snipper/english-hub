@@ -10,6 +10,7 @@ import { useBoard } from '@/hooks/useBoard'
 import { getBoardConfig } from '@/lib/board/board-store'
 import { AnswerExplanation } from '@/components/games/AnswerExplanation'
 import { useGameRound } from '@/components/games/game-round'
+import { isAcceptedOrder } from '@/lib/games/scoring'
 import {
   BANK,
   SENTENCE_BANK,
@@ -146,15 +147,18 @@ export default function SentenceBuilderPage() {
    * explanation. Nothing the student built is recorded, only whether it was
    * right.
    *
-   * WHAT DID NOT. A build is right only if it is `correct`, as before. The bank
-   * lists in `alsoCorrect` other orders of the same tiles that are also correct
-   * English; whether to accept them changes what counts as right, which is the
-   * founder's decision, so this page does not read them.
+   * OTHER CORRECT ORDERS ARE RIGHT (23 October 2026, the founder's decision).
+   * The bank lists in `alsoCorrect` the other orders of the same tiles that are
+   * also correct English, 51 orders across 30 sentences, and a build that
+   * matches one is marked right (src/lib/games/scoring.ts). Until then only
+   * `correct` was, so a student who built "The cat on the sofa is sleeping" was
+   * told they were wrong. Accepting them changed what counts as right, which is
+   * why it waited for him.
    */
   const checkAnswer = () => {
     if (!current || feedback || revealed) return
     const attempt = built.join(' ')
-    const isCorrect = attempt === current.correct
+    const isCorrect = isAcceptedOrder(attempt, current)
     setTotalAnswered((t) => t + 1)
     if (isCorrect) {
       setScore((s) => s + 1)

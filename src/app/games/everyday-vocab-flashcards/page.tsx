@@ -74,6 +74,12 @@ export default function EverydayVocabFlashcardsPage() {
 
   const roundTotal = useMemo(() => Math.min(ROUND_SIZE, VOCAB_BANK.length), [])
   const currentCard = queue[0] ?? null
+  // SCORING (changed 23 October 2026, the founder's decision). The score is the
+  // number of cards the student knew the FIRST time they saw them, out of the
+  // round's cards. Until then a card was counted whenever it was marked known,
+  // and a card not known came back until it was, so every round ended 14 of 14
+  // whatever the student knew. The score now says what is recorded for their
+  // account: right first time.
   const score = knownWords.size
 
   const handleStart = useCallback(() => {
@@ -100,6 +106,14 @@ export default function EverydayVocabFlashcardsPage() {
       if (!recorded.current.has(key)) {
         recorded.current.add(key)
         round.record({ question: key, correct: knew, tag: currentCard.topic })
+        // First sight of this card: known now is known first time.
+        if (knew) {
+          setKnownWords((prev) => {
+            const next = new Set(prev)
+            next.add(currentCard.word)
+            return next
+          })
+        }
       }
 
       setSeenWords((prev) => {
@@ -107,14 +121,6 @@ export default function EverydayVocabFlashcardsPage() {
         next.add(currentCard.word)
         return next
       })
-
-      if (knew) {
-        setKnownWords((prev) => {
-          const next = new Set(prev)
-          next.add(currentCard.word)
-          return next
-        })
-      }
 
       setTimeout(() => {
         setQueue((prev) => {
@@ -173,7 +179,7 @@ export default function EverydayVocabFlashcardsPage() {
                   Card {Math.min(progressDone + 1, progressTotal)} of {progressTotal}
                 </span>
                 <div className="flex items-center gap-3">
-                  <span>{score} known</span>
+                  <span>{score} known first time</span>
                   <span
                     className={cn(
                       'text-xs px-2 py-0.5 rounded-full border',

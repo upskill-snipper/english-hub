@@ -11,6 +11,7 @@ import { getBoardConfig } from '@/lib/board/board-store'
 import { getSetTextsForBoard } from '@/lib/board/set-texts'
 import { AnswerExplanation } from '@/components/games/AnswerExplanation'
 import { useGameRound } from '@/components/games/game-round'
+import { themeRoundScore } from '@/lib/games/scoring'
 import { BANK, THEME_DATA, ALL_TEXTS, type ThemeRound } from '@/data/games/banks/theme-matcher'
 
 // ─── Data ──────────────────────────────────────────────────────────────────────
@@ -129,22 +130,23 @@ export default function ThemeMatcherPage() {
     if (!currentRound || submitted) return
     setSubmitted(true)
 
-    const correctSet = new Set(currentRound.correctTexts)
-    // Score: +1 for each correct selection, +1 for each correct non-selection
-    // Simplified: just count how many texts were correctly categorised
-    let roundCorrect = 0
-    for (const t of allowedTexts) {
-      const isCorrect = correctSet.has(t)
-      const wasSelected = selected.has(t)
-      if (isCorrect === wasSelected) roundCorrect++
-    }
-    setScore((s) => s + roundCorrect)
-    setMaxScore((m) => m + allowedTexts.length)
+    // SCORING (changed 23 October 2026, the founder's decision). A round is
+    // worth one point for each text in the grid that has the theme: a point for
+    // each of those selected, and a point taken away for each text selected that
+    // does not have it, never below nought (src/lib/games/scoring.ts). Until
+    // then a point was also given for every text correctly left alone, so in a
+    // grid of twelve one lone right guess scored 10 of 12: leaving texts
+    // unselected was rewarded, and random play averaged what the shell then
+    // called "grade 7".
+    const { points, outOf } = themeRoundScore(selected, currentRound.correctTexts)
+    setScore((s) => s + points)
+    setMaxScore((m) => m + outOf)
     // Recorded as right only when every text in the grid was placed right. The
     // student picks texts rather than one option, so no choice is recorded.
+    const correctSet = new Set(currentRound.correctTexts)
     round.record({
       question: BANK.key(currentRound),
-      correct: roundCorrect === allowedTexts.length,
+      correct: allowedTexts.every((t) => correctSet.has(t) === selected.has(t)),
       tag: currentRound.theme,
     })
   }
@@ -178,7 +180,7 @@ export default function ThemeMatcherPage() {
           gameId="theme-matcher"
           audience="gcse"
           title="Theme Matcher"
-          description="Select ALL texts where the given theme appears. 15 rounds covering major GCSE themes."
+          description="Select ALL texts where the given theme appears. 15 rounds covering major GCSE themes. A point for each right text; a wrong one costs a point."
           difficulty="Higher"
           score={score}
           maxScore={maxScore}

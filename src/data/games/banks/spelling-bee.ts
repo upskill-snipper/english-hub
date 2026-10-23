@@ -12,16 +12,19 @@ import type { GameBank } from '@/lib/games/explanations/types'
  *
  * The student types the answer, so no question has options, and what they type
  * is never recorded or sent: only whether the spelling was right. Two words
- * have a second spelling some dictionaries accept, enjambement and dénouement
- * (with the accent). The game marks only the usual English form right, and the
- * explanations for those two words say so; whether to accept the others is a
- * scoring decision, and is left as it was.
+ * have a second spelling dictionaries accept, enjambement and dénouement (with
+ * the accent). Until 23 October 2026 the game marked only the usual English
+ * form right, because accepting the other is a scoring decision; the founder
+ * then decided it, and each is listed in `alsoAccepted`, which the page accepts
+ * (src/lib/games/scoring.ts). The explanations for those two words say so.
  */
 
 export interface SpellingWord {
   word: string
   definition: string
   difficulty: 1 | 2 | 3
+  /** Other spellings dictionaries accept, marked right too (see the docblock). */
+  alsoAccepted?: string[]
 }
 
 export const SPELLING_BANK: SpellingWord[] = [
@@ -77,7 +80,12 @@ export const SPELLING_BANK: SpellingWord[] = [
     definition: 'Giving human qualities to non-human things',
     difficulty: 2,
   },
-  { word: 'denouement', definition: 'The final resolution of a story', difficulty: 2 },
+  {
+    word: 'denouement',
+    definition: 'The final resolution of a story',
+    difficulty: 2,
+    alsoAccepted: ['dénouement'],
+  },
   { word: 'protagonist', definition: 'The leading character in a story', difficulty: 2 },
   { word: 'antagonist', definition: 'The character who opposes the protagonist', difficulty: 2 },
   {
@@ -90,6 +98,7 @@ export const SPELLING_BANK: SpellingWord[] = [
     word: 'enjambment',
     definition: 'A sentence running over a line break in poetry',
     difficulty: 2,
+    alsoAccepted: ['enjambement'],
   },
   // Difficulty 3 - Higher
   { word: 'sycophantic', definition: 'Behaving in a servile way to gain advantage', difficulty: 3 },

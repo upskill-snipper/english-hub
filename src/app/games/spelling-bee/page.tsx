@@ -10,6 +10,7 @@ import { useBoard } from '@/hooks/useBoard'
 import { getBoardConfig } from '@/lib/board/board-store'
 import { AnswerExplanation } from '@/components/games/AnswerExplanation'
 import { useGameRound } from '@/components/games/game-round'
+import { isAcceptedSpelling } from '@/lib/games/scoring'
 import { BANK, SPELLING_BANK, type SpellingWord } from '@/data/games/banks/spelling-bee'
 
 // ─── Data ──────────────────────────────────────────────────────────────────────
@@ -102,21 +103,25 @@ export default function SpellingBeePage() {
    * (src/data/games/explanations/spelling-bee.ts), so the student moves on with
    * a button. Only whether the spelling was right is recorded, never the
    * letters typed (src/components/games/game-round.tsx).
+   *
+   * ACCEPTED SPELLINGS (23 October 2026, the founder's decision). A word's
+   * `alsoAccepted` spellings are right too: enjambement for enjambment and
+   * dénouement for denouement, both of which dictionaries accept and the game
+   * had marked wrong (src/lib/games/scoring.ts).
    */
   const handleSubmit = useCallback(() => {
     if (!currentWord || feedback) return
-    const trimmed = input.trim().toLowerCase()
-    const correct = currentWord.word.toLowerCase()
+    const right = isAcceptedSpelling(input, currentWord)
     setTotalAnswered((t) => t + 1)
     setCorrectAnswer(currentWord.word)
 
-    if (trimmed === correct) {
+    if (right) {
       setScore((s) => s + 1)
       setFeedback('correct')
     } else {
       setFeedback('wrong')
     }
-    round.record({ question: BANK.key(currentWord), correct: trimmed === correct })
+    round.record({ question: BANK.key(currentWord), correct: right })
     checkedAtRef.current = Date.now()
   }, [currentWord, feedback, input, round])
 

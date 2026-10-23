@@ -119,7 +119,7 @@ export const EXPLANATIONS: GameExplanations = {
   },
   denouement: {
     why: 'The tricky part is the middle, -oue-: de-NOUE-ment. The word is French, which is why the vowels look unusual. Say it as day-NOO-mon, but spell it d-e-n-o-u-e-m-e-n-t.',
-    more: "It means 'untying' in French, from dénouer, 'to untie'. Some English writers keep the French accent, dénouement, and that spelling is also correct, but this game marks only the usual spelling, without the accent, as right.",
+    more: "It means 'untying' in French, from dénouer, 'to untie'. Some English writers keep the French accent, dénouement, and that spelling is also correct: this game accepts it too.",
     tip: "Use it in a sentence: 'In the denouement, Scrooge wakes on Christmas morning a changed man.'",
   },
   protagonist: {
@@ -144,7 +144,7 @@ export const EXPLANATIONS: GameExplanations = {
   },
   enjambment: {
     why: "The tricky part is the silent b: en-JAMB-ment, like the b in lamb. The word comes from the French jambe, 'leg', because the sentence strides over the end of the line.",
-    more: 'Some writers use the French spelling, enjambement, with an extra e, and that spelling is also correct, but this game marks only the usual English form, enjambment, as right. Its opposite is an end-stopped line.',
+    more: 'Some writers use the French spelling, enjambement, with an extra e, and that spelling is also correct: this game accepts it too. Its opposite is an end-stopped line.',
     tip: "Use it in a sentence: 'The enjambment makes the sentence spill over into the next line, mirroring the speaker's racing thoughts.'",
   },
   sycophantic: {

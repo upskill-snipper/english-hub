@@ -31,16 +31,17 @@ import type { GameBank } from '@/lib/games/explanations/types'
  *   - "so" that works as "so ... that": "I was so tired I went to bed early",
  *     "It was so cold we lit the fire".
  *
- * NOT YET ACCEPTED. Each of those 30 sentences lists its other orders in
- * `alsoCorrect`. They are correct English, but accepting them would change what
- * counts as right, and that is a scoring decision for the founder, not yet made
- * (16 October 2026). Until he makes it, nothing reads `alsoCorrect`: the page
- * marks a build right only if it is `correct`, as it always has, and points,
- * rounds and the order of play are unchanged. The explanation for each of those
- * sentences says that another order is also correct English and that this game
- * asks for the order shown, so a student who built one is not told that it was
- * bad English. (The writer had made the page accept the list; the second reader
- * took that out, because it was the founder's decision to make.)
+ * ACCEPTED SINCE 23 OCTOBER 2026. Each of those 30 sentences lists its other
+ * orders in `alsoCorrect`, and the page marks a build that matches one right
+ * (src/lib/games/scoring.ts, isAcceptedOrder). Accepting them changed what
+ * counts as right, which is a scoring decision, so the list was written on
+ * 16 October and left unread until the founder decided; the explanation for
+ * each of those sentences meanwhile said that the other order was also correct
+ * English, so a student who built one was not told it was bad English. The
+ * explanations now say the game accepts it too, and
+ * game-scoring-follows-the-founders-decisions.test.ts holds every order an
+ * explanation calls correct to this list, and every order in the list to the
+ * sentence's own tiles.
  *
  * No list of orders can be known to be complete: each reading found orders the
  * one before had missed. Orders that are grammatical but make no sense ("Because
@@ -62,8 +63,8 @@ export interface SentenceItem {
   type: SentenceType
   note: string
   /**
-   * Other orders of the same tiles that are also correct English. Not accepted
-   * by the page: whether to accept them awaits the founder (see the docblock).
+   * Other orders of the same tiles that are also correct English. A build that
+   * matches one is right, since 23 October 2026 (see the docblock).
    */
   alsoCorrect?: string[]
 }
