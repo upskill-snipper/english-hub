@@ -217,7 +217,11 @@ describe('Stripe Webhook POST handler', () => {
     )
   })
 
-  it('maps incomplete subscription status to incomplete', async () => {
+  it('does not write incomplete over a pro profile at checkout (webhook:D10)', async () => {
+    // The default profile in this mock is 'pro' (a no-card trialist, say). A
+    // checkout stalled at the bank step must not end their trial. The 'free'
+    // case, which does write 'incomplete', is in
+    // webhook-first-event-and-stale.test.ts.
     const session = {
       id: 'cs_test',
       mode: 'subscription',
@@ -233,7 +237,7 @@ describe('Stripe Webhook POST handler', () => {
 
     const res = await POST(buildRequest('{}', 'sig_ok'))
     expect(res.status).toBe(200)
-    expect(supabaseMock._mocks.updateFn).toHaveBeenCalledWith(
+    expect(supabaseMock._mocks.updateFn).not.toHaveBeenCalledWith(
       expect.objectContaining({ subscription_status: 'incomplete' }),
     )
   })
@@ -398,6 +402,14 @@ describe('Stripe Webhook POST handler', () => {
       period_end: 1700000000,
     }
     mockConstructEvent.mockReturnValue(makeEvent('invoice.paid', invoice))
+    // The handler retrieves the subscription and grants only while it is
+    // live (webhook:D11). Set it explicitly: `clearAllMocks` keeps the
+    // previous test's implementation, which returned an incomplete one.
+    mockRetrieveSubscription.mockResolvedValue({
+      id: 'sub_abc',
+      status: 'active',
+      current_period_end: 1700000000,
+    })
 
     const res = await POST(buildRequest('{}', 'sig_ok'))
     expect(res.status).toBe(200)
@@ -473,7 +485,7 @@ describe('Stripe Webhook POST handler', () => {
     expect(supabaseMock._mocks.selectEqFn).toHaveBeenCalledWith('stripe_customer_id', 'cus_999')
   })
 
-  it('returns 500 (so Stripe retries) when user cannot be resolved for subscription.created', async () => {
+  it('answers 200 with a reason when user cannot be resolved for subscription.created (webhook:D9)', async () => {
     // Override single() to return no profile
     supabaseMock._mocks.singleFn.mockReturnValue({ data: null, error: null } as any)
 
@@ -487,8 +499,10 @@ describe('Stripe Webhook POST handler', () => {
     mockConstructEvent.mockReturnValue(makeEvent('customer.subscription.created', subscription))
 
     const res = await POST(buildRequest('{}', 'sig_ok'))
-    // 500 forces Stripe to retry rather than silently dropping the event
-    expect(res.status).toBe(500)
+    // This used to be a 500 so that Stripe would retry, but nothing changes
+    // between retries: the result was three days of failed deliveries.
+    expect(res.status).toBe(200)
+    expect(await res.json()).toMatchObject({ received: true, ignored: 'unresolved_user' })
     // update should not be called since no user was found
     expect(supabaseMock._mocks.updateFn).not.toHaveBeenCalled()
   })

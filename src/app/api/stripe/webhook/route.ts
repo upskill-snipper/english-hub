@@ -127,6 +127,33 @@ async function recordSubscriptionRow(
   return result.ok ? result.prismaUserId : null
 }
 
+/** Stripe statuses under which a subscription grants access. */
+const ACCESS_GRANTING_STATUSES: ReadonlySet<string> = new Set(['active', 'trialing'])
+
+/**
+ * Is this profile currently 'pro'?
+ *
+ * Used by the first-event handlers (webhook:D10). A subscription that is not
+ * yet live - `incomplete`, the card awaiting 3-D Secure or a pending payment -
+ * used to be written as 'incomplete' over whatever the profile held. A no-card
+ * trialist is 'pro', so starting a checkout and stalling at the bank step
+ * ended their trial on the spot. A non-live first status is now written only
+ * over a profile that is not 'pro'. If the payment then completes, `.updated`
+ * writes 'pro'; if it never does, `incomplete_expired` writes 'cancelled'
+ * within a day, so nothing is left open.
+ */
+async function profileIsPro(
+  supabase: ReturnType<typeof createServiceRoleClient>,
+  userId: string,
+): Promise<boolean> {
+  const { data } = await supabase
+    .from('profiles')
+    .select('subscription_status')
+    .eq('id', userId)
+    .single()
+  return data?.subscription_status === 'pro'
+}
+
 /**
  * ─── Idempotency: claim the event id BEFORE processing ──────────────────
  *
@@ -237,6 +264,10 @@ export async function POST(request: NextRequest) {
   if (claim === 'already_processed') {
     return NextResponse.json({ received: true, duplicate: true })
   }
+
+  // Set when the event was accepted but deliberately not acted on, so the
+  // 200 says why and the Stripe delivery log reads honestly.
+  let ignored: string | null = null
 
   try {
     switch (event.type) {
@@ -524,6 +555,23 @@ export async function POST(request: NextRequest) {
             break
           }
 
+          // A paid invoice is not a licence to grant on its own. Stripe does
+          // not guarantee delivery order, and an invoice.paid arriving after
+          // customer.subscription.deleted used to re-grant 'pro' to a
+          // cancelled customer (webhook:D11). The subscription just retrieved
+          // is Stripe's current truth: if it no longer grants access, this
+          // delivery is stale. Nothing is written; the reconcile script
+          // counts the payment from Stripe if the row ever needs it.
+          if (!ACCESS_GRANTING_STATUSES.has(paidSubscription.status)) {
+            console.warn(
+              `[stripe/webhook] STALE_INVOICE_PAID_IGNORED invoice=${invoice.id} ` +
+                `subscription=${paidSubscription.id} status=${paidSubscription.status} ` +
+                `customer=${customerId}. The subscription no longer grants access, so this ` +
+                'paid invoice does not re-grant pro.',
+            )
+            break
+          }
+
           // The Prisma row is the record of what was paid: period and
           // paymentCount. Written for IELTS-only subscriptions too, as the
           // other lifecycle handlers already do. A GBP 0 invoice (the trial
@@ -653,32 +701,37 @@ export async function POST(request: NextRequest) {
           if (profile) userId = profile.id
         }
         if (!userId) {
-          // Loud, structured error so it shows up in Sentry / log search.
-          // Returning 500 makes Stripe retry - preferable to silently
-          // dropping a paying customer's first subscription event.
-          console.error(
-            JSON.stringify({
-              level: 'error',
-              event: 'customer.subscription.created',
-              error: 'unresolved_user',
-              subscriptionId: subscription.id,
-              customerId: subscription.customer,
-              metadata: subscription.metadata,
-            }),
-          )
-          // A non-2xx must not keep the claim, or the retry it asks for
-          // would be answered 200 without running.
-          await releaseWebhookEvent(supabase, event)
-          return NextResponse.json(
-            { error: 'Could not resolve user for subscription' },
-            { status: 500 },
-          )
+          // Nobody to attach this to: no metadata.userId and no profile with
+          // this Stripe customer. That is a subscription made by hand in the
+          // dashboard, or a customer record created outside checkout. This
+          // used to answer 500 so that Stripe would retry, but nothing
+          // changes between retries, so the result was three days of failed
+          // deliveries and a red endpoint (webhook:D9). Answer 200 with the
+          // reason, log every fact there is, and raise a Sentry message so a
+          // person links the customer and runs the reconcile script.
+          const facts = {
+            event: 'customer.subscription.created',
+            error: 'unresolved_user',
+            eventId: event.id,
+            subscriptionId: subscription.id,
+            customerId: subscription.customer,
+            status: subscription.status,
+            priceIds: pricesOnSubscription(subscription),
+            metadata: subscription.metadata,
+          }
+          console.error(JSON.stringify({ level: 'error', ...facts }))
+          Sentry.captureMessage('Stripe subscription created for a customer nobody can resolve', {
+            level: 'error',
+            tags: { surface: 'stripe-webhook', defect: 'unresolved-user' },
+            fingerprint: ['stripe-webhook', 'unresolved-user'],
+            extra: facts,
+          })
+          ignored = 'unresolved_user'
+          break
         }
 
-        const activeStatuses = ['active', 'trialing']
-        const subscriptionStatus = activeStatuses.includes(subscription.status)
-          ? 'pro'
-          : 'incomplete'
+        const isLive = ACCESS_GRANTING_STATUSES.has(subscription.status)
+        const subscriptionStatus = isLive ? 'pro' : 'incomplete'
 
         // IELTS-only subscriptions must not grant the global 'pro' flag; their
         // entitlement is ielts_status (set by syncIeltsEntitlement, called from
@@ -686,21 +739,27 @@ export async function POST(request: NextRequest) {
         // subscription_status write here for IELTS-only subs.
         const ieltsOnly = isIeltsOnlySubscription(subscription)
 
+        // A not-yet-live first status is written only over a non-pro profile;
+        // see profileIsPro (webhook:D10). The end date goes with it.
+        const writeStatus = !ieltsOnly && (isLive || !(await profileIsPro(supabase, userId)))
+
         // Both API shapes: top-level on older payloads, per item under clover.
         const periodEnd = subscriptionPeriodEnd(subscription)
         const subscriptionEndDate = periodEnd ? new Date(periodEnd * 1000).toISOString() : null
 
-        const { error } = await supabase
-          .from('profiles')
-          .update({
-            ...(ieltsOnly ? {} : { subscription_status: subscriptionStatus }),
-            ...(subscriptionEndDate && { subscription_end_date: subscriptionEndDate }),
-          })
-          .eq('id', userId)
+        const profilePatch = {
+          ...(writeStatus ? { subscription_status: subscriptionStatus } : {}),
+          ...((isLive || writeStatus) &&
+            subscriptionEndDate && { subscription_end_date: subscriptionEndDate }),
+        }
 
-        if (error) {
-          console.error('Failed to update profile for new subscription:', error)
-          throw error
+        if (Object.keys(profilePatch).length > 0) {
+          const { error } = await supabase.from('profiles').update(profilePatch).eq('id', userId)
+
+          if (error) {
+            console.error('Failed to update profile for new subscription:', error)
+            throw error
+          }
         }
 
         // Mirror to the Prisma `Subscription` row so entitlements, the trial
@@ -720,6 +779,7 @@ export async function POST(request: NextRequest) {
     // The claim made above is the idempotency record; nothing to write here.
     return NextResponse.json({
       received: true,
+      ...(ignored && { ignored }),
       ...(claim === 'unprotected' && { idempotency: 'unprotected' }),
     })
   } catch (error) {
@@ -909,8 +969,8 @@ async function handleCheckoutCompleted(
     const subscriptionId = session.subscription as string
     const subscription = await stripe.subscriptions.retrieve(subscriptionId)
 
-    const activeStatuses = ['active', 'trialing']
-    const subscriptionStatus = activeStatuses.includes(subscription.status) ? 'pro' : 'incomplete'
+    const isLive = ACCESS_GRANTING_STATUSES.has(subscription.status)
+    const subscriptionStatus = isLive ? 'pro' : 'incomplete'
 
     // IELTS is a standalone product — an IELTS-only checkout must set
     // ielts_status (below, via syncIeltsEntitlement) but must NOT touch the
@@ -919,23 +979,29 @@ async function handleCheckoutCompleted(
     // existing value (default 'free').
     const ieltsOnly = isIeltsOnlySubscription(subscription)
 
+    // A not-yet-live first status is written only over a non-pro profile;
+    // see profileIsPro (webhook:D10).
+    const writeStatus = !ieltsOnly && (isLive || !(await profileIsPro(supabase, userId)))
+
     // This subscription was RETRIEVED through the pinned client, so it arrives
     // in the clover shape with the period on its items. Reading the top-level
     // field here meant checkout never wrote an end date.
     const cpEnd = subscriptionPeriodEnd(subscription)
     const subscriptionEndDate = cpEnd ? new Date(cpEnd * 1000).toISOString() : null
 
-    const { error } = await supabase
-      .from('profiles')
-      .update({
-        ...(ieltsOnly ? {} : { subscription_status: subscriptionStatus }),
-        ...(subscriptionEndDate && { subscription_end_date: subscriptionEndDate }),
-      })
-      .eq('id', userId)
+    const profilePatch = {
+      ...(writeStatus ? { subscription_status: subscriptionStatus } : {}),
+      ...((isLive || writeStatus) &&
+        subscriptionEndDate && { subscription_end_date: subscriptionEndDate }),
+    }
 
-    if (error) {
-      console.error(`Failed to update subscription_status to ${subscriptionStatus}:`, error)
-      throw error
+    if (Object.keys(profilePatch).length > 0) {
+      const { error } = await supabase.from('profiles').update(profilePatch).eq('id', userId)
+
+      if (error) {
+        console.error(`Failed to update subscription_status to ${subscriptionStatus}:`, error)
+        throw error
+      }
     }
 
     // IELTS standalone entitlement: if this checkout was for an IELTS price,
@@ -1062,7 +1128,7 @@ async function handleSubscriptionUpdated(
     paused: 'paused',
   }
 
-  const subscriptionStatus =
+  let subscriptionStatus =
     subscription.status in statusMap ? statusMap[subscription.status] : 'free'
   // Both API shapes. When neither carries a period the stored end date is
   // left alone below: this handler used to write `subscription_end_date:
@@ -1139,6 +1205,12 @@ async function handleSubscriptionUpdated(
       )
       return
     }
+  }
+
+  // `incomplete` only ever describes a brand-new subscription whose first
+  // payment is pending, so it is a first status here too (webhook:D10).
+  if (subscriptionStatus === 'incomplete' && (await profileIsPro(supabase, userId))) {
+    subscriptionStatus = null
   }
 
   // IELTS-only subscriptions must not touch the global subscription_status
