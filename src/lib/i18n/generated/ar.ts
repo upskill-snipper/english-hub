@@ -11325,9 +11325,7 @@ export const AR_MESSAGES: Record<string, string> = {
   'games.card.hours_ago_suffix': ' س',
   'games.card.days_ago_suffix': ' يوم',
   'games.card.weeks_ago_suffix': ' أسبوع',
-  'games.card.grade_label': 'الدرجة',
   'games.card.play_cta': 'العب',
-  'games.shell.grade_label': 'الدرجة',
   'games.shell.score_label': 'النتيجة',
   'games.shell.accuracy_label': 'الدقة',
   'games.shell.time_label': 'الوقت',
@@ -19437,8 +19435,6 @@ export const AR_MESSAGES: Record<string, string> = {
   'rev.misc.quiz.col_date': 'التاريخ',
   'rev.misc.quiz.col_mode': 'النمط',
   'rev.misc.quiz.col_score': 'النتيجة',
-  'rev.misc.quiz.col_grade': 'الدرجة',
-  'rev.misc.quiz.grade_label': 'Grade {grade}',
   'rev.misc.quiz.motivate_title': 'الاختبارات المنتظمة تقوّي الحفظ على المدى الطويل',
   'rev.misc.quiz.motivate_body':
     'الأبحاث تبيّن إن اختبار نفسك من أكثر طرق المراجعة فعالية. جرّب اختبار سريع كل يوم عشان تخلي معلوماتك حاضرة.',

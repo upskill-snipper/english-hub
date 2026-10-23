@@ -1483,7 +1483,6 @@ export const AUDIT_FIX_DICTIONARY: Dictionary = {
   'exam_boards.level.gcse': { en: `Gcse`, ar: `GCSE`, es: `GCSE` },
   'exam_boards.level.igcse': { en: `Igcse`, ar: `IGCSE`, es: `IGCSE` },
   'games.card.days_ago_suffix': { en: `Days Ago Suffix`, ar: `قبل أيام`, es: `días` },
-  'games.card.grade_label': { en: `Grade Label`, ar: `الدرجة`, es: `Nota` },
   'games.card.hours_ago_suffix': { en: `Hours Ago Suffix`, ar: `قبل ساعات`, es: `horas` },
   'games.card.just_now': { en: `Just Now`, ar: `الحين`, es: `Justo ahora` },
   'games.card.minutes_ago_suffix': { en: `Minutes Ago Suffix`, ar: `قبل دقائق`, es: `minutos` },
@@ -1494,7 +1493,6 @@ export const AUDIT_FIX_DICTIONARY: Dictionary = {
   'games.shell.best_prefix': { en: `Best Prefix`, ar: `الأفضل`, es: `Mejor` },
   'games.shell.finish': { en: `Finish`, ar: `إنهاء`, es: `Finalizar` },
   'games.shell.game_paused': { en: `Game Paused`, ar: `توقفت اللعبة`, es: `Juego en pausa` },
-  'games.shell.grade_label': { en: `Grade Label`, ar: `الدرجة`, es: `Nota` },
   'games.shell.pause': { en: `Pause`, ar: `إيقاف مؤقت`, es: `Pausar` },
   'games.shell.play_again': { en: `Play Again`, ar: `العب مرة ثانية`, es: `Jugar de nuevo` },
   'games.shell.press_start_prompt': {

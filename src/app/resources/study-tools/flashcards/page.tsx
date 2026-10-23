@@ -54,12 +54,6 @@ import {
   previewIntervals,
   type CardReviewState,
 } from '@/lib/spaced-repetition'
-import {
-  percentageToGCSEGrade,
-  percentageToGCSEGradeLabel,
-  gcseGradeColor,
-  gcseGradeBg,
-} from '@/lib/grades'
 import { Button } from '@/components/ui/button'
 import { Badge } from '@/components/ui/badge'
 import { useT } from '@/lib/i18n/use-t'
@@ -193,22 +187,21 @@ export default function FlashcardsPage() {
   )
   const getDeckStats = useCallback(
     (deck: FlashcardDeckSummary) => {
-      if (!mounted) return { mastery: 0, due: 0, newCount: 0, grade: 1, difficult: 0 }
+      if (!mounted) return { mastery: 0, due: 0, newCount: 0, difficult: 0 }
       const cards = cardRefs(deck.id)
       const mastery = getMasteryPercentage(cards, store.reviewStates)
       const due = getDueCards(cards, store.reviewStates).length
       const newCount = getNewCards(cards, store.reviewStates, 999).length
-      const grade = percentageToGCSEGrade(mastery)
       const difficult = cards.filter((c) => {
         const s = store.reviewStates[c.id]
         return s && s.easinessFactor < 2.0
       }).length
-      return { mastery, due, newCount, grade, difficult }
+      return { mastery, due, newCount, difficult }
     },
     [mounted, store.reviewStates],
   )
   const overallStats = useMemo(() => {
-    if (!mounted) return { totalCards: 0, mastered: 0, due: 0, mastery: 0, grade: 1 }
+    if (!mounted) return { totalCards: 0, mastered: 0, due: 0, mastery: 0 }
     const allCards = allDecks.flatMap((d) => cardRefs(d.id))
     const mastery = getMasteryPercentage(allCards, store.reviewStates)
     const due = getDueCards(allCards, store.reviewStates).length
@@ -221,7 +214,6 @@ export default function FlashcardsPage() {
       mastered,
       due,
       mastery,
-      grade: percentageToGCSEGrade(mastery),
     }
   }, [mounted, allDecks, store.reviewStates])
   const startStudy = useCallback(
@@ -456,14 +448,15 @@ export default function FlashcardsPage() {
       <div className="mb-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
         <div className="rounded-xl border border-border bg-card p-4 shadow-sm">
           <div className="flex items-center gap-3">
-            <div className={cn('rounded-lg p-2', gcseGradeBg(overallStats.grade))}>
-              <GraduationCap className={cn('h-5 w-5', gcseGradeColor(overallStats.grade))} />
+            {/* Mastery as a share, not a GCSE grade: 23 October 2026, the
+                founder's decision for every tester and game (GameAudience in
+                src/components/games/GameShell.tsx). */}
+            <div className="rounded-lg bg-primary/10 p-2">
+              <GraduationCap className="h-5 w-5 text-primary" />
             </div>
             <div>
-              <p className="text-xs text-muted-foreground">Overall grade</p>
-              <p className={cn('text-lg font-bold', gcseGradeColor(overallStats.grade))}>
-                {percentageToGCSEGradeLabel(overallStats.mastery)}
-              </p>
+              <p className="text-xs text-muted-foreground">Overall mastery</p>
+              <p className="text-lg font-bold text-foreground">{overallStats.mastery}%</p>
             </div>
           </div>
           <div className="mt-3 h-1.5 w-full overflow-hidden rounded-full bg-muted">
@@ -600,8 +593,8 @@ export default function FlashcardsPage() {
                       <Icon className="h-3 w-3" />
                       {getDeckCategory(deck)}
                     </Badge>
-                    <span className={cn('text-xs font-bold', gcseGradeColor(stats.grade))}>
-                      {percentageToGCSEGradeLabel(stats.mastery)}
+                    <span className="text-xs font-bold text-muted-foreground">
+                      {stats.mastery}% mastered
                     </span>
                   </div>
                   <h3 className="text-sm font-bold text-foreground leading-snug">{deck.title}</h3>
@@ -696,7 +689,6 @@ type DeckStats = {
   mastery: number
   due: number
   newCount: number
-  grade: number
   difficult: number
 }
 
@@ -822,10 +814,8 @@ function DeckDetail({
             <p className="mt-1 text-sm text-muted-foreground">{deck.description}</p>
           </div>
           <div className="flex flex-col items-end gap-1">
-            <span className={cn('text-2xl font-bold', gcseGradeColor(stats.grade))}>
-              {percentageToGCSEGradeLabel(stats.mastery)}
-            </span>
-            <span className="text-xs text-muted-foreground">{stats.mastery}% mastered</span>
+            <span className="text-2xl font-bold text-foreground">{stats.mastery}%</span>
+            <span className="text-xs text-muted-foreground">mastered</span>
           </div>
         </div>
         <div className="mt-4 h-2 w-full overflow-hidden rounded-full bg-muted">

@@ -77,19 +77,6 @@ export const TOPICS: Topic[] = [
   'context',
 ]
 
-// ─── Grade boundaries (approximate percentage thresholds) ──────────────────
-export function getGrade(percentage: number): { grade: string; descriptor: string } {
-  if (percentage >= 90) return { grade: '9', descriptor: 'Exceptional' }
-  if (percentage >= 80) return { grade: '8', descriptor: 'Outstanding' }
-  if (percentage >= 70) return { grade: '7', descriptor: 'Excellent' }
-  if (percentage >= 60) return { grade: '6', descriptor: 'Very Good' }
-  if (percentage >= 50) return { grade: '5', descriptor: 'Good' }
-  if (percentage >= 40) return { grade: '4', descriptor: 'Standard Pass' }
-  if (percentage >= 30) return { grade: '3', descriptor: 'Below Pass' }
-  if (percentage >= 20) return { grade: '2', descriptor: 'Limited' }
-  return { grade: '1', descriptor: 'Very Limited' }
-}
-
 // ─── Poetry questions (120) ────────────────────────────────────────────────
 const poetryQuestions: QuizQuestion[] = [
   {

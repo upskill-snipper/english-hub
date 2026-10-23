@@ -3,7 +3,6 @@
 import React, { useEffect, useState } from 'react'
 import Link from 'next/link'
 import { cn } from '@/lib/utils'
-import { gcseGradeColor, gcseGradeBg, type GCSEGrade } from '@/lib/grades'
 import { getHighScore, getLastPlayed } from '@/lib/game-scores'
 import { useT } from '@/lib/i18n/use-t'
 
@@ -84,12 +83,15 @@ export default function GameCard({
   className,
 }: GameCardProps) {
   const t = useT()
-  const [bestGrade, setBestGrade] = useState<GCSEGrade | null>(null)
+  // The best share right on this device. Until 23 October 2026 the card turned
+  // it into a GCSE grade badge; no game shows one now (GameAudience in
+  // GameShell.tsx says why).
+  const [bestPercentage, setBestPercentage] = useState<number | null>(null)
   const [lastPlayed, setLastPlayed] = useState<number | null>(null)
 
   useEffect(() => {
     const hs = getHighScore(gameId)
-    if (hs) setBestGrade(hs.grade)
+    if (hs) setBestPercentage(hs.percentage)
     setLastPlayed(getLastPlayed(gameId))
   }, [gameId])
 
@@ -104,28 +106,15 @@ export default function GameCard({
         className,
       )}
     >
-      {/* Top row: icon + best grade badge */}
+      {/* Top row: icon + best score badge */}
       <div className="flex items-start justify-between gap-3">
         <span className="flex h-12 w-12 items-center justify-center rounded-xl border border-border bg-cream-100 text-2xl">
           {icon}
         </span>
 
-        {bestGrade && (
-          <span
-            className={cn(
-              'inline-flex items-center gap-1 rounded-full border px-2.5 py-0.5 text-xs font-semibold',
-              gcseGradeBg(bestGrade),
-              gcseGradeColor(bestGrade),
-              bestGrade >= 8
-                ? 'border-emerald-500/20'
-                : bestGrade >= 6
-                  ? 'border-blue-500/20'
-                  : bestGrade >= 4
-                    ? 'border-amber-500/20'
-                    : 'border-red-500/20',
-            )}
-          >
-            {t('games.card.grade_label')} {bestGrade}
+        {bestPercentage !== null && (
+          <span className="inline-flex items-center gap-1 rounded-full border border-border bg-cream-100 px-2.5 py-0.5 text-xs font-semibold text-muted-foreground">
+            {t('games.shell.best_prefix')} {bestPercentage}%
           </span>
         )}
       </div>

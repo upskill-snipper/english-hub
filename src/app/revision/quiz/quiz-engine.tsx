@@ -26,7 +26,7 @@ import { useT } from '@/lib/i18n/use-t'
 import type { QuizHistoryEntry } from '@/components/toolkit/toolkit-types'
 
 import type { QuizQuestion, Topic } from './quiz-data'
-import { TOPIC_META, getGrade, questionMatchesBoard } from './quiz-data'
+import { TOPIC_META, questionMatchesBoard } from './quiz-data'
 import { shuffledOptionsFor } from '@/lib/quiz/shuffle'
 
 // ─── Weak topic → revision page mapping (board-aware) ─────────────────────
@@ -488,7 +488,6 @@ export function QuizEngine({ questions: rawQuestions, mode, onRestart }: QuizEng
   // ─── Results screen ──────────────────────────────────────────────────────
   if (finished) {
     const percentage = Math.round((score / questions.length) * 100)
-    const { grade, descriptor } = getGrade(percentage)
 
     // Build topic breakdown for display - score by option value.
     const topicBreakdown: Record<string, { correct: number; total: number }> = {}
@@ -500,7 +499,8 @@ export function QuizEngine({ questions: rawQuestions, mode, onRestart }: QuizEng
 
     return (
       <div className="space-y-6 animate-fade-in">
-        {/* Grade card */}
+        {/* Score card. No GCSE grade: 23 October 2026, the founder's decision for
+            every tester and game (GameAudience in src/components/games/GameShell.tsx). */}
         <div className="rounded-2xl border border-border/60 bg-gradient-to-br from-card via-card to-primary/[0.04] p-6 sm:p-8 text-center">
           <Trophy className="mx-auto mb-3 size-10 text-clay-600" aria-hidden="true" />
           <h2 className="text-display-sm font-heading text-foreground">
@@ -522,13 +522,6 @@ export function QuizEngine({ questions: rawQuestions, mode, onRestart }: QuizEng
               <div className="text-sm text-muted-foreground mt-1">
                 {t('rev.misc.quiz.score_label')}
               </div>
-            </div>
-            <div className="h-16 w-px bg-border/60" />
-            <div className="text-center">
-              <div className="text-4xl font-bold text-foreground">
-                {t('rev.misc.quiz.grade_label').replace('{grade}', grade)}
-              </div>
-              <div className="text-sm text-muted-foreground mt-1">{descriptor}</div>
             </div>
           </div>
 

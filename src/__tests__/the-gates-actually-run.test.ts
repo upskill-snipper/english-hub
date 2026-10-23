@@ -230,6 +230,8 @@ describe('what the suite runs in', () => {
     // no re-render and no document.cookie, and the old component passes.
     //
     // Then to 28 on 10 October 2026 for only-a-gcse-game-gives-a-gcse-grade
+    // (renamed no-game-gives-a-gcse-grade on 23 October 2026, when the founder
+    // decided that no game shows one)
     // .test.tsx. GameShell showed every game's score as a GCSE grade; the fix
     // shows one only for a GCSE game, on the results screen and in the best
     // score shown before play. That best score is read from localStorage in an

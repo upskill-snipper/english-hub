@@ -11871,9 +11871,7 @@ export const ES_MESSAGES: Record<string, string> = {
   'games.card.hours_ago_suffix': 'h',
   'games.card.days_ago_suffix': 'd',
   'games.card.weeks_ago_suffix': 'sem',
-  'games.card.grade_label': 'Nota',
   'games.card.play_cta': 'Jugar',
-  'games.shell.grade_label': 'Nota',
   'games.shell.score_label': 'Puntuación',
   'games.shell.accuracy_label': 'Precisión',
   'games.shell.time_label': 'Tiempo',
@@ -20455,8 +20453,6 @@ export const ES_MESSAGES: Record<string, string> = {
   'rev.misc.quiz.col_date': 'Fecha',
   'rev.misc.quiz.col_mode': 'Modo',
   'rev.misc.quiz.col_score': 'Puntuación',
-  'rev.misc.quiz.col_grade': 'Nota',
-  'rev.misc.quiz.grade_label': 'Grade {grade}',
   'rev.misc.quiz.motivate_title':
     'Hacer cuestionarios con regularidad mejora la retención a largo plazo',
   'rev.misc.quiz.motivate_body':

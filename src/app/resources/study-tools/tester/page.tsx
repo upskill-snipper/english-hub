@@ -2,7 +2,6 @@
 
 import { useState, useEffect, useCallback, useMemo, useRef } from 'react'
 import Link from 'next/link'
-import { percentageToGCSEGradeLabel, percentageToGCSEGrade, gcseGradeColor } from '@/lib/grades'
 import { useT } from '@/lib/i18n/use-t'
 
 /* ─── Types ──────────────────────────────────────────────────── */
@@ -539,18 +538,6 @@ function generateWrongCompletions(
   return snippets.slice(0, 3)
 }
 
-function gradeFromPercentage(pct: number): string {
-  if (pct >= 90) return 'Grade 9'
-  if (pct >= 80) return 'Grade 8'
-  if (pct >= 70) return 'Grade 7'
-  if (pct >= 60) return 'Grade 6'
-  if (pct >= 50) return 'Grade 5'
-  if (pct >= 40) return 'Grade 4'
-  if (pct >= 30) return 'Grade 3'
-  if (pct >= 20) return 'Grade 2'
-  return 'Grade 1'
-}
-
 /* ─── Question generation ────────────────────────────────────── */
 
 function generateQuiz(
@@ -880,12 +867,12 @@ export default function QuoteTesterPage() {
 
         {/* Score card */}
         <div className="mx-auto max-w-lg rounded-2xl border border-border bg-card p-8 text-center shadow-md">
-          <div
-            className={`text-6xl font-black ${gcseGradeColor(percentageToGCSEGrade(percentage))}`}
-          >
-            {percentageToGCSEGradeLabel(percentage)}
-          </div>
-          <div className="mt-2 text-xl font-bold text-muted-foreground">{percentage}%</div>
+          {/* The share right, and nothing else. Until 23 October 2026 this printed
+              a GCSE grade converted from the percentage ("Grade 9" for 9 of 10).
+              The founder decided that no tester or game does: a share of quiz
+              questions right is not an exam result (GameAudience in
+              src/components/games/GameShell.tsx). */}
+          <div className="text-6xl font-black text-foreground">{percentage}%</div>
           <p className="mt-3 text-muted-foreground">
             You got <span className="font-semibold text-foreground">{correctCount}</span> out of{' '}
             <span className="font-semibold text-foreground">{results.length}</span> correct.
@@ -905,12 +892,12 @@ export default function QuoteTesterPage() {
           {/* Feedback */}
           <p className="mt-4 text-sm text-muted-foreground">
             {percentage >= 90
-              ? 'Outstanding! You really know your quotes.'
+              ? 'Outstanding. You really know your quotes.'
               : percentage >= 70
-                ? 'Great work - keep revising to push even higher.'
+                ? 'Great work. Keep revising to push even higher.'
                 : percentage >= 50
                   ? 'A solid effort. Review the quotes you missed and try again.'
-                  : 'Keep practising! Use the flashcards to build your knowledge.'}
+                  : 'Keep practising. Use the flashcards to build your knowledge.'}
           </p>
 
           {/* Actions */}

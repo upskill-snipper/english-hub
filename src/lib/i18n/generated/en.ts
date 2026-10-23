@@ -11580,9 +11580,7 @@ export const EN_MESSAGES: Record<string, string> = {
   'games.card.hours_ago_suffix': 'h ago',
   'games.card.days_ago_suffix': 'd ago',
   'games.card.weeks_ago_suffix': 'w ago',
-  'games.card.grade_label': 'Grade',
   'games.card.play_cta': 'Play',
-  'games.shell.grade_label': 'Grade',
   'games.shell.score_label': 'Score',
   'games.shell.accuracy_label': 'Accuracy',
   'games.shell.time_label': 'Time',
@@ -19950,8 +19948,6 @@ export const EN_MESSAGES: Record<string, string> = {
   'rev.misc.quiz.col_date': 'Date',
   'rev.misc.quiz.col_mode': 'Mode',
   'rev.misc.quiz.col_score': 'Score',
-  'rev.misc.quiz.col_grade': 'Grade',
-  'rev.misc.quiz.grade_label': 'Grade {grade}',
   'rev.misc.quiz.motivate_title': 'Regular quizzing boosts long-term retention',
   'rev.misc.quiz.motivate_body':
     'Research shows that testing yourself is one of the most effective revision strategies. Try a quick quiz every day to keep your knowledge sharp.',

@@ -4,7 +4,7 @@ export const metadata = {
   openGraph: {
     title: 'Flashcards - Revision - The English Hub',
     description:
-      'Master GCSE English with smart review flashcards. Quotes, techniques, vocabulary and exam skills with progress tracking and GCSE grade equivalents.',
+      'Master GCSE English with smart review flashcards. Quotes, techniques, vocabulary and exam skills with progress tracking.',
     images: [
       {
         url: '/api/og?title=Flashcards+-+Revision+-+The+English+Hub',
@@ -16,7 +16,7 @@ export const metadata = {
   },
   title: 'Flashcards - Revision',
   description:
-    'Master GCSE English with smart review flashcards. Quotes, techniques, vocabulary and exam skills with progress tracking and GCSE grade equivalents.',
+    'Master GCSE English with smart review flashcards. Quotes, techniques, vocabulary and exam skills with progress tracking.',
   alternates: { canonical: 'https://theenglishhub.app/revision/flashcards' },
 }
 

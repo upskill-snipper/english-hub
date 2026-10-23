@@ -3,9 +3,14 @@
 // ─── Game Score Utilities ────────────────────────────────────────────────────
 // Shared helpers for saving, retrieving, and analysing game scores.
 // All data is persisted in localStorage.
+//
+// NO GRADE (23 October 2026). Until then every attempt was also stored with a
+// GCSE grade converted from its percentage, and the shell, the hub's game cards
+// and the best-score line showed it. The founder decided that no game shows a
+// GCSE grade (GameAudience in src/components/games/GameShell.tsx says why), so
+// nothing here computes one. Attempts saved before then still carry a `grade`
+// field in localStorage; it is ignored.
 // ──────────────────────────────────────────────────────────────────────────────
-
-import { percentageToGCSEGrade, type GCSEGrade } from '@/lib/grades'
 
 /* ─── Types ──────────────────────────────────────────────────── */
 
@@ -13,7 +18,6 @@ export interface GameAttempt {
   score: number
   maxScore: number
   percentage: number
-  grade: GCSEGrade
   timestamp: number // epoch ms
   /**
    * Time the learner actively spent on this attempt, in seconds.
@@ -63,15 +67,6 @@ function writeGameData(gameId: string, data: StoredGameData): void {
 /* ─── Public API ─────────────────────────────────────────────── */
 
 /**
- * Convert a raw score to a GCSE 1-9 grade.
- */
-export function scoreToGrade(score: number, maxScore: number): GCSEGrade {
-  if (maxScore <= 0) return 1
-  const pct = Math.round((score / maxScore) * 100)
-  return percentageToGCSEGrade(pct)
-}
-
-/**
  * Save a game score to localStorage.
  * Updates high score if the new percentage beats the previous best.
  * Keeps only the last 50 attempts to avoid bloating storage.
@@ -83,12 +78,10 @@ export function saveGameScore(
   durationSeconds?: number,
 ): GameAttempt {
   const percentage = maxScore > 0 ? Math.round((score / maxScore) * 100) : 0
-  const grade = percentageToGCSEGrade(percentage)
   const attempt: GameAttempt = {
     score,
     maxScore,
     percentage,
-    grade,
     timestamp: Date.now(),
     ...(typeof durationSeconds === 'number' && durationSeconds >= 0
       ? { durationSeconds: Math.round(durationSeconds) }
@@ -116,11 +109,11 @@ export function saveGameScore(
 
 /**
  * Retrieve the high score for a game.
- * Returns { score, maxScore, percentage, grade } or null if never played.
+ * Returns { score, maxScore, percentage } or null if never played.
  */
 export function getHighScore(
   gameId: string,
-): { score: number; maxScore: number; percentage: number; grade: GCSEGrade } | null {
+): { score: number; maxScore: number; percentage: number } | null {
   const data = readGameData(gameId)
   if (data.attempts.length === 0) return null
   const percentage =
@@ -129,7 +122,6 @@ export function getHighScore(
     score: data.highScore,
     maxScore: data.highScoreMax,
     percentage,
-    grade: percentageToGCSEGrade(percentage),
   }
 }
 

@@ -336,17 +336,14 @@ export const AMG_DICTIONARY: Record<string, { en: string; ar: string; es?: strin
   'games.card.hours_ago_suffix': { en: 'h ago', ar: ' س', es: 'h' },
   'games.card.days_ago_suffix': { en: 'd ago', ar: ' يوم', es: 'd' },
   'games.card.weeks_ago_suffix': { en: 'w ago', ar: ' أسبوع', es: 'sem' },
-  // "{t('games.card.grade_label')} {bestGrade}"
-  'games.card.grade_label': { en: 'Grade', ar: 'الدرجة', es: 'Nota' },
   'games.card.play_cta': { en: 'Play', ar: 'العب', es: 'Jugar' },
 
   // ─── GameShell header / results / controls (GameShell.tsx) ───────
-  'games.shell.grade_label': { en: 'Grade', ar: 'الدرجة', es: 'Nota' },
   'games.shell.score_label': { en: 'Score', ar: 'النتيجة', es: 'Puntuación' },
   'games.shell.accuracy_label': { en: 'Accuracy', ar: 'الدقة', es: 'Precisión' },
   'games.shell.time_label': { en: 'Time', ar: 'الوقت', es: 'Tiempo' },
   'games.shell.best_label': { en: 'Best', ar: 'الأفضل', es: 'Mejor' },
-  // "{t('games.shell.best_prefix')} Grade {grade} ({pct}%)"
+  // "{t('games.shell.best_prefix')} 7/20 (35%)" (no grade since 23 October 2026)
   'games.shell.best_prefix': { en: 'Best:', ar: 'أفضل نتيجة:', es: 'Mejor:' },
   'games.shell.press_start_prompt': {
     en: 'Press start when you are ready.',

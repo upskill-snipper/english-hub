@@ -312,7 +312,9 @@ export default function GradeClimberPage() {
     (q, i) => !usedQuestions.has(i) && Math.abs(q.grade - currentGrade) <= 1,
   )
 
-  // Score: maxGradeReached maps to a percentage for GameShell grading
+  // Score: right answers over answers, which the shell shows as score and
+  // percentage. No grade: GameAudience in GameShell.tsx says why (23 October
+  // 2026). The rung reached goes to the results screen as the game's own line.
   const scoreValue = totalCorrect
   const maxScoreValue = Math.max(totalAnswered, 1)
 
@@ -346,6 +348,7 @@ export default function GradeClimberPage() {
         onFinish={handleFinish}
         gameState={gameState}
         round={round}
+        resultsNote={`You climbed to rung ${maxGradeReached} of the ladder (3 to 9). The rungs show how hard the questions were, not a grade for you.`}
       >
         {currentQuestion && questionView && (
           <div className="flex gap-8">

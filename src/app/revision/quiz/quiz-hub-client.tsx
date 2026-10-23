@@ -29,7 +29,6 @@ import { QuizEngine } from './quiz-engine'
 import {
   TOPIC_META,
   pickQuestions,
-  getGrade,
   getTopicsForBoard,
   type Topic,
   type QuizQuestion,
@@ -377,22 +376,10 @@ export function QuizHubClient({ initialBoard }: { initialBoard: ExamBoard | null
                     <th className="px-4 py-3 text-center font-semibold text-muted-foreground">
                       {t('rev.misc.quiz.col_score')}
                     </th>
-                    <th className="px-4 py-3 text-center font-semibold text-muted-foreground">
-                      {t('rev.misc.quiz.col_grade')}
-                    </th>
                   </tr>
                 </thead>
                 <tbody>
                   {history.slice(0, 10).map((result, i) => {
-                    const { grade } = getGrade(result.percentage)
-                    const gradeNum = parseInt(grade)
-                    const gradeColour =
-                      gradeNum >= 7
-                        ? 'text-emerald-400'
-                        : gradeNum >= 5
-                          ? 'text-clay-600'
-                          : 'text-red-400'
-
                     return (
                       <tr
                         key={result.attemptId || i}
@@ -410,11 +397,6 @@ export function QuizHubClient({ initialBoard }: { initialBoard: ExamBoard | null
                         </td>
                         <td className="px-4 py-3 text-center text-foreground tabular-nums">
                           {result.correct}/{result.total} ({result.percentage}%)
-                        </td>
-                        <td className="px-4 py-3 text-center">
-                          <Badge variant="outline" className={`${gradeColour} font-bold`}>
-                            {t('rev.misc.quiz.grade_label').replace('{grade}', grade)}
-                          </Badge>
                         </td>
                       </tr>
                     )

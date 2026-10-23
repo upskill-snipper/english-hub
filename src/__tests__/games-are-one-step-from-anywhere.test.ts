@@ -21,7 +21,7 @@ import { textGamesOrHubHref } from '@/lib/recommendations/hrefs'
  * Source-level on purpose: these are placements, and the files are read the
  * way a reviewer would read them. The behaviour behind them is tested where it
  * lives: text-games-are-offered-only-where-they-exist.test.ts for which texts
- * have games, only-a-gcse-game-gives-a-gcse-grade.test.tsx for the shell.
+ * have games, no-game-gives-a-gcse-grade.test.tsx for the shell.
  */
 
 const read = (rel: string) => readFileSync(join(process.cwd(), rel), 'utf8')

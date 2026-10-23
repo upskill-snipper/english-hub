@@ -352,8 +352,6 @@ export const REV_MISC_DICTIONARY: Record<string, { en: string; ar?: string; es?:
   'rev.misc.quiz.col_date': { en: 'Date', ar: 'التاريخ', es: 'Fecha' },
   'rev.misc.quiz.col_mode': { en: 'Mode', ar: 'النمط', es: 'Modo' },
   'rev.misc.quiz.col_score': { en: 'Score', ar: 'النتيجة', es: 'Puntuación' },
-  'rev.misc.quiz.col_grade': { en: 'Grade', ar: 'الدرجة', es: 'Nota' },
-  'rev.misc.quiz.grade_label': { en: 'Grade {grade}', ar: 'Grade {grade}', es: 'Grade {grade}' },
   'rev.misc.quiz.motivate_title': {
     en: 'Regular quizzing boosts long-term retention',
     ar: 'الاختبارات المنتظمة تقوّي الحفظ على المدى الطويل',

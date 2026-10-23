@@ -4,7 +4,7 @@
 // jsdom for all 187 files cost 148 seconds of environment setup against an
 // 11-second wall clock, for the 13 files that actually use one.
 import { describe, it, expect, vi, beforeEach } from 'vitest'
-import { scoreToGrade, saveGameScore, getHighScore, getGameHistory } from '@/lib/game-scores'
+import { saveGameScore, getHighScore, getGameHistory } from '@/lib/game-scores'
 
 // ─── Mock localStorage ─────────────────────────────────────────────────────────
 
@@ -34,76 +34,6 @@ beforeEach(() => {
   vi.clearAllMocks()
 })
 
-// ─── scoreToGrade ───────────────────────────────────────────────────────────────
-
-describe('scoreToGrade', () => {
-  it('returns Grade 9 for 90%+', () => {
-    expect(scoreToGrade(9, 10)).toBe(9)
-    expect(scoreToGrade(10, 10)).toBe(9)
-    expect(scoreToGrade(45, 50)).toBe(9)
-  })
-
-  it('returns Grade 8 for 80-89%', () => {
-    expect(scoreToGrade(8, 10)).toBe(8)
-    expect(scoreToGrade(85, 100)).toBe(8)
-    expect(scoreToGrade(89, 100)).toBe(8)
-  })
-
-  it('returns Grade 7 for 70-79%', () => {
-    expect(scoreToGrade(7, 10)).toBe(7)
-    expect(scoreToGrade(75, 100)).toBe(7)
-  })
-
-  it('returns Grade 6 for 60-69%', () => {
-    expect(scoreToGrade(6, 10)).toBe(6)
-    expect(scoreToGrade(65, 100)).toBe(6)
-  })
-
-  it('returns Grade 5 for 50-59%', () => {
-    expect(scoreToGrade(5, 10)).toBe(5)
-    expect(scoreToGrade(55, 100)).toBe(5)
-  })
-
-  it('returns Grade 4 for 40-49%', () => {
-    expect(scoreToGrade(4, 10)).toBe(4)
-    expect(scoreToGrade(45, 100)).toBe(4)
-  })
-
-  it('returns Grade 3 for 30-39%', () => {
-    expect(scoreToGrade(3, 10)).toBe(3)
-    expect(scoreToGrade(35, 100)).toBe(3)
-  })
-
-  it('returns Grade 2 for 20-29%', () => {
-    expect(scoreToGrade(2, 10)).toBe(2)
-    expect(scoreToGrade(25, 100)).toBe(2)
-  })
-
-  it('returns Grade 1 for 0-19%', () => {
-    expect(scoreToGrade(1, 10)).toBe(1)
-    expect(scoreToGrade(0, 10)).toBe(1)
-    expect(scoreToGrade(15, 100)).toBe(1)
-  })
-
-  it('returns Grade 1 when maxScore is 0 or negative', () => {
-    expect(scoreToGrade(5, 0)).toBe(1)
-    expect(scoreToGrade(5, -1)).toBe(1)
-  })
-
-  it('handles boundary values exactly', () => {
-    // Exact boundary percentages
-    expect(scoreToGrade(90, 100)).toBe(9)
-    expect(scoreToGrade(80, 100)).toBe(8)
-    expect(scoreToGrade(70, 100)).toBe(7)
-    expect(scoreToGrade(60, 100)).toBe(6)
-    expect(scoreToGrade(50, 100)).toBe(5)
-    expect(scoreToGrade(40, 100)).toBe(4)
-    expect(scoreToGrade(30, 100)).toBe(3)
-    expect(scoreToGrade(20, 100)).toBe(2)
-    expect(scoreToGrade(0, 100)).toBe(1)
-  })
-})
-
 // ─── saveGameScore ──────────────────────────────────────────────────────────────
 
 describe('saveGameScore', () => {
@@ -113,8 +43,13 @@ describe('saveGameScore', () => {
     expect(attempt.score).toBe(8)
     expect(attempt.maxScore).toBe(10)
     expect(attempt.percentage).toBe(80)
-    expect(attempt.grade).toBe(8)
     expect(attempt.timestamp).toBeGreaterThan(0)
+  })
+
+  it('stores no grade: a share of questions right is not an exam result (23 October 2026)', () => {
+    const attempt = saveGameScore('quiz-1', 9, 10)
+    expect(attempt).not.toHaveProperty('grade')
+    expect(getHighScore('quiz-1')).not.toHaveProperty('grade')
   })
 
   it('persists data to localStorage under the correct key', () => {
@@ -145,7 +80,6 @@ describe('saveGameScore', () => {
   it('handles maxScore of 0 without crashing', () => {
     const attempt = saveGameScore('broken', 5, 0)
     expect(attempt.percentage).toBe(0)
-    expect(attempt.grade).toBe(1)
   })
 
   it('caps stored attempts at 50', () => {
@@ -175,7 +109,6 @@ describe('getHighScore', () => {
       score: 8,
       maxScore: 10,
       percentage: 80,
-      grade: 8,
     })
   })
 
