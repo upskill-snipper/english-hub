@@ -51,6 +51,7 @@ import type Stripe from 'stripe'
 import { prisma } from '@/lib/prisma'
 import { IdentityConflict, IdentityUnresolved, requirePrismaUserId } from '@/lib/identity'
 import { subscriptionPeriodEnd, subscriptionPeriodStart } from './stripe-shapes'
+import { planTierFromSubscription } from './plan-from-price'
 
 /**
  * The marker every unrecorded-subscription log line starts with.
@@ -148,6 +149,14 @@ export interface SubscriptionFacts {
   currentPeriodStart: Date | null
   currentPeriodEnd: Date | null
   cancelledAt: Date | null
+  /**
+   * Read from the price (see `./plan-from-price.ts`). `null` means the price
+   * is not a configured teacher or student price, so the stored value is
+   * left alone. Until 23 October 2026 the Stripe path never wrote this, so
+   * every web teacher read as a student on mobile.
+   */
+  isTeacherPlan: boolean | null
+  teacherPriceId: string | null
 }
 
 /**
@@ -178,6 +187,7 @@ export function readSubscriptionFacts(subscription: Stripe.Subscription): Subscr
     currentPeriodEnd: periodEnd ? new Date(periodEnd * 1000) : null,
     cancelledAt:
       subscription.status === 'canceled' && sub.ended_at ? new Date(sub.ended_at * 1000) : null,
+    ...planTierFromSubscription(subscription),
   }
 }
 
@@ -368,6 +378,9 @@ export async function syncStripeSubscriptionToPrisma(
         currentPeriodEnd: facts.currentPeriodEnd ?? new Date(),
         cancelledAt: facts.cancelledAt,
         platform: 'WEB',
+        // The column defaults to false; an unknown price leaves it there.
+        isTeacherPlan: facts.isTeacherPlan ?? false,
+        teacherPriceId: facts.teacherPriceId,
         ...(args.recordPayment && { paymentCount: 1 }),
       },
       update: {
@@ -378,6 +391,11 @@ export async function syncStripeSubscriptionToPrisma(
         ...(facts.currentPeriodStart && { currentPeriodStart: facts.currentPeriodStart }),
         ...(facts.currentPeriodEnd && { currentPeriodEnd: facts.currentPeriodEnd }),
         cancelledAt: facts.cancelledAt,
+        // Only when the price said something; see `planTierFromSubscription`.
+        ...(facts.isTeacherPlan !== null && {
+          isTeacherPlan: facts.isTeacherPlan,
+          teacherPriceId: facts.teacherPriceId,
+        }),
         // Once per paid invoice. The webhook claims the event id before it
         // runs this, so a Stripe retry of the same delivery cannot count a
         // payment twice.
