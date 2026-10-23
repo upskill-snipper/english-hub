@@ -44,12 +44,16 @@ export const dynamic = 'force-dynamic'
  * A paying or previously-paying customer can therefore never receive either
  * of these emails - but the guarantee rests on `stripeSubscriptionId = null`,
  * NOT on `paymentCount`, and this comment used to say otherwise.
- * `paymentCount` is incremented in exactly one place in the repository,
- * `src/lib/revenuecat/reconcile.ts`, so it is 0 for every web customer no
- * matter how many invoices Stripe has actually paid. Treat it as a
- * RevenueCat-only counter and never as proof that nobody has paid. The
- * filter is kept because it is correct for the mobile population and costs
- * nothing, but the Stripe identity column is the load-bearing one: every
+ * Until 23 October 2026 `paymentCount` was incremented in exactly one place,
+ * `src/lib/revenuecat/reconcile.ts`, so it was 0 for every web customer no
+ * matter how many invoices Stripe had paid. The Stripe webhook now counts a
+ * paid invoice that took money (`recordPayment` in
+ * `src/lib/billing/subscription-sync.ts`), but rows written before that date
+ * still read 0 until the founder runs
+ * `scripts/stripe-reconcile-subscriptions.mjs --write`. Never treat it as
+ * proof that nobody has paid. The filter is kept because it is correct for
+ * the mobile population and costs nothing, but the Stripe identity column
+ * is the load-bearing one: every
  * row this repository writes for a Stripe subscription carries
  * `subscription.id` there (see `src/lib/billing/subscription-sync.ts`), so
  * a Stripe customer is structurally excluded from both queries.

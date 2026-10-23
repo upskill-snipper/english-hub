@@ -86,6 +86,17 @@ export interface SyncStripeSubscriptionArgs {
   source: string
   /** Stripe event id, so a log line ties back to the delivery. */
   eventId?: string | null
+  /**
+   * True when this sync is driven by a paid invoice that took money, so
+   * `paymentCount` goes up by one. Until 23 October 2026 nothing on the
+   * Stripe path incremented it, and `invoice.paid` could not even find its
+   * subscription under the pinned API shape, so every web row read 0 while
+   * the webhook journal held 19 paid invoices. The caller passes false for a
+   * zero-amount invoice: `src/lib/usage/trial-allowance.ts` reads a non-zero
+   * count as evidence of a card on file, and a GBP 0 trial-start invoice is
+   * not that.
+   */
+  recordPayment?: boolean
 }
 
 /**
@@ -284,6 +295,7 @@ export async function syncStripeSubscriptionToPrisma(
         currentPeriodEnd: facts.currentPeriodEnd ?? new Date(),
         cancelledAt: facts.cancelledAt,
         platform: 'WEB',
+        ...(args.recordPayment && { paymentCount: 1 }),
       },
       update: {
         stripeCustomerId: facts.stripeCustomerId,
@@ -293,6 +305,10 @@ export async function syncStripeSubscriptionToPrisma(
         ...(facts.currentPeriodStart && { currentPeriodStart: facts.currentPeriodStart }),
         ...(facts.currentPeriodEnd && { currentPeriodEnd: facts.currentPeriodEnd }),
         cancelledAt: facts.cancelledAt,
+        // Once per paid invoice. The webhook claims the event id before it
+        // runs this, so a Stripe retry of the same delivery cannot count a
+        // payment twice.
+        ...(args.recordPayment && { paymentCount: { increment: 1 } }),
       },
     })
   } catch (err) {

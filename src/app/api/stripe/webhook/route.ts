@@ -13,7 +13,7 @@ import {
   pricesOnInvoice,
   pricesOnSubscription,
 } from '@/lib/billing/duplicate-subscription-guard'
-import { subscriptionPeriodEnd } from '@/lib/billing/stripe-shapes'
+import { invoiceSubscriptionId, subscriptionPeriodEnd } from '@/lib/billing/stripe-shapes'
 
 // Disable body parsing - we need the raw body for signature verification
 export const runtime = 'nodejs'
@@ -115,12 +115,14 @@ async function recordSubscriptionRow(
   subscription: Stripe.Subscription,
   source: string,
   eventId?: string | null,
+  options: { recordPayment?: boolean } = {},
 ): Promise<string | null> {
   const result = await syncStripeSubscriptionToPrisma({
     supabaseUserId,
     subscription,
     source,
     eventId,
+    recordPayment: options.recordPayment,
   })
   return result.ok ? result.prismaUserId : null
 }
@@ -276,8 +278,12 @@ export async function POST(request: NextRequest) {
         // Asking Stripe, not our own records, for the reason given in
         // `duplicate-subscription-guard.ts`.
         const failedPrices = pricesOnInvoice(invoice)
-        // eslint-disable-next-line @typescript-eslint/no-explicit-any
-        const failedSubId = (invoice as any).subscription as string | undefined
+        // Both API shapes (`invoice.subscription`, or under clover
+        // `invoice.parent.subscription_details.subscription`). Reading only
+        // the old field left this undefined under clover, so the failing
+        // subscription was never excluded below and "covered" itself: every
+        // failure read as a duplicate's and nobody was told.
+        const failedSubId = invoiceSubscriptionId(invoice) ?? undefined
         const covered = failedPrices.length
           ? await findDuplicateSubscription(stripe, customerId, failedPrices, {
               excludeSubscriptionId: failedSubId,
@@ -422,12 +428,13 @@ export async function POST(request: NextRequest) {
           .eq('stripe_customer_id', customerId)
           .single()
 
-        // eslint-disable-next-line @typescript-eslint/no-explicit-any
-        const invoiceAny = invoice as any
-        const paidSubscriptionId =
-          typeof invoiceAny.subscription === 'string'
-            ? (invoiceAny.subscription as string)
-            : (invoiceAny.subscription?.id as string | undefined)
+        // Both API shapes. Under the pinned clover version the subscription is
+        // `invoice.parent.subscription_details.subscription`, and reading only
+        // the old top-level field made this null for every delivery: no
+        // retrieve, no grant, no payment recorded. The webhook journal held 19
+        // invoice.paid events on 20 October 2026 against paymentCount 0 on
+        // every row.
+        const paidSubscriptionId = invoiceSubscriptionId(invoice)
 
         if (paidProfile && paidSubscriptionId) {
           // Retrieve the subscription rather than trusting the invoice: only
@@ -447,22 +454,33 @@ export async function POST(request: NextRequest) {
             break
           }
 
+          // The Prisma row is the record of what was paid: period and
+          // paymentCount. Written for IELTS-only subscriptions too, as the
+          // other lifecycle handlers already do. A GBP 0 invoice (the trial
+          // start) is not a payment; see `recordPayment` in the sync module.
+          const tookMoney = (invoice.amount_paid ?? 0) > 0
+          const recordRow = () =>
+            recordSubscriptionRow(paidProfile.id, paidSubscription!, 'invoice.paid', event.id, {
+              recordPayment: tookMoney,
+            })
+
           if (isIeltsOnlySubscription(paidSubscription)) {
             // IELTS-only: set the IELTS entitlement and leave the global flag
             // exactly as it was. Never widen it here.
             await syncIeltsEntitlement(paidProfile.id, paidSubscription, supabase)
+            await recordRow()
             break
           }
 
           // Not IELTS-only. Take the period end from the subscription, which
           // is the renewal boundary entitlement should follow; the invoice's
           // period_end is the billing line's window and can differ on
-          // proration, mid-cycle changes and trial conversion.
+          // proration, mid-cycle changes and trial conversion. The retrieved
+          // subscription is in the clover shape, so the period is on its items.
           // eslint-disable-next-line @typescript-eslint/no-explicit-any
-          const subAny = paidSubscription as any
+          const invoiceAny = invoice as any
           const periodEnd =
-            (subAny.current_period_end as number | undefined) ??
-            (invoiceAny.period_end as number | undefined)
+            subscriptionPeriodEnd(paidSubscription) ?? (invoiceAny.period_end as number | undefined)
           const subscriptionEndDate = periodEnd ? new Date(periodEnd * 1000).toISOString() : null
 
           const { error } = await supabase
@@ -481,6 +499,7 @@ export async function POST(request: NextRequest) {
           // A mixed subscription (IELTS + a non-IELTS price) keeps 'pro' AND
           // needs its IELTS flag kept in step.
           await syncIeltsEntitlement(paidProfile.id, paidSubscription, supabase)
+          await recordRow()
         }
         break
       }
@@ -502,10 +521,10 @@ export async function POST(request: NextRequest) {
             const invoiceId =
               typeof chargeAny.invoice === 'string' ? chargeAny.invoice : chargeAny.invoice?.id
             if (invoiceId) {
-              // eslint-disable-next-line @typescript-eslint/no-explicit-any
-              const invoice = (await stripe.invoices.retrieve(invoiceId)) as any
-              subscriptionId =
-                typeof invoice.subscription === 'string' ? invoice.subscription : null
+              // Retrieved through the pinned client, so in the clover shape:
+              // the subscription is under `parent.subscription_details`.
+              const invoice = await stripe.invoices.retrieve(invoiceId)
+              subscriptionId = invoiceSubscriptionId(invoice)
             }
           }
 
