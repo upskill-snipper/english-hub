@@ -378,24 +378,18 @@ export async function POST(request: NextRequest) {
           break
         }
 
-        // Mark the profile past_due immediately. Stripe will eventually fire
-        // a `customer.subscription.updated` with `status: 'past_due'`, but
-        // delivery order / lag is not guaranteed - flipping the flag here
-        // keeps the entitlement gate honest from the moment the charge fails.
-        if (failedProfile) {
-          const { error: pastDueError } = await supabase
-            .from('profiles')
-            .update({ subscription_status: 'past_due' })
-            .eq('id', failedProfile.id)
-
-          if (pastDueError) {
-            console.error(
-              '[stripe/webhook] Failed to set subscription_status=past_due:',
-              pastDueError,
-            )
-            throw pastDueError
-          }
-        }
+        // ── Access survives the retry window (product choice, 23 Oct 2026) ──
+        // This handler used to write `subscription_status = 'past_due'` here,
+        // and the web gate reads exactly 'pro', so the FIRST failed attempt
+        // removed access while Stripe's own retries were still scheduled and
+        // the email below promised "to avoid any interruption". A declined
+        // card is usually an expired card or a bank check, and most recover
+        // on a retry within days. The entitlement is therefore left alone
+        // here and in handleSubscriptionUpdated's past_due case; it is
+        // revoked when Stripe gives up (customer.subscription.deleted, or
+        // status unpaid). The Prisma row still records PAST_DUE, which mobile
+        // already treats as read-only grace. To reverse this choice, put the
+        // write back here and `past_due: 'past_due'` back into the status map.
 
         // Send payment-failed notification via Resend (non-blocking)
         const resendApiKey = process.env.RESEND_API_KEY
@@ -1053,10 +1047,14 @@ async function handleSubscriptionUpdated(
     return
   }
 
-  const statusMap: Record<string, string> = {
+  // `null` means "leave profiles.subscription_status as it is". past_due is
+  // null by choice (23 October 2026): the customer keeps access through
+  // Stripe's retry window and loses it on `unpaid` or on deletion. See the
+  // invoice.payment_failed handler for the reasoning and how to reverse it.
+  const statusMap: Record<string, string | null> = {
     active: 'pro',
     trialing: 'pro',
-    past_due: 'past_due',
+    past_due: null,
     canceled: 'cancelled',
     unpaid: 'unpaid',
     incomplete: 'incomplete',
@@ -1064,7 +1062,8 @@ async function handleSubscriptionUpdated(
     paused: 'paused',
   }
 
-  const subscriptionStatus = statusMap[subscription.status] ?? 'free'
+  const subscriptionStatus =
+    subscription.status in statusMap ? statusMap[subscription.status] : 'free'
   // Both API shapes. When neither carries a period the stored end date is
   // left alone below: this handler used to write `subscription_end_date:
   // null` for every clover-shaped payload, wiping a real date each renewal.
@@ -1150,7 +1149,9 @@ async function handleSubscriptionUpdated(
   const { error } = await supabase
     .from('profiles')
     .update({
-      ...(ieltsOnly ? {} : { subscription_status: subscriptionStatus }),
+      ...(ieltsOnly || subscriptionStatus === null
+        ? {}
+        : { subscription_status: subscriptionStatus }),
       ...(subscriptionEndDate && { subscription_end_date: subscriptionEndDate }),
     })
     .eq('id', userId)

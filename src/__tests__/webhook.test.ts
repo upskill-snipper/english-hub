@@ -300,7 +300,7 @@ describe('Stripe Webhook POST handler', () => {
   it('handles customer.subscription.updated with userId in metadata', async () => {
     const subscription = {
       id: 'sub_upd',
-      status: 'past_due',
+      status: 'unpaid',
       customer: 'cus_123',
       metadata: { userId: 'user-123' },
       current_period_end: 1700000000,
@@ -310,8 +310,26 @@ describe('Stripe Webhook POST handler', () => {
     const res = await POST(buildRequest('{}', 'sig_ok'))
     expect(res.status).toBe(200)
     expect(supabaseMock._mocks.updateFn).toHaveBeenCalledWith(
-      expect.objectContaining({ subscription_status: 'past_due' }),
+      expect.objectContaining({ subscription_status: 'unpaid' }),
     )
+  })
+
+  it('keeps the web entitlement through a past_due retry window (product choice, 23 Oct 2026)', async () => {
+    const subscription = {
+      id: 'sub_upd',
+      status: 'past_due',
+      customer: 'cus_123',
+      metadata: { userId: 'user-123' },
+      current_period_end: 1700000000,
+    }
+    mockConstructEvent.mockReturnValue(makeEvent('customer.subscription.updated', subscription))
+
+    const res = await POST(buildRequest('{}', 'sig_ok'))
+    expect(res.status).toBe(200)
+    const payloads = (supabaseMock._mocks.updateFn.mock.calls as unknown as unknown[][]).map(
+      (c) => c[0] as Record<string, unknown>,
+    )
+    expect(payloads.some((p) => 'subscription_status' in p)).toBe(false)
   })
 
   it('handles customer.subscription.updated falling back to stripe_customer_id lookup', async () => {
