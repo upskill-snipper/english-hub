@@ -55,8 +55,14 @@ const data: TextGuideData = {
   year: 'first staged 1983',
   category: 'Play',
   badge: 'AQA / Edexcel / Eduqas',
+  // The edition sentence was added 23 October 2026. Eduqas's prescribed texts
+  // list (GCSE English Literature specification, Version 4, August 2024, page
+  // 12) reads "Blood Brothers (Russell) (not Stanley Thorne edition)"; AQA's
+  // (8702 specification v1.3, page 12) reads "Blood Brothers (musical
+  // version)". The registry row carries both in its rights notice, but that
+  // notice renders only on stub pages, and this guide is not a stub.
   intro:
-    "Willy Russell's musical play tells the story of twin brothers separated at birth - one raised in poverty by their biological mother Mrs Johnstone, the other in wealth by Mrs Lyons. Framed by a Narrator who speaks of superstition and fate, Blood Brothers is a ballad about class, love and the predictable ending of a society that refuses to care for everyone equally.",
+    "Willy Russell's musical play tells the story of twin brothers separated at birth - one raised in poverty by their biological mother Mrs Johnstone, the other in wealth by Mrs Lyons. Framed by a Narrator who speaks of superstition and fate, Blood Brothers is a ballad about class, love and the predictable ending of a society that refuses to care for everyone equally. A note on editions: Eduqas does not accept the Stanley Thorne edition, and AQA sets the musical version, so check the copy your school has given you against your board's list.",
   quickInfo: {
     genre: 'Musical play / Social tragedy',
     setting: 'Liverpool, 1960s to early 1980s',
