@@ -235,6 +235,14 @@ export interface AiConsentSnapshot {
 export interface LogAiDecisionInput {
   /** Route/feature that made the decision. */
   feature: AiAuditFeature
+  /**
+   * The model the route actually called, when it is not the shared
+   * `ANTHROPIC_MODEL`. Added 23 October 2026: the examiner tool calls Opus and
+   * Haiku and the games coach calls Haiku, yet every record named the shared
+   * Sonnet model, so the Art. 12 record of WHICH model produced a decision was
+   * wrong for those routes. Omitted, the shared model is recorded as before.
+   */
+  model?: string | null
   /** User making the request, when authenticated and in scope. */
   userId?: string | null
   /** `User.isMinor` - drives the data-minimisation posture of this record. */
@@ -407,7 +415,7 @@ function buildDetails(input: LogAiDecisionInput, subject: AiAuditSubject): Recor
   return {
     schemaVersion: 2,
     feature: input.feature,
-    model: AI_AUDIT_MODEL,
+    model: input.model || AI_AUDIT_MODEL,
     // Who the record is about, and how confident the link is. `identity` is
     // the honest word: 'linked' means the foreign key is populated, the other
     // two mean it is NULL and say why.
@@ -470,7 +478,7 @@ export function formatAuditPersistenceFailure(args: {
   const { input, subject } = args
   return (
     `[ai-audit-log] ${args.outcome}: feature=${input.feature} ` +
-    `model=${AI_AUDIT_MODEL} success=${input.success} ` +
+    `model=${input.model || AI_AUDIT_MODEL} success=${input.success} ` +
     `aiErrorClass=${input.errorClass ?? 'n/a'} ` +
     `aiErrorStatus=${input.errorStatus ?? 'n/a'} ` +
     `aiErrorMessage=${(input.errorMessage ?? 'n/a').slice(0, 300)} ` +
@@ -524,7 +532,7 @@ async function raiseProviderAlarm(input: LogAiDecisionInput): Promise<void> {
         source: 'live-request',
         failure,
         feature: input.feature,
-        model: AI_AUDIT_MODEL,
+        model: input.model || AI_AUDIT_MODEL,
         at: input.responseFinishedAt,
       },
       { throttle: true },

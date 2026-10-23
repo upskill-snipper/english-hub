@@ -153,7 +153,11 @@ async function generateSpeakingFeedback(systemPrompt: string, transcript: string
   const message = await anthropic.messages.create(
     {
       model: ANTHROPIC_MODEL,
-      max_tokens: 1536,
+      // Room for thinking as well as the reply. The 5.5 models think before
+      // replying by default and thinking counts against max_tokens: on 23 October
+      // 2026 a Sonnet 5.5 feedback reply hit a 2,048 ceiling mid-answer. A ceiling
+      // costs nothing unless it is used.
+      max_tokens: 4096,
       system: systemPrompt,
       messages: [{ role: 'user', content: transcript }],
     },

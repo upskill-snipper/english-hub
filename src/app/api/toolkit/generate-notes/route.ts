@@ -14,7 +14,7 @@ import { logAiDecision } from '@/lib/ai-audit-log'
 import { parseProviderErrorText } from '@/lib/ai/provider-failure'
 import { checkMinorAIConsent } from '@/lib/consent-check'
 import { isAiOptedOutServer } from '@/lib/ai-preferences'
-import { ANTHROPIC_MODEL } from '@/lib/anthropic-client'
+import { ANTHROPIC_MODEL, effortFor } from '@/lib/anthropic-client'
 import { generateTemplateNotes, notesProvenanceFooter } from './notes-template'
 import { AI_OPT_OUT_CODE } from '@/lib/consent-codes'
 
@@ -233,7 +233,15 @@ Be specific, include example quotations, and give practical exam advice.`
             },
             body: JSON.stringify({
               model: ANTHROPIC_MODEL,
+              // Measured 23 October 2026. At its default effort Sonnet 5.5
+              // spent all 2,000 tokens thinking and wrote nothing, so every
+              // learner would have been given the template; at low effort it
+              // writes the notes. NOT FIXED HERE, and a decision for the owner:
+              // 2,000 tokens is about a quarter of a full set of notes (a
+              // complete set ran to about 7,000 tokens and 55 s), so the notes
+              // have been cut off mid-document on Sonnet 5 too.
               max_tokens: 2000,
+              ...effortFor(ANTHROPIC_MODEL, 'low'),
               system: systemPrompt,
               messages: [{ role: 'user', content: prompt }],
             }),
@@ -246,8 +254,19 @@ Be specific, include example quotations, and give practical exam advice.`
 
         if (response.ok) {
           const data = await response.json()
-          const content = data.content?.[0]
-          const rawText = content?.text?.trim() || ''
+          // Every text block, by type. This read `data.content[0].text` until
+          // 23 October 2026, but Sonnet 5 and 5.5 may begin a reply with a
+          // `thinking` block (empty by default), and then the first block has
+          // no text: real notes would have been treated as an empty reply and
+          // swapped for the template.
+          const rawText = (Array.isArray(data.content) ? data.content : [])
+            .filter((b: { type?: string }) => b?.type === 'text')
+            .map((b: { text?: string }) => b.text ?? '')
+            .join('')
+            .trim()
+          // A safety decline (stop_reason 'refusal') is recorded as one, not as
+          // an off-topic request, so the audit log can tell them apart.
+          const rejected = data.stop_reason === 'refusal' ? 'REFUSAL' : 'OFF_TOPIC'
           // If the model flagged the request as off-topic/unsafe, fall back to
           // the deterministic template rather than echoing garbage back to a minor.
           if (!rawText || rawText === 'OFF_TOPIC' || rawText.startsWith('OFF_TOPIC')) {
@@ -260,8 +279,8 @@ Be specific, include example quotations, and give practical exam advice.`
                 outputTokens: data.usage?.output_tokens,
               },
               success: false,
-              outputSummary: { rejected: 'OFF_TOPIC', fellBackToTemplate: true },
-              errorClass: 'OFF_TOPIC',
+              outputSummary: { rejected, fellBackToTemplate: true },
+              errorClass: rejected,
             })
             // The learner is served the deterministic template, not the model, so the
             // use is given back. A silent allowance burn during a provider outage is

@@ -161,6 +161,8 @@ export async function POST(request: NextRequest) {
 
       await logAiDecision({
         feature: 'examiner/transcribe',
+        // The model that answered, not the shared one (23 October 2026).
+        model: result.model,
         userId: user.id,
         inputText: text,
         markSchemeId: body.packId ?? null,
@@ -186,6 +188,7 @@ export async function POST(request: NextRequest) {
       await logAiDecisionError(
         {
           feature: 'examiner/transcribe',
+          model,
           userId: user.id,
           markSchemeId: body.packId ?? null,
           requestStartedAt,

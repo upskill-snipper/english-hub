@@ -85,8 +85,47 @@ import Anthropic from '@anthropic-ai/sdk'
  * env change, not a deploy. After changing it, re-record the eval fixtures
  * (they key on the model id - see evals/fixtures/README.md) and re-run
  * `npm run eval:marking` before trusting marks.
+ *
+ * 2026-10-23: default moved to `claude-sonnet-5-5` at Calum's request, the
+ * same price as Sonnet 5. Before switching, every route on this constant was
+ * checked for what Sonnet 5.5 rejects with a 400: a non-default temperature,
+ * `thinking: { type: 'disabled' }`, a thinking budget, an assistant prefill and
+ * a forced `tool_choice`. None sends any of them. (The gated IELTS Task 2
+ * engine does, on its own model constants; see src/lib/marking/engine/models.ts.)
+ * Sonnet 5.5, like Sonnet 5, may begin a reply with an empty `thinking` block,
+ * so a reply is read by block type, never as `content[0]`. The live marking
+ * eval was run on both models before the switch; see docs/system/04.
  */
-export const ANTHROPIC_MODEL: string = process.env.ANTHROPIC_MODEL || 'claude-sonnet-5'
+export const ANTHROPIC_MODEL: string = process.env.ANTHROPIC_MODEL || 'claude-sonnet-5-5'
+
+/**
+ * Whether a model accepts `output_config.effort`. An allowlist, so an
+ * unrecognised id gets no effort setting rather than a 400: Haiku 4.5, Sonnet
+ * 4.5 and the older models reject the parameter, and every model id here is
+ * env-overridable, so a route cannot assume which model it is talking to.
+ */
+export function supportsEffort(model: string): boolean {
+  return /^claude-(opus-4-[5-9]|opus-[5-9]|sonnet-4-[6-9]|sonnet-[5-9]|haiku-[5-9]|fable|mythos)/.test(
+    model,
+  )
+}
+
+/**
+ * The request fields that set how much a model thinks, or nothing when the
+ * model cannot take them. Spread into a request body:
+ * `{ model, max_tokens, ...effortFor(model, 'low'), messages }`.
+ *
+ * Why routes need it (measured 23 October 2026): the 5.5 models think before
+ * replying by default, and thinking counts against `max_tokens`. On Sonnet 5.5
+ * at its default effort, the revision-notes request spent all 2,000 of its
+ * tokens thinking and returned no text at all; at `low` it wrote the notes.
+ */
+export function effortFor(
+  model: string,
+  effort: 'low' | 'medium' | 'high',
+): { output_config?: { effort: 'low' | 'medium' | 'high' } } {
+  return supportsEffort(model) ? { output_config: { effort } } : {}
+}
 
 /**
  * Hard request timeout (ms) applied at the client level. The SDK default is

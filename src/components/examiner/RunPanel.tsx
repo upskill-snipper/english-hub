@@ -206,7 +206,7 @@ export function RunPanel(p: Props) {
 
   const stepIcon = (s: Step['state']) =>
     s === 'done' ? '✓' : s === 'run' ? '▸' : s === 'fail' ? '✕' : '·'
-  const costModel = models.mark ?? 'claude-opus-5'
+  const costModel = models.mark ?? 'claude-opus-5-5'
 
   return (
     <Panel title="3 · Run it" className="border-s-4 border-s-primary">

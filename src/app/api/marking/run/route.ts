@@ -50,6 +50,7 @@ import { applyAllowanceHeaders } from '@/lib/usage/free-allowance'
 import { rateLimit } from '@/lib/rate-limit'
 import {
   badRequestResponse,
+  errorResponse,
   forbiddenResponse,
   notFoundResponse,
   rateLimitResponse,
@@ -456,6 +457,33 @@ export async function POST(request: NextRequest) {
       clearTimeout(deadlineTimer)
     }
     const aiResponseFinishedAt = new Date()
+
+    // 9b. A safety decline. Sonnet 5.5 (the default from 23 October 2026) runs
+    //     safety classifiers that can decline a request in five categories; a
+    //     decline is a normal 200 with stop_reason 'refusal' and little or no
+    //     text. Read as an ordinary reply, it failed to parse and was recorded
+    //     as INVALID_RESPONSE, and the learner was told the AI's reply could
+    //     not be processed. It is recorded as what it is, with its category,
+    //     and the learner is told that it is not a judgement of their writing.
+    if (message.stop_reason === 'refusal') {
+      const category = message.stop_details?.category ?? null
+      void logAiDecision({
+        ...auditBase,
+        requestStartedAt: aiRequestStartedAt,
+        responseFinishedAt: aiResponseFinishedAt,
+        tokenUsage: message.usage ? aiAuditTokenUsage(message.usage) : undefined,
+        success: false,
+        outputSummary: { rejected: 'REFUSAL', category },
+        errorClass: 'REFUSAL',
+        errorMessage: `The model declined the request${category ? ` (${category})` : ''}`,
+      })
+      console.error(`[api/marking/run] model declined: category=${category ?? 'none'}`)
+      await refundTrialAllowance(trialGate)
+      return errorResponse(
+        `${notMarked('The AI marker declined to mark this essay', runByStaff)} This is an automatic safety check, not a judgement of the writing. ${essayIsSaved(runByStaff)}`,
+        422,
+      )
+    }
 
     // 10. Extract text + parse into a structured MarkingResult.
     const responseText = message.content

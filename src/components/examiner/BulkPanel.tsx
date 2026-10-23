@@ -814,7 +814,7 @@ export function BulkPanel(p: Props) {
                   · {usage.output.toLocaleString('en-GB')} out · roughly $
                   {estimateUsd(
                     usage,
-                    results.find((r) => r.modelMark)?.modelMark ?? 'claude-opus-5',
+                    results.find((r) => r.modelMark)?.modelMark ?? 'claude-opus-5-5',
                   ).toFixed(2)}{' '}
                   at list price
                 </p>

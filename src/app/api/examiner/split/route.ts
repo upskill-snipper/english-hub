@@ -1,6 +1,6 @@
 import { NextResponse, type NextRequest } from 'next/server'
 import { z } from 'zod'
-import { getAnthropicClient, AnthropicNotConfiguredError } from '@/lib/anthropic-client'
+import { getAnthropicClient, AnthropicNotConfiguredError, effortFor } from '@/lib/anthropic-client'
 import { logAiDecision, logAiDecisionError } from '@/lib/ai-audit-log'
 import { examinerGate } from '@/lib/marking/examiner/gate'
 import {
@@ -90,6 +90,11 @@ export async function POST(request: NextRequest) {
       {
         model,
         max_tokens: EXAMINER_MAX_TOKENS.split,
+        // Low effort: on Haiku 5.5 (from 23 October 2026) the default made it
+        // think about every page, 9 to 30 s a page against about 2 s for
+        // Haiku 4.5, measured on real calls. At low it skips the thinking and
+        // matches Haiku 4.5. effortFor sends nothing to a model without effort.
+        ...effortFor(model, 'low'),
         system: SPLIT_SYSTEM,
         messages: [{ role: 'user', content: splitContent(page) }],
       },
@@ -109,6 +114,8 @@ export async function POST(request: NextRequest) {
 
     await logAiDecision({
       feature: 'examiner/split',
+      // The model that answered, not the shared one (23 October 2026).
+      model: res.model,
       userId: user.id,
       requestStartedAt,
       responseFinishedAt: new Date(),
@@ -129,6 +136,7 @@ export async function POST(request: NextRequest) {
     await logAiDecisionError(
       {
         feature: 'examiner/split',
+        model,
         userId: user.id,
         requestStartedAt,
         responseFinishedAt: new Date(),

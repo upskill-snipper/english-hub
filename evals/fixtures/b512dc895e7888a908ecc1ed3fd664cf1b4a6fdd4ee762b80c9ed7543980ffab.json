@@ -1,7 +1,7 @@
 {
   "v": 1,
-  "key": "5586443b34175ec6be7ae2455acc8d1bff91b6455c5834183f009612db92e0fb",
-  "model": "claude-sonnet-5",
+  "key": "b512dc895e7888a908ecc1ed3fd664cf1b4a6fdd4ee762b80c9ed7543980ffab",
+  "model": "claude-sonnet-5-5",
   "caseId": "aqa-lang-p1-q2-syn-03",
   "markSchemeId": "aqa-lang-paper1",
   "questionId": "Q2",

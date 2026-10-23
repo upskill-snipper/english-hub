@@ -125,6 +125,8 @@ export async function POST(request: NextRequest) {
 
       await logAiDecision({
         feature: 'examiner/mark',
+        // The model that answered, not the shared one (23 October 2026).
+        model: result.model,
         userId: user.id,
         inputText: body.response,
         markSchemeId: pack.id,
@@ -150,6 +152,7 @@ export async function POST(request: NextRequest) {
       await logAiDecisionError(
         {
           feature: 'examiner/mark',
+          model,
           userId: user.id,
           markSchemeId: pack.id,
           questionId: question.id,

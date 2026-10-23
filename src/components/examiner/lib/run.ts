@@ -183,19 +183,34 @@ export async function markResponse(opts: MarkOptions): Promise<MarkDone> {
 }
 
 /**
+ * List prices in US dollars per million tokens, first match wins. Until
+ * 23 October 2026 this priced every Opus as Opus 5 and everything that was not
+ * Opus or Sonnet as Haiku 4.5, so moving the tool to Opus 5.5 and Haiku 5.5
+ * would have shown teachers a cost a quarter too high for marking and ten times
+ * too high for splitting. `cacheRead` is the cache-read multiple of the input
+ * price (0.05 on Opus 5.5, 0.1 elsewhere); cache writes are 1.25 on all.
+ */
+const PRICES: ReadonlyArray<{ match: RegExp; input: number; output: number; cacheRead: number }> = [
+  { match: /opus-5-5/i, input: 4, output: 20, cacheRead: 0.05 },
+  { match: /opus/i, input: 5, output: 25, cacheRead: 0.1 },
+  { match: /sonnet-[5-9]/i, input: 2, output: 10, cacheRead: 0.1 },
+  { match: /sonnet/i, input: 3, output: 15, cacheRead: 0.1 },
+  // Haiku 5.5's rate for prompts of up to 100,000 tokens, which a page is.
+  { match: /haiku-5-5/i, input: 0.1, output: 0.5, cacheRead: 0.1 },
+  { match: /haiku/i, input: 1, output: 5, cacheRead: 0.1 },
+]
+
+/**
  * Rough cost of a session in US dollars at list prices, for the usage line.
  * Deliberately approximate and labelled as such in the UI.
  */
 export function estimateUsd(u: Usage, model: string): number {
-  const opus = /opus/i.test(model)
-  const sonnet = /sonnet/i.test(model)
-  const inRate = opus ? 5 : sonnet ? 2 : 1
-  const outRate = opus ? 25 : sonnet ? 10 : 5
+  const p = PRICES.find((x) => x.match.test(model)) ?? PRICES[1]
   return (
-    (u.input * inRate +
-      u.cacheWrite * inRate * 1.25 +
-      u.cacheRead * inRate * 0.1 +
-      u.output * outRate) /
+    (u.input * p.input +
+      u.cacheWrite * p.input * 1.25 +
+      u.cacheRead * p.input * p.cacheRead +
+      u.output * p.output) /
     1e6
   )
 }

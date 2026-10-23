@@ -66,7 +66,11 @@ vi.mock('@/lib/usage/free-allowance', () => ({
   applyAllowanceHeaders: <T>(response: T) => response,
 }))
 vi.mock('@/lib/ai-audit-log', () => ({ logAiDecision: vi.fn().mockResolvedValue(undefined) }))
-vi.mock('@/lib/anthropic-client', () => ({ ANTHROPIC_MODEL: 'claude-test-model' }))
+vi.mock('@/lib/anthropic-client', () => ({
+  ANTHROPIC_MODEL: 'claude-test-model',
+  // Echoes the requested effort, so a test can see the route asked for it.
+  effortFor: (_model: string, effort: string) => ({ output_config: { effort } }),
+}))
 
 function request(body: Record<string, unknown>): NextRequest {
   return new NextRequest(new URL('http://localhost:3000/api/toolkit/generate-notes'), {
@@ -309,6 +313,57 @@ describe('POST /api/toolkit/generate-notes', () => {
     errorSpy.mockRestore()
   })
 
+  it('serves the notes when the reply begins with a thinking block, and asks for low effort', async () => {
+    // 23 October 2026: Sonnet 5 and 5.5 may begin a reply with a thinking
+    // block. The route read content[0].text, which a thinking block does not
+    // have, so real notes were thrown away for the template. And at the 5.5
+    // default effort the thinking took the whole ceiling, so it asks for low.
+    process.env.ANTHROPIC_API_KEY = 'sk-test'
+    const fetchMock = vi.fn().mockResolvedValue({
+      ok: true,
+      json: async () => ({
+        content: [
+          { type: 'thinking', thinking: '', signature: 'sig' },
+          { type: 'text', text: '# Revision Notes: Macbeth\n\nWritten after thinking.' },
+        ],
+        stop_reason: 'end_turn',
+        usage: { input_tokens: 10, output_tokens: 20 },
+      }),
+    })
+    vi.stubGlobal('fetch', fetchMock)
+
+    const { status, json } = await postNotes({ board: 'aqa', topic: 'Macbeth', targetGrade: 7 })
+
+    expect(status).toBe(200)
+    expect(json.metadata.source).toBe('ai')
+    expect(json.notes).toContain('Written after thinking.')
+    const sent = JSON.parse(fetchMock.mock.calls[0][1].body)
+    expect(sent.output_config).toEqual({ effort: 'low' })
+  })
+
+  it('records a safety decline as a refusal, not as an off-topic request', async () => {
+    process.env.ANTHROPIC_API_KEY = 'sk-test'
+    vi.stubGlobal(
+      'fetch',
+      vi.fn().mockResolvedValue({
+        ok: true,
+        json: async () => ({
+          content: [],
+          stop_reason: 'refusal',
+          usage: { input_tokens: 10, output_tokens: 0 },
+        }),
+      }),
+    )
+
+    const { status, json } = await postNotes({ board: 'aqa', topic: 'Macbeth', targetGrade: 7 })
+
+    expect(status).toBe(200)
+    expect(json.metadata.source).toBe('template')
+    expect(logAiDecision).toHaveBeenCalledWith(
+      expect.objectContaining({ success: false, errorClass: 'REFUSAL' }),
+    )
+  })
+
   it('labels genuine model output as AI work and names the provider', async () => {
     process.env.ANTHROPIC_API_KEY = 'sk-test'
     vi.stubGlobal(
@@ -316,7 +371,7 @@ describe('POST /api/toolkit/generate-notes', () => {
       vi.fn().mockResolvedValue({
         ok: true,
         json: async () => ({
-          content: [{ text: '# Revision Notes: Macbeth\n\nModel-written body.' }],
+          content: [{ type: 'text', text: '# Revision Notes: Macbeth\n\nModel-written body.' }],
           usage: { input_tokens: 10, output_tokens: 20 },
         }),
       }),

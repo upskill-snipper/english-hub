@@ -612,3 +612,38 @@ describe('POST /api/marking/run - the sentence read when the AI is down', () => 
     expect(error).not.toMatch(/your essay/i)
   })
 })
+
+// ─── A safety decline (23 October 2026) ─────────────────────────────────────
+// Sonnet 5.5 can decline a request in five categories: a normal 200 with
+// stop_reason 'refusal' and little or no text. It used to fall through to the
+// parser, be recorded as INVALID_RESPONSE and tell the learner the AI's reply
+// could not be processed.
+describe('POST /api/marking/run - a safety decline', () => {
+  it('is recorded as a refusal with its category, refunded, and explained plainly', async () => {
+    vi.mocked(logAiDecision).mockClear()
+    vi.mocked(refundTrialAllowance).mockClear()
+    anthropicCreate.mockResolvedValueOnce({
+      content: [],
+      usage: { input_tokens: 10, output_tokens: 0 },
+      stop_reason: 'refusal',
+      stop_details: { type: 'refusal', category: 'general_harms', explanation: null },
+    } as unknown as ModelReply)
+
+    const res = await POST(makeReq())
+
+    expect(res.status).toBe(422)
+    const { error } = await res.json()
+    expect(error).toMatch(/declined to mark this essay/)
+    expect(error).toMatch(/not a judgement of the writing/)
+    expect(error).toMatch(/saved in your Marking history/)
+    expect(applyAiResultMock).not.toHaveBeenCalled()
+    expect(refundTrialAllowance).toHaveBeenCalledOnce()
+    expect(logAiDecision).toHaveBeenCalledWith(
+      expect.objectContaining({
+        success: false,
+        errorClass: 'REFUSAL',
+        outputSummary: { rejected: 'REFUSAL', category: 'general_harms' },
+      }),
+    )
+  })
+})

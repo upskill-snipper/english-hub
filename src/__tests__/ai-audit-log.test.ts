@@ -141,6 +141,13 @@ describe('the AI decision record reaches the database', () => {
     expect(AI_AUDIT_MODEL).toBe(ANTHROPIC_MODEL)
   })
 
+  it('names the model a route says it called, when that is not the shared one', async () => {
+    // 23 October 2026: the examiner tool calls Opus and Haiku, yet every one of
+    // its records named the shared Sonnet model.
+    await logAiDecision(baseInput({ feature: 'examiner/mark', model: 'claude-opus-5-5' }))
+    expect(createdRow().details.model).toBe('claude-opus-5-5')
+  })
+
   it('captures the provider error class and status on the failure path', async () => {
     await logAiDecision(
       baseInput({
