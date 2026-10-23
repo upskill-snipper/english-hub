@@ -87,6 +87,8 @@ export interface CleanupSummary {
   gameRoundsPurged: number
   /** coach_reports rows past COACH_REPORTS_DAYS, deleted by step 1d. */
   coachReportsPurged: number
+  /** class_coach_reports rows past COACH_REPORTS_DAYS, deleted by step 1d. */
+  classCoachReportsPurged: number
   /** BulkUploadJob rows whose error detail was cleared by the 30-day sweep */
   bulkUploadErrorsCleared: number
   /** BulkUploadJob rows deleted by the 12-month sweep */
@@ -618,11 +620,13 @@ export async function compileSupabaseNativeSubjectData(
 export async function purgeExpiredLearningRecords(now: Date = new Date()): Promise<{
   gameRoundsPurged: number
   coachReportsPurged: number
+  classCoachReportsPurged: number
   errors: { step: string; message: string }[]
 }> {
   const out = {
     gameRoundsPurged: 0,
     coachReportsPurged: 0,
+    classCoachReportsPurged: 0,
     errors: [] as { step: string; message: string }[],
   }
   const sweeps = [
@@ -637,6 +641,14 @@ export async function purgeExpiredLearningRecords(now: Date = new Date()): Promi
       column: 'created_at',
       days: RETENTION_PERIODS.COACH_REPORTS_DAYS,
       field: 'coachReportsPurged',
+    },
+    // 23 October 2026: the teacher's class reports, kept as long as a
+    // student's own (supabase/migrations/20261023_class_coach_reports.sql).
+    {
+      table: 'class_coach_reports',
+      column: 'created_at',
+      days: RETENTION_PERIODS.COACH_REPORTS_DAYS,
+      field: 'classCoachReportsPurged',
     },
   ] as const
   for (const sweep of sweeps) {
@@ -696,6 +708,7 @@ export async function cleanupExpiredData(): Promise<CleanupSummary> {
     expiredExaminerRuns: 0,
     gameRoundsPurged: 0,
     coachReportsPurged: 0,
+    classCoachReportsPurged: 0,
     bulkUploadErrorsCleared: 0,
     bulkUploadRecordsPurged: 0,
     childrenPriorityCleanups: 0,
@@ -819,6 +832,7 @@ export async function cleanupExpiredData(): Promise<CleanupSummary> {
     const learning = await purgeExpiredLearningRecords()
     summary.gameRoundsPurged = learning.gameRoundsPurged
     summary.coachReportsPurged = learning.coachReportsPurged
+    summary.classCoachReportsPurged = learning.classCoachReportsPurged
     summary.errors.push(...learning.errors)
   }
 

@@ -34,7 +34,7 @@ let errors: Record<string, string | undefined>
 beforeEach(() => {
   vi.clearAllMocks()
   calls = []
-  counts = { game_rounds: 3, coach_reports: 0 }
+  counts = { game_rounds: 3, coach_reports: 0, class_coach_reports: 0 }
   errors = {}
   vi.mocked(createServiceRoleClient).mockReturnValue({
     from: (table: string) => ({
@@ -62,8 +62,15 @@ describe('the sweep', () => {
     expect(calls).toEqual([
       { table: 'game_rounds', column: 'finished_at', cutoff: '2024-10-13T00:00:00.000Z' },
       { table: 'coach_reports', column: 'created_at', cutoff: '2025-10-13T00:00:00.000Z' },
+      // 23 October 2026: the teacher's class reports, kept as long as a student's own.
+      { table: 'class_coach_reports', column: 'created_at', cutoff: '2025-10-13T00:00:00.000Z' },
     ])
-    expect(out).toMatchObject({ gameRoundsPurged: 3, coachReportsPurged: 0, errors: [] })
+    expect(out).toMatchObject({
+      gameRoundsPurged: 3,
+      coachReportsPurged: 0,
+      classCoachReportsPurged: 0,
+      errors: [],
+    })
   })
 
   it('by date alone, never by account', async () => {
@@ -84,7 +91,11 @@ describe('the sweep', () => {
     errors.game_rounds = 'statement timeout'
     const out = await purgeExpiredLearningRecords(NOW)
     expect(out.errors).toEqual([{ step: 'game_rounds_retention', message: 'statement timeout' }])
-    expect(calls.map((c) => c.table)).toEqual(['game_rounds', 'coach_reports'])
+    expect(calls.map((c) => c.table)).toEqual([
+      'game_rounds',
+      'coach_reports',
+      'class_coach_reports',
+    ])
   })
 })
 

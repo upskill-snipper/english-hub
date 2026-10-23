@@ -1070,10 +1070,11 @@ export const LEGAL_LONG_DICTIONARY: Dictionary = {
     es: 'Ensayos y respuestas escritas enviadas',
   },
   // 13 October 2026: the games' AI coach (src/app/api/games/coach).
+  // 23 October 2026: the teacher's class report (src/app/api/school/classes/[classId]/coach).
   'legal_long.privacy.s2.learn_li3': {
-    en: 'AI-generated feedback on your work, including, when you ask for it, a coach report written from your game results (figures only: never your name, email or anything you typed)',
-    ar: 'التقييم المُولَّد بالذكاء الاصطناعي على عملك، ويشمل، عند طلبك، تقرير مدرّب يُكتب من نتائجك في الألعاب (أرقام فقط: لا اسمك ولا بريدك الإلكتروني ولا أي شيء كتبته)',
-    es: 'Retroalimentación generada por IA sobre su trabajo, incluido, cuando lo pida, un informe del coach escrito a partir de sus resultados en los juegos (solo cifras: nunca su nombre, su correo ni nada de lo que haya escrito)',
+    en: 'AI-generated feedback on your work, including, when you ask for it, a coach report written from your game results (figures only: never your name, email or anything you typed), and, if you are in a school class, a report for your teachers about the class as a whole, written from the class’s pooled figures with no names',
+    ar: 'التقييم المُولَّد بالذكاء الاصطناعي على عملك، ويشمل، عند طلبك، تقرير مدرّب يُكتب من نتائجك في الألعاب (أرقام فقط: لا اسمك ولا بريدك الإلكتروني ولا أي شيء كتبته)، وإذا كنت في صف مدرسي، تقريراً لمعلّميك عن الصف كله، يُكتب من أرقام الصف المجمّعة بدون أسماء',
+    es: 'Retroalimentación generada por IA sobre su trabajo, incluido, cuando lo pida, un informe del coach escrito a partir de sus resultados en los juegos (solo cifras: nunca su nombre, su correo ni nada de lo que haya escrito) y, si está en una clase de un colegio, un informe para sus profesores sobre la clase en su conjunto, escrito a partir de las cifras agrupadas de la clase, sin nombres',
   },
   'legal_long.privacy.s2.learn_li4': {
     en: 'Time spent on learning activities',
@@ -1956,10 +1957,11 @@ export const LEGAL_LONG_DICTIONARY: Dictionary = {
     ar: 'المقالات والإجابات الكتابية المُقدَّمة',
     es: 'Ensayos y respuestas escritas enviadas',
   },
+  // 23 October 2026: the teacher's AI class report (src/app/api/school/classes/[classId]/coach).
   'legal_long.data_processing.s3.st_li5': {
-    en: 'AI-generated feedback on submitted work',
-    ar: 'التقييم المُولَّد بالذكاء الاصطناعي على الأعمال المُقدَّمة',
-    es: 'Retroalimentación generada por IA sobre el trabajo enviado',
+    en: 'AI-generated feedback on submitted work, and, where the School has recorded its authorisation for AI processing, AI-written reports for its teachers about a class’s results in the revision games as a whole, from pooled figures with no names',
+    ar: 'التقييم المُولَّد بالذكاء الاصطناعي على الأعمال المُقدَّمة، وحيث سجّلت المدرسة تصريحها لمعالجة الذكاء الاصطناعي، تقارير يكتبها الذكاء الاصطناعي لمعلّميها عن نتائج صف كامل في ألعاب المراجعة، من أرقام مجمّعة بدون أسماء',
+    es: 'Retroalimentación generada por IA sobre el trabajo enviado y, cuando el Centro ha registrado su autorización para el procesamiento con IA, informes escritos por IA para su profesorado sobre los resultados de una clase en su conjunto en los juegos de repaso, a partir de cifras agrupadas y sin nombres',
   },
   'legal_long.data_processing.s3.st_li6': {
     en: 'Course enrolment and subject selections',

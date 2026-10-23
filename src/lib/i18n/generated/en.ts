@@ -8081,7 +8081,7 @@ export const EN_MESSAGES: Record<string, string> = {
     'Course progress, quiz and mock-exam results, and, when you are signed in, your answers in the revision games: which questions you got right or wrong and, for a wrong choice from a list, the option you chose. Never anything you type into a game. If you are in a school class on The English Hub, your teachers can see your game results from the day you joined their class.',
   'legal_long.privacy.s2.learn_li2': 'Essay and written-response submissions',
   'legal_long.privacy.s2.learn_li3':
-    'AI-generated feedback on your work, including, when you ask for it, a coach report written from your game results (figures only: never your name, email or anything you typed)',
+    'AI-generated feedback on your work, including, when you ask for it, a coach report written from your game results (figures only: never your name, email or anything you typed), and, if you are in a school class, a report for your teachers about the class as a whole, written from the class’s pooled figures with no names',
   'legal_long.privacy.s2.learn_li4': 'Time spent on learning activities',
   'legal_long.privacy.s2.h3_billing': 'Billing information',
   'legal_long.privacy.s2.bill_li1':
@@ -8324,7 +8324,8 @@ export const EN_MESSAGES: Record<string, string> = {
   'legal_long.data_processing.s3.st_li3':
     'Learning progress and performance data (quiz scores, lesson completion, revision streaks, and answers in the revision games, which the School’s teachers see from the day a pupil joins their class)',
   'legal_long.data_processing.s3.st_li4': 'Essay and written response submissions',
-  'legal_long.data_processing.s3.st_li5': 'AI-generated feedback on submitted work',
+  'legal_long.data_processing.s3.st_li5':
+    'AI-generated feedback on submitted work, and, where the School has recorded its authorisation for AI processing, AI-written reports for its teachers about a class’s results in the revision games as a whole, from pooled figures with no names',
   'legal_long.data_processing.s3.st_li6': 'Course enrolment and subject selections',
   'legal_long.data_processing.s3.st_li7':
     'Session and login activity (timestamps, device type, browser)',
@@ -20524,6 +20525,22 @@ export const EN_MESSAGES: Record<string, string> = {
   'school.games.pupil.no_date':
     'Nothing is shown, because there is no record of when this pupil joined.',
   'school.games.pupil.empty': 'No games played since {date}.',
+  'school.games.report.title': 'AI report for this class',
+  'school.games.report.lead':
+    "A short report for you on the class's results: what is going well, what to work on, and what to set next on the site. Written from the class's pooled figures with no names, and never from a pupil who has switched AI off.",
+  'school.games.report.ask': 'Write a class report',
+  'school.games.report.again': 'Write a new report',
+  'school.games.report.writing': 'Writing the report. This can take up to a minute.',
+  'school.games.report.label':
+    "Written by AI on {date} from the class's pooled figures ({pupils} pupils, {n} answered questions), with no names. No person has checked it, and it is not a prediction of any exam result.",
+  'school.games.report.not_authorised':
+    'Your school has not recorded its authorisation for AI processing, so no report can be written. An administrator can arrange this with The English Hub. The figures above are still shown.',
+  'school.games.report.not_live': "Your school's access is not live, so no report can be written.",
+  'school.games.report.too_few':
+    'A report needs at least {pupils} pupils with results and {n} answered questions between them.',
+  'school.games.report.cooldown':
+    'One report a day for each class. The next is available from {time}.',
+  'school.games.report.failed': 'The report could not be written just now. Try again later.',
   'home.story.cta.primary': 'Start your 7-day free trial',
   'home.story.cta.no_card': 'No card needed.',
   'home.story.and': 'and',

@@ -1,14 +1,21 @@
 import { NextRequest, NextResponse } from 'next/server'
 import { createServerSupabaseClient, createServiceRoleClient } from '@/lib/supabase/server'
 import { rateLimit } from '@/lib/rate-limit'
-import { classInScope, pupilsOfSchool, resolveStaffScope } from '../../../_lib/staff-scope'
+import { classInScope, resolveStaffScope } from '../../../_lib/staff-scope'
 import {
+  classPupils,
   inBatches,
   pupilGameAnalytics,
   pupilNames,
   teacherWindowStart,
 } from '../../../_lib/pupil-games'
+import {
+  latestClassReport,
+  schoolAiStatus,
+  type StoredClassReport,
+} from '../../../_lib/class-report'
 import { summariseClass, type ClassGamesSummary } from '@/lib/game-results/class-view'
+import { CLASS_COACH_MIN_ANSWERS, CLASS_COACH_MIN_PUPILS } from '@/lib/game-results/class-coach'
 import { activityNames } from '@/lib/game-results/names'
 import type { GameAnalytics } from '@/lib/game-results/analytics'
 
@@ -27,13 +34,20 @@ export const dynamic = 'force-dynamic'
  * school. Anyone else gets 404, so a class's existence is not confirmed.
  *
  * WHICH PUPILS. Those actively enrolled in the class AND pupils of the school
- * (pupilsOfSchool). The second check matters: until the database rules
- * prepared on 16 October are approved (document 21), a teacher can still
- * write an enrolment straight to the database, around the API. A row that
- * puts someone else's child into a class must not show that child's games.
+ * (classPupils in ../../../_lib/pupil-games.ts). The second check matters:
+ * until the database rules of 16 October (document 21) are applied, a teacher
+ * can still write an enrolment straight to the database, around the API. A
+ * row that puts someone else's child into a class must not show that child's
+ * games.
  *
  * WHICH ROUNDS. Only those finished since the pupil joined this class
  * (../../../_lib/pupil-games.ts). An enrolment with no date shows nothing.
+ *
+ * THE AI CLASS REPORT (23 October 2026). The response also carries the latest
+ * AI report written about the class, and whether the school may ask for one
+ * (POST ../coach; src/lib/game-results/class-coach.ts says what it is and why
+ * it waited for the founder). The figures above are shown whatever the answer:
+ * the founder decided on 13 October that analytics always show.
  *
  * A read failure is a 503 with a message, never an empty class: a teacher
  * shown "nobody has played" after a week of homework would be told something
@@ -45,6 +59,13 @@ export interface ClassGamesResponse {
   summary: ClassGamesSummary
   /** Display names of the games and texts the summary mentions, as in the pupil's hub. */
   names: Record<string, string>
+  report: {
+    latest: StoredClassReport | null
+    /** The school's access is live and it has recorded its authorisation for AI processing. */
+    schoolAiAuthorised: boolean
+    minPupils: number
+    minAnswers: number
+  }
 }
 
 export async function GET(_request: NextRequest, props: { params: Promise<{ classId: string }> }) {
@@ -73,32 +94,21 @@ export async function GET(_request: NextRequest, props: { params: Promise<{ clas
   if (!cls) return NextResponse.json({ error: 'Class not found' }, { status: 404 })
 
   try {
-    const { data: enrolled, error: enrolError } = await svc
-      .from('class_students')
-      .select('student_id, joined_at')
-      .eq('class_id', classId)
-      .eq('is_active', true)
-    if (enrolError) throw new Error(`class_students read failed: ${enrolError.message}`)
+    const pupils = await classPupils(svc, scope.schoolId, classId)
+    const pupilIds = pupils.map((p) => p.id)
 
-    const joinedAt = new Map<string, string | null>()
-    for (const r of (enrolled ?? []) as { student_id: string; joined_at: string | null }[]) {
-      if (!joinedAt.has(r.student_id)) joinedAt.set(r.student_id, r.joined_at)
-    }
-    const ours = await pupilsOfSchool(svc, scope.schoolId, [...joinedAt.keys()])
-    const pupilIds = [...joinedAt.keys()].filter((id) => ours.has(id))
-
-    const [names, analytics] = await Promise.all([
+    const [names, analytics, aiStatus, latest] = await Promise.all([
       pupilNames(svc, scope.schoolId, pupilIds),
-      inBatches(pupilIds, 5, (id) =>
-        pupilGameAnalytics(id, teacherWindowStart(joinedAt.get(id) ?? null)),
-      ),
+      inBatches(pupils, 5, (p) => pupilGameAnalytics(p.id, teacherWindowStart(p.joinedAt))),
+      schoolAiStatus(svc, scope.schoolId),
+      latestClassReport(svc, classId),
     ])
 
     const summary = summariseClass(
-      pupilIds.map((id, n) => ({
-        id,
-        name: names.get(id) ?? null,
-        joinedAt: joinedAt.get(id) ?? null,
+      pupils.map((p, n) => ({
+        id: p.id,
+        name: names.get(p.id) ?? null,
+        joinedAt: p.joinedAt,
         analytics: analytics[n],
       })),
     )
@@ -107,6 +117,12 @@ export async function GET(_request: NextRequest, props: { params: Promise<{ clas
       class: { id: cls.id, name: cls.name ?? null },
       summary,
       names: namesFor(analytics),
+      report: {
+        latest,
+        schoolAiAuthorised: aiStatus === 'ok',
+        minPupils: CLASS_COACH_MIN_PUPILS,
+        minAnswers: CLASS_COACH_MIN_ANSWERS,
+      },
     }
     return NextResponse.json(body, { headers: { 'Cache-Control': 'no-store' } })
   } catch (err) {

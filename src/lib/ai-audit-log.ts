@@ -166,6 +166,10 @@ export type AiAuditFeature =
   // 13 October 2026: the games coach (src/app/api/games/coach). Figures about
   // a student's game answers in, a short feedback report out.
   | 'games/coach'
+  // 23 October 2026: the teacher's class report
+  // (src/app/api/school/classes/[classId]/coach). A class's pooled game
+  // figures in, with no names, a short report for its teacher out.
+  | 'school/class-coach'
 
 /** Token usage, when the SDK surfaces it (streaming/raw-fetch paths may not). */
 export interface AiAuditTokenUsage {

@@ -587,4 +587,64 @@ export const GAME_ANALYTICS_DICTIONARY: Record<string, { en: string; ar?: string
     ar: 'ما لعب أي لعبة من {date}.',
     es: 'No ha jugado desde el {date}.',
   },
+
+  // ── The AI class report for a teacher (23 October 2026;
+  // POST /api/school/classes/[classId]/coach; src/lib/game-results/class-coach.ts).
+  // The report's own headings reuse ga.coach.strengths, ga.coach.work_on,
+  // ga.coach.next and ga.coach.go.
+  'school.games.report.title': {
+    en: 'AI report for this class',
+    ar: 'تقرير الذكاء الاصطناعي لهالصف',
+    es: 'Informe de IA para esta clase',
+  },
+  'school.games.report.lead': {
+    en: "A short report for you on the class's results: what is going well, what to work on, and what to set next on the site. Written from the class's pooled figures with no names, and never from a pupil who has switched AI off.",
+    ar: 'تقرير قصير لك عن نتايج الصف: شنو ماشي زين، وعلى شنو تشتغلون، وشنو تعطيهم بعدين في الموقع. مكتوب من أرقام الصف المجمّعة بدون أسماء، وأبداً مو من طالب طفّى الذكاء الاصطناعي.',
+    es: 'Un informe breve para ti sobre los resultados de la clase: qué va bien, qué trabajar y qué asignar después en la web. Escrito a partir de las cifras agrupadas de la clase, sin nombres, y nunca a partir de un alumno que haya desactivado la IA.',
+  },
+  'school.games.report.ask': {
+    en: 'Write a class report',
+    ar: 'اكتب تقرير الصف',
+    es: 'Escribir un informe de la clase',
+  },
+  'school.games.report.again': {
+    en: 'Write a new report',
+    ar: 'اكتب تقرير جديد',
+    es: 'Escribir un informe nuevo',
+  },
+  'school.games.report.writing': {
+    en: 'Writing the report. This can take up to a minute.',
+    ar: 'جاري كتابة التقرير. ممكن ياخذ لين دقيقة.',
+    es: 'Escribiendo el informe. Puede tardar hasta un minuto.',
+  },
+  'school.games.report.label': {
+    en: "Written by AI on {date} from the class's pooled figures ({pupils} pupils, {n} answered questions), with no names. No person has checked it, and it is not a prediction of any exam result.",
+    ar: 'كتبه الذكاء الاصطناعي في {date} من أرقام الصف المجمّعة ({pupils} طالب، {n} سؤال مجاوب)، بدون أسماء. ما راجعه أي شخص، وهو مو توقّع لأي نتيجة امتحان.',
+    es: 'Escrito por IA el {date} a partir de las cifras agrupadas de la clase ({pupils} alumnos, {n} preguntas respondidas), sin nombres. Ninguna persona lo ha revisado y no es una predicción de ningún resultado de examen.',
+  },
+  'school.games.report.not_authorised': {
+    en: 'Your school has not recorded its authorisation for AI processing, so no report can be written. An administrator can arrange this with The English Hub. The figures above are still shown.',
+    ar: 'مدرستك ما سجّلت تصريحها لمعالجة الذكاء الاصطناعي، فما يمكن كتابة تقرير. يقدر مسؤول المدرسة يرتّب هذا مع The English Hub. الأرقام اللي فوق باقية معروضة.',
+    es: 'Tu colegio no ha registrado su autorización para el procesamiento con IA, así que no se puede escribir un informe. Un administrador puede gestionarlo con The English Hub. Las cifras de arriba se siguen mostrando.',
+  },
+  'school.games.report.not_live': {
+    en: "Your school's access is not live, so no report can be written.",
+    ar: 'اشتراك مدرستك مو فعّال، فما يمكن كتابة تقرير.',
+    es: 'El acceso de tu colegio no está activo, así que no se puede escribir un informe.',
+  },
+  'school.games.report.too_few': {
+    en: 'A report needs at least {pupils} pupils with results and {n} answered questions between them.',
+    ar: 'التقرير يحتاج على الأقل {pupils} طلاب عندهم نتايج و{n} سؤال مجاوب بينهم.',
+    es: 'Un informe necesita al menos {pupils} alumnos con resultados y {n} preguntas respondidas entre ellos.',
+  },
+  'school.games.report.cooldown': {
+    en: 'One report a day for each class. The next is available from {time}.',
+    ar: 'تقرير واحد كل يوم لكل صف. التقرير الجاي متوفر من {time}.',
+    es: 'Un informe al día por clase. El siguiente estará disponible a partir del {time}.',
+  },
+  'school.games.report.failed': {
+    en: 'The report could not be written just now. Try again later.',
+    ar: 'ما قدرنا نكتب التقرير الحين. جرّب بعدين.',
+    es: 'No se ha podido escribir el informe ahora. Inténtalo más tarde.',
+  },
 }

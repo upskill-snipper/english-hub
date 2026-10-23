@@ -67,6 +67,7 @@ describe('the class Games tab', () => {
   it('lists each pupil with a link to their page, and the class mix-ups', async () => {
     respond(200, {
       class: { id: 'c1', name: '10A' },
+      report: { latest: null, schoolAiAuthorised: false, minPupils: 3, minAnswers: 30 },
       summary: summariseClass(
         [
           { id: 'p1', name: 'Amira Khan', joinedAt: '2026-10-01T00:00:00Z', analytics: amira },
@@ -85,11 +86,53 @@ describe('the class Games tab', () => {
     // One pupil made the mix-up, so the singular wording is used (not "by 1 pupils").
     expect(container.textContent).toContain('school.games.mixups.line_one')
     expect(container.textContent).not.toMatch(/grade/i)
+    // The school has not recorded its AI authorisation: the report panel says
+    // so, and offers no button (23 October 2026).
+    expect(container.textContent).toContain('school.games.report.not_authorised')
+    expect(screen.queryByRole('button', { name: /school.games.report.ask/ })).toBeNull()
+  })
+
+  it('shows the latest AI class report, labelled, with the button to ask for a new one', async () => {
+    respond(200, {
+      class: { id: 'c1', name: '10A' },
+      report: {
+        latest: {
+          report: {
+            summary: 'Most of the class know their methods.',
+            strengths: [],
+            workOn: [],
+            nextSteps: [
+              { action: 'Set Speed Analysis.', link: '/games/speed-analysis', why: 'Methods.' },
+            ],
+          },
+          createdAt: '2026-10-23T08:00:00Z',
+          pupilsUsed: 4,
+          answersUsed: 48,
+        },
+        schoolAiAuthorised: true,
+        minPupils: 3,
+        minAnswers: 30,
+      },
+      summary: summariseClass(
+        [{ id: 'p1', name: 'Amira Khan', joinedAt: '2026-10-01T00:00:00Z', analytics: amira }],
+        NOW,
+      ),
+      names: { 'skills:speed-analysis': 'Speed Analysis' },
+    })
+    const { container } = render(<ClassGamesTab classId="c1" />)
+    expect(await screen.findByText('Most of the class know their methods.')).toBeTruthy()
+    expect(screen.getByRole('link', { name: /ga.coach.go/ }).getAttribute('href')).toBe(
+      '/games/speed-analysis',
+    )
+    expect(screen.getByRole('button', { name: /school.games.report.again/ })).toBeTruthy()
+    expect(container.textContent).toContain('school.games.report.label')
+    expect(container.textContent).not.toMatch(/grade/i)
   })
 
   it('says when nobody has played since joining', async () => {
     respond(200, {
       class: { id: 'c1', name: '10A' },
+      report: { latest: null, schoolAiAuthorised: false, minPupils: 3, minAnswers: 30 },
       summary: summariseClass(
         [{ id: 'p1', name: 'Amira Khan', joinedAt: null, analytics: analyseRounds([], NOW) }],
         NOW,

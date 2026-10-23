@@ -2,29 +2,42 @@
 
 import { useCallback, useEffect, useState, type ReactNode } from 'react'
 import Link from 'next/link'
-import { AlertTriangle, CalendarDays, CheckCircle2, ListChecks, Users } from 'lucide-react'
+import {
+  AlertTriangle,
+  ArrowRight,
+  Bot,
+  CalendarDays,
+  CheckCircle2,
+  ListChecks,
+  Loader2,
+  Users,
+} from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import { Skeleton } from '@/components/ui/skeleton'
 import { GlassPanel, PanelEyebrow } from '@/components/dataviz'
 import { EnglishText } from '@/components/i18n/EnglishText'
 import { useT } from '@/lib/i18n/use-t'
 import { useFormatDate } from '@/lib/i18n/use-format-date'
-import { fill } from '@/components/games/fill'
+import { fill, fillText } from '@/components/games/fill'
 import { BandChip, humanTag, statLabel } from '@/components/learning/GameAnalyticsView'
 import { SKILL_GROUPS } from '@/lib/game-results/skills'
 import type { ClassGamesResponse } from '@/app/api/school/classes/[classId]/games/route'
+import type { ClassCoachResponse } from '@/app/api/school/classes/[classId]/coach/route'
+import type { StoredClassReport } from '@/app/api/school/_lib/class-report'
 import type { ClassGamesSummary } from '@/lib/game-results/class-view'
 
 /**
  * A class's game results, the Games tab of /school/classes/[classId]
  * (16 October 2026; GET /api/school/classes/[classId]/games).
  *
- * Four parts, all from the pupils' own analytics (src/lib/game-results/
- * class-view.ts): headline figures; each skill with how many pupils are
- * secure, developing or need work in it and the class's share right; the
- * wrong answers most pupils share; and each pupil with what they most need to
- * work on, linking to their page. Only rounds since each pupil joined the
- * class count, and nothing here is or predicts an exam mark.
+ * Five parts, all from the pupils' own analytics (src/lib/game-results/
+ * class-view.ts): headline figures; the AI class report (23 October 2026,
+ * POST /api/school/classes/[classId]/coach), written from the class's pooled
+ * figures with no names; each skill with how many pupils are secure,
+ * developing or need work in it and the class's share right; the wrong
+ * answers most pupils share; and each pupil with what they most need to work
+ * on, linking to their page. Only rounds since each pupil joined the class
+ * count, and nothing here is or predicts an exam mark.
  */
 type T = (key: string) => string
 
@@ -75,7 +88,7 @@ export function ClassGamesTab({ classId }: { classId: string }) {
     )
   }
 
-  const { summary: s, names } = state.data
+  const { summary: s, names, report } = state.data
   return (
     <div className="space-y-6">
       <GlassPanel className="p-5 sm:p-6">
@@ -88,9 +101,196 @@ export function ClassGamesTab({ classId }: { classId: string }) {
         )}
       </GlassPanel>
 
+      <ClassReport classId={classId} r={report} t={t} fmt={fmt} onWritten={() => void load()} />
+
       {s.groups.length > 0 && <Skills s={s} t={t} />}
       {s.pupilsWithData > 0 && <MixUps s={s} t={t} names={names} />}
       <Pupils s={s} t={t} fmt={fmt} names={names} />
+    </div>
+  )
+}
+
+/**
+ * The AI class report (23 October 2026): the latest stored report, and the
+ * button to ask for a new one. The button shows only where the school's
+ * access is live and it has recorded its AI authorisation; otherwise the panel
+ * says so and the figures above stand on their own. Every refusal the route
+ * makes (too few pupils, one a day, not authorised) is shown in the teacher's
+ * words, and a report carries the same label as the pupil's own: written by
+ * AI, checked by nobody, not a prediction of any exam result.
+ */
+function ClassReport({
+  classId,
+  r,
+  t,
+  fmt,
+  onWritten,
+}: {
+  classId: string
+  r: ClassGamesResponse['report']
+  t: T
+  fmt: (d: string) => string
+  onWritten: () => void
+}) {
+  const [busy, setBusy] = useState(false)
+  const [error, setError] = useState<string | null>(null)
+  const [fresh, setFresh] = useState<StoredClassReport | null>(null)
+  const shown = fresh ?? r.latest
+
+  const ask = async () => {
+    setBusy(true)
+    setError(null)
+    try {
+      const res = await fetch(`/api/school/classes/${classId}/coach`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        credentials: 'same-origin',
+        body: '{}',
+      })
+      const body = (await res.json().catch(() => null)) as Record<string, unknown> | null
+      if (res.ok && body?.report) {
+        const written = body as unknown as ClassCoachResponse
+        setFresh({
+          report: written.report,
+          createdAt: written.createdAt,
+          pupilsUsed: written.pupilsUsed,
+          answersUsed: written.answersUsed,
+        })
+        onWritten()
+        return
+      }
+      const code = typeof body?.code === 'string' ? body.code : ''
+      if (code === 'too_few') {
+        setError(
+          fillText(t('school.games.report.too_few'), {
+            pupils: Number(body?.minPupils ?? r.minPupils),
+            n: Number(body?.minAnswers ?? r.minAnswers),
+          }),
+        )
+      } else if (code === 'cooldown' && typeof body?.nextAvailableAt === 'string') {
+        setError(fillText(t('school.games.report.cooldown'), { time: fmt(body.nextAvailableAt) }))
+      } else if (code === 'school_ai_not_authorised') {
+        setError(t('school.games.report.not_authorised'))
+      } else if (code === 'school_not_live') {
+        setError(t('school.games.report.not_live'))
+      } else {
+        setError(t('school.games.report.failed'))
+      }
+    } catch {
+      setError(t('school.games.report.failed'))
+    } finally {
+      setBusy(false)
+    }
+  }
+
+  return (
+    <GlassPanel className="p-5 sm:p-6">
+      <PanelEyebrow>
+        <span className="inline-flex items-center gap-1.5">
+          <Bot className="size-3.5" aria-hidden="true" />
+          {t('school.games.report.title')}
+        </span>
+      </PanelEyebrow>
+      <p className="text-xs text-muted-foreground">{t('school.games.report.lead')}</p>
+
+      {shown && <ReportBody entry={shown} t={t} fmt={fmt} />}
+
+      {!r.schoolAiAuthorised ? (
+        <p className="mt-4 text-sm text-foreground">{t('school.games.report.not_authorised')}</p>
+      ) : (
+        <div className="mt-4 flex flex-wrap items-center gap-3">
+          <Button size="sm" onClick={() => void ask()} disabled={busy}>
+            {busy && <Loader2 className="size-4 animate-spin" aria-hidden="true" />}
+            {shown ? t('school.games.report.again') : t('school.games.report.ask')}
+          </Button>
+          {busy && (
+            <span className="text-xs text-muted-foreground" role="status">
+              {t('school.games.report.writing')}
+            </span>
+          )}
+        </div>
+      )}
+      {error && (
+        <p role="alert" className="mt-3 text-sm text-red-700">
+          {error}
+        </p>
+      )}
+    </GlassPanel>
+  )
+}
+
+function ReportBody({
+  entry,
+  t,
+  fmt,
+}: {
+  entry: StoredClassReport
+  t: T
+  fmt: (d: string) => string
+}) {
+  const r = entry.report
+  return (
+    <div className="mt-4 space-y-4 text-sm">
+      <p className="text-foreground">{r.summary}</p>
+      {r.strengths.length > 0 && (
+        <div>
+          <h3 className="text-xs font-semibold uppercase tracking-wide text-muted-foreground">
+            {t('ga.coach.strengths')}
+          </h3>
+          <ul className="mt-2 space-y-2">
+            {r.strengths.map((s, n) => (
+              <li key={n}>
+                <span className="font-medium text-foreground">{s.title}.</span>{' '}
+                <span className="text-muted-foreground">{s.evidence}</span> {s.why}
+              </li>
+            ))}
+          </ul>
+        </div>
+      )}
+      {r.workOn.length > 0 && (
+        <div>
+          <h3 className="text-xs font-semibold uppercase tracking-wide text-muted-foreground">
+            {t('ga.coach.work_on')}
+          </h3>
+          <ul className="mt-2 space-y-2">
+            {r.workOn.map((w, n) => (
+              <li key={n}>
+                <span className="font-medium text-foreground">{w.title}.</span>{' '}
+                <span className="text-muted-foreground">{w.evidence}</span> {w.how}
+              </li>
+            ))}
+          </ul>
+        </div>
+      )}
+      {r.nextSteps.length > 0 && (
+        <div>
+          <h3 className="text-xs font-semibold uppercase tracking-wide text-muted-foreground">
+            {t('ga.coach.next')}
+          </h3>
+          <ul className="mt-2 space-y-2">
+            {r.nextSteps.map((step, n) => (
+              <li key={n}>
+                <span className="text-foreground">{step.action}</span>{' '}
+                <span className="text-muted-foreground">{step.why}</span>{' '}
+                <Link
+                  href={step.link}
+                  className="inline-flex items-center gap-1 font-medium text-primary underline-offset-4 hover:underline"
+                >
+                  {t('ga.coach.go')}
+                  <ArrowRight className="size-3.5" aria-hidden="true" />
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </div>
+      )}
+      <p className="text-xs text-muted-foreground">
+        {fillText(t('school.games.report.label'), {
+          date: fmt(entry.createdAt),
+          pupils: entry.pupilsUsed,
+          n: entry.answersUsed,
+        })}
+      </p>
     </div>
   )
 }

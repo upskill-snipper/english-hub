@@ -76,3 +76,29 @@ export async function isAiOptedOutServer(userId: string): Promise<boolean> {
   // If no settings row exists, the user has not opted out (default = false)
   return settings?.aiOptOut ?? false
 }
+
+/**
+ * The members of `people` who have NOT switched AI off, in their order.
+ *
+ * For the AI class report (23 October 2026; src/app/api/school/classes/
+ * [classId]/coach): the founder decided that a pupil who has switched AI off
+ * is left out of the class's pooled figures, not that the teacher is refused.
+ * So this is a filter, not a gate, and nothing here answers a request. A
+ * refusal of the CALLER for their own opt-out still carries AI_OPT_OUT_CODE
+ * (an-ai-opt-out-is-never-sold-a-plan.test.ts holds every such call site).
+ * A database error propagates, as in isAiOptedOutServer: fail closed.
+ */
+export async function withoutAiOptedOut<T extends { id: string }>(
+  people: readonly T[],
+  width = 5,
+): Promise<T[]> {
+  const kept: T[] = []
+  for (let i = 0; i < people.length; i += width) {
+    const batch = people.slice(i, i + width)
+    const optedOut = await Promise.all(batch.map((p) => isAiOptedOutServer(p.id)))
+    batch.forEach((p, n) => {
+      if (!optedOut[n]) kept.push(p)
+    })
+  }
+  return kept
+}

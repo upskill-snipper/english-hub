@@ -18,6 +18,7 @@
     "calibration_baselines": "20260530_calibration_baselines.sql",
     "cancellation_feedback": "20260919_cancellation_feedback.sql",
     "certificates": "001_initial_schema.sql",
+    "class_coach_reports": "20261023_class_coach_reports.sql",
     "class_students": "003_school_analytics.sql",
     "classes": "003_school_analytics.sql",
     "coach_reports": "20261013_game_rounds.sql",
@@ -167,6 +168,7 @@
     "calibration_baselines": "src/app/api/admin/calibration/run/route.ts",
     "cancellation_feedback": "src/app/api/stripe/cancel/route.ts",
     "certificates": "src/app/api/admin/stats/route.ts",
+    "class_coach_reports": "src/app/api/school/classes/[classId]/coach/route.ts",
     "class_students": "src/app/api/marking/[submissionId]/review/route.ts",
     "classes": "src/app/api/admin/schools/route.ts",
     "coach_reports": "src/app/api/games/analytics/route.ts",
@@ -288,6 +290,7 @@
     "calibration_baselines:calibration_baselines_service_role_all": "20260530_calibration_baselines.sql",
     "cancellation_feedback:cancellation_feedback_owner_select": "20260919_cancellation_feedback.sql",
     "cancellation_feedback:cancellation_feedback_service_role_all": "20260919_cancellation_feedback.sql",
+    "class_coach_reports:service_role_full_access": "20261023_class_coach_reports.sql",
     "class_students:class_students_delete_admin": "20261012_school_access_rules.sql",
     "class_students:class_students_insert_staff": "20261012_school_access_rules.sql",
     "class_students:class_students_select_staff": "20261012_school_access_rules.sql",
@@ -417,6 +420,14 @@
     "cancellation_feedback_user_id_idx": {
       "file": "20260919_cancellation_feedback.sql",
       "table": "cancellation_feedback"
+    },
+    "class_coach_reports_class_created_idx": {
+      "file": "20261023_class_coach_reports.sql",
+      "table": "class_coach_reports"
+    },
+    "class_coach_reports_created_idx": {
+      "file": "20261023_class_coach_reports.sql",
+      "table": "class_coach_reports"
     },
     "coach_reports_created_idx": {
       "file": "20261013_game_rounds.sql",

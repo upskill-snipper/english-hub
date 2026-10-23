@@ -1,7 +1,7 @@
 import type { SupabaseClient } from '@supabase/supabase-js'
 import { ANALYTICS_WINDOW_DAYS, readRounds } from '@/lib/game-results/store'
 import { analyseRounds, type GameAnalytics } from '@/lib/game-results/analytics'
-import { chunks, IN_CHUNK } from './staff-scope'
+import { chunks, IN_CHUNK, pupilsOfSchool } from './staff-scope'
 
 /**
  * What a teacher may see of a pupil's games (16 October 2026).
@@ -27,6 +27,37 @@ export function teacherWindowStart(joinedAt: string | null, now = Date.now()): D
   const t = Date.parse(joinedAt)
   if (!Number.isFinite(t)) return null
   return new Date(Math.max(t, now - ANALYTICS_WINDOW_DAYS * DAY_MS))
+}
+
+/**
+ * The pupils of a class a teacher may see: those actively enrolled in it AND
+ * pupils of the school (pupilsOfSchool), each with the date they joined.
+ *
+ * The second check matters: until the database rules of 16 October (document
+ * 21) are applied, a teacher can still write an enrolment straight to the
+ * database, around the API, and a row that puts someone else's child into a
+ * class must not show that child's games. Throws on a read error.
+ */
+export async function classPupils(
+  svc: SupabaseClient,
+  schoolId: string,
+  classId: string,
+): Promise<{ id: string; joinedAt: string | null }[]> {
+  const { data: enrolled, error } = await svc
+    .from('class_students')
+    .select('student_id, joined_at')
+    .eq('class_id', classId)
+    .eq('is_active', true)
+  if (error) throw new Error(`class_students read failed: ${error.message}`)
+
+  const joinedAt = new Map<string, string | null>()
+  for (const r of (enrolled ?? []) as { student_id: string; joined_at: string | null }[]) {
+    if (!joinedAt.has(r.student_id)) joinedAt.set(r.student_id, r.joined_at)
+  }
+  const ours = await pupilsOfSchool(svc, schoolId, [...joinedAt.keys()])
+  return [...joinedAt.entries()]
+    .filter(([id]) => ours.has(id))
+    .map(([id, joined]) => ({ id, joinedAt: joined }))
 }
 
 /**

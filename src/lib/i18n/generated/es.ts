@@ -8274,7 +8274,7 @@ export const ES_MESSAGES: Record<string, string> = {
     'Progreso en los cursos, resultados de cuestionarios y exámenes de prueba y, cuando ha iniciado sesión, sus respuestas en los juegos de repaso: qué preguntas acertó o falló y, si eligió una opción equivocada de una lista, cuál eligió. Nunca nada de lo que escriba en un juego. Si está en una clase de un colegio en The English Hub, sus profesores pueden ver sus resultados en los juegos desde el día en que se unió a su clase.',
   'legal_long.privacy.s2.learn_li2': 'Ensayos y respuestas escritas enviadas',
   'legal_long.privacy.s2.learn_li3':
-    'Retroalimentación generada por IA sobre su trabajo, incluido, cuando lo pida, un informe del coach escrito a partir de sus resultados en los juegos (solo cifras: nunca su nombre, su correo ni nada de lo que haya escrito)',
+    'Retroalimentación generada por IA sobre su trabajo, incluido, cuando lo pida, un informe del coach escrito a partir de sus resultados en los juegos (solo cifras: nunca su nombre, su correo ni nada de lo que haya escrito) y, si está en una clase de un colegio, un informe para sus profesores sobre la clase en su conjunto, escrito a partir de las cifras agrupadas de la clase, sin nombres',
   'legal_long.privacy.s2.learn_li4': 'Tiempo dedicado a las actividades de aprendizaje',
   'legal_long.privacy.s2.h3_billing': 'Información de facturación',
   'legal_long.privacy.s2.bill_li1':
@@ -8528,7 +8528,7 @@ export const ES_MESSAGES: Record<string, string> = {
     'Datos de progreso y rendimiento del aprendizaje (puntuaciones de cuestionarios, finalización de lecciones, rachas de repaso y respuestas en los juegos de repaso, que el profesorado del Centro ve desde el día en que el alumno se une a su clase)',
   'legal_long.data_processing.s3.st_li4': 'Ensayos y respuestas escritas enviadas',
   'legal_long.data_processing.s3.st_li5':
-    'Retroalimentación generada por IA sobre el trabajo enviado',
+    'Retroalimentación generada por IA sobre el trabajo enviado y, cuando el Centro ha registrado su autorización para el procesamiento con IA, informes escritos por IA para su profesorado sobre los resultados de una clase en su conjunto en los juegos de repaso, a partir de cifras agrupadas y sin nombres',
   'legal_long.data_processing.s3.st_li6': 'Matrícula en cursos y selección de asignaturas',
   'legal_long.data_processing.s3.st_li7':
     'Actividad de sesión e inicio de sesión (marcas de tiempo, tipo de dispositivo, navegador)',
@@ -21031,6 +21031,23 @@ export const ES_MESSAGES: Record<string, string> = {
     'A partir de sus juegos desde el {date}, cuando se unió. Son porcentajes de preguntas acertadas, no notas de examen.',
   'school.games.pupil.no_date': 'No se muestra nada porque no consta cuándo se unió este alumno.',
   'school.games.pupil.empty': 'No ha jugado desde el {date}.',
+  'school.games.report.title': 'Informe de IA para esta clase',
+  'school.games.report.lead':
+    'Un informe breve para ti sobre los resultados de la clase: qué va bien, qué trabajar y qué asignar después en la web. Escrito a partir de las cifras agrupadas de la clase, sin nombres, y nunca a partir de un alumno que haya desactivado la IA.',
+  'school.games.report.ask': 'Escribir un informe de la clase',
+  'school.games.report.again': 'Escribir un informe nuevo',
+  'school.games.report.writing': 'Escribiendo el informe. Puede tardar hasta un minuto.',
+  'school.games.report.label':
+    'Escrito por IA el {date} a partir de las cifras agrupadas de la clase ({pupils} alumnos, {n} preguntas respondidas), sin nombres. Ninguna persona lo ha revisado y no es una predicción de ningún resultado de examen.',
+  'school.games.report.not_authorised':
+    'Tu colegio no ha registrado su autorización para el procesamiento con IA, así que no se puede escribir un informe. Un administrador puede gestionarlo con The English Hub. Las cifras de arriba se siguen mostrando.',
+  'school.games.report.not_live':
+    'El acceso de tu colegio no está activo, así que no se puede escribir un informe.',
+  'school.games.report.too_few':
+    'Un informe necesita al menos {pupils} alumnos con resultados y {n} preguntas respondidas entre ellos.',
+  'school.games.report.cooldown':
+    'Un informe al día por clase. El siguiente estará disponible a partir del {time}.',
+  'school.games.report.failed': 'No se ha podido escribir el informe ahora. Inténtalo más tarde.',
   'home.story.cta.primary': 'Empieza tu prueba gratuita de 7 días',
   'home.story.cta.no_card': 'No hace falta tarjeta.',
   'home.story.and': 'y',
