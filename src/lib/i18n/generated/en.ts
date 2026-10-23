@@ -20175,7 +20175,7 @@ export const EN_MESSAGES: Record<string, string> = {
   'fulltext.rights.anthology':
     'This work is out of copyright in the UK, so we can publish it in full. The text is the one printed in the Pearson Edexcel International GCSE English Anthology (Issue 8), which is the text the exam prints.',
   'placement.none':
-    'We have not yet checked this text against a specification, so we are not going to tell you which paper it is on. When we have read the document, it will say so here.',
+    'We have not yet checked which paper this text is on for your board, so we are not going to guess. When we have read that part of the specification, it will say so here.',
   'text_games.index.crumb': 'Text games',
   'text_games.index.eyebrow': 'Guided games',
   'text_games.index.title': 'Set text games',

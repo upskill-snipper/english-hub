@@ -20680,7 +20680,7 @@ export const ES_MESSAGES: Record<string, string> = {
   'fulltext.rights.anthology':
     'Esta obra está libre de derechos en el Reino Unido, así que podemos publicarla completa. El texto es el que imprime la Pearson Edexcel International GCSE English Anthology (Issue 8), que es el texto que imprime el examen.',
   'placement.none':
-    'Todavía no hemos comprobado este texto con una especificación, así que no vamos a decirte en qué examen aparece. Cuando hayamos leído el documento, lo indicaremos aquí.',
+    'Todavía no hemos comprobado en qué examen aparece este texto para tu junta examinadora, así que no vamos a adivinarlo. Cuando hayamos leído esa parte de la especificación, lo indicaremos aquí.',
   'text_games.index.crumb': 'Juegos de textos',
   'text_games.index.eyebrow': 'Juegos guiados',
   'text_games.index.title': 'Juegos de los textos',

@@ -99,6 +99,25 @@ describe('the shelf is the series the current cohort sits', () => {
   })
 })
 
+describe('2028 is held, and the shelf still says 2027 on purpose', () => {
+  // ADDED 23 October 2026 with the 2028 lists. SetText.boards carries no year,
+  // so the flat tags can describe one series only, and they describe 2027. A
+  // 2028 text we hold a row for is NOT tagged to the board; its page gets a
+  // Cambridge placement stamped 2028 from exam-placement.ts instead, and a
+  // series-aware shelf is separate work. These pin both halves of that.
+  it('The War of the Worlds is on no later list either', () => {
+    expect(cambridge0475Slugs(2028)).not.toContain('the-war-of-the-worlds')
+  })
+
+  it('the texts arriving in 2028 are held, and are not on the 2027 shelf', () => {
+    for (const slug of ['an-inspector-calls', 'the-tempest']) {
+      expect(cambridge0475Slugs(2028)).toContain(slug)
+      expect(cambridge0475Slugs(2027)).not.toContain(slug)
+      expect(taggedToCambridge(), `${slug} is tagged, so the shelf claims 2028`).not.toContain(slug)
+    }
+  })
+})
+
 describe('the texts that belong to no board, verified rather than assumed', () => {
   // Seven texts carry no board tag. That looked like a gap and was checked on
   // 20 September 2026, one agent per text against every awarding body we cover.

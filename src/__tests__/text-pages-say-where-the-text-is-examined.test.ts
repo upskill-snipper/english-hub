@@ -71,11 +71,55 @@ describe('what the placement actually says', () => {
     expect(p?.detail).toContain('May 2026')
   })
 
-  it('carries the exam year for Cambridge, which rotates every year', () => {
+  it('carries every exam series for Cambridge, which rotates every year', () => {
+    // Until 23 October 2026 one "current" year (2027) was carried and nothing
+    // else. Antony and Cleopatra is a 2026 and 2027 drama text that 2028 drops.
     const cambridge = examPlacements('antony-and-cleopatra').find(
       (p) => p.board === 'cambridge-0475',
     )
-    expect(cambridge?.examYear).toBe(2027)
+    expect(cambridge?.examYears).toEqual([2026, 2027])
+    expect(cambridge?.detail).toContain('Not set for the 2028 series.')
+  })
+
+  it('prints the syllabus selection for drama, not a count', () => {
+    // "One of 5 set texts in this option" was wrong: the 2027 syllabus, page
+    // 13, asks for two different set texts on Paper 2 and one on Paper 3.
+    const cambridge = examPlacements('antony-and-cleopatra').find(
+      (p) => p.board === 'cambridge-0475',
+    )
+    expect(cambridge?.selection).toMatch(/Paper 2 .*two different set texts/)
+    expect(cambridge?.selection).toMatch(/Paper 3 .*one set text/)
+    expect(cambridge?.selection).not.toMatch(/One of \d/)
+  })
+
+  it('tells a 2027 candidate that The War of the Worlds has left the Cambridge list', () => {
+    // The text that proved the single-year model wrong: a 2026 prose text, so
+    // its page said "not yet checked" when the answer was known.
+    const cambridge = examPlacements('the-war-of-the-worlds').find(
+      (p) => p.board === 'cambridge-0475',
+    )
+    expect(cambridge?.examYears).toEqual([2026])
+    expect(cambridge?.detail).toContain('Not set for the 2027 or 2028 series.')
+    expect(hasExamPlacement('the-war-of-the-worlds')).toBe(true)
+  })
+
+  it('tells a 2028 candidate that An Inspector Calls has arrived on it', () => {
+    const cambridge = examPlacements('an-inspector-calls').find((p) => p.board === 'cambridge-0475')
+    expect(cambridge?.examYears).toEqual([2028])
+    expect(cambridge?.assessedIn).toContain('Paper 2 Section A (Drama, Open Text)')
+    expect(cambridge?.detail).toContain('Not set for the 2026 or 2027 series.')
+  })
+
+  it('merges the years a text sits in the same place, and cites every document', () => {
+    const cambridge = examPlacements('pride-and-prejudice').filter(
+      (p) => p.board === 'cambridge-0475',
+    )
+    // Prose in 2026 and 2027 under one paper name; the 2028 paper is renamed
+    // (open text), so it is a second card with its own year.
+    expect(cambridge.map((p) => p.examYears)).toEqual([[2026, 2027], [2028]])
+    expect(cambridge[0]!.source.version).toContain('2026:')
+    expect(cambridge[0]!.source.version).toContain('2027:')
+    expect(cambridge[1]!.source.version).toContain('2028:')
   })
 
   it('shows both placements for a text two boards set', () => {
@@ -94,7 +138,9 @@ describe('every claim carries the document it came from', () => {
       for (const p of examPlacements(slug)) {
         expect(p.source.title, `${slug} has no source title`).toBeTruthy()
         expect(p.source.version, `${slug} has no document version`).toBeTruthy()
-        expect(p.source.readOn, `${slug} has no read date`).toBe('2026-09-19')
+        // The 2028 Cambridge lists were read on 2026-10-23; everything else
+        // on 2026-09-19. A date, not a particular one.
+        expect(p.source.readOn, `${slug} has no read date`).toMatch(/^\d{4}-\d{2}-\d{2}$/)
       }
     },
   )

@@ -1234,6 +1234,14 @@ const CAMBRIDGE_0475_PAPERS: Paper[] = [
       },
     ],
   },
+  // Papers 2 and 3 corrected 23 October 2026 against the 0475 syllabus for
+  // examination in 2027 (Version 2, published October 2024), pages 8 and 13-15.
+  // Paper 2 said "One essay question on a studied drama text": it is two
+  // questions on two different set texts, one passage-based and one essay.
+  // "Paper 3" was labelled Coursework: Paper 3 is Drama (Open Text), 45 minutes
+  // and 25 marks, on ONE set text; coursework is Component 5, taken with Paper
+  // 3, and Paper 4 is Unseen. The 2028-2030 syllabus replaces this structure
+  // (one Paper 2, Drama and Unseen): see src/lib/board/cambridge-0475.ts.
   {
     id: 'cam0475-p2',
     name: 'Paper 2',
@@ -1245,7 +1253,8 @@ const CAMBRIDGE_0475_PAPERS: Paper[] = [
     sections: [
       {
         title: 'Drama',
-        description: 'One essay question on a studied drama text. Passage-based or discursive.',
+        description:
+          'Two questions on two different set texts: one passage-based and one essay (25 marks each). Taken instead of Paper 3.',
         links: [
           {
             label: 'Essay Structure Guide',
@@ -1269,16 +1278,72 @@ const CAMBRIDGE_0475_PAPERS: Paper[] = [
   {
     id: 'cam0475-p3',
     name: 'Paper 3',
+    subtitle: 'Drama (Open Text)',
+    examCode: '0475 Paper 3',
+    duration: '45m',
+    totalMarks: 25,
+    colour: 'ochre',
+    sections: [
+      {
+        title: 'Drama (Open Text)',
+        description:
+          'One question from a choice of two on ONE set text, from the same list as Paper 2. Clean copies of the set text may be taken in. Taken with Paper 4 or Component 5, instead of Paper 2.',
+        links: [
+          {
+            label: 'Essay Structure Guide',
+            href: '/revision/exam-technique/essay-structure',
+            type: 'technique',
+          },
+          {
+            label: 'Cambridge Lit Mock Exams',
+            href: '/mock-exams?paper=cambridge-lit',
+            type: 'mock',
+          },
+        ],
+      },
+    ],
+  },
+  {
+    id: 'cam0475-p4',
+    name: 'Paper 4',
+    subtitle: 'Unseen',
+    examCode: '0475 Paper 4',
+    duration: '1h 15m',
+    totalMarks: 25,
+    colour: 'ink',
+    sections: [
+      {
+        title: 'Unseen',
+        description:
+          'One question requiring critical commentary on an unseen text. Taken with Paper 3, instead of Component 5.',
+        links: [
+          {
+            label: 'Poetry Analysis Guide',
+            href: '/revision/poetry/unseen-poetry',
+            type: 'poetry',
+          },
+          {
+            label: 'Question Types',
+            href: '/revision/exam-technique/question-types',
+            type: 'technique',
+          },
+        ],
+      },
+    ],
+  },
+  {
+    id: 'cam0475-c5',
+    name: 'Component 5',
     subtitle: 'Coursework',
-    examCode: '0475/03',
+    examCode: '0475 Component 5',
     duration: 'Coursework',
-    totalMarks: 50,
+    totalMarks: 25,
     colour: 'sage',
     sections: [
       {
         title: 'Coursework Portfolio',
         description:
-          'Two assignments on two texts from two different genres. Internally assessed, externally moderated.',
+          'Portfolio of two assignments, each on a different text. Internally assessed and externally moderated. Taken with Paper 3, instead of Paper 4.',
         links: [
           {
             label: 'Essay Structure Guide',

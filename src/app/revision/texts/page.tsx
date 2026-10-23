@@ -3,6 +3,7 @@ import Link from 'next/link'
 
 import { getServerBoard } from '@/lib/board/get-server-board'
 import { getBoardConfig } from '@/lib/board/board-config'
+import { boardsLabel } from '@/lib/board/boards-label'
 import { getSetTextsForBoard, SET_TEXTS } from '@/lib/board/set-texts'
 import { t } from '@/lib/i18n/t'
 import { TextSearchBox } from '@/components/search/text-search-box'
@@ -36,6 +37,17 @@ export default async function TextsRevisionPage() {
   // yet - once they have, we hide this catch-all and show their personalised
   // texts via TextsRevisionView, otherwise an AQA student would see Cambridge
   // IGCSE prose, OCR-only Shakespeare, etc. above their own filtered list.
+  //
+  // THE BOARD LABELS ARE READ FROM THE REGISTRY, NOT TYPED HERE. Until 23
+  // October 2026 each row ended in a hand-written list, and four were false
+  // against SET_TEXTS: Pride and Prejudice and Much Ado About Nothing were
+  // "AQA only", Julius Caesar "OCR only" (OCR does not set it; AQA does) and
+  // DNA "AQA only" (AQA and OCR). Two rows, The Kite Runner and Spies, were
+  // labelled "Cambridge IGCSE 0475": neither title appears in the 0475
+  // syllabus for 2026, 2027 or 2028-2030 (Cambridge PDFs 697163, 721333 and
+  // 743282, set-text pages 10-13 of each), so both rows are gone. The themes
+  // stay hand-written; the boards come from boardsLabel(), and a test scans
+  // this file for a literal board list.
   return (
     <>
       {!board && (
@@ -55,7 +67,7 @@ export default async function TextsRevisionPage() {
               <Link className="text-blue-700 hover:underline" href="/revision/texts/macbeth">
                 Macbeth
               </Link>{' '}
-              - ambition, guilt, the supernatural; AQA / Edexcel / Eduqas / OCR
+              - ambition, guilt, the supernatural; {boardsLabel('macbeth')}
             </li>
             <li>
               <Link
@@ -64,13 +76,13 @@ export default async function TextsRevisionPage() {
               >
                 Romeo and Juliet
               </Link>{' '}
-              - fate, love, family honour; AQA / Edexcel / Eduqas
+              - fate, love, family honour; {boardsLabel('romeo-and-juliet')}
             </li>
             <li>
               <Link className="text-blue-700 hover:underline" href="/revision/texts/the-tempest">
                 The Tempest
               </Link>{' '}
-              - power, colonialism, forgiveness; Edexcel / OCR
+              - power, colonialism, forgiveness; {boardsLabel('the-tempest')}
             </li>
             <li>
               <Link
@@ -79,13 +91,13 @@ export default async function TextsRevisionPage() {
               >
                 Much Ado About Nothing
               </Link>{' '}
-              - deception, gender, reputation; AQA only
+              - deception, gender, reputation; {boardsLabel('much-ado-about-nothing')}
             </li>
             <li>
               <Link className="text-blue-700 hover:underline" href="/revision/texts/julius-caesar">
                 Julius Caesar
               </Link>{' '}
-              - political power, betrayal, rhetoric; OCR only
+              - political power, betrayal, rhetoric; {boardsLabel('julius-caesar')}
             </li>
           </ul>
 
@@ -98,7 +110,7 @@ export default async function TextsRevisionPage() {
               >
                 A Christmas Carol
               </Link>{' '}
-              - redemption, poverty, Victorian social conscience; AQA / Eduqas
+              - redemption, poverty, Victorian social conscience; {boardsLabel('a-christmas-carol')}
             </li>
             <li>
               <Link
@@ -107,13 +119,13 @@ export default async function TextsRevisionPage() {
               >
                 Dr Jekyll and Mr Hyde
               </Link>{' '}
-              - duality, repression, gothic; AQA / Edexcel
+              - duality, repression, gothic; {boardsLabel('jekyll-and-hyde')}
             </li>
             <li>
               <Link className="text-blue-700 hover:underline" href="/revision/texts/frankenstein">
                 Frankenstein
               </Link>{' '}
-              - creation, hubris, outsider narrative; AQA / OCR
+              - creation, hubris, outsider narrative; {boardsLabel('frankenstein')}
             </li>
             <li>
               <Link
@@ -122,7 +134,7 @@ export default async function TextsRevisionPage() {
               >
                 Great Expectations
               </Link>{' '}
-              - class, guilt, bildungsroman; AQA / Edexcel
+              - class, guilt, bildungsroman; {boardsLabel('great-expectations')}
             </li>
             <li>
               <Link
@@ -131,7 +143,7 @@ export default async function TextsRevisionPage() {
               >
                 The Sign of Four
               </Link>{' '}
-              - empire, deduction, Victorian anxieties; AQA
+              - empire, deduction, Victorian anxieties; {boardsLabel('the-sign-of-four')}
             </li>
             <li>
               <Link
@@ -140,7 +152,7 @@ export default async function TextsRevisionPage() {
               >
                 Pride and Prejudice
               </Link>{' '}
-              - marriage, class, irony; AQA only
+              - marriage, class, irony; {boardsLabel('pride-and-prejudice')}
             </li>
           </ul>
 
@@ -155,7 +167,8 @@ export default async function TextsRevisionPage() {
               >
                 An Inspector Calls
               </Link>{' '}
-              - social responsibility, class, generational change; AQA / Edexcel / Eduqas
+              - social responsibility, class, generational change;{' '}
+              {boardsLabel('an-inspector-calls')}
             </li>
             <li>
               <Link
@@ -164,13 +177,13 @@ export default async function TextsRevisionPage() {
               >
                 Lord of the Flies
               </Link>{' '}
-              - civilisation vs savagery, power, allegory; AQA / OCR
+              - civilisation vs savagery, power, allegory; {boardsLabel('lord-of-the-flies')}
             </li>
             <li>
               <Link className="text-blue-700 hover:underline" href="/revision/texts/animal-farm">
                 Animal Farm
               </Link>{' '}
-              - allegory of Russian Revolution, corruption of power; AQA / Edexcel
+              - allegory of Russian Revolution, corruption of power; {boardsLabel('animal-farm')}
             </li>
             <li>
               <Link
@@ -179,32 +192,25 @@ export default async function TextsRevisionPage() {
               >
                 Of Mice and Men
               </Link>{' '}
-              - the American Dream, loneliness, dreams deferred; IGCSE + some legacy GCSE
+              - the American Dream, loneliness, dreams deferred; {boardsLabel('of-mice-and-men')}
             </li>
             <li>
               <Link className="text-blue-700 hover:underline" href="/revision/texts/blood-brothers">
                 Blood Brothers
               </Link>{' '}
-              - nature vs nurture, class, fate; AQA / Edexcel
+              - nature vs nurture, class, fate; {boardsLabel('blood-brothers')}
             </li>
             <li>
               DNA{' '}
               <span className="ms-1 inline-block rounded bg-slate-200 px-1.5 py-0.5 text-[10px] font-semibold uppercase tracking-wide text-slate-600">
                 Coming soon
               </span>{' '}
-              - responsibility, group dynamics, tragedy; AQA only
+              - responsibility, group dynamics, tragedy; {boardsLabel('dna')}
             </li>
           </ul>
 
           <h3 className="mt-6 text-lg font-semibold">{await t('texts.section.igcse_a_level')}</h3>
           <ul className="mt-2 list-disc space-y-1 ps-6 text-slate-700">
-            <li>
-              The Kite Runner{' '}
-              <span className="ms-1 inline-block rounded bg-slate-200 px-1.5 py-0.5 text-[10px] font-semibold uppercase tracking-wide text-slate-600">
-                Coming soon
-              </span>{' '}
-              - guilt, friendship, Afghan history; Cambridge IGCSE 0475
-            </li>
             <li>
               <Link
                 className="text-blue-700 hover:underline"
@@ -212,14 +218,7 @@ export default async function TextsRevisionPage() {
               >
                 A View from the Bridge
               </Link>{' '}
-              - immigration, honour, tragedy; IGCSE + A-Level
-            </li>
-            <li>
-              Spies{' '}
-              <span className="ms-1 inline-block rounded bg-slate-200 px-1.5 py-0.5 text-[10px] font-semibold uppercase tracking-wide text-slate-600">
-                Coming soon
-              </span>{' '}
-              - memory, wartime, narrative unreliability; Cambridge IGCSE 0475
+              - immigration, honour, tragedy; {boardsLabel('a-view-from-the-bridge')}
             </li>
           </ul>
 

@@ -338,9 +338,16 @@ export const TEXT_NAV_DICTIONARY: Record<string, { en: string; ar?: string; es?:
     es: 'Esta obra está libre de derechos en el Reino Unido, así que podemos publicarla completa. El texto es el que imprime la Pearson Edexcel International GCSE English Anthology (Issue 8), que es el texto que imprime el examen.',
   },
 
+  // Until 23 October 2026 this said "We have not yet checked this text against
+  // a specification". For most texts that showed it, the specification HAD been
+  // read (prescribed-texts.ts records which texts AQA, Edexcel, OCR and Eduqas
+  // set); what had not been read was the paper and section. The War of the
+  // Worlds showed it too, although both Cambridge syllabuses had been read and
+  // the answer was known; exam-placement.ts now carries every held series. The
+  // sentence now claims only what is true: the paper has not been checked.
   'placement.none': {
-    en: 'We have not yet checked this text against a specification, so we are not going to tell you which paper it is on. When we have read the document, it will say so here.',
-    ar: 'ما راجعنا هذا النص مقابل المنهج الرسمي لين الحين، فما راح نقول لك في أي ورقة يجي. أول ما نقرأ الوثيقة بيظهر هنا.',
-    es: 'Todavía no hemos comprobado este texto con una especificación, así que no vamos a decirte en qué examen aparece. Cuando hayamos leído el documento, lo indicaremos aquí.',
+    en: 'We have not yet checked which paper this text is on for your board, so we are not going to guess. When we have read that part of the specification, it will say so here.',
+    ar: 'ما راجعنا لين الحين في أي ورقة يجي هذا النص عند هيئتك، فما راح نخمّن. أول ما نقرأ هذا الجزء من المنهج الرسمي بيظهر هنا.',
+    es: 'Todavía no hemos comprobado en qué examen aparece este texto para tu junta examinadora, así que no vamos a adivinarlo. Cuando hayamos leído esa parte de la especificación, lo indicaremos aquí.',
   },
 }

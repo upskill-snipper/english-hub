@@ -20,9 +20,27 @@
  * "we have not checked your board" and "your board does not set this" are
  * different statements and a guess would blur them.
  *
- * THE EXAM YEAR IS CARRIED WHERE IT MATTERS. Cambridge rotates 0475 every year
- * and serves several syllabuses side by side with no archived label, so a
- * Cambridge placement without its year is not a fact about anybody's exam.
+ * EVERY CAMBRIDGE SERIES WE HOLD IS CARRIED, NOT ONE "CURRENT" ONE. Cambridge
+ * rotates 0475 every year and serves several syllabuses side by side with no
+ * archived label, so a Cambridge placement without its year is not a fact about
+ * anybody's exam. Until 23 October 2026 this file read a single
+ * CURRENT_CAMBRIDGE_YEAR of 2027 and nothing else. Two things followed. The War
+ * of the Worlds, a 2026 prose text that 2027 withdrew, got no placement at all
+ * and its page said "We have not yet checked this text", which was false: both
+ * syllabuses had been read and the answer was known. And a text arriving in 2028
+ * (An Inspector Calls, The Tempest) would have stayed silent on its Cambridge
+ * placement until somebody edited a constant. Now a placement lists every held
+ * series that sets the text and names the held series that do not, so a 2027
+ * candidate reading The War of the Worlds is told it is not on their paper, and
+ * a 2028 candidate reading An Inspector Calls is told it is.
+ *
+ * THE SELECTION WORDING COMES FROM THE SYLLABUS, NOT FROM A COUNT. Until the
+ * same date this file printed "One of 5 set texts in this option" for every
+ * Cambridge drama text, computed from the list length. The 2027 syllabus
+ * (page 13) requires TWO different set texts on Paper 2 and one on Paper 3, so
+ * the count was wrong for the paper most candidates sit. Each paper in
+ * cambridge-0475.ts now carries its own `selection` sentence and it is printed
+ * verbatim here.
  */
 
 import type { ExamBoard } from './board-config'
@@ -41,13 +59,14 @@ export interface ExamPlacement {
   selection: string
   /** Extra detail the document gives: anthology part and page, story number. */
   detail?: string
-  /** The exam series this applies to, where the board changes it between years. */
-  examYear?: number
+  /**
+   * The exam series this applies to, where the board changes its lists between
+   * years. Every held series that sets the text here, ascending. Absent for a
+   * board whose lists do not rotate.
+   */
+  examYears?: number[]
   source: { title: string; version: string; readOn: string }
 }
-
-/** The current series for boards whose texts rotate. Today is September 2026. */
-const CURRENT_CAMBRIDGE_YEAR = 2027
 
 function anthologyPlacements(slug: string): ExamPlacement[] {
   const out: ExamPlacement[] = []
@@ -93,35 +112,75 @@ function literature4et1Placements(slug: string): ExamPlacement[] {
   return out
 }
 
+/** "2026 or 2027", "2028". */
+function listYears(years: number[]): string {
+  if (years.length <= 1) return years.join('')
+  return `${years.slice(0, -1).join(', ')} or ${years[years.length - 1]}`
+}
+
+/**
+ * One placement per paper and option the text appears in, across every held
+ * series. A text set in the same place in two series gets one card listing
+ * both years; a text that moves (the 2028 syllabus renames the papers) gets
+ * one card per place. Each card also names the held series that do NOT set
+ * the text, because a withdrawn text on a page is the hazard this guards.
+ */
 function cambridge0475Placements(slug: string): ExamPlacement[] {
-  const year = CAMBRIDGE_0475.find((y) => y.examYear === CURRENT_CAMBRIDGE_YEAR)
-  if (!year) return []
-  const out: ExamPlacement[] = []
-  for (const paper of year.papers) {
-    for (const option of paper.options) {
-      const entry = option.texts.find((t) => t.slug === slug)
-      if (!entry) continue
-      out.push({
-        board: 'cambridge-0475',
-        boardName: getDisplayName('cambridge-0475'),
-        assessedIn: `${paper.paper}. ${paper.rubric}`,
-        selection:
-          option.texts.length > 1
-            ? `One of ${option.texts.length} set texts in this option.`
-            : 'The set text for this option.',
-        detail: entry.from
-          ? `${option.label} - from ${entry.from}${entry.item ? `, no. ${entry.item}` : ''}.`
-          : option.label,
-        examYear: year.examYear,
-        source: {
-          title: 'Cambridge IGCSE Literature in English 0475 syllabus',
-          version: year.source.version,
-          readOn: year.source.readOn,
-        },
-      })
+  const heldYears = CAMBRIDGE_0475.map((y) => y.examYear).sort((a, b) => a - b)
+  const byPlace = new Map<string, { placement: ExamPlacement; versions: string[] }>()
+
+  for (const year of CAMBRIDGE_0475) {
+    for (const paper of year.papers) {
+      for (const option of paper.options) {
+        const entry = option.texts.find((t) => t.slug === slug)
+        if (!entry) continue
+        const key = `${paper.paper}|${option.label}`
+        const version = `${year.examYear}: ${year.source.version}`
+        const found = byPlace.get(key)
+        if (found) {
+          found.placement.examYears!.push(year.examYear)
+          found.versions.push(version)
+          // The most recent reading of any document that sets it here.
+          if (year.source.readOn > found.placement.source.readOn) {
+            found.placement.source.readOn = year.source.readOn
+          }
+          continue
+        }
+        byPlace.set(key, {
+          versions: [version],
+          placement: {
+            board: 'cambridge-0475',
+            boardName: getDisplayName('cambridge-0475'),
+            assessedIn: `${paper.paper}. ${paper.rubric}`,
+            selection: paper.selection,
+            detail: entry.from
+              ? `${option.label} - from ${entry.from}${entry.item ? `, no. ${entry.item}` : ''}.`
+              : option.label,
+            examYears: [year.examYear],
+            source: {
+              title: 'Cambridge IGCSE Literature in English 0475 syllabus',
+              version,
+              readOn: year.source.readOn,
+            },
+          },
+        })
+      }
     }
   }
-  return out
+
+  const out: ExamPlacement[] = []
+  for (const { placement, versions } of byPlace.values()) {
+    placement.examYears!.sort((a, b) => a - b)
+    placement.source.version = versions.join('; ')
+    const absent = heldYears.filter((y) => !placement.examYears!.includes(y))
+    if (absent.length > 0) {
+      const note = `Not set for the ${listYears(absent)} series.`
+      placement.detail = placement.detail ? `${placement.detail} ${note}` : note
+    }
+    out.push(placement)
+  }
+  // Earliest series first, so a page reads chronologically.
+  return out.sort((a, b) => a.examYears![0]! - b.examYears![0]!)
 }
 
 /**

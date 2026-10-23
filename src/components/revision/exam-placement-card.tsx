@@ -61,9 +61,12 @@ export async function ExamPlacementCard({ slug }: { slug: string }) {
               <CardHeader>
                 <CardTitle className="font-heading text-heading-md">
                   {p.boardName}
-                  {p.examYear ? (
+                  {/* Every held series that sets the text here, not one
+                      "current" year: Cambridge rotates its lists annually, and
+                      the detail below names the series that do not set it. */}
+                  {p.examYears && p.examYears.length > 0 ? (
                     <span className="ms-2 text-body-sm font-normal text-muted-foreground">
-                      {examYear} {p.examYear}
+                      {examYear} {p.examYears.join(', ')}
                     </span>
                   ) : null}
                 </CardTitle>
