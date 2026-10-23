@@ -10,23 +10,31 @@ import { SET_TEXTS } from '@/lib/board/set-texts'
 import { t } from '@/lib/i18n/t'
 import { ANTHOLOGY_SOURCE } from '@/lib/board/edexcel-igcse-anthology'
 
+// CORRECTED 23 October 2026. This page called the poems "Section B" and "All
+// 15 prescribed poems". The 4EA1 specification (Issue 7, August 2025, pages
+// 6, 8 and 13) puts the Part 2 poems in Paper 2 SECTION A, "Reading: The
+// 30-mark essay question on a poetry or prose text from Part 2 of the Pearson
+// Edexcel International GCSE English Anthology"; Section B is Imaginative
+// Writing. Part 2 holds FIVE poems and five prose texts (page 8). The fifteen
+// came from counting the Part 3 poems, which are set for English Literature
+// (4ET1), not for this qualification.
 export const metadata: Metadata = {
   openGraph: {
-    title: 'Pearson IGCSE Poetry Anthology (4EA1) - Section B',
+    title: 'Pearson IGCSE Poetry Anthology (4EA1) - Paper 2 Section A',
     description:
-      'All 15 prescribed poems for the Pearson Edexcel International GCSE English Language A (4EA1) Section B poetry anthology.',
+      'The five Part 2 poems of the Pearson Edexcel International GCSE English Anthology, set for English Language A (4EA1) Paper 2 Section A.',
     images: [
       {
-        url: '/api/og?title=Pearson+IGCSE+Poetry+Anthology+(4EA1)+-+Section+B',
+        url: '/api/og?title=Pearson+IGCSE+Poetry+Anthology+(4EA1)+-+Paper+2+Section+A',
         width: 1200,
         height: 630,
-        alt: 'Pearson IGCSE Poetry Anthology (4EA1) - Section B',
+        alt: 'Pearson IGCSE Poetry Anthology (4EA1) - Paper 2 Section A',
       },
     ],
   },
-  title: 'Pearson IGCSE Poetry Anthology (4EA1) - Section B',
+  title: 'Pearson IGCSE Poetry Anthology (4EA1) - Paper 2 Section A',
   description:
-    'All 15 prescribed poems for the Pearson Edexcel International GCSE English Language A (4EA1) Section B poetry anthology.',
+    'The five Part 2 poems of the Pearson Edexcel International GCSE English Anthology, set for English Language A (4EA1) Paper 2 Section A.',
   alternates: {
     canonical: 'https://theenglishhub.app/revision/poetry/pearson-igcse',
   },
@@ -63,7 +71,7 @@ export default async function PearsonIgcsePoetryHub() {
           <div className="mb-4 flex flex-wrap items-center gap-2">
             <Badge variant="secondary">
               <Sparkles className="me-1 size-3" />
-              {await t('rev.poetry2.pearson.badge_section_b')}
+              {await t('rev.poetry2.pearson.badge_section_a')}
             </Badge>
             <Badge variant="secondary">
               {poems.length} {await t('rev.poetry2.pearson.poems')}

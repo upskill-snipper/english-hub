@@ -269,10 +269,13 @@ export const REV_POETRY2_DICTIONARY: Record<string, { en: string; ar?: string; e
     ar: 'رجوع لـ Hub الشعر',
     es: 'Volver al hub de poesía',
   },
-  'rev.poetry2.pearson.badge_section_b': {
-    en: 'Section B',
-    ar: 'Section B',
-    es: 'Section B',
+  // "Section B" until 23 October 2026. The 4EA1 specification (Issue 7, August
+  // 2025, pages 6 and 13): Paper 2 Section A is Reading, one 30-mark essay on
+  // a Part 2 poetry or prose text; Section B is Imaginative Writing.
+  'rev.poetry2.pearson.badge_section_a': {
+    en: 'Paper 2 Section A',
+    ar: 'Paper 2 Section A',
+    es: 'Paper 2 Section A',
   },
   'rev.poetry2.pearson.poems': {
     en: 'poems',
@@ -284,10 +287,13 @@ export const REV_POETRY2_DICTIONARY: Record<string, { en: string; ar?: string; e
     ar: 'مختارات شعر Pearson IGCSE',
     es: 'Antología de poesía Pearson IGCSE',
   },
+  // "All 15 prescribed poems ... Section B" until 23 October 2026. Part 2 of
+  // the anthology holds five poems and five prose texts (4EA1 specification,
+  // Issue 7, page 8); the fifteen were the Part 3 poems, set for 4ET1 only.
   'rev.poetry2.pearson.hero_lead': {
-    en: 'All 15 prescribed poems for the Pearson Edexcel International GCSE English Language A (4EA1) Section B anthology. Full study guides are in production. Each poem currently has a registry entry, themes and a one-paragraph teaser; line-by-line analysis and exam-style practice questions are being added.',
-    ar: 'كل الـ١٥ قصيدة المقرّرة لمختارات Pearson Edexcel International GCSE English Language A (4EA1) Section B. أدلّة المذاكرة الكاملة قيد الإعداد. كل قصيدة عندها الحين مدخل في السجل ومواضيع وتعريف بفقرة وحدة؛ التحليل سطر سطر وأسئلة التدريب بأسلوب الامتحان قيد الإضافة.',
-    es: 'Los 15 poemas prescritos para la antología Pearson Edexcel International GCSE English Language A (4EA1) Section B. Las guías de estudio completas están en producción. Cada poema tiene actualmente una entrada en el registro, temas y una presentación de un párrafo; se están añadiendo el análisis verso por verso y las preguntas de práctica tipo examen.',
+    en: 'The five poems in Part 2 of the Pearson Edexcel International GCSE English Anthology, set for English Language A (4EA1). Paper 2 Section A is one 30-mark essay on one Part 2 poem or prose text, printed in the exam. Full study guides are in production. Each poem currently has a registry entry, themes and a one-paragraph teaser; line-by-line analysis and exam-style practice questions are being added.',
+    ar: 'القصائد الخمس في Part 2 من Pearson Edexcel International GCSE English Anthology، المقرّرة لـ English Language A (4EA1). Paper 2 Section A مقال واحد بـ٣٠ درجة عن قصيدة أو نص نثري واحد من Part 2، مطبوع في الامتحان. أدلّة المذاكرة الكاملة قيد الإعداد. كل قصيدة عندها الحين مدخل في السجل ومواضيع وتعريف بفقرة وحدة؛ التحليل سطر سطر وأسئلة التدريب بأسلوب الامتحان قيد الإضافة.',
+    es: 'Los cinco poemas de la Part 2 de la Pearson Edexcel International GCSE English Anthology, fijados para English Language A (4EA1). El Paper 2 Section A es un ensayo de 30 puntos sobre un poema o texto en prosa de la Part 2, impreso en el examen. Las guías de estudio completas están en producción. Cada poema tiene actualmente una entrada en el registro, temas y una presentación de un párrafo; se están añadiendo el análisis verso por verso y las preguntas de práctica tipo examen.',
   },
   'rev.poetry2.pearson.version_notice_aria': {
     en: 'Anthology version notice',
@@ -295,9 +301,9 @@ export const REV_POETRY2_DICTIONARY: Record<string, { en: string; ar?: string; e
     es: 'Aviso sobre la versión de la antología',
   },
   'rev.poetry2.pearson.all_poems': {
-    en: 'All 15 anthology poems',
-    ar: 'كل الـ١٥ قصيدة في المختارات',
-    es: 'Los 15 poemas de la antología',
+    en: 'The five Part 2 poems',
+    ar: 'القصائد الخمس في Part 2',
+    es: 'Los cinco poemas de la Part 2',
   },
   'rev.poetry2.pearson.open_notes': {
     en: 'Open study notes',
