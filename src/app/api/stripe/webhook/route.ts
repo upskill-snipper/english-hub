@@ -127,6 +127,86 @@ async function recordSubscriptionRow(
   return result.ok ? result.prismaUserId : null
 }
 
+/**
+ * ─── Idempotency: claim the event id BEFORE processing ──────────────────
+ *
+ * Until 23 October 2026 this route did SELECT, process, INSERT. Two deliveries
+ * of one event arriving together (Stripe retries a slow endpoint while the
+ * first attempt is still running) both passed the SELECT and both processed.
+ * The SELECT's error was discarded, so a missing table or an RLS change read
+ * as "never seen" for every event and nothing said so. And an INSERT that
+ * failed after a successful run left the event replayable with only a warning.
+ *
+ * Now the id is inserted first. `webhook_events.event_id` is the primary key
+ * (supabase/migrations/20260419_webhook_events_table.sql), so a second claim
+ * fails with 23505, which means "already processed, answer 200, run nothing".
+ * A row therefore means CLAIMED, and may be a run still in progress, rather
+ * than "fully processed" as the table comment says.
+ *
+ * If processing then throws, the claim is released so that Stripe's retry can
+ * run. If the release itself fails the retry will be refused, so that is
+ * reported at error level with the event id: an operator has to replay it.
+ *
+ * If the claim fails for any OTHER reason the event is still processed,
+ * loudly. The alternative, answering 500 until the journal is repaired, would
+ * hold every paying customer's entitlement hostage to a bookkeeping table; a
+ * processed event with a reported gap in replay protection is the lesser
+ * harm, and the handlers are idempotent apart from paymentCount, which
+ * `scripts/stripe-reconcile-subscriptions.mjs` recounts from Stripe.
+ */
+type WebhookClaim = 'claimed' | 'already_processed' | 'unprotected'
+
+async function claimWebhookEvent(
+  supabase: ReturnType<typeof createServiceRoleClient>,
+  event: Stripe.Event,
+): Promise<WebhookClaim> {
+  const { error } = await supabase.from('webhook_events').insert({
+    event_id: event.id,
+    event_type: event.type,
+    processed_at: new Date().toISOString(),
+  })
+  if (!error) return 'claimed'
+
+  const isConflict = error.code === '23505' || /duplicate key/i.test(error.message ?? '')
+  if (isConflict) return 'already_processed'
+
+  console.error(
+    `[stripe-webhook] IDEMPOTENCY_CLAIM_FAILED event=${event.id} type=${event.type} ` +
+      `code=${error.code ?? 'none'}: ${error.message}. Processing anyway, UNPROTECTED against ` +
+      'a Stripe retry of this delivery.',
+  )
+  Sentry.captureMessage('Stripe webhook idempotency claim failed', {
+    level: 'error',
+    tags: { surface: 'stripe-webhook', defect: 'idempotency-claim' },
+    extra: { eventId: event.id, eventType: event.type, dbError: error.message, code: error.code },
+  })
+  return 'unprotected'
+}
+
+async function releaseWebhookEvent(
+  supabase: ReturnType<typeof createServiceRoleClient>,
+  event: Stripe.Event,
+): Promise<void> {
+  const report = (detail: string) => {
+    console.error(
+      `[stripe-webhook] IDEMPOTENCY_RELEASE_FAILED event=${event.id} type=${event.type}: ${detail}. ` +
+        "The claim is still held, so Stripe's retry of this event will be answered 200 without " +
+        'running. Replay it by hand once the cause is fixed.',
+    )
+    Sentry.captureMessage('Stripe webhook idempotency release failed', {
+      level: 'error',
+      tags: { surface: 'stripe-webhook', defect: 'idempotency-release' },
+      extra: { eventId: event.id, eventType: event.type, detail },
+    })
+  }
+  try {
+    const { error } = await supabase.from('webhook_events').delete().eq('event_id', event.id)
+    if (error) report(error.message)
+  } catch (err) {
+    report(err instanceof Error ? err.message : String(err))
+  }
+}
+
 export async function POST(request: NextRequest) {
   if (!process.env.STRIPE_WEBHOOK_SECRET) {
     console.error('STRIPE_WEBHOOK_SECRET is not configured')
@@ -152,14 +232,10 @@ export async function POST(request: NextRequest) {
 
   const supabase = createServiceRoleClient()
 
-  // Idempotency check - skip if this event has already been processed
-  const { data: existing } = await supabase
-    .from('webhook_events')
-    .select('event_id')
-    .eq('event_id', event.id)
-    .single()
-  if (existing) {
-    return NextResponse.json({ received: true })
+  // Claim the event id before anything runs; see claimWebhookEvent.
+  const claim = await claimWebhookEvent(supabase, event)
+  if (claim === 'already_processed') {
+    return NextResponse.json({ received: true, duplicate: true })
   }
 
   try {
@@ -596,6 +672,9 @@ export async function POST(request: NextRequest) {
               metadata: subscription.metadata,
             }),
           )
+          // A non-2xx must not keep the claim, or the retry it asks for
+          // would be answered 200 without running.
+          await releaseWebhookEvent(supabase, event)
           return NextResponse.json(
             { error: 'Could not resolve user for subscription' },
             { status: 500 },
@@ -644,34 +723,17 @@ export async function POST(request: NextRequest) {
       }
     }
 
-    // Record processed event for idempotency (non-fatal if the table is
-    // missing). supabase-js does NOT throw on a database error - it returns
-    // { error } - so the old bare try/catch could never see an RLS change,
-    // schema drift or exhausted connection. A persistently failing insert
-    // silently disables replay protection: Stripe retries would reprocess
-    // paid events. Check the returned error and report it.
-    const { error: idempotencyError } = await supabase.from('webhook_events').insert({
-      event_id: event.id,
-      event_type: event.type,
-      processed_at: new Date().toISOString(),
+    // The claim made above is the idempotency record; nothing to write here.
+    return NextResponse.json({
+      received: true,
+      ...(claim === 'unprotected' && { idempotency: 'unprotected' }),
     })
-    if (idempotencyError) {
-      console.error(
-        `[stripe-webhook] idempotency record failed for ${event.id} (${event.type}): ${idempotencyError.message}`,
-      )
-      Sentry.captureMessage('Stripe webhook idempotency record failed', {
-        level: 'warning',
-        tags: { surface: 'stripe-webhook' },
-        extra: {
-          eventId: event.id,
-          eventType: event.type,
-          dbError: idempotencyError.message,
-        },
-      })
-    }
-
-    return NextResponse.json({ received: true })
   } catch (error) {
+    // Whatever the failure, the claim must go, or Stripe's retry of this
+    // event is answered 200 without running. Released before the response
+    // so a slow release cannot race the retry.
+    if (claim === 'claimed') await releaseWebhookEvent(supabase, event)
+
     if (error instanceof WebhookMetadataError) {
       console.error(`Missing metadata in ${event.type}: ${error.message}`)
       return NextResponse.json(

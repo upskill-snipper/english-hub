@@ -12,7 +12,13 @@ const mockRetrieveSubscription = vi.fn()
 vi.mock('@/lib/stripe', () => ({
   stripe: {
     webhooks: { constructEvent: (...args: unknown[]) => mockConstructEvent(...args) },
-    subscriptions: { retrieve: (...args: unknown[]) => mockRetrieveSubscription(...args) },
+    subscriptions: {
+      retrieve: (...args: unknown[]) => mockRetrieveSubscription(...args),
+      // The duplicate-coverage check asks what else the customer holds.
+      // Nothing, here: these tests are about single-subscription customers.
+      list: async () => ({ data: [] }),
+    },
+    customers: { retrieve: async () => ({ deleted: false, email: 'test@test.com' }) },
   },
 }))
 
@@ -38,7 +44,8 @@ function createSupabaseMock() {
   const upsertFn = vi.fn(() => ({ error: null }))
   const insertFn = vi.fn(() => ({ error: null }))
 
-  // webhook_events table - idempotency check must return null (no duplicate)
+  // webhook_events table - the claim (insert) must succeed, and a failed run
+  // releases it (delete).
   const webhookEventsChain = {
     select: vi.fn(() => ({
       eq: vi.fn(() => ({
@@ -46,6 +53,7 @@ function createSupabaseMock() {
       })),
     })),
     insert: insertFn,
+    delete: vi.fn(() => ({ eq: vi.fn(async () => ({ error: null })) })),
   }
 
   // Default chain for all other tables (profiles, enrolments, affiliate_referrals, etc.)
