@@ -23,7 +23,15 @@ let consentResult: { allowed: boolean; reason?: string } = { allowed: true }
 let aiOptedOut = false
 let rlResult = { success: true, remaining: 19, resetAt: Date.now() + 86_400_000 }
 let safetyResult: string | null = null
-let schemeResult: unknown = { id: 'aqa-lit-p1', board: 'AQA', version: 'v1.0' }
+// With a question, since 23 October 2026: the route now refuses a question the
+// paper does not hold, by the marker's own rule (src/lib/marking/scheme-question.ts).
+const SCHEME = {
+  id: 'aqa-lit-p1',
+  board: 'AQA',
+  version: 'v1.0',
+  questions: [{ id: 'q3', questionType: 'Shakespeare essay' }],
+}
+let schemeResult: unknown = SCHEME
 
 const insertSubmissionMock = vi.fn(
   async (..._args: unknown[]): Promise<{ id: string }> => ({ id: 'sub-new-1' }),
@@ -105,7 +113,7 @@ beforeEach(() => {
   aiOptedOut = false
   rlResult = { success: true, remaining: 19, resetAt: Date.now() + 86_400_000 }
   safetyResult = null
-  schemeResult = { id: 'aqa-lit-p1', board: 'AQA', version: 'v1.0' }
+  schemeResult = SCHEME
   insertSubmissionMock.mockClear()
   insertSubmissionMock.mockResolvedValue({ id: 'sub-new-1' })
   resolvedContext = { source: 'b2c_self', schoolId: null, classId: null }
@@ -201,6 +209,31 @@ describe('POST /api/submissions - validation', () => {
     expect(res.status).toBe(400)
     expect((await res.json()).error).toMatch(/unknown mark scheme/i)
     expect(insertSubmissionMock).not.toHaveBeenCalled()
+  })
+
+  // 23 October 2026: three essays handed over from a mock exam carried the
+  // question's wording as its id. This route saved them, and marking refused
+  // all three with "Unknown question". Refused here now, before anything is
+  // saved, with a sentence that says what to do.
+  it('400 when the question is not on the paper, and nothing is saved', async () => {
+    const res = await POST(
+      makeRequest({
+        ...validBody,
+        questionId:
+          'Read again the first part of the source, from lines 1 to 5.\n\nList four things about the setting from this part of the source.',
+      }),
+    )
+    expect(res.status).toBe(400)
+    const { error } = await res.json()
+    expect(error).toMatch(/Choose the question you answered from the Question list/)
+    expect(error).not.toMatch(/Unknown question/)
+    expect(insertSubmissionMock).not.toHaveBeenCalled()
+  })
+
+  it('accepts a question by its type, as the marker does', async () => {
+    const res = await POST(makeRequest({ ...validBody, questionId: 'shakespeare ESSAY' }))
+    expect(res.status).toBe(201)
+    expect(insertSubmissionMock).toHaveBeenCalledTimes(1)
   })
 })
 

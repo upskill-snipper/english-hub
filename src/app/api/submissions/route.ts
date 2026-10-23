@@ -35,6 +35,7 @@ import {
   requireJsonContentType,
 } from '@/lib/api-response'
 import { getMarkScheme } from '@/lib/marking/mark-schemes'
+import { findSchemeQuestion } from '@/lib/marking/scheme-question'
 import {
   insertSubmission,
   listSubmissionsForStudent,
@@ -302,6 +303,16 @@ export async function POST(request: NextRequest) {
     const scheme = getMarkScheme(data.markSchemeId)
     if (!scheme) {
       return badRequestResponse(`Unknown mark scheme "${data.markSchemeId}".`)
+    }
+    // 8b. And the question must be one the paper holds, by the rule the marker
+    //     uses. Until 23 October 2026 only the marker asked, after the essay was
+    //     saved: three essays handed over from a mock exam carried the question's
+    //     wording as its id, were saved, and could never be marked. Refused here,
+    //     nothing is saved, and the essay is still in the form.
+    if (!findSchemeQuestion(scheme, data.questionId)) {
+      return badRequestResponse(
+        'Choose the question you answered from the Question list, then submit again. Your essay has not been saved yet.',
+      )
     }
 
     // 9. Resolve school/class SERVER-side from the user's active class

@@ -89,6 +89,33 @@ export function resolvePrefill(
 }
 
 /**
+ * The question to restore from a stashed draft, checked as a link's is.
+ *
+ * THE DEFECT (19 September to 23 October 2026). The draft's question was
+ * restored unchecked. The mock exam handoff had put the question's wording
+ * there, which no option of the Question dropdown carries, so React displayed
+ * the first option, "Q1", while the form held the wording and sent it as the
+ * question's id. The essay was saved and could never be marked. Now only an id
+ * the draft's paper holds is restored. Wording goes into "The question you
+ * answered", where it belongs, and the learner chooses the question from the
+ * list.
+ *
+ * `questionText` wins over wording found in `question`: a draft saved before
+ * that field existed carries its wording in `question` and nowhere else.
+ */
+export function resolveDraftQuestion(
+  draft: { paper: string; question: string; questionText?: string },
+  schemes: readonly Pick<MarkScheme, 'id' | 'questions'>[],
+): { question: string; questionText: string } {
+  const scheme = schemes.find((s) => s.id === draft.paper)
+  const isId = Boolean(scheme?.questions.some((q) => q.id === draft.question))
+  return {
+    question: isId ? draft.question : '',
+    questionText: draft.questionText?.trim() || (isId ? '' : draft.question.trim()),
+  }
+}
+
+/**
  * Build a link into the marking form for a given scheme and question.
  *
  * Callers should use this rather than assembling the query by hand, so a

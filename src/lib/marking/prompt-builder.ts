@@ -18,6 +18,7 @@ import type {
   QuestionScheme,
 } from './mark-schemes/types'
 import { getCalibrationAnchor } from './calibration'
+import { findSchemeQuestion } from './scheme-question'
 
 // ─── Public API ──────────────────────────────────────────────────────────────
 
@@ -50,7 +51,7 @@ export interface BuiltPrompt {
  * Build the full prompt pair for marking a student response.
  */
 export function buildMarkingPrompt(input: PromptInput): BuiltPrompt {
-  const question = findQuestion(input.scheme, input.questionId)
+  const question = findSchemeQuestion(input.scheme, input.questionId)
   if (!question) {
     throw new Error(`Unknown question "${input.questionId}" for mark scheme "${input.scheme.id}"`)
   }
@@ -185,10 +186,5 @@ function buildUserMessage(questionText: string, essay: string): string {
 }
 
 // ─── Helpers ─────────────────────────────────────────────────────────────────
-
-function findQuestion(scheme: MarkScheme, questionId: string): QuestionScheme | undefined {
-  const normalised = questionId.trim().toLowerCase()
-  return scheme.questions.find(
-    (q) => q.id.toLowerCase() === normalised || q.questionType.toLowerCase() === normalised,
-  )
-}
+// The question lookup moved to ./scheme-question on 23 October 2026, so the
+// save route and the run route ask exactly what this builder asks.

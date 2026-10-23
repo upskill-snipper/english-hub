@@ -70,7 +70,14 @@ vi.mock('@/lib/marking/versioning-capture', () => ({
   }),
 }))
 vi.mock('@/lib/marking/mark-schemes', () => ({
-  getMarkScheme: () => ({ id: 'aqa-lit-p1', board: 'AQA', version: 'v1.0' }),
+  // With its question: the route checks the row's question is on the paper
+  // before building the prompt (23 October 2026).
+  getMarkScheme: () => ({
+    id: 'aqa-lit-p1',
+    board: 'AQA',
+    version: 'v1.0',
+    questions: [{ id: 'q1', questionType: 'Essay' }],
+  }),
 }))
 vi.mock('@/lib/marking/prompt-builder', () => ({
   buildMarkingPrompt: () => ({ systemPrompt: 'SYS', userMessage: 'USR' }),

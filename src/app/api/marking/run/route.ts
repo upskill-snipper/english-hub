@@ -62,6 +62,7 @@ import {
 } from '@/lib/api-response'
 import { getMarkScheme } from '@/lib/marking/mark-schemes'
 import { buildMarkingPrompt } from '@/lib/marking/prompt-builder'
+import { findSchemeQuestion } from '@/lib/marking/scheme-question'
 import { generateFeedback } from '@/lib/marking/feedback-generator'
 import { resolveLocaleFromRequest } from '@/lib/i18n/ai-language-directive'
 import { cachedSystemBlocks } from '@/lib/ai/cached-system'
@@ -156,6 +157,17 @@ function markingUnavailable(kind: AiProviderFailureKind, forStaff: boolean): str
   ]
     .filter(Boolean)
     .join(' ')
+}
+
+// A saved essay whose question is not on its paper (see the check before the
+// prompt is built). Trying again cannot help, so this says what can.
+function questionNotOnPaper(forStaff: boolean): string {
+  return [
+    'We cannot tell which question on the paper this essay answers, so it cannot be marked as it was saved.',
+    forStaff
+      ? 'The pupil needs to submit it again and choose the question from the Question list.'
+      : 'Submit it again from the marking form, choosing your question from the Question list.',
+  ].join(' ')
 }
 
 interface RunRequestBody {
@@ -292,6 +304,15 @@ export async function POST(request: NextRequest) {
       return badRequestResponse(`Unknown mark scheme "${row.mark_scheme_id}".`)
     }
     const questionId = row.rubric_ref ?? ''
+    // A row saved before 23 October 2026 can name a question its paper does
+    // not hold: the mock exam handoff saved the question's wording as its id,
+    // and the learner was shown the prompt builder's own "Unknown question ..."
+    // from the catch below. POST /api/submissions now refuses such a row before
+    // saving it, so this meets only the rows already saved, and tells the
+    // learner what will work.
+    if (!findSchemeQuestion(scheme, questionId)) {
+      return badRequestResponse(questionNotOnPaper(runByStaff))
+    }
     let prompt
     try {
       prompt = buildMarkingPrompt({

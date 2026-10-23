@@ -185,3 +185,38 @@ export function resolveHandoffTarget(paper: MockPaperIdentity): HandoffTarget {
     note: `We have no Paper ${paper.paperNumber} ${wantedSubject} scheme for ${board}, so this is set to ${nearest.paper}. Check it fits before you submit.`,
   }
 }
+
+/**
+ * The question on the target scheme that a mock question is, by its id, or
+ * null when that is not certain.
+ *
+ * THE DEFECT (19 September to 23 October 2026). The handoff sent the mock
+ * question's wording where /marking/submit keeps the question's id. The form
+ * restored it unchecked, its Question dropdown could not show it and displayed
+ * "Q1" instead, the essay was saved, and marking stopped at the prompt builder
+ * with "Unknown question" before any AI call. The wording now travels as the
+ * question the learner answered, and this supplies the id.
+ *
+ * Only on an exact scheme, because a question chosen on the nearest paper
+ * would be marked against the wrong grid. Where the scheme numbers its
+ * questions (AQA Language: Q1 to Q5) the mock question must have the same
+ * number AND the same marks; where it does not (AQA Literature's sections),
+ * the one question worth the same marks, if exactly one is. Anything less
+ * certain returns null and the learner chooses from the list.
+ */
+export function resolveHandoffQuestion(
+  target: HandoffTarget,
+  question: { number: number; marks: number },
+): string | null {
+  if (!target.exact || !target.schemeId) return null
+  const scheme = MARK_SCHEMES[target.schemeId]
+  if (!scheme) return null
+  // A numbered scheme is matched on number only: falling back to marks there
+  // could pick Q3 for a mock's Q2, since both are often worth 8.
+  if (scheme.questions.some((q) => /^Q\d+$/i.test(q.id))) {
+    const same = scheme.questions.find((q) => q.id.toUpperCase() === `Q${question.number}`)
+    return same && same.totalMarks === question.marks ? same.id : null
+  }
+  const sameMarks = scheme.questions.filter((q) => q.totalMarks === question.marks)
+  return sameMarks.length === 1 ? sameMarks[0].id : null
+}

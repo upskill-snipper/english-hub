@@ -15,7 +15,7 @@
 import { describe, it, expect, vi, beforeEach, afterEach } from 'vitest'
 import { NextRequest } from 'next/server'
 import { logAiDecision } from '@/lib/ai-audit-log'
-import { refundTrialAllowance } from '@/lib/usage/trial-allowance'
+import { enforceTrialAllowance, refundTrialAllowance } from '@/lib/usage/trial-allowance'
 
 interface Session {
   user: { id: string; email?: string } | null
@@ -109,7 +109,14 @@ vi.mock('@/lib/marking/versioning-capture', () => ({
   captureVersions: (...a: unknown[]) => captureVersionsMock(...a),
 }))
 vi.mock('@/lib/marking/mark-schemes', () => ({
-  getMarkScheme: () => ({ id: 'aqa-lit-p1', board: 'AQA', version: 'v1.0' }),
+  // With its question: the route checks the row's question is on the paper
+  // before building the prompt (23 October 2026).
+  getMarkScheme: () => ({
+    id: 'aqa-lit-p1',
+    board: 'AQA',
+    version: 'v1.0',
+    questions: [{ id: 'q1', questionType: 'Essay' }],
+  }),
 }))
 vi.mock('@/lib/marking/prompt-builder', () => ({
   buildMarkingPrompt: () => ({ systemPrompt: 'SYS', userMessage: 'USR' }),
@@ -253,6 +260,30 @@ describe('POST /api/marking/run - preconditions', () => {
     loadedRow = null
     const res = await POST(makeReq())
     expect(res.status).toBe(404)
+  })
+
+  // 23 October 2026: three essays handed over from a mock exam were saved with
+  // the question's wording as its id. Marking them answered "Unknown question
+  // ..." from the prompt builder, verbatim. The rows already saved now get a
+  // sentence that says what will work, before any gate that costs.
+  it('a saved essay whose question is not on its paper is told what to do, and nothing is spent', async () => {
+    vi.mocked(logAiDecision).mockClear()
+    vi.mocked(enforceTrialAllowance).mockClear()
+    loadedRow = baseRow({
+      rubric_ref:
+        'Read again the first part of the source, from lines 1 to 5.\n\nList four things about the setting from this part of the source.',
+    })
+    const res = await POST(makeReq())
+    expect(res.status).toBe(400)
+    const { error } = await res.json()
+    expect(error).toMatch(
+      /Submit it again from the marking form, choosing your question from the Question list/,
+    )
+    expect(error).not.toMatch(/Unknown question/)
+    expect(vi.mocked(enforceTrialAllowance)).not.toHaveBeenCalled()
+    expect(anthropicCreate).not.toHaveBeenCalled()
+    expect(applyAiResultMock).not.toHaveBeenCalled()
+    expect(vi.mocked(logAiDecision)).not.toHaveBeenCalled()
   })
 })
 

@@ -27,7 +27,7 @@ import {
 } from 'lucide-react'
 import { cn } from '@/lib/utils'
 import { saveMarkingDraft } from '@/lib/marking/draft-store'
-import { resolveHandoffTarget } from '@/lib/marking/mock-handoff'
+import { resolveHandoffQuestion, resolveHandoffTarget } from '@/lib/marking/mock-handoff'
 import { createClient } from '@/lib/supabase/client'
 import { useAuthStore } from '@/store/auth-store'
 import {
@@ -1286,6 +1286,14 @@ function ResultsView({
    * That is put in the `title` field, which /marking/submit shows back, rather
    * than being silently pre-selected - a mark against the wrong paper is a
    * number a student may act on.
+   *
+   * THE QUESTION, FIXED 23 October 2026. Until then the prompt went into
+   * `question`, which is the question's id on the mark scheme. The marking form
+   * restored it unchecked, showed "Q1" in its dropdown, and saved an essay that
+   * marking refused with "Unknown question". The prompt is the question the
+   * learner answered, so it goes there; `question` gets the scheme's id when
+   * resolveHandoffQuestion is certain of it, and is left for the learner to
+   * choose when it is not.
    */
   const onGetMarked = useCallback(
     (question: ExamQuestion, index: number) => {
@@ -1297,7 +1305,8 @@ function ResultsView({
       saveMarkingDraft({
         board: handoff.board ?? '',
         paper: handoff.schemeId ?? '',
-        question: question.prompt || question.label,
+        question: resolveHandoffQuestion(handoff, question) ?? '',
+        questionText: question.prompt || question.label,
         title: `${paper.paperName} - Q${question.number}${handoff.note ? ` (${handoff.note})` : ''}`,
         essay: answers[index],
       })

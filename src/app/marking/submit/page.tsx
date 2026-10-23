@@ -7,7 +7,7 @@ import { isAiOptedOut } from '@/lib/ai-preferences'
 import { Button } from '@/components/ui/button'
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
 import { MARK_SCHEMES, type MarkScheme } from '@/lib/marking/mark-schemes'
-import { resolvePrefill } from '@/lib/marking/submit-prefill'
+import { resolveDraftQuestion, resolvePrefill } from '@/lib/marking/submit-prefill'
 import { isSpecVerified } from '@/lib/marking/examiner/verification'
 import { useT } from '@/lib/i18n/use-t'
 import { DictationButton } from '@/components/speech/DictationButton'
@@ -320,13 +320,23 @@ export default function SubmitEssayPage() {
     if (mapped) setBoard((current) => current || mapped)
   }, [])
 
-  // Restore an essay stashed before a sign-in round trip, once, on mount.
+  // Restore an essay stashed before a sign-in round trip, or handed over from a
+  // mock exam, once, on mount. The question is checked against the paper:
+  // restoring it unchecked is how a mock answer was saved with the question's
+  // wording as its id and could never be marked (see resolveDraftQuestion).
   useEffect(() => {
     const draft = takeMarkingDraft()
     if (!draft) return
     if (draft.board) setBoard(draft.board)
     if (draft.paper) setPaper(draft.paper)
-    if (draft.question) setQuestion(draft.question)
+    const restored = resolveDraftQuestion(draft, Object.values(MARK_SCHEMES))
+    if (restored.question) setQuestion(restored.question)
+    if (restored.questionText) {
+      // Touched, so the scheme's template wording does not replace the real
+      // question once the dropdown settles.
+      setQuestionTextTouched(true)
+      setQuestionText(restored.questionText)
+    }
     if (draft.title) setTitle(draft.title)
     if (draft.essay) setEssay(draft.essay)
   }, [])
@@ -452,10 +462,16 @@ export default function SubmitEssayPage() {
   }, [question, selectedPaper, questionTextTouched])
 
   const wordCount = countWords(essay)
+  // Whether the question is one the chosen paper holds, rather than merely
+  // not empty. A value no option carries is displayed by React as the first
+  // option ("Q1") while the form sends the value, which is how the wording of a
+  // mock question was saved as its id. Such a value now shows as unchosen and
+  // cannot be submitted.
+  const questionIsOnPaper = questionOptions.some((q) => q.value === question)
   const canSubmit =
     Boolean(selectedBoard?.available) &&
     Boolean(selectedPaper) &&
-    question !== '' &&
+    questionIsOnPaper &&
     questionText.trim().length > 0 &&
     essay.trim().length > 0 &&
     wordCount >= 50
@@ -1023,7 +1039,7 @@ export default function SubmitEssayPage() {
                 </label>
                 <select
                   id="question"
-                  value={question}
+                  value={questionIsOnPaper ? question : ''}
                   onChange={(e) => setQuestion(e.target.value)}
                   required
                   disabled={!selectedPaper}

@@ -166,6 +166,14 @@ describe('the draft store', () => {
     expect(takeMarkingDraft()).toEqual(draft)
   })
 
+  it('carries the wording of the question answered, apart from its id', () => {
+    // Added 23 October 2026. A mock exam answer arrives with both; until then
+    // the wording had nowhere to go but `question`, where it could not be marked.
+    const withWording = { ...draft, questionText: 'How does the writer present the setting?' }
+    saveMarkingDraft(withWording)
+    expect(takeMarkingDraft()).toEqual(withWording)
+  })
+
   it('is consumed exactly once', () => {
     // A draft that survived a second visit would silently overwrite whatever
     // the person had started typing.

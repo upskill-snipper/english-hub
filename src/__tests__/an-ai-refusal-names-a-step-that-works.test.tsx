@@ -470,6 +470,81 @@ describe('/marking/submit, saved but not marked', () => {
   })
 })
 
+// ═══ /marking/submit, an answer handed over from a mock exam ════════════
+//
+// 19 September to 23 October 2026: the mock exam handoff put the question's
+// wording in the draft's `question`, which is the question's id. The form
+// restored it unchecked, its dropdown displayed "Q1" while the form held the
+// wording, the essay was saved, and marking refused it with "Unknown question".
+// A new learner saved one answer three times on 23 October and none could be
+// marked. The handoff now sends the id and the wording apart, and the form
+// checks what it restores.
+
+const MOCK_Q1_PROMPT =
+  'Read again the first part of the source, from lines 1 to 5.\n\nList four things about the setting from this part of the source.'
+
+describe('/marking/submit, an answer handed over from a mock exam', () => {
+  beforeEach(() => {
+    window.history.pushState({}, '', '/marking/submit')
+    responders['/api/submissions'] = { status: 201, body: { submissionId: 'sub_m1' } }
+    responders['/api/marking/run'] = { status: 200, body: { ok: true } }
+  })
+
+  it('arrives with the question chosen and its wording in place, and sends the id', async () => {
+    saveMarkingDraft({
+      board: 'AQA',
+      paper: 'aqa-lang-paper1',
+      question: 'Q1',
+      questionText: MOCK_Q1_PROMPT,
+      title: 'English Language Paper 1 - Q1',
+      essay: ESSAY,
+    })
+    const { container } = render(<SubmitEssayPage />)
+    await screen.findByDisplayValue(ESSAY)
+    expect((container.querySelector('#question') as HTMLSelectElement).value).toBe('Q1')
+    // The mock's own wording, not the scheme's template with [topic] in it.
+    expect((container.querySelector('#questionText') as HTMLTextAreaElement).value).toBe(
+      MOCK_Q1_PROMPT,
+    )
+
+    submitMarkingForm(container)
+
+    await waitFor(() => expect(push).toHaveBeenCalledWith('/marking/results/sub_m1'))
+    const sent = JSON.parse(sentTo('/api/submissions')[0].body)
+    expect(sent.questionId).toBe('Q1')
+    expect(sent.questionText).toBe(MOCK_Q1_PROMPT)
+  })
+
+  it('shows no question chosen for wording in the question slot, and cannot send it', async () => {
+    // The shape every mock handoff had until 23 October 2026.
+    saveMarkingDraft({
+      board: 'AQA',
+      paper: 'aqa-lang-paper1',
+      question: MOCK_Q1_PROMPT,
+      title: 'English Language Paper 1 - Q1',
+      essay: ESSAY,
+    })
+    const { container } = render(<SubmitEssayPage />)
+    await screen.findByDisplayValue(ESSAY)
+    const select = container.querySelector('#question') as HTMLSelectElement
+    // Not "Q1" displayed over a value no option carries.
+    expect(select.value).toBe('')
+    expect((container.querySelector('#questionText') as HTMLTextAreaElement).value).toBe(
+      MOCK_Q1_PROMPT,
+    )
+
+    submitMarkingForm(container)
+    expect(posts).toHaveLength(0)
+
+    // Choosing the question from the list is all it takes.
+    fireEvent.change(select, { target: { value: 'Q1' } })
+    submitMarkingForm(container)
+
+    await waitFor(() => expect(push).toHaveBeenCalledWith('/marking/results/sub_m1'))
+    expect(JSON.parse(sentTo('/api/submissions')[0].body).questionId).toBe('Q1')
+  })
+})
+
 describe("a saved essay's own page, not yet marked", () => {
   const savedRow = (status: string, marked = false) => ({
     submission: {

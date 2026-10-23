@@ -31,7 +31,15 @@ const MAX_AGE_MS = 60 * 60 * 1000
 export interface MarkingDraft {
   board: string
   paper: string
+  /** The question's id on the paper's mark scheme, never its wording. */
   question: string
+  /**
+   * The wording of the question that was answered, for the form's "The
+   * question you answered" box. Added 23 October 2026: until then the mock
+   * exam handoff had nowhere to put the wording but `question`, where it could
+   * never be marked (see src/lib/marking/scheme-question.ts).
+   */
+  questionText?: string
   title: string
   essay: string
 }
@@ -79,6 +87,7 @@ export function takeMarkingDraft(): MarkingDraft | null {
       board: typeof parsed.board === 'string' ? parsed.board : '',
       paper: typeof parsed.paper === 'string' ? parsed.paper : '',
       question: typeof parsed.question === 'string' ? parsed.question : '',
+      ...(typeof parsed.questionText === 'string' ? { questionText: parsed.questionText } : {}),
       title: typeof parsed.title === 'string' ? parsed.title : '',
       essay: parsed.essay,
     }
