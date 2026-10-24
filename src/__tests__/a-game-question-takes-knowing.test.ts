@@ -50,7 +50,6 @@ const MIN_ITEMS: Record<string, number> = {
 const NOT_YET = new Set([
   'article-a-an-the',
   'classroom-objects',
-  'comprehension-challenge',
   'grade-climber',
   'greetings-dialogue',
   'phrasal-verbs-match',
