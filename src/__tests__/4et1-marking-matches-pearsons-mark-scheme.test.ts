@@ -126,6 +126,28 @@ describe('the objectives are not swapped', () => {
     for (const o of ao3) expect(o.label).toMatch(/connection/i)
     for (const o of ao4) expect(o.label).toMatch(/context/i)
   })
+
+  it('and gives each objective its own guidance, not only its own name', () => {
+    // FOUND 10 October 2026. The test above passed for three weeks while the
+    // labels were right and everything the marker is actually prompted with
+    // was swapped: AO3, named for connections, carried the context
+    // description and context bands, and AO4 the comparison ones. So the
+    // guidance itself is checked here, description and every band.
+    const all = (SCHEME?.questions ?? []).flatMap((q) => q.assessmentObjectives)
+    const guidance = (o: (typeof all)[number]) =>
+      [o.description, ...o.bands.map((b) => b.descriptor)].join(' ')
+    for (const o of all.filter((x) => x.id === 'AO3')) {
+      expect(o.description, 'AO3 description').toMatch(/compar|connection/i)
+      expect(o.description, 'AO3 description').not.toMatch(/context/i)
+      for (const b of o.bands) expect(b.descriptor, `AO3 ${b.band}`).toMatch(/compar|poems|link/i)
+      expect(guidance(o), 'AO3 guidance').not.toMatch(/\bcontext/i)
+    }
+    for (const o of all.filter((x) => x.id === 'AO4')) {
+      expect(o.description, 'AO4 description').toMatch(/context/i)
+      for (const b of o.bands) expect(b.descriptor, `AO4 ${b.band}`).toMatch(/context/i)
+      expect(guidance(o), 'AO4 guidance').not.toMatch(/\bcompar/i)
+    }
+  })
 })
 
 describe('the bands still reach the tariff they are scaled to', () => {

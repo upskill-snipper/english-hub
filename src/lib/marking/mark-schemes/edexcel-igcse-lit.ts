@@ -341,15 +341,24 @@ function ao2(max: number, total: number): AssessmentObjective {
   }
 }
 
+// AO3 IS COMPARISON AND AO4 IS CONTEXT, IN THEIR GUIDANCE AS WELL AS THEIR
+// NAMES (10 October 2026). The 19 September correction swapped the two
+// labels but left each objective's description and bands where they were, so
+// AO3, now named for connections between texts, still carried the context
+// description and the context bands, and AO4 the comparison ones. The marker
+// is prompted with the description and the bands, not the label: Section B,
+// the comparison question, was still marked against context, and Section C,
+// the context question, against comparison. The test checked the names and
+// passed throughout.
 function ao3(max: number, total: number): AssessmentObjective {
   return {
     id: 'AO3',
     label: 'AO3 - Explore links and connections between texts',
     description:
-      'Show understanding of the relationships between texts and the contexts in which they were written, and how those contexts shape meaning.',
+      'Explore connections across texts, comparing the ideas, themes and methods used by different writers and the effects these create for the reader.',
     maxMarks: max,
     weighting: max / total,
-    bands: contextBands(max),
+    bands: comparisonBands(max),
   }
 }
 
@@ -358,10 +367,10 @@ function ao4(max: number, total: number): AssessmentObjective {
     id: 'AO4',
     label: 'AO4 - Relationships between texts and their contexts',
     description:
-      'Explore connections across texts, comparing the ideas, themes and methods used by different writers and the effects these create for the reader.',
+      'Show understanding of the relationships between texts and the contexts in which they were written, and how those contexts shape meaning.',
     maxMarks: max,
     weighting: max / total,
-    bands: comparisonBands(max),
+    bands: contextBands(max),
   }
 }
 
@@ -378,8 +387,10 @@ export const edexcelIgcseLit: MarkScheme = {
   totalMarks: 90,
   durationMinutes: 120,
   version: '4ET1/01',
+  // The old address, .../edexcel-international-gcses/english-literature-2016.html,
+  // now lands on Pearson's 404 page (checked 10 October 2026).
   sourceUrl:
-    'https://qualifications.pearson.com/en/qualifications/edexcel-international-gcses/english-literature-2016.html',
+    'https://qualifications.pearson.com/en/qualifications/edexcel-international-gcses/international-gcse-english-literature-2016.html',
   questions: [
     {
       id: 'Section A',
@@ -394,12 +405,17 @@ export const edexcelIgcseLit: MarkScheme = {
     {
       id: 'Section B',
       questionType: 'Anthology poetry comparison',
+      // Pearson's specification (Issue 3, August 2025) and ten question
+      // papers from the specimen to June 2025 (10 October 2026): a choice of
+      // two comparison questions, one naming both poems and one naming one
+      // and leaving the second to the candidate. Until then this described
+      // only the second shape.
       taskDescription:
-        'Compare how a theme or idea is presented in one named poem from the Pearson Edexcel anthology and one other poem of your choice from the same collection.',
+        'Answer one of two questions, each comparing two poems from Part 3 of the Pearson Edexcel International GCSE English Anthology: one question names both poems; the other names one and asks for one other poem of your choice from the anthology.',
       totalMarks: 30,
       assessmentObjectives: [ao2(15, 30), ao3(15, 30)],
       examinerNotes:
-        'The named poem is printed on the paper; the second poem is chosen by the student. AO2 and AO3 carry fifteen marks each, so analysis of method and sustained comparison are equally weighted. This is the comparison question, and AO3 is the comparison objective - it was previously marked for context, which is AO4 and is not assessed here.',
+        'All the Part 3 poems come with the paper in a separate Poetry Booklet, so nothing is quoted from memory. AO2 and AO3 carry fifteen marks each, so analysis of language, form and structure and sustained comparison are equally weighted; context (AO4) is not assessed here. An answer that discusses only one poem cannot go above the top of Level 2. About 40 minutes.',
     },
     {
       id: 'Section C',
