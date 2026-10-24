@@ -52,6 +52,15 @@ const mockRequirePrismaUserId = vi.fn(async (_supabaseUserId: string) => PRISMA_
 
 vi.mock('@/lib/identity', () => ({
   requirePrismaUserId: (id: string) => mockRequirePrismaUserId(id),
+  // The M6 sender resolves its ledger user this way since 24 October 2026;
+  // the real one never throws, so neither does this.
+  tryPrismaUserId: async (id: string) => {
+    try {
+      return await mockRequirePrismaUserId(id)
+    } catch {
+      return null
+    }
+  },
   IdentityUnresolved,
   IdentityConflict,
 }))

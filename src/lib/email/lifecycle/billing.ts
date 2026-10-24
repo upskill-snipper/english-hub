@@ -29,7 +29,7 @@
 // non-2xx for three days) or a cancellation.
 // ────────────────────────────────────────────────────────────────────────────
 
-import { findExistingUser, tryPrismaUserId } from '@/lib/identity'
+import { tryPrismaUserId } from '@/lib/identity'
 import {
   buildPaymentFailedEmail,
   buildPlanCancelledEmail,
@@ -64,22 +64,46 @@ export interface PaymentFailedArgs {
   accessPaused: boolean
   /** Every price on the failed invoice is an IELTS price. */
   ieltsOnly: boolean
+  /**
+   * `invoice.attempt_count`: 1 on the first failed attempt, then one more per
+   * automatic retry. Missing or not a number is read as the first attempt.
+   */
+  attemptCount?: number | null
 }
 
-/** M6. One per invoice, however many of Stripe's retries fail. */
+/**
+ * M6. One per invoice, however many of Stripe's retries fail.
+ *
+ * ─── How "one per invoice" is kept (corrected 24 October 2026) ────────────
+ * The ledger row (user, `M6_PAYMENT_FAILED:<invoice>`) is the mechanism, and
+ * it needs a Prisma user to key on. The first version resolved the user
+ * read-only, and with no user it sent without a ledger row, as it does when
+ * the ledger table is missing. Each Stripe retry arrives as a NEW event id, so
+ * webhook_events did not stop it either, and a payer with no Prisma row yet
+ * was sent the notice again on every failed retry of the same invoice. Now:
+ *
+ *   1. the user is resolved with tryPrismaUserId, which projects a missing
+ *      row as M7 and the subscription sync already do for the same customer,
+ *      so the ledger keys the notice whenever the customer has a profile;
+ *   2. when there is still no ledger row to claim (no profile linked to the
+ *      Stripe customer, a projection that failed, or the ledger table
+ *      missing), Stripe's own count decides: the notice goes on the
+ *      invoice's first attempt only. The cost, accepted: if that one send is
+ *      refused there is no later one for this invoice.
+ */
 export async function sendPaymentFailedEmail(
   args: PaymentFailedArgs,
 ): Promise<BillingEmailOutcome> {
   const LOG = '[stripe/webhook:payment-failed]'
   try {
-    // Read-only: a billing notice is no reason to create an identity row.
-    let userId: string | null = null
-    if (args.supabaseUserId) {
-      try {
-        userId = (await findExistingUser(args.supabaseUserId))?.id ?? null
-      } catch {
-        userId = null
-      }
+    const userId = args.supabaseUserId ? await tryPrismaUserId(args.supabaseUserId) : null
+    const firstAttempt = typeof args.attemptCount !== 'number' || args.attemptCount <= 1
+    if (!userId && !firstAttempt) {
+      console.info(
+        `${LOG} skipped invoice=${args.invoiceId} attempt=${args.attemptCount}: no ledger user, ` +
+          "so only the invoice's first failed attempt is told; this is a retry.",
+      )
+      return 'skipped'
     }
     const unsubscribe = unsubscribeLinkFor(args.supabaseUserId)
     const email = buildPaymentFailedEmail({
@@ -98,7 +122,9 @@ export async function sendPaymentFailedEmail(
       text: email.text,
       headers: unsubscribe.headers,
       logPrefix: LOG,
-      sendWithoutLedger: true,
+      // Without a ledger row the notice still goes, but only once per
+      // invoice: on its first attempt (see the docblock).
+      sendWithoutLedger: firstAttempt,
     })
   } catch (err) {
     console.error(`${LOG} failed: ${errText(err)}`)

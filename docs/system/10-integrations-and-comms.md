@@ -164,7 +164,9 @@ The webhook also sends emails. The card-trial notice (`trial_will_end`) goes by 
 payment-failed notice and the "your plan has ended" notice on
 `customer.subscription.deleted` go through `sendEmail` by way of
 [`src/lib/email/lifecycle/billing.ts`](../../src/lib/email/lifecycle/billing.ts), one per
-invoice or subscription through the `LifecycleEmail` ledger; the second waits for
+invoice or subscription through the `LifecycleEmail` ledger (a payment-failed notice
+with no ledger user, or no ledger table, goes on the invoice's first attempt only,
+because each Stripe retry is a new event); the second waits for
 `TRIAL_LIFECYCLE_EMAILS_ENABLED`. All are `from` `noreply@theenglishhub.app`, and none
 can fail the webhook's 200.
 

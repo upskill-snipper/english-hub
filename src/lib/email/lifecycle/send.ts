@@ -18,12 +18,15 @@
 // schedule that never fired (REL-8).
 //
 // The one exception to "no ledger, no send" is the payment-failed notice
-// (`sendWithoutLedger`): it was live before this ledger existed, it tells a
-// paying customer that their access has changed, and the webhook's own
-// webhook_events table already stops the same event being processed twice.
-// Withholding it because the ledger table has not been created yet would be
-// a silent failure of exactly the kind this codebase keeps finding. It logs
-// LIFECYCLE_SENT_UNLEDGERED when it does this.
+// (`sendWithoutLedger`): it was live before this ledger existed and it tells
+// a paying customer about their money. Withholding it because the ledger
+// table has not been created yet would be a silent failure of exactly the
+// kind this codebase keeps finding. It logs LIFECYCLE_SENT_UNLEDGERED when it
+// does this. webhook_events stops one Stripe event being processed twice, but
+// each retry of a failed invoice is a NEW event, so it does not make an
+// unledgered notice once per invoice: the caller passes `sendWithoutLedger`
+// only for the invoice's first attempt (corrected 24 October 2026, see
+// sendPaymentFailedEmail), which is what keeps it to one.
 // ────────────────────────────────────────────────────────────────────────────
 
 import { prisma } from '@/lib/prisma'

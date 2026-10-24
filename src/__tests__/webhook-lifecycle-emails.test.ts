@@ -41,9 +41,14 @@ vi.mock('@/lib/prisma', () => ({
   },
 }))
 
+/** What the read-only lookup finds; null is a profile with no Prisma row yet. */
+let existingUser: { id: string } | null = { id: PRISMA_CUID }
+/** What the projecting resolver returns; null is a projection that failed. */
+let projectedUserId: string | null = PRISMA_CUID
+
 vi.mock('@/lib/identity', () => ({
-  findExistingUser: async () => ({ id: PRISMA_CUID }),
-  tryPrismaUserId: async () => PRISMA_CUID,
+  findExistingUser: async () => existingUser,
+  tryPrismaUserId: async () => projectedUserId,
 }))
 
 vi.mock('@/lib/billing/subscription-sync', () => ({
@@ -109,6 +114,8 @@ beforeEach(() => {
   order.length = 0
   ledger.clear()
   ledgerThrows = false
+  existingUser = { id: PRISMA_CUID }
+  projectedUserId = PRISMA_CUID
   profileUpdates.length = 0
   resendStatus = 200
   mockListSubscriptions.mockResolvedValue({ data: [] })
@@ -246,6 +253,38 @@ describe('M6 payment failed', () => {
   it('still tells the customer when the ledger table does not exist yet', async () => {
     ledgerThrows = true
     await deliver(makeEvent('invoice.payment_failed', FAILED_INVOICE))
+    expect(resendBodies()).toHaveLength(1)
+  })
+
+  // 24 October 2026. "One per invoice" was true only when the ledger could be
+  // keyed: M6 resolved the user read-only, so a payer with no Prisma row yet
+  // (or none at all) skipped the ledger, and since each Stripe retry is a new
+  // event id, webhook_events did not stop it either. Every failed retry of
+  // the same invoice sent the notice again.
+  const attempt = (n: number) => ({ ...FAILED_INVOICE, attempt_count: n })
+
+  it('sends once per invoice for a payer whose Prisma row did not exist yet', async () => {
+    existingUser = null
+    await deliver(makeEvent('invoice.payment_failed', attempt(1), 'evt_1'))
+    await deliver(makeEvent('invoice.payment_failed', attempt(2), 'evt_2'))
+    await deliver(makeEvent('invoice.payment_failed', attempt(3), 'evt_3'))
+    expect(resendBodies()).toHaveLength(1)
+    expect(order).toEqual(['claim:M6_PAYMENT_FAILED:in_fail_1', 'send'])
+  })
+
+  it('sends once per invoice, on the first attempt, when no user can be resolved at all', async () => {
+    existingUser = null
+    projectedUserId = null
+    await deliver(makeEvent('invoice.payment_failed', attempt(1), 'evt_1'))
+    await deliver(makeEvent('invoice.payment_failed', attempt(2), 'evt_2'))
+    await deliver(makeEvent('invoice.payment_failed', attempt(3), 'evt_3'))
+    expect(resendBodies()).toHaveLength(1)
+  })
+
+  it('sends once per invoice when the ledger table does not exist yet', async () => {
+    ledgerThrows = true
+    await deliver(makeEvent('invoice.payment_failed', attempt(1), 'evt_1'))
+    await deliver(makeEvent('invoice.payment_failed', attempt(2), 'evt_2'))
     expect(resendBodies()).toHaveLength(1)
   })
 

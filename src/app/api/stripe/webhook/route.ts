@@ -664,7 +664,9 @@ export async function POST(request: NextRequest) {
             // `accessPaused` is false for every invoice and M6 reads "Your
             // payment did not go through ... To keep your plan, update your
             // payment details", which is true while access is kept.
-            // One notice per invoice (LifecycleEmail), never a webhook failure.
+            // One notice per invoice (LifecycleEmail, or the invoice's first
+            // attempt when there is no ledger user; see the sender), never a
+            // webhook failure.
             await sendPaymentFailedEmail({
               supabaseUserId: failedProfile?.id ?? null,
               to: customerEmail,
@@ -673,6 +675,7 @@ export async function POST(request: NextRequest) {
               currency: invoice.currency,
               accessPaused: false,
               ieltsOnly: ieltsOnlyInvoice,
+              attemptCount: invoice.attempt_count,
             })
           } else {
             console.warn(
