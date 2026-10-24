@@ -35,7 +35,7 @@ const state: {
   /** When set, every profile read fails with this error instead of answering. */
   profileReadError: { code: string; message: string } | null
   profileUpdates: Array<{ id: string; payload: Record<string, unknown> }>
-  stripeSubs: Record<string, Array<{ id: string; status: string }>>
+  stripeSubs: Record<string, Array<{ id: string; status: string; items?: unknown }>>
   stripeThrows: boolean
   listCalls: string[]
 } = {
@@ -100,6 +100,7 @@ vi.mock('@/lib/stripe', () => ({
       },
     },
   },
+  isIeltsPriceId: (id: string | null | undefined) => id === 'price_ielts_monthly',
 }))
 
 vi.mock('@/lib/cron/observability', () => ({
@@ -226,6 +227,51 @@ describe('an expired trial row whose customer is paying in Stripe', () => {
     expect(downgraded('uuid_1')).toBe(false)
     expect(rowCancelled('row_1')).toBe(false)
     expect(json.skippedUnknown).toBe(1)
+  })
+
+  // 24 October 2026. An IELTS-only subscription grants IELTS (ielts_status)
+  // and nothing else, so it is not a paid main plan the trial row failed to
+  // record. Counted as live here, a trialist who bought IELTS, or took a
+  // seven-day IELTS card trial that took no money, kept the trial's 'pro' on
+  // every run, for good.
+  it.each(['active', 'trialing', 'past_due'])(
+    'is still downgraded when the only live subscription is an IELTS-only one (%s)',
+    async (status) => {
+      state.stripeSubs.cus_1 = [
+        {
+          id: 'sub_ielts',
+          status,
+          items: {
+            data: [{ price: { id: 'price_ielts_monthly', recurring: { interval: 'month' } } }],
+          },
+        },
+      ]
+      const json = await (await GET(req())).json()
+      expect(downgraded('uuid_1')).toBe(true)
+      expect(rowCancelled('row_1')).toBe(true)
+      expect(json.skippedPaid).toBe(0)
+    },
+  )
+
+  it('is left alone when an IELTS plan sits beside a live main plan', async () => {
+    state.stripeSubs.cus_1 = [
+      {
+        id: 'sub_ielts',
+        status: 'active',
+        items: {
+          data: [{ price: { id: 'price_ielts_monthly', recurring: { interval: 'month' } } }],
+        },
+      },
+      {
+        id: 'sub_main',
+        status: 'active',
+        items: {
+          data: [{ price: { id: 'price_student_monthly', recurring: { interval: 'month' } } }],
+        },
+      },
+    ]
+    await GET(req())
+    expect(downgraded('uuid_1')).toBe(false)
   })
 
   it('is still downgraded when Stripe shows only an unpaid subscription', async () => {

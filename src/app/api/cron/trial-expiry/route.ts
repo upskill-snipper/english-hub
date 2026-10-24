@@ -1,11 +1,11 @@
 import { NextRequest } from 'next/server'
 import * as Sentry from '@sentry/nextjs'
 import { prisma } from '@/lib/prisma'
-import { stripe } from '@/lib/stripe'
+import { stripe, isIeltsPriceId } from '@/lib/stripe'
 import { createServiceRoleClient } from '@/lib/supabase/server'
 import { runCron } from '@/lib/cron/observability'
 import { authoriseCronRequest } from '@/lib/cron/auth'
-import { WEB_ACCESS_STATUSES } from '@/lib/billing/duplicate-subscription-guard'
+import { WEB_ACCESS_STATUSES, isIeltsOnly } from '@/lib/billing/duplicate-subscription-guard'
 
 export const dynamic = 'force-dynamic'
 
@@ -80,6 +80,13 @@ type PaidCheck =
  * Does this Stripe customer hold a subscription that keeps the web gate open
  * right now? The list of statuses is WEB_ACCESS_STATUSES, shared with the
  * webhook's coverage check; see the docblock above for why it is not a copy.
+ *
+ * An IELTS-only subscription does not count (24 October 2026). It grants
+ * `ielts_status` and never the global 'pro', which is what this cron ends, so
+ * it is not a paid main plan that the trial row failed to record. Counted as
+ * live, it kept a no-card trialist who bought IELTS on the trial's 'pro' on
+ * every run, for good, and so did a seven-day IELTS card trial that took no
+ * money at all. The test is the webhook coverage check's (`isIeltsOnly`).
  */
 async function liveStripeSubscription(customerId: string): Promise<PaidCheck> {
   try {
@@ -88,7 +95,9 @@ async function liveStripeSubscription(customerId: string): Promise<PaidCheck> {
       status: 'all',
       limit: 100,
     })
-    const live = subs.data.find((s) => WEB_ACCESS_STATUSES.has(s.status))
+    const live = subs.data.find(
+      (s) => WEB_ACCESS_STATUSES.has(s.status) && !isIeltsOnly(s, isIeltsPriceId),
+    )
     return live
       ? { outcome: 'live', subscriptionId: live.id, status: live.status }
       : { outcome: 'none' }
