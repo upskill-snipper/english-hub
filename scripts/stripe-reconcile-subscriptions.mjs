@@ -42,7 +42,24 @@
 // repaired: a profile with a Stripe customer and a live Stripe subscription
 // whose Prisma row is still the signup trial. The customer ids come from BOTH
 // `Subscription.stripeCustomerId` and `profiles.stripe_customer_id`, so that
-// case is included.
+// case is included, and EVERY Subscription row is loaded and indexed by Prisma
+// user id so that the trial row (which carries no Stripe id) is found and
+// updated in place rather than reported as NO_ROW. Until 23 October 2026 only
+// Stripe-linked rows were loaded, so `--write` tried to create a second row
+// for that customer and the unique userId constraint refused it.
+//
+// IDENTITY. A plain .mjs cannot import `@/lib/identity`, so the Prisma User
+// is found by hand, in the order src/lib/identity/lookup.ts uses: by
+// `User.supabaseUserId`, then by the legacy primary-key form in which
+// `User.id` IS the auth uuid. This script never creates a User.
+//
+// A row that belongs to a store purchase (platform IOS or ANDROID) is reported
+// as MOBILE_ROW and never written: one row per person cannot hold a store
+// purchase and a Stripe subscription at once (an open item in docs/system/06).
+// A row with no Stripe id is taken over only by a subscription that keeps the
+// web gate open (active, trialing, past_due); against anything else it is
+// reported as UNLINKED_ROW_KEPT and left for the trial-expiry cron, as the
+// webhook's own sync does.
 //
 // WHAT IT WILL NEVER DO, AND WHY THAT IS ENFORCED IN CODE
 // -------------------------------------------------------
@@ -77,7 +94,9 @@
 // readers) MUST agree with src/lib/billing/subscription-sync.ts and
 // src/lib/billing/stripe-shapes.ts. They are duplicated because this is a
 // plain .mjs script and those are TypeScript behind the `@/` alias. If you
-// change one, change the other.
+// change one, change the other: src/__tests__/reconcile-script-readers-agree.test.ts
+// lifts the copies out of this file and fails when they and the originals
+// disagree.
 // ============================================================================
 
 import Stripe from 'stripe'
@@ -146,6 +165,13 @@ const prisma = new PrismaClient()
 
 /** Same as LIVE_SUBSCRIPTION_STATUSES in duplicate-subscription-guard.ts. */
 const LIVE_STATUSES = new Set(['active', 'trialing', 'past_due', 'unpaid'])
+
+/**
+ * Same as WEB_ACCESS_STATUSES in duplicate-subscription-guard.ts: the
+ * statuses under which the web gate stays open, and the set the trial-expiry
+ * cron treats as "a payer" before it skips a trial.
+ */
+const WEB_ACCESS_STATUSES = new Set(['active', 'trialing', 'past_due'])
 
 /** Same as mapStripeToPrismaStatus in subscription-sync.ts. */
 function mapStatus(stripeStatus) {
@@ -252,8 +278,14 @@ function impliedProfileStatus(stripeStatus) {
     case 'unpaid':
       return 'unpaid'
     case 'canceled':
-    case 'incomplete_expired':
       return 'cancelled'
+    // A subscription that never went live is not written over a profile that
+    // is 'pro' through something else (a trial or another plan); see
+    // handleSubscriptionUpdated in the webhook.
+    case 'incomplete':
+      return 'incomplete (unchanged over a pro profile)'
+    case 'incomplete_expired':
+      return 'cancelled (unchanged over a pro profile)'
     default:
       return stripeStatus
   }
@@ -271,10 +303,15 @@ function dateIso(d) {
 // ── Reading our side ────────────────────────────────────────────────────────
 
 async function loadDatabaseSide() {
+  // EVERY Subscription row, not only those already linked to Stripe. The row
+  // this script most needs to find is the one that is NOT linked: a signup
+  // trial (TRIALING, no Stripe customer or subscription id) belonging to a
+  // customer who has since paid, which is the TRIAL_EXPIRY_SKIPPED_PAID case
+  // the cron sends here. Filtering to linked rows, as this did until
+  // 23 October 2026, reported that customer as NO_ROW and `--write` then tried
+  // to CREATE a second row, which the unique userId constraint refused. The
+  // row is found by Prisma user id below and takes the DIFFERS path instead.
   const rows = await prisma.subscription.findMany({
-    where: {
-      OR: [{ stripeCustomerId: { not: null } }, { stripeSubscriptionId: { not: null } }],
-    },
     include: { user: { select: { id: true, supabaseUserId: true } } },
   })
 
@@ -285,11 +322,26 @@ async function loadDatabaseSide() {
     WHERE stripe_customer_id IS NOT NULL
   `
 
+  // Identity, resolved by hand because a plain .mjs cannot import
+  // `@/lib/identity`. The order mirrors src/lib/identity/lookup.ts exactly:
+  // `User.supabaseUserId` first, then the legacy primary-key form in which
+  // `User.id` IS the auth uuid. A lookup on `supabaseUserId` alone, as this
+  // did until 23 October 2026, reported every legacy user as NO_PRISMA_USER
+  // and told the founder to wait for a sign-in that would have changed
+  // nothing. This script never creates a User; that is the identity layer's
+  // job alone, and the sibling scripts/reconcile-stripe-subscriptions.mjs
+  // follows the same rule.
+  const profileIds = profiles.map((p) => p.id)
   const users = await prisma.user.findMany({
-    where: { supabaseUserId: { in: profiles.map((p) => p.id) } },
-    select: { id: true, supabaseUserId: true, subscription: { select: { id: true } } },
+    where: { OR: [{ supabaseUserId: { in: profileIds } }, { id: { in: profileIds } }] },
+    select: { id: true, supabaseUserId: true },
   })
-  const prismaUserBySupabaseId = new Map(users.map((u) => [u.supabaseUserId, u]))
+  const prismaUserBySupabaseId = new Map()
+  for (const pid of profileIds) {
+    const user =
+      users.find((u) => u.supabaseUserId === pid) ?? users.find((u) => u.id === pid) ?? null
+    if (user) prismaUserBySupabaseId.set(pid, user)
+  }
 
   const rowsByCustomer = new Map()
   for (const row of rows) {
@@ -421,6 +473,8 @@ async function main() {
     noStripeSubscription: 0,
     noRow: 0,
     noPrismaUser: 0,
+    mobileRow: 0,
+    unlinkedKept: 0,
     written: 0,
     writeFailed: 0,
   }
@@ -474,6 +528,46 @@ async function main() {
       stripeStatus: chosen.status,
       cancelAtPeriodEnd: Boolean(chosen.cancel_at_period_end),
       impliedProfileStatus: impliedProfileStatus(chosen.status),
+    }
+
+    // A row that is not a WEB row is a store purchase the RevenueCat
+    // reconciler owns. One row per person means a Stripe subscription cannot
+    // be written onto it without destroying the mobile record, so it is
+    // reported and never written; a person decides. (That one row cannot hold
+    // a store purchase and a Stripe subscription at once is an open item in
+    // docs/system/06; the fix is a row per subscription, not a script.)
+    if (row && row.platform !== 'WEB') {
+      counts.mobileRow++
+      findings.push({
+        ...base,
+        state: 'MOBILE_ROW',
+        stripe: stripeView,
+        diffs: [],
+        detail: `The Subscription row is a ${row.platform} store purchase (${row.status}). Nothing written: writing the Stripe subscription over it would erase the mobile record.`,
+      })
+      continue
+    }
+
+    // An UNLINKED row (no Stripe subscription id: a signup trial) is taken
+    // over only by a subscription that keeps the web gate open, which is the
+    // same set the trial-expiry cron treats as "a payer" when it skips a trial
+    // and points here: so every TRIAL_EXPIRY_SKIPPED_PAID case is repaired,
+    // past_due included. A dead or never-live subscription does not take it,
+    // as the webhook's sync refuses too (step 2b in
+    // src/lib/billing/subscription-sync.ts): an expired checkout written over a
+    // trial row leaves a row with a Stripe id that the cron never selects
+    // again, so the profile keeps the trial's 'pro' for good. The cron ends
+    // such a trial itself, after asking Stripe.
+    if (row && !row.stripeSubscriptionId && !WEB_ACCESS_STATUSES.has(chosen.status)) {
+      counts.unlinkedKept++
+      findings.push({
+        ...base,
+        state: 'UNLINKED_ROW_KEPT',
+        stripe: stripeView,
+        diffs: [],
+        detail: `The Subscription row carries no Stripe subscription (${row.status}) and this customer's Stripe subscription is ${chosen.status}, which keeps no access. Nothing written: a dead subscription does not take a trial row. The trial-expiry cron ends the trial when its period runs out.`,
+      })
+      continue
     }
 
     if (!row) {
@@ -573,6 +667,8 @@ async function main() {
   console.log(`  differs:        ${counts.differs}`)
   console.log(`  no row:         ${counts.noRow}`)
   console.log(`  no Prisma user: ${counts.noPrismaUser}`)
+  console.log(`  mobile row:     ${counts.mobileRow}`)
+  console.log(`  unlinked kept:  ${counts.unlinkedKept}`)
   console.log(`  duplicate:      ${counts.duplicate}`)
   console.log(`  no Stripe sub:  ${counts.noStripeSubscription}`)
   if (WRITE) console.log(`  written:        ${counts.written} (failed: ${counts.writeFailed})`)
@@ -610,6 +706,8 @@ async function main() {
       WRITE &&
       f.state !== 'DUPLICATE' &&
       f.state !== 'NO_PRISMA_USER' &&
+      f.state !== 'MOBILE_ROW' &&
+      f.state !== 'UNLINKED_ROW_KEPT' &&
       f.state !== 'NO_STRIPE_SUBSCRIPTION'
     ) {
       console.log(

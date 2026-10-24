@@ -307,15 +307,22 @@ function planLabel(subscription) {
 /**
  * Stripe moved `current_period_start` / `current_period_end` off the
  * subscription and onto the subscription item in recent API versions. Read
- * whichever is present rather than asserting one - `readSubscriptionFacts` in
- * `src/lib/billing/subscription-sync.ts` reads the subscription-level field,
- * so a report that only read the item-level one could disagree with the app
- * about the same subscription.
+ * whichever is present rather than asserting one, and read it the way the app
+ * does: `subscriptionPeriodEnd` in `src/lib/billing/stripe-shapes.ts` takes
+ * the top-level field when present and otherwise the LATEST end across the
+ * items, so this report and the app agree about the same subscription. (This
+ * function used to take the first item's end, which differs from the app on a
+ * multi-item subscription.)
  */
 function periodEnd(subscription) {
   const top = subscription.current_period_end
-  if (top) return top
-  return subscription.items?.data?.[0]?.current_period_end ?? null
+  if (typeof top === 'number' && top > 0) return top
+  let latest = null
+  for (const item of subscription.items?.data ?? []) {
+    const end = item.current_period_end
+    if (typeof end === 'number' && end > 0 && (latest === null || end > latest)) latest = end
+  }
+  return latest
 }
 
 /**
