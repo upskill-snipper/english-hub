@@ -349,6 +349,50 @@ describe('M7 plan ended', () => {
     expect(profileUpdates.some((u) => u.subscription_status === 'cancelled')).toBe(true)
   })
 
+  // 24 October 2026. The main plan ending beside a live IELTS plan revokes
+  // 'pro' (an IELTS-only plan is not cover for it), so M7 went out saying
+  // "Your account stays open on the free plan" and "AI marking and the other
+  // paid features have stopped" to a customer still paying for IELTS, whose
+  // IELTS writing feedback was still open. The handler's own comment said that
+  // sentence is false for anyone still holding a paid plan.
+  it.each(['active', 'trialing', 'past_due'])(
+    'sends nothing when the main plan ends beside an IELTS plan that is %s',
+    async (status) => {
+      mockListSubscriptions.mockResolvedValue({
+        data: [
+          {
+            id: 'sub_ielts',
+            status,
+            items: {
+              data: [{ price: { id: 'price_ielts_monthly', recurring: { interval: 'month' } } }],
+            },
+          },
+        ],
+      })
+      const res = await deliver(makeEvent('customer.subscription.deleted', endedSubscription()))
+      expect(res.status).toBe(200)
+      // The main plan really did end: the revocation is unchanged.
+      expect(profileUpdates.some((u) => u.subscription_status === 'cancelled')).toBe(true)
+      expect(resendBodies()).toHaveLength(0)
+    },
+  )
+
+  it('still sends when the only IELTS plan beside it has ended too', async () => {
+    mockListSubscriptions.mockResolvedValue({
+      data: [
+        {
+          id: 'sub_ielts',
+          status: 'canceled',
+          items: {
+            data: [{ price: { id: 'price_ielts_monthly', recurring: { interval: 'month' } } }],
+          },
+        },
+      ],
+    })
+    await deliver(makeEvent('customer.subscription.deleted', endedSubscription()))
+    expect(resendBodies()).toHaveLength(1)
+  })
+
   it('sends nothing when a duplicate is cleaned up and the paid plan lives on', async () => {
     mockListSubscriptions.mockResolvedValue({
       data: [

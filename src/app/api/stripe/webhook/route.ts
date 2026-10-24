@@ -9,6 +9,8 @@ import { prisma } from '@/lib/prisma'
 import { captureGrandfatherFields, type Plan as PricingPlan } from '@/lib/pricing/grandfather'
 import { syncStripeSubscriptionToPrisma } from '@/lib/billing/subscription-sync'
 import {
+  WEB_ACCESS_STATUSES,
+  carriesIelts,
   findCoveringSubscription,
   findDuplicateSubscription,
   isIeltsOnly,
@@ -1704,7 +1706,26 @@ async function handleSubscriptionDeleted(
   // unreachable throws before this line instead of reading as "not covered".
   // Both narrow the email to the customers who really lost access, so the
   // lifecycle branch's condition is kept as it was.
-  if (revokeEntitlement) {
+  //
+  // Not when an IELTS plan remains (24 October 2026). An IELTS-only plan is
+  // rightly not cover for 'pro', so the main plan ending beside a live IELTS
+  // plan revokes, and M7 told a customer still paying for IELTS "Your account
+  // stays open on the free plan" and "AI marking and the other paid features
+  // have stopped", while their IELTS writing feedback (hasIeltsAccess) was
+  // still open: the false sentence this comment already ruled out. The
+  // cancel route handles the same case with otherPlanRemains. Here the email
+  // is skipped rather than given new wording; a variant that names the IELTS
+  // plan is copy for the founder to approve. An IELTS plan in its retry
+  // window counts, because past_due leaves ielts_status as it is.
+  const ieltsPlanRemains = cover.others.some(
+    (other) => WEB_ACCESS_STATUSES.has(other.status) && carriesIelts(other, isIeltsPriceId),
+  )
+  if (revokeEntitlement && ieltsPlanRemains) {
+    console.info(
+      `[stripe/webhook:plan-ended] skipped subscription=${subscription.id} user=${userId}: an ` +
+        'IELTS plan remains, so "your account stays open on the free plan" would be false.',
+    )
+  } else if (revokeEntitlement) {
     const customerId = subscription.customer as string
     await sendPlanEndedEmail({
       supabaseUserId: userId,

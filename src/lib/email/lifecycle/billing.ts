@@ -165,9 +165,11 @@ export interface PlanEndedArgs {
 
 /**
  * M7, from customer.subscription.deleted, and only when that event revoked
- * the entitlement: never for a duplicate being cleaned up, and never for an
- * IELTS-only plan whose holder may still have a paid plan alongside it, since
- * "your account stays open on the free plan" would then be false.
+ * the entitlement: never for a duplicate being cleaned up, never for an
+ * IELTS-only plan whose holder may still have a paid plan alongside it, and
+ * (since 24 October 2026) never for a main plan that ended while an IELTS plan
+ * remains, since "your account stays open on the free plan" would then be
+ * false. The webhook decides all three before it calls this.
  */
 export async function sendPlanEndedEmail(args: PlanEndedArgs): Promise<BillingEmailOutcome> {
   const LOG = '[stripe/webhook:plan-ended]'

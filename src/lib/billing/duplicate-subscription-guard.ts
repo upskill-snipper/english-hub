@@ -226,6 +226,12 @@ export interface CoverageCheck {
    * tell a stale delivery from a real change without a second Stripe call.
    */
   current: Stripe.Subscription | null
+  /**
+   * Every OTHER subscription on the customer, in any status, from the same
+   * list, for a caller with a second question about the customer (the M7
+   * email asks whether an IELTS plan remains) that must not cost another call.
+   */
+  others: Stripe.Subscription[]
 }
 
 /**
@@ -294,13 +300,11 @@ export async function findCoveringSubscription(
       ? !isIeltsOnly(sub, options.isIeltsPriceId)
       : carriesIelts(sub, options.isIeltsPriceId)
 
-  const coveringSubscription =
-    subscriptions.data.find(
-      (sub) => sub.id !== options.excludeSubscriptionId && live.has(sub.status) && covers(sub),
-    ) ?? null
+  const others = subscriptions.data.filter((sub) => sub.id !== options.excludeSubscriptionId)
+  const coveringSubscription = others.find((sub) => live.has(sub.status) && covers(sub)) ?? null
   const current = subscriptions.data.find((sub) => sub.id === options.excludeSubscriptionId) ?? null
 
-  return { covered: coveringSubscription !== null, coveringSubscription, current }
+  return { covered: coveringSubscription !== null, coveringSubscription, current, others }
 }
 
 /**
