@@ -3589,7 +3589,8 @@ export const EN_MESSAGES: Record<string, string> = {
   'games_page.texts.cta_all': 'See every text with games',
   'games_page.texts.for_board': 'Your {board} texts with guided games',
   'games_page.list.quote_detective.title': 'Quote Detective',
-  'games_page.list.quote_detective.desc': 'Work out which GCSE set text each quotation comes from.',
+  'games_page.list.quote_detective.desc':
+    'Name the set text a quotation is from, who says it and when, and the line that proves a point.',
   'games_page.list.grade_climber.title': 'Grade Climber',
   'games_page.list.grade_climber.desc':
     'GCSE-style questions that get harder: three right to climb a grade.',

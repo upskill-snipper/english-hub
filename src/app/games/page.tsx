@@ -1018,7 +1018,8 @@ const GAMES: GameDef[] = [
   {
     id: 'quote-detective',
     title: 'Quote Detective',
-    description: 'Work out which GCSE set text each quotation comes from.',
+    description:
+      'Name the set text a quotation is from, who says it and when, and the line that proves a point.',
     titleKey: 'games_page.list.quote_detective.title',
     descriptionKey: 'games_page.list.quote_detective.desc',
     icon: <Search className="size-6" />,
@@ -1058,7 +1059,8 @@ const GAMES: GameDef[] = [
   {
     id: 'vocabulary-builder',
     title: 'Vocabulary Builder',
-    description: 'Select the correct definition. Wrong words reappear for spaced repetition.',
+    description:
+      'Choose what a word means, alone or in a real line from a classic, or the word for a gap.',
     icon: <Brain className="size-6" />,
     difficulty: 'Medium',
     locked: false,
@@ -1069,7 +1071,8 @@ const GAMES: GameDef[] = [
   {
     id: 'spelling-bee',
     title: 'Spelling Bee',
-    description: 'Listen to the definition, type the correct spelling. Difficulty increases.',
+    // The word is spoken; its definition, or a sentence with a gap, is shown.
+    description: 'Hear the word, read its definition or sentence, and type the spelling.',
     icon: <Volume2 className="size-6" />,
     difficulty: 'Hard',
     locked: false,

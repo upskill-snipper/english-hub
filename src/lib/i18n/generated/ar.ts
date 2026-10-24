@@ -3520,7 +3520,8 @@ export const AR_MESSAGES: Record<string, string> = {
   'games_page.texts.cta_all': 'شوف كل النصوص اللي لها ألعاب',
   'games_page.texts.for_board': 'نصوصك في {board} اللي لها ألعاب موجّهة',
   'games_page.list.quote_detective.title': 'Quote Detective',
-  'games_page.list.quote_detective.desc': 'اعرف كل اقتباس من أي نص مقرر في GCSE.',
+  'games_page.list.quote_detective.desc':
+    'اعرف الاقتباس من أي نص مقرر، ومين قاله ومتى، والسطر اللي يثبت الفكرة.',
   'games_page.list.grade_climber.title': 'Grade Climber',
   'games_page.list.grade_climber.desc':
     'أسئلة بأسلوب GCSE تصعب شوي شوي: ثلاث إجابات صح وتطلع درجة.',

@@ -11846,10 +11846,12 @@ export const DICTIONARY: Dictionary = {
     ar: 'Quote Detective',
     es: 'Quote Detective',
   },
+  // Since 24 October 2026 the game also asks who says a line and when, and
+  // which line proves a point (src/data/games/banks/quote-detective.ts).
   'games_page.list.quote_detective.desc': {
-    en: 'Work out which GCSE set text each quotation comes from.',
-    ar: 'اعرف كل اقتباس من أي نص مقرر في GCSE.',
-    es: 'Averigua de qué texto prescrito de GCSE procede cada cita.',
+    en: 'Name the set text a quotation is from, who says it and when, and the line that proves a point.',
+    ar: 'اعرف الاقتباس من أي نص مقرر، ومين قاله ومتى، والسطر اللي يثبت الفكرة.',
+    es: 'Di de qué texto prescrito es cada cita, quién la dice y cuándo, y qué línea demuestra una idea.',
   },
   'games_page.list.grade_climber.title': {
     en: 'Grade Climber',

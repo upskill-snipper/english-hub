@@ -3685,7 +3685,7 @@ export const ES_MESSAGES: Record<string, string> = {
   'games_page.texts.for_board': 'Tus textos de {board} con juegos guiados',
   'games_page.list.quote_detective.title': 'Quote Detective',
   'games_page.list.quote_detective.desc':
-    'Averigua de qué texto prescrito de GCSE procede cada cita.',
+    'Di de qué texto prescrito es cada cita, quién la dice y cuándo, y qué línea demuestra una idea.',
   'games_page.list.grade_climber.title': 'Grade Climber',
   'games_page.list.grade_climber.desc':
     'Preguntas de estilo GCSE cada vez más difíciles: tres aciertos para subir de nota.',
