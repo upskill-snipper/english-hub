@@ -10,12 +10,8 @@ import { useBoard } from '@/hooks/useBoard'
 import { getBoardConfig } from '@/lib/board/board-store'
 import { AnswerExplanation } from '@/components/games/AnswerExplanation'
 import { useGameRound } from '@/components/games/game-round'
-import {
-  BANK,
-  ITEM_BANK,
-  type ItemType,
-  type NumberItem,
-} from '@/data/games/banks/numbers-and-time'
+import { useDealer, type RoundOptions } from '@/lib/games/start-round'
+import { BANK, type ItemType, type NumberItem } from '@/data/games/banks/numbers-and-time'
 
 // ─── Data ──────────────────────────────────────────────────────────────────────
 
@@ -70,23 +66,19 @@ interface Question {
   options: string[]
 }
 
-function buildQuestions(): Question[] {
-  // Mix the round across the four subtypes for variety.
-  const byType: Record<ItemType, NumberItem[]> = {
-    cardinal: shuffle(ITEM_BANK.filter((i) => i.type === 'cardinal')),
-    ordinal: shuffle(ITEM_BANK.filter((i) => i.type === 'ordinal')),
-    clock: shuffle(ITEM_BANK.filter((i) => i.type === 'clock')),
-    date: shuffle(ITEM_BANK.filter((i) => i.type === 'date')),
-  }
-  // Take a balanced-ish slice, then top up and shuffle.
-  const picked: NumberItem[] = [
-    ...byType.cardinal.slice(0, 4),
-    ...byType.ordinal.slice(0, 4),
-    ...byType.clock.slice(0, 5),
-    ...byType.date.slice(0, 2),
-  ]
-  const round = shuffle(picked).slice(0, ROUND_SIZE)
-  return round.map((item) => ({
+/**
+ * A round mixed as the page has always mixed it: four numbers, four ordinals,
+ * five clock times and two dates, now dealt by useDealer
+ * (src/lib/games/start-round.ts), so a round brings what this browser has not
+ * met and keeps apart questions that give each other away (24 October 2026).
+ * Options in a new order each time.
+ */
+function buildQuestions(
+  deal: (size: number, o?: RoundOptions<NumberItem>) => NumberItem[],
+): Question[] {
+  return deal(ROUND_SIZE, {
+    quota: { of: (i) => i.type, counts: { cardinal: 4, ordinal: 4, clock: 5, date: 2 } },
+  }).map((item) => ({
     item,
     options: shuffle([item.answer, ...item.distractors]),
   }))
@@ -106,6 +98,7 @@ export default function NumbersAndTimePage() {
   const [selected, setSelected] = useState<string | null>(null)
   const [feedback, setFeedback] = useState<'correct' | 'wrong' | null>(null)
   const round = useGameRound('numbers-and-time')
+  const deal = useDealer(BANK)
 
   const currentQ = questions[qIdx] ?? null
 
@@ -128,14 +121,14 @@ export default function NumbersAndTimePage() {
   }, [qIdx, gameState, feedback, currentQ])
 
   const handleStart = useCallback(() => {
-    setQuestions(buildQuestions())
+    setQuestions(buildQuestions(deal))
     setQIdx(0)
     setScore(0)
     setTotalAnswered(0)
     setSelected(null)
     setFeedback(null)
     setGameState('playing')
-  }, [])
+  }, [deal])
 
   const handleFinish = useCallback(() => {
     setGameState('finished')

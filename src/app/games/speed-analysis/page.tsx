@@ -11,7 +11,8 @@ import { getBoardConfig } from '@/lib/board/board-store'
 import { shuffledOptionsFor, newSessionSalt } from '@/lib/quiz/shuffle'
 import { AnswerExplanation } from '@/components/games/AnswerExplanation'
 import { useGameRound } from '@/components/games/game-round'
-import { BANK, QUESTIONS, type AnalysisQuestion } from '@/data/games/banks/speed-analysis'
+import { useDealer } from '@/lib/games/start-round'
+import { BANK, type AnalysisQuestion } from '@/data/games/banks/speed-analysis'
 
 // ─── Data ──────────────────────────────────────────────────────────────────────
 // The questions are in src/data/games/banks/speed-analysis.ts (moved there on
@@ -23,15 +24,6 @@ const QUESTIONS_PER_ROUND = 20
 const PROMPT = 'What literary device is being used?'
 
 // ─── Helpers ───────────────────────────────────────────────────────────────────
-
-function shuffle<T>(arr: T[]): T[] {
-  const a = [...arr]
-  for (let i = a.length - 1; i > 0; i--) {
-    const j = Math.floor(Math.random() * (i + 1))
-    ;[a[i], a[j]] = [a[j], a[i]]
-  }
-  return a
-}
 
 // ─── Component ─────────────────────────────────────────────────────────────────
 
@@ -48,6 +40,7 @@ export default function SpeedAnalysisPage() {
   const [revealed, setRevealed] = useState(false)
   const [timer, setTimer] = useState(SECONDS_PER_QUESTION)
   const round = useGameRound('speed-analysis')
+  const deal = useDealer(BANK)
   const [sessionSalt, setSessionSalt] = useState('')
   const timerRef = useRef<ReturnType<typeof setInterval> | null>(null)
 
@@ -96,7 +89,7 @@ export default function SpeedAnalysisPage() {
     // Minted here rather than during render: newSessionSalt calls Math.random,
     // which would not agree between the server and client paint.
     setSessionSalt(newSessionSalt())
-    const shuffled = shuffle(QUESTIONS).slice(0, QUESTIONS_PER_ROUND)
+    const shuffled = deal(QUESTIONS_PER_ROUND)
     setQuestions(shuffled)
     setQIdx(0)
     setScore(0)
@@ -104,7 +97,7 @@ export default function SpeedAnalysisPage() {
     setRevealed(false)
     setTimer(SECONDS_PER_QUESTION)
     setGameState('playing')
-  }, [])
+  }, [deal])
 
   const handleFinish = useCallback(() => {
     if (timerRef.current) clearInterval(timerRef.current)

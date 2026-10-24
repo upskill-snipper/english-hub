@@ -10,7 +10,8 @@ import { useBoard } from '@/hooks/useBoard'
 import { getBoardConfig } from '@/lib/board/board-store'
 import { AnswerExplanation } from '@/components/games/AnswerExplanation'
 import { useGameRound } from '@/components/games/game-round'
-import { BANK, QUESTION_BANK, type Question } from '@/data/games/banks/prepositions-of-place'
+import { useDealer } from '@/lib/games/start-round'
+import { BANK, type Question } from '@/data/games/banks/prepositions-of-place'
 
 // ─── Data ──────────────────────────────────────────────────────────────────────
 // The questions are in src/data/games/banks/prepositions-of-place.ts (moved there
@@ -44,13 +45,15 @@ export default function PrepositionsOfPlacePage() {
   const [selected, setSelected] = useState<string | null>(null)
   const [feedback, setFeedback] = useState<'correct' | 'wrong' | null>(null)
   const round = useGameRound('prepositions-of-place')
+  const deal = useDealer(BANK)
 
   const currentQuestion = questions[qIdx] ?? null
 
   const handleStart = useCallback(() => {
-    const picked = shuffle(QUESTION_BANK)
-      .slice(0, ROUND_SIZE)
-      .map((q) => ({ ...q, options: shuffle(q.options) as [string, string, string, string] }))
+    const picked = deal(ROUND_SIZE).map((q) => ({
+      ...q,
+      options: shuffle(q.options) as [string, string, string, string],
+    }))
     setQuestions(picked)
     setQIdx(0)
     setScore(0)
@@ -58,7 +61,7 @@ export default function PrepositionsOfPlacePage() {
     setSelected(null)
     setFeedback(null)
     setGameState('playing')
-  }, [])
+  }, [deal])
 
   const handleFinish = useCallback(() => {
     setGameState('finished')

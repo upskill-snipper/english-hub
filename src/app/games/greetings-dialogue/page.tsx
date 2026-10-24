@@ -11,7 +11,8 @@ import { getBoardConfig } from '@/lib/board/board-store'
 import { shuffledOptionsFor, newSessionSalt } from '@/lib/quiz/shuffle'
 import { AnswerExplanation } from '@/components/games/AnswerExplanation'
 import { useGameRound } from '@/components/games/game-round'
-import { BANK, EXCHANGE_BANK, type Exchange } from '@/data/games/banks/greetings-dialogue'
+import { useDealer } from '@/lib/games/start-round'
+import { BANK, type Exchange } from '@/data/games/banks/greetings-dialogue'
 
 // ─── Data ──────────────────────────────────────────────────────────────────────
 // The exchanges are in src/data/games/banks/greetings-dialogue.ts (moved there
@@ -21,15 +22,6 @@ import { BANK, EXCHANGE_BANK, type Exchange } from '@/data/games/banks/greetings
 const ROUND_SIZE = 15
 
 // ─── Helpers ───────────────────────────────────────────────────────────────────
-
-function shuffle<T>(arr: T[]): T[] {
-  const a = [...arr]
-  for (let i = a.length - 1; i > 0; i--) {
-    const j = Math.floor(Math.random() * (i + 1))
-    ;[a[i], a[j]] = [a[j], a[i]]
-  }
-  return a
-}
 
 // ─── Component ─────────────────────────────────────────────────────────────────
 
@@ -45,6 +37,7 @@ export default function GreetingsDialoguePage() {
   const [selected, setSelected] = useState<number | null>(null)
   const [salt, setSalt] = useState('')
   const round = useGameRound('greetings-dialogue')
+  const deal = useDealer(BANK)
 
   const current = dealt[idx] ?? null
   const revealed = selected !== null
@@ -80,14 +73,14 @@ export default function GreetingsDialoguePage() {
   }, [current, salt])
 
   const handleStart = useCallback(() => {
-    setDealt(shuffle(EXCHANGE_BANK).slice(0, ROUND_SIZE))
+    setDealt(deal(ROUND_SIZE))
     setSalt(newSessionSalt())
     setIdx(0)
     setScore(0)
     setAnswered(0)
     setSelected(null)
     setGameState('playing')
-  }, [])
+  }, [deal])
 
   const handleFinish = useCallback(() => {
     setGameState('finished')

@@ -9,6 +9,7 @@ import {
   type MutableRefObject,
 } from 'react'
 import { useAuthStore } from '@/store/auth-store'
+import { rememberMissed } from '@/lib/games/round-history'
 import { getGameTaxon } from '@/lib/learning-profile/taxonomy'
 import {
   CHOSEN_RE,
@@ -71,8 +72,11 @@ export function useGameRound(slug: string): GameRound {
   const record = useCallback(
     (a: AnswerReport) => {
       items.current.push(toItem(a, fallbackKind))
+      // A wrong answer comes back two rounds later, in this browser
+      // (src/lib/games/round-history.ts), signed in or not.
+      if (!a.correct) rememberMissed(slug, a.question)
     },
-    [fallbackKind],
+    [fallbackKind, slug],
   )
   const reset = useCallback(() => {
     items.current = []

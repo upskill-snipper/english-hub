@@ -10,12 +10,8 @@ import { useBoard } from '@/hooks/useBoard'
 import { getBoardConfig } from '@/lib/board/board-store'
 import { AnswerExplanation } from '@/components/games/AnswerExplanation'
 import { useGameRound } from '@/components/games/game-round'
-import {
-  BANK,
-  PARAGRAPH_BANK,
-  type Genre,
-  type Paragraph,
-} from '@/data/games/banks/paragraph-jumble'
+import { useDealer } from '@/lib/games/start-round'
+import { BANK, type Genre, type Paragraph } from '@/data/games/banks/paragraph-jumble'
 
 // ─── Data ──────────────────────────────────────────────────────────────────────
 // The paragraphs are in src/data/games/banks/paragraph-jumble.ts (moved there
@@ -70,6 +66,7 @@ export default function ParagraphJumblePage() {
   const [checked, setChecked] = useState(false)
   const [wasCorrect, setWasCorrect] = useState(false)
   const round = useGameRound('paragraph-jumble')
+  const deal = useDealer(BANK)
 
   const current = rounds[rIdx] ?? null
 
@@ -80,7 +77,7 @@ export default function ParagraphJumblePage() {
   }, [])
 
   const handleStart = useCallback(() => {
-    const picked = shuffle(PARAGRAPH_BANK).slice(0, ROUND_LENGTH)
+    const picked = deal(ROUND_LENGTH)
     setRounds(picked)
     setRIdx(0)
     setScore(0)
@@ -91,7 +88,7 @@ export default function ParagraphJumblePage() {
     setChecked(false)
     setWasCorrect(false)
     setGameState('playing')
-  }, [])
+  }, [deal])
 
   const handleFinish = useCallback(() => {
     setGameState('finished')

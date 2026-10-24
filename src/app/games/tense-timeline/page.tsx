@@ -10,13 +10,8 @@ import { useBoard } from '@/hooks/useBoard'
 import { getBoardConfig } from '@/lib/board/board-store'
 import { AnswerExplanation } from '@/components/games/AnswerExplanation'
 import { useGameRound } from '@/components/games/game-round'
-import {
-  BANK,
-  SENTENCE_BANK,
-  tensesOffered,
-  type Tense,
-  type TenseItem,
-} from '@/data/games/banks/tense-timeline'
+import { useDealer } from '@/lib/games/start-round'
+import { BANK, tensesOffered, type Tense, type TenseItem } from '@/data/games/banks/tense-timeline'
 
 // ─── Data ──────────────────────────────────────────────────────────────────────
 // The sentences are in src/data/games/banks/tense-timeline.ts (moved there on
@@ -68,11 +63,12 @@ export default function TenseTimelinePage() {
   const [selected, setSelected] = useState<Tense | null>(null)
   const [feedback, setFeedback] = useState<'correct' | 'wrong' | null>(null)
   const round = useGameRound('tense-timeline')
+  const deal = useDealer(BANK)
 
   const currentQ = questions[qIdx] ?? null
 
   const handleStart = useCallback(() => {
-    const picked = shuffle(SENTENCE_BANK).slice(0, ROUND_SIZE)
+    const picked = deal(ROUND_SIZE)
     const built: Question[] = picked.map((item) => ({
       ...item,
       options: buildOptions(item),
@@ -84,7 +80,7 @@ export default function TenseTimelinePage() {
     setSelected(null)
     setFeedback(null)
     setGameState('playing')
-  }, [])
+  }, [deal])
 
   const handleFinish = useCallback(() => {
     setGameState('finished')

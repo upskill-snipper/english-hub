@@ -11,6 +11,7 @@ import { getBoardConfig } from '@/lib/board/board-store'
 import { shuffledOptionsFor, newSessionSalt } from '@/lib/quiz/shuffle'
 import { AnswerExplanation } from '@/components/games/AnswerExplanation'
 import { useGameRound } from '@/components/games/game-round'
+import { useDealer } from '@/lib/games/start-round'
 import { BANK, PATTERN_BANK, type PatternItem } from '@/data/games/banks/spelling-patterns'
 
 // ─── Data ──────────────────────────────────────────────────────────────────────
@@ -19,15 +20,6 @@ import { BANK, PATTERN_BANK, type PatternItem } from '@/data/games/banks/spellin
 // src/data/games/explanations/spelling-patterns.ts.
 
 // ─── Helpers ───────────────────────────────────────────────────────────────────
-
-function shuffle<T>(arr: T[]): T[] {
-  const a = [...arr]
-  for (let i = a.length - 1; i > 0; i--) {
-    const j = Math.floor(Math.random() * (i + 1))
-    ;[a[i], a[j]] = [a[j], a[i]]
-  }
-  return a
-}
 
 const ROUND_SIZE = 15
 const LETTERS = ['A', 'B', 'C', 'D']
@@ -64,6 +56,7 @@ export default function SpellingPatternsPage() {
   /** Minted in the start handler, not in render: newSessionSalt calls Math.random. */
   const [salt, setSalt] = useState('')
   const round = useGameRound('spelling-patterns')
+  const deal = useDealer(BANK)
 
   const current = items[idx] ?? null
 
@@ -82,7 +75,7 @@ export default function SpellingPatternsPage() {
   )
 
   const handleStart = useCallback(() => {
-    setItems(shuffle(PATTERN_BANK).slice(0, ROUND_SIZE))
+    setItems(deal(ROUND_SIZE))
     setSalt(newSessionSalt())
     setIdx(0)
     setScore(0)
@@ -90,7 +83,7 @@ export default function SpellingPatternsPage() {
     setSelected(null)
     setRevealed(false)
     setGameState('playing')
-  }, [])
+  }, [deal])
 
   const handleFinish = useCallback(() => {
     setGameState('finished')

@@ -11,6 +11,7 @@ import { getBoardConfig } from '@/lib/board/board-store'
 import { getSetTextsForBoard } from '@/lib/board/set-texts'
 import { AnswerExplanation } from '@/components/games/AnswerExplanation'
 import { useGameRound } from '@/components/games/game-round'
+import { useDealer } from '@/lib/games/start-round'
 import { BANK, QUOTE_BANK, ALL_TEXTS } from '@/data/games/banks/quote-detective'
 
 // ─── Quote Bank ───────────────────────────────────────────────────────────────
@@ -65,9 +66,12 @@ export default function QuoteDetectivePage() {
       return slug ? boardSlugs.has(slug) : false
     })
     const filtered = QUOTE_BANK.filter((q) => allowedTextLabels.includes(q.text))
-    // Need at least 3 distinct texts (for multiple-choice variety) and at least 10 quotes
+    // Need at least 3 distinct texts (for multiple-choice variety) and a full
+    // round of quotations. Below a round's worth the page used to repeat the
+    // board's quotations to reach twenty, so one quotation could be asked twice
+    // in a round (24 October 2026); such a board now plays the whole bank.
     const distinctTexts = new Set(filtered.map((q) => q.text))
-    if (filtered.length < 10 || distinctTexts.size < 3) {
+    if (filtered.length < QUESTIONS_PER_ROUND || distinctTexts.size < 3) {
       return { filteredQuotes: QUOTE_BANK, filteredTexts: ALL_TEXTS, usingFallback: true }
     }
     return { filteredQuotes: filtered, filteredTexts: allowedTextLabels, usingFallback: false }
@@ -82,6 +86,7 @@ export default function QuoteDetectivePage() {
   const [selected, setSelected] = useState<string | null>(null)
   const [showFeedback, setShowFeedback] = useState(false)
   const round = useGameRound('quote-detective')
+  const deal = useDealer(BANK)
 
   const currentQ = questions[currentIndex] ?? null
   // The question as the bank names it (BANK.key), for the record and the explanation.
@@ -90,13 +95,9 @@ export default function QuoteDetectivePage() {
     : ''
 
   const handleStart = useCallback(() => {
-    // Sample size - if filtered pool has fewer than 20 quotes, repeat the pool to reach
-    // QUESTIONS_PER_ROUND so the user still gets a full game.
-    const pool = [...filteredQuotes]
-    while (pool.length < QUESTIONS_PER_ROUND) {
-      pool.push(...filteredQuotes)
-    }
-    const shuffled = shuffle(pool).slice(0, QUESTIONS_PER_ROUND)
+    // Quotations this browser has not met first, none twice
+    // (src/lib/games/start-round.ts).
+    const shuffled = deal(QUESTIONS_PER_ROUND, { items: filteredQuotes })
     setQuestions(
       shuffled.map((q) => ({
         quote: q.quote,
@@ -109,7 +110,7 @@ export default function QuoteDetectivePage() {
     setSelected(null)
     setShowFeedback(false)
     setGameState('playing')
-  }, [filteredQuotes, filteredTexts])
+  }, [filteredQuotes, filteredTexts, deal])
 
   const handleFinish = useCallback(() => {
     setGameState('finished')

@@ -10,7 +10,8 @@ import { useBoard } from '@/hooks/useBoard'
 import { getBoardConfig } from '@/lib/board/board-store'
 import { AnswerExplanation } from '@/components/games/AnswerExplanation'
 import { useGameRound } from '@/components/games/game-round'
-import { BANK, PLURAL_BANK, type PluralWord } from '@/data/games/banks/plural-builder'
+import { useDealer } from '@/lib/games/start-round'
+import { BANK, type PluralWord } from '@/data/games/banks/plural-builder'
 
 // ─── Data ──────────────────────────────────────────────────────────────────────
 // The words are in src/data/games/banks/plural-builder.ts (moved there on
@@ -18,15 +19,6 @@ import { BANK, PLURAL_BANK, type PluralWord } from '@/data/games/banks/plural-bu
 // src/data/games/explanations/plural-builder.ts.
 
 // ─── Helpers ───────────────────────────────────────────────────────────────────
-
-function shuffle<T>(arr: T[]): T[] {
-  const a = [...arr]
-  for (let i = a.length - 1; i > 0; i--) {
-    const j = Math.floor(Math.random() * (i + 1))
-    ;[a[i], a[j]] = [a[j], a[i]]
-  }
-  return a
-}
 
 const ROUND_SIZE = 15
 
@@ -44,6 +36,7 @@ export default function PluralBuilderPage() {
   const [input, setInput] = useState('')
   const [feedback, setFeedback] = useState<'correct' | 'wrong' | null>(null)
   const round = useGameRound('plural-builder')
+  const deal = useDealer(BANK)
   const inputRef = useRef<HTMLInputElement>(null)
 
   const currentWord = words[wIdx] ?? null
@@ -56,14 +49,14 @@ export default function PluralBuilderPage() {
   }, [wIdx, gameState, feedback])
 
   const handleStart = useCallback(() => {
-    setWords(shuffle(PLURAL_BANK).slice(0, ROUND_SIZE))
+    setWords(deal(ROUND_SIZE))
     setWIdx(0)
     setScore(0)
     setTotalAnswered(0)
     setInput('')
     setFeedback(null)
     setGameState('playing')
-  }, [])
+  }, [deal])
 
   const handleFinish = useCallback(() => {
     setGameState('finished')

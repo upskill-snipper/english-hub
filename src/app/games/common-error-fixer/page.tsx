@@ -11,7 +11,8 @@ import { getBoardConfig } from '@/lib/board/board-store'
 import { shuffledOptionsFor, newSessionSalt } from '@/lib/quiz/shuffle'
 import { AnswerExplanation } from '@/components/games/AnswerExplanation'
 import { useGameRound } from '@/components/games/game-round'
-import { BANK, ERROR_BANK, type ErrorItem } from '@/data/games/banks/common-error-fixer'
+import { useDealer } from '@/lib/games/start-round'
+import { BANK, type ErrorItem } from '@/data/games/banks/common-error-fixer'
 
 // ─── Data ──────────────────────────────────────────────────────────────────────
 
@@ -22,15 +23,6 @@ import { BANK, ERROR_BANK, type ErrorItem } from '@/data/games/banks/common-erro
 // ─── Helpers ───────────────────────────────────────────────────────────────────
 
 const ROUND_SIZE = 15
-
-function shuffle<T>(arr: T[]): T[] {
-  const a = [...arr]
-  for (let i = a.length - 1; i > 0; i--) {
-    const j = Math.floor(Math.random() * (i + 1))
-    ;[a[i], a[j]] = [a[j], a[i]]
-  }
-  return a
-}
 
 // ─── Component ─────────────────────────────────────────────────────────────────
 
@@ -47,6 +39,7 @@ export default function CommonErrorFixerPage() {
   const [feedback, setFeedback] = useState<'correct' | 'wrong' | null>(null)
   const [sessionSalt, setSessionSalt] = useState('')
   const round = useGameRound('common-error-fixer')
+  const deal = useDealer(BANK)
 
   const currentItem = items[qIdx] ?? null
 
@@ -81,14 +74,14 @@ export default function CommonErrorFixerPage() {
     // Minted here rather than during render: newSessionSalt calls Math.random,
     // which would not agree between the server and client paint.
     setSessionSalt(newSessionSalt())
-    setItems(shuffle(ERROR_BANK).slice(0, ROUND_SIZE))
+    setItems(deal(ROUND_SIZE))
     setQIdx(0)
     setScore(0)
     setTotalAnswered(0)
     setSelected(null)
     setFeedback(null)
     setGameState('playing')
-  }, [])
+  }, [deal])
 
   const handleFinish = useCallback(() => {
     setGameState('finished')

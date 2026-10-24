@@ -11,6 +11,7 @@ import { getBoardConfig } from '@/lib/board/board-store'
 import { getSetTextsForBoard } from '@/lib/board/set-texts'
 import { AnswerExplanation } from '@/components/games/AnswerExplanation'
 import { useGameRound } from '@/components/games/game-round'
+import { useDealer } from '@/lib/games/start-round'
 import { themeRoundScore } from '@/lib/games/scoring'
 import { BANK, THEME_DATA, ALL_TEXTS, type ThemeRound } from '@/data/games/banks/theme-matcher'
 
@@ -95,14 +96,29 @@ export default function ThemeMatcherPage() {
   const [submitted, setSubmitted] = useState(false)
   // Records each answered theme for the student's account (GameShell sends it).
   const round = useGameRound('theme-matcher')
+  const deal = useDealer(BANK)
 
   const currentRound = rounds[roundIdx] ?? null
 
-  const textOptions = useMemo(() => shuffle(allowedTexts), [roundIdx, gameState, allowedTexts])
+  /**
+   * A board whose texts carry too few themes for a full game plays every theme
+   * against every text. Until 24 October 2026 only the themes fell back: the
+   * grid kept the board's texts, so on the International A level board (six
+   * texts) a theme's right texts were mostly not in the grid, 64 per cent of
+   * the points could not be scored, and "Fate vs Free will" had no right text
+   * to pick at all, while Submit needs one. The grid now falls back with them.
+   */
+  const usingAll = filteredThemeData.length < TOTAL_ROUNDS
+  const gridTexts = useMemo(
+    () => (usingAll ? ([...ALL_TEXTS] as string[]) : allowedTexts),
+    [usingAll, allowedTexts],
+  )
+
+  const textOptions = useMemo(() => shuffle(gridTexts), [roundIdx, gameState, gridTexts])
 
   const handleStart = useCallback(() => {
-    const pool = filteredThemeData.length >= TOTAL_ROUNDS ? filteredThemeData : THEME_DATA
-    const shuffled = shuffle(pool).slice(0, TOTAL_ROUNDS)
+    // Themes this browser has not met first (src/lib/games/start-round.ts).
+    const shuffled = deal(TOTAL_ROUNDS, { items: usingAll ? THEME_DATA : filteredThemeData })
     setRounds(shuffled)
     setRoundIdx(0)
     setScore(0)
@@ -110,7 +126,7 @@ export default function ThemeMatcherPage() {
     setSelected(new Set())
     setSubmitted(false)
     setGameState('playing')
-  }, [filteredThemeData])
+  }, [filteredThemeData, usingAll, deal])
 
   const handleFinish = useCallback(() => {
     setGameState('finished')
@@ -146,7 +162,7 @@ export default function ThemeMatcherPage() {
     const correctSet = new Set(currentRound.correctTexts)
     round.record({
       question: BANK.key(currentRound),
-      correct: allowedTexts.every((t) => correctSet.has(t) === selected.has(t)),
+      correct: gridTexts.every((t) => correctSet.has(t) === selected.has(t)),
       tag: currentRound.theme,
     })
   }
@@ -253,7 +269,7 @@ export default function ThemeMatcherPage() {
                 <AnswerExplanation
                   game="theme-matcher"
                   question={BANK.key(currentRound)}
-                  correct={allowedTexts.every(
+                  correct={gridTexts.every(
                     (t) => currentRound.correctTexts.includes(t) === selected.has(t),
                   )}
                 />

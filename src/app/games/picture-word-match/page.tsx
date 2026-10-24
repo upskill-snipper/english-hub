@@ -10,7 +10,8 @@ import { useBoard } from '@/hooks/useBoard'
 import { getBoardConfig } from '@/lib/board/board-store'
 import { AnswerExplanation } from '@/components/games/AnswerExplanation'
 import { useGameRound } from '@/components/games/game-round'
-import { BANK, PICTURE_BANK, type PictureItem } from '@/data/games/banks/picture-word-match'
+import { useDealer } from '@/lib/games/start-round'
+import { BANK, type PictureItem } from '@/data/games/banks/picture-word-match'
 
 // ─── Data ──────────────────────────────────────────────────────────────────────
 
@@ -57,11 +58,12 @@ export default function PictureWordMatchPage() {
   const [feedback, setFeedback] = useState<'correct' | 'wrong' | null>(null)
   const [praise, setPraise] = useState('')
   const round = useGameRound('picture-word-match')
+  const deal = useDealer(BANK)
 
   const currentQuestion = questions[qIdx] ?? null
 
   const handleStart = useCallback(() => {
-    const picked = shuffle(PICTURE_BANK).slice(0, QUESTIONS_PER_ROUND)
+    const picked = deal(QUESTIONS_PER_ROUND)
     setQuestions(picked.map(buildQuestion))
     setQIdx(0)
     setScore(0)
@@ -69,7 +71,7 @@ export default function PictureWordMatchPage() {
     setFeedback(null)
     setPraise('')
     setGameState('playing')
-  }, [])
+  }, [deal])
 
   const handleFinish = useCallback(() => {
     setGameState('finished')

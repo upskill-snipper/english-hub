@@ -852,4 +852,7 @@ export const BANK: GameBank<LabSeed> = {
   // question, so there is no fixed list of options.
   options: () => null,
   tag: (q) => `${q.mode} ${q.answer}`,
+  // One root once a round: "happy" asked as unhappy, happiness and happily in
+  // one round answers itself (24 October 2026).
+  facts: (q) => [q.root],
 }

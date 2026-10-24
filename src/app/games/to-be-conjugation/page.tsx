@@ -10,13 +10,8 @@ import { useBoard } from '@/hooks/useBoard'
 import { getBoardConfig } from '@/lib/board/board-store'
 import { AnswerExplanation } from '@/components/games/AnswerExplanation'
 import { useGameRound } from '@/components/games/game-round'
-import {
-  BANK,
-  VERB_BANK,
-  optionSet,
-  type Tense,
-  type VerbItem,
-} from '@/data/games/banks/to-be-conjugation'
+import { useDealer } from '@/lib/games/start-round'
+import { BANK, optionSet, type Tense, type VerbItem } from '@/data/games/banks/to-be-conjugation'
 
 // ─── Data ──────────────────────────────────────────────────────────────────────
 // The sentences are in src/data/games/banks/to-be-conjugation.ts (moved there on
@@ -66,11 +61,12 @@ export default function ToBeConjugationPage() {
   const [selected, setSelected] = useState<string | null>(null)
   const [feedback, setFeedback] = useState<'correct' | 'wrong' | null>(null)
   const round = useGameRound('to-be-conjugation')
+  const deal = useDealer(BANK)
 
   const current = items[idx] ?? null
 
   const handleStart = useCallback(() => {
-    const dealt = shuffle(VERB_BANK).slice(0, ROUND_SIZE)
+    const dealt = deal(ROUND_SIZE)
     setItems(dealt)
     setOptions(dealt.length > 0 ? optionsFor(dealt[0]) : [])
     setIdx(0)
@@ -79,7 +75,7 @@ export default function ToBeConjugationPage() {
     setSelected(null)
     setFeedback(null)
     setGameState('playing')
-  }, [])
+  }, [deal])
 
   const handleFinish = useCallback(() => {
     setGameState('finished')

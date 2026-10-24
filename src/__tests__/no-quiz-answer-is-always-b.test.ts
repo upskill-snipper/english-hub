@@ -531,10 +531,10 @@ const KEEPS_ITS_OWN_ORDER: Record<string, string> = {
  * you have seen what it shuffles.
  */
 const SHUFFLED_WHEN_DEALT: Record<string, string[]> = {
-  'src/app/games/classroom-objects/page.tsx': [
-    'options: shuffle(PREP_OPTIONS)',
-    'options: shuffle([item.word, ...item.distractors])',
-  ],
+  // Since 24 October 2026 both kinds are dealt from the bank's questions
+  // (src/lib/games/start-round.ts), whose options are the word and its
+  // distractors, or the four places, and shuffled as dealt.
+  'src/app/games/classroom-objects/page.tsx': ['options: shuffle(q.options)'],
   'src/app/games/collocations-challenge/page.tsx': ['picked.map((q) => shuffle(q.options))'],
   'src/app/games/comparatives-superlatives/page.tsx': ['return shuffle([answer, ...picked])'],
   'src/app/games/days-months-seasons/page.tsx': ['options: shuffle(q.options)'],

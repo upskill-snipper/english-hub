@@ -10,8 +10,8 @@ import { useBoard } from '@/hooks/useBoard'
 import { getBoardConfig } from '@/lib/board/board-store'
 import { AnswerExplanation } from '@/components/games/AnswerExplanation'
 import { useGameRound } from '@/components/games/game-round'
+import { useDealer } from '@/lib/games/start-round'
 import {
-  ARTICLE_BANK,
   BANK,
   OPTIONS,
   OPTION_LABELS,
@@ -27,15 +27,6 @@ import {
 const ROUND_SIZE = 15
 
 // ─── Helpers ───────────────────────────────────────────────────────────────────
-
-function shuffle<T>(arr: T[]): T[] {
-  const a = [...arr]
-  for (let i = a.length - 1; i > 0; i--) {
-    const j = Math.floor(Math.random() * (i + 1))
-    ;[a[i], a[j]] = [a[j], a[i]]
-  }
-  return a
-}
 
 function renderSentence(sentence: string, filled: string | null) {
   const parts = sentence.split('___')
@@ -71,18 +62,19 @@ export default function ArticleAAnThePage() {
   const [selected, setSelected] = useState<Article | null>(null)
   const [feedback, setFeedback] = useState<'correct' | 'wrong' | null>(null)
   const round = useGameRound('article-a-an-the')
+  const deal = useDealer(BANK)
 
   const current = items[idx] ?? null
 
   const handleStart = useCallback(() => {
-    setItems(shuffle(ARTICLE_BANK).slice(0, ROUND_SIZE))
+    setItems(deal(ROUND_SIZE))
     setIdx(0)
     setScore(0)
     setTotalAnswered(0)
     setSelected(null)
     setFeedback(null)
     setGameState('playing')
-  }, [])
+  }, [deal])
 
   const handleFinish = useCallback(() => {
     setGameState('finished')

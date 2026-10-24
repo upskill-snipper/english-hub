@@ -10,7 +10,8 @@ import { useBoard } from '@/hooks/useBoard'
 import { getBoardConfig } from '@/lib/board/board-store'
 import { AnswerExplanation } from '@/components/games/AnswerExplanation'
 import { useGameRound } from '@/components/games/game-round'
-import { BANK, PHRASAL_BANK, type PhrasalVerb } from '@/data/games/banks/phrasal-verbs-match'
+import { useDealer } from '@/lib/games/start-round'
+import { BANK, type PhrasalVerb } from '@/data/games/banks/phrasal-verbs-match'
 
 // ─── Data ──────────────────────────────────────────────────────────────────────
 // The questions are in src/data/games/banks/phrasal-verbs-match.ts (moved there on
@@ -43,6 +44,7 @@ export default function PhrasalVerbsMatchPage() {
   const [totalAnswered, setTotalAnswered] = useState(0)
   const [selected, setSelected] = useState<string | null>(null)
   const round = useGameRound('phrasal-verbs-match')
+  const deal = useDealer(BANK)
 
   const currentQuestion = questions[qIdx] ?? null
 
@@ -53,13 +55,13 @@ export default function PhrasalVerbsMatchPage() {
   }, [currentQuestion])
 
   const handleStart = useCallback(() => {
-    setQuestions(shuffle(PHRASAL_BANK).slice(0, ROUND_SIZE))
+    setQuestions(deal(ROUND_SIZE))
     setQIdx(0)
     setScore(0)
     setTotalAnswered(0)
     setSelected(null)
     setGameState('playing')
-  }, [])
+  }, [deal])
 
   const handleFinish = useCallback(() => {
     setGameState('finished')

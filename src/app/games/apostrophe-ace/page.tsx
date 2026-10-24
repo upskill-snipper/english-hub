@@ -11,7 +11,8 @@ import { getBoardConfig } from '@/lib/board/board-store'
 import { shuffledOptionsFor, newSessionSalt } from '@/lib/quiz/shuffle'
 import { AnswerExplanation } from '@/components/games/AnswerExplanation'
 import { useGameRound } from '@/components/games/game-round'
-import { BANK, QUESTION_BANK, type ApostropheQuestion } from '@/data/games/banks/apostrophe-ace'
+import { useDealer } from '@/lib/games/start-round'
+import { BANK, type ApostropheQuestion } from '@/data/games/banks/apostrophe-ace'
 
 // ─── Data ──────────────────────────────────────────────────────────────────────
 // The questions are in src/data/games/banks/apostrophe-ace.ts (moved there on
@@ -19,15 +20,6 @@ import { BANK, QUESTION_BANK, type ApostropheQuestion } from '@/data/games/banks
 // src/data/games/explanations/apostrophe-ace.ts.
 
 // ─── Helpers ───────────────────────────────────────────────────────────────────
-
-function shuffle<T>(arr: T[]): T[] {
-  const a = [...arr]
-  for (let i = a.length - 1; i > 0; i--) {
-    const j = Math.floor(Math.random() * (i + 1))
-    ;[a[i], a[j]] = [a[j], a[i]]
-  }
-  return a
-}
 
 const ROUND_SIZE = 15
 
@@ -56,6 +48,7 @@ export default function ApostropheAcePage() {
   const [selected, setSelected] = useState<number | null>(null)
   const [sessionSalt, setSessionSalt] = useState('')
   const round = useGameRound('apostrophe-ace')
+  const deal = useDealer(BANK)
 
   const currentQuestion = questions[qIdx] ?? null
   const answered = selected !== null
@@ -88,13 +81,13 @@ export default function ApostropheAcePage() {
     // Minted here rather than during render: newSessionSalt calls Math.random,
     // which would not agree between the server and client paint.
     setSessionSalt(newSessionSalt())
-    setQuestions(shuffle(QUESTION_BANK).slice(0, ROUND_SIZE))
+    setQuestions(deal(ROUND_SIZE))
     setQIdx(0)
     setScore(0)
     setTotalAnswered(0)
     setSelected(null)
     setGameState('playing')
-  }, [])
+  }, [deal])
 
   const handleFinish = useCallback(() => {
     setGameState('finished')

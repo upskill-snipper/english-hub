@@ -11,6 +11,7 @@ import { getBoardConfig } from '@/lib/board/board-store'
 import { shuffledOptionsFor, newSessionSalt } from '@/lib/quiz/shuffle'
 import { AnswerExplanation } from '@/components/games/AnswerExplanation'
 import { useGameRound } from '@/components/games/game-round'
+import { useDealer } from '@/lib/games/start-round'
 import { BANK, WORD_BANK, type TrickyWord } from '@/data/games/banks/tricky-word-spelling'
 
 // ─── Data ──────────────────────────────────────────────────────────────────────
@@ -25,15 +26,6 @@ const TIME_LIMIT = 90
 const PROMPT = 'Which spelling is correct?'
 
 // ─── Helpers ───────────────────────────────────────────────────────────────────
-
-function shuffle<T>(arr: T[]): T[] {
-  const a = [...arr]
-  for (let i = a.length - 1; i > 0; i--) {
-    const j = Math.floor(Math.random() * (i + 1))
-    ;[a[i], a[j]] = [a[j], a[i]]
-  }
-  return a
-}
 
 // ─── Component ─────────────────────────────────────────────────────────────────
 
@@ -57,6 +49,7 @@ export default function TrickyWordSpellingPage() {
   const [gameState, setGameState] = useState<GameState>('idle')
   const [words, setWords] = useState<TrickyWord[]>([])
   const round = useGameRound('tricky-word-spelling')
+  const deal = useDealer(BANK)
   const [qIdx, setQIdx] = useState(0)
   const [score, setScore] = useState(0)
   const [answered, setAnswered] = useState(0)
@@ -82,14 +75,14 @@ export default function TrickyWordSpellingPage() {
   )
 
   const handleStart = useCallback(() => {
-    setWords(shuffle(WORD_BANK).slice(0, ROUND_SIZE))
+    setWords(deal(ROUND_SIZE))
     setSalt(newSessionSalt())
     setQIdx(0)
     setScore(0)
     setAnswered(0)
     setPicked(null)
     setGameState('playing')
-  }, [])
+  }, [deal])
 
   const handleFinish = useCallback(() => {
     setGameState('finished')

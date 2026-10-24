@@ -11,6 +11,7 @@ import { getBoardConfig } from '@/lib/board/board-store'
 import { shuffledOptionsFor, newSessionSalt } from '@/lib/quiz/shuffle'
 import { AnswerExplanation } from '@/components/games/AnswerExplanation'
 import { useGameRound } from '@/components/games/game-round'
+import { dealSetsNow } from '@/lib/games/start-round'
 import {
   BANK,
   PASSAGE_BANK,
@@ -34,13 +35,10 @@ const TYPE_BADGE: Record<QuestionType, { label: string; color: string }> = {
 
 const PASSAGES_PER_ROUND = 6
 
-function shuffle<T>(arr: T[]): T[] {
-  const a = [...arr]
-  for (let i = a.length - 1; i > 0; i--) {
-    const j = Math.floor(Math.random() * (i + 1))
-    ;[a[i], a[j]] = [a[j], a[i]]
-  }
-  return a
+/** A passage as the dealer sees it: its title, and its questions as the bank keys them. */
+const PASSAGE_SET = {
+  key: (p: Passage) => p.title,
+  items: (p: Passage) => p.questions.map((question) => ({ passage: p, question })),
 }
 
 // ─── Page ─────────────────────────────────────────────────────────────────────
@@ -111,7 +109,8 @@ export default function ComprehensionChallengePage() {
   }, [currentPassage, currentQuestion, sessionSalt])
 
   const handleStart = useCallback(() => {
-    const shuffled = shuffle(PASSAGE_BANK).slice(0, PASSAGES_PER_ROUND)
+    // Passages this browser has not read come first (src/lib/games/start-round.ts).
+    const shuffled = dealSetsNow(BANK, PASSAGE_BANK, PASSAGES_PER_ROUND, PASSAGE_SET)
     // Minted here, not during render: `newSessionSalt` calls Math.random(), and
     // a render-time call in a server-rendered client component is a hydration
     // mismatch waiting to happen. Options only paint once this has run.

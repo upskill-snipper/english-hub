@@ -443,4 +443,6 @@ export const BANK: GameBank<SentenceItem> = {
   // The student builds the answer from tiles: there are no options to choose from.
   options: () => null,
   tag: (q) => q.type,
+  // The round climbs from simple to compound to complex (24 October 2026).
+  tier: (q) => (q.type === 'simple' ? 1 : q.type === 'compound' ? 2 : 3),
 }

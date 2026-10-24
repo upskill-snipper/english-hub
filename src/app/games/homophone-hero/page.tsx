@@ -10,7 +10,8 @@ import { useBoard } from '@/hooks/useBoard'
 import { getBoardConfig } from '@/lib/board/board-store'
 import { AnswerExplanation } from '@/components/games/AnswerExplanation'
 import { useGameRound } from '@/components/games/game-round'
-import { BANK, HOMOPHONE_BANK, type HomophoneItem } from '@/data/games/banks/homophone-hero'
+import { useDealer } from '@/lib/games/start-round'
+import { BANK, type HomophoneItem } from '@/data/games/banks/homophone-hero'
 
 // ─── Data ──────────────────────────────────────────────────────────────────────
 // The questions are in src/data/games/banks/homophone-hero.ts (moved there on
@@ -65,6 +66,7 @@ export default function HomophoneHeroPage() {
   const [selected, setSelected] = useState<string | null>(null)
   const [feedback, setFeedback] = useState<'correct' | 'wrong' | null>(null)
   const round = useGameRound('homophone-hero')
+  const deal = useDealer(BANK)
 
   const current = items[idx] ?? null
 
@@ -74,7 +76,7 @@ export default function HomophoneHeroPage() {
   }, [idx, items])
 
   const handleStart = useCallback(() => {
-    const dealt = shuffle(HOMOPHONE_BANK).slice(0, ROUND_SIZE)
+    const dealt = deal(ROUND_SIZE)
     setItems(dealt)
     setIdx(0)
     setScore(0)
@@ -82,7 +84,7 @@ export default function HomophoneHeroPage() {
     setSelected(null)
     setFeedback(null)
     setGameState('playing')
-  }, [])
+  }, [deal])
 
   const handleFinish = useCallback(() => {
     setGameState('finished')

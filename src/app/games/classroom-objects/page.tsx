@@ -10,14 +10,8 @@ import { useBoard } from '@/hooks/useBoard'
 import { getBoardConfig } from '@/lib/board/board-store'
 import { AnswerExplanation } from '@/components/games/AnswerExplanation'
 import { useGameRound } from '@/components/games/game-round'
-import {
-  BANK,
-  ITEM_BANK,
-  NAME_PROMPT,
-  PREP_OPTIONS,
-  whereQuestion,
-  type ClassroomQuestion,
-} from '@/data/games/banks/classroom-objects'
+import { useDealer, type RoundOptions } from '@/lib/games/start-round'
+import { BANK, type ClassroomQuestion } from '@/data/games/banks/classroom-objects'
 
 // ─── Data ──────────────────────────────────────────────────────────────────────
 
@@ -49,22 +43,18 @@ const QUESTIONS_PER_ROUND = 15
 
 type Question = ClassroomQuestion
 
-function buildQuestions(): Question[] {
-  const pool = shuffle(ITEM_BANK).slice(0, QUESTIONS_PER_ROUND)
-  return pool.map((item, idx) => {
-    // Every third question asks "Where is it?" for an item that has a sentence for one.
-    const where = idx % 3 === 1 ? whereQuestion(item) : null
-    if (where) {
-      return { ...where, options: shuffle(PREP_OPTIONS) }
-    }
-    return {
-      mode: 'name' as const,
-      item,
-      prompt: NAME_PROMPT,
-      options: shuffle([item.word, ...item.distractors]),
-      answer: item.word,
-    }
-  })
+/**
+ * A round: ten picture questions and five "Where is it?" questions, as the
+ * page has always asked, never both kinds about one thing (the bank's facts),
+ * dealt by useDealer (src/lib/games/start-round.ts) so a round brings what
+ * this browser has not met (24 October 2026). Options in a new order each time.
+ */
+function buildQuestions(
+  deal: (size: number, o?: RoundOptions<Question>) => Question[],
+): Question[] {
+  return deal(QUESTIONS_PER_ROUND, {
+    quota: { of: (q) => q.mode, counts: { name: 10, preposition: 5 } },
+  }).map((q) => ({ ...q, options: shuffle(q.options) }))
 }
 
 // ─── Component ─────────────────────────────────────────────────────────────────
@@ -81,6 +71,7 @@ export default function ClassroomObjectsPage() {
   const [selected, setSelected] = useState<string | null>(null)
   const [feedback, setFeedback] = useState<'correct' | 'wrong' | null>(null)
   const round = useGameRound('classroom-objects')
+  const deal = useDealer(BANK)
 
   const currentQ = questions[qIdx] ?? null
 
@@ -106,14 +97,14 @@ export default function ClassroomObjectsPage() {
   }, [qIdx, gameState, feedback]) // eslint-disable-line react-hooks/exhaustive-deps
 
   const handleStart = useCallback(() => {
-    setQuestions(buildQuestions())
+    setQuestions(buildQuestions(deal))
     setQIdx(0)
     setScore(0)
     setTotalAnswered(0)
     setSelected(null)
     setFeedback(null)
     setGameState('playing')
-  }, [])
+  }, [deal])
 
   const handleFinish = useCallback(() => {
     setGameState('finished')

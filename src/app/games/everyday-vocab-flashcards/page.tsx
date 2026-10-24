@@ -10,6 +10,7 @@ import { useBoard } from '@/hooks/useBoard'
 import { getBoardConfig } from '@/lib/board/board-store'
 import { AnswerExplanation } from '@/components/games/AnswerExplanation'
 import { useGameRound } from '@/components/games/game-round'
+import { useDealer } from '@/lib/games/start-round'
 import {
   BANK,
   VOCAB_BANK,
@@ -26,15 +27,6 @@ import {
 const ROUND_SIZE = 14
 
 // ─── Helpers ───────────────────────────────────────────────────────────────────
-
-function shuffle<T>(arr: T[]): T[] {
-  const a = [...arr]
-  for (let i = a.length - 1; i > 0; i--) {
-    const j = Math.floor(Math.random() * (i + 1))
-    ;[a[i], a[j]] = [a[j], a[i]]
-  }
-  return a
-}
 
 function speak(text: string) {
   if (typeof window === 'undefined' || !window.speechSynthesis) return
@@ -67,6 +59,7 @@ export default function EverydayVocabFlashcardsPage() {
   const [seenWords, setSeenWords] = useState<Set<string>>(new Set())
   const [feedback, setFeedback] = useState<'known' | 'unknown' | null>(null)
   const round = useGameRound('everyday-vocab-flashcards')
+  const deal = useDealer(BANK)
   // The words already recorded this round. A card the student did not know comes
   // round again, and only its first mark is recorded, because a stored result
   // means right the first time (src/lib/game-results/types.ts).
@@ -83,7 +76,7 @@ export default function EverydayVocabFlashcardsPage() {
   const score = knownWords.size
 
   const handleStart = useCallback(() => {
-    const selected = shuffle(VOCAB_BANK).slice(0, roundTotal)
+    const selected = deal(roundTotal)
     setQueue(selected)
     setFlipped(false)
     setKnownWords(new Set())
@@ -91,7 +84,7 @@ export default function EverydayVocabFlashcardsPage() {
     setFeedback(null)
     recorded.current = new Set()
     setGameState('playing')
-  }, [roundTotal])
+  }, [roundTotal, deal])
 
   const handleFinish = useCallback(() => {
     setGameState('finished')

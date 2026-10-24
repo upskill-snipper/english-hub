@@ -10,6 +10,7 @@ import { useBoard } from '@/hooks/useBoard'
 import { getBoardConfig } from '@/lib/board/board-store'
 import { AnswerExplanation } from '@/components/games/AnswerExplanation'
 import { useGameRound } from '@/components/games/game-round'
+import { useDealer } from '@/lib/games/start-round'
 import { BANK, VOCAB_BANK, type VocabWord } from '@/data/games/banks/vocabulary-builder'
 
 // ─── Data ──────────────────────────────────────────────────────────────────────
@@ -65,6 +66,7 @@ export default function VocabularyBuilderPage() {
   const [totalAnswered, setTotalAnswered] = useState(0)
   const [answered, setAnswered] = useState<string | null>(null)
   const round = useGameRound('vocabulary-builder')
+  const deal = useDealer(BANK)
 
   // Spaced repetition: track wrong words to re-queue
   const wrongWordsRef = useRef<VocabWord[]>([])
@@ -84,7 +86,7 @@ export default function VocabularyBuilderPage() {
     if (process.env.NODE_ENV !== 'production') {
       VOCAB_BANK.forEach(assertBalancedOptions)
     }
-    const shuffled = shuffle(VOCAB_BANK).slice(0, QUESTIONS_PER_ROUND)
+    const shuffled = deal(QUESTIONS_PER_ROUND)
     setQueue(shuffled)
     setQIdx(0)
     setScore(0)
@@ -94,7 +96,7 @@ export default function VocabularyBuilderPage() {
     masteredCountRef.current = 0
     learningCountRef.current = 0
     setGameState('playing')
-  }, [])
+  }, [deal])
 
   const handleFinish = useCallback(() => {
     setGameState('finished')
