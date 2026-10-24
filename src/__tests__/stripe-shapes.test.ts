@@ -1,6 +1,8 @@
 import { describe, it, expect } from 'vitest'
 import type Stripe from 'stripe'
 import {
+  chargeInvoiceId,
+  idOf,
   invoiceSubscriptionId,
   subscriptionPeriodEnd,
   subscriptionPeriodStart,
@@ -116,5 +118,46 @@ describe('invoiceSubscriptionId', () => {
   it('never returns an empty string as an id', () => {
     expect(invoiceSubscriptionId(invoice({ subscription: '' }))).toBeNull()
     expect(invoiceSubscriptionId(invoice({ subscription: {} }))).toBeNull()
+  })
+})
+
+describe('chargeInvoiceId', () => {
+  function charge(shape: Record<string, unknown>): Stripe.Charge {
+    return { id: 'ch_1', object: 'charge', ...shape } as unknown as Stripe.Charge
+  }
+
+  it('reads the old-shape field as a string', () => {
+    expect(chargeInvoiceId(charge({ invoice: 'in_old' }))).toBe('in_old')
+  })
+
+  it('reads the old-shape field when expanded to an object', () => {
+    expect(chargeInvoiceId(charge({ invoice: { id: 'in_old' } }))).toBe('in_old')
+  })
+
+  it('is null when the charge carries no invoice field, which is every clover payload', () => {
+    // The caller then asks Stripe by payment intent; null is "not here", not
+    // "no invoice".
+    expect(chargeInvoiceId(charge({ payment_intent: 'pi_1' }))).toBeNull()
+    expect(chargeInvoiceId(charge({ invoice: null }))).toBeNull()
+  })
+
+  it('never returns an empty string as an id', () => {
+    expect(chargeInvoiceId(charge({ invoice: '' }))).toBeNull()
+    expect(chargeInvoiceId(charge({ invoice: {} }))).toBeNull()
+  })
+})
+
+describe('idOf', () => {
+  it('reads a string id and an expanded object alike', () => {
+    expect(idOf('pi_1')).toBe('pi_1')
+    expect(idOf({ id: 'pi_1', object: 'payment_intent' })).toBe('pi_1')
+  })
+
+  it('is null for nothing, an empty string, a number and an object without an id', () => {
+    expect(idOf(null)).toBeNull()
+    expect(idOf(undefined)).toBeNull()
+    expect(idOf('')).toBeNull()
+    expect(idOf(42)).toBeNull()
+    expect(idOf({ object: 'invoice' })).toBeNull()
   })
 })

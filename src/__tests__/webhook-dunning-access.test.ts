@@ -118,6 +118,23 @@ function subscription(status: Stripe.Subscription.Status): Stripe.Subscription {
 }
 
 function failedInvoice(shape: Shape): Stripe.Invoice {
+  // Line items in the shape's own form (InvoiceLineItems.d.ts:81, :272-293);
+  // a clover fixture with an old-shape line proved nothing about the clover
+  // read in pricesOnInvoice.
+  const lines =
+    shape === 'old'
+      ? { data: [{ price: { id: PRICE } }] }
+      : {
+          data: [
+            {
+              pricing: {
+                type: 'price_details',
+                price_details: { price: PRICE, product: 'prod_1' },
+                unit_amount_decimal: '399',
+              },
+            },
+          ],
+        }
   return {
     id: 'in_1',
     object: 'invoice',
@@ -125,7 +142,7 @@ function failedInvoice(shape: Shape): Stripe.Invoice {
     amount_due: 399,
     amount_paid: 0,
     currency: 'gbp',
-    lines: { data: [{ price: { id: PRICE } }] },
+    lines,
     ...(shape === 'old'
       ? { subscription: 'sub_1' }
       : {
@@ -134,11 +151,12 @@ function failedInvoice(shape: Shape): Stripe.Invoice {
   } as unknown as Stripe.Invoice
 }
 
-function makeEvent(type: string, data: unknown): Stripe.Event {
+/** The event, labelled with the API version whose shape the fixture is in. */
+function makeEvent(type: string, data: unknown, shape: Shape = 'clover'): Stripe.Event {
   return {
     id: `evt_${Math.random().toString(36).slice(2)}`,
     object: 'event',
-    api_version: '2023-10-16',
+    api_version: shape === 'old' ? '2023-10-16' : '2026-02-25.clover',
     created: Math.floor(Date.now() / 1000),
     type,
     data: { object: data },
@@ -195,13 +213,13 @@ const emailSent = () =>
 
 describe.each<Shape>(['old', 'clover'])('invoice.payment_failed (%s shape)', (shape) => {
   it('does not touch the web entitlement', async () => {
-    const res = await post(makeEvent('invoice.payment_failed', failedInvoice(shape)))
+    const res = await post(makeEvent('invoice.payment_failed', failedInvoice(shape), shape))
     expect(res.status).toBe(200)
     expect(statusWrites()).toEqual([])
   })
 
   it('still tells the customer, and the email is now true about interruption', async () => {
-    await post(makeEvent('invoice.payment_failed', failedInvoice(shape)))
+    await post(makeEvent('invoice.payment_failed', failedInvoice(shape), shape))
     expect(emailSent()).toBe(true)
   })
 })

@@ -150,6 +150,27 @@ function invoice(
               }
             : null,
         }
+  // The line items in the shape's own form. Before clover a line carries
+  // `price` (a Price object); under clover it carries `pricing.price_details`
+  // with the price as a string id and the product as a bare id
+  // (InvoiceLineItems.d.ts:81, :272-293). Until 23 October 2026 the clover
+  // fixture carried an old-shape line, so the clover read of pricesOnInvoice -
+  // which decides whether the customer is told their payment failed - was
+  // never exercised.
+  const lines =
+    shape === 'old'
+      ? { data: [{ price: { id: PRICE } }] }
+      : {
+          data: [
+            {
+              pricing: {
+                type: 'price_details',
+                price_details: { price: PRICE, product: 'prod_1' },
+                unit_amount_decimal: '399',
+              },
+            },
+          ],
+        }
   return {
     id: 'in_1',
     object: 'invoice',
@@ -157,17 +178,18 @@ function invoice(
     amount_due: 399,
     amount_paid: 399,
     currency: 'gbp',
-    lines: { data: [{ price: { id: PRICE } }] },
+    lines,
     ...naming,
     ...over,
   } as unknown as Stripe.Invoice
 }
 
-function makeEvent(type: string, data: unknown): Stripe.Event {
+/** The event, labelled with the API version whose shape the fixture is in. */
+function makeEvent(type: string, data: unknown, shape: Shape = 'old'): Stripe.Event {
   return {
     id: `evt_${Math.random().toString(36).slice(2)}`,
     object: 'event',
-    api_version: '2023-10-16',
+    api_version: shape === 'old' ? '2023-10-16' : '2026-02-25.clover',
     created: Math.floor(Date.now() / 1000),
     type,
     data: { object: data },
@@ -225,14 +247,14 @@ const emailSent = () =>
 
 describe.each<Shape>(['old', 'clover'])('invoice.paid in the %s shape', (shape) => {
   it('finds the subscription and grants pro', async () => {
-    const res = await post(makeEvent('invoice.paid', invoice(shape, 'sub_1')))
+    const res = await post(makeEvent('invoice.paid', invoice(shape, 'sub_1'), shape))
     expect(res.status).toBe(200)
     expect(mockRetrieveSubscription).toHaveBeenCalledWith('sub_1')
     expect(profileUpdates.some((u) => u.subscription_status === 'pro')).toBe(true)
   })
 
   it('records the payment on the Prisma row', async () => {
-    await post(makeEvent('invoice.paid', invoice(shape, 'sub_1')))
+    await post(makeEvent('invoice.paid', invoice(shape, 'sub_1'), shape))
     const args = mockUpsert.mock.calls[0]?.[0]
     expect(args, 'the Prisma row must be written on a paid invoice').toBeDefined()
     expect(args!.where.userId).toBe(PRISMA_CUID)
@@ -241,7 +263,7 @@ describe.each<Shape>(['old', 'clover'])('invoice.paid in the %s shape', (shape) 
   })
 
   it('records the renewal period on the Prisma row', async () => {
-    await post(makeEvent('invoice.paid', invoice(shape, 'sub_1')))
+    await post(makeEvent('invoice.paid', invoice(shape, 'sub_1'), shape))
     const args = mockUpsert.mock.calls[0]![0]
     expect((args.update.currentPeriodEnd as Date).toISOString()).toBe(
       new Date(PERIOD_END * 1000).toISOString(),
@@ -251,7 +273,7 @@ describe.each<Shape>(['old', 'clover'])('invoice.paid in the %s shape', (shape) 
   it('does not count a zero-amount trial invoice as a payment', async () => {
     // paymentCount is read by src/lib/usage/trial-allowance.ts as evidence of
     // a card on file; a GBP 0 trial-start invoice must not supply it.
-    await post(makeEvent('invoice.paid', invoice(shape, 'sub_1', { amount_paid: 0 })))
+    await post(makeEvent('invoice.paid', invoice(shape, 'sub_1', { amount_paid: 0 }), shape))
     const args = mockUpsert.mock.calls[0]![0]
     expect(args.update).not.toHaveProperty('paymentCount')
     expect(args.create.paymentCount ?? 0).toBe(0)
@@ -276,7 +298,9 @@ describe.each<Shape>(['old', 'clover'])('invoice.payment_failed in the %s shape'
     mockListSubscriptions.mockResolvedValue({
       data: [{ ...liveSubscription('sub_failing'), status: 'past_due' }],
     })
-    const res = await post(makeEvent('invoice.payment_failed', invoice(shape, 'sub_failing')))
+    const res = await post(
+      makeEvent('invoice.payment_failed', invoice(shape, 'sub_failing'), shape),
+    )
     expect(res.status).toBe(200)
     const listArgs = (mockListSubscriptions.mock.calls as unknown as unknown[][])[0]?.[0] as {
       customer?: string
@@ -287,7 +311,7 @@ describe.each<Shape>(['old', 'clover'])('invoice.payment_failed in the %s shape'
 
   it('still stands down when ANOTHER live subscription covers the price', async () => {
     mockListSubscriptions.mockResolvedValue({ data: [liveSubscription('sub_the_paid_one')] })
-    await post(makeEvent('invoice.payment_failed', invoice(shape, 'sub_failing')))
+    await post(makeEvent('invoice.payment_failed', invoice(shape, 'sub_failing'), shape))
     expect(emailSent()).toBe(false)
   })
 })

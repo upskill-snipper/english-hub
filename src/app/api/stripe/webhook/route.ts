@@ -9,11 +9,18 @@ import { prisma } from '@/lib/prisma'
 import { captureGrandfatherFields, type Plan as PricingPlan } from '@/lib/pricing/grandfather'
 import { syncStripeSubscriptionToPrisma } from '@/lib/billing/subscription-sync'
 import {
+  findCoveringSubscription,
   findDuplicateSubscription,
+  isIeltsOnly,
   pricesOnInvoice,
   pricesOnSubscription,
 } from '@/lib/billing/duplicate-subscription-guard'
-import { invoiceSubscriptionId, subscriptionPeriodEnd } from '@/lib/billing/stripe-shapes'
+import {
+  chargeInvoiceId,
+  idOf,
+  invoiceSubscriptionId,
+  subscriptionPeriodEnd,
+} from '@/lib/billing/stripe-shapes'
 
 // Disable body parsing - we need the raw body for signature verification
 export const runtime = 'nodejs'
@@ -57,18 +64,14 @@ class WebhookMetadataError extends Error {
  * fail the whole event and trigger a Stripe retry storm); logs and returns.
  */
 /**
- * True when EVERY recurring price on the subscription is an IELTS price — i.e.
- * this is an IELTS-ONLY subscription. IELTS is a standalone product (gated by
- * profiles.ielts_status, set by syncIeltsEntitlement), so an IELTS-only sub must
- * NOT grant the global 'pro' flag (which unlocks GCSE/Student/Teacher). A mixed
- * sub (IELTS + a non-IELTS price) or a non-IELTS sub returns false and keeps the
- * normal 'pro' behaviour. A sub with no recurring prices returns false.
+ * True when EVERY recurring price on the subscription is an IELTS price, so
+ * the subscription must NOT grant the global 'pro' flag. The rule lives in the
+ * billing guard module (`isIeltsOnly`), where the coverage check applies the
+ * same test to the customer's OTHER subscriptions; this is the route's binding
+ * of it to the configured IELTS price ids.
  */
 function isIeltsOnlySubscription(subscription: Stripe.Subscription): boolean {
-  const items = subscription.items?.data ?? []
-  const recurring = items.filter((i) => i.price?.recurring)
-  if (recurring.length === 0) return false
-  return recurring.every((i) => isIeltsPriceId(i.price?.id))
+  return isIeltsOnly(subscription, isIeltsPriceId)
 }
 
 async function syncIeltsEntitlement(
@@ -81,6 +84,14 @@ async function syncIeltsEntitlement(
       isIeltsPriceId(item.price?.id),
     )
     if (!hasIeltsPrice) return // not an IELTS subscription — don't touch ielts_status
+
+    // The retry-window choice (23 October 2026, see invoice.payment_failed)
+    // applies to IELTS as well: a past_due IELTS subscription leaves
+    // ielts_status as it is, and the flag is cleared when Stripe gives up
+    // (unpaid, or deletion). Until this line an IELTS subscriber lost access
+    // on the first failed attempt while a Pro subscriber kept theirs, the same
+    // decision applied to one product and not the other.
+    if (subscription.status === 'past_due') return
 
     const liveStatuses = ['active', 'trialing']
     const nextStatus = liveStatuses.includes(subscription.status) ? 'active' : 'free'
@@ -133,25 +144,157 @@ const ACCESS_GRANTING_STATUSES: ReadonlySet<string> = new Set(['active', 'triali
 /**
  * Is this profile currently 'pro'?
  *
- * Used by the first-event handlers (webhook:D10). A subscription that is not
- * yet live - `incomplete`, the card awaiting 3-D Secure or a pending payment -
- * used to be written as 'incomplete' over whatever the profile held. A no-card
- * trialist is 'pro', so starting a checkout and stalling at the bank step
- * ended their trial on the spot. A non-live first status is now written only
- * over a profile that is not 'pro'. If the payment then completes, `.updated`
- * writes 'pro'; if it never does, `incomplete_expired` writes 'cancelled'
- * within a day, so nothing is left open.
+ * The first-event handlers (webhook:D10) and the `incomplete` and
+ * `incomplete_expired` cases of `.updated` use this as the coverage check
+ * before a NEVER-LIVE status is written. It is a legitimate stand-in for
+ * asking Stripe, and the reasoning is this: a non-live value written over a
+ * profile that is not 'pro' cannot remove access, so there is nothing to
+ * protect and no Stripe call to pay for; and a profile that IS 'pro' while a
+ * subscription that never reached active or trialing stalls or expires owes
+ * that 'pro' to something else - a no-card trial, or another plan - which the
+ * stalled subscription has no business ending, because it never granted
+ * anything that could be revoked. Until 23 October 2026 `incomplete` ended a
+ * trialist's trial on the spot, and until later the same day
+ * `incomplete_expired` ended it a day later.
+ *
+ * Fails CLOSED. The read's error used to be discarded, so a transient database
+ * fault read as "not pro" and let the non-live write through. A database error
+ * now throws: the event claim is released and Stripe retries. "No such
+ * profile" (PGRST116) is an answer, not a fault: not pro.
  */
 async function profileIsPro(
   supabase: ReturnType<typeof createServiceRoleClient>,
   userId: string,
 ): Promise<boolean> {
-  const { data } = await supabase
+  const { data, error } = await supabase
     .from('profiles')
     .select('subscription_status')
     .eq('id', userId)
     .single()
+  if (error && error.code !== 'PGRST116') {
+    throw new Error(
+      `profiles read failed while checking whether ${userId} is pro: ${error.message}`,
+    )
+  }
   return data?.subscription_status === 'pro'
+}
+
+/**
+ * The profile's status and end date, read for the stale-event guards.
+ *
+ * Throws on a database error other than "no row": the guards exist to refuse
+ * a write, and a discarded error that reads as "not terminal" lets the write
+ * through, which is the failure shape this file keeps finding. `terminal` is
+ * the state the `.deleted` handler and an `unpaid` status leave behind.
+ */
+async function readProfileState(
+  supabase: ReturnType<typeof createServiceRoleClient>,
+  userId: string,
+): Promise<{
+  status: string | null
+  endDate: string | null
+  terminal: boolean
+  endDatePassed: boolean
+}> {
+  const { data, error } = await supabase
+    .from('profiles')
+    .select('subscription_status, subscription_end_date')
+    .eq('id', userId)
+    .single()
+  if (error && error.code !== 'PGRST116') {
+    throw new Error(`profiles read failed for ${userId}: ${error.message}`)
+  }
+  const status: string | null = data?.subscription_status ?? null
+  const endDate: string | null = data?.subscription_end_date ?? null
+  return {
+    status,
+    endDate,
+    terminal: status === 'cancelled' || status === 'unpaid',
+    endDatePassed: endDate ? new Date(endDate).getTime() < Date.now() : false,
+  }
+}
+
+/**
+ * Which Supabase user a subscription event is about.
+ *
+ * `metadata.userId` when the subscription was made by one of our checkout
+ * routes; otherwise the profile that carries the Stripe customer id. Both are
+ * Supabase auth uuids (see the identity note above).
+ *
+ * Two outcomes short of a user, kept apart on purpose. A database ERROR on the
+ * lookup throws: the event claim is released and Stripe retries, because a
+ * transient fault must not be read as "nobody". Until 23 October 2026 the
+ * `.updated` and `.deleted` handlers discarded that error, answered 200 and
+ * kept the claim, so a cancelled customer's deletion delivered during a
+ * database blip was consumed for good and the profile stayed 'pro'. NO profile
+ * and no metadata is the subscription made by hand in the dashboard, or on a
+ * customer record created outside checkout: that is answered 200 with
+ * `ignored: 'unresolved_user'`, every fact logged, and one Sentry message
+ * fingerprinted the same way for all three handlers, so a person links the
+ * customer and runs the reconcile script. A 500 there would retry for three
+ * days with nothing changing between attempts (webhook:D9).
+ */
+type ResolvedUser = { userId: string; ignored: null } | { userId: null; ignored: 'unresolved_user' }
+
+async function resolveSubscriptionUser(
+  subscription: Stripe.Subscription,
+  supabase: ReturnType<typeof createServiceRoleClient>,
+  eventType: string,
+  eventId: string | null | undefined,
+): Promise<ResolvedUser> {
+  const fromMetadata = subscription.metadata?.userId
+  if (fromMetadata) return { userId: fromMetadata, ignored: null }
+
+  const customerId = subscription.customer as string
+  const { data: profile, error } = await supabase
+    .from('profiles')
+    .select('id')
+    .eq('stripe_customer_id', customerId)
+    .single()
+  if (error && error.code !== 'PGRST116') {
+    throw new Error(
+      `profiles lookup by stripe_customer_id=${customerId} failed for ${eventType}: ${error.message}`,
+    )
+  }
+  if (profile?.id) return { userId: profile.id as string, ignored: null }
+
+  const facts = {
+    event: eventType,
+    error: 'unresolved_user',
+    eventId: eventId ?? null,
+    subscriptionId: subscription.id,
+    customerId: subscription.customer,
+    status: subscription.status,
+    priceIds: pricesOnSubscription(subscription),
+    metadata: subscription.metadata,
+  }
+  console.error(JSON.stringify({ level: 'error', ...facts }))
+  Sentry.captureMessage(`Stripe ${eventType} for a customer nobody can resolve`, {
+    level: 'error',
+    tags: { surface: 'stripe-webhook', defect: 'unresolved-user' },
+    fingerprint: ['stripe-webhook', 'unresolved-user'],
+    extra: facts,
+  })
+  return { userId: null, ignored: 'unresolved_user' }
+}
+
+/**
+ * The subscription as Stripe holds it NOW, through the pinned client, or null
+ * when Stripe could not say. Never throws; the caller decides what an
+ * unanswered question means for its write.
+ */
+async function retrieveCurrentSubscription(
+  subscriptionId: string,
+): Promise<Stripe.Subscription | null> {
+  try {
+    const current = await stripe.subscriptions.retrieve(subscriptionId)
+    return current && typeof current.status === 'string' ? current : null
+  } catch (err) {
+    console.warn(
+      `[stripe/webhook] could not retrieve subscription ${subscriptionId} from Stripe: ${String(err)}`,
+    )
+    return null
+  }
 }
 
 /**
@@ -325,7 +468,7 @@ export async function POST(request: NextRequest) {
       }
 
       case 'customer.subscription.updated': {
-        await handleSubscriptionUpdated(
+        ignored = await handleSubscriptionUpdated(
           event.data.object as Stripe.Subscription,
           supabase,
           event.id,
@@ -334,7 +477,7 @@ export async function POST(request: NextRequest) {
       }
 
       case 'customer.subscription.deleted': {
-        await handleSubscriptionDeleted(
+        ignored = await handleSubscriptionDeleted(
           event.data.object as Stripe.Subscription,
           supabase,
           event.id,
@@ -420,7 +563,21 @@ export async function POST(request: NextRequest) {
         // revoked when Stripe gives up (customer.subscription.deleted, or
         // status unpaid). The Prisma row still records PAST_DUE, which mobile
         // already treats as read-only grace. To reverse this choice, put the
-        // write back here and `past_due: 'past_due'` back into the status map.
+        // write back here and `past_due: 'past_due'` back into the status map,
+        // and remove `past_due` from WEB_ACCESS_STATUSES in the guard module.
+        //
+        // THIS CHOICE DEPENDS ON A DASHBOARD SETTING nobody on this machine can
+        // see. "Stripe gives up" is only true if Stripe Dashboard > Settings >
+        // Billing > Subscriptions and emails > Manage failed payments sets the
+        // action after the final retry to "cancel the subscription" or "mark
+        // it unpaid". If it is "leave the subscription past_due", nothing in
+        // this file ever revokes: past_due writes null here, the trial-expiry
+        // cron never touches a row with a Stripe id, and a card trialist whose
+        // first payment declined keeps 'pro' without having paid. The founder
+        // confirms the setting before this ships and records which one it is
+        // here; a daily backstop that revokes 'pro' when the profile's end
+        // date is well past and Stripe shows no live subscription is the
+        // safety net if the setting cannot be relied on.
 
         // Send payment-failed notification via Resend (non-blocking)
         const resendApiKey = process.env.RESEND_API_KEY
@@ -523,11 +680,21 @@ export async function POST(request: NextRequest) {
         const invoice = event.data.object as Stripe.Invoice
         const customerId = invoice.customer as string
 
-        const { data: paidProfile } = await supabase
+        const { data: paidProfile, error: paidProfileError } = await supabase
           .from('profiles')
           .select('id, email, subscription_status')
           .eq('stripe_customer_id', customerId)
           .single()
+        // A database fault is not "no profile". Read as one, it answered 200
+        // and kept the claim, so the payment was never recorded and Stripe
+        // never retried. It throws now, as the subscription handlers' lookup
+        // does: the claim is released and Stripe retries.
+        if (paidProfileError && paidProfileError.code !== 'PGRST116') {
+          throw new Error(
+            `invoice.paid ${invoice.id}: profiles lookup by stripe_customer_id=${customerId} ` +
+              `failed: ${paidProfileError.message}`,
+          )
+        }
 
         // Both API shapes. Under the pinned clover version the subscription is
         // `invoice.parent.subscription_details.subscription`, and reading only
@@ -628,27 +795,67 @@ export async function POST(request: NextRequest) {
 
       case 'charge.refunded': {
         const charge = event.data.object as Stripe.Charge
+        const paymentIntentId = idOf(charge.payment_intent)
 
         try {
-          // Resolve subscription ID - may be directly on the charge or via the invoice
-          let subscriptionId: string | null = null
-
-          // eslint-disable-next-line @typescript-eslint/no-explicit-any
-          const chargeAny = charge as any
-          if (!subscriptionId && chargeAny.invoice) {
-            const invoiceId =
-              typeof chargeAny.invoice === 'string' ? chargeAny.invoice : chargeAny.invoice?.id
-            if (invoiceId) {
-              // Retrieved through the pinned client, so in the clover shape:
-              // the subscription is under `parent.subscription_details`.
-              const invoice = await stripe.invoices.retrieve(invoiceId)
-              subscriptionId = invoiceSubscriptionId(invoice)
+          // Which subscription paid this charge? An old-shape payload carries
+          // `charge.invoice`. A clover payload carries no invoice field at all
+          // (Charges.d.ts has none), and the link runs the other way: the
+          // InvoicePayment object, found by payment intent
+          // (InvoicePayments.d.ts:49 `invoice`, :81 `payment.payment_intent`).
+          // Until 23 October 2026 only the old field was read, so on a clover
+          // payload every refunded subscription charge resolved to nothing,
+          // no commission was voided, and a console.warn was the only trace.
+          let invoiceId = chargeInvoiceId(charge)
+          if (!invoiceId && paymentIntentId) {
+            const payments = await stripe.invoicePayments.list({
+              payment: { type: 'payment_intent', payment_intent: paymentIntentId },
+              limit: 1,
+            })
+            invoiceId = idOf(payments.data[0]?.invoice)
+            if (!invoiceId) {
+              // A payment intent with no invoice behind it is a one-off
+              // purchase (a course), which carries no subscription commission.
+              console.info(
+                `[stripe/webhook] charge.refunded ${charge.id}: payment intent ${paymentIntentId} ` +
+                  'has no invoice, so this was a one-off purchase and there is no subscription ' +
+                  'commission to void',
+              )
+              break
             }
           }
 
+          if (!invoiceId) {
+            // Neither shape named an invoice and there is no payment intent to
+            // ask by. Nothing can be voided here, and a commission that should
+            // have been voided is money, so this is reported, not warned.
+            const detail = {
+              chargeId: charge.id,
+              paymentIntentId,
+              customerId: idOf(charge.customer),
+              amountRefunded: charge.amount_refunded,
+            }
+            console.error(
+              `[stripe/webhook] REFUND_SUBSCRIPTION_UNRESOLVED ${JSON.stringify(detail)}. Could not ` +
+                'find the invoice behind this refunded charge, so no affiliate commission was ' +
+                'voided. Check the charge in Stripe and void by hand.',
+            )
+            Sentry.captureMessage('Refunded charge could not be tied to a subscription', {
+              level: 'error',
+              tags: { surface: 'stripe-webhook', defect: 'refund-unresolved' },
+              extra: detail,
+            })
+            break
+          }
+
+          // Retrieved through the pinned client, so in the clover shape: the
+          // subscription is under `parent.subscription_details`.
+          const invoice = await stripe.invoices.retrieve(invoiceId)
+          const subscriptionId = invoiceSubscriptionId(invoice)
           if (!subscriptionId) {
-            console.warn(
-              `[stripe/webhook] charge.refunded: could not resolve subscription for charge ${charge.id}, skipping commission void`,
+            console.info(
+              `[stripe/webhook] charge.refunded ${charge.id}: invoice ${invoiceId} is not a ` +
+                'subscription invoice, so there is no commission to void',
             )
             break
           }
@@ -673,8 +880,17 @@ export async function POST(request: NextRequest) {
             )
           }
         } catch (err) {
-          // Log but do not fail the webhook - commission voiding is non-critical
+          // The webhook still answers 200: a failed commission void must not
+          // make Stripe retry a refund event against handlers that are not
+          // idempotent. But a commission left payable after a refund is money,
+          // so the failure is reported at error level with what is needed to
+          // void it by hand, not only logged.
           console.error('[stripe/webhook] charge.refunded handler error:', err)
+          Sentry.captureException(err, {
+            level: 'error',
+            tags: { surface: 'stripe-webhook', defect: 'refund-void-failed' },
+            extra: { chargeId: charge.id, paymentIntentId },
+          })
         }
 
         break
@@ -687,50 +903,61 @@ export async function POST(request: NextRequest) {
       }
 
       case 'customer.subscription.created': {
-        const subscription = event.data.object as Stripe.Subscription
+        const snapshot = event.data.object as Stripe.Subscription
 
-        let userId = subscription.metadata?.userId
-        if (!userId) {
-          // Fallback: look up user by stripe_customer_id
-          const customerId = subscription.customer as string
-          const { data: profile } = await supabase
-            .from('profiles')
-            .select('id')
-            .eq('stripe_customer_id', customerId)
-            .single()
-          if (profile) userId = profile.id
+        // Nobody to attach this to is answered 200 with a reason (webhook:D9);
+        // a database fault on the lookup throws so that Stripe retries. Both
+        // live in resolveSubscriptionUser.
+        const resolved = await resolveSubscriptionUser(snapshot, supabase, event.type, event.id)
+        if (!resolved.userId) {
+          ignored = resolved.ignored
+          break
         }
-        if (!userId) {
-          // Nobody to attach this to: no metadata.userId and no profile with
-          // this Stripe customer. That is a subscription made by hand in the
-          // dashboard, or a customer record created outside checkout. This
-          // used to answer 500 so that Stripe would retry, but nothing
-          // changes between retries, so the result was three days of failed
-          // deliveries and a red endpoint (webhook:D9). Answer 200 with the
-          // reason, log every fact there is, and raise a Sentry message so a
-          // person links the customer and runs the reconcile script.
-          const facts = {
-            event: 'customer.subscription.created',
-            error: 'unresolved_user',
-            eventId: event.id,
-            subscriptionId: subscription.id,
-            customerId: subscription.customer,
-            status: subscription.status,
-            priceIds: pricesOnSubscription(subscription),
-            metadata: subscription.metadata,
+        const userId = resolved.userId
+
+        // ── A first event acts on Stripe's CURRENT state, not the snapshot ──
+        // `data.object` is the subscription as it was at creation. Stripe
+        // delivers at least once and in no particular order, so this event can
+        // arrive after `customer.subscription.deleted` for the same id, or
+        // after a renewal has moved the period on. Acting on the snapshot then
+        // wrote 'pro' over 'cancelled' and the FIRST period's end date over the
+        // current one, and the Prisma row followed (webhook:D15; production
+        // showed two rows cancelled on the day they started). So the
+        // subscription is retrieved through the pinned client, as invoice.paid
+        // already does, and the handler acts on what Stripe holds now:
+        //   - active or trialing: grant, with the current period;
+        //   - incomplete: the first-status path below (webhook:D10);
+        //   - anything else (canceled, incomplete_expired, past_due, unpaid,
+        //     paused) is a status the lifecycle handlers own and have seen or
+        //     will see, so this delivery is stale and writes nothing.
+        // When Stripe cannot be asked the snapshot is used, except over a
+        // profile already in a terminal state: writing 'pro' there on a
+        // snapshot is the exact regression, so that case throws, the claim is
+        // released and Stripe retries. One Stripe call per new subscription.
+        const current = await retrieveCurrentSubscription(snapshot.id)
+        if (!current) {
+          const profileState = await readProfileState(supabase, userId)
+          if (profileState.terminal) {
+            throw new Error(
+              `customer.subscription.created ${snapshot.id}: Stripe could not be asked whether ` +
+                `this subscription is still live and the profile is already ` +
+                `${profileState.status}, so the snapshot is not acted on. Stripe will retry.`,
+            )
           }
-          console.error(JSON.stringify({ level: 'error', ...facts }))
-          Sentry.captureMessage('Stripe subscription created for a customer nobody can resolve', {
-            level: 'error',
-            tags: { surface: 'stripe-webhook', defect: 'unresolved-user' },
-            fingerprint: ['stripe-webhook', 'unresolved-user'],
-            extra: facts,
-          })
-          ignored = 'unresolved_user'
+        }
+        const subscription = current ?? snapshot
+        const isLive = ACCESS_GRANTING_STATUSES.has(subscription.status)
+        if (current && !isLive && current.status !== 'incomplete') {
+          console.warn(
+            `[stripe/webhook] STALE_SUBSCRIPTION_CREATED_IGNORED subscription=${snapshot.id} ` +
+              `customer=${snapshot.customer} snapshotStatus=${snapshot.status} ` +
+              `currentStatus=${current.status}. Stripe now holds this subscription in a status ` +
+              'the lifecycle handlers own, so this first event is stale and writes nothing.',
+          )
+          ignored = 'stale_event'
           break
         }
 
-        const isLive = ACCESS_GRANTING_STATUSES.has(subscription.status)
         const subscriptionStatus = isLive ? 'pro' : 'incomplete'
 
         // IELTS-only subscriptions must not grant the global 'pro' flag; their
@@ -1095,23 +1322,18 @@ async function handleSubscriptionUpdated(
   subscription: Stripe.Subscription,
   supabase: ReturnType<typeof createServiceRoleClient>,
   eventId?: string | null,
-) {
-  // Supabase auth uuid throughout - see the identity note at the top.
-  let userId = subscription.metadata?.userId
-  if (!userId) {
-    // Fallback: look up user by stripe_customer_id
-    const customerId = subscription.customer as string
-    const { data: profile } = await supabase
-      .from('profiles')
-      .select('id')
-      .eq('stripe_customer_id', customerId)
-      .single()
-    if (profile) userId = profile.id
-  }
-  if (!userId) {
-    console.error('Could not resolve user for subscription', subscription.id)
-    return
-  }
+): Promise<string | null> {
+  // Supabase auth uuid throughout - see the identity note at the top. A
+  // database fault on the lookup throws so that Stripe retries; no profile at
+  // all is answered with an ignored reason (see resolveSubscriptionUser).
+  const resolved = await resolveSubscriptionUser(
+    subscription,
+    supabase,
+    'customer.subscription.updated',
+    eventId,
+  )
+  if (!resolved.userId) return resolved.ignored
+  const userId = resolved.userId
 
   // `null` means "leave profiles.subscription_status as it is". past_due is
   // null by choice (23 October 2026): the customer keeps access through
@@ -1143,74 +1365,23 @@ async function handleSubscriptionUpdated(
   // arrives AFTER a `customer.subscription.deleted` has already fired would
   // silently re-grant Pro to a cancelled user. Guard: if the stored state
   // is already terminal (`cancelled`/`unpaid`) and the subscription's
-  // canonical end date has passed, refuse to upgrade back to `pro` or
-  // `trialing`. A genuine re-subscription comes through `checkout.session
-  // .completed` → `subscription.created`, not a late-arriving `.updated`.
-  const wouldUpgrade = subscriptionStatus === 'pro' || subscriptionStatus === 'trialing'
-  if (wouldUpgrade) {
-    const { data: currentProfile } = await supabase
-      .from('profiles')
-      .select('subscription_status, subscription_end_date')
-      .eq('id', userId)
-      .single()
-
-    const currentStatus = currentProfile?.subscription_status
-    const currentEndDate = currentProfile?.subscription_end_date
-      ? new Date(currentProfile.subscription_end_date)
-      : null
-
-    const isTerminalState = currentStatus === 'cancelled' || currentStatus === 'unpaid'
-    const endDatePassed = currentEndDate ? currentEndDate.getTime() < Date.now() : false
-
-    if (isTerminalState && endDatePassed) {
+  // canonical end date has passed, refuse to upgrade back to `pro`. A genuine
+  // re-subscription comes through `checkout.session.completed` and
+  // `customer.subscription.created` (which acts on Stripe's current state of
+  // the new subscription), not a late-arriving `.updated`. The profile read
+  // throws on a database error rather than reading it as "not terminal".
+  if (subscriptionStatus === 'pro') {
+    const profileState = await readProfileState(supabase, userId)
+    if (profileState.terminal && profileState.endDatePassed) {
       console.warn('[stripe/webhook] Refusing to re-grant Pro via stale subscription.updated', {
         subscriptionId: subscription.id,
         userId,
-        currentStatus,
-        currentEndDate: currentProfile?.subscription_end_date,
+        currentStatus: profileState.status,
+        currentEndDate: profileState.endDate,
         incomingStatus: subscriptionStatus,
       })
-      return
+      return 'stale_event'
     }
-  }
-
-  // ── Is this a duplicate's status, not the customer's? ──────────────────
-  // `profiles.subscription_status` is one field per person. The September
-  // 2026 duplicate (see handleSubscriptionDeleted) revoked a paid customer
-  // through invoice.payment_failed and .deleted, both of which now ask Stripe
-  // whether another live subscription covers the price. This handler did not
-  // ask, and it mirrors past_due, unpaid and cancelled straight onto the
-  // profile, so the same outcome stayed open here. It also wrote the
-  // duplicate over the Prisma row of the live subscription.
-  //
-  // So for any NON-live status: if the customer holds another live
-  // subscription carrying the same price, this event is about a duplicate.
-  // Write nothing - not the profile, not the IELTS flag, not the Prisma row -
-  // and say so. A live status needs no check and pays for no Stripe call.
-  const incomingIsLive = subscription.status === 'active' || subscription.status === 'trialing'
-  if (!incomingIsLive) {
-    const prices = pricesOnSubscription(subscription)
-    const covered = prices.length
-      ? await findDuplicateSubscription(stripe, subscription.customer as string, prices, {
-          excludeSubscriptionId: subscription.id,
-        })
-      : { duplicate: false, existing: null }
-    if (covered.duplicate) {
-      console.warn(
-        `[stripe/webhook] DUPLICATE_SUBSCRIPTION_UPDATED_IGNORED customer=${subscription.customer} ` +
-          `updated=${subscription.id} incomingStatus=${subscription.status} ` +
-          `coveredBy=${covered.existing?.id} status=${covered.existing?.status}. ` +
-          'Entitlement and Prisma row left intact: the customer holds another live subscription ' +
-          'for the same price, so this is a duplicate. Cancel it and void its open invoice.',
-      )
-      return
-    }
-  }
-
-  // `incomplete` only ever describes a brand-new subscription whose first
-  // payment is pending, so it is a first status here too (webhook:D10).
-  if (subscriptionStatus === 'incomplete' && (await profileIsPro(supabase, userId))) {
-    subscriptionStatus = null
   }
 
   // IELTS-only subscriptions must not touch the global subscription_status
@@ -1218,19 +1389,108 @@ async function handleSubscriptionUpdated(
   // ielts_status, synced below via syncIeltsEntitlement.
   const ieltsOnly = isIeltsOnlySubscription(subscription)
 
-  const { error } = await supabase
-    .from('profiles')
-    .update({
-      ...(ieltsOnly || subscriptionStatus === null
-        ? {}
-        : { subscription_status: subscriptionStatus }),
-      ...(subscriptionEndDate && { subscription_end_date: subscriptionEndDate }),
+  // ── Does another subscription still justify the access? ────────────────
+  // `profiles.subscription_status` is one field per person. The September
+  // 2026 duplicate (see handleSubscriptionDeleted) revoked a paid customer
+  // through invoice.payment_failed and .deleted; this handler mirrored
+  // past_due, unpaid and cancelled straight onto the profile and wrote the
+  // duplicate over the Prisma row of the live subscription, so the same
+  // outcome stayed open here until 23 October 2026.
+  //
+  // So for any NON-live status, ask Stripe whether the customer holds another
+  // subscription that still keeps the web gate open (or, for an IELTS-only
+  // subscription, another that carries IELTS). If so, write nothing - not the
+  // profile, not the IELTS flag, not the Prisma row - and say so. The question
+  // is about access, not prices: judged per price, a customer who moved from
+  // monthly to annual was revoked when the monthly plan ended, and two dead
+  // subscriptions covered each other. See findCoveringSubscription, which
+  // throws when Stripe cannot be asked, so that "unknown" releases the claim
+  // and Stripe retries instead of being read as "not covered". A live status
+  // needs no check and pays for no Stripe call.
+  const incomingIsLive = ACCESS_GRANTING_STATUSES.has(subscription.status)
+  if (!incomingIsLive) {
+    const cover = await findCoveringSubscription(stripe, subscription.customer as string, {
+      excludeSubscriptionId: subscription.id,
+      grants: ieltsOnly ? 'ielts' : 'pro',
+      isIeltsPriceId,
     })
-    .eq('id', userId)
+    if (cover.covered) {
+      console.warn(
+        `[stripe/webhook] DUPLICATE_SUBSCRIPTION_UPDATED_IGNORED customer=${subscription.customer} ` +
+          `updated=${subscription.id} incomingStatus=${subscription.status} ` +
+          `coveredBy=${cover.coveringSubscription?.id} status=${cover.coveringSubscription?.status}. ` +
+          'Entitlement and Prisma row left intact: the customer holds another subscription that ' +
+          'still grants this access. If both carry the same price it is a duplicate: cancel it and ' +
+          'void its open invoice.',
+      )
+      return 'covered_by_other_subscription'
+    }
+  }
 
-  if (error) {
-    console.error('Failed to update subscription_status:', error)
-    throw error
+  // A subscription that never reached active or trialing (`incomplete`, and
+  // `incomplete_expired` a day later) never granted anything, so its status
+  // cannot be a revocation of anything. A profile that is 'pro' when such a
+  // subscription stalls or expires owes that 'pro' to something else - a
+  // no-card trial, or another plan the coverage check above did not see - and
+  // neither the status nor the period end is written over it (webhook:D10).
+  // Until 23 October 2026 `incomplete_expired` wrote 'cancelled' here, which
+  // ended a seven-day trial on day two when a checkout stalled at the bank.
+  let heldBackForPro = false
+  const neverLive =
+    subscription.status === 'incomplete' || subscription.status === 'incomplete_expired'
+  if (neverLive && !ieltsOnly && (await profileIsPro(supabase, userId))) {
+    subscriptionStatus = null
+    heldBackForPro = true
+    console.info(
+      `[stripe/webhook] NEVER_LIVE_STATUS_HELD_BACK subscription=${subscription.id} ` +
+        `status=${subscription.status} user=${userId}. The profile is 'pro' through something ` +
+        'this subscription never granted, so its status and period end are not written over it.',
+    )
+  }
+
+  // past_due writes no status, only the period end, so on its own it could
+  // move the end date of a profile that is already terminal. A subscription
+  // never comes back from canceled, so a past_due arriving over a 'cancelled'
+  // or 'unpaid' profile is a stale delivery; writing its (future) period end
+  // there unlocked the stale-event guard above, which refuses to re-grant only
+  // while that date is in the past, and a late `active` for the same
+  // subscription then wrote 'pro' over a cancelled customer. So the date is
+  // not written over a terminal profile. One profile read, on past_due only.
+  let staleRetryWindow = false
+  if (subscriptionStatus === null && !heldBackForPro && !ieltsOnly && subscriptionEndDate) {
+    const profileState = await readProfileState(supabase, userId)
+    if (profileState.terminal) {
+      staleRetryWindow = true
+      console.warn(
+        `[stripe/webhook] STALE_PAST_DUE_END_DATE_IGNORED subscription=${subscription.id} ` +
+          `user=${userId} profileStatus=${profileState.status}. The profile is already ` +
+          'terminal, so this past_due delivery does not move its end date.',
+      )
+    }
+  }
+
+  // The end date belongs to whichever subscription is granting access. It is
+  // written with a status (including past_due's null, which is the customer's
+  // own subscription in its retry window), and not when the status was held
+  // back as above, when the subscription is IELTS-only, or over a terminal
+  // profile on past_due, so that none of them moves the date a Pro plan or a
+  // trial is running on or reopens the stale-event guard.
+  const profilePatch = {
+    ...(ieltsOnly || subscriptionStatus === null
+      ? {}
+      : { subscription_status: subscriptionStatus }),
+    ...(subscriptionEndDate && !ieltsOnly && !heldBackForPro && !staleRetryWindow
+      ? { subscription_end_date: subscriptionEndDate }
+      : {}),
+  }
+
+  if (Object.keys(profilePatch).length > 0) {
+    const { error } = await supabase.from('profiles').update(profilePatch).eq('id', userId)
+
+    if (error) {
+      console.error('Failed to update subscription_status:', error)
+      throw error
+    }
   }
 
   // IELTS standalone entitlement: track active/cancelled for IELTS prices.
@@ -1238,29 +1498,25 @@ async function handleSubscriptionUpdated(
 
   // Keep the Prisma `Subscription` row in lock-step with the profile.
   await recordSubscriptionRow(userId, subscription, 'customer.subscription.updated', eventId)
+  return null
 }
 
 async function handleSubscriptionDeleted(
   subscription: Stripe.Subscription,
   supabase: ReturnType<typeof createServiceRoleClient>,
   eventId?: string | null,
-) {
-  // Supabase auth uuid throughout - see the identity note at the top.
-  let userId = subscription.metadata?.userId
-  if (!userId) {
-    // Fallback: look up user by stripe_customer_id
-    const customerId = subscription.customer as string
-    const { data: profile } = await supabase
-      .from('profiles')
-      .select('id')
-      .eq('stripe_customer_id', customerId)
-      .single()
-    if (profile) userId = profile.id
-  }
-  if (!userId) {
-    console.error('Could not resolve user for subscription', subscription.id)
-    return
-  }
+): Promise<string | null> {
+  // Supabase auth uuid throughout - see the identity note at the top. A
+  // database fault on the lookup throws so that Stripe retries; no profile at
+  // all is answered with an ignored reason (see resolveSubscriptionUser).
+  const resolved = await resolveSubscriptionUser(
+    subscription,
+    supabase,
+    'customer.subscription.deleted',
+    eventId,
+  )
+  if (!resolved.userId) return resolved.ignored
+  const userId = resolved.userId
 
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const sub = subscription as any
@@ -1286,46 +1542,54 @@ async function handleSubscriptionDeleted(
   // reason anybody found out is that she emailed us.
   //
   // So before cancelling globally, ask Stripe whether the customer still holds
-  // another live subscription for the same price. If they do, this deletion is
-  // a duplicate being cleaned up and must not touch the entitlement.
-  const cancelledPrices = pricesOnSubscription(subscription)
-  const stillCovered = cancelledPrices.length
-    ? await findDuplicateSubscription(stripe, subscription.customer as string, cancelledPrices, {
-        excludeSubscriptionId: subscription.id,
-      })
-    : { duplicate: false, existing: null }
+  // another subscription that keeps the web gate open (or, for an IELTS-only
+  // deletion, another that carries IELTS). If they do, this deletion must not
+  // touch the entitlement. The question is about ACCESS, not prices: until
+  // 23 October 2026 it was asked per price, so a customer who held Student
+  // Monthly, bought Student Annual and then cancelled the monthly plan was
+  // revoked when the monthly subscription ended, because the annual one did
+  // not carry the monthly price. And it fails CLOSED: when Stripe cannot be
+  // asked, findCoveringSubscription throws, the claim is released and Stripe
+  // retries, instead of "unknown" being read as "not covered" and a paid
+  // customer cancelled, which is what the 18 September deletion did.
+  const cover = await findCoveringSubscription(stripe, subscription.customer as string, {
+    excludeSubscriptionId: subscription.id,
+    grants: ieltsOnly ? 'ielts' : 'pro',
+    isIeltsPriceId,
+  })
 
-  if (stillCovered.duplicate) {
+  if (cover.covered) {
     console.warn(
       `[stripe/webhook] DUPLICATE_SUBSCRIPTION_DELETED_IGNORED customer=${subscription.customer} ` +
-        `deleted=${subscription.id} stillCoveredBy=${stillCovered.existing?.id} ` +
-        `status=${stillCovered.existing?.status}. Entitlement left intact: the customer holds ` +
-        'another live subscription for the same price.',
+        `deleted=${subscription.id} stillCoveredBy=${cover.coveringSubscription?.id} ` +
+        `status=${cover.coveringSubscription?.status}. Entitlement left intact: the customer ` +
+        'holds another subscription that still grants this access.',
     )
   }
 
-  const revokeEntitlement = !ieltsOnly && !stillCovered.duplicate
+  const revokeEntitlement = !ieltsOnly && !cover.covered
 
-  const { error } = await supabase
-    .from('profiles')
-    .update({
-      ...(revokeEntitlement ? { subscription_status: 'cancelled' } : {}),
-      // The end date must not move either: it belongs to whichever subscription
-      // is actually granting access, and the stale-event guard on
-      // `customer.subscription.updated` refuses to re-grant Pro once this date
-      // has passed. Writing the duplicate's end date here is what made the
-      // obvious repair - touching the good subscription in the dashboard -
-      // silently fail with 'Refusing to re-grant Pro'.
-      ...(stillCovered.duplicate ? {} : { subscription_end_date: subscriptionEndDate }),
-    })
-    .eq('id', userId)
+  // The end date goes only with the revocation. It belongs to whichever
+  // subscription is actually granting access, and the stale-event guard on
+  // `customer.subscription.updated` refuses to re-grant Pro once this date has
+  // passed. Writing a covered duplicate's end date here is what made the
+  // obvious repair - touching the good subscription in the dashboard -
+  // silently fail with 'Refusing to re-grant Pro'; and an IELTS-only
+  // cancellation has no business moving the date a Pro plan runs on either.
+  const profilePatch = revokeEntitlement
+    ? { subscription_status: 'cancelled', subscription_end_date: subscriptionEndDate }
+    : {}
 
-  if (error) {
-    console.error('Failed to set subscription_status to cancelled:', error)
-    throw error
+  if (Object.keys(profilePatch).length > 0) {
+    const { error } = await supabase.from('profiles').update(profilePatch).eq('id', userId)
+
+    if (error) {
+      console.error('Failed to set subscription_status to cancelled:', error)
+      throw error
+    }
   }
 
-  if (!stillCovered.duplicate) {
+  if (!cover.covered) {
     // IELTS standalone entitlement: clear ielts_status on cancellation of an
     // IELTS subscription (no-op for non-IELTS subscriptions). Skipped when
     // covered: the live subscription carries the same prices, so clearing
@@ -1357,6 +1621,7 @@ async function handleSubscriptionDeleted(
       voidError,
     )
   }
+  return null
 }
 
 /**

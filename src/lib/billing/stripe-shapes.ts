@@ -87,8 +87,12 @@ export function subscriptionPeriodStart(subscription: Stripe.Subscription): numb
   return earliest
 }
 
-/** A Stripe id, from a string or an expanded object carrying `id`. */
-function idOf(value: unknown): string | null {
+/**
+ * A Stripe id, from a string or an expanded object carrying `id`. Null for
+ * anything else, including the empty string. Exported because every "string
+ * or expanded object" field in the Stripe API wants exactly this reading.
+ */
+export function idOf(value: unknown): string | null {
   if (typeof value === 'string') return value.length > 0 ? value : null
   if (value && typeof value === 'object') {
     const id = (value as { id?: unknown }).id
@@ -112,4 +116,22 @@ export function invoiceSubscriptionId(invoice: Stripe.Invoice): string | null {
   const top = idOf(inv?.subscription)
   if (top !== null) return top
   return idOf(inv?.parent?.subscription_details?.subscription)
+}
+
+/**
+ * The id of the invoice a charge paid, when the charge itself says so.
+ *
+ * Old shape only: `charge.invoice`, a string or an expanded object. Under
+ * clover a Charge has no `invoice` field at all (`Charges.d.ts` mentions the
+ * word once, in the `receipt_url` comment on line 178), and the link runs the
+ * other way, through the InvoicePayment object (`InvoicePayments.d.ts:49`
+ * `invoice`, `:81` `payment.payment_intent`). So null here means "this
+ * payload does not carry it", not "no invoice": the caller has to ask Stripe
+ * by payment intent. Until 23 October 2026 the refund handler read only this
+ * field, so on a clover payload every refunded subscription charge resolved
+ * to no subscription and its affiliate commission was never voided.
+ */
+export function chargeInvoiceId(charge: Stripe.Charge): string | null {
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  return idOf((charge as any)?.invoice)
 }

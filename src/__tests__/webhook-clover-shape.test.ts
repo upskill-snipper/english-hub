@@ -136,11 +136,12 @@ function subscription(shape: Shape, over: Record<string, unknown> = {}): Stripe.
   } as unknown as Stripe.Subscription
 }
 
-function makeEvent(type: string, data: unknown): Stripe.Event {
+/** The event, labelled with the API version whose shape the fixture is in. */
+function makeEvent(type: string, data: unknown, shape: Shape = 'clover'): Stripe.Event {
   return {
     id: `evt_${Math.random().toString(36).slice(2)}`,
     object: 'event',
-    api_version: '2023-10-16',
+    api_version: shape === 'old' ? '2023-10-16' : '2026-02-25.clover',
     created: Math.floor(Date.now() / 1000),
     type,
     data: { object: data },
@@ -192,24 +193,31 @@ describe.each<Shape>(['old', 'clover'])('period end read from the %s shape', (sh
   it('checkout.session.completed writes the end date the gates will show', async () => {
     mockRetrieveSubscription.mockResolvedValue(subscription(shape))
     const res = await post(
-      makeEvent('checkout.session.completed', {
-        id: 'cs_1',
-        mode: 'subscription',
-        subscription: 'sub_1',
-        metadata: { userId: SUPABASE_UUID },
-      }),
+      makeEvent(
+        'checkout.session.completed',
+        {
+          id: 'cs_1',
+          mode: 'subscription',
+          subscription: 'sub_1',
+          metadata: { userId: SUPABASE_UUID },
+        },
+        shape,
+      ),
     )
     expect(res.status).toBe(200)
     expect(endDateWritten()).toBe(PERIOD_END_ISO)
   })
 
   it('customer.subscription.created writes the end date', async () => {
-    await post(makeEvent('customer.subscription.created', subscription(shape)))
+    // The created handler acts on Stripe's current state of the subscription
+    // when it can get it; here Stripe answers with the same subscription.
+    mockRetrieveSubscription.mockResolvedValue(subscription(shape))
+    await post(makeEvent('customer.subscription.created', subscription(shape), shape))
     expect(endDateWritten()).toBe(PERIOD_END_ISO)
   })
 
   it('customer.subscription.updated writes the end date rather than nulling it', async () => {
-    await post(makeEvent('customer.subscription.updated', subscription(shape)))
+    await post(makeEvent('customer.subscription.updated', subscription(shape), shape))
     expect(endDateWritten()).toBe(PERIOD_END_ISO)
   })
 
@@ -218,13 +226,14 @@ describe.each<Shape>(['old', 'clover'])('period end read from the %s shape', (sh
       makeEvent(
         'customer.subscription.deleted',
         subscription(shape, { status: 'canceled', ended_at: null, cancel_at: null }),
+        shape,
       ),
     )
     expect(endDateWritten()).toBe(PERIOD_END_ISO)
   })
 
   it('the Prisma row carries the real period, not today twice', async () => {
-    await post(makeEvent('customer.subscription.updated', subscription(shape)))
+    await post(makeEvent('customer.subscription.updated', subscription(shape), shape))
     const args = mockUpsert.mock.calls[0]![0]
     expect((args.create.currentPeriodStart as Date).toISOString()).toBe(
       new Date(PERIOD_START * 1000).toISOString(),

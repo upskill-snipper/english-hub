@@ -20,6 +20,9 @@ vi.mock('@/lib/stripe', () => ({
     },
     customers: { retrieve: async () => ({ deleted: false, email: 'test@test.com' }) },
   },
+  // The route hands this to the guard module as a value, so the mock must
+  // export it. No IELTS prices in these tests.
+  isIeltsPriceId: () => false,
 }))
 
 // Build a chainable Supabase mock that records calls.
@@ -487,7 +490,7 @@ describe('Stripe Webhook POST handler', () => {
 
   it('answers 200 with a reason when user cannot be resolved for subscription.created (webhook:D9)', async () => {
     // Override single() to return no profile
-    supabaseMock._mocks.singleFn.mockReturnValue({ data: null, error: null } as any)
+    supabaseMock._mocks.singleFn.mockReturnValue({ data: null, error: null } as never)
 
     const subscription = {
       id: 'sub_orphan',
@@ -520,7 +523,7 @@ describe('Stripe Webhook POST handler', () => {
   // ── Error handling ─────────────────────────────────────────────────────
 
   it('returns 500 when supabase update throws', async () => {
-    supabaseMock._mocks.updateEqFn.mockReturnValue({ error: { message: 'DB error' } } as any)
+    supabaseMock._mocks.updateEqFn.mockReturnValue({ error: { message: 'DB error' } } as never)
 
     const subscription = {
       id: 'sub_err',
