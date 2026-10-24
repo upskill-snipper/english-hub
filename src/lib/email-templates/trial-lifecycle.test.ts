@@ -1,19 +1,27 @@
 /**
- * Tests for the trial lifecycle email templates.
+ * Tests for the trial lifecycle email templates (M2 and M3).
  *
  * These are copy-integrity tests as much as rendering tests. The defect
  * class this codebase spent August 2026 removing was fabricated data and
  * unhonest marketing claims in a children's product, so the assertions
  * below lock down the house copy rules: no em dashes, no invented
  * statistics or grade promises, no fake urgency, an explicit statement of
- * what stays free, and a working email-preferences link on every send.
+ * what stays free, and a working unsubscribe link on every send.
+ *
+ * Corrected 23 October 2026 with the templates: mock papers are no longer
+ * listed as lost (the claim sheet says free, the code gates them, and the
+ * founder has not decided), "courses remain free" became "the first module
+ * of each course", the opt-out is the signed /unsubscribe link, the reader
+ * is greeted "Hi," rather than by a typed name, and a child's copy carries
+ * no price and no plan link.
  */
 
 import { describe, it, expect } from 'vitest'
 
 import { buildTrialEndingEmail, buildTrialEndedEmail } from './trial-lifecycle'
 
-const TRIAL_END = new Date('2026-09-01T00:00:00.000Z')
+const TRIAL_END = new Date('2026-09-01T12:00:00.000Z')
+const UNSUBSCRIBE = 'https://theenglishhub.app/unsubscribe?token=abc.def'
 
 const both = [
   ['trial ending', buildTrialEndingEmail],
@@ -27,57 +35,73 @@ function visibleText(html: string): string {
 
 describe('trial lifecycle emails', () => {
   describe.each(both)('%s', (_label, build) => {
-    const email = build({ firstName: 'Amira', trialEndsAt: TRIAL_END })
+    const adult = build({ trialEndsAt: TRIAL_END, audience: 'adult', unsubscribeUrl: UNSUBSCRIBE })
+    const minor = build({ trialEndsAt: TRIAL_END, audience: 'minor', unsubscribeUrl: UNSUBSCRIBE })
 
     it('renders a subject, HTML and plain-text body', () => {
-      expect(email.subject.length).toBeGreaterThan(0)
-      expect(email.html).toContain('<!DOCTYPE html>')
-      expect(email.text.length).toBeGreaterThan(0)
+      expect(adult.subject.length).toBeGreaterThan(0)
+      expect(adult.html).toContain('<!DOCTYPE html>')
+      expect(adult.text.length).toBeGreaterThan(0)
     })
 
-    it('addresses the recipient by name', () => {
-      expect(email.html).toContain('Hi Amira,')
-      expect(email.text).toContain('Hi Amira,')
+    it('greets the reader without a typed name', () => {
+      expect(adult.html).toContain('Hi,')
+      expect(adult.text.startsWith('Hi,')).toBe(true)
     })
 
     it('shows the real trial end date and no other deadline', () => {
-      expect(email.html).toContain('1 September 2026')
-      expect(email.text).toContain('1 September 2026')
+      expect(adult.html).toContain('1 September 2026')
+      expect(adult.text).toContain('1 September 2026')
     })
 
-    it('states what stays free', () => {
-      const claim =
-        'Exam-board aligned courses, revision notes and flashcards remain free with a registered account.'
-      expect(email.html).toContain(claim)
-      expect(email.text).toContain(claim)
+    it('states what stays free, first module only for courses', () => {
+      for (const e of [adult, minor]) {
+        expect(e.text).toContain('the first module of each of the 80+ courses')
+        expect(e.text).not.toMatch(/courses[^.]*remain free/i)
+      }
     })
 
     it('states that no card was taken, so nothing can be charged', () => {
-      expect(email.text.toLowerCase()).toContain('card details')
-      expect(email.text.toLowerCase()).toMatch(/nothing (will be|was) charged/)
+      expect(adult.text.toLowerCase()).toContain('card details')
+      expect(adult.text.toLowerCase()).toMatch(/nothing (will be|was) charged/)
     })
 
-    it('includes a working email-preferences link', () => {
-      // /dashboard/privacy is the page that actually renders the
-      // marketingEnabled toggle. The /unsubscribe?token= route referenced
-      // by the weekly report templates does not exist yet.
-      expect(email.html).toContain('/dashboard/privacy')
-      expect(email.text).toContain('/dashboard/privacy')
+    it('links the signed unsubscribe page, not the privacy settings', () => {
+      for (const e of [adult, minor]) {
+        expect(e.html).toContain(UNSUBSCRIBE)
+        expect(e.text).toContain(UNSUBSCRIBE)
+        expect(e.html).not.toContain('/dashboard/privacy')
+      }
+    })
+
+    it('says nothing about mock papers until the founder decides', () => {
+      for (const e of [adult, minor]) {
+        expect(`${e.subject} ${e.text}`.toLowerCase()).not.toContain('mock')
+      }
+    })
+
+    it('gives an adult the price with planned standard pricing, and a child neither', () => {
+      expect(adult.text).toContain('£3.99 a month or £29.99 a year')
+      expect(adult.text).toContain('planned standard pricing £7.99 or £69.99')
+      expect(adult.html).toContain('/pricing?ref=')
+      expect(minor.text).not.toContain('£')
+      expect(minor.html).not.toContain('/pricing')
+      expect(minor.text).not.toContain('/pricing')
     })
 
     it('uses no em dashes and no literal double hyphen in prose', () => {
-      // Checked against the visible prose, not the raw markup: HTML comment
-      // delimiters legitimately contain a double hyphen.
-      for (const body of [email.subject, visibleText(email.html), email.text]) {
-        expect(body).not.toContain('—')
-        expect(body).not.toContain('–')
-        expect(body).not.toContain('--')
+      // Checked against the visible prose, not the raw markup.
+      for (const e of [adult, minor]) {
+        for (const body of [e.subject, visibleText(e.html), e.text]) {
+          expect(body).not.toContain('—')
+          expect(body).not.toContain('–')
+          expect(body).not.toContain('--')
+        }
       }
     })
 
     it('makes no statistical, grade or scale claim', () => {
-      const prose = `${email.subject} ${email.text}`.toLowerCase()
-      // Percentages, "x times", "grade 9", "guarantee", "thousands of".
+      const prose = `${adult.subject} ${adult.text}`.toLowerCase()
       expect(prose).not.toMatch(/\d+\s*%/)
       expect(prose).not.toMatch(/\bgrade\s*[0-9]\b/)
       expect(prose).not.toMatch(/guarantee/)
@@ -85,53 +109,53 @@ describe('trial lifecycle emails', () => {
     })
 
     it('manufactures no urgency', () => {
-      const prose = `${email.subject} ${email.text}`.toLowerCase()
+      const prose = `${adult.subject} ${adult.text}`.toLowerCase()
       expect(prose).not.toMatch(/act now|last chance|hurry|don.t miss|final call|expires in/)
     })
 
-    it('escapes HTML in the recipient name', () => {
-      const hostile = build({
-        firstName: '<script>alert(1)</script>',
-        trialEndsAt: TRIAL_END,
-      })
-      expect(hostile.html).not.toContain('<script>')
-      expect(hostile.html).toContain('&lt;script&gt;')
+    it('says the account stays open rather than implying deletion', () => {
+      expect(adult.text.toLowerCase()).toMatch(/stays open|is still open/)
     })
   })
 
-  it('only claims loss of features that are genuinely behind a live gate', () => {
-    // Each of these is enforced by requireSubscription or the marking
-    // paywall. If a gate is ever removed, this test should fail before the
-    // email starts telling a child they lost something they still have.
-    const email = buildTrialEndingEmail({ firstName: 'Amira', trialEndsAt: TRIAL_END })
-    expect(email.text).toContain('AI essay marking and feedback')
-    expect(email.text).toContain('Mock exam papers')
-    expect(email.text).toContain('Revision study plan and revision analytics')
+  it('lists only what the claim sheet says a plan adds', () => {
+    const email = buildTrialEndingEmail({
+      trialEndsAt: TRIAL_END,
+      audience: 'adult',
+      unsubscribeUrl: UNSUBSCRIBE,
+    })
+    const lost = email.text.split('What stays free:')[0]
+    expect(lost).toContain('AI essay marking and feedback')
+    expect(lost).toContain('Model answers')
+    expect(lost).toContain('Course modules 2 onwards')
+    expect(lost.toLowerCase()).not.toContain('flashcard')
+    expect(lost.toLowerCase()).not.toContain('revision notes')
+    expect(lost.toLowerCase()).not.toContain('lesson plan')
   })
 
-  it('never claims the recipient loses something the free line promises', () => {
-    // Courses, revision notes and flashcards are promised as free in the
-    // same email, so they must never appear in the "what you lose" list.
-    for (const [, build] of both) {
-      const email = build({ firstName: 'Amira', trialEndsAt: TRIAL_END })
-      const lostList = email.text.split('What stays free:')[0].toLowerCase()
-      expect(lostList).not.toContain('flashcard')
-      expect(lostList).not.toContain('revision notes')
-      expect(lostList).not.toContain('course content')
-      expect(lostList).not.toContain('lesson plan')
-    }
+  it('gives a teacher the Teacher price and the examiner tool', () => {
+    const email = buildTrialEndingEmail({
+      trialEndsAt: TRIAL_END,
+      audience: 'adult',
+      isTeacher: true,
+      unsubscribeUrl: UNSUBSCRIBE,
+    })
+    expect(email.text).toContain('The examiner marking tool')
+    expect(email.text).toContain('£6.99 a month or £67.99 a year')
+    expect(email.text).toContain('planned standard pricing £11.99 or £99')
   })
 
-  it('falls back to a neutral greeting when the first name is empty', () => {
-    const email = buildTrialEndingEmail({ firstName: '', trialEndsAt: TRIAL_END })
-    expect(email.html).toContain('Hi there,')
-  })
-
-  it('says the account stays open rather than implying deletion', () => {
-    for (const [, build] of both) {
-      const email = build({ firstName: 'Amira', trialEndsAt: TRIAL_END })
-      expect(email.text.toLowerCase()).toContain('account')
-      expect(email.text.toLowerCase()).toMatch(/stays open|is still open/)
-    }
+  it('keeps the M3 subject and first lines the brief asked to keep', () => {
+    const email = buildTrialEndedEmail({
+      trialEndsAt: TRIAL_END,
+      audience: 'minor',
+      unsubscribeUrl: UNSUBSCRIBE,
+    })
+    expect(email.subject).toBe('Your free trial has ended - your account is still open')
+    expect(email.text).toContain(
+      'Nothing was charged for the trial: we never took your card details.',
+    )
+    expect(email.text).toContain('Everything you have already had marked stays where it is.')
+    expect(email.html).toContain('/games/texts?ref=em-d8')
   })
 })

@@ -1,17 +1,21 @@
 /**
- * Tests for the trial-ending cron route.
+ * Tests for the trial-ending cron route: the no-card trial sequence, M1 to M5.
  *
- * Strategy: mock Prisma, sendEmail and runCron, then drive GET/POST
- * directly. The assertions lock down the three things that were actually
- * broken or risky in this area of the codebase:
+ * Strategy: mock Prisma, the Supabase service client, sendEmail, the marketing
+ * preference and runCron, then drive GET/POST directly. The assertions lock
+ * down what was broken or risky in this area:
  *
  *   1. Vercel Cron sends GET with `Authorization: Bearer <CRON_SECRET>`.
  *      Two crons here previously shipped POST-only and returned 405 to
  *      every scheduled invocation, forever.
- *   2. Idempotency. A re-run must never re-send, and a failed send must
- *      stay retryable rather than being silently swallowed.
+ *   2. Idempotency. A ledger row is claimed before every send and released
+ *      when the send fails; a second run sends nothing.
  *   3. The audience discriminator. A paying or mobile subscriber must be
- *      structurally excluded from the query, not merely unlikely to match.
+ *      structurally excluded from every query, not merely unlikely to match.
+ *   4. Age (23 October 2026). A child, unknown age included, gets service
+ *      copy with no price and no plan link, and never M1, M4 or M5, whatever
+ *      their marketing setting says. The 2000-01-01 placeholder is not an age.
+ *   5. M3 is a service notice now, so it is not gated on marketing consent.
  */
 
 import { describe, it, expect, vi, beforeEach } from 'vitest'
@@ -20,86 +24,179 @@ import { NextRequest } from 'next/server'
 // ─── Fixtures ────────────────────────────────────────────────────────────
 
 const SECRET = 'test-secret-abcdef'
-const NOW = Date.now()
 const DAY = 24 * 60 * 60 * 1000
 
 type ReminderRow = { sentAt: Date; nextPaymentDate: Date }
 
 type SubRow = {
   id: string
+  currentPeriodStart: Date
   currentPeriodEnd: Date
+  isTeacherPlan: boolean
   user: {
     id: string
+    supabaseUserId: string | null
     email: string | null
-    firstName: string
-    dateOfBirth: Date
+    dateOfBirth: Date | null
+    isMinor: boolean
+    role: string
+    lastLoginAt: Date | null
   }
   renewalReminders: ReminderRow[]
 }
 
+type Profile = {
+  id: string
+  role: string | null
+  date_of_birth: string | null
+  is_minor: boolean | null
+  subscription_status: string | null
+  stripe_customer_id: string | null
+}
+
 const state: {
-  trialing: SubRow[]
-  cancelled: SubRow[]
+  endingSoon: SubRow[]
+  recentlyExpired: SubRow[]
+  firstEssay: SubRow[]
+  questsFree: SubRow[]
+  oneEssay: SubRow[]
+  profiles: Profile[]
+  profilesError: boolean
+  consented: Set<string>
+  essayCount: number
+  ieltsCount: number
+  submissionCount: number | null
+  submissionsError: boolean
   whereClauses: Array<Record<string, unknown>>
-  created: Array<{ id: string; subscriptionId: string; nextPaymentDate: Date }>
-  deleted: string[]
+  ledger: Set<string>
+  ledgerRows: Map<string, string>
+  renewalCreated: Array<{ id: string; subscriptionId: string }>
   order: string[]
   sendSucceeds: boolean
-  createThrows: boolean
+  ledgerCreateThrows: boolean
+  renewalCreateThrows: boolean
 } = {
-  trialing: [],
-  cancelled: [],
+  endingSoon: [],
+  recentlyExpired: [],
+  firstEssay: [],
+  questsFree: [],
+  oneEssay: [],
+  profiles: [],
+  profilesError: false,
+  consented: new Set(),
+  essayCount: 0,
+  ieltsCount: 0,
+  submissionCount: 0,
+  submissionsError: false,
   whereClauses: [],
-  created: [],
-  deleted: [],
+  ledger: new Set(),
+  ledgerRows: new Map(),
+  renewalCreated: [],
   order: [],
   sendSucceeds: true,
-  createThrows: false,
+  ledgerCreateThrows: false,
+  renewalCreateThrows: false,
 }
 
 // ─── Mocks ───────────────────────────────────────────────────────────────
 
+type Where = {
+  status: string
+  currentPeriodStart?: unknown
+  currentPeriodEnd: { gt?: Date; gte?: Date; lt?: Date; lte?: Date }
+}
+
 vi.mock('@/lib/prisma', () => ({
   prisma: {
     subscription: {
-      findMany: vi.fn(async ({ where }: { where: Record<string, unknown> }) => {
-        state.whereClauses.push(where)
-        // The route runs the warning query (TRIALING) then the follow-up
-        // query (CANCELLED).
-        return where.status === 'TRIALING' ? state.trialing : state.cancelled
+      findMany: vi.fn(async ({ where }: { where: Where }) => {
+        state.whereClauses.push(where as unknown as Record<string, unknown>)
+        if (where.status === 'TRIALING') {
+          return where.currentPeriodStart ? state.firstEssay : state.endingSoon
+        }
+        if (where.currentPeriodEnd.gte) return state.recentlyExpired
+        // The two winback windows: 7 days after the end, and 30.
+        const daysAgo = Math.round((Date.now() - where.currentPeriodEnd.lte!.getTime()) / DAY)
+        return daysAgo >= 20 ? state.oneEssay : state.questsFree
       }),
     },
-    renewalReminder: {
-      create: vi.fn(
-        async ({ data }: { data: { subscriptionId: string; nextPaymentDate: Date } }) => {
-          if (state.createThrows) throw new Error('ledger write failed')
-          state.order.push('claim')
-          const id = `rr_${state.created.length + 1}`
-          state.created.push({
-            id,
-            subscriptionId: data.subscriptionId,
-            nextPaymentDate: data.nextPaymentDate,
-          })
-          return { id }
-        },
-      ),
+    lifecycleEmail: {
+      create: vi.fn(async ({ data }: { data: { userId: string; kind: string } }) => {
+        if (state.ledgerCreateThrows) throw new Error('relation "LifecycleEmail" does not exist')
+        const key = `${data.userId}|${data.kind}`
+        if (state.ledger.has(key)) throw Object.assign(new Error('unique'), { code: 'P2002' })
+        state.ledger.add(key)
+        const id = `le_${state.ledger.size}`
+        state.ledgerRows.set(id, key)
+        state.order.push(`claim:${data.kind}`)
+        return { id }
+      }),
       delete: vi.fn(async ({ where }: { where: { id: string } }) => {
+        const key = state.ledgerRows.get(where.id)
+        if (key) state.ledger.delete(key)
         state.order.push('release')
-        state.deleted.push(where.id)
         return { id: where.id }
       }),
     },
+    renewalReminder: {
+      create: vi.fn(async ({ data }: { data: { subscriptionId: string } }) => {
+        if (state.renewalCreateThrows) throw new Error('ledger write failed')
+        const id = `rr_${state.renewalCreated.length + 1}`
+        state.renewalCreated.push({ id, subscriptionId: data.subscriptionId })
+        state.order.push('rr-claim')
+        return { id }
+      }),
+      delete: vi.fn(async ({ where }: { where: { id: string } }) => {
+        state.order.push('rr-release')
+        return { id: where.id }
+      }),
+    },
+    essay: { count: vi.fn(async () => state.essayCount) },
+    iELTSAttempt: { count: vi.fn(async () => state.ieltsCount) },
   },
 }))
 
-const sendEmailMock = vi.fn(async () => {
+vi.mock('@/lib/supabase/server', () => ({
+  createServiceRoleClient: () => ({
+    from: (table: string) => {
+      if (table === 'profiles') {
+        return {
+          select: () => ({
+            in: async (_col: string, ids: string[]) =>
+              state.profilesError
+                ? { data: null, error: { message: 'profiles down' } }
+                : { data: state.profiles.filter((p) => ids.includes(p.id)), error: null },
+          }),
+        }
+      }
+      // marking_submissions
+      return {
+        select: () => ({
+          eq: () => ({
+            gte: async () =>
+              state.submissionsError
+                ? { count: null, error: { message: 'down' } }
+                : { count: state.submissionCount, error: null },
+          }),
+        }),
+      }
+    },
+  }),
+}))
+
+vi.mock('@/lib/email/marketing-preference', () => ({
+  isMarketingAllowed: async (id: string | null) => (id ? state.consented.has(id) : false),
+}))
+
+type SendArgs = [string, string, string, string, { headers?: Record<string, string> }?]
+const sendEmailMock = vi.fn(async (..._args: SendArgs) => {
   state.order.push('send')
   return state.sendSucceeds
     ? { success: true as const, messageId: 'm_1' }
     : { success: false as const, error: 'smtp down' }
 })
 vi.mock('@/lib/email', () => ({
-  sendEmail: (...args: unknown[]) => sendEmailMock(...(args as [])),
+  sendEmail: (...args: unknown[]) => sendEmailMock(...(args as SendArgs)),
 }))
 
 vi.mock('@/lib/cron/observability', () => ({
@@ -112,14 +209,26 @@ vi.mock('@/lib/cron/observability', () => ({
 beforeEach(() => {
   process.env.CRON_SECRET = SECRET
   process.env.TRIAL_LIFECYCLE_EMAILS_ENABLED = 'true'
-  state.trialing = []
-  state.cancelled = []
+  state.endingSoon = []
+  state.recentlyExpired = []
+  state.firstEssay = []
+  state.questsFree = []
+  state.oneEssay = []
+  state.profiles = []
+  state.profilesError = false
+  state.consented = new Set()
+  state.essayCount = 0
+  state.ieltsCount = 0
+  state.submissionCount = 0
+  state.submissionsError = false
   state.whereClauses = []
-  state.created = []
-  state.deleted = []
+  state.ledger = new Set()
+  state.ledgerRows = new Map()
+  state.renewalCreated = []
   state.order = []
   state.sendSucceeds = true
-  state.createThrows = false
+  state.ledgerCreateThrows = false
+  state.renewalCreateThrows = false
   sendEmailMock.mockClear()
 })
 
@@ -134,19 +243,49 @@ function req(method: 'GET' | 'POST', authorization?: string): NextRequest {
   })
 }
 
-function makeSub(overrides: Partial<SubRow> = {}): SubRow {
+async function run() {
+  const res = await GET(req('GET', `Bearer ${SECRET}`))
+  return { res, body: await res.json() }
+}
+
+const ADULT_DOB = new Date('1990-05-01T00:00:00.000Z')
+const CHILD_DOB = new Date('2011-05-01T00:00:00.000Z')
+const PLACEHOLDER_DOB = new Date('2000-01-01T00:00:00.000Z')
+
+function makeSub(
+  overrides: Partial<Omit<SubRow, 'user'>> & { user?: Partial<SubRow['user']> } = {},
+): SubRow {
+  const { user, ...rest } = overrides
   return {
     id: 'sub_1',
-    currentPeriodEnd: new Date(NOW + DAY),
+    currentPeriodStart: new Date(Date.now() - 6 * DAY),
+    currentPeriodEnd: new Date(Date.now() + DAY),
+    isTeacherPlan: false,
+    renewalReminders: [],
+    ...rest,
     user: {
       id: 'u_1',
+      supabaseUserId: '11111111-2222-4333-8444-555555555555',
       email: 'learner@example.com',
-      firstName: 'Amira',
-      dateOfBirth: new Date('2009-01-01T00:00:00.000Z'),
+      dateOfBirth: ADULT_DOB,
+      isMinor: false,
+      role: 'STUDENT',
+      lastLoginAt: null,
+      ...user,
     },
-    renewalReminders: [],
-    ...overrides,
   }
+}
+
+function sent(i = 0) {
+  const call = sendEmailMock.mock.calls[i]!
+  return { to: call[0], subject: call[1], html: call[2], text: call[3], options: call[4] }
+}
+
+function expectOneClickHeaders(options: { headers?: Record<string, string> } | undefined) {
+  expect(options?.headers?.['List-Unsubscribe']).toMatch(
+    /^<https:\/\/theenglishhub\.app\/api\/unsubscribe\?token=[^>]+>$/,
+  )
+  expect(options?.headers?.['List-Unsubscribe-Post']).toBe('List-Unsubscribe=One-Click')
 }
 
 // ─── Auth ────────────────────────────────────────────────────────────────
@@ -182,205 +321,435 @@ describe('trial-ending cron auth', () => {
 // ─── Feature flag ────────────────────────────────────────────────────────
 
 describe('trial-ending feature flag', () => {
-  it('sends nothing while TRIAL_LIFECYCLE_EMAILS_ENABLED is unset', async () => {
+  it('sends nothing while TRIAL_LIFECYCLE_EMAILS_ENABLED is unset, and says skipped', async () => {
     delete process.env.TRIAL_LIFECYCLE_EMAILS_ENABLED
-    state.trialing = [makeSub()]
+    state.endingSoon = [makeSub()]
+    state.recentlyExpired = [makeSub({ id: 'sub_2', currentPeriodEnd: new Date(Date.now() - DAY) })]
+    state.firstEssay = [makeSub({ id: 'sub_3' })]
 
-    const res = await GET(req('GET', `Bearer ${SECRET}`))
-    const body = await res.json()
+    const { res, body } = await run()
 
     expect(res.status).toBe(200)
     expect(body.skipped).toContain('disabled')
     expect(sendEmailMock).not.toHaveBeenCalled()
-    expect(state.created).toHaveLength(0)
+    expect(state.ledger.size).toBe(0)
+    expect(state.whereClauses).toHaveLength(0)
+  })
+
+  it('treats anything other than exactly "true" as off', async () => {
+    process.env.TRIAL_LIFECYCLE_EMAILS_ENABLED = 'TRUE'
+    state.endingSoon = [makeSub()]
+    const { body } = await run()
+    expect(body.skipped).toContain('disabled')
+    expect(sendEmailMock).not.toHaveBeenCalled()
   })
 })
 
-// ─── Warning send ────────────────────────────────────────────────────────
+// ─── M2: trial ending ────────────────────────────────────────────────────
 
-describe('trial-ending warning', () => {
-  it('sends one reminder and records it in the ledger', async () => {
-    state.trialing = [makeSub()]
+describe('M2 trial ending', () => {
+  it('sends once, to the account holder, with the subject and both unsubscribe headers', async () => {
+    state.endingSoon = [makeSub()]
 
-    const res = await GET(req('GET', `Bearer ${SECRET}`))
-    const body = await res.json()
+    const { body } = await run()
 
     expect(body.warned).toBe(1)
     expect(sendEmailMock).toHaveBeenCalledTimes(1)
-    expect(state.created).toHaveLength(1)
+    const s = sent()
+    expect(s.to).toBe('learner@example.com')
+    expect(s.subject).toMatch(/^Your free trial ends on \d{1,2} \w+ \d{4}$/)
+    expectOneClickHeaders(s.options)
+    expect(s.html).toContain('/unsubscribe?token=')
   })
 
-  it('claims the ledger row BEFORE sending, so a re-run cannot double-send', async () => {
-    // Ordering is the whole idempotency guarantee: recording after the send
-    // leaves a window where a successful send with a failed ledger write is
-    // re-sent on the next run.
-    state.trialing = [makeSub()]
-
-    await GET(req('GET', `Bearer ${SECRET}`))
-
-    expect(state.order).toEqual(['claim', 'send'])
+  it('claims the ledger row, then the RenewalReminder row, BEFORE sending', async () => {
+    state.endingSoon = [makeSub()]
+    await run()
+    expect(state.order).toEqual(['claim:M2_TRIAL_ENDING', 'rr-claim', 'send'])
+    expect(state.renewalCreated).toHaveLength(1)
   })
 
-  it('does not re-send when a warning row already exists', async () => {
-    const end = new Date(NOW + DAY)
-    state.trialing = [
-      makeSub({
-        currentPeriodEnd: end,
-        // Warning rows are written before the trial boundary.
-        renewalReminders: [{ sentAt: new Date(NOW - DAY), nextPaymentDate: end }],
-      }),
-    ]
+  it('releases both claims when the send fails, keeping it retryable', async () => {
+    state.sendSucceeds = false
+    state.endingSoon = [makeSub()]
 
-    const res = await GET(req('GET', `Bearer ${SECRET}`))
-    const body = await res.json()
+    const { body } = await run()
 
     expect(body.warned).toBe(0)
+    expect(body.skipped.sendFailed).toBe(1)
+    expect(state.order).toEqual([
+      'claim:M2_TRIAL_ENDING',
+      'rr-claim',
+      'send',
+      'release',
+      'rr-release',
+    ])
+    expect(state.ledger.size).toBe(0)
+  })
+
+  it('sends nothing when the ledger cannot be written (table not yet created)', async () => {
+    state.ledgerCreateThrows = true
+    state.endingSoon = [makeSub()]
+
+    const { body } = await run()
+
+    expect(sendEmailMock).not.toHaveBeenCalled()
+    expect(body.skipped.claimFailed).toBe(1)
+  })
+
+  it('sends nothing, and releases the ledger, when the RenewalReminder claim fails', async () => {
+    state.renewalCreateThrows = true
+    state.endingSoon = [makeSub()]
+
+    await run()
+
+    expect(sendEmailMock).not.toHaveBeenCalled()
+    expect(state.ledger.size).toBe(0)
+  })
+
+  it('does not re-send when a warning RenewalReminder row already exists', async () => {
+    const end = new Date(Date.now() + DAY)
+    state.endingSoon = [
+      makeSub({
+        currentPeriodEnd: end,
+        renewalReminders: [{ sentAt: new Date(Date.now() - DAY), nextPaymentDate: end }],
+      }),
+    ]
+    const { body } = await run()
     expect(body.skipped.alreadySent).toBe(1)
     expect(sendEmailMock).not.toHaveBeenCalled()
   })
 
-  it('releases the ledger claim when the send fails, keeping it retryable', async () => {
-    state.sendSucceeds = false
-    state.trialing = [makeSub()]
-
-    const res = await GET(req('GET', `Bearer ${SECRET}`))
-    const body = await res.json()
-
-    expect(body.warned).toBe(0)
-    expect(body.skipped.sendFailed).toBe(1)
-    expect(state.deleted).toEqual(['rr_1'])
-    expect(state.order).toEqual(['claim', 'send', 'release'])
-  })
-
-  it('does not send when the ledger claim itself fails', async () => {
-    state.createThrows = true
-    state.trialing = [makeSub()]
-
-    const res = await GET(req('GET', `Bearer ${SECRET}`))
-    const body = await res.json()
-
-    expect(sendEmailMock).not.toHaveBeenCalled()
-    expect(body.warned).toBe(0)
-  })
-
   it('skips an account with no email address', async () => {
-    state.trialing = [makeSub({ user: { ...makeSub().user, email: null } })]
-
-    const res = await GET(req('GET', `Bearer ${SECRET}`))
-    const body = await res.json()
-
+    state.endingSoon = [makeSub({ user: { email: null } })]
+    const { body } = await run()
     expect(body.skipped.noEmail).toBe(1)
     expect(sendEmailMock).not.toHaveBeenCalled()
   })
 
   it('never emails an under-13 account holder', async () => {
-    const tooYoung = new Date(NOW - 11 * 365 * DAY)
-    state.trialing = [makeSub({ user: { ...makeSub().user, dateOfBirth: tooYoung } })]
-
-    const res = await GET(req('GET', `Bearer ${SECRET}`))
-    const body = await res.json()
-
+    state.endingSoon = [makeSub({ user: { dateOfBirth: new Date(Date.now() - 11 * 365 * DAY) } })]
+    const { body } = await run()
     expect(body.skipped.underAge).toBe(1)
     expect(sendEmailMock).not.toHaveBeenCalled()
   })
 })
 
-// ─── Follow-up send ──────────────────────────────────────────────────────
+// ─── Audience: adult, child, unknown, placeholder ────────────────────────
 
-describe('trial-ending follow-up', () => {
-  it('sends a follow-up for a recently expired trial', async () => {
-    state.cancelled = [makeSub({ id: 'sub_2', currentPeriodEnd: new Date(NOW - DAY) })]
+describe('M2 and M3 audience', () => {
+  it('gives an adult the price and the plan link', async () => {
+    state.endingSoon = [makeSub()]
+    await run()
+    expect(sent().text).toContain('planned standard pricing')
+    expect(sent().html).toContain('/pricing?ref=em-d6')
+  })
 
-    const res = await GET(req('GET', `Bearer ${SECRET}`))
-    const body = await res.json()
-
-    expect(body.followedUp).toBe(1)
+  it('gives a child the service copy, with no £ and no /pricing', async () => {
+    state.endingSoon = [makeSub({ user: { dateOfBirth: CHILD_DOB } })]
+    await run()
     expect(sendEmailMock).toHaveBeenCalledTimes(1)
+    expect(sent().text).not.toContain('£')
+    expect(sent().html).not.toContain('/pricing')
+    expect(sent().html).toContain('/revision/texts?ref=em-d6')
+  })
+
+  it('treats unknown age as a child', async () => {
+    state.endingSoon = [makeSub({ user: { dateOfBirth: null } })]
+    await run()
+    expect(sent().text).not.toContain('£')
+    expect(sent().html).not.toContain('/pricing')
+  })
+
+  it('never reads an age from the 2000-01-01 placeholder', async () => {
+    state.endingSoon = [makeSub({ user: { dateOfBirth: PLACEHOLDER_DOB } })]
+    await run()
+    expect(sent().text).not.toContain('£')
+  })
+
+  it('takes the profile date of birth over the Prisma one', async () => {
+    const uid = '11111111-2222-4333-8444-555555555555'
+    state.profiles = [
+      {
+        id: uid,
+        role: 'student',
+        date_of_birth: '2011-02-02',
+        is_minor: true,
+        subscription_status: 'pro',
+        stripe_customer_id: null,
+      },
+    ]
+    state.endingSoon = [makeSub({ user: { dateOfBirth: ADULT_DOB } })]
+    await run()
+    expect(sent().text).not.toContain('£')
+  })
+
+  it('M3 reaches a child too, with the child copy', async () => {
+    state.recentlyExpired = [
+      makeSub({
+        id: 'sub_2',
+        currentPeriodEnd: new Date(Date.now() - DAY),
+        user: { dateOfBirth: CHILD_DOB },
+      }),
+    ]
+    const { body } = await run()
+    expect(body.followedUp).toBe(1)
+    expect(sent().subject).toBe('Your free trial has ended - your account is still open')
+    expect(sent().text).not.toContain('£')
+    expect(sent().html).toContain('/games/texts?ref=em-d8')
+    expectOneClickHeaders(sent().options)
+  })
+})
+
+// ─── M3: trial ended ─────────────────────────────────────────────────────
+
+describe('M3 trial ended', () => {
+  it('sends for a recently expired trial, claiming before sending', async () => {
+    state.recentlyExpired = [makeSub({ id: 'sub_2', currentPeriodEnd: new Date(Date.now() - DAY) })]
+    const { body } = await run()
+    expect(body.followedUp).toBe(1)
+    expect(state.order).toEqual(['claim:M3_TRIAL_ENDED', 'rr-claim', 'send'])
+    expect(sent().html).toContain('/pricing?ref=em-d8')
   })
 
   it('does not re-send when a follow-up row already exists', async () => {
-    const end = new Date(NOW - 2 * DAY)
-    state.cancelled = [
+    const end = new Date(Date.now() - 2 * DAY)
+    state.recentlyExpired = [
       makeSub({
         id: 'sub_2',
         currentPeriodEnd: end,
-        // Follow-up rows are written after the trial boundary.
-        renewalReminders: [{ sentAt: new Date(NOW - DAY), nextPaymentDate: end }],
+        renewalReminders: [{ sentAt: new Date(Date.now() - DAY), nextPaymentDate: end }],
       }),
     ]
-
-    const res = await GET(req('GET', `Bearer ${SECRET}`))
-    const body = await res.json()
-
+    const { body } = await run()
     expect(body.followedUp).toBe(0)
     expect(body.skipped.alreadySent).toBe(1)
     expect(sendEmailMock).not.toHaveBeenCalled()
   })
 
   it('still follows up when only a warning row exists', async () => {
-    const end = new Date(NOW - 2 * DAY)
-    state.cancelled = [
+    const end = new Date(Date.now() - 2 * DAY)
+    state.recentlyExpired = [
       makeSub({
         id: 'sub_2',
         currentPeriodEnd: end,
-        renewalReminders: [{ sentAt: new Date(NOW - 4 * DAY), nextPaymentDate: end }],
+        renewalReminders: [{ sentAt: new Date(Date.now() - 4 * DAY), nextPaymentDate: end }],
+      }),
+    ]
+    const { body } = await run()
+    expect(body.followedUp).toBe(1)
+  })
+})
+
+// ─── M1: the first marked essay ──────────────────────────────────────────
+
+describe('M1 first marked essay', () => {
+  it('sends to an adult with nothing marked, once, with both headers', async () => {
+    state.firstEssay = [makeSub({ id: 'sub_3', currentPeriodEnd: new Date(Date.now() + 4 * DAY) })]
+
+    const { body } = await run()
+
+    expect(body.nudged).toBe(1)
+    expect(sendEmailMock).toHaveBeenCalledTimes(1)
+    expect(sent().subject).toBe('Your first marked essay: a mark for each assessment objective')
+    expect(sent().html).toContain('/marking/submit?ref=em-d3')
+    expectOneClickHeaders(sent().options)
+    expect(state.order).toEqual(['claim:M1_FIRST_ESSAY', 'send'])
+  })
+
+  it('never sends to a child, or to an unknown age', async () => {
+    state.firstEssay = [
+      makeSub({ id: 'a', user: { id: 'u_a', dateOfBirth: CHILD_DOB } }),
+      makeSub({ id: 'b', user: { id: 'u_b', dateOfBirth: null } }),
+      makeSub({ id: 'c', user: { id: 'u_c', dateOfBirth: PLACEHOLDER_DOB } }),
+    ]
+    const { body } = await run()
+    expect(sendEmailMock).not.toHaveBeenCalled()
+    expect(body.skipped.notAdult).toBe(3)
+  })
+
+  it('skips a teacher, whose trial is the examiner tool', async () => {
+    state.firstEssay = [makeSub({ isTeacherPlan: true })]
+    const { body } = await run()
+    expect(sendEmailMock).not.toHaveBeenCalled()
+    expect(body.skipped.teacher).toBe(1)
+  })
+
+  it('skips anyone who has submitted to the marking page, which writes no Prisma Essay', async () => {
+    state.submissionCount = 1
+    state.firstEssay = [makeSub()]
+    const { body } = await run()
+    expect(sendEmailMock).not.toHaveBeenCalled()
+    expect(body.skipped.alreadyMarking).toBe(1)
+  })
+
+  it('skips anyone with a Prisma Essay', async () => {
+    state.essayCount = 2
+    state.firstEssay = [makeSub()]
+    await run()
+    expect(sendEmailMock).not.toHaveBeenCalled()
+  })
+
+  it('skips, rather than guesses, when the marking history cannot be read', async () => {
+    state.submissionsError = true
+    state.firstEssay = [makeSub()]
+    const { body } = await run()
+    expect(sendEmailMock).not.toHaveBeenCalled()
+    expect(body.skipped.checkFailed).toBe(1)
+  })
+})
+
+// ─── M4 and M5: consented adults ─────────────────────────────────────────
+
+const UID = '11111111-2222-4333-8444-555555555555'
+const FREE_PROFILE: Profile = {
+  id: UID,
+  role: 'student',
+  date_of_birth: '1990-05-01',
+  is_minor: false,
+  subscription_status: 'free',
+  stripe_customer_id: null,
+}
+
+describe('M4 and M5', () => {
+  it('M4 goes to a consented adult still on the free plan', async () => {
+    state.profiles = [FREE_PROFILE]
+    state.consented.add(UID)
+    state.questsFree = [makeSub({ id: 'sub_4', currentPeriodEnd: new Date(Date.now() - 8 * DAY) })]
+
+    const { body } = await run()
+
+    expect(body.questsFree).toBe(1)
+    expect(sent().subject).toBe('Quests for your set text are free with your account')
+    expect(sent().html).toContain('/games/texts?ref=em-d14')
+    expectOneClickHeaders(sent().options)
+    expect(state.order).toEqual(['claim:M4_QUESTS_FREE', 'send'])
+  })
+
+  it('M5 goes to a consented adult a month after the trial ended', async () => {
+    state.profiles = [FREE_PROFILE]
+    state.consented.add(UID)
+    state.oneEssay = [makeSub({ id: 'sub_5', currentPeriodEnd: new Date(Date.now() - 31 * DAY) })]
+
+    const { body } = await run()
+
+    expect(body.oneEssay).toBe(1)
+    expect(sent().subject).toBe('One essay from class, marked against each assessment objective')
+    expect(sent().html).toContain('/pricing?ref=em-d30')
+  })
+
+  it('a consented minor gets neither', async () => {
+    state.profiles = [{ ...FREE_PROFILE, date_of_birth: '2009-03-03' }]
+    state.consented.add(UID)
+    state.questsFree = [makeSub({ id: 'sub_4', currentPeriodEnd: new Date(Date.now() - 8 * DAY) })]
+    state.oneEssay = [makeSub({ id: 'sub_5', currentPeriodEnd: new Date(Date.now() - 31 * DAY) })]
+
+    const { body } = await run()
+
+    expect(sendEmailMock).not.toHaveBeenCalled()
+    expect(body.skipped.notAdult).toBe(2)
+  })
+
+  it('an adult who has not consented gets neither', async () => {
+    state.profiles = [FREE_PROFILE]
+    state.questsFree = [makeSub({ id: 'sub_4', currentPeriodEnd: new Date(Date.now() - 8 * DAY) })]
+    const { body } = await run()
+    expect(sendEmailMock).not.toHaveBeenCalled()
+    expect(body.skipped.notConsented).toBe(1)
+  })
+
+  it('skips anyone who has become a customer or signed in since', async () => {
+    state.consented.add(UID)
+    state.profiles = [{ ...FREE_PROFILE, stripe_customer_id: 'cus_1' }]
+    state.questsFree = [makeSub({ id: 'sub_4', currentPeriodEnd: new Date(Date.now() - 8 * DAY) })]
+    let r = await run()
+    expect(r.body.skipped.notFree).toBe(1)
+
+    state.profiles = [FREE_PROFILE]
+    state.questsFree = [
+      makeSub({
+        id: 'sub_4',
+        currentPeriodEnd: new Date(Date.now() - 8 * DAY),
+        user: { lastLoginAt: new Date(Date.now() - DAY) },
+      }),
+    ]
+    r = await run()
+    expect(r.body.skipped.signedInSince).toBe(1)
+    expect(sendEmailMock).not.toHaveBeenCalled()
+  })
+
+  it('skips when the profile cannot be read, since only it proves the plan is free', async () => {
+    state.profilesError = true
+    state.consented.add(UID)
+    state.questsFree = [makeSub({ id: 'sub_4', currentPeriodEnd: new Date(Date.now() - 8 * DAY) })]
+    await run()
+    expect(sendEmailMock).not.toHaveBeenCalled()
+  })
+})
+
+// ─── Idempotency across runs ─────────────────────────────────────────────
+
+describe('a second run', () => {
+  it('sends nothing that the first run sent', async () => {
+    state.profiles = [FREE_PROFILE]
+    state.consented.add(UID)
+    state.endingSoon = [makeSub({ id: 'sub_a', user: { id: 'u_a' } })]
+    state.firstEssay = [makeSub({ id: 'sub_b', user: { id: 'u_b' } })]
+    state.questsFree = [
+      makeSub({
+        id: 'sub_c',
+        user: { id: 'u_c' },
+        currentPeriodEnd: new Date(Date.now() - 8 * DAY),
       }),
     ]
 
-    const res = await GET(req('GET', `Bearer ${SECRET}`))
-    const body = await res.json()
+    await run()
+    const firstRun = sendEmailMock.mock.calls.length
+    expect(firstRun).toBe(3)
 
-    expect(body.followedUp).toBe(1)
+    const { body } = await run()
+    expect(sendEmailMock.mock.calls.length).toBe(firstRun)
+    expect(body.skipped.alreadySent).toBe(3)
   })
 })
 
 // ─── Audience discriminator ──────────────────────────────────────────────
 
 describe('trial-ending audience safety', () => {
-  it('structurally excludes paying, Stripe and mobile subscribers', async () => {
-    await GET(req('GET', `Bearer ${SECRET}`))
+  it('structurally excludes paying, Stripe and mobile subscribers in every query', async () => {
+    await run()
 
-    expect(state.whereClauses).toHaveLength(2)
+    expect(state.whereClauses).toHaveLength(5)
     for (const where of state.whereClauses) {
-      // Never a Stripe-managed subscription.
       expect(where.stripeSubscriptionId).toBeNull()
-      // Never a RevenueCat mobile row (these also carry a null Stripe id).
       expect(where.platform).toBe('WEB')
       expect(where.revenuecatAppUserId).toBeNull()
-      // Never anyone who has ever been charged.
       expect(where.paymentCount).toBe(0)
+      expect(where.user).toEqual({ deletedAt: null, accountStatus: 'ACTIVE' })
     }
   })
 
-  it('gates the winback on marketing consent but not the service notice', async () => {
-    await GET(req('GET', `Bearer ${SECRET}`))
-
-    const [warnWhere, followUpWhere] = state.whereClauses
-    const warnUser = warnWhere.user as Record<string, unknown>
-    const followUpUser = followUpWhere.user as Record<string, unknown>
-
-    // The warning is a service message about the recipient's own account.
-    expect(warnUser.privacySettings).toBeUndefined()
-    // The winback is marketing, so it requires an explicit opt-in.
-    expect(followUpUser.privacySettings).toEqual({ marketingEnabled: true })
+  it('no longer gates the trial-ended notice on marketing consent', async () => {
+    await run()
+    for (const where of state.whereClauses) {
+      expect((where.user as Record<string, unknown>).privacySettings).toBeUndefined()
+    }
   })
 
-  it('only looks at trials that have not yet ended when warning', async () => {
-    await GET(req('GET', `Bearer ${SECRET}`))
+  it('bounds every window so switching the flag on cannot mail old trials', async () => {
+    await run()
+    const [warn, followUp, firstEssay, questsFree, oneEssay] = state.whereClauses as Array<
+      Record<string, { gt?: Date; gte?: Date; lt?: Date; lte?: Date }>
+    >
 
-    const warnWhere = state.whereClauses[0]
-    const window = warnWhere.currentPeriodEnd as { gt: Date; lte: Date }
-    expect(window.gt.getTime()).toBeLessThanOrEqual(Date.now())
-    expect(window.lte.getTime()).toBeGreaterThan(window.gt.getTime())
-  })
-
-  it('bounds the follow-up window so enabling the flag cannot mail old trials', async () => {
-    await GET(req('GET', `Bearer ${SECRET}`))
-
-    const followUpWhere = state.whereClauses[1]
-    const window = followUpWhere.currentPeriodEnd as { lt: Date; gte: Date }
-    expect(window.gte.getTime()).toBeLessThan(window.lt.getTime())
-    // Floor is 3 days back, not the beginning of time.
-    expect(window.lt.getTime() - window.gte.getTime()).toBe(3 * DAY)
+    expect(warn.currentPeriodEnd.lte!.getTime() - warn.currentPeriodEnd.gt!.getTime()).toBe(2 * DAY)
+    expect(followUp.currentPeriodEnd.lt!.getTime() - followUp.currentPeriodEnd.gte!.getTime()).toBe(
+      3 * DAY,
+    )
+    // M1 only for trials that have not yet reached M2's window.
+    expect(firstEssay.currentPeriodEnd.gt!.getTime()).toBeGreaterThan(Date.now() + 2 * DAY - 1000)
+    for (const w of [questsFree, oneEssay]) {
+      expect(w.currentPeriodEnd.lte!.getTime() - w.currentPeriodEnd.gt!.getTime()).toBe(3 * DAY)
+    }
   })
 })
