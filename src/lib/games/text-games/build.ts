@@ -411,15 +411,27 @@ function lineAround(quote: string, at: number, end: number): { pre: string; post
   return { pre: quote.slice(from, at), post: quote.slice(end, to) }
 }
 
+/** The fewest words a quotation needs before one of them is asked for: below it, the gap is most of the line. */
+export const FINISH_MIN_WORDS = 5
+
 function buildFinishFrom(ctx: Ctx, sources: QuoteSource[], all: QuoteSource[]): FinishItem[] {
   const items: FinishItem[] = []
   const lower = (w: string) => w.toLowerCase()
+  // A word of the text's own title is no test of the line (24 October 2026:
+  // "Ay, every inch a ___." for King Lear; 26 blanks were a title word).
+  const titleStems = new Set(wordsOf(ctx.guide.title).map(stem))
   for (const src of sources) {
     const quoteWords = wordsOf(src.quote)
+    // Too short to finish: An Unknown Girl and Half-past Two blanked the whole
+    // of a one-word quotation, and 68 blanks sat in quotations of three words
+    // or fewer (24 October 2026).
+    if (quoteWords.length < FINISH_MIN_WORDS) continue
     const inQuote = new Set(quoteWords)
     // Only a word the quotation has once: a second copy left showing would give it away.
     const once = blankable(src.quote).filter(
-      (t) => quoteWords.filter((w) => w === lower(t.word)).length === 1,
+      (t) =>
+        quoteWords.filter((w) => w === lower(t.word)).length === 1 &&
+        !titleStems.has(stem(lower(t.word))),
     )
     if (once.length === 0) continue
     // The longest words carry the most meaning; one of the three, by seed.
@@ -440,6 +452,11 @@ function buildFinishFrom(ctx: Ctx, sources: QuoteSource[], all: QuoteSource[]): 
       return ctx.quotations.some((q) => occurrences(q, candidate) > 0)
     }
 
+    // "a" or "an" before the gap reads only with a word that starts as the
+    // answer does: "You would have made an ___" offered "thrill" and "lost".
+    const article = /\b(an?)\s*$/i.exec(before)?.[1]?.toLowerCase()
+    const fitsArticle = (w: string) =>
+      !article || /^[aeiou]/i.test(w) === /^[aeiou]/i.test(blank.word)
     const candidates: string[] = []
     const seen = new Set<string>([lower(blank.word)])
     for (const other of all) {
@@ -454,6 +471,7 @@ function buildFinishFrom(ctx: Ctx, sources: QuoteSource[], all: QuoteSource[]): 
         // a word already in the quotation looks wrong for the wrong reason.
         if (stem(k) === stem(lower(blank.word))) continue
         if (inQuote.has(k)) continue
+        if (!fitsArticle(t.word)) continue
         candidates.push(t.word)
       }
     }
@@ -499,12 +517,48 @@ function buildFinish(ctx: Ctx): GameItem[] {
 
 // ── Method spotter ───────────────────────────────────────────────────────────
 
+/** The fewest words of the text a method question shows: too few, and no method can be named. */
+export const METHOD_MIN_WORDS = 4
+
+/** The spans an example quotes from the text, in double or curly quotation marks. */
+export function quotedSpans(example: string): string[] {
+  const out: string[] = []
+  for (const m of example.matchAll(
+    /[\u201c"]([^\u201d"]{2,}?)[\u201d"]|\u2018([^\u2019]{2,}?)\u2019/g,
+  )) {
+    const span = (m[1] ?? m[2] ?? '').trim()
+    if (span) out.push(span)
+  }
+  return out
+}
+
+/**
+ * The method spotter, from the guide's languageAnalysis. Since 24 October
+ * 2026 it shows only the words an example quotes (MethodItem.quoted), and asks
+ * nothing where those are fewer than METHOD_MIN_WORDS, where the method's own
+ * name shares a word with them ("Motif: the wonderful thing" beside "A
+ * wonderful thing is going to happen"), or where a wrong method's name does:
+ * an option that repeats the quotation would look right for the wrong reason.
+ */
 function buildMethod(ctx: Ctx): GameItem[] {
   const list = ctx.guide.languageAnalysis ?? []
   const items: MethodItem[] = []
   list.forEach((t, i) => {
+    const spans = quotedSpans(t.example)
+    const quoted = spans.join(' \u2026 ')
+    if (wordsOf(quoted).length < METHOD_MIN_WORDS) return
+    const shown = new Set(
+      wordsOf(quoted)
+        .filter((w) => !isStopWord(w) && w.length >= 4)
+        .map(stem),
+    )
+    const echoes = (name: string) =>
+      wordsOf(name).some((w) => !isStopWord(w) && w.length >= 4 && shown.has(stem(w)))
+    if (echoes(t.technique)) return
     const wrong = pickWrong(
-      list.filter((u) => u !== t && !methodsMayOverlap(t, u)).map((u) => u.technique),
+      list
+        .filter((u) => u !== t && !methodsMayOverlap(t, u) && !echoes(u.technique))
+        .map((u) => u.technique),
       hashSeed(ctx.slug, 'method', i),
     )
     if (!wrong) return
@@ -512,6 +566,7 @@ function buildMethod(ctx: Ctx): GameItem[] {
       kind: 'method',
       id: `method:${i}`,
       example: t.example,
+      quoted,
       answer: t.technique,
       options: [t.technique, ...wrong],
       explanation: t.effect,

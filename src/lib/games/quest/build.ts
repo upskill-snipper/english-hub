@@ -6,8 +6,11 @@
  * WHERE EACH CHALLENGE COMES FROM
  *
  *   item          the text-games builder's own items (who, where, finish,
- *                 method, theme, and story order), unchanged: each is proved
- *                 there to have one right answer
+ *                 method, theme, and story order), unchanged but for one
+ *                 thing: a "where is this from?" question asked in a part
+ *                 draws its wrong places from inside that part (localWhere
+ *                 below), each still a place the guide gives that cannot
+ *                 overlap the answer
  *   panel-line    a comic panel's verbatim quotation (src/data/comics), against
  *   line-panel    other panels' quotations, from moments that cannot be the
  *                 same place (wheresMayOverlap)
@@ -27,7 +30,12 @@
 import type { ComicSet } from '@/lib/comics/types'
 import { buildTextGame, type HeldEdition } from '@/lib/games/text-games/build'
 import { hashSeed, rng, seededPick } from '@/lib/games/text-games/seed'
-import { normForMatch, themesMayOverlap, wheresMayOverlap } from '@/lib/games/text-games/text'
+import {
+  normForMatch,
+  themesMayOverlap,
+  whereUnits,
+  wheresMayOverlap,
+} from '@/lib/games/text-games/text'
 import type { GameArt, GameItem, MomentRef, OrderItem } from '@/lib/games/text-games/types'
 import type { StudyGuide } from '@/lib/study-guides/types'
 
@@ -361,6 +369,13 @@ export function momentOf(c: Challenge): MomentRef | undefined {
  * one; otherwise, for a quotation the guide places by act or chapter but not
  * in its timeline, the first moment whose place it could be. This only decides
  * WHEN a question is asked, never what its answer is.
+ *
+ * A place neither side can read decides nothing (24 October 2026).
+ * wheresMayOverlap says "may overlap" for a reference it cannot read, which
+ * is right for keeping wrong options apart and wrong here: every such
+ * quotation landed in the first part it was compared with, 285 of the 1,423
+ * placed by reference, so DNA's Part 1 quoted Acts Three and Four. Such a
+ * quotation is now asked in no part.
  */
 function placeOf(c: Challenge, moments: MomentRef[]): number | undefined {
   const own = momentOf(c)
@@ -371,8 +386,49 @@ function placeOf(c: Challenge, moments: MomentRef[]): number | undefined {
       : c.type === 'rebuild'
         ? c.where
         : undefined
-  if (!where) return undefined
-  return moments.find((m) => wheresMayOverlap(where, m.where))?.index
+  if (!where || whereUnits(where).size === 0) return undefined
+  return moments.find((m) => whereUnits(m.where).size > 0 && wheresMayOverlap(where, m.where))
+    ?.index
+}
+
+/**
+ * A "where is this from?" question as a part asks it: its wrong places drawn
+ * from inside the part (24 October 2026). The map labels each part by where
+ * it runs in the text ("From Act 1, Scene 1 to Act 1, Scene 5"), so a wrong
+ * place from another part would be ruled out by the label alone. Places come
+ * from the same family of references as the question's own (a key quotation's
+ * against key quotations', a scene card's against scene cards'), as the
+ * text-games builder keeps them, since the two are written differently. A
+ * question its part cannot give two such places is not asked in the part.
+ */
+function localWhere(
+  c: Challenge,
+  partWheres: string[],
+  family: Map<string, string[]>,
+  seed: number,
+): Challenge | null {
+  if (c.type !== 'item' || c.item.kind !== 'where') return c
+  const it = c.item
+  const kin = family.get(familyOfWhere(it.id)) ?? []
+  const inPart = (w: string) =>
+    whereUnits(w).size > 0 &&
+    partWheres.some((p) => whereUnits(p).size > 0 && wheresMayOverlap(w, p))
+  const seen = new Set<string>([normForMatch(it.answer)])
+  const candidates: string[] = []
+  for (const w of kin) {
+    const k = normForMatch(w)
+    if (seen.has(k)) continue
+    seen.add(k)
+    if (!wheresMayOverlap(w, it.answer) && inPart(w)) candidates.push(w)
+  }
+  if (candidates.length < 2) return null
+  const wrong = seededPick(candidates, 3, seed)
+  return { ...c, item: { ...it, options: [it.answer, ...wrong] } }
+}
+
+/** A where question's family of references: its source key's prefix ("kq", "tl"). */
+function familyOfWhere(id: string): string {
+  return id.replace(/^where:/, '').split(':')[0]
 }
 
 interface Pools {
@@ -394,13 +450,24 @@ function assemble(
     list.forEach((c) => kept.set(c.id, c))
     return list.map((c) => c.id)
   }
+  // Every place each family of where questions offers, for localWhere.
+  const family = new Map<string, string[]>()
+  for (const ch of pools.chapter) {
+    if (ch.type !== 'item' || ch.item.kind !== 'where') continue
+    const f = familyOfWhere(ch.item.id)
+    family.set(f, [...(family.get(f) ?? []), ...ch.item.options])
+  }
   const chapterLevels: Level[] = []
   for (let c = 1; c <= chapters; c++) {
     const indices = moments.filter((m) => chapterOf(m.index, n, chapters) === c).map((m) => m.index)
-    const inChapter = pools.chapter.filter((ch) => {
-      const at = placeOf(ch, moments)
-      return at !== undefined && chapterOf(at, n, chapters) === c
-    })
+    const partWheres = indices.map((i) => moments[i].where)
+    const inChapter = pools.chapter
+      .filter((ch) => {
+        const at = placeOf(ch, moments)
+        return at !== undefined && chapterOf(at, n, chapters) === c
+      })
+      .map((ch) => localWhere(ch, partWheres, family, hashSeed(slug, 'where-local', ch.id)))
+      .filter((ch): ch is Challenge => ch !== null)
     const seq = sequenceOf(`order:chapter-${c}`, indices, moments)
     const all = [...(seq ? [item(seq)] : []), ...inChapter]
     if (all.length < MIN_CHAPTER) return null

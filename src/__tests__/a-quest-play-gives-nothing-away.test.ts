@@ -3,8 +3,10 @@ import { describe, expect, it } from 'vitest'
 import { challengeFacts, dealLevel, PLAY_SIZE } from '@/lib/games/quest/deal'
 import { loadQuest } from '@/lib/games/quest/load'
 import { emptyQuest, recordDeal, seenInLevel } from '@/lib/games/quest/progress'
+import { chapterOf } from '@/lib/games/quest/build'
 import type { Quest } from '@/lib/games/quest/types'
 import { textGameSlugs } from '@/lib/games/text-games/load'
+import { whereUnits, wheresMayOverlap } from '@/lib/games/text-games/text'
 
 /**
  * Every quest, every level, dealt five plays deep with the history a
@@ -88,5 +90,41 @@ describe('every quest play', () => {
     expect(problems.slice(0, 5), `${problems.length} problems`).toEqual([])
     expect(shared / plays, 'plays that share a subject').toBeLessThanOrEqual(0.25)
     expect(repeat / repeatOf, 'second plays repeating the first').toBeLessThanOrEqual(0.2)
+  })
+
+  it('asks "where is this from?" with wrong places inside the part the map names', () => {
+    // The map labels a part by where it runs ("From Act 1, Scene 1 to Act 1,
+    // Scene 5"): a wrong place from another part would be ruled out by the
+    // label (src/lib/games/quest/build.ts, localWhere).
+    const problems: string[] = []
+    let asked = 0
+    for (const quest of quests) {
+      const parts = quest.levels.filter((l) => l.kind === 'chapter')
+      for (const level of parts) {
+        const pool = level.pool
+          .map((id) => quest.challenges.find((c) => c.id === id))
+          .filter((c): c is NonNullable<typeof c> => !!c)
+        // The part's own moments, shared out as the builder shares them.
+        const moments = quest.moments
+          .filter((m) => chapterOf(m.index, quest.moments.length, parts.length) === level.chapter)
+          .map((m) => m.where)
+        const inPart = (w: string) =>
+          whereUnits(w).size > 0 &&
+          moments.some((p) => whereUnits(p).size > 0 && wheresMayOverlap(w, p))
+        for (const c of pool) {
+          if (c.type !== 'item' || c.item.kind !== 'where') continue
+          asked++
+          for (const o of c.item.options) {
+            if (o === c.item.answer) continue
+            if (!inPart(o))
+              problems.push(`${quest.slug} ${level.id} ${c.id}: "${o}" is outside the part`)
+            if (wheresMayOverlap(o, c.item.answer))
+              problems.push(`${quest.slug} ${level.id} ${c.id}: "${o}" may be the answer's place`)
+          }
+        }
+      }
+    }
+    expect(asked).toBeGreaterThan(300)
+    expect(problems.slice(0, 5), `${problems.length} problems`).toEqual([])
   })
 })

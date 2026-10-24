@@ -48,8 +48,18 @@ export const PLAY_SIZE: Record<LevelKind | 'review', number> = {
   review: 10,
 }
 
-/** The most of one quick kind in a single play. */
-const CEILING: Partial<Record<string, number>> = { 'theme-check': 2, rebuild: 2, marker: 2 }
+/**
+ * The most of one quick kind in a single play. Theme questions joined them on
+ * 24 October 2026: 30 per cent of all challenges were theme labels, and a play
+ * of Oranges Are Not the Only Fruit's Part 4 was one story order and eight
+ * yes-or-no theme checks.
+ */
+const CEILING: Partial<Record<string, number>> = {
+  'theme-check': 2,
+  rebuild: 2,
+  marker: 2,
+  'item-theme': 2,
+}
 
 /** One challenge as it is put to the student. */
 export interface DealtChallenge {

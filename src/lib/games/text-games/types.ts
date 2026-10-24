@@ -93,7 +93,16 @@ export interface FinishItem extends ChoiceBase {
 
 export interface MethodItem extends ChoiceBase {
   kind: 'method'
+  /** The guide's example, whole: what the explanation and the checks are held to. */
   example: string
+  /**
+   * The words the example quotes from the text, and only those, joined by an
+   * ellipsis: what the question shows (24 October 2026). The example's own
+   * description named its answer: "runs on over the line break" for
+   * Enjambment, "The question that closes the paragraph" for Rhetorical
+   * question, so 19 of 20 method questions could be answered without the text.
+   */
+  quoted: string
 }
 
 export interface ThemeItem extends ChoiceBase {
