@@ -212,6 +212,7 @@ model User {
   weeklyReportsAsParent  WeeklyReport[]          @relation("ParentReports")
   weeklyReportsAsStudent WeeklyReport[]          @relation("StudentReports")
   weeklyStudentDigests   WeeklyStudentDigest[]   @relation("StudentWeeklyDigests")
+  lifecycleEmails        LifecycleEmail[]        @relation("UserLifecycleEmails")
   parentInvitesSent      ParentInvite[]          @relation("StudentInvites")
   parentInvitesUsed      ParentInvite[]          @relation("ParentInviteUsed")
   mobileDevices          MobileDevice[]
@@ -652,6 +653,31 @@ model WeeklyStudentDigest {
   @@unique([studentId, weekStarting])
   @@index([weekStarting])
   @@map("WeeklyStudentDigest")
+}
+
+// ── Lifecycle email ledger (23 October 2026) ────────────────────────────
+// One row per (user, kind): the account-ready email, the day-3 nudge, the
+// trial-ending and trial-ended notices, the day-14 and day-30 emails, and
+// the billing notices. Written BEFORE each send and deleted again if the
+// send fails, so a re-run cannot send twice and a delivery failure is still
+// retried. Event-driven billing notices carry the Stripe object id in
+// `kind` (for example `M6_PAYMENT_FAILED:in_123`), so one customer can be
+// told about two different invoices but never twice about the same one.
+//
+// Created by supabase/migrations/20261023_lifecycle_email_ledger.sql.
+// Verify it with information_schema, never with _migrations_applied.
+// Records THAT an email went, never its contents. Cascades with the user.
+model LifecycleEmail {
+  id     String   @id @default(cuid())
+  userId String   @map("user_id")
+  kind   String
+  sentAt DateTime @default(now()) @map("sent_at") @db.Timestamptz(6)
+
+  user User @relation("UserLifecycleEmails", fields: [userId], references: [id], onDelete: Cascade)
+
+  @@unique([userId, kind])
+  @@index([kind, sentAt])
+  @@map("LifecycleEmail")
 }
 
 // ──────────────────────────────────────────────

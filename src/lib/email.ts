@@ -85,6 +85,13 @@ export type SendEmailOptions = {
   trustpilotTrigger?: string
   /** Supabase auth user id - required when `trustpilotTrigger` is set. */
   userId?: string
+  /**
+   * Extra message headers, passed to whichever transport carries the mail.
+   * Added 23 October 2026 so the trial lifecycle emails can carry
+   * `List-Unsubscribe` and `List-Unsubscribe-Post` (RFC 8058) on this path as
+   * the weekly digest already does on the Resend one.
+   */
+  headers?: Record<string, string>
 }
 
 export async function sendEmail(
@@ -134,6 +141,8 @@ export async function sendEmail(
     // The transport is chosen per send. See the header: SMTP is unset in
     // production, and this mail has to arrive.
     let messageId: string | undefined
+    const headers =
+      options?.headers && Object.keys(options.headers).length > 0 ? options.headers : null
     if (smtpConfigured()) {
       const info = await getTransporter().sendMail({
         from: FROM,
@@ -142,6 +151,7 @@ export async function sendEmail(
         html,
         ...(text ? { text } : {}),
         ...(bcc.length > 0 ? { bcc } : {}),
+        ...(headers ? { headers } : {}),
       })
       messageId = info.messageId
     } else {
@@ -152,6 +162,7 @@ export async function sendEmail(
         from: FROM,
         ...(text ? { text } : {}),
         ...(bcc.length > 0 ? { bcc } : {}),
+        ...(headers ? { headers } : {}),
       })
       if (!r.sent) {
         // Neither transport is configured. Say so loudly and specifically:
