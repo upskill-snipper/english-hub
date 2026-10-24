@@ -47,6 +47,9 @@ const TEXT_TO_SLUG: Record<string, string | null> = {
 
 const TOTAL_ROUNDS = 15
 
+/** A round with its own grid needs at least this many wrong texts left in it for a board. */
+const MIN_WRONG_IN_GRID = 2
+
 // ─── Helpers ───────────────────────────────────────────────────────────────────
 
 function shuffle<T>(arr: T[]): T[] {
@@ -78,13 +81,21 @@ export default function ThemeMatcherPage() {
     return filtered.length >= 6 ? filtered : ([...ALL_TEXTS] as string[])
   }, [board])
 
-  // Filter THEME_DATA: only include themes with at least 2 correct texts present in allowedTexts
+  // Filter THEME_DATA: only include themes with at least 2 correct texts present in allowedTexts.
+  // A round with its own grid (24 October 2026, src/data/games/banks/theme-matcher.ts) keeps
+  // only the board's texts in it too, and is dealt only while at least MIN_WRONG_IN_GRID of
+  // them are wrong: a grid left holding nothing but right texts would give the answer away.
   const filteredThemeData = useMemo(() => {
     const allowedSet = new Set(allowedTexts)
     return THEME_DATA.map((round) => ({
       ...round,
       correctTexts: round.correctTexts.filter((t) => allowedSet.has(t)),
-    })).filter((round) => round.correctTexts.length >= 2)
+      texts: round.texts?.filter((t) => allowedSet.has(t)),
+    })).filter(
+      (round) =>
+        round.correctTexts.length >= 2 &&
+        (!round.texts || round.texts.length - round.correctTexts.length >= MIN_WRONG_IN_GRID),
+    )
   }, [allowedTexts])
 
   const [gameState, setGameState] = useState<GameState>('idle')
@@ -107,14 +118,25 @@ export default function ThemeMatcherPage() {
    * texts) a theme's right texts were mostly not in the grid, 64 per cent of
    * the points could not be scored, and "Fate vs Free will" had no right text
    * to pick at all, while Submit needs one. The grid now falls back with them.
+   *
+   * Since the rebuild of 24 October 2026 a theme has many rounds, and no two
+   * rounds of one theme are dealt in one game (the bank's `facts`), so it is
+   * themes that are counted, as this rule always meant: the IAL board's own
+   * texts carry 24 rounds but only nine themes, too few for fifteen rounds.
    */
-  const usingAll = filteredThemeData.length < TOTAL_ROUNDS
+  const usingAll = new Set(filteredThemeData.map((r) => r.theme)).size < TOTAL_ROUNDS
   const gridTexts = useMemo(
     () => (usingAll ? ([...ALL_TEXTS] as string[]) : allowedTexts),
     [usingAll, allowedTexts],
   )
 
-  const textOptions = useMemo(() => shuffle(gridTexts), [roundIdx, gameState, gridTexts])
+  // The texts this round is played on: its own grid where it has one (a claim about a
+  // theme, or one of the four themes a text could be argued either way for: right texts
+  // and texts plainly without it), else the board's. Marked, recorded and explained
+  // against these texts only.
+  const roundTexts = useMemo(() => currentRound?.texts ?? gridTexts, [currentRound, gridTexts])
+
+  const textOptions = useMemo(() => shuffle(roundTexts), [roundIdx, gameState, roundTexts])
 
   const handleStart = useCallback(() => {
     // Themes this browser has not met first (src/lib/games/start-round.ts).
@@ -162,7 +184,7 @@ export default function ThemeMatcherPage() {
     const correctSet = new Set(currentRound.correctTexts)
     round.record({
       question: BANK.key(currentRound),
-      correct: gridTexts.every((t) => correctSet.has(t) === selected.has(t)),
+      correct: roundTexts.every((t) => correctSet.has(t) === selected.has(t)),
       tag: currentRound.theme,
     })
   }
@@ -196,7 +218,7 @@ export default function ThemeMatcherPage() {
           gameId="theme-matcher"
           audience="gcse"
           title="Theme Matcher"
-          description="Select ALL texts where the given theme appears. 15 rounds covering major GCSE themes. A point for each right text; a wrong one costs a point."
+          description="Select ALL the texts where the theme appears, or where the claim about it is true. 15 rounds, from the main GCSE themes to how each text presents them. A point for each right text; a wrong one costs a point."
           difficulty="Higher"
           score={score}
           maxScore={maxScore}
@@ -218,9 +240,18 @@ export default function ThemeMatcherPage() {
               {/* Theme prompt */}
               <div className="rounded-xl border border-border bg-card p-5 text-center">
                 <p className="text-xs uppercase tracking-wider text-muted-foreground mb-1">
-                  Which texts feature this theme?
+                  {currentRound.claim
+                    ? `${currentRound.theme}: select every text where this is true`
+                    : 'Which texts feature this theme?'}
                 </p>
-                <h3 className="text-xl font-bold text-foreground">{currentRound.theme}</h3>
+                <h3
+                  className={cn(
+                    'font-bold text-foreground',
+                    currentRound.claim ? 'text-lg' : 'text-xl',
+                  )}
+                >
+                  {currentRound.claim ?? currentRound.theme}
+                </h3>
               </div>
 
               {/* Text grid */}
@@ -269,7 +300,7 @@ export default function ThemeMatcherPage() {
                 <AnswerExplanation
                   game="theme-matcher"
                   question={BANK.key(currentRound)}
-                  correct={gridTexts.every(
+                  correct={roundTexts.every(
                     (t) => currentRound.correctTexts.includes(t) === selected.has(t),
                   )}
                 />
