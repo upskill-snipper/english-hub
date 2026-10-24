@@ -597,7 +597,7 @@ export const EXPLANATIONS: GameExplanations = {
     tip: "Use it in a sentence: 'The enjambment makes the sentence spill over into the next line, mirroring the speaker's racing thoughts.'",
   },
   caesura: {
-    why: "The trap is the ae at the start: c-AE-sura. It is said 'siz-yoor-a', and people often swap the vowels to write 'ceasura'. It begins with the Latin ae: caes + ura. Some dictionaries also list a rarer form, cesura, but caesura is the usual British spelling.",
+    why: "The trap is the ae at the start: c-AE-sura. It is said 'siz-yoor-a', and people often swap the vowels to write 'ceasura'. It begins with the Latin ae: caes + ura. Some dictionaries also list a rarer form, cesura, and that spelling is also correct: this game accepts it too, though caesura is the usual British spelling.",
     more: "It comes from the Latin caedere, 'to cut': a caesura cuts a line in two. Memory aid: the same ae begins Caesar, so picture Caesar cutting a line in half.",
     tip: "In an essay: 'A full stop in mid-line creates a caesura, making the reader pause on the word before it.'",
   },
@@ -1258,7 +1258,7 @@ export const EXPLANATIONS: GameExplanations = {
   },
   hubris: {
     why: "The trap is the ending: hu-BRIS, with one s. People write 'hubriss' or 'hubrus'. It is h-u-b-r-i-s, from Greek.",
-    more: 'In Greek drama, hubris was the pride that defied the gods and brought punishment. The adjective is hubristic.',
+    more: 'In Greek drama, hubris was the pride that defied the gods and brought punishment. A rarer spelling closer to the Greek, hybris, is also correct: this game accepts it too. The adjective is hubristic.',
     tip: "In an essay: 'Macbeth's hubris shows when he trusts that no man born of woman can harm him.'",
   },
   pathos: {

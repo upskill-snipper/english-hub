@@ -9,12 +9,14 @@ import type { GameBank } from '@/lib/games/explanations/types'
  * every answer gained an explanation (src/lib/games/explanations/types.ts).
  *
  * The student types the answer, so no question has options, and what they type
- * is never recorded or sent: only whether the spelling was right. Two words
- * have a second spelling dictionaries accept, enjambement and dénouement (with
- * the accent). Until 23 October 2026 the game marked only the usual English
- * form right, because accepting the other is a scoring decision; the founder
- * then decided it, and each is listed in `alsoAccepted`, which the page accepts
- * (src/lib/games/scoring.ts). The explanations for those two words say so.
+ * is never recorded or sent: only whether the spelling was right. Four words
+ * have a second spelling dictionaries accept: enjambement, dénouement (with
+ * the accent), and, since 24 October 2026, cesura and hybris. Until 23 October
+ * 2026 the game marked only the usual English form right, because accepting
+ * the other is a scoring decision; the founder then decided that the
+ * spellings dictionaries accept are right, and each is listed in
+ * `alsoAccepted`, which the page accepts (src/lib/games/scoring.ts). The
+ * explanations for those words say so.
  *
  * REBUILT FOR DEPTH (24 October 2026). The founder found the games "weak in
  * depth and content"; the audit (.tmp-games-audit/REPORT-gcse.md) found this
@@ -60,11 +62,11 @@ import type { GameBank } from '@/lib/games/explanations/types'
  * Crossover term has a sentence too: fallacy, in "pathetic ___".
  *
  * Every word added but two has one spelling in British dictionaries (caesura
- * and hubris, see CHECKED below). Words with a second accepted spelling
- * (judgement, focused, role, loath, sergeant, supersede, motif) were left
- * out: accepting it would be a scoring decision,
- * and src/__tests__/game-scoring-follows-the-founders-decisions.test.ts holds
- * `alsoAccepted` to the two the founder decided. Their, there, its and your
+ * and hubris, which accept their variants; see CHECKED below). Other words
+ * with a second accepted spelling (judgement, focused, role, loath, sergeant,
+ * supersede, motif) were left out rather than listed, and
+ * src/__tests__/game-scoring-follows-the-founders-decisions.test.ts holds
+ * `alsoAccepted` to the words named there. Their, there, its and your
  * were left out too: they appear in almost every explanation, so the dealer
  * would read each as a give-away, and the KS3 Homophone Hero game drills them.
  * Consonance was left out because its root, consonant, is in many
@@ -90,10 +92,10 @@ import type { GameBank } from '@/lib/games/explanations/types'
  *     from Silas Marner the word means to act on what you know; it now gives
  *     both senses;
  *   - didacticism: the definition named a kind of writing, not the quality.
- * Left for the founder, because accepting a spelling is a scoring decision:
- * caesura and hubris each have a rarer form that Collins lists, cesura and
- * hybris, which the game marks wrong. Either becomes `alsoAccepted` (and the
- * scoring test's list of two grows) or the word leaves the bank.
+ * Caesura and hubris each have a rarer form that Collins lists as a variant,
+ * cesura and hybris, which the game marked wrong. The founder decided on 23
+ * October 2026 that the spellings dictionaries accept are right, so both are
+ * now `alsoAccepted` and their explanations say so (24 October 2026).
  */
 
 /** The spelling trap a word tests. A round spreads them (BANK.group). */
@@ -843,6 +845,7 @@ export const SPELLING_BANK: SpellingWord[] = [
     word: 'caesura',
     definition: 'A pause near the middle of a line of verse, often marked by a full stop or comma',
     difficulty: 2,
+    alsoAccepted: ['cesura'],
     trap: 'from Latin',
   },
   {
@@ -1692,6 +1695,7 @@ export const SPELLING_BANK: SpellingWord[] = [
     word: 'hubris',
     definition: 'Too much pride, the kind that leads to a downfall',
     difficulty: 2,
+    alsoAccepted: ['hybris'],
     trap: 'from Greek',
   },
   {
