@@ -67,9 +67,18 @@ export interface DealOptions<T> {
    * A page that has always dealt a fixed mix (Spelling Bee: five easy, eight
    * medium, seven hard) keeps it: at most `counts[of(item)]` of each, and
    * `size` should be their sum. A share the bank cannot fill is left short
-   * rather than filled from another.
+   * rather than filled from another, unless `fill` asks for that.
    */
-  quota?: { of: (item: T) => string; counts: Readonly<Record<string, number>> }
+  quota?: {
+    of: (item: T) => string
+    counts: Readonly<Record<string, number>>
+    /**
+     * A share the bank cannot fill is filled from the others, so the round is
+     * still full (a level's mix of tiers, ./progression.ts). Without it, a
+     * page's fixed mix is kept exactly and the round is left short instead.
+     */
+    fill?: boolean
+  }
   random?: () => number
 }
 
@@ -204,6 +213,18 @@ export function dealRound<T>(bank: readonly T[], options: DealOptions<T>): T[] {
   pass(old, Infinity, 'soft')
   // A bank too small for the rules still deals a full round.
   pass([...due, ...fresh, ...old], Infinity, 'all')
+  // And a share the bank could not fill is filled from the others, where the
+  // caller asked for that, in the same order of preference.
+  if (quota?.fill && picked.length < size) {
+    for (const allow of ['nothing', 'soft', 'all'] as const)
+      for (const item of [...due, ...fresh, ...old]) {
+        if (picked.length >= size) break
+        if (pickedKeys.has(key(item))) continue
+        if (allow !== 'all' && hardClash(item)) continue
+        if (allow === 'nothing' && softClash(item)) continue
+        take(item)
+      }
+  }
 
   return order(picked, { key, tier, reveals, group: groupOf })
 }

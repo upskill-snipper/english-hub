@@ -6,6 +6,7 @@ import { dealRound } from './deal-round'
 import { loadExplanations } from './explanations/load'
 import type { GameBank, GameExplanations } from './explanations/types'
 import { findGiveAways, type GiveAways } from './give-aways'
+import { gameRecord, levelCounts, noteDealt } from './progression'
 import {
   beginRound,
   currentRound,
@@ -59,7 +60,10 @@ export interface RoundOptions<T> {
   items?: readonly T[]
   /** At most this many of one group (the bank's `group`, else its `tag`). Default 2. */
   groupMax?: number
-  /** A fixed mix the page has always dealt (./deal-round.ts). */
+  /**
+   * A fixed mix the page has always dealt (./deal-round.ts). A page that sets
+   * one keeps it exactly; one that does not is dealt by the student's level.
+   */
   quota?: { of: (item: T) => string; counts: Readonly<Record<string, number>> }
   /** The game's explanations, where the caller has them; else whatever has loaded. */
   explanations?: GameExplanations | null
@@ -67,25 +71,54 @@ export interface RoundOptions<T> {
   random?: () => number
 }
 
-/** Deal the next round of `bank`, `size` questions, and remember it. */
+/** Does this bank say how hard its questions are? */
+function hasTiers<T>(bank: GameBank<T>): boolean {
+  return !!bank.tier && bank.items.some((i) => bank.tier!(i) !== undefined)
+}
+
+/**
+ * Deal the next round of `bank`, `size` questions, and remember it.
+ *
+ * A bank whose questions have tiers, on a page that sets no mix of its own,
+ * is dealt by the student's level in that game (./progression.ts, LEVEL_MIX):
+ * mostly that level's questions, some below it, a few above, so the rounds
+ * climb as the student does (24 October 2026). A tier the bank cannot fill is
+ * filled from the others, so the round is never short.
+ */
 export function dealNow<T>(bank: GameBank<T>, size: number, options: RoundOptions<T> = {}): T[] {
   const explanations = options.explanations ?? resolved.get(bank.slug) ?? null
   const g = giveAwaysFor(bank, explanations)
   const key = (item: T) => bank.key(item)
+  const tierOf = (item: T) => (bank.tier ? bank.tier(item) : undefined)
+  const levelled = !options.quota && hasTiers(bank)
+  const quota = levelled
+    ? {
+        of: (item: T) => String(tierOf(item) ?? 1),
+        counts: levelCounts(gameRecord(bank.slug).level, size),
+        fill: true,
+      }
+    : options.quota
+  const due = dueKeys(bank.slug)
   const round = dealRound(options.items ?? bank.items, {
     size,
     key,
     seen: seenKeys(bank.slug),
-    due: dueKeys(bank.slug),
+    due,
     tier: bank.tier ? (item) => bank.tier!(item) : undefined,
     facts: (item) => [...(bank.facts?.(item) ?? []), ...(g.facts.get(key(item)) ?? [])],
     reveals: (item) => g.reveals.get(key(item)),
     group: (item) => (bank.group ? bank.group(item) : bank.tag?.(item)),
     groupMax: options.groupMax,
-    quota: options.quota,
+    quota,
     random: options.random,
   })
   rememberDealt(bank.slug, round.map(key))
+  const dueSet = new Set(due)
+  noteDealt(
+    bank.slug,
+    round.map((item) => ({ key: key(item), tier: tierOf(item), due: dueSet.has(key(item)) })),
+    levelled,
+  )
   return round
 }
 
@@ -127,6 +160,17 @@ export function dealSetsNow<S, T>(
     bank.slug,
     picked.flatMap((s) => set.items(s).map((item) => bank.key(item))),
   )
+  noteDealt(
+    bank.slug,
+    picked.flatMap((s) =>
+      set.items(s).map((item) => ({
+        key: bank.key(item),
+        tier: bank.tier?.(item),
+        due: due.has(bank.key(item)),
+      })),
+    ),
+    false,
+  )
   return picked
 }
 
@@ -159,17 +203,24 @@ export function pickNextNow<T>(
     if ([...(g.reveals.get(k) ?? [])].some((r) => askedKeys.has(r))) return false
     return true
   })
+  // This game's round is already under way (beginRound), so it is the one
+  // that counts.
+  const due = dueKeys(bank.slug, currentRound(bank.slug))
   const [next] = dealRound(clear.length ? clear : candidates, {
     size: 1,
     key,
     seen: seenKeys(bank.slug),
-    // This game's round is already under way (beginRound), so it is the one
-    // that counts.
-    due: dueKeys(bank.slug, currentRound(bank.slug)),
+    due,
     random: options.random,
   })
-  if (next) rememberSeen(bank.slug, [key(next)])
-  return next ?? null
+  if (!next) return null
+  rememberSeen(bank.slug, [key(next)])
+  noteDealt(
+    bank.slug,
+    [{ key: key(next), tier: bank.tier?.(next), due: due.includes(key(next)) }],
+    false,
+  )
+  return next
 }
 
 export { beginRound }

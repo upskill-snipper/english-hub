@@ -486,4 +486,104 @@ export const TEXT_GAMES_DICTIONARY: Record<string, { en: string; ar?: string; es
   },
   'quest.ach.review.name': { en: 'Second look', ar: 'نظرة ثانية', es: 'Segunda mirada' },
   'quest.ach.review.what': { en: 'Finish a review.', ar: 'خلّص مراجعة.', es: 'Termina un repaso.' },
+
+  // ── Skills games: progress (24 October 2026, src/lib/games/progression.ts) ─
+  // XP, the rank and the achievements cabinet's store are the quests' own, so
+  // a student has one rank across the site; a game's level and the run of
+  // days are the skills games'. The run of days shows only where a student's
+  // own setting allows it, and nothing here asks anyone to come back.
+  'games.progress.title': { en: 'Your progress', ar: 'تقدّمك', es: 'Tu progreso' },
+  'games.progress.level': {
+    en: 'Level {n} of {top} in this game',
+    ar: 'المستوى {n} من {top} في هاللعبة',
+    es: 'Nivel {n} de {top} en este juego',
+  },
+  'games.progress.level_up': {
+    en: 'Level {n} unlocked: harder questions from your next round',
+    ar: 'فتحت المستوى {n}: أسئلة أصعب من الجولة الجاية',
+    es: 'Nivel {n} desbloqueado: preguntas más difíciles desde tu próxima ronda',
+  },
+  'games.progress.passes': {
+    en: '{n} of {total} strong rounds towards Level {next}',
+    ar: '{n} من {total} جولات قوية للمستوى {next}',
+    es: '{n} de {total} rondas fuertes para llegar al nivel {next}',
+  },
+  'games.progress.top': {
+    en: 'You are on the top level in this game.',
+    ar: 'إنت في أعلى مستوى في هاللعبة.',
+    es: 'Estás en el nivel más alto de este juego.',
+  },
+  'games.progress.strong': {
+    en: 'A strong round: at least four questions at your level, and 8 in 10 of them right.',
+    ar: 'الجولة القوية: أربعة أسئلة على الأقل من مستواك، و8 من كل 10 منها صح.',
+    es: 'Una ronda fuerte: al menos cuatro preguntas de tu nivel, y 8 de cada 10 bien.',
+  },
+  'games.progress.best_run': {
+    en: 'Longest run this round: {n} right in a row',
+    ar: 'أطول سلسلة في هالجولة: {n} صح ورا بعض',
+    es: 'Racha más larga de esta ronda: {n} aciertos seguidos',
+  },
+  'games.progress.perfect': {
+    en: 'Every answer right: +{n} XP',
+    ar: 'كل الإجابات صح: +{n} نقطة',
+    es: 'Todas bien: +{n} XP',
+  },
+  'games.progress.streak': {
+    en: 'Days practised in a row: {n}',
+    ar: 'أيام التدريب ورا بعض: {n}',
+    es: 'Días seguidos de práctica: {n}',
+  },
+  'games.progress.kept': {
+    en: 'Your XP, rank and levels are kept in this browser.',
+    ar: 'نقاطك ورتبتك ومستوياتك محفوظة في هالمتصفح.',
+    es: 'Tus XP, tu rango y tus niveles se guardan en este navegador.',
+  },
+  'games.ach.first_round.name': { en: 'Warmed up', ar: 'أول جولة', es: 'Primera ronda' },
+  'games.ach.first_round.what': {
+    en: 'Finish your first round of a skills game.',
+    ar: 'خلّص أول جولة لك في لعبة من ألعاب المهارات.',
+    es: 'Termina tu primera ronda de un juego de destrezas.',
+  },
+  'games.ach.perfect.name': { en: 'Full marks', ar: 'العلامة الكاملة', es: 'Pleno' },
+  'games.ach.perfect.what': {
+    en: 'Get every answer right in a round of ten or more.',
+    ar: 'جاوب كل الأسئلة صح في جولة فيها عشرة أسئلة أو أكثر.',
+    es: 'Acierta todas las respuestas de una ronda de diez o más.',
+  },
+  'games.ach.run_10.name': { en: 'Ten in a row', ar: 'عشرة ورا بعض', es: 'Diez seguidas' },
+  'games.ach.run_10.what': {
+    en: 'Get ten answers right in a row.',
+    ar: 'جاوب عشرة أسئلة صح ورا بعض.',
+    es: 'Acierta diez respuestas seguidas.',
+  },
+  'games.ach.level_2.name': { en: 'Stepping up', ar: 'المستوى الثاني', es: 'Subiendo de nivel' },
+  'games.ach.level_2.what': {
+    en: 'Reach Level 2 in a game.',
+    ar: 'وصّل المستوى الثاني في لعبة.',
+    es: 'Llega al nivel 2 en un juego.',
+  },
+  'games.ach.level_3.name': { en: 'Top level', ar: 'أعلى مستوى', es: 'Nivel máximo' },
+  'games.ach.level_3.what': {
+    en: 'Reach Level 3, the top level, in a game.',
+    ar: 'وصّل المستوى الثالث، أعلى مستوى، في لعبة.',
+    es: 'Llega al nivel 3, el más alto, en un juego.',
+  },
+  'games.ach.five_games.name': { en: 'All-rounder', ar: 'متعدد المهارات', es: 'Todoterreno' },
+  'games.ach.five_games.what': {
+    en: 'Finish a round in five different games.',
+    ar: 'خلّص جولة في خمس ألعاب مختلفة.',
+    es: 'Termina una ronda en cinco juegos distintos.',
+  },
+  'games.ach.hundred.name': { en: 'A hundred right', ar: 'مية إجابة صح', es: 'Cien aciertos' },
+  'games.ach.hundred.what': {
+    en: 'Get 100 answers right across the skills games.',
+    ar: 'جاوب 100 سؤال صح في ألعاب المهارات.',
+    es: 'Consigue 100 aciertos en los juegos de destrezas.',
+  },
+  'games.ach.comeback.name': { en: 'Learnt it', ar: 'تعلّمتها', es: 'Aprendido' },
+  'games.ach.comeback.what': {
+    en: 'Get right a question you missed in an earlier round.',
+    ar: 'جاوب صح على سؤال غلطت فيه في جولة قبل.',
+    es: 'Acierta una pregunta que fallaste en una ronda anterior.',
+  },
 }

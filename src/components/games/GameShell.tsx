@@ -4,7 +4,10 @@ import React, { useState, useEffect, useCallback, useRef } from 'react'
 import { cn } from '@/lib/utils'
 import { saveGameScore, getHighScore } from '@/lib/game-scores'
 import { useT } from '@/lib/i18n/use-t'
+import { beginTally, endRound, mayShowStreak, type RoundOutcome } from '@/lib/games/progression'
+import { useAuthProfile } from '@/store/auth-store'
 import { RecordAnswerProvider, sendRound, useGameRound, type GameRound } from './game-round'
+import { GameProgressLine, GameProgressPanel } from './GameProgress'
 
 // ─── Types ──────────────────────────────────────────────────────────────────
 
@@ -176,6 +179,10 @@ interface ResultsProps {
   elapsedSeconds: number
   timed: boolean
   note?: React.ReactNode
+  /** What the round earned (src/lib/games/progression.ts); null when nothing was answered. */
+  progress: RoundOutcome | null
+  /** May the run of days practised be shown (mayShowStreak). */
+  showStreak: boolean
   onPlayAgain: () => void
 }
 
@@ -185,6 +192,8 @@ function ResultsScreen({
   elapsedSeconds,
   timed,
   note,
+  progress,
+  showStreak,
   onPlayAgain,
 }: ResultsProps) {
   const t = useT()
@@ -236,6 +245,10 @@ function ResultsScreen({
         <p className="max-w-md text-center text-sm leading-relaxed text-muted-foreground">{note}</p>
       )}
 
+      {/* XP, rank, level and achievements: what the round added to the
+          student's progress, never a verdict on them (no grade, no colour). */}
+      {progress && <GameProgressPanel outcome={progress} showStreak={showStreak} />}
+
       {/* Play Again */}
       <button
         onClick={onPlayAgain}
@@ -284,6 +297,13 @@ export default function GameShell({
 
   // High score from localStorage
   const [highScore, setHighScore] = useState<ReturnType<typeof getHighScore>>(null)
+  // What the last round earned, for the results screen.
+  const [outcome, setOutcome] = useState<RoundOutcome | null>(null)
+  // The run of days practised is shown only where the student's own setting
+  // allows it (src/lib/games/progression.ts, mayShowStreak): never to a guest,
+  // and never to a child unless they or a parent turned it on.
+  const profile = useAuthProfile()
+  const showStreak = mayShowStreak(profile)
 
   // Load high score on mount
   useEffect(() => {
@@ -342,6 +362,8 @@ export default function GameShell({
       // weight effort and detect rushing vs. careful play.
       saveGameScore(gameId, score, maxScore, elapsed)
       setHighScore(getHighScore(gameId))
+      // XP, the game's level and achievements, in this browser.
+      setOutcome(endRound(gameId))
       // The round, to a signed-in student's account (nothing for a guest).
       //
       // WHAT THIS REPLACED (13 October 2026). A POST of {slug, score, time} to
@@ -370,15 +392,20 @@ export default function GameShell({
     // Restart mid-round stays 'playing', so the state change alone would not
     // empty the answers.
     activeRound.reset()
+    // Before the page deals, so the deal opens the new round's tally.
+    beginTally(gameId)
+    setOutcome(null)
     onStart()
-  }, [timeLimitSeconds, onStart, activeRound])
+  }, [timeLimitSeconds, onStart, activeRound, gameId])
 
   const handlePlayAgain = useCallback(() => {
     setTimeLeft(timeLimitSeconds ?? 0)
     setElapsed(0)
     activeRound.reset()
+    beginTally(gameId)
+    setOutcome(null)
     onStart()
-  }, [timeLimitSeconds, onStart, activeRound])
+  }, [timeLimitSeconds, onStart, activeRound, gameId])
 
   const handlePauseResume = useCallback(() => {
     if (gameState === 'playing') {
@@ -463,6 +490,8 @@ export default function GameShell({
               {description ?? t('games.shell.press_start_prompt')}
             </p>
 
+            <GameProgressLine gameId={gameId} />
+
             {highScore && (
               <div className="flex items-center gap-2 rounded-lg border border-border bg-card px-4 py-2.5">
                 <TrophyIcon className="h-4 w-4 text-clay-600" />
@@ -510,6 +539,8 @@ export default function GameShell({
             elapsedSeconds={elapsed}
             timed={timeLimitSeconds != null}
             note={resultsNote}
+            progress={outcome}
+            showStreak={showStreak}
             onPlayAgain={handlePlayAgain}
           />
         )}

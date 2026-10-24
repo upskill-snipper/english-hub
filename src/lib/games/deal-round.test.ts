@@ -130,6 +130,18 @@ describe('dealRound', () => {
     expect(round.map((q) => q.tier)).toEqual([1, 1, 2, 2, 2, 3, 3, 3, 3, 3])
   })
 
+  it('fills a share the bank cannot, from the others, where asked to', () => {
+    // Tier 3 has 20 questions; a mix asking for 25 of them is filled to 30.
+    const round = dealRound(BANK, {
+      size: 30,
+      key,
+      quota: { of: (q) => `t${q.tier}`, counts: { t1: 2, t2: 3, t3: 25 }, fill: true },
+      random: mulberry32(6),
+    })
+    expect(round).toHaveLength(30)
+    expect(round.filter((q) => q.tier === 3)).toHaveLength(20)
+  })
+
   it('climbs: easier tiers first', () => {
     const round = dealRound(BANK, { size: 15, key, tier: (q) => q.tier, random: mulberry32(5) })
     const tiers = round.map((q) => q.tier)

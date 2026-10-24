@@ -311,10 +311,22 @@ describe('what the suite runs in', () => {
     // the node environment, so the defect it guards cannot be shown without
     // one. (BoardGate.test.tsx, which pins the phone layout of the board
     // pop-up, already had its annotation.)
+    //
+    // Then to 37, the same day, for
+    // a-game-streak-shows-only-where-allowed.test.tsx. A skills game's run of
+    // days practised may be shown only to a student whose own setting allows
+    // it, never to a guest, a child by default or an account of unknown age.
+    // The line exists only after a round has been played and the results
+    // screen's effect has added it up, and the profile it is gated on comes
+    // from a store a mounted component reads; rendered to a string the shell
+    // is idle and shows no results at all, so a shell with no gate passes.
+    // The rules themselves (progression.test.ts) and the deal by level
+    // (a-game-deals-by-the-students-level.test.ts) need only storage, and run
+    // in the node environment with an in-memory one.
     expect(
       annotated.length,
       'more files now claim to need a DOM - check each one',
-    ).toBeLessThanOrEqual(36)
+    ).toBeLessThanOrEqual(37)
   })
 })
 
