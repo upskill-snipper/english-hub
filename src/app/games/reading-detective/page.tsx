@@ -10,6 +10,7 @@ import { useBoard } from '@/hooks/useBoard'
 import { getBoardConfig } from '@/lib/board/board-store'
 import { AnswerExplanation } from '@/components/games/AnswerExplanation'
 import { useGameRound } from '@/components/games/game-round'
+import { dealSetsNow } from '@/lib/games/start-round'
 import { shuffledOptionsFor, newSessionSalt } from '@/lib/quiz/shuffle'
 import { BANK, PASSAGES, type Passage } from '@/data/games/banks/reading-detective'
 
@@ -19,15 +20,6 @@ import { BANK, PASSAGES, type Passage } from '@/data/games/banks/reading-detecti
 // src/data/games/explanations/reading-detective.ts.
 
 // ─── Helpers ───────────────────────────────────────────────────────────────────
-
-function shuffle<T>(arr: T[]): T[] {
-  const a = [...arr]
-  for (let i = a.length - 1; i > 0; i--) {
-    const j = Math.floor(Math.random() * (i + 1))
-    ;[a[i], a[j]] = [a[j], a[i]]
-  }
-  return a
-}
 
 const ENCOURAGE = [
   'Great detective work!',
@@ -43,6 +35,12 @@ const TRY_AGAIN = [
 ]
 
 const ROUND_LENGTH = 5
+
+/** A passage as the dealer sees it: its title, and its questions as the bank keys them. */
+const PASSAGE_SET = {
+  key: (p: Passage) => p.title,
+  items: (p: Passage) => p.questions.map((question) => ({ passage: p, question })),
+}
 
 // ─── Component ─────────────────────────────────────────────────────────────────
 
@@ -104,7 +102,8 @@ export default function ReadingDetectivePage() {
     // Minted here rather than during render: newSessionSalt calls Math.random,
     // which would not agree between the server and client paint.
     setSessionSalt(newSessionSalt())
-    setPassages(shuffle(PASSAGES).slice(0, ROUND_LENGTH))
+    // Passages this browser has not read come first (src/lib/games/start-round.ts).
+    setPassages(dealSetsNow(BANK, PASSAGES, ROUND_LENGTH, PASSAGE_SET))
     setPIdx(0)
     setQIdx(0)
     setScore(0)

@@ -10,11 +10,11 @@ import { useBoard } from '@/hooks/useBoard'
 import { getBoardConfig } from '@/lib/board/board-store'
 import { AnswerExplanation } from '@/components/games/AnswerExplanation'
 import { useGameRound } from '@/components/games/game-round'
+import { useDealer } from '@/lib/games/start-round'
 import {
   ALL_DEVICES,
   BANK,
   DEVICE_LABELS,
-  QUESTION_BANK,
   type Device,
   type Question,
 } from '@/data/games/banks/figurative-language-finder'
@@ -63,6 +63,7 @@ export default function FigurativeLanguageFinderPage() {
   const [selected, setSelected] = useState<Device | null>(null)
   const [feedback, setFeedback] = useState<'correct' | 'wrong' | null>(null)
   const round = useGameRound('figurative-language-finder')
+  const deal = useDealer(BANK)
 
   const currentQuestion = questions[qIdx] ?? null
 
@@ -72,14 +73,14 @@ export default function FigurativeLanguageFinderPage() {
   )
 
   const handleStart = useCallback(() => {
-    setQuestions(shuffle(QUESTION_BANK).slice(0, QUESTIONS_PER_ROUND))
+    setQuestions(deal(QUESTIONS_PER_ROUND))
     setQIdx(0)
     setScore(0)
     setTotalAnswered(0)
     setSelected(null)
     setFeedback(null)
     setGameState('playing')
-  }, [])
+  }, [deal])
 
   const handleFinish = useCallback(() => {
     setGameState('finished')

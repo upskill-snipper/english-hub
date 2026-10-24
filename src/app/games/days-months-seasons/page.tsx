@@ -10,12 +10,8 @@ import { useBoard } from '@/hooks/useBoard'
 import { getBoardConfig } from '@/lib/board/board-store'
 import { AnswerExplanation } from '@/components/games/AnswerExplanation'
 import { useGameRound } from '@/components/games/game-round'
-import {
-  BANK,
-  QUESTION_BANK,
-  type Question,
-  type Subtype,
-} from '@/data/games/banks/days-months-seasons'
+import { useDealer } from '@/lib/games/start-round'
+import { BANK, type Question, type Subtype } from '@/data/games/banks/days-months-seasons'
 
 // ─── Data ──────────────────────────────────────────────────────────────────────
 
@@ -43,20 +39,13 @@ function shuffle<T>(arr: T[]): T[] {
   return a
 }
 
-// Build a balanced round drawing from every subtype.
-function buildRound(): Question[] {
-  const subtypes: Subtype[] = ['order', 'next-before', 'month-season', 'spelling-choice']
-  const pools = subtypes.map((s) => shuffle(QUESTION_BANK.filter((q) => q.subtype === s)))
-  const picked: Question[] = []
-  let pi = 0
-  while (picked.length < ROUND_SIZE) {
-    const pool = pools[pi % pools.length]
-    const next = pool.shift()
-    if (next) picked.push(next)
-    pi++
-    if (pools.every((p) => p.length === 0)) break
-  }
-  return shuffle(picked).map((q) => ({ ...q, options: shuffle(q.options) }))
+// A round's options in a new order each time. The round itself is dealt by
+// useDealer (src/lib/games/start-round.ts), which keeps it balanced across the
+// four subtypes (each question's tag) as the round-robin here used to, and
+// also deals what this browser has not met and keeps out of one round the
+// questions that give each other away (24 October 2026).
+function withShuffledOptions(picked: Question[]): Question[] {
+  return picked.map((q) => ({ ...q, options: shuffle(q.options) }))
 }
 
 // House style: no exclamation marks in what students read (16 October 2026).
@@ -77,11 +66,12 @@ export default function DaysMonthsSeasonsPage() {
   const [feedback, setFeedback] = useState<'correct' | 'wrong' | null>(null)
   const [praise, setPraise] = useState('')
   const round = useGameRound('days-months-seasons')
+  const deal = useDealer(BANK)
 
   const currentQ = questions[qIdx] ?? null
 
   const handleStart = useCallback(() => {
-    setQuestions(buildRound())
+    setQuestions(withShuffledOptions(deal(ROUND_SIZE)))
     setQIdx(0)
     setScore(0)
     setTotalAnswered(0)
@@ -89,7 +79,7 @@ export default function DaysMonthsSeasonsPage() {
     setFeedback(null)
     setPraise('')
     setGameState('playing')
-  }, [])
+  }, [deal])
 
   const handleFinish = useCallback(() => {
     setGameState('finished')

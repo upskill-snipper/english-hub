@@ -10,9 +10,9 @@ import { useBoard } from '@/hooks/useBoard'
 import { getBoardConfig } from '@/lib/board/board-store'
 import { AnswerExplanation } from '@/components/games/AnswerExplanation'
 import { useGameRound } from '@/components/games/game-round'
+import { useDealer } from '@/lib/games/start-round'
 import {
   BANK,
-  COLLOCATION_BANK,
   type Collocation,
   type CollocationGroup,
 } from '@/data/games/banks/collocations-challenge'
@@ -80,6 +80,7 @@ export default function CollocationsChallengePage() {
   const [feedback, setFeedback] = useState<'correct' | 'wrong' | null>(null)
   const [praise, setPraise] = useState('')
   const round = useGameRound('collocations-challenge')
+  const deal = useDealer(BANK)
 
   const currentQuestion = questions[qIdx] ?? null
   const currentOptions = optionOrders[qIdx] ?? []
@@ -92,7 +93,7 @@ export default function CollocationsChallengePage() {
   }, [currentQuestion])
 
   const handleStart = useCallback(() => {
-    const picked = shuffle(COLLOCATION_BANK).slice(0, ROUND_SIZE)
+    const picked = deal(ROUND_SIZE)
     setQuestions(picked)
     setOptionOrders(picked.map((q) => shuffle(q.options)))
     setQIdx(0)
@@ -102,7 +103,7 @@ export default function CollocationsChallengePage() {
     setFeedback(null)
     setPraise('')
     setGameState('playing')
-  }, [])
+  }, [deal])
 
   const handleFinish = useCallback(() => {
     setGameState('finished')

@@ -11,7 +11,8 @@ import { getBoardConfig } from '@/lib/board/board-store'
 import { shuffledOptionsFor, newSessionSalt } from '@/lib/quiz/shuffle'
 import { AnswerExplanation } from '@/components/games/AnswerExplanation'
 import { useGameRound } from '@/components/games/game-round'
-import { BANK, PUNCTUATION_BANK, type PunctuationItem } from '@/data/games/banks/punctuation-repair'
+import { useDealer } from '@/lib/games/start-round'
+import { BANK, type PunctuationItem } from '@/data/games/banks/punctuation-repair'
 
 // ─── Data ──────────────────────────────────────────────────────────────────────
 // The sentences are in src/data/games/banks/punctuation-repair.ts (moved there on
@@ -21,15 +22,6 @@ import { BANK, PUNCTUATION_BANK, type PunctuationItem } from '@/data/games/banks
 const QUESTIONS_PER_ROUND = 15
 
 // ─── Helpers ───────────────────────────────────────────────────────────────────
-
-function shuffle<T>(arr: T[]): T[] {
-  const a = [...arr]
-  for (let i = a.length - 1; i > 0; i--) {
-    const j = Math.floor(Math.random() * (i + 1))
-    ;[a[i], a[j]] = [a[j], a[i]]
-  }
-  return a
-}
 
 // ─── Component ─────────────────────────────────────────────────────────────────
 
@@ -46,6 +38,7 @@ export default function PunctuationRepairPage() {
   const [feedback, setFeedback] = useState<'correct' | 'wrong' | null>(null)
   const [salt, setSalt] = useState('')
   const round = useGameRound('punctuation-repair')
+  const deal = useDealer(BANK)
 
   const currentQ = questions[qIdx] ?? null
 
@@ -77,7 +70,7 @@ export default function PunctuationRepairPage() {
   }, [currentQ, salt])
 
   const handleStart = useCallback(() => {
-    setQuestions(shuffle(PUNCTUATION_BANK).slice(0, QUESTIONS_PER_ROUND))
+    setQuestions(deal(QUESTIONS_PER_ROUND))
     setSalt(newSessionSalt())
     setQIdx(0)
     setScore(0)
@@ -85,7 +78,7 @@ export default function PunctuationRepairPage() {
     setSelected(null)
     setFeedback(null)
     setGameState('playing')
-  }, [])
+  }, [deal])
 
   const handleFinish = useCallback(() => {
     setGameState('finished')

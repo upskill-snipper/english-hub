@@ -157,4 +157,6 @@ export const BANK: GameBank<SpellingWord> = {
   answer: (w) => w.word,
   // Typed: there are no options, and nothing typed is ever recorded or sent.
   options: () => null,
+  // The round climbs from the easier words to the hardest (24 October 2026).
+  tier: (w) => w.difficulty,
 }

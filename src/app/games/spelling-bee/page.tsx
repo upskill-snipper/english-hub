@@ -10,8 +10,9 @@ import { useBoard } from '@/hooks/useBoard'
 import { getBoardConfig } from '@/lib/board/board-store'
 import { AnswerExplanation } from '@/components/games/AnswerExplanation'
 import { useGameRound } from '@/components/games/game-round'
+import { useDealer } from '@/lib/games/start-round'
 import { isAcceptedSpelling } from '@/lib/games/scoring'
-import { BANK, SPELLING_BANK, type SpellingWord } from '@/data/games/banks/spelling-bee'
+import { BANK, type SpellingWord } from '@/data/games/banks/spelling-bee'
 
 // ─── Data ──────────────────────────────────────────────────────────────────────
 // The words are in src/data/games/banks/spelling-bee.ts (moved there on
@@ -19,15 +20,6 @@ import { BANK, SPELLING_BANK, type SpellingWord } from '@/data/games/banks/spell
 // src/data/games/explanations/spelling-bee.ts.
 
 // ─── Helpers ───────────────────────────────────────────────────────────────────
-
-function shuffle<T>(arr: T[]): T[] {
-  const a = [...arr]
-  for (let i = a.length - 1; i > 0; i--) {
-    const j = Math.floor(Math.random() * (i + 1))
-    ;[a[i], a[j]] = [a[j], a[i]]
-  }
-  return a
-}
 
 function speak(text: string) {
   if (typeof window === 'undefined' || !window.speechSynthesis) return
@@ -54,6 +46,7 @@ export default function SpellingBeePage() {
   const [correctAnswer, setCorrectAnswer] = useState('')
   const inputRef = useRef<HTMLInputElement>(null)
   const round = useGameRound('spelling-bee')
+  const deal = useDealer(BANK)
   // When the last spelling was checked, for handleNext.
   const checkedAtRef = useRef(0)
 
@@ -75,11 +68,13 @@ export default function SpellingBeePage() {
   }, [wIdx, gameState, feedback])
 
   const handleStart = useCallback(() => {
-    // Progressive difficulty: start with easier words, get harder
-    const easy = shuffle(SPELLING_BANK.filter((w) => w.difficulty === 1))
-    const medium = shuffle(SPELLING_BANK.filter((w) => w.difficulty === 2))
-    const hard = shuffle(SPELLING_BANK.filter((w) => w.difficulty === 3))
-    const ordered = [...easy.slice(0, 5), ...medium.slice(0, 8), ...hard.slice(0, 7)]
+    // Progressive difficulty: five easier words, eight harder, seven hardest,
+    // as before; dealt by useDealer (src/lib/games/start-round.ts), so a round
+    // brings words this browser has not spelt, and the bank's tiers keep the
+    // climb (24 October 2026).
+    const ordered = deal(20, {
+      quota: { of: (w) => String(w.difficulty), counts: { '1': 5, '2': 8, '3': 7 } },
+    })
     setWords(ordered)
     setWIdx(0)
     setScore(0)
@@ -88,7 +83,7 @@ export default function SpellingBeePage() {
     setFeedback(null)
     setCorrectAnswer('')
     setGameState('playing')
-  }, [])
+  }, [deal])
 
   const handleFinish = useCallback(() => {
     setGameState('finished')

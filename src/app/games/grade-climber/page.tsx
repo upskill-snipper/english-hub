@@ -1,6 +1,6 @@
 'use client'
 
-import { useState, useCallback, useMemo } from 'react'
+import { useState, useCallback, useEffect, useMemo } from 'react'
 import Link from 'next/link'
 import { ArrowLeft, ArrowRight, Sparkles } from 'lucide-react'
 import { Button } from '@/components/ui/button'
@@ -13,6 +13,7 @@ import { getSetTextsForBoard } from '@/lib/board/set-texts'
 import { shuffledOptionsFor, newSessionSalt } from '@/lib/quiz/shuffle'
 import { AnswerExplanation } from '@/components/games/AnswerExplanation'
 import { useGameRound } from '@/components/games/game-round'
+import { beginRound, pickNextNow, preloadExplanations } from '@/lib/games/start-round'
 import { BANK, QUESTION_BANK, type GradeQuestion } from '@/data/games/banks/grade-climber'
 
 // ─── Question Bank ─────────────────────────────────────────────────────────────
@@ -134,6 +135,10 @@ export default function GradeClimberPage() {
   const [selected, setSelected] = useState<number | null>(null)
   const [showFeedback, setShowFeedback] = useState(false)
   const round = useGameRound('grade-climber')
+  // The dealer reads the explanations to keep give-aways apart (src/lib/games/start-round.ts).
+  useEffect(() => {
+    void preloadExplanations(BANK.slug)
+  }, [])
 
   /**
    * ANSWER-POSITION BIAS (fixed 20 September 2026).
@@ -171,21 +176,28 @@ export default function GradeClimberPage() {
     [currentQuestion, optionSalt],
   )
 
+  /**
+   * The next question on this rung, else one either side, as before. Since
+   * 24 October 2026 it is not drawn at random: pickNextNow
+   * (src/lib/games/start-round.ts) takes one this browser has not met, or met
+   * longest ago, that nothing already asked this session gives away. Every
+   * session used to open on the same 23 rung-three questions.
+   */
   const pickQuestion = useCallback(
     (grade: GCSEGrade, used: Set<number>) => {
-      const candidates = filteredBank
-        .map((q, i) => ({ q, i }))
-        .filter(({ q, i }) => q.grade === grade && !used.has(i))
-      if (candidates.length === 0) {
-        // Fallback: allow nearby grades
-        const nearby = filteredBank
-          .map((q, i) => ({ q, i }))
-          .filter(({ q, i }) => Math.abs(q.grade - grade) <= 1 && !used.has(i))
-        if (nearby.length === 0) return null
-        const pick = nearby[Math.floor(Math.random() * nearby.length)]
-        return pick
-      }
-      return candidates[Math.floor(Math.random() * candidates.length)]
+      const unused = (fits: (q: GradeQuestion) => boolean) =>
+        filteredBank.map((q, i) => ({ q, i })).filter(({ q, i }) => fits(q) && !used.has(i))
+      let candidates = unused((q) => q.grade === grade)
+      // Fallback: allow nearby grades
+      if (candidates.length === 0) candidates = unused((q) => Math.abs(q.grade - grade) <= 1)
+      if (candidates.length === 0) return null
+      const asked = [...used].map((i) => filteredBank[i])
+      const next = pickNextNow(
+        BANK,
+        candidates.map((c) => c.q),
+        asked,
+      )
+      return candidates.find((c) => c.q === next) ?? candidates[0]
     },
     [filteredBank],
   )
@@ -206,6 +218,9 @@ export default function GradeClimberPage() {
   )
 
   const handleStart = useCallback(() => {
+    // One session is one round in this browser's history (missed questions come
+    // back two sessions later).
+    beginRound(BANK.slug)
     setOptionSalt(newSessionSalt())
     const initialGrade: GCSEGrade = 3
     setCurrentGrade(initialGrade)

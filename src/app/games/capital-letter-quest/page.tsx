@@ -11,7 +11,8 @@ import { getBoardConfig } from '@/lib/board/board-store'
 import { shuffledOptionsFor, newSessionSalt } from '@/lib/quiz/shuffle'
 import { AnswerExplanation } from '@/components/games/AnswerExplanation'
 import { useGameRound } from '@/components/games/game-round'
-import { BANK, QUESTION_BANK, type CapitalQuestion } from '@/data/games/banks/capital-letter-quest'
+import { useDealer } from '@/lib/games/start-round'
+import { BANK, type CapitalQuestion } from '@/data/games/banks/capital-letter-quest'
 
 // ─── Data ──────────────────────────────────────────────────────────────────────
 // The questions are in src/data/games/banks/capital-letter-quest.ts (moved there
@@ -19,15 +20,6 @@ import { BANK, QUESTION_BANK, type CapitalQuestion } from '@/data/games/banks/ca
 // src/data/games/explanations/capital-letter-quest.ts.
 
 // ─── Helpers ───────────────────────────────────────────────────────────────────
-
-function shuffle<T>(arr: T[]): T[] {
-  const a = [...arr]
-  for (let i = a.length - 1; i > 0; i--) {
-    const j = Math.floor(Math.random() * (i + 1))
-    ;[a[i], a[j]] = [a[j], a[i]]
-  }
-  return a
-}
 
 const QUESTIONS_PER_ROUND = 15
 const OPTION_LABELS = ['A', 'B', 'C', 'D']
@@ -58,6 +50,7 @@ export default function CapitalLetterQuestPage() {
   const [feedback, setFeedback] = useState<'correct' | 'wrong' | null>(null)
   const [sessionSalt, setSessionSalt] = useState('')
   const round = useGameRound('capital-letter-quest')
+  const deal = useDealer(BANK)
 
   const currentQuestion = questions[qIdx] ?? null
 
@@ -89,7 +82,7 @@ export default function CapitalLetterQuestPage() {
     // Minted here rather than during render: newSessionSalt calls Math.random,
     // which would not agree between the server and client paint.
     setSessionSalt(newSessionSalt())
-    const dealt = shuffle(QUESTION_BANK).slice(0, QUESTIONS_PER_ROUND)
+    const dealt = deal(QUESTIONS_PER_ROUND)
     setQuestions(dealt)
     setQIdx(0)
     setScore(0)
@@ -97,7 +90,7 @@ export default function CapitalLetterQuestPage() {
     setSelected(null)
     setFeedback(null)
     setGameState('playing')
-  }, [])
+  }, [deal])
 
   const handleFinish = useCallback(() => {
     setGameState('finished')

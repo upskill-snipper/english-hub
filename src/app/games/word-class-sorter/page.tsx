@@ -10,10 +10,10 @@ import { useBoard } from '@/hooks/useBoard'
 import { getBoardConfig } from '@/lib/board/board-store'
 import { AnswerExplanation } from '@/components/games/AnswerExplanation'
 import { useGameRound } from '@/components/games/game-round'
+import { useDealer } from '@/lib/games/start-round'
 import {
   BANK,
   CLASS_LABEL,
-  QUESTION_BANK,
   distractorsFor,
   type Question,
   type WordClass,
@@ -81,11 +81,12 @@ export default function WordClassSorterPage() {
   const [selected, setSelected] = useState<WordClass | null>(null)
   const [feedback, setFeedback] = useState<'correct' | 'wrong' | null>(null)
   const round = useGameRound('word-class-sorter')
+  const deal = useDealer(BANK)
 
   const currentQuestion = questions[qIdx] ?? null
 
   const handleStart = useCallback(() => {
-    const picked = shuffle(QUESTION_BANK).slice(0, ROUND_LENGTH)
+    const picked = deal(ROUND_LENGTH)
     setQuestions(picked)
     setOptions(picked.length > 0 ? buildOptions(picked[0]) : [])
     setQIdx(0)
@@ -94,7 +95,7 @@ export default function WordClassSorterPage() {
     setSelected(null)
     setFeedback(null)
     setGameState('playing')
-  }, [])
+  }, [deal])
 
   const handleFinish = useCallback(() => {
     setGameState('finished')

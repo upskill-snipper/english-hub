@@ -51,4 +51,23 @@ export interface GameBank<T> {
   options(item: T): readonly string[] | null
   /** What the question tests within the game (a device, a rule, an error type), where the bank says. */
   tag?(item: T): string | undefined
+  /**
+   * How hard the question is, 1 to 3, where the bank says; a round deals the
+   * easier first (src/lib/games/deal-round.ts). Added 24 October 2026.
+   */
+  tier?(item: T): number | undefined
+  /**
+   * What would give this question away to another in the same round, beyond
+   * what src/lib/games/give-aways.ts finds for itself (an answer or a sentence
+   * printed in another question): the quotation, the scene, the word family,
+   * the days a question names. No two questions sharing one are dealt in one
+   * round (src/lib/games/deal-round.ts). Added 24 October 2026.
+   */
+  facts?(item: T): readonly string[]
+  /**
+   * The device, rule or set the question tests, where it is not `tag`: a
+   * round deals at most two of a group and not two in a row
+   * (src/lib/games/deal-round.ts). Added 24 October 2026.
+   */
+  group?(item: T): string | undefined
 }

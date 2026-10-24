@@ -10,12 +10,9 @@ import { useBoard } from '@/hooks/useBoard'
 import { getBoardConfig } from '@/lib/board/board-store'
 import { AnswerExplanation } from '@/components/games/AnswerExplanation'
 import { useGameRound } from '@/components/games/game-round'
+import { useDealer, type RoundOptions } from '@/lib/games/start-round'
 import {
-  ALPHA_BANK,
   BANK,
-  DEFINE_BANK,
-  GUIDE_BANK,
-  POS_BANK,
   POS_OPTIONS,
   SUBTYPE_LABEL,
   guideOptions,
@@ -106,15 +103,16 @@ function buildQuestion(item: BankItem): Question {
   }
 }
 
-function buildRound(): Question[] {
-  // ~15 mixed questions, roughly balanced across the four subtypes.
-  const picks: BankItem[] = [
-    ...shuffle(ALPHA_BANK).slice(0, 4),
-    ...shuffle(GUIDE_BANK).slice(0, 4),
-    ...shuffle(DEFINE_BANK).slice(0, 4),
-    ...shuffle(POS_BANK).slice(0, 3),
-  ]
-  return shuffle(picks).slice(0, ROUND_LENGTH).map(buildQuestion)
+/**
+ * About fifteen mixed questions, four alphabetical order, four guide words,
+ * four meanings and three word classes, as the page has always dealt them,
+ * now by useDealer (src/lib/games/start-round.ts): what this browser has not
+ * met first, and no two that give each other away (24 October 2026).
+ */
+function buildRound(deal: (size: number, o?: RoundOptions<BankItem>) => BankItem[]): Question[] {
+  return deal(ROUND_LENGTH, {
+    quota: { of: (item) => item.type, counts: { alpha: 4, guide: 4, define: 4, pos: 3 } },
+  }).map(buildQuestion)
 }
 
 // ─── Component ─────────────────────────────────────────────────────────────────
@@ -131,18 +129,19 @@ export default function DictionarySkillsPage() {
   const [selected, setSelected] = useState<string | null>(null)
   const [feedback, setFeedback] = useState<'correct' | 'wrong' | null>(null)
   const round = useGameRound('dictionary-skills')
+  const deal = useDealer(BANK)
 
   const currentQ = questions[qIdx] ?? null
 
   const handleStart = useCallback(() => {
-    setQuestions(buildRound())
+    setQuestions(buildRound(deal))
     setQIdx(0)
     setScore(0)
     setTotalAnswered(0)
     setSelected(null)
     setFeedback(null)
     setGameState('playing')
-  }, [])
+  }, [deal])
 
   const handleFinish = useCallback(() => {
     setGameState('finished')

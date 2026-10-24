@@ -10,6 +10,7 @@ import { useBoard } from '@/hooks/useBoard'
 import { getBoardConfig } from '@/lib/board/board-store'
 import { AnswerExplanation } from '@/components/games/AnswerExplanation'
 import { useGameRound } from '@/components/games/game-round'
+import { useDealer, type RoundOptions } from '@/lib/games/start-round'
 import { BANK, type LabSeed } from '@/data/games/banks/prefix-suffix-lab'
 
 // ─── Data ──────────────────────────────────────────────────────────────────────
@@ -34,9 +35,6 @@ function buildOptions(pool: string[], answer: string): string[] {
   return shuffle([answer, ...distractors])
 }
 
-const PREFIX_SEEDS = BANK.items.filter((s) => s.mode === 'prefix')
-const SUFFIX_SEEDS = BANK.items.filter((s) => s.mode === 'suffix')
-
 const ROUND_SIZE = 15
 
 // ─── Helpers ───────────────────────────────────────────────────────────────────
@@ -50,32 +48,25 @@ function shuffle<T>(arr: T[]): T[] {
   return a
 }
 
-function buildRound(): LabItem[] {
-  const prefixItems: LabItem[] = PREFIX_SEEDS.map((s) => ({
-    mode: 'prefix' as const,
-    root: s.root,
-    target: s.target,
-    options: buildOptions(PREFIX_OPTIONS, s.answer),
-    answer: s.answer,
-    resultingWord: s.resultingWord,
-    meaningNote: s.meaningNote,
-  }))
-  const suffixItems: LabItem[] = SUFFIX_SEEDS.map((s) => ({
-    mode: 'suffix' as const,
-    root: s.root,
-    target: s.target,
-    options: buildOptions(SUFFIX_OPTIONS, s.answer),
-    answer: s.answer,
-    resultingWord: s.resultingWord,
-    meaningNote: s.meaningNote,
-  }))
-  // Roughly half prefix, half suffix, shuffled together.
+/**
+ * Roughly half prefix, half suffix, as the page has always dealt, now by
+ * useDealer (src/lib/games/start-round.ts): what this browser has not met
+ * first, and never one root twice in a round (the bank's facts: "happy" was
+ * asked as unhappy, happiness and happily in one round). 24 October 2026.
+ */
+function buildRound(deal: (size: number, o?: RoundOptions<LabSeed>) => LabSeed[]): LabItem[] {
   const half = Math.ceil(ROUND_SIZE / 2)
-  const picked = [
-    ...shuffle(prefixItems).slice(0, half),
-    ...shuffle(suffixItems).slice(0, ROUND_SIZE - half),
-  ]
-  return shuffle(picked)
+  return deal(ROUND_SIZE, {
+    quota: { of: (s) => s.mode, counts: { prefix: half, suffix: ROUND_SIZE - half } },
+  }).map((s) => ({
+    mode: s.mode,
+    root: s.root,
+    target: s.target,
+    options: buildOptions(s.mode === 'prefix' ? PREFIX_OPTIONS : SUFFIX_OPTIONS, s.answer),
+    answer: s.answer,
+    resultingWord: s.resultingWord,
+    meaningNote: s.meaningNote,
+  }))
 }
 
 // ─── Component ─────────────────────────────────────────────────────────────────
@@ -92,18 +83,19 @@ export default function PrefixSuffixLabPage() {
   const [selected, setSelected] = useState<string | null>(null)
   const [feedback, setFeedback] = useState<'correct' | 'wrong' | null>(null)
   const round = useGameRound('prefix-suffix-lab')
+  const deal = useDealer(BANK)
 
   const current = items[idx] ?? null
 
   const handleStart = useCallback(() => {
-    setItems(buildRound())
+    setItems(buildRound(deal))
     setIdx(0)
     setScore(0)
     setTotalAnswered(0)
     setSelected(null)
     setFeedback(null)
     setGameState('playing')
-  }, [])
+  }, [deal])
 
   const handleFinish = useCallback(() => {
     setGameState('finished')

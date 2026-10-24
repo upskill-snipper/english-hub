@@ -295,4 +295,7 @@ export const BANK: GameBank<ClassroomQuestion> = {
   // The page deals the four in a new order each time; the four are fixed.
   options: (q) => q.options,
   tag: (q) => (q.mode === 'name' ? 'vocabulary' : 'prepositions'),
+  // A picture question and a "Where is it?" question about one thing are
+  // never dealt in one round: the second names what the first asks for.
+  facts: (q) => [q.item.word],
 }

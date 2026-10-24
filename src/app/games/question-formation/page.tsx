@@ -10,7 +10,8 @@ import { useBoard } from '@/hooks/useBoard'
 import { getBoardConfig } from '@/lib/board/board-store'
 import { AnswerExplanation } from '@/components/games/AnswerExplanation'
 import { useGameRound } from '@/components/games/game-round'
-import { BANK, QUESTION_BANK, type QuestionItem } from '@/data/games/banks/question-formation'
+import { useDealer } from '@/lib/games/start-round'
+import { BANK, type QuestionItem } from '@/data/games/banks/question-formation'
 
 // ─── Data ──────────────────────────────────────────────────────────────────────
 
@@ -63,6 +64,7 @@ export default function QuestionFormationPage() {
   const [answer, setAnswer] = useState<Token[]>([])
   const [feedback, setFeedback] = useState<'correct' | 'wrong' | null>(null)
   const round = useGameRound('question-formation')
+  const deal = useDealer(BANK)
 
   const currentItem = items[qIdx] ?? null
 
@@ -89,14 +91,14 @@ export default function QuestionFormationPage() {
   }, [])
 
   const handleStart = useCallback(() => {
-    const picked = shuffle(QUESTION_BANK).slice(0, ROUND_SIZE)
+    const picked = deal(ROUND_SIZE)
     setItems(picked)
     setQIdx(0)
     setScore(0)
     setTotalAnswered(0)
     if (picked[0]) loadQuestion(picked[0])
     setGameState('playing')
-  }, [loadQuestion])
+  }, [loadQuestion, deal])
 
   const handleFinish = useCallback(() => {
     setGameState('finished')

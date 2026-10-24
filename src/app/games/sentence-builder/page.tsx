@@ -10,13 +10,9 @@ import { useBoard } from '@/hooks/useBoard'
 import { getBoardConfig } from '@/lib/board/board-store'
 import { AnswerExplanation } from '@/components/games/AnswerExplanation'
 import { useGameRound } from '@/components/games/game-round'
+import { useDealer } from '@/lib/games/start-round'
 import { isAcceptedOrder } from '@/lib/games/scoring'
-import {
-  BANK,
-  SENTENCE_BANK,
-  type SentenceItem,
-  type SentenceType,
-} from '@/data/games/banks/sentence-builder'
+import { BANK, type SentenceItem, type SentenceType } from '@/data/games/banks/sentence-builder'
 
 // ─── Data ──────────────────────────────────────────────────────────────────────
 // The sentences are in src/data/games/banks/sentence-builder.ts (moved there on
@@ -71,6 +67,7 @@ export default function SentenceBuilderPage() {
   const [feedback, setFeedback] = useState<'correct' | 'wrong' | null>(null)
   const [revealed, setRevealed] = useState(false)
   const round = useGameRound('sentence-builder')
+  const deal = useDealer(BANK)
 
   const current = items[idx] ?? null
 
@@ -82,21 +79,19 @@ export default function SentenceBuilderPage() {
   }, [])
 
   const handleStart = useCallback(() => {
-    const simple = shuffle(SENTENCE_BANK.filter((s) => s.type === 'simple'))
-    const compound = shuffle(SENTENCE_BANK.filter((s) => s.type === 'compound'))
-    const complex = shuffle(SENTENCE_BANK.filter((s) => s.type === 'complex'))
-    // Difficulty ramp: simple → compound → complex
-    const ordered = [...simple.slice(0, 4), ...compound.slice(0, 4), ...complex.slice(0, 4)].slice(
-      0,
-      ROUND_SIZE,
-    )
+    // Four of each, simple then compound then complex, as before; dealt by
+    // useDealer (src/lib/games/start-round.ts), so a round brings sentences
+    // this browser has not built, and the bank's tiers keep the ramp.
+    const ordered = deal(ROUND_SIZE, {
+      quota: { of: (s) => s.type, counts: { simple: 4, compound: 4, complex: 4 } },
+    })
     setItems(ordered)
     setIdx(0)
     setScore(0)
     setTotalAnswered(0)
     loadItem(ordered[0])
     setGameState('playing')
-  }, [loadItem])
+  }, [loadItem, deal])
 
   const handleFinish = useCallback(() => {
     setGameState('finished')

@@ -10,7 +10,8 @@ import { useBoard } from '@/hooks/useBoard'
 import { getBoardConfig } from '@/lib/board/board-store'
 import { AnswerExplanation } from '@/components/games/AnswerExplanation'
 import { useGameRound } from '@/components/games/game-round'
-import { BANK, SYNONYM_BANK, type SynonymItem } from '@/data/games/banks/synonym-shuffle'
+import { useDealer } from '@/lib/games/start-round'
+import { BANK, type SynonymItem } from '@/data/games/banks/synonym-shuffle'
 
 // ─── Data ──────────────────────────────────────────────────────────────────────
 // The questions are in src/data/games/banks/synonym-shuffle.ts (moved there on
@@ -62,6 +63,7 @@ export default function SynonymShufflePage() {
   const [selected, setSelected] = useState<string | null>(null)
   const [feedback, setFeedback] = useState<'correct' | 'wrong' | null>(null)
   const round = useGameRound('synonym-shuffle')
+  const deal = useDealer(BANK)
 
   const current = items[idx] ?? null
 
@@ -71,7 +73,7 @@ export default function SynonymShufflePage() {
   }, [idx, items])
 
   const handleStart = useCallback(() => {
-    const picked = shuffle(SYNONYM_BANK).slice(0, ROUND_SIZE)
+    const picked = deal(ROUND_SIZE)
     setItems(picked)
     setIdx(0)
     setScore(0)
@@ -79,7 +81,7 @@ export default function SynonymShufflePage() {
     setSelected(null)
     setFeedback(null)
     setGameState('playing')
-  }, [])
+  }, [deal])
 
   const handleFinish = useCallback(() => {
     setGameState('finished')

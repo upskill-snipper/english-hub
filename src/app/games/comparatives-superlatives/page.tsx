@@ -10,9 +10,9 @@ import { useBoard } from '@/hooks/useBoard'
 import { getBoardConfig } from '@/lib/board/board-store'
 import { AnswerExplanation } from '@/components/games/AnswerExplanation'
 import { useGameRound } from '@/components/games/game-round'
+import { useDealer } from '@/lib/games/start-round'
 import {
   BANK,
-  COMP_BANK,
   distractorCandidates,
   type CompItem,
 } from '@/data/games/banks/comparatives-superlatives'
@@ -59,11 +59,12 @@ export default function ComparativesSuperlativesPage() {
   const [selected, setSelected] = useState<string | null>(null)
   const [feedback, setFeedback] = useState<'correct' | 'wrong' | null>(null)
   const round = useGameRound('comparatives-superlatives')
+  const deal = useDealer(BANK)
 
   const current = questions[qIdx] ?? null
 
   const handleStart = useCallback(() => {
-    const picked = shuffle(COMP_BANK).slice(0, ROUND_SIZE)
+    const picked = deal(ROUND_SIZE)
     setQuestions(picked)
     setOptions(picked.length > 0 ? buildOptions(picked[0]) : [])
     setQIdx(0)
@@ -72,7 +73,7 @@ export default function ComparativesSuperlativesPage() {
     setSelected(null)
     setFeedback(null)
     setGameState('playing')
-  }, [])
+  }, [deal])
 
   const handleFinish = useCallback(() => {
     setGameState('finished')
