@@ -433,9 +433,17 @@ async function hasStartedMarking(
       .select('id', { count: 'exact', head: true })
       .eq('student_id', supabaseUserId)
       .gte('submitted_at', since.toISOString())
-    if (error || typeof submissions !== 'number') return null
+    if (error || typeof submissions !== 'number') {
+      console.warn(`${LOG} M1 marking history unreadable: ${error?.message ?? 'no count'}`)
+      return null
+    }
     return submissions > 0
-  } catch {
+  } catch (err) {
+    // Said, not swallowed: if a table here is missing, M1 skips everyone, and
+    // the only other trace would be the checkFailed count in the run result.
+    console.warn(
+      `${LOG} M1 marking history unreadable: ${err instanceof Error ? err.message : String(err)}`,
+    )
     return null
   }
 }
