@@ -8,6 +8,7 @@ import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
 import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
 import { StubStudyGuide, stubCanonical } from '../../../texts/_components/stub-study-guide'
+import { ExamPlacementCard } from '@/components/revision/exam-placement-card'
 import { t } from '@/lib/i18n/t'
 
 type Params = { slug: string }
@@ -60,7 +61,12 @@ export default async function PearsonIgcsePoemPage({ params }: { params: Promise
   const backLabel = await t('analysis.deep.pearson_poetry.back_to_pearson')
 
   return (
-    <StubStudyGuide text={text} backHref="/revision/poetry/pearson-igcse" backLabel={backLabel} />
+    <StubStudyGuide
+      text={text}
+      placement={<ExamPlacementCard slug={text.slug} />}
+      backHref="/revision/poetry/pearson-igcse"
+      backLabel={backLabel}
+    />
   )
 }
 

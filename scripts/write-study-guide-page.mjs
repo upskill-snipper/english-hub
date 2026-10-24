@@ -14,6 +14,10 @@
  * Refuses to overwrite a page that is not a placeholder: a hand-built guide must
  * never be replaced by a generated one.
  *
+ * The page passes FullStudyGuide its own <ExamPlacementCard /> with its slug
+ * written out, as every set-text page has since 23 October 2026, so
+ * every-text-page-shows-its-exam-placement.test.ts can check it.
+ *
  *   node scripts/write-study-guide-page.mjs <slug> [<slug> ...]
  */
 
@@ -78,6 +82,7 @@ import { notFound } from 'next/navigation'
 import { getSetText } from '@/lib/board/set-texts'
 import { guide } from '@/data/study-guides/${slug}'
 import { FullStudyGuide } from '../_components/full-study-guide'
+import { ExamPlacementCard } from '@/components/revision/exam-placement-card'
 
 // The study guide for this text is src/data/study-guides/${slug}.ts, and this
 // page renders it whole. Written by scripts/write-study-guide-page.mjs, which
@@ -108,7 +113,13 @@ export const metadata: Metadata = {
 export default function Page() {
   const text = getSetText(SLUG)
   if (!text) notFound()
-  return <FullStudyGuide text={text} guide={guide} />
+  return (
+    <FullStudyGuide
+      text={text}
+      guide={guide}
+      placement={<ExamPlacementCard slug=${JSON.stringify(slug)} />}
+    />
+  )
 }
 `
   mkdirSync(dir, { recursive: true })

@@ -3,6 +3,7 @@ import type { Metadata } from 'next'
 
 import { getServerBoard } from '@/lib/board/get-server-board'
 import { TextGuide, type TextGuideData } from '../_components/text-guide'
+import { ExamPlacementCard } from '@/components/revision/exam-placement-card'
 
 import { CourseJsonLd } from '@/components/seo/json-ld'
 import { t } from '@/lib/i18n/t'
@@ -264,7 +265,7 @@ export default async function TheMerchantOfVenicePage() {
         </strong>
         <span>{await t('rev.texts.common.draft_guide_note_long')}</span>
       </div>
-      <TextGuide data={data} />
+      <TextGuide data={data} placement={<ExamPlacementCard slug="the-merchant-of-venice" />} />
       {/* The sections this page did not have, and its story visuals.
           See scripts/mount-study-guide-supplement.mjs. */}
       <GuideSupplement guide={studyGuide} />

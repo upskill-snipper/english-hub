@@ -44,7 +44,10 @@ async function html(slug: string, as?: string) {
   // `as` renders the same row under a slug with no guide anywhere, for the
   // in-production copy: since 26 September 2026 every 4EA1 placeholder has a
   // finished guide on another route, so none of them shows that copy any more.
-  return renderToStaticMarkup(await StubStudyGuide({ text: as ? { ...text, slug: as } : text }))
+  // `placement` is the page's card, mocked out above, so an empty element.
+  return renderToStaticMarkup(
+    await StubStudyGuide({ text: as ? { ...text, slug: as } : text, placement: <></> }),
+  )
 }
 
 const IN_PRODUCTION = 'We are currently writing a full study guide for'

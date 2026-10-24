@@ -3,6 +3,7 @@ import { notFound } from 'next/navigation'
 
 import { getSetText } from '@/lib/board/set-texts'
 import { StubStudyGuide, stubCanonical } from '../_components/stub-study-guide'
+import { ExamPlacementCard } from '@/components/revision/exam-placement-card'
 
 const SLUG = 'h-is-for-hawk'
 
@@ -20,5 +21,5 @@ export const metadata: Metadata = {
 export default function Page() {
   const text = getSetText(SLUG)
   if (!text) notFound()
-  return <StubStudyGuide text={text} />
+  return <StubStudyGuide text={text} placement={<ExamPlacementCard slug="h-is-for-hawk" />} />
 }

@@ -4,6 +4,7 @@ import { notFound } from 'next/navigation'
 import { getSetText } from '@/lib/board/set-texts'
 import { guide } from '@/data/study-guides/blessing'
 import { FullStudyGuide } from '../_components/full-study-guide'
+import { ExamPlacementCard } from '@/components/revision/exam-placement-card'
 
 // The study guide for this text is src/data/study-guides/blessing.ts, and this
 // page renders it whole. Written by scripts/write-study-guide-page.mjs, which
@@ -36,5 +37,7 @@ export const metadata: Metadata = {
 export default function Page() {
   const text = getSetText(SLUG)
   if (!text) notFound()
-  return <FullStudyGuide text={text} guide={guide} />
+  return (
+    <FullStudyGuide text={text} guide={guide} placement={<ExamPlacementCard slug="blessing" />} />
+  )
 }

@@ -3,6 +3,7 @@ import type { Metadata } from 'next'
 import { getServerBoard } from '@/lib/board/get-server-board'
 import { getBoardConfig } from '@/lib/board/board-config'
 import { TextGuide, type TextGuideData } from '../_components/text-guide'
+import { ExamPlacementCard } from '@/components/revision/exam-placement-card'
 import TextStudyHub from '@/components/study/TextStudyHub'
 import InlineStudyEngine, { type QuizQuestion } from '@/components/study/InlineStudyEngine'
 
@@ -631,7 +632,7 @@ export default async function AnimalFarmPage() {
         essayPrompts={ESSAY_PROMPTS}
         revisionTopics={REVISION_TOPICS}
       />
-      <TextGuide data={data} />
+      <TextGuide data={data} placement={<ExamPlacementCard slug="animal-farm" />} />
       <p className="text-xs text-muted-foreground mt-8 border-t border-border/60 pt-4">
         {await t('rev.texts.af.rights_notice_short')}
       </p>

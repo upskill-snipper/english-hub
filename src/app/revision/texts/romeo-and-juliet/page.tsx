@@ -3,6 +3,7 @@ import type { Metadata } from 'next'
 import { getServerBoard } from '@/lib/board/get-server-board'
 import { getBoardConfig } from '@/lib/board/board-config'
 import { TextGuide, type TextGuideData } from '../_components/text-guide'
+import { ExamPlacementCard } from '@/components/revision/exam-placement-card'
 import TextStudyHub from '@/components/study/TextStudyHub'
 import InlineStudyEngine, { type QuizQuestion } from '@/components/study/InlineStudyEngine'
 
@@ -788,7 +789,7 @@ export default async function RomeoAndJulietPage() {
         essayPrompts={ESSAY_PROMPTS}
         revisionTopics={REVISION_TOPICS}
       />
-      <TextGuide data={data} />
+      <TextGuide data={data} placement={<ExamPlacementCard slug="romeo-and-juliet" />} />
       <section className="mx-auto mt-12 max-w-3xl px-4">
         <GeoFaq faqs={RJ_FAQS} heading={await t('rev.texts.rj.faq_heading')} />
       </section>

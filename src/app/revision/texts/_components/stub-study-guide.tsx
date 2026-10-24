@@ -1,3 +1,4 @@
+import type { ReactElement } from 'react'
 import Link from 'next/link'
 import { ArrowLeft, ArrowRight, BookOpen, Construction, Scale, Sparkles } from 'lucide-react'
 
@@ -7,7 +8,6 @@ import { Button } from '@/components/ui/button'
 import { getSetText, type SetText } from '@/lib/board/set-texts'
 import { guideElsewhere } from '@/lib/revision/guide-href'
 import { t } from '@/lib/i18n/t'
-import { ExamPlacementCard } from '@/components/revision/exam-placement-card'
 
 // Per-category dictionary keys. Looked up at render time via t() so the
 // AR toggle picks up the Khaleeji label without a separate prop change.
@@ -22,6 +22,12 @@ const CATEGORY_KEY: Record<SetText['category'], string> = {
 
 type Props = {
   text: SetText
+  /**
+   * The page's own <ExamPlacementCard />. Built here from `text.slug` until
+   * 23 October 2026; now passed in by every set-text page so one test can
+   * check that each names its own slug (see FullStudyGuide).
+   */
+  placement: ReactElement
   /**
    * Where the "back" button should go. When `backLabel` is omitted, the
    * component renders the localized default ("Back to set texts").
@@ -58,7 +64,12 @@ export function stubCanonical(slug: string, ownPath: string): string {
  * being written and offered two links that led away from it. When
  * `guideElsewhere` finds that guide, the notice is replaced by a link to it.
  */
-export async function StubStudyGuide({ text, backHref = '/revision/texts', backLabel }: Props) {
+export async function StubStudyGuide({
+  text,
+  placement,
+  backHref = '/revision/texts',
+  backLabel,
+}: Props) {
   const tByAuthor = await t('analysis.deep.stub.by_author')
   const tLangABadge = await t('analysis.deep.stub.lang_a_badge')
   const tUkRightsH3 = await t('analysis.deep.stub.uk_rights_h3')
@@ -181,7 +192,7 @@ export async function StubStudyGuide({ text, backHref = '/revision/texts', backL
           the guide is unwritten: which paper, which section, and whether they
           had a choice. It renders its own "we have not checked" message when
           there is nothing verified, so it is safe on all twenty. */}
-      <ExamPlacementCard slug={text.slug} />
+      {placement}
 
       {elsewhere ? (
         <GuideElsewhereCard title={text.title} href={elsewhere.href} copy={elsewhereCopy} />

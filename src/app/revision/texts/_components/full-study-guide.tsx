@@ -1,9 +1,9 @@
+import type { ReactElement } from 'react'
 import Link from 'next/link'
 import { ArrowLeft, BookOpen, Sparkles } from 'lucide-react'
 
 import { Badge } from '@/components/ui/badge'
 import { ContentAdvisory } from '@/components/content/ContentAdvisory'
-import { ExamPlacementCard } from '@/components/revision/exam-placement-card'
 import { StudyGuideSections } from '@/components/study-guide/study-guide-sections'
 import { StoryVisuals } from '@/components/study-guide/visuals/story-visuals'
 import { getServerBoard } from '@/lib/board/get-server-board'
@@ -25,8 +25,22 @@ import type { StudyGuide } from '@/lib/study-guides/types'
  * registry has been wrong: it held M.R. James for a chapter the anthology
  * prints from Susan Hill's The Woman in Black. The guide is written against the
  * specification.
+ *
+ * `placement` is the page's own <ExamPlacementCard />. Until 23 October 2026
+ * this component built the card itself from `text.slug`, which worked, but the
+ * thirty-two pages built on TextGuide had no card at all and nothing compared
+ * the two. Every set-text page now passes its card in by its own slug, and
+ * every-text-page-shows-its-exam-placement.test.ts reads each page to check it.
  */
-export async function FullStudyGuide({ text, guide }: { text: SetText; guide: StudyGuide }) {
+export async function FullStudyGuide({
+  text,
+  guide,
+  placement,
+}: {
+  text: SetText
+  guide: StudyGuide
+  placement: ReactElement
+}) {
   const board = await getServerBoard()
   const back = textBackLink(text.slug, board)
   const [tBack, tBackBoard, tBy, tScope, tForm] = await Promise.all([
@@ -78,7 +92,7 @@ export async function FullStudyGuide({ text, guide }: { text: SetText; guide: St
 
       <ContentAdvisory themes={guide.contentGuidance} />
 
-      <ExamPlacementCard slug={text.slug} />
+      {placement}
 
       <StoryVisuals guide={guide} />
 

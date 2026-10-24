@@ -3,6 +3,7 @@ import type { Metadata } from 'next'
 
 import { getServerBoard } from '@/lib/board/get-server-board'
 import { TextGuide, type TextGuideData } from '../_components/text-guide'
+import { ExamPlacementCard } from '@/components/revision/exam-placement-card'
 import TextStudyHub from '@/components/study/TextStudyHub'
 import InlineStudyEngine, { type QuizQuestion } from '@/components/study/InlineStudyEngine'
 
@@ -713,7 +714,7 @@ export default async function SilasMarnerPage() {
         essayPrompts={ESSAY_PROMPTS}
         revisionTopics={REVISION_TOPICS}
       />
-      <TextGuide data={data} />
+      <TextGuide data={data} placement={<ExamPlacementCard slug="silas-marner" />} />
       {/* The sections this page did not have, and its story visuals.
           See scripts/mount-study-guide-supplement.mjs. */}
       <GuideSupplement guide={studyGuide} />

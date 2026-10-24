@@ -3,6 +3,7 @@ import type { Metadata } from 'next'
 
 import { getServerBoard } from '@/lib/board/get-server-board'
 import { TextGuide, type TextGuideData } from '../_components/text-guide'
+import { ExamPlacementCard } from '@/components/revision/exam-placement-card'
 import TextStudyHub from '@/components/study/TextStudyHub'
 import InlineStudyEngine, { type QuizQuestion } from '@/components/study/InlineStudyEngine'
 
@@ -701,7 +702,7 @@ export default async function AStreetcarNamedDesirePage() {
         <strong className="block text-foreground">{await t('rev.texts.streetcar.draft_h')}</strong>
         <span>{await t('rev.texts.streetcar.draft_body')}</span>
       </div>
-      <TextGuide data={data} />
+      <TextGuide data={data} placement={<ExamPlacementCard slug="a-streetcar-named-desire" />} />
     </>
   )
 }

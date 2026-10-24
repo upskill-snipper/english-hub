@@ -1,3 +1,4 @@
+import type { ReactElement } from 'react'
 import { headers } from 'next/headers'
 import { getServerBoard } from '@/lib/board/get-server-board'
 import { textBackLink } from '@/lib/revision/text-back-href'
@@ -159,7 +160,26 @@ const CHROME_ES: typeof CHROME_AR = {
   published: 'Publicación',
 }
 
-export async function TextGuide({ data }: { data: TextGuideData }) {
+/**
+ * `placement` is the page's own <ExamPlacementCard />, shown under the hero.
+ *
+ * ADDED 23 October 2026. Until then this component rendered no placement card
+ * at all, so the thirty-two pages built on it were the only set-text pages that
+ * never said which paper, board or series sets the text: An Inspector Calls
+ * showed nothing of its Cambridge 2028 placement and Macbeth nothing of its
+ * Pearson 4ET1 one, although exam-placement.ts held both. The prop is required
+ * so a page without it does not compile, and the page passes it rather than
+ * this component building it from `data.slug` so that
+ * every-text-page-shows-its-exam-placement.test.ts can read each page and
+ * check the card carries that page's own slug.
+ */
+export async function TextGuide({
+  data,
+  placement,
+}: {
+  data: TextGuideData
+  placement: ReactElement
+}) {
   // Where "back" goes, and what it is called.
   //
   // This was `href="/revision/texts"`, hard-coded, on all thirty-three pages
@@ -234,6 +254,10 @@ export async function TextGuide({ data }: { data: TextGuideData }) {
         note={data.contentGuidanceNote}
         boards={data.badge}
       />
+
+      {/* Where this text is on the exam: the same place FullStudyGuide puts it,
+          after the hero and the content guidance, before the study notes. */}
+      {placement}
 
       {/* Quick Info */}
       <section>

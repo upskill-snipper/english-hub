@@ -3,6 +3,7 @@ import Link from 'next/link'
 import { getServerBoard } from '@/lib/board/get-server-board'
 import { getBoardConfig } from '@/lib/board/board-config'
 import { TextGuide, type TextGuideData } from '../_components/text-guide'
+import { ExamPlacementCard } from '@/components/revision/exam-placement-card'
 import TextStudyHub from '@/components/study/TextStudyHub'
 import InlineStudyEngine, { type QuizQuestion } from '@/components/study/InlineStudyEngine'
 import { CourseJsonLd, LearningResourceJsonLd } from '@/components/seo/json-ld'
@@ -867,10 +868,17 @@ export default async function MacbethPage() {
             the witches prophesy what Macbeth might become, but Banquo hears the same words and
             refuses to act on them.
           </p>
+          {/* Until 23 October 2026 this paragraph opened by saying Macbeth
+              "sits on the Shakespeare paper of every major English Literature
+              specification". The placement card under the guide's hero now
+              prints Pearson 4ET1, which sets Macbeth as a literary heritage
+              text in Components 2 and 3 and has no Shakespeare paper, and
+              Cambridge 0475 sets it in none of the series we hold. The clause
+              went; which paper sets it is the card's job, read from the
+              specification. */}
           <p>
-            Macbeth is examined heavily because it sits on the Shakespeare paper of every major
-            English Literature specification. AQA, Edexcel, OCR and Eduqas all list it as a set
-            option for GCSE Literature, and it remains the single most-taught Shakespeare text in UK
+            Macbeth is examined heavily: AQA, Edexcel, OCR and Eduqas all list it as a set option
+            for GCSE Literature, and it remains the single most-taught Shakespeare text in UK
             schools. Examiners reward responses that move beyond plot summary to engage with
             Shakespeare&rsquo;s methods (AO2): the trochaic tetrameter of the witches, the chiastic
             phrasing of &ldquo;fair is foul, and foul is fair&rdquo;, the blood and sleep motifs,
@@ -924,7 +932,7 @@ export default async function MacbethPage() {
         </ol>
       </section>
 
-      <TextGuide data={data} />
+      <TextGuide data={data} placement={<ExamPlacementCard slug="macbeth" />} />
 
       <section aria-labelledby="macbeth-compare-with" className="mx-auto my-12 max-w-3xl px-4">
         <h2

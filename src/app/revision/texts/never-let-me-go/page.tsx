@@ -3,6 +3,7 @@ import type { Metadata } from 'next'
 
 import { getServerBoard } from '@/lib/board/get-server-board'
 import { TextGuide, type TextGuideData } from '../_components/text-guide'
+import { ExamPlacementCard } from '@/components/revision/exam-placement-card'
 import StudyTools from '@/components/study/StudyTools'
 import { LearningResourceJsonLd } from '@/components/seo/json-ld'
 import { t } from '@/lib/i18n/t'
@@ -210,7 +211,7 @@ export default async function NeverLetMeGoPage() {
         <strong className="block text-foreground">{await t('rev.texts.common.draft_badge')}</strong>
         <span>{await t('rev.texts.common.draft_note')}</span>
       </div>
-      <TextGuide data={data} />
+      <TextGuide data={data} placement={<ExamPlacementCard slug="never-let-me-go" />} />
       <p className="text-xs text-muted-foreground mt-8 border-t border-border/60 pt-4">
         {await t('rev.texts.common.fair_dealing_review')}
       </p>
