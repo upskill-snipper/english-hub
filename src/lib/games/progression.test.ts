@@ -247,6 +247,17 @@ describe('the round in play, in this browser', () => {
     expect(endRound('g', NOW)).toBeNull()
   })
 
+  it('counts only the first answer to a question in a round', () => {
+    // Vocabulary Builder asks a missed word again after showing its answer.
+    beginTally('g')
+    noteDealt('g', [{ key: 'a', tier: 3, due: false }], false)
+    noteAnswer('g', 'a', false)
+    noteAnswer('g', 'a', true)
+    const outcome = endRound('g', NOW)
+    expect(outcome?.answered).toBe(1)
+    expect(outcome?.xp).toBe(0)
+  })
+
   it('gives nothing for a game the student marks themselves', () => {
     beginTally('everyday-vocab-flashcards')
     noteDealt('everyday-vocab-flashcards', [{ key: 'a', tier: 1, due: false }], false)

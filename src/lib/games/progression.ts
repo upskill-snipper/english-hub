@@ -371,6 +371,8 @@ interface Tally {
   /** Was the round dealt by level. */
   levelled: boolean
   answers: Answer[]
+  /** Questions already answered this round: only a first answer counts. */
+  answered: Set<string>
 }
 
 /** Per game: the round in play. Absent between rounds. */
@@ -379,7 +381,7 @@ const inPlay = new Map<string, Tally>()
 function tallyFor(slug: string): Tally {
   let t = inPlay.get(slug)
   if (!t) {
-    t = { dealt: new Map(), levelled: false, answers: [] }
+    t = { dealt: new Map(), levelled: false, answers: [], answered: new Set() }
     inPlay.set(slug, t)
   }
   return t
@@ -411,10 +413,18 @@ export function noteDealt(
  * it. A game the student marks themselves (a flashcard's "I knew it") adds
  * nothing: nothing checked the answer, so it earns no XP and no achievement
  * (src/lib/game-results/self-marked.ts).
+ *
+ * Only a question's FIRST answer in a round counts. Vocabulary Builder asks a
+ * missed word again later in the same round, just after its explanation has
+ * shown the answer; that retry is practice, and is still recorded for the
+ * student's account (game-round.tsx), but it earns no XP and moves no level,
+ * or a run of right answers could be built from answers just read.
  */
 export function noteAnswer(slug: string, key: string, correct: boolean): void {
   if (SELF_MARKED_GAMES.has(slug)) return
   const t = tallyFor(slug)
+  if (t.answered.has(key)) return
+  t.answered.add(key)
   const info = t.dealt.get(key)
   t.answers.push({ tier: info?.tier ?? 1, correct, wasDue: info?.due ?? false })
 }
