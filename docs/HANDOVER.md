@@ -209,19 +209,34 @@ every time the duplicate retried:
 18 Sept 04:18  duplicate's dunning ends  -> cancelled
 ```
 
-Fixed. Both handlers now check for another live subscription on the same price
-before touching the entitlement, via `findDuplicateSubscription` in
-[`src/lib/billing/duplicate-subscription-guard.ts`](../src/lib/billing/duplicate-subscription-guard.ts).
+Fixed in September for those two handlers, and again on 23-24 October 2026
+(branch `fix/stripe-webhook-2026-10-23`) because the September fix left the
+same outcome open: it judged cover per price, so a customer who moved from
+monthly to annual was revoked when the monthly plan ended; it failed open, so a
+Stripe outage read as "not covered"; and `customer.subscription.updated` had no
+check at all. The webhook's revocation handlers now ask `findCoveringSubscription`
+in
+[`src/lib/billing/duplicate-subscription-guard.ts`](../src/lib/billing/duplicate-subscription-guard.ts),
+which asks about access rather than prices and throws when Stripe cannot be
+asked. The checkout routes keep `findDuplicateSubscription`, per price and
+failing open, which is right for them. `invoice.payment_failed` no longer
+writes the entitlement at all: access is kept through Stripe's retry window,
+which is safe only if the Stripe dashboard ends retries by cancelling or
+marking unpaid (a setting only the founder can see). Full account in
+[docs/system/06](system/06-billing-and-entitlements.md).
 
-**Two traps in the same area.** `handleSubscriptionDeleted` also writes
-`subscription_end_date` from `ended_at`, and the stale-event guard on
-`customer.subscription.updated` then refuses to re-grant Pro once that date has
-passed - so repairing a locked-out customer by touching their good subscription
-in the Stripe dashboard **fails silently**, logging `Refusing to re-grant Pro`
-while the dashboard shows Active and paid. And there are **two** entitlement
+**Two traps in the same area.** The stale-event guard on
+`customer.subscription.updated` refuses to re-grant Pro once a `cancelled` or
+`unpaid` profile's end date has passed. `handleSubscriptionDeleted` now writes
+the end date only when it revokes, so a covered duplicate can no longer arm
+that guard against the paid subscription; but a customer genuinely cancelled
+and then repaired by touching a subscription in the dashboard will still be
+refused, logging `Refusing to re-grant Pro`. And there are **two** entitlement
 sources: the web gates read `profiles.subscription_status`, while `/api/me` and
 `/api/me/entitlements` (the mobile contract) read the Prisma `Subscription` row.
-Fixing one does not fix the other.
+Fixing one does not fix the other, and one row per person cannot represent a
+customer holding two subscriptions (Pro and IELTS, or a store purchase and a
+Stripe plan): an open item recorded in docs/system/06.
 
 ### 3.3 The migration tracker records intentions, not reality
 
@@ -315,10 +330,13 @@ Ordered by what I would do first.
    the subscription only exists once checkout completes, so two tabs opened
    together still both become subscriptions. Consider a Stripe idempotency key
    or expiring the earlier session.
-6. `paymentCount` is never incremented for web customers (only
-   `src/lib/revenuecat/reconcile.ts` writes it), so the Trustpilot retention
-   cron has never emailed a web payer and retention logic reads them as having
-   no financial records. Needs a deliberate decision, not an invented counter.
+6. `paymentCount` was never incremented for web customers until branch
+   `fix/stripe-webhook-2026-10-23`, which counts each `invoice.paid` that took
+   money; `scripts/stripe-reconcile-subscriptions.mjs --write` recounts the
+   history from Stripe. Decide before either ships whether web payers should
+   get the Trustpilot 90-day email: `trustpilot-retention-90d` selects adult
+   accounts with `paymentCount >= 1`, so with the counter live it starts
+   emailing web payers on their ninetieth day, which it has never done.
 7. `/api/profile/dob` overwrites an existing date of birth unconditionally, so a
    minor can raise their own age by calling it directly.
 8. No `/es` route, deliberately - the decision and the five preconditions are
