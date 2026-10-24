@@ -28,6 +28,12 @@ export {
   MINOR_AGE,
   PLACEHOLDER_DOB_ISO,
   type AgeBand,
+  emailAgeGroup,
+  isAdultForEmail,
+  resolveEmailAgeGroup,
+  MIN_ACCOUNT_AGE,
+  type EmailAgeGroup,
+  type EmailAgeFacts,
 } from './age'
 
 export { findExistingUser, type IdentityUserRow } from './lookup'

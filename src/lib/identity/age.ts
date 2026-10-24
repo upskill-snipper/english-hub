@@ -135,3 +135,120 @@ export async function resolveAgeBand(
 
   return 'UNKNOWN'
 }
+
+// ─── Who an email may be written for ────────────────────────────────────────
+//
+// ADDED 23 October 2026 for the trial lifecycle emails. Those emails need a
+// different question answered from the consent gate's: not "who consents to AI
+// feedback" (16) but "who is an adult" (18), because a price, a plan link or a
+// nudge may go only to an adult, and a child gets the service copy alone.
+//
+// The two senders that existed before this disagreed with the consent gate in
+// exactly the way the band above was written to stop. The trial-ending cron
+// treated a missing date of birth as "not under 13" and sent everything, and
+// weekly-student-reports computed an age straight from `User.dateOfBirth`, so
+// the 2000-01-01 backfill placeholder read as a 26 year-old. So this reads the
+// same sources in the same order as resolveAgeBand, refuses the placeholder the
+// same way, and treats what it cannot establish as a child.
+
+/**
+ * The age group an email is written for.
+ *
+ *   ADULT           a real date of birth 18 or over, or a teacher or parent
+ *                   account with nothing on file saying otherwise
+ *   MINOR_16_17     a real date of birth, 16 or 17: consents for themselves
+ *   MINOR_UNDER_16  a real date of birth under 16, or a child flag with no
+ *                   date: a parent's or school's approval is needed for AI
+ *   UNDER_13        a real date of birth under 13. Registration refuses these,
+ *                   so it is bad data, and nothing is emailed to it
+ *   UNKNOWN         nothing held. A child for every email purpose
+ */
+export type EmailAgeGroup = 'ADULT' | 'MINOR_16_17' | 'MINOR_UNDER_16' | 'UNDER_13' | 'UNKNOWN'
+
+/** The facts the email age group is read from. Every field may be missing. */
+export interface EmailAgeFacts {
+  /** `profiles.date_of_birth`, as stored (YYYY-MM-DD). */
+  profileDob?: string | null
+  /** Prisma `User.dateOfBirth`. The 2000-01-01 placeholder is ignored. */
+  prismaDob?: Date | null
+  /** `profiles.is_minor`. Only `true` carries information. */
+  profileIsMinor?: boolean | null
+  /** Prisma `User.isMinor`. Only `true` carries information. */
+  prismaIsMinor?: boolean | null
+  /** `profiles.role` and Prisma `User.role`, in any case. */
+  roles?: ReadonlyArray<string | null | undefined>
+}
+
+/** Below this age an account is bad data: registration enforces 13 and over. */
+export const MIN_ACCOUNT_AGE = 13
+
+const ADULT_ROLES = new Set(['teacher', 'parent'])
+
+/**
+ * The email age group, from facts already read. Pure, so a cron can batch the
+ * reads and a test can state the rule.
+ *
+ * Order, most factual first, and fail closed throughout:
+ *   1. a real date of birth decides, whatever the role says;
+ *   2. a child flag with no date makes a child;
+ *   3. a teacher or parent role makes an adult;
+ *   4. anything else is UNKNOWN, which every caller treats as a child.
+ */
+export function emailAgeGroup(facts: EmailAgeFacts, now: Date = new Date()): EmailAgeGroup {
+  const profileDob = parseDob(facts.profileDob)
+  const prismaDob = facts.prismaDob ?? null
+  const dob =
+    profileDob && !isPlaceholderDob(profileDob)
+      ? profileDob
+      : prismaDob && !Number.isNaN(prismaDob.getTime()) && !isPlaceholderDob(prismaDob)
+        ? prismaDob
+        : null
+
+  if (dob) {
+    const age = ageFromDob(dob, now)
+    if (age < MIN_ACCOUNT_AGE) return 'UNDER_13'
+    if (age < PARENTAL_CONSENT_AGE) return 'MINOR_UNDER_16'
+    if (age < MINOR_AGE) return 'MINOR_16_17'
+    return 'ADULT'
+  }
+
+  if (facts.profileIsMinor === true || facts.prismaIsMinor === true) return 'MINOR_UNDER_16'
+
+  const isAdultRole = (facts.roles ?? []).some((r) => ADULT_ROLES.has((r ?? '').toLowerCase()))
+  if (isAdultRole) return 'ADULT'
+
+  return 'UNKNOWN'
+}
+
+/** Only ADULT may be sent a price, a plan link, a nudge or marketing. */
+export function isAdultForEmail(group: EmailAgeGroup): boolean {
+  return group === 'ADULT'
+}
+
+/**
+ * The email age group for one Supabase auth user, read the way resolveAgeBand
+ * reads it. Never throws: a failed read is not a fact about anyone's age, so it
+ * resolves to UNKNOWN, which is a child.
+ */
+export async function resolveEmailAgeGroup(
+  supabaseUserId: string,
+  now: Date = new Date(),
+): Promise<EmailAgeGroup> {
+  const profile = await readIdentityProfile(supabaseUserId)
+  let row: Awaited<ReturnType<typeof findExistingUser>> = null
+  try {
+    row = await findExistingUser(supabaseUserId)
+  } catch {
+    row = null
+  }
+  return emailAgeGroup(
+    {
+      profileDob: profile?.date_of_birth ?? null,
+      prismaDob: row?.dateOfBirth ?? null,
+      profileIsMinor: profile?.is_minor ?? null,
+      prismaIsMinor: row?.isMinor ?? null,
+      roles: [profile?.role ?? null],
+    },
+    now,
+  )
+}
