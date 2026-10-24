@@ -135,10 +135,16 @@ export async function GET() {
   // The Prisma row is more precise about WHICH of the four states applies -
   // it distinguishes a trial from a paid subscription, where the profile
   // writes 'pro' for both. Prefer it when it agrees that something is live.
-  const status: UiStatus =
-    row && PROFILE_TO_UI[row.status.toLowerCase()]
-      ? PROFILE_TO_UI[row.status.toLowerCase()]!
-      : uiStatus
+  //
+  // One disagreement is deliberate and must not reach the page as a
+  // contradiction. During Stripe's retry window after a failed payment the
+  // webhook leaves the profile on 'pro' (access kept, by the choice of
+  // 23 October 2026) while the row records PAST_DUE. The gate is what the
+  // customer experiences, so the page says ACTIVE and is told separately that
+  // the payment is being retried, so it can show the payment notice.
+  const rowStatus = row ? PROFILE_TO_UI[row.status.toLowerCase()] : undefined
+  const paymentRetrying = uiStatus === 'ACTIVE' && rowStatus === 'PAST_DUE'
+  const status: UiStatus = paymentRetrying ? 'ACTIVE' : (rowStatus ?? uiStatus)
 
   // Period end: the profile's date is what the gates enforce, so it wins.
   const periodEnd =
@@ -156,6 +162,7 @@ export async function GET() {
     isTeacherPlan,
     priceMinor,
     status,
+    paymentRetrying,
     currentPeriodStart: periodStart,
     currentPeriodEnd: periodEnd,
     cancelledAt: row?.cancelledAt?.toISOString() ?? null,

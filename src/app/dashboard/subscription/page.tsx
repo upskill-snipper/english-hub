@@ -15,6 +15,12 @@ interface SubscriptionData {
   /** What this customer pays, in pence: the price locked at signup, or the list price. */
   priceMinor?: number
   status: 'ACTIVE' | 'CANCELLED' | 'PAST_DUE' | 'TRIALING'
+  /**
+   * True while Stripe is retrying a failed payment and access is kept: the
+   * status says ACTIVE because the gate is open, and this says why the
+   * payment notice still shows.
+   */
+  paymentRetrying?: boolean
   currentPeriodEnd: string
   currentPeriodStart: string
   cancelledAt: string | null
@@ -87,7 +93,9 @@ export default function SubscriptionPage() {
   const periodEnd = new Date(subscription.currentPeriodEnd)
   const isCancelled = subscription.cancelledAt !== null
   const isTrialing = subscription.status === 'TRIALING'
-  const isPastDue = subscription.status === 'PAST_DUE'
+  // The payment notice shows for a recorded PAST_DUE and while Stripe is
+  // retrying a failed payment with access kept (status ACTIVE, the gate open).
+  const isPastDue = subscription.status === 'PAST_DUE' || subscription.paymentRetrying === true
 
   // Until 23 October 2026 this page priced the student monthly plan for
   // everyone (webhook:D13). The route now says what the customer pays and on

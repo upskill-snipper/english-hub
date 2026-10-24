@@ -232,6 +232,7 @@ describe('the response', () => {
       'isTeacherPlan',
       'priceMinor',
       'status',
+      'paymentRetrying',
       'currentPeriodStart',
       'currentPeriodEnd',
       'cancelledAt',
@@ -247,5 +248,52 @@ describe('the response', () => {
     profileRow = { subscription_status: 'pro', subscription_end_date: null, created_at: null }
     const json = await (await GET()).json()
     expect(json.currentPeriodEnd).toBeNull()
+  })
+})
+
+// ─── The retry window ───────────────────────────────────────────────────
+//
+// After a failed payment the webhook leaves the profile on 'pro' while Stripe
+// retries (23 October 2026) and the Prisma row records PAST_DUE. The page used
+// to prefer the row and say PAST_DUE to a customer whose gate was open.
+
+describe('during Stripe retries of a failed payment', () => {
+  const pastDueRow = () => ({
+    status: 'PAST_DUE',
+    plan: 'MONTHLY',
+    isTeacherPlan: false,
+    grandfatheredPriceMinor: null,
+    currentPeriodStart: new Date('2026-09-12T00:00:00.000Z'),
+    currentPeriodEnd: new Date('2026-10-12T00:00:00.000Z'),
+    cancelledAt: null,
+    paymentCount: 2,
+    coolingOffWaived: false,
+  })
+
+  it('says ACTIVE, as the gate does, and flags the retry', async () => {
+    mockTryPrismaUserId.mockResolvedValue('cuid_1')
+    mockFindUnique.mockResolvedValue(pastDueRow())
+    const json = await (await GET()).json()
+    expect(json.status).toBe('ACTIVE')
+    expect(json.paymentRetrying).toBe(true)
+  })
+
+  it('still says PAST_DUE when the profile itself holds past_due', async () => {
+    // The pre-October profiles written by the old handler: the gate is closed
+    // and the page must not pretend otherwise.
+    profileRow = { subscription_status: 'past_due', subscription_end_date: END, created_at: null }
+    mockTryPrismaUserId.mockResolvedValue('cuid_1')
+    mockFindUnique.mockResolvedValue(pastDueRow())
+    const json = await (await GET()).json()
+    expect(json.status).toBe('PAST_DUE')
+    expect(json.paymentRetrying).toBe(false)
+  })
+
+  it('does not flag a retry when the row agrees the plan is live', async () => {
+    mockTryPrismaUserId.mockResolvedValue('cuid_1')
+    mockFindUnique.mockResolvedValue({ ...pastDueRow(), status: 'ACTIVE' })
+    const json = await (await GET()).json()
+    expect(json.status).toBe('ACTIVE')
+    expect(json.paymentRetrying).toBe(false)
   })
 })
