@@ -295,6 +295,11 @@ describe('a title fits in a search result', () => {
     // text with guided games, whose titles are composed by
     // src/lib/games/text-games/meta.ts and measured against the same 60 and
     // 160 in text-games-are-built-from-the-guides.test.ts.
-    expect(DYNAMIC.length).toBeLessThanOrEqual(54)
+    // 55 on 24 October 2026: src/app/resources/teacher-library/mark-schemes/
+    // [slug]/page.tsx, one guide per paper the AI marker marks, whose 22
+    // titles and descriptions are written in src/data/mark-scheme-guides and
+    // measured against the same 60 and 160 in
+    // the-mark-scheme-guides-are-complete.test.ts.
+    expect(DYNAMIC.length).toBeLessThanOrEqual(55)
   })
 })

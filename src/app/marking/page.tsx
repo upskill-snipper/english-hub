@@ -1,8 +1,9 @@
 'use client'
 
 import { useEffect, useMemo, useState } from 'react'
-import { markSchemeAnchor } from '@/lib/marking/mark-scheme-anchor'
+import { guidePageForScheme } from '@/lib/marking/guide-links'
 import Link from 'next/link'
+import { ArrowRight } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
 import { Badge } from '@/components/ui/badge'
@@ -34,7 +35,7 @@ interface MarkSchemeGroup {
   items: { label: string; href: string }[]
 }
 
-/* ─── Static mock marking guide links ─────────────────────── */
+/* ─── The mark-scheme guides ──────────────────────────────── */
 
 type MarkSchemeGroupDef = {
   board: string
@@ -43,66 +44,83 @@ type MarkSchemeGroupDef = {
 }
 
 /**
- * UX-6 (19 September 2026): every one of these twelve hrefs was '#'.
+ * UX-6 (19 September 2026): every one of these twelve hrefs was '#'. They
+ * looked like links and clicking one did nothing; they then pointed at the
+ * matching card on /resources/teacher-library/mark-schemes.
  *
- * They looked like links and were styled like links, and clicking one did
- * nothing whatsoever. With a board cookie set a student saw two to four of
- * them - all dead - on the page they land on to have their work marked.
+ * 24 OCTOBER 2026: THE CARDS WERE EMPTY. Those cards were a title and a line
+ * each, with nothing behind them, so the founder clicked a mark scheme here and
+ * "it only shows boxes for each one, no reference cards behind it". Each link
+ * now opens that paper's full guide (src/data/mark-scheme-guides): what every
+ * question asks, what earns marks and what each level looks like. The guides
+ * cover every paper the marker can mark, so OCR and Eduqas Language, the two
+ * Edexcel International GCSE papers and the four Cambridge papers are listed
+ * too, and a Cambridge or International GCSE student no longer sees "Coming
+ * soon". `guidePageForScheme` builds each address from the guide's own title;
+ * a test resolves every one to a guide that exists.
  *
- * The guides they promise do exist: the reference cards on
- * /resources/teacher-library/mark-schemes. Each href is built with
- * `markSchemeAnchor`, the same function that stamps the anchor onto the card,
- * so a card renamed there cannot leave a link here pointing at nothing. A test
- * asserts each of these resolves to a card that is actually on that page.
- *
- * OCR and Eduqas call their papers "Component 01/02" and "Component 1/2"
- * respectively, which is why the titles below are not uniform - they match the
- * board's own naming and the card titles exactly.
+ * OCR and Eduqas call their papers components, which is why the labels differ.
  */
-const GUIDE = '/resources/teacher-library/mark-schemes'
-const guideHref = (cardTitle: string) => `${GUIDE}#${markSchemeAnchor(cardTitle)}`
+const guide = (schemeId: string) =>
+  guidePageForScheme(schemeId) ?? '/resources/teacher-library/mark-schemes'
 
 const MARK_SCHEME_DEFS: MarkSchemeGroupDef[] = [
   {
     board: 'AQA',
     boardIds: ['aqa'],
     items: [
-      { labelKey: 'marking.scheme.lit_p1', href: guideHref('AQA English Literature Paper 1') },
-      { labelKey: 'marking.scheme.lit_p2', href: guideHref('AQA English Literature Paper 2') },
-      { labelKey: 'marking.scheme.lang_p1', href: guideHref('AQA English Language Paper 1') },
-      { labelKey: 'marking.scheme.lang_p2', href: guideHref('AQA English Language Paper 2') },
+      { labelKey: 'marking.scheme.lang_p1', href: guide('aqa-lang-paper1') },
+      { labelKey: 'marking.scheme.lang_p2', href: guide('aqa-lang-paper2') },
+      { labelKey: 'marking.scheme.lit_p1', href: guide('aqa-lit-paper1') },
+      { labelKey: 'marking.scheme.lit_p2', href: guide('aqa-lit-paper2') },
     ],
   },
   {
     board: 'Edexcel',
-    boardIds: ['edexcel', 'edexcel-igcse', 'edexcel-igcse-lang', 'ial-edexcel'],
+    boardIds: ['edexcel'],
     items: [
-      { labelKey: 'marking.scheme.lit_p1', href: guideHref('Edexcel English Literature Paper 1') },
-      { labelKey: 'marking.scheme.lit_p2', href: guideHref('Edexcel English Literature Paper 2') },
-      { labelKey: 'marking.scheme.lang_p1', href: guideHref('Edexcel English Language Paper 1') },
-      { labelKey: 'marking.scheme.lang_p2', href: guideHref('Edexcel English Language Paper 2') },
+      { labelKey: 'marking.scheme.lang_p1', href: guide('edexcel-lang-paper1') },
+      { labelKey: 'marking.scheme.lang_p2', href: guide('edexcel-lang-paper2') },
+      { labelKey: 'marking.scheme.lit_p1', href: guide('edexcel-lit-paper1') },
+      { labelKey: 'marking.scheme.lit_p2', href: guide('edexcel-lit-paper2') },
     ],
   },
   {
     board: 'OCR',
     boardIds: ['ocr'],
     items: [
-      { labelKey: 'marking.scheme.lit_p1', href: guideHref('OCR English Literature Component 01') },
-      { labelKey: 'marking.scheme.lit_p2', href: guideHref('OCR English Literature Component 02') },
+      { labelKey: 'marking.scheme.lang_c01', href: guide('ocr-lang-component01') },
+      { labelKey: 'marking.scheme.lang_c02', href: guide('ocr-lang-component02') },
+      { labelKey: 'marking.scheme.lit_c01', href: guide('ocr-lit-component01') },
+      { labelKey: 'marking.scheme.lit_c02', href: guide('ocr-lit-component02') },
     ],
   },
   {
     board: 'Eduqas',
     boardIds: ['eduqas'],
     items: [
-      {
-        labelKey: 'marking.scheme.lit_p1',
-        href: guideHref('Eduqas English Literature Component 1'),
-      },
-      {
-        labelKey: 'marking.scheme.lit_p2',
-        href: guideHref('Eduqas English Literature Component 2'),
-      },
+      { labelKey: 'marking.scheme.lang_c1', href: guide('eduqas-lang-comp1') },
+      { labelKey: 'marking.scheme.lang_c2', href: guide('eduqas-lang-comp2') },
+      { labelKey: 'marking.scheme.lit_c1', href: guide('eduqas-lit-comp1') },
+      { labelKey: 'marking.scheme.lit_c2', href: guide('eduqas-lit-comp2') },
+    ],
+  },
+  {
+    board: 'Edexcel International GCSE',
+    boardIds: ['edexcel-igcse', 'edexcel-igcse-lang'],
+    items: [
+      { labelKey: 'marking.scheme.igcse_lang_p1', href: guide('edexcel-igcse-lang-paper1') },
+      { labelKey: 'marking.scheme.lit_p1', href: guide('edexcel-igcse-lit') },
+    ],
+  },
+  {
+    board: 'Cambridge IGCSE',
+    boardIds: ['cambridge-0500', 'cambridge-0990'],
+    items: [
+      { labelKey: 'marking.scheme.cam_0500_p1', href: guide('cambridge-0500-paper1') },
+      { labelKey: 'marking.scheme.cam_0500_p2', href: guide('cambridge-0500-paper2') },
+      { labelKey: 'marking.scheme.cam_0990_p1', href: guide('cambridge-0990-paper1') },
+      { labelKey: 'marking.scheme.cam_0990_p2', href: guide('cambridge-0990-paper2') },
     ],
   },
 ]
@@ -301,7 +319,7 @@ export default function MarkingHubPage() {
             className={
               visibleMarkSchemes.length === 1
                 ? 'grid gap-4 sm:grid-cols-1'
-                : 'grid gap-4 sm:grid-cols-2 lg:grid-cols-4'
+                : 'grid gap-4 sm:grid-cols-2 lg:grid-cols-3'
             }
           >
             {visibleMarkSchemes.map((group) => (
@@ -315,11 +333,13 @@ export default function MarkingHubPage() {
                   <ul className="space-y-1.5">
                     {group.items.map((item) => (
                       <li key={item.labelKey + group.board}>
+                        {/* Plainly a link: each opens that paper's guide. */}
                         <Link
                           href={item.href}
-                          className="text-xs text-muted-foreground hover:text-primary"
+                          className="inline-flex min-h-9 items-center gap-1 text-sm font-medium text-foreground underline-offset-4 hover:text-primary hover:underline"
                         >
                           {t(item.labelKey)}
+                          <ArrowRight className="size-3.5 shrink-0" aria-hidden="true" />
                         </Link>
                       </li>
                     ))}

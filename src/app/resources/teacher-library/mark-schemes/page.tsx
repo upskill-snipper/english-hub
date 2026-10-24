@@ -5,12 +5,20 @@ import { TeacherResourceCard } from '@/components/teacher/ResourceCard'
 import { BoardGroupedResources, groupForBoard } from '@/components/teacher/board-grouped'
 import { getServerBoard } from '@/lib/board/get-server-board'
 import { getBoardConfig, type ExamBoard } from '@/lib/board/board-config'
+import {
+  MARK_SCHEME_GUIDES,
+  durationWords,
+  guideHref,
+  questionCount,
+} from '@/data/mark-scheme-guides'
+
+const DESCRIPTION =
+  'A plain-English guide to the mark scheme of every GCSE and International GCSE English paper our marker covers: what each question asks, what earns marks and what each level looks like.'
 
 export const metadata: Metadata = {
   openGraph: {
     title: 'Mark Schemes - Teacher Library',
-    description:
-      'Mark scheme reference cards for AQA, Edexcel, OCR, and Eduqas GCSE English. Quick-reference grade descriptors and AOs.',
+    description: DESCRIPTION,
     images: [
       {
         url: '/api/og?title=Mark+Schemes+-+Teacher+Library',
@@ -21,104 +29,44 @@ export const metadata: Metadata = {
     ],
   },
   title: 'Mark Schemes - Teacher Library',
-  description:
-    'Mark scheme reference cards for AQA, Edexcel, OCR, and Eduqas GCSE English. Quick-reference grade descriptors and AOs.',
+  description: DESCRIPTION,
   alternates: {
     canonical: 'https://theenglishhub.app/resources/teacher-library/mark-schemes',
   },
 }
 
-const MARK_SCHEMES = [
-  {
-    title: 'AQA English Language Paper 1',
-    description:
-      'Grade descriptors for Q1-Q5 with AO1, AO2, AO5, AO6 weightings and common examiner comments.',
-    examBoard: 'AQA',
-  },
-  {
-    title: 'AQA English Language Paper 2',
-    description:
-      'Full reference for the non-fiction paper. Includes synthesis (Q2), comparison (Q4), and transactional writing (Q5).',
-    examBoard: 'AQA',
-  },
-  {
-    title: 'AQA English Literature Paper 1',
-    description:
-      'Shakespeare and the 19th Century Novel. AO1, AO2, AO3, AO4 descriptors with grade boundaries.',
-    examBoard: 'AQA',
-  },
-  {
-    title: 'AQA English Literature Paper 2',
-    description:
-      'Modern Texts, Poetry Anthology, and Unseen Poetry. Comparison requirements and weighting.',
-    examBoard: 'AQA',
-  },
-  {
-    title: 'Edexcel English Language Paper 1',
-    description:
-      '19th-century fiction and imaginative writing. AO breakdowns and level descriptors.',
-    examBoard: 'Edexcel',
-  },
-  {
-    title: 'Edexcel English Language Paper 2',
-    description: 'Non-fiction and transactional writing. Synthesis and comparison AOs explained.',
-    examBoard: 'Edexcel',
-  },
-  {
-    title: 'Edexcel English Literature Paper 1',
-    description: 'Shakespeare and post-1914 literature. Level descriptors and AO weighting.',
-    examBoard: 'Edexcel',
-  },
-  {
-    title: 'Edexcel English Literature Paper 2',
-    description:
-      '19th-century novel, poetry, and unseen poetry. Comparison expectations at each level.',
-    examBoard: 'Edexcel',
-  },
-  {
-    title: 'OCR English Language Component 01',
-    description: 'Communicating information and ideas. Key AOs and descriptors at levels 1-6.',
-    examBoard: 'OCR',
-  },
-  {
-    title: 'OCR English Language Component 02',
-    description: 'Exploring effects and impact. AO breakdown and common examiner feedback.',
-    examBoard: 'OCR',
-  },
-  {
-    title: 'OCR English Literature Component 01',
-    description: 'Exploring modern and literary heritage texts. AOs, levels, and grade boundaries.',
-    examBoard: 'OCR',
-  },
-  {
-    title: 'OCR English Literature Component 02',
-    description: 'Exploring poetry and Shakespeare. Comparison and AO3 (context) expectations.',
-    examBoard: 'OCR',
-  },
-  {
-    title: 'Eduqas English Language Component 1',
-    description:
-      '20th-century literature reading and creative prose writing. Mark descriptors and AOs.',
-    examBoard: 'Eduqas',
-  },
-  {
-    title: 'Eduqas English Language Component 2',
-    description: '19th- and 21st-century non-fiction and transactional writing. Level descriptors.',
-    examBoard: 'Eduqas',
-  },
-  {
-    title: 'Eduqas English Literature Component 1',
-    description: 'Shakespeare and poetry. Level descriptors and weighting of AOs.',
-    examBoard: 'Eduqas',
-  },
-  {
-    title: 'Eduqas English Literature Component 2',
-    description:
-      'Post-1914 prose/drama, 19th-century prose, unseen poetry. AO breakdown by section.',
-    examBoard: 'Eduqas',
-  },
-]
+/**
+ * One card per paper, each opening its guide (24 October 2026).
+ *
+ * WHAT WAS WRONG. This page held sixteen hand-written cards. Each was a title
+ * and one line promising "grade descriptors", "AO weightings" and "common
+ * examiner comments", and nothing was behind any of them: the card was the
+ * whole of it, so clicking did nothing. The founder found the marking hub's
+ * mark-scheme links led here and "only shows boxes for each one, no reference
+ * cards behind it". Several of the promises were also untrue of the boxes, and
+ * the page said the cards were "written by teachers", which nothing records.
+ *
+ * NOW. The cards are built from the guides themselves (src/data/mark-scheme-guides),
+ * one for every paper the AI marker can mark against, International GCSE and
+ * Cambridge included, and each links to its guide. A card's description is
+ * the paper's own name and size, so it cannot promise what the guide lacks.
+ * Each card keeps the anchor it has always had, so old links to
+ * `#aqa-english-language-paper-1` still land on the right card.
+ */
+const MARK_SCHEMES = MARK_SCHEME_GUIDES.map((g) => ({
+  title: g.title,
+  description: `${g.paperName}. ${questionCount(g)} questions, ${g.totalMarks} marks, ${durationWords(g.durationMinutes)}.`,
+  examBoard: g.board,
+  href: guideHref(g),
+}))
 
+/**
+ * Which cards are the reader's own. The labels are the guides' board names, so
+ * an International GCSE reader is matched to the Edexcel International GCSE
+ * and Cambridge guides, not to the UK GCSE ones; a board with no guide yet
+ * (KS3, Cambridge Literature, A level) matches nothing, and the grouping says
+ * so and shows every card.
+ */
 function markSchemeMatchesBoard(examBoard: string, board: ExamBoard | null): boolean {
   if (!board) return true
   const map: Record<ExamBoard, string> = {
@@ -127,19 +75,18 @@ function markSchemeMatchesBoard(examBoard: string, board: ExamBoard | null): boo
     edexcel: 'Edexcel',
     ocr: 'OCR',
     eduqas: 'Eduqas',
-    'edexcel-igcse': 'Edexcel',
-    'edexcel-igcse-lang': 'Edexcel',
+    'edexcel-igcse': 'Edexcel International GCSE',
+    'edexcel-igcse-lang': 'Edexcel International GCSE',
     'cambridge-0500': 'Cambridge',
     'cambridge-0990': 'Cambridge',
-    'cambridge-0475': 'Cambridge',
-    'ial-edexcel': 'Edexcel',
-    'aqa-a-level': 'AQA',
-    'edexcel-a-level': 'Edexcel',
-    'ocr-a-level': 'OCR',
-    'eduqas-a-level': 'Eduqas',
+    'cambridge-0475': 'Cambridge Literature',
+    'ial-edexcel': 'Edexcel International A level',
+    'aqa-a-level': 'AQA A level',
+    'edexcel-a-level': 'Edexcel A level',
+    'ocr-a-level': 'OCR A level',
+    'eduqas-a-level': 'Eduqas A level',
   }
-  const label = map[board]
-  return examBoard.toLowerCase().includes(label.toLowerCase())
+  return examBoard === map[board]
 }
 
 /**
@@ -183,7 +130,7 @@ export default async function MarkSchemesPage() {
           </div>
           <div className="mt-4 flex flex-wrap items-center gap-2">
             <span className="inline-flex items-center rounded-full bg-primary/10 px-3 py-1 text-xs font-semibold uppercase tracking-wide text-primary ring-1 ring-inset ring-primary/20">
-              For Teachers
+              For students and teachers
             </span>
             {/* Only when we hold cards for that board. It read "For KS3" over an
                 empty page, which is a claim about relevance the page could not
@@ -196,12 +143,13 @@ export default async function MarkSchemesPage() {
           </div>
           <h1 className="mt-3 text-4xl font-bold tracking-tight text-foreground">Mark Schemes</h1>
           <p className="mt-3 max-w-2xl text-lg text-muted-foreground">
-            Quick-reference mark scheme cards for every major GCSE English exam board. Grade
-            descriptors, AO weightings, and common examiner comments at your fingertips.
+            A plain-English guide to each paper: what every question asks, what earns marks, what
+            each level looks like and what to avoid. Open a paper to read its guide.
           </p>
-          <p className="mt-4 text-sm text-muted-foreground">
-            These are summary reference cards written by teachers. For the official mark schemes,
-            visit the awarding body websites.
+          <p className="mt-4 max-w-2xl text-sm text-muted-foreground">
+            Each guide is in our own words and was checked against the board&apos;s published
+            specification and mark schemes. It is not the board&apos;s mark scheme: each one links
+            to the board&apos;s own papers.
           </p>
         </div>
       </section>
@@ -211,15 +159,17 @@ export default async function MarkSchemesPage() {
           grouping={grouping}
           all={MARK_SCHEMES}
           boardShortName={boardConfig?.shortName}
-          noun="reference cards"
+          noun="mark scheme guides"
           renderItem={(m) => (
             <div key={m.title} id={markSchemeAnchor(m.title)} className="scroll-mt-24">
               <TeacherResourceCard
                 title={m.title}
                 description={m.description}
+                href={m.href}
                 kind="Mark Scheme"
                 examBoard={m.examBoard}
-                tag="Reference card"
+                tag="Guide"
+                forTeachersBadge={false}
               />
             </div>
           )}

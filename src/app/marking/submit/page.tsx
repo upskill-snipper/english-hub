@@ -7,6 +7,7 @@ import { isAiOptedOut } from '@/lib/ai-preferences'
 import { Button } from '@/components/ui/button'
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
 import { MARK_SCHEMES, type MarkScheme } from '@/lib/marking/mark-schemes'
+import { guidePageForScheme } from '@/lib/marking/guide-links'
 import { resolveDraftQuestion, resolvePrefill } from '@/lib/marking/submit-prefill'
 import { isSpecVerified } from '@/lib/marking/examiner/verification'
 import { useT } from '@/lib/i18n/use-t'
@@ -1030,6 +1031,26 @@ export default function SubmitEssayPage() {
                     do not treat it as your grade.
                   </p>
                 </div>
+              )}
+
+              {/* ── The paper's guide ─────────────────────────
+                  24 October 2026: a plain-English guide to every paper the
+                  marker covers (src/data/mark-scheme-guides). In a new tab, so
+                  an answer half-typed here is not lost. */}
+              {selectedPaper && guidePageForScheme(selectedPaper.scheme.id) && (
+                <p className="text-sm">
+                  <Link
+                    href={guidePageForScheme(selectedPaper.scheme.id) as string}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="font-medium text-primary underline underline-offset-4 hover:text-primary/80"
+                  >
+                    {tx('marking.submit.guide_link')}
+                  </Link>{' '}
+                  <span className="text-muted-foreground">
+                    {tx('marking.submit.guide_new_tab')}
+                  </span>
+                </p>
               )}
 
               {/* ── Question ───────────────────────────────── */}

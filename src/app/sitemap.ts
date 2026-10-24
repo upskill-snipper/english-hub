@@ -3,6 +3,7 @@ import { isStubSetText } from '@/lib/seo/set-text-stubs'
 import { PLACEHOLDER_TEXT_SLUGS } from '@/lib/revision/placeholder-texts.generated'
 import { guideElsewhere } from '@/lib/revision/guide-href'
 import { ANALYSIS_PAGES } from '@/data/analysis'
+import { MARK_SCHEME_GUIDES, guideHref } from '@/data/mark-scheme-guides'
 import { allCourses } from '@/data/courses'
 import { getBlogSlugs, hasArabicVariant } from '@/lib/blog/posts'
 import { SET_TEXTS } from '@/lib/board/set-texts'
@@ -282,6 +283,13 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   // text the route 404s or leave out one it serves.
   for (const slug of textGameSlugs()) {
     add(`/games/texts/${slug}`, { priority: 0.6, changeFrequency: 'monthly' })
+  }
+
+  // Mark-scheme guides: /resources/teacher-library/mark-schemes/<slug>, one per
+  // paper the marker covers (24 October 2026). The same list the route's
+  // generateStaticParams uses.
+  for (const g of MARK_SCHEME_GUIDES) {
+    add(guideHref(g), { priority: 0.6, changeFrequency: 'monthly' })
   }
 
   // Analysis catch-all pages ([category, article] slug pairs).

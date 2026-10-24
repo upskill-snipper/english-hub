@@ -33,6 +33,12 @@ interface TeacherResourceCardProps {
   duration?: string
   examBoard?: string
   tag?: string
+  /**
+   * The "For teachers" badge. On by default; off for cards students use too,
+   * such as the mark-scheme guides (24 October 2026), which students reach
+   * from the marking pages.
+   */
+  forTeachersBadge?: boolean
   className?: string
 }
 
@@ -84,6 +90,7 @@ export function TeacherResourceCard({
   duration,
   examBoard,
   tag,
+  forTeachersBadge = true,
   className = '',
 }: TeacherResourceCardProps) {
   const t = useT()
@@ -105,9 +112,11 @@ export function TeacherResourceCard({
         >
           {t(KIND_LABEL_KEYS[kind])}
         </span>
-        <span className="inline-flex items-center rounded-full bg-primary/10 px-2 py-0.5 text-[0.6875rem] font-semibold uppercase tracking-wide text-primary ring-1 ring-inset ring-primary/20">
-          {t('teacher.resource.for_teachers')}
-        </span>
+        {forTeachersBadge && (
+          <span className="inline-flex items-center rounded-full bg-primary/10 px-2 py-0.5 text-[0.6875rem] font-semibold uppercase tracking-wide text-primary ring-1 ring-inset ring-primary/20">
+            {t('teacher.resource.for_teachers')}
+          </span>
+        )}
       </div>
 
       {tag && (

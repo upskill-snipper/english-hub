@@ -2,6 +2,8 @@ import { describe, it, expect } from 'vitest'
 import { readFileSync } from 'node:fs'
 import { join } from 'node:path'
 import { markSchemeAnchor } from '@/lib/marking/mark-scheme-anchor'
+import { MARK_SCHEME_GUIDES, guideBySlug } from '@/data/mark-scheme-guides'
+import { guidePageForScheme } from '@/lib/marking/guide-links'
 
 /**
  * Twelve links that did nothing, and a blank square where a grade should be
@@ -37,46 +39,39 @@ const GUIDE = readFileSync(
   'utf8',
 )
 
-/** Every reference-card title on the guide page. */
-function guideCardTitles(): string[] {
-  const arrayStart = GUIDE.indexOf('const MARK_SCHEMES = [')
-  const arrayEnd = GUIDE.indexOf('\n]', arrayStart)
-  const body = GUIDE.slice(arrayStart, arrayEnd)
-  return [...body.matchAll(/title: '([^']+)'/g)].map((m) => m[1])
-}
-
 describe('the mark-scheme guide links', () => {
   it('are no longer dead', () => {
-    // The whole defect in one assertion.
+    // The whole 19 September defect in one assertion.
     expect(HUB).not.toMatch(/href: '#'/)
   })
 
-  it('all twelve are still offered', () => {
-    const defs = HUB.slice(HUB.indexOf('const MARK_SCHEME_DEFS'), HUB.indexOf('/* ─── Page'))
-    const items = defs.match(/labelKey: 'marking\.scheme\./g) ?? []
-    expect(items.length, 'a link was deleted rather than fixed').toBe(12)
+  it('every paper the marker covers is offered, the original twelve among them', () => {
+    const linked = [...HUB.matchAll(/guide\('([a-z0-9-]+)'\)/g)].map((m) => m[1])
+    expect(linked.length, 'a link was deleted rather than fixed').toBeGreaterThanOrEqual(12)
+    expect([...linked].sort()).toEqual(MARK_SCHEME_GUIDES.map((g) => g.schemeId).sort())
   })
 
-  it('every link resolves to a card that is actually on the guide page', () => {
-    // The assertion that matters. A href pointing at an anchor no card carries
-    // scrolls nowhere and looks exactly like the dead '#' it replaced.
-    const anchors = new Set(guideCardTitles().map(markSchemeAnchor))
-    expect(anchors.size).toBeGreaterThan(10)
-
-    const linked = [...HUB.matchAll(/guideHref\('([^']+)'\)/g)].map((m) => m[1])
-    expect(linked.length).toBe(12)
-
-    const broken = linked.filter((title) => !anchors.has(markSchemeAnchor(title)))
-    expect(broken, 'these hub links name a card that does not exist on the guide page').toEqual([])
+  it('every link opens a guide with something in it', () => {
+    // 24 October 2026: the links landed on cards that were boxes with nothing
+    // behind them. Each now opens a guide; a guide with no questions in it
+    // would be the same defect in a new place.
+    const linked = [...HUB.matchAll(/guide\('([a-z0-9-]+)'\)/g)].map((m) => m[1])
+    for (const id of linked) {
+      const href = guidePageForScheme(id)
+      expect(href, id).toMatch(/^\/resources\/teacher-library\/mark-schemes\/[a-z0-9-]+$/)
+      const g = guideBySlug(href!.split('/').pop()!)
+      expect(g, id).not.toBeNull()
+      expect(g!.sections.flatMap((s) => s.questions).length, id).toBeGreaterThan(0)
+    }
   })
 
-  it('points at the guide page, not at itself', () => {
-    expect(HUB).toContain('/resources/teacher-library/mark-schemes')
+  it('points at the guides, not at itself', () => {
+    expect(HUB).toContain("from '@/lib/marking/guide-links'")
   })
 })
 
 describe('the guide page', () => {
-  it('stamps an anchor on every card', () => {
+  it('stamps an anchor on every card, so old links to #<paper> still land', () => {
     expect(GUIDE).toMatch(/id=\{markSchemeAnchor\(m\.title\)\}/)
   })
 
@@ -90,7 +85,8 @@ describe('the guide page', () => {
     // Both sides call the same function, so renaming a card cannot leave the
     // hub pointing at an id that no longer exists.
     expect(GUIDE).toContain("from '@/lib/marking/mark-scheme-anchor'")
-    expect(HUB).toContain("from '@/lib/marking/mark-scheme-anchor'")
+    const LINKS = readFileSync(join(ROOT, 'src/lib/marking/guide-links.ts'), 'utf8')
+    expect(LINKS).toContain("from './mark-scheme-anchor'")
   })
 
   it('produces stable, url-safe ids', () => {

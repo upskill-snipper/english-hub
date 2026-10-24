@@ -72,6 +72,18 @@ export const B15_MARKING_SCHOOL_DICTIONARY: Record<
     ar: 'مخططات التصحيح لـ{board} قادمة قريباً. اختر بورد ثاني الحين.',
     es: 'Los criterios de corrección de {board} estarán disponibles pronto. Elige otro exam board por ahora.',
   },
+  // 24 October 2026: the guide to the chosen paper's mark scheme
+  // (src/app/resources/teacher-library/mark-schemes/[slug]).
+  'marking.submit.guide_link': {
+    en: 'Read what this paper rewards, question by question',
+    ar: 'اقرأ شنو تكافئ هالورقة، سؤال سؤال',
+    es: 'Lee qué premia esta prueba, pregunta por pregunta',
+  },
+  'marking.submit.guide_new_tab': {
+    en: '(opens in a new tab, so your answer stays here)',
+    ar: '(تنفتح في تبويب جديد، فجوابك يظل هني)',
+    es: '(se abre en una pestaña nueva, así tu respuesta se queda aquí)',
+  },
   'marking.submit.label_paper': { en: 'Paper', ar: 'الورقة', es: 'Prueba' },
   'marking.submit.select_paper': {
     en: 'Select paper',

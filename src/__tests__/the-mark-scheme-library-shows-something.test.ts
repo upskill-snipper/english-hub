@@ -4,6 +4,8 @@ import { join } from 'node:path'
 import { BOARDS } from '@/lib/board/board-config'
 import { markSchemeAnchor } from '@/lib/marking/mark-scheme-anchor'
 import { groupForBoard } from '@/components/teacher/board-grouped'
+import { MARK_SCHEME_GUIDES, guideBySlug } from '@/data/mark-scheme-guides'
+import { guidePageForScheme } from '@/lib/marking/guide-links'
 
 /**
  * The teacher mark-scheme library served four boards an empty page.
@@ -42,25 +44,29 @@ const PAGE = readFileSync(
 const CODE = PAGE.replace(/\/\*[\s\S]*?\*\//g, '').replace(/\/\/.*/g, '')
 
 /**
- * Every card title declared on the page.
- *
- * Scoped to the MARK_SCHEMES array: the page's `metadata` block also has a
- * `title` at the same indentation, so an unscoped match counts seventeen cards
- * and the count assertion below becomes nonsense in the quiet direction.
+ * Every card title on the page. Since 24 October 2026 the cards are built from
+ * the mark-scheme guides (src/data/mark-scheme-guides), one per paper the
+ * marker covers, rather than sixteen hand-written boxes with nothing behind
+ * them.
  */
-const ARRAY_SRC = PAGE.slice(
-  PAGE.indexOf('const MARK_SCHEMES = ['),
-  PAGE.indexOf('function MarkSchemeCards'),
-)
-const TITLES = [...ARRAY_SRC.matchAll(/^ {4}title: '([^']+)',$/gm)].map((m) => m[1])
+const TITLES = MARK_SCHEME_GUIDES.map((g) => g.title)
 
 describe('the cards', () => {
-  it('there are sixteen of them', () => {
-    expect(TITLES.length).toBe(16)
+  it('there is one for every paper the marker covers', () => {
+    expect(TITLES.length).toBe(MARK_SCHEME_GUIDES.length)
+    expect(TITLES.length).toBeGreaterThanOrEqual(22)
+    expect(CODE).toContain('MARK_SCHEME_GUIDES.map(')
+  })
+
+  it('and each opens its guide, rather than being a box with nothing behind it', () => {
+    // The founder, 24 October 2026: clicking a mark scheme "only shows boxes for
+    // each one, no reference cards behind it".
+    expect(CODE).toContain('href: guideHref(g)')
+    expect(CODE).toMatch(/href=\{m\.href\}/)
   })
 
   it('cover the four UK GCSE boards', () => {
-    for (const board of ['AQA', 'Edexcel', 'OCR', 'Eduqas']) {
+    for (const board of ['AQA', 'Edexcel', 'OCR', 'Eduqas', 'Cambridge']) {
       expect(
         TITLES.some((t) => t.startsWith(board)),
         `no card for ${board}`,
@@ -162,26 +168,20 @@ describe('nothing is hidden from the render any more', () => {
   })
 })
 
-describe('the anchors the marking hub depends on', () => {
+describe('the links the marking hub depends on', () => {
   const HUB = readFileSync(join(ROOT, 'src/app/marking/page.tsx'), 'utf8')
-  const linked = [...HUB.matchAll(/guideHref\('([^']+)'\)/g)].map((m) => m[1])
+  const linked = [...HUB.matchAll(/guide\('([a-z0-9-]+)'\)/g)].map((m) => m[1])
 
-  it('the hub links to a realistic number of cards', () => {
-    expect(linked.length).toBeGreaterThanOrEqual(12)
+  it('the hub links to every guide', () => {
+    expect([...linked].sort()).toEqual(MARK_SCHEME_GUIDES.map((g) => g.schemeId).sort())
   })
 
-  it('every hub link names a card on this page', () => {
-    const anchors = new Set(TITLES.map(markSchemeAnchor))
-    const broken = linked.filter((t) => !anchors.has(markSchemeAnchor(t)))
-    expect(broken).toEqual([])
-  })
-
-  it('and those cards are not board-specific to the reader, which is the fix', () => {
-    // Before this change the hub linked to cards across all four boards while
-    // the page showed one board's four. Twelve of the links could not land, and
-    // which twelve depended on a cookie.
-    const boardsLinked = new Set(linked.map((t) => t.split(' ')[0]))
-    expect(boardsLinked.size).toBeGreaterThan(1)
+  it('and every one opens a guide that exists', () => {
+    for (const id of linked) {
+      const href = guidePageForScheme(id)
+      expect(href, id).not.toBeNull()
+      expect(guideBySlug(href!.split('/').pop()!), id).not.toBeNull()
+    }
   })
 })
 
@@ -199,6 +199,7 @@ describe('a card that goes nowhere is not dressed as a link', () => {
   it('with no "Open" affordance', () => {
     // Every mark-scheme card used to link to the page it was already on, under
     // a label reading Open with an arrow. The click reloaded the same page.
+    // Since 24 October 2026 each card links to its own guide instead.
     expect(CARD).toMatch(/\{href && \(/)
     expect(CODE).not.toMatch(/href="\/resources\/teacher-library\/mark-schemes"\s*\/>/)
   })

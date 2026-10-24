@@ -319,6 +319,74 @@ export const AMG_DICTIONARY: Record<string, { en: string; ar: string; es?: strin
     ar: 'اللغة - الورقة 1',
     es: 'Lengua - Prueba 1',
   },
+  // 24 October 2026: the hub's library opens a full guide for every paper the
+  // marker covers (src/app/marking/page.tsx), so the component-numbered boards
+  // and the International GCSE papers are listed too.
+  'marking.scheme.lang_c01': {
+    en: 'Language Component 01',
+    ar: 'اللغة - المكوّن 01',
+    es: 'Lengua - Componente 01',
+  },
+  'marking.scheme.lang_c02': {
+    en: 'Language Component 02',
+    ar: 'اللغة - المكوّن 02',
+    es: 'Lengua - Componente 02',
+  },
+  'marking.scheme.lit_c01': {
+    en: 'Literature Component 01',
+    ar: 'الأدب - المكوّن 01',
+    es: 'Literatura - Componente 01',
+  },
+  'marking.scheme.lit_c02': {
+    en: 'Literature Component 02',
+    ar: 'الأدب - المكوّن 02',
+    es: 'Literatura - Componente 02',
+  },
+  'marking.scheme.lang_c1': {
+    en: 'Language Component 1',
+    ar: 'اللغة - المكوّن 1',
+    es: 'Lengua - Componente 1',
+  },
+  'marking.scheme.lang_c2': {
+    en: 'Language Component 2',
+    ar: 'اللغة - المكوّن 2',
+    es: 'Lengua - Componente 2',
+  },
+  'marking.scheme.lit_c1': {
+    en: 'Literature Component 1',
+    ar: 'الأدب - المكوّن 1',
+    es: 'Literatura - Componente 1',
+  },
+  'marking.scheme.lit_c2': {
+    en: 'Literature Component 2',
+    ar: 'الأدب - المكوّن 2',
+    es: 'Literatura - Componente 2',
+  },
+  'marking.scheme.igcse_lang_p1': {
+    en: 'Language A Paper 1',
+    ar: 'اللغة A - الورقة 1',
+    es: 'Lengua A - Prueba 1',
+  },
+  'marking.scheme.cam_0500_p1': {
+    en: '0500 Paper 1: Reading',
+    ar: '0500 الورقة 1: القراءة',
+    es: '0500 Prueba 1: Lectura',
+  },
+  'marking.scheme.cam_0500_p2': {
+    en: '0500 Paper 2: Writing',
+    ar: '0500 الورقة 2: الكتابة',
+    es: '0500 Prueba 2: Escritura',
+  },
+  'marking.scheme.cam_0990_p1': {
+    en: '0990 Paper 1: Reading',
+    ar: '0990 الورقة 1: القراءة',
+    es: '0990 Prueba 1: Lectura',
+  },
+  'marking.scheme.cam_0990_p2': {
+    en: '0990 Paper 2: Writing',
+    ar: '0990 الورقة 2: الكتابة',
+    es: '0990 Prueba 2: Escritura',
+  },
   'marking.scheme.lang_p2': {
     en: 'Language Paper 2',
     ar: 'اللغة - الورقة 2',
