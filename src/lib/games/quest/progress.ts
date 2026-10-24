@@ -176,6 +176,22 @@ export function seenInLevel(p: QuestProgress, levelId: string): string[] {
   return p.seen?.[levelId] ?? []
 }
 
+/**
+ * What a play of `level` should treat as met: the level's own recent plays,
+ * and, for the final level, every level's (24 October 2026). The final
+ * level's pool is every other level's, so without the rest 41 per cent of a
+ * final play was questions a student who had played each part once had
+ * already answered.
+ */
+export function seenFor(p: QuestProgress, level: { id: string; kind: string }): string[] {
+  const own = seenInLevel(p, level.id)
+  if (level.kind !== 'finale') return own
+  const rest = Object.entries(p.seen ?? {})
+    .filter(([id]) => id !== level.id)
+    .flatMap(([, ids]) => ids)
+  return [...own, ...rest.filter((id) => !own.includes(id))]
+}
+
 /** Record a play of a level as dealt: counted, and its challenges remembered. */
 export function recordDeal(
   p: QuestProgress,

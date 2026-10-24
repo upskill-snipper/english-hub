@@ -183,7 +183,12 @@ export function pickVaried(
   size: number,
   seed: number,
   ceiling: Partial<Record<string, number>> = CEILING,
-  options: { facts?: (c: Challenge) => readonly string[]; seen?: readonly string[] } = {},
+  options: {
+    facts?: (c: Challenge) => readonly string[]
+    seen?: readonly string[]
+    /** Open on a story order, as a part does. Default true. */
+    opening?: boolean
+  } = {},
 ): Challenge[] {
   const rank = new Map<string, number>()
   ;(options.seen ?? []).forEach((id, i) => {
@@ -199,7 +204,8 @@ export function pickVaried(
             .sort((a, b) => (rank.get(b.id) ?? 0) - (rank.get(a.id) ?? 0)),
         ]
       : list
-  const isOpening = (c: Challenge) => c.id.startsWith('item:order:chapter')
+  const opens = options.opening ?? true
+  const isOpening = (c: Challenge) => opens && c.id.startsWith('item:order:chapter')
   const openings = pool.filter(isOpening)
   // Without history the first story order, as always; with it, the one dealt
   // longest ago, so a part does not open on the same cards every time.
@@ -229,18 +235,25 @@ export function pickVaried(
   if (opening.length && size > 0) take(opening[0])
 
   const taken = new Map<string, number>()
-  let progress = true
-  while (out.length < size && progress) {
-    progress = false
-    for (const f of order) {
-      if (out.length >= size) break
-      const n = taken.get(f) ?? 0
-      if (n >= (ceiling[f] ?? Infinity)) continue
-      const next = families.get(f)!.find((c) => !chosen.has(c) && !clashes(c))
-      if (!next) continue
-      take(next)
-      taken.set(f, n + 1)
-      progress = true
+  // One of each kind in turn: first only what has never been dealt, so a kind
+  // with nothing new left does not take a turn from one that has; then
+  // anything.
+  for (const unseenOnly of rank.size ? [true, false] : [false]) {
+    let progress = true
+    while (out.length < size && progress) {
+      progress = false
+      for (const f of order) {
+        if (out.length >= size) break
+        const n = taken.get(f) ?? 0
+        if (n >= (ceiling[f] ?? Infinity)) continue
+        const next = families
+          .get(f)!
+          .find((c) => !chosen.has(c) && !clashes(c) && (!unseenOnly || !rank.has(c.id)))
+        if (!next) continue
+        take(next)
+        taken.set(f, n + 1)
+        progress = true
+      }
     }
   }
   if (out.length < size) {
@@ -285,6 +298,9 @@ export function dealLevel(
   return pickVaried(levelChallenges(quest, level), PLAY_SIZE[level.kind], seed, CEILING, {
     facts: challengeFacts,
     seen,
+    // A part opens on its story; the final level, whose pool holds every
+    // part's story order, does not open on one already played.
+    opening: level.kind === 'chapter',
   }).map((c, i) => dealChallenge(c, hashSeed(seed, i, c.id)))
 }
 

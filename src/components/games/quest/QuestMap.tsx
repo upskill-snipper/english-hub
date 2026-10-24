@@ -30,7 +30,7 @@ import {
   readPlayer,
   readQuestProgress,
   recordDeal,
-  seenInLevel,
+  seenFor,
   writeQuestProgress,
   type PlayerProgress,
   type QuestProgress,
@@ -96,7 +96,7 @@ export function QuestMap({ quest }: { quest: Quest }) {
       // (src/lib/games/quest/deal.ts says why).
       const p = readQuestProgress(quest.slug)
       const play = playsDealt(p, level.id)
-      const dealt = dealLevel(quest, level, play, seenInLevel(p, level.id))
+      const dealt = dealLevel(quest, level, play, seenFor(p, level))
       writeQuestProgress(
         quest.slug,
         recordDeal(

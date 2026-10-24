@@ -2,7 +2,7 @@ import { describe, expect, it } from 'vitest'
 
 import { challengeFacts, dealLevel, PLAY_SIZE } from '@/lib/games/quest/deal'
 import { loadQuest } from '@/lib/games/quest/load'
-import { emptyQuest, recordDeal, seenInLevel } from '@/lib/games/quest/progress'
+import { emptyQuest, recordDeal, seenFor, seenInLevel } from '@/lib/games/quest/progress'
 import { chapterOf } from '@/lib/games/quest/build'
 import type { Quest } from '@/lib/games/quest/types'
 import { textGameSlugs } from '@/lib/games/text-games/load'
@@ -93,6 +93,31 @@ describe('every quest play', () => {
     expect(problems.slice(0, 5), `${problems.length} problems`).toEqual([])
     expect(shared / plays, 'plays that share a subject').toBeLessThanOrEqual(0.26)
     expect(repeat / repeatOf, 'second plays repeating the first').toBeLessThanOrEqual(0.2)
+  })
+
+  it('opens the final level on questions the parts have not asked', () => {
+    // A student who has played every other level once (src/lib/games/quest/progress.ts, seenFor).
+    let finals = 0
+    let met = 0
+    for (const quest of quests) {
+      const finale = quest.levels.find((l) => l.kind === 'finale')
+      if (!finale || finale.pool.length < 2 * PLAY_SIZE.finale) continue
+      let p = emptyQuest()
+      for (const level of quest.levels.filter((l) => l.kind !== 'finale'))
+        p = recordDeal(
+          p,
+          level.id,
+          dealLevel(quest, level, 0).map((d) => d.challenge.id),
+        )
+      const played = new Set(Object.values(p.seen ?? {}).flat())
+      const dealt = dealLevel(quest, finale, 0, seenFor(p, finale)).map((d) => d.challenge.id)
+      finals++
+      // A met question comes in only where the unmet ones share a subject
+      // with the play or belong to a kind already at its cap.
+      met += dealt.filter((id) => played.has(id)).length / dealt.length
+    }
+    expect(finals).toBeGreaterThan(50)
+    expect(met / finals, 'share of a final play already met in the parts').toBeLessThan(0.1)
   })
 
   it('asks "where is this from?" with wrong places inside the part the map names', () => {
