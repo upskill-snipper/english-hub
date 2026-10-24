@@ -35,6 +35,12 @@
  * different problem. So this refuses only what is genuinely a duplicate: a live
  * subscription that already carries the same price.
  *
+ * That is the CHECKOUT question. The webhook's revocation handlers ask a
+ * different one - does some other subscription still justify this person's
+ * access - and for them a per-price answer is wrong (a customer who moved from
+ * monthly to annual was revoked when the monthly plan ended). They use
+ * `findCoveringSubscription` below, which does not compare prices at all.
+ *
  * STRIPE IS THE SOURCE OF TRUTH HERE
  * ──────────────────────────────────
  * Deliberately not `profiles.subscription_status` and not the Prisma row. Both
@@ -61,6 +67,7 @@
  */
 
 import type Stripe from 'stripe'
+import { idOf } from './stripe-shapes'
 
 /**
  * Stripe statuses that mean the customer is on the hook for money: either
@@ -77,6 +84,28 @@ export const LIVE_SUBSCRIPTION_STATUSES: ReadonlySet<Stripe.Subscription.Status>
   'trialing',
   'past_due',
   'unpaid',
+])
+
+/**
+ * Stripe statuses under which the WEB GATE is left open, which is a different
+ * question from the one above. `active` and `trialing` grant 'pro'. `past_due`
+ * is here by the retry-window choice of 23 October 2026: the webhook writes
+ * nothing to `profiles.subscription_status` while Stripe retries a failed
+ * payment, so a past_due subscription still keeps the gate open. `unpaid` is
+ * not: that is Stripe having given up, and the webhook revokes on it.
+ *
+ * Used wherever the question is "does this customer still have web access
+ * through some subscription": the webhook's coverage check before a
+ * non-paying write, and the trial-expiry cron before it ends a trial. Until
+ * 23 October 2026 the cron kept its own list (active and trialing only), so a
+ * payer whose card was being retried was downgraded by the cron while the
+ * webhook was deliberately keeping them 'pro'. One list, two readers. If the
+ * retry-window choice is reversed, remove `past_due` here and both follow.
+ */
+export const WEB_ACCESS_STATUSES: ReadonlySet<Stripe.Subscription.Status> = new Set([
+  'active',
+  'trialing',
+  'past_due',
 ])
 
 export interface DuplicateSubscriptionCheck {
@@ -161,6 +190,111 @@ export async function findDuplicateSubscription(
   }
 }
 
+/** True when the subscription carries at least one IELTS price. */
+export function carriesIelts(
+  subscription: Stripe.Subscription,
+  isIeltsPriceId: (priceId: string | null | undefined) => boolean,
+): boolean {
+  return (subscription.items?.data ?? []).some((item) => isIeltsPriceId(item.price?.id))
+}
+
+/**
+ * True when EVERY recurring price on the subscription is an IELTS price, so
+ * the subscription grants IELTS and nothing else. IELTS is a standalone
+ * product gated by `profiles.ielts_status`; an IELTS-only subscription must
+ * never grant or revoke the global 'pro'. A subscription with no recurring
+ * prices is not IELTS-only.
+ */
+export function isIeltsOnly(
+  subscription: Stripe.Subscription,
+  isIeltsPriceId: (priceId: string | null | undefined) => boolean,
+): boolean {
+  const recurring = (subscription.items?.data ?? []).filter((item) => item.price?.recurring)
+  if (recurring.length === 0) return false
+  return recurring.every((item) => isIeltsPriceId(item.price?.id))
+}
+
+export interface CoverageCheck {
+  /** True when another subscription still justifies the access this event would remove. */
+  covered: boolean
+  /** That subscription, when there is one. */
+  coveringSubscription: Stripe.Subscription | null
+}
+
+/**
+ * Does ANOTHER subscription on this customer still justify the access that an
+ * ending or failing subscription would otherwise take away?
+ *
+ * ─── Why this is not `findDuplicateSubscription` ────────────────────────
+ *
+ * The checkout question is "is the customer already paying for THIS price",
+ * and matching per price is right there. The webhook's revocation handlers
+ * borrowed that function and so judged coverage per price too, which asks the
+ * wrong question of a per-person field. A customer who held Student Monthly,
+ * bought Student Annual (a different price, so the checkout guard rightly
+ * allowed it), then cancelled the monthly plan was revoked when the monthly
+ * subscription ended: the annual one did not match the monthly price, so it
+ * did not count as cover, 'cancelled' was written over a paying customer, and
+ * the stale-event guard then refused to let the annual plan's next renewal
+ * restore them. A promo-redeemed subscription never matched a catalogue price
+ * either, because a webhook payload's `price.product` is a bare id and the
+ * base price recorded on it cannot be read.
+ *
+ * So the question here is about ACCESS, not prices, and the two
+ * subscriptions' prices are never compared with each other. For a
+ * subscription that granted 'pro' (anything not IELTS-only), cover is any
+ * other subscription in `liveStatuses` that is itself not IELTS-only. For an
+ * IELTS-only subscription, cover is any other subscription in `liveStatuses`
+ * that carries an IELTS price.
+ *
+ * `liveStatuses` defaults to `WEB_ACCESS_STATUSES`, not the broader
+ * `LIVE_SUBSCRIPTION_STATUSES`: the checkout list includes `unpaid` because an
+ * unpaid customer is still on the hook for money, but an unpaid subscription
+ * keeps nobody's access, and reusing that list here let two dead
+ * subscriptions cover each other so that neither ever wrote 'unpaid'.
+ *
+ * ─── Fails CLOSED, unlike the checkout guard ────────────────────────────
+ *
+ * If Stripe cannot be asked this THROWS. The caller is a webhook handler about
+ * to write a non-paying value over a per-person field; "unknown" must not be
+ * read as "not covered", because that is the 18 September 2026 outcome
+ * exactly (the duplicate's dunning ended, a check failed open, and a paid
+ * customer was cancelled). A thrown handler releases the event claim and
+ * Stripe retries for three days, which is the right behaviour for a question
+ * that could not be answered.
+ */
+export async function findCoveringSubscription(
+  stripe: Stripe,
+  customerId: string,
+  options: {
+    /** The subscription the event is about; it can never cover itself. */
+    excludeSubscriptionId: string
+    /** What the ending subscription granted, which decides what counts as cover. */
+    grants: 'pro' | 'ielts'
+    isIeltsPriceId: (priceId: string | null | undefined) => boolean
+    liveStatuses?: ReadonlySet<string>
+  },
+): Promise<CoverageCheck> {
+  const live = options.liveStatuses ?? WEB_ACCESS_STATUSES
+  const subscriptions = await stripe.subscriptions.list({
+    customer: customerId,
+    status: 'all',
+    limit: 100,
+  })
+
+  const covers = (sub: Stripe.Subscription): boolean =>
+    options.grants === 'pro'
+      ? !isIeltsOnly(sub, options.isIeltsPriceId)
+      : carriesIelts(sub, options.isIeltsPriceId)
+
+  const coveringSubscription =
+    subscriptions.data.find(
+      (sub) => sub.id !== options.excludeSubscriptionId && live.has(sub.status) && covers(sub),
+    ) ?? null
+
+  return { covered: coveringSubscription !== null, coveringSubscription }
+}
+
 /**
  * What the customer is told. Names the plan they already have, does not
  * pretend it is their mistake, and points at the one place where they can see
@@ -193,15 +327,42 @@ export function pricesOnSubscription(subscription: Stripe.Subscription): string[
   return [...out]
 }
 
-/** The same, from an invoice's line items. */
+/**
+ * The same, from an invoice's line items, in both API shapes.
+ *
+ * Old shape: `line.price` is a Price object (`price.id`, and `price.product`
+ * when expanded). Clover: a line has no `price`; it has
+ * `line.pricing.price_details.price` (a string id, or an expanded Price) and
+ * `line.pricing.price_details.product` (a bare id) - `InvoiceLineItems.d.ts:81`
+ * and `:272-293`. Until 23 October 2026 the clover branch read the price as a
+ * string only, so an expanded Price was dropped, and the test fixtures
+ * labelled "clover" still carried old-shape lines, so nothing proved the read.
+ *
+ * The `basePriceId` of a promo-built price lives on the PRODUCT's metadata,
+ * which an invoice line carries only when the price and its product are both
+ * expanded objects. A webhook payload never expands them, and under clover
+ * `price_details.product` is a bare id anyway. So from an invoice line the
+ * base price is readable only in the old shape with an expanded product. The
+ * `invoice.payment_failed` coverage check therefore cannot recognise a
+ * promo-built duplicate from the invoice itself; it rests on
+ * `findDuplicateSubscription` matching `basePriceId` on the OTHER
+ * subscription, which it lists with the product expanded.
+ */
 export function pricesOnInvoice(invoice: Stripe.Invoice): string[] {
   const out = new Set<string>()
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   for (const line of ((invoice as any).lines?.data ?? []) as any[]) {
-    const priceId = line?.price?.id ?? line?.pricing?.price_details?.price
-    if (typeof priceId === 'string' && priceId) out.add(priceId)
-    const product = line?.price?.product
-    if (product && typeof product === 'object' && product.metadata?.basePriceId) {
+    const priceRef = line?.price ?? line?.pricing?.price_details?.price
+    const priceId = idOf(priceRef)
+    if (priceId) out.add(priceId)
+    const product = priceRef && typeof priceRef === 'object' ? priceRef.product : null
+    if (
+      product &&
+      typeof product === 'object' &&
+      !product.deleted &&
+      typeof product.metadata?.basePriceId === 'string' &&
+      product.metadata.basePriceId
+    ) {
       out.add(product.metadata.basePriceId as string)
     }
   }

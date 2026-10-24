@@ -169,6 +169,58 @@ describe('status mapping', () => {
   })
 })
 
+// ─── The real plan and price (webhook:D12, D13) ─────────────────────────
+//
+// The route answered `plan: 'MONTHLY'` for everyone and the page priced the
+// student monthly plan, so an annual subscriber and every teacher saw the
+// wrong plan and the wrong amount on their own plan page.
+
+describe('the plan and the price', () => {
+  function rowWith(over: Record<string, unknown>) {
+    return {
+      status: 'ACTIVE',
+      plan: 'MONTHLY',
+      isTeacherPlan: false,
+      grandfatheredPriceMinor: null,
+      currentPeriodStart: new Date('2026-09-12T00:00:00.000Z'),
+      currentPeriodEnd: new Date('2027-09-12T00:00:00.000Z'),
+      cancelledAt: null,
+      paymentCount: 1,
+      coolingOffWaived: false,
+      ...over,
+    }
+  }
+
+  it('reports an annual teacher plan as what it is, at the price locked at signup', async () => {
+    mockTryPrismaUserId.mockResolvedValue('cuid_1')
+    mockFindUnique.mockResolvedValue(
+      rowWith({ plan: 'ANNUAL', isTeacherPlan: true, grandfatheredPriceMinor: 6799 }),
+    )
+    const json = await (await GET()).json()
+    expect(json.plan).toBe('ANNUAL')
+    expect(json.interval).toBe('year')
+    expect(json.isTeacherPlan).toBe(true)
+    expect(json.priceMinor).toBe(6799)
+  })
+
+  it('falls back to the current list price for the plan and tier when no price was locked', async () => {
+    mockTryPrismaUserId.mockResolvedValue('cuid_1')
+    mockFindUnique.mockResolvedValue(rowWith({ plan: 'ANNUAL', grandfatheredPriceMinor: null }))
+    const json = await (await GET()).json()
+    expect(json.plan).toBe('ANNUAL')
+    // PRICING.STUDENT_ANNUAL, early access, in pence.
+    expect(json.priceMinor).toBe(2999)
+  })
+
+  it('answers student monthly when there is no row, which is what a trialist would pay', async () => {
+    const json = await (await GET()).json()
+    expect(json.plan).toBe('MONTHLY')
+    expect(json.interval).toBe('month')
+    expect(json.isTeacherPlan).toBe(false)
+    expect(json.priceMinor).toBe(399)
+  })
+})
+
 // ─── Shape ──────────────────────────────────────────────────────────────
 
 describe('the response', () => {
@@ -176,7 +228,11 @@ describe('the response', () => {
     const json = await (await GET()).json()
     for (const key of [
       'plan',
+      'interval',
+      'isTeacherPlan',
+      'priceMinor',
       'status',
+      'paymentRetrying',
       'currentPeriodStart',
       'currentPeriodEnd',
       'cancelledAt',
@@ -192,5 +248,52 @@ describe('the response', () => {
     profileRow = { subscription_status: 'pro', subscription_end_date: null, created_at: null }
     const json = await (await GET()).json()
     expect(json.currentPeriodEnd).toBeNull()
+  })
+})
+
+// ─── The retry window ───────────────────────────────────────────────────
+//
+// After a failed payment the webhook leaves the profile on 'pro' while Stripe
+// retries (23 October 2026) and the Prisma row records PAST_DUE. The page used
+// to prefer the row and say PAST_DUE to a customer whose gate was open.
+
+describe('during Stripe retries of a failed payment', () => {
+  const pastDueRow = () => ({
+    status: 'PAST_DUE',
+    plan: 'MONTHLY',
+    isTeacherPlan: false,
+    grandfatheredPriceMinor: null,
+    currentPeriodStart: new Date('2026-09-12T00:00:00.000Z'),
+    currentPeriodEnd: new Date('2026-10-12T00:00:00.000Z'),
+    cancelledAt: null,
+    paymentCount: 2,
+    coolingOffWaived: false,
+  })
+
+  it('says ACTIVE, as the gate does, and flags the retry', async () => {
+    mockTryPrismaUserId.mockResolvedValue('cuid_1')
+    mockFindUnique.mockResolvedValue(pastDueRow())
+    const json = await (await GET()).json()
+    expect(json.status).toBe('ACTIVE')
+    expect(json.paymentRetrying).toBe(true)
+  })
+
+  it('still says PAST_DUE when the profile itself holds past_due', async () => {
+    // The pre-October profiles written by the old handler: the gate is closed
+    // and the page must not pretend otherwise.
+    profileRow = { subscription_status: 'past_due', subscription_end_date: END, created_at: null }
+    mockTryPrismaUserId.mockResolvedValue('cuid_1')
+    mockFindUnique.mockResolvedValue(pastDueRow())
+    const json = await (await GET()).json()
+    expect(json.status).toBe('PAST_DUE')
+    expect(json.paymentRetrying).toBe(false)
+  })
+
+  it('does not flag a retry when the row agrees the plan is live', async () => {
+    mockTryPrismaUserId.mockResolvedValue('cuid_1')
+    mockFindUnique.mockResolvedValue({ ...pastDueRow(), status: 'ACTIVE' })
+    const json = await (await GET()).json()
+    expect(json.status).toBe('ACTIVE')
+    expect(json.paymentRetrying).toBe(false)
   })
 })

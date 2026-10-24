@@ -93,14 +93,14 @@
 //
 //   DUNNING                  A live subscription whose latest invoice is
 //                            failing. Not a duplicate, reported separately.
-//                            It is here because the entitlement consequence is
-//                            the same: `invoice.payment_failed` in the webhook
-//                            resolves the customer by `stripe_customer_id`
-//                            alone and sets `profiles.subscription_status =
-//                            'past_due'`, and `hasActiveSubscription` in
-//                            `src/lib/course-access.ts` requires exactly
-//                            'pro'. Every customer on this list is locked out
-//                            of AI marking right now.
+//                            Until 23 October 2026 `invoice.payment_failed`
+//                            set `profiles.subscription_status = 'past_due'`
+//                            for the whole account, and the web gate requires
+//                            exactly 'pro', so everyone on this list was
+//                            locked out. The webhook now keeps access through
+//                            Stripe's retry window and revokes on `unpaid` or
+//                            deletion; the list still shows who is about to
+//                            lose access if the retries fail.
 //
 // The two are combined in one flag worth looking at before anything else:
 //
@@ -307,15 +307,22 @@ function planLabel(subscription) {
 /**
  * Stripe moved `current_period_start` / `current_period_end` off the
  * subscription and onto the subscription item in recent API versions. Read
- * whichever is present rather than asserting one - `readSubscriptionFacts` in
- * `src/lib/billing/subscription-sync.ts` reads the subscription-level field,
- * so a report that only read the item-level one could disagree with the app
- * about the same subscription.
+ * whichever is present rather than asserting one, and read it the way the app
+ * does: `subscriptionPeriodEnd` in `src/lib/billing/stripe-shapes.ts` takes
+ * the top-level field when present and otherwise the LATEST end across the
+ * items, so this report and the app agree about the same subscription. (This
+ * function used to take the first item's end, which differs from the app on a
+ * multi-item subscription.)
  */
 function periodEnd(subscription) {
   const top = subscription.current_period_end
-  if (top) return top
-  return subscription.items?.data?.[0]?.current_period_end ?? null
+  if (typeof top === 'number' && top > 0) return top
+  let latest = null
+  for (const item of subscription.items?.data ?? []) {
+    const end = item.current_period_end
+    if (typeof end === 'number' && end > 0 && (latest === null || end > latest)) latest = end
+  }
+  return latest
 }
 
 /**
@@ -557,9 +564,10 @@ async function main() {
           email: maskEmail(email),
           ...d,
           detail:
-            'Stripe is chasing this invoice. `invoice.payment_failed` in the webhook has set ' +
-            "profiles.subscription_status='past_due' for this customer, and hasActiveSubscription " +
-            "requires exactly 'pro', so AI marking is refused for the whole account while this runs.",
+            'Stripe is chasing this invoice. Since 23 October 2026 the webhook keeps web access ' +
+            'through the retry window and revokes on `unpaid` or deletion, so this customer still ' +
+            'has access today and loses it if the retries fail. Before that date every failure ' +
+            "wrote profiles.subscription_status='past_due' and locked the account out at once.",
         })
       }
     }
@@ -780,8 +788,8 @@ async function main() {
 
   if (dunning.length > 0) {
     console.log('')
-    console.log('Currently failing payment - these accounts have lost AI marking')
-    console.log('---------------------------------------------------------------')
+    console.log('Currently failing payment - access ends if the retries fail')
+    console.log('-----------------------------------------------------------')
     for (const d of dunning) {
       const inv = d.latestInvoice
       console.log(
@@ -802,14 +810,12 @@ async function main() {
     '  2. Decide with the customer which subscription they keep. Cancelling the wrong one',
   )
   console.log('     takes away something they paid for.')
-  console.log('  3. A PAYING AND FAILING customer is cut off right now. Stopping the failing')
+  console.log('  3. A PAYING AND FAILING customer: check profiles.subscription_status. Since')
   console.log(
-    "     subscription's retries restores nothing on its own - profiles.subscription_status",
+    "     23 October 2026 a failing duplicate no longer writes 'past_due' over it, but any",
   )
-  console.log("     must be put back to 'pro' as well, because invoice.payment_failed set it to")
-  console.log(
-    "     'past_due' for the whole account and nothing sets it back except a paid invoice.",
-  )
+  console.log("     account caught before that date needs it put back to 'pro' by hand, because")
+  console.log('     nothing sets it back except a paid invoice on the subscription that pays.')
   if (OUT_PATH) console.log(`\nJSON report written to ${OUT_PATH}`)
 }
 

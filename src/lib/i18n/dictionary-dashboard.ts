@@ -790,6 +790,12 @@ export const DASHBOARD_CHROME_DICTIONARY: Record<string, { en: string; ar?: stri
       ar: 'الباقة الشهرية',
       es: 'Plan mensual',
     },
+    'dash.subscription.annual_plan': {
+      en: 'Annual Plan',
+      ar: 'الباقة السنوية',
+      es: 'Plan anual',
+    },
+    'dash.subscription.year': { en: 'year', ar: 'سنة', es: 'año' },
     'dash.subscription.status.free_trial': {
       en: 'Free trial',
       ar: 'تجربة مجانية',

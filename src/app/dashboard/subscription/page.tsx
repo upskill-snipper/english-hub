@@ -8,8 +8,19 @@ import { useT } from '@/lib/i18n/use-t'
 // ─── Types ──────────────────────────────────────────────────────────────
 
 interface SubscriptionData {
-  plan: 'MONTHLY'
+  plan: 'MONTHLY' | 'ANNUAL'
+  /** Billing interval, so the amount is labelled per month or per year. */
+  interval?: 'month' | 'year'
+  isTeacherPlan?: boolean
+  /** What this customer pays, in pence: the price locked at signup, or the list price. */
+  priceMinor?: number
   status: 'ACTIVE' | 'CANCELLED' | 'PAST_DUE' | 'TRIALING'
+  /**
+   * True while Stripe is retrying a failed payment and access is kept: the
+   * status says ACTIVE because the gate is open, and this says why the
+   * payment notice still shows.
+   */
+  paymentRetrying?: boolean
   currentPeriodEnd: string
   currentPeriodStart: string
   cancelledAt: string | null
@@ -82,10 +93,26 @@ export default function SubscriptionPage() {
   const periodEnd = new Date(subscription.currentPeriodEnd)
   const isCancelled = subscription.cancelledAt !== null
   const isTrialing = subscription.status === 'TRIALING'
-  const isPastDue = subscription.status === 'PAST_DUE'
+  // The payment notice shows for a recorded PAST_DUE and while Stripe is
+  // retrying a failed payment with access kept (status ACTIVE, the gate open).
+  const isPastDue = subscription.status === 'PAST_DUE' || subscription.paymentRetrying === true
 
-  const monthlyPrice = PRICING.STUDENT_MONTHLY
-  const currentPrice = monthlyPrice
+  // Until 23 October 2026 this page priced the student monthly plan for
+  // everyone (webhook:D13). The route now says what the customer pays and on
+  // which interval; the student monthly list price is only the fallback for
+  // an older response without those fields.
+  const isAnnual = subscription.plan === 'ANNUAL'
+  const currentPrice =
+    typeof subscription.priceMinor === 'number'
+      ? subscription.priceMinor / 100
+      : PRICING.STUDENT_MONTHLY
+  const intervalLabel =
+    (subscription.interval ?? (isAnnual ? 'year' : 'month')) === 'year'
+      ? t('dash.subscription.year')
+      : t('dash.subscription.month')
+  const planLabel = isAnnual
+    ? t('dash.subscription.annual_plan')
+    : t('dash.subscription.monthly_plan')
 
   return (
     <div className="min-h-screen bg-muted">
@@ -116,7 +143,7 @@ export default function SubscriptionPage() {
               {t('dash.subscription.trial_banner_a')}{' '}
               <strong>{periodEnd.toLocaleDateString('en-GB')}</strong>.{' '}
               {t('dash.subscription.trial_banner_b')} &pound;{currentPrice.toFixed(2)}/
-              {t('dash.subscription.month')}.
+              {intervalLabel}.
             </p>
           </div>
         )}
@@ -125,9 +152,7 @@ export default function SubscriptionPage() {
         <div className="bg-card rounded-2xl shadow-sm border border-border p-8 mb-6">
           <div className="flex items-start justify-between mb-6">
             <div>
-              <h2 className="text-lg font-semibold text-foreground">
-                {t('dash.subscription.monthly_plan')}
-              </h2>
+              <h2 className="text-lg font-semibold text-foreground">{planLabel}</h2>
               <p className="text-sm text-muted-foreground mt-1">
                 {isTrialing
                   ? t('dash.subscription.status.free_trial')
@@ -181,7 +206,7 @@ export default function SubscriptionPage() {
                     : t('dash.subscription.billing_amount')}
                 </span>
                 <span className="text-sm font-medium text-foreground">
-                  &pound;{currentPrice.toFixed(2)}/{t('dash.subscription.month')}
+                  &pound;{currentPrice.toFixed(2)}/{intervalLabel}
                 </span>
               </div>
             )}

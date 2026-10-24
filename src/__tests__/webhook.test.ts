@@ -12,8 +12,17 @@ const mockRetrieveSubscription = vi.fn()
 vi.mock('@/lib/stripe', () => ({
   stripe: {
     webhooks: { constructEvent: (...args: unknown[]) => mockConstructEvent(...args) },
-    subscriptions: { retrieve: (...args: unknown[]) => mockRetrieveSubscription(...args) },
+    subscriptions: {
+      retrieve: (...args: unknown[]) => mockRetrieveSubscription(...args),
+      // The duplicate-coverage check asks what else the customer holds.
+      // Nothing, here: these tests are about single-subscription customers.
+      list: async () => ({ data: [] }),
+    },
+    customers: { retrieve: async () => ({ deleted: false, email: 'test@test.com' }) },
   },
+  // The route hands this to the guard module as a value, so the mock must
+  // export it. No IELTS prices in these tests.
+  isIeltsPriceId: () => false,
 }))
 
 // Build a chainable Supabase mock that records calls.
@@ -38,7 +47,8 @@ function createSupabaseMock() {
   const upsertFn = vi.fn(() => ({ error: null }))
   const insertFn = vi.fn(() => ({ error: null }))
 
-  // webhook_events table - idempotency check must return null (no duplicate)
+  // webhook_events table - the claim (insert) must succeed, and a failed run
+  // releases it (delete).
   const webhookEventsChain = {
     select: vi.fn(() => ({
       eq: vi.fn(() => ({
@@ -46,6 +56,7 @@ function createSupabaseMock() {
       })),
     })),
     insert: insertFn,
+    delete: vi.fn(() => ({ eq: vi.fn(async () => ({ error: null })) })),
   }
 
   // Default chain for all other tables (profiles, enrolments, affiliate_referrals, etc.)
@@ -209,7 +220,11 @@ describe('Stripe Webhook POST handler', () => {
     )
   })
 
-  it('maps incomplete subscription status to incomplete', async () => {
+  it('does not write incomplete over a pro profile at checkout (webhook:D10)', async () => {
+    // The default profile in this mock is 'pro' (a no-card trialist, say). A
+    // checkout stalled at the bank step must not end their trial. The 'free'
+    // case, which does write 'incomplete', is in
+    // webhook-first-event-and-stale.test.ts.
     const session = {
       id: 'cs_test',
       mode: 'subscription',
@@ -225,7 +240,7 @@ describe('Stripe Webhook POST handler', () => {
 
     const res = await POST(buildRequest('{}', 'sig_ok'))
     expect(res.status).toBe(200)
-    expect(supabaseMock._mocks.updateFn).toHaveBeenCalledWith(
+    expect(supabaseMock._mocks.updateFn).not.toHaveBeenCalledWith(
       expect.objectContaining({ subscription_status: 'incomplete' }),
     )
   })
@@ -292,7 +307,7 @@ describe('Stripe Webhook POST handler', () => {
   it('handles customer.subscription.updated with userId in metadata', async () => {
     const subscription = {
       id: 'sub_upd',
-      status: 'past_due',
+      status: 'unpaid',
       customer: 'cus_123',
       metadata: { userId: 'user-123' },
       current_period_end: 1700000000,
@@ -302,8 +317,26 @@ describe('Stripe Webhook POST handler', () => {
     const res = await POST(buildRequest('{}', 'sig_ok'))
     expect(res.status).toBe(200)
     expect(supabaseMock._mocks.updateFn).toHaveBeenCalledWith(
-      expect.objectContaining({ subscription_status: 'past_due' }),
+      expect.objectContaining({ subscription_status: 'unpaid' }),
     )
+  })
+
+  it('keeps the web entitlement through a past_due retry window (product choice, 23 Oct 2026)', async () => {
+    const subscription = {
+      id: 'sub_upd',
+      status: 'past_due',
+      customer: 'cus_123',
+      metadata: { userId: 'user-123' },
+      current_period_end: 1700000000,
+    }
+    mockConstructEvent.mockReturnValue(makeEvent('customer.subscription.updated', subscription))
+
+    const res = await POST(buildRequest('{}', 'sig_ok'))
+    expect(res.status).toBe(200)
+    const payloads = (supabaseMock._mocks.updateFn.mock.calls as unknown as unknown[][]).map(
+      (c) => c[0] as Record<string, unknown>,
+    )
+    expect(payloads.some((p) => 'subscription_status' in p)).toBe(false)
   })
 
   it('handles customer.subscription.updated falling back to stripe_customer_id lookup', async () => {
@@ -372,6 +405,14 @@ describe('Stripe Webhook POST handler', () => {
       period_end: 1700000000,
     }
     mockConstructEvent.mockReturnValue(makeEvent('invoice.paid', invoice))
+    // The handler retrieves the subscription and grants only while it is
+    // live (webhook:D11). Set it explicitly: `clearAllMocks` keeps the
+    // previous test's implementation, which returned an incomplete one.
+    mockRetrieveSubscription.mockResolvedValue({
+      id: 'sub_abc',
+      status: 'active',
+      current_period_end: 1700000000,
+    })
 
     const res = await POST(buildRequest('{}', 'sig_ok'))
     expect(res.status).toBe(200)
@@ -447,9 +488,9 @@ describe('Stripe Webhook POST handler', () => {
     expect(supabaseMock._mocks.selectEqFn).toHaveBeenCalledWith('stripe_customer_id', 'cus_999')
   })
 
-  it('returns 500 (so Stripe retries) when user cannot be resolved for subscription.created', async () => {
+  it('answers 200 with a reason when user cannot be resolved for subscription.created (webhook:D9)', async () => {
     // Override single() to return no profile
-    supabaseMock._mocks.singleFn.mockReturnValue({ data: null, error: null } as any)
+    supabaseMock._mocks.singleFn.mockReturnValue({ data: null, error: null } as never)
 
     const subscription = {
       id: 'sub_orphan',
@@ -461,8 +502,10 @@ describe('Stripe Webhook POST handler', () => {
     mockConstructEvent.mockReturnValue(makeEvent('customer.subscription.created', subscription))
 
     const res = await POST(buildRequest('{}', 'sig_ok'))
-    // 500 forces Stripe to retry rather than silently dropping the event
-    expect(res.status).toBe(500)
+    // This used to be a 500 so that Stripe would retry, but nothing changes
+    // between retries: the result was three days of failed deliveries.
+    expect(res.status).toBe(200)
+    expect(await res.json()).toMatchObject({ received: true, ignored: 'unresolved_user' })
     // update should not be called since no user was found
     expect(supabaseMock._mocks.updateFn).not.toHaveBeenCalled()
   })
@@ -480,7 +523,7 @@ describe('Stripe Webhook POST handler', () => {
   // ── Error handling ─────────────────────────────────────────────────────
 
   it('returns 500 when supabase update throws', async () => {
-    supabaseMock._mocks.updateEqFn.mockReturnValue({ error: { message: 'DB error' } } as any)
+    supabaseMock._mocks.updateEqFn.mockReturnValue({ error: { message: 'DB error' } } as never)
 
     const subscription = {
       id: 'sub_err',

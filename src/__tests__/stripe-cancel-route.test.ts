@@ -215,6 +215,50 @@ describe('a subscription already scheduled to end', () => {
   })
 })
 
+// ─── The clover API shape (webhook:D1) ──────────────────────────────────
+//
+// `src/lib/stripe.ts` pins `2026-02-25.clover`, under which a subscription
+// carries no `current_period_end`: it lives on each subscription item. The
+// list call here goes through the pinned client, so every subscription this
+// route sees is in that shape, and `periodEndIso` read the top-level field.
+// The cancel page therefore never had an access-ends date to show.
+
+describe('the period end under the clover shape', () => {
+  function cloverSub(over: Record<string, unknown> = {}) {
+    const { current_period_end: _dropped, ...rest } = sub(over)
+    void _dropped
+    return {
+      ...rest,
+      items: { data: [{ id: 'si_1', current_period_end: PERIOD_END }] },
+    }
+  }
+
+  it('returns accessEndsAt from the subscription item', async () => {
+    mockList.mockResolvedValue({ data: [cloverSub()] })
+    mockUpdate.mockImplementation(async (_id: string, params: Record<string, unknown>) => ({
+      ...cloverSub(),
+      ...params,
+    }))
+    const json = await (await POST(post(PAGE_BODY))).json()
+    expect(json.accessEndsAt).toBe(PERIOD_END_ISO)
+  })
+
+  it('reports the date on an already-scheduled cancellation too', async () => {
+    mockList.mockResolvedValue({ data: [cloverSub({ cancel_at_period_end: true })] })
+    const json = await (await POST(post(PAGE_BODY))).json()
+    expect(json.alreadyScheduled).toBe(true)
+    expect(json.accessEndsAt).toBe(PERIOD_END_ISO)
+  })
+
+  it('answers null rather than inventing a date when neither shape carries one', async () => {
+    const bare = { ...cloverSub(), items: { data: [{ id: 'si_1' }] } }
+    mockList.mockResolvedValue({ data: [bare] })
+    mockUpdate.mockImplementation(async () => bare)
+    const json = await (await POST(post(PAGE_BODY))).json()
+    expect(json.accessEndsAt).toBeNull()
+  })
+})
+
 // ─── Money stays the owner's ────────────────────────────────────────────
 
 describe('scope', () => {

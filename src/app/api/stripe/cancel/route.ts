@@ -41,6 +41,7 @@ import Stripe from 'stripe'
 import { stripe } from '@/lib/stripe'
 import { createServerSupabaseClient, createServiceRoleClient } from '@/lib/supabase/server'
 import { rateLimit, getClientIp } from '@/lib/rate-limit'
+import { subscriptionPeriodEnd } from '@/lib/billing/stripe-shapes'
 
 interface CancelRequestBody {
   /** Why they are leaving. Optional; stored on the Stripe subscription. */
@@ -271,9 +272,15 @@ export async function POST(request: NextRequest) {
   }
 }
 
-/** The end of the paid period as an ISO string, or null when Stripe omits it. */
+/**
+ * The end of the paid period as an ISO string, or null when Stripe omits it.
+ *
+ * These subscriptions come from the pinned client, which under
+ * `2026-02-25.clover` carries the period on each item rather than on the
+ * subscription. Reading only the top-level field meant the cancel page could
+ * never tell a customer when their access ends.
+ */
 function periodEndIso(subscription: Stripe.Subscription): string | null {
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  const end = (subscription as any).current_period_end as number | undefined
-  return typeof end === 'number' ? new Date(end * 1000).toISOString() : null
+  const end = subscriptionPeriodEnd(subscription)
+  return end !== null ? new Date(end * 1000).toISOString() : null
 }

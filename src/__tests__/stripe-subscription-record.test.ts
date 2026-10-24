@@ -639,14 +639,34 @@ describe('a failing duplicate does not revoke the subscription that was paid for
       .flatMap((v) => (v.update as ReturnType<typeof vi.fn>).mock.calls.map((c) => c[0]))
   }
 
-  it('invoice.payment_failed leaves the entitlement alone when another live subscription covers it', async () => {
+  /** Did the handler send the dunning email through Resend? */
+  async function paymentFailedEmailed(): Promise<boolean> {
+    // Since 23 October 2026 a failed payment no longer revokes web access on
+    // the spot (see webhook-dunning-access.test.ts), so the observable
+    // difference between "a duplicate's failure" and "the customer's failure"
+    // is whether the customer is told. The email is the thing to watch.
+    process.env.RESEND_API_KEY = 'rk_test'
+    const fetchSpy = vi
+      .spyOn(globalThis, 'fetch')
+      .mockResolvedValue(new Response('{}', { status: 200 }) as never)
+    try {
+      const { POST } = await import('@/app/api/stripe/webhook/route')
+      const res = await POST(buildRequest())
+      expect(res.status).toBe(200)
+      return (fetchSpy.mock.calls as unknown as unknown[][]).some((c) =>
+        String(c[0]).includes('api.resend.com'),
+      )
+    } finally {
+      fetchSpy.mockRestore()
+      delete process.env.RESEND_API_KEY
+    }
+  }
+
+  it('invoice.payment_failed leaves the entitlement alone and sends no dunning email when another live subscription covers it', async () => {
     mockListSubscriptions.mockResolvedValue({ data: [liveSubscriptionOnSamePrice()] })
     mockConstructEvent.mockReturnValue(makeEvent('invoice.payment_failed', failedInvoice()))
 
-    const { POST } = await import('@/app/api/stripe/webhook/route')
-    const res = await POST(buildRequest())
-
-    expect(res.status).toBe(200)
+    expect(await paymentFailedEmailed()).toBe(false)
     const writes = profileWrites()
     expect(writes.some((w) => w?.subscription_status === 'past_due')).toBe(false)
     // The coverage check actually ran, and excluded the failing subscription
@@ -659,16 +679,13 @@ describe('a failing duplicate does not revoke the subscription that was paid for
     expect(listArgs?.customer).toBe('cus_stripe_123')
   })
 
-  it('invoice.payment_failed still revokes when the failure is the only subscription', async () => {
-    // The control. Without this, a fix that simply stopped writing past_due
-    // would pass the test above and break real dunning.
+  it('invoice.payment_failed still tells the customer when the failure is the only subscription', async () => {
+    // The control. Without this, a fix that simply stood down on every
+    // failure would pass the test above and break real dunning.
     mockListSubscriptions.mockResolvedValue({ data: [] })
     mockConstructEvent.mockReturnValue(makeEvent('invoice.payment_failed', failedInvoice()))
 
-    const { POST } = await import('@/app/api/stripe/webhook/route')
-    await POST(buildRequest())
-
-    expect(profileWrites().some((w) => w?.subscription_status === 'past_due')).toBe(true)
+    expect(await paymentFailedEmailed()).toBe(true)
   })
 
   it('customer.subscription.deleted leaves the entitlement alone when another live subscription covers it', async () => {

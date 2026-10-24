@@ -16870,6 +16870,8 @@ export const ES_MESSAGES: Record<string, string> = {
     'Actualmente estás en una prueba gratuita. Tu prueba finaliza el',
   'dash.subscription.trial_banner_b': 'Después de eso, se te cobrará',
   'dash.subscription.monthly_plan': 'Plan mensual',
+  'dash.subscription.annual_plan': 'Plan anual',
+  'dash.subscription.year': 'año',
   'dash.subscription.status.free_trial': 'Prueba gratuita',
   'dash.subscription.status.cancelled': 'Cancelada',
   'dash.subscription.status.active': 'Activa',
