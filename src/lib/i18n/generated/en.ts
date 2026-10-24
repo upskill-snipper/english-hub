@@ -20186,6 +20186,9 @@ export const EN_MESSAGES: Record<string, string> = {
     'This work is out of copyright in the UK, so we can publish it in full. The text is the one printed in the Pearson Edexcel International GCSE English Anthology (Issue 8), which is the text the exam prints.',
   'placement.none':
     'We have not yet checked which paper this text is on for your board, so we are not going to guess. When we have read that part of the specification, it will say so here.',
+  'placement.not_checked_board':
+    'We have not yet checked which {board} paper this text is on, so we are not going to guess. When we have read that part of the specification, it will say so here.',
+  'placement.no_board': 'None of the exam boards we cover sets this text. You can still read it.',
   'text_games.index.crumb': 'Text games',
   'text_games.index.eyebrow': 'Guided games',
   'text_games.index.title': 'Set text games',

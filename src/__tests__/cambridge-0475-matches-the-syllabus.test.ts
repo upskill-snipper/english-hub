@@ -100,7 +100,9 @@ describe('the 2027 lists', () => {
       expect(option.texts, option.label).toHaveLength(15)
     }
     // The rubric matters as much as the list: the candidate answers on ONE.
-    expect(poetry.rubric).toMatch(/ONE/)
+    // Matched without case since 24 October 2026, when the rubrics moved to
+    // the card's sentence case and second person ("You answer on one...").
+    expect(poetry.rubric).toMatch(/\bone of three\b/i)
   })
 
   it('sets seven novels and ten numbered stories', () => {
@@ -120,7 +122,7 @@ describe('the 2027 lists', () => {
   it('sets five plays, shared by Papers 2 and 3', () => {
     const drama = y.papers[2]!
     expect(drama.options[0]!.texts).toHaveLength(5)
-    expect(drama.rubric).toMatch(/EITHER Paper 2 .* OR Paper 3/)
+    expect(drama.rubric).toMatch(/either Paper 2 .* or Paper 3 .*not both/i)
   })
 
   it('asks for two texts on Paper 2 and one on Paper 3, as page 13 says', () => {
@@ -175,7 +177,24 @@ describe('the 2028 lists', () => {
   it('sets five plays and asks for one of them', () => {
     const drama = y.papers[2]!
     expect(drama.options[0]!.texts).toHaveLength(5)
-    expect(drama.selection).toMatch(/one of these five plays/)
+    // "of these five" until 24 October 2026; the card shows no list for
+    // "these" to point at.
+    expect(drama.selection).toMatch(/one of the five set plays/)
+  })
+
+  it('speaks to the reader and does not repeat the paper name', () => {
+    // The card prints `${paper}. ${rubric}`. Each 2028 rubric opened "Open
+    // text." after a paper name ending "Open Text)", and said "Candidates
+    // answer ONE" beside a selection line saying "you".
+    for (const year of CAMBRIDGE_0475) {
+      for (const paper of year.papers) {
+        const where = `${year.examYear} ${paper.paper}`
+        expect(paper.rubric, where).not.toMatch(/^Open text/i)
+        expect(paper.rubric, where).not.toMatch(/\bCandidates\b/)
+        expect(paper.rubric, where).not.toMatch(/\b(ONE|EITHER|OR)\b/)
+        expect(paper.selection, where).not.toMatch(/\bthese\b|\blisted\b|this list/)
+      }
+    }
   })
 
   it('is sixty-six prescribed texts in all', () => {

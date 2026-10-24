@@ -111,8 +111,13 @@ describe('the rail tells the reader instead of moving them', () => {
 
   it('works out whether the text is on the reader’s course', () => {
     // Against the CANONICAL slug, not the route segment - see the alias block
-    // below for the false claim that cost.
-    expect(CODE).toContain('textAvailableForBoard(canonical, board)')
+    // below for the false claim that cost. And through boardSetsText, which
+    // asks every held Cambridge series, not textAvailableForBoard, whose
+    // Cambridge rows are 2027 only (24 October 2026: the rail called An
+    // Inspector Calls off-course for a Cambridge reader beside a card listing
+    // it for 2028).
+    expect(CODE).toContain('boardSetsText(canonical, board)')
+    expect(CODE).not.toContain('textAvailableForBoard(')
     expect(CODE).toMatch(/const offBoard =/)
   })
 

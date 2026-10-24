@@ -16,9 +16,10 @@
  *
  * NOTHING HERE IS INFERRED. Every placement comes from a module that records
  * the document it was read from and that document's version string. A text with
- * no verified placement returns nothing and the page renders nothing, because
- * "we have not checked your board" and "your board does not set this" are
- * different statements and a guess would blur them.
+ * no verified placement returns nothing, and the card says only what is known
+ * about the reader's board (see readerNotice), because "we have not checked
+ * your board" and "your board does not set this" are different statements and
+ * a guess would blur them.
  *
  * EVERY CAMBRIDGE SERIES WE HOLD IS CARRIED, NOT ONE "CURRENT" ONE. Cambridge
  * rotates 0475 every year and serves several syllabuses side by side with no
@@ -48,6 +49,9 @@ import { getDisplayName } from './board-config'
 import { ANTHOLOGY, ANTHOLOGY_SOURCE } from './edexcel-igcse-anthology'
 import { LITERATURE_4ET1, LITERATURE_4ET1_SOURCE } from './edexcel-igcse-literature'
 import { CAMBRIDGE_0475 } from './cambridge-0475'
+import { boardSetsText } from './board-sets-text'
+import { getSetText } from './set-texts'
+import { canonicalTextSlug } from '@/lib/revision/text-slug-aliases'
 
 export interface ExamPlacement {
   board: ExamBoard
@@ -65,7 +69,48 @@ export interface ExamPlacement {
    * board whose lists do not rotate.
    */
   examYears?: number[]
+  /**
+   * "Not set for the 2026 or 2027 series.", where some held series does not
+   * set the text anywhere. Its own field, not appended to `detail`: until 24
+   * October 2026 it was, and the card printed "Drama Not set for the 2026 or
+   * 2027 series." as one muted run-on, so the sentence a 2026 or 2027
+   * candidate most needs was the faintest text on the card.
+   */
+  notSet?: string
   source: { title: string; version: string; readOn: string }
+}
+
+const NUMBER_WORDS = [
+  'none',
+  'one',
+  'two',
+  'three',
+  'four',
+  'five',
+  'six',
+  'seven',
+  'eight',
+  'nine',
+  'ten',
+  'eleven',
+  'twelve',
+  'thirteen',
+  'fourteen',
+  'fifteen',
+  'sixteen',
+  'seventeen',
+  'eighteen',
+  'nineteen',
+  'twenty',
+]
+
+/**
+ * A small count in words, as the rest of the card writes them. Until 24
+ * October 2026 the 4ET1 line read "You study 1 of these 5 texts" beside a
+ * Cambridge line reading "one of these five plays" on the same page.
+ */
+function inWords(n: number): string {
+  return NUMBER_WORDS[n] ?? String(n)
 }
 
 function anthologyPlacements(slug: string): ExamPlacement[] {
@@ -77,7 +122,7 @@ function anthologyPlacements(slug: string): ExamPlacement[] {
       board: part.board,
       boardName: getDisplayName(part.board),
       assessedIn: part.assessedIn,
-      selection: `All ${part.entries.length} texts in Part ${part.part} are compulsory.`,
+      selection: `All ${inWords(part.entries.length)} texts in Part ${part.part} are compulsory.`,
       detail: `Part ${part.part} of the anthology, page ${entry.page}.`,
       source: {
         title: ANTHOLOGY_SOURCE.title,
@@ -98,7 +143,9 @@ function literature4et1Placements(slug: string): ExamPlacement[] {
       board: 'edexcel-igcse',
       boardName: getDisplayName('edexcel-igcse'),
       assessedIn: choice.assessedIn,
-      selection: `You study ${choice.choose} of these ${choice.entries.length} texts.`,
+      // Not "of these N texts": the card never shows the list, so "these"
+      // pointed at nothing.
+      selection: `You study ${inWords(choice.choose)} of ${inWords(choice.entries.length)} set texts.`,
       detail: entry.firstAssessment
         ? `First assessed ${entry.firstAssessment}, so it is not an option for an earlier series.`
         : undefined,
@@ -136,7 +183,7 @@ function listYears(years: number[]): string {
  * page 13). Six held texts were affected. The three asserted cases (The War
  * of the Worlds, Antony and Cleopatra, An Inspector Calls) each sit in one
  * place only, so the tests were green. The note is now the held years minus
- * the union of every card's years for the slug.
+ * the union of every card's years for the slug, carried in `notSet`.
  */
 function cambridge0475Placements(slug: string): ExamPlacement[] {
   const heldYears = CAMBRIDGE_0475.map((y) => y.examYear).sort((a, b) => a - b)
@@ -166,9 +213,13 @@ function cambridge0475Placements(slug: string): ExamPlacement[] {
             boardName: getDisplayName('cambridge-0475'),
             assessedIn: `${paper.paper}. ${paper.rubric}`,
             selection: paper.selection,
+            // A whole work gets no detail line. Its option label ("Drama",
+            // "Prose") only repeated the section the paper name already
+            // prints, and was all the detail line ever said for a text we
+            // hold, since every row with a slug is a whole work.
             detail: entry.from
               ? `${option.label} - from ${entry.from}${entry.item ? `, no. ${entry.item}` : ''}.`
-              : option.label,
+              : undefined,
             examYears: [year.examYear],
             source: {
               title: 'Cambridge IGCSE Literature in English 0475 syllabus',
@@ -193,9 +244,7 @@ function cambridge0475Placements(slug: string): ExamPlacement[] {
   for (const { placement, versions } of byPlace.values()) {
     placement.examYears!.sort((a, b) => a - b)
     placement.source.version = versions.join('; ')
-    if (note) {
-      placement.detail = placement.detail ? `${placement.detail} ${note}` : note
-    }
+    if (note) placement.notSet = note
     out.push(placement)
   }
   // Earliest series first, so a page reads chronologically.
@@ -221,4 +270,61 @@ export function examPlacements(slug: string): ExamPlacement[] {
 /** Whether anything verified is known about where this text is examined. */
 export function hasExamPlacement(slug: string): boolean {
   return examPlacements(slug).length > 0
+}
+
+/**
+ * What the card says about the reader's own board when no card is theirs.
+ *
+ *   not-checked            nothing is verified and we cannot say more
+ *   not-checked-for-board  the reader's board sets the text, and we have not
+ *                          read which of its papers it is on
+ *   off-board              the reader's board sets it in no series we hold
+ *   no-board               no board we cover sets it, and nothing is verified
+ *
+ * WHAT WAS WRONG. Until 24 October 2026 the card had one sentence for every
+ * case without a placement: "We have not yet checked which paper this text is
+ * on for your board". It takes for granted that the board sets the text. For
+ * an AQA reader of Hamlet (A-level and IAL only) or Henry V (no board at all)
+ * the rail beside it said "Your board does not set this text", and on a phone,
+ * where the rail is in a closed drawer, the card's sentence was all a reader
+ * saw. Twenty of the 32 TextGuide pages that gained the card on 23 October
+ * have no placement, and for an AQA reader eight of those are off-board
+ * (Henry V for every reader).
+ *
+ * And where placements existed but none was the reader's, the card said
+ * nothing about their exam at all: an AQA reader of An Inspector Calls saw
+ * Pearson 4ET1 and Cambridge 0475 under "Where this text is on your exam",
+ * which reads as "AQA does not set it" or as "this is your paper", and is
+ * neither. AQA sets it; we have not read which AQA paper.
+ *
+ * The off-board test is boardSetsText, the same series-aware test the rail
+ * uses, so the two cannot disagree. A slug the set-text register does not hold
+ * is never called off-board: "we have no record of this" is not "your board
+ * does not set this".
+ */
+export type ReaderNotice =
+  | { kind: 'not-checked' }
+  | { kind: 'not-checked-for-board'; board: ExamBoard }
+  | { kind: 'off-board' }
+  | { kind: 'no-board' }
+
+export function readerNotice(
+  slug: string,
+  board: ExamBoard | null,
+  placements: ExamPlacement[] = examPlacements(slug),
+): ReaderNotice | null {
+  const canonical = canonicalTextSlug(slug)
+  const text = getSetText(canonical)
+
+  // The reader's own board has a verified card, which says it all.
+  if (board && placements.some((p) => p.board === board)) return null
+
+  // Henry V and the rest whose row is deliberately empty. True whatever the
+  // reader's board, and the stronger statement, so it comes first.
+  if (text && text.boards.length === 0 && placements.length === 0) return { kind: 'no-board' }
+
+  if (!board) return placements.length === 0 ? { kind: 'not-checked' } : null
+  if (!text) return placements.length === 0 ? { kind: 'not-checked' } : null
+  if (!boardSetsText(canonical, board)) return { kind: 'off-board' }
+  return { kind: 'not-checked-for-board', board }
 }

@@ -117,7 +117,15 @@ export interface Cambridge0475Option {
 
 export interface Cambridge0475Paper {
   paper: string
-  /** What the candidate does with the options below. */
+  /**
+   * What the candidate does with the options below. The placement card prints
+   * it straight after `paper`, under "Assessed in", beside `selection` under
+   * "Your choice". So it speaks to the reader in sentence case, as `selection`
+   * does, and does not repeat the paper name. Until 24 October 2026 it read
+   * "Candidates answer ONE question..." and the 2028 rubrics opened "Open
+   * text.", so the card printed "Paper 2 Section A (Drama, Open Text). Open
+   * text. ..." and switched from "you" to "Candidates" between two lines.
+   */
   rubric: string
   /**
    * How many of the texts below a candidate studies, in the syllabus's own
@@ -222,10 +230,11 @@ const KUMUKANDA: Cambridge0475Text[] = [
 /** Identical in 2026 and 2027. Three alternatives, fifteen poems each. */
 const POETRY: Cambridge0475Paper = {
   paper: 'Paper 1 Section A (Poetry)',
-  rubric: 'Candidates answer on ONE of these three set texts.',
+  rubric: 'You answer on one of three set texts.',
   // 2027 syllabus, page 10: "Candidates answer on one set text in Section A
   // (Poetry)." The set text is the fifteen-poem selection, not a single poem.
-  selection: 'You answer on one of these three poetry sets. Each set is all fifteen poems listed.',
+  // No "these" or "listed": the card does not show the list.
+  selection: 'You answer on one of three poetry sets, and each set is fifteen poems.',
   options: [
     { label: 'Songs of Ourselves Volume 1', texts: SONGS_VOLUME_1 },
     { label: 'Songs of Ourselves Volume 2, Part 3', texts: SONGS_VOLUME_2_PART_3 },
@@ -237,10 +246,10 @@ const POETRY: Cambridge0475Paper = {
 const POETRY_2028: Cambridge0475Paper = {
   paper: 'Paper 1 Section A (Poetry, Open Text)',
   rubric:
-    'Open text. Candidates answer ONE question from a choice of two on their set text; the poems are printed in the paper.',
+    'You answer one question from a choice of two on your set text, and the poems are printed in the paper.',
   // 2028-2030 syllabus, page 11: "Candidates study one set text from Section A
   // (Poetry). Candidates study all 15 poems from the chosen text."
-  selection: 'You study one of these three poetry sets, and all fifteen poems in it.',
+  selection: 'You study one of three poetry sets, and all fifteen poems in it.',
   options: [
     { label: 'Songs of Ourselves Volume 1', texts: SONGS_VOLUME_1 },
     { label: 'Songs of Ourselves Volume 3', texts: SONGS_VOLUME_3 },
@@ -290,7 +299,7 @@ const PROSE_SELECTION =
 // following". Page 8 of each: Paper 2 is "Two questions on two texts", Paper 3
 // "One question on one text".
 const DRAMA_SELECTION =
-  'Paper 2 (Drama): you answer two questions on two different set texts from this list, so you study two of the five. Paper 3 (Drama, Open Text): you answer one question on one set text from the same list.'
+  'Paper 2 (Drama): you answer two questions on two different set texts, so you study two of the five set plays. Paper 3 (Drama, Open Text): you answer one question on one set text from the same five.'
 
 export const CAMBRIDGE_0475: Cambridge0475Year[] = [
   {
@@ -304,7 +313,7 @@ export const CAMBRIDGE_0475: Cambridge0475Year[] = [
       POETRY,
       {
         paper: 'Paper 1 Section B (Prose)',
-        rubric: 'Candidates answer on ONE set text.',
+        rubric: 'You answer on one set text.',
         selection: PROSE_SELECTION,
         options: [
           {
@@ -346,7 +355,7 @@ export const CAMBRIDGE_0475: Cambridge0475Year[] = [
       {
         paper: 'Papers 2 and 3 (Drama)',
         rubric:
-          'Candidates take EITHER Paper 2 (Drama) OR Paper 3 (Drama, Open Text). Both papers use the same list.',
+          'You take either Paper 2 (Drama) or Paper 3 (Drama, Open Text), not both. Both papers use the same five plays.',
         selection: DRAMA_SELECTION,
         options: [
           {
@@ -392,7 +401,7 @@ export const CAMBRIDGE_0475: Cambridge0475Year[] = [
       POETRY,
       {
         paper: 'Paper 1 Section B (Prose)',
-        rubric: 'Candidates answer on ONE set text.',
+        rubric: 'You answer on one set text.',
         selection: PROSE_SELECTION,
         options: [
           {
@@ -434,7 +443,7 @@ export const CAMBRIDGE_0475: Cambridge0475Year[] = [
       {
         paper: 'Papers 2 and 3 (Drama)',
         rubric:
-          'Candidates take EITHER Paper 2 (Drama) OR Paper 3 (Drama, Open Text). Both papers use the same list.',
+          'You take either Paper 2 (Drama) or Paper 3 (Drama, Open Text), not both. Both papers use the same five plays.',
         selection: DRAMA_SELECTION,
         options: [
           {
@@ -482,8 +491,7 @@ export const CAMBRIDGE_0475: Cambridge0475Year[] = [
       POETRY_2028,
       {
         paper: 'Paper 1 Section B (Prose, Open Text)',
-        rubric:
-          'Open text. Candidates answer ONE question from a choice of two essay questions on their set text.',
+        rubric: 'You answer one question from a choice of two essay questions on your set text.',
         // Page 13: "Candidates study one set text from Section B (Prose).
         // Candidates study the whole text."
         selection:
@@ -526,11 +534,11 @@ export const CAMBRIDGE_0475: Cambridge0475Year[] = [
         // marks; Section A one question from a choice of two on the set text,
         // Section B one unseen question. Paper 3 no longer exists.
         rubric:
-          'Open text. Paper 2 (Drama and Unseen) replaces Papers 2 and 3 from 2028. Candidates answer ONE question from a choice of two on their set text in Section A, and one unseen question in Section B.',
+          'From 2028 one Paper 2 (Drama and Unseen) replaces Papers 2 and 3. You answer one question from a choice of two on your play, and one unseen question.',
         // Page 13: "Candidates study one set text for Paper 2 ... Candidates
         // study one set text in Section A (Drama). Candidates study the whole
         // text."
-        selection: 'You study one of these five plays.',
+        selection: 'You study one of the five set plays.',
         options: [
           {
             label: 'Drama',

@@ -61,7 +61,7 @@ describe('what the placement actually says', () => {
 
   it('tells a student when they had a choice, and of how many', () => {
     const [p] = examPlacements('klara-and-the-sun')
-    expect(p?.selection).toBe('You study 1 of these 7 texts.')
+    expect(p?.selection).toBe('You study one of seven set texts.')
   })
 
   it('warns when a text was not assessable in an earlier series', () => {
@@ -78,7 +78,7 @@ describe('what the placement actually says', () => {
       (p) => p.board === 'cambridge-0475',
     )
     expect(cambridge?.examYears).toEqual([2026, 2027])
-    expect(cambridge?.detail).toContain('Not set for the 2028 series.')
+    expect(cambridge?.notSet).toContain('Not set for the 2028 series.')
   })
 
   it('prints the syllabus selection for drama, not a count', () => {
@@ -99,7 +99,7 @@ describe('what the placement actually says', () => {
       (p) => p.board === 'cambridge-0475',
     )
     expect(cambridge?.examYears).toEqual([2026])
-    expect(cambridge?.detail).toContain('Not set for the 2027 or 2028 series.')
+    expect(cambridge?.notSet).toContain('Not set for the 2027 or 2028 series.')
     expect(hasExamPlacement('the-war-of-the-worlds')).toBe(true)
   })
 
@@ -107,7 +107,23 @@ describe('what the placement actually says', () => {
     const cambridge = examPlacements('an-inspector-calls').find((p) => p.board === 'cambridge-0475')
     expect(cambridge?.examYears).toEqual([2028])
     expect(cambridge?.assessedIn).toContain('Paper 2 Section A (Drama, Open Text)')
-    expect(cambridge?.detail).toContain('Not set for the 2026 or 2027 series.')
+    expect(cambridge?.notSet).toContain('Not set for the 2026 or 2027 series.')
+    // Until 24 October 2026 the card printed "Drama Not set for the 2026 or
+    // 2027 series." (the bare option label, then the note, no full stop) and
+    // "Paper 2 Section A (Drama, Open Text). Open text. ...".
+    expect(cambridge?.detail).toBeUndefined()
+    expect(cambridge?.assessedIn).not.toMatch(/Open Text\)\. Open text/i)
+  })
+
+  it('says a 4ET1 candidate takes Component 2 or Component 3, not both', () => {
+    // Specification Issue 3, page 6: "Learners must complete Component 1, plus
+    // either Component 2 or Component 3." It said "and" until 24 October 2026.
+    for (const slug of ['an-inspector-calls', 'macbeth']) {
+      const p = examPlacements(slug).find((x) => x.board === 'edexcel-igcse')
+      expect(p?.assessedIn, slug).toBe(
+        'Component 2 (examined) or Component 3 (non-examined assessment)',
+      )
+    }
   })
 
   it('merges the years a text sits in the same place, and cites every document', () => {
@@ -124,7 +140,7 @@ describe('what the placement actually says', () => {
     // so neither card may say it is not set anywhere. For a few hours on 23
     // October 2026 the note was computed per card and each card named the
     // other's years as absent.
-    for (const p of cambridge) expect(p.detail, p.assessedIn).not.toContain('Not set')
+    for (const p of cambridge) expect(p.notSet, p.assessedIn).toBeUndefined()
   })
 
   it('names only the years a text is set NOWHERE, however many cards it has', () => {
@@ -136,8 +152,8 @@ describe('what the placement actually says', () => {
     )
     expect(cambridge.map((p) => p.examYears)).toEqual([[2027], [2028]])
     for (const p of cambridge) {
-      expect(p.detail, p.assessedIn).toContain('Not set for the 2026 series.')
-      expect(p.detail, p.assessedIn).not.toMatch(/2027 series|2028 series/)
+      expect(p.notSet, p.assessedIn).toContain('Not set for the 2026 series.')
+      expect(p.notSet, p.assessedIn).not.toMatch(/2027 series|2028 series/)
     }
     // Blues for an Alabama Sky: drama in every held series (2026 p.13, 2027
     // p.13, 2028-2030 p.13), two cards, nothing absent.
@@ -145,7 +161,7 @@ describe('what the placement actually says', () => {
       (p) => p.board === 'cambridge-0475',
     )
     expect(blues.flatMap((p) => p.examYears!).sort()).toEqual([2026, 2027, 2028])
-    for (const p of blues) expect(p.detail, p.assessedIn).not.toContain('Not set')
+    for (const p of blues) expect(p.notSet, p.assessedIn).toBeUndefined()
   })
 
   it('shows both placements for a text two boards set', () => {

@@ -872,7 +872,8 @@ export default async function MacbethPage() {
               "sits on the Shakespeare paper of every major English Literature
               specification". The placement card under the guide's hero now
               prints Pearson 4ET1, which sets Macbeth as a literary heritage
-              text in Components 2 and 3 and has no Shakespeare paper, and
+              text in Component 2 or its coursework alternative, Component 3,
+              and has no Shakespeare paper, and
               Cambridge 0475 sets it in none of the series we hold. The clause
               went; which paper sets it is the card's job, read from the
               specification. */}

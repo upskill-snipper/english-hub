@@ -377,4 +377,21 @@ export const TEXT_NAV_DICTIONARY: Record<string, { en: string; ar?: string; es?:
     ar: 'ما راجعنا لين الحين في أي ورقة يجي هذا النص عند هيئتك، فما راح نخمّن. أول ما نقرأ هذا الجزء من المنهج الرسمي بيظهر هنا.',
     es: 'Todavía no hemos comprobado en qué examen aparece este texto para tu junta examinadora, así que no vamos a adivinarlo. Cuando hayamos leído esa parte de la especificación, lo indicaremos aquí.',
   },
+  // Added 24 October 2026. placement.none takes for granted that the board
+  // sets the text, and it was printed for an AQA reader of Hamlet beside a rail
+  // saying AQA does not. The card now chooses (readerNotice in
+  // src/lib/board/exam-placement.ts): this one when the reader's board does
+  // set the text and we have not read which of its papers, with the board
+  // named; textnav.off_board_hint when it does not; placement.no_board when no
+  // board we cover sets it.
+  'placement.not_checked_board': {
+    en: 'We have not yet checked which {board} paper this text is on, so we are not going to guess. When we have read that part of the specification, it will say so here.',
+    ar: 'ما راجعنا لين الحين في أي ورقة من أوراق {board} يجي هذا النص، فما راح نخمّن. أول ما نقرأ هذا الجزء من المنهج الرسمي بيظهر هنا.',
+    es: 'Todavía no hemos comprobado en qué examen de {board} aparece este texto, así que no vamos a adivinarlo. Cuando hayamos leído esa parte de la especificación, lo indicaremos aquí.',
+  },
+  'placement.no_board': {
+    en: 'None of the exam boards we cover sets this text. You can still read it.',
+    ar: 'ولا هيئة امتحانات من اللي نغطيها تقرر هذا النص. تقدر تقراه على أي حال.',
+    es: 'Ninguna de las juntas examinadoras que cubrimos incluye este texto. Puedes leerlo igualmente.',
+  },
 }

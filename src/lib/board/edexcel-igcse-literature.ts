@@ -19,6 +19,12 @@
  *                the SAME two lists: ONE modern drama from five, and ONE
  *                literary heritage text from six
  *
+ * A candidate takes Component 2 OR Component 3, never both: "Learners must
+ * complete Component 1, plus either Component 2 or Component 3" (page 6), and
+ * "Component 3 is available as an alternative to Component 2" (page 17). Until
+ * 24 October 2026 `assessedIn` said "Component 2 (examined) and Component 3",
+ * which under the card's "Assessed in" read as both.
+ *
  * There is no separate Shakespeare component. A 4ET1 candidate may avoid
  * Shakespeare's plays entirely by choosing Austen, Dickens or Hawthorne for the
  * literary heritage text, which is not true of any UK GCSE we cover, and is
@@ -100,9 +106,9 @@ export const MODERN_PROSE: PrescribedChoice = {
   ],
 }
 
-/** ONE modern drama text, Components 2 and 3. */
+/** ONE modern drama text, Component 2 or Component 3. */
 export const MODERN_DRAMA: PrescribedChoice = {
-  assessedIn: 'Component 2 (examined) and Component 3 (non-examined assessment)',
+  assessedIn: 'Component 2 (examined) or Component 3 (non-examined assessment)',
   choose: 1,
   entries: [
     { slug: 'a-view-from-the-bridge', title: 'A View from the Bridge', author: 'Arthur Miller' },
@@ -124,9 +130,9 @@ export const MODERN_DRAMA: PrescribedChoice = {
   ],
 }
 
-/** ONE literary heritage text, Components 2 and 3. No separate Shakespeare paper. */
+/** ONE literary heritage text, Component 2 or Component 3. No separate Shakespeare paper. */
 export const LITERARY_HERITAGE: PrescribedChoice = {
-  assessedIn: 'Component 2 (examined) and Component 3 (non-examined assessment)',
+  assessedIn: 'Component 2 (examined) or Component 3 (non-examined assessment)',
   choose: 1,
   entries: [
     { slug: 'romeo-and-juliet', title: 'Romeo and Juliet', author: 'William Shakespeare' },

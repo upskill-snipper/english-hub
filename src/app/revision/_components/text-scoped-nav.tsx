@@ -43,7 +43,8 @@ import {
 
 import { useT } from '@/lib/i18n/use-t'
 import { buildTextNav, type TextNavIcon } from '@/lib/revision/text-nav'
-import { getSetText, textAvailableForBoard } from '@/lib/board/set-texts'
+import { getSetText } from '@/lib/board/set-texts'
+import { boardSetsText } from '@/lib/board/board-sets-text'
 import { canonicalTextSlug, isKnownSetText } from '@/lib/revision/text-slug-aliases'
 import { PLACEHOLDER_TEXT_SLUGS } from '@/lib/revision/placeholder-texts.generated'
 import { guideElsewhere } from '@/lib/revision/guide-href'
@@ -143,8 +144,14 @@ export function TextScopedNav({ slug, onNavigate }: { slug: string; onNavigate?:
   // So the notice needs a text we actually recognise AND a board that does not
   // set it. "We have no record of this" and "your board does not set this" are
   // different statements, and only one of them is safe to print.
+  //
+  // AND NO HELD SERIES MAY SET IT (24 October 2026). textAvailableForBoard
+  // reads set-texts.ts, whose Cambridge 0475 rows are the 2027 list only, so a
+  // Cambridge reader of An Inspector Calls was told it is not on their course
+  // while the placement card beside this rail listed it for 2028. See
+  // src/lib/board/board-sets-text.ts. The card uses the same test.
   const offBoard =
-    Boolean(board) && isHydrated && isKnownSetText(slug) && !textAvailableForBoard(canonical, board)
+    Boolean(board) && isHydrated && isKnownSetText(slug) && !boardSetsText(canonical, board)
 
   // The title comes from the set-text register, which is the same source the
   // page headings use. Falling back to the slug would print "a-christmas-carol"

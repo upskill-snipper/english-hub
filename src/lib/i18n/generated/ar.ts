@@ -19670,6 +19670,9 @@ export const AR_MESSAGES: Record<string, string> = {
     'هذا العمل خرج من حقوق النشر في بريطانيا، فنقدر ننشره كامل. النص هو المطبوع في Pearson Edexcel International GCSE English Anthology (Issue 8)، وهو نفس النص اللي يطبعه الامتحان.',
   'placement.none':
     'ما راجعنا لين الحين في أي ورقة يجي هذا النص عند هيئتك، فما راح نخمّن. أول ما نقرأ هذا الجزء من المنهج الرسمي بيظهر هنا.',
+  'placement.not_checked_board':
+    'ما راجعنا لين الحين في أي ورقة من أوراق {board} يجي هذا النص، فما راح نخمّن. أول ما نقرأ هذا الجزء من المنهج الرسمي بيظهر هنا.',
+  'placement.no_board': 'ولا هيئة امتحانات من اللي نغطيها تقرر هذا النص. تقدر تقراه على أي حال.',
   'text_games.index.crumb': 'ألعاب النصوص',
   'text_games.index.eyebrow': 'ألعاب موجّهة',
   'text_games.index.title': 'ألعاب النصوص المقررة',
