@@ -15,7 +15,7 @@ import {
   Users,
 } from 'lucide-react'
 
-import { PLAY_SIZE } from '@/lib/games/quest/deal'
+import { dealLevel, PLAY_SIZE, type DealtChallenge } from '@/lib/games/quest/deal'
 import {
   ACHIEVEMENTS,
   dueForReview,
@@ -24,10 +24,14 @@ import {
   finaleOpen,
   nextLevel,
   playerLevel,
+  playsDealt,
   questStars,
   QUOTE_SMITH,
   readPlayer,
   readQuestProgress,
+  recordDeal,
+  seenInLevel,
+  writeQuestProgress,
   type PlayerProgress,
   type QuestProgress,
 } from '@/lib/games/quest/progress'
@@ -62,7 +66,12 @@ export function QuestMap({ quest }: { quest: Quest }) {
   const [qp, setQp] = useState<QuestProgress | null>(null)
   const [player, setPlayer] = useState<PlayerProgress | null>(null)
   const [due, setDue] = useState<string[]>([])
-  const [playing, setPlaying] = useState<{ run: QuestRun; play: number; n: number } | null>(null)
+  const [playing, setPlaying] = useState<{
+    run: QuestRun
+    play: number
+    n: number
+    dealt?: DealtChallenge[]
+  } | null>(null)
   const [comicOpen, setComicOpen] = useState(false)
   const opener = useRef<HTMLElement | null>(null)
   const plays = useRef(0)
@@ -80,15 +89,26 @@ export function QuestMap({ quest }: { quest: Quest }) {
   const startLevel = useCallback(
     (level: Level, from?: HTMLElement | null) => {
       if (from) opener.current = from
+      // The play is dealt and counted here, as it starts (24 October 2026):
+      // with the challenges this browser was dealt in the level's recent
+      // plays, so a replay brings new ones, and counted now, so a level left
+      // part-way and started again does not deal the same play again
+      // (src/lib/games/quest/deal.ts says why).
       const p = readQuestProgress(quest.slug)
+      const play = playsDealt(p, level.id)
+      const dealt = dealLevel(quest, level, play, seenInLevel(p, level.id))
+      writeQuestProgress(
+        quest.slug,
+        recordDeal(
+          p,
+          level.id,
+          dealt.map((d) => d.challenge.id),
+        ),
+      )
       plays.current += 1
-      setPlaying({
-        run: { mode: 'level', level },
-        play: p.levels[level.id]?.plays ?? 0,
-        n: plays.current,
-      })
+      setPlaying({ run: { mode: 'level', level }, play, n: plays.current, dealt })
     },
-    [quest.slug],
+    [quest],
   )
 
   const startReview = useCallback(
@@ -355,6 +375,7 @@ export function QuestMap({ quest }: { quest: Quest }) {
             quest={quest}
             run={playing.run}
             play={playing.play}
+            dealt={playing.dealt}
             sfx={sfx}
             t={t}
             onClose={backToMap}
@@ -456,16 +477,20 @@ function LevelRow({
           : 'border-2 border-border bg-card text-foreground'
 
   let about: ReactNode
-  if (level.kind === 'chapter' && level.span) {
-    about =
-      level.span.from === level.span.to ? (
-        <En>{level.span.from}</En>
-      ) : (
-        fill(t('quest.map.span'), {
-          from: <En>{level.span.from}</En>,
-          to: <En>{level.span.to}</En>,
-        })
-      )
+  // Where in the text the part runs, not its first and last moments' titles,
+  // which were the first and last cards of its own story order
+  // (src/lib/games/quest/types.ts, Level.where).
+  if (level.kind === 'chapter') {
+    if (level.where)
+      about =
+        level.where.from === level.where.to ? (
+          <En>{level.where.from}</En>
+        ) : (
+          fill(t('quest.map.span'), {
+            from: <En>{level.where.from}</En>,
+            to: <En>{level.where.to}</En>,
+          })
+        )
   } else if (level.kind === 'cast') about = t('quest.map.cast_about')
   else if (level.kind === 'craft') about = t('quest.map.craft_about')
   else if (level.kind === 'finale')

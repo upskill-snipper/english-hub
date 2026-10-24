@@ -65,6 +65,7 @@ export function LevelPlayer({
   quest,
   run,
   play,
+  dealt: given,
   sfx,
   t,
   onClose,
@@ -74,6 +75,8 @@ export function LevelPlayer({
   run: QuestRun
   /** Earlier plays of this level or review, so a replay deals afresh. */
   play: number
+  /** The play as the map dealt and recorded it; dealt here from `play` when absent. */
+  dealt?: DealtChallenge[]
   sfx: ReturnType<typeof useSfx>
   t: T
   onClose: () => void
@@ -82,8 +85,9 @@ export function LevelPlayer({
 }) {
   const dealt: DealtChallenge[] = useMemo(
     () =>
-      run.mode === 'level' ? dealLevel(quest, run.level, play) : dealReview(quest, run.ids, play),
-    [quest, run, play],
+      given ??
+      (run.mode === 'level' ? dealLevel(quest, run.level, play) : dealReview(quest, run.ids, play)),
+    [given, quest, run, play],
   )
   const [at, setAt] = useState(0)
   const [answers, setAnswers] = useState<(QuestAnswer | null)[]>(() => dealt.map(() => null))

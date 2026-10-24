@@ -19730,7 +19730,8 @@ export const AR_MESSAGES: Record<string, string> = {
   'quest.map.how.finale': 'اكسب نجمة في كل جزء عشان يفتح لك المستوى الأخير.',
   'quest.map.review_ready_one': 'عندك سؤال واحد جاهز للمراجعة.',
   'quest.map.review_ready': 'أسئلة جاهزة للمراجعة: {n}',
-  'quest.map.review_none': 'ما في شي للمراجعة الحين. الأسئلة اللي تفوتك ترجع هني.',
+  'quest.map.review_none':
+    'ما في شي للمراجعة الحين. الأسئلة اللي تفوتك ترجع هني بعد استراحة قصيرة.',
   'quest.map.review_start': 'ابدأ المراجعة',
   'quest.map.levels': 'المستويات',
   'quest.map.span': 'من {from} إلى {to}',

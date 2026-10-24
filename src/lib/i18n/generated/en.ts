@@ -20247,7 +20247,8 @@ export const EN_MESSAGES: Record<string, string> = {
   'quest.map.how.finale': 'Earn a star on every part to open the final level.',
   'quest.map.review_ready_one': 'One question is ready to look at again.',
   'quest.map.review_ready': '{n} questions are ready to look at again.',
-  'quest.map.review_none': 'Nothing to review right now. Questions you miss come back here.',
+  'quest.map.review_none':
+    'Nothing to review right now. Questions you miss come back here after a short break.',
   'quest.map.review_start': 'Start a review',
   'quest.map.levels': 'Levels',
   'quest.map.span': 'From {from} to {to}',

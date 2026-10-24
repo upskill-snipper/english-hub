@@ -20753,7 +20753,8 @@ export const ES_MESSAGES: Record<string, string> = {
   'quest.map.how.finale': 'Consigue una estrella en cada parte para abrir el nivel final.',
   'quest.map.review_ready_one': 'Hay una pregunta lista para repasar.',
   'quest.map.review_ready': 'Hay {n} preguntas listas para repasar.',
-  'quest.map.review_none': 'Ahora no hay nada que repasar. Las preguntas que falles vuelven aquí.',
+  'quest.map.review_none':
+    'Ahora no hay nada que repasar. Las preguntas que falles vuelven aquí tras un breve descanso.',
   'quest.map.review_start': 'Empezar el repaso',
   'quest.map.levels': 'Niveles',
   'quest.map.span': 'De {from} a {to}',

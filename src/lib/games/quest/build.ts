@@ -409,6 +409,14 @@ function assemble(
       kind: 'chapter',
       chapter: c,
       span: { from: moments[indices[0]].title, to: moments[indices[indices.length - 1]].title },
+      ...(moments[indices[0]].where.trim() && moments[indices[indices.length - 1]].where.trim()
+        ? {
+            where: {
+              from: moments[indices[0]].where.trim(),
+              to: moments[indices[indices.length - 1]].where.trim(),
+            },
+          }
+        : {}),
       pool: keep(pickVaried(all, POOL_CAP.chapter, hashSeed(slug, 'pool', c), {})),
       panels: indices.filter((i) => moments[i].panel).map((i) => moments[i].title),
     })

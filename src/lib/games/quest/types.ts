@@ -135,6 +135,14 @@ export interface Level {
   /** The first and last moment the chapter covers, as the guide titles them. */
   span?: { from: string; to: string }
   /**
+   * Where in the text the chapter runs, as the guide places its first and
+   * last moments ("Act 1, Scene 1" to "Act 1, Scene 7"). The map shows this,
+   * not the titles, since 24 October 2026: the titles were the first and last
+   * cards of the chapter's own story order, on 329 of 332 parts, so the map
+   * answered half of the question each part opens with.
+   */
+  where?: { from: string; to: string }
+  /**
    * The ids of the challenges the level may ask (in Quest.challenges); a play
    * deals PLAY_SIZE of them (./deal.ts). The finale's pool is every other
    * level's, by id, so no challenge travels to the page twice.

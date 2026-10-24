@@ -53,6 +53,14 @@ export interface QuestProgress {
   inked: string[]
   /** How many review sessions have been started, for a fresh deal each time. */
   reviews: number
+  /**
+   * By level id: how many plays have been DEALT (24 October 2026). A play is
+   * counted as it starts, so a level left and started again deals afresh;
+   * `plays` in LevelRecord still counts plays finished.
+   */
+  deals?: Record<string, number>
+  /** By level id: the challenges dealt in its recent plays, newest first (./deal.ts). */
+  seen?: Record<string, string[]>
 }
 
 export interface PlayerProgress {
@@ -120,6 +128,13 @@ export function playerLevel(xp: number): { level: number; into: number; needed: 
 const DAY = 24 * 60 * 60 * 1000
 /** How long after a right answer an item in each box is due again. */
 const INTERVALS = [0, 1 * DAY, 3 * DAY, 7 * DAY, 14 * DAY, 30 * DAY]
+/**
+ * How long a miss waits before Review asks it (24 October 2026). It used to be
+ * due at once, so a review opened straight after a level was 89 per cent the
+ * questions missed a minute earlier, with the answer still on the student's
+ * mind from the feedback; asking it again after a gap is what makes it stick.
+ */
+export const MISS_WAIT_MS = 10 * 60 * 1000
 
 export function recordAnswer(
   p: QuestProgress,
@@ -131,8 +146,8 @@ export function recordAnswer(
   const box = correct ? Math.min(5, (was?.box ?? 0) + 1) : 1
   const next: ItemRecord = {
     box,
-    // A miss is due at once; a right answer waits for its box.
-    due: correct ? now + INTERVALS[box] : now,
+    // A miss waits MISS_WAIT_MS; a right answer waits for its box.
+    due: correct ? now + INTERVALS[box] : now + MISS_WAIT_MS,
     missed: !correct,
   }
   return { ...p, items: { ...p.items, [id]: next } }
@@ -147,6 +162,39 @@ export function dueForReview(p: QuestProgress, now: number, known: Set<string>):
 }
 
 // ── Levels ───────────────────────────────────────────────────────────────────
+
+/** The most challenge ids a level remembers having dealt: about three plays. */
+export const SEEN_PER_LEVEL = 30
+
+/** Plays of a level dealt so far: what the next play's deal is seeded with. */
+export function playsDealt(p: QuestProgress, levelId: string): number {
+  return p.deals?.[levelId] ?? p.levels[levelId]?.plays ?? 0
+}
+
+/** Challenges dealt in a level's recent plays, newest first. */
+export function seenInLevel(p: QuestProgress, levelId: string): string[] {
+  return p.seen?.[levelId] ?? []
+}
+
+/** Record a play of a level as dealt: counted, and its challenges remembered. */
+export function recordDeal(
+  p: QuestProgress,
+  levelId: string,
+  ids: readonly string[],
+): QuestProgress {
+  const dealt = new Set(ids)
+  return {
+    ...p,
+    deals: { ...p.deals, [levelId]: playsDealt(p, levelId) + 1 },
+    seen: {
+      ...p.seen,
+      [levelId]: [...ids, ...seenInLevel(p, levelId).filter((id) => !dealt.has(id))].slice(
+        0,
+        SEEN_PER_LEVEL,
+      ),
+    },
+  }
+}
 
 export interface LevelOutcome {
   level: Level

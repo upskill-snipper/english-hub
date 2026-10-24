@@ -175,9 +175,9 @@ export const TEXT_GAMES_DICTIONARY: Record<string, { en: string; ar?: string; es
     es: 'Hay {n} preguntas listas para repasar.',
   },
   'quest.map.review_none': {
-    en: 'Nothing to review right now. Questions you miss come back here.',
-    ar: 'ما في شي للمراجعة الحين. الأسئلة اللي تفوتك ترجع هني.',
-    es: 'Ahora no hay nada que repasar. Las preguntas que falles vuelven aquí.',
+    en: 'Nothing to review right now. Questions you miss come back here after a short break.',
+    ar: 'ما في شي للمراجعة الحين. الأسئلة اللي تفوتك ترجع هني بعد استراحة قصيرة.',
+    es: 'Ahora no hay nada que repasar. Las preguntas que falles vuelven aquí tras un breve descanso.',
   },
   'quest.map.review_start': { en: 'Start a review', ar: 'ابدأ المراجعة', es: 'Empezar el repaso' },
   'quest.map.levels': { en: 'Levels', ar: 'المستويات', es: 'Niveles' },
