@@ -170,12 +170,14 @@ export const QUOTES: QuoteEntry[] = [
     act: 'Act 2',
     context: 'Sybil begins to dismiss Eva based on her social position.',
     ao2Analysis:
-      'The interrupted phrase is more revealing than a completed sentence. Sybil categorises Eva by class reflexively, before she has finished speaking. The dash suggests the Inspector cuts her off, refusing to let her complete the dehumanising thought.',
+      // Corrected 24 October 2026: this said the Inspector cuts her off. It is
+      // Sheila, "urgently, cutting in" (the study guide's note records it).
+      'The interrupted phrase is more revealing than a completed sentence. Sybil categorises Eva by class reflexively, before she has finished speaking. Her own daughter stops her: Sheila, "urgently, cutting in", will not let her complete the dehumanising thought.',
     ao3Context:
-      'Class in Edwardian England was not just economic but linguistic. The way people spoke about the working class \u2014 "that class," "these people" \u2014 reinforced their exclusion from full humanity.',
+      'Class in Edwardian England was not just economic but linguistic. The way people spoke about the working class, as "that class" or "these people", reinforced their exclusion from full humanity.',
     themes: ['Class & Inequality'],
     examTip:
-      'The interruption is the key feature to analyse. Discuss what Sybil might have said and why Priestley chose not to let her finish. The unsaid is as important as the said.',
+      'The interruption is the key feature to analyse. Discuss what Sybil might have said, and why Priestley gives the interruption to Sheila, the young generation, rather than the Inspector. The unsaid is as important as the said.',
   },
   {
     id: 12,

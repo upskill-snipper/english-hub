@@ -155,7 +155,9 @@ const CHARACTERS: CharacterStudy[] = [
         quote: '"Girls of that class\u2014"',
         act: 'Act 2',
         analysis:
-          'The interrupted phrase is more revealing than a completed sentence. Sybil categorises Eva by class before she has finished speaking, showing that prejudice is reflexive and instinctive, not reasoned. The dash suggests the Inspector cuts her off, refusing to let her complete the dehumanising thought.',
+          // Corrected 24 October 2026: this said the Inspector cuts her off. It
+          // is Sheila, "urgently, cutting in" (the study guide records it).
+          'The interrupted phrase is more revealing than a completed sentence. Sybil categorises Eva by class before she has finished speaking, showing that prejudice is reflexive and instinctive, not reasoned. Her own daughter stops her: Sheila, "urgently, cutting in", will not let her complete the dehumanising thought.',
       },
       {
         quote: '"he ought to be dealt with very severely"',
