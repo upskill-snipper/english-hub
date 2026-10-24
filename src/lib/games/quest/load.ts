@@ -42,6 +42,8 @@ export function quotationsShown(c: Challenge): string[] {
     case 'line-panel':
     case 'rebuild':
       return [c.quote]
+    case 'evidence':
+      return c.options
     default:
       return []
   }

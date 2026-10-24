@@ -59,6 +59,8 @@ const CEILING: Partial<Record<string, number>> = {
   rebuild: 2,
   marker: 2,
   'item-theme': 2,
+  // The longest to read; two a play keeps a part from becoming a reading test.
+  evidence: 2,
 }
 
 /** One challenge as it is put to the student. */
@@ -126,6 +128,10 @@ export function challengeFacts(c: Challenge): string[] {
       return [`phrase:${normForMatch(c.phrase)}`, person(c.portrait)]
     case 'theme-check':
       return [`themes:${c.moment.index}`]
+    case 'evidence':
+      // Every quotation it prints: a wrong option shown whole gives away a
+      // later "finish" or "rebuild" on that line.
+      return c.options.map(quote)
   }
 }
 
@@ -150,7 +156,8 @@ export function dealChallenge(c: Challenge, seed: number): DealtChallenge {
     c.type === 'item' ||
     c.type === 'panel-line' ||
     c.type === 'line-panel' ||
-    c.type === 'whose'
+    c.type === 'whose' ||
+    c.type === 'evidence'
   ) {
     const options = c.type === 'item' ? (c.item as { options: string[] }).options : c.options
     // The site's one option shuffle, so the answer is never always in one place.
@@ -303,6 +310,8 @@ export function answerOf(c: Challenge): string | number | boolean | number[] | n
     case 'marker':
       return c.answer
     case 'theme-check':
+      return c.answer
+    case 'evidence':
       return c.answer
     case 'rebuild':
       return c.words.map((_, i) => i)

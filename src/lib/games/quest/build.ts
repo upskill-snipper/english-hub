@@ -19,6 +19,9 @@
  *   marker        the same phrase, against the other markers on its portrait
  *   theme-check   a moment's own themes ("yes") or a guide theme that cannot
  *                 overlap any of them ("no"), as themesMayOverlap rules
+ *   evidence      a key quotation's own analysis, its quotation of the line
+ *                 elided, against quotations the guided path already asks
+ *                 about (24 October 2026; buildEvidence below)
  *
  * A TEXT IN COPYRIGHT gets no comic challenges (the comics are public-domain
  * texts only) and its quotations are exactly those its guided path already
@@ -31,10 +34,13 @@ import type { ComicSet } from '@/lib/comics/types'
 import { buildTextGame, type HeldEdition } from '@/lib/games/text-games/build'
 import { hashSeed, rng, seededPick } from '@/lib/games/text-games/seed'
 import {
+  isStopWord,
   normForMatch,
+  stem,
   themesMayOverlap,
   whereUnits,
   wheresMayOverlap,
+  wordsOf,
 } from '@/lib/games/text-games/text'
 import type { GameArt, GameItem, MomentRef, OrderItem } from '@/lib/games/text-games/types'
 import type { StudyGuide } from '@/lib/study-guides/types'
@@ -42,6 +48,7 @@ import type { StudyGuide } from '@/lib/study-guides/types'
 import { pickVaried } from './deal'
 import type {
   Challenge,
+  EvidenceChallenge,
   Level,
   LinePanelChallenge,
   MarkerChallenge,
@@ -286,6 +293,99 @@ function buildRebuilds(
   return out
 }
 
+/** The fewest words a point keeps once its quotations are elided: below it, there is nothing left to match. */
+export const EVIDENCE_MIN_WORDS = 12
+
+/** A quotation inside an analysis: in double, curly or single quotation marks. */
+const QUOTED_IN_ANALYSIS =
+  /[\u201c"][^\u201d"]+?[\u201d"]|\u2018[^\u2019]+?\u2019|'[^']{2,}?'(?![a-z])/g
+
+/** Content words worth comparing: four letters or more, not a stop word, by stem. */
+function contentStems(s: string): Set<string> {
+  return new Set(
+    wordsOf(s)
+      .filter((w) => w.length >= 4 && !isStopWord(w))
+      .map(stem),
+  )
+}
+
+/** The fewest words a quotation needs to be offered, as the answer or as a wrong option. */
+export const EVIDENCE_MIN_QUOTE_WORDS = 3
+
+/**
+ * Evidence challenges, from the guide's key quotations and their analyses.
+ *
+ * Only a quotation the guided path already asks about (a "where" or
+ * "finish" question) is used, as answer or as wrong option: those are located
+ * in the held edition where there is one, and for a text in copyright they are
+ * exactly what its measured path quotes, so this quotes nothing new.
+ *
+ * The point is the analysis with every quotation in it elided. It is asked
+ * only where nothing of the line is left in it (no content word of four
+ * letters or more survives: "Henna does fade within weeks" gave away "fade
+ * in a week") and EVIDENCE_MIN_WORDS words remain. Every option is a
+ * quotation of EVIDENCE_MIN_QUOTE_WORDS words or more. A wrong option shares
+ * no content word with the point, so it cannot be argued to bear it out, and
+ * the three are the nearest in length to the answer, so length does not give
+ * it away.
+ */
+function buildEvidence(guide: StudyGuide, items: GameItem[]): EvidenceChallenge[] {
+  // A line the guide reads twice (a refrain, an opening line that returns at
+  // the end) has two readings, either of which would be the point: not asked.
+  const times = new Map<string, number>()
+  for (const k of guide.keyQuotes ?? [])
+    times.set(normForMatch(k.text), (times.get(normForMatch(k.text)) ?? 0) + 1)
+  const analysed = new Map<string, { analysis: string }>()
+  for (const k of guide.keyQuotes ?? [])
+    if (k.analysis && times.get(normForMatch(k.text)) === 1)
+      analysed.set(normForMatch(k.text), { analysis: k.analysis })
+  const asked: { quote: string; where: string }[] = []
+  const seen = new Set<string>()
+  for (const it of items) {
+    if (it.kind !== 'where' && it.kind !== 'finish') continue
+    const k = normForMatch(it.quote)
+    if (!k || seen.has(k)) continue
+    seen.add(k)
+    if (wordsOf(it.quote).length < EVIDENCE_MIN_QUOTE_WORDS) continue
+    asked.push({ quote: it.quote, where: it.where ?? '' })
+  }
+  const out: EvidenceChallenge[] = []
+  for (const a of asked) {
+    const key = normForMatch(a.quote)
+    const found = analysed.get(key)
+    if (!found) continue
+    const point = found.analysis.replace(QUOTED_IN_ANALYSIS, '\u2026').replace(/\s+/g, ' ').trim()
+    if (wordsOf(point).length < EVIDENCE_MIN_WORDS) continue
+    const line = contentStems(a.quote)
+    const pointStems = contentStems(point)
+    if ([...line].some((w) => pointStems.has(w))) continue
+    const wrong = asked
+      .filter((o) => {
+        const k = normForMatch(o.quote)
+        if (k === key || k.includes(key) || key.includes(k)) return false
+        return ![...contentStems(o.quote)].some((w) => pointStems.has(w))
+      })
+      .sort(
+        (x, y) =>
+          Math.abs(x.quote.length - a.quote.length) - Math.abs(y.quote.length - a.quote.length),
+      )
+      .slice(0, 6)
+      .map((o) => o.quote)
+    if (wrong.length < 2) continue
+    const picked = seededPick(wrong, 3, hashSeed(guide.slug, 'evidence', key))
+    out.push({
+      type: 'evidence',
+      id: `evidence:${key.slice(0, 32)}`,
+      point,
+      options: [a.quote, ...picked],
+      answer: a.quote,
+      where: a.where,
+      explanation: found.analysis,
+    })
+  }
+  return out
+}
+
 function buildThemeChecks(
   slug: string,
   guide: StudyGuide,
@@ -383,7 +483,7 @@ function placeOf(c: Challenge, moments: MomentRef[]): number | undefined {
   const where =
     c.type === 'item' && (c.item.kind === 'where' || c.item.kind === 'finish')
       ? c.item.where
-      : c.type === 'rebuild'
+      : c.type === 'rebuild' || c.type === 'evidence'
         ? c.where
         : undefined
   if (!where || whereUnits(where).size === 0) return undefined
@@ -541,6 +641,7 @@ export function buildQuest({ guide, comics, art, held = null }: QuestInput): Que
       ...buildLinePanels(guide.slug, lines),
       ...buildRebuilds(guide, lines, items, moments),
       ...buildThemeChecks(guide.slug, guide, moments),
+      ...buildEvidence(guide, items),
     ],
     cast: [
       ...items.filter((i) => i.kind === 'who').map(item),

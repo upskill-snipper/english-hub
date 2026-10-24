@@ -26,5 +26,7 @@ export function questKind(c: Challenge): QuestKind {
       return 'portrait'
     case 'theme-check':
       return 'theme-check'
+    case 'evidence':
+      return 'analysis-quote'
   }
 }

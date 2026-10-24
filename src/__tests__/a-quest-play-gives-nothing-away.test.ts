@@ -29,10 +29,13 @@ import { whereUnits, wheresMayOverlap } from '@/lib/games/text-games/text'
  *     different play whenever the level has more than one play's worth.
  *
  * And, as measured on 24 October 2026 with the pools as built that day, so a
- * change that makes them worse shows: at most 25 per cent of plays share a
- * subject (22.8 measured; the rest are levels too small to do better), and a
- * second play repeats at most 20 per cent of the first where the level holds
- * two plays' worth (17.8 measured).
+ * change that makes them worse shows: at most 26 per cent of plays share a
+ * subject (22.8 measured with the new deal; 24.9 once the evidence challenges,
+ * each of which prints four quotations, joined the parts; the rest are levels
+ * too small to do better, and a bigger pool did not help: 24 a part measured
+ * 24.8 and took Animal Farm's quest past its size limit), and a second play
+ * repeats at most 20 per cent of the first where the level holds two plays'
+ * worth (17.8 measured).
  */
 
 const quests: Quest[] = []
@@ -88,7 +91,7 @@ describe('every quest play', () => {
       }
     }
     expect(problems.slice(0, 5), `${problems.length} problems`).toEqual([])
-    expect(shared / plays, 'plays that share a subject').toBeLessThanOrEqual(0.25)
+    expect(shared / plays, 'plays that share a subject').toBeLessThanOrEqual(0.26)
     expect(repeat / repeatOf, 'second plays repeating the first').toBeLessThanOrEqual(0.2)
   })
 

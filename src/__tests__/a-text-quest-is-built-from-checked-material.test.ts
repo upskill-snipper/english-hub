@@ -18,7 +18,13 @@ import {
   loadTextGame,
   textGameSlugs,
 } from '@/lib/games/text-games/load'
-import { normForMatch, themesMayOverlap, wheresMayOverlap } from '@/lib/games/text-games/text'
+import {
+  isStopWord,
+  normForMatch,
+  stem,
+  themesMayOverlap,
+  wheresMayOverlap,
+} from '@/lib/games/text-games/text'
 import { loadStudyGuide } from '@/lib/study-guides/load'
 
 /**
@@ -88,11 +94,63 @@ describe('every text quest', () => {
     }
   }, 300_000)
 
+  it("asks for evidence only with the guide's own reading of the answer, the line elided from it", async () => {
+    // src/lib/games/quest/build.ts, buildEvidence (24 October 2026).
+    const contentStems = (t: string) =>
+      new Set(
+        t
+          .toLowerCase()
+          .split(/[^\p{L}']+/u)
+          .filter((w) => w.length >= 4 && !isStopWord(w))
+          .map(stem),
+      )
+    let asked = 0
+    for (const slug of slugs) {
+      const q = await questFor(slug)
+      const guide = (await loadStudyGuide(slug))!
+      for (const c of allChallenges(q)) {
+        if (c.type !== 'evidence') continue
+        asked++
+        const at = `${slug} ${c.id}`
+        const k = (guide.keyQuotes ?? []).find(
+          (x) => normForMatch(x.text) === normForMatch(c.answer),
+        )
+        expect(k, `${at}: the answer is a key quotation`).toBeTruthy()
+        expect(c.explanation, at).toBe(k!.analysis)
+        // The point is that analysis with its quotations elided, and nothing else.
+        const kept = c.point
+          .split('\u2026')
+          .map((p) => normForMatch(p))
+          .filter(Boolean)
+        for (const part of kept)
+          expect(normForMatch(k!.analysis), `${at}: "${part}"`).toContain(part)
+        const point = contentStems(c.point)
+        for (const w of contentStems(c.answer))
+          expect(point.has(w), `${at}: "${w}" survives`).toBe(false)
+        for (const o of c.options) {
+          expect(
+            o.split(/[^\p{L}'’]+/u).filter(Boolean).length,
+            `${at}: "${o}" is too short to bear out a reading`,
+          ).toBeGreaterThanOrEqual(3)
+          if (o === c.answer) continue
+          for (const w of contentStems(o))
+            expect(point.has(w), `${at}: the wrong option "${o}" shares "${w}"`).toBe(false)
+        }
+      }
+    }
+    expect(asked).toBeGreaterThan(150)
+  }, 300_000)
+
   it('gives every choice one right answer among distinct options', async () => {
     for (const slug of slugs) {
       const q = await questFor(slug)
       for (const c of allChallenges(q)) {
-        if (c.type === 'panel-line' || c.type === 'line-panel' || c.type === 'whose') {
+        if (
+          c.type === 'panel-line' ||
+          c.type === 'line-panel' ||
+          c.type === 'whose' ||
+          c.type === 'evidence'
+        ) {
           expect(c.options, `${slug} ${c.id}`).toContain(c.answer)
           expect(new Set(c.options.map(normForMatch)).size, `${slug} ${c.id}`).toBe(
             c.options.length,

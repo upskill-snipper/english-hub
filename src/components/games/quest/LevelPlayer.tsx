@@ -22,6 +22,7 @@ import { cn } from '@/lib/utils'
 
 import { sendRound } from '../game-round'
 
+import { EvidenceView } from './challenges/EvidenceView'
 import { ItemView } from './challenges/ItemView'
 import {
   LinePanelView,
@@ -48,6 +49,7 @@ const VIEWS: Record<string, (p: ChallengeProps) => React.ReactNode> = {
   whose: WhoseView,
   marker: MarkerView,
   'theme-check': ThemeCheckView,
+  evidence: EvidenceView,
 }
 
 /**

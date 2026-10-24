@@ -293,6 +293,7 @@ export const TEXT_GAMES_DICTIONARY: Record<string, { en: string; ar?: string; es
   'quest.kind.whose': { en: 'Who is described?', ar: 'منو الموصوف؟', es: '¿A quién se describe?' },
   'quest.kind.marker': { en: 'Spot the detail', ar: 'حدّد التفصيل', es: 'Encuentra el detalle' },
   'quest.kind.theme_check': { en: 'Theme check', ar: 'شيّك على الموضوع', es: 'Comprueba el tema' },
+  'quest.kind.evidence': { en: 'Find the evidence', ar: 'لاقِ الدليل', es: 'Encuentra la prueba' },
   'quest.q.panel_line': {
     en: 'Which line belongs in this panel?',
     ar: 'أي سطر مكانه في هاللوحة؟',
@@ -307,6 +308,11 @@ export const TEXT_GAMES_DICTIONARY: Record<string, { en: string; ar?: string; es
     en: 'Tap the words in order to rebuild the quotation.',
     ar: 'اضغط على الكلمات بالترتيب عشان ترجّع الاقتباس.',
     es: 'Toca las palabras en orden para reconstruir la cita.',
+  },
+  'quest.q.evidence': {
+    en: 'This reading is about one of these lines. Which one?',
+    ar: 'هالقراءة عن سطر واحد من هالسطور. أي واحد؟',
+    es: 'Esta lectura trata de uno de estos versos o frases. ¿De cuál?',
   },
   'quest.q.whose': {
     en: 'Which character does the text describe in these words?',
