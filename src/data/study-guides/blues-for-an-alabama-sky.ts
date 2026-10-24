@@ -3,7 +3,13 @@ import type { StudyGuide } from '@/lib/study-guides/types'
 /**
  * Blues for an Alabama Sky, Pearl Cleage (first produced 1995, Alliance
  * Theatre, Atlanta). A complete guide for Cambridge IGCSE Literature in English
- * (0475), where it is a drama set text for 2026 and 2027.
+ * (0475), where it is a drama set text for 2026, 2027 and 2028.
+ *
+ * THE 2028 SERIES. Until 24 October 2026 this file and its scope said 2026 and
+ * 2027 only. The 2028-2030 syllabus keeps the play on the single new Paper 2
+ * (Drama and Unseen, Open text), and the placement card under the hero says
+ * so, so a 2028 candidate was told two things. See
+ * src/lib/board/cambridge-0475.ts.
  *
  * HOW THE QUOTATIONS WERE CHECKED. Every quotation was found verbatim in the
  * Internet Archive's full-text index of two scanned editions: the Dramatists
@@ -60,7 +66,7 @@ export const guide: StudyGuide = {
   author: 'Pearl Cleage',
   form: 'play',
   scope:
-    'The whole play, in two acts of five scenes each. For Cambridge IGCSE Literature in English (0475) it is a drama set text for examination in 2026 and 2027, on Paper 2 (Drama), where for each text you choose between a question on a printed passage and an essay question (across your two texts you answer one of each), and on Paper 3 (Drama, Open Text), where you may take a clean, unannotated copy of the play into the exam. Editions are paginated differently, so this guide locates every moment by act, scene and what is happening, not by page. The UK edition (Nick Hern Books, 2022) also ends slightly differently from the American editions of 1999: see the note on “Hot enough for you?”.',
+    'The whole play, in two acts of five scenes each. For Cambridge IGCSE Literature in English (0475) it is a drama set text for examination in 2026 and 2027, on Paper 2 (Drama), where for each text you choose between a question on a printed passage and an essay question (across your two texts you answer one of each), and on Paper 3 (Drama, Open Text), where you may take a clean, unannotated copy of the play into the exam. It stays on the list for 2028, when one new Paper 2 (Drama and Unseen, Open Text) replaces Papers 2 and 3 and you answer one question from a choice of two on it. Editions are paginated differently, so this guide locates every moment by act, scene and what is happening, not by page. The UK edition (Nick Hern Books, 2022) also ends slightly differently from the American editions of 1999: see the note on “Hot enough for you?”.',
   rights: {
     status: 'copyright',
     acknowledgement:

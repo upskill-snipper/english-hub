@@ -35,6 +35,11 @@ import type { StudyGuide } from '@/lib/study-guides/types'
  * paginate differently (one line sits on page 23 of one edition and 26 of
  * another), so every moment is located by act, scene and the action around it.
  *
+ * THE CAMBRIDGE SERIES. Until 24 October 2026 the scope named Paper 2 and
+ * Paper 3 with no year, directly above a placement card saying the play is set
+ * for 2026 and 2027 and not for 2028, when Paper 3 no longer exists
+ * (src/lib/board/cambridge-0475.ts). It now names the series.
+ *
  * COPYRIGHT. The play is in copyright. Quotations are held under 15 words and
  * the page total under the 400-word ceiling in fair-dealing.ts; longer passages
  * are pointed to and summarised. The nursery rhymes and songs in the play are
@@ -46,7 +51,7 @@ export const guide: StudyGuide = {
   author: 'Shelagh Delaney',
   form: 'play',
   scope:
-    'The whole play, in two acts of two scenes each: Act 1, Scenes 1 and 2, and Act 2, Scenes 1 and 2. For AQA GCSE English Literature (8702) it is a modern prose or drama text on Paper 2, examined closed book, so you need your quotations by heart. For Cambridge IGCSE Literature in English (0475) it is a drama set text on Paper 2 (Drama) or Paper 3 (Drama, Open Text), where you choose between a question on a printed passage and an essay question on the whole play. Editions are paginated differently, so this guide locates every moment by act, scene and what is happening, not by page.',
+    'The whole play, in two acts of two scenes each: Act 1, Scenes 1 and 2, and Act 2, Scenes 1 and 2. For AQA GCSE English Literature (8702) it is a modern prose or drama text on Paper 2, examined closed book, so you need your quotations by heart. For Cambridge IGCSE Literature in English (0475) it is a drama set text for the 2026 and 2027 examinations, on Paper 2 (Drama) or Paper 3 (Drama, Open Text), where you choose between a question on a printed passage and an essay question on the whole play. It is not on the Cambridge list for 2028. Editions are paginated differently, so this guide locates every moment by act, scene and what is happening, not by page.',
   rights: {
     status: 'copyright',
     acknowledgement:
