@@ -59,7 +59,12 @@ export interface AccountReadyData {
  */
 export function buildAccountReadyEmail(data: AccountReadyData): BuiltEmail {
   const endDate = formatEmailDate(data.trialEndsAt)
-  const teacherCopy = data.isTeacher && data.ageGroup === 'ADULT'
+  // A teacher account with no date of birth is UNKNOWN since 24 October 2026
+  // (a role alone is not an age: src/lib/identity/age.ts). It still gets the
+  // teacher copy, which describes what its trial holds and sells nothing, with
+  // the approval rule stated as for any unknown age. A teacher account whose
+  // date of birth says under 18 gets the copy for that age.
+  const teacherCopy = data.isTeacher && (data.ageGroup === 'ADULT' || data.ageGroup === 'UNKNOWN')
 
   const opening = p(
     `Your 7-day free trial has started and runs until ${endDate}. We took no card details.`,
@@ -78,6 +83,9 @@ export function buildAccountReadyEmail(data: AccountReadyData): BuiltEmail {
         ),
         // §5: what the trial covers.
         p('The trial also covers AI essay marking, model answers and courses.'),
+        ...(data.ageGroup === 'UNKNOWN'
+          ? [p("If you are under 16, AI feedback needs a parent's or school's approval first.")]
+          : []),
       ],
       cta: { label: 'Open the examiner tool', url: siteLink('/toolkit/examiner', 'em-d0') },
       footer: 'service',
@@ -223,10 +231,16 @@ export interface PaymentFailedData {
   currency: string | null | undefined
   /**
    * True only when this event moved the account off its paid features (the
-   * webhook wrote `past_due` to the profile). The wording follows the code:
-   * "paused" when access was removed, "stays active for now" when it was not.
+   * webhook wrote `past_due` to the profile). "Paused" is said only then.
    */
   accessPaused: boolean
+  /**
+   * Every price on the failed invoice is an IELTS price. The email then names
+   * the IELTS plan and says nothing about access: IELTS access is
+   * `ielts_status`, which this event does not write and a later
+   * `customer.subscription.updated` decides.
+   */
+  ieltsOnly: boolean
   unsubscribeUrl: string
 }
 
@@ -254,14 +268,31 @@ export function formatAmount(
  * "To avoid any interruption to your subscription" was false: the handler had
  * already written `past_due`, and the web gate reads 'pro' only, so the
  * interruption had happened by the time it was read.
+ *
+ * CORRECTED 24 October 2026. The first version had a second variant for when
+ * access was not paused: "Your plan stays active for now. If no payment
+ * succeeds, the plan will end and AI marking and the other paid features will
+ * stop." Neither sentence was supported. It went to an IELTS-only invoice,
+ * whose handler still wrote `past_due` over a Student or Teacher plan the
+ * person held beside it, so their AI marking had stopped as they read "stays
+ * active". And "the plan will end" depends on what Stripe does after its last
+ * retry (cancel, mark unpaid or leave past due), a dashboard setting nobody
+ * has confirmed. The webhook no longer writes `past_due` for an IELTS-only
+ * invoice, and the email states access only where this event decided it:
+ * "paused" when it moved the profile to `past_due`, and otherwise nothing
+ * about access, only the one action.
  */
 export function buildPaymentFailedEmail(data: PaymentFailedData): BuiltEmail {
   const amount = formatAmount(data.amountMinor, data.currency)
+  const plan = data.ieltsOnly ? 'IELTS plan' : 'English Hub plan'
   const tried = amount
-    ? `We tried to take ${amount} for your English Hub plan and the payment did not go through`
-    : 'We tried to take the payment for your English Hub plan and it did not go through'
+    ? `We tried to take ${amount} for your ${plan} and the payment did not go through`
+    : `We tried to take the payment for your ${plan} and it did not go through`
+  // An IELTS invoice never pauses the main plan's features, whatever the
+  // caller passes: this event does not touch IELTS access.
+  const paused = data.accessPaused && !data.ieltsOnly
 
-  const blocks: LifecycleBlock[] = data.accessPaused
+  const blocks: LifecycleBlock[] = paused
     ? [
         p(
           `${tried}, so AI marking and the other paid features are paused until a payment succeeds.`,
@@ -269,14 +300,14 @@ export function buildPaymentFailedEmail(data: PaymentFailedData): BuiltEmail {
         p('To restart them, update your payment details on your billing page.'),
       ]
     : [
+        p(`${tried}.`),
         p(
-          `${tried}. Your plan stays active for now. If no payment succeeds, the plan will end and AI marking and the other paid features will stop.`,
+          `To keep your ${data.ieltsOnly ? 'IELTS plan' : 'plan'}, update your payment details on your billing page.`,
         ),
-        p('To keep your plan, update your payment details on your billing page.'),
       ]
 
   return renderLifecycleEmail({
-    subject: data.accessPaused
+    subject: paused
       ? 'Your payment did not go through, so your plan is paused'
       : 'Your payment did not go through',
     preheader: 'Update your payment details on your billing page.',
@@ -297,33 +328,98 @@ export function buildPaymentFailedEmail(data: PaymentFailedData): BuiltEmail {
 // holds can be missing (the payments audit's item 11). When that is fixed a
 // date can be added here.
 
+/**
+ * The Stripe statuses /api/stripe/cancel accepts (its CANCELLABLE_STATUSES).
+ * Each has its own true sentence, so the builder takes the status itself.
+ */
+export type CancelledPlanStatus = 'trialing' | 'active' | 'past_due' | 'unpaid'
+
 export interface PlanCancelledData {
-  /** The subscription was still in its free days when it was cancelled. */
-  inTrial: boolean
+  /** The subscription's Stripe status at the moment it was cancelled. */
+  status: CancelledPlanStatus
+  /** Every recurring price on the subscription is an IELTS price. */
+  ieltsOnly: boolean
+  /**
+   * The customer holds another live subscription (active, trialing, past_due
+   * or unpaid), so "your account stays open on the free plan" would be false.
+   */
+  otherPlanRemains: boolean
   unsubscribeUrl: string
 }
 
-/** M7, at the moment the customer cancels in the product. */
+/**
+ * M7, at the moment the customer cancels in the product.
+ *
+ * CORRECTED 24 October 2026. The first version knew only "in trial" or not,
+ * and told everyone not in trial: "You keep the paid features until the end
+ * of the period you have already paid for, and this plan will not charge you
+ * again." The cancel route also cancels `past_due` and `unpaid`
+ * subscriptions. For those the period was not paid; the payment-failed
+ * handler had already written `past_due`, so there were no paid features to
+ * keep; and `cancel_at_period_end` does not void the open invoice, which
+ * Stripe can still try again, so "will not charge you again" was a false
+ * statement about money. Those two statuses now get only what is true: the
+ * plan is cancelled and will not renew, its last payment did not go through,
+ * and cancelling does not cancel that payment. Nothing is said about access,
+ * which for a failed payment depends on which version of the webhook is live.
+ *
+ * It also said "After that your account stays open on the free plan" to a
+ * customer who had cancelled one of two plans by id, and called every plan
+ * "your English Hub plan". It now names an IELTS plan, and when another live
+ * subscription remains it says that plan is not changed instead of promising
+ * the free plan, as the "plan has ended" email already refuses to.
+ */
 export function buildPlanCancelledEmail(data: PlanCancelledData): BuiltEmail {
-  const first = data.inTrial
-    ? p(
-        'We have cancelled your English Hub plan, as you asked. You keep the paid features until your free trial ends, and you will not be charged.',
-      )
-    : p(
-        'We have cancelled your English Hub plan, as you asked. You keep the paid features until the end of the period you have already paid for, and this plan will not charge you again.',
-      )
+  const plan = data.ieltsOnly ? 'IELTS plan' : 'English Hub plan'
+  const shortPlan = data.ieltsOnly ? 'IELTS plan' : 'plan'
+  const failedPayment = data.status === 'past_due' || data.status === 'unpaid'
+
+  let opening: LifecycleBlock[]
+  let subject: string
+  if (data.status === 'trialing') {
+    opening = [
+      p(
+        `We have cancelled your ${plan}, as you asked. You keep the paid features until your free trial ends, and you will not be charged.`,
+      ),
+    ]
+    subject = `Your ${shortPlan} is cancelled: access continues until your free trial ends`
+  } else if (failedPayment) {
+    opening = [
+      p(`We have cancelled your ${plan}, as you asked, so it will not renew.`),
+      p(
+        'The last payment for it did not go through. Cancelling the plan does not cancel that payment.',
+      ),
+    ]
+    subject = `Your ${shortPlan} is cancelled`
+  } else {
+    opening = [
+      p(
+        `We have cancelled your ${plan}, as you asked. You keep the paid features until the end of the period you have already paid for, and this plan will not charge you again.`,
+      ),
+    ]
+    subject = `Your ${shortPlan} is cancelled: access continues until the end of the period you have paid for`
+  }
+
+  const afterwards: LifecycleBlock[] = data.otherPlanRemains
+    ? [p('Your other English Hub plan is not changed by this.')]
+    : [
+        p(
+          failedPayment
+            ? 'When the plan ends, your account stays open on the free plan.'
+            : 'After that your account stays open on the free plan.',
+        ),
+        { kind: 'box', heading: 'What stays free', text: STAYS_FREE_LINE },
+      ]
 
   return renderLifecycleEmail({
-    subject: data.inTrial
-      ? 'Your plan is cancelled: access continues until your free trial ends'
-      : 'Your plan is cancelled: access continues until the end of the period you have paid for',
-    preheader: 'Your account stays open on the free plan after that.',
-    heading: 'Your plan is cancelled',
-    blocks: [
-      first,
-      p('After that your account stays open on the free plan.'),
-      { kind: 'box', heading: 'What stays free', text: STAYS_FREE_LINE },
-    ],
+    subject,
+    preheader: data.otherPlanRemains
+      ? 'Your other plan is not changed by this.'
+      : failedPayment
+        ? 'Your account stays open on the free plan when the plan ends.'
+        : 'Your account stays open on the free plan after that.',
+    heading: data.ieltsOnly ? 'Your IELTS plan is cancelled' : 'Your plan is cancelled',
+    blocks: [...opening, ...afterwards],
     cta: { label: 'Open your billing page', url: siteLink('/account/billing', 'em-cx') },
     footer: 'billing',
     unsubscribeUrl: data.unsubscribeUrl,

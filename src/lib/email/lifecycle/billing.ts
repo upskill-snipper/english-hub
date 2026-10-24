@@ -7,12 +7,17 @@
 // handler had already written `past_due` to the profile, and the web gate
 // reads 'pro' only, so the interruption had happened by the time the email
 // was read. The webhook now says which happened (`accessPaused`), and the
-// copy follows it. M6 was live before this ledger existed, so it is NOT behind
+// copy says "paused" only then; otherwise it states nothing about access
+// (24 October 2026: an earlier "stays active for now ... the plan will end"
+// was unsupported, see buildPaymentFailedEmail). M6 was live before this
+// ledger existed, so it is NOT behind
 // TRIAL_LIFECYCLE_EMAILS_ENABLED, and it sends without a ledger row rather
 // than not at all when the row cannot be written.
 //
 // M7 confirms a cancellation. Nothing did before: /api/stripe/cancel returned
-// a reference number to the page and sent no email, and
+// a reference number to the page and sent no email (the confirmation now
+// follows the cancelled subscription's status, its IELTS-only flag and
+// whether another plan remains), and
 // customer.subscription.deleted revoked access silently. Both are new copy the
 // founder has not yet seen live, so both wait for the switch.
 //
@@ -29,6 +34,7 @@ import {
   buildPaymentFailedEmail,
   buildPlanCancelledEmail,
   buildPlanEndedEmail,
+  type CancelledPlanStatus,
 } from '@/lib/email-templates/lifecycle-emails'
 import {
   LIFECYCLE_DISABLED_REASON,
@@ -56,6 +62,8 @@ export interface PaymentFailedArgs {
   currency: string | null | undefined
   /** True only when this event removed access (the profile was moved to past_due). */
   accessPaused: boolean
+  /** Every price on the failed invoice is an IELTS price. */
+  ieltsOnly: boolean
 }
 
 /** M6. One per invoice, however many of Stripe's retries fail. */
@@ -78,6 +86,7 @@ export async function sendPaymentFailedEmail(
       amountMinor: args.amountMinor,
       currency: args.currency,
       accessPaused: args.accessPaused,
+      ieltsOnly: args.ieltsOnly,
       unsubscribeUrl: unsubscribe.pageUrl,
     })
     return await claimThenSendLifecycle({
@@ -101,11 +110,19 @@ export interface PlanCancelledArgs {
   supabaseUserId: string
   to: string
   subscriptionId: string
-  /** The subscription was in its free days, so nothing has been paid. */
-  inTrial: boolean
+  /** The subscription's Stripe status when it was cancelled; each has its own copy. */
+  status: CancelledPlanStatus
+  /** Every recurring price on it is an IELTS price. */
+  ieltsOnly: boolean
+  /** Another live subscription remains on the customer. */
+  otherPlanRemains: boolean
 }
 
-/** M7, from /api/stripe/cancel once Stripe has accepted the cancellation. */
+/**
+ * M7, from /api/stripe/cancel once Stripe has accepted the cancellation. The
+ * route says which status was cancelled and whether another plan remains,
+ * because both change what is true (see buildPlanCancelledEmail).
+ */
 export async function sendPlanCancelledEmail(
   args: PlanCancelledArgs,
 ): Promise<BillingEmailOutcome> {
@@ -118,7 +135,9 @@ export async function sendPlanCancelledEmail(
     const userId = await tryPrismaUserId(args.supabaseUserId)
     const unsubscribe = unsubscribeLinkFor(args.supabaseUserId)
     const email = buildPlanCancelledEmail({
-      inTrial: args.inTrial,
+      status: args.status,
+      ieltsOnly: args.ieltsOnly,
+      otherPlanRemains: args.otherPlanRemains,
       unsubscribeUrl: unsubscribe.pageUrl,
     })
     return await claimThenSendLifecycle({

@@ -72,6 +72,8 @@ export async function POST(_request: NextRequest) {
     announceTrialReady(await provisionSignupTrial(user.id), {
       supabaseUserId: user.id,
       email: user.email,
+      // An unconfirmed address is sent nothing (account-ready.ts).
+      emailConfirmedAt: user.email_confirmed_at ?? null,
     })
 
     return NextResponse.json({ ok: true, rows: 1 })

@@ -96,7 +96,10 @@ export const dynamic = 'force-dynamic'
  *
  *   • The follow-up (M3) is no longer marketing-gated. It states facts about
  *     the person's own account, so every trialist receives it; the price and
- *     the plan link go to adults only, and a child gets the service copy.
+ *     the plan link go only to adults who may receive marketing (corrected
+ *     24 October 2026: at first it was every adult), and everyone else gets
+ *     the service copy. Neither M2 nor M3 goes to a Stripe customer or to an
+ *     unconfirmed address.
  *   • Every send claims a LifecycleEmail row (unique on user and kind) before
  *     it sends and releases it on failure. The RenewalReminder TRIAL_ENDING
  *     row is still written beside it for M2 and M3, so the record this route

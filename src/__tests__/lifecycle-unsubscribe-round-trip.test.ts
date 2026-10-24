@@ -67,9 +67,13 @@ const BUILDERS: Array<[string, (url: string) => { html: string; text: string }]>
   ['M1', (u) => T.buildFirstEssayEmail({ trialEndsAt: END, unsubscribeUrl: u })],
   [
     'M2',
-    (u) => L.buildTrialEndingEmail({ trialEndsAt: END, audience: 'minor', unsubscribeUrl: u }),
+    (u) => L.buildTrialEndingEmail({ trialEndsAt: END, audience: 'service', unsubscribeUrl: u }),
   ],
-  ['M3', (u) => L.buildTrialEndedEmail({ trialEndsAt: END, audience: 'adult', unsubscribeUrl: u })],
+  [
+    'M3',
+    (u) =>
+      L.buildTrialEndedEmail({ trialEndsAt: END, audience: 'consented-adult', unsubscribeUrl: u }),
+  ],
   ['M4', (u) => T.buildQuestsFreeEmail({ trialEndedAt: END, isTeacher: false, unsubscribeUrl: u })],
   ['M5', (u) => T.buildOneEssayEmail({ trialEndedAt: END, isTeacher: true, unsubscribeUrl: u })],
   [
@@ -79,10 +83,20 @@ const BUILDERS: Array<[string, (url: string) => { html: string; text: string }]>
         amountMinor: 2999,
         currency: 'gbp',
         accessPaused: false,
+        ieltsOnly: false,
         unsubscribeUrl: u,
       }),
   ],
-  ['M7 cancelled', (u) => T.buildPlanCancelledEmail({ inTrial: false, unsubscribeUrl: u })],
+  [
+    'M7 cancelled',
+    (u) =>
+      T.buildPlanCancelledEmail({
+        status: 'past_due',
+        ieltsOnly: false,
+        otherPlanRemains: false,
+        unsubscribeUrl: u,
+      }),
+  ],
   ['M7 ended', (u) => T.buildPlanEndedEmail({ unsubscribeUrl: u })],
 ]
 

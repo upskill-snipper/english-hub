@@ -83,7 +83,18 @@ function profile(over: Record<string, unknown> = {}) {
   }
 }
 
-const ARGS = { supabaseUserId: SUPABASE_ID, prismaUserId: PRISMA_ID, email: 'learner@example.com' }
+const CONFIRMED_AT = '2026-10-20T09:00:00.000Z'
+const ARGS = {
+  supabaseUserId: SUPABASE_ID,
+  prismaUserId: PRISMA_ID,
+  email: 'learner@example.com',
+  emailConfirmedAt: CONFIRMED_AT,
+}
+const CTX = {
+  supabaseUserId: SUPABASE_ID,
+  email: 'learner@example.com',
+  emailConfirmedAt: CONFIRMED_AT,
+}
 
 beforeEach(() => {
   process.env.TRIAL_LIFECYCLE_EMAILS_ENABLED = 'true'
@@ -122,7 +133,7 @@ describe('M0 account ready', () => {
       /^<https:\/\/theenglishhub\.app\/api\/unsubscribe\?token=/,
     )
     expect(options?.headers?.['List-Unsubscribe-Post']).toBe('List-Unsubscribe=One-Click')
-    expect(html).toContain('/revision/texts?ref=em-d0')
+    expect(html).toContain('/revision/texts?src=em-d0')
     // The typed name is never printed: it is free text on a children's product.
     expect(html).not.toContain('Click here')
     expect(text).not.toContain('Click here')
@@ -190,36 +201,72 @@ describe('M0 account ready', () => {
   })
 
   it('sends an adult teacher to the examiner tool', async () => {
+    state.profile = profile({ role: 'teacher', date_of_birth: '1985-03-03' })
+    await sendAccountReadyEmail(ARGS)
+    expect(sendEmail.mock.calls[0]![2]).toContain('/toolkit/examiner?src=em-d0')
+    expect(sendEmail.mock.calls[0]![3]).not.toContain('approval')
+  })
+
+  // A role alone is not an age (24 October 2026): a teacher with no date of
+  // birth is UNKNOWN. The teacher copy still fits, and sells nothing, but it
+  // states the approval rule as it does for any unknown age.
+  it('gives a teacher with no date of birth the teacher copy and the approval rule', async () => {
     state.profile = profile({ role: 'teacher', date_of_birth: null })
     await sendAccountReadyEmail(ARGS)
-    expect(sendEmail.mock.calls[0]![2]).toContain('/toolkit/examiner?ref=em-d0')
+    const [, , html, text] = sendEmail.mock.calls[0]!
+    expect(html).toContain('/toolkit/examiner?src=em-d0')
+    expect(text).toContain(
+      "If you are under 16, AI feedback needs a parent's or school's approval first.",
+    )
+    expect(text).not.toContain('£')
+  })
+
+  it('gives a teacher account whose date of birth says 14 the copy for a 14-year-old', async () => {
+    state.profile = profile({ role: 'teacher', date_of_birth: '2012-01-01' })
+    await sendAccountReadyEmail(ARGS)
+    const [, , html, text] = sendEmail.mock.calls[0]!
+    expect(html).toContain('/revision/texts?src=em-d0')
+    expect(text).toContain("AI feedback needs a parent's or school's approval first.")
   })
 
   it('sends nothing without an address', async () => {
     expect((await sendAccountReadyEmail({ ...ARGS, email: null })).status).toBe('skipped')
     expect(sendEmail).not.toHaveBeenCalled()
   })
+
+  // record-login provisions at any sign-in, and whether an unconfirmed
+  // address can sign in is a Supabase setting nobody has checked.
+  it('sends nothing to an address that has not been confirmed', async () => {
+    for (const emailConfirmedAt of [null, undefined, '']) {
+      expect(await sendAccountReadyEmail({ ...ARGS, emailConfirmedAt })).toEqual({
+        status: 'skipped',
+        reason: 'email-unconfirmed',
+      })
+    }
+    expect(sendEmail).not.toHaveBeenCalled()
+    expect(state.ledger.size).toBe(0)
+  })
 })
 
 describe('announceTrialReady', () => {
   it('does nothing unless a trial was provisioned', async () => {
-    announceTrialReady(
-      { provisioned: false, reason: 'already-subscribed' },
-      {
-        supabaseUserId: SUPABASE_ID,
-        email: 'learner@example.com',
-      },
-    )
-    announceTrialReady(undefined, { supabaseUserId: SUPABASE_ID, email: 'learner@example.com' })
+    announceTrialReady({ provisioned: false, reason: 'already-subscribed' }, CTX)
+    announceTrialReady(undefined, CTX)
     await new Promise((r) => setTimeout(r, 10))
     expect(sendEmail).not.toHaveBeenCalled()
   })
 
   it('sends M0 when the provisioner says it provisioned', async () => {
+    announceTrialReady({ provisioned: true, trialEndsAt: TRIAL_END, prismaUserId: PRISMA_ID }, CTX)
+    await vi.waitFor(() => expect(sendEmail).toHaveBeenCalledTimes(1))
+  })
+
+  it('sends nothing for a provisioned trial whose address is unconfirmed', async () => {
     announceTrialReady(
       { provisioned: true, trialEndsAt: TRIAL_END, prismaUserId: PRISMA_ID },
-      { supabaseUserId: SUPABASE_ID, email: 'learner@example.com' },
+      { ...CTX, emailConfirmedAt: null },
     )
-    await vi.waitFor(() => expect(sendEmail).toHaveBeenCalledTimes(1))
+    await new Promise((r) => setTimeout(r, 10))
+    expect(sendEmail).not.toHaveBeenCalled()
   })
 })

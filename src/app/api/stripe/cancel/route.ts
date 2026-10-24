@@ -39,8 +39,9 @@
 import { NextRequest, NextResponse } from 'next/server'
 import { keepAlive } from '@/lib/keep-alive'
 import { sendPlanCancelledEmail } from '@/lib/email/lifecycle/billing'
+import type { CancelledPlanStatus } from '@/lib/email-templates/lifecycle-emails'
 import Stripe from 'stripe'
-import { stripe } from '@/lib/stripe'
+import { stripe, isIeltsPriceId } from '@/lib/stripe'
 import { createServerSupabaseClient, createServiceRoleClient } from '@/lib/supabase/server'
 import { rateLimit, getClientIp } from '@/lib/rate-limit'
 
@@ -258,16 +259,38 @@ export async function POST(request: NextRequest) {
     // holds up the confirmation, and states no date: periodEndIso reads a
     // field the pinned Stripe API version does not return at the top level
     // (the payments audit's item 11). Behind TRIAL_LIFECYCLE_EMAILS_ENABLED.
+    //
+    // It is told three things, because each changes what is true (corrected
+    // 24 October 2026). The status: a past_due or unpaid subscription has no
+    // paid period to keep, and its open invoice survives cancel_at_period_end,
+    // so "will not charge you again" was false for it. Whether the plan is
+    // IELTS-only, so the email names it. And whether another live
+    // subscription remains, since a customer who cancels one of two plans by
+    // id is not "on the free plan" afterwards.
+    //
+    // In its own try: Stripe has already accepted the cancellation, so a
+    // fault in preparing the email must never turn it into a 500 the
+    // customer reads as "not cancelled".
     if (user.email) {
-      keepAlive(
-        sendPlanCancelledEmail({
-          supabaseUserId: user.id,
-          to: user.email,
-          subscriptionId: target.id,
-          inTrial: target.status === 'trialing',
-        }),
-        '[api/stripe/cancel] M7',
-      )
+      try {
+        keepAlive(
+          sendPlanCancelledEmail({
+            supabaseUserId: user.id,
+            to: user.email,
+            subscriptionId: target.id,
+            status: target.status as CancelledPlanStatus,
+            ieltsOnly: isIeltsOnlySubscription(target),
+            otherPlanRemains: all.data.some(
+              (s) =>
+                s.id !== target.id &&
+                (CANCELLABLE_STATUSES as readonly string[]).includes(s.status),
+            ),
+          }),
+          '[api/stripe/cancel] M7',
+        )
+      } catch (err) {
+        console.error('[api/stripe/cancel] M7 could not be prepared:', err)
+      }
     }
 
     return NextResponse.json({
@@ -290,6 +313,17 @@ export async function POST(request: NextRequest) {
 
     return NextResponse.json({ error: 'Internal server error' }, { status: 500 })
   }
+}
+
+/**
+ * True when every recurring price on the subscription is an IELTS price, the
+ * webhook's own test (isIeltsOnlySubscription in the Stripe webhook route).
+ * A subscription with no recurring price is not IELTS-only.
+ */
+function isIeltsOnlySubscription(subscription: Stripe.Subscription): boolean {
+  const recurring = (subscription.items?.data ?? []).filter((i) => i.price?.recurring)
+  if (recurring.length === 0) return false
+  return recurring.every((i) => isIeltsPriceId(i.price?.id))
 }
 
 /** The end of the paid period as an ISO string, or null when Stripe omits it. */

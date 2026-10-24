@@ -85,23 +85,42 @@ const CASES: Case[] = [
     child: false,
   },
   {
-    name: 'M2 adult',
-    email: buildTrialEndingEmail({ trialEndsAt: END, audience: 'adult', unsubscribeUrl: UNSUB }),
-    child: false,
-  },
-  {
-    name: 'M2 child',
-    email: buildTrialEndingEmail({ trialEndsAt: END, audience: 'minor', unsubscribeUrl: UNSUB }),
+    name: 'M0 teacher, no date of birth',
+    email: buildAccountReadyEmail({
+      trialEndsAt: END,
+      ageGroup: 'UNKNOWN',
+      isTeacher: true,
+      unsubscribeUrl: UNSUB,
+    }),
     child: true,
   },
   {
-    name: 'M3 adult',
-    email: buildTrialEndedEmail({ trialEndsAt: END, audience: 'adult', unsubscribeUrl: UNSUB }),
+    name: 'M2 consented adult',
+    email: buildTrialEndingEmail({
+      trialEndsAt: END,
+      audience: 'consented-adult',
+      unsubscribeUrl: UNSUB,
+    }),
     child: false,
   },
   {
-    name: 'M3 child',
-    email: buildTrialEndedEmail({ trialEndsAt: END, audience: 'minor', unsubscribeUrl: UNSUB }),
+    // Every child, unknown age, and every adult who has not consented.
+    name: 'M2 service',
+    email: buildTrialEndingEmail({ trialEndsAt: END, audience: 'service', unsubscribeUrl: UNSUB }),
+    child: true,
+  },
+  {
+    name: 'M3 consented adult',
+    email: buildTrialEndedEmail({
+      trialEndsAt: END,
+      audience: 'consented-adult',
+      unsubscribeUrl: UNSUB,
+    }),
+    child: false,
+  },
+  {
+    name: 'M3 service',
+    email: buildTrialEndedEmail({ trialEndsAt: END, audience: 'service', unsubscribeUrl: UNSUB }),
     child: true,
   },
   {
@@ -120,6 +139,7 @@ const CASES: Case[] = [
       amountMinor: 699,
       currency: 'gbp',
       accessPaused: true,
+      ieltsOnly: false,
       unsubscribeUrl: UNSUB,
     }),
     // The amount is the customer's own payment, not an offer, so the "no £"
@@ -127,23 +147,58 @@ const CASES: Case[] = [
     child: false,
   },
   {
-    name: 'M6 kept',
+    name: 'M6 not paused',
     email: buildPaymentFailedEmail({
       amountMinor: 699,
       currency: 'gbp',
       accessPaused: false,
+      ieltsOnly: false,
       unsubscribeUrl: UNSUB,
     }),
     child: false,
   },
   {
-    name: 'M7 cancelled',
-    email: buildPlanCancelledEmail({ inTrial: false, unsubscribeUrl: UNSUB }),
-    child: true,
+    name: 'M6 IELTS',
+    email: buildPaymentFailedEmail({
+      amountMinor: 3900,
+      currency: 'gbp',
+      // Passed true on purpose: an IELTS invoice must never say "paused".
+      accessPaused: true,
+      ieltsOnly: true,
+      unsubscribeUrl: UNSUB,
+    }),
+    child: false,
   },
+  ...(['active', 'trialing', 'past_due', 'unpaid'] as const).flatMap((status) => [
+    {
+      name: `M7 cancelled ${status}`,
+      email: buildPlanCancelledEmail({
+        status,
+        ieltsOnly: false,
+        otherPlanRemains: false,
+        unsubscribeUrl: UNSUB,
+      }),
+      child: true,
+    },
+    {
+      name: `M7 cancelled ${status}, another plan remains`,
+      email: buildPlanCancelledEmail({
+        status,
+        ieltsOnly: false,
+        otherPlanRemains: true,
+        unsubscribeUrl: UNSUB,
+      }),
+      child: true,
+    },
+  ]),
   {
-    name: 'M7 cancelled in trial',
-    email: buildPlanCancelledEmail({ inTrial: true, unsubscribeUrl: UNSUB }),
+    name: 'M7 cancelled IELTS',
+    email: buildPlanCancelledEmail({
+      status: 'active',
+      ieltsOnly: true,
+      otherPlanRemains: true,
+      unsubscribeUrl: UNSUB,
+    }),
     child: true,
   },
   { name: 'M7 ended', email: buildPlanEndedEmail({ unsubscribeUrl: UNSUB }), child: true },
@@ -193,7 +248,11 @@ describe.each(CASES)('$name', ({ email, child }) => {
   it('carries exactly two links: one tracked call to action and the unsubscribe link', () => {
     const hrefs = [...email.html.matchAll(/href="([^"]+)"/g)].map((m) => m[1])
     expect(hrefs).toHaveLength(2)
-    expect(hrefs[0]).toMatch(/^https:\/\/theenglishhub\.app\/[a-z/-]+\?ref=em-/)
+    // `?src=`, never `?ref=`: ref is the affiliate parameter, and the
+    // middleware's last-click rule would let an email link overwrite a real
+    // affiliate's attribution (24 October 2026).
+    expect(hrefs[0]).toMatch(/^https:\/\/theenglishhub\.app\/[a-z/-]+\?src=em-[a-z0-9-]+$/)
+    expect(`${email.html}\n${email.text}`).not.toMatch(/[?&]ref=/)
     expect(hrefs[1]).toBe(UNSUB)
     expect(email.text).toContain(UNSUB)
     expect(email.text).toContain(hrefs[0])
@@ -249,7 +308,16 @@ describe('lines that must be the claim sheet’s own', () => {
   it('describes the examiner tool in §6.3’s words for a teacher', () => {
     const t = CASES.find((x) => x.name === 'M0 teacher')!.email
     expect(t.text).toContain('a second opinion, never the award')
-    expect(t.html).toContain('/toolkit/examiner?ref=em-d0')
+    expect(t.html).toContain('/toolkit/examiner?src=em-d0')
+    expect(t.text).not.toContain('approval')
+  })
+
+  it('gives a teacher with no date of birth the teacher copy and the approval rule', () => {
+    const t = CASES.find((x) => x.name === 'M0 teacher, no date of birth')!.email
+    expect(t.html).toContain('/toolkit/examiner?src=em-d0')
+    expect(t.text).toContain(
+      "If you are under 16, AI feedback needs a parent's or school's approval first.",
+    )
   })
 
   it('counts quests as the sheet does (§2)', () => {
@@ -262,17 +330,40 @@ describe('lines that must be the claim sheet’s own', () => {
   })
 })
 
-describe('M6 says what happened to access, truthfully either way', () => {
+const billing = CASES.filter((c) => /^M[67]/.test(c.name))
+const byName = (name: string) => CASES.find((x) => x.name === name)!.email
+
+describe('M6 says what happened to access only where the webhook decided it', () => {
   it('says "paused" only when access was removed', () => {
-    const paused = CASES.find((x) => x.name === 'M6 paused')!.email
-    const kept = CASES.find((x) => x.name === 'M6 kept')!.email
+    const paused = byName('M6 paused')
     expect(paused.subject).toBe('Your payment did not go through, so your plan is paused')
     expect(paused.text).toContain(
       'We tried to take £6.99 for your English Hub plan and the payment did not go through, so AI marking and the other paid features are paused until a payment succeeds.',
     )
-    expect(kept.subject).toBe('Your payment did not go through')
-    expect(kept.text).toContain('Your plan stays active for now.')
-    expect(kept.text).not.toContain('paused')
+  })
+
+  // 24 October 2026. The other variant said "Your plan stays active for now.
+  // If no payment succeeds, the plan will end", which went to a customer whose
+  // access the same handler had just revoked, and rested on a Stripe dunning
+  // setting nobody has confirmed.
+  it('otherwise states nothing about access, only the one action', () => {
+    const notPaused = byName('M6 not paused')
+    expect(notPaused.subject).toBe('Your payment did not go through')
+    expect(notPaused.text).toContain(
+      'We tried to take £6.99 for your English Hub plan and the payment did not go through.',
+    )
+    expect(notPaused.text).toContain(
+      'To keep your plan, update your payment details on your billing page.',
+    )
+    expect(prose(notPaused)).not.toMatch(/paused|stays active|will end|will stop|for now/i)
+  })
+
+  it('names an IELTS plan, and never says "paused" for one, whatever it is passed', () => {
+    const ielts = byName('M6 IELTS')
+    expect(ielts.subject).toBe('Your payment did not go through')
+    expect(ielts.text).toContain('We tried to take £39.00 for your IELTS plan')
+    expect(ielts.text).toContain('To keep your IELTS plan, update your payment details')
+    expect(prose(ielts)).not.toMatch(/paused|AI marking|stays active|will end/i)
   })
 
   it('never promises "to avoid any interruption"', () => {
@@ -286,33 +377,84 @@ describe('M6 says what happened to access, truthfully either way', () => {
       amountMinor: null,
       currency: null,
       accessPaused: true,
+      ieltsOnly: false,
       unsubscribeUrl: UNSUB,
     })
     expect(none.text).not.toContain('£')
   })
 })
 
+describe('M7, cancelled: each status gets only what is true for it', () => {
+  it('an active plan keeps its paid period and will not charge again', () => {
+    const e = byName('M7 cancelled active')
+    expect(e.subject).toBe(
+      'Your plan is cancelled: access continues until the end of the period you have paid for',
+    )
+    expect(e.text).toContain(
+      'You keep the paid features until the end of the period you have already paid for, and this plan will not charge you again.',
+    )
+  })
+
+  it('a plan in its free days keeps them and is not charged', () => {
+    const e = byName('M7 cancelled trialing')
+    expect(e.subject).toBe('Your plan is cancelled: access continues until your free trial ends')
+    expect(e.text).toContain(
+      'You keep the paid features until your free trial ends, and you will not be charged.',
+    )
+  })
+
+  // The blocker of 24 October 2026: past_due and unpaid were told they kept a
+  // period "already paid for" and would not be charged again. Nothing was
+  // paid, access had already gone, and the open invoice survives
+  // cancel_at_period_end, so Stripe can still try it.
+  it.each(['past_due', 'unpaid'])('%s: no paid period, no promise about charges', (status) => {
+    const e = byName(`M7 cancelled ${status}`)
+    const text = prose(e)
+    expect(e.subject).toBe('Your plan is cancelled')
+    expect(e.text).toContain(
+      'We have cancelled your English Hub plan, as you asked, so it will not renew.',
+    )
+    expect(e.text).toContain(
+      'The last payment for it did not go through. Cancelling the plan does not cancel that payment.',
+    )
+    expect(e.text).toContain('When the plan ends, your account stays open on the free plan.')
+    expect(text).not.toMatch(
+      /paid for|already paid|will not charge|not be charged|keep the paid features|access continues/i,
+    )
+  })
+
+  it.each(['active', 'trialing', 'past_due', 'unpaid'])(
+    '%s with another live plan: no free-plan promise, and says the other plan is untouched',
+    (status) => {
+      const e = byName(`M7 cancelled ${status}, another plan remains`)
+      expect(e.text).toContain('Your other English Hub plan is not changed by this.')
+      expect(prose(e)).not.toMatch(/free plan|What stays free/i)
+    },
+  )
+
+  it('names an IELTS plan', () => {
+    const e = byName('M7 cancelled IELTS')
+    expect(e.subject).toBe(
+      'Your IELTS plan is cancelled: access continues until the end of the period you have paid for',
+    )
+    expect(e.text).toContain('We have cancelled your IELTS plan, as you asked.')
+  })
+})
+
 describe('the billing notices sell nothing', () => {
   it('carry no price line and no plan link, since a child may hold a plan', () => {
-    for (const name of [
-      'M6 paused',
-      'M6 kept',
-      'M7 cancelled',
-      'M7 cancelled in trial',
-      'M7 ended',
-    ]) {
-      const e = CASES.find((x) => x.name === name)!.email
-      expect(prose(e), name).not.toMatch(/a month or|planned standard/)
-      expect(e.html, name).not.toContain('/pricing')
+    expect(billing.length).toBeGreaterThanOrEqual(12)
+    for (const { name, email } of billing) {
+      expect(prose(email), name).not.toMatch(/a month or|planned standard/)
+      expect(email.html, name).not.toContain('/pricing')
     }
   })
 })
 
 describe('M7 states no date', () => {
   it('until the period-end read is fixed (payments audit item 11)', () => {
-    for (const name of ['M7 cancelled', 'M7 cancelled in trial', 'M7 ended']) {
-      const text = CASES.find((x) => x.name === name)!.email.text
-      expect(text, name).not.toMatch(
+    for (const { name, email } of billing.filter((c) => c.name.startsWith('M7'))) {
+      expect(email.text, name).not.toMatch(
         /\b\d{1,2} (January|February|March|April|May|June|July|August|September|October|November|December) \d{4}\b/,
       )
     }

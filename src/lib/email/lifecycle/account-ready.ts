@@ -16,6 +16,13 @@
 // own account and sells nothing, so a child receives it too, with the
 // approval line §6.1 requires for under-16s. An account whose date of birth
 // says under 13 is bad data (registration refuses them) and gets nothing.
+//
+// ONLY A CONFIRMED ADDRESS (added 24 October 2026). record-login provisions a
+// trial at any sign-in, and whether Supabase lets an unconfirmed address sign
+// in depends on its "Confirm email" setting, which nobody has checked
+// (document 08, B3 item 3). With it off, a mistyped or someone else's address
+// would have been sent this email. The callers pass the session's
+// email_confirmed_at, and nothing goes without it.
 // ────────────────────────────────────────────────────────────────────────────
 
 import { prisma } from '@/lib/prisma'
@@ -42,8 +49,13 @@ export interface AccountReadyArgs {
   supabaseUserId: string
   /** The Prisma id provisionSignupTrial wrote the trial row against. */
   prismaUserId: string
-  /** The confirmed address from the auth session. */
+  /** The address from the auth session. */
   email: string | null | undefined
+  /**
+   * `auth.users.email_confirmed_at` from the same session. Nothing is sent
+   * unless it is set: see the header.
+   */
+  emailConfirmedAt: string | null | undefined
   now?: Date
 }
 
@@ -56,6 +68,7 @@ export async function sendAccountReadyEmail(args: AccountReadyArgs): Promise<Acc
   try {
     const now = args.now ?? new Date()
     if (!args.email) return { status: 'skipped', reason: 'no-email' }
+    if (!args.emailConfirmedAt) return { status: 'skipped', reason: 'email-unconfirmed' }
 
     // The date comes from the row, not from the provisioner's return value:
     // an existing row is never overwritten by the provisioner's upsert, so its
@@ -134,7 +147,11 @@ export async function sendAccountReadyEmail(args: AccountReadyArgs): Promise<Acc
  */
 export function announceTrialReady(
   result: TrialProvisionResult | null | undefined,
-  ctx: { supabaseUserId: string; email: string | null | undefined },
+  ctx: {
+    supabaseUserId: string
+    email: string | null | undefined
+    emailConfirmedAt: string | null | undefined
+  },
 ): void {
   if (!result || result.provisioned !== true || !result.prismaUserId) return
   keepAlive(
@@ -142,6 +159,7 @@ export function announceTrialReady(
       supabaseUserId: ctx.supabaseUserId,
       prismaUserId: result.prismaUserId,
       email: ctx.email,
+      emailConfirmedAt: ctx.emailConfirmedAt,
     }).then((outcome) => {
       if (outcome.status !== 'skipped' && outcome.status !== 'sent') {
         console.warn(`${LOG} outcome ${outcome.status}`)

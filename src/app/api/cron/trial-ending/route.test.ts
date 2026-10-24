@@ -1,9 +1,12 @@
 /**
  * Tests for the trial-ending cron route: the no-card trial sequence, M1 to M5.
  *
- * Strategy: mock Prisma, the Supabase service client, sendEmail, the marketing
- * preference and runCron, then drive GET/POST directly. The assertions lock
- * down what was broken or risky in this area:
+ * Strategy: mock Prisma, the Supabase service client (profiles, auth users and
+ * marking_submissions), identity resolution, sendEmail and runCron, then drive
+ * GET/POST directly. The marketing preference is NOT mocked: the real
+ * isMarketingAllowed runs against the mocked stores and ledger, so the
+ * consent-centre case below is tested end to end. The assertions lock down
+ * what was broken or risky in this area:
  *
  *   1. Vercel Cron sends GET with `Authorization: Bearer <CRON_SECRET>`.
  *      Two crons here previously shipped POST-only and returned 405 to
@@ -16,6 +19,11 @@
  *      copy with no price and no plan link, and never M1, M4 or M5, whatever
  *      their marketing setting says. The 2000-01-01 placeholder is not an age.
  *   5. M3 is a service notice now, so it is not gated on marketing consent.
+ *   6. (24 October 2026.) The price in M2 and M3 needs an adult who may
+ *      receive marketing; a withdrawal in the consent centre counts; neither
+ *      goes to a Stripe customer; every email goes to the confirmed auth
+ *      address only; the younger of two real dates decides; and a role alone
+ *      is not an age.
  */
 
 import { describe, it, expect, vi, beforeEach } from 'vitest'
@@ -36,7 +44,6 @@ type SubRow = {
   user: {
     id: string
     supabaseUserId: string | null
-    email: string | null
     dateOfBirth: Date | null
     isMinor: boolean
     role: string
@@ -54,6 +61,8 @@ type Profile = {
   stripe_customer_id: string | null
 }
 
+type AuthUser = { email: string | null; email_confirmed_at: string | null } | 'error'
+
 const state: {
   endingSoon: SubRow[]
   recentlyExpired: SubRow[]
@@ -62,7 +71,13 @@ const state: {
   oneEssay: SubRow[]
   profiles: Profile[]
   profilesError: boolean
+  /** No profiles row at all comes back, rather than the default one. */
+  profileRowsMissing: boolean
+  /** Supabase ids whose PrivacySettings.marketingEnabled is true. */
   consented: Set<string>
+  /** Supabase ids whose latest Consent MARKETING row is a withdrawal. */
+  withdrawnInConsentCentre: Set<string>
+  authUsers: Map<string, AuthUser>
   essayCount: number
   ieltsCount: number
   submissionCount: number | null
@@ -83,7 +98,10 @@ const state: {
   oneEssay: [],
   profiles: [],
   profilesError: false,
+  profileRowsMissing: false,
   consented: new Set(),
+  withdrawnInConsentCentre: new Set(),
+  authUsers: new Map(),
   essayCount: 0,
   ieltsCount: 0,
   submissionCount: 0,
@@ -98,6 +116,20 @@ const state: {
   renewalCreateThrows: false,
 }
 
+const DEFAULT_AUTH_EMAIL = 'learner@example.com'
+
+/** A profile for an id the test did not describe: a student with no date of birth, no Stripe id. */
+function defaultProfile(id: string): Profile {
+  return {
+    id,
+    role: 'student',
+    date_of_birth: null,
+    is_minor: null,
+    subscription_status: 'pro',
+    stripe_customer_id: null,
+  }
+}
+
 // ─── Mocks ───────────────────────────────────────────────────────────────
 
 type Where = {
@@ -105,6 +137,10 @@ type Where = {
   currentPeriodStart?: unknown
   currentPeriodEnd: { gt?: Date; gte?: Date; lt?: Date; lte?: Date }
 }
+
+/** tryPrismaUserId's answer in this test: the Supabase id, marked. */
+const cuidOf = (supabaseId: string) => `cuid:${supabaseId}`
+const supabaseIdOf = (cuid: string) => cuid.replace(/^cuid:/, '')
 
 vi.mock('@/lib/prisma', () => ({
   prisma: {
@@ -153,19 +189,60 @@ vi.mock('@/lib/prisma', () => ({
     },
     essay: { count: vi.fn(async () => state.essayCount) },
     iELTSAttempt: { count: vi.fn(async () => state.ieltsCount) },
+    // The two stores isMarketingAllowed reads through Prisma.
+    privacySettings: {
+      findUnique: vi.fn(async ({ where }: { where: { userId: string } }) => ({
+        marketingEnabled: state.consented.has(supabaseIdOf(where.userId)),
+      })),
+    },
+    consent: {
+      findFirst: vi.fn(async ({ where }: { where: { userId: string } }) =>
+        state.withdrawnInConsentCentre.has(supabaseIdOf(where.userId))
+          ? { granted: false, withdrawnAt: new Date(Date.now() - DAY) }
+          : null,
+      ),
+    },
   },
 }))
 
+vi.mock('@/lib/identity', async () => {
+  const actual = await vi.importActual<typeof import('@/lib/identity')>('@/lib/identity')
+  return { ...actual, tryPrismaUserId: async (id: string) => cuidOf(id) }
+})
+
+function profilesFor(ids: string[]): Profile[] {
+  if (state.profileRowsMissing) return []
+  return ids.map((id) => state.profiles.find((p) => p.id === id) ?? defaultProfile(id))
+}
+
 vi.mock('@/lib/supabase/server', () => ({
   createServiceRoleClient: () => ({
+    auth: {
+      admin: {
+        getUserById: vi.fn(async (id: string) => {
+          const u = state.authUsers.get(id) ?? {
+            email: DEFAULT_AUTH_EMAIL,
+            email_confirmed_at: '2026-10-01T00:00:00.000Z',
+          }
+          if (u === 'error') return { data: { user: null }, error: { message: 'auth down' } }
+          return { data: { user: { id, ...u } }, error: null }
+        }),
+      },
+    },
     from: (table: string) => {
       if (table === 'profiles') {
         return {
           select: () => ({
+            // The cron's batch read.
             in: async (_col: string, ids: string[]) =>
               state.profilesError
                 ? { data: null, error: { message: 'profiles down' } }
-                : { data: state.profiles.filter((p) => ids.includes(p.id)), error: null },
+                : { data: profilesFor(ids), error: null },
+            // isMarketingAllowed's read of profiles.marketing_opt_in, which
+            // is false on every row in production.
+            eq: () => ({
+              maybeSingle: async () => ({ data: { marketing_opt_in: false }, error: null }),
+            }),
           }),
         }
       }
@@ -182,10 +259,6 @@ vi.mock('@/lib/supabase/server', () => ({
       }
     },
   }),
-}))
-
-vi.mock('@/lib/email/marketing-preference', () => ({
-  isMarketingAllowed: async (id: string | null) => (id ? state.consented.has(id) : false),
 }))
 
 type SendArgs = [string, string, string, string, { headers?: Record<string, string> }?]
@@ -216,7 +289,10 @@ beforeEach(() => {
   state.oneEssay = []
   state.profiles = []
   state.profilesError = false
+  state.profileRowsMissing = false
   state.consented = new Set()
+  state.withdrawnInConsentCentre = new Set()
+  state.authUsers = new Map()
   state.essayCount = 0
   state.ieltsCount = 0
   state.submissionCount = 0
@@ -248,6 +324,7 @@ async function run() {
   return { res, body: await res.json() }
 }
 
+const UID = '11111111-2222-4333-8444-555555555555'
 const ADULT_DOB = new Date('1990-05-01T00:00:00.000Z')
 const CHILD_DOB = new Date('2011-05-01T00:00:00.000Z')
 const PLACEHOLDER_DOB = new Date('2000-01-01T00:00:00.000Z')
@@ -265,8 +342,7 @@ function makeSub(
     ...rest,
     user: {
       id: 'u_1',
-      supabaseUserId: '11111111-2222-4333-8444-555555555555',
-      email: 'learner@example.com',
+      supabaseUserId: UID,
       dateOfBirth: ADULT_DOB,
       isMinor: false,
       role: 'STUDENT',
@@ -420,10 +496,18 @@ describe('M2 trial ending', () => {
     expect(sendEmailMock).not.toHaveBeenCalled()
   })
 
-  it('skips an account with no email address', async () => {
-    state.endingSoon = [makeSub({ user: { email: null } })]
+  it('skips an account whose auth user has no email address', async () => {
+    state.authUsers.set(UID, { email: null, email_confirmed_at: '2026-10-01T00:00:00.000Z' })
+    state.endingSoon = [makeSub()]
     const { body } = await run()
     expect(body.skipped.noEmail).toBe(1)
+    expect(sendEmailMock).not.toHaveBeenCalled()
+  })
+
+  it('skips an account with no Supabase id to address or unsubscribe it by', async () => {
+    state.endingSoon = [makeSub({ user: { supabaseUserId: null } })]
+    const { body } = await run()
+    expect(body.skipped.noSupabaseId).toBe(1)
     expect(sendEmailMock).not.toHaveBeenCalled()
   })
 
@@ -435,26 +519,90 @@ describe('M2 trial ending', () => {
   })
 })
 
-// ─── Audience: adult, child, unknown, placeholder ────────────────────────
+// ─── Only a confirmed address (24 October 2026) ──────────────────────────
+
+describe('the address every email goes to', () => {
+  it('is the auth account’s own, confirmed address', async () => {
+    state.authUsers.set(UID, {
+      email: 'current@example.com',
+      email_confirmed_at: '2026-10-01T00:00:00.000Z',
+    })
+    state.endingSoon = [makeSub()]
+    await run()
+    expect(sent().to).toBe('current@example.com')
+  })
+
+  it('is never an unconfirmed one, for any email in the sequence', async () => {
+    state.authUsers.set(UID, { email: 'typo@example.com', email_confirmed_at: null })
+    state.profiles = [FREE_PROFILE]
+    state.consented.add(UID)
+    state.endingSoon = [makeSub({ id: 'a', user: { id: 'u_a' } })]
+    state.recentlyExpired = [
+      makeSub({ id: 'b', user: { id: 'u_b' }, currentPeriodEnd: new Date(Date.now() - DAY) }),
+    ]
+    state.firstEssay = [makeSub({ id: 'c', user: { id: 'u_c' } })]
+    state.questsFree = [
+      makeSub({ id: 'd', user: { id: 'u_d' }, currentPeriodEnd: new Date(Date.now() - 8 * DAY) }),
+    ]
+
+    const { body } = await run()
+
+    expect(sendEmailMock).not.toHaveBeenCalled()
+    expect(body.skipped.unconfirmed).toBe(4)
+    expect(state.ledger.size).toBe(0)
+  })
+
+  it('is skipped, not guessed, when the auth user cannot be read', async () => {
+    state.authUsers.set(UID, 'error')
+    state.endingSoon = [makeSub()]
+    const { body } = await run()
+    expect(sendEmailMock).not.toHaveBeenCalled()
+    expect(body.skipped.confirmCheckFailed).toBe(1)
+  })
+})
+
+// ─── Audience: adult, child, unknown, placeholder, consent ───────────────
 
 describe('M2 and M3 audience', () => {
-  it('gives an adult the price and the plan link', async () => {
+  it('gives an adult who may receive marketing the price and the plan link', async () => {
+    state.consented.add(UID)
     state.endingSoon = [makeSub()]
     await run()
     expect(sent().text).toContain('planned standard pricing')
-    expect(sent().html).toContain('/pricing?ref=em-d6')
+    expect(sent().html).toContain('/pricing?src=em-d6')
   })
 
-  it('gives a child the service copy, with no £ and no /pricing', async () => {
+  // 24 October 2026: the price went to every adult on age alone.
+  it('gives an adult who never consented the service copy, with no £ and no /pricing', async () => {
+    state.endingSoon = [makeSub()]
+    await run()
+    expect(sendEmailMock).toHaveBeenCalledTimes(1)
+    expect(sent().text).not.toContain('£')
+    expect(sent().html).not.toContain('/pricing')
+    expect(sent().html).toContain('/revision/texts?src=em-d6')
+  })
+
+  it('gives an adult who withdrew marketing in the consent centre the service copy', async () => {
+    state.consented.add(UID)
+    state.withdrawnInConsentCentre.add(UID)
+    state.recentlyExpired = [makeSub({ id: 'sub_2', currentPeriodEnd: new Date(Date.now() - DAY) })]
+    await run()
+    expect(sent().text).not.toContain('£')
+    expect(sent().html).toContain('/games/texts?src=em-d8')
+  })
+
+  it('gives a child the service copy, with no £ and no /pricing, even with marketing on', async () => {
+    state.consented.add(UID)
     state.endingSoon = [makeSub({ user: { dateOfBirth: CHILD_DOB } })]
     await run()
     expect(sendEmailMock).toHaveBeenCalledTimes(1)
     expect(sent().text).not.toContain('£')
     expect(sent().html).not.toContain('/pricing')
-    expect(sent().html).toContain('/revision/texts?ref=em-d6')
+    expect(sent().html).toContain('/revision/texts?src=em-d6')
   })
 
   it('treats unknown age as a child', async () => {
+    state.consented.add(UID)
     state.endingSoon = [makeSub({ user: { dateOfBirth: null } })]
     await run()
     expect(sent().text).not.toContain('£')
@@ -462,24 +610,33 @@ describe('M2 and M3 audience', () => {
   })
 
   it('never reads an age from the 2000-01-01 placeholder', async () => {
+    state.consented.add(UID)
     state.endingSoon = [makeSub({ user: { dateOfBirth: PLACEHOLDER_DOB } })]
     await run()
     expect(sent().text).not.toContain('£')
   })
 
-  it('takes the profile date of birth over the Prisma one', async () => {
-    const uid = '11111111-2222-4333-8444-555555555555'
-    state.profiles = [
-      {
-        id: uid,
-        role: 'student',
-        date_of_birth: '2011-02-02',
-        is_minor: true,
-        subscription_status: 'pro',
-        stripe_customer_id: null,
-      },
-    ]
+  it('takes the younger of two real dates, whichever store holds it', async () => {
+    state.consented.add(UID)
+    // Profile a child, Prisma an adult.
+    state.profiles = [{ ...defaultProfile(UID), date_of_birth: '2011-02-02', is_minor: true }]
     state.endingSoon = [makeSub({ user: { dateOfBirth: ADULT_DOB } })]
+    await run()
+    expect(sent(0).text).not.toContain('£')
+
+    // Profile an adult, Prisma a child: the case the first version got wrong.
+    state.ledger = new Set()
+    state.profiles = [{ ...defaultProfile(UID), date_of_birth: '1990-02-02' }]
+    state.endingSoon = [makeSub({ user: { dateOfBirth: CHILD_DOB } })]
+    await run()
+    expect(sendEmailMock).toHaveBeenCalledTimes(2)
+    expect(sent(1).text).not.toContain('£')
+  })
+
+  it('does not take a teacher role alone for an adult', async () => {
+    state.consented.add(UID)
+    state.profiles = [{ ...defaultProfile(UID), role: 'teacher' }]
+    state.endingSoon = [makeSub({ user: { dateOfBirth: null, role: 'TEACHER' } })]
     await run()
     expect(sent().text).not.toContain('£')
   })
@@ -496,8 +653,40 @@ describe('M2 and M3 audience', () => {
     expect(body.followedUp).toBe(1)
     expect(sent().subject).toBe('Your free trial has ended - your account is still open')
     expect(sent().text).not.toContain('£')
-    expect(sent().html).toContain('/games/texts?ref=em-d8')
+    expect(sent().html).toContain('/games/texts?src=em-d8')
     expectOneClickHeaders(sent().options)
+  })
+})
+
+// ─── M2 and M3 never to a Stripe customer (24 October 2026) ──────────────
+
+describe('M2 and M3, which say no card was taken', () => {
+  it('go to nobody with a Stripe customer id, who may have left card details at checkout', async () => {
+    state.profiles = [{ ...defaultProfile(UID), stripe_customer_id: 'cus_1' }]
+    state.endingSoon = [makeSub({ id: 'a', user: { id: 'u_a' } })]
+    state.recentlyExpired = [
+      makeSub({ id: 'b', user: { id: 'u_b' }, currentPeriodEnd: new Date(Date.now() - DAY) }),
+    ]
+    const { body } = await run()
+    expect(sendEmailMock).not.toHaveBeenCalled()
+    expect(body.skipped.stripeCustomer).toBe(2)
+    expect(state.renewalCreated).toHaveLength(0)
+  })
+
+  it('wait for the next run when the profile cannot be read, since only it rules that out', async () => {
+    state.profilesError = true
+    state.endingSoon = [makeSub()]
+    const { body } = await run()
+    expect(sendEmailMock).not.toHaveBeenCalled()
+    expect(body.skipped.profileUnavailable).toBe(1)
+  })
+
+  it('skip an account with no profile row at all', async () => {
+    state.profileRowsMissing = true
+    state.endingSoon = [makeSub()]
+    const { body } = await run()
+    expect(sendEmailMock).not.toHaveBeenCalled()
+    expect(body.skipped.profileUnavailable).toBe(1)
   })
 })
 
@@ -505,11 +694,12 @@ describe('M2 and M3 audience', () => {
 
 describe('M3 trial ended', () => {
   it('sends for a recently expired trial, claiming before sending', async () => {
+    state.consented.add(UID)
     state.recentlyExpired = [makeSub({ id: 'sub_2', currentPeriodEnd: new Date(Date.now() - DAY) })]
     const { body } = await run()
     expect(body.followedUp).toBe(1)
     expect(state.order).toEqual(['claim:M3_TRIAL_ENDED', 'rr-claim', 'send'])
-    expect(sent().html).toContain('/pricing?ref=em-d8')
+    expect(sent().html).toContain('/pricing?src=em-d8')
   })
 
   it('does not re-send when a follow-up row already exists', async () => {
@@ -552,7 +742,7 @@ describe('M1 first marked essay', () => {
     expect(body.nudged).toBe(1)
     expect(sendEmailMock).toHaveBeenCalledTimes(1)
     expect(sent().subject).toBe('Your first marked essay: a mark for each assessment objective')
-    expect(sent().html).toContain('/marking/submit?ref=em-d3')
+    expect(sent().html).toContain('/marking/submit?src=em-d3')
     expectOneClickHeaders(sent().options)
     expect(state.order).toEqual(['claim:M1_FIRST_ESSAY', 'send'])
   })
@@ -601,7 +791,6 @@ describe('M1 first marked essay', () => {
 
 // ─── M4 and M5: consented adults ─────────────────────────────────────────
 
-const UID = '11111111-2222-4333-8444-555555555555'
 const FREE_PROFILE: Profile = {
   id: UID,
   role: 'student',
@@ -621,7 +810,7 @@ describe('M4 and M5', () => {
 
     expect(body.questsFree).toBe(1)
     expect(sent().subject).toBe('Quests for your set text are free with your account')
-    expect(sent().html).toContain('/games/texts?ref=em-d14')
+    expect(sent().html).toContain('/games/texts?src=em-d14')
     expectOneClickHeaders(sent().options)
     expect(state.order).toEqual(['claim:M4_QUESTS_FREE', 'send'])
   })
@@ -635,7 +824,7 @@ describe('M4 and M5', () => {
 
     expect(body.oneEssay).toBe(1)
     expect(sent().subject).toBe('One essay from class, marked against each assessment objective')
-    expect(sent().html).toContain('/pricing?ref=em-d30')
+    expect(sent().html).toContain('/pricing?src=em-d30')
   })
 
   it('a consented minor gets neither', async () => {
@@ -656,6 +845,22 @@ describe('M4 and M5', () => {
     const { body } = await run()
     expect(sendEmailMock).not.toHaveBeenCalled()
     expect(body.skipped.notConsented).toBe(1)
+  })
+
+  // 24 October 2026. Withdrawing MARKETING at /dashboard/consent wrote only a
+  // ledger row, which isMarketingAllowed did not read, so this adult was told
+  // "withdrawn" and still got M4 and M5 with the price.
+  it('an adult who switched marketing on, then withdrew it in the consent centre, gets neither', async () => {
+    state.profiles = [FREE_PROFILE]
+    state.consented.add(UID)
+    state.withdrawnInConsentCentre.add(UID)
+    state.questsFree = [makeSub({ id: 'sub_4', currentPeriodEnd: new Date(Date.now() - 8 * DAY) })]
+    state.oneEssay = [makeSub({ id: 'sub_5', currentPeriodEnd: new Date(Date.now() - 31 * DAY) })]
+
+    const { body } = await run()
+
+    expect(sendEmailMock).not.toHaveBeenCalled()
+    expect(body.skipped.notConsented).toBe(2)
   })
 
   it('skips anyone who has become a customer or signed in since', async () => {

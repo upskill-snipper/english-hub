@@ -17,12 +17,11 @@ vi.mock('@/lib/rate-limit', () => ({
   getClientIp: () => '127.0.0.1',
 }))
 
+const ADMIN_ID = '11111111-2222-4333-8444-555555555555'
 let isAdmin = true
 vi.mock('@/lib/admin-auth', () => ({
   verifyAdmin: async () =>
-    isAdmin
-      ? { user: { id: '11111111-2222-4333-8444-555555555555' }, error: null }
-      : { user: null, error: 'Unauthorized' },
+    isAdmin ? { user: { id: ADMIN_ID }, error: null } : { user: null, error: 'Unauthorized' },
 }))
 
 const ledgerWrites: unknown[] = []
@@ -40,6 +39,8 @@ vi.mock('@/lib/email/resend', () => ({
 }))
 
 const { POST } = await import('@/app/api/admin/email-test/route')
+const { SAMPLE_USER_ID } = await import('@/lib/email/lifecycle/samples')
+const { verifyUnsubscribeToken } = await import('@/lib/email/unsubscribe-token')
 
 function post(body: unknown) {
   return POST(
@@ -65,8 +66,8 @@ describe('POST /api/admin/email-test with lifecycle: true', () => {
     const json = await res.json()
 
     expect(res.status).toBe(200)
-    expect(json.sent).toBe(16)
-    expect(sendEmail).toHaveBeenCalledTimes(16)
+    expect(json.sent).toBe(18)
+    expect(sendEmail).toHaveBeenCalledTimes(18)
     const subjects = sendEmail.mock.calls.map((c) => c[1])
     for (const s of [
       'Your English Hub account is ready: start with your set text',
@@ -75,6 +76,8 @@ describe('POST /api/admin/email-test with lifecycle: true', () => {
       'Quests for your set text are free with your account',
       'One essay from class, marked against each assessment objective',
       'Your payment did not go through, so your plan is paused',
+      'Your payment did not go through',
+      'Your plan is cancelled',
       'Your plan has ended',
     ]) {
       expect(subjects).toContain(s)
@@ -91,6 +94,26 @@ describe('POST /api/admin/email-test with lifecycle: true', () => {
     expect(ledgerWrites).toHaveLength(0)
   })
 
+  // 24 October 2026. The samples were signed for the admin's own id, so
+  // pressing "Unsubscribe" in one switched the founder's marketing off.
+  it('signs every unsubscribe link for an id no account has, never the admin', async () => {
+    await post({ to: 'founder@example.com', lifecycle: true })
+    const tokens = new Set<string>()
+    for (const call of sendEmail.mock.calls) {
+      const header = call[4]?.headers?.['List-Unsubscribe'] ?? ''
+      tokens.add(decodeURIComponent(header.match(/\?token=([^>]+)>$/)![1]))
+      const footer = call[2].match(/\/unsubscribe\?token=([^"]+)"/)
+      tokens.add(decodeURIComponent(footer![1]))
+    }
+    expect(tokens.size).toBe(1)
+    const [token] = [...tokens]
+    expect(verifyUnsubscribeToken(token!, Date.now())).toEqual({
+      valid: true,
+      supabaseUserId: SAMPLE_USER_ID,
+    })
+    expect(SAMPLE_USER_ID).not.toBe(ADMIN_ID)
+  })
+
   it('is admin only', async () => {
     isAdmin = false
     const res = await post({ to: 'founder@example.com', lifecycle: true })
@@ -104,6 +127,6 @@ describe('POST /api/admin/email-test with lifecycle: true', () => {
     const json = await res.json()
     expect(res.status).toBe(502)
     expect(json.ok).toBe(false)
-    expect(json.sent).toBe(15)
+    expect(json.sent).toBe(17)
   })
 })

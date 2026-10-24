@@ -301,15 +301,31 @@ export async function POST(request: NextRequest) {
         // delivery order / lag is not guaranteed - flipping the flag here
         // keeps the entitlement gate honest from the moment the charge fails.
         //
-        // `profileMovedToPastDue` tells the payment-failed email below which
-        // sentence is true (23 October 2026). If this write is removed, as
+        // `profileMovedToPastDue` tells the payment-failed email below whether
+        // "paused" is true (23 October 2026). If this write is removed, as
         // fix/stripe-webhook-2026-10-23 does to keep access through Stripe's
         // retries, pass `accessPaused: false` below instead: the email then
-        // says the plan stays active for now, which that branch makes true.
-        // If the declaration goes with the write, the build fails at the
-        // usage below until that is done, which is the point.
+        // states nothing about access, only the action, which is true on
+        // either branch. If the declaration goes with the write, the build
+        // fails at the usage below until that is done, which is the point.
+        //
+        // ── Not for an IELTS-only invoice (fixed 24 October 2026) ──────────
+        // This was the one handler here with no IELTS carve-out. invoice.paid,
+        // customer.subscription.updated, .deleted and checkout all leave
+        // `subscription_status` alone for an IELTS-only subscription, because
+        // IELTS access is `ielts_status` and the field below is one per PERSON
+        // (CLAUDE.md, fact 2). So a customer holding a Student or Teacher plan
+        // and an IELTS plan whose IELTS payment failed had their Student or
+        // Teacher access revoked here, and invoice.paid's IELTS-only branch
+        // never wrote 'pro' back when the IELTS payment later succeeded: they
+        // stayed locked out of a plan they had paid for until its own next
+        // renewal. The payment-failed email then told them their plan "stays
+        // active for now". IELTS access still follows the subscription's own
+        // status through syncIeltsEntitlement on .updated, as before.
+        const ieltsOnlyInvoice =
+          failedPrices.length > 0 && failedPrices.every((p) => isIeltsPriceId(p))
         let profileMovedToPastDue = false
-        if (failedProfile) {
+        if (failedProfile && !ieltsOnlyInvoice) {
           const { error: pastDueError } = await supabase
             .from('profiles')
             .update({ subscription_status: 'past_due' })
@@ -353,19 +369,17 @@ export async function POST(request: NextRequest) {
             // the block above had already written past_due, and the web gate
             // reads 'pro' only, so the interruption had already happened. The
             // copy now follows what this handler did: "paused" when it moved
-            // the profile to past_due, "stays active for now" when it did not.
-            // An IELTS-only invoice does not pause the plan that failed: IELTS
-            // access is ielts_status, which this handler does not touch. One
-            // notice per invoice (LifecycleEmail), never a webhook failure.
-            const ieltsOnlyInvoice =
-              failedPrices.length > 0 && failedPrices.every((p) => isIeltsPriceId(p))
+            // the profile to past_due, and nothing about access when it did
+            // not (an IELTS-only invoice, or no profile for the customer).
+            // One notice per invoice (LifecycleEmail), never a webhook failure.
             await sendPaymentFailedEmail({
               supabaseUserId: failedProfile?.id ?? null,
               to: customerEmail,
               invoiceId: invoice.id ?? event.id,
               amountMinor: invoice.amount_due,
               currency: invoice.currency,
-              accessPaused: profileMovedToPastDue && !ieltsOnlyInvoice,
+              accessPaused: profileMovedToPastDue,
+              ieltsOnly: ieltsOnlyInvoice,
             })
           } else {
             console.warn(

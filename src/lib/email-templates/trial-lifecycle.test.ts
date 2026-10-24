@@ -35,8 +35,16 @@ function visibleText(html: string): string {
 
 describe('trial lifecycle emails', () => {
   describe.each(both)('%s', (_label, build) => {
-    const adult = build({ trialEndsAt: TRIAL_END, audience: 'adult', unsubscribeUrl: UNSUBSCRIBE })
-    const minor = build({ trialEndsAt: TRIAL_END, audience: 'minor', unsubscribeUrl: UNSUBSCRIBE })
+    const adult = build({
+      trialEndsAt: TRIAL_END,
+      audience: 'consented-adult',
+      unsubscribeUrl: UNSUBSCRIBE,
+    })
+    const minor = build({
+      trialEndsAt: TRIAL_END,
+      audience: 'service',
+      unsubscribeUrl: UNSUBSCRIBE,
+    })
 
     it('renders a subject, HTML and plain-text body', () => {
       expect(adult.subject.length).toBeGreaterThan(0)
@@ -80,10 +88,12 @@ describe('trial lifecycle emails', () => {
       }
     })
 
-    it('gives an adult the price with planned standard pricing, and a child neither', () => {
+    // 'service' is every child, unknown age and every adult who has not
+    // consented to marketing (24 October 2026: at first it was children only).
+    it('gives a consented adult the price with planned standard pricing, and the service copy neither', () => {
       expect(adult.text).toContain('£3.99 a month or £29.99 a year')
       expect(adult.text).toContain('planned standard pricing £7.99 or £69.99')
-      expect(adult.html).toContain('/pricing?ref=')
+      expect(adult.html).toContain('/pricing?src=')
       expect(minor.text).not.toContain('£')
       expect(minor.html).not.toContain('/pricing')
       expect(minor.text).not.toContain('/pricing')
@@ -121,7 +131,7 @@ describe('trial lifecycle emails', () => {
   it('lists only what the claim sheet says a plan adds', () => {
     const email = buildTrialEndingEmail({
       trialEndsAt: TRIAL_END,
-      audience: 'adult',
+      audience: 'consented-adult',
       unsubscribeUrl: UNSUBSCRIBE,
     })
     const lost = email.text.split('What stays free:')[0]
@@ -136,7 +146,7 @@ describe('trial lifecycle emails', () => {
   it('gives a teacher the Teacher price and the examiner tool', () => {
     const email = buildTrialEndingEmail({
       trialEndsAt: TRIAL_END,
-      audience: 'adult',
+      audience: 'consented-adult',
       isTeacher: true,
       unsubscribeUrl: UNSUBSCRIBE,
     })
@@ -148,7 +158,7 @@ describe('trial lifecycle emails', () => {
   it('keeps the M3 subject and first lines the brief asked to keep', () => {
     const email = buildTrialEndedEmail({
       trialEndsAt: TRIAL_END,
-      audience: 'minor',
+      audience: 'service',
       unsubscribeUrl: UNSUBSCRIBE,
     })
     expect(email.subject).toBe('Your free trial has ended - your account is still open')
@@ -156,6 +166,6 @@ describe('trial lifecycle emails', () => {
       'Nothing was charged for the trial: we never took your card details.',
     )
     expect(email.text).toContain('Everything you have already had marked stays where it is.')
-    expect(email.html).toContain('/games/texts?ref=em-d8')
+    expect(email.html).toContain('/games/texts?src=em-d8')
   })
 })

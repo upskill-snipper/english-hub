@@ -22,8 +22,19 @@
 //     /unsubscribe?token= link, and the cron adds List-Unsubscribe headers.
 //   • M3 was winback, gated on marketing consent, so a trialist who had never
 //     switched marketing on (nearly all of them) was never told the trial had
-//     ended. It is now a service notice to every trialist; the price and the
-//     plan link go to adults only, and a child gets the service copy.
+//     ended. It is now a service notice to every trialist.
+//
+// CORRECTED AGAIN 24 October 2026. The first rebuild gave the price line and
+// the "See plans" /pricing button to every adult, on age alone. An adult who
+// had never consented, or had just pressed "Unsubscribe from marketing email"
+// in the footer of M2 (which promises that only messages about the account
+// will still reach them), still got the price in M3. Promotional content in a
+// service message is direct marketing (ICO), the soft opt-in is closed for
+// this base (document 08, fact 2), and an objection under UK GDPR Art 21(3) is
+// absolute. So the price and the plan link now need an adult who may receive
+// marketing ('consented-adult'); everyone else gets the service copy. Whether
+// the day-8 price line is service or marketing is still the founder's open
+// question 8: this is the answer that is safe until he gives his.
 //   • Both greeted the reader by the first name typed at sign-up. That is
 //     free text, so they now say "Hi," as every lifecycle email does.
 //
@@ -54,11 +65,13 @@ export interface TrialEmailData {
    */
   trialEndsAt: Date
   /**
-   * 'adult' only for an account the email age group resolves to ADULT. Every
-   * other account, unknown age included, is 'minor' and gets no price and no
-   * plan link.
+   * 'consented-adult' only for an account the email age group resolves to
+   * ADULT AND that may receive marketing (isMarketingAllowed). It alone gets
+   * the price and the plan link. Everyone else, every child, unknown age, and
+   * every adult who never switched marketing on or has since withdrawn it, is
+   * 'service': the facts about their own account and nothing for sale.
    */
-  audience: 'adult' | 'minor'
+  audience: 'consented-adult' | 'service'
   /** A teacher sees the Teacher price and the examiner tool in the list. */
   isTeacher?: boolean
   /** The signed `/unsubscribe?token=` link, or bare `/unsubscribe`. */
@@ -69,7 +82,9 @@ export interface TrialEmailData {
  * The no-card fact, derived from the Option C paywall: signup takes no
  * payment details, so an expiring trial cannot produce a charge (§5). Stated
  * explicitly because "your trial is ending" reads as "you are about to be
- * billed" unless it is contradicted.
+ * billed" unless it is contradicted. The cron sends neither email to anyone
+ * with a Stripe customer id, since that person may have left card details at
+ * checkout and the trial row may simply not know it yet.
  */
 const NO_CHARGE_LINE =
   'We never took your card details, so nothing will be charged when the trial ends.'
@@ -84,7 +99,7 @@ const p = (text: string): LifecycleBlock => ({ kind: 'p', text })
  */
 export function buildTrialEndingEmail(data: TrialEmailData): BuiltEmail {
   const endDate = formatEmailDate(data.trialEndsAt)
-  const adult = data.audience === 'adult'
+  const offer = data.audience === 'consented-adult'
   const isTeacher = Boolean(data.isTeacher)
 
   return renderLifecycleEmail({
@@ -98,7 +113,7 @@ export function buildTrialEndingEmail(data: TrialEmailData): BuiltEmail {
       p(NO_CHARGE_LINE),
       { kind: 'list', heading: 'What you will lose access to', items: paidFeatures(isTeacher) },
       { kind: 'box', heading: 'What stays free', text: STAYS_FREE_LINE },
-      ...(adult
+      ...(offer
         ? [
             p(
               `If you would like to keep the paid features, you can choose a plan at any time. ${priceLine(isTeacher)}`,
@@ -107,7 +122,7 @@ export function buildTrialEndingEmail(data: TrialEmailData): BuiltEmail {
         : []),
       p('If the free plan suits you, there is nothing to do.'),
     ],
-    cta: adult
+    cta: offer
       ? { label: 'See plans', url: siteLink('/pricing', 'em-d6') }
       : { label: 'Open the study guides', url: siteLink('/revision/texts', 'em-d6') },
     footer: 'service',
@@ -119,11 +134,11 @@ export function buildTrialEndingEmail(data: TrialEmailData): BuiltEmail {
  * M3. Sent after the trial has ended, to every trialist.
  *
  * The facts (on the free plan, nothing charged, marked essays kept) go to
- * everyone. The price and the plan link go to adults only.
+ * everyone. The price and the plan link go to consented adults only.
  */
 export function buildTrialEndedEmail(data: TrialEmailData): BuiltEmail {
   const endDate = formatEmailDate(data.trialEndsAt)
-  const adult = data.audience === 'adult'
+  const offer = data.audience === 'consented-adult'
   const isTeacher = Boolean(data.isTeacher)
 
   return renderLifecycleEmail({
@@ -137,7 +152,7 @@ export function buildTrialEndedEmail(data: TrialEmailData): BuiltEmail {
       p('Nothing was charged for the trial: we never took your card details.'),
       p(MARKED_ESSAYS_STAY_LINE),
       { kind: 'box', heading: 'What stays free', text: STAYS_FREE_LINE },
-      ...(adult
+      ...(offer
         ? [
             {
               kind: 'list' as const,
@@ -146,11 +161,12 @@ export function buildTrialEndedEmail(data: TrialEmailData): BuiltEmail {
             },
             p(priceLine(isTeacher)),
           ]
-        : // A child gets the facts and the link to what stays free, and no
-          // suggestion beyond it: nudges are off for under-18s (§8).
+        : // Everyone else gets the facts and the link to what stays free, and
+          // no suggestion beyond it: nudges are off for under-18s (§8), and an
+          // adult who has not consented is not sold to in a service notice.
           []),
     ],
-    cta: adult
+    cta: offer
       ? { label: 'See plans', url: siteLink('/pricing', 'em-d8') }
       : { label: 'Play a quest', url: siteLink('/games/texts', 'em-d8') },
     footer: 'service',

@@ -5,9 +5,18 @@
 // is set. That route could send only a fixed diagnostic message, so the proof
 // it asked for could not be carried out. POST /api/admin/email-test with
 // `{ to, lifecycle: true }` now sends every variant below, built by the same
-// builders and carried by the same transport, with the same one-click headers,
-// signed for the admin's own account. Nothing is written to the ledger: these
-// are samples, and a sample must never stop the real email reaching anyone.
+// builders and carried by the same transport, with the same one-click headers.
+// Nothing is written to the ledger: these are samples, and a sample must never
+// stop the real email reaching anyone.
+//
+// SIGNED FOR NOBODY (changed 24 October 2026). The samples' unsubscribe link
+// and header were signed for the admin's own Supabase id, so pressing
+// "Unsubscribe" in a sample, the natural thing to try when reading one, really
+// switched marketing off on the founder's account in both stores. They are now
+// signed for SAMPLE_USER_ID, an id no account can have, the same one the
+// welcome-back script's previews use. The unsubscribe page may still say it
+// is done, because /api/unsubscribe reports success when its writes raise no
+// error, and an update that matches no row raises none.
 // ────────────────────────────────────────────────────────────────────────────
 
 import type { BuiltEmail } from '@/lib/email-templates/lifecycle-shell'
@@ -24,8 +33,15 @@ import {
 
 const DAY_MS = 24 * 60 * 60 * 1000
 
+/**
+ * The account the samples' unsubscribe token names: a version-4 shaped uuid
+ * that no Supabase account can hold. Matches PREVIEW_USER_ID in
+ * scripts/send-welcome-back.mjs.
+ */
+export const SAMPLE_USER_ID = '00000000-0000-4000-8000-000000000000'
+
 export interface LifecycleSample {
-  /** For example 'M2 child': which message and which audience. */
+  /** For example 'M2 service': which message and which audience. */
   id: string
   email: BuiltEmail
 }
@@ -82,20 +98,28 @@ export function lifecycleSamples(
     },
     { id: 'M1', email: buildFirstEssayEmail({ trialEndsAt: in4, unsubscribeUrl: u }) },
     {
-      id: 'M2 adult',
-      email: buildTrialEndingEmail({ trialEndsAt: in1, audience: 'adult', unsubscribeUrl: u }),
+      id: 'M2 consented adult',
+      email: buildTrialEndingEmail({
+        trialEndsAt: in1,
+        audience: 'consented-adult',
+        unsubscribeUrl: u,
+      }),
     },
     {
-      id: 'M2 child',
-      email: buildTrialEndingEmail({ trialEndsAt: in1, audience: 'minor', unsubscribeUrl: u }),
+      id: 'M2 service',
+      email: buildTrialEndingEmail({ trialEndsAt: in1, audience: 'service', unsubscribeUrl: u }),
     },
     {
-      id: 'M3 adult',
-      email: buildTrialEndedEmail({ trialEndsAt: ago1, audience: 'adult', unsubscribeUrl: u }),
+      id: 'M3 consented adult',
+      email: buildTrialEndedEmail({
+        trialEndsAt: ago1,
+        audience: 'consented-adult',
+        unsubscribeUrl: u,
+      }),
     },
     {
-      id: 'M3 child',
-      email: buildTrialEndedEmail({ trialEndsAt: ago1, audience: 'minor', unsubscribeUrl: u }),
+      id: 'M3 service',
+      email: buildTrialEndedEmail({ trialEndsAt: ago1, audience: 'service', unsubscribeUrl: u }),
     },
     {
       id: 'M4',
@@ -111,22 +135,55 @@ export function lifecycleSamples(
         amountMinor: 399,
         currency: 'gbp',
         accessPaused: true,
+        ieltsOnly: false,
         unsubscribeUrl: u,
       }),
     },
     {
-      id: 'M6 kept',
+      id: 'M6 not paused',
       email: buildPaymentFailedEmail({
         amountMinor: 399,
         currency: 'gbp',
         accessPaused: false,
+        ieltsOnly: false,
         unsubscribeUrl: u,
       }),
     },
-    { id: 'M7 cancelled', email: buildPlanCancelledEmail({ inTrial: false, unsubscribeUrl: u }) },
+    {
+      id: 'M7 cancelled',
+      email: buildPlanCancelledEmail({
+        status: 'active',
+        ieltsOnly: false,
+        otherPlanRemains: false,
+        unsubscribeUrl: u,
+      }),
+    },
     {
       id: 'M7 cancelled in trial',
-      email: buildPlanCancelledEmail({ inTrial: true, unsubscribeUrl: u }),
+      email: buildPlanCancelledEmail({
+        status: 'trialing',
+        ieltsOnly: false,
+        otherPlanRemains: false,
+        unsubscribeUrl: u,
+      }),
+    },
+    {
+      id: 'M7 cancelled after a failed payment',
+      email: buildPlanCancelledEmail({
+        status: 'past_due',
+        ieltsOnly: false,
+        otherPlanRemains: false,
+        unsubscribeUrl: u,
+      }),
+    },
+    {
+      id: 'M7 cancelled, another plan remains',
+      email: buildPlanCancelledEmail({
+        status: 'active',
+        ieltsOnly: false,
+        otherPlanRemains: true,
+        unsubscribeUrl: u,
+      }),
     },
     { id: 'M7 ended', email: buildPlanEndedEmail({ unsubscribeUrl: u }) },
   ]

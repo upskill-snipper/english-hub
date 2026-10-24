@@ -47,8 +47,18 @@ const { GET } = await import('@/app/auth/callback/route')
 const { POST: recordLogin } = await import('@/app/api/auth/record-login/route')
 const { NextRequest } = await import('next/server')
 
-const USER = { id: 'uuid-new', email: 'new@example.com' }
-const CTX = { supabaseUserId: USER.id, email: USER.email }
+const USER = {
+  id: 'uuid-new',
+  email: 'new@example.com',
+  email_confirmed_at: '2026-10-24T08:00:00.000Z',
+}
+// The session's confirmation time travels with the address: M0 goes to a
+// confirmed address only (24 October 2026).
+const CTX = {
+  supabaseUserId: USER.id,
+  email: USER.email,
+  emailConfirmedAt: USER.email_confirmed_at,
+}
 
 beforeEach(() => {
   provision.mockClear()
@@ -72,6 +82,13 @@ describe('the provisioning result reaches the account-ready email', () => {
   it('from record-login, the second net', async () => {
     await recordLogin(new NextRequest('https://theenglishhub.app/api/auth/record-login'))
     expect(announce).toHaveBeenCalledWith(RESULT, CTX)
+  })
+
+  it('passes an unconfirmed session on as unconfirmed, never as confirmed', async () => {
+    const unconfirmed = { ...USER, email_confirmed_at: undefined }
+    getUser.mockResolvedValue({ data: { user: unconfirmed }, error: null })
+    await recordLogin(new NextRequest('https://theenglishhub.app/api/auth/record-login'))
+    expect(announce).toHaveBeenCalledWith(RESULT, { ...CTX, emailConfirmedAt: null })
   })
 
   it('never from a password recovery, which provisions nothing', async () => {

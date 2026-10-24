@@ -50,6 +50,7 @@ vi.mock('@/lib/stripe', () => ({
       update: (...a: unknown[]) => mockUpdate(...a),
     },
   },
+  isIeltsPriceId: (id: string | null | undefined) => id === 'price_ielts_monthly',
 }))
 
 vi.mock('@/lib/rate-limit', () => ({
@@ -131,7 +132,7 @@ describe('M7 cancellation confirmation', () => {
     expect(b.subject).toBe(
       'Your plan is cancelled: access continues until the end of the period you have paid for',
     )
-    expect(b.html).toContain('/account/billing?ref=em-cx')
+    expect(b.html).toContain('/account/billing?src=em-cx')
     expect(b.headers?.['List-Unsubscribe']).toMatch(
       /^<https:\/\/theenglishhub\.app\/api\/unsubscribe\?token=/,
     )
@@ -173,5 +174,86 @@ describe('M7 cancellation confirmation', () => {
     await cancel()
     await new Promise((r) => setTimeout(r, 20))
     expect(bodies()).toHaveLength(0)
+  })
+
+  // ── Corrected 24 October 2026 ────────────────────────────────────────────
+  // The route cancels past_due and unpaid subscriptions too, and the email
+  // told them they kept a period "already paid for" and would not be charged
+  // again: nothing was paid, and the open invoice survives
+  // cancel_at_period_end.
+  it.each(['past_due', 'unpaid'])(
+    'tells a %s customer only what is true: cancelled, will not renew, the payment stands',
+    async (status) => {
+      mockList.mockResolvedValue({
+        data: [{ id: 'sub_late', status, cancel_at_period_end: false, metadata: {} }],
+      })
+      mockUpdate.mockImplementation(async (id: string, params: Record<string, unknown>) => ({
+        id,
+        status,
+        ...params,
+      }))
+      const res = await cancel()
+      expect(res.status).toBe(200)
+      await vi.waitFor(() => expect(bodies()).toHaveLength(1))
+      const b = bodies()[0]
+      expect(b.subject).toBe('Your plan is cancelled')
+      expect(b.html).toContain('so it will not renew')
+      expect(b.html).toContain('Cancelling the plan does not cancel that payment.')
+      expect(b.html).not.toMatch(/paid for|will not charge|not be charged|keep the paid features/i)
+    },
+  )
+
+  it('makes no free-plan promise when another live plan remains', async () => {
+    mockList.mockResolvedValue({
+      data: [
+        { id: 'sub_student', status: 'active', cancel_at_period_end: false, metadata: {} },
+        { id: 'sub_other', status: 'active', cancel_at_period_end: false, metadata: {} },
+      ],
+    })
+    const res = await POST(
+      new NextRequest('http://localhost/api/stripe/cancel', {
+        method: 'POST',
+        headers: new Headers({ 'content-type': 'application/json' }),
+        body: JSON.stringify({ subscriptionId: 'sub_student' }),
+      }),
+    )
+    expect(res.status).toBe(200)
+    await vi.waitFor(() => expect(bodies()).toHaveLength(1))
+    const b = bodies()[0]
+    expect(b.html).toContain('Your other English Hub plan is not changed by this.')
+    expect(b.html).not.toMatch(/free plan|What stays free/i)
+  })
+
+  it('counts a plan already scheduled to end as still live beside the one cancelled', async () => {
+    mockList.mockResolvedValue({
+      data: [
+        { id: 'sub_a', status: 'active', cancel_at_period_end: false, metadata: {} },
+        { id: 'sub_b', status: 'trialing', cancel_at_period_end: true, metadata: {} },
+      ],
+    })
+    await cancel()
+    await vi.waitFor(() => expect(bodies()).toHaveLength(1))
+    expect(bodies()[0].html).toContain('Your other English Hub plan is not changed by this.')
+  })
+
+  it('names an IELTS plan', async () => {
+    mockList.mockResolvedValue({
+      data: [
+        {
+          id: 'sub_ielts',
+          status: 'active',
+          cancel_at_period_end: false,
+          metadata: {},
+          items: {
+            data: [{ price: { id: 'price_ielts_monthly', recurring: { interval: 'month' } } }],
+          },
+        },
+      ],
+    })
+    await cancel()
+    await vi.waitFor(() => expect(bodies()).toHaveLength(1))
+    expect(bodies()[0].subject).toBe(
+      'Your IELTS plan is cancelled: access continues until the end of the period you have paid for',
+    )
   })
 })

@@ -20,7 +20,8 @@
 //     and, on a children's product, a way to put words in our mouth.
 //
 // So every lifecycle email is now built here, from plain-text blocks that this
-// file escapes, with one call-to-action link, the unsubscribe link, "Hi," and
+// file escapes, with one call-to-action link (marked `?src=`, never the
+// affiliate `?ref=`: see EMAIL_LINK_PARAM), the unsubscribe link, "Hi," and
 // the house sign-off. Every product claim below is the claim sheet's wording
 // (TEHC-079, 16 October 2026), cited by section. Nothing here states a time
 // for AI marking (§9), a mock-paper count (§2, §9), "lesson plans" (§2) or a
@@ -92,9 +93,26 @@ export const SIGNATURE = 'The English Hub Team'
 export const COMPANY_LINE =
   'A product of Upskill Energy Limited, registered in England and Wales, company no. 16511479.'
 
-/** A tracked link to a page on the site. */
-export function siteLink(path: string, ref: string): string {
-  return `${SITE_URL}${path}?ref=${encodeURIComponent(ref)}`
+/**
+ * The query parameter that says which email a click came from.
+ *
+ * NOT `ref` (changed 24 October 2026). Document 08 asked for `?ref=em-d6`, and
+ * the first build used it, but `ref` is the site's affiliate parameter: the
+ * middleware (src/middleware-affiliate.ts) writes any `?ref=` that looks like
+ * a code into the affiliate cookie, and applyNewClick
+ * (src/lib/affiliate/attribution-v2.ts) is last-click, so it overwrites the
+ * code already there. A reader who had accepted all cookies and arrived
+ * through a real affiliate would have had that affiliate's attribution
+ * replaced with "em-d6" by the pricing link in their own trial email, just
+ * before checkout. Nothing in the code reads `src`, so the email's mark lands
+ * in the page URL that analytics records and nowhere else. One constant, so
+ * every lifecycle link changes together.
+ */
+export const EMAIL_LINK_PARAM = 'src'
+
+/** A link to a page on the site, marked with the email it came from. */
+export function siteLink(path: string, mark: string): string {
+  return `${SITE_URL}${path}?${EMAIL_LINK_PARAM}=${encodeURIComponent(mark)}`
 }
 
 /** The date as a reader in the UK reads it, for example "31 October 2026". */

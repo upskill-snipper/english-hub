@@ -5,8 +5,9 @@
 // gated on marketing consent, after the trial ended. It now runs the whole
 // no-card sequence, behind the same TRIAL_LIFECYCLE_EMAILS_ENABLED switch:
 //
-//   M2  trial ending     TRIALING, ends within 2 days     every trialist; price adults only
-//   M3  trial ended      CANCELLED, ended in last 3 days  every trialist; price adults only
+//   M2  trial ending     TRIALING, ends within 2 days     every trialist; price to
+//                                                         consented adults only
+//   M3  trial ended      CANCELLED, ended in last 3 days  as M2
 //   M1  first essay      TRIALING, started 3+ days ago,   adults, not teachers, nothing
 //                        not yet in M2's window           marked or submitted yet
 //   M4  quests are free  CANCELLED, ended 7 to 10 days    consented adults, still free, no
@@ -18,7 +19,34 @@
 // PrivacySettings.marketingEnabled, which defaults to false and had two rows
 // set in production on 12 October, so almost nobody whose trial ended was told.
 // The facts in it are about the person's own account, so it is now a service
-// notice to every trialist; the price and the plan link go to adults only.
+// notice to every trialist.
+//
+// THE PRICE IN M2 AND M3 (corrected 24 October 2026). The first version gave
+// the price line and the /pricing button to every adult on age alone, so an
+// adult who had never consented, or who had pressed "Unsubscribe from
+// marketing email" in M2's own footer, still got the price in M3. It now goes
+// only to an adult whom isMarketingAllowed clears, which since the same day
+// also honours a withdrawal made in the consent centre. Everyone else gets
+// the service copy. This is the safe answer to document 08's open question 8
+// (is the day-8 price line service or marketing?) until the founder gives his.
+//
+// NEVER TO A STRIPE CUSTOMER (M2 and M3, added 24 October 2026). Both say "we
+// never took your card details". The trial row is no-card when it has no
+// Stripe subscription id, but a person who paid at checkout mid-trial whose
+// subscription sync then failed (subscription-sync.ts has a marker for exactly
+// that) still has a no-card row. The profile's stripe_customer_id is set the
+// moment checkout opens, so anyone who has it may have left card details, and
+// neither email goes to them. Stripe's own trial_will_end reaches those who
+// did. A profile that cannot be read cannot prove this, so it skips too; both
+// windows are wide enough for the next morning's run to try again.
+//
+// ONLY A CONFIRMED ADDRESS (added 24 October 2026). Every email goes to the
+// auth account's address, and only when auth.users.email_confirmed_at is set,
+// read from Supabase just before the send. record-login provisions a trial at
+// any sign-in, and whether an unconfirmed address can sign in depends on the
+// "Confirm email" setting, which nobody has checked (document 08, B3 item 3).
+// The Prisma copy of the address is no longer used: it can be stale after a
+// change of address, and it is not the one that was confirmed.
 //
 // WHY M1 DOES NOT READ ONLY `Essay`. Document 08 specified "no Essay since
 // currentPeriodStart". The site's own marking page saves to the Supabase
@@ -29,11 +57,18 @@
 // history it cannot read.
 //
 // AGE. Every recipient's age group comes from emailAgeGroup
-// (src/lib/identity/age.ts): profiles first, then the Prisma row, never the
-// 2000-01-01 placeholder, and unknown is a child. Under-13s are skipped as bad
-// data. A child receives M2 and M3 with no price and no plan link, and never
-// M1, M4 or M5, whatever their marketing setting says (§8 and the guardian
-// email's promise that children's data is not used for marketing).
+// (src/lib/identity/age.ts): profiles and the Prisma row, the younger of two
+// real dates, never the 2000-01-01 placeholder, a role alone never an age, and
+// unknown is a child. Under-13s are skipped as bad data. A child receives M2
+// and M3 with no price and no plan link, and never M1, M4 or M5, whatever their
+// marketing setting says (§8 and the guardian email's promise that children's
+// data is not used for marketing).
+//
+// NOT CHECKED HERE: school pupils. provisionSignupTrial gives a pupil of a live
+// school no trial, but a trialist who joins a school mid-trial is not looked
+// for again. There were no schools in production on 23 October 2026; add
+// getPupilSchoolAccess (src/lib/school-entitlement.ts) to these loops before
+// the first school goes live.
 //
 // BACKLOG. Every window is bounded, so turning the switch on cannot reach old
 // trials, and MAX_SENDS_PER_RUN caps any single run. The LifecycleEmail
@@ -50,6 +85,7 @@ import {
   buildTrialEndedEmail,
   buildTrialEndingEmail,
   type BuiltEmail,
+  type TrialEmailData,
 } from '@/lib/email-templates/trial-lifecycle'
 import {
   buildFirstEssayEmail,
@@ -99,7 +135,6 @@ export type TrialSequenceResult = {
 type CandidateUser = {
   id: string
   supabaseUserId: string | null
-  email: string | null
   dateOfBirth: Date | null
   isMinor: boolean
   role: string
@@ -114,6 +149,9 @@ type Candidate = {
   user: CandidateUser | null
   renewalReminders: Array<{ sentAt: Date; nextPaymentDate: Date }>
 }
+
+/** A candidate whose user may be emailed: it has a Supabase id to key everything on. */
+type Addressable = Candidate & { user: CandidateUser & { supabaseUserId: string } }
 
 type ProfileFacts = {
   id: string
@@ -156,7 +194,6 @@ const CANDIDATE_SELECT = {
     select: {
       id: true,
       supabaseUserId: true,
-      email: true,
       dateOfBirth: true,
       isMinor: true,
       role: true,
@@ -173,12 +210,16 @@ function count(run: Run, reason: string): void {
   run.skipped[reason] = (run.skipped[reason] ?? 0) + 1
 }
 
+function errText(err: unknown): string {
+  return err instanceof Error ? err.message : String(err)
+}
+
 /**
  * The profiles rows for a batch of Supabase ids, or null when the read
  * failed. A failed read is not a fact about anyone: the age group then rests
- * on the Prisma row alone, which without a real date or a teacher or parent
- * role is a child, and M4 and M5 skip, because only the profile proves the
- * account is still on the free plan.
+ * on the Prisma row alone, which without a real date of birth is a child, and
+ * every email that needs the profile (M2 and M3 to rule out a Stripe customer,
+ * M4 and M5 to prove the plan is free) skips.
  */
 async function readProfiles(ids: string[]): Promise<Map<string, ProfileFacts> | null> {
   if (ids.length === 0) return new Map()
@@ -193,7 +234,7 @@ async function readProfiles(ids: string[]): Promise<Map<string, ProfileFacts> | 
     }
     return new Map(((data ?? []) as ProfileFacts[]).map((r) => [r.id, r]))
   } catch (err) {
-    console.error(`${LOG} profiles read threw: ${err instanceof Error ? err.message : String(err)}`)
+    console.error(`${LOG} profiles read threw: ${errText(err)}`)
     return null
   }
 }
@@ -235,19 +276,52 @@ function tally(run: Run, outcome: LifecycleSendOutcome): boolean {
   return false
 }
 
+/**
+ * The account's own address, read from Supabase auth, when and only when it
+ * has been confirmed. Null when it may not be emailed, with the reason
+ * counted: no address, unconfirmed, or the read failed (which proves nothing,
+ * so it skips).
+ */
+async function confirmedAddress(run: Run, supabaseUserId: string): Promise<string | null> {
+  try {
+    const { data, error } = await createServiceRoleClient().auth.admin.getUserById(supabaseUserId)
+    if (error || !data?.user) {
+      console.warn(`${LOG} auth user unreadable: ${error?.message ?? 'no user'}`)
+      count(run, 'confirmCheckFailed')
+      return null
+    }
+    const { email, email_confirmed_at: confirmedAt } = data.user
+    if (!email) {
+      count(run, 'noEmail')
+      return null
+    }
+    if (!confirmedAt) {
+      count(run, 'unconfirmed')
+      return null
+    }
+    return email
+  } catch (err) {
+    console.warn(`${LOG} auth user unreadable: ${errText(err)}`)
+    count(run, 'confirmCheckFailed')
+    return null
+  }
+}
+
 async function send(
   run: Run,
-  c: Candidate & { user: CandidateUser & { email: string } },
+  c: Addressable,
   kind: string,
   build: (unsubscribeUrl: string) => BuiltEmail,
   alsoClaim?: () => Promise<() => Promise<void>>,
 ): Promise<boolean> {
+  const to = await confirmedAddress(run, c.user.supabaseUserId)
+  if (!to) return false
   const unsubscribe = unsubscribeLinkFor(c.user.supabaseUserId, run.now.getTime())
   const email = build(unsubscribe.pageUrl)
   const outcome = await claimThenSendLifecycle({
     userId: c.user.id,
     kind,
-    to: c.user.email,
+    to,
     subject: email.subject,
     html: email.html,
     text: email.text,
@@ -283,29 +357,54 @@ function renewalReminderClaim(subscriptionId: string, trialEnd: Date) {
   }
 }
 
-/** The checks every candidate passes first. Returns the user when it may be emailed. */
-function eligibleUser(
-  run: Run,
-  c: Candidate,
-  group: EmailAgeGroup | null,
-): (CandidateUser & { email: string }) | null {
-  if (!c.user?.email) {
-    count(run, 'noEmail')
-    return null
+/**
+ * The checks every candidate passes first: a user with a Supabase id (the
+ * auth address, the unsubscribe token and the marketing check are all keyed
+ * on it) who is not under 13.
+ */
+function eligible(run: Run, c: Candidate, group: EmailAgeGroup | null): c is Addressable {
+  if (!c.user?.supabaseUserId) {
+    count(run, 'noSupabaseId')
+    return false
   }
   if (group === 'UNDER_13') {
     // Registration enforces 13 and over; anything younger is bad data and
     // must not be emailed.
     count(run, 'underAge')
-    return null
+    return false
   }
-  return c.user as CandidateUser & { email: string }
+  return true
 }
 
 function hasBudget(run: Run): boolean {
   if (run.budget > 0) return true
   count(run, 'budgetExhausted')
   return false
+}
+
+/**
+ * Who M2 and M3 are written for, or null when neither may go: the profile is
+ * unreadable (it alone can rule out a Stripe customer), or the account is a
+ * Stripe customer, who may have left card details. The price and the plan
+ * link go only to an adult who may receive marketing.
+ */
+async function noticeAudience(
+  run: Run,
+  c: Addressable,
+  profiles: Map<string, ProfileFacts> | null,
+  group: EmailAgeGroup,
+): Promise<TrialEmailData['audience'] | null> {
+  const profile = profiles?.get(c.user.supabaseUserId)
+  if (!profile) {
+    count(run, 'profileUnavailable')
+    return null
+  }
+  if (profile.stripe_customer_id) {
+    count(run, 'stripeCustomer')
+    return null
+  }
+  if (!isAdultForEmail(group)) return 'service'
+  return (await isMarketingAllowed(c.user.supabaseUserId)) ? 'consented-adult' : 'service'
 }
 
 // ─── M2: trial ending ───────────────────────────────────────────────────────
@@ -332,14 +431,14 @@ async function trialEnding(run: Run): Promise<{ candidates: number; sent: number
     }
     const profile = c.user?.supabaseUserId ? profiles?.get(c.user.supabaseUserId) : undefined
     const group = c.user ? ageGroupOf(c.user, profile, run.now) : null
-    const user = eligibleUser(run, c, group)
-    if (!user || !hasBudget(run)) continue
+    if (!eligible(run, c, group) || !group) continue
+    const audience = await noticeAudience(run, c, profiles, group)
+    if (!audience || !hasBudget(run)) continue
 
-    const audience = group && isAdultForEmail(group) ? 'adult' : 'minor'
     const isTeacher = isTeacherOf(c, profile)
     const ok = await send(
       run,
-      { ...c, user },
+      c,
       LIFECYCLE_KIND.TRIAL_ENDING,
       (unsubscribeUrl) =>
         buildTrialEndingEmail({
@@ -382,14 +481,14 @@ async function trialEnded(run: Run): Promise<{ candidates: number; sent: number 
     }
     const profile = c.user?.supabaseUserId ? profiles?.get(c.user.supabaseUserId) : undefined
     const group = c.user ? ageGroupOf(c.user, profile, run.now) : null
-    const user = eligibleUser(run, c, group)
-    if (!user || !hasBudget(run)) continue
+    if (!eligible(run, c, group) || !group) continue
+    const audience = await noticeAudience(run, c, profiles, group)
+    if (!audience || !hasBudget(run)) continue
 
-    const audience = group && isAdultForEmail(group) ? 'adult' : 'minor'
     const isTeacher = isTeacherOf(c, profile)
     const ok = await send(
       run,
-      { ...c, user },
+      c,
       LIFECYCLE_KIND.TRIAL_ENDED,
       (unsubscribeUrl) =>
         buildTrialEndedEmail({
@@ -409,16 +508,14 @@ async function trialEnded(run: Run): Promise<{ candidates: number; sent: number 
 
 /**
  * Has this person submitted anything for marking since the trial began? True,
- * false, or null when any of the three reads failed or the account has no
- * Supabase id to look marking_submissions up by. Null skips the email: telling
- * someone "no essay has been marked yet" needs all three to say so.
+ * false, or null when any of the three reads failed. Null skips the email:
+ * telling someone "no essay has been marked yet" needs all three to say so.
  */
 async function hasStartedMarking(
   prismaUserId: string,
-  supabaseUserId: string | null,
+  supabaseUserId: string,
   since: Date,
 ): Promise<boolean | null> {
-  if (!supabaseUserId) return null
   try {
     const essays = await prisma.essay.count({
       where: { userId: prismaUserId, createdAt: { gte: since } },
@@ -441,9 +538,7 @@ async function hasStartedMarking(
   } catch (err) {
     // Said, not swallowed: if a table here is missing, M1 skips everyone, and
     // the only other trace would be the checkFailed count in the run result.
-    console.warn(
-      `${LOG} M1 marking history unreadable: ${err instanceof Error ? err.message : String(err)}`,
-    )
+    console.warn(`${LOG} M1 marking history unreadable: ${errText(err)}`)
     return null
   }
 }
@@ -468,8 +563,7 @@ async function firstEssay(run: Run): Promise<{ candidates: number; sent: number 
   for (const c of rows) {
     const profile = c.user?.supabaseUserId ? profiles?.get(c.user.supabaseUserId) : undefined
     const group = c.user ? ageGroupOf(c.user, profile, run.now) : null
-    const user = eligibleUser(run, c, group)
-    if (!user) continue
+    if (!eligible(run, c, group)) continue
     if (!group || !isAdultForEmail(group)) {
       // Nudges are off for under-18s (§8), and unknown age is a child.
       count(run, 'notAdult')
@@ -480,7 +574,7 @@ async function firstEssay(run: Run): Promise<{ candidates: number; sent: number 
       count(run, 'teacher')
       continue
     }
-    const started = await hasStartedMarking(user.id, user.supabaseUserId, c.currentPeriodStart)
+    const started = await hasStartedMarking(c.user.id, c.user.supabaseUserId, c.currentPeriodStart)
     if (started === null) {
       count(run, 'checkFailed')
       continue
@@ -491,7 +585,7 @@ async function firstEssay(run: Run): Promise<{ candidates: number; sent: number 
     }
     if (!hasBudget(run)) continue
 
-    const ok = await send(run, { ...c, user }, LIFECYCLE_KIND.FIRST_ESSAY, (unsubscribeUrl) =>
+    const ok = await send(run, c, LIFECYCLE_KIND.FIRST_ESSAY, (unsubscribeUrl) =>
       buildFirstEssayEmail({ trialEndsAt: c.currentPeriodEnd, unsubscribeUrl }),
     )
     if (ok) sent++
@@ -524,8 +618,7 @@ async function winback(
   for (const c of rows) {
     const profile = c.user?.supabaseUserId ? profiles?.get(c.user.supabaseUserId) : undefined
     const group = c.user ? ageGroupOf(c.user, profile, run.now) : null
-    const user = eligibleUser(run, c, group)
-    if (!user) continue
+    if (!eligible(run, c, group)) continue
     if (!group || !isAdultForEmail(group)) {
       // A child gets no marketing, whatever their setting says.
       count(run, 'notAdult')
@@ -542,18 +635,19 @@ async function winback(
       continue
     }
     // "No sign-in since": a person who has come back needs no reason to.
-    if (user.lastLoginAt && user.lastLoginAt.getTime() > c.currentPeriodEnd.getTime()) {
+    if (c.user.lastLoginAt && c.user.lastLoginAt.getTime() > c.currentPeriodEnd.getTime()) {
       count(run, 'signedInSince')
       continue
     }
-    if (!(await isMarketingAllowed(user.supabaseUserId))) {
+    // Both stores and, since 24 October 2026, the consent centre's ledger.
+    if (!(await isMarketingAllowed(c.user.supabaseUserId))) {
       count(run, 'notConsented')
       continue
     }
     if (!hasBudget(run)) continue
 
     const isTeacher = isTeacherOf(c, profile)
-    const ok = await send(run, { ...c, user }, kind, (unsubscribeUrl) =>
+    const ok = await send(run, c, kind, (unsubscribeUrl) =>
       build({ trialEndedAt: c.currentPeriodEnd, isTeacher, unsubscribeUrl }),
     )
     if (ok) sent++

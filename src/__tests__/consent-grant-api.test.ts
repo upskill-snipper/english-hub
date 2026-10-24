@@ -42,6 +42,11 @@ vi.mock('@/lib/consent', async () => {
   }
 })
 
+const mockOptOut = vi.fn()
+vi.mock('@/lib/email/marketing-preference', () => ({
+  optOutOfMarketing: (...args: unknown[]) => mockOptOut(...args),
+}))
+
 const UUID = '11111111-2222-3333-4444-555555555555'
 
 function request(method: string, body?: Record<string, unknown>): NextRequest {
@@ -58,6 +63,12 @@ beforeEach(() => {
   mockRecordConsent.mockReset()
   mockWithdrawConsent.mockReset()
   mockGetConsents.mockReset()
+  mockOptOut.mockReset()
+  mockOptOut.mockResolvedValue({
+    changed: true,
+    profilesUpdated: true,
+    privacySettingsUpdated: true,
+  })
   mockGetUser.mockResolvedValue({ data: { user: { id: UUID } }, error: null })
   mockGetConsents.mockResolvedValue([])
 })
@@ -196,5 +207,38 @@ describe('DELETE /api/consent', () => {
 
     expect(res.status).toBe(200)
     expect(mockWithdrawConsent).toHaveBeenCalledWith(UUID, 'AI_PROCESSING', expect.any(String))
+    // Not a marketing withdrawal, so the email stores are left alone.
+    expect(mockOptOut).not.toHaveBeenCalled()
+  })
+
+  // 24 October 2026. A MARKETING withdrawal wrote only the ledger, which no
+  // sender read, so the person was told "withdrawn" and kept getting marketing.
+  it('turns marketing email off in the stores the senders read when MARKETING is withdrawn', async () => {
+    mockWithdrawConsent.mockResolvedValue({ id: 'cns_3', consentType: 'MARKETING', granted: false })
+
+    const { DELETE } = await import('@/app/api/consent/route')
+    const res = await DELETE(request('DELETE', { consentType: 'MARKETING' }))
+
+    expect(res.status).toBe(200)
+    expect(mockWithdrawConsent).toHaveBeenCalledWith(UUID, 'MARKETING', expect.any(String))
+    expect(mockOptOut).toHaveBeenCalledWith(UUID)
+  })
+
+  it('says so, rather than "withdrawn", when PrivacySettings could not be updated', async () => {
+    mockWithdrawConsent.mockResolvedValue({ id: 'cns_4', consentType: 'MARKETING', granted: false })
+    mockOptOut.mockResolvedValue({
+      changed: true,
+      profilesUpdated: true,
+      privacySettingsUpdated: false,
+    })
+    vi.spyOn(console, 'error').mockImplementation(() => {})
+
+    const { DELETE } = await import('@/app/api/consent/route')
+    const res = await DELETE(request('DELETE', { consentType: 'MARKETING' }))
+
+    expect(res.status).toBe(500)
+    const json = await res.json()
+    expect(json.error).toMatch(/could not be updated/)
+    expect(json.message).toBeUndefined()
   })
 })

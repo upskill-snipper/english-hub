@@ -372,11 +372,13 @@ export async function GET(request: NextRequest) {
       //
       // The result is no longer thrown away (23 October 2026): when a trial
       // was provisioned, the account-ready email goes after the redirect, once
-      // per account (src/lib/email/lifecycle/account-ready.ts).
+      // per account (src/lib/email/lifecycle/account-ready.ts), and only to
+      // a confirmed address.
       if (data?.user?.id) {
         announceTrialReady(await provisionSignupTrial(data.user.id), {
           supabaseUserId: data.user.id,
           email: data.user.email,
+          emailConfirmedAt: data.user.email_confirmed_at ?? null,
         })
       }
 
@@ -433,6 +435,7 @@ export async function GET(request: NextRequest) {
         announceTrialReady(await provisionSignupTrial(data.user.id), {
           supabaseUserId: data.user.id,
           email: data.user.email,
+          emailConfirmedAt: data.user.email_confirmed_at ?? null,
         })
       }
 

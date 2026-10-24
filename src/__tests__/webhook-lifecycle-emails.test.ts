@@ -65,7 +65,7 @@ vi.mock('@/lib/stripe', () => ({
     customers: { retrieve: vi.fn(async () => ({ deleted: false, email: 'payer@example.com' })) },
     invoices: { retrieve: vi.fn() },
   },
-  isIeltsPriceId: () => false,
+  isIeltsPriceId: (id: string | null | undefined) => id === 'price_ielts_monthly',
 }))
 
 const profileUpdates: Record<string, unknown>[] = []
@@ -205,7 +205,7 @@ describe('M6 payment failed', () => {
     expect(b.to).toBe('payer@example.com')
     expect(b.subject).toBe('Your payment did not go through, so your plan is paused')
     expect(b.html).toContain('We tried to take £6.99 for your English Hub plan')
-    expect(b.html).toContain('/account/billing?ref=em-pf')
+    expect(b.html).toContain('/account/billing?src=em-pf')
     expect(b.html).not.toMatch(/avoid any interruption/i)
     expect(b.text).toContain('paused until a payment succeeds')
     expectOneClick(b)
@@ -241,6 +241,48 @@ describe('M6 payment failed', () => {
     delete process.env.TRIAL_LIFECYCLE_EMAILS_ENABLED
     await deliver(makeEvent('invoice.payment_failed', FAILED_INVOICE))
     expect(resendBodies()).toHaveLength(1)
+  })
+
+  // 24 October 2026. This handler wrote past_due for an IELTS-only invoice
+  // too, the one handler with no IELTS carve-out, so a customer holding a
+  // Student plan beside an IELTS plan lost their Student access when the
+  // IELTS payment failed, and invoice.paid never wrote 'pro' back. The email
+  // then said their plan "stays active for now".
+  it('an IELTS-only failure leaves the per-person field alone and names the IELTS plan', async () => {
+    const ieltsInvoice = {
+      ...FAILED_INVOICE,
+      id: 'in_ielts_1',
+      subscription: 'sub_ielts',
+      amount_due: 3900,
+      lines: { data: [{ price: { id: 'price_ielts_monthly' } }] },
+    }
+    const res = await deliver(makeEvent('invoice.payment_failed', ieltsInvoice))
+    expect(res.status).toBe(200)
+
+    expect(profileUpdates).not.toContainEqual({ subscription_status: 'past_due' })
+    const bodies = resendBodies()
+    expect(bodies).toHaveLength(1)
+    expect(bodies[0].subject).toBe('Your payment did not go through')
+    expect(bodies[0].text).toContain('We tried to take £39.00 for your IELTS plan')
+    expect(bodies[0].text).not.toMatch(/paused|stays active|will end/i)
+  })
+
+  it('a failure on a mixed invoice, IELTS and a main plan, still writes past_due', async () => {
+    const mixed = {
+      ...FAILED_INVOICE,
+      id: 'in_mixed_1',
+      lines: {
+        data: [
+          { price: { id: 'price_ielts_monthly' } },
+          { price: { id: 'price_student_monthly' } },
+        ],
+      },
+    }
+    await deliver(makeEvent('invoice.payment_failed', mixed))
+    expect(profileUpdates).toContainEqual({ subscription_status: 'past_due' })
+    expect(resendBodies()[0].subject).toBe(
+      'Your payment did not go through, so your plan is paused',
+    )
   })
 
   it('sends nothing for a duplicate covered by another live subscription', async () => {
