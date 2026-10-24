@@ -99,6 +99,10 @@ export const KNOWN_ROUTES: readonly KnownRoute[] = [
     basis: `${FROM_GSP}: getPrintableSlugs(), the list getPrintable() reads`,
   },
   {
+    route: '/resources/teacher-library/mark-schemes/[slug]',
+    basis: `${FROM_GSP}: one guide per paper the AI marker marks against (MARK_SCHEME_GUIDES), the list guideBySlug() searches`,
+  },
+  {
     route: '/revision/poetry/pearson-igcse/[slug]',
     basis: `${FROM_GSP}: PEARSON_POEM_SLUGS, which the page checks first`,
   },

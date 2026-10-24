@@ -28,7 +28,13 @@ import { MARKER_NOT_ALIGNED } from '@/lib/marking/guide-links'
  *
  * Every paper the marker can mark against has a guide
  * (the-mark-scheme-guides-are-complete.test.ts), so the static params are the
- * whole set and an unknown slug is a 404.
+ * whole set. An unknown slug is answered with a real 404 by the middleware,
+ * before this route runs (src/lib/seo/known-pages.sources.ts lists the
+ * guides): the notFound() below comes after the section's loading screen has
+ * already sent a 200, which is what production served for an unknown slug on
+ * the day these pages went live (24 October 2026), and dynamicParams does not
+ * change that on a page the site renders per request. Both stay as the
+ * backstop.
  */
 
 export const dynamicParams = false

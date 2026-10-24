@@ -702,6 +702,34 @@
     ]
   },
   {
+    "route": "/resources/teacher-library/mark-schemes/[slug]",
+    "escapes": [[]],
+    "known": [
+      "aqa-english-language-paper-1",
+      "aqa-english-language-paper-2",
+      "aqa-english-literature-paper-1",
+      "aqa-english-literature-paper-2",
+      "cambridge-igcse-9-1-first-language-english-paper-1",
+      "cambridge-igcse-9-1-first-language-english-paper-2",
+      "cambridge-igcse-first-language-english-paper-1",
+      "cambridge-igcse-first-language-english-paper-2",
+      "edexcel-english-language-paper-1",
+      "edexcel-english-language-paper-2",
+      "edexcel-english-literature-paper-1",
+      "edexcel-english-literature-paper-2",
+      "edexcel-international-gcse-english-language-a-paper-1",
+      "edexcel-international-gcse-english-literature-paper-1",
+      "eduqas-english-language-component-1",
+      "eduqas-english-language-component-2",
+      "eduqas-english-literature-component-1",
+      "eduqas-english-literature-component-2",
+      "ocr-english-language-component-01",
+      "ocr-english-language-component-02",
+      "ocr-english-literature-component-01",
+      "ocr-english-literature-component-02"
+    ]
+  },
+  {
     "route": "/revision/poetry/pearson-igcse/[slug]",
     "escapes": [[]],
     "known": [
