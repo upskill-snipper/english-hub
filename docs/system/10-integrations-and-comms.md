@@ -350,6 +350,14 @@ write, still not awaited, has been kept alive past the response since 10 October
 (`keepAlive`, above). This is the only place a marketing-adjacent recipient is added
 to a transactional email, and the age gate in it is a compliance control, not a nicety.
 
+The other Trustpilot path, [`triggerTrustpilotInvite`](../../src/lib/trustpilot/trigger-invite.ts)
+(the first-mark, 7-day and 90-day invitations, sent through SendGrid), checked only
+`User.isMinor`, which defaults to false, and hard-coded `optedOut = false`. Since
+24 October 2026 it sends only to a known adult (`resolveEmailAgeGroup`: a real date of
+birth 18 or over, unknown counts as a child) whom `isMarketingAllowed` clears. Whether a
+review request needs consent or only the absence of an objection is the owner's
+decision; the gate takes the strict reading until then.
+
 ---
 
 ## 7. The published address book

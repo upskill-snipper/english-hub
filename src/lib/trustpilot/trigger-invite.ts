@@ -17,6 +17,8 @@
 
 import { createServiceRoleClient } from '@/lib/supabase/server'
 import { prisma } from '@/lib/prisma'
+import { isAdultForEmail, resolveEmailAgeGroup } from '@/lib/identity'
+import { isMarketingAllowed } from '@/lib/email/marketing-preference'
 import { buildTrustpilotInviteLink, sendTrustpilotInvite } from './send-invite'
 import type { TrustpilotTrigger, TrustpilotVars } from './email-templates'
 
@@ -36,6 +38,10 @@ export type TriggerTrustpilotInviteResult = {
   skipped?:
     | 'already_invited'
     | 'under_18'
+    /** No real date of birth showing 18 or over: unknown is treated as a child. */
+    | 'not_known_adult'
+    /** isMarketingAllowed said no, or could not say. */
+    | 'no_marketing_consent'
     | 'opted_out'
     | 'user_not_found'
     | 'disabled'
@@ -50,9 +56,9 @@ export type TriggerTrustpilotInviteResult = {
  *
  * Does in order:
  *   1. Look up the user (Prisma) - if not found or soft-deleted, skip.
- *   2. If user is a minor (Children's Code), skip.
- *   3. Check opt-out preference (placeholder until the privacy toggle ships;
- *      currently always proceeds - see TODO inline).
+ *   2. If user is a minor (Children's Code), or is not a KNOWN adult (a real
+ *      date of birth 18 or over), skip.
+ *   3. If isMarketingAllowed does not say yes, skip.
  *   4. Dedup via `trustpilot_invite` table - if (user_id, trigger) exists, skip.
  *   5. Call sendTrustpilotInvite - which no-ops if TRUSTPILOT_ENABLED is off.
  *   6. Record the outcome in `trustpilot_invite`.
@@ -100,13 +106,31 @@ export async function triggerTrustpilotInvite(
       return { ok: true, skipped: 'under_18' }
     }
 
-    // ── 3. Opt-out skip ──────────────────────────────────────────────
-    // TODO: once the account-settings "review invitations" toggle ships,
-    // read from privacy_settings / user preferences and honour it here.
-    // For now we proceed - the scaffold is feature-flagged off anyway.
-    const optedOut = false
-    if (optedOut) {
-      return { ok: true, skipped: 'opted_out' }
+    // ── 2b. Only a KNOWN adult (24 October 2026) ─────────────────────
+    // Step 2 was the only age check, and `User.isMinor` defaults to false: a
+    // false says nothing (see src/lib/identity/age.ts), so a child with no
+    // date of birth on file, or a stale flag, passed it. With
+    // TRUSTPILOT_ENABLED on, that sent a review request to children from the
+    // first-mark and 7-day triggers, and from the 90-day one for web payers
+    // once the Stripe webhook began counting payments on 23 October 2026.
+    // The email age group is the one the trial lifecycle emails use: a real
+    // date of birth 18 or over is an adult, and an unknown age is a child.
+    // An adult with no date of birth on file is therefore not invited; the
+    // BCC path (should-bcc.ts) already required a date of birth.
+    const ageGroup = await resolveEmailAgeGroup(supabaseUserId)
+    if (!isAdultForEmail(ageGroup)) {
+      return { ok: true, skipped: 'not_known_adult' }
+    }
+
+    // ── 3. Marketing choice (24 October 2026) ────────────────────────
+    // This used to be `const optedOut = false`, so nobody's marketing choice
+    // was read, an unsubscribe included. A review request is marketing in
+    // all but name, so it now asks isMarketingAllowed, the read every other
+    // marketing email uses: an unknown or failed read means do not send.
+    // Whether a review request needs consent or only the absence of an
+    // objection is the founder's call; this is the strict reading until then.
+    if (!(await isMarketingAllowed(supabaseUserId))) {
+      return { ok: true, skipped: 'no_marketing_consent' }
     }
 
     // ── 4. Dedup via Supabase trustpilot_invite table ────────────────
