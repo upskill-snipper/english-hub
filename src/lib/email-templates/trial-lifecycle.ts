@@ -146,7 +146,9 @@ export function buildTrialEndedEmail(data: TrialEmailData): BuiltEmail {
             },
             p(priceLine(isTeacher)),
           ]
-        : [p('The quests for 100+ set texts are free, and most answers come with the reason.')]),
+        : // A child gets the facts and the link to what stays free, and no
+          // suggestion beyond it: nudges are off for under-18s (§8).
+          []),
     ],
     cta: adult
       ? { label: 'See plans', url: siteLink('/pricing', 'em-d8') }

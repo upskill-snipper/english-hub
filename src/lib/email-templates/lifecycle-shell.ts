@@ -53,7 +53,7 @@ export const AI_MARKING_SENTENCE =
  * free", which promised whole courses.
  */
 export const STAYS_FREE_LINE =
-  'These stay free: the 100+ set-text study guides, the quests for 100+ set texts, the 37 games, revision notes for 40+ texts, 2,000+ flashcards and the first module of each of the 80+ courses.'
+  'The 100+ set-text study guides, the quests for 100+ set texts, the 37 games, revision notes for 40+ texts, 2,000+ flashcards and the first module of each of the 80+ courses.'
 
 /**
  * What a trial or a plan adds, from §5's "Not free" list. Two items are left
