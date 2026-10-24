@@ -1,9 +1,9 @@
 // ─── Edexcel International GCSE English Language A (4EA1) Mark Scheme ─────────
 // Paper 1 (4EA1/01): Non-fiction Texts and Transactional Writing - 2h15, 90 marks.
 //   Section A - Reading (45 marks)
-//     Q1  AO1  2   - retrieval from Text One (point-marked)
-//     Q2  AO1  4   - explain in own words, Text One (point-marked)
-//     Q3  AO1  5   - select and explain, Text One (point-marked)
+//     Q1  AO1  2   - retrieval from Text One (point-marked, no levels)
+//     Q2  AO1  4   - explain in own words, Text One (point-marked, no levels)
+//     Q3  AO1  5   - explain or describe, Text One (point-marked, no levels)
 //     Q4  AO2  12  - language & structure analysis, Text Two (5-level grid)
 //
 //   Text One is always the unseen extract and Text Two always the Part 1
@@ -24,12 +24,49 @@
 // descriptors are summarised IN OUR OWN WORDS from the publicly available
 // Edexcel generic level grids and the official 4EA1/01 mark scheme; the mark
 // boundaries are exact. examinerNotes encode the operational marking rules
-// (point marking for Q1-Q3; the Q3 selection-only cap; the Q5 single-text cap;
-// best-fit for the level grids) drawn from the Pearson standardisation guidance.
+// (point marking for Q1-Q3; the Q5 single-text cap; best-fit for the level
+// grids).
+//
+// CORRECTED 24 October 2026, three smaller differences from Pearson, which the
+// guide to this paper found. Every tariff, objective split and level range
+// already agreed and is unchanged.
+//   - Q1 to Q3 were scored on two bands of this file's own, 'Partial' and
+//     'Secure' (Q1 1 and 2, Q2 1-2 and 3-4, Q3 1-2 and 3-5), describing "some"
+//     and "most or all" of the available points. Pearson marks them one mark
+//     per valid point, with no levels: the rule is a count. Each is now one
+//     band covering the whole tariff, named for what it is, and the notes say
+//     exactly how the marks are given.
+//   - Q3 capped an answer that only selected quotations at 1 mark. Pearson's
+//     sample assessment materials (Issue 4) and the June 2024, November 2024
+//     and June 2025 mark schemes have no such cap; the June 2025 examiners'
+//     report says only that quotations without explanation are not enough.
+//     This header said the cap came from standardisation guidance, which is
+//     not public. The notes now say what that report and Pearson's exemplar
+//     commentaries describe: a quotation with no explanation earns
+//     nothing for that point, and every valid point still earns its mark
+//     (the examiner tool's pack, src/lib/marking/examiner/packs/
+//     pearson-igcse-english-a-paper1.ts, applies the same rule). The
+//     calibration anchors for this paper
+//     (src/lib/marking/calibration/edexcel-igcse-lang-paper1.ts) still state
+//     the cap, citing the June 2026 standardisation pack; this change does not
+//     touch them, and they need reconciling with that pack.
+//   - The Q6 task gave "report" among its example forms. Since the November
+//     2025 series Pearson sets only the six forms of specification Issue 7,
+//     and a report is not one of them; the task now lists the six.
+// The figures come from the guide, src/data/mark-scheme-guides/
+// edexcel-igcse-lang-paper1.ts, written and then checked by a second reader
+// against Pearson's specification (Issue 7, August 2025), sample assessment
+// materials (Issue 4, July 2025) and June 2025 question paper, mark scheme
+// (4EA1_01_2506_MS) and examiners' report (4EA1_01_2506_ER). The founder
+// approved changing the marker on 24 October 2026 (document 30).
+// src/lib/marking/mark-schemes/__tests__/edexcel-igcse-structure.test.ts
+// holds this file to the guide.
 //
 // Sources:
 //   https://qualifications.pearson.com/en/qualifications/edexcel-international-gcses/international-gcse-english-language-a-2016.coursematerials.html
 //   4EA1/01 mark scheme (Pearson Edexcel International GCSE English Language A)
+//   4EA1 specification, Issue 7 (August 2025); sample assessment materials,
+//   Issue 4 (July 2025); June 2025 Paper 1 mark scheme and examiners' report.
 // ────────────────────────────────────────────────────────────────────────────
 
 import type { MarkScheme, AssessmentObjective, BandDescriptor } from './types'
@@ -43,37 +80,26 @@ const AO_TEXT = {
   AO5: 'Write clearly, using a range of vocabulary and sentence structures, with appropriate paragraphing and accurate spelling, grammar and punctuation.',
 } as const
 
-// ─── Point-marked reading bands (Q1-Q3) ─────────────────────────────────────
-// AO1 short-answer questions are point-marked (one mark per valid point up to
-// the maximum) rather than level-marked. We model two descriptive bands whose
-// top band finishes exactly on `max`; the operational rule lives in
-// examinerNotes for the question.
-function pointBands(max: number): BandDescriptor[] {
-  const half = Math.max(1, Math.floor(max / 2))
+// ─── Point-marked reading questions (Q1-Q3) ─────────────────────────────────
+// Pearson marks Q1 to Q3 one mark per valid point, up to the question's
+// maximum, with no levels. Each has ONE band covering the whole tariff, so
+// there is no level to place an answer in, only points to count; the
+// question's examinerNotes say exactly what earns a mark. One band also keeps
+// the examiner tool's derived pack treating these as points-counted questions
+// (src/lib/marking/examiner/packs/derive.ts: fewer than three bands).
+//
+// Until 24 October 2026 these were two bands of this file's own, 'Partial'
+// and 'Secure', which described "some" and "most or all" of the available
+// points where Pearson's rule is a count.
+function pointMarked(max: number, point: string, indicators: string[]): BandDescriptor[] {
   return [
     {
-      band: 'Partial',
+      band: 'Point-marked',
       minMarks: 1,
-      maxMarks: half,
-      label: 'Some valid points',
-      descriptor:
-        'A partial response that identifies some of the valid, relevant points available within the directed lines but omits others. One mark is awarded for each creditable point.',
-      indicators: [
-        'Some relevant points retrieved from the correct lines',
-        'Other available points are missed',
-      ],
-    },
-    {
-      band: 'Secure',
-      minMarks: half + 1,
       maxMarks: max,
-      label: 'Most or all valid points',
-      descriptor:
-        'A focused response that identifies most or all of the valid, relevant points available within the directed lines, expressed clearly and (where the question requires) in the candidate’s own words.',
-      indicators: [
-        'Most/all available points retrieved accurately',
-        'Points are clearly expressed and stay within the directed lines',
-      ],
+      label: `One mark per ${point}, up to ${max}`,
+      descriptor: `No levels: one mark for each ${point}, up to ${max}. Nothing is deducted, and anything beyond ${max} earns nothing more.`,
+      indicators,
     },
   ]
 }
@@ -332,11 +358,23 @@ export const edexcelIgcseLangPaper1: MarkScheme = {
       id: 'Q1',
       questionType: 'Reading: retrieval (AO1)',
       taskDescription:
-        'From the specified lines of Text One, identify/retrieve the words or phrases the question asks for.',
+        'From the lines of Text One the question gives, pick out the two words or short phrases it asks for.',
       totalMarks: 2,
-      assessmentObjectives: [ao('AO1', 'AO1 - Read and understand', 2, 2, pointBands(2))],
+      assessmentObjectives: [
+        ao(
+          'AO1',
+          'AO1 - Read and understand',
+          2,
+          2,
+          pointMarked(2, 'correct word or phrase', [
+            'Each word or phrase comes from inside the given lines of Text One',
+            'Each fits exactly what the question asks for',
+            'Explanation is not needed and earns nothing extra',
+          ]),
+        ),
+      ],
       examinerNotes:
-        'Point-marked: award one mark per valid word/phrase from the directed lines, up to a maximum of 2. Do not credit material drawn from outside the specified lines.',
+        'Point-marked, no levels: one mark for each correct word or short phrase taken from inside the given lines of Text One, up to 2. Nothing from outside the given lines is credited. The question asks for words from the text, so explanation or comment is not needed and earns nothing extra.',
     },
     {
       id: 'Q2',
@@ -344,19 +382,48 @@ export const edexcelIgcseLangPaper1: MarkScheme = {
       taskDescription:
         'Explain, in your own words where possible, what you learn about the given subject from the specified lines of Text One.',
       totalMarks: 4,
-      assessmentObjectives: [ao('AO1', 'AO1 - Read and understand', 4, 4, pointBands(4))],
+      assessmentObjectives: [
+        ao(
+          'AO1',
+          'AO1 - Read and understand',
+          4,
+          4,
+          pointMarked(4, 'separate, valid point', [
+            'Each point comes from inside the given lines of Text One',
+            'Each point is about the subject the question names',
+            'A point made twice is counted once',
+          ]),
+        ),
+      ],
       examinerNotes:
-        'Point-marked: award one mark per valid point, up to a maximum of 4. Reward only points drawn from the directed lines; own words are preferred over lifted quotation.',
+        'Point-marked, no levels: one mark for each separate, valid point about the subject the question names, drawn from the given lines of Text One, up to 4. The question asks for own words, which show understanding; credit a valid point where the understanding is clear. A point made twice counts once, and points from outside the given lines earn nothing.',
     },
     {
       id: 'Q3',
       questionType: 'Reading: select and explain (AO1)',
+      // The papers ask the candidate to explain or to describe (the sample
+      // assessment materials' Question 3 asks for a description). The notes
+      // carried a cap of 1 mark for an answer that only selects quotations
+      // until 24 October 2026; Pearson's sample assessment materials and its
+      // 2024 and 2025 mark schemes have none (see the header).
       taskDescription:
-        'From the specified lines of Text One, select relevant evidence and explain what the writer tells the reader, as the question directs.',
+        'From the lines of Text One the question gives, explain or describe what it asks about, such as what you learn about a person or what happens to them. You may support your points with brief quotations.',
       totalMarks: 5,
-      assessmentObjectives: [ao('AO1', 'AO1 - Read and understand', 5, 5, pointBands(5))],
+      assessmentObjectives: [
+        ao(
+          'AO1',
+          'AO1 - Read and understand',
+          5,
+          5,
+          pointMarked(5, 'separate, valid point', [
+            'Each point comes from inside the given lines of Text One',
+            'Each point explains or describes, not only quotes',
+            'A point made twice is counted once',
+          ]),
+        ),
+      ],
       examinerNotes:
-        'Point-marked: award one mark per valid point, up to a maximum of 5. IMPORTANT CAP: where there is evidence of selection only (quotations given with no attempt to use or explain them) award a maximum of 1 mark. Points from outside the directed lines are not credited.',
+        'Point-marked, no levels: one mark for each separate, valid point that explains or describes what the question asks about, drawn from the given lines of Text One, up to 5. Brief quotations may support the points but are not required. A quotation given with no explanation earns nothing for that point; every other valid point in the answer still earns its mark. A point made twice counts once, and points from outside the given lines earn nothing.',
     },
     {
       id: 'Q4',
@@ -381,18 +448,20 @@ export const edexcelIgcseLangPaper1: MarkScheme = {
     {
       // Section B: candidates answer ONE of Question 6 or Question 7. Both are
       // marked on the same AO4 (27) + AO5 (18) grids, so a single question
-      // scheme covers either choice.
+      // scheme covers either choice. The forms are the six of specification
+      // Issue 7, the only ones set since the November 2025 series; until
+      // 24 October 2026 the task offered "report", which is not one of them.
       id: 'Q6',
       questionType: 'Transactional writing (AO4 + AO5)',
       taskDescription:
-        'Answer ONE transactional writing task (Question 6 OR Question 7), writing for the specified form, purpose and audience (e.g. article, letter, speech, report, review).',
+        'Answer ONE of the two transactional writing tasks (Question 6 or Question 7), writing in the form the task names, for its purpose and reader. Since the November 2025 series Pearson sets only six forms: an article for a magazine or newspaper, a speech, a letter, a guide, a review, or the text of a leaflet.',
       totalMarks: 45,
       assessmentObjectives: [
         ao('AO4', 'AO4 - Communicate and adapt', 27, 45, ao4Bands),
         ao('AO5', 'AO5 - Technical accuracy', 18, 45, ao5Bands),
       ],
       examinerNotes:
-        'Mark the ONE task the candidate attempted. Assess communication and adaptation to form/audience/purpose (AO4, max 27) and technical accuracy — vocabulary, sentence structure, paragraphing, spelling, grammar, punctuation (AO5, max 18) — separately, each best-fit against its grid, then add the two for the Section B total.',
+        'Mark the ONE task the candidate attempted. AO4 (27 marks: communication, and how well form, tone and register suit the purpose and reader) and AO5 (18 marks: vocabulary, sentence structures, paragraphing, spelling, punctuation and grammar) are two separate grids: place the writing on each by best fit, then add the two marks for the Section B total.',
     },
   ],
 }

@@ -45,8 +45,12 @@
  * individual objectives, so each `objectives` entry groups the codes that
  * share the marks (for example 'R1, R2, R3, R5': 10).
  *
- * DIFFERENCES FROM THE AI MARKER (src/lib/marking/mark-schemes/cambridge-0500.ts,
- * not changed here; changing it changes how essays are scored). Totals agree:
+ * DIFFERENCES FROM THE AI MARKER (src/lib/marking/mark-schemes/cambridge-0500.ts),
+ * CORRECTED 24 October 2026. The founder approved changing the marker
+ * (document 30), and it now marks both sections as this guide describes,
+ * each part on its own grid with these level ranges, held to this guide by
+ * src/lib/marking/mark-schemes/__tests__/cambridge-structure.test.ts. Kept
+ * below as the record of what it did before. Totals agree:
  * 80 marks, 120 minutes, Section A 40 (reading 15, writing 25) and Section B
  * 40 (16 and 24). The marker's notes say the 16/24 split "was NOT re-read for
  * 2027-2029": it matches the 2027 specimen mark scheme. What differs is how
@@ -86,7 +90,8 @@
  *    descriptions are now plain words; the meaning is unchanged.
  *
  * DIFFERENCES THE LIST ABOVE MISSED, in the marker's wording rather than its
- * marks (src/lib/marking/prompt-builder.ts puts each objective's description
+ * marks, also corrected on 24 October 2026
+ * (src/lib/marking/prompt-builder.ts puts each objective's description
  * and every band's descriptor and indicators into the marking prompt):
  *  - Section A reading: the bands assume two texts ('Some ideas from both
  *    texts', 'synthesised across both texts') and have nothing for 1(a),

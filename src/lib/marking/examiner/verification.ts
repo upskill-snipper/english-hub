@@ -13,10 +13,15 @@
 //   • aqa-lang-paper1: the structure objective carried id 'AO3'. AQA assesses
 //     structure under AO2; AO3 is comparison and is not on Paper 1 at all. Every
 //     Question 3 commentary ended "appropriate for AO3". Fixed.
-//   • eduqas-lang-comp1 and eduqas-lang-comp2: the questions sum to 75 on a
-//     paper declared as 80. Not fixed, because inventing the missing five marks
-//     would be exactly the failure this file exists to prevent. Recorded below
-//     and pinned by a test.
+//   • eduqas-lang-comp1 and eduqas-lang-comp2: the questions summed to 75 on a
+//     paper declared as 80. Not fixed then, because inventing the missing five
+//     marks would be exactly the failure this file exists to prevent; recorded
+//     in KNOWN_TOTAL_MISMATCHES and pinned by a test. Fixed on 24 October 2026
+//     from the two papers' guides in src/data/mark-scheme-guides, checked
+//     against Eduqas's Summer 2025 papers and mark schemes: no question was
+//     short, Section A of each component was built to the wrong paper (see
+//     the docblock of src/lib/marking/mark-schemes/eduqas-lang.ts). Not a
+//     verification by a person, so neither scheme is in VERIFIED_SPECS.
 //
 // THE RULE
 //
@@ -71,7 +76,7 @@ export const VERIFIED_SPECS: Readonly<Record<string, SpecVerification>> = {
     checkedBy: 'Claude',
     url: 'https://www.aqa.org.uk/subjects/english/gcse/english-8700/assessment-resources',
     scope:
-      "Question structure and tariffs (Q1 4 AO1, Q2 8 AO2 language, Q3 8 AO2 structure, Q4 20 AO4, Q5 40 split AO5 24 / AO6 16) and the four-level grids. The AO3 mislabelling on Q3 was found and fixed by this check. Band descriptor wording is the corpus author's paraphrase, not the board's verbatim text.",
+      "Question structure and tariffs (Q1 4 AO1, Q2 8 AO2 language, Q3 8 AO2 structure, Q4 20 AO4, Q5 40 split AO5 24 / AO6 16) and the four-level grids. The AO3 mislabelling on Q3 was found and fixed by this check. Band descriptor wording is the corpus author's paraphrase, not the board's verbatim text. Since checked: on 24 October 2026 Q1 became point-marked (the 2026 papers' four multiple-choice parts), and the question wording and caps followed the 2026 papers, from the mark-scheme guide (src/data/mark-scheme-guides/aqa-lang-paper1.ts); the tariffs above did not change, and that correction was not part of this check.",
   },
   'aqa-lang-paper2': {
     document: 'AQA GCSE English Language 8700 specification and assessment resources',
@@ -80,7 +85,7 @@ export const VERIFIED_SPECS: Readonly<Record<string, SpecVerification>> = {
     checkedBy: 'Claude',
     url: 'https://www.aqa.org.uk/subjects/english/gcse/english-8700/assessment-resources',
     scope:
-      "Question structure and tariffs (Q1 4 AO1, Q2 8 AO1 summary, Q3 12 AO2, Q4 16 AO3 comparison, Q5 40 split AO5 24 / AO6 16) and the four-level grids. Band descriptor wording is the corpus author's paraphrase, not the board's verbatim text.",
+      "Question structure and tariffs (Q1 4 AO1, Q2 8 AO1 summary, Q3 12 AO2, Q4 16 AO3 comparison, Q5 40 split AO5 24 / AO6 16) and the four-level grids. Band descriptor wording is the corpus author's paraphrase, not the board's verbatim text. Since checked: on 24 October 2026 Q2 took the 2026 papers' wording (what can be inferred about the differences named, not a summary) and the caps the guide lists (src/data/mark-scheme-guides/aqa-lang-paper2.ts); the tariffs above did not change, and that correction was not part of this check.",
   },
 }
 
@@ -93,13 +98,16 @@ export const VERIFIED_SPECS: Readonly<Record<string, SpecVerification>> = {
  * teacher. The structural test pins this map exactly: a new broken scheme fails
  * the build, and fixing one of these fails the build until its entry is
  * removed. Neither can happen quietly.
+ *
+ * Empty since 24 October 2026. Its only entries were eduqas-lang-comp1 and
+ * eduqas-lang-comp2, whose Section A questions summed to 35 (5+5+10+10+5)
+ * against 80-mark papers with 40 marks of writing. The mark-scheme guides,
+ * checked against Eduqas's Summer 2025 papers, showed that no question was
+ * short: each Section A had a proofreading question the paper does not have
+ * and lacked questions it does have. Both now sum to 80 (5+5+10+10+10+40, and
+ * 3+10+3+10+4+10+20+20).
  */
-export const KNOWN_TOTAL_MISMATCHES: Readonly<Record<string, string>> = {
-  'eduqas-lang-comp1':
-    'Section A questions sum to 35 (5+5+10+10+5) against a declared paper total of 80 with a 40-mark Section B. Eduqas Section A is a 40-mark section, so five marks are unaccounted for. Which question is short has not been established against a published paper.',
-  'eduqas-lang-comp2':
-    'Section A questions sum to 35 (5+5+10+10+5) against a declared paper total of 80 with two 20-mark Section B tasks. Same 5-mark shortfall as Component 1.',
-}
+export const KNOWN_TOTAL_MISMATCHES: Readonly<Record<string, string>> = {}
 
 /** The verification record for a scheme, or null if it has never been checked. */
 export function verificationFor(schemeId: string): SpecVerification | null {

@@ -32,10 +32,15 @@
  * the Section A question (post-1914 prose or drama). Sections B and C carry
  * none.
  *
- * WHERE THE AI MARKER'S DATA DIFFERS (src/lib/marking/mark-schemes/eduqas-lit.ts,
- * eduqasLitComp2). Total (120), duration (150 minutes), every question's
- * total, the AO4 marks and levels, and which objectives each question assesses
- * all agree. The differences are in how the marks are split:
+ * THE AI MARKER (src/lib/marking/mark-schemes/eduqas-lit.ts, eduqasLitComp2)
+ * WAS CORRECTED TO THIS GUIDE on 24 October 2026, with the founder's approval
+ * (document 30): each question is now one grid covering its objectives
+ * ('AO1-AO2' or 'AO1-AO3') at this guide's band ranges, with AO4 on its own
+ * 5-mark grid in Section A; __tests__/eduqas-lit-structure.test.ts in that
+ * folder holds it to this guide. Until then its total (120), duration (150
+ * minutes), every question's total, the AO4 marks and levels, and which
+ * objectives each question assesses all agreed. The differences were in how
+ * the marks were split:
  *   - marker: Section A AO1 18 + AO2 17 + AO4 5; board: 35 marks for AO1 and
  *     AO2, equally weighted on one grid, plus AO4 5 on its own grid.
  *   - marker: Section B AO1 14 + AO2 13 + AO3 13; board: 40 marks, AO1, AO2

@@ -140,10 +140,14 @@ beforeAll(async () => {
 
 describe('the probe result', () => {
   it('reports ok when a real mark comes back', async () => {
-    const { runMarkingProbe, PROBE_SCHEME_ID } = await import('@/lib/marking/health-probe')
+    const { runMarkingProbe, PROBE_SCHEME_ID, PROBE_QUESTION_ID } =
+      await import('@/lib/marking/health-probe')
     const { getMarkScheme } = await import('@/lib/marking/mark-schemes')
     const scheme = getMarkScheme(PROBE_SCHEME_ID)!
-    const q = scheme.questions[0]!
+    // The language question the sample paragraph answers, not the paper's
+    // first, which became multiple choice on 24 October 2026.
+    const q = scheme.questions.find((x) => x.id === PROBE_QUESTION_ID)!
+    expect(q.questionType).not.toMatch(/multiple|choice/i)
     const ao = q.assessmentObjectives[0]!
 
     createMock.mockResolvedValue(

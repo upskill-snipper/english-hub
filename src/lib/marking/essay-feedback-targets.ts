@@ -164,8 +164,8 @@ function byNumber(scheme: MarkScheme, ref: MockQuestionRef): QuestionScheme[] {
   const letter = /^Section ([A-D])\b/i.exec(ref.sectionTitle.trim())?.[1]?.toUpperCase()
   return scheme.questions.filter((q) => {
     if (/^Section\b/.test(q.id)) return false
-    // Eduqas numbers its questions within a section (A1 ... A5, B1), so the
-    // section letter has to agree as well as the number.
+    // Eduqas numbers its questions within a section (A1 ... A6, B1, B2), so
+    // the section letter has to agree as well as the number.
     if (/^[A-D]\d/.test(q.id) && letter && q.id[0] !== letter) return false
     return idNumbers(q.id).includes(ref.questionNumber)
   })
@@ -282,7 +282,8 @@ function literatureKind(q: BankQuestion): LiteratureKind | null {
 /**
  * Where each kind of Literature question sits on each board. "(a)" and "(b)"
  * are Edexcel's extract and whole-text parts, and AQA's two unseen-poetry
- * questions, 27.1 on one poem and 27.2 comparing two; null where the board's
+ * questions, 28.1 on one poem and 28.2 comparing two (27.1 and 27.2 until
+ * June 2025, when a third anthology cluster was added); null where the board's
  * paper has no scheme on the site, or where a printed extract would misdescribe
  * a paper that prints none (Edexcel Paper 1 Section B, AQA Paper 2 Section A).
  */
@@ -376,24 +377,34 @@ const LANGUAGE_TYPES: Readonly<Record<string, readonly (readonly [string, string
   'Edexcel|Paper 2|Non-Fiction Writing': [['edexcel-lang-paper2', 'Q8/Q9']],
   'Edexcel|Paper 2|Persuasive Writing': [['edexcel-lang-paper2', 'Q8/Q9']],
   'Edexcel|Paper 2|Review Writing': [['edexcel-lang-paper2', 'Q8/Q9']],
+  // OCR's own numbering since 24 October 2026 (ocr-lang.ts): the writing is
+  // Question 5 or 6 on both components, and Component 02's language and
+  // structure question is Q3 (its Q1 had been a 16-mark one OCR does not set).
+  // Question 4 on both is one 18-mark task, a statement about both texts that
+  // is evaluated (AO4) and compared (AO3). The bank's OCR "Comparison" entries
+  // only compare, and its "Evaluation" entries judge one text, so neither is
+  // offered under it; until then they were, as a 10-mark comparison and a
+  // 16-mark evaluation the papers do not have.
   'OCR|Paper 1|Language Analysis': [['ocr-lang-component01', 'Q3']],
-  'OCR|Paper 1|Comparison': [['ocr-lang-component01', 'Q4']],
-  'OCR|Paper 1|Writing to Advise': [['ocr-lang-component01', 'Q5']],
-  'OCR|Paper 1|Writing to Argue': [['ocr-lang-component01', 'Q5']],
-  'OCR|Paper 1|Writing to Persuade': [['ocr-lang-component01', 'Q5']],
-  'OCR|Paper 2|Language Analysis': [['ocr-lang-component02', 'Q1']],
-  'OCR|Paper 2|Structure Analysis': [['ocr-lang-component02', 'Q1']],
-  'OCR|Paper 2|Evaluation': [['ocr-lang-component02', 'Q2']],
-  'OCR|Paper 2|Creative Writing': [['ocr-lang-component02', 'Q4']],
-  'OCR|Paper 2|Descriptive Writing': [['ocr-lang-component02', 'Q4']],
-  'OCR|Paper 2|Narrative Writing': [['ocr-lang-component02', 'Q4']],
+  'OCR|Paper 1|Writing to Advise': [['ocr-lang-component01', 'Q5/Q6']],
+  'OCR|Paper 1|Writing to Argue': [['ocr-lang-component01', 'Q5/Q6']],
+  'OCR|Paper 1|Writing to Persuade': [['ocr-lang-component01', 'Q5/Q6']],
+  'OCR|Paper 2|Language Analysis': [['ocr-lang-component02', 'Q3']],
+  'OCR|Paper 2|Structure Analysis': [['ocr-lang-component02', 'Q3']],
+  'OCR|Paper 2|Creative Writing': [['ocr-lang-component02', 'Q5/Q6']],
+  'OCR|Paper 2|Descriptive Writing': [['ocr-lang-component02', 'Q5/Q6']],
+  'OCR|Paper 2|Narrative Writing': [['ocr-lang-component02', 'Q5/Q6']],
+  // Eduqas's own numbering since 24 October 2026 (eduqas-lang.ts): Component
+  // 1's language question is A3 (Question 03) and its evaluation A5 (Question
+  // 05, A4 until then); Component 2's 10-mark language question is A2
+  // (Question 1.2, A3 until then) and its comparison A6 (Question 1.6, A4).
   'WJEC|Paper 1|Language Analysis': [['eduqas-lang-comp1', 'A3']],
   // Each asks "to what extent" or "how far" a statement holds: evaluation.
-  'WJEC|Paper 1|Evaluation / Comparison': [['eduqas-lang-comp1', 'A4']],
+  'WJEC|Paper 1|Evaluation / Comparison': [['eduqas-lang-comp1', 'A5']],
   'WJEC|Paper 1|Descriptive Writing': [['eduqas-lang-comp1', 'B1']],
   'WJEC|Paper 1|Narrative Writing': [['eduqas-lang-comp1', 'B1']],
-  'WJEC|Paper 2|Language Analysis': [['eduqas-lang-comp2', 'A3']],
-  'WJEC|Paper 2|Comparison of Perspectives': [['eduqas-lang-comp2', 'A4']],
+  'WJEC|Paper 2|Language Analysis': [['eduqas-lang-comp2', 'A2']],
+  'WJEC|Paper 2|Comparison of Perspectives': [['eduqas-lang-comp2', 'A6']],
   'WJEC|Paper 2|Argumentative Writing': [
     ['eduqas-lang-comp2', 'B1'],
     ['eduqas-lang-comp2', 'B2'],

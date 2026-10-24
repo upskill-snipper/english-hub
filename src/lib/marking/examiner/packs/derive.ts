@@ -151,14 +151,24 @@ function countSpec(q: QuestionScheme): ExaminerCountSpec {
 
 function levelSpec(q: QuestionScheme, ao: AssessmentObjective): ExaminerLevelSpec {
   const grid = gridFromAo(ao)
+  // A grid can carry only part of a question's marks. Cambridge 0500 and 0990
+  // Paper 1 Question 3 gives its ten marks of short answers point by point
+  // beside a ten-mark language task in levels (24 October 2026). The spec
+  // takes the grid's own maximum and says the rest is marked separately: with
+  // the question's maximum, marks above the grid's top level could never be
+  // placed on it. For every other question the two maxima are equal.
+  const elsewhere = q.totalMarks - grid.max
   return {
     kind: 'level',
     id: q.id,
     label: q.id,
     title: normaliseDashes(`${q.id} - ${q.questionType}`),
-    meta: `${q.totalMarks} marks · ${grid.levels.length} levels · published grid`,
+    meta:
+      elsewhere > 0
+        ? `${grid.max} of ${q.totalMarks} marks · ${grid.levels.length} levels · published grid · the other ${elsewhere} are marked separately, not on this grid`
+        : `${q.totalMarks} marks · ${grid.levels.length} levels · published grid`,
     ao: ao.id,
-    max: q.totalMarks,
+    max: grid.max,
     grid,
     triggers: q.examinerNotes
       ? [{ t: 'neutral', h: 'Examiner notes', d: normaliseDashes(q.examinerNotes) }]

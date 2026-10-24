@@ -18,8 +18,12 @@
  *     Part 1 and about 45 minutes on Section B Part 2, and Section A's own
  *     instruction to divide its time equally between parts (a) and (b).
  *
- * DIFFERENCES FROM THE AI MARKER (src/lib/marking/mark-schemes/edexcel-lit.ts,
- * deliberately not changed here: changing it changes how essays are scored).
+ * DIFFERENCES FROM THE AI MARKER, as this check found them
+ * (src/lib/marking/mark-schemes/edexcel-lit.ts). All were corrected in the
+ * marker on 24 October 2026, with the founder's approval (document 30): each
+ * grid is now one objective there ('AO2+AO3', 'AO1+AO2'), and
+ * src/lib/marking/mark-schemes/__tests__/edexcel-structure.test.ts holds the
+ * marker to this guide. The record of what differed:
  * The total (80), the duration (135 minutes) and every question's marks and
  * objective split agree. How the levels are applied does not:
  *   - Section B Part 1: board, ONE 20-mark grid (Level 1 1-4, 2 5-8, 3 9-12,

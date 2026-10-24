@@ -115,7 +115,13 @@ export const EDEXCEL_IGCSE_LANG_PAPER1_CALIBRATION: CalibrationPack = {
     questionId: 'Q4',
     rules: [
       'Best-fit against the AO2 grid; reward analysis of BOTH language and structure and the effects created.',
-      'Material analysed from outside the directed lines is not credited.',
+      // Removed 24 October 2026: "Material analysed from outside the directed
+      // lines is not credited." Q4 has no line range: the whole of Text Two is
+      // in scope, which the scheme was corrected to on 26 September 2026
+      // against every 4EA1/01 paper and mark scheme Pearson publishes
+      // (../mark-schemes/edexcel-igcse-lang.ts). This rule, missed then, still
+      // reached the marking prompt through this anchor and told the marker to
+      // refuse credit for valid analysis.
       // The three rules below are the discriminators the standardisers actually
       // applied, taken from what they wrote next to each script rather than
       // from the level descriptors. They are what moves a mark, and they are

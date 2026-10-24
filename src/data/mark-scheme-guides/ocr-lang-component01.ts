@@ -29,12 +29,21 @@
  *   comparison alone out of 10, so it would mark an answer to this 18-mark
  *   question without its 12 evaluation marks: the reason the Component 02 guide
  *   gives for its own Question 4. Point it at 'Q4' again once the marker matches.
+ *   (Done 24 October 2026, below.)
  * - Added below: the totals by objective, Question 1's task wording, and the
  *   marker's exact level ranges.
  *
- * DIFFERENCES FROM THE AI MARKER (ocrLangComponent01 in
- * src/lib/marking/mark-schemes/ocr-lang.ts). The guide follows OCR; the marker is
- * unchanged, because changing it changes how essays are scored.
+ * THE MARKER NOW FOLLOWS OCR (24 October 2026). With the founder's approval
+ * (document 30), ocrLangComponent01 in src/lib/marking/mark-schemes/ocr-lang.ts
+ * was rebuilt from this guide: Q1 4 (AO1, point by point), Q2 6 (AO1), Q3 12
+ * (AO2, six levels), Q4 18 (AO3 6 + AO4 12, two grids) and the writing as
+ * 'Q5/Q6' (AO5 24 on six levels + AO6 16), with Q5-SPaG removed. Every
+ * question's markerQuestionId points at its marker question, and
+ * src/lib/marking/mark-schemes/__tests__/ocr-lang-structure.test.ts holds the
+ * marker to this guide. The list below is what differed until then.
+ *
+ * DIFFERENCES FROM THE AI MARKER, UNTIL 24 OCTOBER 2026 (ocrLangComponent01 in
+ * src/lib/marking/mark-schemes/ocr-lang.ts).
  * - marker: Q4 10 marks AO3; board: Q4 18 marks, AO3 6 + AO4 12, on two grids
  *   whose marks are added.
  * - marker: Q5-SPaG 8 marks AO4 (correcting errors in a passage); board: no such
@@ -341,7 +350,7 @@ export const GUIDE: MarkSchemeGuide = {
             'Quoting from only one of the texts.',
           ],
           tip: 'Open with a one-sentence verdict on the statement. Then build each paragraph round one idea: judge it in both texts and compare how the writers present it.',
-          markerQuestionId: null,
+          markerQuestionId: 'Q4',
         },
       ],
     },
@@ -437,7 +446,7 @@ export const GUIDE: MarkSchemeGuide = {
             'Leaving no time to check: spelling, punctuation and sentences (AO6) are worth 16 of the 40 marks.',
           ],
           tip: 'Plan for five minutes: decide your viewpoint, then outline four or five paragraphs and an ending that links back to your opening. Keep the last five minutes for proofreading.',
-          markerQuestionId: 'Q5',
+          markerQuestionId: 'Q5/Q6',
         },
       ],
     },

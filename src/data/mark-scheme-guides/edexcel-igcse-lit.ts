@@ -88,6 +88,21 @@
  *   - Marker: sourceUrl .../edexcel-international-gcses/english-literature-2016.html
  *     redirects to Pearson's 404 page; the live page is
  *     .../international-gcse-english-literature-2016.html.
+ *
+ * ALL CORRECTED IN THE MARKER on 24 October 2026, with the founder's approval
+ * (document 30). The AO3 and AO4 guidance, the source link, the Poetry
+ * Booklet and the two shapes of the Section B choice came first (commit
+ * 8c602c3aa, prepared on 10 October). Then: Sections B and C are one grid each
+ * ('AO2+AO3', levels 1-6 to 25-30; 'AO1+AO4', levels 1-8 to 33-40), marked as
+ * one mark, not two; AO1 and AO2 are described as 4ET1 defines them, and no
+ * band grades terminology; Section C asks for examples, not quotations; the
+ * Section B notes hold an answer on one poem to 12, the top of Level 2; and
+ * the Section B task gives the two shapes as what recent papers do, not a
+ * rule. The ids saved essays name (Section A, B and C) and every
+ * `markerQuestionId` below are unchanged, and the paper has left
+ * MARKER_NOT_ALIGNED (src/lib/marking/guide-links.ts).
+ * src/lib/marking/mark-schemes/__tests__/edexcel-igcse-structure.test.ts
+ * holds the marker to this guide.
  */
 
 import type { MarkSchemeGuide } from './types'

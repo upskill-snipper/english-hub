@@ -32,10 +32,16 @@
  * the Shakespeare essay (the second question on each play). The extract
  * question and Section B carry none.
  *
- * WHERE THE AI MARKER'S DATA DIFFERS (src/lib/marking/mark-schemes/eduqas-lit.ts,
- * eduqasLitComp1). Total (80), duration (120 minutes), every question's total,
- * the AO4 marks and levels, and which objectives each question assesses all
- * agree. The differences are in how the marks are split:
+ * THE AI MARKER (src/lib/marking/mark-schemes/eduqas-lit.ts, eduqasLitComp1)
+ * WAS CORRECTED TO THIS GUIDE on 24 October 2026, with the founder's approval
+ * (document 30): each question is now one grid covering its objectives
+ * ('AO1-AO2' or 'AO1-AO3') at this guide's band ranges, with AO4 on its own
+ * 5-mark grid on the essay, and the anthology comparison carries this guide's
+ * rule that an unbalanced answer cannot reach the higher bands;
+ * __tests__/eduqas-lit-structure.test.ts in that folder holds it to this
+ * guide. Until then its total (80), duration (120 minutes), every question's
+ * total, the AO4 marks and levels, and which objectives each question
+ * assesses all agreed. The differences were in how the marks were split:
  *   - marker: Section A (a) AO1 8 + AO2 7; board: 15 marks, AO1 and AO2
  *     equally weighted on one grid.
  *   - marker: Section B (b) AO1 9 + AO2 8 + AO3 8; board: 25 marks, AO1, AO2

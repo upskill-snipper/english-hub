@@ -74,7 +74,11 @@ describe('the corpus as essay feedback reads it', () => {
     ['aqa-lang-paper2', 'Q1', false],
     ['edexcel-igcse-lang-paper1', 'Q2', false],
     ['cambridge-0500-paper1', 'Q3', false],
-    ['ocr-lang-component01', 'Q5-SPaG', false],
+    // Was ocr-lang-component01 Q5-SPaG, an 8-mark proofreading question OCR
+    // does not set; it left the scheme on 24 October 2026 (ocr-lang.ts).
+    // OCR's 4-mark Question 1, marked point by point, is not an essay either.
+    ['ocr-lang-component02', 'Q1', false],
+    ['ocr-lang-component01', 'Q4', true],
     ['aqa-lang-paper1', 'Q2', true],
     ['edexcel-lang-paper2', 'Q7a', true],
     ['edexcel-lit-paper2', 'Section B Part 2', true],
@@ -133,71 +137,90 @@ describe('formatSchemeForFeedback', () => {
 })
 
 describe('normaliseAoScores', () => {
-  const part1 = () => question('edexcel-lit-paper2', 'Section B Part 1') // AO2 15, AO3 5
+  // Edexcel Literature Paper 1 Section B: AO1 and AO3 on one grid out of 32,
+  // and AO4 out of 8, as Pearson marks it. Until 24 October 2026 this used
+  // Paper 2 Section B Part 1, then AO2 15 and AO3 5 on ladders of their own;
+  // Pearson marks that answer on one grid, so it now carries one objective.
+  const sectionB = () => question('edexcel-lit-paper1', 'Section B')
 
   it('keeps the scheme’s maximums and labels, never the model’s', () => {
     const out = normaliseAoScores(
       [
-        { id: 'AO2', label: 'Made up', score: 12, maxScore: 40, comment: 'Good.' },
-        { id: 'AO3', label: 'Made up', score: 3, maxScore: 40, comment: 'Some context.' },
+        { id: 'AO1+AO3', label: 'Made up', score: 24, maxScore: 40, comment: 'Good.' },
+        { id: 'AO4', label: 'Made up', score: 3, maxScore: 40, comment: 'Some slips.' },
       ],
-      part1(),
+      sectionB(),
     )
     expect(out).toEqual([
       {
-        id: 'AO2',
-        label: 'AO2 - Analyse language, form and structure',
-        score: 12,
-        maxScore: 15,
+        id: 'AO1+AO3',
+        label: 'AO1+AO3 - Response and context, on one grid',
+        score: 24,
+        maxScore: 32,
         comment: 'Good.',
       },
-      { id: 'AO3', label: 'AO3 - Context', score: 3, maxScore: 5, comment: 'Some context.' },
+      {
+        id: 'AO4',
+        label: 'AO4 - Spelling, punctuation and grammar',
+        score: 3,
+        maxScore: 8,
+        comment: 'Some slips.',
+      },
     ])
   })
 
   it('rounds, and clamps to the objective’s range', () => {
     const out = normaliseAoScores(
       [
-        { id: 'AO2', score: 18.6 },
-        { id: 'AO3', score: -2 },
+        { id: 'AO1+AO3', score: 33.6 },
+        { id: 'AO4', score: -2 },
       ],
-      part1(),
+      sectionB(),
     )
-    expect(out?.map((a) => a.score)).toEqual([15, 0])
+    expect(out?.map((a) => a.score)).toEqual([32, 0])
   })
 
   it('drops objectives the question does not carry, and keeps the scheme’s order', () => {
     const out = normaliseAoScores(
       [
-        { id: 'AO4', score: 8 },
-        { id: 'ao3 ', score: 4 },
+        { id: 'AO2', score: 8 },
+        { id: 'ao4 ', score: 4 },
         { id: 'AO1', score: 10 },
-        { id: 'AO2', score: 9 },
+        { id: 'ao1+ao3', score: 9 },
       ],
-      part1(),
+      sectionB(),
     )
-    expect(out?.map((a) => a.id)).toEqual(['AO2', 'AO3'])
+    expect(out?.map((a) => a.id)).toEqual(['AO1+AO3', 'AO4'])
   })
 
   it.each([
-    ['an objective is missing', [{ id: 'AO2', score: 9 }]],
+    ['an objective is missing', [{ id: 'AO1+AO3', score: 9 }]],
     [
       'a mark is not a number',
       [
-        { id: 'AO2', score: 'nine' },
-        { id: 'AO3', score: 4 },
+        { id: 'AO1+AO3', score: 'nine' },
+        { id: 'AO4', score: 4 },
       ],
     ],
-    ['a mark is absent', [{ id: 'AO2' }, { id: 'AO3', score: 4 }]],
-    ['the reply is not a list', { AO2: 9, AO3: 4 }],
+    ['a mark is absent', [{ id: 'AO1+AO3' }, { id: 'AO4', score: 4 }]],
+    ['the reply is not a list', { 'AO1+AO3': 9, AO4: 4 }],
+    [
+      'the one grid is split into marks for each objective',
+      [
+        { id: 'AO1', score: 9 },
+        { id: 'AO3', score: 9 },
+        { id: 'AO4', score: 4 },
+      ],
+    ],
   ])('refuses the reply when %s', (_label, raw) => {
-    expect(normaliseAoScores(raw, part1())).toBeNull()
+    expect(normaliseAoScores(raw, sectionB())).toBeNull()
   })
 })
 
 describe('feedbackColumns', () => {
   it('takes each column from the objective that means it, neutral where none does', () => {
-    // Edexcel Literature Paper 2, Section B Part 1: AO2 15 and AO3 5.
+    // AO2 15 and AO3 5: Pearson's split on Edexcel Literature Paper 2 Section
+    // B Part 1, which since 24 October 2026 is marked as one AO2+AO3 grid.
     expect(
       feedbackColumns(
         [score('AO2', 15, 15), score('AO3', 4, 5)],
@@ -214,7 +237,8 @@ describe('feedbackColumns', () => {
   })
 
   it('reads Literature AO4 as accuracy, and AO1 as argument', () => {
-    // Edexcel Literature Paper 1, Section B: AO1 16, AO3 16, AO4 8.
+    // AO1 16, AO3 16, AO4 8: Pearson's split on Edexcel Literature Paper 1
+    // Section B, which since 24 October 2026 is marked as AO1+AO3 and AO4.
     expect(
       feedbackColumns(
         [score('AO1', 12, 16), score('AO3', 8, 16), score('AO4', 6, 8)],

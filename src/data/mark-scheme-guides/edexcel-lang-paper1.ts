@@ -11,8 +11,11 @@
  *   - 1EN0/01 question paper, Summer 2024 (23 May 2024): the front cover's
  *     advice of about 1 hour on Section A and about 45 minutes on Section B.
  *
- * DIFFERENCES FROM THE AI MARKER (src/lib/marking/mark-schemes/edexcel-lang.ts,
- * deliberately not changed here: changing it changes how essays are scored).
+ * DIFFERENCES FROM THE AI MARKER, as this check found them
+ * (src/lib/marking/mark-schemes/edexcel-lang.ts). All were corrected in the
+ * marker on 24 October 2026, with the founder's approval (document 30), and
+ * src/lib/marking/mark-schemes/__tests__/edexcel-structure.test.ts now holds
+ * the marker to this guide. The record of what differed:
  * The total (64), the duration (105 minutes) and every question's marks and
  * objectives agree. The writing question's lower level ranges do not:
  *   marker: Q5/Q6 AO5 Level 1 1-5, Level 2 6-10, Level 3 11-14
@@ -37,7 +40,7 @@
  * NOT CONFIRMED: two of the marker's notes appear in no board document
  * checked: Q1, that nothing is deducted for a wrong answer given alongside a
  * right one; Q5/Q6, that where both tasks are attempted the better is marked.
- * The June 2026 and November 2025 mark schemes are on Pearson's secure site
+ * Both were taken out of the marker on 24 October 2026. The June 2026 and November 2025 mark schemes are on Pearson's secure site
  * (it answered 401 to an unsigned request), so the grids here are the latest
  * public ones, June 2025, which match June 2024 and November 2024.
  *

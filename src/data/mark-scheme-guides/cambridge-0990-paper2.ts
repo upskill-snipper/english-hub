@@ -8,7 +8,8 @@
  * Everything except the fields set below comes from ./cambridge-0500-paper2.ts,
  * whose docblock gives the checks, the November 2026 note and the differences
  * from the AI marker; they apply here unchanged, because the marker's 0990
- * schemes are the 0500 ones under new ids.
+ * schemes are the 0500 ones under new ids. Those differences were corrected
+ * in the marker on 24 October 2026, for 0990 too, through the same spread.
  *
  * CHECKED 24 October 2026 against Cambridge's own documents:
  *  - Cambridge IGCSE (9-1) First Language English 0990 syllabus for exams in

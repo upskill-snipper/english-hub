@@ -1,8 +1,71 @@
 // ─── Edexcel International GCSE English Literature (4ET1) Mark Scheme ────────
 // Paper 1: Poetry and Modern Prose - 2h, 90 marks.
-//   Section A - Unseen poetry            (20 marks: AO2 20)
-//   Section B - Anthology poetry         (30 marks: AO2 15 + AO3 15)
-//   Section C - Modern prose             (40 marks: AO1 20 + AO4 20)
+//   Section A - Unseen poetry            (20 marks: AO2, one grid)
+//   Section B - Anthology poetry         (30 marks: AO2 and AO3 on one grid)
+//   Section C - Modern prose             (40 marks: AO1 and AO4 on one grid)
+//
+// ONE GRID PER SECTION, AS PEARSON MARKS IT (24 October 2026). Until then
+// Sections B and C each carried two objectives on ladders of this file's own,
+// scored separately and added: Section B AO2 15 (1-3 to 13-15) and AO3 15
+// (1-4 to 12-15), Section C AO1 20 (1-4 to 17-20) and AO4 20 (1-5 to 16-20).
+// Pearson marks each section on one grid of five levels. Section B runs from
+// Level 1 1-6 to Level 5 25-30, with analysis (AO2) and comparison (AO3)
+// equally weighted inside it. Section C runs from Level 1 1-8 to Level 5
+// 33-40, for knowledge of the novel (AO1) and context (AO4), and the June 2025
+// examiners' report says the essay is marked as a whole, not split 20 and 20.
+// With two ladders nothing in the data held an answer on only one poem to the
+// 12 marks at the top of Pearson's Level 2: there was no 30-mark Level 2 to
+// hold it to. Each section is now one objective entry, 'AO2+AO3' and
+// 'AO1+AO4', whose bands are Pearson's levels, and the one-poem limit is in
+// the Section B notes.
+//
+// 'AO1+AO4' names the two objectives Section C covers, joined by a plus
+// because they are not a range: AO2 and AO3 are not assessed in Section C.
+// (It was 'AO1-AO4' for an hour on 24 October 2026, which a student would
+// read as "AO1 to AO4"; 'AO2+AO3' took the plus too, as Pearson's GCSE
+// grids in ./edexcel-lit.ts do.) Both ids are upper case because
+// feedback-generator.ts upper-cases the id the model returns before looking
+// it up, and each label opens with its id because the label is what both
+// prompt builders show the model.
+//
+// Also corrected that day:
+//   - AO1 and AO2 were described in the wording of GCSE English Literature in
+//     England, and every AO2 band graded subject terminology. On 4ET1, AO1 is
+//     close knowledge of the text in a critical style with an informed,
+//     personal engagement, and neither AO2 nor the Section A and B grids
+//     mention terminology. The descriptions and bands now say so.
+//   - The AO1 description and two of its bands asked for quotations. Section C
+//     is closed book: Pearson's grid asks for relevant examples, and the June
+//     2025 report says quotations are not required and references to episodes
+//     count.
+//   - Section B's task said, as a rule, that one question names both poems and
+//     the other names one. That is what the sample paper and every recent
+//     paper do, not a rule of the specification, and the task now says so.
+//
+// The figures come from the guide to this paper,
+// src/data/mark-scheme-guides/edexcel-igcse-lit.ts, written and then checked
+// by a second reader against Pearson's specification (Issue 3, August 2025),
+// sample assessment materials (Issue 3, August 2024) and June 2025 question
+// paper, mark scheme (4ET1_01_2506_MS) and examiners' report (4ET1_01_2506_ER).
+// The founder approved changing the marker on 24 October 2026 (document 30).
+// That is not a check of this file by a person, so the scheme is not in
+// VERIFIED_SPECS (src/lib/marking/examiner/verification.ts). The level
+// descriptors below are our own words: Pearson's are its copyright and are not
+// copied. src/lib/marking/mark-schemes/__tests__/edexcel-igcse-structure.test.ts
+// holds this file to the guide.
+//
+// AO3 IS COMPARISON AND AO4 IS CONTEXT, IN THEIR GUIDANCE AS WELL AS THEIR
+// NAMES (10 October 2026). The 19 September correction swapped the two labels
+// but left each objective's description and bands where they were, so AO3,
+// named for connections between texts, still carried the context description
+// and bands, and AO4 the comparison ones. The marker is prompted with the
+// description and the bands, not the label: Section B, the comparison
+// question, was still marked against context, and Section C, the context
+// question, against comparison. The test checked the names and passed
+// throughout. The grids below keep that correction: Section B's carries
+// comparison and never context, Section C's context and never comparison,
+// and src/__tests__/4et1-marking-matches-pearsons-mark-scheme.test.ts checks
+// the guidance itself.
 //
 // CORRECTED 19 September 2026 (EXAM-5), against Pearson's own published mark
 // scheme for June 2024, Paper 1R. Every number and every objective in the
@@ -30,10 +93,6 @@
 //
 // Section A was also given an AO1 allocation it does not have. It is AO2 only.
 //
-// Band descriptors remain summarised in our own words from the publicly
-// available Edexcel generic level grids. Only the structure, the tariffs and
-// the objective labels changed here; no descriptor wording was copied.
-//
 // PAPER 2 IS STILL NOT HERE, deliberately. The backlog item proposed adding it
 // (60 marks: modern drama 30, literary heritage 30) but the only primary
 // document read was the Paper 1R mark scheme, which says nothing about Paper 2.
@@ -41,342 +100,263 @@
 // error back in, one paper along.
 //
 // Sources:
-//   Mark Scheme (Results) June 2024, Pearson Edexcel International GCSE in
-//   English Literature (4ET1) Paper 1R: Poetry and Modern Prose. Read
-//   19 September 2026.
-//   https://qualifications.pearson.com/en/qualifications/edexcel-international-gcses/english-literature-2016.html
+//   https://qualifications.pearson.com/en/qualifications/edexcel-international-gcses/international-gcse-english-literature-2016.html
+//   Pearson Edexcel International GCSE English Literature (4ET1) specification,
+//   Issue 3 (August 2025), and sample assessment materials, Issue 3 (August
+//   2024), Component 1 question paper and mark scheme.
+//   Question paper, mark scheme (4ET1_01_2506_MS) and examiners' report
+//   (4ET1_01_2506_ER), June 2025, Paper 1. Read 24 October 2026.
+//   Mark Scheme (Results) June 2024, Paper 1R. Read 19 September 2026.
 // ────────────────────────────────────────────────────────────────────────────
 
 import type { MarkScheme, AssessmentObjective, BandDescriptor } from './types'
 
-// ─── Reusable band builders ────────────────────────────────────────────────
-// Edexcel IGCSE uses graded performance levels. To keep each question's AO
-// totals exact, every AO's bands are sized so the TOP band maxMarks equals the
-// AO maxMarks for that question. This guarantees the coverage audit's
-// "sum of top-band marks <= paper total" check is met with equality, and that
-// each question's AO maxMarks sum to the question total.
+// ─── Section A: unseen poetry, AO2 on one grid (20 marks) ──────────────────
+// Pearson's levels: 1-4, 5-8, 9-12, 13-16, 17-20.
 
-/**
- * Build a five-level reading/response band set (AO1) scaled to `max`.
- * Boundaries are distributed across the available range, with the top band
- * finishing exactly on `max` and each band starting one mark above the last.
- */
-function responseBands(max: number): BandDescriptor[] {
-  const cut = (n: number) => Math.max(n, Math.round((n / 5) * max))
-  return [
-    {
-      band: 'Level 1',
-      minMarks: 1,
-      maxMarks: cut(1),
-      label: 'Basic',
-      descriptor:
-        'Basic understanding of the text with simple, undeveloped comments. Textual reference is limited and often only narrative or descriptive.',
-      indicators: [
-        'Retells the text rather than answering the question',
-        'Few references, generally unselective',
-        'Little sense of an individual response',
-      ],
-    },
-    {
-      band: 'Level 2',
-      minMarks: cut(1) + 1,
-      maxMarks: cut(2),
-      label: 'Some',
-      descriptor:
-        'Some understanding shown through generally relevant comments. A few supporting references are used, though not always integrated into the response.',
-      indicators: [
-        'Makes some relevant points about the task',
-        'Uses a few quotations to support ideas',
-        'Begins to shape a response to the question',
-      ],
-    },
-    {
-      band: 'Level 3',
-      minMarks: cut(2) + 1,
-      maxMarks: cut(3),
-      label: 'Sound',
-      descriptor:
-        'Sound, clear understanding developed through a coherent line of argument. References are relevant and reasonably well chosen to support points.',
-      indicators: [
-        'A clear, relevant argument is maintained',
-        'Quotations are appropriate and embedded',
-        'A coherent personal response begins to emerge',
-      ],
-    },
-    {
-      band: 'Level 4',
-      minMarks: cut(3) + 1,
-      maxMarks: cut(4),
-      label: 'Thorough',
-      descriptor:
-        'Thorough, sustained understanding with a well-developed personal response. Apt references are integrated to support a thoughtful interpretation.',
-      indicators: [
-        'Interpretation is sustained across the answer',
-        'References are precise and serve the argument',
-        'A considered personal response is evident throughout',
-      ],
-    },
-    {
-      band: 'Level 5',
-      minMarks: cut(4) + 1,
-      maxMarks: max,
-      label: 'Assured',
-      descriptor:
-        'Assured, perceptive understanding with a convincing and individual interpretation. Precise references are judiciously selected to drive a critical argument.',
-      indicators: [
-        'Perceptive, original reading of the text',
-        'Evidence is precise and judiciously deployed',
-        'A convincing, critical personal response is sustained',
-      ],
-    },
-  ]
+const SECTION_A_LEVELS: BandDescriptor[] = [
+  {
+    band: 'Level 1',
+    minMarks: 1,
+    maxMarks: 4,
+    label: 'Basic',
+    descriptor:
+      'A simple response that notices very little about how the poem is written. Comments mostly retell or describe the poem, and few examples are used.',
+    indicators: [
+      'Retells or describes rather than analyses',
+      'One or two obvious features noticed at most',
+      'Few examples from the poem',
+    ],
+  },
+  {
+    band: 'Level 2',
+    minMarks: 5,
+    maxMarks: 8,
+    label: 'Some',
+    descriptor:
+      "Mostly explains what the poem is about, with some comment on how the poet's choices of language, form or structure work, supported by some examples.",
+    indicators: [
+      "Some comment on the effect of the poet's choices",
+      'Examples used but not always explained',
+    ],
+  },
+  {
+    band: 'Level 3',
+    minMarks: 9,
+    maxMarks: 12,
+    label: 'Clear',
+    descriptor:
+      "Explains clearly how several of the poet's choices of language, form and structure work and what they do for the reader, with relevant examples.",
+    indicators: [
+      'Clear explanation of methods and their effects',
+      'Relevant examples that support the points',
+    ],
+  },
+  {
+    band: 'Level 4',
+    minMarks: 13,
+    maxMarks: 16,
+    label: 'Thorough',
+    descriptor:
+      "Stays on the question and analyses the poet's methods and their effects in depth all the way through, with well-chosen examples from across the poem.",
+    indicators: [
+      'Detailed analysis kept up across the whole poem',
+      'Well-chosen examples that carry the points',
+    ],
+  },
+  {
+    band: 'Level 5',
+    minMarks: 17,
+    maxMarks: 20,
+    label: 'Perceptive',
+    descriptor:
+      'Treats the poem as a whole, judging with insight how its language, form and structure work together to make meaning, with precisely chosen examples.',
+    indicators: [
+      'Perceptive analysis of how the methods work together',
+      'Precisely chosen examples throughout',
+    ],
+  },
+]
+
+const SECTION_A_GRID: AssessmentObjective = {
+  id: 'AO2',
+  label: 'AO2 - Analyse language, form and structure',
+  description:
+    "Analyse how the poet's language, form and structure create meanings and effects. Pearson's grid for this section does not mention subject terminology: a term earns credit only through the analysis it supports.",
+  maxMarks: 20,
+  weighting: 20 / 20,
+  bands: SECTION_A_LEVELS,
 }
 
-/**
- * Build a five-level methods/analysis band set (AO2) scaled to `max`.
- */
-function analysisBands(max: number): BandDescriptor[] {
-  const cut = (n: number) => Math.max(n, Math.round((n / 5) * max))
-  return [
-    {
-      band: 'Level 1',
-      minMarks: 1,
-      maxMarks: cut(1),
-      label: 'Basic',
-      descriptor:
-        'Basic awareness that the writer has made language or structural choices. Subject terminology is limited or used inaccurately and effects are not explained.',
-      indicators: [
-        'Identifies an obvious feature without discussing effect',
-        'Subject terminology is sparse or misapplied',
-      ],
-    },
-    {
-      band: 'Level 2',
-      minMarks: cut(1) + 1,
-      maxMarks: cut(2),
-      label: 'Some',
-      descriptor:
-        'Some comment on how language, form or structure shape meaning, with simple explanation of effect. Some relevant subject terminology is used.',
-      indicators: [
-        'Names methods and comments simply on their effect',
-        'Some accurate subject terminology is used',
-      ],
-    },
-    {
-      band: 'Level 3',
-      minMarks: cut(2) + 1,
-      maxMarks: cut(3),
-      label: 'Sound',
-      descriptor:
-        'Sound explanation of how the writer uses language, form and structure to create effects. Subject terminology is used appropriately and accurately.',
-      indicators: [
-        'Explains how methods create meaning and effect',
-        'Treats the writer as a deliberate craftsperson',
-        'Accurate terminology supports the points made',
-      ],
-    },
-    {
-      band: 'Level 4',
-      minMarks: cut(3) + 1,
-      maxMarks: cut(4),
-      label: 'Thorough',
-      descriptor:
-        "Thorough examination of the writer's methods with detailed consideration of their effects on the reader. Subject terminology is integrated to support analysis.",
-      indicators: [
-        'Considers layered effects of language and structure',
-        'Terminology is embedded and purposeful',
-        'Explores form and structure alongside language',
-      ],
-    },
-    {
-      band: 'Level 5',
-      minMarks: cut(4) + 1,
-      maxMarks: max,
-      label: 'Perceptive',
-      descriptor:
-        "Perceptive analysis of how the writer's methods combine to create sophisticated meanings and effects. Precise subject terminology enhances the argument throughout.",
-      indicators: [
-        'Perceptive, layered analysis of craft and reader response',
-        'Terminology sharpens rather than decorates the argument',
-        'Reads the text as a fully crafted whole',
-      ],
-    },
-  ]
+// ─── Section B: anthology poetry, AO2 and AO3 on one grid (30 marks) ───────
+// Pearson's levels: 1-6, 7-12, 13-18, 19-24, 25-30. Analysis and comparison
+// are equally weighted inside the grid; there are not two marks.
+
+const SECTION_B_LEVELS: BandDescriptor[] = [
+  {
+    band: 'Level 1',
+    minMarks: 1,
+    maxMarks: 6,
+    label: 'Basic',
+    descriptor:
+      'A simple response that notices very little about how the poems are written and makes few links between them. The poems are mostly taken one at a time, with few examples.',
+    indicators: [
+      'Little comment on language, form or structure',
+      'Hardly any comparison between the poems',
+      'Few examples from either poem',
+    ],
+  },
+  {
+    band: 'Level 2',
+    minMarks: 7,
+    maxMarks: 12,
+    label: 'Some',
+    descriptor:
+      'Mostly describes the poems, with some comment on how they are written and a few obvious similarities or differences that are not developed. An answer on only one poem cannot go above this level.',
+    indicators: [
+      "Some comment on the poets' methods",
+      'Obvious links between the poems, not developed',
+      'An answer on one poem only stops here, at 12 at most',
+    ],
+  },
+  {
+    band: 'Level 3',
+    minMarks: 13,
+    maxMarks: 18,
+    label: 'Clear',
+    descriptor:
+      "Explains clearly how several of each poet's methods work and what they do for the reader, and compares the poems on a number of points, with relevant examples from both.",
+    indicators: [
+      'Clear explanation of methods in both poems',
+      'Comparison on several points',
+      'Relevant examples from both poems',
+    ],
+  },
+  {
+    band: 'Level 4',
+    minMarks: 19,
+    maxMarks: 24,
+    label: 'Thorough',
+    descriptor:
+      'Keeps up detailed analysis of both poems and their effects on the reader, and draws out many similarities and differences between the poems, with well-chosen examples from each.',
+    indicators: [
+      'Detailed analysis of both poems throughout',
+      'Many developed points of comparison',
+      'Well-chosen examples, fairly balanced between the poems',
+    ],
+  },
+  {
+    band: 'Level 5',
+    minMarks: 25,
+    maxMarks: 30,
+    label: 'Perceptive',
+    descriptor:
+      "Judges with insight how each poet's language, form and structure work together, and compares the poems perceptively on many fronts, with precisely chosen examples from both.",
+    indicators: [
+      'Perceptive analysis of how the methods work together',
+      'Comparison that drives the whole answer',
+      'Precisely chosen examples from both poems',
+    ],
+  },
+]
+
+const SECTION_B_GRID: AssessmentObjective = {
+  id: 'AO2+AO3',
+  label: 'AO2+AO3 - Analysis (AO2) and connections between the poems (AO3), one grid',
+  description:
+    "Pearson marks the whole answer on one grid out of 30, in which analysing each poem's language, form and structure (AO2) and comparing the two poems, their ideas and how they are written (AO3) carry equal weight. There is one mark, not two, so thin comparison holds back the whole mark, and so does thin analysis.",
+  maxMarks: 30,
+  weighting: 30 / 30,
+  bands: SECTION_B_LEVELS,
 }
 
-/**
- * Build a four-level context band set (AO3) scaled to `max`.
- */
-function contextBands(max: number): BandDescriptor[] {
-  const cut = (n: number) => Math.max(n, Math.round((n / 4) * max))
-  return [
-    {
-      band: 'Level 1',
-      minMarks: 1,
-      maxMarks: cut(1),
-      label: 'Basic',
-      descriptor:
-        'Basic awareness of context offered as isolated facts. There is little or no link between the contextual information and the meaning of the text.',
-      indicators: [
-        'Context is bolted on with no integration',
-        'No clear link between context and interpretation',
-      ],
-    },
-    {
-      band: 'Level 2',
-      minMarks: cut(1) + 1,
-      maxMarks: cut(2),
-      label: 'Some',
-      descriptor:
-        'Some understanding of context with a few relevant links between the context and the text or task. Context begins to inform the interpretation.',
-      indicators: [
-        'Some relevant contextual points are linked to the text',
-        'Context starts to support the response',
-      ],
-    },
-    {
-      band: 'Level 3',
-      minMarks: cut(2) + 1,
-      maxMarks: cut(3),
-      label: 'Sound',
-      descriptor:
-        "Sound understanding of context shown through specific links that support points about theme, character or the writer's purpose.",
-      indicators: [
-        'Context supports points about theme or character',
-        'Shows awareness of the ideas and attitudes of the period',
-      ],
-    },
-    {
-      band: 'Level 4',
-      minMarks: cut(3) + 1,
-      maxMarks: max,
-      label: 'Assured',
-      descriptor:
-        "Assured understanding of context fully integrated into the interpretation, illuminating the writer's intentions and the reception of the text.",
-      indicators: [
-        'Context is woven into the argument as a critical lens',
-        'Shows how context shapes meaning at more than one level',
-      ],
-    },
-  ]
-}
+// ─── Section C: modern prose, AO1 and AO4 on one grid (40 marks) ───────────
+// Pearson's levels: 1-8, 9-16, 17-24, 25-32, 33-40. Closed book, so the grid
+// asks for relevant examples: a short quotation and a precise reference to an
+// episode both count.
 
-/**
- * Build a four-level comparison/connections band set (AO4) scaled to `max`.
- */
-function comparisonBands(max: number): BandDescriptor[] {
-  const cut = (n: number) => Math.max(n, Math.round((n / 4) * max))
-  return [
-    {
-      band: 'Level 1',
-      minMarks: 1,
-      maxMarks: cut(1),
-      label: 'Basic',
-      descriptor:
-        'Basic, undeveloped comparison. The poems are largely treated separately with little or no explicit linking between them.',
-      indicators: ['Discusses each poem in isolation', 'Little comparative language is used'],
-    },
-    {
-      band: 'Level 2',
-      minMarks: cut(1) + 1,
-      maxMarks: cut(2),
-      label: 'Some',
-      descriptor:
-        'Some comparison is attempted, with a few relevant cross-references that begin to identify similarities or differences between the poems.',
-      indicators: [
-        'Uses some comparative connectives',
-        'Begins to identify similarities and differences',
-      ],
-    },
-    {
-      band: 'Level 3',
-      minMarks: cut(2) + 1,
-      maxMarks: cut(3),
-      label: 'Sound',
-      descriptor:
-        'Sound, structured comparison with relevant cross-references that address both ideas and methods across the two poems with reasonable balance.',
-      indicators: [
-        'A sustained comparative structure is maintained',
-        'Both poems receive reasonably balanced attention',
-      ],
-    },
-    {
-      band: 'Level 4',
-      minMarks: cut(3) + 1,
-      maxMarks: max,
-      label: 'Assured',
-      descriptor:
-        "Assured, analytical comparison fully integrated into the response, discriminating precisely between the writers' ideas, themes and methods.",
-      indicators: [
-        'Comparison drives the argument rather than being added on',
-        'Considers why the writers make different choices',
-      ],
-    },
-  ]
-}
+const SECTION_C_LEVELS: BandDescriptor[] = [
+  {
+    band: 'Level 1',
+    minMarks: 1,
+    maxMarks: 8,
+    label: 'Basic',
+    descriptor:
+      'Knows only a little of the novel and says something simple about it, with little sense of a personal response, hardly any awareness of context and few examples.',
+    indicators: [
+      'Thin knowledge of the novel, mostly retold',
+      'Little sense of a personal response',
+      'Context barely mentioned',
+    ],
+  },
+  {
+    band: 'Level 2',
+    minMarks: 9,
+    maxMarks: 16,
+    label: 'Some',
+    descriptor:
+      'Shows some knowledge of the novel but mostly retells the story, with occasional signs of a personal response, a little relevant context and some examples.',
+    indicators: [
+      'Some knowledge, largely narrative',
+      'A personal response beginning to show',
+      'Some context, loosely linked to the points',
+    ],
+  },
+  {
+    band: 'Level 3',
+    minMarks: 17,
+    maxMarks: 24,
+    label: 'Sound',
+    descriptor:
+      'Knows the novel securely and answers with a sensible argument of its own in a suitable critical style. Context is brought in where it is relevant, and the examples support the points.',
+    indicators: [
+      'Secure knowledge used to answer the question',
+      'A clear personal argument',
+      'Relevant context linked to the novel',
+    ],
+  },
+  {
+    band: 'Level 4',
+    minMarks: 25,
+    maxMarks: 32,
+    label: 'Sustained',
+    descriptor:
+      'Knows the novel in depth and keeps a thoughtful argument going all the way through. Context is understood in detail and supports the points, with well-chosen examples from across the novel.',
+    indicators: [
+      'Detailed knowledge across the whole novel',
+      'A thoughtful argument kept up throughout',
+      'Context understood in detail and used to support the points',
+    ],
+  },
+  {
+    band: 'Level 5',
+    minMarks: 33,
+    maxMarks: 40,
+    label: 'Assured',
+    descriptor:
+      'Knows the whole novel thoroughly and argues with real insight. Context is part of the argument throughout rather than added on, and every example is chosen with precision.',
+    indicators: [
+      'An assured, perceptive argument',
+      'Context woven into the argument',
+      'Precise examples, whether short quotations or exact references to episodes',
+    ],
+  },
+]
 
-// ─── Assessment Objective factory helpers ──────────────────────────────────
-
-function ao1(max: number, total: number): AssessmentObjective {
-  return {
-    id: 'AO1',
-    label: 'AO1 - Read, understand and respond',
-    description:
-      'Read and understand a range of texts and maintain a critical, informed personal response, using textual references including quotations to support and illustrate interpretations.',
-    maxMarks: max,
-    weighting: max / total,
-    bands: responseBands(max),
-  }
-}
-
-function ao2(max: number, total: number): AssessmentObjective {
-  return {
-    id: 'AO2',
-    label: 'AO2 - Analyse language, form and structure',
-    description:
-      'Analyse the language, form and structure used by a writer to create meanings and effects, using relevant subject terminology where appropriate.',
-    maxMarks: max,
-    weighting: max / total,
-    bands: analysisBands(max),
-  }
-}
-
-// AO3 IS COMPARISON AND AO4 IS CONTEXT, IN THEIR GUIDANCE AS WELL AS THEIR
-// NAMES (10 October 2026). The 19 September correction swapped the two
-// labels but left each objective's description and bands where they were, so
-// AO3, now named for connections between texts, still carried the context
-// description and the context bands, and AO4 the comparison ones. The marker
-// is prompted with the description and the bands, not the label: Section B,
-// the comparison question, was still marked against context, and Section C,
-// the context question, against comparison. The test checked the names and
-// passed throughout.
-function ao3(max: number, total: number): AssessmentObjective {
-  return {
-    id: 'AO3',
-    label: 'AO3 - Explore links and connections between texts',
-    description:
-      'Explore connections across texts, comparing the ideas, themes and methods used by different writers and the effects these create for the reader.',
-    maxMarks: max,
-    weighting: max / total,
-    bands: comparisonBands(max),
-  }
-}
-
-function ao4(max: number, total: number): AssessmentObjective {
-  return {
-    id: 'AO4',
-    label: 'AO4 - Relationships between texts and their contexts',
-    description:
-      'Show understanding of the relationships between texts and the contexts in which they were written, and how those contexts shape meaning.',
-    maxMarks: max,
-    weighting: max / total,
-    bands: contextBands(max),
-  }
+const SECTION_C_GRID: AssessmentObjective = {
+  id: 'AO1+AO4',
+  label: 'AO1+AO4 - Knowledge of the novel (AO1) and its context (AO4), one grid',
+  description:
+    'Pearson marks the whole essay on one grid out of 40: close knowledge and understanding of the novel, argued as an informed, personal response in a critical style (AO1), and understanding of how the novel relates to the times, places and society in which it was written and is set (AO4). The specification weights the two equally, but the mark is led by knowledge of the novel, and context should serve the argument rather than replace it.',
+  maxMarks: 40,
+  weighting: 40 / 40,
+  bands: SECTION_C_LEVELS,
 }
 
 // ─── Paper: Poetry and Modern Prose (4ET1/01) ──────────────────────────────
-// A 90-mark paper of three unequal sections. Each section examines a different
-// pair of objectives; no section carries all four.
+// A 90-mark paper of three unequal sections, each marked on one grid. Each
+// section examines a different objective or pair of objectives; no section
+// carries all four.
 
 export const edexcelIgcseLit: MarkScheme = {
   id: 'edexcel-igcse-lit',
@@ -398,34 +378,34 @@ export const edexcelIgcseLit: MarkScheme = {
       taskDescription:
         'Read one previously unseen poem and explore how the poet presents a theme, feeling or idea, considering the use of language, form and structure.',
       totalMarks: 20,
-      assessmentObjectives: [ao2(20, 20)],
+      assessmentObjectives: [SECTION_A_GRID],
       examinerNotes:
-        'AO2 only. No context is required and none is credited; reward analysis of language, form and structure and the effects they create.',
+        'AO2 only, on one grid out of 20. Context is not assessed in this section and earns nothing; reward analysis of how the poem is written and the effects its language, form and structure create, with examples from across the poem. Spelling, punctuation and grammar are not marked on this paper. About 35 minutes.',
     },
     {
       id: 'Section B',
       questionType: 'Anthology poetry comparison',
-      // Pearson's specification (Issue 3, August 2025) and ten question
-      // papers from the specimen to June 2025 (10 October 2026): a choice of
-      // two comparison questions, one naming both poems and one naming one
-      // and leaving the second to the candidate. Until then this described
-      // only the second shape.
+      // Pearson's specification (Issue 3, August 2025), its sample paper and
+      // the question papers since: a choice of two comparison questions. In
+      // every paper checked one names both poems and the other names one,
+      // which is the papers' practice rather than a rule of the
+      // specification, so the task says so (24 October 2026).
       taskDescription:
-        'Answer one of two questions, each comparing two poems from Part 3 of the Pearson Edexcel International GCSE English Anthology: one question names both poems; the other names one and asks for one other poem of your choice from the anthology.',
+        'Answer one of two questions, each asking you to compare how two poems from Part 3 of the Pearson Edexcel International GCSE English Anthology present the idea or experience it names, with reference to language, form and structure. In the sample paper and recent papers, one question names both poems and the other names one, leaving you to choose the second from the anthology.',
       totalMarks: 30,
-      assessmentObjectives: [ao2(15, 30), ao3(15, 30)],
+      assessmentObjectives: [SECTION_B_GRID],
       examinerNotes:
-        'All the Part 3 poems come with the paper in a separate Poetry Booklet, so nothing is quoted from memory. AO2 and AO3 carry fifteen marks each, so analysis of language, form and structure and sustained comparison are equally weighted; context (AO4) is not assessed here. An answer that discusses only one poem cannot go above the top of Level 2. About 40 minutes.',
+        'All the Part 3 poems are printed in a separate Poetry Booklet that comes with the paper, so nothing is quoted from memory. Give one mark out of 30 from the one grid (AO2+AO3): analysis and comparison are weighed together, not marked separately. ONE-POEM LIMIT: an answer that writes about only one poem cannot go above the top of Level 2 (12 marks), however good its analysis. Context (AO4) is not assessed in this section. Spelling, punctuation and grammar are not marked on this paper. About 40 minutes.',
     },
     {
       id: 'Section C',
       questionType: 'Modern prose essay',
       taskDescription:
-        'Answer one essay question on a studied modern prose text, exploring how a theme, character or idea is presented and how it relates to the context of the text.',
+        'Answer one of the two questions on the modern prose text you studied (Questions 4 to 17), usually about a character, a theme, a relationship or a view to weigh up. Every question asks you to consider the context of the novel.',
       totalMarks: 40,
-      assessmentObjectives: [ao1(20, 40), ao4(20, 40)],
+      assessmentObjectives: [SECTION_C_GRID],
       examinerNotes:
-        'A closed-book, whole-text question and the largest on the paper. Balance the informed personal response (AO1) with secure, integrated understanding of the relationships between the text and its contexts (AO4).',
+        'A closed-book, whole-novel essay and the largest question on the paper. Give one mark out of 40 from the one grid (AO1+AO4): knowledge of the novel and context are weighed together, not marked separately, and the mark is led by how well the novel is known and understood. Quotations are not required: short quotations and precise references to episodes both count as examples. Context should be linked to points about the novel, not set apart in a block. Language, form and structure (AO2) are not assessed in this section, and spelling, punctuation and grammar are not marked on this paper. About 45 minutes.',
     },
   ],
 }

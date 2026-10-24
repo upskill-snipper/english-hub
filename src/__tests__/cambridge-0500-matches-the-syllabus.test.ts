@@ -72,13 +72,20 @@ describe('Paper 1 is the 2027-2029 four-question structure', () => {
 
     // Q1 comprehension: 20 reading, no writing.
     expect(split('Q1')).toEqual([['R', 20]])
-    // Q2 summary: 15 reading (10 on 2a, 5 on 2b) and 5 writing.
+    // Q2 summary: 2(a) reading 10, 2(a) writing 5, 2(b) reading 5. Until
+    // 24 October 2026 this pinned one 15-mark reading grid; Cambridge marks
+    // each part on its own grid (cambridge-structure.test.ts has the levels).
     expect(split('Q2')).toEqual([
-      ['R', 15],
+      ['R', 10],
       ['W', 5],
+      ['R', 5],
     ])
-    // Q3 short answers and language task: 20 reading, no writing.
-    expect(split('Q3')).toEqual([['R', 20]])
+    // Q3: short answers 10 and the language task 10, both reading, marked
+    // separately since 24 October 2026 (the short answers point by point).
+    expect(split('Q3')).toEqual([
+      ['R', 10],
+      ['R', 10],
+    ])
     // Q4 extended response: 10 reading and 10 writing.
     expect(split('Q4')).toEqual([
       ['R', 10],
@@ -94,11 +101,14 @@ describe('Paper 2 is two sections of forty', () => {
   })
 
   it('marks Directed Writing 15 reading and 25 writing', () => {
+    // Since 24 October 2026 the 15 reading marks are Cambridge's two grids,
+    // 1(a) 5 and 1(b) 10, where this pinned one 15-mark grid.
     const a = P2?.questions.find((q) => q.id === 'Section A')
     expect(
       (a?.assessmentObjectives ?? []).map((o) => [o.id.startsWith('W') ? 'W' : 'R', o.maxMarks]),
     ).toEqual([
-      ['R', 15],
+      ['R', 5],
+      ['R', 10],
       ['W', 25],
     ])
   })
@@ -111,16 +121,17 @@ describe('Paper 2 is two sections of forty', () => {
   })
 })
 
-describe('the rescaled bands still work', () => {
+describe('the bands still work', () => {
   it.each([
     ['cambridge-0500-paper1'],
     ['cambridge-0500-paper2'],
     ['cambridge-0990-paper1'],
     ['cambridge-0990-paper2'],
   ])('%s: every objective can award its maximum and the sums are exact', (id) => {
-    // Correcting the totals re-pegged every band. A grid whose top band cannot
-    // reach the marks the paper says are available is the OCR Literature defect
-    // from earlier in this backlog, and it is silent.
+    // Correcting the totals re-pegged every band; since 24 October 2026 the
+    // bands are Cambridge's own level ranges rather than rescaled ones. A grid
+    // whose top band cannot reach the marks the paper says are available is
+    // the OCR Literature defect from earlier in this backlog, and it is silent.
     const scheme = getMarkScheme(id)
     expect(scheme).toBeTruthy()
     for (const q of scheme?.questions ?? []) {

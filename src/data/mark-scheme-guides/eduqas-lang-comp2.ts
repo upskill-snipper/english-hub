@@ -24,11 +24,16 @@
  * numbers them Band 1 upwards, lowest first. Question 1.5 is marked one
  * description per mark.
  *
- * WHERE THE AI MARKER'S DATA DIFFERS (src/lib/marking/mark-schemes/eduqas-lang.ts,
- * eduqasLangComp2). Its declared total (80) and duration (120 minutes) agree,
- * but its questions add up to 75: the five-mark gap in KNOWN_TOTAL_MISMATCHES
- * (src/lib/marking/examiner/verification.ts), which says which question is
- * short "has not been established". No one question is short; Section A is
+ * THE AI MARKER (src/lib/marking/mark-schemes/eduqas-lang.ts, eduqasLangComp2)
+ * WAS CORRECTED TO THIS GUIDE on 24 October 2026, with the founder's approval
+ * (document 30): its questions, marks, objectives and band ranges are now the
+ * ones below, in the sample materials' numbering (A1 to A6 are Questions 1.1
+ * to 1.6, B1 and B2 are 2.1 and 2.2), and __tests__/eduqas-lang-structure.test.ts
+ * in that folder holds them to this guide. Until then it differed as follows.
+ * Its declared total (80) and duration (120 minutes) agreed, but its questions
+ * added up to 75: the five-mark gap then in KNOWN_TOTAL_MISMATCHES
+ * (src/lib/marking/examiner/verification.ts), which said which question was
+ * short "has not been established". No one question was short; Section A was
  * built differently:
  *   - marker: A1 5 marks AO1 (list five things, 21st-century text); board:
  *     Question 1.1 3 marks AO1 (short parts, 21st-century text).
@@ -42,12 +47,12 @@
  *   - marker: no AO4 question; board: Question 1.4 10 marks AO4.
  *   - marker: no synthesis question; board: Question 1.5 4 marks AO1 (select
  *     and bring together details from both texts).
- *   - marker: A4 10 marks AO3; board: Question 1.6 10 marks AO3 (agrees, but
+ *   - marker: A4 10 marks AO3; board: Question 1.6 10 marks AO3 (agreed, but
  *     it is the last question, not the fourth).
  *   - marker: A5 5 marks AO6 (proofreading); board: no such question, and
  *     Section A carries no AO6 marks.
  *   - marker: Section A 5 questions, 35 marks (AO1 8, AO2 12, AO3 10, AO6 5),
- *     so the paper sums to 75; board: 6 questions, 40 marks (AO1 10, AO2 10,
+ *     so the paper summed to 75; board: 6 questions, 40 marks (AO1 10, AO2 10,
  *     AO3 10, AO4 10), paper 80.
  *   - marker: B1 "Choose one of the following tasks" and B2 "A different form
  *     from B1 is required"; board: Questions 2.1 and 2.2 are both compulsory,
@@ -55,15 +60,14 @@
  *   - marker: B1 and B2 AO5 bands 0-3, 4-5, 6-8, 9-10, 11-12 and AO6 in four
  *     bands 0-2, 3-4, 5-6, 7-8; board: AO5 1-2, 3-4, 5-7, 8-10, 11-12 and AO6
  *     in five bands 1, 2-3, 4-5, 6-7, 8 (0 where nothing earns credit).
- *   - Not a board difference: A2's and A5's band ladders overlap, so one mark
- *     sits in two bands (the Component 1 guide gives the figures). No question
- *     in this guide links to either.
- *   - These agree: B1 and B2 20 marks each, AO5 12 + AO6 8.
+ *   - Not a board difference: A2's and A5's band ladders overlapped, so one
+ *     mark sat in two bands (the Component 1 guide gives the figures).
+ *   - These agreed: B1 and B2 20 marks each, AO5 12 + AO6 8.
  *
- * markerQuestionId is null for 1.1 and 1.3 (the marker's A1 is out of 5, not
- * 3), for 1.4 (the marker has no AO4 question) and for 1.5 (no synthesis
- * question). Question 1.2 points at A3, the marker's 10-mark AO2 question,
- * although A3 is described as a question on the 19th-century text.
+ * markerQuestionId: Questions 1.1 to 1.6 point at A1 to A6, and 2.1 and 2.2 at
+ * B1 and B2. Until the correction, 1.1, 1.3, 1.4 and 1.5 had no marker
+ * question, 1.2 pointed at A3 (then a 10-mark AO2 question on the
+ * 19th-century text) and 1.6 at A4 (then the comparison).
  *
  * SECOND CHECK, 24 October 2026 (an independent reader, against the same
  * documents). Fixed:
@@ -157,7 +161,7 @@ export const GUIDE: MarkSchemeGuide = {
             'Writing at length: three marks need three short answers.',
           ],
           tip: 'Read the whole text first: an answer can sit anywhere in it, including near the end.',
-          markerQuestionId: null,
+          markerQuestionId: 'A1',
         },
         {
           label: 'Question 1.2',
@@ -210,7 +214,7 @@ export const GUIDE: MarkSchemeGuide = {
             'Listing techniques without linking them to the question.',
           ],
           tip: 'Track the text paragraph by paragraph, and keep using the question’s key word in your explanations.',
-          markerQuestionId: 'A3',
+          markerQuestionId: 'A2',
         },
         {
           label: 'Question 1.3',
@@ -230,7 +234,7 @@ export const GUIDE: MarkSchemeGuide = {
             'Answering from the 21st-century text.',
           ],
           tip: 'If a word is unfamiliar, read the sentences around it: the meaning is usually clear from them.',
-          markerQuestionId: null,
+          markerQuestionId: 'A3',
         },
         {
           label: 'Question 1.4',
@@ -282,7 +286,7 @@ export const GUIDE: MarkSchemeGuide = {
             'Stopping halfway: a writer’s view can change or build through the text, so use all of it.',
           ],
           tip: 'Decide your answer first, then track the text from beginning to end, noting how far each part supports the statement.',
-          markerQuestionId: null,
+          markerQuestionId: 'A4',
         },
         {
           label: 'Question 1.5',
@@ -325,7 +329,7 @@ export const GUIDE: MarkSchemeGuide = {
             'Analysing language: this question wants the details, not how they are written.',
           ],
           tip: 'Write two or three sentences, one for each text, each naming the text and giving the exact details.',
-          markerQuestionId: null,
+          markerQuestionId: 'A5',
         },
         {
           label: 'Question 1.6',
@@ -378,7 +382,7 @@ export const GUIDE: MarkSchemeGuide = {
             'Leaving too little time: this is the last reading question.',
           ],
           tip: 'Plan two or three shared points, and for each one say what both texts show and how each writer does it.',
-          markerQuestionId: 'A4',
+          markerQuestionId: 'A6',
         },
       ],
     },

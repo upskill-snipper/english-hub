@@ -23,8 +23,10 @@ import {
  *
  *   • aqa-lang-paper1's structure objective carried id 'AO3'. AQA assesses
  *     structure under AO2 and does not assess AO3 on Paper 1 at all.
- *   • eduqas-lang-comp1 and comp2 declare 80-mark papers whose questions sum
- *     to 75.
+ *   • eduqas-lang-comp1 and comp2 declared 80-mark papers whose questions sum
+ *     to 75. Corrected on 24 October 2026 from the mark-scheme guides, which
+ *     were checked against Eduqas's Summer 2025 papers: no question was short,
+ *     each Section A was built to the wrong paper. Both now sum to 80.
  *
  * These tests pin the honest state: what has been checked, what has not, and
  * which arithmetic contradictions are known. Every one of them is designed to
@@ -94,11 +96,20 @@ describe('every paper adds up to its own declared total', () => {
     )
   })
 
-  it('has exactly the two known mismatches, both Eduqas Language', () => {
-    expect(Object.keys(KNOWN_TOTAL_MISMATCHES).sort()).toEqual([
-      'eduqas-lang-comp1',
-      'eduqas-lang-comp2',
-    ])
+  it('has no known mismatches left, since the Eduqas Language schemes were corrected', () => {
+    // Until 24 October 2026 this pinned exactly two, eduqas-lang-comp1 and
+    // eduqas-lang-comp2, whose questions summed to 75 on 80-mark papers. Their
+    // guides (src/data/mark-scheme-guides) supplied Eduqas's own questions, and
+    // both now add up; a new mismatch must be fixed or recorded here on purpose.
+    expect(Object.keys(KNOWN_TOTAL_MISMATCHES)).toEqual([])
+    for (const id of ['eduqas-lang-comp1', 'eduqas-lang-comp2']) {
+      const scheme = MARK_SCHEMES[id]!
+      expect(
+        scheme.questions.reduce((a, q) => a + q.totalMarks, 0),
+        id,
+      ).toBe(80)
+      expect(scheme.totalMarks, id).toBe(80)
+    }
   })
 
   it('never ships a paper that is both unsound and claimed as verified', () => {

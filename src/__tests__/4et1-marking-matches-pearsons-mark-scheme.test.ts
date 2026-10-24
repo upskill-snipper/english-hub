@@ -35,6 +35,14 @@ import { getMarkScheme } from '@/lib/marking/mark-schemes'
  * Section A was also given an AO1 allocation it does not have. It is AO2 only,
  * and no context is credited.
  *
+ * ONE GRID PER SECTION (24 October 2026). The split above, AO2 15 + AO3 15 and
+ * AO1 20 + AO4 20, is the specification's weighting, and this file pinned it
+ * as two objectives scored separately. Pearson marks Sections B and C on one
+ * grid each (sample assessment materials, Issue 3, and the June 2025 mark
+ * scheme: Section B Levels 1-6 to 25-30, Section C 1-8 to 33-40), so each is
+ * now one objective entry, 'AO2+AO3' and 'AO1+AO4', and the checks below read
+ * the objectives a grid's id names. The swap they guard against is the same.
+ *
  * WHAT IS DELIBERATELY NOT ASSERTED HERE. Paper 2. The item proposed adding it
  * at 60 marks, but the only primary document read was the Paper 1R mark scheme,
  * which says nothing about Paper 2. A test asserting an unverified tariff would
@@ -70,22 +78,20 @@ describe('each section carries the tariff Pearson prints', () => {
     expect(a?.assessmentObjectives[0]?.maxMarks).toBe(20)
   })
 
-  it('Section B is 30 marks, AO2 15 and AO3 15', () => {
+  it('Section B is 30 marks on one grid for AO2 and AO3', () => {
+    // Was AO2 15 and AO3 15, two ladders scored separately and added. Pearson
+    // gives one mark out of 30 from one grid (24 October 2026).
     const b = section('Section B')
     expect(b?.totalMarks).toBe(30)
-    expect(b?.assessmentObjectives.map((o) => [o.id, o.maxMarks])).toEqual([
-      ['AO2', 15],
-      ['AO3', 15],
-    ])
+    expect(b?.assessmentObjectives.map((o) => [o.id, o.maxMarks])).toEqual([['AO2+AO3', 30]])
   })
 
-  it('Section C is 40 marks, AO1 20 and AO4 20', () => {
+  it('Section C is 40 marks on one grid for AO1 and AO4', () => {
+    // Was AO1 20 and AO4 20, scored separately. Pearson marks the essay as a
+    // whole, one mark out of 40 from one grid (24 October 2026).
     const c = section('Section C')
     expect(c?.totalMarks).toBe(40)
-    expect(c?.assessmentObjectives.map((o) => [o.id, o.maxMarks])).toEqual([
-      ['AO1', 20],
-      ['AO4', 20],
-    ])
+    expect(c?.assessmentObjectives.map((o) => [o.id, o.maxMarks])).toEqual([['AO1+AO4', 40]])
   })
 
   it('and no section still carries the old equal-thirds shape', () => {
@@ -99,10 +105,14 @@ describe('each section carries the tariff Pearson prints', () => {
 describe('the objectives are not swapped', () => {
   const objectivesOn = (id: string) =>
     SCHEME?.questions.find((q) => q.id === id)?.assessmentObjectives ?? []
+  // A grid's id names every objective it covers: 'AO2+AO3' is Section B's one
+  // grid since 24 October 2026. So these checks read the names, not the id.
+  const covers = (id: string, objective: string) => id.split(/[-+]/).includes(objective)
+  const named = (section: string) => objectivesOn(section).flatMap((o) => o.id.split(/[-+]/))
 
   it('the comparison question is marked for comparison', () => {
     // Section B is the anthology comparison. AO3 is the comparison objective.
-    const ids = objectivesOn('Section B').map((o) => o.id)
+    const ids = named('Section B')
     expect(ids).toContain('AO3')
     expect(ids, 'Section B was marked for context, which is not assessed on it').not.toContain(
       'AO4',
@@ -110,7 +120,7 @@ describe('the objectives are not swapped', () => {
   })
 
   it('the context question is marked for context', () => {
-    const ids = objectivesOn('Section C').map((o) => o.id)
+    const ids = named('Section C')
     expect(ids).toContain('AO4')
     expect(ids, 'Section C was marked for comparison, which is not assessed on it').not.toContain(
       'AO3',
@@ -119,8 +129,8 @@ describe('the objectives are not swapped', () => {
 
   it('labels AO3 as connections and AO4 as context, not the reverse', () => {
     const all = (SCHEME?.questions ?? []).flatMap((q) => q.assessmentObjectives)
-    const ao3 = all.filter((o) => o.id === 'AO3')
-    const ao4 = all.filter((o) => o.id === 'AO4')
+    const ao3 = all.filter((o) => covers(o.id, 'AO3'))
+    const ao4 = all.filter((o) => covers(o.id, 'AO4'))
     expect(ao3.length).toBeGreaterThan(0)
     expect(ao4.length).toBeGreaterThan(0)
     for (const o of ao3) expect(o.label).toMatch(/connection/i)
@@ -136,13 +146,16 @@ describe('the objectives are not swapped', () => {
     const all = (SCHEME?.questions ?? []).flatMap((q) => q.assessmentObjectives)
     const guidance = (o: (typeof all)[number]) =>
       [o.description, ...o.bands.map((b) => b.descriptor)].join(' ')
-    for (const o of all.filter((x) => x.id === 'AO3')) {
+    // The loops below pass on nothing, so first prove there is something.
+    expect(all.filter((x) => covers(x.id, 'AO3')).length, 'no grid covers AO3').toBeGreaterThan(0)
+    expect(all.filter((x) => covers(x.id, 'AO4')).length, 'no grid covers AO4').toBeGreaterThan(0)
+    for (const o of all.filter((x) => covers(x.id, 'AO3'))) {
       expect(o.description, 'AO3 description').toMatch(/compar|connection/i)
       expect(o.description, 'AO3 description').not.toMatch(/context/i)
       for (const b of o.bands) expect(b.descriptor, `AO3 ${b.band}`).toMatch(/compar|poems|link/i)
       expect(guidance(o), 'AO3 guidance').not.toMatch(/\bcontext/i)
     }
-    for (const o of all.filter((x) => x.id === 'AO4')) {
+    for (const o of all.filter((x) => covers(x.id, 'AO4'))) {
       expect(o.description, 'AO4 description').toMatch(/context/i)
       for (const b of o.bands) expect(b.descriptor, `AO4 ${b.band}`).toMatch(/context/i)
       expect(guidance(o), 'AO4 guidance').not.toMatch(/\bcompar/i)

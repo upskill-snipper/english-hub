@@ -179,6 +179,22 @@ describe('mock papers', () => {
     },
   )
 
+  it('maps the OCR Language mocks by OCR’s numbering, where number and tariff agree', () => {
+    // Since 24 October 2026 the schemes number their questions as OCR does and
+    // the writing is Question 5 or 6, 'Q5/Q6' (mark-schemes/ocr-lang.ts). These
+    // mocks set 4, 8, 12, 16 and 40 marks where OCR sets 4, 6, 12, 18 and 40,
+    // so Question 4 finds no question; Question 1, marked point by point, is not
+    // an essay question.
+    expect(refsFor('ocr-p1-01').map(refString)).toEqual([
+      null,
+      null,
+      'ocr-lang-component01/Q3',
+      null,
+      'ocr-lang-component01/Q5/Q6',
+    ])
+    expect(refsFor('ocr-p2-01').map(refString).at(-1)).toBe('ocr-lang-component02/Q5/Q6')
+  })
+
   it('maps every AQA Literature Paper 2 mock question by question', () => {
     // Until 9 October 2026 there was no 8702/2 scheme and every answer got
     // general feedback. Papers 04 and 05 were AQA's shape: 34, 30, 24 and 8.
@@ -248,6 +264,23 @@ describe('mock papers', () => {
         'eduqas-lit-comp2/Section C (b)',
       ])
     }
+  })
+
+  it('maps the Eduqas Language Component 2 mocks’ 21st-century language question to Question 1.2', () => {
+    // Since 24 October 2026 the scheme is Eduqas's own (eduqas-lang.ts): A2 is
+    // Question 1.2, 10 marks of AO2 on the 21st-century text, which is what
+    // these mocks' Question 2 asks. Their Question 3, 10 marks on what the
+    // 19th-century text tells you, went to A3 until then, a language question
+    // Eduqas does not set; no Eduqas question is like it, so it gets general
+    // feedback. The other questions here match no tariff, as before.
+    expect(refsFor('wjec-c2-01').map(refString)).toEqual([
+      null,
+      'eduqas-lang-comp2/A2',
+      null,
+      null,
+      null,
+      null,
+    ])
   })
 })
 
@@ -356,14 +389,22 @@ describe('question bank', () => {
     ['edx-lit-pc-1', ['edexcel-lit-paper2/Section B Part 1']],
     ['edx-lit-up-1', ['edexcel-lit-paper2/Section B Part 2']],
     // AQA Paper 2, since 9 October 2026: the modern text (no extract printed),
-    // the anthology, and the two unseen questions, 27.1 and 27.2.
+    // the anthology, and the two unseen questions, 28.1 and 28.2 (27.1 and
+    // 27.2 until June 2025).
     ['aqa-lit-er-1', ['aqa-lit-paper2/Section A']],
     ['aqa-lit-eba-3', []],
     ['aqa-lit-pc-1', ['aqa-lit-paper2/Section B']],
     ['aqa-lit-up-1', ['aqa-lit-paper2/Section C (a)']],
     ['aqa-lit-up-3', ['aqa-lit-paper2/Section C (b)']],
     ['aqa-p2-cwv-1', ['aqa-lang-paper2/Q4']],
-    ['wjec-p1-ec-1', ['eduqas-lang-comp1/A4']],
+    // Eduqas Language in Eduqas's numbering since 24 October 2026. The
+    // evaluation is Component 1's A5 (Question 05); it was A4, which is now
+    // Question 04, language and structure. Component 2's 10-mark language
+    // question is A2 (Question 1.2) and its comparison A6 (Question 1.6); the
+    // two writing tasks, both compulsory, are B1 and B2.
+    ['wjec-p1-ec-1', ['eduqas-lang-comp1/A5']],
+    ['wjec-p2-la-3', ['eduqas-lang-comp2/A2']],
+    ['wjec-p2-cop-1', ['eduqas-lang-comp2/A6']],
     ['wjec-p2-pw-1', ['eduqas-lang-comp2/B1', 'eduqas-lang-comp2/B2']],
     // Eduqas Literature, since 9 October 2026: the Shakespeare extract question
     // and essay, the anthology comparison, post-1914 and 19th-century prose,
@@ -375,6 +416,16 @@ describe('question bank', () => {
     ['wjec-lit-eba-2', ['eduqas-lit-comp2/Section B']],
     ['wjec-lit-up-1', ['eduqas-lit-comp2/Section C (a)']],
     ['wjec-lit-up-3', ['eduqas-lit-comp2/Section C (b)']],
+    // OCR Language in OCR's numbering since 24 October 2026. Question 4 on both
+    // components is a statement about both texts, evaluated and compared: an
+    // entry that only compares, or judges one text, is not it (until then they
+    // went to a 10-mark comparison and a 16-mark evaluation OCR does not set).
+    ['ocr-p1-la-1', ['ocr-lang-component01/Q3']],
+    ['ocr-p1-comp-1', []],
+    ['ocr-p1-wtp-1', ['ocr-lang-component01/Q5/Q6']],
+    ['ocr-p2-la-1', ['ocr-lang-component02/Q3']],
+    ['ocr-p2-ev-1', []],
+    ['ocr-p2-nw-1', ['ocr-lang-component02/Q5/Q6']],
     ['edx-p2-pw-custom', []],
   ])('maps %s to %j', (id, expected) => {
     const q = examQuestions.find((e) => e.id === id)

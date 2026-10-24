@@ -1,276 +1,161 @@
 // ─── OCR GCSE English Literature Mark Scheme ────────────────────────────────
-// J352 - Component 01 and Component 02.
-// Based on the OCR J352 specification (9-1 GCSE).
+// J352 - Component 01 and Component 02, as OCR marks them.
 //
-// Source: https://www.ocr.org.uk/qualifications/gcse/english-literature-j352/
+// ── ONE GRID PER ANSWER (24 October 2026) ───────────────────────────────────
+// OCR marks each answer as a whole, on one six-level grid covering every
+// objective the question assesses, and marks spelling, punctuation and grammar
+// (AO4) on its own small grid, in Section B only. Until 24 October this file
+// gave each objective its own ladder, scaled from a twelve-mark base, so the
+// marker placed a Section B essay on three ladders where OCR uses one, at
+// ranges OCR does not use: Component 01's part (a) gave AO2 four one-mark
+// levels named 1, 3, 4 and 6, because the rescale squeezed two out. Each
+// answer is now one objective for its grid, at OCR's ranges:
 //
-// ── THE TOP FOUR MARKS WERE UNAWARDABLE (fixed 19 September 2026, EXAM-7) ───
-// The 16-mark objectives were built as `{ ...ao1, maxMarks: 16 }`. That spread
-// overrode the declared total and left the base ladder, which tops out at 12,
-// completely untouched. So three sections told the marker the objective was
-// worth 16 marks and then handed it a grid whose highest level read
-// "11-12 marks": a candidate who deserved 16 could not be given more than 12.
+//   Section A, parts (a) and (b)   one grid of 20: 1-3, 4-6, 7-10, 11-14,
+//                                  15-17, 18-20
+//   Section B                      AO1 to AO3 on one grid of 36: 1-6, 7-12,
+//                                  13-18, 19-24, 25-30, 31-36; AO4 on its own
+//                                  grid of 4: 1, 2-3, 4; the two are added
 //
-// Nothing caught it because every total still added up - question and paper
-// totals are computed from `maxMarks`, which was right. Only the grid the model
-// actually marks against was short, and no test looked at the grid.
+// A grid's id names the objectives it covers ('AO1-AO3', 'AO1-AO2'), in upper
+// case because feedback-generator.ts upper-cases the id the model returns
+// before matching it. Each grid's description gives OCR's intended weighting
+// of the objectives inside it, which is what this file's tariffs already had
+// right (part (a) AO1 8, AO2 4, AO3 8 in Component 01 and AO1 8, AO2 12 in
+// Component 02; part (b) AO1 10, AO2 10; Section B AO1 14, AO2 14, AO3 8,
+// AO4 4). The caps OCR applies are in each question's examiner notes: one
+// extract or one moment only, one poem only, a poem from another cluster, the
+// part (a) extract reused in part (b).
 //
-// The AOs now go through `scaleAO()`, which rescales the ladder with the
-// tariff. This needed no board document: the target is the objective's own
-// declared maxMarks, so what is being removed is an internal contradiction,
-// not a claim about OCR's published scheme. The tariffs themselves are still
-// UNVERIFIED - see ../examiner/verification.ts.
+// The figures come from the guides src/data/mark-scheme-guides/
+// ocr-lit-component01.ts and ocr-lit-component02.ts, checked twice on
+// 24 October 2026 against OCR's J352/01 and J352/02 mark schemes for June 2024
+// (with June 2023 for Component 01's caps and June 2018 for Component 02's
+// weightings) and the J352 specification, Version 3.0, November 2025. Changing
+// how essays are scored was put to the founder (document 30), who approved it
+// on 24 October 2026. No person has checked these figures against OCR's
+// papers, so neither component is in VERIFIED_SPECS
+// (../examiner/verification.ts). The level descriptors are this site's own
+// words, adapted from the guides; OCR's descriptors are its copyright.
+//
+// ── EARLIER DEFECTS, kept so they are not reintroduced ──────────────────────
+// 19 September 2026 (EXAM-7): the 16-mark objectives were built as
+// `{ ...ao1, maxMarks: 16 }`. The spread overrode the declared total and left
+// a ladder that topped out at 12, so a candidate who deserved 16 could not be
+// given more than 12, and nothing caught it because every total still added
+// up (./scale-ao.ts has the account). The grids below are written at their own
+// tariffs and are not rescaled.
+//
+// 9 October 2026: rebuilt to OCR's sections. Section A of each component had
+// been one 40-mark question, where OCR sets two 20-mark parts. AO4 had been put
+// in Section A of both components and AO3 in Component 02's poetry; OCR
+// assesses AO4 in Section B of each component only, and context in Component
+// 02 only in its Shakespeare section. Component 01 Section B had been called
+// "literary heritage prose or drama", with Romeo and Juliet as an example: it
+// is 19th-century prose, and Shakespeare is Component 02.
 // ────────────────────────────────────────────────────────────────────────────
 
-import type { MarkScheme, AssessmentObjective } from './types'
-import { scaleAO } from './scale-ao'
+import type { MarkScheme, AssessmentObjective, BandDescriptor } from './types'
 
-// ─── Shared Assessment Objectives ─────────────────────────────────────────
+/** One level's wording: this site's own, never OCR's. */
+type LevelText = Pick<BandDescriptor, 'label' | 'descriptor' | 'indicators'>
 
-const ao1: AssessmentObjective = {
-  id: 'AO1',
-  label: 'AO1 - Read, understand and respond',
-  description:
-    'Read, understand and respond to texts. Students should be able to maintain a critical style and develop an informed personal response; use textual references, including quotations, to support and illustrate interpretations.',
-  maxMarks: 12,
-  weighting: 0.35,
-  bands: [
-    {
-      band: 'Level 1',
-      minMarks: 1,
-      maxMarks: 2,
-      label: 'Limited',
-      descriptor:
-        'Limited personal response to the text with few references. Limited understanding of the task with largely descriptive or narrative comment.',
-      indicators: [
-        'Retells or paraphrases rather than responds',
-        'References are sparse and mostly general',
-        'Response may not address the question directly',
-      ],
-    },
-    {
-      band: 'Level 2',
-      minMarks: 3,
-      maxMarks: 4,
-      label: 'Some',
-      descriptor:
-        'Some personal response to the text with some appropriate references. Some understanding of the text and task with some relevant comment.',
-      indicators: [
-        'Some awareness of meaning beyond surface level',
-        'Some relevant references or quotations used',
-        'Response addresses the question in places',
-      ],
-    },
-    {
-      band: 'Level 3',
-      minMarks: 5,
-      maxMarks: 6,
-      label: 'Sound',
-      descriptor:
-        'A sound personal response to the text with relevant references. Sound understanding of the text and task with focused comment.',
-      indicators: [
-        'Clear engagement with the text and question',
-        'Relevant quotations support points made',
-        'Paragraphs develop a coherent argument',
-      ],
-    },
-    {
-      band: 'Level 4',
-      minMarks: 7,
-      maxMarks: 8,
-      label: 'Sustained',
-      descriptor:
-        'A sustained personal response to the text with well-chosen references. Sustained and developed understanding of the text and task with confident comment.',
-      indicators: [
-        'Developed interpretation maintained throughout',
-        'Well-chosen quotations integrated fluently',
-        'Argument is well-structured and convincing',
-      ],
-    },
-    {
-      band: 'Level 5',
-      minMarks: 9,
-      maxMarks: 10,
-      label: 'Discriminating',
-      descriptor:
-        'A discriminating personal response to the text with precise references. Discriminating understanding of the text and task with perceptive and evaluative comment.',
-      indicators: [
-        'Alternative interpretations considered with nuance',
-        'Precise, judiciously selected references',
-        'Evaluative and analytical rather than descriptive',
-      ],
-    },
-    {
-      band: 'Level 6',
-      minMarks: 11,
-      maxMarks: 12,
-      label: 'Assured, critical',
-      descriptor:
-        'An assured critical response to the text with assured, precise references. Assured, critical and exploratory understanding of the text and task.',
-      indicators: [
-        'Original, perceptive interpretations fully explored',
-        'References are precise and integrated seamlessly',
-        'Argument is cohesive, critical and illuminating',
-      ],
-    },
-  ],
+/** OCR's six levels for a 20-mark part of Section A. */
+const PART_RANGES = [
+  [1, 3],
+  [4, 6],
+  [7, 10],
+  [11, 14],
+  [15, 17],
+  [18, 20],
+] as const
+
+/** OCR's six levels for Section B's AO1 to AO3 grid, out of 36. */
+const ESSAY_RANGES = [
+  [1, 6],
+  [7, 12],
+  [13, 18],
+  [19, 24],
+  [25, 30],
+  [31, 36],
+] as const
+
+/** Levels named as OCR names them, "Level 1" up, at the ranges given. */
+function levels(
+  ranges: readonly (readonly [number, number])[],
+  text: readonly LevelText[],
+): BandDescriptor[] {
+  if (ranges.length !== text.length) throw new Error('ocr-lit: a level without its wording')
+  return ranges.map(([minMarks, maxMarks], i) => ({
+    band: `Level ${i + 1}`,
+    minMarks,
+    maxMarks,
+    ...text[i]!,
+  }))
 }
 
-const ao2: AssessmentObjective = {
-  id: 'AO2',
-  label: 'AO2 - Analyse language, form and structure',
-  description:
-    'Analyse the language, form and structure used by a writer to create meanings and effects, using relevant subject terminology where appropriate.',
-  maxMarks: 12,
-  weighting: 0.35,
-  bands: [
-    {
-      band: 'Level 1',
-      minMarks: 1,
-      maxMarks: 2,
-      label: 'Limited awareness',
-      descriptor:
-        "Limited awareness of the writer's use of language, form and structure. Limited use of relevant subject terminology.",
-      indicators: [
-        'Identifies obvious devices without commenting on effect',
-        'Subject terminology is absent or inaccurate',
-        'Little awareness of the writer as a craftsperson',
-      ],
-    },
-    {
-      band: 'Level 2',
-      minMarks: 3,
-      maxMarks: 4,
-      label: 'Some identification',
-      descriptor:
-        "Some identification of the writer's use of language, form and structure with some comment on effect. Some use of relevant subject terminology.",
-      indicators: [
-        'Names some methods and comments simply on effect',
-        'Some accurate subject terminology',
-        'Begins to recognise authorial intent',
-      ],
-    },
-    {
-      band: 'Level 3',
-      minMarks: 5,
-      maxMarks: 6,
-      label: 'Sound explanation',
-      descriptor:
-        "Sound explanation of the writer's use of language, form and structure. Sound use of relevant subject terminology to support explanation.",
-      indicators: [
-        'Explains how methods create meaning and effect',
-        'Accurate and appropriate subject terminology',
-        "Consistently addresses the writer's choices",
-      ],
-    },
-    {
-      band: 'Level 4',
-      minMarks: 7,
-      maxMarks: 8,
-      label: 'Sustained analysis',
-      descriptor:
-        "Sustained analysis of the writer's use of language, form and structure. Effective use of subject terminology to support analysis.",
-      indicators: [
-        'Considers layered effects of language, form and structure',
-        'Subject terminology is embedded and purposeful',
-        'Explores how form and structure contribute to meaning',
-      ],
-    },
-    {
-      band: 'Level 5',
-      minMarks: 9,
-      maxMarks: 10,
-      label: 'Discriminating analysis',
-      descriptor:
-        "Discriminating analysis of the writer's use of language, form and structure. Subject terminology used precisely and judiciously.",
-      indicators: [
-        'Analyses subtle and complex effects with precision',
-        'Terminology is used as a precise analytical tool',
-        'Considers why the writer made specific choices',
-      ],
-    },
-    {
-      band: 'Level 6',
-      minMarks: 11,
-      maxMarks: 12,
-      label: 'Assured analysis',
-      descriptor:
-        "Assured, critical analysis of the writer's use of language, form and structure. Subject terminology used with confident precision throughout.",
-      indicators: [
-        "Perceptive analysis of the writer's craft and its effect on the reader",
-        'Terminology is precise, assured and enhances the argument',
-        'Text is considered as a whole crafted artefact',
-      ],
-    },
-  ],
+// ─── Section B, both components: AO1 to AO3 together, and AO4 on its own ───
+
+/** The essay grid, for the novel (Component 01) or the play (Component 02). */
+function essayGrid(work: 'novel' | 'play', writer: string, context: string): AssessmentObjective {
+  return {
+    id: 'AO1-AO3',
+    label: 'AO1-AO3 - Response, analysis and context, on one grid',
+    description: `OCR marks AO1, AO2 and AO3 together on one grid out of 36, with an intended weighting of AO1 14, AO2 14 and AO3 8. AO1: an informed personal argument that answers the exact question about the ${work}, supported by references and quotations. AO2: analysis of ${writer} language, form and structure, with subject terms. AO3: ${context}, linked to the points made. Spelling, punctuation and grammar are AO4, on their own grid.`,
+    maxMarks: 36,
+    weighting: 36 / 40,
+    bands: levels(ESSAY_RANGES, [
+      {
+        label: 'A few relevant comments',
+        descriptor: `A few relevant comments with little reference to the ${work}, very little sense of how it is written, and context only hinted at.`,
+        indicators: ['Little reference to the text', 'Retelling more than comment'],
+      },
+      {
+        label: 'Simple',
+        descriptor: `A simple answer that begins to address the question, with some support from the ${work}, simple comments on the writing and some awareness of context.`,
+        indicators: ['Begins to answer the question', 'Some awareness of context'],
+      },
+      {
+        label: 'Fuller, showing understanding',
+        descriptor: `A fuller answer that shows understanding, with some relevant quotations, a reasonable explanation of ${writer} methods and some relevant comments on context.`,
+        indicators: ['Some relevant quotations', 'Methods explained reasonably'],
+      },
+      {
+        label: 'Detailed, developing argument',
+        descriptor:
+          'A detailed answer with a developing argument, relevant quotations, some real analysis of language, form and structure, and a clear grasp of context that shapes the points.',
+        indicators: ['Argument developing through the essay', 'Context shapes the points'],
+      },
+      {
+        label: 'Well built and persuasive',
+        descriptor:
+          'A well-built, persuasive argument with well-suited quotations built in, careful analysis that uses subject terms well, and context that informs the interpretation.',
+        indicators: ['Quotations built into the sentences', 'Context informs the interpretation'],
+      },
+      {
+        label: 'Insightful, tightly argued',
+        descriptor:
+          'An insightful essay argued tightly from start to finish, with exact quotations, close and detailed analysis of language, form and structure, and a subtle understanding of how context shapes meaning.',
+        indicators: [
+          'Tightly argued from start to finish',
+          'A subtle understanding of how context shapes meaning',
+        ],
+      },
+    ]),
+  }
 }
 
-const ao3: AssessmentObjective = {
-  id: 'AO3',
-  label: 'AO3 - Context',
-  description:
-    'Show understanding of the relationships between texts and the contexts in which they were written.',
-  maxMarks: 6,
-  weighting: 0.2,
-  bands: [
-    {
-      band: 'Level 1',
-      minMarks: 1,
-      maxMarks: 2,
-      label: 'Limited awareness',
-      descriptor:
-        'Limited awareness of contextual factors. Context is stated as bolt-on facts with no link to the text.',
-      indicators: [
-        'Mentions biographical or historical details without purpose',
-        'No integration of context with textual analysis',
-      ],
-    },
-    {
-      band: 'Level 2',
-      minMarks: 3,
-      maxMarks: 4,
-      label: 'Some understanding',
-      descriptor:
-        'Some understanding of contextual factors shown by links between context and text. Context is beginning to inform interpretation.',
-      indicators: [
-        'Some relevant context linked to themes or characters',
-        'Context is starting to shape the reading of the text',
-      ],
-    },
-    {
-      band: 'Level 3',
-      minMarks: 5,
-      maxMarks: 6,
-      label: 'Assured understanding',
-      descriptor:
-        'Assured understanding of contextual factors demonstrated through detailed, specific links between context, text and task.',
-      indicators: [
-        'Integrated, purposeful use of context throughout',
-        'Context shapes interpretation and deepens analysis',
-        'Engages with the ideas and values of the period',
-      ],
-    },
-  ],
-}
-
-const ao4: AssessmentObjective = {
+/** Spelling, punctuation and grammar, in OCR's three performance levels. */
+const ao4Accuracy: AssessmentObjective = {
   id: 'AO4',
-  // Was 'AO4 - Relate texts / compare' (fixed 19 September 2026, EXAM-7), with
-  // a description that opened on relationships between texts and then gave the
-  // real England GCSE Literature AO4 - technical accuracy - as its second
-  // sentence. The label and the first sentence contradicted the second.
-  //
-  // Same reasoning as the matching fix in eduqas-lit.ts: comparison is not a
-  // separate objective in GCSE Literature, and aqa-lit-paper1 and edexcel-lit
-  // both name AO4 as accuracy. The relationships sentence is removed rather
-  // than kept alongside, because the description is fed to the model verbatim.
-  label: 'AO4 - Technical accuracy',
+  // Was 'AO4 - Relate texts / compare' until 19 September 2026 (EXAM-7). In
+  // England's GCSE Literature AO4 is technical accuracy; comparison is not a
+  // separate objective.
+  label: 'AO4 - Technical accuracy: spelling, punctuation and grammar',
   description:
-    'Use a range of vocabulary and sentence structures for clarity, purpose and effect, with accurate spelling and punctuation.',
+    'Use a range of vocabulary and sentence structures for clarity, purpose and effect, with accurate spelling and punctuation. Marked on its own grid, in Section B only.',
   maxMarks: 4,
-  weighting: 0.1,
-  // 9 October 2026: four single-mark levels of this site's own. OCR marks AO4 in
-  // three performance levels, 1, 2-3 and 4 (J352/02 mark scheme, June 2018).
+  weighting: 4 / 40,
   bands: [
     {
       band: 'Threshold',
@@ -278,8 +163,8 @@ const ao4: AssessmentObjective = {
       maxMarks: 1,
       label: 'Threshold performance',
       descriptor:
-        'Spelling and punctuation with reasonable accuracy, and a reasonable range of vocabulary and sentence structures; any errors do not hinder meaning.',
-      indicators: ['Errors do not obscure meaning', 'Some variety in sentence structure'],
+        'Mostly accurate spelling and punctuation and some variety in words and sentences. Errors do not get in the way of the meaning.',
+      indicators: ['Errors do not obscure the meaning', 'Some variety in sentences'],
     },
     {
       band: 'Intermediate',
@@ -287,8 +172,8 @@ const ao4: AssessmentObjective = {
       maxMarks: 3,
       label: 'Intermediate performance',
       descriptor:
-        'Spelling and punctuation with considerable accuracy, and a considerable range of vocabulary and sentence structures to achieve general control of meaning.',
-      indicators: ['Errors are minor and infrequent', 'Writing is generally controlled'],
+        'Spelling and punctuation are largely accurate, and the vocabulary and sentences are varied enough to keep the meaning generally clear and controlled.',
+      indicators: ['Errors minor and infrequent', 'Meaning generally controlled'],
     },
     {
       band: 'High',
@@ -296,36 +181,13 @@ const ao4: AssessmentObjective = {
       maxMarks: 4,
       label: 'High performance',
       descriptor:
-        'Spelling and punctuation with consistent accuracy, and a wide range of vocabulary and sentence structures used to achieve effective control of meaning.',
-      indicators: [
-        'Ambitious vocabulary used with precision',
-        'Writing is fluent, precise and controlled',
-      ],
+        'Spelling and punctuation are accurate throughout, and well-chosen vocabulary and varied sentences keep the meaning precise and fully under control.',
+      indicators: ['Accurate throughout', 'Precise, well-chosen vocabulary'],
     },
   ],
 }
 
-// ─── The components, as OCR marks them ──────────────────────────────────────
-//
-// REBUILT 9 October 2026 against OCR's mark schemes for J352/01 (June 2023) and
-// J352/02 (June 2018) and the J352 specification (Version 3.0, page 16). Each
-// mark scheme gives the intended weighting of each objective in each question
-// as a share of the GCSE; on an 80-mark paper worth 50%, 1% is 1.6 marks.
-//
-// What was wrong: Section A of each component was one 40-mark question. OCR
-// sets two 20-mark parts. Component 01 put 8 marks of AO4 in Section A and
-// Component 02 put AO3 8 and AO4 8 in its poetry; OCR assesses AO4 in Section B
-// of each component only, 4 marks, and Component 02 assesses context only in its
-// Shakespeare section. Component 01 Section B was described as "literary
-// heritage prose or drama" with Romeo and Juliet as an example: it is
-// 19th-century prose, and Shakespeare is Component 02. Both Section B notes said
-// AO4 was not assessed there, which is where it is.
-//
-// OCR marks each answer as a whole on a six-level grid (18-20 at the top of a
-// 20-mark part; 31-36 for Section B's AO1 to AO3, with AO4 on its own grid);
-// this corpus keeps a ladder per objective, scaled to each tariff. The tariffs
-// below are OCR's; the ladders' wording is still the site's, so the schemes
-// stay unverified (../examiner/verification.ts).
+// ─── Component 01: Exploring modern and literary heritage texts ─────────────
 
 export const ocrLitComponent01: MarkScheme = {
   id: 'ocr-lit-component01',
@@ -336,32 +198,125 @@ export const ocrLitComponent01: MarkScheme = {
   totalMarks: 80,
   durationMinutes: 120,
   version: 'J352/01',
-  sourceUrl: 'https://www.ocr.org.uk/qualifications/gcse/english-literature-j352/',
+  sourceUrl:
+    'https://www.ocr.org.uk/qualifications/gcse/english-literature-j352-from-2015/assessment/',
   questions: [
     {
       id: 'Section A (a)',
       questionType: 'Modern prose or drama: comparing the extract with an unseen extract',
       taskDescription:
-        'Compare how an idea is presented in an extract from the studied modern prose or drama text and in an unseen extract from a modern text of the same genre.',
+        'Compare how an idea is presented in an extract from the studied modern prose or drama text and in an unseen extract from a modern text of the same genre, keeping to the two printed extracts.',
       totalMarks: 20,
-      // J352/01 June 2023: AO1 5%, AO2 2.5%, AO3 5%.
       assessmentObjectives: [
-        scaleAO(ao1, 8, 8 / 20),
-        scaleAO(ao2, 4, 4 / 20),
-        scaleAO(ao3, 8, 8 / 20),
+        {
+          id: 'AO1-AO3',
+          label: 'AO1-AO3 - Response, analysis and context, on one grid',
+          description:
+            'OCR marks the answer as a whole on one grid covering three objectives, with an intended weighting of AO1 8, AO2 4 and AO3 8 of the 20 marks. AO1: an informed personal response to both extracts, argued and supported by quotations. AO2: analysis of how language, form and structure create meaning, with subject terms where they help. AO3: the social, family, age, class or cultural situations each extract suggests, worked into the comparison.',
+          maxMarks: 20,
+          weighting: 1,
+          bands: levels(PART_RANGES, [
+            {
+              label: 'A few relevant remarks',
+              descriptor:
+                'A few relevant remarks about the extracts, with little reference to them, very little on how they are written, hardly any links between the two and context only hinted at.',
+              indicators: ['Little reference to either extract', 'Hardly any links between them'],
+            },
+            {
+              label: 'Simple',
+              descriptor:
+                'A simple answer with some support from the extracts, simple comments on the writing, a few basic links between the extracts and some awareness of context.',
+              indicators: ['A few basic links', 'Some awareness of context'],
+            },
+            {
+              label: 'Fuller, with some comparison',
+              descriptor:
+                "A fuller answer that shows understanding, makes some direct comparisons, uses some relevant quotations, explains some of the writers' choices and comments on context in places.",
+              indicators: ['Some direct comparisons', "Some of the writers' choices explained"],
+            },
+            {
+              label: 'Detailed, developing argument',
+              descriptor:
+                'A detailed answer with a developing argument: key points of comparison are developed, quotations are relevant, there is some real analysis of the writing, and context clearly shapes the reading.',
+              indicators: ['Key points of comparison developed', 'Context shapes the reading'],
+            },
+            {
+              label: 'Well built and persuasive',
+              descriptor:
+                'A well-built, persuasive argument that compares the extracts throughout, with well-suited quotations built into the sentences, careful analysis, and context that informs the interpretation.',
+              indicators: ['Compares the extracts throughout', 'Quotations built into sentences'],
+            },
+            {
+              label: 'Insightful, tightly argued',
+              descriptor:
+                'An insightful, tightly argued answer that compares the extracts in every paragraph, with exact quotations built into the argument, close analysis of the writing and a subtle grasp of how context shapes each extract.',
+              indicators: [
+                'Compares the extracts in every paragraph',
+                'A subtle grasp of how context shapes each extract',
+              ],
+            },
+          ]),
+        },
       ],
       examinerNotes:
-        'Comparison is required throughout. Context counts in this part. AO4 is not assessed in Section A.',
+        'OCR marks this answer as a whole on one six-level grid out of 20 (one mark for the grid, id AO1-AO3), weighted AO1 8, AO2 4 and AO3 8: personal response and context count for most, analysis of the writing for less. Comparison of the two extracts is needed throughout. The paper tells candidates to keep to the two printed extracts, so reward comparison of the extracts, not discussion of the rest of the studied text. Context means the situations each extract suggests (social, family, age, class, culture), worked into the comparison rather than added as facts. AO4 is not assessed in Section A.',
     },
     {
       id: 'Section A (b)',
       questionType: 'Modern prose or drama: elsewhere in the studied text',
       taskDescription:
-        'Explore a related idea elsewhere in the studied modern prose or drama text.',
+        'Explore another moment in the studied modern prose or drama text that fits the idea the question names: a different moment from the part (a) extract, written about from memory.',
       totalMarks: 20,
-      // AO1 6.25%, AO2 6.25%.
-      assessmentObjectives: [scaleAO(ao1, 10, 10 / 20), scaleAO(ao2, 10, 10 / 20)],
-      examinerNotes: 'AO1 and AO2 are equally weighted. AO3 and AO4 are not assessed in this part.',
+      assessmentObjectives: [
+        {
+          id: 'AO1-AO2',
+          label: 'AO1-AO2 - Response and analysis, on one grid',
+          description:
+            'OCR marks the answer as a whole on one grid covering two objectives, weighted equally, AO1 10 and AO2 10 of the 20 marks. AO1: an informed personal response to the moment chosen, argued and supported by references or quotations from memory. AO2: analysis of how the writer uses language, form and structure at that moment, with subject terms.',
+          maxMarks: 20,
+          weighting: 1,
+          bands: levels(PART_RANGES, [
+            {
+              label: 'A few relevant remarks',
+              descriptor:
+                'A few relevant remarks with little reference to the text and little awareness of how it is written.',
+              indicators: ['Little reference to the text'],
+            },
+            {
+              label: 'Simple',
+              descriptor:
+                'A simple answer that begins to address the question, with some support from the text and simple comments on the writing.',
+              indicators: ['Begins to answer the question', 'Simple comments on the writing'],
+            },
+            {
+              label: 'Fuller, showing understanding',
+              descriptor:
+                "A fuller answer that shows understanding, with some relevant references or quotations and a reasonable explanation of the writer's choices, using some subject terms.",
+              indicators: ['Some relevant references', "The writer's choices explained"],
+            },
+            {
+              label: 'Detailed and focused',
+              descriptor:
+                'A detailed, focused answer with a developing argument, relevant references and some real analysis of language, form and structure.',
+              indicators: ['A developing argument', 'Some real analysis of the writing'],
+            },
+            {
+              label: 'Well built and persuasive',
+              descriptor:
+                'A well-built, persuasive argument with well-suited quotations built in, and careful, detailed analysis that uses subject terms well.',
+              indicators: ['Quotations built in', 'Careful, detailed analysis'],
+            },
+            {
+              label: 'Insightful, tightly argued',
+              descriptor:
+                'An insightful, tightly argued answer throughout, with exact quotations from memory and close, detailed analysis of how the writer creates meaning.',
+              indicators: ['Exact quotations from memory', 'Close analysis of how meaning is made'],
+            },
+          ]),
+        },
+      ],
+      examinerNotes:
+        'OCR marks this answer as a whole on one six-level grid out of 20 (one mark for the grid, id AO1-AO2), with response (AO1) and analysis of language, form and structure (AO2) weighted equally, 10 each. The candidate writes from memory about a different moment in the same studied text: an answer that discusses only the part (a) extract scores 0. Reward a well-chosen moment that fits the question, explored in detail. AO3 and AO4 are not assessed in this part.',
     },
     {
       id: 'Section B',
@@ -369,18 +324,21 @@ export const ocrLitComponent01: MarkScheme = {
       taskDescription:
         'Answer one question, from a choice of an extract-based question and a discursive question, on the studied 19th-century prose text (for example Great Expectations, Jekyll and Hyde or A Christmas Carol).',
       totalMarks: 40,
-      // AO1 8.75%, AO2 8.75%, AO3 5%, AO4 2.5%.
       assessmentObjectives: [
-        scaleAO(ao1, 14, 14 / 40),
-        scaleAO(ao2, 14, 14 / 40),
-        scaleAO(ao3, 8, 8 / 40),
-        scaleAO(ao4, 4, 4 / 40),
+        essayGrid(
+          'novel',
+          "the writer's",
+          "context that bears on the question, such as the period's social or historical ideas or the conventions of a genre like the Gothic",
+        ),
+        ao4Accuracy,
       ],
       examinerNotes:
-        'AO1 to AO3 are marked together out of 36 and AO4 separately out of 4. Context (AO3) should be integrated into the argument, not bolted on.',
+        "Two grids, added: AO1, AO2 and AO3 together on one six-level grid out of 36 (one mark for the grid, id AO1-AO3; weighted AO1 14, AO2 14, AO3 8), and spelling, punctuation and grammar on their own grid out of 4 (id AO4). The candidate answers one of two questions on the novel: an extract-based question, which must also go beyond the extract, or a discursive question, which must range across two or more moments. An extract-based answer that stays inside the extract, or a discursive answer on one moment only, cannot go above Level 3; OCR's June 2023 mark scheme also held an answer to Level 4 where the rest of the novel, or a second moment, got only a passing mention. Context earns credit only where it bears on the question and is linked to the points made.",
     },
   ],
 }
+
+// ─── Component 02: Exploring poetry and Shakespeare ─────────────────────────
 
 export const ocrLitComponent02: MarkScheme = {
   id: 'ocr-lit-component02',
@@ -391,7 +349,8 @@ export const ocrLitComponent02: MarkScheme = {
   totalMarks: 80,
   durationMinutes: 120,
   version: 'J352/02',
-  sourceUrl: 'https://www.ocr.org.uk/qualifications/gcse/english-literature-j352/',
+  sourceUrl:
+    'https://www.ocr.org.uk/qualifications/gcse/english-literature-j352-from-2015/assessment/',
   questions: [
     {
       id: 'Section A (a)',
@@ -399,20 +358,113 @@ export const ocrLitComponent02: MarkScheme = {
       taskDescription:
         'Compare how a named poem from the studied cluster of the OCR anthology and an unseen poem, both printed on the paper, present an idea or feeling.',
       totalMarks: 20,
-      // J352/02 June 2018: AO1 5%, AO2 7.5%; AO2 is the dominant objective.
-      assessmentObjectives: [scaleAO(ao1, 8, 8 / 20), scaleAO(ao2, 12, 12 / 20)],
+      assessmentObjectives: [
+        {
+          id: 'AO1-AO2',
+          label: 'AO1-AO2 - Response and analysis, on one grid',
+          description:
+            'OCR marks the answer as a whole on one grid covering two objectives, with an intended weighting of AO1 8 and AO2 12 of the 20 marks, so analysis is the dominant objective. AO1: an informed personal response to both poems, supported by quotations and comparing them throughout. AO2: close analysis of how language, form and structure create meaning in both poems, with subject terms.',
+          maxMarks: 20,
+          weighting: 1,
+          bands: levels(PART_RANGES, [
+            {
+              label: 'A few relevant remarks',
+              descriptor:
+                'A few relevant remarks about the poems, with little reference to them, very little sense of how they are written and little or no linking of the two.',
+              indicators: ['Little reference to either poem', 'Little or no linking'],
+            },
+            {
+              label: 'Simple',
+              descriptor:
+                'A simple response with some support from the poems, simple comments on language, form or structure, and a few basic links between them.',
+              indicators: ['Simple comments on the writing', 'A few basic links'],
+            },
+            {
+              label: 'Fuller, with some comparison',
+              descriptor:
+                "A fuller response that explains some of the poets' choices, uses some subject terms and relevant quotations, and makes some direct comparisons.",
+              indicators: ["Some of the poets' choices explained", 'Some direct comparisons'],
+            },
+            {
+              label: 'Detailed, some real analysis',
+              descriptor:
+                'A detailed response with some real analysis of language, form and structure, terms used correctly, relevant quotations and some developed points of comparison.',
+              indicators: ['Some real analysis of both poems', 'Developed points of comparison'],
+            },
+            {
+              label: 'Well built and persuasive',
+              descriptor:
+                'A well-built, persuasive response with careful analysis of both poems, well-suited quotations built into the sentences, good use of terms and comparison kept up throughout.',
+              indicators: ['Careful analysis of both poems', 'Comparison kept up throughout'],
+            },
+            {
+              label: 'Close, insightful analysis',
+              descriptor:
+                'Close, insightful analysis of how both poems work, with exact quotations built into a tightly argued response that compares the poems in every paragraph.',
+              indicators: ['Compares the poems in every paragraph', 'Exact quotations built in'],
+            },
+          ]),
+        },
+      ],
       examinerNotes:
-        'AO2 is dominant. Comparison of the two poems is required throughout. AO3 and AO4 are not assessed in Section A.',
+        'OCR marks this answer as a whole on one six-level grid out of 20 (one mark for the grid, id AO1-AO2), weighted AO1 8 and AO2 12: analysis of language, form and structure is the dominant objective. Comparison of the two poems is needed throughout. An answer on only one poem is unlikely to rise above Level 2 and cannot go above Level 3. Context is not assessed in Section A, and nor is AO4.',
     },
     {
       id: 'Section A (b)',
       questionType: 'Poetry across time: another poem from the cluster',
       taskDescription:
-        "Explore how an idea is presented in one other poem of the student's choice from the same anthology cluster.",
+        "Explore how an idea is presented in one other poem of the student's choice from the same anthology cluster, not the named poem from part (a), written about from memory.",
       totalMarks: 20,
-      // AO1 6.25%, AO2 6.25%.
-      assessmentObjectives: [scaleAO(ao1, 10, 10 / 20), scaleAO(ao2, 10, 10 / 20)],
-      examinerNotes: 'AO1 and AO2 are equally weighted. AO3 and AO4 are not assessed in Section A.',
+      assessmentObjectives: [
+        {
+          id: 'AO1-AO2',
+          label: 'AO1-AO2 - Response and analysis, on one grid',
+          description:
+            "OCR marks the answer as a whole on one grid covering two objectives, weighted equally, AO1 10 and AO2 10 of the 20 marks. AO1: an informed personal response to the poem chosen, supported by quotations from memory. AO2: analysis of the poet's language, form and structure, with subject terms.",
+          maxMarks: 20,
+          weighting: 1,
+          bands: levels(PART_RANGES, [
+            {
+              label: 'A few relevant remarks',
+              descriptor:
+                'A few relevant remarks with little reference to the poem and little awareness of how it is written.',
+              indicators: ['Little reference to the poem'],
+            },
+            {
+              label: 'Simple',
+              descriptor:
+                'A simple answer that begins to address the question, with some support from the poem and simple comments on the writing.',
+              indicators: ['Begins to answer the question', 'Simple comments on the writing'],
+            },
+            {
+              label: 'Fuller, showing understanding',
+              descriptor:
+                "A fuller answer that shows understanding, with some relevant references or quotations and a reasonable explanation of the poet's choices, using some subject terms.",
+              indicators: ['Some relevant references', "The poet's choices explained"],
+            },
+            {
+              label: 'Detailed and focused',
+              descriptor:
+                'A detailed, focused answer with a developing argument, relevant references and some real analysis of language, form and structure.',
+              indicators: ['A developing argument', 'Some real analysis of the writing'],
+            },
+            {
+              label: 'Well built and persuasive',
+              descriptor:
+                'A well-built, persuasive argument with well-suited quotations built in, and careful, detailed analysis that uses subject terms well.',
+              indicators: ['Quotations built in', 'Careful, detailed analysis'],
+            },
+            {
+              label: 'Insightful, tightly argued',
+              descriptor:
+                'An insightful, tightly argued answer throughout, with exact quotations from memory and close, detailed analysis of how the poet creates meaning.',
+              indicators: ['Exact quotations from memory', 'Close analysis of how meaning is made'],
+            },
+          ]),
+        },
+      ],
+      examinerNotes:
+        "OCR marks this answer as a whole on one six-level grid out of 20 (one mark for the grid, id AO1-AO2), with response (AO1) and analysis (AO2) weighted equally, 10 each. The poem must come from the candidate's own cluster and must not be the named poem from part (a); a poem from another cluster scores 0. It is written about from memory. AO3 and AO4 are not assessed in Section A.",
     },
     {
       id: 'Section B',
@@ -420,15 +472,16 @@ export const ocrLitComponent02: MarkScheme = {
       taskDescription:
         'Answer one question, from a choice of an extract-based question and a discursive question, on the studied Shakespeare play.',
       totalMarks: 40,
-      // AO1 8.75%, AO2 8.75%, AO3 5%, AO4 2.5%.
       assessmentObjectives: [
-        scaleAO(ao1, 14, 14 / 40),
-        scaleAO(ao2, 14, 14 / 40),
-        scaleAO(ao3, 8, 8 / 40),
-        scaleAO(ao4, 4, 4 / 40),
+        essayGrid(
+          'play',
+          "Shakespeare's",
+          'the social, historical or cultural ideas the play shows, where they bear on the question',
+        ),
+        ao4Accuracy,
       ],
       examinerNotes:
-        'AO1 and AO2 are equally dominant; AO1 to AO3 are marked together out of 36 and AO4 separately out of 4.',
+        "Two grids, added: AO1, AO2 and AO3 together on one six-level grid out of 36 (one mark for the grid, id AO1-AO3; weighted AO1 14, AO2 14, AO3 8), and spelling, punctuation and grammar on their own grid out of 4 (id AO4). The candidate answers one of two questions on the play: an extract-based question, which must also go beyond the extract, or a discursive question, which must range across two or more moments. An extract-based answer that stays inside the extract, or a discursive answer on one moment only, cannot go above Level 3, and one where the rest of the play, or a second moment, gets only a brief mention cannot go above Level 4. Context earns credit only where it bears on the question as the play shows it, not as general facts about Shakespeare's life or theatre.",
     },
   ],
 }

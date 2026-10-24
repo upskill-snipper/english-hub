@@ -26,11 +26,19 @@
  *   plainer word for a 14-year-old.
  * - Added the marker's own ladders to the difference of method below.
  *
- * AGAINST THE AI MARKER (ocrLitComponent01 in
+ * THE MARKER NOW MARKS AS OCR DOES (24 October 2026). With the founder's approval
+ * (document 30), ocrLitComponent01 in src/lib/marking/mark-schemes/ocr-lit.ts
+ * marks each part on one grid of 20 at OCR's six ranges (id 'AO1-AO3' for part
+ * (a), 'AO1-AO2' for part (b)), and Section B on one grid of 36 for AO1 to AO3
+ * plus AO4 on its own grid of 1, 2-3 and 4, with the caps below in its examiner
+ * notes. src/lib/marking/mark-schemes/__tests__/ocr-lit-structure.test.ts holds
+ * it to this guide. The next paragraph is the difference until then.
+ *
+ * AGAINST THE AI MARKER, UNTIL 24 OCTOBER 2026 (ocrLitComponent01 in
  * src/lib/marking/mark-schemes/ocr-lit.ts): the total (80), the duration (120) and
  * every tariff and objective split agree: part (a) 20 (AO1 8, AO2 4, AO3 8), part
  * (b) 20 (AO1 10, AO2 10), Section B 40 (AO1 14, AO2 14, AO3 8, AO4 4). One
- * difference of method: the marker scores each objective on its own ladder,
+ * difference of method: the marker scored each objective on its own ladder,
  * where OCR marks each answer as a whole on one six-level grid (1-3, 4-6, 7-10,
  * 11-14, 15-17, 18-20 for a part; 1-6 up to 31-36 for Section B's AO1 to AO3),
  * with AO4 on its own grid of 1, 2-3 and 4. The marker's AO4 ladder is OCR's.

@@ -51,6 +51,19 @@
  *   - marker: the Q6 task lists "report" among example forms. Board: the
  *     Issue 7 list, the only forms set from November 2025, has no report (see
  *     `task` on Question 6 or 7).
+ *
+ * ALL THREE CORRECTED IN THE MARKER on 24 October 2026, with the founder's
+ * approval (document 30): Q1 to Q3 are one point-marked band each, covering
+ * the whole tariff; the Q3 notes have no cap, and say a quotation with no
+ * explanation earns nothing for that point; the Q6 task lists the six Issue 7
+ * forms. The ids saved essays name (Q4, Q6) and every `markerQuestionId`
+ * below are unchanged. One thing the change did not reach: the marker's
+ * calibration anchors for this paper (src/lib/marking/calibration/
+ * edexcel-igcse-lang-paper1.ts), which go into the same prompt, still state
+ * the Q3 cap, citing the June 2026 standardisation pack, and need
+ * reconciling with that pack.
+ * src/lib/marking/mark-schemes/__tests__/edexcel-igcse-structure.test.ts
+ * holds the marker to this guide.
  */
 
 import type { MarkSchemeGuide } from './types'
