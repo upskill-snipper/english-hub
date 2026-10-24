@@ -159,9 +159,14 @@ Stripe dashboard, omitting `trial_will_end` and `charge.refunded`. If the dashbo
 was configured from that document, two handled events are never delivered. Verify the
 endpoint's event list in Stripe before assuming either works.
 
-The webhook also sends two emails by raw `fetch` to Resend, bypassing the shared
-wrapper: the payment-failed notice at line 357 and the trial-ending notice at line 1236. Both `from` `noreply@theenglishhub.app`, both log and swallow on failure because
-"email is non-critical" to the webhook's 200.
+The webhook also sends emails. The card-trial notice (`trial_will_end`) goes by raw
+`fetch` to Resend, bypassing the shared wrapper. Since 23 October 2026 the
+payment-failed notice and the "your plan has ended" notice on
+`customer.subscription.deleted` go through `sendEmail` by way of
+[`src/lib/email/lifecycle/billing.ts`](../../src/lib/email/lifecycle/billing.ts), one per
+invoice or subscription through the `LifecycleEmail` ledger; the second waits for
+`TRIAL_LIFECYCLE_EMAILS_ENABLED`. All are `from` `noreply@theenglishhub.app`, and none
+can fail the webhook's 200.
 
 Remember the identity and subscription rules from the orientation chapters here in
 particular: `profiles.subscription_status` is one field per person and a person can
@@ -307,10 +312,12 @@ Four separate template stores, three of them mostly unused:
   `paymentFailedEmail`, `dsarAcknowledgementEmail`, `schoolWelcomeEmail` and
   `studentWelcomeEmail`, have no caller anywhere in `src/`. They look live. They are not.
 - [`src/lib/email-templates/`](../../src/lib/email-templates) - the current directory.
-  `parent-consent.ts` and `trial-lifecycle.ts` are wired, to
-  [`src/app/api/school/consent/route.ts`](../../src/app/api/school/consent/route.ts) and
-  [`src/app/api/cron/trial-ending/route.ts`](../../src/app/api/cron/trial-ending/route.ts)
-  respectively. `student-weekly.ts` and `teacher-weekly.ts` and `parent-weekly.ts` have
+  `parent-consent.ts` is wired to
+  [`src/app/api/school/consent/route.ts`](../../src/app/api/school/consent/route.ts).
+  `trial-lifecycle.ts` and `lifecycle-emails.ts`, on the shell in `lifecycle-shell.ts`,
+  are the lifecycle emails (account ready, first essay, trial ending and ended, day 14,
+  day 30, payment failed, cancelled and ended), sent from the trial-ending cron, the
+  auth callback, record-login, `/api/stripe/cancel` and the Stripe webhook. `student-weekly.ts` and `teacher-weekly.ts` and `parent-weekly.ts` have
   no production caller; `buildStudentWeeklyEmail` is referenced only by its own test.
 - [`src/lib/email/templates/weekly-student.tsx`](../../src/lib/email/templates/weekly-student.tsx)
   - the one the weekly student digest cron actually renders.
@@ -599,15 +606,15 @@ an expected email does not exist.
 
 Seven send through the SMTP or Resend transports:
 
-| Cron                          | Schedule     | Note                                                                                                                                                                                                                                                                                           |
-| ----------------------------- | ------------ | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `trial-ending`                | `0 9 * * *`  | **No-op unless `TRIAL_LIFECYCLE_EMAILS_ENABLED=true`** ([`src/app/api/cron/trial-ending/route.ts:136`](../../src/app/api/cron/trial-ending/route.ts), under a comment reading "Feature flag (default OFF)"). Returns `{ok:true, skipped:'disabled'}` with a 200, so the schedule looks healthy |
-| `dormancy-check`              | `30 3 * * *` |                                                                                                                                                                                                                                                                                                |
-| `data-retention`              | `0 4 * * *`  | Sends from [`src/lib/data-retention.ts:620`](../../src/lib/data-retention.ts)                                                                                                                                                                                                                  |
-| `school-access`               | `0 5 * * *`  |                                                                                                                                                                                                                                                                                                |
-| `weekly-parent-reports`       | `0 16 * * 0` | **No-op unless `WEEKLY_PARENT_REPORTS_ENABLED=true`** ([`src/app/api/cron/weekly-parent-reports/route.ts:99`](../../src/app/api/cron/weekly-parent-reports/route.ts)). Deliberately off: the 2026-08 audit found no working unsubscribe path for parent reports                                |
-| `weekly-student-reports`      | `0 17 * * 0` | No kill switch, by design                                                                                                                                                                                                                                                                      |
-| `trustpilot-retention-invite` | `0 15 * * *` |                                                                                                                                                                                                                                                                                                |
+| Cron                          | Schedule     | Note                                                                                                                                                                                                                                                                                       |
+| ----------------------------- | ------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `trial-ending`                | `0 9 * * *`  | **No-op unless `TRIAL_LIFECYCLE_EMAILS_ENABLED=true`** ([`src/app/api/cron/trial-ending/route.ts`](../../src/app/api/cron/trial-ending/route.ts), under a comment reading "Feature flag (default OFF)"). Returns `{ok:true, skipped:'disabled'}` with a 200, so the schedule looks healthy |
+| `dormancy-check`              | `30 3 * * *` |                                                                                                                                                                                                                                                                                            |
+| `data-retention`              | `0 4 * * *`  | Sends from [`src/lib/data-retention.ts:620`](../../src/lib/data-retention.ts)                                                                                                                                                                                                              |
+| `school-access`               | `0 5 * * *`  |                                                                                                                                                                                                                                                                                            |
+| `weekly-parent-reports`       | `0 16 * * 0` | **No-op unless `WEEKLY_PARENT_REPORTS_ENABLED=true`** ([`src/app/api/cron/weekly-parent-reports/route.ts:99`](../../src/app/api/cron/weekly-parent-reports/route.ts)). Deliberately off: the 2026-08 audit found no working unsubscribe path for parent reports                            |
+| `weekly-student-reports`      | `0 17 * * 0` | No kill switch, by design                                                                                                                                                                                                                                                                  |
+| `trustpilot-retention-invite` | `0 15 * * *` |                                                                                                                                                                                                                                                                                            |
 
 Two more send through SendGrid whenever `TRUSTPILOT_ENABLED=true`:
 `trustpilot-followup-7d` (`45 3 * * *`) and `trustpilot-retention-90d` (`15 4 * * *`),
