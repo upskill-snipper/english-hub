@@ -12,7 +12,7 @@ import { rateLimit, getClientIp } from '@/lib/rate-limit'
 // without touching this file. Previously this was a hand-maintained subset
 // of 7 boards, which silently rejected `ks3`, `ial-edexcel`, the four UK
 // A-Level boards, `cambridge-0475`, and `edexcel-igcse-lang` with a 400
-// despite those boards being selectable in the BoardSelectorSection UI.
+// despite those boards being selectable in the board pop-up (BoardQuickPicker).
 const VALID_BOARDS = BOARDS.map((b) => b.id) as [
   ExamBoard,
   ...ExamBoard[],

@@ -59,7 +59,8 @@ export const useBoardStore = create<State & Actions>()(
       //
       // The cookie is the single source of truth for the user's current
       // board. Middleware writes it on every `?setBoard=<id>` redirect
-      // (the homepage cards, BoardSwitcher, BoardSelectorSection); the
+      // (the homepage cards, BoardSwitcher); the board pop-up's BoardQuickPicker
+      // writes it here, through setBoard; the
       // server reader `getServerBoard()` reads it for SSR. localStorage
       // is purely a client-side cache for fast first paint and survives
       // the cookie expiring.

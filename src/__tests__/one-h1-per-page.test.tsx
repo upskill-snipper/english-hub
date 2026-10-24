@@ -42,7 +42,8 @@ vi.mock('@/lib/i18n/use-t', () => ({ useT: () => (k: string) => k }))
 const GAMESHELL = readFileSync('src/components/games/GameShell.tsx', 'utf8')
 const READER = readFileSync('src/components/study/FullTextReader.tsx', 'utf8')
 const GAMES_HUB = readFileSync('src/app/games/page.tsx', 'utf8')
-const PICKER = readFileSync('src/components/board/BoardSelectorSection.tsx', 'utf8')
+// BoardQuickPicker replaced the three-step BoardSelectorSection on 24 October 2026.
+const PICKER = readFileSync('src/components/board/BoardQuickPicker.tsx', 'utf8')
 const GATE = readFileSync('src/components/board/BoardGate.tsx', 'utf8')
 
 const text: TextData = {
@@ -96,8 +97,6 @@ describe('a page has exactly one h1', () => {
     // are h3s.
     expect(PICKER, 'the picker renders an h1 again').not.toMatch(/<h1[\s>]/)
     expect(GATE).toMatch(/<h2\s[^>]*id="board-gate-title"/)
-    expect(GATE.indexOf('id="board-gate-title"')).toBeLessThan(
-      GATE.indexOf('<BoardSelectorSection'),
-    )
+    expect(GATE.indexOf('id="board-gate-title"')).toBeLessThan(GATE.indexOf('<BoardQuickPicker'))
   })
 })

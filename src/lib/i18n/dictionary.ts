@@ -3798,6 +3798,21 @@ export const DICTIONARY: Dictionary = {
     ar: 'ما قررت بعد؟ تصفّح بدون اختيار',
     es: '¿Aún no lo sabes? Explora sin elegir',
   },
+  // 24 October 2026: the one-tap picker in the board pop-up
+  // (src/components/board/BoardQuickPicker.tsx). Board names stay in English.
+  'board.gate.group.gcse': { en: 'GCSE (UK)', ar: 'GCSE (بريطانيا)', es: 'GCSE (Reino Unido)' },
+  'board.gate.group.igcse': {
+    en: 'International GCSE',
+    ar: 'IGCSE الدولية',
+    es: 'International GCSE',
+  },
+  'board.gate.group.ks3': {
+    en: 'Years 7 to 9',
+    ar: 'السنوات 7 إلى 9',
+    es: 'Years 7 a 9',
+  },
+  'board.gate.group.a_level': { en: 'A level', ar: 'A level', es: 'A level' },
+  'board.gate.ks3_label': { en: 'KS3 English', ar: 'KS3 إنجليزي', es: 'KS3 English' },
   'board.gate.dismiss_aria': {
     en: 'Close the exam board picker',
     ar: 'إغلاق مُحدِّد هيئة الامتحان',

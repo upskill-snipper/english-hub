@@ -1072,6 +1072,11 @@ export const EN_MESSAGES: Record<string, string> = {
   'board.gate.body':
     'Pick your board so we can show you the right set texts, poems, and past papers. You can change it any time from settings.',
   'board.gate.browse_without': 'Not sure yet? Browse without choosing',
+  'board.gate.group.gcse': 'GCSE (UK)',
+  'board.gate.group.igcse': 'International GCSE',
+  'board.gate.group.ks3': 'Years 7 to 9',
+  'board.gate.group.a_level': 'A level',
+  'board.gate.ks3_label': 'KS3 English',
   'board.gate.dismiss_aria': 'Close the exam board picker',
   'board.mismatch.body_before': "You're viewing",
   'board.mismatch.body_middle': 'content. Your saved board is',

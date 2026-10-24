@@ -303,10 +303,18 @@ describe('what the suite runs in', () => {
     // Whether anything is spoken, and when, exists only once the real page
     // mounts and its effects and timers run; rendered to a string, no question
     // is dealt and nothing is ever spoken, so the old pages pass.
+    //
+    // Then to 36 on 24 October 2026 for src/lib/ui/scroll-lock.test.ts. Pages
+    // stopped scrolling because overlays each saved and restored
+    // document.body.style.overflow, and two closing out of order left it
+    // 'hidden'. The shared lock acts on document.body, which does not exist in
+    // the node environment, so the defect it guards cannot be shown without
+    // one. (BoardGate.test.tsx, which pins the phone layout of the board
+    // pop-up, already had its annotation.)
     expect(
       annotated.length,
       'more files now claim to need a DOM - check each one',
-    ).toBeLessThanOrEqual(35)
+    ).toBeLessThanOrEqual(36)
   })
 })
 

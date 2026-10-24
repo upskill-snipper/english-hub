@@ -1053,6 +1053,11 @@ export const AR_MESSAGES: Record<string, string> = {
   'board.gate.body':
     'اختر الهيئة عشان نورّيك النصوص والقصايد والامتحانات الصح. تقدر تغيّرها أي وقت من الإعدادات.',
   'board.gate.browse_without': 'ما قررت بعد؟ تصفّح بدون اختيار',
+  'board.gate.group.gcse': 'GCSE (بريطانيا)',
+  'board.gate.group.igcse': 'IGCSE الدولية',
+  'board.gate.group.ks3': 'السنوات 7 إلى 9',
+  'board.gate.group.a_level': 'A level',
+  'board.gate.ks3_label': 'KS3 إنجليزي',
   'board.gate.dismiss_aria': 'إغلاق مُحدِّد هيئة الامتحان',
   'board.mismatch.body_before': 'الحين أنت تشوف محتوى',
   'board.mismatch.body_middle': '. الهيئة المحفوظة مالك هي',

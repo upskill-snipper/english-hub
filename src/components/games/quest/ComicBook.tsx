@@ -8,6 +8,7 @@ import type { Level, Quest } from '@/lib/games/quest/types'
 import { En, fillText, FullPanel, type T } from './challenges/shared'
 import { levelTitle } from './LevelPlayer'
 import { useFocusTrap } from './use-focus-trap'
+import { lockPageScroll } from '@/lib/ui/scroll-lock'
 
 /** The panels a student can collect, in the text's order, each with the level that inks it. */
 export function collectablePanels(quest: Quest): { title: string; level: Level | undefined }[] {
@@ -47,14 +48,15 @@ export function ComicBook({
 
   useEffect(() => {
     close.current?.focus({ preventScroll: true })
-    const was = document.body.style.overflow
-    document.body.style.overflow = 'hidden'
+    // The shared lock (src/lib/ui/scroll-lock.ts): two overlays restoring
+    // their own saved values out of order could leave the page frozen.
+    const unlock = lockPageScroll()
     const onKey = (e: KeyboardEvent) => {
       if (e.key === 'Escape') onClose()
     }
     window.addEventListener('keydown', onKey)
     return () => {
-      document.body.style.overflow = was
+      unlock()
       window.removeEventListener('keydown', onKey)
     }
   }, [onClose])

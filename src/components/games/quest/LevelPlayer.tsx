@@ -36,6 +36,7 @@ import { FeedbackSheet } from './FeedbackSheet'
 import { LevelComplete, type LevelSummary } from './LevelComplete'
 import type { useSfx } from './sfx'
 import { useFocusTrap } from './use-focus-trap'
+import { lockPageScroll } from '@/lib/ui/scroll-lock'
 
 export type QuestRun = { mode: 'level'; level: Level } | { mode: 'review'; ids: string[] }
 
@@ -110,14 +111,10 @@ export function LevelPlayer({
     headingRef.current?.focus({ preventScroll: true })
   }, [at])
 
-  // The page behind does not scroll while the level is open.
-  useEffect(() => {
-    const was = document.body.style.overflow
-    document.body.style.overflow = 'hidden'
-    return () => {
-      document.body.style.overflow = was
-    }
-  }, [])
+  // The page behind does not scroll while the level is open. The shared lock
+  // (src/lib/ui/scroll-lock.ts): overlays restoring their own saved values
+  // out of order could leave the page frozen.
+  useEffect(() => lockPageScroll(), [])
 
   const onAnswer = useCallback(
     (a: QuestAnswer) => {

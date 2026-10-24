@@ -567,7 +567,7 @@ export async function middleware(request: NextRequest) {
   //
   // The cookie now reflects the user's currently-selected board, and is
   // ONLY written on explicit board choices (homepage cards, board-select
-  // cards, BoardSwitcher menu, BoardSelectorSection wizard). Every such
+  // cards, BoardSwitcher menu; the board pop-up writes it client-side). Every such
   // surface navigates to a URL carrying `?setBoard=<board-id>`; this
   // handler validates the id against the canonical BOARDS list, sets
   // the cookie, then redirects to the same URL with the param stripped.

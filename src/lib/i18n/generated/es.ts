@@ -1106,6 +1106,11 @@ export const ES_MESSAGES: Record<string, string> = {
   'board.gate.body':
     'Elige tu junta para que podamos mostrarte los textos fijados, poemas y exámenes anteriores correctos. Puedes cambiarla cuando quieras desde los ajustes.',
   'board.gate.browse_without': '¿Aún no lo sabes? Explora sin elegir',
+  'board.gate.group.gcse': 'GCSE (Reino Unido)',
+  'board.gate.group.igcse': 'International GCSE',
+  'board.gate.group.ks3': 'Years 7 a 9',
+  'board.gate.group.a_level': 'A level',
+  'board.gate.ks3_label': 'KS3 English',
   'board.gate.dismiss_aria': 'Cerrar el selector de junta examinadora',
   'board.mismatch.body_before': 'Estás viendo',
   'board.mismatch.body_middle': 'contenido. Tu junta guardada es',
