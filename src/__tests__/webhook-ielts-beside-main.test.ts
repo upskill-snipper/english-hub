@@ -324,6 +324,8 @@ describe('a main-plan holder who buys IELTS', () => {
 
   it('the main plan itself still writes its row', async () => {
     // The control: a fix that stopped every row write would pass the above.
+    // Stripe holds it past_due too, or the snapshot would be stale.
+    stripeSubs.sub_main = mainPlan('past_due')
     await deliver('customer.subscription.updated', mainPlan('past_due'))
     expect(row?.stripeSubscriptionId).toBe('sub_main')
     expect(row?.status).toBe('PAST_DUE')

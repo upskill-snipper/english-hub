@@ -302,6 +302,50 @@ describe('customer.subscription.updated when there is no other subscription', ()
 })
 
 // ═══════════════════════════════════════════════════════════════════════
+// A stale non-live snapshot of the customer's OWN subscription (24 Oct 2026)
+// ═══════════════════════════════════════════════════════════════════════
+
+describe('a non-live customer.subscription.updated delivered after the subscription recovered', () => {
+  // Stripe delivers at least once and in no particular order. The coverage
+  // check throws when Stripe cannot be asked, the claim is released, and
+  // Stripe's retry of an earlier 'unpaid' (or 'past_due') snapshot can land
+  // after the customer has paid and the subscription is active again. The
+  // handler acted on the snapshot: the coverage list it had just fetched
+  // excluded this very subscription and never read its current status, so a
+  // paying customer was written 'unpaid' and their row PAST_DUE.
+  beforeEach(() => {
+    mockListSubscriptions.mockResolvedValue({ data: [THE_PAID_ONE()] })
+  })
+
+  it.each<Stripe.Subscription.Status>(['unpaid', 'past_due', 'incomplete'])(
+    'writes nothing when Stripe now holds the subscription active (snapshot %s)',
+    async (status) => {
+      const res = await post(
+        makeEvent('customer.subscription.updated', subscription('sub_the_paid_one', status)),
+      )
+      expect(res.status).toBe(200)
+      expect((await res.json()).ignored).toBe('stale_event')
+      expect(statusWrites()).toEqual([])
+      expect(endDateWritten()).toBe(false)
+      expect(ieltsWrites()).toEqual([])
+      expect(mockUpsert).not.toHaveBeenCalled()
+    },
+  )
+
+  it('still writes unpaid when Stripe agrees the subscription is unpaid', async () => {
+    // The control: a fix that refused every non-live status would pass above.
+    mockListSubscriptions.mockResolvedValue({
+      data: [subscription('sub_the_paid_one', 'unpaid')],
+    })
+    await post(
+      makeEvent('customer.subscription.updated', subscription('sub_the_paid_one', 'unpaid')),
+    )
+    expect(statusWrites()).toEqual(['unpaid'])
+    expect(mockUpsert).toHaveBeenCalled()
+  })
+})
+
+// ═══════════════════════════════════════════════════════════════════════
 // Coverage is about access, not prices (D16)
 // ═══════════════════════════════════════════════════════════════════════
 

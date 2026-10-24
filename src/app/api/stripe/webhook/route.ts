@@ -1458,6 +1458,30 @@ async function handleSubscriptionUpdated(
       grants: ieltsOnly ? 'ielts' : 'pro',
       isIeltsPriceId,
     })
+
+    // ── Is this snapshot stale? (24 October 2026) ─────────────────────────
+    // The payload is the subscription as it was when the event was created,
+    // and Stripe delivers in no particular order. When the check above throws
+    // (Stripe could not be asked) the claim is released and Stripe retries,
+    // so an 'unpaid' or 'past_due' snapshot can be delivered AFTER the
+    // customer has paid and the subscription is active again. This handler
+    // acted on the snapshot: the list just fetched excluded this very
+    // subscription and its current status was never read, so a paying
+    // customer was written 'unpaid' and their row PAST_DUE. The stale-event
+    // guard above refuses only a re-grant of 'pro', and created and
+    // invoice.paid already act on Stripe's current state. So when the same
+    // list shows this subscription active or trialing now, the non-live
+    // snapshot is out of date and nothing is written. No extra Stripe call.
+    if (cover.current && ACCESS_GRANTING_STATUSES.has(cover.current.status)) {
+      console.warn(
+        `[stripe/webhook] STALE_SUBSCRIPTION_UPDATED_IGNORED subscription=${subscription.id} ` +
+          `customer=${subscription.customer} snapshotStatus=${subscription.status} ` +
+          `currentStatus=${cover.current.status}. Stripe now holds this subscription live, so ` +
+          'this non-live snapshot is stale and writes nothing.',
+      )
+      return 'stale_event'
+    }
+
     if (cover.covered) {
       console.warn(
         `[stripe/webhook] DUPLICATE_SUBSCRIPTION_UPDATED_IGNORED customer=${subscription.customer} ` +

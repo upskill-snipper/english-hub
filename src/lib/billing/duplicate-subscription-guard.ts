@@ -219,6 +219,13 @@ export interface CoverageCheck {
   covered: boolean
   /** That subscription, when there is one. */
   coveringSubscription: Stripe.Subscription | null
+  /**
+   * The event's OWN subscription as Stripe holds it now, read from the same
+   * list, or null when the list did not include it. A webhook payload is a
+   * snapshot that can arrive late; this is the current truth, so a caller can
+   * tell a stale delivery from a real change without a second Stripe call.
+   */
+  current: Stripe.Subscription | null
 }
 
 /**
@@ -291,8 +298,9 @@ export async function findCoveringSubscription(
     subscriptions.data.find(
       (sub) => sub.id !== options.excludeSubscriptionId && live.has(sub.status) && covers(sub),
     ) ?? null
+  const current = subscriptions.data.find((sub) => sub.id === options.excludeSubscriptionId) ?? null
 
-  return { covered: coveringSubscription !== null, coveringSubscription }
+  return { covered: coveringSubscription !== null, coveringSubscription, current }
 }
 
 /**
