@@ -70,4 +70,11 @@ export interface GameBank<T> {
    * (src/lib/games/deal-round.ts). Added 24 October 2026.
    */
   group?(item: T): string | undefined
+  /**
+   * The day the bank was rebuilt for depth (24 October 2026 onwards). A bank
+   * that says so is held by src/__tests__/a-game-question-takes-knowing.test.ts
+   * to tiers on every question, enough hard ones, and options that do not
+   * give the answer away.
+   */
+  deepened?: string
 }
