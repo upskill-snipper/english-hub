@@ -1,0 +1,255 @@
+/**
+ * Moved out of src/app/revision/texts/to-kill-a-mockingbird/key-quotes/page.tsx
+ * on 24 October 2026 so the text quests can read it
+ * (src/lib/games/quest/build.ts). The page renders it as before.
+ */
+
+import type { FlatKeyQuote } from './types'
+
+/* ── Quote data ────────────────────────────────────────────────────────── */
+
+export type KeyQuote = {
+  id: number
+  text: string
+  speaker: string
+  context: string
+  analysis: string
+  themes: string[]
+}
+
+export const KEY_QUOTES: KeyQuote[] = [
+  {
+    id: 1,
+    text: '"You never ... understand a person until you consider things from his point of view."',
+    speaker: 'Atticus',
+    context: 'Chapter 3 - to Scout',
+    analysis:
+      "The novel's moral thesis. Lee makes empathy the foundation of justice, courage and all other virtues. Scout must learn this lesson across the entire book, and her success is measured by whether she can apply it.",
+    themes: ['Empathy', 'Moral education'],
+  },
+  {
+    id: 2,
+    text: '"It\'s a sin to kill a mockingbird."',
+    speaker: 'Miss Maudie',
+    context: "Chapter 10 - explaining Atticus's rule",
+    analysis:
+      "The central symbol defined. Lee argues that innocence - in birds, in Tom Robinson, in Boo Radley - must be protected because it does nothing but good. Destroying it is the novel's supreme moral crime.",
+    themes: ['Innocence', 'Racial injustice'],
+  },
+  {
+    id: 3,
+    text: '"...licked a hundred years ... no reason for us not to try to win."',
+    speaker: 'Atticus',
+    context: 'Chapter 9 - on defending Tom Robinson',
+    analysis:
+      'Atticus\'s definition of moral courage. Lee shows that he fights not for victory but for integrity, knowing the system is rigged. The "hundred years" places the trial in the long history of racial injustice.',
+    themes: ['Courage', 'Racial injustice'],
+  },
+  {
+    id: 4,
+    text: '"The one thing that doesn\'t abide by majority rule is a person\'s conscience."',
+    speaker: 'Atticus',
+    context: 'Chapter 11 - to Scout',
+    analysis:
+      'Lee places individual moral judgment above social consensus. In a town where the majority supports racism, conscience is the only reliable guide to justice.',
+    themes: ['Moral education', 'Courage'],
+  },
+  {
+    id: 5,
+    text: '"People generally see what they look for, and hear what they listen for."',
+    speaker: 'Judge Taylor',
+    context: 'Chapter 17 - during the trial',
+    analysis:
+      'Judge Taylor is speaking of the spectators, but the line also names the mechanism of prejudice: confirmation bias. Lee explains why evidence alone cannot overcome racism - people see what they have been taught to see.',
+    themes: ['Racial injustice', 'Class'],
+  },
+  {
+    id: 6,
+    text: '"Atticus, he was real nice."',
+    speaker: 'Scout',
+    context: 'Chapter 31 - on Boo Radley',
+    analysis:
+      "Scout's final assessment of Boo recovers innocence through empathy. Lee closes the novel with a child's simplicity that carries the weight of everything she has learned.",
+    themes: ['Empathy', 'Innocence'],
+  },
+  {
+    id: 7,
+    text: '"I do my best to love everybody."',
+    speaker: 'Atticus',
+    context: 'Chapter 11 - to Scout',
+    analysis:
+      'A deceptively simple statement of the ethical code Atticus lives by. Lee shows that active, universal compassion requires constant effort and is the hardest form of courage.',
+    themes: ['Empathy', 'Moral education'],
+  },
+  {
+    id: 8,
+    text: '"I felt right sorry for her."',
+    speaker: 'Tom Robinson',
+    context: 'Chapter 19 - during cross-examination',
+    analysis:
+      "Tom's compassion for Mayella scandalises the courtroom. Lee shows that a Black man expressing pity for a white woman violates the racial hierarchy more than any alleged crime.",
+    themes: ['Racial injustice', 'Empathy'],
+  },
+  {
+    id: 9,
+    text: '"Real courage is... when you know you\'re licked before you begin."',
+    speaker: 'Atticus',
+    context: 'Chapter 11 - on Mrs Dubose',
+    analysis:
+      "Lee's explicit definition of courage. By placing it in the context of Mrs Dubose's addiction, she separates moral courage from physical bravery and prepares the reader for the trial.",
+    themes: ['Courage'],
+  },
+  {
+    id: 10,
+    text: '"Most people are, Scout, when you finally see them."',
+    speaker: 'Atticus',
+    context: 'Chapter 31 - responding to Scout calling Boo "nice"',
+    analysis:
+      "The novel's closing moral statement. Lee ends with qualified optimism: most people are good, but seeing their goodness requires the empathetic effort Atticus has taught.",
+    themes: ['Empathy', 'Moral education'],
+  },
+  {
+    id: 11,
+    text: '"I think there\'s just one kind of folks. Folks."',
+    speaker: 'Scout',
+    context: 'Chapter 23 - to Jem',
+    analysis:
+      "Scout rejects Maycomb's class and racial categories. Lee gives the moral insight to a child because the adults of the town have been taught not to see the obvious truth.",
+    themes: ['Class', 'Racial injustice'],
+  },
+  {
+    id: 12,
+    text: '"In our courts all men are created equal."',
+    speaker: 'Atticus',
+    context: 'Chapter 20 - closing argument',
+    analysis:
+      "Atticus invokes the principle the trial will immediately betray. Lee uses the gap between American ideals and American practice as the novel's deepest irony.",
+    themes: ['Racial injustice', 'Courage'],
+  },
+  {
+    id: 13,
+    text: '"I always thought Maycomb folks were the best folks in the world."',
+    speaker: 'Jem',
+    context: 'Chapter 22 - after the verdict',
+    analysis:
+      "Jem's faith in his community collapses. Lee captures the precise moment when childhood trust in adult goodness is destroyed by a single act of collective injustice.",
+    themes: ['Innocence', 'Racial injustice'],
+  },
+  {
+    id: 14,
+    text: '"...draggin\' him with his shy ways into the limelight ... that\'s a sin."',
+    speaker: 'Sheriff Tate',
+    context: 'Chapter 30 - protecting Boo',
+    analysis:
+      'Tate applies the mockingbird principle. Lee shows that sometimes justice means protecting the vulnerable from public exposure, even if it means bending the law.',
+    themes: ['Innocence', 'Empathy'],
+  },
+  {
+    id: 15,
+    text: '"Hey, Mr Cunningham."',
+    speaker: 'Scout',
+    context: 'Chapter 15 - confronting the lynch mob',
+    analysis:
+      "Scout disperses a mob by addressing one man as an individual, not part of a crowd. Lee shows that a child's naive empathy can succeed where adult argument fails.",
+    themes: ['Courage', 'Empathy'],
+  },
+  {
+    id: 16,
+    text: '"You felt sorry for her, you felt sorry for her?"',
+    speaker: 'Mr Gilmer',
+    context: 'Chapter 19 - cross-examining Tom',
+    analysis:
+      "The prosecutor's outrage reveals that Tom's real offence is disrupting the racial hierarchy. Lee makes the courtroom's double standard explicit through repetition.",
+    themes: ['Racial injustice'],
+  },
+  {
+    id: 17,
+    text: '"Mockingbirds don\'t do one thing but make music for us to enjoy."',
+    speaker: 'Miss Maudie',
+    context: 'Chapter 10',
+    analysis:
+      'The extended mockingbird metaphor. Lee defines innocence as something that exists solely to benefit others and argues that destroying it is always morally wrong.',
+    themes: ['Innocence'],
+  },
+  {
+    id: 18,
+    text: '"It\'s not necessary to tell all you know."',
+    speaker: 'Calpurnia',
+    context: 'Chapter 12 - to Scout at church',
+    analysis:
+      'Calpurnia teaches survival through discretion. Lee shows that Black people in the South had to manage white perceptions constantly - a form of everyday resistance.',
+    themes: ['Racial injustice', 'Class'],
+  },
+  {
+    id: 19,
+    text: '"People in their right minds never take pride in their talents."',
+    speaker: 'Miss Maudie',
+    context: "Chapter 10 - on Atticus's marksmanship",
+    analysis:
+      "Lee uses Atticus's hidden skill with a gun to distinguish genuine strength from showmanship. True courage is quiet, not performative.",
+    themes: ['Courage', 'Moral education'],
+  },
+  {
+    id: 20,
+    text: '"There\'s four kinds of folks in the world."',
+    speaker: 'Jem',
+    context: "Chapter 23 - explaining Maycomb's hierarchy",
+    analysis:
+      'Jem tries to map the class system and cannot make it logical. Lee uses his failure to show that social categories are irrational constructions, not natural facts.',
+    themes: ['Class'],
+  },
+  {
+    id: 21,
+    text: '"I seen that black nigger yonder ruttin\' on my Mayella."',
+    speaker: 'Bob Ewell',
+    context: 'Chapter 17 - testimony',
+    analysis:
+      "Lee uses Ewell's language to make racism physically repulsive to the reader. The crude vocabulary exposes what polite Southern manners conceal.",
+    themes: ['Racial injustice', 'Class'],
+  },
+  {
+    id: 22,
+    text: '"Shoot all the bluejays you want, ... remember it\'s a sin to kill a mockingbird."',
+    speaker: 'Atticus',
+    context: 'Chapter 10',
+    analysis:
+      "From the full statement of the novel's central metaphor. Lee distinguishes between those who cause harm (bluejays) and those who are harmless (mockingbirds), making protection of innocence a moral imperative.",
+    themes: ['Innocence', 'Moral education'],
+  },
+  {
+    id: 23,
+    text: '"It was just him I couldn\'t stand."',
+    speaker: 'Dill',
+    context: "Chapter 19 - on Mr Gilmer's cross-examination",
+    analysis:
+      'Dill responds instinctively to cruelty. Lee gives a child the emotional response that adult Maycomb has trained itself to suppress, making him a moral barometer.',
+    themes: ['Empathy', 'Innocence'],
+  },
+  {
+    id: 24,
+    text: '"Atticus was right. ... never really know a man until you stand in his shoes."',
+    speaker: 'Scout',
+    context: "Chapter 31 - on Boo's porch",
+    analysis:
+      "Scout applies the lesson. Lee closes the novel's moral arc: theory becomes practice, and the student finally understands what the teacher meant.",
+    themes: ['Empathy', 'Moral education'],
+  },
+  {
+    id: 25,
+    text: '"With him, life was routine; without him, life was unbearable."',
+    speaker: 'Scout (narrating)',
+    context: "Chapter 12 - on Dill's absence",
+    analysis:
+      "Scout on missing Dill, whose summers in Maycomb have been the centre of the children's games. The balanced sentence marks a break in that shared play as Part Two turns towards the trial.",
+    themes: ['Innocence'],
+  },
+]
+
+// `context` is the page's only field for where a line falls ("Chapter 3 - to
+// Scout"), so it serves as `where`.
+export const FLAT: FlatKeyQuote[] = KEY_QUOTES.filter((q) => q.analysis).map((q) => ({
+  quote: q.text,
+  speaker: q.speaker,
+  where: q.context,
+  analysis: q.analysis,
+}))

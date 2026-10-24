@@ -117,7 +117,10 @@ const NOT_THE_NOVEL: Record<string, string> = {
 }
 const EXCUSED = new Map(Object.keys(NOT_THE_NOVEL).map((q) => [norm(q), q]))
 
-const FILES = DIRS.flatMap((d) => sourcesUnder(d))
+// The key-quotes page's quotations live in src/data/key-quotes since 24
+// October 2026 (moved so the text quests can read them); the page prints them
+// as before, so they are read here with the pages.
+const FILES = [...DIRS.flatMap((d) => sourcesUnder(d)), 'src/data/key-quotes/frankenstein.ts']
 const QUOTES = FILES.flatMap((f) => quotationsOn(f)).filter((q) => fragments(q.text).length > 0)
 
 describe('the Frankenstein pages', () => {
@@ -125,6 +128,10 @@ describe('the Frankenstein pages', () => {
     // The vacuity guard: a scanner that found nothing would pass everything.
     expect(FILES.some((f) => f.endsWith('read/notes.ts'))).toBe(true)
     expect(FILES.some((f) => f.endsWith('key-quotes/page.tsx'))).toBe(true)
+    // And its quotations are read: 64 on 24 October 2026, when they moved.
+    expect(
+      QUOTES.filter((q) => q.file.endsWith('key-quotes/frankenstein.ts')).length,
+    ).toBeGreaterThanOrEqual(60)
     expect(FILES.some((f) => f.endsWith('revision-notes/frankenstein/page.tsx'))).toBe(true)
     expect(QUOTES.length).toBeGreaterThan(300)
   })
