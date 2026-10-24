@@ -37,6 +37,17 @@ import type { GameExplanations } from '@/lib/games/explanations/types'
  * the evidence of fear, and Prospero naming each enemy replaces the harpy's
  * speech to the three together. Written with AI and checked against each
  * question, as the founder decided (src/lib/games/explanations/types.ts).
+ *
+ * The same day every theme was given a grid, and the theme rounds for Power
+ * and control, Appearance vs Reality, and Justice and morality were removed
+ * with their explanations (the bank's docblock says why). Conflict and
+ * violence names Frankenstein, which it now counts. The two claims reworded so
+ * that they no longer name a right text's title keep their explanations under
+ * the new wording. Three entries whose grids gained a poem name it. Four no
+ * longer say what a theme round now marks the other way: London's speaker
+ * alone (Isolation and loneliness marks London wrong), London "not a
+ * rebellion" (Revolution and rebellion counts it), and Ozymandias showing
+ * "cruelty" or "suffering and death" (Conflict and violence marks it wrong).
  */
 export const EXPLANATIONS: GameExplanations = {
   'Social inequality': {
@@ -64,11 +75,6 @@ export const EXPLANATIONS: GameExplanations = {
     more: 'Love is rarely easy in these texts. Feuds, lies, class and pride stand in its way, and the writers use those obstacles to explore what real love needs.',
     tip: 'Compare different kinds of love, romantic, family and unreturned, and ask what each writer suggests love needs in order to last.',
   },
-  'Power and control': {
-    why: "Macbeth kills for the crown. Napoleon seizes Animal Farm. Birling's money gives him power over his workers. Ozymandias mocks a fallen tyrant. Prospero rules his island by magic. Jack takes control in Lord of the Flies. London shows church and palace over the poor. In Much Ado men decide women's fates, and Tissue finds human power paper-thin.",
-    more: 'Most of these texts show power corrupting the people who hold it, or crumbling with time. Who holds power, how they use it and how they lose it are the questions to ask.',
-    tip: "Ask how each writer judges power and what it costs. Link it to context, such as Orwell's satire of Stalin or Blake's anger at the institutions of his day.",
-  },
   'Guilt and conscience': {
     why: "The Macbeths are tormented after Duncan's murder. An Inspector Calls makes each Birling face their part in Eva's death. A Christmas Carol awakens Scrooge's conscience. The war photographer is troubled by what he has recorded. Pip feels guilt about Joe, Jane's conscience rules her choices, Alonso repents in The Tempest, and Victor Frankenstein is 'seized by remorse' (Chapter 9).",
     more: 'Guilt is often shown rather than stated: in sleep, in the body, in what a character sees. Writers use it to show that a character still has a moral sense.',
@@ -85,24 +91,14 @@ export const EXPLANATIONS: GameExplanations = {
     tip: 'Compare chosen and forced isolation, and ask what each writer suggests people need from one another.',
   },
   'Conflict and violence': {
-    why: "Romeo and Juliet's feud kills Mercutio and Tybalt. Macbeth is full of battles and murders. In Lord of the Flies the boys' hunting turns into killing. Animal Farm has battles and executions. War Photographer records war's suffering, and in Jekyll and Hyde, Hyde attacks a child and murders Carew.",
+    why: "Romeo and Juliet's feud kills Mercutio and Tybalt. Macbeth is full of battles and murders. In Lord of the Flies the boys' hunting turns into killing. Animal Farm has battles and executions. War Photographer records war's suffering. In Jekyll and Hyde, Hyde attacks a child and murders Carew, and Frankenstein's creature kills William, Clerval and Elizabeth.",
     more: 'Violence usually spreads, one act leading to the next, and it often damages the people who commit it as well as their victims.',
     tip: 'Explore causes as well as events: pride, fear, ambition or power. Analyse the language of violence, such as the blood imagery in Macbeth.',
-  },
-  'Appearance vs Reality': {
-    why: "In Macbeth a loyal host is secretly a murderer. Respectable Dr Jekyll hides Hyde. Much Ado turns on tricks, masks and Hero's false disgrace. In An Inspector Calls a respectable family hides its cruelty. Pip mistakes who his benefactor is in Great Expectations, and in The Tempest Prospero's magic creates illusions.",
-    more: 'Disguise, false faces and lies are everywhere, and the truth often comes out late. Watch for dramatic irony, where the audience knows more than the characters.',
-    tip: 'Find a moment where the mask slips and analyse what it reveals.',
   },
   'Family and duty': {
     why: 'In Romeo and Juliet, Juliet is expected to obey her father. An Inspector Calls exposes a family that fails each other and its duty to others. A Christmas Carol celebrates the loving Cratchits and Fred. In Great Expectations Joe is a loyal father figure, while Pip neglects his duty to him.',
     more: 'Duty to family often clashes with personal desire. Some texts widen the idea: the Inspector argues that our duty reaches beyond our own family.',
     tip: 'Contrast families that care for each other with families that fail, and say what each writer thinks a family owes.',
-  },
-  'Justice and morality': {
-    why: "In An Inspector Calls the Inspector judges the Birlings' morals. Animal Farm shows a revolution's ideals of fairness betrayed. A Christmas Carol teaches Scrooge his duty to others. Prospero must choose between justice and mercy in The Tempest. Great Expectations shows the law's harshness, and Jane Eyre tests Christian morality against hypocrisy.",
-    more: "These texts ask whether justice comes from the law, from society or from a person's own conscience. Often the law fails, and the reader is left to judge.",
-    tip: 'Decide what each writer thinks a just society or a good person looks like, and support your view with a quotation.',
   },
   'Identity and self-discovery': {
     why: "Jekyll discovers that his identity is divided. Jane Eyre grows from an unloved orphan into an independent woman. In Great Expectations Pip learns who he really is and who truly helped him. Frankenstein's creature asks who and what he is. Tissue shows identity written in fragile paper records.",
@@ -171,7 +167,7 @@ export const EXPLANATIONS: GameExplanations = {
   },
   "A character's ambition is to climb into a higher social class": {
     why: "In Great Expectations Pip wants to be a gentleman 'on her account' (Chapter 17), to deserve Estella, and grows ashamed of the forge. In An Inspector Calls Birling, a self-made businessman, hopes for a knighthood and is proud that Sheila will marry Gerald, son of the grander Crofts.",
-    more: "Victor Frankenstein and Ozymandias want glory and power, not a higher class. Jane wants independence, and refuses Rochester's jewels, and Jack in Lord of the Flies wants to rule, not to rise in rank.",
+    more: "Victor Frankenstein and Ozymandias want glory and power, not a higher class. Jane wants independence, and refuses Rochester's jewels, Jack in Lord of the Flies wants to rule, not to rise in rank, and no one in War Photographer seeks a higher rank.",
     tip: "Link social climbing to context: Dickens's Victorian idea of the gentleman, and Priestley's 1912 businessman whose new money still craves an old title.",
   },
   'Chains stand for what binds people, forged by themselves or by their society': {
@@ -484,7 +480,7 @@ export const EXPLANATIONS: GameExplanations = {
     more: "Animal Farm narrates the executions in the yard directly. Lord of the Flies shows Simon's and Piggy's deaths as they happen, and Romeo and Juliet's fights and deaths take place on stage.",
     tip: 'Ask what keeping violence out of sight does: it can make the reader imagine worse, and puts the focus on guilt and horror afterwards.',
   },
-  'War in the background explains the violence': {
+  'Fighting in far-off places lies behind the violence': {
     why: "Lord of the Flies is set during a war: the boys' plane was evacuating them, and a dead parachutist from an air battle becomes their beast (Chapter 6). War Photographer names Belfast, Beirut and Phnom Penh, real wars whose suffering the photographer has recorded.",
     more: "Romeo and Juliet's violence comes from a family feud, not a war. Hyde's violence comes from within Jekyll, and A Christmas Carol has none.",
     tip: "Use the war as context for a choice: Golding sends an adult war into the boys' island to show the same savagery at every age.",
@@ -546,7 +542,7 @@ export const EXPLANATIONS: GameExplanations = {
   },
   'A key truth is withheld until near the end to create mystery': {
     why: "Jekyll and Hyde reveals that Jekyll and Hyde are one man only in its last two chapters. In Great Expectations Pip learns in Chapter 39 that his benefactor is the convict, not Miss Havisham. An Inspector Calls holds back Eric's part until the end of Act 2, and whether the Inspector was real until the very end.",
-    more: "Frankenstein's outcome is clear from Walton's first meeting with the dying Victor, and Romeo and Juliet's Prologue tells the ending first. In The Tempest and Much Ado the audience is let into every plot as it is laid.",
+    more: "Frankenstein's outcome is clear from Walton's first meeting with the dying Victor, and Romeo and Juliet's Prologue tells the ending first. In The Tempest and Much Ado the audience is let into every plot as it is laid, and London shows its suffering from the first line.",
     tip: 'Say how withholding works on a reader: it builds suspense, and makes the reveal reshape everything that came before.',
   },
   'Life itself is compared to a play or a dream': {
@@ -566,7 +562,7 @@ export const EXPLANATIONS: GameExplanations = {
   },
   'The younger generation is shown to be wiser than the older': {
     why: "In An Inspector Calls, Sheila and Eric learn the Inspector's lesson while their parents refuse it: 'You began to learn something. And now you've stopped' (Act 3). In A Christmas Carol young Fred understands Christmas and kindness long before his uncle does, and keeps inviting him.",
-    more: "In Great Expectations young Pip is foolish and the older Joe wiser, and Lord of the Flies' children are no wiser than adults. In The Tempest it is Prospero, not the dazzled Miranda, who sees the newcomers truly.",
+    more: "In Great Expectations young Pip is foolish and the older Joe wiser, and Lord of the Flies' children are no wiser than adults. In The Tempest it is Prospero, not the dazzled Miranda, who sees the newcomers truly, and Ozymandias sets no young against old.",
     tip: 'Generational conflict is a structure: show how the writer lines up the young against the old, and whose side the ending takes.',
   },
   "A parent's plans for a child's marriage are about money or status": {
@@ -656,7 +652,7 @@ export const EXPLANATIONS: GameExplanations = {
   },
   'Cruelty is learned: a young or newly made being is taught it by others': {
     why: "In Great Expectations Miss Havisham raises Estella to break men's hearts, and Estella tells her 'I am what you have made me' (Chapter 38). In Frankenstein the creature, rejected by everyone, says 'I was benevolent and good; misery made me a fiend' (Chapter 10).",
-    more: "Hyde's evil was always inside Jekyll, and Macbeth chooses murder as a grown man. Ozymandias and War Photographer show cruelty and suffering, but no one being taught it.",
+    more: "Hyde's evil was always inside Jekyll, and Macbeth chooses murder as a grown man. Ozymandias and War Photographer show no one being taught anything.",
     tip: 'Use this for a nature versus nurture argument: show what the character was before, and who changed them.',
   },
   'Children are shown as victims of adult society': {
@@ -701,7 +697,7 @@ export const EXPLANATIONS: GameExplanations = {
   },
   'A rebellion against one master ends with a new master just as bad, or worse': {
     why: "Animal Farm's animals drive out Mr Jones, and end with pigs they cannot tell from men. In The Tempest Caliban rebels against Prospero by taking the drunken Stephano as his god, and later sees 'What a thrice-double ass / Was I, to take this drunkard for a god' (Act 5 Scene 1).",
-    more: "In An Inspector Calls Eva's strike is crushed, and no one replaces Birling. London is a protest, not a rebellion, and Ozymandias shows a tyrant ended by time.",
+    more: "In An Inspector Calls Eva's strike is crushed, and no one replaces Birling. London protests but shows no rebel taking power, and Ozymandias shows a tyrant ended by time.",
     tip: 'Both texts doubt rebellions led by the wrong people: compare who leads each revolt and what they want.',
   },
   "A real revolution of the writer's time shapes the text": {
@@ -811,7 +807,7 @@ export const EXPLANATIONS: GameExplanations = {
   },
   'A character pushes the blame for a death onto someone else': {
     why: "In Macbeth, Lady Macbeth smears the sleeping grooms with Duncan's blood so that they will be blamed (Act 2 Scene 2). In An Inspector Calls Mrs Birling blames the child's father: 'Go and look for the father of the child' (Act 2). In Frankenstein the creature plants the portrait on Justine, who is executed for William's murder.",
-    more: 'Ozymandias, London and War Photographer show suffering and death, but no one in them shifts the blame for a death onto another.',
+    more: 'No one in Ozymandias, London or War Photographer shifts the blame for a death onto another.',
     tip: 'Shifting blame is a sign of guilt, not innocence: say what the attempt reveals about the character, and how the text exposes it.',
   },
   'Guilt comes to light when a character is questioned or overheard': {
@@ -866,7 +862,7 @@ export const EXPLANATIONS: GameExplanations = {
   },
   "A character's loneliness is eased by an unexpected friendship": {
     why: "In Jane Eyre, Helen Burns befriends the lonely new girl at Lowood, and comforts her after Brocklehurst shames her before the school (Chapter 8). In Frankenstein, Walton, who writes 'I have no friend, Margaret' (Letter 2), finds in the half-frozen stranger Victor one he would have loved 'as the brother of my heart' (Letter 4).",
-    more: "Ozymandias's king stands alone in the desert, London's speaker walks alone among strangers, and the war photographer ends the poem alone on a plane.",
+    more: "No friendship forms in Ozymandias, London or War Photographer: the first is about a king's pride, the second about a city's suffering, and the third about a photographer's work.",
     tip: 'Friendship shows what isolation lacked: quote the moment it begins, and say what it gives the lonely character.',
   },
   'Faith gives a character the courage to face death calmly': {
@@ -949,7 +945,7 @@ export const EXPLANATIONS: GameExplanations = {
     more: 'Ozymandias, London and Tissue tell of what their speakers see or imagine, and stage no scene for anyone.',
     tip: 'A play within a play makes the audience think about watching: say what the staged scene reveals about the people watching it.',
   },
-  'Important events take place on Christmas Eve or Christmas Day': {
+  'Important events take place on 24 and 25 December': {
     why: "In A Christmas Carol the spirits come on Christmas Eve, and Scrooge wakes a changed man on Christmas morning (Stave 5). In Great Expectations Pip steals food for the convict at dawn on Christmas Day, and soldiers interrupt the forge's Christmas dinner to hunt the escaped men (Chapters 2 to 5).",
     more: 'An Inspector Calls is set on a spring evening in 1912, and Romeo and Juliet in a hot Verona summer. Macbeth and Frankenstein give Christmas no part in their stories.',
     tip: 'Ask why Dickens chooses Christmas: a feast of family and charity makes selfishness and cruelty stand out.',

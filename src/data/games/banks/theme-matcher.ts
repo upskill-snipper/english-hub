@@ -58,32 +58,36 @@ import type { GameBank } from '@/lib/games/explanations/types'
  * twenty, Science and responsibility among them, where none of its texts
  * counts and a student, who must pick at least one, cannot be right. With Great
  * Expectations under Justice and morality it has fifteen, and is dealt those.
+ * (Both were the content convention of 16 October. Since 24 October every
+ * theme plays on a grid of its own: CHECKED BY A SECOND READER, below.)
  *
  * REBUILT FOR DEPTH (24 October 2026). The founder found the games "too
  * obvious and easy"; this bank asked only which texts carry a theme, twenty
- * times, all recall (.tmp-games-audit/REPORT-gcse.md). It now holds 186
- * rounds in three tiers, all played in the same grid: 41 at tier 1, 94 at
- * tier 2 and 51 at tier 3.
+ * times, all recall (.tmp-games-audit/REPORT-gcse.md). It now holds 183
+ * rounds in three tiers: 38 at tier 1, 94 at tier 2 and 51 at tier 3 (the
+ * second reader removed three theme rounds, below).
  *
- *   - tier 1, recall: the twenty themes, and moments a student must place
- *     ("A wedding is interrupted or turned into a disaster");
+ *   - tier 1, recall: seventeen of the twenty themes, and moments a student
+ *     must place ("A wedding is interrupted or turned into a disaster");
  *   - tier 2, how a theme is presented: a precise claim, true of some texts
  *     and plainly false of others ("Helping the poor is presented as a duty
  *     the better-off must be taught");
  *   - tier 3, how a text works: form, structure, method and context ("A
  *     circular ending suggests those in power will not change").
  *
- * A claim can be argued for a text it was not written about, so every round
- * but sixteen of the twenty themes carries its own grid (`texts`, four to
- * eleven): its right texts and texts that are plainly wrong for it, with any
- * text that could be argued either way left out. The page plays those
+ * A claim can be argued for a text it was not written about, and so can a
+ * theme, so every round carries its own grid (`texts`, four to eleven): its
+ * right texts and texts that are plainly wrong for it, with any text that
+ * could be argued either way left out. The page plays those
  * texts, keeping only a board's own, and deals a round to a board only while
  * it keeps two right and two wrong texts there
  * (src/app/games/theme-matcher/page.tsx). A claim's right texts are always
  * among its theme's own list, so a student taught by a claim that
- * Frankenstein shows guilt is not then marked wrong for picking it. Three
+ * Frankenstein shows guilt is not then marked wrong for picking it. Six
  * themes are claims only, with no list to keep them to: Gender roles,
- * Religion and faith, and Death and mortality.
+ * Religion and faith, and Death and mortality, and the three whose theme
+ * rounds the second reader removed (Power and control, Appearance vs Reality,
+ * and Justice and morality).
  *
  * HOW A GRID WAS MADE SAFE. Each text in a grid had to be defensible in one
  * sentence, and the explanation's `more` gives that sentence for the nearest
@@ -97,8 +101,8 @@ import type { GameBank } from '@/lib/games/explanations/types'
  * commit it" because, after the Battle of the Cowshed, the animals reassemble
  * "in the wildest excitement" (Chapter 4). A poem plainly outside a claim was
  * added to its grid where that let a board with few texts play it: Edexcel
- * IGCSE now has 52 rounds of its own and OCR A level 34. The IAL board's
- * texts carry only nine themes, too few for a game, so it plays every text,
+ * IGCSE now has 50 rounds of its own and OCR A level 31. The IAL board's
+ * texts carry only ten themes, too few for a game, so it plays every text,
  * as before.
  * Every quotation in the explanations was checked word for word against the
  * held texts and guides, and the four works in UK copyright are quoted only
@@ -129,26 +133,83 @@ import type { GameBank } from '@/lib/games/explanations/types'
  * with fewer than two wrong texts, puts in one plainly outside the claim,
  * usually a poem. Every explanation that named a text taken out was rewritten.
  *
- *   - The four themes whose lists the rebuild changed now carry grids. Adding
- *     The Tempest to Ambition on Antonio's words made Napoleon and Jack as
- *     plain, so Animal Farm and Lord of the Flies count too; An Inspector
+ *   - Every theme now carries a grid, and the rule of 16 October above (a
+ *     text counts only where its guide names the theme, and every other text
+ *     is wrong) is replaced: a text where the theme could be argued either
+ *     way is left out of the grid, neither right nor wrong. A board is dealt
+ *     a theme only while two right and two wrong texts are on its grid.
+ *   - Ambition: adding The Tempest on Antonio's words made Napoleon and Jack
+ *     as plain, so Animal Farm and Lord of the Flies count too; An Inspector
  *     Calls (a claim here calls Birling's hope of a knighthood ambition),
  *     A Christmas Carol, Jekyll and Hyde, Jane Eyre, Much Ado, Romeo and
- *     Juliet and Tissue are left out. Fate vs Free will counts A Christmas
- *     Carol, whose Stave 4 asks if the future is "shadows of things that May
- *     be, only", as this bank's own tip on visions said; Jane Eyre (Rochester
- *     answers Destiny, "I dare like it", Chapter 15), The Tempest, An
- *     Inspector Calls, Jekyll and Hyde, Lord of the Flies, Great Expectations,
- *     Animal Farm and Ozymandias are left out. Guilt and conscience leaves out
- *     Jekyll and Hyde (his conscience "slumbered"), Lord of the Flies, Much
- *     Ado, Romeo and Juliet, Animal Farm (Boxer's tears) and London;
- *     Redemption leaves out Much Ado, An Inspector Calls, Jekyll and Hyde
- *     ("redeem the past"), Romeo and Juliet and Frankenstein. The other
- *     sixteen themes, whose lists were not changed, still play on the whole
- *     grid under the rule of 16 October above.
+ *     Juliet and Tissue are left out.
+ *   - Fate vs Free will counts A Christmas Carol, whose Stave 4 asks if the
+ *     future is "shadows of things that May be, only", as this bank's own tip
+ *     on visions said; Jane Eyre (Rochester answers Destiny, "I dare like it",
+ *     Chapter 15), The Tempest, An Inspector Calls, Jekyll and Hyde, Lord of
+ *     the Flies, Great Expectations, Animal Farm and Ozymandias are left out.
+ *   - Guilt and conscience leaves out Jekyll and Hyde (his conscience
+ *     "slumbered"), Lord of the Flies, Much Ado, Romeo and Juliet, Animal Farm
+ *     (Boxer's tears) and London.
+ *   - Redemption leaves out Much Ado, An Inspector Calls, Jekyll and Hyde
+ *     ("redeem the past"), Romeo and Juliet and Frankenstein.
+ *   - Social inequality leaves out Jekyll and Hyde, Romeo and Juliet (the
+ *     starving Apothecary), Lord of the Flies (Piggy's class), Frankenstein,
+ *     The Tempest, Much Ado and War Photographer.
+ *   - Good vs Evil leaves out A Christmas Carol, An Inspector Calls, Romeo and
+ *     Juliet (the Friar's "grace and rude will", Act 2 Scene 3), Animal Farm,
+ *     Great Expectations, Jane Eyre, The Tempest and Much Ado (Don John).
+ *   - Love and relationships leaves out Macbeth (the marriage), Frankenstein
+ *     (Victor and Elizabeth), An Inspector Calls (Gerald and Eva), A
+ *     Christmas Carol (Belle), Jekyll and Hyde, Lord of the Flies and London
+ *     (the "marriage hearse").
+ *   - The supernatural leaves out An Inspector Calls (the Inspector), Romeo and
+ *     Juliet (Queen Mab), Lord of the Flies, Animal Farm (Sugarcandy
+ *     Mountain), Great Expectations and War Photographer (its "half-formed
+ *     ghost").
+ *   - Isolation and loneliness leaves out Macbeth, An Inspector Calls, Romeo
+ *     and Juliet, Lord of the Flies, Great Expectations (Miss Havisham), The
+ *     Tempest, Much Ado (Don John) and Ozymandias ("lone and level sands").
+ *   - Conflict and violence counts Frankenstein too (the creature kills three
+ *     people), and leaves out An Inspector Calls, Great Expectations (Orlick),
+ *     Jane Eyre, The Tempest, Much Ado and London.
+ *   - Family and duty leaves out Macbeth, Jane Eyre, Frankenstein, The
+ *     Tempest, Much Ado, Lord of the Flies and Animal Farm (duty to the group),
+ *     War Photographer (the photographer's duty) and Tissue (family records).
+ *   - Identity and self-discovery leaves out Macbeth, A Christmas Carol, An
+ *     Inspector Calls, Romeo and Juliet ("What's in a name?"), Lord of the
+ *     Flies, Animal Farm, The Tempest and Much Ado.
+ *   - Nature and the environment leaves out A Christmas Carol, Jekyll and Hyde
+ *     (the fog), Romeo and Juliet (the Friar's herbs), Animal Farm, Great
+ *     Expectations (the marshes), Jane Eyre and War Photographer ("Rural
+ *     England"). Too few texts are plainly without it on the Edexcel IGCSE
+ *     and OCR A level grids, so those boards are no longer dealt it.
+ *   - Corruption of innocence leaves out An Inspector Calls, Jekyll and Hyde,
+ *     Romeo and Juliet, Animal Farm, Jane Eyre, The Tempest, Much Ado and War
+ *     Photographer.
+ *   - Revolution and rebellion leaves out Macbeth (Macdonwald's revolt),
+ *     Jekyll and Hyde, Romeo and Juliet, Lord of the Flies, Great
+ *     Expectations, Jane Eyre ("I resisted all the way", Chapter 2),
+ *     Frankenstein, Much Ado and Tissue.
+ *   - Memory and the past leaves out Macbeth, An Inspector Calls, Jekyll and
+ *     Hyde, Lord of the Flies, Animal Farm, Jane Eyre, Frankenstein and The
+ *     Tempest ("the dark backward and abysm of time", Act 1 Scene 2); OCR A
+ *     level is no longer dealt it, for the same reason as Nature.
+ *   - Science and responsibility leaves out An Inspector Calls, Romeo and
+ *     Juliet (the Friar's potion), Lord of the Flies (Piggy's faith in
+ *     science), Animal Farm and The Tempest.
+ *   - Power and control, Appearance vs Reality, and Justice and morality no
+ *     longer have a theme round: nearly every text shows them, and each had
+ *     only one text plainly without the theme (War Photographer, London,
+ *     Tissue), too few for a grid. Their claims remain.
+ *   - Two claims named a right text's title: "Important events take place on
+ *     Christmas Eve or Christmas Day" is now "on 24 and 25 December", and "War
+ *     in the background explains the violence" is now "Fighting in far-off
+ *     places lies behind the violence".
  *   - Chains: An Inspector Calls out (the Inspector's chain of events).
  *   - Climbing a class: Romeo and Juliet out (this bank's claim on marriage
- *     plans says Capulet's choice of Paris is about status).
+ *     plans says Capulet's choice of Paris is about status); War Photographer
+ *     in, so Edexcel IGCSE keeps two wrong texts.
  *   - Ambition for a throne: Animal Farm out (hens confess "a plot to murder
  *     Napoleon", Chapter 8).
  *   - Ambition ends in death: Great Expectations out (Magwitch dies, his
@@ -197,8 +258,10 @@ import type { GameBank } from '@/lib/games/explanations/types'
  *   - Feast ruined: Much Ado out (the wedding).
  *   - Clothes that do not fit: A Christmas Carol out (Peter's "monstrous shirt
  *     collar", Stave 3).
- *   - Truth withheld: Macbeth out (Macduff "untimely ripp'd", Act 5 Scene 8).
- *   - Young wiser than old: Romeo and Juliet out (the lovers against the feud).
+ *   - Truth withheld: Macbeth out (Macduff "untimely ripp'd", Act 5 Scene 8);
+ *     London in, for Edexcel IGCSE.
+ *   - Young wiser than old: Romeo and Juliet out (the lovers against the
+ *     feud); Ozymandias in, for OCR and Eduqas.
  *   - Family meal: A Christmas Carol out ("The Founder of the Feast indeed",
  *     Stave 3).
  *   - Mercy over revenge: Frankenstein out (Walton's "curiosity and
@@ -225,7 +288,8 @@ import type { GameBank } from '@/lib/games/explanations/types'
  *   - Past relived in images: Macbeth (the sleepwalking) and Jekyll and Hyde
  *     (Utterson's dream) out.
  *   - Past second-hand: War Photographer out (its speaker tells another's
- *     memories).
+ *     memories); no other text there is plainly outside it, so Edexcel IGCSE
+ *     is no longer dealt it.
  *   - Secret pieced together: Great Expectations out (Estella's parents).
  *   - Woman challenges society: Frankenstein out (Safie, Chapter 14).
  *   - Woman questions courage: Romeo and Juliet out (the Nurse, "stand, and you
@@ -271,9 +335,9 @@ export interface ThemeRound {
   /** Every text in the grid where the theme is present, or the claim is true. */
   correctTexts: string[]
   /**
-   * The grid for a round with a claim, and for four of the themes: its right texts and texts
-   * plainly without it, any text that could be argued either way left out. Without it the
-   * round is played on the board's whole grid.
+   * The grid every round is played on: its right texts and texts plainly without the theme or
+   * claim, any text that could be argued either way left out. Since 24 October 2026 every
+   * round has one; a round without it would be played on the board's whole grid.
    */
   texts?: string[]
   /** 1 recall, 2 how the theme is presented, 3 how the text works (GameBank.tier). */
@@ -302,7 +366,7 @@ export const ALL_TEXTS = [
 ] as const
 
 export const THEME_DATA: ThemeRound[] = [
-  // ─── Tier 1: the twenty themes, played on the board's whole grid ─────────────
+  // ─── Tier 1: seventeen of the twenty themes, each on its own grid ─────────────
   {
     theme: 'Social inequality',
     correctTexts: [
@@ -312,6 +376,17 @@ export const THEME_DATA: ThemeRound[] = [
       'London (Blake)',
       'Animal Farm',
       'Jane Eyre',
+    ],
+    texts: [
+      'A Christmas Carol',
+      'An Inspector Calls',
+      'Great Expectations',
+      'London (Blake)',
+      'Animal Farm',
+      'Jane Eyre',
+      'Macbeth',
+      'Ozymandias',
+      'Tissue',
     ],
     tier: 1,
     facts: ['Animal Farm: pigs and men'],
@@ -372,6 +447,16 @@ export const THEME_DATA: ThemeRound[] = [
   {
     theme: 'Good vs Evil',
     correctTexts: ['Jekyll and Hyde', 'Macbeth', 'Lord of the Flies', 'Frankenstein'],
+    texts: [
+      'Jekyll and Hyde',
+      'Macbeth',
+      'Lord of the Flies',
+      'Frankenstein',
+      'Ozymandias',
+      'London (Blake)',
+      'War Photographer',
+      'Tissue',
+    ],
     tier: 1,
     facts: ['Frankenstein: the creature rejected'],
   },
@@ -384,23 +469,18 @@ export const THEME_DATA: ThemeRound[] = [
       'Great Expectations',
       'The Tempest',
     ],
-    tier: 1,
-  },
-  {
-    theme: 'Power and control',
-    correctTexts: [
-      'Macbeth',
-      'Animal Farm',
-      'An Inspector Calls',
-      'Ozymandias',
-      'The Tempest',
-      'Lord of the Flies',
-      'London (Blake)',
+    texts: [
+      'Romeo and Juliet',
       'Much Ado About Nothing',
+      'Jane Eyre',
+      'Great Expectations',
+      'The Tempest',
+      'Animal Farm',
+      'Ozymandias',
+      'War Photographer',
       'Tissue',
     ],
     tier: 1,
-    facts: ['London: church and palace'],
   },
   {
     theme: 'Guilt and conscience',
@@ -438,6 +518,18 @@ export const THEME_DATA: ThemeRound[] = [
       'The Tempest',
       'Jane Eyre',
     ],
+    texts: [
+      'Macbeth',
+      'Jekyll and Hyde',
+      'A Christmas Carol',
+      'Frankenstein',
+      'The Tempest',
+      'Jane Eyre',
+      'Much Ado About Nothing',
+      'Ozymandias',
+      'London (Blake)',
+      'Tissue',
+    ],
     tier: 1,
     facts: ['Jane Eyre: the voice', 'Jekyll and Hyde: the potion', 'Frankenstein: the creation'],
   },
@@ -449,6 +541,16 @@ export const THEME_DATA: ThemeRound[] = [
       'Jekyll and Hyde',
       'War Photographer',
       'A Christmas Carol',
+    ],
+    texts: [
+      'Frankenstein',
+      'Jane Eyre',
+      'Jekyll and Hyde',
+      'War Photographer',
+      'A Christmas Carol',
+      'Animal Farm',
+      'London (Blake)',
+      'Tissue',
     ],
     tier: 1,
     facts: ['Frankenstein: the creature rejected', 'Jane Eyre: Gateshead'],
@@ -462,6 +564,19 @@ export const THEME_DATA: ThemeRound[] = [
       'Animal Farm',
       'War Photographer',
       'Jekyll and Hyde',
+      'Frankenstein',
+    ],
+    texts: [
+      'Romeo and Juliet',
+      'Macbeth',
+      'Lord of the Flies',
+      'Animal Farm',
+      'War Photographer',
+      'Jekyll and Hyde',
+      'Frankenstein',
+      'A Christmas Carol',
+      'Ozymandias',
+      'Tissue',
     ],
     tier: 1,
     facts: [
@@ -473,29 +588,21 @@ export const THEME_DATA: ThemeRound[] = [
     ],
   },
   {
-    theme: 'Appearance vs Reality',
-    correctTexts: [
-      'Macbeth',
-      'Jekyll and Hyde',
-      'Much Ado About Nothing',
-      'An Inspector Calls',
-      'Great Expectations',
-      'The Tempest',
-    ],
-    tier: 1,
-    facts: [
-      'Much Ado: the masked ball',
-      'Much Ado: the wedding',
-      'Great Expectations: Magwitch returns',
-    ],
-  },
-  {
     theme: 'Family and duty',
     correctTexts: [
       'Romeo and Juliet',
       'An Inspector Calls',
       'A Christmas Carol',
       'Great Expectations',
+    ],
+    texts: [
+      'Romeo and Juliet',
+      'An Inspector Calls',
+      'A Christmas Carol',
+      'Great Expectations',
+      'Jekyll and Hyde',
+      'Ozymandias',
+      'London (Blake)',
     ],
     tier: 1,
     facts: [
@@ -506,21 +613,18 @@ export const THEME_DATA: ThemeRound[] = [
     ],
   },
   {
-    theme: 'Justice and morality',
-    correctTexts: [
-      'An Inspector Calls',
-      'Animal Farm',
-      'A Christmas Carol',
-      'The Tempest',
-      'Great Expectations',
-      'Jane Eyre',
-    ],
-    tier: 1,
-    facts: ['Jane Eyre: Brocklehurst'],
-  },
-  {
     theme: 'Identity and self-discovery',
     correctTexts: ['Jekyll and Hyde', 'Jane Eyre', 'Great Expectations', 'Frankenstein', 'Tissue'],
+    texts: [
+      'Jekyll and Hyde',
+      'Jane Eyre',
+      'Great Expectations',
+      'Frankenstein',
+      'Tissue',
+      'Ozymandias',
+      'London (Blake)',
+      'War Photographer',
+    ],
     tier: 1,
     facts: ['Great Expectations: Magwitch returns'],
   },
@@ -534,6 +638,17 @@ export const THEME_DATA: ThemeRound[] = [
       'Ozymandias',
       'Macbeth',
       'Tissue',
+    ],
+    texts: [
+      'Frankenstein',
+      'Lord of the Flies',
+      'The Tempest',
+      'London (Blake)',
+      'Ozymandias',
+      'Macbeth',
+      'Tissue',
+      'An Inspector Calls',
+      'Much Ado About Nothing',
     ],
     tier: 1,
     facts: [
@@ -552,6 +667,16 @@ export const THEME_DATA: ThemeRound[] = [
       'Great Expectations',
       'London (Blake)',
       'Frankenstein',
+    ],
+    texts: [
+      'Lord of the Flies',
+      'Macbeth',
+      'A Christmas Carol',
+      'Great Expectations',
+      'London (Blake)',
+      'Frankenstein',
+      'Ozymandias',
+      'Tissue',
     ],
     tier: 1,
     facts: ['Frankenstein: misery made me a fiend', 'Frankenstein: the creature rejected'],
@@ -575,6 +700,15 @@ export const THEME_DATA: ThemeRound[] = [
   {
     theme: 'Revolution and rebellion',
     correctTexts: ['Animal Farm', 'An Inspector Calls', 'London (Blake)', 'The Tempest'],
+    texts: [
+      'Animal Farm',
+      'An Inspector Calls',
+      'London (Blake)',
+      'The Tempest',
+      'A Christmas Carol',
+      'Ozymandias',
+      'War Photographer',
+    ],
     tier: 1,
     facts: [
       "The Tempest: Antonio's usurpation",
@@ -591,12 +725,35 @@ export const THEME_DATA: ThemeRound[] = [
       'Great Expectations',
       'Tissue',
     ],
+    texts: [
+      'A Christmas Carol',
+      'War Photographer',
+      'Ozymandias',
+      'Great Expectations',
+      'Tissue',
+      'Romeo and Juliet',
+      'Much Ado About Nothing',
+      'London (Blake)',
+    ],
     tier: 1,
     facts: ['Ozymandias: the broken statue', 'Great Expectations: the older Pip'],
   },
   {
     theme: 'Science and responsibility',
     correctTexts: ['Frankenstein', 'Jekyll and Hyde'],
+    texts: [
+      'Frankenstein',
+      'Jekyll and Hyde',
+      'Macbeth',
+      'A Christmas Carol',
+      'Great Expectations',
+      'Jane Eyre',
+      'Much Ado About Nothing',
+      'Ozymandias',
+      'London (Blake)',
+      'War Photographer',
+      'Tissue',
+    ],
     tier: 1,
     facts: [
       'Jekyll and Hyde: the potion',
@@ -731,6 +888,7 @@ export const THEME_DATA: ThemeRound[] = [
       'Jane Eyre',
       'Frankenstein',
       'Ozymandias',
+      'War Photographer',
     ],
     correctTexts: ['An Inspector Calls', 'Great Expectations'],
     tier: 2,
@@ -1818,7 +1976,7 @@ export const THEME_DATA: ThemeRound[] = [
   },
   {
     theme: 'Conflict and violence',
-    claim: 'War in the background explains the violence',
+    claim: 'Fighting in far-off places lies behind the violence',
     texts: [
       'A Christmas Carol',
       'Jekyll and Hyde',
@@ -2035,6 +2193,7 @@ export const THEME_DATA: ThemeRound[] = [
       'Frankenstein',
       'The Tempest',
       'Much Ado About Nothing',
+      'London (Blake)',
     ],
     correctTexts: ['An Inspector Calls', 'Jekyll and Hyde', 'Great Expectations'],
     tier: 3,
@@ -2105,6 +2264,7 @@ export const THEME_DATA: ThemeRound[] = [
       'Lord of the Flies',
       'Great Expectations',
       'The Tempest',
+      'Ozymandias',
     ],
     correctTexts: ['A Christmas Carol', 'An Inspector Calls'],
     tier: 2,
@@ -3229,7 +3389,7 @@ export const THEME_DATA: ThemeRound[] = [
   },
   {
     theme: 'Family and duty',
-    claim: 'Important events take place on Christmas Eve or Christmas Day',
+    claim: 'Important events take place on 24 and 25 December',
     texts: [
       'Macbeth',
       'A Christmas Carol',

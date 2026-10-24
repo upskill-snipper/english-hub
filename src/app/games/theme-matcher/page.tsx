@@ -122,7 +122,7 @@ export default function ThemeMatcherPage() {
    * Since the rebuild of 24 October 2026 a theme has many rounds, and no two
    * rounds of one theme are dealt in one game (the bank's `facts`), so it is
    * themes that are counted, as this rule always meant: the IAL board's own
-   * texts carry 24 rounds but only nine themes, too few for fifteen rounds.
+   * texts carry 20 rounds but only ten themes, too few for fifteen rounds.
    */
   const usingAll = new Set(filteredThemeData.map((r) => r.theme)).size < TOTAL_ROUNDS
   const gridTexts = useMemo(
@@ -130,10 +130,10 @@ export default function ThemeMatcherPage() {
     [usingAll, allowedTexts],
   )
 
-  // The texts this round is played on: its own grid where it has one (a claim about a
-  // theme, or one of the four themes a text could be argued either way for: right texts
-  // and texts plainly without it), else the board's. Marked, recorded and explained
-  // against these texts only.
+  // The texts this round is played on: its own grid (right texts and texts plainly
+  // without the theme or claim, any text that could be argued either way left out),
+  // which every round has since 24 October 2026, else the board's. Marked, recorded and
+  // explained against these texts only.
   const roundTexts = useMemo(() => currentRound?.texts ?? gridTexts, [currentRound, gridTexts])
 
   const textOptions = useMemo(() => shuffle(roundTexts), [roundIdx, gameState, roundTexts])
