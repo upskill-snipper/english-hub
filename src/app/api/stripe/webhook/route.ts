@@ -121,6 +121,26 @@ async function syncIeltsEntitlement(
  *
  * Returns the Prisma user id on success, or null - callers that need to
  * touch the same row afterwards must check it rather than assume.
+ *
+ * ─── Never for an IELTS-only subscription (24 October 2026) ───────────────
+ * The row is one per user and records the MAIN entitlement: mobile
+ * (`pickEntitlement` in src/lib/entitlements.ts) reads `pro` from it and
+ * nothing else, the trial-expiry cron finds a no-card trial only by it, and
+ * IELTS has no place in either. Every handler already kept an IELTS-only
+ * subscription off `profiles.subscription_status`; the row had no such
+ * carve-out, and the sync lets any LIVE subscription take it. So an IELTS
+ * purchase replaced whatever the row held. A main-plan holder who bought
+ * IELTS had the IELTS subscription written over the main plan, and when IELTS
+ * ended its CANCELLED landed on the same row: mobile read a paying customer as
+ * free until the main plan's next event, up to a year away. A no-card
+ * trialist who bought IELTS lost the trial row to the IELTS subscription, the
+ * cron never selected it again, and the trial's 'pro' stayed for good, past
+ * the end of the IELTS plan. An IELTS-only payer whose row held IELTS while a
+ * main plan was deleted beside it was kept ACTIVE by the live-row guard, and
+ * mobile granted full Pro. IELTS access is `profiles.ielts_status`, set by
+ * syncIeltsEntitlement, so an IELTS-only subscription writes no row at all,
+ * and its payments are not counted on a main plan's row. A mixed subscription
+ * (IELTS and a main price) is the main entitlement and still writes.
  */
 async function recordSubscriptionRow(
   supabaseUserId: string,
@@ -129,6 +149,14 @@ async function recordSubscriptionRow(
   eventId?: string | null,
   options: { recordPayment?: boolean } = {},
 ): Promise<string | null> {
+  if (isIeltsOnlySubscription(subscription)) {
+    console.info(
+      `[stripe/webhook] IELTS_ONLY_ROW_SKIPPED subscription=${subscription.id} ` +
+        `status=${subscription.status} source=${source}. The Subscription row records the main ` +
+        'entitlement only; IELTS access is profiles.ielts_status.',
+    )
+    return null
+  }
   const result = await syncStripeSubscriptionToPrisma({
     supabaseUserId,
     subscription,
@@ -740,10 +768,12 @@ export async function POST(request: NextRequest) {
             break
           }
 
-          // The Prisma row is the record of what was paid: period and
-          // paymentCount. Written for IELTS-only subscriptions too, as the
-          // other lifecycle handlers already do. A GBP 0 invoice (the trial
-          // start) is not a payment; see `recordPayment` in the sync module.
+          // The Prisma row is the record of what was paid on the main plan:
+          // period and paymentCount. An IELTS-only subscription writes no row
+          // (see recordSubscriptionRow): until 24 October 2026 this wrote it
+          // too, over a main plan's row or a no-card trial's. A GBP 0 invoice
+          // (the trial start) is not a payment; see `recordPayment` in the
+          // sync module.
           const tookMoney = (invoice.amount_paid ?? 0) > 0
           const recordRow = () =>
             recordSubscriptionRow(paidProfile.id, paidSubscription!, 'invoice.paid', event.id, {
@@ -752,9 +782,8 @@ export async function POST(request: NextRequest) {
 
           if (isIeltsOnlySubscription(paidSubscription)) {
             // IELTS-only: set the IELTS entitlement and leave the global flag
-            // exactly as it was. Never widen it here.
+            // and the Prisma row exactly as they were. Never widen either here.
             await syncIeltsEntitlement(paidProfile.id, paidSubscription, supabase)
-            await recordRow()
             break
           }
 
@@ -963,8 +992,8 @@ export async function POST(request: NextRequest) {
 
         // IELTS-only subscriptions must not grant the global 'pro' flag; their
         // entitlement is ielts_status (set by syncIeltsEntitlement, called from
-        // the related checkout/updated handlers). Skip only the
-        // subscription_status write here for IELTS-only subs.
+        // the related checkout/updated handlers). They write nothing to the
+        // profile here, and no Prisma row (see recordSubscriptionRow).
         const ieltsOnly = isIeltsOnlySubscription(subscription)
 
         // A not-yet-live first status is written only over a non-pro profile;
@@ -975,9 +1004,16 @@ export async function POST(request: NextRequest) {
         const periodEnd = subscriptionPeriodEnd(subscription)
         const subscriptionEndDate = periodEnd ? new Date(periodEnd * 1000).toISOString() : null
 
+        // The end date belongs to the main entitlement, as in
+        // handleSubscriptionUpdated. Until 24 October 2026 a live IELTS-only
+        // subscription wrote its own period end here with no status, over the
+        // date a no-card trial or a main plan runs on; over a cancelled
+        // profile that also reopened the stale-event guard, which refuses to
+        // re-grant 'pro' only while that date is in the past.
         const profilePatch = {
           ...(writeStatus ? { subscription_status: subscriptionStatus } : {}),
-          ...((isLive || writeStatus) &&
+          ...(!ieltsOnly &&
+            (isLive || writeStatus) &&
             subscriptionEndDate && { subscription_end_date: subscriptionEndDate }),
         }
 
@@ -1217,9 +1253,12 @@ async function handleCheckoutCompleted(
     const cpEnd = subscriptionPeriodEnd(subscription)
     const subscriptionEndDate = cpEnd ? new Date(cpEnd * 1000).toISOString() : null
 
+    // Not for an IELTS-only subscription: the end date is the main
+    // entitlement's (see the same patch in customer.subscription.created).
     const profilePatch = {
       ...(writeStatus ? { subscription_status: subscriptionStatus } : {}),
-      ...((isLive || writeStatus) &&
+      ...(!ieltsOnly &&
+        (isLive || writeStatus) &&
         subscriptionEndDate && { subscription_end_date: subscriptionEndDate }),
     }
 
@@ -1257,8 +1296,12 @@ async function handleCheckoutCompleted(
     // meant nothing was ever written: no web subscriber has a locked price
     // recorded. It now uses the Prisma id the row was actually written
     // against, and is skipped entirely when the row could not be written (the
-    // sync call above has already reported that).
-    if (!prismaUserId) {
+    // sync call above has already reported that). An IELTS-only checkout
+    // writes no row (see recordSubscriptionRow), so it has nothing to capture
+    // onto: the grandfathered price is a main-plan price.
+    if (ieltsOnly) {
+      // Nothing to do, and nothing went wrong.
+    } else if (!prismaUserId) {
       console.error(
         '[stripe/webhook] Skipping grandfather capture: no Subscription row for session',
         { sessionId: session.id, supabaseUserId: userId },
