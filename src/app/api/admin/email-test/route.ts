@@ -2,6 +2,9 @@ import { NextRequest, NextResponse } from 'next/server'
 import { rateLimit, getClientIp } from '@/lib/rate-limit'
 import { verifyAdmin } from '@/lib/admin-auth'
 import { sendViaResend, escapeHtml } from '@/lib/email/resend'
+import { sendEmail } from '@/lib/email'
+import { unsubscribeLinkFor } from '@/lib/email/lifecycle/send'
+import { SAMPLE_USER_ID, lifecycleSamples } from '@/lib/email/lifecycle/samples'
 
 // ─── POST /api/admin/email-test ─────────────────────────────────────────
 //
@@ -15,6 +18,13 @@ import { sendViaResend, escapeHtml } from '@/lib/email/resend'
 //      (only enforced if the env var is set, so it's opt-in extra hardening)
 //
 // Body: { to: string }
+//
+// Or { to: string, lifecycle: true } (added 23 October 2026): sends one of
+// every trial lifecycle email, each audience variant, built by the real
+// builders and carried by the real transport with its one-click headers.
+// Document 08 asked for that send before any lifecycle switch is set, and
+// this route could not make it. Nothing is written to the ledger, and the
+// unsubscribe link in each sample names no real account (SAMPLE_USER_ID).
 // ────────────────────────────────────────────────────────────────────────
 
 export const dynamic = 'force-dynamic'
@@ -65,6 +75,36 @@ export async function POST(request: NextRequest) {
       return NextResponse.json(
         { error: 'Body must include a valid `to` email address' },
         { status: 400 },
+      )
+    }
+
+    // ── Or every lifecycle email, once each ──────────────
+    if ((body as { lifecycle?: unknown }).lifecycle === true) {
+      // Signed for an id no account can have, never the admin's own: pressing
+      // "Unsubscribe" in a sample used to switch the founder's own marketing
+      // off in both stores (24 October 2026; see samples.ts).
+      const unsubscribe = unsubscribeLinkFor(SAMPLE_USER_ID)
+      const results: Array<{ id: string; subject: string; ok: boolean; error?: string }> = []
+      // One after another: Resend allows 10 requests a second for the team.
+      for (const sample of lifecycleSamples(unsubscribe.pageUrl)) {
+        const r = await sendEmail(
+          to,
+          sample.email.subject,
+          sample.email.html,
+          sample.email.text,
+          unsubscribe.headers ? { headers: unsubscribe.headers } : undefined,
+        )
+        results.push({
+          id: sample.id,
+          subject: sample.email.subject,
+          ok: r.success,
+          ...(r.success ? {} : { error: r.error ?? 'unknown' }),
+        })
+      }
+      const allSent = results.every((r) => r.ok)
+      return NextResponse.json(
+        { ok: allSent, to, sent: results.filter((r) => r.ok).length, results },
+        { status: allSent ? 200 : 502 },
       )
     }
 

@@ -36,6 +36,7 @@
     "game_rounds": "20261013_game_rounds.sql",
     "human_review_requests": "20260420_human_review_requests.sql",
     "import_results": "20260404_school_promo_and_access.sql",
+    "lifecycleemail": "20261023_lifecycle_email_ledger.sql",
     "marker_batches": "20260519_marker_drive.sql",
     "marker_board_access": "20260530_marker_board_access.sql",
     "markers": "20260519_marker_drive.sql",
@@ -229,6 +230,7 @@
     "DataAccessRequest": "prisma/schema.prisma",
     "Essay": "prisma/schema.prisma",
     "HumanReviewRequest": "prisma/schema.prisma",
+    "LifecycleEmail": "prisma/schema.prisma",
     "MobileDevice": "prisma/schema.prisma",
     "OfflineEssayQueueItem": "prisma/schema.prisma",
     "ParentInvite": "prisma/schema.prisma",
@@ -323,6 +325,7 @@
     "ielts_attempts:ielts_attempts_owner_select": "20260918_ielts_attempts_rls.sql",
     "ielts_attempts:ielts_attempts_service_role_all": "20260918_ielts_attempts_rls.sql",
     "import_results:school_admins_view_import_results": "20260404_school_promo_and_access.sql",
+    "lifecycleemail:service_role_full_access": "20261023_lifecycle_email_ledger.sql",
     "marker_batches:marker_batches_service_role_all": "20260519_marker_drive.sql",
     "marker_board_access:marker_board_access_self_select": "20260530_marker_board_access.sql",
     "marker_board_access:marker_board_access_service_role_all": "20260530_marker_board_access.sql",
@@ -856,6 +859,14 @@
     "idx_webhook_events_type_processed": {
       "file": "20260419_webhook_events_table.sql",
       "table": "webhook_events"
+    },
+    "lifecycleemail_kind_sent_at_idx": {
+      "file": "20261023_lifecycle_email_ledger.sql",
+      "table": "lifecycleemail"
+    },
+    "lifecycleemail_user_id_kind_key": {
+      "file": "20261023_lifecycle_email_ledger.sql",
+      "table": "lifecycleemail"
     },
     "marking_submissions_pack_version_idx": {
       "file": "20260529_marking_result_v2.sql",

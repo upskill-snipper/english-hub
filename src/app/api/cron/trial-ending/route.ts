@@ -1,11 +1,9 @@
 import { NextRequest, NextResponse } from 'next/server'
-import { ReminderType, SubscriptionPlatform, SubscriptionStatus } from '@prisma/client'
 
-import { prisma } from '@/lib/prisma'
-import { sendEmail } from '@/lib/email'
 import { runCron } from '@/lib/cron/observability'
-import { buildTrialEndingEmail, buildTrialEndedEmail } from '@/lib/email-templates/trial-lifecycle'
 import { authoriseCronRequest } from '@/lib/cron/auth'
+import { runTrialSequence } from '@/lib/email/lifecycle/trial-sequence'
+import { LIFECYCLE_DISABLED_REASON, lifecycleEmailsEnabled } from '@/lib/email/lifecycle/send'
 
 export const dynamic = 'force-dynamic'
 
@@ -92,17 +90,30 @@ export const dynamic = 'force-dynamic'
  * returned 405 to every scheduled invocation, forever.)
  */
 
-// ─── Constants ───────────────────────────────────────────────────────────
-
-const DAY_MS = 24 * 60 * 60 * 1000
-/** Warn when the trial ends within this many days. */
-const WARN_LEAD_DAYS = 2
-/** Follow up only on trials that ended within this many days. */
-const FOLLOW_UP_WINDOW_DAYS = 3
-/** Safety valve: cap the blast radius of any single run. */
-const MAX_SENDS_PER_RUN = 200
-/** Children's Code belt-and-braces: registration already enforces 13+. */
-const MIN_AGE_YEARS = 13
+/*
+ * ─── 23 October 2026: the whole no-card sequence ───────────────────────────
+ *
+ * This route now runs M1 to M5 of document 08's sequence, not only the two
+ * sends described above, and the work lives in
+ * src/lib/email/lifecycle/trial-sequence.ts, whose header has the windows and
+ * the audiences. Three things above changed:
+ *
+ *   • The follow-up (M3) is no longer marketing-gated. It states facts about
+ *     the person's own account, so every trialist receives it; the price and
+ *     the plan link go only to adults who may receive marketing (corrected
+ *     24 October 2026: at first it was every adult), and everyone else gets
+ *     the service copy. Neither M2 nor M3 goes to a Stripe customer or to an
+ *     unconfirmed address.
+ *   • Every send claims a LifecycleEmail row (unique on user and kind) before
+ *     it sends and releases it on failure. The RenewalReminder TRIAL_ENDING
+ *     row is still written beside it for M2 and M3, so the record this route
+ *     has always left still appears.
+ *   • Age is read by emailAgeGroup (src/lib/identity/age.ts): a missing date
+ *     of birth is a child, not "not under 13", and the 2000-01-01 backfill
+ *     placeholder is never read as an age.
+ *
+ * The feature flag, the auth and the response shape are unchanged.
+ */
 
 // ─── Handlers ────────────────────────────────────────────────────────────
 
@@ -124,273 +135,18 @@ async function executeTrialEndingCron(): Promise<Response> {
   // ── Feature flag (default OFF) ─────────────────────────────────────
   //
   // Deliberately opt-in. The founder reviews the copy, confirms the
-  // preferences link resolves, and then sets TRIAL_LIFECYCLE_EMAILS_ENABLED
+  // unsubscribe link resolves, and then sets TRIAL_LIFECYCLE_EMAILS_ENABLED
   // = 'true' in the Vercel project env. Until then this route is a no-op
   // that still returns 200, so the schedule can ship without sending
-  // anything.
-  if (process.env.TRIAL_LIFECYCLE_EMAILS_ENABLED !== 'true') {
+  // anything. The same switch governs the account-ready email and the
+  // cancellation confirmations (src/lib/email/lifecycle/send.ts).
+  if (!lifecycleEmailsEnabled()) {
     // Logged, not silent. Without this line a disabled run emits nothing
     // at all and is indistinguishable in the Vercel log from a schedule
     // that never fired (REL-8, and chapter 09 named it).
-    console.info(
-      '[cron:trial-ending] skipped - disabled - set TRIAL_LIFECYCLE_EMAILS_ENABLED=true to enable',
-    )
-    return NextResponse.json(
-      { ok: true, skipped: 'disabled - set TRIAL_LIFECYCLE_EMAILS_ENABLED=true to enable' },
-      { status: 200 },
-    )
+    console.info(`[cron:trial-ending] skipped - ${LIFECYCLE_DISABLED_REASON}`)
+    return NextResponse.json({ ok: true, skipped: LIFECYCLE_DISABLED_REASON }, { status: 200 })
   }
 
-  return runCron('trial-ending', async () => {
-    const now = new Date()
-    let budget = MAX_SENDS_PER_RUN
-
-    const skipped: Record<string, number> = {
-      alreadySent: 0,
-      noEmail: 0,
-      underAge: 0,
-      sendFailed: 0,
-      budgetExhausted: 0,
-    }
-
-    // ── 1. Warning: trials ending within WARN_LEAD_DAYS ─────────────
-    const warnCutoff = new Date(now.getTime() + WARN_LEAD_DAYS * DAY_MS)
-
-    const endingSoon = await prisma.subscription.findMany({
-      where: {
-        status: SubscriptionStatus.TRIALING,
-        stripeSubscriptionId: null,
-        platform: SubscriptionPlatform.WEB,
-        revenuecatAppUserId: null,
-        paymentCount: 0,
-        currentPeriodEnd: { gt: now, lte: warnCutoff },
-        user: { deletedAt: null, accountStatus: 'ACTIVE' },
-      },
-      select: {
-        id: true,
-        currentPeriodEnd: true,
-        user: {
-          select: { id: true, email: true, firstName: true, dateOfBirth: true },
-        },
-        renewalReminders: {
-          where: { type: ReminderType.TRIAL_ENDING },
-          select: { sentAt: true, nextPaymentDate: true },
-        },
-      },
-    })
-
-    let warned = 0
-
-    for (const sub of endingSoon) {
-      // A warning row is one written before the trial boundary.
-      if (sub.renewalReminders.some((r) => r.sentAt <= r.nextPaymentDate)) {
-        skipped.alreadySent++
-        continue
-      }
-      if (!sub.user?.email) {
-        skipped.noEmail++
-        continue
-      }
-      if (isUnderMinimumAge(sub.user.dateOfBirth, now)) {
-        // Registration enforces 13+; anything younger here is bad data and
-        // must not be emailed.
-        skipped.underAge++
-        continue
-      }
-      // Budget is checked last so it is only ever consumed by a candidate
-      // that would genuinely have been sent, keeping the counters honest.
-      if (budget <= 0) {
-        skipped.budgetExhausted++
-        continue
-      }
-
-      const { subject, html, text } = buildTrialEndingEmail({
-        firstName: sub.user.firstName,
-        trialEndsAt: sub.currentPeriodEnd,
-      })
-
-      const sent = await claimThenSend({
-        subscriptionId: sub.id,
-        nextPaymentDate: sub.currentPeriodEnd,
-        to: sub.user.email,
-        subject,
-        html,
-        text,
-      })
-
-      if (sent) {
-        warned++
-        budget--
-      } else {
-        skipped.sendFailed++
-      }
-    }
-
-    // ── 2. Follow-up: trials that ended in the last window ───────────
-    //
-    // trial-expiry flips these rows to CANCELLED, so that is the state we
-    // look for. This is winback, i.e. marketing rather than a service
-    // notice, so it is hard-gated on `PrivacySettings.marketingEnabled`,
-    // the same consent signal weekly-student-reports uses. That flag is
-    // OFF by default (Children's Code: marketing off by default for
-    // children), so this send only ever reaches users who opted in.
-    const followUpFloor = new Date(now.getTime() - FOLLOW_UP_WINDOW_DAYS * DAY_MS)
-
-    const recentlyExpired = await prisma.subscription.findMany({
-      where: {
-        status: SubscriptionStatus.CANCELLED,
-        stripeSubscriptionId: null,
-        platform: SubscriptionPlatform.WEB,
-        revenuecatAppUserId: null,
-        paymentCount: 0,
-        currentPeriodEnd: { lt: now, gte: followUpFloor },
-        user: {
-          deletedAt: null,
-          accountStatus: 'ACTIVE',
-          privacySettings: { marketingEnabled: true },
-        },
-      },
-      select: {
-        id: true,
-        currentPeriodEnd: true,
-        user: {
-          select: { id: true, email: true, firstName: true, dateOfBirth: true },
-        },
-        renewalReminders: {
-          where: { type: ReminderType.TRIAL_ENDING },
-          select: { sentAt: true, nextPaymentDate: true },
-        },
-      },
-    })
-
-    let followedUp = 0
-
-    for (const sub of recentlyExpired) {
-      // A follow-up row is one written after the trial boundary.
-      if (sub.renewalReminders.some((r) => r.sentAt > r.nextPaymentDate)) {
-        skipped.alreadySent++
-        continue
-      }
-      if (!sub.user?.email) {
-        skipped.noEmail++
-        continue
-      }
-      if (isUnderMinimumAge(sub.user.dateOfBirth, now)) {
-        skipped.underAge++
-        continue
-      }
-      if (budget <= 0) {
-        skipped.budgetExhausted++
-        continue
-      }
-
-      const { subject, html, text } = buildTrialEndedEmail({
-        firstName: sub.user.firstName,
-        trialEndsAt: sub.currentPeriodEnd,
-      })
-
-      const sent = await claimThenSend({
-        subscriptionId: sub.id,
-        nextPaymentDate: sub.currentPeriodEnd,
-        to: sub.user.email,
-        subject,
-        html,
-        text,
-      })
-
-      if (sent) {
-        followedUp++
-        budget--
-      } else {
-        skipped.sendFailed++
-      }
-    }
-
-    return {
-      candidatesEndingSoon: endingSoon.length,
-      candidatesRecentlyExpired: recentlyExpired.length,
-      warned,
-      followedUp,
-      skipped,
-    }
-  })
-}
-
-// ─── Helpers ─────────────────────────────────────────────────────────────
-
-interface ClaimThenSendArgs {
-  subscriptionId: string
-  nextPaymentDate: Date
-  to: string
-  subject: string
-  html: string
-  text: string
-}
-
-/**
- * Write the idempotency ledger row first, then send.
- *
- * Ordering matters: recording after the send leaves a window where a
- * successful send with a failed ledger write is re-sent on the next run.
- * Claiming first closes that window, and deleting the claim when the send
- * fails keeps a genuine delivery failure retryable rather than silently
- * swallowed (which is the defect this whole route exists to fix).
- *
- * `amount` is 0 and `currency` 'GBP' because no payment is due: the no-card
- * trial simply ends. Neither value is shown to the user - the templates do
- * not reference an amount at all - so this records a true fact rather than
- * a placeholder price.
- */
-async function claimThenSend(args: ClaimThenSendArgs): Promise<boolean> {
-  let claimId: string
-  try {
-    const claim = await prisma.renewalReminder.create({
-      data: {
-        subscriptionId: args.subscriptionId,
-        type: ReminderType.TRIAL_ENDING,
-        amount: 0,
-        currency: 'GBP',
-        nextPaymentDate: args.nextPaymentDate,
-      },
-      select: { id: true },
-    })
-    claimId = claim.id
-  } catch (err) {
-    console.error('[cron:trial-ending] ledger claim failed, skipping send', {
-      subscriptionId: args.subscriptionId,
-      error: err instanceof Error ? err.message : String(err),
-    })
-    return false
-  }
-
-  const result = await sendEmail(args.to, args.subject, args.html, args.text)
-  if (result.success) return true
-
-  // Release the claim so the next nightly run retries this recipient.
-  try {
-    await prisma.renewalReminder.delete({ where: { id: claimId } })
-  } catch (err) {
-    console.error('[cron:trial-ending] failed to release ledger claim after send failure', {
-      subscriptionId: args.subscriptionId,
-      claimId,
-      error: err instanceof Error ? err.message : String(err),
-    })
-  }
-  console.warn('[cron:trial-ending] email send failed', {
-    subscriptionId: args.subscriptionId,
-    error: result.error,
-  })
-  return false
-}
-
-/**
- * True when the account holder is younger than 13. Registration already
- * enforces this, so a hit here means bad data - we skip the send rather
- * than email a child.
- */
-function isUnderMinimumAge(dateOfBirth: Date | null | undefined, now: Date): boolean {
-  if (!dateOfBirth) return false
-  const thirteenthBirthday = new Date(dateOfBirth.getTime())
-  thirteenthBirthday.setUTCFullYear(thirteenthBirthday.getUTCFullYear() + MIN_AGE_YEARS)
-  return thirteenthBirthday > now
+  return runCron('trial-ending', () => runTrialSequence(new Date()))
 }

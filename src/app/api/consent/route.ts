@@ -11,6 +11,7 @@ import {
 } from '@/lib/consent'
 import { rateLimit } from '@/lib/rate-limit'
 import { createServerSupabaseClient } from '@/lib/supabase/server'
+import { optOutOfMarketing } from '@/lib/email/marketing-preference'
 
 // ─── Validation schemas ─────────────────────────────────────────────────
 
@@ -205,6 +206,33 @@ export async function DELETE(request: NextRequest) {
     const ipAddress = getClientIp(request)
 
     const record = await withdrawConsent(userId, consentType, ipAddress)
+
+    // ── A marketing withdrawal reaches the stores the senders read ──────
+    // (24 October 2026.) Until today this wrote only the ledger row above,
+    // and no sender read the ledger: PrivacySettings.marketingEnabled stayed
+    // true, so the person was told "withdrawn" and kept receiving marketing
+    // email, the weekly digest included. optOutOfMarketing is the one-way
+    // switch the unsubscribe link uses; it writes false to both stores.
+    // isMarketingAllowed now reads the ledger too, so a withdrawal made
+    // before this change is honoured by the lifecycle emails, but the digest
+    // reads PrivacySettings directly, so a failed write here is reported, not
+    // swallowed.
+    if (consentType === CONSENT_TYPES.MARKETING) {
+      const outcome = await optOutOfMarketing(userId)
+      if (!outcome.privacySettingsUpdated) {
+        console.error(
+          '[api/consent] MARKETING_WITHDRAWAL_NOT_MIRRORED: ledger row written, PrivacySettings not updated',
+          { userId, profilesUpdated: outcome.profilesUpdated },
+        )
+        return NextResponse.json(
+          {
+            error:
+              'Your withdrawal was recorded, but your email settings could not be updated. Please try again, and contact dpo@theenglishhub.app if it keeps happening.',
+          },
+          { status: 500 },
+        )
+      }
+    }
 
     return NextResponse.json({
       message: `Consent "${consentType}" has been withdrawn`,

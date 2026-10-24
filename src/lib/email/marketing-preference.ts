@@ -37,8 +37,18 @@
 //
 // The WRITE goes to both, so an unsubscribe actually silences the store that
 // the senders read - which is the entire point of the exercise.
+//
+// ── STORE 3 IS NOW HONOURED FOR WITHDRAWAL (24 October 2026) ────────────────
+// A MARKETING withdrawal in the consent centre still changed neither store
+// above, so isMarketingAllowed answered yes to someone who had just been told
+// their consent was withdrawn. It now refuses while the ledger's latest
+// MARKETING row is a withdrawal, and DELETE /api/consent calls
+// optOutOfMarketing so all three stores agree from that moment. A ledger
+// GRANT is still not read as permission: switching marketing on stays the
+// /dashboard/privacy toggle's job, and old grants are not mirrored here.
 // ────────────────────────────────────────────────────────────────────────────
 
+import type { ConsentType } from '@prisma/client'
 import { prisma } from '@/lib/prisma'
 import { createServiceRoleClient } from '@/lib/supabase/server'
 import { tryPrismaUserId } from '@/lib/identity'
@@ -46,9 +56,26 @@ import { tryPrismaUserId } from '@/lib/identity'
 /**
  * May we send marketing email to this Supabase user?
  *
- * TRUE only if one of the two stores says so. A missing row, an unresolvable
- * identity or a failed read all answer FALSE - marketing email is the one
- * category where "we are not sure" must mean "do not send".
+ * TRUE only if one of the two stores says so AND the consent centre's ledger
+ * does not record a withdrawal as the latest MARKETING decision. A missing
+ * row, an unresolvable identity or a failed read all answer FALSE - marketing
+ * email is the one category where "we are not sure" must mean "do not send".
+ *
+ * THE LEDGER LEG (added 24 October 2026). Withdrawing MARKETING at
+ * /dashboard/consent writes a Consent row (granted false, withdrawnAt set)
+ * and, until that day, changed neither store this function read. So an adult
+ * who switched marketing on at /dashboard/privacy and then withdrew it in the
+ * consent centre, and was told it had been withdrawn, would still have
+ * received the day-14 and day-30 trial emails with the price. DELETE
+ * /api/consent now also writes false to both stores, and this reads the
+ * ledger as well, which covers every withdrawal made before that change.
+ *
+ * One consequence, chosen on purpose: the /dashboard/privacy switch writes no
+ * ledger row, so someone who withdrew in the consent centre and later switched
+ * marketing on at /dashboard/privacy is still refused until they grant it in
+ * the consent centre again, where the grant is recorded. A missed email is
+ * recoverable; marketing sent over a recorded objection (UK GDPR Art 21(3),
+ * PECR reg 22) is not.
  */
 export async function isMarketingAllowed(supabaseUserId: string | null): Promise<boolean> {
   if (!supabaseUserId) return false
@@ -66,19 +93,51 @@ export async function isMarketingAllowed(supabaseUserId: string | null): Promise
   } catch {
     newStore = false
   }
-  if (newStore) return true
+
+  // Both the legacy store and the ledger are keyed on the Prisma id. Without
+  // it neither can be read, and an unread ledger may hold a withdrawal.
+  const prismaUserId = await tryPrismaUserId(supabaseUserId)
+  if (!prismaUserId) return false
 
   // Store 1: PrivacySettings.marketingEnabled. Still the real one today.
+  let legacyStore = false
+  if (!newStore) {
+    try {
+      const row = await prisma.privacySettings.findUnique({
+        where: { userId: prismaUserId },
+        select: { marketingEnabled: true },
+      })
+      legacyStore = row?.marketingEnabled === true
+    } catch {
+      legacyStore = false
+    }
+  }
+  if (!newStore && !legacyStore) return false
+
+  return !(await marketingWithdrawnInLedger(prismaUserId))
+}
+
+/**
+ * Is the latest MARKETING row in the Consent ledger a withdrawal? No row at
+ * all is not a withdrawal: most consent to marketing is given at
+ * /dashboard/privacy, which writes no ledger row. A failed read answers true,
+ * so the caller refuses.
+ */
+async function marketingWithdrawnInLedger(prismaUserId: string): Promise<boolean> {
   try {
-    const prismaUserId = await tryPrismaUserId(supabaseUserId)
-    if (!prismaUserId) return false
-    const row = await prisma.privacySettings.findUnique({
-      where: { userId: prismaUserId },
-      select: { marketingEnabled: true },
+    const latest = await prisma.consent.findFirst({
+      where: { userId: prismaUserId, consentType: 'MARKETING' as ConsentType },
+      orderBy: [{ grantedAt: 'desc' }, { id: 'desc' }],
+      select: { granted: true, withdrawnAt: true },
     })
-    return row?.marketingEnabled === true
-  } catch {
-    return false
+    if (!latest) return false
+    return latest.granted !== true || latest.withdrawnAt !== null
+  } catch (err) {
+    console.error(
+      '[marketing-preference] MARKETING_LEDGER_READ_FAILED, refusing marketing:',
+      err instanceof Error ? err.message : String(err),
+    )
+    return true
   }
 }
 

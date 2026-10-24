@@ -24,6 +24,8 @@ vi.mock('@/lib/stripe', () => ({
       update: (...a: unknown[]) => mockUpdate(...a),
     },
   },
+  // The route asks whether the cancelled plan is IELTS-only, for its email.
+  isIeltsPriceId: () => false,
 }))
 
 const mockRateLimit = vi.fn()

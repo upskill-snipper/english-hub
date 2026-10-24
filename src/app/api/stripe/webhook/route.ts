@@ -21,6 +21,7 @@ import {
   invoiceSubscriptionId,
   subscriptionPeriodEnd,
 } from '@/lib/billing/stripe-shapes'
+import { sendPaymentFailedEmail, sendPlanEndedEmail } from '@/lib/email/lifecycle/billing'
 
 // Disable body parsing - we need the raw body for signature verification
 export const runtime = 'nodejs'
@@ -578,6 +579,26 @@ export async function POST(request: NextRequest) {
         // here; a daily backstop that revokes 'pro' when the profile's end
         // date is well past and Stripe shows no live subscription is the
         // safety net if the setting cannot be relied on.
+        //
+        // ── Merged 24 October 2026 ───────────────────────────────────────
+        // fix/trial-lifecycle-emails-2026-10-23 kept the past_due write here
+        // and added two things to it. An IELTS-only carve-out: this was the
+        // one handler with none, so a failed IELTS invoice wrote past_due over
+        // a Student or Teacher plan held beside it, and invoice.paid's
+        // IELTS-only branch never wrote 'pro' back. And `profileMovedToPastDue`,
+        // which told M6 whether "paused" was true. fix/stripe-webhook-2026-10-23
+        // removed the write for every invoice, which contains the carve-out:
+        // no invoice, IELTS or not, writes past_due here, and no other path
+        // writes past_due to the profile (handleSubscriptionUpdated maps it to
+        // null). The webhook branch decides entitlement writes, so the write
+        // stays gone, and M6 is told `accessPaused: false` below: this handler
+        // removed no access, so "paused" would be false. `ieltsOnlyInvoice`
+        // stays because M6 names an IELTS plan from it. If the retry-window
+        // choice is reversed and the write comes back, `accessPaused` must be
+        // true on exactly the path that writes it, and false for an IELTS-only
+        // invoice, which must keep its carve-out.
+        const ieltsOnlyInvoice =
+          failedPrices.length > 0 && failedPrices.every((p) => isIeltsPriceId(p))
 
         // Send payment-failed notification via Resend (non-blocking)
         const resendApiKey = process.env.RESEND_API_KEY
@@ -602,47 +623,27 @@ export async function POST(request: NextRequest) {
           }
 
           if (customerEmail) {
-            const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://theenglishhub.app'
-            const billingUrl = `${siteUrl}/account/billing`
-            const fromAddress = 'The English Hub <noreply@theenglishhub.app>'
-            const subject = 'Action Required: Payment Failed - The English Hub'
-
-            const html = [
-              `<h2>Your payment was unsuccessful</h2>`,
-              `<p>Hi there,</p>`,
-              `<p>We were unable to process your latest payment for <strong>The English Hub Premium</strong>.</p>`,
-              `<p>To avoid any interruption to your subscription, please update your payment method at your earliest convenience.</p>`,
-              `<p><a href="${billingUrl}">Update your payment method</a></p>`,
-              `<p>If you believe this is an error or need any help, feel free to reach out to our support team.</p>`,
-              `<br />`,
-              `<p>Best regards,<br />The English Hub Team</p>`,
-            ].join('\n')
-
-            try {
-              const res = await fetch('https://api.resend.com/emails', {
-                method: 'POST',
-                headers: {
-                  'Content-Type': 'application/json',
-                  Authorization: `Bearer ${resendApiKey}`,
-                },
-                body: JSON.stringify({
-                  from: fromAddress,
-                  to: customerEmail,
-                  subject,
-                  html,
-                }),
-              })
-
-              if (!res.ok) {
-                const errorBody = await res.text()
-                console.error(
-                  `[stripe/webhook] Failed to send payment_failed email: ${res.status} ${errorBody}`,
-                )
-              }
-            } catch (err) {
-              // Log but do not fail the webhook - email is non-critical
-              console.error('[stripe/webhook] Error sending payment_failed email:', err)
-            }
+            // ── M6, the payment-failed notice (rewritten 23 October 2026) ──
+            // It said "To avoid any interruption to your subscription" after
+            // this handler had already written past_due, and the web gate
+            // reads 'pro' only, so the interruption had already happened. The
+            // copy follows what this handler did: "paused" only when it moved
+            // the profile to past_due, and otherwise nothing about access,
+            // only the action. Since the merge of 24 October 2026 it never
+            // moves the profile (see the retry-window note above), so
+            // `accessPaused` is false for every invoice and M6 reads "Your
+            // payment did not go through ... To keep your plan, update your
+            // payment details", which is true while access is kept.
+            // One notice per invoice (LifecycleEmail), never a webhook failure.
+            await sendPaymentFailedEmail({
+              supabaseUserId: failedProfile?.id ?? null,
+              to: customerEmail,
+              invoiceId: invoice.id ?? event.id,
+              amountMinor: invoice.amount_due,
+              currency: invoice.currency,
+              accessPaused: false,
+              ieltsOnly: ieltsOnlyInvoice,
+            })
           } else {
             console.warn(
               `[stripe/webhook] invoice.payment_failed: could not resolve email for customer, skipping notification`,
@@ -1621,7 +1622,57 @@ async function handleSubscriptionDeleted(
       voidError,
     )
   }
+
+  // ── M7, "your plan has ended" (added 23 October 2026) ────────────────────
+  // Beside the writes above, which it does not change. Only when this event
+  // revoked the entitlement: a duplicate being cleaned up and an IELTS-only
+  // plan are both skipped, because "your account stays open on the free plan"
+  // would be false for someone who still holds a paid plan. Behind
+  // TRIAL_LIFECYCLE_EMAILS_ENABLED; one per subscription; never throws.
+  //
+  // Merged 24 October 2026. fix/stripe-webhook-2026-10-23 made this handler
+  // return an ignored reason (hence `return null` below) and changed what
+  // `revokeEntitlement` means: coverage is now "another subscription keeps the
+  // web gate open", not "another carries the same price", and Stripe being
+  // unreachable throws before this line instead of reading as "not covered".
+  // Both narrow the email to the customers who really lost access, so the
+  // lifecycle branch's condition is kept as it was.
+  if (revokeEntitlement) {
+    const customerId = subscription.customer as string
+    await sendPlanEndedEmail({
+      supabaseUserId: userId,
+      subscriptionId: subscription.id,
+      resolveEmail: () => resolveCustomerEmail(customerId, supabase),
+    })
+  }
   return null
+}
+
+/**
+ * The address to write to about a subscription: the Stripe customer's email
+ * first, then the profile's, as the other notices in this file resolve it.
+ * Null when neither is held. Never throws.
+ */
+async function resolveCustomerEmail(
+  customerId: string,
+  supabase: ReturnType<typeof createServiceRoleClient>,
+): Promise<string | null> {
+  try {
+    const customer = await stripe.customers.retrieve(customerId)
+    if (!customer.deleted && customer.email) return customer.email
+  } catch (err) {
+    console.warn('[stripe/webhook] Failed to retrieve Stripe customer for an email:', err)
+  }
+  try {
+    const { data: profile } = await supabase
+      .from('profiles')
+      .select('email')
+      .eq('stripe_customer_id', customerId)
+      .single()
+    return (profile as { email?: string | null } | null)?.email ?? null
+  } catch {
+    return null
+  }
 }
 
 /**

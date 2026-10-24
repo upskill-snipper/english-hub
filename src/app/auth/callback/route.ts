@@ -2,6 +2,7 @@ import { NextRequest, NextResponse } from 'next/server'
 import { createServerClient } from '@supabase/ssr'
 import type { User } from '@supabase/supabase-js'
 import { provisionSignupTrial } from '@/lib/billing/provision-signup-trial'
+import { announceTrialReady } from '@/lib/email/lifecycle/account-ready'
 import { stampLogin } from '@/lib/auth/stamp-login'
 import { createServiceRoleClient } from '@/lib/supabase/server'
 import { BOARDS } from '@/lib/board/board-config'
@@ -368,8 +369,17 @@ export async function GET(request: NextRequest) {
       // account older than the trial window, so a Google user signing in for
       // the hundredth time gets one profile read and nothing else. It cannot
       // throw into this flow.
+      //
+      // The result is no longer thrown away (23 October 2026): when a trial
+      // was provisioned, the account-ready email goes after the redirect, once
+      // per account (src/lib/email/lifecycle/account-ready.ts), and only to
+      // a confirmed address.
       if (data?.user?.id) {
-        await provisionSignupTrial(data.user.id)
+        announceTrialReady(await provisionSignupTrial(data.user.id), {
+          supabaseUserId: data.user.id,
+          email: data.user.email,
+          emailConfirmedAt: data.user.email_confirmed_at ?? null,
+        })
       }
 
       // Role routing and the welcome flag, decided from the user record,
@@ -420,8 +430,13 @@ export async function GET(request: NextRequest) {
       // session this establishes, not only for `type === 'signup'`. Supabase's
       // own email templates still use this legacy flow, and an `invite` or
       // `email` confirmation is just as much a first session as a `signup`.
+      // As above, a provisioned trial sends the account-ready email.
       if (data?.user?.id) {
-        await provisionSignupTrial(data.user.id)
+        announceTrialReady(await provisionSignupTrial(data.user.id), {
+          supabaseUserId: data.user.id,
+          email: data.user.email,
+          emailConfirmedAt: data.user.email_confirmed_at ?? null,
+        })
       }
 
       // The only magic link the product mints is the re-verification one, and

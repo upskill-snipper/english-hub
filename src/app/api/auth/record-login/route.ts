@@ -5,6 +5,7 @@ import { createServerSupabaseClient } from '@/lib/supabase/server'
 import { rateLimit } from '@/lib/rate-limit'
 import { stampLogin } from '@/lib/auth/stamp-login'
 import { provisionSignupTrial } from '@/lib/billing/provision-signup-trial'
+import { announceTrialReady } from '@/lib/email/lifecycle/account-ready'
 import type { NextRequest } from 'next/server'
 
 // POST /api/auth/record-login
@@ -64,8 +65,16 @@ export async function POST(_request: NextRequest) {
     // failing, or that confirmed before provisioning shipped and is still
     // inside its first 7 days. `provisionSignupTrial` is idempotent and
     // window-guarded, so a returning user from May gets nothing from this and
-    // a paying user is never touched. It cannot throw.
-    await provisionSignupTrial(user.id)
+    // a paying user is never touched. It cannot throw. A trial provisioned
+    // here sends the account-ready email after the response, once per account
+    // (src/lib/email/lifecycle/account-ready.ts); the result used to be
+    // discarded.
+    announceTrialReady(await provisionSignupTrial(user.id), {
+      supabaseUserId: user.id,
+      email: user.email,
+      // An unconfirmed address is sent nothing (account-ready.ts).
+      emailConfirmedAt: user.email_confirmed_at ?? null,
+    })
 
     return NextResponse.json({ ok: true, rows: 1 })
   } catch (err) {
