@@ -54,7 +54,6 @@ const NOT_YET = new Set([
   'greetings-dialogue',
   'phrasal-verbs-match',
   'reading-detective',
-  'vocabulary-builder',
 ])
 
 const BANKS_DIR = join(process.cwd(), 'src/data/games/banks')
