@@ -53,7 +53,6 @@ const NOT_YET = new Set([
   'grade-climber',
   'greetings-dialogue',
   'phrasal-verbs-match',
-  'reading-detective',
 ])
 
 const BANKS_DIR = join(process.cwd(), 'src/data/games/banks')
