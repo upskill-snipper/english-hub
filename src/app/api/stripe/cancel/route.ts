@@ -37,6 +37,8 @@
 // ────────────────────────────────────────────────────────────────────────────
 
 import { NextRequest, NextResponse } from 'next/server'
+import { keepAlive } from '@/lib/keep-alive'
+import { sendPlanCancelledEmail } from '@/lib/email/lifecycle/billing'
 import Stripe from 'stripe'
 import { stripe } from '@/lib/stripe'
 import { createServerSupabaseClient, createServiceRoleClient } from '@/lib/supabase/server'
@@ -247,6 +249,25 @@ export async function POST(request: NextRequest) {
       } catch (err) {
         console.error('[api/stripe/cancel] cancellation_feedback write threw:', err)
       }
+    }
+
+    // ── Confirm it by email (M7, added 23 October 2026) ──────────────────
+    //
+    // A cancellation used to be confirmed only by the page that asked for
+    // it. The email goes after the response, so a slow mail provider never
+    // holds up the confirmation, and states no date: periodEndIso reads a
+    // field the pinned Stripe API version does not return at the top level
+    // (the payments audit's item 11). Behind TRIAL_LIFECYCLE_EMAILS_ENABLED.
+    if (user.email) {
+      keepAlive(
+        sendPlanCancelledEmail({
+          supabaseUserId: user.id,
+          to: user.email,
+          subscriptionId: target.id,
+          inTrial: target.status === 'trialing',
+        }),
+        '[api/stripe/cancel] M7',
+      )
     }
 
     return NextResponse.json({
