@@ -36,6 +36,8 @@ import { hashSeed, rng, seededPick } from '@/lib/games/text-games/seed'
 import {
   isStopWord,
   normForMatch,
+  occurrences,
+  quoteFragments,
   stem,
   themesMayOverlap,
   whereUnits,
@@ -43,6 +45,7 @@ import {
   wordsOf,
 } from '@/lib/games/text-games/text'
 import type { GameArt, GameItem, MomentRef, OrderItem } from '@/lib/games/text-games/types'
+import type { FlatKeyQuote } from '@/data/key-quotes/types'
 import type { StudyGuide } from '@/lib/study-guides/types'
 
 import { pickVaried } from './deal'
@@ -67,6 +70,13 @@ export interface QuestInput {
   /** Every served panel and portrait the text has, as the text-games loader gives them. */
   art: GameArt
   held?: HeldEdition | null
+  /**
+   * The key quotations on the text's revision page, where it has one
+   * (src/data/key-quotes): for the most studied texts the study guide is a
+   * supplement and these are its key quotations. Used for evidence
+   * challenges, for a text out of copyright with a held edition only.
+   */
+  keyQuotes?: FlatKeyQuote[] | null
 }
 
 /** A public-domain quest keeps every item the guide supports, up to this. */
@@ -329,26 +339,62 @@ export const EVIDENCE_MIN_QUOTE_WORDS = 3
  * the three are the nearest in length to the answer, so length does not give
  * it away.
  */
-function buildEvidence(guide: StudyGuide, items: GameItem[]): EvidenceChallenge[] {
-  // A line the guide reads twice (a refrain, an opening line that returns at
-  // the end) has two readings, either of which would be the point: not asked.
+function buildEvidence(
+  guide: StudyGuide,
+  items: GameItem[],
+  page: { held?: HeldEdition | null; keyQuotes?: FlatKeyQuote[] | null } = {},
+): EvidenceChallenge[] {
+  // The readings: the guide's key quotations, and for a text out of copyright
+  // with a held edition, its revision page's (page.keyQuotes, passed only
+  // then). A line read twice (a refrain, an opening line that returns at the
+  // end, or one line on both lists with two readings) has two readings,
+  // either of which would be the point: not asked.
+  // A page reading is taken only for a line the held edition prints once,
+  // word for word (its longest stretch between ellipses): a misquotation on
+  // the page is never asked, and nor is a refrain ("Four legs good, two legs
+  // better" is printed three times), whose reading could be about any of its
+  // places.
+  const printedOnce = (quote: string) => {
+    if (!page.held) return false
+    const parts = quoteFragments(quote)
+    if (parts.length === 0) return false
+    const longest = parts.reduce((a, b) => (b.length > a.length ? b : a))
+    return occurrences(page.held.joined, longest) === 1
+  }
+  const readings: { text: string; analysis: string }[] = [
+    ...(guide.keyQuotes ?? []).flatMap((k) =>
+      k.analysis ? [{ text: k.text, analysis: k.analysis }] : [],
+    ),
+    ...(page.keyQuotes ?? [])
+      .filter((k) => printedOnce(k.quote))
+      .map((k) => ({ text: k.quote, analysis: k.analysis })),
+  ]
   const times = new Map<string, number>()
-  for (const k of guide.keyQuotes ?? [])
-    times.set(normForMatch(k.text), (times.get(normForMatch(k.text)) ?? 0) + 1)
+  for (const r of readings)
+    times.set(normForMatch(r.text), (times.get(normForMatch(r.text)) ?? 0) + 1)
   const analysed = new Map<string, { analysis: string }>()
-  for (const k of guide.keyQuotes ?? [])
-    if (k.analysis && times.get(normForMatch(k.text)) === 1)
-      analysed.set(normForMatch(k.text), { analysis: k.analysis })
+  for (const r of readings)
+    if (times.get(normForMatch(r.text)) === 1)
+      analysed.set(normForMatch(r.text), { analysis: r.analysis })
   const asked: { quote: string; where: string }[] = []
   const seen = new Set<string>()
+  const offer = (quote: string, where: string) => {
+    const k = normForMatch(quote)
+    if (!k || seen.has(k)) return
+    // One line once: a shorter cut of a quotation already offered, or a
+    // longer one around it ("they had better do it, and decrease the surplus
+    // population" inside "If they would rather die..."), is the same evidence.
+    if ([...seen].some((s) => s.includes(k) || k.includes(s))) return
+    seen.add(k)
+    if (wordsOf(quote).length < EVIDENCE_MIN_QUOTE_WORDS) return
+    asked.push({ quote, where })
+  }
   for (const it of items) {
     if (it.kind !== 'where' && it.kind !== 'finish') continue
-    const k = normForMatch(it.quote)
-    if (!k || seen.has(k)) continue
-    seen.add(k)
-    if (wordsOf(it.quote).length < EVIDENCE_MIN_QUOTE_WORDS) continue
-    asked.push({ quote: it.quote, where: it.where ?? '' })
+    offer(it.quote, it.where ?? '')
   }
+  // The revision page's quotations, on the same terms as their readings.
+  for (const k of page.keyQuotes ?? []) if (printedOnce(k.quote)) offer(k.quote, k.where)
   const out: EvidenceChallenge[] = []
   for (const a of asked) {
     const key = normForMatch(a.quote)
@@ -625,7 +671,13 @@ function assemble(
   return { levels, kept: [...kept.values()] }
 }
 
-export function buildQuest({ guide, comics, art, held = null }: QuestInput): Quest {
+export function buildQuest({
+  guide,
+  comics,
+  art,
+  held = null,
+  keyQuotes = null,
+}: QuestInput): Quest {
   const game = buildTextGame({ guide, art, held, poolMax: QUEST_POOL_MAX })
   const moments = momentRefs(guide, art)
   const items = game.rounds.flatMap((r) => r.items)
@@ -641,7 +693,7 @@ export function buildQuest({ guide, comics, art, held = null }: QuestInput): Que
       ...buildLinePanels(guide.slug, lines),
       ...buildRebuilds(guide, lines, items, moments),
       ...buildThemeChecks(guide.slug, guide, moments),
-      ...buildEvidence(guide, items),
+      ...buildEvidence(guide, items, publicDomain ? { held, keyQuotes } : {}),
     ],
     cast: [
       ...items.filter((i) => i.kind === 'who').map(item),

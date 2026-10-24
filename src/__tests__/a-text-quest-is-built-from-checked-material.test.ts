@@ -1,6 +1,7 @@
 import { describe, expect, it } from 'vitest'
 
 import { COMIC_LOADERS } from '@/data/comics'
+import { KEY_QUOTE_LOADERS } from '@/data/key-quotes'
 import {
   buildQuest,
   chapterCount,
@@ -21,6 +22,8 @@ import {
 import {
   isStopWord,
   normForMatch,
+  occurrences,
+  quoteFragments,
   stem,
   themesMayOverlap,
   wheresMayOverlap,
@@ -105,6 +108,11 @@ describe('every text quest', () => {
           .map(stem),
       )
     let asked = 0
+    const pageQuotes = new Map<string, { quote: string; analysis: string }[]>()
+    for (const slug of slugs) {
+      const load = KEY_QUOTE_LOADERS[slug]
+      if (load) pageQuotes.set(slug, await load())
+    }
     for (const slug of slugs) {
       const q = await questFor(slug)
       const guide = (await loadStudyGuide(slug))!
@@ -112,11 +120,34 @@ describe('every text quest', () => {
         if (c.type !== 'evidence') continue
         asked++
         const at = `${slug} ${c.id}`
-        const k = (guide.keyQuotes ?? []).find(
+        // The reading is the guide's own, or, for a text out of copyright
+        // with a held edition, its revision page's (src/data/key-quotes),
+        // whose line the held edition must print word for word.
+        const fromGuide = (guide.keyQuotes ?? []).find(
           (x) => normForMatch(x.text) === normForMatch(c.answer),
         )
+        const fromPage = (pageQuotes.get(slug) ?? []).find(
+          (x) => normForMatch(x.quote) === normForMatch(c.answer),
+        )
+        const k = fromGuide
+          ? { analysis: fromGuide.analysis }
+          : fromPage
+            ? { analysis: fromPage.analysis }
+            : undefined
         expect(k, `${at}: the answer is a key quotation`).toBeTruthy()
         expect(c.explanation, at).toBe(k!.analysis)
+        if (!fromGuide) {
+          expect(guide.rights.status, `${at}: a page reading in a text in copyright`).not.toBe(
+            'copyright',
+          )
+          const held = (await loadHeldEdition(slug))!
+          expect(held, `${at}: no held edition to check the line against`).toBeTruthy()
+          const parts = quoteFragments(c.answer)
+          const longest = parts.reduce((a, b) => (b.length > a.length ? b : a))
+          expect(occurrences(held.joined, longest), `${at}: printed once in the held edition`).toBe(
+            1,
+          )
+        }
         // The point is that analysis with its quotations elided, and nothing else.
         const kept = c.point
           .split('\u2026')

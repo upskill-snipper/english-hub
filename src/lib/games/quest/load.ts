@@ -25,6 +25,8 @@ import {
 import type { TextGame } from '@/lib/games/text-games/types'
 import { loadStudyGuide } from '@/lib/study-guides/load'
 
+import { KEY_QUOTE_LOADERS } from '@/data/key-quotes'
+
 import { buildQuest } from './build'
 import type { Challenge, Quest } from './types'
 
@@ -73,12 +75,13 @@ export async function loadQuest(slug: string): Promise<Quest | null> {
   if (!hasTextGame(slug)) return null
   const guide = await loadStudyGuide(slug)
   if (!guide) return null
-  const [comics, art, held] = await Promise.all([
+  const [comics, art, held, keyQuotes] = await Promise.all([
     loadComics(slug),
     loadGameArt(slug),
     loadHeldEdition(slug),
+    KEY_QUOTE_LOADERS[slug]?.() ?? Promise.resolve(null),
   ])
-  const quest = buildQuest({ guide, comics, art, held })
+  const quest = buildQuest({ guide, comics, art, held, keyQuotes })
   if (guide.rights.status === 'copyright') {
     // loadTextGame throws if the path itself breaks the limits.
     const game = await loadTextGame(slug)
