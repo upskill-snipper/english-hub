@@ -5,6 +5,7 @@ import { stripe } from '@/lib/stripe'
 import { createServiceRoleClient } from '@/lib/supabase/server'
 import { runCron } from '@/lib/cron/observability'
 import { authoriseCronRequest } from '@/lib/cron/auth'
+import { WEB_ACCESS_STATUSES } from '@/lib/billing/duplicate-subscription-guard'
 
 export const dynamic = 'force-dynamic'
 
@@ -41,13 +42,23 @@ export const dynamic = 'force-dynamic'
  * 21 October 2026). The profile's own `stripe_customer_id` was never asked.
  *
  * So, before downgrading, if the profile names a Stripe customer, ask Stripe
- * whether that customer holds a live subscription (active or trialing). If
- * so, leave the trial alone and say so loudly: the row is wrong and the
- * reconcile script or the next webhook puts the real subscription on it. If
- * Stripe cannot be asked, also leave it alone and try again tomorrow. A day's
- * grace on an unpaid trial costs pennies; a revoked payer is the September
- * 2026 incident again. Stripe is asked only for profiles that have a
- * customer id, which is a handful a day.
+ * whether that customer holds a subscription that keeps the web gate open
+ * (WEB_ACCESS_STATUSES: active, trialing, and past_due by the retry-window
+ * choice of 23 October 2026). If so, leave the trial alone and say so loudly:
+ * the row is wrong and the reconcile script or the next webhook puts the real
+ * subscription on it. If Stripe cannot be asked, or the profile cannot be
+ * read, also leave it alone and try again tomorrow. A day's grace on an
+ * unpaid trial costs pennies; a revoked payer is the September 2026 incident
+ * again. Stripe is asked only for profiles that have a customer id, which is
+ * a handful a day.
+ *
+ * The cron lists the customer's subscriptions itself rather than calling
+ * `findDuplicateSubscription`, because that guard compares prices and here
+ * any live subscription counts. The status list is the guard module's, not a
+ * copy: this file used to keep its own (active and trialing only), so a payer
+ * whose card was being retried was downgraded here on day eight while the
+ * webhook was deliberately keeping them 'pro'. `unpaid` stays out: that is
+ * Stripe having given up, and the webhook has already revoked on it.
  *
  * For each expired trial we:
  *   • flip profiles.subscription_status 'pro' → 'free' (guarded so we
@@ -60,15 +71,16 @@ export const dynamic = 'force-dynamic'
  * Runs daily (configured in vercel.json). Protected by CRON_SECRET.
  */
 
-/** Stripe statuses that mean the customer is being served a paid plan. */
-const LIVE_STRIPE_STATUSES: ReadonlySet<string> = new Set(['active', 'trialing'])
-
 type PaidCheck =
   | { outcome: 'none' }
   | { outcome: 'live'; subscriptionId: string; status: string }
   | { outcome: 'unknown'; error: string }
 
-/** Does this Stripe customer hold a live subscription right now? */
+/**
+ * Does this Stripe customer hold a subscription that keeps the web gate open
+ * right now? The list of statuses is WEB_ACCESS_STATUSES, shared with the
+ * webhook's coverage check; see the docblock above for why it is not a copy.
+ */
 async function liveStripeSubscription(customerId: string): Promise<PaidCheck> {
   try {
     const subs = await stripe.subscriptions.list({
@@ -76,7 +88,7 @@ async function liveStripeSubscription(customerId: string): Promise<PaidCheck> {
       status: 'all',
       limit: 100,
     })
-    const live = subs.data.find((s) => LIVE_STRIPE_STATUSES.has(s.status))
+    const live = subs.data.find((s) => WEB_ACCESS_STATUSES.has(s.status))
     return live
       ? { outcome: 'live', subscriptionId: live.id, status: live.status }
       : { outcome: 'none' }
@@ -121,11 +133,26 @@ export async function GET(request: NextRequest) {
 
       if (supabaseId) {
         // ── Is this trialist actually a payer whose row we never wrote? ──
-        const { data: profile } = await admin
+        const { data: profile, error: profileReadErr } = await admin
           .from('profiles')
           .select('subscription_status, stripe_customer_id')
           .eq('id', supabaseId)
           .single()
+
+        // A profile that cannot be READ is not a profile with no Stripe
+        // customer. This read's error used to be discarded, so a database
+        // fault answered "no customer id", Stripe was never asked, and the
+        // downgrade below ran against a payer if the database had recovered
+        // by then. "No row" (PGRST116) is an answer: there is nobody to ask
+        // Stripe about, and the downgrade is a no-op on the profile anyway.
+        if (profileReadErr && profileReadErr.code !== 'PGRST116') {
+          skippedUnknown += 1
+          console.error(
+            `[cron:trial-expiry] TRIAL_EXPIRY_PROFILE_UNREADABLE row=${sub.id} user=${supabaseId}: ` +
+              `${profileReadErr.message}. Left for the next run.`,
+          )
+          continue
+        }
 
         if (profile?.stripe_customer_id) {
           const paid = await liveStripeSubscription(profile.stripe_customer_id)

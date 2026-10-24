@@ -32,6 +32,8 @@ const state: {
   whereClauses: Array<Record<string, unknown>>
   rowUpdates: Array<{ id: string; data: Record<string, unknown> }>
   profiles: Record<string, { subscription_status: string; stripe_customer_id: string | null }>
+  /** When set, every profile read fails with this error instead of answering. */
+  profileReadError: { code: string; message: string } | null
   profileUpdates: Array<{ id: string; payload: Record<string, unknown> }>
   stripeSubs: Record<string, Array<{ id: string; status: string }>>
   stripeThrows: boolean
@@ -41,6 +43,7 @@ const state: {
   whereClauses: [],
   rowUpdates: [],
   profiles: {},
+  profileReadError: null,
   profileUpdates: [],
   stripeSubs: {},
   stripeThrows: false,
@@ -69,7 +72,10 @@ vi.mock('@/lib/supabase/server', () => ({
     from: () => ({
       select: () => ({
         eq: (_col: string, id: string) => ({
-          single: async () => ({ data: state.profiles[id] ?? null, error: null }),
+          single: async () =>
+            state.profileReadError
+              ? { data: null, error: state.profileReadError }
+              : { data: state.profiles[id] ?? null, error: null },
         }),
       }),
       update: (payload: Record<string, unknown>) => ({
@@ -127,6 +133,7 @@ beforeEach(() => {
   state.whereClauses = []
   state.rowUpdates = []
   state.profiles = {}
+  state.profileReadError = null
   state.profileUpdates = []
   state.stripeSubs = {}
   state.stripeThrows = false
@@ -171,7 +178,10 @@ describe('an expired trial row whose customer is paying in Stripe', () => {
     state.profiles.uuid_1 = { subscription_status: 'pro', stripe_customer_id: 'cus_1' }
   })
 
-  it.each(['active', 'trialing'])(
+  // past_due counts as live here because the webhook keeps web access through
+  // Stripe's retry window (23 October 2026); until this list was shared with
+  // the webhook, the cron downgraded exactly that customer on day eight.
+  it.each(['active', 'trialing', 'past_due'])(
     'is left alone when Stripe shows a %s subscription',
     async (status) => {
       state.stripeSubs.cus_1 = [{ id: 'sub_1', status }]
@@ -216,6 +226,50 @@ describe('an expired trial row whose customer is paying in Stripe', () => {
     expect(downgraded('uuid_1')).toBe(false)
     expect(rowCancelled('row_1')).toBe(false)
     expect(json.skippedUnknown).toBe(1)
+  })
+
+  it('is still downgraded when Stripe shows only an unpaid subscription', async () => {
+    // unpaid is Stripe having given up, and the webhook has already revoked on
+    // it; it keeps nobody's web access, so it does not keep a trial either.
+    state.stripeSubs.cus_1 = [{ id: 'sub_1', status: 'unpaid' }]
+    await GET(req())
+    expect(downgraded('uuid_1')).toBe(true)
+  })
+})
+
+describe('an expired trial whose profile cannot be read', () => {
+  beforeEach(() => {
+    state.expired = [trialRow('row_1', 'uuid_1')]
+    state.profiles.uuid_1 = { subscription_status: 'pro', stripe_customer_id: 'cus_1' }
+    state.stripeSubs.cus_1 = [{ id: 'sub_1', status: 'active' }]
+    state.profileReadError = { code: '08006', message: 'connection reset' }
+  })
+
+  it('is left alone and retried next run, not downgraded unasked', async () => {
+    // The read's error used to be discarded: the profile read as "no Stripe
+    // customer", Stripe was never asked, and a payer was downgraded.
+    const json = await (await GET(req())).json()
+    expect(downgraded('uuid_1')).toBe(false)
+    expect(rowCancelled('row_1')).toBe(false)
+    expect(json.skippedUnknown).toBe(1)
+    expect(json.downgraded).toBe(0)
+  })
+
+  it('says so, with the row and the user', async () => {
+    await GET(req())
+    const line = (errorSpy.mock.calls as unknown as unknown[][])
+      .map((c) => String(c[0]))
+      .find((l) => l.includes('TRIAL_EXPIRY_PROFILE_UNREADABLE'))
+    expect(line).toBeDefined()
+    expect(line).toContain('row_1')
+    expect(line).toContain('uuid_1')
+  })
+
+  it('treats "no such profile" as an answer, not a fault', async () => {
+    state.profileReadError = { code: 'PGRST116', message: 'no rows' }
+    const json = await (await GET(req())).json()
+    expect(json.skippedUnknown).toBe(0)
+    expect(rowCancelled('row_1')).toBe(true)
   })
 })
 
