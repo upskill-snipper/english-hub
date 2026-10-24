@@ -207,6 +207,36 @@ describe('findGiveAways', () => {
     expect([...found.reveals.values()].some((s) => s.has('and so'))).toBe(false)
   })
 
+  it('leaves alone an answer the bank calls an ordinary word, and only that one', () => {
+    type Q = { q: string; a: string; word?: boolean }
+    const b = {
+      items: [
+        { q: 'Which word in "she would still wait" does the work?', a: 'still', word: true },
+        { q: 'Why does the house stay silent?', a: 'grief' },
+        { q: 'Which month comes after April?', a: 'May' },
+      ] as Q[],
+      key: (i: Q) => i.q,
+      answer: (i: Q) => i.a,
+      ordinaryAnswer: (i: Q) => i.word === true,
+    }
+    const f = findGiveAways(b, {
+      'Why does the house stay silent?': { why: 'It is still and quiet: grief.' },
+      'Which month comes after April?': { why: 'The month after it is May.' },
+    })
+    // "still" in another explanation tells no one which word does the work...
+    expect([...f.reveals.values()].some((s) => s.has(b.items[0].q))).toBe(false)
+    // ...but a mention of an answer the bank has not called ordinary still counts.
+    const g = findGiveAways(
+      { ...b, ordinaryAnswer: undefined },
+      {
+        'Which month comes after April?': { why: 'Not the month of grief.' },
+      },
+    )
+    expect([...(g.reveals.get('Which month comes after April?') ?? [])]).toEqual([
+      'Why does the house stay silent?',
+    ])
+  })
+
   it("finds an explanation that quotes another question's sentence", () => {
     const b = {
       items: [

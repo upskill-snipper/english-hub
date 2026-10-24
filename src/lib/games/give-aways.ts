@@ -16,6 +16,11 @@ import type { GameBank, GameExplanations } from './explanations/types'
  *     characters or more, and the answer to at most MAX_SHARED questions. An
  *     answer most questions share ("Metaphor", "noun", "an") is the game's
  *     subject, not a give-away; the dealer's group cap spreads those instead.
+ *     Nor where the bank says the answer is an ordinary word (its
+ *     `ordinaryAnswer`): Quote Detective's 95 one-word answers ("that", "it",
+ *     "must") matched words in other explanations 2,446 times, almost all
+ *     meaningless, and the dealer pulled those questions forward for nothing
+ *     (24 October 2026).
  *   - A SENTENCE (a question's own key) is looked for when it is at least
  *     three words long.
  *   - Whole words only, case and punctuation ignored, so "an" is never found
@@ -53,7 +58,7 @@ export function wordsOf(text: string): string {
 }
 
 export function findGiveAways<T>(
-  bank: Pick<GameBank<T>, 'items' | 'key' | 'answer'>,
+  bank: Pick<GameBank<T>, 'items' | 'key' | 'answer' | 'ordinaryAnswer'>,
   explanations: GameExplanations | null,
 ): GiveAways {
   const items = bank.items
@@ -62,6 +67,7 @@ export function findGiveAways<T>(
   const count = new Map<string, number>()
   for (const a of answers) count.set(a, (count.get(a) ?? 0) + 1)
 
+  const ordinary = items.map((i) => bank.ordinaryAnswer?.(i) === true)
   const particular = (a: string) => a.trim().length >= 3 && (count.get(a) ?? 0) <= MAX_SHARED
   const sentence = keys.map((k) => {
     const w = wordsOf(k)
@@ -76,13 +82,13 @@ export function findGiveAways<T>(
   const facts = new Map<string, string[]>()
   const reveals = new Map<string, Set<string>>()
   items.forEach((_, i) => {
-    if (particular(answers[i])) facts.set(keys[i], [`answer:${answers[i].trim()}`])
+    if (particular(answers[i]) && !ordinary[i]) facts.set(keys[i], [`answer:${answers[i].trim()}`])
   })
   for (let j = 0; j < items.length; j++) {
     for (let i = 0; i < items.length; i++) {
       if (i === j || keys[i] === keys[j]) continue
       const gives =
-        (particular(answers[i]) && shown[j].includes(answers[i])) ||
+        (particular(answers[i]) && !ordinary[i] && shown[j].includes(answers[i])) ||
         (sentence[i] !== null && shown[j].includes(sentence[i]!))
       if (!gives) continue
       let set = reveals.get(keys[j])

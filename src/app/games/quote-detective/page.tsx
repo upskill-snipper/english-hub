@@ -12,25 +12,21 @@ import { getSetTextsForBoard } from '@/lib/board/set-texts'
 import { AnswerExplanation } from '@/components/games/AnswerExplanation'
 import { useGameRound } from '@/components/games/game-round'
 import { useDealer } from '@/lib/games/start-round'
-import { BANK, QUOTE_BANK, ALL_TEXTS } from '@/data/games/banks/quote-detective'
+import {
+  BANK,
+  QUOTE_BANK,
+  ALL_TEXTS,
+  TEXT_SLUGS as TEXT_TO_SLUG,
+  TEXT_FORMS,
+  type QuoteKind,
+} from '@/data/games/banks/quote-detective'
 
 // ─── Quote Bank ───────────────────────────────────────────────────────────────
-// The quotations and the titles they are drawn from are in
-// src/data/games/banks/quote-detective.ts (moved there on 16 October 2026), and
-// the explanation for each in src/data/games/explanations/quote-detective.ts.
-
-// Map the quote bank's simplified display titles to canonical set-text slugs.
-const TEXT_TO_SLUG: Record<string, string> = {
-  Macbeth: 'macbeth',
-  'An Inspector Calls': 'an-inspector-calls',
-  'A Christmas Carol': 'a-christmas-carol',
-  'Jekyll and Hyde': 'jekyll-and-hyde',
-  'Romeo and Juliet': 'romeo-and-juliet',
-  'Animal Farm': 'animal-farm',
-  'Lord of the Flies': 'lord-of-the-flies',
-  'Of Mice and Men': 'of-mice-and-men',
-  'To Kill a Mockingbird': 'to-kill-a-mockingbird',
-}
+// The quotations, the titles they are drawn from and each title's set-text
+// slug are in src/data/games/banks/quote-detective.ts (moved there on 16
+// October 2026; the slugs on 24 October, when the bank grew from nine texts to
+// every set text with a study guide), and the explanation for each in
+// src/data/games/explanations/quote-detective.ts.
 
 function shuffle<T>(arr: T[]): T[] {
   const a = [...arr]
@@ -41,8 +37,24 @@ function shuffle<T>(arr: T[]): T[] {
   return a
 }
 
+/**
+ * The four titles of a "which text" question: its own and three wrong ones.
+ *
+ * The wrong three are drawn from texts of the answer's own kind first (a
+ * Shakespeare play among Shakespeare plays, a poem among poems), then of its
+ * form (any play, any novel), then any (24 October 2026). Drawn from the
+ * whole board, a line in verse offered beside three novels gave its title
+ * away by its form alone. TEXT_FORMS in the bank says what kind each text is.
+ */
 function generateOptions(correctText: string, pool: string[]): string[] {
-  const wrong = shuffle(pool.filter((t) => t !== correctText)).slice(0, 3)
+  const kind = TEXT_FORMS[correctText]
+  const form = kind?.split(':')[0]
+  const rank = (t: string) =>
+    TEXT_FORMS[t] === kind ? 0 : TEXT_FORMS[t]?.split(':')[0] === form ? 1 : 2
+  // A stable sort keeps the shuffled order within each rank.
+  const wrong = shuffle(pool.filter((t) => t !== correctText))
+    .sort((a, b) => rank(a) - rank(b))
+    .slice(0, 3)
   return shuffle([correctText, ...wrong])
 }
 
@@ -78,8 +90,19 @@ export default function QuoteDetectivePage() {
   }, [board])
 
   const [gameState, setGameState] = useState<GameState>('idle')
+  // Since 24 October 2026 a question may ask its own `prompt` (who says a line
+  // and when, which line supports a point, which word does the work), with four
+  // options of its own; a "which text" question still has neither.
   const [questions, setQuestions] = useState<
-    { quote: string; correctText: string; options: string[] }[]
+    {
+      key: string
+      kind: QuoteKind
+      prompt?: string
+      quote: string
+      text: string
+      correctText: string
+      options: string[]
+    }[]
   >([])
   const [currentIndex, setCurrentIndex] = useState(0)
   const [score, setScore] = useState(0)
@@ -90,9 +113,7 @@ export default function QuoteDetectivePage() {
 
   const currentQ = questions[currentIndex] ?? null
   // The question as the bank names it (BANK.key), for the record and the explanation.
-  const questionKey = currentQ
-    ? BANK.key({ quote: currentQ.quote, text: currentQ.correctText })
-    : ''
+  const questionKey = currentQ?.key ?? ''
 
   const handleStart = useCallback(() => {
     // Quotations this browser has not met first, none twice
@@ -100,9 +121,18 @@ export default function QuoteDetectivePage() {
     const shuffled = deal(QUESTIONS_PER_ROUND, { items: filteredQuotes })
     setQuestions(
       shuffled.map((q) => ({
+        key: BANK.key(q),
+        kind: q.kind,
+        prompt: q.prompt,
         quote: q.quote,
-        correctText: q.text,
-        options: generateOptions(q.text, filteredTexts),
+        text: q.text,
+        correctText: BANK.answer(q),
+        // A "which text" question offers its title and three of the board's
+        // others, drawn at random; every other kind its own four, shuffled.
+        options:
+          q.kind === 'text'
+            ? generateOptions(q.text, filteredTexts)
+            : shuffle([...(q.options ?? [])]),
       })),
     )
     setCurrentIndex(0)
@@ -126,7 +156,9 @@ export default function QuoteDetectivePage() {
    * (src/data/games/explanations/quote-detective.ts), which cannot be read in
    * 1.2 seconds, so the student goes on when ready and the round's clock is
    * held while the explanation is open (GameShell's holdClock). The titles
-   * offered are drawn at random, so no wrong choice is recorded.
+   * offered are drawn at random, so no wrong choice is recorded, and the kinds
+   * added on 24 October 2026 record exactly what the game always has: the
+   * question, whether it was right, and its text as the tag.
    */
   const handleSelect = useCallback(
     (option: string) => {
@@ -135,7 +167,7 @@ export default function QuoteDetectivePage() {
       setShowFeedback(true)
       const correct = option === currentQ.correctText
       if (correct) setScore((s) => s + 1)
-      round.record({ question: questionKey, correct, tag: currentQ.correctText })
+      round.record({ question: questionKey, correct, tag: currentQ.text })
     },
     [showFeedback, currentQ, questionKey, round],
   )
@@ -169,7 +201,7 @@ export default function QuoteDetectivePage() {
         gameId="quote-detective"
         audience="gcse"
         title="Quote Detective"
-        description="Identify which GCSE set text each quote is from. 20 questions, 60 seconds each."
+        description="Which set text is it from, who says it and when, which line proves a point, which word does the work. 20 questions, 60 seconds each."
         difficulty="Crossover"
         score={score}
         maxScore={QUESTIONS_PER_ROUND}
@@ -197,12 +229,21 @@ export default function QuoteDetectivePage() {
               </div>
             </div>
 
-            {/* Quote */}
-            <blockquote className="max-w-2xl rounded-xl border border-white/[0.06] bg-white/[0.02] px-8 py-6 text-center">
-              <p className="text-lg font-medium italic leading-relaxed text-foreground">
-                &ldquo;{currentQ.quote}&rdquo;
+            {/* The question's own prompt, where it asks more than which text */}
+            {currentQ.prompt && (
+              <p className="max-w-2xl text-center text-base font-semibold text-foreground">
+                {currentQ.prompt}
               </p>
-            </blockquote>
+            )}
+
+            {/* Quote (a point question shows its quotations as the options) */}
+            {currentQ.quote && (
+              <blockquote className="max-w-2xl rounded-xl border border-white/[0.06] bg-white/[0.02] px-8 py-6 text-center">
+                <p className="text-lg font-medium italic leading-relaxed text-foreground">
+                  &ldquo;{currentQ.quote}&rdquo;
+                </p>
+              </blockquote>
+            )}
 
             {/* Options */}
             <div className="grid w-full max-w-xl grid-cols-1 gap-3 sm:grid-cols-2">
@@ -227,7 +268,7 @@ export default function QuoteDetectivePage() {
                       !showFeedback && 'cursor-pointer active:translate-y-px',
                     )}
                   >
-                    {option}
+                    {currentQ.kind === 'point' ? <>&ldquo;{option}&rdquo;</> : option}
                   </button>
                 )
               })}

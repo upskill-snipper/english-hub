@@ -154,6 +154,22 @@ describe('Quote Detective', () => {
     expect(over).toEqual([])
   })
 
+  it('quotes a text in copyright within the limit in its options too', () => {
+    // A "which line supports the point" question (24 October 2026) shows its
+    // quotations as the options: four lines from the text, each a quotation
+    // in its own right, so each is held to the limit, and a poem's line count
+    // too.
+    const over = QUOTE_DETECTIVE.items
+      .filter((q) => status(q.text) === 'copyright' && q.kind === 'point')
+      .flatMap((q) => (q.options ?? []).map((o) => ({ q, o })))
+      .filter(
+        ({ o }) => wordCount(o) > FAIR_DEALING.quoteWords || lines(o) > FAIR_DEALING.poemQuoteLines,
+      )
+      .map(({ q, o }) => `${q.text}: ${wordCount(o)} words: ${o.slice(0, 40)}`)
+    expect(over).toEqual([])
+    expect(QUOTE_DETECTIVE.items.some((q) => q.kind === 'point')).toBe(true)
+  })
+
   it('has quotations in copyright to hold', () => {
     expect(QUOTE_DETECTIVE.items.some((q) => status(q.text) === 'copyright')).toBe(true)
   })

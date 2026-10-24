@@ -77,4 +77,14 @@ export interface GameBank<T> {
    * give the answer away.
    */
   deepened?: string
+  /**
+   * A question whose answer is an ordinary word in this game, so that word
+   * appearing in another question's prompt or explanation gives nothing away
+   * (../give-aways.ts). Opt-in, per question: Quote Detective's "which word
+   * does the work" answers ("that", "still", "must") turn up in hundreds of
+   * explanations without telling anyone which word of a line does the work,
+   * but in an EAL game a one-word answer mentioned elsewhere ("May", "first")
+   * IS the give-away, so no game is opted in by default.
+   */
+  ordinaryAnswer?: (item: T) => boolean
 }
