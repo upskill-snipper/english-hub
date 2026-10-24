@@ -36,8 +36,14 @@ export default function SubscriptionPage() {
   const [loading, setLoading] = useState(true)
   const [error, setError] = useState<string | null>(null)
 
+  // Once, on mount. fetchSubscription is redeclared on every render, so
+  // listing it as a dependency would refetch after every state change it
+  // makes, without end. The warning this silences was on origin/main before
+  // the billing branches; it is silenced here so that eslint --max-warnings=0
+  // passes on every file the release branch touches.
   useEffect(() => {
     fetchSubscription()
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
 
   async function fetchSubscription() {
