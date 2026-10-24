@@ -247,6 +247,14 @@ describe('the round in play, in this browser', () => {
     expect(endRound('g', NOW)).toBeNull()
   })
 
+  it('gives nothing for a game the student marks themselves', () => {
+    beginTally('everyday-vocab-flashcards')
+    noteDealt('everyday-vocab-flashcards', [{ key: 'a', tier: 1, due: false }], false)
+    noteAnswer('everyday-vocab-flashcards', 'a', true)
+    expect(endRound('everyday-vocab-flashcards', NOW)).toBeNull()
+    expect(readPlayer().xp).toBe(0)
+  })
+
   it('keeps every game apart', () => {
     beginTally('g')
     beginTally('h')

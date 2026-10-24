@@ -32,6 +32,7 @@
  * (./game-round.tsx).
  */
 
+import { SELF_MARKED_GAMES } from '@/lib/game-results/self-marked'
 import {
   emptyPlayer,
   playerLevel,
@@ -405,8 +406,14 @@ export function noteDealt(
   if (levelled) t.levelled = true
 }
 
-/** An answer, as the page records it (game-round.tsx), keyed as the bank keys it. */
+/**
+ * An answer, as the page records it (game-round.tsx), keyed as the bank keys
+ * it. A game the student marks themselves (a flashcard's "I knew it") adds
+ * nothing: nothing checked the answer, so it earns no XP and no achievement
+ * (src/lib/game-results/self-marked.ts).
+ */
 export function noteAnswer(slug: string, key: string, correct: boolean): void {
+  if (SELF_MARKED_GAMES.has(slug)) return
   const t = tallyFor(slug)
   const info = t.dealt.get(key)
   t.answers.push({ tier: info?.tier ?? 1, correct, wasDue: info?.due ?? false })
