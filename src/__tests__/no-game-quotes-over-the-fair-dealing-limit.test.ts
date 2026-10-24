@@ -55,6 +55,55 @@ const SPEED_SOURCES: Record<string, 'site' | 'public-domain' | 'copyright'> = {
   'Charge of the Light Brigade - Tennyson': 'public-domain',
   'A Tale of Two Cities - Dickens': 'public-domain',
   'A Red, Red Rose - Burns': 'public-domain',
+  // Added with the rebuild for depth, 24 October 2026.
+  'Example speech': 'site',
+  'The Eagle - Tennyson': 'public-domain', // Tennyson died in 1892
+  'Jekyll and Hyde - Stevenson': 'public-domain', // Stevenson died in 1894
+  'Disabled - Owen': 'public-domain', // Owen died in 1918
+  'La Belle Dame sans Merci - Keats': 'public-domain', // Keats died in 1821
+  'A Christmas Carol - Dickens': 'public-domain', // Dickens died in 1870
+  'The Great Gatsby - Fitzgerald': 'public-domain', // Fitzgerald died in 1940: free from 2011
+  'Piano - Lawrence': 'public-domain', // D. H. Lawrence died in 1930: free from 2001
+  'Romeo and Juliet - Shakespeare': 'public-domain', // Shakespeare died in 1616
+  'If - Kipling': 'public-domain', // Kipling died in 1936: free from 2007
+  'Exposure - Owen': 'public-domain', // Owen died in 1918
+  'Frankenstein - Mary Shelley': 'public-domain', // Mary Shelley died in 1851
+  'Sonnet 116 - Shakespeare': 'public-domain', // Shakespeare died in 1616
+  'The Destruction of Sennacherib - Byron': 'public-domain', // Byron died in 1824
+  // Carol Ann Duffy is living: protected until 70 years after her death.
+  'War Photographer - Duffy': 'copyright',
+  'Twelfth Night - Shakespeare': 'public-domain', // Shakespeare died in 1616
+  'Hamlet - Shakespeare': 'public-domain', // Shakespeare died in 1616
+  'Julius Caesar - Shakespeare': 'public-domain', // Shakespeare died in 1616
+  'Animal Farm - Orwell': 'public-domain', // Orwell died in 1950: free from 2021
+  'Remember - Rossetti': 'public-domain', // Christina Rossetti died in 1894
+  'Pride and Prejudice - Austen': 'public-domain', // Austen died in 1817
+  'Composed upon Westminster Bridge - Wordsworth': 'public-domain', // Wordsworth died in 1850
+  'My Last Duchess - Browning': 'public-domain', // Robert Browning died in 1889
+  'Crossing the Bar - Tennyson': 'public-domain', // Tennyson died in 1892
+  'Sonnet 43 - Barrett Browning': 'public-domain', // Elizabeth Barrett Browning died in 1861
+  'Henry V - Shakespeare': 'public-domain', // Shakespeare died in 1616
+  'London - Blake': 'public-domain', // Blake died in 1827
+  'Cousin Kate - Rossetti': 'public-domain', // Christina Rossetti died in 1894
+  'The Merchant of Venice - Shakespeare': 'public-domain', // Shakespeare died in 1616
+  'Great Expectations - Dickens': 'public-domain', // Dickens died in 1870
+  'Jane Eyre - Charlotte Brontë': 'public-domain', // Charlotte Brontë died in 1855
+  'King Lear - Shakespeare': 'public-domain', // Shakespeare died in 1616
+  'The Tempest - Shakespeare': 'public-domain', // Shakespeare died in 1616
+  "A Midsummer Night's Dream - Shakespeare": 'public-domain', // Shakespeare died in 1616
+  'The Prelude - Wordsworth': 'public-domain', // Wordsworth died in 1850
+  'The Soldier - Brooke': 'public-domain', // Rupert Brooke died in 1915
+  'When We Two Parted - Byron': 'public-domain', // Byron died in 1824
+  'She Walks in Beauty - Byron': 'public-domain', // Byron died in 1824
+  'Neutral Tones - Hardy': 'public-domain', // Hardy died in 1928: free from 1999
+  'Othello - Shakespeare': 'public-domain', // Shakespeare died in 1616
+  'Much Ado About Nothing - Shakespeare': 'public-domain', // Shakespeare died in 1616
+  'The War of the Worlds - Wells': 'public-domain', // H. G. Wells died in 1946: free from 2017
+  'The Sign of Four - Conan Doyle': 'public-domain', // Conan Doyle died in 1930: free from 2001
+  "The Farmer's Bride - Mew": 'public-domain', // Charlotte Mew died in 1928: free from 1999
+  'A Poison Tree - Blake': 'public-domain', // Blake died in 1827
+  'The Man He Killed - Hardy': 'public-domain', // Hardy died in 1928: free from 1999
+  'The Schoolboy - Blake': 'public-domain', // Blake died in 1827
 }
 
 /** Quote Detective names texts as the game shows them; the register's titles where they differ. */
