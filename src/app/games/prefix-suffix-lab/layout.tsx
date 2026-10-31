@@ -3,7 +3,7 @@ import type { Metadata } from 'next'
 export const metadata: Metadata = {
   title: 'Prefix and Suffix Lab | KS3 Word Game',
   description:
-    'Build new words with prefixes and suffixes, from un- to -tion. A free word-building game for KS3 English vocabulary and spelling revision.',
+    'Build words with prefixes and suffixes, spell them where they join, and say what an affix does in real lines. A free word-building game for KS3 English.',
   alternates: { canonical: '/games/prefix-suffix-lab' },
 }
 

@@ -1276,7 +1276,7 @@ const KS3_GAMES: GameDef[] = [
   mkGame(
     'word-class-sorter',
     'Word Class Sorter',
-    'Noun, verb, adjective, adverb? Context decides.',
+    'Noun, verb, adjective, adverb? Context decides, and at the top level phrases and clauses too.',
     <Layers className="size-6" />,
     'Medium',
     'text-violet-400',
@@ -1321,7 +1321,7 @@ const KS3_GAMES: GameDef[] = [
   mkGame(
     'prefix-suffix-lab',
     'Prefix & Suffix Lab',
-    'Build words with prefixes and suffixes.',
+    'Build words with prefixes and suffixes, spell them where they join, and say what an affix does in a real line.',
     <Zap className="size-6" />,
     'Medium',
     'text-emerald-400',

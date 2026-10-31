@@ -16,23 +16,53 @@ import { BANK, type LabSeed } from '@/data/games/banks/prefix-suffix-lab'
 // ─── Data ──────────────────────────────────────────────────────────────────────
 // The questions are in src/data/games/banks/prefix-suffix-lab.ts (moved there on
 // 16 October 2026), and the explanation for each in
-// src/data/games/explanations/prefix-suffix-lab.ts. A question stores only what
-// is fixed; its options are generated below, so the answer position is always
-// randomised.
+// src/data/games/explanations/prefix-suffix-lab.ts. A question stores its answer
+// and its own wrong options; they are shuffled below, so the answer position is
+// always randomised.
 
-/** A question as it is dealt: the fixed seed, plus the four affixes offered. */
+/** A question as it is dealt: the fixed seed, plus its options in a random order. */
 interface LabItem extends LabSeed {
-  /** Four affix choices */
   options: string[]
 }
 
-const PREFIX_OPTIONS = ['un-', 'dis-', 'mis-', 're-', 'pre-', 'anti-', 'sub-', 'inter-']
-const SUFFIX_OPTIONS = ['-ful', '-less', '-ness', '-tion', '-able', '-ly', '-ment', '-ous']
-
-// Pick 3 distractors + the answer, shuffled, from the relevant affix pool.
-function buildOptions(pool: string[], answer: string): string[] {
-  const distractors = shuffle(pool.filter((o) => o !== answer)).slice(0, 3)
+/**
+ * The answer and the question's own wrong options, shuffled. Until 24 October
+ * 2026 three wrong affixes were dealt at random from a pool of eight, so a
+ * question could be shown with no near neighbour at all ("make an ADVERB"
+ * offered one adverb suffix); each question now carries its own (`wrong`).
+ */
+function buildOptions(q: LabSeed): string[] {
+  const answer = q.answer
+  const distractors = [...q.wrong]
   return shuffle([answer, ...distractors])
+}
+
+/**
+ * A real line keeps the held edition's italics, which src/data/full-texts
+ * marks with single underscores ("tempt _me_"), so the line is the text word
+ * for word (a-game-real-line-is-the-held-text.test.ts). They are shown as
+ * italics, as the book prints them.
+ */
+function italics(text: string) {
+  return text
+    .split(/(_[^_]+_)/)
+    .map((part, i) => (/^_[^_]+_$/.test(part) ? <em key={i}>{part.slice(1, -1)}</em> : part))
+}
+
+/** A gap in a sentence to complete, drawn as a line. */
+function renderSentence(sentence: string) {
+  const [before, after] = sentence.split('___')
+  if (after === undefined) return italics(sentence)
+  return (
+    <>
+      {italics(before)}
+      <span
+        aria-label="gap"
+        className="mx-1 inline-block w-16 border-b-2 border-primary/60 align-baseline"
+      />
+      {italics(after)}
+    </>
+  )
 }
 
 const ROUND_SIZE = 15
@@ -58,15 +88,7 @@ function buildRound(deal: (size: number, o?: RoundOptions<LabSeed>) => LabSeed[]
   const half = Math.ceil(ROUND_SIZE / 2)
   return deal(ROUND_SIZE, {
     quota: { of: (s) => s.mode, counts: { prefix: half, suffix: ROUND_SIZE - half } },
-  }).map((s) => ({
-    mode: s.mode,
-    root: s.root,
-    target: s.target,
-    options: buildOptions(s.mode === 'prefix' ? PREFIX_OPTIONS : SUFFIX_OPTIONS, s.answer),
-    answer: s.answer,
-    resultingWord: s.resultingWord,
-    meaningNote: s.meaningNote,
-  }))
+  }).map((s) => ({ ...s, options: buildOptions(s) }))
 }
 
 // ─── Component ─────────────────────────────────────────────────────────────────
@@ -110,8 +132,9 @@ export default function PrefixSuffixLabPage() {
    * answers too shallow; each now comes with the affix's meaning, how it
    * changes this word and another word that uses it
    * (src/data/games/explanations/prefix-suffix-lab.ts), and a student cannot
-   * read that in 2.1 seconds. The four affixes are dealt at random from a pool
-   * of eight, so the wrong pick is not recorded: there is no fixed option list.
+   * read that in 2.1 seconds. The wrong pick is not recorded, as it never was;
+   * since 24 October 2026 each question has fixed options, so the explanation
+   * panel can say why the one chosen does not fit.
    */
   const handleChoose = useCallback(
     (option: string) => {
@@ -165,7 +188,7 @@ export default function PrefixSuffixLabPage() {
           gameId="prefix-suffix-lab"
           audience="ks3"
           title="Prefix & Suffix Lab"
-          description="Build new words by adding the right prefix or suffix. Read the root and the goal, then pick the affix that makes the word."
+          description="Build words with prefixes and suffixes, spell them where the parts join, and read what an affix does in real lines from the books you study."
           difficulty="Crossover"
           score={score}
           maxScore={totalAnswered || items.length || ROUND_SIZE}
@@ -196,34 +219,68 @@ export default function PrefixSuffixLabPage() {
                 </div>
               </div>
 
-              {/* Prompt card */}
+              {/* Prompt card: a root and a goal, or (since 24 October 2026) a
+                  sentence to complete or a line to read, with the question */}
               <div className="rounded-xl border border-border bg-card p-6 text-center space-y-4">
                 <div className="inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-wider text-primary">
                   <FlaskConical className="size-4" />
-                  {current.mode === 'prefix' ? 'Add a prefix' : 'Add a suffix'}
+                  {current.sentence
+                    ? current.sentence.includes('___')
+                      ? 'Complete the sentence'
+                      : 'Read the line'
+                    : current.mode === 'prefix'
+                      ? 'Add a prefix'
+                      : 'Add a suffix'}
                 </div>
 
-                <div className="text-3xl font-bold text-foreground">
-                  {current.mode === 'prefix' ? (
-                    <>
-                      <span className="text-muted-foreground">_ _ +</span>{' '}
-                      <span>{current.root}</span>
-                    </>
-                  ) : (
-                    <>
-                      <span>{current.root}</span>{' '}
-                      <span className="text-muted-foreground">+ _ _</span>
-                    </>
-                  )}
-                </div>
+                {current.sentence ? (
+                  <>
+                    <p className="text-xl leading-relaxed text-foreground whitespace-pre-line">
+                      {renderSentence(current.sentence)}
+                    </p>
+                    {current.source && (
+                      <p className="text-xs text-muted-foreground">{current.source}</p>
+                    )}
+                    <p className="text-sm font-medium text-foreground">{current.target}</p>
+                  </>
+                ) : (
+                  <>
+                    <div className="text-3xl font-bold text-foreground">
+                      {current.mode === 'prefix' ? (
+                        <>
+                          <span className="text-muted-foreground">_ _ +</span>{' '}
+                          <span>{current.root}</span>
+                        </>
+                      ) : (
+                        <>
+                          <span>{current.root}</span>{' '}
+                          <span className="text-muted-foreground">+ _ _</span>
+                        </>
+                      )}
+                    </div>
 
-                <p className="text-sm text-muted-foreground">
-                  Goal: <span className="font-medium text-foreground">{current.target}</span>
-                </p>
+                    <p className="text-sm text-muted-foreground">
+                      Goal: <span className="font-medium text-foreground">{current.target}</span>
+                    </p>
+                  </>
+                )}
               </div>
 
-              {/* Options */}
-              <div className="grid grid-cols-2 gap-3 sm:grid-cols-4">
+              {/* Options: a reading is a sentence long, so it gets a row of its own.
+                  A whole word ("constructively") does not fit a quarter, or on a
+                  360px phone a half, of the card at this size and cannot wrap, so
+                  words of nine letters or more stack on a phone and pair from sm
+                  up (checked 31 October 2026); affixes keep four across. */}
+              <div
+                className={cn(
+                  'grid gap-3',
+                  current.options.some((o) => o.length > 18)
+                    ? 'grid-cols-1'
+                    : current.options.some((o) => o.length > 8)
+                      ? 'grid-cols-1 sm:grid-cols-2'
+                      : 'grid-cols-2 sm:grid-cols-4',
+                )}
+              >
                 {current.options.map((option) => {
                   const isAnswer = option === current.answer
                   const isPicked = selected === option
@@ -233,7 +290,8 @@ export default function PrefixSuffixLabPage() {
                       onClick={() => handleChoose(option)}
                       disabled={!!feedback}
                       className={cn(
-                        'rounded-lg border px-4 py-4 text-lg font-semibold transition-all',
+                        'rounded-lg border px-4 py-4 font-semibold transition-all',
+                        option.length > 18 ? 'text-start text-sm' : 'text-lg',
                         'focus:outline-none focus:ring-2 focus:ring-primary/20',
                         !feedback &&
                           'border-border bg-card text-foreground hover:border-primary hover:bg-accent',
@@ -268,7 +326,22 @@ export default function PrefixSuffixLabPage() {
                     )}
                   >
                     <div className="flex items-center justify-center gap-2 font-semibold">
-                      {feedback === 'correct' ? (
+                      {current.sentence ? (
+                        feedback === 'correct' ? (
+                          <>
+                            <CheckCircle className="size-4" /> Brilliant. That is right.
+                          </>
+                        ) : current.sentence.includes('___') ? (
+                          <>
+                            <XCircle className="size-4" /> Not quite. The word is{' '}
+                            <span className="font-bold">{current.answer}</span>
+                          </>
+                        ) : (
+                          <>
+                            <XCircle className="size-4" /> Not quite. The best answer is in green.
+                          </>
+                        )
+                      ) : feedback === 'correct' ? (
                         <>
                           <CheckCircle className="size-4" /> Brilliant. You built{' '}
                           <span className="font-bold">{current.resultingWord}</span>
@@ -286,6 +359,7 @@ export default function PrefixSuffixLabPage() {
                     game="prefix-suffix-lab"
                     question={BANK.key(current)}
                     correct={feedback === 'correct'}
+                    chosen={selected}
                   />
                   <div className="mt-4 flex justify-end">
                     <Button onClick={handleNext} autoFocus>

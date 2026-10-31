@@ -11,13 +11,7 @@ import { getBoardConfig } from '@/lib/board/board-store'
 import { AnswerExplanation } from '@/components/games/AnswerExplanation'
 import { useGameRound } from '@/components/games/game-round'
 import { useDealer } from '@/lib/games/start-round'
-import {
-  BANK,
-  CLASS_LABEL,
-  distractorsFor,
-  type Question,
-  type WordClass,
-} from '@/data/games/banks/word-class-sorter'
+import { BANK, type Question } from '@/data/games/banks/word-class-sorter'
 
 // ─── Data ──────────────────────────────────────────────────────────────────────
 // The sentences are in src/data/games/banks/word-class-sorter.ts (moved there on
@@ -37,21 +31,47 @@ function shuffle<T>(arr: T[]): T[] {
 
 const ROUND_LENGTH = 15
 
-// Build 4-6 options: always include the correct class plus distractors drawn at
-// random from the bank's pool for this question (every other class, less any the
-// question withholds: see distractorsFor in the bank).
-function buildOptions(question: Question): WordClass[] {
-  const correct = question.wordClass
-  const optionCount = 4 + Math.floor(Math.random() * 3) // 4, 5 or 6
-  const distractors = shuffle(distractorsFor(question)).slice(0, optionCount - 1)
+/** A question as it is shown: its options in a random order, and the right one. */
+interface View {
+  options: string[]
+  answer: string
+}
+
+/**
+ * The right option and the question's own wrong ones, shuffled. Until 24
+ * October 2026 the page offered the right class and three to five others drawn
+ * at random from all eight, so a question was often shown with no near
+ * neighbour at all ("Conjunction" beside "fox"); each question now carries the
+ * classes, or for a phrase or clause the labels, that a student is likely to
+ * confuse with its answer (`wrong` in the bank).
+ */
+function buildOptions(question: Question): string[] {
+  const correct = BANK.answer(question)
+  const distractors = [...question.wrong]
   return shuffle([correct, ...distractors])
 }
 
-// Highlight the target word inside the sentence (first whole-word match)
+const viewOf = (question: Question | undefined): View =>
+  question
+    ? { options: buildOptions(question), answer: BANK.answer(question) }
+    : { options: [], answer: '' }
+
+/** The question asked: a word's class, a group of words, or the bank's own question. */
+function promptOf(question: Question): string {
+  if (question.prompt) return question.prompt
+  return question.wordClass
+    ? 'What word class is the highlighted word?'
+    : 'What is the highlighted group of words?'
+}
+
+// Highlight the target inside the sentence: its first match as whole words, so
+// that "as" is never found inside "was" (24 October 2026; until then the first
+// match anywhere, which no question then needed).
 function renderSentence(sentence: string, target: string) {
-  const lower = sentence.toLowerCase()
-  const idx = lower.indexOf(target.toLowerCase())
-  if (idx === -1) return <span>{sentence}</span>
+  const escaped = target.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')
+  const found = new RegExp(`(?<![\\p{L}\\p{N}])${escaped}(?![\\p{L}\\p{N}])`, 'iu').exec(sentence)
+  if (!found) return <span>{sentence}</span>
+  const idx = found.index
   const before = sentence.slice(0, idx)
   const match = sentence.slice(idx, idx + target.length)
   const after = sentence.slice(idx + target.length)
@@ -74,11 +94,11 @@ export default function WordClassSorterPage() {
 
   const [gameState, setGameState] = useState<GameState>('idle')
   const [questions, setQuestions] = useState<Question[]>([])
-  const [options, setOptions] = useState<WordClass[]>([])
+  const [view, setView] = useState<View>(viewOf(undefined))
   const [qIdx, setQIdx] = useState(0)
   const [score, setScore] = useState(0)
   const [totalAnswered, setTotalAnswered] = useState(0)
-  const [selected, setSelected] = useState<WordClass | null>(null)
+  const [selected, setSelected] = useState<string | null>(null)
   const [feedback, setFeedback] = useState<'correct' | 'wrong' | null>(null)
   const round = useGameRound('word-class-sorter')
   const deal = useDealer(BANK)
@@ -88,7 +108,7 @@ export default function WordClassSorterPage() {
   const handleStart = useCallback(() => {
     const picked = deal(ROUND_LENGTH)
     setQuestions(picked)
-    setOptions(picked.length > 0 ? buildOptions(picked[0]) : [])
+    setView(viewOf(picked[0]))
     setQIdx(0)
     setScore(0)
     setTotalAnswered(0)
@@ -112,9 +132,9 @@ export default function WordClassSorterPage() {
    * which cannot be read in 2.2 seconds.
    */
   const handleAnswer = useCallback(
-    (choice: WordClass) => {
+    (choice: string) => {
       if (!currentQuestion || feedback) return
-      const isCorrect = choice === currentQuestion.wordClass
+      const isCorrect = choice === view.answer
       setSelected(choice)
       setTotalAnswered((t) => t + 1)
       if (isCorrect) {
@@ -126,11 +146,11 @@ export default function WordClassSorterPage() {
       round.record({
         question: BANK.key(currentQuestion),
         correct: isCorrect,
-        tag: currentQuestion.wordClass,
-        chose: isCorrect ? undefined : CLASS_LABEL[choice],
+        tag: BANK.tag?.(currentQuestion),
+        chose: isCorrect ? undefined : choice,
       })
     },
-    [currentQuestion, feedback, round],
+    [currentQuestion, feedback, round, view.answer],
   )
 
   const handleNext = useCallback(() => {
@@ -140,7 +160,7 @@ export default function WordClassSorterPage() {
     }
     const nextIdx = qIdx + 1
     setQIdx(nextIdx)
-    setOptions(buildOptions(questions[nextIdx]))
+    setView(viewOf(questions[nextIdx]))
     setSelected(null)
     setFeedback(null)
   }, [qIdx, questions])
@@ -166,7 +186,7 @@ export default function WordClassSorterPage() {
           gameId="word-class-sorter"
           audience="ks3"
           title="Word Class Sorter"
-          description="Read the sentence and decide the word class of the highlighted word. Remember: context changes the answer."
+          description="Read the sentence and decide the word class of the highlighted word, or what the highlighted group of words is and what it does. Remember: context changes the answer."
           difficulty="Crossover"
           score={score}
           maxScore={totalAnswered || questions.length || ROUND_LENGTH}
@@ -188,17 +208,26 @@ export default function WordClassSorterPage() {
               {/* Sentence card */}
               <div className="rounded-xl border border-border bg-card p-6 text-center space-y-3">
                 <p className="text-xs uppercase tracking-wider text-muted-foreground">
-                  What word class is the highlighted word?
+                  {promptOf(currentQuestion)}
                 </p>
-                <p className="text-xl leading-relaxed text-foreground">
+                <p className="text-xl leading-relaxed text-foreground whitespace-pre-line">
                   {renderSentence(currentQuestion.sentence, currentQuestion.targetWord)}
                 </p>
+                {currentQuestion.source && (
+                  <p className="text-xs text-muted-foreground">{currentQuestion.source}</p>
+                )}
               </div>
 
               {/* Options */}
-              <div className="grid grid-cols-2 gap-3 sm:grid-cols-3">
-                {options.map((opt) => {
-                  const isAnswer = opt === currentQuestion.wordClass
+              <div
+                className={cn(
+                  'grid gap-3',
+                  // Four options: two by two, or one column for a clause's job.
+                  view.options.some((o) => o.length > 22) ? 'grid-cols-1' : 'grid-cols-2',
+                )}
+              >
+                {view.options.map((opt) => {
+                  const isAnswer = opt === view.answer
                   const isPicked = opt === selected
                   return (
                     <button
@@ -207,6 +236,7 @@ export default function WordClassSorterPage() {
                       disabled={!!feedback}
                       className={cn(
                         'rounded-lg border px-4 py-3 text-sm font-semibold transition-all outline-none',
+                        opt.length > 22 && 'text-start',
                         'focus:ring-2 focus:ring-primary/20',
                         !feedback &&
                           'border-border bg-card text-foreground hover:border-primary hover:bg-accent active:translate-y-px',
@@ -223,7 +253,7 @@ export default function WordClassSorterPage() {
                           'border-border bg-card text-muted-foreground opacity-60',
                       )}
                     >
-                      {CLASS_LABEL[opt]}
+                      {opt}
                     </button>
                   )
                 })}
@@ -247,12 +277,15 @@ export default function WordClassSorterPage() {
                         </>
                       ) : (
                         <>
-                          <XCircle className="size-4" /> Not quite. It is{' '}
-                          {/^[aeiou]/i.test(CLASS_LABEL[currentQuestion.wordClass]) ? 'an' : 'a'}{' '}
-                          <span className="font-bold">
-                            {CLASS_LABEL[currentQuestion.wordClass].toLowerCase()}
-                          </span>
-                          .
+                          <XCircle className="size-4" />{' '}
+                          {currentQuestion.prompt ? (
+                            <>Not quite. The best answer is in green.</>
+                          ) : (
+                            <>
+                              Not quite. It is {/^[aeiou]/i.test(view.answer) ? 'an' : 'a'}{' '}
+                              <span className="font-bold">{view.answer.toLowerCase()}</span>.
+                            </>
+                          )}
                         </>
                       )}
                     </div>
@@ -261,7 +294,7 @@ export default function WordClassSorterPage() {
                     game="word-class-sorter"
                     question={BANK.key(currentQuestion)}
                     correct={feedback === 'correct'}
-                    chosen={selected ? CLASS_LABEL[selected] : null}
+                    chosen={selected}
                   />
                   <div className="mt-4 flex justify-end">
                     <Button onClick={handleNext} autoFocus>
