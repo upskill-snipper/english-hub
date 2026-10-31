@@ -17,8 +17,14 @@
 //
 // The same, and then updates the Prisma `Subscription` rows to match Stripe.
 // It never writes to `profiles` (reported only), never creates a row for an
-// account that has no Prisma `User`, and never touches a customer who holds
-// two live subscriptions (reported as DUPLICATE for a person to resolve).
+// account that has no Prisma `User`, never touches a customer who holds
+// two live subscriptions (reported as DUPLICATE for a person to resolve), and
+// never writes an IELTS-only subscription onto a row (see IELTS below).
+//
+// `--write` needs both IELTS price ids, STRIPE_PRICE_IELTS_MONTHLY and
+// STRIPE_PRICE_IELTS_ANNUAL, in the environment, and refuses to start without
+// them. .env.local does not mirror Vercel, so copy them from the Vercel
+// project if they are missing there.
 //
 // Other flags:
 //   --customer=cus_xxx   one Stripe customer only
@@ -53,6 +59,25 @@
 // `User.supabaseUserId`, then by the legacy primary-key form in which
 // `User.id` IS the auth uuid. This script never creates a User.
 //
+// IELTS. An IELTS-only subscription (every recurring price an IELTS price)
+// never takes the row, as in the webhook since 24 October 2026 (b24bfd2d9,
+// `recordSubscriptionRow`): the row records the MAIN entitlement, mobile
+// reads `pro` from it, the trial-expiry cron finds a no-card trial only by
+// it, and IELTS access is `profiles.ielts_status`. Until 31 October 2026 this
+// script chose any live subscription, so `--write` put the IELTS subscription
+// back on the row in exactly the cases b24bfd2d9 closed: over a no-card trial
+// row (the cron, which selects rows with no Stripe id, never ended that trial,
+// so its 'pro' stayed for good), as a new ACTIVE row for an IELTS-only payer
+// (mobile `pro: true`), and over a cancelled main plan's row while IELTS was
+// live. The webhook never corrected such a row afterwards, because it now
+// skips IELTS. So IELTS-only subscriptions are set aside before the relevant
+// one is chosen: a customer with nothing else is IELTS_ONLY_SKIPPED, a Pro and
+// IELTS holder is no longer a DUPLICATE, and a row that already holds an
+// IELTS-only subscription is ROW_HOLDS_IELTS and left for a person, since what
+// it should hold instead (a main plan, the trial it replaced, or nothing) is
+// not something Stripe can say. The test is `isIeltsOnly` below, a copy of the
+// guard module's, pinned to it by reconcile-script-readers-agree.test.ts.
+//
 // A row that belongs to a store purchase (platform IOS or ANDROID) is reported
 // as MOBILE_ROW and never written: one row per person cannot hold a store
 // purchase and a Stripe subscription at once (an open item in docs/system/06).
@@ -71,9 +96,10 @@
 //
 // WHAT IS COMPARED
 // ----------------
-// For each customer, the relevant Stripe subscription is the live one
-// (active, trialing, past_due or unpaid); if none is live, the most recently
-// created. Against the Prisma row for that person:
+// For each customer, IELTS-only subscriptions are set aside, and the relevant
+// Stripe subscription among the rest is the live one (active, trialing,
+// past_due or unpaid); if none is live, the most recently created. Against
+// the Prisma row for that person:
 //
 //   stripeSubscriptionId  the id
 //   status                Stripe's status mapped as the webhook maps it
@@ -83,16 +109,18 @@
 //   currentPeriodEnd
 //   cancelledAt           ended_at on a cancelled subscription
 //   paymentCount          the number of PAID invoices on the subscription that
-//                         took money (amount_paid > 0)
+//                         took money (amount_paid > 0); never an IELTS plan's,
+//                         as invoice.paid no longer counts those on the row
 //
 // `cancel_at_period_end` has no column, so it is printed, not compared. The
 // profile's subscription_status is printed beside what the Stripe status
 // implies for the web gate, and never written: that field is one per person
 // and the webhook's to keep.
 //
-// The two helper rules duplicated below (the status map and the period
-// readers) MUST agree with src/lib/billing/subscription-sync.ts and
-// src/lib/billing/stripe-shapes.ts. They are duplicated because this is a
+// The helper rules duplicated below (the status map, the period readers, the
+// status sets and isIeltsOnly) MUST agree with
+// src/lib/billing/subscription-sync.ts, src/lib/billing/stripe-shapes.ts and
+// src/lib/billing/duplicate-subscription-guard.ts. They are duplicated because this is a
 // plain .mjs script and those are TypeScript behind the `@/` alias. If you
 // change one, change the other: src/__tests__/reconcile-script-readers-agree.test.ts
 // lifts the copies out of this file and fails when they and the originals
@@ -260,6 +288,39 @@ function planTier(sub) {
     }
   }
   return { isTeacherPlan: sawStudent ? false : null, teacherPriceId: null }
+}
+
+// ── IELTS: a standalone product that never takes the row ────────────────────
+
+const IELTS_PRICE_IDS = new Set(envIds(['STRIPE_PRICE_IELTS_MONTHLY', 'STRIPE_PRICE_IELTS_ANNUAL']))
+const IELTS_PRICES_KNOWN = IELTS_PRICE_IDS.size === 2
+
+/** True when a Stripe price id is one of the configured IELTS prices. */
+function isIeltsPriceId(priceId) {
+  return typeof priceId === 'string' && priceId.length > 0 && IELTS_PRICE_IDS.has(priceId)
+}
+
+/**
+ * Same as isIeltsOnly in duplicate-subscription-guard.ts: every recurring
+ * price is an IELTS price, and a subscription with no recurring price is not
+ * IELTS-only.
+ */
+function isIeltsOnly(subscription, isIeltsPriceId) {
+  const recurring = (subscription.items?.data ?? []).filter((item) => item.price?.recurring)
+  if (recurring.length === 0) return false
+  return recurring.every((item) => isIeltsPriceId(item.price?.id))
+}
+
+// Without both ids an IELTS subscription reads as a main plan, and `--write`
+// would put it on the row (see IELTS in the header). So a write refuses to
+// start; a dry run says, at the top of its report, that it cannot tell.
+if (WRITE && !IELTS_PRICES_KNOWN) {
+  console.error(
+    '[reconcile] --write needs STRIPE_PRICE_IELTS_MONTHLY and STRIPE_PRICE_IELTS_ANNUAL. ' +
+      'Without both, an IELTS-only subscription cannot be told from a main plan and would be ' +
+      'written onto the Subscription row. Copy them from the Vercel project and run again.',
+  )
+  process.exit(1)
 }
 
 function planFromInterval(sub) {
@@ -475,6 +536,8 @@ async function main() {
     noPrismaUser: 0,
     mobileRow: 0,
     unlinkedKept: 0,
+    ieltsOnlySkipped: 0,
+    rowHoldsIelts: 0,
     written: 0,
     writeFailed: 0,
   }
@@ -503,7 +566,53 @@ async function main() {
       continue
     }
 
-    const { duplicate, chosen, live } = chooseRelevant(subs)
+    // IELTS-only subscriptions are set aside first (see IELTS in the header).
+    const summary = (s) => ({ id: s.id, status: s.status, created: iso(s.created) })
+    const ieltsOnlySubs = subs.filter((s) => isIeltsOnly(s, isIeltsPriceId))
+    const mainSubs = subs.filter((s) => !isIeltsOnly(s, isIeltsPriceId))
+
+    // A row that already holds an IELTS-only subscription was written before
+    // 24 October 2026 (or by this script before 31 October). It is reported,
+    // never written: the main plan beside it may be live or long dead, and the
+    // row may once have been a no-card trial, so what it should hold is a
+    // person's decision.
+    const rowSub = row?.stripeSubscriptionId
+      ? (subs.find((s) => s.id === row.stripeSubscriptionId) ?? null)
+      : null
+    if (rowSub && isIeltsOnly(rowSub, isIeltsPriceId)) {
+      counts.rowHoldsIelts++
+      findings.push({
+        ...base,
+        state: 'ROW_HOLDS_IELTS',
+        rowStatus: row.status,
+        ieltsSubscription: summary(rowSub),
+        mainSubscriptions: mainSubs.map(summary),
+        diffs: [],
+        detail:
+          `The Subscription row holds ${rowSub.id}, an IELTS-only subscription (${rowSub.status}), ` +
+          'which must never take the row: mobile reads it as full Pro and the trial-expiry cron ' +
+          'cannot see a trial behind it. Nothing written. A person decides what it should hold: the ' +
+          "customer's main plan (replaying that plan's latest event through the webhook writes it), " +
+          'the signup trial it replaced, or no row.',
+      })
+      continue
+    }
+
+    if (mainSubs.length === 0) {
+      counts.ieltsOnlySkipped++
+      findings.push({
+        ...base,
+        state: 'IELTS_ONLY_SKIPPED',
+        ieltsSubscriptions: ieltsOnlySubs.map(summary),
+        diffs: [],
+        detail:
+          'Every Stripe subscription on this customer is IELTS-only. Nothing written: IELTS access ' +
+          'is profiles.ielts_status, and an IELTS subscription never takes the Subscription row.',
+      })
+      continue
+    }
+
+    const { duplicate, chosen, live } = chooseRelevant(mainSubs)
     if (duplicate) {
       counts.duplicate++
       findings.push({
@@ -641,6 +750,7 @@ async function main() {
     generatedAt: startedAt.toISOString(),
     mode: WRITE ? 'WRITE' : 'DRY RUN',
     stripeKeyMode: KEY_MODE,
+    ieltsPricesKnown: IELTS_PRICES_KNOWN,
     stripeCallsUsed: ['subscriptions.list', 'invoices.list'],
     wroteToStripe: false,
     wroteToProfiles: false,
@@ -660,6 +770,13 @@ async function main() {
   console.log(`Generated:        ${report.generatedAt}`)
   console.log(`Stripe key:       ${KEY_MODE}`)
   console.log(`Stripe calls:     ${report.stripeCallsUsed.join(', ')} (read only)`)
+  if (!IELTS_PRICES_KNOWN) {
+    console.log(
+      'IELTS prices:     NOT SET. STRIPE_PRICE_IELTS_MONTHLY and _ANNUAL are needed to tell an ' +
+        'IELTS-only subscription from a main plan; until they are, an IELTS subscription below ' +
+        'reads as a main plan and this report is wrong for those customers.',
+    )
+  }
   console.log(
     `Customers:        ${counts.customers}${truncated ? ` (stopped at --max=${MAX_CUSTOMERS})` : ''}`,
   )
@@ -669,6 +786,8 @@ async function main() {
   console.log(`  no Prisma user: ${counts.noPrismaUser}`)
   console.log(`  mobile row:     ${counts.mobileRow}`)
   console.log(`  unlinked kept:  ${counts.unlinkedKept}`)
+  console.log(`  IELTS only:     ${counts.ieltsOnlySkipped}`)
+  console.log(`  row has IELTS:  ${counts.rowHoldsIelts}`)
   console.log(`  duplicate:      ${counts.duplicate}`)
   console.log(`  no Stripe sub:  ${counts.noStripeSubscription}`)
   if (WRITE) console.log(`  written:        ${counts.written} (failed: ${counts.writeFailed})`)
@@ -697,6 +816,13 @@ async function main() {
         console.log(`    ${pad(d.field, 20)} ${pad(d.db, 28)} ${d.stripe ?? '-'}`)
       }
     }
+    for (const s of f.ieltsSubscriptions ?? [])
+      console.log(`    IELTS: ${s.id} ${s.status} created=${s.created}`)
+    if (f.ieltsSubscription) {
+      console.log(`    row holds IELTS: ${f.ieltsSubscription.id} ${f.ieltsSubscription.status}`)
+      for (const s of f.mainSubscriptions ?? [])
+        console.log(`    main plan: ${s.id} ${s.status} created=${s.created}`)
+    }
     if (f.liveSubscriptions) {
       for (const s of f.liveSubscriptions)
         console.log(`    live: ${s.id} ${s.status} created=${s.created}`)
@@ -708,6 +834,8 @@ async function main() {
       f.state !== 'NO_PRISMA_USER' &&
       f.state !== 'MOBILE_ROW' &&
       f.state !== 'UNLINKED_ROW_KEPT' &&
+      f.state !== 'IELTS_ONLY_SKIPPED' &&
+      f.state !== 'ROW_HOLDS_IELTS' &&
       f.state !== 'NO_STRIPE_SUBSCRIPTION'
     ) {
       console.log(

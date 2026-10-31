@@ -35,7 +35,7 @@
 //
 // HOW TO READ THE OUTPUT
 // ----------------------
-// Each finding is one account in one of four states:
+// Each finding is one account in one of five states:
 //
 //   NO_PRISMA_USER       profiles says this account is paying; there is no
 //                        Prisma `User` row at all, so there is nowhere for a
@@ -50,7 +50,19 @@
 //                        CANCELLED. Usually a write that landed in one system
 //                        and not the other.
 //
+//   IELTS_ONLY_NO_ROW    an IELTS payer (ielts_status 'active') whose
+//                        subscription_status claims nothing, with no Prisma
+//                        User or no Subscription row. That is correct, not a
+//                        lost record: since 24 October 2026 an IELTS-only
+//                        subscription never takes the row (IELTS access is
+//                        ielts_status). Reported only in the counts.
+//
 //   CONSISTENT           the two agree. Reported only in the counts.
+//
+// Until 31 October 2026 every IELTS-only payer was reported as
+// NO_SUBSCRIPTION_ROW, "read as a free user", which sent the operator to
+// scripts/stripe-reconcile-subscriptions.mjs --write; that script then wrote
+// the IELTS subscription onto a row (it no longer does).
 //
 // PRIVACY
 // -------
@@ -258,12 +270,19 @@ async function main() {
     NO_PRISMA_USER: 0,
     NO_SUBSCRIPTION_ROW: 0,
     STATUS_DISAGREES: 0,
+    IELTS_ONLY_NO_ROW: 0,
     CONSISTENT: 0,
   }
   const findings = []
 
   for (const profile of profiles) {
     const { user, matchedOn } = await findPrismaUser(profile)
+
+    // Pulled in only by ielts_status: nothing says this person holds the main
+    // entitlement, so the row has nothing to record (see IELTS_ONLY_NO_ROW).
+    const ieltsOnlyPayer =
+      !PAYING_STATUSES.includes(profile.subscription_status) &&
+      profile.ielts_status === IELTS_ACTIVE
 
     const base = {
       supabaseUserId: profile.id,
@@ -274,6 +293,18 @@ async function main() {
       stripeCustomerId: profile.stripe_customer_id ?? null,
       prismaUserId: user?.id ?? null,
       prismaUserMatchedOn: matchedOn,
+    }
+
+    if (!user && ieltsOnlyPayer) {
+      counts.IELTS_ONLY_NO_ROW++
+      if (INCLUDE_CONSISTENT) {
+        findings.push({
+          ...base,
+          state: 'IELTS_ONLY_NO_ROW',
+          detail: 'An IELTS-only payer needs no Subscription row; IELTS access is ielts_status.',
+        })
+      }
+      continue
     }
 
     if (!user) {
@@ -304,6 +335,18 @@ async function main() {
         grandfatheredPriceMinor: true,
       },
     })
+
+    if (!sub && ieltsOnlyPayer) {
+      counts.IELTS_ONLY_NO_ROW++
+      if (INCLUDE_CONSISTENT) {
+        findings.push({
+          ...base,
+          state: 'IELTS_ONLY_NO_ROW',
+          detail: 'An IELTS-only payer needs no Subscription row; IELTS access is ielts_status.',
+        })
+      }
+      continue
+    }
 
     if (!sub) {
       counts.NO_SUBSCRIPTION_ROW++
@@ -380,6 +423,9 @@ async function main() {
   console.log(`  No Prisma User:     ${counts.NO_PRISMA_USER}`)
   console.log(`  No Subscription:    ${counts.NO_SUBSCRIPTION_ROW}`)
   console.log(`  Status disagrees:   ${counts.STATUS_DISAGREES}`)
+  console.log(
+    `  IELTS only, no row: ${counts.IELTS_ONLY_NO_ROW} (correct: IELTS never takes the row)`,
+  )
   console.log(`  Consistent:         ${counts.CONSISTENT}`)
   console.log('')
 
@@ -393,7 +439,7 @@ async function main() {
     )
     console.log('')
     for (const f of findings) {
-      if (f.state === 'CONSISTENT') continue
+      if (f.state === 'CONSISTENT' || f.state === 'IELTS_ONLY_NO_ROW') continue
       console.log(`- ${f.state}  ${f.supabaseUserId}  ${f.email ?? '(no email on profile)'}`)
       console.log(
         `    profiles: subscription_status=${f.profileSubscriptionStatus ?? 'null'}` +

@@ -7,6 +7,7 @@ import { mapStripeToPrismaStatus } from '@/lib/billing/subscription-sync'
 import {
   LIVE_SUBSCRIPTION_STATUSES,
   WEB_ACCESS_STATUSES,
+  isIeltsOnly,
 } from '@/lib/billing/duplicate-subscription-guard'
 
 /**
@@ -126,6 +127,32 @@ describe('scripts/stripe-reconcile-subscriptions.mjs reads as the app reads', ()
   it("the live and web-access status sets are the guard module's", () => {
     expect(setLiteral(RECONCILE, 'LIVE_STATUSES')).toEqual([...LIVE_SUBSCRIPTION_STATUSES].sort())
     expect(setLiteral(RECONCILE, 'WEB_ACCESS_STATUSES')).toEqual([...WEB_ACCESS_STATUSES].sort())
+  })
+
+  // 31 October 2026. The script chose any live subscription, so `--write`
+  // put an IELTS-only one back on the row the webhook keeps it off. Its copy
+  // of the test must be the guard module's, or the two disagree silently.
+  const scriptIeltsOnly = lift<(sub: unknown, isIelts: (id: unknown) => boolean) => boolean>(
+    RECONCILE,
+    'isIeltsOnly',
+  )
+  const isIelts = (id: unknown) => id === 'price_ielts_m' || id === 'price_ielts_a'
+  const item = (id: string, recurring = true) => ({
+    price: { id, ...(recurring ? { recurring: { interval: 'month' } } : {}) },
+  })
+  it.each<[string, unknown]>([
+    ['one IELTS price', { items: { data: [item('price_ielts_m')] } }],
+    ['both IELTS prices', { items: { data: [item('price_ielts_m'), item('price_ielts_a')] } }],
+    ['IELTS and a main price', { items: { data: [item('price_ielts_m'), item('price_main')] } }],
+    ['a main price only', { items: { data: [item('price_main')] } }],
+    [
+      'IELTS recurring beside a one-off main price',
+      { items: { data: [item('price_ielts_m'), item('price_main', false)] } },
+    ],
+    ['no recurring price at all', { items: { data: [item('price_ielts_m', false)] } }],
+    ['no items', {}],
+  ])('isIeltsOnly: %s', (_label, sub) => {
+    expect(scriptIeltsOnly(sub, isIelts)).toBe(isIeltsOnly(sub as Stripe.Subscription, isIelts))
   })
 })
 
