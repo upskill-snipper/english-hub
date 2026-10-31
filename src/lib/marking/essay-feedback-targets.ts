@@ -57,6 +57,14 @@ const PAPER_CODES: readonly (readonly [RegExp, string | null])[] = [
   [/\bC700(?:U20|QS\/2)/i, 'eduqas-lang-comp2'],
   [/\bC720\/01\b/i, 'eduqas-lit-comp1'],
   [/\bC720\/02\b/i, 'eduqas-lit-comp2'],
+  // Cambridge numbers a question paper by component, then time-zone variant:
+  // 0500/11 to 0500/13 are Paper 1 and 0500/21 to 0500/23 Paper 2. Absent
+  // until 24 October 2026, so every Cambridge mock answer got feedback with
+  // no marks; the Paper 2 mocks were also labelled 0500/12, a Paper 1.
+  [/\b0500\/1[1-3]?\b/, 'cambridge-0500-paper1'],
+  [/\b0500\/2[1-3]?\b/, 'cambridge-0500-paper2'],
+  [/\b0990\/1[1-3]?\b/, 'cambridge-0990-paper1'],
+  [/\b0990\/2[1-3]?\b/, 'cambridge-0990-paper2'],
 ]
 
 /** The scheme a paper code names, null if it has none, undefined if no code is found. */
@@ -73,7 +81,9 @@ export function schemeIdForPaperCode(text: string): string | null | undefined {
  */
 export function subjectForPaper(text: string): FeedbackSubject | null {
   if (/\b(8702|1ET0|J352|C720)/i.test(text)) return 'English Literature'
-  if (/\b(8700|1EN0|J351|C700)/i.test(text)) return 'English Language'
+  // Cambridge's 0500 and 0990 are "First Language English", which the name
+  // tests below would not find.
+  if (/\b(8700|1EN0|J351|C700|0500|0990)/i.test(text)) return 'English Language'
   if (/English Literature/i.test(text)) return 'English Literature'
   if (/English Language/i.test(text)) return 'English Language'
   return null

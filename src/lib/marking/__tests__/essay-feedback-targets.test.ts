@@ -75,6 +75,12 @@ describe('paper codes', () => {
     ['C700U20-1', 'eduqas-lang-comp2'],
     ['C720/01', 'eduqas-lit-comp1'],
     ['C720/02', 'eduqas-lit-comp2'],
+    // Cambridge, from 24 October 2026: component first, then variant.
+    ['0500/11', 'cambridge-0500-paper1'],
+    ['0500/13', 'cambridge-0500-paper1'],
+    ['0500/21', 'cambridge-0500-paper2'],
+    ['0990/12', 'cambridge-0990-paper1'],
+    ['0990/22', 'cambridge-0990-paper2'],
   ])('%s is %s, a scheme on the site', (code, schemeId) => {
     expect(schemeIdForPaperCode(`Paper ${code} mock`)).toBe(schemeId)
     expect(MARK_SCHEMES[schemeId]).toBeDefined()
@@ -83,6 +89,14 @@ describe('paper codes', () => {
   it('says nothing without a code', () => {
     // 8702/2 was the one known code with no scheme, until 9 October 2026.
     expect(schemeIdForPaperCode('Paper 2')).toBeUndefined()
+  })
+
+  it('reads a Cambridge variant as its component, not its last digit', () => {
+    // 0500/12 is Paper 1, variant 2; the Paper 2 mocks carried it until
+    // 24 October 2026. A variant Cambridge does not print is no paper.
+    expect(schemeIdForPaperCode('0500/12')).toBe('cambridge-0500-paper1')
+    expect(schemeIdForPaperCode('0500/14')).toBeUndefined()
+    expect(schemeIdForPaperCode('0500/31')).toBeUndefined()
   })
 
   it.each([
@@ -94,6 +108,8 @@ describe('paper codes', () => {
       'English Language',
     ],
     ['Cambridge IGCSE English Literature', 'English Literature'],
+    // Cambridge's name for its Language syllabus does not say "English Language".
+    ['Cambridge IGCSE First Language English 0500/11 Paper 1: Reading', 'English Language'],
     ['Paper 1', null],
   ])('%s is %s', (text, subject) => {
     expect(subjectForPaper(text)).toBe(subject)
