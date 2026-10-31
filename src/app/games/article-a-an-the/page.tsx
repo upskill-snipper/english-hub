@@ -1,6 +1,6 @@
 'use client'
 
-import { useState, useCallback, useMemo } from 'react'
+import { Fragment, useState, useCallback, useMemo } from 'react'
 import Link from 'next/link'
 import GameShell, { type GameState } from '@/components/games/GameShell'
 import { Button } from '@/components/ui/button'
@@ -11,41 +11,68 @@ import { getBoardConfig } from '@/lib/board/board-store'
 import { AnswerExplanation } from '@/components/games/AnswerExplanation'
 import { useGameRound } from '@/components/games/game-round'
 import { useDealer } from '@/lib/games/start-round'
-import {
-  BANK,
-  OPTIONS,
-  OPTION_LABELS,
-  type Article,
-  type ArticleItem,
-} from '@/data/games/banks/article-a-an-the'
+import { newSessionSalt, shuffleOptionsDeterministic } from '@/lib/quiz/shuffle'
+import { BANK, fillsFor, labelsFor, type ArticleItem } from '@/data/games/banks/article-a-an-the'
 
 // ─── Data ──────────────────────────────────────────────────────────────────────
 // The sentences are in src/data/games/banks/article-a-an-the.ts (moved there on
 // 16 October 2026), and the explanation for each in
-// src/data/games/explanations/article-a-an-the.ts.
+// src/data/games/explanations/article-a-an-the.ts. Since 24 October 2026 the top
+// tier also holds short texts with two or three gaps, answered with a set of
+// articles; their four sets are shuffled for each round, as every option list
+// on the site is (src/lib/quiz/shuffle.ts).
 
 const ROUND_SIZE = 15
 
 // ─── Helpers ───────────────────────────────────────────────────────────────────
 
-function renderSentence(sentence: string, filled: string | null) {
+/**
+ * A dialogue's turns ("A: ...", then "B: ..."), each on its own line. Read on
+ * 31 October 2026 by the second reader: the four dialogue texts ran on as one
+ * line, so B's reply began mid-line after A's question.
+ */
+function withTurns(text: string, dialogue: boolean) {
+  if (!dialogue) return text
+  return text.split(/\s+(?=[AB]: )/).map((turn, j) => (
+    <Fragment key={j}>
+      {j > 0 && <br />}
+      {turn}
+    </Fragment>
+  ))
+}
+
+/**
+ * The sentence with its gap, or a short text with its numbered gaps, and once a
+ * button is chosen, the article it puts in each gap. A gap that starts a
+ * sentence shows its article with a capital letter.
+ */
+function renderSentence(sentence: string, fills: readonly string[] | null) {
   const parts = sentence.split('___')
-  return (
-    <>
-      {parts[0]}
-      <span
-        className={cn(
-          'inline-flex min-w-[3.5rem] items-center justify-center rounded-md border-2 border-dashed px-2 py-0.5 align-middle font-bold',
-          filled
-            ? 'border-primary/40 bg-primary/10 text-primary'
-            : 'border-border text-muted-foreground',
-        )}
-      >
-        {filled ?? '?'}
-      </span>
-      {parts[1]}
-    </>
-  )
+  const numbered = parts.length > 2
+  const dialogue = sentence.startsWith('A: ')
+  return parts.map((part, i) => {
+    if (i === 0) return <Fragment key={i}>{withTurns(part, dialogue)}</Fragment>
+    const fill = fills?.[i - 1] ?? null
+    const before = parts[i - 1]
+    const startsSentence = (i === 1 && before.trim() === '') || /[.?:]\s+$/.test(before)
+    const shown =
+      fill && startsSentence && fill !== '-' ? fill[0].toUpperCase() + fill.slice(1) : fill
+    return (
+      <Fragment key={i}>
+        <span
+          className={cn(
+            'inline-flex min-w-[3.5rem] items-center justify-center rounded-md border-2 border-dashed px-2 py-0.5 align-middle font-bold',
+            fill
+              ? 'border-primary/40 bg-primary/10 text-primary'
+              : 'border-border text-muted-foreground',
+          )}
+        >
+          {shown ?? (numbered ? i : '?')}
+        </span>
+        {withTurns(part, dialogue)}
+      </Fragment>
+    )
+  })
 }
 
 // ─── Component ─────────────────────────────────────────────────────────────────
@@ -59,14 +86,30 @@ export default function ArticleAAnThePage() {
   const [idx, setIdx] = useState(0)
   const [score, setScore] = useState(0)
   const [totalAnswered, setTotalAnswered] = useState(0)
-  const [selected, setSelected] = useState<Article | null>(null)
+  /** The label of the button chosen, as it is shown and recorded. */
+  const [selected, setSelected] = useState<string | null>(null)
   const [feedback, setFeedback] = useState<'correct' | 'wrong' | null>(null)
+  // One per round, so a short text's sets keep their order while it is read.
+  const [salt, setSalt] = useState('')
   const round = useGameRound('article-a-an-the')
   const deal = useDealer(BANK)
 
   const current = items[idx] ?? null
+  const answer = current ? BANK.answer(current) : ''
+  const isText = current?.kind === 'text'
+
+  /** The buttons: a, an, the and no article, or a short text's four sets, shuffled. */
+  const choices = useMemo(() => {
+    if (!current) return []
+    const labels = labelsFor(current)
+    return current.kind === 'text'
+      ? shuffleOptionsDeterministic(labels, `${BANK.key(current)}|${salt}`)
+      : labels
+  }, [current, salt])
 
   const handleStart = useCallback(() => {
+    // Minted here rather than during render: newSessionSalt calls Math.random.
+    setSalt(newSessionSalt())
     setItems(deal(ROUND_SIZE))
     setIdx(0)
     setScore(0)
@@ -86,10 +129,10 @@ export default function ArticleAAnThePage() {
    * on the button is what is recorded when the choice was wrong.
    */
   const handlePick = useCallback(
-    (choice: Article) => {
+    (label: string) => {
       if (!current || feedback) return
-      const isCorrect = choice === current.answer
-      setSelected(choice)
+      const isCorrect = label === BANK.answer(current)
+      setSelected(label)
       setFeedback(isCorrect ? 'correct' : 'wrong')
       setTotalAnswered((t) => t + 1)
       if (isCorrect) setScore((s) => s + 1)
@@ -97,7 +140,7 @@ export default function ArticleAAnThePage() {
         question: BANK.key(current),
         correct: isCorrect,
         tag: BANK.tag?.(current),
-        chose: isCorrect ? undefined : OPTION_LABELS[choice],
+        chose: isCorrect ? undefined : label,
       })
     },
     [current, feedback, round],
@@ -135,7 +178,7 @@ export default function ArticleAAnThePage() {
           gameId="article-a-an-the"
           audience="eal"
           title="A, An, The or Nothing?"
-          description="Read each sentence and tap the article that fits the gap: a, an, the, or no article. Learn the rule after every answer."
+          description="Read each sentence and tap the article that fits the gap: a, an, the, or no article. At the top level, a short text has two or three gaps. Learn the rule after every answer."
           difficulty="Foundation"
           score={score}
           maxScore={totalAnswered || items.length || ROUND_SIZE}
@@ -156,20 +199,42 @@ export default function ArticleAAnThePage() {
 
               {/* Sentence card */}
               <div className="rounded-xl border border-border bg-card p-6 text-center">
-                <p className="text-lg leading-relaxed text-foreground sm:text-xl">
-                  {renderSentence(current.sentence, selected)}
+                <p
+                  className={cn(
+                    'leading-relaxed text-foreground',
+                    // A short text reads as a paragraph, from the start of the line.
+                    isText ? 'text-start text-base sm:text-lg' : 'text-lg sm:text-xl',
+                  )}
+                >
+                  {renderSentence(current.sentence, selected ? fillsFor(current, selected) : null)}
                 </p>
+                {current.source && (
+                  <p className="mt-3 text-start text-xs text-muted-foreground">
+                    From {current.source}
+                  </p>
+                )}
               </div>
 
+              {isText && !feedback && (
+                <p className="text-center text-sm text-muted-foreground">
+                  Choose the set of articles for the gaps, in order (- means no article).
+                </p>
+              )}
+
               {/* Options */}
-              <div className="grid grid-cols-2 gap-3 sm:grid-cols-4">
-                {OPTIONS.map((opt) => {
-                  const isAnswer = opt === current.answer
-                  const isPicked = opt === selected
+              <div
+                className={cn(
+                  'grid gap-3',
+                  isText ? 'grid-cols-1 sm:grid-cols-2' : 'grid-cols-2 sm:grid-cols-4',
+                )}
+              >
+                {choices.map((label) => {
+                  const isAnswer = label === answer
+                  const isPicked = label === selected
                   return (
                     <button
-                      key={opt}
-                      onClick={() => handlePick(opt)}
+                      key={label}
+                      onClick={() => handlePick(label)}
                       disabled={!!feedback}
                       className={cn(
                         'rounded-xl border-2 px-4 py-4 text-base font-bold transition-all',
@@ -189,7 +254,7 @@ export default function ArticleAAnThePage() {
                           'border-border bg-card text-muted-foreground opacity-60',
                       )}
                     >
-                      {OPTION_LABELS[opt]}
+                      {label}
                     </button>
                   )
                 })}
@@ -213,7 +278,7 @@ export default function ArticleAAnThePage() {
                     ) : (
                       <>
                         <XCircle className="size-4" /> Not quite. The answer is{' '}
-                        <span className="font-bold">{OPTION_LABELS[current.answer]}</span>.
+                        <span className="font-bold">{answer}</span>.
                       </>
                     )}
                   </div>
@@ -222,7 +287,7 @@ export default function ArticleAAnThePage() {
                     game="article-a-an-the"
                     question={BANK.key(current)}
                     correct={feedback === 'correct'}
-                    chosen={selected ? OPTION_LABELS[selected] : null}
+                    chosen={selected}
                   />
 
                   <div className="flex justify-center">

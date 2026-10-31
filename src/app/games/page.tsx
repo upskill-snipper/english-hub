@@ -1219,7 +1219,7 @@ const EAL_GAMES: GameDef[] = [
   mkGame(
     'prepositions-of-place',
     'Where Is It?',
-    'in / on / under / behind / between - prepositions of place.',
+    "Choose the preposition a sentence needs: place and time, movement and transport, words like 'interested in', set phrases and short dialogues.",
     <Target className="size-6" />,
     'Medium',
     'text-teal-400',
