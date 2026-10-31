@@ -3524,7 +3524,7 @@ export const AR_MESSAGES: Record<string, string> = {
     'اعرف الاقتباس من أي نص مقرر، ومين قاله ومتى، والسطر اللي يثبت الفكرة.',
   'games_page.list.grade_climber.title': 'Grade Climber',
   'games_page.list.grade_climber.desc':
-    'أسئلة بأسلوب GCSE تصعب شوي شوي: ثلاث إجابات صح وتطلع درجة.',
+    'أسئلة بأسلوب GCSE تصعب كل ما طلعت: ثلاث إجابات صح وتطلع درجة في السلم، وغلطتين وتنزل.',
   'games_page.list.comprehension_challenge.title': 'Comprehension Challenge',
   'games_page.list.comprehension_challenge.desc':
     'اقرأ النص، وبعدها جاوب على أسئلة عن الاستنتاج واللغة والبنية والتقييم.',

@@ -3593,7 +3593,7 @@ export const EN_MESSAGES: Record<string, string> = {
     'Name the set text a quotation is from, who says it and when, and the line that proves a point.',
   'games_page.list.grade_climber.title': 'Grade Climber',
   'games_page.list.grade_climber.desc':
-    'GCSE-style questions that get harder: three right to climb a grade.',
+    'GCSE-style questions that get harder as you climb: three right to go up a rung, two wrong to go down.',
   'games_page.list.comprehension_challenge.title': 'Comprehension Challenge',
   'games_page.list.comprehension_challenge.desc':
     'Read a passage, then answer questions on inference, language, structure and evaluation.',

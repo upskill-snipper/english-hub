@@ -11858,10 +11858,13 @@ export const DICTIONARY: Dictionary = {
     ar: 'Grade Climber',
     es: 'Grade Climber',
   },
+  // 31 October 2026: this said "three right to climb a grade", and the card
+  // shows this key, not the GAMES description, so the game's "no GCSE grade
+  // in play" change (1c7996409) left the hub card promising grades.
   'games_page.list.grade_climber.desc': {
-    en: 'GCSE-style questions that get harder: three right to climb a grade.',
-    ar: 'أسئلة بأسلوب GCSE تصعب شوي شوي: ثلاث إجابات صح وتطلع درجة.',
-    es: 'Preguntas de estilo GCSE cada vez más difíciles: tres aciertos para subir de nota.',
+    en: 'GCSE-style questions that get harder as you climb: three right to go up a rung, two wrong to go down.',
+    ar: 'أسئلة بأسلوب GCSE تصعب كل ما طلعت: ثلاث إجابات صح وتطلع درجة في السلم، وغلطتين وتنزل.',
+    es: 'Preguntas de estilo GCSE que se ponen más difíciles a medida que subes: tres aciertos para subir un peldaño, dos fallos para bajar.',
   },
   'games_page.list.comprehension_challenge.title': {
     en: 'Comprehension Challenge',

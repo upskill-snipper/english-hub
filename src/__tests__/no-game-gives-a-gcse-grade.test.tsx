@@ -8,6 +8,7 @@ import { readFileSync, readdirSync, existsSync } from 'node:fs'
 import { join } from 'node:path'
 
 import { saveGameScore } from '@/lib/game-scores'
+import { lookup } from '@/lib/i18n/dictionary'
 
 /**
  * No game shows a GCSE grade.
@@ -31,7 +32,8 @@ import { saveGameScore } from '@/lib/game-scores'
  * The second half of this file holds every page's stated audience to two
  * things it does not control: its own metadata title, and the section of the
  * /games hub it is listed in. It also requires every game to be listed
- * somewhere, because three were in no hub list at all until 10 October.
+ * somewhere, because three were in no hub list at all until 10 October. The
+ * last part holds each card on the /games hub to what its game now does.
  */
 
 vi.mock('@/lib/i18n/use-t', () => ({ useT: () => (key: string) => key }))
@@ -183,5 +185,60 @@ describe('every game page', () => {
     for (const id of ['grade-climber', 'quote-detective', 'comprehension-challenge']) {
       expect(listedAudience(id), id).toEqual(['gcse'])
     }
+  })
+})
+
+// ── Every hub card says what its game now does ──────────────────────────────
+
+/**
+ * THE DEFECT (31 October 2026). A hub card shows its dictionary text when it
+ * has a descriptionKey, and its GAMES description only when it has none. When
+ * Grade Climber stopped showing a grade in play (1c7996409), its description
+ * was changed and its dictionary text was not, so the live hub still offered
+ * "three right to climb a grade". A keyed card's English is now held to its
+ * description, so a change to one cannot stop short of the page, and no card
+ * names a grade.
+ */
+type HubCard = { id: string; description: string; descriptionKey?: string }
+
+/** Each GCSE hub entry's id, description and descriptionKey, read from the source. */
+function hubCards(): HubCard[] {
+  const quoted = String.raw`'((?:[^'\\]|\\.)*)'`
+  return hubList('GAMES')
+    .split('\n  {\n')
+    .slice(1)
+    .map((entry) => {
+      const field = (name: string) =>
+        new RegExp(String.raw`\n {4}${name}:\s*` + quoted)
+          .exec('\n' + entry)?.[1]
+          ?.replace(/\\'/g, "'")
+      return {
+        id: field('id') ?? '',
+        description: field('description') ?? '',
+        descriptionKey: field('descriptionKey'),
+      }
+    })
+}
+
+describe('the /games hub cards', () => {
+  const cards = hubCards()
+  const keyed = cards.filter((c) => c.descriptionKey)
+
+  it('reads the GCSE list and its keyed cards, so this is not vacuous', () => {
+    expect(cards.length).toBeGreaterThanOrEqual(10)
+    expect(cards.every((c) => c.id && c.description)).toBe(true)
+    expect(keyed.map((c) => c.id)).toContain('grade-climber')
+  })
+
+  it.each(keyed.map((c) => [c.id, c] as const))(
+    "%s: the card's English is its description",
+    (_id, card) => {
+      expect(lookup(card.descriptionKey!, 'en')).toBe(card.description)
+    },
+  )
+
+  it.each(cards.map((c) => [c.id, c] as const))('%s: the card names no grade', (_id, card) => {
+    const shown = card.descriptionKey ? lookup(card.descriptionKey, 'en') : card.description
+    expect(shown).not.toMatch(/\bgrades?\b/i)
   })
 })

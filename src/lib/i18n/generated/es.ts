@@ -3688,7 +3688,7 @@ export const ES_MESSAGES: Record<string, string> = {
     'Di de qué texto prescrito es cada cita, quién la dice y cuándo, y qué línea demuestra una idea.',
   'games_page.list.grade_climber.title': 'Grade Climber',
   'games_page.list.grade_climber.desc':
-    'Preguntas de estilo GCSE cada vez más difíciles: tres aciertos para subir de nota.',
+    'Preguntas de estilo GCSE que se ponen más difíciles a medida que subes: tres aciertos para subir un peldaño, dos fallos para bajar.',
   'games_page.list.comprehension_challenge.title': 'Comprehension Challenge',
   'games_page.list.comprehension_challenge.desc':
     'Lee un texto y después responde preguntas de inferencia, lenguaje, estructura y valoración.',
