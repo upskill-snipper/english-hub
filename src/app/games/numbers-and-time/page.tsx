@@ -44,11 +44,13 @@ const ROUND_SIZE = 15
 /**
  * Whether reading the prompt aloud gives its answer away. Speech says figures as
  * words: "7" as "seven", "1st" as "first", "1999" as "nineteen ninety-nine",
- * "1 May" as "the first of May". Every question with figures in its prompt asks
- * for those words, except the three 24-hour times, which ask for the 12-hour
- * time; a voice may read 14:00 as "two pm", so they wait as well. A prompt
- * already in words ("sixteen", "quarter past seven", "The day after Tuesday")
- * sounds just as it reads, so hearing it gives nothing away.
+ * "1 May" as "the first of May", and a voice may read 14:00 as "two pm". Many
+ * questions with figures in the prompt ask for just those words, so every
+ * prompt with a figure in it waits until the question is answered, whatever it
+ * asks for (since 24 October 2026 also a price to add up, a timetable or a
+ * 24-hour time). A prompt already in words ("sixteen", "quarter past seven",
+ * "a fiver") sounds just as it reads, so hearing it gives nothing away. Only
+ * the prompt is read aloud, never a question's `context`.
  */
 function speechGivesAnswer(item: NumberItem): boolean {
   return /\d/.test(item.prompt)
@@ -225,6 +227,12 @@ export default function NumbersAndTimePage() {
               {/* Prompt card */}
               <div className="rounded-xl border border-border bg-card p-6 text-center space-y-4">
                 <p className="text-sm text-muted-foreground">{currentQ.item.task}</p>
+                {/* A price list, a timetable or a real line to read (24 October 2026). */}
+                {currentQ.item.context && (
+                  <p className="whitespace-pre-line text-base text-foreground">
+                    {currentQ.item.context}
+                  </p>
+                )}
                 <p className="text-4xl font-bold tracking-tight text-foreground break-words">
                   {currentQ.item.prompt}
                 </p>

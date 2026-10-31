@@ -485,15 +485,23 @@ export const AQA_CONTENT: BoardExamTechniqueContent = {
 export const EDEXCEL_CONTENT: BoardExamTechniqueContent = {
   boardName: 'Pearson Edexcel',
   shortName: 'Edexcel',
-  totalDuration: '8 hours total across 4 papers',
+  // 31 October 2026: said 8 hours. Language 1h 45m and 2h 5m, Literature 1h 45m
+  // and 2h 15m, from the checked guides, come to 7 hours 50 minutes.
+  totalDuration: '7 hours 50 minutes total across 4 papers',
   structureSummary:
     'Pearson Edexcel GCSE English assesses across four papers: Literature Paper 1 (Shakespeare + post-1914 British play/novel), Literature Paper 2 (19th-century novel + poetry), Language Paper 1 (Fiction) and Language Paper 2 (Non-fiction).',
   papers: [
     {
       title: 'Edexcel English Language Paper 1',
       badge: '1h 45m',
+      // 31 October 2026: rewritten to src/data/mark-scheme-guides/edexcel-lang-paper1.ts.
+      // The rows gave Q2 as a 4-mark language question, Q3 as 15 marks and Q4 as a
+      // 20-mark "to what extent do you agree": 64 marks of questions on a paper whose
+      // reading section is 24. The extract was "19th-, 20th- or 21st-century"; it is
+      // 19th-century. The minutes follow the guide's suggestion inside the board's
+      // advice of about 1 hour on Section A and 45 minutes on Section B.
       description:
-        'Fiction and Imaginative Writing. One 19th-, 20th- or 21st-century literary fiction extract with four reading questions and one imaginative writing question.',
+        'Fiction and Imaginative Writing. One unseen extract from a 19th-century novel or story with four reading questions, then one piece of imaginative writing from a choice of two tasks.',
       rows: [
         {
           time: '0:00 - 0:10',
@@ -503,43 +511,45 @@ export const EDEXCEL_CONTENT: BoardExamTechniqueContent = {
           colour: 'prep',
         },
         {
-          time: '0:10 - 0:14',
+          time: '0:10 - 0:12',
           label: 'Q1 - Identify (1 mark)',
-          detail: 'Quick retrieval. One sentence answer.',
+          detail: 'Quick retrieval from the lines named. A word or short quotation.',
           marks: '1 mark',
           colour: 'reading',
         },
         {
-          time: '0:14 - 0:24',
-          label: 'Q2 - Language analysis (4 marks)',
-          detail: 'Quotation + technique + brief effect. Stay concise.',
-          marks: '4 marks',
+          time: '0:12 - 0:16',
+          label: 'Q2 - Retrieval (2 marks)',
+          detail: 'Two different points from a short section, quoted or in your own words.',
+          marks: '2 marks',
           colour: 'reading',
         },
         {
-          time: '0:24 - 0:39',
-          label: 'Q3 - Language and structure (15 marks)',
+          time: '0:16 - 0:28',
+          label: 'Q3 - Language and structure (6 marks)',
           detail:
-            'Combined language and structure analysis. 4-5 detailed points with subject terminology.',
+            'A short section named in the question. Cover structure as well as language, each quotation linked to its effect.',
+          marks: '6 marks',
+          colour: 'analysis',
+        },
+        {
+          time: '0:28 - 1:00',
+          label: 'Q4 - Evaluation (15 marks)',
+          detail:
+            'How successfully does the writer create the effect the question names? A clear verdict, 3-4 evidenced paragraphs.',
           marks: '15 marks',
           colour: 'analysis',
         },
         {
-          time: '0:39 - 0:59',
-          label: 'Q4 - Evaluation (20 marks)',
-          detail: 'To what extent do you agree? Use 3-4 evidenced evaluative points.',
-          marks: '20 marks',
-          colour: 'analysis',
-        },
-        {
-          time: '0:59 - 1:04',
+          time: '1:00 - 1:05',
           label: 'Q5/6 - Plan imaginative writing',
-          detail: 'Choice of two prompts (often image-based). Plan opening, structure, ending.',
+          detail:
+            'Choice of two tasks; one comes with two pictures for ideas. Plan opening, structure, ending.',
           marks: 'Plan',
           colour: 'plan',
         },
         {
-          time: '1:04 - 1:40',
+          time: '1:05 - 1:40',
           label: 'Q5/6 - Write imaginative piece (40 marks)',
           detail: '24 marks AO5 + 16 marks AO6. Single focused moment.',
           marks: '40 marks',
@@ -553,73 +563,88 @@ export const EDEXCEL_CONTENT: BoardExamTechniqueContent = {
           colour: 'check',
         },
       ],
-      tip: 'Q3 (language + structure together) is unique to Edexcel. Plan your paragraphs to alternate between the two so the marker sees you addressing both halves of the AO.',
+      tip: 'Q3 asks for language and structure together: an answer on language alone stays in Level 1. Plan your paragraphs to cover both so the marker sees you addressing both halves of the AO.',
     },
     {
       title: 'Edexcel English Language Paper 2',
       badge: '2h 5m',
+      // 31 October 2026: rewritten to src/data/mark-scheme-guides/edexcel-lang-paper2.ts.
+      // This said the texts were "one 19th-century, one 20th/21st-century", which is
+      // AQA's Paper 2, and that the paper sets "two transactional writing tasks",
+      // which is Eduqas's Component 2. Pearson prints two 20th- and 21st-century
+      // texts and asks for one piece of writing, Question 8 or 9. The question rows
+      // were also wrong in number and tariff (Q2 6 marks, Q4 15, Q5 4, the writing
+      // as Q7/8). The minutes follow the guide: about 1 hour 20 on Section A, 45 on B.
       description:
-        'Non-Fiction and Transactional Writing. Two linked non-fiction texts (one 19th-century, one 20th/21st-century) with reading questions and two transactional writing tasks.',
+        'Non-Fiction and Transactional Writing. Two unseen non-fiction texts from the 20th and 21st centuries, linked by a theme, with seven reading questions, then one piece of transactional writing from a choice of two tasks.',
       rows: [
         {
-          time: '0:00 - 0:15',
-          label: 'Read both source texts',
-          detail: 'Both texts fully. Note differences in tone, purpose, perspective.',
+          time: '0:00 - 0:06',
+          label: 'Read Text 1',
+          detail: 'Read it fully. Mark the lines Questions 1 to 3 refer to.',
           marks: 'Prep',
           colour: 'prep',
         },
         {
-          time: '0:15 - 0:19',
-          label: 'Q1 - Identify (1 mark)',
-          detail: 'Quick retrieval from Text 1.',
-          marks: '1 mark',
-          colour: 'reading',
-        },
-        {
-          time: '0:19 - 0:27',
-          label: 'Q2 - Language and structure (6 marks)',
-          detail: 'Brief analysis of methods in Text 1.',
-          marks: '6 marks',
-          colour: 'reading',
-        },
-        {
-          time: '0:27 - 0:35',
-          label: 'Q3 - Comprehension (2 marks)',
-          detail: 'Short retrieval question on Text 2.',
-          marks: '2 marks',
-          colour: 'reading',
-        },
-        {
-          time: '0:35 - 0:50',
-          label: 'Q4 - Language analysis Text 2 (15 marks)',
-          detail: 'Detailed methods analysis of Text 2 with subject terminology.',
-          marks: '15 marks',
-          colour: 'analysis',
-        },
-        {
-          time: '0:50 - 1:10',
-          label: 'Q5 - Synthesis (4 marks)',
-          detail: 'Combine information from both texts on a given focus.',
+          time: '0:06 - 0:10',
+          label: 'Q1 and Q2 - Retrieval from Text 1 (2 + 2 marks)',
+          detail: 'Two points for each, from the lines named. No explanation needed.',
           marks: '4 marks',
           colour: 'reading',
         },
         {
-          time: '1:10 - 1:32',
-          label: 'Q6 - Comparison (14 marks)',
-          detail: "Compare writers' ideas and perspectives across both texts.",
+          time: '0:10 - 0:28',
+          label: 'Q3 - Language and structure, Text 1 (15 marks)',
+          detail:
+            'Language and structure across the whole text, with subject terminology. Both are needed to pass Level 2.',
+          marks: '15 marks',
+          colour: 'analysis',
+        },
+        {
+          time: '0:28 - 0:34',
+          label: 'Read Text 2',
+          detail: 'Read it fully. Mark the lines Questions 4 and 5 refer to.',
+          marks: 'Prep',
+          colour: 'prep',
+        },
+        {
+          time: '0:34 - 0:36',
+          label: 'Q4 and Q5 - Retrieval from Text 2 (1 + 1 mark)',
+          detail: 'One point for each, from two different sets of lines.',
+          marks: '2 marks',
+          colour: 'reading',
+        },
+        {
+          time: '0:36 - 0:54',
+          label: 'Q6 - Evaluation, Text 2 (15 marks)',
+          detail: 'How successfully does the writer achieve the aim the question names?',
+          marks: '15 marks',
+          colour: 'analysis',
+        },
+        {
+          time: '0:54 - 1:02',
+          label: 'Q7(a) - Synthesis (6 marks)',
+          detail: 'Similarities between the two texts, with evidence from both in every point.',
+          marks: '6 marks',
+          colour: 'reading',
+        },
+        {
+          time: '1:02 - 1:20',
+          label: 'Q7(b) - Comparison (14 marks)',
+          detail: "Compare the writers' perspectives and the methods that convey them.",
           marks: '14 marks',
           colour: 'comparison',
         },
         {
-          time: '1:32 - 1:37',
-          label: 'Q7/8 - Plan transactional writing',
-          detail: 'Choice of one task. Identify form, audience, purpose.',
+          time: '1:20 - 1:25',
+          label: 'Q8/9 - Plan transactional writing',
+          detail: 'Answer one of the two tasks. Identify form, audience, purpose.',
           marks: 'Plan',
           colour: 'plan',
         },
         {
-          time: '1:37 - 2:00',
-          label: 'Q7/8 - Write transactional piece (40 marks)',
+          time: '1:25 - 2:00',
+          label: 'Q8/9 - Write transactional piece (40 marks)',
           detail: '24 AO5 + 16 AO6. Match the form conventions.',
           marks: '40 marks',
           colour: 'creative',
@@ -633,7 +658,7 @@ export const EDEXCEL_CONTENT: BoardExamTechniqueContent = {
         },
       ],
       warning:
-        'Edexcel Lang P2 is 20 minutes longer than AQA. Use the extra time on Q6 (comparison) where it pays back the most marks.',
+        'Edexcel Lang P2 is 20 minutes longer than AQA, and it has seven reading questions on two texts. Keep the four short retrievals to about 6 minutes in all so that Q3, Q6 and Q7(b), worth 44 marks between them, get their time.',
     },
     {
       title: 'Edexcel English Literature Paper 1',
@@ -754,89 +779,94 @@ export const EDEXCEL_CONTENT: BoardExamTechniqueContent = {
         'Edexcel prints only the named anthology poem. The second poem is your choice from the same collection and comes from memory, so revise every poem in your collection, not just your favourites.',
     },
   ],
+  // 31 October 2026: the Language rows were rewritten to the 1EN0 guides
+  // (src/data/mark-scheme-guides/edexcel-lang-paper1.ts, edexcel-lang-paper2.ts).
+  // Paper 1 summed to 80 marks and Paper 2 had five reading questions and the
+  // writing as Q7/8; the papers are 64 and 96 marks, with seven questions on
+  // Paper 2 and the writing as Q8 or Q9.
   questionTypes: [
     {
       paper: 'Lang P1',
       question: 'Q1 - Identify',
       marks: '1',
-      description: 'Single fact retrieval.',
-      approach: 'One sentence answer.',
+      description: 'One detail from the lines named.',
+      approach: 'A word or short quotation.',
     },
     {
       paper: 'Lang P1',
-      question: 'Q2 - Language analysis',
-      marks: '4',
-      description: 'Brief language analysis.',
-      approach: 'Quotation, technique, effect - be concise.',
+      question: 'Q2 - Retrieval',
+      marks: '2',
+      description: 'Two things from a short section.',
+      approach: 'Two different points, quoted or in your own words.',
     },
     {
       paper: 'Lang P1',
       question: 'Q3 - Language and structure',
-      marks: '15',
-      description: 'Combined language and structure analysis.',
-      approach: '4-5 detailed points alternating language and structure.',
+      marks: '6',
+      description: 'Language and structure in a short section.',
+      approach: 'Both language and structure; language alone stays in Level 1.',
     },
     {
       paper: 'Lang P1',
       question: 'Q4 - Evaluation',
-      marks: '20',
-      description: "To what extent do you agree with a critic's statement?",
-      approach: 'Clear position. 3-4 evaluative points with evidence.',
+      marks: '15',
+      description: 'How successfully the writer creates an effect the question names.',
+      approach: 'Clear verdict. 3-4 evaluative points with evidence.',
     },
     {
       paper: 'Lang P1',
       question: 'Q5/6 - Imaginative writing',
       marks: '40',
-      description: 'Choice of two image-linked prompts.',
+      description: 'One task from a choice of two; one comes with two pictures.',
       approach: 'Single focused moment. Sensory detail. Varied sentences.',
     },
     {
       paper: 'Lang P2',
-      question: 'Q1 - Identify',
-      marks: '1',
-      description: 'Quick retrieval from Text 1.',
-      approach: 'One short answer.',
+      question: 'Q1 and Q2 - Retrieval, Text 1',
+      marks: '2 + 2',
+      description: 'Two things from named lines, twice.',
+      approach: 'Short answers. No explanation needed.',
     },
     {
       paper: 'Lang P2',
-      question: 'Q2 - Methods Text 1',
-      marks: '6',
-      description: 'Brief language and structure analysis.',
-      approach: '2-3 short paragraphs.',
-    },
-    {
-      paper: 'Lang P2',
-      question: 'Q3 - Comprehension Text 2',
-      marks: '2',
-      description: 'Short retrieval from Text 2.',
-      approach: 'Direct answer with evidence.',
-    },
-    {
-      paper: 'Lang P2',
-      question: 'Q4 - Language analysis Text 2',
+      question: 'Q3 - Language and structure, Text 1',
       marks: '15',
-      description: 'Detailed methods analysis.',
-      approach: '4-5 detailed points with subject terminology.',
+      description: 'How the writer holds the reader’s interest.',
+      approach: 'Both language and structure, across the whole text.',
     },
     {
       paper: 'Lang P2',
-      question: 'Q5 - Synthesis',
-      marks: '4',
-      description: 'Combine information across both texts.',
-      approach: 'Use both texts. Brief.',
+      question: 'Q4 and Q5 - Retrieval, Text 2',
+      marks: '1 + 1',
+      description: 'One thing from each of two sets of lines.',
+      approach: 'A few words each.',
     },
     {
       paper: 'Lang P2',
-      question: 'Q6 - Comparison',
+      question: 'Q6 - Evaluation, Text 2',
+      marks: '15',
+      description: 'How successfully the writer achieves an aim the question names.',
+      approach: 'Clear verdict, tested against Text 2 alone.',
+    },
+    {
+      paper: 'Lang P2',
+      question: 'Q7(a) - Synthesis',
+      marks: '6',
+      description: 'Similarities between the two texts.',
+      approach: 'Evidence from both texts in every point.',
+    },
+    {
+      paper: 'Lang P2',
+      question: 'Q7(b) - Comparison',
       marks: '14',
       description: "Compare writers' ideas and perspectives.",
       approach: 'Both texts in every paragraph. Methods focus.',
     },
     {
       paper: 'Lang P2',
-      question: 'Q7/8 - Transactional writing',
+      question: 'Q8/9 - Transactional writing',
       marks: '40',
-      description: 'Choice of one form-based task.',
+      description: 'One task from a choice of two, each with a set form, audience and purpose.',
       approach: 'Match form. Persuasive techniques. Counter-arguments.',
     },
     {

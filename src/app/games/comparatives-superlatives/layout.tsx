@@ -3,7 +3,7 @@ import type { Metadata } from 'next'
 export const metadata: Metadata = {
   title: 'Comparatives and Superlatives Game | EAL',
   description:
-    'Form comparatives and superlatives: big, bigger, biggest and the irregular ones. A free grammar game for EAL and beginner English learners.',
+    'Choose the comparative or superlative a sentence needs: bigger, the biggest, as big as and the irregular ones. A free grammar game for EAL learners.',
   alternates: { canonical: '/games/comparatives-superlatives' },
 }
 

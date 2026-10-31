@@ -125,11 +125,90 @@ import type { MockExamPaper } from './types'
  *     "bestial drunkenness" and "little above the savage".
  *
  * KNOWN GAPS. Source A's figures ("73%", "353%", "£4.80 an hour") belong to
- * the specially written articles and are not sourced. The glosses in the
+ * the specially written articles and are not sourced (on 31 October 2026
+ * the first two were replaced by published figures: see below). The glosses in the
  * question text (Tooting, the Franco-Prussian War, the Children's Employment
  * Commission) are general knowledge, not checked by script. Notes on Nursing
  * is checked against the Appleton printing only; the London first edition
  * (Harrison, 1859) was not compared.
+ *
+ * RESTRUCTURED 24 October 2026, the day the AI marker was corrected to mark
+ * each paper as its board does. WHAT WAS WRONG: these papers were not
+ * Eduqas's paper. Each set four reading questions worth 5, 10, 10 and 15 and
+ * two writing tasks worth 16 and 24, where C700U20-1 sets six reading
+ * questions worth 3, 10, 3, 10, 4 and 10 and two compulsory writing tasks of
+ * 20 each. Question 3 gave ten marks to what Source B tells the reader, a
+ * question the paper does not set; Question 4 asked for one 15-mark verdict
+ * on both texts at once, where Eduqas judges the 19th-century text on its
+ * own (Question 1.4) and compares the two separately (Question 1.6); nothing
+ * brought details from the two texts together (Question 1.5); and the
+ * writing was marked on splits Eduqas does not use. A student practising
+ * them sat an exam that does not exist, and of the answers handed to the
+ * marker only Question 2's found a question of its worth: the rest got
+ * general feedback with no marks.
+ *
+ * WHAT THEY ARE NOW. Each is set as Eduqas sets C700U20-1, as
+ * src/data/mark-scheme-guides/eduqas-lang-comp2.ts describes it (checked
+ * twice against Eduqas's Summer 2025 question paper and marking scheme and
+ * the specification): 1.1, 3 marks of short questions on Source A, the
+ * 21st-century text; 1.2, 10 marks on how its writer tries to achieve a
+ * purpose; 1.3, 3 marks of short questions on Source B, the 19th-century
+ * text; 1.4, 10 marks judging Source B against a statement; 1.5, 4 marks
+ * bringing details from both together; 1.6, 10 marks comparing them; then
+ * 2.1 and 2.2, two compulsory writing tasks of 20 marks each, 12 for
+ * communication and organisation and 8 for writing accurately. Eduqas
+ * numbers its questions within a section, so questionNumber runs 1 to 6 and
+ * then 1 and 2, and the board's numbers are the labels. The paper takes two
+ * hours, an hour on each section as Eduqas advises; the minutes for each
+ * reading question are the guide's suggestion. The wording and the mark
+ * schemes are ours, written from the guide's account of what earns marks,
+ * and every question worth 6 or more has a model answer. The glossary for
+ * each Source B is printed with Question 1.3, the first question on it. The
+ * questions name paragraphs, not line numbers, which the mock-exam page does
+ * not print, and every quotation in a reading question's text, answers and
+ * mark scheme was checked by script against the extract that question
+ * prints. The sources are kept as they were: each fits what Eduqas sets, one
+ * 21st-century and one 19th-century non-fiction text. Exam 10's Source A
+ * cited a rise in self-harm among teenage girls; no question or answer
+ * turned on that sentence, and on 31 October 2026 it was removed (below).
+ *
+ * CHECKED 31 October 2026 by a second, independent reader, against the
+ * guide, the scheme, Eduqas's Summer 2025 question paper and each extract.
+ * Every Source B is word for word its Gutenberg text, fetched that day
+ * (scripts/check-mock-exam-extracts.mjs --fetch). Fixed, one line each:
+ *   - suitability (10 Source A): the sentence on self-harm among teenage
+ *     girls is removed, as the founder asked of any mention of self-harm.
+ *   - untrue claim (10 Source A): "Referrals to CAMHS have increased by 353%
+ *     in a decade" matched no published figure; the paragraph now gives NHS
+ *     England's own, from NHS Digital's Mental Health of Children and Young
+ *     People in England, 2020 (one in six aged 5 to 16, up from one in nine
+ *     in 2017), and the 1.2 and 1.6 answers quote that instead.
+ *   - untrue claim (07 Source A): "73% of its monitored insect populations
+ *     since 1990" matched no published figure, "One in six species in the
+ *     UK" was Great Britain's 16%, and "The hedgehog population has halved"
+ *     was the rural trend only. It now gives State of Nature 2023's Wales
+ *     page (Welsh wildlife down 20% on average since 1994; one in six Welsh
+ *     species threatened) and PTES and BHPS's The State of Britain's
+ *     Hedgehogs 2018 (the rural trend fell by half; "halved since 2000" in
+ *     their release); Question 1.1(b) and (c), the 1.2, 1.5 and 1.6 answers
+ *     and their schemes follow.
+ *   - board wording: as in wjec-c2-a.ts, Questions 1.2, 1.5 and 1.6 and the
+ *     Section B guidance opened with Eduqas's own sentences; reworded, and
+ *     1.5 now asks which text each detail comes from.
+ *   - model answer (06 1.4): called the third paragraph "the sentence that
+ *     follows" the first, and "not always to blame" a direct contradiction.
+ *   - model answer (06 1.6): said Nightingale's problem is not money or
+ *     staff, which she never says; now ignorance, which she does.
+ *   - model answer and scheme (07 1.6): Source A uses "we" "throughout" and
+ *     "ends" on "When it dies, we die."; its first paragraph is "I", and its
+ *     last words are "It is biology."
+ *   - model answer and scheme (08 1.6): the girls given "the heaviest work"
+ *     (men loosen the coal), and both texts' workers used "because they are
+ *     cheap", which Engels never says.
+ *   - model answer (09 1.6): called the writer a lawyer; the text says only
+ *     "law school".
+ *   - mark scheme (10 1.5): the boys play "without adults watching over
+ *     them", which the text does not say; now "unrestrained", as it does.
  */
 
 // ─── WJEC Component 2 Source Texts ──────────────────────────────────────────
@@ -165,7 +244,7 @@ const HEALTH_SOURCE_B_REF =
 // Exam 07 - Environment
 const ENV_SOURCE_A = `Last summer, I stood on a beach in Pembrokeshire that I had visited every year since childhood. The rock pools where I had spent hours as a boy, cataloguing crabs and anemones with the obsessive precision of a seven-year-old naturalist, were empty. Not depleted. Not diminished. Empty. The seaweed that had once draped every surface in glistening curtains of brown and green had gone. The water was clear in a way that should have been beautiful but was, in fact, terrifying - the clarity of absence.
 
-Wales has lost 73% of its monitored insect populations since 1990. One in six species in the UK is now at risk of extinction. The hedgehog population has halved in twenty years. These numbers are so large that they become abstract, and abstraction is the enemy of action. So let me make it concrete: the dawn chorus in my village is quieter than it was when I was a child. Not metaphorically. Measurably. Quantifiably. There are fewer birds singing because there are fewer birds, because there are fewer insects, because we have poisoned the soil and paved the meadows and called it progress.
+The wildlife monitored in Wales has declined by a fifth, on average, since 1994. One in six Welsh species is now at risk of extinction. Britain's rural hedgehogs have halved since 2000. These numbers describe losses so large that they become abstract, and abstraction is the enemy of action. So let me make it concrete: the dawn chorus in my village is quieter than it was when I was a child. Not metaphorically. Measurably. Quantifiably. There are fewer birds singing because there are fewer birds, because there are fewer insects, because we have poisoned the soil and paved the meadows and called it progress.
 
 We speak of the environment as though it were something separate from us - a resource to be managed, a backdrop to human activity. It is not. It is the ground beneath our feet, the air in our lungs, the food on our plates. When it dies, we die. This is not ideology. It is biology.`
 
@@ -225,7 +304,7 @@ const CHILDHOOD_SOURCE_A = `We are raising the most protected and the most anxio
 
 I am a secondary school teacher in Newport, and I have watched this transformation unfold over fifteen years. The children who arrive in Year 7 today are qualitatively different from those who arrived in 2010. They are more anxious, more risk-averse, and more dependent on adult intervention. They cannot resolve playground disputes without a teacher. They cannot cope with a low mark without their parents emailing the headteacher. They have been so thoroughly bubble-wrapped that the ordinary challenges of adolescence - rejection, competition, boredom, physical discomfort - hit them like a truck.
 
-The statistics confirm what every teacher already knows. Referrals to CAMHS have increased by 353% in a decade. One in six children aged five to sixteen now has a probable mental health disorder. Self-harm among teenage girls has tripled since 2010. We have tried to eliminate suffering from childhood, and we have produced suffering on an industrial scale.`
+The statistics confirm what every teacher already knows. By 2020, one in six children in England aged five to sixteen had a probable mental disorder, up from one in nine only three years before. We have tried to eliminate suffering from childhood, and we have produced suffering on an industrial scale.`
 
 const CHILDHOOD_SOURCE_A_REF = 'Magazine article, specially written for this paper'
 
@@ -233,6 +312,69 @@ const CHILDHOOD_SOURCE_B = `It was very agreeable, recollecting that most infamo
 
 const CHILDHOOD_SOURCE_B_REF =
   'Charles Dickens, "A Walk in a Workhouse", Household Words (1850), from Reprinted Pieces'
+
+// ─── How Eduqas sets and marks Component 2 ───────────────────────────────────
+// In the site's own words, from src/data/mark-scheme-guides/eduqas-lang-comp2.ts.
+
+const SECTION_A_GUIDANCE =
+  'Answer all the questions in this section. You are advised to spend about an hour on it: about 10 minutes reading the two texts, then about 50 minutes answering. Questions 1.1 and 1.2 are on Source A, the 21st-century text; Questions 1.3 and 1.4 are on Source B, the 19th-century text; Questions 1.5 and 1.6 are on both.'
+
+const SECTION_B_GUIDANCE =
+  'Answer both questions in this section. You are advised to spend about 30 minutes on each: about 5 minutes planning and about 25 minutes writing. Each is worth 20 marks: 12 for communication and organisation, and 8 for writing accurately. Each piece should be about 300 to 400 words long.'
+
+const SHORT_A_MARKING = [
+  'One mark for each correct answer, 3 marks in all. Each answer must come from Source A, the 21st-century text: an answer from Source B earns nothing.',
+  "A short phrase is enough, in your own words or the writer's; no explanation is needed.",
+]
+
+const SHORT_B_MARKING = [
+  'One mark for each correct answer, 3 marks in all, from Source B, the 19th-century text. An answer from Source A earns nothing.',
+  'Show that you have understood the older language by putting it simply: a long passage copied out does not show that.',
+]
+
+const Q1_2_MARKING = [
+  'Band 1 (1 to 2 marks): a detail or two, but the answer is short and drifts from the question.',
+  'Band 2 (3 to 4 marks): some useful details with a little comment on them, but parts of the text are missed.',
+  "Band 3 (5 to 6 marks): a fair spread of details, and a start on explaining how the writer's words, tone and structure do their job.",
+  'Band 4 (7 to 8 marks): plenty of well-chosen details, explained correctly, with analysis of how the writer influences the reader starting to come through, and subject terms that help.',
+  "Band 5 (9 to 10 marks): the whole text covered with sharp, well-explained points, picking apart in detail how the writer's methods work on the reader.",
+  'Work through the text in order and use all of it. Quotations should be long enough to make sense, each followed by comment: fragments with no explanation, or techniques listed with no link to the question, earn little.',
+]
+
+const Q1_4_MARKING = [
+  'Band 1 (1 to 2 marks): a quick opinion, or a detail or two, with little to back it up.',
+  'Band 2 (3 to 4 marks): begins to test the statement against the text, with some evidence, but leaves parts of the text out.',
+  'Band 3 (5 to 6 marks): judges the statement properly, using details from across the text and noticing how the language helps.',
+  "Band 4 (7 to 8 marks): a clear, well-argued judgement with well-chosen evidence, showing how the writer's words and details reveal their feelings or views.",
+  'Band 5 (9 to 10 marks): a detailed argument that convinces, takes in the whole text and makes sharp points about how it works, with every reference earning its place.',
+  'Reach a judgement and keep to it, tracking the whole of Source B in order. A summary that does not judge holds itself down, and material from Source A earns nothing here.',
+]
+
+const Q1_5_MARKING = [
+  'Band 1 (1 mark): only a little relevant detail, or details from one text only. An answer on one text stays here, however full it is.',
+  'Band 2 (2 marks): a relevant detail or two from each text.',
+  'Band 3 (3 marks): several relevant details from both texts, brought together sensibly.',
+  'Band 4 (4 marks): a good spread of exactly the right details from both texts, brought together clearly.',
+  'Make clear which text each detail comes from. The question wants the details, not how they are written: comment on language earns nothing here.',
+]
+
+const Q1_6_MARKING = [
+  'Band 1 (1 to 2 marks): a detail or two, perhaps from one text only, or with no way to tell which text is meant.',
+  'Band 2 (3 to 4 marks): some sound details from both texts, and a first try at saying how the writers get them across.',
+  'Band 3 (5 to 6 marks): a fair number of sound details from both texts, and an attempt to explore how each writer presents them.',
+  'Band 4 (7 to 8 marks): details from both texts examined properly, with detailed comment on the methods each writer uses.',
+  "Band 5 (9 to 10 marks): both texts examined in depth, with a clear grasp of how and why each writer's methods work on readers.",
+  'Both halves of the question count: what the writers say, and how they get it across. Draw links between the texts, and always make clear which text you mean.',
+]
+
+const WRITING_MARKING = [
+  'Two marks are given and added together: up to 12 for communication and organisation (AO5) and up to 8 for writing accurately (AO6), each found on its own scale.',
+  'Band 1 (AO5 1 to 2, AO6 1): some idea of the form and the reader, but little to say and ideas in a simple order; sentences mostly alike, and errors frequent.',
+  'Band 2 (AO5 3 to 4, AO6 2 to 3): aware of the purpose and the reader, with a few reasons and paragraphs, though the points are not developed; sentences vary a little and most spelling is right.',
+  'Band 3 (AO5 5 to 7, AO6 4 to 5): fits the task and the reader, with reasons that are developed and paragraphs that build a sensible case; mostly accurate, with a mix of sentences and punctuation.',
+  'Band 4 (AO5 8 to 10, AO6 6 to 7): right for the task and the reader all the way through, with detailed, carefully chosen content and a clear structure; sentences varied for effect, and errors rare.',
+  'Band 5 (AO5 11 to 12, AO6 8): ambitious, polished writing, with a tone exactly right for the reader, ideas developed in depth so that they persuade, and accuracy close to faultless, with a wide, precise vocabulary.',
+]
 
 // ─── Exam Papers ────────────────────────────────────────────────────────────
 
@@ -254,141 +396,198 @@ export const wjecC2B: MockExamPaper[] = [
       {
         id: 'wjec-c2-06-reading',
         title: 'Section A: Reading',
-        description:
-          'Read both source texts carefully. Then answer all the questions in this section.',
+        description: SECTION_A_GUIDANCE,
         totalMarks: 40,
         suggestedTimeMinutes: 60,
         questions: [
           {
             id: 'wjec-c2-06-q1',
             questionNumber: 1,
-            questionText: `Read the 21st-century source text about the NHS (Source A).\n\nList five things you learn about the current state of the health service from this text.`,
-            marks: 5,
-            suggestedTimeMinutes: 5,
+            label: '1.1',
+            questionText: `Read Source A, the 21st-century text, and answer the questions below.\n\n(a) How long did the writer spend in A&E departments? [1]\n(b) How long did the woman in Swansea wait on a trolley? [1]\n(c) What kept the paramedic crew in Birmingham outside the hospital for six hours? [1]`,
+            marks: 3,
+            suggestedTimeMinutes: 4,
             questionType: 'short-answer',
             extract: `Source A:\n${HEALTH_SOURCE_A}\n\nSource B:\n${HEALTH_SOURCE_B}`,
             extractSource: `Source A: ${HEALTH_SOURCE_A_REF} | Source B: ${HEALTH_SOURCE_B_REF}`,
             modelAnswers: {
-              'Grade 4-5':
-                '1. A seventy-two-year-old woman waited nineteen hours on a trolley in Swansea. 2. A junior doctor in Leeds worked thirty consecutive hours. 3. A paramedic crew in Birmingham waited six hours outside hospital to hand over a patient. 4. There are staffing shortages across the NHS. 5. The infrastructure is crumbling.',
+              'Grade 4-5': `(a) Three months.\n(b) Nineteen hours.\n(c) They could not hand over their patient.`,
             },
-            markScheme: ['1 mark per valid point, maximum 5'],
+            markScheme: {
+              'How it is marked (3 marks)': SHORT_A_MARKING,
+              Answers: [
+                '(a) Three months.',
+                '(b) Nineteen hours (accept: in a corridor, because there were no beds, if the time is given).',
+                '(c) They were unable to hand over their patient to the hospital.',
+              ],
+            },
           },
           {
             id: 'wjec-c2-06-q2',
             questionNumber: 2,
-            questionText: `How does the writer of Source A use language to convey their feelings about the state of the NHS?\n\nYou should comment on specific words and phrases and the effects they create. [10]`,
+            label: '1.2',
+            questionText: `Source A is a newspaper article about the NHS. The writer wants to persuade readers that the health service is in crisis because of political choices.\n\nHow does the writer try to do this?\n\nIn your answer, comment on:\n• what the writer says\n• the writer's choice of language and tone\n• how the article is structured, and any other methods the writer uses.\n\n[10]`,
             marks: 10,
             suggestedTimeMinutes: 12,
             questionType: 'analysis',
             extract: `Source A:\n${HEALTH_SOURCE_A}`,
             extractSource: HEALTH_SOURCE_A_REF,
             modelAnswers: {
-              'Grade 4-5':
-                'The writer uses the metaphor "national religion" to show how important the NHS is to people. The phrase "slow, systemic suffocation" uses alliteration to emphasise how the service is being strangled. Specific examples like "nineteen hours on a trolley" shock the reader. The phrase "political choices disguised as unfortunate circumstances" shows the writer\'s anger at the government.',
-              'Grade 6-7':
-                'The writer constructs a rhetorical architecture that moves from reverence to outrage. The opening metaphor - "the closest thing we have to a national religion" - elevates the NHS to sacred status, making its decline feel like desecration. The metaphor of suffocation ("slow, systemic suffocation") uses sibilant alliteration to create an auditory sense of breath being squeezed out. The tricolon of case studies progresses through geography (Swansea, Leeds, Birmingham) but also through emotional register: from sympathy to admiration to systemic horror. The phrase "ferocity of purpose" is deliberately paradoxical - violence in the service of care - capturing the impossible demands placed on staff. The antithesis near the end - "political choices disguised as unfortunate circumstances" - strips away euphemism to expose culpability, with the verb "disguised" implying deliberate deception.',
+              'Grade 8-9': `The writer begins by raising the NHS to the highest possible status, so that its decline will seem all the more shocking. The opening sentence, "The NHS is not merely a healthcare system", corrects a narrow view, and the metaphor that follows calls it "the closest thing we have to a national religion - a shared article of faith". Religious language makes the service sacred, and the paradox that ends the sentence, that no one "should die because they cannot afford to live", sums up its moral purpose. The turn "And yet" then introduces the problem: that faith is "being tested as never before".\n\nIn the second paragraph the writer becomes a witness. "I spent three months embedded in A&E departments" gives authority, and the metaphor "not dysfunction but a slow, systemic suffocation" suggests that the service is not broken but being slowly strangled; the hissing sounds of "slow, systemic suffocation" add to the sense of breath being squeezed out. Three examples follow, each beginning with a place: "In Swansea", "In Leeds", "In Birmingham". The repeated pattern makes the crisis national, and the precise details, "nineteen hours on a trolley in a corridor", "thirty consecutive hours", "six hours", make it impossible to dismiss. The junior doctor who "could no longer remember whether she had eaten" makes exhaustion personal, while the image of "emergency calls stacked up unanswered across the city" widens the danger to everyone.\n\nThe final paragraph moves from description to blame. The short, firm sentence "These are not failures of individual commitment" protects the staff, and the list "Every doctor, nurse, porter, and receptionist" includes the least noticed workers. The noun phrase "a ferocity of purpose", with its suggestion of violence, shows how hard they are working, and the writer admits to being "humbled and, frankly, frightened", an honest confession that makes the warning more believable. The repeated "You cannot" stresses that goodwill has limits.\n\nThe climax names the cause. After a list of three problems, "The staffing shortages, the crumbling infrastructure, the impossible waiting lists", comes the accusation: "these are political choices disguised as unfortunate circumstances". The verb "disguised" suggests deliberate deception. The last sentence, "And until we name them honestly, nothing will change", uses the inclusive "we" to make the reader part of the solution, so the article ends with a challenge rather than despair.`,
             },
-            markScheme: [
-              'Analyses specific language techniques',
-              'Comments on word-level effects',
-              'Considers persuasive strategies',
-              'Uses embedded quotations',
-            ],
+            markScheme: {
+              'How it is marked (10 marks)': Q1_2_MARKING,
+              'Points you might make': [
+                `The religious metaphor ("a national religion - a shared article of faith") makes the NHS sacred, so its decline seems shocking; "And yet" introduces the problem.`,
+                `The writer as witness ("I spent three months embedded in A&E departments") and the metaphor "a slow, systemic suffocation".`,
+                `Three examples, each opening with a city, with precise figures ("nineteen hours on a trolley in a corridor") that make the crisis national and hard to dismiss.`,
+                `The staff are defended ("These are not failures of individual commitment"), and "a ferocity of purpose" and "humbled and, frankly, frightened" show their effort and the writer's honesty.`,
+                `The climax blames politics: "political choices disguised as unfortunate circumstances"; "disguised" suggests deception.`,
+                `The inclusive ending, "until we name them honestly, nothing will change", leaves a challenge.`,
+              ],
+            },
           },
           {
             id: 'wjec-c2-06-q3',
             questionNumber: 3,
-            questionText: `What do you learn about the problems facing healthcare from Source B?\n\n(reparative: healing, repairing. poultices: soft, warm pastes laid on the skin to ease pain or swelling. viz.: namely.)\n\nYou must refer to the text to support your answer. [10]`,
-            marks: 10,
-            suggestedTimeMinutes: 12,
+            label: '1.3',
+            questionText: `Read Source B, the 19th-century text, and answer the questions below.\n\n("Reparative" means healing or repairing; "poultices" are soft, warm pastes laid on the skin to ease pain or swelling; "viz." means namely.)\n\n(a) According to Nightingale, many of the symptoms thought to belong to a disease are really caused by something else. Give one thing that causes them. [1]\n(b) What has the word "nursing" usually been taken to mean, according to Nightingale? [1]\n(c) What does Nightingale think of the saying that "every woman makes a good nurse"? [1]`,
+            marks: 3,
+            suggestedTimeMinutes: 4,
             questionType: 'short-answer',
             extract: `Source B:\n${HEALTH_SOURCE_B}`,
             extractSource: HEALTH_SOURCE_B_REF,
             modelAnswers: {
-              'Grade 4-5':
-                'You learn that sick people often suffer because they are badly looked after, not only because they are ill. Nightingale says that many "symptoms" are really caused by "the want of fresh air, or of light, or of warmth, or of quiet, or of cleanliness". If a patient is cold or has a "bed-sore", "it is generally the fault not of the disease, but of the nursing." Nursing was thought to mean "little more than the administration of medicines and the application of poultices". She believes that "the very elements of nursing are all but unknown", although the nurse is not always to blame, because bad buildings and bad management "often make it impossible to nurse".',
-              'Grade 6-7':
-                'Nightingale shows that the greatest problem facing the care of the sick is not disease but ignorance and neglect. She writes as "the experienced observer" who has watched illness "both in private houses and in public hospitals", so the problem she describes is everywhere, not in one bad institution. Her first sentence builds a long list of what patients go without - "the want of fresh air, or of light, or of warmth, or of quiet, or of cleanliness" - and the repeated "or of" makes the neglect seem endless, while every item on the list is simple and cheap. The run of conditions "If a patient is cold, if a patient is feverish, if a patient is faint" ends in a blunt reversal: "it is generally the fault not of the disease, but of the nursing." This moves the blame from illness, which no one can help, to care, which someone could. She also shows that nursing itself is misunderstood: it has been limited to "little more than the administration of medicines and the application of poultices", and she dismisses the comfortable belief that "every woman makes a good nurse" with a firm "I believe, on the contrary". Yet she is fair to nurses: "I do not mean that the nurse is always to blame." The triple "Bad sanitary, bad architectural, and bad administrative arrangements" widens the blame to the buildings and to the people who run them. Her last sentence is bitterly ironic: nursing "as now practised" seems "expressly constituted to unmake" what God made disease to be, "a reparative process", so the care meant to heal the sick works against them.',
+              'Grade 4-5': `(a) A lack of fresh air.\n(b) Little more than giving medicines and putting on poultices.\n(c) She disagrees: she believes that even the basics of nursing are almost unknown.`,
             },
-            markScheme: [
-              'Identifies key information from the text',
-              'Selects appropriate evidence',
-              'Makes valid inferences',
-              'Shows clear understanding of implicit meaning',
-            ],
+            markScheme: {
+              'How it is marked (3 marks)': SHORT_B_MARKING,
+              Answers: [
+                '(a) Any one of: a lack of fresh air; of light; of warmth; of quiet; of cleanliness; of care and punctuality in giving food.',
+                '(b) Little more than giving medicines and applying poultices.',
+                '(c) She disagrees with it: she believes that the basic elements of nursing are almost unknown.',
+              ],
+            },
           },
           {
             id: 'wjec-c2-06-q4',
             questionNumber: 4,
-            questionText: `"Both writers feel passionately about healthcare, but the 21st-century writer is more effective because Source A gives specific examples, while Source B deals only in general principles."\n\nTo what extent do you agree with this statement? You must refer to both Source A and Source B in your answer. [15]`,
-            marks: 15,
-            suggestedTimeMinutes: 18,
+            label: '1.4',
+            questionText: `Read Source B again.\n\nA student said: ‘Nightingale blames nurses for the suffering of the sick.’\n\nHow far do you agree with this view?\n\nIn your answer, give your own view of how Nightingale presents the care of the sick across the whole text, and explain how her choices of words and details create that view. Support your answer with references to the text. [10]`,
+            marks: 10,
+            suggestedTimeMinutes: 12,
+            questionType: 'evaluation',
+            extract: `Source B:\n${HEALTH_SOURCE_B}`,
+            extractSource: HEALTH_SOURCE_B_REF,
+            modelAnswers: {
+              'Grade 8-9': `I largely disagree. Nightingale is fiercely critical of nursing as it is practised, but she is careful to separate the art of nursing from the individual nurse, and much of her blame falls on ignorance and on the conditions in which nurses work.\n\nAt first the statement seems right. Her opening claims that sufferings thought "inevitable and incident to the disease" are often caused by something else: "the want of fresh air, or of light, or of warmth, or of quiet, or of cleanliness". The repeated "or of" builds a long list of simple things the sick go without, and the blunt third paragraph puts the blame squarely on care: if a patient is cold, feverish or faint, "it is generally the fault not of the disease, but of the nursing." The repetition of "if a patient" makes the point feel undeniable.\n\nHowever, her target is a way of thinking rather than a group of people. She criticises the narrow meaning of the word: nursing "has been limited to signify little more than the administration of medicines and the application of poultices", when it "ought to signify" the proper use of "fresh air, light, warmth, cleanliness, quiet". She is attacking ignorance, as her firm reply to a common saying shows: "I believe, on the contrary, that the very elements of nursing are all but unknown." What is unknown can hardly be the fault of any one nurse.\n\nThe statement is directly challenged in the sixth paragraph: "By this I do not mean that the nurse is always to blame." The triple "Bad sanitary, bad architectural, and bad administrative arrangements" shifts the responsibility to those who design and run hospitals and homes, and she concludes that such arrangements "often make it impossible to nurse". She then widens the meaning of nursing again, so that its art "ought to include such arrangements".\n\nHer final sentence is her harshest: the art of nursing, "as now practised, seems to be expressly constituted to unmake what God had made disease to be". This is a strong condemnation, but of a practice, not of the women who carry it out.\n\nSo Nightingale does blame nursing, but she blames the nurse only in part, and far less than she blames the ignorance and the conditions that surround her.`,
+            },
+            markScheme: {
+              'How it is marked (10 marks)': Q1_4_MARKING,
+              'Points you might make': [
+                `The opening seems to support the statement: suffering comes from "the want of fresh air, or of light, or of warmth", and "it is generally the fault not of the disease, but of the nursing."`,
+                `Her target is a narrow idea of nursing ("little more than the administration of medicines and the application of poultices") and the ignorance shown by "the very elements of nursing are all but unknown".`,
+                `She directly clears the individual: "I do not mean that the nurse is always to blame", and blames "Bad sanitary, bad architectural, and bad administrative arrangements".`,
+                `The final sentence condemns the practice "as now practised", with bitter irony, rather than the nurse.`,
+                'A strong answer reaches a judgement on the statement, agreeing, disagreeing or agreeing in part, and keeps to it through the whole passage.',
+              ],
+            },
+          },
+          {
+            id: 'wjec-c2-06-q5',
+            questionNumber: 5,
+            label: '1.5',
+            questionText: `Bring together details from both texts to explain briefly what each writer says is causing patients to suffer. Make clear which text each detail comes from. [4]`,
+            marks: 4,
+            suggestedTimeMinutes: 5,
+            questionType: 'summary',
+            extract: `Source A:\n${HEALTH_SOURCE_A}\n\nSource B:\n${HEALTH_SOURCE_B}`,
+            extractSource: `Source A: ${HEALTH_SOURCE_A_REF} | Source B: ${HEALTH_SOURCE_B_REF}`,
+            modelAnswers: {
+              'Grade 4-5': `In Source A, patients suffer because the health service lacks beds and staff: a woman waited "nineteen hours on a trolley in a corridor", and the writer blames "staffing shortages", "crumbling infrastructure" and long waiting lists on political choices. In Source B, patients suffer from "the want of fresh air, or of light, or of warmth, or of quiet, or of cleanliness", because the basics of nursing are "all but unknown" and buildings and management are badly arranged.`,
+            },
+            markScheme: {
+              'How it is marked (4 marks)': Q1_5_MARKING,
+              'Details you might bring together': [
+                'Source A: too few beds; exhausted staff working thirty hours; ambulances unable to hand over patients; staffing shortages, crumbling buildings and long waiting lists, which the writer calls political choices.',
+                'Source B: a lack of fresh air, light, warmth, quiet, cleanliness and care with food; ignorance of what nursing should be; bad sanitary, architectural and administrative arrangements.',
+              ],
+            },
+          },
+          {
+            id: 'wjec-c2-06-q6',
+            questionNumber: 6,
+            label: '1.6',
+            questionText: `Source A and Source B are both about the care of the sick.\n\nCompare:\n• what the writers say about the problems in caring for the sick\n• how they get their ideas across.\n\nUse evidence from both texts, and make clear which text each point comes from. [10]`,
+            marks: 10,
+            suggestedTimeMinutes: 13,
             questionType: 'comparison',
             extract: `Source A:\n${HEALTH_SOURCE_A}\n\nSource B:\n${HEALTH_SOURCE_B}`,
             extractSource: `Source A: ${HEALTH_SOURCE_A_REF} | Source B: ${HEALTH_SOURCE_B_REF}`,
             modelAnswers: {
-              'Grade 4-5':
-                'I partly agree. Source A gives specific examples, like the woman who waited "nineteen hours on a trolley in a corridor", and these make the problems easy to picture. Nightingale does write in general terms, but her points come from what she has seen, and her examples of a patient who is "cold", "feverish" or "faint" are ones every reader will recognise. Both writers say the staff are not the ones to blame: Source A says "These are not failures of individual commitment", and Nightingale says "I do not mean that the nurse is always to blame." I think both are effective in different ways.',
-              'Grade 6-7':
-                'The statement is half right. Source A is built on specific cases, and its three scenes - Swansea, Leeds, Birmingham - make the crisis vivid and hard to dismiss. Yet its force comes as much from metaphor ("slow, systemic suffocation") and from its accusation that the failings are "political choices disguised as unfortunate circumstances" as from its examples. Source B does deal in general principles, but that is where its power lies. Nightingale writes as "the experienced observer" and turns what she has seen into a rule that holds "as much in private as in hospital nursing", so every reader who has nursed a relative is implicated. Her particulars are not named patients but symptoms anyone would recognise - a patient who is "cold", "feverish" or "faint", or has a "bed-sore" - and her conclusion is a reversal that no single case could carry: "it is generally the fault not of the disease, but of the nursing." The two writers reach a similar verdict by opposite routes. Both clear the individual worker ("These are not failures of individual commitment"; "I do not mean that the nurse is always to blame") and blame the system, which Source A calls political and Nightingale calls "Bad sanitary, bad architectural, and bad administrative arrangements". Source A is more immediate; Source B reaches further, because it asks readers to change how they care for the sick rather than only to feel angry about it.',
+              'Grade 8-9': `Both writers argue that the sick are let down by the system meant to care for them, and both are careful not to blame the people who do the caring; they differ in what they see as the cause and in how they present it.\n\nThe writer of Source A describes a service overwhelmed by demand and short of resources. A woman waits "nineteen hours on a trolley in a corridor because there were no beds", and a doctor has worked "thirty consecutive hours". The cause, the writer says, is political: the shortages are "political choices disguised as unfortunate circumstances". Nightingale, in Source B, describes suffering caused by ignorance and the neglect of simple things, "the want of fresh air, or of light, or of warmth, or of quiet, or of cleanliness". For her the problem is above all ignorance: "the very elements of nursing are all but unknown".\n\nBoth defend the workers. Source A insists that "These are not failures of individual commitment", and describes staff "working with a ferocity of purpose". Nightingale writes "I do not mean that the nurse is always to blame", and points instead to "Bad sanitary, bad architectural, and bad administrative arrangements". Both therefore blame the system, but Source A blames those who fund it, while Nightingale blames those who build and run hospitals and homes, and a whole society's misunderstanding of what nursing is.\n\nTheir methods differ. The writer of Source A uses the methods of journalism: a personal account ("I spent three months embedded in A&E departments"), three named cities, precise figures, and emotive metaphors such as "a slow, systemic suffocation". Nightingale writes with the authority of "the experienced observer" and the manner of a book of instruction. She deals in general truths, with repeated structures ("If a patient is cold, if a patient is feverish, if a patient is faint") and a definition of what nursing "ought to signify". Her examples are symptoms anyone would recognise, not named patients.\n\nTheir tones differ too. Source A is angry and urgent, and ends with a challenge: "until we name them honestly, nothing will change". Nightingale is calm and authoritative until her final sentence, which is bitterly ironic: nursing "as now practised" seems "expressly constituted to unmake" what God made disease to be. Source A wants its readers to demand political change; Nightingale wants hers to change how they care for the sick.`,
             },
-            markScheme: [
-              'Evaluates both texts with a personal response',
-              'Compares effectiveness of different methods',
-              'Uses evidence from both texts',
-              'Shows nuanced critical judgement',
-            ],
+            markScheme: {
+              'How it is marked (10 marks)': Q1_6_MARKING,
+              'Points you might make': [
+                `Causes: shortages that are "political choices" (Source A); ignorance and neglect of simple things such as fresh air and cleanliness (Source B).`,
+                `Both defend the workers: "These are not failures of individual commitment" (Source A); "I do not mean that the nurse is always to blame" (Source B).`,
+                'Methods: personal reporting, named cities, figures and emotive metaphor (Source A); general truths, repeated structures and definitions from an experienced observer (Source B).',
+                'Tone: angry and urgent, ending in a challenge (Source A); calm and authoritative, ending in bitter irony (Source B).',
+                'Purpose: political change (Source A); a change in how readers care for the sick (Source B).',
+              ],
+            },
           },
         ],
       },
       {
         id: 'wjec-c2-06-writing',
         title: 'Section B: Writing',
-        description:
-          'You are advised to spend about 60 minutes on this section. You should divide your time equally between the two tasks.',
+        description: SECTION_B_GUIDANCE,
         totalMarks: 40,
         suggestedTimeMinutes: 60,
         questions: [
           {
-            id: 'wjec-c2-06-q5',
-            questionNumber: 5,
-            questionText: `You have been asked to write a contribution to a health awareness booklet aimed at teenagers.\n\nWrite an informative text explaining why mental health is just as important as physical health.\n\n[16]`,
-            marks: 16,
-            suggestedTimeMinutes: 25,
+            id: 'wjec-c2-06-q7',
+            questionNumber: 1,
+            label: '2.1',
+            questionText: `Your school is producing a health booklet for teenagers.\n\nWrite an article for the booklet explaining why looking after your mental health is just as important as looking after your physical health. [20]`,
+            marks: 20,
+            suggestedTimeMinutes: 30,
             questionType: 'transactional-writing',
             modelAnswers: {
-              'Grade 4-5':
-                'A clear informative text with: appropriate tone for teenagers; relevant points about mental health; generally accurate SPaG.',
-              'Grade 6-7':
-                'A well-structured informative piece with: engaging tone; well-developed explanations; consistent accuracy and varied vocabulary.',
-              'Grade 8-9':
-                'A compelling and authoritative text with: sophisticated awareness of audience; nuanced exploration of the topic; technical virtuosity.',
+              'Grade 8-9': `Healthy body, healthy mind: why both matter\n\nIf you twisted your ankle on the football pitch, you would not hesitate to tell someone. You would rest it, perhaps see a doctor, and nobody would think any less of you. So why do so many of us keep quiet when it is our minds, rather than our bodies, that are hurting?\n\nMental health simply means how we think, feel and cope with everyday life. Like physical health, everyone has it, and like physical health, it can be good on some days and poor on others. Feeling stressed before an exam, or low after an argument with a friend, is a normal part of being human. The problems start when those feelings last for weeks, or begin to stop us doing the things we enjoy.\n\nLooking after your mind matters for the same reasons as looking after your body. When we feel calm and well, we sleep better, concentrate better in lessons and get on better with the people around us. When we are struggling, everything becomes harder, from getting out of bed to finishing homework. In fact, the two kinds of health are closely linked. Regular exercise can lift your mood, and a good night's sleep can make problems seem smaller. Equally, worry and stress can leave you feeling tired or unwell.\n\nSo what can you do? Small habits make a big difference. Get outside and move, even if it is only a walk with a friend. Try to keep a regular bedtime, and leave your phone outside your bedroom. Make time for the things you enjoy, whether that is music, art or simply laughing with friends. Above all, talk. Sharing a worry with someone you trust, a friend, a parent, a teacher or the school counsellor, can make it feel much lighter.\n\nAnd if you ever feel that things are getting too much, ask for help, just as you would with an injury. Your GP and the school's pastoral team are there to support you, and asking for help is a sign of strength, not weakness.\n\nYou only get one body and one mind. Both deserve looking after.`,
             },
-            markScheme: [
-              'Communication & Organisation (10 marks): Purpose, audience, form, structure',
-              'Writing Accurately (6 marks): Sentence variety, vocabulary, SPaG',
-            ],
+            markScheme: {
+              'How it is marked (20 marks)': WRITING_MARKING,
+              'What earns marks in this task': [
+                'The features of an informative article: a heading, an opening that engages teenage readers, and paragraphs that explain clearly.',
+                'A warm, reassuring tone that suits teenagers, informative without lecturing.',
+                'Explanation developed with reasons and practical examples, including where to find help.',
+                'Accurate spelling, punctuation and grammar, with varied sentences and well-chosen words: 8 of the 20 marks are for this.',
+              ],
+            },
           },
           {
-            id: 'wjec-c2-06-q6',
-            questionNumber: 6,
-            questionText: `"The government should make physical exercise compulsory for all citizens."\n\nWrite a speech for a debate arguing either for or against this statement.\n\n[24]`,
-            marks: 24,
-            suggestedTimeMinutes: 35,
+            id: 'wjec-c2-06-q8',
+            questionNumber: 2,
+            label: '2.2',
+            questionText: `"The government should make physical exercise compulsory for all citizens."\n\nWrite a speech for a debate giving your views on this statement. [20]`,
+            marks: 20,
+            suggestedTimeMinutes: 30,
             questionType: 'transactional-writing',
             modelAnswers: {
-              'Grade 4-5':
-                'A speech with: clear position; some persuasive techniques; appropriate form with address to audience; generally accurate SPaG.',
-              'Grade 6-7':
-                'A well-crafted speech with: sustained argument; effective rhetorical devices; convincing counter-arguments addressed; consistent accuracy.',
-              'Grade 8-9':
-                'An outstanding speech with: commanding voice; sophisticated reasoning; masterful use of rhetorical techniques; technical precision throughout.',
+              'Grade 8-9': `Good afternoon, ladies and gentlemen.\n\nNobody in this room doubts that exercise is good for us. It strengthens our hearts, lifts our mood and helps us live longer. If a pill could do all that, we would all be queuing up for it. So it may surprise you that I am speaking against this motion. I believe that exercise should be encouraged, supported and made easier, but it should never be made compulsory.\n\nFirst, ask yourself how it would work. Would the government send inspectors to check that we had been for our daily jog? Would there be fines for people who missed a session, or tracking devices on every wrist? A law that cannot be enforced is pointless, and a law that can be enforced only by watching every citizen is frightening. In a free country, what we do with our own bodies in our own time should be our own choice.\n\nSecond, think about fairness. Not everyone can exercise in the same way. Some people have disabilities or long-term illnesses. Others work two jobs, or care for children or elderly parents, and have barely a spare minute in the day. A rule that treats them all the same would punish the people who already find life hardest.\n\nThird, compulsion would not work. Think back to being made to run round a muddy field in the rain. Did it make you love running? For most of us, being forced to do something is the quickest way to start hating it. If we want people to exercise for life, they need to enjoy it.\n\nSo what should the government do instead? It should make exercise easy, cheap and fun. Keep sports centres and swimming pools open. Build safe cycle paths and light our parks in winter. Offer free classes for people who have never tried yoga or dancing or football. Make the healthy choice the easy choice, and people will make it.\n\nExercise is a wonderful thing. That is exactly why it should be a gift we choose, not a duty we are ordered to perform.\n\nI urge you to oppose the motion. Thank you.`,
             },
-            markScheme: [
-              'Communication & Organisation (14 marks): Purpose, audience, form, voice, structure, paragraphing',
-              'Writing Accurately (10 marks): Sentence variety, vocabulary range, SPaG',
-            ],
+            markScheme: {
+              'How it is marked (20 marks)': WRITING_MARKING,
+              'What earns marks in this task': [
+                'The features of a debate speech: a greeting, a clear statement of your view on the motion, direct address and questions, and a strong closing appeal.',
+                'A confident, persuasive tone that suits a debating audience.',
+                'A clear view, developed with reasons and examples, that deals with the strongest arguments on the other side.',
+                'Accurate spelling, punctuation and grammar, with varied sentences and well-chosen words: 8 of the 20 marks are for this.',
+              ],
+            },
           },
         ],
       },
@@ -412,141 +611,198 @@ export const wjecC2B: MockExamPaper[] = [
       {
         id: 'wjec-c2-07-reading',
         title: 'Section A: Reading',
-        description:
-          'Read both source texts carefully. Then answer all the questions in this section.',
+        description: SECTION_A_GUIDANCE,
         totalMarks: 40,
         suggestedTimeMinutes: 60,
         questions: [
           {
             id: 'wjec-c2-07-q1',
             questionNumber: 1,
-            questionText: `Read the 21st-century source text about the environment (Source A).\n\nList five things you learn about environmental decline from this text.`,
-            marks: 5,
-            suggestedTimeMinutes: 5,
+            label: '1.1',
+            questionText: `Read Source A, the 21st-century text, and answer the questions below.\n\n(a) In which county is the beach that the writer had visited every year since childhood? [1]\n(b) According to the writer, by how much has the wildlife monitored in Wales declined, on average, since 1994? [1]\n(c) What has happened to Britain's rural hedgehogs since 2000? [1]`,
+            marks: 3,
+            suggestedTimeMinutes: 4,
             questionType: 'short-answer',
             extract: `Source A:\n${ENV_SOURCE_A}\n\nSource B:\n${ENV_SOURCE_B}`,
             extractSource: `Source A: ${ENV_SOURCE_A_REF} | Source B: ${ENV_SOURCE_B_REF}`,
             modelAnswers: {
-              'Grade 4-5':
-                '1. Rock pools in Pembrokeshire that used to be full of life are now empty. 2. Wales has lost 73% of its monitored insect populations since 1990. 3. One in six species in the UK is at risk of extinction. 4. The hedgehog population has halved in twenty years. 5. The dawn chorus is quieter than it used to be.',
+              'Grade 4-5': `(a) Pembrokeshire.\n(b) By a fifth.\n(c) They have halved.`,
             },
-            markScheme: ['1 mark per valid point, maximum 5'],
+            markScheme: {
+              'How it is marked (3 marks)': SHORT_A_MARKING,
+              Answers: [
+                '(a) Pembrokeshire.',
+                '(b) By a fifth (accept: 20%).',
+                '(c) They have halved (accept: half of them have gone).',
+              ],
+            },
           },
           {
             id: 'wjec-c2-07-q2',
             questionNumber: 2,
-            questionText: `How does the writer of Source A use language to make the reader feel concerned about the environment?\n\nYou should comment on specific words and phrases and the effects they create. [10]`,
+            label: '1.2',
+            questionText: `Source A is a magazine article about the natural world. The writer wants to make readers concerned about the damage being done to the environment.\n\nHow does the writer try to do this?\n\nIn your answer, comment on:\n• what the writer says\n• the writer's choice of language and tone\n• how the article is structured, and any other methods the writer uses.\n\n[10]`,
             marks: 10,
             suggestedTimeMinutes: 12,
             questionType: 'analysis',
             extract: `Source A:\n${ENV_SOURCE_A}`,
             extractSource: ENV_SOURCE_A_REF,
             modelAnswers: {
-              'Grade 4-5':
-                'The writer uses the phrase "the clarity of absence" to show that the empty rock pools are frightening, not beautiful. The three short sentences "Not depleted. Not diminished. Empty" build up to a shocking final word. Statistics like "73%" make the problem feel real and urgent. The personal memory of childhood makes the reader feel sad about what has been lost.',
-              'Grade 6-7':
-                'The writer employs a strategy of defamiliarisation: what should be positive - clear water, quiet mornings - is reframed as evidence of catastrophe. The tricolon "Not depleted. Not diminished. Empty" uses successive negation to reject euphemism before arriving at the brutal monosyllable. The paradox in "clarity of absence" transforms visual beauty into existential horror. The shift from personal anecdote to statistics to the first-person plural ("the air in our lungs") creates a rhetorical funnel that narrows from the particular to the universal. The three clipped sentences "Not metaphorically. Measurably. Quantifiably." aggressively pre-empt dismissal by insisting on empirical rather than emotional truth. The closing sentences deploy the starkest possible syntax - "When it dies, we die" - reducing ecological complexity to primal cause and effect. The final antithesis - "This is not ideology. It is biology" - claims scientific authority while performing a deeply rhetorical manoeuvre.',
+              'Grade 8-9': `The writer begins with a personal memory rather than a fact, which draws the reader in emotionally. He returns to a beach in Pembrokeshire "that I had visited every year since childhood", and the picture of the boy "cataloguing crabs and anemones with the obsessive precision of a seven-year-old naturalist" is affectionate and slightly comic, so the loss that follows hurts all the more. The rock pools "were empty", and the next three fragments, "Not depleted. Not diminished. Empty.", reject the softer words one by one before repeating the plain one. The structure forces the reader to face the worst. The writer then contrasts what was there, seaweed draped "in glistening curtains of brown and green", with what is left: water that "should have been beautiful but was, in fact, terrifying". The phrase "the clarity of absence" captures the shock of seeing clearly only because nothing is left.\n\nThe second paragraph changes method to evidence: Welsh wildlife has declined "by a fifth", "One in six Welsh species" is at risk, and rural hedgehogs "have halved since 2000". The writer is honest about the weakness of figures, which "become abstract", and the sentence "abstraction is the enemy of action" explains why he does not rely on them. He makes the point "concrete" with a sound the reader can imagine: "the dawn chorus in my village is quieter". The fragments "Not metaphorically. Measurably. Quantifiably." insist that this is fact, not poetry. The long final sentence links cause to cause with the repeated "because": there are fewer birds "because there are fewer insects, because we have poisoned the soil and paved the meadows and called it progress". Ending on "called it progress" is bitterly ironic, since it exposes damage done in the name of improvement.\n\nThe last paragraph widens the argument to everyone through the inclusive "We". The writer rejects the idea of the environment as "a resource to be managed, a backdrop to human activity" with the blunt "It is not.", and the list "the ground beneath our feet, the air in our lungs, the food on our plates" makes nature part of our bodies and our daily lives. The short sentences "When it dies, we die. This is not ideology. It is biology." end with a stark warning, and the near-rhyme of "ideology" and "biology" makes the final point memorable: protecting nature is not a political opinion but a matter of survival.`,
             },
-            markScheme: [
-              'Analyses specific language techniques',
-              'Comments on word-level effects',
-              'Considers persuasive strategies',
-              'Uses embedded quotations',
-            ],
+            markScheme: {
+              'How it is marked (10 marks)': Q1_2_MARKING,
+              'Points you might make': [
+                `A personal memory opens the article: the boy "cataloguing crabs and anemones" makes the loss hurt more.`,
+                `The fragments "Not depleted. Not diminished. Empty." reject softer words; "the clarity of absence" captures the shock.`,
+                `Evidence ("declined by a fifth, on average, since 1994"; "One in six Welsh species"), then honesty about figures: "abstraction is the enemy of action".`,
+                `The concrete example of "the dawn chorus in my village" and the chain of causes linked by "because", ending ironically on "called it progress".`,
+                `The inclusive "We", the list "the ground beneath our feet, the air in our lungs, the food on our plates", and the stark ending "It is biology."`,
+              ],
+            },
           },
           {
             id: 'wjec-c2-07-q3',
             questionNumber: 3,
-            questionText: `What do you learn about environmental damage from Source B?\n\n(Source B is from a letter Ruskin addressed to working men. vitiate: spoil, make impure. effluvia, miasmata: foul and poisonous vapours, then thought to spread disease. German and French: the Franco-Prussian War of 1870-71. Demeter: the Greek goddess of the harvest. Tisiphone: one of the Furies, who avenged murder.)\n\nYou must refer to the text to support your answer. [10]`,
-            marks: 10,
-            suggestedTimeMinutes: 12,
+            label: '1.3',
+            questionText: `Read Source B, the 19th-century text, and answer the questions below.\n\n(Source B is from a letter Ruskin addressed to working men in 1871. "Vitiate" means spoil or make impure; "effluvia" and "miasmata" are foul and poisonous vapours, then thought to spread disease; "German and French" refers to the Franco-Prussian War of 1870 to 1871; Demeter is the Greek goddess of the harvest, and Tisiphone is one of the Furies, who avenged murder.)\n\n(a) Name the three things that Ruskin says heaven gives his readers. [1]\n(b) What does Ruskin mean when he calls towns "laboratories for the distillation into heaven of venomous smokes and smells"? [1]\n(c) According to Ruskin, what could the rivers of England be like if people looked after them? Give one detail. [1]`,
+            marks: 3,
+            suggestedTimeMinutes: 4,
             questionType: 'short-answer',
             extract: `Source B:\n${ENV_SOURCE_B}`,
             extractSource: ENV_SOURCE_B_REF,
             modelAnswers: {
-              'Grade 4-5':
-                'You learn that people were damaging the air, the water and the earth. Ruskin says that war was filling the air with "noxious gas" from the dead, and that towns gave off "venomous smokes and smells" all day long. He calls towns "horrible nests". Rivers had been turned into "a common sewer", so dirty that you could not "baptize an English baby but with filth", and even the rain "falls dirty". He also shows that the damage could be undone: planting trees and "forbidding noxious manufactures" would clean the air, and the rivers could be "as pure as the crystal of the rock". He blames science for turning the earth from something that feeds people into something deadly.',
-              'Grade 6-7':
-                'Ruskin presents environmental damage as something people choose, not something that happens to them. His grammar makes the point: the reader is the subject of the destructive verbs - "You can vitiate the air", "you have turned the Mother-Earth, Demeter, into the Avenger-Earth, Tisiphone" - so the damage is an act with a doer. He shows it in each of the three "Material" things in turn. The air is poisoned by war, "changing men, horses, and garden-stuff into noxious gas", a flat list that puts soldiers alongside vegetables, and by everyday industry: towns are "horrible nests" and "laboratories for the distillation into heaven of venomous smokes and smells", an image that turns the sky itself into a place of manufacture. The water has been made "a common sewer", and the detail that "you cannot so much as baptize an English baby but with filth" makes pollution a spiritual defilement as well as a physical one; the short clause "and even that falls dirty" leaves nowhere clean. The earth, "meant to be nourishing for you, and blossoming", has been turned, as far as "scientific hands and scientific brains" can manage it, from a mother into an avenger, and "the voice of your brother\'s blood" echoes God\'s words to Cain, so the harm done to the earth is bound up with killing. Yet the passage is not hopeless. The power to repair is "literally infinite": planting trees, forbidding "noxious manufactures", and rivers "so full of fish that you might take them out with your hands instead of nets". The reader learns that the damage is real, widespread and man-made, and that it could be reversed.',
+              'Grade 4-5': `(a) Pure air, water and earth.\n(b) The towns send poisonous smoke and smells up into the sky, so they pollute the air.\n(c) They could be as pure as crystal.`,
             },
-            markScheme: [
-              'Identifies key information from the text',
-              'Selects appropriate evidence',
-              'Makes valid inferences',
-              'Shows clear understanding of implicit meaning',
-            ],
+            markScheme: {
+              'How it is marked (3 marks)': SHORT_B_MARKING,
+              Answers: [
+                '(a) Pure air, water and earth (all three are needed for the mark).',
+                '(b) The towns pour poisonous smoke and smells into the air, as if they existed to make poison (accept: towns pollute the sky).',
+                '(c) Any one of: as pure as crystal; beautiful, with waterfalls, lakes and pools; so full of fish that you could catch them with your hands.',
+              ],
+            },
           },
           {
             id: 'wjec-c2-07-q4',
             questionNumber: 4,
-            questionText: `"Both writers are alarmed by environmental destruction, but the modern writer communicates more urgency because he uses scientific evidence."\n\n(Source B glossary: vitiate: spoil, make impure. effluvia, miasmata: foul and poisonous vapours. German and French: the Franco-Prussian War of 1870-71. Demeter: the Greek goddess of the harvest. Tisiphone: one of the Furies, who avenged murder.)\n\nTo what extent do you agree with this statement? You must refer to both Source A and Source B in your answer. [15]`,
-            marks: 15,
-            suggestedTimeMinutes: 18,
+            label: '1.4',
+            questionText: `Read Source B again.\n\nA student said: ‘Ruskin is more interested in blaming his readers than in showing them what they could do.’\n\nHow far do you agree with this view?\n\nIn your answer, give your own view of how Ruskin presents his readers and their power over nature across the whole text, and explain how his choices of words and details create that view. Support your answer with references to the text. [10]`,
+            marks: 10,
+            suggestedTimeMinutes: 12,
+            questionType: 'evaluation',
+            extract: `Source B:\n${ENV_SOURCE_B}`,
+            extractSource: ENV_SOURCE_B_REF,
+            modelAnswers: {
+              'Grade 8-9': `I disagree with this view, although it is easy to see why a reader might hold it. Ruskin's blame is fierce and memorable, but the passage is built on a contrast between what his readers have done and what they could do, and the possibilities he describes are as vivid as the damage.\n\nThe structure itself is balanced. For each of "Pure Air, Water, and Earth", Ruskin sets out the reader's power, and he makes clear from the start that it cuts both ways: "You can destroy them at your pleasure, or increase, almost without limit, the available qualities of them." The word "or" offers a real choice.\n\nIt is true that his account of the air is mostly accusation. "You can vitiate" and "You might easily vitiate" pile up the charges, and the war is described in grotesque terms, "changing men, horses, and garden-stuff into noxious gas". His most striking image presents towns as "horrible nests" and "laboratories for the distillation into heaven of venomous smokes and smells", where the word "heaven" makes the pollution seem almost a sacrilege. Here the statement seems right.\n\nBut he turns at once, with "On the other hand", to the reader's "power of purifying the air", which "is literally infinite". He lists practical actions, "dealing properly and swiftly with all substances in corruption", "absolutely forbidding noxious manufactures", "planting in all soils the trees which cleanse", and ends with a startling promise: "You might make every breath of air you draw, food." This is not blame but a vision of what could be.\n\nThe paragraph on water has the same balance, and here the hopeful side comes first and is richer. The rivers could be "as pure as the crystal of the rock; beautiful in falls, in lakes, in living pools", and "so full of fish that you might take them out with your hands". Only then does he return to the present, in which every river is becoming "a common sewer", so that a baby cannot be baptised "but with filth".\n\nThe final paragraphs are the bleakest. The earth, "meant to be nourishing for you, and blossoming", has been turned from "Mother-Earth" into "Avenger-Earth", and the closing sentence sums up "what you have done". So the passage does end on blame. Yet the force of that ending depends on the hopes raised earlier: Ruskin blames his readers so bitterly because he believes they could do so much better.`,
+            },
+            markScheme: {
+              'How it is marked (10 marks)': Q1_4_MARKING,
+              'Points you might make': [
+                `The passage is built on a choice: "You can destroy them at your pleasure, or increase, almost without limit, the available qualities of them."`,
+                `The air paragraph accuses ("You can vitiate"; "horrible nests"; "venomous smokes and smells"), which supports the statement.`,
+                `"On the other hand" turns to a power that "is literally infinite", with practical remedies and the promise "You might make every breath of air you draw, food."`,
+                `The rivers could be "as pure as the crystal of the rock", before the blame returns ("a common sewer").`,
+                `The ending is bleak ("Avenger-Earth"; "what you have done"), but its force depends on the hopes raised before it.`,
+                'A strong answer reaches a judgement on the statement and keeps to it through the whole passage.',
+              ],
+            },
+          },
+          {
+            id: 'wjec-c2-07-q5',
+            questionNumber: 5,
+            label: '1.5',
+            questionText: `Bring together details from both texts to explain briefly what damage each writer says has been done to the natural world. Make clear which text each detail comes from. [4]`,
+            marks: 4,
+            suggestedTimeMinutes: 5,
+            questionType: 'summary',
+            extract: `Source A:\n${ENV_SOURCE_A}\n\nSource B:\n${ENV_SOURCE_B}`,
+            extractSource: `Source A: ${ENV_SOURCE_A_REF} | Source B: ${ENV_SOURCE_B_REF}`,
+            modelAnswers: {
+              'Grade 4-5': `In Source A, the rock pools on a Pembrokeshire beach "were empty", the wildlife monitored in Wales has "declined by a fifth", and there are fewer birds "because we have poisoned the soil and paved the meadows". In Source B, Ruskin says that the air is poisoned by "foul chemical exhalations" from the towns and by war, the rivers are being turned into "a common sewer", and the earth has been changed from a mother into an avenger.`,
+            },
+            markScheme: {
+              'How it is marked (4 marks)': Q1_5_MARKING,
+              'Details you might bring together': [
+                'Source A: empty rock pools and vanished seaweed; Welsh wildlife down by a fifth, one in six Welsh species at risk and half the rural hedgehogs gone; fewer birds and insects; poisoned soil and paved meadows.',
+                'Source B: air poisoned by chemical fumes, town smoke and the dead of war; rivers made into sewers; an earth made deadly instead of nourishing.',
+              ],
+            },
+          },
+          {
+            id: 'wjec-c2-07-q6',
+            questionNumber: 6,
+            label: '1.6',
+            questionText: `Source A and Source B are both about the damage people do to the natural world.\n\nCompare:\n• what the writers say about this damage and who is responsible for it\n• how they get their ideas across.\n\nUse evidence from both texts, and make clear which text each point comes from. [10]`,
+            marks: 10,
+            suggestedTimeMinutes: 13,
             questionType: 'comparison',
             extract: `Source A:\n${ENV_SOURCE_A}\n\nSource B:\n${ENV_SOURCE_B}`,
             extractSource: `Source A: ${ENV_SOURCE_A_REF} | Source B: ${ENV_SOURCE_B_REF}`,
             modelAnswers: {
-              'Grade 4-5':
-                'I partly agree. The writer of Source A uses figures like "73%" and "One in six species", which make the problem seem serious and proven. Ruskin uses no statistics at all. However, Ruskin is just as urgent, because he speaks straight to the reader: "You can vitiate the air". He uses shocking images, like towns as "horrible nests" and rivers turned into "a common sewer". Ruskin even attacks science, blaming "scientific hands and scientific brains" for the damage. Both writers show that people have caused the destruction, and both make the reader feel responsible.',
-              'Grade 6-7':
-                'The statement assumes that scientific evidence creates urgency, but neither text bears that out simply. The writer of Source A does use figures - "73%", "One in six species" - yet admits that they "become abstract, and abstraction is the enemy of action", and so makes them concrete: the quieter dawn chorus, like the empty rock pools of the opening. The urgency comes from the insistence of "Not metaphorically. Measurably. Quantifiably." and the stark "When it dies, we die." Ruskin offers no evidence of that kind and would not want to: he blames "scientific hands and scientific brains", which invent "explosive and deathful" dust instead of "blossoming and life giving" dust, for turning the nourishing earth into an avenging one. His urgency comes from direct accusation - "You can vitiate the air by your manner of life, and of death, to any extent" - and from images that shock: towns as "horrible nests" breathing "venomous smokes and smells", a baby that cannot be baptised but with filth. Both writers make the damage personal. Source A says the environment is "the air in our lungs"; Ruskin makes the reader answer for it with "the voice of your brother\'s blood". I would say Ruskin is at least as urgent, because he offers the reader a choice, between rivers "as pure as the crystal of the rock" and "a common sewer", and insists that it is theirs to make now. Source A\'s urgency is the fear of loss; Ruskin\'s is a demand for action.',
+              'Grade 8-9': `Both writers are alarmed by the harm people have done to the natural world, and both insist that the reader shares the blame, but the writer of Source A mourns a loss he has witnessed, while Ruskin, in Source B, lectures his readers on their power to destroy or to heal.\n\nWhat they describe is similar. The writer of Source A sees empty rock pools, lost insects and a quieter dawn chorus, and blames the fact that "we have poisoned the soil and paved the meadows and called it progress". Ruskin describes air poisoned by "foul chemical exhalations", rivers turned into "a common sewer", and an earth made deadly. Even their lists are alike: Source A's "the ground beneath our feet, the air in our lungs, the food on our plates" recalls Ruskin's three elements, "Pure Air, Water, and Earth".\n\nBoth hold the reader responsible, but in different ways. Source A uses the inclusive "we", so the writer shares the guilt: it is "we" who "speak of the environment as though it were something separate from us". Ruskin uses "you" relentlessly, standing apart from his readers and accusing them: "You can vitiate the air"; "you have turned the Mother-Earth, Demeter, into the Avenger-Earth". Ruskin also offers more hope. He insists that their "power of purifying the air ... is literally infinite", and imagines rivers "so full of fish that you might take them out with your hands". Source A offers no remedy, and its last paragraph is a warning: "When it dies, we die."\n\nTheir methods reflect their times and purposes. Source A combines personal memory, the boy "cataloguing crabs and anemones", with modern scientific evidence such as "One in six Welsh species is now at risk of extinction", and short, emphatic fragments: "Not depleted. Not diminished. Empty." Ruskin uses no figures at all. He argues through long, rhythmic sentences, through religious and classical references, such as the baby who cannot be baptised and the Fury Tisiphone, and through grotesque images like towns as "laboratories for the distillation into heaven of venomous smokes and smells".\n\nThe tone of Source A is grief turning to warning; Ruskin's is moral outrage. The modern writer wants readers to feel the loss and act; Ruskin wants them to see that they have chosen destruction when they could have chosen life.`,
             },
-            markScheme: [
-              'Evaluates both texts with a personal response',
-              'Compares effectiveness of different methods',
-              'Uses evidence from both texts',
-              'Shows nuanced critical judgement',
-            ],
+            markScheme: {
+              'How it is marked (10 marks)': Q1_6_MARKING,
+              'Points you might make': [
+                'Both describe damage to land, air and living things: lost wildlife and poisoned soil (Source A); poisoned air, sewers for rivers, a deadly earth (Source B).',
+                `Responsibility: the inclusive "we", which shares the guilt (Source A); the accusing "you" (Source B).`,
+                `Hope: none offered in Source A, whose last paragraph warns "When it dies, we die."; an "infinite" power to heal in Source B.`,
+                'Methods: memory, scientific figures and short fragments (Source A); long rhythmic sentences, allusion and grotesque imagery (Source B).',
+                'Tone: grief and warning (Source A); moral outrage (Source B).',
+              ],
+            },
           },
         ],
       },
       {
         id: 'wjec-c2-07-writing',
         title: 'Section B: Writing',
-        description:
-          'You are advised to spend about 60 minutes on this section. You should divide your time equally between the two tasks.',
+        description: SECTION_B_GUIDANCE,
         totalMarks: 40,
         suggestedTimeMinutes: 60,
         questions: [
           {
-            id: 'wjec-c2-07-q5',
-            questionNumber: 5,
-            questionText: `Your local council is considering building new houses on green belt land near your school.\n\nWrite a letter to the council expressing your views on this proposal.\n\n[16]`,
-            marks: 16,
-            suggestedTimeMinutes: 25,
+            id: 'wjec-c2-07-q7',
+            questionNumber: 1,
+            label: '2.1',
+            questionText: `Your local council is planning to build new houses on green belt land near your school.\n\nWrite a letter to the council giving your views on this plan. [20]`,
+            marks: 20,
+            suggestedTimeMinutes: 30,
             questionType: 'transactional-writing',
             modelAnswers: {
-              'Grade 4-5':
-                'A clear formal letter with: appropriate conventions; a range of relevant points; generally accurate SPaG.',
-              'Grade 6-7':
-                'A well-structured letter with: confident formal register; persuasive argument with evidence; consistent accuracy.',
-              'Grade 8-9':
-                'A sophisticated letter with: commanding authoritative voice; nuanced reasoning balancing multiple perspectives; flawless technical accuracy.',
+              'Grade 8-9': `Dear Councillors,\n\nI am writing about the council's plan to build new houses on the green belt land beside Oak Lane, next to my school. I am in Year 11 there, and I would like to explain why I believe this plan should be reconsidered.\n\nLet me say first that I understand why the council wants more homes. Young families in our town struggle to find somewhere they can afford, and some of my friends' older brothers and sisters have had to move away. Building new houses is important. My objection is not to the houses, but to where you propose to put them.\n\nThe fields beside Oak Lane are not empty land waiting to be used. They are home to hedgerows, ponds and old trees, and to the birds, insects and small animals that depend on them. Our science classes visit them to study wildlife, and many local people walk there every day. Once a field is covered with concrete, it can never be returned to nature. A decision made in one council meeting would last for centuries.\n\nThere are practical problems too. Oak Lane is already crowded at the start and end of every school day. Hundreds of new homes would bring hundreds more cars onto a narrow road where children walk to school. The fields also soak up rain after storms; if they are built over, the risk of flooding in the streets below may grow.\n\nThere is a better alternative. Our town has several empty sites where buildings once stood, including the old factory on Station Road and the land behind the closed garage. Building there would provide the homes we need, clear eyesores from the town centre, and leave the green belt untouched. It may cost more at first, but it would protect something that money cannot buy back.\n\nI hope that you will think again, and look first at the land we have already used. Please protect the fields for the people, and the wildlife, who will need them long after all of us.\n\nYours faithfully,\n\nSam Price`,
             },
-            markScheme: [
-              'Communication & Organisation (10 marks): Purpose, audience, form, structure',
-              'Writing Accurately (6 marks): Sentence variety, vocabulary, SPaG',
-            ],
+            markScheme: {
+              'How it is marked (20 marks)': WRITING_MARKING,
+              'What earns marks in this task': [
+                'The features of a formal letter: a greeting, a clear statement of why you are writing, paragraphs, and a suitable sign-off.',
+                'A formal, reasonable tone for councillors, which acknowledges the need for housing.',
+                'A clear view, developed with reasons and local detail, and a practical alternative.',
+                'Accurate spelling, punctuation and grammar, with varied sentences and well-chosen words: 8 of the 20 marks are for this.',
+              ],
+            },
           },
           {
-            id: 'wjec-c2-07-q6',
-            questionNumber: 6,
-            questionText: `"Young people care more about the environment than any previous generation, yet they are the least willing to make personal sacrifices to protect it."\n\nWrite an article for a broadsheet newspaper in which you argue your point of view on this statement.\n\n[24]`,
-            marks: 24,
-            suggestedTimeMinutes: 35,
+            id: 'wjec-c2-07-q8',
+            questionNumber: 2,
+            label: '2.2',
+            questionText: `"Young people care more about the environment than any previous generation, yet they are the least willing to make personal sacrifices to protect it."\n\nWrite an article for a newspaper giving your views on this statement. [20]`,
+            marks: 20,
+            suggestedTimeMinutes: 30,
             questionType: 'transactional-writing',
             modelAnswers: {
-              'Grade 4-5':
-                'A newspaper article with: appropriate headline and structure; clear argument; relevant examples; generally accurate SPaG.',
-              'Grade 6-7':
-                'A well-crafted article with: engaging headline; sustained and developed argument; effective use of evidence; consistent accuracy.',
-              'Grade 8-9':
-                'An outstanding article with: arresting headline; sophisticated and nuanced argument; masterful control of tone and register; technical precision.',
+              'Grade 8-9': `All talk and no action? Young people and the planet\n\nAsk a group of teenagers what worries them most about the future, and the environment will come near the top of the list. We have grown up with news of melting ice and burning forests, and many of us have marched, signed petitions and lectured our parents about recycling. So the claim that we are unwilling to make sacrifices stings. Is it fair?\n\nIn part, perhaps it is. Many of us want the latest phone every year and order clothes online that we wear once. Fast fashion and endless gadgets have a real cost to the planet, and young people are some of their keenest customers. It is easy to share a post about climate change; it is harder to give up something we enjoy.\n\nBut the statement is unfair in two important ways. First, it ignores how many young people are already changing their habits. In my year group, more and more students have stopped eating meat, buy second-hand clothes or walk to school instead of asking for a lift. These may be small choices, but they are made every day.\n\nSecond, it forgets how little power most young people have. We do not decide how our homes are heated, how far our parents drive to work, or whether the bus to town runs more than twice a day. The biggest sacrifices needed to protect the environment, changing how we produce energy and grow food, are decisions for governments and businesses, run largely by older generations. It seems odd to blame teenagers for not sacrificing things they do not control.\n\nThe truth is that every generation finds it hard to give things up. The difference is that ours has to live with the consequences for longest. That is a powerful reason to act, and I believe most of us know it.\n\nSo here is a challenge to young and old alike. Let us stop arguing about which generation cares more, and start asking what each of us can do. Young people can buy less and waste less. Adults can vote, invest and lead. The planet does not need our blame. It needs our effort, from all of us, starting now.`,
             },
-            markScheme: [
-              'Communication & Organisation (14 marks): Purpose, audience, form, voice, structure, paragraphing',
-              'Writing Accurately (10 marks): Sentence variety, vocabulary range, SPaG',
-            ],
+            markScheme: {
+              'How it is marked (20 marks)': WRITING_MARKING,
+              'What earns marks in this task': [
+                'The features of a newspaper article: a headline, an engaging opening, and paragraphs that develop an argument to a clear ending.',
+                'A tone that suits newspaper readers of all ages: thoughtful and persuasive.',
+                'A clear view on both halves of the statement, developed with reasons and examples, perhaps agreeing in part.',
+                'Accurate spelling, punctuation and grammar, with varied sentences and well-chosen words: 8 of the 20 marks are for this.',
+              ],
+            },
           },
         ],
       },
@@ -570,141 +826,199 @@ export const wjecC2B: MockExamPaper[] = [
       {
         id: 'wjec-c2-08-reading',
         title: 'Section A: Reading',
-        description:
-          'Read both source texts carefully. Then answer all the questions in this section.',
+        description: SECTION_A_GUIDANCE,
         totalMarks: 40,
         suggestedTimeMinutes: 60,
         questions: [
           {
             id: 'wjec-c2-08-q1',
             questionNumber: 1,
-            questionText: `Read the 21st-century source text about the gig economy (Source A).\n\nList five things you learn about working conditions for delivery riders from this text.`,
-            marks: 5,
-            suggestedTimeMinutes: 5,
+            label: '1.1',
+            questionText: `Read Source A, the 21st-century text, and answer the questions below.\n\n(a) How long did the writer work as a delivery rider? [1]\n(b) How much did the writer's fellow riders earn on average, after expenses? [1]\n(c) What happened to a rider whose score fell below 4.5? [1]`,
+            marks: 3,
+            suggestedTimeMinutes: 4,
             questionType: 'short-answer',
             extract: `Source A:\n${WORK_SOURCE_A}\n\nSource B:\n${WORK_SOURCE_B}`,
             extractSource: `Source A: ${WORK_SOURCE_A_REF} | Source B: ${WORK_SOURCE_B_REF}`,
             modelAnswers: {
-              'Grade 4-5':
-                '1. Riders earned an average of £4.80 an hour after expenses. 2. They received no sick pay, holiday pay, or pension. 3. The riders were mostly young men from immigrant backgrounds. 4. The app tracked their every movement. 5. A customer rating below 4.5 meant fewer deliveries.',
+              'Grade 4-5': `(a) Six months.\n(b) £4.80 an hour.\n(c) They were given fewer deliveries.`,
             },
-            markScheme: ['1 mark per valid point, maximum 5'],
+            markScheme: {
+              'How it is marked (3 marks)': SHORT_A_MARKING,
+              Answers: [
+                '(a) Six months.',
+                '(b) £4.80 an hour.',
+                '(c) They were given fewer deliveries (accept: they earned less money).',
+              ],
+            },
           },
           {
             id: 'wjec-c2-08-q2',
             questionNumber: 2,
-            questionText: `How does the writer of Source A use language to criticise the gig economy?\n\nYou should comment on specific words and phrases and the effects they create. [10]`,
+            label: '1.2',
+            questionText: `Source A is a newspaper article about the gig economy. The writer wants to persuade readers that this way of working exploits the people who do it.\n\nHow does the writer try to do this?\n\nIn your answer, comment on:\n• what the writer says\n• the writer's choice of language and tone\n• how the article is structured, and any other methods the writer uses.\n\n[10]`,
             marks: 10,
             suggestedTimeMinutes: 12,
             questionType: 'analysis',
             extract: `Source A:\n${WORK_SOURCE_A}`,
             extractSource: WORK_SOURCE_A_REF,
             modelAnswers: {
-              'Grade 4-5':
-                'The writer echoes the promise "be your own boss" ironically, to mock what the gig economy offered. The word "disposable" shows how little the workers are valued. The contrast between "independent contractors" and reality highlights the dishonesty of the companies. The description of riding "on a rainy Tuesday night" makes the reader feel sympathy for the workers.',
-              'Grade 6-7':
-                'The writer constructs the critique through systematic exposure of linguistic deception. The opening paragraph ventriloquises Silicon Valley\'s rhetoric - "set us free," "be your own boss" - before the devastating pivot: "freedom, it turns out, looks remarkably like exploitation when you strip away the branding." The noun "branding" functions doubly, referencing both marketing and the literal marking of ownership. The juxtaposition of corporate terminology ("independent contractors") against the writer\'s own blunt lexis ("disposable") enacts the gap between rhetoric and reality that is the central argument. The final paragraph\'s description of algorithmic control - tracking, measuring, scoring - uses the vocabulary of surveillance to reframe "flexibility" as panopticism. The closing metaphor "algorithmic control with a smiley-face interface" brilliantly encapsulates the gig economy\'s defining contradiction: totalitarian power dressed in the visual language of friendliness.',
+              'Grade 8-9': `The writer opens by setting up a promise in order to knock it down. "The gig economy was supposed to set us free" sounds hopeful, but "was supposed to" already signals disappointment, and the casual "anyway" shows the writer's scepticism. The list "be your own boss, set your own hours, work from anywhere" imitates the slogans of advertising, and the metaphor in "Silicon Valley sold us a vision of liberation, and millions of us bought it" presents freedom as a product that workers were sold. The turn comes with "But": freedom "looks remarkably like exploitation when you strip away the branding". The word "branding" suggests that the freedom was only ever a marketing image.\n\nThe second paragraph gives the argument the authority of experience: "I spent six months working as a delivery rider for three different apps simultaneously". The bleak, precise setting, "at eleven o'clock on a rainy Tuesday night", leads to a blunt verdict: "it looks like desperation." The writer's description of the other riders, repeating "mostly" three times, shows who is exploited: people "without the language skills or legal status to demand anything better", which suggests that the system depends on workers who cannot fight back. The figure "£4.80 an hour after expenses" is followed by four short fragments, "No sick pay. No holiday pay. No pension. No protection of any kind.", whose repeated "No" sounds like a list of things taken away. The contrast between "the terminology of the platform", which calls riders "independent contractors", and "the terminology of reality", in which they are "disposable", exposes the company's language as a disguise.\n\nThe final paragraph shows how the control works. The app "tracked our every movement" and "measured our speed, our acceptance rate, our customer ratings", a list that makes the rider seem watched at every moment. The writer then builds a chain in which each sentence picks up the end of the one before: "A score below 4.5 meant fewer deliveries. Fewer deliveries meant less money. Less money meant accepting every order". This structure makes the trap feel inescapable. The repeated "no matter how far, no matter how dangerous the route" leads to vivid danger: "the rain was horizontal and the streets were black with ice". The conclusion is a sharp antithesis: "This is not flexibility. It is algorithmic control with a smiley-face interface." The childish "smiley-face" mocks the friendly appearance that hides the control, and ends the article on the idea it began with: the image is a lie.`,
             },
-            markScheme: [
-              'Analyses specific language techniques',
-              'Comments on word-level effects',
-              'Considers persuasive strategies',
-              'Uses embedded quotations',
-            ],
+            markScheme: {
+              'How it is marked (10 marks)': Q1_2_MARKING,
+              'Points you might make': [
+                `The promise is set up to be knocked down: "was supposed to set us free"; the slogan-like list; "sold us a vision of liberation"; "strip away the branding".`,
+                `Experience as authority ("I spent six months working as a delivery rider"), a bleak setting, and the verdict "it looks like desperation."`,
+                `The repeated "mostly" shows who is exploited; the fragments "No sick pay. No holiday pay. No pension." list what is missing.`,
+                `The contrast between "independent contractors" and "disposable" exposes the platform's language.`,
+                `The chain "A score below 4.5 meant fewer deliveries. Fewer deliveries meant less money" makes the trap inescapable.`,
+                `The antithesis "This is not flexibility" and the mocking "smiley-face interface" end the argument.`,
+              ],
+            },
           },
           {
             id: 'wjec-c2-08-q3',
             questionNumber: 3,
-            questionText: `What do you learn about working conditions in the mines from Source B?\n\n(Engels is summarising the evidence gathered by the Children's Employment Commission, whose report on the mines was published in 1842. iron-stone: iron ore. tubs: boxes for carrying coal or ore.)\n\nYou must refer to the text to support your answer. [10]`,
-            marks: 10,
-            suggestedTimeMinutes: 12,
+            label: '1.3',
+            questionText: `Read Source B, the 19th-century text, and answer the questions below.\n\n(Engels is summarising the evidence gathered by the Children's Employment Commission, whose report on the mines was published in 1842. "Iron-stone" is iron ore; "tubs" are boxes for carrying coal or ore; "stupefying" means dulling the mind.)\n\n(a) How old were the youngest children employed in the mines? [1]\n(b) What job were the smallest children usually given? [1]\n(c) According to Engels, what sometimes happens to the children on their way home? [1]`,
+            marks: 3,
+            suggestedTimeMinutes: 4,
             questionType: 'short-answer',
             extract: `Source B:\n${WORK_SOURCE_B}`,
             extractSource: WORK_SOURCE_B_REF,
             modelAnswers: {
-              'Grade 4-5':
-                'You learn that children "of four, five, and seven years" worked in the coal and iron mines. The smallest children opened and shut the doors, sitting "in the dark, alone" for twelve hours a day. Older children and "half-grown girls" pushed and pulled heavy tubs with no wheels through water and mud, in passages so low that they had "to creep on hands and knees". A working day was "eleven to twelve hours, often longer", and there were no proper meal times. The children were so tired that they fell asleep on the floor as soon as they got home, and some were found "asleep on the road".',
-              'Grade 6-7':
-                'Engels shows that the mines depended on the labour of children, and that the work damaged them in body and mind. The youngest, "of four, five, and seven years", were given the doors, which sounds like light work, but he makes it one of the cruellest jobs: they "pass twelve hours daily, in the dark, alone", and the heavy pair of adjectives "stupefying, brutalising" shows that the "tedium of doing nothing" harms them as surely as labour would. Older children did the opposite, "very hard labour", shoving "large tubs, without wheels" over "moist clay, or through water", along passages "so low-roofed that the workers are forced to creep on hands and knees", a detail that bends children into the posture of animals. The hours are given plainly, "eleven to twelve hours, often longer", rising to "thirty-six hours at a stretch", and the flat statement that "Set times for meals are almost unknown" shows that even eating is fitted around the work. The final sentence moves from the mine to the home, and it is the most telling: children "throw themselves down on the stone hearth or the floor", "fall asleep at once without being able to take a bite of food", and must be "washed and put to bed while asleep". Engels\'s method is to let the evidence speak, "with a number of examples on every page", and his one comment, that "Even in the most recklessly conducted industrial establishments there is no such universal and exaggerated overwork", tells the reader that the mines are worse than any factory.',
+              'Grade 4-5': `(a) Four years old.\n(b) Watching the doors, opening and shutting them.\n(c) They lie down and fall asleep on the road, where their parents find them late at night.`,
             },
-            markScheme: [
-              'Identifies key information from the text',
-              'Selects appropriate evidence',
-              'Makes valid inferences',
-              'Shows clear understanding of implicit meaning',
-            ],
+            markScheme: {
+              'How it is marked (3 marks)': SHORT_B_MARKING,
+              Answers: [
+                '(a) Four (accept: four, five and seven).',
+                '(b) Watching the doors, and opening and shutting them for the workers and the coal.',
+                '(c) They lie down and fall asleep on the road (accept: their parents find them asleep on the road late at night).',
+              ],
+            },
           },
           {
             id: 'wjec-c2-08-q4',
             questionNumber: 4,
-            questionText: `"Both writers expose the exploitation of workers, but the 19th-century source is more shocking because the workers are children."\n\nTo what extent do you agree with this statement? You must refer to both Source A and Source B in your answer. [15]`,
-            marks: 15,
-            suggestedTimeMinutes: 18,
+            label: '1.4',
+            questionText: `Read Source B again.\n\nA student said: ‘Engels shows the children's suffering through cold facts rather than through emotion.’\n\nHow far do you agree with this view?\n\nIn your answer, give your own view of how Engels presents the children and their work across the whole text, and explain how his choices of words and details create that view. Support your answer with references to the text. [10]`,
+            marks: 10,
+            suggestedTimeMinutes: 12,
+            questionType: 'evaluation',
+            extract: `Source B:\n${WORK_SOURCE_B}`,
+            extractSource: WORK_SOURCE_B_REF,
+            modelAnswers: {
+              'Grade 8-9': `I agree with much of this view. Engels writes mainly as a reporter of evidence, and his facts carry most of the force, but at key moments his language becomes openly emotive, and his final images appeal strongly to the reader's feelings.\n\nThe opening is factual and almost clinical. Children "of four, five, and seven years are employed", and the plain list of ages lets the reader feel the shock without being told to. He then explains the work step by step: they carry "the ore or coal loosened by the miner" and open and shut the doors "which separate the divisions of the mine and regulate its ventilation". The bracketed explanation is the language of a report, not of protest.\n\nHowever, his description of the door-watchers is more emotional. The smallest children pass "twelve hours daily, in the dark, alone", and the short phrases separated by commas slow the sentence down, as if to make the reader sit through those hours with them. The words "stupefying, brutalising tedium of doing nothing" are clearly a judgement: "brutalising" suggests that the work turns children into something less than human.\n\nThe account of the heavy work returns to detail, but the detail is chosen to make the reader wince. The tubs are "without wheels", shoved "over the uneven floor of the mine; often over moist clay, or through water", along paths "so low-roofed that the workers are forced to creep on hands and knees". A working day of "eleven to twelve hours", reaching fourteen in Scotland, with double shifts of "twenty-four, and even thirty-six hours at a stretch", shocks precisely because it is stated so plainly, and "Set times for meals are almost unknown" adds a final hardship.\n\nAfter the cut, Engels's judgement becomes open. The children "all complain of being over-tired", and he states that "Even in the most recklessly conducted industrial establishments there is no such universal and exaggerated overwork". He stresses that the evidence is overwhelming: "The whole report proves this". His last examples are the most moving in the passage: children "throw themselves down on the stone hearth or the floor as soon as they reach home", "have to be washed and put to bed while asleep", and are sometimes "found by their parents late at night asleep on the road". These details are facts, but they are chosen for their pathos.\n\nSo the statement is largely right, in that Engels lets the facts speak; but the facts he selects, and the few strong words he adds, are meant to move the reader as well as to inform.`,
+            },
+            markScheme: {
+              'How it is marked (10 marks)': Q1_4_MARKING,
+              'Points you might make': [
+                `Facts first: the ages "of four, five, and seven years", and the bracketed, report-like explanation of the doors.`,
+                `Emotion breaks in: "twelve hours daily, in the dark, alone" slows the reader down; "stupefying, brutalising tedium" is a judgement.`,
+                `Physical detail chosen to make the reader wince: tubs "without wheels", paths so low that workers "creep on hands and knees".`,
+                `Plainly stated extremes ("thirty-six hours at a stretch"; "Set times for meals are almost unknown") shock through understatement.`,
+                `The open judgement ("no such universal and exaggerated overwork") and the moving final images of children asleep "on the road".`,
+                'A strong answer reaches a judgement on the statement and keeps to it through the whole passage.',
+              ],
+            },
+          },
+          {
+            id: 'wjec-c2-08-q5',
+            questionNumber: 5,
+            label: '1.5',
+            questionText: `Bring together details from both texts to explain briefly what the working conditions are like for the workers each writer describes. Make clear which text each detail comes from. [4]`,
+            marks: 4,
+            suggestedTimeMinutes: 5,
+            questionType: 'summary',
+            extract: `Source A:\n${WORK_SOURCE_A}\n\nSource B:\n${WORK_SOURCE_B}`,
+            extractSource: `Source A: ${WORK_SOURCE_A_REF} | Source B: ${WORK_SOURCE_B_REF}`,
+            modelAnswers: {
+              'Grade 4-5': `In Source A, delivery riders earn "an average of £4.80 an hour after expenses", with "No sick pay" or holiday pay; an app tracks them, and they must accept every order, even when "the streets were black with ice". In Source B, children as young as four work in the mines, some sitting "twelve hours daily, in the dark, alone", others pushing heavy tubs on "hands and knees", in days of "eleven to twelve hours, often longer", with no set times for meals.`,
+            },
+            markScheme: {
+              'How it is marked (4 marks)': Q1_5_MARKING,
+              'Details you might bring together': [
+                'Source A: very low pay; no sick pay, holiday pay, pension or protection; constant tracking and ratings; every order accepted, however far or dangerous, in rain and ice.',
+                'Source B: children from four years old; twelve hours alone in the dark; heavy tubs pushed on hands and knees through water and clay; days of eleven to twelve hours or far more; no set meal times; exhaustion.',
+              ],
+            },
+          },
+          {
+            id: 'wjec-c2-08-q6',
+            questionNumber: 6,
+            label: '1.6',
+            questionText: `Source A and Source B are both about workers who are exploited.\n\nCompare:\n• what the writers say about the workers and the way they are treated\n• how they get their ideas across.\n\nUse evidence from both texts, and make clear which text each point comes from. [10]`,
+            marks: 10,
+            suggestedTimeMinutes: 13,
             questionType: 'comparison',
             extract: `Source A:\n${WORK_SOURCE_A}\n\nSource B:\n${WORK_SOURCE_B}`,
             extractSource: `Source A: ${WORK_SOURCE_A_REF} | Source B: ${WORK_SOURCE_B_REF}`,
             modelAnswers: {
-              'Grade 4-5':
-                'I agree that Source B is more shocking, because the workers are small children, some only "four, five, and seven years" old, who sit "in the dark, alone" and are so tired that they are found "asleep on the road". However, Source A is shocking in a different way, because it is happening now. The riders earn "£4.80 an hour after expenses" and have "No sick pay. No holiday pay. No pension." Both texts show workers being treated as if they do not matter: the riders are "disposable", and the children work until they are too tired to eat. Both are powerful in different ways.',
-              'Grade 6-7':
-                'The statement assumes that the identity of the victim decides how shocking an account is. The exploitation of children in Source B is harrowing, and Engels needs no rhetoric to make it so: the youngest "pass twelve hours daily, in the dark, alone", and at home the children "fall asleep at once without being able to take a bite of food". But Source A shocks in a different way, by showing that exploitation has not ended but changed its appearance. The mine is visibly brutal; the gig economy is insidious because it looks like freedom, and the writer\'s point is that "freedom, it turns out, looks remarkably like exploitation when you strip away the branding." The children in the mine creep "on hands and knees" through clay and water; the riders are watched by an app that "tracked our every movement" and are sent out on streets "black with ice". Both texts describe work that is dangerous and exhausting, and both show workers with no power to refuse: the children have no choice at all, and the riders must accept "every order, no matter how far". The 19th-century text shocks through extremity; the 21st-century text shocks through nearness - it is happening on our streets, delivering our food. Engels sets out the Commission\'s evidence and lets it condemn the mines; the writer of Source A worked as a rider and exposes the system from inside, stripping away its friendly language.',
+              'Grade 8-9': `Both writers expose work that drives people to exhaustion for little reward, and both suggest that it depends on workers too weak to resist. The writer of Source A, however, describes adults trapped by technology, while Engels, in Source B, describes children broken by physical labour.\n\nWhat they say about the workers is similar in some ways. In Source A the riders are "mostly young men, mostly from immigrant backgrounds", without the "legal status to demand anything better". In Source B the workers are children "of four, five, and seven years", and "older children and half-grown girls" are given the harder work of moving the tubs. In both, the workers are among the least able to refuse. Both texts also show work without limits: in Source A, accepting every order "no matter how far, no matter how dangerous the route"; in Source B, shifts of "twenty-four, and even thirty-six hours at a stretch", with meals eaten "when hunger and time permit".\n\nTheir accounts of control differ. In Source A the control is invisible and constant: the app "tracked our every movement", and the chain of sentences, "A score below 4.5 meant fewer deliveries. Fewer deliveries meant less money", shows how the ratings drive the riders on. In Source B the control is the work itself: shoving tubs "through paths so low-roofed that the workers are forced to creep on hands and knees" wears the children down until they "fall asleep at once without being able to take a bite of food".\n\nTheir methods differ too. The writer of Source A is a participant ("I spent six months working as a delivery rider") who uses irony and contrast: the promise "be your own boss" against the reality of "desperation", and "independent contractors" against "disposable". The tone is angry and sarcastic, ending with the mocking "smiley-face interface". Engels writes as the summariser of official evidence ("The whole report proves this"), in long, detailed sentences with few emotive words, though "stupefying, brutalising tedium" stands out. His most powerful moment is an image rather than an argument: children "found by their parents late at night asleep on the road".\n\nSo both writers want readers to see exploitation behind a respectable surface. Source A attacks the language of freedom that hides control, while Engels lets the facts of the report condemn the industry for him.`,
             },
-            markScheme: [
-              'Evaluates both texts with a personal response',
-              'Compares effectiveness of different methods',
-              'Uses evidence from both texts',
-              'Shows nuanced critical judgement',
-            ],
+            markScheme: {
+              'How it is marked (10 marks)': Q1_6_MARKING,
+              'Points you might make': [
+                'Who is exploited: young men from immigrant backgrounds, without the language or legal status to demand better (Source A); young children and girls (Source B); in both, those least able to refuse.',
+                `Work without limits in both: every order "no matter how dangerous" (Source A); shifts of "thirty-six hours at a stretch" (Source B).`,
+                'Control: invisible tracking and ratings (Source A); the crushing physical work itself (Source B).',
+                `Methods: first-hand experience, irony and contrast ("independent contractors" against "disposable") (Source A); a summary of official evidence, mostly plain, with a few strong words and moving images (Source B).`,
+                'Tone: angry and sarcastic (Source A); restrained, letting facts condemn (Source B).',
+              ],
+            },
           },
         ],
       },
       {
         id: 'wjec-c2-08-writing',
         title: 'Section B: Writing',
-        description:
-          'You are advised to spend about 60 minutes on this section. You should divide your time equally between the two tasks.',
+        description: SECTION_B_GUIDANCE,
         totalMarks: 40,
         suggestedTimeMinutes: 60,
         questions: [
           {
-            id: 'wjec-c2-08-q5',
-            questionNumber: 5,
-            questionText: `Your school is running a careers week. You have been asked to write an information sheet for Year 11 students about preparing for the world of work.\n\nWrite an informative text advising students on how to prepare for employment.\n\n[16]`,
-            marks: 16,
-            suggestedTimeMinutes: 25,
+            id: 'wjec-c2-08-q7',
+            questionNumber: 1,
+            label: '2.1',
+            questionText: `Your school is holding a careers week.\n\nWrite an information sheet for Year 11 students giving advice on how to prepare for the world of work. [20]`,
+            marks: 20,
+            suggestedTimeMinutes: 30,
             questionType: 'transactional-writing',
             modelAnswers: {
-              'Grade 4-5':
-                'A clear informative text with: appropriate form and register; practical advice; generally accurate SPaG.',
-              'Grade 6-7':
-                'A well-organised text with: engaging and authoritative tone; well-developed points with examples; consistent accuracy.',
-              'Grade 8-9':
-                'A compelling and polished text with: sophisticated awareness of audience; original insights; technical precision.',
+              'Grade 8-9': `Ready for work? Your guide to getting started\n\nWhether you are planning to go to college, start an apprenticeship or look for a job next year, the world of work is closer than you think. The good news is that you can start preparing now. This sheet sets out five steps that will help you to make a confident start.\n\n1. Find out what you enjoy\nThink about the subjects, hobbies and tasks that you are good at and that you like doing. Do you enjoy solving problems, working with people or making things with your hands? Use the careers library and talk to the careers adviser, who can suggest jobs you may never have heard of.\n\n2. Get some experience\nEmployers value experience, and it does not have to be paid. Volunteering at a charity shop, helping at a sports club or taking on a Saturday job all show that you are reliable and willing to learn. They also help you to discover what you do and do not want to do.\n\n3. Write a strong CV\nA CV is a short summary of your skills, qualifications and experience. Keep it to one page, check the spelling carefully, and make sure that your email address sounds professional. Ask a teacher or a family member to read it through before you send it.\n\n4. Prepare for interviews\nAn interview is a chance for an employer to get to know you, and for you to find out about them. Research the organisation beforehand, think about how you would answer common questions, and prepare one or two questions of your own. On the day, arrive early, dress smartly and remember to smile.\n\n5. Build the skills every employer wants\nWhatever job you choose, some skills always matter: turning up on time, working well in a team, communicating clearly and keeping going when things are difficult. You can practise all of these at school, starting today.\n\nWhere to find help\nThe careers office is open every lunchtime in Room 12. You can book a one-to-one meeting with the careers adviser through your form tutor.\n\nYour future starts with small steps. Take the first one this week.`,
             },
-            markScheme: [
-              'Communication & Organisation (10 marks): Purpose, audience, form, structure',
-              'Writing Accurately (6 marks): Sentence variety, vocabulary, SPaG',
-            ],
+            markScheme: {
+              'How it is marked (20 marks)': WRITING_MARKING,
+              'What earns marks in this task': [
+                'The features of an information sheet: a title, an introduction, clear headings or numbered points, and where to find more help.',
+                'A clear, encouraging tone suited to Year 11 students.',
+                'Practical advice, each point explained and developed rather than simply listed.',
+                'Accurate spelling, punctuation and grammar, with varied sentences and well-chosen words: 8 of the 20 marks are for this.',
+              ],
+            },
           },
           {
-            id: 'wjec-c2-08-q6',
-            questionNumber: 6,
-            questionText: `"Technology is destroying more jobs than it creates. Within twenty years, most people will be unable to find meaningful work."\n\nWrite the text of a speech for a school debate in which you argue your point of view on this statement.\n\n[24]`,
-            marks: 24,
-            suggestedTimeMinutes: 35,
+            id: 'wjec-c2-08-q8',
+            questionNumber: 2,
+            label: '2.2',
+            questionText: `"Technology is destroying more jobs than it creates. Within twenty years, most people will be unable to find meaningful work."\n\nWrite a speech for a school debate giving your views on this statement. [20]`,
+            marks: 20,
+            suggestedTimeMinutes: 30,
             questionType: 'transactional-writing',
             modelAnswers: {
-              'Grade 4-5':
-                'A speech with: clear position; some persuasive techniques; appropriate form with address to audience; generally accurate SPaG.',
-              'Grade 6-7':
-                'A well-crafted speech with: sustained argument; effective rhetorical devices; convincing counter-arguments addressed; consistent accuracy.',
-              'Grade 8-9':
-                'An outstanding speech with: commanding voice; sophisticated reasoning; masterful use of rhetorical techniques; technical precision throughout.',
+              'Grade 8-9': `Good morning, everyone.\n\nImagine walking into a supermarket where no one works. Machines take your money, robots stack the shelves, and a computer decides what is ordered. For some people, that picture proves the statement we are debating today. I want to argue that it does not. Technology is changing work, but it is not ending it.\n\nFirst, let us look at history. When machines first appeared in factories two hundred years ago, many workers feared that they would never work again. When computers arrived in offices, people predicted the end of clerical jobs. Each time, some jobs did disappear, and that was painful for the people who lost them. But each time, new kinds of work appeared that nobody had imagined. Your grandparents could not have dreamed of a job as a games designer, a wind turbine engineer or a social media manager.\n\nSecond, think about what machines cannot do. A computer can sort a thousand forms in a second, but it cannot comfort a frightened patient, inspire a class of pupils or calm an angry customer. The jobs that depend on care, creativity and human judgement are growing, not shrinking. As machines take over repetitive tasks, there may be more room for the kind of work that makes us feel useful.\n\nI accept that the change will not be easy. Some people will lose jobs they have done for years, and they will need help to train for new ones. That is a real challenge, and governments and employers must meet it. But a challenge is not a catastrophe.\n\nFinally, I want to question the word meaningful. Work is meaningful when it helps someone, solves a problem or makes something worth having. Technology does not take that away. Used well, it could free us from the dullest tasks and leave us more time for the work that matters.\n\nSo, will most of us be unable to find meaningful work in twenty years? I do not believe so. The future of work belongs to people who are willing to learn, and that includes everyone in this room.\n\nThank you.`,
             },
-            markScheme: [
-              'Communication & Organisation (14 marks): Purpose, audience, form, voice, structure, paragraphing',
-              'Writing Accurately (10 marks): Sentence variety, vocabulary range, SPaG',
-            ],
+            markScheme: {
+              'How it is marked (20 marks)': WRITING_MARKING,
+              'What earns marks in this task': [
+                'The features of a debate speech: a greeting, a clear position on the statement, direct address and rhetorical questions, and a strong ending.',
+                'A confident, persuasive tone that suits a school audience.',
+                'A clear view, developed with reasons and examples, that answers the strongest points on the other side.',
+                'Accurate spelling, punctuation and grammar, with varied sentences and well-chosen words: 8 of the 20 marks are for this.',
+              ],
+            },
           },
         ],
       },
@@ -728,141 +1042,195 @@ export const wjecC2B: MockExamPaper[] = [
       {
         id: 'wjec-c2-09-reading',
         title: 'Section A: Reading',
-        description:
-          'Read both source texts carefully. Then answer all the questions in this section.',
+        description: SECTION_A_GUIDANCE,
         totalMarks: 40,
         suggestedTimeMinutes: 60,
         questions: [
           {
             id: 'wjec-c2-09-q1',
             questionNumber: 1,
-            questionText: `Read the 21st-century source text about immigration (Source A).\n\nList five things you learn about the writer's family and their experience of immigration.`,
-            marks: 5,
-            suggestedTimeMinutes: 5,
+            label: '1.1',
+            questionText: `Read Source A, the 21st-century text, and answer the questions below.\n\n(a) In which year did the writer's parents come to Cardiff? [1]\n(b) What job had the writer's father done in Mogadishu? [1]\n(c) What does the writer's sister do now? [1]`,
+            marks: 3,
+            suggestedTimeMinutes: 4,
             questionType: 'short-answer',
             extract: `Source A:\n${IMMIGRATION_SOURCE_A}\n\nSource B:\n${IMMIGRATION_SOURCE_B}`,
             extractSource: `Source A: ${IMMIGRATION_SOURCE_A_REF} | Source B: ${IMMIGRATION_SOURCE_B_REF}`,
             modelAnswers: {
-              'Grade 4-5':
-                "1. The writer's parents came to Cardiff from Somalia in 1998. 2. They arrived with two suitcases and three children under five. 3. The father had been an engineer but took a job washing dishes. 4. The mother cleaned offices from five until eight every morning. 5. The writer went to university and then law school.",
+              'Grade 4-5': `(a) 1998.\n(b) He was an engineer.\n(c) She is a GP.`,
             },
-            markScheme: ['1 mark per valid point, maximum 5'],
+            markScheme: {
+              'How it is marked (3 marks)': SHORT_A_MARKING,
+              Answers: ['(a) 1998.', '(b) An engineer.', '(c) She is a GP (a family doctor).'],
+            },
           },
           {
             id: 'wjec-c2-09-q2',
             questionNumber: 2,
-            questionText: `How does the writer of Source A use language to challenge negative attitudes towards immigration?\n\nYou should comment on specific words and phrases and the effects they create. [10]`,
+            label: '1.2',
+            questionText: `Source A is an online article about immigration. The writer wants to challenge negative attitudes towards immigrants.\n\nHow does the writer try to do this?\n\nIn your answer, comment on:\n• what the writer says\n• the writer's choice of language and tone\n• how the article is structured, and any other methods the writer uses.\n\n[10]`,
             marks: 10,
             suggestedTimeMinutes: 12,
             questionType: 'analysis',
             extract: `Source A:\n${IMMIGRATION_SOURCE_A}`,
             extractSource: IMMIGRATION_SOURCE_A_REF,
             modelAnswers: {
-              'Grade 4-5':
-                'The writer uses personal details to make immigration real, like "ironing a school uniform with hands that are raw from bleach." The list of what the writer\'s family contributes - "We pay our taxes, we vote, we volunteer" - counters negative stereotypes. Calling the public debate "toxic" shows the writer\'s frustration. The phrase "a problem to be solved rather than an asset to be celebrated" directly challenges negative views.',
-              'Grade 6-7':
-                'The writer deploys a two-stage rhetorical strategy: humanisation followed by confrontation. The opening paragraph\'s accumulation of specific detail - "two suitcases, three children under five" - transforms "immigration" from political abstraction to embodied experience. The wry alternative "either extraordinary courage or magnificent delusion" establishes a voice that is intelligent and self-aware, pre-emptively disarming the reader\'s defences. The image of ironing "with hands that are raw from bleach" is a deliberate counter-narrative: not the immigrant as burden but as sacrifice. The third paragraph\'s shift to the first-person plural - "We pay our taxes, we vote, we volunteer, we argue about rugby" - insists on belonging through the everyday. The inclusion of rugby is culturally precise, claiming Welsh identity specifically. The concluding antithesis - "a problem to be solved rather than an asset to be celebrated" - exposes the framing bias of public discourse with surgical economy.',
+              'Grade 8-9': `The writer begins with a family story rather than an argument, which makes immigration personal from the first line. "My parents came to Cardiff from Somalia in 1998" is plain and factual, and the list of what they brought, "two suitcases, three children under five, and a level of optimism", moves from the practical to the emotional, ending on the quality the article will celebrate. The writer's humour in calling that optimism "either extraordinary courage or magnificent delusion" stops the account from becoming sentimental. The details of the parents' lives are carefully chosen: an "engineer in Mogadishu" who "took a job washing dishes", and a former "teacher" who "cleaned offices from five until eight every morning". The contrast between the work they had done and the work they took shows how much they gave up, and challenges the idea that immigrants come to take advantage.\n\nThe second paragraph speaks directly to the reader: "I tell you this not to inspire pity". The aside "my parents would be mortified" shows the family's pride, and the writer states the central claim: "immigration is not an abstraction". A list of what it is not, "a policy debate or a newspaper headline or a statistic on a graph", is answered by one long, concrete image: "a human being standing in a kitchen at four in the morning, ironing a school uniform with hands that are raw from bleach". Details such as "four in the morning" and "raw from bleach" make the sacrifice physical, and the reason for it, "a conviction that borders on the irrational", makes it moving.\n\nThe final paragraph turns to proof. The writer prepares for it with "here is the thing that is almost never said in our increasingly toxic public discourse", which presents the claim as a brave truth, then delivers it in three short words: "they were right." Evidence follows in a run of short sentences: "I went to a comprehensive school, then to university, then to law school. My sister is a GP. My brother runs a construction company." The list "We pay our taxes, we vote, we volunteer, we argue about rugby" ends with a light, very Welsh touch that shows how fully the family belongs. The writer then sets these achievements against the "prevailing narrative", and the closing antithesis, "a problem to be solved rather than an asset to be celebrated", sums up the argument by turning the critics' language on its head.`,
             },
-            markScheme: [
-              'Analyses specific language techniques',
-              'Comments on word-level effects',
-              'Considers persuasive strategies',
-              'Uses embedded quotations',
-            ],
+            markScheme: {
+              'How it is marked (10 marks)': Q1_2_MARKING,
+              'Points you might make': [
+                `A family story makes immigration personal; humour ("extraordinary courage or magnificent delusion") avoids sentimentality.`,
+                `Contrasts between the parents' old and new work ("engineer in Mogadishu" who "took a job washing dishes") show their sacrifice.`,
+                `Direct address ("I tell you this not to inspire pity") and the claim "immigration is not an abstraction", followed by a list of what it is not.`,
+                `The concrete image of a parent ironing "with hands that are raw from bleach" makes the sacrifice physical.`,
+                `The build-up to "they were right.", then short sentences of evidence and the list ending "we argue about rugby".`,
+                `The closing antithesis "a problem to be solved rather than an asset to be celebrated".`,
+              ],
+            },
           },
           {
             id: 'wjec-c2-09-q3',
             questionNumber: 3,
-            questionText: `What do you learn from Source B about the lives of Irish immigrants in England's industrial towns, and about the writer's attitude towards them?\n\nYou must refer to the text to support your answer. [10]`,
-            marks: 10,
-            suggestedTimeMinutes: 12,
+            label: '1.3',
+            questionText: `Read Source B, the 19th-century text, and answer the questions below.\n\n(Engels is writing about Irish people who had come to work in the industrial towns of England. "Comfortlessness" means a lack of comfort; "mouldings" are decorative strips of wood; "betakes himself to" means turns to; "facile" here means easy-going.)\n\n(a) According to Engels, what does the Irishman use as a bed? [1]\n(b) What does Engels say the Irishman does when he runs out of fuel? [1]\n(c) In the sentence beginning "And since the poor devil must have one enjoyment", what reason does Engels give for the Irishman's drinking? [1]`,
+            marks: 3,
+            suggestedTimeMinutes: 4,
             questionType: 'short-answer',
             extract: `Source B:\n${IMMIGRATION_SOURCE_B}`,
             extractSource: IMMIGRATION_SOURCE_B_REF,
             modelAnswers: {
-              'Grade 4-5':
-                'You learn that the Irish immigrants lived in dirty, uncomfortable homes with almost no furniture: they slept on "a heap of straw, a few rags" and used "an old chest for a table". One room served as kitchen, bedroom and living room, and Engels says that the habit of "crowding many persons into a single room" came to England with them. When they had no fuel they burned chairs and door-posts. Many turned to drink. Engels\'s attitude is mostly scornful: he says the Irishman\'s "crudity" places him "but little above the savage" and calls his drunkenness "bestial". But at the end he blames society, which has shut the Irishman out of every enjoyment except drink and "leaves him to himself".',
-              'Grade 6-7':
-                'Engels shows the Irish living at the lowest level of the industrial towns, and his account is both a record of poverty and a display of prejudice. The conditions are extreme. "The filth and comfortlessness" of the houses are, he says, "impossible to describe", and the inventory of possessions - "a heap of straw, a few rags", "a broken chair, an old chest for a table", "a tea-kettle, a few pots and dishes" - shows how little they have, in a kitchen "which is also his sleeping and living room". The list of what is burned for fuel, "chairs, door-posts, mouldings, flooring", suggests homes being slowly consumed by the people who live in them. Yet for most of the passage Engels explains all this through character rather than circumstance. The rhetorical question "Moreover, why should he need much room?" and the claim that "more than one room his family does not need" treat overcrowding as a habit brought from the "mud-cabin", not as the result of poverty. His language slides into open contempt: the singular "The Irishman" turns a whole people into one type, whose "crudity" places him "but little above the savage" and whose drinking reaches "the most bestial drunkenness". But the argument keeps turning back on society. Just before that contempt, "And since the poor devil must have one enjoyment, and society has shut him out of all others" gives the drinking a cause outside the Irishman, and the passage ends with two questions, "What else should he do?" and "How can society blame him", which place the responsibility on the society that "leaves him to himself". The reader learns that the immigrants\' lives were harsh and crowded, and that even a writer who blamed society for their condition described them with the prejudices common in his time.',
+              'Grade 4-5': `(a) A heap of straw and a few rags.\n(b) He burns anything that will burn, even the chairs and the floorboards.\n(c) Society has shut him out of every other enjoyment.`,
             },
-            markScheme: [
-              'Identifies key information from the text',
-              'Selects appropriate evidence',
-              'Makes valid inferences',
-              "Comments on the writer's attitude, including the prejudice in his language",
-            ],
+            markScheme: {
+              'How it is marked (3 marks)': SHORT_B_MARKING,
+              Answers: [
+                '(a) A heap of straw and a few rags.',
+                '(b) He burns anything he can reach that will burn, such as chairs, door-posts or the floor.',
+                '(c) Society has shut him out of all other enjoyments, so drink is the only pleasure left to him.',
+              ],
+            },
           },
           {
             id: 'wjec-c2-09-q4',
             questionNumber: 4,
-            questionText: `"The writer of Source A presents immigrants far more fairly than the writer of Source B, because Source A is written from personal experience, while Source B looks in from outside."\n\nTo what extent do you agree with this statement? You must refer to both Source A and Source B in your answer. [15]`,
-            marks: 15,
-            suggestedTimeMinutes: 18,
+            label: '1.4',
+            questionText: `Read Source B again.\n\nA student said: ‘Engels is less unkind to the Irish than he first seems, because in the end he blames society for their condition.’\n\nHow far do you agree with this view?\n\nIn your answer, give your own view of how Engels presents the Irish immigrants across the whole text, and explain how his choices of words and details create that view. Support your answer with references to the text. [10]`,
+            marks: 10,
+            suggestedTimeMinutes: 12,
+            questionType: 'evaluation',
+            extract: `Source B:\n${IMMIGRATION_SOURCE_B}`,
+            extractSource: IMMIGRATION_SOURCE_B_REF,
+            modelAnswers: {
+              'Grade 8-9': `I only partly agree. Engels does end by blaming society, and that changes how we read the passage, but his contempt for the Irish is so strong and so sweeping that his final questions do not cancel it.\n\nFrom the first sentence his language is harsh. "The filth and comfortlessness that prevail in the houses themselves it is impossible to describe" opens with the word "filth", and the claim that it is beyond description makes it seem extreme. He then writes of "The Irishman" throughout, as though every Irish person were the same, and the stereotype is mocking: he is "unaccustomed to the presence of furniture", and "a heap of straw, a few rags, utterly beyond use as clothing, suffice for his nightly couch". The phrase "more he needs not" imitates the man's supposed contentment with almost nothing.\n\nEngels also blames the Irish for conditions in English towns. The question "Moreover, why should he need much room?" is sarcastic, and he claims that the custom of crowding "has been chiefly implanted by the Irish immigration". Here he seems unkind, not sympathetic.\n\nThe passage then turns: "And since the poor devil must have one enjoyment, and society has shut him out of all others". The phrase "poor devil" mixes pity with condescension, but the clause "society has shut him out of all others" puts the first real blame on society. Even so, Engels returns at once to his worst insults: drink is "the only thing which makes the Irishman's life worth having", he drinks "to the point of the most bestial drunkenness", and his "crudity" places him "but little above the savage". These are the most offensive words in the passage, and they come after the turn, not before it.\n\nThe ending supports the statement. The temptation "is great, he cannot resist it", and Engels asks, "What else should he do? How can society blame him when it places him in a position in which he almost of necessity becomes a drunkard". These questions make society responsible, and "almost of necessity" suggests that anyone in his position would behave the same way.\n\nSo Engels does finally blame society, which shows some sympathy. But a modern reader is likely to judge that the sympathy is limited by prejudice: he pities the Irishman as a victim while still calling him a "savage", and the generalising "The Irishman" stays in place to the very end.`,
+            },
+            markScheme: {
+              'How it is marked (10 marks)': Q1_4_MARKING,
+              'Points you might make': [
+                `The harsh opening ("filth and comfortlessness") and the stereotype of "The Irishman", who needs only "a heap of straw".`,
+                `Sarcasm ("why should he need much room?") and blame for the crowding of English towns.`,
+                `The turn: "the poor devil" mixes pity and condescension; "society has shut him out of all others" is the first blame on society.`,
+                `The worst insults ("the most bestial drunkenness"; "but little above the savage") come after that turn.`,
+                `The closing questions ("How can society blame him") make society responsible: "almost of necessity".`,
+                'A strong answer reaches a judgement, recognising both the sympathy and the prejudice, and keeps to it through the whole passage.',
+              ],
+            },
+          },
+          {
+            id: 'wjec-c2-09-q5',
+            questionNumber: 5,
+            label: '1.5',
+            questionText: `Bring together details from both texts to explain briefly what each writer tells you about the homes and daily lives of the immigrants they describe. Make clear which text each detail comes from. [4]`,
+            marks: 4,
+            suggestedTimeMinutes: 5,
+            questionType: 'summary',
+            extract: `Source A:\n${IMMIGRATION_SOURCE_A}\n\nSource B:\n${IMMIGRATION_SOURCE_B}`,
+            extractSource: `Source A: ${IMMIGRATION_SOURCE_A_REF} | Source B: ${IMMIGRATION_SOURCE_B_REF}`,
+            modelAnswers: {
+              'Grade 4-5': `In Source A, the writer's parents arrived "with two suitcases" and three small children; the father washed dishes in a hotel, and the mother cleaned offices "from five until eight every morning" before taking the children to school. In Source B, Engels describes Irish immigrants living in filthy houses with almost no furniture, sleeping on "a heap of straw", crowding into a single room, and burning chairs and floorboards for fuel.`,
+            },
+            markScheme: {
+              'How it is marked (4 marks)': Q1_5_MARKING,
+              'Details you might bring together': [
+                "Source A: few possessions on arrival; skilled parents in low-paid work, dish-washing and office cleaning, starting before dawn; ironing school uniforms at four in the morning; the children's later success.",
+                'Source B: filthy houses with almost no furniture; straw and rags for a bed; one room for cooking, sleeping and living; furniture and floors burnt for fuel; heavy drinking.',
+              ],
+            },
+          },
+          {
+            id: 'wjec-c2-09-q6',
+            questionNumber: 6,
+            label: '1.6',
+            questionText: `Source A and Source B are both about immigrants and the way they are seen.\n\nCompare:\n• what the writers say about immigrants\n• how they get their ideas across.\n\nUse evidence from both texts, and make clear which text each point comes from. [10]`,
+            marks: 10,
+            suggestedTimeMinutes: 13,
             questionType: 'comparison',
             extract: `Source A:\n${IMMIGRATION_SOURCE_A}\n\nSource B:\n${IMMIGRATION_SOURCE_B}`,
             extractSource: `Source A: ${IMMIGRATION_SOURCE_A_REF} | Source B: ${IMMIGRATION_SOURCE_B_REF}`,
             modelAnswers: {
-              'Grade 4-5':
-                'I mostly agree. The writer of Source A knows immigration from the inside, describing parents who worked hard, like the mother who cleaned offices "from five until eight every morning", and children who went on to law school, general practice and a construction company. Engels looks in from outside and judges: he says the Irishman is "but little above the savage" and that drink is "the only thing" that makes his life worth having. That is not fair, because it treats a whole people as one type. However, Engels does blame society at the end, asking "How can society blame him". And Source A tells only one family\'s story, a success story, so it is not the whole picture either.',
-              'Grade 6-7':
-                'The statement is largely right, but the reason it gives is only half the story. Personal experience lets the writer of Source A replace a category with people: "two suitcases, three children under five", a father who "had been an engineer in Mogadishu" washing dishes, a mother ironing "with hands that are raw from bleach". The writer knows this could be dismissed as one family\'s story - "I tell you this not to inspire pity" - and so turns it into an argument against a "prevailing narrative" that treats immigrants as "a problem to be solved rather than an asset to be celebrated". Engels, by contrast, looks in from outside, and the distance shows. He writes of "The Irishman" as a single type, explains overcrowding as a habit brought from the "mud-cabin" rather than as a result of poverty, and uses the language of contempt: "but little above the savage", "the most bestial drunkenness". Yet the outsider\'s view is not simply unfair. His closing questions, "What else should he do?" and "How can society blame him", turn the blame on a society that "has shut him out of all others", every enjoyment but drink, which is close to Source A\'s own charge that the problem lies in how the host country sees immigrants. Neither text is neutral: Source A chooses a family that succeeded, and Engels sees the Irish through the prejudices common in his time. Source A is fairer because it treats immigrants as individuals rather than as a type, but it is its attitude, more than its experience, that makes the difference.',
+              'Grade 8-9': `The two texts present immigrants in almost opposite ways. The writer of Source A, the child of immigrants, presents them as hard-working, self-sacrificing and successful, while Engels, in Source B, an outsider observing the Irish in English towns, presents them through stereotypes of filth and drunkenness, although he finally blames society for their state.\n\nWhat they say about the immigrants' lives differs sharply. In Source A the parents are skilled people, an "engineer in Mogadishu" and a "teacher", who took humble jobs and worked tirelessly: the mother "cleaned offices from five until eight every morning". In Source B the Irishman lives amid "filth and comfortlessness", needs only "a heap of straw" for a bed, and drinks "to the point of the most bestial drunkenness". Source A shows immigrants bringing ambition; Source B claims that they brought "the custom of crowding many persons into a single room".\n\nTheir views of what immigrants mean for the country also differ. The writer of Source A argues that the family became "exactly the kind of citizens that any country would want": the writer went on to law school, a sister is a GP and a brother runs a construction company. Engels treats the Irish as a cause of decline in English towns. Yet both writers, in different ways, turn the blame on society. Source A attacks "our increasingly toxic public discourse" and a "prevailing narrative" that treats immigrants as "a problem to be solved". Engels asks "How can society blame him", arguing that it "has shut him out" of every pleasure but drink.\n\nTheir methods reflect their positions. Source A speaks from inside the experience, in the first person, with precise and intimate details ("hands that are raw from bleach") and warm humour ("we argue about rugby"). It addresses the reader directly ("I tell you this not to inspire pity") and builds to a strong antithesis. Engels writes from outside, generalising about "The Irishman" as a type, with sarcastic questions ("why should he need much room?") and contemptuous labels such as "little above the savage". His closing questions show sympathy, but it is the sympathy of someone who looks down on the people he describes.\n\nSo Source A sets out to challenge prejudice, while Source B, for all its criticism of society, is an example of it.`,
             },
-            markScheme: [
-              'Evaluates both texts with a personal response',
-              'Compares effectiveness of different methods',
-              'Uses evidence from both texts',
-              'Shows nuanced critical judgement',
-            ],
+            markScheme: {
+              'How it is marked (10 marks)': Q1_6_MARKING,
+              'Points you might make': [
+                'Opposite portraits: skilled, self-sacrificing, successful (Source A); dirty, drunken, crowding the towns (Source B).',
+                'Both turn some blame on society: a toxic public discourse (Source A); a society that has shut the Irishman out (Source B).',
+                'Viewpoint: an insider, the child of immigrants (Source A); an outsider generalising about "The Irishman" (Source B).',
+                `Methods: intimate detail, humour and direct address (Source A); stereotype, sarcastic questions and contemptuous labels (Source B).`,
+                'Purpose: to challenge prejudice (Source A); to blame society, while showing prejudice himself (Source B).',
+              ],
+            },
           },
         ],
       },
       {
         id: 'wjec-c2-09-writing',
         title: 'Section B: Writing',
-        description:
-          'You are advised to spend about 60 minutes on this section. You should divide your time equally between the two tasks.',
+        description: SECTION_B_GUIDANCE,
         totalMarks: 40,
         suggestedTimeMinutes: 60,
         questions: [
           {
-            id: 'wjec-c2-09-q5',
-            questionNumber: 5,
-            questionText: `Your school is organising a cultural diversity week. You have been asked to write a text for the school website.\n\nWrite an informative and engaging text explaining why cultural diversity benefits a school community.\n\n[16]`,
-            marks: 16,
-            suggestedTimeMinutes: 25,
+            id: 'wjec-c2-09-q7',
+            questionNumber: 1,
+            label: '2.1',
+            questionText: `Your school is holding a cultural diversity week.\n\nWrite an article for the school website explaining how the many cultures in a school community can benefit everyone in it. [20]`,
+            marks: 20,
+            suggestedTimeMinutes: 30,
             questionType: 'transactional-writing',
             modelAnswers: {
-              'Grade 4-5':
-                'A clear website text with: appropriate register for school audience; relevant ideas; generally accurate SPaG.',
-              'Grade 6-7':
-                'A well-crafted text with: engaging opening; thoughtful exploration of benefits; consistent accuracy and varied expression.',
-              'Grade 8-9':
-                'A sophisticated text with: compelling voice; nuanced argument that avoids cliché; technical virtuosity.',
+              'Grade 8-9': `One school, many worlds\n\nWalk down the main corridor of our school at lunchtime and you will hear more than English and Welsh. Pupils here speak Polish, Arabic, Urdu, Portuguese, Somali and many other languages at home, and between us our families have roots in dozens of countries. This week, as we celebrate cultural diversity, it is worth asking a simple question: what does all this variety give us?\n\nThe first answer is that it makes learning richer. When a history lesson turns to the past of another country, there is often someone in the room whose grandparents lived it. When we study poems from other cultures, classmates can tell us what a word or a festival really means. No textbook can match a friend who says, that is exactly what my nan used to cook.\n\nThe second answer is that it prepares us for life. The world we will work in is international. Our future colleagues, customers and neighbours will come from everywhere, and the ability to listen to different points of view, and to respect them, is one of the most useful skills any of us can have. In a mixed school, we practise it every day without even noticing.\n\nThird, diversity teaches us about ourselves. Learning how other families celebrate, mourn and make friends makes us think about our own traditions, and often helps us to value them more. A Welsh pupil who explains Dydd Gŵyl Dewi to a classmate from Lithuania understands it better for having explained it.\n\nOf course, living alongside difference is not always easy. Misunderstandings happen, and sometimes people feel left out. That is exactly why events like this week matter. They give us a chance to ask questions, try new food, hear new music and discover how much we have in common.\n\nSo this week, get involved. Visit the stalls in the hall, join a dance workshop, or simply ask the person next to you in class about their family's story. You may be surprised by how much there is to learn, and by how much you have to share.`,
             },
-            markScheme: [
-              'Communication & Organisation (10 marks): Purpose, audience, form, structure',
-              'Writing Accurately (6 marks): Sentence variety, vocabulary, SPaG',
-            ],
+            markScheme: {
+              'How it is marked (20 marks)': WRITING_MARKING,
+              'What earns marks in this task': [
+                'The features of an article for a website: a headline, an engaging opening, and paragraphs that each develop one benefit.',
+                'A warm, inclusive tone that suits the whole school community.',
+                'Benefits explained and developed with examples, with some awareness of the challenges.',
+                'Accurate spelling, punctuation and grammar, with varied sentences and well-chosen words: 8 of the 20 marks are for this.',
+              ],
+            },
           },
           {
-            id: 'wjec-c2-09-q6',
-            questionNumber: 6,
-            questionText: `"Britain has a moral duty to accept refugees, regardless of the economic cost."\n\nWrite an article for a broadsheet newspaper in which you argue your point of view on this statement.\n\n[24]`,
-            marks: 24,
-            suggestedTimeMinutes: 35,
+            id: 'wjec-c2-09-q8',
+            questionNumber: 2,
+            label: '2.2',
+            questionText: `"Everyone who moves to live in a new country should be expected to learn its language."\n\nWrite a speech for a school debate giving your views on this statement. [20]`,
+            marks: 20,
+            suggestedTimeMinutes: 30,
             questionType: 'transactional-writing',
             modelAnswers: {
-              'Grade 4-5':
-                'A newspaper article with: appropriate headline and structure; clear argument; relevant examples; generally accurate SPaG.',
-              'Grade 6-7':
-                'A well-crafted article with: engaging headline; sustained and balanced argument; effective use of evidence; consistent accuracy.',
-              'Grade 8-9':
-                'An outstanding article with: arresting headline; sophisticated reasoning that engages with complexity; masterful control of tone; technical precision.',
+              'Grade 8-9': `Good afternoon, everyone.\n\nImagine arriving in a country where you cannot read the signs, understand the doctor or talk to your child's teacher. Every form is a puzzle, every phone call a source of worry. Language is the key that opens every door in a new life. That is why I believe that people who move here should learn our language. But I want to argue that the word expected matters less than the word helped.\n\nLet me begin with the benefits. When newcomers learn the language of their new country, everyone gains. They can find better jobs, use their skills and qualifications, and take part in their community. Their children are not forced to act as interpreters at the doctor's or the bank. And neighbours who can talk to each other are far more likely to become friends.\n\nSo far, I agree with the statement. My concern is with what it leaves out. Learning a language as an adult is hard. It takes time, money and energy, and many newcomers work long hours in tiring jobs. An expectation without support is just a demand. If we want people to learn, we must make it possible: with free classes in the evenings and at weekends, with childcare so that parents can attend, and with patience while they practise.\n\nWe should also remember what newcomers already bring. A family that speaks Arabic, Polish or Somali at home is not a problem to be fixed. Those languages are a gift to our country, to our businesses and to our schools. Learning English, or Welsh, should mean adding a language, not losing one.\n\nAnd here in Wales we know something about this. Our own language was once discouraged, and many families stopped passing it on. Today we work hard to help people of all backgrounds learn Welsh, because we understand that a language is best learnt with encouragement, not pressure.\n\nSo yes, learning the language of a new home is important, and most newcomers want to do it. Let us stop asking whether they should, and start asking how we can help them.\n\nThank you.`,
             },
-            markScheme: [
-              'Communication & Organisation (14 marks): Purpose, audience, form, voice, structure, paragraphing',
-              'Writing Accurately (10 marks): Sentence variety, vocabulary range, SPaG',
-            ],
+            markScheme: {
+              'How it is marked (20 marks)': WRITING_MARKING,
+              'What earns marks in this task': [
+                'The features of a debate speech: a greeting, a clear position on the statement, direct address, and a strong ending.',
+                'A respectful, persuasive tone, suitable for a school audience and for a subject that touches people personally.',
+                'A clear view, developed with reasons and examples, that weighs the arguments on both sides.',
+                'Accurate spelling, punctuation and grammar, with varied sentences and well-chosen words: 8 of the 20 marks are for this.',
+              ],
+            },
           },
         ],
       },
@@ -886,141 +1254,195 @@ export const wjecC2B: MockExamPaper[] = [
       {
         id: 'wjec-c2-10-reading',
         title: 'Section A: Reading',
-        description:
-          'Read both source texts carefully. Then answer all the questions in this section.',
+        description: SECTION_A_GUIDANCE,
         totalMarks: 40,
         suggestedTimeMinutes: 60,
         questions: [
           {
             id: 'wjec-c2-10-q1',
             questionNumber: 1,
-            questionText: `Read the 21st-century source text about modern childhood (Source A).\n\nList five things you learn about how childhood has changed from this text.`,
-            marks: 5,
-            suggestedTimeMinutes: 5,
+            label: '1.1',
+            questionText: `Read Source A, the 21st-century text, and answer the questions below.\n\n(a) In which town does the writer teach? [1]\n(b) For how many years has the writer watched children change? [1]\n(c) According to the writer, what do some parents do when their child gets a low mark? [1]`,
+            marks: 3,
+            suggestedTimeMinutes: 4,
             questionType: 'short-answer',
             extract: `Source A:\n${CHILDHOOD_SOURCE_A}\n\nSource B:\n${CHILDHOOD_SOURCE_B}`,
             extractSource: `Source A: ${CHILDHOOD_SOURCE_A_REF} | Source B: ${CHILDHOOD_SOURCE_B_REF}`,
             modelAnswers: {
-              'Grade 4-5':
-                "1. Today's children are the most protected and most anxious generation in history. 2. Children arriving in Year 7 are more anxious and risk-averse than those in 2010. 3. They cannot resolve playground disputes without a teacher. 4. Referrals to CAMHS have increased by 353% in a decade. 5. Self-harm among teenage girls has tripled since 2010.",
+              'Grade 4-5': `(a) Newport.\n(b) Fifteen years.\n(c) They email the headteacher.`,
             },
-            markScheme: ['1 mark per valid point, maximum 5'],
+            markScheme: {
+              'How it is marked (3 marks)': SHORT_A_MARKING,
+              Answers: ['(a) Newport.', '(b) Fifteen years.', '(c) They email the headteacher.'],
+            },
           },
           {
             id: 'wjec-c2-10-q2',
             questionNumber: 2,
-            questionText: `How does the writer of Source A use language to convey concerns about modern childhood?\n\nYou should comment on specific words and phrases and the effects they create. [10]`,
+            label: '1.2',
+            questionText: `Source A is a magazine article about childhood today. The writer wants to persuade readers that protecting children too much is harming them.\n\nHow does the writer try to do this?\n\nIn your answer, comment on:\n• what the writer says\n• the writer's choice of language and tone\n• how the article is structured, and any other methods the writer uses.\n\n[10]`,
             marks: 10,
             suggestedTimeMinutes: 12,
             questionType: 'analysis',
             extract: `Source A:\n${CHILDHOOD_SOURCE_A}`,
             extractSource: CHILDHOOD_SOURCE_A_REF,
             modelAnswers: {
-              'Grade 4-5':
-                'The writer uses the metaphor "bubble-wrapped" to show that children are overprotected. The phrase "hit them like a truck" creates a violent image to show how unprepared they are. The list of things they are protected from - "strangers, from traffic, from germs, from failure, from boredom" - shows how extreme the protection has become. The final sentence uses irony: trying to eliminate suffering has created more suffering.',
-              'Grade 6-7':
-                'The writer constructs the argument through a series of paradoxes that expose the unintended consequences of well-meaning parenting. The opening sentence yokes "most protected" and "most anxious" in deliberate juxtaposition, with "these two facts are not unrelated" employing litotes to understate a causal relationship the reader must infer. The catalogue of dangers - "strangers, from traffic, from germs, from failure, from boredom, from the unsupervised outdoors" - escalates from genuine threats to absurd ones, the anaphoric "from" creating a suffocating rhythm that mimics overprotection itself. The word "bubble-wrapped" reduces children to fragile objects, while "hit them like a truck" deploys violent vehicular imagery that suggests not gradual difficulty but sudden, devastating collision. The statistical triplet in the final paragraph - "353%," "One in six," "tripled" - creates an evidence base, but the closing sentence delivers the rhetorical coup de grâce: "eliminate suffering... produced suffering on an industrial scale." The paradox is made complete; the metaphor "industrial scale" implies mass production of the very thing society sought to prevent.',
+              'Grade 8-9': `The writer opens with a bold claim that links two ideas the reader might expect to be opposites: "the most protected and the most anxious generation in human history". The superlatives make the claim dramatic, and the understatement "these two facts are not unrelated" invites the reader to see the connection for themselves. The long list of dangers, "from strangers, from traffic, from germs, from failure, from boredom, from the unsupervised outdoors", moves from real threats to ordinary experiences, which makes the adults' protectiveness seem excessive. The adverb "inadvertently" matters: it presents parents as well-meaning rather than careless, so the reader is not put on the defensive. The paragraph ends with three things these children cannot do: "assess risk, tolerate discomfort, or entertain itself without a screen".\n\nThe second paragraph gives the writer authority: "I am a secondary school teacher in Newport", who has watched the change "over fifteen years". The tone is measured and observant, with a precise comparison between children now and "those who arrived in 2010". A list of comparatives, "more anxious, more risk-averse, and more dependent on adult intervention", is followed by two sentences that begin "They cannot", each with a concrete example: "They cannot resolve playground disputes without a teacher. They cannot cope with a low mark without their parents emailing the headteacher." The second, in which parents email the headteacher over a mark, is gently satirical. The metaphor "so thoroughly bubble-wrapped" sums up the argument in one image, and the simile "hit them like a truck" is deliberately blunt, showing how unready these children are.\n\nThe third paragraph turns to statistics, presented as confirmation of experience: "The statistics confirm what every teacher already knows." Figures such as "one in six children" and "up from one in nine only three years before" are meant to show that the problem is large and growing, and placing them after the anecdotes makes them seem like proof, although the article does not say where they come from. The final sentence is a balanced antithesis: "We have tried to eliminate suffering from childhood, and we have produced suffering on an industrial scale." The repetition of "suffering" and the phrase "on an industrial scale" make the conclusion both ironic and alarming: the attempt to protect children has created the very harm it was meant to prevent. The inclusive "We" makes the reader share the responsibility, which is the point of the article.`,
             },
-            markScheme: [
-              'Analyses specific language techniques',
-              'Comments on word-level effects',
-              'Considers persuasive strategies',
-              'Uses embedded quotations',
-            ],
+            markScheme: {
+              'How it is marked (10 marks)': Q1_2_MARKING,
+              'Points you might make': [
+                `The bold opening links protection and anxiety; the understatement "these two facts are not unrelated" invites the reader to draw the link.`,
+                `The list of dangers moves from real threats to ordinary experiences; "inadvertently" keeps parents on side.`,
+                `Authority and precision: "I am a secondary school teacher in Newport"; a comparison with "those who arrived in 2010".`,
+                `Repeated "They cannot" sentences with concrete, gently satirical examples; the metaphor "bubble-wrapped" and the simile "hit them like a truck".`,
+                `Statistics are placed as proof of experience, though their sources are not given.`,
+                `The antithesis ending "suffering on an industrial scale" and the inclusive "We".`,
+              ],
+            },
           },
           {
             id: 'wjec-c2-10-q3',
             questionNumber: 3,
-            questionText: `What do you learn about the lives of children in a Victorian workhouse from Source B?\n\n(Tooting: in 1849 cholera killed more than 150 of the pauper children whom London parishes paid a private contractor to board at Tooting. pauper: a person living on public relief. the Chartists: a working-class movement campaigning for the vote. going aloft: climbing a ship's rigging. the Middlesex House of Correction: a London prison.)\n\nYou must refer to the text to support your answer. [10]`,
-            marks: 10,
-            suggestedTimeMinutes: 12,
+            label: '1.3',
+            questionText: `Read Source B, the 19th-century text, and answer the questions below.\n\n(Tooting: in 1849 cholera killed more than 150 of the pauper children whom London parishes paid a private contractor to board at Tooting. A "pauper" is a person living on public relief; the "Chartist" leaders campaigned for working men's right to vote; "going aloft" means climbing a ship's rigging; the "Middlesex House of Correction" was a London prison.)\n\n(a) According to Dickens, how did the pauper children in this workhouse look? [1]\n(b) What were the infants doing when the visitors arrived? [1]\n(c) What had some of the boys been drawing on the schoolroom wall? [1]`,
+            marks: 3,
+            suggestedTimeMinutes: 4,
             questionType: 'short-answer',
             extract: `Source B:\n${CHILDHOOD_SOURCE_B}`,
             extractSource: CHILDHOOD_SOURCE_B_REF,
             modelAnswers: {
-              'Grade 4-5':
-                'You learn that in this workhouse the children were "looking robust and well" and seemed to be "the objects of very great care". The infants had a "large, light, airy room", ate their potatoes "heartily" and were not frightened of visitors: they held out "their small hands to be shaken". The girls\' school looked "cheerful and healthy", and the boys played freely in "a large and airy yard". Some boys had drawn ships on the wall, which suggests that they dreamed of going to sea, but Dickens says that the only way a workhouse boy could learn to climb a ship\'s rigging was the way adult paupers got better food and lodging: by smashing workhouse windows and being sent to prison. He also reminds readers of Tooting, where pauper children had been treated far worse.',
-              'Grade 6-7':
-                'Dickens shows that a workhouse childhood could be decent, and that this was worth remarking on only because it so often was not. The long first sentence holds back its good news behind the memory of Tooting, "that most infamous and atrocious enormity", so that the healthy children are seen against the dead ones, and the word "agreeable" sounds like relief. The children here are "looking robust and well", though "apparently the objects of very great care" is a guarded phrase from a visitor who knows that appearances can be arranged. The infants are "the little creatures", tender rather than pitiful, and the detail that they "were not cowed by the presence of strange visitors, but stretched out their small hands to be shaken, with a very pleasant confidence" suggests children who have not learned to fear adults. Even the "two mangy pauper rocking-horses rampant in a corner" are affectionately comic: "pauper" makes the toys share the children\'s poverty, and "rampant", a word from heraldry, gives the shabby horses a mock nobility. The boys roam "unrestrained about a large and airy yard, as any other schoolboys might have done", which is the passage\'s real standard: workhouse children should be treated like any others. The ending shows where they are not. The ships on the schoolroom wall reveal ambition, but the only way such a boy could learn "the art of going aloft" would be to do as adult paupers do, "by smashing as many workhouse windows as possible, and being promoted to prison". The irony of "promoted" exposes a system that offers a poor boy more chance of training in prison than in the workhouse.',
+              'Grade 4-5': `(a) Strong and healthy.\n(b) Eating their dinner of potatoes.\n(c) Large ships.`,
             },
-            markScheme: [
-              'Identifies key information from the text',
-              'Selects appropriate evidence',
-              'Makes valid inferences',
-              'Shows clear understanding of implicit meaning',
-            ],
+            markScheme: {
+              'How it is marked (3 marks)': SHORT_B_MARKING,
+              Answers: [
+                '(a) Strong and healthy, and apparently well cared for.',
+                '(b) Eating their dinner (accept: eating potatoes heartily).',
+                '(c) Large ships.',
+              ],
+            },
           },
           {
             id: 'wjec-c2-10-q4',
             questionNumber: 4,
-            questionText: `"Both writers are concerned about children, but their concerns are so different that the texts cannot meaningfully be compared."\n\nTo what extent do you agree with this statement? You must refer to both Source A and Source B in your answer. [15]`,
-            marks: 15,
-            suggestedTimeMinutes: 18,
+            label: '1.4',
+            questionText: `Read Source B again.\n\nA student said: ‘Dickens presents the workhouse children as well cared for and happy.’\n\nHow far do you agree with this view?\n\nIn your answer, give your own view of how Dickens presents the children and the workhouse across the whole text, and explain how his choices of words and details create that view. Support your answer with references to the text. [10]`,
+            marks: 10,
+            suggestedTimeMinutes: 12,
+            questionType: 'evaluation',
+            extract: `Source B:\n${CHILDHOOD_SOURCE_B}`,
+            extractSource: CHILDHOOD_SOURCE_B_REF,
+            modelAnswers: {
+              'Grade 8-9': `I largely agree, but only on the surface. Dickens does present these children as healthy and well treated, especially by the standards of his time, yet his language contains hints of doubt, and the passage ends with a pointed criticism of what the workhouse fails to offer.\n\nThe opening sets the scene against a recent horror. Dickens recalls the "most infamous and atrocious enormity committed at Tooting", piling up strong words, and predicts that it "will still be vividly remembered" a hundred years later. Against this, he finds it "very agreeable" to see the children "looking robust and well, and apparently the objects of very great care". The positive words are clear, but "apparently" is a careful hedge: he can report only how things seem to a visitor.\n\nThe Infant School is presented warmly. It is "a large, light, airy room", the children are "eating their potatoes heartily", and instead of being "cowed by the presence of strange visitors", they stretch out "their small hands to be shaken, with a very pleasant confidence". Their confidence suggests that they are not afraid of adults, which implies kind treatment. The girls' school likewise has "a cheerful and healthy aspect", and the boys roam "unrestrained about a large and airy yard, as any other schoolboys might have done". This comparison matters: it suggests that these children are allowed to be ordinary.\n\nHowever, some details are less comfortable. The toys are "two mangy pauper rocking-horses rampant in a corner". The words "mangy" and "pauper" make even the toys poor, and the humour of "rampant", as though they were beasts on a coat of arms, is affectionate but also gently mocking. Dickens notices the boys "drawing large ships upon the schoolroom wall", which suggests ambition, and wishes they had a mast "set up for practice". His final sentence is heavily ironic: at present a boy who longs to learn to go aloft could do so only in the way the adult paupers seek "better board and lodging", "by smashing as many workhouse windows as possible, and being promoted to prison". The joke reveals a serious point: the workhouse gives these children no route to the lives they dream of.\n\nSo the statement is true of what Dickens saw that day. The children are fed, healthy and unafraid. But by ending with irony rather than praise, Dickens suggests that being cared for is not the same as being given a future.`,
+            },
+            markScheme: {
+              'How it is marked (10 marks)': Q1_4_MARKING,
+              'Points you might make': [
+                `The contrast with "that most infamous and atrocious enormity committed at Tooting" makes the children's health seem a relief; "apparently" hedges.`,
+                `Warm detail supports the statement: "eating their potatoes heartily"; "a very pleasant confidence"; "a cheerful and healthy aspect"; boys "as any other schoolboys might have done".`,
+                `Less comfortable details: "two mangy pauper rocking-horses rampant in a corner".`,
+                `The boys' drawings of ships, and the wish for a mast, suggest ambitions with no outlet.`,
+                `The ironic ending ("being promoted to prison") criticises what the workhouse cannot offer.`,
+                'A strong answer reaches a judgement on the statement and keeps to it through the whole passage.',
+              ],
+            },
+          },
+          {
+            id: 'wjec-c2-10-q5',
+            questionNumber: 5,
+            label: '1.5',
+            questionText: `Bring together details from both texts to explain briefly how the children that each writer describes behave towards adults. Make clear which text each detail comes from. [4]`,
+            marks: 4,
+            suggestedTimeMinutes: 5,
+            questionType: 'summary',
+            extract: `Source A:\n${CHILDHOOD_SOURCE_A}\n\nSource B:\n${CHILDHOOD_SOURCE_B}`,
+            extractSource: `Source A: ${CHILDHOOD_SOURCE_A_REF} | Source B: ${CHILDHOOD_SOURCE_B_REF}`,
+            modelAnswers: {
+              'Grade 4-5': `In Source A, the children are "more dependent on adult intervention": they "cannot resolve playground disputes without a teacher", and their parents step in when they get a low mark. In Source B, the workhouse infants are "not cowed by the presence of strange visitors" and reach out "their small hands to be shaken, with a very pleasant confidence", while the boys roam freely in their yard.`,
+            },
+            markScheme: {
+              'How it is marked (4 marks)': Q1_5_MARKING,
+              'Details you might bring together': [
+                'Source A: children depend on adults to settle their arguments and to deal with low marks; they are anxious and avoid risk.',
+                'Source B: the infants are not frightened of strange visitors and hold out their hands confidently; the boys roam unrestrained about the yard, as any other schoolboys might.',
+              ],
+            },
+          },
+          {
+            id: 'wjec-c2-10-q6',
+            questionNumber: 6,
+            label: '1.6',
+            questionText: `Source A and Source B are both about the way children are cared for.\n\nCompare:\n• what the writers say about how children are treated by the adults responsible for them\n• how they get their ideas across.\n\nUse evidence from both texts, and make clear which text each point comes from. [10]`,
+            marks: 10,
+            suggestedTimeMinutes: 13,
             questionType: 'comparison',
             extract: `Source A:\n${CHILDHOOD_SOURCE_A}\n\nSource B:\n${CHILDHOOD_SOURCE_B}`,
             extractSource: `Source A: ${CHILDHOOD_SOURCE_A_REF} | Source B: ${CHILDHOOD_SOURCE_B_REF}`,
             modelAnswers: {
-              'Grade 4-5':
-                'I disagree. The problems are different, but both writers care about how adults treat children. The writer of Source A thinks children are "bubble-wrapped" and cannot cope with anything. Dickens is relieved to find workhouse children "looking robust and well", when pauper children at Tooting had died. But both writers value freedom: Dickens likes seeing the boys "roaming unrestrained about a large and airy yard", and the writer of Source A worries that children are kept away from "the unsupervised outdoors". The texts can be compared because both want children to have a healthy, free childhood.',
-              'Grade 6-7':
-                'I strongly disagree. The texts are more alike than they first appear, and each sheds light on the other. Dickens writes against a background of children dying through neglect - the "most infamous and atrocious enormity committed at Tooting" - so for him the first question is whether poor children are safe and fed, and he is relieved to find them "robust and well". The writer of Source A writes at the opposite extreme, about a generation that is "the most protected" in history and pays for it in anxiety. Yet both measure a childhood by the same things: freedom, confidence and the chance to take risks. Dickens admires the infants\' "very pleasant confidence" with strangers and the boys "roaming unrestrained about a large and airy yard, as any other schoolboys might have done"; he even wants a mast set up so that they can learn "the art of going aloft", a genuinely dangerous skill. The writer of Source A laments the loss of exactly these things: children kept from "the unsupervised outdoors", who "cannot resolve playground disputes without a teacher". Dickens\'s complaint is that a poor boy\'s ambition has no outlet but prison; Source A\'s is that protected children never learn "to assess risk, tolerate discomfort, or entertain" themselves. Together the texts suggest that a healthy childhood needs both care and freedom, and that each age has found it easier to supply one than the other.',
+              'Grade 8-9': `Both writers judge how well adults are caring for children, but they reach almost opposite conclusions. The writer of Source A argues that today's children are harmed by too much protection, while Dickens, in Source B, is pleased to find poor children in a workhouse better cared for than he feared, though he suggests that care is not enough.\n\nWhat they say about the children's treatment differs sharply. In Source A, adults try to keep children safe "from every conceivable danger", and the result is a generation that "does not know how to assess risk, tolerate discomfort, or entertain itself without a screen". In Source B, the children have very little, but they are "looking robust and well, and apparently the objects of very great care", and the infants show "a very pleasant confidence". One writer worries about children who are protected too much; the other is relieved to find children who are looked after at all.\n\nBoth writers, however, suggest that adults can fail children by holding them back. The writer of Source A says children are "so thoroughly bubble-wrapped" that ordinary challenges "hit them like a truck". Dickens notices boys "drawing large ships upon the schoolroom wall" and regrets that they have no mast "set up for practice", so their ambitions have no outlet. Both believe that children need room to grow.\n\nTheir methods differ. The writer of Source A builds an argument from experience ("I am a secondary school teacher in Newport"), with lists, repeated sentence openings ("They cannot") and statistics such as "one in six children in England aged five to sixteen", and ends with a stark antithesis: "we have produced suffering on an industrial scale". The tone is concerned and urgent. Dickens writes as a visitor describing what he sees, room by room, in long, flowing sentences. His tone is warmer and often humorous, as in the "two mangy pauper rocking-horses rampant in a corner", but it turns ironic at the end, when he imagines a boy who could learn to go aloft only by "smashing as many workhouse windows as possible, and being promoted to prison".\n\nBoth writers, then, look beyond whether children are safe to whether they are being prepared for life. Source A fears that safety has become harmful; Dickens fears that the workhouse, however kind, offers its children no future.`,
             },
-            markScheme: [
-              'Evaluates both texts with a personal response',
-              'Compares effectiveness of different methods',
-              'Uses evidence from both texts',
-              'Shows nuanced critical judgement',
-            ],
+            markScheme: {
+              'How it is marked (10 marks)': Q1_6_MARKING,
+              'Points you might make': [
+                'Opposite verdicts: children harmed by too much protection (Source A); poor children better cared for than feared (Source B).',
+                'Both suggest that children need room to grow: the "bubble-wrapped" generation (Source A); the boys who draw ships with no way to learn to sail (Source B).',
+                'Methods: experience, lists, repeated openings and statistics (Source A); a visitor describing room by room, with humour and irony (Source B).',
+                'Tone: concerned and urgent (Source A); warm, then ironic (Source B).',
+                'Both judge care by whether it prepares children for life, not only by whether it keeps them safe.',
+              ],
+            },
           },
         ],
       },
       {
         id: 'wjec-c2-10-writing',
         title: 'Section B: Writing',
-        description:
-          'You are advised to spend about 60 minutes on this section. You should divide your time equally between the two tasks.',
+        description: SECTION_B_GUIDANCE,
         totalMarks: 40,
         suggestedTimeMinutes: 60,
         questions: [
           {
-            id: 'wjec-c2-10-q5',
-            questionNumber: 5,
-            questionText: `A parents' group has asked your school to ban mobile phones during the school day.\n\nWrite a report for the headteacher outlining the arguments for and against this proposal.\n\n[16]`,
-            marks: 16,
-            suggestedTimeMinutes: 25,
+            id: 'wjec-c2-10-q7',
+            questionNumber: 1,
+            label: '2.1',
+            questionText: `Your local council wants to know whether young people in your area have enough safe places to spend their free time.\n\nWrite a report for the council describing what is available now and recommending improvements. [20]`,
+            marks: 20,
+            suggestedTimeMinutes: 30,
             questionType: 'transactional-writing',
             modelAnswers: {
-              'Grade 4-5':
-                'A clear report with: appropriate formal conventions; arguments on both sides; generally accurate SPaG.',
-              'Grade 6-7':
-                'A well-structured report with: clear subheadings and formal register; balanced and well-evidenced arguments; consistent accuracy.',
-              'Grade 8-9':
-                'A polished report with: professional presentation; sophisticated analysis of competing perspectives; technical precision.',
+              'Grade 8-9': `Report for the Town Council: places for young people to spend their free time\n\nPurpose\nThis report responds to the council's request for young people's views on the places available to them outside school. It is based on a survey of forty pupils in Years 9 to 11 and on conversations with members of the youth forum.\n\nWhat is available now\nThe town has some good facilities. The leisure centre offers swimming, a gym and team sports, and the library runs a homework club twice a week. The skate park by the river is popular with younger teenagers, and the youth club meets on Friday evenings in the church hall.\n\nHowever, the survey revealed several problems. Many pupils said that the leisure centre is too expensive to visit regularly, especially for families with more than one child. The skate park has no lighting, so it cannot be used safely after about four o'clock in winter. The youth club is open only once a week and is often full. Most worryingly, many pupils said that they have nowhere to simply meet friends indoors without spending money, so they end up in the shopping centre or at the bus station, where they are sometimes moved on.\n\nRecommendations\n1. Introduce a reduced price for under-sixteens at the leisure centre, at least during off-peak hours.\n2. Install lighting at the skate park and the nearby playing field, so that they can be used safely in the winter months.\n3. Open the youth club on at least two more evenings a week, perhaps by training volunteers to support the youth workers.\n4. Create a free indoor space for young people, such as a room in the library or the community centre, with seating, Wi-Fi and board games, open after school and at weekends.\n\nConclusion\nYoung people in our town want to be active and sociable, but too often they are priced out or left with nowhere to go. The improvements recommended here would cost relatively little, and they would show young people that the town values them. I would urge the council to begin with the lighting and the indoor space, which pupils mentioned most often.`,
             },
-            markScheme: [
-              'Communication & Organisation (10 marks): Purpose, audience, form, structure',
-              'Writing Accurately (6 marks): Sentence variety, vocabulary, SPaG',
-            ],
+            markScheme: {
+              'How it is marked (20 marks)': WRITING_MARKING,
+              'What earns marks in this task': [
+                'The features of a report: a title, a statement of purpose, clear sections or headings, and recommendations.',
+                'A formal, objective tone suited to councillors.',
+                'Both parts of the task covered: what is available now, and improvements, each developed with reasons.',
+                'Accurate spelling, punctuation and grammar, with varied sentences and well-chosen words: 8 of the 20 marks are for this.',
+              ],
+            },
           },
           {
-            id: 'wjec-c2-10-q6',
-            questionNumber: 6,
-            questionText: `"Children today have it too easy. They need to experience hardship to build character."\n\nWrite a speech for a school assembly in which you argue your point of view on this statement.\n\n[24]`,
-            marks: 24,
-            suggestedTimeMinutes: 35,
+            id: 'wjec-c2-10-q8',
+            questionNumber: 2,
+            label: '2.2',
+            questionText: `"Children today have it too easy. They need to experience hardship to build character."\n\nWrite a speech for a school assembly giving your views on this statement. [20]`,
+            marks: 20,
+            suggestedTimeMinutes: 30,
             questionType: 'transactional-writing',
             modelAnswers: {
-              'Grade 4-5':
-                'A speech with: clear position; some persuasive techniques; appropriate form with address to audience; generally accurate SPaG.',
-              'Grade 6-7':
-                'A well-crafted speech with: sustained and nuanced argument; effective rhetorical devices; awareness of counter-arguments; consistent accuracy.',
-              'Grade 8-9':
-                'An outstanding speech with: compelling voice that balances authority and empathy; sophisticated engagement with the complexity of the statement; technical mastery.',
+              'Grade 8-9': `Good morning, everyone.\n\nI am sure you have heard it before. Perhaps a grandparent has said it at Sunday lunch, or a stranger on the bus. Children today have it too easy. When I was your age, we walked five miles to school in the snow. Today I want to ask whether that is true, and whether hardship really is the best teacher.\n\nLet us be fair to the people who say it. In some ways, many of us do have easier lives than children in the past. We have central heating, plenty of food and more entertainment in our pockets than our grandparents could have imagined. Few of us have to work to support our families, as many children once did. That is something to be grateful for, not ashamed of.\n\nBut easier is not the same as easy. Young people today face pressures that earlier generations did not. We sit more exams than ever. We live our friendships partly online, where an unkind comment can follow us home. Many of us worry about the future of the planet, or about whether we will ever afford a home of our own. These are not hardships you can see, like a long walk in the snow, but they are real.\n\nAnd I want to question the second half of the statement too. Does hardship build character? Sometimes it does. Overcoming a difficult challenge can make us stronger and more confident. But hardship can also crush people. A child who goes hungry does not become stronger; they become tired and unable to learn. What builds character is not suffering itself, but challenge with support: the chance to try something difficult, to fail, and to be helped to try again.\n\nSo instead of wishing hardship on young people, let us look for challenges that make us grow. Join a team and learn to lose well. Volunteer and see how other people live. Take on a part in the school play that terrifies you. Character is built by effort and courage, and every one of us can find those without having to suffer.\n\nThank you for listening.`,
             },
-            markScheme: [
-              'Communication & Organisation (14 marks): Purpose, audience, form, voice, structure, paragraphing',
-              'Writing Accurately (10 marks): Sentence variety, vocabulary range, SPaG',
-            ],
+            markScheme: {
+              'How it is marked (20 marks)': WRITING_MARKING,
+              'What earns marks in this task': [
+                'The features of a speech: a greeting, direct address to the audience, and an ending that rounds it off.',
+                'A tone that suits an assembly: thoughtful and persuasive, fair to those who disagree.',
+                'A clear view on both parts of the statement, developed with reasons and examples.',
+                'Accurate spelling, punctuation and grammar, with varied sentences and well-chosen words: 8 of the 20 marks are for this.',
+              ],
+            },
           },
         ],
       },

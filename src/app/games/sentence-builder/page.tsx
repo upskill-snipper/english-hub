@@ -12,7 +12,12 @@ import { AnswerExplanation } from '@/components/games/AnswerExplanation'
 import { useGameRound } from '@/components/games/game-round'
 import { useDealer } from '@/lib/games/start-round'
 import { isAcceptedOrder } from '@/lib/games/scoring'
-import { BANK, type SentenceItem, type SentenceType } from '@/data/games/banks/sentence-builder'
+import {
+  BANK,
+  joinTiles,
+  type SentenceItem,
+  type SentenceType,
+} from '@/data/games/banks/sentence-builder'
 
 // ─── Data ──────────────────────────────────────────────────────────────────────
 // The sentences are in src/data/games/banks/sentence-builder.ts (moved there on
@@ -107,24 +112,26 @@ export default function SentenceBuilderPage() {
     loadItem(items[idx + 1])
   }, [idx, items, loadItem])
 
-  // Tap a pool tile → append to the built sentence.
+  // Tap a pool tile → append to the built sentence. Both lists are read from
+  // this render and each is set once. Until 31 October 2026 each handler set
+  // the other list inside its own state updater; an updater must be pure, and
+  // React runs every updater twice in development, so each tap placed (or
+  // returned) the tile twice there.
   const placeTile = (poolPos: number) => {
     if (feedback || revealed) return
-    setPool((p) => {
-      const word = p[poolPos]
-      setBuilt((b) => [...b, word])
-      return p.filter((_, i) => i !== poolPos)
-    })
+    const word = pool[poolPos]
+    if (word === undefined) return
+    setPool(pool.filter((_, i) => i !== poolPos))
+    setBuilt([...built, word])
   }
 
   // Tap a built tile → return it to the pool.
   const removeTile = (builtPos: number) => {
     if (feedback || revealed) return
-    setBuilt((b) => {
-      const word = b[builtPos]
-      setPool((p) => [...p, word])
-      return b.filter((_, i) => i !== builtPos)
-    })
+    const word = built[builtPos]
+    if (word === undefined) return
+    setBuilt(built.filter((_, i) => i !== builtPos))
+    setPool([...pool, word])
   }
 
   const resetCurrent = () => {
@@ -149,10 +156,16 @@ export default function SentenceBuilderPage() {
    * `correct` was, so a student who built "The cat on the sofa is sleeping" was
    * told they were wrong. Accepting them changed what counts as right, which is
    * why it waited for him.
+   *
+   * PUNCTUATION TILES (24 October 2026). A sentence may now carry comma and
+   * semicolon tiles, which the student places like any word, so the build is
+   * read with joinTiles: a punctuation tile joins the word before it. For a
+   * sentence with no punctuation tiles that is exactly the words joined by
+   * spaces, as before.
    */
   const checkAnswer = () => {
     if (!current || feedback || revealed) return
-    const attempt = built.join(' ')
+    const attempt = joinTiles(built)
     const isCorrect = isAcceptedOrder(attempt, current)
     setTotalAnswered((t) => t + 1)
     if (isCorrect) {
@@ -168,7 +181,7 @@ export default function SentenceBuilderPage() {
     if (!current || feedback || revealed) return
     setRevealed(true)
     setTotalAnswered((t) => t + 1)
-    setBuilt(current.correct.split(' '))
+    setBuilt([...current.tiles])
     setPool([])
     round.record({ question: BANK.key(current), correct: false, tag: current.type })
   }
@@ -195,7 +208,7 @@ export default function SentenceBuilderPage() {
           gameId="sentence-builder"
           audience="ks3"
           title="Sentence Builder"
-          description="Tap the word tiles in the right order to build a correct sentence. Sentences get trickier as you go: simple, then compound, then complex."
+          description="Tap the tiles in the right order to build a correct sentence, commas included. Sentences get trickier as you go: simple, then compound, then complex."
           difficulty="Crossover"
           score={score}
           maxScore={totalAnswered || items.length || ROUND_SIZE}
@@ -223,6 +236,11 @@ export default function SentenceBuilderPage() {
                   </span>
                 </div>
               </div>
+
+              {/* A real sentence says where it comes from */}
+              {current.source && (
+                <p className="text-center text-xs text-muted-foreground">{current.source}</p>
+              )}
 
               {/* Build area */}
               <div

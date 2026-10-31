@@ -176,6 +176,15 @@ export default function PunctuationRepairPage() {
                 <p className="text-lg font-medium text-foreground italic">
                   &ldquo;{currentQ.broken}&rdquo;
                 </p>
+                {/* Added 24 October 2026 with the rebuild for depth: the meaning a
+                    question asks for, where the marks alone decide it, and where a
+                    real sentence comes from (src/data/games/banks/punctuation-repair.ts). */}
+                {currentQ.prompt && (
+                  <p className="text-sm font-medium text-foreground">{currentQ.prompt}</p>
+                )}
+                {currentQ.source && (
+                  <p className="text-xs italic text-muted-foreground">{currentQ.source}</p>
+                )}
               </div>
 
               {/* Options */}

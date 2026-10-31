@@ -72,12 +72,12 @@ export default async function Paper2Page() {
         <div className="mx-auto max-w-4xl">
           <h2 className="text-2xl font-bold text-foreground sm:text-3xl">{tr(`Paper Overview`)}</h2>
           <p className="mt-3 leading-relaxed text-muted-foreground">
-            Paper 2 is worth <strong>60% of your GCSE</strong> &mdash; the single most important
-            paper. It tests your ability to read and compare two linked non-fiction texts (one from
-            the 19th century, one from the 21st century) and then produce a piece of writing for
-            real purposes. You should spend approximately{' '}
-            <strong>1 hour 15 minutes on Section A</strong> (reading) and{' '}
-            <strong>50 minutes on Section B</strong> (writing).
+            Paper 2 is worth <strong>60% of your GCSE</strong>, the single most important paper. It
+            tests your ability to read and compare two unseen non-fiction texts from the 20th and
+            21st centuries, linked by a theme, and then write one piece of non-fiction for a real
+            purpose. The front of the paper advises about{' '}
+            <strong>1 hour 20 minutes on Section A</strong> (reading) and about{' '}
+            <strong>45 minutes on Section B</strong> (writing).
           </p>
 
           <div className="mt-8 grid gap-6 sm:grid-cols-2">
@@ -86,25 +86,26 @@ export default async function Paper2Page() {
                 A
               </div>
               <h3 className="mt-3 text-lg font-bold text-foreground">{tr(`Section A: Reading`)}</h3>
-              <p className="mt-1 text-sm text-muted-foreground">56 marks &bull; ~1 hr 15 min</p>
+              <p className="mt-1 text-sm text-muted-foreground">56 marks &bull; ~1 hr 20 min</p>
               <ul className="mt-3 space-y-2 text-sm text-muted-foreground">
                 <li className="flex items-start gap-2">
                   <span className="mt-1 h-1.5 w-1.5 shrink-0 rounded-full bg-accent" />
-                  Two linked non-fiction texts on the same theme
+                  Two unseen non-fiction texts, linked by a theme
                 </li>
                 <li className="flex items-start gap-2">
                   <span className="mt-1 h-1.5 w-1.5 shrink-0 rounded-full bg-accent" />
-                  Text 1: 19th-century non-fiction (e.g., diary, letter, speech, travel writing,
-                  journalism)
+                  Texts from the 20th and 21st centuries, such as memoir, journalism or travel
+                  writing
                 </li>
                 <li className="flex items-start gap-2">
                   <span className="mt-1 h-1.5 w-1.5 shrink-0 rounded-full bg-accent" />
-                  Text 2: 21st-century non-fiction (e.g., article, blog, autobiography, report)
+                  Questions 1 to 3 on Text 1, Questions 4 to 6 on Text 2, Question 7 on both
                 </li>
                 <li className="flex items-start gap-2">
                   <span className="mt-1 h-1.5 w-1.5 shrink-0 rounded-full bg-accent" />
-                  Six compulsory questions testing Reading and retrieval (AO1), Language and
-                  structure analysis (AO2), Comparing writers (AO3), and Critical evaluation (AO4)
+                  Seven compulsory questions, the last in two parts, testing Reading and retrieval
+                  (AO1), Language and structure analysis (AO2), Comparing writers (AO3), and
+                  Critical evaluation (AO4)
                 </li>
               </ul>
             </div>
@@ -115,15 +116,15 @@ export default async function Paper2Page() {
               <h3 className="mt-3 text-lg font-bold text-foreground">
                 {tr(`Section B: Writing for Real Purposes`)}
               </h3>
-              <p className="mt-1 text-sm text-muted-foreground">40 marks &bull; ~50 min</p>
+              <p className="mt-1 text-sm text-muted-foreground">40 marks &bull; ~45 min</p>
               <ul className="mt-3 space-y-2 text-sm text-muted-foreground">
                 <li className="flex items-start gap-2">
                   <span className="mt-1 h-1.5 w-1.5 shrink-0 rounded-full bg-primary" />
-                  Choice of two tasks (pick one)
+                  One piece of writing: Question 8 or Question 9 (pick one)
                 </li>
                 <li className="flex items-start gap-2">
                   <span className="mt-1 h-1.5 w-1.5 shrink-0 rounded-full bg-primary" />
-                  Forms: article, letter, speech, review, or essay
+                  Forms such as an article, letter, review, speech or section of a guide
                 </li>
                 <li className="flex items-start gap-2">
                   <span className="mt-1 h-1.5 w-1.5 shrink-0 rounded-full bg-primary" />
@@ -238,7 +239,8 @@ export default async function Paper2Page() {
                 <p className="text-sm font-medium text-primary">Top tip:</p>
                 <p className="mt-1 text-sm text-muted-foreground">
                   Marked on five levels of three marks. Analyse the effect rather than naming the
-                  device, and cover structure as well as language. Spend about twenty minutes.
+                  device, and cover structure as well as language: an answer on one of them alone
+                  cannot go above Level 2. Spend about 18 minutes.
                 </p>
               </div>
             </div>
@@ -268,8 +270,7 @@ export default async function Paper2Page() {
               <div className="mt-3 rounded-lg bg-primary/10 p-4">
                 <p className="text-sm font-medium text-primary">Top tip:</p>
                 <p className="mt-1 text-sm text-muted-foreground">
-                  One mark, one point. Nothing is deducted for extra material offered alongside a
-                  correct answer, but do not spend time on it.
+                  One mark, one point from the named lines. Answer in a few words and move on.
                 </p>
               </div>
             </div>
@@ -332,9 +333,9 @@ export default async function Paper2Page() {
               <div className="mt-3 rounded-lg bg-primary/10 p-4">
                 <p className="text-sm font-medium text-primary">Top tip:</p>
                 <p className="mt-1 text-sm text-muted-foreground">
-                  Marked on five levels of three marks. Engage with the statement rather than
-                  agreeing with it, and build a sustained argument from evidence. Spend about twenty
-                  minutes.
+                  Marked on five levels of three marks. Open with a clear verdict on how successful
+                  the writer is, then test it against Text 2 with detailed references. Mention
+                  techniques only where they support your judgement. Spend about 18 minutes.
                 </p>
               </div>
             </div>
@@ -350,23 +351,23 @@ export default async function Paper2Page() {
                 </h3>
               </div>
               <p className="mt-2 text-sm text-muted-foreground">
-                <strong>{tr(`Reading and retrieval (AO1)`)}</strong> &mdash; Using both texts,
-                identify and synthesise the similarities or differences the question names.
+                <strong>{tr(`Reading and retrieval (AO1)`)}</strong> &mdash; Using both texts, bring
+                together evidence of the similarities the question names.
               </p>
               <div className="mt-3 rounded-lg bg-muted p-4">
                 <p className="text-sm font-medium text-muted-foreground">
                   {tr(`Example question:`)}
                 </p>
                 <p className="mt-1 text-sm italic text-foreground">
-                  &ldquo;Using both texts, identify three similarities between the two
-                  journeys.&rdquo;
+                  &ldquo;Using both texts, explain the similarities between the two journeys.&rdquo;
                 </p>
               </div>
               <div className="mt-3 rounded-lg bg-primary/10 p-4">
                 <p className="text-sm font-medium text-primary">Top tip:</p>
                 <p className="mt-1 text-sm text-muted-foreground">
-                  Points are rewarded from both texts. This is retrieval and synthesis, not
-                  analysis, so do not write about method here.
+                  Use both texts in every point: an answer on one text alone earns no marks. This is
+                  finding and combining evidence, not analysis, so do not write about method here.
+                  Spend about 8 minutes.
                 </p>
               </div>
             </div>
@@ -399,7 +400,7 @@ export default async function Paper2Page() {
                 <p className="mt-1 text-sm text-muted-foreground">
                   Both texts must be addressed: a response on one text alone is capped. Use
                   comparative connectives, support every point from both texts, and analyse how each
-                  writer&rsquo;s methods shape a different perspective.
+                  writer&rsquo;s methods shape a different perspective. Spend about 18 minutes.
                 </p>
               </div>
             </div>
@@ -422,10 +423,11 @@ export default async function Paper2Page() {
             {tr(`Section B: Writing for Real Purposes (40 marks)`)}
           </h2>
           <p className="mt-3 leading-relaxed text-muted-foreground">
-            You choose <strong>one task from two options</strong>. The task will specify a form
-            (article, letter, speech, review, or essay), a purpose (argue, persuade, advise, inform,
-            explain), and an audience. You <strong>must</strong> follow the conventions of the
-            specified form.
+            You write <strong>one piece</strong>, choosing Question 8 or Question 9. The task will
+            specify a form (for example an article, a letter, a review, a speech or a section of a
+            guide), a purpose (such as to inform, advise or persuade), and an audience, and it is
+            linked by theme to the reading texts. You <strong>must</strong> follow the conventions
+            of the specified form.
           </p>
 
           <div className="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
@@ -451,9 +453,9 @@ export default async function Paper2Page() {
                   'Headline, star rating (optional), balanced opinion, personal voice, recommendation',
               },
               {
-                form: 'Essay',
+                form: 'Guide',
                 conventions:
-                  'Introduction with thesis, structured paragraphs, counter-arguments, conclusion',
+                  'Clear title, short sections under subheadings, direct address, practical advice in a sensible order',
               },
             ].map((item) => (
               <div
@@ -480,62 +482,83 @@ export default async function Paper2Page() {
                   <th className="px-4 py-3 font-semibold">Descriptor</th>
                 </tr>
               </thead>
+              {/* Five levels for each objective, as in Pearson's 1EN0/02 mark scheme and
+                  src/data/mark-scheme-guides/edexcel-lang-paper2.ts. Until 31 October 2026 this
+                  table had four levels, AO5 1-6, 7-12, 13-18, 19-24 and AO6 1-4, 5-8, 9-12, 13-16,
+                  which is no grid the board has published. */}
               <tbody className="divide-y divide-border">
                 <tr className="hover:bg-muted">
                   <td className="px-4 py-3 font-bold text-foreground">1</td>
-                  <td className="px-4 py-3 text-muted-foreground">1-6</td>
+                  <td className="px-4 py-3 text-muted-foreground">1-4</td>
                   <td className="px-4 py-3 text-muted-foreground">
                     {tr(
-                      `Simple awareness of purpose and audience; limited structural features; basic vocabulary.`,
+                      `Some ideas come across, but little sense of audience or purpose; loosely organised.`,
                     )}
                   </td>
                   <td className="px-4 py-3 text-muted-foreground">1-4</td>
                   <td className="px-4 py-3 text-muted-foreground">
-                    {tr(`Simple vocabulary; limited sentence structures; frequent errors.`)}
+                    {tr(
+                      `Simple, everyday words with frequent spelling mistakes; shaky punctuation; short or repetitive sentences.`,
+                    )}
                   </td>
                 </tr>
                 <tr className="hover:bg-muted">
                   <td className="px-4 py-3 font-bold text-foreground">2</td>
-                  <td className="px-4 py-3 text-muted-foreground">7-12</td>
+                  <td className="px-4 py-3 text-muted-foreground">5-9</td>
                   <td className="px-4 py-3 text-muted-foreground">
                     {tr(
-                      `Attempts to match purpose and audience; some use of form conventions; developing paragraphs.`,
+                      `Knows who the writing is for and why, in a simple, steady tone; ideas set out in order, in paragraphs.`,
                     )}
                   </td>
-                  <td className="px-4 py-3 text-muted-foreground">5-8</td>
+                  <td className="px-4 py-3 text-muted-foreground">5-7</td>
                   <td className="px-4 py-3 text-muted-foreground">
                     {tr(
-                      `Some varied vocabulary; attempts at sentence variety; mostly accurate basic spelling.`,
+                      `Everyday words spelt correctly; punctuation mostly right; some varied sentences, including ones joined with words such as because or although.`,
                     )}
                   </td>
                 </tr>
                 <tr className="hover:bg-muted">
                   <td className="px-4 py-3 font-bold text-foreground">3</td>
-                  <td className="px-4 py-3 text-muted-foreground">13-18</td>
+                  <td className="px-4 py-3 text-muted-foreground">10-14</td>
                   <td className="px-4 py-3 text-muted-foreground">
                     {tr(
-                      `Clear, sustained awareness of purpose and audience; effective use of form conventions; coherent paragraphing with discourse markers.`,
+                      `Ideas and techniques picked to suit the audience and purpose; the tone fits; each point builds on the last, in clear paragraphs.`,
                     )}
                   </td>
-                  <td className="px-4 py-3 text-muted-foreground">9-12</td>
+                  <td className="px-4 py-3 text-muted-foreground">8-10</td>
                   <td className="px-4 py-3 text-muted-foreground">
                     {tr(
-                      `Varied vocabulary chosen for effect; secure sentence control; generally accurate spelling and punctuation.`,
+                      `A good choice of words; tricky spellings mostly right; a mix of punctuation used correctly; sentences shaped to help the purpose.`,
                     )}
                   </td>
                 </tr>
                 <tr className="hover:bg-muted">
                   <td className="px-4 py-3 font-bold text-foreground">4</td>
-                  <td className="px-4 py-3 text-muted-foreground">19-24</td>
+                  <td className="px-4 py-3 text-muted-foreground">15-19</td>
                   <td className="px-4 py-3 text-muted-foreground">
                     {tr(
-                      `Compelling, convincing writing fully matched to purpose and audience; sophisticated use of form; assured, distinctive voice.`,
+                      `Shaped deliberately to affect the reader; tone and register well judged; structure under control across the whole piece.`,
                     )}
                   </td>
-                  <td className="px-4 py-3 text-muted-foreground">13-16</td>
+                  <td className="px-4 py-3 text-muted-foreground">11-13</td>
                   <td className="px-4 py-3 text-muted-foreground">
                     {tr(
-                      `Extensive, ambitious vocabulary; full range of sentence forms; virtually faultless accuracy.`,
+                      `Words chosen with care from a wide range; only the odd spelling slip; punctuation placed to make meaning clear; sentences built with a purpose in mind.`,
+                    )}
+                  </td>
+                </tr>
+                <tr className="hover:bg-muted">
+                  <td className="px-4 py-3 font-bold text-foreground">5</td>
+                  <td className="px-4 py-3 text-muted-foreground">20-24</td>
+                  <td className="px-4 py-3 text-muted-foreground">
+                    {tr(
+                      `Steers the reader’s response in subtle ways; a confident voice throughout; complex ideas arranged so the whole piece holds together.`,
+                    )}
+                  </td>
+                  <td className="px-4 py-3 text-muted-foreground">14-16</td>
+                  <td className="px-4 py-3 text-muted-foreground">
+                    {tr(
+                      `Ambitious vocabulary used with purpose; errors so rare they never get in the way; precise punctuation and a full range of sentence types, each chosen for its effect.`,
                     )}
                   </td>
                 </tr>
@@ -569,23 +592,23 @@ export default async function Paper2Page() {
               <div className="mt-2 text-sm text-foreground leading-relaxed">
                 <p>
                   Both writers share an enthusiasm for travel, yet their perspectives differ
-                  significantly due to their historical contexts. The 19th-century writer in Text 1
+                  significantly. The writer of Text 1, looking back on a journey made in the 1950s,
                   presents travel as a transformative, almost spiritual experience, describing the
                   Italian landscape as &ldquo;a revelation that stirred the very foundations of my
                   soul.&rdquo; The noun &ldquo;revelation&rdquo; carries religious connotations,
-                  elevating travel beyond mere leisure into something profound and enlightening.
-                  This reflects the Romantic-era belief that exposure to nature and foreign cultures
-                  could enrich the inner self.
+                  elevating travel beyond mere leisure into something profound and enlightening, and
+                  the reverent, elevated tone suggests a writer who expects a journey to change the
+                  traveller.
                 </p>
                 <p className="mt-3">
-                  In contrast, the 21st-century writer in Text 2 adopts a more pragmatic and
-                  self-deprecating tone, admitting that &ldquo;most of my so-called adventures
-                  involved getting lost and arguing over Google Maps.&rdquo; The colloquial phrase
-                  &ldquo;so-called adventures&rdquo; undercuts the Romantic ideal, using humour to
-                  present travel as imperfect yet still valuable. Where Text 1&rsquo;s writer seeks
-                  transcendence, Text 2&rsquo;s writer finds value in the mundane and the human
-                  connection. Both, however, ultimately argue that travel expands one&rsquo;s
-                  understanding of the world, even if they disagree on how.
+                  In contrast, the writer of Text 2 adopts a more pragmatic and self-deprecating
+                  tone, admitting that &ldquo;most of my so-called adventures involved getting lost
+                  and arguing over Google Maps.&rdquo; The colloquial phrase &ldquo;so-called
+                  adventures&rdquo; undercuts that lofty ideal, using humour to present travel as
+                  imperfect yet still valuable. Where Text 1&rsquo;s writer seeks transcendence,
+                  Text 2&rsquo;s writer finds value in the mundane and the human connection. Both,
+                  however, ultimately argue that travel expands one&rsquo;s understanding of the
+                  world, even if they disagree on how.
                 </p>
               </div>
             </div>
@@ -601,7 +624,10 @@ export default async function Paper2Page() {
                   Text 2&rsquo;s writer...&rdquo;
                 </li>
                 <li>&bull; Embeds short quotations from both texts and analyses word choices</li>
-                <li>&bull; Considers historical context (Romantic era vs modern)</li>
+                <li>
+                  &bull; Compares how each writer&rsquo;s tone conveys their perspective, not only
+                  what each one thinks
+                </li>
                 <li>&bull; Identifies both similarities and differences</li>
               </ul>
             </div>
@@ -681,6 +707,12 @@ export default async function Paper2Page() {
           <h2 className="text-2xl font-bold text-foreground sm:text-3xl">
             {tr(`Exam Strategy & Timing`)}
           </h2>
+          <p className="mt-3 leading-relaxed text-muted-foreground">
+            The front of the paper advises about 1 hour 20 minutes on Section A and about 45 minutes
+            on Section B. The times below are our suggestion, worked out from the marks. Allow about
+            6 minutes to read Text 1 before Question 1, and about 6 minutes to read Text 2 before
+            Question 4.
+          </p>
           <div className="mt-6 overflow-x-auto rounded-xl border border-border bg-card shadow-md">
             <table className="w-full text-start text-sm">
               <thead className="bg-accent text-white">
@@ -693,63 +725,90 @@ export default async function Paper2Page() {
                 </tr>
               </thead>
               <tbody className="divide-y divide-border">
+                {/* Until 31 October 2026 this table gave Paper 2 a 1-mark Q1, two 6-mark
+                    language questions, a 10-mark comparison and the writing as Q7: no
+                    Pearson paper, and not the question cards above it. It now follows
+                    src/data/mark-scheme-guides/edexcel-lang-paper2.ts, minutes included. */}
                 <tr className="hover:bg-muted">
                   <td className="px-4 py-3 font-medium">Q1 (Text 1)</td>
                   <td className="px-4 py-3">{tr(`Reading and retrieval (AO1)`)}</td>
-                  <td className="px-4 py-3">1</td>
-                  <td className="px-4 py-3">1 min</td>
-                  <td className="px-4 py-3">Copy exact phrase.</td>
+                  <td className="px-4 py-3">2</td>
+                  <td className="px-4 py-3">2 min</td>
+                  <td className="px-4 py-3">{tr(`Two separate points. No analysis needed.`)}</td>
                 </tr>
                 <tr className="hover:bg-muted">
-                  <td className="px-4 py-3 font-medium">Q2 (Text 2)</td>
+                  <td className="px-4 py-3 font-medium">Q2 (Text 1)</td>
                   <td className="px-4 py-3">{tr(`Reading and retrieval (AO1)`)}</td>
                   <td className="px-4 py-3">2</td>
-                  <td className="px-4 py-3">2-3 min</td>
+                  <td className="px-4 py-3">2 min</td>
                   <td className="px-4 py-3">{tr(`Two separate points. No analysis needed.`)}</td>
                 </tr>
                 <tr className="hover:bg-muted">
                   <td className="px-4 py-3 font-medium">Q3 (Text 1)</td>
                   <td className="px-4 py-3">{tr(`Language and structure analysis (AO2)`)}</td>
-                  <td className="px-4 py-3">6</td>
-                  <td className="px-4 py-3">8-10 min</td>
-                  <td className="px-4 py-3">{tr(`What-How-Why. 2-3 points with terminology.`)}</td>
+                  <td className="px-4 py-3">15</td>
+                  <td className="px-4 py-3">18 min</td>
+                  <td className="px-4 py-3">
+                    {tr(
+                      `Language and structure across the whole text, each point linked to its effect.`,
+                    )}
+                  </td>
                 </tr>
                 <tr className="hover:bg-muted">
                   <td className="px-4 py-3 font-medium">Q4 (Text 2)</td>
-                  <td className="px-4 py-3">{tr(`Language and structure analysis (AO2)`)}</td>
-                  <td className="px-4 py-3">6</td>
-                  <td className="px-4 py-3">8-10 min</td>
+                  <td className="px-4 py-3">{tr(`Reading and retrieval (AO1)`)}</td>
+                  <td className="px-4 py-3">1</td>
+                  <td className="px-4 py-3">1 min</td>
                   <td className="px-4 py-3">
-                    {tr(`Same approach. Note modern language features.`)}
+                    {tr(`One point from the named lines. Check the line numbers.`)}
                   </td>
                 </tr>
                 <tr className="hover:bg-muted">
                   <td className="px-4 py-3 font-medium">Q5 (Text 2)</td>
+                  <td className="px-4 py-3">{tr(`Reading and retrieval (AO1)`)}</td>
+                  <td className="px-4 py-3">1</td>
+                  <td className="px-4 py-3">1 min</td>
+                  <td className="px-4 py-3">
+                    {tr(`One point from the named lines. Check the line numbers.`)}
+                  </td>
+                </tr>
+                <tr className="hover:bg-muted">
+                  <td className="px-4 py-3 font-medium">Q6 (Text 2)</td>
                   <td className="px-4 py-3">{tr(`Critical evaluation (AO4)`)}</td>
                   <td className="px-4 py-3">15</td>
-                  <td className="px-4 py-3">20-25 min</td>
+                  <td className="px-4 py-3">18 min</td>
                   <td className="px-4 py-3">
-                    {tr(`Evaluate effectiveness. Address the statement. Balanced.`)}
+                    {tr(`A clear verdict on how well the writer succeeds, tested against Text 2.`)}
                   </td>
                 </tr>
                 <tr className="hover:bg-muted">
-                  <td className="px-4 py-3 font-medium">Q6 (Both)</td>
+                  <td className="px-4 py-3 font-medium">Q7(a) (Both)</td>
+                  <td className="px-4 py-3">{tr(`Reading and retrieval (AO1)`)}</td>
+                  <td className="px-4 py-3">6</td>
+                  <td className="px-4 py-3">8 min</td>
+                  <td className="px-4 py-3">
+                    {tr(`Similarities only, with evidence from both texts in every point.`)}
+                  </td>
+                </tr>
+                <tr className="hover:bg-muted">
+                  <td className="px-4 py-3 font-medium">Q7(b) (Both)</td>
                   <td className="px-4 py-3">{tr(`Comparing writers (AO3)`)}</td>
-                  <td className="px-4 py-3">10</td>
-                  <td className="px-4 py-3">15-20 min</td>
+                  <td className="px-4 py-3">14</td>
+                  <td className="px-4 py-3">18 min</td>
                   <td className="px-4 py-3">
-                    {tr(`Compare throughout. Evidence from both texts. Context.`)}
+                    {tr(`Compare ideas and methods throughout, with evidence from both texts.`)}
                   </td>
                 </tr>
                 <tr className="hover:bg-muted">
-                  <td className="px-4 py-3 font-medium">Q7 (Writing)</td>
+                  <td className="px-4 py-3 font-medium">Q8 or Q9 (Writing)</td>
                   <td className="px-4 py-3">
                     {tr(`Content, organisation, and accuracy (AO5/AO6)`)}
                   </td>
                   <td className="px-4 py-3">40</td>
-                  <td className="px-4 py-3">50 min</td>
+                  <td className="px-4 py-3">45 min</td>
                   <td className="px-4 py-3">
-                    5 min plan, 40 min write, 5 min proofread. Follow form conventions.
+                    Answer one. 5 min plan, 35 min write, 5 min check. Follow the form&rsquo;s
+                    conventions.
                   </td>
                 </tr>
               </tbody>
@@ -761,8 +820,8 @@ export default async function Paper2Page() {
             <ul className="mt-3 space-y-2 text-sm text-muted-foreground">
               <li className="flex items-start gap-2">
                 <span className="mt-1 h-1.5 w-1.5 shrink-0 rounded-full bg-warn" />
-                <strong>Q6:</strong> Discussing one text then the other (the &ldquo;block&rdquo;
-                method). Instead, compare point-by-point throughout.
+                <strong>Q7(b):</strong> Discussing one text then the other (the &ldquo;block&rdquo;
+                method). Instead, compare point by point throughout.
               </li>
               <li className="flex items-start gap-2">
                 <span className="mt-1 h-1.5 w-1.5 shrink-0 rounded-full bg-warn" />
@@ -781,8 +840,10 @@ export default async function Paper2Page() {
               </li>
               <li className="flex items-start gap-2">
                 <span className="mt-1 h-1.5 w-1.5 shrink-0 rounded-full bg-warn" />
-                <strong>19th-century text:</strong> Not adapting your analysis to account for
-                archaic vocabulary or historical context.
+                <strong>Dates:</strong> Ignoring when each text was written. The texts come from the
+                20th and 21st centuries, so one may be decades older than the other, and its
+                vocabulary and attitudes can show it. Noticing that can sharpen your comparison of
+                the writers&rsquo; perspectives in Q7(b).
               </li>
             </ul>
           </div>

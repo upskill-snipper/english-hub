@@ -2,146 +2,282 @@
 import type { MockExamPaper } from './types'
 
 /**
- * WHAT WAS WRONG (found 26 September 2026 by scripts/check-mock-exam-extracts.mjs,
- * fixed 27 September 2026).
+ * WHAT WAS WRONG (found 24 October 2026, the day the AI marker was corrected
+ * to mark each paper as its board does; fixed 31 October 2026). These papers
+ * are live (allMockExamPapers, through ./index) and stand for Eduqas GCSE
+ * English Language Component 1, C700U10-1, but they were not the paper Eduqas
+ * sets.
+ *   - Section A set four questions worth 5, 10, 10 and 15. Eduqas sets five,
+ *     worth 5, 5, 10, 10 and 10: Question 01 finds information, 02 is a short
+ *     answer on language, 03 analyses language, 04 language and structure,
+ *     and 05 evaluates a view of the passage
+ *     (src/data/mark-scheme-guides/eduqas-lang-comp1.ts). An answer handed to
+ *     the marker (resolveMockFeedback, src/lib/marking/essay-feedback-targets.ts)
+ *     found no question of its worth, so it got general feedback and no mark.
+ *   - Section B offered two titles. Eduqas offers four (a phrase, a time you
+ *     did something, an opening line, a closing line) and asks for a story.
+ *   - The extracts were written for this bank and labelled as such. Component
+ *     1 is "20th Century Literature Reading": Eduqas prints 60 to 100 lines of
+ *     twentieth-century prose fiction, and a passage written in 2026 is not
+ *     that. Each was also under 450 words, about half the board's length.
+ *   - The writing question had no model answer, only a list of qualities.
  *
- * The five extracts are specially written for this bank and labelled as such
- * ("Original literary fiction composition"); none claims to be a published
- * writer's words, and not a word of any extract was changed. These papers are
- * live (allMockExamPapers, through ./index), so what follows was in front of
- * students.
+ * WHAT THEY ARE NOW. Each paper is set as Eduqas sets C700U10-1: five reading
+ * questions on one extract, then one writing question with four titles; 80
+ * marks in 1 hour 45 minutes. Questions carry Eduqas's numbers as labels (01
+ * to 05, and 11), and questionNumber is 1 to 5 in Section A and 1 in Section
+ * B, which is what the hand-off reads to reach the marker's A1 to A5 and B1.
+ * Each extract is cut by script from a held edition in src/data/full-texts,
+ * never retyped, at paragraph ends:
+ *   01  Animal Farm, Chapter I: the animals gather to hear old Major
+ *   02  The Great Gatsby, Chapter I: Nick settles in West Egg
+ *   03  Animal Farm, Chapter II: the Rebellion
+ *   04  The Great Gatsby, Chapter I: the Buchanans' house
+ *   05  Animal Farm, Chapter III: the first harvest
+ * Both authors died before 1956 (Orwell 1950, Fitzgerald 1940), so the texts
+ * are out of UK copyright.
  *
- * The model answers were not in step with the extracts. Every quotation in
- * them, of any length, is now in its extract word for word:
- *   - words changed: wjec-c1-05-q2 (Grade 8-9) quoted the station wagon as
- *     dust "so thick it might have been any colour"; the extract says "so
- *     coated in dust". The same question's Grade 6-7 answer quoted "from red"
- *     (the counter "had once been red"), ...-05-q4 quoted the woman as
- *     "hasn't decided" (she says "I haven't decided yet"), ...-02-q3 quoted
- *     "gather herself" ("gathering herself") and ...-03-q2 "discovers"
- *     ("discovered");
- *   - unmarked cuts: ...-03-q3 dropped "from the University of London" from
- *     the list of what Adaeze carries, and ...-05-q3 dropped the repeated
- *     "might have been" from the woman's three possible expressions, which is
- *     the very device the answer was describing. Both are now quoted whole;
- *   - claims the extract does not bear out: the counter faded because it had
- *     been "wiped so many times" (the extract compares it to something left in
- *     the sun, and gives no cause); coffee poured "from thick white china" (the
- *     cup is the china); the roses "planted together" (Arthur planted them);
- *     the couple "married for forty-one years" (his three o'clock ritual lasted
- *     forty-one years, which is all the extract says); Adaeze "wearing" her
- *     mother's dresses (she carries them); Maddox's "voluntary" suppression of
- *     feeling (Hennessy thinks he has "simply ceased to feel"); the silence
- *     ringing in "the opening line" (it is the second sentence); Adaeze's
- *     anger said to be at "the system that created the scholarship" (the
- *     extract never names what the anger is at);
- *   - wrong terms, and students copy terms: "he was alive" called present
- *     tense (it is past); "impossibly" called an adjective (adverb); "a green
- *     blur that could have been anywhere" called a simile (it has no "like"
- *     or "as"); Hennessy's reading of Maddox called a zeugma (it is not
- *     one) and the ringing silence oxymoronic (a paradox); the verbless "Each
- *     day a little less of her" called a clause; the question's own statement
- *     called "the student's". A second read the same day found more of the
- *     same: "The sea closed behind the ship like a door" called a metaphor
- *     twice (...-03-q2 and ...-03-q4; it is a simile, "like"); "with
- *     fingers that would not stop trembling" called a subordinate clause
- *     (...-01-q2; it is a prepositional phrase); "smaller than she had been
- *     yesterday" called a sentence (...-02-q2; it is a phrase in a longer
- *     one); the counter's "pinkish-grey" called a chromatic metaphor
- *     (...-05-q2; it is a colour comparison); and ...-04-q2 had "reality
- *     reasserted itself" killing the "he was alive" that follows it, when
- *     that clause comes first, so the resurrection is doomed before it is
- *     stated;
- *   - every Question 1 said "Read lines 1-6" or "lines 1-7", but the mock-exam
- *     page prints the extract as wrapped paragraphs with no line numbers
- *     (src/app/dashboard/mock-exam/page.tsx), so no student could find those
- *     lines. Each now says "the first paragraph", which is where every
- *     model-answer point already came from.
+ * The mock-exam page prints an extract as paragraphs with no line numbers, so
+ * each question names its lines by quoting where they start and end. Every
+ * question has a mark scheme, in this file's own words from the guide's bands,
+ * and every question has a model answer (two, Grade 6-7 and Grade 8-9, for
+ * the 10-mark questions; a model story for the writing). Every quotation in
+ * them is in the extract word for word, checked by script on 31 October 2026.
+ *
+ * The question ids are new (a1 to a5 and b1, where they were q1 to q5). The
+ * page keeps a student's answers in the browser by question id
+ * (src/store/exam-store.ts): with the old ids, a story written for the old
+ * Question 5 would have been shown, and could have been sent to the marker,
+ * as an answer to the new Question 05, an evaluation.
+ *
+ * The notes that stood here recorded the 27 September 2026 corrections to the
+ * old extracts' model answers. Those extracts and answers are gone; git
+ * history holds them.
+ *
+ * SECOND READING, 31 October 2026 (an independent checker, against the guide,
+ * the extracts and the novels). Fixed:
+ *   - Board wording: the closing instructions of Questions 02 to 05 repeated,
+ *     nearly word for word, the sentences Eduqas prints under its questions
+ *     ("You must refer to the language used in the text...", "You should
+ *     write about:", "how the writer has created these thoughts and
+ *     feelings"), as the Summer 2024 and Summer 2025 marking schemes show
+ *     them; now in this file's words, asking the same things. Paper 01's title
+ *     (b) is reworded too, as a precaution: its "you, or someone you know" is
+ *     thought to be the board's (the marking schemes do not print the titles,
+ *     so this was not confirmed); now a time when you had to be braver than
+ *     you felt.
+ *   - 01 Q05 (Grade 8-9) called "that is the plain truth" Major's closing
+ *     phrase; his speech goes on in the novel, so now the phrase that ends the
+ *     extract.
+ *   - 02 Q01 asked who and what the narrator "shared" his house with; he
+ *     lived alone, so now who and what he had with him there.
+ *   - 02 Q04 (Grade 6-7) said the paragraph moves "from the huge to the
+ *     small"; it moves from his house to the mansion and back.
+ *   - 02 Q04 (Grade 8-9) quoted "Factual imitation" with a capital the text
+ *     does not have, and called the self-correction after "It was Gatsby's
+ *     mansion." a short sentence; both corrected.
+ *   - 03 Q01 asked about Jones "at this time" while its answer and scheme
+ *     credit what he had been in past years; now "in this paragraph".
+ *   - 03 Q02 (answer) said "the animals were still unfed" ends the paragraph;
+ *     it ends the lines named, and the paragraph goes on.
+ *   - 03 Q05 (Grade 6-7) said Snowball calls ribbons "the mark of a human
+ *     being"; he says ribbons count as clothes, and clothes are that mark.
+ *   - 03 Q05 (Grade 8-9 and scheme) read "two biscuits for each dog" as a
+ *     favour, "extra for the dogs"; the text says only that Napoleon served
+ *     out the rations, down to the dogs' biscuits, so now that.
+ *   - 04 Q01 scheme credited "Tom stood on the front porch" for a question
+ *     about the house and grounds; now the porch itself.
+ *   - 04 Q04 (Grade 6-7) gave the narrator the view that Daisy's murmur was
+ *     "only to make people lean toward her"; he reports it as something said
+ *     of her and calls it "an irrelevant criticism".
+ * Not changed: paper 05's extract prints "according to his capacity The
+ * hens" with no full stop, as the held edition (Project Gutenberg Australia)
+ * does, so the extract stays word for word.
  */
 
-// ─── WJEC Component 1 Extracts ──────────────────────────────────────────────
+// ─── Extracts ────────────────────────────────────────────────────────────────
+// Cut by script from src/data/full-texts and never retyped (see above).
 
-const EXTRACT_01 = `The shells had stopped for the moment, but nobody moved. Private Hennessy lay pressed against the trench wall, his face in the mud, breathing the sour earth-smell of it while the silence rang in his ears louder than any bombardment. Somewhere to his left, a man was weeping - not the ragged sobs of shock but a steady, mechanical crying, as if grief had become a bodily function no different from breathing or blinking.
+const EXTRACT_01 = `Mr. Jones, of the Manor Farm, had locked the hen-houses for the night, but was too drunk to remember to shut the pop-holes. With the ring of light from his lantern dancing from side to side, he lurched across the yard, kicked off his boots at the back door, drew himself a last glass of beer from the barrel in the scullery, and made his way up to bed, where Mrs. Jones was already snoring.
 
-Hennessy raised his head. The sky above the trench was a dirty orange, lit by fires he could not see. The parapet had been blown away in three places, leaving gaps through which the ruined landscape was visible: a shattered tree, the remains of a stone wall, and beyond it the dark, cratered expanse of no man's land stretching toward the German wire.
+As soon as the light in the bedroom went out there was a stirring and a fluttering all through the farm buildings. Word had gone round during the day that old Major, the prize Middle White boar, had had a strange dream on the previous night and wished to communicate it to the other animals. It had been agreed that they should all meet in the big barn as soon as Mr. Jones was safely out of the way. Old Major (so he was always called, though the name under which he had been exhibited was Willingdon Beauty) was so highly regarded on the farm that everyone was quite ready to lose an hour's sleep in order to hear what he had to say.
 
-"Hennessy." Sergeant Maddox's voice was flat, emptied of everything except instruction. "On your feet."
+At one end of the big barn, on a sort of raised platform, Major was already ensconced on his bed of straw, under a lantern which hung from a beam. He was twelve years old and had lately grown rather stout, but he was still a majestic-looking pig, with a wise and benevolent appearance in spite of the fact that his tushes had never been cut. Before long the other animals began to arrive and make themselves comfortable after their different fashions. First came the three dogs, Bluebell, Jessie, and Pincher, and then the pigs, who settled down in the straw immediately in front of the platform. The hens perched themselves on the window-sills, the pigeons fluttered up to the rafters, the sheep and cows lay down behind the pigs and began to chew the cud. The two cart-horses, Boxer and Clover, came in together, walking very slowly and setting down their vast hairy hoofs with great care lest there should be some small animal concealed in the straw. Clover was a stout motherly mare approaching middle life, who had never quite got her figure back after her fourth foal. Boxer was an enormous beast, nearly eighteen hands high, and as strong as any two ordinary horses put together. A white stripe down his nose gave him a somewhat stupid appearance, and in fact he was not of first-rate intelligence, but he was universally respected for his steadiness of character and tremendous powers of work. After the horses came Muriel, the white goat, and Benjamin, the donkey. Benjamin was the oldest animal on the farm, and the worst tempered. He seldom talked, and when he did, it was usually to make some cynical remark—for instance, he would say that God had given him a tail to keep the flies off, but that he would sooner have had no tail and no flies. Alone among the animals on the farm he never laughed. If asked why, he would say that he saw nothing to laugh at. Nevertheless, without openly admitting it, he was devoted to Boxer; the two of them usually spent their Sundays together in the small paddock beyond the orchard, grazing side by side and never speaking.
 
-He stood. His legs shook beneath him but they held. Maddox was crouched at the fire-step, field glasses raised, scanning the darkness. His face was grey with dust and exhaustion, but his hands were steady. They were always steady. Hennessy had decided weeks ago that the sergeant was not brave - bravery implied the possibility of fear. Maddox had simply ceased to feel anything at all.
+The two horses had just lain down when a brood of ducklings, which had lost their mother, filed into the barn, cheeping feebly and wandering from side to side to find some place where they would not be trodden on. Clover made a sort of wall round them with her great foreleg, and the ducklings nestled down inside it and promptly fell asleep. At the last moment Mollie, the foolish, pretty white mare who drew Mr. Jones's trap, came mincing daintily in, chewing at a lump of sugar. She took a place near the front and began flirting her white mane, hoping to draw attention to the red ribbons it was plaited with. Last of all came the cat, who looked round, as usual, for the warmest place, and finally squeezed herself in between Boxer and Clover; there she purred contentedly throughout Major's speech without listening to a word of what he was saying.
 
-"Wiring party. Thirty minutes. You, Pascoe, and Yates." Maddox lowered the glasses and looked at him. His eyes were the colour of old pennies. "Questions?"
+All the animals were now present except Moses, the tame raven, who slept on a perch behind the back door. When Major saw that they had all made themselves comfortable and were waiting attentively, he cleared his throat and began:
 
-Hennessy had a thousand questions. He had none that Maddox could answer.
+"Comrades, you have heard already about the strange dream that I had last night. But I will come to the dream later. I have something else to say first. I do not think, comrades, that I shall be with you for many months longer, and before I die, I feel it my duty to pass on to you such wisdom as I have acquired. I have had a long life, I have had much time for thought as I lay alone in my stall, and I think I may say that I understand the nature of life on this earth as well as any animal now living. It is about this that I wish to speak to you.
 
-"No, Sergeant."
+"Now, comrades, what is the nature of this life of ours? Let us face it: our lives are miserable, laborious, and short. We are born, we are given just so much food as will keep the breath in our bodies, and those of us who are capable of it are forced to work to the last atom of our strength; and the very instant that our usefulness has come to an end we are slaughtered with hideous cruelty. No animal in England knows the meaning of happiness or leisure after he is a year old. No animal in England is free. The life of an animal is misery and slavery: that is the plain truth.`
 
-"Good lad." Maddox turned back to the darkness, and Hennessy began to check his equipment with fingers that would not stop trembling.`
+const EXTRACT_01_SOURCE =
+  'George Orwell, Animal Farm (1945), Chapter I. Text: Project Gutenberg Australia.'
 
-const EXTRACT_01_SOURCE = 'Original literary fiction composition - war literature'
+const EXTRACT_02 = `The practical thing was to find rooms in the city, but it was a warm season, and I had just left a country of wide lawns and friendly trees, so when a young man at the office suggested that we take a house together in a commuting town, it sounded like a great idea. He found the house, a weatherbeaten cardboard bungalow at eighty a month, but at the last minute the firm ordered him to Washington, and I went out to the country alone. I had a dog—at least I had him for a few days until he ran away—and an old Dodge and a Finnish woman, who made my bed and cooked breakfast and muttered Finnish wisdom to herself over the electric stove.
 
-const EXTRACT_02 = `The factory hooter sounded at six and the women poured out through the gates like water released from a dam, hundreds of them in headscarves and overalls, their faces blank with tiredness, their hands raw from twelve hours on the line. Maggie walked among them but apart from them, as she had walked apart from people all her life - not unfriendly, not hostile, simply enclosed in a private silence that others had long since stopped trying to penetrate.
+It was lonely for a day or so until one morning some man, more recently arrived than I, stopped me on the road.
 
-The street beyond the factory was slick with rain. Terraced houses lined both sides, their windows dark, their doorsteps scrubbed despite everything. A dog barked somewhere. A child stood in a doorway, watching the women pass with the solemn, unblinking gaze of the very young.
+“How do you get to West Egg village?” he asked helplessly.
 
-Maggie turned into Alma Street. Number fourteen. The door was unlocked - it was always unlocked, because there was nothing inside worth stealing and because her mother could no longer manage the key with her swollen hands. The hallway smelled of damp and boiled vegetables and the faint, sweet undertone of illness that Maggie had stopped noticing months ago.
+I told him. And as I walked on I was lonely no longer. I was a guide, a pathfinder, an original settler. He had casually conferred on me the freedom of the neighborhood.
 
-"That you, Maggie?"
+And so with the sunshine and the great bursts of leaves growing on the trees, just as things grow in fast movies, I had that familiar conviction that life was beginning over again with the summer.
 
-"It's me, Mam."
+There was so much to read, for one thing, and so much fine health to be pulled down out of the young breath-giving air. I bought a dozen volumes on banking and credit and investment securities, and they stood on my shelf in red and gold like new money from the mint, promising to unfold the shining secrets that only Midas and Morgan and Mæcenas knew. And I had the high intention of reading many other books besides. I was rather literary in college—one year I wrote a series of very solemn and obvious editorials for the Yale News—and now I was going to bring back all such things into my life and become again that most limited of all specialists, the “well-rounded man.” This isn’t just an epigram—life is much more successfully looked at from a single window, after all.
 
-She hung her coat on the hook and stood for a moment in the dim hall, gathering herself. Through the kitchen door she could see the table laid for two: chipped plates, a loaf, margarine in its paper. The wireless was on, playing something orchestral that seemed to belong to a different world entirely - a world of concert halls and evening dress, impossibly distant from this narrow house with its peeling wallpaper and its smell of cabbage and decline.
+It was a matter of chance that I should have rented a house in one of the strangest communities in North America. It was on that slender riotous island which extends itself due east of New York—and where there are, among other natural curiosities, two unusual formations of land. Twenty miles from the city a pair of enormous eggs, identical in contour and separated only by a courtesy bay, jut out into the most domesticated body of salt water in the Western hemisphere, the great wet barnyard of Long Island Sound. They are not perfect ovals—like the egg in the Columbus story, they are both crushed flat at the contact end—but their physical resemblance must be a source of perpetual wonder to the gulls that fly overhead. To the wingless a more interesting phenomenon is their dissimilarity in every particular except shape and size.
 
-Her mother sat in the chair by the range, a blanket across her knees, smaller than she had been yesterday. That was how it went now. Each day a little less of her.`
+I lived at West Egg, the—well, the less fashionable of the two, though this is a most superficial tag to express the bizarre and not a little sinister contrast between them. My house was at the very tip of the egg, only fifty yards from the Sound, and squeezed between two huge places that rented for twelve or fifteen thousand a season. The one on my right was a colossal affair by any standard—it was a factual imitation of some Hôtel de Ville in Normandy, with a tower on one side, spanking new under a thin beard of raw ivy, and a marble swimming pool, and more than forty acres of lawn and garden. It was Gatsby’s mansion. Or, rather, as I didn’t know Mr. Gatsby, it was a mansion inhabited by a gentleman of that name. My own house was an eyesore, but it was a small eyesore, and it had been overlooked, so I had a view of the water, a partial view of my neighbor’s lawn, and the consoling proximity of millionaires—all for eighty dollars a month.
 
-const EXTRACT_02_SOURCE = 'Original literary fiction composition - social realism'
+Across the courtesy bay the white palaces of fashionable East Egg glittered along the water, and the history of the summer really begins on the evening I drove over there to have dinner with the Tom Buchanans. Daisy was my second cousin once removed, and I’d known Tom in college. And just after the war I spent two days with them in Chicago.
 
-const EXTRACT_03 = `The harbour at Freetown was loud with the business of departure. Cargo nets swung overhead, crates of tinned fruit and machine parts descended into the hold, and the dock workers moved among the confusion with the unhurried competence of men who had loaded a thousand ships and would load a thousand more. Adaeze stood at the rail and watched her country recede - not dramatically, not all at once, but inch by inch, as the tugboat pulled them out through the brown water and the shoreline softened into a green blur that could have been anywhere, or nowhere.
+Her husband, among various physical accomplishments, had been one of the most powerful ends that ever played football at New Haven—a national figure in a way, one of those men who reach such an acute limited excellence at twenty-one that everything afterward savors of anti-climax. His family were enormously wealthy—even in college his freedom with money was a matter for reproach—but now he’d left Chicago and come East in a fashion that rather took your breath away: for instance, he’d brought down a string of polo ponies from Lake Forest. It was hard to realize that a man in my own generation was wealthy enough to do that.
 
-She had not expected to feel anything. She had prepared herself for this moment with the same methodical discipline she applied to everything: packing her trunk, obtaining her documents, writing letters that said goodbye without using the word. But now, with the engines thrumming beneath her feet and the salt air filling her lungs, she discovered that preparation was useless against the body's own knowledge of loss.
+Why they came East I don’t know. They had spent a year in France for no particular reason, and then drifted here and there unrestfully wherever people played polo and were rich together. This was a permanent move, said Daisy over the telephone, but I didn’t believe it—I had no sight into Daisy’s heart, but I felt that Tom would drift on forever seeking, a little wistfully, for the dramatic turbulence of some irrecoverable football game.`
 
-Her throat tightened. The railing was hot beneath her hands. Behind her, the other passengers were settling into the voyage - arranging deck chairs, ordering drinks, beginning the social rituals of shipboard life with the enthusiasm of people for whom travel was adventure rather than exile.
+const EXTRACT_02_SOURCE =
+  'F. Scott Fitzgerald, The Great Gatsby (1925), Chapter I. Text: the first edition (New York, 1925), as transcribed by Wikisource.'
 
-Adaeze was twenty-three years old. She carried a scholarship letter from the University of London, three dresses her mother had sewn, and a fury so carefully contained that even she sometimes mistook it for calm. The scholarship was in English Literature - the colonial irony of which had not escaped her, though she had chosen not to dwell on it. There were more productive uses for anger.
+const EXTRACT_03 = `Now, as it turned out, the Rebellion was achieved much earlier and more easily than anyone had expected. In past years Mr. Jones, although a hard master, had been a capable farmer, but of late he had fallen on evil days. He had become much disheartened after losing money in a lawsuit, and had taken to drinking more than was good for him. For whole days at a time he would lounge in his Windsor chair in the kitchen, reading the newspapers, drinking, and occasionally feeding Moses on crusts of bread soaked in beer. His men were idle and dishonest, the fields were full of weeds, the buildings wanted roofing, the hedges were neglected, and the animals were underfed.
 
-The shoreline vanished. The sea closed behind the ship like a door. Adaeze turned away from the rail, lifted her chin, and went to find her cabin.`
+June came and the hay was almost ready for cutting. On Midsummer's Eve, which was a Saturday, Mr. Jones went into Willingdon and got so drunk at the Red Lion that he did not come back till midday on Sunday. The men had milked the cows in the early morning and then had gone out rabbiting, without bothering to feed the animals. When Mr. Jones got back he immediately went to sleep on the drawing-room sofa with the News of the World over his face, so that when evening came, the animals were still unfed. At last they could stand it no longer. One of the cows broke in the door of the store-shed with her horn and all the animals began to help themselves from the bins. It was just then that Mr. Jones woke up. The next moment he and his four men were in the store-shed with whips in their hands, lashing out in all directions. This was more than the hungry animals could bear. With one accord, though nothing of the kind had been planned beforehand, they flung themselves upon their tormentors. Jones and his men suddenly found themselves being butted and kicked from all sides. The situation was quite out of their control. They had never seen animals behave like this before, and this sudden uprising of creatures whom they were used to thrashing and maltreating just as they chose, frightened them almost out of their wits. After only a moment or two they gave up trying to defend themselves and took to their heels. A minute later all five of them were in full flight down the cart-track that led to the main road, with the animals pursuing them in triumph.
 
-const EXTRACT_03_SOURCE = 'Original literary fiction composition - post-colonial'
+Mrs. Jones looked out of the bedroom window, saw what was happening, hurriedly flung a few possessions into a carpet bag, and slipped out of the farm by another way. Moses sprang off his perch and flapped after her, croaking loudly. Meanwhile the animals had chased Jones and his men out on to the road and slammed the five-barred gate behind them. And so, almost before they knew what was happening, the Rebellion had been successfully carried through: Jones was expelled, and the Manor Farm was theirs.
 
-const EXTRACT_04 = `Mrs Calloway stood at the window and considered the garden, which was not so much a garden as a memory of one - a palimpsest of intentions abandoned at various stages of enthusiasm and neglect. The roses her husband had planted in the first year of their marriage survived, though they had grown wild and leggy, reaching for the light with the desperation of things that have been forgotten but refuse to die. The lawn was more moss than grass. The sundial, a wedding gift from her sister, listed at an angle that made its readings meaningless.
+For the first few minutes the animals could hardly believe in their good fortune. Their first act was to gallop in a body right round the boundaries of the farm, as though to make quite sure that no human being was hiding anywhere upon it; then they raced back to the farm buildings to wipe out the last traces of Jones's hated reign. The harness-room at the end of the stables was broken open; the bits, the nose-rings, the dog-chains, the cruel knives with which Mr. Jones had been used to castrate the pigs and lambs, were all flung down the well. The reins, the halters, the blinkers, the degrading nosebags, were thrown on to the rubbish fire which was burning in the yard. So were the whips. All the animals capered with joy when they saw the whips going up in flames. Snowball also threw on to the fire the ribbons with which the horses' manes and tails had usually been decorated on market days.
 
-She pressed her fingertips against the cold glass. Behind her, the house conducted its small afternoon symphony: the clock in the hallway measuring out the minutes, the radiator clicking as it cooled, a tap dripping in the upstairs bathroom with the patient regularity of water that knows it will eventually win.
+"Ribbons," he said, "should be considered as clothes, which are the mark of a human being. All animals should go naked."
 
-It was three o'clock. At three o'clock every day for forty-one years, Arthur had come through the back door, hung his coat on the third hook - never the first, never the second, always the third - and called out the same two words: "Only me." It was, she supposed, a kind of poetry: the daily reaffirmation of presence, the ritual announcement that the world had not yet managed to prevent his return.
+When Boxer heard this he fetched the small straw hat which he wore in summer to keep the flies out of his ears, and flung it on to the fire with the rest.
 
-He had been dead for seven months.
+In a very little while the animals had destroyed everything that reminded them of Mr. Jones. Napoleon then led them back to the store-shed and served out a double ration of corn to everybody, with two biscuits for each dog. Then they sang 'Beasts of England' from end to end seven times running, and after that they settled down for the night and slept as they had never slept before.`
 
-She still heard him. At three o'clock, every day, her body tensed with expectation - muscles remembering what the mind had accepted - and for perhaps half a second before reality reasserted itself, he was alive, he was home, he was hanging his coat on the third hook. Then the silence filled the space where his voice should have been, and she was alone again, standing at a window, looking at a garden that no longer had any reason to be tended.`
+const EXTRACT_03_SOURCE =
+  'George Orwell, Animal Farm (1945), Chapter II. Text: Project Gutenberg Australia.'
 
-const EXTRACT_04_SOURCE = 'Original literary fiction composition - modernist'
+const EXTRACT_04 = `And so it happened that on a warm windy evening I drove over to East Egg to see two old friends whom I scarcely knew at all. Their house was even more elaborate than I expected, a cheerful red-and-white Georgian Colonial mansion, overlooking the bay. The lawn started at the beach and ran toward the front door for a quarter of a mile, jumping over sun-dials and brick walks and burning gardens—finally when it reached the house drifting up the side in bright vines as though from the momentum of its run. The front was broken by a line of French windows, glowing now with reflected gold and wide open to the warm windy afternoon, and Tom Buchanan in riding clothes was standing with his legs apart on the front porch.
 
-const EXTRACT_05 = `The diner sat at the edge of Route 66 like something the highway had washed up and left behind. Its chrome trim was dull, its neon sign buzzed and flickered - ROSIE'S, the apostrophe long since burned out - and the parking lot held three vehicles: a truck with Oklahoma plates, a station wagon so coated in dust it might have been any colour, and Earl's own pickup, which he'd parked around the side where the customers couldn't see the rust.
+He had changed since his New Haven years. Now he was a sturdy straw-haired man of thirty with a rather hard mouth and a supercilious manner. Two shining arrogant eyes had established dominance over his face and gave him the appearance of always leaning aggressively forward. Not even the effeminate swank of his riding clothes could hide the enormous power of that body—he seemed to fill those glistening boots until he strained the top lacing, and you could see a great pack of muscle shifting when his shoulder moved under his thin coat. It was a body capable of enormous leverage—a cruel body.
 
-Earl wiped the counter for the fourth time that hour. The cotton cloth moved in slow circles over formica that had once been red but was now the pinkish-grey of something left too long in the sun. The coffee machine gurgled. The ceiling fan turned with a faint, rhythmic click that he had stopped hearing years ago, the way you stop hearing your own heartbeat.
+His speaking voice, a gruff husky tenor, added to the impression of fractiousness he conveyed. There was a touch of paternal contempt in it, even toward people he liked—and there were men at New Haven who had hated his guts.
 
-The woman came in at a quarter past two. She was not from around here - that much was obvious from the way she looked at the menu, reading every item as though it contained information about a foreign country. She wore a blue dress that was too good for Rosie's, and her hair was pinned up in a way that suggested a city where people still pinned their hair.
+“Now, don’t think my opinion on these matters is final,” he seemed to say, “just because I’m stronger and more of a man than you are.” We were in the same senior society, and while we were never intimate I always had the impression that he approved of me and wanted me to like him with some harsh, defiant wistfulness of his own.
 
-"Just coffee," she said.
+We talked for a few minutes on the sunny porch.
 
-Earl poured it. The cup was thick white china, the coffee dark and bitter, and when she wrapped both hands around it she closed her eyes for a moment with an expression that might have been gratitude or might have been exhaustion or might have been the particular relief of a person who has been driving for a very long time and has finally stopped.
+“I’ve got a nice place here,” he said, his eyes flashing about restlessly.
 
-"Passing through?" Earl asked, because that was what you asked.
+Turning me around by one arm, he moved a broad flat hand along the front vista, including in its sweep a sunken Italian garden, a half acre of deep, pungent roses, and a snub-nosed motor-boat that bumped the tide offshore.
 
-She looked at him. Her eyes were the grey-green of sage brush after rain.
+“It belonged to Demaine, the oil man.” He turned me around again, politely and abruptly. “We'll go inside.”
 
-"I haven't decided yet," she said.`
+We walked through a high hallway into a bright rosy-colored space, fragilely bound into the house by French windows at either end. The windows were ajar and gleaming white against the fresh grass outside that seemed to grow a little way into the house. A breeze blew through the room, blew curtains in at one end and out the other like pale flags, twisting them up toward the frosted wedding-cake of the ceiling, and then rippled over the wine-colored rug, making a shadow on it as wind does on the sea.
 
-const EXTRACT_05_SOURCE = 'Original literary fiction composition - American realism'
+The only completely stationary object in the room was an enormous couch on which two young women were buoyed up as though upon an anchored balloon. They were both in white, and their dresses were rippling and fluttering as if they had just been blown back in after a short flight around the house. I must have stood for a few moments listening to the whip and snap of the curtains and the groan of a picture on the wall. Then there was a boom as Tom Buchanan shut the rear windows and the caught wind died out about the room, and the curtains and the rugs and the two young women ballooned slowly to the floor.
+
+The younger of the two was a stranger to me. She was extended full length at her end of the divan, completely motionless, and with her chin raised a little, as if she were balancing something on it which was quite likely to fall. If she saw me out of the corner of her eyes she gave no hint of it—indeed, I was almost surprised into murmuring an apology for having disturbed her by coming in.
+
+The other girl, Daisy, made an attempt to rise—she leaned slightly forward with a conscientious expression—then she laughed, an absurd, charming little laugh, and I laughed too and came forward into the room.
+
+“I’m p-paralyzed with happiness.”
+
+She laughed again, as if she said something very witty, and held my hand for a moment, looking up into my face, promising that there was no one in the world she so much wanted to see. That was a way she had. She hinted in a murmur that the surname of the balancing girl was Baker. (I’ve heard it said that Daisy’s murmur was only to make people lean toward her; an irrelevant criticism that made it no less charming.)
+
+At any rate, Miss Baker’s lips fluttered, she nodded at me almost imperceptibly, and then quickly tipped her head back again—the object she was balancing had obviously tottered a little and given her something of a fright. Again a sort of apology arose to my lips. Almost any exhibition of complete self-sufficiency draws a stunned tribute from me.
+
+I looked back at my cousin, who began to ask me questions in her low, thrilling voice. It was the kind of voice that the ear follows up and down, as if each speech is an arrangement of notes that will never be played again. Her face was sad and lovely with bright things in it, bright eyes and a bright passionate mouth, but there was an excitement in her voice that men who had cared for her found difficult to forget: a singing compulsion, a whispered “Listen,” a promise that she had done gay, exciting things just a while since and that there were gay, exciting things hovering in the next hour.`
+
+const EXTRACT_04_SOURCE =
+  'F. Scott Fitzgerald, The Great Gatsby (1925), Chapter I. Text: the first edition (New York, 1925), as transcribed by Wikisource.'
+
+const EXTRACT_05 = `How they toiled and sweated to get the hay in! But their efforts were rewarded, for the harvest was an even bigger success than they had hoped.
+
+Sometimes the work was hard; the implements had been designed for human beings and not for animals, and it was a great drawback that no animal was able to use any tool that involved standing on his hind legs. But the pigs were so clever that they could think of a way round every difficulty. As for the horses, they knew every inch of the field, and in fact understood the business of mowing and raking far better than Jones and his men had ever done. The pigs did not actually work, but directed and supervised the others. With their superior knowledge it was natural that they should assume the leadership. Boxer and Clover would harness themselves to the cutter or the horse-rake (no bits or reins were needed in these days, of course) and tramp steadily round and round the field with a pig walking behind and calling out "Gee up, comrade!" or "Whoa back, comrade!" as the case might be. And every animal down to the humblest worked at turning the hay and gathering it. Even the ducks and hens toiled to and fro all day in the sun, carrying tiny wisps of hay in their beaks. In the end they finished the harvest in two days' less time than it had usually taken Jones and his men. Moreover, it was the biggest harvest that the farm had ever seen. There was no wastage whatever; the hens and ducks with their sharp eyes had gathered up the very last stalk. And not an animal on the farm had stolen so much as a mouthful.
+
+All through that summer the work of the farm went like clockwork. The animals were happy as they had never conceived it possible to be. Every mouthful of food was an acute positive pleasure, now that it was truly their own food, produced by themselves and for themselves, not doled out to them by a grudging master. With the worthless parasitical human beings gone, there was more for everyone to eat. There was more leisure too, inexperienced though the animals were. They met with many difficulties—for instance, later in the year, when they harvested the corn, they had to tread it out in the ancient style and blow away the chaff with their breath, since the farm possessed no threshing machine—but the pigs with their cleverness and Boxer with his tremendous muscles always pulled them through. Boxer was the admiration of everybody. He had been a hard worker even in Jones's time, but now he seemed more like three horses than one; there were days when the entire work of the farm seemed to rest on his mighty shoulders. From morning to night he was pushing and pulling, always at the spot where the work was hardest. He had made an arrangement with one of the cockerels to call him in the mornings half an hour earlier than anyone else, and would put in some volunteer labour at whatever seemed to be most needed, before the regular day's work began. His answer to every problem, every setback, was "I will work harder!"—which he had adopted as his personal motto.
+
+But everyone worked according to his capacity The hens and ducks, for instance, saved five bushels of corn at the harvest by gathering up the stray grains. Nobody stole, nobody grumbled over his rations, the quarrelling and biting and jealousy which had been normal features of life in the old days had almost disappeared. Nobody shirked—or almost nobody. Mollie, it was true, was not good at getting up in the mornings, and had a way of leaving work early on the ground that there was a stone in her hoof. And the behaviour of the cat was somewhat peculiar. It was soon noticed that when there was work to be done the cat could never be found. She would vanish for hours on end, and then reappear at meal-times, or in the evening after work was over, as though nothing had happened. But she always made such excellent excuses, and purred so affectionately, that it was impossible not to believe in her good intentions. Old Benjamin, the donkey, seemed quite unchanged since the Rebellion. He did his work in the same slow obstinate way as he had done it in Jones's time, never shirking and never volunteering for extra work either. About the Rebellion and its results he would express no opinion. When asked whether he was not happier now that Jones was gone, he would say only "Donkeys live a long time. None of you has ever seen a dead donkey," and the others had to be content with this cryptic answer.`
+
+const EXTRACT_05_SOURCE =
+  'George Orwell, Animal Farm (1945), Chapter III. Text: Project Gutenberg Australia.'
+
+// ─── Marking, the same for every paper ───────────────────────────────────────
+// Eduqas's bands for each question, in this file's own words, from
+// src/data/mark-scheme-guides/eduqas-lang-comp1.ts.
+
+const Q01_MARKING = [
+  'One mark for each correct, separate point taken from the lines the question names, up to 5.',
+  'A point the lines suggest counts as well as one they state, as long as the lines support it.',
+  'No mark for a detail from outside those lines, for the same point made twice, or for a whole sentence copied out without the point picked out of it.',
+]
+
+const Q02_MARKING = [
+  '5 marks: sharp, accurate points that notice less obvious things, each backed by a well-chosen quotation, with subject terms used to explain the effect of the words.',
+  '4 marks: accurate, well-supported points, with clear comment on how the language creates them.',
+  '3 marks: several relevant points, each backed by a quotation, with some comment on the words the writer chose.',
+  '2 marks: one or two simple, obvious points, with some support.',
+  '1 mark: a very slight answer, perhaps one point with little or no support.',
+  'All five marks are for language (AO2), and only the lines the question names count. A short, focused answer can earn full marks.',
+]
+
+const Q03_MARKING = [
+  'Band 5 (9 to 10 marks): thorough and perceptive across the whole of the lines named, analysing in detail how the language works, including subtler choices, with well-judged subject terms.',
+  'Band 4 (7 to 8 marks): detailed, with some real insight, and beginning to analyse how particular words affect the reader, with accurate subject terms.',
+  'Band 3 (5 to 6 marks): explores the lines in some depth and begins to explain what particular words show, using some subject terms correctly.',
+  'Band 2 (3 to 4 marks): finds some relevant details and says simple things about them; may name a technique without explaining it.',
+  'Band 1 (1 to 2 marks): mentions a detail or two that fit the question, with very little explanation.',
+  'This question assesses language (AO2), not structure. Material from outside the lines named earns nothing, and a quotation with no explanation earns little.',
+]
+
+const Q04_MARKING = [
+  'Band 5 (9 to 10 marks): thorough and perceptive, analysing in detail how language and structure work together, including the subtler choices.',
+  'Band 4 (7 to 8 marks): detailed, with some real insight, and beginning to analyse how the words and the order of events work on the reader.',
+  'Band 3 (5 to 6 marks): explores the lines in some depth and begins to explain how the words and the order of events create the effect.',
+  'Band 2 (3 to 4 marks): finds some relevant details and says simple things about them; techniques are named rather than explained.',
+  'Band 1 (1 to 2 marks): mentions a detail or two that fit the question, with very little explanation.',
+  'This question assesses language and structure together (AO2): what happens, in what order and at what pace, as well as the words chosen. An answer only about words, or one that retells the events, answers half the question.',
+]
+
+const Q05_MARKING = [
+  "Band 5 (9 to 10 marks): a persuasive, perceptive judgement that takes in the whole passage, with every reference well chosen, showing real insight into how the writer shapes the reader's thoughts and feelings.",
+  "Band 4 (7 to 8 marks): a clear, well-argued judgement that stays close to the text, with well-chosen evidence and real discussion of the writer's choices.",
+  "Band 3 (5 to 6 marks): begins to judge the text, with sensible references and some sense of the passage as a whole and of the writer's choices.",
+  'Band 2 (3 to 4 marks): gives a view backed by a few obvious references, with little on the whole passage or on how the writer works.',
+  'Band 1 (1 to 2 marks): an opinion with little more than a passing reference to the text.',
+  'This question assesses evaluation (AO4). You may agree, disagree or partly agree: what is rewarded is a clear judgement, held to from start to finish, drawn from the final lines and from the passage as a whole. Retelling the story, or using only the final lines, holds an answer down.',
+]
+
+const Q11_MARKING = {
+  'Communication and organisation (AO5, up to 24 marks)': [
+    'Band 5 (20 to 24 marks): an original story that holds the reader from start to end, with detailed characters and a carefully built structure.',
+    'Band 4 (15 to 19 marks): a story in firm control, shaped with a clear purpose, with believable detail and some original ideas.',
+    'Band 3 (10 to 14 marks): a clear, well-organised story that is going somewhere, with some developed detail, though it plays safe.',
+    'Band 2 (5 to 9 marks): a story the reader can follow that is starting to take shape, though plot and characters are thin.',
+    'Band 1 (1 to 4 marks): a very simple story, or one that is hard to follow, with little organisation.',
+  ],
+  'Vocabulary, sentence structure, spelling and punctuation (AO6, up to 16 marks)': [
+    'Band 5 (14 to 16 marks): spelling, punctuation and grammar close to faultless; sentences varied for effect; a wide vocabulary used precisely.',
+    'Band 4 (11 to 13 marks): errors are rare; sentences are chosen for effect; vocabulary is ambitious.',
+    'Band 3 (7 to 10 marks): sentences are varied; most punctuation and spelling is correct.',
+    'Band 2 (4 to 6 marks): sentences vary a little; most everyday words are spelt correctly.',
+    'Band 1 (1 to 3 marks): sentences are mostly alike; errors in spelling, punctuation and tense are frequent.',
+  ],
+  'What holds the marks down': [
+    'The two marks are given separately, each on its own grid.',
+    'Writing that only describes, without telling a story, cannot reach the top of the range: the task asks for a narrative, or an account of an experience, real or imagined.',
+    'A story learnt in advance that does not fit the title chosen.',
+    'A piece far shorter than the guidance of about 450 to 600 words.',
+    'Sentences run together with commas, and missing full stops.',
+  ],
+}
 
 // ─── Mock Exam Papers ────────────────────────────────────────────────────────
 
 export const wjecC1A: MockExamPaper[] = [
   // ═══════════════════════════════════════════════════════════════════════════
-  // WJEC COMPONENT 1 - MOCK 01 (War Literature)
+  // WJEC COMPONENT 1, MOCK 01: Animal Farm, Chapter I
   // ═══════════════════════════════════════════════════════════════════════════
   {
     id: 'wjec-c1-01',
@@ -156,100 +292,138 @@ export const wjecC1A: MockExamPaper[] = [
       {
         id: 'wjec-c1-01-reading',
         title: 'Section A: Reading',
-        description: `Read the extract below carefully. Then answer all the questions in this section.\n\nSource: ${EXTRACT_01_SOURCE}`,
+        description: `Read the extract below carefully, then answer all the questions in this section. You are advised to spend about 10 minutes reading the extract and about 50 minutes answering the questions.\n\nSource: ${EXTRACT_01_SOURCE}`,
         totalMarks: 40,
         suggestedTimeMinutes: 60,
         questions: [
           {
-            id: 'wjec-c1-01-q1',
+            id: 'wjec-c1-01-a1',
             questionNumber: 1,
+            label: '01',
             questionText:
-              'Read the first paragraph. List five things you learn about the situation from this paragraph.',
+              'Read the first paragraph, from "Mr. Jones, of the Manor Farm" to "already snoring."\n\nList five things you learn about Mr Jones in this paragraph.',
             marks: 5,
             suggestedTimeMinutes: 5,
+            questionType: 'retrieval',
+            extract: EXTRACT_01,
+            extractSource: EXTRACT_01_SOURCE,
+            modelAnswers: {
+              'Grade 6-7':
+                '1. He is the farmer at the Manor Farm.\n2. He locked the hen-houses for the night.\n3. He was too drunk to remember to shut the pop-holes.\n4. He lurched across the yard by the light of a lantern.\n5. He drew himself a last glass of beer before going up to bed.',
+            },
+            markScheme: {
+              'How the marks are given': Q01_MARKING,
+              'Credit, for example': [
+                'He farms the Manor Farm; he locked the hen-houses for the night; he was drunk; he forgot to shut the pop-holes; he carried a lantern; he lurched or staggered across the yard; he kicked off his boots at the back door; he had a last glass of beer from the barrel in the scullery; he went up to bed, where his wife was already snoring.',
+                'Inferences the paragraph supports, such as that he is careless with his animals, are credited.',
+              ],
+            },
+          },
+          {
+            id: 'wjec-c1-01-a2',
+            questionNumber: 2,
+            label: '02',
+            questionText:
+              'Read from "As soon as the light in the bedroom went out" to "what he had to say."\n\nHow does the writer show that old Major is important to the other animals?\n\nBack up your points with short quotations, and explain what the writer\'s words suggest, using subject terms where they help.',
+            marks: 5,
+            suggestedTimeMinutes: 6,
             questionType: 'short-answer',
             extract: EXTRACT_01,
             extractSource: EXTRACT_01_SOURCE,
             modelAnswers: {
-              'Grade 4-5':
-                '1. The shelling has temporarily stopped. 2. Nobody moved despite the pause. 3. Private Hennessy was lying against the trench wall. 4. His face was pressed into the mud. 5. A man nearby was crying steadily.',
-            },
-            markScheme: ['1 mark per valid point, maximum 5'],
-          },
-          {
-            id: 'wjec-c1-01-q2',
-            questionNumber: 2,
-            questionText:
-              "How does the writer use language to convey the horror of the trenches in this extract?\n\nYou should comment on:\n- the writer's choice of words and phrases\n- the writer's use of language features and techniques\n- the effects on the reader.\n\nYou must refer to the text to support your answer.",
-            marks: 10,
-            suggestedTimeMinutes: 12,
-            questionType: 'analysis',
-            extract: EXTRACT_01,
-            extractSource: EXTRACT_01_SOURCE,
-            modelAnswers: {
-              'Grade 4-5':
-                'The writer uses sensory details to show the horror of the trenches. Hennessy has "his face in the mud, breathing the sour earth-smell" which shows the unpleasant physical reality. A man is "weeping" but described as "mechanical crying" which suggests the soldiers have been through so much that grief has become automatic. The sky is "a dirty orange, lit by fires" which creates a hellish atmosphere. The landscape is "ruined" and "cratered" showing the destruction of war. Maddox\'s face is "grey with dust and exhaustion" which shows the physical toll on the soldiers.',
               'Grade 6-7':
-                'The writer constructs a sensory landscape of degradation and dehumanisation. The opening image - Hennessy with "his face in the mud, breathing the sour earth-smell" - collapses the boundary between man and earth, the verb "breathing" making the mud intimate, almost ingested. The weeping soldier is described through a devastating simile: grief has become "a bodily function no different from breathing or blinking." This reduces the most human of responses to mere physiology, suggesting that sustained exposure to horror has mechanised emotion itself. The post-bombardment sky is "a dirty orange" - the adjective "dirty" refusing to aestheticise the visual spectacle of distant fires, while the tricolon of destruction - "a shattered tree, the remains of a stone wall... the dark, cratered expanse" - moves from particular to general devastation. Maddox\'s characterisation is achieved through physical precision: his face is "grey," but his hands "were always steady," the adverb "always" suggesting a constancy that Hennessy reads not as courage but as emotional death. The final image of Hennessy checking equipment "with fingers that would not stop trembling" uses the negative construction to emphasise involuntary fear - the fingers have their own knowledge of danger that discipline cannot override.',
-              'Grade 8-9':
-                'The writer deploys a rhetoric of mechanisation to explore how sustained warfare erodes the boundary between human response and automatic function. The opening scene\'s most disturbing image is not the bombardment but its aftermath: silence that "rang in his ears louder than any bombardment," a paradox in which absence becomes presence, quiet becomes noise. This inversion establishes the extract\'s central technique - the subversion of expected categories. The weeping soldier embodies this: his crying is "steady, mechanical," and the simile comparing grief to "a bodily function no different from breathing or blinking" is devastating precisely because it refuses pathos. This is not a man overcome by emotion but a man whose emotion has been routinised, metabolised into reflex. The writer extends this mechanisation to Maddox, whose steadiness Hennessy interprets as the extinction of feeling: "bravery implied the possibility of fear. Maddox had simply ceased to feel anything at all." Hennessy\'s reasoning - that what looks like bravery is in fact the absence of feeling - challenges romantic conceptions of military courage. The landscape, described through the semantics of fracture ("shattered," "remains," "cratered"), functions as an externalisation of psychological damage. The extract\'s final sentence achieves its power through syntactic tension: the formal action ("check his equipment") is undercut by the prepositional phrase that ends it ("with fingers that would not stop trembling"), the negative modal "would not" giving the trembling its own stubborn agency, as though the body refuses to collude in the pretence of readiness.',
+                'The writer shows Major\'s importance through how eagerly the animals respond. The moment the light goes out there is "a stirring and a fluttering all through the farm buildings": two nouns formed from verbs suggest movement spreading everywhere at once, as if every creature has been waiting for this. The news has spread by itself ("Word had gone round during the day"), which makes the meeting feel urgent and a little secret. Even his name carries weight. He is "the prize Middle White boar", and "Old Major" sounds like an officer\'s rank, a title of respect. Most tellingly, he is "so highly regarded" that everyone is "quite ready to lose an hour\'s sleep" to hear him, a real sacrifice for animals who work all day.',
             },
-            markScheme: [
-              'Identifies and analyses language features and techniques',
-              'Comments on the effects of specific words and phrases',
-              'Explores how language creates atmosphere and conveys horror',
-              'Uses textual references to support analysis',
-              'Top band: perceptive, detailed, conceptualised analysis',
-            ],
+            markScheme: {
+              'How the marks are given': Q02_MARKING,
+              'Credit, for example': [
+                'The eager stir as soon as the light goes out ("a stirring and a fluttering"), and the news spreading by itself.',
+                'The planned, secret meeting, held "as soon as Mr. Jones was safely out of the way".',
+                'The title "prize Middle White boar", the respectful name "Old Major", and his show name.',
+                'The animals\' readiness "to lose an hour\'s sleep in order to hear what he had to say".',
+              ],
+            },
           },
           {
-            id: 'wjec-c1-01-q3',
+            id: 'wjec-c1-01-a3',
             questionNumber: 3,
+            label: '03',
             questionText:
-              'What impressions do you get of Sergeant Maddox, and how does the writer create these impressions?\n\nYou must refer to the text to support your answer.',
+              'Read from "At one end of the big barn" to "grazing side by side and never speaking."\n\nWhat impressions do you get of the animals as they gather in the barn?\n\nQuote from these lines to support your answer, and analyse the writer\'s choice of words, using subject terms where they help.',
             marks: 10,
-            suggestedTimeMinutes: 12,
+            suggestedTimeMinutes: 13,
             questionType: 'analysis',
             extract: EXTRACT_01,
             extractSource: EXTRACT_01_SOURCE,
             modelAnswers: {
-              'Grade 4-5':
-                'Maddox seems like a tough, experienced soldier who has been hardened by war. His voice is "flat, emptied of everything except instruction" which shows he focuses only on the job. His hands are "steady" even though his face shows exhaustion, suggesting he has learned to control his fear. He gives short, clipped orders - "On your feet" and "Wiring party. Thirty minutes" - which shows his authority. Hennessy thinks Maddox has "ceased to feel anything at all" which suggests the war has destroyed his emotions. However, calling Hennessy "Good lad" shows some warmth remains.',
               'Grade 6-7':
-                'The writer constructs Maddox as a study in the cost of competence under extreme duress. His voice is "flat, emptied of everything except instruction" - the past participle "emptied" implies a process of draining, a voice that once contained more but has been systematically reduced. This is not natural authority but manufactured control. The physical contrast between his "grey" face and "steady" hands separates the involuntary markers of suffering (exhaustion visible on the face) from the disciplined performance of command (hands that must not shake). Hennessy\'s interpretation - that Maddox is not brave but has "ceased to feel anything at all" - is the extract\'s most psychologically complex moment, reframing military stoicism as emotional annihilation. The staccato syntax of his orders ("Wiring party. Thirty minutes. You, Pascoe, and Yates.") strips language to pure function, each sentence a complete unit requiring no elaboration. Yet the two-word phrase "Good lad" punctures this efficiency with unexpected tenderness, a vestige of human connection in a landscape of dehumanisation. His eyes, described as "the colour of old pennies," suggest something tarnished, corroded - once bright, now dulled by exposure.',
+                'Major is presented first, and the impression is of dignity. He is "ensconced", a word that makes his bed of straw sound like a throne, and although he has "grown rather stout" he is still "majestic-looking", with "a wise and benevolent appearance". The other animals arrive "after their different fashions", which suggests a community of very different characters.\n\nThe horses seem gentle and caring. Boxer and Clover set down "their vast hairy hoofs with great care lest there should be some small animal concealed in the straw", and the contrast between "vast" and "small" shows that their great strength is used kindly. Clover is "a stout motherly mare", a phrase that suggests warmth. Boxer is described with a comparison that makes his strength enormous, "as strong as any two ordinary horses put together", but also bluntly as "not of first-rate intelligence", so the reader likes him while seeing his limits.\n\nBenjamin is the opposite: "the oldest animal on the farm, and the worst tempered", and the superlatives make him stand out. His joke about his tail and the flies shows a gloomy, cynical humour, yet the final detail, that he spends Sundays with Boxer "grazing side by side and never speaking", suggests a quiet loyalty underneath.',
+              'Grade 8-9':
+                'The writer introduces the animals as a small society, and the impression is affectionate but sharply observed. Major comes first, already "ensconced" on a "raised platform" under a lantern, so he is literally placed above the others and lit like a speaker on a stage. The adjectives "majestic-looking" and "wise and benevolent" make him seem a grandfatherly king, although the concession "in spite of the fact that his tushes had never been cut" quietly reminds us that he is still a boar with tusks. The arrivals are then listed in order ("First came", "then the pigs", "After the horses"), and each group settles "after their different fashions", which suggests a community whose members have their own natures and their own places. It is worth noticing that the pigs settle "immediately in front of the platform", closest to the speaker.\n\nThe horses are the moral centre of the paragraph. Their "vast hairy hoofs" are set down "with great care lest there should be some small animal concealed in the straw", and the old-fashioned conjunction "lest" makes their caution sound almost formal, a habit of kindness. Boxer is built up through a comparison that magnifies him, "as strong as any two ordinary horses put together", and then gently undercut, "not of first-rate intelligence", so the reader admires his "steadiness of character" while sensing that he could be led.\n\nBenjamin is defined by superlatives, "the oldest animal on the farm, and the worst tempered", and his dry joke that he "would sooner have had no tail and no flies" shows a mind that expects nothing good. Yet the paragraph ends on the tender image of the two friends "grazing side by side and never speaking": the negative "never" turns silence into loyalty, and the reader is left with the impression of animals whose goodness is quiet and real.',
             },
-            markScheme: [
-              'Analyses character with textual support',
-              'Comments on how the writer creates impressions through language and structure',
-              'Considers what is implied as well as stated',
-              'Top band: perceptive, thoughtful, detailed interpretation',
-            ],
+            markScheme: {
+              'How the marks are given': Q03_MARKING,
+              'Credit, for example': [
+                'Major\'s dignity: "ensconced", "majestic-looking", "a wise and benevolent appearance", set "on a sort of raised platform".',
+                'The animals as a community of different characters, arriving "after their different fashions", with the pigs "immediately in front of the platform".',
+                'The horses\' gentleness: "with great care lest there should be some small animal concealed in the straw".',
+                'Clover as "a stout motherly mare"; Boxer\'s strength, his limits ("not of first-rate intelligence") and his "steadiness of character".',
+                'Benjamin\'s gloom ("the worst tempered", "he never laughed") and his hidden devotion to Boxer.',
+              ],
+            },
           },
           {
-            id: 'wjec-c1-01-q4',
+            id: 'wjec-c1-01-a4',
             questionNumber: 4,
+            label: '04',
             questionText:
-              '"The writer powerfully conveys the psychological impact of war, not just its physical dangers."\n\nTo what extent do you agree with this statement? You should consider the writer\'s use of language and structure in your response.',
-            marks: 15,
-            suggestedTimeMinutes: 18,
+              'Read from "The two horses had just lain down" to "he cleared his throat and began:"\n\nHow does the writer build up to the moment when Major begins to speak?\n\nIn your answer, consider:\n- what happens, and the order in which the writer tells it\n- the words and phrases the writer chooses\n- how these choices affect the reader.\n\nSupport your points with references to the text, using subject terms where they help.',
+            marks: 10,
+            suggestedTimeMinutes: 13,
+            questionType: 'analysis',
+            extract: EXTRACT_01,
+            extractSource: EXTRACT_01_SOURCE,
+            modelAnswers: {
+              'Grade 6-7':
+                'The writer delays Major\'s speech by describing the last animals to arrive, one at a time, which builds anticipation. First come the ducklings, "cheeping feebly and wandering from side to side", and the adverb "feebly" makes them seem helpless. Clover\'s response, making "a sort of wall round them with her great foreleg", is a protective image that shows the kindness of the community.\n\nThen the tone changes with Mollie, who comes "mincing daintily in, chewing at a lump of sugar". The verb "mincing" suggests she is vain and showy, and her "red ribbons" show that she cares more about being looked at than about the meeting. The cat comes "Last of all", and the writer adds the humorous detail that she "purred contentedly throughout Major\'s speech without listening to a word". This tells us, before the speech begins, that not everyone will take it seriously.\n\nThe phrases "At the last moment" and "Last of all" structure the paragraph like a countdown, and the short paragraph that follows completes it: "All the animals were now present". When Major "cleared his throat and began:", the colon leaves us on the edge of his first words, so the reader is ready to listen, like the animals "waiting attentively".',
+              'Grade 8-9':
+                'Structurally, the writer holds back Major\'s speech with a sequence of late arrivals, so that the reader, like the animals, waits for it. The sequence is marked by time phrases that work like a countdown, "had just lain down", "At the last moment", "Last of all", and it ends with a short paragraph that sums up: "All the animals were now present except Moses". Each arrival also widens our sense of who is listening.\n\nThe ducklings "which had lost their mother", "cheeping feebly", are vulnerable, and Clover\'s "wall round them with her great foreleg" is an image of the strong protecting the weak, an idea of what the farm could be. The writer then undercuts this tenderness with comedy. Mollie, "the foolish, pretty white mare", comes "mincing daintily in", and the pairing of "foolish" with "pretty" sums her up in two adjectives: she is "flirting her white mane" to show off her ribbons. The cat\'s choice of "the warmest place" and her purring "without listening to a word" gently mock the solemn occasion before it starts, and hint that a speech can be heard without being understood. Even Moses is defined by his absence.\n\nBy the time Major sees the animals "waiting attentively", the reader is waiting too, and the colon after "began:" turns the last line into a threshold. The paragraph stops on the very edge of his first word, so the speech that follows arrives with the weight of a long-awaited event.',
+            },
+            markScheme: {
+              'How the marks are given': Q04_MARKING,
+              'Credit, for example': [
+                'The order of the late arrivals, marked by "had just lain down", "At the last moment" and "Last of all", delaying the speech.',
+                'Clover\'s protective "wall round them with her great foreleg" and the helpless ducklings "cheeping feebly".',
+                'The comedy of Mollie ("mincing daintily", "flirting her white mane") and of the cat, who listens to nothing.',
+                'The summing-up paragraph, "All the animals were now present", and the colon that leaves the reader waiting for Major\'s first words.',
+              ],
+            },
+          },
+          {
+            id: 'wjec-c1-01-a5',
+            questionNumber: 5,
+            label: '05',
+            questionText:
+              'Read from "Comrades, you have heard already" to the end of the extract.\n\n"In this extract, Major is presented as a wise leader whom the animals are right to trust."\n\nHow far do you agree with this view?\n\nIn your answer, consider:\n- what you think and feel about how Major is presented, in these lines and across the whole extract\n- the choices the writer makes to lead you to those thoughts and feelings.\n\nSupport your points with references to the text.',
+            marks: 10,
+            suggestedTimeMinutes: 13,
             questionType: 'evaluation',
             extract: EXTRACT_01,
             extractSource: EXTRACT_01_SOURCE,
             modelAnswers: {
-              'Grade 4-5':
-                'I agree that the writer shows the mental effects of war as well as the physical dangers. The physical dangers are clear - shelling, the destroyed landscape, the dangerous wiring party at night. But the psychological impact is shown through the soldier who cries like a machine, unable to stop. Hennessy\'s trembling fingers show his fear even though he follows orders. Maddox seems to have lost all his emotions, which is a different kind of damage. The silence after shelling is described as louder than the bombardment itself, showing how the soldiers\' minds are affected. The fact that Hennessy has "a thousand questions" but none Maddox can answer suggests the futility and confusion soldiers feel.',
               'Grade 6-7':
-                'I strongly agree, and I would argue that the extract\'s most powerful achievement is its demonstration that psychological damage is not separate from physical experience but inseparable from it. The physical setting - mud, bombardment, the "ruined landscape" - is consistently filtered through psychological perception. The silence "rang in his ears louder than any bombardment" converts a physical absence into a psychological assault; the landscape is seen through the gaps in a destroyed parapet, framing devastation as something viewed through wounds. The weeping soldier represents the collapse of the boundary between psychology and physiology: his grief has become "a bodily function," emotion reduced to mechanism. Maddox embodies a different psychological cost - the complete suppression of feeling as a survival strategy. Hennessy\'s reading of him ("not brave... simply ceased to feel") is itself a psychological act, a younger soldier trying to comprehend an older one\'s adaptation. The extract\'s structure enacts psychological pressure: it moves from paralysis (nobody moves) through sensory overload (the lit sky, the weeping) to the forced resumption of action (the wiring party order), replicating the cycle of trauma and compelled function that defines trench warfare. The final image - trembling fingers performing a practical task - is the extract\'s thesis: the body knows what the will refuses to acknowledge.',
+                'I mostly agree. In his speech Major seems wise because he speaks calmly and seriously, and he presents himself as someone who wants to help: "before I die, I feel it my duty to pass on to you such wisdom as I have acquired". The phrase "my duty" suggests he is unselfish, and calling the animals "comrades" makes them sound like equals and friends.\n\nWhat he says also seems true from the rest of the extract. He claims that "our lives are miserable, laborious, and short", and the opening has already shown us Mr Jones, "too drunk to remember to shut the pop-holes", which supports his point that the animals are badly cared for. The way the animals behave also suggests that he deserves trust: he is "so highly regarded" that they give up sleep to hear him.\n\nHowever, there are hints that we should not accept everything he says. He describes himself very confidently, claiming that he understands life "as well as any animal now living", which sounds a little proud. Earlier he is "majestic-looking" but "his tushes had never been cut", a reminder that he is still a powerful boar. And not every animal is listening: the cat purrs "without listening to a word". So Major is presented as wise and well-meaning, but the writer leaves room for doubt about whether trusting one leader completely is wise.',
               'Grade 8-9':
-                'I agree substantially, though I would reframe the statement\'s distinction: the extract suggests that there is no meaningful separation between physical and psychological warfare - the body becomes the site of psychological expression, and the mind becomes a theatre of physical sensation. The opening paragraph performs this collapse: silence "rang in his ears louder than any bombardment," an auditory hallucination that demonstrates how the senses continue to process threat after the threat has passed. This is trauma rendered as sensory confusion. The weeping soldier is the extract\'s most radical psychological image. The simile - grief as "a bodily function no different from breathing or blinking" - refuses the Romantic tradition of suffering as ennobling emotion. Instead, emotion is biologised, routinised, stripped of meaning. The structural juxtaposition of this involuntary grief with Maddox\'s apparent loss of all feeling creates a spectrum of psychological response: one man cannot stop feeling; the other has stopped entirely. Neither represents health. The wiring party order is structurally devastating because it requires the resumption of agency in a context that has systematically destroyed agency\'s preconditions. Hennessy must act, but his body\'s trembling registers the cost of action imposed upon a traumatised psyche. The extract\'s most sophisticated technique is its use of Hennessy as a psychological observer: his reading of Maddox ("bravery implied the possibility of fear") demonstrates a mind still capable of analysis even in extremis, and his unasked "thousand questions" represent the cognitive burden of a war that provides experiences but no framework for understanding them.',
+                'I largely agree that Major is presented as wise, but I think the writer is more careful about whether the animals are right to trust him, and the extract as a whole teaches the reader to listen more critically than they do.\n\nIn the final part, Major\'s wisdom is shown through the shape of his speech. He begins modestly, putting off the dream ("I will come to the dream later") and speaking of his coming death, which gives his words the authority of a last testament: he feels it his "duty" to pass on what he has learned. He then moves from himself to all of them, "what is the nature of this life of ours?" The rhetorical question draws the listeners in, and the blunt tricolon "miserable, laborious, and short" names their lives in three hard adjectives. The repetition of "No animal in England" builds to the stark statement "No animal in England is free", and the phrase that ends the extract, "that is the plain truth", presents his argument as simple fact. What gives it force is that the extract has shown it to be true: it opens with Mr Jones lurching to bed with "a last glass of beer" while the pop-holes stay open. Major speaks for animals who really are neglected.\n\nYet the writer plants doubts. Major is a "prize" boar, exhibited as "Willingdon Beauty", who has had "much time for thought as I lay alone in my stall", which suggests a life with more leisure than the working horses have. His claim to understand life "as well as any animal now living" is confident to the point of vanity, and the narrator\'s aside that "his tushes had never been cut" reminds us of the power under the "benevolent appearance". The audience, too, is mixed: the cat purrs "without listening to a word", and Benjamin "saw nothing to laugh at".\n\nSo my thoughts and feelings are divided, as the writer intends. Major is wise about the problem, but the extract makes us wonder whether any animal should be trusted as completely as he is.',
             },
-            markScheme: [
-              'Evaluates with a clear, sustained personal response',
-              'Analyses language and structural methods in relation to the statement',
-              'Uses textual evidence to support evaluation',
-              'Considers alternative readings and nuances',
-              'Top band: evaluative, critical, conceptualised response',
-            ],
+            markScheme: {
+              'How the marks are given': Q05_MARKING,
+              'Credit, for example': [
+                'Agreement: his sense of "duty" before death; the inclusive "comrades"; the rhetorical question and the tricolon "miserable, laborious, and short"; the repeated "No animal in England"; his claims borne out by Jones\'s drunken neglect in the opening paragraph.',
+                'Disagreement: his self-assurance ("as well as any animal now living"); his privileged life as a "prize" boar; the reminder that "his tushes had never been cut"; listeners such as the cat who do not attend.',
+                "A judgement that weighs both, and explains how the writer creates the reader's trust and doubt.",
+              ],
+            },
           },
         ],
       },
@@ -257,30 +431,24 @@ export const wjecC1A: MockExamPaper[] = [
         id: 'wjec-c1-01-writing',
         title: 'Section B: Writing',
         description:
-          'You are advised to spend about 45 minutes on this section. You are reminded of the need to plan your answer.',
+          'In this section you are assessed on your creative prose writing. Up to 24 marks are given for communication and organisation, and up to 16 for vocabulary, sentence structure, spelling and punctuation. Think about the purpose and the reader of your writing. You are advised to spend about 45 minutes on this section: about 10 minutes planning and about 35 minutes writing. Aim for about 450 to 600 words.',
         totalMarks: 40,
         suggestedTimeMinutes: 45,
         questions: [
           {
-            id: 'wjec-c1-01-q5',
-            questionNumber: 5,
+            id: 'wjec-c1-01-b1',
+            questionNumber: 1,
+            label: '11',
             questionText:
-              'Choose ONE of the following titles for your creative prose writing:\n\nEither:\n(a) The Night Before.\nWrite a short piece of prose with this title.\n\nOr:\n(b) Write about a time when someone had to show courage.\nYour response could be real or imagined.\n\n(24 marks for content and organisation / 16 marks for technical accuracy)',
+              'Write one piece, choosing from these four titles:\n\n(a) The Night Before.\n\n(b) Write about a time when you had to be braver than you felt.\n\n(c) Write a story that begins: "Nobody else had noticed that the gate was open."\n\n(d) Write a story that ends with these words: "That was the last time any of us mentioned it."\n\nYour writing may be real or imagined.',
             marks: 40,
             suggestedTimeMinutes: 45,
             questionType: 'creative-writing',
             modelAnswers: {
-              'Grade 4-5':
-                'A clear piece of creative prose with: recognisable structure; use of descriptive techniques; varied vocabulary; generally accurate SPaG; some attempt to create atmosphere and convey emotion.',
-              'Grade 6-7':
-                'A compelling piece with: controlled atmosphere; crafted imagery; structural sophistication; consistent SPaG accuracy; effective use of narrative voice to convey tension or emotional complexity.',
               'Grade 8-9':
-                'An assured, distinctive piece with: original voice; precise and sustained imagery; masterful control of pace and structure; technical virtuosity; a mature exploration of courage, fear, or anticipation.',
+                "A model answer to (a), The Night Before (about 510 words).\n\nNobody in our house slept properly the night before Gran's operation, though we all pretended to.\n\nAt nine o'clock Mum announced, in the bright voice she uses for dentists and parents' evenings, that we should all have an early night. Dad agreed too quickly. My little brother Sam, who is seven and believes everything, went upstairs without arguing, which should have told me how frightened he was.\n\nI lay in the dark and listened to the house. The boiler ticked. A car swished past on the wet road, its headlights sliding across my ceiling like a slow searchlight. Downstairs, the kitchen tap ran, stopped, ran again. Someone was making tea that nobody would drink.\n\nGran had lived with us since the spring. She took up the back bedroom, the best armchair and, if I am honest, most of the noise in the house. She sang along to the radio with the wrong words and argued with quiz shows. Over the last month, though, the singing had stopped. The house had grown quiet in a way I did not like, as if it were holding its breath.\n\nAt midnight I gave up and crept onto the landing. A line of yellow light lay under Gran's door.\n\n'Come in, if you're coming,' she said, before I had even knocked.\n\nShe was sitting up in bed with her glasses on the end of her nose, doing a crossword in pen. Gran has always done crosswords in pen. She says pencil is for people who expect to be wrong.\n\n'Can't sleep?' she asked.\n\n'No.'\n\n'Me neither. Seven letters, a feeling of dread. Begins with A.'\n\nI thought about it. 'Anxiety.'\n\n'Clever girl.' She wrote it in slowly, pressing hard. Then she put the pen down and looked at me properly, and for the first time I noticed how small her hands had become, the skin thin and shiny, the rings loose on her fingers.\n\n'I'm not scared of tomorrow,' she said. 'I'm scared of the waiting. Tomorrow is just doctors. Doctors I can manage.'\n\nI did not know what to say, so I sat on the end of her bed and we finished the crossword together. She knew the long words; I knew the ones about pop music. At some point Sam padded in, rubbing his eyes, and climbed in beside her without asking, and she let him.\n\nAt two o'clock Mum found the three of us there. I expected her to be cross. Instead she stood in the doorway for a long moment, then went downstairs and came back with four mugs of hot chocolate on a tray.\n\nNobody mentioned the operation. We talked about the crossword, and the time Gran fell into a canal on a school trip in 1962, and whether Sam could have a hamster.\n\nWhen I finally went back to bed, the house was not holding its breath any more. It was breathing slowly, like someone asleep.\n\nThe operation went well. But that is not the part I remember. I remember the night before.",
             },
-            markScheme: [
-              'Content & Organisation (24 marks): Communication, voice, structure, tone',
-              'Technical Accuracy (16 marks): Sentence demarcation, punctuation, spelling, sentence variety',
-            ],
+            markScheme: Q11_MARKING,
           },
         ],
       },
@@ -288,7 +456,7 @@ export const wjecC1A: MockExamPaper[] = [
   },
 
   // ═══════════════════════════════════════════════════════════════════════════
-  // WJEC COMPONENT 1 - MOCK 02 (Social Realism)
+  // WJEC COMPONENT 1, MOCK 02: The Great Gatsby, Chapter I
   // ═══════════════════════════════════════════════════════════════════════════
   {
     id: 'wjec-c1-02',
@@ -303,98 +471,137 @@ export const wjecC1A: MockExamPaper[] = [
       {
         id: 'wjec-c1-02-reading',
         title: 'Section A: Reading',
-        description: `Read the extract below carefully. Then answer all the questions in this section.\n\nSource: ${EXTRACT_02_SOURCE}`,
+        description: `Read the extract below carefully, then answer all the questions in this section. You are advised to spend about 10 minutes reading the extract and about 50 minutes answering the questions.\n\nSource: ${EXTRACT_02_SOURCE}`,
         totalMarks: 40,
         suggestedTimeMinutes: 60,
         questions: [
           {
-            id: 'wjec-c1-02-q1',
+            id: 'wjec-c1-02-a1',
             questionNumber: 1,
+            label: '01',
             questionText:
-              'Read the first paragraph. List five things you learn about the women and their work from this paragraph.',
+              'Read the first paragraph, from "The practical thing was to find rooms" to "over the electric stove."\n\nList five things you learn about the narrator\'s first home in the East, and who and what he had with him there, in this paragraph.',
             marks: 5,
             suggestedTimeMinutes: 5,
+            questionType: 'retrieval',
+            extract: EXTRACT_02,
+            extractSource: EXTRACT_02_SOURCE,
+            modelAnswers: {
+              'Grade 6-7':
+                '1. The house was in a commuting town, not in the city.\n2. It was a weatherbeaten bungalow, so flimsy that he calls it cardboard.\n3. The rent was eighty a month.\n4. He lived there alone, because the colleague who found it was sent to Washington.\n5. A Finnish woman made his bed and cooked his breakfast.',
+            },
+            markScheme: {
+              'How the marks are given': Q01_MARKING,
+              'Credit, for example': [
+                'He had meant to find rooms in the city; a young man at the office suggested a house in a commuting town; the house was a weatherbeaten cardboard bungalow; it cost eighty a month; the colleague was ordered to Washington, so he moved in alone; he had a dog for a few days until it ran away; he had an old Dodge; a Finnish woman made his bed, cooked breakfast and muttered to herself over the stove.',
+                'Inferences the paragraph supports are credited, for example that the house was cheap and poorly built.',
+              ],
+            },
+          },
+          {
+            id: 'wjec-c1-02-a2',
+            questionNumber: 2,
+            label: '02',
+            questionText:
+              'Read from "It was lonely for a day or so" to "life was beginning over again with the summer."\n\nHow does the writer show the narrator\'s feelings in these lines?\n\nBack up your points with short quotations, and explain what the writer\'s words suggest, using subject terms where they help.',
+            marks: 5,
+            suggestedTimeMinutes: 6,
             questionType: 'short-answer',
             extract: EXTRACT_02,
             extractSource: EXTRACT_02_SOURCE,
             modelAnswers: {
-              'Grade 4-5':
-                '1. The factory hooter sounded at six. 2. Hundreds of women came out through the gates. 3. They wore headscarves and overalls. 4. Their faces were blank with tiredness. 5. Their hands were raw from twelve hours of work.',
-            },
-            markScheme: ['1 mark per valid point, maximum 5'],
-          },
-          {
-            id: 'wjec-c1-02-q2',
-            questionNumber: 2,
-            questionText:
-              "How does the writer use language to create a vivid picture of Maggie's world?\n\nYou should comment on:\n- the writer's choice of words and phrases\n- the writer's use of language features and techniques\n- the effects on the reader.\n\nYou must refer to the text to support your answer.",
-            marks: 10,
-            suggestedTimeMinutes: 12,
-            questionType: 'analysis',
-            extract: EXTRACT_02,
-            extractSource: EXTRACT_02_SOURCE,
-            modelAnswers: {
-              'Grade 4-5':
-                'The writer uses simile to describe the women leaving the factory "like water released from a dam" which shows how many of them there are and how they have been held in all day. Their hands are "raw" which is a strong word showing physical damage from work. The house smells of "damp and boiled vegetables" which makes the reader imagine an unpleasant, poor home. The wireless plays "something orchestral" that belongs to "a different world entirely" which shows the gap between rich and poor. The mother is described as "smaller than she had been yesterday" which is a sad detail showing her illness getting worse.',
               'Grade 6-7':
-                'The writer constructs Maggie\'s world through a carefully layered sensory landscape of constriction and decline. The opening simile - women pouring out "like water released from a dam" - captures both the volume of the workforce and their containment during the working day; the verb "poured" reduces individuals to a collective mass, an undifferentiated flow. Maggie is immediately distinguished: she walks "among them but apart from them," a paradox that establishes her isolation as something neither hostile nor chosen but constitutional. The domestic interior is built through olfactory detail: "damp and boiled vegetables and the faint, sweet undertone of illness." The tricolon moves from the general (damp) through the domestic (vegetables) to the intimate (illness), each smell progressively more personal, more disturbing. The phrase "Maggie had stopped noticing months ago" is chilling in its casualness - habituation to illness as a marker of sustained suffering. The wireless provides ironic counterpoint: its orchestral music belongs to "a world of concert halls and evening dress," and the adverb "impossibly" preceding "distant" makes the class divide not merely wide but absolute. The final image - the mother "smaller than she had been yesterday" - compresses decline into a daily, measurable process, the comparative adjective making loss quantifiable and therefore relentless.',
-              'Grade 8-9':
-                'The writer creates Maggie\'s world through a poetics of diminishment in which every detail participates in a pattern of erosion, reduction, and slow disappearance. The opening image of factory workers as "water released from a dam" operates on multiple registers: the simile captures volume and relief, but water released from a dam is also water that has been instrumentalised, held for use, and the women\'s "blank" faces and "raw" hands confirm this reading - they are bodies from which labour has been extracted. Maggie\'s isolation is syntactically performed: "among them but apart from them" places her simultaneously inside and outside the collective, the repeated pronoun "them" marking a boundary that is social, not spatial. The domestic interior is constructed as a palimpsest of smells - "damp and boiled vegetables and the faint, sweet undertone of illness" - in which the conjunction "and" refuses hierarchy, placing structural decay and mortal illness on the same sensory plane. The writer\'s most devastating technique is temporal compression: the mother is "smaller than she had been yesterday," a phrase whose power lies in its implied iteration - if she was smaller yesterday than the day before, then this is not an event but a process, a daily subtraction whose inevitable conclusion is zero. The final sentence, "Each day a little less of her," achieves the cadence of an epitaph, its sentence fragment enacting the incompleteness it describes.',
+                'At first the narrator admits that he was "lonely", but one small meeting changes his mood completely. A stranger asks the way "helplessly", and suddenly he is "lonely no longer". The list "a guide, a pathfinder, an original settler" builds his importance comically, each title grander than the last, which shows that he is pleased with himself but also laughing at himself, since all he has done is give directions. The formal phrase "conferred on me the freedom of the neighborhood" makes a casual question sound like a ceremony. His optimism is then linked to the season. The "great bursts of leaves" growing "just as things grow in fast movies" is a simile of sudden, speeded-up life, and it matches his "familiar conviction that life was beginning over again with the summer".',
             },
-            markScheme: [
-              'Identifies and analyses language features and techniques',
-              'Comments on the effects of specific words and phrases',
-              'Explores how language creates a vivid picture of setting and character',
-              'Uses textual references to support analysis',
-              'Top band: perceptive, detailed, conceptualised analysis',
-            ],
+            markScheme: {
+              'How the marks are given': Q02_MARKING,
+              'Credit, for example': [
+                'His loneliness, then the change marked by "lonely no longer".',
+                'The comic, growing list "a guide, a pathfinder, an original settler", and the mock-ceremonial "conferred on me the freedom of the neighborhood".',
+                'The simile of leaves growing "just as things grow in fast movies" and his "familiar conviction" of a new start.',
+              ],
+            },
           },
           {
-            id: 'wjec-c1-02-q3',
+            id: 'wjec-c1-02-a3',
             questionNumber: 3,
+            label: '03',
             questionText:
-              "What impressions do you get of Maggie's life and character from this extract?\n\nYou must refer to the text to support your answer.",
+              'Read from "There was so much to read" to "every particular except shape and size."\n\nWhat impressions do you get of the narrator in these lines?\n\nQuote from these lines to support your answer, and analyse the writer\'s choice of words, using subject terms where they help.',
             marks: 10,
-            suggestedTimeMinutes: 12,
+            suggestedTimeMinutes: 13,
             questionType: 'analysis',
             extract: EXTRACT_02,
             extractSource: EXTRACT_02_SOURCE,
             modelAnswers: {
-              'Grade 4-5':
-                'Maggie seems like a quiet, private person who keeps to herself. She walks "apart" from the other women, enclosed in a "private silence." Her life is hard - she works twelve-hour shifts in a factory and comes home to care for her sick mother. The house is poor, with peeling wallpaper and cheap food like bread and margarine. She stands in the hallway "gathering herself" before seeing her mother, which shows she needs strength to face the situation. The brief exchange "That you, Maggie?" / "It\'s me, Mam" shows a familiar routine between them. Maggie seems strong and enduring despite her difficult circumstances.',
               'Grade 6-7':
-                'Maggie emerges as a figure defined by endurance, isolation, and a quiet resilience that the writer refuses to romanticise. Her separation from the other workers is presented not as superiority but as a fundamental aspect of her character - she has walked apart "all her life," the temporal extension suggesting this is not a response to circumstance but a permanent condition. The detail that others have "long since stopped trying to penetrate" her silence implies past attempts at connection that were not rebuffed but simply absorbed without result. Her home life is constructed through ritual and obligation: the unlocked door, the laid table, the exchange of minimal dialogue. The moment when she stands in the hallway "gathering herself" is psychologically precise - it reveals the emotional cost of caregiving, the need to compose a version of herself capable of entering the kitchen and performing normality. The food on the table - "chipped plates, a loaf, margarine in its paper" - tells a story of poverty through specific objects, each one carrying class markers (margarine, not butter; chipped, not whole). Maggie\'s character is ultimately one of contained grief: she lives in a house whose dominant smell is illness she has "stopped noticing," a detail that suggests not insensitivity but the adaptation necessary for survival.',
+                'The narrator comes across as hopeful and ambitious. He describes the "young breath-giving air" as if health could simply be "pulled down" out of it, which suggests energy and optimism. His new books on banking stand "in red and gold like new money from the mint": the simile shows that he connects them with getting rich, and the names "Midas and Morgan and Mæcenas", all famous for wealth, show how high his hopes are.\n\nHowever, he also makes fun of himself. He calls his college editorials "very solemn and obvious", and he mocks his own plan to become "that most limited of all specialists", the "well-rounded man". This is a joke, because a well-rounded man is supposed to be the opposite of a specialist. It suggests he is clever, witty and honest about his faults.\n\nIn the second paragraph he seems an amused observer of the place. He calls it "one of the strangest communities in North America" and describes the two Eggs with playful exaggeration, as "a pair of enormous eggs" jutting into "the great wet barnyard of Long Island Sound". The metaphor of the barnyard makes the grand setting sound homely and comic, and his joke about "the gulls that fly overhead" shows that he enjoys seeing things from an unusual angle.',
+              'Grade 8-9':
+                'The narrator presents himself with a mixture of hope and self-mockery, and the language lets us see both. His first sentence is buoyant: "so much to read" and "so much fine health" are paired by repetition, and the phrase "pulled down out of the young breath-giving air" makes health something to be harvested, as if the summer were ripe fruit. The books he buys are revealing. They are on "banking and credit and investment securities", and they stand "in red and gold like new money from the mint", a simile that turns books into banknotes. The alliterative trio "Midas and Morgan and Mæcenas" joins a myth, a banker and a patron, so his dream of knowledge is really a dream of fortune.\n\nHe is also a narrator who undercuts himself. His college writing was "very solemn and obvious", and he plans to become "that most limited of all specialists", a paradox, since the "well-rounded man" is meant to be the very opposite of a specialist. He then admits "This isn’t just an epigram", drawing attention to his own cleverness while defending it: "life is much more successfully looked at from a single window, after all." This hints that he is a watcher rather than a doer, someone who will observe the lives of others.\n\nThat watching eye shapes the second paragraph. He finds his new home "one of the strangest communities in North America" and describes it in a mock-scientific tone ("among other natural curiosities, two unusual formations of land"). The Sound becomes "the great wet barnyard of Long Island Sound", deflating grandeur with a farmyard metaphor, and he imagines the view of "the gulls that fly overhead" before turning to "the wingless", meaning people like us. The impression is of an intelligent, ironic narrator who sees more than he says, and whose interest in difference ("their dissimilarity in every particular except shape and size") prepares us for a story about two very different worlds.',
             },
-            markScheme: [
-              'Analyses character and life circumstances with textual support',
-              'Comments on how the writer creates impressions through detail and technique',
-              'Considers what is implied as well as stated',
-              'Top band: perceptive, thoughtful, detailed interpretation',
-            ],
+            markScheme: {
+              'How the marks are given': Q03_MARKING,
+              'Credit, for example': [
+                'His optimism and energy: "so much fine health", "the young breath-giving air".',
+                'His hopes of wealth: books "like new money from the mint", "Midas and Morgan and Mæcenas".',
+                'His self-mockery: "very solemn and obvious editorials", the paradox of "that most limited of all specialists".',
+                'His position as an observer who looks at life "from a single window", and his ironic, playful description of the two Eggs and "the great wet barnyard of Long Island Sound".',
+              ],
+            },
           },
           {
-            id: 'wjec-c1-02-q4',
+            id: 'wjec-c1-02-a4',
             questionNumber: 4,
+            label: '04',
             questionText:
-              '"The writer makes the reader feel deep sympathy for Maggie and her mother without ever becoming sentimental."\n\nTo what extent do you agree with this statement? You should consider the writer\'s use of language and structure in your response.',
-            marks: 15,
-            suggestedTimeMinutes: 18,
+              'Read from "I lived at West Egg" to "all for eighty dollars a month."\n\nHow does the writer create a contrast between the narrator\'s house and his neighbour\'s mansion in these lines?\n\nIn your answer, consider:\n- how the paragraph is organised to build the contrast\n- the words and phrases the writer chooses\n- how these choices affect the reader.\n\nSupport your points with references to the text, using subject terms where they help.',
+            marks: 10,
+            suggestedTimeMinutes: 13,
+            questionType: 'analysis',
+            extract: EXTRACT_02,
+            extractSource: EXTRACT_02_SOURCE,
+            modelAnswers: {
+              'Grade 6-7':
+                'The writer builds the contrast by moving from the narrator\'s small house to the huge mansion and back again. The paragraph begins with West Egg as "the less fashionable of the two", and the hesitation in "the—well," shows the narrator searching politely for a word. His house is "squeezed between two huge places", and the verb "squeezed" makes it sound tiny and uncomfortable.\n\nThe neighbour\'s mansion is then described at length, with a list joined by "and": a tower, "a marble swimming pool, and more than forty acres of lawn and garden". The adjective "colossal" and the comparison with "some Hôtel de Ville in Normandy" show that it is enormous and grand, but the phrase "spanking new under a thin beard of raw ivy" suggests that it is trying to look old and is not. The short sentence "It was Gatsby’s mansion." stands out and makes the reader curious, especially when the narrator adds that he did not know Mr Gatsby.\n\nFinally, he turns back to his own home with a joke: it was "an eyesore, but it was a small eyesore". The repetition is funny and modest. The paragraph ends with the price, "all for eighty dollars a month", which reminds us how little he pays compared with the thousands his neighbours pay, and makes the contrast both amusing and slightly uneasy.',
+              'Grade 8-9':
+                'The contrast is built into the shape of the paragraph, which begins and ends with the narrator\'s modest place but spends its centre on his neighbour\'s. It opens with a social label, "the less fashionable of the two", and the dash in "the—well," is a comic pause, as if the narrator is too polite to say the word poorer. At once he warns us that the label is "a most superficial tag" for "the bizarre and not a little sinister contrast" between the two Eggs; the understatement "not a little sinister" hints at something darker than snobbery, and makes the reader alert.\n\nHis own house is placed physically, "at the very tip of the egg", "squeezed between two huge places". The past participle "squeezed" makes it the victim of its neighbours\' size. The mansion is then given a long, accumulating sentence: "colossal affair by any standard", a "factual imitation" of a French town hall, "a tower", "a marble swimming pool", "more than forty acres". The polysyndeton ("and a marble swimming pool, and more than forty acres") piles up excess. Yet the details also mock it. The phrase "factual imitation" is a contradiction, a copy that insists on its own accuracy, and "spanking new under a thin beard of raw ivy" personifies the building as a young man pretending to an age he has not reached.\n\nThe structure then narrows to a short sentence and its correction: "It was Gatsby’s mansion. Or, rather, as I didn’t know Mr. Gatsby, it was a mansion inhabited by a gentleman of that name." The self-correction creates mystery around the owner while showing the narrator\'s care not to claim more than he knows. The last sentence returns to his "eyesore", repeated and shrunk to "a small eyesore", and ends on the bathos of "all for eighty dollars a month". The phrase "the consoling proximity of millionaires" is gently ironic: he is comforted by being near wealth he does not share. The effect is comic, but the reader is left curious about Gatsby and uneasy about a world where such differences sit side by side.',
+            },
+            markScheme: {
+              'How the marks are given': Q04_MARKING,
+              'Credit, for example': [
+                'Structure: the paragraph moves from the narrator\'s house to the mansion and back, ending on the price; the short sentence "It was Gatsby’s mansion." and the self-correction that follows.',
+                'The excess of the mansion: "colossal", "a marble swimming pool, and more than forty acres of lawn and garden", built up by the list.',
+                'The mockery in "factual imitation" and "spanking new under a thin beard of raw ivy".',
+                'The modest humour of "an eyesore, but it was a small eyesore" and the irony of "the consoling proximity of millionaires".',
+                'The hint of something darker in "the bizarre and not a little sinister contrast".',
+              ],
+            },
+          },
+          {
+            id: 'wjec-c1-02-a5',
+            questionNumber: 5,
+            label: '05',
+            questionText:
+              'Read from "Across the courtesy bay" to the end of the extract.\n\n"In this extract the narrator is an outsider, looking in at a world of wealth that he does not belong to."\n\nHow far do you agree with this view?\n\nIn your answer, consider:\n- what you think and feel about the narrator, in these lines and across the whole extract\n- the choices the writer makes to lead you to those thoughts and feelings.\n\nSupport your points with references to the text.',
+            marks: 10,
+            suggestedTimeMinutes: 13,
             questionType: 'evaluation',
             extract: EXTRACT_02,
             extractSource: EXTRACT_02_SOURCE,
             modelAnswers: {
-              'Grade 4-5':
-                'I agree that the writer creates sympathy without being too emotional. The details about Maggie\'s hard work and poor home make us feel sorry for her, but the writing is quite matter-of-fact. Her mother is clearly ill and getting worse - "smaller than she had been yesterday" - which is sad but described simply without exaggeration. The brief dialogue between them is realistic and understated. The writer shows poverty through specific details like "chipped plates" and "margarine" rather than telling us to feel sorry for them. The contrast with the orchestral music on the wireless reminds us of inequality without preaching about it.',
               'Grade 6-7':
-                'I strongly agree, and I would identify the writer\'s primary technique as strategic restraint - the systematic withholding of emotional commentary that forces the reader to generate sympathy independently. The extract never tells us Maggie\'s life is hard; it shows us raw hands, twelve-hour shifts, a house that smells of illness, and leaves us to draw our own conclusions. This restraint is structurally embedded: the extract moves from the public space of the factory to the private space of the hallway, narrowing its focus progressively until it arrives at the mother\'s diminishing body - the most emotionally charged detail is saved for last, a structural choice that creates cumulative rather than immediate impact. The mother is given no self-pity: she calls out to Maggie with the familiarity of long habit, and her "blanket across her knees" is a detail of ordinary domestic management, not theatrical suffering. The wireless provides the extract\'s most sophisticated anti-sentimental device: the orchestral music is "impossibly distant," and this impossibility prevents the scene from becoming aspirational. There is no suggestion that things could be different; the class divide is presented as structural, permanent, beyond individual remedy. Sympathy arises not from emotional manipulation but from the accumulation of precise, unglamorous detail.',
+                'I partly agree. In many ways the narrator is an outsider. He lives in a "cardboard bungalow" and calls his house "an eyesore", while the rich live in "white palaces" that "glittered along the water", a description that makes their world seem dazzling and far away across the bay. He is amazed by Tom\'s money. Tom has brought "a string of polo ponies" east, and the narrator admits, "It was hard to realize that a man in my own generation was wealthy enough to do that." This shows that he is not used to such wealth.\n\nHowever, he is not completely outside it. Daisy is his "second cousin once removed", he knew Tom at college, and he is going "to have dinner with the Tom Buchanans", so he has a way in. He also seems to see through the rich. He describes Tom as a man whose best days ended "at twenty-one", so that everything since "savors of anti-climax", and he says the couple "drifted here and there unrestfully wherever people played polo and were rich together". The word "drifted" makes their lives sound aimless. So I think he is an outsider in money but an insider in family, and his position lets him judge the rich as well as admire them.',
+              'Grade 8-9':
+                'I agree that the narrator stands outside the world of wealth, but I think the extract shows him as something more interesting than an outsider: a man on its edge, near enough to see it clearly and far enough away to judge it.\n\nThe final lines make the gap vivid. East Egg is seen "Across the courtesy bay", and its "white palaces" "glittered along the water", a verb of distant, reflected light, as if the rich were seen through a window. His astonishment at Tom\'s wealth is honest: Tom came East "in a fashion that rather took your breath away", and the polo ponies make it "hard to realize that a man in my own generation was wealthy enough to do that." Across the whole extract the writer gives him the props of a modest life, "a weatherbeaten cardboard bungalow at eighty a month", "an old Dodge", a house that is "a small eyesore", so that his view of millionaires is always from below.\n\nYet he is not a stranger to them. Daisy is his "second cousin once removed", he says "I’d known Tom in college", and "the history of the summer really begins" with a dinner at their house, so he is admitted where he does not belong. What marks him out is his judgement. His portrait of Tom moves from praise to deflation: "one of the most powerful ends that ever played football at New Haven", then "such an acute limited excellence at twenty-one that everything afterward savors of anti-climax". The paradox of "acute limited excellence" sums up a life that peaked too soon. The Buchanans "drifted here and there unrestfully", and the final image of Tom seeking "a little wistfully, for the dramatic turbulence of some irrecoverable football game" is almost pitying. Even his confession "I had no sight into Daisy’s heart" shows a narrator honest about the limits of what he sees.\n\nSo the writer makes me trust him precisely because he is outside the money but inside the circle. He is an outsider by income and an insider by family, which is why his view of wealth is both admiring and quietly critical.',
             },
-            markScheme: [
-              'Evaluates with a clear, sustained personal response',
-              'Analyses language and structural methods in relation to the statement',
-              'Uses textual evidence to support evaluation',
-              'Considers alternative readings and nuances',
-              'Top band: evaluative, critical, conceptualised response',
-            ],
+            markScheme: {
+              'How the marks are given': Q05_MARKING,
+              'Credit, for example': [
+                'Agreement: the distance of East Egg\'s "white palaces" across the bay; his amazement at Tom\'s wealth; his own cheap bungalow, old Dodge and "small eyesore".',
+                'Disagreement: his family tie to Daisy and his college friendship with Tom; his invitation to dinner; his confident judgement of Tom\'s "acute limited excellence" and of the Buchanans who "drifted here and there unrestfully".',
+                "A judgement on how far he belongs, supported from the final lines and the whole extract, with comment on how the writer shapes the reader's view of him.",
+              ],
+            },
           },
         ],
       },
@@ -402,30 +609,24 @@ export const wjecC1A: MockExamPaper[] = [
         id: 'wjec-c1-02-writing',
         title: 'Section B: Writing',
         description:
-          'You are advised to spend about 45 minutes on this section. You are reminded of the need to plan your answer.',
+          'In this section you are assessed on your creative prose writing. Up to 24 marks are given for communication and organisation, and up to 16 for vocabulary, sentence structure, spelling and punctuation. Think about the purpose and the reader of your writing. You are advised to spend about 45 minutes on this section: about 10 minutes planning and about 35 minutes writing. Aim for about 450 to 600 words.',
         totalMarks: 40,
         suggestedTimeMinutes: 45,
         questions: [
           {
-            id: 'wjec-c1-02-q5',
-            questionNumber: 5,
+            id: 'wjec-c1-02-b1',
+            questionNumber: 1,
+            label: '11',
             questionText:
-              'Choose ONE of the following titles for your creative prose writing:\n\nEither:\n(a) The Last Shift.\nWrite a short piece of prose with this title.\n\nOr:\n(b) Write about a time when someone realised their life needed to change.\nYour response could be real or imagined.\n\n(24 marks for content and organisation / 16 marks for technical accuracy)',
+              'Write one piece, choosing from these four titles:\n\n(a) The Last Shift.\n\n(b) Write about a time when you realised that something in your life needed to change.\n\n(c) Write a story that begins: "The first thing I noticed about the new house was the silence."\n\n(d) Write a story that ends with these words: "I knew then that I had made the right choice."\n\nYour writing may be real or imagined.',
             marks: 40,
             suggestedTimeMinutes: 45,
             questionType: 'creative-writing',
             modelAnswers: {
-              'Grade 4-5':
-                'A clear piece of creative prose with: recognisable structure; use of descriptive techniques; varied vocabulary; generally accurate SPaG; some attempt to create atmosphere or convey emotion.',
-              'Grade 6-7':
-                'A compelling piece with: controlled atmosphere; crafted imagery; structural sophistication; consistent SPaG accuracy; effective use of setting and detail to convey meaning.',
               'Grade 8-9':
-                'An assured, distinctive piece with: original voice; precise and sustained imagery; masterful control of pace and structure; technical virtuosity; a nuanced exploration of change, routine, or social reality.',
+                "A model answer to (a), The Last Shift (about 520 words).\n\nThe café opened at seven, the way it had every Saturday for thirty-one years, and for the first time since I started working there I was early.\n\nMrs Okafor was already behind the counter, polishing the coffee machine as though it were a trophy. The sign in the window, hand-lettered in her careful capitals, said CLOSING ON THE 30TH. THANK YOU FOR EVERYTHING. It had been there for a fortnight, and I still had not got used to it.\n\n'You don't have to work today, Leah,' she said. 'Today is for the regulars.'\n\n'I am a regular,' I said, and tied on my apron.\n\nThe first of them arrived at ten past seven. Mr Ellis always had two poached eggs and the crossword, and he always sat at the table by the radiator, which wobbled unless you folded a beer mat under its leg. I had folded that beer mat a hundred times. That morning I noticed that he had brought his own.\n\nBy nine the place was full. People came who had not been in for years: a woman who had eaten her first ice cream there in 1987, a man who had proposed at the corner table and was now back with his grandchildren, a whole football team in muddy socks, apologising for the mud. They brought cards and flowers and, in one case, a cake shaped like the café itself, with icing for windows. Mrs Okafor cried twice before ten and pretended both times that it was the onions.\n\nI carried plates until my arms ached, and I learned more about the café in one morning than in two years of Saturdays. I learned that the faded photograph above the till showed her husband on opening day, holding a ladle like a sword. I learned that the scratch on the counter came from a dropped tray in the great snow of 2010, when the café was the only place open on the street and stayed open all night.\n\nAt two o'clock the last customer left. The silence afterwards was enormous, the kind of silence that has a shape. Mrs Okafor turned the sign to CLOSED and sat down heavily at the table by the radiator. It wobbled. Mr Ellis had taken his beer mat with him.\n\nI made two cups of tea, the strong way she liked it, and sat opposite her.\n\n'What will you do now?' I asked.\n\nShe thought about it for a long time. 'Sleep until eight,' she said at last. 'Then I will sit in someone else's café and let them bring me eggs.'\n\nWe laughed, and the laugh turned into something else, and for a while neither of us said anything.\n\nBefore I left, she pressed a key into my hand. It was the key to the front door, worn smooth and bright.\n\n'They are changing the locks,' she said. 'It opens nothing now. But it opened a lot of mornings.'\n\nI still have it. It hangs on a hook by my bed, and some Saturdays, when I wake at seven without meaning to, I hold it for a moment before I get up.",
             },
-            markScheme: [
-              'Content & Organisation (24 marks): Communication, voice, structure, tone',
-              'Technical Accuracy (16 marks): Sentence demarcation, punctuation, spelling, sentence variety',
-            ],
+            markScheme: Q11_MARKING,
           },
         ],
       },
@@ -433,7 +634,7 @@ export const wjecC1A: MockExamPaper[] = [
   },
 
   // ═══════════════════════════════════════════════════════════════════════════
-  // WJEC COMPONENT 1 - MOCK 03 (Post-Colonial)
+  // WJEC COMPONENT 1, MOCK 03: Animal Farm, Chapter II
   // ═══════════════════════════════════════════════════════════════════════════
   {
     id: 'wjec-c1-03',
@@ -448,98 +649,135 @@ export const wjecC1A: MockExamPaper[] = [
       {
         id: 'wjec-c1-03-reading',
         title: 'Section A: Reading',
-        description: `Read the extract below carefully. Then answer all the questions in this section.\n\nSource: ${EXTRACT_03_SOURCE}`,
+        description: `Read the extract below carefully, then answer all the questions in this section. You are advised to spend about 10 minutes reading the extract and about 50 minutes answering the questions.\n\nSource: ${EXTRACT_03_SOURCE}`,
         totalMarks: 40,
         suggestedTimeMinutes: 60,
         questions: [
           {
-            id: 'wjec-c1-03-q1',
+            id: 'wjec-c1-03-a1',
             questionNumber: 1,
+            label: '01',
             questionText:
-              'Read the first paragraph. List five things you learn about the scene at the harbour from this paragraph.',
+              'Read the first paragraph, from "Now, as it turned out" to "the animals were underfed."\n\nList five things you learn about Mr Jones and his farm in this paragraph.',
             marks: 5,
             suggestedTimeMinutes: 5,
+            questionType: 'retrieval',
+            extract: EXTRACT_03,
+            extractSource: EXTRACT_03_SOURCE,
+            modelAnswers: {
+              'Grade 6-7':
+                '1. In past years he had been a capable farmer.\n2. He had lost money in a lawsuit.\n3. He had started drinking more than was good for him.\n4. He spent whole days lounging in his Windsor chair in the kitchen.\n5. His men were idle and dishonest.',
+            },
+            markScheme: {
+              'How the marks are given': Q01_MARKING,
+              'Credit, for example': [
+                'He had been a hard master; he had been a capable farmer; he had fallen on evil days; he lost money in a lawsuit and was disheartened; he drank too much; he lounged for whole days in his Windsor chair reading the newspapers; he fed Moses crusts soaked in beer; his men were idle and dishonest; the fields were full of weeds; the buildings needed roofing; the hedges were neglected; the animals were underfed.',
+              ],
+            },
+          },
+          {
+            id: 'wjec-c1-03-a2',
+            questionNumber: 2,
+            label: '02',
+            questionText:
+              'Read from "June came and the hay was almost ready" to "the animals were still unfed."\n\nHow does the writer show that the animals have been neglected?\n\nBack up your points with short quotations, and explain what the writer\'s words suggest, using subject terms where they help.',
+            marks: 5,
+            suggestedTimeMinutes: 6,
             questionType: 'short-answer',
             extract: EXTRACT_03,
             extractSource: EXTRACT_03_SOURCE,
             modelAnswers: {
-              'Grade 4-5':
-                '1. The harbour was at Freetown. 2. Cargo nets were swinging overhead. 3. Crates of tinned fruit and machine parts were being loaded. 4. The dock workers moved with unhurried competence. 5. A tugboat was pulling the ship out through brown water.',
-            },
-            markScheme: ['1 mark per valid point, maximum 5'],
-          },
-          {
-            id: 'wjec-c1-03-q2',
-            questionNumber: 2,
-            questionText:
-              "How does the writer use language to convey Adaeze's complex emotions as she leaves her country?\n\nYou should comment on:\n- the writer's choice of words and phrases\n- the writer's use of language features and techniques\n- the effects on the reader.\n\nYou must refer to the text to support your answer.",
-            marks: 10,
-            suggestedTimeMinutes: 12,
-            questionType: 'analysis',
-            extract: EXTRACT_03,
-            extractSource: EXTRACT_03_SOURCE,
-            modelAnswers: {
-              'Grade 4-5':
-                'The writer shows Adaeze\'s emotions through physical details. Her "throat tightened" which shows she is upset even though she tries not to be. She watches her country "recede" which means it is slowly disappearing, creating a sense of loss. The shoreline becomes "a green blur" which suggests her vision might be affected by tears, or that her homeland is becoming unclear. She had prepared for this moment but finds "preparation was useless against the body\'s own knowledge of loss" which means her body reacts emotionally even when her mind tries to stay calm. The word "exile" suggests she feels forced to leave rather than choosing to go.',
               'Grade 6-7':
-                'The writer creates a complex emotional portrait through the tension between intellectual control and bodily rebellion. Adaeze has prepared "with the same methodical discipline she applied to everything" - yet this preparation proves "useless against the body\'s own knowledge of loss," a formulation that gives the body its own epistemology, a way of knowing that reason cannot override. The shoreline\'s departure is described with deliberate anti-climax: it recedes "not dramatically, not all at once, but inch by inch," the negatives refusing the reader the emotional satisfaction of a cinematic farewell. The image of the shoreline softening into "a green blur that could have been anywhere, or nowhere" enacts the process of erasure: home becomes generic, interchangeable, and then absent. The semantic field of preparation - "methodical," "discipline," "packing," "obtaining," "writing letters" - creates a vocabulary of control that the physical details systematically dismantle: the tightening throat, the hot railing, and the moment she "discovered" that the body knows what the mind has tried to deny. The word "exile" is strategically placed in contrast to the other passengers\' "adventure," distinguishing Adaeze\'s departure as compelled rather than chosen, political rather than recreational.',
-              'Grade 8-9':
-                'The writer constructs Adaeze\'s emotional experience as a contest between two knowledge systems: the rational, prepared mind and the insurgent body. The opening paragraph performs controlled detachment - the harbour is observed with almost documentary precision ("cargo nets," "crates of tinned fruit and machine parts"), as if Adaeze is cataloguing rather than feeling. Her country recedes "inch by inch," and the measured adverbial phrase keeps pace with the tugboat, refusing acceleration into sentiment. Yet the softening shoreline - "a green blur that could have been anywhere, or nowhere" - enacts a philosophical dissolution: home becomes first generic, then abstract, then null. The pivot in paragraph two is the word "discovered": Adaeze does not feel loss; she discovers it, as if encountering empirical evidence against her own hypothesis. The phrase "the body\'s own knowledge of loss" is the extract\'s most conceptually rich formulation, positing somatic wisdom as a counter-discourse to intellectual preparation. The other passengers function as a structural foil: their "social rituals" and enthusiasm reduce the voyage to tourism, throwing Adaeze\'s experience into sharper relief. The fury she carries is "so carefully contained that even she sometimes mistook it for calm" - a sentence that retroactively reframes every previous instance of her composure as potentially performative. The colonial irony of studying English Literature is acknowledged but refused as a dwelling-place: "There were more productive uses for anger." This sentence, in its clipped pragmatism, tells us more about Adaeze than any extended psychological portrait could. The final paragraph\'s imagery - "The sea closed behind the ship like a door" - converts the natural into the architectural, the simile making the way home feel as final as a shut door.',
+                'The writer shows neglect through a chain of careless human actions. Mr Jones got "so drunk at the Red Lion that he did not come back till midday on Sunday", and the long sentence makes the hours of absence feel drawn out. His men are no better: they "had gone out rabbiting, without bothering to feed the animals", and the phrase "without bothering" shows that feeding the animals did not even seem worth the effort to them. When Jones returns, he "immediately went to sleep" with a newspaper "over his face", a comic but telling image of a man shutting out his responsibilities. These lines end with the plain phrase "the animals were still unfed", and the word "still" stresses how long they have waited, so the reader understands why they will rebel.',
             },
-            markScheme: [
-              'Identifies and analyses language features and techniques',
-              'Comments on the effects of specific words and phrases',
-              'Explores how language conveys complex and layered emotions',
-              'Uses textual references to support analysis',
-              'Top band: perceptive, detailed, conceptualised analysis',
-            ],
+            markScheme: {
+              'How the marks are given': Q02_MARKING,
+              'Credit, for example': [
+                'Jones\'s drunken absence, "so drunk at the Red Lion that he did not come back till midday on Sunday".',
+                'The men who went "rabbiting, without bothering to feed the animals".',
+                'Jones asleep with the newspaper "over his face", and the final stress on "still unfed".',
+              ],
+            },
           },
           {
-            id: 'wjec-c1-03-q3',
+            id: 'wjec-c1-03-a3',
             questionNumber: 3,
+            label: '03',
             questionText:
-              'What impressions do you get of Adaeze as a character, and how does the writer create these impressions?\n\nYou must refer to the text to support your answer.',
+              'Read from "At last they could stand it no longer." to "with the animals pursuing them in triumph."\n\nHow does the writer show the thoughts and feelings of the animals, and of the men, as the animals rise up?\n\nQuote from these lines to support your answer, and analyse the writer\'s choice of words, using subject terms where they help.',
             marks: 10,
-            suggestedTimeMinutes: 12,
+            suggestedTimeMinutes: 13,
             questionType: 'analysis',
             extract: EXTRACT_03,
             extractSource: EXTRACT_03_SOURCE,
             modelAnswers: {
-              'Grade 4-5':
-                'Adaeze seems like a strong, determined young woman. She has prepared carefully for leaving, "packing her trunk, obtaining her documents, writing letters." She has won a scholarship to the University of London, which shows she is intelligent. She carries "a fury so carefully contained" which suggests she is angry about something - perhaps colonialism or being forced to leave her country. She is described as disciplined and methodical. Even when upset, she "lifted her chin" and went to find her cabin, which shows her determination not to be defeated. She is only twenty-three, which makes her journey seem even braver.',
               'Grade 6-7':
-                'Adaeze is presented as a character of formidable discipline whose control masks deep emotional and political complexity. Her "methodical discipline" is applied to everything - preparation, emotion, anger - suggesting a personality that processes experience through organisation. The list of what she carries is brilliantly curated: "a scholarship letter from the University of London, three dresses her mother had sewn, and a fury." The zeugmatic combination of objects and emotion - intellectual credential, maternal love made material, and rage - encapsulates her identity in three items. Her fury is "so carefully contained that even she sometimes mistook it for calm," a characterisation that implies both extraordinary self-control and the cost of maintaining it: if anger becomes indistinguishable from calm, the emotional landscape has been fundamentally distorted. Her awareness of the "colonial irony" of studying English Literature in London demonstrates intellectual sophistication, while her decision "not to dwell on it" reveals pragmatism - she can see the contradiction but chooses action over reflection. The final physical detail - "lifted her chin" - is a gesture of defiance, and the active verbs of the last sentence ("turned," "lifted," "went") replace the passive experience of watching the shoreline recede with purposeful movement.',
+                'The animals\' feelings build from desperation to anger and then triumph. The short sentence "At last they could stand it no longer" shows that their patience has run out, and "At last" suggests that they have endured a great deal. When the men arrive "with whips in their hands, lashing out in all directions", the violent verb "lashing" shows the men\'s cruelty and explains the animals\' anger: "This was more than the hungry animals could bear." The adjective "hungry" reminds us that the uprising comes from need rather than plotting. "With one accord" shows that they act together, as one body, and "flung themselves upon their tormentors" suggests fury, while the noun "tormentors" shows how the animals see the men.\n\nThe men\'s feelings are the opposite. They are shocked: they "suddenly found themselves being butted and kicked from all sides", and the passive construction shows that they have lost control. The writer says plainly that "The situation was quite out of their control" and that the uprising "frightened them almost out of their wits". The men who were "used to thrashing and maltreating" the animals now "took to their heels", an idiom that makes them sound like cowards. By the end the animals are "pursuing them in triumph", and the word "triumph" shows their pride and joy.',
+              'Grade 8-9':
+                'The writer shows the animals\' feelings changing at speed, and the men\'s collapsing, through mostly short, plain sentences that make the uprising feel sudden and natural. "At last they could stand it no longer" is a turning point: the phrase "At last" carries all the hungry hours that came before. The first act of rebellion is not planned but bodily, a cow breaking the door "with her horn", and the animals simply "help themselves from the bins", a phrase of ordinary need rather than violence.\n\nIt is the men who bring violence. They appear "with whips in their hands, lashing out in all directions", and the participle "lashing" with "in all directions" suggests blind, indiscriminate cruelty. The animals\' reaction is given in a short sentence, "This was more than the hungry animals could bear", which makes their anger seem a reasonable limit being reached. The concession "though nothing of the kind had been planned beforehand" insists that this is instinct, not conspiracy, while "With one accord" shows a sudden unity. The noun "tormentors" is chosen from the animals\' point of view: the men are named by what they have done.\n\nThe men\'s feelings are shown through a reversal of power. Grammatically they become the objects of the action, "being butted and kicked from all sides". The flat statement "The situation was quite out of their control" is almost comic in its understatement, and the writer spells out why they are so shocked: they were used to "thrashing and maltreating just as they chose", so this "sudden uprising" is unthinkable to them. The idioms "frightened them almost out of their wits" and "took to their heels" make the men small and ridiculous. The final image, "all five of them were in full flight down the cart-track", with the animals "pursuing them in triumph", completes the reversal: the hunters are hunted, and the reader shares the animals\' exhilaration.',
             },
-            markScheme: [
-              'Analyses character with textual support',
-              'Comments on how the writer creates impressions through language, detail, and structure',
-              'Considers what is implied as well as stated',
-              'Top band: perceptive, thoughtful, detailed interpretation',
-            ],
+            markScheme: {
+              'How the marks are given': Q03_MARKING,
+              'Credit, for example': [
+                'The animals\' patience breaking: "At last they could stand it no longer"; "This was more than the hungry animals could bear".',
+                'Their unity and fury: "With one accord", "flung themselves upon their tormentors".',
+                'The men\'s cruelty ("lashing out in all directions") turning to shock and fear: "The situation was quite out of their control", "frightened them almost out of their wits", "took to their heels".',
+                'The reversal ending in "pursuing them in triumph".',
+              ],
+            },
           },
           {
-            id: 'wjec-c1-03-q4',
+            id: 'wjec-c1-03-a4',
             questionNumber: 4,
+            label: '04',
             questionText:
-              '"This extract is about much more than one person\'s journey - it explores themes of identity, belonging, and loss."\n\nTo what extent do you agree with this statement? You should consider the writer\'s use of language and structure in your response.',
-            marks: 15,
-            suggestedTimeMinutes: 18,
+              'Read from "Mrs. Jones looked out of the bedroom window" to "decorated on market days."\n\nHow does the writer create a sense of excitement and triumph in these lines?\n\nIn your answer, consider:\n- what happens, and the order in which the writer tells it\n- the words and phrases the writer chooses\n- how these choices affect the reader.\n\nSupport your points with references to the text, using subject terms where they help.',
+            marks: 10,
+            suggestedTimeMinutes: 13,
+            questionType: 'analysis',
+            extract: EXTRACT_03,
+            extractSource: EXTRACT_03_SOURCE,
+            modelAnswers: {
+              'Grade 6-7':
+                'The writer creates excitement through speed. Mrs Jones\'s escape is told in a list of quick actions: she "saw what was happening, hurriedly flung a few possessions into a carpet bag, and slipped out", and the verbs follow one another so fast that the reader feels the rush. Moses "sprang off his perch and flapped after her, croaking loudly", which is almost comic, as if even the raven is panicking. Then the gate is "slammed" behind the men, a loud, final verb. The sentence "Jones was expelled, and the Manor Farm was theirs" comes after a colon, and it sums up the victory in two short clauses, with "theirs" as a powerful last word.\n\nThe next paragraph shows the animals\' joy. They "could hardly believe in their good fortune", and they "gallop in a body right round the boundaries of the farm", which shows their energy and togetherness. The writer then lists the objects they destroy: "the bits, the nose-rings, the dog-chains". The list makes the cruelty of the old life clear, and the adjective "degrading" shows how the animals felt about it. The very short sentence "So were the whips." stands out, because the whips were the symbol of Jones\'s power, and the next sentence shows the result: "All the animals capered with joy". The verb "capered" suggests playful dancing, so the reader shares their triumph.',
+              'Grade 8-9':
+                'The writer builds excitement by making the Rebellion happen faster than anyone can take in, and then lets the triumph spread out in a ritual of destruction.\n\nStructurally, the first paragraph moves from three escapes to a victory. Mrs Jones\'s flight is a single sentence of rapid verbs ("looked", "saw", "flung", "slipped"), and the adverb "hurriedly" with the humble "carpet bag" makes her departure undignified. Moses "flapped after her, croaking loudly", a comic sound effect that deflates the human side. "Meanwhile" cuts back to the main action, and the gate is "slammed", a decisive verb. The paragraph then pauses for its summary: "And so, almost before they knew what was happening, the Rebellion had been successfully carried through". The phrase "almost before they knew what was happening" echoes what was said of Mrs Jones, who "saw what was happening", but now it is the animals who are taken by surprise, by their own success. The colon introduces the plainest possible statement of victory, two balanced clauses ending on the possessive "theirs".\n\nThe second paragraph shows triumph as a physical release. The animals "gallop in a body right round the boundaries", a circuit that claims the farm as their own. Then the writer piles up lists of nouns for the instruments of control: "the bits, the nose-rings, the dog-chains", then "The reins, the halters, the blinkers, the degrading nosebags". The adjectives "cruel" and "degrading" show the animals\' judgement on their past. The short sentence "So were the whips." is the climax, separated from the lists so that it lands alone, and the reaction follows at once: "All the animals capered with joy when they saw the whips going up in flames." The verb "capered" belongs to children or lambs at play, so the reader feels the innocence of their joy. The final detail, Snowball throwing the market-day ribbons on the fire, moves from instruments of pain to ornaments, which hints that the new order will reject even small pleasures. The triumph is real, but it is already becoming a set of rules.',
+            },
+            markScheme: {
+              'How the marks are given': Q04_MARKING,
+              'Credit, for example': [
+                'The speed of the escapes, told in quick verbs ("hurriedly flung", "slipped out", "flapped after her"), and the gate "slammed" behind the men.',
+                'The summary "Jones was expelled, and the Manor Farm was theirs", placed after a colon, ending on "theirs".',
+                'The animals galloping "in a body right round the boundaries", and the lists of hated objects destroyed.',
+                'The short sentence "So were the whips." and the joy of "capered", followed by Snowball\'s ribbons.',
+              ],
+            },
+          },
+          {
+            id: 'wjec-c1-03-a5',
+            questionNumber: 5,
+            label: '05',
+            questionText:
+              'Read the last three paragraphs, from Snowball\'s words about ribbons to the end of the extract.\n\n"By the end of this extract, the animals have won a complete victory, and their lives have changed for the better."\n\nHow far do you agree with this view?\n\nIn your answer, consider:\n- what you think and feel about the animals\' victory, in these lines and across the whole extract\n- the choices the writer makes to lead you to those thoughts and feelings.\n\nSupport your points with references to the text.',
+            marks: 10,
+            suggestedTimeMinutes: 13,
             questionType: 'evaluation',
             extract: EXTRACT_03,
             extractSource: EXTRACT_03_SOURCE,
             modelAnswers: {
-              'Grade 4-5':
-                'I agree that the extract explores bigger themes beyond just Adaeze\'s physical journey. The loss of her country is shown through the shoreline disappearing into "a green blur." Her identity is complex - she is African but going to study English Literature, which is described as a "colonial irony." She feels different from the other passengers because for her the journey is "exile" not "adventure," which shows themes of belonging. Her anger suggests she has experienced injustice. The dresses sewn by her mother represent her connection to home and family. The sea closing "like a door" suggests she cannot go back, which creates a strong sense of loss.',
               'Grade 6-7':
-                'I strongly agree, and I would argue that the writer uses the physical journey as a structural metaphor for the psychological experience of post-colonial displacement. Identity is explored through contradiction: Adaeze is going to study the coloniser\'s literature, a "colonial irony" she sees but has chosen "not to dwell on", and she carries both a contained fury and dresses sewn by a mother she is leaving behind. These details create an identity under tension - pulled between cultures, between gratitude and resentment, between opportunity and loss. Belonging is explored through spatial relationships: Adaeze stands "at the rail," a liminal position between the departing country and the approaching sea; the other passengers are "behind her," physically close but experientially distant, their privilege rendering Adaeze\'s experience invisible to them. Loss operates on multiple registers: the personal (her mother\'s dresses), the national (the vanishing shoreline), and the existential (the sea closing "like a door," a simile that converts natural distance into architectural finality). The writer\'s structural choice - moving from the busy, concrete harbour to the abstract, empty ocean - enacts the journey from specificity to erasure that characterises displacement. The final paragraph\'s decisive verbs ("turned," "lifted," "went") resist the sentimentality of dwelling on loss, suggesting that for Adaeze, forward movement is not recovery but survival strategy.',
+                'I mostly agree. The ending is full of happiness. The animals have "destroyed everything that reminded them of Mr. Jones", and Napoleon gives everyone "a double ration of corn", which contrasts with the start of the extract, where the animals were "underfed" and "still unfed". They sing \'Beasts of England\' "seven times running", which shows how joyful they are, and the last words, "slept as they had never slept before", suggest peace and safety after years of fear. Earlier, Jones\'s whips have gone "up in flames", so their lives have clearly improved.\n\nHowever, there are small signs that the victory is not complete. Snowball\'s rule that ribbons count as clothes, "the mark of a human being", leads Boxer to burn "the small straw hat which he wore in summer to keep the flies out of his ears". The hat was useful to him, so the new rules already take something from him, and Boxer obeys without question. Also, it is Napoleon who "led them back to the store-shed and served out" the food, which suggests that the pigs are already in charge. So the animals are happier, but the writer hints that their new life may have its own problems.',
+              'Grade 8-9':
+                'I agree that the extract ends in a real victory, but I think the writer makes us doubt how complete it is, and whether the change for the better will last.\n\nThe final lines are written to feel like a happy ending. The animals have "destroyed everything that reminded them of Mr. Jones", and the sweeping "everything" suggests a clean break with the past. The "double ration of corn" answers the hunger that began the Rebellion: earlier the animals were "underfed" and, on the day itself, "still unfed". Singing \'Beasts of England\' "from end to end seven times running" is an act of shared joy, and the final clause, "slept as they had never slept before", ends on rest and safety. Across the extract, the writer has made us want this outcome: Jones lounges "drinking" while his men are "idle and dishonest", and when the animals rise "With one accord" we are on their side.\n\nYet the details the writer chooses for these last lines unsettle that feeling. Snowball\'s pronouncement is the first rule of the new farm, and its logic is absolute: ribbons are clothes, clothes are "the mark of a human being", so "All animals should go naked". Boxer\'s response is touching and troubling. He burns "the small straw hat which he wore in summer to keep the flies out of his ears", something that eased his life, simply because he "heard this". His obedience is instant, and the writer lets the useful hat go "on to the fire with the rest" without comment, which invites the reader to notice what the animals do not. Equally, the food is not shared out by the animals together: Napoleon "led them back to the store-shed and served out" the rations, so a pig controls the store and decides each animal\'s share, down to "two biscuits for each dog".\n\nSo my thoughts and feelings are mixed, as the writer intends. The animals\' lives have changed for the better for now, and their joy is genuine; but the final paragraphs, by showing who makes the rules and who hands out the food, suggest that the Rebellion has changed who is in charge more surely than it has changed how the farm will be run.',
             },
-            markScheme: [
-              'Evaluates with a clear, sustained personal response',
-              'Analyses language and structural methods in relation to the statement',
-              'Uses textual evidence to support evaluation',
-              'Considers alternative readings and nuances',
-              'Top band: evaluative, critical, conceptualised response',
-            ],
+            markScheme: {
+              'How the marks are given': Q05_MARKING,
+              'Credit, for example': [
+                'Agreement: the destruction of "everything that reminded them of Mr. Jones"; the "double ration of corn" after hunger; the singing; sleeping "as they had never slept before"; the burning of the whips.',
+                'Disagreement: Snowball\'s rule that "All animals should go naked"; Boxer burning the hat that kept the flies away, without question; Napoleon serving out the food, down to "two biscuits for each dog".',
+                'A clear judgement drawn from the final paragraphs and the whole extract, with comment on how the writer leads the reader to feel joy and unease.',
+              ],
+            },
           },
         ],
       },
@@ -547,30 +785,24 @@ export const wjecC1A: MockExamPaper[] = [
         id: 'wjec-c1-03-writing',
         title: 'Section B: Writing',
         description:
-          'You are advised to spend about 45 minutes on this section. You are reminded of the need to plan your answer.',
+          'In this section you are assessed on your creative prose writing. Up to 24 marks are given for communication and organisation, and up to 16 for vocabulary, sentence structure, spelling and punctuation. Think about the purpose and the reader of your writing. You are advised to spend about 45 minutes on this section: about 10 minutes planning and about 35 minutes writing. Aim for about 450 to 600 words.',
         totalMarks: 40,
         suggestedTimeMinutes: 45,
         questions: [
           {
-            id: 'wjec-c1-03-q5',
-            questionNumber: 5,
+            id: 'wjec-c1-03-b1',
+            questionNumber: 1,
+            label: '11',
             questionText:
-              'Choose ONE of the following titles for your creative prose writing:\n\nEither:\n(a) The Crossing.\nWrite a short piece of prose with this title.\n\nOr:\n(b) Write about a time when someone left a place they loved.\nYour response could be real or imagined.\n\n(24 marks for content and organisation / 16 marks for technical accuracy)',
+              'Write one piece, choosing from these four titles:\n\n(a) The Crossing.\n\n(b) Write about a time when you had to leave a place you loved.\n\n(c) Write a story that begins: "The rain had not stopped for three days."\n\n(d) Write a story that ends with these words: "For the first time, the island felt like home."\n\nYour writing may be real or imagined.',
             marks: 40,
             suggestedTimeMinutes: 45,
             questionType: 'creative-writing',
             modelAnswers: {
-              'Grade 4-5':
-                'A clear piece of creative prose with: recognisable structure; use of descriptive techniques; varied vocabulary; generally accurate SPaG; some attempt to convey a sense of place and emotion.',
-              'Grade 6-7':
-                'A compelling piece with: controlled atmosphere; crafted imagery; structural sophistication; consistent SPaG accuracy; effective exploration of departure, journey, or displacement.',
               'Grade 8-9':
-                'An assured, distinctive piece with: original voice; precise and sustained imagery; masterful control of pace and structure; technical virtuosity; a mature exploration of identity, belonging, or cultural transition.',
+                "A model answer to (a), The Crossing (about 520 words).\n\nThe ferry to the island left at half past ten, and Dad had us at the harbour by nine, because Dad believed that being early was a kind of politeness to the universe.\n\nI sat on our biggest suitcase and watched the water. It was a hard, grey morning, the kind where the sea and the sky cannot agree where one ends and the other begins. Out there, somewhere in the grey, was the island where we were going to live. I had seen it on a map. It was the shape of a boot that someone had kicked off and left lying in the sea.\n\n'It'll be an adventure, Mia,' Dad said, for the fourth time.\n\nI did not answer. Adventures, in my experience, were things that happened in books to people who had chosen them. I had not chosen this. Dad had got a job at the island's school, the school had seven pupils, and in two days I would be the eighth.\n\nThe ferry, when it came, was smaller than I expected, a blue and white boat with rust weeping from its bolts. We drove the car on and climbed the narrow stairs to the deck. The engine shuddered into life, and the harbour began, very slowly, to slide away from us.\n\nThat was when I saw the girl.\n\nShe was about my age, with a yellow raincoat and hair the colour of wet sand, and she was leaning over the rail at the very front of the boat, where the spray came up in sheets. Every time a wave hit, she laughed. Not politely. She laughed as if the sea had told her a joke.\n\nI watched her for a long time. Then, because there was nothing else to do, I went and stood beside her.\n\n'You'll get soaked,' I said.\n\n'That's the point,' she said, and the next wave hit us both.\n\nIt was so cold that I gasped. Salt water ran down my neck and into my sleeves. I should have been furious. Instead, to my own surprise, I laughed too.\n\nHer name was Orla. She had lived on the island all her life. She told me which of the seven pupils was kind and which one bit, where the puffins nested in May, and how, on a clear night, you could see the lights of the mainland like a string of beads on the horizon. She talked the whole way across, and I listened, and the island grew out of the grey ahead of us: first a dark line, then cliffs, then a white lighthouse, then a cluster of houses round a harbour, painted the colours of sweets.\n\nWhen the ferry bumped against the quay, Dad found us at the rail, both dripping.\n\n'Mia,' he said, staring. 'You're wet through.'\n\n'I know,' I said.\n\nI looked back once at the way we had come. The mainland had disappeared. There was only the sea, and the boat's white wake folding itself away into the water, as if the crossing had closed behind us. I found that I did not mind.",
             },
-            markScheme: [
-              'Content & Organisation (24 marks): Communication, voice, structure, tone',
-              'Technical Accuracy (16 marks): Sentence demarcation, punctuation, spelling, sentence variety',
-            ],
+            markScheme: Q11_MARKING,
           },
         ],
       },
@@ -578,7 +810,7 @@ export const wjecC1A: MockExamPaper[] = [
   },
 
   // ═══════════════════════════════════════════════════════════════════════════
-  // WJEC COMPONENT 1 - MOCK 04 (Modernist)
+  // WJEC COMPONENT 1, MOCK 04: The Great Gatsby, Chapter I
   // ═══════════════════════════════════════════════════════════════════════════
   {
     id: 'wjec-c1-04',
@@ -593,98 +825,136 @@ export const wjecC1A: MockExamPaper[] = [
       {
         id: 'wjec-c1-04-reading',
         title: 'Section A: Reading',
-        description: `Read the extract below carefully. Then answer all the questions in this section.\n\nSource: ${EXTRACT_04_SOURCE}`,
+        description: `Read the extract below carefully, then answer all the questions in this section. You are advised to spend about 10 minutes reading the extract and about 50 minutes answering the questions.\n\nSource: ${EXTRACT_04_SOURCE}`,
         totalMarks: 40,
         suggestedTimeMinutes: 60,
         questions: [
           {
-            id: 'wjec-c1-04-q1',
+            id: 'wjec-c1-04-a1',
             questionNumber: 1,
+            label: '01',
             questionText:
-              'Read the first paragraph. List five things you learn about the garden from this paragraph.',
+              'Read the first paragraph, from "And so it happened that on a warm windy evening" to "with his legs apart on the front porch."\n\nList five things you learn about the Buchanans\' house and its grounds in this paragraph.',
             marks: 5,
             suggestedTimeMinutes: 5,
+            questionType: 'retrieval',
+            extract: EXTRACT_04,
+            extractSource: EXTRACT_04_SOURCE,
+            modelAnswers: {
+              'Grade 6-7':
+                '1. The house was even more elaborate than the narrator expected.\n2. It was a red-and-white Georgian Colonial mansion.\n3. It overlooked the bay.\n4. The lawn ran from the beach to the front door for a quarter of a mile.\n5. The front of the house had a line of French windows, wide open to the warm afternoon.',
+            },
+            markScheme: {
+              'How the marks are given': Q01_MARKING,
+              'Credit, for example': [
+                'It is in East Egg; it was more elaborate than expected; it was cheerful and red-and-white; it was a Georgian Colonial mansion; it overlooked the bay; the lawn ran a quarter of a mile from the beach to the door; there were sun-dials, brick walks and bright gardens; vines grew up the side of the house; a line of French windows glowed gold and stood open; it had a front porch, where Tom stood.',
+              ],
+            },
+          },
+          {
+            id: 'wjec-c1-04-a2',
+            questionNumber: 2,
+            label: '02',
+            questionText:
+              'Read from "He had changed since his New Haven years." to "some harsh, defiant wistfulness of his own."\n\nHow does the writer show what Tom Buchanan is like in these lines?\n\nBack up your points with short quotations, and explain what the writer\'s words suggest, using subject terms where they help.',
+            marks: 5,
+            suggestedTimeMinutes: 6,
             questionType: 'short-answer',
             extract: EXTRACT_04,
             extractSource: EXTRACT_04_SOURCE,
             modelAnswers: {
-              'Grade 4-5':
-                '1. The garden is described as a memory of a garden rather than a real one. 2. Her husband planted roses in the first year of their marriage. 3. The roses have grown wild and leggy. 4. The lawn is more moss than grass. 5. The sundial was a wedding gift from her sister.',
-            },
-            markScheme: ['1 mark per valid point, maximum 5'],
-          },
-          {
-            id: 'wjec-c1-04-q2',
-            questionNumber: 2,
-            questionText:
-              "How does the writer use language to convey Mrs Calloway's grief and sense of loss?\n\nYou should comment on:\n- the writer's choice of words and phrases\n- the writer's use of language features and techniques\n- the effects on the reader.\n\nYou must refer to the text to support your answer.",
-            marks: 10,
-            suggestedTimeMinutes: 12,
-            questionType: 'analysis',
-            extract: EXTRACT_04,
-            extractSource: EXTRACT_04_SOURCE,
-            modelAnswers: {
-              'Grade 4-5':
-                'The writer uses the neglected garden as a symbol of Mrs Calloway\'s grief. The roses have "grown wild" because there is no one to tend them, reflecting how her life has become neglected without her husband. The sundial "listed at an angle that made its readings meaningless" could symbolise how time has lost meaning for her. The house makes small sounds - the clock, the radiator, a tap dripping - which emphasise the silence and loneliness. The detail about her husband\'s coat on "the third hook - never the first, never the second, always the third" shows she remembers tiny habits, which makes the loss feel real and personal. The short sentence "He had been dead for seven months" is shocking because it is stated so simply.',
               'Grade 6-7':
-                'The writer conveys grief through a sustained technique of personification and displaced emotion, in which objects and spaces carry the emotional weight that Mrs Calloway cannot directly express. The garden is a "memory of one - a palimpsest of intentions abandoned at various stages of enthusiasm and neglect," and the word "palimpsest" - a manuscript written over but not entirely erased - captures perfectly how the past remains visible beneath the present\'s decay. The roses\' desperate reaching "for the light" gives the plants the emotional desperation of their owner: "the desperation of things that have been forgotten but refuse to die" could describe the garden or the woman. The house\'s "afternoon symphony" - clock, radiator, dripping tap - uses an ironic musical metaphor for sounds that are fundamentally lonely, substituting mechanical noise for human presence. Arthur\'s ritual of calling "Only me" is described as "a kind of poetry: the daily reaffirmation of presence," and Mrs Calloway\'s reframing of this mundane habit as poetic reveals how grief transforms the ordinary into the sacred. The devastating temporal construction - "for perhaps half a second before reality reasserted itself, he was alive" - places hope and its destruction in a single sentence, the plain statement "he was alive" creating a grammatical resurrection that the clause before it, "before reality reasserted itself," has already doomed.',
-              'Grade 8-9':
-                'The writer deploys an extraordinarily controlled technique in which grief is never named but is instead distributed across every detail of the physical environment, creating a world saturated with loss. The opening metaphor - the garden as "a palimpsest of intentions abandoned" - establishes the extract\'s governing principle: the present is legible only through the traces of the past. Every object in the garden has a biographical history (the roses Arthur planted, the sundial from her sister) that exceeds its physical presence, making the garden not a space but a narrative. The sundial whose tilted angle renders "its readings meaningless" is a masterpiece of symbolic precision: an instrument for measuring time that can no longer perform its function mirrors a widow for whom time has lost its organising principle. The house\'s sounds - clock, radiator, tap - form what the writer calls a "symphony," but this is devastatingly ironic: a symphony implies composed harmony, while these sounds are merely mechanical, purposeless, automatic. The dripping tap is described with "the patient regularity of water that knows it will eventually win," a personification that introduces the extract\'s relationship with entropy: water wins over plumbing as time wins over memory, as death wins over ritual. Arthur\'s "Only me" is the extract\'s emotional centre: the phrase is simultaneously the most ordinary and the most profound utterance possible - a declaration of identity and presence that, in its modesty ("only"), performs the very self-effacement that makes its absence devastating. The final paragraph\'s temporal mechanics are extraordinary: Mrs Calloway\'s body "tensed with expectation - muscles remembering what the mind had accepted," a formulation that separates somatic and cognitive grief, suggesting that the body runs on a different temporal schedule from consciousness. The garden that "no longer had any reason to be tended" converts emotional purposelessness into horticultural logic, the final word "tended" carrying its double meaning of cared-for and attended-to.',
+                'The writer presents Tom as powerful and arrogant. He has "a rather hard mouth and a supercilious manner", and the adjective "supercilious" shows that he looks down on others. His eyes are personified as "Two shining arrogant eyes" that "had established dominance over his face", which makes him seem aggressive even when he is standing still, "always leaning aggressively forward". His physical strength is threatening: he seems "to fill those glistening boots until he strained the top lacing", and the paragraph ends with the blunt phrase "a cruel body", which suggests violence. Even his voice has "a touch of paternal contempt", and the words the narrator imagines him saying, "just because I’m stronger and more of a man than you are", show his bullying confidence.',
             },
-            markScheme: [
-              'Identifies and analyses language features and techniques',
-              'Comments on the effects of specific words and phrases',
-              'Explores how language conveys grief, loss, and memory',
-              'Uses textual references to support analysis',
-              'Top band: perceptive, detailed, conceptualised analysis',
-            ],
+            markScheme: {
+              'How the marks are given': Q02_MARKING,
+              'Credit, for example': [
+                'His arrogance: "a rather hard mouth and a supercilious manner", "Two shining arrogant eyes".',
+                'His power and menace: "enormous power", "a great pack of muscle", "a cruel body".',
+                'His voice, with "a touch of paternal contempt", and the imagined words about being "stronger and more of a man".',
+              ],
+            },
           },
           {
-            id: 'wjec-c1-04-q3',
+            id: 'wjec-c1-04-a3',
             questionNumber: 3,
+            label: '03',
             questionText:
-              "What impressions do you get of Mrs Calloway's marriage and the life she shared with Arthur?\n\nYou must refer to the text to support your answer.",
+              'Read from "We talked for a few minutes on the sunny porch." to "ballooned slowly to the floor."\n\nWhat impressions do you get of the Buchanans\' home in these lines?\n\nQuote from these lines to support your answer, and analyse the writer\'s choice of words, using subject terms where they help.',
             marks: 10,
-            suggestedTimeMinutes: 12,
+            suggestedTimeMinutes: 13,
             questionType: 'analysis',
             extract: EXTRACT_04,
             extractSource: EXTRACT_04_SOURCE,
             modelAnswers: {
-              'Grade 4-5':
-                'Their marriage seems to have been long, stable, and built on routine. Arthur planted roses "in the first year of their marriage" which shows he cared about making their home nice. His homecoming ritual went on "for forty-one years," so the marriage was a very long one. Arthur had a daily routine of coming home at three o\'clock and hanging his coat on the third hook - always the same one - which shows he was a creature of habit. His greeting "Only me" sounds humble and familiar. Mrs Calloway describes this as "a kind of poetry" which shows how much she valued even the small, ordinary things about their life together. The marriage seems to have been built on quiet companionship rather than dramatic passion.',
               'Grade 6-7':
-                'The writer constructs the marriage through its surviving traces - habits, objects, routines - creating a portrait of companionship so deeply embedded in daily life that its removal leaves the entire structure of existence without foundation. Arthur is characterised entirely through ritual: the coat on the third hook ("never the first, never the second, always the third") reveals a man of precise, unvarying habit, and Mrs Calloway\'s knowledge of this specificity - which hook, which time, which words - demonstrates the intimate attention of decades. The phrase "Only me" is their marriage\'s defining utterance: modest, self-deprecating, and profoundly reassuring. Mrs Calloway\'s interpretation of it as "the daily reaffirmation of presence" and "a kind of poetry" reveals a relationship where love was expressed not through grand gesture but through the accumulated weight of showing up, every day, at the same time. The garden tells its own marital story: the roses Arthur planted "in the first year of their marriage" have survived, but they are now "wild and leggy," growing without the care that shaped them. The sundial from her sister - a wedding gift - now gives "meaningless" readings, suggesting that the temporal framework of their shared life has collapsed. This was a marriage of quiet rhythm, of domestic synchronisation, and its power is revealed precisely by the magnitude of disruption its ending has caused.',
+                'The home seems luxurious, but also something Tom shows off. He says "I’ve got a nice place here" with "his eyes flashing about restlessly", and his "broad flat hand" sweeps over "a sunken Italian garden, a half acre of deep, pungent roses, and a snub-nosed motor-boat". The list makes the grounds seem like a collection of possessions. He even tells Nick who owned it before, "Demaine, the oil man", which suggests that he cares about its value.\n\nInside, the house seems light, airy and almost magical. The room is "a bright rosy-colored space", and the adverb "fragilely" makes it sound delicate, as if it could float away. The grass "seemed to grow a little way into the house", so the outside and inside blur together. The curtains blow "like pale flags", a simile that adds movement and drama, and the ceiling is a "frosted wedding-cake", a metaphor that makes it seem sweet, white and decorated. Even the rug has "a shadow on it as wind does on the sea". The two women on the couch are "buoyed up as though upon an anchored balloon", so everything in the room seems light and floating. When Tom shuts the windows with "a boom", the spell breaks, and everything "ballooned slowly to the floor". The impression is of a beautiful home that is full of movement but has little in it that is solid.',
+              'Grade 8-9':
+                'The writer gives two impressions of the home, one through Tom and one through Nick, and the contrast between them is revealing.\n\nSeen through Tom, the house is property. "I’ve got a nice place here" is a casual understatement, but "his eyes flashing about restlessly" suggest a man who cannot rest in what he owns. He physically turns Nick, "by one arm", to make him look, and his "broad flat hand" sweeps the view as if it were a map of his possessions. The list, "a sunken Italian garden, a half acre of deep, pungent roses, and a snub-nosed motor-boat", runs landscape and luxury goods together, and the vigorous verb in the motor-boat "that bumped the tide offshore" matches Tom\'s restless energy. Naming the previous owner, "Demaine, the oil man", values the house by its price and pedigree. The adverbs "politely and abruptly" capture his manners exactly: courtesy used as a command.\n\nSeen through Nick, the interior becomes a dream. The "bright rosy-colored space" is "fragilely bound into the house", as if the room might come loose, and the grass "seemed to grow a little way into the house", dissolving the line between inside and out. Fitzgerald then builds one long sentence of movement: the breeze "blew curtains in at one end and out the other like pale flags", twists them "toward the frosted wedding-cake of the ceiling", and "rippled over the wine-colored rug", ending with the simile "as wind does on the sea". The sentence itself billows, clause after clause, and the metaphor of the ceiling as cake makes the room seem sweet, ornamental and slightly unreal. The women on the couch are part of the decoration, "buoyed up as though upon an anchored balloon", their dresses "rippling and fluttering", and the sounds, "the whip and snap of the curtains" and "the groan of a picture on the wall", give the scene a faint unease.\n\nThe paragraph ends with Tom\'s intervention: "a boom" as he shuts the windows, and "the caught wind died out about the room". Everything, "the curtains and the rugs and the two young women", "ballooned slowly to the floor", the polysyndeton putting the women in a list with the furnishings. The impression is of a beautiful, weightless home that Tom controls with a single gesture, and of women who seem as much his possessions as the roses.',
             },
-            markScheme: [
-              'Analyses the relationship with textual support',
-              'Comments on how the writer creates impressions through detail, language, and implication',
-              'Considers what is implied as well as stated',
-              'Top band: perceptive, thoughtful, detailed interpretation',
-            ],
+            markScheme: {
+              'How the marks are given': Q03_MARKING,
+              'Credit, for example': [
+                'Tom\'s pride in what he owns: "I’ve got a nice place here", the sweep of his "broad flat hand", the list of garden, roses and motor-boat, and the former owner "Demaine, the oil man".',
+                'The light, dreamlike room: "a bright rosy-colored space", "fragilely bound", curtains "like pale flags", "the frosted wedding-cake of the ceiling".',
+                'The floating women, "buoyed up as though upon an anchored balloon", and the hints of unease in "the groan of a picture on the wall".',
+                'Tom ending the spell with "a boom", and everything that "ballooned slowly to the floor".',
+              ],
+            },
           },
           {
-            id: 'wjec-c1-04-q4',
+            id: 'wjec-c1-04-a4',
             questionNumber: 4,
+            label: '04',
             questionText:
-              '"The writer uses ordinary, everyday details to create an extraordinarily moving portrait of loss."\n\nTo what extent do you agree with this statement? You should consider the writer\'s use of language and structure in your response.',
-            marks: 15,
-            suggestedTimeMinutes: 18,
+              'Read from "The younger of the two was a stranger to me." to "draws a stunned tribute from me."\n\nHow does the writer create impressions of the two young women, Miss Baker and Daisy, in these lines?\n\nIn your answer, consider:\n- how the writer organises the narrator\'s first meeting with them\n- the words and phrases the writer chooses\n- how these choices affect the reader.\n\nSupport your points with references to the text, using subject terms where they help.',
+            marks: 10,
+            suggestedTimeMinutes: 13,
+            questionType: 'analysis',
+            extract: EXTRACT_04,
+            extractSource: EXTRACT_04_SOURCE,
+            modelAnswers: {
+              'Grade 6-7':
+                'The writer introduces the two women one after the other, so that the reader can compare them. Miss Baker comes first and seems cold and proud. She is "completely motionless", with "her chin raised a little, as if she were balancing something on it which was quite likely to fall". This comic image suggests that she is holding herself very still and carefully, perhaps to look superior. She gives "no hint" that she has seen the narrator, and he is "almost surprised into murmuring an apology", which shows how she makes other people feel awkward.\n\nDaisy is the opposite. She "made an attempt to rise" but laughs instead, "an absurd, charming little laugh", and the narrator laughs too, so she puts him at ease. Her line, "I’m p-paralyzed with happiness", is playful and exaggerated: the stammer and the joke about being "paralyzed" make her seem charming and theatrical. She holds his hand, "promising that there was no one in the world she so much wanted to see", but the short sentence "That was a way she had" suggests that this is a habit and not completely sincere. The narrator\'s bracketed remark, that he has heard it said her murmur was "only to make people lean toward her", also hints that she knows how to attract attention, although he calls this "an irrelevant criticism".\n\nThe section returns to Miss Baker at the end, with her head tipped back "again", so the two women frame the scene, one still and distant, the other warm but perhaps performing.',
+              'Grade 8-9':
+                'The writer stages the meeting as a little comedy of manners, in which the narrator, and so the reader, is acted upon by two very different performances.\n\nStructurally, the women are presented in turn and then interwoven. Miss Baker is described first, "a stranger", and the description is all stillness: "extended full length", "completely motionless", "her chin raised a little". The extended simile, "as if she were balancing something on it which was quite likely to fall", turns her poise into a comic balancing act, and it is returned to later, when "the object she was balancing had obviously tottered a little and given her something of a fright". Because the joke runs across the section, her aloofness becomes absurd as well as intimidating. The narrator\'s responses, "almost surprised into murmuring an apology" and "Again a sort of apology arose to my lips", show the social pressure her silence creates, and his closing aphorism, that "complete self-sufficiency draws a stunned tribute from me", admits that her indifference impresses him.\n\nDaisy is introduced through movement and sound. She "made an attempt to rise", but the dashes around "she leaned slightly forward with a conscientious expression" hold the action in suspense until it collapses into laughter, "an absurd, charming little laugh". The pairing of "absurd" and "charming" is the key to her: she is ridiculous and irresistible at once. Her one line, "I’m p-paralyzed with happiness", mocks her own failure to stand, and the stammer makes her delight sound breathless. The narrator then steps back to comment. "That was a way she had" turns her warmth into a habit, and the parenthesis about her murmur, which some said was "only to make people lean toward her", raises the suspicion of calculation before he dismisses it as "an irrelevant criticism that made it no less charming." The effect is that the reader is charmed with Nick while being told, quietly, not to trust the charm: Daisy\'s promise that "there was no one in the world she so much wanted to see" is, we suspect, a promise she makes to everyone.',
+            },
+            markScheme: {
+              'How the marks are given': Q04_MARKING,
+              'Credit, for example': [
+                'Structure: Miss Baker first, then Daisy, then Miss Baker again, so the two are compared; the running joke of the balanced object.',
+                'Miss Baker\'s stillness and aloofness ("completely motionless", "no hint") and the narrator\'s urge to apologise.',
+                'Daisy\'s charm: "an absurd, charming little laugh", "I’m p-paralyzed with happiness", her promise that no one else mattered.',
+                'The narrator\'s comments that cast doubt: "That was a way she had", and the bracketed remark about her murmur.',
+              ],
+            },
+          },
+          {
+            id: 'wjec-c1-04-a5',
+            questionNumber: 5,
+            label: '05',
+            questionText:
+              'Read the last paragraph, from "I looked back at my cousin" to the end of the extract.\n\n"The Buchanans seem to have everything, but the writer makes the reader doubt that they are happy."\n\nHow far do you agree with this view?\n\nIn your answer, consider:\n- what you think and feel about the Buchanans, in these lines and across the whole extract\n- the choices the writer makes to lead you to those thoughts and feelings.\n\nSupport your points with references to the text.',
+            marks: 10,
+            suggestedTimeMinutes: 13,
             questionType: 'evaluation',
             extract: EXTRACT_04,
             extractSource: EXTRACT_04_SOURCE,
             modelAnswers: {
-              'Grade 4-5':
-                'I strongly agree that everyday details make the extract very moving. The most powerful details are the simplest ones - the coat on the third hook, the words "Only me," the three o\'clock routine. Because these are ordinary things, the reader can relate to them and understand the loss. The garden is just a normal garden with roses and a lawn, but it becomes symbolic of the whole marriage. The sounds of the house - a clock, a radiator, a dripping tap - are things everyone recognises, but here they emphasise loneliness. The short sentence "He had been dead for seven months" hits hard because it is so plain and direct after the longer, more descriptive sentences. The writer makes us feel the loss without using dramatic or emotional language.',
               'Grade 6-7':
-                'I emphatically agree, and I would argue that the extract\'s emotional power depends entirely on its commitment to the ordinary - any elevation into dramatic register would diminish rather than enhance its impact. The structure performs a careful inventory of domestic life: garden, window, house sounds, daily routine. Each element is mundane; their cumulative effect is devastating. The garden is not a Romantic wilderness but "more moss than grass," a lawn defeated by the prosaic reality of neglect. The house sounds are not ghostly but mechanical - clock, radiator, tap - yet their composition into a "symphony" transforms them through Mrs Calloway\'s perceiving consciousness. The coat-hook detail is the extract\'s masterclass in the poetics of the ordinary: specifying that Arthur used "the third hook - never the first, never the second, always the third" should be banal, but the parenthetical insistence on precision reveals the depth of Mrs Calloway\'s attention to her husband\'s habits, and by extension, the depth of their intimacy. The structural placement of "He had been dead for seven months" is a controlled detonation: its short, factual simplicity after three paragraphs of lyrical observation creates a jarring tonal shift that mimics the intrusion of grief into the everyday. The reader, like Mrs Calloway, is returned abruptly from the consolations of memory to the fact of death. This is what makes the ordinary so powerful: we inhabit it with her before we lose it with her.',
+                'I largely agree. The Buchanans clearly have great wealth: a "Georgian Colonial mansion", a lawn running "for a quarter of a mile", "a half acre of deep, pungent roses" and a motor-boat. But the writer gives hints that they are not content. Tom\'s eyes are "flashing about restlessly", which suggests he is never satisfied, and his body is described as "a cruel body", which makes him threatening rather than happy.\n\nIn the last paragraph, Daisy seems exciting and charming. Her "low, thrilling voice" makes people want to listen, and the narrator says her voice promised "exciting things hovering in the next hour". However, her face is "sad and lovely", and the word "sad" is placed first, before "lovely", which suggests that sadness lies underneath her charm. The idea that each speech is like "an arrangement of notes that will never be played again" makes her moments seem fleeting. Earlier, her joke that she is "paralyzed with happiness" sounds like too much, as if she is performing happiness. So I agree: the writer surrounds them with beautiful things but shows restlessness in Tom and sadness in Daisy.',
+              'Grade 8-9':
+                'I agree with the view, and I think the writer achieves it by making every sign of wealth and pleasure carry a shadow.\n\nThe extract opens in abundance. The house is "even more elaborate than I expected", the lawn goes "jumping over sun-dials and brick walks and burning gardens", and the personified lawn runs with such "momentum" that it climbs the walls as "bright vines". This is wealth as energy. But the energy is restless. Tom, standing "with his legs apart", owns it all, yet "his eyes flashing about restlessly" suggest a man who cannot be satisfied by what he has, and the narrator\'s verdict on his physique, "It was a body capable of enormous leverage—a cruel body", turns strength into threat. His imagined words, "just because I’m stronger and more of a man than you are", reveal a man who needs to dominate.\n\nThe final lines do the same with Daisy. Her "low, thrilling voice" is so musical that "the ear follows up and down", and the simile of each speech as "an arrangement of notes that will never be played again" makes her charm captivating and fleeting, already passing as it is heard. The key phrase is "sad and lovely": sadness comes first, and the "bright things" in her face, "bright eyes and a bright passionate mouth", are piled up by repetition, as if brightness must be insisted on. Her voice carries "a promise" of pleasures "just a while since" and "hovering in the next hour", never in the present moment, which suggests a life lived in anticipation and memory rather than contentment. Her opening joke, "I’m p-paralyzed with happiness", is so exaggerated that it sounds like happiness performed.\n\nEven the room supports the view. Everything in it floats, "buoyed up as though upon an anchored balloon", until Tom shuts the windows and the women "ballooned slowly to the floor", as if their lightness depends on him. So the writer surrounds the Buchanans with beauty and then lets details of restlessness, cruelty and sadness slip through, leaving the reader sure that they have everything except peace.',
             },
-            markScheme: [
-              'Evaluates with a clear, sustained personal response',
-              'Analyses language and structural methods in relation to the statement',
-              'Uses textual evidence to support evaluation',
-              'Considers alternative readings and nuances',
-              'Top band: evaluative, critical, conceptualised response',
-            ],
+            markScheme: {
+              'How the marks are given': Q05_MARKING,
+              'Credit, for example': [
+                'The wealth on show: the mansion, the lawn, the roses, the motor-boat, the bright room.',
+                'Tom\'s restlessness and menace: "his eyes flashing about restlessly", "a cruel body".',
+                'Daisy\'s charm and its shadow: "sad and lovely", the voice like notes "that will never be played again", pleasures always just past or just to come, the exaggerated "p-paralyzed with happiness".',
+                'A sustained judgement on how far the writer makes us doubt their happiness, from the final paragraph and the whole extract.',
+              ],
+            },
           },
         ],
       },
@@ -692,30 +962,24 @@ export const wjecC1A: MockExamPaper[] = [
         id: 'wjec-c1-04-writing',
         title: 'Section B: Writing',
         description:
-          'You are advised to spend about 45 minutes on this section. You are reminded of the need to plan your answer.',
+          'In this section you are assessed on your creative prose writing. Up to 24 marks are given for communication and organisation, and up to 16 for vocabulary, sentence structure, spelling and punctuation. Think about the purpose and the reader of your writing. You are advised to spend about 45 minutes on this section: about 10 minutes planning and about 35 minutes writing. Aim for about 450 to 600 words.',
         totalMarks: 40,
         suggestedTimeMinutes: 45,
         questions: [
           {
-            id: 'wjec-c1-04-q5',
-            questionNumber: 5,
+            id: 'wjec-c1-04-b1',
+            questionNumber: 1,
+            label: '11',
             questionText:
-              'Choose ONE of the following titles for your creative prose writing:\n\nEither:\n(a) The Empty Chair.\nWrite a short piece of prose with this title.\n\nOr:\n(b) Write about a place that holds powerful memories.\nYour response could be real or imagined.\n\n(24 marks for content and organisation / 16 marks for technical accuracy)',
+              'Write one piece, choosing from these four titles:\n\n(a) The Empty Chair.\n\n(b) Write about a time when you went back to a place that held powerful memories for you.\n\n(c) Write a story that begins: "I had been told not to open the box until my birthday."\n\n(d) Write a story that ends with these words: "When I looked up, she was smiling."\n\nYour writing may be real or imagined.',
             marks: 40,
             suggestedTimeMinutes: 45,
             questionType: 'creative-writing',
             modelAnswers: {
-              'Grade 4-5':
-                'A clear piece of creative prose with: recognisable structure; use of descriptive techniques; varied vocabulary; generally accurate SPaG; some attempt to create atmosphere and convey a sense of memory or absence.',
-              'Grade 6-7':
-                'A compelling piece with: controlled atmosphere; crafted imagery; structural sophistication; consistent SPaG accuracy; effective use of setting and detail to explore themes of memory, loss, or nostalgia.',
               'Grade 8-9':
-                'An assured, distinctive piece with: original voice; precise and sustained imagery; masterful control of pace and structure; technical virtuosity; a nuanced, restrained exploration of absence, memory, or the passage of time.',
+                "A model answer to (a), The Empty Chair (about 480 words).\n\nFor the first week, nobody sat in Priya's chair.\n\nIt was the one by the window in Room 14, second from the back, with a wobble in its left leg that only Priya knew how to manage. She would hook her foot round it without thinking, the way you might stroke a dog that leaned against you. When her family moved to Toronto in October, the chair stayed exactly where she had left it, pushed in neatly, as if she had only gone to fetch a pen.\n\nMr Harding did not mention it. He took the register in his usual voice and paused, very slightly, after Patel. Then he moved on to Quinn.\n\nI sat next to the empty chair. I had sat next to Priya since Year 7, through fractions and fire drills and the terrible term when we both had braces. We had a system for everything. She did the diagrams; I did the spelling. She remembered the homework; I remembered the excuses. Without her, I kept turning to share a joke with the window.\n\nIn the second week, people started using the chair as a shelf. Coats appeared on it, then bags, then a tower of textbooks that Daniel built during a supply lesson and nobody took down. I found that I hated this. I could not have explained why. It was only a chair. But every time someone dropped a coat on it, it felt as though they were deciding, quietly, that she was not coming back.\n\nSo I began to clear it. Every morning I moved the coats and the bags and stacked the books on the windowsill. Nobody asked me to. Nobody asked me to stop, either. Mr Harding watched me do it on the third morning and said nothing, but the next day the books had been put away before I arrived.\n\nAt the start of November a parcel came, addressed to the whole class in Priya's round, cheerful handwriting. Inside were twenty-eight postcards of snowy streets, one for each of us, and a photograph of her new classroom. It was enormous and bright, with a view of a frozen lake. On the back she had written that her desk was by the window, that it wobbled, and that she felt at home already.\n\nI laughed so loudly that Mr Harding looked up.\n\nMy postcard was different from the others. On the front was a red maple leaf. On the back were four words and a drawing of a chair, done in Priya's careful lines, with an arrow pointing at its left leg.\n\nStill mine. Keep warm.\n\nThat afternoon, when the bell went, I did something I had not done since October. I pulled her chair out, sat on it, and hooked my foot round its leg the way she used to.\n\nIt did not wobble at all. It only needed the right person.",
             },
-            markScheme: [
-              'Content & Organisation (24 marks): Communication, voice, structure, tone',
-              'Technical Accuracy (16 marks): Sentence demarcation, punctuation, spelling, sentence variety',
-            ],
+            markScheme: Q11_MARKING,
           },
         ],
       },
@@ -723,7 +987,7 @@ export const wjecC1A: MockExamPaper[] = [
   },
 
   // ═══════════════════════════════════════════════════════════════════════════
-  // WJEC COMPONENT 1 - MOCK 05 (American Realism)
+  // WJEC COMPONENT 1, MOCK 05: Animal Farm, Chapter III
   // ═══════════════════════════════════════════════════════════════════════════
   {
     id: 'wjec-c1-05',
@@ -738,98 +1002,135 @@ export const wjecC1A: MockExamPaper[] = [
       {
         id: 'wjec-c1-05-reading',
         title: 'Section A: Reading',
-        description: `Read the extract below carefully. Then answer all the questions in this section.\n\nSource: ${EXTRACT_05_SOURCE}`,
+        description: `Read the extract below carefully, then answer all the questions in this section. You are advised to spend about 10 minutes reading the extract and about 50 minutes answering the questions.\n\nSource: ${EXTRACT_05_SOURCE}`,
         totalMarks: 40,
         suggestedTimeMinutes: 60,
         questions: [
           {
-            id: 'wjec-c1-05-q1',
+            id: 'wjec-c1-05-a1',
             questionNumber: 1,
+            label: '01',
             questionText:
-              'Read the first paragraph. List five things you learn about the diner from this paragraph.',
+              'Read from the start of the extract, "How they toiled and sweated", to "far better than Jones and his men had ever done."\n\nList five things you learn about the hay harvest in these lines.',
             marks: 5,
             suggestedTimeMinutes: 5,
+            questionType: 'retrieval',
+            extract: EXTRACT_05,
+            extractSource: EXTRACT_05_SOURCE,
+            modelAnswers: {
+              'Grade 6-7':
+                '1. The animals worked very hard to get the hay in.\n2. The harvest was even more successful than they had hoped.\n3. The tools had been designed for human beings, not for animals.\n4. No animal could use a tool that needed it to stand on its hind legs.\n5. The horses understood mowing and raking better than Jones and his men had.',
+            },
+            markScheme: {
+              'How the marks are given': Q01_MARKING,
+              'Credit, for example': [
+                'They toiled and sweated; the harvest was a bigger success than hoped; the work was sometimes hard; the implements were designed for humans; no animal could use a tool needing hind legs; the pigs found a way round every difficulty; the horses knew every inch of the field; the horses understood mowing and raking better than Jones and his men.',
+              ],
+            },
+          },
+          {
+            id: 'wjec-c1-05-a2',
+            questionNumber: 2,
+            label: '02',
+            questionText:
+              'Read from "The pigs did not actually work" to "as the case might be."\n\nHow does the writer show the position of the pigs on the farm in these lines?\n\nBack up your points with short quotations, and explain what the writer\'s words suggest, using subject terms where they help.',
+            marks: 5,
+            suggestedTimeMinutes: 6,
             questionType: 'short-answer',
             extract: EXTRACT_05,
             extractSource: EXTRACT_05_SOURCE,
             modelAnswers: {
-              'Grade 4-5':
-                "1. The diner sat at the edge of Route 66. 2. Its chrome trim was dull. 3. The neon sign buzzed and flickered. 4. The diner was called Rosie's. 5. The apostrophe on the sign had burned out.",
-            },
-            markScheme: ['1 mark per valid point, maximum 5'],
-          },
-          {
-            id: 'wjec-c1-05-q2',
-            questionNumber: 2,
-            questionText:
-              "How does the writer use language to create a vivid sense of place and atmosphere in this extract?\n\nYou should comment on:\n- the writer's choice of words and phrases\n- the writer's use of language features and techniques\n- the effects on the reader.\n\nYou must refer to the text to support your answer.",
-            marks: 10,
-            suggestedTimeMinutes: 12,
-            questionType: 'analysis',
-            extract: EXTRACT_05,
-            extractSource: EXTRACT_05_SOURCE,
-            modelAnswers: {
-              'Grade 4-5':
-                'The writer creates a strong sense of place through details about the diner. It sits "at the edge of Route 66 like something the highway had washed up and left behind" which is a simile making it sound abandoned and forgotten. The neon sign "buzzed and flickered" showing it is old and broken. The counter has faded from red to "pinkish-grey," showing the passage of time. The ceiling fan clicks with "a faint, rhythmic click that he had stopped hearing years ago" which shows Earl has been there so long he doesn\'t notice things anymore. The atmosphere feels tired and lonely, like a place where nothing changes.',
               'Grade 6-7':
-                'The writer constructs the diner as a study in entropy and stasis through a carefully controlled palette of decay. The opening simile - "like something the highway had washed up and left behind" - casts Route 66 as a tide, making the diner flotsam, something deposited by a force that has moved on. This immediately establishes the diner as a relic. The neon sign functions as a precise symbol: "ROSIE\'S, the apostrophe long since burned out" - the lost punctuation mark is a miniature drama of neglect, grammar itself succumbing to time. The formica counter "had once been red" but is now "the pinkish-grey of something left too long in the sun," a colour description that contains its own temporal narrative, each shade representing years of service. Earl\'s circular wiping - "for the fourth time that hour" - is a gesture of compulsive routine rather than purpose, a man maintaining a surface that no longer needs maintaining. The ceiling fan\'s click, which "he had stopped hearing years ago, the way you stop hearing your own heartbeat," uses the second-person pronoun to universalise the experience, drawing the reader into the numbing familiarity of a life lived in one place too long. The woman\'s arrival ruptures this stasis: she reads the menu "as though it contained information about a foreign country," a simile that defamiliarises the diner through her outsider perception.',
-              'Grade 8-9':
-                'The writer creates atmosphere through a technique of accumulated material specificity in which every object carries temporal and existential weight. The opening simile positions the diner as detritus - "something the highway had washed up and left behind" - and this framing of the diner as abandoned by the road\'s progress establishes a metaphysics of obsolescence that pervades the entire extract. The three vehicles in the parking lot are catalogued with the precision of still-life painting: "Oklahoma plates," a station wagon "so coated in dust it might have been any colour," and Earl\'s pickup hidden "around the side where the customers couldn\'t see the rust." Each vehicle tells a story of transit, anonymity, and concealed decay respectively. The formica counter\'s colour change - from red to "the pinkish-grey of something left too long in the sun" - performs temporal erosion through colour imagery, the red itself fading as a physical register of time\'s passage. The ceiling fan\'s comparison to a heartbeat - something so constant it becomes inaudible - makes the diner an extension of Earl\'s body, a space so deeply inhabited it has become physiological. The woman\'s entrance is a structural event: her blue dress is "too good for Rosie\'s," a judgement that reveals the diner\'s self-knowledge of its own diminishment. Her reading of the menu "as though it contained information about a foreign country" is the extract\'s most brilliantly estranging image, turning the mundane text of a diner menu into an ethnographic document. The closing exchange - "Passing through?" / "I haven\'t decided yet" - achieves the cadence of the American short story tradition, its surface simplicity concealing an existential negotiation between transience and permanence.',
+                'The writer shows that the pigs have quietly become the bosses. The phrase "did not actually work, but directed and supervised the others" sets their role apart from everyone else\'s, and the adverb "actually" sounds slightly ironic, as if the narrator expects us to notice. The next sentence, "it was natural that they should assume the leadership", presents their power as obvious, but the word "natural" makes us question whether it really is. The image of the horses who "tramp steadily round and round the field with a pig walking behind" shows the strong doing the work while a pig follows, giving orders. Even the friendly word "comrade" is attached to a driver\'s command, "Gee up, comrade!", so equality is spoken while orders are given.',
             },
-            markScheme: [
-              'Identifies and analyses language features and techniques',
-              'Comments on the effects of specific words and phrases',
-              'Explores how language creates a vivid sense of place and atmosphere',
-              'Uses textual references to support analysis',
-              'Top band: perceptive, detailed, conceptualised analysis',
-            ],
+            markScheme: {
+              'How the marks are given': Q02_MARKING,
+              'Credit, for example': [
+                'The pigs "did not actually work, but directed and supervised", and the irony of "actually".',
+                'Their leadership presented as "natural", because of "their superior knowledge".',
+                'The pig "walking behind" the working horses, calling orders that use the word "comrade".',
+              ],
+            },
           },
           {
-            id: 'wjec-c1-05-q3',
+            id: 'wjec-c1-05-a3',
             questionNumber: 3,
+            label: '03',
             questionText:
-              'What impressions do you get of Earl and the woman, and the encounter between them?\n\nYou must refer to the text to support your answer.',
+              'Read from "And every animal down to the humblest" to "adopted as his personal motto."\n\nWhat impressions do you get of the animals\' life on the farm during this summer?\n\nQuote from these lines to support your answer, and analyse the writer\'s choice of words, using subject terms where they help.',
             marks: 10,
-            suggestedTimeMinutes: 12,
+            suggestedTimeMinutes: 13,
             questionType: 'analysis',
             extract: EXTRACT_05,
             extractSource: EXTRACT_05_SOURCE,
             modelAnswers: {
-              'Grade 4-5':
-                'Earl seems like a man stuck in a routine. He wipes the counter repeatedly and has been at the diner so long he doesn\'t notice the fan anymore. He hides his truck\'s rust from customers, showing he has some pride despite the diner\'s decline. The woman is mysterious - she is not from the area, wears a dress "too good for Rosie\'s," and reads the menu carefully. When she closes her eyes holding the coffee, it suggests she is tired or relieved. Earl asks "Passing through?" because "that was what you asked," showing he follows social scripts. Her answer "I haven\'t decided yet" is intriguing because it suggests she might stay, creating a sense of possibility.',
               'Grade 6-7':
-                'Earl is characterised through the rhythms of habitual action: wiping the counter "for the fourth time that hour," pouring coffee into a cup of "thick white china" - gestures so practised they have become automatic. His concealment of the truck\'s rust reveals a man aware of decline but managing its visibility, performing adequacy. He asks "Passing through?" not from curiosity but from script: "because that was what you asked." This meta-commentary on social ritual exposes the diner as a space governed by convention rather than genuine exchange. The woman, by contrast, disrupts every convention: her dress is "too good," her attention to the menu too careful, her presence too deliberate. She is characterised through what she withholds - her name, her origin, her purpose. The moment when she wraps "both hands around" the coffee and closes her eyes is psychologically dense: the writer offers three possible explanations - her expression "might have been gratitude or might have been exhaustion or might have been the particular relief of a person who has been driving for a very long time" - and the repeated "might have been" refuses to choose between them, preserving her mystery. The exchange\'s final line - "I haven\'t decided yet" - transforms a polite enquiry into an existential declaration, suggesting that the decision about whether to stay involves more than this particular diner. The encounter is defined by its restraint: two strangers performing a recognisable ritual while something unspoken passes between them.',
+                'The impression is of a hard-working, happy community. Everyone joins in, "every animal down to the humblest", and the image of "the ducks and hens" carrying "tiny wisps of hay in their beaks" shows that even the smallest animals do their part. The writer uses a superlative to show their success, "the biggest harvest that the farm had ever seen", and stresses their honesty: "not an animal on the farm had stolen so much as a mouthful".\n\nThe animals are happier than ever before. The writer says that "the work of the farm went like clockwork", a simile suggesting that everything runs smoothly. They are "happy as they had never conceived it possible to be", and "Every mouthful of food was an acute positive pleasure", because it is "their own food, produced by themselves and for themselves". The repetition of "themselves" shows their pride in ownership. In contrast, the humans are described as "worthless parasitical human beings", which shows the animals\' contempt for them.\n\nBoxer stands out. He seems "more like three horses than one", and the work seems "to rest on his mighty shoulders". He gets up early to do extra work, and his motto, "I will work harder!", shows how loyal and determined he is. Overall the life seems busy and joyful, although it is also tiring, especially for Boxer.',
+              'Grade 8-9':
+                'The writer gives an impression of a summer of shared labour and real happiness, told in a confident, celebratory voice that the reader is invited to share and, gradually, to question.\n\nThe communal effort is built up through inclusive phrases. "every animal down to the humblest" stretches the community from top to bottom, and the image of "the ducks and hens" that "toiled to and fro all day in the sun, carrying tiny wisps of hay in their beaks" makes the smallest contribution heroic, the diminutive "tiny wisps" stressing their effort against their size. The record of success is told in comparisons with Jones, "two days\' less time", "the biggest harvest that the farm had ever seen", "no wastage whatever": the superlatives and negatives sound like a triumphant report.\n\nThe second paragraph turns success into happiness. "went like clockwork" suggests a smooth, efficient system, and the animals are "happy as they had never conceived it possible to be", a phrase that pushes their joy beyond what they had imagined. The intensifying "acute positive pleasure" and the repetition in "produced by themselves and for themselves" express pride of ownership, set against the "grudging master" and the "worthless parasitical human beings", whose loaded adjectives put the farm\'s new beliefs into the narrator\'s mouth.\n\nBoxer embodies the spirit of the summer. He is "the admiration of everybody", "more like three horses than one", and the metaphor of the work resting "on his mighty shoulders" makes him the farm\'s foundation. The details of his routine, an arrangement "to call him in the mornings half an hour earlier than anyone else" and "some volunteer labour", show selfless devotion, and his motto, "I will work harder!", is his "answer to every problem, every setback". Yet the qualifications in the paragraph, the "many difficulties" and the threshing done "in the ancient style" with their own breath, suggest how much labour lies beneath the joy, and Boxer\'s willingness to absorb it all is admirable and a little worrying. The impression is of a genuinely happy summer, held up by the strongest animal\'s strength.',
             },
-            markScheme: [
-              'Analyses both characters and their interaction with textual support',
-              'Comments on how the writer creates impressions through detail and technique',
-              'Considers what is implied as well as stated',
-              'Top band: perceptive, thoughtful, detailed interpretation',
-            ],
+            markScheme: {
+              'How the marks are given': Q03_MARKING,
+              'Credit, for example': [
+                'A community in which everyone works: "every animal down to the humblest", the ducks and hens with "tiny wisps of hay in their beaks".',
+                'Success and honesty: "the biggest harvest that the farm had ever seen", "no wastage whatever", nothing stolen.',
+                'Happiness and pride in ownership: "went like clockwork", "an acute positive pleasure", "produced by themselves and for themselves".',
+                'Boxer as the farm\'s strength: "more like three horses than one", "his mighty shoulders", "I will work harder!", with a hint of the cost.',
+              ],
+            },
           },
           {
-            id: 'wjec-c1-05-q4',
+            id: 'wjec-c1-05-a4',
             questionNumber: 4,
+            label: '04',
             questionText:
-              '"The writer creates a powerful sense of lives at a crossroads - people and places waiting for something to change."\n\nTo what extent do you agree with this statement? You should consider the writer\'s use of language and structure in your response.',
-            marks: 15,
-            suggestedTimeMinutes: 18,
+              'Read from "But everyone worked according to his capacity" to "impossible not to believe in her good intentions."\n\nHow does the writer present the animals who do not do their share of the work?\n\nIn your answer, consider:\n- how the writer organises these lines\n- the words and phrases the writer chooses\n- how these choices affect the reader.\n\nSupport your points with references to the text, using subject terms where they help.',
+            marks: 10,
+            suggestedTimeMinutes: 13,
+            questionType: 'analysis',
+            extract: EXTRACT_05,
+            extractSource: EXTRACT_05_SOURCE,
+            modelAnswers: {
+              'Grade 6-7':
+                'The writer first builds up a picture of perfect co-operation and then breaks it. The repeated "Nobody stole, nobody grumbled" and "Nobody shirked" create a pattern of praise, but the dash in "Nobody shirked—or almost nobody" interrupts it, and the reader immediately wants to know who. This turn introduces the two exceptions.\n\nMollie is presented with gentle mockery. She "was not good at getting up in the mornings", which is a polite way of saying that she is lazy, and she leaves early "on the ground that there was a stone in her hoof", an excuse that sounds convenient. The cat is described as "somewhat peculiar", an understatement, and her pattern is funny: she "could never be found" when there was work, but would "reappear at meal-times". The phrase "as though nothing had happened" shows that her innocence is an act.\n\nThe last sentence is ironic. She made "such excellent excuses, and purred so affectionately, that it was impossible not to believe in her good intentions". The reader can see what the animals cannot, that she is avoiding work. The effect is comic, but it also shows that not everyone on the new farm shares the work equally.',
+              'Grade 8-9':
+                'The writer uses a sudden turn in the structure, and a narrator who seems more innocent than the reader, to make the shirkers both comic and revealing.\n\nThe section opens with a list of virtues built on repetition and negation: "Nobody stole, nobody grumbled over his rations", and the old vices, "the quarrelling and biting and jealousy", have "almost disappeared". The polysyndeton makes the old life sound noisy and petty, and the qualifier "almost" is the first small crack. Then the pattern breaks in the middle of a sentence: "Nobody shirked—or almost nobody." The dash enacts a correction, as if the narrator has been caught exaggerating, and the reader\'s attention is drawn to what follows.\n\nMollie and the cat are presented through euphemism and understatement, so that their idleness is described as kindly as possible. Mollie "was not good at getting up in the mornings", a gentle phrase for laziness, and the formal "on the ground that there was a stone in her hoof" makes her excuse sound like a legal defence, while "it was true" concedes the point reluctantly. The cat\'s behaviour is "somewhat peculiar", and the writer sets out her habits with a mock-scientific air ("It was soon noticed"), contrasting "when there was work to be done" with "meal-times". The verbs "vanish" and "reappear" make her sound like a conjuring trick. The final sentence holds the irony: the animals find it "impossible not to believe in her good intentions" because she "purred so affectionately". The reader sees what the animals do not, that charm and excuses can take the place of work.\n\nThe effect is comic, but it also qualifies the celebration that comes before. On a farm where "everyone worked according to his capacity", the writer shows that some animals take advantage of the trust of others, and that the community is too good-natured to notice. That gullibility is funny here, but it is also the quality that would leave a community open to cleverer exploiters.',
+            },
+            markScheme: {
+              'How the marks are given': Q04_MARKING,
+              'Credit, for example': [
+                'Structure: the list of virtues ("Nobody stole, nobody grumbled") broken by "Nobody shirked—or almost nobody", which turns to the exceptions.',
+                'Mollie\'s gentle laziness and her excuse of "a stone in her hoof".',
+                'The cat who "could never be found" at work but would "reappear at meal-times", and the irony of her "good intentions".',
+                'The comic, forgiving tone, and the hint that the community can be taken advantage of.',
+              ],
+            },
+          },
+          {
+            id: 'wjec-c1-05-a5',
+            questionNumber: 5,
+            label: '05',
+            questionText:
+              'Read from "Old Benjamin, the donkey" to the end of the extract.\n\n"In this extract, the animals\' new life is a complete success."\n\nHow far do you agree with this view?\n\nIn your answer, consider:\n- what you think and feel about the animals\' new life, in these lines and across the whole extract\n- the choices the writer makes to lead you to those thoughts and feelings.\n\nSupport your points with references to the text.',
+            marks: 10,
+            suggestedTimeMinutes: 13,
             questionType: 'evaluation',
             extract: EXTRACT_05,
             extractSource: EXTRACT_05_SOURCE,
             modelAnswers: {
-              'Grade 4-5':
-                'I agree that the extract shows lives at a crossroads. The diner is literally at the edge of a road, a place where people pass through. Earl seems stuck in his routine, doing the same thing every day - wiping the counter, pouring coffee. The diner itself is fading and declining, waiting for something to either save it or finish it off. The woman has arrived at a turning point - she doesn\'t know if she is staying or going. Her answer "I haven\'t decided yet" perfectly captures someone at a crossroads. Even the small details support this: the neon sign is half-broken, the counter is faded, everything is in between - not quite working but not completely gone.',
               'Grade 6-7':
-                'I strongly agree, and I would argue that the writer uses the diner\'s literal position - "at the edge of Route 66" - as the structural foundation for an exploration of threshold states. Everything in the extract exists between conditions: the neon sign works but barely ("buzzed and flickered"), the counter was red but is now "pinkish-grey" (neither colour fully), the truck is hidden but not repaired. This in-between quality extends to the characters: Earl is present but disengaged, performing routines he no longer consciously registers; the woman has stopped but has not "decided yet" whether to stay. The statement\'s image of a crossroads is reinforced by the vehicles - the Oklahoma truck, the dust-covered station wagon - which mark the transience of everyone who passes through, making permanence (Earl\'s situation) seem like failed transience rather than chosen stability. The woman\'s entrance is structurally positioned as the disruption of stasis: her unfamiliarity with the menu, her dress, her ambiguous answer all introduce the possibility of change into a space defined by repetition. The final exchange achieves its power through understatement: "Passing through?" is Earl\'s script, but "I haven\'t decided yet" departs from the expected response, and in that departure lies the extract\'s entire emotional freight - the suggestion that this encounter, this ordinary cup of coffee, might be the moment at which a life changes direction.',
+                'I partly agree. In many ways the new life is a success. The harvest was "an even bigger success than they had hoped", the work "went like clockwork", and the animals are "happy as they had never conceived it possible to be". Nobody steals or grumbles, and the old "quarrelling and biting and jealousy" has almost gone.\n\nHowever, the final lines make me less sure. Benjamin "seemed quite unchanged since the Rebellion", which suggests that for him nothing important has improved. He "would express no opinion" about the Rebellion, and his answer, "Donkeys live a long time. None of you has ever seen a dead donkey," is "cryptic", meaning puzzling. It suggests that he has seen many things come and go and expects this to pass too. Other details also cast doubt: the pigs "did not actually work", Mollie and the cat avoid work, and Boxer seems to carry everything on "his mighty shoulders". So the new life is a success for now, but the writer hints that it may not stay that way, or be fair to everyone.',
+              'Grade 8-9':
+                'I disagree that the new life is a complete success, although I accept that the writer presents its achievements generously. It is the idea of complete success that the final lines call into question.\n\nThe case for success is strong. The extract begins with an exclamation of effort, "How they toiled and sweated to get the hay in!", and the harvest is "an even bigger success than they had hoped". The narrator\'s confident report piles up the evidence: "the biggest harvest that the farm had ever seen", "no wastage whatever", "not an animal on the farm had stolen so much as a mouthful". Food is "an acute positive pleasure" because it is "their own". Read alone, these lines describe a working paradise.\n\nBut the extract ends with Benjamin, and the writer gives him the last word. He is "quite unchanged since the Rebellion", working in "the same slow obstinate way", "never shirking and never volunteering", and the balanced negatives make him a fixed point that the excitement does not move. He "would express no opinion", and when asked if he is happier, his reply, "Donkeys live a long time. None of you has ever seen a dead donkey," refuses to answer. Its cryptic quality is the point: it suggests a long memory and a patience that has outlasted other hopes, and it leaves the others "content" with something they do not understand. Ending on this note invites the reader to step back from the celebration.\n\nLooking back across the extract, the doubts were already there. The pigs "did not actually work, but directed and supervised", and their leadership is called "natural", a word that sounds like the pigs\' own explanation. The horses "tramp steadily round and round the field with a pig walking behind", an image uncomfortably like the old days. Boxer carries "the entire work of the farm" on "his mighty shoulders", answering every setback with more labour, and Mollie and the cat take advantage of others\' good nature. So my feeling is that the new life is a real success, but not a complete one: it is a success paid for unequally, and the writer, through Benjamin, makes us wonder how long it will last.',
             },
-            markScheme: [
-              'Evaluates with a clear, sustained personal response',
-              'Analyses language and structural methods in relation to the statement',
-              'Uses textual evidence to support evaluation',
-              'Considers alternative readings and nuances',
-              'Top band: evaluative, critical, conceptualised response',
-            ],
+            markScheme: {
+              'How the marks are given': Q05_MARKING,
+              'Credit, for example': [
+                'Agreement: the record harvest, "no wastage whatever", nothing stolen, food as "an acute positive pleasure", the animals "happy as they had never conceived it possible to be".',
+                'Disagreement: Benjamin "quite unchanged", his refusal to give an opinion and his "cryptic answer"; the pigs who "did not actually work"; Boxer\'s burden; the shirkers.',
+                "A judgement that uses Benjamin's final lines and the whole extract, with comment on how the writer moves the reader from celebration to doubt.",
+              ],
+            },
           },
         ],
       },
@@ -837,30 +1138,24 @@ export const wjecC1A: MockExamPaper[] = [
         id: 'wjec-c1-05-writing',
         title: 'Section B: Writing',
         description:
-          'You are advised to spend about 45 minutes on this section. You are reminded of the need to plan your answer.',
+          'In this section you are assessed on your creative prose writing. Up to 24 marks are given for communication and organisation, and up to 16 for vocabulary, sentence structure, spelling and punctuation. Think about the purpose and the reader of your writing. You are advised to spend about 45 minutes on this section: about 10 minutes planning and about 35 minutes writing. Aim for about 450 to 600 words.',
         totalMarks: 40,
         suggestedTimeMinutes: 45,
         questions: [
           {
-            id: 'wjec-c1-05-q5',
-            questionNumber: 5,
+            id: 'wjec-c1-05-b1',
+            questionNumber: 1,
+            label: '11',
             questionText:
-              'Choose ONE of the following titles for your creative prose writing:\n\nEither:\n(a) Strangers.\nWrite a short piece of prose with this title.\n\nOr:\n(b) Write about a journey that changed someone.\nYour response could be real or imagined.\n\n(24 marks for content and organisation / 16 marks for technical accuracy)',
+              'Write one piece, choosing from these four titles:\n\n(a) Strangers.\n\n(b) Write about a time when a journey changed you.\n\n(c) Write a story that begins: "It was the kind of village where everybody knew your business."\n\n(d) Write a story that ends with these words: "I have never told anyone that until now."\n\nYour writing may be real or imagined.',
             marks: 40,
             suggestedTimeMinutes: 45,
             questionType: 'creative-writing',
             modelAnswers: {
-              'Grade 4-5':
-                'A clear piece of creative prose with: recognisable structure; use of descriptive techniques; varied vocabulary; generally accurate SPaG; some attempt to create atmosphere or explore character.',
-              'Grade 6-7':
-                'A compelling piece with: controlled atmosphere; crafted imagery; structural sophistication; consistent SPaG accuracy; effective use of dialogue and setting to convey meaning.',
               'Grade 8-9':
-                'An assured, distinctive piece with: original voice; precise and sustained imagery; masterful control of pace and structure; technical virtuosity; a mature exploration of encounter, change, or the significance of ordinary moments.',
+                "A model answer to (b), a time when a journey changed you (about 540 words).\n\nThe ticket said Cardiff Central to Manchester Piccadilly, change at Crewe, and I read it so many times on the platform that the ink began to rub away under my thumb.\n\nI was thirteen. It was the first time I had been allowed to travel anywhere alone, and Mum had prepared me as if I were crossing the Antarctic. I had a sandwich, an apple, a phone charged to one hundred per cent, my aunt's number written on my hand in case the phone died, and a list of instructions that began with Do not talk to strangers and ended, three pages later, with Text me when you reach Crewe.\n\nFor the first hour I barely moved. I sat with my bag on my knees and watched the fields go by, green and grey and green again, and felt very grown-up and very small at the same time.\n\nThe trouble began at Crewe. The board above the platform flickered, and our connection vanished from it like a word wiped off a whiteboard. Cancelled. A voice from the ceiling apologised for any inconvenience. Around me, people groaned, and phoned, and strode off in different directions as if they had all been given secret instructions. I stood still. None of Mum's three pages covered this.\n\nNext to me, an old man in a tweed cap was peering at the board with his glasses pushed up on his forehead.\n\n'I can't read the small print,' he said, to nobody in particular. 'Can you tell me what it says about Manchester?'\n\nDo not talk to strangers, said Mum's list in my head. But he did not look like the kind of stranger the list had in mind. He looked like someone's grandad who had lost his way.\n\nSo I read it to him. Then, because he was still frowning, I found a man in an orange jacket who knew things, asked him, and came back with the answer: the next train was in forty minutes, from platform eleven, and our tickets would still be valid.\n\n'Platform eleven,' the old man repeated. 'You are a marvel.'\n\nWe walked there together. He was slow, and I carried his bag, which was heavier than mine and clinked faintly. He told me it held jars of his wife's marmalade for his daughter in Stockport. His wife had made marmalade every January for fifty years. This was the last batch.\n\nOn the train he fell asleep almost at once. I watched him for a while, his cap tipped over his eyes, the bag held carefully on his lap, and I realised something that surprised me. I was not frightened any more. Somewhere between the cancelled train and platform eleven, I had stopped waiting for someone to tell me what to do.\n\nAt Stockport his daughter met him on the platform and hugged him for a long time. Before he got off, he pressed a jar of marmalade into my hands.\n\n'For the marvel,' he said.\n\nMy aunt was waiting at Piccadilly. 'Was it all right?' she asked. 'Your mum has texted me eleven times.'\n\n'It was fine,' I said, and I meant it. I had gone a long way that day, further than the ticket said.",
             },
-            markScheme: [
-              'Content & Organisation (24 marks): Communication, voice, structure, tone',
-              'Technical Accuracy (16 marks): Sentence demarcation, punctuation, spelling, sentence variety',
-            ],
+            markScheme: Q11_MARKING,
           },
         ],
       },

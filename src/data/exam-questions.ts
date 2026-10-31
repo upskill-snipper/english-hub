@@ -2115,31 +2115,39 @@ export const examQuestions: ExamQuestion[] = [
     questionType: 'Evaluation / Comparison',
   },
 
-  // --- WJEC Paper 1: Descriptive Writing ---
+  // --- WJEC Paper 1: the writing task, filed as Descriptive Writing ---
+  // Reworded 31 October 2026. Component 1's writing task is creative prose, a
+  // story or an account of an experience, real or imagined (eduqas-lang-comp1,
+  // B1), and the marker holds writing that only describes below the top of its
+  // range. These four asked for pure description, so an answer that did what
+  // they asked was held down by the task itself. Each keeps its subject and is
+  // now set as Eduqas sets its titles: a phrase, a time you did something, an
+  // opening line and a closing line. The questionType is unchanged: it is the
+  // label LANGUAGE_TYPES (src/lib/marking/essay-feedback-targets.ts) maps to B1.
   {
     id: 'wjec-p1-dw-1',
-    text: 'Write a description of a place in winter. You should aim to create a vivid picture for the reader.',
+    text: 'Write a story with the title "Snowed In". Your writing may be real or imagined.',
     board: 'WJEC',
     paper: 'Paper 1',
     questionType: 'Descriptive Writing',
   },
   {
     id: 'wjec-p1-dw-2',
-    text: "Describe an outdoor event on a hot summer's day. Focus on the sights, sounds and atmosphere.",
+    text: "Write about a time when you went to an outdoor event on a hot summer's day. Your writing may be real or imagined.",
     board: 'WJEC',
     paper: 'Paper 1',
     questionType: 'Descriptive Writing',
   },
   {
     id: 'wjec-p1-dw-3',
-    text: 'Write a description suggested by this picture: an old, overgrown garden with a broken gate.',
+    text: 'Write a story that begins: "The gate to the old garden had been broken for as long as anyone could remember."',
     board: 'WJEC',
     paper: 'Paper 1',
     questionType: 'Descriptive Writing',
   },
   {
     id: 'wjec-p1-dw-4',
-    text: 'Describe a moment of calm after a period of chaos. Use precise and engaging language.',
+    text: 'Write a story that ends with these words: "And then, at last, everything was calm."',
     board: 'WJEC',
     paper: 'Paper 1',
     questionType: 'Descriptive Writing',
@@ -2261,9 +2269,13 @@ export const examQuestions: ExamQuestion[] = [
     paper: 'Paper 2',
     questionType: 'Language Analysis',
   },
+  // Until 24 October 2026 this asked how the 19th-century writer uses language,
+  // a question Component 2 does not set: its language question, 1.2, is on the
+  // 21st-century text, and this label sends the answer there
+  // (src/lib/marking/essay-feedback-targets.ts, eduqas-lang-comp2/A2).
   {
     id: 'wjec-p2-la-2',
-    text: 'How does the 19th-century writer use language to describe the poverty they witnessed?',
+    text: "The writer of the 21st-century text describes the poverty they witnessed. How does the writer try to make readers understand it? You should comment on what the writer says, the writer's use of language and tone, and how the text is structured.",
     board: 'WJEC',
     paper: 'Paper 2',
     questionType: 'Language Analysis',

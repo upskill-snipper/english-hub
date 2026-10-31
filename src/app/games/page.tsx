@@ -1111,7 +1111,7 @@ const EAL_GAMES: GameDef[] = [
   mkGame(
     'picture-word-match',
     'Picture Word Match',
-    'Match the picture to the right English word. Everyday vocabulary for beginners.',
+    'Match a picture to its English word, then find the word that fits a sentence, a short text or a dialogue.',
     <Layers className="size-6" />,
     'Easy',
     'text-emerald-400',
@@ -1138,7 +1138,7 @@ const EAL_GAMES: GameDef[] = [
   mkGame(
     'plural-builder',
     'Plural Builder',
-    'Make the plural - regular, irregular and the odd ones out.',
+    'Choose the noun form a sentence needs: regular and irregular plurals, and nouns that stay singular.',
     <Shuffle className="size-6" />,
     'Easy',
     'text-teal-400',
@@ -1147,7 +1147,7 @@ const EAL_GAMES: GameDef[] = [
   mkGame(
     'to-be-conjugation',
     'The Verb To Be',
-    'am / is / are / was / were - fill the gap correctly.',
+    'Choose the form of "to be" that fits: statements, questions, short answers and dialogues.',
     <Zap className="size-6" />,
     'Easy',
     'text-amber-400',
@@ -1165,7 +1165,7 @@ const EAL_GAMES: GameDef[] = [
   mkGame(
     'days-months-seasons',
     'Days, Months & Seasons',
-    'Order them, spell them, match them to seasons.',
+    'Days, months and dates in use: calendars, "on", "in" and "at", British date order and counting from today.',
     <Star className="size-6" />,
     'Easy',
     'text-pink-400',
@@ -1174,7 +1174,7 @@ const EAL_GAMES: GameDef[] = [
   mkGame(
     'classroom-objects',
     'In the Classroom',
-    'Name classroom objects and say where things are.',
+    'Name school things from their pictures, find the school word that fits a sentence or a dialogue, and say where things are.',
     <BookOpen className="size-6" />,
     'Easy',
     'text-emerald-400',
@@ -1201,7 +1201,7 @@ const EAL_GAMES: GameDef[] = [
   mkGame(
     'tricky-word-spelling',
     'Tricky Word Sprint',
-    'Beat the clock spelling the everyday words people get wrong.',
+    'Beat the clock to choose the UK spelling of everyday words people get wrong.',
     <Volume2 className="size-6" />,
     'Easy',
     'text-rose-400',
@@ -1210,7 +1210,7 @@ const EAL_GAMES: GameDef[] = [
   mkGame(
     'tense-timeline',
     'Tense Timeline',
-    'Spot the verb tense - past, present, future and perfect.',
+    'Name the tense of a sentence, then choose the verb form that fits its time: past, present, future and perfect.',
     <Timer className="size-6" />,
     'Medium',
     'text-sky-400',
@@ -1219,7 +1219,7 @@ const EAL_GAMES: GameDef[] = [
   mkGame(
     'prepositions-of-place',
     'Where Is It?',
-    'in / on / under / behind / between - prepositions of place.',
+    "Choose the preposition a sentence needs: place and time, movement and transport, words like 'interested in', set phrases and short dialogues.",
     <Target className="size-6" />,
     'Medium',
     'text-teal-400',
@@ -1228,7 +1228,7 @@ const EAL_GAMES: GameDef[] = [
   mkGame(
     'phrasal-verbs-match',
     'Phrasal Verb Match',
-    'Match common phrasal verbs to their meaning.',
+    'Match phrasal verbs to their meanings, then choose the one a sentence or a conversation needs.',
     <Layers className="size-6" />,
     'Medium',
     'text-violet-400',
@@ -1255,7 +1255,7 @@ const EAL_GAMES: GameDef[] = [
   mkGame(
     'comparatives-superlatives',
     'Big, Bigger, Biggest',
-    'big → bigger → biggest. Form comparatives and superlatives.',
+    'Choose the comparative or superlative a sentence needs, from tables, dialogues and real lines.',
     <Zap className="size-6" />,
     'Easy',
     'text-emerald-400',
@@ -1263,8 +1263,8 @@ const EAL_GAMES: GameDef[] = [
   ),
   mkGame(
     'collocations-challenge',
-    'Make / Do / Have / Take',
-    'Pick the verb that goes with the noun - natural English.',
+    'Collocations Challenge',
+    'Choose the word that goes with its partner, or spot the pair that is not natural English.',
     <Brain className="size-6" />,
     'Medium',
     'text-pink-400',
@@ -1276,7 +1276,7 @@ const KS3_GAMES: GameDef[] = [
   mkGame(
     'word-class-sorter',
     'Word Class Sorter',
-    'Noun, verb, adjective, adverb? Context decides.',
+    'Noun, verb, adjective, adverb? Context decides, and at the top level phrases and clauses too.',
     <Layers className="size-6" />,
     'Medium',
     'text-violet-400',
@@ -1285,7 +1285,7 @@ const KS3_GAMES: GameDef[] = [
   mkGame(
     'punctuation-repair',
     'Punctuation Repair',
-    'Fix the capital letters, full stops and commas.',
+    'Choose the correctly punctuated sentence: commas, colons, semicolons, brackets and speech, many in real lines from the classics.',
     <PenTool className="size-6" />,
     'Medium',
     'text-clay-600',
@@ -1303,7 +1303,7 @@ const KS3_GAMES: GameDef[] = [
   mkGame(
     'homophone-hero',
     'Homophone Hero',
-    "their / there / they're - pick the right one.",
+    "their, there or they're? Pick the right homophone, in everyday sentences and real lines from the classics.",
     <Brain className="size-6" />,
     'Medium',
     'text-cyan-400',
@@ -1321,7 +1321,7 @@ const KS3_GAMES: GameDef[] = [
   mkGame(
     'prefix-suffix-lab',
     'Prefix & Suffix Lab',
-    'Build words with prefixes and suffixes.',
+    'Build words with prefixes and suffixes, spell them where they join, and say what an affix does in a real line.',
     <Zap className="size-6" />,
     'Medium',
     'text-emerald-400',
@@ -1357,7 +1357,7 @@ const KS3_GAMES: GameDef[] = [
   mkGame(
     'figurative-language-finder',
     'Figurative Language Finder',
-    'Simile, metaphor, personification - name the device.',
+    'Name the device in real lines from classic texts, then say what a word, image or pun suggests.',
     <Target className="size-6" />,
     'Medium',
     'text-violet-400',
@@ -1366,7 +1366,7 @@ const KS3_GAMES: GameDef[] = [
   mkGame(
     'dictionary-skills',
     'Dictionary Skills',
-    'Alphabetical order, guide words and definitions.',
+    'Alphabetical order, guide words, meanings in context and word classes.',
     <BookOpen className="size-6" />,
     'Easy',
     'text-emerald-400',
@@ -1375,7 +1375,7 @@ const KS3_GAMES: GameDef[] = [
   mkGame(
     'paragraph-jumble',
     'Paragraph Jumble',
-    'Reorder sentences into a coherent paragraph.',
+    'Put sentences in order to make a paragraph, and choose the connective a gap needs, many from real books.',
     <Shuffle className="size-6" />,
     'Medium',
     'text-amber-400',

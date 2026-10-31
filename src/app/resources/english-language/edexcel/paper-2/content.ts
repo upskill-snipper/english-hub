@@ -191,4 +191,73 @@ export const STRINGS: Record<string, Bi> = {
     en: `Section A is worth 56 of the 96 marks on this paper. The level descriptors used by the marking engine follow Pearson’s published band structure, but for the exact wording of each level always work from the mark scheme for your own series.`,
     ar: `القسم أ يساوي 56 نقطة من أصل 96 في هذه الورقة. تتبع أوصاف المستويات المستخدمة في محرك التصحيح بنية النطاقات المنشورة من Pearson، لكن للاطلاع على الصياغة الدقيقة لكل مستوى ارجع دائما إلى مخطط التصحيح الخاص بدورتك.`,
   },
+
+  // ─── Added 31 October 2026 with the Paper 2 corrections ──────────────────
+  //
+  // The page's writing grid had four levels that match no Pearson grid, and
+  // its timing table described a different paper. Both were rewritten to
+  // src/data/mark-scheme-guides/edexcel-lang-paper2.ts, which orphaned the
+  // Arabic of every rewritten cell. These entries carry the new wording. The
+  // Arabic here was written by the session that made the change and wants a
+  // native speaker's read.
+  s77: {
+    en: `Some ideas come across, but little sense of audience or purpose; loosely organised.`,
+    ar: `تصل بعض الأفكار، لكن الإحساس بالجمهور أو الغرض ضعيف؛ والتنظيم مفكك.`,
+  },
+  s78: {
+    en: `Simple, everyday words with frequent spelling mistakes; shaky punctuation; short or repetitive sentences.`,
+    ar: `كلمات يومية بسيطة مع أخطاء إملائية متكررة؛ ترقيم غير مستقر؛ جمل قصيرة أو متكررة النمط.`,
+  },
+  s79: {
+    en: `Knows who the writing is for and why, in a simple, steady tone; ideas set out in order, in paragraphs.`,
+    ar: `يعرف لمن يكتب ولماذا، بنبرة بسيطة وثابتة؛ والأفكار مرتبة في فقرات.`,
+  },
+  s80: {
+    en: `Everyday words spelt correctly; punctuation mostly right; some varied sentences, including ones joined with words such as because or although.`,
+    ar: `الكلمات اليومية مكتوبة بإملاء صحيح؛ الترقيم صحيح في معظمه؛ بعض التنوع في الجمل، ومنها جمل مربوطة بكلمات مثل because أو although.`,
+  },
+  s81: {
+    en: `Ideas and techniques picked to suit the audience and purpose; the tone fits; each point builds on the last, in clear paragraphs.`,
+    ar: `أفكار وأساليب مختارة لتناسب الجمهور والغرض؛ النبرة مناسبة؛ كل نقطة تبني على ما قبلها، في فقرات واضحة.`,
+  },
+  s82: {
+    en: `A good choice of words; tricky spellings mostly right; a mix of punctuation used correctly; sentences shaped to help the purpose.`,
+    ar: `اختيار جيد للكلمات؛ معظم الكلمات الصعبة مكتوبة بإملاء صحيح؛ علامات ترقيم متنوعة مستخدمة بشكل صحيح؛ جمل مصاغة لخدمة الغرض.`,
+  },
+  s83: {
+    en: `Shaped deliberately to affect the reader; tone and register well judged; structure under control across the whole piece.`,
+    ar: `مصاغة عن قصد للتأثير في القارئ؛ النبرة ودرجة الرسمية مضبوطتان بعناية؛ البنية متماسكة في النص كله.`,
+  },
+  s84: {
+    en: `Words chosen with care from a wide range; only the odd spelling slip; punctuation placed to make meaning clear; sentences built with a purpose in mind.`,
+    ar: `كلمات مختارة بعناية من حصيلة واسعة؛ أخطاء إملائية نادرة؛ ترقيم يوضّح المعنى؛ جمل مبنية لهدف واضح.`,
+  },
+  s85: {
+    en: `Steers the reader’s response in subtle ways; a confident voice throughout; complex ideas arranged so the whole piece holds together.`,
+    ar: `توجّه استجابة القارئ بطرق خفية؛ صوت واثق من البداية إلى النهاية؛ أفكار معقدة مرتبة بحيث يتماسك النص كله.`,
+  },
+  s86: {
+    en: `Ambitious vocabulary used with purpose; errors so rare they never get in the way; precise punctuation and a full range of sentence types, each chosen for its effect.`,
+    ar: `مفردات طموحة تُستخدم لهدف واضح؛ أخطاء نادرة لا تعيق القراءة أبدًا؛ ترقيم دقيق وأنواع الجمل كلها، كل منها مختار لتأثيره.`,
+  },
+  s87: {
+    en: `Language and structure across the whole text, each point linked to its effect.`,
+    ar: `اللغة والبنية في النص كله، مع ربط كل نقطة بتأثيرها.`,
+  },
+  s88: {
+    en: `One point from the named lines. Check the line numbers.`,
+    ar: `نقطة واحدة من الأسطر المحددة. تأكد من أرقام الأسطر.`,
+  },
+  s89: {
+    en: `A clear verdict on how well the writer succeeds, tested against Text 2.`,
+    ar: `حكم واضح على مدى نجاح الكاتب، مدعوم بالرجوع إلى النص 2.`,
+  },
+  s90: {
+    en: `Similarities only, with evidence from both texts in every point.`,
+    ar: `أوجه التشابه فقط، مع أدلة من النصين في كل نقطة.`,
+  },
+  s91: {
+    en: `Compare ideas and methods throughout, with evidence from both texts.`,
+    ar: `قارن الأفكار والأساليب طوال الإجابة، مع أدلة من النصين.`,
+  },
 }

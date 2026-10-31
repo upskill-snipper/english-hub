@@ -143,11 +143,16 @@ describe('the paper pages state the right totals', () => {
 describe('the reading and writing split', () => {
   it('Paper 2 reading is 56 and writing 40, which the page now says', () => {
     // It said 24 and 40, the inversion the backlog entry called out.
+    //
+    // 31 October 2026: the times beside them were pinned here as "~1 hr 15 min"
+    // and "~50 min". The front of Pearson's 1EN0/02 paper advises about 1 hour
+    // 20 minutes on Section A and about 45 on Section B, as the plain-English
+    // guide records, so the pin was holding a wrong figure in place.
     const writing = writingMarks(edexcelLangPaper2)
     expect(writing).toBe(40)
     expect(edexcelLangPaper2.totalMarks - writing).toBe(56)
-    expect(PAPER2).toContain('56 marks &bull; ~1 hr 15 min')
-    expect(PAPER2).toContain('40 marks &bull; ~50 min')
+    expect(PAPER2).toContain('56 marks &bull; ~1 hr 20 min')
+    expect(PAPER2).toContain('40 marks &bull; ~45 min')
   })
 
   it('Paper 1 reading is 24 and writing 40', () => {
@@ -185,6 +190,30 @@ describe('the AQA shape is gone from the pages', () => {
       .reduce((a, ao) => a + ao.maxMarks, 0)
     expect(ao2).toBe(21)
     expect(PAPER1).not.toContain('Structural / Language Analysis (6 marks)')
+  })
+})
+
+describe("AQA's and Eduqas's Paper 2 are gone from the pages", () => {
+  // 31 October 2026. Paper 2 was described as a 19th-century text beside a
+  // modern one, which is AQA's Paper 2 (8700/2), and its advice was built on
+  // "the 19th-century writer in Text 1". Pearson's Paper 2 prints two
+  // non-fiction texts from the 20th and 21st centuries. Elsewhere on the site
+  // it set two transactional writing tasks, which is Eduqas's Component 2; this
+  // paper sets one, Question 8 or 9. The index page also listed Paper 2 as 64
+  // marks and the qualification as "128 (+ 20% Spoken Language)".
+  it('no Edexcel Language page puts a 19th-century text on Paper 2', () => {
+    expect(PAPER2).not.toMatch(/19th/)
+    expect(INDEX).not.toContain('19th & 21st century')
+  })
+
+  it('Paper 2 sets one piece of writing, from Question 8 or 9', () => {
+    expect(PAPER2).toContain('Question 8 or Question 9')
+    expect(PAPER2).not.toMatch(/two (transactional )?writing tasks/i)
+  })
+
+  it('the index table gives Paper 2 its 96 marks and the course its 160', () => {
+    expect(INDEX).toMatch(/2 hr 5 min<\/td>\s*<td[^>]*>96<\/td>/)
+    expect(INDEX).not.toContain('128 (+ 20% Spoken Language)')
   })
 })
 

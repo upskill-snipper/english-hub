@@ -3,12 +3,12 @@
 // WHY (SEC-1, 19 September 2026). Two critical Next.js advisories sat unpatched
 // because nothing looked. `npm audit` is only useful if somebody runs it, and
 // a bare `npm audit` in a hook is worse than nothing here: it exits non-zero on
-// three accepted residuals, so it would fail every push from the first day and
+// the accepted residuals, so it would fail every push from the first day and
 // be bypassed by the second. A gate that cries wolf is a gate that gets a
 // `HUSKY=0` alias written for it.
 //
 // So this compares against scripts/npm-audit-known.json and fails only on
-// something NEW. The accepted three carry their reasons in that file.
+// something NEW. The accepted residuals carry their reasons in that file.
 //
 // It also reports a pinned advisory that NO LONGER FIRES, because an allowlist
 // that outlives its contents is how a checker starts lying: it goes on excusing

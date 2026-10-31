@@ -323,38 +323,61 @@ Level 1 (1-4): Limited punctuation. Limited sentence forms. Limited vocabulary.`
     examBoard: ['Edexcel'],
     yearGroup: ['Year 10', 'Year 11'],
     description: 'Teacher-friendly Edexcel English Language mark scheme covering both papers.',
-    content: `EDEXCEL ENGLISH LANGUAGE - SIMPLIFIED MARK SCHEME
+    // 31 October 2026: rewritten to the 1EN0 guides in src/data/mark-scheme-guides/.
+    // It gave Paper 1's reading 40 marks and a 12-mark Q1, the AO6 grid 10-13 and 7-9
+    // with two levels missing, and Paper 2 "similar banding". The levels below are the
+    // guides' summaries in our own words, not Pearson's wording.
+    content: `EDEXCEL ENGLISH LANGUAGE (1EN0) - SIMPLIFIED MARK SCHEME
+Our summary of the levels. Always check Pearson's own mark scheme for your series.
 
-PAPER 1: FICTION AND IMAGINATIVE WRITING
+PAPER 1: FICTION AND IMAGINATIVE WRITING (1 hour 45 minutes, 64 marks)
 ──────────────────────────────────────────────
-Section A: Reading (Q1-Q4, 40 marks)
+Section A: Reading (Q1-Q4, 24 marks) - one extract from a 19th-century novel or story
 
-Q1 (12 marks) - Close reading of extract:
-Band 5 (10-12): Perceptive, exploratory analysis. Precise, embedded quotations. Sophisticated discussion of effects.
-Band 4 (7-9): Detailed analysis. Well-chosen references. Clear discussion of effects.
-Band 3 (4-6): Some analysis. Supported points. Some comment on effects.
-Band 2 (2-3): Awareness of text. Basic references. Limited comment.
-Band 1 (1): Simple, limited.
+Q1 (1 mark, AO1): one detail from the lines named.
+Q2 (2 marks, AO1): two different points from a short section.
 
-Q2-Q4 follow similar banding (see full spec for variations per question).
+Q3 (6 marks, AO2) - language and structure in a short section:
+Level 3 (5-6): Close analysis of both language and structure, with carefully picked quotations.
+Level 2 (3-4): Explains how both language and structure create effects.
+Level 1 (1-2): A few brief comments. An answer on language only, or structure only, stays here.
 
-Section B: Imaginative Writing (Q5 or Q6, 40 marks)
-Content & Organisation (24 marks):
-Band 5 (20-24): Compelling, sophisticated. Original, ambitious ideas. Purposeful structure.
-Band 4 (15-19): Convincing, effective. Developed ideas. Secure structure.
-Band 3 (10-14): Clarity, success. Some development. Organised structure.
-Band 2 (5-9): Some clarity. Limited development. Attempted structure.
-Band 1 (1-4): Simple, limited. Minimal development.
+Q4 (15 marks, AO4) - how successfully the writer creates an effect the question names:
+Level 5 (13-15): A consistent, thoughtful judgement of the extract as a whole.
+Level 4 (10-12): A well-argued judgement, with detailed quotations for every point.
+Level 3 (7-9): Explains how the effect is created and gives a reasoned view of how well it works.
+Level 2 (4-6): Comments on what happens, with simple opinions.
+Level 1 (1-3): Mostly describes what happens; opinions without reasons.
 
-Technical Accuracy (16 marks):
-Band 5 (14-16): Accuracy consistent. Wide range of sentence types and punctuation.
-Band 4 (10-13): Mostly accurate. Good range.
-Band 3 (7-9): Reasonable accuracy. Some range.
+Section B: Imaginative Writing (Q5 or Q6, answer one, 40 marks)
+Content & Organisation (AO5, 24 marks):
+Level 5 (20-24): Steers the reader in subtle ways; confident voice; the whole piece holds together.
+Level 4 (15-19): Shaped deliberately to affect the reader; structure controlled throughout.
+Level 3 (10-14): Ideas and techniques suit the task; each idea builds on the last.
+Level 2 (5-9): A simple, steady tone; ideas in order, in paragraphs.
+Level 1 (1-4): Some ideas come across; loosely organised.
 
-PAPER 2: NON-FICTION AND TRANSACTIONAL WRITING
-Similar banding - key differences:
-• Section A tests comparison of two non-fiction texts
-• Section B tests transactional/persuasive writing (article, letter, speech, essay)
+Technical Accuracy (AO6, 16 marks):
+Level 5 (14-16): Ambitious vocabulary; errors so rare they never get in the way.
+Level 4 (11-13): Careful word choice; only the odd slip.
+Level 3 (8-10): Tricky spellings mostly right; a mix of punctuation used correctly.
+Level 2 (5-7): Everyday words spelt correctly; punctuation mostly right.
+Level 1 (1-4): Frequent spelling mistakes; shaky punctuation.
+
+PAPER 2: NON-FICTION AND TRANSACTIONAL WRITING (2 hours 5 minutes, 96 marks)
+──────────────────────────────────────────────
+Section A: Reading (Q1-Q7, 56 marks) - two non-fiction texts from the 20th and 21st centuries, linked by a theme
+
+Q1 and Q2 (2 marks each, AO1): retrieval from Text 1.
+Q3 (15 marks, AO2): language and structure in Text 1. Five levels of three marks; language only, or structure only, cannot go above Level 2.
+Q4 and Q5 (1 mark each, AO1): retrieval from Text 2.
+Q6 (15 marks, AO4): how successfully the writer of Text 2 achieves an aim. Five levels of three marks.
+Q7(a) (6 marks, AO1): synthesis of similarities across both texts. Levels 1-2, 3-4, 5-6; an answer on one text earns no marks.
+Q7(b) (14 marks, AO3): comparison of the writers' perspectives and methods. Levels 1-2, 3-5, 6-8, 9-11, 12-14; an answer on one text in detail cannot go above Level 2.
+
+Section B: Transactional Writing (Q8 or Q9, answer one, 40 marks)
+• One piece in a set form, for example an article, letter, review, speech or section of a guide
+• AO5 (24 marks) and AO6 (16 marks), on the same levels as Paper 1
 
 TEACHER TIP: Edexcel rewards "exploratory" reading earlier than AQA. Encourage students to ask "what else could this mean?" from the start.`,
     printable: true,
@@ -1578,6 +1601,10 @@ _____________________________________________`,
     ],
   },
   {
+    // 31 October 2026: both reading sections said 40 marks (they are 24 and 56),
+    // Paper 1 was "19th, 20th, and 21st century fiction" (it is 19th-century) and
+    // both papers were "1 hour 45 minutes each" (Paper 2 is 2 hours 5 minutes).
+    // Corrected to the 1EN0 guides in src/data/mark-scheme-guides/.
     id: 'checklist-edexcel-lang',
     title: 'Edexcel Language Revision Checklist',
     category: 'Revision Checklists',
@@ -1593,7 +1620,7 @@ Name: _________________ Target grade: ___
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 PAPER 1: FICTION AND IMAGINATIVE WRITING
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-SECTION A: READING (40 marks)
+SECTION A: READING (24 marks)
 □ I can analyse language effects at word level
 □ I can explain structural choices and their effects
 □ I can evaluate a writer's success critically
@@ -1612,7 +1639,7 @@ SECTION B: IMAGINATIVE WRITING (40 marks)
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 PAPER 2: NON-FICTION AND TRANSACTIONAL WRITING
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-SECTION A: READING (40 marks)
+SECTION A: READING (56 marks)
 □ I can identify and explain explicit and implicit information
 □ I can analyse language in non-fiction texts
 □ I can compare TWO texts (synthesise information)
@@ -1631,10 +1658,10 @@ SECTION B: TRANSACTIONAL WRITING (40 marks)
 
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 KEY DIFFERENCES FROM AQA:
-□ I understand Edexcel uses 19th, 20th, and 21st century fiction in Paper 1
-□ I know Paper 2 tests comparison of non-fiction texts
+□ I understand Edexcel Paper 1 uses an extract from a 19th-century novel or story
+□ I know Paper 2 compares two non-fiction texts from the 20th and 21st centuries
 □ I know Edexcel rewards "exploratory" analysis (asking "what else?")
-□ I know both papers are 1 hour 45 minutes each
+□ I know Paper 1 is 1 hour 45 minutes and Paper 2 is 2 hours 5 minutes
 
 CONFIDENCE: □ Paper 1 Reading  □ Paper 1 Writing  □ Paper 2 Reading  □ Paper 2 Writing`,
     printable: true,

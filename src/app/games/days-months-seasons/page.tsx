@@ -19,11 +19,23 @@ import { BANK, type Question, type Subtype } from '@/data/games/banks/days-month
 // 16 October 2026), and the explanation for each in
 // src/data/games/explanations/days-months-seasons.ts.
 
+// The badge names the kind of question, never the rule that answers it. The
+// month-to-season questions went on 24 October 2026 (the bank says why), and
+// nine kinds came in.
 const SUBTYPE_LABEL: Record<Subtype, string> = {
   order: 'Order',
   'next-before': 'Next / Before',
-  'month-season': 'Months & Seasons',
   'spelling-choice': 'Spelling',
+  'short-form': 'Short forms',
+  'calendar-word': 'Calendar words',
+  preposition: 'Little words',
+  'saying-dates': 'Dates',
+  capitals: 'Capital letters',
+  'spelling-in-sentence': 'Spelling in a sentence',
+  'time-words': 'When?',
+  'time-phrase': 'Time phrases',
+  dialogue: 'Conversation',
+  'short-text': 'Reading',
 }
 
 const ROUND_SIZE = 15
@@ -41,9 +53,10 @@ function shuffle<T>(arr: T[]): T[] {
 
 // A round's options in a new order each time. The round itself is dealt by
 // useDealer (src/lib/games/start-round.ts), which keeps it balanced across the
-// four subtypes (each question's tag) as the round-robin here used to, and
-// also deals what this browser has not met and keeps out of one round the
-// questions that give each other away (24 October 2026).
+// kinds of question (each question's tag) as the round-robin here used to,
+// deals what this browser has not met, keeps out of one round the questions
+// that give each other away, and, since the bank gained tiers on 24 October
+// 2026, deals by the student's level in this game.
 function withShuffledOptions(picked: Question[]): Question[] {
   return picked.map((q) => ({ ...q, options: shuffle(q.options) }))
 }
@@ -180,7 +193,10 @@ export default function DaysMonthsSeasonsPage() {
 
               {/* Question card */}
               <div className="rounded-xl border border-border bg-card p-6 text-center space-y-2">
-                <p className="text-lg font-semibold text-foreground">{currentQ.prompt}</p>
+                {/* A dialogue's prompt puts each speaker on a line of its own. */}
+                <p className="text-lg font-semibold text-foreground whitespace-pre-line">
+                  {currentQ.prompt}
+                </p>
                 {currentQ.note && <p className="text-xs text-muted-foreground">{currentQ.note}</p>}
               </div>
 

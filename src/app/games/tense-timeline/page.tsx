@@ -11,7 +11,7 @@ import { getBoardConfig } from '@/lib/board/board-store'
 import { AnswerExplanation } from '@/components/games/AnswerExplanation'
 import { useGameRound } from '@/components/games/game-round'
 import { useDealer } from '@/lib/games/start-round'
-import { BANK, tensesOffered, type Tense, type TenseItem } from '@/data/games/banks/tense-timeline'
+import { BANK, answerOf, isForming, type TenseItem } from '@/data/games/banks/tense-timeline'
 
 // ─── Data ──────────────────────────────────────────────────────────────────────
 // The sentences are in src/data/games/banks/tense-timeline.ts (moved there on
@@ -32,23 +32,35 @@ function shuffle<T>(arr: T[]): T[] {
 }
 
 /**
- * The right tense and three others drawn at random.
+ * The question's own four options, dealt in a new order.
  *
- * WHAT WAS WRONG (found 16 October 2026). The three were drawn from every other
- * tense, so "I was cooking dinner when the phone rang" could offer Past Simple
- * (rang) beside Past Continuous, and a student who read closely was marked
- * wrong. A sentence now names such a tense in `alsoReadAs`, and it is never
- * drawn (tensesOffered; src/data/games/banks/tense-timeline.ts).
+ * WHAT WAS WRONG (found 16 October 2026). The three wrong tenses were drawn
+ * from every other tense, so "I was cooking dinner when the phone rang" could
+ * offer Past Simple (rang) beside Past Continuous, and a student who read
+ * closely was marked wrong. From 24 October 2026 each question carries its own
+ * four (src/data/games/banks/tense-timeline.ts): near neighbours for a tense's
+ * name, and learners' mistakes for a form, never a tense the sentence also uses.
  */
-function buildOptions(item: TenseItem): Tense[] {
-  const distractors = shuffle(tensesOffered(item).filter((t) => t !== item.tense)).slice(0, 3)
-  return shuffle([item.tense, ...distractors])
+function buildOptions(item: TenseItem): string[] {
+  return shuffle([...BANK.options(item)!])
 }
 
 // ─── Component ─────────────────────────────────────────────────────────────────
 
 interface Question extends TenseItem {
-  options: Tense[]
+  /** The options in the order dealt. */
+  options: string[]
+  /** The right option: the form for the gap, or the tense's name. */
+  answer: string
+  /**
+   * Whether it asks for the form that fills a gap. Read from the bank's item
+   * before `answer` is filled in: isForming() asks whether an item has an
+   * answer, and every Question has one, so asking it of the Question showed
+   * all 80 naming questions as "Which form fits the gap?", with a gap after
+   * the whole sentence that then filled with the tense's name (found by the
+   * second reader, 31 October 2026).
+   */
+  forming: boolean
 }
 
 export default function TenseTimelinePage() {
@@ -60,7 +72,7 @@ export default function TenseTimelinePage() {
   const [qIdx, setQIdx] = useState(0)
   const [score, setScore] = useState(0)
   const [totalAnswered, setTotalAnswered] = useState(0)
-  const [selected, setSelected] = useState<Tense | null>(null)
+  const [selected, setSelected] = useState<string | null>(null)
   const [feedback, setFeedback] = useState<'correct' | 'wrong' | null>(null)
   const round = useGameRound('tense-timeline')
   const deal = useDealer(BANK)
@@ -72,6 +84,8 @@ export default function TenseTimelinePage() {
     const built: Question[] = picked.map((item) => ({
       ...item,
       options: buildOptions(item),
+      answer: answerOf(item),
+      forming: isForming(item),
     }))
     setQuestions(built)
     setQIdx(0)
@@ -97,9 +111,9 @@ export default function TenseTimelinePage() {
    * 2.6 seconds. There is no clock in this game, so nothing else changes.
    */
   const handleAnswer = useCallback(
-    (option: Tense) => {
+    (option: string) => {
       if (!currentQ || feedback) return
-      const isCorrect = option === currentQ.tense
+      const isCorrect = option === currentQ.answer
       setSelected(option)
       setTotalAnswered((t) => t + 1)
       if (isCorrect) {
@@ -149,7 +163,7 @@ export default function TenseTimelinePage() {
           gameId="tense-timeline"
           audience="eal"
           title="Tense Timeline"
-          description="Read each sentence and choose the verb tense it uses. Build your grammar instinct one sentence at a time."
+          description="Name the tense of each sentence, or choose the form of the verb that fits the gap. Build your grammar instinct one sentence at a time."
           difficulty="Crossover"
           score={score}
           maxScore={totalAnswered || questions.length || ROUND_SIZE}
@@ -168,20 +182,52 @@ export default function TenseTimelinePage() {
                 <span>{accuracyPct}% accuracy</span>
               </div>
 
-              {/* Sentence card */}
+              {/* Sentence card. Since 24 October 2026 a question may also ask
+                  for the form that fills a gap, after lines of dialogue or
+                  text, and a real line from a book names its source. */}
               <div className="rounded-xl border border-border bg-card p-6 text-center space-y-3">
                 <div className="inline-flex items-center gap-2 rounded-full border border-primary/30 bg-primary/10 px-3 py-1 text-xs font-semibold text-primary">
-                  <Clock className="size-3.5" /> Which tense is this?
+                  <Clock className="size-3.5" />{' '}
+                  {currentQ.forming ? 'Which form fits the gap?' : 'Which tense is this?'}
                 </div>
-                <p className="text-lg font-medium text-foreground leading-relaxed">
-                  &ldquo;{currentQ.sentence}&rdquo;
-                </p>
+                {currentQ.context && (
+                  <div className="space-y-1 text-base leading-relaxed text-muted-foreground">
+                    {currentQ.context.map((line) => (
+                      <p key={line}>{line}</p>
+                    ))}
+                  </div>
+                )}
+                {currentQ.forming ? (
+                  <p className="text-lg font-medium text-foreground leading-relaxed">
+                    {currentQ.sentence.split('___')[0]}
+                    <span
+                      className={cn(
+                        'mx-1 inline-block min-w-[3.5rem] rounded-md border-b-2 px-2 py-0.5 font-bold',
+                        feedback === 'correct'
+                          ? 'border-emerald-500 text-emerald-400'
+                          : feedback === 'wrong'
+                            ? 'border-red-500 text-red-400'
+                            : 'border-primary/60 text-primary',
+                      )}
+                    >
+                      {feedback ? currentQ.answer : '?'}
+                    </span>
+                    {currentQ.sentence.split('___')[1]}
+                  </p>
+                ) : (
+                  <p className="text-lg font-medium text-foreground leading-relaxed">
+                    &ldquo;{currentQ.sentence}&rdquo;
+                  </p>
+                )}
+                {currentQ.source && (
+                  <p className="text-xs text-muted-foreground">{currentQ.source}</p>
+                )}
               </div>
 
               {/* Options */}
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                 {currentQ.options.map((option) => {
-                  const isCorrectOption = option === currentQ.tense
+                  const isCorrectOption = option === currentQ.answer
                   const isChosen = option === selected
                   const showState = feedback != null
                   return (
@@ -238,7 +284,7 @@ export default function TenseTimelinePage() {
                       ) : (
                         <>
                           <XCircle className="size-4" /> Not quite: it&rsquo;s{' '}
-                          <span className="font-bold">{currentQ.tense}</span>.
+                          <span className="font-bold">{currentQ.answer}</span>.
                         </>
                       )}
                     </div>

@@ -75,6 +75,12 @@ describe('paper codes', () => {
     ['C700U20-1', 'eduqas-lang-comp2'],
     ['C720/01', 'eduqas-lit-comp1'],
     ['C720/02', 'eduqas-lit-comp2'],
+    // Cambridge, from 24 October 2026: component first, then variant.
+    ['0500/11', 'cambridge-0500-paper1'],
+    ['0500/13', 'cambridge-0500-paper1'],
+    ['0500/21', 'cambridge-0500-paper2'],
+    ['0990/12', 'cambridge-0990-paper1'],
+    ['0990/22', 'cambridge-0990-paper2'],
   ])('%s is %s, a scheme on the site', (code, schemeId) => {
     expect(schemeIdForPaperCode(`Paper ${code} mock`)).toBe(schemeId)
     expect(MARK_SCHEMES[schemeId]).toBeDefined()
@@ -83,6 +89,14 @@ describe('paper codes', () => {
   it('says nothing without a code', () => {
     // 8702/2 was the one known code with no scheme, until 9 October 2026.
     expect(schemeIdForPaperCode('Paper 2')).toBeUndefined()
+  })
+
+  it('reads a Cambridge variant as its component, not its last digit', () => {
+    // 0500/12 is Paper 1, variant 2; the Paper 2 mocks carried it until
+    // 24 October 2026. A variant Cambridge does not print is no paper.
+    expect(schemeIdForPaperCode('0500/12')).toBe('cambridge-0500-paper1')
+    expect(schemeIdForPaperCode('0500/14')).toBeUndefined()
+    expect(schemeIdForPaperCode('0500/31')).toBeUndefined()
   })
 
   it.each([
@@ -94,6 +108,8 @@ describe('paper codes', () => {
       'English Language',
     ],
     ['Cambridge IGCSE English Literature', 'English Literature'],
+    // Cambridge's name for its Language syllabus does not say "English Language".
+    ['Cambridge IGCSE First Language English 0500/11 Paper 1: Reading', 'English Language'],
     ['Paper 1', null],
   ])('%s is %s', (text, subject) => {
     expect(subjectForPaper(text)).toBe(subject)
@@ -179,20 +195,26 @@ describe('mock papers', () => {
     },
   )
 
-  it('maps the OCR Language mocks by OCR’s numbering, where number and tariff agree', () => {
+  it('maps the OCR Language mocks by OCR’s numbering, question by question', () => {
     // Since 24 October 2026 the schemes number their questions as OCR does and
-    // the writing is Question 5 or 6, 'Q5/Q6' (mark-schemes/ocr-lang.ts). These
-    // mocks set 4, 8, 12, 16 and 40 marks where OCR sets 4, 6, 12, 18 and 40,
-    // so Question 4 finds no question; Question 1, marked point by point, is not
-    // an essay question.
-    expect(refsFor('ocr-p1-01').map(refString)).toEqual([
-      null,
-      null,
-      'ocr-lang-component01/Q3',
-      null,
-      'ocr-lang-component01/Q5/Q6',
-    ])
-    expect(refsFor('ocr-p2-01').map(refString).at(-1)).toBe('ocr-lang-component02/Q5/Q6')
+    // the writing is Question 5 or 6, 'Q5/Q6' (mark-schemes/ocr-lang.ts). Until
+    // then these mocks set 4, 8, 12, 16 and 40 marks where OCR sets 4, 6, 12, 18
+    // and 40, so Questions 2 and 4 found no question. They are now set as OCR
+    // sets J351/01 and J351/02 (src/__tests__/a-language-mock-is-the-boards-
+    // paper.test.ts), so every question reaches its own; Question 1, marked
+    // point by point, is not an essay question.
+    for (const [id, scheme] of [
+      ['ocr-p1-01', 'ocr-lang-component01'],
+      ['ocr-p2-01', 'ocr-lang-component02'],
+    ] as const) {
+      expect(refsFor(id).map(refString), id).toEqual([
+        null,
+        `${scheme}/Q2`,
+        `${scheme}/Q3`,
+        `${scheme}/Q4`,
+        `${scheme}/Q5/Q6`,
+      ])
+    }
   })
 
   it('maps every AQA Literature Paper 2 mock question by question', () => {
@@ -266,20 +288,22 @@ describe('mock papers', () => {
     }
   })
 
-  it('maps the Eduqas Language Component 2 mocks’ 21st-century language question to Question 1.2', () => {
-    // Since 24 October 2026 the scheme is Eduqas's own (eduqas-lang.ts): A2 is
-    // Question 1.2, 10 marks of AO2 on the 21st-century text, which is what
-    // these mocks' Question 2 asks. Their Question 3, 10 marks on what the
-    // 19th-century text tells you, went to A3 until then, a language question
-    // Eduqas does not set; no Eduqas question is like it, so it gets general
-    // feedback. The other questions here match no tariff, as before.
+  it('maps the Eduqas Language Component 2 mocks question by question, as Eduqas numbers them', () => {
+    // Since 24 October 2026 the scheme is Eduqas's own (eduqas-lang.ts): A1 to
+    // A6 are Questions 1.1 to 1.6 and B1 and B2 the two writing tasks 2.1 and
+    // 2.2. Until then these mocks set six reading questions of the wrong
+    // worth, and only their Question 2 found a question (A2, 1.2). They are now
+    // set as Eduqas sets C700U20-1, so each 10-mark question and both writing
+    // tasks reach their own; 1.1, 1.3 and 1.5 are marked point by point.
     expect(refsFor('wjec-c2-01').map(refString)).toEqual([
       null,
       'eduqas-lang-comp2/A2',
       null,
+      'eduqas-lang-comp2/A4',
       null,
-      null,
-      null,
+      'eduqas-lang-comp2/A6',
+      'eduqas-lang-comp2/B1',
+      'eduqas-lang-comp2/B2',
     ])
   })
 })

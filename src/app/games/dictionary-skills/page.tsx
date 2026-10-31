@@ -15,6 +15,7 @@ import {
   BANK,
   POS_OPTIONS,
   SUBTYPE_LABEL,
+  guideAnswer,
   guideOptions,
   promptFor,
   type BankItem,
@@ -31,8 +32,9 @@ const ROUND_LENGTH = 15
 /**
  * The kinds of question whose wrong picks are short fixed labels (a word, or
  * "n."), the only ones that may be sent as `chose`
- * (src/components/games/game-round.tsx). A wrong guide-words answer is just
- * the opposite of the right one, and a definition is a whole phrase.
+ * (src/components/games/game-round.tsx). A guide-words answer is a whole
+ * sentence about the word (on this page, or which way to turn), and a
+ * definition is a whole phrase.
  */
 const SENDS_CHOICE: ReadonlySet<Subtype> = new Set<Subtype>(['alpha', 'pos'])
 
@@ -53,6 +55,10 @@ interface Question {
   subtype: Subtype
   prompt: string
   hint: string
+  /** The sentence a meaning or a word class is asked about, shown under the prompt. */
+  sentence?: string
+  /** Where a real sentence comes from (24 October 2026). */
+  source?: string
   options: string[]
   /** The correct option string */
   correct: string
@@ -70,16 +76,18 @@ function buildQuestion(item: BankItem): Question {
         correct: item.answer,
       }
     case 'guide': {
-      // The two answers are worded in the bank, so the explanations name them
-      // exactly as they are shown here.
-      const { yes, no } = guideOptions(item)
+      // The three answers are worded in the bank, so the explanations name them
+      // exactly as they are shown here (two, Yes and No, until 24 October 2026).
+      const { yes, earlier, later } = guideOptions(item)
       return {
         item,
         subtype: 'guide',
         prompt: promptFor(item),
-        hint: 'The word must come after the left guide word and before the right one.',
-        options: [yes, no],
-        correct: item.answer ? yes : no,
+        // Until 24 October 2026 this said the word must come after the left guide
+        // word, which is wrong for a guide word itself: it is on its own page.
+        hint: 'A page holds every word from its left guide word to its right one, in alphabetical order.',
+        options: shuffle([yes, earlier, later]),
+        correct: guideAnswer(item),
       }
     }
     case 'define':
@@ -87,7 +95,11 @@ function buildQuestion(item: BankItem): Question {
         item,
         subtype: 'define',
         prompt: promptFor(item),
-        hint: 'Choose the meaning that fits how the word is normally used.',
+        hint: item.sentence
+          ? 'Choose the meaning the word has in this sentence.'
+          : 'Choose the meaning that fits how the word is normally used.',
+        sentence: item.sentence,
+        source: item.source,
         options: shuffle([item.answer, ...item.distractors]),
         correct: item.answer,
       }
@@ -96,7 +108,9 @@ function buildQuestion(item: BankItem): Question {
         item,
         subtype: 'pos',
         prompt: promptFor(item),
-        hint: `"${item.example}"  ·  n. = noun, v. = verb, adj. = adjective`,
+        hint: 'n. = noun, v. = verb, adj. = adjective, adv. = adverb',
+        sentence: item.example,
+        source: item.source,
         options: POS_OPTIONS,
         correct: item.answer,
       }
@@ -243,6 +257,16 @@ export default function DictionarySkillsPage() {
                   </span>
                 </div>
                 <p className="text-lg font-semibold text-foreground">{currentQ.prompt}</p>
+                {/* The sentence a meaning or a word class is asked about, and a real
+                    line's book (24 October 2026). */}
+                {currentQ.sentence && (
+                  <p className="text-base italic leading-relaxed text-foreground">
+                    {currentQ.sentence}
+                  </p>
+                )}
+                {currentQ.source && (
+                  <p className="text-xs text-muted-foreground">{currentQ.source}</p>
+                )}
                 <p className="text-sm text-muted-foreground">{currentQ.hint}</p>
               </div>
 

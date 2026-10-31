@@ -8,13 +8,13 @@ export const edexcelGuide: BoardExamGuide = {
 
   overview: `<p>Edexcel (Pearson) is distinctive among GCSE English exam boards in running both a domestic GCSE - <strong>1EN0 (Language)</strong> and <strong>1ET0 (Literature)</strong> - and a widely taken <strong>International GCSE (4EA1)</strong>. The board's philosophy centres on <strong>"Reading as a Writer, Writing as a Reader"</strong>: the idea that close analytical reading and crafted writing are reciprocal skills that reinforce each other. This approach permeates the marking guides, which consistently reward students who demonstrate awareness of <em>how</em> and <em>why</em> writers make choices, not just <em>what</em> those choices are.</p>
 
-<p>Key structural features set Edexcel apart from AQA and OCR. Language Paper 2 carries <strong>96 marks over 2 hours 5 minutes</strong>, making it one of the most demanding single papers at GCSE level. The reading section requires students to work across two non-fiction extracts - one 19th century and one modern - with synthesis, comparison, language analysis, and evaluation questions. The writing section uniquely demands <strong>two transactional writing tasks</strong> (one shorter, one longer), testing versatility across different forms such as letters, articles, speeches, and reviews. This dual-task format is exclusive to Edexcel and requires careful time management.</p>
+<p>Key structural features set Edexcel apart from AQA and OCR. Language Paper 2 carries <strong>96 marks over 2 hours 5 minutes</strong>, making it one of the most demanding single papers at GCSE level. The reading section has seven questions on two unseen non-fiction texts from the 20th and 21st centuries, linked by a theme: short retrieval questions, a 15-mark language and structure question on Text 1, a 15-mark evaluation of Text 2, and a final question in two parts that brings the texts together, a synthesis of their similarities and a comparison of the writers' perspectives. The writing section asks for <strong>one piece of transactional writing</strong>, chosen from two tasks, in a form such as a letter, article, speech or review.</p>
 
 <p>In Literature, Edexcel's Paper 1 combines Shakespeare with a post-1914 British play or novel. The Shakespeare question splits into <strong>two parts, the printed extract and then the rest of the play</strong>, each worth 20 marks, demanding both close reading and panoramic textual knowledge. Paper 2 pairs a 19th-century novel, in the same two-part form, with poetry - anthology comparison plus a comparison of two unseen poems - across 2 hours 15 minutes. The marking guides reward <strong>"judicious" quotation selection</strong> and <strong>sustained personal response</strong>, with "perceptive" and "assured" as the key descriptors for the top band.</p>
 
 <p>For GCSE students, the poetry anthology has four collections of 15 poems - <em>Relationships</em>, <em>Conflict</em>, <em>Time and Place</em> and <em>Belonging</em> - and schools select one. Edexcel also applies an <strong>explicit SPaG grid for writing tasks</strong>, where spelling, punctuation, and grammar marks are clearly separated from content marks, making technical accuracy a visible and targetable component of the grade.</p>
 
-<p>Strategically, students should note that Edexcel's grade boundaries tend to be moderately demanding: a Grade 9 typically requires around 80% of the total mark, while a Grade 4 sits at approximately 31%. The most efficient revision strategy focuses on AO2 (language analysis), which carries the heaviest weighting across both Language and Literature, and on practising the dual transactional writing tasks under timed conditions. Always plan before writing, select quotations judiciously rather than copiously, and sustain your personal response throughout rather than bolting on a conclusion.</p>`,
+<p>Strategically, students should note that Edexcel's grade boundaries tend to be moderately demanding: a Grade 9 typically requires around 80% of the total mark, while a Grade 4 sits at approximately 31%. In Language the most efficient revision strategy focuses on the questions that carry the most marks: the 40-mark writing task on each paper, which together are half the GCSE, and the reading questions worth 14 or 15 marks. Practise one complete transactional piece under timed conditions, in about 45 minutes. Always plan before writing, select quotations judiciously rather than copiously, and sustain your personal response throughout rather than bolting on a conclusion.</p>`,
 
   specCodes: [
     { subject: 'English Language', code: '1EN0' },
@@ -23,42 +23,47 @@ export const edexcelGuide: BoardExamGuide = {
   ],
 
   // ─── Language Assessment Objectives ──────────────────────────────────────────
+  // Weightings corrected 31 October 2026 to the marks each objective carries
+  // across both 1EN0 papers, as src/data/mark-scheme-guides/edexcel-lang-paper1.ts
+  // and edexcel-lang-paper2.ts record them: AO1 15, AO2 21, AO3 14, AO4 30, AO5
+  // 48 and AO6 32 of 160. They read ~20%, ~30%, ~10%, ~10%, ~20% and ~10%, which
+  // made language analysis the heaviest objective when the writing is.
   languageAOs: [
     {
       code: 'AO1',
       description:
         'Identify and interpret explicit and implicit information and ideas. Select and synthesise evidence from different texts.',
-      weighting: '~20%',
+      weighting: '~9%',
     },
     {
       code: 'AO2',
       description:
         'Explain, comment on and analyse how writers use language and structure to achieve effects and influence readers, using relevant subject terminology to support their views.',
-      weighting: '~30%',
+      weighting: '~13%',
     },
     {
       code: 'AO3',
       description:
         "Compare writers' ideas and perspectives, as well as how these are conveyed, across two or more texts.",
-      weighting: '~10%',
+      weighting: '~9%',
     },
     {
       code: 'AO4',
       description:
         'Evaluate texts critically and support this with appropriate textual references.',
-      weighting: '~10%',
+      weighting: '~19%',
     },
     {
       code: 'AO5',
       description:
         'Communicate clearly, effectively and imaginatively, selecting and adapting tone, style and register for different forms, purposes and audiences. Organise information and ideas, using structural and grammatical features to support coherence and cohesion of texts.',
-      weighting: '~20%',
+      weighting: '30%',
     },
     {
       code: 'AO6',
       description:
         'Candidates must use a range of vocabulary and sentence structures for clarity, purpose and effect, with accurate spelling and punctuation.',
-      weighting: '~10%',
+      weighting: '20%',
     },
   ],
 
@@ -94,15 +99,31 @@ export const edexcelGuide: BoardExamGuide = {
   ],
 
   // ─── Language Papers ─────────────────────────────────────────────────────────
+  //
+  // Rewritten 31 October 2026 to the plain-English guides checked against
+  // Pearson's 1EN0 papers and mark schemes (src/data/mark-scheme-guides/
+  // edexcel-lang-paper1.ts and edexcel-lang-paper2.ts). Both papers were wrong:
+  // - Paper 1 was "one unseen modern fiction extract" and 50% of the GCSE. The
+  //   extract is from a 19th-century novel or story, and the paper is 40%.
+  //   Question 3 was language alone; it is language and structure, and an
+  //   answer on one of them cannot go above Level 1.
+  // - Paper 2 was AQA's Paper 2: a 19th-century text beside a modern one, a
+  //   4-mark true-or-false question, an 8-mark summary, a 12-mark language
+  //   question and a 16-mark comparison. Its writing section was two tasks of
+  //   16 and 24 marks, which is no paper's shape (Eduqas sets two of 20). Pearson
+  //   prints two 20th- and 21st-century texts, sets seven questions, and asks
+  //   for one piece of writing, Question 8 or 9, for 40 marks.
+  // The minutes are the guides' suggestion, worked out from the board's section
+  // times and the marks; only the section times are the board's own.
   languagePapers: [
     {
       title: 'Paper 1: Fiction and Imaginative Writing',
       code: '1EN0/01',
       time: '1 hour 45 minutes',
       marks: 64,
-      weighting: '50%',
+      weighting: '40%',
       textType:
-        'One unseen modern fiction extract. Section A assesses reading through four questions (short answer, inference, language analysis, evaluation). Section B assesses imaginative writing from a choice of prompts.',
+        'One unseen extract of about 650 words from a 19th-century novel or story. Section A assesses reading through four questions (two short retrieval questions, language and structure, evaluation). Section B assesses imaginative writing: one piece from a choice of two tasks linked by theme to the extract.',
       sections: [
         {
           title: 'Section A: Reading',
@@ -113,37 +134,38 @@ export const edexcelGuide: BoardExamGuide = {
               marks: 1,
               ao: 'AO1',
               skill: 'Identify explicit information',
-              time: '1-2 minutes',
+              time: 'About 2 minutes',
               advice:
-                'A single-mark question requiring a brief, precise answer drawn directly from the text. Read within the specified line references only. No analysis or explanation is needed - this is a warm-up question to settle you into the extract.',
+                'A single-mark question requiring a brief, precise answer drawn directly from the text. Read within the specified line references only. No analysis or explanation is needed: a word or a short quotation is enough.',
             },
             {
               question: 'Q2 - Retrieve two pieces of information from a specified section',
               marks: 2,
               ao: 'AO1',
-              skill: 'Inference and information retrieval',
-              time: '2-3 minutes',
+              skill: 'Information retrieval',
+              time: 'About 4 minutes',
               advice:
-                'Identify two distinct pieces of information. Keep your answers concise and either quote directly or closely paraphrase from the text. These are straightforward marks - do not overthink them.',
+                'Identify two different pieces of information from the section the question names or prints. Quote briefly or put them in your own words; the second point must not repeat the first. These are straightforward marks, so do not overthink them.',
             },
             {
               question:
-                'Q3 - Analyse how the writer uses language to create a specific effect in a specified section',
+                'Q3 - Explain how the writer uses language and structure to show something the question names, in a short section',
               marks: 6,
               ao: 'AO2',
-              skill: 'Language analysis of a specified section',
-              time: '8-10 minutes',
+              skill: 'Language and structure analysis of a short section',
+              time: 'About 12 minutes',
               advice:
-                'Embed short quotations and analyse specific word choices, imagery, and rhetorical techniques. Always explain the <em>effect</em> on the reader rather than simply naming techniques. Two well-developed analytical points are sufficient. Use evaluative verbs: "implies", "connotes", "evokes", "suggests".',
+                'Write about both language (word choices, imagery, sentence forms) and structure (how the section opens, where the focus shifts, how it ends): an answer on language alone, or structure alone, cannot go above Level 1. Embed short quotations and explain the <em>effect</em> on the reader rather than simply naming techniques. Three short paragraphs, two on language and one on structure, are enough.',
             },
             {
-              question: 'Q4 - Critically evaluate the text with reference to a given focus',
+              question:
+                'Q4 - Evaluate how successfully the writer creates an effect the question names',
               marks: 15,
               ao: 'AO4',
               skill: 'Critical evaluation with textual references',
-              time: '18-20 minutes',
+              time: 'About 32 minutes',
               advice:
-                'This is the highest-tariff reading question on this paper. You must <strong>evaluate</strong>, not merely describe. Develop a clear personal response supported by well-chosen quotations. Assess <em>how effectively</em> the writer achieves their purpose - go beyond description into judgement. Partially agree with the statement to show nuance: present supporting evidence, then explore counter-evidence or alternative readings. Three well-developed evaluative paragraphs plus a brief conclusion is the target.',
+                'This is the highest-tariff reading question on this paper. The question names an effect, such as tension or sympathy for a character, and asks how successfully it is achieved; recent papers have asked about the whole extract. You must <strong>evaluate</strong>, not merely describe: give a clear verdict and keep it up from the first paragraph to the last, supported by well-chosen quotations. Mention techniques only where they support your judgement, since above Level 1 the mark scheme credits them only when they do.',
             },
           ],
         },
@@ -153,13 +175,13 @@ export const edexcelGuide: BoardExamGuide = {
           questions: [
             {
               question:
-                'Q5 - Imaginative writing from a choice of prompts (one prompt linked to the extract)',
+                'Q5 or Q6 - Imaginative writing: answer one of two tasks, both linked by theme to the extract',
               marks: 40,
               ao: 'AO5 (24 marks) + AO6 (16 marks)',
-              skill: 'Creative/narrative writing - imaginative prose',
-              time: '45 minutes (including 5-7 minutes planning)',
+              skill: 'Imaginative writing: a story, a description or a monologue',
+              time: '45 minutes: about 5 planning, 35 writing and 5 checking',
               advice:
-                'Plan for 5-7 minutes before writing. Open with a hook - a striking image, a sensory detail, or a provocative line of dialogue. Vary sentence openings (adverbial, participial, one-word) and lengths (short for dramatic impact, longer for descriptive passages). Use the full punctuation range: semicolons, colons, dashes, ellipses. End with circularity - echo your opening image or motif. AO6 carries 16 marks for SPaG, so proofread carefully. Edexcel\'s "Reading as a Writer" philosophy means markers reward evidence that you have <em>crafted</em> your writing with conscious technique.',
+                'One task comes with two pictures you can use for ideas, or ignore. Plan for about 5 minutes before writing. Open with a hook: a striking image, a sensory detail, or a line of dialogue. Vary sentence openings (adverbial, participial, one-word) and lengths (short for dramatic impact, longer for descriptive passages). Use a full range of punctuation accurately. End with circularity, echoing your opening image or motif. AO6 carries 16 marks, so proofread carefully. Edexcel\'s "Reading as a Writer" philosophy means markers reward evidence that you have <em>crafted</em> your writing with conscious technique.',
             },
           ],
         },
@@ -170,52 +192,88 @@ export const edexcelGuide: BoardExamGuide = {
       code: '1EN0/02',
       time: '2 hours 5 minutes',
       marks: 96,
-      weighting: '50%',
+      weighting: '60%',
       textType:
-        'Two non-fiction extracts (one 19th century, one 20th/21st century) sharing a common theme. Section A: Reading across both sources. Section B: Two transactional writing tasks in different forms.',
+        'Two unseen non-fiction texts from the 20th and 21st centuries, linked by a theme. Section A: Questions 1 to 3 on Text 1, Questions 4 to 6 on Text 2, and Question 7 on both. Section B: one piece of transactional writing, Question 8 or 9.',
       sections: [
         {
           title: 'Section A: Reading',
           marks: 56,
           questions: [
             {
-              question: 'Q1 - Identify four true statements from a list of eight (Source A)',
-              marks: 4,
+              question: 'Q1 - Find two things in the lines of Text 1 that the question names',
+              marks: 2,
               ao: 'AO1',
-              skill: 'Identify explicit information (true/false)',
-              time: '3-5 minutes',
+              skill: 'Identify explicit information (Text 1)',
+              time: 'About 2 minutes, after about 6 minutes reading Text 1',
               advice:
-                'Read each statement carefully against the text. There are exactly four correct answers - if you think you have found more, re-check. This is a straightforward retrieval question and a reliable marks-grab. Use it to familiarise yourself with Source A.',
+                'One mark for each correct point, up to two. A word or a short phrase from the named lines is enough, and explanation earns nothing extra. Mark the line numbers on Text 1 before you look for answers.',
+            },
+            {
+              question: 'Q2 - Give two things from a short section of Text 1',
+              marks: 2,
+              ao: 'AO1',
+              skill: 'Information retrieval (Text 1)',
+              time: 'About 2 minutes',
+              advice:
+                'Your own words and short quotations both count, but the two points must be different. Put one answer on each numbered line and move on.',
             },
             {
               question:
-                'Q2 - Summarise and synthesise information from both texts on a given topic',
-              marks: 8,
-              ao: 'AO1',
-              skill: 'Summary and synthesis from two sources',
-              time: '8-10 minutes',
-              advice:
-                'You must synthesise from <strong>both</strong> texts - responses that neglect one source cannot reach the top band. Cross-reference the sources explicitly: "Both writers suggest…", "While Source A emphasises…, Source B instead…". Use brief embedded quotations and keep your language concise. Three to four well-developed comparative points are sufficient.',
-            },
-            {
-              question:
-                'Q3 - Analyse how language is used to create a specific effect in one specified text',
-              marks: 12,
+                "Q3 - Analyse how the writer of Text 1 uses language and structure to hold the reader's interest",
+              marks: 15,
               ao: 'AO2',
-              skill: 'Language analysis of a specified source',
-              time: '12-15 minutes',
+              skill: 'Language and structure analysis (Text 1)',
+              time: 'About 18 minutes',
               advice:
-                'Analyse language techniques in detail: name the device, quote the evidence, and explain the effect on the reader. Three well-developed analytical paragraphs with embedded quotations will comfortably reach the upper bands. Explore connotations at word level and use precise subject terminology throughout.',
+                'Cover both language (word choice, imagery, tone, sentence forms) and structure (the opening, the order of ideas, shifts in focus, the ending): an answer on one of them alone cannot go above Level 2. Work through the text from start to finish, embed short quotations, and explain the effect of each choice on the reader, using subject terms where they sharpen a point.',
+            },
+            {
+              question: 'Q4 - Find one thing in the lines of Text 2 that the question names',
+              marks: 1,
+              ao: 'AO1',
+              skill: 'Identify explicit information (Text 2)',
+              time: 'About 1 minute, after about 6 minutes reading Text 2',
+              advice: 'Answer in a few words from the named lines and move on.',
+            },
+            {
+              question: 'Q5 - Find one thing from a different set of lines in Text 2',
+              marks: 1,
+              ao: 'AO1',
+              skill: 'Identify explicit information (Text 2)',
+              time: 'About 1 minute',
+              advice:
+                'Check the line numbers again before you answer: they are not the same as in Question 4.',
             },
             {
               question:
-                'Q4 - Evaluate and compare how the two writers convey their different perspectives',
-              marks: 16,
-              ao: 'AO3 + AO4',
-              skill: 'Compare perspectives and evaluate methods across both sources',
-              time: '18-20 minutes',
+                'Q6 - Evaluate how successfully the writer of Text 2 achieves an aim the question names',
+              marks: 15,
+              ao: 'AO4',
+              skill: 'Critical evaluation (Text 2)',
+              time: 'About 18 minutes',
               advice:
-                'You must compare <strong>both</strong> texts throughout your response - discussing only one text means you cannot access the upper bands. Focus on the writers\' perspectives (what they think/feel) and the methods they use to convey those perspectives. Use comparative connectives: "whereas", "in contrast", "similarly", "conversely". Consider how the different time periods shape the writers\' viewpoints. Aim for three or four comparative paragraphs.',
+                'Open with an overall verdict on how successful the writer is, then test it paragraph by paragraph against Text 2 with detailed references. Mention techniques only where they support your judgement. This question is about Text 2 alone, so do not bring in Text 1.',
+            },
+            {
+              question:
+                'Q7(a) - Bring together evidence from both texts to show the similarities the question names',
+              marks: 6,
+              ao: 'AO1',
+              skill: 'Synthesis across both texts',
+              time: 'About 8 minutes',
+              advice:
+                'You must use <strong>both</strong> texts: the mark scheme gives no marks to an answer that uses one. Write about similarities, which is what the question asks for, and make each point cover both texts: name the similarity, then give the evidence from Text 1 and from Text 2. This question rewards finding and combining evidence, not language analysis.',
+            },
+            {
+              question:
+                "Q7(b) - Compare the two writers' perspectives on the shared topic, and the methods each uses to convey them",
+              marks: 14,
+              ao: 'AO3',
+              skill: 'Compare perspectives and methods across both texts',
+              time: 'About 18 minutes',
+              advice:
+                'Compare <strong>both</strong> texts throughout: an answer that deals with only one text in detail cannot go above Level 2, and an unbalanced one cannot reach Level 3. Focus on the writers\' perspectives (what they think and feel), differences as well as similarities, and the methods they use to convey them: tone, language, structure and the kind of evidence they use. Use comparative connectives: "whereas", "in contrast", "similarly", "conversely". Plan three or four comparison points first.',
             },
           ],
         },
@@ -225,23 +283,13 @@ export const edexcelGuide: BoardExamGuide = {
           questions: [
             {
               question:
-                'Q5 - Shorter transactional writing task (letter, article, speech, review, etc.)',
-              marks: 16,
-              ao: 'AO5 (10 marks) + AO6 (6 marks)',
-              skill: 'Transactional writing - shorter form',
-              time: '20-25 minutes',
+                'Q8 or Q9 - Transactional writing: answer one of two tasks, linked by theme to the reading',
+              marks: 40,
+              ao: 'AO5 (24 marks) + AO6 (16 marks)',
+              skill: 'Transactional writing for a set form, audience and purpose',
+              time: '45 minutes: about 5 planning, 35 writing and 5 checking',
               advice:
-                'Match your register precisely to the specified form and audience. This is the shorter of two tasks, so be focused and purposeful. Open with impact, use rhetorical techniques (tricolon, anaphora, direct address) with control, and structure your paragraphs around clear topic sentences. Accuracy matters - AO6 is assessed separately on the SPaG grid.',
-            },
-            {
-              question:
-                'Q6 - Longer transactional writing task (letter, article, speech, review, etc.)',
-              marks: 24,
-              ao: 'AO5 (16 marks) + AO6 (8 marks)',
-              skill: 'Transactional writing - longer form',
-              time: '30-35 minutes',
-              advice:
-                'This longer task allows you to demonstrate sustained control of tone, style, and structural organisation. Develop your argument or viewpoint across multiple well-constructed paragraphs. Use a range of persuasive and rhetorical devices, but ensure your content drives the response rather than technique alone. End with a powerful concluding statement that circles back to your opening. Proofread carefully - the explicit SPaG grid means technical accuracy is a visible, targetable component of your mark.',
+                "Write in the form the task sets, for example an article, a letter, a review, a speech or a section of a guide, and match your register precisely to its audience and purpose. Use the task's suggested points as a starting plan for four or five paragraphs. Open with impact, use rhetorical techniques (tricolon, anaphora, direct address, counter-argument) with control, and develop your ideas from your own thinking rather than leaning on the reading texts. AO5 and AO6 are marked separately and added together, so leave time to proofread: AO6 is worth 16 marks.",
             },
           ],
         },
@@ -482,30 +530,35 @@ export const edexcelGuide: BoardExamGuide = {
       ],
     },
     {
-      question: 'Language Paper 1, Q3 - Language Analysis (6 marks)',
+      // 31 October 2026: titled "Language Analysis" with no word on structure. The
+      // question asks for both, and an answer on language alone stays in Level 1.
+      question: 'Language Paper 1, Q3 - Language and Structure (6 marks)',
       tips: [
-        'Embed short quotations and analyse specific word choices, imagery, and rhetorical techniques.',
+        'Write about structure as well as language: how the section opens, where the focus shifts and how it ends. An answer on language alone cannot go above Level 1.',
+        'Embed short quotations and analyse specific word choices, imagery, and sentence forms.',
         'Always explain the <em>effect</em> on the reader - do not simply name techniques without exploring what they achieve.',
-        'Two well-developed analytical points will outscore four or five shallow ones.',
         'Use evaluative verbs: "implies", "connotes", "evokes", "suggests", "underscores".',
         'Stay strictly within the specified section - material from outside will not be credited.',
       ],
     },
     {
+      // 31 October 2026: one tip said to "partially agree". There is no statement
+      // to agree with: the question names an effect and asks how successfully it
+      // is achieved.
       question: 'Language Paper 1, Q4 - Critical Evaluation (15 marks)',
       tips: [
         'This is the highest-tariff reading question on Paper 1 - it separates the upper bands from the rest.',
-        'You must <strong>evaluate</strong>, not merely describe. Assess how effectively the writer achieves the stated focus.',
-        'Show nuance by partially agreeing: present supporting evidence, then explore counter-evidence or alternative readings.',
+        'You must <strong>evaluate</strong>, not merely describe. Judge how successfully the writer achieves the effect the question names.',
+        'Show nuance in your verdict: say where the writing succeeds most and where it is less successful, with evidence for each.',
         'Embed short quotations fluently within your sentences - avoid long block quotations.',
         'Use evaluative language throughout: "effectively", "compellingly", "the writer succeeds in… because…".',
         'A strong response has three well-developed evaluative paragraphs plus a brief, decisive conclusion.',
       ],
     },
     {
-      question: 'Language Paper 1, Q5 - Imaginative Writing (40 marks)',
+      question: 'Language Paper 1, Q5 or Q6 - Imaginative Writing (40 marks)',
       tips: [
-        'Spend 5-7 minutes planning. Edexcel\'s "Reading as a Writer" philosophy means markers reward evidence of conscious craft.',
+        'Spend about 5 minutes planning. Edexcel\'s "Reading as a Writer" philosophy means markers reward evidence of conscious craft.',
         'Open with a hook: a striking image, an unusual perspective, a sensory detail, or a line of dialogue.',
         'Vary sentence openings (adverbial, participial, one-word) and lengths (short for impact, long for description).',
         'Use the full punctuation range: semicolons, colons, dashes, ellipses, parenthetical commas.',
@@ -514,23 +567,29 @@ export const edexcelGuide: BoardExamGuide = {
       ],
     },
     {
-      question: 'Language Paper 2, Q2 - Synthesis (8 marks)',
+      // 31 October 2026: this was "Q2 - Synthesis (8 marks)" with "While Source A
+      // emphasises…, Source B instead…", which is AQA's Paper 2 Question 2.
+      // Pearson's synthesis question is 7(a), 6 marks, on similarities.
+      question: 'Language Paper 2, Q7(a) - Synthesis (6 marks)',
       tips: [
-        'You must use details from <strong>both</strong> sources - neglecting either source caps your mark significantly.',
-        'Cross-reference the sources explicitly: "Both writers suggest…", "While Source A emphasises…, Source B instead…".',
-        'Use brief embedded quotations from each source to support your synthesis.',
-        'Three to four well-developed comparative points are sufficient - keep your language concise.',
+        'You must use evidence from <strong>both</strong> texts: an answer that uses one text only earns no marks.',
+        'The question asks for similarities, so write about what the texts have in common, not their differences.',
+        'Join the texts in each point: "Both writers…", "Similarly, in Text 2…".',
+        'Use brief embedded quotations or close reference from each text. Language analysis is not rewarded here.',
       ],
     },
     {
-      question: 'Language Paper 2, Q5-Q6 - Dual Transactional Writing (16 + 24 marks)',
+      // 31 October 2026: this was "Q5-Q6 - Dual Transactional Writing (16 + 24
+      // marks)", saying Edexcel "uniquely requires two writing tasks". Pearson's
+      // Paper 2 sets one piece, Question 8 or 9, for 40 marks. Two compulsory
+      // tasks is Eduqas's Component 2, and they are 20 marks each.
+      question: 'Language Paper 2, Q8 or Q9 - Transactional Writing (40 marks)',
       tips: [
-        'Edexcel uniquely requires <strong>two</strong> writing tasks on Paper 2 - manage your time carefully between them.',
-        "Match your register precisely to each task's specified form, audience, and purpose.",
-        'The shorter task (Q5, ~16 marks) should be focused and purposeful - do not over-elaborate.',
-        'The longer task (Q6, ~24 marks) allows you to demonstrate sustained control of argument and rhetoric.',
+        'You write <strong>one</strong> piece on Paper 2, choosing Question 8 or Question 9. Read both before you decide.',
+        "Match your register precisely to the task's specified form, audience, and purpose.",
+        "Use the task's suggested points as a starting plan for four or five paragraphs.",
         'Use rhetorical techniques (tricolon, anaphora, direct address, counter-argument) with confident control.',
-        'The explicit SPaG grid means technical accuracy is a visible component - proofread both tasks.',
+        'AO5 (24 marks) and AO6 (16 marks) are marked separately and added together, so leave about 5 minutes to proofread.',
       ],
     },
     {
@@ -573,9 +632,12 @@ export const edexcelGuide: BoardExamGuide = {
   // ─── Key Changes for 2026 ───────────────────────────────────────────────────
   keyChanges: [
     {
-      year: '2026',
+      // 31 October 2026: this was a 2026 "enhanced SPaG weighting". The checked
+      // guides find no change in weighting (AO6 is 16 of each 40-mark writing
+      // task) and one change in the grid, from the June 2024 series.
+      year: '2024',
       change:
-        'Enhanced SPaG weighting: AO6 (spelling, punctuation, and grammar) carries increased emphasis across Language papers, with the explicit SPaG grid refined to reward a wider range of punctuation and sentence structures.',
+        'AO6 grid rebalanced: from the June 2024 series Pearson moved the spare mark in the 16-mark AO6 grid from Level 5 to Level 1, so its levels now run 1-4, 5-7, 8-10, 11-13 and 14-16. AO6 is still worth 16 of the 40 marks for the writing task on each Language paper.',
     },
     {
       // 2 October 2026: claimed a 2026 revision "across all three collections". The current
@@ -960,7 +1022,9 @@ export const edexcelGuide: BoardExamGuide = {
   uniqueFeatures: [
     '"Reading as a Writer, Writing as a Reader" philosophy: Edexcel\'s distinctive approach treats close analytical reading and crafted writing as reciprocal skills, rewarding students who demonstrate conscious awareness of writerly technique in both their reading responses and their own compositions.',
     '45-poem IGCSE anthology: The International GCSE (4EA1) features one of the most extensive poetry anthologies at GCSE level, with 45 poems divided across 6 thematic clusters, demanding extraordinary breadth of revision.',
-    'Dual transactional writing tasks: Language Paper 2 uniquely requires two separate writing tasks (one shorter at ~16 marks, one longer at ~24 marks), testing versatility across different forms and demanding careful time management.',
+    // 31 October 2026: this was "Dual transactional writing tasks", two tasks of
+    // 16 and 24 marks. Language Paper 2 sets one piece of writing, Question 8 or 9.
+    "A two-part question on both texts: Language Paper 2 ends its reading section with Question 7, a 6-mark synthesis of what the two texts have in common (7a) and a 14-mark comparison of the writers' perspectives and methods (7b), so every answer to it must use both texts.",
     'Explicit SPaG grid for writing: Unlike boards where SPaG marks are embedded within content descriptors, Edexcel uses a separate, visible SPaG assessment grid, making technical accuracy a clearly targetable component of the grade.',
     'Paper 2 carries 96 marks over 2 hours 5 minutes: One of the most demanding single papers at GCSE level, requiring stamina and time management across reading and writing sections.',
     'Poetry anthology divided into four collections (Relationships, Conflict, Time and Place, Belonging): Schools choose one collection, and students must know every poem within it for the comparison question.',

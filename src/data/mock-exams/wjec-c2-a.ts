@@ -93,13 +93,97 @@ import type { MockExamPaper } from './types'
  *     Paper 5 had the Welsh women's team qualify for "the UEFA Nations League
  *     promotion play-offs in 2024" (they were relegated from League A that
  *     season) and named the Western Mail as the real paper that put the news
- *     beneath a dog show, a charge nothing supports. The article now has
+ *     beneath a dog show, a charge nothing supports. The article then had
  *     them reach the play-offs for the 2025 European Championship, which
- *     they did, and names no paper. Its figure of about 10% of media
+ *     they did, and named no paper (31 October 2026: see below). Its figure of about 10% of media
  *     coverage, and the other Source A figures, were not checked.
  * src/__tests__/wjec-c2-a-quotes-the-real-text.test.ts now holds every
  * quotation in the answers and notes to its own extract, as whole words and
  * with case, and keeps the invented sources, bylines and false facts out.
+ *
+ * RESTRUCTURED 24 October 2026, the day the AI marker was corrected to mark
+ * each paper as its board does. WHAT WAS WRONG: these papers were not
+ * Eduqas's paper. Each set four reading questions worth 5, 10, 10 and 15 and
+ * two writing tasks worth 16 and 24, where C700U20-1 sets six reading
+ * questions worth 3, 10, 3, 10, 4 and 10 and two compulsory writing tasks of
+ * 20 each. Question 3 gave ten marks to the 19th-century text's language,
+ * which the paper never asks about; nothing judged that text (Question 1.4)
+ * or brought details from the two texts together (Question 1.5); and the
+ * writing was marked on splits Eduqas does not use. A student practising
+ * them sat an exam that does not exist, and of the answers handed to the
+ * marker only Question 2's found a question of its worth: the rest got
+ * general feedback with no marks.
+ *
+ * WHAT THEY ARE NOW. Each is set as Eduqas sets C700U20-1, as
+ * src/data/mark-scheme-guides/eduqas-lang-comp2.ts describes it (checked
+ * twice against Eduqas's Summer 2025 question paper and marking scheme and
+ * the specification): 1.1, 3 marks of short questions on Source A, the
+ * 21st-century text; 1.2, 10 marks on how its writer tries to achieve a
+ * purpose; 1.3, 3 marks of short questions on Source B, the 19th-century
+ * text; 1.4, 10 marks judging Source B against a statement; 1.5, 4 marks
+ * bringing details from both together; 1.6, 10 marks comparing them; then
+ * 2.1 and 2.2, two compulsory writing tasks of 20 marks each, 12 for
+ * communication and organisation and 8 for writing accurately. Eduqas
+ * numbers its questions within a section, so questionNumber runs 1 to 6 and
+ * then 1 and 2, and the board's numbers are the labels. The paper takes two
+ * hours, an hour on each section as Eduqas advises; the minutes for each
+ * reading question are the guide's suggestion. The wording and the mark
+ * schemes are ours, written from the guide's account of what earns marks,
+ * and every question worth 6 or more has a model answer. The questions name
+ * paragraphs, not line numbers, which the mock-exam page does not print, and
+ * every quotation in a reading question's text, answers and mark scheme was
+ * checked by script against the extract that question prints. The sources
+ * are kept as they were: each fits what Eduqas sets, one 21st-century and
+ * one 19th-century non-fiction text.
+ *
+ * CHECKED 31 October 2026 by a second, independent reader, against the
+ * guide, the scheme, Eduqas's Summer 2025 question paper and each extract.
+ * Every Source B is word for word its Gutenberg text, fetched that day
+ * (scripts/check-mock-exam-extracts.mjs --fetch). Fixed, one line each:
+ *   - untrue claim (05 Source A): its opening put an invented report of a
+ *     real event in "a national newspaper" (Wales's Euro 2025 play-off news
+ *     on page fourteen, beneath a dog show), which nothing supports; it now
+ *     tells of the writer's local club and weekly paper, and Question
+ *     1.1(a), its answers and the 1.2 answer follow.
+ *   - board wording: Questions 1.2, 1.5 and 1.6 and the Section B guidance
+ *     opened with Eduqas's own sentences ("You should comment on:", "Using
+ *     information from both texts, explain briefly", "Both of these texts are
+ *     about", the word-count line); reworded, and 1.5 now asks which text
+ *     each detail comes from, as Eduqas's does.
+ *   - mark scheme (01 1.3(a)): now accepts Engels's two further reasons, land
+ *     fit only for livestock and farmers slower to change.
+ *   - model answer (03 1.2): the landscape's indifference "strips away" daily
+ *     life; the text says walking there does.
+ *   - model answer (03 1.4): Borrow alone "out of breath", the lake "below
+ *     them" and the view filling "him"; the text has we, a lake near us, and
+ *     the lakes filling "us".
+ *   - model answer (03 1.5): called the view clear; Borrow sees Cumberland
+ *     faintly and Ireland only as a possible "shadowy outline".
+ *   - mark scheme (03 1.6): Source A ends on "learning" to simply be; it is
+ *     remembering.
+ *   - model answer (03 2.1): put the Rhossili wreck halfway along the beach;
+ *     the Helvetia lies at its south end (Coflein).
+ *   - model answer (04 1.2): three sentences said to "begin in the same way";
+ *     they share "cannot".
+ *   - model answer (04 1.4): the ear "will hear first"; Thoreau says
+ *     "perchance", so now "may".
+ *   - model answer (05 1.4): "until it is, nothing might have been known"
+ *     inverted Mill, who says only then "something might have been
+ *     positively known".
+ *   - model answer and scheme (01 1.5, 1.6): called the poor "working people"
+ *     and "people in work", though one is retired and one a former owner (now
+ *     people who "had worked all their lives"); and said both writers scorn
+ *     "the official response", where Source A describes none (now: both find
+ *     those in power wanting).
+ *   - model answer (02 1.6): society "will suffer" if the boys are neglected,
+ *     which Mayhew does not say; now his own warning that they will "educate
+ *     themselves in vice".
+ * Source A figures checked against the bodies' own publications: 01's 3.8
+ * million is the Joseph Rowntree Foundation's, Destitution in the UK 2023
+ * (24 October 2023), for 2022; 03's sixty-mile path from Cardigan to
+ * Ynyslas matches Ceredigion Council's own figure. 05's uncredited
+ * "approximately 10%" of media coverage is left: published measures differ
+ * by medium and year, and none was found that settles it.
  */
 
 // ─── WJEC Component 2 Source Texts ──────────────────────────────────────────
@@ -181,7 +265,7 @@ const TECHNOLOGY_19C_REF =
   'Henry David Thoreau, Walden; or, Life in the Woods (1854), from the chapter "Economy", from the Project Gutenberg text (#205)'
 
 // Exam 05: Gender
-const GENDER_21C = `When the Welsh women's football team reached the play-offs for the 2025 European Championship, the news was reported on page fourteen of a national newspaper, beneath an article about a local dog show. The men's team, by contrast, had received front-page coverage for losing a friendly. If you wanted a single image to illustrate the state of gender equality in Welsh sport, you could do worse than that.
+const GENDER_21C = `When the women's team at my local football club won the county cup last spring, the news was reported on page fourteen of our weekly paper, beneath an article about a local dog show. The men's team, by contrast, had received front-page coverage for losing a friendly. If you wanted a single image to illustrate the state of gender equality in Welsh sport, you could do worse than that.
 
 The numbers are stark. Women's sport receives approximately 10% of media coverage in the UK. Female athletes earn, on average, a fraction of their male counterparts. Facilities for women's teams remain inferior - I have spoken to players who train on pitches without floodlights, who share changing rooms with the men's reserve team, who buy their own kit because the club's budget does not extend to them.
 
@@ -194,6 +278,69 @@ const GENDER_19C = `Neither does it avail anything to say that the nature of the
 
 const GENDER_19C_REF =
   'John Stuart Mill, The Subjection of Women (1869), Chapter I, from the Project Gutenberg text (#27083)'
+
+// ─── How Eduqas sets and marks Component 2 ───────────────────────────────────
+// In the site's own words, from src/data/mark-scheme-guides/eduqas-lang-comp2.ts.
+
+const SECTION_A_GUIDANCE =
+  'Answer all the questions in this section. You are advised to spend about an hour on it: about 10 minutes reading the two texts, then about 50 minutes answering. Questions 1.1 and 1.2 are on Source A, the 21st-century text; Questions 1.3 and 1.4 are on Source B, the 19th-century text; Questions 1.5 and 1.6 are on both.'
+
+const SECTION_B_GUIDANCE =
+  'Answer both questions in this section. You are advised to spend about 30 minutes on each: about 5 minutes planning and about 25 minutes writing. Each is worth 20 marks: 12 for communication and organisation, and 8 for writing accurately. Each piece should be about 300 to 400 words long.'
+
+const SHORT_A_MARKING = [
+  'One mark for each correct answer, 3 marks in all. Each answer must come from Source A, the 21st-century text: an answer from Source B earns nothing.',
+  "A short phrase is enough, in your own words or the writer's; no explanation is needed.",
+]
+
+const SHORT_B_MARKING = [
+  'One mark for each correct answer, 3 marks in all, from Source B, the 19th-century text. An answer from Source A earns nothing.',
+  'Show that you have understood the older language by putting it simply: a long passage copied out does not show that.',
+]
+
+const Q1_2_MARKING = [
+  'Band 1 (1 to 2 marks): a detail or two, but the answer is short and drifts from the question.',
+  'Band 2 (3 to 4 marks): some useful details with a little comment on them, but parts of the text are missed.',
+  "Band 3 (5 to 6 marks): a fair spread of details, and a start on explaining how the writer's words, tone and structure do their job.",
+  'Band 4 (7 to 8 marks): plenty of well-chosen details, explained correctly, with analysis of how the writer influences the reader starting to come through, and subject terms that help.',
+  "Band 5 (9 to 10 marks): the whole text covered with sharp, well-explained points, picking apart in detail how the writer's methods work on the reader.",
+  'Work through the text in order and use all of it. Quotations should be long enough to make sense, each followed by comment: fragments with no explanation, or techniques listed with no link to the question, earn little.',
+]
+
+const Q1_4_MARKING = [
+  'Band 1 (1 to 2 marks): a quick opinion, or a detail or two, with little to back it up.',
+  'Band 2 (3 to 4 marks): begins to test the statement against the text, with some evidence, but leaves parts of the text out.',
+  'Band 3 (5 to 6 marks): judges the statement properly, using details from across the text and noticing how the language helps.',
+  "Band 4 (7 to 8 marks): a clear, well-argued judgement with well-chosen evidence, showing how the writer's words and details reveal their feelings or views.",
+  'Band 5 (9 to 10 marks): a detailed argument that convinces, takes in the whole text and makes sharp points about how it works, with every reference earning its place.',
+  'Reach a judgement and keep to it, tracking the whole of Source B in order. A summary that does not judge holds itself down, and material from Source A earns nothing here.',
+]
+
+const Q1_5_MARKING = [
+  'Band 1 (1 mark): only a little relevant detail, or details from one text only. An answer on one text stays here, however full it is.',
+  'Band 2 (2 marks): a relevant detail or two from each text.',
+  'Band 3 (3 marks): several relevant details from both texts, brought together sensibly.',
+  'Band 4 (4 marks): a good spread of exactly the right details from both texts, brought together clearly.',
+  'Make clear which text each detail comes from. The question wants the details, not how they are written: comment on language earns nothing here.',
+]
+
+const Q1_6_MARKING = [
+  'Band 1 (1 to 2 marks): a detail or two, perhaps from one text only, or with no way to tell which text is meant.',
+  'Band 2 (3 to 4 marks): some sound details from both texts, and a first try at saying how the writers get them across.',
+  'Band 3 (5 to 6 marks): a fair number of sound details from both texts, and an attempt to explore how each writer presents them.',
+  'Band 4 (7 to 8 marks): details from both texts examined properly, with detailed comment on the methods each writer uses.',
+  "Band 5 (9 to 10 marks): both texts examined in depth, with a clear grasp of how and why each writer's methods work on readers.",
+  'Both halves of the question count: what the writers say, and how they get it across. Draw links between the texts, and always make clear which text you mean.',
+]
+
+const WRITING_MARKING = [
+  'Two marks are given and added together: up to 12 for communication and organisation (AO5) and up to 8 for writing accurately (AO6), each found on its own scale.',
+  'Band 1 (AO5 1 to 2, AO6 1): some idea of the form and the reader, but little to say and ideas in a simple order; sentences mostly alike, and errors frequent.',
+  'Band 2 (AO5 3 to 4, AO6 2 to 3): aware of the purpose and the reader, with a few reasons and paragraphs, though the points are not developed; sentences vary a little and most spelling is right.',
+  'Band 3 (AO5 5 to 7, AO6 4 to 5): fits the task and the reader, with reasons that are developed and paragraphs that build a sensible case; mostly accurate, with a mix of sentences and punctuation.',
+  'Band 4 (AO5 8 to 10, AO6 6 to 7): right for the task and the reader all the way through, with detailed, carefully chosen content and a clear structure; sentences varied for effect, and errors rare.',
+  'Band 5 (AO5 11 to 12, AO6 8): ambitious, polished writing, with a tone exactly right for the reader, ideas developed in depth so that they persuade, and accuracy close to faultless, with a wide, precise vocabulary.',
+]
 
 // ─── Mock Exam Papers ──────────────────────────────────────────────────────
 
@@ -215,153 +362,199 @@ export const wjecC2A: MockExamPaper[] = [
       {
         id: 'wjec-c2-01-reading',
         title: 'Section A: Reading',
-        description:
-          'Read both source texts carefully. Then answer all the questions in this section.',
+        description: SECTION_A_GUIDANCE,
         totalMarks: 40,
         suggestedTimeMinutes: 60,
         questions: [
           {
             id: 'wjec-c2-01-q1',
             questionNumber: 1,
-            questionText:
-              'Read the 21st-century source text about poverty in Wales (Source A).\n\nList five things you learn about poverty from this text.',
-            marks: 5,
-            suggestedTimeMinutes: 5,
+            label: '1.1',
+            questionText: `Read Source A, the 21st-century text, and answer the questions below.\n\n(a) According to the writer, how many people in the United Kingdom had experienced destitution? [1]\n(b) What struck the writer most about the people visiting the food banks? [1]\n(c) Give one thing that the volunteers who run the food banks work without. [1]`,
+            marks: 3,
+            suggestedTimeMinutes: 4,
             questionType: 'short-answer',
             extract: `Source A:\n${POVERTY_21C}\n\nSource B:\n${POVERTY_19C}`,
             extractSource: `Source A: ${POVERTY_21C_REF} | Source B: ${POVERTY_19C_REF}`,
             modelAnswers: {
-              'Grade 4-5':
-                '1. In 2023 the Joseph Rowntree Foundation reported that 3.8 million people in the UK had experienced destitution. 2. Destitution means not having enough money for food or heating. 3. People who visit food banks feel ashamed. 4. Many of the people who need help have worked all their lives. 5. The volunteers who run food banks work without pay.',
+              'Grade 4-5': `(a) 3.8 million.\n(b) Their shame: many had never imagined that they would need help.\n(c) Pay.`,
             },
-            markScheme: ['1 mark per valid point derived from Source A only, maximum 5'],
+            markScheme: {
+              'How it is marked (3 marks)': SHORT_A_MARKING,
+              Answers: [
+                '(a) 3.8 million.',
+                `(b) Their shame (accept: that they felt ashamed to need help). The scale of need does not earn the mark: the writer says it was "not the scale of need".`,
+                '(c) Any one of: pay; recognition; adequate resources.',
+              ],
+            },
           },
           {
             id: 'wjec-c2-01-q2',
             questionNumber: 2,
-            questionText:
-              'How does the writer of Source A use language to persuade the reader that poverty in Wales is a serious problem?\n\nYou should comment on:\n- specific words and phrases\n- language features and techniques\n- the effects on the reader.',
+            label: '1.2',
+            questionText: `Source A is a feature article about poverty in Wales. The writer wants to persuade readers that poverty is a serious problem which charity alone cannot solve.\n\nHow does the writer try to do this?\n\nIn your answer, comment on:\n• what the writer says\n• the writer's choice of language and tone\n• how the article is structured, and any other methods the writer uses.\n\n[10]`,
             marks: 10,
             suggestedTimeMinutes: 12,
             questionType: 'analysis',
             extract: `Source A:\n${POVERTY_21C}`,
             extractSource: POVERTY_21C_REF,
             modelAnswers: {
-              'Grade 4-5':
-                'The writer uses the statistic "3.8 million people" to shock the reader with the scale of the problem. The word "destitution" is very strong and suggests extreme poverty. The stark choice "between eating and staying warm" makes the reader feel sympathy because these are basic needs. The writer lists real jobs like "teaching assistant" and "retired nurse" to show that poverty can affect anyone, not just people who do not work. The phrase "no fault of their own" makes the reader feel it is unfair.',
-              'Grade 6-7':
-                'Davies deploys a carefully layered persuasive strategy that moves from the statistical to the personal to the political. The opening statistic - "3.8 million" - establishes scale, but it is the appositive clause "a word that should have no place in the sixth-largest economy on earth" that converts fact into moral indictment, the modal verb "should" carrying the weight of outrage. The tricolon of deprivation - "to feed yourself, to heat your home, to keep the lights on" - uses infinitive repetition to reduce survival to a checklist of impossibilities. The semantic field of shame ("never imagined," "no fault of their own") reframes poverty as an emotional experience rather than a mere economic statistic. The indirect question at the close - "why, in one of the wealthiest nations in history, they need it at all" - is devastatingly placed: it transforms the reader\'s sympathy into political discomfort by implying systemic failure.',
-              'Grade 8-9':
-                'Davies constructs a rhetorical architecture of escalating moral pressure. The opening sentence juxtaposes the clinical precision of "3.8 million" against the visceral connotations of "destitution," before the appositive phrase - "a word that should have no place in the sixth-largest economy on earth" - recontextualises the statistic as an obscenity. The second paragraph performs a crucial rhetorical shift from abstraction to testimony: the asyndetic listing of occupations ("A teaching assistant... a former small-business owner... a retired nurse") refuses the anonymity of statistics, while the shared grammatical structure creates an almost liturgical rhythm of dispossession. The phrase "work was no longer enough" inverts the foundational promise of meritocracy with devastating economy. The final paragraph\'s neologistic verb phrase "food-bank our way out" is perhaps the most powerful moment: it transforms a noun associated with charity into a verb of futile action, linguistically enacting the inadequacy of the response it describes. The closing question, asked indirectly rather than with a question mark, achieves its force not through exclamation but through the quiet precision of "at all" - an understatement that functions as the essay\'s loudest moment.',
+              'Grade 8-9': `The writer opens with a fact rather than a feeling, which makes the argument hard to dismiss: the Joseph Rowntree Foundation reported that "3.8 million people in the United Kingdom had experienced destitution". Naming a respected source makes the figure trustworthy, and the writer at once sets the word against the country's wealth: it is "a word that should have no place in the sixth-largest economy on earth". The modal verb "should" turns a statistic into a moral judgement, so the reader feels that something is wrong, not merely unfortunate.\n\nThe writer then defines the word in plain, concrete terms. The repeated pattern "to feed yourself, to heat your home, to keep the lights on" lists three basic needs, and the second person puts the reader in the place of someone who cannot meet them. In "It means choosing, every single day, between eating and staying warm", the interruption "every single day" slows the sentence down, so the choice seems to drag on as it does for the poor.\n\nIn the second paragraph the tone becomes personal. The writer speaks as a witness ("I spent three weeks visiting food banks across South Wales"), which gives the article authority, and then makes a surprising turn: what struck the writer was "not the scale of need" but "the shame". The focus moves from numbers to people. The sentence "A teaching assistant from Merthyr Tydfil, a former small-business owner from Swansea, a retired nurse from Newport" has no main verb, so it reads like a roll call, and the jobs are respectable, useful ones. This challenges the idea that poor people do not work: these people "had worked all their lives" and found, "through no fault of their own", that "work was no longer enough".\n\nThe last paragraph is built on a turn. It begins with praise ("The volunteers who run these food banks are extraordinary") and the triple "without pay, without recognition, and often without adequate resources", then changes direction with "But": "charity, however generous, is not a substitute for policy". The writer criticises the system without criticising the volunteers. Turning a noun into a verb in "We cannot food-bank our way out of a structural crisis" is memorable and slightly mocking, the word "structural" places the blame on the system, and the inclusive "We" makes the reader share the responsibility. The article ends by setting two questions side by side: not "whether people deserve help - of course they do - but why, in one of the wealthiest nations in history, they need it at all." The aside "of course they do" brushes objections away, and the final words "at all" leave the reader with the central point: in a country this rich, such need should not exist.`,
             },
-            markScheme: [
-              'Analyses specific language techniques with examples',
-              'Comments on effects of individual words and phrases',
-              "Considers the writer's persuasive strategies",
-              'Uses embedded quotations effectively',
-              'Top band: sophisticated, conceptualised analysis of language',
-            ],
+            markScheme: {
+              'How it is marked (10 marks)': Q1_2_MARKING,
+              'Points you might make': [
+                `The opening rests on a named source and a figure ("3.8 million"), then judges it: destitution should have "no place in the sixth-largest economy on earth".`,
+                `The definition is concrete and speaks to the reader ("to feed yourself, to heat your home, to keep the lights on"), and "every single day" makes the choice relentless.`,
+                `The writer speaks as a witness ("I spent three weeks visiting food banks across South Wales"), and the focus turns from numbers to "the shame".`,
+                `The verbless list of a teaching assistant, a small-business owner and a retired nurse challenges the idea that the poor do not work: "work was no longer enough".`,
+                `The last paragraph praises the volunteers, then turns on "But": "charity, however generous, is not a substitute for policy".`,
+                `The noun made into a verb in "food-bank our way out", the word "structural" and the inclusive "We" put the blame on the system and share it with the reader; the ending, "they need it at all", states the central point.`,
+              ],
+            },
           },
           {
             id: 'wjec-c2-01-q3',
             questionNumber: 3,
-            questionText:
-              'Read the 19th-century source text (Source B).\n\nWhat do you learn about the lives of the poor in 19th-century Wales from this text?\n\nYou should comment on:\n- what the writer describes\n- the writer\'s use of language to convey conditions.\n\n(Source B was written in German by Friedrich Engels in 1845. This English translation by Florence Kelley Wischnewetzky is printed from its London edition of 1892. "Small holders" farmed small plots of land; the "new Poor Law" of 1834 offered the poor help mainly by making them enter a workhouse; "tolls" were charges paid at "toll-gates" to use a road; "pertinaciously" means stubbornly.)',
-            marks: 10,
-            suggestedTimeMinutes: 12,
-            questionType: 'analysis',
+            label: '1.3',
+            questionText: `Read Source B, the 19th-century text, and answer the questions below.\n\n(Source B was written in German by Friedrich Engels in 1845. This English translation by Florence Kelley Wischnewetzky is printed from its London edition of 1892. "Small holders" farmed small plots of land; the "new Poor Law" of 1834 offered the poor help mainly by making them enter a workhouse; "tolls" were charges paid at "toll-gates" to use a road; "pertinaciously" means stubbornly.)\n\n(a) According to Engels, why do the Welsh small farmers struggle to compete with the English farmers? [1]\n(b) What does Engels mean when he says that the new Poor Law is "cordially hated" by the tenants? [1]\n(c) Give one thing that the rioters attacked in the "Rebecca" disturbances of 1843. [1]`,
+            marks: 3,
+            suggestedTimeMinutes: 4,
+            questionType: 'short-answer',
             extract: `Source B:\n${POVERTY_19C}`,
             extractSource: POVERTY_19C_REF,
             modelAnswers: {
-              'Grade 4-5':
-                'We learn that most farmers in 19th-century Wales were "small holders" who could not sell their products as cheaply as the bigger English farms, but were "obliged to compete" with them, and the competition ruined them. In some places the land was only good for "live stock", which made little money. Engels says their poverty had become so bad that "they can scarcely live at all", which shows how desperate they were. They also feared the workhouse: "the new Poor Law is cordially hated" because they were in "perpetual danger" of needing it. In 1843 the poor fought back in the "Rebecca" riots, when men "dressed in women\'s clothing" and "blackened their faces" to destroy the toll-gates. Engels thinks the poverty will get worse and lead to "more serious manifestations".',
-              'Grade 6-7':
-                'Engels presents the poverty of the Welsh farmers as the result of an economic system rather than of bad luck or laziness. His opening uses the language of analysis, not sympathy: Wales "illustrates the ruin of the small holders", as if the country were an example in an argument. He explains the causes step by step - the small farmers are "obliged to compete" with "larger, more favourably situated English farmers", some land allows "the raising of live stock only", and the competition brings "increased mortgages" - so that their poverty seems the logical end of a process. His strongest statement, "they can scarcely live at all", is plain and blunt, and "wretched condition" is one of the few emotive phrases he uses. He is critical of the farmers too, saying they "have not recognised the true cause" of their poverty and blame "all sorts of small causes" such as "high tolls". The new Poor Law is "cordially hated", that is, hated with all their hearts, which shows how much the workhouse was feared, and the verb "hover" makes the danger feel constant. The verbs describing the Rebecca riots ("dressed", "blackened", "destroyed", "demolished") show desperation turning into action, yet Engels calls the riots "humorous Rebecca masquerades" and warns of "more serious manifestations", so the passage ends by predicting that poverty "must go on intensifying".',
+              'Grade 4-5': `(a) The English farms are bigger and better placed, so they can sell their produce more cheaply.\n(b) The tenants hate it with all their hearts, because they are always afraid of being forced into the workhouse.\n(c) The toll-gates.`,
             },
-            markScheme: [
-              'Identifies relevant information from the source',
-              'Comments on how language conveys conditions and attitudes',
-              'Uses evidence from the text to support points',
-              'Shows understanding of implicit as well as explicit meaning',
-            ],
+            markScheme: {
+              'How it is marked (3 marks)': SHORT_B_MARKING,
+              Answers: [
+                '(a) The English farms are larger and better placed, so they can sell their produce more cheaply (accept: the Welsh farms are too small to make the same profit at the same price). Also accept either further reason Engels gives: in places the land is fit only for raising livestock, which makes little profit; the Welsh farmers are slower to change than the English.',
+                `(b) They hate it with all their hearts: "cordially" here means heartily, not in a friendly way. Accept: they hate it very much, because they fear having to enter the workhouse.`,
+                "(c) Any one of: the toll-gates; the toll-keepers' houses; the workhouse of Carmarthen.",
+              ],
+            },
           },
           {
             id: 'wjec-c2-01-q4',
             questionNumber: 4,
-            questionText:
-              "Both writers present their views on poverty.\n\nCompare the following:\n- the writers' attitudes to poverty\n- how they convey these attitudes.\n\nYou must use the text to support your comments and make it clear which text you are referring to.",
-            marks: 15,
-            suggestedTimeMinutes: 18,
+            label: '1.4',
+            questionText: `Read Source B again.\n\nA student said: ‘Engels writes about the Welsh farmers with sympathy, but he is more interested in explaining their poverty than in making the reader feel it.’\n\nHow far do you agree with this view?\n\nIn your answer, give your own view of how Engels presents the farmers and their poverty across the whole text, and explain how his choices of words and details create that view. Support your answer with references to the text. [10]`,
+            marks: 10,
+            suggestedTimeMinutes: 12,
+            questionType: 'evaluation',
+            extract: `Source B:\n${POVERTY_19C}`,
+            extractSource: POVERTY_19C_REF,
+            modelAnswers: {
+              'Grade 8-9': `I largely agree with this view, although Engels's sympathy is real, and it shows most clearly where his language becomes plain.\n\nAt the start he writes like an economist rather than a witness. Wales "illustrates the ruin of the small holders", as though the country were an example in an argument, and he sets out the causes as a careful chain: the small farmers "cannot with like profit sell their products as cheaply" as the "larger, more favourably situated English farmers", yet they are "obliged to compete" with them. Words such as "proletariat", "capitalist" and "small bourgeoisie" belong to a theory of society, not to a description of suffering, so here the student is right: we understand the farmers' poverty more than we feel it.\n\nHowever, Engels's sympathy breaks through in the clause "they can scarcely live at all". Among so much abstract language it is short and blunt, and the bluntness makes it hit hard. He also calls their state a "wretched condition", and the verb in "hover in perpetual danger" makes the threat of the workhouse a constant fear hanging over the tenants. Even so, his sympathy is not uncritical. He says the farmers "have not recognised the true cause" of their poverty and blame "all sorts of small causes, such as high tolls", which he then explains away as costs that are really "paid by the landlord". This makes him sound superior to the people he describes, as if he understands their lives better than they do.\n\nThe account of the Rebecca riots is the most vivid part of the passage, and the part that most challenges the statement. A run of verbs, "dressed", "blackened", "fell", "destroyed", "demolished", makes the farmers active and dangerous rather than pitiful, and "amidst great rejoicing and firing of guns" shows their anger turning into something almost festive. Here Engels does make the reader see and feel. Yet his attitude stays mixed, because he calls the riots "humorous Rebecca masquerades", which comes close to mocking them.\n\nThe ending supports the statement most strongly. He dismisses the Government's response in a flat phrase, "there was an end of the matter", and predicts that the poverty "must go on intensifying" until it produces "more serious manifestations". He is less interested in what the farmers feel than in what their poverty will lead to. Overall, Engels does show sympathy, but it is the sympathy of an analyst: he wants his readers to understand why the farmers are poor and what will follow, more than to grieve for them.`,
+            },
+            markScheme: {
+              'How it is marked (10 marks)': Q1_4_MARKING,
+              'Points you might make': [
+                `Much of the passage explains rather than describes: Wales "illustrates the ruin of the small holders", and the causes are set out step by step (competition with "larger, more favourably situated English farmers", land fit for "live stock only", "increased mortgages").`,
+                `Sympathy shows in plainer words: "they can scarcely live at all", "wretched condition", and the fear in "hover in perpetual danger".`,
+                `He is critical of the farmers too: they "have not recognised the true cause" and blame "all sorts of small causes".`,
+                `The riots are told in active verbs ("blackened", "destroyed", "demolished"), which brings them alive, yet he calls them "humorous Rebecca masquerades".`,
+                `The ending looks forward rather than inward: the poverty "must go on intensifying" and will produce "more serious manifestations".`,
+                'A strong answer reaches a judgement on the statement, agreeing, disagreeing or agreeing in part, and keeps to it through the whole passage.',
+              ],
+            },
+          },
+          {
+            id: 'wjec-c2-01-q5',
+            questionNumber: 5,
+            label: '1.5',
+            questionText: `Bring together details from both texts to explain briefly who the people living in poverty are, and how they respond to it. Make clear which text each detail comes from. [4]`,
+            marks: 4,
+            suggestedTimeMinutes: 5,
+            questionType: 'summary',
+            extract: `Source A:\n${POVERTY_21C}\n\nSource B:\n${POVERTY_19C}`,
+            extractSource: `Source A: ${POVERTY_21C_REF} | Source B: ${POVERTY_19C_REF}`,
+            modelAnswers: {
+              'Grade 4-5': `In Source A the poor are people who "had worked all their lives", such as a "teaching assistant from Merthyr Tydfil" and a "retired nurse from Newport". They respond with shame, having "never imagined they would need help", and turn to food banks run by volunteers. In Source B the poor are the small farmers of Wales, who "can scarcely live at all" and live in fear of the workhouse under the new Poor Law. Some respond with anger: in 1843 they attacked the toll-gates in the Rebecca riots.`,
+            },
+            markScheme: {
+              'How it is marked (4 marks)': Q1_5_MARKING,
+              'Details you might bring together': [
+                `Source A: the poor include people who "had worked all their lives", such as a teaching assistant, a former small-business owner and a retired nurse; they must choose "between eating and staying warm"; they feel ashamed and rely on food banks.`,
+                `Source B: the poor are Welsh small farmers who "can scarcely live at all"; they live "in perpetual danger" of the workhouse; they blame tolls; in 1843 they rose in the Rebecca riots, destroying toll-gates and storming the workhouse of Carmarthen.`,
+              ],
+            },
+          },
+          {
+            id: 'wjec-c2-01-q6',
+            questionNumber: 6,
+            label: '1.6',
+            questionText: `Source A and Source B are both about poverty.\n\nCompare:\n• what the writers say about poverty and its causes\n• how they get their ideas across.\n\nUse evidence from both texts, and make clear which text each point comes from. [10]`,
+            marks: 10,
+            suggestedTimeMinutes: 13,
             questionType: 'comparison',
             extract: `Source A:\n${POVERTY_21C}\n\nSource B:\n${POVERTY_19C}`,
             extractSource: `Source A: ${POVERTY_21C_REF} | Source B: ${POVERTY_19C_REF}`,
             modelAnswers: {
-              'Grade 4-5':
-                'Both writers think poverty is caused by the system, not by the poor themselves. Davies (Source A) says people are poor "through no fault of their own", and Engels (Source B) says the Welsh farmers have been ruined by competition with "larger, more favourably situated English farmers". Davies uses real people she met, like "a retired nurse from Newport", to make the reader feel sympathy, while Engels writes about the farmers as a group and explains the causes like an economist. Both writers criticise how the authorities respond: Davies says "charity, however generous, is not a substitute for policy", and Engels says the Government appointed a commission "and there was an end of the matter". Davies ends by asking why people "need it at all", but Engels ends with a warning that the poverty "must go on intensifying".',
-              'Grade 6-7':
-                'Both writers see poverty as structural rather than personal, but they write from very different positions. Davies writes as a witness, "I spent three weeks visiting food banks across South Wales", and builds sympathy through the people she met: "A teaching assistant from Merthyr Tydfil, a former small-business owner from Swansea, a retired nurse from Newport". In this passage Engels names no one; he writes about "the Welsh peasantry" as a class and explains their ruin through cause and effect, from competition to "increased mortgages" to a state in which "they can scarcely live at all". Davies stresses the shame of the poor, who "had never imagined they would need help"; Engels stresses their anger, describing the Rebecca rioters who "blackened their faces" and attacked the toll-gates. Both are scornful of official responses. Davies insists that "charity, however generous, is not a substitute for policy", while Engels dismisses the Government\'s commission with the flat irony of "there was an end of the matter". Their endings differ in tone: Davies closes on a moral challenge, asking why people in "one of the wealthiest nations in history" need help at all, whereas Engels closes on a political prediction that the poverty "must go on intensifying" and will produce "more serious manifestations". Davies wants the reader to feel ashamed that poverty exists; Engels wants the reader to understand that it cannot last.',
-              'Grade 8-9':
-                'Read together, the texts show two ways of making a reader take poverty seriously: through testimony and through analysis. Davies moves from a statistic to the people behind it. Her list of occupations, "A teaching assistant from Merthyr Tydfil, a former small-business owner from Swansea, a retired nurse from Newport", insists that the poor are workers, and the phrase "work was no longer enough" undermines the belief that work protects people from poverty. Engels, by contrast, presents Wales as a case study: it "illustrates the ruin of the small holders", and the chain of causes he sets out - competition, land fit only for "live stock", "increased mortgages" - makes poverty look like the predictable product of an economic system rather than a misfortune. Both writers reject individual blame, yet Engels, unlike Davies, criticises the poor for misreading their situation: because they "have not recognised the true cause of their wretched condition", they blame "all sorts of small causes" such as "high tolls". Davies treats the poor with tenderness and attends to their "shame"; Engels treats them with a detachment that can turn ironic, calling the riots "humorous Rebecca masquerades". Both are sceptical of official action, but in different registers. Davies\'s antithesis, "charity, however generous, is not a substitute for policy", appeals to a government she still expects to act, while Engels\'s deadpan "there was an end of the matter" suggests he expects nothing from government at all. The endings reveal the deepest difference. Davies asks why people in "one of the wealthiest nations in history" need help at all, an appeal to the reader\'s conscience; Engels predicts that poverty "must go on intensifying" and will produce "more serious manifestations", a warning of unrest rather than an appeal for pity.',
+              'Grade 8-9': `Both writers argue that poverty comes from the way society is organised rather than from the failings of the poor, but they make the case in very different ways.\n\nThe writer of Source A builds the argument from testimony. After the opening figure of "3.8 million people", the article turns to people the writer met: "A teaching assistant from Merthyr Tydfil, a former small-business owner from Swansea, a retired nurse from Newport". These are people who have worked all their lives, and the phrase "through no fault of their own" rejects the idea that they are to blame. Engels, in Source B, names no one. He writes about "the Welsh peasantry" as a class and explains their ruin through cause and effect: they are "obliged to compete" with English farmers who can sell more cheaply, and the competition brings "increased mortgages" until they "can scarcely live at all". Source A makes poverty personal; Source B makes it the predictable result of an economic system.\n\nThe writers also see the poor differently. The writer of Source A is tender towards them and dwells on "the shame" they feel. Engels is more detached and even critical: the farmers "have not recognised the true cause of their wretched condition", and he calls their protest "humorous Rebecca masquerades". Yet his account of the riots, with its verbs "blackened", "destroyed" and "demolished", shows the poor acting, whereas Source A shows them enduring.\n\nBoth writers find those in power wanting. Source A praises the volunteers but argues, in a balanced sentence that sets charity against policy, that "charity, however generous, is not a substitute for policy", which implies that the policy is missing, and the inclusive "We cannot food-bank our way out of a structural crisis" asks the reader to share the responsibility. Engels is flatter and more ironic: the Government appointed a commission, "and there was an end of the matter".\n\nTheir endings show their different purposes. Source A ends on a question of conscience: why, "in one of the wealthiest nations in history", people need help "at all". Source B ends on a warning that the poverty "must go on intensifying" and will produce "more serious manifestations". The modern writer wants readers to feel that such poverty is shameful and to demand change; Engels wants them to understand that it cannot last.`,
             },
-            markScheme: [
-              'Compares attitudes from both texts with clear cross-referencing',
-              'Analyses methods of presentation in both sources',
-              'Uses evidence from both sources to support comparisons',
-              'Shows sustained comparative analysis throughout',
-              'Top band: sophisticated, evaluative comparison with conceptualised understanding',
-            ],
+            markScheme: {
+              'How it is marked (10 marks)': Q1_6_MARKING,
+              'Points you might make': [
+                `Both blame the system rather than the poor. Source A: people who "had worked all their lives" are poor "through no fault of their own". Source B: competition and "increased mortgages" have ruined the farmers.`,
+                'Source A builds its case from people the writer met; Source B names no one and explains poverty through cause and effect, as an economist would.',
+                `Source A is tender towards the poor and dwells on "the shame"; Engels is detached and critical ("have not recognised the true cause"), and calls the riots "humorous Rebecca masquerades".`,
+                `Both find those in power wanting: charity "is not a substitute for policy", so the policy is missing (Source A); the Government's commission, "and there was an end of the matter" (Source B).`,
+                `The endings differ: Source A appeals to conscience ("they need it at all"); Source B warns that the poverty "must go on intensifying".`,
+              ],
+            },
           },
         ],
       },
       {
         id: 'wjec-c2-01-writing',
         title: 'Section B: Writing',
-        description:
-          'In this section you will be assessed for the quality of your writing skills.\n\nFor each task, 12 marks are awarded for communication and organisation; 8 marks are awarded for writing accurately.',
+        description: SECTION_B_GUIDANCE,
         totalMarks: 40,
         suggestedTimeMinutes: 60,
         questions: [
           {
-            id: 'wjec-c2-01-q5',
-            questionNumber: 5,
-            questionText:
-              'Your local council is considering closing a community food bank to save money.\n\nWrite a letter to the council arguing that the food bank should remain open.\n\nYou should write between one and two pages.\n\n(12 marks for communication and organisation / 4 marks for writing accurately)',
-            marks: 16,
-            suggestedTimeMinutes: 20,
+            id: 'wjec-c2-01-q7',
+            questionNumber: 1,
+            label: '2.1',
+            questionText: `Your local council is considering closing a community food bank to save money.\n\nWrite a letter to the council arguing that the food bank should stay open. [20]`,
+            marks: 20,
+            suggestedTimeMinutes: 30,
             questionType: 'transactional-writing',
             modelAnswers: {
-              'Grade 4-5':
-                'A clear letter with: appropriate formal register; relevant reasons to keep the food bank open; generally accurate SPaG; some attempt at persuasive techniques.',
-              'Grade 6-7':
-                'A well-structured letter with: consistent formal tone; a range of persuasive strategies including evidence and emotive language; secure accuracy; clear sense of audience.',
-              'Grade 8-9':
-                'A compelling letter with: authoritative voice; sophisticated argument that anticipates counter-arguments; varied and precise vocabulary; technical control throughout.',
+              'Grade 8-9': `Dear Councillors,\n\nI am writing about the proposal to close the community food bank on Station Road. I understand that the council must save money this year, and that every service is being examined closely. However, closing the food bank would be a false economy, and I urge you to keep it open.\n\nFirst, consider who uses it. The food bank is not a convenience for people who could manage without it. Its visitors include pensioners whose savings have run out, parents whose shift work does not cover the rent, and people waiting for their first wage after losing a job. For them, a food parcel is the difference between eating and going without. If the food bank closes, their need will not disappear; it will simply move somewhere less visible, and more expensive.\n\nThat is my second point. Hunger has costs that the council will pay in other ways. Children who arrive at school hungry find it harder to concentrate. Adults who cannot afford to eat properly fall ill more often, and some will end up needing help from the health service or from social services. Each of these costs is far higher than the modest grant that keeps the food bank running.\n\nThird, the food bank gives the council remarkable value. It is run almost entirely by volunteers, who give their time without pay, and much of its food is donated by local people and shops. The council's grant pays for little more than the building and the van. Few services return so much for so little.\n\nI recognise that savings must be found. Could the council share the building with another service, or help the volunteers to apply for funding from charities and local businesses? I would gladly help to organise a fundraising event myself.\n\nPlease do not close a service that protects the most vulnerable people in our town. I hope that you will weigh these points carefully before the council votes.\n\nYours faithfully,\n\nAlex Morgan`,
             },
-            markScheme: [
-              'Communication & Organisation (12 marks): Appropriate form and register; persuasive purpose; structured argument; audience awareness',
-              'Writing Accurately (4 marks): Sentence variety; vocabulary; spelling and punctuation',
-            ],
+            markScheme: {
+              'How it is marked (20 marks)': WRITING_MARKING,
+              'What earns marks in this task': [
+                'The features of a formal letter: a greeting, an opening that says why you are writing, clear paragraphs and a suitable sign-off (Yours faithfully, after Dear Councillors).',
+                'A respectful, formal tone for councillors: firm, but never rude.',
+                'Reasons developed with detail: who uses the food bank, what closing it would cost the community, and other ways for the council to save money.',
+                'Accurate spelling, punctuation and grammar, with varied sentences and well-chosen words: 8 of the 20 marks are for this.',
+              ],
+            },
           },
           {
-            id: 'wjec-c2-01-q6',
-            questionNumber: 6,
-            questionText:
-              '"In a wealthy country, no one should go hungry."\n\nWrite a speech for a school assembly arguing your point of view on this statement.\n\nYou should write between two and three pages.\n\n(16 marks for communication and organisation / 8 marks for writing accurately)',
-            marks: 24,
-            suggestedTimeMinutes: 40,
+            id: 'wjec-c2-01-q8',
+            questionNumber: 2,
+            label: '2.2',
+            questionText: `"In a wealthy country, no one should go hungry."\n\nYour school is holding an assembly about this statement. Write a speech for the assembly giving your views. [20]`,
+            marks: 20,
+            suggestedTimeMinutes: 30,
             questionType: 'transactional-writing',
             modelAnswers: {
-              'Grade 4-5':
-                'A clear speech with: some rhetorical devices; a discernible argument; appropriate register for a school assembly; generally accurate SPaG.',
-              'Grade 6-7':
-                'A well-crafted speech with: effective use of rhetorical techniques (repetition, tricolon, direct address); balanced argument that considers multiple perspectives; consistent accuracy and varied sentence structures.',
-              'Grade 8-9':
-                'An outstanding speech with: commanding voice and tone; sophisticated rhetorical architecture; nuanced argument that challenges assumptions; linguistic precision and flair; impeccable technical accuracy.',
+              'Grade 8-9': `Good morning, everyone.\n\nThink about what you had for breakfast this morning. Perhaps it was cereal, or toast, or nothing at all because you were running late. For most of us, skipping breakfast is a choice. For some children in this country, it is not.\n\nWe live in one of the richest countries in the world. Our supermarket shelves are stacked to the ceiling, shops stay open late into the night, and good food is thrown away every day. And yet there are families, perhaps not far from this hall, where parents go without dinner so that their children can eat. I believe that this is wrong, and that in a country as wealthy as ours, no one should go hungry.\n\nSome people will say that hunger is a matter of personal responsibility: that families should budget better, or work harder. But many of the families who struggle are already working. They are carers, cleaners, shop assistants and delivery drivers, the people who keep the country running. When a full week's work does not pay for a full week's food, the problem is not the worker. It is the system.\n\nOthers will say that charities and food banks can solve the problem. Food banks do wonderful work, and their volunteers deserve our thanks. But charity is meant to be a safety net, not a way of life. A country should not depend on the kindness of strangers to feed its children.\n\nSo what can we do? We can start here. We can support the school's food collection, and make sure that no one in this school is ever embarrassed to ask for help. We can learn about the causes of poverty, and talk about them honestly. And when we are old enough to vote, we can choose leaders who treat hunger as a problem to be solved, not a fact of life.\n\nHunger is not a natural disaster. It is the result of choices a society makes, and a wealthy society can choose differently.\n\nThank you for listening.`,
             },
-            markScheme: [
-              'Communication & Organisation (16 marks): Purpose, audience, form; quality of argument; structural effectiveness; rhetorical skill',
-              'Writing Accurately (8 marks): Sentence construction; vocabulary range and precision; spelling, punctuation, grammar',
-            ],
+            markScheme: {
+              'How it is marked (20 marks)': WRITING_MARKING,
+              'What earns marks in this task': [
+                'The features of a speech: a greeting, direct address to the audience, and an ending that rounds it off.',
+                'A tone that suits pupils in an assembly: serious and persuasive, without preaching or talking down.',
+                'A clear view on the statement, developed with reasons and examples, perhaps answering the views of those who disagree.',
+                'Accurate spelling, punctuation and grammar, with varied sentences and well-chosen words: 8 of the 20 marks are for this.',
+              ],
+            },
           },
         ],
       },
@@ -385,150 +578,199 @@ export const wjecC2A: MockExamPaper[] = [
       {
         id: 'wjec-c2-02-reading',
         title: 'Section A: Reading',
-        description:
-          'Read both source texts carefully. Then answer all the questions in this section.',
+        description: SECTION_A_GUIDANCE,
         totalMarks: 40,
         suggestedTimeMinutes: 60,
         questions: [
           {
             id: 'wjec-c2-02-q1',
             questionNumber: 1,
-            questionText:
-              'Read the 21st-century source text about education in Wales (Source A).\n\nList five things you learn about the challenges facing schools from this text.',
-            marks: 5,
-            suggestedTimeMinutes: 5,
+            label: '1.1',
+            questionText: `Read Source A, the 21st-century text, and answer the questions below.\n\n(a) Which year group does the writer watch arriving at the school every September? [1]\n(b) According to the writer, what does the Curriculum for Wales promise to do? Give one thing. [1]\n(c) How long has the writer been teaching? [1]`,
+            marks: 3,
+            suggestedTimeMinutes: 4,
             questionType: 'short-answer',
             extract: `Source A:\n${EDUCATION_21C}\n\nSource B:\n${EDUCATION_19C}`,
             extractSource: `Source A: ${EDUCATION_21C_REF} | Source B: ${EDUCATION_19C_REF}`,
             modelAnswers: {
-              'Grade 4-5':
-                '1. There is a visible gap between confident and anxious students arriving in Year 7. 2. Some children arrive in shoes that do not fit properly. 3. The attainment gap is caused by poverty and housing insecurity. 4. Some pupils lack access to books, tutors and quiet spaces to study. 5. New initiatives are often abandoned when the funding runs out.',
+              'Grade 4-5': `(a) Year 7.\n(b) To nurture every learner.\n(c) Twenty-two years.`,
             },
-            markScheme: ['1 mark per valid point derived from Source A only, maximum 5'],
+            markScheme: {
+              'How it is marked (3 marks)': SHORT_A_MARKING,
+              Answers: [
+                '(a) Year 7.',
+                '(b) Either of: to nurture every learner; to value wellbeing alongside attainment.',
+                '(c) Twenty-two years.',
+              ],
+            },
           },
           {
             id: 'wjec-c2-02-q2',
             questionNumber: 2,
-            questionText:
-              'How does the writer of Source A use language to convey her frustration about the education system?\n\nYou should comment on:\n- specific words and phrases\n- language features and techniques\n- the effects on the reader.',
+            label: '1.2',
+            questionText: `Source A is an opinion article by a secondary-school teacher. The writer wants to persuade readers that the gap between poorer pupils and the rest will not close without real action and money.\n\nHow does the writer try to do this?\n\nIn your answer, comment on:\n• what the writer says\n• the writer's choice of language and tone\n• how the article is structured, and any other methods the writer uses.\n\n[10]`,
             marks: 10,
             suggestedTimeMinutes: 12,
             questionType: 'analysis',
             extract: `Source A:\n${EDUCATION_21C}`,
             extractSource: EDUCATION_21C_REF,
             modelAnswers: {
-              'Grade 4-5':
-                'The writer contrasts the confident children with "new backpacks" and the anxious ones "in shoes that are slightly too big." This makes the reader see the inequality clearly. The phrase "mistakes are expensive" shows that poorer children cannot afford to get things wrong. She says the gap is "not a mystery" which suggests the government already knows but does nothing. The phrase "ambition without resource is just aspiration" sounds clever and memorable, making her argument more powerful.',
-              'Grade 6-7':
-                'The writer constructs frustration through a rhetoric of deflation: each apparently positive statement is systematically undercut. The Curriculum for Wales "promises" and has "admirable ambitions" - but the approving vocabulary is immediately cancelled by the devastating epigram "ambition without resource is just aspiration, and aspiration without action is just words." The chain of diminishing synonyms enacts the process of dilution it describes. The opening vignette is structured as an implicit comparison that requires no commentary: the children with "labelled pencil cases" and those with "last year\'s bag" are placed side by side, and the reader is left to draw the moral conclusion. The phrase "careful alertness of someone who knows that mistakes are expensive" is particularly effective: "expensive" carries both literal (financial cost) and metaphorical (social consequence) weight, and the mature awareness attributed to the child - "someone who knows" - is itself an indictment of a system that forces children to understand scarcity before they understand fractions.',
+              'Grade 8-9': `The writer opens with a scene, not an argument. The repetition of "Every September" makes the experience yearly and unchanging, and the observation that "the gap between the confident and the anxious has grown wider" states the problem before any policy is mentioned. The writer then builds a contrast between two kinds of children. The confident ones "bounce through the gates", a lively verb, with "new backpacks and labelled pencil cases", details that suggest money and careful parents, and the long sentence, joined by "and" after "and", mirrors their ease. The others "arrive quietly", in "shoes that are slightly too big or slightly too small", carrying "last year's bag". These small, precise details make poverty visible without the word being used, and the final phrase, "someone who knows that mistakes are expensive", is especially moving: it suggests that these children have already learnt to be as careful as adults.\n\nThe second paragraph moves from observation to argument. The short, confident sentence "The attainment gap in Wales is not a mystery" dismisses any excuse, and the list of causes, "poverty, housing insecurity, parental stress, lack of access to books, tutors, and quiet spaces to study", shows how well the writer knows the problem. The inclusive "We know" and "We have known this for decades" spread the responsibility to everyone, the reader included. The antithesis "What we lack is not understanding but will" sums up the argument: the problem is not ignorance but a lack of determination. The writer is fair to the Curriculum for Wales, calling its aims "admirable ambitions", then turns with "But" to a carefully patterned sentence: "ambition without resource is just aspiration, and aspiration without action is just words". The second half begins with the word that ended the first, so the hopes seem to shrink step by step until they are "just words".\n\nThe final paragraph uses the writer's experience as evidence. The plain statement "I have taught for twenty-two years" gives authority, and the parallel phrases "each one heralded as transformative, each one quietly abandoned" contrast the noise with which schemes begin and the silence in which they end. The writer rejects "another policy document" and lists practical needs instead: "smaller classes, more teaching assistants, breakfast in the morning". The last item, "someone who has time to notice when they are struggling", brings the article back to the quiet children of the first paragraph, so that the argument ends where it began, with a child who needs to be noticed.`,
             },
-            markScheme: [
-              'Analyses specific language techniques with examples',
-              'Comments on effects of individual words and phrases',
-              'Considers how language conveys attitude and emotion',
-              'Uses embedded quotations effectively',
-            ],
+            markScheme: {
+              'How it is marked (10 marks)': Q1_2_MARKING,
+              'Points you might make': [
+                `The opening is a yearly scene ("Every September"), and the contrast between children who "bounce through the gates" and those in "shoes that are slightly too big or slightly too small" shows poverty without naming it.`,
+                `"someone who knows that mistakes are expensive" makes the poorer children seem old before their time.`,
+                `The second paragraph turns to argument: "The attainment gap in Wales is not a mystery", a list of causes, and the inclusive "We have known this for decades".`,
+                `The antithesis "What we lack is not understanding but will" names the problem; the patterned sentence ending "just words" shows hopes shrinking without money and action.`,
+                `Experience as authority ("I have taught for twenty-two years"), and parallel phrases ("each one heralded as transformative, each one quietly abandoned") mocking short-lived schemes.`,
+                `The closing list of practical needs ends on "someone who has time to notice when they are struggling", which links back to the opening.`,
+              ],
+            },
           },
           {
             id: 'wjec-c2-02-q3',
             questionNumber: 3,
-            questionText:
-              'Read the 19th-century source text (Source B).\n\nWhat do you learn about the education of poor children in 19th-century London from this text?\n\nYou should comment on:\n- what the writer describes\n- the writer\'s use of language to convey the situation.\n\n(Costermongers sold fruit, vegetables and fish in the streets from barrows and baskets. Ragged schools were free charity schools for the poorest children. "Bunts" was the money a child could keep from sales above the sum owed to a parent or master; "repugnance" means strong dislike.)',
-            marks: 10,
-            suggestedTimeMinutes: 12,
-            questionType: 'analysis',
+            label: '1.3',
+            questionText: `Read Source B, the 19th-century text, and answer the questions below.\n\n(Costermongers sold fruit, vegetables and fish in the streets from barrows and baskets. Ragged schools were free charity schools for the poorest children. "Bunts" was the money a child could keep from sales above the sum owed to a parent or master; "acuteness" means sharpness of mind; "precocious" means developed unusually early; "repugnance" means strong dislike.)\n\n(a) According to Mayhew, why are the few costermongers' children who go to the Ragged Schools usually sent there? [1]\n(b) What do the children sell in the evenings? Give one thing. [1]\n(c) What does Mayhew mean when he says that their education "is such only as the streets afford"? [1]`,
+            marks: 3,
+            suggestedTimeMinutes: 4,
+            questionType: 'short-answer',
             extract: `Source B:\n${EDUCATION_19C}`,
             extractSource: EDUCATION_19C_REF,
             modelAnswers: {
-              'Grade 4-5':
-                'We learn that very few poor children in London went to school at all. Mayhew says hardly any costermongers\' children "are sent even to the Ragged Schools", and when they are, it is mostly so that "the mother may be saved the trouble of tending them", not so that they learn. Instead, "Both boys and girls are sent out by their parents in the evening to sell nuts" and other things, so they are working rather than learning. Their parents are "kind to their children", but few of them could read. One man had seen a mother teaching her children to read, yet Mayhew adds that "such instances were very rare". Mayhew says "the streets teach them" instead, and what they learn is mostly bad: "a craving for the excitement of gambling" and "an inordinate love of amusement". He warns that if they are not taught properly they will educate themselves "in vice".',
-              'Grade 6-7':
-                'Mayhew presents the education of poor London children as almost entirely absent, and his opening is quietly ironic: he has used the heading "Education", but admits that "non-education" might suit it better, so the reader expects failure from the first sentence. The emphatic "Very few indeed" and the word "even" in "sent even to the Ragged Schools" stress how far these children fall below even the lowest standard, since the ragged schools were free. He is blunt about the parents\' motives: children are sent to school, if at all, so that "the mother may be saved the trouble of tending them", rather "than from any desire that the children shall acquire useful knowledge". Work replaces school, as "Both boys and girls are sent out by their parents in the evening to sell nuts". Mayhew is fair to the parents, who are "kind to their children", though the words he quotes from someone else, "perhaps in a rough way", stop the praise becoming sentimental. The centre of the passage is a long list of what "the streets teach them". It begins with qualities that sound almost admirable, "a precocious acuteness" and "a patient endurance of cold and hunger", and ends in vice and idleness: "a craving for the excitement of gambling", "an irrepressible repugnance to any settled in-door industry". Almost every item is introduced by "a" or "an", as if it were a subject on a timetable, which makes the list an ironic curriculum. The final paragraph turns description into warning: "It is idle to imagine" that these lads "will not educate themselves in vice, if we neglect to train them to virtue". The pronoun "we" makes society responsible for the neglect.',
+              'Grade 4-5': `(a) Very few "are sent even to the Ragged Schools", and those who are go mainly so that their mothers are spared the trouble of minding them at home.\n(b) Nuts.\n(c) They learn only what life on the streets teaches them, because they have no proper schooling.`,
             },
-            markScheme: [
-              'Identifies relevant information from the source',
-              'Comments on how language conveys conditions and attitudes',
-              'Uses evidence from the text to support points',
-              'Shows understanding of implicit as well as explicit meaning',
-            ],
+            markScheme: {
+              'How it is marked (3 marks)': SHORT_B_MARKING,
+              Answers: [
+                '(a) So that the mother is saved the trouble of looking after them at home, not because anyone wants them to learn.',
+                '(b) Either of: nuts; oranges.',
+                '(c) The only education they get is what they pick up on the streets (accept: they have no real schooling, and the streets are their teacher).',
+              ],
+            },
           },
           {
             id: 'wjec-c2-02-q4',
             questionNumber: 4,
-            questionText:
-              "Both writers present their views on education.\n\nCompare the following:\n- the writers' attitudes to education and its failures\n- how they convey these attitudes.\n\nYou must use the text to support your comments and make it clear which text you are referring to.",
-            marks: 15,
-            suggestedTimeMinutes: 18,
+            label: '1.4',
+            questionText: `Read Source B again.\n\nA student said: ‘Mayhew pities the costermongers' children, but by the end he is more afraid of what they will become.’\n\nHow far do you agree with this view?\n\nIn your answer, give your own view of how Mayhew presents the children across the whole text, and explain how his choices of words and details create that view. Support your answer with references to the text. [10]`,
+            marks: 10,
+            suggestedTimeMinutes: 12,
+            questionType: 'evaluation',
+            extract: `Source B:\n${EDUCATION_19C}`,
+            extractSource: EDUCATION_19C_REF,
+            modelAnswers: {
+              'Grade 8-9': `I agree with this view. Mayhew's pity for the children is real, but by the end of the passage his fear of what they may become is the stronger feeling.\n\nHe begins by suggesting that these children are let down by everyone around them. He corrects his own heading, "Education", at once: perhaps "non-education" would be more suitable, a wry coinage that shows how little schooling they receive. Very few "are sent even to the Ragged Schools", and the word "even" stresses how low the bar is, since these were free schools for the poorest. Those who go are sent so that "the mother may be saved the trouble of tending them at home", not from "any desire that the children shall acquire useful knowledge". Here his sympathy is plainly with the children, who are neglected rather than wicked.\n\nHe is fair to the parents too. The costermongers are "kind to their children", and he quotes someone who says that the women "make regular pets of them very often". The story of a costermonger's wife "instructing her children in reading" is touching, but he adds at once that "such instances were very rare", which makes the general picture bleaker.\n\nThe long list of what the streets teach is where pity begins to mix with fear. It opens with qualities he half admires, "a precocious acuteness" and "a patient endurance of cold and hunger", which shows how much these children suffer and how quickly they have had to grow up. But the list moves on to faults: "a desire to obtain money without working for it", "a craving for the excitement of gambling" and "an irrepressible repugnance to any settled in-door industry". Because the list grows longer and harsher, the reader's pity for the children is joined by unease about them.\n\nThe final paragraph makes the fear explicit. The warning that the boys will "educate themselves in vice, if we neglect to train them to virtue" sets vice against virtue, and the pronoun "we" makes the reader responsible. Mayhew grants them "a mental acuteness almost wonderful", yet predicts that, untaught, they will develop "habits of dissipation" and indulge "every appetite without the least restraint". Such extreme language sounds more like alarm than pity. So the student is right: Mayhew's pity is genuine, but what drives his argument at the end is the fear of what a society that neglects these children may one day face from them.`,
+            },
+            markScheme: {
+              'How it is marked (10 marks)': Q1_4_MARKING,
+              'Points you might make': [
+                `Pity first: "non-education", the few who "are sent even to the Ragged Schools", and the mothers who send them only to be "saved the trouble of tending them at home".`,
+                `Fairness to the parents ("kind to their children"), and the rare mother teaching reading, which makes the general picture bleaker.`,
+                `The list of what the streets teach moves from qualities that suggest suffering ("a patient endurance of cold and hunger") to faults ("a craving for the excitement of gambling").`,
+                `The ending is a warning: they will "educate themselves in vice, if we neglect to train them to virtue", and the inclusive "we" makes the reader responsible.`,
+                `Extreme language ("habits of dissipation", "every appetite without the least restraint") suggests alarm; some may argue that the warning is itself a form of concern for the children.`,
+                'A strong answer reaches a judgement on the statement and keeps to it through the whole passage.',
+              ],
+            },
+          },
+          {
+            id: 'wjec-c2-02-q5',
+            questionNumber: 5,
+            label: '1.5',
+            questionText: `Bring together details from both texts to explain briefly what gets in the way of poor children's education. Make clear which text each detail comes from. [4]`,
+            marks: 4,
+            suggestedTimeMinutes: 5,
+            questionType: 'summary',
+            extract: `Source A:\n${EDUCATION_21C}\n\nSource B:\n${EDUCATION_19C}`,
+            extractSource: `Source A: ${EDUCATION_21C_REF} | Source B: ${EDUCATION_19C_REF}`,
+            modelAnswers: {
+              'Grade 4-5': `In Source A, poorer children are held back by "poverty, housing insecurity, parental stress" and a lack of "books, tutors, and quiet spaces to study", and schemes to help them are dropped "when the funding dried up". In Source B, very few costermongers' children go to school at all: they are sent out in the evenings to sell nuts and oranges, and the only education they get is what "the streets afford".`,
+            },
+            markScheme: {
+              'How it is marked (4 marks)': Q1_5_MARKING,
+              'Details you might bring together': [
+                'Source A: poverty, housing insecurity and parental stress; no books, tutors or quiet places to study; initiatives abandoned when the money runs out; too few staff with time to notice who is struggling.',
+                'Source B: very few go even to the free Ragged Schools; parents send them there to be minded, not to learn; they work in the evenings selling nuts and oranges; the streets are their only teacher.',
+              ],
+            },
+          },
+          {
+            id: 'wjec-c2-02-q6',
+            questionNumber: 6,
+            label: '1.6',
+            questionText: `Source A and Source B are both about the education of poor children.\n\nCompare:\n• what the writers say about the education of poor children\n• how they get their ideas across.\n\nUse evidence from both texts, and make clear which text each point comes from. [10]`,
+            marks: 10,
+            suggestedTimeMinutes: 13,
             questionType: 'comparison',
             extract: `Source A:\n${EDUCATION_21C}\n\nSource B:\n${EDUCATION_19C}`,
             extractSource: `Source A: ${EDUCATION_21C_REF} | Source B: ${EDUCATION_19C_REF}`,
             modelAnswers: {
-              'Grade 4-5':
-                'Both writers think poor children are let down by the education they receive. The teacher in Source A says the attainment gap is caused by "poverty, housing insecurity, parental stress", and Mayhew (Source B) shows poverty keeping children out of school altogether, because they are "sent out by their parents in the evening to sell nuts". The teacher describes the children she sees every September, such as those "in shoes that are slightly too big or slightly too small", while Mayhew describes a whole group, the costermongers\' children. Both writers blame the people in charge rather than the children: the teacher says "What we lack is not understanding but will", and Mayhew warns of what will happen "if we neglect to train them to virtue". The teacher asks for practical help like "smaller classes" and "breakfast in the morning"; Mayhew sets out no plan, but warns that the children will "educate themselves in vice".',
-              'Grade 6-7':
-                'Both writers argue that poverty decides what education a child receives, but they write from opposite sides of the school gate. The teacher in Source A writes from inside a school, and her authority comes from experience: "I have taught for twenty-two years." Mayhew writes as an investigator of children who are hardly ever inside a school; "Very few indeed" of them are sent "even to the Ragged Schools". Both use contrast to expose inequality. The teacher sets children with "new backpacks and labelled pencil cases" against those "carrying last year\'s bag"; Mayhew sets the schooling these children should have against the lessons that "the streets teach them". Both write lists. The teacher lists causes, "poverty, housing insecurity, parental stress, lack of access to books, tutors, and quiet spaces to study", while Mayhew lists what the streets teach, from "a patient endurance of cold and hunger" to "a craving for the excitement of gambling". Their sense of responsibility is similar: the teacher says "What we lack is not understanding but will", and Mayhew\'s "if we neglect to train them to virtue" also uses "we" to hold society to account. The difference lies in what each writer fears. The teacher fears that children will be failed quietly, and asks for "someone who has time to notice when they are struggling"; Mayhew fears that neglected children will turn to vice, since "It is idle to imagine" that they "will not educate themselves in vice".',
-              'Grade 8-9':
-                'Separated by more than a century and a half, these texts diagnose the same injustice, that a child\'s education is decided by the family\'s poverty, but they imagine its cost very differently. The teacher in Source A measures it in lost potential. Her opening vignette reads poverty in small signs, "shoes that are slightly too big or slightly too small", and in the "careful alertness of someone who knows that mistakes are expensive", so that inequality is something a child already understands. Mayhew measures it in lost virtue. His ironic correction of his own heading, from "Education" to "non-education", sets the tone for a passage in which schooling is replaced by the street, and his list of what "the streets teach them" is a curriculum in reverse: it opens with qualities that sound almost admirable, "a precocious acuteness" and "a patient endurance of cold and hunger", and ends in "an irrepressible repugnance to any settled in-door industry". Where the teacher treats children as learners whom the system fails, Mayhew treats them as minds that will be formed one way or another, since "some kind of education is continually going on". That idea gives his warning its force: "It is idle to imagine" that they "will not educate themselves in vice, if we neglect to train them to virtue". Both writers finally turn to their readers, and both use "we". The teacher\'s "What we lack is not understanding but will" accuses a society that knows what to do and does not do it; Mayhew\'s "if we neglect" makes the same accusation but frames the consequence as moral danger rather than wasted talent. The teacher\'s remedies are modest and practical, "smaller classes, more teaching assistants, breakfast in the morning"; Mayhew offers no programme, only the conviction that neglect is itself a kind of teaching.',
+              'Grade 8-9': `Both writers argue that poor children are let down by the adults and institutions around them, but the writer of Source A sees them from inside a classroom, while Mayhew, in Source B, looks at them from outside, as an investigator.\n\nThe problem each describes is different. In Source A the children are in school, but they arrive unequal: some "bounce through the gates", while others come in "shoes that are slightly too big or slightly too small". The problem is a gap in attainment, caused by "poverty, housing insecurity, parental stress". In Source B the children are hardly in school at all. Very few "are sent even to the Ragged Schools", and their real teacher is the street, which gives them "a precocious acuteness" and "a craving for the excitement of gambling". So the modern writer worries about unequal schooling, while Mayhew worries about almost no schooling.\n\nThey also place the blame differently. The writer of Source A blames those in power for a lack of will ("What we lack is not understanding but will") and for initiatives "quietly abandoned when the funding dried up". Mayhew points first at the parents, who send children to school only so that "the mother may be saved the trouble of tending them at home", although they are "kind to their children"; in his final paragraph he widens the blame to all of us: the boys will "educate themselves in vice, if we neglect to train them to virtue".\n\nTheir methods suit their purposes. The writer of Source A uses personal experience ("I have taught for twenty-two years"), close observation of individual children and a patterned sentence, "ambition without resource is just aspiration, and aspiration without action is just words", to make the reader demand action. Mayhew reports on a whole class of children, building up their character in long lists: "a patient endurance of cold and hunger; a desire to obtain money without working for it". His tone is more alarmed. Where the modern writer ends with the gentle hope of "someone who has time to notice when they are struggling", Mayhew ends with a warning that neglected boys will learn "to indulge in the gratification of every appetite without the least restraint".\n\nBoth, then, want their readers to act, but Source A appeals to compassion for the struggling child, while Source B appeals at least as much to fear of what the neglected child will become.`,
             },
-            markScheme: [
-              'Compares attitudes from both texts with clear cross-referencing',
-              'Analyses methods of presentation in both sources',
-              'Uses evidence from both sources to support comparisons',
-              'Shows sustained comparative analysis throughout',
-              'Top band: sophisticated, evaluative comparison with conceptualised understanding',
-            ],
+            markScheme: {
+              'How it is marked (10 marks)': Q1_6_MARKING,
+              'Points you might make': [
+                'What they say: Source A describes children in school but unequal; Source B describes children barely in school at all, taught by the streets.',
+                `Blame: Source A blames a lack of will and funding ("What we lack is not understanding but will"); Source B blames the parents' indifference to learning, then society ("if we neglect to train them to virtue").`,
+                'Viewpoint: Source A is a teacher writing from experience and observing individuals; Source B is an investigator describing a whole class of children.',
+                `Methods: Source A uses contrast, the inclusive "We" and patterned sentences; Source B uses long lists of the qualities the streets teach.`,
+                `Tone and endings: Source A ends with compassion ("someone who has time to notice when they are struggling"); Source B ends with alarm ("without the least restraint").`,
+              ],
+            },
           },
         ],
       },
       {
         id: 'wjec-c2-02-writing',
         title: 'Section B: Writing',
-        description:
-          'In this section you will be assessed for the quality of your writing skills.\n\nFor each task, 12 marks are awarded for communication and organisation; 8 marks are awarded for writing accurately.',
+        description: SECTION_B_GUIDANCE,
         totalMarks: 40,
         suggestedTimeMinutes: 60,
         questions: [
           {
-            id: 'wjec-c2-02-q5',
-            questionNumber: 5,
-            questionText:
-              'You have been asked to write a report for your school governors about how to improve support for disadvantaged students.\n\nWrite your report.\n\nYou should write between one and two pages.\n\n(12 marks for communication and organisation / 4 marks for writing accurately)',
-            marks: 16,
-            suggestedTimeMinutes: 20,
+            id: 'wjec-c2-02-q7',
+            questionNumber: 1,
+            label: '2.1',
+            questionText: `Your school governors want to know how the school could better support pupils from families who have little money.\n\nWrite a report for the governors giving your suggestions. [20]`,
+            marks: 20,
+            suggestedTimeMinutes: 30,
             questionType: 'transactional-writing',
             modelAnswers: {
-              'Grade 4-5':
-                'A clear report with: appropriate formal layout and register; relevant practical suggestions; generally accurate SPaG.',
-              'Grade 6-7':
-                'A well-structured report with: effective use of headings and subheadings; evidence-based recommendations; consistent formality and accuracy.',
-              'Grade 8-9':
-                'An authoritative report with: professional tone; sophisticated analysis of the problem; prioritised, costed recommendations; impeccable technical accuracy.',
+              'Grade 8-9': `Report to the Board of Governors: supporting pupils from families with little money\n\nIntroduction\nThis report was written at the governors' request. It considers how well the school supports pupils whose families have little money, and recommends four changes. In preparing it, I spoke to members of the student council and to several form tutors.\n\nThe present position\nThe school already does a great deal. Free school meals are provided, and the homework club gives pupils a quiet place to work after lessons. However, many pupils told me that some costs are hard to meet: school trips, revision guides, and the materials needed for subjects such as art and technology. Several said that they feel embarrassed to ask for help, and so they go without.\n\nRecommendations\n1. A breakfast club. Pupils cannot learn well when they are hungry. A free breakfast club, open to everyone so that no one is singled out, would give every pupil a good start to the day.\n2. A hardship fund that is easy to use. Families should be able to ask privately for help with trips and materials, through a simple online form, rather than by speaking to a teacher in front of others.\n3. A lending library of revision guides. Guides could be bought in sets and lent out like library books, so that no pupil is held back because a family cannot afford them.\n4. More time for tutors. Tutors know their pupils best. A short meeting with each tutee every week would help them to notice when someone is struggling, and to act before small problems become large ones.\n\nCost\nSome of these ideas cost very little. The library and the online form need only staff time to set up. The breakfast club would need funding, but local businesses and the parents' association may be willing to help.\n\nConclusion\nNo pupil should miss an opportunity because of money. I recommend that the governors begin with the breakfast club and the hardship fund, which would make the greatest difference most quickly, and review the other proposals next term.`,
             },
-            markScheme: [
-              'Communication & Organisation (12 marks): Appropriate form and register; informative purpose with recommendations; logical structure; audience awareness',
-              'Writing Accurately (4 marks): Sentence variety; vocabulary; spelling and punctuation',
-            ],
+            markScheme: {
+              'How it is marked (20 marks)': WRITING_MARKING,
+              'What earns marks in this task': [
+                'The features of a report: a title, an introduction that states its purpose, clear sections or headings, and recommendations.',
+                'A formal, impersonal tone suited to school governors.',
+                'Practical suggestions, each developed with reasons, that consider cost and how they would work.',
+                'Accurate spelling, punctuation and grammar, with varied sentences and well-chosen words: 8 of the 20 marks are for this.',
+              ],
+            },
           },
           {
-            id: 'wjec-c2-02-q6',
-            questionNumber: 6,
-            questionText:
-              '"Every child deserves the same quality of education, regardless of where they live or how much money their parents earn."\n\nWrite an article for a national newspaper arguing your point of view on this statement.\n\nYou should write between two and three pages.\n\n(16 marks for communication and organisation / 8 marks for writing accurately)',
-            marks: 24,
-            suggestedTimeMinutes: 40,
+            id: 'wjec-c2-02-q8',
+            questionNumber: 2,
+            label: '2.2',
+            questionText: `"Every child deserves the same quality of education, regardless of where they live or how much money their parents earn."\n\nWrite an article for a national newspaper giving your views on this statement. [20]`,
+            marks: 20,
+            suggestedTimeMinutes: 30,
             questionType: 'transactional-writing',
             modelAnswers: {
-              'Grade 4-5':
-                'A clear article with: recognisable article conventions (headline, introduction); a range of relevant points; generally accurate writing.',
-              'Grade 6-7':
-                'A well-crafted article with: engaging headline and opening; balanced argument with evidence; effective use of rhetorical techniques; consistent accuracy.',
-              'Grade 8-9':
-                'An outstanding article with: compelling journalistic voice; nuanced argument that interrogates the statement; sophisticated use of evidence, anecdote, and rhetoric; technical precision throughout.',
+              'Grade 8-9': `Postcode lottery: why every child deserves a fair start\n\nTwo children are born on the same day in the same city. One grows up in a leafy suburb, in a house full of books, with parents who can afford tutors and music lessons. The other grows up three miles away, in a flat with nowhere quiet to do homework. By the time they are sixteen, their results will probably be very different. Is that because one is more talented? Almost certainly not.\n\nI believe that every child deserves the same quality of education, wherever they live and whatever their parents earn. It is a simple principle, and we are still a long way from meeting it.\n\nOf course, no two schools will ever be exactly alike, and nobody wants every classroom to be the same. Different schools have different strengths, and that is healthy. But there is a difference between variety and unfairness. When one school can offer three foreign languages and a full orchestra, while another cannot find a permanent physics teacher, the children in the second school are being given less, through no choice of their own.\n\nSome people argue that parents who work hard should be free to spend their money on their children's education. That is understandable. But a child's chances should not depend on an accident of birth. Talent is spread evenly across the country; opportunity is not.\n\nSo what would fairness look like? It would mean sending the best teachers, and the most money, to the schools that face the greatest challenges. It would mean free tutoring for pupils who fall behind, so that extra help is not something only some families can buy. And it would mean making sure that every school, in every town, can offer the subjects that open doors to university and to good jobs.\n\nNone of this is impossible. It is a matter of choosing to treat every child's future as equally valuable.\n\nTwo children, born on the same day, deserve the same chance. At the moment, they do not get it.`,
             },
-            markScheme: [
-              'Communication & Organisation (16 marks): Purpose, audience, form; quality of argument; structural effectiveness; persuasive/rhetorical skill',
-              'Writing Accurately (8 marks): Sentence construction; vocabulary range and precision; spelling, punctuation, grammar',
-            ],
+            markScheme: {
+              'How it is marked (20 marks)': WRITING_MARKING,
+              'What earns marks in this task': [
+                'The features of an article: a headline, an opening that draws the reader in, and paragraphs that build an argument to a clear ending.',
+                'A tone that suits readers of a national newspaper: lively and persuasive, but controlled.',
+                'A clear view on the statement, developed with reasons and examples, perhaps answering those who disagree.',
+                'Accurate spelling, punctuation and grammar, with varied sentences and well-chosen words: 8 of the 20 marks are for this.',
+              ],
+            },
           },
         ],
       },
@@ -552,148 +794,199 @@ export const wjecC2A: MockExamPaper[] = [
       {
         id: 'wjec-c2-03-reading',
         title: 'Section A: Reading',
-        description:
-          'Read both source texts carefully. Then answer all the questions in this section.',
+        description: SECTION_A_GUIDANCE,
         totalMarks: 40,
         suggestedTimeMinutes: 60,
         questions: [
           {
             id: 'wjec-c2-03-q1',
             questionNumber: 1,
-            questionText:
-              "Read the 21st-century source text about walking in Wales (Source A).\n\nList five things you learn about the writer's experience on the coast path.",
-            marks: 5,
-            suggestedTimeMinutes: 5,
+            label: '1.1',
+            questionText: `Read Source A, the 21st-century text, and answer the questions below.\n\n(a) On which train journey does the writer notice the landscape change? [1]\n(b) How long is the Ceredigion coast path? [1]\n(c) On how many of the five days that the writer spent on the path was the rain relentless? [1]`,
+            marks: 3,
+            suggestedTimeMinutes: 4,
             questionType: 'short-answer',
             extract: `Source A:\n${TRAVEL_21C}\n\nSource B:\n${TRAVEL_19C}`,
             extractSource: `Source A: ${TRAVEL_21C_REF} | Source B: ${TRAVEL_19C_REF}`,
             modelAnswers: {
-              'Grade 4-5':
-                '1. The writer walked the Ceredigion coast path, which is sixty miles long. 2. The path runs from Cardigan to Ynyslas. 3. It rained for four out of five days. 4. The rain was hard and horizontal, not gentle drizzle. 5. The writer felt very alive despite the bad weather.',
+              'Grade 4-5': `(a) The journey from Shrewsbury to Aberystwyth.\n(b) Sixty miles.\n(c) Four.`,
             },
-            markScheme: ['1 mark per valid point derived from Source A only, maximum 5'],
+            markScheme: {
+              'How it is marked (3 marks)': SHORT_A_MARKING,
+              Answers: [
+                '(a) From Shrewsbury to Aberystwyth (accept: about forty minutes into that journey).',
+                '(b) Sixty miles (accept: from Cardigan to Ynyslas, sixty miles).',
+                '(c) Four.',
+              ],
+            },
           },
           {
             id: 'wjec-c2-03-q2',
             questionNumber: 2,
-            questionText:
-              'How does the writer of Source A use language to convey the experience of walking in the Welsh landscape?\n\nYou should comment on:\n- specific words and phrases\n- language features and techniques\n- the effects on the reader.',
+            label: '1.2',
+            questionText: `Source A is a piece of travel writing about walking in Wales. The writer wants to show readers why walking in wild weather can be worth the discomfort.\n\nHow does the writer try to do this?\n\nIn your answer, comment on:\n• what the writer says\n• the writer's choice of language and tone\n• how the piece is structured, and any other methods the writer uses.\n\n[10]`,
             marks: 10,
             suggestedTimeMinutes: 12,
             questionType: 'analysis',
             extract: `Source A:\n${TRAVEL_21C}`,
             extractSource: TRAVEL_21C_REF,
             modelAnswers: {
-              'Grade 4-5':
-                'The writer describes the landscape changing so much it "feels like crossing into another country." The landscape is described as "wilder, older, less tamed" which makes Wales sound exciting and different. The rain is described as "hard, horizontal rain" which sounds intense. The writer uses personification in "The path does not care about your to-do list" to show that nature does not care about human worries. The phrase "simply be" at the end suggests the walk helps you feel peaceful and free.',
-              'Grade 6-7':
-                'Hartley constructs the Welsh landscape as a site of existential renewal through a rhetoric of subtraction. The opening paragraph uses a tricolon of comparative adjectives - "wilder, older, less tamed" - that defines Wales not by what it is but by its distance from the familiar English landscape, establishing a geography of otherness. The sky is "vast, indifferent, magnificent" - the central adjective "indifferent" is crucial, positioning nature\'s unconcern as liberating rather than hostile. The rain description subverts expectation: "not the gentle drizzle of popular imagination" dismisses the cliche before replacing it with the visceral "hard, horizontal rain that found every gap." The personification of weather as an adversary who "found" weakness is both humorous and physical. The final paragraph\'s sequence of negative constructions - "does not care," "does not check" - creates freedom through negation: the landscape is defined by what it refuses to do, and this refusal becomes a gift. The concluding infinitive "to simply be" is deliberately, almost provocatively simple after the complex prose that precedes it.',
+              'Grade 8-9': `The writer begins with a single moment that marks a border: "about forty minutes into the train journey", the landscape "changes so completely that it feels like crossing into another country". This makes Wales feel strange and exciting before the walk has even begun. The contrast between "The gentle English farmland" and "something wilder, older, less tamed" uses three comparatives to make the Welsh landscape seem ancient and untamed, and the sky above the hills is given three adjectives, "vast, indifferent, magnificent". The word "indifferent" matters, because it introduces the idea that nature does not care about the walker, which becomes the main point of the piece.\n\nThe second paragraph undercuts the reader's expectations with humour. The writer packed "a vague hope that the Welsh weather might cooperate", and the short sentence that follows, "It did not.", is a deadpan anticlimax that makes the reader smile. The writer then makes the rain physical and hostile. It was "relentless", and the contrast between "the gentle drizzle of popular imagination" and "hard, horizontal rain that found every gap in every layer" makes it almost a living thing hunting for a way in. By admitting that it "soaked me to the skin within an hour", the writer is honest about the discomfort, which makes the turn that follows more convincing.\n\nThat turn opens the last paragraph. "And yet" changes the tone from complaint to joy: "I cannot remember the last time I felt so alive." The writer explains this through a contrast between nature and modern life. The landscape "has no interest whatsoever in your comfort", and walking in such a place "strips away the accumulated nonsense of daily life", a dismissive phrase for "The emails, the deadlines, the endless performative busyness". The second person "you" draws the reader into the experience of "standing on a cliff edge with the wind roaring in your ears", and the violent verbs "roaring" and "smashing" make the scene thrilling rather than frightening.\n\nThe ending is gently comic again. Two short sentences imagine nature with modern concerns only to deny them: "The path does not care about your to-do list. The sea does not check its phone." This makes everyday worries seem small. The final sentence slows down with the adverbs "slowly, reluctantly" and ends on the plain words "to simply be", so the piece itself comes to rest, as the writer did.`,
             },
-            markScheme: [
-              'Analyses specific language techniques with examples',
-              'Comments on effects of individual words and phrases',
-              'Considers how language conveys experience and emotion',
-              'Uses embedded quotations effectively',
-            ],
+            markScheme: {
+              'How it is marked (10 marks)': Q1_2_MARKING,
+              'Points you might make': [
+                `The opening moment of crossing "into another country" and the contrast with "The gentle English farmland" make Wales wild and exciting; "indifferent" introduces the main idea.`,
+                `Humour and honesty: "a vague hope that the Welsh weather might cooperate" followed by the deadpan "It did not."`,
+                `The rain is made hostile: "hard, horizontal rain that found every gap in every layer"; "soaked me to the skin within an hour".`,
+                `"And yet" turns the piece from complaint to joy: "I cannot remember the last time I felt so alive."`,
+                `The contrast with modern life ("the accumulated nonsense of daily life") and the second person "you" draw the reader in; "roaring" and "smashing" make the scene thrilling.`,
+                `The comic short sentences ("The sea does not check its phone.") and the slow final sentence ending "to simply be".`,
+              ],
+            },
           },
           {
             id: 'wjec-c2-03-q3',
             questionNumber: 3,
-            questionText:
-              'Read the 19th-century source text (Source B).\n\nWhat do you learn about the experience of travelling in 19th-century Wales from this text?\n\nYou should comment on:\n- what the writer describes\n- the writer\'s use of language to convey the experience.\n\n(Henrietta was Borrow\'s stepdaughter. The Wyddfa is the summit of Snowdon; "moels" are bare, rounded hills; a "dyffrin" is a valley; "apprehensive" means worried.)',
-            marks: 10,
-            suggestedTimeMinutes: 12,
-            questionType: 'analysis',
+            label: '1.3',
+            questionText: `Read Source B, the 19th-century text, and answer the questions below.\n\n(Henrietta was Borrow's stepdaughter. The Wyddfa is the summit of Snowdon; "moels" are bare, rounded hills; a "dyffrin" is a valley.)\n\n(a) Why did Borrow's wife not climb the mountain with them? [1]\n(b) As the path grew steeper, what was Borrow afraid that Henrietta would have to do? [1]\n(c) According to Borrow, what is sold in the cabin on the summit? [1]`,
+            marks: 3,
+            suggestedTimeMinutes: 4,
+            questionType: 'short-answer',
             extract: `Source B:\n${TRAVEL_19C}`,
             extractSource: TRAVEL_19C_REF,
             modelAnswers: {
-              'Grade 4-5':
-                'We learn that Borrow climbed Snowdon with his stepdaughter Henrietta and "a young lad" as a guide, while his wife stayed behind because she did not feel strong enough for "the fatigue of the expedition". Snowdon was already popular with visitors: people could be seen on the path "as far as the eye could reach". At first "The path was remarkably good", but later it was "winding and much more steep", and they were "rather out of breath". Borrow worried that Henrietta would have to give up, but she "persevered". At the top there was "a rude cabin" where refreshments were sold, and there were "frightful precipices" on every side but the west. The view was "inexpressibly grand": they could see "the whole of Anglesey" and lakes shining "like sheets of ice or polished silver".',
-              'Grade 6-7':
-                'Borrow presents travel in 19th-century Wales as an adventure shared with others, and his language moves from plain narrative to wonder. The opening is practical: he engages "a young lad to serve as guide", and his wife stays behind, "not deeming herself sufficiently strong to encounter the fatigue of the expedition", a formal phrasing that treats the climb as a serious undertaking. Yet Snowdon is no lonely wilderness: "We were far from being the only visitors to the hill this day", and the people seen "going up or descending the path as far as the eye could reach" suggest that mountain tourism was already popular. The effort of the climb is told with understatement. At first the ascent is "anything but steep", later they are "rather out of breath", and Borrow admits he was "apprehensive that my gentle companion would be obliged to give over the attempt". The short clause "the gallant girl, however, persevered" makes Henrietta\'s effort heroic, and "safe and sound, though panting" balances relief with exhaustion. The summit brings danger and awe: "frightful precipices" fall away below it, and to someone gazing up from the vale nearly a mile beneath, the Wyddfa is "an object of admiration, of wonder and almost of fear". The last paragraph is built on repetition ("There we stood") and on words of intense feeling such as "inexpressibly grand". The contrast of "partly in glorious light, partly in deep shade" gives the landscape a painter\'s drama, and the simile of lakes "like sheets of ice or polished silver" is completed by a personification: seen from "the brow of Snowdon", they lie "in the deep valleys at his feet", as if the mountain were a giant looking down on Wales.',
+              'Grade 4-5': `(a) She did not think she was strong enough for such a tiring climb.\n(b) Give up the climb.\n(c) Refreshments.`,
             },
-            markScheme: [
-              'Identifies relevant information from the source',
-              'Comments on how language conveys experience and perspective',
-              'Uses evidence from the text to support points',
-              'Shows understanding of implicit as well as explicit meaning',
-            ],
+            markScheme: {
+              'How it is marked (3 marks)': SHORT_B_MARKING,
+              Answers: [
+                '(a) She did not think herself strong enough to cope with the tiring climb.',
+                `(b) Give up the attempt (accept: turn back before the top). He was afraid that she "would be obliged to give over the attempt".`,
+                '(c) Refreshments.',
+              ],
+            },
           },
           {
             id: 'wjec-c2-03-q4',
             questionNumber: 4,
-            questionText:
-              "Both writers describe experiences of travelling in Wales.\n\nCompare the following:\n- the writers' attitudes to the Welsh landscape and the experience of travel\n- how they convey these attitudes.\n\nYou must use the text to support your comments and make it clear which text you are referring to.",
-            marks: 15,
-            suggestedTimeMinutes: 18,
+            label: '1.4',
+            questionText: `Read Source B again.\n\nA student said: ‘In this account, the climb itself matters less to Borrow than the view from the top.’\n\nHow far do you agree with this view?\n\nIn your answer, give your own view of how Borrow presents the climb and the summit across the whole text, and explain how his choices of words and details create that view. Support your answer with references to the text. [10]`,
+            marks: 10,
+            suggestedTimeMinutes: 12,
+            questionType: 'evaluation',
+            extract: `Source B:\n${TRAVEL_19C}`,
+            extractSource: TRAVEL_19C_REF,
+            modelAnswers: {
+              'Grade 8-9': `I mostly agree. Borrow gives the climb some space and some drama, but his language is plainest when he describes the path and richest when he describes the view, which suggests where his real interest lies.\n\nHe opens briskly and practically: they "got down at a small inn", engaged "a young lad to serve as guide", and his wife stayed behind, "not deeming herself sufficiently strong to encounter the fatigue of the expedition". The formal phrasing makes the climb sound like a serious undertaking, but the first stage is easy. The path "was remarkably good", the ascent "anything but steep", and they share it with "groups of people, or single individuals", which makes Snowdon seem busy rather than wild. Much of this part is a list of names, "Moel Elia" and "Moel y Cynghorion", given more as information than as experience.\n\nThe middle of the climb is where the statement is weakest. Borrow admits that they were "rather out of breath", the small lake near them "lay dark and deep, just under the great wall", a faintly threatening image, and the path becomes "winding and much more steep". He even feared that Henrietta "would be obliged to give over the attempt", and praises "the gallant girl" who "persevered". The phrase "safe and sound, though panting" makes their arrival a small triumph. So the climb does matter: it gives the account its tension and shows Borrow's pride in his companion.\n\nYet the summit and the view take up the most space and the most elaborate language. Borrow describes the "frightful precipices" below the summit on every side but the west, and the vale "nearly a mile below", then piles up the view in a long list: "a considerable part of the mainland of Wales, the whole of Anglesey, a faint glimpse of part of Cumberland". The repeated "There we stood" gives the moment a ceremonial rhythm, and the scene is "inexpressibly grand". The alliteration of "Peaks and pinnacles" and the contrast "partly in glorious light, partly in deep shade" make the mountains dramatic, and the account ends on the lakes, "like sheets of ice or polished silver". Ending on this image of light and beauty shows that the view is the reward the whole climb has been leading to.\n\nThe climb matters to Borrow as a test, above all of Henrietta, but the statement is largely right: it is the view, and above all its lakes, that "filled us with delight and admiration".`,
+            },
+            markScheme: {
+              'How it is marked (10 marks)': Q1_4_MARKING,
+              'Points you might make': [
+                `The start is practical and the first stage easy: the path "was remarkably good", the ascent "anything but steep", the hill busy with "groups of people".`,
+                `The climb has tension: "rather out of breath", the lake that "lay dark and deep", a path "winding and much more steep", and the fear for Henrietta.`,
+                `Pride in Henrietta ("the gallant girl, however, persevered") and the arrival "safe and sound, though panting" show that the climb matters too.`,
+                `The view gets the richest language: the long list of what can be seen, "There we stood", "inexpressibly grand", "Peaks and pinnacles".`,
+                `The account ends on the lakes "like sheets of ice or polished silver", a sign of where his interest lies.`,
+                'A strong answer reaches a judgement on the statement and keeps to it through the whole passage.',
+              ],
+            },
+          },
+          {
+            id: 'wjec-c2-03-q5',
+            questionNumber: 5,
+            label: '1.5',
+            questionText: `Bring together details from both texts to explain briefly what the weather was like for each writer, and how it affected them. Make clear which text each detail comes from. [4]`,
+            marks: 4,
+            suggestedTimeMinutes: 5,
+            questionType: 'summary',
+            extract: `Source A:\n${TRAVEL_21C}\n\nSource B:\n${TRAVEL_19C}`,
+            extractSource: `Source A: ${TRAVEL_21C_REF} | Source B: ${TRAVEL_19C_REF}`,
+            modelAnswers: {
+              'Grade 4-5': `In Source A the weather was bad: on four of the five days the rain was "relentless", and it "soaked me to the skin within an hour". Yet the wild weather made the writer feel "so alive". In Source B the day was "almost stiflingly hot" below the mountain, but the summit had "a cold bracing atmosphere", and the sun lit up the view, so the weather added to their "delight and admiration".`,
+            },
+            markScheme: {
+              'How it is marked (4 marks)': Q1_5_MARKING,
+              'Details you might bring together': [
+                'Source A: hard, horizontal rain on four days out of five, soaking the writer within an hour; yet walking in wild weather made the writer feel more alive than for a long time.',
+                'Source B: a hot day below the mountain and a cold, bracing summit; the sun lit the view and the lakes, which filled Borrow and Henrietta with delight.',
+              ],
+            },
+          },
+          {
+            id: 'wjec-c2-03-q6',
+            questionNumber: 6,
+            label: '1.6',
+            questionText: `Source A and Source B are both about walking in the Welsh landscape.\n\nCompare:\n• what the writers say about their experiences of the landscape\n• how they get their ideas across.\n\nUse evidence from both texts, and make clear which text each point comes from. [10]`,
+            marks: 10,
+            suggestedTimeMinutes: 13,
             questionType: 'comparison',
             extract: `Source A:\n${TRAVEL_21C}\n\nSource B:\n${TRAVEL_19C}`,
             extractSource: `Source A: ${TRAVEL_21C_REF} | Source B: ${TRAVEL_19C_REF}`,
             modelAnswers: {
-              'Grade 4-5':
-                'Both writers love the Welsh landscape, but they experience it differently. Hartley (Source A) walks the coast path in "hard, horizontal rain", while Borrow (Source B) climbs Snowdon with his stepdaughter and a guide on a day that was "almost stiflingly hot" below the summit. Both writers find the walking hard: Hartley is soaked "to the skin within an hour", and Borrow and Henrietta are "rather out of breath". Hartley enjoys escaping from "The emails, the deadlines" of modern life, while Borrow enjoys the view from the top, which he calls "inexpressibly grand". Both are impressed by the power of nature: Hartley describes "the Atlantic smashing itself against the rocks below", and Borrow describes "frightful precipices".',
-              'Grade 6-7':
-                'Both writers present the Welsh landscape as something that rewards effort, but they find different rewards in it. Hartley seeks escape from himself: the landscape "strips away the accumulated nonsense of daily life", and his pleasure lies in hardship, in rain that "found every gap in every layer". Borrow seeks a view. His effort is told with restraint, "rather out of breath", "though panting", and it is repaid at the summit by "a scene inexpressibly grand". The weather shows the difference clearly. Hartley\'s rain is an adversary he comes to welcome; Borrow\'s day is so fine that it was "almost stiflingly hot" below, while the summit offers "a cold bracing atmosphere". Their company differs too. Hartley mentions no companion and addresses the reader directly ("your comfort", "your to-do list"), inviting the reader to share a private experience. Borrow climbs with Henrietta and a guide, among other visitors seen "as far as the eye could reach", so his Wales is a sociable place of tourism, with even "a rude cabin" on the summit. The most telling contrast is in how each writer relates to the landscape. Hartley is humbled by its indifference, "a landscape that has no interest whatsoever in your comfort"; Borrow is exalted by it and gives it a human body, "the brow of Snowdon" with lakes "at his feet", so that the mountain becomes a presence to be admired rather than a force that ignores him.',
+              'Grade 8-9': `Both writers find something uplifting in the Welsh landscape, but the writer of Source A values its wildness and indifference, while Borrow, in Source B, values its grandeur and the achievement of reaching the top.\n\nWhat they experience is very different. The writer of Source A walks a coast path for five days in terrible weather: the rain was "relentless", "hard, horizontal rain that found every gap in every layer". Borrow climbs Snowdon on a single fine day, along a path that was "remarkably good" for much of the way, and stands at the top in "a cold bracing atmosphere". The modern writer's reward is a feeling, "I cannot remember the last time I felt so alive"; Borrow's reward is a sight, "a scene inexpressibly grand".\n\nThey also see the landscape differently. For the writer of Source A, the land's power lies in not caring: it "has no interest whatsoever in your comfort", and the sky is "vast, indifferent, magnificent". This indifference is a relief from "the accumulated nonsense of daily life". Borrow does not set the mountain against everyday life; he treats it as a spectacle to be measured and named. He lists what can be seen, "the whole of Anglesey, a faint glimpse of part of Cumberland", and names the hills, "Moel Elia" and "Moel y Cynghorion", as a guidebook might.\n\nTheir methods reflect this. Source A is reflective and often humorous, using short sentences for effect ("It did not.") and the second person ("The path does not care about your to-do list"), and it turns on "And yet" from discomfort to joy. Borrow writes a narrative in time order, in long, balanced sentences, and builds tension as the path grows "winding and much more steep" and he fears that Henrietta "would be obliged to give over the attempt". His descriptions are more ornate, as in the lakes "like sheets of ice or polished silver", whereas the most vivid image in Source A is the sea "smashing itself against the rocks below".\n\nBoth writers, then, present the landscape as something that lifts the spirit, but Source A finds freedom in being battered by nature, while Borrow finds delight in looking down on it from above.`,
             },
-            markScheme: [
-              'Compares attitudes from both texts with clear cross-referencing',
-              'Analyses methods of presentation in both sources',
-              'Uses evidence from both sources to support comparisons',
-              'Shows sustained comparative analysis throughout',
-              'Top band: sophisticated, evaluative comparison with conceptualised understanding',
-            ],
+            markScheme: {
+              'How it is marked (10 marks)': Q1_6_MARKING,
+              'Points you might make': [
+                'Experiences: five days of rain on a coast path (Source A); one fine day climbing Snowdon with Henrietta and a guide (Source B).',
+                `Rewards: a feeling of being "so alive" (Source A); a view "inexpressibly grand" (Source B).`,
+                `Attitudes: Source A values nature's indifference ("has no interest whatsoever in your comfort"); Source B treats the mountain as a spectacle to be named and surveyed.`,
+                `Methods: Source A uses humour, short sentences, the second person and a turn on "And yet"; Source B uses a narrative in time order, long sentences and rich description.`,
+                'Both end on calm: Source A on remembering what it feels like "to simply be", Source B on the lakes shining in the sun.',
+              ],
+            },
           },
         ],
       },
       {
         id: 'wjec-c2-03-writing',
         title: 'Section B: Writing',
-        description:
-          'In this section you will be assessed for the quality of your writing skills.\n\nFor each task, 12 marks are awarded for communication and organisation; 8 marks are awarded for writing accurately.',
+        description: SECTION_B_GUIDANCE,
         totalMarks: 40,
         suggestedTimeMinutes: 60,
         questions: [
           {
-            id: 'wjec-c2-03-q5',
-            questionNumber: 5,
-            questionText:
-              'A travel magazine has asked for contributions from readers about their favourite places.\n\nWrite an article for the magazine about a place you have visited that made a strong impression on you.\n\nYou should write between one and two pages.\n\n(12 marks for communication and organisation / 4 marks for writing accurately)',
-            marks: 16,
-            suggestedTimeMinutes: 20,
+            id: 'wjec-c2-03-q7',
+            questionNumber: 1,
+            label: '2.1',
+            questionText: `A travel magazine is asking its readers to write about a place that made a strong impression on them.\n\nWrite an article for the magazine about such a place, persuading other readers to visit it. [20]`,
+            marks: 20,
+            suggestedTimeMinutes: 30,
             questionType: 'transactional-writing',
             modelAnswers: {
-              'Grade 4-5':
-                'A clear article with: appropriate magazine style; descriptive and reflective content; generally accurate SPaG.',
-              'Grade 6-7':
-                'A well-crafted article with: engaging sensory detail; reflective commentary on the significance of the place; varied sentence structures and accurate writing.',
-              'Grade 8-9':
-                'An outstanding article with: vivid, original description; sophisticated reflection on the meaning of place and travel; precise, evocative language; flawless technical accuracy.',
+              'Grade 8-9': `Rhossili: the edge of the world, an hour from Swansea\n\nThe first time I saw Rhossili Bay, I stopped walking. I had followed the path from the village car park expecting a nice view. What I found was three miles of empty sand curving away beneath a steep green hill, with the long, rocky back of Worm's Head lying out at sea like a sleeping animal. I have been back every summer since, and it still stops me in my tracks.\n\nIf you go, go early. In the first hour after sunrise the beach belongs to the gulls and the occasional dog walker, and the only sound is the hiss of the waves. The sand is so wide and flat that people far below look like specks on a page. At the southern end of the beach, the blackened ribs of an old shipwreck rise out of the sand at low tide, a reminder of how fierce this coast can be.\n\nFor the adventurous, there is Worm's Head itself. A rocky causeway opens for a few hours around low tide, and you can scramble out across it to the island. Check the tide times carefully before you set off: the sea closes the causeway quickly, and visitors who forget can be cut off for hours. Respect the tides, though, and the reward is a wild, wind-blown walk with seals bobbing in the water below.\n\nIf you prefer to stay on dry land, climb Rhossili Down behind the bay. The path is steep, but from the top you can see the whole beach, the Head, and on a clear day the coast of Devon across the water. Bring a flask and sit among the heather; you will not want to leave.\n\nRhossili is not a place of attractions. There are no fairground rides, no arcades and no queues. What it offers is space, light and the feeling of standing at the edge of the land. In a busy world, that is rarer than it should be, and worth the journey.\n\nSo pack your walking boots and a waterproof, because this is Wales, and go. You may find, as I did, that one visit is not enough.`,
             },
-            markScheme: [
-              'Communication & Organisation (12 marks): Appropriate form and register; descriptive and reflective purpose; effective structure; audience awareness',
-              'Writing Accurately (4 marks): Sentence variety; vocabulary; spelling and punctuation',
-            ],
+            markScheme: {
+              'How it is marked (20 marks)': WRITING_MARKING,
+              'What earns marks in this task': [
+                'The features of a magazine article: a headline, an opening that draws the reader in, and paragraphs that each develop one part of the place.',
+                "A lively, personal tone that suits a magazine's readers, with direct address to persuade them.",
+                'Precise, vivid detail that makes the place real, and practical advice that shows real knowledge of it.',
+                'Accurate spelling, punctuation and grammar, with varied sentences and well-chosen words: 8 of the 20 marks are for this.',
+              ],
+            },
           },
           {
-            id: 'wjec-c2-03-q6',
-            questionNumber: 6,
-            questionText:
-              '"Young people today spend too much time looking at screens and not enough time experiencing the natural world."\n\nWrite a speech for a school debate arguing your point of view on this statement.\n\nYou should write between two and three pages.\n\n(16 marks for communication and organisation / 8 marks for writing accurately)',
-            marks: 24,
-            suggestedTimeMinutes: 40,
+            id: 'wjec-c2-03-q8',
+            questionNumber: 2,
+            label: '2.2',
+            questionText: `"Young people today spend too much time looking at screens and not enough time experiencing the natural world."\n\nYour school is holding a debate on this statement. Write a speech for the debate giving your views. [20]`,
+            marks: 20,
+            suggestedTimeMinutes: 30,
             questionType: 'transactional-writing',
             modelAnswers: {
-              'Grade 4-5':
-                'A clear speech with: some rhetorical devices; a discernible argument with examples; appropriate register for a school debate; generally accurate SPaG.',
-              'Grade 6-7':
-                'A well-crafted speech with: effective rhetorical techniques; balanced argument considering both sides; strong examples; consistent accuracy and varied syntax.',
-              'Grade 8-9':
-                'An outstanding speech with: commanding rhetorical voice; sophisticated argument that challenges the binary of the statement; original examples and compelling reasoning; technical virtuosity.',
+              'Grade 8-9': `Good afternoon, everyone.\n\nI would like to begin with a question. When did you last spend a whole afternoon outdoors, with no phone in your pocket? For some of you, the answer will be last weekend. For many of us, if we are honest, it is hard to remember.\n\nI agree with the statement, but not because I think screens are evil. I am speaking to you, after all, from notes I typed on a laptop. Screens let us learn, create and keep in touch with friends who live far away. My argument is not that we should give them up. It is that we have let them take up space that used to belong to something else.\n\nThink about how a screen holds your attention. Every video ends with another one waiting. Every message invites a reply. These things are designed to keep us looking, and they are very good at it. The natural world works differently. A wood or a beach does not compete for your attention; it waits for you to notice it. That is exactly why so many of us never do.\n\nAnd we are missing a great deal. Ask anyone who has watched the sun come up over a hill, or swum in cold sea water, or simply sat by a river, and they will tell you how much calmer they felt afterwards. Being outside lets our minds rest in a way that scrolling never does. It also gives us something screens cannot: the feeling of being small in a big world, which puts our worries in their place.\n\nSome will say that young people have no choice, that homework, clubs and busy parents leave no time for walks in the countryside. But the natural world is not only in national parks. It is in the local park, the canal towpath, the patch of trees behind the leisure centre. Twenty minutes there is a start.\n\nSo here is my challenge to you. This weekend, put your phone in a drawer for one afternoon and go outside. Notice what you hear and see. I think you will be surprised by how much you have been missing.\n\nThank you.`,
             },
-            markScheme: [
-              'Communication & Organisation (16 marks): Purpose, audience, form; quality of argument; structural effectiveness; rhetorical skill',
-              'Writing Accurately (8 marks): Sentence construction; vocabulary range and precision; spelling, punctuation, grammar',
-            ],
+            markScheme: {
+              'How it is marked (20 marks)': WRITING_MARKING,
+              'What earns marks in this task': [
+                'The features of a speech for a debate: a greeting, a clear statement of your view, direct address and questions to the audience, and a strong ending.',
+                'A tone that suits fellow pupils: persuasive and confident, perhaps with some humour, but never mocking.',
+                'A clear view on the statement, developed with reasons and examples, answering the arguments of the other side.',
+                'Accurate spelling, punctuation and grammar, with varied sentences and well-chosen words: 8 of the 20 marks are for this.',
+              ],
+            },
           },
         ],
       },
@@ -717,150 +1010,198 @@ export const wjecC2A: MockExamPaper[] = [
       {
         id: 'wjec-c2-04-reading',
         title: 'Section A: Reading',
-        description:
-          'Read both source texts carefully. Then answer all the questions in this section.',
+        description: SECTION_A_GUIDANCE,
         totalMarks: 40,
         suggestedTimeMinutes: 60,
         questions: [
           {
             id: 'wjec-c2-04-q1',
             questionNumber: 1,
-            questionText:
-              'Read the 21st-century source text about technology in education (Source A).\n\nList five things you learn about the introduction of AI marking software from this text.',
-            marks: 5,
-            suggestedTimeMinutes: 5,
+            label: '1.1',
+            questionText: `Read Source A, the 21st-century text, and answer the questions below.\n\n(a) In which city is the school that introduced the marking software? [1]\n(b) How long does the software take to assess a GCSE English essay? [1]\n(c) Give one thing that, according to the writer, an algorithm cannot do. [1]`,
+            marks: 3,
+            suggestedTimeMinutes: 4,
             questionType: 'short-answer',
             extract: `Source A:\n${TECHNOLOGY_21C}\n\nSource B:\n${TECHNOLOGY_19C}`,
             extractSource: `Source A: ${TECHNOLOGY_21C_REF} | Source B: ${TECHNOLOGY_19C_REF}`,
             modelAnswers: {
-              'Grade 4-5':
-                '1. A school in Cardiff was the first in Wales to use AI marking software. 2. The software was made by a London-based company. 3. It can mark an essay in about ninety seconds. 4. It gives feedback on structure, vocabulary, spelling, and punctuation. 5. The headteacher called it "a game-changer" but other teachers were less positive.',
+              'Grade 4-5': `(a) Cardiff.\n(b) About ninety seconds.\n(c) It cannot see the human being behind the handwriting.`,
             },
-            markScheme: ['1 mark per valid point derived from Source A only, maximum 5'],
+            markScheme: {
+              'How it is marked (3 marks)': SHORT_A_MARKING,
+              Answers: [
+                '(a) Cardiff.',
+                '(b) About ninety seconds.',
+                "(c) Any one of: notice what is special or different in a student's work; ask a student what has happened; see the human being behind the handwriting.",
+              ],
+            },
           },
           {
             id: 'wjec-c2-04-q2',
             questionNumber: 2,
-            questionText:
-              'How does the writer of Source A use language to argue that human teachers cannot be replaced by technology?\n\nYou should comment on:\n- specific words and phrases\n- language features and techniques\n- the effects on the reader.',
+            label: '1.2',
+            questionText: `Source A is an opinion article about technology in schools. The writer wants to persuade readers that a machine cannot replace a human teacher.\n\nHow does the writer try to do this?\n\nIn your answer, comment on:\n• what the writer says\n• the writer's choice of language and tone\n• how the article is structured, and any other methods the writer uses.\n\n[10]`,
             marks: 10,
             suggestedTimeMinutes: 12,
             questionType: 'analysis',
             extract: `Source A:\n${TECHNOLOGY_21C}`,
             extractSource: TECHNOLOGY_21C_REF,
             modelAnswers: {
-              'Grade 4-5':
-                'The writer says she is "not a Luddite" to show she is not against all technology, which makes her argument more balanced. She describes marking as reading for "voice" and "personality," which makes it sound personal and human. She gives examples of students doing unexpected things - a "quiet girl" writing something original and a talkative "boy" writing something "tender" - to show that teachers notice things machines cannot. The repeated phrase "It cannot" emphasises the limitations of AI.',
-              'Grade 6-7':
-                'Morgan constructs her argument through a carefully managed rhetoric of concession and refutation. The pre-emptive declaration "I am not a Luddite" is a strategic disarming of the most obvious counter-argument, establishing the writer as reasonable before she critiques technology. The central paragraph redefines marking through a semantic shift: the vocabulary moves from the technical ("checking for errors") to the humanistic ("voice," "personality," "the particular way that this particular student sees the world"). The repetition of "particular" insists on individuality as the irreducible element that technology cannot process. The anaphoric "It cannot" structure in the final paragraph accumulates absence: each repetition adds another dimension of human perception that the algorithm lacks. The most effective moment is the imagined teacher\'s response - "This is different from your usual work - tell me what happened" - which is simultaneously pedagogical and pastoral, embedding care within assessment. The final sentence\'s conditional "if we lose that" positions this loss as a choice, implicating the reader in the decision.',
+              'Grade 8-9': `The writer begins with news rather than opinion. The first paragraph reports that a school in Cardiff "became the first in Wales" to use "AI-powered marking software", and the precise detail "approximately ninety seconds" makes the technology sound impressively fast. However, the aside "its creators claim" casts doubt on whether it can really judge "the quality of argument", and the paragraph ends with a short, understated sentence: "Several of her colleagues were less enthusiastic." The writer lets the reader sense the disagreement before taking a side.\n\nThe second paragraph answers an objection before it is made. The short statement "I am not a Luddite" heads off the charge that the writer simply fears change, and technology is given credit: it has transformed education "in ways that are overwhelmingly positive", and online resources have "democratised access to knowledge". This concession makes the writer seem fair, which strengthens the criticism that follows "But": "there is a difference between technology that supports learning and technology that replaces the human relationships at its heart." The repetition of "technology that" sharpens the contrast, and "at its heart" suggests that relationships are the living centre of education.\n\nThe final paragraph turns to the writer's own experience. Marking, we learn, is more than it seems: "I am not merely checking for errors." The list "for voice, for personality, for the particular way that this particular student sees the world" builds up the idea that each student is unique, and the repetition of "particular" stresses it. Two small portraits follow, "the quiet girl in the third row" and "the boy who never stops talking", and their surprising work, "a paragraph of startling originality" and "something unexpectedly tender", gives the reader a moment of warmth that no machine could share.\n\nThe writer then drives the point home with three sentences built on the same word, "cannot": "An algorithm cannot notice these things. It cannot say ... It cannot see the human being behind the handwriting." The imagined words of a teacher, "This is different from your usual work - tell me what happened", show the kind of care only a person can offer. The conclusion widens from the classroom to everyone with the inclusive "we": "if we lose that, we lose something that no amount of efficiency can replace." Ending on "efficiency" turns the machine's great strength into something that seems cold and small beside human understanding.`,
             },
-            markScheme: [
-              'Analyses specific language techniques with examples',
-              'Comments on effects of individual words and phrases',
-              'Considers how language builds an argument',
-              'Uses embedded quotations effectively',
-            ],
+            markScheme: {
+              'How it is marked (10 marks)': Q1_2_MARKING,
+              'Points you might make': [
+                `The news-like opening ("approximately ninety seconds") is undercut by "its creators claim" and the understated "Several of her colleagues were less enthusiastic."`,
+                `A concession ("I am not a Luddite"; "overwhelmingly positive") makes the writer seem fair before the turn on "But".`,
+                `The contrast "technology that supports learning and technology that replaces the human relationships at its heart".`,
+                `The list "for voice, for personality, for the particular way that this particular student sees the world" and the two portraits of pupils show what a human marker notices.`,
+                `The repeated "It cannot" builds to a climax, and the imagined words "tell me what happened" show human care.`,
+                `The ending sets human understanding against "efficiency", with the inclusive "we".`,
+              ],
+            },
           },
           {
             id: 'wjec-c2-04-q3',
             questionNumber: 3,
-            questionText:
-              'Read the 19th-century source text (Source B).\n\nWhat do you learn about 19th-century attitudes to new technology from this text?\n\nYou should comment on:\n- what the writer describes\n- the writer\'s use of language to convey their perspective.\n\n(Source B is by the American writer Henry David Thoreau. Maine and Texas are states at opposite ends of the United States; the "magnetic telegraph" sent messages along wires; the Princess Adelaide is Thoreau\'s example of royal gossip; Flying Childers was a famous racehorse; an "evangelist" brings good news, and the man who came "eating locusts and wild honey" is John the Baptist, the messenger in the Bible who announced the coming of Jesus.)',
-            marks: 10,
-            suggestedTimeMinutes: 12,
-            questionType: 'analysis',
+            label: '1.3',
+            questionText: `Read Source B, the 19th-century text, and answer the questions below.\n\n(Source B is by the American writer Henry David Thoreau. Maine and Texas are states at opposite ends of the United States; the "magnetic telegraph" sent messages along wires; the Princess Adelaide is Thoreau's example of royal gossip; Flying Childers was a famous racehorse; an "evangelist" brings good news, and the man who came "eating locusts and wild honey" is John the Baptist, the messenger in the Bible who announced the coming of Jesus. "Are wont to be" means usually are; "perchance" means perhaps; a "peck" is a small measure of grain.)\n\n(a) According to Thoreau, what are our inventions usually like? [1]\n(b) Why might the telegraph from Maine to Texas be of little use, according to Thoreau? [1]\n(c) What does Thoreau mean when he says that inventions are "but improved means to an unimproved end"? [1]`,
+            marks: 3,
+            suggestedTimeMinutes: 4,
+            questionType: 'short-answer',
             extract: `Source B:\n${TECHNOLOGY_19C}`,
             extractSource: TECHNOLOGY_19C_REF,
             modelAnswers: {
-              'Grade 4-5':
-                'We learn that some people in the 19th century were not impressed by new inventions. Thoreau says there is "an illusion" about "modern improvements" and calls inventions "pretty toys" which "distract our attention from serious things". He mocks the telegraph: Americans are "in great haste" to build one from Maine to Texas, but those places may have "nothing important to communicate". He also mocks the plan to "tunnel under the Atlantic", joking that the first news to come through will be that "the Princess Adelaide has the whooping cough". He thinks people care more about speed than sense, as if the aim were "to talk fast and not to talk sensibly". So Thoreau thinks new technology makes things faster but not better.',
-              'Grade 6-7':
-                'Thoreau presents a sceptical, satirical attitude to the technology his age was proud of. He opens by casting doubt on "modern improvements": "there is an illusion about them; there is not always a positive advance". The image of the devil "exacting compound interest" suggests that progress carries a hidden cost which keeps growing. His most memorable judgement is a paradox: inventions are "improved means to an unimproved end". The two halves are almost the same words, but the meaning turns on "unimproved", which captures his point that technology changes how fast we do things, not whether they are worth doing. The telegraph from Maine to Texas is mocked through anticlimax: after the grand ambition comes the flat possibility that the two states "have nothing important to communicate". The story of the man who is handed a deaf woman\'s "ear trumpet" and then has nothing to say turns the point into comedy. The Atlantic example works the same way, moving from the grandeur of bringing "the old world some weeks nearer to the new" to royal gossip about the "whooping cough", while "the broad, flapping American ear" caricatures a public hungry for trivial news. The closing contrast, that the man whose horse trots "a mile in a minute" does not carry "the most important messages", shows Thoreau valuing the content of a message over the speed at which it travels.',
+              'Grade 4-5': `(a) Pretty toys that take our minds off serious things.\n(b) Maine and Texas may have nothing important to say to each other.\n(c) They are only better ways of reaching the same goals, and the goals themselves have not got any better.`,
             },
-            markScheme: [
-              'Identifies relevant information about attitudes',
-              'Comments on how language conveys perspective and concern',
-              'Uses evidence from the text to support points',
-              'Shows understanding of implicit as well as explicit meaning',
-            ],
+            markScheme: {
+              'How it is marked (3 marks)': SHORT_B_MARKING,
+              Answers: [
+                '(a) Pretty toys that distract us from serious things.',
+                '(b) The two places may have nothing important to tell each other.',
+                '(c) They are better ways of doing things, but what we use them for is no better (accept: they help us do the same old things faster).',
+              ],
+            },
           },
           {
             id: 'wjec-c2-04-q4',
             questionNumber: 4,
-            questionText:
-              "Both writers express concerns about the impact of new technology.\n\nCompare the following:\n- the writers' attitudes to new technology and what they think it might cost us\n- how they convey these attitudes.\n\nYou must use the text to support your comments and make it clear which text you are referring to.",
-            marks: 15,
-            suggestedTimeMinutes: 18,
+            label: '1.4',
+            questionText: `Read Source B again.\n\nA student said: ‘Thoreau mocks the new inventions of his time so much that he gives them no credit at all.’\n\nHow far do you agree with this view?\n\nIn your answer, give your own view of how Thoreau presents new inventions across the whole text, and explain how his choices of words and details create that view. Support your answer with references to the text. [10]`,
+            marks: 10,
+            suggestedTimeMinutes: 12,
+            questionType: 'evaluation',
+            extract: `Source B:\n${TECHNOLOGY_19C}`,
+            extractSource: TECHNOLOGY_19C_REF,
+            modelAnswers: {
+              'Grade 8-9': `I partly agree. Mockery is Thoreau's main weapon, and he gives the inventions of his day very little praise, but his criticism is aimed less at the machines themselves than at the purposes people use them for.\n\nHe begins with a measured claim rather than an attack. "Modern improvements" is placed in quotation marks, as if the phrase were someone else's boast, and he says only that "there is an illusion about them; there is not always a positive advance". The words "not always" are a small concession: some improvements may be real. The image of the devil "exacting compound interest" is more scornful, suggesting that every new invention brings hidden costs that keep growing.\n\nHis central judgement is more balanced than it first appears. Calling inventions "pretty toys, which distract our attention from serious things" is mockery, but the next sentence admits that they are "improved means to an unimproved end". He accepts that the means, the railways and the telegraph, really are improved; what has not improved is the purpose they serve. So he does give the inventions some credit, while denying that they make life better.\n\nThe rest of the passage uses humour to make this point. The telegraph "from Maine to Texas", whose two ends may "have nothing important to communicate", is deflating, and the comparison with the man introduced to "a distinguished deaf woman" who then "had nothing to say" turns technology into a comic story. The short sentence "As if the main object were to talk fast and not to talk sensibly" sums up his attack on speed for its own sake. His mockery of the plan to "tunnel under the Atlantic" is sharper still: the "broad, flapping American ear" may hear first that "the Princess Adelaide has the whooping cough", so the great achievement carries only gossip.\n\nThe ending measures speed against worth. The rider whose horse "trots a mile in a minute" does not carry "the most important messages": he "is not an evangelist", a bringer of good news, nor the prophet "eating locusts and wild honey". The last dry remark, "I doubt if Flying Childers ever carried a peck of corn to mill", suggests that speed is admired but seldom useful.\n\nOverall, the statement is too strong. Thoreau mocks the way people value their inventions, but by admitting that they are "improved means", he shows that his quarrel is with what we do with them, not with the inventions alone.`,
+            },
+            markScheme: {
+              'How it is marked (10 marks)': Q1_4_MARKING,
+              'Points you might make': [
+                `The opening is measured: "there is not always a positive advance" concedes that some improvement may be real.`,
+                `Mockery: "pretty toys, which distract our attention from serious things"; yet "improved means to an unimproved end" admits that the means are better.`,
+                `Comic examples deflate the inventions: Maine and Texas with "nothing important to communicate", the man with "nothing to say", the whooping cough news.`,
+                `The short sentence "As if the main object were to talk fast and not to talk sensibly" states his real target.`,
+                'The ending sets speed against importance: the fastest horse does not carry the most important messages.',
+                'A strong answer reaches a judgement on the statement, whether agreeing, disagreeing or agreeing in part, and keeps to it through the whole passage.',
+              ],
+            },
+          },
+          {
+            id: 'wjec-c2-04-q5',
+            questionNumber: 5,
+            label: '1.5',
+            questionText: `Bring together details from both texts to explain briefly what each writer thinks new technology cannot do. Make clear which text each detail comes from. [4]`,
+            marks: 4,
+            suggestedTimeMinutes: 5,
+            questionType: 'summary',
+            extract: `Source A:\n${TECHNOLOGY_21C}\n\nSource B:\n${TECHNOLOGY_19C}`,
+            extractSource: `Source A: ${TECHNOLOGY_21C_REF} | Source B: ${TECHNOLOGY_19C_REF}`,
+            modelAnswers: {
+              'Grade 4-5': `In Source A, the writer says that marking software cannot notice what is special in a student's work, such as "a paragraph of startling originality", and "cannot see the human being behind the handwriting". In Source B, Thoreau says that inventions cannot improve the purposes they serve, being only "improved means to an unimproved end", and that a telegraph cannot give people anything important to say: Maine and Texas may "have nothing important to communicate".`,
+            },
+            markScheme: {
+              'How it is marked (4 marks)': Q1_5_MARKING,
+              'Details you might bring together': [
+                "Source A: software cannot notice a student's voice or a sudden change in their work, cannot ask what has happened, and cannot see the person behind the handwriting; it cannot replace the relationships at the heart of learning.",
+                'Source B: inventions cannot make the purpose they serve any better; a telegraph cannot give people something worth saying; speed does not carry the most important messages.',
+              ],
+            },
+          },
+          {
+            id: 'wjec-c2-04-q6',
+            questionNumber: 6,
+            label: '1.6',
+            questionText: `Source A and Source B are both about new technology.\n\nCompare:\n• what the writers say about new technology and what it may cost us\n• how they get their ideas across.\n\nUse evidence from both texts, and make clear which text each point comes from. [10]`,
+            marks: 10,
+            suggestedTimeMinutes: 13,
             questionType: 'comparison',
             extract: `Source A:\n${TECHNOLOGY_21C}\n\nSource B:\n${TECHNOLOGY_19C}`,
             extractSource: `Source A: ${TECHNOLOGY_21C_REF} | Source B: ${TECHNOLOGY_19C_REF}`,
             modelAnswers: {
-              'Grade 4-5':
-                'Both writers are worried about new technology. Morgan (Source A) is worried that AI marking will replace the human relationship between teachers and students, and Thoreau (Source B) is worried that inventions like the telegraph "distract our attention from serious things". Neither says technology is all bad: Morgan says "I am not a Luddite", and Thoreau only says "there is not always a positive advance", not that there is never one. Both think speed is not the most important thing. Morgan says the software can mark an essay in "approximately ninety seconds" but cannot "see the human being behind the handwriting", and Thoreau says people want "to talk fast and not to talk sensibly". Morgan is serious and personal, while Thoreau uses humour, such as the joke about the "whooping cough".',
-              'Grade 6-7':
-                'Both writers accept technology in principle while questioning what it does to human communication. Morgan establishes her reasonableness at once, "I am not a Luddite", and grants that technology has "transformed education in ways that are overwhelmingly positive". Thoreau makes a smaller concession, that "there is not always a positive advance", which implies that sometimes there is, before dismissing inventions as "pretty toys". Both locate the danger in what technology leaves out. For Morgan it is the human reader: marking means reading "for voice, for personality", and an algorithm "cannot see the human being behind the handwriting". For Thoreau it is meaning itself: the telegraph is useless if Maine and Texas "have nothing important to communicate", and a faster world may only mean faster gossip about "the whooping cough". Their methods differ. Morgan uses specific, tender examples, "the quiet girl in the third row" and the boy who "has written something unexpectedly tender", to show what a machine would miss. Thoreau uses satire and paradox, "improved means to an unimproved end", to make the enthusiasm of his age look foolish. Morgan\'s closing conditional, "if we lose that", presents the loss as a choice still to be made; Thoreau writes as if the mistake has already been made, and his final image of the horse that trots "a mile in a minute" but does not carry "the most important messages" leaves the reader to judge a society that values speed over substance.',
-              'Grade 8-9':
-                'Read together, the texts show each new technology of communication raising the same question: whether faster communication means better communication. Both writers answer no, but from different positions. Morgan writes as a practitioner defending a relationship; Thoreau writes as a philosopher questioning a whole culture. Morgan\'s argument rests on concession and redefinition. "I am not a Luddite" disarms the obvious objection, and the shift in vocabulary from "checking for errors" to "voice" and "personality" redefines marking as attention to "the particular way that this particular student sees the world", where the repetition of "particular" insists on what cannot be standardised. Thoreau\'s argument rests on paradox and anticlimax. The phrase "improved means to an unimproved end" packs his whole case into six words: technology perfects the method while leaving the purpose untouched. His examples reduce grand projects, a telegraph from Maine to Texas and a tunnel "under the Atlantic", to trivial outcomes, "nothing important to communicate" and the Princess Adelaide\'s "whooping cough". Where Morgan fears the loss of something precious, the teacher\'s ability to notice when a pupil\'s work is "different from your usual work", Thoreau fears that there may be nothing of value to send, so that speed exposes emptiness rather than destroying depth. Their tones reflect this. Morgan is earnest, and her conditional "if we lose that" keeps the outcome open; Thoreau is ironic, and the absurd image of "the broad, flapping American ear" treats his readers\' appetite for news as the real problem. Morgan asks us to protect human judgement from machines; Thoreau asks whether we had much to say in the first place.',
+              'Grade 8-9': `Both writers are wary of new technology, but the writer of Source A worries about one kind of machine replacing human care, while Thoreau, in Source B, doubts whether the inventions of his age improve life at all.\n\nThey value technology differently. The writer of Source A accepts its benefits openly: it has transformed education "in ways that are overwhelmingly positive" and "democratised access to knowledge". The objection is narrow, to "technology that replaces the human relationships at its heart". Thoreau is more sweeping. Inventions are "pretty toys, which distract our attention from serious things", and even the telegraph is one of the "improved means to an unimproved end". For him the problem is not one machine but the belief that faster is better.\n\nThey also differ in what they think we may lose. In Source A the cost is human attention: a teacher notices "the quiet girl in the third row" and can say "tell me what happened", whereas "An algorithm cannot notice these things". The loss is something "that no amount of efficiency can replace". In Source B the cost is good sense: people are so eager to communicate quickly that they forget to ask whether they have anything to say, "As if the main object were to talk fast and not to talk sensibly".\n\nTheir methods differ in tone. The writer of Source A argues earnestly and personally, using the first person ("When I mark a student's essay"), small portraits of pupils and the repeated "It cannot" to build to an emotional climax. Thoreau uses wit. His story of the man with "nothing to say" to a deaf woman, and the image of the "broad, flapping American ear" receiving news that "the Princess Adelaide has the whooping cough", make the inventions look ridiculous rather than dangerous.\n\nBoth writers end by measuring technology against something they value more. Source A sets human understanding against "efficiency"; Thoreau sets speed against importance, noting that the fastest rider "does not carry the most important messages". But Source A wants to protect something it already values, while Thoreau wants his readers to question the whole idea of progress.`,
             },
-            markScheme: [
-              'Compares attitudes from both texts with clear cross-referencing',
-              'Analyses methods of presentation in both sources',
-              'Uses evidence from both sources to support comparisons',
-              'Shows sustained comparative analysis throughout',
-              'Top band: sophisticated, evaluative comparison with conceptualised understanding',
-            ],
+            markScheme: {
+              'How it is marked (10 marks)': Q1_6_MARKING,
+              'Points you might make': [
+                `Source A welcomes much of technology ("overwhelmingly positive") and objects only to machines that replace people; Source B doubts that inventions improve life ("improved means to an unimproved end").`,
+                `What may be lost: human attention and care in Source A ("An algorithm cannot notice these things"); good sense in Source B ("to talk fast and not to talk sensibly").`,
+                `Source A argues earnestly from experience, with portraits of pupils and the repeated "It cannot"; Source B uses wit, anecdote and absurd examples.`,
+                'Both end by weighing technology against human worth: efficiency against understanding (Source A), speed against importance (Source B).',
+              ],
+            },
           },
         ],
       },
       {
         id: 'wjec-c2-04-writing',
         title: 'Section B: Writing',
-        description:
-          'In this section you will be assessed for the quality of your writing skills.\n\nFor each task, 12 marks are awarded for communication and organisation; 8 marks are awarded for writing accurately.',
+        description: SECTION_B_GUIDANCE,
         totalMarks: 40,
         suggestedTimeMinutes: 60,
         questions: [
           {
-            id: 'wjec-c2-04-q5',
-            questionNumber: 5,
-            questionText:
-              'Your school is considering allowing students to use AI tools to help with homework.\n\nWrite a letter to your headteacher giving your views on this proposal.\n\nYou should write between one and two pages.\n\n(12 marks for communication and organisation / 4 marks for writing accurately)',
-            marks: 16,
-            suggestedTimeMinutes: 20,
+            id: 'wjec-c2-04-q7',
+            questionNumber: 1,
+            label: '2.1',
+            questionText: `Your school is considering allowing students to use AI tools to help with their homework.\n\nWrite a letter to your headteacher giving your views on this proposal. [20]`,
+            marks: 20,
+            suggestedTimeMinutes: 30,
             questionType: 'transactional-writing',
             modelAnswers: {
-              'Grade 4-5':
-                'A clear letter with: appropriate formal register; a range of relevant points for and/or against; generally accurate SPaG.',
-              'Grade 6-7':
-                'A well-structured letter with: balanced argument considering benefits and risks; practical suggestions; consistent formality and accuracy.',
-              'Grade 8-9':
-                "A compelling letter with: sophisticated argument that goes beyond simple for/against; nuanced understanding of AI's potential and limitations; authoritative voice; technical precision.",
+              'Grade 8-9': `Dear Mrs Hughes,\n\nI am writing in response to the proposal to allow students to use AI tools to help with homework. As a Year 11 student who uses technology every day, I would like to offer a student's view. In short, I support the idea, but only if it comes with clear rules.\n\nThere is no point pretending that these tools will go away. Many students already use them, often secretly and without any guidance. If the school allows them openly, teachers can show us how to use them well: to explain a difficult idea in a different way, to test ourselves before an exam, or to check the structure of an essay plan. Used like this, an AI tool is a patient tutor that is still available at nine o'clock at night, when no teacher is.\n\nHowever, I understand the worries. If students simply ask a tool to write their homework, they will learn nothing, and teachers will have no idea what their pupils can really do. Homework exists to help us practise, and a machine cannot practise on our behalf. There is also the question of accuracy: these tools can give answers that sound confident but are wrong, and a student who does not check will never know.\n\nI would therefore suggest three rules. First, AI tools should be allowed for planning, explaining and revising, but not for producing finished work. Second, students should say when and how they have used a tool, just as we name the sources we use in a project. Third, some homework should be done by hand or in class, so that teachers can see our own work.\n\nI believe that this approach would prepare us for the world we will work in, where such tools will be common, while protecting the skills that only practice can build. It would also be fairer, because students who use AI quietly at the moment would no longer have an advantage over those who follow the rules.\n\nThank you for taking the time to consider a student's view. I would be glad to discuss these ideas with the school council.\n\nYours sincerely,\n\nJordan Evans`,
             },
-            markScheme: [
-              'Communication & Organisation (12 marks): Appropriate form and register; persuasive/argumentative purpose; logical structure; audience awareness',
-              'Writing Accurately (4 marks): Sentence variety; vocabulary; spelling and punctuation',
-            ],
+            markScheme: {
+              'How it is marked (20 marks)': WRITING_MARKING,
+              'What earns marks in this task': [
+                'The features of a formal letter: a greeting, an opening that states your purpose, clear paragraphs and a suitable sign-off (Yours sincerely, after a named greeting).',
+                'A polite, formal tone for a headteacher: confident but respectful.',
+                'A clear view, developed with reasons on both the benefits and the risks, and practical suggestions.',
+                'Accurate spelling, punctuation and grammar, with varied sentences and well-chosen words: 8 of the 20 marks are for this.',
+              ],
+            },
           },
           {
-            id: 'wjec-c2-04-q6',
-            questionNumber: 6,
-            questionText:
-              '"Technology is making us less human, not more connected."\n\nWrite an article for a magazine aimed at young people arguing your point of view on this statement.\n\nYou should write between two and three pages.\n\n(16 marks for communication and organisation / 8 marks for writing accurately)',
-            marks: 24,
-            suggestedTimeMinutes: 40,
+            id: 'wjec-c2-04-q8',
+            questionNumber: 2,
+            label: '2.2',
+            questionText: `"Technology is making us less human, not more connected."\n\nWrite an article for a magazine aimed at young people giving your views on this statement. [20]`,
+            marks: 20,
+            suggestedTimeMinutes: 30,
             questionType: 'transactional-writing',
             modelAnswers: {
-              'Grade 4-5':
-                'A clear article with: recognisable article conventions; a range of relevant points with examples; appropriate register for a young audience; generally accurate writing.',
-              'Grade 6-7':
-                'A well-crafted article with: engaging opening and clear structure; balanced argument with personal examples and wider evidence; effective rhetorical techniques; consistent accuracy.',
-              'Grade 8-9':
-                'An outstanding article with: distinctive voice appropriate to the audience; sophisticated argument that redefines the terms of the debate; original thinking and compelling examples; flawless technical control.',
+              'Grade 8-9': `Less human, or more connected? The answer is up to us\n\nMy grandmother lives two hundred miles away, and I speak to her every Sunday. I can see her face, she can see the mess in my bedroom, and we laugh at the same jokes. Twenty years ago, that weekly call would have been a short and expensive phone conversation. So when people tell me that technology is making us less human, part of me wants to hold up my phone and say: look.\n\nAnd yet I understand the worry. We have all seen a group of friends sitting round a table, each staring at a separate screen. We have all reached for a phone in the first minute of waking, before saying good morning to anyone. Technology connects us to people far away, but it can disconnect us from the people beside us.\n\nThe truth, I think, is that technology is neither good nor bad in itself. It is a tool, and like any tool it can build or damage, depending on how we use it. A video call with a lonely relative is a deeply human act. Scrolling through strangers' photographs for three hours, comparing our lives with theirs, probably is not.\n\nSo the real question is not whether technology makes us less human, but whether we let it decide how we spend our attention. Many apps are designed to keep us using them for as long as possible, because that is how they make money. If we do not choose how to use them, someone else will choose for us.\n\nHere are three small changes that have helped me. I turn off notifications for everything except messages from real people. I keep my phone out of my bedroom at night. And when I am with friends, the phones go face down on the table, and the first person to pick one up buys the snacks.\n\nNone of this means giving technology up. It means remembering that the point of being connected is the people at the other end. Used well, a screen can bring us closer. Used carelessly, it can leave us more alone than ever. The choice, in the end, is ours.`,
             },
-            markScheme: [
-              'Communication & Organisation (16 marks): Purpose, audience, form; quality of argument; structural effectiveness; persuasive/rhetorical skill',
-              'Writing Accurately (8 marks): Sentence construction; vocabulary range and precision; spelling, punctuation, grammar',
-            ],
+            markScheme: {
+              'How it is marked (20 marks)': WRITING_MARKING,
+              'What earns marks in this task': [
+                'The features of a magazine article: a headline, an engaging opening, and paragraphs that develop an argument to a clear ending.',
+                'A tone that suits young readers: lively and direct, without lecturing.',
+                'A clear view on the statement, developed with examples and reasons, which considers the other side.',
+                'Accurate spelling, punctuation and grammar, with varied sentences and well-chosen words: 8 of the 20 marks are for this.',
+              ],
+            },
           },
         ],
       },
@@ -884,150 +1225,198 @@ export const wjecC2A: MockExamPaper[] = [
       {
         id: 'wjec-c2-05-reading',
         title: 'Section A: Reading',
-        description:
-          'Read both source texts carefully. Then answer all the questions in this section.',
+        description: SECTION_A_GUIDANCE,
         totalMarks: 40,
         suggestedTimeMinutes: 60,
         questions: [
           {
             id: 'wjec-c2-05-q1',
             questionNumber: 1,
-            questionText:
-              "Read the 21st-century source text about gender equality in sport (Source A).\n\nList five things you learn about the treatment of women's sport from this text.",
-            marks: 5,
-            suggestedTimeMinutes: 5,
+            label: '1.1',
+            questionText: `Read Source A, the 21st-century text, and answer the questions below.\n\n(a) What had the women's team at the writer's local club won? [1]\n(b) According to the writer, what share of media coverage in the UK does women's sport receive? [1]\n(c) Give one way in which, according to the writer, facilities for women's teams are worse than men's. [1]`,
+            marks: 3,
+            suggestedTimeMinutes: 4,
             questionType: 'short-answer',
             extract: `Source A:\n${GENDER_21C}\n\nSource B:\n${GENDER_19C}`,
             extractSource: `Source A: ${GENDER_21C_REF} | Source B: ${GENDER_19C_REF}`,
             modelAnswers: {
-              'Grade 4-5':
-                "1. The Welsh women's football team's success was reported on page fourteen of the newspaper. 2. The men's team got front-page coverage for losing a friendly. 3. Women's sport gets about 10% of media coverage in the UK. 4. Female athletes earn much less than male athletes. 5. Some women players train on pitches without floodlights.",
+              'Grade 4-5': `(a) The county cup.\n(b) About 10%.\n(c) Some players train on pitches without floodlights.`,
             },
-            markScheme: ['1 mark per valid point derived from Source A only, maximum 5'],
+            markScheme: {
+              'How it is marked (3 marks)': SHORT_A_MARKING,
+              Answers: [
+                '(a) The county cup (accept: a cup).',
+                '(b) About 10%.',
+                "(c) Any one of: pitches without floodlights; sharing changing rooms with the men's reserve team; players buying their own kit.",
+              ],
+            },
           },
           {
             id: 'wjec-c2-05-q2',
             questionNumber: 2,
-            questionText:
-              "How does the writer of Source A use language to argue that women's sport is unfairly treated?\n\nYou should comment on:\n- specific words and phrases\n- language features and techniques\n- the effects on the reader.",
+            label: '1.2',
+            questionText: `Source A is an opinion column about women's sport. The writer wants to persuade readers that women's sport is treated unfairly.\n\nHow does the writer try to do this?\n\nIn your answer, comment on:\n• what the writer says\n• the writer's choice of language and tone\n• how the column is structured, and any other methods the writer uses.\n\n[10]`,
             marks: 10,
             suggestedTimeMinutes: 12,
             questionType: 'analysis',
             extract: `Source A:\n${GENDER_21C}`,
             extractSource: GENDER_21C_REF,
             modelAnswers: {
-              'Grade 4-5':
-                'The writer uses a specific example of the newspaper reporting to show the unfairness: the women\'s success was on page fourteen while the men\'s failure was on the front page. This contrast shocks the reader. She uses statistics - "approximately 10%" - to prove women\'s sport is ignored. The phrase "a fraction of their male counterparts" shows how unequal pay is. The word "assumption" is important because it suggests people are biased without realising it. The final sentence about "who it belongs to" makes the reader think about sport differently.',
-              'Grade 6-7':
-                'Lewis opens with a devastatingly specific anecdote that stands for the whole problem: the juxtaposition of page fourteen (women qualifying) and the front page (men losing a friendly) inverts every reasonable expectation of newsworthiness, and the detail that the report sat "beneath an article about a local dog show" adds a note of dark comedy that heightens the outrage. The phrase "If you wanted a single image to illustrate" explicitly positions this anecdote as synecdoche, inviting the reader to see the particular as representative. The second paragraph shifts to the empirical: "approximately 10%" and "a fraction" establish statistical authority. The tricolon of practical grievances - "pitches without floodlights... share changing rooms... buy their own kit" - descends from inconvenience to indignity, the asyndetic listing creating a sense of accumulated neglect. The third paragraph performs the most sophisticated rhetorical move: the redefinition of the problem from material ("funding") to cultural ("assumption"). The phrase "not because we have watched it and formed this judgement, but because we have absorbed it" distinguishes between active critical evaluation and passive cultural conditioning, implicating the reader in an unconscious prejudice.',
+              'Grade 8-9': `The writer opens with a single, telling example. The women's cup win was reported "on page fourteen of our weekly paper, beneath an article about a local dog show", and the bathos of the dog show makes the treatment seem absurd as well as unfair. The contrast with the men, who received "front-page coverage for losing a friendly", is sharpened by the word "losing": failure by men is treated as more newsworthy than success by women. The writer then offers this as "a single image" of the state of equality, and the understatement "you could do worse than that" invites readers to draw the conclusion for themselves.\n\nThe second paragraph supports the anecdote with evidence. The blunt opening, "The numbers are stark", announces a change of method, and the figures follow: "approximately 10% of media coverage", and pay that is "a fraction" of men's. The writer then adds the testimony of players, in a list of three clauses: players "who train on pitches without floodlights, who share changing rooms with the men's reserve team, who buy their own kit". The repetition of "who" builds a sense of one indignity after another, and the detail that the budget "does not extend to them" makes women seem an afterthought.\n\nThe final paragraph moves the argument from facts to attitudes, turning on "But": "statistics do not capture the subtler problem, which is one of assumption." This makes the case deeper than a complaint about money. The inclusive "We assume" draws the reader in, and the list "less exciting, less skilful, less worthy of attention" uses repetition to expose a prejudice the reader may share. The writer argues that this view was formed not by watching women's sport but by "a culture that has always valued men's bodies in motion more than women's", which turns a personal opinion into a cultural habit. The concession "though funding would help" keeps the argument balanced, and the ending widens the issue: equality requires "a fundamental reimagining of what sport is for, and who it belongs to". Ending on "who it belongs to" suggests that women have been shut out of something that should be theirs too, and leaves the reader with a question of fairness rather than of figures.`,
             },
-            markScheme: [
-              'Analyses specific language techniques with examples',
-              'Comments on effects of individual words and phrases',
-              'Considers how language builds a persuasive argument',
-              'Uses embedded quotations effectively',
-            ],
+            markScheme: {
+              'How it is marked (10 marks)': Q1_2_MARKING,
+              'Points you might make': [
+                `The opening anecdote and its bathos: the news "beneath an article about a local dog show", set against the men's "front-page coverage for losing a friendly".`,
+                `"The numbers are stark" introduces evidence: "approximately 10% of media coverage" and pay that is "a fraction" of men's.`,
+                `The list of clauses beginning "who" piles up the players' indignities; "does not extend to them" makes women an afterthought.`,
+                `"But" turns to "the subtler problem, which is one of assumption"; the inclusive "We assume" and the list "less exciting, less skilful, less worthy of attention" challenge the reader.`,
+                `The concession "though funding would help" keeps the tone reasonable; the ending, "who it belongs to", raises a question of fairness.`,
+              ],
+            },
           },
           {
             id: 'wjec-c2-05-q3',
             questionNumber: 3,
-            questionText:
-              'Read the 19th-century source text (Source B).\n\nWhat do you learn about 19th-century attitudes to gender and women\'s capabilities from this text?\n\nYou should comment on:\n- what the writer describes\n- the writer\'s use of language to convey their perspective.\n\n("Avail" means help or be of use; "dependents" are people under another\'s power; "hot-house and stove cultivation" is the growing of plants in heated glasshouses; "indolently" means lazily.)',
-            marks: 10,
-            suggestedTimeMinutes: 12,
-            questionType: 'analysis',
+            label: '1.3',
+            questionText: `Read Source B, the 19th-century text, and answer the questions below.\n\n("Avail" means help or be of use; "dependents" are people under another's power; "hot-house and stove cultivation" is the growing of plants in heated glasshouses; "indolently" means lazily.)\n\n(a) According to Mill, why can no one know "the nature of the two sexes"? [1]\n(b) What does Mill say is really true of what is called "the nature of women"? [1]\n(c) In Mill's image of the plant, what happens to the shoots that are left outside in the wintry air? [1]`,
+            marks: 3,
+            suggestedTimeMinutes: 4,
+            questionType: 'short-answer',
             extract: `Source B:\n${GENDER_19C}`,
             extractSource: GENDER_19C_REF,
             modelAnswers: {
-              'Grade 4-5':
-                'We learn that in the 19th century many people believed that women\'s nature suited them to the roles they already had. Mill disagrees. He says nobody can know "the nature of the two sexes" while they have only been seen "in their present relation to one another", with women "under the control of the men". He argues that what people call "the nature of women" is "an eminently artificial thing", caused by "forced repression" in some ways and "unnatural stimulation" in others. He compares women to a plant grown in a "hot-house": some parts are encouraged to grow while others are left in the "wintry air" and have "a stunted growth". This shows that he thinks women\'s abilities have been held back, not that they are missing.',
-              'Grade 6-7':
-                'Mill shows that the common 19th-century view of women\'s capabilities rested on an assumption, and he attacks the assumption rather than the conclusions drawn from it. His opening is confident and dismissive: "Neither does it avail anything to say" that nature suits women to their "present functions and position". He then speaks with personal authority, "I deny that any one knows, or can know, the nature of the two sexes", and the correction in "knows, or can know" moves from what people happen to know to what they could ever know. His reasoning is logical: a fair comparison would need a society in which "the women were not under the control of the men", and there has never been one. The key sentence is short and precise: "What is now called the nature of women is an eminently artificial thing". The words "now called" suggest that "nature" is only a label, and the balanced phrases "forced repression in some directions, unnatural stimulation in others" show women both held down and forced on. An extended metaphor of cultivation develops this. Women\'s capabilities are like plants given "hot-house and stove cultivation" for "the benefit and pleasure of their masters", while other shoots are left in the "wintry air", with "ice purposely heaped all round them", or are "burnt off with fire". The adverb "purposely" makes the damage deliberate. Mill ends by mocking men\'s "inability to recognise their own work", as they "indolently believe that the tree grows of itself in the way they have made it grow".',
+              'Grade 4-5': `(a) Because men and women have only ever been seen in their present relationship, with women under men's control.\n(b) It is artificial: it has been made by society, not by nature.\n(c) They grow stunted, and some are burnt off and disappear.`,
             },
-            markScheme: [
-              'Identifies relevant information about attitudes',
-              'Comments on how language conveys perspective and argument',
-              'Uses evidence from the text to support points',
-              'Shows understanding of implicit as well as explicit meaning',
-            ],
+            markScheme: {
+              'How it is marked (3 marks)': SHORT_B_MARKING,
+              Answers: [
+                '(a) Because men and women have only ever been seen in their present relationship, with the women controlled by the men (accept: no society has ever existed in which women were free of that control).',
+                '(b) It is artificial, the result of some qualities being held back and others forced on (accept: it is not natural but made by the way women are treated).',
+                '(c) Their growth is stunted, and some are burnt off and disappear.',
+              ],
+            },
           },
           {
             id: 'wjec-c2-05-q4',
             questionNumber: 4,
-            questionText:
-              "Both writers argue against gender inequality.\n\nCompare the following:\n- the writers' attitudes to gender equality and the barriers they identify\n- how they convey these attitudes.\n\nYou must use the text to support your comments and make it clear which text you are referring to.",
-            marks: 15,
-            suggestedTimeMinutes: 18,
+            label: '1.4',
+            questionText: `Read Source B again.\n\nA student said: ‘Mill's argument is powerful because he relies on reason rather than on feeling.’\n\nHow far do you agree with this view?\n\nIn your answer, give your own view of how Mill presents his argument across the whole text, and explain how his choices of words and details shape it. Support your answer with references to the text. [10]`,
+            marks: 10,
+            suggestedTimeMinutes: 12,
+            questionType: 'evaluation',
+            extract: `Source B:\n${GENDER_19C}`,
+            extractSource: GENDER_19C_REF,
+            modelAnswers: {
+              'Grade 8-9': `I partly agree. Mill's argument is built on reasoning, and that gives it its strength, but he also uses vivid, emotive images that make the reader feel the injustice he is reasoning about.\n\nHe opens like a logician. He sets out to answer an opponent's claim, that "the nature of the two sexes adapts them to their present functions and position", and brushes it aside with "Neither does it avail anything to say", as if dismissing a weak point in a debate. He then appeals openly to reason, "Standing on the ground of common sense and the constitution of the human mind", and his central claim is a logical one: no one can know the nature of the sexes "as long as they have only been seen in their present relation to one another". The long conditional sentence that follows ("If men had ever been found in society without women, or women without men ...") works like an experiment that has never been carried out: only if it had been, he says, "something might have been positively known". This careful reasoning persuades because it is so hard to deny.\n\nHowever, the passage then turns to language designed to stir feeling. He calls the nature of women "an eminently artificial thing", "the result of forced repression in some directions, unnatural stimulation in others", and the adjectives "forced" and "unnatural" carry moral disapproval. His comparison of women with "conquered and slave races", and the image of an "iron heel", are deliberately shocking, especially as he argues that women's character has been even more "distorted" than theirs, shaped "for the benefit and pleasure of their masters".\n\nThe extended metaphor of the garden is the most powerful part, and it works on the imagination more than on logic. Some of women's capabilities grow "luxuriantly" in a "heated atmosphere", while others are "left outside in the wintry air, with ice purposely heaped all round them", and "some are burnt off with fire and disappear". The word "purposely" makes the damage deliberate, and the picture of a tree with one half "kept in a vapour bath" and "the other half in the snow" makes the treatment of women seem both cruel and absurd. Mill also turns scornful, accusing men of an "inability to recognise their own work" which marks "the unanalytic mind", so that they "indolently believe" in a nature they have themselves created.\n\nSo Mill does rely on reason, but his most memorable lines are emotional and satirical. The statement is right that reason is the foundation of his argument, but wrong to suggest that feeling plays no part: it is the combination of the two that makes the passage so powerful.`,
+            },
+            markScheme: {
+              'How it is marked (10 marks)': Q1_4_MARKING,
+              'Points you might make': [
+                `Reason: he answers an opponent ("Neither does it avail anything to say"), appeals to "common sense and the constitution of the human mind", and argues that nothing can be known while the sexes are seen only "in their present relation to one another".`,
+                'The conditional sentence about a society never yet seen works like an experiment that has never been tried.',
+                `Feeling: "forced repression" and "unnatural stimulation" carry moral judgement; the comparison with "conquered and slave races" and the "iron heel" is meant to shock.`,
+                `The garden metaphor ("ice purposely heaped all round them"; "some are burnt off with fire and disappear") makes the damage deliberate and cruel.`,
+                `Satire and scorn: the tree half "in a vapour bath" and half "in the snow"; men's "inability to recognise their own work".`,
+                'A strong answer reaches a judgement on the statement and keeps to it through the whole passage.',
+              ],
+            },
+          },
+          {
+            id: 'wjec-c2-05-q5',
+            questionNumber: 5,
+            label: '1.5',
+            questionText: `Bring together details from both texts to explain briefly what each writer says holds women back. Make clear which text each detail comes from. [4]`,
+            marks: 4,
+            suggestedTimeMinutes: 5,
+            questionType: 'summary',
+            extract: `Source A:\n${GENDER_21C}\n\nSource B:\n${GENDER_19C}`,
+            extractSource: `Source A: ${GENDER_21C_REF} | Source B: ${GENDER_19C_REF}`,
+            modelAnswers: {
+              'Grade 4-5': `In Source A, women in sport are held back by poor media coverage ("approximately 10%"), lower pay and worse facilities, and by the assumption that their sport is "less worthy of attention". In Source B, Mill says that women are held back by being "under the control of the men": some of their abilities are encouraged for men's "benefit and pleasure", while others are starved or destroyed, and men then believe that this is women's natural state.`,
+            },
+            markScheme: {
+              'How it is marked (4 marks)': Q1_5_MARKING,
+              'Details you might bring together': [
+                "Source A: little media coverage; pay a fraction of men's; poor facilities, shared changing rooms and players buying their own kit; the assumption, learnt from the culture, that women's sport is less worth watching.",
+                "Source B: women have always been under men's control; some of their abilities are forced on for men's benefit and others held back or destroyed; men mistake the result for women's nature.",
+              ],
+            },
+          },
+          {
+            id: 'wjec-c2-05-q6',
+            questionNumber: 6,
+            label: '1.6',
+            questionText: `Source A and Source B are both about the unequal treatment of women.\n\nCompare:\n• what the writers say about the unequal treatment of women\n• how they get their ideas across.\n\nUse evidence from both texts, and make clear which text each point comes from. [10]`,
+            marks: 10,
+            suggestedTimeMinutes: 13,
             questionType: 'comparison',
             extract: `Source A:\n${GENDER_21C}\n\nSource B:\n${GENDER_19C}`,
             extractSource: `Source A: ${GENDER_21C_REF} | Source B: ${GENDER_19C_REF}`,
             modelAnswers: {
-              'Grade 4-5':
-                'Both writers argue that women are held back by assumptions rather than by any real lack of ability. Lewis (Source A) says we think women\'s sport is "less exciting, less skilful" not because we have watched it but because "we have absorbed it from a culture". Mill (Source B) says that what people call "the nature of women" is "an eminently artificial thing". Both think the unfairness is created by society. Lewis gives modern evidence, such as women\'s sport getting "approximately 10% of media coverage", while Mill compares women\'s abilities to plants grown in a "hot-house". Lewis wants "a fundamental reimagining" of sport, and Mill wants people to stop believing that the present roles of men and women are natural.',
-              'Grade 6-7':
-                'Both writers identify the same barrier to equality: an assumption that passes itself off as a judgement. Lewis says we think women\'s sport is less worthy "not because we have watched it and formed this judgement, but because we have absorbed it from a culture"; Mill says that nobody can know "the nature of the two sexes, as long as they have only been seen in their present relation to one another". Both, then, argue that people mistake the effects of inequality for its justification. Their methods differ. Lewis begins with a concrete anecdote, the women\'s team reported "on page fourteen" while the men\'s team received "front-page coverage for losing a friendly", and supports it with statistics. Mill begins with a logical argument and develops it through an extended metaphor, in which some capabilities receive "hot-house and stove cultivation" while others are left in the "wintry air" with "ice purposely heaped all round them". Both writers use contrast. Lewis sets women\'s teams against men\'s and finds their facilities "inferior", with "pitches without floodlights" and changing rooms shared "with the men\'s reserve team"; Mill sets a "vapour bath" against "the snow". Their conclusions differ in scope. Lewis calls for "a fundamental reimagining of what sport is for, and who it belongs to"; Mill\'s target is larger, the whole belief that women\'s present position is natural, and his final image of men who believe "the tree grows of itself in the way they have made it grow" shows them failing to see their own responsibility.',
-              'Grade 8-9':
-                'These texts, written more than a century and a half apart, share a diagnosis: inequality survives because it passes for nature or common sense. Mill makes the argument in its most general form. His claim that "What is now called the nature of women is an eminently artificial thing" turns his opponents\' language against them, since "now called" suggests that "nature" is only a name given to the results of "forced repression in some directions, unnatural stimulation in others". Lewis applies the same reasoning to one field. Her sentence "We assume that women\'s sport is less exciting, less skilful, less worthy of attention" names the assumption through a list of comparatives, and her correction, "not because we have watched it and formed this judgement, but because we have absorbed it from a culture", does in one sentence what Mill does in a paragraph: it separates a real judgement from an inherited one. Their methods reflect their audiences. Mill argues from principle to Victorian readers likely to resist him, so he builds a careful chain of reasoning and then gives it life through the extended metaphor of the "hot-house" and the "wintry air". Lewis writes for readers who accept equality in principle, so she persuades through evidence and irony, the report on "page fourteen" placed "beneath an article about a local dog show". Both writers finally direct attention to those who hold power. Mill mocks men\'s "inability to recognise their own work", as they "indolently believe that the tree grows of itself"; Lewis calls for a rethinking of "who it belongs to", implying that sport has been claimed by men. The difference is one of scale. Lewis asks for a change of attitude, and of funding, in one area of life; Mill denies that anyone can yet know what women are capable of, which makes every limit placed on them unjustified.',
+              'Grade 8-9': `Both writers argue that the inequality between men and women is made by society rather than by nature, and both blame assumptions as much as rules; they differ in their scope and in their methods.\n\nAt its core, what they say is strikingly similar. The writer of Source A argues that people think women's sport "less exciting, less skilful, less worthy of attention" not from watching it but because "we have absorbed it from a culture" that values men more. Mill, in Source B, makes the same move on a much larger scale: what is called "the nature of women" is "an eminently artificial thing", produced by "forced repression" in some directions and "unnatural stimulation" in others. Both, then, challenge the claim that women are naturally lesser.\n\nTheir scope differs. Source A deals with one part of modern life, sport, and with practical unfairness: "approximately 10% of media coverage", pay that is "a fraction" of men's, and players "who buy their own kit". Mill writes about women's whole position in society, which he compares with that of "dependents" under "their masters", and in this passage he gives no single example or figure.\n\nTheir methods reflect this. The writer of Source A uses a vivid anecdote, the news printed "beneath an article about a local dog show", then statistics and the testimony of players, before turning with "But" to "the subtler problem". The inclusive "We assume" makes readers examine their own views. Mill uses formal, logical argument: he answers an opponent ("Neither does it avail anything to say"), reasons from "common sense and the constitution of the human mind", and builds to an extended metaphor of a plant kept "in a vapour bath" on one side and "in the snow" on the other. The modern writer's tone is frustrated but measured; Mill's becomes scornful when he describes men's "inability to recognise their own work".\n\nBoth end by calling for a change of thinking rather than only of rules. Source A asks for "a fundamental reimagining of what sport is for, and who it belongs to", while Mill exposes the belief that "the tree grows of itself in the way they have made it grow". The modern writer wants a fairer share for women in sport; Mill wants his readers to see that what they think they know about women may be wrong.`,
             },
-            markScheme: [
-              'Compares attitudes from both texts with clear cross-referencing',
-              'Analyses methods of presentation in both sources',
-              'Uses evidence from both sources to support comparisons',
-              'Shows sustained comparative analysis throughout',
-              'Top band: sophisticated, evaluative comparison with conceptualised understanding',
-            ],
+            markScheme: {
+              'How it is marked (10 marks)': Q1_6_MARKING,
+              'Points you might make': [
+                `Both say inequality is made, not natural: an assumption "absorbed" from a culture (Source A); "an eminently artificial thing" (Source B).`,
+                "Scope: one area of modern life, with practical examples and figures (Source A); women's whole position in society, argued in general terms (Source B).",
+                `Methods: anecdote, statistics, testimony and the inclusive "We assume" (Source A); logical argument, an answered objection and an extended garden metaphor (Source B).`,
+                'Tone: frustrated but measured (Source A); formal, then scornful (Source B).',
+                'Both end by asking readers to change how they think: about who sport belongs to (Source A); about what is natural (Source B).',
+              ],
+            },
           },
         ],
       },
       {
         id: 'wjec-c2-05-writing',
         title: 'Section B: Writing',
-        description:
-          'In this section you will be assessed for the quality of your writing skills.\n\nFor each task, 12 marks are awarded for communication and organisation; 8 marks are awarded for writing accurately.',
+        description: SECTION_B_GUIDANCE,
         totalMarks: 40,
         suggestedTimeMinutes: 60,
         questions: [
           {
-            id: 'wjec-c2-05-q5',
-            questionNumber: 5,
-            questionText:
-              "Your school is organising an event to celebrate International Women's Day.\n\nWrite a leaflet to encourage students to attend the event and to explain why it matters.\n\nYou should write between one and two pages.\n\n(12 marks for communication and organisation / 4 marks for writing accurately)",
-            marks: 16,
-            suggestedTimeMinutes: 20,
+            id: 'wjec-c2-05-q7',
+            questionNumber: 1,
+            label: '2.1',
+            questionText: `Your school is holding an event to celebrate International Women's Day.\n\nWrite the text for a leaflet encouraging students to attend, and explaining why the day matters. [20]`,
+            marks: 20,
+            suggestedTimeMinutes: 30,
             questionType: 'transactional-writing',
             modelAnswers: {
-              'Grade 4-5':
-                'A clear leaflet with: appropriate form (headings, subheadings, direct address); informative and persuasive content; generally accurate SPaG.',
-              'Grade 6-7':
-                'A well-designed leaflet with: effective combination of information and persuasion; engaging tone appropriate for students; varied sentence structures; consistent accuracy.',
-              'Grade 8-9':
-                'An outstanding leaflet with: sophisticated balance of practicality and principle; compelling voice that avoids condescension; precise and varied language; flawless technical accuracy.',
+              'Grade 8-9': `Celebrate International Women's Day with us\n\n8 March, in the school hall, from 12.30 to 2.30\nFree entry. Everyone welcome.\n\nWhat is International Women's Day?\nEvery year on 8 March, people around the world celebrate the achievements of women and girls, and think about how much is still to be done to make life fairer. This year our school is joining in, and we want you to be part of it.\n\nWhat is happening?\n• Inspiring speakers. Three women who grew up in our town, a firefighter, an engineer and the owner of a local bakery, will talk about their careers and answer your questions.\n• Have a go. Try coding, bridge-building and first aid in hands-on workshops run by the science and technology departments.\n• Wall of fame. Add the name of a woman who inspires you, from your own family or from history, to our giant display.\n• Music and food. The school band will play, and the Year 10 enterprise group will sell homemade cakes, with all profits going to a local charity that helps women back into work.\n\nWhy does it matter?\nYou might think that girls and boys already have the same chances. In many ways, their chances are more equal than ever before. But women are still less likely to reach the top jobs in many careers, and girls are still told, sometimes without anyone meaning it, that some subjects or sports are not for them. A day like this is a chance to notice those messages, and to question them.\n\nIt is not just for girls\nInternational Women's Day is not about one group against another. Fairness benefits everyone, and many of the strongest supporters of equality are men and boys. Bring your friends, your questions and your ideas.\n\nCome along\nPick up a free ticket from the library, or sign up with your form tutor by Wednesday. We look forward to seeing you there.\n\nOrganised by the Student Council`,
             },
-            markScheme: [
-              'Communication & Organisation (12 marks): Appropriate form and register; informative and persuasive purpose; effective layout; audience awareness',
-              'Writing Accurately (4 marks): Sentence variety; vocabulary; spelling and punctuation',
-            ],
+            markScheme: {
+              'How it is marked (20 marks)': WRITING_MARKING,
+              'What earns marks in this task': [
+                'The features of a leaflet: a heading, clear subheadings, and key details (when, where, how to take part) that are easy to find.',
+                'A friendly, encouraging tone for fellow students.',
+                'Both purposes covered: persuading students to come, and explaining why the day matters, with developed reasons.',
+                'Accurate spelling, punctuation and grammar, with varied sentences and well-chosen words: 8 of the 20 marks are for this.',
+              ],
+            },
           },
           {
-            id: 'wjec-c2-05-q6',
-            questionNumber: 6,
-            questionText:
-              '"True equality between men and women has already been achieved. There is nothing left to fight for."\n\nWrite an article for a newspaper arguing your point of view on this statement.\n\nYou should write between two and three pages.\n\n(16 marks for communication and organisation / 8 marks for writing accurately)',
-            marks: 24,
-            suggestedTimeMinutes: 40,
+            id: 'wjec-c2-05-q8',
+            questionNumber: 2,
+            label: '2.2',
+            questionText: `"True equality between men and women has already been achieved. There is nothing left to fight for."\n\nWrite an article for a newspaper giving your views on this statement. [20]`,
+            marks: 20,
+            suggestedTimeMinutes: 30,
             questionType: 'transactional-writing',
             modelAnswers: {
-              'Grade 4-5':
-                'A clear article with: recognisable article conventions; a range of relevant points with examples; generally accurate writing.',
-              'Grade 6-7':
-                'A well-crafted article with: engaging headline and structure; balanced argument with specific evidence; effective rhetorical techniques; consistent accuracy.',
-              'Grade 8-9':
-                'An outstanding article with: authoritative journalistic voice; sophisticated argument that examines the definition of equality; original examples drawn from multiple domains; technical mastery throughout.',
+              'Grade 8-9': `Equality achieved? Not yet\n\nIt is easy to see why some people believe that the fight for equality between men and women is over. My grandmother was expected to give up her job when she married. My mother was one of only three girls in her physics class. I, on the other hand, have grown up being told that I can do anything. Women vote, run companies, lead governments and win Olympic medals. Surely, the argument goes, there is nothing left to fight for.\n\nI disagree. Enormous progress has been made, and we should celebrate it. But progress is not the same as arrival.\n\nLook first at money. Across the economy, women still earn less than men on average, partly because the jobs most often done by women, such as caring and cleaning, are among the lowest paid. Look next at time. In many households, women still do most of the cooking, cleaning and looking after children, even when both parents work full time. And look at who holds power. Despite the famous exceptions, most of the people running the largest businesses are still men.\n\nThen there are the problems that numbers cannot capture. Girls are still more likely to be judged on their appearance. Women's sport still receives a fraction of the attention given to men's. Many women still change their route home, or their plans, because they do not feel safe. None of this is written in law, but all of it shapes women's lives.\n\nEquality is not only about women, either. Boys and men are harmed by the old assumptions too: the idea that they should hide their feelings, or that caring for children is not really their job.\n\nSo what is left to fight for? Fair pay, shared responsibilities at home, safety, and the freedom for every person to be judged on who they are rather than on whether they are male or female. That is a great deal. The work begun by our grandmothers is not finished, and it is up to our generation to complete it.`,
             },
-            markScheme: [
-              'Communication & Organisation (16 marks): Purpose, audience, form; quality of argument; structural effectiveness; persuasive/rhetorical skill',
-              'Writing Accurately (8 marks): Sentence construction; vocabulary range and precision; spelling, punctuation, grammar',
-            ],
+            markScheme: {
+              'How it is marked (20 marks)': WRITING_MARKING,
+              'What earns marks in this task': [
+                'The features of a newspaper article: a headline, an opening that engages the reader, and paragraphs that develop an argument to a clear conclusion.',
+                'A tone that suits adult newspaper readers: thoughtful and persuasive, firm but fair.',
+                'A clear view on the statement, developed with reasons and examples, which recognises the progress already made.',
+                'Accurate spelling, punctuation and grammar, with varied sentences and well-chosen words: 8 of the 20 marks are for this.',
+              ],
+            },
           },
         ],
       },

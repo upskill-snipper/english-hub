@@ -153,7 +153,7 @@ export default function CommonErrorFixerPage() {
           gameId="common-error-fixer"
           audience="eal"
           title="Fix the Common Mistake"
-          description="Each sentence has one typical English mistake. Choose the corrected version. Everyone makes these. Spotting them is how we improve."
+          description="Each sentence has one typical English mistake, and the hardest have two. Choose the corrected version. Everyone makes these. Spotting them is how we improve."
           difficulty="Crossover"
           score={score}
           maxScore={totalAnswered || items.length || ROUND_SIZE}
@@ -165,26 +165,39 @@ export default function CommonErrorFixerPage() {
           {currentItem && (
             <div className="space-y-6">
               {/* Progress */}
-              <div className="flex items-center justify-between text-sm text-muted-foreground">
+              <div className="flex flex-wrap items-center justify-between gap-x-4 gap-y-1 text-sm text-muted-foreground">
                 <span>
                   Sentence {qIdx + 1} of {items.length}
                 </span>
-                <div className="flex items-center gap-3">
+                <div className="flex flex-wrap items-center justify-end gap-3">
                   <span>{accuracyPct}% accuracy</span>
-                  <span className="text-xs px-2 py-0.5 rounded-full border text-clay-600 border-amber-500/30 bg-amber-500/10">
-                    {currentItem.errorType}
-                  </span>
+                  {/* The error type names the rule, so it shows only once the
+                      answer is in (24 October 2026). */}
+                  {feedback && (
+                    <span className="text-xs px-2 py-0.5 rounded-full border text-clay-600 border-amber-500/30 bg-amber-500/10">
+                      {currentItem.kinds
+                        ? [...new Set(currentItem.kinds)].join(' and ')
+                        : currentItem.errorType}
+                    </span>
+                  )}
                 </div>
               </div>
 
               {/* Sentence with the mistake */}
               <div className="rounded-xl border border-border bg-card p-6 text-center space-y-2">
                 <p className="text-xs uppercase tracking-wider text-muted-foreground">
-                  This sentence has one mistake
+                  {currentItem.kinds
+                    ? 'There are two mistakes here'
+                    : 'This sentence has one mistake'}
                 </p>
                 <p className="text-lg font-medium text-foreground">
                   &ldquo;{currentItem.wrong}&rdquo;
                 </p>
+                {currentItem.source && (
+                  <p className="text-xs text-muted-foreground">
+                    A real line from {currentItem.source}, with two mistakes put in.
+                  </p>
+                )}
                 <p className="text-sm text-muted-foreground">Which version is correct?</p>
               </div>
 

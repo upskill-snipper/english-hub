@@ -16,11 +16,14 @@ import { BANK, type Question } from '@/data/games/banks/prepositions-of-place'
 // ─── Data ──────────────────────────────────────────────────────────────────────
 // The questions are in src/data/games/banks/prepositions-of-place.ts (moved there
 // on 16 October 2026), and the explanation for each in
-// src/data/games/explanations/prepositions-of-place.ts.
+// src/data/games/explanations/prepositions-of-place.ts. Since 24 October 2026 a
+// question has three or four options, and the top tier asks for the preposition
+// after a word ("interested in", "arrive at"), in a fixed phrase, or in a
+// two-line dialogue, whose scene holds a line break.
 
 // ─── Helpers ───────────────────────────────────────────────────────────────────
 
-function shuffle<T>(arr: T[]): T[] {
+function shuffle<T>(arr: readonly T[]): T[] {
   const a = [...arr]
   for (let i = a.length - 1; i > 0; i--) {
     const j = Math.floor(Math.random() * (i + 1))
@@ -52,7 +55,7 @@ export default function PrepositionsOfPlacePage() {
   const handleStart = useCallback(() => {
     const picked = deal(ROUND_SIZE).map((q) => ({
       ...q,
-      options: shuffle(q.options) as [string, string, string, string],
+      options: shuffle(q.options),
     }))
     setQuestions(picked)
     setQIdx(0)
@@ -130,7 +133,7 @@ export default function PrepositionsOfPlacePage() {
           gameId="prepositions-of-place"
           audience="eal"
           title="Where Is It?"
-          description="Read each short scene and choose the correct preposition of place or time. There are 15 questions per round."
+          description="Read each short scene or dialogue and choose the preposition that fits: of place, of time, after a word like 'interested', or in a phrase like 'by chance'. There are 15 questions per round."
           difficulty="Crossover"
           score={score}
           maxScore={totalAnswered || questions.length || ROUND_SIZE}
@@ -154,7 +157,8 @@ export default function PrepositionsOfPlacePage() {
                 <div className="inline-flex items-center gap-2 rounded-full border border-primary/30 bg-primary/10 px-3 py-1 text-xs font-semibold text-primary">
                   <MapPin className="size-3.5" /> Choose the best word
                 </div>
-                <p className="text-xl font-medium leading-relaxed text-foreground">
+                {/* A dialogue's two turns are on two lines (24 October 2026). */}
+                <p className="whitespace-pre-line text-xl font-medium leading-relaxed text-foreground">
                   {currentQuestion.scene}
                 </p>
               </div>

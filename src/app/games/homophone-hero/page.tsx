@@ -1,6 +1,6 @@
 'use client'
 
-import { useState, useCallback, useEffect } from 'react'
+import { useState, useCallback, useEffect, Fragment } from 'react'
 import Link from 'next/link'
 import GameShell, { type GameState } from '@/components/games/GameShell'
 import { Button } from '@/components/ui/button'
@@ -11,7 +11,7 @@ import { getBoardConfig } from '@/lib/board/board-store'
 import { AnswerExplanation } from '@/components/games/AnswerExplanation'
 import { useGameRound } from '@/components/games/game-round'
 import { useDealer } from '@/lib/games/start-round'
-import { BANK, type HomophoneItem } from '@/data/games/banks/homophone-hero'
+import { BANK, GAP_JOIN, type HomophoneItem } from '@/data/games/banks/homophone-hero'
 
 // ─── Data ──────────────────────────────────────────────────────────────────────
 // The questions are in src/data/games/banks/homophone-hero.ts (moved there on
@@ -31,22 +31,35 @@ function shuffle<T>(arr: T[]): T[] {
   return a
 }
 
+/**
+ * The sentence with its gaps, filled with the chosen words once answered.
+ *
+ * Since 24 October 2026 a sentence may have two gaps
+ * (src/data/games/banks/homophone-hero.ts): each option then names the words
+ * for both, in order, joined by GAP_JOIN, and each gap shows its own word.
+ */
 function renderSentence(sentence: string, filled: string | null): React.ReactNode {
   const parts = sentence.split('___')
+  const words = filled ? filled.split(GAP_JOIN) : []
   return (
     <>
-      {parts[0]}
-      <span
-        className={cn(
-          'mx-1 inline-block min-w-[3.5rem] rounded-md border-b-2 px-2 text-center font-bold',
-          filled
-            ? 'border-primary text-primary'
-            : 'border-dashed border-muted-foreground text-muted-foreground',
-        )}
-      >
-        {filled ?? '?'}
-      </span>
-      {parts[1]}
+      {parts.map((part, i) => (
+        <Fragment key={i}>
+          {part}
+          {i < parts.length - 1 && (
+            <span
+              className={cn(
+                'mx-1 inline-block min-w-[3.5rem] rounded-md border-b-2 px-2 text-center font-bold',
+                filled
+                  ? 'border-primary text-primary'
+                  : 'border-dashed border-muted-foreground text-muted-foreground',
+              )}
+            >
+              {words[i] ?? '?'}
+            </span>
+          )}
+        </Fragment>
+      ))}
     </>
   )
 }
@@ -69,6 +82,7 @@ export default function HomophoneHeroPage() {
   const deal = useDealer(BANK)
 
   const current = items[idx] ?? null
+  const twoGaps = !!current && current.sentence.split('___').length > 2
 
   // Reshuffle option order each time the item changes
   useEffect(() => {
@@ -150,7 +164,7 @@ export default function HomophoneHeroPage() {
           gameId="homophone-hero"
           audience="ks3"
           title="Homophone Hero"
-          description="Read each sentence and choose the homophone that fits the gap. Watch the tips to become a homophone hero."
+          description="Read each sentence and choose the word that fits the gap, or the pair of words that fills two gaps. The game uses British spelling."
           difficulty="Crossover"
           score={score}
           maxScore={totalAnswered || items.length || ROUND_SIZE}
@@ -169,15 +183,32 @@ export default function HomophoneHeroPage() {
                 <span>{accuracyPct}% accuracy</span>
               </div>
 
-              {/* Sentence card */}
+              {/* Sentence card, with where a real line comes from */}
               <div className="rounded-xl border border-border bg-card p-6 text-center">
                 <p className="text-lg leading-relaxed text-foreground">
                   {renderSentence(current.sentence, feedback ? selected : null)}
                 </p>
+                {current.source && (
+                  <p className="mt-3 text-xs text-muted-foreground">From {current.source}</p>
+                )}
               </div>
+              {twoGaps && (
+                <p className="text-center text-sm text-muted-foreground">
+                  Two gaps: each choice fills both, in order.
+                </p>
+              )}
 
               {/* Options */}
-              <div className="grid grid-cols-2 gap-3 sm:grid-cols-3">
+              <div
+                className={cn(
+                  'grid gap-3',
+                  twoGaps
+                    ? 'grid-cols-1 sm:grid-cols-2'
+                    : optionOrder.length === 4
+                      ? 'grid-cols-2'
+                      : 'grid-cols-2 sm:grid-cols-3',
+                )}
+              >
                 {optionOrder.map((option) => {
                   const isAnswer = option === current.answer
                   const isPicked = option === selected

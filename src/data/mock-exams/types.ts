@@ -34,6 +34,15 @@ export type QuestionType =
 export interface MockExamQuestion {
   id: string
   questionNumber: number
+  /**
+   * The board's own number for the question where it is not a plain number:
+   * "1.1" (Eduqas Component 2), "7(a)" (Pearson Paper 2), "Q5 or Q6". Shown in
+   * place of questionNumber; questionNumber still decides which marker
+   * question an answer goes to (src/lib/marking/essay-feedback-targets.ts).
+   * Added 24 October 2026, when the Language mocks were restructured to their
+   * boards' real papers.
+   */
+  label?: string
   questionText: string
   marks: number
   suggestedTimeMinutes: number

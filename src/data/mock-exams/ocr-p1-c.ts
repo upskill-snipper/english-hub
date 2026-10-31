@@ -2,6 +2,130 @@
 import type { MockExamPaper } from './types'
 
 /**
+ * OCR GCSE English Language, Component 01 (J351/01), Communicating Information
+ * and Ideas: mock papers 11 to 15, each set as OCR sets the paper.
+ *
+ * RESTRUCTURED TO OCR'S PAPER (24 October 2026).
+ *
+ * WHAT WAS WRONG. These papers set questions worth 4, 8, 12, 16 and 40, and
+ * marked the writing 32 for content and 8 for accuracy. OCR's Component 01 is
+ * Question 1 for 4, Question 2 for 6, Question 3 for 12 and Question 4 for 18,
+ * then Question 5 or Question 6, one task of the candidate's choice, for 40
+ * (content and organisation 24, technical accuracy 16): the guide
+ * src/data/mark-scheme-guides/ocr-lang-component01.ts, checked twice against
+ * OCR's June 2024 mark scheme, its specification and its sample paper. A
+ * student sat a paper that does not exist, and an answer to Question 2 or 4
+ * sent to the marker found no question of its worth, so it got general
+ * feedback with no marks (src/__tests__/a-language-mock-is-the-boards-
+ * paper.test.ts). The tasks were not OCR's either: Questions 1 to 3 were all
+ * on the present-day text, so the nineteenth-century text was read only for
+ * the comparison, where OCR sets Question 2 on both texts and Question 3 on the
+ * second; Question 2 asked for analysis, where OCR's brings the two texts
+ * together (synthesis, AO1, no marks for analysis); Question 4 asked only for
+ * a comparison, where OCR's sets a statement about both texts to evaluate
+ * (AO4, 12) as well as to compare (AO3, 6); and there was one writing task,
+ * not a choice of two.
+ *
+ * WHAT WAS DONE.
+ *   - The texts are unchanged, and below as they were: each paper's
+ *     present-day article, labelled as specially written, is now Text 1, and
+ *     its genuine nineteenth-century passage is Text 2. One from each century
+ *     is what OCR sets.
+ *   - The questions are OCR's, in OCR's order, worth what OCR's are: Question
+ *     1, 4 marks in parts on one paragraph of Text 1; Question 2, 6 marks, what
+ *     the two texts share; Question 3, 12 marks, language and structure in
+ *     Text 2; Question 4, 18 marks, a statement about both texts to evaluate
+ *     and compare; and Questions 5 and 6 as one entry worth 40 with both tasks,
+ *     labelled "Q5 or Q6" (questionNumber 5 is what reaches the marker's
+ *     'Q5/Q6'). Questions name paragraphs, never line numbers, because the
+ *     mock page prints each text as wrapped prose. Times are OCR's advice, an
+ *     hour a section; each question's minutes are the guide's suggestion.
+ *   - Each question has a mark scheme in this site's words, from the guide's
+ *     account of what earns marks, and each worth 6 or more one strong model
+ *     answer. Every quotation in them was checked against the texts by script.
+ *     The September review's corrections were kept in view: the Dickens
+ *     passage is about emigrants leaving England, Dickens is surprised rather
+ *     than reluctant, and the Kingsley essay is not dated to 1874.
+ *   - Question 1 prints both texts, since the mock page shows the texts of a
+ *     section's first question.
+ *
+ * CORRECTED 31 OCTOBER 2026. Paper 12's Text 1, written for this bank, said
+ * that "Last year, a research team in China" edited human embryos "to enhance
+ * cognitive function", and that governments held emergency meetings. No such
+ * announcement is known. The case the world knows is a Chinese scientist's of
+ * 2018, which aimed at resistance to HIV, and for which a court in Shenzhen
+ * jailed him in 2019; the sentence now says that, which keeps the article's
+ * point (an edit that cured nothing). No question or answer rests on it.
+ *
+ * CHECKED BY A SECOND READER, 31 OCTOBER 2026, against each pair of texts,
+ * their Gutenberg sources, the guide, and OCR's own papers (the J351/01 sample
+ * paper and the 2022 paper). Paper 12's corrected sentence was checked again
+ * and is true: the 2018 announcement of twins born from embryos edited for
+ * resistance to HIV, which they did not have, and the prison sentence a
+ * Shenzhen court passed in December 2019. Fixed, one entry each:
+ *   - All five, board wording: Questions 2 to 4 ended on OCR's sentences
+ *     ("explain the impact of these ideas on you as a reader", "support your
+ *     response with quotations from both texts", "referring to the text, using
+ *     relevant subject terminology"), and Question 2 began on AQA's "Use
+ *     details from both sources"; they now ask the same in this site's words.
+ *     Question 4 still opened on OCR's "How far do you agree with this
+ *     statement?"; it now reads as papers 01 to 10 do ("Decide how far you
+ *     agree with this view.", "In your answer:"), 31 October 2026.
+ *   - All five, style: each Text 1, written for this bank, used dashes as
+ *     punctuation; now brackets, commas or colons, with no word changed.
+ *   - 14, Text 1, untrue claim: "When the government announced last year" a
+ *     cut of "a further fifteen percent", which no government announced; now
+ *     the writer's local council, unnamed. Question 1's opening words and two
+ *     answers' "government" changed to match.
+ *   - 11, Q2: "healthy and good" (Text 1 never asks sport to make anyone good)
+ *     and "both distrust the idea that winning is the point" (Kingsley never
+ *     mentions winning); now "good for young people" and "neither writer makes
+ *     winning the point".
+ *   - 11, Q3: the list of reasons put in "the next sentence" (it is in the one
+ *     "But if the proposal" opens); a list said to build towards a virtue that
+ *     is not its last; "maimed" called the final word (it is "partial").
+ *   - 11, Q4: "Sport is" an industry built on exclusion (the text says elite
+ *     sport); Kingsley "speaks for" the public school (he cites it); "At
+ *     sixteen, they are dropped" offered as a short sentence (it runs to
+ *     nineteen words); elite sport "makes most young people stop" (they are
+ *     "discarded").
+ *   - 12, Q2: the scientists' hope that "no child is born to suffer" credited
+ *     to the writer; the ethical worry about "the very heart of what it means
+ *     to be human" used, in answer and mark scheme, as science's good; "short,
+ *     striking fragments" analysed where analysis earns nothing. The link is
+ *     now good that goes unnoticed.
+ *   - 12, Q3: the spinning jenny and steam pump called "the inventions of the
+ *     present" (neither was new in 1866).
+ *   - 13, Q2: Hill's remedy, "individual influence", given as an effect of bad
+ *     housing, in answer and mark scheme; the link is now how secure a home is.
+ *   - 13, Q3: the landlord's reply called "quoted directly" (it is reported
+ *     speech in quotation marks); the paragraph said to open with what are its
+ *     second and third sentences.
+ *   - 13, Q4: boys at a dust-bin "accessible to the whole neighborhood" counted
+ *     as tenants (removed); the comparison note's "call to change the law",
+ *     which Text 1 never makes, is now its call to treat housing as a right.
+ *   - 13, writing model: four towns named, "five towns" at the end; now four.
+ *   - 14, Q1(c): the mark scheme refused the answer that people did not care,
+ *     which "silence" and "shrug" show; now accepted. A stray "(1)" removed.
+ *   - 14, Q2: the cultural sector's "irreplaceable value of the arts" credited
+ *     to the writer; "their funding" for arts funding.
+ *   - 14, Q3: Ruskin's "your harbours and railroads" made Manchester's "own
+ *     docks", which it did not have until 1894; a clause that runs on past a
+ *     colon called a sentence.
+ *   - 14, Q4: "economically illiterate" said of the cut (the text says it of
+ *     the view that art is a luxury); "Every child deserves that discovery"
+ *     called direct address (it has no "you"); the mark scheme's "opens with
+ *     figures" (they come in the second paragraph).
+ *   - 15, Q2: both parents said to run the firm (the father does; the mother
+ *     is a ward sister).
+ *   - 15, Q3 and Q4: the family, not its children, made "a nest" in the rope;
+ *     the reader said not to learn who the emigrants are until the end, when
+ *     the label names them (now: Dickens names them last); and in Q4 they were
+ *     "hard-working", which Text 2 does not show.
+ *
+ * The September notes that follow are kept for the history of the texts. The
+ * questions and answers they discuss were all replaced on 24 October 2026.
+ *
  * WHAT WAS WRONG (found 26 September 2026 by
  * scripts/check-mock-exam-extracts.mjs; corrected 27 September 2026).
  *
@@ -89,13 +213,13 @@ import type { MockExamPaper } from './types'
 // ─── Source Extracts ─────────────────────────────────────────────────────────
 
 // Exam 11 - Sport & Competition
-const SPORT_SOURCE_A = `There is something profoundly dishonest about the way we talk about sport in this country. We dress it up in the language of aspiration and togetherness - "inspiring a generation", "bringing the nation together" - while ignoring the uncomfortable reality that elite sport is, at its core, an industry built on exclusion. For every child who makes it to a national squad, thousands are discarded along the way, their confidence shattered by a system that measures human worth in hundredths of a second.
+const SPORT_SOURCE_A = `There is something profoundly dishonest about the way we talk about sport in this country. We dress it up in the language of aspiration and togetherness ("inspiring a generation", "bringing the nation together") while ignoring the uncomfortable reality that elite sport is, at its core, an industry built on exclusion. For every child who makes it to a national squad, thousands are discarded along the way, their confidence shattered by a system that measures human worth in hundredths of a second.
 
 I have spent twenty years coaching young athletes, and I have watched the system consume them. At fourteen, they are told they are special. At sixteen, they are dropped from programmes with a form letter and a suggestion to "keep enjoying sport recreationally". The psychological damage this inflicts is rarely discussed. We prefer the medal ceremonies, the tearful interviews, the narrative of triumph against adversity. We do not talk about the eighteen-year-old gymnast who cannot eat without anxiety, or the swimmer who has not had a single weekend free since she was eleven.
 
 The funding model makes this worse. Since the introduction of National Lottery funding in 1997, British sport has operated on a ruthless "no compromise" approach: money flows to sports and athletes most likely to win medals. This has been spectacularly successful in terms of Olympic performance. But success measured purely in gold medals tells us nothing about whether sport is actually improving the health and wellbeing of the population. Grassroots sports facilities continue to close at an alarming rate. School playing fields are sold to developers. Community swimming pools operate on skeleton budgets.
 
-We need an honest conversation about what sport is for. If the answer is simply "winning", then let us at least be truthful about the human cost. If the answer is something broader - health, community, joy - then we must fundamentally rethink how we fund and organise it.`
+We need an honest conversation about what sport is for. If the answer is simply "winning", then let us at least be truthful about the human cost. If the answer is something broader (health, community, joy), then we must fundamentally rethink how we fund and organise it.`
 
 const SPORT_SOURCE_A_REF =
   'Specially written for this practice paper: an opinion article, "The Medal Factory", under the invented byline Rachel Okonkwo'
@@ -108,9 +232,9 @@ const SPORT_SOURCE_B_REF =
   'Charles Kingsley, "Nausicaa in London: or, The Lower Education of Woman", from Health and Education (London: W. Isbister, 1874), on the proposal to educate girls as boys are educated'
 
 // Exam 12 - Science & Discovery
-const SCIENCE_SOURCE_A = `We are living through the greatest revolution in biological science since Darwin, and almost nobody is paying attention. The development of CRISPR gene-editing technology - which allows scientists to alter DNA with unprecedented precision - has moved from laboratory curiosity to practical reality in less than a decade. Crops that resist drought. Mosquitoes engineered to stop spreading malaria. The potential elimination of inherited diseases that have caused suffering for millennia. The possibilities are extraordinary.
+const SCIENCE_SOURCE_A = `We are living through the greatest revolution in biological science since Darwin, and almost nobody is paying attention. The development of CRISPR gene-editing technology, which allows scientists to alter DNA with unprecedented precision, has moved from laboratory curiosity to practical reality in less than a decade. Crops that resist drought. Mosquitoes engineered to stop spreading malaria. The potential elimination of inherited diseases that have caused suffering for millennia. The possibilities are extraordinary.
 
-They are also terrifying. Last year, a research team in China announced it had edited the genes of human embryos - not to cure disease, but to enhance cognitive function. The scientific community reacted with horror. Regulatory bodies issued stern statements. Governments held emergency meetings. And then, as is the way with these things, the news cycle moved on and we forgot about it.
+They are also terrifying. In 2018, a scientist in China announced that he had edited the genes of human embryos, not to cure a disease the babies had, but to protect them against one they might never catch. The scientific community reacted with horror. Regulators issued stern statements. A Chinese court sent him to prison. And then, as is the way with these things, the news cycle moved on and we forgot about it.
 
 We cannot afford to forget. Gene editing raises questions that go to the very heart of what it means to be human. If we can eliminate genetic predispositions to depression, should we? If we can engineer children who are taller, stronger, more intelligent, will we create a society divided not merely by wealth but by biology? Who decides which traits are "defects" to be corrected and which are variations to be celebrated?
 
@@ -132,11 +256,11 @@ const SCIENCE_SOURCE_B_REF =
 // Exam 13 - Housing
 const HOUSING_SOURCE_A = `I moved seven times before my eighteenth birthday. Not because my parents were restless or adventurous, but because that is what happens when you rent in modern Britain. Each time, the pattern was the same: a letter from the letting agent, a scramble to find somewhere affordable, the grim ritual of packing boxes while my mother tried to pretend it was an adventure. "Think of it as a fresh start," she would say, taping shut a box of kitchen things. I learned not to make close friends with the neighbours.
 
-The housing crisis in this country is not a natural disaster. It is a political choice. Since the Right to Buy scheme was introduced in 1980, local authority housing stock has declined by over two million homes. Private rents have risen by 60% in the last decade alone. A generation of young people - my generation - has been locked out of home ownership entirely, condemned to spend a third of their income enriching landlords while being told that if they just stopped buying coffee and avocados they could afford a deposit.
+The housing crisis in this country is not a natural disaster. It is a political choice. Since the Right to Buy scheme was introduced in 1980, local authority housing stock has declined by over two million homes. Private rents have risen by 60% in the last decade alone. A generation of young people, my generation, has been locked out of home ownership entirely, condemned to spend a third of their income enriching landlords while being told that if they just stopped buying coffee and avocados they could afford a deposit.
 
 The human cost is staggering. Research by Shelter found that over a million children in England are living in unsuitable housing: damp, overcrowded, temporary. These children are more likely to suffer from respiratory illness, more likely to struggle at school, more likely to experience mental health problems. We know this. The evidence has been available for decades. And yet the construction of social housing remains at historically low levels.
 
-Housing is not a luxury. It is the foundation upon which everything else is built - education, health, employment, family life. Until we treat it as a right rather than a commodity, nothing will change.`
+Housing is not a luxury. It is the foundation upon which everything else is built: education, health, employment, family life. Until we treat it as a right rather than a commodity, nothing will change.`
 
 const HOUSING_SOURCE_A_REF =
   'Specially written for this practice paper: an opinion article, "Generation Rent", under the invented byline Aisha Patel'
@@ -152,13 +276,13 @@ const HOUSING_SOURCE_B_REF =
   'Octavia Hill, housing reformer, "Organized Work among the Poor: Suggestions Founded on Four Years\' Management of a London Court" (July 1869), from Homes of the London Poor (New York, 1875)'
 
 // Exam 14 - Arts & Culture
-const ARTS_SOURCE_A = `When the government announced last year that arts funding would be cut by a further fifteen percent, the response from the cultural sector was predictable: outrage, open letters, impassioned speeches about the irreplaceable value of the arts. What was more revealing was the response from everybody else. There was, overwhelmingly, silence. A collective shrug. The sense that, in times of economic difficulty, art is a luxury we can no longer afford.
+const ARTS_SOURCE_A = `When my local council announced last year that its arts funding would be cut by a further fifteen percent, the response from the cultural sector was predictable: outrage, open letters, impassioned speeches about the irreplaceable value of the arts. What was more revealing was the response from everybody else. There was, overwhelmingly, silence. A collective shrug. The sense that, in times of economic difficulty, art is a luxury we can no longer afford.
 
-This attitude is not merely wrong. It is economically illiterate. The creative industries contribute over £115 billion annually to the UK economy - more than the automotive, aerospace, and life sciences sectors combined. For every pound of public money invested in the arts, an estimated five pounds is generated in economic return. To cut arts funding in the name of fiscal responsibility is like burning your furniture to save on heating bills: it produces a brief warmth followed by a much longer cold.
+This attitude is not merely wrong. It is economically illiterate. The creative industries contribute over £115 billion annually to the UK economy, more than the automotive, aerospace, and life sciences sectors combined. For every pound of public money invested in the arts, an estimated five pounds is generated in economic return. To cut arts funding in the name of fiscal responsibility is like burning your furniture to save on heating bills: it produces a brief warmth followed by a much longer cold.
 
-But the economic argument, powerful as it is, misses the deeper point. The arts are not valuable because they generate revenue. They are valuable because they make us human. A society without music, without theatre, without literature, without the visual arts, is not a society at all - it is merely a collection of individuals engaged in the business of survival. The arts give us a shared language for experiences that would otherwise remain private and incommunicable: grief, joy, love, rage, wonder, despair.
+But the economic argument, powerful as it is, misses the deeper point. The arts are not valuable because they generate revenue. They are valuable because they make us human. A society without music, without theatre, without literature, without the visual arts, is not a society at all: it is merely a collection of individuals engaged in the business of survival. The arts give us a shared language for experiences that would otherwise remain private and incommunicable: grief, joy, love, rage, wonder, despair.
 
-I grew up on a council estate in Salford. The local library saved my life - not metaphorically, but literally. The books I found there showed me that the world was larger than the four streets I knew, that other lives were possible, that imagination was not a weakness but a form of power. Every child deserves that discovery. To deny it to them because we cannot see its value on a spreadsheet is a failure not of economics but of imagination.`
+I grew up on a council estate in Salford. The local library saved my life: not metaphorically, but literally. The books I found there showed me that the world was larger than the four streets I knew, that other lives were possible, that imagination was not a weakness but a form of power. Every child deserves that discovery. To deny it to them because we cannot see its value on a spreadsheet is a failure not of economics but of imagination.`
 
 const ARTS_SOURCE_A_REF =
   'Specially written for this practice paper: an opinion article, "The Case for Culture", under the invented byline David Oyelaran'
@@ -176,9 +300,9 @@ const ARTS_SOURCE_B_REF =
 // Exam 15 - Immigration
 const IMMIGRATION_SOURCE_A = `My parents arrived in this country in 1998 with two suitcases, three hundred pounds, and a conviction that Britain was a place where hard work would be rewarded. Twenty-six years later, my father runs a small engineering firm that employs fourteen people. My mother is a ward sister at the local hospital, where she has worked for two decades. My brother is a solicitor. I am a teacher. Between us, we have paid more in taxes than I care to calculate.
 
-I mention this not because I believe immigrants should have to justify their existence through economic contribution - the idea that a human being's right to live in safety and dignity depends on their productivity is morally grotesque - but because the public conversation about immigration in this country has become so divorced from reality that basic facts need restating.
+I mention this not because I believe immigrants should have to justify their existence through economic contribution (the idea that a human being's right to live in safety and dignity depends on their productivity is morally grotesque), but because the public conversation about immigration in this country has become so divorced from reality that basic facts need restating.
 
-Net migration is not "out of control". The overwhelming majority of immigrants come to work, to study, or to join family members already here. They are younger, on average, than the existing population, which means they contribute more in taxes than they consume in public services. The NHS would collapse within weeks without immigrant workers. The care sector, the hospitality industry, agriculture, construction - these are not abstract economic categories. They are the essential services upon which all of our daily lives depend.
+Net migration is not "out of control". The overwhelming majority of immigrants come to work, to study, or to join family members already here. They are younger, on average, than the existing population, which means they contribute more in taxes than they consume in public services. The NHS would collapse within weeks without immigrant workers. The care sector, the hospitality industry, agriculture, construction: these are not abstract economic categories. They are the essential services upon which all of our daily lives depend.
 
 None of this means that immigration policy should not be debated, or that legitimate concerns about infrastructure and public services should be dismissed. But the debate must start from facts, not from the inflammatory headlines and misleading statistics that have poisoned public discourse for far too long. We deserve better than politicians who stoke fear for electoral advantage while quietly relying on immigrant labour to keep the country running.`
 
@@ -211,11 +335,74 @@ Eight hundred what? ‘Geese, villain?’ EIGHT HUNDRED MORMONS. I, Uncommercial
 const IMMIGRATION_SOURCE_B_REF =
   'Charles Dickens, "Bound for the Great Salt Lake" (1863), from The Uncommercial Traveller: Dickens goes aboard the Amazon, a ship in the London docks about to carry some eight hundred emigrants, converts to the Mormon church, to America'
 
-// ─── Exam Papers ─────────────────────────────────────────────────────────────
+// ─── Mark scheme levels ──────────────────────────────────────────────────────
+// In this site's words, from the guide's levels and its account of what earns
+// marks (src/data/mark-scheme-guides/ocr-lang-component01.ts). OCR's own
+// descriptors are its copyright and are not copied. Each question adds what
+// its own paper's texts give a student to say.
+
+const MARK_LEVELS_Q2 = [
+  'Level 3 (5-6 marks): connects the two texts confidently and in detail, with well-chosen evidence from both, and sees the ideas, attitudes or feelings they share as well as the surface facts.',
+  'Level 2 (3-4 marks): makes sensible connections between the texts with relevant evidence, though one text may get more attention than the other.',
+  'Level 1 (1-2 marks): picks out a few details, mostly obvious ones and often from one text, and does little to connect them.',
+  'Reward points that link the texts, each backed by evidence from both, and a fair balance between the two. There are no marks here for analysing language.',
+]
+
+const MARK_LEVELS_Q3 = [
+  'Level 6 (11-12 marks): detailed, subtle analysis of language and structure in every point, showing exactly how the writer steers the reader; subject terms are exact and strengthen the argument.',
+  'Level 5 (9-10 marks): analyses with insight, giving language and structure fairly even, detailed attention; terms fit naturally into the explanations.',
+  'Level 4 (7-8 marks): explains with understanding, and in some depth, what both the language and the structure do, though one may get more attention than the other.',
+  'Level 3 (5-6 marks): explains some effects clearly and mentions both language and structure, though one is explained less fully.',
+  'Level 2 (3-4 marks): notices some features but says much more about one of language or structure, and often names features without explaining them.',
+  'Level 1 (1-2 marks): mostly describes or retells the text, with little sense of how the writer creates effects.',
+  'An answer that leaves structure out, or adds one sentence about it at the end, cannot reach the higher levels. Reward short, precise quotations, each followed by what it suggests and how it affects the reader.',
+]
+
+const MARK_LEVELS_AO4 = [
+  'Level 6 (11-12 marks): judges the statement sharply and with balance from start to finish, explains fully how both texts work on the reader, and builds exactly the right quotations into the argument.',
+  'Level 5 (9-10 marks): weighs up the statement with care, explains clearly how the texts affect the reader, and chooses quotations that make the case convincing.',
+  'Level 4 (7-8 marks): develops its judgements on the statement, comments on the effect on the reader and chooses quotations well.',
+  'Level 3 (5-6 marks): makes clear judgements on the statement, with some sense of how the texts affect a reader and suitable quotations.',
+  'Level 2 (3-4 marks): gives simple judgements, notices a little of how the texts affect a reader, and uses some suitable quotations.',
+  'Level 1 (1-2 marks): mostly says what happens in the texts, by retelling or copying, with little real judgement.',
+  'The verdict may differ between the two texts. An answer that quotes from only one text cannot reach the higher levels.',
+]
+
+const MARK_LEVELS_AO3 = [
+  'Level 6 (6 marks): moves between the texts all the way through, exploring in detail what each writer thinks and how each one shows it.',
+  'Level 5 (5 marks): keeps the comparison going through the whole answer, covering both ideas and methods.',
+  'Level 4 (4 marks): develops the comparison of both what the writers think and how they show it.',
+  "Level 3 (3 marks): sets the writers' ideas side by side clearly, and begins to compare their methods.",
+  "Level 2 (2 marks): spots the main ways the writers' ideas and viewpoints are alike or different.",
+  'Level 1 (1 mark): notes one or two basic likenesses or differences.',
+  'Evaluation and comparison may be woven together all the way through. Writing about the texts separately, never linking them, earns very little of this mark.',
+]
+
+const MARK_LEVELS_AO5 = [
+  'Level 6 (21-24 marks): bends the form on purpose to influence the reader; bold, well-judged choices of tone and style drive the purpose; every part of the structure is controlled and used for effect.',
+  'Level 5 (17-20 marks): uses the form confidently, with a sure sense of reader and purpose; tone and style hold steady throughout; paragraphs and sentences are planned to do particular jobs.',
+  'Level 4 (13-16 marks): adapts the form clearly for the reader and purpose, with a suitable tone and style; well organised, and sometimes uses structure for effect.',
+  'Level 3 (9-12 marks): keeps to the form with audience and purpose in mind; the tone is right but slips at times; a clear overall shape, with paragraphs and links that mostly work.',
+  'Level 2 (5-8 marks): mostly keeps to a suitable form, tries for a fitting tone, and shows some organisation through paragraphs and links.',
+  'Level 1 (1-4 marks): makes some attempt at a suitable form, but does little to suit the tone to the reader, with little planned structure.',
+]
+
+const MARK_LEVELS_AO6 = [
+  'Level 4 (13-16 marks): bold, varied sentences give each idea its full force; punctuation is accurate and chosen for effect; vocabulary is precise, and even difficult words are spelt correctly, with only the very occasional slip.',
+  'Level 3 (9-12 marks): sentences are varied widely and on purpose; punctuation is accurate and makes the meaning clear; some ambitious words work well, with the odd slip on irregular or unusual spellings.',
+  'Level 2 (5-8 marks): different kinds of sentence, mostly correct and now and then used for effect; punctuation usually right; some words clearly chosen for effect; a few spelling slips, including on harder words.',
+  'Level 1 (1-4 marks): mostly simple sentences with some longer ones attempted; uneven punctuation; plain but relevant vocabulary; everyday words largely spelt correctly.',
+]
+
+const MARK_WRITING_NOTE =
+  'Both tasks are marked the same way, on two grids marked separately and added: AO5 for content and organisation (24) and AO6 for technical accuracy (16).'
+
+// ─── The papers ──────────────────────────────────────────────────────────────
+// In each, Text 1 is the paper's _SOURCE_A and Text 2 its _SOURCE_B.
 
 export const ocrP1C: MockExamPaper[] = [
   // ═══════════════════════════════════════════════════════════════════════════
-  // EXAM 11 - Sport & Competition
+  // EXAM 11: sport
   // ═══════════════════════════════════════════════════════════════════════════
   {
     id: 'ocr-p1-11',
@@ -230,102 +417,87 @@ export const ocrP1C: MockExamPaper[] = [
       {
         id: 'ocr-p1-11-reading',
         title: 'Section A: Reading',
-        description: `Read the two source texts carefully. Then answer all the questions in this section.\n\nSource A: ${SPORT_SOURCE_A_REF}\nSource B: ${SPORT_SOURCE_B_REF}`,
+        description: `Read the two texts below, then answer all four questions. You are advised to spend about one hour on this section, about 12 minutes of it reading the texts.\n\nText 1: ${SPORT_SOURCE_A_REF}\nText 2: ${SPORT_SOURCE_B_REF}`,
         totalMarks: 40,
         suggestedTimeMinutes: 60,
         questions: [
           {
             id: 'ocr-p1-11-q1',
             questionNumber: 1,
-            questionText:
-              'Read Source A. Identify four problems the writer describes with the current elite sport system in Britain.',
+            questionText: `Look again at the second paragraph of Text 1, from "I have spent twenty years" to "since she was eleven."\n\n(a) For how long has the writer coached young athletes? [1]\n\n(b) What happens to many young athletes at sixteen, according to the writer? Give two details. [2]\n\n(c) Identify one phrase that shows the harm the system can do to young athletes. [1]`,
             marks: 4,
             suggestedTimeMinutes: 5,
             questionType: 'short-answer',
-            extract: SPORT_SOURCE_A,
-            extractSource: SPORT_SOURCE_A_REF,
+            extract: `Text 1:\n${SPORT_SOURCE_A}\n\nText 2:\n${SPORT_SOURCE_B}`,
+            extractSource: `Text 1: ${SPORT_SOURCE_A_REF} | Text 2: ${SPORT_SOURCE_B_REF}`,
             modelAnswers: {
-              'Grade 4-5':
-                '1. Thousands of children are discarded from sport programmes. 2. Young athletes suffer psychological damage from being dropped. 3. Funding only goes to sports likely to win medals. 4. Grassroots sports facilities continue to close.',
+              'Grade 4-5': `(a) Twenty years.\n(b) They are dropped from their programmes, and they are sent a form letter.\n(c) "I have watched the system consume them".`,
             },
-            markScheme: ['1 mark per valid point identified from the text, maximum 4 marks'],
+            markScheme: [
+              '(a) 1 mark: twenty years.',
+              '(b) 1 mark each, up to 2, for: dropped from programmes; sent a form letter; told to "keep enjoying sport recreationally".',
+              '(c) 1 mark for any one of: "watched the system consume them"; "The psychological damage this inflicts"; the gymnast "who cannot eat without anxiety"; the swimmer who "has not had a single weekend free since she was eleven".',
+              'Every answer must come from the second paragraph of Text 1.',
+            ],
           },
           {
             id: 'ocr-p1-11-q2',
             questionNumber: 2,
-            questionText:
-              'Read Source A. How does the writer use evidence and examples to support her argument that the sport funding model is flawed? Use evidence from the text in your answer.',
-            marks: 8,
-            suggestedTimeMinutes: 10,
-            questionType: 'analysis',
-            extract: SPORT_SOURCE_A,
-            extractSource: SPORT_SOURCE_A_REF,
+            questionText: `What do the two writers believe sport should do for young people?\n\nAnswer by linking the two texts, and back each point with evidence from both.`,
+            marks: 6,
+            suggestedTimeMinutes: 8,
+            questionType: 'summary',
+            extract: `Text 1:\n${SPORT_SOURCE_A}\n\nText 2:\n${SPORT_SOURCE_B}`,
+            extractSource: `Text 1: ${SPORT_SOURCE_A_REF} | Text 2: ${SPORT_SOURCE_B_REF}`,
             modelAnswers: {
-              'Grade 4-5':
-                'The writer uses specific examples like the "eighteen-year-old gymnast who cannot eat without anxiety" and the "swimmer who has not had a single weekend free since she was eleven" to show the human cost. She also uses the date 1997 and the phrase "no compromise" to reference the actual funding model. These examples make her argument more convincing because they show real consequences.',
-              'Grade 6-7':
-                'Okonkwo builds a systematic case by layering different types of evidence. She begins with anecdotal experience - "I have spent twenty years coaching" - to establish authority, then moves to institutional critique with the specific reference to National Lottery funding since 1997. The juxtaposition of "spectacularly successful in terms of Olympic performance" with the decline of grassroots facilities creates a damning contrast. The unnamed athletes - the gymnast, the swimmer - function as representative figures, their anonymity suggesting these are not isolated cases but systemic consequences.',
-              'Grade 8-9':
-                'The writer deploys evidence strategically, moving from the personal to the systemic to create an argument of escalating force. Her twenty years of coaching experience is offered not as mere anecdote but as a foundation of authority from which to critique institutional practice. The specific date of 1997 and the quoted phrase "no compromise" serve a dual function: they lend factual weight while the scare quotes around the funding philosophy subtly reframe institutional language as an indictment. The contrast between the unnamed athletes of the second paragraph - "the eighteen-year-old gymnast", "the swimmer" - and the named policy of the third is rhetorically masterful: their anonymity transforms individual suffering into a systemic pattern. The paragraph structure itself mirrors the argument: the optimistic language of sport ("inspiring a generation") is systematically dismantled as each new piece of evidence reveals the gap between rhetoric and reality.',
+              'Grade 8-9': `Both writers believe that sport should be good for young people, not merely a route to success. The writer of Text 1 wants sport to serve "health, community, joy", and complains that "success measured purely in gold medals tells us nothing about whether sport is actually improving the health and wellbeing of the population". Kingsley agrees that "the games keep him in health for his work", and goes further: games "conduce, not merely to physical, but to moral health". Both writers also see sport as something that shapes how young people live with others. Kingsley lists "temper, self-restraint, fairness, honour, unenvious approbation of another's success", and the whole "give and take" of life; the writer of Text 1 wants "community" from sport, and laments that "Grassroots sports facilities continue to close" while money goes to a few medal hopes. Finally, neither writer makes winning the point. The modern writer attacks a system that "measures human worth in hundredths of a second", and Kingsley's list of virtues includes approving of "another's success", the opposite of a "no compromise" chase for medals.`,
             },
             markScheme: [
-              'Identifies specific evidence and examples used in the text',
-              'Explains how the evidence supports the argument',
-              'Analyses the effect of the evidence on the reader',
-              'Top band: detailed, perceptive analysis of how evidence is deployed strategically',
+              ...MARK_LEVELS_Q2,
+              'Links to credit: health ("health, community, joy"; games that "keep him in health"); character and life with others (the virtues in Text 2; community in Text 1); winning not the point ("hundredths of a second"; "unenvious approbation of another\'s success").',
             ],
           },
           {
             id: 'ocr-p1-11-q3',
             questionNumber: 3,
-            questionText:
-              "Read Source A. How does the writer use language and structure to present her views on elite sport in Britain?\n\nAnalyse the effects of the writer's choices.",
+            questionText: `Look again at Text 2, the whole text.\n\nHow does Kingsley use language and structure to argue for the value of games?\n\nRefer closely to the words of the text, and use subject terminology to explain their effects.`,
             marks: 12,
             suggestedTimeMinutes: 15,
             questionType: 'analysis',
-            extract: SPORT_SOURCE_A,
-            extractSource: SPORT_SOURCE_A_REF,
+            extract: SPORT_SOURCE_B,
+            extractSource: SPORT_SOURCE_B_REF,
             modelAnswers: {
-              'Grade 4-5':
-                'The writer uses strong language like "profoundly dishonest" and "ruthless" to show her disapproval. She structures the article by first talking about how sport is presented positively, then revealing the negative reality. In the last paragraph she sets out two possible answers, each beginning "If the answer is", to make the reader think about what sport should be for. The list of closing facilities in the third paragraph makes the problem seem widespread.',
-              'Grade 6-7':
-                'Okonkwo opens with a direct accusation - "profoundly dishonest" - that immediately positions the reader as complicit in a deception. The language of public relations ("inspiring a generation", "bringing the nation together") is placed in quotation marks, framing official discourse as a veneer concealing exploitation. Structurally, the piece moves from broad critique to specific human examples to policy analysis and finally to a call for honesty, creating an argumentative arc that leaves the reader no room for comfortable neutrality. The tricolon "Grassroots sports facilities continue to close... School playing fields are sold... Community swimming pools operate on skeleton budgets" uses the rule of three to emphasise systemic decline. The conditional structure of the final paragraph - "If the answer is... then let us" - forces readers to confront an uncomfortable binary.',
-              'Grade 8-9':
-                'The writer\'s opening gambit - "There is something profoundly dishonest" - establishes a tone of moral authority that pervades the entire piece. The strategic deployment of official language in quotation marks ("inspiring a generation", "no compromise") functions as a form of rhetorical appropriation: the establishment\'s own words are turned against it, becoming evidence of its hypocrisy. Structurally, the piece enacts the very exposure it argues for: the public-facing narrative of triumph is presented first, then systematically stripped away to reveal the human wreckage beneath. The unnamed athletes are rendered through the language of pathology - "cannot eat without anxiety", "has not had a single weekend free" - reframing sporting achievement as a form of institutional harm. The descending scale of the third paragraph\'s tricolon (from "Grassroots sports facilities" to "School playing fields" to "Community swimming pools") traces the impact from the general to the local, making the abstract personal. The conditional framing of the conclusion is particularly effective: by presenting two possible purposes for sport and spelling out the implications of each, Okonkwo avoids didacticism while making her preferred conclusion inescapable.',
+              'Grade 8-9': `Kingsley's passage is a single long paragraph built mostly from two enormous sentences, and its structure imitates an argument that keeps adding reasons until it seems unanswerable.\n\nHe begins by setting out the proposal he is responding to, "It is proposed, just now, to assimilate the education of girls more and more to that of boys", and then divides it in two with a pair of conditionals. "If that means" girls will simply learn "more lessons", he hopes the scheme "will sink into that limbo whither ... all imperfect and ill-considered schemes are sure to gravitate". The image of schemes sinking into "limbo", a place of the forgotten, mocks the idea with gentle scorn, and the alliteration of "imperfect and ill-considered" sharpens it. "But if the proposal be a bona fide one" opens the real argument: if girls are to be educated like boys, they must have games too.\n\nAt the centre of that sentence is a list of reasons, each introduced by "that": "that games do not, in the long run, interfere with a boy's work; that the same boy will very often excel in both; that the games keep him in health for his work". The repetition gives the argument momentum, and the authority behind it is shared, since "masters and boys alike know" these things. The list ends on what games prevent: "that loafing, tuck-shop-haunting set, who neither play hard nor work hard, and are usually extravagant, and often vicious". The compound adjective "tuck-shop-haunting" is comic and contemptuous, and the balanced "neither play hard nor work hard" links effort in sport with effort in study.\n\nThe last sentence, beginning "Moreover", raises the argument to a higher level. Games conduce "not merely to physical, but to moral health", and the same "not merely... but" pattern returns for the virtues: "not merely daring and endurance, but, better still, temper, self-restraint, fairness, honour". The phrase "better still" tells the reader that character matters more than toughness, and the list reaches its warmest and least selfish quality, "unenvious approbation of another's success", before widening to the whole "give and take" of life. The claim that boys gain "virtues which no books can give them" makes the playing-field a classroom in its own right.\n\nThe ending looks forward to adult life, when a man "goes forth into the world", and the final words, "his success is always maimed and partial", are strong and almost physical: "maimed" makes a life without these virtues sound injured. Kingsley's long, building sentences mirror the way he wants games to build a person, step by step, until the whole is complete.`,
             },
             markScheme: [
-              'Analyses specific language choices and their effects',
-              'Analyses structural choices and their effects',
-              'Uses well-chosen textual references to support analysis',
-              'Explores the relationship between language, structure, and meaning',
-              'Top band: perceptive, detailed analysis showing conceptualised understanding',
+              ...MARK_LEVELS_Q3,
+              'Language to credit: the mocking image of schemes sinking into "limbo"; the contempt of "tuck-shop-haunting"; the balanced "neither play hard nor work hard"; the "not merely... but" pattern and "better still"; the list of virtues; the strong word "maimed" in the closing phrase.',
+              'Structure to credit: the proposal stated, then split by two conditionals; the long list of reasons built on "that"; "Moreover" raising the argument from physical to moral health; an ending that looks forward to adult life.',
             ],
           },
           {
             id: 'ocr-p1-11-q4',
             questionNumber: 4,
-            questionText:
-              'Read both sources. Compare how the two writers convey their different perspectives on the value of sport.\n\nIn your answer, you should:\n• compare their different perspectives and attitudes\n• compare the methods they use to convey those perspectives\n• support your response with references to both texts.',
-            marks: 16,
+            questionText: `"Both writers believe that sport matters most for what it does to a young person's character, not for winning."\n\nDecide how far you agree with this view.\n\nIn your answer:\n• weigh up the writers' ideas on sport and young people, and how far the statement holds for each text\n• say how the texts affect you as a reader, and why\n• compare how each writer presents those ideas\n• quote from both texts to support your points.`,
+            marks: 18,
             suggestedTimeMinutes: 20,
-            questionType: 'comparison',
-            extract: `Source A:\n${SPORT_SOURCE_A}\n\nSource B:\n${SPORT_SOURCE_B}`,
-            extractSource: `${SPORT_SOURCE_A_REF} / ${SPORT_SOURCE_B_REF}`,
+            questionType: 'evaluation',
+            extract: `Text 1:\n${SPORT_SOURCE_A}\n\nText 2:\n${SPORT_SOURCE_B}`,
+            extractSource: `Text 1: ${SPORT_SOURCE_A_REF} | Text 2: ${SPORT_SOURCE_B_REF}`,
             modelAnswers: {
-              'Grade 4-5':
-                'Both writers think sport matters, but they see it very differently. Source A is critical of elite sport and says it damages young people, while Source B is positive and says games are an important part of education. Source A uses examples of athletes being harmed, such as "the eighteen-year-old gymnast who cannot eat without anxiety", while Source B lists the good qualities games teach: "temper, self-restraint, fairness, honour". Source A focuses on medals and funding, while Kingsley, writing in Victorian England, focuses on schools and argues that games "do not, in the long run, interfere with a boy\'s work". Both writers care about health, but Source A thinks the modern system has forgotten it.',
-              'Grade 6-7':
-                'The two writers disagree less about what sport is for than about whether it is achieving it. Okonkwo writes from inside a system she has watched for "twenty years", and her language of accusation ("profoundly dishonest", "ruthless") is that of someone whose faith in sport\'s public story has been broken by what she has seen. Kingsley, writing in Victorian England, has no such doubts: games are "integral parts of an Englishman\'s education", and he presents the case as settled fact, something "masters and boys alike know". Their methods reflect these positions. Okonkwo builds her case from specific, unnamed young people, the gymnast and the swimmer, whose suffering stands for a whole system; Kingsley argues in generalisations, piling up the virtues games teach in a long list ("temper, self-restraint, fairness, honour, unenvious approbation of another\'s success") that makes the case feel overwhelming. Both value sport for health and character rather than for winning, and Kingsley\'s praise of "unenvious approbation of another\'s success" names exactly what Okonkwo\'s medal-driven system, which "measures human worth in hundredths of a second", has lost.',
-              'Grade 8-9':
-                'These texts, written about a hundred and fifty years apart, share a belief that the real value of sport lies in what it does for the people who play it, and they differ over whether that value survives. Kingsley makes his case for games in the course of an argument about girls\' education: if girls are really to be educated as boys are, he reminds the reader, then it must be remembered that in the boys\' schools cricket and football are "more or less compulsory". His confidence is institutional. He speaks for "masters and boys alike", presents their knowledge as beyond dispute, and moves through a chain of "that" clauses (games do not "interfere with a boy\'s work", "the same boy will very often excel in both", "the games keep him in health for his work") which sound like a list of proven findings. Okonkwo, by contrast, writes against an institution: the "no compromise" funding model, whose own words she puts in quotation marks so that they read as evidence against it. Where Kingsley\'s list of virtues accumulates benefits, ending with the "\'give and take\' of life" without which a man\'s success is "maimed and partial", Okonkwo\'s lists accumulate losses: facilities that "continue to close", playing fields "sold to developers", pools on "skeleton budgets". The sharpest contrast is in their attitude to success. Kingsley prizes "unenvious approbation of another\'s success", success as something shared; Okonkwo describes a system that "measures human worth in hundredths of a second", where one child\'s success is built on thousands being "discarded". Her closing call for "an honest conversation about what sport is for", with its hope that the answer might be "health, community, joy", is in effect a call to return to something close to Kingsley\'s view, though without his assumption that the model for everyone is "the public schools of England".',
+              'Grade 8-9': `I agree that neither writer thinks winning is what sport is for, but only Kingsley makes character the main point. The writer of Text 1 cares more about young people's health and happiness, and about who gets the chance to play at all.\n\nKingsley's argument fits the statement closely. Games keep a boy "in health for his work", but the passage builds to its real claim, that they "conduce, not merely to physical, but to moral health". The virtues he lists, "temper, self-restraint, fairness, honour", are qualities of character, and "better still" ranks them above "daring and endurance". Even his warning about the "loafing, tuck-shop-haunting set" is about character, not results. Yet Kingsley does connect sport with success in a broader sense. Games show "the spirit with which he will take to his work", and without their virtues a man's "success is always maimed and partial". So for Kingsley, character is the point because it leads to success in life, if not in matches. As a reader, I find his confidence persuasive, though his assumption that compulsory games suit everyone feels old-fashioned.\n\nThe writer of Text 1 rejects winning as the measure even more strongly. Elite sport is "an industry built on exclusion", and a system that "measures human worth in hundredths of a second" leaves thousands with their confidence "shattered". Twenty years of coaching give authority to the claim "I have watched the system consume them", and the examples of "the eighteen-year-old gymnast who cannot eat without anxiety" and "the swimmer who has not had a single weekend free since she was eleven" make the human cost painfully concrete. But the alternative offered is not character. It is "health, community, joy", and facilities for everyone, at a time when "School playing fields are sold to developers" while money flows to likely medal winners. The article is about wellbeing and fairness, not about building virtue.\n\nThe writers present these ideas very differently. Kingsley writes in long, confident sentences, piling up reasons with "that" and "Moreover", and draws his authority from an established institution, the public school. The writer of Text 1 is angry and personal, sets two ages side by side in parallel sentences ("At fourteen, they are told they are special. At sixteen, they are dropped"), and attacks the bodies that fund sport. Kingsley sees games as something every boy should be made to play; the modern writer sees elite sport as something that discards most of the young people who enter it.\n\nOverall, the statement is true of Kingsley, for whom sport is above all a school of character, and only half true of Text 1, which agrees that winning should not matter most but puts health, joy and community in its place. Both writers, though, would agree that a sporting system judged only by its medals has forgotten what sport is for.`,
             },
-            markScheme: [
-              'Compares perspectives and attitudes from both sources',
-              'Compares methods used by both writers',
-              'Uses well-chosen references from both texts',
-              'Analyses how context shapes different perspectives',
-              'Top band: perceptive, detailed comparison with conceptualised understanding of both texts',
-            ],
+            markScheme: {
+              'AO4, evaluation (12 marks)': [
+                ...MARK_LEVELS_AO4,
+                'In this paper: Text 2 makes character the point ("moral health"), though it links character to later "success"; Text 1 rejects winning but puts "health, community, joy" and fair access in its place. Credit a verdict that differs between the texts.',
+              ],
+              'AO3, comparison (6 marks)': [
+                ...MARK_LEVELS_AO3,
+                "Methods to compare: long, confident sentences of reasons against short, angry ones; the authority of an institution against a coach's personal witness; a list of virtues against concrete cases of harm.",
+              ],
+              Marking: ['The two grids are marked separately and the marks added, out of 18.'],
+            },
           },
         ],
       },
@@ -333,30 +505,30 @@ export const ocrP1C: MockExamPaper[] = [
         id: 'ocr-p1-11-writing',
         title: 'Section B: Writing',
         description:
-          'You are advised to spend about 45 minutes on this section, including planning time.',
+          'Answer ONE question: Question 5 or Question 6. You are advised to spend about one hour on this section, including time to plan and to check your work.',
         totalMarks: 40,
-        suggestedTimeMinutes: 45,
+        suggestedTimeMinutes: 60,
         questions: [
           {
             id: 'ocr-p1-11-q5',
             questionNumber: 5,
-            questionText:
-              '"Competitive sport does more harm than good."\n\nWrite an article for a broadsheet newspaper in which you argue for or against this statement.\n\n(32 marks for content and organisation / 8 marks for technical accuracy)',
+            label: 'Q5 or Q6',
+            questionText: `Answer ONE of the following questions.\n\nQuestion 5\n"Money for sport should be spent on local clubs and facilities, not on elite athletes."\nWrite an article for a sports website in which you argue for or against this statement.\nIn your article you could:\n• describe the sports facilities in your area\n• explain what funding for elite athletes achieves\n• suggest how money could best be spent.\n\nOR\n\nQuestion 6\nWrite a letter to a younger friend who has just been dropped from a sports team, giving them advice and encouragement.\nIn your letter you could:\n• show that you understand how they feel\n• explain what sport can still give them\n• suggest what they could do next.\n\nIn your answer you will be assessed on content and organisation (24 marks) and on technical accuracy (16 marks).`,
             marks: 40,
-            suggestedTimeMinutes: 45,
+            suggestedTimeMinutes: 60,
             questionType: 'transactional-writing',
             modelAnswers: {
-              'Grade 4-5':
-                'A clear, purposeful article with: a sustained argument for or against; some persuasive techniques such as rhetorical questions and emotive language; generally accurate spelling and punctuation; appropriate use of paragraphs.',
-              'Grade 6-7':
-                'A well-crafted article with: sophisticated use of rhetorical techniques including counter-argument; appropriate register for a broadsheet audience; a compelling structure that builds to a strong conclusion; consistent technical accuracy with ambitious vocabulary.',
-              'Grade 8-9':
-                'An outstanding article with: a compelling and nuanced argument that acknowledges complexity; a distinctive authorial voice appropriate to the broadsheet form; structural sophistication including effective use of topic sentences and paragraph transitions; technical virtuosity with varied sentence forms and precise vocabulary.',
+              'Grade 8-9': `Question 5, an article for the statement.\n\nMedals are not the measure\n\nEvery four years, the country gathers round its televisions to watch British athletes win medals, and every four years politicians tell us that those medals will inspire a generation. I love watching the Olympics as much as anyone. But I have started to ask a question that spoils the party: inspire a generation to do what, and where?\n\nTake my town. In the last five years, our council has closed one of its two public swimming pools and cut the opening hours of the other. The athletics track at the old secondary school has been built over. The football club where I learned to play survives on raffles and the goodwill of three volunteer coaches, one of whom is seventy-two. When a ten-year-old watches a swimmer win gold and asks to learn to swim, the honest answer in many places is that the nearest lesson is a bus ride away and the waiting list is months long.\n\nThat is why I believe the money we spend on sport should go first to local clubs and facilities. Elite athletes are few; the rest of us are many. A pound spent on a community pool may never produce a medal, but it can teach hundreds of children to swim, a skill that saves lives. A pound spent on a youth club's coaching course may never make the news, but it keeps teenagers active, gives them friends and adults to look up to, and costs far less than treating the illnesses that come from inactivity.\n\nSupporters of elite funding will say that success at the top drives interest at the bottom, and there is some truth in this. Watching great athletes can make people want to try a sport. But wanting to try is not enough. If there is nowhere to go, the inspiration fades before the closing ceremony is over. A medal is a moment; a local club is there every week.\n\nI am not arguing that elite sport should receive nothing. Our best athletes deserve support, and many of them started in exactly the kind of small, struggling clubs I am describing. That is the point. Every champion began somewhere local. If we let those places close, we are not only failing ordinary children; we are cutting off the supply of future champions too.\n\nSo the next time a minister celebrates a medal table, ask some simple questions. How many children in this country cannot swim? How many clubs have closed this year? The answers will tell you far more about the health of British sport than any podium. Let us fund the places where sport begins, and the medals will look after themselves.`,
             },
-            markScheme: [
-              'Content & Organisation (32 marks): Purpose - argue persuasively; Audience - broadsheet readers; Form - article with headline; Structure - coherent argument with introduction, development, conclusion',
-              'Technical Accuracy (8 marks): Sentence demarcation; Standard English; Spelling; Punctuation; Range of sentence forms and vocabulary',
-            ],
+            markScheme: {
+              'AO5, content and organisation (24 marks)': MARK_LEVELS_AO5,
+              'AO6, technical accuracy (16 marks)': MARK_LEVELS_AO6,
+              'For these tasks': [
+                MARK_WRITING_NOTE,
+                'Question 5 is an article for a sports website: a headline, a clear position on the statement, evidence from experience, and the other side answered.',
+                'Question 6 is a letter to a younger friend: set out and addressed as a letter, sympathetic and encouraging, with practical advice.',
+              ],
+            },
           },
         ],
       },
@@ -364,7 +536,7 @@ export const ocrP1C: MockExamPaper[] = [
   },
 
   // ═══════════════════════════════════════════════════════════════════════════
-  // EXAM 12 - Science & Discovery
+  // EXAM 12: science
   // ═══════════════════════════════════════════════════════════════════════════
   {
     id: 'ocr-p1-12',
@@ -379,102 +551,87 @@ export const ocrP1C: MockExamPaper[] = [
       {
         id: 'ocr-p1-12-reading',
         title: 'Section A: Reading',
-        description: `Read the two source texts carefully. Then answer all the questions in this section.\n\nSource A: ${SCIENCE_SOURCE_A_REF}\nSource B: ${SCIENCE_SOURCE_B_REF}`,
+        description: `Read the two texts below, then answer all four questions. You are advised to spend about one hour on this section, about 12 minutes of it reading the texts.\n\nText 1: ${SCIENCE_SOURCE_A_REF}\nText 2: ${SCIENCE_SOURCE_B_REF}`,
         totalMarks: 40,
         suggestedTimeMinutes: 60,
         questions: [
           {
             id: 'ocr-p1-12-q1',
             questionNumber: 1,
-            questionText:
-              'Read Source A. Identify four potential consequences of gene-editing technology that the writer describes.',
+            questionText: `Look again at the first paragraph of Text 1, from "We are living through" to "The possibilities are extraordinary."\n\n(a) Give two possible uses of gene editing that the writer lists. [2]\n\n(b) How long, according to the writer, has it taken gene editing to move from laboratory curiosity to practical reality? [1]\n\n(c) What does the writer say about how much attention people are paying to this revolution? [1]`,
             marks: 4,
             suggestedTimeMinutes: 5,
             questionType: 'short-answer',
-            extract: SCIENCE_SOURCE_A,
-            extractSource: SCIENCE_SOURCE_A_REF,
+            extract: `Text 1:\n${SCIENCE_SOURCE_A}\n\nText 2:\n${SCIENCE_SOURCE_B}`,
+            extractSource: `Text 1: ${SCIENCE_SOURCE_A_REF} | Text 2: ${SCIENCE_SOURCE_B_REF}`,
             modelAnswers: {
-              'Grade 4-5':
-                '1. Crops that resist drought. 2. Mosquitoes engineered to stop spreading malaria. 3. The elimination of inherited diseases. 4. A society divided by biology as well as wealth.',
+              'Grade 4-5': `(a) Crops that resist drought, and mosquitoes engineered so that they stop spreading malaria.\n(b) Less than a decade.\n(c) Almost nobody is paying attention.`,
             },
-            markScheme: ['1 mark per valid consequence identified from the text, maximum 4 marks'],
+            markScheme: [
+              '(a) 1 mark each, up to 2, for: crops that resist drought; mosquitoes engineered to stop spreading malaria; the possible elimination of inherited diseases.',
+              '(b) 1 mark: less than a decade (accept less than ten years).',
+              '(c) 1 mark: almost nobody is paying attention.',
+              'Every answer must come from the first paragraph of Text 1.',
+            ],
           },
           {
             id: 'ocr-p1-12-q2',
             questionNumber: 2,
-            questionText:
-              'Read Source A. How does the writer present a balanced view while still conveying concern about gene-editing technology? Use evidence from the text in your answer.',
-            marks: 8,
-            suggestedTimeMinutes: 10,
-            questionType: 'analysis',
-            extract: SCIENCE_SOURCE_A,
-            extractSource: SCIENCE_SOURCE_A_REF,
+            questionText: `What do the two writers suggest about the good that science can do for people?\n\nAnswer by linking the two texts, and back each point with evidence from both.`,
+            marks: 6,
+            suggestedTimeMinutes: 8,
+            questionType: 'summary',
+            extract: `Text 1:\n${SCIENCE_SOURCE_A}\n\nText 2:\n${SCIENCE_SOURCE_B}`,
+            extractSource: `Text 1: ${SCIENCE_SOURCE_A_REF} | Text 2: ${SCIENCE_SOURCE_B_REF}`,
             modelAnswers: {
-              'Grade 4-5':
-                'The writer shows balance by listing positive things gene editing can do - "Crops that resist drought", "elimination of inherited diseases" - but then says they are "also terrifying". He shares the scientists\' optimism but says he "cannot shake the feeling" that it is dangerous. This makes the reader take his concerns more seriously because he is being fair.',
-              'Grade 6-7':
-                'Whitworth constructs a carefully balanced argument that lends greater weight to his concerns precisely because he acknowledges the technology\'s promise. The opening paragraph\'s list of benefits - drought-resistant crops, malaria prevention, disease elimination - is syntactically enthusiastic, with short verbless sentences building momentum. The short sentence that opens the second paragraph, "They are also terrifying", creates a structural volta that reframes everything that came before. The writer repeatedly positions himself as sympathetic to scientific progress - "I share their excitement" - before deploying the adversative conjunction "But" to pivot to his real concern. The extended metaphor of "editing a text we have not yet fully learned to read" captures his anxiety with elegant precision.',
-              'Grade 8-9':
-                'The writer employs a sophisticated rhetorical strategy of concessive argumentation, where each acknowledgement of gene editing\'s potential serves as a platform for deeper concern. The opening paragraph\'s breathless catalogue of benefits - the asyndetic list of "Crops that resist drought. Mosquitoes engineered to stop spreading malaria. The potential elimination of inherited diseases" - mimics the pace of scientific enthusiasm before the devastating pivot: "They are also terrifying." This structural pattern (concession followed by counter-argument) recurs throughout, creating a rhythm that enacts the writer\'s central thesis: that optimism and anxiety are inseparable responses to transformative technology. The series of rhetorical questions in paragraph three - "If we can eliminate genetic predispositions to depression, should we?" - performs balance syntactically while making the questions themselves feel unanswerable. The concluding metaphor of editing an incompletely understood text is masterfully judged: it respects the science while questioning the scientists, using their own language of "code" and "editing" to articulate the limits of their understanding.',
+              'Grade 8-9': `Both writers believe that science can relieve suffering on a vast scale. The writer of Text 1 lists the hopes of gene editing, "Crops that resist drought. Mosquitoes engineered to stop spreading malaria.", and shares the scientists' hope of "a world where no child is born to suffer from conditions that we had the power to prevent". Huxley makes the same point through history: "for every victim slain by the plague, hundreds of mankind exist and find a fair share of happiness in the world, by the aid of the spinning jenny", and the steam pump makes possible "an amount of wealth" beside which the losses of the Great Fire are "but as an old song". Both also suggest that much of this good goes unnoticed. Text 1 opens by saying that "almost nobody is paying attention" to the revolution in gene editing, and Huxley says that natural knowledge creates "multitudes of more subtle contrivances, the praises of which do not happen to be sung". Both writers, finally, connect science's good with children: the hope in Text 1 that "no child is born to suffer", and Huxley's image of natural knowledge as a mother "knitting for her children". The difference is that Text 1 sets this hope beside fear, while Huxley expresses none.`,
             },
             markScheme: [
-              'Identifies how the writer presents both positive and negative perspectives',
-              'Explains the effect of balanced presentation on the reader',
-              'Analyses specific techniques used to convey concern within a balanced framework',
-              'Top band: perceptive analysis of how balance itself becomes a persuasive strategy',
+              ...MARK_LEVELS_Q2,
+              'Links to credit: suffering relieved on a large scale (disease, drought and malaria in Text 1; plague and fire answered in Text 2); good that goes unnoticed ("almost nobody is paying attention"; contrivances whose "praises ... do not happen to be sung"); children in both (no child "born to suffer"; a mother "knitting for her children").',
             ],
           },
           {
             id: 'ocr-p1-12-q3',
             questionNumber: 3,
-            questionText:
-              "Read Source A. How does the writer use language and structure to engage the reader on the topic of gene-editing technology?\n\nAnalyse the effects of the writer's choices.",
+            questionText: `Look again at Text 2, the whole text.\n\nHow does Huxley use language and structure to persuade his audience of the value of natural knowledge?\n\nRefer closely to the words of the text, and use subject terminology to explain their effects.`,
             marks: 12,
             suggestedTimeMinutes: 15,
             questionType: 'analysis',
-            extract: SCIENCE_SOURCE_A,
-            extractSource: SCIENCE_SOURCE_A_REF,
+            extract: SCIENCE_SOURCE_B,
+            extractSource: SCIENCE_SOURCE_B_REF,
             modelAnswers: {
-              'Grade 4-5':
-                'The writer uses dramatic language like "greatest revolution" and "terrifying" to grab the reader\'s attention. The structure moves from positive to negative to make the reader reconsider. Rhetorical questions in paragraph three engage the reader directly. The final metaphor about "editing a text" is memorable and makes the idea easier to understand.',
-              'Grade 6-7':
-                'Whitworth opens with a bold claim - "the greatest revolution in biological science since Darwin" - that immediately establishes the stakes, while the counterpoint "almost nobody is paying attention" creates urgency and positions the reader as potentially complicit in dangerous indifference. The structure follows a carefully managed emotional trajectory: wonder, alarm, philosophical questioning, and finally ambivalent resolution. The shift from the impersonal third paragraph (rhetorical questions about society) to the personal final paragraph ("I share their excitement... I cannot shake the feeling") creates intimacy, drawing the reader into the writer\'s own uncertainty. The extended metaphor of genetic "code" as "text" bridges the scientific and the literary, making complex biotechnology accessible through humanistic analogy.',
-              'Grade 8-9':
-                'The writer\'s opening claim positions gene editing within a Darwinian framework that simultaneously elevates and threatens: if this is a revolution on the scale of evolution itself, the implications are both thrilling and terrifying. The accusation that "almost nobody is paying attention" creates an immediate contract with the reader - you are now paying attention, and therefore implicated in what follows. Structurally, the piece traces an epistemological journey from certainty to doubt: the confident declaratives of paragraph one ("The possibilities are extraordinary") give way to the interrogatives of paragraph three, and finally to the hedged, subordinate-clause-heavy syntax of the conclusion ("I cannot shake the feeling that we are editing a text we have not yet fully learned to read"). This syntactic deceleration enacts the very caution the writer advocates. The rhetorical questions function not as devices seeking agreement but as genuine philosophical provocations - "Who decides which traits are \'defects\' to be corrected and which are variations to be celebrated?" - that expose the value judgements embedded in supposedly neutral scientific language. The concluding metaphor operates on multiple levels: "editing a text" invokes both the CRISPR mechanism and the humanistic tradition of textual interpretation, suggesting that genetic science requires not just technical skill but hermeneutic wisdom.',
+              'Grade 8-9': `Huxley's argument moves in two stages, and each paragraph raises the value of natural knowledge higher than the last.\n\nThe first paragraph answers the disasters of the past with the inventions that followed them. "It is very certain" opens with complete confidence, and the sentence is built as a contrast of scale: "for every victim slain by the plague, hundreds of mankind exist and find a fair share of happiness in the world, by the aid of the spinning jenny". The violent verb "slain" makes the plague an enemy, while the gentle phrase "a fair share of happiness" shows what science gives back. The second sentence repeats the pattern with the Great Fire. Even "at its worst" it "could not have burned the supply of coal", and coal worked "in the bowels of the earth" gives the steam pump's work a sense of depth and difficulty. The dismissive simile at the end, that the "millions lost in old London are but as an old song", shrinks a famous catastrophe to something trivial.\n\nThe second paragraph opens with a surprise. Having praised the spinning jenny and steam pump, Huxley calls them "after all, but toys, possessing an accidental value". This deliberate anticlimax makes the reader ask what could be greater, and he answers that natural knowledge "creates multitudes of more subtle contrivances, the praises of which do not happen to be sung". Praises not "sung" pick up the "old song" of the first paragraph, linking the two halves.\n\nThe heart of the passage is an extended simile. Natural knowledge, personified as "her", is like "a peasant woman as one sees in the Alps, striding ever upward, heavily burdened, and with mind bent only on her home; but yet, without effort and without thought, knitting for her children". "Striding ever upward" suggests progress, while "without effort and without thought" suggests that science's gifts come as a natural overflow of its work. The concession "Now stockings are good and comfortable things" admits the value of practical benefits before the final question undercuts it: "surely it would be short-sighted, to say the least of it, to depreciate this toiling mother as a mere stocking-machine—a mere provider of physical comforts?" The repetition of "mere" and the mechanical word "stocking-machine" make it seem ungrateful, even absurd, to value science only for what it makes. Ending on a question leaves the audience to supply the answer Huxley wants.`,
             },
             markScheme: [
-              'Analyses specific language choices and their effects on the reader',
-              'Analyses structural choices and their effects',
-              'Uses well-chosen textual references to support analysis',
-              "Explores the relationship between language, structure, and the writer's purpose",
-              'Top band: perceptive, detailed analysis showing conceptualised understanding',
+              ...MARK_LEVELS_Q3,
+              'Language to credit: the confident "It is very certain"; the contrast of "slain" with "a fair share of happiness"; the simile of the "old song"; the anticlimax of "but toys"; the personified "her" and the extended simile of the peasant mother; the repeated "mere" and "stocking-machine".',
+              'Structure to credit: two stages, from material benefits to a higher value; the link between "old song" and praises not "sung"; the concession before the final rhetorical question; an ending that leaves the answer to the audience.',
             ],
           },
           {
             id: 'ocr-p1-12-q4',
             questionNumber: 4,
-            questionText:
-              'Read both sources. Compare how the two writers convey their different perspectives on scientific progress.\n\nIn your answer, you should:\n• compare their different perspectives and attitudes\n• compare the methods they use to convey those perspectives\n• support your response with references to both texts.',
-            marks: 16,
+            questionText: `"Both writers are more excited about science than worried by it."\n\nDecide how far you agree with this view.\n\nIn your answer:\n• weigh up the writers' ideas on science, and how far the statement holds for each text\n• say how the texts affect you as a reader, and why\n• compare how each writer presents those ideas\n• quote from both texts to support your points.`,
+            marks: 18,
             suggestedTimeMinutes: 20,
-            questionType: 'comparison',
-            extract: `Source A:\n${SCIENCE_SOURCE_A}\n\nSource B:\n${SCIENCE_SOURCE_B}`,
-            extractSource: `${SCIENCE_SOURCE_A_REF} / ${SCIENCE_SOURCE_B_REF}`,
+            questionType: 'evaluation',
+            extract: `Text 1:\n${SCIENCE_SOURCE_A}\n\nText 2:\n${SCIENCE_SOURCE_B}`,
+            extractSource: `Text 1: ${SCIENCE_SOURCE_A_REF} | Text 2: ${SCIENCE_SOURCE_B_REF}`,
             modelAnswers: {
-              'Grade 4-5':
-                'Both writers see science as powerful, but they feel differently about it. Source A is worried about where gene editing could lead, while Source B is confident that science has made life far better. Source A uses modern examples like CRISPR and "Mosquitoes engineered to stop spreading malaria", while Source B uses older inventions like "the spinning jenny" and "the steam pump". Source A says the new technology is "also terrifying", but Huxley argues that the machines science has produced are only "toys" compared with its real gifts. Both writers use imagery: Source A compares genetics to "a text we have not yet fully learned to read", and Source B compares natural knowledge to a mother "knitting for her children".',
-              'Grade 6-7':
-                'The two writers look at scientific progress from opposite sides of its power. Whitworth writes from within a moment of rapid change, and his perspective is divided: he shares the scientists\' "excitement" but "cannot shake the feeling" that we are changing what we do not understand. Huxley, speaking in 1866, has no such doubt. He measures the gains of science against the plague and the great fire of the 1660s and finds that "for every victim slain by the plague, hundreds of mankind exist and find a fair share of happiness" thanks to a single invention. Their methods reflect these attitudes. Whitworth lists benefits in short, clipped sentences ("Crops that resist drought.") and then undercuts them with "They are also terrifying"; Huxley builds long, balanced sentences whose confidence is part of his argument. Both writers turn to metaphor to explain what science is. For Whitworth, the genome is a text we have not learned to read, an image of our ignorance; for Huxley, natural knowledge is a peasant mother "striding ever upward, heavily burdened", an image of generosity. Where Whitworth worries that science gives us more power than we understand, Huxley worries that we value it too little, as "a mere provider of physical comforts".',
-              'Grade 8-9':
-                'Separated by almost a hundred and sixty years, these texts reach opposite conclusions about scientific progress, and their methods follow from those conclusions. Whitworth\'s concern is that capability has outrun understanding: his rhetorical questions ("If we can eliminate genetic predispositions to depression, should we?") are left unanswered, and his closing metaphor of "editing a text we have not yet fully learned to read" makes caution the only responsible stance. Huxley\'s lay sermon sets out to overturn a different complaint, that science is merely useful. He first grants its material value on the grandest scale, setting the spinning jenny against the plague and the steam pump against the fire, and dismissing the "millions lost in old London" as "but as an old song". Then he turns, and calls those very inventions "but toys, possessing an accidental value". The extended simile of the Alpine peasant woman who knits for her children "without effort and without thought" is carefully judged: the stockings are real comforts, and he does not deny them, but the mother is more than her knitting, and his closing rhetorical question makes it seem "short-sighted" to think otherwise. The contrast between the writers\' questions is revealing. Whitworth\'s questions open doubts that he does not close; Huxley\'s single question expects only one answer. Whitworth fears that science is a power we do not yet know how to use; Huxley insists that its greatest gifts are the ones that cannot be turned into "instruments for creating wealth". Together they frame the choice the writing task asks for: whether knowledge is to be valued for what it gives us, or feared for what it lets us do.',
+              'Grade 8-9': `I agree for Huxley, who shows no worry at all, but I disagree for the writer of Text 1, whose excitement is matched, and perhaps outweighed, by fear.\n\nHuxley's passage is a celebration. Science answers the plague and the fire: "for every victim slain by the plague, hundreds of mankind exist and find a fair share of happiness". He is so confident that he dismisses great inventions as "but toys", because natural knowledge offers even more, and his image of a mother "knitting for her children" presents science as generous and caring. There is no hint of danger in the passage; even its gifts are given "without effort and without thought". As a reader I find his enthusiasm infectious, but also, today, a little innocent, since the coal and the steam pump he praises have consequences he does not consider.\n\nThe writer of Text 1 begins in excitement too: this is "the greatest revolution in biological science since Darwin", and the possibilities "are extraordinary". But the next paragraph opens with a deliberate turn: "They are also terrifying." The questions of the third paragraph ("If we can eliminate genetic predispositions to depression, should we?") show serious moral worry about a society "divided not merely by wealth but by biology". The ending balances the two feelings openly: "I share their excitement. But I cannot shake the feeling" that we are "editing a text we have not yet fully learned to read". The final metaphor makes our ignorance the main point and leaves the reader uneasy. So excitement and worry are both strong, and the worry has the last word.\n\nThe writers' methods reflect this difference. Huxley speaks as a public lecturer with total assurance ("It is very certain"), using history, a contrast of numbers and an extended simile to raise his audience's opinion of science. The writer of Text 1 uses a journalist's fragments for the hopes ("Crops that resist drought."), rhetorical questions for the dangers, and a closing metaphor of a code "we only partially understand". Both, though, try to correct how their audience sees science. Huxley wants listeners to stop valuing knowledge only for "physical comforts", and the modern writer complains that "almost nobody is paying attention".\n\nOverall, the statement is true of Text 2 and only partly true of Text 1. Huxley, looking back two hundred years, can see only the good that science has done; the modern writer, looking forward, sees a technology whose consequences no one yet knows. Perhaps the difference is time itself: it is easier to be excited about discoveries whose results are already known.`,
             },
-            markScheme: [
-              'Compares perspectives and attitudes from both sources',
-              'Compares methods used by both writers',
-              'Uses well-chosen references from both texts',
-              'Analyses how context shapes different perspectives',
-              'Top band: perceptive, detailed comparison with conceptualised understanding of both texts',
-            ],
+            markScheme: {
+              'AO4, evaluation (12 marks)': [
+                ...MARK_LEVELS_AO4,
+                'In this paper: Text 2 celebrates science without any worry; Text 1 is excited ("I share their excitement") but ends on fear of "a code we only partially understand". Credit a verdict that differs between the texts.',
+              ],
+              'AO3, comparison (6 marks)': [
+                ...MARK_LEVELS_AO3,
+                "Methods to compare: a lecturer's assurance and an extended simile against a journalist's fragments, questions and closing metaphor; looking back on known results against looking forward to unknown ones.",
+              ],
+              Marking: ['The two grids are marked separately and the marks added, out of 18.'],
+            },
           },
         ],
       },
@@ -482,30 +639,30 @@ export const ocrP1C: MockExamPaper[] = [
         id: 'ocr-p1-12-writing',
         title: 'Section B: Writing',
         description:
-          'You are advised to spend about 45 minutes on this section, including planning time.',
+          'Answer ONE question: Question 5 or Question 6. You are advised to spend about one hour on this section, including time to plan and to check your work.',
         totalMarks: 40,
-        suggestedTimeMinutes: 45,
+        suggestedTimeMinutes: 60,
         questions: [
           {
             id: 'ocr-p1-12-q5',
             questionNumber: 5,
-            questionText:
-              '"Scientific progress should never be limited by fear."\n\nWrite a speech to be delivered at a school debate in which you argue for or against this statement.\n\n(32 marks for content and organisation / 8 marks for technical accuracy)',
+            label: 'Q5 or Q6',
+            questionText: `Answer ONE of the following questions.\n\nQuestion 5\n"Scientists should be free to follow their research wherever it leads."\nWrite an article for a science magazine for young people in which you argue for or against this view.\nIn your article you could:\n• write about discoveries that have changed lives\n• consider the risks of some kinds of research\n• explain who, if anyone, should set limits.\n\nOR\n\nQuestion 6\nWrite a speech for a school prize-giving evening about why science matters to everyone, not only to scientists.\nIn your speech you could:\n• describe ways in which science shapes everyday life\n• explain how scientific thinking can help people\n• encourage your audience to stay curious.\n\nIn your answer you will be assessed on content and organisation (24 marks) and on technical accuracy (16 marks).`,
             marks: 40,
-            suggestedTimeMinutes: 45,
+            suggestedTimeMinutes: 60,
             questionType: 'transactional-writing',
             modelAnswers: {
-              'Grade 4-5':
-                'A clear speech with: a sustained argument; some rhetorical techniques such as direct address and repetition; generally accurate spelling and punctuation; appropriate use of paragraphs.',
-              'Grade 6-7':
-                'A well-crafted speech with: effective use of rhetorical devices including anaphora and counter-argument; appropriate register for a debate; a compelling structure that builds to a persuasive conclusion; consistent technical accuracy with varied sentence forms.',
-              'Grade 8-9':
-                'An outstanding speech with: a nuanced argument that engages with complexity; a distinctive and authoritative voice; structural sophistication that mirrors the rhythms of spoken rhetoric; technical virtuosity with ambitious vocabulary and varied syntax.',
+              'Grade 8-9': `Question 6, a speech for a prize-giving evening.\n\nGood evening, parents, teachers and fellow students.\n\nWhen I was asked to speak tonight about science, my first thought was that I am the wrong person. I am not going to be a scientist. I find chemistry difficult, and my physics teacher, who is sitting somewhere at the back, will confirm that I once set fire to a piece of paper I was supposed to be weighing. So I want to talk to the people in this hall who, like me, will never wear a lab coat. Science matters to us more than we think.\n\nStart with this evening. You travelled here in a car or a bus whose engine depends on centuries of discoveries about heat and metal. The lights above us exist because someone once wondered how electricity worked. Many of us are alive because of medicines that did not exist when our great-grandparents were born. In 1928 a scientist named Alexander Fleming noticed that a mould growing on one of his dishes had killed the bacteria around it. That chance observation led to penicillin, and to antibiotics that have saved millions of lives. None of us chose to depend on science. We simply do.\n\nBut science is not only a list of inventions. It is a way of thinking, and that way of thinking belongs to everyone. A scientist asks a question, collects evidence, tests an idea, and changes her mind when the evidence says she is wrong. Imagine if we all did that. Imagine if, before sharing a shocking story online, we asked where it came from. Imagine if, in an argument, we were willing to say: you have shown me the evidence, and I was mistaken. That is not a skill for laboratories. It is a skill for life.\n\nThere is a third reason, and it is the most important. Many of the decisions that will shape our future are scientific decisions. How should we produce our energy? Should we be allowed to edit the genes of crops, or of people? How do we feed a growing world without exhausting it? These questions will not be answered by scientists alone. They will be answered by voters, by parents, by people like us. If we do not understand the science, we will have to trust whoever shouts the loudest.\n\nSo to tonight's prize-winners: congratulations. You have worked hard, and some of you will go on to make discoveries we cannot yet imagine. To everyone else, I say this: do not leave science to them. Stay curious. Ask how things work. Ask how we know. The world needs scientists, but it also needs people who can understand them.\n\nThank you.`,
             },
-            markScheme: [
-              'Content & Organisation (32 marks): Purpose - argue persuasively; Audience - school debate; Form - speech with appropriate conventions; Structure - coherent argument with clear progression',
-              'Technical Accuracy (8 marks): Sentence demarcation; Standard English; Spelling; Punctuation; Range of sentence forms and vocabulary',
-            ],
+            markScheme: {
+              'AO5, content and organisation (24 marks)': MARK_LEVELS_AO5,
+              'AO6, technical accuracy (16 marks)': MARK_LEVELS_AO6,
+              'For these tasks': [
+                MARK_WRITING_NOTE,
+                'Question 5 is a magazine article for young readers: a clear view, examples explained simply, and the other side considered.',
+                'Question 6 is a speech for an occasion: it should sound spoken, suit a mixed audience of parents, teachers and students, and end memorably.',
+              ],
+            },
           },
         ],
       },
@@ -513,7 +670,7 @@ export const ocrP1C: MockExamPaper[] = [
   },
 
   // ═══════════════════════════════════════════════════════════════════════════
-  // EXAM 13 - Housing
+  // EXAM 13: housing
   // ═══════════════════════════════════════════════════════════════════════════
   {
     id: 'ocr-p1-13',
@@ -528,102 +685,87 @@ export const ocrP1C: MockExamPaper[] = [
       {
         id: 'ocr-p1-13-reading',
         title: 'Section A: Reading',
-        description: `Read the two source texts carefully. Then answer all the questions in this section.\n\nSource A: ${HOUSING_SOURCE_A_REF}\nSource B: ${HOUSING_SOURCE_B_REF}`,
+        description: `Read the two texts below, then answer all four questions. You are advised to spend about one hour on this section, about 12 minutes of it reading the texts.\n\nText 1: ${HOUSING_SOURCE_A_REF}\nText 2: ${HOUSING_SOURCE_B_REF}`,
         totalMarks: 40,
         suggestedTimeMinutes: 60,
         questions: [
           {
             id: 'ocr-p1-13-q1',
             questionNumber: 1,
-            questionText:
-              'Read Source A. Identify four effects of the housing crisis that the writer describes.',
+            questionText: `Look again at the first paragraph of Text 1, from "I moved seven times" to "close friends with the neighbours."\n\n(a) How many times did the writer move before turning eighteen? [1]\n\n(b) Give two things that, the writer says, happened each time the family had to move. [2]\n\n(c) What did the writer learn not to do? [1]`,
             marks: 4,
             suggestedTimeMinutes: 5,
             questionType: 'short-answer',
-            extract: HOUSING_SOURCE_A,
-            extractSource: HOUSING_SOURCE_A_REF,
+            extract: `Text 1:\n${HOUSING_SOURCE_A}\n\nText 2:\n${HOUSING_SOURCE_B}`,
+            extractSource: `Text 1: ${HOUSING_SOURCE_A_REF} | Text 2: ${HOUSING_SOURCE_B_REF}`,
             modelAnswers: {
-              'Grade 4-5':
-                '1. Families are forced to move frequently - the writer moved seven times before eighteen. 2. Young people spend a third of their income on rent. 3. Young people are locked out of home ownership. 4. Over a million children are living in unsuitable housing with health consequences.',
+              'Grade 4-5': `(a) Seven times.\n(b) A letter came from the letting agent, and the family had to scramble to find somewhere affordable.\n(c) Make close friends with the neighbours.`,
             },
-            markScheme: ['1 mark per valid effect identified from the text, maximum 4 marks'],
+            markScheme: [
+              '(a) 1 mark: seven.',
+              "(b) 1 mark each, up to 2, for: a letter from the letting agent; a scramble to find somewhere affordable; packing boxes; the writer's mother pretending it was an adventure.",
+              '(c) 1 mark: make close friends with the neighbours.',
+              'Every answer must come from the first paragraph of Text 1.',
+            ],
           },
           {
             id: 'ocr-p1-13-q2',
             questionNumber: 2,
-            questionText:
-              'Read Source A. How does the writer use personal experience to strengthen her argument about the housing crisis? Use evidence from the text in your answer.',
-            marks: 8,
-            suggestedTimeMinutes: 10,
-            questionType: 'analysis',
-            extract: HOUSING_SOURCE_A,
-            extractSource: HOUSING_SOURCE_A_REF,
+            questionText: `What do the two writers show about the effects of bad housing on people's lives?\n\nAnswer by linking the two texts, and back each point with evidence from both.`,
+            marks: 6,
+            suggestedTimeMinutes: 8,
+            questionType: 'summary',
+            extract: `Text 1:\n${HOUSING_SOURCE_A}\n\nText 2:\n${HOUSING_SOURCE_B}`,
+            extractSource: `Text 1: ${HOUSING_SOURCE_A_REF} | Text 2: ${HOUSING_SOURCE_B_REF}`,
             modelAnswers: {
-              'Grade 4-5':
-                'The writer starts by telling us about her childhood, moving seven times before she was eighteen. This makes the reader feel sympathy for her. She includes her mother saying "Think of it as a fresh start" which shows how the family tried to cope. She says she "learned not to make close friends" which shows how it affected her socially. This personal experience makes the statistics later feel more real.',
-              'Grade 6-7':
-                'Patel deploys personal narrative as a rhetorical framing device, opening with the specific detail of "seven times before my eighteenth birthday" to transform an abstract policy issue into lived experience. The mother\'s dialogue - "Think of it as a fresh start" - is devastating in its quiet irony: the reader understands the desperate optimism behind the words even as the writer exposes their futility through the accompanying image of "taping shut a box of kitchen things". The structural choice to move from personal anecdote to national statistics ("two million homes", "60%") creates a powerful inductive argument: if this is one family\'s experience, the data shows it is millions of families\' experiences. The understatement of "I learned not to make close friends" is more emotionally effective than any overt expression of pain.',
-              'Grade 8-9':
-                'The writer\'s personal narrative operates on multiple rhetorical levels simultaneously. At the surface level, the childhood experience of frequent moves creates pathos and establishes experiential authority. But the opening paragraph is also carefully constructed to pre-empt dismissal: the sentence fragment "Not because my parents were restless or adventurous" addresses the implied counter-argument that housing instability is a lifestyle choice. The mother\'s direct speech - "Think of it as a fresh start" - functions as a microcosm of the broader rhetorical pattern: the official narrative (positive spin) is juxtaposed with material reality (taping boxes). The devastating restraint of "I learned not to make close friends with the neighbours" achieves more than any explicit statement of suffering could, enlisting the reader\'s imagination to fill in the emotional weight. Structurally, the transition from personal to political - from childhood memory to Right to Buy statistics - enacts the argument\'s central thesis: that housing policy is not an abstraction but the accumulated weight of millions of individual experiences of displacement and insecurity.',
+              'Grade 8-9': `Both writers show bad housing damaging the health and daily lives of the people who live in it. The writer of Text 1 reports that children in "damp, overcrowded, temporary" homes are "more likely to suffer from respiratory illness, more likely to struggle at school"; Octavia Hill describes houses where "the damp crept up the outer walls", rain fell through the roof into "a pail", and the tenants had "to wash clothes, as well as to cook, eat, and sleep, in their small rooms". Both also show tenants at the mercy of those who own their homes. In Text 1 each move begins with "a letter from the letting agent", and a generation spends "a third of their income enriching landlords"; in Text 2 the former landlord answered a tenant's request by saying that "if he didn't like it" "he might leave". Finally, both show that how secure people are in their homes changes how they live. The writer of Text 1, after seven moves, "learned not to make close friends with the neighbours"; in Text 2 the best tenant, now "knowing that he will be retained if he behaves well", "often gives his spare time to making his room more comfortable".`,
             },
             markScheme: [
-              'Identifies how personal experience is used in the text',
-              'Explains the effect of personal narrative on the reader',
-              'Analyses how personal experience interacts with other forms of evidence',
-              'Top band: perceptive analysis of the strategic function of personal narrative within the broader argument',
+              ...MARK_LEVELS_Q2,
+              'Links to credit: damp and overcrowding harming health in both; tenants at the mercy of agents and landlords ("a letter from the letting agent"; "he might leave"); secure homes and their absence (no close friends after seven moves in Text 1; a tenant who improves his room once he knows he "will be retained" in Text 2).',
             ],
           },
           {
             id: 'ocr-p1-13-q3',
             questionNumber: 3,
-            questionText:
-              "Read Source A. How does the writer use language and structure to argue that housing should be treated as a fundamental right?\n\nAnalyse the effects of the writer's choices.",
+            questionText: `Look again at Text 2, the whole text.\n\nHow does Octavia Hill use language and structure to show the condition of the houses and to support her view of what must be done?\n\nRefer closely to the words of the text, and use subject terminology to explain their effects.`,
             marks: 12,
             suggestedTimeMinutes: 15,
             questionType: 'analysis',
-            extract: HOUSING_SOURCE_A,
-            extractSource: HOUSING_SOURCE_A_REF,
+            extract: HOUSING_SOURCE_B,
+            extractSource: HOUSING_SOURCE_B_REF,
             modelAnswers: {
-              'Grade 4-5':
-                'The writer uses emotive language like "condemned" and "locked out" to make the reader feel the unfairness. She includes statistics such as "60%" and "a million children" to make her argument convincing. The structure moves from personal experience to facts to a strong conclusion. The final sentence - "Until we treat it as a right rather than a commodity, nothing will change" - is blunt and powerful.',
-              'Grade 6-7':
-                'Patel constructs her argument through a carefully escalating structure that moves from the personal to the statistical to the philosophical. The language of the opening paragraph is deliberately understated - "that is what happens when you rent" - using the flat declarative to normalise suffering in a way that makes it more shocking. The second paragraph shifts register dramatically, deploying the language of political critique: "not a natural disaster" but "a political choice" establishes a binary that assigns blame. The statistics are deployed not as neutral data but as accusations, with the temporal markers ("Since the Right to Buy scheme was introduced in 1980", "in the last decade") implying deliberate political failure. The sardonic reference to "coffee and avocados" acknowledges and dismantles a common dismissal. The concluding paragraph\'s distinction between "right" and "commodity" crystallises the entire argument into a single opposition, and the list of what housing enables - "education, health, employment, family life" - positions housing as foundational rather than additional.',
-              'Grade 8-9':
-                'The writer\'s rhetorical strategy is one of controlled escalation, with each paragraph raising the stakes while tightening the argument\'s logical grip. The opening\'s deceptively simple narrative voice - "Each time, the pattern was the same" - creates a structural mimicry of the very cycle it describes. The shift in paragraph two to politicised discourse is signalled by the emphatic negation "is not a natural disaster" - a construction that implies the housing crisis has been naturalised in public consciousness and must be actively denaturalised. The parenthetical "my generation" performs an interesting rhetorical manoeuvre: it simultaneously personalises the systemic and collectivises the personal, refusing to let the reader maintain comfortable distance. The language choices in paragraph three escalate from material deprivation ("damp, overcrowded, temporary") to human consequence: "respiratory illness", "struggle at school", "mental health problems" - a list that moves from the body to learning to the mind, mirroring housing\'s corrosive effect on whole lives. The final paragraph\'s chiastic structure - first what housing is not and then what it is ("not a luxury", "the foundation"), then the same pair reversed ("a right rather than a commodity") - resolves the entire argument into an elegant philosophical proposition. The concluding sentence\'s use of "Until... nothing will change" creates a temporal ultimatum that positions the reader as either part of the solution or complicit in its absence.',
+              'Grade 8-9': `Hill's passage moves from a general principle to a detailed piece of evidence, and both its language and its structure are designed to make her case for "individual influence" hard to resist.\n\nThe first paragraph is formal and carefully reasoned. She begins with what "is now generally agreed", then introduces "another truth less dwelt upon", which presents her as someone adding something new to a debate. Her conviction is personal, "I feel most deeply", but her vocabulary is the language of management and discipline: "the disciplining of our immense poor population must be effected by individual influence". The contrast between "a mob of paupers and semi-paupers" and "a body of self-dependent workers" shows the change she believes is possible, though "mob" reveals the distance between the reformer and the poor. The paragraph ends by promising proof: "In support of this opinion I subjoin an account of what has been actually achieved". The word "actually" signals facts, not theory.\n\nThe second paragraph delivers them. It begins plainly, with short sentences such as "Six other houses were bought subsequently. All were crowded with inmates.", in a businesslike tone that makes what follows seem objective. Then comes a long catalogue of decay. Colons and semicolons link the details into a relentless list: "the plaster was dropping from the walls: on one staircase a pail was placed to catch the rain that fell through the roof". Each detail is precise and physical: the staircases "perfectly dark", the banisters "burnt as firewood by tenants", the grates "falling forward into the rooms". The reader is led through the building as if on a tour of inspection.\n\nBlame is placed through small phrases. The washhouse, "full of lumber belonging to the landlord", was "locked up", so the tenants had to do everything "in their small rooms", and the understatement "The state of the drainage was in keeping with everything else" implies that it was as bad as the rest without needing to describe it. The water-butt detail ends in a stark clause, "there was no water", after a long build-up.\n\nThe climax is the landlord's reply, which Hill sets in quotation marks: "if he didn't like it" "he might leave". Hearing his contempt in something close to his own words condemns him more effectively than any description could. Hill then ends on a contrast that proves her point. The same tenant, "by far the best tenant in the place", is "now with us", improving his room, "knowing that he will be retained if he behaves well". The structure moves from problem to solution, and the last image, of a man who now cares for his home, is her evidence that better management changes lives.`,
             },
             markScheme: [
-              'Analyses specific language choices and their effects',
-              'Analyses structural choices and their effects on the reader',
-              'Uses well-chosen textual references to support analysis',
-              'Explores the relationship between language, structure, and argument',
-              'Top band: perceptive, detailed analysis showing conceptualised understanding',
+              ...MARK_LEVELS_Q3,
+              'Language to credit: the reasoned opening ("another truth less dwelt upon"); the vocabulary of discipline and the contrast of "a mob of paupers" with "a body of self-dependent workers"; the precise details of decay; the understatement about the drainage; the landlord\'s reply set in quotation marks.',
+              "Structure to credit: principle, then evidence; short plain sentences, then a long catalogue linked by colons; the climax of the landlord's reply; an ending that turns from problem to solution.",
             ],
           },
           {
             id: 'ocr-p1-13-q4',
             questionNumber: 4,
-            questionText:
-              'Read both sources. Compare how the two writers convey their different perspectives on the housing crisis.\n\nIn your answer, you should:\n• compare their different perspectives and attitudes\n• compare the methods they use to convey those perspectives\n• support your response with references to both texts.',
-            marks: 16,
+            questionText: `"Both writers blame those in power, not the people living in bad housing, for the problems they describe."\n\nDecide how far you agree with this view.\n\nIn your answer:\n• weigh up the writers' ideas on housing, and how far the statement holds for each text\n• say how the texts affect you as a reader, and why\n• compare how each writer presents those ideas\n• quote from both texts to support your points.`,
+            marks: 18,
             suggestedTimeMinutes: 20,
-            questionType: 'comparison',
-            extract: `Source A:\n${HOUSING_SOURCE_A}\n\nSource B:\n${HOUSING_SOURCE_B}`,
-            extractSource: `${HOUSING_SOURCE_A_REF} / ${HOUSING_SOURCE_B_REF}`,
+            questionType: 'evaluation',
+            extract: `Text 1:\n${HOUSING_SOURCE_A}\n\nText 2:\n${HOUSING_SOURCE_B}`,
+            extractSource: `Text 1: ${HOUSING_SOURCE_A_REF} | Text 2: ${HOUSING_SOURCE_B_REF}`,
             modelAnswers: {
-              'Grade 4-5':
-                'Both writers think that the homes of poorer people are unacceptable, but they have different ideas about how to put this right. Source A blames government policy and says housing should be treated "as a right rather than a commodity". Source B is by Octavia Hill, who managed houses for poor tenants, and she thinks the answer is better management by people like herself. Source A uses personal experience ("I moved seven times") and statistics, while Source B uses a long, detailed description of the houses she took over, where "the plaster was dropping from the walls". Both writers criticise landlords: Source A says young people spend their income "enriching landlords", and Source B describes a landlord who told a tenant that he "might leave". Source A ends with a demand for change, while Source B ends by showing how one tenant\'s life has changed under her management.',
-              'Grade 6-7':
-                'Patel and Hill agree that the homes of the poor are a disgrace, but they disagree about who is responsible and what should change. Patel writes as someone who grew up inside the problem, and she calls it "a political choice"; her answer is for society to treat housing "as a right rather than a commodity". Hill writes as the manager of her tenants\' houses, and her answer is personal rather than political: "the disciplining of our immense poor population must be effected by individual influence", exercised by people who take on "the oversight and management" of the houses. Their methods reflect these positions. Patel moves from her own childhood to national statistics, so that one family stands for millions. Hill moves the other way, from a general principle to a single court in Marylebone, which she offers as proof ("In support of this opinion I subjoin an account"). Her description is a catalogue of neglect, each sentence adding another failure: plaster "dropping from the walls", banisters "burnt as firewood", a leaking water-butt that left anyone who had not filled a jug with "no water". Both writers expose the insecurity of tenants. Patel\'s "letter from the letting agent" and Hill\'s landlord, who told a tenant that "if he didn\'t like it" he "might leave", show the same power over people\'s homes; but Hill\'s own answer, that a good tenant "will be retained if he behaves well", leaves that power in the landlord\'s hands.',
-              'Grade 8-9':
-                'These texts, written more than a hundred and fifty years apart, both make comfortable readers look at homes they would rather not see, but they locate the solution in very different places, and that difference shapes how they write. Patel\'s argument is political and rests on rights. Her opening narrative earns her authority, her insistence that the crisis "is not a natural disaster" but "a political choice" assigns responsibility, and her conclusion asks the reader to treat housing "as a right rather than a commodity". Hill\'s argument is moral and managerial. Her first paragraph states a thesis in the voice of a reformer sure of her ground ("I feel most deeply"), and its central image is of transformation: individual influence can change the poor "from a mob of paupers and semi-paupers into a body of self-dependent workers". To a modern reader the word "disciplining" is revealing. Where Patel sees tenants as citizens denied a right, Hill sees people to be improved, and her authority comes not from sharing their experience but from having charge of their houses ("I was put in possession of three houses"). Her second paragraph is almost entirely evidence, an inventory of decay whose flat, factual sentences ("The state of the drainage was in keeping with everything else") let the details carry the outrage. The comparison is sharpest where both writers show the power a landlord holds. Patel describes a system in which a letter can uproot a family; Hill reports a landlord\'s contempt ("if he didn\'t like it" he "might leave") and offers her own management as the cure. Yet her closing picture of the best tenant in the place, secure only because he "will be retained if he behaves well", shows that under her system a tenant\'s home still depends on the landlord\'s judgement. Patel would recognise in that the insecurity she grew up with; Hill presents it as the reward of good conduct.',
+              'Grade 8-9': `I agree for Text 1, which blames politics firmly, but only partly for Text 2. Octavia Hill blames a careless landlord, but she also sees the poor as people in need of "disciplining", which the modern writer would never say.\n\nThe writer of Text 1 makes the blame clear in the second paragraph: "The housing crisis in this country is not a natural disaster. It is a political choice." The short, blunt sentences leave no room for doubt, and the evidence that follows, the Right to Buy scheme and housing stock that has "declined by over two million homes", points at government policy. Landlords are blamed too, since young people spend "a third of their income enriching landlords", and the writer mocks those who blame the young themselves: "if they just stopped buying coffee and avocados they could afford a deposit". The sarcasm shows that the writer rejects any suggestion that tenants are at fault. The personal opening, with a mother trying to pretend each move "was an adventure", makes me feel the unfairness before the statistics arrive.\n\nHill's view is more mixed. She clearly blames the former landlord. His washhouse was "full of lumber belonging to the landlord" and "locked up", and his reply to a reasonable request, "if he didn't like it" "he might leave", shows contempt. But she also records damage done by the tenants themselves: the banisters were "burnt as firewood by tenants". More strikingly, her solution is to change the poor, not the system. She speaks of "the disciplining of our immense poor population" and hopes to turn "a mob of paupers and semi-paupers into a body of self-dependent workers". The reward she offers her best tenant depends on his conduct: he will be retained "if he behaves well". To a modern reader this sounds patronising, although it comes from a genuine wish to help.\n\nThe writers' methods show their different targets. Text 1 combines personal experience with national figures and ends with a demand that housing be treated "as a right rather than a commodity". Hill writes as a manager reporting her results, with a detailed inspection of one court and a single success story. Text 1 speaks to "we" as citizens who must change politics; Hill speaks to readers who, like her, might manage houses and influence their tenants.\n\nOverall, the statement is true of Text 1, which puts the blame on political choices and landlords and defends tenants. It is only partly true of Text 2. Hill does blame a neglectful landlord, but she places the responsibility for improvement as much on the tenants' behaviour as on those in power, and the power she trusts is a good landlord's influence, not the government's.`,
             },
-            markScheme: [
-              'Compares perspectives and attitudes from both sources',
-              'Compares methods used by both writers',
-              'Uses well-chosen references from both texts',
-              'Analyses how context shapes different perspectives',
-              'Top band: perceptive, detailed comparison with conceptualised understanding of both texts',
-            ],
+            markScheme: {
+              'AO4, evaluation (12 marks)': [
+                ...MARK_LEVELS_AO4,
+                'In this paper: Text 1 calls the crisis "a political choice" and mocks blaming the young; Text 2 condemns the former landlord but also writes of "the disciplining of our immense poor population". Credit a verdict that differs between the texts.',
+              ],
+              'AO3, comparison (6 marks)': [
+                ...MARK_LEVELS_AO3,
+                "Methods to compare: a personal story and national figures against a manager's report of one court; sarcasm in Text 1 against understatement in Text 2; a call to treat housing as a right against a single success story.",
+              ],
+              Marking: ['The two grids are marked separately and the marks added, out of 18.'],
+            },
           },
         ],
       },
@@ -631,30 +773,30 @@ export const ocrP1C: MockExamPaper[] = [
         id: 'ocr-p1-13-writing',
         title: 'Section B: Writing',
         description:
-          'You are advised to spend about 45 minutes on this section, including planning time.',
+          'Answer ONE question: Question 5 or Question 6. You are advised to spend about one hour on this section, including time to plan and to check your work.',
         totalMarks: 40,
-        suggestedTimeMinutes: 45,
+        suggestedTimeMinutes: 60,
         questions: [
           {
             id: 'ocr-p1-13-q5',
             questionNumber: 5,
-            questionText:
-              '"Everyone has the right to a safe and affordable home."\n\nWrite a letter to your local MP in which you argue that more needs to be done to address the housing crisis.\n\n(32 marks for content and organisation / 8 marks for technical accuracy)',
+            label: 'Q5 or Q6',
+            questionText: `Answer ONE of the following questions.\n\nQuestion 5\nWrite a letter to your local MP about the housing problems faced by young people and families in your area, and what you think should be done.\nIn your letter you could:\n• describe the problems you have seen or heard about\n• explain their effects on people's lives\n• suggest what the government or council could do.\n\nOR\n\nQuestion 6\n"Home is about people, not a place."\nWrite an article for a magazine in which you explore this idea, drawing on your own experience.\nIn your article you could:\n• describe what home means to you\n• consider what makes a house feel like a home\n• reflect on what people need from where they live.\n\nIn your answer you will be assessed on content and organisation (24 marks) and on technical accuracy (16 marks).`,
             marks: 40,
-            suggestedTimeMinutes: 45,
+            suggestedTimeMinutes: 60,
             questionType: 'transactional-writing',
             modelAnswers: {
-              'Grade 4-5':
-                'A clear letter with: appropriate formal register; a sustained argument with some supporting evidence; some persuasive techniques; generally accurate spelling, punctuation, and grammar.',
-              'Grade 6-7':
-                'A well-crafted letter with: consistently appropriate formal register; sophisticated rhetorical techniques including counter-argument; effective use of evidence and examples; a compelling structure that balances passion with reason; consistent technical accuracy.',
-              'Grade 8-9':
-                'An outstanding letter with: a commanding and authoritative voice; a nuanced argument that anticipates and addresses objections; strategic deployment of evidence, personal experience, and rhetorical technique; structural sophistication; technical virtuosity with ambitious vocabulary and varied syntax.',
+              'Grade 8-9': `Question 6, a magazine article.\n\nWhere is home?\n\nWhen people ask me where I am from, I never know what to say. I was born in Leeds, lived in Bristol until I was seven, spent two years in a flat above my uncle's shop in Leicester, and have lived in this town for the last five. I have had six bedrooms, four schools and more goodbyes than I can count. If home is a place, then I am not sure I have one. But I have never felt homeless, and I think I know why.\n\nHome, for me, has always been people. It is my mother humming while she unpacks the same chipped mugs in every new kitchen. It is my little brother insisting that his bed goes under the window, wherever the window is. It is the smell of my grandmother's cooking, which arrived in a different town each time but tasted exactly the same. The rooms changed. The people in them did not, and that was what made each one feel like ours.\n\nI do not want to pretend that places do not matter. Moving so often has cost me things. I have lost friends I meant to keep, and I have learned to hold back a little at the start of each new school, in case it does not last. There are children in this country who move far more often than I did, from one temporary room to another, and for them the lack of a settled place is not a question for a magazine but a daily worry. A secure home, a door you can lock, a garden where your height is marked on the fence: these things are precious, and everyone deserves them.\n\nBut a house, however secure, is not a home on its own. I have visited beautiful houses that felt cold because nobody in them talked to each other. And I have been welcomed into tiny flats that felt warmer than anywhere else, because someone was pleased to see me. What turns four walls into a home is not the walls. It is who waits behind them, and how they make you feel when you walk through the door.\n\nSo if you have moved recently, or are about to, here is what I have learned. Bring your people with you, in whatever way you can: a phone call on Sunday, a photograph by your bed, a recipe you cook together. Make new people part of your home as quickly as you dare, by saying yes to invitations and inviting others in return. And be patient with yourself. Feeling at home takes time, but it does come.\n\nHome is not where you are. It is who you are with. I have lived in four towns, and I have never lost it.`,
             },
-            markScheme: [
-              'Content & Organisation (32 marks): Purpose - argue persuasively; Audience - MP (formal); Form - letter with appropriate conventions; Structure - coherent argument with clear demands',
-              'Technical Accuracy (8 marks): Sentence demarcation; Standard English; Spelling; Punctuation; Range of sentence forms and vocabulary',
-            ],
+            markScheme: {
+              'AO5, content and organisation (24 marks)': MARK_LEVELS_AO5,
+              'AO6, technical accuracy (16 marks)': MARK_LEVELS_AO6,
+              'For these tasks': [
+                MARK_WRITING_NOTE,
+                'Question 5 is a formal letter to an MP: set out and addressed as a letter, respectful, with evidence of the problem and clear requests.',
+                'Question 6 is a reflective magazine article: a title, a personal voice, an idea explored from more than one side, and a memorable ending.',
+              ],
+            },
           },
         ],
       },
@@ -662,7 +804,7 @@ export const ocrP1C: MockExamPaper[] = [
   },
 
   // ═══════════════════════════════════════════════════════════════════════════
-  // EXAM 14 - Arts & Culture
+  // EXAM 14: the arts
   // ═══════════════════════════════════════════════════════════════════════════
   {
     id: 'ocr-p1-14',
@@ -677,102 +819,87 @@ export const ocrP1C: MockExamPaper[] = [
       {
         id: 'ocr-p1-14-reading',
         title: 'Section A: Reading',
-        description: `Read the two source texts carefully. Then answer all the questions in this section.\n\nSource A: ${ARTS_SOURCE_A_REF}\nSource B: ${ARTS_SOURCE_B_REF}`,
+        description: `Read the two texts below, then answer all four questions. You are advised to spend about one hour on this section, about 12 minutes of it reading the texts.\n\nText 1: ${ARTS_SOURCE_A_REF}\nText 2: ${ARTS_SOURCE_B_REF}`,
         totalMarks: 40,
         suggestedTimeMinutes: 60,
         questions: [
           {
             id: 'ocr-p1-14-q1',
             questionNumber: 1,
-            questionText:
-              'Read Source A. Identify four reasons the writer gives for why the arts should be funded and valued.',
+            questionText: `Look again at the first paragraph of Text 1, from "When my local council announced" to "no longer afford."\n\n(a) By how much, according to the writer, was arts funding to be cut? [1]\n\n(b) Identify two ways in which the cultural sector responded. [2]\n\n(c) Explain, in your own words, what "everybody else" seemed to feel about art, according to the writer. [1]`,
             marks: 4,
             suggestedTimeMinutes: 5,
             questionType: 'short-answer',
-            extract: ARTS_SOURCE_A,
-            extractSource: ARTS_SOURCE_A_REF,
+            extract: `Text 1:\n${ARTS_SOURCE_A}\n\nText 2:\n${ARTS_SOURCE_B}`,
+            extractSource: `Text 1: ${ARTS_SOURCE_A_REF} | Text 2: ${ARTS_SOURCE_B_REF}`,
             modelAnswers: {
-              'Grade 4-5':
-                '1. The creative industries contribute over £115 billion annually to the UK economy. 2. For every pound invested, five pounds is generated in return. 3. The arts make us human and give us a shared language for experiences. 4. The arts can transform lives - the writer says the library "saved my life".',
+              'Grade 4-5': `(a) By a further fifteen percent.\n(b) With outrage, and with open letters.\n(c) They seemed to think that art is an extra the country cannot pay for when money is short.`,
             },
-            markScheme: ['1 mark per valid reason identified from the text, maximum 4 marks'],
+            markScheme: [
+              '(a) 1 mark: a further fifteen percent.',
+              '(b) 1 mark each, up to 2, for: outrage; open letters; impassioned speeches about the value of the arts.',
+              '(c) 1 mark, in the student\'s own words, for the idea that art is a luxury or extra that cannot be afforded in hard times, or that people hardly cared what happened to it (their "silence" and "shrug"). Copying "a luxury we can no longer afford" earns no mark.',
+              'Every answer must come from the first paragraph of Text 1.',
+            ],
           },
           {
             id: 'ocr-p1-14-q2',
             questionNumber: 2,
-            questionText:
-              'Read Source A. How does the writer use both economic and personal arguments to defend arts funding? Use evidence from the text in your answer.',
-            marks: 8,
-            suggestedTimeMinutes: 10,
-            questionType: 'analysis',
-            extract: ARTS_SOURCE_A,
-            extractSource: ARTS_SOURCE_A_REF,
+            questionText: `What do the two writers suggest is lost when a country does not make good use of art and artists?\n\nAnswer by linking the two texts, and back each point with evidence from both.`,
+            marks: 6,
+            suggestedTimeMinutes: 8,
+            questionType: 'summary',
+            extract: `Text 1:\n${ARTS_SOURCE_A}\n\nText 2:\n${ARTS_SOURCE_B}`,
+            extractSource: `Text 1: ${ARTS_SOURCE_A_REF} | Text 2: ${ARTS_SOURCE_B_REF}`,
             modelAnswers: {
-              'Grade 4-5':
-                'The writer uses statistics like "£115 billion" and "five pounds" return for every pound to make an economic argument. He then says the economic argument "misses the deeper point" and talks about how the library on his council estate "saved my life". This combination of facts and personal experience makes the argument convincing because it appeals to both logic and emotion.',
-              'Grade 6-7':
-                'Oyelaran constructs a deliberately layered argument that deploys economic evidence strategically before transcending it. The statistics - "£115 billion annually", "more than the automotive, aerospace, and life sciences sectors combined" - are chosen not merely for their factual weight but for their capacity to reframe the debate: comparing arts revenue to industries usually taken more seriously challenges the assumption that culture is economically trivial. The simile "like burning your furniture to save on heating bills" translates economic argument into vivid domestic imagery. However, the pivotal sentence "the economic argument, powerful as it is, misses the deeper point" performs a crucial structural turn: having won the pragmatic argument, the writer explicitly sets it aside as insufficient. The personal narrative that follows - growing up on a council estate, the transformative library - gains additional rhetorical force because it arrives after economic rationality has been established and found wanting. The claim that the library "saved my life - not metaphorically, but literally" inverts the expected cliché, demanding the reader take the statement at face value.',
-              'Grade 8-9':
-                'The writer\'s dual-track argument is architecturally sophisticated: the economic case is constructed first as a concession to pragmatism before being deliberately superseded by the existential case, creating a rhetorical hierarchy where material value is acknowledged but subordinated to human value. The economic evidence is deployed with forensic precision - the specific figure of £115 billion, the comparative framing against automotive and aerospace sectors, the five-to-one return ratio - but each statistic is immediately contextualised through accessible analogy (the furniture-burning simile) that prevents the argument from becoming abstract. The transitional sentence "the economic argument, powerful as it is, misses the deeper point" is a masterpiece of concessive rhetoric: the parenthetical acknowledgement of power simultaneously validates and diminishes the economic case, clearing space for the personal narrative that follows. The council estate childhood functions as both testimony and reproach - "Every child deserves that discovery" universalises a specific experience while the final sentence\'s juxtaposition of "spreadsheet" and "imagination" crystallises the entire argument into a single opposition between instrumental and intrinsic value. The careful escalation from statistics to philosophy to autobiography creates an argument that is simultaneously irrefutable at every level: economically sound, philosophically compelling, and personally undeniable.',
+              'Grade 8-9': `Both writers believe that when a country neglects art, it throws away something precious that cannot be replaced. The writer of Text 1 sides with the speeches about "the irreplaceable value of the arts", arguing that a society without them "is not a society at all", and Ruskin argues that artistic talent is "a perfectly fixed quantity annually, not increasable by one grain": "You may lose it, or you may gather it". Both describe the loss in terms of money. Text 1 points out that the creative industries "contribute over £115 billion annually to the UK economy", so that cutting arts funding is "like burning your furniture to save on heating bills"; Ruskin compares talent to gold that must be found and refined, and calls its misuse "the dead loss of so much human energy". Both also see a loss to people themselves, beyond money. For the modern writer, the arts "make us human", and books showed a child on a council estate "that other lives were possible"; for Ruskin, a born painter who is not made a painter has "his own special gift" left "unemployed", and putting art to a mechanical use means "you destroy it at once". In each text the neglect is a choice: a council's cut, or a nation that lets its gold "lie loose in the ravine".`,
             },
             markScheme: [
-              'Identifies both economic and personal arguments in the text',
-              'Explains how each type of argument affects the reader',
-              'Analyses the relationship between the two types of argument',
-              'Top band: perceptive analysis of how the layered argument creates cumulative persuasive force',
+              ...MARK_LEVELS_Q2,
+              'Links to credit: something irreplaceable lost ("the irreplaceable value of the arts"; talent "not increasable by one grain"); loss counted in money in both ("£115 billion"; "dead loss"); a human loss beyond money ("make us human"; a "special gift" left "unemployed"); neglect as a choice in both.',
             ],
           },
           {
             id: 'ocr-p1-14-q3',
             questionNumber: 3,
-            questionText:
-              "Read Source A. How does the writer use language and structure to persuade the reader that arts funding cuts are wrong?\n\nAnalyse the effects of the writer's choices.",
+            questionText: `Look again at Text 2, the whole text.\n\nHow does Ruskin use language and structure to present artistic talent as precious?\n\nRefer closely to the words of the text, and use subject terminology to explain their effects.`,
             marks: 12,
             suggestedTimeMinutes: 15,
             questionType: 'analysis',
-            extract: ARTS_SOURCE_A,
-            extractSource: ARTS_SOURCE_A_REF,
+            extract: ARTS_SOURCE_B,
+            extractSource: ARTS_SOURCE_B_REF,
             modelAnswers: {
-              'Grade 4-5':
-                'The writer starts by describing the government\'s funding cuts and the public\'s silence, which creates a sense of urgency. He uses strong language like "economically illiterate" and "merely a collection of individuals" to show his disapproval. The structure builds from the problem to the economic argument to the personal story. The ending is powerful because it comes from his own life experience.',
-              'Grade 6-7':
-                'Oyelaran opens by juxtaposing the cultural sector\'s outrage with the public\'s silence, and it is the silence that carries the greater rhetorical weight - indifference is presented as more damaging than hostility. The phrase "economically illiterate" is strategically provocative, turning the accusation of impracticality back on those who make it. The furniture-burning simile is both accessible and devastating, reducing the government\'s position to absurdity through domestic analogy. Structurally, the piece\'s movement from public response to economic data to philosophical argument to personal narrative creates an ascending scale of persuasive intimacy, drawing the reader progressively closer. The negative definition in paragraph three - "A society without music, without theatre, without literature" - uses anaphoric repetition to create a cumulative sense of deprivation. The final paragraph\'s shift to first person ("I grew up") introduces vulnerability into what has been a confident, assertive voice, making the conclusion both unexpected and deeply affecting.',
-              'Grade 8-9':
-                'The writer\'s rhetorical architecture is built on a principle of progressive revelation: each paragraph strips away a layer of assumption to expose a deeper truth. The opening\'s focus on silence rather than protest is a sophisticated gambit - by making public indifference the primary problem, Oyelaran positions his entire article as an act of resistance against that silence. The language escalates through carefully chosen registers: the economic vocabulary of paragraph two ("contribute", "invested", "generated") gives way to the philosophical vocabulary of paragraph three ("human", "shared language", "incommunicable") and finally to the intimate vocabulary of paragraph four ("council estate", "saved my life", "four streets"). This register shift enacts the very argument being made: that economic language is necessary but insufficient, that human experience exceeds quantification. The simile of burning furniture performs double duty: it ridicules the government\'s position while also, through its domestic setting, anticipating the personal narrative to come. The anaphoric negation of paragraph three - "without music, without theatre, without literature, without the visual arts" - creates a rhetorical void that the reader is compelled to fill with their own valued cultural experiences, making the argument personal even before the autobiographical turn. The qualification "not metaphorically, but literally" is structurally crucial: by refusing the expected figurative reading, the writer demands that the reader confront arts access as a matter of life and death, elevating the stakes to their highest possible level.',
+              'Grade 8-9': `Ruskin's lecture is built like a lesson in economics, with a heading, a question and a principle, and the whole argument rests on one extended metaphor: artistic talent is gold.\n\nHe opens with a heading, "I. Discovery.", and a question, "How are we to get our men of genius", which he immediately restates in the language of production: "the greatest quantity of effective art-intellect". This sounds like a factory's concern, but he then imagines his audience's objection, "A wide question, you say", and narrows his aim to "the few principles which lie at the foundation of the matter". The conversational "you say" keeps his Manchester listeners involved.\n\nHis first principle is a sharp antithesis: "you have always to find your artist, not to make him". The comparison "you can't manufacture him, any more than you can manufacture gold" introduces the metaphor that controls everything that follows. The artist lies "nugget-fashion in the mountain-stream"; we may "dig him out", "refine him", make him "into current coin, or household plate", but "not one grain of him can you originally produce". The vocabulary of mining turns genius into a precious natural resource, and the repetition of "grain" stresses how fixed and small the supply is. The paragraph ends with a list of verbs, "sifting, melting, hammering, purifying—never creating", whose final word, set apart by a dash, delivers his point with force.\n\nThe second paragraph signposts a new idea, "And there is another thing notable about this artistical gold", and takes the metaphor in a new direction: gold is limited in use as well as quantity. Short, blunt statements, "You can't make knives of it, nor armour, nor railroads. The gold won't cut you, and it won't carry you", use plain words and contractions, so the warning sounds like common sense, and "put it to a mechanical use, and you destroy it at once" sets an action beside its consequence with stark simplicity.\n\nThe most provocative moment is aimed directly at his audience: "there may be two or three Leonardo da Vincis employed at this moment in your harbours and railroads". Speaking in a city of trade and industry, Ruskin suggests that his listeners may be wasting genius in their harbours and on their railways, and the verbs "oppressing and destroying" make that waste sound cruel. He ends by returning to the language of economics, "the dead loss of so much human energy", so that his argument for art is made in the terms his listeners understand best.`,
             },
             markScheme: [
-              'Analyses specific language choices and their persuasive effects',
-              'Analyses structural choices and their contribution to the argument',
-              'Uses well-chosen textual references to support analysis',
-              'Explores the relationship between language, structure, and persuasive purpose',
-              'Top band: perceptive, detailed analysis showing conceptualised understanding',
+              ...MARK_LEVELS_Q3,
+              'Language to credit: the extended metaphor of gold, with the vocabulary of mining and coin; the antithesis "find your artist, not to make him"; the repetition of "grain"; the list of verbs ending "never creating"; the blunt short sentences; the provocative "Leonardo da Vincis"; "dead loss".',
+              'Structure to credit: a lecture\'s heading, question and principle; the imagined objection ("you say"); the second paragraph signposted as a new idea; an ending that returns to economic language.',
             ],
           },
           {
             id: 'ocr-p1-14-q4',
             questionNumber: 4,
-            questionText:
-              'Read both sources. Compare how the two writers convey their different perspectives on the value of the arts.\n\nIn your answer, you should:\n• compare their different perspectives and attitudes\n• compare the methods they use to convey those perspectives\n• support your response with references to both texts.',
-            marks: 16,
+            questionText: `"In the end, both writers make the case for art in terms of money."\n\nDecide how far you agree with this view.\n\nIn your answer:\n• weigh up the writers' ideas on the value of art, and how far the statement holds for each text\n• say how the texts affect you as a reader, and why\n• compare how each writer presents those ideas\n• quote from both texts to support your points.`,
+            marks: 18,
             suggestedTimeMinutes: 20,
-            questionType: 'comparison',
-            extract: `Source A:\n${ARTS_SOURCE_A}\n\nSource B:\n${ARTS_SOURCE_B}`,
-            extractSource: `${ARTS_SOURCE_A_REF} / ${ARTS_SOURCE_B_REF}`,
+            questionType: 'evaluation',
+            extract: `Text 1:\n${ARTS_SOURCE_A}\n\nText 2:\n${ARTS_SOURCE_B}`,
+            extractSource: `Text 1: ${ARTS_SOURCE_A_REF} | Text 2: ${ARTS_SOURCE_B_REF}`,
             modelAnswers: {
-              'Grade 4-5':
-                'Both writers believe the arts are valuable, but they argue this in different ways. Source A uses economic statistics and personal experience, while Source B uses an extended metaphor, comparing artistic talent to gold. Source A is responding to government cuts, while Ruskin is telling his audience in Manchester how to "find your artist". Both writers think something precious can be wasted: Oyelaran says that to deny children the discovery he made in his library would be "a failure not of economics but of imagination", and Ruskin tells his audience of the nation\'s talent: "You may lose it, or you may gather it". Both use the language of money, but Source A uses real figures like "£115 billion", while Source B compares talent to gold that can be made into "current coin, or household plate".',
-              'Grade 6-7':
-                'Both writers defend the arts against people who judge them only by money, and, interestingly, both borrow the language of money to do it. Oyelaran uses real economic data, "£115 billion annually", to beat his opponents on their own ground before arguing that "the economic argument, powerful as it is, misses the deeper point". Ruskin, lecturing in Manchester in 1857, turns economics into metaphor: artistic talent is like gold, which you cannot "manufacture" but can only "find" and "refine". Their perspectives differ in where they place the value of art. For Oyelaran it lies in what art does for everyone, giving us "a shared language for experiences"; for Ruskin it lies in the rare gift of the born artist, "a perfectly fixed quantity annually, not increasable by one grain". Yet they meet in their fear of waste. Oyelaran\'s library showed him "that the world was larger than the four streets I knew", and he insists that every child deserves that discovery; Ruskin imagines "two or three Leonardo da Vincis employed at this moment in your harbours and railroads", where, he tells his audience, "you are only oppressing and destroying" their gift. Both writers fear that what is best in people will be lost if no one looks for it.',
-              'Grade 8-9':
-                'These texts, almost a hundred and seventy years apart, both speak for the arts to people who measure value in money: Oyelaran to a public that sees art as "a luxury we can no longer afford", Ruskin to an audience in industrial Manchester, whose hidden talent he pictures at work in "your harbours and railroads". The most striking thing about them is that both answer in the language of money before turning it against those who use it. Oyelaran meets his opponents on the ground of economics and wins there ("£115 billion", "five pounds" returned for every pound) before declaring that the economic argument "misses the deeper point". Ruskin concedes nothing; he simply takes over the vocabulary of wealth. The artist is gold to be dug out "nugget-fashion in the mountain-stream" and made "into current coin, or household plate"; each nation receives "a perfectly fixed quantity" of this gold, and the only question is whether to "lose it" or "gather it". The extended metaphor lets him speak to an industrial city in its own terms while telling it something uncomfortable: the one thing it cannot do with this gold is turn it into machinery. "You can\'t make knives of it, nor armour, nor railroads", and if you put it "to a mechanical use", you "destroy it at once". Here the writers differ most. Oyelaran values art because it is shared: it gives everyone "a shared language" for grief and joy, and it changed the life of one boy from a council estate. Ruskin values the rare gift of the born artist, and his concern is for the gift more than for its audience. Yet both texts arrive at waste. Oyelaran calls it "a failure not of economics but of imagination" to deny children that discovery because its value cannot be seen on a spreadsheet; Ruskin calls any attempt to use artistic talent for other work "the dead loss of so much human energy". Both, in the end, count the cost of neglect, and both insist that the true cost is human.',
+              'Grade 8-9': `I disagree with this statement, although it is easy to see why someone might make it. Both writers use the language of money, but both use it to reach a point about human worth that money cannot measure.\n\nThe writer of Text 1 makes the economic case first, because that is the argument those who cut funding understand. Treating art as a luxury is "economically illiterate", since the creative industries bring in "over £115 billion annually", and every pound invested returns "an estimated five pounds". The simile of "burning your furniture to save on heating bills" makes the cut sound foolish in practical terms. But the writer then turns away from this deliberately: "the economic argument, powerful as it is, misses the deeper point. The arts are not valuable because they generate revenue. They are valuable because they make us human." The list of feelings the arts give us words for, "grief, joy, love, rage, wonder, despair", and the story of books that showed a child "that other lives were possible", make the real case. The final sentence even turns the language of money against itself: denying children art "because we cannot see its value on a spreadsheet" is "a failure not of economics but of imagination". As a reader, I find that ending the most persuasive part, because it is personal.\n\nRuskin's whole passage, by contrast, is written in the language of economics, and here the statement has more force. Talent is "gold", artists are made "into current coin", and wasting them is "the dead loss of so much human energy". His lecture is about the economics of art, so the framework is financial. But his gold is a strange kind of currency. It is "not increasable by one grain", it "won't cut you" and "won't carry you", and if you "put it to a mechanical use" you "destroy it at once". In other words, the value of art cannot be turned into anything else, which is exactly the opposite of money. His most striking image, "two or three Leonardo da Vincis employed at this moment in your harbours and railroads", warns that treating people purely as workers destroys what is best in them.\n\nThe writers' methods show this similarity beneath their differences. Text 1 moves from statistics to a personal story, from the economy to the self. Ruskin stays inside one extended metaphor but bends it until it carries a moral meaning. Both speak to their audience directly, Text 1 with "your furniture" and an inclusive "we", and Ruskin with "you" throughout, and both accuse their society of short-sightedness.\n\nOverall, the statement is true of the surface of both texts, especially Ruskin's, but not of their conclusions. Text 1 uses money to win the reader's attention and then rejects it as the measure of art. Ruskin uses money as his metaphor in order to show that artistic talent is a kind of wealth that markets cannot make, use or replace.`,
             },
-            markScheme: [
-              'Compares perspectives and attitudes from both sources',
-              'Compares methods used by both writers',
-              'Uses well-chosen references from both texts',
-              'Analyses how context shapes different perspectives',
-              'Top band: perceptive, detailed comparison with conceptualised understanding of both texts',
-            ],
+            markScheme: {
+              'AO4, evaluation (12 marks)': [
+                ...MARK_LEVELS_AO4,
+                'In this paper: Text 1 makes the economic case first but says "the economic argument ... misses the deeper point"; Text 2 is written entirely in the language of gold and coin, yet its gold "won\'t cut you" and is destroyed by "a mechanical use". Credit an answer that separates the language of money from the argument it serves.',
+              ],
+              'AO3, comparison (6 marks)': [
+                ...MARK_LEVELS_AO3,
+                'Methods to compare: statistics and a personal story against one extended metaphor; a simile about furniture against the image of gold; direct address in both; endings that turn economic language against itself.',
+              ],
+              Marking: ['The two grids are marked separately and the marks added, out of 18.'],
+            },
           },
         ],
       },
@@ -780,30 +907,30 @@ export const ocrP1C: MockExamPaper[] = [
         id: 'ocr-p1-14-writing',
         title: 'Section B: Writing',
         description:
-          'You are advised to spend about 45 minutes on this section, including planning time.',
+          'Answer ONE question: Question 5 or Question 6. You are advised to spend about one hour on this section, including time to plan and to check your work.',
         totalMarks: 40,
-        suggestedTimeMinutes: 45,
+        suggestedTimeMinutes: 60,
         questions: [
           {
             id: 'ocr-p1-14-q5',
             questionNumber: 5,
-            questionText:
-              '"Arts subjects in schools are just as important as science and maths."\n\nWrite an article for your school magazine in which you argue for or against this statement.\n\n(32 marks for content and organisation / 8 marks for technical accuracy)',
+            label: 'Q5 or Q6',
+            questionText: `Answer ONE of the following questions.\n\nQuestion 5\n"Every young person should take part in music, drama or art at school until they are sixteen."\nWrite an article for a magazine for parents in which you argue for or against this view.\nIn your article you could:\n• describe what the arts offer young people\n• consider the pressures on the school timetable\n• give parents advice.\n\nOR\n\nQuestion 6\nWrite a review, for a website for young people, of a book, film, exhibition or performance that changed the way you saw something.\nIn your review you could:\n• describe what you read or saw\n• explain how it affected you\n• persuade readers to experience it for themselves.\n\nIn your answer you will be assessed on content and organisation (24 marks) and on technical accuracy (16 marks).`,
             marks: 40,
-            suggestedTimeMinutes: 45,
+            suggestedTimeMinutes: 60,
             questionType: 'transactional-writing',
             modelAnswers: {
-              'Grade 4-5':
-                'A clear article with: an appropriate tone for a school magazine audience; a sustained argument; some persuasive techniques; generally accurate spelling and punctuation.',
-              'Grade 6-7':
-                'A well-crafted article with: a confident and engaging voice appropriate for the school audience; sophisticated rhetorical techniques; effective use of specific examples; consistent technical accuracy with ambitious vocabulary.',
-              'Grade 8-9':
-                'An outstanding article with: a distinctive and compelling voice; a nuanced argument that avoids simplistic binary opposition; structural sophistication including a memorable opening and conclusion; technical virtuosity with precise vocabulary and varied syntax.',
+              'Grade 8-9': `Question 5, an article for the view.\n\nWhy the arts belong in every timetable\n\nIn Year 9, I chose to drop music. I had never been good at it, the recorder had been a disaster, and I wanted more time for science. Two years later, I joined the school play because a friend begged me to help with the lighting. On the first night, standing in the dark at the back of the hall while two hundred people laughed at a scene we had rehearsed for weeks, I understood what I had been missing. I think every young person deserves to feel that, and I believe the arts should be part of every student's education until they are sixteen.\n\nThe first reason is simple: you cannot know what you love until you try it. Many people who now work as designers, actors, musicians and animators discovered their talent by accident, in a school lesson they had not chosen. If we let thirteen-year-olds drop the arts, we decide their futures before they have had the chance to find out what they can do. Some children have no piano at home, no theatre trips and no art materials. School may be the only place they ever meet these things.\n\nThe second reason is what the arts teach. Rehearsing a play teaches you to work in a team, to turn up on time and to keep going when things go wrong. Learning an instrument teaches patience, because no one plays well at first. Painting and design teach you to look closely and to solve problems that have no single right answer. Employers often say that they want people who can think creatively, communicate and work with others. The arts build exactly those skills.\n\nThe third reason is harder to measure, but it may matter most. The arts give young people a way of expressing what they feel. Growing up brings emotions that are difficult to put into words, and a song, a poem, a drawing or a scene can say what a conversation cannot. For some students, the art room at lunchtime is the one place in school where they feel they belong.\n\nI understand the objections. The timetable is crowded, and parents want their children to do well in the subjects that lead to good jobs. But this is not a choice between the arts and success. The arts help students to succeed, by giving them confidence, discipline and a reason to enjoy school.\n\nSo, parents, when your child comes home asking to drop art or music, ask them to wait. Encourage them to try the school play, the choir or the photography club. They may never become professionals. But they will become more confident, more curious and more themselves, and that is what an education is for.`,
             },
-            markScheme: [
-              'Content & Organisation (32 marks): Purpose - argue persuasively; Audience - school community; Form - magazine article; Structure - coherent argument with engaging introduction and strong conclusion',
-              'Technical Accuracy (8 marks): Sentence demarcation; Standard English; Spelling; Punctuation; Range of sentence forms and vocabulary',
-            ],
+            markScheme: {
+              'AO5, content and organisation (24 marks)': MARK_LEVELS_AO5,
+              'AO6, technical accuracy (16 marks)': MARK_LEVELS_AO6,
+              'For these tasks': [
+                MARK_WRITING_NOTE,
+                'Question 5 is an article for parents: a headline, a clear position, objections answered, and advice that respects adult readers.',
+                'Question 6 is a review: it should say what the work is, judge it, explain its effect and persuade readers, in a voice that suits young people.',
+              ],
+            },
           },
         ],
       },
@@ -811,7 +938,7 @@ export const ocrP1C: MockExamPaper[] = [
   },
 
   // ═══════════════════════════════════════════════════════════════════════════
-  // EXAM 15 - Immigration
+  // EXAM 15: leaving home for a new country
   // ═══════════════════════════════════════════════════════════════════════════
   {
     id: 'ocr-p1-15',
@@ -826,102 +953,87 @@ export const ocrP1C: MockExamPaper[] = [
       {
         id: 'ocr-p1-15-reading',
         title: 'Section A: Reading',
-        description: `Read the two source texts carefully. Then answer all the questions in this section.\n\nSource A: ${IMMIGRATION_SOURCE_A_REF}\nSource B: ${IMMIGRATION_SOURCE_B_REF}`,
+        description: `Read the two texts below, then answer all four questions. You are advised to spend about one hour on this section, about 12 minutes of it reading the texts.\n\nText 1: ${IMMIGRATION_SOURCE_A_REF}\nText 2: ${IMMIGRATION_SOURCE_B_REF}`,
         totalMarks: 40,
         suggestedTimeMinutes: 60,
         questions: [
           {
             id: 'ocr-p1-15-q1',
             questionNumber: 1,
-            questionText:
-              'Read Source A. Identify four points the writer makes about the contribution of immigrants to British society.',
+            questionText: `Look again at the first paragraph of Text 1, from "My parents arrived" to "than I care to calculate."\n\n(a) In what year did the writer's parents arrive in Britain? [1]\n\n(b) Give two things that the writer's parents brought with them. [2]\n\n(c) What job does the writer's mother do? [1]`,
             marks: 4,
             suggestedTimeMinutes: 5,
             questionType: 'short-answer',
-            extract: IMMIGRATION_SOURCE_A,
-            extractSource: IMMIGRATION_SOURCE_A_REF,
+            extract: `Text 1:\n${IMMIGRATION_SOURCE_A}\n\nText 2:\n${IMMIGRATION_SOURCE_B}`,
+            extractSource: `Text 1: ${IMMIGRATION_SOURCE_A_REF} | Text 2: ${IMMIGRATION_SOURCE_B_REF}`,
             modelAnswers: {
-              'Grade 4-5':
-                '1. Her father runs a small engineering firm employing fourteen people. 2. Her mother has worked as a ward sister at a hospital for two decades. 3. Immigrants are younger on average and contribute more in taxes. 4. The NHS would collapse without immigrant workers.',
+              'Grade 4-5': `(a) 1998.\n(b) Two suitcases and three hundred pounds.\n(c) She is a ward sister at the local hospital.`,
             },
-            markScheme: ['1 mark per valid point identified from the text, maximum 4 marks'],
+            markScheme: [
+              '(a) 1 mark: 1998.',
+              '(b) 1 mark each, up to 2, for: two suitcases; three hundred pounds; a conviction (belief) that hard work would be rewarded.',
+              '(c) 1 mark: a ward sister at the local hospital (accept a nurse in charge of a ward).',
+              'Every answer must come from the first paragraph of Text 1.',
+            ],
           },
           {
             id: 'ocr-p1-15-q2',
             questionNumber: 2,
-            questionText:
-              'Read Source A. How does the writer challenge common misconceptions about immigration? Use evidence from the text in your answer.',
-            marks: 8,
-            suggestedTimeMinutes: 10,
-            questionType: 'analysis',
-            extract: IMMIGRATION_SOURCE_A,
-            extractSource: IMMIGRATION_SOURCE_A_REF,
+            questionText: `What do the two writers show about people who move to start a new life in another country?\n\nAnswer by linking the two texts, and back each point with evidence from both.`,
+            marks: 6,
+            suggestedTimeMinutes: 8,
+            questionType: 'summary',
+            extract: `Text 1:\n${IMMIGRATION_SOURCE_A}\n\nText 2:\n${IMMIGRATION_SOURCE_B}`,
+            extractSource: `Text 1: ${IMMIGRATION_SOURCE_A_REF} | Text 2: ${IMMIGRATION_SOURCE_B_REF}`,
             modelAnswers: {
-              'Grade 4-5':
-                'The writer challenges the idea that immigration is "out of control" by putting it in quotation marks to show she disagrees. She says most immigrants come to work, study, or join family. She uses her own family as an example - her father runs a business and her mother is a nurse. She also says immigrants pay more taxes than they use in services, which goes against the idea that they are a burden.',
-              'Grade 6-7':
-                'Chakraborty employs a multi-layered strategy of refutation. She begins with personal testimony - her family\'s trajectory from "two suitcases, three hundred pounds" to professional success - which functions as a living counter-example to anti-immigration narratives. The quotation marks around "out of control" perform a critical distancing, marking the phrase as someone else\'s language that does not survive scrutiny. She then deploys factual rebuttal - immigrants are younger, contribute more in taxes - before naming specific sectors (NHS, care, hospitality, agriculture, construction) to demonstrate that immigration is not abstract but structurally essential. The parenthetical aside "the idea that a human being\'s right to live in safety and dignity depends on their productivity is morally grotesque" challenges not just misconceptions about immigration but the entire framework within which the debate is conducted, refusing to let economic contribution become the sole measure of human worth.',
-              'Grade 8-9':
-                'The writer\'s strategy of challenge operates simultaneously on empirical, rhetorical, and moral levels. Her opening family narrative - the precise detail of "two suitcases, three hundred pounds" - counters anti-immigration sentiment not through argument but through embodied evidence: the reader is confronted with a specific family whose contributions are beyond dispute. The subsequent disclaimer - "I mention this not because I believe immigrants should have to justify their existence through economic contribution" - is a sophisticated pre-emptive strike that challenges the very terms of the debate. By naming the economic justification framework as "morally grotesque" even while deploying it, Chakraborty exposes the double bind immigrants face: damned if they do not contribute, reduced to economic units if they do. The scare-quoted "out of control" is surgically dismantled by the measured, factual sentences that follow - a structural contrast between hysteria and evidence that performs the rationality the writer advocates. The naming of essential sectors - "The NHS would collapse within weeks" - transforms immigrants from a statistical abstraction into the invisible infrastructure of daily life. The final paragraph\'s concessive structure ("None of this means...") pre-empts the accusation of naivety while redirecting responsibility: it is not immigration that is the problem but "inflammatory headlines and misleading statistics", shifting blame from immigrants to those who weaponise discourse about them.',
+              'Grade 8-9': `Both writers present people who move to a new country as capable, hopeful and admirable, against what others might expect. The writer of Text 1 describes parents who arrived "with two suitcases, three hundred pounds, and a conviction that Britain was a place where hard work would be rewarded": the father now runs "a small engineering firm that employs fourteen people", and the mother is "a ward sister". Dickens, surprised by what he sees, calls the emigrants "the pick and flower of England". Both show them calm and purposeful. Dickens's emigrants say "We shall come all right in a day or so", and "the universal cheerfulness was amazing"; the family in Text 1 has built steady lives over "Twenty-six years". Both texts also put families at the centre: Dickens watches a father and mother who "discussed family affairs as peaceably as if they were in perfect retirement", and the writer of Text 1 sets out a whole family's achievements. Finally, both writers set what they saw against mistaken expectations. Dickens found the emigrants a surprise, "to the rout and overthrow of all my expectations", and Text 1 complains that "the public conversation about immigration in this country has become so divorced from reality that basic facts need restating".`,
             },
             markScheme: [
-              'Identifies specific misconceptions the writer challenges',
-              'Explains how the writer uses evidence and rhetoric to challenge them',
-              "Analyses the effectiveness of the writer's methods of challenge",
-              'Top band: perceptive analysis of how the writer challenges both specific claims and the broader framework of debate',
+              ...MARK_LEVELS_Q2,
+              'Links to credit: newcomers as capable and hopeful (the family\'s achievements; "the pick and flower of England"); calm, cheerful purpose; families at the centre in both; reality set against mistaken expectations ("divorced from reality"; "the rout and overthrow of all my expectations").',
             ],
           },
           {
             id: 'ocr-p1-15-q3',
             questionNumber: 3,
-            questionText:
-              "Read Source A. How does the writer use language and structure to present her argument about immigration in Britain?\n\nAnalyse the effects of the writer's choices.",
+            questionText: `Look again at Text 2, the whole text.\n\nHow does Dickens use language and structure to show how his view of the emigrants develops?\n\nRefer closely to the words of the text, and use subject terminology to explain their effects.`,
             marks: 12,
             suggestedTimeMinutes: 15,
             questionType: 'analysis',
-            extract: IMMIGRATION_SOURCE_A,
-            extractSource: IMMIGRATION_SOURCE_A_REF,
+            extract: IMMIGRATION_SOURCE_B,
+            extractSource: IMMIGRATION_SOURCE_B_REF,
             modelAnswers: {
-              'Grade 4-5':
-                'The writer structures her argument by starting with her family\'s story, then moving to facts and statistics, and ending with a call for better debate. She uses emotive language like "morally grotesque" and "poisoned public discourse" to show her strong feelings. The list of sectors that depend on immigrants - "The care sector, the hospitality industry, agriculture, construction" - makes the argument convincing. The final sentence, which accuses politicians of hypocrisy, is powerful and memorable.',
-              'Grade 6-7':
-                'Chakraborty opens with a carefully constructed family narrative whose details are precisely chosen: "two suitcases, three hundred pounds" conveys vulnerability, while the subsequent professional achievements (engineering firm, ward sister, solicitor, teacher) trace an arc of contribution. The structural shift from personal to political is managed through the pivotal disclaimer about economic justification - a sentence that simultaneously deploys and critiques the metrics-based framework. The language becomes increasingly combative as the piece progresses: "morally grotesque" gives way to "inflammatory headlines and misleading statistics" and finally "politicians who stoke fear for electoral advantage". This escalation mirrors the writer\'s movement from defence to attack. The penultimate paragraph\'s list of essential sectors is punctuated by the crucial clarification "these are not abstract economic categories" - a moment where the writer breaks through her own rhetorical framework to insist on the human reality beneath the data. The final paragraph\'s balancing of "facts" against "fear" creates a moral binary that positions the reader as choosing between reason and prejudice.',
-              'Grade 8-9':
-                'The writer\'s rhetorical architecture is constructed with forensic precision, each paragraph performing a distinct argumentative function while contributing to a cumulative effect of irrefutable logic infused with moral passion. The opening paragraph\'s inventory of family achievements - "two suitcases, three hundred pounds... engineering firm... ward sister... solicitor... teacher" - enacts the immigrant narrative of progress through a series of ascending declaratives whose very simplicity refuses to be contradicted. The paragraph\'s closing sentence, "Between us, we have paid more in taxes than I care to calculate", is beautifully judged: the tone of exhausted reluctance transforms what could be defensive self-justification into a quiet reproach. The structural masterwork is the third paragraph\'s first sentence: "Net migration is not \'out of control\'" - a flat declarative that performs the rationality it advocates, stripping the scare-quoted phrase of its emotional power through calm negation. The listing technique in "The NHS would collapse within weeks without immigrant workers. The care sector, the hospitality industry, agriculture, construction" creates a cascading effect where each named sector adds another load-bearing pillar to the argument, making the removal of any one unthinkable. The concluding paragraph\'s concessive opening ("None of this means that immigration policy should not be debated") performs a crucial act of rhetorical generosity that strengthens rather than weakens the writer\'s position: by granting legitimacy to debate, she claims the reasonable ground and cedes extremism to her opponents. The final image - "politicians who stoke fear for electoral advantage while quietly relying on immigrant labour to keep the country running" - delivers the essay\'s most devastating irony: the hypocrisy of those who publicly condemn what they privately require.',
+              'Grade 8-9': `Dickens structures the passage so that the emigrants are seen as people before they are named, and that delayed naming is the key to its effect.\n\nIt begins in the middle of a conversation with the captain, which sets a puzzle at once: "A stranger would be puzzled to guess the right name for these people". The captain's unfinished question, "If you hadn't known, could you ever have supposed—?", breaks off at a dash, leaving the missing word to the reader's imagination. Dickens's answer, that he "should have said they were in their degree, the pick and flower of England", uses a metaphor of the finest blooms, and the short exchange "‘How many are they?’ ‘Eight hundred in round numbers.’" adds the scale.\n\nHe then takes us below. The description of between-decks is crowded and chaotic: families "swarmed in the dark", the confusion was "increased by the little preparations for dinner", and a long list joined by repeated "and", "chests and barrels and beams and unstowed cargo and ring-bolts and Emigrants", imitates his stumbling progress. Against this confusion the people are calm. A few children cry, "but otherwise the universal cheerfulness was amazing", and the quoted phrases, "‘We shall shake down by to-morrow.’ ‘We shall come all right in a day or so.’", repeat "We shall" to show a shared, quiet confidence.\n\nBack on deck, the exclamation "Surely, an extraordinary people in their power of self-abstraction!" marks his growing admiration, and a series of small portraits follows. Letter-writers write "calmly"; a boy does a sum "as if he were stone deaf"; a family's children make "a nest for themselves in a coil of rope", a metaphor that turns ship's tackle into a home. The comparisons "as if he were stone deaf" and "as peaceably as if they were in perfect retirement" stress how undisturbed they are by the bustle round them. The paragraph sums up in one plain sentence: "the most noticeable characteristic in the eight hundred as a mass, was their exemption from hurry".\n\nOnly in the final paragraph does Dickens name them, and he builds to it with a question, "Eight hundred what?", a joking quotation from Macbeth, "‘Geese, villain?’", and then capital letters: "EIGHT HUNDRED MORMONS". The capitals sound like a shout, and the reader, who has already admired these people, must now set that admiration against whatever they thought of Mormons. Dickens's self-mocking title, "Uncommercial Traveller for the firm of Human Interest Brothers", and the military metaphor "to the rout and overthrow of all my expectations" admit that his expectations were overturned, and "scrupulous exactness" insists that his account can be trusted.`,
             },
             markScheme: [
-              'Analyses specific language choices and their effects',
-              'Analyses structural choices and their effects on the reader',
-              'Uses well-chosen textual references to support analysis',
-              'Explores the relationship between language, structure, and argument',
-              'Top band: perceptive, detailed analysis showing conceptualised understanding',
+              ...MARK_LEVELS_Q3,
+              'Language to credit: the metaphor "the pick and flower of England"; the crowded list joined by "and"; the repeated "We shall"; the comparisons "as if he were stone deaf" and "as peaceably as if they were in perfect retirement"; the "nest" in a "coil of rope"; the capitals of "EIGHT HUNDRED MORMONS"; the military metaphor of "rout and overthrow".',
+              'Structure to credit: opening in the middle of a conversation; a puzzle set and left open; the movement from between-decks to the deck; small portraits summed up in one plain sentence; the delayed naming at the very end.',
             ],
           },
           {
             id: 'ocr-p1-15-q4',
             questionNumber: 4,
-            questionText:
-              'Read both sources. Compare how the two writers convey their different perspectives on people who leave their homes to start a new life in another country.\n\nIn your answer, you should:\n• compare their different perspectives and attitudes\n• compare the methods they use to convey those perspectives\n• support your response with references to both texts.',
-            marks: 16,
+            questionText: `"Both writers want to correct mistaken ideas about people who move to a new country."\n\nDecide how far you agree with this view.\n\nIn your answer:\n• weigh up the writers' ideas on people who move to a new country, and how far the statement holds for each text\n• say how the texts affect you as a reader, and why\n• compare how each writer presents those ideas\n• quote from both texts to support your points.`,
+            marks: 18,
             suggestedTimeMinutes: 20,
-            questionType: 'comparison',
-            extract: `Source A:\n${IMMIGRATION_SOURCE_A}\n\nSource B:\n${IMMIGRATION_SOURCE_B}`,
-            extractSource: `${IMMIGRATION_SOURCE_A_REF} / ${IMMIGRATION_SOURCE_B_REF}`,
+            questionType: 'evaluation',
+            extract: `Text 1:\n${IMMIGRATION_SOURCE_A}\n\nText 2:\n${IMMIGRATION_SOURCE_B}`,
+            extractSource: `Text 1: ${IMMIGRATION_SOURCE_A_REF} | Text 2: ${IMMIGRATION_SOURCE_B_REF}`,
             modelAnswers: {
-              'Grade 4-5':
-                'Both writers show people who move to another country in a positive light. Source A is about immigrants coming to Britain, and the writer\'s own parents arrived "with two suitcases, three hundred pounds". Source B is about emigrants leaving England for America in 1863, and Dickens describes them as "the pick and flower of England". Source A uses facts and her family\'s story, while Source B uses description and conversation, such as the emigrants\' cheerful words "We shall have more light at sea." Both writers challenge negative expectations: Source A says that net migration is not "out of control", and Dickens admits that what he found meant "the rout and overthrow of all my expectations".',
-              'Grade 6-7':
-                'Chakraborty and Dickens both challenge assumptions about people who leave home for a new country, but from very different positions. Chakraborty writes as the daughter of immigrants, and her perspective is personal and political: her family\'s story is evidence against a public conversation she thinks has become "so divorced from reality". Dickens writes as an outsider and a sceptic. He came aboard, he tells us, "to see what Eight hundred Latter-day Saints were like", and the delay before he names them, "EIGHT HUNDRED MORMONS", shows that he expects his readers to share the prejudice he is about to overturn. Their methods differ accordingly. Chakraborty argues directly, with facts and a clear thesis; Dickens persuades by showing. He records the emigrants\' own cheerful voices ("We shall shake down by to-morrow"), picks out small scenes such as the "family circle" on the deck, and lets the captain\'s agreement ("So should I") confirm his judgement that they are "the pick and flower of England". Both writers value the qualities that people who migrate bring with them: Chakraborty her parents\' "conviction" that hard work would be rewarded, Dickens the emigrants\' "universal cheerfulness" and "exemption from hurry". But where Chakraborty speaks for people like her own family, Dickens speaks as a witness who has changed his mind, which gives his praise a different kind of authority.',
-              'Grade 8-9':
-                'Both texts answer a hostile expectation about people who uproot themselves, and the most revealing comparison lies in how each writer earns the right to be believed. Chakraborty\'s authority is personal: the "two suitcases, three hundred pounds" of her parents\' arrival, and the careers that followed, are offered as evidence that cannot be argued with. Yet she is uneasy with her own method, and says so, insisting that "the idea that a human being\'s right to live in safety and dignity depends on their productivity is morally grotesque" even as she lists what her family has contributed. Dickens\'s authority is that of the sceptical witness. He does not argue; he reports, and he builds the reader\'s curiosity through the captain\'s unfinished question ("If you hadn\'t known, could you ever have supposed—?") and his own teasing "Eight hundred what?" before the capitals of "EIGHT HUNDRED MORMONS" deliver the surprise. His description works by accumulation. The scene between decks is dark and crowded, yet "the universal cheerfulness was amazing", and the emigrants\' repeated "We shall" ("We shall shake down by to-morrow", "We shall have more light at sea") sounds like a community talking itself into hope. His praise, "the pick and flower of England", is the more striking for being unexpected: he tells us that he found the emigrants as he describes them, "to the rout and overthrow of all my expectations", and he claims only to describe them "with scrupulous exactness". Chakraborty ends by accusing politicians who "stoke fear for electoral advantage"; Dickens ends by admitting that his own expectations were wrong. One writes as an advocate and the other as a witness who changed his mind, and each shows a different way in which prejudice about people who migrate can be answered.',
+              'Grade 8-9': `I agree with this statement for both texts, but the writers correct different mistakes, and in different ways. The writer of Text 1 sets out to correct the public; Dickens corrects himself, and lets the reader learn from his surprise.\n\nThe writer of Text 1 states the purpose openly: "the public conversation about immigration in this country has become so divorced from reality that basic facts need restating". The article then answers claims one by one. "Net migration is not", it says, and puts the headline phrase "out of control" in inverted commas to reject it; it adds that immigrants "come to work, to study, or to join family members", and that the NHS "would collapse within weeks without immigrant workers". The personal opening supports this, with parents who arrived with "two suitcases, three hundred pounds" and built a firm, a nursing career and a family of professionals. Yet the writer also insists that a person's worth should not depend on usefulness, calling that idea "morally grotesque", and concedes that "legitimate concerns about infrastructure and public services" exist. As a reader I find the balance of personal story and argument persuasive, although the article gives no sources for its facts, which a doubtful reader might question.\n\nDickens does not argue at all. He goes aboard to see "what Eight hundred Latter-day Saints were like", and records what he finds. The correction happens through structure. The reader meets the emigrants first as cheerful families, calm letter-writers and a boy at his sum, "the pick and flower of England" in Dickens's own words, and only at the end does Dickens name them: "EIGHT HUNDRED MORMONS". The delay makes the reader judge them by their behaviour before their label. His final admission, "to the rout and overthrow of all my expectations", shows that the mistaken idea was his own, and "scrupulous exactness" asks us to trust his eyes over any rumour.\n\nSo the writers' methods are almost opposite. Text 1 is an argument in the present tense, with facts, rebuttals and a final call for a debate that "must start from facts". Dickens's piece is reporting, in which dialogue, description and gentle humour, such as the joke from Macbeth, "‘Geese, villain?’", do the persuading. Both, though, rely on close observation of real people, the writer's own family and the families on the ship, to show newcomers as ordinary, hopeful and admirable.\n\nOverall, the statement is true of both. Text 1 corrects the false ideas of headlines directly; Text 2 corrects the expectations of its writer, and by sharing his surprise invites readers to question their own. Dickens's method is quieter, but it may be just as effective, because it lets readers discover their mistake for themselves.`,
             },
-            markScheme: [
-              'Compares perspectives and attitudes from both sources',
-              'Compares methods used by both writers',
-              'Uses well-chosen references from both texts',
-              'Analyses how context shapes different perspectives',
-              'Top band: perceptive, detailed comparison with conceptualised understanding of both texts',
-            ],
+            markScheme: {
+              'AO4, evaluation (12 marks)': [
+                ...MARK_LEVELS_AO4,
+                'In this paper: Text 1 sets out to correct the public ("basic facts need restating") while conceding "legitimate concerns"; Text 2 records how Dickens\'s own expectations were overturned. Credit an answer that sees the different mistakes each corrects.',
+              ],
+              'AO3, comparison (6 marks)': [
+                ...MARK_LEVELS_AO3,
+                'Methods to compare: argument with facts and rebuttals against reporting with dialogue and description; a family story in Text 1 against small portraits in Text 2; the delayed naming in Text 2; humour in Text 2.',
+              ],
+              Marking: ['The two grids are marked separately and the marks added, out of 18.'],
+            },
           },
         ],
       },
@@ -929,30 +1041,30 @@ export const ocrP1C: MockExamPaper[] = [
         id: 'ocr-p1-15-writing',
         title: 'Section B: Writing',
         description:
-          'You are advised to spend about 45 minutes on this section, including planning time.',
+          'Answer ONE question: Question 5 or Question 6. You are advised to spend about one hour on this section, including time to plan and to check your work.',
         totalMarks: 40,
-        suggestedTimeMinutes: 45,
+        suggestedTimeMinutes: 60,
         questions: [
           {
             id: 'ocr-p1-15-q5',
             questionNumber: 5,
-            questionText:
-              '"Immigration has been overwhelmingly positive for Britain."\n\nWrite a speech for a public debate in which you argue for or against this statement.\n\n(32 marks for content and organisation / 8 marks for technical accuracy)',
+            label: 'Q5 or Q6',
+            questionText: `Answer ONE of the following questions.\n\nQuestion 5\nWrite an article for a magazine for young people about the challenges and rewards of starting a new life in a new place.\nIn your article you could:\n• describe what it can feel like to arrive somewhere new\n• explain what helps people to settle\n• suggest how others can make newcomers welcome.\n\nOR\n\nQuestion 6\n"Everyone should spend a year living somewhere completely different from home."\nWrite a speech for a school debate in which you argue for or against this statement.\nIn your speech you could:\n• explain what living somewhere different can teach a person\n• consider the difficulties and costs\n• answer the views of those who disagree with you.\n\nIn your answer you will be assessed on content and organisation (24 marks) and on technical accuracy (16 marks).`,
             marks: 40,
-            suggestedTimeMinutes: 45,
+            suggestedTimeMinutes: 60,
             questionType: 'transactional-writing',
             modelAnswers: {
-              'Grade 4-5':
-                'A clear speech with: a sustained argument for or against; some rhetorical techniques such as direct address and repetition; generally accurate spelling and punctuation; appropriate paragraphing.',
-              'Grade 6-7':
-                'A well-crafted speech with: sophisticated use of rhetorical devices including anaphora, tricolon, and counter-argument; appropriate register for a public debate; effective use of evidence and examples; consistent technical accuracy with ambitious vocabulary.',
-              'Grade 8-9':
-                'An outstanding speech with: a compelling and nuanced argument that engages with complexity and avoids caricature; a distinctive and authoritative voice; structural sophistication that builds to a powerful peroration; technical virtuosity with varied sentence forms, precise vocabulary, and controlled rhythm.',
+              'Grade 8-9': `Question 6, a speech for the statement.\n\nGood afternoon, everyone.\n\nClose your eyes for a moment and picture the street you live on. You could probably walk it blindfold: the cracked paving stone outside number twelve, the dog that barks at the gate, the shop that sells the same crisps it sold when you were five. Now imagine waking up tomorrow in a street where you do not know a single person, cannot read the signs and have no idea where to buy bread. Frightening? Of course. That is exactly why I believe that everyone should spend a year living somewhere completely different from home.\n\nMy first reason is that nothing teaches you more about yourself. At home, we are surrounded by people who already know who we are. Somewhere new, nobody does. You have to decide, every day, who you want to be. My cousin spent a year working on a farm in New Zealand after she left school. She went as the shy one in our family. She came back able to talk to anyone, cook for twenty people and mend a fence, and she still says that year taught her more than any classroom.\n\nMy second reason is that it teaches you about other people. It is easy to hold opinions about places and people you have never met. It is much harder once you have shared their food, struggled with their language and been helped by them when you were lost. A year away turns strangers into neighbours. In a world where so many arguments begin with fear of people we do not know, that change matters.\n\nMy third reason is practical. Employers and universities value people who can adapt, solve problems and cope with the unexpected, and a year somewhere different proves that you can. It need not mean another continent, either. Moving from a city to a village, or from one end of the country to the other, can be just as eye-opening.\n\nThe other side will say that this is only for the rich. They are right that moving costs money, and I will not pretend otherwise. But there are schemes that help young people to volunteer, work or study in other places, and there are jobs in other parts of this country that come with somewhere to live. The question is not whether we can afford to do it. It is whether we can afford not to, in a world that will ask us to understand people unlike ourselves.\n\nSo I urge you to support this motion. Home will still be there when you come back. But you will see it, and yourself, with new eyes.\n\nThank you.`,
             },
-            markScheme: [
-              'Content & Organisation (32 marks): Purpose - argue persuasively; Audience - public debate; Form - speech with appropriate conventions; Structure - coherent argument with compelling opening and conclusion',
-              'Technical Accuracy (8 marks): Sentence demarcation; Standard English; Spelling; Punctuation; Range of sentence forms and vocabulary',
-            ],
+            markScheme: {
+              'AO5, content and organisation (24 marks)': MARK_LEVELS_AO5,
+              'AO6, technical accuracy (16 marks)': MARK_LEVELS_AO6,
+              'For these tasks': [
+                MARK_WRITING_NOTE,
+                'Question 5 is a magazine article for young readers: a title, a lively and supportive voice, experience described and practical advice.',
+                'Question 6 is a speech for a debate: it should sound spoken, take a clear side, answer the other side and end with an appeal.',
+              ],
+            },
           },
         ],
       },

@@ -94,7 +94,9 @@ function audit(q: (typeof allQuestions)[number]['q']) {
 describe('the wjec-c2-a answers quote their own extracts', () => {
   it('reads every reading question on all five papers', () => {
     expect(wjecC2A).toHaveLength(5)
-    expect(reading).toHaveLength(20)
+    // Six reading questions a paper since 24 October 2026, when the papers were
+    // set as Eduqas sets C700U20-1 (1.1 to 1.6); four before.
+    expect(reading).toHaveLength(30)
     const total = reading.reduce((n, { q }) => n + audit(q).found.length, 0)
     // 390 on 27 September 2026: a count near zero means the check found nothing to check.
     expect(total).toBeGreaterThan(350)

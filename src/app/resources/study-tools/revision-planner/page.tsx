@@ -53,7 +53,8 @@ const BOARD_TOPICS: Record<string, TopicItem[]> = {
   'Edexcel English Language': [
     { id: 'edx-lang-1', label: 'Paper 1 Section A - Reading fiction (Q1 to Q4)', done: false },
     { id: 'edx-lang-2', label: 'Paper 1 Section B - Imaginative writing', done: false },
-    { id: 'edx-lang-3', label: 'Paper 2 Section A - Reading non-fiction (Q1 to Q6)', done: false },
+    // 31 October 2026: said "Q1 to Q6". Section A runs to Q7, in two parts.
+    { id: 'edx-lang-3', label: 'Paper 2 Section A - Reading non-fiction (Q1 to Q7)', done: false },
     { id: 'edx-lang-4', label: 'Paper 2 Section B - Transactional writing', done: false },
     { id: 'edx-lang-5', label: 'Spoken language endorsement', done: false },
   ],

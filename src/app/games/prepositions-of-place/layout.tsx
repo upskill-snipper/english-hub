@@ -1,9 +1,9 @@
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'Prepositions of Place Game | EAL English',
+  title: 'Prepositions Game | EAL English',
   description:
-    'Practise in, on, under, behind and between with quick-fire questions. A free prepositions game for EAL and beginner English learners.',
+    "Choose the preposition a sentence needs: place, time, movement, transport, words like 'interested in', set phrases and dialogues. A free game for EAL learners.",
   alternates: { canonical: '/games/prepositions-of-place' },
 }
 

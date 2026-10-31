@@ -22,10 +22,16 @@ import { mockExamPapers } from '@/data/mock-exams/base'
  *
  * WHAT IT CHECKS. The three passages were cut by script from Project
  * Gutenberg (#1400, #57060, #55998) and compared with those files paragraph
- * by paragraph. None of those texts is held on this site, so a test cannot
- * cut them again; instead each is pinned by a hash of its words, taken when
- * it was compared. A change to one fails here, and the fix is to cut it
- * again from Gutenberg and re-run
+ * by paragraph. When the Language mocks were set as their boards set them
+ * (24 to 31 October 2026), the Edexcel Paper 2 mock lost its Mayhew passage
+ * (#55998), since Pearson's Paper 2 prints only 20th and 21st century
+ * non-fiction, and OCR's J351/01 mock gained a 19th-century text beside its
+ * modern one: Dickens's "Thoughts about People" from Sketches by Boz (#882),
+ * copied from the passage the 27 September fix cut for another bank and found
+ * word for word against #882 on 31 October. None of those texts is held on
+ * this site, so a test cannot cut them again; instead each is pinned by a hash
+ * of its words, taken when it was compared. A change to one fails here, and the
+ * fix is to cut it again from Gutenberg and re-run
  *   node scripts/check-mock-exam-extracts.mjs --fetch --file base
  * before moving the pin, never to move the pin alone. It also checks that
  * every quotation in every answer and mark-scheme note is in the extract its
@@ -65,11 +71,11 @@ const PINNED: [string, string, number, string, string][] = [
     'genius or energy for the work?',
   ],
   [
-    'EDEXCEL_P2_SOURCE_B',
-    'c4a3af99311dbc0b0178a50c8d16ef9a0f949932ce56b0ef0c2b081e47d7b260',
-    391,
-    'The little watercress girl',
-    'should slip off her feet.',
+    'OCR_P1_TEXT_2',
+    '711b634cc0acdbc738a7d187b78befd561215a67e10ed958babf8ad57fe21e72',
+    237,
+    'It is strange with how little notice',
+    'creatures of habit and endurance.',
   ],
 ]
 
@@ -99,7 +105,7 @@ describe('the base mock-exam bank prints the real texts', () => {
       'Charles Dickens, Great Expectations (1861), from Chapter 1, in the text of the 1867 edition',
     )
     expect(labels).toContain('Henry Mayhew, London Labour and the London Poor, Volume 3 (1861)')
-    expect(labels).toContain('Henry Mayhew, London Labour and the London Poor, Volume 1 (1851)')
+    expect(labels).toContain('Charles Dickens, "Thoughts about People", Sketches by Boz (1836;')
     expect(labels).not.toMatch(/Adapted from|Matthew Arnold/)
   })
 
