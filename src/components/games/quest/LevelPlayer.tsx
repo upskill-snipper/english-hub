@@ -32,7 +32,15 @@ import {
   ThemeCheckView,
   WhoseView,
 } from './challenges/ComicViews'
-import { fillText, type ChallengeProps, type QuestAnswer, type T } from './challenges/shared'
+import {
+  ART_STAGE,
+  fillText,
+  showsArt,
+  TEXT_STAGE,
+  type ChallengeProps,
+  type QuestAnswer,
+  type T,
+} from './challenges/shared'
 import { FeedbackSheet } from './FeedbackSheet'
 import { LevelComplete, type LevelSummary } from './LevelComplete'
 import type { useSfx } from './sfx'
@@ -265,6 +273,9 @@ export function LevelPlayer({
   const View = VIEWS[current.challenge.type]
   const done = answers.filter(Boolean).length
   const levelName = run.mode === 'level' ? levelTitle(run.level, t) : t('quest.review.title')
+  // A challenge with a panel or a portrait gets the screen; one of words keeps
+  // its short measure (challenges/shared.tsx, ART_STAGE).
+  const art = showsArt(current, quest)
 
   return (
     <div
@@ -272,11 +283,17 @@ export function LevelPlayer({
       role="dialog"
       aria-modal="true"
       aria-label={levelName}
-      className="fixed inset-0 z-[60] flex flex-col bg-background"
+      className="q-stage fixed inset-0 z-[60] flex flex-col bg-background"
     >
-      {/* Top bar: leave, progress, the run, sound. */}
+      {/* Top bar: leave, progress, the run, sound. As wide as the widest
+          challenge, so it does not change width from one to the next. */}
       <div className="border-b border-border/60 bg-background/95 backdrop-blur">
-        <div className="mx-auto flex max-w-xl items-center gap-3 px-4 py-3 sm:px-6">
+        <div
+          className={cn(
+            'mx-auto flex items-center gap-3 px-4 py-3 sm:px-6',
+            quest.hasComic ? ART_STAGE : TEXT_STAGE,
+          )}
+        >
           <button
             type="button"
             onClick={close}
@@ -335,7 +352,11 @@ export function LevelPlayer({
             onPlayLevel={onPlayLevel}
           />
         ) : (
-          <div key={at} className="q-in mx-auto max-w-xl px-4 pb-72 pt-5 sm:px-6">
+          <div
+            key={at}
+            data-stage={art ? 'art' : 'text'}
+            className={cn('q-in mx-auto px-4 pb-72 pt-5 sm:px-6', art ? ART_STAGE : TEXT_STAGE)}
+          >
             <p className="mb-3 text-xs font-semibold text-muted-foreground">
               {levelName} · {fillText(t('quest.count'), { n: at + 1, total: dealt.length })}
             </p>

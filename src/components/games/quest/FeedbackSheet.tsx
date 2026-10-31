@@ -9,10 +9,12 @@ import type { Quest } from '@/lib/games/quest/types'
 import { cn } from '@/lib/utils'
 
 import {
+  ART_STAGE,
   En,
   fillText,
   FullPanel,
   PortraitPlate,
+  TEXT_STAGE,
   type QuestAnswer,
   type T,
 } from './challenges/shared'
@@ -26,8 +28,10 @@ interface Body {
   where?: string
   /** The guide's own words on it. */
   why?: string
-  /** A panel, a portrait, the order in the text. */
+  /** The order in the text, or the themes a moment carries. */
   extra?: ReactNode
+  /** A panel or a portrait: under the answer on a phone, beside the words on a desktop. */
+  art?: { node: ReactNode; portrait?: boolean }
 }
 
 function bodyFor(dealt: DealtChallenge, answered: QuestAnswer, quest: Quest, t: T): Body {
@@ -56,17 +60,19 @@ function bodyFor(dealt: DealtChallenge, answered: QuestAnswer, quest: Quest, t: 
         answer: answered.correct ? undefined : <En>{it.answer}</En>,
         where: it.kind === 'where' ? undefined : it.where,
         why: it.explanation,
-        extra:
-          it.kind === 'who' &&
-          it.mode === 'role' &&
-          it.portrait &&
-          quest.art.portraits[it.portrait] ? (
-            <PortraitPlate
-              portrait={quest.art.portraits[it.portrait]}
-              name={it.answer}
-              className="mx-auto max-w-[9rem]"
-            />
-          ) : undefined,
+        art:
+          it.kind === 'who' && it.mode === 'role' && it.portrait && quest.art.portraits[it.portrait]
+            ? {
+                node: (
+                  <PortraitPlate
+                    portrait={quest.art.portraits[it.portrait]}
+                    name={it.answer}
+                    className="mx-auto max-w-[9rem] lg:max-w-none"
+                  />
+                ),
+                portrait: true,
+              }
+            : undefined,
       }
     }
     case 'panel-line':
@@ -78,7 +84,9 @@ function bodyFor(dealt: DealtChallenge, answered: QuestAnswer, quest: Quest, t: 
         where: m.where,
         why: m.significance,
         // The payoff: the line in its panel, as the comic prints it.
-        extra: panel ? <FullPanel panel={panel} className="mx-auto max-w-sm" /> : undefined,
+        art: panel
+          ? { node: <FullPanel panel={panel} className="mx-auto max-w-sm lg:max-w-none" /> }
+          : undefined,
       }
     }
     case 'rebuild':
@@ -92,13 +100,18 @@ function bodyFor(dealt: DealtChallenge, answered: QuestAnswer, quest: Quest, t: 
         answer: answered.correct ? undefined : <En>{c.answer}</En>,
         where: c.where,
         why: c.explanation,
-        extra: quest.art.portraits[c.answer] ? (
-          <PortraitPlate
-            portrait={quest.art.portraits[c.answer]}
-            name={c.answer}
-            className="mx-auto max-w-[9rem]"
-          />
-        ) : undefined,
+        art: quest.art.portraits[c.answer]
+          ? {
+              node: (
+                <PortraitPlate
+                  portrait={quest.art.portraits[c.answer]}
+                  name={c.answer}
+                  className="mx-auto max-w-[9rem] lg:max-w-none"
+                />
+              ),
+              portrait: true,
+            }
+          : undefined,
       }
     case 'marker':
       return {
@@ -176,7 +189,12 @@ export function FeedbackSheet({
           : 'border-red-500 bg-red-50 text-red-950 dark:bg-red-950 dark:text-red-50',
       )}
     >
-      <div className="mx-auto max-w-xl space-y-3 px-4 pb-[max(1rem,env(safe-area-inset-bottom))] pt-4 sm:px-6">
+      <div
+        className={cn(
+          'mx-auto space-y-3 px-4 pb-[max(1rem,env(safe-area-inset-bottom))] pt-4 sm:px-6',
+          !body.art ? TEXT_STAGE : body.art.portrait ? 'max-w-xl lg:max-w-4xl' : ART_STAGE,
+        )}
+      >
         <div className="flex items-center gap-2.5">
           {ok ? (
             <CircleCheck
@@ -202,40 +220,62 @@ export function FeedbackSheet({
           <p className="text-sm font-semibold">{fillText(t('quest.fb.run'), { n: run })}</p>
         )}
 
-        {body.answer && (
-          <p className="text-base">
-            <span className="font-semibold">{t('quest.fb.answer_is')}</span> {body.answer}
-          </p>
-        )}
-        {body.extra && <div className="pt-1">{body.extra}</div>}
-        {body.why && (
-          <div className="rounded-xl bg-background/70 p-3 text-sm leading-relaxed text-foreground dark:bg-background/20 dark:text-inherit">
-            <p className="mb-1 text-xs font-semibold uppercase tracking-wide opacity-70">
-              {t('text_games.fb.why')}
-              {body.where && (
-                <>
-                  {' · '}
-                  <En>{body.where}</En>
-                </>
-              )}
-            </p>
-            <En as="p">{body.why}</En>
-          </div>
-        )}
-
-        <button
-          ref={go}
-          type="button"
-          onClick={onContinue}
-          data-quest-continue
+        {/* On a desktop the art stands beside the words: under them, a panel
+            as wide as the stage filled the screen. Each piece of words takes
+            the next row of the second column, and the last row takes the
+            art's spare height, so the words stay together at the top. */}
+        <div
           className={cn(
-            'q-key flex w-full items-center justify-center gap-2 rounded-2xl px-6 py-3.5 text-base font-bold text-white',
-            ok ? 'bg-emerald-600 hover:bg-emerald-700' : 'bg-red-600 hover:bg-red-700',
+            'space-y-3',
+            body.art &&
+              'lg:grid lg:grid-cols-[auto_minmax(0,1fr)] lg:grid-rows-[auto_auto_auto_auto_1fr] lg:gap-x-8 lg:gap-y-3 lg:space-y-0',
           )}
         >
-          {continueLabel}
-          <ArrowRight className="size-5 rtl:rotate-180" aria-hidden="true" />
-        </button>
+          {body.answer && (
+            <p className="text-base lg:col-start-2">
+              <span className="font-semibold">{t('quest.fb.answer_is')}</span> {body.answer}
+            </p>
+          )}
+          {body.art && (
+            <div
+              className={cn(
+                'pt-1 lg:col-start-1 lg:row-span-5 lg:row-start-1 lg:pt-0',
+                body.art.portrait ? 'lg:w-60' : 'lg:w-[32rem]',
+              )}
+            >
+              {body.art.node}
+            </div>
+          )}
+          {body.extra && <div className="pt-1 lg:col-start-2">{body.extra}</div>}
+          {body.why && (
+            <div className="rounded-xl bg-background/70 p-3 text-sm leading-relaxed text-foreground dark:bg-background/20 dark:text-inherit lg:col-start-2">
+              <p className="mb-1 text-xs font-semibold uppercase tracking-wide opacity-70">
+                {t('text_games.fb.why')}
+                {body.where && (
+                  <>
+                    {' · '}
+                    <En>{body.where}</En>
+                  </>
+                )}
+              </p>
+              <En as="p">{body.why}</En>
+            </div>
+          )}
+
+          <button
+            ref={go}
+            type="button"
+            onClick={onContinue}
+            data-quest-continue
+            className={cn(
+              'q-key flex w-full items-center justify-center gap-2 rounded-2xl px-6 py-3.5 text-base font-bold text-white lg:col-start-2',
+              ok ? 'bg-emerald-600 hover:bg-emerald-700' : 'bg-red-600 hover:bg-red-700',
+            )}
+          >
+            {continueLabel}
+            <ArrowRight className="size-5 rtl:rotate-180" aria-hidden="true" />
+          </button>
+        </div>
       </div>
     </section>
   )
