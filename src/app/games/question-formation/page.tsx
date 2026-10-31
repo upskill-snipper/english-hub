@@ -11,7 +11,7 @@ import { getBoardConfig } from '@/lib/board/board-store'
 import { AnswerExplanation } from '@/components/games/AnswerExplanation'
 import { useGameRound } from '@/components/games/game-round'
 import { useDealer } from '@/lib/games/start-round'
-import { BANK, type QuestionItem } from '@/data/games/banks/question-formation'
+import { BANK, tilesOf, type QuestionItem } from '@/data/games/banks/question-formation'
 
 // ─── Data ──────────────────────────────────────────────────────────────────────
 
@@ -30,19 +30,25 @@ function shuffle<T>(arr: T[]): T[] {
   return a
 }
 
-/** Split a question into orderable tokens (words + final punctuation kept). */
-function tokenise(question: string): string[] {
-  // Separate trailing punctuation so the "?" stays attached to its word.
-  return question.trim().split(/\s+/)
-}
-
 interface Token {
   id: number
   text: string
 }
 
-function buildTokens(question: string): Token[] {
-  return tokenise(question).map((text, id) => ({ id, text }))
+/**
+ * The tiles for a question (24 October 2026). They used to be its words as
+ * printed, so the one tile with a capital went first and the one with a "?"
+ * went last, and a student placed both without knowing why. The bank's
+ * tilesOf gives the words with neither; the built question gets its capital
+ * and its question mark on screen below.
+ */
+function buildTokens(item: QuestionItem): Token[] {
+  return tilesOf(item).map((text, id) => ({ id, text }))
+}
+
+/** A built word as shown: the first gets a capital, as a question's first word does. */
+function shown(text: string, first: boolean): string {
+  return first ? text.charAt(0).toUpperCase() + text.slice(1) : text
 }
 
 // ─── Component ─────────────────────────────────────────────────────────────────
@@ -68,13 +74,10 @@ export default function QuestionFormationPage() {
 
   const currentItem = items[qIdx] ?? null
 
-  const correctTokens = useMemo(
-    () => (currentItem ? tokenise(currentItem.correct) : []),
-    [currentItem],
-  )
+  const correctTokens = useMemo(() => (currentItem ? tilesOf(currentItem) : []), [currentItem])
 
   const loadQuestion = useCallback((item: QuestionItem) => {
-    const tokens = buildTokens(item.correct)
+    const tokens = buildTokens(item)
     // Re-shuffle until the order differs (best effort for short questions).
     let scrambled = shuffle(tokens)
     let guard = 0
@@ -205,6 +208,25 @@ export default function QuestionFormationPage() {
                 <span>{accuracyPct}% accuracy</span>
               </div>
 
+              {/* The answer the question asks for, and a real question's book (24 October 2026). */}
+              {(currentItem.reply || currentItem.source) && (
+                <div className="space-y-1 rounded-xl border border-border bg-card px-4 py-3 text-sm">
+                  {currentItem.reply && (
+                    <p className="text-foreground">
+                      <span className="me-1.5 text-xs font-semibold uppercase tracking-wider text-muted-foreground">
+                        The answer
+                      </span>
+                      {currentItem.reply}
+                    </p>
+                  )}
+                  {currentItem.source && (
+                    <p className="text-xs text-muted-foreground">
+                      A question from {currentItem.source}
+                    </p>
+                  )}
+                </div>
+              )}
+
               {/* Answer area */}
               <div
                 className={cn(
@@ -219,8 +241,8 @@ export default function QuestionFormationPage() {
                     Tap the words below to build your question here.
                   </p>
                 ) : (
-                  <div className="flex flex-wrap gap-2">
-                    {answer.map((token) => (
+                  <div className="flex flex-wrap items-center gap-2">
+                    {answer.map((token, i) => (
                       <button
                         key={token.id}
                         onClick={() => returnToPool(token)}
@@ -232,9 +254,12 @@ export default function QuestionFormationPage() {
                           feedback && 'cursor-default',
                         )}
                       >
-                        {token.text}
+                        {shown(token.text, i === 0)}
                       </button>
                     ))}
+                    <span aria-hidden className="text-lg font-semibold text-muted-foreground">
+                      ?
+                    </span>
                   </div>
                 )}
               </div>

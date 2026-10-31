@@ -146,7 +146,7 @@ export default function GreetingsDialoguePage() {
           gameId="greetings-dialogue"
           audience="eal"
           title="What Do You Say?"
-          description="Read each everyday situation and choose the most polite, natural reply. Perfect for practising greetings, thanks, apologies and requests."
+          description="Read each everyday situation and choose the reply that fits the moment and the person you are talking to. Practise greetings, thanks, apologies, requests and short conversations."
           difficulty="Foundation"
           score={score}
           maxScore={answered || dealt.length || ROUND_SIZE}
@@ -173,6 +173,17 @@ export default function GreetingsDialoguePage() {
                     {current.situation}
                   </p>
                 </div>
+                {/* A short exchange: what has been said so far (24 October 2026). */}
+                {current.before && current.before.length > 0 && (
+                  <div className="space-y-1.5 border-s-2 border-primary/30 ps-3">
+                    {current.before.map((turn, i) => (
+                      <p key={i} className="text-sm leading-relaxed text-foreground">
+                        <span className="font-semibold text-muted-foreground">{turn.who}:</span>{' '}
+                        {turn.says}
+                      </p>
+                    ))}
+                  </div>
+                )}
                 <p className="text-center text-lg font-semibold text-foreground">
                   {current.prompt}
                 </p>
