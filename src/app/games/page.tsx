@@ -1201,7 +1201,7 @@ const EAL_GAMES: GameDef[] = [
   mkGame(
     'tricky-word-spelling',
     'Tricky Word Sprint',
-    'Beat the clock spelling the everyday words people get wrong.',
+    'Beat the clock to choose the UK spelling of everyday words people get wrong.',
     <Volume2 className="size-6" />,
     'Easy',
     'text-rose-400',
@@ -1263,8 +1263,8 @@ const EAL_GAMES: GameDef[] = [
   ),
   mkGame(
     'collocations-challenge',
-    'Make / Do / Have / Take',
-    'Pick the verb that goes with the noun - natural English.',
+    'Collocations Challenge',
+    'Choose the word that goes with its partner, or spot the pair that is not natural English.',
     <Brain className="size-6" />,
     'Medium',
     'text-pink-400',

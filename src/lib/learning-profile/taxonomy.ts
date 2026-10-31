@@ -369,7 +369,7 @@ const TAXA: GameTaxon[] = [
   },
   {
     slug: 'collocations-challenge',
-    title: 'Make / Do / Have / Take',
+    title: 'Collocations Challenge',
     strand: 'vocabulary',
     skill: 'collocations',
     level: 'B1',

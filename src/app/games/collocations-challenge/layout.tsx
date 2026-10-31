@@ -1,9 +1,9 @@
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'Collocations: Make, Do, Have, Take | EAL',
+  title: 'Collocations Challenge | EAL Vocabulary Game',
   description:
-    'Pick the verb that naturally goes with each noun: make, do, have or take. A free collocations game for EAL learners building natural English.',
+    'Choose the word that naturally goes with its partner, or spot the pair that is not natural English. A free collocations game for EAL learners.',
   alternates: { canonical: '/games/collocations-challenge' },
 }
 

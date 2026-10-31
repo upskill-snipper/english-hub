@@ -1,6 +1,6 @@
 'use client'
 
-import { useState, useCallback, useMemo } from 'react'
+import { Fragment, useState, useCallback, useMemo } from 'react'
 import Link from 'next/link'
 import GameShell, { type GameState } from '@/components/games/GameShell'
 import { Button } from '@/components/ui/button'
@@ -35,16 +35,39 @@ const ROUND_SIZE = 15
  * same word on it. It now appears with the feedback.
  * a-collocation-hides-its-answer-until-it-is-given.test.tsx plays a round and
  * fails if anything outside the options names the answer before it is given.
+ *
+ * REBUILT FOR DEPTH (24 October 2026). The bank now holds pay, keep, catch,
+ * tell and many more verbs, adjective and adverb partners, and a new kind: the
+ * odd one out, whose four options are whole pairs and whose prompt has no gap.
+ * The shell's description named make, do, have and take, which would now
+ * single out the answer wherever it is one of those four and another option is
+ * not (have among make, do and give), so it names no word that answers a
+ * question, not even "go". A real line shows its source under it. The label is
+ * worked out from the family, as there are now too many to list.
  */
-const GROUP_LABEL: Record<CollocationGroup, string> = {
-  make: 'MAKE',
-  do: 'DO',
-  have: 'HAVE',
-  take: 'TAKE',
-  noun: 'Noun partner',
+function groupLabel(group: CollocationGroup): string {
+  if (group === 'noun') return 'Noun partner'
+  if (group === 'odd') return 'Odd one out'
+  if (group === 'adjective') return 'Adjective partner'
+  if (group === 'adverb') return 'Adverb partner'
+  return group.toUpperCase()
 }
 
 // ─── Helpers ───────────────────────────────────────────────────────────────────
+
+/**
+ * A short dialogue ("A: ... B: ...") puts the second speaker on a new line
+ * (31 October 2026). Only the layout changes: the sentence, and so the
+ * question's key, is the same text.
+ */
+function withTurns(text: string): React.ReactNode {
+  return text.split(/ (?=B: )/).map((turn, i) => (
+    <Fragment key={i}>
+      {i > 0 && <br />}
+      {turn}
+    </Fragment>
+  ))
+}
 
 function shuffle<T>(arr: T[]): T[] {
   const a = [...arr]
@@ -178,7 +201,7 @@ export default function CollocationsChallengePage() {
           gameId="collocations-challenge"
           audience="eal"
           title="Collocations Challenge"
-          description="Choose the verb or noun that fits the sentence. Master make, do, have and take: the trickiest English word partners."
+          description="Which words belong together in English? Choose the word that fits each sentence, or spot the pair that is not natural English."
           difficulty="Crossover"
           score={score}
           maxScore={totalAnswered || questions.length || ROUND_SIZE}
@@ -196,38 +219,49 @@ export default function CollocationsChallengePage() {
                 </span>
                 <div className="flex items-center gap-3">
                   <span>{accuracyPct}% accuracy</span>
-                  {/* After the answer only: see GROUP_LABEL. */}
+                  {/* After the answer only: see groupLabel. */}
                   {feedback && (
                     <span className="inline-flex items-center gap-1 rounded-full border border-primary/30 bg-primary/10 px-2 py-0.5 text-xs font-semibold text-primary">
                       <Link2 className="size-3" />
-                      {GROUP_LABEL[currentQuestion.collocationGroup]}
+                      {groupLabel(currentQuestion.collocationGroup)}
                     </span>
                   )}
                 </div>
               </div>
 
-              {/* Sentence card */}
-              <div className="rounded-xl border border-border bg-card p-6 text-center">
-                <p className="text-lg leading-relaxed text-foreground">
-                  {sentenceParts[0]}
-                  <span
-                    className={cn(
-                      'mx-1 inline-block min-w-[5rem] rounded-md border-b-2 px-2 pb-0.5 font-bold transition-colors',
-                      feedback === 'correct'
-                        ? 'border-emerald-500 text-emerald-400'
-                        : feedback === 'wrong'
-                          ? 'border-red-500 text-red-400'
-                          : 'border-primary/50 text-primary',
-                    )}
-                  >
-                    {feedback ? currentQuestion.answer : '?'}
-                  </span>
-                  {sentenceParts[1]}
-                </p>
+              {/* Sentence card: a gap to fill, or for the odd one out, the prompt alone */}
+              <div className="space-y-1 rounded-xl border border-border bg-card p-6 text-center">
+                {currentQuestion.kind === 'odd' ? (
+                  <p className="text-lg leading-relaxed text-foreground">
+                    {currentQuestion.sentence}
+                  </p>
+                ) : (
+                  <p className="text-lg leading-relaxed text-foreground">
+                    {withTurns(sentenceParts[0])}
+                    <span
+                      className={cn(
+                        'mx-1 inline-block min-w-[5rem] rounded-md border-b-2 px-2 pb-0.5 font-bold transition-colors',
+                        feedback === 'correct'
+                          ? 'border-emerald-500 text-emerald-400'
+                          : feedback === 'wrong'
+                            ? 'border-red-500 text-red-400'
+                            : 'border-primary/50 text-primary',
+                      )}
+                    >
+                      {feedback ? currentQuestion.answer : '?'}
+                    </span>
+                    {withTurns(sentenceParts[1])}
+                  </p>
+                )}
+                {currentQuestion.source && (
+                  <p className="text-xs italic text-muted-foreground">{currentQuestion.source}</p>
+                )}
               </div>
 
-              {/* Options */}
-              <div className="grid grid-cols-2 gap-3">
+              {/* Options. One column on a phone (31 October 2026): a pair such as
+                  "take responsibility", or a noun such as "announcement", is
+                  wider than half of a 360px screen, and one word cannot wrap. */}
+              <div className="grid grid-cols-1 gap-3 sm:grid-cols-2">
                 {currentOptions.map((option) => {
                   const isAnswer = option === currentQuestion.answer
                   const isPicked = option === selected
@@ -268,11 +302,19 @@ export default function CollocationsChallengePage() {
                     {feedback === 'correct' ? (
                       <>
                         <CheckCircle className="size-4" /> {praise} &ldquo;{currentQuestion.answer}
-                        &rdquo; is the right partner.
+                        &rdquo;{' '}
+                        {currentQuestion.kind === 'odd'
+                          ? 'is the odd one out.'
+                          : 'is the right partner.'}
                       </>
                     ) : (
                       <>
-                        <XCircle className="size-4" /> Not quite. The correct answer is{' '}
+                        {/* An odd-one-out answer is the pair that is NOT English, so
+                            it is never called "the correct answer" (31 October 2026). */}
+                        <XCircle className="size-4" /> Not quite.{' '}
+                        {currentQuestion.kind === 'odd'
+                          ? 'The odd one out is'
+                          : 'The correct answer is'}{' '}
                         <span className="font-bold">&ldquo;{currentQuestion.answer}&rdquo;</span>.
                         Keep going.
                       </>

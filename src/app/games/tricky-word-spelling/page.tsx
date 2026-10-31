@@ -1,6 +1,6 @@
 'use client'
 
-import { useState, useCallback, useEffect, useMemo } from 'react'
+import { Fragment, useState, useCallback, useEffect, useMemo } from 'react'
 import Link from 'next/link'
 import GameShell, { type GameState } from '@/components/games/GameShell'
 import { Button } from '@/components/ui/button'
@@ -23,9 +23,69 @@ import { BANK, WORD_BANK, type TrickyWord } from '@/data/games/banks/tricky-word
 
 const ROUND_SIZE = 18
 const TIME_LIMIT = 90
-const PROMPT = 'Which spelling is correct?'
+/**
+ * The game marks only the UK spelling right (colour, not color), so it says so
+ * on every word (31 October 2026). "UK", not "British": "British" above the
+ * Britain question would show its single t.
+ */
+const PROMPT = 'Which UK spelling fills the gap?'
 
 // ─── Helpers ───────────────────────────────────────────────────────────────────
+
+/**
+ * A short dialogue ("A: ... B: ...") puts the second speaker on a new line
+ * (31 October 2026). Only the layout changes: the sentence, and so the
+ * question's key, is the same text.
+ */
+function withTurns(text: string): React.ReactNode {
+  return text.split(/ (?=B: )/).map((turn, i) => (
+    <Fragment key={i}>
+      {i > 0 && <br />}
+      {turn}
+    </Fragment>
+  ))
+}
+
+/**
+ * The word in use (24 October 2026: TrickyWord.sentence). Its place is drawn
+ * as a blank until the student answers, then filled with the right spelling,
+ * so the word is last seen spelt correctly and in use. A screen reader hears
+ * "blank", not three underscores. A real line says where it comes from
+ * (TrickyWord.source).
+ */
+function SentenceWithGap({
+  sentence,
+  source,
+  filled,
+}: {
+  sentence: string
+  source?: string
+  filled: string | null
+}) {
+  const [before, after = ''] = sentence.split('___')
+  return (
+    <div className="space-y-1">
+      <p className="text-lg leading-relaxed text-foreground">
+        {withTurns(before)}
+        {filled ? (
+          <span className="mx-1 font-bold text-emerald-400">{filled}</span>
+        ) : (
+          <>
+            <span
+              aria-hidden="true"
+              className="mx-1 inline-block min-w-[4rem] border-b-2 border-dashed border-muted-foreground"
+            >
+              &nbsp;
+            </span>
+            <span className="sr-only">blank</span>
+          </>
+        )}
+        {withTurns(after)}
+      </p>
+      {source && <p className="text-xs italic text-muted-foreground">{source}</p>}
+    </div>
+  )
+}
 
 // ─── Component ─────────────────────────────────────────────────────────────────
 
@@ -153,7 +213,7 @@ export default function TrickyWordSpellingPage() {
           gameId="tricky-word-spelling"
           audience="eal"
           title="Tricky Word Sprint"
-          description="Spot the correct spelling of everyday words that trip people up. Tap fast: you have 90 seconds."
+          description="Pick the UK spelling that fills the gap: everyday words that trip people up. Tap fast: you have 90 seconds."
           difficulty="Foundation"
           score={score}
           maxScore={answered || words.length || ROUND_SIZE}
@@ -175,9 +235,14 @@ export default function TrickyWordSpellingPage() {
                 <span>{accuracyPct}% accuracy</span>
               </div>
 
-              {/* Prompt */}
-              <div className="rounded-xl border border-border bg-card p-6 text-center">
+              {/* Prompt, and the word in use */}
+              <div className="space-y-3 rounded-xl border border-border bg-card p-6 text-center">
                 <p className="text-sm text-muted-foreground">{PROMPT}</p>
+                <SentenceWithGap
+                  sentence={current.sentence}
+                  source={current.source}
+                  filled={picked !== null ? view.correctValue : null}
+                />
               </div>
 
               {/* Options - shuffled per attempt, so a tile's slot carries no information */}
