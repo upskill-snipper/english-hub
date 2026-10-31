@@ -38,42 +38,49 @@ export const metadata: Metadata = {
   },
 }
 
+// 31 October 2026: rewritten to src/data/mark-scheme-guides/cambridge-0500-paper1.ts.
+// The rows were Q1(a)-(e) 15, a 25-mark "directed response" to Text A as 1(f), a
+// 15-mark language analysis of Text B as Q2 and a 25-mark, 250-word summary of
+// Texts A and C as Q3: no 0500 syllabus sets that paper. From 2027 it is four
+// questions of 20 on Texts A, B and C; the November 2026 paper, on the 2024-2026
+// syllabus, is three questions of 30, 25 and 25, which the note below says. The
+// minutes are the guide's suggestion; the 15 minutes' reading is Cambridge's own.
 const questions = [
   {
-    number: 'Question 1(a)-(e)',
-    title: 'Short comprehension',
-    marks: 15,
+    number: 'Question 1',
+    title: 'Comprehension (Text A)',
+    marks: 20,
     ao: 'Reading',
     description:
-      'Short answer questions on Text A. Test explicit meaning, implicit meaning, vocabulary in context and selection of evidence.',
-    tip: 'Answer in the shortest complete form. Do not waste time with full introductions.',
-  },
-  {
-    number: 'Question 1(f) Directed Response',
-    title: 'Extended response to Text A',
-    marks: 25,
-    ao: 'Reading 15 / Writing 10',
-    description:
-      'Respond to Text A in a specific form (e.g. a letter, interview, speech). You must develop ideas from the text and express them in your own words.',
-    tip: 'Use three bullet points as a planning structure. Every paragraph should reshape material from the source.',
+      'A series of short questions on Text A. Some ask you to find a detail, some to explain a word or phrase in your own words, and some to explain what the writer suggests or why something happened. Each part is marked point by point.',
+    tip: 'The marks for each part are printed in square brackets: a [3] part needs three separate points, so count them as you write.',
   },
   {
     number: 'Question 2',
-    title: 'Language analysis',
-    marks: 15,
-    ao: 'Reading',
+    title: 'Summary task (Text B)',
+    marks: 20,
+    ao: 'Reading 15 / Writing 5',
     description:
-      'Analyse how the writer of Text B uses language to convey meaning and create effect. Focus on word choice, imagery and phrasing.',
-    tip: 'Pick eight well-chosen words/phrases. Explain literal meaning, connotations and overall effect.',
+      "2(a): a summary of the points in Text B that fit the focus the question gives, in your own words and in continuous writing of no more than 120 words (reading 10, writing 5). 2(b): explain the writer's attitude in Text B, with details from the text (5).",
+    tip: 'Underline every point that fits the focus, cross out repeats and examples, then combine related points into single sentences in fresh words.',
   },
   {
     number: 'Question 3',
-    title: 'Summary',
-    marks: 25,
-    ao: 'Reading 15 / Writing 10',
+    title: 'Short answers and language task (Text C)',
+    marks: 20,
+    ao: 'Reading',
     description:
-      'Write a summary of around 250 words using information from Texts A and C. Reward is for relevant content points expressed concisely in your own words.',
-    tip: 'Aim for 15+ distinct points. Use short sentences. Do not quote.',
+      "Short questions on words and phrases in Text C (10 marks), then a language task of about 200 to 250 words on how the writer's language creates effects in an extract the question names (10 marks).",
+    tip: 'In the language task, choose a few striking words or phrases (three in the specimen paper) and explain what each suggests, including any images.',
+  },
+  {
+    number: 'Question 4',
+    title: 'Extended response to reading (Text C)',
+    marks: 20,
+    ao: 'Reading 10 / Writing 10',
+    description:
+      'About 250 to 300 words based on Text C, in the form the question sets: a letter, report, journal, speech, interview or article. You use and develop ideas from the text to cover each bullet point.',
+    tip: 'Note two or three ideas from Text C under each bullet, then add what each one suggests or leads to: that development is what the higher reading marks look for.',
   },
 ]
 
@@ -85,14 +92,14 @@ const subpages = [
     icon: Eye,
   },
   {
-    title: 'Language analysis (Q2)',
-    description: 'Step-by-step method for analysing word choice and imagery.',
+    title: 'Language analysis (Q3)',
+    description: 'Step-by-step method for the language task: word choice and imagery.',
     href: '/igcse/cambridge/0500/paper-1/language-analysis',
     icon: Lightbulb,
   },
   {
-    title: 'Summary writing (Q3)',
-    description: 'How to hit the 15-point target in 250 words.',
+    title: 'Summary writing (Q2)',
+    description: 'How to write a focused summary of no more than 120 words.',
     href: '/igcse/cambridge/0500/paper-1/summary-writing',
     icon: FileDigit,
   },
@@ -162,6 +169,11 @@ export default async function Paper1HubPage() {
             Question-by-question breakdown
           </h2>
         </div>
+        <p className="mb-4 text-body-sm text-muted-foreground leading-relaxed">
+          This is the paper for exams from 2027. If you sit Paper 1 in November 2026, your paper
+          follows the older 2024-2026 syllabus: three questions worth 30, 25 and 25 marks, in the
+          same 2 hours, so its question numbers and marks are not the ones below.
+        </p>
         <div className="space-y-4">
           {questions.map((q) => (
             <Card key={q.number}>
@@ -228,29 +240,35 @@ export default async function Paper1HubPage() {
           <Clock className="size-5 text-primary" />
           <h2 className="text-heading-md font-heading text-foreground">Suggested timing plan</h2>
         </div>
-        <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
+        <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-5">
           <div className="rounded-xl border border-border/60 bg-muted/30 p-4">
-            <p className="text-body-xs font-semibold text-primary">10 min - read</p>
+            <p className="text-body-xs font-semibold text-primary">15 min - read</p>
             <p className="mt-1 text-body-sm text-foreground">
-              Read all three passages once, lightly annotate.
+              Read all three texts once, lightly annotate.
             </p>
           </div>
           <div className="rounded-xl border border-border/60 bg-muted/30 p-4">
-            <p className="text-body-xs font-semibold text-primary">45 min - Q1</p>
+            <p className="text-body-xs font-semibold text-primary">25 min - Q1</p>
             <p className="mt-1 text-body-sm text-foreground">
-              Short answers (10 min) + directed response (35 min).
+              Comprehension. Count the marks in brackets.
             </p>
           </div>
           <div className="rounded-xl border border-border/60 bg-muted/30 p-4">
             <p className="text-body-xs font-semibold text-primary">25 min - Q2</p>
             <p className="mt-1 text-body-sm text-foreground">
-              Language analysis. Eight well-chosen words or phrases.
+              About 19 min on the summary, 6 on the writer&apos;s attitude.
             </p>
           </div>
           <div className="rounded-xl border border-border/60 bg-muted/30 p-4">
-            <p className="text-body-xs font-semibold text-primary">40 min - Q3</p>
+            <p className="text-body-xs font-semibold text-primary">25 min - Q3</p>
             <p className="mt-1 text-body-sm text-foreground">
-              Summary. Point-spot, plan, write, check.
+              About 12 min on short answers, 13 on the language task.
+            </p>
+          </div>
+          <div className="rounded-xl border border-border/60 bg-muted/30 p-4">
+            <p className="text-body-xs font-semibold text-primary">25 min - Q4</p>
+            <p className="mt-1 text-body-sm text-foreground">
+              Extended response on Text C. Keep the last 5 min to check.
             </p>
           </div>
         </div>

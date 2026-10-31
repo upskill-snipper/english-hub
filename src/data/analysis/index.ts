@@ -884,7 +884,7 @@ export const ANALYSIS_PAGES: AnalysisPageEntry[] = [
     slug: ['language-paper', 'aqa-language-paper-1-question-1-guide'],
     title: 'AQA Language Paper 1 Question 1: How to Answer (4 Marks) | The English Hub',
     description:
-      'Step-by-step guide to AQA English Language Paper 1 Question 1: list four things from the extract. Marking guide, model answer, timing and common mistakes. Written by GCSE markers.',
+      'How to answer AQA Language Paper 1 Question 1, four multiple-choice parts: marking guide, model answer, timing and common mistakes. Written by GCSE markers.',
     category: 'language-paper',
   },
   {
@@ -924,9 +924,9 @@ export const ANALYSIS_PAGES: AnalysisPageEntry[] = [
   },
   {
     slug: ['language-paper', 'aqa-language-paper-2-question-2-summary'],
-    title: 'AQA Language Paper 2 Question 2: Summary (8 Marks) | The English Hub',
+    title: 'AQA Language Paper 2 Question 2: Inferring Differences (8 Marks) | The English Hub',
     description:
-      'How to answer AQA English Language Paper 2 Question 2, the summary question worth 8 marks. Inference, contrast, quotations. Written by GCSE markers.',
+      'How to answer AQA Language Paper 2 Question 2 (8 marks): inferring differences between the sources. Inference, contrast, quotations. Written by GCSE markers.',
     category: 'language-paper',
   },
   {
@@ -1036,9 +1036,9 @@ export const ANALYSIS_PAGES: AnalysisPageEntry[] = [
   },
   {
     slug: ['language-paper', 'paper-2-summary-question-step-by-step'],
-    title: 'Paper 2 Summary Question: Step-by-Step Method | The English Hub',
+    title: 'Paper 2 Question 2: Step-by-Step Method | The English Hub',
     description:
-      'A step-by-step method for the AQA English Language Paper 2 summary question. Plan, quote, synthesise, interpret. Written by GCSE markers.',
+      'Step-by-step method for AQA Language Paper 2 Question 2: inferring differences between two sources. Plan, quote, synthesise, interpret. Written by GCSE markers.',
     category: 'language-paper',
   },
   {

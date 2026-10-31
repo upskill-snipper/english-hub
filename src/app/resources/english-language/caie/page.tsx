@@ -38,14 +38,23 @@ export const metadata: Metadata = {
 }
 
 /* ─── Resource cards ─────────────────────────────────────────── */
+//
+// 31 October 2026: corrected to src/data/mark-scheme-guides/cambridge-0500-paper1.ts
+// and -paper2.ts. The page described the syllabus before 2020: Core and Extended
+// tiers, a 1 hour 45 "Reading (Core)" paper, writing on "Paper 1 (Core) / Paper 2
+// (Ext.)" and a three-question reading paper in the time plan. Every candidate now
+// sits the same two papers, 2 hours and 80 marks each (or Component 3, the
+// Coursework Portfolio, instead of Paper 2), and Paper 1 is four questions of 20.
+// Second read, same day: the card and time plan now also hold for November 2026,
+// whose Paper 1 is three questions of 30, 25 and 25 (cambridge-0500-paper1.ts summary).
 
 const RESOURCES = [
   {
     href: '/resources/english-language/caie/paper-1',
     title: 'Paper 1: Reading',
-    subtitle: 'Core Paper 1 / Extended Paper 2',
+    subtitle: 'Paper 1: 2 hours, 80 marks',
     description:
-      'Master reading comprehension, summary writing, and note-making. Learn how to answer every question type with marker-approved techniques.',
+      'Master comprehension, the summary, the language task and the extended response to reading. Learn how to answer every question type with marker-approved techniques.',
     icon: (
       <svg
         xmlns="http://www.w3.org/2000/svg"
@@ -66,7 +75,7 @@ const RESOURCES = [
   {
     href: '/resources/english-language/caie/paper-2',
     title: 'Paper 2: Directed Writing & Composition',
-    subtitle: 'Extended Paper Only',
+    subtitle: 'Paper 2: 2 hours, 80 marks',
     description:
       'Directed writing formats, narrative and descriptive composition, full band descriptors, and model approaches to secure top marks.',
     icon: (
@@ -114,7 +123,7 @@ const RESOURCES = [
     title: 'Writing Skills',
     subtitle: 'All Formats & Techniques',
     description:
-      'Directed writing formats (letters, reports, speeches, articles, journals), summary technique, and narrative/descriptive composition guidance.',
+      'Directed writing formats (letters, reports, speeches, articles), summary technique, and narrative/descriptive composition guidance.',
     icon: (
       <svg
         xmlns="http://www.w3.org/2000/svg"
@@ -200,7 +209,7 @@ export default async function CaieEnglishLanguagePage() {
             {await t('study.lang.caie.h1')}
           </h1>
           <p className="mt-2 text-lg font-medium text-muted-foreground">
-            Core &amp; Extended / 9&ndash;1 Grading
+            0500 (A*&ndash;G) and 0990 (9&ndash;1)
           </p>
           <p className="mx-auto mt-4 max-w-2xl text-base text-muted-foreground">
             {await t('study.lang.caie.intro')}
@@ -236,22 +245,15 @@ export default async function CaieEnglishLanguagePage() {
             </thead>
             <tbody className="divide-y divide-border text-muted-foreground">
               <tr>
-                <td className="py-3 pe-4 font-medium">Reading (Core)</td>
+                <td className="py-3 pe-4 font-medium">Reading</td>
                 <td className="py-3 pe-4">Paper 1</td>
-                <td className="py-3 pe-4">1 hour 45 min</td>
-                <td className="py-3 pe-4">80</td>
-                <td className="py-3">50%</td>
-              </tr>
-              <tr>
-                <td className="py-3 pe-4 font-medium">Reading (Extended)</td>
-                <td className="py-3 pe-4">Paper 2</td>
                 <td className="py-3 pe-4">2 hours</td>
                 <td className="py-3 pe-4">80</td>
                 <td className="py-3">50%</td>
               </tr>
               <tr>
                 <td className="py-3 pe-4 font-medium">Directed Writing &amp; Composition</td>
-                <td className="py-3 pe-4">Paper 1 (Core) / Paper 2 (Ext.)</td>
+                <td className="py-3 pe-4">Paper 2</td>
                 <td className="py-3 pe-4">2 hours</td>
                 <td className="py-3 pe-4">80</td>
                 <td className="py-3">50%</td>
@@ -267,9 +269,9 @@ export default async function CaieEnglishLanguagePage() {
           </table>
         </div>
         <p className="mt-4 text-sm text-muted-foreground">
-          Most international schools in Qatar and the Gulf region enter students for the{' '}
-          <strong>Extended tier</strong> (grades A*&ndash;E or 9&ndash;1). Core tier candidates are
-          eligible for grades C&ndash;G only.
+          Every candidate sits the same two papers: there are no Core and Extended tiers. 0500 is
+          graded A*&ndash;G and 0990 9&ndash;1, on the same papers. Where a school offers it,{' '}
+          <strong>Component 3, the Coursework Portfolio</strong>, is taken instead of Paper 2.
         </p>
       </section>
 
@@ -328,10 +330,12 @@ export default async function CaieEnglishLanguagePage() {
           <div className="rounded-lg border border-border border-s-4 border-s-primary bg-card p-5 shadow-md">
             <h3 className="font-semibold text-foreground">Time Management</h3>
             <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
-              In Paper 2 (Extended Reading), you have 2 hours for three questions. Allocate roughly
-              25 minutes for Question 1 (detailed comprehension), 30 minutes for Question 2
-              (summary), and 55 minutes for Question 3 (analysis). Always leave 10 minutes to check
-              your work.
+              In Paper 1 (Reading), you have 2 hours for four questions of 20 marks. Allow about 15
+              minutes to read the three texts, then about 25 minutes for each question: Question 1
+              (comprehension), Question 2 (the summary), Question 3 (short answers and the language
+              task) and Question 4 (the extended response). Keep the last 5 minutes to check your
+              work. That is the paper from 2027: the November 2026 paper, on the older syllabus, has
+              three questions worth 30, 25 and 25 marks in the same 2 hours.
             </p>
           </div>
           <div className="rounded-lg border border-border border-s-4 border-s-primary bg-card p-5 shadow-md">

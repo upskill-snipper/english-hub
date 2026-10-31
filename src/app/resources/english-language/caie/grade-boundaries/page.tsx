@@ -64,8 +64,16 @@ interface BoundaryRow {
   Note: These are representative grade boundaries based on publicly available
   Cambridge data. Actual boundaries vary by series. Students should always
   check the official Cambridge website for the most recent thresholds.
+
+  31 October 2026: corrected to src/data/mark-scheme-guides/cambridge-0500-paper1.ts
+  and -paper2.ts. The page described Core and Extended tiers (Papers 1 and 3 for
+  Core, 120 marks, grades C to G; Papers 2 and 4 for Extended). Every candidate in
+  these series sat Paper 1 (Reading) and Paper 2 (Directed Writing and
+  Composition), 80 marks each, or Component 3 instead of Paper 2, so the table
+  below is relabelled to those papers and the Core table, for a tier these series
+  did not have, was removed with the Core marks table.
 */
-const EXTENDED_BOUNDARIES: BoundaryRow[] = [
+const BOUNDARIES: BoundaryRow[] = [
   {
     series: 'Jun 2024',
     astar: 135,
@@ -140,25 +148,6 @@ const EXTENDED_BOUNDARIES: BoundaryRow[] = [
   },
 ]
 
-interface CoreBoundaryRow {
-  series: string
-  c: number
-  d: number
-  e: number
-  f: number
-  g: number
-  maxMark: number
-}
-
-const CORE_BOUNDARIES: CoreBoundaryRow[] = [
-  { series: 'Jun 2024', c: 72, d: 58, e: 44, f: 30, g: 16, maxMark: 120 },
-  { series: 'Mar 2024', c: 70, d: 56, e: 42, f: 28, g: 14, maxMark: 120 },
-  { series: 'Nov 2023', c: 68, d: 55, e: 42, f: 29, g: 16, maxMark: 120 },
-  { series: 'Jun 2023', c: 69, d: 56, e: 43, f: 30, g: 17, maxMark: 120 },
-  { series: 'Mar 2023', c: 67, d: 54, e: 41, f: 28, g: 15, maxMark: 120 },
-  { series: 'Nov 2022', c: 65, d: 52, e: 39, f: 26, g: 13, maxMark: 120 },
-]
-
 /* ─── Page component ─────────────────────────────────────────── */
 
 export default function GradeBoundariesPage() {
@@ -182,8 +171,8 @@ export default function GradeBoundariesPage() {
             Grade Boundaries
           </h1>
           <p className="mx-auto mt-4 max-w-2xl text-lg text-muted-foreground">
-            Historical grade boundaries for Core and Extended tiers, what each grade looks like in
-            practice, and targeted strategies for reaching the next level.
+            Historical grade boundaries for the two papers, what each grade looks like in practice,
+            and targeted strategies for reaching the next level.
           </p>
         </div>
       </section>
@@ -231,18 +220,18 @@ export default function GradeBoundariesPage() {
           </p>
         </div>
 
-        {/* ── Core vs Extended explained ──────────────────────── */}
-        <Section title={tr(`Core vs Extended tier: which one are you sitting?`)} defaultOpen>
+        {/* ── Which papers you sit ─────────────────────────────── */}
+        <Section title={tr(`Which papers do you sit?`)} defaultOpen>
           <p>
-            Cambridge IGCSE English Language has two tiers, and the tier you sit determines which
-            grades are available to you:
+            Every Cambridge IGCSE English Language candidate sits the same papers, and the same
+            grades are available to everyone:
           </p>
 
-          <div className="mt-4 grid gap-4 sm:grid-cols-2">
+          <div className="mt-4">
             <div className="rounded-lg border-2 border-primary/30 bg-primary/5 p-5">
-              <h3 className="text-lg font-bold text-foreground">{tr(`Extended Tier`)}</h3>
+              <h3 className="text-lg font-bold text-foreground">{tr(`Paper 1 + Paper 2`)}</h3>
               <p className="mt-1 text-sm font-medium text-muted-foreground">
-                Paper 2 (Reading) + Paper 4 (Directed Writing &amp; Composition)
+                {tr(`Paper 1 (Reading) + Paper 2 (Directed Writing & Composition)`)}
               </p>
               <ul className="mt-3 ms-5 list-disc space-y-1 text-sm">
                 <li>
@@ -252,41 +241,23 @@ export default function GradeBoundariesPage() {
                 <li>
                   Maximum combined mark: <strong>160</strong>
                 </li>
-                <li>{tr(`More challenging reading passages and questions`)}</li>
-                <li>Required if targeting grade A* or A</li>
-                <li>{tr(`Most international schools enter students for Extended`)}</li>
-              </ul>
-            </div>
-            <div className="rounded-lg border border-border bg-muted p-5">
-              <h3 className="text-lg font-bold text-muted-foreground">Core Tier</h3>
-              <p className="mt-1 text-sm font-medium text-muted-foreground">
-                {tr(`Paper 1 (Reading) + Paper 3 (Directed Writing & Composition)`)}
-              </p>
-              <ul className="mt-3 ms-5 list-disc space-y-1 text-sm">
-                <li>
-                  Grades available: <strong>C &ndash; G</strong> (or 4&ndash;1 for the 9&ndash;1
-                  grading variant)
-                </li>
-                <li>
-                  Maximum combined mark: <strong>120</strong>
-                </li>
-                <li>More accessible reading passages</li>
-                <li>{tr(`Maximum achievable grade is C`)}</li>
-                <li>{tr(`Suitable for students who find the Extended paper too demanding`)}</li>
+                <li>{tr(`Each paper is 2 hours and 80 marks`)}</li>
+                <li>{tr(`Every candidate sits the same papers: there are no tiers`)}</li>
+                <li>{tr(`Component 3, the Coursework Portfolio, can replace Paper 2`)}</li>
               </ul>
             </div>
           </div>
 
           <p className="mt-4 text-sm text-muted-foreground">
-            If you are unsure which tier you are sitting, check with your teacher. The tier is
-            decided before the exam, not after.
+            Every candidate takes Paper 1. If you are unsure whether you are sitting Paper 2 or the
+            Coursework Portfolio, check with your teacher.
           </p>
         </Section>
 
-        {/* ── Extended tier boundaries ────────────────────────── */}
-        <Section title={tr(`Extended tier grade boundaries (Paper 2 + Paper 4)`)} defaultOpen>
+        {/* ── Grade boundaries ────────────────────────────────── */}
+        <Section title={tr(`Grade boundaries (Paper 1 + Paper 2)`)} defaultOpen>
           <p>
-            The total number of marks across Paper 2 and Paper 4 is <strong>160</strong>. Your raw
+            The total number of marks across Paper 1 and Paper 2 is <strong>160</strong>. Your raw
             marks from both papers are combined to produce your overall grade. Below are approximate
             boundaries from recent exam series:
           </p>
@@ -309,7 +280,7 @@ export default function GradeBoundariesPage() {
                 </tr>
               </thead>
               <tbody className="divide-y divide-border">
-                {EXTENDED_BOUNDARIES.map((row) => (
+                {BOUNDARIES.map((row) => (
                   <tr key={row.series}>
                     <td className="py-3 pe-3 font-medium">{row.series}</td>
                     <td className="py-3 pe-3 text-center bg-primary/5 font-semibold text-primary">
@@ -368,50 +339,6 @@ export default function GradeBoundariesPage() {
           <p className="mt-4 text-sm text-muted-foreground">
             These are approximate ranges based on recent trends. The actual percentages vary
             depending on the difficulty of each paper and overall candidate performance.
-          </p>
-        </Section>
-
-        {/* ── Core tier boundaries ───────────────────────────── */}
-        <Section title={tr(`Core tier grade boundaries (Paper 1 + Paper 3)`)}>
-          <p>
-            The total number of marks across Paper 1 and Paper 3 is <strong>120</strong>. The
-            highest grade available on Core is <strong>C</strong>. Below are approximate boundaries
-            from recent exam series:
-          </p>
-
-          <div className="overflow-x-auto mt-4">
-            <table className="w-full text-sm">
-              <thead>
-                <tr className="border-b-2 border-border text-start text-muted-foreground">
-                  <th className="py-3 pe-3">Series</th>
-                  <th className="py-3 pe-3 text-center font-semibold text-muted-foreground">C</th>
-                  <th className="py-3 pe-3 text-center">D</th>
-                  <th className="py-3 pe-3 text-center">E</th>
-                  <th className="py-3 pe-3 text-center">F</th>
-                  <th className="py-3 text-center">G</th>
-                </tr>
-              </thead>
-              <tbody className="divide-y divide-border">
-                {CORE_BOUNDARIES.map((row) => (
-                  <tr key={row.series}>
-                    <td className="py-3 pe-3 font-medium">{row.series}</td>
-                    <td className="py-3 pe-3 text-center font-semibold text-muted-foreground">
-                      {row.c}
-                    </td>
-                    <td className="py-3 pe-3 text-center">{row.d}</td>
-                    <td className="py-3 pe-3 text-center">{row.e}</td>
-                    <td className="py-3 pe-3 text-center">{row.f}</td>
-                    <td className="py-3 text-center">{row.g}</td>
-                  </tr>
-                ))}
-              </tbody>
-            </table>
-          </div>
-
-          <p className="mt-4 text-sm text-muted-foreground">
-            Core tier boundaries are generally lower in absolute terms, but remember the maximum
-            mark is also lower (120 vs 160). In percentage terms, a Core C typically requires around{' '}
-            <strong>58&ndash;60%</strong>.
           </p>
         </Section>
 
@@ -513,7 +440,7 @@ export default function GradeBoundariesPage() {
               </h3>
               <div className="mt-3 space-y-2 text-sm">
                 <p>
-                  <strong>{tr(`Reading (Paper 2 / Paper 1):`)}</strong>
+                  <strong>{tr(`Reading (Paper 1):`)}</strong>
                 </p>
                 <ul className="ms-5 list-disc space-y-1">
                   <li>
@@ -542,7 +469,7 @@ export default function GradeBoundariesPage() {
                   </li>
                 </ul>
                 <p className="mt-3">
-                  <strong>{tr(`Writing (Paper 4 / Paper 3):`)}</strong>
+                  <strong>{tr(`Writing (Paper 2):`)}</strong>
                 </p>
                 <ul className="ms-5 list-disc space-y-1">
                   <li>
@@ -729,7 +656,7 @@ export default function GradeBoundariesPage() {
         <Section title={tr(`Marks per component at a glance`)}>
           <div className="space-y-6">
             <div>
-              <h3 className="font-bold text-foreground">{tr(`Extended Tier`)}</h3>
+              <h3 className="font-bold text-foreground">{tr(`Paper 1 + Paper 2`)}</h3>
               <div className="overflow-x-auto mt-3">
                 <table className="w-full text-sm">
                   <thead>
@@ -742,16 +669,18 @@ export default function GradeBoundariesPage() {
                   </thead>
                   <tbody className="divide-y divide-border">
                     <tr>
-                      <td className="py-2 pe-4 font-semibold">Paper 2 &mdash; Reading</td>
+                      <td className="py-2 pe-4 font-semibold">Paper 1: Reading</td>
                       <td className="py-2 pe-4">
-                        {tr(`Comprehension, language analysis, summary, writer’s effect`)}
+                        {tr(
+                          `Comprehension, summary, language analysis, extended response to reading`,
+                        )}
                       </td>
                       <td className="py-2 pe-4">80</td>
                       <td className="py-2 pe-4">50%</td>
                     </tr>
                     <tr>
                       <td className="py-2 pe-4 font-semibold">
-                        {tr(`Paper 4 - Directed Writing & Composition`)}
+                        {tr(`Paper 2 - Directed Writing & Composition`)}
                       </td>
                       <td className="py-2 pe-4">
                         {tr(
@@ -765,48 +694,6 @@ export default function GradeBoundariesPage() {
                       <td className="py-2 pe-4">Total</td>
                       <td className="py-2 pe-4"></td>
                       <td className="py-2 pe-4">160</td>
-                      <td className="py-2 pe-4">100%</td>
-                    </tr>
-                  </tbody>
-                </table>
-              </div>
-            </div>
-
-            <div>
-              <h3 className="font-bold text-muted-foreground">Core Tier</h3>
-              <div className="overflow-x-auto mt-3">
-                <table className="w-full text-sm">
-                  <thead>
-                    <tr className="border-b border-border text-start text-muted-foreground">
-                      <th className="py-2 pe-4">Component</th>
-                      <th className="py-2 pe-4">Content</th>
-                      <th className="py-2 pe-4">Marks</th>
-                      <th className="py-2 pe-4">Weighting</th>
-                    </tr>
-                  </thead>
-                  <tbody className="divide-y divide-border">
-                    <tr>
-                      <td className="py-2 pe-4 font-semibold">{tr(`Paper 1 - Reading`)}</td>
-                      <td className="py-2 pe-4">
-                        {tr(`Comprehension, language analysis, summary`)}
-                      </td>
-                      <td className="py-2 pe-4">60</td>
-                      <td className="py-2 pe-4">50%</td>
-                    </tr>
-                    <tr>
-                      <td className="py-2 pe-4 font-semibold">
-                        {tr(`Paper 3 - Directed Writing & Composition`)}
-                      </td>
-                      <td className="py-2 pe-4">
-                        {tr(`Directed writing, narrative or descriptive composition`)}
-                      </td>
-                      <td className="py-2 pe-4">60</td>
-                      <td className="py-2 pe-4">50%</td>
-                    </tr>
-                    <tr className="font-bold">
-                      <td className="py-2 pe-4">Total</td>
-                      <td className="py-2 pe-4"></td>
-                      <td className="py-2 pe-4">120</td>
                       <td className="py-2 pe-4">100%</td>
                     </tr>
                   </tbody>
@@ -1034,7 +921,7 @@ export default function GradeBoundariesPage() {
               href="/resources/english-language/caie/paper-1"
               className="rounded-lg border border-border p-4 transition-colors hover:border-primary/40 hover:bg-primary/5"
             >
-              <p className="font-semibold text-foreground">{tr(`Paper 1: Reading (Core)`)}</p>
+              <p className="font-semibold text-foreground">{tr(`Paper 1: Reading`)}</p>
               <p className="mt-1 text-xs text-muted-foreground">
                 {tr(`Comprehension, summary, and language analysis`)}
               </p>
@@ -1043,9 +930,11 @@ export default function GradeBoundariesPage() {
               href="/resources/english-language/caie/paper-2"
               className="rounded-lg border border-border p-4 transition-colors hover:border-primary/40 hover:bg-primary/5"
             >
-              <p className="font-semibold text-foreground">{tr(`Paper 2: Reading (Extended)`)}</p>
+              <p className="font-semibold text-foreground">
+                {tr(`Paper 2: Directed Writing & Composition`)}
+              </p>
               <p className="mt-1 text-xs text-muted-foreground">
-                {tr(`Comprehension, summary, language analysis, and writer’s effect`)}
+                {tr(`Directed writing and narrative or descriptive composition`)}
               </p>
             </Link>
             <Link

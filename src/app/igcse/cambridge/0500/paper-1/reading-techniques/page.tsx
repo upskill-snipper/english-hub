@@ -60,7 +60,7 @@ const techniques = [
   {
     name: 'Close reading',
     icon: BookOpen,
-    when: 'For language analysis (Q2) and inference',
+    when: 'For the language task and inference',
     purpose:
       "Read slowly and deliberately to understand the writer's intended effects and layered meanings.",
     how: [
@@ -80,7 +80,7 @@ const techniques = [
       'Leave a visible trail of thoughts on the page so you can find evidence fast when writing answers.',
     how: [
       'Underline key content points (useful for summary writing).',
-      'Circle powerful verbs, adjectives and images (useful for Q2).',
+      'Circle powerful verbs, adjectives and images (useful for the language task).',
       'Margin notes: short labels like "fear", "contrast", "climax".',
       'Draw a vertical line next to a paragraph if it has a shift in tone.',
     ],
@@ -169,6 +169,15 @@ export default async function ReadingTechniquesPage() {
             Putting it all together in the exam
           </h2>
         </div>
+        {/* 31 October 2026, second reader: the steps below number the questions as the
+            2027 paper does, which differs from November 2026's (src/data/mark-scheme-guides/
+            cambridge-0500-paper1.ts), so the note says what changes; the technique
+            cards above name the language task without a number for the same reason. */}
+        <p className="mb-4 text-body-sm text-muted-foreground leading-relaxed">
+          This order follows the paper for exams from 2027. On the November 2026 paper the summary
+          is part of Question 1, the language task is part of Question 2, and the extended response
+          is Question 3.
+        </p>
         <ol className="space-y-3 text-body-sm text-muted-foreground">
           <li className="flex items-start gap-3">
             <span className="mt-0.5 flex size-6 shrink-0 items-center justify-center rounded-full bg-primary/10 text-body-xs font-semibold text-primary">
@@ -192,9 +201,13 @@ export default async function ReadingTechniquesPage() {
             <span className="mt-0.5 flex size-6 shrink-0 items-center justify-center rounded-full bg-primary/10 text-body-xs font-semibold text-primary">
               3
             </span>
+            {/* 31 October 2026: steps 3 and 4 sent Text B to a Q2 language question and
+                Texts A and C to a Q3 summary. From 2027 the summary is Q2, on Text B
+                alone, and the language task is in Q3, on Text C, followed by Q4 on Text C
+                (src/data/mark-scheme-guides/cambridge-0500-paper1.ts). */}
             <span>
-              <span className="font-semibold text-foreground">Close read Text B</span> for Q2.
-              Annotate powerful words and link each to an effect.
+              <span className="font-semibold text-foreground">Point-spot Text B</span> for the Q2
+              summary. Underline every point that fits the focus.
             </span>
           </li>
           <li className="flex items-start gap-3">
@@ -202,8 +215,19 @@ export default async function ReadingTechniquesPage() {
               4
             </span>
             <span>
-              <span className="font-semibold text-foreground">Point-spot Texts A and C</span> for Q3
-              summary. Underline every discrete piece of information.
+              <span className="font-semibold text-foreground">
+                Close read the extract of Text C
+              </span>{' '}
+              for the Q3 language task. Annotate powerful words and link each to an effect.
+            </span>
+          </li>
+          <li className="flex items-start gap-3">
+            <span className="mt-0.5 flex size-6 shrink-0 items-center justify-center rounded-full bg-primary/10 text-body-xs font-semibold text-primary">
+              5
+            </span>
+            <span>
+              <span className="font-semibold text-foreground">Re-read Text C for Q4</span>, noting
+              two or three ideas under each bullet point before you write.
             </span>
           </li>
         </ol>

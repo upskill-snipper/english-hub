@@ -198,6 +198,13 @@ export default function WJECEnglishLanguagePage() {
           </div>
 
           {/* ── Paper 1 detail ─────────────────────────────────── */}
+          {/* 31 October 2026, against the C700 guides in src/data/mark-scheme-guides/
+              eduqas-lang-comp1.ts and -comp2.ts: Paper 1's writing was "narrative or
+              descriptive" (the specification asks for a narrative or recount, and pure
+              description cannot reach the top of the range); evaluation was "Paper 1
+              Section A" only (Paper 2's Question 1.4 assesses it too). Below, AQA's
+              Paper 1 fiction was "from any period" (it is 20th or 21st-century) and
+              Edexcel's 40/60 split was said to differ from this one (it is the same). */}
           <div className="mt-12 rounded-xl border border-border bg-card p-6 shadow-md sm:p-8">
             <h3 className="text-xl font-bold text-foreground">
               Paper 1: 20th Century Literature Reading &amp; Creative Prose Writing
@@ -224,7 +231,10 @@ export default function WJECEnglishLanguagePage() {
                   <li>&bull; One creative prose writing task</li>
                   <li>&bull; Choice of four titles</li>
                   <li>&bull; Assessed on content (24 marks) and technical accuracy (16 marks)</li>
-                  <li>&bull; Narrative or descriptive prose expected</li>
+                  <li>
+                    &bull; A story, or an account of an experience, real or imagined: writing that
+                    only describes cannot reach the top of the mark range
+                  </li>
                 </ul>
               </div>
             </div>
@@ -245,8 +255,8 @@ export default function WJECEnglishLanguagePage() {
                   <li>&bull; Two non-fiction texts: one 19th century, one 21st century</li>
                   <li>&bull; Questions on each text individually and a comparison question</li>
                   <li>
-                    &bull; Tests retrieval, inference, language/structural analysis, synthesis, and
-                    comparison
+                    &bull; Tests retrieval, inference, language/structural analysis, evaluation,
+                    synthesis, and comparison
                   </li>
                   <li>
                     &bull; Extended response comparing attitudes or perspectives across both texts
@@ -306,8 +316,8 @@ export default function WJECEnglishLanguagePage() {
                 ao: 'Evaluate',
                 title: 'Evaluate texts critically',
                 detail:
-                  'Support evaluation with appropriate textual references. Assessed in Paper 1 Section A.',
-                weight: 'Reading (Paper 1)',
+                  'Support evaluation with appropriate textual references. Assessed in both papers: Paper 1 Question 05 and Paper 2 Question 1.4.',
+                weight: 'Reading (both papers)',
               },
               {
                 ao: 'Content',
@@ -409,10 +419,10 @@ export default function WJECEnglishLanguagePage() {
             <div className="rounded-lg border-s-4 border-primary bg-blue-500/10 p-4">
               <h3 className="font-semibold text-foreground">20th Century Literature Extract</h3>
               <p className="mt-1 text-sm text-muted-foreground">
-                Paper 1 reading uses a 20th-century literary prose extract &mdash; neither AQA
-                (which uses fiction from any period) nor Edexcel (which uses 19th-century fiction)
-                share this exact focus. Expect extracts from novels or short stories published
-                between 1900 and 1999.
+                Paper 1 reading uses a 20th-century literary prose extract. Neither AQA (which uses
+                20th or 21st-century fiction) nor Edexcel (which uses 19th-century fiction) shares
+                this exact focus. Expect extracts from novels or short stories published between
+                1900 and 1999.
               </p>
             </div>
             <div className="rounded-lg border-s-4 border-primary bg-blue-500/10 p-4">
@@ -420,26 +430,28 @@ export default function WJECEnglishLanguagePage() {
                 Two Compulsory Writing Tasks in Paper 2
               </h3>
               <p className="mt-1 text-sm text-muted-foreground">
-                Unlike AQA and Edexcel, where the non-fiction writing section requires one extended
-                piece, WJEC Eduqas Paper 2 requires two shorter writing for real purposes tasks.
-                This tests your ability to adapt to different forms and audiences within the same
-                exam sitting.
+                Unlike AQA, Edexcel and OCR, where each paper&apos;s writing section asks for one
+                piece, WJEC Eduqas Paper 2 requires two compulsory transactional or persuasive
+                writing tasks of 20 marks each, about 300 to 400 words apiece. This tests your
+                ability to adapt to different forms and audiences within the same exam sitting.
               </p>
             </div>
             <div className="rounded-lg border-s-4 border-primary bg-blue-500/10 p-4">
               <h3 className="font-semibold text-foreground">Creative Writing: Prose Only</h3>
               <p className="mt-1 text-sm text-muted-foreground">
-                Paper 1&apos;s creative writing section is strictly prose &mdash; narrative or
-                descriptive writing. AQA also offers descriptive/narrative, but Edexcel gives
-                broader imaginative writing options. WJEC provides a choice of four titles.
+                Paper 1&apos;s creative writing section is strictly prose: a story, or an account of
+                an experience, real or imagined. Writing that only describes cannot reach the top of
+                the mark range, whereas AQA offers a description as one of its two options and
+                Edexcel gives broader imaginative writing options. WJEC provides a choice of four
+                titles.
               </p>
             </div>
             <div className="rounded-lg border-s-4 border-primary bg-blue-500/10 p-4">
               <h3 className="font-semibold text-foreground">Weighting: 40/60 Split</h3>
               <p className="mt-1 text-sm text-muted-foreground">
                 Paper 1 is worth 40% and Paper 2 is worth 60%. This contrasts with AQA&apos;s 50/50
-                split and differs from Edexcel&apos;s 40/60 weighting (though the content focus of
-                each paper is different).
+                split and matches Edexcel&apos;s 40/60 weighting, though the content of each paper
+                is different.
               </p>
             </div>
           </div>

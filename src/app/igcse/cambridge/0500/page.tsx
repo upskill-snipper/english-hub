@@ -46,6 +46,12 @@ export const metadata: Metadata = {
   alternates: { canonical: 'https://theenglishhub.app/igcse/cambridge/0500' },
 }
 
+// 31 October 2026: the Reading Paper's sections were Question 2 as language
+// analysis and Question 3 as a summary "based on two passages". From 2027 the
+// paper is four questions of 20 (src/data/mark-scheme-guides/cambridge-0500-paper1.ts):
+// Q1 comprehension (Text A), Q2 the summary (Text B, one text), Q3 short answers
+// and the language task (Text C), Q4 an extended response to reading (Text C).
+// Second reader: the card now says this is from 2027, and that November 2026 differs.
 const papers = [
   {
     code: 'Reading Paper',
@@ -54,21 +60,25 @@ const papers = [
     marks: '80 marks',
     weight: '50% of qualification',
     description:
-      'Reading passages followed by comprehension, language analysis, a summary and a directed writing task based on the texts.',
+      'From 2027, three texts and four questions of 20 marks: comprehension, a summary, short answers with a language task, and a piece of writing in a set form based on the third text. November 2026 still sits the older three-question paper.',
     icon: BookOpen,
     href: '/igcse/cambridge/0500/paper-1',
     sections: [
       {
-        label: 'Question 1 - short comprehension responses',
+        label: 'Question 1 - comprehension of Text A',
         href: '/igcse/cambridge/0500/paper-1',
       },
       {
-        label: "Question 2 - language analysis of the writer's choices",
+        label: 'Question 2 - summary task on Text B',
+        href: '/igcse/cambridge/0500/paper-1/summary-writing',
+      },
+      {
+        label: "Question 3 - short answers and analysis of the writer's language in Text C",
         href: '/igcse/cambridge/0500/paper-1/language-analysis',
       },
       {
-        label: 'Question 3 - summary writing based on two passages',
-        href: '/igcse/cambridge/0500/paper-1/summary-writing',
+        label: 'Question 4 - extended response to reading, based on Text C',
+        href: '/igcse/cambridge/0500/paper-1',
       },
     ],
     subLinks: [

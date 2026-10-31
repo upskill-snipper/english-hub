@@ -5,6 +5,25 @@ import type { CourseData, CourseQuiz, CourseModule } from './courses'
 // WJEC/Eduqas GCSE English Language - Component 1 Modules
 // 20th Century Literature Reading and Creative Prose Writing
 // ═══════════════════════════════════════════════════════════════════════════════
+//
+// CORRECTED 31 October 2026 against src/data/mark-scheme-guides/eduqas-lang-comp1.ts.
+// The course keeps the 2014 sample paper's numbering (A1 to A5, B1; live papers
+// number the questions 01 to 05 and 11), and the overview now says so. What was
+// wrong: A1 was taught as five 1-mark questions of mixed types (multiple choice,
+// true or false, sequencing, 2-mark inference parts); it is one question, list
+// five things, one mark per point, inferences included. A3 was said to range
+// over the whole extract; it covers a longer named section (A5 uses the whole
+// passage). A4 was structure alone, with "discussing language in A4" taught as a
+// mistake; it asks for language and structure together. Section B offered
+// "narrative or descriptive" writing; the specification asks for a narrative or
+// recount, and writing that only describes cannot reach the top of the range.
+// The AO5 band ranges, a grade table, the word guidance (400-500 words; the paper
+// suggests 450-600) and the planning time (5 minutes; the paper advises about 10)
+// were also wrong.
+// Second reading, same day: the Band 4 and 5 lines kept AQA's own level wording
+// (now the guide's bands), the timing plan's 3-minute check contradicted Module
+// 9's 5, and two quiz items (A4 as "specifically structure", "not using
+// quotations" as a wrong answer to an A4 mistake) no longer fitted the course.
 
 const comp1Modules: CourseModule[] = [
   // ──────────────────────────────────────────────
@@ -24,17 +43,18 @@ const comp1Modules: CourseModule[] = [
 <h3>Paper Structure at a Glance</h3>
 <ul>
   <li><strong>Section A - Reading (40 marks):</strong> You are given one unseen 20th-century literary prose extract (approximately 60-100 lines) and answer a series of structured questions on it.</li>
-  <li><strong>Section B - Creative Prose Writing (40 marks):</strong> One creative prose writing task chosen from a selection of titles. You must write either a narrative or a descriptive piece.</li>
+  <li><strong>Section B - Creative Prose Writing (40 marks):</strong> One piece of creative prose writing from a choice of four titles: a story, or an account of an experience, real or imagined, of about 450 to 600 words.</li>
 </ul>
 
 <h3>Question-by-Question Breakdown</h3>
+<p>This course uses the numbering of the 2014 sample paper, A1 to A5 and B1. Live papers number the same questions 01 to 05 and 11.</p>
 <ol>
-  <li><strong>A1 (5 × 1 mark = 5 marks)</strong> - Five short retrieval questions. Select the correct response or identify explicit information from a specified section of the extract.</li>
-  <li><strong>A2 (5 marks)</strong> - How does the writer create a particular impression or mood? Focus on language choices in a specified section. You must select and comment on specific words and phrases.</li>
-  <li><strong>A3 (10 marks)</strong> - What impressions do you get of a character, place, or event? Analyse language in more detail, using relevant quotations and exploring connotations and effects.</li>
-  <li><strong>A4 (10 marks)</strong> - How does the writer use structure and organisation to create effects? Consider openings, endings, focus shifts, narrative perspective, pacing, and paragraph structure.</li>
-  <li><strong>A5 (10 marks)</strong> - Evaluation/critical response. To what extent do you agree with a given statement about the text? You must present a personal and critical response supported by textual evidence.</li>
-  <li><strong>B1 (40 marks)</strong> - Creative prose writing. Choose one title from a choice of four and write a piece of narrative or descriptive prose. 24 marks for content and organisation (AO5), 16 marks for technical accuracy (AO6).</li>
+  <li><strong>A1 (5 marks)</strong> - List five things you learn about a person, place or topic from the opening lines the question names. One mark for each correct, separate point; things the lines suggest count as well as things they state.</li>
+  <li><strong>A2 (5 marks)</strong> - What does the writer show you about a character or situation in the next few lines, and how does the language do it? You must select and comment on specific words and phrases.</li>
+  <li><strong>A3 (10 marks)</strong> - How does the writer show a character's thoughts and feelings, or your impressions of a person, place or situation, in a longer section of the extract? Analyse language in more detail, using relevant quotations and exploring connotations and effects.</li>
+  <li><strong>A4 (10 marks)</strong> - How does the writer create an effect, such as tension and drama, in a later section? Analyse language and structure together: the words, and the way the events are organised (openings, endings, focus shifts, pacing, and paragraph structure).</li>
+  <li><strong>A5 (10 marks)</strong> - Evaluation. You are given a view, usually about a character or the story: how far do you agree? Use the final lines the question names and the passage as a whole, and explain how the writer created your thoughts and feelings.</li>
+  <li><strong>B1 (40 marks)</strong> - Creative prose writing. Choose one of four titles and write a story, or an account of an experience, real or imagined. 24 marks for content and organisation (AO5), 16 marks for technical accuracy (AO6). A piece that only describes cannot reach the top of the mark range.</li>
 </ol>
 
 <h3>Assessment Objectives</h3>
@@ -46,19 +66,19 @@ const comp1Modules: CourseModule[] = [
   <li><strong>AO6</strong> - Use a range of vocabulary and sentence structures for clarity, purpose and effect, with accurate spelling and punctuation.</li>
 </ul>
 
-<div class="examiner-tip"><strong>Examiner Tip:</strong> WJEC/Eduqas allocates the reading marks differently from AQA or Edexcel. The five retrieval questions in A1 are quick wins - treat them as a warm-up. Spend the bulk of your reading time on A3, A4, and A5 (10 marks each). A good rule of thumb: allocate one minute per mark, then redistribute five minutes for planning and checking.</div>
+<div class="examiner-tip"><strong>Examiner Tip:</strong> WJEC/Eduqas allocates the reading marks differently from AQA or Edexcel. A1, five quick points, is a warm-up. Spend the bulk of your reading time on A3, A4, and A5 (10 marks each). The paper itself advises about 10 minutes reading the extract and about 50 minutes answering, then about 10 minutes planning and about 35 minutes writing.</div>
 
 <h3>Recommended Timing Plan</h3>
 <ol>
   <li><strong>0-10 min:</strong> Read the extract carefully twice, annotating key language and structural features.</li>
-  <li><strong>10-15 min:</strong> Answer A1 (5 marks) - five quick retrieval responses.</li>
-  <li><strong>15-22 min:</strong> Answer A2 (5 marks) - focused language comment.</li>
-  <li><strong>22-35 min:</strong> Answer A3 (10 marks) - detailed language analysis.</li>
-  <li><strong>35-48 min:</strong> Answer A4 (10 marks) - structural analysis.</li>
-  <li><strong>48-60 min:</strong> Answer A5 (10 marks) - evaluation and critical response.</li>
-  <li><strong>60-65 min:</strong> Plan your creative prose piece (choose title, plan structure, decide on techniques).</li>
-  <li><strong>65-100 min:</strong> Write your creative prose piece (B1, 40 marks).</li>
-  <li><strong>100-105 min:</strong> Proofread both sections for SPaG errors.</li>
+  <li><strong>10-15 min:</strong> Answer A1 (5 marks): list five things.</li>
+  <li><strong>15-21 min:</strong> Answer A2 (5 marks): focused language comment.</li>
+  <li><strong>21-34 min:</strong> Answer A3 (10 marks): detailed language analysis.</li>
+  <li><strong>34-47 min:</strong> Answer A4 (10 marks): language and structure.</li>
+  <li><strong>47-60 min:</strong> Answer A5 (10 marks): evaluation and critical response.</li>
+  <li><strong>60-70 min:</strong> Plan your story (choose title, plan structure, decide on techniques).</li>
+  <li><strong>70-100 min:</strong> Write your story (B1, 40 marks).</li>
+  <li><strong>100-105 min:</strong> Proofread your writing for SPaG errors.</li>
 </ol>
 
 <div class="common-mistake"><strong>Common Mistake:</strong> Treating A2 and A3 as identical questions. A2 asks you to comment on language in a short, specified section; A3 demands a more detailed and sustained analysis with multiple developed points. Students who write the same depth for both often run out of time or under-develop A3.</div>
@@ -66,80 +86,64 @@ const comp1Modules: CourseModule[] = [
 <div class="key-term"><strong>Key Term: Subject Terminology</strong> - The technical vocabulary used to describe language and structural features: metaphor, simile, personification, sibilance, juxtaposition, enjambment, anaphora, and so on. WJEC examiners expect you to use these terms accurately and embed them within your analysis.</div>
 
 
-<h3>Worked Example: Five-Question Retrieval Set</h3>
+<h3>Worked Example: Listing Five Things (A1)</h3>
 <p><strong>Practice Passage:</strong></p>
 <div class="text-extract">
 The old house stood at the end of Maple Lane, its paint peeling, its shutters hanging askew. No one had lived there for seven years. The garden had returned to wildness - brambles and nettles overtaking what had once been rose beds. On a Tuesday in September, a moving van pulled into the drive. Within an hour, the silence that had held the house for seven years began to fracture.
 </div>
 
-<p><strong>Question 1 (1 mark):</strong> Where is the house located?</p>
-<p><strong>Answer:</strong> At the end of Maple Lane. (Direct retrieval from text)</p>
-
-<p><strong>Question 2 (1 mark):</strong> How long has the house been empty?</p>
-<p><strong>Answer:</strong> Seven years. (Direct retrieval)</p>
-
-<p><strong>Question 3 (1 mark):</strong> What does the garden look like now?</p>
-<p><strong>Answer:</strong> Overgrown with brambles and nettles; the rose beds have been taken over. (Combines two statements from text)</p>
-
-<p><strong>Question 4 (2 marks):</strong> What is the significance of the moving van arriving?</p>
-<p><strong>Answer:</strong> It marks the end of the house's emptiness and silence. Someone is coming to live there, breaking the seven years of silence that have held the property. (Inference: the moving van causes change; "silence began to fracture" is key.)</p>
-
-<p><strong>Question 5 (True or False, 1 mark each - choose 2):</strong></p>
-<ul>
-<li><strong>True:</strong> The house is well-maintained.</li>
-<li><strong>False:</strong> The house is in poor condition (peeling paint, askew shutters) - this is correct.</li>
-<li><strong>True:</strong> The arrival happens in summer.</li>
-<li><strong>False:</strong> The text says "Tuesday in September" - this is correct.</li>
-</ul>
+<p><strong>A1 (5 marks):</strong> List five things you learn about the house in these lines.</p>
+<p><strong>Model Answer:</strong></p>
+<div class="model-answer">
+1. It stands at the end of Maple Lane.
+2. Its paint is peeling.
+3. Its shutters hang askew.
+4. No one has lived there for seven years.
+5. Its garden has gone wild, with brambles and nettles where the rose beds were.
+</div>
+<p>Each point is short, separate and taken from the lines. "Its paint is peeling" and "its shutters hang askew" are two points, because they are two different details. A point the lines suggest would also count: "it has been neglected" is supported by the peeling paint and the wild garden.</p>
 
 <h3>Retrieval Strategy: The Five-Step Process</h3>
 <ol>
-<li><strong>Read the question carefully.</strong> Underline key words. "According to the passage, what...?" or "Which statement is true?"</li>
-<li><strong>Scan the text for relevant information.</strong> You don't need to reread the whole passage - use keywords to locate the answer.</li>
-<li><strong>Extract the information accurately.</strong> If the question asks for a location, give a location. If it asks "how long," give a time.</li>
-<li><strong>Quote if the format permits.</strong> Short retrieval questions may allow one-word or short-phrase answers. Use quotation marks for exact phrases.</li>
-<li><strong>For inference questions (2 marks), explain briefly.</strong> Why is this significant? What does it tell us?</li>
+<li><strong>Read the question carefully.</strong> Underline the focus (what you are listing things about) and the lines you are given.</li>
+<li><strong>Scan the named lines for relevant information.</strong> You don't need to reread the whole passage: use keywords to locate each detail.</li>
+<li><strong>Pick out five separate points.</strong> Each must be a different detail about the focus; the same idea twice in different words earns one mark.</li>
+<li><strong>Quote or paraphrase briefly.</strong> A short phrase is enough. Use quotation marks for exact phrases, and do not copy out whole sentences.</li>
+<li><strong>Use inference where the lines support it.</strong> A point the lines suggest, such as a character's mood, earns its mark too.</li>
 </ol>
 
-<h3>Types of Retrieval Questions (A1 on Component 1)</h3>
-<p><strong>Type 1: Explicit Information</strong> - "What time of day does the scene begin?" Answer directly from text.</p>
-<p><strong>Type 2: Sequencing</strong> - "Put these events in order: A, B, C, D." Read passage to determine sequence.</p>
-<p><strong>Type 3: Multiple Choice</strong> - Select one correct answer from four options. Eliminate the clearly wrong; pick the most accurate.</p>
-<p><strong>Type 4: True/False (Select 2)</strong> - Read statements. Identify which are accurate according to the text.</p>
-<p><strong>Type 5: Simple Inference</strong> - "How does the character feel about...?" Show brief evidence from text.</p>
+<h3>What Counts as a Point (A1 on Component 1)</h3>
+<p>A1 is one question: list five things you learn about a person, place or topic from the lines named. These all count:</p>
+<p><strong>Explicit points:</strong> details the lines state outright, such as "It is autumn."</p>
+<p><strong>Implicit points:</strong> what the lines suggest, as long as they support it, such as "She is nervous," from her trembling hands.</p>
+<p><strong>Paraphrase or short quotation:</strong> both earn the mark, as long as the point is picked out rather than buried in a copied sentence.</p>
 
 <h3>Common A1 Mistakes</h3>
-<div class="common-mistake"><strong>Mistake 1: Over-thinking.</strong> A1 tests basic retrieval. Don't assume hidden meanings. If the text says it's autumn, the answer is autumn - not a metaphor for decline.</div>
+<div class="common-mistake"><strong>Mistake 1: Over-thinking.</strong> A1 rewards points the lines support. Don't invent hidden meanings: if the text says it's autumn, the answer is autumn, not a metaphor for decline.</div>
 
-<div class="common-mistake"><strong>Mistake 2: Incomplete answers.</strong> If a question asks "where and when," give both. Partial answers lose marks.</div>
+<div class="common-mistake"><strong>Mistake 2: Too few points.</strong> Five marks need five separate points. Count them before you move on.</div>
 
 <div class="common-mistake"><strong>Mistake 3: Inaccurate quotation.</strong> "The house is really old" - but the text says it's been empty for seven years, not that it's old. Don't misquote.</div>
 
 <div class="common-mistake"><strong>Mistake 4: Confusing similar characters or locations.</strong> If the passage mentions two houses, be clear which one you're discussing.</div>
 
-<h3>A1 Practice: Full Five-Question Set</h3>
+<h3>A1 Practice: List Five Things</h3>
 <p><strong>Passage:</strong></p>
 <div class="text-extract">
 Emma had not returned to her hometown in twelve years. The station platform looked smaller than she remembered - the benches replaced, the old clock removed. As she stepped onto the platform, the autumn air carried the same mineral scent she had known as a child. Her mother stood at the barrier, older now, her hair completely grey. Emma walked towards her slowly, uncertain whether to run or take her time.
 </div>
 
-<p><strong>Questions:</strong></p>
-<ol>
-<li>How long has Emma been away?</li>
-<li>What has changed on the station platform?</li>
-<li>Put these events in order: (A) Emma's mother waits at barrier, (B) Emma steps onto platform, (C) Emma hasn't returned in 12 years, (D) Emma walks toward her mother.</li>
-<li>True or False: Emma is confident about greeting her mother. (Explain your answer briefly.)</li>
-<li>Inference (2 marks): What do we understand about Emma's emotional state from this passage?</li>
-</ol>
+<p><strong>Question:</strong> List five things you learn about Emma's return from these lines.</p>
 
-<p><strong>Model Answers:</strong></p>
+<p><strong>Model Answer:</strong></p>
 <div class="model-answer">
-1. Twelve years.
-2. The benches have been replaced and the old clock removed.
-3. C, B, A, D.
-4. False - the text says she is "uncertain whether to run or take her time," which shows she is not confident.
-5. Emma is anxious about the reunion. The detail that she "walks towards her slowly" and her "uncertainty" show she feels conflicted - perhaps guilt for staying away, or nerves about how much has changed between them.
+1. She has not been back to her hometown for twelve years.
+2. The benches on the station platform have been replaced.
+3. The old clock has been removed.
+4. Her mother is waiting at the barrier, her hair now completely grey.
+5. Emma is unsure how to greet her: she walks slowly, "uncertain whether to run or take her time".
 </div>
+<p>Point 5 is an inference the lines support, so it earns its mark. "The platform looks smaller than she remembered" or "the autumn air smells the same" would also count.</p>
 
 `,
     quiz: [
@@ -169,11 +173,11 @@ Emma had not returned to her hometown in twelve years. The station platform look
       },
       {
         id: 'wjec-c1-m1-q4',
-        question: 'Which question focuses specifically on structure and organisation?',
+        question: 'Which reading question asks about structure as well as language?',
         options: ['A2', 'A3', 'A4', 'A5'],
         correct: 2,
         explanation:
-          'A4 (10 marks) focuses on how the writer uses structure and organisation to create effects, including openings, endings, focus shifts, and pacing.',
+          'A4 (10 marks) is the question that adds structure: it asks how the writer uses language and the organisation of events, including openings, endings, focus shifts, and pacing, to create an effect such as tension.',
       },
       {
         id: 'wjec-c1-m1-q5',
@@ -199,60 +203,62 @@ Emma had not returned to her hometown in twelve years. The station platform look
     title: 'Retrieval and Comprehension Skills (A1)',
     duration: '40 min',
     content: `
-<h2>A1 - Retrieval Questions: Quick, Accurate, Confident</h2>
+<h2>A1 - Listing Five Things: Quick, Accurate, Confident</h2>
 
-<p>Question A1 on WJEC/Eduqas Component 1 is a set of <strong>five short retrieval questions</strong>, each worth <strong>1 mark</strong>. These questions test <strong>AO1</strong> - your ability to identify and interpret explicit and implicit information and ideas from the extract. Think of A1 as the gateway to the paper: these marks are straightforward to earn if you read carefully.</p>
+<p>Question A1 on WJEC/Eduqas Component 1 is <strong>one question worth 5 marks</strong>: you list five things you learn about a person, place or topic from the opening lines the question names. Live papers number it Question 01. It tests <strong>AO1</strong> - your ability to identify and interpret explicit and implicit information and ideas from the extract. There is one mark for each correct, separate point. Think of A1 as the gateway to the paper: these marks are straightforward to earn if you read carefully.</p>
 
-<div class="key-term"><strong>Key Term: Retrieval</strong> - The process of locating specific information directly stated in the text. Retrieval questions do not require analysis or evaluation - they test whether you can find and select accurate information quickly.</div>
+<div class="key-term"><strong>Key Term: Retrieval</strong> - The process of locating specific information in the text. Retrieval questions do not require analysis or evaluation - they test whether you can find and select accurate information quickly.</div>
 
-<h3>Types of A1 Questions</h3>
-<p>WJEC/Eduqas typically uses several formats for A1:</p>
+<h3>What A1 Asks</h3>
+<p>The question names a focus and a set of lines, for example: <em>"Read lines 1-6. List five things you learn about the house in these lines."</em> A point earns its mark if it is:</p>
 <ul>
-  <li><strong>Multiple choice:</strong> "Which of the following best describes...?" - Select one answer from four or five options.</li>
-  <li><strong>Short retrieval:</strong> "What did the narrator see when they entered the room?" - Give a brief factual answer.</li>
-  <li><strong>True or false:</strong> "Choose two statements that are true according to the extract."</li>
-  <li><strong>Sequencing:</strong> "Put these events in the order they happen in the extract."</li>
+  <li><strong>Relevant:</strong> it is about the focus the question names.</li>
+  <li><strong>From the named lines:</strong> details from later in the extract do not count.</li>
+  <li><strong>Separate:</strong> each point is a different detail; the same idea twice in different words earns one mark.</li>
+  <li><strong>Stated or clearly suggested:</strong> things the lines suggest count as well as things they state, as long as the lines support them.</li>
 </ul>
 
 <h3>Practice Extract</h3>
 <div class="text-extract">The house stood at the end of a lane overgrown with nettles and cow parsley. Its windows were dark, the curtains drawn even at midday. Marcus paused at the gate, listening. From inside came the muffled sound of a piano - something slow and melancholy, played with hesitant fingers. He noticed that the garden, which had once been his grandmother's pride, was tangled beyond recognition: roses strangled by bindweed, the bird bath toppled on its side. He pushed open the gate, which groaned on rusted hinges, and walked up the cracked path to the door.
 <div class="source">From a 20th-century novel (adapted)</div></div>
 
-<h3>Sample A1 Questions and Answers</h3>
+<h3>Sample A1 Question and Answer</h3>
+<p><em>"List five things you learn about the house and its garden in these lines."</em></p>
 <ol>
-  <li><em>"What was growing in the lane leading to the house?"</em> - <strong>Nettles and cow parsley.</strong></li>
-  <li><em>"What sound could be heard from inside the house?"</em> - <strong>The muffled sound of a piano / piano music.</strong></li>
-  <li><em>"Which of the following is true? (a) The curtains were open. (b) Marcus ran to the door. (c) The garden was overgrown. (d) The bird bath was new."</em> - <strong>(c) The garden was overgrown.</strong></li>
-  <li><em>"What had happened to the bird bath?"</em> - <strong>It had toppled/fallen on its side.</strong></li>
-  <li><em>"How is the gate described when Marcus opens it?"</em> - <strong>It groaned on rusted hinges.</strong></li>
+  <li><strong>It stands at the end of a lane overgrown with nettles and cow parsley.</strong></li>
+  <li><strong>Its curtains are drawn, even at midday.</strong></li>
+  <li><strong>Someone inside is playing the piano, slowly and hesitantly.</strong></li>
+  <li><strong>The garden, once Marcus's grandmother's pride, is tangled beyond recognition.</strong></li>
+  <li><strong>The gate groans on rusted hinges.</strong></li>
 </ol>
+<p>Other correct points include the dark windows, the toppled bird bath and the cracked path. "The house has been neglected" would also count: the lines suggest it, through the tangled garden and the rusted hinges.</p>
 
-<div class="examiner-tip"><strong>Examiner Tip:</strong> A1 questions typically direct you to a specific section of the extract (e.g. "lines 1-15"). Read that section carefully before answering. Do not waste time scanning the whole text when the question tells you exactly where to look. These five marks should take no more than five minutes.</div>
+<div class="examiner-tip"><strong>Examiner Tip:</strong> A1 directs you to a specific section of the extract (e.g. "lines 1-6"). Read that section carefully before answering. Do not waste time scanning the whole text when the question tells you exactly where to look. These five marks should take no more than five minutes.</div>
 
 <h3>Strategies for Maximum Marks</h3>
 <ul>
-  <li><strong>Read the specified lines carefully.</strong> WJEC will often tell you which lines to focus on. Underline the relevant information.</li>
-  <li><strong>Use the exact wording of the text</strong> where possible. For retrieval questions, close paraphrase or direct quotation both earn marks.</li>
-  <li><strong>Do not over-explain.</strong> A1 is not an analysis question. Brief, accurate answers are all that is needed.</li>
-  <li><strong>Check your answer against the text.</strong> Re-read the relevant lines to confirm your answer is accurate before moving on.</li>
-  <li><strong>Watch for distractors in multiple-choice questions.</strong> Options may be plausible but not supported by the text. Always return to the extract to verify.</li>
+  <li><strong>Read the specified lines carefully.</strong> WJEC tells you which lines to focus on. Underline every detail about the focus.</li>
+  <li><strong>Use the exact wording of the text</strong> where possible. Close paraphrase or direct quotation both earn marks.</li>
+  <li><strong>Do not over-explain.</strong> A1 is not an analysis question. Five short, accurate points are all that is needed.</li>
+  <li><strong>Pick out the point.</strong> A whole sentence copied out without picking out the point earns nothing, so write each point as a short phrase or sentence of its own.</li>
+  <li><strong>Check your answer against the text.</strong> Re-read the lines to confirm each point is accurate and different from the others before moving on.</li>
 </ul>
 
-<div class="common-mistake"><strong>Common Mistake:</strong> Students sometimes confuse inference with retrieval. For A1, the answer should be directly stated or very closely implied by the text. If you find yourself "reading between the lines" for A1, you may be overthinking. Save deeper interpretation for A3 and A5.</div>
+<div class="common-mistake"><strong>Common Mistake:</strong> Students sometimes confuse inference with invention. For A1, a point should be directly stated or clearly suggested by the named lines. If you find yourself building a story the lines do not support, you are overthinking. Save deeper interpretation for A3 and A5.</div>
 
 <h3>Implicit vs Explicit Information</h3>
-<p>While most A1 questions test explicit retrieval, some may test basic inference (implicit information). For example:</p>
+<p>A1 accepts both kinds of point. For example:</p>
 <ul>
   <li><strong>Explicit:</strong> "The house stood at the end of a lane" - directly stated.</li>
   <li><strong>Implicit:</strong> "The garden had not been tended for a long time" - inferred from "tangled beyond recognition" and "roses strangled by bindweed."</li>
 </ul>
-<p>Even when inference is required at A1 level, it should be straightforward - you should not need a lengthy explanation to justify your answer.</p>
+<p>An implicit point should still be straightforward: you should not need a lengthy explanation to justify it.</p>
 
 <div class="key-term"><strong>Key Term: Explicit Information</strong> - Details that are directly and clearly stated in the text. The reader does not need to interpret or infer meaning - the facts are presented openly.</div>
 
 <div class="key-term"><strong>Key Term: Implicit Information</strong> - Meaning that is suggested or hinted at rather than directly stated. The reader must combine textual clues with their own understanding to arrive at a conclusion.</div>
 
-<h3>Extended Practice: Full A1 Question Set with Annotated Student Responses</h3>
+<h3>Extended Practice: List Five Things, with Annotated Student Responses</h3>
 
 <h4>Practice Passage 1: "The Arrival"</h4>
 <div class="text-extract">
@@ -260,67 +266,53 @@ Eleanor had not set foot in the village for thirty years. The station was unreco
 <div class="source">20th-century fiction (adapted)</div>
 </div>
 
-<h4>A1 Question Set (5 marks)</h4>
-<ol>
-<li><strong>(1 mark)</strong> How long has Eleanor been away from the village?</li>
-<li><strong>(1 mark)</strong> What building has replaced the wooden waiting room?</li>
-<li><strong>(1 mark)</strong> Which of the following has NOT changed? (a) The tea rooms. (b) The ironmonger's shop. (c) The smell of fresh bread. (d) The railway station.</li>
-<li><strong>(2 marks - Inference)</strong> What does Eleanor's pausing outside the estate agent's window suggest about her feelings?</li>
-<li><strong>(1 mark)</strong> True or False: Eleanor recognizes the curtains in the house window because they belonged to her childhood home.</li>
-</ol>
+<h4>A1 Question (5 marks)</h4>
+<p><em>"List five things you learn about the village in these lines."</em></p>
 
 <h4>Examiner Commentary Box - Sample Student Response 1</h4>
 <div style="border: 2px solid #e74c3c; padding: 15px; margin: 15px 0; background-color: #fadbd8;">
-<strong>Grade 5-6 Response (Acceptable):</strong>
+<strong>Weaker Response:</strong>
 <blockquote>
-1. 30 years<br>2. A glass shelter / glass waiting room<br>3. (c) The smell of fresh bread<br>4. She is sad because everything has changed.<br>5. True
+1. The station has changed.<br>2. The station is different now.<br>3. There is a mobile phone shop.<br>4. Eleanor is sad because everything has changed.<br>5. Eleanor left because she felt trapped.
 </blockquote>
-<strong>Examiner Comment:</strong> Answers 1, 2, 3, and 5 are all correct. Answer 4 shows basic understanding but lacks developed inference. The student identified emotion (sadness) but did not explain textual evidence. Full marks requires reference to "pausing" as hesitation and the house as significant. <strong>Mark: 4/5</strong>
+<strong>Examiner Comment:</strong> Points 1 and 3 are correct. Point 2 repeats point 1 in different words, so it earns nothing extra. Points 4 and 5 are not supported by these lines: they never say she is sad, or why she left. <strong>Mark: 2/5</strong>
 </div>
 
 <h4>Examiner Commentary Box - Sample Student Response 2</h4>
 <div style="border: 2px solid #27ae60; padding: 15px; margin: 15px 0; background-color: #d5f4e6;">
-<strong>Grade 8-9 Response (Excellent):</strong>
+<strong>Strong Response:</strong>
 <blockquote>
-1. Thirty years.<br>2. A gleaming glass shelter.<br>3. (c) The smell of fresh bread.<br>4. Eleanor's pausing suggests conflicted emotion. While most of the village has changed, she is drawn to this property because it holds personal significance. The fact that it is "her childhood home" reveals loss and nostalgia.<br>5. True-the text states: "its windows bright with curtains she recognized."
+1. The old wooden waiting room at the station has been demolished.<br>2. It has been replaced by a gleaming glass shelter.<br>3. The tea rooms are now a mobile phone shop.<br>4. The bakery still smells of fresh bread, as it always did.<br>5. Mr Patterson's ironmonger's is now an estate agent's office.
 </blockquote>
-<strong>Examiner Comment:</strong> Fully developed, sophisticated inference exploring emotional complexity and textual evidence grounding. <strong>Mark: 5/5</strong>
+<strong>Examiner Comment:</strong> Five separate, accurate points, each about the village and each from the lines named. Short and precise: no point repeats another. <strong>Mark: 5/5</strong>
 </div>
 
-<h3>Grade Boundary Breakdown for A1 (WJEC-Specific)</h3>
-<table style="width: 100%; border-collapse: collapse; margin: 20px 0;">
-<tr style="background-color: #ecf0f1;"><th style="border: 1px solid #bdc3c7; padding: 10px;"><strong>Grade</strong></th><th style="border: 1px solid #bdc3c7; padding: 10px;"><strong>Marks (/5)</strong></th><th style="border: 1px solid #bdc3c7; padding: 10px;"><strong>Characteristics</strong></th></tr>
-<tr><td style="border: 1px solid #bdc3c7; padding: 10px;"><strong>9</strong></td><td style="border: 1px solid #bdc3c7; padding: 10px;">5</td><td style="border: 1px solid #bdc3c7; padding: 10px;">Precise answers. All explicit information identified. Basic inferences accurate with justification.</td></tr>
-<tr style="background-color: #ecf0f1;"><td style="border: 1px solid #bdc3c7; padding: 10px;"><strong>8</strong></td><td style="border: 1px solid #bdc3c7; padding: 10px;">5</td><td style="border: 1px solid #bdc3c7; padding: 10px;">Accurate retrieval. Inferences justified with textual reference. Minor imprecision acceptable.</td></tr>
-<tr><td style="border: 1px solid #bdc3c7; padding: 10px;"><strong>7</strong></td><td style="border: 1px solid #bdc3c7; padding: 10px;">4-5</td><td style="border: 1px solid #bdc3c7; padding: 10px;">Most explicit information correct. Inferences accurate but may lack full development.</td></tr>
-<tr style="background-color: #ecf0f1;"><td style="border: 1px solid #bdc3c7; padding: 10px;"><strong>5-6</strong></td><td style="border: 1px solid #bdc3c7; padding: 10px;">3-4</td><td style="border: 1px solid #bdc3c7; padding: 10px;">Majority of explicit information correct. Some inference questions incomplete.</td></tr>
-<tr><td style="border: 1px solid #bdc3c7; padding: 10px;"><strong>4</strong></td><td style="border: 1px solid #bdc3c7; padding: 10px;">2-3</td><td style="border: 1px solid #bdc3c7; padding: 10px;">Some retrieval gaps. Inferences vague or unsupported.</td></tr>
-<tr style="background-color: #ecf0f1;"><td style="border: 1px solid #bdc3c7; padding: 10px;"><strong>1-3</strong></td><td style="border: 1px solid #bdc3c7; padding: 10px;">0-2</td><td style="border: 1px solid #bdc3c7; padding: 10px;">Limited accuracy. Vague or contradictory answers.</td></tr>
-</table>
+<h3>How A1 Is Marked</h3>
+<p>One mark for each correct, separate point, up to five. A point earns its mark whether it is quoted or put in your own words, and whether the lines state it or clearly suggest it. Points from outside the named lines, repeated points and points the lines do not support earn nothing.</p>
 
 <h3>Common A1 Mistakes and Corrections</h3>
 
 <h4>Mistake 1: Over-Interpretation</h4>
 <div style="border-left: 4px solid #e74c3c; padding-left: 15px; margin: 20px 0;">
 <strong>Poor Answer:</strong> Eleanor left because she felt trapped and wanted a career in the city. She had a difficult relationship with her parents.
-<br><strong>Issue:</strong> The passage never states this. Over-interpretation invents details.
-<br><strong>Better Answer:</strong> The passage does not state why Eleanor left. A1 tests retrieval, not creation of new narratives.
-<br><strong>WJEC Tip:</strong> A1 answers come directly from the text. If you're creating a backstory, stop and re-read.
+<br><strong>Issue:</strong> The passage never states or suggests this. Over-interpretation invents details.
+<br><strong>Better Answer:</strong> A point the lines support, such as: the tea rooms she remembers have gone.
+<br><strong>WJEC Tip:</strong> A1 answers come from the text. If you're creating a backstory, stop and re-read.
 </div>
 
-<h4>Mistake 2: Partial Answers</h4>
+<h4>Mistake 2: Repeated Points</h4>
 <div style="border-left: 4px solid #e74c3c; padding-left: 15px; margin: 20px 0;">
-<strong>Poor Answer:</strong> (for "list two changes") The station has changed.
-<br><strong>Issue:</strong> Only one change given when two requested. Incomplete = lost marks.
-<br><strong>Better Answer:</strong> The wooden waiting room replaced by glass shelter. Tea rooms replaced by mobile phone shop.
-<br><strong>WJEC Tip:</strong> If asked for two, three, or a list-give exactly that many complete answers.
+<strong>Poor Answer:</strong> The station has changed. The station is different now.
+<br><strong>Issue:</strong> The same point twice earns one mark. Repeats cost you marks you could have had.
+<br><strong>Better Answer:</strong> The wooden waiting room has been replaced by a glass shelter. The tea rooms are now a mobile phone shop.
+<br><strong>WJEC Tip:</strong> Five marks need five different points. Count them before you move on.
 </div>
 
 <h4>Mistake 3: Vague Language</h4>
 <div style="border-left: 4px solid #e74c3c; padding-left: 15px; margin: 20px 0;">
 <strong>Poor Answer:</strong> Something nice from one of the shops.
 <br><strong>Issue:</strong> "Nice" is vague and doesn't show text understanding.
-<br><strong>Better Answer:</strong> Fresh bread from the bakery.
+<br><strong>Better Answer:</strong> The smell of fresh bread from the bakery.
 <br><strong>WJEC Tip:</strong> Precise language from the text shows careful reading.
 </div>
 
@@ -332,7 +324,7 @@ Eleanor had not set foot in the village for thirty years. The station was unreco
 <br><strong>WJEC Tip:</strong> Quote exactly or paraphrase accurately. Never misquote.
 </div>
 
-<h3>Practice Passage 2: Full A1 Set with Marking Guidance</h3>
+<h3>Practice Passage 2: List Five Things, with Marking Guidance</h3>
 
 <h4>Passage: "The Discovery"</h4>
 <div class="text-extract">
@@ -340,34 +332,27 @@ The letter had arrived on a Tuesday, addressed in handwriting she had not seen i
 <div class="source">Contemporary fiction</div>
 </div>
 
-<h4>A1 Questions & Model Answers (5 marks)</h4>
-<p><strong>Q1 (1 mark):</strong> On what day did Sarah receive the letter?<br>
-<strong>Answer:</strong> Tuesday. (Direct retrieval)</p>
+<h4>A1 Question and Model Answer (5 marks)</h4>
+<p><strong>Question:</strong> List five things you learn about the photograph in these lines.</p>
+<div class="model-answer">
+1. It shows a group of children standing outside a church.<br>
+2. The children are all smiling at the camera.<br>
+3. Sarah is in it, with dark pigtails and a gap-toothed grin.<br>
+4. A boy in the back row stands slightly apart, his head tilted towards her.<br>
+5. On the back, in faded ink, is written "St. Cuthbert's Church Outing, July 1962. Don't forget."
+</div>
+<p>Other correct points include her white cotton dress with the lace collar. A point the lines suggest also counts, such as "the boy may have cared about Sarah," from his tilted head, because the lines support it.</p>
 
-<p><strong>Q2 (1 mark):</strong> What was inside the envelope?<br>
-<strong>Answer:</strong> A photograph / A single photograph. (Text specifies "a single photograph")</p>
-
-<p><strong>Q3 (1 mark):</strong> Which does Sarah recognize about herself? (a) Widest smile. (b) White dress with lace collar. (c) Standing apart. (d) Straight hair.<br>
-<strong>Answer:</strong> (b) Explicitly stated: "white cotton dress with the lace collar."</p>
-
-<p><strong>Q4 (2 marks):</strong> What do the boy's position and pose suggest about his feelings?<br>
-<strong>Grade 8-9 Answer:</strong> The boy stands slightly apart with his head tilted toward Sarah, suggesting he focused on her rather than the camera. This implies special interest or affection in childhood.<br>
-<strong>Grade 5-6 Answer:</strong> He was looking at Sarah, so he must have liked her.</p>
-
-<p><strong>Q5 (1 mark):</strong> What is written on the back?<br>
-<strong>Answer:</strong> "St. Cuthbert's Church Outing, July 1962. Don't forget." (Direct quote or accurate paraphrase)</p>
-
-<div class="examiner-tip"><strong>WJEC A1 Marking Rule:</strong> For retrieval (1 mark): close paraphrase or quotation both earn marks. For inference (2 marks): one mark for identifying the inference, one for textual support.</div>
+<div class="examiner-tip"><strong>WJEC A1 Marking Rule:</strong> One mark for each correct, separate point, up to five. Close paraphrase or quotation both earn marks, and so does a point the lines clearly suggest.</div>
 
 <h3>Step-by-Step A1 Technique Guide</h3>
 <ol style="font-size: 1.05em; line-height: 1.8;">
 <li><strong>Read the extract once carefully.</strong> Absorb content and context-do not annotate yet.</li>
-<li><strong>Read the extract a second time.</strong> Underline: names, dates, places, emotions, key events.</li>
-<li><strong>Read the A1 questions.</strong> Note if they direct you to specific lines (e.g., "lines 1-20").</li>
-<li><strong>Answer each question in order.</strong> Spend approximately one minute per mark.</li>
-<li><strong>For retrieval:</strong> Return to text, find relevant section, extract or paraphrase directly.</li>
-<li><strong>For inference (2 marks):</strong> Identify what the text suggests, provide brief textual evidence.</li>
-<li><strong>Check your answers</strong> against the passage for accuracy.</li>
+<li><strong>Read the A1 question.</strong> Note the focus and the lines it names (e.g., "lines 1-6").</li>
+<li><strong>Underline every detail about the focus</strong> in those lines.</li>
+<li><strong>Write five points, one per line,</strong> each a different detail. Spend about one minute per mark.</li>
+<li><strong>Use inference where the lines support it:</strong> a point the lines suggest earns a mark too.</li>
+<li><strong>Check your points</strong> against the passage for accuracy and repetition.</li>
 <li><strong>Move to A2.</strong> Spend no more than 5-6 minutes total on A1.</li>
 </ol>
 
@@ -379,7 +364,7 @@ The letter had arrived on a Tuesday, addressed in handwriting she had not seen i
         options: ['10 marks', '5 marks', '3 marks', '8 marks'],
         correct: 1,
         explanation:
-          'A1 consists of five questions worth 1 mark each, totalling 5 marks. These test AO1 - identifying explicit and implicit information.',
+          'A1 is one question worth 5 marks: list five things from the lines named, with one mark for each correct, separate point. It tests AO1, identifying explicit and implicit information.',
       },
       {
         id: 'wjec-c1-m2-q2',
@@ -428,26 +413,26 @@ The letter had arrived on a Tuesday, addressed in handwriting she had not seen i
     content: `
 <h2>A2 and A3 - Analysing Language Choices in 20th-Century Fiction</h2>
 
-<p>Questions A2 (5 marks) and A3 (10 marks) both test <strong>AO2</strong> - your ability to explain, comment on and analyse how writers use language to achieve effects and influence readers. However, they differ in depth and scope. A2 asks for focused comment on a short section; A3 demands sustained, detailed analysis with multiple developed points.</p>
+<p>Questions A2 (5 marks) and A3 (10 marks) both test <strong>AO2</strong> - your ability to explain, comment on and analyse how writers use language to achieve effects and influence readers. However, they differ in depth and scope. A2 asks for focused comment on the next few lines; A3 demands sustained, detailed analysis of a longer section, with multiple developed points.</p>
 
 <div class="key-term"><strong>Key Term: Connotation</strong> - The associations, feelings, or ideas that a word evokes beyond its literal dictionary meaning. For example, "crept" literally means "moved slowly," but it connotes secrecy, stealth, and unease. Exploring connotation is essential for top-band responses.</div>
 
 <h3>A2 - Focused Language Comment (5 marks)</h3>
 
-<p>A typical A2 question reads: <em>"How does the writer create a sense of tension in lines 8-14?"</em> You are directed to a short section and asked to explain how language creates a specific effect. At 5 marks, you need <strong>two or three well-chosen quotations</strong> with clear comment on their effect.</p>
+<p>A typical A2 question reads: <em>"Read lines 8-14. What do these lines show you about how the woman is feeling?"</em> You are directed to a few lines and asked to explain what the writer shows you about a character or situation, and how the language does it. At 5 marks, you need <strong>three or four clear impressions</strong>, each backed by a short quotation and a comment on what the words suggest.</p>
 
 <h3>Practice Extract</h3>
 <div class="text-extract">The corridor stretched ahead of her, impossibly long, the ceiling lights buzzing and flickering like trapped insects. Each footstep echoed, doubling itself against the tiled walls. She could smell disinfectant - sharp, chemical, coating the back of her throat. Somewhere a door slammed, and the sound ricocheted through the empty building. She quickened her pace, her breath shortening, her fingers trailing the wall for reassurance that the world was still solid.
 <div class="source">From a 20th-century short story (adapted)</div></div>
 
 <h3>Model A2 Response</h3>
-<div class="model-answer"><strong>Model Answer (Grade 7-9):</strong> The writer creates a tense atmosphere through the simile "buzzing and flickering like trapped insects," which transforms the mundane ceiling lights into something agitated and unpredictable, suggesting the environment itself is distressed. The verb "ricocheted" to describe the slamming door implies violence and unpredictability - the sound becomes a projectile, reinforcing the sense that the space is hostile. Finally, the detail of "her fingers trailing the wall for reassurance that the world was still solid" reveals the character's psychological state: she is so unsettled that she needs physical confirmation of reality, implying the tension has become almost hallucinatory.</div>
+<div class="model-answer"><strong>Model Answer (Grade 7-9):</strong> The writer shows how tense and threatened she feels through the simile "buzzing and flickering like trapped insects," which transforms the mundane ceiling lights into something agitated and unpredictable, as though the place itself shares her distress. The verb "ricocheted" to describe the slamming door implies violence and unpredictability - the sound becomes a projectile, reinforcing the sense that the space is hostile. Finally, the detail of "her fingers trailing the wall for reassurance that the world was still solid" reveals the character's psychological state: she is so unsettled that she needs physical confirmation of reality, implying the tension has become almost hallucinatory.</div>
 
-<div class="examiner-tip"><strong>Examiner Tip:</strong> For A2, use a simple framework: <strong>Quotation → Technique → Effect on Reader</strong>. Name the technique (simile, verb choice, sensory detail) and then explain what it makes the reader feel or understand. Two or three well-developed points are better than five underdeveloped ones.</div>
+<div class="examiner-tip"><strong>Examiner Tip:</strong> For A2, use a simple framework: <strong>Quotation → Technique → Effect on Reader</strong>. Name the technique (simile, verb choice, sensory detail) and then explain what it makes the reader feel or understand. Three or four focused points are better than six underdeveloped ones.</div>
 
 <h3>A3 - Detailed Language Analysis (10 marks)</h3>
 
-<p>A typical A3 question reads: <em>"What impressions do you get of the character from the extract as a whole?"</em> This question asks you to range across the entire extract, selecting multiple quotations and analysing them in detail. At 10 marks, you need <strong>four to five well-developed analytical points</strong>.</p>
+<p>A typical A3 question reads: <em>"Read lines 15-30. How does the writer show Marcus's thoughts and feelings in these lines?"</em> This question points you to a longer section of the extract and asks you to work through all of it, from its first line to its last, selecting multiple quotations and analysing their language in detail. At 10 marks, you need <strong>four to five well-developed analytical points</strong>. (It is A5 that asks about the passage as a whole.)</p>
 
 <h3>The WJEC Analysis Framework</h3>
 <p>Use this structure for each analytical point:</p>
@@ -498,13 +483,13 @@ The letter had arrived on a Tuesday, addressed in handwriting she had not seen i
         question: 'What is the key difference between A2 and A3?',
         options: [
           'A2 tests language and A3 tests structure',
-          'A2 focuses on a short specified section; A3 requires analysis across the whole extract',
+          'A2 focuses on the next few lines; A3 requires sustained analysis of a longer section',
           'A2 is about the writer and A3 is about the reader',
           'There is no difference - they test the same skill',
         ],
         correct: 1,
         explanation:
-          'A2 directs you to a specific short section for focused comment (5 marks). A3 asks for more sustained, detailed analysis ranging across the entire extract (10 marks).',
+          'A2 directs you to a few lines for focused comment (5 marks). A3 asks for more sustained, detailed analysis of a longer section of the extract (10 marks). It is A5 that uses the passage as a whole.',
       },
       {
         id: 'wjec-c1-m3-q3',
@@ -536,16 +521,16 @@ The letter had arrived on a Tuesday, addressed in handwriting she had not seen i
   },
 
   // ──────────────────────────────────────────────
-  // MODULE 4 - Structural Analysis (A4)
+  // MODULE 4 - Language and Structure (A4)
   // ──────────────────────────────────────────────
   {
     id: 'wjec-c1-m4',
-    title: 'Structural Analysis: Organisation and Effect (A4)',
+    title: 'Language and Structure: Organisation and Effect (A4)',
     duration: '50 min',
     content: `
-<h2>A4 - How Does the Writer Use Structure to Create Effects?</h2>
+<h2>A4 - How Does the Writer Use Language and Structure to Create Effects?</h2>
 
-<p>Question A4 is worth <strong>10 marks</strong> and tests <strong>AO2</strong> - specifically, how writers use <strong>structure and organisation</strong> to achieve effects and influence readers. This is a distinct skill from language analysis: while A2 and A3 focus on individual words and phrases, A4 asks you to consider the <em>shape</em> of the text - how it is organised, how focus shifts, and how the writer controls the reader's experience across the whole extract.</p>
+<p>Question A4 is worth <strong>10 marks</strong> and tests <strong>AO2</strong>: how the writer creates an effect, such as tension and drama or an impression of a character, in a later section of the extract, through both the language and the way the events are organised. It is the one reading question on Component 1 that adds <strong>structure and organisation</strong>: while A2 and A3 focus on individual words and phrases, A4 also asks you to consider the <em>shape</em> of the text - how it is organised, how focus shifts, and how the writer controls the reader's experience across the section. This module concentrates on structure, the new half; your A4 answer needs close comment on the words as well.</p>
 
 <div class="key-term"><strong>Key Term: Structure</strong> - The way a text is organised and arranged. This includes the order of events, paragraph structure, sentence length and variety, narrative perspective, focus shifts, the use of openings and endings, and techniques like flashback, foreshadowing, and cyclical structure.</div>
 
@@ -591,21 +576,21 @@ It was exactly the same. Every tile, every crack in the render, every twist of t
   <li><strong>Listing/tricolon:</strong> Groups of three or lists that build momentum or create a cumulative effect.</li>
 </ul>
 
-<div class="common-mistake"><strong>Common Mistake:</strong> Discussing language choices in A4. If you write about metaphors, similes, and word connotations, you are answering an A2/A3 question, not an A4 question. A4 is about the <em>arrangement</em> and <em>organisation</em> of the text - how the parts fit together, not what individual words mean.</div>
+<div class="common-mistake"><strong>Common Mistake:</strong> Writing only about words and ignoring how the events are put together. If your A4 answer is all metaphors, similes, and word connotations, you have answered half the question. A4 rewards close comment on language choices and on the <em>arrangement</em> and <em>organisation</em> of the text. For each part of the section, ask two things: why the writer tells us this here, and which words make it work.</div>
 `,
     quiz: [
       {
         id: 'wjec-c1-m4-q1',
         question: 'What does A4 primarily ask you to analyse?',
         options: [
-          'Language choices and their effects',
-          'Structure and organisation of the text',
+          'Language choices on their own',
+          'Language and structure together: the words and how the events are organised',
           "The writer's viewpoint and attitude",
           'Technical accuracy of the writing',
         ],
         correct: 1,
         explanation:
-          'A4 tests your ability to analyse how writers use structure and organisation to create effects - including openings, endings, focus shifts, pacing, and paragraph structure.',
+          'A4 tests how the writer uses language and the organisation of events (openings, endings, focus shifts, pacing, and paragraph structure) to create an effect such as tension. It is the reading question on Component 1 that adds structure.',
       },
       {
         id: 'wjec-c1-m4-q2',
@@ -637,14 +622,14 @@ It was exactly the same. Every tile, every crack in the render, every twist of t
         id: 'wjec-c1-m4-q4',
         question: 'What is a common mistake students make in A4 responses?',
         options: [
-          'Writing too much about structure',
-          'Not using quotations',
-          'Analysing language choices (metaphors, word connotations) instead of structure',
+          'Explaining how the order of events affects the reader',
+          'Commenting on how the section opens and ends',
+          'Writing only about word choices and ignoring how the events are put together',
           'Using too much subject terminology',
         ],
         correct: 2,
         explanation:
-          'A4 is specifically about structure and organisation. Discussing individual word choices and metaphors belongs in A2/A3. A4 should focus on arrangement, pacing, focus shifts, and paragraph structure.',
+          'A4 asks for language and structure. An answer that discusses only individual word choices and metaphors misses how the writer arranges events, pacing and focus, so it cannot reach the higher bands.',
       },
     ],
   },
@@ -659,15 +644,15 @@ It was exactly the same. Every tile, every crack in the render, every twist of t
     content: `
 <h2>A5 - Critical Evaluation: "To What Extent Do You Agree?"</h2>
 
-<p>Question A5 is worth <strong>10 marks</strong> and tests <strong>AO4</strong> - your ability to evaluate texts critically and support your evaluation with appropriate textual references. This question gives you a statement about the text and asks you to respond to it personally and critically. It is the most demanding reading question because it requires you to combine analysis with personal judgement.</p>
+<p>Question A5 is worth <strong>10 marks</strong> and tests <strong>AO4</strong> - your ability to evaluate texts critically and support your evaluation with appropriate textual references. This question gives you a view, usually about a character or the story, and asks how far you agree. You answer from the final lines the question names and from the passage as a whole, respond personally and critically, and explain how the writer created your thoughts and feelings. It is the most demanding reading question because it requires you to combine analysis with personal judgement.</p>
 
 <div class="key-term"><strong>Key Term: Evaluation</strong> - Making a judgement about the effectiveness or quality of a text, supported by evidence. Evaluation goes beyond analysis: while analysis explains <em>how</em> a technique works, evaluation judges <em>how well</em> it works and whether it succeeds in its purpose.</div>
 
 <h3>How A5 Questions Are Worded</h3>
-<p>WJEC/Eduqas typically phrases A5 like this:</p>
+<p>A5 gives you a view and points you to the final lines. It may read like this:</p>
 <ul>
-  <li><em>"'The writer makes the reader feel sympathy for the main character.' To what extent do you agree with this view?"</em></li>
-  <li><em>"'The extract creates a powerful sense of danger.' How far do you agree with this statement? You should refer to the extract to support your answer."</em></li>
+  <li><em>"'In the final lines, the writer makes the reader feel sorry for Marcus.' How far do you agree with this view? Use these lines and the passage as a whole, and explain how the writer creates your thoughts and feelings."</em></li>
+  <li><em>"'By the end of the extract, Eleanor has become a stranger in her own village.' To what extent do you agree with this view?"</em></li>
 </ul>
 <p>The key phrase is <strong>"to what extent"</strong> or <strong>"how far."</strong> This demands a nuanced response - not a simple yes or no, but a considered argument that weighs evidence from the text.</p>
 
@@ -696,7 +681,7 @@ It was exactly the same. Every tile, every crack in the render, every twist of t
 </ul>
 <p>Top-band responses typically agree with the statement but <strong>extend, refine, or nuance</strong> it, showing that the text is more complex than a single statement can capture.</p>
 
-<div class="common-mistake"><strong>Common Mistake:</strong> Simply retelling what happens in the text without evaluating it. Narrative summary ("First the character walks down the corridor, then she hears a door slam...") earns no AO4 marks. Every point must include a judgement about how effectively the writer achieves the effect described in the statement.</div>
+<div class="common-mistake"><strong>Common Mistake:</strong> Simply retelling what happens in the text without evaluating it. Narrative summary ("First the character walks down the corridor, then she hears a door slam...") earns no AO4 marks. Every point must include a judgement about how effectively the writer achieves the effect described in the statement. Use the passage as a whole as well as the final lines: an answer on the final lines alone misses part of the task.</div>
 
 <div class="key-term"><strong>Key Term: Critical Response</strong> - A response that engages personally and thoughtfully with the text, offering a considered judgement rather than a surface-level reaction. A critical response weighs evidence, considers alternatives, and shows awareness of how the writer shapes the reader's experience.</div>
 
@@ -768,28 +753,28 @@ It was exactly the same. Every tile, every crack in the render, every twist of t
     content: `
 <h2>B1 - Creative Prose Writing: Crafting Narrative</h2>
 
-<p>Section B of Component 1 asks you to produce one piece of <strong>creative prose writing</strong>, worth <strong>40 marks</strong> (24 for content and organisation under AO5, 16 for technical accuracy under AO6). You choose from a selection of titles and write either a <strong>narrative</strong> (story) or a <strong>descriptive</strong> piece. This module focuses on narrative writing techniques.</p>
+<p>Section B of Component 1 asks you to produce one piece of <strong>creative prose writing</strong>, worth <strong>40 marks</strong> (24 for content and organisation under AO5, 16 for technical accuracy under AO6). You choose one of four titles and write a <strong>narrative</strong> (a story), or an account of an experience, real or imagined: the specification asks for a narrative or recount, and writing that only describes cannot reach the top of the mark range. This module focuses on narrative writing techniques.</p>
 
 <div class="key-term"><strong>Key Term: Narrative Writing</strong> - Writing that tells a story. It typically includes characters, setting, plot, conflict, and resolution. Effective narrative writing uses techniques such as varied sentence structure, dialogue, descriptive detail, and control of pace and tension.</div>
 
 <h3>What WJEC Examiners Want</h3>
 <p>The mark scheme for B1 rewards:</p>
 <ul>
-  <li><strong>Band 5 (19-24 marks for AO5):</strong> Writing that is compelling and convincing. Extensive and ambitious vocabulary, sustained crafting of linguistic devices, varied and inventive use of structural features, writing that is engaging with a range of connected ideas, fluent with a confident tone maintained throughout.</li>
-  <li><strong>Band 4 (13-18 marks for AO5):</strong> Writing that is consistently clear and effective. Increasingly sophisticated vocabulary, a range of successful linguistic devices, varied structural features used effectively, engaging writing with a clear sense of purpose and audience.</li>
+  <li><strong>Band 5 (20-24 marks for AO5):</strong> An original story that holds the reader from start to end, with detailed characters and a carefully built structure.</li>
+  <li><strong>Band 4 (15-19 marks for AO5):</strong> A story in firm control, shaped with a clear purpose, with believable detail and some original ideas.</li>
 </ul>
 
-<h3>Planning Your Narrative (5 minutes)</h3>
+<h3>Planning Your Narrative (about 10 minutes, as the paper advises)</h3>
 <p>A well-planned narrative is essential. Before writing, consider:</p>
 <ol>
-  <li><strong>Focus:</strong> Keep it tight. A single event, a short time span, or a pivotal moment works better than an epic saga. You have 35-40 minutes to write - a contained story is more effective.</li>
+  <li><strong>Focus:</strong> Keep it tight. A single event, a short time span, or a pivotal moment works better than an epic saga. You have about 35 minutes to write, so a contained story is more effective.</li>
   <li><strong>Character:</strong> Limit yourself to one or two characters. Give them a clear desire, obstacle, or emotion to drive the narrative.</li>
   <li><strong>Structure:</strong> Plan a beginning, development, climax, and ending. Consider opening in medias res or using a cyclical structure.</li>
   <li><strong>Atmosphere:</strong> Decide on a dominant mood (tension, nostalgia, joy, unease) and sustain it through your language choices.</li>
   <li><strong>Ending:</strong> Plan your ending before you start writing. The best narratives have a purposeful, resonant conclusion - not a rushed or predictable one.</li>
 </ol>
 
-<div class="examiner-tip"><strong>Examiner Tip:</strong> WJEC examiners consistently report that the best creative writing responses are <strong>controlled and crafted</strong>, not long and rambling. A tightly focused piece of 400-500 words that demonstrates deliberate technique will outscore a 700-word piece that loses direction. Quality over quantity, always.</div>
+<div class="examiner-tip"><strong>Examiner Tip:</strong> The best creative writing responses are <strong>controlled and crafted</strong>, not long and rambling. The paper suggests about 450 to 600 words: a tightly focused piece of that length that demonstrates deliberate technique will outscore a much longer piece that loses direction, while writing far less than the guidance holds a piece's own marks down. Quality over quantity, always.</div>
 
 <h3>Narrative Techniques for Top Bands</h3>
 <ul>
@@ -881,14 +866,14 @@ James nodded, unable to speak. He sat beside him, and for the first time in five
 <p><strong>Strong:</strong> "The platform itself remained unchanged - the same cracked tiling, the same bench where he'd sat waiting for the London train five years ago."</p>
 <p><strong>Why It Works:</strong> Specific, concrete details (cracked tiling, the bench) trigger emotional resonance. We see and feel time's passage.</p>
 
-<h3>Grade Boundary Breakdown: B1 Narrative (WJEC)</h3>
+<h3>Band by Band: B1 Narrative (AO5 24 marks, AO6 16)</h3>
 <table style="width: 100%; border-collapse: collapse; margin: 20px 0;">
-<tr style="background-color: #ecf0f1;"><th style="border: 1px solid #bdc3c7; padding: 10px;"><strong>Grade</strong></th><th style="border: 1px solid #bdc3c7; padding: 10px;"><strong>AO5 (/24)</strong></th><th style="border: 1px solid #bdc3c7; padding: 10px;"><strong>Key Characteristics</strong></th></tr>
-<tr><td style="border: 1px solid #bdc3c7; padding: 10px;"><strong>9</strong></td><td style="border: 1px solid #bdc3c7; padding: 10px;">22-24</td><td style="border: 1px solid #bdc3c7; padding: 10px;">Compelling, expertly crafted narrative. Ambitious vocabulary and syntax. Inventive structure. Sustained linguistic devices. Highly engaging with sophisticated tone.</td></tr>
-<tr style="background-color: #ecf0f1;"><td style="border: 1px solid #bdc3c7; padding: 10px;"><strong>8</strong></td><td style="border: 1px solid #bdc3c7; padding: 10px;">18-21</td><td style="border: 1px solid #bdc3c7; padding: 10px;">Effective, engaging narrative. Good vocabulary and varied syntax. Clear structure. Effective technique use. Clear sense of purpose.</td></tr>
-<tr><td style="border: 1px solid #bdc3c7; padding: 10px;"><strong>7</strong></td><td style="border: 1px solid #bdc3c7; padding: 10px;">15-17</td><td style="border: 1px solid #bdc3c7; padding: 10px;">Clearly structured narrative. Appropriate vocabulary. Some linguistic variety. Clear sense of purpose and audience.</td></tr>
-<tr style="background-color: #ecf0f1;"><td style="border: 1px solid #bdc3c7; padding: 10px;"><strong>5-6</strong></td><td style="border: 1px solid #bdc3c7; padding: 10px;">11-14</td><td style="border: 1px solid #bdc3c7; padding: 10px;">Basic narrative structure. Simple vocabulary. Limited linguistic variety. Some audience awareness.</td></tr>
-<tr><td style="border: 1px solid #bdc3c7; padding: 10px;"><strong>4</strong></td><td style="border: 1px solid #bdc3c7; padding: 10px;">8-10</td><td style="border: 1px solid #bdc3c7; padding: 10px;">Simple narrative. Basic vocabulary. Limited device use. Basic coherence.</td></tr>
+<tr style="background-color: #ecf0f1;"><th style="border: 1px solid #bdc3c7; padding: 10px;"><strong>Band</strong></th><th style="border: 1px solid #bdc3c7; padding: 10px;"><strong>AO5 (/24)</strong></th><th style="border: 1px solid #bdc3c7; padding: 10px;"><strong>AO6 (/16)</strong></th><th style="border: 1px solid #bdc3c7; padding: 10px;"><strong>What it looks like</strong></th></tr>
+<tr><td style="border: 1px solid #bdc3c7; padding: 10px;"><strong>5</strong></td><td style="border: 1px solid #bdc3c7; padding: 10px;">20-24</td><td style="border: 1px solid #bdc3c7; padding: 10px;">14-16</td><td style="border: 1px solid #bdc3c7; padding: 10px;">An original story that holds the reader from start to end, with detailed characters and a carefully built structure. Spelling, punctuation and grammar are close to faultless and the vocabulary is wide and exact.</td></tr>
+<tr style="background-color: #ecf0f1;"><td style="border: 1px solid #bdc3c7; padding: 10px;"><strong>4</strong></td><td style="border: 1px solid #bdc3c7; padding: 10px;">15-19</td><td style="border: 1px solid #bdc3c7; padding: 10px;">11-13</td><td style="border: 1px solid #bdc3c7; padding: 10px;">A story in firm control, shaped with a clear purpose, with believable detail and some original ideas. Sentences are chosen for effect, errors are rare and the vocabulary is ambitious.</td></tr>
+<tr><td style="border: 1px solid #bdc3c7; padding: 10px;"><strong>3</strong></td><td style="border: 1px solid #bdc3c7; padding: 10px;">10-14</td><td style="border: 1px solid #bdc3c7; padding: 10px;">7-10</td><td style="border: 1px solid #bdc3c7; padding: 10px;">A clear, well-organised story that is going somewhere, with some developed detail, though it plays safe. Sentences vary and most punctuation and spelling are right.</td></tr>
+<tr style="background-color: #ecf0f1;"><td style="border: 1px solid #bdc3c7; padding: 10px;"><strong>2</strong></td><td style="border: 1px solid #bdc3c7; padding: 10px;">5-9</td><td style="border: 1px solid #bdc3c7; padding: 10px;">4-6</td><td style="border: 1px solid #bdc3c7; padding: 10px;">A story you can follow that is starting to have a shape, though plot and characters are thin. Sentences vary a little and most everyday words are spelt correctly.</td></tr>
+<tr><td style="border: 1px solid #bdc3c7; padding: 10px;"><strong>1</strong></td><td style="border: 1px solid #bdc3c7; padding: 10px;">1-4</td><td style="border: 1px solid #bdc3c7; padding: 10px;">1-3</td><td style="border: 1px solid #bdc3c7; padding: 10px;">The story is very simple or hard to follow, with little organisation. Sentences are mostly alike and errors in spelling, punctuation and tense are frequent.</td></tr>
 </table>
 
 <h3>Common Narrative Mistakes and Fixes</h3>
@@ -927,7 +912,7 @@ James nodded, unable to speak. He sat beside him, and for the first time in five
 
 <h3>Step-by-Step Narrative Writing Guide (Exam Conditions)</h3>
 <ol style="font-size: 1.05em; line-height: 1.8;">
-<li><strong>Plan your story (5 min):</strong> One pivotal moment. One or two characters. Clear emotional arc.</li>
+<li><strong>Plan your story (about 10 min):</strong> One pivotal moment. One or two characters. Clear emotional arc.</li>
 <li><strong>Write a hook opening:</strong> Start with action, dialogue, or striking detail-not scene-setting.</li>
 <li><strong>Establish character and conflict:</strong> What does the protagonist want? What obstacle blocks them?</li>
 <li><strong>Use varied sentence length:</strong> Short sentences create pace/tension. Longer sentences allow reflection.</li>
@@ -935,7 +920,7 @@ James nodded, unable to speak. He sat beside him, and for the first time in five
 <li><strong>Use dialogue sparingly but effectively:</strong> Every line should reveal character or advance the plot.</li>
 <li><strong>Control pacing with paragraph variation:</strong> Vary paragraph structure to control reader movement through the story.</li>
 <li><strong>Aim for emotional resonance in the ending:</strong> A quiet moment of recognition often works better than shock.</li>
-<li><strong>Leave 5 minutes for proofreading:</strong> Check SPaG errors, particularly dialogue punctuation.</li>
+<li><strong>Leave the last few minutes for proofreading:</strong> Check SPaG errors, particularly dialogue punctuation.</li>
 </ol>
 
 <h3>Grade 5 vs. Grade 9: Side-by-Side Comparison</h3>
@@ -1005,17 +990,16 @@ The front door was smaller than I remembered, the paint peeling in long strips t
       },
       {
         id: 'wjec-c1-m6-q4',
-        question:
-          'What do WJEC examiners say about the ideal length of a creative writing response?',
+        question: 'What does the paper suggest about the length of your creative writing?',
         options: [
           'The longer the better - aim for at least 800 words',
-          'A controlled, crafted piece of 400-500 words outperforms a longer, unfocused one',
+          'About 450-600 words: a controlled, crafted piece of that length outperforms a longer, unfocused one',
           'Exactly 300 words is required',
           'Length does not matter at all',
         ],
         correct: 1,
         explanation:
-          'WJEC examiners consistently report that controlled, crafted responses outperform longer, rambling ones. A focused 400-500 word piece demonstrating deliberate technique will score higher than a 700-word piece that loses direction.',
+          "The paper suggests about 450 to 600 words. A controlled, crafted piece of that length, demonstrating deliberate technique, will score higher than a much longer piece that loses direction, while writing far less than the guidance holds a piece's own marks down.",
       },
     ],
   },
@@ -1030,15 +1014,15 @@ The front door was smaller than I remembered, the paint peeling in long strips t
     content: `
 <h2>B1 - Creative Prose Writing: Crafting Description</h2>
 
-<p>While some students choose to write a narrative for B1, others opt for <strong>descriptive writing</strong>. Descriptive prose focuses on creating a vivid, immersive picture through rich sensory detail, figurative language, and carefully crafted atmosphere. There is typically no conventional "plot" - instead, the power lies in the quality of the writing itself.</p>
+<p>B1 asks for a story, or an account of an experience, real or imagined: the specification asks for a narrative or recount, and a piece that only describes cannot reach the top of the mark range. <strong>Description</strong> is still one of your most powerful tools. Descriptive passages inside your story create a vivid, immersive picture through rich sensory detail, figurative language, and carefully crafted atmosphere, and they bring its characters, setting and events to life. This module teaches those techniques, and how to use them without losing your story.</p>
 
-<div class="key-term"><strong>Key Term: Descriptive Writing</strong> - Writing that aims to create a vivid picture or impression in the reader's mind. It relies on sensory detail, figurative language, and controlled atmosphere rather than plot or narrative action. The focus is on <em>how</em> something is described rather than <em>what</em> happens.</div>
+<div class="key-term"><strong>Key Term: Descriptive Writing</strong> - Writing that aims to create a vivid picture or impression in the reader's mind. It relies on sensory detail, figurative language, and controlled atmosphere rather than plot or narrative action. The focus is on <em>how</em> something is described rather than <em>what</em> happens. In B1, use it inside your narrative, never instead of it.</div>
 
-<h3>Narrative vs Descriptive: Key Differences</h3>
+<h3>Narrative and Description: What Each Does in Your Story</h3>
 <table>
-  <tr><th>Feature</th><th>Narrative</th><th>Descriptive</th></tr>
+  <tr><th>Feature</th><th>Narrative</th><th>Descriptive passages</th></tr>
   <tr><td>Focus</td><td>Events, characters, conflict</td><td>Atmosphere, imagery, sensory experience</td></tr>
-  <tr><td>Plot</td><td>Required (even if minimal)</td><td>Not required - a single scene is sufficient</td></tr>
+  <tr><td>Plot</td><td>Required (even if minimal)</td><td>Pause the plot to deepen a single moment</td></tr>
   <tr><td>Dialogue</td><td>Often included</td><td>Rarely needed</td></tr>
   <tr><td>Pacing</td><td>Varies - builds to a climax</td><td>Typically slow and sustained</td></tr>
   <tr><td>Ending</td><td>Resolution or revelation</td><td>Often circular or reflective</td></tr>
@@ -1054,7 +1038,7 @@ The front door was smaller than I remembered, the paint peeling in long strips t
   <li><strong>Taste:</strong> "She bit into the pastry and the filling burst - warm, honeyed, faintly bitter with almonds."</li>
 </ul>
 
-<div class="examiner-tip"><strong>Examiner Tip:</strong> A descriptive piece does not need to "go anywhere." A single scene - a market, a beach at dawn, a room after a party - described with precision, craft, and sensory richness can achieve full marks. The examiner is assessing the quality of your writing, not the complexity of your plot.</div>
+<div class="examiner-tip"><strong>Examiner Tip:</strong> Your story does not need a complicated plot. A single, simple situation (a market, a beach at dawn, a room after a party), told as a story with one moment of change and described with precision, craft, and sensory richness, can reach the top band. The examiner is assessing the quality of your writing, not the complexity of your plot, but a piece that only describes, with nothing happening, cannot reach the top of the mark range.</div>
 
 <h3>Zoom Technique: Wide to Close</h3>
 <p>One of the most effective structural techniques in descriptive writing is the <strong>zoom</strong> - moving from a wide, panoramic view to a close, intimate detail (or vice versa). This mirrors the way a camera operates and gives your writing a clear, purposeful structure:</p>
@@ -1063,14 +1047,14 @@ The front door was smaller than I remembered, the paint peeling in long strips t
   <li><strong>Mid shot:</strong> Move closer - focus on a group of people, a building, a section of the scene.</li>
   <li><strong>Close-up:</strong> Zoom in on a specific, telling detail - a crack in a wall, a child's face, a single leaf.</li>
 </ol>
-<p>This structure gives your descriptive piece a clear sense of movement and focus, preventing it from becoming a static list of observations.</p>
+<p>This structure gives a descriptive passage a clear sense of movement and focus, preventing it from becoming a static list of observations.</p>
 
 <h3>Model Descriptive Opening</h3>
 <div class="model-answer"><strong>Model Answer (Grade 8-9 - Descriptive Opening):</strong> From the clifftop, the bay curved like a held breath - a crescent of pale sand bordered by dark rocks that the sea had sculpted into the shapes of sleeping animals. The water was impossible to trust: blue near the shore, then green, then a deep, uncertain grey further out, as though it were concealing something beneath its surface. Gulls traced slow circles overhead, their cries thin and metallic against the silence. Below, where the cliff path descended in a series of crumbling steps, a single figure stood at the water's edge, trousers rolled to the knee, not moving. The waves crept towards them and retreated, crept and retreated, as though the sea itself were uncertain whether to approach.</div>
 
 <p>This opening uses the zoom technique (wide bay → water → gulls → single figure → waves at their feet) and engages multiple senses (sight, sound). The similes are original ("a held breath," "sleeping animals") and the personification of the sea creates atmosphere.</p>
 
-<div class="common-mistake"><strong>Common Mistake:</strong> Writing a descriptive piece that is actually a narrative in disguise. If your "description" includes a chase scene, a conversation, a dramatic revelation, or a clear sequence of events, it has become a story. Choose one form and commit to it. Descriptive writing should prioritise atmosphere and imagery over action.</div>
+<div class="common-mistake"><strong>Common Mistake:</strong> Letting description stop the story. A passage of sensory detail is powerful at a turning point, but a piece that is description from start to finish, with nothing happening, cannot reach the top of the mark range. Keep a thread of story running (a character, a situation, a moment of change) and use description to make the key moments vivid.</div>
 
 <h3>Advanced Descriptive Techniques</h3>
 <ul>
@@ -1087,16 +1071,16 @@ The front door was smaller than I remembered, the paint peeling in long strips t
     quiz: [
       {
         id: 'wjec-c1-m7-q1',
-        question: 'Does a descriptive piece need a plot?',
+        question: 'Can a B1 response be pure description, with no story?',
         options: [
-          'Yes - every piece of writing needs a beginning, middle, and end',
-          'No - a single scene described with precision and sensory richness is sufficient',
-          'Only if the title requires one',
-          'Yes - the examiner expects at least two events',
+          'Yes, a single scene described with sensory richness can reach full marks',
+          'No: B1 asks for a story or recount, and writing that only describes cannot reach the top of the mark range',
+          'Only if the title is a single word',
+          'Yes, as long as it is at least 800 words',
         ],
         correct: 1,
         explanation:
-          'Descriptive writing does not need a conventional plot. A single scene described with sensory richness, figurative language, and controlled atmosphere can achieve full marks.',
+          'Eduqas asks for a narrative or recount, real or imagined. Description brings a story to life, but a piece that only describes cannot reach the top of the mark range, so keep a thread of story running through it.',
       },
       {
         id: 'wjec-c1-m7-q2',
@@ -1279,7 +1263,7 @@ The front door was smaller than I remembered, the paint peeling in long strips t
   <li><strong>Read your ending:</strong> Does your final sentence feel purposeful? A strong ending leaves a lasting impression.</li>
 </ol>
 
-<div class="examiner-tip"><strong>Examiner Tip:</strong> WJEC chief examiners consistently emphasise that proofreading can lift a student by one or two mark bands. Correcting three or four SPaG errors in five minutes could be worth 2-4 additional marks. That is more marks per minute than almost any other exam activity.</div>
+<div class="examiner-tip"><strong>Examiner Tip:</strong> Proofreading pays: AO6 is 16 of the 40 writing marks, and correcting three or four SPaG errors in five minutes can lift your accuracy mark. That is more marks per minute than almost any other exam activity.</div>
 
 <h3>Common Proofreading Targets</h3>
 <ul>
@@ -1298,31 +1282,31 @@ The front door was smaller than I remembered, the paint peeling in long strips t
   <tr><td>A1 - Retrieval (5 marks)</td><td>5 min</td><td>5</td></tr>
   <tr><td>A2 - Language comment (5 marks)</td><td>7 min</td><td>5</td></tr>
   <tr><td>A3 - Language analysis (10 marks)</td><td>13 min</td><td>10</td></tr>
-  <tr><td>A4 - Structure analysis (10 marks)</td><td>13 min</td><td>10</td></tr>
+  <tr><td>A4 - Language and structure (10 marks)</td><td>13 min</td><td>10</td></tr>
   <tr><td>A5 - Evaluation (10 marks)</td><td>12 min</td><td>10</td></tr>
-  <tr><td>B1 - Plan creative writing</td><td>5 min</td><td>-</td></tr>
-  <tr><td>B1 - Write creative prose</td><td>35 min</td><td>40</td></tr>
+  <tr><td>B1 - Plan your story</td><td>10 min</td><td>-</td></tr>
+  <tr><td>B1 - Write your story</td><td>30 min</td><td>40</td></tr>
   <tr><td>Proofread</td><td>5 min</td><td>-</td></tr>
 </table>
 
-<div class="common-mistake"><strong>Common Mistake:</strong> Not planning the creative writing piece. Students who dive straight into writing often produce unfocused, rambling responses. Five minutes of planning - deciding on focus, structure, opening, and ending - is the best investment you can make. A planned 400-word piece will outscore an unplanned 600-word one.</div>
+<div class="common-mistake"><strong>Common Mistake:</strong> Not planning the creative writing piece. Students who dive straight into writing often produce unfocused, rambling responses. Ten minutes of planning, as the paper advises (deciding on focus, structure, opening, and ending), is the best investment you can make. A planned piece within the paper's suggested 450 to 600 words will outscore an unplanned one of any length.</div>
 
 <h3>Answering the Question Set</h3>
 <p>This sounds obvious, but WJEC examiners report that many students lose marks by not answering the actual question:</p>
 <ul>
-  <li><strong>A2:</strong> If the question asks about "tension in lines 8-14," do not discuss lines 1-7 or 15-20. Stay within the specified lines.</li>
+  <li><strong>A2:</strong> If the question names lines 8-14, do not discuss lines 1-7 or 15-20. Stay within the specified lines.</li>
   <li><strong>A3:</strong> If the question asks about "impressions of the character," do not write about setting or atmosphere unless it directly reveals character.</li>
-  <li><strong>A4:</strong> If the question asks about structure, do not write about individual word choices or metaphors.</li>
-  <li><strong>A5:</strong> If the question asks "to what extent do you agree," you must evaluate - not just analyse.</li>
-  <li><strong>B1:</strong> If the title asks for a description of a place, do not write a story with a clear plot and dialogue. Choose a form and commit.</li>
+  <li><strong>A4:</strong> The question asks about language and structure, so write about how the events are organised as well as the words. An answer on word choices alone misses half the question.</li>
+  <li><strong>A5:</strong> If the question asks "to what extent do you agree," you must evaluate, not just analyse, using the final lines and the passage as a whole.</li>
+  <li><strong>B1:</strong> Whatever the title, write a story or an account of an experience: a phrase, a time you did something, an opening line or a closing line can each start one. Description should serve the story, not replace it.</li>
 </ul>
 
 <h3>Revision Checklist</h3>
 <ul>
   <li>Can you identify and explain the five reading question types (A1-A5)?</li>
-  <li>Can you distinguish between language analysis (A2/A3) and structural analysis (A4)?</li>
+  <li>Can you analyse language on its own (A2/A3) and language with structure (A4)?</li>
   <li>Can you write an evaluative response with personal judgement and textual evidence (A5)?</li>
-  <li>Can you plan and write a narrative or descriptive piece in 40 minutes?</li>
+  <li>Can you plan and write a story of about 450-600 words in 45 minutes?</li>
   <li>Can you use a range of punctuation accurately (semicolons, colons, dashes)?</li>
   <li>Can you proofread systematically for common errors?</li>
   <li>Do you know the timing plan for the exam?</li>
@@ -1359,11 +1343,11 @@ The front door was smaller than I remembered, the paint peeling in long strips t
           'The examiner marks your plan separately',
           'An unplanned response often becomes unfocused and rambling; a planned piece demonstrates control',
           'You must submit your plan with your answer',
-          'Planning is only needed for narrative, not descriptive writing',
+          'Planning is only needed for long stories',
         ],
         correct: 1,
         explanation:
-          'Planning helps you produce a focused, well-structured response. WJEC examiners consistently report that planned responses are more controlled and score higher than unplanned, rambling ones.',
+          'Planning helps you produce a focused, well-structured response. Planned responses are more controlled than unplanned, rambling ones, and control is what the higher bands reward.',
       },
       {
         id: 'wjec-c1-m9-q4',
@@ -1421,20 +1405,21 @@ const comp1Assessment: CourseQuiz[] = [
     question: 'How many marks is A1 (retrieval) worth?',
     options: ['10 marks', '3 marks', '5 marks', '1 mark'],
     correct: 2,
-    explanation: 'A1 consists of five retrieval questions worth 1 mark each, totalling 5 marks.',
+    explanation:
+      'A1 is one question, list five things from the lines named, with one mark for each correct, separate point: 5 marks.',
   },
   {
     id: 'wjec-c1-assess-5',
     question: 'What is the key difference between A4 and A2/A3?',
     options: [
       'A4 is worth more marks',
-      'A4 focuses on structure and organisation; A2/A3 focus on language',
+      'A4 adds structure: it asks about language and the organisation of events, where A2 and A3 focus on language',
       'A4 requires quotations; A2/A3 do not',
       'There is no difference',
     ],
     correct: 1,
     explanation:
-      'A4 specifically tests analysis of structure and organisation (arrangement, pacing, focus shifts). A2 and A3 test analysis of language choices (words, phrases, techniques).',
+      'A4 tests language and structure together: word choices and the arrangement of events, pacing and focus shifts. A2 and A3 test analysis of language choices (words, phrases, techniques).',
   },
   {
     id: 'wjec-c1-assess-6',
@@ -1548,13 +1533,13 @@ const comp1Assessment: CourseQuiz[] = [
     question: 'What is the recommended length for a creative writing response?',
     options: [
       'At least 800 words',
-      '400-500 well-crafted words',
+      'About 450-600 well-crafted words, as the paper suggests',
       'Exactly 250 words',
       'As long as possible',
     ],
     correct: 1,
     explanation:
-      'WJEC examiners recommend a controlled, crafted piece of 400-500 words over a longer, unfocused response. Quality of writing matters more than quantity.',
+      'The paper suggests about 450 to 600 words. A controlled, crafted piece of that length beats a longer, unfocused response: quality of writing matters more than quantity.',
   },
   {
     id: 'wjec-c1-assess-16',
@@ -1601,10 +1586,15 @@ const comp1Assessment: CourseQuiz[] = [
   {
     id: 'wjec-c1-assess-20',
     question: 'How much time should you allocate to planning your creative writing piece?',
-    options: ['No time - start writing immediately', '1 minute', '5 minutes', '15 minutes'],
+    options: [
+      'No time - start writing immediately',
+      '1 minute',
+      'About 10 minutes, as the paper advises',
+      '25 minutes',
+    ],
     correct: 2,
     explanation:
-      'Five minutes of planning - choosing focus, structure, opening, and ending - produces a more controlled response. Planned pieces consistently outperform unplanned ones.',
+      'The paper advises about 10 minutes planning and about 35 minutes writing. Planning (choosing focus, structure, opening, and ending) produces a more controlled response.',
   },
 ]
 
@@ -1612,6 +1602,25 @@ const comp1Assessment: CourseQuiz[] = [
 // WJEC/Eduqas GCSE English Language - Component 2 Modules
 // 19th and 21st Century Non-Fiction Reading and Transactional/Persuasive Writing
 // ═══════════════════════════════════════════════════════════════════════════════
+//
+// CORRECTED 31 October 2026 against src/data/mark-scheme-guides/eduqas-lang-comp2.ts.
+// The course was written for a paper Eduqas does not set: A1 retrieval (5
+// marks), A2 synthesis (10), A3 language analysis "often" on the 19th-century
+// text (10), A4 comparison (10), an A5 proofreading task (5), then a "shorter"
+// B1 of 16 marks and a "longer" B2 of 24. Component 2 asks 1.1 retrieval (3,
+// 21st-century text), 1.2 how the writer achieves a purpose (10, AO2,
+// 21st-century), 1.3 understanding (3, 19th-century), 1.4 evaluation (10, AO4,
+// 19th-century), 1.5 synthesis (4, both) and 1.6 comparison (10, AO3, both),
+// then two compulsory tasks, 2.1 and 2.2, of 20 marks each (AO5 12 + AO6 8),
+// about 300-400 words and 30 minutes apiece. Section A carries no AO6 marks.
+// The labels A1 to A5 did not match the 2014 sample paper's either (its A1 to
+// A6 are 1.1 to 1.6), so this course now uses the live papers' numbering. The
+// proofreading module now teaches checking your own writing for AO6, with the
+// answer keys of its practice passages corrected (they listed errors the
+// passages did not contain).
+// Second reading, same day: a 2.1 commentary still aimed at "22-24" on a 12-mark
+// AO5 scale; the 1.5 tip forbade the one-sentence-per-text shape the guide
+// recommends; a 1.3 model answer turned "not always" into "often".
 
 const comp2Modules: CourseModule[] = [
   // ──────────────────────────────────────────────
@@ -1630,48 +1639,51 @@ const comp2Modules: CourseModule[] = [
 
 <h3>Paper Structure at a Glance</h3>
 <ul>
-  <li><strong>Section A - Reading (40 marks):</strong> You are given two unseen non-fiction extracts - one from the 19th century and one from the 21st century - on a linked theme. You answer questions on both texts, including comparison.</li>
-  <li><strong>Section B - Transactional/Persuasive Writing (40 marks):</strong> Two writing tasks. You must complete <strong>both</strong> writing tasks - one shorter (16 marks) and one longer (24 marks).</li>
+  <li><strong>Section A - Reading (40 marks):</strong> You are given two unseen non-fiction extracts - one from the 19th century and one from the 21st century - on a linked theme. You answer six questions: two on the 21st-century text, two on the 19th-century text, then two on both, ending with a comparison.</li>
+  <li><strong>Section B - Transactional/Persuasive Writing (40 marks):</strong> Two compulsory writing tasks of 20 marks each. You must complete <strong>both</strong>, in the form and for the reader each task sets, in about 300 to 400 words each.</li>
 </ul>
 
 <h3>Question-by-Question Breakdown</h3>
+<p>Live papers number the questions 1.1 to 1.6 and 2.1 and 2.2, as below; the 2014 sample paper called them A1 to A6, B1 and B2.</p>
 <ol>
-  <li><strong>A1 (5 marks)</strong> - Retrieval. Read one of the texts and select relevant information. Similar to Component 1 A1.</li>
-  <li><strong>A2 (10 marks)</strong> - Synthesis. How do the two texts present information and ideas about the linked theme? You must draw on <strong>both</strong> texts and make connections between them.</li>
-  <li><strong>A3 (10 marks)</strong> - Language analysis. How does one of the writers use language to achieve effects? Analyse language choices with quotations and subject terminology.</li>
-  <li><strong>A4 (10 marks)</strong> - Comparison of writers' viewpoints and perspectives. Compare how the two writers convey their different viewpoints on the linked theme. This requires you to compare attitudes, methods, and effects across the two texts.</li>
-  <li><strong>A5 (5 marks)</strong> - Proofreading task. You are given a passage with deliberate errors and asked to correct them. Tests AO6 (technical accuracy).</li>
-  <li><strong>B1 (16 marks)</strong> - Shorter transactional writing task. Approximately 200-300 words.</li>
-  <li><strong>B2 (24 marks)</strong> - Longer transactional writing task. Approximately 300-500 words.</li>
+  <li><strong>1.1 (3 marks)</strong> - Retrieval. Short questions on the 21st-century text.</li>
+  <li><strong>1.2 (10 marks)</strong> - How does the writer of the 21st-century text try to achieve a purpose, such as persuading you? Analyse what is said, the language, tone and structure, with quotations and subject terminology.</li>
+  <li><strong>1.3 (3 marks)</strong> - Understanding. Short questions on what the 19th-century text says or means.</li>
+  <li><strong>1.4 (10 marks)</strong> - Evaluation. Your judgement on the 19th-century text, often on a statement about it, thinking about what is said and how.</li>
+  <li><strong>1.5 (4 marks)</strong> - Synthesis. Using <strong>both</strong> texts, explain briefly what they tell you about one shared topic.</li>
+  <li><strong>1.6 (10 marks)</strong> - Comparison. Compare what the two writers say about a shared topic and how they get it across. This requires you to compare attitudes, methods, and effects across the two texts.</li>
+  <li><strong>2.1 (20 marks)</strong> - First compulsory transactional or persuasive task, in the form and for the reader it sets. About 300-400 words.</li>
+  <li><strong>2.2 (20 marks)</strong> - Second compulsory task, with its own form and reader. About 300-400 words.</li>
 </ol>
 
 <h3>Assessment Objectives</h3>
 <ul>
-  <li><strong>AO1</strong> - Identify and interpret explicit and implicit information; select and synthesise from different texts. (A1, A2)</li>
-  <li><strong>AO2</strong> - Explain, comment on and analyse how writers use language and structure to achieve effects. (A3)</li>
-  <li><strong>AO3</strong> - Compare writers' ideas and perspectives, as well as how these are conveyed, across two or more texts. (A4)</li>
-  <li><strong>AO5</strong> - Communicate clearly, effectively and imaginatively; organise information and ideas. (B1, B2)</li>
-  <li><strong>AO6</strong> - Vocabulary, sentence structures, spelling and punctuation. (A5, B1, B2)</li>
+  <li><strong>AO1</strong> - Identify and interpret explicit and implicit information; select and synthesise from different texts. (1.1, 1.3, 1.5)</li>
+  <li><strong>AO2</strong> - Explain, comment on and analyse how writers use language and structure to achieve effects. (1.2)</li>
+  <li><strong>AO3</strong> - Compare writers' ideas and perspectives, as well as how these are conveyed, across two or more texts. (1.6)</li>
+  <li><strong>AO4</strong> - Evaluate texts critically and support this with appropriate textual references. (1.4)</li>
+  <li><strong>AO5</strong> - Communicate clearly, effectively and imaginatively; organise information and ideas. (2.1, 2.2)</li>
+  <li><strong>AO6</strong> - Vocabulary, sentence structures, spelling and punctuation. (2.1, 2.2: Section A carries no AO6 marks)</li>
 </ul>
 
 <div class="examiner-tip"><strong>Examiner Tip:</strong> Component 2 is 2 hours long and covers <strong>two</strong> reading texts and <strong>two</strong> writing tasks. Time management is absolutely critical. The most common error is spending too long on reading and then rushing the writing - or vice versa. Aim for 1 hour on reading and 1 hour on writing.</div>
 
 <h3>Recommended Timing Plan</h3>
 <ol>
-  <li><strong>0-15 min:</strong> Read both extracts carefully, annotating key ideas, language features, and viewpoints.</li>
-  <li><strong>15-20 min:</strong> Answer A1 (5 marks) - retrieval from one text.</li>
-  <li><strong>20-35 min:</strong> Answer A2 (10 marks) - synthesis across both texts.</li>
-  <li><strong>35-48 min:</strong> Answer A3 (10 marks) - language analysis of one text.</li>
-  <li><strong>48-60 min:</strong> Answer A4 (10 marks) - comparison of viewpoints across both texts.</li>
-  <li><strong>60-63 min:</strong> Answer A5 (5 marks) - proofreading task.</li>
-  <li><strong>63-68 min:</strong> Plan B1.</li>
-  <li><strong>68-83 min:</strong> Write B1 (16 marks) - shorter transactional task.</li>
-  <li><strong>83-88 min:</strong> Plan B2.</li>
-  <li><strong>88-113 min:</strong> Write B2 (24 marks) - longer transactional task.</li>
-  <li><strong>113-120 min:</strong> Proofread both writing tasks.</li>
+  <li><strong>0-10 min:</strong> Read both extracts carefully, annotating key ideas, language features, and viewpoints.</li>
+  <li><strong>10-14 min:</strong> Answer 1.1 (3 marks): retrieval from the 21st-century text.</li>
+  <li><strong>14-26 min:</strong> Answer 1.2 (10 marks): how the 21st-century writer achieves a purpose.</li>
+  <li><strong>26-30 min:</strong> Answer 1.3 (3 marks): understanding the 19th-century text.</li>
+  <li><strong>30-42 min:</strong> Answer 1.4 (10 marks): evaluation of the 19th-century text.</li>
+  <li><strong>42-47 min:</strong> Answer 1.5 (4 marks): bringing details together from both texts.</li>
+  <li><strong>47-60 min:</strong> Answer 1.6 (10 marks): comparison of both texts.</li>
+  <li><strong>60-65 min:</strong> Plan 2.1.</li>
+  <li><strong>65-90 min:</strong> Write and check 2.1 (20 marks).</li>
+  <li><strong>90-95 min:</strong> Plan 2.2.</li>
+  <li><strong>95-120 min:</strong> Write and check 2.2 (20 marks).</li>
 </ol>
 
-<div class="common-mistake"><strong>Common Mistake:</strong> Treating A2 (synthesis) and A4 (comparison) as the same question. A2 asks you to synthesise information - drawing together similar or complementary points from both texts. A4 asks you to <em>compare viewpoints and perspectives</em> - this requires analysis of how each writer conveys a different attitude, and an explicit comparison of methods and effects.</div>
+<div class="common-mistake"><strong>Common Mistake:</strong> Treating 1.5 (synthesis) and 1.6 (comparison) as the same question. 1.5 asks you to bring together the relevant details from both texts on one topic, briefly, for 4 marks. 1.6 asks you to <em>compare viewpoints and perspectives</em> for 10 marks: this requires analysis of how each writer conveys their ideas, and an explicit comparison of methods and effects.</div>
 
 <div class="key-term"><strong>Key Term: Transactional Writing</strong> - Writing that has a clear purpose, audience, and form. It aims to inform, persuade, advise, argue, or instruct. Common forms include letters, articles, speeches, reviews, reports, and leaflets. Transactional writing requires you to adapt your tone, style, and register to suit the task.</div>
 
@@ -1682,7 +1694,7 @@ const comp2Modules: CourseModule[] = [
 My Dear Cousin, I write to you from a small village in the Cotswolds, where I have removed myself for the purpose of restoring both health and temperament. The very air seems to possess restorative qualities - clear and unsullied by the corrupting influences of London society. The rural populace, though simple in their understanding, demonstrate a virtue absent in polished circles: genuine contentment with their station. I have begun to perceive that civilisation, for all its vaunted progress, may represent a departure from more authentic modes of living. The question which now occupies my thoughts is whether we are justified in pursuing advancement when such pursuit necessitates the sacrifice of human virtue.
 </div>
 
-<p><strong>A1 Question (retrieval):</strong> Where is the writer and why has he come there?</p>
+<p><strong>1.3 Question (understanding the 19th-century text):</strong> Where is the writer and why has he come there?</p>
 
 <p><strong>Model Response (Grade 9):</strong></p>
 <div class="model-answer">
@@ -1729,7 +1741,7 @@ The writer is in a "small village in the Cotswolds" and has come there "for the 
 <li>Abundant data, statistics, links to multiple sources</li>
 </ul>
 
-<h3>A1 Practice: Retrieving from Both Texts</h3>
+<h3>1.5 Practice: Bringing Details Together from Both Texts</h3>
 <p><strong>Question:</strong> Using the 19th-century extract above and a 21st-century article about rural life, what do both texts tell you about attitudes to rural communities?</p>
 
 <p><strong>Model Response (sketch):</strong></p>
@@ -1737,11 +1749,13 @@ The writer is in a "small village in the Cotswolds" and has come there "for the 
 The 19th-century writer romanticizes rural life, valuing the "genuine contentment" and virtue of rural people. He contrasts this favorably with urban "corruption." A 21st-century article might counter this, presenting rural challenges: limited job opportunities, poor broadband, aging populations. Both texts discuss rural identity, but the 19th-century text sentimentalizes whilst the 21st-century text pragmatizes.
 </div>
 
-<h3>Common A1 Mistakes</h3>
+<p>For 1.5, keep it brief: one or two sentences on each text, giving the details. How the writers present their views belongs in 1.6.</p>
+
+<h3>Common Mistakes on 1.1 and 1.3</h3>
 <div class="common-mistake"><strong>Mistake 1: Inaccurate quotation.</strong> "The writer says the village is in Scotland." But the text says "Cotswolds." Quotation must be exact.</div>
-<div class="common-mistake"><strong>Mistake 2: Paraphrasing instead of quoting when the question asks for retrieval.</strong> You must use the text's own words or put paraphrase in quotation marks.</div>
-<div class="common-mistake"><strong>Mistake 3: Over-explaining.</strong> A1 is retrieval. You don't need to analyze why the writer feels this way - just state what the text says.</div>
-<div class="common-mistake"><strong>Mistake 4: Confusing the two texts.</strong> If comparing, be clear which evidence comes from which text.</div>
+<div class="common-mistake"><strong>Mistake 2: Copying a long passage in the hope that the answer is in it.</strong> Short, exact answers earn the marks. For 1.3, putting the older language simply in your own words shows you have understood it.</div>
+<div class="common-mistake"><strong>Mistake 3: Over-explaining.</strong> 1.1 and 1.3 are retrieval and understanding. You don't need to analyse why the writer feels this way - just state what the text says.</div>
+<div class="common-mistake"><strong>Mistake 4: Confusing the two texts.</strong> 1.1 is on the 21st-century text and 1.3 on the 19th-century text: an answer from the wrong text earns nothing.</div>
 
 `,
     quiz: [
@@ -1767,7 +1781,7 @@ The 19th-century writer romanticizes rural life, valuing the "genuine contentmen
         options: ['One', 'Two', 'Three', 'Choose one from three'],
         correct: 1,
         explanation:
-          'Section B requires two writing tasks: B1 (shorter, 16 marks) and B2 (longer, 24 marks). Both must be completed.',
+          'Section B sets two compulsory writing tasks, 2.1 and 2.2, worth 20 marks each (12 for AO5, 8 for AO6). Both must be completed, in about 30 minutes each.',
       },
       {
         id: 'wjec-c2-m1-q4',
@@ -1775,20 +1789,20 @@ The 19th-century writer romanticizes rural life, valuing the "genuine contentmen
         options: ['AO1', 'AO2', 'AO3', 'AO5'],
         correct: 2,
         explanation:
-          "AO3 (comparing writers' ideas and perspectives across texts) is unique to Component 2. It is tested in A4, which asks you to compare how two writers convey their viewpoints.",
+          "AO3 (comparing writers' ideas and perspectives across texts) is unique to Component 2. It is tested in 1.6, which asks you to compare how two writers convey their viewpoints.",
       },
       {
         id: 'wjec-c2-m1-q5',
-        question: 'What is the A5 proofreading task?',
+        question: 'Does Component 2 set a separate proofreading task?',
         options: [
-          'Proofreading your own work',
-          'A passage with deliberate errors that you must correct',
-          'Identifying errors in the extract',
-          'Rewriting a paragraph from memory',
+          'Yes, a passage with deliberate errors to correct',
+          "No: accuracy is marked in your own two pieces of writing, 8 of each task's 20 marks",
+          'Yes, worth 10 marks',
+          'Only in some years',
         ],
         correct: 1,
         explanation:
-          'A5 is a unique WJEC/Eduqas question: you are given a short passage with deliberate SPaG errors and asked to identify and correct them. It tests AO6.',
+          'There is no proofreading task. Eduqas assesses technical accuracy (AO6) in Section B: 8 of the 20 marks for each writing task, 16 in all. Proofreading your own writing is how you earn them.',
       },
     ],
   },
@@ -1798,12 +1812,12 @@ The 19th-century writer romanticizes rural life, valuing the "genuine contentmen
   // ──────────────────────────────────────────────
   {
     id: 'wjec-c2-m2',
-    title: 'Reading 19th and 21st Century Non-Fiction (A1)',
+    title: 'Reading 19th and 21st Century Non-Fiction (1.1 and 1.3)',
     duration: '45 min',
     content: `
-<h2>A1 - Retrieval from Non-Fiction Texts</h2>
+<h2>1.1 and 1.3 - Retrieval and Understanding in Non-Fiction Texts</h2>
 
-<p>Question A1 on Component 2 is worth <strong>5 marks</strong> and tests <strong>AO1</strong> - your ability to identify and interpret explicit and implicit information from a non-fiction text. You will be directed to one of the two extracts (usually the 21st-century text) and asked to retrieve specific information.</p>
+<p>Questions 1.1 and 1.3 on Component 2 are worth <strong>3 marks</strong> each and test <strong>AO1</strong> - your ability to identify and interpret explicit and implicit information from a non-fiction text. Question 1.1 asks short questions on the 21st-century text; Question 1.3 asks short questions on the 19th-century text, about what it says or what it means. (The 2014 sample paper called them A1 and A3.)</p>
 
 <div class="key-term"><strong>Key Term: 19th-Century Non-Fiction</strong> - Non-fiction texts written between 1800 and 1899. These include Victorian letters, diary entries, newspaper editorials, travel accounts, speeches, and essays. The language may feel formal or archaic, but the ideas are often surprisingly relevant to modern debates.</div>
 
@@ -1826,14 +1840,14 @@ The 19th-century writer romanticizes rural life, valuing the "genuine contentmen
 <div class="text-extract"><strong>Text B (19th century):</strong> The press, sir, is the great engine of civilisation. Through its tireless industry, the humblest cottager may be furnished with intelligence from the farthest corners of the globe. A newspaper placed upon a kitchen table is a window thrown open to the world. Yet I confess a growing unease at the rapidity with which information now circulates, for speed and accuracy are not always companions, and the public appetite for sensation threatens to overwhelm the sober duty of truthful reporting.
 <div class="source">From a speech to the Press Association, 1872</div></div>
 
-<h3>Sample A1 Questions (on Text A)</h3>
+<h3>Sample 1.1 Questions (on Text A, the 21st-century text)</h3>
 <ol>
   <li><em>"According to the survey, what percentage of 16-24-year-olds get their news from social media?"</em> - <strong>64%</strong></li>
   <li><em>"Name two platforms mentioned as sources of news."</em> - <strong>TikTok and Instagram.</strong></li>
   <li><em>"How is news described when it arrives via social media?"</em> - <strong>Fragmented, decontextualised, and filtered through algorithms.</strong></li>
 </ol>
 
-<div class="examiner-tip"><strong>Examiner Tip:</strong> For A1, the answers are in the text. Do not overthink or add your own interpretation. Read the specified lines, find the relevant information, and express it clearly and briefly. You can quote directly from the text or paraphrase closely.</div>
+<div class="examiner-tip"><strong>Examiner Tip:</strong> For 1.1 and 1.3, the answers are in the text. Do not overthink or add your own interpretation. Find the relevant information in the right text and express it clearly and briefly; for 1.1, read the whole 21st-century text first, because an answer can sit anywhere in it, including near the end. You can quote directly from the text or paraphrase closely.</div>
 
 <h3>Reading Strategies for Older Texts</h3>
 <ul>
@@ -1843,11 +1857,11 @@ The 19th-century writer romanticizes rural life, valuing the "genuine contentmen
   <li><strong>Note the writer's purpose.</strong> Is this text informing, persuading, entertaining, advising, or arguing? This shapes how you interpret language choices.</li>
 </ul>
 
-<div class="common-mistake"><strong>Common Mistake:</strong> Panicking when faced with 19th-century vocabulary. The language may look unfamiliar, but the ideas are often straightforward. Don't let an archaic word derail you - use the surrounding context to work out its meaning. The retrieval questions in A1 will focus on accessible information, not obscure vocabulary.</div>
+<div class="common-mistake"><strong>Common Mistake:</strong> Panicking when faced with 19th-century vocabulary. The language may look unfamiliar, but the ideas are often straightforward. Don't let an archaic word derail you - use the surrounding context to work out its meaning. Question 1.3 asks what the 19th-century text says or means: an answer that puts the older language simply shows you have understood it.</div>
 
 
-<h3>Worked Example: Full Synthesis Response</h3>
-<p><strong>Question:</strong> Using information from both texts, write a summary of what you learn about attitudes to community.
+<h3>Worked Example: Bringing Details Together (1.5)</h3>
+<p><strong>Question 1.5 (4 marks):</strong> Using both texts, explain briefly what you learn about attitudes to community.</p>
 
 <p><strong>19th-Century Text (extract):</strong></p>
 <div class="text-extract">
@@ -1879,18 +1893,21 @@ Both texts address community, but from opposing perspectives. The 19th-century w
 <li><strong>Find the connection/contrast:</strong> Do they agree, disagree, or approach the same topic differently?</li>
 <li><strong>Synthesize:</strong> What larger insight emerges when you read them together? What has changed between the 19th and 21st centuries?</li>
 <li><strong>Use evidence from both:</strong> At least one quote or idea from each text.</li>
+<li><strong>Keep it brief:</strong> at 4 marks, one or two sentences on each text can be enough, as long as the details are precise and cover every part of what is asked.</li>
 </ol>
 
 <h3>Common Synthesis Mistakes</h3>
-<div class="common-mistake"><strong>Mistake 1: Summary instead of synthesis.</strong> "Text A says X. Text B says Y." This is not synthesis. Synthesis is: "A and B together show that [larger pattern]."</div>
+<div class="common-mistake"><strong>Mistake 1: Vague details.</strong> "Both texts talk about community" earns little. 1.5 rewards precise details from each text that cover every part of what is asked. A sentence on each text, naming the text and giving the exact details, is a good shape for a 4-mark answer.</div>
 
-<div class="common-mistake"><strong>Mistake 2: Only using one text.</strong> The question explicitly says "both texts." Using only one loses half the available marks.</div>
+<div class="common-mistake"><strong>Mistake 2: Only using one text.</strong> The question explicitly says "both texts." An answer on one text stays in the lowest band.</div>
 
 <div class="common-mistake"><strong>Mistake 3: Inaccurate quotation.</strong> Quick paraphrase is acceptable, but must be accurate. If you misrepresent what a text says, your synthesis falls apart.</div>
 
 <div class="common-mistake"><strong>Mistake 4: Failing to identify the underlying change.</strong> Good synthesis recognizes that texts separated by time reveal social, cultural, or technological change. What has shifted? That's your synthesis.</div>
 
-<h3>A2 Practice: Synthesis Task</h3>
+<div class="common-mistake"><strong>Mistake 5: Analysing language.</strong> 1.5 wants the details, not how they are written. Save the writers' methods for 1.6, the comparison.</div>
+
+<h3>1.5 Practice: Bringing Details Together</h3>
 <p><strong>Question:</strong> What do the two texts together tell you about changing attitudes to work?</p>
 <p><strong>Text A (1890s):</strong> "A man's work is his identity and his duty. Labour, whether in field or factory, defines one's place in society and one's worth."</p>
 <p><strong>Text B (2024):</strong> "Today we 'find our passion' and 'choose our career.' Work is not an obligation but an expression of self. Many seek 'work-life balance' and reject the notion that careers should consume their identities."</p>
@@ -1900,17 +1917,10 @@ Both texts address community, but from opposing perspectives. The 19th-century w
 Together, the texts reveal a fundamental shift in how society values work. The 19th-century text presents work as <em>identity</em> - it defines who you are and your social position. The 21st-century text treats work as <em>one part of life</em> - important, yes, but not consuming. The change suggests increasing emphasis on individual autonomy and psychological wellbeing, but potentially less sense of collective purpose or social obligation through labour.
 </div>
 
-<h3>Grade Boundary Breakdown: A1 Non-Fiction (WJEC Component 2)</h3>
-<table style="width: 100%; border-collapse: collapse; margin: 20px 0;">
-<tr style="background-color: #ecf0f1;"><th style="border: 1px solid #bdc3c7; padding: 10px;"><strong>Grade</strong></th><th style="border: 1px solid #bdc3c7; padding: 10px;"><strong>Marks (/5)</strong></th><th style="border: 1px solid #bdc3c7; padding: 10px;"><strong>Characteristics</strong></th></tr>
-<tr><td style="border: 1px solid #bdc3c7; padding: 10px;"><strong>9-8</strong></td><td style="border: 1px solid #bdc3c7; padding: 10px;">5</td><td style="border: 1px solid #bdc3c7; padding: 10px;">All answers accurate and clearly expressed. Both explicit and implicit information identified correctly. Evidence from text integrated smoothly.</td></tr>
-<tr style="background-color: #ecf0f1;"><td style="border: 1px solid #bdc3c7; padding: 10px;"><strong>7-6</strong></td><td style="border: 1px solid #bdc3c7; padding: 10px;">4-5</td><td style="border: 1px solid #bdc3c7; padding: 10px;">Most answers accurate. Good understanding of explicit information. Some inference drawn correctly. Clear expression.</td></tr>
-<tr><td style="border: 1px solid #bdc3c7; padding: 10px;"><strong>5</strong></td><td style="border: 1px solid #bdc3c7; padding: 10px;">3-4</td><td style="border: 1px solid #bdc3c7; padding: 10px;">Majority of retrieval accurate. Some gaps or imprecision. Implicit information may be partially identified.</td></tr>
-<tr style="background-color: #ecf0f1;"><td style="border: 1px solid #bdc3c7; padding: 10px;"><strong>4</strong></td><td style="border: 1px solid #bdc3c7; padding: 10px;">2-3</td><td style="border: 1px solid #bdc3c7; padding: 10px;">Some accurate retrieval but with gaps. Limited accuracy with implicit information.</td></tr>
-<tr><td style="border: 1px solid #bdc3c7; padding: 10px;"><strong>1-3</strong></td><td style="border: 1px solid #bdc3c7; padding: 10px;">0-2</td><td style="border: 1px solid #bdc3c7; padding: 10px;">Limited or inaccurate retrieval. Answers often vague or off-topic.</td></tr>
-</table>
+<h3>How 1.1 and 1.3 Are Marked</h3>
+<p>Each is worth 3 marks: one mark for each correct answer. Answers must come from the right text (1.1 from the 21st-century text, 1.3 from the 19th-century text) and from the right part of it. A short, exact answer earns the mark; a long passage copied in the hope that the answer is somewhere in it does not.</p>
 
-<h3>Worked Example: Full A1 Question and Response</h3>
+<h3>Worked Example: A 1.1 Set and a 1.2 Point</h3>
 
 <h4>Passage A (21st Century)</h4>
 <div class="text-extract">
@@ -1918,22 +1928,22 @@ The pandemic accelerated a trend that was already underway: the rise of remote w
 <div class="source">BBC News, 2024</div>
 </div>
 
-<h4>A1 Questions with Model Answers</h4>
-<p><strong>Q1 (1 mark):</strong> According to the passage, what percentage of the UK workforce had adopted flexible working by 2023?</p>
+<h4>1.1 Questions with Model Answers (3 marks)</h4>
+<p><strong>(a) (1 mark):</strong> According to the passage, what percentage of the UK workforce had adopted flexible working by 2023?</p>
 <p><strong>Answer:</strong> 28%. (Direct retrieval from text)</p>
 
-<p><strong>Q2 (1 mark):</strong> Name two groups mentioned in the passage who benefit from remote work.</p>
-<p><strong>Answer:</strong> Workers (who avoid the commute) and employers (who reduce office costs). Or: Employees and employers. (Direct retrieval, combining two points)</p>
+<p><strong>(b) (1 mark):</strong> Name two groups mentioned in the passage who benefit from remote work.</p>
+<p><strong>Answer:</strong> Workers (who avoid the commute) and employers (who reduce office costs). (Direct retrieval, combining two points)</p>
 
-<p><strong>Q3 (1 mark):</strong> What phrase is used to describe the effect of blurred work-home boundaries?</p>
-<p><strong>Answer:</strong> "a nightmare of never leaving work at all" / nightmare. (Direct quote or close paraphrase)</p>
+<p><strong>(c) (1 mark):</strong> What phrase is used to describe the effect of blurred work-home boundaries?</p>
+<p><strong>Answer:</strong> "a nightmare of never leaving work at all". (Direct quote or close paraphrase)</p>
 
-<p><strong>Q4 (2 marks - Inference):</strong> What does the writer suggest about the reality of remote work compared to expectations?</p>
-<p><strong>Grade 8-9 Answer:</strong> The writer contrasts the positive expectation ("the dream of working in your pyjamas") with the negative reality ("a nightmare"). While remote work promised freedom from commuting, it has created new stresses: blurred boundaries between work and home, and increased mental health problems. The "dream" has become a "nightmare," suggesting that what was sold as liberation has actually resulted in greater stress for many workers.</p>
-<p><strong>Grade 5-6 Answer:</strong> The writer says remote work was supposed to be good (a dream) but it has turned out bad (a nightmare) because people work too much.</p>
+<p>Other short questions the passage could support include how calls about work-related stress have changed since 2020: they rose by 15%.</p>
 
-<p><strong>Q5 (1 mark):</strong> True or False: Mental health services have seen a decrease in work-related stress calls since 2020.</p>
-<p><strong>Answer:</strong> False. The passage states they reported "a 15% increase." (Direct retrieval with negation)</p>
+<h4>Taking It Further: A 1.2 Point</h4>
+<p>Question 1.2 asks how the writer of the 21st-century text tries to achieve a purpose. The ending of this passage is a strong detail for it.</p>
+<p><strong>Strong 1.2 point:</strong> The writer contrasts the positive expectation ("the dream of working in your pyjamas") with the negative reality ("a nightmare"). While remote work promised freedom from commuting, it has created new stresses: blurred boundaries between work and home, and increased mental health problems. Placing the "dream" against the "nightmare" in the final sentence leaves the reader with the cost, suggesting that what was sold as liberation has brought many workers greater stress.</p>
+<p><strong>Weaker version:</strong> The writer says remote work was supposed to be good (a dream) but it has turned out bad (a nightmare) because people work too much.</p>
 
 <h3>Distinguishing 19th-Century and 21st-Century Non-Fiction</h3>
 
@@ -1955,24 +1965,24 @@ The pandemic accelerated a trend that was already underway: the rise of remote w
 <li><strong>Informal punctuation:</strong> Dashes, ellipses, parenthetical asides for emphasis</li>
 </ul>
 
-<h3>Common A1 Mistakes and Fixes</h3>
+<h3>Common Mistakes on 1.1 and 1.3, and Fixes</h3>
 
 <h4>Mistake 1: Providing Too Much Context</h4>
 <div style="border-left: 4px solid #e74c3c; padding-left: 15px; margin: 20px 0;">
 <strong>Question:</strong> What percentage of workers have flexible arrangements?
 <br><strong>Weak Answer:</strong> "The passage discusses how the pandemic changed work. During COVID, many people started working from home. Now, 28% of workers have flexible arrangements, which is an increase from before."
-<br><strong>Issue:</strong> Over-explanation. A1 tests retrieval, not analysis.
+<br><strong>Issue:</strong> Over-explanation. 1.1 tests retrieval, not analysis.
 <br><strong>Better Answer:</strong> "28%."
-<br><strong>WJEC Tip:</strong> A1 answers should be concise. One sentence is usually enough.
+<br><strong>WJEC Tip:</strong> 1.1 and 1.3 answers should be concise. A phrase or one sentence is usually enough.
 </div>
 
-<h4>Mistake 2: Failing to Identify Implicit Information</h4>
+<h4>Mistake 2: Repeating Instead of Explaining (1.3)</h4>
 <div style="border-left: 4px solid #e74c3c; padding-left: 15px; margin: 20px 0;">
-<strong>Implicit Inference Question:</strong> What does the use of the word "nightmare" suggest about the writer's attitude to remote work?
-<br><strong>Weak Answer:</strong> "The writer uses the word nightmare."
-<br><strong>Issue:</strong> Just repeating the text. No inference made.
-<br><strong>Better Answer:</strong> "The writer is critical of remote work. By calling it a 'nightmare,' they suggest it has negative consequences despite initially seeming beneficial."
-<br><strong>WJEC Tip:</strong> For inference questions (usually worth 2 marks), explain what the word choice reveals about the writer's view.
+<strong>1.3 Question:</strong> What does the speaker mean by "speed and accuracy are not always companions"?
+<br><strong>Weak Answer:</strong> "Speed and accuracy are not companions."
+<br><strong>Issue:</strong> Just repeating the text. No sign that the older language has been understood.
+<br><strong>Better Answer:</strong> "That news which travels fast is not always accurate."
+<br><strong>WJEC Tip:</strong> When 1.3 asks what something means, put it simply in your own words.
 </div>
 
 <h4>Mistake 3: Confusing the Two Texts</h4>
@@ -1980,7 +1990,7 @@ The pandemic accelerated a trend that was already underway: the rise of remote w
 <strong>Weak Answer:</strong> (When asked about Text A, 21st century) "In Victorian times, work was seen as duty..."
 <br><strong>Issue:</strong> Mixing up the texts. Confusing 19th-century ideas with 21st-century ones.
 <br><strong>Better Answer:</strong> Check which text you're answering about. Keep them separate in your mind. Annotate A and B.
-<br><strong>WJEC Tip:</strong> When you receive the exam paper, immediately label the texts A and B. This prevents confusion.
+<br><strong>WJEC Tip:</strong> When you receive the exam paper, immediately label the texts A and B. This prevents confusion: 1.1 is on the 21st-century text and 1.3 on the 19th-century text.
 </div>
 
 <h4>Mistake 4: Misunderstanding Archaic Language</h4>
@@ -1991,19 +2001,19 @@ The pandemic accelerated a trend that was already underway: the rise of remote w
 <br><strong>WJEC Tip:</strong> In an exam, you won't have a dictionary. Use context clues. The surrounding sentence usually reveals the meaning.
 </div>
 
-<h3>Step-by-Step A1 Reading Strategy</h3>
+<h3>Step-by-Step Strategy for 1.1 and 1.3</h3>
 <ol style="font-size: 1.05em; line-height: 1.8;">
 <li><strong>Read the source information:</strong> Date, author if given, and text type. This contextualizes what you're about to read.</li>
-<li><strong>Read the passage once completely,</strong> without stopping to analyze. Get a sense of the overall meaning and tone.</li>
-<li><strong>Read the A1 questions.</strong> Note which text you're answering on and which lines, if specified.</li>
+<li><strong>Read the passage once completely,</strong> without stopping to analyse. Get a sense of the overall meaning and tone.</li>
+<li><strong>Read the questions.</strong> Note which text each one is on (1.1 the 21st-century text, 1.3 the 19th-century text) and which lines, if specified.</li>
 <li><strong>For each question, return to the text.</strong> Don't rely on memory. Find the relevant section.</li>
 <li><strong>For retrieval questions (1 mark):</strong> Extract the answer directly or paraphrase very closely.</li>
-<li><strong>For inference questions (2 marks):</strong> Identify the relevant detail, then explain what it suggests or reveals.</li>
+<li><strong>For questions on what something means (1.3):</strong> Put the meaning simply in your own words, using the sentences around any unfamiliar word.</li>
 <li><strong>Check your answer:</strong> Reread the relevant section to confirm accuracy.</li>
-<li><strong>Move to A2.</strong> Do not spend more than 5-7 minutes on A1.</li>
+<li><strong>Move on.</strong> Spend about 4 minutes on each of 1.1 and 1.3.</li>
 </ol>
 
-<h3>Practice Passage: Full A1 Set</h3>
+<h3>Practice Passage: A 1.1 Set (3 marks)</h3>
 
 <h4>21st-Century Text: "The Digital Divide"</h4>
 <div class="text-extract">
@@ -2011,7 +2021,7 @@ The digital divide isn't just about access to technology-it's about access to op
 <div class="source">Policy brief, 2025</div>
 </div>
 
-<h4>A1 Questions (5 marks)</h4>
+<h4>1.1 Questions (3 marks)</h4>
 <p><strong>1 (1 mark):</strong> What percentage of UK households lack reliable broadband?</p>
 <p><strong>Answer:</strong> 12%.</p>
 
@@ -2021,21 +2031,21 @@ The digital divide isn't just about access to technology-it's about access to op
 <p><strong>3 (1 mark):</strong> Name two services that people cannot access without internet.</p>
 <p><strong>Answer:</strong> Banking and health services / Submitting homework and applying for jobs. (Any two from: submit homework, apply for jobs, access banking, access health services)</p>
 
-<p><strong>4 (2 marks - Inference):</strong> What does the writer mean by calling the digital opportunity "a locked door" for millions?</p>
+<h4>Taking It Further: A 1.2 Point</h4>
+<p><strong>Focus:</strong> What does the writer achieve by calling the digital opportunity "a locked door" for millions?</p>
 <p><strong>Model Answer:</strong> The writer suggests that while the digital age promises access and opportunity, those without broadband are excluded from it. The "locked door" metaphor implies they cannot access the benefits-education, employment, essential services-that the digitally connected take for granted. The promise remains inaccessible to them.</p>
 
-<p><strong>5 (1 mark):</strong> True or False: Governments have unlimited budgets to close the digital divide.</p>
-<p><strong>Answer:</strong> False. The text mentions governments "debate budget constraints."</p>
+<p>Another short question the passage could support: do governments have unlimited budgets to close the digital divide? No: the text says they "debate budget constraints."</p>
 
 `,
     quiz: [
       {
         id: 'wjec-c2-m2-q1',
-        question: 'How many marks is A1 on Component 2 worth?',
-        options: ['3 marks', '5 marks', '10 marks', '15 marks'],
+        question: 'How many marks is Question 1.1 on Component 2 worth?',
+        options: ['5 marks', '3 marks', '10 marks', '15 marks'],
         correct: 1,
         explanation:
-          'A1 on Component 2 is worth 5 marks and tests AO1 - retrieval of explicit and implicit information from a non-fiction text.',
+          'Question 1.1 is worth 3 marks: short questions on the 21st-century text, one mark each. Question 1.3, on the 19th-century text, is also worth 3. Both test AO1.',
       },
       {
         id: 'wjec-c2-m2-q2',
@@ -2065,7 +2075,7 @@ The digital divide isn't just about access to technology-it's about access to op
       },
       {
         id: 'wjec-c2-m2-q4',
-        question: 'What is the best strategy for answering A1 retrieval questions?',
+        question: 'What is the best strategy for answering the retrieval questions (1.1 and 1.3)?',
         options: [
           'Write a detailed analysis of the language',
           'Compare both texts in your answer',
@@ -2074,32 +2084,32 @@ The digital divide isn't just about access to technology-it's about access to op
         ],
         correct: 2,
         explanation:
-          'A1 tests retrieval. The best strategy is to locate the information in the text and express it clearly, either by quoting directly or paraphrasing closely. No analysis or opinion is needed.',
+          '1.1 and 1.3 test retrieval and understanding. The best strategy is to locate the information in the right text and express it clearly, either by quoting directly or paraphrasing closely. No analysis or opinion is needed.',
       },
     ],
   },
 
   // ──────────────────────────────────────────────
-  // MODULE 3 - Synthesis Across Two Texts (A2)
+  // MODULE 3 - Synthesis Across Two Texts (1.5)
   // ──────────────────────────────────────────────
   {
     id: 'wjec-c2-m3',
-    title: 'Synthesis: Drawing Together Two Texts (A2)',
+    title: 'Synthesis: Drawing Together Two Texts (1.5)',
     duration: '50 min',
     content: `
-<h2>A2 - Synthesis: Connecting Ideas Across Two Non-Fiction Texts</h2>
+<h2>1.5 - Synthesis: Connecting Ideas Across Two Non-Fiction Texts</h2>
 
-<p>Question A2 is worth <strong>10 marks</strong> and tests <strong>AO1</strong> - specifically the ability to <strong>select and synthesise evidence from different texts</strong>. This is a distinctive WJEC/Eduqas question that asks you to identify what <em>both</em> texts tell you about a particular topic and weave the information together into a coherent response.</p>
+<p>Question 1.5 is worth <strong>4 marks</strong> and tests <strong>AO1</strong> - specifically the ability to <strong>select and synthesise evidence from different texts</strong>. It asks you to explain briefly what <em>both</em> texts tell you about one shared topic, bringing the relevant details from each together in one short answer. The linking skills in this module also serve 1.6, the 10-mark comparison.</p>
 
 <div class="key-term"><strong>Key Term: Synthesis</strong> - The process of combining information from two or more sources to create a unified, coherent response. Synthesis goes beyond simply listing what each text says - it involves finding connections, patterns, and complementary points between the texts.</div>
 
-<h3>How A2 Questions Are Worded</h3>
-<p>Typical A2 questions include:</p>
+<h3>How 1.5 Questions Are Worded</h3>
+<p>Typical 1.5 questions include:</p>
 <ul>
-  <li><em>"Using information from both texts, write a summary of what you learn about attitudes to [topic]."</em></li>
+  <li><em>"Using both texts, explain briefly what you learn about [topic]."</em></li>
   <li><em>"What do you understand about [topic] from reading both texts? You must use evidence from both."</em></li>
 </ul>
-<p>The crucial words are <strong>"both texts"</strong> - you <em>must</em> draw on evidence from both the 19th-century and 21st-century extracts. Answers that only discuss one text cannot achieve full marks.</p>
+<p>The crucial words are <strong>"both texts"</strong> - you <em>must</em> draw on evidence from both the 19th-century and 21st-century extracts. An answer on one text stays in the lowest band.</p>
 
 <h3>The Synthesis Framework</h3>
 <p>Structure your response using this pattern:</p>
@@ -2108,7 +2118,7 @@ The digital divide isn't just about access to technology-it's about access to op
   <li><strong>Point from Text A:</strong> State what the first text reveals, with supporting evidence.</li>
   <li><strong>Link to Text B:</strong> Use a connecting phrase ("Similarly," "In contrast," "Text B also suggests," "This is echoed in Text B, where...") and state what the second text reveals.</li>
   <li><strong>Develop:</strong> Draw out the connection - are the texts in agreement, or do they present different aspects of the topic?</li>
-  <li><strong>Repeat:</strong> Make 3-4 synthesised points, each drawing on both texts.</li>
+  <li><strong>Keep it brief:</strong> At 4 marks, one or two sentences on each text can be enough. Make sure the details are precise and cover every part of what is asked.</li>
 </ol>
 
 <h3>Useful Connective Phrases for Synthesis</h3>
@@ -2121,26 +2131,27 @@ The digital divide isn't just about access to technology-it's about access to op
   <li>"Both writers draw attention to the fact that..."</li>
 </ul>
 
-<div class="model-answer"><strong>Model Answer (Grade 7-9 - A2 excerpt):</strong> Both texts reveal significant concerns about the reliability of news. The 21st-century writer suggests that social media delivers information that is "fragmented" and "decontextualised," implying that the truth is lost when news is broken into bite-sized pieces for quick consumption. Similarly, the 19th-century speaker acknowledges that "speed and accuracy are not always companions," suggesting that even in 1872, the increasing pace of news distribution was seen as a threat to truthful reporting. Both writers therefore identify a tension between the speed of information and its reliability - though the modern writer emphasises the role of technology (algorithms and platforms), while the Victorian speaker frames it as a moral failing of the press itself.</div>
+<div class="model-answer"><strong>Model Answer (Grade 7-9 - 1.5):</strong> Both texts reveal significant concerns about the reliability of news. The 21st-century writer suggests that social media delivers information that is "fragmented" and "decontextualised," implying that the truth is lost when news is broken into bite-sized pieces for quick consumption. Similarly, the 19th-century speaker acknowledges that "speed and accuracy are not always companions," suggesting that even in 1872, the increasing pace of news distribution was seen as a threat to truthful reporting. Both writers therefore identify a tension between the speed of information and its reliability - though the modern writer emphasises the role of technology (algorithms and platforms), while the Victorian speaker frames it as a moral failing of the press itself.</div>
 
-<div class="examiner-tip"><strong>Examiner Tip:</strong> The key to a high-scoring A2 response is <strong>integration</strong>. Do not write a paragraph about Text A followed by a separate paragraph about Text B. Instead, weave the texts together within each point, showing how they connect, complement, or contrast with each other. Use linking phrases to make the synthesis explicit.</div>
+<div class="examiner-tip"><strong>Examiner Tip:</strong> The key to a high-scoring 1.5 response is <strong>exactly the right details from both texts, pulled together clearly</strong>. A sentence or two on each text, naming the text and giving the exact details, is enough at 4 marks; a linking phrase such as "Similarly" or "In contrast" shows how the details fit together. Save the extended, point-by-point weaving of both texts for 1.6.</div>
 
 <h3>What Examiners Are Looking For</h3>
+<p>Question 1.5 is marked one band per mark:</p>
 <ul>
-  <li><strong>Band 4 (8-10 marks):</strong> Detailed synthesis with perceptive inferences. Clear, well-integrated connections between texts. A range of well-selected evidence from both sources.</li>
-  <li><strong>Band 3 (5-7 marks):</strong> Clear synthesis with some inference. Relevant connections made between texts, though integration may be less fluent. Evidence from both texts is used.</li>
-  <li><strong>Band 2 (3-4 marks):</strong> Some attempt at synthesis, but may discuss texts separately rather than together. Limited inference; mainly paraphrase or surface-level comment.</li>
-  <li><strong>Band 1 (1-2 marks):</strong> Simple, limited reference to one or both texts. Little or no attempt to synthesise or make connections.</li>
+  <li><strong>Band 4 (4 marks):</strong> A good spread of exactly the right details from both texts, pulled together clearly.</li>
+  <li><strong>Band 3 (3 marks):</strong> Several relevant details from both texts, pulled together sensibly.</li>
+  <li><strong>Band 2 (2 marks):</strong> A relevant detail or two from each text.</li>
+  <li><strong>Band 1 (1 mark):</strong> Only a little relevant detail, or details from just one text.</li>
 </ul>
 
-<div class="common-mistake"><strong>Common Mistake:</strong> Writing about each text separately - "In Text A... In Text B..." - without making connections between them. This is comparison or summary, not synthesis. Synthesis requires you to weave the texts together, showing how the information from one text relates to, supports, or contrasts with information from the other.</div>
+<div class="common-mistake"><strong>Common Mistake:</strong> Turning 1.5 into an essay. It is worth 4 marks: one or two sentences on each text, naming the text and giving the exact details, are enough, and the best answers make the link between them clear. Analysing how the details are written belongs in 1.6, not here, and an answer on one text stays in the lowest band.</div>
 
 <div class="key-term"><strong>Key Term: Inference</strong> - Drawing conclusions from evidence that is suggested but not directly stated. In synthesis, you may need to infer connections between the texts - for example, both texts may address the same theme but from very different angles, and you need to articulate that connection.</div>
 `,
     quiz: [
       {
         id: 'wjec-c2-m3-q1',
-        question: 'What does "synthesis" mean in the context of A2?',
+        question: 'What does "synthesis" mean in the context of 1.5?',
         options: [
           'Summarising one text',
           'Combining information from two sources to create a unified, coherent response',
@@ -2153,24 +2164,24 @@ The digital divide isn't just about access to technology-it's about access to op
       },
       {
         id: 'wjec-c2-m3-q2',
-        question: 'What is the most common mistake students make in A2?',
+        question: 'Which mistake keeps a 1.5 answer in the lowest band?',
         options: [
-          'Using too many quotations',
-          'Writing about each text separately without making connections between them',
-          'Spending too long on A2',
-          'Analysing language instead of retrieving information',
+          'Using too many short quotations',
+          'Using details from only one of the two texts',
+          'Naming which text each detail comes from',
+          'Writing one sentence on each text',
         ],
         correct: 1,
         explanation:
-          'The most common mistake is discussing texts separately rather than weaving them together. Synthesis requires explicit connections between the two texts.',
+          'An answer on one text stays in the lowest band. Use precise details from both texts, and make clear which text each comes from.',
       },
       {
         id: 'wjec-c2-m3-q3',
-        question: 'How many marks is A2 worth?',
-        options: ['5 marks', '10 marks', '15 marks', '20 marks'],
+        question: 'How many marks is Question 1.5 (synthesis) worth?',
+        options: ['3 marks', '4 marks', '10 marks', '20 marks'],
         correct: 1,
         explanation:
-          'A2 is worth 10 marks and tests AO1 - specifically the ability to select and synthesise evidence from different texts.',
+          'Question 1.5 is worth 4 marks and tests AO1, selecting and bringing together details from both texts. Keep it brief.',
       },
       {
         id: 'wjec-c2-m3-q4',
@@ -2189,16 +2200,16 @@ The digital divide isn't just about access to technology-it's about access to op
   },
 
   // ──────────────────────────────────────────────
-  // MODULE 4 - Language Analysis in Non-Fiction (A3)
+  // MODULE 4 - Language Analysis in Non-Fiction (1.2)
   // ──────────────────────────────────────────────
   {
     id: 'wjec-c2-m4',
-    title: 'Language Analysis in Non-Fiction (A3)',
+    title: 'Language Analysis in Non-Fiction (1.2)',
     duration: '50 min',
     content: `
-<h2>A3 - How Does the Writer Use Language to Achieve Effects?</h2>
+<h2>1.2 - How Does the Writer Achieve a Purpose?</h2>
 
-<p>Question A3 on Component 2 is worth <strong>10 marks</strong> and tests <strong>AO2</strong> - your ability to analyse how a writer uses language to achieve effects in a non-fiction text. You will be directed to <strong>one</strong> of the two extracts (often the 19th-century text) and asked to analyse specific language choices.</p>
+<p>Question 1.2 on Component 2 is worth <strong>10 marks</strong> and tests <strong>AO2</strong> - your ability to analyse how a writer uses language and structure to achieve effects in a non-fiction text. It is on the <strong>21st-century</strong> text: it asks how the writer tries to do something, for example persuade you or show what a person or event is like, and points you to what is said, the language, tone and structure, and other methods. Language analysis matters for the 19th-century text too: in 1.4, the 10-mark evaluation, your judgement should show how its language reveals the writer's feelings or attitudes.</p>
 
 <div class="key-term"><strong>Key Term: Rhetoric</strong> - The art of effective or persuasive speaking and writing. Rhetorical techniques include repetition, rhetorical questions, tricolon (rule of three), direct address, hyperbole, emotive language, and anecdote. Non-fiction writers frequently use rhetoric to convince, persuade, or move their audience.</div>
 
@@ -2217,8 +2228,8 @@ The digital divide isn't just about access to technology-it's about access to op
   <li><strong>Imperative verbs:</strong> Commands that urge the reader to act: "Consider this." "Remember." "Act now."</li>
 </ul>
 
-<h3>Analysing 19th-Century Non-Fiction Language</h3>
-<p>Victorian and Romantic-era writers often use elaborate, formal language. When analysing their choices:</p>
+<h3>Analysing 19th-Century Non-Fiction Language (for 1.4)</h3>
+<p>Victorian and Romantic-era writers often use elaborate, formal language. When analysing their choices in your 1.4 evaluation:</p>
 <ul>
   <li>Look for <strong>extended metaphors</strong> - 19th-century writers often sustain a comparison across several sentences.</li>
   <li>Note <strong>formal register and elevated diction</strong> - words like "endeavour," "hitherto," "countenance" reflect the period's conventions.</li>
@@ -2226,13 +2237,15 @@ The digital divide isn't just about access to technology-it's about access to op
   <li>Consider <strong>sentence length and complexity</strong> - long, multi-clause sentences were the norm and often create a cumulative, persuasive effect.</li>
 </ul>
 
-<h3>Practice Analysis</h3>
+<h3>Practice Analysis (19th-century text, as in 1.4)</h3>
 <div class="text-extract">The press, sir, is the great engine of civilisation. Through its tireless industry, the humblest cottager may be furnished with intelligence from the farthest corners of the globe. A newspaper placed upon a kitchen table is a window thrown open to the world.
 <div class="source">From a speech, 1872</div></div>
 
 <div class="model-answer"><strong>Model Answer (Grade 8-9):</strong> The speaker elevates the press through the metaphor "the great engine of civilisation," where "engine" connotes unstoppable mechanical power and progress - the press is not merely useful but a driving force behind society's advancement. The word "civilisation" positions the press as fundamental to human progress, implying that without it, society would stagnate. This is developed through the image of "the humblest cottager" being "furnished with intelligence from the farthest corners of the globe," where the contrast between "humblest" and "farthest corners" emphasises the press's democratising power - it bridges the gap between the most modest individual and the widest world. The verb "furnished" suggests the press provides knowledge as an essential commodity, like furnishing a home with necessities. Most strikingly, the metaphor "a window thrown open to the world" transforms the physical newspaper into a portal, and the dynamic verb "thrown" implies generosity and energy - the window is not merely opened but flung wide, suggesting the press offers knowledge freely and eagerly.</div>
 
 <div class="examiner-tip"><strong>Examiner Tip:</strong> When analysing 19th-century language, do not just note that it is "formal" or "old-fashioned." Explain <em>why</em> specific word choices are effective. The formality often serves a rhetorical purpose - it elevates the topic, establishes authority, or appeals to shared cultural values. Analyse the effect, not just the style.</div>
+
+<div class="examiner-tip"><strong>Examiner Tip for 1.2:</strong> Track the 21st-century text paragraph by paragraph so you use all of it, and keep using the question's key word in your explanations. Facts and figures, quotations from experts and the order of ideas all count as methods.</div>
 
 <div class="common-mistake"><strong>Common Mistake:</strong> Students sometimes dismiss 19th-century language as simply "posh" or "old." This misses the point entirely. Every word choice serves a purpose. A Victorian writer who uses "endeavour" instead of "try" is not just being formal - they are emphasising effort, determination, and seriousness. Analyse the <em>effect</em> of the register, not just the fact that it is formal.</div>
 
@@ -2241,16 +2254,16 @@ The digital divide isn't just about access to technology-it's about access to op
     quiz: [
       {
         id: 'wjec-c2-m4-q1',
-        question: 'What does A3 on Component 2 test?',
+        question: 'What does Question 1.2 on Component 2 test?',
         options: [
           'Comparing two texts',
-          'How a writer uses language to achieve effects',
+          'How a writer uses language and structure to achieve a purpose',
           'Retrieving information from a text',
           'Proofreading for errors',
         ],
         correct: 1,
         explanation:
-          'A3 tests AO2 - the ability to analyse how a writer uses language to achieve effects and influence readers.',
+          'Question 1.2 tests AO2: how the writer of the 21st-century text uses language, tone, structure and other methods to achieve a purpose and influence readers.',
       },
       {
         id: 'wjec-c2-m4-q2',
@@ -2295,23 +2308,23 @@ The digital divide isn't just about access to technology-it's about access to op
   },
 
   // ──────────────────────────────────────────────
-  // MODULE 5 - Comparing Viewpoints and Perspectives (A4)
+  // MODULE 5 - Comparing Viewpoints and Perspectives (1.6)
   // ──────────────────────────────────────────────
   {
     id: 'wjec-c2-m5',
-    title: 'Comparing Viewpoints and Perspectives (A4)',
+    title: 'Comparing Viewpoints and Perspectives (1.6)',
     duration: '55 min',
     content: `
-<h2>A4 - Comparing How Writers Convey Their Viewpoints</h2>
+<h2>1.6 - Comparing How Writers Convey Their Viewpoints</h2>
 
-<p>Question A4 is worth <strong>10 marks</strong> and tests <strong>AO3</strong> - your ability to compare writers' ideas and perspectives and how these are conveyed across two texts. This is the most challenging reading question on Component 2 because it requires you to do three things simultaneously: identify each writer's viewpoint, analyse how they convey it, and compare the two approaches.</p>
+<p>Question 1.6, the last reading question on Component 2, is worth <strong>10 marks</strong> and tests <strong>AO3</strong> - your ability to compare writers' ideas and perspectives and how these are conveyed across two texts. It is one of the most challenging reading questions on Component 2 because it requires you to do three things simultaneously: identify each writer's viewpoint, analyse how they convey it, and compare the two approaches.</p>
 
 <div class="key-term"><strong>Key Term: Viewpoint</strong> - A writer's attitude, opinion, or perspective on a topic. In non-fiction, the viewpoint is the position the writer takes - their argument, their bias, their beliefs. Viewpoint is revealed through word choice, tone, evidence selection, and rhetorical strategies.</div>
 
 <div class="key-term"><strong>Key Term: Perspective</strong> - The angle from which a writer approaches a topic, shaped by their personal experience, social context, historical period, and cultural background. A 19th-century factory owner and a 21st-century journalist will have very different perspectives on child labour, even if both express concern.</div>
 
-<h3>How A4 Questions Are Worded</h3>
-<p>Typical A4 questions include:</p>
+<h3>How 1.6 Questions Are Worded</h3>
+<p>Typical 1.6 questions include:</p>
 <ul>
   <li><em>"Compare how the two writers convey their different attitudes to [topic]."</em></li>
   <li><em>"Compare how the writers of Text A and Text B present their ideas and perspectives about [topic]."</em></li>
@@ -2335,9 +2348,9 @@ The digital divide isn't just about access to technology-it's about access to op
   <li><strong>Nuance:</strong> "Although both writers share a concern about..., they differ in," "Despite a shared focus on..., the methods diverge."</li>
 </ul>
 
-<div class="model-answer"><strong>Model Answer (Grade 8-9 - A4 excerpt):</strong> Both writers express concern about the reliability of news, but they convey this concern through markedly different methods reflecting their historical contexts. The 21st-century writer adopts an urgent, present-tense tone, using the inclusive pronoun "we" in "We scroll, we react, we move on" to implicate the reader directly in the problem. The short, staccato clauses mirror the rapid, fragmented consumption they describe, making the form of the writing enact its content. In contrast, the 19th-century speaker adopts a more measured, reflective tone, using formal diction and the conditional "speed and accuracy are not always companions" to express concern as a gentlemanly understatement rather than an alarm. Where the modern writer diagnoses a systemic failure driven by technology, the Victorian frames it as a moral lapse - "the public appetite for sensation" places responsibility on human nature rather than algorithms. This difference in attribution is revealing: the 21st-century writer sees the problem as structural and technological, while the 19th-century speaker sees it as a failure of professional ethics.</div>
+<div class="model-answer"><strong>Model Answer (Grade 8-9 - 1.6 excerpt):</strong> Both writers express concern about the reliability of news, but they convey this concern through markedly different methods reflecting their historical contexts. The 21st-century writer adopts an urgent, present-tense tone, using the inclusive pronoun "we" in "We scroll, we react, we move on" to implicate the reader directly in the problem. The short, staccato clauses mirror the rapid, fragmented consumption they describe, making the form of the writing enact its content. In contrast, the 19th-century speaker adopts a more measured, reflective tone, using formal diction and the conditional "speed and accuracy are not always companions" to express concern as a gentlemanly understatement rather than an alarm. Where the modern writer diagnoses a systemic failure driven by technology, the Victorian frames it as a moral lapse - "the public appetite for sensation" places responsibility on human nature rather than algorithms. This difference in attribution is revealing: the 21st-century writer sees the problem as structural and technological, while the 19th-century speaker sees it as a failure of professional ethics.</div>
 
-<div class="examiner-tip"><strong>Examiner Tip:</strong> The best A4 responses treat the comparison as a sustained conversation between the two texts, not as two separate analyses bolted together. Every paragraph should reference both writers, using comparative connectives to show how their viewpoints relate. Think of it as a dialogue: "Writer A says this, and Writer B responds by saying that."</div>
+<div class="examiner-tip"><strong>Examiner Tip:</strong> The best 1.6 responses treat the comparison as a sustained conversation between the two texts, not as two separate analyses bolted together. Every paragraph should reference both writers, using comparative connectives to show how their viewpoints relate. Think of it as a dialogue: "Writer A says this, and Writer B responds by saying that."</div>
 
 <h3>Considering Historical Context</h3>
 <p>The two texts come from different centuries, so context matters:</p>
@@ -2350,85 +2363,22 @@ The digital divide isn't just about access to technology-it's about access to op
 <div class="common-mistake"><strong>Common Mistake:</strong> Writing about each text separately: "In Text A, the writer thinks... In Text B, the writer thinks..." This is not comparison. Every point must explicitly compare the two writers, showing similarities, differences, or nuances in how they convey their viewpoints. Use comparative connectives throughout.</div>
 
 
-<h3>Worked Example: Identifying Errors in a Passage</h3>
-<p><strong>Passage with Deliberate Errors (typical A5 task, 100 words):</strong></p>
-<div class="text-extract">
-The library is not just a building; its an institution of immense cultural value. In the 21st century, when digital access seems to offer everything, it's easy to overlook what physicle libraries provide. Their providing spaces for vulnerable members of the community - the homeless who can access heat and shelter, young people without stable homes, elderly residents who appreciate human contact. The council claim that budgets are tight. Yet the library serves hundreds of people weekly. If you was forced to choose between a library and a shopping centre, society would be vastly poorer whithout the former.
-</div>
-
-<p><strong>Errors to Find (10 errors):</strong></p>
-<ol>
-<li>its → its (possessive)</li>
-<li>physicle → physical</li>
-<li>Their → They're (they are)</li>
-<li>claim (verb disagreement with subject "council") → claims</li>
-<li>If you was → If you were</li>
-<li>whithout → without</li>
-<li>Missing comma after "apologies" in opening clause</li>
-<li>"a library and a shopping centre" - needs parallel structure review</li>
-<li>Apostrophe placement in possessive</li>
-<li>Spelling: "institutional" - check if "institution" needs modifier</li>
-</ol>
-
-<p><strong>Grade 9 Correction Method:</strong></p>
-<div class="model-answer">
-1. its → it's (contraction: "it is")
-2. physicle → physical
-3. Their → They're (contraction: "they are")
-4. claim → claims (singular subject "council")
-5. was → were (conditional with "you")
-6. whithout → without
-7. Add comma after "institutional" (introductory phrase)
-8. No error in parallel structure; library and shopping centre are correctly parallel
-9. Possessives correct; no issue
-10. No error; "institution" is correctly used
-</div>
-
-<h3>Step-by-Step Strategy for A5</h3>
-<ol>
-<li><strong>First read:</strong> Read the passage at natural speed. Do you catch any obvious errors?</li>
-<li><strong>Spelling pass:</strong> Go through line by line looking only for misspellings. Check common problem areas: "their/there/they're," "its/it's," "separate," "accommodate," "occurred," "embarrassed."</li>
-<li><strong>Punctuation pass:</strong> Check apostrophes, commas, capital letters, sentence boundaries.</li>
-<li><strong>Grammar pass:</strong> Subject-verb agreement, verb tense consistency, pronoun clarity.</li>
-<li><strong>Clarity pass:</strong> Does any phrasing create confusion? Are there awkward constructions?</li>
-<li><strong>Final check:</strong> You have identified roughly the right number of errors. If you found 8 and the task asks for 10, reread carefully. There are 2 more.</li>
-</ol>
-
-<h3>Common Errors in A5</h3>
-<div class="common-mistake"><strong>Mistake 1: Missing contractions.</strong> The passage reads "The wind is blowing hard." The error is: "it is" written as "its." Check every instance of "its/it's," "their/there/they're," "your/you're," "to/too/two."</div>
-
-<div class="common-mistake"><strong>Mistake 2: Subject-verb disagreement.</strong> "The group of students was happy" vs. "The group of students were happy." Identify the subject. Is it singular or plural? Match the verb.</div>
-
-<div class="common-mistake"><strong>Mistake 3: Tense inconsistency.</strong> "She walked into the room and sees a stranger." Walked (past) and sees (present) don't match. Should be "saw."</div>
-
-<div class="common-mistake"><strong>Mistake 4: Missing or misplaced punctuation.</strong> "However the problem continued" should be "However, the problem continued." Many adverbials require a comma.</div>
-
-<div class="common-mistake"><strong>Mistake 5: Homophones.</strong> "They're going their separate ways." Or "The weather was whether I liked it or not." Check soundalike words.</div>
-
-<h3>Practice A5 Task</h3>
-<p><strong>Passage (find 10 errors):</strong></p>
-<div class="text-extract">
-The city centre has changed dramatically over the past decade. Where there once stood small shops with individual character, their now large corporate chains. The local community has lost something invaluable: a sense of belonging and connection to their neighborhoods. Young people especially find they are struggling with isolation. Digital technology claims to connect us, yet it often isolates us further. If the high street had maintained its small businesses, shopper would feel more engaged with there community. The decline of the high street is not inevitably; we can choose to support local business and reverse this trend.
-</div>
-
-<p><strong>Error Count Expected: 10</strong></p>
-<p>Errors: (1) "their" → "there," (2) "shopper" → "shoppers," (3) "there" → "their," (4) "inevitably" → should be "inevitable" or "inevitable," (5) "buisness" → "business," (6) "a sense of belonging" - missing article before "connection," (7) comma splice, (8) "they are struggling" - verb agreement, (9) "past decade" - period placement, (10) capitalization error or spelling.</p>
-
-<p><strong>Common-mistake insight:</strong> This passage deliberately loads homophones (their/there/they're) and verb agreement errors because these are the most common mistakes in student writing. Build a personal error-watch list of your frequent mistakes and scan for those specifically.</p>
+<h3>Accuracy in Your Reading Answers</h3>
+<p>Eduqas sets no separate proofreading task: technical accuracy (AO6) is marked in your two pieces of writing in Section B, and Module 6 shows you how to check them. Your reading answers are not marked for accuracy, but clear sentences make a comparison easier to follow, so keep each point readable: name the text, give the evidence, and say how the writer conveys the idea.</p>
 
 `,
     quiz: [
       {
         id: 'wjec-c2-m5-q1',
-        question: 'Which Assessment Objective does A4 test?',
+        question: 'Which Assessment Objective does 1.6 test?',
         options: ['AO1', 'AO2', 'AO3', 'AO4'],
         correct: 2,
         explanation:
-          "A4 tests AO3 - comparing writers' ideas and perspectives and how these are conveyed across two or more texts.",
+          "1.6 tests AO3 - comparing writers' ideas and perspectives and how these are conveyed across two or more texts.",
       },
       {
         id: 'wjec-c2-m5-q2',
-        question: 'What does the word "how" in the A4 question require?',
+        question: 'What does the word "how" in the 1.6 question require?',
         options: [
           'A summary of what each writer says',
           'Analysis of the methods each writer uses to convey their viewpoint',
@@ -2454,7 +2404,7 @@ The city centre has changed dramatically over the past decade. Where there once 
       },
       {
         id: 'wjec-c2-m5-q4',
-        question: 'What is the most important structural principle for an A4 response?',
+        question: 'What is the most important structural principle for a 1.6 response?',
         options: [
           'Write about Text A first, then Text B',
           'Compare both writers within each paragraph, using comparative connectives',
@@ -2463,27 +2413,27 @@ The city centre has changed dramatically over the past decade. Where there once 
         ],
         correct: 1,
         explanation:
-          'The best A4 responses compare both writers within each paragraph, using connectives like "whereas," "in contrast," and "similarly." Writing about texts separately is the most common error.',
+          'The best 1.6 responses compare both writers within each paragraph, using connectives like "whereas," "in contrast," and "similarly." Writing about texts separately is the most common error.',
       },
     ],
   },
 
   // ──────────────────────────────────────────────
-  // MODULE 6 - The Proofreading Task (A5)
+  // MODULE 6 - Proofreading Your Own Writing (AO6)
   // ──────────────────────────────────────────────
   {
     id: 'wjec-c2-m6',
-    title: 'The Proofreading Task (A5)',
+    title: 'Proofreading Your Own Writing (AO6)',
     duration: '30 min',
     content: `
-<h2>A5 - The WJEC Proofreading Question</h2>
+<h2>Proofreading Your Own Writing: AO6 in Section B</h2>
 
-<p>Question A5 is unique to WJEC/Eduqas and is worth <strong>5 marks</strong>. It tests <strong>AO6</strong> - technical accuracy. You are given a short passage (approximately 100-150 words) that contains <strong>deliberate errors</strong> in spelling, punctuation, and grammar. Your task is to identify and correct these errors.</p>
+<p>Eduqas sets no separate proofreading question on Component 2, and Section A carries no marks for accuracy. <strong>AO6</strong>, technical accuracy, is marked in your own writing in Section B: <strong>8 of the 20 marks</strong> for each task, 16 of the 40 in all. The skill this module teaches, finding and correcting errors in spelling, punctuation, and grammar, is how you protect those marks. Practise it on passages with <strong>deliberate errors</strong> like the ones below, then use it on your own two pieces in the last minutes of each task.</p>
 
-<div class="key-term"><strong>Key Term: Proofreading</strong> - The careful reading of a text to detect and correct errors in spelling, punctuation, grammar, and expression. In A5, you are given a pre-written passage with deliberate mistakes and must identify a specified number of corrections.</div>
+<div class="key-term"><strong>Key Term: Proofreading</strong> - The careful reading of a text to detect and correct errors in spelling, punctuation, grammar, and expression. In the exam you proofread your own writing; the practice passages here contain deliberate mistakes to train your eye.</div>
 
 <h3>Types of Errors to Look For</h3>
-<p>The errors in A5 typically fall into these categories:</p>
+<p>The errors students most often make fall into these categories:</p>
 
 <h4>Spelling Errors</h4>
 <ul>
@@ -2528,26 +2478,54 @@ The city centre has changed dramatically over the past decade. Where there once 
   <li>"theirs" → <strong>"there's"</strong> - contraction of "there is."</li>
 </ol>
 
-<div class="examiner-tip"><strong>Examiner Tip:</strong> A5 is worth 5 marks and should take no more than 3-5 minutes. Read the passage slowly and carefully, looking for one type of error at a time: first scan for spelling, then punctuation, then grammar. Do not rush - these are free marks if you are methodical.</div>
+<h3>More Practice: Two Passages</h3>
+<p><strong>Passage 1 (6 errors):</strong></p>
+<div class="text-extract">
+The library is not just a building; its an institution of immense cultural value. In the 21st century, when digital access seems to offer everything, it's easy to overlook what physicle libraries provide. Their providing spaces for vulnerable members of the community - the homeless who can access heat and shelter, young people without stable homes, elderly residents who appreciate human contact. The council claim that budgets are tight. Yet the library serves hundreds of people weekly. If you was forced to choose between a library and a shopping centre, society would be vastly poorer whithout the former.
+</div>
+<ol>
+  <li>"its an institution" → <strong>"it's an institution"</strong> - contraction of "it is."</li>
+  <li>"physicle" → <strong>"physical"</strong> - spelling error.</li>
+  <li>"Their providing" → <strong>"They're providing"</strong> - contraction of "they are."</li>
+  <li>"The council claim" → <strong>"The council claims"</strong> - singular verb with a collective noun in formal writing.</li>
+  <li>"If you was" → <strong>"If you were"</strong> - verb form with "you."</li>
+  <li>"whithout" → <strong>"without"</strong> - spelling error.</li>
+</ol>
 
-<h3>Common A5 Traps</h3>
+<p><strong>Passage 2 (5 errors):</strong></p>
+<div class="text-extract">
+The city centre has changed dramatically over the past decade. Where there once stood small shops with individual character, their now large corporate chains. The local community has lost something invaluable: a sense of belonging and connection to their neighborhoods. Young people especially find they are struggling with isolation. Digital technology claims to connect us, yet it often isolates us further. If the high street had maintained its small businesses, shopper would feel more engaged with there community. The decline of the high street is not inevitably; we can choose to support local business and reverse this trend.
+</div>
+<ol>
+  <li>"their now large corporate chains" → <strong>"there are now large corporate chains"</strong> - homophone error, and the verb is missing.</li>
+  <li>"neighborhoods" → <strong>"neighbourhoods"</strong> - British spelling.</li>
+  <li>"shopper would feel" → <strong>"shoppers would feel"</strong> - plural needed.</li>
+  <li>"with there community" → <strong>"with their community"</strong> - homophone error.</li>
+  <li>"not inevitably" → <strong>"not inevitable"</strong> - adjective, not adverb.</li>
+</ol>
+
+<p><strong>Common-mistake insight:</strong> These passages deliberately load homophones (their/there/they're) and verb agreement errors because these are the most common mistakes in student writing. Build a personal error-watch list of your frequent mistakes and scan for those specifically.</p>
+
+<div class="examiner-tip"><strong>Examiner Tip:</strong> In the exam, keep the last few minutes of each 30-minute writing task to check it. Read slowly and carefully, looking for one type of error at a time: first scan for spelling, then punctuation, then grammar. Do not rush: accuracy is 8 of each task's 20 marks.</div>
+
+<h3>Common Traps</h3>
 <ul>
-  <li><strong>Homophones:</strong> The most frequently tested error type. Learn the difference between commonly confused words.</li>
+  <li><strong>Homophones:</strong> The most common error type in student writing. Learn the difference between commonly confused words.</li>
   <li><strong>Apostrophes:</strong> Know the difference between possessive ("the dog's bone"), plural ("the dogs ran"), and contraction ("it's = it is").</li>
   <li><strong>Comma after introductory elements:</strong> "However," "Despite this," "On the other hand," - all need commas.</li>
   <li><strong>Subject-verb agreement:</strong> Collective nouns (team, group, family) take a singular verb in formal English.</li>
 </ul>
 
-<div class="common-mistake"><strong>Common Mistake:</strong> Rushing through A5 because it looks easy. Students who skim the passage often miss subtle errors like "everyday" vs "every day" or "its" vs "it's." Read every word carefully - the errors are designed to be the kind that people commonly make, which means they are easy to overlook.</div>
+<div class="common-mistake"><strong>Common Mistake:</strong> Rushing the final check because the writing is finished. Students who skim their own work often miss subtle errors like "everyday" vs "every day" or "its" vs "it's." Read every word carefully: your own errors are the easiest to overlook, because you read what you meant to write.</div>
 `,
     quiz: [
       {
         id: 'wjec-c2-m6-q1',
-        question: 'How many marks is the A5 proofreading task worth?',
-        options: ['3 marks', '5 marks', '10 marks', '15 marks'],
+        question: 'How many of the 40 Section B marks are for technical accuracy (AO6)?',
+        options: ['8 marks', '16 marks', '20 marks', '40 marks'],
         correct: 1,
         explanation:
-          'A5 is worth 5 marks and tests AO6 - technical accuracy. It is a quick-win question that should take 3-5 minutes.',
+          'Each writing task is worth 20 marks, 8 of them for AO6, so accuracy is 16 of the 40 marks in Section B. Eduqas sets no separate proofreading question: you earn these marks in your own writing.',
       },
       {
         id: 'wjec-c2-m6-q2',
@@ -2577,7 +2555,7 @@ The city centre has changed dramatically over the past decade. Where there once 
       },
       {
         id: 'wjec-c2-m6-q4',
-        question: 'What is the best strategy for A5?',
+        question: 'What is the best strategy for proofreading your writing?',
         options: [
           'Read the passage once quickly',
           'Scan for one type of error at a time: spelling, then punctuation, then grammar',
@@ -2601,7 +2579,7 @@ The city centre has changed dramatically over the past decade. Where there once 
     content: `
 <h2>Section B - Transactional/Persuasive Writing: Mastering Form and Purpose</h2>
 
-<p>Section B of Component 2 requires you to complete <strong>two transactional writing tasks</strong>: B1 (shorter, <strong>16 marks</strong>) and B2 (longer, <strong>24 marks</strong>). Transactional writing is writing that has a clear <strong>purpose</strong>, <strong>audience</strong>, and <strong>form</strong>. The tasks will specify all three, and you must adapt your writing accordingly.</p>
+<p>Section B of Component 2 requires you to complete <strong>two compulsory transactional writing tasks</strong>, 2.1 and 2.2, worth <strong>20 marks each</strong> (12 for AO5 and 8 for AO6), in about 300 to 400 words each. Transactional writing is writing that has a clear <strong>purpose</strong>, <strong>audience</strong>, and <strong>form</strong>. The tasks will specify all three, and you must adapt your writing accordingly.</p>
 
 <div class="key-term"><strong>Key Term: Transactional Writing</strong> - Writing that communicates with a specific purpose and audience. Unlike creative writing, transactional writing aims to inform, persuade, advise, argue, explain, or instruct. The form (letter, article, speech, report, review) shapes the conventions you must follow.</div>
 
@@ -2674,7 +2652,7 @@ The city centre has changed dramatically over the past decade. Where there once 
 
 <h3>Worked Example: Full Transactional Task with Annotated Response</h3>
 
-<h4>Task: Formal Letter (B1 - 16 marks)</h4>
+<h4>Task: Formal Letter (2.1 - 20 marks)</h4>
 <p><strong>Scenario:</strong> Write a formal letter to your local council arguing for better public transport in your area. Your purpose is to persuade. Your audience is a local councillor. Your form is a formal letter.</p>
 
 <h4>Model Response (Grade 8)</h4>
@@ -2707,7 +2685,7 @@ M3 1AA</p>
 <p>Alex Johnson</p>
 </div>
 
-<h4>Examiner Commentary: Grade 8 Analysis (AO5: 18/24 marks)</h4>
+<h4>Examiner Commentary: Grade 8 Analysis (AO5: 9/12 marks)</h4>
 <div style="border-left: 4px solid #27ae60; padding-left: 15px; margin: 20px 0; background-color: #f0fdf4;">
 <strong>Strengths:</strong>
 <ul>
@@ -2718,17 +2696,17 @@ M3 1AA</p>
 <li><strong>Persuasive Techniques:</strong> Data (73%, 15%), rhetorical question, repetition ("cannot access," "cannot attend"), direct appeal to values (community, opportunity).</li>
 </ul>
 
-<strong>For Higher Marks (22-24):</strong> Could use more varied persuasive techniques (anecdote, emotive language). The conclusion could be more powerful. More sophisticated vocabulary in places.
+<strong>For Higher Marks (AO5 11-12):</strong> Could use more varied persuasive techniques (anecdote, emotive language). The conclusion could be more powerful. More sophisticated vocabulary in places.
 </div>
 
-<h3>Grade Boundary Breakdown: Transactional Writing (B1, WJEC Component 2)</h3>
+<h3>Band by Band: Each Writing Task (AO5 12 marks, AO6 8)</h3>
 <table style="width: 100%; border-collapse: collapse; margin: 20px 0;">
-<tr style="background-color: #ecf0f1;"><th style="border: 1px solid #bdc3c7; padding: 10px;"><strong>Grade</strong></th><th style="border: 1px solid #bdc3c7; padding: 10px;"><strong>AO5 (/24)</strong></th><th style="border: 1px solid #bdc3c7; padding: 10px;"><strong>Key Characteristics</strong></th></tr>
-<tr><td style="border: 1px solid #bdc3c7; padding: 10px;"><strong>9</strong></td><td style="border: 1px solid #bdc3c7; padding: 10px;">22-24</td><td style="border: 1px solid #bdc3c7; padding: 10px;">Expertly adapted to form, purpose, audience. Compelling writing. Ambitious vocabulary. Sustained persuasive/transactional techniques. Clear sense of purpose.</td></tr>
-<tr style="background-color: #ecf0f1;"><td style="border: 1px solid #bdc3c7; padding: 10px;"><strong>8</strong></td><td style="border: 1px solid #bdc3c7; padding: 10px;">18-21</td><td style="border: 1px solid #bdc3c7; padding: 10px;">Well-adapted to form, purpose, audience. Effective writing. Good vocabulary. Range of techniques. Clear purpose maintained.</td></tr>
-<tr><td style="border: 1px solid #bdc3c7; padding: 10px;"><strong>7</strong></td><td style="border: 1px solid #bdc3c7; padding: 10px;">15-17</td><td style="border: 1px solid #bdc3c7; padding: 10px;">Mostly appropriate to form, purpose, audience. Clear writing. Adequate vocabulary. Some techniques used. Mostly clear purpose.</td></tr>
-<tr style="background-color: #ecf0f1;"><td style="border: 1px solid #bdc3c7; padding: 10px;"><strong>5-6</strong></td><td style="border: 1px solid #bdc3c7; padding: 10px;">11-14</td><td style="border: 1px solid #bdc3c7; padding: 10px;">Basic form awareness. Simple, clear writing. Limited vocabulary. Limited technique use. Basic purpose awareness.</td></tr>
-<tr><td style="border: 1px solid #bdc3c7; padding: 10px;"><strong>4</strong></td><td style="border: 1px solid #bdc3c7; padding: 10px;">8-10</td><td style="border: 1px solid #bdc3c7; padding: 10px;">Minimal form awareness. Basic writing. Simple vocabulary. Few techniques. Purpose sometimes unclear.</td></tr>
+<tr style="background-color: #ecf0f1;"><th style="border: 1px solid #bdc3c7; padding: 10px;"><strong>Band</strong></th><th style="border: 1px solid #bdc3c7; padding: 10px;"><strong>AO5 (/12)</strong></th><th style="border: 1px solid #bdc3c7; padding: 10px;"><strong>AO6 (/8)</strong></th><th style="border: 1px solid #bdc3c7; padding: 10px;"><strong>What it looks like</strong></th></tr>
+<tr><td style="border: 1px solid #bdc3c7; padding: 10px;"><strong>5</strong></td><td style="border: 1px solid #bdc3c7; padding: 10px;">11-12</td><td style="border: 1px solid #bdc3c7; padding: 10px;">8</td><td style="border: 1px solid #bdc3c7; padding: 10px;">Ambitious, polished writing: the tone is exactly right for the reader, the ideas are developed in depth and persuade, and accuracy is close to faultless, with a wide, precise vocabulary.</td></tr>
+<tr style="background-color: #ecf0f1;"><td style="border: 1px solid #bdc3c7; padding: 10px;"><strong>4</strong></td><td style="border: 1px solid #bdc3c7; padding: 10px;">8-10</td><td style="border: 1px solid #bdc3c7; padding: 10px;">6-7</td><td style="border: 1px solid #bdc3c7; padding: 10px;">Right for the task and the reader all the way through, with detailed, carefully chosen content and a clear structure. Sentences are varied for effect and errors are rare.</td></tr>
+<tr><td style="border: 1px solid #bdc3c7; padding: 10px;"><strong>3</strong></td><td style="border: 1px solid #bdc3c7; padding: 10px;">5-7</td><td style="border: 1px solid #bdc3c7; padding: 10px;">4-5</td><td style="border: 1px solid #bdc3c7; padding: 10px;">Fits the task and the reader, with reasons that are developed and paragraphs that build a sensible case. Mostly accurate, with a mix of sentences and punctuation.</td></tr>
+<tr style="background-color: #ecf0f1;"><td style="border: 1px solid #bdc3c7; padding: 10px;"><strong>2</strong></td><td style="border: 1px solid #bdc3c7; padding: 10px;">3-4</td><td style="border: 1px solid #bdc3c7; padding: 10px;">2-3</td><td style="border: 1px solid #bdc3c7; padding: 10px;">Aware of the purpose and reader, with a few reasons and paragraphs, though points are not developed. Sentences vary a little and most spelling is right.</td></tr>
+<tr><td style="border: 1px solid #bdc3c7; padding: 10px;"><strong>1</strong></td><td style="border: 1px solid #bdc3c7; padding: 10px;">1-2</td><td style="border: 1px solid #bdc3c7; padding: 10px;">1</td><td style="border: 1px solid #bdc3c7; padding: 10px;">Some idea of the form and the reader, but little to say and ideas in a simple order. Sentences are mostly alike and errors are frequent.</td></tr>
 </table>
 
 <h3>Persuasive Techniques for Transactional Writing</h3>
@@ -2792,7 +2770,7 @@ M3 1AA</p>
 
 <ol style="font-size: 1.05em; line-height: 1.8;">
 <li><strong>Identify the task requirements (1 min):</strong> Form? Purpose? Audience? Write these down.</li>
-<li><strong>Plan your response (3-4 min):</strong> Key points in order. Evidence or examples. Persuasive techniques.</li>
+<li><strong>Plan your response (about 5 min):</strong> Key points in order. Evidence or examples. Persuasive techniques.</li>
 <li><strong>Write in the correct form.</strong> Begin with any necessary form conventions (date, address, salutation).</li>
 <li><strong>Match your register to the audience.</strong> Formal for authority figures, semi-formal for peers, journalistic for newspapers.</li>
 <li><strong>Develop your purpose throughout.</strong> If persuading, use evidence, rhetorical questions, counterargument. If informing, be clear and well-organized.</li>
@@ -2861,7 +2839,7 @@ M2 1AA</p>
         options: ['One', 'Two', 'Three', 'Choose one from three'],
         correct: 1,
         explanation:
-          'You must complete both B1 (shorter, 16 marks) and B2 (longer, 24 marks). Both are compulsory.',
+          'You must complete both 2.1 and 2.2, worth 20 marks each. Both are compulsory, and each sets its own form and reader.',
       },
       {
         id: 'wjec-c2-m7-q2',
@@ -3035,7 +3013,7 @@ M2 1AA</p>
     content: `
 <h2>Technical Accuracy in Transactional Writing</h2>
 
-<p>Both B1 and B2 are assessed for <strong>AO6 - technical accuracy</strong> alongside AO5 (content and organisation). In B1 (16 marks), the split is approximately <strong>10 marks for AO5</strong> and <strong>6 marks for AO6</strong>. In B2 (24 marks), the split is approximately <strong>16 marks for AO5</strong> and <strong>8 marks for AO6</strong>. Combined, AO6 is worth <strong>14 marks across Section B</strong> - enough to make the difference between grades.</p>
+<p>Both writing tasks, 2.1 and 2.2, are assessed for <strong>AO6 - technical accuracy</strong> alongside AO5 (content and organisation). Each task is worth 20 marks: <strong>12 for AO5</strong> and <strong>8 for AO6</strong>. Combined, AO6 is worth <strong>16 marks across Section B</strong> - enough to make the difference between grades.</p>
 
 <div class="key-term"><strong>Key Term: Discourse Markers</strong> - Words and phrases that signal the direction of an argument and help the reader follow the logic. Examples include "Furthermore," "However," "Consequently," "In addition," "On the other hand," "Nevertheless," "In conclusion." Effective use of discourse markers demonstrates sophisticated organisation.</div>
 
@@ -3075,13 +3053,13 @@ M2 1AA</p>
 
 <p>This paragraph demonstrates: a discourse marker opening ("Furthermore"), statistics for credibility, ambitious vocabulary ("staggering," "maritime"), varied sentence lengths, a powerful concluding sentence, and seamless integration of evidence and argument.</p>
 
-<h3>B1 vs B2: Adjusting Length and Depth</h3>
+<h3>2.1 and 2.2: Equal Tasks, Different Readers</h3>
 <ul>
-  <li><strong>B1 (16 marks):</strong> Shorter task, approximately 200-300 words. Make 2-3 clear points with brief supporting detail. Focus on form conventions and clear expression.</li>
-  <li><strong>B2 (24 marks):</strong> Longer task, approximately 300-500 words. Make 4-5 developed points with evidence, counter-argument, and sophisticated vocabulary. This is where you demonstrate your best writing.</li>
+  <li><strong>Both tasks (20 marks each):</strong> About 300-400 words each, as the paper suggests. Make 3-4 developed points with evidence or examples, in the form the task sets, with sophisticated vocabulary where it fits.</li>
+  <li><strong>Adapt to each reader:</strong> The two tasks may set different forms and readers, so change your tone and register between them: a letter to a council and an article for teenagers need different voices.</li>
 </ul>
 
-<div class="common-mistake"><strong>Common Mistake:</strong> Spending too long on B1 and not enough on B2. Remember: B2 is worth 24 marks (8 more than B1). Allocate your time proportionally - approximately 15 minutes for B1 and 25 minutes for B2. Spending equal time on both means under-investing in the higher-value task.</div>
+<div class="common-mistake"><strong>Common Mistake:</strong> Spending too long on the first task and rushing the second. The two tasks carry equal marks, so give each a full 30 minutes, about 5 planning and 25 writing, as the paper advises.</div>
 
 <div class="key-term"><strong>Key Term: Topic Sentence</strong> - The first sentence of a paragraph that introduces its main idea. A strong topic sentence acts as a signpost, telling the reader what the paragraph will discuss. It demonstrates clear planning and organisation.</div>
 `,
@@ -3089,10 +3067,10 @@ M2 1AA</p>
       {
         id: 'wjec-c2-m9-q1',
         question: "How much of Section B's marks are for AO6 (technical accuracy)?",
-        options: ['About 5 marks', 'About 14 marks', 'About 20 marks', 'About 40 marks'],
+        options: ['8 marks', '16 marks', '20 marks', '40 marks'],
         correct: 1,
         explanation:
-          'AO6 accounts for approximately 14 marks across Section B (6 marks in B1 + 8 marks in B2). This is enough to make the difference between grades.',
+          'AO6 accounts for 16 marks across Section B: 8 in each of the two 20-mark tasks. This is enough to make the difference between grades.',
       },
       {
         id: 'wjec-c2-m9-q2',
@@ -3109,16 +3087,16 @@ M2 1AA</p>
       },
       {
         id: 'wjec-c2-m9-q3',
-        question: 'Why should you spend more time on B2 than B1?',
+        question: 'How should you split your time between the two writing tasks?',
         options: [
-          'B2 is more interesting',
-          "B2 is worth 24 marks compared to B1's 16 marks - allocate time proportionally",
-          'B1 does not require planning',
-          'B2 is always easier',
+          'Spend most of it on the first task',
+          'Give each about 30 minutes: they carry equal marks',
+          'Spend most of it on the second task',
+          'Plan neither, to save time',
         ],
         correct: 1,
         explanation:
-          'B2 is worth 8 marks more than B1. Spending equal time on both means under-investing in the higher-value task. Aim for 15 minutes on B1 and 25 minutes on B2.',
+          'Both tasks are worth 20 marks (AO5 12 + AO6 8), and the paper advises about 30 minutes on each: about 5 minutes planning and 25 writing.',
       },
       {
         id: 'wjec-c2-m9-q4',
@@ -3146,53 +3124,55 @@ M2 1AA</p>
     content: `
 <h2>Component 2 - Final Preparation: Exam Strategy and Revision</h2>
 
-<p>Component 2 is worth <strong>60% of the total GCSE</strong> - it is the larger and more demanding paper. With two reading texts, five reading questions, and two writing tasks to complete in <strong>2 hours</strong>, effective time management is absolutely essential. This module consolidates your learning and provides a clear strategy for exam day.</p>
+<p>Component 2 is worth <strong>60% of the total GCSE</strong> - it is the larger and more demanding paper. With two reading texts, six reading questions, and two writing tasks to complete in <strong>2 hours</strong>, effective time management is absolutely essential. This module consolidates your learning and provides a clear strategy for exam day.</p>
 
 <div class="key-term"><strong>Key Term: Time Management</strong> - The deliberate allocation of exam time to different questions based on their mark value. Effective time management ensures that high-tariff questions receive proportionally more time, maximising your overall mark.</div>
 
 <h3>The 2-Hour Battle Plan</h3>
 <table>
   <tr><th>Section</th><th>Question</th><th>Marks</th><th>Time</th></tr>
-  <tr><td rowspan="5">A - Reading</td><td>Read both texts</td><td>-</td><td>15 min</td></tr>
-  <tr><td>A1 - Retrieval</td><td>5</td><td>5 min</td></tr>
-  <tr><td>A2 - Synthesis</td><td>10</td><td>15 min</td></tr>
-  <tr><td>A3 - Language analysis</td><td>10</td><td>13 min</td></tr>
-  <tr><td>A4 - Comparison</td><td>10</td><td>12 min</td></tr>
-  <tr><td>-</td><td>A5 - Proofreading</td><td>5</td><td>3 min</td></tr>
-  <tr><td rowspan="2">B - Writing</td><td>B1 - Shorter task</td><td>16</td><td>18 min</td></tr>
-  <tr><td>B2 - Longer task</td><td>24</td><td>27 min</td></tr>
-  <tr><td>-</td><td>Proofread writing</td><td>-</td><td>7 min</td></tr>
+  <tr><td rowspan="7">A - Reading</td><td>Read both texts</td><td>-</td><td>10 min</td></tr>
+  <tr><td>1.1 - Retrieval (21st-century text)</td><td>3</td><td>4 min</td></tr>
+  <tr><td>1.2 - How the writer achieves a purpose (21st-century text)</td><td>10</td><td>12 min</td></tr>
+  <tr><td>1.3 - Understanding (19th-century text)</td><td>3</td><td>4 min</td></tr>
+  <tr><td>1.4 - Evaluation (19th-century text)</td><td>10</td><td>12 min</td></tr>
+  <tr><td>1.5 - Synthesis (both texts)</td><td>4</td><td>5 min</td></tr>
+  <tr><td>1.6 - Comparison (both texts)</td><td>10</td><td>13 min</td></tr>
+  <tr><td rowspan="2">B - Writing</td><td>2.1 - First task</td><td>20</td><td>30 min</td></tr>
+  <tr><td>2.2 - Second task</td><td>20</td><td>30 min</td></tr>
 </table>
+<p>The section times are the paper's own advice; the question times are a suggestion worked out from the marks. Each 30 minutes of writing includes about 5 minutes planning and a final check.</p>
 
 <h3>Question-by-Question Reminders</h3>
 <ul>
-  <li><strong>A1 (5 marks):</strong> Quick retrieval. Brief, accurate answers. Do not over-explain.</li>
-  <li><strong>A2 (10 marks):</strong> Synthesis - weave both texts together. Use linking phrases. Draw on evidence from both sources in every point.</li>
-  <li><strong>A3 (10 marks):</strong> Language analysis - quotation, technique, effect. Explore connotations and deeper meanings. Use subject terminology.</li>
-  <li><strong>A4 (10 marks):</strong> Compare viewpoints - analyse methods as well as ideas. Use comparative connectives. Reference both texts in every paragraph.</li>
-  <li><strong>A5 (5 marks):</strong> Proofreading - read slowly, scan for spelling, punctuation, grammar. Easy marks if methodical.</li>
-  <li><strong>B1 (16 marks):</strong> Shorter transactional task. 200-300 words. Match form conventions. Clear, well-organised points.</li>
-  <li><strong>B2 (24 marks):</strong> Longer transactional task. 300-500 words. Developed argument, counter-argument, ambitious vocabulary, varied sentences.</li>
+  <li><strong>1.1 (3 marks):</strong> Quick retrieval from the 21st-century text. Brief, accurate answers. Do not over-explain.</li>
+  <li><strong>1.2 (10 marks):</strong> How the writer achieves a purpose - quotation, method, effect. What is said, language, tone and structure. Use subject terminology.</li>
+  <li><strong>1.3 (3 marks):</strong> What the 19th-century text says or means. Put it simply.</li>
+  <li><strong>1.4 (10 marks):</strong> Evaluate the 19th-century text. Decide first, then track the whole text with evidence.</li>
+  <li><strong>1.5 (4 marks):</strong> Synthesis - details from both texts on one topic, briefly.</li>
+  <li><strong>1.6 (10 marks):</strong> Compare viewpoints - analyse methods as well as ideas. Use comparative connectives. Reference both texts in every paragraph.</li>
+  <li><strong>2.1 and 2.2 (20 marks each):</strong> Two compulsory transactional tasks, about 300-400 words each. Match each form's conventions and reader. Developed argument, counter-argument, ambitious vocabulary, varied sentences.</li>
 </ul>
 
-<div class="examiner-tip"><strong>Examiner Tip:</strong> If you run out of time, prioritise B2 over B1. B2 is worth 8 more marks and offers greater opportunity to demonstrate high-level writing skills. A strong B2 with a weaker B1 will score better overall than two mediocre responses.</div>
+<div class="examiner-tip"><strong>Examiner Tip:</strong> If you run out of time, do not abandon either writing task: they carry equal marks. A plan, an opening and a conclusion for the second task still earn credit; a blank answer earns none.</div>
 
 <h3>Common Pitfalls and How to Avoid Them</h3>
 <ul>
-  <li><strong>Pitfall:</strong> Treating A2 and A4 the same. <strong>Solution:</strong> A2 = synthesis (weave together what both texts say). A4 = comparison (compare how they say it, including methods).</li>
-  <li><strong>Pitfall:</strong> Writing about texts separately in A4. <strong>Solution:</strong> Use comparative connectives in every paragraph. Each point must reference both writers.</li>
-  <li><strong>Pitfall:</strong> Ignoring form conventions in B1/B2. <strong>Solution:</strong> Check the specified form (letter, speech, article, etc.) and include appropriate conventions.</li>
-  <li><strong>Pitfall:</strong> Spending equal time on B1 and B2. <strong>Solution:</strong> Allocate time proportionally to marks - more time on B2.</li>
-  <li><strong>Pitfall:</strong> Not proofreading. <strong>Solution:</strong> Reserve 5-7 minutes at the end. Correcting SPaG errors is the most efficient way to gain marks.</li>
+  <li><strong>Pitfall:</strong> Treating 1.5 and 1.6 the same. <strong>Solution:</strong> 1.5 = synthesis (bring together what both texts say, briefly). 1.6 = comparison (compare how they say it, including methods).</li>
+  <li><strong>Pitfall:</strong> Writing about texts separately in 1.6. <strong>Solution:</strong> Use comparative connectives in every paragraph. Each point must reference both writers.</li>
+  <li><strong>Pitfall:</strong> Ignoring form conventions in 2.1 and 2.2. <strong>Solution:</strong> Check the specified form (letter, speech, article, etc.) and include appropriate conventions.</li>
+  <li><strong>Pitfall:</strong> Letting the first writing task eat into the second. <strong>Solution:</strong> They carry equal marks, so give each about 30 minutes.</li>
+  <li><strong>Pitfall:</strong> Not proofreading. <strong>Solution:</strong> Keep the last few minutes of each writing task to check it. Accuracy (AO6) is 8 of each task's 20 marks.</li>
 </ul>
 
 <h3>Revision Checklist for Component 2</h3>
 <ul>
   <li>Can you read and retrieve information from both 19th-century and 21st-century non-fiction?</li>
-  <li>Can you synthesise evidence from two texts, weaving points together?</li>
+  <li>Can you bring together details from two texts briefly (1.5)?</li>
+  <li>Can you evaluate the 19th-century text, judging a statement about it (1.4)?</li>
   <li>Can you analyse language in a non-fiction text, using subject terminology and exploring effects?</li>
   <li>Can you compare how two writers convey their viewpoints, using comparative connectives?</li>
-  <li>Can you identify and correct common SPaG errors (A5 proofreading)?</li>
+  <li>Can you proofread your own writing for common SPaG errors?</li>
   <li>Do you know the conventions for letters, articles, speeches, reviews, and reports?</li>
   <li>Can you build a persuasive argument using ethos, pathos, and logos?</li>
   <li>Can you use a range of punctuation accurately (semicolons, colons, dashes)?</li>
@@ -3208,7 +3188,7 @@ M2 1AA</p>
 <p>Component 2 is a demanding paper, but it is also an opportunity. It rewards students who can read carefully, think critically, and write with precision and flair. Remember:</p>
 <ul>
   <li>Every question has a specific skill it tests - make sure you demonstrate that skill.</li>
-  <li>Quality beats quantity - a shorter, well-crafted response always outscores a longer, unfocused one.</li>
+  <li>Quality beats quantity: a well-crafted response within the paper's word guidance outscores a longer, unfocused one.</li>
   <li>Proofread - it is the simplest way to gain marks.</li>
   <li>Stay calm, follow your timing plan, and trust your preparation.</li>
 </ul>
@@ -3224,37 +3204,42 @@ M2 1AA</p>
       },
       {
         id: 'wjec-c2-m10-q2',
-        question: 'What is the key difference between A2 (synthesis) and A4 (comparison)?',
+        question: 'What is the key difference between 1.5 (synthesis) and 1.6 (comparison)?',
         options: [
-          'A2 uses one text; A4 uses both',
-          'A2 weaves together what both texts say; A4 compares how they say it, including methods',
+          '1.5 uses one text; 1.6 uses both',
+          '1.5 brings together what both texts say; 1.6 compares how they say it, including methods',
           'There is no difference',
-          'A2 is worth more marks',
+          '1.5 is worth more marks',
         ],
         correct: 1,
         explanation:
-          'A2 synthesises what both texts say about a topic. A4 compares how the writers convey their viewpoints, requiring analysis of methods and attitudes as well as ideas.',
+          '1.5 (4 marks) brings together what both texts say about a topic, briefly. 1.6 (10 marks) compares how the writers convey their viewpoints, requiring analysis of methods and attitudes as well as ideas.',
       },
       {
         id: 'wjec-c2-m10-q3',
         question: 'If you run out of time, which writing task should you prioritise?',
         options: [
-          'B1 - the shorter task',
-          'B2 - the longer task worth 24 marks',
-          'Both equally',
+          'The first task only',
+          'Both equally: they carry 20 marks each, so attempt both',
+          'The second task only',
           'Neither - go back and improve your reading answers',
         ],
         correct: 1,
         explanation:
-          'B2 is worth 24 marks (8 more than B1) and offers greater opportunity to demonstrate high-level skills. A strong B2 with a weaker B1 scores better than two mediocre responses.',
+          'The two tasks are worth 20 marks each, so neither deserves priority. If time is short, write at least a plan, an opening and an ending for the second task: a partial answer still earns marks, a blank one earns none.',
       },
       {
         id: 'wjec-c2-m10-q4',
-        question: 'How many minutes should you reserve for proofreading your writing?',
-        options: ['None', '2 minutes', '5-7 minutes', '15 minutes'],
+        question: 'When should you proofread your writing?',
+        options: [
+          'Never',
+          'Only if you finish early',
+          "In the last few minutes of each task's 30",
+          'Before you start writing',
+        ],
         correct: 2,
         explanation:
-          '5-7 minutes of proofreading can correct SPaG errors that are worth 2-4 marks. This is one of the most efficient uses of time in the exam.',
+          "Each task has about 30 minutes, about 5 of them for planning. Keep the last few minutes of each to check it: accuracy (AO6) is 8 of each task's 20 marks.",
       },
       {
         id: 'wjec-c2-m10-q5',
@@ -3305,7 +3290,7 @@ const comp2Assessment: CourseQuiz[] = [
     ],
     correct: 1,
     explanation:
-      "AO3 assesses the ability to compare writers' ideas and perspectives, as well as how these are conveyed, across two or more texts. It is tested in A4.",
+      "AO3 assesses the ability to compare writers' ideas and perspectives, as well as how these are conveyed, across two or more texts. It is tested in 1.6.",
   },
   {
     id: 'wjec-c2-assess-4',
@@ -3322,16 +3307,16 @@ const comp2Assessment: CourseQuiz[] = [
   },
   {
     id: 'wjec-c2-assess-5',
-    question: 'What is unique about the A5 question on Component 2?',
+    question: 'What does Question 1.4 on Component 2 ask you to do?',
     options: [
-      'It requires creative writing',
-      'It is a proofreading task - correcting errors in a given passage',
-      'It asks for comparison of three texts',
-      'It is an oral presentation',
+      'Write a story',
+      'Evaluate the 19th-century text, often by judging a statement about it',
+      'Compare three texts',
+      'Correct errors in a given passage',
     ],
     correct: 1,
     explanation:
-      'A5 is unique to WJEC/Eduqas - it provides a passage with deliberate SPaG errors and asks you to identify and correct them.',
+      'Question 1.4 is the 10-mark evaluation (AO4): your judgement on the 19th-century text, thinking about what is said and how. Component 2 sets no proofreading task.',
   },
   {
     id: 'wjec-c2-assess-6',
@@ -3339,7 +3324,7 @@ const comp2Assessment: CourseQuiz[] = [
     options: ['One', 'Two', 'Three', 'Choose one from two'],
     correct: 1,
     explanation:
-      'Section B requires two compulsory writing tasks: B1 (shorter, 16 marks) and B2 (longer, 24 marks).',
+      'Section B requires two compulsory writing tasks, 2.1 and 2.2, of 20 marks each (AO5 12 + AO6 8).',
   },
   {
     id: 'wjec-c2-assess-7',
@@ -3416,7 +3401,7 @@ const comp2Assessment: CourseQuiz[] = [
   },
   {
     id: 'wjec-c2-assess-13',
-    question: 'In A4, what must every paragraph include?',
+    question: 'In 1.6, what must every paragraph include?',
     options: [
       'A quotation from the 19th-century text only',
       'References to both writers with comparative connectives',
@@ -3425,7 +3410,7 @@ const comp2Assessment: CourseQuiz[] = [
     ],
     correct: 1,
     explanation:
-      'Every A4 paragraph should reference both writers and use comparative connectives (whereas, in contrast, similarly) to make the comparison explicit.',
+      'Every 1.6 paragraph should reference both writers and use comparative connectives (whereas, in contrast, similarly) to make the comparison explicit.',
   },
   {
     id: 'wjec-c2-assess-14',
@@ -3490,7 +3475,7 @@ const comp2Assessment: CourseQuiz[] = [
     ],
     correct: 2,
     explanation:
-      'Proofreading and correcting SPaG errors is the most efficient use of the final minutes. Correcting 3-4 errors could be worth 2-4 additional marks.',
+      'Proofreading and correcting SPaG errors is the most efficient use of the final minutes: accuracy (AO6) is 16 of the 40 writing marks.',
   },
   {
     id: 'wjec-c2-assess-19',
@@ -3509,14 +3494,14 @@ const comp2Assessment: CourseQuiz[] = [
     id: 'wjec-c2-assess-20',
     question: 'If running short on time, which Section B task should you prioritise?',
     options: [
-      'B1 - complete the shorter task first',
-      "B2 - it is worth 24 marks compared to B1's 16 marks",
+      'The first task - complete it before starting the second',
+      'Neither above the other: both are worth 20 marks, so split the remaining time',
       'Neither - return to Section A',
-      'Both equally - split remaining time in half',
+      'The second task - it is worth more',
     ],
     correct: 1,
     explanation:
-      'B2 is worth 24 marks (8 more than B1). A strong B2 with a weaker B1 will outscore two mediocre responses. Prioritise the higher-value task.',
+      'Both tasks are worth 20 marks. If time is short, split what is left between them: a partial answer earns marks, a blank one earns none.',
   },
 ]
 
@@ -3537,7 +3522,7 @@ const wjecLangComp1: CourseData = {
   level: 'GCSE (Years 10-11)',
   color: '#dc2626',
   description:
-    'Master WJEC/Eduqas Component 1: analyse 20th-century fiction extracts and craft compelling creative prose. Covers retrieval, language analysis, structural analysis, evaluation, narrative and descriptive writing with WJEC-specific strategies and examiner insights.',
+    'Master WJEC/Eduqas Component 1: analyse 20th-century fiction extracts and craft compelling creative prose. Covers retrieval, language analysis, structural analysis, evaluation, and narrative writing with the descriptive techniques that bring it to life, with WJEC-specific strategies and examiner insights.',
   moduleList: comp1Modules,
   assessmentQuestions: comp1Assessment,
 }

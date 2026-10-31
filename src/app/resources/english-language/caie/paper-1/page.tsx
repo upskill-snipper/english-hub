@@ -72,7 +72,18 @@ export default async function Paper1ReadingPage() {
           <h1 className="text-3xl font-bold tracking-tight sm:text-4xl md:text-5xl">
             Paper 1: Reading
           </h1>
-          <p className="mt-2 text-lg text-muted-foreground">Core Paper 1 &amp; Extended Paper 2</p>
+          {/* 31 October 2026: corrected to src/data/mark-scheme-guides/cambridge-0500-paper1.ts.
+              This page described the paper before 2020, with Core and Extended tiers, three
+              25-mark questions plus 5 marks for spelling and grammar, a summary of "one or
+              both passages" in about 200-250 words and a note-making question. From 2027
+              Paper 1 has no tiers and is four questions of 20 on Texts A, B and C; the
+              summary is Question 2(a), on Text B alone, in no more than 120 words. The
+              note-making section now teaches notes as the plan for that summary. Second
+              read: the November 2026 note now says its question numbers and marks differ,
+              as the guide's summary does. */}
+          <p className="mt-2 text-lg text-muted-foreground">
+            Paper 1, for 0500 and 0990: 2 hours, 80 marks
+          </p>
           <p className="mt-3 max-w-2xl text-muted-foreground">
             This paper tests your ability to read and understand passages of writing, identify
             information, select relevant material, and demonstrate understanding of how writers
@@ -102,35 +113,47 @@ export default async function Paper1ReadingPage() {
                 <tr>
                   <td className="py-3 pe-4 font-medium">{_tr(`Question 1`)}</td>
                   <td className="py-3 pe-4">
-                    Detailed comprehension &mdash; factual retrieval, inference, vocabulary in
-                    context
+                    Comprehension of Text A: factual retrieval, inference, vocabulary in context
                   </td>
-                  <td className="py-3 pe-4">25</td>
+                  <td className="py-3 pe-4">20</td>
                   <td className="py-3">25 minutes</td>
                 </tr>
                 <tr>
                   <td className="py-3 pe-4 font-medium">{_tr(`Question 2`)}</td>
                   <td className="py-3 pe-4">
-                    {_tr(`Summary - select and organise ideas from one or both passages`)}
+                    {_tr(
+                      `Summary of Text B in no more than 120 words, then a short answer on the writer's attitude`,
+                    )}
                   </td>
-                  <td className="py-3 pe-4">25</td>
-                  <td className="py-3">30 minutes</td>
+                  <td className="py-3 pe-4">20</td>
+                  <td className="py-3">25 minutes</td>
                 </tr>
                 <tr>
                   <td className="py-3 pe-4 font-medium">{_tr(`Question 3`)}</td>
                   <td className="py-3 pe-4">
-                    {_tr(`Language analysis - how the writer uses language to create effects`)}
+                    {_tr(
+                      `Short answers, then language analysis: how the writer of Text C uses language to create effects`,
+                    )}
                   </td>
-                  <td className="py-3 pe-4">25</td>
-                  <td className="py-3">55 minutes</td>
+                  <td className="py-3 pe-4">20</td>
+                  <td className="py-3">25 minutes</td>
+                </tr>
+                <tr>
+                  <td className="py-3 pe-4 font-medium">{_tr(`Question 4`)}</td>
+                  <td className="py-3 pe-4">
+                    {_tr(`Extended response to reading: writing in a set form, based on Text C`)}
+                  </td>
+                  <td className="py-3 pe-4">20</td>
+                  <td className="py-3">25 minutes</td>
                 </tr>
               </tbody>
             </table>
           </div>
           <p className="mt-3 text-sm text-muted-foreground">
-            Extended paper total: 80 marks in 2 hours (plus 5 marks for spelling, punctuation, and
-            grammar across the paper). Core candidates sit Paper 1 with slightly different question
-            formats.
+            Total: 80 marks in 2 hours, with about 15 minutes to read the three texts first and 5
+            minutes at the end to check. This is the paper for exams from 2027; the November 2026
+            paper follows the older syllabus, with three questions worth 30, 25 and 25 marks, so its
+            question numbers and marks are not the ones on this page.
           </p>
         </section>
 
@@ -293,8 +316,9 @@ export default async function Paper1ReadingPage() {
           </h2>
           <p className="mt-3 text-muted-foreground leading-relaxed">
             The summary question is often the most challenging part of the reading paper. You must
-            select relevant ideas from the passage(s) and present them in a concise, coherent piece
-            of continuous prose.
+            select the ideas in Text B that fit the focus of the question and present them in a
+            concise, coherent piece of continuous prose, worth 15 marks. A short question on the
+            writer&apos;s attitude, worth 5, follows it.
           </p>
 
           {/* Step-by-step */}
@@ -308,7 +332,7 @@ export default async function Paper1ReadingPage() {
                 <p className="mt-1 text-sm text-muted-foreground leading-relaxed">
                   Identify exactly what you are being asked to summarise. Underline the focus of the
                   question &mdash; e.g. &ldquo;the challenges faced by the villagers&rdquo; or
-                  &ldquo;the differences between the two writers&rsquo; experiences.&rdquo;
+                  &ldquo;the reasons the writer gives for moving to the coast.&rdquo;
                 </p>
               </div>
             </div>
@@ -320,9 +344,9 @@ export default async function Paper1ReadingPage() {
               <div>
                 <h3 className="font-semibold text-foreground">{_tr(`Identify relevant points`)}</h3>
                 <p className="mt-1 text-sm text-muted-foreground leading-relaxed">
-                  Go through the passage(s) and underline or number every point that is relevant to
-                  the question. Aim to find at least 12&ndash;15 content points. Do not include
-                  examples, quotations, or statistics at this stage &mdash; just the ideas.
+                  Go through Text B and underline or number every point that is relevant to the
+                  question, including ideas the text only implies. Do not include examples,
+                  quotations, or statistics: just the ideas.
                 </p>
               </div>
             </div>
@@ -334,9 +358,9 @@ export default async function Paper1ReadingPage() {
               <div>
                 <h3 className="font-semibold text-foreground">{_tr(`Organise your points`)}</h3>
                 <p className="mt-1 text-sm text-muted-foreground leading-relaxed">
-                  Group similar ideas together. Decide on a logical order. If you are comparing two
-                  passages, you might organise point by point (alternating) or deal with one passage
-                  first and then the other.
+                  Group similar ideas together and decide on a logical order. Combine related points
+                  into single sentences, so the summary reads as one connected piece rather than a
+                  list.
                 </p>
               </div>
             </div>
@@ -350,9 +374,9 @@ export default async function Paper1ReadingPage() {
                 <p className="mt-1 text-sm text-muted-foreground leading-relaxed">
                   This is critical. Cambridge markers specifically penalise &ldquo;lifting&rdquo;
                   (copying directly from the passage). You must rephrase the ideas using your own
-                  vocabulary and sentence structures. The marking guide awards up to 15 marks for
-                  content (the number of relevant points) and up to 10 marks for quality of writing
-                  (use of own words, fluency, accuracy).
+                  vocabulary and sentence structures. The summary is marked out of 15: up to 10 for
+                  reading (selecting the relevant points, including implied ones) and up to 5 for
+                  writing (clear, concise expression in your own words).
                 </p>
               </div>
             </div>
@@ -366,10 +390,8 @@ export default async function Paper1ReadingPage() {
                   {_tr(`Stay within the word limit`)}
                 </h3>
                 <p className="mt-1 text-sm text-muted-foreground leading-relaxed">
-                  The question will usually specify a word limit (typically around 200&ndash;250
-                  words). Going significantly over may mean you have included irrelevant material or
-                  are not being concise enough. Going significantly under may mean you have missed
-                  content points.
+                  The question sets a limit: no more than 120 words. Going over it breaks the rule
+                  the question sets. Writing far less may mean you have missed points that matter.
                 </p>
               </div>
             </div>
@@ -399,7 +421,7 @@ export default async function Paper1ReadingPage() {
               </li>
               <li className="flex items-start gap-2">
                 <span className="mt-1 font-bold">&times;</span>
-                Ignoring one of the two passages when the question refers to both.
+                Adding examples, quotations or statistics, which the 120 words leave no room for.
               </li>
             </ul>
           </div>
@@ -413,14 +435,14 @@ export default async function Paper1ReadingPage() {
             Note-Making Skills
           </h2>
           <p className="mt-3 text-muted-foreground leading-relaxed">
-            Some questions (particularly on the Core paper) may test note-making. This is the skill
-            of extracting key information from a passage and presenting it in an organised, concise
-            format.
+            Making notes is how a good summary starts. Before you write Question 2(a), note the
+            points in Text B that fit the focus, in an organised, concise format. The notes are your
+            plan, not your answer: the summary itself must be continuous writing.
           </p>
 
           <div className="mt-6 grid gap-6 sm:grid-cols-2">
             <div className="rounded-lg border border-border bg-card p-5">
-              <h3 className="font-semibold text-primary">{_tr(`What Markers Want`)}</h3>
+              <h3 className="font-semibold text-primary">{_tr(`What Good Notes Look Like`)}</h3>
               <ul className="mt-3 space-y-2 text-sm text-muted-foreground">
                 <li className="flex items-start gap-2">
                   <span className="mt-1 h-1.5 w-1.5 shrink-0 rounded-full bg-primary" />
@@ -440,7 +462,7 @@ export default async function Paper1ReadingPage() {
                 </li>
                 <li className="flex items-start gap-2">
                   <span className="mt-1 h-1.5 w-1.5 shrink-0 rounded-full bg-primary" />
-                  Logical grouping or ordering is rewarded.
+                  Logical grouping makes the summary easier to write.
                 </li>
               </ul>
             </div>
@@ -480,9 +502,10 @@ export default async function Paper1ReadingPage() {
             Language Analysis (Question 3)
           </h2>
           <p className="mt-3 text-muted-foreground leading-relaxed">
-            This is the highest-tariff question and separates good candidates from excellent ones.
-            You must analyse <strong>how</strong> the writer uses language to create specific
-            effects on the reader.
+            The language task, the second part of Question 3, separates good candidates from
+            excellent ones. In about 200 to 250 words, worth 10 marks, you must analyse{' '}
+            <strong>how</strong> the writer of Text C uses language to create specific effects on
+            the reader, in an extract the question names.
           </p>
 
           <div className="mt-6 rounded-lg border border-primary/20 bg-primary/10 p-5">
@@ -522,9 +545,7 @@ export default async function Paper1ReadingPage() {
           </div>
 
           <div className="mt-6 rounded-lg border border-border bg-card p-5">
-            <h3 className="font-semibold text-foreground">
-              Example Response (Band 5&ndash;6 Quality)
-            </h3>
+            <h3 className="font-semibold text-foreground">Example Response (Level 5 Quality)</h3>
             <div className="mt-3 rounded bg-muted p-4 text-sm text-muted-foreground leading-relaxed">
               <p>
                 The writer describes the storm as a <em>&ldquo;furious beast&rdquo;</em>, using a{' '}
@@ -566,7 +587,8 @@ export default async function Paper1ReadingPage() {
               <p className="text-sm font-semibold text-primary">{_tr(`Sentence Structure`)}</p>
               <p className="mt-1 text-sm text-muted-foreground">
                 Short sentences for impact/tension. Long, complex sentences for detailed
-                description. Lists for emphasis.
+                description. Lists for emphasis. These comments earn credit only on top of comments
+                on the words themselves.
               </p>
             </div>
             <div className="rounded-lg border border-border p-4">

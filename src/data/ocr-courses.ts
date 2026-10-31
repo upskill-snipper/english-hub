@@ -5,6 +5,25 @@ import type { CourseData, CourseQuiz, CourseModule } from './courses'
 // OCR GCSE English Language (J351) - Component 01 Modules
 // Communicating Information and Ideas
 // ═══════════════════════════════════════════════════════════════════════════════
+//
+// CORRECTED 31 October 2026 against the J351 guides in
+// src/data/mark-scheme-guides/ocr-lang-component01.ts and -component02.ts.
+// Both courses were written for papers OCR does not set. Component 01 had two
+// 20th or 21st-century texts, Q2 as a 6-8 mark language question, Q3 as an 8-10
+// mark comparison, Q4 as a 12-14 mark evaluation and TWO compulsory writing tasks,
+// Q5 (16 marks) and Q6 (24). It pairs a 19th-century text with a 20th or
+// 21st-century one and asks Q1 4 (retrieval), Q2 6 (synthesis), Q3 12 (language
+// and structure) and Q4 18 (evaluation 12 + comparison 6), then ONE writing task,
+// Question 5 or 6, for 40 (AO5 24 + AO6 16). Component 02 had one fiction extract,
+// a language Q2, a separate structure Q3 and a descriptive writing option. It
+// prints two 20th or 21st-century literary prose texts and asks Q1 4, Q2 6 and
+// Q3 12 (both language and structure) and Q4 18, then one creative task from two
+// (in the papers checked, a story from a title or personal writing). The modules
+// keep their skills teaching and now say which question each skill serves.
+// Second read, 31 October 2026: the questions named Text 1 and Text 2 as a rule;
+// the guides have that numbering only for the papers they checked, so the text
+// says "one text" and "the other text". The worked walkthrough set Q1 on the
+// council article as "Text 1" and Q3 on the same article as "Text 2".
 
 const c1Modules: CourseModule[] = [
   // ──────────────────────────────────────────────
@@ -17,29 +36,28 @@ const c1Modules: CourseModule[] = [
     content: `
 <h2>OCR GCSE English Language - Component 01: Communicating Information and Ideas</h2>
 
-<p>Component 01 is one of two examined components in the OCR GCSE English Language specification (J351). It focuses on <strong>non-fiction reading</strong> and <strong>transactional writing</strong>. The paper is worth <strong>80 marks</strong> and accounts for <strong>50%</strong> of the total GCSE. You have <strong>2 hours</strong> to complete two sections.</p>
+<p>Component 01 is one of two examined components in the OCR GCSE English Language specification (J351). It focuses on <strong>non-fiction reading</strong> and <strong>non-fiction writing</strong>. The paper is worth <strong>80 marks</strong> and accounts for <strong>50%</strong> of the total GCSE. You have <strong>2 hours</strong> to complete two sections.</p>
 
 <div class="key-term"><strong>Key Term: Transactional Writing</strong> - Writing that serves a clear, real-world purpose and addresses a specific audience. Forms include letters, articles, speeches, reports, and reviews. The writing must persuade, inform, advise, argue, or explain - always with a clear sense of audience and purpose.</div>
 
 <h3>Paper Structure at a Glance</h3>
 <ul>
-  <li><strong>Section A - Reading (40 marks):</strong> You are given two unseen non-fiction texts (one from the 20th century, one from the 21st century or vice versa) and answer a series of questions testing comprehension, language analysis, comparison, and evaluation.</li>
-  <li><strong>Section B - Writing (40 marks):</strong> Two transactional writing tasks. You must complete <strong>both</strong> - a shorter task (16 marks) and a longer task (24 marks).</li>
+  <li><strong>Section A - Reading (40 marks):</strong> You are given two unseen non-fiction texts in a Reading Insert, one from the 19th century and one from the 20th or 21st century, and answer four questions testing retrieval, synthesis, language and structure analysis, evaluation and comparison.</li>
+  <li><strong>Section B - Writing (40 marks):</strong> One piece of non-fiction writing, such as a speech, letter or article. You choose <strong>one</strong> of two tasks: Question 5 or Question 6.</li>
 </ul>
 
 <h3>Section A - Reading Question Breakdown</h3>
-<p>OCR structures the reading section around both texts. The questions progress from straightforward retrieval to more demanding analysis and comparison:</p>
+<p>OCR structures the reading section around both texts. The questions build from short answers to a long answer on both texts:</p>
 <ol>
-  <li><strong>Q1 (a-d) - Retrieval and inference (various marks):</strong> Short questions testing your ability to identify explicit and implicit information from Text 1.</li>
-  <li><strong>Q2 - Language analysis (6-8 marks):</strong> Analyse how the writer uses language to create meaning and effect, typically focused on one of the texts.</li>
-  <li><strong>Q3 - Comparison (8-10 marks):</strong> Compare how the two writers present their ideas, perspectives, or experiences on a shared theme.</li>
-  <li><strong>Q4 - Evaluation (12-14 marks):</strong> Evaluate how successfully a writer achieves their purpose, supporting your judgement with evidence from the text.</li>
+  <li><strong>Q1 - Retrieval (4 marks, AO1):</strong> Short questions, in two or three parts, on a set of lines from one of the texts. A part may ask for a word, a phrase or a quotation, or for a point explained in your own words.</li>
+  <li><strong>Q2 - Bringing the texts together (6 marks, AO1):</strong> Write about a link between the two texts that the question names, with evidence from both. This is synthesis: there are no marks here for analysing language.</li>
+  <li><strong>Q3 - Language and structure (12 marks, AO2):</strong> Analyse how the writer of one of the texts uses language and structure to create the effect the question names.</li>
+  <li><strong>Q4 - Evaluation and comparison (18 marks, AO4 12 + AO3 6):</strong> Respond to a statement about both texts: decide how far you agree, and compare the writers' ideas and how they present them.</li>
 </ol>
 
-<h3>Section B - Writing Question Breakdown</h3>
+<h3>Section B - Writing</h3>
 <ol>
-  <li><strong>Q5 - Short writing task (16 marks):</strong> A focused transactional task such as a letter or a brief article (approximately 200-300 words).</li>
-  <li><strong>Q6 - Extended writing task (24 marks):</strong> A longer transactional piece - often a speech, article, or report requiring sustained argument or explanation (approximately 350-500 words).</li>
+  <li><strong>Question 5 or Question 6 (40 marks):</strong> Choose one task and write the non-fiction piece it asks for, such as a speech, a letter or an article, for the audience and purpose it names. Bullet points in the task suggest what to cover. The examiner marks content and organisation (AO5) out of 24 and technical accuracy (AO6) out of 16, then adds the two.</li>
 </ol>
 
 <h3>Assessment Objectives for Component 01</h3>
@@ -52,34 +70,32 @@ const c1Modules: CourseModule[] = [
   <li><strong>AO6</strong> - Use a range of vocabulary and sentence structures for clarity, purpose and effect, with accurate spelling and punctuation.</li>
 </ul>
 
-<div class="examiner-tip"><strong>Examiner Tip:</strong> OCR Component 01 gives you 2 hours - significantly more time than some other boards. Use this to your advantage. Spend roughly 1 hour on Section A and 1 hour on Section B. Within Section B, allocate about 20 minutes for Q5 and 35-40 minutes for Q6, leaving 5 minutes for proofreading.</div>
+<div class="examiner-tip"><strong>Examiner Tip:</strong> OCR Component 01 gives you 2 hours - significantly more time than some other boards. Use this to your advantage. OCR advises about 1 hour on Section A and 1 hour on Section B. Within Section B, spend 5 to 10 minutes planning, about 45 minutes writing and the last 5 minutes proofreading.</div>
 
 <h3>Recommended Timing Plan</h3>
 <ol>
-  <li><strong>0-10 min:</strong> Read both source texts carefully, underlining key ideas, techniques, and contrasts.</li>
-  <li><strong>10-25 min:</strong> Answer Q1 retrieval and inference questions.</li>
-  <li><strong>25-40 min:</strong> Answer Q2 language analysis question.</li>
-  <li><strong>40-55 min:</strong> Answer Q3 comparison question.</li>
-  <li><strong>55-65 min:</strong> Answer Q4 evaluation question.</li>
-  <li><strong>65-70 min:</strong> Plan Q5 response.</li>
-  <li><strong>70-85 min:</strong> Write Q5 response.</li>
-  <li><strong>85-90 min:</strong> Plan Q6 response.</li>
-  <li><strong>90-115 min:</strong> Write Q6 response.</li>
-  <li><strong>115-120 min:</strong> Proofread both writing tasks.</li>
+  <li><strong>0-12 min:</strong> Read both texts carefully, underlining key ideas, techniques, and contrasts.</li>
+  <li><strong>12-17 min:</strong> Answer Q1 (retrieval, 4 marks).</li>
+  <li><strong>17-25 min:</strong> Answer Q2 (bringing the texts together, 6 marks).</li>
+  <li><strong>25-40 min:</strong> Answer Q3 (language and structure, 12 marks).</li>
+  <li><strong>40-60 min:</strong> Answer Q4 (evaluation and comparison, 18 marks).</li>
+  <li><strong>60-70 min:</strong> Read both writing tasks, choose one and plan it.</li>
+  <li><strong>70-115 min:</strong> Write your response.</li>
+  <li><strong>115-120 min:</strong> Proofread your writing.</li>
 </ol>
 
-<div class="common-mistake"><strong>Common Mistake:</strong> Treating the two writing tasks equally. Q5 is worth 16 marks and Q6 is worth 24 marks. Students who spend 30 minutes on each task are over-investing in Q5 and under-investing in Q6. Always weight your time towards the higher-tariff question.</div>
+<div class="common-mistake"><strong>Common Mistake:</strong> Running over on the reading. Section B is worth 40 marks, half the paper, but it comes last, so it is the section that gets squeezed. A student who spends 75 minutes on Section A has 45 minutes left to plan, write and check a 40-mark piece. Stop the reading answers at the hour.</div>
 
 <h3>How OCR Differs from Other Boards</h3>
 <p>Understanding OCR-specific features helps you tailor your revision:</p>
 <ul>
-  <li><strong>Two writing tasks</strong> - unlike AQA or Edexcel which have one extended writing task, OCR requires two transactional pieces of different lengths.</li>
-  <li><strong>Comparison question</strong> - AO3 is directly tested in Component 01 through cross-text comparison, which is not always present in other boards' language papers.</li>
+  <li><strong>One writing task, from a choice of two:</strong> you write one piece, as you do on each AQA and Edexcel paper, and here you choose it from two tasks, each with its own form, audience and purpose (AQA's Paper 2 offers no choice).</li>
+  <li><strong>Comparison inside evaluation:</strong> AO3 is tested in Question 4, where you compare the writers' ideas and methods while judging a statement about both texts.</li>
   <li><strong>Text pairing</strong> - the two non-fiction texts are always linked thematically, making comparison more accessible if you identify the shared theme early.</li>
-  <li><strong>20th and 21st century texts</strong> - unlike Edexcel (which uses 19th-century texts), OCR focuses on more modern non-fiction, though some texts may be from the early 1900s.</li>
+  <li><strong>A 19th-century text beside a modern one:</strong> Component 01 pairs a 19th-century non-fiction text with one from the 20th or 21st century, as AQA's Paper 2 does. Component 02's two texts are both from the 20th or 21st century.</li>
 </ul>
 
-<div class="key-term"><strong>Key Term: Synthesis</strong> - The skill of drawing together information from two or more texts to form a combined understanding. In OCR Component 01, synthesis is tested when you are asked to compare or connect ideas across the two source texts.</div>
+<div class="key-term"><strong>Key Term: Synthesis</strong> - The skill of drawing together information from two or more texts to form a combined understanding. In OCR Component 01, synthesis is tested in Question 2, when you connect details from the two texts on a link the question names.</div>
 `,
     quiz: [
       {
@@ -93,10 +109,15 @@ const c1Modules: CourseModule[] = [
       {
         id: 'ocr-lc1-m1-q2',
         question: 'How many writing tasks must you complete in Section B?',
-        options: ['One', 'Two', 'Three', 'A choice of one from two'],
+        options: [
+          'Two, both compulsory',
+          'One, chosen from two tasks',
+          'Three',
+          'One, with no choice',
+        ],
         correct: 1,
         explanation:
-          'Section B contains two compulsory writing tasks - a shorter task worth 16 marks and a longer task worth 24 marks. Both must be completed.',
+          'Section B sets two tasks, Question 5 and Question 6, and you answer one of them. It is worth 40 marks: 24 for content and organisation (AO5) and 16 for technical accuracy (AO6).',
       },
       {
         id: 'ocr-lc1-m1-q3',
@@ -104,28 +125,28 @@ const c1Modules: CourseModule[] = [
         options: ['AO1', 'AO2', 'AO3', 'AO4'],
         correct: 2,
         explanation:
-          "AO3 tests comparison - the ability to compare writers' ideas and perspectives across two or more texts. This is a distinctive feature of OCR Component 01.",
+          "AO3 tests comparison - the ability to compare writers' ideas and perspectives across two or more texts. In Component 01 it is 6 of the 18 marks for Question 4, beside 12 for evaluation (AO4).",
       },
       {
         id: 'ocr-lc1-m1-q4',
         question: 'What types of non-fiction texts appear in Section A of Component 01?',
         options: [
           '19th-century texts only',
-          'One 20th-century and one 21st-century text (or similar pairing)',
+          'One 19th-century text and one from the 20th or 21st century',
           'Modern newspaper articles only',
           'Pre-1800 literary essays',
         ],
         correct: 1,
         explanation:
-          'OCR Component 01 uses two non-fiction texts from the 20th and/or 21st centuries, linked by a common theme. This differs from boards like Edexcel that use 19th-century sources.',
+          'OCR Component 01 pairs a 19th-century non-fiction text with one from the 20th or 21st century, linked by a common theme. Component 02 is the one with two 20th or 21st-century texts, and those are literary prose.',
       },
       {
         id: 'ocr-lc1-m1-q5',
-        question: 'How many marks is the longer writing task (Q6) worth?',
-        options: ['16 marks', '20 marks', '24 marks', '40 marks'],
+        question: 'How many marks is the Section B writing task worth?',
+        options: ['16 marks', '24 marks', '40 marks', '80 marks'],
         correct: 2,
         explanation:
-          'The longer writing task is worth 24 marks. Combined with Q5 (16 marks), Section B totals 40 marks - half of the entire paper.',
+          'The writing task is worth 40 marks, half of the entire paper: 24 for content and organisation (AO5) and 16 for technical accuracy (AO6). You answer one of two tasks.',
       },
     ],
   },
@@ -140,7 +161,7 @@ const c1Modules: CourseModule[] = [
     content: `
 <h2>Retrieval and Inference - Finding Information in Non-Fiction Texts</h2>
 
-<p>The opening questions of OCR Component 01 test your ability to locate <strong>explicit information</strong> and make <strong>inferences</strong> from a non-fiction text. These questions carry relatively few marks individually, but they set the foundation for the more analytical questions that follow and build your confidence early in the exam.</p>
+<p>The opening question of OCR Component 01, Question 1, tests your ability to locate <strong>explicit information</strong> in a set of lines from one of the texts, and sometimes to explain a point in a few words of your own. It is worth 4 marks, split into two or three parts, but it sets the foundation for the more analytical questions that follow and builds your confidence early in the exam. <strong>Inference</strong> matters beyond it: in Question 2 the best links between the two texts go past surface facts to shared ideas, attitudes or feelings, and Questions 3 and 4 depend on reading between the lines.</p>
 
 <div class="key-term"><strong>Key Term: Explicit Information</strong> - Facts, details, or ideas that are directly stated in the text. The answer can be found word-for-word or very closely paraphrased from the source material.</div>
 
@@ -161,7 +182,7 @@ const c1Modules: CourseModule[] = [
 <div class="examiner-tip"><strong>Examiner Tip:</strong> For retrieval questions, brevity is your friend. A single sentence or even a phrase is sufficient. You will not gain extra marks for explanation, and spending time elaborating means less time for higher-tariff questions.</div>
 
 <h3>Inference Questions - Reading Between the Lines</h3>
-<p>A typical OCR inference question might read: <em>"What impressions do you get of Maria from this extract? Support your answer with evidence from the text."</em></p>
+<p>OCR does not set a separate impressions question in Component 01, but practising one builds the skill every later question uses. Try: <em>"What impressions do you get of Maria from this extract? Support your answer with evidence from the text."</em></p>
 
 <p>Strong inference answers follow a <strong>Point-Evidence-Inference</strong> structure:</p>
 
@@ -250,7 +271,7 @@ const c1Modules: CourseModule[] = [
           'It tells you exactly what the examiner wants you to write',
           "It helps you understand the writer's purpose and audience, which informs your inferences",
           'It contains the correct answers',
-          'It is only relevant for the comparison question',
+          'It is only relevant for the comparison in Question 4',
         ],
         correct: 1,
         explanation:
@@ -269,7 +290,7 @@ const c1Modules: CourseModule[] = [
     content: `
 <h2>Analysing Language in Non-Fiction - How Writers Create Meaning and Effect</h2>
 
-<p>The language analysis question in OCR Component 01 typically asks you to examine how a writer uses language to achieve a specific effect. This question is worth <strong>6-8 marks</strong> and tests <strong>AO2</strong>: the ability to explain, comment on, and analyse how writers use language to achieve effects, using relevant subject terminology to support your views.</p>
+<p>Question 3 in OCR Component 01 asks you to explore how the writer of one text uses language and structure to create the effect the question names. It is worth <strong>12 marks</strong> and tests <strong>AO2</strong>: the ability to explain, comment on, and analyse how writers use language and structure to achieve effects, using relevant subject terminology to support your views. This module concentrates on language. In the exam, say how the text is built as well (how it opens, where the focus shifts, how sentences and paragraphs are shaped and how it ends): in OCR marking, an answer that does not give language and structure a fair share cannot reach the higher levels.</p>
 
 <div class="key-term"><strong>Key Term: Language Analysis</strong> - The close examination of a writer's word choices (diction), figurative language, sentence structures, and rhetorical techniques, with a focus on explaining the <em>effect</em> these choices have on the reader.</div>
 
@@ -382,14 +403,14 @@ const c1Modules: CourseModule[] = [
     title: "Comparing Writers' Viewpoints and Perspectives",
     duration: '55 min',
     content: `
-<h2>The Comparison Question - Comparing Writers' Viewpoints Across Two Texts</h2>
+<h2>Comparison in Question 4 - Comparing Writers' Viewpoints Across Two Texts</h2>
 
-<p>The comparison question is a distinctive feature of OCR Component 01 and tests <strong>AO3</strong>: the ability to compare writers' ideas and perspectives, and how these are conveyed, across two or more texts. This question is typically worth <strong>8-10 marks</strong> and requires you to move fluently between both source texts.</p>
+<p>Comparison is part of Question 4, which gives you a statement about both texts and asks how far you agree. It tests <strong>AO3</strong>, the ability to compare writers' ideas and perspectives, and how these are conveyed, across two or more texts, for <strong>6 of the question's 18 marks</strong>; the other 12 are for evaluation (AO4), in the next module. OCR accepts evaluation and comparison woven together all the way through, so the comparing you practise here belongs inside your Question 4 answer, moving fluently between both texts. The same linking skill serves Question 2, where you bring details from both texts together.</p>
 
 <div class="key-term"><strong>Key Term: Perspective</strong> - A writer's attitude, viewpoint, or position on a topic. This is shaped by their personal experience, values, purpose, and the context in which they are writing. Two writers may address the same theme but hold very different perspectives.</div>
 
 <h3>What the Examiner Is Looking For</h3>
-<p>The comparison question asks you to do three things simultaneously:</p>
+<p>The comparison asks you to do three things simultaneously:</p>
 <ol>
   <li><strong>Identify each writer's viewpoint</strong> - What does each writer think or feel about the topic?</li>
   <li><strong>Compare those viewpoints</strong> - Are they similar, different, or do they share some common ground while diverging on others?</li>
@@ -457,7 +478,7 @@ const c1Modules: CourseModule[] = [
       },
       {
         id: 'ocr-lc1-m4-q2',
-        question: 'Which Assessment Objective does the comparison question test?',
+        question: 'Which Assessment Objective does the comparison in Question 4 test?',
         options: ['AO1', 'AO2', 'AO3', 'AO4'],
         correct: 2,
         explanation:
@@ -500,16 +521,16 @@ const c1Modules: CourseModule[] = [
     title: "Evaluating a Writer's Effectiveness",
     duration: '55 min',
     content: `
-<h2>Critical Evaluation - Judging How Successfully a Writer Achieves Their Purpose</h2>
+<h2>Critical Evaluation - Judging a Statement About the Texts</h2>
 
-<p>The evaluation question in OCR Component 01 is typically the highest-tariff reading question, worth <strong>12-14 marks</strong>. It tests <strong>AO4</strong>: the ability to evaluate texts critically and support your evaluation with appropriate textual references. Unlike analysis (which asks "how does the writer do this?"), evaluation asks "how <em>well</em> does the writer do this?"</p>
+<p>Question 4 is the highest-tariff reading question in OCR Component 01, worth <strong>18 marks</strong>: 12 for evaluation and 6 for comparison (the previous module). Its evaluation tests <strong>AO4</strong>: the ability to evaluate texts critically and support your evaluation with appropriate textual references. Unlike analysis (which asks "how does the writer do this?"), evaluation asks "how <em>well</em> does the writer do this?"</p>
 
 <div class="key-term"><strong>Key Term: Evaluation</strong> - Making a critical judgement about the effectiveness of a writer's choices. You are not simply explaining what the writer does - you are assessing how successfully their techniques achieve the intended purpose or effect.</div>
 
 <h3>Practice Extract</h3>
 <div class="text-extract">Imagine a world in which no child goes hungry. It sounds impossible - the kind of vague promise politicians make on campaign trails and quietly forget once the votes are counted. But the charity FeedForward has proved that systemic change is not only possible; it is happening. In the last three years, FeedForward has redistributed 42 million meals from supermarket surplus that would otherwise have rotted in landfill. Forty-two million. That is not a slogan. That is not a manifesto pledge. That is food on plates, in homes, in the stomachs of children who would otherwise have gone to bed hungry. And yet, astonishingly, the government has cut FeedForward's funding by 30%.<div class="source">Adapted from a charity campaign article, 2022</div></div>
 
-<p>A typical evaluation question might read: <em>"The writer makes the reader feel strongly that the government's decision to cut funding is wrong. To what extent do you agree with this view?"</em></p>
+<p>In the exam the statement is about both texts, and you decide how far you agree; your view can differ between the two. To practise the evaluating on one text first, try: <em>"The writer makes the reader feel strongly that the government's decision to cut funding is wrong. To what extent do you agree with this view?"</em> Then, with two texts, make each judgement for both and compare them as you go.</p>
 
 <h3>The Evaluation Framework</h3>
 <p>Strong evaluation answers follow this pattern:</p>
@@ -586,7 +607,7 @@ const c1Modules: CourseModule[] = [
       },
       {
         id: 'ocr-lc1-m5-q3',
-        question: 'Which Assessment Objective does the evaluation question test?',
+        question: 'Which Assessment Objective does the evaluation in Question 4 test?',
         options: ['AO1', 'AO2', 'AO3', 'AO4'],
         correct: 3,
         explanation:
@@ -742,7 +763,7 @@ const c1Modules: CourseModule[] = [
     content: `
 <h2>Writing Letters and Articles - Form, Purpose, and Audience</h2>
 
-<p>Section B of OCR Component 01 requires you to produce two pieces of transactional writing. This module focuses on two of the most commonly tested forms: <strong>formal letters</strong> and <strong>newspaper/magazine articles</strong>. The writing questions collectively test <strong>AO5</strong> (content and organisation) and <strong>AO6</strong> (technical accuracy).</p>
+<p>Section B of OCR Component 01 asks you to produce one piece of non-fiction writing, choosing Question 5 or Question 6. This module focuses on two of the most commonly tested forms: <strong>formal letters</strong> and <strong>newspaper/magazine articles</strong>. The writing task tests <strong>AO5</strong> (content and organisation, 24 marks) and <strong>AO6</strong> (technical accuracy, 16 marks).</p>
 
 <div class="key-term"><strong>Key Term: Form</strong> - The type or format of writing you are asked to produce. Each form has its own conventions (layout, tone, structure). In OCR Component 01, common forms include letters, articles, speeches, reports, and reviews.</div>
 
@@ -1078,7 +1099,7 @@ While students cite safety concerns - emergencies, parental contact - the eviden
 
 <p>In OCR Component 01, <strong>AO6</strong> accounts for a significant proportion of the writing marks. It assesses your ability to use a range of vocabulary and sentence structures for clarity, purpose, and effect, with <strong>accurate spelling and punctuation</strong>. Many students focus entirely on content (AO5) and neglect accuracy - this is a costly mistake.</p>
 
-<div class="key-term"><strong>Key Term: AO6 - Technical Accuracy</strong> - The Assessment Objective that rewards correct spelling, punctuation, and grammar, as well as varied and effective sentence structures. In OCR Component 01, AO6 marks are embedded within both writing tasks.</div>
+<div class="key-term"><strong>Key Term: AO6 - Technical Accuracy</strong> - The Assessment Objective that rewards correct spelling, punctuation, and grammar, as well as varied and effective sentence structures. In OCR Component 01, AO6 is 16 of the 40 marks for the writing task.</div>
 
 <h3>Punctuation That Makes a Difference</h3>
 
@@ -1162,14 +1183,14 @@ While students cite safety concerns - emergencies, parental contact - the eviden
 <div class="key-term"><strong>Key Term: Subordinate Clause</strong> - A clause that cannot stand alone as a complete sentence and depends on a main clause for its meaning. It often begins with a subordinating conjunction (although, because, while, if, when, unless). Example: "Although the rain was heavy, the match continued." - "Although the rain was heavy" is the subordinate clause.</div>
 
 
-<h3>The 80-Minute Exam Broken Down: A Worked Walkthrough</h3>
-<p><strong>Scenario: You receive two non-fiction texts (one 20th century, one 21st century) and must answer all questions in Section A and complete both writing tasks in Section B.</strong></p>
+<h3>The 2-Hour Exam Broken Down: A Worked Walkthrough</h3>
+<p><strong>Scenario: You receive two non-fiction texts, one from the 19th century and one from the 21st, and must answer all four questions in Section A and one of the two writing tasks in Section B.</strong></p>
 
-<p><strong>Minutes 0-10: READ AND ANNOTATE</strong></p>
-<div class="examiner-tip">Many students read the questions first, then read the text. This is inefficient. Read the texts fully and mark key ideas, techniques, and turning points. Underline surprising claims. Mark dates and sources. This takes 8 minutes but saves time later because you won't need to reread.</div>
+<p><strong>Minutes 0-12: READ AND ANNOTATE</strong></p>
+<div class="examiner-tip">Many students read the questions first, then read the text. This is inefficient. Read the texts fully and mark key ideas, techniques, and turning points. Underline surprising claims. Mark dates and sources. This takes about 12 minutes but saves time later because you won't need to reread.</div>
 
-<p><strong>Minutes 10-25: ANSWER Q1 (RETRIEVAL)</strong></p>
-<p>This is your confidence-building section. Each question is worth 1-2 marks. You can earn 8-10 marks here with accuracy and care. Slow down. Use quotation marks. Be precise. If a question asks "What time did the event occur?" and the text says "at half past three," write "3:30 p.m." - not "afternoon." Precision earns marks.</p>
+<p><strong>Minutes 12-17: ANSWER Q1 (RETRIEVAL, 4 MARKS)</strong></p>
+<p>This is your confidence-building question: two or three short parts on a set of lines from one of the texts, with one mark for each correct point. Slow down. Use quotation marks where a part asks for a quotation. Be precise. If a question asks "What time did the event occur?" and the text says "at half past three," write "3:30 p.m.", not "afternoon". Precision earns marks.</p>
 
 <p><strong>Worked Example:</strong></p>
 <div class="text-extract">
@@ -1179,70 +1200,64 @@ Text extract: "The council states that it must close the library due to insuffic
 
 <p><strong>Good Response:</strong> The council claims there is "insufficient funding in the 2024 budget" and "declining visitor numbers."</p>
 
-<p><strong>Minutes 25-40: ANSWER Q2 (LANGUAGE ANALYSIS)</strong></p>
-<p>This question asks you to analyze a specific technique or phrase. You will use PEE: Point (what technique), Evidence (the quote), Explanation (why the writer used it and what effect it achieves).</p>
+<p><strong>Minutes 17-25: ANSWER Q2 (BRINGING THE TEXTS TOGETHER, 6 MARKS)</strong></p>
+<p>This asks about a link between the two texts that the question names, for example what the two writers value or have in common. Make three linked points, each with a short piece of evidence from both texts. There are no marks here for analysing language, so keep the analysis for Question 3.</p>
 
 <p><strong>Worked Example:</strong></p>
 <div class="text-extract">
-Q2: The writer uses the phrase "the quiet heart of the community." Analyze the effect of the words "quiet" and "heart."
+Q2: What do the two writers both value about public libraries? Use evidence from both texts.
 </div>
 
-<p><strong>Grade 9 Response:</strong></p>
+<p><strong>Strong Response (excerpt):</strong></p>
 <div class="model-answer">
-The word "heart" suggests the library is central to the community's survival and wellbeing - not peripheral but vital. The modifier "quiet" subverts expectation: we might expect a "beating" or "strong" heart, but "quiet" suggests that the library's most important work happens privately, without fanfare. Libraries don't shout their value; they work steadily. This combination creates pathos - the library's humility and understatement make its potential loss more tragic.
+Both writers value the library as a place that belongs to everyone. The 19th-century writer calls it a room where "the labourer and the scholar sit at one table", and the modern writer describes "pensioners and toddlers sharing the same carpet". Both also see it as a way to improve your life: the earlier text praises "the working man's university", while the modern article quotes a reader who "learned English from these shelves".
 </div>
 
-<p><strong>Minutes 40-55: ANSWER Q3 (COMPARISON)</strong></p>
-<p>This asks how the two texts compare in viewpoint, tone, or approach to the same topic. Use comparative language: "whereas," "similarly," "in contrast," "both texts." Provide evidence from both texts - not one longer quote from Text A and one brief reference to Text B.</p>
+<p><strong>Minutes 25-40: ANSWER Q3 (LANGUAGE AND STRUCTURE, 12 MARKS)</strong></p>
+<p>This asks how the writer of one text uses language and structure to create the effect the question names. Use PEE: Point (what technique), Evidence (the quote), Explanation (why the writer used it and what effect it achieves), and say how the text is built as well as which words it uses: an answer that leaves structure out cannot reach the higher levels.</p>
 
 <p><strong>Worked Example:</strong></p>
 <div class="text-extract">
-Q3: How do the two texts differ in their stance on funding public institutions?
+Q3: How does the writer of the 21st-century article use language and structure to show how much the library matters to its community?
 </div>
 
-<p><strong>Grade 9 Response (excerpt):</strong></p>
+<p><strong>Strong Response (excerpt):</strong></p>
 <div class="model-answer">
-The 20th-century text argues that institutions like libraries are "investments in knowledge" and defends public funding as a moral obligation. By contrast, the 21st-century article adopts a cost-benefit analysis, citing "declining footfall" and "budget pressures" as the primary determinant of value. The first text values culture; the second values efficiency. This shift reflects changing attitudes toward what government should fund.
+The word "heart" suggests the library is central to the community's survival and wellbeing: not peripheral but vital. The modifier "quiet" subverts expectation: we might expect a "beating" or "strong" heart, but "quiet" suggests that the library's most important work happens privately, without fanfare. Libraries don't shout their value; they work steadily. Structurally, the writer holds this image back until the final paragraph, after the council's figures, so the article ends on what would be lost rather than on what it costs. This combination creates pathos: the library's humility and understatement make its potential loss more tragic.
 </div>
 
-<p><strong>Minutes 55-65: ANSWER Q4 (EVALUATION)</strong></p>
-<p>This is the highest-tariff question. You must judge how effectively the writer has argued their position, using evidence. Use phrases like "the writer persuades the reader through," "the evidence is convincing because," "however, this argument is weakened by."</p>
+<p><strong>Minutes 40-60: ANSWER Q4 (EVALUATION AND COMPARISON, 18 MARKS)</strong></p>
+<p>This is the highest-tariff question: a statement about both texts, with 12 marks for evaluating it and 6 for comparing the writers. Give your verdict, judge each text with evidence, and compare how the writers present their ideas. Use phrases like "the writer persuades the reader through," "the evidence is convincing because," "however, this argument is weakened by," "whereas" and "in contrast".</p>
 
 <p><strong>Worked Example:</strong></p>
 <div class="text-extract">
-Q4: To what extent does the writer convince you that the library closure is a mistake?
+Q4: "Both writers convince the reader that libraries are worth saving." How far do you agree with this statement?
 </div>
 
-<p><strong>Grade 9 Response (excerpt):</strong></p>
+<p><strong>Strong Response (excerpt):</strong></p>
 <div class="model-answer">
-The writer persuades through emotional appeal and logical argument. The image of the community losing "the quiet heart" generates sympathy, whilst statistical evidence about visitor demographics provides rational support. However, the argument might be strengthened by acknowledging the council's financial constraints. The writer does not engage with the opposing view, which somewhat weakens the overall persuasiveness. On balance, the personal narratives embedded in the text are most convincing: real voices of community members carry more weight than abstract argument.
+I agree, though each writer convinces in a different way. The 19th-century writer argues that institutions like libraries are "investments in knowledge" and defends public funding as a moral obligation: confident and principled, but the case is asserted rather than proved, because the writer expects readers to share it already. The modern writer has to answer the council's reasons, "insufficient funding" and "declining visitor numbers", and persuades through emotional appeal and logical argument: the image of the community losing "the quiet heart" generates sympathy, whilst statistical evidence about who uses the library provides rational support. Whereas the earlier text appeals to principle, the later one appeals to people, and its real voices of community members carry more weight than abstract argument. Even so, the modern argument would be stronger if it engaged with the council's financial constraints, which it barely acknowledges.
 </div>
 
-<p><strong>Minutes 65-70: PLAN Q5 (SHORT WRITING TASK, 16 MARKS)</strong></p>
-<p>Spend 5 minutes planning. Jot: purpose (persuade/inform/explain?), audience (who am I writing for?), form (letter/article/speech?), three key points you'll make. This prevents rambling and ensures structure.</p>
+<p><strong>Minutes 60-70: CHOOSE AND PLAN YOUR WRITING TASK (QUESTION 5 OR 6, 40 MARKS)</strong></p>
+<p>Read both tasks, then choose the one whose form and audience you can write best. Spend 5 to 10 minutes planning. Jot: purpose (persuade/inform/explain?), audience (who am I writing for?), form (letter/article/speech?), and four or five key points in order, with an ending that links back to your opening. This prevents rambling and ensures structure.</p>
 
-<p><strong>Minutes 70-85: WRITE Q5</strong></p>
-<p>Write purposefully. Your opening line should establish voice and purpose immediately. Aim for 250-300 words. Quality over quantity. Every sentence should advance your argument or develop your idea. Do not repeat points just to fill space.</p>
-
-<p><strong>Minutes 85-90: PLAN Q6 (EXTENDED WRITING TASK, 24 MARKS)</strong></p>
-<p>This is the largest task. Spend 5 minutes planning three or four main ideas. Brief jottings. This is your scaffolding.</p>
-
-<p><strong>Minutes 90-115: WRITE Q6</strong></p>
-<p>Aim for 400-500 words. Pace yourself: roughly 8-10 minutes per main idea, including introduction and conclusion. Vary your sentence structures. Include specific evidence or examples. This is where you demonstrate control and sophistication.</p>
+<p><strong>Minutes 70-115: WRITE YOUR RESPONSE</strong></p>
+<p>Write purposefully. Your opening line should establish voice and purpose immediately. Pace yourself: roughly 8 to 10 minutes per main idea, including introduction and conclusion. Quality over quantity: every sentence should advance your argument or develop your idea, so do not repeat points just to fill space. Vary your sentence structures and include specific evidence or examples. This is where you demonstrate control and sophistication.</p>
 
 <p><strong>Minutes 115-120: PROOFREAD</strong></p>
 <p>Spend your final 5 minutes on spelling, punctuation, and clarity. Read aloud if possible. Look specifically for:</p>
 <ul>
-<li>Spelling of subject-specific terms (if analyzing an article about technology, spell "algorithm" correctly)</li>
+<li>Spelling of subject-specific terms (if writing about technology, spell "algorithm" correctly)</li>
 <li>Apostrophes in "it's" vs. "its"</li>
 <li>Sentence boundaries (no comma splices)</li>
-<li>Technical accuracy in writing tasks (AO6 marks)</li>
+<li>Technical accuracy throughout your writing (AO6 is 16 of the 40 marks)</li>
 </ul>
 
 <h3>Common Exam Day Mistakes</h3>
 <div class="common-mistake"><strong>Mistake 1: Spending too long on reading.</strong> Don't annotate every word. Mark key claims, techniques, and turning points. Move on.</div>
-<div class="common-mistake"><strong>Mistake 2: Overshooting on Q3 and Q4.</strong> Students often write 2000 words of analysis on Q4 and then rush through writing tasks. Watch your time. Q4 should be roughly 300-400 words.</div>
-<div class="common-mistake"><strong>Mistake 3: Writing without planning writing tasks.</strong> A quick plan prevents structure breakdown and rambling. 5 minutes planning saves 15 minutes writing.</div>
+<div class="common-mistake"><strong>Mistake 2: Overshooting on Q3 and Q4.</strong> Students often write far too much analysis on Q4 and then rush the writing task, which is worth 40 marks. Watch your time: stop Section A at the hour. Q4 should be roughly 300-400 words.</div>
+<div class="common-mistake"><strong>Mistake 3: Writing without planning.</strong> A quick plan prevents structure breakdown and rambling. 5 minutes planning saves 15 minutes writing.</div>
 <div class="common-mistake"><strong>Mistake 4: Skipping the final 5 minutes.</strong> Proofreading catches the careless errors that cost you marks - and they are easy to lose if you're exhausted.</div>
 
 `,
@@ -1317,16 +1332,14 @@ The writer persuades through emotional appeal and logical argument. The image of
 <h3>The Complete Timing Plan (Revised)</h3>
 <table>
   <tr><th>Time</th><th>Task</th><th>Marks</th></tr>
-  <tr><td>0-10 min</td><td>Read both source texts carefully, underlining key ideas and techniques</td><td>-</td></tr>
-  <tr><td>10-25 min</td><td>Answer Q1 (retrieval and inference questions)</td><td>Varies</td></tr>
-  <tr><td>25-40 min</td><td>Answer Q2 (language analysis)</td><td>6-8</td></tr>
-  <tr><td>40-55 min</td><td>Answer Q3 (comparison)</td><td>8-10</td></tr>
-  <tr><td>55-65 min</td><td>Answer Q4 (evaluation)</td><td>12-14</td></tr>
-  <tr><td>65-70 min</td><td>Plan Q5 (short writing task)</td><td>-</td></tr>
-  <tr><td>70-85 min</td><td>Write Q5</td><td>16</td></tr>
-  <tr><td>85-90 min</td><td>Plan Q6 (extended writing task)</td><td>-</td></tr>
-  <tr><td>90-115 min</td><td>Write Q6</td><td>24</td></tr>
-  <tr><td>115-120 min</td><td>Proofread all writing</td><td>-</td></tr>
+  <tr><td>0-12 min</td><td>Read both texts carefully, underlining key ideas and techniques</td><td>-</td></tr>
+  <tr><td>12-17 min</td><td>Answer Q1 (retrieval)</td><td>4</td></tr>
+  <tr><td>17-25 min</td><td>Answer Q2 (bringing the texts together)</td><td>6</td></tr>
+  <tr><td>25-40 min</td><td>Answer Q3 (language and structure)</td><td>12</td></tr>
+  <tr><td>40-60 min</td><td>Answer Q4 (evaluation and comparison)</td><td>18</td></tr>
+  <tr><td>60-70 min</td><td>Read both writing tasks, choose Question 5 or 6, and plan it</td><td>-</td></tr>
+  <tr><td>70-115 min</td><td>Write your response</td><td>40</td></tr>
+  <tr><td>115-120 min</td><td>Proofread your writing</td><td>-</td></tr>
 </table>
 
 <div class="examiner-tip"><strong>Examiner Tip:</strong> The single biggest reason students underperform on Component 01 is <strong>poor time management</strong>. Students who spend too long perfecting their reading answers leave themselves rushed for writing - which is worth <em>half the paper</em>. Set a watch on your desk and stick to the timing plan. No reading answer is worth sacrificing your writing performance for.</div>
@@ -1334,29 +1347,28 @@ The writer persuades through emotional appeal and logical argument. The image of
 <h3>Full Practice Walkthrough</h3>
 <p>Here is how you should approach the exam from the moment you open the paper:</p>
 
-<h4>Step 1: Read Both Texts (10 minutes)</h4>
+<h4>Step 1: Read Both Texts (about 12 minutes)</h4>
 <p>Do not rush this. Read each text twice:</p>
 <ul>
   <li><strong>First read:</strong> Understand the overall meaning, topic, and tone.</li>
   <li><strong>Second read:</strong> Underline key techniques, powerful word choices, and structural features. Note differences between the texts in the margin.</li>
 </ul>
 
-<h4>Step 2: Answer Reading Questions (55 minutes)</h4>
+<h4>Step 2: Answer Reading Questions (about 48 minutes)</h4>
 <ul>
-  <li><strong>Q1:</strong> Quick retrieval. Do not over-think. Find, quote, move on.</li>
-  <li><strong>Q2:</strong> What-How-Why for 2-3 language points. Zoom into word-level analysis. Use the terminology from Module 3.</li>
-  <li><strong>Q3:</strong> Integrated comparison. Discuss both texts in every paragraph. Compare methods as well as ideas (Module 4).</li>
-  <li><strong>Q4:</strong> State your judgement, support with evidence, consider counter-arguments, conclude with a nuanced view (Module 5).</li>
+  <li><strong>Q1 (4 marks):</strong> Quick retrieval from the lines named. Do not over-think. Find, quote, move on.</li>
+  <li><strong>Q2 (6 marks):</strong> Three links between the texts, each with evidence from both. No language analysis is needed (Module 4 covers linking the texts).</li>
+  <li><strong>Q3 (12 marks):</strong> What-How-Why for 2-3 language points, plus how the text is built. Zoom into word-level analysis. Use the terminology from Module 3.</li>
+  <li><strong>Q4 (18 marks):</strong> State your judgement on the statement, support it with evidence from both texts, compare the writers' ideas and methods as you go, and conclude with a nuanced view (Modules 4 and 5).</li>
 </ul>
 
-<h4>Step 3: Write Both Tasks (50 minutes)</h4>
+<h4>Step 3: Choose and Write One Task (about 55 minutes)</h4>
 <ul>
-  <li><strong>Q5 (15-18 min):</strong> Plan for 3 minutes. Write 200-300 words. Match form conventions precisely.</li>
-  <li><strong>Q6 (25-30 min):</strong> Plan for 5 minutes. Write 350-500 words. This is your showcase piece - deploy your best vocabulary, punctuation, and structural techniques.</li>
+  <li><strong>Question 5 or Question 6 (40 marks):</strong> Read both tasks and choose the one whose form and audience you can write best. Plan for 5 to 10 minutes, then write for about 45. This is your showcase piece: deploy your best vocabulary, punctuation, and structural techniques, and match form conventions precisely.</li>
 </ul>
 
 <h4>Step 4: Proofread (5 minutes)</h4>
-<p>Check writing tasks only (reading answers are unlikely to benefit from changes at this stage):</p>
+<p>Check your writing only (reading answers are unlikely to benefit from changes at this stage):</p>
 <ul>
   <li>Spelling errors - especially commonly misspelled words (Module 9)</li>
   <li>Missing punctuation - full stops, commas, apostrophes</li>
@@ -1365,7 +1377,7 @@ The writer persuades through emotional appeal and logical argument. The image of
 </ul>
 
 <h3>What to Do If You Run Out of Time</h3>
-<p>If you find yourself with only 10 minutes left and have not started Q6:</p>
+<p>If you find yourself with only 10 minutes left and have not started your writing task:</p>
 <ol>
   <li><strong>Write a quick plan</strong> - bullet points showing your intended structure. This can earn partial marks.</li>
   <li><strong>Write a strong opening paragraph</strong> - first impressions matter.</li>
@@ -1373,7 +1385,7 @@ The writer persuades through emotional appeal and logical argument. The image of
   <li><strong>Fill the middle with key points</strong> - even abbreviated, they show your argument.</li>
 </ol>
 
-<div class="common-mistake"><strong>Common Mistake:</strong> Abandoning the writing section because you ran out of time on reading. Even a partially completed writing task can earn significant marks. A well-written opening paragraph and plan might earn 10-12 marks, whereas an abandoned Q6 earns zero. Always attempt both writing tasks, even if briefly.</div>
+<div class="common-mistake"><strong>Common Mistake:</strong> Abandoning the writing section because you ran out of time on reading. Even a partially completed writing task can earn significant marks: a plan and a well-written opening paragraph still earn credit, whereas an abandoned writing task earns zero. Always attempt the writing, even if briefly.</div>
 
 <h3>Mindset and Exam Confidence</h3>
 <ul>
@@ -1392,7 +1404,7 @@ The writer persuades through emotional appeal and logical argument. The image of
   <li>Prepare your equipment: black pen, spare pen, watch (not a phone).</li>
 </ul>
 
-<div class="key-term"><strong>Key Term: Mark Allocation</strong> - The number of marks assigned to each question. In Component 01, marks range from 1 (simple retrieval) to 24 (extended writing). Your time and effort on each question should be proportional to its mark allocation. Spending equal time on every question is a common strategic error.</div>
+<div class="key-term"><strong>Key Term: Mark Allocation</strong> - The number of marks assigned to each question. In Component 01, the questions range from 4 marks (Question 1, whose parts can be worth a single mark) to 40 (the writing task). Your time and effort on each question should be proportional to its mark allocation. Spending equal time on every question is a common strategic error.</div>
 `,
     quiz: [
       {
@@ -1401,20 +1413,20 @@ The writer persuades through emotional appeal and logical argument. The image of
         options: ['1 hour 30 minutes', '1 hour 55 minutes', '2 hours', '2 hours 15 minutes'],
         correct: 2,
         explanation:
-          'OCR Component 01 is 2 hours (120 minutes). This must be divided between reading (approximately 65 minutes) and writing (approximately 50 minutes), with 5 minutes for proofreading.',
+          'OCR Component 01 is 2 hours (120 minutes). OCR advises about 1 hour on reading (Section A) and about 1 hour on writing (Section B), including planning and a final proofread.',
       },
       {
         id: 'ocr-lc1-m10-q2',
-        question: 'What should you do if you run out of time before starting Q6?',
+        question: 'What should you do if you run out of time before starting the writing task?',
         options: [
-          'Skip Q6 and go back to improve reading answers',
+          'Skip the writing task and go back to improve reading answers',
           'Write a plan and prioritise strong opening and closing paragraphs',
           'Ask for extra time',
           'Copy text from the source materials',
         ],
         correct: 1,
         explanation:
-          'A plan, strong opening, and strong closing can earn significant marks even if the response is incomplete. Abandoning Q6 entirely means losing up to 24 marks - always attempt both writing tasks.',
+          'A plan, strong opening, and strong closing can earn significant marks even if the response is incomplete. Abandoning the writing task entirely means losing up to 40 marks, half the paper: always attempt it.',
       },
       {
         id: 'ocr-lc1-m10-q3',
@@ -1431,11 +1443,12 @@ The writer persuades through emotional appeal and logical argument. The image of
       },
       {
         id: 'ocr-lc1-m10-q4',
-        question: 'According to the exam strategy, how long should you spend planning Q6?',
-        options: ['1 minute', '3 minutes', '5 minutes', '10 minutes'],
+        question:
+          'According to the exam strategy, how long should you spend planning your writing task?',
+        options: ['1 minute', '2 minutes', '5 to 10 minutes', '30 minutes'],
         correct: 2,
         explanation:
-          'Allow approximately 5 minutes to plan Q6. A clear plan ensures your extended writing task has a logical structure, coherent argument, and strong opening and closing - all of which are rewarded by AO5.',
+          'Allow 5 to 10 minutes to plan your writing. A clear plan ensures it has a logical structure, a coherent argument, and a strong opening and closing, all of which are rewarded by AO5.',
       },
     ],
   },
@@ -1472,13 +1485,13 @@ const c1Assessment: CourseQuiz[] = [
     question: 'What types of source texts appear in Section A?',
     options: [
       '19th-century fiction extracts',
-      'Two non-fiction texts from the 20th and/or 21st century',
+      'Two non-fiction texts, one from the 19th century and one from the 20th or 21st',
       'Shakespearean speeches',
       'Modern poetry',
     ],
     correct: 1,
     explanation:
-      'OCR Component 01 Section A contains two non-fiction texts from the 20th and/or 21st century, linked by a common theme.',
+      'OCR Component 01 Section A contains two non-fiction texts, one from the 19th century and one from the 20th or 21st century, linked by a common theme.',
   },
   {
     id: 'ocr-lc1-assess-4',
@@ -1574,10 +1587,15 @@ const c1Assessment: CourseQuiz[] = [
   {
     id: 'ocr-lc1-assess-11',
     question: 'How many writing tasks must you complete in Section B?',
-    options: ['One', 'Two', 'Three', 'A choice from three'],
+    options: [
+      'Two, both compulsory',
+      'One, chosen from two tasks',
+      'Three',
+      'One, chosen from three tasks',
+    ],
     correct: 1,
     explanation:
-      'Section B requires two transactional writing tasks: a shorter task (Q5, 16 marks) and a longer task (Q6, 24 marks). Both are compulsory.',
+      'Section B sets two tasks, Question 5 and Question 6, and you answer one: a piece of non-fiction writing worth 40 marks, 24 for content and organisation (AO5) and 16 for technical accuracy (AO6).',
   },
   {
     id: 'ocr-lc1-assess-12',
@@ -1663,7 +1681,7 @@ const c1Assessment: CourseQuiz[] = [
     options: [
       'Start answering Q1 immediately',
       'Read both source texts carefully, underlining key ideas and techniques',
-      'Plan your writing tasks',
+      'Plan your writing task',
       'Write your name and candidate number',
     ],
     correct: 1,
@@ -1714,52 +1732,54 @@ const c2Modules: CourseModule[] = [
     content: `
 <h2>OCR GCSE English Language - Component 02: Exploring Effects and Impact</h2>
 
-<p>Component 02 is the second examined component of the OCR GCSE English Language specification (J351). It focuses on <strong>fiction reading</strong> and <strong>imaginative/creative writing</strong>. The paper is worth <strong>80 marks</strong> and accounts for <strong>50%</strong> of the total GCSE. You have <strong>2 hours</strong> to complete two sections.</p>
+<p>Component 02 is the second examined component of the OCR GCSE English Language specification (J351). It focuses on <strong>reading literary prose</strong> (fiction and literary non-fiction) and <strong>creative writing</strong>. The paper is worth <strong>80 marks</strong> and accounts for <strong>50%</strong> of the total GCSE. You have <strong>2 hours</strong> to complete two sections.</p>
 
-<div class="key-term"><strong>Key Term: Imaginative/Creative Writing</strong> - Writing that prioritises originality, descriptive power, and narrative craft. This includes descriptive writing (evoking a scene, person, or atmosphere) and narrative writing (telling a story with character, setting, and plot). Unlike transactional writing, the primary purpose is to create an imaginative experience for the reader.</div>
+<div class="key-term"><strong>Key Term: Imaginative/Creative Writing</strong> - Writing that prioritises originality, descriptive power, and narrative craft. In OCR's tasks this means narrative writing (telling a story with character, setting, and plot) or personal writing about an experience, and both use description to evoke a scene, person, or atmosphere. Unlike transactional writing, the primary purpose is to create an imaginative experience for the reader.</div>
 
 <h3>Paper Structure at a Glance</h3>
 <ul>
-  <li><strong>Section A - Reading (40 marks):</strong> You are given one unseen fiction extract and answer questions testing comprehension, language analysis, structural analysis, and evaluation.</li>
-  <li><strong>Section B - Writing (40 marks):</strong> One extended creative/imaginative writing task - either a narrative or a descriptive piece.</li>
+  <li><strong>Section A - Reading (40 marks):</strong> You are given two unseen literary prose texts from the 20th or 21st century, at least one of them fiction (the other may be literary non-fiction, such as a memoir), and answer four questions testing retrieval, language and structure analysis, evaluation, and comparison.</li>
+  <li><strong>Section B - Writing (40 marks):</strong> One piece of creative writing, from a choice of two tasks.</li>
 </ul>
 
 <h3>Section A - Reading Question Breakdown</h3>
-<p>OCR structures the fiction reading section to progress from basic comprehension to sophisticated critical analysis:</p>
+<p>OCR structures the reading section to progress from short answers to a long answer on both texts:</p>
 <ol>
-  <li><strong>Q1 (a-c) - Retrieval and inference (various marks):</strong> Short questions testing your ability to identify explicit details and draw inferences from the fiction extract.</li>
-  <li><strong>Q2 - Language analysis (6-8 marks):</strong> Analyse how the writer uses language to create a specific effect (e.g. to build tension, create atmosphere, convey character).</li>
-  <li><strong>Q3 - Structure analysis (6-8 marks):</strong> Analyse how the writer uses structural features to shape meaning and engage the reader.</li>
-  <li><strong>Q4 - Evaluation (12-14 marks):</strong> Evaluate how effectively the writer achieves a specified purpose, supporting your judgement with textual evidence.</li>
+  <li><strong>Q1 - Retrieval (4 marks, AO1):</strong> Short questions on a set of lines from one text. You may be asked to pick out words or phrases, or to say briefly what something shows or why something happens.</li>
+  <li><strong>Q2 - Language and structure, short (6 marks, AO2):</strong> Explain how the writer uses language and structure in a short section of one text to create the effect the question names (e.g. to build tension, create atmosphere, convey character).</li>
+  <li><strong>Q3 - Language and structure (12 marks, AO2):</strong> Explore how the writer of the other text presents something the question names, such as a character's feelings or attitude, through the language and structure of the lines given.</li>
+  <li><strong>Q4 - Evaluation and comparison (18 marks, AO4 12 + AO3 6):</strong> Respond to a statement about both texts: decide how far you agree, and compare how the two writers present their ideas.</li>
 </ol>
+<p>In OCR's sample paper and its June 2024 paper, Questions 1 and 2 were on Text 1 and Question 3 on Text 2.</p>
 
 <h3>Section B - Writing</h3>
-<p>You will be given a choice of creative writing tasks - typically one narrative prompt and one descriptive prompt. You choose <strong>one</strong>.</p>
+<p>You will be given a choice of two creative writing tasks, linked to the theme of the reading texts. You choose <strong>one</strong>. In OCR's sample paper and its June 2024 paper they were:</p>
 <ul>
-  <li><strong>Narrative:</strong> Write a story based on a given prompt, image, or opening line.</li>
-  <li><strong>Descriptive:</strong> Write a description inspired by a given prompt, image, or scenario.</li>
+  <li><strong>A story:</strong> Write a story from a given title, with bullet points suggesting what to include.</li>
+  <li><strong>Personal writing:</strong> Write about an experience, with bullet points suggesting what to include, such as the setting or your thoughts and feelings.</li>
 </ul>
 
 <h3>Assessment Objectives for Component 02</h3>
 <ul>
   <li><strong>AO1</strong> - Identify and interpret explicit and implicit information and ideas.</li>
   <li><strong>AO2</strong> - Explain, comment on and analyse how writers use language and structure to achieve effects and influence readers, using relevant subject terminology.</li>
+  <li><strong>AO3</strong> - Compare writers' ideas and perspectives, as well as how these are conveyed, across two or more texts.</li>
   <li><strong>AO4</strong> - Evaluate texts critically and support this with appropriate textual references.</li>
   <li><strong>AO5</strong> - Communicate clearly, effectively and imaginatively, selecting and adapting tone, style and register. Organise information and ideas using structural and grammatical features.</li>
   <li><strong>AO6</strong> - Use a range of vocabulary and sentence structures for clarity, purpose and effect, with accurate spelling and punctuation.</li>
 </ul>
 
-<div class="examiner-tip"><strong>Examiner Tip:</strong> Component 02 differs from Component 01 in that it tests <strong>structure analysis</strong> as a separate question (Q3). This means you must be able to discuss structural techniques - such as shifts in focus, narrative perspective, pacing, and the use of beginnings, middles, and endings - distinctly from language. Prepare for this by practising structural analysis as a standalone skill.</div>
+<div class="examiner-tip"><strong>Examiner Tip:</strong> Component 02 tests <strong>language and structure</strong> twice: in Question 2 (6 marks) on a short section of one text, and in Question 3 (12 marks) on the other text. In both, an answer that gives structure no fair share cannot reach the higher levels. You must be able to discuss structural techniques, such as shifts in focus, narrative perspective, pacing, and the use of beginnings, middles, and endings, alongside language. Prepare for this by practising structural analysis as a skill in its own right.</div>
 
 <h3>Recommended Timing Plan</h3>
 <ol>
-  <li><strong>0-10 min:</strong> Read the fiction extract carefully, annotating language choices and structural features.</li>
-  <li><strong>10-20 min:</strong> Answer Q1 (retrieval and inference).</li>
-  <li><strong>20-35 min:</strong> Answer Q2 (language analysis).</li>
-  <li><strong>35-50 min:</strong> Answer Q3 (structure analysis).</li>
-  <li><strong>50-65 min:</strong> Answer Q4 (evaluation).</li>
-  <li><strong>65-75 min:</strong> Choose your writing task and plan it thoroughly.</li>
-  <li><strong>75-115 min:</strong> Write your creative piece.</li>
+  <li><strong>0-12 min:</strong> Read both texts carefully, annotating language choices and structural features.</li>
+  <li><strong>12-17 min:</strong> Answer Q1 (retrieval, 4 marks).</li>
+  <li><strong>17-25 min:</strong> Answer Q2 (language and structure, 6 marks).</li>
+  <li><strong>25-40 min:</strong> Answer Q3 (language and structure, 12 marks).</li>
+  <li><strong>40-60 min:</strong> Answer Q4 (evaluation and comparison, 18 marks).</li>
+  <li><strong>60-70 min:</strong> Choose your writing task and plan it thoroughly.</li>
+  <li><strong>70-115 min:</strong> Write your creative piece.</li>
   <li><strong>115-120 min:</strong> Proofread your writing.</li>
 </ol>
 
@@ -1767,11 +1787,11 @@ const c2Modules: CourseModule[] = [
 
 <h3>How Component 02 Differs from Component 01</h3>
 <ul>
-  <li><strong>Fiction vs non-fiction</strong> - Component 02 uses fiction extracts; Component 01 uses non-fiction.</li>
-  <li><strong>Structure question</strong> - Component 02 has a dedicated structural analysis question that Component 01 does not.</li>
-  <li><strong>No comparison</strong> - Component 02 has only one source text, so there is no AO3 comparison question.</li>
+  <li><strong>Literary prose vs non-fiction:</strong> Component 02's two texts are literary prose from the 20th or 21st century, at least one of them fiction; Component 01's are non-fiction, one of them from the 19th century.</li>
+  <li><strong>Two language and structure questions:</strong> Component 02 asks a short one (Question 2, 6 marks) as well as the 12-mark Question 3; in Component 01, Question 2 is synthesis instead.</li>
+  <li><strong>Comparison in both:</strong> Question 4 in each component asks you to evaluate a statement about both texts and compare them (AO3, 6 of its 18 marks).</li>
   <li><strong>Creative vs transactional writing</strong> - Component 02 asks for imaginative/creative writing; Component 01 asks for transactional writing.</li>
-  <li><strong>One writing task</strong> - Component 02 has a single extended writing task, whereas Component 01 has two.</li>
+  <li><strong>One writing task in each:</strong> both components set one piece of writing, chosen from two tasks, for 40 marks.</li>
 </ul>
 
 <div class="key-term"><strong>Key Term: Structural Analysis</strong> - Examining how a writer organises and sequences their text to create effects. This includes the opening and ending, shifts in focus or perspective, pacing, chronology, paragraph length, and how the reader's attention is directed through the text.</div>
@@ -1783,7 +1803,7 @@ const c2Modules: CourseModule[] = [
 Marcus had not spoken to his father in three years. The postcard arrived on a Tuesday - a beach scene, generic and impersonal - with a single line of handwriting. "I'm sorry." No signature. Marcus read it once, then twice, then placed it on the kitchen counter next to the empty coffee mug he'd left that morning. He left it there for a week. When his mother found it, she wept. Marcus felt nothing at all.
 </div>
 
-<p><strong>Inference Question (examiner style):</strong> What can we infer about Marcus's feelings toward his father's attempt at reconciliation?</p>
+<p><strong>Inference Question (practice):</strong> What can we infer about Marcus's feelings toward his father's attempt at reconciliation?</p>
 
 <p><strong>Model Response (Grade 9):</strong></p>
 <div class="model-answer">
@@ -1829,34 +1849,34 @@ Priya's reluctance to engage with the formal elements of the offer - she reads t
         options: ['1 hour 30 minutes', '1 hour 45 minutes', '1 hour 55 minutes', '2 hours'],
         correct: 3,
         explanation:
-          'OCR Component 02 is 2 hours long (120 minutes). This should be divided between reading (approximately 65 minutes) and writing (approximately 50 minutes), with 5 minutes for proofreading.',
+          'OCR Component 02 is 2 hours long (120 minutes). OCR advises about 1 hour on reading (Section A) and about 1 hour on writing (Section B), including planning and a final proofread.',
       },
       {
         id: 'ocr-lc2-m1-q2',
         question: 'What type of source text appears in Section A of Component 02?',
         options: [
-          'Two non-fiction texts',
-          'One unseen fiction extract',
+          'Two non-fiction texts, one of them from the 19th century',
+          'Two literary prose texts from the 20th or 21st century, at least one of them fiction',
           'A poem and a prose text',
-          'A non-fiction and a fiction text',
+          'One unseen fiction extract',
         ],
         correct: 1,
         explanation:
-          'Component 02 Section A contains one unseen fiction extract. You answer a series of questions testing comprehension, language analysis, structural analysis, and evaluation.',
+          'Component 02 Section A prints two unseen literary prose texts from the 20th or 21st century: at least one is fiction, and the other may be literary non-fiction such as a memoir. Component 01 is the one with a 19th-century text.',
       },
       {
         id: 'ocr-lc2-m1-q3',
         question:
           'What distinguishes Component 02 from Component 01 in terms of reading questions?',
         options: [
-          'Component 02 has a comparison question',
-          'Component 02 has a dedicated structural analysis question',
+          'Only Component 02 has a comparison question',
+          'Component 02 has two language and structure questions, where Component 01 has one and a synthesis question',
           'Component 02 has more retrieval questions',
           'Component 02 tests only language, not structure',
         ],
         correct: 1,
         explanation:
-          'Component 02 includes a dedicated question on structural analysis (Q3), which tests how the writer organises and sequences their text. Component 01 does not have this as a separate question.',
+          "Component 02's Question 2 (6 marks) and Question 3 (12 marks) both analyse language and structure. In Component 01, Question 2 is synthesis (bringing the two texts together) and only Question 3 analyses language and structure. Both components end the reading with Question 4, evaluation and comparison.",
       },
       {
         id: 'ocr-lc2-m1-q4',
@@ -1869,7 +1889,7 @@ Priya's reluctance to engage with the formal elements of the offer - she reads t
         ],
         correct: 0,
         explanation:
-          'Section B offers a choice between a narrative and a descriptive writing task. You choose and complete one extended creative piece worth 40 marks.',
+          "Section B offers a choice of two creative tasks (in OCR's sample and June 2024 papers, a story from a given title or personal writing about an experience). You choose and complete one piece worth 40 marks.",
       },
       {
         id: 'ocr-lc2-m1-q5',
@@ -1897,7 +1917,7 @@ Priya's reluctance to engage with the formal elements of the offer - she reads t
     content: `
 <h2>Comprehension and Inference in Fiction - Understanding Character, Setting, and Situation</h2>
 
-<p>The opening questions of Component 02 Section A test your ability to retrieve information and make inferences from a fiction extract. Fiction inference often centres on <strong>character</strong> - what a character thinks, feels, and is like - as well as <strong>setting</strong> and <strong>atmosphere</strong>.</p>
+<p>Question 1 of Component 02 (4 marks) tests your ability to retrieve information from a set of lines in one text, and sometimes to say briefly what something shows or why it happens. Inference runs through the rest of the paper too, because Questions 2 to 4 all depend on reading between the lines. Fiction inference often centres on <strong>character</strong> - what a character thinks, feels, and is like - as well as <strong>setting</strong> and <strong>atmosphere</strong>.</p>
 
 <div class="key-term"><strong>Key Term: Characterisation</strong> - The methods a writer uses to create and reveal a character. This includes what the character says (dialogue), what they do (actions), what they think (internal monologue), how they are described (appearance), and how others respond to them (reactions).</div>
 
@@ -2066,7 +2086,7 @@ Priya's reluctance to engage with the formal elements of the offer - she reads t
     content: `
 <h2>Analysing Language in Fiction - How Writers Create Atmosphere, Character, and Tension</h2>
 
-<p>The language analysis question in Component 02 (Q2) typically asks you to examine how a writer uses language to create a specific effect - often <strong>atmosphere</strong>, <strong>tension</strong>, or <strong>characterisation</strong>. This question is worth <strong>6-8 marks</strong> and tests <strong>AO2</strong>.</p>
+<p>Questions 2 and 3 in Component 02 ask you to examine how a writer uses language and structure to create a specific effect, often <strong>atmosphere</strong>, <strong>tension</strong>, or <strong>characterisation</strong>. Question 2 is worth <strong>6 marks</strong> and covers a short section of one text; Question 3 is worth <strong>12 marks</strong> and covers the other text. Both test <strong>AO2</strong>. This module concentrates on the language half; in the exam, each answer needs structure as well.</p>
 
 <div class="key-term"><strong>Key Term: Atmosphere</strong> - The mood or feeling that pervades a scene. Writers create atmosphere through setting, word choice, imagery, and pacing. Common atmospheres include: threatening, tranquil, claustrophobic, melancholic, euphoric, eerie, and oppressive.</div>
 
@@ -2106,7 +2126,7 @@ Priya's reluctance to engage with the formal elements of the offer - she reads t
   <li><strong>Power dynamics</strong> - Who speaks more? Who interrupts? Who asks questions and who gives orders?</li>
 </ul>
 
-<div class="common-mistake"><strong>Common Mistake:</strong> Confusing language analysis with structure analysis. Language analysis focuses on <em>word-level</em> and <em>phrase-level</em> choices - the writer's diction, imagery, and figurative language. Structure analysis (covered in the next module) focuses on how the text is <em>organised</em> - paragraph order, shifts in focus, pacing, and narrative sequence. OCR tests these as separate questions, so you must keep them distinct.</div>
+<div class="common-mistake"><strong>Common Mistake:</strong> Confusing language analysis with structure analysis. Language analysis focuses on <em>word-level</em> and <em>phrase-level</em> choices - the writer's diction, imagery, and figurative language. Structure analysis (covered in the next module) focuses on how the text is <em>organised</em> - paragraph order, shifts in focus, pacing, and narrative sequence. OCR marks them together in Questions 2 and 3, so know which is which and make sure each answer covers both.</div>
 
 <h3>Worked Example: Annotated Student Responses</h3>
 
@@ -2130,18 +2150,18 @@ Priya's reluctance to engage with the formal elements of the offer - she reads t
 <p><strong style="color: #006400;">Examiner Comment:</strong> This response goes far beyond technique identification. The student explains the precise mechanism by which personification creates unease: by granting agency, it makes something familiar become hostile. The observation about the colloquial tone ('any right') is sophisticated - showing that the student has understood the phrase's connotations beyond its literal meaning. The final statement about disorientation is a strong concluding interpretation that synthesises the analysis. Grade 9 analysis explains WHAT a technique does, HOW it works, and WHY it creates the specific emotional or atmospheric effect.</p>
 </div>
 
-<h3>Grade Boundary Breakdown: Language Analysis in Fiction</h3>
+<h3>Level by Level: Language in Question 3 (12 marks)</h3>
 
 <div style="border-left: 4px solid #006400; padding: 15px; margin: 15px 0; background-color: #f0f5f0;">
-<strong>Grade 9 (7-8 marks):</strong> Identifies and analyses sophisticated language techniques with precision. Explains the mechanism of each technique - how it works and why it creates the specified effect. Considers multiple layers of meaning (literal, connotative, emotional). Uses precise subject terminology. Makes sophisticated links between technique and reader experience. Shows that techniques work together to create cumulative effects.
+<strong>Top level (Level 6, 11-12 marks):</strong> Identifies and analyses sophisticated language techniques with precision. Explains the mechanism of each technique - how it works and why it creates the specified effect. Considers multiple layers of meaning (literal, connotative, emotional). Uses precise subject terminology. Makes sophisticated links between technique and reader experience. Shows that techniques work together to create cumulative effects.
 </div>
 
 <div style="border-left: 4px solid #0066cc; padding: 15px; margin: 15px 0; background-color: #f0f5f0;">
-<strong>Grade 7 (6 marks):</strong> Identifies several relevant language techniques. Explains what each technique does and how it contributes to atmosphere or effect. Uses appropriate terminology. Attempts to explain the connection between technique and reader response. Generally clear understanding of language analysis.
+<strong>Middle level (Level 4, 7-8 marks):</strong> Identifies several relevant language techniques. Explains what each technique does and how it contributes to atmosphere or effect. Uses appropriate terminology. Attempts to explain the connection between technique and reader response. Generally clear understanding of language analysis.
 </div>
 
 <div style="border-left: 4px solid #ff9900; padding: 15px; margin: 15px 0; background-color: #fffbf0;">
-<strong>Grade 5 (4-5 marks):</strong> Identifies some techniques (often with inaccuracy: "metaphor" for simile). Describes what a technique is or does, but analysis is limited. May list techniques without explaining their effect. Limited use of terminology. Weak link between technique and reader experience.
+<strong>Lower level (Level 2, 3-4 marks):</strong> Identifies some techniques (often with inaccuracy: "metaphor" for simile). Describes what a technique is or does, but analysis is limited. May list techniques without explaining their effect. Limited use of terminology. Weak link between technique and reader experience.
 </div>
 
 <h3>Practice Passage with Annotation Guide</h3>
@@ -2222,7 +2242,7 @@ Priya's reluctance to engage with the formal elements of the offer - she reads t
         ],
         correct: 1,
         explanation:
-          'Language analysis examines word-level and phrase-level choices (diction, imagery, figurative language). Structure analysis examines how the text is organised (paragraph order, shifts in focus, pacing). OCR tests these separately in Component 02.',
+          'Language analysis examines word-level and phrase-level choices (diction, imagery, figurative language). Structure analysis examines how the text is organised (paragraph order, shifts in focus, pacing). OCR assesses them together in Questions 2 and 3 of Component 02, so each answer needs both.',
       },
       {
         id: 'ocr-lc2-m3-q3',
@@ -2264,7 +2284,7 @@ Priya's reluctance to engage with the formal elements of the offer - she reads t
     content: `
 <h2>Analysing Structure - How Writers Organise Fiction to Create Effects</h2>
 
-<p>The structure question (Q3) in Component 02 is worth <strong>6-8 marks</strong> and tests <strong>AO2</strong>, but with a specific focus on how the text is <em>organised</em> rather than how individual words create effects. This is one of the most challenging questions for students because structure can feel abstract - but with the right framework, it becomes highly accessible.</p>
+<p>Structure is half of Questions 2 and 3 in Component 02 (<strong>6 and 12 marks</strong>), which test <strong>AO2</strong>: OCR asks you to analyse language and structure together, and an answer that leaves structure out cannot reach the higher levels. This module concentrates on structure, how the text is <em>organised</em> rather than how individual words create effects. It is one of the most challenging skills for students because structure can feel abstract - but with the right framework, it becomes highly accessible.</p>
 
 <div class="key-term"><strong>Key Term: Structure</strong> - The way a text is organised and sequenced to guide the reader's experience. In fiction, structure encompasses the order of events, shifts in focus, changes in pace, narrative perspective, paragraph length, and the relationship between the opening and ending.</div>
 
@@ -2367,18 +2387,18 @@ She answered it. Listened. The park was still bright, still impossibly still, bu
 <p><strong style="color: #006400;">Examiner Comment:</strong> This response demonstrates masterful structural analysis. The student explains the FUNCTION of structure (creating emotional investment before disruption), not just identifies it. The analysis of the single-sentence paragraph goes deep: explaining both HOW it works (brevity mimics suddenness) and WHY it matters (creates finality and weight). The concept of repetition-with-variation is sophisticated, and the student explains the structural irony it creates. The observation about cyclical pacing and its emotional effect shows understanding of how structure creates meaning. This is top-band structural analysis.</p>
 </div>
 
-<h3>Grade Boundary Breakdown: Structural Analysis in Fiction</h3>
+<h3>Level by Level: Structure in Question 3 (12 marks)</h3>
 
 <div style="border-left: 4px solid #006400; padding: 15px; margin: 15px 0; background-color: #f0f5f0;">
-<strong>Grade 9 (7-8 marks):</strong> Identifies sophisticated structural techniques (shifts in focus, pacing changes, cyclical patterns, repetition, juxtaposition, delayed reveals). Explains HOW each technique works and WHY it creates specific effects. Discusses how structural choices manipulate reader response. Avoids plot summary entirely. Uses structural terminology accurately. Shows understanding of cumulative structural effects.
+<strong>Top level (Level 6, 11-12 marks):</strong> Identifies sophisticated structural techniques (shifts in focus, pacing changes, cyclical patterns, repetition, juxtaposition, delayed reveals). Explains HOW each technique works and WHY it creates specific effects. Discusses how structural choices manipulate reader response. Avoids plot summary entirely. Uses structural terminology accurately. Shows understanding of cumulative structural effects.
 </div>
 
 <div style="border-left: 4px solid #0066cc; padding: 15px; margin: 15px 0; background-color: #f0f5f0;">
-<strong>Grade 7 (6 marks):</strong> Identifies some relevant structural techniques. Explains the relationship between structure and reader effect. Some awareness of why writers make structural choices. Generally clear analysis, though may lack sophistication in terminology or depth of insight.
+<strong>Middle level (Level 4, 7-8 marks):</strong> Identifies some relevant structural techniques. Explains the relationship between structure and reader effect. Some awareness of why writers make structural choices. Generally clear analysis, though may lack sophistication in terminology or depth of insight.
 </div>
 
 <div style="border-left: 4px solid #ff9900; padding: 15px; margin: 15px 0; background-color: #fffbf0;">
-<strong>Grade 5 (4-5 marks):</strong> Identifies some structural features (usually very obvious ones like isolated sentences). Often reverts to plot summary. Limited explanation of WHY structure matters. May confuse structural and language analysis. Weak understanding of how structure creates effect.
+<strong>Lower level (Level 2, 3-4 marks):</strong> Identifies some structural features (usually very obvious ones like isolated sentences). Often reverts to plot summary. Limited explanation of WHY structure matters. May confuse structural and language analysis. Weak understanding of how structure creates effect.
 </div>
 
 <h3>Practical Technique Guide: Structural Analysis Toolkit</h3>
@@ -2516,7 +2536,7 @@ She answered it. Listened. The park was still bright, still impossibly still, bu
     content: `
 <h2>Evaluating Fiction - How Effectively Does the Writer Achieve Their Purpose?</h2>
 
-<p>The evaluation question (Q4) in Component 02 is the highest-tariff reading question, worth <strong>12-14 marks</strong>. It tests <strong>AO4</strong> and requires you to make a critical judgement about the writer's effectiveness. In fiction, this typically means evaluating how successfully the writer creates atmosphere, builds tension, conveys character, or engages the reader's emotions.</p>
+<p>Question 4 is the highest-tariff reading question in Component 02, worth <strong>18 marks</strong>: 12 for evaluation (<strong>AO4</strong>) and 6 for comparison (AO3). It gives you a statement about both texts and asks how far you agree, which requires a critical judgement about each writer's effectiveness. In fiction, this typically means evaluating how successfully the writer creates atmosphere, builds tension, conveys character, or engages the reader's emotions. This module practises the evaluating on one text. In the exam, judge the statement in both texts (you can find it truer of one than the other) and compare how the writers present their ideas as you go.</p>
 
 <div class="key-term"><strong>Key Term: Critical Judgement</strong> - A reasoned opinion about the quality or effectiveness of a writer's work, supported by evidence. Critical judgement goes beyond "I liked it" to explain <em>why</em> something works (or doesn't) and <em>how</em> the writer achieves (or fails to achieve) their intended effect.</div>
 
@@ -2744,7 +2764,7 @@ She answered it. Listened. The park was still bright, still impossibly still, bu
     content: `
 <h2>Descriptive Writing - Evoking Scenes, Senses, and Atmosphere</h2>
 
-<p>If you choose the descriptive writing option in Section B of Component 02, your task is to create a vivid, immersive piece that evokes a scene, place, person, or moment. Unlike narrative writing, descriptive writing does <strong>not</strong> need a plot or sequence of events - its purpose is to create an <strong>atmosphere</strong> and engage the reader's senses.</p>
+<p>Description is a skill you use in whichever Section B task you choose. In OCR's sample paper and its June 2024 paper, the two tasks were a story from a given title and a piece of personal writing about an experience, and both reward vivid, precise description of setting, people and feelings, chosen to build a mood. This module teaches you to create a vivid, immersive passage that evokes a scene, place, person, or moment. A descriptive passage does <strong>not</strong> need a plot or sequence of events: its purpose is to create an <strong>atmosphere</strong> and engage the reader's senses, inside the story or account the task asks for.</p>
 
 <div class="key-term"><strong>Key Term: Descriptive Writing</strong> - A form of creative writing focused on evoking a scene, person, or atmosphere using sensory detail, figurative language, and careful structural choices. The goal is immersion - making the reader <em>feel</em> present in the described world.</div>
 
@@ -2786,7 +2806,7 @@ She answered it. Listened. The park was still bright, still impossibly still, bu
   <li><strong>Adjective overload</strong> - Using too many adjectives weakens rather than strengthens prose. "The dark, gloomy, sinister, ominous, frightening corridor" is exhausting. Choose one or two precise adjectives.</li>
   <li><strong>Telling emotions</strong> - "I felt peaceful" is weak. Instead, describe what creates the peace and let the reader feel it.</li>
   <li><strong>Losing structure</strong> - Without a plan, descriptive writing can become a random list of observations. Plan your movement through the scene.</li>
-  <li><strong>Drifting into narrative</strong> - If you chose the descriptive option, resist the urge to introduce a plot. You can include a <em>moment</em> (a bird taking flight, a door closing) but not a <em>story</em>.</li>
+  <li><strong>Cramming in events</strong> - In a descriptive passage, resist the urge to pile up plot. A <em>moment</em> (a bird taking flight, a door closing) described closely gives you more to work with than a crowded sequence of events.</li>
 </ul>
 
 <div class="common-mistake"><strong>Common Mistake:</strong> Writing descriptions that are entirely visual. "I could see..." repeated throughout produces flat, two-dimensional writing. Engaging smell, sound, and touch creates an immersive, three-dimensional world. Think of description as virtual reality for the reader - the more senses you activate, the more real the scene becomes.</div>
@@ -2834,18 +2854,18 @@ She answered it. Listened. The park was still bright, still impossibly still, bu
 <p><strong style="color: #006400;">Examiner Comment:</strong> This response demonstrates sophisticated descriptive technique. The opening personification ("exhaled silence") establishes an atmosphere immediately and sets the tone. The description of the door colour uses specific detail and simile to create visceral unease - the colour suggests decay without stating it. The engagement with multiple senses is sophisticated: sight ("stagnant water," "splinters of light"), smell (a "palimpsest" of scents), touch (implied through texture), and even temporal senses (the verdigris suggesting age). The student moves through the space systematically, and each detail contributes to the atmosphere of loss and time's passage. The metaphor of archaeology is sustained and meaningful. The ambiguity of "which March" adds intellectual depth - the reader is made to feel the disorientation of time decay. The final return to the opening personification creates circular structure. Grade 9 descriptive writing creates immersion through precise, multi-sensory detail and sustained figurative language.</p>
 </div>
 
-<h3>Grade Boundary Breakdown: Descriptive Writing</h3>
+<h3>Level by Level: Description and the AO5 Mark (24 marks)</h3>
 
 <div style="border-left: 4px solid #006400; padding: 15px; margin: 15px 0; background-color: #f0f5f0;">
-<strong>Grade 9 (22-24 marks for AO5):</strong> Creates vivid, immersive description using multiple senses and sustained figurative language. Shows sophisticated control of vocabulary and varied sentence structures. Uses structural techniques deliberately. Demonstrates originality and depth of imagination. Writing is compelling and engages the reader fully.
+<strong>Top level (Level 6, 21-24 marks for AO5):</strong> Creates vivid, immersive description using multiple senses and sustained figurative language. Shows sophisticated control of vocabulary and varied sentence structures. Uses structural techniques deliberately. Demonstrates originality and depth of imagination. Writing is compelling and engages the reader fully.
 </div>
 
 <div style="border-left: 4px solid #0066cc; padding: 15px; margin: 15px 0; background-color: #f0f5f0;">
-<strong>Grade 7 (18-20 marks for AO5):</strong> Creates clear, vivid description using some figurative language. Engages multiple senses. Varied sentence structures. Shows some originality. Description is generally well-controlled and engaging, though may lack the depth or originality of top-band responses.
+<strong>Level 5 (17-20 marks for AO5):</strong> Creates clear, vivid description using some figurative language. Engages multiple senses. Varied sentence structures. Shows some originality. Description is generally well-controlled and engaging, though may lack the depth or originality of top-band responses.
 </div>
 
 <div style="border-left: 4px solid #ff9900; padding: 15px; margin: 15px 0; background-color: #fffbf0;">
-<strong>Grade 5 (14-16 marks for AO5):</strong> Uses description but may rely heavily on telling rather than showing. Limited sensory engagement (usually sight only). Simple vocabulary and sentence structures. May include personal opinion. Limited originality - descriptions feel generic or clichéd.
+<strong>Level 3 (9-12 marks for AO5):</strong> Uses description but may rely heavily on telling rather than showing. Limited sensory engagement (usually sight only). Simple vocabulary and sentence structures. May include personal opinion. Limited originality - descriptions feel generic or clichéd.
 </div>
 
 <h3>Practice Passages: Guided Annotation</h3>
@@ -3311,13 +3331,13 @@ The beach smell of salt and something chemical - the ghost of last night's storm
 <h3>The Complete Timing Plan</h3>
 <table>
   <tr><th>Time</th><th>Task</th><th>Marks</th></tr>
-  <tr><td>0-10 min</td><td>Read the fiction extract carefully, annotating language and structural features</td><td>-</td></tr>
-  <tr><td>10-20 min</td><td>Answer Q1 (retrieval and inference)</td><td>Varies</td></tr>
-  <tr><td>20-35 min</td><td>Answer Q2 (language analysis)</td><td>6-8</td></tr>
-  <tr><td>35-50 min</td><td>Answer Q3 (structural analysis)</td><td>6-8</td></tr>
-  <tr><td>50-65 min</td><td>Answer Q4 (evaluation)</td><td>12-14</td></tr>
-  <tr><td>65-75 min</td><td>Choose writing task and plan thoroughly</td><td>-</td></tr>
-  <tr><td>75-115 min</td><td>Write creative piece</td><td>40</td></tr>
+  <tr><td>0-12 min</td><td>Read both texts carefully, annotating language and structural features</td><td>-</td></tr>
+  <tr><td>12-17 min</td><td>Answer Q1 (retrieval)</td><td>4</td></tr>
+  <tr><td>17-25 min</td><td>Answer Q2 (language and structure, a short section of one text)</td><td>6</td></tr>
+  <tr><td>25-40 min</td><td>Answer Q3 (language and structure, the other text)</td><td>12</td></tr>
+  <tr><td>40-60 min</td><td>Answer Q4 (evaluation and comparison, both texts)</td><td>18</td></tr>
+  <tr><td>60-70 min</td><td>Choose writing task and plan thoroughly</td><td>-</td></tr>
+  <tr><td>70-115 min</td><td>Write creative piece</td><td>40</td></tr>
   <tr><td>115-120 min</td><td>Proofread writing</td><td>-</td></tr>
 </table>
 
@@ -3325,44 +3345,43 @@ The beach smell of salt and something chemical - the ghost of last night's storm
 
 <h3>Reading Section: Key Reminders</h3>
 
-<h4>Q1 - Retrieval and Inference</h4>
+<h4>Q1 - Retrieval (4 marks)</h4>
 <ul>
-  <li>Keep retrieval answers brief - a phrase or sentence.</li>
-  <li>For inference, use Point-Evidence-Inference structure.</li>
-  <li>Ground all inferences in textual evidence.</li>
+  <li>Keep answers brief: a word, a phrase or a short sentence, from the lines named.</li>
+  <li>Give exactly the number of answers asked for, one per line.</li>
+  <li>Where a part asks what something shows or why, answer briefly in your own words.</li>
 </ul>
 
-<h4>Q2 - Language Analysis</h4>
+<h4>Q2 - Language and Structure, Short (6 marks)</h4>
 <ul>
-  <li>Use What-How-Why framework.</li>
-  <li>Zoom into word-level analysis - explore connotations.</li>
+  <li>Two or three well-chosen quotations from the short section, each explained with What-How-Why.</li>
+  <li>Say something about structure as well as language: how the lines are built or ordered.</li>
+  <li>Keep it short: it is worth half as much as Question 3.</li>
+</ul>
+
+<h4>Q3 - Language and Structure (12 marks)</h4>
+<ul>
+  <li>Zoom into word-level analysis and explore connotations.</li>
+  <li>Cover structure too: shifts in focus, pacing, opening/ending, withholding information. Single-sentence paragraphs are always worth discussing.</li>
   <li>Connect analysis to the reader's emotional experience.</li>
   <li>2-3 developed points are better than 5 superficial ones.</li>
 </ul>
 
-<h4>Q3 - Structural Analysis</h4>
+<h4>Q4 - Evaluation and Comparison (18 marks)</h4>
 <ul>
-  <li>Do NOT discuss language here - focus on organisation.</li>
-  <li>Consider: shifts in focus, pacing, opening/ending, withholding information.</li>
-  <li>Single-sentence paragraphs are always worth discussing.</li>
-  <li>Explain the EFFECT of structural choices on the reader.</li>
-</ul>
-
-<h4>Q4 - Evaluation</h4>
-<ul>
-  <li>State your judgement clearly: agree, partially agree, or disagree.</li>
-  <li>Support every point with evidence and analysis of effectiveness.</li>
-  <li>Include a counter-argument for balance.</li>
-  <li>Use evaluative vocabulary: "effective," "compelling," "undermined by."</li>
+  <li>State your judgement on the statement clearly: agree, partially agree, or disagree. It can be truer of one text than the other.</li>
+  <li>Support every point with evidence from both texts and analysis of effectiveness.</li>
+  <li>Compare how the two writers present their ideas, for example through viewpoint, description or dialogue, all the way through.</li>
+  <li>Use evaluative vocabulary: "effective," "compelling," "undermined by," and comparative connectives: "whereas," "similarly."</li>
 </ul>
 
 <h3>Writing Section: Key Reminders</h3>
 
 <h4>Choosing Your Task</h4>
-<p>Read both options carefully. Choose based on:</p>
+<p>Read both tasks carefully. In OCR's sample paper and its June 2024 paper, one was a story from a given title and the other a piece of personal writing about an experience. Choose based on:</p>
 <ul>
   <li><strong>Which prompt sparks more vivid ideas?</strong> - Your best writing comes from genuine imaginative engagement.</li>
-  <li><strong>Which form suits your strengths?</strong> - If you write strong dialogue and character, choose narrative. If you excel at imagery and atmosphere, choose descriptive.</li>
+  <li><strong>Which form suits your strengths?</strong> If you write strong dialogue and plot, choose the story. If you write best about real feelings and places, choose the personal piece. Either rewards imagery and atmosphere.</li>
   <li><strong>Which can you structure effectively?</strong> - Can you see a clear beginning, middle, and end (or opening, development, and closing image)?</li>
 </ul>
 
@@ -3395,7 +3414,7 @@ The beach smell of salt and something chemical - the ghost of last night's storm
   <li>Bullet-point any key scenes or images between them.</li>
 </ol>
 
-<h4>If you cannot understand the fiction extract:</h4>
+<h4>If you cannot fully understand one of the texts:</h4>
 <ol>
   <li>Focus on what you CAN understand - atmosphere, tone, character emotions.</li>
   <li>Quote specific words and phrases and analyse their connotations.</li>
@@ -3410,7 +3429,7 @@ The beach smell of salt and something chemical - the ghost of last night's storm
   <li>I can analyse language using What-How-Why, focusing on word-level effects.</li>
   <li>I can analyse structure distinctly from language, discussing shifts, pacing, and organisation.</li>
   <li>I can evaluate a writer's effectiveness with a balanced, evidence-based judgement.</li>
-  <li>I can write a controlled narrative or descriptive piece with purposeful technique.</li>
+  <li>I can write a controlled story or personal piece with purposeful technique and vivid description.</li>
   <li>I can use punctuation as a creative tool and maintain technical accuracy.</li>
   <li>I have a timing plan and will stick to it.</li>
 </ul>
@@ -3424,7 +3443,7 @@ The beach smell of salt and something chemical - the ghost of last night's storm
         options: ['16 marks', '24 marks', '40 marks', '80 marks'],
         correct: 2,
         explanation:
-          'The creative writing task is worth 40 marks - exactly half of the total paper. It deserves at least 50 minutes of your time, including planning.',
+          'The creative writing task is worth 40 marks, exactly half of the total paper. OCR advises about an hour on Section B, including planning and checking.',
       },
       {
         id: 'ocr-lc2-m10-q2',
@@ -3443,18 +3462,18 @@ The beach smell of salt and something chemical - the ghost of last night's storm
         id: 'ocr-lc2-m10-q3',
         question: 'What is the key difference between the Q2 and Q3 reading questions?',
         options: [
-          'Q2 is harder than Q3',
-          'Q2 analyses language (word-level choices); Q3 analyses structure (text organisation)',
+          'Q2 is about language only and Q3 about structure only',
+          'Q2 is a short 6-mark analysis of a section of one text; Q3 is a 12-mark analysis of the other text, and both cover language and structure',
           'Q3 always asks about the ending',
           'Q2 uses quotations and Q3 does not',
         ],
         correct: 1,
         explanation:
-          'Q2 focuses on language analysis - word choices, imagery, figurative language. Q3 focuses on structural analysis - how the text is organised, shifts in focus, pacing, and sequencing. OCR tests these as separate skills.',
+          'Both questions ask how the writer uses language and structure. Q2 is the short one: 6 marks, on a short section of one text. Q3 is worth 12 marks, on the other text, and its higher levels expect detailed, fairly balanced analysis of both language and structure.',
       },
       {
         id: 'ocr-lc2-m10-q4',
-        question: 'If you cannot fully understand the fiction extract, what should you do?',
+        question: 'If you cannot fully understand one of the texts, what should you do?',
         options: [
           'Leave the reading section blank',
           'Focus on atmosphere and tone, quote specific words, and analyse their connotations',
@@ -3491,22 +3510,22 @@ const c2Assessment: CourseQuiz[] = [
     id: 'ocr-lc2-assess-2',
     question: 'What type of text appears in Section A of Component 02?',
     options: [
-      'Two non-fiction texts',
-      'One unseen fiction extract',
+      'Two non-fiction texts, one of them from the 19th century',
+      'Two literary prose texts from the 20th or 21st century, at least one of them fiction',
       'A Shakespeare extract',
-      'A non-fiction and a fiction text',
+      'One unseen fiction extract',
     ],
     correct: 1,
     explanation:
-      'Component 02 Section A contains one unseen fiction extract. Questions test retrieval, language analysis, structural analysis, and evaluation.',
+      'Component 02 Section A contains two unseen literary prose texts from the 20th or 21st century; at least one is fiction, and the other may be literary non-fiction. Questions test retrieval, language and structure analysis, evaluation, and comparison.',
   },
   {
     id: 'ocr-lc2-assess-3',
-    question: 'Which question specifically tests structural analysis in Component 02?',
-    options: ['Q1', 'Q2', 'Q3', 'Q4'],
-    correct: 2,
+    question: 'Which questions in Component 02 analyse language and structure together?',
+    options: ['Q1 and Q4', 'Q2 and Q3', 'Q4 only', 'Q1 only'],
+    correct: 1,
     explanation:
-      'Q3 is the dedicated structural analysis question, testing how the writer organises and sequences the text to create effects.',
+      'Q2 (6 marks, a short section of one text) and Q3 (12 marks, the other text) both ask how the writer uses language and structure to create effects. Q1 is retrieval and Q4 is evaluation and comparison.',
   },
   {
     id: 'ocr-lc2-assess-4',
@@ -3558,7 +3577,7 @@ const c2Assessment: CourseQuiz[] = [
     ],
     correct: 2,
     explanation:
-      'Structural analysis focuses on text organisation (shifts, pacing, openings, endings, information control). Word-level language choices like metaphors are language analysis (Q2), not structure (Q3).',
+      "Structural analysis focuses on text organisation (shifts, pacing, openings, endings, information control). Word-level language choices like metaphors are language analysis. OCR's Questions 2 and 3 reward both, so each answer needs some of each.",
   },
   {
     id: 'ocr-lc2-assess-8',
@@ -3756,7 +3775,7 @@ const ocrLangC2: CourseData = {
   level: 'GCSE (Years 10-11)',
   color: '#0e7490',
   description:
-    'Master OCR Component 02: analyse fiction extracts for language, structure, and evaluation, then craft powerful narrative and descriptive writing with advanced creative techniques.',
+    'Master OCR Component 02: analyse 20th and 21st-century literary prose for language, structure, evaluation and comparison, then craft powerful stories and personal writing with advanced creative techniques.',
   moduleList: c2Modules,
   assessmentQuestions: c2Assessment,
 }

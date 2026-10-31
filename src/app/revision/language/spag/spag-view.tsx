@@ -108,6 +108,14 @@ const BOARD_SPAG_MARK_NOTES: Partial<Record<ExamBoard, string>> = {
   ocr: 'On OCR, technical accuracy carries 16 out of 40 marks on the writing section of each paper -- the same 40% weighting as the other major boards.',
   eduqas:
     'On Eduqas, 16 of the 40 marks on Component 1 Section B and a matching weighting across Component 2 Section B tasks are for technical accuracy.',
+  // 31 October 2026: Cambridge fell through to the default, which says SPaG is
+  // marked on every writing task. Paper 1's writing marks (the summary and Question
+  // 4) have no accuracy strand; spelling, punctuation and grammar are marked on
+  // Paper 2 (src/data/mark-scheme-guides/cambridge-0500-paper1.ts, -paper2.ts).
+  'cambridge-0500':
+    'On Cambridge 0500, spelling, punctuation and grammar are marked on Paper 2: in the 25 writing marks of the directed writing and in the 24 for style and accuracy in the composition. Paper 1 rewards clear writing in your own words, not accuracy.',
+  'cambridge-0990':
+    'On Cambridge 0990, spelling, punctuation and grammar are marked on Paper 2: in the 25 writing marks of the directed writing and in the 24 for style and accuracy in the composition. Paper 1 rewards clear writing in your own words, not accuracy.',
 }
 
 export default function SpagView({ boardId, boardName }: SpagViewProps) {

@@ -3125,7 +3125,7 @@ export const EN_MESSAGES: Record<string, string> = {
   'analysis.lang.how.cta': 'Open Language revision',
   'analysis.lang.p1q.h2': 'Paper 1 questions',
   'analysis.lang.p1q.body':
-    'Every Paper 1 question - list four things, language analysis, structure, evaluation and creative writing.',
+    'Every Paper 1 question: four multiple-choice parts, language analysis, structure, evaluation and creative writing.',
   'analysis.lang.p1t.h2': 'Paper 1 writing technique',
   'analysis.lang.p1t.body':
     'Descriptive writing, narrative writing, timing strategy and the structural features that hit Grade 9 on Question 3.',
@@ -6780,7 +6780,7 @@ export const EN_MESSAGES: Record<string, string> = {
   'qatar.specs.cambridge.0500':
     '0500 - English as a First Language. The long-running Cambridge spec: reading skills assessed through unseen non-fiction passages, plus directed and composition writing. No published anthology - the passages are unseen on the day.',
   'qatar.specs.cambridge.0990':
-    '0990 - redesigned variant. Aligned to the Cambridge 9-1 grading scale used internationally. Question design has been refreshed compared with 0500, and grade boundaries report on the 9-1 scale. Schools choose 0500 or 0990 depending on which grading scale their leavers need on transcripts.',
+    '0990: the 9-1 graded version. It sets the same papers as 0500, with the same questions, marks and objectives; only the grading differs, and results are reported on the 9-1 scale. Schools choose 0500 or 0990 depending on which grading scale their leavers need on transcripts.',
   'qatar.specs.note':
     'If you are unsure which spec your school uses, your English teacher or head of year is the quickest source of truth - the spec code usually appears on your mock paper, your timetable, and your end-of-year report.',
   'qatar.help.h2': 'How The English Hub helps Qatar IGCSE students',
@@ -6871,9 +6871,9 @@ export const EN_MESSAGES: Record<string, string> = {
   'gcc.specs.0500.body':
     'The long-established Cambridge First Language paper. Two written exams test reading comprehension, summary, and directed and composition writing. Many GCC schools that have run Cambridge for years still enter cohorts on 0500.',
   'gcc.specs.0500_link': 'Open the 0500 hub',
-  'gcc.specs.0990.title': 'Cambridge IGCSE 0990 - English First Language (redesigned)',
+  'gcc.specs.0990.title': 'Cambridge IGCSE 0990 - English First Language (9-1 graded)',
   'gcc.specs.0990.body':
-    'The redesigned Cambridge First Language qualification, with an updated assessment model and 9-1 reporting. Skills overlap heavily with 0500, but the question weightings and rubric wording differ enough that practising against the right paper matters.',
+    'The 9-1 graded version of Cambridge First Language English. It sets the same papers as 0500, with the same questions, marks and weightings; only the results scale differs, so 0500 papers from the same syllabus years are good practice too.',
   'gcc.specs.0990_link': 'Open the 0990 hub',
   'gcc.help.h2': 'How The English Hub helps GCC IGCSE students',
   'gcc.help.intro':
@@ -18808,7 +18808,7 @@ export const EN_MESSAGES: Record<string, string> = {
   'rev.lang.hub.paper1': 'Paper 1',
   'rev.lang.hub.paper2': 'Paper 2',
   'rev.lang.hub.papers_equal_note':
-    'Both papers carry equal weight and both test SPaG in the writing section.',
+    'Both papers test spelling, punctuation and grammar in the writing section. AQA and OCR weight the two papers equally; Edexcel and Eduqas give the second paper 60% of the grade.',
   'rev.lang.hub.quick_reminder_title': 'Language Paper Quick Reminder',
   'rev.lang.hub.quick_reminder_body':
     'Select your exam board to see paper-specific guidance. Paper 1 and Paper 2 structures vary by board, but reading, writing, and SPaG skills are universal.',
@@ -20843,7 +20843,7 @@ export const EN_MESSAGES: Record<string, string> = {
   'igcse.page.reading.examiner_note': 'Examiner note',
   'igcse.page.reading.words_to_consider': 'Words and phrases to consider',
   'igcse.page.reading.language_marks': 'Language',
-  'igcse.page.reading.summary_task': 'Summary Task (Paper 1 Q3)',
+  'igcse.page.reading.summary_task': 'Summary Task (Paper 1 Q2)',
   'igcse.page.reading.reading_summary_marks': 'Reading + Summary',
   'igcse.page.reading.model_summary': 'Model summary',
   'igcse.page.reading.key_vocabulary': 'Key Vocabulary',

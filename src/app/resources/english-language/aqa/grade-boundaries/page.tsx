@@ -416,7 +416,9 @@ export default function GradeBoundariesPage() {
           </div>
         </Section>
 
-        {/* Marks per question */}
+        {/* Marks per question. 31 October 2026: Paper 1 Q1 was "list 4 things" and
+            Paper 2 Q2 "summary / synthesis", their formats before summer 2026; see
+            src/data/mark-scheme-guides/aqa-lang-paper1.ts and paper2.ts. */}
         <Section title={tr(`Marks per question at a glance`)}>
           <div className="overflow-x-auto">
             <table className="w-full text-sm">
@@ -431,14 +433,14 @@ export default function GradeBoundariesPage() {
               <tbody className="divide-y divide-border">
                 <tr>
                   <td className="py-2 pe-4 font-semibold">Q1</td>
-                  <td className="py-2 pe-4">4 marks (list 4 things)</td>
+                  <td className="py-2 pe-4">4 marks (four multiple-choice parts)</td>
                   <td className="py-2 pe-4">4 marks (shade 4 true statements)</td>
                   <td className="py-2 pe-4">{tr(`Reading and retrieval (AO1)`)}</td>
                 </tr>
                 <tr>
                   <td className="py-2 pe-4 font-semibold">Q2</td>
                   <td className="py-2 pe-4">8 marks (language analysis)</td>
-                  <td className="py-2 pe-4">8 marks (summary / synthesis)</td>
+                  <td className="py-2 pe-4">8 marks (inference / synthesis)</td>
                   <td className="py-2 pe-4">
                     P1: Language and structure analysis (AO2) / P2: Reading and retrieval (AO1)
                   </td>

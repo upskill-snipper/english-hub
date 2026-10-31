@@ -528,10 +528,11 @@ export default function GradeBoundariesPage() {
                   creative writing, experiment with pacing, perspective, and narrative hooks.
                 </li>
                 <li>
-                  <strong>Comparison:</strong> In Component 01 comparison questions, make sure you
-                  integrate both texts throughout rather than writing about one and then the other.
-                  Use comparative connectives: &ldquo;Similarly,&rdquo; &ldquo;In contrast,&rdquo;
-                  &ldquo;While Source A&hellip;, Source B&hellip;&rdquo;
+                  <strong>Comparison:</strong> In Question 4 of each component, which compares the
+                  two texts as well as evaluating them, make sure you integrate both texts
+                  throughout rather than writing about one and then the other. Use comparative
+                  connectives: &ldquo;Similarly,&rdquo; &ldquo;In contrast,&rdquo; &ldquo;While Text
+                  1&hellip;, Text 2&hellip;&rdquo;
                 </li>
               </ul>
             </div>
@@ -573,7 +574,15 @@ export default function GradeBoundariesPage() {
           </div>
         </Section>
 
-        {/* Marks per question - Component 01 */}
+        {/* Marks per question - Component 01. Corrected 31 October 2026 to the J351
+            guides in src/data/mark-scheme-guides/ocr-lang-component01.ts and
+            -component02.ts. Component 01 had five reading questions (Q2 language, Q3
+            themes, Q4 a 10-mark comparison, Q5 evaluation) and two 24-mark writing
+            tasks, 32 reading and 48 writing; it is Q1 4, Q2 6 (synthesis), Q3 12, Q4
+            18 (evaluation 12 + comparison 6), then one task, Q5 or Q6, for 40.
+            Component 02's Q3 was a 6-mark question on "a 19th-century text" and its
+            Q4 24 marks: Q3 is 12 marks on Text 2, from the 20th or 21st century like
+            Text 1, and Q4 is 18. */}
         <Section
           title={tr(`Marks per question: Component 01 - Communicating Information and Ideas`)}
         >
@@ -596,7 +605,7 @@ export default function GradeBoundariesPage() {
               </thead>
               <tbody className="divide-y divide-border">
                 <tr>
-                  <td className="py-2 pe-4" rowSpan={5}>
+                  <td className="py-2 pe-4" rowSpan={4}>
                     {tr(`Section A: Reading`)}
                   </td>
                   <td className="py-2 pe-4 font-semibold">Q1</td>
@@ -609,54 +618,38 @@ export default function GradeBoundariesPage() {
                 <tr>
                   <td className="py-2 pe-4 font-semibold">Q2</td>
                   <td className="py-2 pe-4">6 marks</td>
-                  <td className="py-2 pe-4">{tr(`Explain how language is used for effect`)}</td>
-                  <td className="py-2 pe-4">{tr(`Language analysis`)}</td>
+                  <td className="py-2 pe-4">
+                    {tr(`Bring the two texts together on a link the question names`)}
+                  </td>
+                  <td className="py-2 pe-4">{tr(`Synthesis`)}</td>
                 </tr>
                 <tr>
                   <td className="py-2 pe-4 font-semibold">Q3</td>
-                  <td className="py-2 pe-4">6 marks</td>
+                  <td className="py-2 pe-4">12 marks</td>
                   <td className="py-2 pe-4">
-                    {tr(`Identify and interpret themes or ideas across both texts`)}
+                    {tr(`Analyse how one writer uses language and structure`)}
                   </td>
-                  <td className="py-2 pe-4">{tr(`Retrieval and inference`)}</td>
+                  <td className="py-2 pe-4">{tr(`Language and structure analysis`)}</td>
                 </tr>
                 <tr>
                   <td className="py-2 pe-4 font-semibold">Q4</td>
-                  <td className="py-2 pe-4">10 marks</td>
+                  <td className="py-2 pe-4">18 marks</td>
                   <td className="py-2 pe-4">
-                    {tr(`Compare how writers convey viewpoints and perspectives`)}
+                    {tr(`Evaluate a statement about both texts and compare them`)}
                   </td>
-                  <td className="py-2 pe-4">Comparison</td>
-                </tr>
-                <tr>
-                  <td className="py-2 pe-4 font-semibold">Q5</td>
-                  <td className="py-2 pe-4">6 marks</td>
-                  <td className="py-2 pe-4">
-                    {tr(`Evaluate how effectively a writer achieves their purpose`)}
-                  </td>
-                  <td className="py-2 pe-4">Evaluation</td>
+                  <td className="py-2 pe-4">{tr(`Evaluation (12) + Comparison (6)`)}</td>
                 </tr>
                 <tr className="bg-primary/10">
-                  <td className="py-2 pe-4" rowSpan={2}>
-                    {tr(`Section B: Writing`)}
-                  </td>
-                  <td className="py-2 pe-4 font-semibold">Q6</td>
-                  <td className="py-2 pe-4">24 marks</td>
+                  <td className="py-2 pe-4">{tr(`Section B: Writing`)}</td>
+                  <td className="py-2 pe-4 font-semibold">Q5 or Q6</td>
+                  <td className="py-2 pe-4">40 marks</td>
                   <td className="py-2 pe-4">
-                    {tr(`Writing to present a viewpoint (e.g., article, speech, letter)`)}
-                  </td>
-                  <td className="py-2 pe-4">
-                    {tr(`Content and organisation (14) + Technical accuracy (10)`)}
-                  </td>
-                </tr>
-                <tr className="bg-primary/10">
-                  <td className="py-2 pe-4 font-semibold">Q7</td>
-                  <td className="py-2 pe-4">24 marks</td>
-                  <td className="py-2 pe-4">
-                    {tr(`Writing to present a viewpoint (shorter task or different form)`)}
+                    {tr(
+                      `One piece of non-fiction writing (e.g., article, speech, letter), from a choice of two tasks`,
+                    )}
                   </td>
                   <td className="py-2 pe-4">
-                    {tr(`Content and organisation (14) + Technical accuracy (10)`)}
+                    {tr(`Content and organisation (24) + Technical accuracy (16)`)}
                   </td>
                 </tr>
                 <tr className="font-bold">
@@ -665,7 +658,7 @@ export default function GradeBoundariesPage() {
                     80 marks
                   </td>
                   <td className="py-2 pe-4" colSpan={2}>
-                    {tr(`Reading: 32 / Writing: 48`)}
+                    {tr(`Reading: 40 / Writing: 40`)}
                   </td>
                 </tr>
               </tbody>
@@ -673,9 +666,9 @@ export default function GradeBoundariesPage() {
           </div>
 
           <p className="mt-4 text-sm text-muted-foreground">
-            The writing section (Q6 and Q7 combined) is worth <strong>48 out of 80 marks</strong>{' '}
-            &mdash; 60% of this component. Strong writing for real purposes skills are essential for
-            a high mark on Component 01.
+            The writing task (Question 5 or 6) is worth <strong>40 out of 80 marks</strong>, half of
+            this component. Strong writing for real purposes skills are essential for a high mark on
+            Component 01.
           </p>
         </Section>
 
@@ -706,7 +699,7 @@ export default function GradeBoundariesPage() {
                   <td className="py-2 pe-4 font-semibold">Q1</td>
                   <td className="py-2 pe-4">4 marks</td>
                   <td className="py-2 pe-4">
-                    {tr(`Retrieve and interpret information from a 21st-century text`)}
+                    {tr(`Retrieve and interpret information from one of the texts`)}
                   </td>
                   <td className="py-2 pe-4">{tr(`Retrieval and inference`)}</td>
                 </tr>
@@ -716,30 +709,32 @@ export default function GradeBoundariesPage() {
                   <td className="py-2 pe-4">
                     {tr(`Explain how language and structure create effects`)}
                   </td>
-                  <td className="py-2 pe-4">{tr(`Language analysis`)}</td>
+                  <td className="py-2 pe-4">{tr(`Language and structure analysis`)}</td>
                 </tr>
                 <tr>
                   <td className="py-2 pe-4 font-semibold">Q3</td>
-                  <td className="py-2 pe-4">6 marks</td>
+                  <td className="py-2 pe-4">12 marks</td>
                   <td className="py-2 pe-4">
-                    {tr(`Analyse a 19th-century text: how language creates meaning`)}
+                    {tr(`Analyse how the writer of the other text uses language and structure`)}
                   </td>
-                  <td className="py-2 pe-4">{tr(`Language analysis`)}</td>
+                  <td className="py-2 pe-4">{tr(`Language and structure analysis`)}</td>
                 </tr>
                 <tr>
                   <td className="py-2 pe-4 font-semibold">Q4</td>
-                  <td className="py-2 pe-4">24 marks</td>
+                  <td className="py-2 pe-4">18 marks</td>
                   <td className="py-2 pe-4">
-                    {tr(`Evaluate critically how a writer achieves impact on the reader`)}
+                    {tr(`Evaluate a statement about both texts and compare them`)}
                   </td>
-                  <td className="py-2 pe-4">Evaluation</td>
+                  <td className="py-2 pe-4">{tr(`Evaluation (12) + Comparison (6)`)}</td>
                 </tr>
                 <tr className="bg-primary/10">
                   <td className="py-2 pe-4">{tr(`Section B: Writing`)}</td>
-                  <td className="py-2 pe-4 font-semibold">Q5</td>
+                  <td className="py-2 pe-4 font-semibold">Q5 or Q6</td>
                   <td className="py-2 pe-4">40 marks</td>
                   <td className="py-2 pe-4">
-                    {tr(`Creative / imaginative writing (narrative or descriptive)`)}
+                    {tr(
+                      `Creative writing (e.g., a story or personal writing), from a choice of two tasks`,
+                    )}
                   </td>
                   <td className="py-2 pe-4">
                     {tr(`Content and organisation (24) + Technical accuracy (16)`)}
@@ -759,10 +754,10 @@ export default function GradeBoundariesPage() {
           </div>
 
           <p className="mt-4 text-sm text-muted-foreground">
-            Component 02 is split evenly between reading and writing. The creative writing task (Q5)
-            alone is worth <strong>40 out of 80 marks</strong> &mdash; half the component. A
-            well-prepared, polished piece of creative writing can make an enormous difference to
-            your overall grade.
+            Component 02 is split evenly between reading and writing. The creative writing task
+            (Question 5 or 6) alone is worth <strong>40 out of 80 marks</strong>, half the
+            component. A well-prepared, polished piece of creative writing can make an enormous
+            difference to your overall grade.
           </p>
         </Section>
 

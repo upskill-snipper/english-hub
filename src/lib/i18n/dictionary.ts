@@ -10337,10 +10337,12 @@ export const DICTIONARY: Dictionary = {
     ar: 'أسئلة Paper 1',
     es: 'Preguntas del Paper 1',
   },
+  // 31 October 2026: "list four things" was AQA Paper 1 Question 1 before summer
+  // 2026; it is now four multiple-choice parts (src/data/mark-scheme-guides/aqa-lang-paper1.ts).
   'analysis.lang.p1q.body': {
-    en: 'Every Paper 1 question - list four things, language analysis, structure, evaluation and creative writing.',
-    ar: 'كل سؤال في Paper 1 - عدّد أربع أشياء، تحليل اللغة، البناء، التقييم، والكتابة الإبداعية.',
-    es: 'Cada pregunta del Paper 1 - enumerar cuatro cosas, análisis del lenguaje, estructura, evaluación y escritura creativa.',
+    en: 'Every Paper 1 question: four multiple-choice parts, language analysis, structure, evaluation and creative writing.',
+    ar: 'كل سؤال في Paper 1: أربعة أجزاء اختيار من متعدد، تحليل اللغة، البناء، التقييم، والكتابة الإبداعية.',
+    es: 'Cada pregunta del Paper 1: cuatro partes de opción múltiple, análisis del lenguaje, estructura, evaluación y escritura creativa.',
   },
   'analysis.lang.p1t.h2': {
     en: 'Paper 1 writing technique',
@@ -23115,10 +23117,14 @@ export const DICTIONARY: Dictionary = {
     ar: '0500 - الإنجليزية كلغة أولى. سبيس Cambridge القديم: مهارات القراءة تنقاس على قطع غير قصصية ما تشوفها قبل، مع كتابة موجّهة وإنشاء. ما في مختارات منشورة - القطع تطلع يوم الامتحان.',
     es: '0500 - English as a First Language. La especificación de Cambridge de larga trayectoria: competencias de lectura evaluadas mediante pasajes de no ficción no vistos, además de escritura dirigida y de composición. Sin antología publicada - los pasajes no se ven hasta el día del examen.',
   },
+  // 31 October 2026: this and gcc.specs.0990.body said 0990's questions or
+  // weightings differ from 0500's. The two syllabuses set the same papers word for
+  // word; only the name and code, the results scale and the March series differ
+  // (src/data/mark-scheme-guides/cambridge-0990-paper1.ts).
   'qatar.specs.cambridge.0990': {
-    en: '0990 - redesigned variant. Aligned to the Cambridge 9-1 grading scale used internationally. Question design has been refreshed compared with 0500, and grade boundaries report on the 9-1 scale. Schools choose 0500 or 0990 depending on which grading scale their leavers need on transcripts.',
-    ar: '0990 - النسخة المُحدّثة. مرتبطة بسلّم تقييم Cambridge 9-1 المستخدم عالمياً. تصميم الأسئلة تجدّد عن 0500، والحدود تطلع على سلّم 9-1. المدارس تختار 0500 أو 0990 على حسب يا سلّم تقييم يبغونه الخريجين بالشهادة.',
-    es: '0990 - variante rediseñada. Alineada con la escala de calificación 9-1 de Cambridge usada a nivel internacional. El diseño de las preguntas se ha renovado en comparación con 0500, y las notas de corte se comunican en la escala 9-1. Los colegios eligen 0500 o 0990 según la escala de calificación que necesiten sus graduados en sus expedientes.',
+    en: '0990: the 9-1 graded version. It sets the same papers as 0500, with the same questions, marks and objectives; only the grading differs, and results are reported on the 9-1 scale. Schools choose 0500 or 0990 depending on which grading scale their leavers need on transcripts.',
+    ar: '0990: النسخة اللي تنقيَّم على سلّم 9-1. أوراقها نفس أوراق 0500، بنفس الأسئلة والدرجات والأهداف، والفرق بس في التقييم، فالنتايج تطلع على سلّم 9-1. المدارس تختار 0500 أو 0990 على حسب سلّم التقييم اللي يحتاجه الخريجين بالشهادة.',
+    es: '0990: la versión con calificación 9-1. Tiene las mismas pruebas que 0500, con las mismas preguntas, puntuaciones y objetivos; solo cambia la calificación, que se comunica en la escala 9-1. Los colegios eligen 0500 o 0990 según la escala de calificación que necesiten sus graduados en sus expedientes.',
   },
   'qatar.specs.note': {
     en: 'If you are unsure which spec your school uses, your English teacher or head of year is the quickest source of truth - the spec code usually appears on your mock paper, your timetable, and your end-of-year report.',
@@ -23426,15 +23432,17 @@ export const DICTIONARY: Dictionary = {
     ar: 'افتح صفحة 0500',
     es: 'Abrir el centro de 0500',
   },
+  // 31 October 2026, second read: "(redesigned)", which the corrected body below
+  // contradicts: 0990 sets the same papers as 0500, graded 9-1.
   'gcc.specs.0990.title': {
-    en: 'Cambridge IGCSE 0990 - English First Language (redesigned)',
-    ar: 'Cambridge IGCSE 0990 - اللغة الإنجليزية الأولى (محدّثة)',
-    es: 'Cambridge IGCSE 0990 - English First Language (rediseñado)',
+    en: 'Cambridge IGCSE 0990 - English First Language (9-1 graded)',
+    ar: 'Cambridge IGCSE 0990 - اللغة الإنجليزية الأولى (بسلّم تقييم 9-1)',
+    es: 'Cambridge IGCSE 0990 - English First Language (calificación 9-1)',
   },
   'gcc.specs.0990.body': {
-    en: 'The redesigned Cambridge First Language qualification, with an updated assessment model and 9-1 reporting. Skills overlap heavily with 0500, but the question weightings and rubric wording differ enough that practising against the right paper matters.',
-    ar: 'شهادة Cambridge للغة الأولى المُحدّثة، بنموذج تقييم محدّث وتقارير 9-1. المهارات تتداخل وايد مع 0500، بس أوزان الأسئلة وصياغة المخططات تختلف بدرجة كافية تخلّي التدريب على الورقة الصح مهم.',
-    es: 'La titulación rediseñada de Cambridge First Language, con un modelo de evaluación actualizado y comunicación de notas en 9-1. Las competencias se solapan en gran medida con 0500, pero las ponderaciones de las preguntas y la redacción de la rúbrica difieren lo suficiente como para que importe practicar con el examen correcto.',
+    en: 'The 9-1 graded version of Cambridge First Language English. It sets the same papers as 0500, with the same questions, marks and weightings; only the results scale differs, so 0500 papers from the same syllabus years are good practice too.',
+    ar: 'نسخة Cambridge للغة الإنجليزية كلغة أولى بسلّم تقييم 9-1. أوراقها نفس أوراق 0500، بنفس الأسئلة والدرجات والأوزان، والفرق بس في سلّم النتايج، عشان كذا أوراق 0500 من نفس سنوات المنهج تدريب زين بعد.',
+    es: 'La versión con calificación 9-1 de Cambridge First Language English. Tiene las mismas pruebas que 0500, con las mismas preguntas, puntuaciones y ponderaciones; solo cambia la escala de resultados, así que las pruebas de 0500 de los mismos años del programa también sirven para practicar.',
   },
   'gcc.specs.0990_link': {
     en: 'Open the 0990 hub',

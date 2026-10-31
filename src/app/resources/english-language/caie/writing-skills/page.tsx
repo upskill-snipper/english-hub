@@ -130,6 +130,22 @@ export default async function WritingSkillsPage() {
             passage <strong>and</strong> your own ideas. Getting the format right is the foundation
             &mdash; markers will immediately notice if you use the wrong conventions.
           </p>
+          {/* 31 October 2026: corrected to src/data/mark-scheme-guides/cambridge-0500-paper1.ts
+              and -paper2.ts. Journals and interviews were called directed writing formats;
+              they are Paper 1 Question 4 forms, and Paper 2's directed writing is a speech,
+              letter, article or report. The summary marks were 15 content points and 10 for
+              writing; the 2(a) summary is 10 for reading and 5 for writing, in no more than
+              120 words of Text B, each marked in levels. Second read, same day: the summary's
+              5 writing marks listed grammar and spelling, which Paper 1 does not mark (no W5,
+              guide docblock); and the November 2026 papers' question numbers are now given. */}
+          <p className="mt-3 text-muted-foreground leading-relaxed">
+            Paper 2&apos;s directed writing, Question 1(b), asks for a speech, letter, article or
+            report. Paper 1&apos;s Question 4 can ask for any of these, or a journal or an
+            interview, based on Text C. These are the papers for exams from 2027: on the November
+            2026 papers, which follow the older syllabus, Paper 2&apos;s directed writing is one
+            40-mark task (a speech, letter or article) and the extended response to reading is Paper
+            1 Question 3.
+          </p>
 
           {/* ── Formal Letter ──────────────────────────────────── */}
           <div className="mt-8 rounded-lg border border-border bg-card p-6">
@@ -416,7 +432,8 @@ export default async function WritingSkillsPage() {
             <h3 className="text-lg font-semibold text-primary">6. Journal / Diary Entry</h3>
             <p className="mt-2 text-sm text-muted-foreground leading-relaxed">
               A personal, reflective piece written from a character&rsquo;s perspective. The most
-              personal of all the directed writing formats.
+              personal of these forms. It is set in Paper 1 Question 4, not in Paper 2&apos;s
+              directed writing.
             </p>
 
             <div className="mt-4 rounded bg-muted p-4">
@@ -464,8 +481,8 @@ export default async function WritingSkillsPage() {
           <div className="mt-6 rounded-lg border border-border bg-card p-6">
             <h3 className="text-lg font-semibold text-primary">7. Interview (Q&amp;A Format)</h3>
             <p className="mt-2 text-sm text-muted-foreground leading-relaxed">
-              Less common but sometimes appears. You write both the questions and the answers,
-              typically for a magazine or newspaper feature.
+              Set in Paper 1 Question 4, not in Paper 2&apos;s directed writing. You write both the
+              questions and the answers, typically for a magazine or newspaper feature.
             </p>
 
             <div className="mt-4 rounded bg-muted p-4">
@@ -515,9 +532,11 @@ export default async function WritingSkillsPage() {
             Summary Writing Technique
           </h2>
           <p className="mt-3 text-muted-foreground leading-relaxed">
-            Summary writing is a core skill for the Cambridge IGCSE reading paper. You must
-            demonstrate the ability to identify relevant information, select key points, and
-            organise them into fluent, concise prose in your own words.
+            Summary writing is a core skill for the Cambridge IGCSE reading paper. In Question 2(a)
+            you must identify the information in Text B that fits the focus, select the key points,
+            and organise them into fluent, concise prose in your own words, in no more than 120
+            words. On the November 2026 paper the summary is part of Question 1, with the same text,
+            word limit and marks.
           </p>
 
           <div className="mt-8 rounded-lg border-2 border-primary/20 bg-primary/5 p-6">
@@ -538,8 +557,9 @@ export default async function WritingSkillsPage() {
                     highlight every piece of information that is relevant to that specific focus.
                   </p>
                   <div className="mt-2 rounded bg-card p-3 text-xs text-muted-foreground">
-                    <strong>Tip:</strong> Number each relevant point as you find it. Aim for
-                    12&ndash;15 points. More points = more content marks.
+                    <strong>Tip:</strong> Number each relevant point as you find it, including ideas
+                    the text only implies. The reading mark rewards the points that matter most, not
+                    the longest list.
                   </div>
                 </div>
               </div>
@@ -609,22 +629,22 @@ export default async function WritingSkillsPage() {
           {/* Summary marking guide */}
           <div className="mt-8 grid gap-4 sm:grid-cols-2">
             <div className="rounded-lg border border-border bg-card p-5">
-              <p className="text-2xl font-bold text-primary">15</p>
+              <p className="text-2xl font-bold text-primary">10</p>
               <p className="text-sm font-semibold text-foreground">{_tr(`Content Marks`)}</p>
               <p className="mt-2 text-sm text-muted-foreground leading-relaxed">
-                1 mark for each relevant content point identified from the passage. The marking
-                guide lists specific points &mdash; you get credit for each distinct idea you
-                include, up to 15.
+                Reading marks, given in five levels for how well you select the points that fit the
+                focus, including ideas the text only implies. The top level gathers the points that
+                matter most and never strays from the focus.
               </p>
             </div>
             <div className="rounded-lg border border-border bg-card p-5">
-              <p className="text-2xl font-bold text-accent">10</p>
+              <p className="text-2xl font-bold text-accent">5</p>
               <p className="text-sm font-semibold text-foreground">
                 {_tr(`Writing Quality Marks`)}
               </p>
               <p className="mt-2 text-sm text-muted-foreground leading-relaxed">
                 Assessed on: use of own words (not lifting), fluency and coherence of writing,
-                accuracy of grammar and spelling, and appropriate use of connectives to link ideas.
+                saying a lot in few words, and appropriate use of connectives to link ideas.
               </p>
             </div>
           </div>

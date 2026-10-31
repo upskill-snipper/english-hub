@@ -172,10 +172,16 @@ export const STRINGS: Record<string, Bi> = {
     en: `Paper 1 - 20th Century Literature Reading and Creative Prose Writing (40%)`,
     ar: `ورقية 1 - قراءة وأسلوب إبداعي في الأدب القرن العشرين (40%)`,
   },
+  // 31 October 2026: the per-question tables were rewritten to the C700 guides
+  // (src/data/mark-scheme-guides/eduqas-lang-comp1.ts, -comp2.ts). s59 and s61
+  // now name Question 02 (language) and Question 04 (language and structure);
+  // s70 and s71 were a "shorter" and a "longer" task, where Component 2 sets two
+  // compulsory tasks of 20 marks; s66 (an inference or summary question
+  // Component 2 does not set) was removed; s77 to s81 are new labels.
   s58: { en: `Retrieval / comprehension`, ar: `استرجاع / فهم` },
-  s59: { en: `Inference / impressions`, ar: `الاستنتاجات / الانطباعات` },
+  s59: { en: `Language: impressions (short answer)`, ar: `اللغة: الانطباعات (إجابة قصيرة)` },
   s60: { en: `Language analysis`, ar: `تحليل اللغة` },
-  s61: { en: `Structure / organisation`, ar: `التنظيم / الهيكلة` },
+  s61: { en: `Language and structure`, ar: `اللغة والبنية` },
   s62: { en: `Extended critical response`, ar: `ردّCriTiQue ممتد` },
   s63: { en: `Creative prose writing`, ar: `كتابة قصة خيالية` },
   s64: { en: `Paper 1 Total`, ar: `ورقة 1 كاملة` },
@@ -183,15 +189,14 @@ export const STRINGS: Record<string, Bi> = {
     en: `Paper 2 - 19th and 21st Century Non-Fiction Reading and Writing for Real Purposes (60%)`,
     ar: `ورقية 2 - القراءة والكتابة فيCentury التاسع والتقويم الحقيقي للقرن الحادي والعشرين (60%)`,
   },
-  s66: { en: `Inference / summary`, ar: `استنتاج / ملخص` },
   s67: { en: `Comparison of texts`, ar: `مقارنة النصوص` },
   s70: {
-    en: `Transactional / persuasive writing (shorter task)`,
-    ar: `الكتابة التبادلية / الإقناعية (المهمة القصيرة)`,
+    en: `Transactional / persuasive writing (first compulsory task)`,
+    ar: `الكتابة التبادلية / الإقناعية (المهمة الإلزامية الأولى)`,
   },
   s71: {
-    en: `Transactional / persuasive writing (longer task)`,
-    ar: `الكتابة التبادلية / الإقناعية (المهمة الأطول)`,
+    en: `Transactional / persuasive writing (second compulsory task)`,
+    ar: `الكتابة التبادلية / الإقناعية (المهمة الإلزامية الثانية)`,
   },
   s72: { en: `Paper 2 Total`, ar: `ورقة 2 الإجمالي` },
   s73: {
@@ -200,4 +205,12 @@ export const STRINGS: Record<string, Bi> = {
   },
   s74: { en: `What each grade looks like in practice`, ar: `كيف تبدو كل درجة في الممارسة` },
   s76: { en: `Marks per question at a glance`, ar: `نقاط لكل سؤال في نظرة عامة` },
+  s77: { en: `Retrieval (21st-century text)`, ar: `الاسترجاع (نص القرن الحادي والعشرين)` },
+  s78: {
+    en: `How the writer achieves a purpose (21st-century text)`,
+    ar: `كيف يحقق الكاتب غرضه (نص القرن الحادي والعشرين)`,
+  },
+  s79: { en: `Understanding (19th-century text)`, ar: `الفهم (نص القرن التاسع عشر)` },
+  s80: { en: `Evaluation (19th-century text)`, ar: `التقييم (نص القرن التاسع عشر)` },
+  s81: { en: `Synthesis (both texts)`, ar: `الجمع بين معلومات النصين` },
 }

@@ -3211,7 +3211,7 @@ export const ES_MESSAGES: Record<string, string> = {
   'analysis.lang.how.cta': 'Abrir el repaso de Language',
   'analysis.lang.p1q.h2': 'Preguntas del Paper 1',
   'analysis.lang.p1q.body':
-    'Cada pregunta del Paper 1 - enumerar cuatro cosas, análisis del lenguaje, estructura, evaluación y escritura creativa.',
+    'Cada pregunta del Paper 1: cuatro partes de opción múltiple, análisis del lenguaje, estructura, evaluación y escritura creativa.',
   'analysis.lang.p1t.h2': 'Técnica de escritura del Paper 1',
   'analysis.lang.p1t.body':
     'Escritura descriptiva, escritura narrativa, estrategia de tiempos y los rasgos estructurales que alcanzan el Grade 9 en la Question 3.',
@@ -6947,7 +6947,7 @@ export const ES_MESSAGES: Record<string, string> = {
   'qatar.specs.cambridge.0500':
     '0500 - English as a First Language. La especificación de Cambridge de larga trayectoria: competencias de lectura evaluadas mediante pasajes de no ficción no vistos, además de escritura dirigida y de composición. Sin antología publicada - los pasajes no se ven hasta el día del examen.',
   'qatar.specs.cambridge.0990':
-    '0990 - variante rediseñada. Alineada con la escala de calificación 9-1 de Cambridge usada a nivel internacional. El diseño de las preguntas se ha renovado en comparación con 0500, y las notas de corte se comunican en la escala 9-1. Los colegios eligen 0500 o 0990 según la escala de calificación que necesiten sus graduados en sus expedientes.',
+    '0990: la versión con calificación 9-1. Tiene las mismas pruebas que 0500, con las mismas preguntas, puntuaciones y objetivos; solo cambia la calificación, que se comunica en la escala 9-1. Los colegios eligen 0500 o 0990 según la escala de calificación que necesiten sus graduados en sus expedientes.',
   'qatar.specs.note':
     'Si no estás seguro de qué especificación usa tu colegio, tu profesor de inglés o tu jefe de estudios es la fuente más rápida de información - el código de la especificación suele aparecer en tu examen de prueba, tu calendario y tu informe de fin de curso.',
   'qatar.help.h2': 'Cómo ayuda The English Hub a los estudiantes de IGCSE de Qatar',
@@ -7038,9 +7038,9 @@ export const ES_MESSAGES: Record<string, string> = {
   'gcc.specs.0500.body':
     'El consolidado examen de Cambridge First Language. Dos exámenes escritos evalúan la comprensión lectora, el resumen y la escritura dirigida y de composición. Muchos colegios del CCG que llevan años con Cambridge siguen presentando a sus promociones al 0500.',
   'gcc.specs.0500_link': 'Abrir el centro de 0500',
-  'gcc.specs.0990.title': 'Cambridge IGCSE 0990 - English First Language (rediseñado)',
+  'gcc.specs.0990.title': 'Cambridge IGCSE 0990 - English First Language (calificación 9-1)',
   'gcc.specs.0990.body':
-    'La titulación rediseñada de Cambridge First Language, con un modelo de evaluación actualizado y comunicación de notas en 9-1. Las competencias se solapan en gran medida con 0500, pero las ponderaciones de las preguntas y la redacción de la rúbrica difieren lo suficiente como para que importe practicar con el examen correcto.',
+    'La versión con calificación 9-1 de Cambridge First Language English. Tiene las mismas pruebas que 0500, con las mismas preguntas, puntuaciones y ponderaciones; solo cambia la escala de resultados, así que las pruebas de 0500 de los mismos años del programa también sirven para practicar.',
   'gcc.specs.0990_link': 'Abrir el centro de 0990',
   'gcc.help.h2': 'Cómo ayuda The English Hub a los estudiantes de IGCSE del CCG',
   'gcc.help.intro':
@@ -19301,7 +19301,7 @@ export const ES_MESSAGES: Record<string, string> = {
   'rev.lang.hub.paper1': 'Paper 1',
   'rev.lang.hub.paper2': 'Paper 2',
   'rev.lang.hub.papers_equal_note':
-    'Ambas pruebas tienen el mismo peso y ambas evalúan SPaG en la sección de escritura.',
+    'Ambas pruebas evalúan la ortografía, la puntuación y la gramática en la sección de escritura. AQA y OCR dan el mismo peso a las dos pruebas; Edexcel y Eduqas dan a la segunda el 60% de la nota.',
   'rev.lang.hub.quick_reminder_title': 'Recordatorio rápido de la prueba de Lengua',
   'rev.lang.hub.quick_reminder_body':
     'Selecciona tu junta examinadora para ver orientación específica de cada prueba. La estructura de Paper 1 y Paper 2 varía según la junta, pero las destrezas de lectura, escritura y SPaG son universales.',
@@ -21354,7 +21354,7 @@ export const ES_MESSAGES: Record<string, string> = {
   'igcse.page.reading.examiner_note': 'Nota del examinador',
   'igcse.page.reading.words_to_consider': 'Palabras y frases a considerar',
   'igcse.page.reading.language_marks': 'Lengua',
-  'igcse.page.reading.summary_task': 'Tarea de resumen (Paper 1 Q3)',
+  'igcse.page.reading.summary_task': 'Tarea de resumen (Paper 1 Q2)',
   'igcse.page.reading.reading_summary_marks': 'Lectura + resumen',
   'igcse.page.reading.model_summary': 'Resumen modelo',
   'igcse.page.reading.key_vocabulary': 'Vocabulario clave',

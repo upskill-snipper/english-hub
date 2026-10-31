@@ -37,14 +37,20 @@ export const metadata: Metadata = {
   },
 }
 
+// 31 October 2026: Section A was one directed writing task, the 2024-2026 paper.
+// From 2027 it is one question in two parts (src/data/mark-scheme-guides/
+// cambridge-0500-paper2.ts): 1(a), a 5-mark structured question on the text, then
+// 1(b), 35 marks. The timing plan had no time for 1(a); the minutes are now the
+// guide's suggestion, an hour on each section. The note under the hero tells a
+// November 2026 candidate what differs.
 const sections = [
   {
     section: 'Section A',
     title: 'Directed Writing',
     marks: 40,
     description:
-      'Read a short stimulus text (sometimes two) and respond in a specific form - a letter, speech, article or report - for a clear purpose and audience. 250-350 words.',
-    split: 'Reading 15 marks • Writing 25 marks',
+      "One question in two parts, on one or two short texts of about 550 to 650 words in all. 1(a), 5 marks: a short answer that analyses and evaluates something in the text, such as a person's attitude, in your own words. 1(b), 35 marks: a speech, letter, article or report of about 250 to 350 words that discusses, argues or persuades, using, developing and evaluating ideas from the text or texts, for the audience the question sets.",
+    split: 'Reading 15 marks (1(a) 5, 1(b) 10) • Writing 25 marks',
     icon: FileEdit,
     href: '/igcse/cambridge/0500/paper-2/directed-writing',
   },
@@ -99,9 +105,14 @@ export default async function Paper2HubPage() {
             Paper 2: Directed Writing and Composition
           </h1>
           <p className="mt-3 max-w-2xl text-body-lg text-muted-foreground">
-            Two tasks, two hours, eighty marks. Section A tests your ability to shape writing for a
-            real-world purpose. Section B is your chance to write a composition that engages and
+            Two sections, two hours, eighty marks. Section A tests your ability to shape writing for
+            a real-world purpose. Section B is your chance to write a composition that engages and
             surprises.
+          </p>
+          <p className="mt-3 max-w-2xl text-body-sm text-muted-foreground">
+            This is the paper for exams from 2027. If you sit Paper 2 in November 2026, your Section
+            A is one directed writing task worth 40 marks, with no 5-mark question first; Section B,
+            the composition, is the same.
           </p>
 
           <div className="mt-5 flex flex-wrap gap-3 text-body-xs text-muted-foreground">
@@ -221,27 +232,27 @@ export default async function Paper2HubPage() {
         </div>
         <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
           <div className="rounded-xl border border-border/60 bg-muted/30 p-4">
-            <p className="text-body-xs font-semibold text-primary">5 min - read</p>
+            <p className="text-body-xs font-semibold text-primary">10 min - read</p>
             <p className="mt-1 text-body-sm text-foreground">
-              Read the Section A stimulus text and Section B titles.
+              Read the Section A text or texts, then the four Section B titles.
             </p>
           </div>
           <div className="rounded-xl border border-border/60 bg-muted/30 p-4">
-            <p className="text-body-xs font-semibold text-primary">50 min - Section A</p>
+            <p className="text-body-xs font-semibold text-primary">8 min - 1(a)</p>
             <p className="mt-1 text-body-sm text-foreground">
-              Plan (5), draft (40), proofread (5). Stay within 350 words.
+              Short answer in your own words, with details as evidence.
             </p>
           </div>
           <div className="rounded-xl border border-border/60 bg-muted/30 p-4">
-            <p className="text-body-xs font-semibold text-primary">55 min - Section B</p>
+            <p className="text-body-xs font-semibold text-primary">42 min - 1(b)</p>
             <p className="mt-1 text-body-sm text-foreground">
-              Plan (8), draft (40), proofread (7). Stay within 450 words.
+              Plan, then write about 250-350 words, then check.
             </p>
           </div>
           <div className="rounded-xl border border-border/60 bg-muted/30 p-4">
-            <p className="text-body-xs font-semibold text-primary">10 min - check</p>
+            <p className="text-body-xs font-semibold text-primary">60 min - Section B</p>
             <p className="mt-1 text-body-sm text-foreground">
-              Final pass for spelling, punctuation, tense consistency.
+              Choose and plan (5), write about 350-450 words (50), check (5).
             </p>
           </div>
         </div>

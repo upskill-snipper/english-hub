@@ -113,13 +113,21 @@ export default function GradeBoundariesPage() {
           </p>
         </div>
 
-        {/* Overall grade boundaries */}
+        {/* Overall grade boundaries. Corrected 31 October 2026 (second reading): the
+            table was on a 160-mark scale with figures matching no series Eduqas published,
+            and the paragraph called 160 the total. Eduqas grades C700QS out of 200:
+            Component 1 (C700U10, 80 marks) at a weighting factor of 1.0 and Component 2
+            (C700U20, 80 marks) at 1.5. The figures are from Eduqas GCSE Grade Points for
+            June 2023, June 2024 and June 2025 (eduqas.co.uk/media/y3tczpkq, /giydmniq and
+            /g3aohuwq); June 2024 matches src/lib/marking/grade-boundaries/eduqas.ts. */}
         <Section title={tr(`Overall grade boundaries (combined Paper 1 + Paper 2)`)} defaultOpen>
           <p>
-            The total number of marks across both components is <strong>160</strong>. Paper 1 is
-            worth 40% (64 marks) and Paper 2 is worth 60% (96 marks). Your raw marks from both
-            components are combined to produce your overall grade. Below are the approximate
-            boundaries from recent exam series:
+            Each component is marked out of 80, but the two are not weighted equally: Paper 1 is
+            worth 40% of the GCSE and Paper 2 is worth 60%. To combine them, Eduqas multiplies your
+            Paper 2 mark by 1.5, so your overall mark is out of <strong>200</strong> (up to 80 from
+            Paper 1 and up to 120 from Paper 2) and each Paper 2 mark counts one and a half times as
+            much towards your grade. Below are the boundaries Eduqas published for recent June
+            series:
           </p>
 
           <div className="overflow-x-auto mt-4">
@@ -136,75 +144,75 @@ export default function GradeBoundariesPage() {
               <tbody className="divide-y divide-border">
                 <tr className="bg-success-50">
                   <td className="py-2 pe-4 font-bold text-success-700">9</td>
-                  <td className="py-2 pe-4">121</td>
-                  <td className="py-2 pe-4">123</td>
-                  <td className="py-2 pe-4">124</td>
-                  <td className="py-2 pe-4">~77%</td>
+                  <td className="py-2 pe-4">145</td>
+                  <td className="py-2 pe-4">150</td>
+                  <td className="py-2 pe-4">152</td>
+                  <td className="py-2 pe-4">~76%</td>
                 </tr>
                 <tr className="bg-success-50/50">
                   <td className="py-2 pe-4 font-bold text-success-700">8</td>
-                  <td className="py-2 pe-4">109</td>
-                  <td className="py-2 pe-4">111</td>
-                  <td className="py-2 pe-4">112</td>
+                  <td className="py-2 pe-4">132</td>
+                  <td className="py-2 pe-4">138</td>
+                  <td className="py-2 pe-4">139</td>
                   <td className="py-2 pe-4">~70%</td>
                 </tr>
                 <tr>
                   <td className="py-2 pe-4 font-bold text-primary">7</td>
-                  <td className="py-2 pe-4">98</td>
-                  <td className="py-2 pe-4">100</td>
-                  <td className="py-2 pe-4">101</td>
-                  <td className="py-2 pe-4">~63%</td>
+                  <td className="py-2 pe-4">120</td>
+                  <td className="py-2 pe-4">126</td>
+                  <td className="py-2 pe-4">127</td>
+                  <td className="py-2 pe-4">~64%</td>
                 </tr>
                 <tr>
                   <td className="py-2 pe-4 font-bold text-primary">6</td>
-                  <td className="py-2 pe-4">85</td>
-                  <td className="py-2 pe-4">87</td>
-                  <td className="py-2 pe-4">88</td>
-                  <td className="py-2 pe-4">~55%</td>
+                  <td className="py-2 pe-4">105</td>
+                  <td className="py-2 pe-4">112</td>
+                  <td className="py-2 pe-4">113</td>
+                  <td className="py-2 pe-4">~57%</td>
                 </tr>
                 <tr>
                   <td className="py-2 pe-4 font-bold text-foreground">5</td>
-                  <td className="py-2 pe-4">71</td>
-                  <td className="py-2 pe-4">73</td>
-                  <td className="py-2 pe-4">74</td>
-                  <td className="py-2 pe-4">~46%</td>
+                  <td className="py-2 pe-4">90</td>
+                  <td className="py-2 pe-4">98</td>
+                  <td className="py-2 pe-4">99</td>
+                  <td className="py-2 pe-4">~50%</td>
                 </tr>
                 <tr>
                   <td className="py-2 pe-4 font-bold text-yellow-600">4</td>
-                  <td className="py-2 pe-4">53</td>
-                  <td className="py-2 pe-4">55</td>
-                  <td className="py-2 pe-4">56</td>
-                  <td className="py-2 pe-4">~35%</td>
+                  <td className="py-2 pe-4">75</td>
+                  <td className="py-2 pe-4">84</td>
+                  <td className="py-2 pe-4">86</td>
+                  <td className="py-2 pe-4">~43%</td>
                 </tr>
                 <tr>
                   <td className="py-2 pe-4 font-bold text-muted-foreground">3</td>
-                  <td className="py-2 pe-4">39</td>
-                  <td className="py-2 pe-4">41</td>
-                  <td className="py-2 pe-4">41</td>
-                  <td className="py-2 pe-4">~26%</td>
+                  <td className="py-2 pe-4">56</td>
+                  <td className="py-2 pe-4">64</td>
+                  <td className="py-2 pe-4">65</td>
+                  <td className="py-2 pe-4">~33%</td>
                 </tr>
                 <tr>
                   <td className="py-2 pe-4 font-bold text-muted-foreground">2</td>
-                  <td className="py-2 pe-4">25</td>
-                  <td className="py-2 pe-4">26</td>
-                  <td className="py-2 pe-4">27</td>
-                  <td className="py-2 pe-4">~17%</td>
+                  <td className="py-2 pe-4">38</td>
+                  <td className="py-2 pe-4">44</td>
+                  <td className="py-2 pe-4">44</td>
+                  <td className="py-2 pe-4">~22%</td>
                 </tr>
                 <tr>
                   <td className="py-2 pe-4 font-bold text-muted-foreground">1</td>
-                  <td className="py-2 pe-4">11</td>
-                  <td className="py-2 pe-4">11</td>
-                  <td className="py-2 pe-4">12</td>
-                  <td className="py-2 pe-4">~7%</td>
+                  <td className="py-2 pe-4">20</td>
+                  <td className="py-2 pe-4">24</td>
+                  <td className="py-2 pe-4">24</td>
+                  <td className="py-2 pe-4">~12%</td>
                 </tr>
               </tbody>
             </table>
           </div>
 
           <p className="mt-4 text-sm text-muted-foreground">
-            Note: These boundaries are approximate and based on publicly available WJEC Eduqas data.
-            The &ldquo;Approx. %&rdquo; column shows roughly what percentage of the total 160 marks
-            you need.
+            Note: These are the qualification boundaries, out of 200, that Eduqas published in its
+            GCSE Grade Points for June 2023, June 2024 and June 2025. The &ldquo;Approx. %&rdquo;
+            column shows the June 2025 boundary as a share of the 200 marks.
           </p>
         </Section>
 
@@ -463,9 +471,10 @@ export default function GradeBoundariesPage() {
                   semicolons, colons, and dashes for effect.
                 </li>
                 <li>
-                  <strong>Proofreading:</strong> In Paper 2, the proofreading and editing tasks are
-                  straightforward marks. Practise identifying spelling, punctuation, and grammar
-                  errors under timed conditions to secure these marks.
+                  <strong>Proofreading:</strong> Neither paper sets a proofreading task, but
+                  technical accuracy is 16 of the 40 writing marks on each. Practise spotting your
+                  own spelling, punctuation, and grammar errors under timed conditions, and keep a
+                  few minutes to check every piece you write.
                 </li>
               </ul>
             </div>
@@ -501,7 +510,15 @@ export default function GradeBoundariesPage() {
           </div>
         </Section>
 
-        {/* Marks per question */}
+        {/* Marks per question. Corrected 31 October 2026 to the C700 guides in
+            src/data/mark-scheme-guides/eduqas-lang-comp1.ts and -comp2.ts. The tables
+            gave Paper 1 64 marks with a 24-mark story, and Paper 2 96 marks with a
+            5-mark proofreading question Eduqas does not set and writing tasks of 24 and
+            27. Each paper is 80 marks: Paper 1 Q01 to Q05 (5, 5, 10, 10, 10) and Q11
+            (40); Paper 2 1.1 to 1.6 (3, 10, 3, 10, 4, 10) and two compulsory tasks, 2.1
+            and 2.2, of 20 each. The numbering is the live papers'. The weighting
+            paragraph above said Paper 1 was "64 marks" and Paper 2 "96"; a proofreading
+            tip above, in the Grade 5 to 7 advice, described the same invented task. */}
         <Section title={tr(`Marks per question at a glance`)}>
           <p className="mb-4">
             WJEC Eduqas English Language is split into two components. Paper 1 (20th Century
@@ -527,41 +544,41 @@ export default function GradeBoundariesPage() {
                   <td className="py-2 pe-4 font-semibold" rowSpan={5}>
                     A &mdash; Reading
                   </td>
-                  <td className="py-2 pe-4">A1</td>
+                  <td className="py-2 pe-4">Q01</td>
                   <td className="py-2 pe-4">5 marks</td>
                   <td className="py-2 pe-4">{tr(`Retrieval / comprehension`)}</td>
                 </tr>
                 <tr>
-                  <td className="py-2 pe-4">A2</td>
+                  <td className="py-2 pe-4">Q02</td>
                   <td className="py-2 pe-4">5 marks</td>
-                  <td className="py-2 pe-4">{tr(`Inference / impressions`)}</td>
+                  <td className="py-2 pe-4">{tr(`Language: impressions (short answer)`)}</td>
                 </tr>
                 <tr>
-                  <td className="py-2 pe-4">A3</td>
+                  <td className="py-2 pe-4">Q03</td>
                   <td className="py-2 pe-4">10 marks</td>
                   <td className="py-2 pe-4">{tr(`Language analysis`)}</td>
                 </tr>
                 <tr>
-                  <td className="py-2 pe-4">A4</td>
+                  <td className="py-2 pe-4">Q04</td>
                   <td className="py-2 pe-4">10 marks</td>
-                  <td className="py-2 pe-4">{tr(`Structure / organisation`)}</td>
+                  <td className="py-2 pe-4">{tr(`Language and structure`)}</td>
                 </tr>
                 <tr>
-                  <td className="py-2 pe-4">A5</td>
+                  <td className="py-2 pe-4">Q05</td>
                   <td className="py-2 pe-4">10 marks</td>
                   <td className="py-2 pe-4">{tr(`Extended critical response`)}</td>
                 </tr>
                 <tr className="bg-blue-500/5">
                   <td className="py-2 pe-4 font-semibold">B &mdash; Writing</td>
-                  <td className="py-2 pe-4">B1</td>
-                  <td className="py-2 pe-4">24 marks</td>
+                  <td className="py-2 pe-4">Q11</td>
+                  <td className="py-2 pe-4">40 marks</td>
                   <td className="py-2 pe-4">{tr(`Creative prose writing`)}</td>
                 </tr>
                 <tr className="font-bold">
                   <td className="py-2 pe-4" colSpan={2}>
                     {tr(`Paper 1 Total`)}
                   </td>
-                  <td className="py-2 pe-4">64 marks</td>
+                  <td className="py-2 pe-4">80 marks</td>
                   <td className="py-2 pe-4">40% of qualification</td>
                 </tr>
               </tbody>
@@ -588,57 +605,59 @@ export default function GradeBoundariesPage() {
                   <td className="py-2 pe-4 font-semibold" rowSpan={6}>
                     A &mdash; Reading
                   </td>
-                  <td className="py-2 pe-4">A1</td>
-                  <td className="py-2 pe-4">5 marks</td>
-                  <td className="py-2 pe-4">{tr(`Retrieval / comprehension`)}</td>
+                  <td className="py-2 pe-4">1.1</td>
+                  <td className="py-2 pe-4">3 marks</td>
+                  <td className="py-2 pe-4">{tr(`Retrieval (21st-century text)`)}</td>
                 </tr>
                 <tr>
-                  <td className="py-2 pe-4">A2</td>
-                  <td className="py-2 pe-4">5 marks</td>
-                  <td className="py-2 pe-4">{tr(`Inference / summary`)}</td>
-                </tr>
-                <tr>
-                  <td className="py-2 pe-4">A3</td>
+                  <td className="py-2 pe-4">1.2</td>
                   <td className="py-2 pe-4">10 marks</td>
-                  <td className="py-2 pe-4">{tr(`Language analysis`)}</td>
+                  <td className="py-2 pe-4">
+                    {tr(`How the writer achieves a purpose (21st-century text)`)}
+                  </td>
                 </tr>
                 <tr>
-                  <td className="py-2 pe-4">A4</td>
+                  <td className="py-2 pe-4">1.3</td>
+                  <td className="py-2 pe-4">3 marks</td>
+                  <td className="py-2 pe-4">{tr(`Understanding (19th-century text)`)}</td>
+                </tr>
+                <tr>
+                  <td className="py-2 pe-4">1.4</td>
+                  <td className="py-2 pe-4">10 marks</td>
+                  <td className="py-2 pe-4">{tr(`Evaluation (19th-century text)`)}</td>
+                </tr>
+                <tr>
+                  <td className="py-2 pe-4">1.5</td>
+                  <td className="py-2 pe-4">4 marks</td>
+                  <td className="py-2 pe-4">{tr(`Synthesis (both texts)`)}</td>
+                </tr>
+                <tr>
+                  <td className="py-2 pe-4">1.6</td>
                   <td className="py-2 pe-4">10 marks</td>
                   <td className="py-2 pe-4">{tr(`Comparison of texts`)}</td>
-                </tr>
-                <tr>
-                  <td className="py-2 pe-4">A5</td>
-                  <td className="py-2 pe-4">10 marks</td>
-                  <td className="py-2 pe-4">Synthesis and comparison</td>
-                </tr>
-                <tr>
-                  <td className="py-2 pe-4">A6</td>
-                  <td className="py-2 pe-4">5 marks</td>
-                  <td className="py-2 pe-4">Proofreading and editing</td>
                 </tr>
                 <tr className="bg-blue-500/5">
                   <td className="py-2 pe-4 font-semibold" rowSpan={2}>
                     B &mdash; Writing
                   </td>
-                  <td className="py-2 pe-4">B1</td>
-                  <td className="py-2 pe-4">24 marks</td>
+                  <td className="py-2 pe-4">2.1</td>
+                  <td className="py-2 pe-4">20 marks</td>
                   <td className="py-2 pe-4">
-                    {tr(`Transactional / persuasive writing (shorter task)`)}
+                    {tr(`Transactional / persuasive writing (first compulsory task)`)}
                   </td>
                 </tr>
                 <tr className="bg-blue-500/5">
-                  <td className="py-2 pe-4">B2</td>
-                  <td className="py-2 pe-4">27 marks</td>
+                  <td className="py-2 pe-4">2.2</td>
+                  <td className="py-2 pe-4">20 marks</td>
                   <td className="py-2 pe-4">
-                    {tr(`Transactional / persuasive writing (longer task)`)}
+                    {tr(`Transactional / persuasive writing (second compulsory task)`)}
                   </td>
                 </tr>
                 <tr className="font-bold">
                   <td className="py-2 pe-4" colSpan={2}>
                     {tr(`Paper 2 Total`)}
                   </td>
-                  <td className="py-2 pe-4">96 marks</td>
+                  <td className="py-2 pe-4">80 marks</td>
                   <td className="py-2 pe-4">60% of qualification</td>
                 </tr>
               </tbody>
@@ -646,9 +665,9 @@ export default function GradeBoundariesPage() {
           </div>
 
           <p className="mt-4 text-sm text-muted-foreground">
-            Notice that the writing sections across both components contribute a significant portion
-            of the marks. Strong creative and writing for real purposes can be developed through
-            preparation and practice regardless of what unseen text appears on the day.
+            Notice that writing is half of each component: 40 of its 80 marks. Strong creative and
+            writing for real purposes skills can be developed through preparation and practice
+            regardless of what unseen text appears on the day.
           </p>
         </Section>
 

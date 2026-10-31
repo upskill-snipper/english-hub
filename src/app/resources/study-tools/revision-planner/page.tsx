@@ -29,8 +29,11 @@ const BOARD_TOPICS: Record<string, TopicItem[]> = {
     { id: 'aqa-lang-4', label: 'Paper 1 Q4 - Evaluation (20 marks)', done: false },
     { id: 'aqa-lang-5', label: 'Paper 1 Q5 - Creative writing (40 marks)', done: false },
     { id: 'aqa-lang-6', label: 'Paper 2 Q1 - True/false statements', done: false },
-    { id: 'aqa-lang-7', label: 'Paper 2 Q2 - Summary and synthesis', done: false },
-    { id: 'aqa-lang-8', label: 'Paper 2 Q3 - Language comparison', done: false },
+    // 31 October 2026: Q2 was "Summary and synthesis", its wording before summer
+    // 2026, and Q3 "Language comparison"; Q3 analyses the language of one source
+    // (src/data/mark-scheme-guides/aqa-lang-paper2.ts). Ids kept.
+    { id: 'aqa-lang-7', label: 'Paper 2 Q2 - Inference and synthesis', done: false },
+    { id: 'aqa-lang-8', label: 'Paper 2 Q3 - Language analysis (12 marks)', done: false },
     { id: 'aqa-lang-9', label: 'Paper 2 Q4 - Comparison (16 marks)', done: false },
     { id: 'aqa-lang-10', label: 'Paper 2 Q5 - Transactional writing (40 marks)', done: false },
     { id: 'aqa-lang-11', label: 'Spoken Language endorsement', done: false },
@@ -66,8 +69,21 @@ const BOARD_TOPICS: Record<string, TopicItem[]> = {
     { id: 'edx-lit-5', label: 'Paper 2 Section C - Unseen poetry', done: false },
   ],
   'Cambridge IGCSE Language': [
-    { id: 'caie-lang-1', label: 'Paper 1 - Reading passages (Q1 to Q3)', done: false },
-    { id: 'caie-lang-2', label: 'Paper 1 - Summary writing', done: false },
+    // 31 October 2026: "Q1 to Q3" was the 2024-2026 numbering. From 2027 Paper 1 is
+    // four questions of 20, the summary being Q2 (cambridge-0500-paper1.ts guide).
+    // Second read: the numbers say "from 2027", as November 2026 numbers them
+    // differently, and Q3's language task is named.
+    {
+      id: 'caie-lang-1',
+      label:
+        'Paper 1 - Comprehension, short answers, language task and extended response (Q1, Q3 and Q4 from 2027)',
+      done: false,
+    },
+    {
+      id: 'caie-lang-2',
+      label: 'Paper 1 - Summary task (Q2 from 2027; part of Q1 in November 2026)',
+      done: false,
+    },
     { id: 'caie-lang-3', label: 'Paper 2 - Directed writing', done: false },
     { id: 'caie-lang-4', label: 'Paper 2 - Composition (descriptive / narrative)', done: false },
     { id: 'caie-lang-5', label: 'Coursework portfolio (if applicable)', done: false },

@@ -13,25 +13,29 @@ export type Bi = { en: string; ar: string }
 export const STRINGS: Record<string, Bi> = {
   s0: { en: `Grade Boundaries`, ar: `حدود الدرجات` },
   s1: { en: `Important note`, ar: `ملاحظة مهمة` },
-  s2: { en: `Extended Tier`, ar: `المستوى الممدود` },
+  // 31 October 2026: s2, s6, s8, s9, s12, s30, s36, s79, s80, s113 and s114 rewritten
+  // with the page (see its data note), and s106, s108 and s109 with its revision
+  // links; their Arabic is new and wants a native
+  // speaker's read. s11, s115 and s82 to s85 were for the Core tier and are unused.
+  s2: { en: `Paper 1 + Paper 2`, ar: `الورقة 1 + الورقة 2` },
   s4: { en: `Grades available:`, ar: `الدرجات المتاحة:` },
   s5: { en: `Maximum combined mark:`, ar: `النقاط máxima المجمعة:` },
   s6: {
-    en: `More challenging reading passages and questions`,
-    ar: `م.passages وايد تحديّة مع القراءة والأسئلةPropertyParams{}`,
+    en: `Each paper is 2 hours and 80 marks`,
+    ar: `كل ورقة مدتها ساعتان و80 درجة`,
   },
   s8: {
-    en: `Most international schools enter students for Extended`,
-    ar: `أغلب المدارس الدولية تسجل طلابها في الامتداد`,
+    en: `Component 3, the Coursework Portfolio, can replace Paper 2`,
+    ar: `يمكن أن يحلّ المكوّن 3، ملف الأعمال، محلّ الورقة 2`,
   },
   s9: {
-    en: `Paper 1 (Reading) + Paper 3 (Directed Writing & Composition)`,
-    ar: `ورقية 1 (القراءة) + ورقة 3 (الكتابة الموجهة والتأليف)`,
+    en: `Paper 1 (Reading) + Paper 2 (Directed Writing & Composition)`,
+    ar: `الورقة 1 (القراءة) + الورقة 2 (الكتابة الموجهة والتأليف)`,
   },
   s11: { en: `Maximum achievable grade is C`, ar: `الدرجة القصوى هي جCCCCCC (Grade C)` },
   s12: {
-    en: `Suitable for students who find the Extended paper too demanding`,
-    ar: `مناسب للي ما يحبسون الورق الممتد صعب عليهم`,
+    en: `Every candidate sits the same papers: there are no tiers`,
+    ar: `كل الطلاب يقدّمون الأوراق نفسها: لا توجد مستويات`,
   },
   s13: {
     en: `Exceptional performance across all components`,
@@ -72,7 +76,7 @@ export const STRINGS: Record<string, Bi> = {
   s27: { en: `Limited understanding and weak expression`, ar: `فهما محدودة وتعبير ضعيف` },
   s28: { en: `Minimal evidence of understanding`, ar: `أدلّة قليلة على الفهم` },
   s29: { en: `Grade A* (9) - Exceptional`, ar: `درجة أستاذية (9) - استثنائية` },
-  s30: { en: `Reading (Paper 2 / Paper 1):`, ar: `قراءة (الورقة 2 / الورقة 1) :` },
+  s30: { en: `Reading (Paper 1):`, ar: `القراءة (الورقة 1):` },
   s31: {
     en: `Perceptive, original analysis that goes beyond the surface meaning of the text.`,
     ar: `تحليل ذكي ومبتكر يتجاوز المعنى السطحي للنص.`,
@@ -92,7 +96,7 @@ export const STRINGS: Record<string, Bi> = {
     en: `Sophisticated understanding of how writers use structure, tone, and register for effect.`,
     ar: ``,
   },
-  s36: { en: `Writing (Paper 4 / Paper 3):`, ar: `الكتابة (ورقة الامتحان 4 / ورقة الامتحان 3)` },
+  s36: { en: `Writing (Paper 2):`, ar: `الكتابة (الورقة 2):` },
   s37: {
     en: `Directed writing that is entirely convincing in its adopted voice and format, with ideas that go beyond the passage.`,
     ar: `كتابة موجهة تكون مقنعة تمامًا في الصوت والشكل المتبني، مع أفكار تتجاوز ما في النص.`,
@@ -217,12 +221,12 @@ export const STRINGS: Record<string, Bi> = {
     ar: `لا هيكل واضح؛ الأخطاء تعيق الفهم بشكل كبير.`,
   },
   s79: {
-    en: `Comprehension, language analysis, summary, writer’s effect`,
-    ar: `الفهم، تحليل اللغة، الملخص، أثر الكاتب`,
+    en: `Comprehension, summary, language analysis, extended response to reading`,
+    ar: `الفهم، الملخص، تحليل اللغة، الاستجابة المطوّلة للقراءة`,
   },
   s80: {
-    en: `Paper 4 - Directed Writing & Composition`,
-    ar: `ورق الامتحان 4 - الكتابة الموجهة والتأليف`,
+    en: `Paper 2 - Directed Writing & Composition`,
+    ar: `الورقة 2 - الكتابة الموجهة والتأليف`,
   },
   s81: {
     en: `Directed writing (from passage), narrative or descriptive composition`,
@@ -261,12 +265,12 @@ However, if you want this translated into a more natural Khaleeji Arabic equival
   s102: { en: `Wrong format in directed writing`, ar: `صيغة خاطئة في الكتابة المنظمة` },
   s104: { en: `Weak endings`, ar: `نهايات ضعيفة` },
   s105: { en: `Ignoring SPaG`, ar: `IGNORING SPaG` },
-  s106: { en: `Paper 1: Reading (Core)`, ar: `ورقية 1: القراءة (الأساسية)` },
+  s106: { en: `Paper 1: Reading`, ar: `الورقة 1: القراءة` },
   s107: { en: `Comprehension, summary, and language analysis`, ar: `الفهم، الملخص، وتحليل اللغة` },
-  s108: { en: `Paper 2: Reading (Extended)`, ar: `ورقتي 2: القراءة (الموسعة)` },
+  s108: { en: `Paper 2: Directed Writing & Composition`, ar: `الورقة 2: الكتابة الموجهة والتأليف` },
   s109: {
-    en: `Comprehension, summary, language analysis, and writer’s effect`,
-    ar: `الفهم، الملخص، تحليل اللغة، وتأثير كاتب`,
+    en: `Directed writing and narrative or descriptive composition`,
+    ar: `الكتابة الموجّهة والإنشاء السردي أو الوصفي`,
   },
   s110: { en: `Language Techniques`, ar: `TECHNIQUES AL-LISANIYYAH` },
   s111: { en: `Writing Skills`, ar: `مهارات الكتابة` },
@@ -275,12 +279,12 @@ However, if you want this translated into a more natural Khaleeji Arabic equival
     ar: `جميع الصيغ، التقنيات الملخصة، والComposition`,
   },
   s113: {
-    en: `Core vs Extended tier: which one are you sitting?`,
-    ar: `متى رح تختار بين الترتيه الأساسية والتمددية؟ شنو الترتيه اللي رح تقعد فيها؟`,
+    en: `Which papers do you sit?`,
+    ar: `ما الأوراق التي تقدّمها؟`,
   },
   s114: {
-    en: `Extended tier grade boundaries (Paper 2 + Paper 4)`,
-    ar: `حدود الدرجات الموسعة (ورقة الإجابة 2 + ورقة الإجابة 4)`,
+    en: `Grade boundaries (Paper 1 + Paper 2)`,
+    ar: `حدود الدرجات (الورقة 1 + الورقة 2)`,
   },
   s115: {
     en: `Core tier grade boundaries (Paper 1 + Paper 3)`,

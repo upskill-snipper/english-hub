@@ -10,7 +10,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Paper 1 Model Answers - IGCSE Language A 0500',
     description:
-      'Five annotated model answers for Cambridge IGCSE 0500 Paper 1: two retrieval responses, a Grade C and A* language analysis compared, and a summary.',
+      'Five annotated model answers for Cambridge IGCSE 0500 Paper 1: two sets of summary notes, a 120-word summary, and Grade C and A* language analysis compared.',
     images: [
       {
         url: '/api/og?title=Paper+1+Model+Answers+-+IGCSE+Language+A+0500',
@@ -22,27 +22,38 @@ export const metadata: Metadata = {
   },
   title: 'Paper 1 Model Answers - IGCSE Language A 0500',
   description:
-    'Five annotated model answers for Cambridge IGCSE 0500 Paper 1: two retrieval responses, a Grade C and A* language analysis compared, and a summary.',
+    'Five annotated model answers for Cambridge IGCSE 0500 Paper 1: two sets of summary notes, a 120-word summary, and Grade C and A* language analysis compared.',
   alternates: {
     canonical: 'https://theenglishhub.app/igcse/cambridge/0500/paper-1/model-answers',
   },
 }
 
 /* ────────────────────────────────────────────────────────────────────────────
-   Q1 - RETRIEVAL MODEL ANSWERS (2 examples)
+   31 October 2026: rewritten to src/data/mark-scheme-guides/cambridge-0500-paper1.ts.
+   The page modelled a paper no 0500 syllabus sets: a notes-style "Q1" marked
+   15/15, a language analysis out of 15 as Q2 and a 250-word summary of two
+   passages as Q3. From 2027 the summary is Question 2(a), on Text B alone, no
+   more than 120 words, 15 marks (reading 10, writing 5); the language task is in
+   Question 3, out of 10. The notes below are now the point-selection stage of
+   that summary, the summary is cut to the limit, and the language answers are
+   re-marked out of 10 on the guide's levels (Level 3 is 5-6, Level 5 is 9-10).
+   Second reader: two notes still spoke of point marks and the old "wide-ranging"
+   descriptor, and the summary rubric was close to Cambridge's wording; all reworded.
+
+   SUMMARY NOTES: SELECTING THE POINTS FOR QUESTION 2(a) (2 examples)
    ──────────────────────────────────────────────────────────────────────────── */
 
 const q1Models = [
   {
-    title: 'Q1 Model: Dangers faced by deep-sea divers',
+    title: 'Summary notes: Dangers faced by deep-sea divers',
     grade: 'A*/9',
-    mark: '15/15',
+    mark: 'Plan',
     question:
-      'According to the passage, what dangers do deep-sea divers face? Write your answer using short notes. You do not need to use complete sentences.',
+      'Summary focus: what dangers do deep-sea divers face, according to Text B? List the points in short notes first; the summary itself must be continuous writing.',
     points: [
       {
         answer: 'Nitrogen narcosis causes confusion and impaired judgement at depth.',
-        note: 'Lifted point but rephrased in own words. "Confusion and impaired judgement" paraphrases the passage\'s "loss of clear thinking". Full mark.',
+        note: 'Lifted point but rephrased in own words. "Confusion and impaired judgement" paraphrases the passage\'s "loss of clear thinking", ready for the summary.',
       },
       {
         answer: 'Decompression sickness ("the bends") if they ascend too quickly.',
@@ -50,7 +61,7 @@ const q1Models = [
       },
       {
         answer: 'Hypothermia from prolonged exposure to near-freezing water.',
-        note: 'Uses "prolonged exposure" rather than the passage\'s "staying too long" -- own words earn full credit.',
+        note: 'Uses "prolonged exposure" rather than the passage\'s "staying too long": own words like this are what the summary\'s writing mark rewards.',
       },
       {
         answer: 'Equipment failure, particularly oxygen supply running out.',
@@ -70,16 +81,16 @@ const q1Models = [
       },
       {
         answer: 'Psychological panic which can cause divers to make fatal errors.',
-        note: 'This shows awareness of implicit meaning -- the passage describes panic without using the word directly. Inference marks earned.',
+        note: 'This shows awareness of implicit meaning: the passage describes panic without using the word directly, and the summary marks reward points the text only implies.',
       },
     ],
   },
   {
-    title: 'Q1 Model: Benefits of urban green spaces',
+    title: 'Summary notes: Benefits of urban green spaces',
     grade: 'A*/9',
-    mark: '15/15',
+    mark: 'Plan',
     question:
-      'What benefits of urban green spaces are described in the passage? Write your answer using short notes.',
+      'Summary focus: what benefits of urban green spaces does Text B describe? List the points in short notes first.',
     points: [
       {
         answer: 'Improved mental health by reducing stress and anxiety levels.',
@@ -95,7 +106,7 @@ const q1Models = [
       },
       {
         answer: 'Community cohesion as parks provide spaces for people to socialise.',
-        note: 'Abstract concept ("community cohesion") drawn from concrete passage detail ("neighbours meet"). This inference earns full marks.',
+        note: 'Abstract concept ("community cohesion") drawn from concrete passage detail ("neighbours meet"). An inferred point like this counts towards the reading mark.',
       },
       {
         answer: 'Habitat for wildlife, maintaining biodiversity within cities.',
@@ -118,7 +129,7 @@ const q1Models = [
 ]
 
 /* ────────────────────────────────────────────────────────────────────────────
-   Q2 - LANGUAGE ANALYSIS: GRADE C vs A* COMPARISON
+   QUESTION 3 - LANGUAGE TASK: GRADE C vs A* COMPARISON
    ──────────────────────────────────────────────────────────────────────────── */
 
 const q2Passage =
@@ -126,7 +137,7 @@ const q2Passage =
 
 const q2GradeC = {
   grade: 'Grade C',
-  mark: '8/15',
+  mark: '5/10',
   paragraphs: [
     {
       text: 'The writer uses a simile "like a fist" which shows the forest is closing in on them. This makes it seem dangerous.',
@@ -145,7 +156,7 @@ const q2GradeC = {
 
 const q2GradeA = {
   grade: 'Grade A*/9',
-  mark: '14/15',
+  mark: '9/10',
   paragraphs: [
     {
       text: 'The writer compares the forest to "a fist", a simile that transforms the landscape from a passive setting into an active aggressor. A fist is clenched deliberately, with intent to strike -- the connotation is not merely of enclosure but of violence about to happen. The reader is positioned as the victim inside that fist, trapped and waiting for the blow.',
@@ -153,7 +164,7 @@ const q2GradeA = {
     },
     {
       text: 'The verb "clawed" personifies the branches as predatory, suggesting they are not simply obstructing the path but actively hunting. "Clawed" carries associations of wild animals -- talons, desperation, tearing -- and works alongside "fist" to build a coherent pattern of the natural world as hostile and sentient. The shift from "clear and sandy" to "a thread of grey mud" further reinforces this: the path itself is being consumed.',
-      note: 'Semantic field analysis (fist + clawed = pattern of hostility). The student links multiple words rather than treating each in isolation -- this is what "wide-ranging" means in the mark scheme. The colour shift (sandy to grey) is a subtle observation.',
+      note: 'Semantic field analysis (fist + clawed = pattern of hostility). The student links multiple words rather than treating each in isolation: this is the range of choices the higher levels look for. The colour shift (sandy to grey) is a subtle observation.',
     },
     {
       text: 'The bird\'s single scream is given human qualities -- birds call or cry, but "screamed" implies terror, as though the forest frightens even its own inhabitants. The most effective moment, however, is the paradox that follows: "the silence that followed was worse than the scream." By stating that absence of sound is more threatening than the sound itself, the writer forces the reader to imagine what could be so terrible that even the bird has been silenced. The fear shifts from the known to the unknown.',
@@ -163,36 +174,36 @@ const q2GradeA = {
 }
 
 /* ────────────────────────────────────────────────────────────────────────────
-   Q3 - SUMMARY MODEL ANSWER
+   QUESTION 2(a) - SUMMARY MODEL ANSWER
    ──────────────────────────────────────────────────────────────────────────── */
 
 const q3Model = {
-  title: 'Q3 Model: Challenges of living in extreme cold',
+  title: 'Q2(a) Model: Challenges of living in extreme cold',
   grade: 'A*/9',
   mark: '15/15',
   question:
-    'Using information from both texts, summarise the challenges people face when living in extremely cold environments. Write approximately 250 words. You must use continuous writing (not note form) and your own words as far as possible.',
-  text: 'Living in extremely cold environments presents numerous physical and logistical challenges. The most immediate difficulty is maintaining body temperature, as prolonged exposure to sub-zero conditions leads to hypothermia and frostbite, both of which can cause permanent tissue damage or death. Residents must wear multiple insulating layers and limit time outdoors, particularly during polar winters when temperatures may fall below minus fifty degrees.\n\nThe cold also creates significant challenges for food production. Agricultural land is either frozen or covered in snow for most of the year, meaning communities depend heavily on imported supplies, preserved foods, and, in indigenous populations, traditional hunting and fishing. The cost of transporting provisions to remote arctic settlements can be extraordinarily high, placing financial strain on inhabitants.\n\nInfrastructure is equally affected. Buildings must be specially engineered to withstand the expansion and contraction caused by freeze-thaw cycles, and water pipes require extensive insulation to prevent them from bursting. Roads and runways become impassable during severe storms, isolating communities for days or weeks at a time.\n\nFurthermore, the psychological impact of extended darkness during winter months is considerable. Seasonal depression affects a significant proportion of residents, and the limited daylight disrupts normal sleep patterns, reducing productivity and overall wellbeing. Social isolation compounds this, as harsh weather discourages outdoor activity and limits opportunities for communal interaction.\n\nFinally, access to healthcare and emergency services is severely restricted in remote frozen regions, meaning that injuries or illnesses which would be easily treated elsewhere can become life-threatening.',
+    'Using Text B, summarise the challenges people face when living in extremely cold environments. Write in continuous prose, not notes, keeping to your own words wherever you can, in no more than 120 words.',
+  text: 'People living in extreme cold struggle first to stay warm: long exposure brings hypothermia and frostbite, so they must wear many layers and limit their time outdoors. Because frozen ground prevents farming, communities rely on costly imported or preserved food, and on hunting and fishing. Buildings must be engineered to survive repeated freezing and thawing, and pipes need heavy insulation to stop them bursting. Storms can close roads and runways, cutting settlements off for weeks. Months of darkness bring seasonal depression and disturbed sleep, made worse by isolation. Finally, healthcare is hard to reach, so injuries that would be treated easily elsewhere can become life-threatening.',
   annotations: [
     {
-      label: 'Point density',
-      note: 'The answer contains 15 distinct content points drawn from both passages: body temperature, hypothermia, frostbite, layered clothing, limited outdoor time, frozen agricultural land, imported food, traditional hunting, transport costs, building engineering, pipe insulation, road closure, seasonal depression, sleep disruption, and healthcare access. This comfortably exceeds the threshold for top marks.',
+      label: 'Selection',
+      note: 'The summary covers the main points from Text B that fit the focus: staying warm, food supply, buildings and pipes, isolation by storms, the effects of darkness and access to healthcare. It leaves out examples and repetition, for which the limit has no room.',
     },
     {
       label: 'Own words',
-      note: 'Every point is rephrased. The passage says "people get sad in winter" -- the summary says "seasonal depression affects a significant proportion of residents." The passage mentions "pipes crack" -- the summary says "water pipes require extensive insulation to prevent them from bursting." This consistent rephrasing earns full marks for language.',
+      note: 'Every point is rephrased. The passage says "people get sad in winter"; the summary says "seasonal depression". The passage mentions "pipes crack"; the summary says "pipes need heavy insulation to stop them bursting." This consistent rephrasing is what the writing marks reward.',
     },
     {
       label: 'Structure',
-      note: 'The summary is organised thematically (physical, food, infrastructure, psychological, medical) rather than following the order of the passages. This shows the student has processed and reorganised the material, which the mark scheme rewards.',
+      note: 'The summary groups related points (physical, food, buildings, isolation, psychological, medical) rather than following the order of the passage. Combining points into single sentences is how it fits so much into so few words.',
     },
     {
       label: 'Formal register',
-      note: 'No personal opinion, no rhetorical questions, no quotation marks. The register is neutral and academic throughout. Phrases like "furthermore" and "meaning that" provide cohesion without feeling mechanical.',
+      note: 'No personal opinion, no rhetorical questions, no quotation marks. The register is neutral throughout, and words like "because", "so" and "finally" link the points without feeling mechanical.',
     },
     {
       label: 'Word count',
-      note: 'At approximately 250 words, this sits within the expected range. Going significantly over risks repetition; going significantly under risks missing points.',
+      note: 'At about 105 words, it stays within the 120-word limit the question sets. Combining related points, rather than listing them, is how a summary stays inside the limit.',
     },
   ],
 }
@@ -227,26 +238,34 @@ export default async function Paper1ModelAnswersPage() {
             Paper 1 model answers
           </h1>
           <p className="mt-3 max-w-2xl text-body-lg text-muted-foreground">
-            Five model answers across all three Paper 1 question types: retrieval (Q1), language
-            analysis (Q2 at Grade C and A* compared side by side), and summary writing (Q3). Every
-            answer includes examiner-style annotations explaining exactly what earns marks.
+            Five model answers for two Paper 1 tasks: the summary in Question 2(a), from
+            point-selection notes to a finished summary, and the Question 3 language task at Grade C
+            and A* compared side by side. Every answer includes examiner-style annotations
+            explaining exactly what earns marks.
+          </p>
+          <p className="mt-3 max-w-2xl text-body-sm text-muted-foreground">
+            These follow the paper for exams from 2027. On the November 2026 paper the summary is
+            part of Question 1, and the language task is part of Question 2 and marked out of 15,
+            not 10.
           </p>
         </div>
       </section>
 
-      {/* ── Q1 Retrieval Models ───────────────────────────────────────── */}
+      {/* ── Q2(a) Summary notes ───────────────────────────────────────── */}
       <section className="space-y-6">
         <div className="flex items-center gap-3">
           <Target className="size-5 text-primary" />
-          <h2 className="text-heading-lg font-heading text-foreground">Question 1 - Retrieval</h2>
+          <h2 className="text-heading-lg font-heading text-foreground">
+            Question 2(a) - Selecting the points
+          </h2>
         </div>
 
         <div className="rounded-xl border border-border/60 bg-muted/30 p-5">
           <p className="text-body-sm text-muted-foreground leading-relaxed">
-            Question 1 tests your ability to locate and rephrase information from the passage. You
-            are given a specific focus (e.g. &quot;dangers&quot; or &quot;benefits&quot;) and must
-            list relevant points in your own words. Short notes are acceptable. Aim for 12&ndash;15
-            points to be safe &mdash; the mark scheme rewards breadth of reading.
+            The summary in Question 2(a) starts with selection. You are given a focus (e.g.
+            &quot;dangers&quot; or &quot;benefits&quot;) and must find the points in Text B that fit
+            it, including ones it only implies, in your own words. Short notes are your plan, not
+            your answer: the summary itself is continuous writing of no more than 120 words.
           </p>
         </div>
 
@@ -289,20 +308,75 @@ export default async function Paper1ModelAnswersPage() {
         ))}
       </section>
 
-      {/* ── Q2 Language Analysis: C vs A* ─────────────────────────────── */}
+      {/* ── Q2(a) Summary Model ──────────────────────────────────────────── */}
+      <section className="space-y-6">
+        <div className="flex items-center gap-3">
+          <Award className="size-5 text-primary" />
+          <h2 className="text-heading-lg font-heading text-foreground">Question 2(a) - Summary</h2>
+        </div>
+
+        <div className="rounded-xl border border-border/60 bg-muted/30 p-5">
+          <p className="text-body-sm text-muted-foreground leading-relaxed">
+            Question 2(a) asks you to summarise the points in Text B that fit a focus, in continuous
+            writing of no more than 120 words. You are marked on reading (how well you select the
+            relevant points, 10 marks) and writing (how clearly and concisely you use your own
+            words, 5 marks). No quotation, no opinion, no bullet points.
+          </p>
+        </div>
+
+        <div className="flex items-center justify-between gap-4">
+          <div className="flex items-center gap-3">
+            <Award className="size-5 text-primary" />
+            <h3 className="text-heading-md font-heading text-foreground">{q3Model.title}</h3>
+          </div>
+          <Badge className="bg-primary/10 text-primary border-primary/20">{q3Model.mark}</Badge>
+        </div>
+
+        <div className="rounded-xl border border-border/60 bg-muted/20 p-4">
+          <p className="text-body-xs font-semibold uppercase tracking-wide text-muted-foreground">
+            Question
+          </p>
+          <p className="mt-1 text-body-sm italic text-foreground">{q3Model.question}</p>
+        </div>
+
+        <Card>
+          <CardHeader className="pb-3">
+            <CardTitle className="text-body-xs uppercase tracking-wide text-muted-foreground">
+              Model summary
+            </CardTitle>
+          </CardHeader>
+          <CardContent>
+            <p className="whitespace-pre-line text-body-md leading-relaxed text-foreground">
+              {q3Model.text}
+            </p>
+          </CardContent>
+        </Card>
+
+        {q3Model.annotations.map((a) => (
+          <div key={a.label} className="rounded-lg border border-border/60 bg-primary/5 p-4">
+            <p className="text-body-xs font-semibold uppercase tracking-wide text-primary">
+              {a.label}
+            </p>
+            <p className="mt-2 text-body-sm text-foreground">{a.note}</p>
+          </div>
+        ))}
+      </section>
+
+      {/* ── Q3 Language task: C vs A* ─────────────────────────────── */}
       <section className="space-y-6">
         <div className="flex items-center gap-3">
           <ArrowUpDown className="size-5 text-primary" />
           <h2 className="text-heading-lg font-heading text-foreground">
-            Question 2 - Language analysis: Grade C vs A*
+            Question 3 - Language task: Grade C vs A*
           </h2>
         </div>
 
         <div className="rounded-xl border border-border/60 bg-muted/30 p-5">
           <p className="text-body-sm text-muted-foreground leading-relaxed">
-            Question 2 asks how the writer uses language to create meaning and effect. Below is the
-            same passage analysed at Grade C and then at Grade A*, so you can see precisely what
-            separates an average response from a top-band one.
+            The language task in Question 3 asks how the writer of Text C uses language to create
+            meaning and effect in an extract. Below is the same passage analysed at Grade C and then
+            at Grade A*, so you can see precisely what separates an average response from a top-band
+            one.
           </p>
         </div>
 
@@ -423,60 +497,6 @@ export default async function Paper1ModelAnswersPage() {
             </div>
           </CardContent>
         </Card>
-      </section>
-
-      {/* ── Q3 Summary Model ──────────────────────────────────────────── */}
-      <section className="space-y-6">
-        <div className="flex items-center gap-3">
-          <Award className="size-5 text-primary" />
-          <h2 className="text-heading-lg font-heading text-foreground">Question 3 - Summary</h2>
-        </div>
-
-        <div className="rounded-xl border border-border/60 bg-muted/30 p-5">
-          <p className="text-body-sm text-muted-foreground leading-relaxed">
-            Question 3 asks you to summarise information from two passages into a single continuous
-            paragraph of about 250 words. You are marked on content (how many relevant points you
-            include) and language (how effectively you use your own words). No quotation, no
-            opinion, no bullet points.
-          </p>
-        </div>
-
-        <div className="flex items-center justify-between gap-4">
-          <div className="flex items-center gap-3">
-            <Award className="size-5 text-primary" />
-            <h3 className="text-heading-md font-heading text-foreground">{q3Model.title}</h3>
-          </div>
-          <Badge className="bg-primary/10 text-primary border-primary/20">{q3Model.mark}</Badge>
-        </div>
-
-        <div className="rounded-xl border border-border/60 bg-muted/20 p-4">
-          <p className="text-body-xs font-semibold uppercase tracking-wide text-muted-foreground">
-            Question
-          </p>
-          <p className="mt-1 text-body-sm italic text-foreground">{q3Model.question}</p>
-        </div>
-
-        <Card>
-          <CardHeader className="pb-3">
-            <CardTitle className="text-body-xs uppercase tracking-wide text-muted-foreground">
-              Model summary
-            </CardTitle>
-          </CardHeader>
-          <CardContent>
-            <p className="whitespace-pre-line text-body-md leading-relaxed text-foreground">
-              {q3Model.text}
-            </p>
-          </CardContent>
-        </Card>
-
-        {q3Model.annotations.map((a) => (
-          <div key={a.label} className="rounded-lg border border-border/60 bg-primary/5 p-4">
-            <p className="text-body-xs font-semibold uppercase tracking-wide text-primary">
-              {a.label}
-            </p>
-            <p className="mt-2 text-body-sm text-foreground">{a.note}</p>
-          </div>
-        ))}
       </section>
 
       {/* ── Footer ────────────────────────────────────────────────────── */}

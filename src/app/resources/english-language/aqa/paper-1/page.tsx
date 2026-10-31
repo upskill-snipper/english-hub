@@ -155,7 +155,7 @@ export default function Paper1Page() {
                   <td className="py-2 pe-4">10-15 mins</td>
                 </tr>
                 <tr>
-                  <td className="py-2 pe-4">{tr(`Question 1 (list 4 things)`)}</td>
+                  <td className="py-2 pe-4">{tr(`Question 1 (multiple choice)`)}</td>
                   <td className="py-2 pe-4">4</td>
                   <td className="py-2 pe-4">5 mins</td>
                 </tr>
@@ -190,31 +190,35 @@ export default function Paper1Page() {
         </Section>
 
         {/* ── Q1 ─────────────────────────────────────────────────── */}
-        <Section title={tr(`Question 1: List four things... (4 marks)`)}>
+        {/* 31 October 2026: this section taught "List four things", Question 1's
+            format before summer 2026. From then it is four multiple-choice parts,
+            1.1 to 1.4, one answer shaded in each (src/data/mark-scheme-guides/
+            aqa-lang-paper1.ts). The example's evidence lines keep their Arabic. */}
+        <Section title={tr(`Question 1: Four multiple-choice parts (4 marks)`)}>
           <h3 className="font-bold text-primary">{tr(`What the question asks`)}</h3>
           <p>
-            You are given a specific section of the extract (e.g., lines 1-7) and asked to list four
-            things you learn about a character, setting, or event from those lines.
+            You are given a specific section of the extract (e.g., lines 1-7) and four short
+            questions on it, parts 1.1 to 1.4. Each part offers a few possible answers (three on
+            AQA&rsquo;s sample paper), and you shade the circle next to the one that is correct.
+            Papers before summer 2026 asked you to list four things instead; the marks and the
+            objective are the same.
           </p>
 
           <h3 className="mt-4 font-bold text-primary">{tr(`How to answer`)}</h3>
           <ul className="ms-5 list-disc space-y-2">
             <li>
-              Read the specified lines carefully. Only use information from those lines &mdash;
-              using other parts of the text earns zero marks for that point.
+              Read the specified lines carefully. Only those lines hold the answers, so check every
+              option against them.
             </li>
             <li>
-              Write four separate, clear statements. You can quote directly from the text or
-              paraphrase. Both are acceptable.
+              For each part, find the words in the lines that prove an option before you shade its
+              circle.
             </li>
             <li>
-              Each correct point = 1 mark. There is no need to explain or analyse &mdash; just state
-              the information.
+              Shade one circle in each part. Each correct part = 1 mark, four marks in all. There is
+              no need to explain or analyse.
             </li>
-            <li>
-              If you write more than four things, the marker marks the first four only. Do not waste
-              time writing extra.
-            </li>
+            <li>Spend about 5 minutes: the whole question is worth 4 of the 80 marks.</li>
           </ul>
 
           <h3 className="mt-4 font-bold text-primary">{tr(`Common mistakes`)}</h3>
@@ -225,20 +229,30 @@ export default function Paper1Page() {
                 `Making inferences that are not directly supported by the text. Stick to what is explicitly stated or clearly implied.`,
               )}
             </li>
-            <li>Writing only two or three things when four are required.</li>
+            <li>
+              Shading more than one circle in a part, or picking an option only because it repeats a
+              word from the source: the right answer often says the same thing in different words.
+            </li>
           </ul>
 
           <h3 className="mt-4 font-bold text-primary">Example</h3>
           <div className="rounded-lg bg-muted p-4 text-sm">
             <p className="font-semibold text-foreground">
-              Q: List four things you learn about the house from lines 1-7.
+              Q 1.1: From lines 1-7, which statement about the house is true? Shade one circle.
             </p>
-            <ol className="mt-2 ms-5 list-decimal space-y-1">
+            <ol type="A" className="mt-2 ms-5 list-[upper-alpha] space-y-1">
+              <li>{tr(`The front door has just been painted.`)}</li>
               <li>{tr(`The house is described as old and neglected.`)}</li>
+              <li>{tr(`The house is about to be sold.`)}</li>
+            </ol>
+            <p className="mt-3 font-semibold text-foreground">
+              {tr(`Answer: B. These words in the lines prove it:`)}
+            </p>
+            <ul className="mt-1 ms-5 list-disc space-y-1">
               <li>{tr(`The front door has peeling paint.`)}</li>
               <li>{tr(`There is a broken window on the upper floor.`)}</li>
               <li>{tr(`The garden is overgrown with weeds.`)}</li>
-            </ol>
+            </ul>
           </div>
         </Section>
 

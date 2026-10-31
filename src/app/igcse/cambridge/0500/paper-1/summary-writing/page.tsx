@@ -16,26 +16,34 @@ import { requireIgcseBoard } from '@/app/igcse/_lib/guard'
 
 export const metadata: Metadata = {
   openGraph: {
-    title: 'Summary Writing - IGCSE Language A Paper 1 Q3',
+    title: 'Summary Writing - IGCSE Language A Paper 1 Q2',
     description:
-      'Question 3 of IGCSE Language A Paper 1 carries 25 marks. How the reading and writing marks split, a five-step method and a worked opening paragraph.',
+      'Question 2(a) of IGCSE Language A Paper 1 is a 15-mark summary of Text B. How the reading and writing marks split, a five-step method and a worked opening.',
     images: [
       {
-        url: '/api/og?title=Summary+Writing+-+IGCSE+Language+A+Paper+1+Q3',
+        url: '/api/og?title=Summary+Writing+-+IGCSE+Language+A+Paper+1+Q2',
         width: 1200,
         height: 630,
-        alt: 'Summary Writing - IGCSE Language A Paper 1 Q3',
+        alt: 'Summary Writing - IGCSE Language A Paper 1 Q2',
       },
     ],
   },
-  title: 'Summary Writing - IGCSE Language A Paper 1 Q3',
+  title: 'Summary Writing - IGCSE Language A Paper 1 Q2',
   description:
-    'Question 3 of IGCSE Language A Paper 1 carries 25 marks. How the reading and writing marks split, a five-step method and a worked opening paragraph.',
+    'Question 2(a) of IGCSE Language A Paper 1 is a 15-mark summary of Text B. How the reading and writing marks split, a five-step method and a worked opening.',
   alternates: {
     canonical: 'https://theenglishhub.app/igcse/cambridge/0500/paper-1/summary-writing',
   },
 }
 
+// 31 October 2026: rewritten to src/data/mark-scheme-guides/cambridge-0500-paper1.ts.
+// This taught the summary as Question 3, 25 marks (15 + 10), about 250 words from
+// Texts A and C, marked one mark per point. From 2027 it is Question 2(a): Text B
+// only, no more than 120 words of continuous writing, reading 10 and writing 5,
+// each marked in levels, beside a 5-mark 2(b) on the writer's attitude. The
+// method and lists keep their advice, resized to that task. Second reader: "Level 5"
+// and "Level 2-3" below fit only the reading grid (writing has three levels), and the
+// worked opening is 59 words, not "about 70".
 const method = [
   {
     step: '1. Read the question first',
@@ -45,22 +53,22 @@ const method = [
   {
     step: '2. Point-spot',
     detail:
-      'Read Texts A and C with your pen in hand. Underline every discrete piece of relevant information. Aim for 20 points so you have room to cut.',
+      'Read Text B with your pen in hand. Underline every point that fits the focus, including ones the text only implies, then cross out repeats and examples.',
   },
   {
     step: '3. Group and rewrite',
     detail:
-      'On rough paper, write each point in your own words as a short phrase. Group similar points together so you avoid repetition.',
+      'On rough paper, write each point in your own words as a short phrase. Group related points together so you can combine them and avoid repetition.',
   },
   {
-    step: '4. Build the paragraph',
+    step: '4. Build the summary',
     detail:
-      'Write ONE continuous paragraph of about 250 words. Use formal, neutral language. No quotation, no opinion, no introduction.',
+      'Write continuous prose, in full and linked sentences, of no more than 120 words. Use formal, neutral language. No quotation, no opinion, no examples, no introduction.',
   },
   {
     step: '5. Check the count',
     detail:
-      'Underline every point you think you have made. If you cannot find 15, add more detail. If you are over 250 words, cut filler.',
+      'Count your words: no more than 120. Check you have the points that matter most, with related ones combined and repeats cut.',
   },
 ]
 
@@ -68,17 +76,17 @@ const dos = [
   'Use your own words wherever possible',
   'Write in formal, neutral prose',
   'Connect points with: also, in addition, furthermore, similarly, equally',
-  'Write a single long paragraph',
-  'Stay within 240-260 words',
-  'Cover points from BOTH texts',
+  'Write one continuous paragraph',
+  'Stay within 120 words',
+  'Include points the text only implies, if they fit the focus',
 ]
 
 const donts = [
-  'Do not quote directly from the passages',
+  'Do not quote directly from Text B',
   'Do not include your own opinion or evaluation',
   'Do not repeat the same point in different words',
   'Do not give a long introduction or conclusion',
-  'Do not add examples the writer did not give',
+  'Do not include examples, even ones the writer gives',
   'Do not use subheadings, bullet points or lists',
 ]
 
@@ -105,11 +113,16 @@ export default async function SummaryWritingPage() {
         <Badge className="mb-3 bg-primary/10 text-primary border-primary/20">
           IGCSE Language A
         </Badge>
-        <h1 className="text-display-sm font-heading text-foreground">Summary writing (Q3)</h1>
+        <h1 className="text-display-sm font-heading text-foreground">Summary writing (Q2)</h1>
         <p className="mt-3 max-w-2xl text-body-lg text-muted-foreground">
-          Question 3 is worth 25 marks - the biggest single mark chunk in Paper 1. Fifteen marks are
-          for reading (the points you find) and ten are for writing (how concisely and clearly you
-          express them).
+          Question 2 is worth 20 marks. Part (a), the summary of Text B, carries 15: ten for reading
+          (selecting the points that fit the focus) and five for writing (how concisely and clearly
+          you express them in your own words). Part (b), worth 5, asks about the writer&apos;s
+          attitude.
+        </p>
+        <p className="mt-3 max-w-2xl text-body-sm text-muted-foreground">
+          This is the paper for exams from 2027. On the November 2026 paper the summary is part of
+          Question 1, with the same 120-word limit and the same 15 marks.
         </p>
       </section>
 
@@ -117,29 +130,31 @@ export default async function SummaryWritingPage() {
       <section className="rounded-2xl border border-border/60 bg-card p-6 sm:p-8">
         <div className="mb-4 flex items-center gap-3">
           <Target className="size-5 text-primary" />
-          <h2 className="text-heading-md font-heading text-foreground">How the 25 marks split</h2>
+          <h2 className="text-heading-md font-heading text-foreground">
+            How the 15 summary marks split
+          </h2>
         </div>
         <div className="grid gap-4 sm:grid-cols-2">
           <div className="rounded-xl border border-border/60 bg-muted/30 p-5">
             <Badge className="mb-2 bg-primary/10 text-primary border-primary/20">
-              Reading skills - 15 marks
+              Reading skills - 10 marks
             </Badge>
             <h3 className="text-body-md font-semibold text-foreground">Content points</h3>
             <p className="mt-1 text-body-sm text-muted-foreground">
-              One mark per relevant idea identified from Texts A and C. Top candidates identify
-              around 15 distinct points.
+              Marked in five levels for the points from Text B that fit the focus. The top level
+              gathers the points that matter most and never strays from the focus.
             </p>
           </div>
           <div className="rounded-xl border border-border/60 bg-muted/30 p-5">
             <Badge className="mb-2 bg-primary/10 text-primary border-primary/20">
-              Writing skills - 10 marks
+              Writing skills - 5 marks
             </Badge>
             <h3 className="text-body-md font-semibold text-foreground">
               Style, structure, own words
             </h3>
             <p className="mt-1 text-body-sm text-muted-foreground">
-              Level 5 (9-10 marks): concise, fluent, cohesive, consistently in your own words. No
-              lifting.
+              Level 3 (4-5 marks): smooth, well ordered, saying a lot in few words, in a good range
+              of your own words. No lifting.
             </p>
           </div>
         </div>
@@ -175,7 +190,7 @@ export default async function SummaryWritingPage() {
           <Card>
             <CardHeader className="pb-3">
               <CardTitle className="text-heading-sm font-heading">Do</CardTitle>
-              <CardDescription>These habits push you to Level 5.</CardDescription>
+              <CardDescription>These habits push you towards the top levels.</CardDescription>
             </CardHeader>
             <CardContent>
               <ul className="space-y-2 text-body-sm text-muted-foreground">
@@ -191,7 +206,7 @@ export default async function SummaryWritingPage() {
           <Card>
             <CardHeader className="pb-3">
               <CardTitle className="text-heading-sm font-heading">Don&apos;t</CardTitle>
-              <CardDescription>These habits cap you in Level 2-3.</CardDescription>
+              <CardDescription>These habits keep you in the lower levels.</CardDescription>
             </CardHeader>
             <CardContent>
               <ul className="space-y-2 text-body-sm text-muted-foreground">
@@ -217,7 +232,7 @@ export default async function SummaryWritingPage() {
         </div>
         <p className="mb-3 text-body-sm text-muted-foreground">
           Imagine the question asks for the dangers faced by city cyclists. Here is an opening that
-          covers six points in about 70 words:
+          covers six points in about 60 words:
         </p>
         <div className="rounded-xl border border-border/60 bg-muted/30 p-5">
           <p className="text-body-sm text-foreground leading-relaxed">

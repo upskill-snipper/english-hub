@@ -24,16 +24,20 @@ export const techniqueExtraQuestions: QuizQuestion[] = [
     options: ['About 4-5 minutes', 'About 15 minutes', 'About 20 minutes', 'About 25 minutes'],
     correctIndex: 0,
     explanation:
-      'A rough rule of thumb is 1 minute per mark plus brief reading. Q1 is only 4 marks (list 4 things), so 4-5 minutes is plenty - do not waste time here.',
+      'A rough rule of thumb is 1 minute per mark plus brief reading. Q1 is only 4 marks (four multiple-choice parts), so 4-5 minutes is plenty - do not waste time here.',
   },
   {
+    // 31 October 2026: the answer was 22-25 minutes. AQA's own timing advice is
+    // about 20 for Question 4 (src/data/mark-scheme-guides/aqa-lang-paper1.ts),
+    // and 22-25 does not fit beside its 15 minutes' reading and 45 for Q5. 002 and
+    // 023 described Question 1 as "list four things", its format before 2026.
     id: 'technique-extra-003',
     topic: 'exam-technique',
     question: 'AQA Language Paper 1 Question 4 is worth 20 marks. How long should you spend on it?',
-    options: ['10 minutes', '15 minutes', '22-25 minutes', '40 minutes'],
+    options: ['10 minutes', '15 minutes', 'About 20 minutes', '40 minutes'],
     correctIndex: 2,
     explanation:
-      'At roughly 1 minute per mark, plus a few minutes for re-reading and planning, 22-25 minutes is sensible for Q4 (the evaluation question).',
+      'AQA’s own timing advice is about 20 minutes for Q4, the evaluation question: a quarter of the marks, so protect its time.',
   },
   {
     id: 'technique-extra-004',
@@ -250,7 +254,7 @@ export const techniqueExtraQuestions: QuizQuestion[] = [
     options: ['4 marks', '8 marks', '10 marks', '20 marks'],
     correctIndex: 0,
     explanation:
-      'Q1 asks you to list four things from a specified part of the source - 1 mark each, 4 in total. It should take only a few minutes.',
+      'Q1 is four multiple-choice parts on a specified part of the source - 1 mark each, 4 in total. It should take only a few minutes.',
   },
   {
     id: 'technique-extra-024',
@@ -369,11 +373,11 @@ export const techniqueExtraQuestions: QuizQuestion[] = [
   {
     id: 'technique-extra-036',
     topic: 'exam-technique',
-    question: 'AQA Lang Paper 2 Q2 (summary/synthesis) is worth:',
+    question: 'AQA Lang Paper 2 Q2 (inference/synthesis) is worth:',
     options: ['4 marks', '8 marks', '12 marks', '16 marks'],
     correctIndex: 1,
     explanation:
-      'Q2 on AQA Lang Paper 2 is 8 marks - a summary using both sources, testing inference and synthesis (AO1).',
+      'Q2 on AQA Lang Paper 2 is 8 marks - what you can infer from both sources about the differences the question names, testing inference and synthesis (AO1).',
   },
   {
     id: 'technique-extra-037',

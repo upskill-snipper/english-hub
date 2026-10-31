@@ -19,114 +19,99 @@ const gcseLangReading: CourseData = {
     // ──────────────────────────────────────────────
     // MODULE 1 - Paper 1 Q1: Information Retrieval
     // ──────────────────────────────────────────────
+    //
+    // 31 October 2026: this module taught Question 1 as "list four things", its
+    // format before summer 2026, and timed Paper 1 as 90 minutes with no time for
+    // Section B. From summer 2026 Question 1 is four multiple-choice parts, 1.1 to
+    // 1.4 (src/data/mark-scheme-guides/aqa-lang-paper1.ts), and the paper is 1 hour
+    // 45 minutes, timed by AQA's own Exam Timing Ideas. The passages are kept and
+    // the practice is now in the 2026 format.
     {
       id: 'gcse-lr-m1',
       title: 'Paper 1 Q1: Information Retrieval',
       duration: '25 mins',
       content: `
-<h2>Paper 1 Question 1 - List Four Things</h2>
+<h2>Paper 1 Question 1: Four Multiple-Choice Parts</h2>
 
-<p>Question 1 on AQA Paper 1 is worth <strong>4 marks</strong> and should take no more than <strong>5 minutes</strong> in the exam. You are given a specific section of the source text and asked to <em>list four things</em> about a topic - for example, a character, a setting, or an event.</p>
+<p>Question 1 on AQA Paper 1 is worth <strong>4 marks</strong> and should take about <strong>5 minutes</strong> in the exam. From summer 2026 it is four multiple-choice parts, 1.1 to 1.4, on the lines named at the start of the question. Each part offers a few possible answers (three on AQA's sample paper), and you shade the circle next to the one that is correct. Papers before 2026 asked you to list four things instead. The skill is the same: finding exactly what the lines say.</p>
 
 <div class="key-term"><strong>Key Term: Information Retrieval</strong> - The skill of locating and selecting explicit information from a text without inference or interpretation.</div>
 
 <h3>What Markers Look For</h3>
 <ul>
-  <li>Four <strong>separate</strong> points drawn from the correct lines of the source.</li>
-  <li>Each point must be clearly linked to the question focus.</li>
-  <li>Direct quotation <strong>or</strong> paraphrase - both are acceptable.</li>
+  <li>One mark for each part you answer correctly: four parts, one mark each.</li>
+  <li>Answers taken from the lines the question names, not from elsewhere in the source.</li>
+  <li>One circle shaded in each part: the paper asks for one answer to each.</li>
   <li>No analysis or explanation is needed.</li>
 </ul>
 
-<h3>Understanding the marking guide</h3>
-<p><strong>AQA Q1 marking guide:</strong></p>
+<h3>How the Wrong Options Try to Catch You</h3>
 <ul>
-  <li><strong>1 mark per correct point</strong> - Straightforward, no partial credit.</li>
-  <li>Points must be <strong>distinct and separate</strong> - you cannot score two marks for paraphrasing the same detail.</li>
-  <li>Quotation or paraphrase both work equally - there is no bonus for quoting.</li>
-  <li>The detail must relate directly to the question focus (e.g., if asked about "the weather," a detail about a character's clothes won't score).</li>
+  <li>An option may <strong>repeat a word from the source</strong> but change its meaning. The right answer often says the same thing as the lines in different words.</li>
+  <li>An option may be <strong>true of the source as a whole</strong> but not of the named lines.</li>
+  <li>An option may be <strong>almost right</strong> but change one detail, or say more than the lines do.</li>
 </ul>
 
 <div class="text-extract">The kitchen was cold and unwelcoming. Frost clung to the inside of the window pane, and the tap dripped with a relentless, hollow rhythm. A single light bulb hung from the ceiling, casting long shadows across the cracked tiles. On the table sat a bowl of porridge, untouched and already forming a grey skin on its surface.<div class="source">Original passage in the style of AQA exam fiction extracts</div></div>
 
 <h3>Worked Example 1: What Works</h3>
-<p><strong>Question:</strong> List four things the passage tells us about the kitchen.</p>
-<p><strong>Grade 4 Response (Full 4 Marks):</strong></p>
-<ol>
-  <li>It was cold and unwelcoming.</li>
-  <li>Frost was on the inside of the window pane.</li>
-  <li>A single light bulb hung from the ceiling.</li>
-  <li>There was a bowl of porridge on the table.</li>
-</ol>
-<p><strong>Why this scores 4/4:</strong> Each point is clear, distinct, directly from the text, and relevant to the question focus.</p>
+<p><strong>1.1</strong> What is the kitchen like? <em>A) warm and inviting B) cold and unwelcoming C) dark but cosy</em></p>
+<p><strong>Answer: B.</strong> The first sentence says it "was cold and unwelcoming".</p>
+<p><strong>1.2</strong> Where is the frost? <em>A) on the outside of the window B) on the cracked tiles C) on the inside of the window pane</em></p>
+<p><strong>Answer: C.</strong> "Frost clung to the inside of the window pane." Option A sounds right because frost is usually outside, but the lines say otherwise.</p>
 
 <h3>Worked Example 2: Common Pitfall</h3>
-<p><strong>Question:</strong> List four things the passage tells us about the kitchen.</p>
-<p><strong>Student Response (Scores 2/4):</strong></p>
-<ol>
-  <li>It was cold and unwelcoming.</li>
-  <li>It was dark and miserable. <strong>[X - Inference. "Miserable" is not stated.]</strong></li>
-  <li>There was only one light. <strong>[✓ - Correct, paraphrased from "single light bulb"]</strong></li>
-  <li>The porridge showed that no one cared about food. <strong>[X - Inference. Not explicitly stated.]</strong></li>
-</ol>
+<p><strong>1.3</strong> What does the tap do? <em>A) It has frozen B) It drips C) It is broken</em></p>
+<p><strong>Answer: B.</strong> The tap "dripped". Option A borrows the frost from the sentence before, and option C is an inference the lines do not make.</p>
+<p><strong>1.4</strong> What is on the table? <em>A) an empty bowl B) a bowl of porridge that no one has eaten C) a bowl of porridge that someone has finished</em></p>
+<p><strong>Answer: B.</strong> The porridge is "untouched". Option C repeats "porridge" but changes the detail that matters.</p>
 
 <h3>Step-by-Step Strategy</h3>
 <ol>
-  <li><strong>Read the question carefully</strong> - underline the line references and the focus word (e.g. "the kitchen").</li>
-  <li><strong>Number the lines</strong> in the specified section so you stay within range.</li>
-  <li><strong>Scan and highlight</strong> - look for simple, factual details. Do not overthink.</li>
-  <li><strong>Write short statements</strong> - one per line. For example: <em>"The kitchen was cold and unwelcoming."</em></li>
-  <li><strong>Do a final check</strong> - can each point be found directly in the text? Does each relate to the question?</li>
+  <li><strong>Read the question carefully</strong> - underline the line references at the start of Question 1.</li>
+  <li><strong>Read the named lines</strong> once, closely, so you stay within range.</li>
+  <li><strong>Read every option</strong> in a part before you choose.</li>
+  <li><strong>Prove your answer</strong> - find the words in the lines that make it true, then shade that circle.</li>
+  <li><strong>Do a final check</strong> - one circle in each part, and every answer proved by the named lines.</li>
 </ol>
 
-<h3>Practice Extraction: Multiple Texts</h3>
+<h3>Practice: Multiple-Choice Parts</h3>
 
 <p><strong>Extract A:</strong> <em>"Sarah arrived at the station at ten o'clock. The platform was nearly empty, with only a few scattered commuters waiting for the next train. A cleaner was sweeping leaves from the corner. The November wind cut through the shelter, and Sarah wrapped her coat tighter around her shoulders."</em></p>
 
-<p><strong>Question:</strong> List four things about the station.</p>
-<p><strong>Sample Answers:</strong></p>
 <ol>
-  <li>Sarah arrived at ten o'clock.</li>
-  <li>The platform was nearly empty.</li>
-  <li>A cleaner was sweeping leaves.</li>
-  <li>The November wind was cold.</li>
+  <li><strong>1.1</strong> When does Sarah arrive? <em>A) at dawn B) at ten o'clock C) at midnight</em></li>
+  <li><strong>1.2</strong> How busy is the platform? <em>A) crowded B) nearly empty C) completely deserted</em></li>
+  <li><strong>1.3</strong> What is the cleaner doing? <em>A) sweeping leaves from the corner B) emptying the bins C) talking to Sarah</em></li>
+  <li><strong>1.4</strong> What does Sarah do when the wind cuts through the shelter? <em>A) goes into the waiting room B) wraps her coat tighter around her shoulders C) catches the next train</em></li>
 </ol>
+<p><strong>Answers:</strong> 1.1 B. 1.2 B: "completely deserted" says more than the lines, which mention "a few scattered commuters". 1.3 A. 1.4 B.</p>
 
-<div class="examiner-tip"><strong>Top Tip 1:</strong> Many students lose marks by going outside the specified line range. Always double-check you are reading from the correct section before you write anything.</div>
+<div class="examiner-tip"><strong>Top Tip 1:</strong> Many students lose marks by going outside the specified line range. Always double-check you are reading from the correct section before you choose an answer.</div>
 
 <div class="examiner-tip"><strong>Top Tip 2:</strong> Q1 is a quick-fire question. Spend no more than 5 minutes on it so you have adequate time for Q2, Q3, and Q4, which are worth more marks.</div>
 
-<div class="examiner-tip"><strong>Top Tip 3:</strong> If you miss a detail, keep moving. Spending 2 minutes hunting for a fourth detail wastes time. Move on and come back if you have time at the end.</div>
+<div class="examiner-tip"><strong>Top Tip 3:</strong> If you are unsure about a part, cross out the options the lines rule out, choose from what is left, and move on. Come back if you have time at the end.</div>
 
-<div class="common-mistake"><strong>Common Mistake 1:</strong> Giving a point that requires inference - e.g. writing "The person who lives here is poor." The question asks for explicit information, not deduction. Stick to what is directly stated in the text.</div>
+<div class="common-mistake"><strong>Common Mistake 1:</strong> Choosing the option that sounds likely rather than the one the lines prove. "The person who lives here is poor" might be true, but if the lines do not say it, it is not the answer.</div>
 
-<div class="common-mistake"><strong>Common Mistake 2:</strong> Listing the same point twice in different words. For example: "The kitchen was cold" and "The temperature was low." These are the same detail. Markers will only credit one.</div>
+<div class="common-mistake"><strong>Common Mistake 2:</strong> Shading more than one circle in a part. The paper asks for one answer to each part.</div>
 
-<div class="common-mistake"><strong>Common Mistake 3:</strong> Writing too much detail. A simple, short sentence is enough. Do not quote long phrases - just lift one key fact per line.</div>
+<div class="common-mistake"><strong>Common Mistake 3:</strong> Choosing an option because it repeats a word from the source. The correct answer often says the same thing in different words, and a repeated word can hide a changed detail.</div>
 
-<div class="grade-9-technique"><strong>Grade 9 Technique:</strong> If a detail could be expressed in two ways, choose the most precise wording. For instance, instead of "There was frost," write "Frost clung to the inside of the window pane" - it shows you've read carefully and selected exact language from the text.</div>
-
-<h3>Quick Practice</h3>
-<p>Using the original kitchen extract, list four things you learn about the kitchen:</p>
-<ol>
-  <li>The kitchen was cold and unwelcoming.</li>
-  <li>Frost clung to the inside of the window pane.</li>
-  <li>A single light bulb hung from the ceiling.</li>
-  <li>A bowl of porridge sat untouched on the table.</li>
-</ol>
-
-<p><strong>Why these answers work:</strong> Each is a direct, factual statement from the passage. No inference. No waffle. No analysis. That is all Q1 requires - accuracy and relevance.</p>
+<div class="grade-9-technique"><strong>Grade 9 Technique:</strong> Read every option to its last word. Wrong answers are often wrong only at the end, so test each one against the exact words of the lines before you decide.</div>
 
 <h3>Time Management Advice</h3>
-<p>On Paper 1, you have 90 minutes total. Allocate your time as follows:</p>
+<p>Paper 1 is 1 hour 45 minutes. AQA's own timing advice is:</p>
 <ul>
-  <li><strong>Q1 (4 marks):</strong> 5 minutes max</li>
-  <li><strong>Q2 (8 marks):</strong> 12 minutes</li>
-  <li><strong>Q3 (8 marks):</strong> 12 minutes</li>
-  <li><strong>Q4 (20 marks):</strong> 35 minutes</li>
-  <li><strong>Checking:</strong> 10 minutes</li>
+  <li><strong>Reading the source and the questions:</strong> about 15 minutes</li>
+  <li><strong>Q1 (4 marks):</strong> about 5 minutes</li>
+  <li><strong>Q2 (8 marks):</strong> about 10 minutes</li>
+  <li><strong>Q3 (8 marks):</strong> about 10 minutes</li>
+  <li><strong>Q4 (20 marks):</strong> about 20 minutes</li>
+  <li><strong>Q5 (40 marks):</strong> about 45 minutes, with 5 to plan, 35 to write and 5 to check</li>
 </ul>
-<p>Never exceed 5 minutes on Q1, as it is only 4% of the paper's marks.</p>
+<p>Never exceed 5 minutes on Q1, as it is only 4 of the paper's 80 marks.</p>
 `,
       quiz: [
         {
@@ -135,21 +120,20 @@ const gcseLangReading: CourseData = {
           options: ['2 marks', '4 marks', '8 marks', '12 marks'],
           correct: 1,
           explanation:
-            'Paper 1 Q1 is worth 4 marks - one mark for each correct, relevant piece of information identified from the specified lines.',
+            'Paper 1 Q1 is worth 4 marks: one mark for each of its four multiple-choice parts answered correctly from the specified lines.',
         },
         {
           id: 'gcse-lr-m1-q2',
-          question:
-            'Which of the following would NOT be an acceptable response to a "list four things" question?',
+          question: 'In a Question 1 part, which option should you shade?',
           options: [
-            'A direct quotation from the text',
-            'A paraphrased statement of a fact in the text',
-            "An inference about a character's emotions",
-            'A short sentence identifying an explicit detail',
+            'The one that repeats the most words from the source',
+            'The one that sounds most likely',
+            'The one the named lines prove, even if it uses different words',
+            'Any option that might be true',
           ],
           correct: 2,
           explanation:
-            'Q1 tests information retrieval - explicit details only. Inference about emotions goes beyond what is directly stated and would risk not being credited.',
+            'Q1 tests information retrieval: the right answer is the one the named lines prove. It often says the same thing as the source in different words, so an option that just repeats a word can be a trap.',
         },
         {
           id: 'gcse-lr-m1-q3',
@@ -162,7 +146,7 @@ const gcseLangReading: CourseData = {
           ],
           correct: 2,
           explanation:
-            'The single biggest pitfall is going outside the given line range. Any point from outside those lines will not be credited, regardless of how relevant it is.',
+            'The single biggest pitfall is going outside the given line range. An option can be true of the source as a whole but not of the lines named, and only the named lines count.',
         },
         {
           id: 'gcse-lr-m1-q4',
@@ -897,16 +881,23 @@ const gcseLangReading: CourseData = {
     },
 
     // ──────────────────────────────────────────────
-    // MODULE 6 - Paper 2 Q2: Summary & Synthesis
+    // MODULE 6 - Paper 2 Q2: Inference & Synthesis
     // ──────────────────────────────────────────────
+    //
+    // 31 October 2026, second read: the opening paragraph was brought up to the
+    // 2026 wording (what you can infer about the differences, aqa-lang-paper2.ts
+    // guide), but the title, heading, Common Mistake 1, the Q2/Q3 list and quiz
+    // q1 and q3 still called Q2 a summary, and the list called Q3 a language
+    // comparison, where it analyses one source. Each is now corrected. Module 7
+    // below still teaches Q3 as a two-source comparison and needs a rewrite.
     {
       id: 'gcse-lr-m6',
-      title: 'Paper 2 Q2: Summary & Synthesis',
+      title: 'Paper 2 Q2: Inference & Synthesis',
       duration: '35 mins',
       content: `
-<h2>Paper 2 Question 2 - Summary and Synthesis</h2>
+<h2>Paper 2 Question 2 - Inference and Synthesis</h2>
 
-<p>Question 2 is worth <strong>8 marks</strong> and asks you to <strong>summarise the differences (or similarities)</strong> between two sources on a specific topic. You must use evidence from <strong>both</strong> sources and make clear, comparative points.</p>
+<p>Question 2 is worth <strong>8 marks</strong> and, from summer 2026, asks what you can <strong>infer about the differences</strong> the question names between two sources on a specific topic (earlier papers asked for a summary of the differences or similarities). You must use evidence from <strong>both</strong> sources and make clear, comparative points. It is still a question about content, what the sources show, rather than about how they are written.</p>
 
 <div class="key-term"><strong>Key Term: Synthesis</strong> - The skill of combining information from two or more sources to identify points of comparison or contrast, presenting them in an integrated, connected way rather than treating each source separately.</div>
 
@@ -975,7 +966,7 @@ const gcseLangReading: CourseData = {
 
 <div class="examiner-tip"><strong>Top Tip 3:</strong> Remember that Q2 is only worth 8 marks (out of 80 total), so spend around 12-15 minutes on it. Do not over-prepare. A clear, well-integrated response of three solid paragraphs is sufficient.</div>
 
-<div class="common-mistake"><strong>Common Mistake 1:</strong> Analysing language in excessive detail. Q2 is a <em>summary</em> question - you identify <em>what</em> the sources say, not <em>how</em> they say it. Brief references to language are acceptable, but extended analysis of metaphors or imagery is not needed and wastes time.</div>
+<div class="common-mistake"><strong>Common Mistake 1:</strong> Analysing language in excessive detail. Q2 is about content - you work out what the sources show about the differences, not <em>how</em> they say it. Brief references to language are acceptable, but extended analysis of metaphors or imagery is not needed and wastes time.</div>
 
 <div class="common-mistake"><strong>Common Mistake 2:</strong> Discussing sources in isolation. This kills the mark for synthesis. Always weave sources together using comparative language.</div>
 
@@ -985,8 +976,8 @@ const gcseLangReading: CourseData = {
 
 <h3>Key Differences Between Q2 and Q3</h3>
 <ul>
-  <li><strong>Q2</strong> = Summary (what the sources say) - focus on content and information.</li>
-  <li><strong>Q3</strong> = Language comparison (how the writers say it) - focus on methods and effects.</li>
+  <li><strong>Q2</strong> = Inference (what the sources show about the differences) - focus on content and what it suggests.</li>
+  <li><strong>Q3</strong> = Language analysis of one source (how the writer says it) - focus on methods and effects.</li>
 </ul>
 <p>Keeping this distinction clear is vital. Many students lose marks by accidentally doing Q3's task in Q2.</p>
 
@@ -1005,12 +996,12 @@ const gcseLangReading: CourseData = {
           options: [
             'Language analysis',
             'Structural analysis',
-            'Summary and synthesis of two sources',
+            'Inference and synthesis from two sources',
             'Evaluation of a single source',
           ],
           correct: 2,
           explanation:
-            'Q2 tests your ability to summarise and synthesise - combining information from both sources to identify differences or similarities on a specific topic.',
+            'Q2 tests inference and synthesis: from summer 2026 it asks what you can infer about the differences the question names, combining details from both sources.',
         },
         {
           id: 'gcse-lr-m6-q2',
@@ -1036,7 +1027,7 @@ const gcseLangReading: CourseData = {
           ],
           correct: 1,
           explanation:
-            'Q2 is about content (what the sources say - summary). Q3 is about method (how the writers use language - analysis). This is one of the most important distinctions on Paper 2.',
+            'Q2 is about content (what the sources show, and what you can infer from it). Q3 is about method (how the writer of one source uses language - analysis). This is one of the most important distinctions on Paper 2.',
         },
         {
           id: 'gcse-lr-m6-q4',
@@ -1224,7 +1215,7 @@ const gcseLangReading: CourseData = {
 
 <p>The writers' rhetorical strategies reveal competing philosophies of human value. Source A trusts systems and frames medicine as a domain where human judgment is supplemented; Source B distrusts the logic of reduction and frames medicine as a domain where human judgment is irreplaceable. These are not disagreements about AI's capabilities but about what kind of knowledge and care matter in medicine."</p>
 
-<p><strong>Why this is Grade 9:</strong> Analyzes how specific language choices (vocabulary, metaphor, register) embody and reinforce the writers' underlying viewpoints. Shows how the writers' rhetoric reveals assumptions about readers, technology, and human value. Recognises that disagreement runs deeper than surface opinion - the writers disagree about fundamental categories (what is medicine? what is value?). Integrates comparison throughout rather than listing separate points.</p>
+<p><strong>Why this is Grade 9:</strong> Analyses how specific language choices (vocabulary, metaphor, register) embody and reinforce the writers' underlying viewpoints. Shows how the writers' rhetoric reveals assumptions about readers, technology, and human value. Recognises that disagreement runs deeper than surface opinion - the writers disagree about fundamental categories (what is medicine? what is value?). Integrates comparison throughout rather than listing separate points.</p>
 
 <h3>The Common Pitfalls to Avoid</h3>
 
@@ -1338,7 +1329,7 @@ const gcseLangReading: CourseData = {
     {
       id: 'gcse-lr-a1',
       question:
-        'Paper 1 Q1 asks you to "list four things." What type of information should you provide?',
+        'Paper 1 Q1 is four multiple-choice parts. What should your chosen answer in each part be based on?',
       options: [
         'Inferences about character feelings',
         'Explicit, directly stated details from the specified lines',
@@ -1347,7 +1338,7 @@ const gcseLangReading: CourseData = {
       ],
       correct: 1,
       explanation:
-        'Q1 tests information retrieval - you must identify explicit, directly stated facts from within the specified line range. No inference or analysis is required.',
+        'Q1 tests information retrieval: the correct option is the one proved by explicit, directly stated details within the specified line range. No inference or analysis is required.',
     },
     {
       id: 'gcse-lr-a2',
@@ -1442,9 +1433,12 @@ const gcseLangReading: CourseData = {
         'The penalty system deducts for extra selections: five boxes = marked out of 3, six boxes = marked out of 2, seven boxes = marked out of 1, eight boxes = 0 marks.',
     },
     {
+      // 31 October 2026, second read: a9 and a11 called Paper 2 Q2 a summary, its
+      // wording before summer 2026, and a11 had Q3 compare the writers; Q3 analyses
+      // one source (src/data/mark-scheme-guides/aqa-lang-paper2.ts).
       id: 'gcse-lr-a9',
       question:
-        'Paper 2 Q2 asks you to summarise differences between two sources. What should you focus on?',
+        'Paper 2 Q2 asks what you can infer about the differences between two sources. What should you focus on?',
       options: [
         "The writers' language techniques in detail",
         'The content - what each source says about the topic',
@@ -1453,7 +1447,7 @@ const gcseLangReading: CourseData = {
       ],
       correct: 1,
       explanation:
-        'Q2 is a summary question focusing on content - what the sources say. Detailed language analysis belongs in Q3, not Q2.',
+        'Q2 is about content - what the sources show about the differences, and what you can infer from it. Detailed language analysis belongs in Q3, not Q2.',
     },
     {
       id: 'gcse-lr-a10',
@@ -1473,7 +1467,7 @@ const gcseLangReading: CourseData = {
       question: 'What is the critical difference between Paper 2 Q2 and Paper 2 Q3?',
       options: [
         'Q2 covers Source A; Q3 covers Source B',
-        'Q2 summarises what sources say; Q3 compares how writers use language',
+        'Q2 infers from what the sources say; Q3 analyses how the writer of one source uses language',
         'Q2 is worth more marks',
         'Q2 is about viewpoints; Q3 is about structure',
       ],
@@ -4541,7 +4535,7 @@ const gcseRevisionBlitz: CourseData = {
 
 <h3>Section A: Reading (1 hour recommended)</h3>
 
-<p><strong>Question 1 (4 marks, ~5 minutes) - List four things.</strong> This is a gift. Read the specified lines, find four clear facts, and write them as short statements. No analysis. No quotation marks needed, though they do not hurt. Get your four marks and move on fast.</p>
+<p><strong>Question 1 (4 marks, ~5 minutes): four multiple-choice parts.</strong> This is a gift. Read the specified lines, then for each part find the words that prove one option and shade that circle. No analysis, and no writing beyond the shading. Beware an option that just repeats a word from the source. Get your four marks and move on fast. (Papers before 2026 asked you to list four things instead.)</p>
 
 <p><strong>Question 2 (8 marks, ~10 minutes) - How does the writer use language?</strong> Focus on specific words, phrases, and techniques. Use the What-How-Why structure: What technique is used? How does it work? Why does it affect the reader? Aim for 2-3 detailed analytical points.</p>
 
@@ -4571,7 +4565,7 @@ const gcseRevisionBlitz: CourseData = {
           options: ['2 marks', '4 marks', '8 marks', '12 marks'],
           correct: 1,
           explanation:
-            'Question 1 is worth 4 marks. It is the simplest question - just list four things from the specified lines. Spend no more than 5 minutes on it.',
+            'Question 1 is worth 4 marks: four multiple-choice parts on the specified lines, one mark each. It is the simplest question, so spend no more than 5 minutes on it.',
         },
         {
           id: 'gcse-rb-m2-q2',
@@ -4615,6 +4609,9 @@ const gcseRevisionBlitz: CourseData = {
       ],
     },
     {
+      // 31 October 2026, second read: Question 2 here and quiz q3 were still "summarise
+      // differences (or similarities)", the wording before summer 2026; from then it
+      // asks what you can infer about the differences (aqa-lang-paper2.ts guide).
       id: 'gcse-rb-m3',
       title: 'Language Paper 2 Walkthrough',
       duration: '40 mins',
@@ -4625,7 +4622,7 @@ const gcseRevisionBlitz: CourseData = {
 
 <p><strong>Question 1 (4 marks, ~5 minutes) - True or false statements.</strong> Read Source A carefully and shade the correct boxes. This is retrieval only - no analysis needed. Do not overthink it. Read each statement against the text and check it matches exactly. Watch out for statements that are nearly true but contain a single wrong detail.</p>
 
-<p><strong>Question 2 (8 marks, ~10 minutes) - Summarise differences (or similarities).</strong> You must use BOTH sources. Write clear comparative statements: "Source A presents... whereas Source B suggests..." Use brief evidence from each text. Aim for 3-4 clear points of comparison. Do not analyse language here - just summarise what each source says.</p>
+<p><strong>Question 2 (8 marks, ~10 minutes) - What can you infer about the differences?</strong> You must use BOTH sources. Write clear comparative statements: "Source A presents... whereas Source B suggests..." Use brief evidence from each text and say what it suggests. Aim for 3-4 clear points of comparison. Do not analyse language here - work out what each source shows. (Papers before 2026 asked for a summary of the differences or similarities.)</p>
 
 <div class="key-term"><strong>Key Term: Synthesis</strong> - Combining information from two sources to identify patterns, differences, or connections. This is the core skill for Question 2 - you are not analysing language, you are pulling ideas together.</div>
 
@@ -4676,13 +4673,13 @@ const gcseRevisionBlitz: CourseData = {
           question: 'What skill does Question 2 test?',
           options: [
             'Language analysis',
-            'Synthesis - summarising and comparing information from both sources',
+            'Synthesis - inferring and comparing information from both sources',
             'Creative writing',
             'Structural analysis',
           ],
           correct: 1,
           explanation:
-            'Question 2 tests synthesis: pulling together information from both sources to identify similarities or differences. You summarise ideas, not analyse language.',
+            'Question 2 tests inference and synthesis: pulling together information from both sources to work out the differences the question names. You infer from ideas, not analyse language.',
         },
         {
           id: 'gcse-rb-m3-q4',
@@ -5185,12 +5182,12 @@ const gcseRevisionBlitz: CourseData = {
       options: [
         "Analyse the writer's use of language",
         'Write a creative piece',
-        'List four things from the text',
+        'Answer four multiple-choice parts on the specified lines',
         'Compare two sources',
       ],
       correct: 2,
       explanation:
-        'Question 1 is a simple retrieval task: list four things from the specified lines. No analysis needed. It is worth 4 marks and should take about 5 minutes.',
+        'Question 1 is a simple retrieval task: four multiple-choice parts on the specified lines, one mark each (before 2026 it asked you to list four things). No analysis needed. It is worth 4 marks and should take about 5 minutes.',
     },
     {
       id: 'gcse-rb-a3',

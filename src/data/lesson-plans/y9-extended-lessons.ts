@@ -130,7 +130,7 @@ export const y9ExtendedLessons: LessonPlan[] = [
       'The SWAP Check works well only when students trust the classroom environment; establish norms for constructive feedback before the activity.',
       'If time is short, cut the SWAP Check to a self-assessment and save peer feedback for homework.',
       'For students who finish the draft quickly, have a "challenge extension" ready: rewrite the opening paragraph in a different narrative person (switching from first to third or vice versa) and evaluate the effect.',
-      'Connect to GCSE requirements: AQA Paper 1 Q5 and Eduqas Component 1 both require students to write narratively or descriptively; this lesson directly prepares them for those tasks.',
+      'Connect to GCSE requirements: AQA Paper 1 Q5 offers a description or a story, and Eduqas Component 1 asks for a story or an account of an experience, where a piece that only describes cannot reach the top marks; this lesson directly prepares them for those tasks.',
     ],
     targetedSkills: [
       'Creative writing',

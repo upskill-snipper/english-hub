@@ -3061,7 +3061,7 @@ export const AR_MESSAGES: Record<string, string> = {
   'analysis.lang.how.cta': 'افتح مراجعة Language',
   'analysis.lang.p1q.h2': 'أسئلة Paper 1',
   'analysis.lang.p1q.body':
-    'كل سؤال في Paper 1 - عدّد أربع أشياء، تحليل اللغة، البناء، التقييم، والكتابة الإبداعية.',
+    'كل سؤال في Paper 1: أربعة أجزاء اختيار من متعدد، تحليل اللغة، البناء، التقييم، والكتابة الإبداعية.',
   'analysis.lang.p1t.h2': 'تقنية الكتابة في Paper 1',
   'analysis.lang.p1t.body':
     'الكتابة الوصفية، الكتابة السردية، خطة الوقت، وعناصر البناء اللي توصّل Grade 9 في السؤال الثالث.',
@@ -6636,7 +6636,7 @@ export const AR_MESSAGES: Record<string, string> = {
   'qatar.specs.cambridge.0500':
     '0500 - الإنجليزية كلغة أولى. سبيس Cambridge القديم: مهارات القراءة تنقاس على قطع غير قصصية ما تشوفها قبل، مع كتابة موجّهة وإنشاء. ما في مختارات منشورة - القطع تطلع يوم الامتحان.',
   'qatar.specs.cambridge.0990':
-    '0990 - النسخة المُحدّثة. مرتبطة بسلّم تقييم Cambridge 9-1 المستخدم عالمياً. تصميم الأسئلة تجدّد عن 0500، والحدود تطلع على سلّم 9-1. المدارس تختار 0500 أو 0990 على حسب يا سلّم تقييم يبغونه الخريجين بالشهادة.',
+    '0990: النسخة اللي تنقيَّم على سلّم 9-1. أوراقها نفس أوراق 0500، بنفس الأسئلة والدرجات والأهداف، والفرق بس في التقييم، فالنتايج تطلع على سلّم 9-1. المدارس تختار 0500 أو 0990 على حسب سلّم التقييم اللي يحتاجه الخريجين بالشهادة.',
   'qatar.specs.note':
     'لو ما تدري يا سبيس مدرستك تستخدم، معلم الإنجليزي مالك أو رئيس الصف أسرع مصدر - كود السبيس عادةً يطلع على ورقة الموك مالك، والجدول، وتقرير آخر السنة.',
   'qatar.help.h2': 'شلون The English Hub يساعد طلاب IGCSE بقطر',
@@ -6727,9 +6727,9 @@ export const AR_MESSAGES: Record<string, string> = {
   'gcc.specs.0500.body':
     'ورقة Cambridge للغة الأولى المعروفة من زمان. امتحانين كتابيين يفحصون الفهم القرائي، التلخيص، والكتابة الموجّهة والإنشاء. وايد مدارس بالخليج تشتغل على Cambridge من سنين لسا تنزّل دفعاتها على 0500.',
   'gcc.specs.0500_link': 'افتح صفحة 0500',
-  'gcc.specs.0990.title': 'Cambridge IGCSE 0990 - اللغة الإنجليزية الأولى (محدّثة)',
+  'gcc.specs.0990.title': 'Cambridge IGCSE 0990 - اللغة الإنجليزية الأولى (بسلّم تقييم 9-1)',
   'gcc.specs.0990.body':
-    'شهادة Cambridge للغة الأولى المُحدّثة، بنموذج تقييم محدّث وتقارير 9-1. المهارات تتداخل وايد مع 0500، بس أوزان الأسئلة وصياغة المخططات تختلف بدرجة كافية تخلّي التدريب على الورقة الصح مهم.',
+    'نسخة Cambridge للغة الإنجليزية كلغة أولى بسلّم تقييم 9-1. أوراقها نفس أوراق 0500، بنفس الأسئلة والدرجات والأوزان، والفرق بس في سلّم النتايج، عشان كذا أوراق 0500 من نفس سنوات المنهج تدريب زين بعد.',
   'gcc.specs.0990_link': 'افتح صفحة 0990',
   'gcc.help.h2': 'شلون The English Hub يساعد طلاب IGCSE بالخليج',
   'gcc.help.intro':
@@ -18313,7 +18313,8 @@ export const AR_MESSAGES: Record<string, string> = {
   'rev.lang.hub.papers_glance_suffix': 'أوراق اللغة بنظرة سريعة',
   'rev.lang.hub.paper1': 'Paper 1',
   'rev.lang.hub.paper2': 'Paper 2',
-  'rev.lang.hub.papers_equal_note': 'الورقتين لهما نفس الوزن، وكلتاهما تختبر SPaG في قسم الكتابة.',
+  'rev.lang.hub.papers_equal_note':
+    'كلتا الورقتين تختبر الإملاء وعلامات الترقيم والقواعد في قسم الكتابة. تمنح AQA وOCR الورقتين الوزن نفسه، بينما تمنح Edexcel وEduqas الورقة الثانية 60% من الدرجة.',
   'rev.lang.hub.quick_reminder_title': 'تذكير سريع بورقة اللغة',
   'rev.lang.hub.quick_reminder_body':
     'اختر بورد الامتحان مالك عشان تشوف إرشادات خاصة بالأوراق. بنية Paper 1 و Paper 2 تختلف حسب البورد، بس مهارات القراءة والكتابة و SPaG واحدة عند الكل.',
@@ -20317,7 +20318,7 @@ export const AR_MESSAGES: Record<string, string> = {
   'igcse.page.reading.examiner_note': 'ملاحظة المصحّح',
   'igcse.page.reading.words_to_consider': 'كلمات وعبارات للنظر فيها',
   'igcse.page.reading.language_marks': 'اللغة',
-  'igcse.page.reading.summary_task': 'مهمّة التلخيص (Paper 1 Q3)',
+  'igcse.page.reading.summary_task': 'مهمّة التلخيص (Paper 1 Q2)',
   'igcse.page.reading.reading_summary_marks': 'القراءة + التلخيص',
   'igcse.page.reading.model_summary': 'تلخيص نموذجيّ',
   'igcse.page.reading.key_vocabulary': 'مفردات مفتاحيّة',

@@ -64,7 +64,7 @@ const syllabuses = [
     href: '/igcse/cambridge/0500',
     highlights: [
       {
-        label: 'Reading Paper - comprehension, summary and directed writing',
+        label: 'Reading Paper - comprehension, summary, language analysis and extended response',
         href: '/igcse/cambridge/0500/paper-1',
       },
       {
@@ -94,7 +94,7 @@ const syllabuses = [
     href: '/igcse/cambridge/0990',
     highlights: [
       {
-        label: 'Reading Paper - comprehension, summary and language analysis',
+        label: 'Reading Paper - comprehension, summary, language analysis and extended response',
         href: '/igcse/cambridge/0990/paper-1',
       },
       {

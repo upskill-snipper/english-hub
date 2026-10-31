@@ -32,16 +32,22 @@ const AQA_TIMINGS = {
   board: 'AQA',
   colour: 'bg-primary',
   papers: [
+    // 31 October 2026: Paper 1's Q1 was "List 4 things" and Paper 2's Q2
+    // "Summarise differences/similarities", their wording before summer 2026; the
+    // guides in src/data/mark-scheme-guides/aqa-lang-paper1.ts and paper2.ts give
+    // the 2026 questions. Paper 1 Q4 was 25 minutes and Paper 2 Q2 and Q3 10 and
+    // 15, which with AQA's 15 minutes' reading overran 1 hour 45; the times are
+    // now AQA's own Exam Timing Ideas.
     {
       name: 'Language Paper 1 -- Explorations in Creative Reading & Writing',
       duration: '1 hour 45 minutes',
       total: 80,
       questions: [
         {
-          q: 'Q1: List 4 things',
+          q: 'Q1: Four multiple-choice parts',
           marks: 4,
           time: '5 mins',
-          notes: 'Simple retrieval -- be quick.',
+          notes: 'After about 15 minutes reading. Be quick.',
         },
         {
           q: 'Q2: How does the writer use language?',
@@ -58,7 +64,7 @@ const AQA_TIMINGS = {
         {
           q: 'Q4: To what extent do you agree?',
           marks: 20,
-          time: '25 mins',
+          time: '20 mins',
           notes: 'Evaluative -- needs a clear stance.',
         },
         {
@@ -78,18 +84,18 @@ const AQA_TIMINGS = {
           q: 'Q1: Choose 4 true statements',
           marks: 4,
           time: '5 mins',
-          notes: 'Careful reading -- no rush.',
+          notes: 'After about 15 minutes reading. Careful reading -- no rush.',
         },
         {
-          q: 'Q2: Summarise differences/similarities',
+          q: 'Q2: Infer the differences named',
           marks: 8,
-          time: '10 mins',
-          notes: 'Comparative -- both texts.',
+          time: '8 mins',
+          notes: 'Inference from both texts.',
         },
         {
           q: 'Q3: How does the writer use language?',
           marks: 12,
-          time: '15 mins',
+          time: '12 mins',
           notes: '3-4 language points.',
         },
         {
@@ -293,42 +299,73 @@ const CAIE_TIMINGS = {
   board: 'Cambridge IGCSE',
   colour: 'bg-primary',
   papers: [
+    // 31 October 2026: both Language papers rewritten to the 0500 guides in
+    // src/data/mark-scheme-guides/cambridge-0500-paper1.ts and -paper2.ts. Paper 1's
+    // rows were 15, 25 and 15 marks, 55 of a stated 80, with the summary twice and
+    // a "language analysis" extended response; Paper 2 was 50 marks, a 25-mark
+    // directed writing and a 25-mark composition. Both papers are 80 marks in
+    // 2 hours, and each section of Paper 2 is 40. The rows follow the 2027-2029
+    // syllabus, as the guides and the marker do; the note under each heading tells
+    // a November 2026 candidate what differs. The minutes are the guides'
+    // suggestion; the 15 minutes' reading on Paper 1 is Cambridge's own figure.
     {
       name: 'Language Paper 1 -- Reading',
       duration: '2 hours',
       total: 80,
+      note: 'For exams from 2027. The November 2026 paper follows the older syllabus: three questions, worth 30, 25 and 25 marks, in the same 2 hours.',
       questions: [
         {
-          q: 'Q1: Information retrieval & summary',
-          marks: 15,
+          q: 'Q1: Comprehension (Text A)',
+          marks: 20,
           time: '25 mins',
-          notes: 'Select and summarise key points.',
+          notes:
+            'After about 15 minutes reading the three texts. Short answers, one mark per point.',
         },
         {
-          q: 'Q2: Extended response -- language analysis',
-          marks: 25,
-          time: '35 mins',
-          notes: 'Analyse how language creates effects.',
+          q: 'Q2: Summary task (Text B)',
+          marks: 20,
+          time: '25 mins',
+          notes: "2(a) a summary of no more than 120 words (15); 2(b) the writer's attitude (5).",
         },
-        { q: 'Q3: Summary writing', marks: 15, time: '25 mins', notes: 'Concise, own words.' },
+        {
+          q: 'Q3: Short answers and language task (Text C)',
+          marks: 20,
+          time: '25 mins',
+          notes: "Short answers (10), then about 200-250 words on the writer's language (10).",
+        },
+        {
+          q: 'Q4: Extended response to reading (Text C)',
+          marks: 20,
+          time: '25 mins',
+          notes:
+            'About 250-300 words in the form set: reading 10, writing 10. Keep 5 mins to check.',
+        },
       ],
     },
     {
       name: 'Language Paper 2 -- Directed Writing & Composition',
       duration: '2 hours',
-      total: 50,
+      total: 80,
+      note: 'For exams from 2027. The November 2026 paper follows the older syllabus: Section A is one directed writing task worth 40 marks, with no 5-mark question first. The composition is the same.',
       questions: [
         {
-          q: 'Q1: Directed writing',
-          marks: 25,
-          time: '45 mins',
-          notes: 'Respond to source material in a given form.',
+          q: 'Q1(a): Short answer on the text',
+          marks: 5,
+          time: '8 mins',
+          notes: 'After about 10 minutes reading. Your own words, with details as evidence.',
         },
         {
-          q: 'Q2: Composition (choice of tasks)',
-          marks: 25,
-          time: '45 mins',
-          notes: 'Descriptive or narrative writing.',
+          q: 'Q1(b): Directed writing',
+          marks: 35,
+          time: '42 mins',
+          notes:
+            'A speech, letter, article or report of about 250-350 words: reading 10, writing 25.',
+        },
+        {
+          q: 'Q2, 3, 4 or 5: Composition',
+          marks: 40,
+          time: '60 mins',
+          notes: 'One of four titles, two descriptive and two narrative, about 350-450 words.',
         },
       ],
     },
@@ -367,22 +404,46 @@ const OCR_TIMINGS = {
   board: 'OCR',
   colour: 'bg-primary',
   papers: [
+    // 31 October 2026: both Language papers rewritten to the J351 guides in
+    // src/data/mark-scheme-guides/ocr-lang-component01.ts and -component02.ts.
+    // Section B was 50 minutes on each, and Paper 2's Section A 55, where OCR
+    // advises about an hour on each section; the reading was one row. The rows are
+    // now each question, with the guides' suggested minutes inside OCR's hour.
     {
       name: 'Language Paper 1 -- Communicating Information & Ideas',
       duration: '2 hours',
       total: 80,
       questions: [
         {
-          q: 'Section A: Reading (multiple questions)',
-          marks: 40,
-          time: '60 mins',
-          notes: 'Comprehension, inference, language analysis.',
+          q: 'Q1: Retrieval from Text 1',
+          marks: 4,
+          time: '5 mins',
+          notes:
+            'After about 12 minutes reading both texts, one 19th-century, one from the 20th or 21st.',
         },
         {
-          q: 'Section B: Writing (one task)',
+          q: 'Q2: Bringing the two texts together',
+          marks: 6,
+          time: '8 mins',
+          notes: 'A link the question names, evidence from both.',
+        },
+        {
+          q: 'Q3: Language and structure',
+          marks: 12,
+          time: '15 mins',
+          notes: 'One text. Cover structure as well as language.',
+        },
+        {
+          q: 'Q4: Evaluation and comparison',
+          marks: 18,
+          time: '20 mins',
+          notes: 'A statement about both texts: evaluate (12), compare (6).',
+        },
+        {
+          q: 'Q5 or Q6: Non-fiction writing',
           marks: 40,
-          time: '50 mins',
-          notes: 'Writing for real purposes task.',
+          time: '60 mins',
+          notes: 'Answer one. About 5-10 mins planning, 45 writing, 5 checking.',
         },
       ],
     },
@@ -392,16 +453,35 @@ const OCR_TIMINGS = {
       total: 80,
       questions: [
         {
-          q: 'Section A: Reading (multiple questions)',
-          marks: 40,
-          time: '55 mins',
-          notes: 'Analysis of literary and non-fiction texts.',
+          q: 'Q1: Retrieval from Text 1',
+          marks: 4,
+          time: '5 mins',
+          notes:
+            'After about 12 minutes reading both texts: literary prose from the 20th or 21st century.',
         },
         {
-          q: 'Section B: Writing (one task)',
+          q: 'Q2: Language and structure (short)',
+          marks: 6,
+          time: '8 mins',
+          notes: 'A short section of Text 1.',
+        },
+        {
+          q: 'Q3: Language and structure',
+          marks: 12,
+          time: '15 mins',
+          notes: 'Text 2. Cover structure as well as language.',
+        },
+        {
+          q: 'Q4: Evaluation and comparison',
+          marks: 18,
+          time: '20 mins',
+          notes: 'A statement about both texts: evaluate (12), compare (6).',
+        },
+        {
+          q: 'Q5 or Q6: Creative writing',
           marks: 40,
-          time: '50 mins',
-          notes: 'Creative or imaginative writing.',
+          time: '60 mins',
+          notes: 'Answer one. About 5-10 mins planning, 45 writing, 5 checking.',
         },
       ],
     },
@@ -436,7 +516,21 @@ const OCR_TIMINGS = {
   ],
 }
 
-const ALL_BOARDS = [AQA_TIMINGS, EDEXCEL_TIMINGS, CAIE_TIMINGS, OCR_TIMINGS]
+/** One board's papers. `note` is a line under a paper's heading, for what its
+ * rows cannot show: the Cambridge papers use it for the November 2026 series. */
+type BoardTimings = {
+  board: string
+  colour: string
+  papers: {
+    name: string
+    duration: string
+    total: number
+    note?: string
+    questions: { q: string; marks: number; time: string; notes: string }[]
+  }[]
+}
+
+const ALL_BOARDS: BoardTimings[] = [AQA_TIMINGS, EDEXCEL_TIMINGS, CAIE_TIMINGS, OCR_TIMINGS]
 
 /* ─── Page ───────────────────────────────────────────────────── */
 
@@ -578,6 +672,9 @@ export default async function TimeManagementPage() {
                   <p className="mt-1 text-sm text-muted-foreground">
                     {paper.duration} &middot; {paper.total} marks total
                   </p>
+                  {paper.note ? (
+                    <p className="mt-2 text-xs text-muted-foreground">{paper.note}</p>
+                  ) : null}
                 </div>
 
                 {/* Desktop table */}

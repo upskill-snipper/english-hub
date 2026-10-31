@@ -20,7 +20,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Comprehension Strategies - IGCSE Language A Paper 1',
     description:
-      'Detailed guide to answering every Paper 1 question type for Cambridge IGCSE 0500. Step-by-step methods, common mistakes, and examiner tips for Q1, Q2, and Q3.',
+      'Detailed guide to answering every Paper 1 question type for Cambridge IGCSE 0500. Step-by-step methods, common mistakes, and examiner tips for Q1 to Q4.',
     images: [
       {
         url: '/api/og?title=Comprehension+Strategies+-+IGCSE+Language+A+Paper+1',
@@ -32,90 +32,176 @@ export const metadata: Metadata = {
   },
   title: 'Comprehension Strategies - IGCSE Language A Paper 1',
   description:
-    'Detailed guide to answering every Paper 1 question type for Cambridge IGCSE 0500. Step-by-step methods, common mistakes, and examiner tips for Q1, Q2, and Q3.',
+    'Detailed guide to answering every Paper 1 question type for Cambridge IGCSE 0500. Step-by-step methods, common mistakes, and examiner tips for Q1 to Q4.',
   alternates: {
     canonical: 'https://theenglishhub.app/igcse/cambridge/0500/comprehension-strategies',
   },
 }
 
 /* ────────────────────────────────────────────────────────────────────────────
-   QUESTION 1 - RETRIEVAL / COMPREHENSION
+   31 October 2026: rewritten to src/data/mark-scheme-guides/cambridge-0500-paper1.ts.
+   This taught three questions of 15 marks: a notes-style "retrieval" Q1 aiming at
+   15 points, a language analysis Q2 of 6-8 words and a 250-word summary of two
+   passages as Q3, and it had no Question 4. From 2027 Paper 1 is four questions of
+   20 on three texts: Q1 comprehension (Text A, point-marked parts), Q2 the summary
+   (Text B alone, no more than 120 words, reading 10 and writing 5, then 2(b) on
+   the writer's attitude), Q3 short answers and the language task (Text C) and Q4
+   the extended response to reading (Text C). The methods keep their advice where
+   it serves the real question; the minutes are the guide's suggestion.
+
+   QUESTION 1 - COMPREHENSION
    ──────────────────────────────────────────────────────────────────────────── */
 
 const q1 = {
-  title: 'Question 1 - Retrieval and comprehension',
-  marks: '15 marks',
-  time: '25 minutes recommended',
+  title: 'Question 1 - Comprehension (Text A)',
+  marks: '20 marks',
+  time: 'About 25 minutes',
   overview:
-    'Question 1 tests whether you can find and rephrase information from the passage. You are given a specific focus and must list relevant points. Short notes or complete sentences are both acceptable.',
+    'Question 1 is a series of short questions on Text A. Some ask you to find a detail, some to explain a word or phrase in your own words, and some to explain what the writer suggests or why something happened. Each part is marked point by point, up to the marks shown for it.',
   steps: [
     {
-      step: 'Read the question before the passage',
+      step: 'Read each part before you look for its answer',
       detail:
-        'Underline the key focus words in the question (e.g. "dangers", "benefits", "reasons"). This tells your brain what to look for as you read.',
+        'Underline the key words in the part (e.g. "explain", "in your own words", "suggests") and note the paragraph or lines it points you to.',
     },
     {
-      step: 'Read the passage with a pen in hand',
+      step: 'Read the named lines with a pen in hand',
       detail:
-        'Underline or number every piece of information that relates to the question focus. Do not worry about phrasing yet -- just mark the raw material.',
+        'Underline the words that answer the part. Answers come from the paragraph or lines the question points you to, not from elsewhere in the text.',
     },
     {
       step: 'Count your points',
       detail:
-        'Aim for 15 or more. If you have fewer than 12, re-read the passage -- you have probably missed points in the introduction or conclusion, which students often skip.',
+        'The marks for each part are printed in square brackets: a [3] part needs three separate points. Count them as you write.',
     },
     {
       step: 'Rephrase in your own words',
       detail:
-        'Write each point as a short, clear note. You do not need full sentences, but you must not copy the passage word-for-word. Change the vocabulary and sentence structure.',
+        'When a part asks for your own words, or asks you to explain, do not copy the passage word-for-word. In the specimen mark scheme an "explain why" answer copied word for word earned nothing, even though the question did not ask for own words.',
     },
     {
-      step: 'Check both halves of the passage',
+      step: 'Explain every part of a phrase',
       detail:
-        'Points are spread across the entire passage. If all your answers come from the first half, go back and mine the second half for content you missed.',
+        'When a part asks what a phrase means, explain each part of it. In the specimen paper, explaining only part of the phrase earned 1 of the 2 marks.',
     },
     {
       step: 'Avoid repetition',
       detail:
-        'Examiners will not credit the same point twice, even if you phrase it differently. Before writing a point, check it is genuinely new information.',
+        'A repeated point earns nothing extra, even if you phrase it differently. Before writing a point, check it is genuinely new information.',
     },
   ],
   mistakes: [
     'Copying directly from the passage instead of using own words.',
-    'Writing only 5-6 points when 15 are needed for full marks.',
-    'Including irrelevant information that does not match the question focus.',
-    'Wasting time on long, essay-style sentences when short notes are quicker.',
-    'Ignoring the final paragraphs of the passage.',
+    'Giving fewer separate points than the marks in brackets ask for.',
+    'Including irrelevant information that does not answer the part.',
+    'Writing a paragraph for a 1-mark part, which eats into the time Questions 2 to 4 need.',
+    'Using lines outside the ones the part points you to.',
     'Repeating the same point in different words.',
   ],
   examinerTips: [
-    'You do not lose marks for including extra correct points, so when in doubt, include it.',
-    'If a point requires inference (reading between the lines), state it clearly -- inferred points are rewarded at the top end.',
-    'Points from both passages (if two are given) must be included for full marks.',
-    'Own words do not mean inventing information. Rephrase what the writer says -- do not add your own opinion.',
+    'The marks in square brackets are your guide: a [3] part needs three separate points.',
+    'If a part asks what the writer suggests, state the implied meaning clearly: points the text only implies are rewarded.',
+    'Copying out long stretches of the text in the hope that the answer is somewhere inside does not work: pick out the answer.',
+    'Own words do not mean inventing information. Rephrase what the writer says; do not add your own opinion.',
   ],
 }
 
 /* ────────────────────────────────────────────────────────────────────────────
-   QUESTION 2 - LANGUAGE ANALYSIS
+   QUESTION 2 - SUMMARY TASK
    ──────────────────────────────────────────────────────────────────────────── */
 
 const q2 = {
-  title: 'Question 2 - Language analysis',
-  marks: '15 marks',
-  time: '25 minutes recommended',
+  title: 'Question 2 - Summary task (Text B)',
+  marks: '20 marks',
+  time: 'About 25 minutes: 19 on 2(a), 6 on 2(b)',
   overview:
-    'Question 2 asks you to explain how the writer uses language to create meaning and effect. You must select specific words and phrases, quote them, and analyse their connotations and impact on the reader.',
+    "Question 2(a) asks you to summarise the points in Text B that fit a given focus, in continuous writing of no more than 120 words. It is worth 15 marks: 10 for reading (selecting the relevant points) and 5 for writing (clear, concise expression in your own words). Question 2(b), worth 5, asks you to explain the writer's attitude in Text B, with details from the text.",
   steps: [
     {
-      step: 'Re-read the specified section',
+      step: 'Read the question and identify the focus',
       detail:
-        'The question tells you which lines or paragraphs to focus on. Re-read this section slowly, looking for powerful or unusual word choices.',
+        'The question gives you a specific topic (e.g. "the challenges of living in extreme cold"). Underline the focus. Only information related to this topic will earn marks.',
     },
     {
-      step: 'Select 6-8 words or short phrases',
+      step: 'Scan Text B for relevant points',
       detail:
-        'Choose words that are rich in connotation -- verbs, adjectives, and figurative language. Avoid selecting whole sentences. Single words or two-word phrases give you the most to analyse.',
+        'Go through the text with a pen, numbering every point that fits the focus, including ones the text only implies. Then cross out repeats and examples.',
+    },
+    {
+      step: 'Group similar points together',
+      detail:
+        'On rough paper, group points into clusters (e.g. physical challenges, economic challenges, psychological challenges). This will give your summary a logical structure.',
+    },
+    {
+      step: 'Write continuous prose',
+      detail:
+        'Do not use subheadings, bullet points or notes. The summary must be continuous writing, in full and linked sentences, of no more than 120 words.',
+    },
+    {
+      step: 'Use your own words throughout',
+      detail:
+        'Rephrase every point. If the passage says "people get very cold", you might write "residents risk hypothermia from long exposure to sub-zero temperatures."',
+    },
+    {
+      step: 'Use connectives to link your points',
+      detail:
+        'Join points with: "furthermore", "in addition", "similarly", "equally", "moreover", "another significant challenge is". This creates a flowing paragraph rather than a list.',
+    },
+    {
+      step: 'Count and check',
+      detail:
+        'Count your words: no more than 120. Check you have kept the points that matter most and combined related ones into single sentences.',
+    },
+    {
+      step: 'Answer 2(b) briefly',
+      detail:
+        "Name the writer's attitude in a few words (for example, 'hopeful but cautious'), then give as many details from Text B as the question asks for, each with a few words on what it shows.",
+    },
+  ],
+  mistakes: [
+    'Copying from the passage: the writing marks reward your own words.',
+    'Including personal opinions or evaluations. The summary is objective.',
+    'Writing an introduction or conclusion. Start with your first point and end with your last.',
+    'Using bullet points or numbered lists instead of continuous prose.',
+    'Including points that fall outside the focus of the question.',
+    'Repeating the same point in different words.',
+    'Going over the 120-word limit the question sets.',
+    'Forgetting to use formal, neutral language throughout.',
+  ],
+  examinerTips: [
+    'The reading mark (out of 10) is given in levels, not by counting points: the top level gathers the points that matter most and never strays from the focus.',
+    'The writing mark (out of 5) rewards candidates who rephrase fluently and say a lot in few words. "Own words" does not mean making things up: it means finding synonyms and restructuring sentences.',
+    'Organise your points thematically, not in the order they appear in the text. This shows you have processed the material.',
+    'If you are unsure whether a point fits the focus, leave it out: 120 words leave no room for material the question did not ask for.',
+    'Practice is the single most effective way to improve at the summary. Write summaries from past papers until you can consistently fit the main points into 120 words.',
+  ],
+}
+
+/* ────────────────────────────────────────────────────────────────────────────
+   QUESTION 3 - SHORT ANSWERS AND LANGUAGE TASK
+   ──────────────────────────────────────────────────────────────────────────── */
+
+const q3 = {
+  title: 'Question 3 - Short answers and language task (Text C)',
+  marks: '20 marks',
+  time: 'About 25 minutes: 12 on the short answers, 13 on the language task',
+  overview:
+    "Question 3 starts with short questions on words and phrases in Text C (10 marks), then the language task (10 marks): about 200 to 250 words explaining how the writer's language creates effects in an extract the question names. You select a few words and phrases, quote them, and analyse their connotations and impact on the reader.",
+  steps: [
+    {
+      step: 'Answer the short questions first',
+      detail:
+        'Give the exact word or phrase when asked for one, and explain words in your own words as they are used in the sentence. Test an explanation by putting it in place of the word.',
+    },
+    {
+      step: 'Re-read the specified extract',
+      detail:
+        'The language task tells you which part of Text C to focus on. Re-read it slowly, looking for powerful or unusual word choices.',
+    },
+    {
+      step: 'Select a few striking words or short phrases',
+      detail:
+        'The specimen paper asked for three. Choose words rich in connotation, including images (similes, metaphors), which the higher levels expect you to explain. Single words or two-word phrases give you the most to analyse.',
     },
     {
       step: 'For each word, write a PEEL paragraph',
@@ -130,12 +216,7 @@ const q2 = {
     {
       step: 'Link words into patterns',
       detail:
-        'If three words all relate to violence, say so. Identifying a semantic field (a group of words with a shared meaning area) is a top-band skill.',
-    },
-    {
-      step: 'Vary your analytical vocabulary',
-      detail:
-        'Do not repeat "the writer uses" in every paragraph. Try: "conveys", "evokes", "implies", "establishes a mood of", "positions the reader as".',
+        'If several words all relate to violence, say so. Identifying a semantic field (a group of words with a shared meaning area) is a top-band skill.',
     },
   ],
   mistakes: [
@@ -143,80 +224,64 @@ const q2 = {
     'Quoting entire sentences instead of individual words.',
     'Using vague effect phrases: "it makes it more interesting" or "it adds description".',
     'Confusing techniques (calling personification onomatopoeia, for example).',
-    'Writing about the plot or characters instead of the language itself.',
+    'Writing about lines outside the extract you are given.',
     'Spending too long on the first word and running out of time for the rest.',
   ],
   examinerTips: [
-    'The mark scheme uses the word "judicious" -- this means your choices should be well-chosen, not random. Pick the most powerful words, not the first ones you see.',
-    'Top-band responses explore layers of meaning: literal, connotative, and the effect on the reader. Three layers per word is the ideal.',
-    'You do not need to identify the technique by name to score full marks. Explaining the effect is more important than labelling it.',
+    'Pick the most powerful words, not the first ones you see: the top level rewards the sharpest choices, each opened up to show what it suggests.',
+    'Top-band responses explore layers of meaning: literal, connotative, and the effect on the reader.',
+    'Comments on grammar, sentence shape or punctuation earn credit only on top of comments on the words themselves.',
     "If you can link your analysis to the writer's overall purpose (e.g. to create sympathy, build tension, persuade), do so.",
   ],
 }
 
 /* ────────────────────────────────────────────────────────────────────────────
-   QUESTION 3 - SUMMARY
+   QUESTION 4 - EXTENDED RESPONSE TO READING
    ──────────────────────────────────────────────────────────────────────────── */
 
-const q3 = {
-  title: 'Question 3 - Summary writing',
-  marks: '15 marks',
-  time: '25 minutes recommended',
+const q4 = {
+  title: 'Question 4 - Extended response to reading (Text C)',
+  marks: '20 marks',
+  time: 'About 25 minutes',
   overview:
-    'Question 3 asks you to summarise information on a given topic from two passages in a single continuous paragraph of about 250 words. You are marked on content (how many points you include) and language (how well you use your own words and connect your points).',
+    'Question 4 asks for about 250 to 300 words based on Text C in the form the question sets: a letter, report, journal, speech, interview or article. The question sets the situation and gives bullet points to cover, and you use and develop ideas from the text to answer them. Reading and writing are worth 10 marks each.',
   steps: [
     {
-      step: 'Read the question and identify the focus',
+      step: 'Read the task and the bullet points',
       detail:
-        'The question gives you a specific topic (e.g. "the challenges of living in extreme cold"). Underline the focus. Only information related to this topic will earn marks.',
+        'Note the form, who you are writing as, who you are writing for, and every bullet point you must cover.',
     },
     {
-      step: 'Scan both passages for relevant points',
+      step: 'Gather ideas from Text C under each bullet',
       detail:
-        'Go through each passage with a pen, numbering every relevant piece of information. Aim for 8-10 points from each passage (15-20 total).',
+        'Note two or three ideas from the text under each bullet, then add what each one suggests or leads to: that development is what the higher reading levels look for.',
     },
     {
-      step: 'Group similar points together',
+      step: 'Reorganise, do not retell',
       detail:
-        'On rough paper, group points into clusters (e.g. physical challenges, economic challenges, psychological challenges). This will give your summary a logical structure.',
+        'Shape the material around the bullet points, not in the order it appears in Text C, and give each bullet a fair share.',
     },
     {
-      step: 'Write ONE continuous paragraph',
+      step: 'Find the right voice',
       detail:
-        'Do not use subheadings, bullet points, or multiple paragraphs. The mark scheme requires continuous prose. Aim for exactly 250 words -- not more, not fewer.',
+        'Keep a voice that suits the role and the form throughout: in the specimen mark scheme the voice counts towards the reading mark.',
     },
     {
-      step: 'Use your own words throughout',
+      step: 'Write in your own words',
       detail:
-        'Rephrase every point. If the passage says "people get very cold", you might write "residents are at risk of hypothermia from prolonged exposure to sub-zero temperatures."',
-    },
-    {
-      step: 'Use connectives to link your points',
-      detail:
-        'Join points with: "furthermore", "in addition", "similarly", "equally", "moreover", "another significant challenge is". This creates a flowing paragraph rather than a list.',
-    },
-    {
-      step: 'Count and check',
-      detail:
-        'Underline each distinct point in your summary. If you count fewer than 15, add more. Then count your words -- trim or extend to hit approximately 250.',
+        'Organise the piece for the reader, with varied, precise vocabulary and a style that suits the audience and purpose.',
     },
   ],
   mistakes: [
-    'Quoting directly from the passage. Even small copied phrases lose marks.',
-    'Including personal opinions or evaluations. The summary is objective.',
-    'Writing an introduction or conclusion. Start with your first point and end with your last.',
-    'Using bullet points or numbered lists instead of continuous prose.',
-    'Covering only one passage. You must include points from both.',
-    'Repeating the same point in different words -- examiners count distinct points only.',
-    'Going significantly over 250 words. This usually means you are padding, which wastes time.',
-    'Forgetting to use formal, neutral language throughout.',
+    'Retelling Text C in its own order instead of reorganising it around the bullet points.',
+    'Leaving out a bullet point, or giving one only a line.',
+    'Inventing content with no basis in the text: ideas should come from Text C and grow out of it.',
+    'Forgetting the form: an interview, a letter and a speech each need their own shape.',
   ],
   examinerTips: [
-    'The content mark (out of 15) is based on the number of relevant, distinct points. Fifteen well-chosen points earns top marks.',
-    'The language mark rewards candidates who rephrase fluently. "Own words" does not mean making things up -- it means finding synonyms and restructuring sentences.',
-    'Organise your points thematically, not in the order they appear in the passages. This shows you have processed the material.',
-    'If you are unsure whether a point is relevant, include it. You will not be penalised for extra correct content.',
-    'Practice is the single most effective way to improve at Q3. Write summaries from past papers until you can consistently hit 15 points in 250 words.',
+    'Cover every bullet point in a balanced way.',
+    'Back your points with details from Text C, developed beyond what the text says outright.',
+    'A few minutes noting ideas under each bullet before you write saves time later.',
   ],
 }
 
@@ -238,7 +303,7 @@ const readingStrategies = [
   {
     title: 'Track the tone shifts',
     detail:
-      'Many passages change tone partway through -- from positive to negative, from objective to personal. Noticing this shift helps with both Q1 (implicit meaning) and Q2 (language analysis).',
+      "Many passages change tone partway through: from positive to negative, from objective to personal. Noticing this shift helps with Q1 (implicit meaning), Q2(b) (the writer's attitude) and the Q3 language task.",
   },
   {
     title: 'Read the final paragraph carefully',
@@ -248,7 +313,7 @@ const readingStrategies = [
   {
     title: 'Do not assume you understand on first glance',
     detail:
-      'Some passages are deliberately ambiguous. If a sentence feels simple, re-read it -- there may be irony, subtext, or an implied attitude that changes the meaning.',
+      'Some passages are deliberately ambiguous. If a sentence feels simple, re-read it: there may be irony, subtext, or an implied attitude that changes the meaning.',
   },
 ]
 
@@ -258,32 +323,41 @@ const readingStrategies = [
 
 const timePlan = [
   {
-    phase: 'Reading time (given)',
+    phase: 'Reading time',
     minutes: '15 min',
-    detail: 'Read both passages. Annotate lightly. Do NOT start writing.',
+    detail: 'Read all three texts. Annotate lightly. Do NOT start writing.',
   },
   {
     phase: 'Question 1',
     minutes: '25 min',
-    detail: 'Read, underline, rephrase. Aim for 15 points.',
+    detail: 'Read each part, find its answer in the lines named, count the marks in brackets.',
   },
   {
     phase: 'Question 2',
     minutes: '25 min',
-    detail: 'Select 6-8 words. Write PEEL paragraphs for each.',
+    detail: 'Point-spot Text B, write the summary of no more than 120 words, then 2(b).',
   },
-  { phase: 'Question 3', minutes: '25 min', detail: 'Scan, group, write 250-word paragraph.' },
+  {
+    phase: 'Question 3',
+    minutes: '25 min',
+    detail: 'Short answers, then a few words or phrases analysed in about 200-250 words.',
+  },
+  {
+    phase: 'Question 4',
+    minutes: '25 min',
+    detail: 'Note ideas under each bullet, then write about 250-300 words in the form set.',
+  },
   {
     phase: 'Review',
     minutes: '5 min',
-    detail: 'Check spelling, missing points, word count on Q3.',
+    detail: 'Check spelling, missing points and the word count on the summary.',
   },
 ]
 
 export default async function ComprehensionStrategiesPage() {
   await requireIgcseBoard(['cambridge-0500'])
 
-  const questions = [q1, q2, q3]
+  const questions = [q1, q2, q3, q4]
 
   return (
     <div className="space-y-10 pb-16">
@@ -313,8 +387,14 @@ export default async function ComprehensionStrategiesPage() {
           </h1>
           <p className="mt-3 max-w-2xl text-body-lg text-muted-foreground">
             A detailed guide to answering every Paper 1 question type. Step-by-step methods for
-            retrieval (Q1), language analysis (Q2), and summary (Q3), with common mistakes to avoid
-            and examiner tips drawn from published mark schemes and examiner reports.
+            comprehension (Q1), the summary (Q2), short answers and the language task (Q3) and the
+            extended response to reading (Q4), with common mistakes to avoid and examiner tips drawn
+            from published mark schemes and examiner reports.
+          </p>
+          <p className="mt-3 max-w-2xl text-body-sm text-muted-foreground">
+            This is the paper for exams from 2027. If you sit Paper 1 in November 2026, your paper
+            follows the older 2024-2026 syllabus: three questions worth 30, 25 and 25 marks, so its
+            question numbers and marks are not the ones below.
           </p>
         </div>
       </section>

@@ -14,11 +14,14 @@ export const STRINGS: Record<string, Bi> = {
   s0: { en: `Time Guide`, ar: `دليل الوقت` },
   s1: { en: `Fiction and literary texts`, ar: `القصص والأعمال الأدبية` },
   s2: { en: `Imaginative / creative writing`, ar: `الكتابة الإبداعية / الكتابة الخيالية` },
+  // 31 October 2026: s3, s20, s24 and s25 rewritten with the page. s3 was
+  // "Literary fiction from any period"; Component 02's texts are 20th or
+  // 21st-century literary prose, one of which may be literary non-fiction. s24
+  // and s25 were a descriptive piece from an image and a narrative; OCR's tasks
+  // were a story from a title and personal writing about an experience.
   s3: {
-    en: `Literary fiction from any period`,
-    ar: `الرواية من أي فترة_was not part of the instruction to include as a direct quote or keep in English, so correcting based on provided rules:
-
-الأدب الخيالي من أي فترة`,
+    en: `Literary non-fiction, such as a memoir`,
+    ar: `أدب غير خيالي، مثل المذكرات`,
   },
   s4: {
     en: `Prose extracts with rich descriptive or narrative elements`,
@@ -42,20 +45,20 @@ export const STRINGS: Record<string, Bi> = {
   s17: { en: `Paragraph length and structure`, ar: `طولagraph وestructureraph الضبطraph` },
   s18: { en: `How to structure an evaluation response`, ar: `كيف تStructure ردّ على تقييم` },
   s20: {
-    en: `Select evidence from the text that supports your view`,
-    ar: `اختر أدلة من النص التي تدعم رأيك`,
+    en: `Select evidence from both texts that supports your view`,
+    ar: `اختر أدلة من النصين تدعم رأيك`,
   },
   s21: {
     en: `Analyse the language and/or structural choices in your evidence`,
     ar: ``,
   },
   s24: {
-    en: `Write a descriptive piece based on an image or scenario`,
-    ar: `دوري وصف مصور لصورة أو موقف`,
+    en: `Write about an experience, in a piece of personal writing`,
+    ar: `اكتب عن تجربة مررت بها، في نص شخصي`,
   },
   s25: {
-    en: `Write a narrative (short story or part of a story)`,
-    ar: `اكتب قصة روائية (قصة قصيرة أو جزء من قصة)`,
+    en: `Write a story from a given title`,
+    ar: `اكتب قصة انطلاقًا من عنوان معطى`,
   },
   s26: {
     en: `Write from a particular perspective or point of view`,

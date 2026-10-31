@@ -96,7 +96,9 @@ export function isGcseExamBoard(board: ExamBoard | null): board is GcseBoard {
 export const AQA_CONTENT: BoardExamTechniqueContent = {
   boardName: 'AQA',
   shortName: 'AQA',
-  totalDuration: '8 hours total across 4 papers',
+  // 31 October 2026: this said 8 hours. The four papers below are 1h 45m, 1h 45m,
+  // 1h 45m and 2h 15m, which is 7 hours 30 minutes.
+  totalDuration: '7 hours 30 minutes total across 4 papers',
   structureSummary:
     'AQA assesses GCSE English across four papers: Literature Paper 1 (Shakespeare + 19th-century novel), Literature Paper 2 (Modern texts, anthology poetry, unseen poetry), Language Paper 1 (Fiction reading + creative writing) and Language Paper 2 (Non-fiction reading + transactional writing).',
   papers: [
@@ -115,9 +117,15 @@ export const AQA_CONTENT: BoardExamTechniqueContent = {
           colour: 'prep',
         },
         {
+          // 31 October 2026: this was "List four things", Question 1's format
+          // before summer 2026. It is now four multiple-choice parts, 1.1 to 1.4
+          // (src/data/mark-scheme-guides/aqa-lang-paper1.ts). Paper 2's Question 2
+          // below was a "summary of differences"; from 2026 it asks what you can
+          // infer about the differences named (aqa-lang-paper2.ts).
           time: '0:15 - 0:20',
-          label: 'Q1 - List four things (4 marks)',
-          detail: 'Simple retrieval. Four clear, short statements, one per line.',
+          label: 'Q1 - Multiple choice (4 marks)',
+          detail:
+            'Four parts, 1.1 to 1.4. Find the words in the named lines that prove one option, then shade it.',
           marks: '4 marks',
           colour: 'reading',
         },
@@ -192,8 +200,9 @@ export const AQA_CONTENT: BoardExamTechniqueContent = {
         },
         {
           time: '0:19 - 0:27',
-          label: 'Q2 - Summary of differences (8 marks)',
-          detail: 'Three clear differences across both sources with brief quotations.',
+          label: 'Q2 - Inferring differences (8 marks)',
+          detail:
+            'Infer the differences the question names, from both sources, with brief quotations.',
           marks: '8 marks',
           colour: 'reading',
         },
@@ -340,10 +349,10 @@ export const AQA_CONTENT: BoardExamTechniqueContent = {
   questionTypes: [
     {
       paper: 'Lang P1',
-      question: 'Q1 - List four things',
+      question: 'Q1 - Multiple choice (1.1 to 1.4)',
       marks: '4',
-      description: 'Simple retrieval from a specified section.',
-      approach: 'Four clear sentences. One point per line. Do not over-explain.',
+      description: 'Four short questions on a specified section, one answer to shade in each.',
+      approach: 'Check each option against the lines. Beware options that only repeat a word.',
     },
     {
       paper: 'Lang P1',
@@ -356,7 +365,8 @@ export const AQA_CONTENT: BoardExamTechniqueContent = {
       paper: 'Lang P1',
       question: 'Q3 - Structure analysis',
       marks: '8',
-      description: 'How has the writer structured the text to interest the reader?',
+      description:
+        'How has the writer structured the text to create the effect named, such as tension?',
       approach: 'Opening, shifts, perspective, sentence and paragraph length, ending.',
     },
     {
@@ -382,9 +392,10 @@ export const AQA_CONTENT: BoardExamTechniqueContent = {
     },
     {
       paper: 'Lang P2',
-      question: 'Q2 - Summary of differences',
+      question: 'Q2 - Inferring differences',
       marks: '8',
-      description: 'Summary of differences across both sources on a topic.',
+      description:
+        'What you can infer about the differences the question names, from both sources.',
       approach: '3 differences with short embedded quotations from both sources.',
     },
     {
@@ -958,47 +969,66 @@ export const OCR_CONTENT: BoardExamTechniqueContent = {
     {
       title: 'OCR English Language Paper 1',
       badge: '2h',
+      // 31 October 2026: both Language papers rewritten to the J351 guides in
+      // src/data/mark-scheme-guides/ocr-lang-component01.ts and -component02.ts.
+      // The rows had Q1 at 8 marks, Q2 as a 12-mark language question, Q3 as a
+      // 12-mark comparison and the writing as "Q4", planned "(16 + 24 marks)". Each
+      // paper is Q1 4, Q2 6, Q3 12 and Q4 18 (evaluation 12 + comparison 6), then
+      // one writing task, Question 5 or 6, for 40. Paper 2's texts were "two literary
+      // fiction extracts"; they are two literary prose texts, at least one fiction.
+      // The minutes follow the guides' suggestion inside OCR's advice of about an
+      // hour on each section.
       description:
-        'Communicating information and ideas. Two non-fiction texts (one 19th-century, one modern) with reading questions and one writing task.',
+        'Communicating information and ideas. Two unseen non-fiction texts (one 19th-century, one from the 20th or 21st century) with four reading questions, then one piece of non-fiction writing from a choice of two tasks.',
       rows: [
         {
-          time: '0:00 - 0:15',
+          time: '0:00 - 0:12',
           label: 'Read both source texts',
           detail: 'Read both fully. Note purpose and key ideas.',
           marks: 'Prep',
           colour: 'prep',
         },
         {
-          time: '0:15 - 0:25',
-          label: 'Q1 - Information retrieval (8 marks)',
-          detail: 'Identify and explain information from the texts.',
-          marks: '8 marks',
+          time: '0:12 - 0:17',
+          label: 'Q1 - Information retrieval (4 marks)',
+          detail:
+            'Short parts on the lines named in Text 1: a word, phrase or quotation, or a point in your own words.',
+          marks: '4 marks',
           colour: 'reading',
         },
         {
+          time: '0:17 - 0:25',
+          label: 'Q2 - Bringing the texts together (6 marks)',
+          detail: 'A link between the two texts, with evidence from both. No language analysis.',
+          marks: '6 marks',
+          colour: 'comparison',
+        },
+        {
           time: '0:25 - 0:40',
-          label: 'Q2 - Language analysis (12 marks)',
-          detail: 'How does the writer use language? Use subject terminology.',
+          label: 'Q3 - Language and structure (12 marks)',
+          detail:
+            'How one writer uses language and structure to create the effect named. Cover both, with subject terminology.',
           marks: '12 marks',
           colour: 'analysis',
         },
         {
           time: '0:40 - 1:00',
-          label: 'Q3 - Comparison (12 marks)',
-          detail: 'Compare ideas and perspectives across both texts.',
-          marks: '12 marks',
+          label: 'Q4 - Evaluation and comparison (18 marks)',
+          detail:
+            "How far you agree with a statement about both texts (12 marks), comparing the writers' ideas and methods (6 marks).",
+          marks: '18 marks',
           colour: 'comparison',
         },
         {
-          time: '1:00 - 1:05',
-          label: 'Q4 - Plan extended writing',
-          detail: 'Plan structure for the writing task (16 + 24 marks).',
+          time: '1:00 - 1:08',
+          label: 'Q5 or Q6 - Choose and plan',
+          detail: 'Read both tasks, choose one, then plan your viewpoint, paragraphs and ending.',
           marks: 'Plan',
           colour: 'plan',
         },
         {
-          time: '1:05 - 1:55',
-          label: 'Q4 - Write extended task (40 marks)',
+          time: '1:08 - 1:55',
+          label: 'Q5 or Q6 - Write the non-fiction piece (40 marks)',
           detail:
             '24 marks content/organisation + 16 marks technical accuracy. Match form, audience, purpose.',
           marks: '40 marks',
@@ -1017,46 +1047,55 @@ export const OCR_CONTENT: BoardExamTechniqueContent = {
       title: 'OCR English Language Paper 2',
       badge: '2h',
       description:
-        'Exploring effects and impact. Two literary fiction extracts with reading questions and one creative writing task.',
+        'Exploring effects and impact. Two unseen literary prose texts from the 20th or 21st century, at least one of them fiction, with four reading questions, then one piece of creative writing from a choice of two tasks.',
       rows: [
         {
-          time: '0:00 - 0:15',
-          label: 'Read both fiction extracts',
+          time: '0:00 - 0:12',
+          label: 'Read both texts',
           detail: 'Read both fully. Note tone, voice, devices.',
           marks: 'Prep',
           colour: 'prep',
         },
         {
-          time: '0:15 - 0:25',
-          label: 'Q1 - Information / inference (8 marks)',
-          detail: 'Retrieval and inference from one extract.',
-          marks: '8 marks',
+          time: '0:12 - 0:17',
+          label: 'Q1 - Information / inference (4 marks)',
+          detail: 'Short parts on the lines named in Text 1.',
+          marks: '4 marks',
           colour: 'reading',
         },
         {
+          time: '0:17 - 0:25',
+          label: 'Q2 - Language and structure, short (6 marks)',
+          detail: 'How the writer creates the effect named in a short section of Text 1.',
+          marks: '6 marks',
+          colour: 'analysis',
+        },
+        {
           time: '0:25 - 0:40',
-          label: 'Q2 - Language analysis (12 marks)',
-          detail: 'How does the writer create an effect? Subject terminology.',
+          label: 'Q3 - Language and structure (12 marks)',
+          detail:
+            'How the writer of Text 2 presents what the question names. Cover both, with subject terminology.',
           marks: '12 marks',
           colour: 'analysis',
         },
         {
           time: '0:40 - 1:00',
-          label: 'Q3 - Comparison (12 marks)',
-          detail: 'Compare how the writers create effects across both extracts.',
-          marks: '12 marks',
+          label: 'Q4 - Evaluation and comparison (18 marks)',
+          detail:
+            'How far you agree with a statement about both texts (12 marks), comparing how the writers present their ideas (6 marks).',
+          marks: '18 marks',
           colour: 'comparison',
         },
         {
-          time: '1:00 - 1:05',
-          label: 'Q4 - Plan creative writing',
-          detail: 'Plan opening, development, ending. Note techniques.',
+          time: '1:00 - 1:08',
+          label: 'Q5 or Q6 - Choose and plan',
+          detail: 'Read both tasks, choose one, then plan opening, development, ending.',
           marks: 'Plan',
           colour: 'plan',
         },
         {
-          time: '1:05 - 1:55',
-          label: 'Q4 - Write creative piece (40 marks)',
+          time: '1:08 - 1:55',
+          label: 'Q5 or Q6 - Write creative piece (40 marks)',
           detail: '24 marks content/organisation + 16 marks technical accuracy.',
           marks: '40 marks',
           colour: 'creative',
@@ -1069,7 +1108,7 @@ export const OCR_CONTENT: BoardExamTechniqueContent = {
           colour: 'check',
         },
       ],
-      tip: "OCR's 2-hour Language papers give you more time per question than AQA - use the extra minutes on Q4 writing rather than padding the reading answers.",
+      tip: "OCR's 2-hour Language papers give you more time per question than AQA - use the extra minutes on the Q5 or Q6 writing rather than padding the reading answers.",
     },
     {
       title: 'OCR English Literature Paper 1',
@@ -1192,57 +1231,74 @@ export const OCR_CONTENT: BoardExamTechniqueContent = {
     {
       paper: 'Lang P1',
       question: 'Q1 - Information retrieval',
-      marks: '8',
-      description: 'Identify and explain information from non-fiction texts.',
-      approach: 'Direct retrieval with brief explanation.',
+      marks: '4',
+      description: 'Short questions on a set of lines from Text 1, in two or three parts.',
+      approach: 'Use only the lines named. Short, exact answers.',
     },
     {
       paper: 'Lang P1',
-      question: 'Q2 - Language analysis',
+      question: 'Q2 - Bringing two texts together',
+      marks: '6',
+      description: 'A link between the two texts that the question names, with evidence from both.',
+      approach: 'Three linked points, evidence from each text. No language analysis.',
+    },
+    {
+      paper: 'Lang P1',
+      question: 'Q3 - Language and structure',
       marks: '12',
-      description: 'How does the writer use language?',
-      approach: '3-4 detailed points with subject terminology.',
+      description: 'How does one writer use language and structure to create an effect?',
+      approach: '3-4 detailed points with subject terminology. Cover structure as well.',
     },
     {
       paper: 'Lang P1',
-      question: 'Q3 - Comparison',
-      marks: '12',
-      description: 'Compare ideas and perspectives across both texts.',
-      approach: 'Both texts in every paragraph. Comparative connectives.',
+      question: 'Q4 - Evaluation and comparison',
+      marks: '18',
+      description:
+        'How far do you agree with a statement about both texts? Evaluation 12 marks, comparison 6.',
+      approach: 'Clear verdict. Both texts in every paragraph. Comparative connectives.',
     },
     {
       paper: 'Lang P1',
-      question: 'Q4 - Extended writing',
+      question: 'Q5 or Q6 - Non-fiction writing',
       marks: '40',
-      description: 'Non-fiction writing task (article, letter, speech).',
+      description: 'One non-fiction piece (article, letter, speech) from a choice of two tasks.',
       approach: 'Match form. Persuasive techniques. Plan for 5 minutes.',
     },
     {
       paper: 'Lang P2',
       question: 'Q1 - Information / inference',
-      marks: '8',
-      description: 'Retrieval and inference from a fiction extract.',
-      approach: 'Direct answers with brief explanation.',
+      marks: '4',
+      description: 'Short questions on a set of lines from Text 1.',
+      approach: 'Direct answers, one per line.',
     },
     {
       paper: 'Lang P2',
-      question: 'Q2 - Language analysis',
+      question: 'Q2 - Language and structure (short)',
+      marks: '6',
+      description: 'How does the writer create an effect in a short section of Text 1?',
+      approach: 'Two or three quotations, each explained. Something on structure.',
+    },
+    {
+      paper: 'Lang P2',
+      question: 'Q3 - Language and structure',
       marks: '12',
-      description: 'How does the writer create effects?',
-      approach: 'Detailed methods analysis with subject terminology.',
+      description: 'How does the writer of Text 2 present what the question names?',
+      approach: 'Detailed methods analysis with subject terminology, language and structure.',
     },
     {
       paper: 'Lang P2',
-      question: 'Q3 - Comparison',
-      marks: '12',
-      description: 'Compare effects across both fiction extracts.',
-      approach: 'Methods focus. Both extracts in every paragraph.',
+      question: 'Q4 - Evaluation and comparison',
+      marks: '18',
+      description:
+        'How far do you agree with a statement about both texts? Evaluation 12 marks, comparison 6.',
+      approach: 'Verdict first. Judge and compare the texts in every paragraph.',
     },
     {
       paper: 'Lang P2',
-      question: 'Q4 - Creative writing',
+      question: 'Q5 or Q6 - Creative writing',
       marks: '40',
-      description: 'Narrative or descriptive writing task.',
+      description:
+        'One creative piece from a choice of two, such as a story from a title or personal writing about an experience.',
       approach: 'Single focused moment. Sensory detail.',
     },
     {
@@ -1313,15 +1369,26 @@ export const OCR_CONTENT: BoardExamTechniqueContent = {
 export const EDUQAS_CONTENT: BoardExamTechniqueContent = {
   boardName: 'WJEC Eduqas',
   shortName: 'Eduqas',
-  totalDuration: '7 hours total across 4 papers (2 Lit + 2 Lang)',
+  // 31 October 2026: this said 7 hours. The four components below are 1h 45m, 2h,
+  // 2h and 2h 30m, which is 8 hours 15 minutes.
+  totalDuration: '8 hours 15 minutes total across 4 papers (2 Lit + 2 Lang)',
   structureSummary:
     'Eduqas GCSE English uses a Component 1 / Component 2 structure. Literature: Component 1 (Shakespeare + Poetry from 1789), Component 2 (Post-1914 prose/drama + 19th-century prose + Unseen poetry). Language: Component 1 (Fiction reading + creative writing), Component 2 (Non-fiction reading + transactional writing).',
   papers: [
     {
       title: 'Eduqas English Language Component 1',
       badge: '1h 45m',
+      // 31 October 2026: both Language components rewritten to the C700 guides in
+      // src/data/mark-scheme-guides/eduqas-lang-comp1.ts and eduqas-lang-comp2.ts.
+      // Component 1 was "20th- and 21st-century" (it is 20th-century), its Q03 was
+      // given structure (that is Q04's) and the tip said five reading questions is
+      // more than any other board (Component 2 sets six). Component 2's reading rows
+      // were four 10-mark questions; it sets 1.1 3, 1.2 10, 1.3 3, 1.4 10, 1.5 4 and
+      // 1.6 10, and its warning said the two writing tasks "must be different forms",
+      // where the paper sets each one's form. The numbering is the live papers'
+      // (A1 to A5 was the 2014 sample's); the section times are the board's advice.
       description:
-        '20th- and 21st-century literature reading and creative prose writing. One literary fiction extract with five reading questions and one creative writing task.',
+        '20th-century literature reading and creative prose writing. One 20th-century literary prose extract with five reading questions, then one piece of creative prose writing from a choice of four titles.',
       rows: [
         {
           time: '0:00 - 0:10',
@@ -1332,135 +1399,152 @@ export const EDUQAS_CONTENT: BoardExamTechniqueContent = {
         },
         {
           time: '0:10 - 0:15',
-          label: 'A1 - Retrieval (5 marks)',
-          detail: 'Quick retrieval question.',
+          label: 'Q01 - Retrieval (5 marks)',
+          detail: 'List five things from the opening lines named.',
           marks: '5 marks',
           colour: 'reading',
         },
         {
-          time: '0:15 - 0:25',
-          label: 'A2 - Language analysis (5 marks)',
-          detail: 'Brief language analysis.',
+          time: '0:15 - 0:21',
+          label: 'Q02 - Language (5 marks)',
+          detail:
+            'What the writer shows about a character or situation, and how the language does it.',
           marks: '5 marks',
           colour: 'reading',
         },
         {
-          time: '0:25 - 0:35',
-          label: 'A3 - Methods (10 marks)',
-          detail: 'Detailed language and structure analysis.',
+          time: '0:21 - 0:34',
+          label: 'Q03 - Language analysis (10 marks)',
+          detail: 'Thoughts, feelings or impressions in a longer section, through the language.',
           marks: '10 marks',
           colour: 'analysis',
         },
         {
-          time: '0:35 - 0:45',
-          label: 'A4 - Effect on reader (10 marks)',
-          detail: 'How is the reader made to feel? Reference effects directly.',
+          time: '0:34 - 0:47',
+          label: 'Q04 - Language and structure (10 marks)',
+          detail:
+            'How the writer creates an effect, such as tension, through the words and the order of events.',
           marks: '10 marks',
           colour: 'analysis',
         },
         {
-          time: '0:45 - 1:00',
-          label: 'A5 - Evaluation (10 marks)',
-          detail: 'To what extent do you agree? Take a clear position.',
+          time: '0:47 - 1:00',
+          label: 'Q05 - Evaluation (10 marks)',
+          detail: 'How far do you agree with a view? Use the final lines and the whole passage.',
           marks: '10 marks',
           colour: 'analysis',
         },
         {
-          time: '1:00 - 1:05',
-          label: 'B - Plan creative writing',
-          detail: 'Choice of four prompts. Plan opening, structure, ending.',
+          time: '1:00 - 1:10',
+          label: 'Q11 - Plan creative writing',
+          detail:
+            'Choice of four titles. Plan where the story starts, its turning point and its ending.',
           marks: 'Plan',
           colour: 'plan',
         },
         {
-          time: '1:05 - 1:40',
-          label: 'B - Write creative piece (40 marks)',
-          detail: '24 marks AO5 + 16 marks AO6.',
+          time: '1:10 - 1:42',
+          label: 'Q11 - Write creative piece (40 marks)',
+          detail: '24 marks AO5 + 16 marks AO6. A story or account of about 450-600 words.',
           marks: '40 marks',
           colour: 'creative',
         },
         {
-          time: '1:40 - 1:45',
+          time: '1:42 - 1:45',
           label: 'Proofread',
           detail: 'Check spelling, punctuation, sentence variety.',
           marks: 'Check',
           colour: 'check',
         },
       ],
-      tip: 'Eduqas Lang Component 1 has FIVE reading questions, more than any other board. Pace yourself ruthlessly - none should take longer than its mark value in minutes.',
+      tip: 'Eduqas Lang Component 1 has FIVE reading questions in about 50 minutes. Pace yourself: about 5 minutes on Q01, 6 on Q02 and 13 on each 10-mark question.',
     },
     {
       title: 'Eduqas English Language Component 2',
       badge: '2h',
       description:
-        '19th- and 21st-century non-fiction reading and transactional/persuasive writing. Two non-fiction texts with six reading questions and two writing tasks.',
+        '19th- and 21st-century non-fiction reading and transactional/persuasive writing. Two non-fiction texts, one from each century, with six reading questions and two compulsory writing tasks.',
       rows: [
         {
-          time: '0:00 - 0:15',
+          time: '0:00 - 0:10',
           label: 'Read both source texts',
           detail: 'Read both fully. Note tone, audience, purpose.',
           marks: 'Prep',
           colour: 'prep',
         },
         {
-          time: '0:15 - 0:25',
-          label: 'A1-A2 - Retrieval and language (10 marks)',
-          detail: 'Two short questions on Text 1.',
-          marks: '10 marks',
+          time: '0:10 - 0:14',
+          label: 'Q1.1 - Retrieval, 21st-century text (3 marks)',
+          detail: 'Short answers. A phrase is usually enough.',
+          marks: '3 marks',
           colour: 'reading',
         },
         {
-          time: '0:25 - 0:35',
-          label: 'A3 - Inference (10 marks)',
-          detail: 'Inference and impressions from Text 1.',
+          time: '0:14 - 0:26',
+          label: 'Q1.2 - How the writer achieves a purpose (10 marks)',
+          detail: 'The 21st-century text: what is said, language, tone and structure.',
           marks: '10 marks',
+          colour: 'analysis',
+        },
+        {
+          time: '0:26 - 0:30',
+          label: 'Q1.3 - Understanding, 19th-century text (3 marks)',
+          detail: 'Short answers on what the older text says or means.',
+          marks: '3 marks',
           colour: 'reading',
         },
         {
-          time: '0:35 - 0:45',
-          label: 'A4 - Retrieval Text 2 (10 marks)',
-          detail: 'Retrieval and inference from Text 2.',
+          time: '0:30 - 0:42',
+          label: 'Q1.4 - Evaluation, 19th-century text (10 marks)',
+          detail: 'Your judgement on the text, often on a statement about it. Use all of it.',
           marks: '10 marks',
+          colour: 'analysis',
+        },
+        {
+          time: '0:42 - 0:47',
+          label: 'Q1.5 - Bringing details together (4 marks)',
+          detail: 'Details from both texts on one shared topic, briefly.',
+          marks: '4 marks',
           colour: 'reading',
         },
         {
-          time: '0:45 - 1:00',
-          label: 'A5 - Comparison of attitudes (10 marks)',
-          detail: "Compare writers' attitudes across both texts.",
+          time: '0:47 - 1:00',
+          label: 'Q1.6 - Comparison (10 marks)',
+          detail: 'Compare what the writers say and how they say it, across both texts.',
           marks: '10 marks',
           colour: 'comparison',
         },
         {
           time: '1:00 - 1:05',
-          label: 'B1 - Plan task 1 writing',
-          detail: 'Identify form, audience, purpose.',
+          label: 'Q2.1 - Plan task 1 writing',
+          detail: 'Identify the form, audience and purpose the task sets.',
           marks: 'Plan',
           colour: 'plan',
         },
         {
           time: '1:05 - 1:30',
-          label: 'B1 - Writing task 1 (20 marks)',
-          detail: 'Persuasive or transactional writing.',
+          label: 'Q2.1 - Writing task 1 (20 marks)',
+          detail: 'About 300-400 words. 12 marks AO5 + 8 marks AO6.',
           marks: '20 marks',
           colour: 'creative',
         },
         {
-          time: '1:30 - 1:55',
-          label: 'B2 - Writing task 2 (20 marks)',
-          detail: 'Second persuasive or transactional task.',
-          marks: '20 marks',
-          colour: 'creative',
+          time: '1:30 - 1:35',
+          label: 'Q2.2 - Plan task 2 writing',
+          detail: 'Its form and reader may differ from the first task.',
+          marks: 'Plan',
+          colour: 'plan',
         },
         {
-          time: '1:55 - 2:00',
-          label: 'Proofread',
-          detail: 'Check both writing tasks.',
-          marks: 'Check',
-          colour: 'check',
+          time: '1:35 - 2:00',
+          label: 'Q2.2 - Writing task 2 (20 marks)',
+          detail: 'About 300-400 words, then check both pieces.',
+          marks: '20 marks',
+          colour: 'creative',
         },
       ],
       warning:
-        'Eduqas Lang Component 2 has TWO writing tasks (20 marks each), not one big one. Both must be different forms. Plan both before starting.',
+        'Eduqas Lang Component 2 has TWO compulsory writing tasks (20 marks each), not one big one. The paper sets the form and reader for each: give each one its full 30 minutes.',
     },
     {
       title: 'Eduqas English Literature Component 1',
@@ -1568,87 +1652,102 @@ export const EDUQAS_CONTENT: BoardExamTechniqueContent = {
   questionTypes: [
     {
       paper: 'Lang C1',
-      question: 'A1 - Retrieval',
+      question: 'Q01 - Retrieval',
       marks: '5',
-      description: 'List or identify from extract.',
+      description: 'List five things from the opening lines named.',
       approach: 'Quick, focused retrieval. 5 minutes max.',
     },
     {
       paper: 'Lang C1',
-      question: 'A2 - Language analysis',
+      question: 'Q02 - Language',
       marks: '5',
-      description: 'How does the writer use language?',
-      approach: 'Two short language points.',
+      description: 'What does the writer show about a character or situation, and how?',
+      approach: 'Three or four impressions, each with a short quotation.',
     },
     {
       paper: 'Lang C1',
-      question: 'A3 - Methods',
+      question: 'Q03 - Language analysis',
       marks: '10',
-      description: 'Detailed language and structure analysis.',
-      approach: '3-4 points combining language and structure.',
+      description: 'Thoughts, feelings or impressions in a longer section, through the language.',
+      approach: '3-4 points on word choices, tracking the whole section.',
     },
     {
       paper: 'Lang C1',
-      question: 'A4 - Effect on reader',
+      question: 'Q04 - Language and structure',
       marks: '10',
-      description: 'How is the reader made to feel?',
-      approach: 'Trace effects across the extract with quotations.',
+      description: 'How does the writer create an effect, such as tension, in a later section?',
+      approach: 'Combine the words with the order of events. Trace it across the section.',
     },
     {
       paper: 'Lang C1',
-      question: 'A5 - Evaluation',
+      question: 'Q05 - Evaluation',
       marks: '10',
-      description: 'To what extent do you agree with a statement?',
-      approach: 'Clear position. 3 evaluative points with evidence.',
+      description: 'How far do you agree with a view about a character or the story?',
+      approach: 'Clear position. 3 evaluative points from across the passage.',
     },
     {
       paper: 'Lang C1',
-      question: 'B - Creative writing',
+      question: 'Q11 - Creative writing',
       marks: '40',
-      description: 'Choice of four prompts (descriptive or narrative).',
-      approach: 'Single focused moment. Sensory detail.',
+      description:
+        'Choice of four titles: a story, or an account of an experience, real or imagined.',
+      approach: 'Single focused moment. Sensory detail. A shape that ends well.',
     },
     {
       paper: 'Lang C2',
-      question: 'A1-A2 - Retrieval and language',
-      marks: '10',
-      description: 'Two short questions on Text 1.',
-      approach: 'Direct answers with brief explanation.',
+      question: 'Q1.1 - Retrieval',
+      marks: '3',
+      description: 'Short questions on the 21st-century text.',
+      approach: 'Direct answers, a phrase each.',
     },
     {
       paper: 'Lang C2',
-      question: 'A3 - Inference',
+      question: 'Q1.2 - How the writer achieves a purpose',
       marks: '10',
-      description: 'Inference and impressions from Text 1.',
-      approach: 'Quotation + inference + explanation.',
+      description: 'What is said, language, tone and structure in the 21st-century text.',
+      approach: 'Quotation + method + effect, through the whole text.',
     },
     {
       paper: 'Lang C2',
-      question: 'A4 - Retrieval Text 2',
-      marks: '10',
-      description: 'Retrieval and inference from Text 2.',
-      approach: 'Direct answers with evidence.',
+      question: 'Q1.3 - Understanding',
+      marks: '3',
+      description: 'Short questions on what the 19th-century text says or means.',
+      approach: 'Answers in plain words, from the right text.',
     },
     {
       paper: 'Lang C2',
-      question: 'A5 - Comparison of attitudes',
+      question: 'Q1.4 - Evaluation',
       marks: '10',
-      description: "Compare writers' attitudes.",
+      description: 'Your judgement on the 19th-century text, often on a statement about it.',
+      approach: 'Decide first, then track the text from beginning to end.',
+    },
+    {
+      paper: 'Lang C2',
+      question: 'Q1.5 - Bringing details together',
+      marks: '4',
+      description: 'What both texts tell you about one shared topic.',
+      approach: 'One or two sentences on each text, naming which is which.',
+    },
+    {
+      paper: 'Lang C2',
+      question: 'Q1.6 - Comparison',
+      marks: '10',
+      description: 'Compare what the writers say and how they say it.',
       approach: 'Both texts in every paragraph.',
     },
     {
       paper: 'Lang C2',
-      question: 'B1 - Writing task 1',
+      question: 'Q2.1 - Writing task 1',
       marks: '20',
-      description: 'Persuasive or transactional writing.',
+      description: 'Compulsory transactional or persuasive task, form and reader set by the paper.',
       approach: 'Match form. Persuasive techniques.',
     },
     {
       paper: 'Lang C2',
-      question: 'B2 - Writing task 2',
+      question: 'Q2.2 - Writing task 2',
       marks: '20',
-      description: 'Second writing task in different form.',
-      approach: 'Different form from B1. Match conventions.',
+      description: 'Second compulsory task, with its own form and reader.',
+      approach: 'Match its conventions and register, which may differ from Q2.1.',
     },
     {
       paper: 'Lit C1',

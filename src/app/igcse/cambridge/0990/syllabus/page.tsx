@@ -50,11 +50,19 @@ const skills = [
     description:
       'Demonstrate understanding of implicit meanings and attitudes. Make inferences and read beyond the surface.',
   },
+  // 31 October 2026, second reader: this card used to fold R3 into R4; once it became
+  // R4 alone, R3 had no card, so it has its own below and the count reads ten.
+  {
+    area: 'Reading',
+    title: 'Judge and develop ideas',
+    description:
+      'Analyse, evaluate and develop the facts, ideas and opinions in a text, backing each point with details from it.',
+  },
   {
     area: 'Reading',
     title: 'Analyse language',
     description:
-      "Analyse, evaluate and develop a personal response to writers' use of language, structure and form - with short relevant quotation.",
+      'Show how writers create effects and influence readers, especially through their choice of words and phrases, with short relevant quotation.',
   },
   {
     area: 'Reading',
@@ -93,6 +101,12 @@ const skills = [
   },
 ]
 
+// 31 October 2026: Paper 1 was "two unseen non-fiction texts (Text A and Text B)"
+// and three questions; Paper 2 had no 1(a). From 2027 Paper 1 is four questions of
+// 20 on Texts A, B and C, and Paper 2 Section A opens with a 5-mark question on
+// the text (src/data/mark-scheme-guides/cambridge-0990-paper1.ts and -paper2.ts).
+// The reading skills listed structure, which no Paper 1 objective names.
+// Second reader: added the November 2026 note under "The two papers", as on 0500's.
 const paperSummary = [
   {
     code: 'Paper 1',
@@ -100,9 +114,9 @@ const paperSummary = [
     weight: '50%',
     marks: '80',
     time: '2 hours',
-    tested: 'Comprehension, language analysis, summary',
+    tested: 'Comprehension, summary, language analysis, extended response',
     content:
-      'Two unseen non-fiction texts (Text A and Text B). Three compulsory questions testing comprehension, language analysis and summary.',
+      'Three unseen texts (Texts A, B and C). Four compulsory questions of 20 marks: comprehension, a summary, short answers with a language task, and an extended response to reading.',
     icon: BookOpen,
   },
   {
@@ -113,7 +127,7 @@ const paperSummary = [
     time: '2 hours',
     tested: 'Directed writing, narrative and descriptive composition',
     content:
-      'Section A: directed writing in response to a short text. Section B: extended composition - either a narrative or a descriptive task.',
+      'Section A: a 5-mark question on one or two short texts, then directed writing that uses them. Section B: an extended composition, either a narrative or a descriptive task.',
     icon: PenTool,
   },
 ]
@@ -193,6 +207,12 @@ export default async function Cambridge0990SyllabusPage() {
           <ListChecks className="size-5 text-primary" />
           <h2 className="text-heading-lg font-heading text-foreground">The two papers</h2>
         </div>
+        <p className="mb-5 max-w-3xl text-body-sm text-muted-foreground leading-relaxed">
+          These are the papers for exams from 2027. In November 2026 the older 2024-2026 syllabus is
+          sat for the last time: its Paper 1 has three questions, worth 30, 25 and 25 marks, and its
+          Paper 2 Section A is one directed writing task worth 40 marks. The composition is the
+          same.
+        </p>
         <div className="grid gap-6 md:grid-cols-2">
           {paperSummary.map((p) => {
             const Icon = p.icon
@@ -241,8 +261,9 @@ export default async function Cambridge0990SyllabusPage() {
           <h2 className="text-heading-lg font-heading text-foreground">Tested skills in detail</h2>
         </div>
         <p className="mb-5 max-w-3xl text-body-sm text-muted-foreground">
-          Every question on every paper is marked against one of these nine skills. Knowing which
-          skill a question targets tells you what the examiner is actually looking for.
+          Every question on every paper is marked against some of these ten skills, often several at
+          once. Knowing which skills a question targets tells you what the examiner is actually
+          looking for.
         </p>
         <div className="grid gap-4 md:grid-cols-2">
           {skills.map((skill) => (
@@ -265,10 +286,10 @@ export default async function Cambridge0990SyllabusPage() {
       <section className="rounded-2xl border border-border/60 bg-card p-6 sm:p-8">
         <h2 className="text-heading-md font-heading text-foreground">Reading skills tested</h2>
         <ul className="mt-4 grid gap-2 text-body-sm text-muted-foreground sm:grid-cols-2">
-          <li>• Identifying explicit and implicit meaning in non-fiction</li>
+          <li>• Identifying explicit and implicit meaning in unseen texts</li>
           <li>• Inferring attitude, tone and viewpoint</li>
           <li>• Analysing precise effects of word choice and imagery</li>
-          <li>• Tracing structural decisions and their effect</li>
+          <li>• Judging and developing the facts, ideas and opinions in a text</li>
           <li>• Selecting relevant material under pressure</li>
           <li>• Summarising key ideas in your own words</li>
         </ul>

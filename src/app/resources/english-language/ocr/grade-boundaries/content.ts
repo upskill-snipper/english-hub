@@ -186,6 +186,12 @@ export const STRINGS: Record<string, Bi> = {
   s57: { en: `Grade 7 → Grade 9`, ar: `السابع→الثاني عشر` },
   s58: { en: `Component 02 mastery:`, ar: `المastery للجزء 02:` },
   s59: { en: `Reading widely:`, ar: `قراءة واسعة:` },
+  // 31 October 2026: the per-question tables were rewritten to the J351 guides
+  // (src/data/mark-scheme-guides/ocr-lang-component01.ts, -component02.ts).
+  // s65, s67, s68, s71, s75, s77 and s79 now describe the real questions;
+  // s69, s72, s73, s74 and s78 described questions OCR does not set (a 6-mark
+  // Q5, two 24-mark writing tasks, a 24-mark Q4) and were removed; s87 to s89
+  // are new labels.
   s60: { en: `What it tests`, ar: `ماعنده شنو يختبر` },
   s61: { en: `Skill tested`, ar: `ال kỹول(pDXlicated text to fit instructions) مهارة مختبرة` },
   s62: { en: `Section A: Reading`, ar: `` },
@@ -194,53 +200,41 @@ export const STRINGS: Record<string, Bi> = {
     ar: `ا retrieve و interpret المعلومات من نص واحد`,
   },
   s64: { en: `Retrieval and inference`, ar: `الاسترجاع وال استنتاج` },
-  s65: { en: `Explain how language is used for effect`, ar: `اشرح كيف يستخدم اللسان للتأثير` },
+  s65: {
+    en: `Bring the two texts together on a link the question names`,
+    ar: `اجمع بين النصين في رابط يحدده السؤال`,
+  },
   s66: { en: `Language analysis`, ar: `تحليل اللغة` },
   s67: {
-    en: `Identify and interpret themes or ideas across both texts`,
-    ar: `ا identifi و تفسير الموضوعات أو الأفكار عبر النصين اثنين`,
+    en: `Analyse how one writer uses language and structure`,
+    ar: `حلّل كيف يستخدم أحد الكاتبين اللغة والبنية`,
   },
   s68: {
-    en: `Compare how writers convey viewpoints and perspectives`,
-    ar: `قارن كيف ينقل الكتاب وجهات النظر والمناظر`,
-  },
-  s69: {
-    en: `Evaluate how effectively a writer achieves their purpose`,
-    ar: `قيم كفاءة الكاتب في تحقيق غرضه`,
+    en: `Evaluate a statement about both texts and compare them`,
+    ar: `قيّم عبارة عن النصين وقارن بينهما`,
   },
   s70: { en: `Section B: Writing`, ar: `SECTION B: الكتابة` },
   s71: {
-    en: `Writing to present a viewpoint (e.g., article, speech, letter)`,
-    ar: `كتابة لتقديم وجهة نظر (مثل مقال، خطاب، رسالة)`,
+    en: `One piece of non-fiction writing (e.g., article, speech, letter), from a choice of two tasks`,
+    ar: `قطعة واحدة من الكتابة غير الخيالية (مثل مقال أو خطاب أو رسالة)، من بين مهمتين تختار إحداهما`,
   },
-  s72: {
-    en: `Content and organisation (14) + Technical accuracy (10)`,
-    ar: `المحتوى والتنظيم (14) + الدقة التقنية (10)`,
-  },
-  s73: {
-    en: `Writing to present a viewpoint (shorter task or different form)`,
-    ar: `كتابة للتعبير عن وجهة نظر (مهمة أقصر أو شكل مختلف)`,
-  },
-  s74: { en: `Reading: 32 / Writing: 48`, ar: `قراءة: 32 / كتابة: 48` },
+  // Second read, 31 October 2026: s75 and s77 named Text 1 and Text 2 as a rule;
+  // the guide has that numbering only for the sample and June 2024 papers.
   s75: {
-    en: `Retrieve and interpret information from a 21st-century text`,
-    ar: `احرِر وفسّر المعلومات من نص في القرن twenty-first`,
+    en: `Retrieve and interpret information from one of the texts`,
+    ar: `استخرج المعلومات وفسّرها من أحد النصين`,
   },
   s76: {
     en: `Explain how language and structure create effects`,
     ar: `اشرح كيف تخلق اللغة والهيئة تأثيرات`,
   },
   s77: {
-    en: `Analyse a 19th-century text: how language creates meaning`,
-    ar: ``,
-  },
-  s78: {
-    en: `Evaluate critically how a writer achieves impact on the reader`,
-    ar: `انقد بشكلٍ ناقد كيف يحقق كاتب التأثير على القارئ`,
+    en: `Analyse how the writer of the other text uses language and structure`,
+    ar: `حلّل كيف يستخدم كاتب النص الآخر اللغة والبنية`,
   },
   s79: {
-    en: `Creative / imaginative writing (narrative or descriptive)`,
-    ar: `الكتابة الإبداعية / الخيالية (سرد أو وصف)`,
+    en: `Creative writing (e.g., a story or personal writing), from a choice of two tasks`,
+    ar: `كتابة إبداعية (مثل قصة أو كتابة شخصية)، من بين مهمتين تختار إحداهما`,
   },
   s80: {
     en: `Content and organisation (24) + Technical accuracy (16)`,
@@ -260,4 +254,7 @@ export const STRINGS: Record<string, Bi> = {
     en: `Marks per question: Component 02 - Exploring Effects and Impact`,
     ar: `نقاط لكل سؤال: المكون 02 - استكشاف التأثيرات والتأثير`,
   },
+  s87: { en: `Synthesis`, ar: `الجمع بين النصين` },
+  s88: { en: `Language and structure analysis`, ar: `تحليل اللغة والبنية` },
+  s89: { en: `Evaluation (12) + Comparison (6)`, ar: `التقييم (12) + المقارنة (6)` },
 }

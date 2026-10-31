@@ -84,7 +84,10 @@ const marksToGet = [
     paper: 'Paper 1',
     target: '41',
     percentage: '51%',
-    description: 'Answer all three questions with accurate comprehension and clear summary.',
+    // 31 October 2026: this said "all three questions"; from 2027 Paper 1 sets four
+    // (src/data/mark-scheme-guides/cambridge-0990-paper1.ts), but November 2026 still
+    // sets three, so the line no longer gives a number.
+    description: 'Answer every question with accurate comprehension and a clear summary.',
   },
   {
     paper: 'Paper 2',

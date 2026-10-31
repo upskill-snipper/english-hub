@@ -12,11 +12,18 @@ export const wjecGuide: BoardExamGuide = {
   // was "three thematic clusters of 18 poems" and that the second poem must come
   // from the named poem's cluster. Eduqas sets one anthology with no clusters;
   // see src/lib/board/eduqas-anthology.ts.
-  overview: `<p>WJEC Eduqas is the England-facing specification from WJEC, the Welsh exam board, and it brings several distinctive features that set it apart from AQA, Edexcel, and OCR. The Language qualification (C700QS) is built around two components weighted 40%/60%, while the Literature qualification (C720QS) mirrors this split. What makes Eduqas genuinely unique among all GCSE English boards is its <strong>proofreading and editing task</strong> in Language Component 1 - no other board assesses this skill in a formal exam context. Students must identify and correct errors in spelling, punctuation, and grammar within a given passage, rewarding precise editing skills alongside analytical ability.</p>
+  // The Language sentences said, until 31 October 2026, that Component 1 sets a
+  // proofreading and editing task found on no other board. It sets none: Section
+  // A is five reading questions and carries no AO6 marks
+  // (src/data/mark-scheme-guides/eduqas-lang-comp1.ts). That task came from the
+  // old AI marker's invented A5, not from Eduqas.
+  // Second reading, same day: "five bands for each Language question" is now
+  // "most": Questions 01, 1.1 and 1.3 earn a mark per point, and 1.5 has four.
+  overview: `<p>WJEC Eduqas is the England-facing specification from WJEC, the Welsh exam board, and it brings several distinctive features that set it apart from AQA, Edexcel, and OCR. The Language qualification (C700QS) is built around two components weighted 40%/60%, while the Literature qualification (C720QS) mirrors this split. What sets Eduqas Language apart is the shape of its papers. Component 1 asks <strong>five reading questions on one 20th-century literary extract</strong>, then one story from a choice of four titles. Component 2, the larger component, asks six questions on two non-fiction texts, one from the 19th century and one from the 21st, then sets <strong>two compulsory writing tasks of 20 marks each</strong>, where AQA, Edexcel and OCR set one writing task on each paper.</p>
 
 <p>The Literature specification sets <strong>one poetry anthology, with no clusters</strong>, and students study every poem in it: fifteen in the anthology examined from summer 2027, which replaced an eighteen-poem anthology examined for the last time in summer 2026. The exam asks about one named poem, then asks students to choose a second poem from the anthology and compare it with the first, so knowing every poem well enough to quote from memory is a key exam skill. The board also places significant emphasis on <strong>oracy</strong>, with continuous assessment of spoken language skills feeding into the overall qualification profile.</p>
 
-<p>Eduqas marking guides are widely regarded as among the clearest and most structured of any board, with six precisely defined levels and transparent descriptors that make self-assessment and targeted improvement straightforward. The top band rewards "sophisticated, assured analysis" with "perceptive, conceptualised" responses - students who thread an overarching interpretation through their entire answer rather than analysing quotations in isolation. Grade boundaries have remained relatively stable, with a Grade 4 requiring approximately 29% and a Grade 9 requiring around 76% across both qualifications combined. Strategic preparation should focus on mastering the proofreading component (free marks that many students leave on the table), developing confident comparative skills for the poetry anthology, and practising the two distinct writing modes required in Component 2.</p>`,
+<p>Eduqas marking guides are widely regarded as among the clearest and most structured of any board, with precisely defined bands (five on most English Language questions) and transparent descriptors that make self-assessment and targeted improvement straightforward. The top band rewards "sophisticated, assured analysis" with "perceptive, conceptualised" responses - students who thread an overarching interpretation through their entire answer rather than analysing quotations in isolation. Grade boundaries have remained relatively stable, with a Grade 4 requiring approximately 29% and a Grade 9 requiring around 76% across both qualifications combined. Strategic preparation should focus on pacing the five reading questions of Component 1, developing confident comparative skills for the poetry anthology, and practising the two compulsory writing tasks of Component 2, each in its own form and for its own reader.</p>`,
 
   specCodes: [
     { subject: 'English Language', code: 'C700QS' },
@@ -24,42 +31,48 @@ export const wjecGuide: BoardExamGuide = {
   ],
 
   // ─── Language Assessment Objectives ──────────────────────────────────────────
+  // Weightings corrected 31 October 2026. The C700 guides in
+  // src/data/mark-scheme-guides/eduqas-lang-comp1.ts and -comp2.ts give each
+  // objective its marks: Component 1 (40%) AO1 5, AO2 25, AO4 10, AO5 24, AO6 16;
+  // Component 2 (60%) AO1 10, AO2 10, AO3 10, AO4 10, AO5 24, AO6 16. Weighted
+  // 40/60 that is AO1 10%, AO2 20%, AO3 7.5%, AO4 12.5%, AO5 30% and AO6 20%.
+  // They read ~20%, ~30%, ~10%, ~10%, ~20% and ~10%.
   languageAOs: [
     {
       code: 'AO1',
       description:
         'Identify and interpret explicit and implicit information and ideas. Select and synthesise evidence from different texts.',
-      weighting: '~20%',
+      weighting: '10%',
     },
     {
       code: 'AO2',
       description:
         'Explain, comment on and analyse how writers use language and structure to achieve effects and influence readers, using relevant subject terminology to support their views.',
-      weighting: '~30%',
+      weighting: '20%',
     },
     {
       code: 'AO3',
       description:
         "Compare writers' ideas and perspectives, as well as how these are conveyed, across two or more texts.",
-      weighting: '~10%',
+      weighting: '7.5%',
     },
     {
       code: 'AO4',
       description:
         'Evaluate texts critically and support this with appropriate textual references.',
-      weighting: '~10%',
+      weighting: '12.5%',
     },
     {
       code: 'AO5',
       description:
         'Communicate clearly, effectively and imaginatively, selecting and adapting tone, style and register for different forms, purposes and audiences. Organise information and ideas, using structural and grammatical features to support coherence and cohesion of texts.',
-      weighting: '~20%',
+      weighting: '30%',
     },
     {
       code: 'AO6',
       description:
         'Candidates must use a range of vocabulary and sentence structures for clarity, purpose and effect, with accurate spelling and punctuation.',
-      weighting: '~10%',
+      weighting: '20%',
     },
   ],
 
@@ -92,6 +105,17 @@ export const wjecGuide: BoardExamGuide = {
   ],
 
   // ─── Language Papers ─────────────────────────────────────────────────────────
+  // Corrected 31 October 2026 to the C700 guides in src/data/mark-scheme-guides/
+  // eduqas-lang-comp1.ts and eduqas-lang-comp2.ts. Component 1 had four reading
+  // questions (Q2 an AO1 inference question, Q4 the evaluation), a 10-mark
+  // proofreading task Eduqas does not set and a 30-mark story. Component 2 had
+  // four 10-mark reading questions and two writing tasks of 15 and 25 marks.
+  // Component 1 is Q01 5, Q02 5, Q03 10, Q04 10 (language and structure) and Q05
+  // 10 (evaluation), then one story or recount from four titles for 40 (AO5 24 +
+  // AO6 16). Component 2 is 1.1 3, 1.2 10, 1.3 3, 1.4 10, 1.5 4 and 1.6 10, then
+  // two compulsory tasks, 2.1 and 2.2, of 20 marks each (AO5 12 + AO6 8). The
+  // section times are the board's advice; the question times are the guides'
+  // suggestion from the marks.
   languagePapers: [
     {
       title: 'Component 1: 20th Century Literature Reading and Creative Prose Writing',
@@ -100,77 +124,77 @@ export const wjecGuide: BoardExamGuide = {
       marks: 80,
       weighting: '40%',
       textType:
-        'One extract from a 20th-century literary fiction text. Section A focuses on reading comprehension and analysis. Section B includes a proofreading/editing task (unique to WJEC Eduqas) and a creative prose writing task from a stimulus.',
+        'One unseen extract of 20th-century literary prose, about 60 to 100 lines long. Section A asks five questions on it; Section B sets one piece of creative prose writing, from a choice of four titles.',
       sections: [
         {
-          title: 'Section A: Reading (20th-Century Literary Fiction)',
+          title: 'Section A: Reading (20th-Century Literary Prose)',
           marks: 40,
           questions: [
             {
               question:
-                'Q1 - Retrieval: select and retrieve key information from a specified section of the extract.',
+                'Q01 - Retrieval: list five things you learn from the opening lines the question names.',
               marks: 5,
               ao: 'AO1',
-              skill: 'Identify explicit information',
-              time: '5 minutes',
+              skill: 'Identify explicit and implicit information',
+              time: 'About 5 minutes',
               advice:
-                'Read only within the specified line references. Use short, embedded quotations to support each point. This is a straightforward retrieval question - no analysis or inference is required. Aim for five concise points to secure full marks.',
+                'Read only within the specified line references. Write five short points, one clear point each: a sentence copied out without picking out the point earns nothing. Things the lines suggest count as well as things they state, as long as the lines support them.',
             },
             {
               question:
-                'Q2 - Inference: what impressions do you get of [character/setting/atmosphere] from lines X-Y?',
+                'Q02 - Language: what does the writer show you about a character or situation in the next few lines, and how does the language do it?',
               marks: 5,
-              ao: 'AO1',
-              skill: 'Inference and interpretation',
-              time: '7-8 minutes',
+              ao: 'AO2',
+              skill: 'Impressions and the language that creates them',
+              time: 'About 6 minutes',
               advice:
-                'Go beyond the literal meaning of the text. Each point should be supported by a brief quotation and an explanation of what it implies or suggests. Use phrases such as "this implies", "this suggests", "the reader infers" to signal that you are reading between the lines.',
+                'Aim for three or four impressions, each backed by a short quotation and a sentence on what the words suggest, not only what they say. Use subject terms where they help. It is worth 5 marks, so keep it short and focused.',
             },
             {
               question:
-                'Q3 - Language analysis: how does the writer use language to [create a specific effect]? You should comment on specific words, phrases, and language features.',
+                "Q03 - Language analysis: how does the writer show a character's thoughts and feelings, or your impressions of a person, place or situation, in a longer section?",
               marks: 10,
               ao: 'AO2',
-              skill: 'Language analysis with specific focus',
-              time: '12-15 minutes',
+              skill: 'Language analysis across a section',
+              time: 'About 13 minutes',
               advice:
-                'This question carries the most marks in Section A and requires detailed language analysis. Use the PETAL+ framework: Point, Evidence, Technique, Analysis, Link. Do not merely name a technique - explain its connotations and its effect on the reader. Explore individual word choices and their semantic fields. Two or three deeply developed analytical points will outscore five or six superficial ones. Stay within the specified lines.',
+                'This is one of three 10-mark questions in Section A, and it assesses language. Do not merely name a technique: explain its connotations and its effect on the reader. Work through the section in order so you cover all of it, from its first line to its last. Two or three deeply developed analytical points will outscore five or six superficial ones. Stay within the specified lines.',
             },
             {
               question:
-                'Q4 - Extended critical evaluation: to what extent do you agree with [a given statement about the extract]? Give reasons for your answer, referring to the whole extract.',
+                'Q04 - Language and structure: how does the writer create an effect, such as tension or an impression of a character, in a later section?',
+              marks: 10,
+              ao: 'AO2',
+              skill: 'Language and structure analysis',
+              time: 'About 13 minutes',
+              advice:
+                'Write about the order of events as well as the words: for each part of the section, ask why the writer tells us this here, and which words make it work. Use subject terms for both, such as short sentence, repetition or a change of pace, and cover the whole section, not just its opening.',
+            },
+            {
+              question:
+                'Q05 - Evaluation: you are given a view about a character or the story. How far do you agree? Use the final lines and the passage as a whole.',
               marks: 10,
               ao: 'AO4',
               skill: 'Critical evaluation across the whole extract',
-              time: '12-15 minutes',
+              time: 'About 13 minutes',
               advice:
-                'This is the most discriminating reading question on Component 1. You must evaluate, not merely describe. Take a clear stance - agree, disagree, or partially agree - and support your position with specific textual references from across the entire extract. Partially agreeing often produces the most nuanced responses: present evidence that supports the statement, then use a "however" turn to explore counter-evidence. Embed short quotations fluently and use evaluative language throughout: "effectively", "convincingly", "less successfully".',
+                'You must evaluate, not merely describe. Take a clear stance (agree, disagree, or partially agree) and hold to it, supporting your position with specific references from the final lines and from across the passage. Explain how the writer\'s choices create your thoughts and feelings. Partially agreeing often produces the most nuanced responses: present evidence that supports the view, then use a "however" turn to explore counter-evidence.',
             },
           ],
         },
         {
-          title: 'Section B: Proofreading/Editing and Creative Prose Writing',
+          title: 'Section B: Creative Prose Writing',
           marks: 40,
           questions: [
             {
               question:
-                'Q5 - Proofreading and editing task (UNIQUE TO WJEC EDUQAS): identify and correct errors in a given passage. Errors may include spelling, punctuation, grammar, and sentence construction.',
-              marks: 10,
-              ao: 'AO6',
-              skill: 'Proofreading, editing, and technical accuracy',
-              time: '10 minutes',
+                'Q11 (a), (b), (c) or (d) - Creative prose writing: choose one of four titles and write a story, or an account of an experience, real or imagined.',
+              marks: 40,
+              ao: 'AO5 (24 marks) + AO6 (16 marks)',
+              skill: 'Creative prose writing: a narrative or a recount',
+              time: 'About 45 minutes: 10 planning and 35 writing',
               advice:
-                "This task is unique among all GCSE English boards and offers accessible marks that many students undervalue. Read the passage carefully and systematically - do not rush. Common error types include: homophones (their/there/they're, affect/effect), comma splices, missing apostrophes, subject-verb agreement, and sentence fragments. Correct each error clearly. Practise proofreading regularly in the run-up to the exam; these are among the most straightforward marks available on the entire paper.",
-            },
-            {
-              question:
-                'Q6 - Creative prose writing from a given stimulus (visual or written prompt). Write either a narrative or a descriptive piece.',
-              marks: 30,
-              ao: 'AO5 (18 marks) + AO6 (12 marks)',
-              skill: 'Creative writing - narrative or descriptive',
-              time: '40 minutes (including 5-7 minutes planning)',
-              advice:
-                'Spend 5-7 minutes planning before you write. Open with a hook - a striking image, a sensory detail, or a provocative line of dialogue. Vary your sentence openings (adverbial, participial, one-word) and lengths (short for impact, long for description). Demonstrate the full punctuation range: semicolons, colons, dashes, ellipses. Paragraphs should be varied in length. End with circularity - echo or mirror your opening image or idea. AO6 carries 12 marks, so technical accuracy is essential: proofread your work carefully before time is called.',
+                'Aim for about 450 to 600 words, as the paper suggests. A title may be a phrase, a time you did something, an opening line or a closing line. Use the 10 planning minutes to decide where the story starts, its turning point and how it ends. Open with a hook: a striking image, a sensory detail, or a line of dialogue. Vary your sentence openings and lengths. Description brings a story to life, but a piece that only describes cannot reach the top of the mark range. AO6 carries 16 marks, so technical accuracy is essential: check full stops and spellings before time is called.',
             },
           ],
         },
@@ -184,51 +208,70 @@ export const wjecGuide: BoardExamGuide = {
       marks: 80,
       weighting: '60%',
       textType:
-        'Two non-fiction extracts - one from the 19th century and one from the 21st century - linked by a common theme or topic. Section B requires two transactional writing tasks of different lengths and forms.',
+        'Two unseen non-fiction texts on a shared topic, one from the 19th century and one from the 21st, about 900 to 1,200 words in all. Section A asks six questions; Section B sets two compulsory transactional or persuasive writing tasks of 20 marks each.',
       sections: [
         {
           title: 'Section A: Reading (19th and 21st Century Non-Fiction)',
           marks: 40,
           questions: [
             {
-              question:
-                "Q1 - Synthesis: using evidence from both texts, identify the key similarities and/or differences in the writers' ideas about [the shared topic].",
-              marks: 10,
+              question: 'Q1.1 - Retrieval: short questions on the 21st-century text.',
+              marks: 3,
               ao: 'AO1',
-              skill: 'Synthesis across two non-fiction texts',
-              time: '12 minutes',
+              skill: 'Find information',
+              time: 'About 4 minutes',
               advice:
-                'You MUST draw on BOTH texts - responses that neglect one source cannot access the top band. Structure your answer around clear points of comparison or contrast, embedding quotations from each text. Use comparative connectives throughout: "similarly", "in contrast", "whereas", "both writers suggest". Aim for four to five well-developed comparative points rather than a long list of surface observations.',
+                'Read the whole text first: an answer can sit anywhere in it, including near the end. Short, exact answers are enough, and make sure each comes from the right text.',
             },
             {
               question:
-                'Q2 - Language analysis: how does the writer of Text [A/B] use language to [achieve a specific effect]?',
+                'Q1.2 - How does the writer of the 21st-century text try to achieve a purpose, such as persuading you or showing what a person or event is like?',
               marks: 10,
               ao: 'AO2',
-              skill: 'Language analysis of one non-fiction text',
-              time: '12 minutes',
+              skill: 'What is said, language, tone and structure',
+              time: 'About 12 minutes',
               advice:
-                'Focus on the specified text only. Analyse language techniques in detail: name the device, quote the evidence, and explain the effect on the reader. Consider how the period of the text shapes its language choices - 19th-century texts may use formal register, rhetorical patterning, and archaic vocabulary, while 21st-century texts may employ colloquialisms, informal address, and modern rhetorical strategies. Three well-developed analytical points will comfortably reach the top band.',
+                "Track the text paragraph by paragraph so you use all of it, and keep the question's key word in your explanations. Analyse what is said, the language, tone and structure (for example facts and figures, quotations from experts, the order of ideas), with quotations long enough to make sense, each followed by a comment.",
             },
             {
               question:
-                'Q3 - Comparison: compare how the two writers convey their different attitudes and perspectives on [the shared topic]. You should consider language, tone, and rhetorical techniques.',
-              marks: 10,
-              ao: 'AO3',
-              skill: 'Comparing perspectives across both texts',
-              time: '15 minutes',
+                'Q1.3 - Understanding: short questions on what the 19th-century text says or means.',
+              marks: 3,
+              ao: 'AO1',
+              skill: 'Understand older language',
+              time: 'About 4 minutes',
               advice:
-                "Structure your response around points of comparison rather than writing about each text in turn. For every perspective you identify, analyse HOW the writer conveys it through specific language and structural choices. Top-band responses move beyond surface-level comparison to explore WHY the writers' perspectives differ - consider the influence of historical period, audience, purpose, and genre.",
+                'Put each answer simply. If a word is unfamiliar, read the sentences around it: the meaning is usually clear from them. 19th-century texts may use a formal register, long sentences and archaic vocabulary.',
             },
             {
               question:
-                'Q4 - Evaluation: to what extent do you agree that [a given statement about one or both texts]? Support your response with detailed reference to the text(s).',
+                'Q1.4 - Evaluation: your judgement on the 19th-century text, often on a statement about it, thinking about what is said and how.',
               marks: 10,
               ao: 'AO4',
               skill: 'Critical evaluation of non-fiction',
-              time: '12 minutes',
+              time: 'About 12 minutes',
               advice:
-                'Take a clear evaluative stance and sustain it throughout your response. Every evaluative point must be anchored in a specific textual reference. Show that you can weigh the writer\'s choices critically rather than simply describing them. Use evaluative language: "the writer effectively conveys", "this is less convincing because", "the most compelling aspect of the argument is".',
+                'Decide your answer first, then track the text from beginning to end, noting how far each part supports the statement: a writer\'s view can change or build through the text. Anchor every evaluative point in a specific reference, and show how the writer\'s language reveals their feelings or attitudes. Use evaluative language: "the writer effectively conveys", "this is less convincing because".',
+            },
+            {
+              question:
+                'Q1.5 - Synthesis: using both texts, explain briefly what they tell you about one shared topic.',
+              marks: 4,
+              ao: 'AO1',
+              skill: 'Bringing details together from both texts',
+              time: 'About 5 minutes',
+              advice:
+                'You MUST draw on BOTH texts: an answer on one text stays in the lowest band. Write two or three sentences, one for each text, naming the text and giving the exact details. This question wants the details, not how they are written.',
+            },
+            {
+              question:
+                'Q1.6 - Comparison: compare what the two writers say about a shared topic, and how they get it across to readers.',
+              marks: 10,
+              ao: 'AO3',
+              skill: 'Comparing ideas and methods across both texts',
+              time: 'About 13 minutes',
+              advice:
+                'Structure your response around points of comparison rather than writing about each text in turn, always making clear which text you mean. For every idea you identify, analyse HOW each writer conveys it through language, tone and structure. Consider the influence of historical period, audience and purpose. This is the last reading question, so leave enough time for it.',
             },
           ],
         },
@@ -238,23 +281,23 @@ export const wjecGuide: BoardExamGuide = {
           questions: [
             {
               question:
-                'Q5 - Shorter transactional writing task: write in a specified form (letter, article, speech, review, etc.) for a given audience and purpose.',
-              marks: 15,
-              ao: 'AO5 (9 marks) + AO6 (6 marks)',
-              skill: 'Shorter transactional writing - form, audience, purpose',
-              time: '20 minutes (including planning)',
+                'Q2.1 - First compulsory writing task: write the piece the task sets (letter, article, report, review, speech, etc.) for its purpose and reader.',
+              marks: 20,
+              ao: 'AO5 (12 marks) + AO6 (8 marks)',
+              skill: 'Transactional writing: form, audience, purpose',
+              time: '30 minutes: about 5 planning and 25 writing',
               advice:
-                'Match your register precisely to the specified form and audience. A formal letter requires different conventions from an opinion article or a speech. Open with a clear sense of purpose, develop your argument with two or three well-structured paragraphs, and close with a strong final statement. Despite being the shorter task, this question still rewards sophistication in language, varied sentence structures, and accurate technical skills.',
+                'Aim for about 300 to 400 words, as the paper suggests. Match your register precisely to the form and reader: a formal letter requires different conventions from an opinion article or a speech. Plan three or four main points in a sensible order, an opening that suits the form and an ending that rounds it off. Accurate spelling, punctuation and grammar, with varied sentences and well-chosen words, are 8 of the 20 marks.',
             },
             {
               question:
-                'Q6 - Longer transactional writing task: write in a specified form (letter, article, speech, review, etc.) for a given audience and purpose. This task requires a more developed and sustained response.',
-              marks: 25,
-              ao: 'AO5 (15 marks) + AO6 (10 marks)',
-              skill: 'Longer transactional writing - sustained, developed response',
-              time: '30 minutes (including planning)',
+                'Q2.2 - Second compulsory writing task: the piece the paper sets, for its own purpose and reader.',
+              marks: 20,
+              ao: 'AO5 (12 marks) + AO6 (8 marks)',
+              skill: 'Transactional writing: adapting to a second form and reader',
+              time: '30 minutes: about 5 planning and 25 writing',
               advice:
-                'This is the highest-weighted writing question on Component 2. Spend 3-5 minutes planning your structure. Demonstrate clear command of the specified form: if writing a speech, use direct address, rhetorical questions, and tricolon; if writing an article, use a headline, subheadings where appropriate, and an engaging opening. Build your argument through well-developed paragraphs with topic sentences and discourse markers. Vary your sentence structures purposefully and proofread for accuracy - AO6 accounts for 10 of the 25 marks.',
+                "The two tasks carry equal marks, so keep a full 30 minutes for this one and check it with the same care as the first. Its form or reader may differ from the first task's, so adapt your tone and register: if writing a speech, use direct address, rhetorical questions and tricolon; if writing an article, use a headline and an engaging opening. Build a clear viewpoint through well-developed paragraphs with topic sentences and discourse markers.",
             },
           ],
         },
@@ -474,46 +517,47 @@ export const wjecGuide: BoardExamGuide = {
       question: 'Component 1, Section A - Reading Questions',
       tips: [
         'Read the extract at least twice before answering any questions. On first reading, absorb the overall content and tone. On second reading, annotate key language features and structural choices.',
-        'Stay within the specified line references for each question - material from outside those lines will not be credited.',
-        'For the language analysis question (Q3, 10 marks), depth always outscores breadth. Two or three deeply developed analytical points will outscore five or six superficial ones.',
-        'The critical evaluation question (Q4, 10 marks) is the most discriminating reading question on Component 1. You must evaluate, not merely describe. Use evaluative language throughout.',
+        'Stay within the specified line references for each question: material from outside those lines will not be credited. Question 05 is the exception, using the final lines and the passage as a whole.',
+        'For the language analysis question (Q03, 10 marks), depth always outscores breadth. Two or three deeply developed analytical points will outscore five or six superficial ones.',
+        'Q04 (10 marks) adds structure: write about the order of events as well as the words.',
+        'The evaluation question (Q05, 10 marks) asks you to judge a view. You must evaluate, not merely describe. Use evaluative language throughout.',
       ],
     },
     {
-      question: 'Component 1, Section B - Proofreading/Editing Task',
+      question: 'Both Components, Section B - Checking Your Own Writing',
       tips: [
-        'This task is unique to WJEC Eduqas and offers some of the most accessible marks on the entire paper. Do not rush through it.',
-        "Read the passage systematically, sentence by sentence. Common error types include: homophones (their/there/they're, affect/effect, its/it's), comma splices, missing or misplaced apostrophes, subject-verb agreement errors, and sentence fragments.",
-        'Practise proofreading regularly in the weeks before the exam. Familiarity with common error patterns will significantly improve your speed and accuracy.',
-        'Do not second-guess correct passages - only mark genuine errors. Changing correct text to incorrect text will cost you marks.',
+        'Eduqas sets no separate proofreading task, but technical accuracy (AO6) is 16 of the 40 writing marks in each component, so leave time to check your own work.',
+        "Read your writing systematically, sentence by sentence. Common error types include: homophones (their/there/they're, affect/effect, its/it's), comma splices, missing or misplaced apostrophes, subject-verb agreement errors, and sentence fragments.",
+        'Practise checking your own writing under timed conditions in the weeks before the exam. Knowing the errors you tend to make will improve your speed and accuracy.',
+        'Correct only genuine errors: a hurried change can turn a correct sentence into an incorrect one.',
       ],
     },
     {
       question: 'Component 1, Section B - Creative Writing',
       tips: [
-        'Spend 5-7 minutes planning before you write. A clear plan prevents the rambling, unfocused responses that markers consistently flag.',
+        'Choose one of four titles, and use the 10 minutes the paper advises for planning. A clear plan prevents the rambling, unfocused responses that markers consistently flag.',
         'Open with a hook: a striking image, an unusual perspective, a sensory detail, or a provocative line of dialogue.',
         'Vary your sentence openings and lengths purposefully. Short sentences create impact; longer sentences build atmosphere and description.',
-        'End with circularity - echo your opening image, phrase, or motif to create a satisfying, crafted structure.',
-        'AO6 carries significant marks for technical accuracy. Proofread your creative writing carefully - you have just practised proofreading in the editing task, so apply those same skills to your own work.',
+        'End with circularity: echo your opening image, phrase, or motif to create a satisfying, crafted structure.',
+        'AO6 carries 16 of the 40 marks for technical accuracy. Proofread your writing carefully, especially the full stops between sentences.',
       ],
     },
     {
       question: 'Component 2, Section A - Non-Fiction Reading',
       tips: [
-        'The synthesis question requires evidence from BOTH texts - responses that neglect one source cannot access the top band.',
-        'For the comparison question, structure around points of comparison rather than writing about each text in turn. Each paragraph should reference both texts.',
+        'The synthesis question (1.5) requires evidence from BOTH texts: an answer on one text stays in the lowest band.',
+        'For the comparison question (1.6), structure around points of comparison rather than writing about each text in turn. Each paragraph should refer to both texts.',
         "Consider how historical period, audience, purpose, and genre influence each writer's perspective and language choices.",
-        'The evaluation question rewards critical judgement, not description. Take a clear stance and sustain it with specific textual evidence.',
+        'The evaluation question (1.4, on the 19th-century text) rewards critical judgement, not description. Take a clear stance and sustain it with specific textual evidence.',
       ],
     },
     {
       question: 'Component 2, Section B - Transactional Writing',
       tips: [
-        'You must complete both writing tasks. Budget your time carefully: approximately 20 minutes for the shorter task and 30 minutes for the longer task.',
+        'You must complete both writing tasks, 2.1 and 2.2, worth 20 marks each. Give each about 30 minutes, as the paper advises.',
         'Match your register precisely to the specified form and audience. A formal letter requires different conventions from an opinion article or a speech transcript.',
-        'The shorter task still rewards sophistication - do not treat it as a lesser task. Clear structure, varied sentence types, and accurate technical skills are all assessed.',
-        'For the longer task, build your argument through well-developed paragraphs with topic sentences and discourse markers. End with a powerful closing statement that echoes or develops your opening.',
+        'Neither task is a lesser task: clear structure, varied sentence types, and accurate technical skills are assessed in both.',
+        'Build your argument through well-developed paragraphs with topic sentences and discourse markers. End with a powerful closing statement that echoes or develops your opening.',
       ],
     },
     {
@@ -547,16 +591,14 @@ export const wjecGuide: BoardExamGuide = {
   ],
 
   // ─── Key Changes for 2026 ───────────────────────────────────────────────────
+  // 31 October 2026: an entry here said the Language Component 1 proofreading
+  // task had been expanded. There is no such task (see the overview note), so
+  // the entry was removed rather than reworded.
   keyChanges: [
     {
       year: '2026',
       change:
         'New anthology: from summer 2027 Eduqas examines a new fifteen-poem anthology, with no poem in common with the one examined until summer 2026.',
-    },
-    {
-      year: '2026',
-      change:
-        "Enhanced proofreading component: the proofreading/editing task in Language Component 1 has been expanded with a wider range of error types and a clearer marking guide to better assess students' editing precision.",
     },
     {
       year: '2026',
@@ -1002,12 +1044,12 @@ export const wjecGuide: BoardExamGuide = {
 
   // ─── Unique Features ─────────────────────────────────────────────────────────
   uniqueFeatures: [
-    "Proofreading and editing task in Language Component 1 - the only GCSE English board to formally assess students' ability to identify and correct errors in spelling, punctuation, and grammar within a given passage.",
+    'Language Component 1 is built on one unseen 20th-century literary extract: five reading questions on it, three of them worth 10 marks each, then one story or account from a choice of four titles.',
     'One poetry anthology, with no clusters - students study every poem, and in the exam choose any second poem from the anthology to compare with the named one. This requires secure knowledge of the whole anthology.',
     'Oracy assessment: WJEC Eduqas includes continuous assessment of spoken language skills (oracy) as part of the overall qualification profile, placing greater emphasis on oral communication than other boards.',
-    'Structured marking guides with six clearly defined levels - widely regarded as among the clearest and most transparent of any board, making self-assessment and targeted improvement straightforward for students and teachers.',
-    'Component 2 requires two transactional writing tasks of different lengths (one shorter, one longer), testing a range of forms including letters, articles, speeches, and reviews within a single exam sitting.',
-    'The proofreading task offers some of the most accessible marks on the entire Language paper - students who practise editing skills regularly can secure these marks with confidence, giving them a strategic advantage.',
+    'Structured marking guides with clearly defined bands (five on most English Language questions), widely regarded as among the clearest and most transparent of any board, making self-assessment and targeted improvement straightforward for students and teachers.',
+    'Component 2 requires two compulsory transactional writing tasks of 20 marks each, testing a range of forms including letters, articles, speeches, and reviews within a single exam sitting.',
+    'The two Language components are not weighted equally: Component 2 carries 60% of the grade and Component 1 40%, so the non-fiction paper deserves the larger share of practice.',
     'Literature Component 2 covers three distinct sections (post-1914 prose/drama, 19th-century prose, and unseen poetry) in a single 2-hour-30-minute paper, requiring exceptional time management and versatility.',
     'Grade boundaries have remained relatively stable year-on-year, providing predictability for students and teachers planning their revision strategies.',
   ],

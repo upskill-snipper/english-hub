@@ -3,7 +3,22 @@
 //
 // 10 comprehensive lessons targeting Cambridge IGCSE Language A / Language B
 // and Literature syllabuses. Covers reading, writing, literature,
-// coursework portfolio, and exam strategy across Core and Extended tiers.
+// coursework portfolio, and exam strategy for the 0500 and 0990 papers.
+//
+// 31 October 2026: the Language lessons (1, 2, 3, 8 and 10) were corrected to
+// src/data/mark-scheme-guides/cambridge-0500-paper1.ts and -paper2.ts. They taught
+// the syllabus before 2020: Core and Extended tiers, reading on "Paper 2" with a
+// 1-mark-per-point summary of two passages, writing on "Paper 1", "Band 1" as the
+// top band and a 5-minute no-writing reading time. Every candidate now sits Paper 1
+// (Reading, four questions of 20) and Paper 2 (Directed Writing and Composition),
+// marked in levels with the highest at the top; Cambridge suggests about 15
+// minutes' reading on Paper 1. Lesson 8, on choosing a tier, is now on 0500 and
+// 0990: the same papers on two grading scales.
+// Second read, same day: "Language A (0500) and Language B (0990)" removed (Language A
+// and B are Pearson's International GCSE names, not Cambridge's); Lesson 2's directed
+// writing reading marks and worksheet tariffs set to 1(b) (10 reading, 35 in all) and
+// Lesson 3's to the 10-mark language task; Lesson 9's notes no longer tell teachers what
+// the text used to say; Lessons 2 and 10 now note the November 2026 papers.
 
 import type { LessonPlan } from '@/types'
 
@@ -21,13 +36,13 @@ export const igcseLessons: LessonPlan[] = [
     objectives: [
       'Understand how IGCSE reading passages are structured and what examiners expect at each question level',
       'Practise retrieving explicit information and making inferences from non-fiction texts (R1, R2)',
-      'Develop summary-writing skills that meet the 1-mark-per-point model used in Paper 2 Question 2',
+      'Develop summary-writing skills for Paper 1 Question 2(a): the points in Text B that fit the focus, in no more than 120 words',
       'Learn to select and reorganise information concisely without lifting whole phrases from the passage',
     ],
     successCriteria: [
       'I can locate and retrieve explicit information from a non-fiction passage accurately',
       'I can make at least three valid inferences supported by textual evidence',
-      'I can write a summary paragraph containing 10+ content points in my own words',
+      'I can write a summary paragraph of no more than 120 words that covers the main points in my own words',
       'I can explain the difference between copying the text and paraphrasing effectively',
     ],
     keywords: [
@@ -74,16 +89,16 @@ export const igcseLessons: LessonPlan[] = [
         ],
       },
       {
-        title: 'Summary Writing - The 15-Point Challenge',
+        title: 'Summary Writing - The 120-Word Challenge',
         duration: '22 minutes',
         instructions:
-          'Introduce the Paper 2 summary question format: students must select and reorganise relevant points from the passage(s) into a single coherent paragraph. Model the process: (1) underline the focus of the question, (2) scan for relevant content points, (3) number each distinct point in the margin, (4) draft a summary using own words and connectives. Students then attempt a timed summary task (15 minutes). After writing, pairs swap and tally how many valid content points appear, aiming for the 15-point maximum. Discuss which points were missed and why paraphrasing matters for the style mark (W1-W5).',
+          'Introduce the Paper 1 Question 2(a) summary format: students must select and reorganise the points in one text that fit a focus into a single coherent paragraph of no more than 120 words. Model the process: (1) underline the focus of the question, (2) scan for relevant content points, (3) number each distinct point in the margin, (4) draft a summary using own words and connectives. Students then attempt a timed summary task (15 minutes). After writing, pairs swap, check the word count and tick which of the main points appear. Discuss which points were missed and why paraphrasing matters for the writing mark (5 of the 15).',
         differentiation: {
           support:
             'Provide a content-point checklist with the first five points identified. Offer a connectives word bank (furthermore, additionally, in contrast) for structuring the summary.',
           core: 'Students identify content points and write the summary independently. They tally points with a partner and self-assess for paraphrasing quality.',
           stretch:
-            'Students attempt the summary using two passages (as in the Extended tier Paper 2) and must synthesise points from both sources, maintaining cohesion and their own voice throughout.',
+            'Students write the summary in fewer than 100 words, combining related points into single sentences while keeping cohesion and their own voice throughout.',
         },
         resources: [
           'Summary task worksheet with passage and question',
@@ -105,7 +120,7 @@ export const igcseLessons: LessonPlan[] = [
       },
     },
     homework:
-      'Complete a full Paper 2 Q1 and Q2 from a CAIE past paper under timed conditions. Highlight content points in your summary and self-assess against the mark scheme.',
+      'Complete Questions 1 and 2 of a CAIE Paper 1 in the current pattern (the specimen paper for exams from 2027) under timed conditions. Highlight content points in your summary and self-assess against the mark scheme.',
     worksheetQuestions: [
       {
         question:
@@ -141,11 +156,11 @@ export const igcseLessons: LessonPlan[] = [
       },
     ],
     teacherNotes: [
-      'This lesson targets Assessment Objectives R1 (understand explicit meanings), R2 (understand implicit meanings and attitudes), and W1-W5 for summary writing.',
-      'The summary mark scheme rewards both content (1 mark per point, up to 15) and style (up to 5 marks for use of own words and cohesion).',
-      'For Extended candidates, remind them that Paper 2 uses two passages and the summary must draw from both. Core candidates work with a single passage.',
+      'This lesson targets Assessment Objectives R1 (understand explicit meanings), R2 (understand implicit meanings and attitudes), and W1-W3 for summary writing.',
+      "The summary is marked out of 15: up to 10 for reading, given in levels for selecting the points that fit the focus, and up to 5 for writing, for clear, concise expression in the student's own words.",
+      'The summary is on one text, Text B, in no more than 120 words: Question 2(a) from 2027, and part of Question 1 on the November 2026 paper, with the same text, limit and marks.',
       'Common errors to watch for: students copying verbatim from the passage, missing the focus of the question, and writing summaries that include personal opinions or commentary rather than information from the text.',
-      'The IGCSE Language A and Language B syllabuses are identical in content - Language B is simply the code used when a centre enters candidates for both Core and Extended.',
+      'The 0500 and 0990 papers are identical: 0500 is graded A* to G and 0990 9 to 1.',
     ],
     targetedSkills: [
       'Reading Comprehension',
@@ -167,10 +182,10 @@ export const igcseLessons: LessonPlan[] = [
     yearGroup: '10-11',
     duration: '60 minutes',
     objectives: [
-      'Understand the two-part structure of Paper 1: directed writing (Section A) and composition (Section B)',
+      'Understand the two-part structure of Paper 2: directed writing (Section A) and composition (Section B)',
       'Analyse how directed writing requires reading skills (selecting content) combined with writing skills (adapting voice and register)',
-      'Practise planning and drafting a composition in descriptive or narrative form to meet Band 1-2 descriptors',
-      'Apply CAIE assessment criteria: content/reading (up to 15 marks) and writing quality (up to 25 marks) in directed writing',
+      'Practise planning and drafting a composition in descriptive or narrative form to meet the top-level descriptors',
+      'Apply CAIE assessment criteria for the directed writing, Question 1(b): content/reading (up to 10 marks) and writing quality (up to 25 marks)',
     ],
     successCriteria: [
       'I can identify the format, audience, and purpose required by a directed writing prompt',
@@ -207,13 +222,13 @@ export const igcseLessons: LessonPlan[] = [
         title: 'Directed Writing Masterclass - Reading Into Writing',
         duration: '22 minutes',
         instructions:
-          'Distribute a past-paper style stimulus passage and a directed writing prompt (e.g. "You are a journalist. Using the information from the passage, write an article for a local newspaper..."). Model the process step-by-step: (1) underline the task requirements - format, audience, purpose, (2) scan the passage and number 10+ relevant content points in the margin, (3) plan the response by organising points into a logical structure appropriate to the format, (4) draft the opening paragraph demonstrating adapted register and embedded content. Students then complete their own plan and write the first two paragraphs. Teacher uses the visualiser to annotate a student example against the mark scheme: Content (up to 15) and Language (up to 25).',
+          'Distribute a past-paper style stimulus passage and a directed writing prompt (e.g. "You are a journalist. Using the information from the passage, write an article for a local newspaper..."). Model the process step-by-step: (1) underline the task requirements - format, audience, purpose, (2) scan the passage and number 10+ relevant content points in the margin, (3) plan the response by organising points into a logical structure appropriate to the format, (4) draft the opening paragraph demonstrating adapted register and embedded content. Students then complete their own plan and write the first two paragraphs. Teacher uses the visualiser to annotate a student example against the mark scheme: Content (up to 10) and Language (up to 25).',
         differentiation: {
           support:
             'Provide a content-point checklist so students can tick off points as they incorporate them. Offer a format template showing the structure of the required text type.',
           core: 'Students plan and draft independently. They self-assess their opening against the mark scheme for content coverage and register appropriateness.',
           stretch:
-            'Students write the full directed writing response (400-450 words) and annotate their own work to show where they have addressed content points and adapted register.',
+            'Students write the full directed writing response (about 250-350 words) and annotate their own work to show where they have addressed content points and adapted register.',
         },
         resources: [
           'Stimulus passage for directed writing',
@@ -226,13 +241,13 @@ export const igcseLessons: LessonPlan[] = [
         title: 'Composition Workshop - Descriptive or Narrative',
         duration: '22 minutes',
         instructions:
-          'Present two composition choices (one descriptive, one narrative) mirroring Section B of Paper 1. Discuss the hallmarks of Band 1 writing: sophisticated vocabulary, varied sentence structures, controlled paragraphing, and a sense of crafted purpose. Students spend 5 minutes planning - using a spider diagram for descriptive writing or a five-part narrative arc (exposition, rising action, climax, falling action, resolution) for storytelling - then 15 minutes drafting. In the final 2 minutes, students proofread for SPaG errors, marking corrections in a different colour pen. Collect drafts for formative assessment.',
+          'Present two composition choices (one descriptive, one narrative) mirroring Section B of Paper 2. Discuss the hallmarks of top-level writing: sophisticated vocabulary, varied sentence structures, controlled paragraphing, and a sense of crafted purpose. Students spend 5 minutes planning - using a spider diagram for descriptive writing or a five-part narrative arc (exposition, rising action, climax, falling action, resolution) for storytelling - then 15 minutes drafting. In the final 2 minutes, students proofread for SPaG errors, marking corrections in a different colour pen. Collect drafts for formative assessment.',
         differentiation: {
           support:
             'Provide planning templates for both options with guiding questions at each stage. Offer a vocabulary enhancement sheet with ambitious alternatives to common words.',
           core: 'Students plan and draft independently using the method of their choice. They proofread carefully and identify one sentence they are most proud of.',
           stretch:
-            'Students attempt both composition options and compare which better showcases their writing strengths. They annotate their own work to identify where they have achieved Band 1 criteria.',
+            'Students attempt both composition options and compare which better showcases their writing strengths. They annotate their own work to identify where they have met the top-level criteria.',
         },
         resources: [
           'Composition choice sheet (descriptive + narrative prompts)',
@@ -249,13 +264,13 @@ export const igcseLessons: LessonPlan[] = [
       differentiation: {
         support:
           'Provide a feedback frame: "One strength is... because...", "To improve, you could...".',
-        core: 'Students give and receive feedback independently, referencing specific Band descriptors.',
+        core: 'Students give and receive feedback independently, referencing specific level descriptors.',
         stretch:
           "Students identify which specific Band their partner's writing falls into and justify their judgement with evidence from the text.",
       },
     },
     homework:
-      'Complete the directed writing response in full (250-350 words for Core, 400-450 words for Extended). Then write one additional composition piece on the option you did not choose in class.',
+      'Complete the directed writing response in full (about 250-350 words). Then write one additional composition piece on the option you did not choose in class.',
     worksheetQuestions: [
       {
         question:
@@ -263,7 +278,7 @@ export const igcseLessons: LessonPlan[] = [
         lines: 20,
         modelAnswer:
           "Report on Public Consultation Meeting - Proposed Riverside Park Development\n\nFollowing the public meeting held on 15th March, this report summarises the principal concerns raised by residents and offers a recommendation for the council's consideration.\n\nThe most significant concern was the potential increase in traffic along Riverside Lane. Several residents cited the already congested morning rush hour and expressed fear that construction vehicles would exacerbate the problem. A second major issue was the environmental impact on the existing wildlife habitat, with particular concern for the nesting herons documented by the local conservation group.\n\nHowever, supporters of the development emphasised the lack of recreational facilities for young people in the area and the potential economic benefits for local businesses.\n\nI recommend that the council approve the development in principle, subject to a full environmental impact assessment and a revised traffic management plan that routes construction vehicles via the northern bypass.",
-        marks: 40,
+        marks: 35,
       },
       {
         question:
@@ -275,19 +290,19 @@ export const igcseLessons: LessonPlan[] = [
       },
       {
         question:
-          'Explain the difference between "directed writing" and "composition" on IGCSE Paper 1. What skills does each section test?',
+          'Explain the difference between "directed writing" and "composition" on IGCSE Paper 2. What skills does each section test?',
         lines: 6,
         modelAnswer:
-          "Directed writing (Section A) tests both reading and writing skills. Students must read a stimulus passage, select relevant content points, and transform them into a specified format (e.g. letter, report, article) with an appropriate register for the audience. It is marked for content (up to 15) and language (up to 25). Composition (Section B) tests writing skills only. Students choose between descriptive and narrative prompts and produce an original piece of writing. There is no source material to draw from - the quality depends entirely on the student's own ideas, vocabulary, and structural control.",
+          "Directed writing (Section A) tests both reading and writing skills. Students must read a stimulus passage, select relevant content points, and transform them into a specified format (e.g. letter, report, article) with an appropriate register for the audience. A 5-mark question on the text, 1(a), comes first, and Section A is marked for reading (up to 15) and writing (up to 25). Composition (Section B) tests writing skills only. Students choose between descriptive and narrative prompts and produce an original piece of writing. There is no source material to draw from - the quality depends entirely on the student's own ideas, vocabulary, and structural control.",
         marks: 4,
       },
     ],
     teacherNotes: [
-      'Paper 1 carries 80 marks total: 40 for directed writing (15 content + 25 language) and 40 for composition (content and structure + style and accuracy).',
+      'Paper 2 carries 80 marks total: 40 for Section A (Question 1(a), 5 marks, then the directed writing, 35; 15 reading and 25 writing in all) and 40 for composition (16 content and structure + 24 style and accuracy). On the November 2026 paper, Section A is one directed writing task of 40, with no 1(a); the composition is the same.',
       'Directed writing is NOT a summary - students must use the passage content but adapt it into the specified format with a clear sense of audience and purpose.',
       'For composition, examiners value "crafted" writing over quantity; a tightly controlled 350-word response can score higher than a sprawling 600-word one.',
       'Common errors: students who ignore the specified format (e.g. writing an essay when asked for a letter), students who copy from the passage without adaptation, and students who do not plan their composition and lose structural control.',
-      'Remind students that the 5 minutes of reading time at the start of the exam should be used to read the stimulus passage carefully and begin identifying content points.',
+      'Remind students to spend the first 10 minutes or so reading the Section A text or texts carefully and identifying content points.',
     ],
     targetedSkills: [
       'Directed Writing',
@@ -312,14 +327,14 @@ export const igcseLessons: LessonPlan[] = [
     objectives: [
       "Understand what CAIE examiners mean by 'writer's effect' and how it differs from feature-spotting",
       'Analyse how writers use language and structure to create specific effects on the reader',
-      "Apply the What-How-Why framework to construct analytical paragraphs that reach Band 1-2 in the 'effect' questions",
+      'Apply the What-How-Why framework to construct analytical paragraphs that reach the top levels of the language task',
       'Select precise, short quotations and embed them fluently within analytical sentences',
     ],
     successCriteria: [
       'I can explain the difference between identifying a technique and analysing its effect',
       'I can select short, precise quotations and embed them within my sentences',
       'I can write a What-How-Why paragraph that analyses language effect convincingly',
-      'I can identify which Band my response falls into using the CAIE mark scheme descriptors',
+      'I can identify which level my response falls into using the CAIE mark scheme descriptors',
     ],
     keywords: [
       "writer's effect",
@@ -335,7 +350,7 @@ export const igcseLessons: LessonPlan[] = [
       title: 'Feature-Spot vs. Effect Analysis - Spot the Difference',
       duration: '8 minutes',
       instructions:
-        'Display two student responses to the same passage side by side on the board. Response A simply identifies techniques ("The writer uses a simile and alliteration"). Response B explains the effect ("The simile \'like a caged animal\' suggests the character feels trapped and desperate, creating sympathy in the reader as we recognise the loss of freedom"). Students discuss in pairs which would score higher and why. Reveal the Band descriptors: Band 1 requires "analysis of how the writer achieves effects", not just identification. Establish the What-How-Why model as the path from feature-spotting to genuine analysis.',
+        'Display two student responses to the same passage side by side on the board. Response A simply identifies techniques ("The writer uses a simile and alliteration"). Response B explains the effect ("The simile \'like a caged animal\' suggests the character feels trapped and desperate, creating sympathy in the reader as we recognise the loss of freedom"). Students discuss in pairs which would score higher and why. Reveal the level descriptors: the top level rewards explaining what each choice suggests and why the writer used it, not just identification. Establish the What-How-Why model as the path from feature-spotting to genuine analysis.',
       differentiation: {
         support:
           'Provide the two responses as a printed handout so students can annotate and underline the key differences.',
@@ -343,7 +358,7 @@ export const igcseLessons: LessonPlan[] = [
         stretch:
           'Students rewrite Response A to make it as strong as Response B, adding effect analysis to each identified technique.',
       },
-      resources: ['Paired response slide (Response A and B)', 'Band descriptor summary'],
+      resources: ['Paired response slide (Response A and B)', 'Level descriptor summary'],
     },
     mainActivities: [
       {
@@ -365,7 +380,7 @@ export const igcseLessons: LessonPlan[] = [
         ],
       },
       {
-        title: 'Building Band 1 Paragraphs - What, How, Why',
+        title: 'Building Top-Level Paragraphs - What, How, Why',
         duration: '22 minutes',
         instructions:
           'Using their annotations, students write two analytical paragraphs following the What-How-Why structure: What is the writer doing? (topic sentence establishing the effect), How are they doing it? (technique + embedded quotation with close word-level analysis), Why does it affect the reader? (explanation of the emotional, psychological, or imaginative impact on the reader). Display a model paragraph on screen and annotate the What, How, and Why sections in different colours. Students draft two paragraphs, then self-assess by highlighting their own What/How/Why sections in matching colours. Teacher selects two student examples to discuss under the visualiser, linking each to the Band descriptors.',
@@ -389,8 +404,8 @@ export const igcseLessons: LessonPlan[] = [
       instructions:
         'Post four anonymous student paragraphs around the room (prepared in advance at different Band levels). Students circulate with sticky notes, writing which Band they think each paragraph falls into and one specific reason why. Discuss as a class to calibrate understanding of the mark scheme. This builds mark-scheme literacy so students can self-assess more accurately.',
       differentiation: {
-        support: 'Provide a simplified Band descriptor card to carry during the gallery walk.',
-        core: 'Students predict Bands and justify with specific references to the descriptors.',
+        support: 'Provide a simplified level descriptor card to carry during the gallery walk.',
+        core: 'Students predict levels and justify with specific references to the descriptors.',
         stretch:
           'Students suggest one specific improvement that would move each paragraph up one Band.',
       },
@@ -404,14 +419,14 @@ export const igcseLessons: LessonPlan[] = [
         lines: 12,
         modelAnswer:
           "The writer creates a powerful sense of danger through the verb 'lunged', which suggests sudden, violent movement towards the narrator. The word carries connotations of aggression and unpredictability, making the reader feel the character's vulnerability in this moment - the attack comes without warning, mirroring the way real danger often strikes.\n\nFurthermore, the simile 'the shadows crept like thieves across the wall' personifies the darkness as criminal intruders, suggesting that even the environment itself poses a threat. The verb 'crept' implies stealth and menace, creating an atmosphere where the reader feels that danger is not only present but actively closing in from all sides.",
-        marks: 15,
+        marks: 10,
       },
       {
         question:
           "Explain the difference between 'feature-spotting' and 'effect analysis'. Why does CAIE reward one more than the other?",
         lines: 5,
         modelAnswer:
-          "Feature-spotting means simply identifying a technique (e.g. 'the writer uses a metaphor') without explaining what it achieves. Effect analysis goes further by examining how and why the language choice impacts the reader - what it makes us feel, think, or imagine. CAIE rewards effect analysis because it demonstrates genuine understanding of how writers craft meaning, not just recognition of literary terminology. Band 1 requires 'convincing analysis of how the writer achieves effects', while feature-spotting typically caps a response at Band 4.",
+          "Feature-spotting means simply identifying a technique (e.g. 'the writer uses a metaphor') without explaining what it achieves. Effect analysis goes further by examining how and why the language choice impacts the reader - what it makes us feel, think, or imagine. CAIE rewards effect analysis because it demonstrates genuine understanding of how writers craft meaning, not just recognition of literary terminology. The top level rewards the sharpest choices, each opened up to show what it suggests and why the writer used it, while feature-spotting typically keeps a response in Level 2.",
         marks: 4,
       },
       {
@@ -432,10 +447,10 @@ export const igcseLessons: LessonPlan[] = [
       },
     ],
     teacherNotes: [
-      "The writer's effect question is worth up to 15 marks on Paper 1 (Extended) and is the area where most students lose marks by feature-spotting without explaining effect.",
-      "The mark scheme rewards 'how' and 'why' language creates meaning. Band 1 (13-15 marks) requires 'convincing analysis' with 'well-selected' evidence. Band 2 (10-12) allows 'some analysis' that is 'generally effective'.",
+      'The language task is worth 10 marks in Paper 1 Question 3 (15 in Question 2 on the November 2026 paper) and is the area where most students lose marks by feature-spotting without explaining effect.',
+      "The mark scheme rewards 'how' and 'why' language creates meaning. Level 5 (9-10 marks) gives the sharpest choices, each opened up to show what it suggests; Level 4 (7-8) gives good choices with confident explanations and a first go at explaining images.",
       'Emphasise that short, embedded quotations are more effective than long block quotes. A single well-analysed word can be worth more than a full sentence of quotation.',
-      'This question appears only on the Extended paper. Core candidates face a shorter, more guided language question that asks them to identify words and phrases rather than analyse effects.',
+      'Every candidate sits this task: there are no tiers. It follows short-answer questions on words and phrases in Text C, also worth 10 marks.',
       "If students struggle with the 'Why' element, encourage them to ask: 'What does this make me feel as a reader? What image does it put in my mind? What atmosphere does it create?'",
     ],
     targetedSkills: [
@@ -1012,31 +1027,31 @@ export const igcseLessons: LessonPlan[] = [
   },
 
   // ─────────────────────────────────────────────
-  // LESSON 8: Extended vs Core - Understanding the Difference
+  // LESSON 8: 0500 and 0990 - Same Papers, Two Grading Scales
   // ─────────────────────────────────────────────
   {
     id: 'igcse-08-extended-vs-core',
-    title: 'IGCSE Extended vs Core: Understanding the Difference',
+    title: 'IGCSE 0500 and 0990: Same Papers, Two Grading Scales',
     text: 'IGCSE English Language',
     board: 'CAIE',
     yearGroup: '10-11',
     duration: '60 minutes',
     objectives: [
-      'Understand the structural differences between Core and Extended papers for IGCSE English Language',
-      'Recognise the grade boundaries: Core allows grades C-G while Extended allows grades A*-E',
-      'Identify how questions differ in complexity, expected length, and mark allocation between tiers',
-      "Enable students to make informed decisions about tier entry or understand their teacher's recommendation",
+      'Understand that every candidate sits the same two Language papers: there are no Core and Extended tiers',
+      'Recognise the difference between 0500 (graded A* to G) and 0990 (graded 9 to 1), which share the same papers',
+      'Know the shape of each paper: Paper 1 Reading, four questions of 20 marks; Paper 2 Directed Writing and Composition, two sections of 40',
+      'Set a realistic target grade on the right scale and identify the questions that will move it',
     ],
     successCriteria: [
-      'I can name at least three specific differences between the Core and Extended papers',
-      'I can explain the grade ranges available on each tier and why this matters for university applications',
-      'I can attempt both a Core-level and Extended-level reading question and reflect on my performance',
+      'I can describe both Language papers: their length, marks and questions',
+      'I can explain which grading scale my entry uses and why it does not change the papers I sit',
+      'I can say where Component 3, the Coursework Portfolio, fits, if my school uses it',
       'I can set a realistic target grade and identify two specific actions to achieve it',
     ],
     keywords: [
-      'Core',
-      'Extended',
-      'tier',
+      '0500',
+      '0990',
+      'grading scale',
       'grade boundary',
       'assessment',
       'target grade',
@@ -1044,62 +1059,58 @@ export const igcseLessons: LessonPlan[] = [
       'Paper 2',
     ],
     starterActivity: {
-      title: 'Which Paper Is This From? - Sorting Activity',
+      title: 'Which Question Is This? - Sorting Activity',
       duration: '8 minutes',
       instructions:
-        'Display six exam questions on cards (three from Core papers, three from Extended papers) without labels. In pairs, students sort them into two groups and justify their reasoning. Reveal which is which. Discuss the observable differences: Core questions tend to be more guided with bullet points, shorter expected responses, and scaffolded prompts; Extended questions are more open-ended and demand longer, more independently structured, analytical responses.',
+        "Display six exam questions on cards without labels: a Paper 1 comprehension part, the summary (2(a)), the writer's attitude (2(b)), the language task (Question 3), the extended response to reading (Question 4) and a Paper 2 directed writing task (1(b)). In pairs, students match each card to its paper and question number and justify their reasoning. Reveal the answers. Establish that every candidate meets all six: there is one set of papers for everyone.",
       differentiation: {
         support:
-          'Provide a checklist of features to look for when sorting: guided prompts, question length, marks available, whether analysis is explicitly requested.',
-        core: 'Students sort and justify independently, articulating specific differences they notice.',
+          'Provide a checklist of features to look for when sorting: which text the question uses, the marks shown, the word guidance and whether the answer is a summary, an analysis or a piece of writing.',
+        core: 'Students sort and justify independently, articulating the clues they used.',
         stretch:
-          'Students predict what Band 1 performance looks like on each type of question and explain why the Extended version is more demanding.',
+          'Students predict what a top-level answer looks like for each card and explain which skills it needs.',
       },
-      resources: ['Six question cards (3 Core, 3 Extended)', 'Sorting checklist (support tier)'],
+      resources: ['Six question cards', 'Sorting checklist (support)'],
     },
     mainActivities: [
       {
-        title: 'Side-by-Side Comparison - Paper Structure Deep Dive',
+        title: 'Paper Structure Deep Dive',
         duration: '20 minutes',
         instructions:
-          "Distribute a comparison grid showing Core and Extended papers side by side for both Paper 1 (directed writing and composition) and Paper 2 (reading). For each section, students note: (a) number of questions, (b) total marks available, (c) time allowed, (d) grade range accessible, (e) key differences in question style. Teacher walks through the major differences: Extended Paper 2 uses TWO passages and includes a writer's effect question worth 15 marks; Core Paper 2 uses ONE passage with more scaffolded comprehension questions. Extended composition has broader choice and expects more sophisticated writing; Core composition provides more structured guidance. Students annotate their grid with personal notes about which elements they find more or less challenging.",
+          "Distribute a grid showing both Language papers. For each question or section, students note: (a) the text it uses, (b) the marks, (c) the suggested time, (d) the skills it tests. Paper 1 (Reading, 2 hours, 80 marks): Question 1 comprehension of Text A (20); Question 2 a summary of Text B in no more than 120 words (15) and the writer's attitude (5); Question 3 short answers (10) and a language task (10) on Text C; Question 4 an extended response to reading of about 250-300 words on Text C (20). Paper 2 (Directed Writing and Composition, 2 hours, 80 marks): Section A, Question 1(a) (5) and directed writing (35); Section B, one composition from four titles (40). Teacher explains that 0500 and 0990 use exactly these papers: only the grading scale differs, and a candidate cannot be entered for both in the same series.",
         differentiation: {
           support:
-            'Provide the comparison grid partially completed so students focus on the most important differences.',
-          core: 'Students complete the full grid independently, adding their own observations about challenge level.',
+            'Provide the grid partially completed so students focus on the questions they find hardest.',
+          core: 'Students complete the full grid independently, adding their own notes on challenge level.',
           stretch:
-            'Students also compare the mark scheme Band descriptors for Core and Extended, noting how the language differs (e.g. "some awareness" vs. "convincing analysis").',
+            'Students add the reading and writing marks for each question and check that each paper totals 80.',
         },
         resources: [
-          'Core vs Extended comparison grid',
+          'Paper structure grid',
           'Paper structure overview handout',
-          'Mark scheme Band descriptors (Core and Extended)',
+          'Specimen papers for exams from 2027',
         ],
       },
       {
         title: 'Honest Self-Assessment - Diagnostic Challenge',
         duration: '22 minutes',
         instructions:
-          'Students complete a diagnostic self-assessment using the same passage: (1) attempt a Core-level reading question (5 minutes), (2) attempt the equivalent Extended-level question on the same passage (10 minutes). After both, students compare their responses honestly. Which felt more comfortable and controlled? Where did the Extended question stretch them? Was the quality of their Core response genuinely strong, or just adequate? Teacher explains that the decision between Core and Extended should be based on current performance, trajectory, and target grade - not on fear or overconfidence. Students write a private reflective paragraph: "I am currently working at approximately a grade ___ because ___ and my target is ___." This is shared only with the teacher.',
+          'Students complete a diagnostic self-assessment on one passage: (1) answer two short comprehension parts (5 minutes), (2) write a language task answer on a short extract (10 minutes). After both, students compare their responses honestly. Which felt more comfortable and controlled? Where did the language task stretch them? Students identify which Paper 1 question is their strongest and which most needs practice.',
         differentiation: {
           support:
-            'Allow additional time for both questions. Provide vocabulary support for the Extended question. Focus the reflection on achievable Core-level targets.',
-          core: 'Students complete both questions under timed conditions and write an honest reflective paragraph.',
+            'Allow additional time for both tasks. Provide vocabulary support for the language task. Focus the reflection on achievable next steps.',
+          core: 'Students complete both tasks under timed conditions and write an honest reflective paragraph.',
           stretch:
-            'Students attempt the Extended question under strict exam timing, self-assess against Band 1-2 descriptors, and create a targeted improvement plan.',
+            'Students complete the language task under strict exam timing, self-assess against the top-level descriptors, and create a targeted improvement plan.',
         },
-        resources: [
-          'Diagnostic passage with Core and Extended questions',
-          'Timer',
-          'Reflective paragraph template',
-        ],
+        resources: ['Diagnostic passage with questions', 'Timer', 'Reflective paragraph template'],
       },
     ],
     plenaryActivity: {
       title: 'Action Plan - Closing the Gap',
       duration: '5 minutes',
       instructions:
-        'Students write three specific, actionable steps they will take to improve their performance at their target tier. Each action must be concrete (e.g. "I will practise one timed summary per week" not "I will try harder"). Teacher collects the action plans and uses them to inform differentiation, intervention grouping, and individual target-setting conversations.',
+        'Students write three specific, actionable steps they will take to reach their target grade. Each action must be concrete (e.g. "I will practise one timed summary per week" not "I will try harder"). Teacher collects the action plans and uses them to inform differentiation, intervention grouping, and individual target-setting conversations.',
       differentiation: {
         support: 'Provide a menu of suggested actions to choose from, organised by skill area.',
         core: 'Students write their own three actions independently.',
@@ -1108,39 +1119,37 @@ export const igcseLessons: LessonPlan[] = [
       },
     },
     homework:
-      'Complete a full past paper at your recommended tier level under timed conditions. Self-mark using the mark scheme and write a 200-word reflection on your performance, identifying two strengths and two areas for development.',
+      'Complete a full past paper under timed conditions. Self-mark using the mark scheme and write a 200-word reflection on your performance, identifying two strengths and two areas for development.',
     worksheetQuestions: [
       {
         question:
-          'Complete the table below, comparing Core and Extended papers for IGCSE English Language. Include: grade range, time allowed for Paper 1, time allowed for Paper 2, number of passages in Paper 2, and one key difference in question style.',
+          'Complete the table below for IGCSE English Language Paper 1 and Paper 2. Include: time allowed, total marks, the number of questions or sections, and the main task in each.',
         lines: 8,
         modelAnswer:
-          "Core: Grades C-G available. Paper 1: 1 hour 45 minutes. Paper 2: 1 hour 45 minutes. Paper 2 uses one passage. Questions tend to be more guided with bullet points and shorter expected responses.\n\nExtended: Grades A*-E available. Paper 1: 2 hours. Paper 2: 2 hours. Paper 2 uses two passages. Questions are more open-ended and include a writer's effect question (15 marks) requiring independent analytical writing.",
+          "Paper 1 (Reading): 2 hours, 80 marks, four questions of 20 on three texts: comprehension (Text A), a summary and the writer's attitude (Text B), short answers and a language task (Text C), and an extended response to reading (Text C).\n\nPaper 2 (Directed Writing and Composition): 2 hours, 80 marks, two sections of 40: Section A, a 5-mark question on one or two short texts and a piece of directed writing; Section B, one composition from four titles, two descriptive and two narrative.",
         marks: 5,
       },
       {
         question:
-          'A student says: "Core is the easy option." Explain why this statement is misleading.',
+          'A student says: "0990 is the harder version of 0500." Explain why this statement is misleading.',
         lines: 5,
         modelAnswer:
-          'This statement is misleading for several reasons. First, achieving a high grade on Core (grade C) still requires strong reading comprehension, effective writing, and clear communication skills. Second, the Core paper is not simply an easier version of the Extended - it tests the same fundamental skills but with more scaffolding and shorter responses. Third, a student who is a strong C-grade candidate will perform better and more confidently on Core than struggling through Extended and potentially falling below the E-grade threshold. The right tier is the one that allows the student to demonstrate their best possible performance.',
+          'This statement is misleading because 0500 and 0990 use the same papers, with the same questions, marks and word guidance. The only difference that affects a student is the grading scale: 0500 reports grades A* to G and 0990 reports grades 9 to 1. A school chooses the scale its students need on their certificates, and a candidate cannot be entered for both in the same series.',
         marks: 4,
       },
       {
-        question:
-          'What is the "safety net" grade on the Extended paper? Why might a student choose Core instead of relying on this?',
+        question: 'What is Component 3, and when does a candidate take it instead of a paper?',
         lines: 5,
         modelAnswer:
-          'The safety net on the Extended paper is grade E - this is the lowest grade available. If a student performs below the E-grade boundary on Extended, they receive Ungraded, meaning they get no qualification at all. On Core, even a weaker performance results in a grade (down to G). A student who is not yet confident at grade C level might choose Core because it guarantees a grade, whereas Extended carries the risk of achieving nothing. This is especially important for students who need a minimum grade for college or employment applications.',
+          'Component 3 is the Coursework Portfolio. Where a school offers it, a candidate takes it instead of Paper 2 (Directed Writing and Composition). Every candidate still sits Paper 1 (Reading).',
         marks: 4,
       },
     ],
     teacherNotes: [
-      'This lesson is best delivered in mid-Year 10 when tier decisions are being discussed. Handle tier conversations sensitively - some students may feel disappointed by a Core recommendation.',
-      'Emphasise that a strong Core grade (C) is a solid achievement and that Core does not mean "easy" - the skills tested are the same, just with different levels of scaffolding.',
-      'For the IGCSE Language A syllabus: Core candidates take Paper 1 (1h 45m) and Paper 2 (1h 45m) with grades C-G. Extended candidates take Paper 1 (2h) and Paper 2 (2h) with grades A*-E.',
-      'The IGCSE Language B syllabus is the same examination under a different code, used when a centre enters candidates for both Core and Extended.',
-      'Some centres use coursework (Component 3 or 4) alongside or instead of Paper 1. If this applies to your centre, adjust the comparison grid accordingly.',
+      'This lesson is best delivered in Year 10, when students first meet the shape of the qualification.',
+      'There are no Core and Extended tiers: every candidate sits Paper 1 (Reading, 2 hours, 80 marks) and Paper 2 (Directed Writing and Composition, 2 hours, 80 marks), or Component 3, the Coursework Portfolio, instead of Paper 2.',
+      'The 0500 and 0990 papers are the same; 0500 is graded A* to G and 0990 9 to 1, and a candidate cannot take both in the same series.',
+      'The question pattern above is for exams from 2027. November 2026 is the last series on the 2024-2026 syllabus, whose Paper 1 has three questions of 30, 25 and 25 marks and whose Paper 2 Section A is one directed writing task of 40.',
     ],
     targetedSkills: ['Exam Technique', 'Self-Assessment', 'Metacognition', 'Goal Setting'],
   },
@@ -1273,9 +1282,12 @@ export const igcseLessons: LessonPlan[] = [
         marks: 6,
       },
     ],
+    // 31 October 2026: the first two notes said coursework replaced Paper 1, with
+    // separate Core and Extended components and word counts, from before tiers were
+    // removed. Paper 2 is the paper Component 3 replaces (cambridge-0500-paper2.ts).
     teacherNotes: [
-      'Coursework (Component 3 for Core, Component 4 for Extended) is an alternative to Paper 1 for centres that choose it.',
-      'The portfolio consists of three assignments totalling approximately 1,500 words (Core) or 2,000 words (Extended). Each assignment is marked separately.',
+      'Coursework (Component 3, the Coursework Portfolio) is an alternative to Paper 2 for centres that choose it; every candidate still sits Paper 1.',
+      'The portfolio consists of three assignments. Each assignment is marked separately. Check the current syllabus for the word guidance.',
       'The portfolio is internally assessed and externally moderated by CAIE. Teachers may give general feedback on first drafts but must NOT correct the work - students must make their own improvements.',
       'Keep records of the drafting process (first draft, teacher feedback sheet, final draft) to satisfy moderation requirements.',
       'Assignments must come from different triplets to demonstrate range. A portfolio without range will be penalised, regardless of the quality of individual pieces.',
@@ -1327,13 +1339,13 @@ export const igcseLessons: LessonPlan[] = [
       title: 'The Marks-Per-Minute Calculator',
       duration: '10 minutes',
       instructions:
-        'Display the paper structures on the board: Language Paper 1, Language Paper 2, Literature Paper 1, and Literature Paper 4 (or Paper 3). For each, show total marks and total time available. Students calculate the marks-per-minute ratio for each paper (e.g. Language Paper 2 Extended: 50 marks in 120 minutes = approximately 2.4 minutes per mark). Then they calculate how many minutes to spend on each individual question. Record in a personal "Exam Timing Grid". Discuss the implications: a 15-mark question deserves roughly 36 minutes; spending 50 minutes on it steals time from later questions. The final question attempted is often the weakest - so plan to give every question its fair share of time.',
+        'Display the paper structures on the board: Language Paper 1, Language Paper 2, Literature Paper 1, and Literature Paper 4 (or Paper 3). For each, show total marks and total time available. Students calculate the marks-per-minute ratio for each paper (e.g. Language Paper 1: 80 marks in 120 minutes = 1.5 minutes per mark). Then they calculate how many minutes to spend on each individual question. Record in a personal "Exam Timing Grid". Discuss the implications: a 20-mark question deserves about 25 minutes once reading and checking time are taken out; spending 40 minutes on it steals time from later questions. The final question attempted is often the weakest - so plan to give every question its fair share of time.',
       differentiation: {
         support:
           'Provide a pre-structured timing grid with the calculations partially completed. Students fill in the remaining cells.',
         core: 'Students calculate all timings independently and compare their grid with a partner to check accuracy.',
         stretch:
-          'Students also factor in reading time (5 minutes at the start of CAIE papers) and checking time (5 minutes at the end), then recalculate how this affects the time available for each question.',
+          'Students also factor in reading time (about 15 minutes at the start of Language Paper 1, as Cambridge suggests) and checking time (5 minutes at the end), then recalculate how this affects the time available for each question.',
       },
       resources: [
         'Paper structure overview slide',
@@ -1346,7 +1358,7 @@ export const igcseLessons: LessonPlan[] = [
         title: 'Micro-Timed Challenges - Building the Exam Clock',
         duration: '25 minutes',
         instructions:
-          "Students complete four rapid-fire micro-timed challenges, each simulating a different exam skill under time pressure: (1) 5 minutes - read a passage and identify 5 content points for a summary (Paper 2 reading skill), (2) 8 minutes - write one analytical paragraph on a short poetry extract (Literature skill), (3) 3 minutes - plan a composition using a spider diagram with five branches (Paper 1 writing skill), (4) 5 minutes - write the opening paragraph of a directed writing response in an appropriate register (Paper 1 reading-into-writing skill). After each challenge, students reflect briefly: did they finish? Was their work rushed or controlled? What would they sacrifice or prioritise with one fewer minute? Teacher emphasises that speed improves with practice - regular timed work in class and at home is essential for building the internal 'exam clock'.",
+          "Students complete four rapid-fire micro-timed challenges, each simulating a different exam skill under time pressure: (1) 5 minutes - read a passage and identify 5 content points for a summary (Paper 1 reading skill), (2) 8 minutes - write one analytical paragraph on a short poetry extract (Literature skill), (3) 3 minutes - plan a composition using a spider diagram with five branches (Paper 2 writing skill), (4) 5 minutes - write the opening paragraph of a directed writing response in an appropriate register (Paper 2 reading-into-writing skill). After each challenge, students reflect briefly: did they finish? Was their work rushed or controlled? What would they sacrifice or prioritise with one fewer minute? Teacher emphasises that speed improves with practice - regular timed work in class and at home is essential for building the internal 'exam clock'.",
         differentiation: {
           support:
             'Allow 1-2 extra minutes per challenge. Provide sentence starters for the analytical paragraph and a format reminder for the directed writing.',
@@ -1366,7 +1378,7 @@ export const igcseLessons: LessonPlan[] = [
         title: 'The Exam-Day Game Plan',
         duration: '18 minutes',
         instructions:
-          "Students create a personalised 'Exam-Day Game Plan' for their most challenging paper. The plan must include: (1) How to use the 5-minute reading time productively (read passage, identify key ideas, start planning), (2) Which question to answer first and why (e.g. 'I'll start with the summary because it settles my nerves' or 'I'll start with the writer's effect question because I need to be freshest for analysis'), (3) Time checkpoints with specific clock times (e.g. 'By 10:30 I should be starting Question 2'), (4) Emergency protocol - what to do if running out of time on a question (move on, leave space, come back if time allows), (5) The final 5 minutes - checking strategy (read through once for SPaG, once for sense). Pairs share and critique each other's plans, specifically checking for realistic timing and concrete strategies.",
+          "Students create a personalised 'Exam-Day Game Plan' for their most challenging paper. The plan must include: (1) How to use the reading time at the start productively (read the texts, identify key ideas, start planning), (2) Which question to answer first and why (e.g. 'I'll start with the summary because it settles my nerves' or 'I'll start with the writer's effect question because I need to be freshest for analysis'), (3) Time checkpoints with specific clock times (e.g. 'By 10:30 I should be starting Question 2'), (4) Emergency protocol - what to do if running out of time on a question (move on, leave space, come back if time allows), (5) The final 5 minutes - checking strategy (read through once for SPaG, once for sense). Pairs share and critique each other's plans, specifically checking for realistic timing and concrete strategies.",
         differentiation: {
           support:
             'Provide a Game Plan template with prompts and a worked example for one paper. Students adapt it for their own paper.',
@@ -1394,14 +1406,14 @@ export const igcseLessons: LessonPlan[] = [
       },
     },
     homework:
-      'Complete a full past paper at your tier level under strict timed conditions at home. Record the actual time you spend on each question in the margin. Afterwards, write a 150-word reflection: did you stick to your Game Plan? Where did your timing go wrong? What will you adjust next time?',
+      'Complete a full past paper under strict timed conditions at home. Record the actual time you spend on each question in the margin. Afterwards, write a 150-word reflection: did you stick to your Game Plan? Where did your timing go wrong? What will you adjust next time?',
     worksheetQuestions: [
       {
         question:
-          'Calculate the time you should spend on each question for IGCSE English Language Paper 2 (Extended). The paper is 2 hours long and worth 50 marks. Question 1 is worth 15 marks, Question 2 is worth 20 marks, and Question 3 is worth 15 marks.',
+          'Calculate the time you should spend on each question for IGCSE English Language Paper 1. The paper is 2 hours long and worth 80 marks, in four questions of 20 marks each.',
         lines: 6,
         modelAnswer:
-          'Total time: 120 minutes for 50 marks = 2.4 minutes per mark. However, we should subtract 5 minutes for reading time at the start and 5 minutes for checking at the end, leaving 110 minutes of writing time.\n\nQuestion 1 (15 marks): approximately 33 minutes (15 x 2.2 minutes).\nQuestion 2 (20 marks): approximately 44 minutes (20 x 2.2 minutes).\nQuestion 3 (15 marks): approximately 33 minutes (15 x 2.2 minutes).\n\nNote: these are guidelines. Some students may benefit from spending slightly more time on their weakest question type, but they must not steal more than 5 minutes from any other question.',
+          "Total time: 120 minutes for 80 marks = 1.5 minutes per mark. Cambridge suggests about 15 minutes for reading the three texts first, and keeping 5 minutes at the end for checking leaves 100 minutes of writing time.\n\nQuestion 1 (20 marks): about 25 minutes.\nQuestion 2 (20 marks): about 25 minutes (about 19 on the summary and 6 on the writer's attitude).\nQuestion 3 (20 marks): about 25 minutes (about 12 on the short answers and 13 on the language task).\nQuestion 4 (20 marks): about 25 minutes.\n\nNote: these are guidelines. Some students may benefit from spending slightly more time on their weakest question type, but they must not steal more than 5 minutes from any other question.",
         marks: 4,
       },
       {
@@ -1414,10 +1426,10 @@ export const igcseLessons: LessonPlan[] = [
       },
       {
         question:
-          'CAIE exams begin with 5 minutes of reading time during which you may NOT write. Explain how you would use this time productively for (a) a Language Paper 2 and (b) a Literature Paper 1.',
+          'Explain how you would use the first minutes of (a) Language Paper 1 and (b) a Literature Paper 1 productively, before you start writing your answers.',
         lines: 8,
         modelAnswer:
-          "(a) Language Paper 2: I would read the passage(s) carefully, focusing on understanding the overall argument, tone, and structure. I would mentally note key sections that might be relevant to the summary question and begin identifying the writer's main techniques for the effect question. I would also read all three questions so I know exactly what to look for when I re-read the passage during writing time.\n\n(b) Literature Paper 1: I would read both the passage-based (a) and essay (b) options for my set text to decide which to answer. If choosing (a), I would begin mentally annotating the extract - noting key quotations, techniques, and possible analytical points. If choosing (b), I would begin planning which moments from across the text to discuss and in what order. In both cases, using reading time for decision-making and mental planning means I can begin writing immediately when the time starts.",
+          "(a) Language Paper 1: I would spend about 15 minutes reading the three texts carefully, focusing on understanding the overall argument, tone, and structure. I would note the points in Text B that might fit the summary and begin identifying the writer's main techniques in Text C for the language task. I would also read all four questions so I know exactly what to look for when I re-read each text.\n\n(b) Literature Paper 1: I would read both the passage-based (a) and essay (b) options for my set text to decide which to answer. If choosing (a), I would begin mentally annotating the extract - noting key quotations, techniques, and possible analytical points. If choosing (b), I would begin planning which moments from across the text to discuss and in what order. In both cases, using reading time for decision-making and mental planning means I can begin writing immediately when the time starts.",
         marks: 6,
       },
       {
@@ -1425,17 +1437,18 @@ export const igcseLessons: LessonPlan[] = [
           'Create a sample Exam-Day Game Plan for one of your papers. Include: paper name, total time, time per question, your starting question, two time checkpoints, and your checking strategy.',
         lines: 10,
         modelAnswer:
-          'Paper: IGCSE English Language Paper 1 (Extended) - 2 hours.\n\nReading time (5 mins): Read the stimulus passage. Identify 10 content points. Read the directed writing prompt and composition options.\n\nQuestion 1 - Directed Writing (start immediately): 50 minutes. Focus on selecting content points and adapting register. Aim for 400 words.\n\nTime checkpoint 1: By 50 minutes in, I must be starting the composition.\n\nQuestion 2 - Composition (descriptive or narrative): 55 minutes. Spend 5 minutes planning (spider diagram or arc), 45 minutes writing, 5 minutes proofreading the composition specifically.\n\nTime checkpoint 2: By 1 hour 50 minutes, I must be in my final check.\n\nFinal 10 minutes: Re-read both responses. Check SPaG, sentence variety, and register consistency. Ensure the directed writing addresses the format requirements.',
+          'Paper: IGCSE English Language Paper 2 - 2 hours.\n\nReading (about 10 mins): Read the Section A text or texts. Read Question 1(a), the directed writing task and the four composition titles.\n\nQuestion 1(a) (about 8 mins): Two or three short judgements in my own words, each with a detail from the text.\n\nQuestion 1(b) - Directed Writing (about 42 mins): Select, develop and evaluate ideas from the text and adapt register. Aim for about 300 words.\n\nTime checkpoint 1: By 1 hour in, I must be starting the composition.\n\nComposition (descriptive or narrative, 60 mins): Spend 5 minutes planning (spider diagram or arc), 50 minutes writing and 5 minutes proofreading.\n\nTime checkpoint 2: By 1 hour 55 minutes, I must be in my final check.\n\nFinal check: Re-read both responses. Check SPaG, sentence variety, and register consistency. Ensure the directed writing uses the form the task sets.',
         marks: 6,
       },
     ],
     teacherNotes: [
       'This lesson works best 4-6 weeks before the exam period, giving students time to practise their strategies in mock conditions.',
-      'Key timings to emphasise: Language Paper 1 Extended - 2 hours (directed writing ~50 mins, composition ~60 mins, reading and checking ~10 mins).',
-      "Language Paper 2 Extended - 2 hours (Q1 comprehension ~30 mins, Q2 summary ~35 mins, Q3 writer's effect ~35 mins, reading and checking ~20 mins).",
+      'Key timings to emphasise: Language Paper 1 (Reading) - 2 hours (about 15 mins reading the three texts, about 25 mins on each of the four questions, 5 mins checking).',
+      'Language Paper 2 (Directed Writing and Composition) - 2 hours (about 10 mins reading, 8 on Question 1(a), 42 on the directed writing and 60 on the composition).',
       'Literature Paper 1 - 1 hour 30 minutes for two questions (~45 mins each). Literature Paper 4 - unseen section typically ~35 mins.',
-      'CAIE papers begin with 5 minutes of reading time where students may NOT write on the answer booklet - teach them to use this productively for passage comprehension, question reading, and mental planning.',
-      'The Core papers are shorter (1h 45m each) with proportionally adjusted timings. Ensure Core-tier students create their own timing grids rather than using the Extended ones.',
+      'Cambridge suggests about 15 minutes for reading the three texts at the start of Language Paper 1: teach students to use this time productively for passage comprehension, question reading, and mental planning.',
+      'There are no Core and Extended tiers: every candidate sits the same two Language papers, so one timing grid serves the whole class.',
+      'These Language timings are for exams from 2027. For a class sitting in November 2026, the last series on the older syllabus, Paper 1 has three questions worth 30, 25 and 25 marks in the same 2 hours, and Paper 2 Section A is one directed writing task of 40, with no 1(a).',
     ],
     targetedSkills: [
       'Exam Technique',

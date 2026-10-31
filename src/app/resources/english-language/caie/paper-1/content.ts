@@ -15,14 +15,16 @@ export const STRINGS: Record<string, Bi> = {
   s1: { en: `Suggested Time`, ar: `الوقت المقترح` },
   s2: { en: `Question 1`, ar: `السؤال الأول` },
   s4: { en: `Question 2`, ar: `السؤال الثاني` },
+  // 31 October 2026: s5 and s7 rewritten with the Paper 1 table (see page.tsx), and
+  // s30 to s32 added. Their Arabic is new and wants a native speaker's read.
   s5: {
-    en: `Summary - select and organise ideas from one or both passages`,
-    ar: ``,
+    en: `Summary of Text B in no more than 120 words, then a short answer on the writer's attitude`,
+    ar: `تلخيص للنص B في 120 كلمة كحد أقصى، ثم إجابة قصيرة عن موقف الكاتب`,
   },
   s6: { en: `Question 3`, ar: `السؤال الثالث` },
   s7: {
-    en: `Language analysis - how the writer uses language to create effects`,
-    ar: `تحليل اللغة - كيف يستخدم الكاتب اللغة لخلق تأثيرات`,
+    en: `Short answers, then language analysis: how the writer of Text C uses language to create effects`,
+    ar: `إجابات قصيرة، ثم تحليل اللغة: كيف يستخدم كاتب النص C اللغة لخلق تأثيرات`,
   },
   s8: { en: `How to answer`, ar: `كيف تجيب` },
   s9: { en: `Read the question first`, ar: `اقرأ السؤال أولًا` },
@@ -59,4 +61,10 @@ It seems there was a misunderstanding as the response provided is in Thai. Let's
     ar: `تحقق من تخصيص النقاط(Initialized MSA for formal instruction)`,
   },
   s29: { en: `Continue studying`, ar: `استمر في الدراسة` },
+  s30: { en: `Question 4`, ar: `السؤال الرابع` },
+  s31: {
+    en: `Extended response to reading: writing in a set form, based on Text C`,
+    ar: `استجابة مطوّلة للقراءة: نص بصيغة يحددها السؤال، مبني على النص C`,
+  },
+  s32: { en: `What Good Notes Look Like`, ar: `كيف تبدو الملاحظات الجيدة` },
 }

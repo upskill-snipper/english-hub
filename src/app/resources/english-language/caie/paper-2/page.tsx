@@ -72,7 +72,15 @@ export default async function Paper2Page() {
           <h1 className="text-3xl font-bold tracking-tight sm:text-4xl md:text-5xl">
             Paper 2: Directed Writing &amp; Composition
           </h1>
-          <p className="mt-2 text-lg text-muted-foreground">{tr(`Extended Tier`)}</p>
+          {/* 31 October 2026: corrected to src/data/mark-scheme-guides/cambridge-0500-paper2.ts.
+              The page named an "Extended Tier" (the paper has had no tiers since 2020), split
+              Section A as 25 reading and 15 writing (it is 15 and 25) with no 1(a), listed a
+              journal entry as a directed writing form, and gave combined composition bands
+              that do not add up from Cambridge's two grids. From 2027 Section A is 1(a), 5
+              marks, then 1(b), 35; the bands below add the same level on both grids. Second
+              read: the November 2026 note now says Section B is unchanged, as the guide's
+              summary does. */}
+          <p className="mt-2 text-lg text-muted-foreground">{tr(`2 hours, 80 marks`)}</p>
           <p className="mt-3 max-w-2xl text-muted-foreground">
             This paper tests your ability to write for specific purposes and audiences (directed
             writing) and to produce creative writing in narrative or descriptive form (composition).
@@ -99,17 +107,17 @@ export default async function Paper2Page() {
               </thead>
               <tbody className="divide-y divide-border text-muted-foreground">
                 <tr>
-                  <td className="py-3 pe-4 font-medium">Section 1</td>
+                  <td className="py-3 pe-4 font-medium">Section A</td>
                   <td className="py-3 pe-4">
                     {tr(
-                      `Directed Writing - write in a specified format using ideas from a passage and your own ideas`,
+                      `Directed Writing: 1(a), a short answer on the text, then 1(b), writing in a specified form that uses and develops ideas from the text`,
                     )}
                   </td>
-                  <td className="py-3 pe-4">40 (25 content + 15 language)</td>
-                  <td className="py-3">45 minutes</td>
+                  <td className="py-3 pe-4">40 (15 reading + 25 writing)</td>
+                  <td className="py-3">60 minutes</td>
                 </tr>
                 <tr>
-                  <td className="py-3 pe-4 font-medium">Section 2</td>
+                  <td className="py-3 pe-4 font-medium">Section B</td>
                   <td className="py-3 pe-4">
                     {tr(
                       `Composition - choose one from a selection of narrative OR descriptive titles`,
@@ -122,23 +130,25 @@ export default async function Paper2Page() {
             </table>
           </div>
           <p className="mt-3 text-sm text-muted-foreground">
-            Total: 80 marks in approximately 2 hours. Quality of written communication (grammar,
-            spelling, punctuation, vocabulary) is assessed throughout both sections.
+            Total: 80 marks in 2 hours. Spelling, punctuation and grammar are assessed in both the
+            directed writing and the composition. This is the paper for exams from 2027; on the
+            November 2026 paper, Section A is one directed writing task worth 40 marks, with no
+            1(a), and Section B, the composition, is the same as here.
           </p>
         </section>
 
         <hr className="my-10 border-border" />
 
-        {/* ── Section 1: Directed Writing ─────────────────────── */}
+        {/* ── Section A: Directed Writing ─────────────────────── */}
         <section aria-labelledby="directed-heading">
           <h2 id="directed-heading" className="text-2xl font-bold text-foreground">
-            Section 1: Directed Writing
+            Section A: Directed Writing
           </h2>
           <p className="mt-3 text-muted-foreground leading-relaxed">
-            You will be given a short reading passage and asked to write a response in a specific
-            format (e.g. a letter, report, speech, article, or journal entry). You must use ideas
-            from the passage
-            <strong> and </strong> include your own ideas and opinions.
+            You will be given one or two short texts. Question 1(a) asks a short question on them,
+            worth 5 marks. Question 1(b) asks you to write a response in a specific form (a speech,
+            letter, article or report) that uses, develops and evaluates their ideas
+            <strong> and </strong> adds your own reasoning.
           </p>
 
           <h3 className="mt-8 text-lg font-semibold text-foreground">Directed Writing Formats</h3>
@@ -285,6 +295,9 @@ export default async function Paper2Page() {
               <h4 className="font-semibold text-primary">{tr(`Journal / Diary Entry`)}</h4>
               <p className="mt-2 text-sm text-muted-foreground leading-relaxed">
                 A personal, reflective piece written from a specific character&rsquo;s perspective.
+                It is not a Paper 2 form: the directed writing is a speech, letter, article or
+                report. Paper 1 Question 4 can ask for a journal entry, so the conventions are worth
+                knowing.
               </p>
               <div className="mt-3 rounded bg-muted p-4 text-sm text-muted-foreground">
                 <p className="font-semibold text-foreground mb-2">{tr(`Format requirements:`)}</p>
@@ -308,19 +321,20 @@ export default async function Paper2Page() {
           <div className="mt-8 rounded-lg border-2 border-primary/20 bg-primary/5 p-6">
             <h3 className="text-lg font-semibold text-primary">Directed Writing Marking Guide</h3>
             <p className="mt-2 text-sm text-muted-foreground leading-relaxed">
-              The 40 marks are split into two Assessment Objectives:
+              The 40 marks are split between reading and writing:
             </p>
             <div className="mt-4 grid gap-4 sm:grid-cols-2">
               <div className="rounded bg-card p-4 shadow-md">
-                <p className="text-2xl font-bold text-primary">25</p>
+                <p className="text-2xl font-bold text-primary">15</p>
                 <p className="text-sm font-semibold text-foreground">{tr(`Reading (Content)`)}</p>
                 <p className="mt-1 text-xs text-muted-foreground leading-relaxed">
-                  How well you use ideas from the passage and develop your own relevant ideas. Top
-                  band: thorough and perceptive understanding with ideas developed and supported.
+                  Five for Question 1(a), judging something in the text such as a person&rsquo;s
+                  attitude, and ten for how well you use, develop and evaluate the text&rsquo;s
+                  ideas in 1(b).
                 </p>
               </div>
               <div className="rounded bg-card p-4 shadow-md">
-                <p className="text-2xl font-bold text-accent">15</p>
+                <p className="text-2xl font-bold text-accent">25</p>
                 <p className="text-sm font-semibold text-foreground">{tr(`Writing (Language)`)}</p>
                 <p className="mt-1 text-xs text-muted-foreground leading-relaxed">
                   How effectively you write &mdash; format, register, tone, vocabulary, sentence
@@ -333,10 +347,10 @@ export default async function Paper2Page() {
 
         <hr className="my-10 border-border" />
 
-        {/* ── Section 2: Composition ──────────────────────────── */}
+        {/* ── Section B: Composition ──────────────────────────── */}
         <section aria-labelledby="composition-heading">
           <h2 id="composition-heading" className="text-2xl font-bold text-foreground">
-            Section 2: Composition
+            Section B: Composition
           </h2>
           <p className="mt-3 text-muted-foreground leading-relaxed">
             You choose <strong>one</strong> composition from a selection of titles. These are split
@@ -517,7 +531,9 @@ export default async function Paper2Page() {
           <p className="mt-3 text-muted-foreground leading-relaxed">
             Understanding the band descriptors is essential. Here is what Cambridge markers are
             looking for at each level. The composition is marked out of 40: up to 16 for content and
-            structure, and up to 24 for style and accuracy.
+            structure, and up to 24 for style and accuracy. Each band below adds the same level on
+            both grids (Band 6 is 14-16 plus 21-24); a composition can sit at different levels on
+            the two.
           </p>
 
           <div className="mt-6 space-y-4">
@@ -568,7 +584,7 @@ export default async function Paper2Page() {
                   5
                 </span>
                 <div>
-                  <p className="font-semibold text-foreground">{tr(`Very Good (29-34 marks)`)}</p>
+                  <p className="font-semibold text-foreground">{tr(`Very Good (28-33 marks)`)}</p>
                   <p className="text-xs text-primary">A / Grade 7&ndash;8 standard</p>
                 </div>
               </div>
@@ -603,7 +619,7 @@ export default async function Paper2Page() {
                   4
                 </span>
                 <div>
-                  <p className="font-semibold text-foreground">{tr(`Good (22-28 marks)`)}</p>
+                  <p className="font-semibold text-foreground">{tr(`Good (21-26 marks)`)}</p>
                   <p className="text-xs text-muted-foreground">B / Grade 5&ndash;6 standard</p>
                 </div>
               </div>
@@ -640,7 +656,7 @@ export default async function Paper2Page() {
                   3
                 </span>
                 <div>
-                  <p className="font-semibold text-foreground">{tr(`Adequate (15-21 marks)`)}</p>
+                  <p className="font-semibold text-foreground">{tr(`Adequate (14-19 marks)`)}</p>
                   <p className="text-xs text-muted-foreground">C / Grade 4 standard</p>
                 </div>
               </div>
@@ -675,7 +691,7 @@ export default async function Paper2Page() {
                   2
                 </span>
                 <div>
-                  <p className="font-semibold text-foreground">{tr(`Limited (8-14 marks)`)}</p>
+                  <p className="font-semibold text-foreground">{tr(`Limited (8-12 marks)`)}</p>
                   <p className="text-xs text-muted-foreground">
                     D&ndash;E / Grade 2&ndash;3 standard
                   </p>
@@ -697,7 +713,7 @@ export default async function Paper2Page() {
                   1
                 </span>
                 <div>
-                  <p className="font-semibold text-foreground">{tr(`Poor (1-7 marks)`)}</p>
+                  <p className="font-semibold text-foreground">{tr(`Poor (2-6 marks)`)}</p>
                   <p className="text-xs text-muted-foreground">F&ndash;G / Grade 1 standard</p>
                 </div>
               </div>

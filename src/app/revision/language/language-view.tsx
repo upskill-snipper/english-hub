@@ -70,14 +70,20 @@ const BOARD_PAPERS: Record<
         'Two non-fiction texts from the 20th and 21st centuries, and one transactional writing task from a choice of two.',
     },
   },
+  // 31 October 2026: Paper 1's modern text could be 20th as well as 21st-century,
+  // Paper 2's texts were "prose fiction" (they are literary prose, at least one
+  // fiction), and neither said the writing is one task from two
+  // (src/data/mark-scheme-guides/ocr-lang-component01.ts, -component02.ts).
   ocr: {
     paper1: {
       name: 'Paper 1: Communicating Information and Ideas',
-      focus: '19th and 21st century non-fiction reading and original non-fiction writing.',
+      focus:
+        'Two non-fiction texts (one 19th century, one 20th/21st) and one non-fiction writing task from a choice of two.',
     },
     paper2: {
       name: 'Paper 2: Exploring Effects and Impact',
-      focus: '20th and 21st century prose fiction reading and original creative prose writing.',
+      focus:
+        'Two 20th/21st century literary prose texts (at least one fiction) and one creative writing task from a choice of two.',
     },
   },
   eduqas: {

@@ -105,10 +105,12 @@ export default function Paper2Page() {
         <div className="rounded-xl border border-primary/20 bg-primary/10 p-6 sm:p-8">
           <h2 className="text-xl font-bold text-foreground">{tr(`Paper overview`)}</h2>
           <p className="mt-3 text-muted-foreground">
+            {/* 31 October 2026, second read: this also offered a 20th- and a
+                21st-century pair. Paper 2 always has one 19th-century source
+                (src/data/mark-scheme-guides/aqa-lang-paper2.ts). */}
             Paper 2 tests your ability to <strong>read and compare</strong> two non-fiction texts
-            (one from the 19th century and one from the 21st century, or one from the 20th century
-            and one from the 21st century) and to produce a piece of{' '}
-            <strong>writing for real purposes</strong>. The texts will be linked by theme.
+            (one from the 19th century and one from the 20th or 21st century) and to produce a piece
+            of <strong>writing for real purposes</strong>. The texts will be linked by theme.
           </p>
           <div className="mt-4 grid gap-4 sm:grid-cols-2">
             <div className="rounded-lg border border-primary/20 bg-card p-4">
@@ -151,7 +153,7 @@ export default function Paper2Page() {
                   <td className="py-2 pe-4">5 mins</td>
                 </tr>
                 <tr>
-                  <td className="py-2 pe-4">{tr(`Question 2 (summary/synthesis)`)}</td>
+                  <td className="py-2 pe-4">{tr(`Question 2 (inference/synthesis)`)}</td>
                   <td className="py-2 pe-4">8</td>
                   <td className="py-2 pe-4">8-10 mins</td>
                 </tr>
@@ -223,13 +225,17 @@ export default function Paper2Page() {
         </Section>
 
         {/* Q2 */}
-        <Section title={tr(`Question 2: Summary and synthesis (8 marks)`)}>
+        {/* 31 October 2026: this asked for a summary of differences or similarities,
+            Question 2's wording before summer 2026. From then it asks what you can
+            infer about the differences the question names, from both sources
+            (src/data/mark-scheme-guides/aqa-lang-paper2.ts); marks and AO1 unchanged. */}
+        <Section title={tr(`Question 2: Inference and synthesis (8 marks)`)}>
           <h3 className="font-bold text-primary">{tr(`What the question asks`)}</h3>
           <p>
-            You must write a <strong>summary</strong> of the differences (or similarities) between
-            the two sources on a given topic. For example: &ldquo;Use details from both sources.
-            Write a summary of the differences between the children&rsquo;s experiences of
-            school.&rdquo;
+            You use details from both sources to explain what you can <strong>infer</strong> about
+            the differences the question names: on AQA&rsquo;s 2026 sample paper, the differences
+            between two trains. Papers before summer 2026 asked for a <strong>summary</strong> of
+            the differences instead; the marks and the objective are the same.
           </p>
           <p className="mt-2">
             This assesses <strong>{tr(`Reading and retrieval (AO1)`)}</strong>: Identify and

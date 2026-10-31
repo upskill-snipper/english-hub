@@ -28,6 +28,19 @@ export const metadata: Metadata = {
 
 /* ─── Page component ─────────────────────────────────────────── */
 
+// 31 October 2026: corrected to the J351/02 guide in
+// src/data/mark-scheme-guides/ocr-lang-component02.ts. Section A was "one unseen
+// fiction extract", perhaps from a 19th-century novel; it is two literary prose
+// texts from the 20th or 21st century, at least one fiction, and the component
+// has no 19th-century text. The evaluation was a statement about one text:
+// Question 4 is about both, with comparison. Section B offered "a descriptive
+// piece based on an image"; the tasks OCR set in its sample and June 2024 papers
+// were a story from a given title and personal writing about an experience, a
+// choice of two, both linked to the reading texts.
+// Second read, 31 October 2026: the question list said Questions 1 and 2 are on
+// Text 1 and Question 3 on Text 2 as a rule; the guide has that only for the
+// sample and June 2024 papers, so the list says "one text" and "the other text"
+// and the numbering is given for those papers.
 export default async function OCRPaper2Page() {
   const _hdrs = await headers()
   const _lang = _hdrs.get('x-lang') === 'ar' ? 'ar' : 'en'
@@ -113,18 +126,49 @@ export default async function OCRPaper2Page() {
                 What Types of Text Will You Encounter?
               </h3>
               <p className="mt-2">
-                Section A provides one unseen fiction extract. This could be taken from:
+                Section A provides two unseen literary prose texts from the 20th or 21st century. At
+                least one is fiction; the other may be literary non-fiction, such as a memoir. They
+                could be taken from:
               </p>
               <ul className="ms-6 mt-2 list-disc space-y-1">
-                <li>A novel (19th, 20th, or 21st century)</li>
+                <li>A novel (20th or 21st century)</li>
                 <li>A short story</li>
-                <li>{tr(`Literary fiction from any period`)}</li>
+                <li>{tr(`Literary non-fiction, such as a memoir`)}</li>
                 <li>{tr(`Prose extracts with rich descriptive or narrative elements`)}</li>
               </ul>
               <p className="mt-3">
-                The extract will be substantial enough to allow close analysis of language,
-                structure, and form. You should expect a range of literary periods and styles across
-                the exam series.
+                The texts will be substantial enough to allow close analysis of language, structure,
+                and form. Component 02 has no 19th-century text, so expect a range of 20th and
+                21st-century styles across the exam series.
+              </p>
+            </div>
+
+            {/* The four questions */}
+            <div>
+              <h3 className="text-xl font-semibold text-foreground">The Four Reading Questions</h3>
+              <ul className="ms-6 mt-2 list-disc space-y-2">
+                <li>
+                  <strong>Question 1 (4 marks)</strong>: short questions on a set of lines from one
+                  text, picking out words or phrases, or saying briefly what something shows.
+                </li>
+                <li>
+                  <strong>Question 2 (6 marks)</strong>: how the writer uses language and structure
+                  to create an effect in a short section of one text.
+                </li>
+                <li>
+                  <strong>Question 3 (12 marks)</strong>: how the writer of the other text uses
+                  language and structure to present something the question names, such as a
+                  character&rsquo;s feelings.
+                </li>
+                <li>
+                  <strong>Question 4 (18 marks)</strong>: how far you agree with a statement about
+                  both texts, evaluating them (12 marks) and comparing how the writers present their
+                  ideas (6 marks).
+                </li>
+              </ul>
+              <p className="mt-3">
+                In OCR&rsquo;s sample paper and its June 2024 paper, Questions 1 and 2 were on Text
+                1 and Question 3 on Text 2.
               </p>
             </div>
 
@@ -247,9 +291,11 @@ export default async function OCRPaper2Page() {
             <div>
               <h3 className="text-xl font-semibold text-foreground">Evaluation Questions</h3>
               <p className="mt-2">
-                You may be given a statement about the text and asked to what extent you agree. For
-                example: &ldquo;A student said: &lsquo;The writer makes the reader feel sympathy for
-                the main character.&rsquo; To what extent do you agree?&rdquo;
+                Question 4 gives you a statement about both texts and asks how far you agree,
+                comparing how the two writers present their ideas as you go. For example: &ldquo;A
+                student said: &lsquo;In both texts, the writers make the reader feel sympathy for
+                the main character.&rsquo; How far do you agree?&rdquo; You can find the statement
+                truer of one text than the other.
               </p>
               <div className="mt-3 rounded border border-accent/20 bg-primary/10 p-4">
                 <p className="text-sm font-medium text-primary">
@@ -257,10 +303,11 @@ export default async function OCRPaper2Page() {
                 </p>
                 <ol className="ms-4 mt-2 list-decimal space-y-1 text-sm text-primary">
                   <li>State your position clearly (agree, disagree, or partially agree)</li>
-                  <li>{tr(`Select evidence from the text that supports your view`)}</li>
+                  <li>{tr(`Select evidence from both texts that supports your view`)}</li>
                   <li>{tr(`Analyse the language and/or structural choices in your evidence`)}</li>
+                  <li>Compare how each writer presents the idea, in every paragraph</li>
                   <li>Consider alternative interpretations to show critical thinking</li>
-                  <li>Reach a justified conclusion that reflects the complexity of the text</li>
+                  <li>Reach a justified conclusion that reflects the complexity of the texts</li>
                 </ol>
               </div>
             </div>
@@ -304,15 +351,18 @@ export default async function OCRPaper2Page() {
                 What Are You Asked to Write?
               </h3>
               <p className="mt-2">
-                Section B gives you a choice of creative writing tasks. You will choose{' '}
-                <strong>one</strong> task from a selection. Tasks may be inspired by the reading
-                extract or may be standalone. You might be asked to:
+                Section B gives you a choice of two creative writing tasks, Question 5 or 6, both
+                linked to the theme of the reading texts. You will choose <strong>one</strong>. It
+                is worth 40 marks: 24 for content and organisation and 16 for technical accuracy. In
+                OCR&rsquo;s sample paper and its June 2024 paper, the two tasks were a story from a
+                given title and a piece of personal writing about an experience. You might be asked
+                to:
               </p>
               <ul className="ms-6 mt-2 list-disc space-y-1">
-                <li>{tr(`Write a descriptive piece based on an image or scenario`)}</li>
-                <li>{tr(`Write a narrative (short story or part of a story)`)}</li>
+                <li>{tr(`Write a story from a given title`)}</li>
+                <li>{tr(`Write about an experience, in a piece of personal writing`)}</li>
                 <li>{tr(`Write from a particular perspective or point of view`)}</li>
-                <li>Continue or reimagine a scenario</li>
+                <li>Follow bullet points that suggest what to include, such as the setting</li>
               </ul>
             </div>
 
@@ -389,8 +439,10 @@ export default async function OCRPaper2Page() {
                 Crafting Strong Descriptive Writing
               </h3>
               <p className="mt-2">
-                If you choose a descriptive task, your focus is on creating a vivid, immersive piece
-                of writing rather than telling a story.
+                Neither task in OCR&rsquo;s sample and June 2024 papers asked for a description on
+                its own, but both reward it: setting, people and feelings, described closely, build
+                the mood of a story or a piece of personal writing. Use these techniques inside the
+                piece you write.
               </p>
 
               <div className="mt-4 space-y-3">
@@ -433,9 +485,9 @@ export default async function OCRPaper2Page() {
                 <div className="rounded-lg border border-primary/20 bg-primary/10 p-4">
                   <p className="font-semibold text-primary">{tr(`Create a clear structure`)}</p>
                   <p className="mt-1 text-sm text-muted-foreground">
-                    Even descriptive writing needs structure. Move through time, space, or emotion
-                    in a deliberate way. Consider moving from exterior to interior, or from general
-                    to specific.
+                    Description needs structure too. Move through time, space, or emotion in a
+                    deliberate way. Consider moving from exterior to interior, or from general to
+                    specific.
                   </p>
                 </div>
               </div>

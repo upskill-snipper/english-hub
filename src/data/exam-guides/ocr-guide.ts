@@ -9,11 +9,11 @@ export const ocrGuide: BoardExamGuide = {
   overview: `
     <p>OCR's GCSE English qualifications (J351 Language, J352 Literature) are built around a distinctive <strong>linked-unseen format</strong> that sets them apart from every other exam board. In both Language and Literature papers, students are consistently required to work across multiple texts simultaneously - comparing a studied or provided passage with an unseen extract that shares thematic or stylistic connections. This cross-text architecture means that comparison is not a bolt-on skill tested in isolation; it is woven into the fabric of almost every question students encounter.</p>
 
-    <p>The Language qualification splits neatly into two components of equal weight. <strong>Component 01</strong> focuses on non-fiction and transactional reading and writing, demanding that students retrieve, synthesise, analyse and evaluate across two or three unseen texts before completing both a short-form and an extended writing task. <strong>Component 02</strong> pairs a literary prose extract with a linked non-fiction/media text, testing the ability to move fluidly between genres, before culminating in a creative or descriptive writing task. The dual writing tasks in Component 01 make time management a decisive factor - students must discipline themselves to allocate roughly 15 minutes to the short task and 30 minutes to the extended piece.</p>
+    <p>The Language qualification splits neatly into two components of equal weight, each 2 hours and 80 marks. <strong>Component 01</strong> focuses on non-fiction reading and writing: students retrieve, synthesise, analyse, evaluate and compare across two unseen non-fiction texts, one from the 19th century and one from the 20th or 21st, before writing one non-fiction piece from a choice of two tasks. <strong>Component 02</strong> sets two unseen literary prose texts from the 20th or 21st century, at least one of them fiction, with four reading questions worth the same marks as Component 01's (4, 6, 12 and 18; its Question 2 analyses language and structure rather than linking the texts), before one piece of creative writing, again chosen from two tasks. In both, the writing is half the paper: 40 marks, 24 for content and organisation and 16 for technical accuracy. OCR advises about an hour on each section, so the discipline that matters is stopping the reading answers on time.</p>
 
     <p>OCR Literature is uniquely demanding because of its <strong>linked-unseen passage model</strong>. In both Component 01 and Component 02, the Part (a) question presents students with an extract from their studied text alongside an unseen passage on the same theme. They must write about <em>both</em> passages in a single, integrated response - a skill that requires confident subject knowledge and the ability to draw perceptive comparisons under timed conditions. Part (b) then pivots to a whole-text or whole-play essay, requiring breadth of knowledge across the entire work.</p>
 
-    <p>Strategic success on OCR papers hinges on three priorities: <strong>sustained comparison</strong> (Level 6 explicitly requires "sustained, interwoven comparison" that runs through every paragraph, not just the introduction and conclusion), <strong>engagement with the unseen</strong> (treating the unseen passage as an equal partner rather than an afterthought), and <strong>disciplined time-splitting</strong> across the two writing tasks in Component 01. Students who master the linked-unseen format often find it liberating - it rewards genuine analytical thinking over rote-learned quotations, because half of the material is always fresh.</p>
+    <p>Strategic success on OCR papers hinges on three priorities: <strong>sustained comparison</strong> (Level 6 explicitly requires "sustained, interwoven comparison" that runs through every paragraph, not just the introduction and conclusion), <strong>engagement with the unseen</strong> (treating the unseen passage as an equal partner rather than an afterthought), and <strong>disciplined time-splitting</strong> between reading and writing, about an hour on each in both Language components. Students who master the linked-unseen format often find it liberating - it rewards genuine analytical thinking over rote-learned quotations, because half of the material is always fresh.</p>
   `,
 
   specCodes: [
@@ -22,42 +22,47 @@ export const ocrGuide: BoardExamGuide = {
   ],
 
   // ─── Language Assessment Objectives ──────────────────────────────────────────
+  // Weightings corrected 31 October 2026 to the marks each objective carries
+  // across both J351 components, as src/data/mark-scheme-guides/ocr-lang-component01.ts
+  // and -component02.ts record them: AO1 14 (10 + 4), AO2 30 (12 + 18), AO3 12,
+  // AO4 24, AO5 48 and AO6 32 of 160. They read ~25%, ~25%, ~10%, ~10%, ~20% and
+  // ~10%, which made reading analysis the heaviest objective when the writing is.
   languageAOs: [
     {
       code: 'AO1',
       description:
         'Identify and interpret explicit and implicit information and ideas. Select and synthesise evidence from different texts.',
-      weighting: '~25%',
+      weighting: '~9%',
     },
     {
       code: 'AO2',
       description:
         'Explain, comment on and analyse how writers use language and structure to achieve effects and influence readers, using relevant subject terminology to support their views.',
-      weighting: '~25%',
+      weighting: '~19%',
     },
     {
       code: 'AO3',
       description:
         'Compare writers\u2019 ideas and perspectives, as well as how these are conveyed, across two or more texts.',
-      weighting: '~10%',
+      weighting: '7.5%',
     },
     {
       code: 'AO4',
       description:
         'Evaluate texts critically and support this with appropriate textual references.',
-      weighting: '~10%',
+      weighting: '15%',
     },
     {
       code: 'AO5',
       description:
         'Communicate clearly, effectively and imaginatively, selecting and adapting tone, style and register for different forms, purposes and audiences. Organise information and ideas, using structural and grammatical features to support coherence and cohesion of texts.',
-      weighting: '~20%',
+      weighting: '30%',
     },
     {
       code: 'AO6',
       description:
         'Candidates must use a range of vocabulary and sentence structures for clarity, purpose and effect, with accurate spelling and punctuation.',
-      weighting: '~10%',
+      weighting: '20%',
     },
   ],
 
@@ -90,6 +95,21 @@ export const ocrGuide: BoardExamGuide = {
   ],
 
   // ─── Language Papers ─────────────────────────────────────────────────────────
+  // Corrected 31 October 2026 to the J351 guides in src/data/mark-scheme-guides/
+  // ocr-lang-component01.ts and -component02.ts. Component 01 had "2-3 unseen
+  // non-fiction and/or media texts", Q2 at 8 marks, Q3 on language alone and a
+  // 16-mark Q4, then TWO writing tasks of 15 and 25 marks. Component 02 paired a
+  // literary extract "with one linked non-fiction/media text", with Q1 at 8, Q2 at
+  // 12, a 20-mark "cross-text comparison" as Q3 and the writing as Q4. Each
+  // component prints two texts (in 01, non-fiction from the 19th century and from
+  // the 20th or 21st; in 02, literary prose from the 20th or 21st century), asks
+  // Q1 4, Q2 6, Q3 12 and Q4 18 (evaluation 12 + comparison 6), and sets ONE
+  // writing task, Question 5 or 6, for 40. The minutes are the guides' suggestion
+  // inside OCR's advice of about an hour on each section.
+  // Second read, 31 October 2026: Q1, Q2 and Q3 named Text 1 and Text 2 as a
+  // rule; the guides have that numbering only for the papers they checked, so
+  // they now say "one text" and "the other text". The overview said Component 02
+  // had "the same pattern" of questions; its Q2 is language and structure.
   languagePapers: [
     {
       title: 'Component 01: Communicating Information and Ideas',
@@ -98,7 +118,7 @@ export const ocrGuide: BoardExamGuide = {
       marks: 80,
       weighting: '50%',
       textType:
-        '2\u20133 unseen non-fiction and/or media texts (e.g. articles, speeches, letters, blogs, travel writing, autobiography)',
+        'Two unseen non-fiction texts in a Reading Insert, one from the 19th century and one from the 20th or 21st century (for example articles, speeches, letters, travel writing, autobiography). Section A asks four reading questions; Section B sets one piece of non-fiction writing, from a choice of two tasks.',
       sections: [
         {
           title: 'Section A: Reading',
@@ -106,43 +126,43 @@ export const ocrGuide: BoardExamGuide = {
           questions: [
             {
               question:
-                'Q1 \u2014 Retrieval: Identify and list specific information from a single text.',
+                'Q1 - Retrieval: short questions, in two or three parts, on a set of lines from one of the texts.',
               marks: 4,
               ao: 'AO1',
-              skill: 'Retrieve explicit information',
-              time: '5\u20137 minutes',
+              skill: 'Retrieve information',
+              time: 'About 5 minutes',
               advice:
-                'Short, precise answers drawn directly from the text. No analysis needed \u2014 aim for four clear, distinct points. Do not waste time writing in full sentences; bullet points are perfectly acceptable.',
+                'Short, precise answers drawn only from the lines named. A part may ask for a word, a phrase or a quotation, or for a point explained in a few words of your own: give exactly what each part asks for. No analysis is needed, and bullet points are perfectly acceptable.',
             },
             {
               question:
-                'Q2 \u2014 Synthesis: Use details from <strong>two</strong> texts to show understanding of a given focus.',
-              marks: 8,
+                'Q2 - Synthesis: write about a link between the <strong>two</strong> texts that the question names, using evidence from both.',
+              marks: 6,
               ao: 'AO1',
               skill: 'Synthesise across two texts',
-              time: '10\u201312 minutes',
+              time: 'About 8 minutes',
               advice:
-                'Identify similarities and differences between the two texts on the given focus. Use short embedded quotations from both sources and ensure you explicitly link points across texts (\u201cSimilarly, Source B...\u201d or \u201cIn contrast, Source A...\u201d).',
+                'Make three linked points. For each, state the link in a sentence, then give a short piece of evidence from each text, and link them explicitly (\u201cSimilarly, Text 2...\u201d or \u201cIn contrast, Text 1...\u201d). There are no marks here for analysing language: save that for Question 3.',
             },
             {
               question:
-                'Q3 \u2014 Language Analysis: Analyse how the writer uses language to achieve effects in one text.',
+                'Q3 - Language and Structure Analysis: analyse how the writer of one text uses language and structure to create the effect the question names.',
               marks: 12,
               ao: 'AO2',
-              skill: 'Analyse language techniques and their effects',
-              time: '15\u201318 minutes',
+              skill: 'Analyse language and structure and their effects',
+              time: 'About 15 minutes',
               advice:
-                'Select 3\u20134 short quotations and zoom in on specific word choices and techniques. Name the technique where possible, but prioritise explaining the <em>effect</em> on the reader. Use the formula: <strong>identify \u2192 technique \u2192 effect \u2192 connotation</strong>. Level 6 responses explore layers of meaning and alternative interpretations.',
+                'Select three or four short quotations and zoom in on specific word choices and techniques. Name the technique where possible, but prioritise explaining the <em>effect</em> on the reader. Cover structure as well: how the text opens, where the focus shifts, how sentences and paragraphs are shaped and how it ends. An answer that does not give language and structure a fair share cannot reach the higher levels.',
             },
             {
               question:
-                'Q4 \u2014 Evaluation: Critically evaluate a statement about a text, selecting evidence to support your view.',
-              marks: 16,
-              ao: 'AO4',
-              skill: 'Evaluate critically with textual support',
-              time: '18\u201320 minutes',
+                'Q4 - Evaluation and Comparison: respond to a statement about both texts, deciding how far you agree and comparing the writers\u2019 ideas and how they present them.',
+              marks: 18,
+              ao: 'AO4 (12 marks) + AO3 (6 marks)',
+              skill: 'Evaluate critically and compare, with references to both texts',
+              time: 'About 20 minutes',
               advice:
-                'This is the highest-tariff reading question. Take a clear position on the statement but demonstrate nuance \u2014 the best responses agree <em>and</em> qualify. Each paragraph should follow: <strong>point \u2192 evidence \u2192 analysis \u2192 link to statement</strong>. Markers reward responses that engage with the writer\u2019s methods, not just content.',
+                'This is the highest-tariff reading question. Open with a one-sentence verdict on the statement, then show nuance: the best responses agree <em>and</em> qualify, and your view can differ between the two texts. Build each paragraph round one idea, judging it in both texts and comparing how the writers present it. Quote from both texts: an answer that never links them earns very little of the comparison mark.',
             },
           ],
         },
@@ -152,23 +172,13 @@ export const ocrGuide: BoardExamGuide = {
           questions: [
             {
               question:
-                'Q5 \u2014 Short-form writing task: Write for a specific audience, purpose and form (e.g. letter, article, speech).',
-              marks: 15,
-              ao: 'AO5 + AO6',
-              skill: 'Write clearly and effectively in a given form; accurate SPaG',
-              time: '15\u201318 minutes',
+                'Q5 or Q6 - Non-fiction writing: one piece, such as a speech, letter or article, from a choice of two tasks, each with a set form, audience and purpose.',
+              marks: 40,
+              ao: 'AO5 (24 marks) + AO6 (16 marks)',
+              skill: 'Write clearly and effectively for a given form and audience; accurate SPaG',
+              time: 'About 60 minutes: 5 to 10 planning, about 45 writing and 5 checking',
               advice:
-                'Keep this controlled and efficient \u2014 do <strong>not</strong> overspend time here. Plan for 3\u20134 focused paragraphs. Match your tone and register precisely to the audience and form. Accuracy in spelling, punctuation and grammar carries significant weight within the 15 marks.',
-            },
-            {
-              question:
-                'Q6 \u2014 Extended writing task: Write at length for a specified audience, purpose and form.',
-              marks: 25,
-              ao: 'AO5 + AO6',
-              skill: 'Communicate imaginatively and persuasively; organise ideas coherently',
-              time: '28\u201330 minutes',
-              advice:
-                'This is your showcase piece. Spend 3\u20134 minutes planning a clear structure with varied paragraph lengths and deliberate structural choices (e.g. circular structure, shift in tone). Use ambitious vocabulary naturally \u2014 avoid thesaurus-stuffing. Vary sentence structures for effect: short sentences for impact, complex sentences for elaboration. Proofread in the final 2 minutes.',
+                'Read both tasks before you choose. Match your tone and register precisely to the audience and form: a speech should sound like someone talking to listeners, and a letter should be set out and addressed as one. Plan four or five paragraphs with a deliberate structure: a compelling opening, varied paragraph lengths and an ending that echoes or develops your opening idea. Use ambitious vocabulary naturally and vary sentence structures for effect. Accuracy is 16 of the 40 marks, so keep the last 5 minutes to proofread.',
             },
           ],
         },
@@ -181,40 +191,51 @@ export const ocrGuide: BoardExamGuide = {
       marks: 80,
       weighting: '50%',
       textType:
-        'One literary prose extract (e.g. fiction, literary non-fiction) paired with one linked non-fiction/media text',
+        'Two unseen literary prose texts from the 20th or 21st century. At least one is fiction, such as an extract from a novel; the other may be literary non-fiction, such as a memoir. Section A asks four reading questions; Section B sets one piece of creative writing, from a choice of two tasks.',
       sections: [
         {
           title: 'Section A: Reading',
           marks: 40,
           questions: [
             {
-              question: 'Q1 \u2014 Comprehension and inference from the literary prose extract.',
-              marks: 8,
+              question:
+                'Q1 - Finding information: short questions on a set of lines from one text.',
+              marks: 4,
               ao: 'AO1',
               skill: 'Identify and interpret explicit and implicit ideas',
-              time: '10 minutes',
+              time: 'About 5 minutes',
               advice:
-                'Focus on both surface meaning and deeper implications. Use short quotations to support each point. Distinguish between what the writer <em>states</em> and what they <em>imply</em>.',
-            },
-            {
-              question: 'Q2 \u2014 Language and structure analysis of the literary prose extract.',
-              marks: 12,
-              ao: 'AO2',
-              skill: 'Analyse how language and structure create meanings and effects',
-              time: '15\u201318 minutes',
-              advice:
-                'Address both language <em>and</em> structure \u2014 many students neglect structure entirely. Consider narrative perspective, sentence length variation, paragraph structure, and shifts in focus or tone alongside word-level analysis.',
+                'A part may ask you to pick out words or phrases, or to say briefly what something shows or why it happens. Copy words accurately from the named lines when asked, and give exactly the number of answers asked for, each as short as it can be while still making sense: an overloaded answer line can score nothing.',
             },
             {
               question:
-                'Q3 \u2014 Cross-text comparison: Compare the writers\u2019 perspectives and methods across the literary prose and linked non-fiction text.',
-              marks: 20,
-              ao: 'AO1 + AO2 + AO3',
-              skill:
-                'Compare ideas, perspectives, language and methods across two different genres',
-              time: '25\u201328 minutes',
+                'Q2 - Language and structure (short): how the writer creates the effect the question names in a short section of one text.',
+              marks: 6,
+              ao: 'AO2',
+              skill: 'Analyse how language and structure create meanings and effects',
+              time: 'About 8 minutes',
               advice:
-                'This is the defining question of OCR Component 02. You must move fluidly between the two texts throughout your response \u2014 do <strong>not</strong> write about one text and then the other. Every paragraph should reference both. Compare not just <em>what</em> the writers say but <em>how</em> they say it \u2014 genre differences (fiction vs. non-fiction) are highly relevant. Level 6 demands "sustained, interwoven comparison."',
+                'Address both language <em>and</em> structure: many students neglect structure entirely. Two or three well-chosen quotations, each explained, and something on how the lines are built or ordered are enough. This question is worth half as much as Question 3, so do not write as much.',
+            },
+            {
+              question:
+                'Q3 - Language and structure analysis: how the writer of the other text presents something the question names, such as a character\u2019s feelings or attitude.',
+              marks: 12,
+              ao: 'AO2',
+              skill: 'Analyse how language and structure create meanings and effects',
+              time: 'About 15 minutes',
+              advice:
+                'Find three or four moments that show what the question asks about. For each, analyse a word choice, then say where that moment sits in the passage and why its placing matters. Consider narrative perspective, sentence length, paragraph structure and shifts in focus or tone alongside word-level analysis. The higher levels expect detailed, fairly balanced analysis of both language and structure.',
+            },
+            {
+              question:
+                'Q4 - Evaluation and comparison: respond to a statement about both texts, deciding how far you agree and comparing how the writers present their ideas.',
+              marks: 18,
+              ao: 'AO4 (12 marks) + AO3 (6 marks)',
+              skill: 'Evaluate and compare two texts, with references to both',
+              time: 'About 20 minutes',
+              advice:
+                'This is the defining question of the paper. Give a clear verdict on the statement, then move fluidly between the two texts throughout your response: do <strong>not</strong> write about one text and then the other. Every paragraph should judge a point in both texts and compare <em>how</em> the writers present it, for example through viewpoint, description or dialogue, as well as <em>what</em> they say. You can find the statement truer of one text than the other.',
             },
           ],
         },
@@ -224,13 +245,13 @@ export const ocrGuide: BoardExamGuide = {
           questions: [
             {
               question:
-                'Q4 \u2014 Creative/descriptive writing: Write a piece of creative or descriptive prose, with a choice of task.',
+                'Q5 or Q6 - Creative writing: one piece from a choice of two tasks. In OCR\u2019s sample paper and its June 2024 paper, these were a story from a given title and a piece of personal writing about an experience.',
               marks: 40,
-              ao: 'AO5 + AO6',
-              skill: 'Write imaginatively and descriptively with crafted language and structure',
-              time: '45 minutes',
+              ao: 'AO5 (24 marks) + AO6 (16 marks)',
+              skill: 'Write imaginatively with crafted language and structure',
+              time: 'About 60 minutes: 5 to 10 planning, about 45 writing and 5 checking',
               advice:
-                'You typically have a choice between two prompts. Pick the one that sparks a genuine idea \u2014 not the one that seems easiest. Plan a clear structural arc (beginning, development, climax/shift, resolution). Use sensory detail, varied sentence structures, and figurative language purposefully. Aim for quality over quantity: a tightly crafted 2\u20133 page piece will outscore a rambling 5-page narrative. Leave 3\u20134 minutes for proofreading.',
+                'Pick the task that sparks a genuine idea, not the one that seems easiest, and follow its title and bullet points. Plan a clear structural arc (beginning, development, climax or shift, resolution) and keep one viewpoint throughout. Use sensory detail, varied sentence structures and figurative language purposefully. Aim for quality over quantity: one clear situation, described closely, will outscore a crowded plot. Leave 5 minutes for proofreading.',
             },
           ],
         },
@@ -426,28 +447,28 @@ export const ocrGuide: BoardExamGuide = {
     {
       question: 'Language Component 01: Section A Reading',
       tips: [
-        'Q1 (4 marks) is pure retrieval \u2014 do not analyse or elaborate. List four clear, distinct points and move on quickly.',
-        'Q2 requires synthesis from TWO texts. Use a comparative structure throughout: present a point from one text then immediately link it to the other.',
-        'Q3 is language analysis \u2014 always zoom into specific words and phrases. Name techniques but prioritise explaining the effect on the reader.',
-        'Q4 is the highest-tariff reading question. Take a clear position on the evaluative statement but show nuance. The best answers agree AND qualify, exploring how the writer\u2019s methods contribute to the overall effect.',
+        'Q1 (4 marks) is retrieval: do not analyse or elaborate. Answer each part exactly as it asks, from the lines named, and move on quickly.',
+        'Q2 (6 marks) requires synthesis from TWO texts. Use a linked structure throughout: present a point from one text, then immediately link it to the other.',
+        'Q3 (12 marks) is language and structure analysis: always zoom into specific words and phrases, and say how the text is built as well. Name techniques but prioritise explaining the effect on the reader.',
+        'Q4 (18 marks) is the highest-tariff reading question: 12 for evaluating a statement about both texts, 6 for comparing them. Take a clear position but show nuance. The best answers agree AND qualify, exploring how each writer\u2019s methods contribute to the overall effect.',
       ],
     },
     {
       question: 'Language Component 01: Section B Writing',
       tips: [
-        'You have TWO writing tasks: a short-form (~15 marks) and an extended task (~25 marks). Allocate time proportionally \u2014 roughly 15\u201318 minutes for the short task, 28\u201330 for the extended.',
+        'You write ONE piece, Question 5 or 6, from a choice of two tasks. It is worth 40 marks, half the paper: 24 for content and organisation (AO5) and 16 for technical accuracy (AO6). OCR advises about an hour on it.',
         'Match form, audience and purpose precisely. If asked for a letter, include addresses and sign-off; if a speech, use rhetorical devices and direct address.',
-        'AO6 (accuracy) is assessed across both tasks. Proofread each piece before moving on.',
-        'For the extended task, plan a deliberate structure: a compelling opening, varied paragraph lengths, and a crafted conclusion that echoes or develops your opening idea.',
+        'AO6 (accuracy) is worth 16 of the 40 marks. Keep the last 5 minutes to proofread.',
+        'Plan a deliberate structure: a compelling opening, varied paragraph lengths, and a crafted conclusion that echoes or develops your opening idea.',
       ],
     },
     {
-      question: 'Language Component 02: Cross-Text Comparison',
+      question: 'Language Component 02: Evaluation and Comparison',
       tips: [
-        'The Q3 cross-text comparison (20 marks) is the centrepiece of this paper. It requires sustained, interwoven comparison \u2014 every paragraph must reference both texts.',
-        'Explore how genre differences (literary prose vs. non-fiction) affect the way each writer presents their ideas. This is highly rewarded.',
+        'Q4 (18 marks) is the centrepiece of the reading section: a statement about both texts, with 12 marks for evaluating it and 6 for comparing the writers. Every paragraph should refer to both texts.',
+        'Explore how each writer\u2019s choices, such as viewpoint, description and dialogue, shape your impression. Where one text is fiction and the other literary non-fiction, such as a memoir, say how that difference affects the way each presents its ideas.',
         'Use comparative discourse markers consistently: "Similarly," "In contrast," "Whereas," "Both writers," etc.',
-        'Do not simply compare what the writers say \u2014 compare HOW they say it. Method-level comparison (narrative voice, imagery, rhetoric) is what separates Level 4 from Level 6.',
+        'Do not simply compare what the writers say: compare HOW they say it (narrative voice, imagery, dialogue), all the way through. The top level explores both in detail.',
       ],
     },
     {
@@ -510,8 +531,8 @@ export const ocrGuide: BoardExamGuide = {
   // ─── Unique Features ─────────────────────────────────────────────────────────
   uniqueFeatures: [
     '<strong>Linked-unseen format</strong> \u2014 unique to OCR. In Literature, every Part (a) question pairs a studied text extract with an unseen passage on the same theme, requiring integrated comparison.',
-    '<strong>Cross-text comparison in both Language components</strong> \u2014 Component 02 demands simultaneous analysis of a literary prose extract and a linked non-fiction/media text, moving fluidly between genres.',
-    '<strong>Two writing tasks in Language Component 01</strong> \u2014 a short-form task (~15 marks) and an extended task (~25 marks), making time management absolutely critical.',
+    '<strong>Cross-text comparison in both Language components</strong>: in each, Question 4 asks you to evaluate a statement about two unseen texts and compare them, non-fiction from two centuries in Component 01 and 20th or 21st-century literary prose in Component 02.',
+    '<strong>One writing task in each Language component</strong>: Question 5 or 6, chosen from two, worth 40 marks, half the paper, with 24 for content and organisation and 16 for technical accuracy.',
     '<strong>Tick-based marking guide annotation</strong> \u2014 markers use \u2713 (relevant), \u2713+ (developed), and \u2713++ (analytical/perceptive) to annotate responses, providing clear differentiation.',
     '<strong>Level 6 requires "sustained, interwoven comparison"</strong> \u2014 comparison must run throughout every paragraph, not just appear in the introduction and conclusion.',
     '<strong>AO1 and AO2 are equally weighted as dominant objectives</strong> in Literature \u2014 both carry ~30%, meaning personal response and language analysis are equally important.',

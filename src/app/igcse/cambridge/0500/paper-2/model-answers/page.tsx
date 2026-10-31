@@ -30,6 +30,12 @@ export const metadata: Metadata = {
 
 /* ────────────────────────────────────────────────────────────────────────────
    DIRECTED WRITING MODELS (3 forms)
+
+   31 October 2026: these were marked 40/40, the whole of Section A on the
+   2024-2026 paper. From 2027 the directed writing is Question 1(b), out of 35
+   (reading 10, writing 25), after a 5-mark 1(a) (src/data/mark-scheme-guides/
+   cambridge-0500-paper2.ts). The compositions stay at 40. Second reader: the
+   narrative note's "500 words" is now 450, the top of the composition's range.
    ──────────────────────────────────────────────────────────────────────────── */
 
 const directedModels = [
@@ -37,7 +43,7 @@ const directedModels = [
     title: 'Directed writing: Formal letter',
     form: 'Letter',
     grade: 'A*/9',
-    mark: '40/40',
+    mark: '35/35',
     scenario:
       'Your local council plans to close the only public library in your area. Using ideas from the passage about the value of libraries, write a letter to the council arguing against the closure.',
     paragraphs: [
@@ -63,7 +69,7 @@ const directedModels = [
     title: 'Directed writing: Magazine article',
     form: 'Article',
     grade: 'A*/9',
-    mark: '40/40',
+    mark: '35/35',
     scenario:
       'A school magazine is running a feature on whether technology helps or hinders learning. Using ideas from the passage, write an article giving your views.',
     paragraphs: [
@@ -89,7 +95,7 @@ const directedModels = [
     title: 'Directed writing: Speech',
     form: 'Speech',
     grade: 'A*/9',
-    mark: '40/40',
+    mark: '35/35',
     scenario:
       'You have been asked to give a speech to your year group about the importance of reading for pleasure. Using ideas from the passage, write the words of your speech.',
     paragraphs: [
@@ -221,10 +227,12 @@ export default async function Paper2ModelAnswersPage() {
 
         <div className="rounded-xl border border-border/60 bg-muted/30 p-5">
           <p className="text-body-sm text-muted-foreground leading-relaxed">
-            Directed writing asks you to respond to a reading passage in a specific form (letter,
-            article, speech, report). You are marked on how well you use ideas from the passage, how
-            effectively you write in the required form, and the quality of your language. The best
-            answers adapt and extend the source material rather than simply copying it.
+            Directed writing, Question 1(b), asks you to respond to a reading passage in a specific
+            form (letter, article, speech, report). It is worth 35 marks: 10 for how well you use
+            ideas from the passage and 25 for how effectively you write in the required form and the
+            quality of your language. A 5-mark question on the text, 1(a), comes first. The best
+            answers adapt and extend the source material rather than simply copying it. (On the
+            November 2026 paper the directed writing is the whole of Section A, out of 40.)
           </p>
         </div>
 
@@ -342,7 +350,7 @@ export default async function Paper2ModelAnswersPage() {
             Narrative compositions are marked on plot structure, characterisation, dialogue,
             tension, and language quality. The best narratives are small in scale (one scene, one
             turning point) with precise physical detail and restrained emotion. Avoid car chases,
-            dream endings, and plots that try to cover years in 500 words.
+            dream endings, and plots that try to cover years in 450 words.
           </p>
         </div>
 
