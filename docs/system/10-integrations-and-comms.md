@@ -170,6 +170,22 @@ because each Stripe retry is a new event); the second waits for
 `TRIAL_LIFECYCLE_EMAILS_ENABLED`. All are `from` `noreply@theenglishhub.app`, and none
 can fail the webhook's 200.
 
+"One per invoice" is not airtight without a ledger row: a first send that Resend
+refuses is never retried, so that invoice gets no notice; a customer who tries again by
+hand from the hosted invoice page can produce another `attempt_count` of 1 (Stripe
+counts only automatic retries), and so a second notice; and a first send with no ledger
+user followed by a retry where the user resolves sends again under a fresh ledger row.
+The docblock of `sendPaymentFailedEmail` lists these; closing them needs a key that
+does not need a Prisma user. The "plan has ended" notice is held back while an IELTS
+plan remains beside the ended main plan, and since 31 October 2026 it goes when that
+IELTS plan ends too and nothing paid is left, keyed on the main plan.
+
+Neither notice asks the recipient's age. Both go to the Stripe customer's address, the
+payer, as service mail, so the lifecycle rule that an under-13 gets no lifecycle email
+is not applied to them, and checkout has no age gate. Whether billing notices are
+exempt from that rule is the owner's decision; until it is made, this paragraph is the
+only record of the exemption.
+
 Remember the identity and subscription rules from the orientation chapters here in
 particular: `profiles.subscription_status` is one field per person and a person can
 hold several Stripe subscriptions. Reuse `findDuplicateSubscription` from
@@ -208,11 +224,12 @@ uuid**, because mobile calls `Purchases.logIn(supabaseUserId)`, and the route th
 to resolve the Prisma cuid itself. That is the two-identity bridge crossing a service
 boundary, and it is exactly where it will bite.
 
-One known asymmetry: `paymentCount` is written only by
+One asymmetry, now closing: until 23 October 2026 `paymentCount` was written only by
 [`src/lib/revenuecat/reconcile.ts`](../../src/lib/revenuecat/reconcile.ts) and never
-for web customers, so anything reading it treats every web payer as having no payment
-history. The Trustpilot retention cron is downstream of that and has consequently
-never emailed a web payer.
+for web customers, so anything reading it treated every web payer as having no payment
+history, and the Trustpilot retention cron never emailed one. The Stripe webhook now
+counts each paid invoice, so web payers reach that cron on their ninetieth day, behind
+the gate in §11 (chapter 06 has the detail).
 
 ---
 
@@ -342,21 +359,27 @@ Two whole modules are dead and both are traps because they read as production co
 `sendEmail()` grew an optional `trustpilotTrigger` argument. When set, it calls
 `shouldBccTrustpilot()` ([`src/lib/trustpilot/should-bcc.ts`](../../src/lib/trustpilot/should-bcc.ts)),
 and on an `ok` result appends `TRUSTPILOT_INVITE_EMAIL` to BCC and writes a
-`trustpilot_invite` row. The gate refuses under-18s outright, and refuses anyone with
-`marketingEnabled=false` or `aiOptOut=true`, plus a 12-month per-trigger and 90-day
-global dedup. Failures in the whole pipeline are caught and logged so they cannot
-block the primary send. The `trustpilot_invite` row is what that dedup reads, so its
+`trustpilot_invite` row. Since 31 October 2026 the gate asks what
+`triggerTrustpilotInvite` asks, keyed on the Supabase uuid: a known adult
+(`resolveEmailAgeGroup`: a real date of birth 18 or over, never the 2000-01-01
+placeholder, unknown counting as a child) whom `isMarketingAllowed` clears, and nobody
+with `marketingEnabled=false` or `aiOptOut=true`, plus a 12-month per-trigger and
+90-day global dedup read under both the Prisma id and the Supabase uuid. Until then its
+own age check counted the placeholder as an adult, it ignored `profiles.date_of_birth`,
+and a missing `PrivacySettings` row counted as consent. Failures in the whole pipeline
+are caught and logged so they cannot block the primary send. The `trustpilot_invite` row is what that dedup reads, so its
 write, still not awaited, has been kept alive past the response since 10 October 2026
 (`keepAlive`, above). This is the only place a marketing-adjacent recipient is added
 to a transactional email, and the age gate in it is a compliance control, not a nicety.
 
-The other Trustpilot path, [`triggerTrustpilotInvite`](../../src/lib/trustpilot/trigger-invite.ts)
-(the first-mark, 7-day and 90-day invitations, sent through SendGrid), checked only
+[`triggerTrustpilotInvite`](../../src/lib/trustpilot/trigger-invite.ts) (the
+first-mark, 7-day and 90-day invitations, sent through SendGrid) checked only
 `User.isMinor`, which defaults to false, and hard-coded `optedOut = false`. Since
 24 October 2026 it sends only to a known adult (`resolveEmailAgeGroup`: a real date of
-birth 18 or over, unknown counts as a child) whom `isMarketingAllowed` clears. Whether a
-review request needs consent or only the absence of an objection is the owner's
-decision; the gate takes the strict reading until then.
+birth 18 or over, unknown counts as a child) whom `isMarketingAllowed` clears. It is one
+of four invitation paths, all listed in §11, and since 31 October 2026 all four share
+that rule. Whether a review request needs consent or only the absence of an objection
+is the owner's decision; every path takes the strict reading until then.
 
 ---
 
@@ -550,18 +573,29 @@ No raw IP is ever written to the counter table; keys are hashed first.
 
 ## 11. Trustpilot
 
-Three paths, and worth understanding before you flip the flag.
+Four paths, and worth understanding before you flip the flag. Every one asks the same
+rule since 31 October 2026: `TRUSTPILOT_ENABLED`, a known adult, `isMarketingAllowed`.
 
 1. **BCC on transactional mail** - `sendEmail(..., {trustpilotTrigger, userId})`, gated
-   by `shouldBccTrustpilot()`. Used by
-   [`/api/cron/trustpilot-retention-invite`](../../src/app/api/cron/trustpilot-retention-invite/route.ts).
-2. **SendGrid direct** - `fireStudentFirstMark` from
+   by `shouldBccTrustpilot()`. Its only caller is the retention cron in 2.
+2. **The retention cron's own email** -
+   [`/api/cron/trustpilot-retention-invite`](../../src/app/api/cron/trustpilot-retention-invite/route.ts)
+   sends "3 months in - worth a review?" to ACTIVE rows whose period started 90 days
+   ago, in practice annual payers. Until 31 October 2026 its only filter was
+   `User.isMinor`, and `TRUSTPILOT_ENABLED` gated only the BCC, not the email, which had
+   no unsubscribe link; the email now goes only when `shouldBccTrustpilot()` says yes,
+   to the auth record's address, with the signed unsubscribe link and RFC 8058 headers.
+   Whether it should exist beside `trustpilot-retention-90d` is the owner's decision.
+3. **SendGrid direct** - `fireStudentFirstMark` from
    [`/api/mark`](../../src/app/api/mark/route.ts),
    `fireStudentFirstMark7dFollowup` and `fireStudent90dRetention` from their crons, all
    through [`src/lib/trustpilot/trigger-invite.ts`](../../src/lib/trustpilot/trigger-invite.ts)
-   into `sendTrustpilotInvite()`.
-3. **InviteJS client-side** - [`src/lib/trustpilot/fire-invite-js.ts`](../../src/lib/trustpilot/fire-invite-js.ts),
-   deduplicated server-side via `/api/trustpilot/fired-check`.
+   into `sendTrustpilotInvite()`, which since 31 October 2026 adds the signed
+   unsubscribe link and headers and turns SendGrid's open and click tracking off (a
+   review request is marketing; a pixel needs consent that covers it).
+4. **InviteJS client-side** - [`src/lib/trustpilot/fire-invite-js.ts`](../../src/lib/trustpilot/fire-invite-js.ts),
+   deduplicated server-side via `/api/trustpilot/fired-check`, which asks
+   `shouldBccTrustpilot()`. `/account/billing` calls it on mount for every `pro` user.
 
 **Establish first whether the flag is actually off.** `isEnabled()` in
 [`src/lib/trustpilot/send-invite.ts`](../../src/lib/trustpilot/send-invite.ts) requires
@@ -624,7 +658,7 @@ Seven send through the SMTP or Resend transports:
 | `school-access`               | `0 5 * * *`  |                                                                                                                                                                                                                                                                                            |
 | `weekly-parent-reports`       | `0 16 * * 0` | **No-op unless `WEEKLY_PARENT_REPORTS_ENABLED=true`** ([`src/app/api/cron/weekly-parent-reports/route.ts:99`](../../src/app/api/cron/weekly-parent-reports/route.ts)). Deliberately off: the 2026-08 audit found no working unsubscribe path for parent reports                            |
 | `weekly-student-reports`      | `0 17 * * 0` | No kill switch, by design                                                                                                                                                                                                                                                                  |
-| `trustpilot-retention-invite` | `0 15 * * *` |                                                                                                                                                                                                                                                                                            |
+| `trustpilot-retention-invite` | `0 15 * * *` | **No-op unless `TRUSTPILOT_ENABLED=true`** since 31 October 2026: it sends only when `shouldBccTrustpilot()` says yes (§11)                                                                                                                                                                |
 
 Two more send through SendGrid whenever `TRUSTPILOT_ENABLED=true`:
 `trustpilot-followup-7d` (`45 3 * * *`) and `trustpilot-retention-90d` (`15 4 * * *`),
