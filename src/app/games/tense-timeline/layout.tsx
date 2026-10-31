@@ -3,7 +3,7 @@ import type { Metadata } from 'next'
 export const metadata: Metadata = {
   title: 'Tense Timeline | EAL Grammar Game',
   description:
-    'Spot past, present, future and perfect verb tenses in real sentences. A free grammar game for EAL learners moving beyond beginner English.',
+    'Name past, present, future and perfect tenses, then choose the verb form a sentence needs. A free grammar game for EAL learners.',
   alternates: { canonical: '/games/tense-timeline' },
 }
 

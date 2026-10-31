@@ -490,7 +490,7 @@ const KEEPS_ITS_OWN_ORDER: Record<string, string> = {
   'src/app/games/dictionary-skills/page.tsx':
     'shuffles at build (shuffle(item.words)), scores option === currentQ.correct',
   'src/app/games/tense-timeline/page.tsx':
-    'shuffle([correct, ...distractors]) at build, scores option === currentQ.tense; no index exists',
+    'shuffle(BANK.options(item)) at build, scores option === currentQ.answer; no index exists',
   'src/app/games/synonym-shuffle/page.tsx':
     'shuffles the options of each question once, when the round is dealt, scores option === current.answer',
   'src/app/resources/study-tools/tester/page.tsx':

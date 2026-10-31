@@ -1147,7 +1147,7 @@ const EAL_GAMES: GameDef[] = [
   mkGame(
     'to-be-conjugation',
     'The Verb To Be',
-    'am / is / are / was / were - fill the gap correctly.',
+    'Choose the form of "to be" that fits: statements, questions, short answers and dialogues.',
     <Zap className="size-6" />,
     'Easy',
     'text-amber-400',
@@ -1210,7 +1210,7 @@ const EAL_GAMES: GameDef[] = [
   mkGame(
     'tense-timeline',
     'Tense Timeline',
-    'Spot the verb tense - past, present, future and perfect.',
+    'Name the tense of a sentence, then choose the verb form that fits its time: past, present, future and perfect.',
     <Timer className="size-6" />,
     'Medium',
     'text-sky-400',

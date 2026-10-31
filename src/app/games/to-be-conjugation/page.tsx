@@ -11,7 +11,7 @@ import { getBoardConfig } from '@/lib/board/board-store'
 import { AnswerExplanation } from '@/components/games/AnswerExplanation'
 import { useGameRound } from '@/components/games/game-round'
 import { useDealer } from '@/lib/games/start-round'
-import { BANK, optionSet, type Tense, type VerbItem } from '@/data/games/banks/to-be-conjugation'
+import { BANK, optionSet, type VerbItem } from '@/data/games/banks/to-be-conjugation'
 
 // ─── Data ──────────────────────────────────────────────────────────────────────
 // The sentences are in src/data/games/banks/to-be-conjugation.ts (moved there on
@@ -31,19 +31,13 @@ function shuffle<T>(arr: T[]): T[] {
   return a
 }
 
-const TENSE_STYLES: Record<Tense, string> = {
-  present: 'text-emerald-400 border-emerald-500/30 bg-emerald-500/10',
-  past: 'text-clay-600 border-amber-500/30 bg-amber-500/10',
-  future: 'text-blue-400 border-blue-500/30 bg-blue-500/10',
-  'short form': 'text-purple-400 border-purple-500/30 bg-purple-500/10',
-}
-
-// Build the on-screen options for an item: the bank's set, which for a short
-// form is the standard list plus the answer (so contractions are always
-// selectable), dealt in a new order each time.
+// The on-screen options for an item: the question's own, dealt in a new order
+// each time. Until 24 October 2026 every sentence offered the same eight forms
+// in the same order, and a label above it named the tense the sentence
+// needed (present, past, future, short form), which gave the answer away. The
+// label is gone; the sentence, or the dialogue above it, decides.
 function optionsFor(item: VerbItem): string[] {
-  const set = optionSet(item)
-  return item.tense === 'short form' ? shuffle(set) : set
+  return shuffle([...optionSet(item)])
 }
 
 // ─── Component ─────────────────────────────────────────────────────────────────
@@ -148,7 +142,7 @@ export default function ToBeConjugationPage() {
           gameId="to-be-conjugation"
           audience="eal"
           title="The Verb To Be"
-          description="Read each sentence and choose the correct form of the verb 'to be': am, is, are, was, were, will be, been or being."
+          description="Read each sentence or short dialogue and choose the form of the verb 'to be' that fits the gap."
           difficulty="Foundation"
           score={score}
           maxScore={totalAnswered || items.length || ROUND_SIZE}
@@ -164,21 +158,19 @@ export default function ToBeConjugationPage() {
                 <span>
                   Question {idx + 1} of {items.length}
                 </span>
-                <div className="flex items-center gap-3">
-                  <span>{accuracyPct}% accuracy</span>
-                  <span
-                    className={cn(
-                      'text-xs px-2 py-0.5 rounded-full border capitalize',
-                      TENSE_STYLES[current.tense],
-                    )}
-                  >
-                    {current.tense}
-                  </span>
-                </div>
+                <span>{accuracyPct}% accuracy</span>
               </div>
 
-              {/* Sentence card */}
+              {/* Sentence card: the lines of dialogue or text before the gap, if
+                  any (since 24 October 2026), then the sentence to complete. */}
               <div className="rounded-xl border border-border bg-card p-6 text-center">
+                {current.context && (
+                  <div className="mb-3 space-y-1 text-base leading-relaxed text-muted-foreground">
+                    {current.context.map((line) => (
+                      <p key={line}>{line}</p>
+                    ))}
+                  </div>
+                )}
                 <p className="text-xl font-medium leading-relaxed text-foreground">
                   {sentenceParts[0]}
                   <span
