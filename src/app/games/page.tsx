@@ -1165,7 +1165,7 @@ const EAL_GAMES: GameDef[] = [
   mkGame(
     'days-months-seasons',
     'Days, Months & Seasons',
-    'Order them, spell them, match them to seasons.',
+    'Days, months and dates in use: calendars, "on", "in" and "at", British date order and counting from today.',
     <Star className="size-6" />,
     'Easy',
     'text-pink-400',
