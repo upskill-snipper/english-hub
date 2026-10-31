@@ -165,17 +165,22 @@ export default function ApostropheAcePage() {
                 <span>
                   Question {qIdx + 1} of {questions.length}
                 </span>
-                <div className="flex items-center gap-3">
-                  <span>{accuracyPct}% accuracy</span>
-                  <span className="text-xs px-2 py-0.5 rounded-full border text-clay-600 border-amber-500/30 bg-amber-500/10">
-                    {currentQuestion.ruleTested}
-                  </span>
-                </div>
+                {/* The rule badge (ruleTested) that sat here gave answers away
+                    ("No apostrophe for plurals"), so it went on 24 October 2026;
+                    a question that needs the number of owners says it in its
+                    prompt (src/data/games/banks/apostrophe-ace.ts). */}
+                <span>{accuracyPct}% accuracy</span>
               </div>
 
               {/* Prompt */}
-              <div className="rounded-xl border border-border bg-card p-6 text-center">
+              <div className="rounded-xl border border-border bg-card p-6 text-center space-y-2">
                 <p className="text-sm text-muted-foreground">{PROMPT}</p>
+                {currentQuestion.prompt && (
+                  <p className="text-sm font-medium text-foreground">{currentQuestion.prompt}</p>
+                )}
+                {currentQuestion.source && (
+                  <p className="text-xs italic text-muted-foreground">{currentQuestion.source}</p>
+                )}
               </div>
 
               {/* Options */}

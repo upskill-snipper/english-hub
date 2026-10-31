@@ -3,7 +3,7 @@ import type { Metadata } from 'next'
 export const metadata: Metadata = {
   title: 'Punctuation Repair | KS3 English Game',
   description:
-    'Fix missing capital letters, full stops and commas in broken sentences. A free punctuation game for KS3 English and literacy practice.',
+    'Choose the correctly punctuated sentence: commas, colons, semicolons, brackets and speech marks, many in real lines. A free punctuation game for KS3 English.',
   alternates: { canonical: '/games/punctuation-repair' },
 }
 

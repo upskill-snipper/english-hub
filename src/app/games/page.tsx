@@ -1285,7 +1285,7 @@ const KS3_GAMES: GameDef[] = [
   mkGame(
     'punctuation-repair',
     'Punctuation Repair',
-    'Fix the capital letters, full stops and commas.',
+    'Choose the correctly punctuated sentence: commas, colons, semicolons, brackets and speech, many in real lines from the classics.',
     <PenTool className="size-6" />,
     'Medium',
     'text-clay-600',
