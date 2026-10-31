@@ -38,6 +38,7 @@ import {
 } from '@/data/mock-exams/paper-index'
 import { loadMockExamPaper } from '@/data/mock-exam-loader'
 import type { MockExamPaper } from '@/data/mock-exams/types'
+import { modelAnswerFor } from '@/lib/mock-exams/model-answer'
 import { useAuthUserLoading } from '@/store/auth-store'
 import {
   useExamStore,
@@ -883,8 +884,9 @@ function ExamInProgress() {
                 <CardHeader>
                   <div className="flex items-center justify-between">
                     <div className="flex items-center gap-2">
-                      <span className="flex h-7 w-7 items-center justify-center rounded-full bg-primary/10 text-xs font-bold text-primary">
-                        {question.questionNumber}
+                      {/* The board's own number ("1.1", "7(a)") where it has one. */}
+                      <span className="flex h-7 min-w-7 items-center justify-center whitespace-nowrap rounded-full bg-primary/10 px-1.5 text-xs font-bold text-primary">
+                        {question.label ?? question.questionNumber}
                       </span>
                       <Badge variant="outline" className="text-xs">
                         {question.marks} mark{question.marks !== 1 ? 's' : ''}
@@ -1252,13 +1254,14 @@ function ExamResults() {
                   const studentAnswer = latestAttempt.answers[question.id] ?? ''
                   const hasAnswer = studentAnswer.trim().length > 0
                   const isModelVisible = showModelAnswers[question.id]
+                  const shownAnswer = modelAnswerFor(question.modelAnswers, selectedGrade)
 
                   return (
                     <div key={question.id} className="rounded-lg border border-border/50 p-4">
                       {/* Question header */}
                       <div className="flex items-center gap-2 mb-2">
-                        <span className="flex h-6 w-6 items-center justify-center rounded-full bg-primary/10 text-xs font-bold text-primary">
-                          {question.questionNumber}
+                        <span className="flex h-6 min-w-6 items-center justify-center whitespace-nowrap rounded-full bg-primary/10 px-1.5 text-xs font-bold text-primary">
+                          {question.label ?? question.questionNumber}
                         </span>
                         <Badge variant="outline" className="text-xs">
                           {question.marks} mark{question.marks !== 1 ? 's' : ''}
@@ -1330,13 +1333,16 @@ function ExamResults() {
                       {isModelVisible && (
                         <div className="mt-3 rounded-lg border border-green-500/20 bg-green-500/5 p-3 animate-fade-in">
                           <div className="mb-1 text-xs font-semibold text-green-400 uppercase tracking-wider">
-                            Model Answer ({selectedGrade})
+                            Model Answer{shownAnswer ? ` (${shownAnswer.band})` : ''}
                           </div>
+                          {shownAnswer && shownAnswer.band !== selectedGrade && (
+                            <p className="mb-1 text-xs text-muted-foreground">
+                              This question has no {selectedGrade} answer, so this is its{' '}
+                              {shownAnswer.band} answer.
+                            </p>
+                          )}
                           <p className="text-sm text-foreground/90 whitespace-pre-line">
-                            {question.modelAnswers?.[selectedGrade] ??
-                              question.modelAnswers?.['Grade 6-7'] ??
-                              question.modelAnswers?.['Grade 4-5'] ??
-                              'Model answer not available for this grade band.'}
+                            {shownAnswer?.text ?? 'Model answer not available for this question.'}
                           </p>
 
                           {/* Marking guide */}
