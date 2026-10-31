@@ -163,9 +163,13 @@ The statistics are damning. Rough sleeping in England rose by 169% between 2010 
 
 And yet we walk past. We avert our eyes. We tell ourselves comforting stories about choice and personal responsibility, because the alternative - accepting that our society has systematically failed hundreds of thousands of its citizens - is too uncomfortable to contemplate.`
 
-// FACT-CHECK 2026-04: source attribution corrected per verified-library audit
+// FACT-CHECK 2026-04: source attribution corrected per verified-library audit.
+// 31 October 2026: "Original opinion piece composition (anonymous,
+// contemporary broadsheet style, c.2024)" dated a passage written for the site
+// and never said so; it now does, in the words WJEC Component 2 prints over
+// the same passage below.
 const AQA_P2_SOURCE_A_REF =
-  'Original opinion piece composition (anonymous, contemporary broadsheet style, c.2024)'
+  'Specially written for The English Hub (not a published text): an opinion article on homelessness'
 
 // Gutenberg #57060, "Description of the Asylum for the Houseless", two pairs
 // of consecutive paragraphs with the cut between them marked, cut by script.
@@ -483,6 +487,62 @@ export const mockExamPapers: MockExamPaper[] = [
   // ═══════════════════════════════════════════════════════════════════════════
   // AQA ENGLISH LANGUAGE PAPER 1
   // ═══════════════════════════════════════════════════════════════════════════
+  // AQA'S 2026 QUESTIONS (31 October 2026). Both AQA Language papers in this
+  // file already had AQA's marks, totals and times, so they were left as they
+  // were when the other boards' Language mocks were rebuilt to the real
+  // papers. But from summer 2026 AQA reworded several questions while keeping
+  // the marks, and these two still set the old forms, much of them in AQA's
+  // own rubric, which is AQA's copyright. Checked against
+  // src/data/mark-scheme-guides/aqa-lang-paper1.ts and aqa-lang-paper2.ts, and
+  // now set as those guides describe the 2026 papers:
+  //   - Paper 1 Question 1 asked for four true statements from eight. It is
+  //     now four parts, 1.1 to 1.4, each with three options and one right
+  //     answer, on the third paragraph, since Question 2 has the first.
+  //   - Paper 1 Question 3 asked about tension "and a sense of threat"; it now
+  //     names one effect, tension, and its answers link every point to it.
+  //   - Paper 1 Question 4 asked "To what extent do you agree?"; it now asks
+  //     how far the student agrees or disagrees with the view.
+  //   - Paper 1 Question 5 asked for "a description suggested by this
+  //     picture", an abandoned fairground with nothing to do with the source.
+  //     The picture is now described in words and given for ideas only; the
+  //     tasks are a lonely place at dusk or the opening of a story about an
+  //     unexpected meeting, written for a library's booklet.
+  //   - Paper 2 Question 1: statement G, "The writer walked a single mile",
+  //     was not plainly false, since the writer counted the sleepers within a
+  //     mile and may well have walked it. It is replaced by one the paragraph
+  //     contradicts, and the key is still A, B, D and E.
+  //   - Paper 2 Question 2 asked for "a summary of the differences and
+  //     similarities"; it now asks what the student can infer about the
+  //     differences between the two groups of homeless people, and its answers
+  //     no longer set out likenesses.
+  //   - Paper 2 Question 3 named no lines; it now names the last two
+  //     paragraphs of Source A, and its answers keep to them.
+  //   - Paper 2 Question 5 set a statement about young people, which is not
+  //     the sources' topic; it is now about homelessness.
+  //   - AQA's stock sentences ("You now need to think about the whole of the
+  //     source", "Focus this part of your answer on", "You need to refer to
+  //     Source A and Source B for this question", the Section B rubric) are
+  //     now in this file's own words, the mark schemes give the guides'
+  //     levels, and the minutes are the guides'.
+  //
+  // CHECKED 31 October 2026 by a second reader, against both papers' sources
+  // and the guides. Paper 1 Question 1's parts each have one right answer (C,
+  // A, B, C) and Paper 2 Question 1's key (A, B, D, E) holds. Fixes:
+  //   - P1 Q4 called the man "the convict", a word the source never uses; the
+  //     question now says Pip meets an escaped convict in this part.
+  //   - P1 Q4 scheme: "his first words threaten death", but they are "Hold
+  //     your noise!"; now an order, then at once a threat of death.
+  //   - P2 section note: Source B "written in 1861", the date of the volume
+  //     (the pages after the passage cite figures for 1848); now "published".
+  //   - P2 Q2 opened with AQA's stock "Use details from both sources", and Q5
+  //     kept AQA's "in which you ... on this statement"; both reworded.
+  //   - P2 Q2 Grade 6-7 had each doorway sleeper "alone"; the source does not
+  //     say so; now spread from one doorway to the next.
+  //   - P2 Q2 scheme gave the fourteen sleepers a missed mortgage payment (the
+  //     writer's example of what lies behind the figures) and the whole crowd
+  //     the boys' "wrangling"; now as the source puts each.
+  //   - AQA_P2_SOURCE_A_REF dated a passage written for the site; it now says
+  //     it was written for the site.
   {
     id: 'aqa-lang-p1',
     board: 'AQA',
@@ -496,15 +556,16 @@ export const mockExamPapers: MockExamPaper[] = [
       {
         id: 'aqa-p1-reading',
         title: 'Section A: Reading',
-        description: `Read the extract below carefully. Then answer all the questions in this section.\n\nSource: ${AQA_P1_EXTRACT_SOURCE}`,
+        description: `Read the source below carefully, then answer all four questions in this section. Spend about 15 minutes reading the source and the questions, and about 45 minutes answering them.\n\nThe source is from the first chapter of the novel. Pip, a young orphan, is alone in the churchyard of his village, out on the marshes.\n\nWords you may need: "late of this parish" means who used to live here and has died; dikes are ditches dug to drain the land; pollards are trees cut back to the top of the trunk; "Pint out" is the man's way of saying point out; "Give it mouth" means say it loudly.\n\nSource: ${AQA_P1_EXTRACT_SOURCE}`,
         totalMarks: 40,
         suggestedTimeMinutes: 60,
         questions: [
           {
             id: 'aqa-p1-q1',
             questionNumber: 1,
+            label: '1.1 to 1.4',
             questionText:
-              'Read again the first paragraph of the source. Choose four statements below which are TRUE.\n\nA) Pip lived in marsh country, down by the river.\nB) It was a warm, sunny morning.\nC) The churchyard was overgrown with nettles.\nD) The marshes were high and hilly.\nE) Cattle were feeding on the marshes.\nF) The river was bright and sparkling.\nG) The wind was rushing from the sea.\nH) Pip felt calm and unafraid.',
+              'Read the third paragraph of the source again, from "A fearful man" to "by the chin."\n\nAnswer the four parts below about this paragraph only. For each part, choose one answer: A, B or C. Write your answers as the part number and your letter.\n\n1.1 What does the man have on his leg?\nA) A wooden splint\nB) A bandage of coarse grey cloth\nC) A large piece of metal\n\n1.2 What does the man have on his head?\nA) A piece of worn cloth\nB) A battered hat\nC) Nothing at all\n\n1.3 What condition is the man in?\nA) He has been stung by bees.\nB) He is drenched and dirty.\nC) He is warm and dry.\n\n1.4 What does the man do to Pip at the end of the paragraph?\nA) He seizes Pip by the collar.\nB) He shakes Pip by the shoulders.\nC) He grips the lower part of Pip\'s face.',
             marks: 4,
             suggestedTimeMinutes: 5,
             questionType: 'multiple-choice',
@@ -512,21 +573,23 @@ export const mockExamPapers: MockExamPaper[] = [
             extractSource: AQA_P1_EXTRACT_SOURCE,
             modelAnswers: {
               'Grade 4-5':
-                'A, C, E, G - These are the four true statements based on the first paragraph. A: "Ours was the marsh country, down by the river." C: "this bleak place overgrown with nettles was the churchyard." E: "with scattered cattle feeding on it." G: "the distant savage lair from which the wind was rushing was the sea."',
+                '1.1 C, 1.2 A, 1.3 B, 1.4 C.\n1.1: he has "a great iron on his leg".\n1.2: he has "an old rag tied round his head".\n1.3: he "had been soaked in water, and smothered in mud".\n1.4: he "seized me by the chin".',
               'Grade 6-7':
-                'A, C, E, G - The correct answers are found by careful reference to the first paragraph only. B is false (it was "a memorable raw afternoon towards evening"), D is false (the marshes are a "dark flat wilderness"), F is false (the river is "the low leaden line"), and H is false (Pip is "growing afraid of it all and beginning to cry").',
+                '1.1 C, 1.2 A, 1.3 B, 1.4 C. Each answer is settled by the third paragraph alone.\n1.1: "a great iron on his leg" is a large piece of metal. B takes "coarse grey" from the paragraph, but those words describe his clothes, and nothing is said of a bandage or a splint.\n1.2: he is "A man with no hat", which rules out B, and C is wrong too, because he has "an old rag tied round his head".\n1.3: "soaked in water, and smothered in mud" means drenched and dirty. A borrows "stung" from "stung by nettles", and C cannot be right when he "shivered" and his teeth "chattered in his head".\n1.4: he "seized me by the chin", so he grips the lower part of Pip\'s face. A borrows "seized" but changes where he takes hold, and nothing in the paragraph has him shake Pip.',
             },
             markScheme: [
-              '1 mark for each correct answer',
-              'Maximum 4 marks',
-              'No marks for incorrect selections',
+              '1.1 C: he has "a great iron on his leg". Neither a bandage nor a splint is mentioned.',
+              '1.2 A: he has "an old rag tied round his head". B is wrong, since he is "A man with no hat", and so is C, since the rag is there.',
+              '1.3 B: he "had been soaked in water, and smothered in mud". The paragraph says "stung by nettles", not by bees, and a man who "shivered" is not warm.',
+              '1.4 C: he "seized me by the chin", the lower part of Pip\'s face, not his collar or his shoulders.',
+              'One mark for each part answered correctly, 4 in all. Give one letter for each part: the question asks for one answer to each.',
             ],
           },
           {
             id: 'aqa-p1-q2',
             questionNumber: 2,
             questionText:
-              'Look in detail at the first paragraph of the source, from "Ours was the marsh country" to "was Pip." How does the writer use language here to describe the marshland setting?\n\nYou could include the writer\'s choice of:\n- words and phrases\n- language features and techniques\n- sentence forms.',
+              'Read the first paragraph of the source again, from "Ours was the marsh country" to "was Pip."\n\nExplain how the writer uses language in this paragraph to describe the churchyard and the marsh country around it.\n\nYou might write about:\n- particular words and phrases\n- techniques such as imagery and repetition\n- the way the sentences are built.',
             marks: 8,
             suggestedTimeMinutes: 10,
             questionType: 'analysis',
@@ -540,20 +603,28 @@ export const mockExamPapers: MockExamPaper[] = [
               'Grade 8-9':
                 'Dickens makes the setting the means by which Pip first understands the world: this is his "first most vivid and broad impression of the identity of things", and the adult narrator\'s formal, abstract phrasing sits against the child\'s fear. The heart of the paragraph is one long sentence built on the repeated "and that", a pattern of discovery in which each part of the place is named in turn: the churchyard, the graves, the marshes, the river, the sea. The syntax works like a view widening to the horizon, and the diction darkens as it goes. The "dark flat wilderness" is "intersected with dikes and mounds and gates", where the polysyndeton makes the land seem endless; "the low leaden line beyond was the river" uses alliteration and the metaphor of lead to make the water heavy and lifeless; and "the distant savage lair from which the wind was rushing" turns the sea into the den of a predator, so the wind itself seems to spring out at the boy. Even the time of day is hostile: "a memorable raw afternoon towards evening", where "raw" suggests both bitter cold and something painfully exposed. The final clause reverses the movement. Having looked outward to the sea, the sentence turns back to "the small bundle of shivers growing afraid of it all and beginning to cry", and names him last. The child comes at the end of the list, as one more thing in the landscape, small and exposed, which prepares the reader for the voice that breaks in at the start of the next paragraph.',
             },
-            markScheme: [
-              'Identifies relevant language features (metaphor, personification, imagery)',
-              'Analyses the effect of specific words and phrases',
-              'Comments on how language creates mood/atmosphere',
-              'Uses subject terminology accurately',
-              'Embeds quotations rather than bolt-on',
-              'Top band: sophisticated, conceptualised analysis',
-            ],
+            markScheme: {
+              'How it is marked (8 marks)': [
+                "Level 4 (7-8 marks): analyses how the writer's choices work and what they suggest, with sharply chosen quotations and precise use of subject terms.",
+                'Level 3 (5-6 marks): explains clearly what effect the words have on the reader and why, with a range of well-chosen quotations and techniques named correctly.',
+                'Level 2 (3-4 marks): tries to say what some of the language does, with a few suitable quotations and some subject terms, usually used correctly.',
+                'Level 1 (1-2 marks): says something simple about a word or two, or names a technique without saying what it does.',
+                'An answer that writes only about lines outside the first paragraph cannot go above Level 2. This question is about language: points about the order and shape of the source belong in Question 3.',
+              ],
+              'Points you might make': [
+                'One long sentence lists what Pip "found out for certain", and the repeated "and that" widens the view from the churchyard to the marshes, the river and the sea.',
+                'The words are bleak and colourless: a "bleak place overgrown with nettles", a "dark flat wilderness", "the low leaden line", where "leaden" suggests something grey, heavy and lifeless.',
+                'The metaphor "the distant savage lair from which the wind was rushing" makes the sea the den of a wild animal, so even the wind seems to attack.',
+                'Even the time of day is hostile: in "a memorable raw afternoon towards evening", "raw" suggests bitter cold and exposure.',
+                'The paragraph ends on Pip, "the small bundle of shivers growing afraid of it all and beginning to cry", small and exposed in the huge landscape.',
+              ],
+            },
           },
           {
             id: 'aqa-p1-q3',
             questionNumber: 3,
             questionText:
-              'You now need to think about the whole of the source.\n\nHow has the writer structured the text to build tension and create a sense of threat?\n\nYou could write about:\n- what the writer focuses your attention on at the beginning\n- how and why the writer changes this focus as the extract develops\n- any other structural features that interest you.',
+              'This question is about the whole of the source.\n\nHow does the writer structure the source to build tension?\n\nStructure means the order and shape of the text. You might write about:\n- what the writer shows you first\n- where the focus moves as the source goes on, and why\n- how the pace changes, and how the source ends.',
             marks: 8,
             suggestedTimeMinutes: 10,
             questionType: 'analysis',
@@ -561,28 +632,36 @@ export const mockExamPapers: MockExamPaper[] = [
             extractSource: AQA_P1_EXTRACT_SOURCE,
             modelAnswers: {
               'Grade 4-5':
-                'At the beginning, the writer focuses on the setting: the churchyard, the marshes, the river and the sea. This creates a bleak, lonely mood, and the paragraph ends with Pip "beginning to cry", so we already know he is frightened. Then the focus changes suddenly when a voice shouts "Hold your noise!" This interruption is shocking because it comes straight after we see Pip alone. The writer then describes the man in detail, which makes him frightening. After that there is a lot of short dialogue, like "Tell us your name!" and "Quick!", which speeds up the pace and makes the scene tense. At the end, the man turns Pip upside down and Pip is left "trembling" on a tombstone, so the extract ends with Pip still in danger.',
+                'The writer builds tension by starting slowly. At the beginning, the focus is on the setting: the churchyard, the marshes, the river and the sea. This creates a bleak, lonely mood, and the paragraph ends with Pip "beginning to cry", so we already sense that something is wrong. Then the focus changes suddenly when a voice shouts "Hold your noise!" This interruption is shocking because it comes straight after we see Pip alone, and the tension rises at once. The writer then describes the man in detail, which makes the reader wait and worry about what he will do. After that there is a lot of short dialogue, like "Tell us your name!" and "Quick!", which speeds up the pace and makes the scene more tense. At the end, the man turns Pip upside down and Pip is left "trembling" on a tombstone, so the tension is never released: the source ends with Pip still in danger.',
               'Grade 6-7':
-                'Dickens structures the extract so that a slow, wide description of the setting is broken by a sudden, close threat. The first paragraph is a single panoramic view: one long sentence moves outward from the churchyard to the marshes, the river and "the distant savage lair from which the wind was rushing", before turning back to Pip, "the small bundle of shivers". Ending the paragraph on the frightened child makes him seem tiny and exposed just before the threat arrives. The shift is abrupt. The second paragraph opens with direct speech, "Hold your noise!", so the reader hears the convict before seeing him, and he "started up from among the graves", as though the dead of the first paragraph had come to life. The third paragraph slows the action to describe him in three sentences with no main verb ("A fearful man", "A man with no hat", "A man who had been soaked in water"), and the last of them ends in contact: "he seized me by the chin." The pace then quickens through very short lines of dialogue ("Quick!", "Pip, sir.") that show Pip\'s terror and the man\'s control. The extract ends with the church going "head over heels" as Pip is turned upside down, and the final image of Pip "trembling while he ate the bread ravenously" leaves the threat unresolved.',
+                'Dickens structures the extract so that tension builds from a slow, wide description of the setting to a sudden, close threat. The first paragraph is a single panoramic view: one long sentence moves outward from the churchyard to the marshes, the river and "the distant savage lair from which the wind was rushing", before turning back to Pip, "the small bundle of shivers". Ending the paragraph on the frightened child makes him seem tiny and exposed just before the threat arrives, so the reader already feels uneasy. The shift is abrupt. The second paragraph opens with direct speech, "Hold your noise!", so the reader hears the convict before seeing him, and he "started up from among the graves", as though the dead of the first paragraph had come to life. The third paragraph slows the action to describe him in three sentences with no main verb ("A fearful man", "A man with no hat", "A man who had been soaked in water"), which keeps the reader waiting to see what he will do, and the last of them ends in contact: "he seized me by the chin." The pace then quickens through very short lines of dialogue ("Quick!", "Pip, sir.") that show Pip\'s terror and the man\'s control. The extract ends with the church going "head over heels" as Pip is turned upside down, and the final image of Pip "trembling while he ate the bread ravenously" leaves the threat unresolved, so the tension is still there at the end.',
               'Grade 8-9':
-                'The extract is built on one sharp structural contrast: a long, slow opening that looks outward over an empty landscape, and a sudden threat that comes from very close. Dickens gives the whole first paragraph to the setting, and most of it to one sentence that moves from the churchyard to the marshes, the river and the sea through the repeated "and that". The effect is of a view widening to the horizon, so the reader, like Pip, looks outward and away. The sentence then turns back to "the small bundle of shivers", and the delay has made him as small as possible at the moment the threat arrives. The threat does not come from the horizon. The direct speech "Hold your noise!" breaks in with no warning, and the convict "started up from among the graves at the side of the church porch": he rises out of the very place the first paragraph filled with the dead, so the setting seems to produce him. The third paragraph then stops the action to describe him in three sentences with no main verb, each adding detail, from the "great iron on his leg" to what has been done to him ("soaked in water, and smothered in mud, and lamed by stones"), until the last clause ends in contact: "he seized me by the chin." From here the structure narrows to dialogue. The lines shrink to "Quick!" and "Pip, sir.", and the rapid exchange of commands and answers puts the reader inside Pip\'s fear. The last paragraph turns the world upside down, the church going "head over heels" and Pip seeing "the steeple under my feet", and it ends not with escape but with Pip "seated on a high tombstone, trembling" while the man eats. Ending on the convict\'s hunger rather than on any resolution leaves the reader, like Pip, waiting to learn what he will do next.',
+                'Dickens builds tension through one sharp structural contrast: a long, slow opening that looks outward over an empty landscape, and a sudden threat that comes from very close. He gives the whole first paragraph to the setting, and most of it to one sentence that moves from the churchyard to the marshes, the river and the sea through the repeated "and that". The effect is of a view widening to the horizon, so the reader, like Pip, looks outward and away, and the length of the sentence holds us in suspense. It then turns back to "the small bundle of shivers", and the delay has made him as small as possible at the moment the threat arrives. The threat does not come from the horizon. The direct speech "Hold your noise!" breaks in with no warning, and the convict "started up from among the graves at the side of the church porch": he rises out of the very place the first paragraph filled with the dead, so the setting seems to produce him, and the tension that was only a mood becomes a danger. The third paragraph then stops the action to describe him in three sentences with no main verb, each adding detail, from the "great iron on his leg" to what has been done to him ("soaked in water, and smothered in mud, and lamed by stones"), so the reader is made to wait, as Pip must, until the last clause ends in contact: "he seized me by the chin." From here the structure narrows to dialogue. The lines shrink to "Quick!" and "Pip, sir.", and the rapid exchange of commands and answers raises the pace and puts the reader inside Pip\'s fear. The last paragraph turns the world upside down, the church going "head over heels" and Pip seeing "the steeple under my feet", and it ends not with escape but with Pip "seated on a high tombstone, trembling" while the man eats. Ending on the convict\'s hunger rather than on any resolution keeps the tension alive beyond the last line: the reader, like Pip, is left waiting to learn what he will do next.',
             },
-            markScheme: [
-              'Comments on the overall structural progression',
-              'Analyses how the writer shifts focus between paragraphs',
-              'Comments on sentence-level structural choices',
-              'Considers the effect of structure on the reader',
-              'Uses structural terminology (shift, focus, pace, tension, volta)',
-              'Top band: perceptive, detailed structural analysis',
-            ],
+            markScheme: {
+              'How it is marked (8 marks)': [
+                'Level 4 (7-8 marks): analyses how the shape of the whole source builds tension, with sharply chosen examples and confident, precise structural terms.',
+                "Level 3 (5-6 marks): explains clearly how several of the writer's structural choices build tension, with suitable examples and correct terms.",
+                'Level 2 (3-4 marks): tries to say what some structural features do, such as a change of focus, with a few examples.',
+                'Level 1 (1-2 marks): notices one or two things about the order of the source, often by retelling what happens.',
+                'Every point should link back to tension, and the answer should cover the source from its opening to its end. Points about single words and images belong in Question 2.',
+              ],
+              'Points you might make': [
+                'The opening is a slow, wide view of the empty landscape in one long sentence, ending on Pip as "the small bundle of shivers", so he is small and alone just before the threat arrives.',
+                'The turning point: the second paragraph breaks in with direct speech, "Hold your noise!", and the man "started up from among the graves", so the threat comes suddenly and from close by.',
+                'The third paragraph stops the action to build up the man in three sentences without a main verb, and makes the reader wait until it ends in contact: "he seized me by the chin."',
+                'The pace quickens in very short lines of dialogue ("Quick!", "Pip, sir."), with the man giving every command.',
+                'The ending gives no release: Pip is turned upside down and left "trembling" on a tombstone while the man eats, and the reader does not know what he will do next.',
+              ],
+            },
           },
           {
             id: 'aqa-p1-q4',
             questionNumber: 4,
             questionText:
-              'Focus this part of your answer on the second part of the source, from the paragraph beginning "Hold your noise!" to the end.\n\nA student said: "The writer makes the convict seem genuinely terrifying. You feel real fear when reading this section."\n\nTo what extent do you agree?\n\nIn your response, you could:\n- consider your own impressions of the convict\n- evaluate how the writer has created these impressions\n- support your response with references to the text.',
+              'Read the second part of the source again, from the paragraph that begins "Hold your noise!" to the end. In this part, Pip meets an escaped convict.\n\nA student said: "The writer makes the convict seem genuinely terrifying. You feel real fear when reading this section."\n\nHow far do you agree or disagree with this view? You may agree, disagree, or do some of each.\n\nWrite about how the convict comes across to you, what happens in this part of the source, and the methods the writer uses to create that impression, with evidence from the text for each point you make.',
             marks: 20,
-            suggestedTimeMinutes: 22,
+            suggestedTimeMinutes: 20,
             questionType: 'evaluation',
             extract: AQA_P1_EXTRACT,
             extractSource: AQA_P1_EXTRACT_SOURCE,
@@ -594,14 +673,22 @@ export const mockExamPapers: MockExamPaper[] = [
               'Grade 8-9':
                 'The student is right that the convict is frightening, but I would argue that Dickens makes the reader\'s fear uneasy, because the scene is told by an adult looking back on his childhood terror, and that voice mixes horror with pity and comedy. The fear is real. The convict is heard before he is seen, as "a terrible voice", and his first speech moves from command to a threat of death: "Keep still, you little devil, or I\'ll cut your throat!" That he "started up from among the graves" makes him seem to rise out of the dead the first paragraph has just listed. The three sentences that describe him ("A fearful man", "A man with no hat", "A man who had been soaked in water") have no main verb, as if the child can take in the man only as a heap of frightening details, and they end in the violence of "he seized me by the chin." The rapid dialogue that follows gives the convict every command ("Tell us your name!", "Quick!", "Give it mouth!") and Pip only a plea for his life and his name, so the power is entirely one-sided. Yet the same description is full of suffering. The long chain of passive verbs, "soaked in water, and smothered in mud, and lamed by stones, and cut by flints, and stung by nettles, and torn by briars", presents a man who has been hurt by everything around him, and the rhythm of "limped, and shivered, and glared, and growled" moves from pain to menace in four verbs, as though the one causes the other. His teeth "chattered in his head", which is cold, not cruelty. The ending confirms it: his search of Pip\'s pockets finds "nothing in them but a piece of bread", and he "ate the bread ravenously". The comic sentence that begins "When the church came to itself" shows the upside-down world from the child\'s point of view, and the narrator\'s humour lets the reader see the terror from a safe distance. So I agree that the section creates real fear, but it is fear of a hungry, hunted man, and Dickens makes us pity him in the same moment.',
             },
-            markScheme: [
-              'Evaluates critically with a clear personal response',
-              'Shows a sustained and nuanced argument',
-              'Selects and analyses appropriate textual evidence',
-              'Considers alternative interpretations',
-              "Demonstrates sophisticated understanding of writer's craft",
-              'Top band: evaluative, critical, conceptualised response',
-            ],
+            markScheme: {
+              'How it is marked (20 marks)': [
+                "Level 4 (16-20 marks): argues a confident, thoughtful case about the view, showing in depth how the writer's methods work on the reader, with sharply chosen evidence throughout.",
+                "Level 3 (11-15 marks): makes a sound, well-supported judgement, showing how the writer's ideas and methods shape the reader's response, with plenty of relevant evidence.",
+                "Level 2 (6-10 marks): starts to weigh up the view, with some comment on the writer's methods and how they affect the reader, backed by a few suitable references.",
+                'Level 1 (1-5 marks): gives a basic opinion on the view, with a little about what happens and a reference or two.',
+                'Agreeing, disagreeing and doing some of both can all score well: the marks are for the judgement and the evidence behind it. Use only this part of the source, from "Hold your noise!" to the end.',
+              ],
+              'Points you might make': [
+                'For the view: he is "a terrible voice" before he is seen, and his first words, an order, are followed at once by a threat of death: "Keep still, you little devil, or I\'ll cut your throat!"',
+                'For the view: he "started up from among the graves", the verbs "glared, and growled" make him seem like an animal, and he "seized me by the chin" and "turned me upside down".',
+                'For the view: the dialogue gives him every command ("Tell us your name!", "Quick!", "Give it mouth!") and Pip only pleas and his name.',
+                'Against it, or complicating it: the passive chain "soaked in water, and smothered in mud, and lamed by stones" shows a man who has suffered, whose teeth "chattered in his head" with cold.',
+                'Against it, or complicating it: he finds "nothing in them but a piece of bread" and eats it "ravenously", so his threats may come from hunger, and the comic picture of the church going "head over heels" lets the reader see the terror from a distance.',
+              ],
+            },
           },
         ],
       },
@@ -609,7 +696,7 @@ export const mockExamPapers: MockExamPaper[] = [
         id: 'aqa-p1-writing',
         title: 'Section B: Writing',
         description:
-          'You are advised to spend about 45 minutes on this section. Write in full sentences. You are reminded of the need to plan your answer. You should leave enough time to check your work at the end.',
+          'Spend about 45 minutes on this section: about 5 minutes planning, 35 writing and 5 checking your work. Write in full sentences.',
         totalMarks: 40,
         suggestedTimeMinutes: 45,
         questions: [
@@ -617,26 +704,39 @@ export const mockExamPapers: MockExamPaper[] = [
             id: 'aqa-p1-q5',
             questionNumber: 5,
             questionText:
-              'You are going to enter a creative writing competition.\n\nYour entry will be judged by a panel of published authors.\n\nEither:\nWrite a description suggested by this picture: [Imagine a photograph of an abandoned fairground at dusk, with rusting rides silhouetted against a darkening sky.]\n\nOr:\nWrite the opening part of a story about a place that holds a secret.\n\n(24 marks for content and organisation / 16 marks for technical accuracy)',
+              'Your local library is putting together a winter booklet of new writing by young people, to be given free to everyone who visits. The librarians want pieces that will hold the attention of readers of all ages.\n\nChoose ONE of these two tasks.\n\nEither:\nWrite a description of a lonely place at the end of a winter day. In the exam, a picture is printed here to give you ideas. It would show a wide, empty marsh at dusk, with a narrow path leading towards a small church on the skyline, under a low grey sky. You do not have to describe exactly what it shows.\n\nOr:\nWrite the opening of a story about an unexpected meeting.\n\nThis task is worth 40 marks: 24 for the content and organisation of your writing, and 16 for its accuracy (sentences, spelling and punctuation).',
             marks: 40,
             suggestedTimeMinutes: 45,
             questionType: 'creative-writing',
             modelAnswers: {
               'Grade 4-5':
-                'A clear and engaging piece of creative writing that: uses some descriptive techniques (simile, metaphor, sensory detail); has a clear structure with distinct paragraphs; includes varied vocabulary; attempts to create atmosphere; demonstrates generally accurate spelling and punctuation with some variety in sentence structure.',
+                "A clear piece that does what one of the two tasks asks. The description stays with a lonely place at the end of a winter day rather than telling a story, using some descriptive techniques (simile, metaphor, details of sight, sound and touch); the story opening introduces a character and a setting and starts the unexpected meeting. Distinct paragraphs, some varied vocabulary, an attempt at an atmosphere that would interest the booklet's readers, and mostly accurate spelling and punctuation with some variety of sentences.",
               'Grade 6-7':
-                'A compelling piece that: crafts a controlled atmosphere through sustained sensory detail; uses varied and ambitious vocabulary; demonstrates conscious structural choices (e.g., circular structure, shifts in pace); employs a range of sentence forms for effect; shows consistent accuracy in spelling, punctuation, and grammar with some sophisticated constructions (semicolons, colons, dashes).',
+                'A controlled piece written with its readers, visitors of all ages, in mind. The description builds one mood through sustained sensory detail and moves deliberately, for example from a wide view to close detail; the story opening makes the reader care about a character and stops at a point that makes them want to read on. Varied and ambitious vocabulary, conscious structural choices such as a change of pace or a returning image, a range of sentence forms used for effect, and consistent accuracy, with colons and semicolons used correctly.',
               'Grade 8-9':
-                'An assured, crafted piece that: creates a vivid, immersive experience through precise, original imagery; demonstrates sophisticated structural control with deliberate shifts in pace, perspective, or focus; uses an extensive vocabulary with precise word choices; employs varied sentence structures with complete control; shows technical virtuosity in punctuation (including semicolons, colons, parenthetical dashes, ellipses used for effect); creates a distinctive narrative voice.',
+                "The description.\n\nThe Marsh at Four O'Clock\n\nBy four o'clock the light has already begun to leave. It goes slowly, the way the tide goes, a little at a time, until you look up and find that the whole sky has turned the colour of pewter.\n\nThe marsh runs flat to every edge of the world. Reeds stand in their thousands, pale and stiff, and when the wind comes in from the sea they lean all together, like a crowd turning to watch something you cannot see. Between them the channels hold the last of the daylight. They lie still and silver, and every one of them is a mirror for the same grey cloud.\n\nThere is a path, if you can call it that: a strip of trodden mud no wider than a pair of boots, wandering towards the skyline as if it has forgotten where it meant to go. At the end of it, small and dark, sits the church. From here it looks no bigger than a thumb held out at arm's length. Its tower is square and plain, and no light shows in it.\n\nClose to, the marsh is full of small sounds. Water ticks and gulps somewhere under the reeds. A bird I cannot name gives one thin cry, then seems to think better of it. My own breath is loud, and it hangs in front of me for a moment before the wind takes it away.\n\nThe cold is the kind that finds the gap at your wrists and the back of your neck. It smells of salt and wet earth and, faintly, of woodsmoke from a chimney too far off to see. My fingers have stopped belonging to me.\n\nOut on the mudflats, a line of gulls stands facing the wind, each one exactly like the next, as patient as passengers waiting for a bus. Beyond them the sea is only a guess: a darker strip of grey where the land gives up.\n\nThen, as I watch, a single light comes on in the church. It is tiny and gold and very far away. But in all that grey it is the brightest thing I have ever seen, and for the first time since I stepped onto the path, the marsh does not feel quite so empty.",
             },
-            markScheme: [
-              'AO5 Content & Organisation (24 marks): Communication, tone, style, register',
-              'AO5: Organisation of ideas with structural/grammatical features',
-              'AO6 Technical Accuracy (16 marks): Sentence demarcation',
-              'AO6: Range of punctuation used accurately',
-              'AO6: Spelling including ambitious vocabulary',
-              'AO6: Variety of sentence forms for effect',
-            ],
+            markScheme: {
+              'AO5, content and organisation (24 marks)': [
+                'Level 4 (19-24 marks): grips the reader from start to finish; the voice is confident and original, the vocabulary ambitious and exact, and the structure planned for the greatest effect.',
+                'Level 3 (13-18 marks): keeps the reader interested throughout; the tone suits the task, vocabulary and techniques are chosen for effect, and well-linked paragraphs give the piece a clear shape.',
+                'Level 2 (7-12 marks): holds the reader in places; some words are chosen deliberately, there is some attempt at a suitable tone, and paragraphs and linking phrases are starting to organise the piece.',
+                'Level 1 (1-6 marks): gets a few simple ideas across, with plain vocabulary and little sense of shape.',
+                'Writing that does not do what the chosen task asks cannot score more than 12 of these 24 marks.',
+              ],
+              'AO6, technical accuracy (16 marks)': [
+                'Level 4 (13-16 marks): every sentence starts and ends in the right place, every kind of punctuation is used with skill, and even adventurous words are spelt correctly.',
+                'Level 3 (9-12 marks): sentences nearly always start and end in the right place, most punctuation is used well, most words are spelt correctly, hard ones included, and sentence types are varied on purpose.',
+                'Level 2 (5-8 marks): sentences usually start and end in the right place, several kinds of punctuation are tried, and some harder words are spelt correctly.',
+                'Level 1 (1-4 marks): a few sentences start and end in the right place, some punctuation is used on purpose, and simple words are spelt correctly.',
+              ],
+              'For these tasks': [
+                'The two grids are marked separately and added, out of 40. Answer one task only.',
+                'The description needs no story: what matters is the place, the time of day and the mood, built up through precise detail. The picture is there for ideas, so listing what it shows earns little.',
+                'The story task asks for an opening: set up the characters, the place and the meeting, and stop at a deliberate point. You do not need to finish the story.',
+                'Readers of all ages will pick up the booklet, so the writing should be clear and engaging for them.',
+              ],
+            },
           },
         ],
       },
@@ -659,7 +759,7 @@ export const mockExamPapers: MockExamPaper[] = [
       {
         id: 'aqa-p2-reading',
         title: 'Section A: Reading',
-        description: `Read Source A and Source B carefully. Then answer all the questions in this section.\n\nSource A: ${AQA_P2_SOURCE_A_REF}\nSource B: ${AQA_P2_SOURCE_B_REF}`,
+        description: `Read Source A and Source B carefully, then answer all four questions in this section. Spend about 15 minutes reading the sources and the questions, and about 45 minutes answering them.\n\nSource A is a modern opinion piece about people sleeping rough in Britain. Source B, published in 1861, describes the crowd outside a London night shelter for homeless people, and the thoughts of a comfortable visitor who watches them.\n\nWords you may need (Source B): livid means grey-blue, like a bruise; the Pharisee in the parable is a man in one of Jesus's stories who thanks God that he is not like other people; well-to-do means well off.\n\nSource A: ${AQA_P2_SOURCE_A_REF}\nSource B: ${AQA_P2_SOURCE_B_REF}`,
         totalMarks: 40,
         suggestedTimeMinutes: 60,
         questions: [
@@ -667,7 +767,7 @@ export const mockExamPapers: MockExamPaper[] = [
             id: 'aqa-p2-q1',
             questionNumber: 1,
             questionText:
-              'Read again Source A, the first paragraph.\n\nChoose four statements below which are TRUE.\n\nA) The writer has visited cities outside Britain.\nB) The writer counted fourteen homeless people in one area.\nC) The temperature was minus ten degrees.\nD) People were sleeping in doorways.\nE) The homeless people were near Westminster.\nF) Politicians were discussing housing policy.\nG) The writer walked a single mile.\nH) The sleeping people had tents.',
+              'Read the first paragraph of Source A again, from "I have walked" to "a hundred yards away."\n\nWhich four of the statements below are true, according to that paragraph? Choose four, and no more.\n\nA) The writer has visited cities outside Britain.\nB) The writer counted fourteen homeless people in one area.\nC) The temperature was minus ten degrees.\nD) People were sleeping in doorways.\nE) The homeless people were near Westminster.\nF) Politicians were discussing housing policy.\nG) The writer thinks Britain treats its homeless people better than the rest of Europe does.\nH) The sleeping people had tents.',
             marks: 4,
             suggestedTimeMinutes: 5,
             questionType: 'multiple-choice',
@@ -675,65 +775,88 @@ export const mockExamPapers: MockExamPaper[] = [
             extractSource: `Source A: ${AQA_P2_SOURCE_A_REF} | Source B: ${AQA_P2_SOURCE_B_REF}`,
             modelAnswers: {
               'Grade 4-5':
-                'A, B, D, E - A: the writer has "walked through the streets of every major city in Europe." B: "I counted fourteen people." D: "sleeping in doorways." E: "within a single mile of Westminster."',
+                'A, B, D and E. A: the writer has "walked through the streets of every major city in Europe". B: "I counted fourteen people sleeping in doorways". D: "sleeping in doorways". E: "within a single mile of Westminster". The others are false: it was "minus eight degrees" (C); the politicians were debating "the finer points of trade policy" (F); the writer says that "nowhere on this continent do we treat our homeless population with such calculated indifference as we do in Britain" (G); and the people are "curled under cardboard and sleeping bags", with no tents (H).',
             },
-            markScheme: ['1 mark for each correct answer', 'Maximum 4 marks'],
+            markScheme: [
+              'A, B, D and E are true: one mark for each, up to 4. The question asks for four statements, so choose no more than four.',
+              'Each comes from the first paragraph of Source A: the writer has "walked through the streets of every major city in Europe" (A); "I counted fourteen people sleeping in doorways" (B and D); "within a single mile of Westminster" (E).',
+              'C, F, G and H are false: "minus eight degrees"; "trade policy"; Britain treats its homeless "with such calculated indifference" as nowhere else in Europe; the sleepers are "curled under cardboard and sleeping bags".',
+            ],
           },
           {
             id: 'aqa-p2-q2',
             questionNumber: 2,
             questionText:
-              'You need to refer to Source A and Source B for this question.\n\nUse details from both sources. Write a summary of the differences and similarities in the conditions of the homeless people described in each source.',
+              'This question is about both sources.\n\nWhat can you infer about the differences between the people sleeping in doorways in Source A and the crowd waiting outside the shelter in Source B?\n\nBack up each inference with details from both sources.',
             marks: 8,
-            suggestedTimeMinutes: 10,
+            suggestedTimeMinutes: 8,
             questionType: 'summary',
             extract: `Source A:\n${AQA_P2_SOURCE_A}\n\nSource B:\n${AQA_P2_SOURCE_B}`,
             extractSource: `Source A: ${AQA_P2_SOURCE_A_REF} | Source B: ${AQA_P2_SOURCE_B_REF}`,
             modelAnswers: {
               'Grade 4-5':
-                'Both sources describe homeless people who are exposed to bitter cold. In Source A, people are sleeping in doorways in "minus eight degrees", with only "cardboard and sleeping bags" to cover them. In Source B, the poor "stand shivering in the snow" outside the Asylum. The people in Source B seem to have even less than those in Source A: many "are without shirts" and "A few are without shoes", and their clothes are "hanging in tatters". Both sources show that whole groups are suffering: Source A counts "fourteen people" in a single mile, and Source B describes a "squalid crowd" that includes babies, because we hear "the squealing of the beggar infants". A difference is that the people in Source B are waiting outside a shelter, "this refuge for the starving and the homeless", while the people in Source A are sleeping on the street.',
+                'The people in Source B seem even worse off than the people in Source A. In Source A, people are sleeping in doorways "curled under cardboard and sleeping bags", so they have at least something to keep out the cold. In Source B, the poor "stand shivering in the snow" in clothes "hanging in tatters", and "A few are without shoes", which suggests that they have almost nothing. Another difference is that Source B\'s crowd is waiting outside "this refuge for the starving and the homeless", so they may be taken in, while Source A\'s rough sleepers seem to have nowhere to go but a doorway. The people in Source A are spread out, "fourteen people" counted one doorway at a time, while Source B describes a "squalid crowd", and it includes children, because we hear "the squealing of the beggar infants". Source B\'s people also seem to be ill, with their "hoarse coughs", which Source A does not mention.',
               'Grade 6-7':
-                'Both writers describe people with no home who are exposed to extreme cold, but the conditions in Source B are more desperate in their physical detail. The writer of Source A reports people "curled under cardboard and sleeping bags" in "minus eight degrees", so they have at least some makeshift protection. Mayhew\'s crowd have almost none: they "stand shivering in the snow" in "thin, cobwebby garments hanging in tatters", many "are without shirts", and some have their clothes "tied round their wrists and ankles with string" against the wind. The bare feet whose flesh is "blue and livid-looking" show the cold doing visible harm. Both sources suggest that the poor include the vulnerable: Source A implies that anyone could be affected ("any one of us"), while Mayhew\'s crowd includes "beggar infants" and is full of "hoarse coughs", which suggests illness. There is a difference in shelter, though. Source A\'s rough sleepers lie in doorways "within a single mile of Westminster", close to power but ignored by it, while Mayhew\'s crowd is seen "from one of the upper windows of the institution", a refuge for the homeless. Both, however, show people seen as a group rather than as individuals: "fourteen human beings" in Source A, a "squalid crowd" in Source B.',
+                'The two sources suggest that the homeless are in very different situations. The writer of Source A finds people scattered through the city, "fourteen people sleeping in doorways within a single mile of Westminster". They are spread out from one doorway to the next, which suggests a homelessness that passers-by can easily walk past. Mayhew\'s homeless are gathered in a "squalid crowd" outside a shelter, and "the wrangling of the vagrant boys for the front ranks" suggests that there are more people than places, so they must compete to be let in.\n\nTheir physical state differs too. Source A\'s rough sleepers are "curled under cardboard and sleeping bags", which suggests that, though they suffer, they have some protection from the cold. Mayhew\'s crowd has almost none: their "thin, cobwebby garments" hang "in tatters", "Many are without shirts", and the bare flesh of those without shoes is "blue and livid-looking as half-cooked meat". The "hoarse coughs" that "seem to answer each other" suggest that illness has spread through the crowd. Children are among them as well: the "beggar infants" and "vagrant boys" suggest whole families with nowhere to live, while nothing in Source A says that its sleepers are children.\n\nFinally, the two groups seem to have reached the street by different roads. Source A\'s are ordinary people who were once like the reader: their homelessness began with events such as "The mortgage payment missed because of illness", so many of them must once have had homes of their own. Mayhew\'s crowd are seen as a class apart, "the starving and the homeless", watched "from one of the upper windows of the institution" by a visitor whose first instinct is to give thanks that "he is not as one of these". The difference suggests that Source A\'s homeless have fallen out of ordinary life, while the onlooker in Source B at first sees the crowd as a different kind of people altogether, until his "better nature" questions him.',
             },
-            markScheme: [
-              'Must reference both sources',
-              'Identifies clear differences and/or similarities',
-              'Uses evidence from both texts',
-              'Synthesises rather than alternates between texts',
-              'Infers beyond surface-level details',
-            ],
+            markScheme: {
+              'How it is marked (8 marks)': [
+                'Level 4 (7-8 marks): makes sharp, thoughtful inferences and weaves precise details from both sources together to bring out the differences.',
+                'Level 3 (5-6 marks): draws sound inferences from both sources and links well-chosen details from each to show the differences.',
+                'Level 2 (3-4 marks): makes some attempt to work out what details suggest, with some useful references and some differences noted.',
+                'Level 1 (1-2 marks): retells what the sources say rather than working anything out, with a simple difference and a detail or two.',
+                "An answer that uses one source only scores 3 marks at most, and Level 3 and above need both sources and the differences the question names. The marks are for what you infer, not for analysing the writers' language.",
+              ],
+              'Differences you might infer': [
+                'Shelter: Source A\'s people lie in doorways "curled under cardboard and sleeping bags", with makeshift cover and nowhere to go; Source B\'s crowd waits outside "this refuge for the starving and the homeless", hoping to be let in.',
+                'Their bodies: Source B\'s people have almost nothing, "thin, cobwebby garments hanging in tatters", some "without shoes", flesh "blue and livid-looking", and "hoarse coughs" that suggest illness; Source A\'s at least have "sleeping bags".',
+                'Who they are: Source B\'s crowd includes "beggar infants" and "vagrant boys", so children as well as adults; Source A\'s writer presents rough sleepers as ordinary people, each with "a name, a story", whose homelessness can begin with something like "The mortgage payment missed because of illness".',
+                'Together or apart: Source B\'s people stand in a "squalid crowd", where "the vagrant boys" wrangle "for the front ranks"; Source A\'s are counted one doorway at a time.',
+                'How they are seen: Source A\'s sleepers are ignored by representatives "less than a hundred yards away"; Source B\'s crowd is watched "from one of the upper windows of the institution", looked down on in more than one sense.',
+              ],
+            },
           },
           {
             id: 'aqa-p2-q3',
             questionNumber: 3,
             questionText:
-              'You now need to refer only to Source A.\n\nHow does the writer use language to persuade the reader that homelessness is a crisis that demands action?',
+              'This question is about Source A only, from the second paragraph, which begins "The statistics are damning.", to the end of the source.\n\nHow does the writer use language in these two paragraphs to persuade the reader that homelessness is a crisis that concerns everyone?\n\nYou might write about:\n- particular words and phrases\n- techniques such as lists and repetition\n- the way the sentences are built.',
             marks: 12,
-            suggestedTimeMinutes: 15,
+            suggestedTimeMinutes: 12,
             questionType: 'analysis',
             extract: `Source A:\n${AQA_P2_SOURCE_A}`,
             extractSource: AQA_P2_SOURCE_A_REF,
             modelAnswers: {
               'Grade 4-5':
-                'The writer uses statistics like "169%" to show how big the problem is and shock the reader. The phrase "over 700 people died" is emotive because it makes us think about real deaths. The inclusive pronoun in "any one of us" makes the reader feel personally connected. The listing of "the mortgage payment missed... the relationship that fractured... the mental health crisis" makes homelessness seem like it could happen to anyone. The word "comforting" in "comforting stories" is critical: the writer suggests our excuses exist to make us feel better, not because they are true.',
+                'The writer uses statistics like "169%" to show how big the problem is and to shock the reader. The phrase "Over 700 people died while homeless last year alone" is emotive because it makes us think about real deaths, and the word "alone" makes the number sound even worse. The writer reminds us that "Behind every number is a name, a story", so we think of people, not numbers. The short sentences "The mortgage payment missed because of illness. The relationship that fractured." show that homelessness can start with ordinary problems, and the inclusive pronoun in "any one of us" makes the reader feel that it could happen to them. In the last paragraph the writer repeats "we": "we walk past. We avert our eyes." This makes the reader feel guilty, because we are all part of the problem. The word "comforting" in "comforting stories" suggests that our excuses exist to make us feel better, not because they are true.',
               'Grade 6-7':
-                'The writer deploys a carefully escalating rhetorical strategy, moving from statistical evidence to emotional appeal to moral accusation. The opening establishes authority through personal testimony - "I have walked through the streets of every major city in Europe" - before delivering the devastating juxtaposition of "fourteen human beings curled under cardboard" against "elected representatives" debating "the finer points of trade policy." The spatial proximity ("less than a hundred yards away") makes the moral distance obscene. The statistics function not merely as evidence but as indictment: "169%" and "700 people died" are positioned as unanswerable facts. However, the most sophisticated persuasive technique is the tricolon of ordinary misfortune - "The mortgage payment missed... The relationship that fractured... The mental health crisis" - which uses sentence fragments and the definite article ("The") to make each scenario feel specific, inevitable, and universal simultaneously. The final paragraph is built on the first person plural: "we walk past. We avert our eyes. We tell ourselves comforting stories." The anaphoric "we" is simultaneously accusatory and inclusive; the reader cannot escape complicity.',
+                'The writer moves from evidence to emotion to accusation, so that by the end the reader cannot stand apart from the problem. The second paragraph opens with a blunt short sentence, "The statistics are damning.", in which "damning" makes the figures sound like a verdict in court. The numbers that follow, "169%" and "Over 700 people died while homeless last year alone", are presented as facts that cannot be argued with, and the final "alone" stresses how many deaths a single year holds. The writer then turns the numbers back into people: "Behind every number is a name, a story". The most effective technique is the list of sentence fragments, "The mortgage payment missed because of illness. The relationship that fractured. The mental health crisis that went unsupported." Each names an ordinary misfortune in a few words, and the definite article "The" makes each one sound familiar, as if the reader already knows such a story. The inclusive "any one of us" turns this into a warning to the reader, and "profoundly, terrifyingly ordinary" completes the point: the very ordinariness of these events is what should frighten us. The final paragraph is built on the first person plural: "we walk past. We avert our eyes. We tell ourselves comforting stories". The repeated "we" both accuses and includes, so the reader has no way to escape the blame.',
               'Grade 8-9':
-                'The writer orchestrates a rhetorical progression from logos to pathos to ethos that systematically dismantles the reader\'s defences against engagement. The opening paragraph performs a spatial argument: the journey from "every major city in Europe" narrows to "a single mile of Westminster," a structural compression that mirrors the closing distance between affluence and destitution. The juxtaposition of "fourteen human beings curled under cardboard" with representatives debating "the finer points of trade policy" deploys the bathetic gap between human suffering and bureaucratic abstraction - "finer points" is particularly devastating, its connotation of refinement grotesquely inappropriate alongside "minus eight degrees." The second paragraph\'s statistical barrage - "169%," "700 people died" - is strategically placed after the personal testimony, ensuring the numbers attach to the already-visualised scene rather than remaining abstract. But the paragraph\'s most powerful technique is the syntactic shift to sentence fragments: "The mortgage payment missed because of illness. The relationship that fractured." These are not sentences but snapshots of catastrophe, their incompleteness mirroring lives interrupted. The adjective "ordinary" in "profoundly, terrifyingly ordinary" is the paragraph\'s key word - the paired adverbs, both intensifiers, transform the commonplace into something that should alarm us. The final paragraph enacts the moral confrontation the text has been building towards: the repeated "we" collapses the observer/observed distinction, while "comforting stories" uses the adjective with bitter irony, exposing self-deception as a deliberate strategy of moral evasion.',
+                'The writer builds a progression from evidence to identification to accusation that leaves the reader nowhere to stand apart. The second paragraph opens with the curt declarative "The statistics are damning.", and "damning" borrows the language of judgement, so the figures read as a verdict on the country. The numbers follow at once: "169%", then "Over 700 people died while homeless last year alone", where the final "alone" makes a single year seem to hold an intolerable weight of deaths. But the writer will not let the statistics stay abstract. "Behind every number is a name, a story, a sequence of events" is a tricolon that grows from a single word to a whole chain of causes, and it prepares for the paragraph\'s most powerful device, a run of sentence fragments: "The mortgage payment missed because of illness. The relationship that fractured. The mental health crisis that went unsupported." With no main verbs, these read as snapshots of lives interrupted, and the definite article makes each misfortune sound familiar, something the reader has heard of before. The clause "with only the slightest alteration, have happened to any one of us" closes the distance between reader and rough sleeper, and the paragraph ends on the juxtaposition "profoundly, terrifyingly ordinary", where two intensifying adverbs make the commonplace alarming. The final paragraph turns from "us" as possible victims to "we" as bystanders. "And yet" marks the turn, and the anaphora of "we walk past. We avert our eyes. We tell ourselves comforting stories" sounds like a confession: the first two actions are clipped into short sentences, and the third stretches into the long last sentence of the piece. There "comforting" is the key word, since the excuses about "choice and personal responsibility" are chosen because they comfort, not because they are true; and when the sentence finally admits that the alternative "is too uncomfortable to contemplate", it sets "comforting" against "uncomfortable", so that the reader is left with the discomfort the writer has refused to spare them.',
             },
-            markScheme: [
-              'Analyses persuasive language techniques in detail',
-              'Comments on the effect of specific words and phrases',
-              'Considers how language positions the reader',
-              'Uses subject terminology accurately and precisely',
-              'Top band: perceptive, detailed, conceptualised analysis',
-            ],
+            markScheme: {
+              'How it is marked (12 marks)': [
+                "Level 4 (10-12 marks): looks beneath the surface, analysing how the writer's choices work together, with sharply chosen quotations and confident, precise subject terms.",
+                'Level 3 (7-9 marks): for each quotation, says plainly what effect the words have on the reader and why, using several well-chosen quotations and correct terms.',
+                'Level 2 (4-6 marks): tries to say what some of the language does, with a few suitable quotations and some terms.',
+                'Level 1 (1-3 marks): says something basic about a word or two, or names a technique without saying what it does.',
+                'Write about these two paragraphs of Source A only. An answer that uses Source B, or the first paragraph, goes to the bottom of the level it would otherwise reach, and Level 3 and above need the focus of the question.',
+              ],
+              'Points you might make': [
+                '"The statistics are damning." is short and blunt, and "damning" makes the figures sound like a verdict of guilt.',
+                'The figures, "169%" and "Over 700 people died while homeless last year alone", give the claim weight, and "alone" makes the number seem even worse.',
+                '"Behind every number is a name, a story" turns statistics back into people.',
+                'The fragments "The mortgage payment missed because of illness. The relationship that fractured. The mental health crisis that went unsupported." each name an ordinary misfortune in a few words, and "any one of us" includes the reader.',
+                'The two adverbs in "profoundly, terrifyingly ordinary" make the commonplace alarming.',
+                'The repeated "we" in "we walk past. We avert our eyes. We tell ourselves comforting stories" makes the reader share the blame, and "comforting" suggests that our excuses exist to make us feel better.',
+              ],
+            },
           },
           {
             id: 'aqa-p2-q4',
             questionNumber: 4,
             questionText:
-              'For this question, you need to refer to the whole of Source A, together with the whole of Source B.\n\nCompare how the two writers convey their different attitudes to poverty and social responsibility.\n\nIn your answer, you could:\n- compare their different attitudes\n- compare the methods they use to convey their attitudes\n- support your response with references to both texts.',
+              "This question is about both sources, from beginning to end.\n\nCompare the writers' feelings and perspectives about homeless people, and about how the more fortunate respond to them. Compare too the methods each writer uses to get those views across.\n\nYou might:\n- compare what each writer feels and believes, and why\n- compare their methods, such as the details they choose, their tone and the way each piece is built\n- back up each point with references to both sources.",
             marks: 16,
             suggestedTimeMinutes: 20,
             questionType: 'comparison',
@@ -745,13 +868,21 @@ export const mockExamPapers: MockExamPaper[] = [
               'Grade 6-7':
                 'Both writers see poverty as a test for the comfortable, and both reject the idea that the poor are simply to blame, but they convey this in different ways. The writer of Source A is openly accusatory. The contrast between "fourteen human beings curled under cardboard" and politicians debating "the finer points of trade policy" attacks those in power, and the repeated "we" in "we walk past. We avert our eyes." makes the reader share the guilt. The writer dismisses "comforting stories about choice and personal responsibility" as self-deception. Mayhew reaches a similar conclusion through observation and then reflection. He first describes the crowd in physical detail, their "thin, cobwebby garments hanging in tatters", and then turns on the onlooker\'s pride. He imagines the "self-congratulations" of a comfortable man who, "like the Pharisee in the parable", is glad that "he is not as one of these". Then "the better nature whispers" a question: "How comes it that you are well clothed and well fed, whilst so many go naked and hungry?" His rhetorical questions dismantle the idea of the self-made man, the "architect of your own fortune", by asking "who, let us ask, gave you the genius or energy for the work?" This is the same target as Source A\'s "personal responsibility". The methods differ. The modern writer relies on statistics ("169%") and the collective "we", and grounds the argument in shame at a public failure; Mayhew relies on close description, on the second person "you", and on religion, making pride itself the sin. Both conclude that the fortunate owe the poor more than judgement.',
             },
-            markScheme: [
-              'Compares attitudes from both sources throughout',
-              'Analyses methods used by both writers',
-              'Uses evidence from both texts',
-              'Shows clear understanding of different perspectives',
-              'Top band: perceptive, detailed comparison with sustained critical voice',
-            ],
+            markScheme: {
+              'How it is marked (16 marks)': [
+                "Level 4 (13-16 marks): a thoughtful, sustained comparison, analysing how each writer's methods shape their perspective, with well-chosen detail from both sources.",
+                'Level 3 (9-12 marks): compares the perspectives directly and well, explaining how each writer conveys them, with relevant detail from both sources.',
+                "Level 2 (5-8 marks): tries to compare the writers' perspectives, with some comment on their methods and some useful detail.",
+                "Level 1 (1-4 marks): makes a basic link between the writers' views and spots a method or two, with simple references.",
+                'An answer that uses one source only scores 6 marks at most, and Level 3 and above need both. Compare how the writers say things, not only what they say.',
+              ],
+              'Points you might make': [
+                'Both reject the idea that the poor are simply to blame: Source A dismisses "comforting stories about choice and personal responsibility", and Mayhew mocks the boast of being the "architect of your own fortune".',
+                'Source A is openly angry with those in power, setting "fourteen human beings curled under cardboard" against "the finer points of trade policy"; Mayhew turns on the private pride of the "well-to-do visitor".',
+                'Source A shares the guilt among all its readers with "we walk past. We avert our eyes."; Mayhew speaks to "you" and asks, "By what special virtue of your own are you different from them?"',
+                'Methods: Source A uses statistics ("169%"), the collective "we" and short fragments; Mayhew uses close physical description ("thin, cobwebby garments hanging in tatters"), a religious comparison ("like the Pharisee in the parable") and rhetorical questions.',
+              ],
+            },
           },
         ],
       },
@@ -759,7 +890,7 @@ export const mockExamPapers: MockExamPaper[] = [
         id: 'aqa-p2-writing',
         title: 'Section B: Writing',
         description:
-          'You are advised to spend about 45 minutes on this section. Write in full sentences. You are reminded of the need to plan your answer.',
+          'Spend about 45 minutes on this section: about 5 minutes planning, 35 writing and 5 checking your work. Write in full sentences.',
         totalMarks: 40,
         suggestedTimeMinutes: 45,
         questions: [
@@ -767,26 +898,39 @@ export const mockExamPapers: MockExamPaper[] = [
             id: 'aqa-p2-q5',
             questionNumber: 5,
             questionText:
-              '"Young people today have a responsibility to make the world a better place - and they are rising to the challenge."\n\nWrite an article for a broadsheet newspaper in which you argue your point of view on this statement.\n\n(24 marks for content and organisation / 16 marks for technical accuracy)',
+              '"Helping homeless people is the government\'s job. Ordinary people cannot be expected to solve the problem, so they should not feel guilty about it."\n\nWrite an article for your local newspaper, setting out your own view on this statement.\n\nThis task is worth 40 marks: 24 for the content and organisation of your writing, and 16 for its accuracy (sentences, spelling and punctuation).',
             marks: 40,
             suggestedTimeMinutes: 45,
             questionType: 'transactional-writing',
             modelAnswers: {
               'Grade 4-5':
-                'A clear argumentative piece that: addresses the statement directly; uses some persuasive devices (rhetorical questions, direct address); has a clear structure with introduction, body paragraphs, and conclusion; demonstrates generally accurate spelling and punctuation.',
+                'A clear article that answers the statement directly and keeps to one view. It uses some persuasive devices, such as a rhetorical question, direct address or an example, has an opening, paragraphs and an ending, and is mostly accurate in spelling and punctuation.',
               'Grade 6-7':
-                'A well-crafted argument that: engages with the statement critically (not just agree/disagree); uses a range of rhetorical techniques fluently; deploys evidence and examples effectively; matches the register of a broadsheet article; demonstrates consistent technical accuracy with ambitious vocabulary.',
+                'A well-organised article that deals with both parts of the statement, perhaps agreeing with one and not the other. Its tone suits the adult readers of a local paper, it uses local examples and answers an opposing view, and it is consistently accurate, with ambitious vocabulary and varied sentences.',
               'Grade 8-9':
-                'A compelling, assured argument that: offers a nuanced, sophisticated perspective; crafts a distinctive voice appropriate to the form; deploys rhetorical strategies with precision and control; uses counter-argument to strengthen the position; demonstrates extensive vocabulary and varied syntax; shows technical virtuosity throughout.',
+                "An article for a local newspaper.\n\nWalking past is a choice. So is stopping.\n\nThere is a man who sits outside the bakery on Market Street most mornings. You have probably seen him. He has a blue sleeping bag, a paper cup and a dog called Biscuit, who is better fed than he is. Most of us walk past him on the way to work or school. I have done it myself. And if you have ever done the same, I suspect a small voice has asked you, as it has asked me, whether that is really good enough.\n\nThe statement says that helping homeless people is the government's job, and that the rest of us should not feel guilty. Half of that is true. Only the government can build the homes we need, fund the hostels and pay for the support that would stop many people from losing their homes in the first place. No amount of spare change will do that. If you believe, as I do, that homelessness is a national failure, then write to your MP, and vote for people who promise to fix it.\n\nBut the second half of the statement does not follow from the first. The fact that we cannot solve a problem on our own does not mean that we can do nothing about it. Nobody expects you to end homelessness on your way to the bus stop. You can, however, give an hour a month to the food bank, hand in a warm coat when the nights draw in, or buy a magazine from a seller who is working their way off the streets. Many of our local charities depend on volunteers. Without ordinary people, they would close their doors.\n\nSome will say that guilt is pointless, and they have a point. Guilt that makes us look away helps no one. But guilt that makes us act is simply a conscience doing its job. The aim is not to feel bad. It is to stop feeling helpless.\n\nThere is also something we can all give that costs nothing at all. Imagine spending a whole day without one person meeting your eye. A nod, a hello or a few minutes of conversation tells someone that they still belong to the same town as the rest of us.\n\nSo yes, the government must do far more, and we should keep telling it so. But the next time you pass the bakery on Market Street, you might stop. Say hello to Biscuit. Ask the man his name. It will not end homelessness. It might, however, make the morning a little better for both of you.",
             },
-            markScheme: [
-              'AO5 (24 marks): Clear, effective communication matched to form, purpose, audience',
-              'AO5: Structured argument with coherent paragraphing',
-              'AO6 (16 marks): Accurate sentence demarcation',
-              'AO6: Range of punctuation used effectively',
-              'AO6: Accurate spelling of ambitious vocabulary',
-              'AO6: Varied sentence forms for purpose and effect',
-            ],
+            markScheme: {
+              'AO5, content and organisation (24 marks)': [
+                'Level 4 (19-24 marks): argues with real force and confidence, pitched exactly for the audience; ambitious, exact vocabulary and a carefully planned structure carry the reader through a developed argument.',
+                'Level 3 (13-18 marks): argues clearly throughout, in a tone that suits the form and audience; vocabulary and persuasive methods are chosen for effect, and well-linked paragraphs build the case.',
+                'Level 2 (7-12 marks): puts a view across in places, with some attempt at a suitable tone and form, some deliberate word choices, and paragraphs and linking phrases that begin to organise the argument.',
+                'Level 1 (1-6 marks): states a view simply, with little sense of the audience; ideas are few and loosely joined.',
+                'Writing that does not respond to the statement in the way the task asks cannot score more than 12 of these 24 marks.',
+              ],
+              'AO6, technical accuracy (16 marks)': [
+                'Level 4 (13-16 marks): every sentence starts and ends in the right place, every kind of punctuation is used with skill, and even adventurous words are spelt correctly.',
+                'Level 3 (9-12 marks): sentences nearly always start and end in the right place, most punctuation is used well, most words are spelt correctly, hard ones included, and sentence types are varied on purpose.',
+                'Level 2 (5-8 marks): sentences usually start and end in the right place, several kinds of punctuation are tried, and some harder words are spelt correctly.',
+                'Level 1 (1-4 marks): a few sentences start and end in the right place, some punctuation is used on purpose, and simple words are spelt correctly.',
+              ],
+              'For this task': [
+                'The two grids are marked separately and added, out of 40.',
+                'An article for a local newspaper needs a headline, an opening that draws the reader in, and a tone that is lively but suits the adult readers of the paper.',
+                "The statement makes two claims: that helping homeless people is the government's job, and that ordinary people should not feel guilty. A strong answer may agree with one and not the other.",
+                'Persuasive methods chosen for a purpose, such as a local example, direct address and an opposing view answered, earn more than a pile of rhetorical questions.',
+              ],
+            },
           },
         ],
       },

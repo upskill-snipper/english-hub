@@ -906,8 +906,12 @@ function ExamInProgress() {
                   </div>
                   <Textarea
                     placeholder={
+                      // AQA's Paper 1 Question 1 is four parts, one letter
+                      // each, from summer 2026; Paper 2's is four of eight.
                       question.questionType === 'multiple-choice'
-                        ? 'Type your selected answers (e.g., A, C, F, H)...'
+                        ? question.label === '1.1 to 1.4'
+                          ? 'Type the letter you choose for each part, 1.1 to 1.4...'
+                          : 'Type your selected answers (e.g., A, C, F, H)...'
                         : question.questionType === 'short-answer'
                           ? 'Write your answer here...'
                           : 'Write your response here...'

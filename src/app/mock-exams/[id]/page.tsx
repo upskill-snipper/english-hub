@@ -148,6 +148,23 @@ const AQA_LIT_P2_BOUNDARIES: GradeBoundary[] = [
 
 const EXAM_PAPERS: Record<string, ExamPaperData> = {
   'aqa-lang-p1': {
+    // AQA's 2026 questions, set here on 31 October 2026 as
+    // src/data/mark-scheme-guides/aqa-lang-paper1.ts describes them (the note
+    // above the AQA papers in src/data/mock-exams/base.ts gives the detail).
+    // Question 1 was "List four things", the form AQA dropped in 2026; it is
+    // now four parts, 1.1 to 1.4, each with one right answer of three. It
+    // stays a written answer: this page's own multiple-choice control picks
+    // four options from one list, so it cannot set parts, and its letters
+    // would not be the parts' A, B and C. Question 3 names one effect,
+    // Question 4 asks how far you agree or disagree, Question 5's picture is
+    // for ideas only, and the prompts and mark schemes are in this site's own
+    // words rather than AQA's rubric. The questions had sent the student to
+    // "lines 1 to 5" of a source this page prints as one paragraph; they now
+    // quote where each part begins and ends.
+    // Checked by a second reader, 31 October 2026: Question 1's parts each have
+    // one right answer (B, A, C, B). One fix: Question 2's scheme called the
+    // "thin golden line" the only warmth in the room, which the radiator's
+    // "little warmth" contradicts; it is now the one touch of colour.
     id: 'aqa-lang-p1',
     paperName: 'English Language Paper 1',
     paperType: 'language',
@@ -162,22 +179,18 @@ const EXAM_PAPERS: Record<string, ExamPaperData> = {
     questions: [
       {
         number: 1,
-        label: 'List four things',
+        label: 'Multiple choice, 1.1 to 1.4',
         marks: 4,
         type: 'Retrieval',
         prompt:
-          'Read again the first part of the source, from lines 1 to 5.\n\nList four things about the setting from this part of the source.',
+          'Read the first three sentences of the source again, from "The morning light crept" to "web of fine cracks."\n\nAnswer the four parts below about these sentences only. For each part, choose one answer: A, B or C. Write your answers as the part number and your letter.\n\n1.1 How does the light come into the room?\nA) Through an open door\nB) Through a small opening in the curtains\nC) Through a crack in the ceiling\n\n1.2 What time of day is it?\nA) Early in the day\nB) Late in the evening\nC) The middle of the night\n\n1.3 What fills the room?\nA) New furniture\nB) Towers of books\nC) Piles of papers and boxes\n\n1.4 What can be seen in the mirror?\nA) The dusty floorboards\nB) A drooping ceiling covered in thin cracks\nC) The curtains and the window',
         sourceText: `The morning light crept through the narrow gap in the curtains, casting a thin golden line across the dusty floorboards. The room was small and cluttered, filled with towers of old newspapers and cardboard boxes that hadn't been opened in years. A cracked mirror hung at an angle on the far wall, reflecting the sagging ceiling with its web of fine cracks. The air was thick with the smell of damp wool and stale tea. In the corner, a radiator ticked and groaned as it struggled to life, offering little warmth against the February chill that had settled into every surface.`,
         markScheme: [
-          'The morning light was golden / came through the curtains',
-          'The room was small and cluttered',
-          'There were towers of old newspapers and cardboard boxes',
-          "The boxes hadn't been opened in years",
-          'A cracked mirror hung on the wall',
-          'The ceiling was sagging with cracks',
-          'The air smelled of damp wool and stale tea',
-          'The radiator struggled to work / offered little warmth',
-          'It was February / cold / the chill had settled',
+          '1.1 B: the light "crept through the narrow gap in the curtains". C borrows the cracks, which are in the ceiling, not where the light comes in.',
+          '1.2 A: it is "The morning light", so it is early in the day.',
+          '1.3 C: the room is "filled with towers of old newspapers and cardboard boxes". B borrows the word "towers", but there are no books.',
+          '1.4 B: the mirror is "reflecting the sagging ceiling with its web of fine cracks". The floorboards in A are in the room, but not in the mirror.',
+          'One mark for each part answered correctly, 4 in all. Give one letter for each part: the question asks for one answer to each.',
         ],
       },
       {
@@ -186,13 +199,14 @@ const EXAM_PAPERS: Record<string, ExamPaperData> = {
         marks: 8,
         type: 'Language Analysis',
         prompt:
-          "Look in detail at the source from lines 1 to 5.\n\nHow does the writer use language to describe the setting?\n\nYou could include the writer's choice of:\n- words and phrases\n- language features and techniques\n- sentence forms.",
+          'Read the whole source again, from "The morning light crept" to "settled into every surface."\n\nExplain how the writer uses language to describe the room.\n\nYou might write about:\n- particular words and phrases\n- techniques such as imagery\n- the way the sentences are built.',
         sourceText: `The morning light crept through the narrow gap in the curtains, casting a thin golden line across the dusty floorboards. The room was small and cluttered, filled with towers of old newspapers and cardboard boxes that hadn't been opened in years. A cracked mirror hung at an angle on the far wall, reflecting the sagging ceiling with its web of fine cracks. The air was thick with the smell of damp wool and stale tea. In the corner, a radiator ticked and groaned as it struggled to life, offering little warmth against the February chill that had settled into every surface.`,
         markScheme: [
-          'Level 4 (7-8 marks): Detailed, perceptive analysis of language with sophisticated use of subject terminology',
-          'Level 3 (5-6 marks): Clear, relevant explanation of effects of language with appropriate terminology',
-          'Level 2 (3-4 marks): Some understanding of language with some terminology',
-          'Level 1 (1-2 marks): Simple awareness of language',
+          "Level 4 (7-8 marks): analyses how the writer's choices work and what they suggest, with sharply chosen quotations and precise use of subject terms.",
+          'Level 3 (5-6 marks): explains clearly what effect the words have on the reader and why, with a range of well-chosen quotations and techniques named correctly.',
+          'Level 2 (3-4 marks): tries to say what some of the language does, with a few suitable quotations and some subject terms.',
+          'Level 1 (1-2 marks): says something simple about a word or two, or names a technique without saying what it does.',
+          'Points you might make: the light "crept", as if reluctant to come in, and the "thin golden line" is the one touch of colour in the room; "towers of old newspapers" exaggerates the clutter; the "cracked mirror" and the "sagging ceiling with its web of fine cracks" suggest decay; "damp wool and stale tea" appeals to the sense of smell; the radiator "ticked and groaned as it struggled to life", like something old and tired.',
         ],
         modelAnswer:
           'The writer uses personification when describing the light as it "crept" through the curtains, suggesting something secretive or hesitant, as though the morning itself is reluctant to enter this neglected space. The metaphor of "towers" of newspapers creates an image of instability and accumulation, implying the occupant has been overwhelmed by the passage of time. The verb "groaned" applied to the radiator gives it a sense of exhaustion, mirroring the decay of the room itself.',
@@ -203,12 +217,14 @@ const EXAM_PAPERS: Record<string, ExamPaperData> = {
         marks: 8,
         type: 'Structure',
         prompt:
-          'You now need to think about the whole of the source.\n\nThis text is from the opening of a short story.\n\nHow has the writer structured the text to interest you as a reader?\n\nYou could write about:\n- what the writer focuses your attention on at the beginning\n- how and why the writer changes this focus as the source develops\n- any other structural features that interest you.',
+          'This question is about the whole source, which is the opening of a short story. The source is printed with Questions 1 and 2.\n\nHow does the writer structure the source to create a sense of neglect?\n\nStructure means the order and shape of the text. You might write about:\n- what the writer shows you first\n- how the focus moves around the room, and why\n- how the source ends.',
         markScheme: [
-          'Level 4 (7-8 marks): Detailed, perceptive analysis of structural features with sophisticated use of terminology',
-          'Level 3 (5-6 marks): Clear understanding of structural features with appropriate examples',
-          'Level 2 (3-4 marks): Some understanding of structural features',
-          'Level 1 (1-2 marks): Simple awareness of structure',
+          'Level 4 (7-8 marks): analyses how the shape of the whole source builds the sense of neglect, with sharply chosen examples and confident, precise structural terms.',
+          "Level 3 (5-6 marks): explains clearly how several of the writer's structural choices create the sense of neglect, with suitable examples and correct terms.",
+          'Level 2 (3-4 marks): tries to say what some structural features do, such as a change of focus, with a few examples.',
+          'Level 1 (1-2 marks): notices one or two things about the order of the source, often by retelling it.',
+          'Every point should link back to the sense of neglect, and the answer should cover the source from its opening to its end.',
+          'Points you might make: the opening follows a "thin golden line" of light across "dusty floorboards", so the first thing the light shows is dust; the focus then moves through the clutter to the far wall and up to the "sagging ceiling", as if the eye is searching the room; a shift from sight to smell ("damp wool and stale tea") brings the neglect closer; the ending moves to a corner and a radiator that "struggled to life", and the final words, "settled into every surface", spread the chill through the whole room, so the morning light of the first sentence gives way to cold.',
         ],
       },
       {
@@ -217,12 +233,13 @@ const EXAM_PAPERS: Record<string, ExamPaperData> = {
         marks: 20,
         type: 'Evaluation',
         prompt:
-          'Focus this part of your answer on the second half of the source.\n\nA student, having read this section of the text, said: "The writer makes the reader feel sympathy for the character. It is as though they have been forgotten by the world."\n\nTo what extent do you agree?\n\nIn your response, you could:\n- write about your own impressions of the character\n- evaluate how the writer has created these impressions\n- support your opinions with references to the text.',
+          'Read the second half of the source again, from "A cracked mirror" to "settled into every surface." The source is printed with Questions 1 and 2.\n\nA student said: "In this part of the source, the writer makes you feel sorry for whoever lives in this room. It is as though they have been forgotten by the world."\n\nHow far do you agree or disagree with this view? You may agree, disagree, or do some of each.\n\nWrite about how the room, and whoever lives there, come across to you, and the methods the writer uses to create that impression, with evidence from the text for each point you make.',
         markScheme: [
-          "Level 4 (16-20 marks): Convincing, critical evaluation with textual detail. Perceptive understanding of writer's methods.",
-          'Level 3 (11-15 marks): Clear, relevant evaluation with appropriate textual references.',
-          'Level 2 (6-10 marks): Some evaluative comment with some textual reference.',
-          'Level 1 (1-5 marks): Simple, limited comment on the text.',
+          "Level 4 (16-20 marks): argues a confident, thoughtful case about the view, showing in depth how the writer's methods work on the reader, with sharply chosen evidence throughout.",
+          "Level 3 (11-15 marks): makes a sound, well-supported judgement, showing how the writer's methods shape the reader's response, with plenty of relevant evidence.",
+          "Level 2 (6-10 marks): starts to weigh up the view, with some comment on the writer's methods and how they affect the reader, backed by a few suitable references.",
+          'Level 1 (1-5 marks): gives a basic opinion on the view, with a little about the source and a reference or two.',
+          'Agreeing, disagreeing and doing some of both can all score well. For the view: the "cracked mirror" still hangs "at an angle", as if nobody has straightened it; the smell of "damp wool and stale tea" suggests a room no one airs; the radiator offers "little warmth". Against it, or complicating it: we never meet the person, so any sympathy is for someone the reader must imagine, and the tea and a radiator that "struggled to life" suggest that someone is still there and still trying.',
         ],
       },
       {
@@ -231,25 +248,51 @@ const EXAM_PAPERS: Record<string, ExamPaperData> = {
         marks: 40,
         type: 'Creative Writing',
         prompt:
-          'You are going to enter a creative writing competition.\n\nYour entry will be judged by a panel of people.\n\nWrite a description suggested by this picture: [A photograph of an abandoned building overgrown with plants]\n\nOR\n\nWrite the opening part of a story about a place that has been forgotten.\n\n(24 marks for content and organisation, 16 marks for technical accuracy)',
+          'A local history group is collecting writing by young people about places that time has left behind, for a booklet it will give to visitors at its open day.\n\nChoose ONE of these two tasks.\n\nEither:\nWrite a description of a place that has stood empty for many years. In the exam, a picture is printed here to give you ideas. It would show an old, empty building with plants growing over its walls and in through its broken windows. You do not have to describe exactly what it shows.\n\nOr:\nWrite the opening of a story about a place that everyone has forgotten.\n\nThis task is worth 40 marks: 24 for the content and organisation of your writing, and 16 for its accuracy (sentences, spelling and punctuation).',
         markScheme: [
-          'Content and Organisation (24 marks):',
-          'Level 4 (19-24): Compelling, convincing communication. Extensive, ambitious vocabulary. Sustained crafting of linguistic devices.',
-          'Level 3 (13-18): Clear, connected writing with conscious crafting. Increasingly sophisticated vocabulary and phrasing.',
-          'Level 2 (7-12): Connected writing with some success in engaging the reader.',
-          'Level 1 (1-6): Simple communication of ideas.',
+          'Content and organisation (24 marks):',
+          'Level 4 (19-24): grips the reader from start to finish, with a confident, original voice, ambitious and exact vocabulary, and a structure planned for the greatest effect.',
+          'Level 3 (13-18): keeps the reader interested throughout, with a tone that suits the task, vocabulary and techniques chosen for effect, and well-linked paragraphs.',
+          'Level 2 (7-12): holds the reader in places, with some words chosen deliberately and paragraphs that begin to organise the piece.',
+          'Level 1 (1-6): gets a few simple ideas across, with plain vocabulary and little sense of shape.',
+          'Writing that does not do what the chosen task asks cannot score more than 12 of these 24 marks. The picture is there for ideas, so listing what it shows earns little, and the story task asks only for an opening.',
           '',
-          'Technical Accuracy (16 marks):',
-          'Level 4 (13-16): Consistent accuracy. Wide range of sentence forms for effect.',
-          'Level 3 (9-12): Mostly accurate. Uses a variety of sentence forms.',
-          'Level 2 (5-8): Some accuracy in spelling, punctuation, and grammar.',
-          'Level 1 (1-4): Limited accuracy.',
+          'Technical accuracy (16 marks):',
+          'Level 4 (13-16): every sentence starts and ends in the right place, every kind of punctuation is used with skill, and even adventurous words are spelt correctly.',
+          'Level 3 (9-12): sentences nearly always start and end in the right place, most punctuation is used well, and sentence types are varied on purpose.',
+          'Level 2 (5-8): sentences usually start and end in the right place, several kinds of punctuation are tried, and some harder words are spelt correctly.',
+          'Level 1 (1-4): a few sentences start and end in the right place, and simple words are spelt correctly.',
         ],
       },
     ],
   },
 
   'aqa-lang-p2': {
+    // AQA's 2026 questions, set here on 31 October 2026 as
+    // src/data/mark-scheme-guides/aqa-lang-paper2.ts describes them. Question 2
+    // asked for "a summary of the differences"; it now asks what you can infer
+    // about the differences between the two schools. Two of Question 1's four
+    // keyed statements were not in Source A: the head teacher had been "a
+    // fixture of the village" for fifteen years, which does not say she had
+    // worked at the school that long, and the children were "all sharing"
+    // desks, never two to a desk. D and G now say what the source says, H no
+    // longer adds "immediately" to a warm greeting, and F, a garden, is now
+    // the fields the windows do not look out on; the key is unchanged.
+    // Question 3 names its lines, and the prompts and mark schemes are in this
+    // site's own words rather than AQA's rubric.
+    // Checked by a second reader, 31 October 2026: Question 1's key (B, D, G,
+    // H) holds. Fixes:
+    //   - the sources were labelled "a 2019 newspaper article" and "a 2022
+    //     report"; neither is a real publication (no such text on this site or
+    //     the web), so each label now says it was written for this paper;
+    //   - Question 2 opened with AQA's stock "Use details from both sources",
+    //     and Question 5 kept AQA's "in which you ... on this statement"; both
+    //     reworded;
+    //   - Question 2's scheme listed details, not inferences; it now says what
+    //     each pair suggests;
+    //   - Question 4 did not say where the two sources are printed; it does.
+    // Still open: AQA's Paper 2 always sets one 19th-century source, and both
+    // of these are modern. That needs a new source, not a relabel.
     id: 'aqa-lang-p2',
     paperName: 'English Language Paper 2',
     paperType: 'language',
@@ -264,45 +307,49 @@ const EXAM_PAPERS: Record<string, ExamPaperData> = {
     questions: [
       {
         number: 1,
-        label: 'True or false',
+        label: 'Four true statements',
         marks: 4,
         type: 'Retrieval',
         prompt:
-          'Read again Source A from lines 1 to 8.\n\nChoose four statements below which are TRUE.\n\nShade the circles in the boxes of the ones that you think are true.',
+          'Read Source A again, from "I arrived at the small village school" to "by the look of them."\n\nWhich four of the statements below are true, according to Source A? Choose four, and no more.',
         isMultipleChoice: true,
         options: [
           'The writer visited the school on a Monday morning.',
           'The school was located in a rural village.',
           'There were approximately thirty children in the classroom.',
-          'The teacher had been working at the school for over a decade.',
+          'The head teacher had been a familiar figure in the village for more than ten years.',
           'The children were wearing school uniforms.',
-          'The classroom had large windows overlooking a garden.',
-          'Some of the desks were shared between two children.',
-          'The writer felt immediately welcomed by the staff.',
+          'The classroom windows looked out over the fields.',
+          'The children shared desks that were old and worn.',
+          'The staff greeted the writer in a friendly way.',
         ],
         // B, D, G, H per the mark scheme below
         correctOptions: [1, 3, 6, 7],
-        sourceText: `Source A: From a 2019 newspaper article about education in rural communities.\n\nI arrived at the small village school on a Tuesday morning, just as the bell was ringing. The building sat at the edge of the village, its red brick walls softened by years of ivy. Inside, the single classroom held roughly twenty-five children of various ages, all sharing wooden desks that had been worn smooth by generations of use. Large windows flooded the room with pale morning light, looking out over a courtyard rather than the surrounding fields. The head teacher, Mrs Patterson, had been a fixture of the village for fifteen years. She greeted me warmly, as did the two teaching assistants who bustled about organising exercise books. The children wore no uniforms -- just everyday clothes, many hand-me-downs by the look of them.`,
+        sourceText: `Source A: Written for this practice paper, in the style of a newspaper article about education in rural communities. It is not a real published article.\n\nI arrived at the small village school on a Tuesday morning, just as the bell was ringing. The building sat at the edge of the village, its red brick walls softened by years of ivy. Inside, the single classroom held roughly twenty-five children of various ages, all sharing wooden desks that had been worn smooth by generations of use. Large windows flooded the room with pale morning light, looking out over a courtyard rather than the surrounding fields. The head teacher, Mrs Patterson, had been a fixture of the village for fifteen years. She greeted me warmly, as did the two teaching assistants who bustled about organising exercise books. The children wore no uniforms -- just everyday clothes, many hand-me-downs by the look of them.`,
         markScheme: [
-          'B: The school was located in a rural village (TRUE)',
-          'D: The teacher had been working at the school for over a decade (TRUE)',
-          'G: Some of the desks were shared between two children (TRUE)',
-          'H: The writer felt immediately welcomed by the staff (TRUE)',
+          'B: The school was located in a rural village (TRUE): a "small village school" at "the edge of the village", among "the surrounding fields".',
+          'D: The head teacher had been a familiar figure in the village for more than ten years (TRUE): she "had been a fixture of the village for fifteen years".',
+          'G: The children shared desks that were old and worn (TRUE): they were "all sharing wooden desks that had been worn smooth by generations of use".',
+          'H: The staff greeted the writer in a friendly way (TRUE): "She greeted me warmly, as did the two teaching assistants".',
+          'The others are false: the visit was on "a Tuesday morning" (A); there were "roughly twenty-five children" (C); "The children wore no uniforms" (E); the windows looked "out over a courtyard rather than the surrounding fields" (F).',
+          'One mark for each true statement chosen, up to 4.',
         ],
       },
       {
         number: 2,
-        label: 'Summary',
+        label: 'Inference: the differences',
         marks: 8,
-        type: 'Summary',
+        type: 'Inference',
         prompt:
-          'You need to refer to Source A and Source B for this question.\n\nUse details from both sources. Write a summary of the differences between the two schools described.',
-        sourceText: `Source A describes a small rural village school. Source B (below) describes a modern city academy.\n\nSource B: From a 2022 report on urban education.\n\nThe academy was a glass-and-steel structure that dominated the end of the high street, its entrance framed by digital screens displaying the school motto and latest Ofsted rating. Over twelve hundred students passed through its automatic doors each morning, scanned in by electronic registers. Each child wore an immaculate blazer in the school's signature navy and gold. Classrooms were equipped with interactive whiteboards, individual laptops, and climate control. The corridors hummed with efficiency. Department heads managed teams of specialists; the maths department alone had eleven teachers. There was a sense of relentless forward motion, of targets and data driving every decision.`,
+          'This question is about both sources. Source A is printed with Question 1.\n\nWhat can you infer about the differences between the village school in Source A and the city academy in Source B?\n\nBack up each inference with details from both sources.',
+        sourceText: `Source A describes a small rural village school. Source B (below) describes a modern city academy.\n\nSource B: Written for this practice paper, in the style of a report on urban education. It is not a real published report.\n\nThe academy was a glass-and-steel structure that dominated the end of the high street, its entrance framed by digital screens displaying the school motto and latest Ofsted rating. Over twelve hundred students passed through its automatic doors each morning, scanned in by electronic registers. Each child wore an immaculate blazer in the school's signature navy and gold. Classrooms were equipped with interactive whiteboards, individual laptops, and climate control. The corridors hummed with efficiency. Department heads managed teams of specialists; the maths department alone had eleven teachers. There was a sense of relentless forward motion, of targets and data driving every decision.`,
         markScheme: [
-          'Level 4 (7-8 marks): Perceptive synthesis and interpretation of both sources. Clear inferences from both texts.',
-          'Level 3 (5-6 marks): Clear synthesis with relevant references to both sources.',
-          'Level 2 (3-4 marks): Some comparison with references.',
-          'Level 1 (1-2 marks): Simple identification of difference(s).',
+          'Level 4 (7-8 marks): makes sharp, thoughtful inferences and weaves precise details from both sources together to bring out the differences.',
+          'Level 3 (5-6 marks): draws sound inferences from both sources and links well-chosen details from each to show the differences.',
+          'Level 2 (3-4 marks): makes some attempt to work out what details suggest, with some useful references and some differences noted.',
+          'Level 1 (1-2 marks): retells what the sources say rather than working anything out, with a simple difference and a detail or two.',
+          'An answer that uses one source only scores 3 marks at most, and Level 3 and above need both sources. The marks are for what you infer, not for analysing language.',
+          'Differences you might infer: the village school, with "roughly twenty-five children" in "the single classroom", is small enough for everyone to know each other, while the academy, whose "Over twelve hundred students" are "scanned in by electronic registers", seems vast and impersonal; the village school makes do with what is old, desks "worn smooth by generations of use", while a "glass-and-steel structure" with "individual laptops" and "climate control" suggests money to spend; "everyday clothes, many hand-me-downs" suggest families with little to spare, while "an immaculate blazer in the school\'s signature navy and gold" suggests a school that cares how it looks; a head teacher who "greeted me warmly" suggests a personal welcome, while "targets and data driving every decision" suggests pressure to perform.',
         ],
       },
       {
@@ -311,12 +358,14 @@ const EXAM_PAPERS: Record<string, ExamPaperData> = {
         marks: 12,
         type: 'Language Analysis',
         prompt:
-          "You now need to refer only to Source B.\n\nHow does the writer use language to convey their impression of the modern school?\n\nYou could include the writer's choice of:\n- words and phrases\n- language features and techniques\n- sentence forms.",
+          'This question is about Source B only, from "The academy was a glass-and-steel structure" to "driving every decision." Source B is printed with Question 2.\n\nHow does the writer use language to describe the academy and what it is like inside?\n\nYou might write about:\n- particular words and phrases\n- techniques such as imagery and lists\n- the way the sentences are built.',
         markScheme: [
-          'Level 4 (10-12 marks): Detailed, perceptive analysis with sophisticated use of terminology.',
-          'Level 3 (7-9 marks): Clear, relevant explanation of language effects.',
-          'Level 2 (4-6 marks): Some understanding of language with some terminology.',
-          'Level 1 (1-3 marks): Simple awareness of language.',
+          "Level 4 (10-12 marks): looks beneath the surface, analysing how the writer's choices work together, with sharply chosen quotations and confident, precise subject terms.",
+          'Level 3 (7-9 marks): for each quotation, says plainly what effect the words have on the reader and why, using several well-chosen quotations and correct terms.',
+          'Level 2 (4-6 marks): tries to say what some of the language does, with a few suitable quotations and some terms.',
+          'Level 1 (1-3 marks): says something basic about a word or two, or names a technique without saying what it does.',
+          'An answer that writes about Source A goes to the bottom of the level it would otherwise reach.',
+          'Points you might make: "dominated" makes the building powerful, even overbearing; "scanned in by electronic registers" makes the students sound like goods at a checkout; the list "interactive whiteboards, individual laptops, and climate control" shows how much the school has; "The corridors hummed with efficiency" makes it sound like a machine; "relentless forward motion" and "targets and data driving every decision" suggest pressure that never stops.',
         ],
       },
       {
@@ -325,12 +374,13 @@ const EXAM_PAPERS: Record<string, ExamPaperData> = {
         marks: 16,
         type: 'Comparison',
         prompt:
-          'For this question, you need to refer to the whole of Source A, together with the whole of Source B.\n\nCompare how the two writers convey their different attitudes to the schools they describe.\n\nIn your answer, you could:\n- compare their different attitudes\n- compare the methods they use to convey their attitudes\n- support your ideas with references to both texts.',
+          "This question is about both sources, from beginning to end. Source A is printed with Question 1 and Source B with Question 2.\n\nCompare the writers' feelings and perspectives about the schools they describe, and the methods each writer uses to get them across.\n\nYou might:\n- compare what each writer seems to feel about the school, and why\n- compare their methods, such as the details they choose, their words and their tone\n- back up each point with references to both sources.",
         markScheme: [
-          "Level 4 (13-16 marks): Perceptive understanding of both writers' methods with detailed comparison.",
-          'Level 3 (9-12 marks): Clear comparison with relevant references.',
-          'Level 2 (5-8 marks): Some comparison of ideas/methods.',
-          'Level 1 (1-4 marks): Simple identification of attitudes.',
+          "Level 4 (13-16 marks): a thoughtful, sustained comparison, analysing how each writer's methods shape their perspective, with well-chosen detail from both sources.",
+          'Level 3 (9-12 marks): compares the perspectives directly and well, explaining how each writer conveys them, with relevant detail from both sources.',
+          "Level 2 (5-8 marks): tries to compare the writers' perspectives, with some comment on their methods and some useful detail.",
+          "Level 1 (1-4 marks): makes a basic link between the writers' views and spots a method or two, with simple references.",
+          'An answer that uses one source only scores 6 marks at most, and Level 3 and above need both sources. Compare how the writers say things, not only what they say.',
         ],
       },
       {
@@ -339,19 +389,20 @@ const EXAM_PAPERS: Record<string, ExamPaperData> = {
         marks: 40,
         type: 'Transactional Writing',
         prompt:
-          '"Technology in schools does more harm than good. Students would learn better with books, pens, and face-to-face teaching."\n\nWrite an article for a broadsheet newspaper in which you argue for or against this statement.\n\n(24 marks for content and organisation, 16 marks for technical accuracy)',
+          '"Technology in schools does more harm than good. Students would learn better with books, pens, and face-to-face teaching."\n\nWrite a speech to give at a meeting of your school\'s governors, setting out your own view on this statement.\n\nThis task is worth 40 marks: 24 for the content and organisation of your writing, and 16 for its accuracy (sentences, spelling and punctuation).',
         markScheme: [
-          'Content and Organisation (24 marks):',
-          'Level 4 (19-24): Compelling, convincing argument. Sophisticated use of structural and organisational devices.',
-          'Level 3 (13-18): Clear, connected argument with conscious crafting.',
-          'Level 2 (7-12): Some success in presenting a viewpoint.',
-          'Level 1 (1-6): Simple communication.',
+          'Content and organisation (24 marks):',
+          'Level 4 (19-24): argues with real force and confidence, pitched exactly for the audience, with ambitious, exact vocabulary and a carefully planned structure.',
+          'Level 3 (13-18): argues clearly throughout, in a tone that suits a speech to governors, with persuasive methods chosen for effect and well-linked paragraphs.',
+          'Level 2 (7-12): puts a view across in places, with some attempt at a suitable tone and paragraphs that begin to organise the argument.',
+          'Level 1 (1-6): states a view simply, with little sense of the audience.',
+          'Writing that does not respond to the statement in the way the task asks cannot score more than 12 of these 24 marks.',
           '',
-          'Technical Accuracy (16 marks):',
-          'Level 4 (13-16): Consistent accuracy with wide range of sentence forms.',
-          'Level 3 (9-12): Mostly accurate with variety of sentence forms.',
-          'Level 2 (5-8): Some accuracy.',
-          'Level 1 (1-4): Limited accuracy.',
+          'Technical accuracy (16 marks):',
+          'Level 4 (13-16): every sentence starts and ends in the right place, every kind of punctuation is used with skill, and even adventurous words are spelt correctly.',
+          'Level 3 (9-12): sentences nearly always start and end in the right place, most punctuation is used well, and sentence types are varied on purpose.',
+          'Level 2 (5-8): sentences usually start and end in the right place, several kinds of punctuation are tried, and some harder words are spelt correctly.',
+          'Level 1 (1-4): a few sentences start and end in the right place, and simple words are spelt correctly.',
         ],
       },
     ],
