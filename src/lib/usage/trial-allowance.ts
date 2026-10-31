@@ -35,6 +35,7 @@ import {
 } from '@/lib/usage/free-allowance'
 import { serviceUnavailableResponse } from '@/lib/api-response'
 import { getPupilSchoolAccess } from '@/lib/school-entitlement'
+import { createServiceRoleClient } from '@/lib/supabase/server'
 
 export interface NoCardTrial {
   subscriptionId: string
@@ -140,13 +141,60 @@ export interface TrialAllowanceOptions {
    * leave it off on purpose: a school's pilot does not cover IELTS.
    */
   schoolFunded?: boolean
+  /**
+   * Set by the four IELTS routes (writing, speaking and statement feedback,
+   * and IELTS Writing Task 2 marking), whose paywall is hasIeltsAccess.
+   *
+   * A REGRESSION, FIXED 31 OCTOBER 2026. A no-card trialist who bought IELTS
+   * was metered like any trialist on those routes: 15 AI calls a day, 40 in
+   * all, then a 402 telling them to see the plans, although they had just
+   * paid GBP 39 a month or GBP 249 a year for that very feature. Until
+   * 24 October 2026 the IELTS checkout took the trial's Subscription row, so
+   * resolveNoCardTrial saw a card on file and did not meter; b24bfd2d9 rightly
+   * stopped an IELTS-only subscription taking the row (mobile read it as Pro,
+   * and the trial-expiry cron lost the trial), and the row then stayed a
+   * no-card trial until day 8. A paid IELTS plan, `profiles.ielts_status`
+   * 'active', is the card on file for these routes. Only the Stripe webhook's
+   * syncIeltsEntitlement writes that value, from a live IELTS subscription.
+   *
+   * Off by default, and the GCSE routes leave it off: an IELTS plan does not
+   * fund the rest of the catalogue, whose trial meter still applies.
+   */
+  ieltsFunded?: boolean
+}
+
+/**
+ * True when the profile holds a paid IELTS plan (`profiles.ielts_status`
+ * 'active'). Asked only of a no-card trialist on an IELTS route. Never
+ * throws: a failed read answers false, so the meter applies, as the school
+ * check does.
+ */
+async function holdsPaidIeltsPlan(supabaseUserId: string): Promise<boolean> {
+  try {
+    const { data, error } = await createServiceRoleClient()
+      .from('profiles')
+      .select('ielts_status')
+      .eq('id', supabaseUserId)
+      .single()
+    if (error) {
+      if (error.code !== 'PGRST116') {
+        console.error('[trial-allowance] could not read ielts_status, metering', error)
+      }
+      return false
+    }
+    return (data as { ielts_status?: string | null } | null)?.ielts_status === 'active'
+  } catch (err) {
+    console.error('[trial-allowance] ielts_status read threw, metering', err)
+    return false
+  }
 }
 
 /**
  * The one call a paywalled AI route makes, placed immediately before the first
  * model call. A paying subscriber and a card-on-file trial pass straight
  * through and never touch the meter, and so does a pupil of a live school on
- * a route that passes `schoolFunded` (see TrialAllowanceOptions).
+ * a route that passes `schoolFunded`, and a paid IELTS customer on a route
+ * that passes `ieltsFunded` (see TrialAllowanceOptions).
  *
  * Consumes BOTH the daily sub-cap and the whole-trial ceiling, so a single
  * scripted day cannot drain the seven-day allowance before anyone sees it. If
@@ -179,6 +227,10 @@ export async function enforceTrialAllowance(
   // Asked only of a no-card trialist, so nobody else pays for the lookup. It
   // never throws, and a failed read answers "not a pupil": the meter applies.
   if (gate.schoolFunded && (await getPupilSchoolAccess(session.id))) return NOOP
+
+  // Likewise asked only of a no-card trialist, on an IELTS route: a paid
+  // IELTS plan funds the call (see TrialAllowanceOptions.ieltsFunded).
+  if (gate.ieltsFunded && (await holdsPaidIeltsPlan(session.id))) return NOOP
 
   const subject = resolveUsageSubject(request, session.id)
   const options = { trialSubscriptionId: trial.subscriptionId, trialEndsAt: trial.trialEndsAt }

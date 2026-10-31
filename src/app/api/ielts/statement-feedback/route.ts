@@ -582,8 +582,11 @@ export async function POST(request: NextRequest) {
     // model call. A trial signup carries `subscription_status = 'pro'`, the
     // identical flag the paywall above reads, so without this a free account
     // has the same unlimited AI access a paying one does. Refused with 402 and
-    // code 'free_allowance_exhausted', never 403 or 429.
-    trialGate = await enforceTrialAllowance(request, user)
+    // code 'free_allowance_exhausted', never 403 or 429. `ieltsFunded`: a
+    // trialist who has paid for IELTS (ielts_status 'active') is not metered
+    // here; until 31 October 2026 they were, since b24bfd2d9 left their trial
+    // row a no-card trial (see TrialAllowanceOptions in trial-allowance.ts).
+    trialGate = await enforceTrialAllowance(request, user, { ieltsFunded: true })
     if (trialGate.response) return trialGate.response
 
     // 5. Generate AI feedback: one model call per question, plus an overall
