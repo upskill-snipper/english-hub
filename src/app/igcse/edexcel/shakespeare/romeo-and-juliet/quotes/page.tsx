@@ -47,14 +47,14 @@ const QUOTES = [
     speaker: 'Romeo (1.1)',
     themes: ['Love'],
     analysis:
-      'Classic Petrarchan oxymorons. Romeo loves being in love. This is love as a performance \u2014 and it makes the shift in Act 1 Scene 5 feel seismic, because suddenly he stops speaking in clich\u00e9s.',
+      'Classic Petrarchan oxymorons. Romeo loves being in love. This is love as a performance - and it makes the shift in Act 1 Scene 5 feel seismic, because suddenly he stops speaking in clich\u00e9s.',
   },
   {
     quote: '"My only love sprung from my only hate!"',
     speaker: 'Juliet (1.5)',
     themes: ['Love', 'Conflict'],
     analysis:
-      'Discovering Romeo is a Montague. The chiasmus folds love and hate into a single structure \u2014 her fate is already conjoined with the feud. The exclamation mark is almost helpless.',
+      'Discovering Romeo is a Montague. The chiasmus folds love and hate into a single structure - her fate is already conjoined with the feud. The exclamation mark is almost helpless.',
   },
   {
     quote: '"But soft! What light through yonder window breaks?"',
@@ -68,7 +68,7 @@ const QUOTES = [
     speaker: 'Juliet (2.2)',
     themes: ['Love', 'Conflict'],
     analysis:
-      "Not 'where are you?' but 'why are you Romeo?' \u2014 why do you have to be the one name I cannot love? Juliet is already asking whether identity is a matter of name or self.",
+      "Not 'where are you?' but 'why are you Romeo?' - why do you have to be the one name I cannot love? Juliet is already asking whether identity is a matter of name or self.",
   },
   {
     quote: '"Good night, good night! Parting is such sweet sorrow"',
@@ -89,28 +89,28 @@ const QUOTES = [
     speaker: 'Mercutio (3.1)',
     themes: ['Conflict', 'Honour'],
     analysis:
-      'Mercutio \u2014 a neutral character, kinsman to the Prince \u2014 dies cursing both families. His death is the tonal pivot from romantic comedy to tragedy. The curse is also a prophecy: both houses will indeed be wiped out by this feud.',
+      'Mercutio - a neutral character, kinsman to the Prince - dies cursing both families. His death is the tonal pivot from romantic comedy to tragedy. The curse is also a prophecy: both houses will indeed be wiped out by this feud.',
   },
   {
     quote: '"O, I am fortune\u2019s fool!"',
     speaker: 'Romeo (3.1)',
     themes: ['Fate'],
     analysis:
-      "After killing Tybalt, Romeo blames fortune rather than his own rage. Shakespeare lets the audience see both possibilities \u2014 that Romeo is fate's victim, and that he has made his own disaster.",
+      "After killing Tybalt, Romeo blames fortune rather than his own rage. Shakespeare lets the audience see both possibilities - that Romeo is fate's victim, and that he has made his own disaster.",
   },
   {
     quote: '"O serpent heart, hid with a flowering face!"',
     speaker: 'Juliet (3.2)',
     themes: ['Love', 'Appearance vs reality'],
     analysis:
-      "On learning Romeo has killed Tybalt, Juliet lists paradoxes for twenty lines. The serpent-and-flower imagery echoes the Garden of Eden \u2014 but also recalls Lady Macbeth's 'serpent under't'. Shakespeare keeps returning to the idea that beauty can house cruelty.",
+      "On learning Romeo has killed Tybalt, Juliet lists paradoxes for twenty lines. The serpent-and-flower imagery echoes the Garden of Eden - but also recalls Lady Macbeth's 'serpent under't'. Shakespeare keeps returning to the idea that beauty can house cruelty.",
   },
   {
     quote: '"Hang thee, young baggage! disobedient wretch!"',
     speaker: 'Capulet (3.5)',
     themes: ['Youth vs age', 'Honour'],
     analysis:
-      "Capulet's switch is terrifying. Moments before he had described Juliet as 'the hopeful lady of my earth'. Her refusal to marry Paris is read as a personal insult to his honour \u2014 the feud is smaller than his ego.",
+      "Capulet's switch is terrifying. Moments before he had described Juliet as 'the hopeful lady of my earth'. Her refusal to marry Paris is read as a personal insult to his honour - the feud is smaller than his ego.",
   },
   {
     quote: '"I think it best you married with the County"',
@@ -138,28 +138,28 @@ const QUOTES = [
     speaker: 'Juliet (4.3)',
     themes: ['Love', 'Fate'],
     analysis:
-      "Drinking the Friar's potion. The triple repetition of 'Romeo' echoes her earlier 'Wherefore art thou Romeo?' \u2014 and binds this most dangerous act to the very first moment of their love.",
+      "Drinking the Friar's potion. The triple repetition of 'Romeo' echoes her earlier 'Wherefore art thou Romeo?' - and binds this most dangerous act to the very first moment of their love.",
   },
   {
     quote: '"Then I defy you, stars!"',
     speaker: 'Romeo (5.1)',
     themes: ['Fate'],
     analysis:
-      "Hearing (false) news of Juliet's death, Romeo turns against fate itself. The imperative is defiant \u2014 but also tragic, because the audience knows his defiance will only seal the tragedy.",
+      "Hearing (false) news of Juliet's death, Romeo turns against fate itself. The imperative is defiant - but also tragic, because the audience knows his defiance will only seal the tragedy.",
   },
   {
     quote: '"Eyes, look your last! Arms, take your last embrace!"',
     speaker: 'Romeo (5.3)',
     themes: ['Love', 'Fate'],
     analysis:
-      "Inside the tomb. The imperatives to his own body parts dramatise the splitting of the self in grief. Every repetition of 'last' tightens the knot. Note that Juliet is not actually dead \u2014 Romeo is moments too early.",
+      "Inside the tomb. The imperatives to his own body parts dramatise the splitting of the self in grief. Every repetition of 'last' tightens the knot. Note that Juliet is not actually dead - Romeo is moments too early.",
   },
   {
     quote: '"Thus with a kiss I die"',
     speaker: 'Romeo (5.3)',
     themes: ['Love', 'Fate'],
     analysis:
-      "The play's most famous line of finality. Six monosyllables and a kiss. Shakespeare refuses any grand rhetorical flourish \u2014 Romeo's end is quiet and tender, which is why it hurts.",
+      "The play's most famous line of finality. Six monosyllables and a kiss. Shakespeare refuses any grand rhetorical flourish - Romeo's end is quiet and tender, which is why it hurts.",
   },
   {
     quote: '"For never was a story of more woe / Than this of Juliet and her Romeo"',
@@ -189,7 +189,7 @@ export default async function RomeoAndJulietQuotesPage() {
             {await t('igcse.page.badge_edexcel_lit')}
           </div>
           <h1 className="mt-4 text-3xl font-bold tracking-tight text-foreground sm:text-4xl md:text-5xl">
-            Romeo and Juliet &mdash; 20 key quotes
+            Romeo and Juliet - 20 key quotes
           </h1>
           {/* 10 October 2026: this called the question closed book, and the last
               revision tip below named a "part (b) whole-play question". 4ET1 sets
@@ -232,7 +232,7 @@ export default async function RomeoAndJulietQuotesPage() {
                 </span>
                 <div className="flex-1">
                   <p className="text-base italic font-semibold text-foreground">{q.quote}</p>
-                  <p className="mt-1 text-xs font-medium text-primary">&mdash; {q.speaker}</p>
+                  <p className="mt-1 text-xs font-medium text-primary">- {q.speaker}</p>
                   <div className="mt-3 flex flex-wrap gap-1.5">
                     {q.themes.map((t) => (
                       <span

@@ -630,7 +630,7 @@ export default async function MacbethPage() {
             AQA English Literature &middot; Paper 1
           </p>
           <h1 className="text-3xl font-bold tracking-tight sm:text-4xl md:text-5xl">
-            Macbeth &mdash; Complete Study Guide
+            Macbeth - Complete Study Guide
           </h1>
           <p className="mx-auto mt-4 max-w-2xl text-lg text-muted-foreground">
             William Shakespeare &middot; Written c. 1606 &middot; Tragedy

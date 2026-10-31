@@ -61,7 +61,7 @@ function SupportResources() {
             </svg>
           </span>
           <div>
-            <strong>{t('safeguard.report.childline_label')}</strong> &mdash;{' '}
+            <strong>{t('safeguard.report.childline_label')}</strong> -{' '}
             <a
               href="tel:08001111"
               className="font-semibold text-accent hover:text-primary underline"
@@ -88,7 +88,7 @@ function SupportResources() {
             </svg>
           </span>
           <div>
-            <strong>{t('safeguard.report.nspcc_label')}</strong> &mdash;{' '}
+            <strong>{t('safeguard.report.nspcc_label')}</strong> -{' '}
             <a
               href="tel:08088005000"
               className="font-semibold text-accent hover:text-primary underline"
@@ -119,7 +119,7 @@ function SupportResources() {
             </svg>
           </span>
           <div>
-            <strong>{t('safeguard.report.ceop_label')}</strong> &mdash;{' '}
+            <strong>{t('safeguard.report.ceop_label')}</strong> -{' '}
             <a
               href="https://www.ceop.police.uk/ceop-reporting/"
               target="_blank"

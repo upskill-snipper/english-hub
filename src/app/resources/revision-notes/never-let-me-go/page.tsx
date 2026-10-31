@@ -517,7 +517,7 @@ export default function NeverLetMeGoStudyGuide() {
           {t('study.revnotes.common.eyebrow')}
         </p>
         <h1 className="mt-2 text-3xl font-bold tracking-tight sm:text-4xl md:text-5xl">
-          Never Let Me Go &mdash; {t('study.revnotes.common.suffix.study_guide')}
+          Never Let Me Go - {t('study.revnotes.common.suffix.study_guide')}
         </h1>
         <p className="mt-3 max-w-2xl text-lg text-muted-foreground">
           {t('study.revnotes.never-let-me-go.lead')}

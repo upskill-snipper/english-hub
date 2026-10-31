@@ -75,7 +75,7 @@ const essays = [
       {
         point: 'Act One: "pretty" and "pleased with life"',
         detail:
-          'Sheila begins as a product of her class \u2014 delighted by her ring, excited by the engagement, and deferring to her parents. The Milwards confession shows she once wielded class power carelessly, having Eva sacked out of jealousy.',
+          'Sheila begins as a product of her class - delighted by her ring, excited by the engagement, and deferring to her parents. The Milwards confession shows she once wielded class power carelessly, having Eva sacked out of jealousy.',
         quote: '"pretty\u2026 pleased with life"',
       },
       {
@@ -93,7 +93,7 @@ const essays = [
       {
         point: 'The ring as symbol',
         detail:
-          'Sheila returns her engagement ring \u2014 a physical rejection of the values it represents. The ring\u2019s meaning inverts across the play: from joyful symbol of union to token of a world she no longer wishes to inhabit.',
+          'Sheila returns her engagement ring - a physical rejection of the values it represents. The ring\u2019s meaning inverts across the play: from joyful symbol of union to token of a world she no longer wishes to inhabit.',
         quote: '"Not yet. It\u2019s too soon."',
       },
       {
@@ -136,7 +136,7 @@ const essays = [
       {
         point: 'Ambiguous identity',
         detail:
-          'The Inspector\u2019s name \u2014 "Goole", a pun on "ghoul" \u2014 and his impossible knowledge leave his identity deliberately unresolved. Whether he is a ghost, a time traveller, or a dramatic device, the play insists that his moral argument stands regardless.',
+          'The Inspector\u2019s name - "Goole", a pun on "ghoul" - and his impossible knowledge leave his identity deliberately unresolved. Whether he is a ghost, a time traveller, or a dramatic device, the play insists that his moral argument stands regardless.',
         quote: '"Inspector Goole"',
       },
     ],
@@ -149,13 +149,13 @@ const essays = [
       {
         point: 'The dining room as class microcosm',
         detail:
-          'The set \u2014 heavy furniture, port decanter, cigar box, maid \u2014 physically represents Edwardian wealth. Edna\u2019s silent presence shows working-class labour sustaining upper-class comfort. Priestley makes the class structure visible in the stage directions before the dialogue begins.',
+          'The set - heavy furniture, port decanter, cigar box, maid - physically represents Edwardian wealth. Edna\u2019s silent presence shows working-class labour sustaining upper-class comfort. Priestley makes the class structure visible in the stage directions before the dialogue begins.',
         quote: '"pink and intimate"',
       },
       {
         point: 'Birling\u2019s factory: class as economic power',
         detail:
-          'Birling sacked Eva for demanding a modest pay rise. His language \u2014 "they\u2019d soon be asking for the earth" \u2014 frames workers\u2019 basic needs as unreasonable greed. Priestley uses the wage dispute to ground class analysis in material reality.',
+          'Birling sacked Eva for demanding a modest pay rise. His language - "they\u2019d soon be asking for the earth" - frames workers\u2019 basic needs as unreasonable greed. Priestley uses the wage dispute to ground class analysis in material reality.',
         quote: '"they\u2019d soon be asking for the earth"',
       },
       {
@@ -173,7 +173,7 @@ const essays = [
       {
         point: 'Gerald and old-money class',
         detail:
-          'Gerald Croft represents inherited aristocratic wealth, contrasting with Birling\u2019s self-made capitalism. His affair with Daisy is framed as noblesse oblige, but Priestley exposes it as another form of class exploitation \u2014 kindness that depends on absolute power difference.',
+          'Gerald Croft represents inherited aristocratic wealth, contrasting with Birling\u2019s self-made capitalism. His affair with Daisy is framed as noblesse oblige, but Priestley exposes it as another form of class exploitation - kindness that depends on absolute power difference.',
         quote: '"She was young and pretty and warm-hearted"',
       },
     ],
@@ -199,13 +199,13 @@ const essays = [
       {
         point: 'Unity of time and place',
         detail:
-          'The entire play takes place in one room in one evening. This classical unity creates claustrophobia \u2014 the Birlings cannot escape each other or the Inspector. The compression of time intensifies the emotional pressure on each character.',
+          'The entire play takes place in one room in one evening. This classical unity creates claustrophobia - the Birlings cannot escape each other or the Inspector. The compression of time intensifies the emotional pressure on each character.',
         quote: '"We were having a nice little family celebration tonight"',
       },
       {
         point: 'The chain structure',
         detail:
-          'Each character\u2019s confession leads to the next. The play is not a whodunit with one guilty party but a chain of complicity. Priestley\u2019s structure forces the audience to see responsibility as cumulative \u2014 no single person killed Eva, but no single person is innocent either.',
+          'Each character\u2019s confession leads to the next. The play is not a whodunit with one guilty party but a chain of complicity. Priestley\u2019s structure forces the audience to see responsibility as cumulative - no single person killed Eva, but no single person is innocent either.',
         quote: '"One person and one line of inquiry at a time"',
       },
       {
@@ -262,7 +262,7 @@ export default async function InspectorCallsEssayPlansPage() {
             </h2>
             <p className="text-body-xs text-muted-foreground leading-relaxed">
               Short extracts are included under fair dealing for study and criticism. These plans
-              are starting frameworks &mdash; always develop your own argument.
+              are starting frameworks - always develop your own argument.
             </p>
           </div>
         </div>

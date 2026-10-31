@@ -163,7 +163,7 @@ The English Hub Team`,
   /** Sent 30 days after first parent dashboard view. Deferred until Parent Plan ships. */
   parent_30d_dashboard: {
     subject: '30 days of weekly summaries',
-    preview: 'Parents rarely write reviews \u2014 which is why yours would count.',
+    preview: 'Parents rarely write reviews - which is why yours would count.',
     body: (v) => `Hi ${v.first_name},
 
 You've been receiving weekly summaries for ${v.child_first_name ?? 'your child'} for about a month now. Have they been useful? Are you seeing the progress you hoped for?

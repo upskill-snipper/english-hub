@@ -549,7 +549,7 @@ export default async function JekyllAndHydePage() {
             AQA English Literature &middot; Paper 1 Section B
           </p>
           <h1 className="text-3xl font-bold tracking-tight sm:text-4xl md:text-5xl">
-            The Strange Case of Dr Jekyll and Mr Hyde &mdash; Complete Study Guide
+            The Strange Case of Dr Jekyll and Mr Hyde - Complete Study Guide
           </h1>
           <p className="mx-auto mt-4 max-w-2xl text-lg text-muted-foreground">
             Robert Louis Stevenson &middot; Published 1886 &middot; Gothic Novella

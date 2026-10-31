@@ -60,7 +60,7 @@ const THEMES = [
   {
     theme: 'Love',
     summary:
-      "The play sets two contrasting couples side by side. Claudio and Hero fall in love almost without speaking \u2014 Claudio asks another man to woo her on his behalf. Beatrice and Benedick, by contrast, have been sparring with each other for years, and come together only when they are both tricked into admitting it. Shakespeare seems to argue that the love that can take the weight of the play's events is the one built on words, wit and equal footing.",
+      "The play sets two contrasting couples side by side. Claudio and Hero fall in love almost without speaking - Claudio asks another man to woo her on his behalf. Beatrice and Benedick, by contrast, have been sparring with each other for years, and come together only when they are both tricked into admitting it. Shakespeare seems to argue that the love that can take the weight of the play's events is the one built on words, wit and equal footing.",
     how_it_develops:
       "Act 1: Claudio falls silently for Hero; Beatrice and Benedick begin their 'merry war'. Act 2: the two plots are set in motion, and the first eavesdropping scene converts Benedick. Act 3: the second converts Beatrice. Act 4: Claudio's thin love breaks under one piece of gossip; Beatrice and Benedick's stronger love is tested by 'Kill Claudio'. Act 5: two weddings.",
     quotes: [
@@ -73,7 +73,7 @@ const THEMES = [
   {
     theme: 'Deception',
     summary:
-      "Every major turn of the plot depends on somebody being tricked. Don Pedro woos Hero in disguise on Claudio's behalf. Don John twice tricks Claudio about Hero. Beatrice and Benedick are both tricked by their friends into falling in love. The Friar stages Hero's fake death. Shakespeare divides deception into three kinds: <strong>loving</strong> (the friends' matchmaking), <strong>protective</strong> (the Friar's plan), and <strong>malicious</strong> (Don John's plot) \u2014 and asks whether we can tell them apart from the inside.",
+      "Every major turn of the plot depends on somebody being tricked. Don Pedro woos Hero in disguise on Claudio's behalf. Don John twice tricks Claudio about Hero. Beatrice and Benedick are both tricked by their friends into falling in love. The Friar stages Hero's fake death. Shakespeare divides deception into three kinds: <strong>loving</strong> (the friends' matchmaking), <strong>protective</strong> (the Friar's plan), and <strong>malicious</strong> (Don John's plot) - and asks whether we can tell them apart from the inside.",
     how_it_develops:
       "Act 1: Don John declares himself a 'plain-dealing villain'. Act 2: the masked ball enables mistaken identities, and the first eavesdropping scene tricks Benedick. Act 3: the second tricks Beatrice; the window trick frames Hero. Act 4: the Friar's loving deception saves Hero. Act 5: Dogberry finally reveals the truth.",
     quotes: [
@@ -86,7 +86,7 @@ const THEMES = [
   {
     theme: 'Honour',
     summary:
-      "In Messina, male honour depends entirely on the sexual reputation of the women attached to them. One rumour about Hero is enough to make Claudio, Don Pedro and even Leonato turn on her instantly. Leonato's reaction \u2014 'Death is the fairest cover for her shame' \u2014 is catastrophic, because it shows a father preferring his daughter's death to the survival of gossip. Shakespeare exposes that system as both lethal and fragile, because the men who rely on it can be fooled by any plausible lie.",
+      "In Messina, male honour depends entirely on the sexual reputation of the women attached to them. One rumour about Hero is enough to make Claudio, Don Pedro and even Leonato turn on her instantly. Leonato's reaction - 'Death is the fairest cover for her shame' - is catastrophic, because it shows a father preferring his daughter's death to the survival of gossip. Shakespeare exposes that system as both lethal and fragile, because the men who rely on it can be fooled by any plausible lie.",
     how_it_develops:
       "Act 1: Claudio asks whether Leonato has a son, and learns from Don Pedro that Hero is 'his only heir'. Act 2: Claudio's honour is briefly wobbled when he thinks Don Pedro has stolen Hero. Act 4: the public shaming at the altar; Leonato's collapse. Act 5: Benedick challenges Claudio, and honour is only restored by Hero's staged return.",
     quotes: [
@@ -99,9 +99,9 @@ const THEMES = [
   {
     theme: 'Marriage',
     summary:
-      "Marriage in Much Ado is simultaneously a romance, a contract and, for Beatrice, a cage. As Hero is betrothed, Beatrice jokes that everyone marries but her, so she 'may sit in a corner and cry heigh-ho for a husband', and then turns down the Prince himself. Claudio's match with Hero is almost entirely transactional \u2014 he is as interested in her inheritance as in her. The play ends with two weddings, but Shakespeare is careful to keep the earlier scepticism audible underneath the celebration.",
+      "Marriage in Much Ado is simultaneously a romance, a contract and, for Beatrice, a cage. As Hero is betrothed, Beatrice jokes that everyone marries but her, so she 'may sit in a corner and cry heigh-ho for a husband', and then turns down the Prince himself. Claudio's match with Hero is almost entirely transactional - he is as interested in her inheritance as in her. The play ends with two weddings, but Shakespeare is careful to keep the earlier scepticism audible underneath the celebration.",
     how_it_develops:
-      "Act 2: Beatrice's resistance to marriage; Claudio and Hero's rapid engagement; Benedick converts from anti-marriage to pro-marriage in a single soliloquy (2.3). Act 3: Beatrice, tricked in her turn, resolves to return his love. Act 4: the broken wedding. Act 5: Beatrice and Benedick's reluctant, witty acceptance \u2014 'I take thee for pity' \u2014 ends the play.",
+      "Act 2: Beatrice's resistance to marriage; Claudio and Hero's rapid engagement; Benedick converts from anti-marriage to pro-marriage in a single soliloquy (2.3). Act 3: Beatrice, tricked in her turn, resolves to return his love. Act 4: the broken wedding. Act 5: Beatrice and Benedick's reluctant, witty acceptance - 'I take thee for pity' - ends the play.",
     quotes: [
       '"I had rather hear my dog bark at a crow than a man swear he loves me" (1.1)',
       '"The world must be peopled" (2.3)',
@@ -112,7 +112,7 @@ const THEMES = [
   {
     theme: 'Gender',
     summary:
-      "Much Ado is unusually direct about how little real power women have in its world. Hero barely speaks in the first three acts. When she is slandered, she has no legal or social recourse \u2014 only the Friar's pretence that she has died. Beatrice rages in Act 4 that if she were a man she would 'eat his heart in the market-place', meaning Claudio's. Because she cannot act herself, she asks Benedick to do it for her. Shakespeare frames the play's comedy very carefully around this fact.",
+      "Much Ado is unusually direct about how little real power women have in its world. Hero barely speaks in the first three acts. When she is slandered, she has no legal or social recourse - only the Friar's pretence that she has died. Beatrice rages in Act 4 that if she were a man she would 'eat his heart in the market-place', meaning Claudio's. Because she cannot act herself, she asks Benedick to do it for her. Shakespeare frames the play's comedy very carefully around this fact.",
     how_it_develops:
       "Act 1: Beatrice's early independence and refusal of marriage. Act 2: Hero is silent during her own engagement. Act 3: the trick scenes. Act 4: the public shaming, Hero's silence, Beatrice's 'Kill Claudio' and the 'O, that I were a man!' speech. Act 5: Hero returns only when her honour can be restored on male terms.",
     quotes: [
@@ -143,10 +143,10 @@ export default async function MuchAdoThemesPage() {
             {await t('igcse.page.badge_edexcel_lit')}
           </div>
           <h1 className="mt-4 text-3xl font-bold tracking-tight text-foreground sm:text-4xl md:text-5xl">
-            Much Ado About Nothing &mdash; Themes
+            Much Ado About Nothing - Themes
           </h1>
           <p className="mx-auto mt-4 max-w-xl text-lg text-muted-foreground">
-            Love, deception, honour, marriage and gender &mdash; tracked across the whole play.
+            Love, deception, honour, marriage and gender - tracked across the whole play.
           </p>
         </div>
       </section>

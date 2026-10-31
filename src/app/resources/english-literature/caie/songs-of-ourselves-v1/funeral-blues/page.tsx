@@ -92,7 +92,7 @@ export default async function FuneralBluesPage() {
         <p className="text-xs text-muted-foreground">
           <strong className="text-foreground">{_tr(`Version note:`)}</strong> Cambridge 0475
           anthologises the <strong>1940 revised four-stanza version</strong> of{' '}
-          <em>{_tr(`Funeral Blues`)}</em> &mdash; the canonical poem published in{' '}
+          <em>{_tr(`Funeral Blues`)}</em> - the canonical poem published in{' '}
           <em>{_tr(`Another Time`)}</em>. This is <strong>not</strong> the longer 1936 cabaret
           version <em>{_tr(`Twelve Songs IX`)}</em> from <em>{_tr(`The Ascent of F6`)}</em>, which
           has different verses. Make sure you are studying the 1940 version reproduced in the
@@ -128,7 +128,7 @@ export default async function FuneralBluesPage() {
         <Card>
           <CardContent className="space-y-3 pt-6 text-sm text-muted-foreground">
             <p>
-              <strong className="text-foreground">Poet:</strong> W.H. (Wystan Hugh) Auden &mdash;
+              <strong className="text-foreground">Poet:</strong> W.H. (Wystan Hugh) Auden -
               English-American (b. York 1907; d. Vienna 1973).
             </p>
             <p>
@@ -182,9 +182,9 @@ export default async function FuneralBluesPage() {
               The poem moves from the practical and domestic in stanzas 1&ndash;2 (clocks,
               telephones, mourners, drums) to public and ceremonial imagery in stanza 3 (aeroplanes,
               doves, traffic policemen with crepe gloves), then to a final stanza in which the
-              bereaved speaker imagines the cosmos itself dismantled. The familiar hyperbole &mdash;
-              pack up the moon, dismantle the sun &mdash; is not a believable demand but an
-              emotional logic: nothing should be allowed to continue.
+              bereaved speaker imagines the cosmos itself dismantled. The familiar hyperbole - pack
+              up the moon, dismantle the sun - is not a believable demand but an emotional logic:
+              nothing should be allowed to continue.
             </p>
             <p>
               Auden originally wrote the poem as a satirical mock-elegy for a public figure in{' '}

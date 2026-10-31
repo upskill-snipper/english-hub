@@ -520,7 +520,7 @@ export default function SongsOfOurselvesV1Page() {
             Cambridge IGCSE English Literature (0475)
           </p>
           <h1 className="mt-2 text-3xl font-bold tracking-tight sm:text-4xl md:text-5xl">
-            Songs of Ourselves &mdash; Volume 1
+            Songs of Ourselves - Volume 1
           </h1>
           <p className="mx-auto mt-4 max-w-2xl text-lg text-muted-foreground">
             A comprehensive guide to the CAIE poetry anthology. Detailed analysis of six key poems
@@ -538,7 +538,7 @@ export default function SongsOfOurselvesV1Page() {
             This cluster is based on the Cambridge IGCSE 0475 syllabus{' '}
             <em>{tr(`Songs of Ourselves`)}</em> Vol&nbsp;1 Part&nbsp;4 plus the Ted Hughes cluster (
             <em>{tr(`The Thought-Fox`)}</em>, <em>{tr(`Hawk Roosting`)}</em>, <em>Wind</em>).
-            Cambridge International rotates set texts every two years &mdash; always confirm via{' '}
+            Cambridge International rotates set texts every two years - always confirm via{' '}
             <a
               href="https://www.cambridgeinternational.org/syllabus"
               target="_blank"
@@ -554,14 +554,14 @@ export default function SongsOfOurselvesV1Page() {
               {tr(`Verified Vol\u00a01 Part\u00a04 poems:`)}
             </strong>{' '}
             <em>{tr(`The City Planners`)}</em> (Margaret Atwood, in copyright),{' '}
-            <em>{tr(`Funeral Blues`)}</em> (W&nbsp;H Auden &mdash; the 1940 revised version, Faber,
-            in copyright; UK&nbsp;PD&nbsp;2044), <em>Rain</em> (Edward Thomas, public domain),{' '}
+            <em>{tr(`Funeral Blues`)}</em> (W&nbsp;H Auden - the 1940 revised version, Faber, in
+            copyright; UK&nbsp;PD&nbsp;2044), <em>Rain</em> (Edward Thomas, public domain),{' '}
             <em>{tr(`He Never Expected Much`)}</em> (Thomas Hardy, public domain), and{' '}
             <em>{tr(`On Finding a Small Fly Crushed in a Book`)}</em> (Charles Tennyson Turner,
             public domain). The Ted Hughes cluster (Faber) is also in copyright.
           </p>
           <p className="mt-3 text-muted-foreground leading-relaxed">
-            Anthology publisher: Cambridge University Press &mdash; permissions queries via{' '}
+            Anthology publisher: Cambridge University Press - permissions queries via{' '}
             <a
               href="https://www.cambridge.org/permissions"
               target="_blank"
@@ -631,16 +631,16 @@ export default function SongsOfOurselvesV1Page() {
                     &bull; Questions may focus on a single poem or ask you to compare two poems
                   </li>
                   <li>
-                    &bull; The poems are <strong>not</strong> provided in the exam &mdash; you must
-                    know them from memory
+                    &bull; The poems are <strong>not</strong> provided in the exam - you must know
+                    them from memory
                   </li>
                   <li>
                     &bull; You are assessed on knowledge, analysis of methods, comparison, and
                     context (all four skills)
                   </li>
                   <li>
-                    &bull; Responses should be <strong>analytical</strong>, not narrative &mdash;
-                    focus on how and why, not what happens
+                    &bull; Responses should be <strong>analytical</strong>, not narrative - focus on
+                    how and why, not what happens
                   </li>
                 </ul>
               </div>
@@ -813,8 +813,7 @@ export default function SongsOfOurselvesV1Page() {
             <CardHeader>
               <CardTitle>{tr(`Integrated Comparison Technique`)}</CardTitle>
               <CardDescription>
-                Cambridge rewards sustained, woven comparison &mdash; not &ldquo;Poem A then Poem
-                B&rdquo;
+                Cambridge rewards sustained, woven comparison - not &ldquo;Poem A then Poem B&rdquo;
               </CardDescription>
             </CardHeader>
             <CardContent className="space-y-4 text-sm text-muted-foreground">
@@ -945,7 +944,7 @@ export default function SongsOfOurselvesV1Page() {
           <strong className="text-foreground">Disclaimer:</strong> This resource is an independent
           study aid and is not endorsed by or affiliated with Cambridge Assessment International
           Education (CAIE). All poem references are for educational analysis purposes. Exam board
-          specifications may change &mdash; always check the latest syllabus.
+          specifications may change - always check the latest syllabus.
         </p>
       </div>
     </>

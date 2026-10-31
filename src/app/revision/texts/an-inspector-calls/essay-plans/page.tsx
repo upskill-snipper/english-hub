@@ -97,7 +97,7 @@ const essayPlans: EssayPlan[] = [
           'The telephone call at the end forces the cycle to repeat, denying the audience comfortable closure.',
         quote: '"what happened to the girl and what we all did to her that matters."',
         analysis:
-          'Eric insists the moral lesson matters regardless of the Inspector\u2019s identity. The cyclical structure \u2014 a new inspector is coming \u2014 suggests that moral reckoning cannot be evaded, only postponed.',
+          'Eric insists the moral lesson matters regardless of the Inspector\u2019s identity. The cyclical structure - a new inspector is coming - suggests that moral reckoning cannot be evaded, only postponed.',
         link: 'The ending is directed at the audience: if the Birlings refuse to learn, will you?',
       },
     ],
@@ -131,7 +131,7 @@ const essayPlans: EssayPlan[] = [
           'Sheila returns the engagement ring, showing that moral awakening has real personal consequences.',
         quote: '"I didn\u2019t feel about her as she felt about me."',
         analysis:
-          'Although this is Gerald\u2019s line, Sheila\u2019s response to it \u2014 returning the ring \u2014 is the key dramatic action. She refuses to build her future on a relationship tainted by exploitation, demonstrating that responsibility extends to personal choices.',
+          'Although this is Gerald\u2019s line, Sheila\u2019s response to it - returning the ring - is the key dramatic action. She refuses to build her future on a relationship tainted by exploitation, demonstrating that responsibility extends to personal choices.',
         link: 'Priestley shows that genuine moral change is costly. Sheila sacrifices comfort for integrity.',
       },
       {
@@ -199,7 +199,7 @@ const essayPlans: EssayPlan[] = [
           'The Inspector controls the pace and direction of the investigation, overriding Birling\u2019s social authority.',
         quote: '"Public men, Mr Birling, have responsibilities as well as privileges."',
         analysis:
-          'The balanced phrasing frames social duty as non-negotiable. The Inspector speaks to Birling as a moral equal \u2014 or superior \u2014 despite Birling\u2019s wealth and status. Priestley inverts the class hierarchy to subject the powerful to scrutiny.',
+          'The balanced phrasing frames social duty as non-negotiable. The Inspector speaks to Birling as a moral equal - or superior - despite Birling\u2019s wealth and status. Priestley inverts the class hierarchy to subject the powerful to scrutiny.',
         link: 'The Inspector\u2019s authority is moral, not social. He demonstrates that true power comes from integrity, not money.',
       },
       {
@@ -208,7 +208,7 @@ const essayPlans: EssayPlan[] = [
         quote: '"what happened to the girl and what we all did to her that matters."',
         analysis:
           'Although Eric says this, it summarises the Inspector\u2019s method: each character\u2019s individual action is connected to every other. The Inspector\u2019s sequential revelations build the play\u2019s argument that responsibility is shared, not individual.',
-        link: 'Priestley\u2019s structural choice \u2014 one confession triggering the next \u2014 dramatises the interconnectedness the Inspector preaches.',
+        link: 'Priestley\u2019s structural choice - one confession triggering the next - dramatises the interconnectedness the Inspector preaches.',
       },
       {
         point:
@@ -220,7 +220,7 @@ const essayPlans: EssayPlan[] = [
       },
       {
         point:
-          'The ambiguity of the Inspector\u2019s identity \u2014 real police officer, ghost, or supernatural figure \u2014 reinforces his symbolic function.',
+          'The ambiguity of the Inspector\u2019s identity - real police officer, ghost, or supernatural figure - reinforces his symbolic function.',
         quote: '"Fire and blood and anguish."',
         analysis:
           'The prophetic warning suggests the Inspector exists outside time. His name, a pun on "ghoul," hints at a spectral presence. Priestley makes his identity unresolvable because his function is moral, not literal.',
@@ -228,7 +228,7 @@ const essayPlans: EssayPlan[] = [
       },
     ],
     conclusion:
-      'Inspector Goole is Priestley\u2019s most powerful dramatic creation: a figure of moral authority who cannot be placed within the social hierarchy he has come to judge. His ambiguity \u2014 real or supernatural \u2014 makes the play\u2019s message harder to dismiss, and his final speech remains the clearest expression of Priestley\u2019s vision of collective responsibility.',
+      'Inspector Goole is Priestley\u2019s most powerful dramatic creation: a figure of moral authority who cannot be placed within the social hierarchy he has come to judge. His ambiguity - real or supernatural - makes the play\u2019s message harder to dismiss, and his final speech remains the clearest expression of Priestley\u2019s vision of collective responsibility.',
   },
   {
     id: 5,
@@ -270,7 +270,7 @@ const essayPlans: EssayPlan[] = [
       },
     ],
     conclusion:
-      'The generational conflict is the engine of the play\u2019s final act and its most enduring message. Priestley wrote for a 1945 audience standing at a crossroads: they could rebuild society on principles of shared responsibility, or they could return to the selfish individualism of 1912. The play\u2019s cyclical ending suggests the choice is never settled \u2014 each generation must make it again.',
+      'The generational conflict is the engine of the play\u2019s final act and its most enduring message. Priestley wrote for a 1945 audience standing at a crossroads: they could rebuild society on principles of shared responsibility, or they could return to the selfish individualism of 1912. The play\u2019s cyclical ending suggests the choice is never settled - each generation must make it again.',
   },
 ]
 

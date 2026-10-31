@@ -139,8 +139,8 @@ export default async function MacbethAct3Page() {
                   <span className="font-medium text-foreground">Technique:</span> List structure
                   &amp; euphemism. Banquo&apos;s listing mirrors the witches&apos; original
                   prophecy. &ldquo;Play&rsquo;dst most foully&rdquo; is a deliberate understatement
-                  for murder &mdash; even Banquo cannot bring himself to name the crime directly.
-                  The verb &ldquo;play&rsquo;dst&rdquo; suggests performance and deception.
+                  for murder - even Banquo cannot bring himself to name the crime directly. The verb
+                  &ldquo;play&rsquo;dst&rdquo; suggests performance and deception.
                 </p>
               </div>
               <div className="rounded-lg border border-border/60 p-3">
@@ -151,8 +151,7 @@ export default async function MacbethAct3Page() {
                   <span className="font-medium text-foreground">Technique:</span> Antithesis &amp;
                   paradox. Being king means nothing without security. This captures the tragic irony
                   of Macbeth&apos;s situation: he has achieved his ambition but cannot enjoy it. The
-                  word &ldquo;safely&rdquo; is ironic &mdash; safety through murder is no safety at
-                  all.
+                  word &ldquo;safely&rdquo; is ironic - safety through murder is no safety at all.
                 </p>
               </div>
               <div className="rounded-lg border border-border/60 p-3">
@@ -163,9 +162,9 @@ export default async function MacbethAct3Page() {
                 <p className="text-sm text-muted-foreground mt-1">
                   <span className="font-medium text-foreground">Technique:</span> Metaphor &amp;
                   semantic field of infertility. &ldquo;Fruitless&rdquo; and &ldquo;barren&rdquo;
-                  suggest sterility &mdash; Macbeth&apos;s line will not inherit the throne. The
-                  imagery connects to the unnatural disruption caused by regicide: Macbeth has
-                  seized power but cannot reproduce it naturally. He is a dead end.
+                  suggest sterility - Macbeth&apos;s line will not inherit the throne. The imagery
+                  connects to the unnatural disruption caused by regicide: Macbeth has seized power
+                  but cannot reproduce it naturally. He is a dead end.
                 </p>
               </div>
               <div className="rounded-lg border border-border/60 p-3">
@@ -177,8 +176,8 @@ export default async function MacbethAct3Page() {
                   <span className="font-medium text-foreground">Technique:</span> Classical
                   allusion. &ldquo;Genius&rdquo; here means guardian spirit (the Roman concept).
                   Macbeth admits that Banquo&apos;s moral superiority diminishes him. His
-                  &ldquo;royalty of nature&rdquo; &mdash; innate nobility &mdash; is everything
-                  Macbeth&apos;s stolen kingship lacks.
+                  &ldquo;royalty of nature&rdquo; - innate nobility - is everything Macbeth&apos;s
+                  stolen kingship lacks.
                 </p>
               </div>
             </div>
@@ -187,12 +186,11 @@ export default async function MacbethAct3Page() {
             <h4 className="font-semibold mb-1">{_tr(`Character Development`)}</h4>
             <p className="text-muted-foreground">
               <strong>Macbeth</strong> has evolved from hesitant killer to calculating tyrant. He no
-              longer agonises over murder &mdash; he plans it coldly and uses manipulation
-              (questioning the murderers&apos; manhood) just as Lady Macbeth once manipulated him.
-              This mirroring shows how corruption is self-replicating. <strong>Banquo</strong>{' '}
-              suspects the truth but does not act on it, raising questions about his own moral
-              courage. He knows Macbeth may have committed murder yet chooses silence rather than
-              confrontation.
+              longer agonises over murder - he plans it coldly and uses manipulation (questioning
+              the murderers&apos; manhood) just as Lady Macbeth once manipulated him. This mirroring
+              shows how corruption is self-replicating. <strong>Banquo</strong> suspects the truth
+              but does not act on it, raising questions about his own moral courage. He knows
+              Macbeth may have committed murder yet chooses silence rather than confrontation.
             </p>
           </div>
           <div>
@@ -279,7 +277,7 @@ export default async function MacbethAct3Page() {
                 </p>
                 <p className="text-sm text-muted-foreground mt-1">
                   <span className="font-medium text-foreground">Technique:</span> Metaphor &amp;
-                  contrast. Macbeth&apos;s mind is filled with stinging, poisonous creatures &mdash;
+                  contrast. Macbeth&apos;s mind is filled with stinging, poisonous creatures -
                   paranoid thoughts that torment him constantly. The tender address &ldquo;dear
                   wife&rdquo; creates a poignant contrast with the violent imagery, showing a man
                   reaching for comfort while consumed by horror.
@@ -294,8 +292,8 @@ export default async function MacbethAct3Page() {
                   <span className="font-medium text-foreground">Technique:</span> Irony &amp;
                   metaphor. Macbeth envies the man he murdered, recognising that Duncan has found
                   the peace that he himself can never have. Life is reduced to a &ldquo;fitful
-                  fever&rdquo; &mdash; restless, painful, and temporary. The sleep motif returns:
-                  Macbeth murdered sleep and now envies the sleep of the dead.
+                  fever&rdquo; - restless, painful, and temporary. The sleep motif returns: Macbeth
+                  murdered sleep and now envies the sleep of the dead.
                 </p>
               </div>
               <div className="rounded-lg border border-border/60 p-3">
@@ -406,9 +404,9 @@ export default async function MacbethAct3Page() {
             <p className="text-muted-foreground">
               This short, violent scene mirrors the offstage murder of Duncan but shows it directly
               for the first time. Shakespeare is demonstrating that Macbeth&apos;s violence has
-              become more overt. Fleance&apos;s escape is a structural necessity &mdash; it
-              preserves the witches&apos; prophecy and ensures Macbeth&apos;s insecurity continues.
-              The incomplete success torments Macbeth in the next scene.
+              become more overt. Fleance&apos;s escape is a structural necessity - it preserves the
+              witches&apos; prophecy and ensures Macbeth&apos;s insecurity continues. The incomplete
+              success torments Macbeth in the next scene.
             </p>
           </div>
           <div>
@@ -480,9 +478,9 @@ export default async function MacbethAct3Page() {
                 <p className="text-sm text-muted-foreground mt-1">
                   <span className="font-medium text-foreground">Technique:</span> Extended metaphor.
                   Guilt is imagined as a river of blood Macbeth has waded halfway across. The word
-                  &ldquo;tedious&rdquo; is chillingly understated &mdash; returning to virtue has
-                  become merely inconvenient. This metaphor suggests moral entrapment: once past a
-                  certain point, the cost of redemption feels equal to the cost of continued evil.
+                  &ldquo;tedious&rdquo; is chillingly understated - returning to virtue has become
+                  merely inconvenient. This metaphor suggests moral entrapment: once past a certain
+                  point, the cost of redemption feels equal to the cost of continued evil.
                 </p>
               </div>
               <div className="rounded-lg border border-border/60 p-3">
@@ -505,7 +503,7 @@ export default async function MacbethAct3Page() {
                   <span className="font-medium text-foreground">Technique:</span> Repetition &amp;
                   proverbial statement. The repetition of &ldquo;blood&rdquo; creates a sense of
                   inescapable cycle. Violence begets violence. Macbeth recognises the pattern but
-                  sees no way out except more violence &mdash; this is the logic of tyranny.
+                  sees no way out except more violence - this is the logic of tyranny.
                 </p>
               </div>
               <div className="rounded-lg border border-border/60 p-3">
@@ -523,9 +521,9 @@ export default async function MacbethAct3Page() {
                 <p className="text-sm text-muted-foreground mt-1">
                   <span className="font-medium text-foreground">Technique:</span> Irony. When the
                   ghost vanishes, Macbeth claims to be restored. But the audience knows he is less
-                  of a man with each crime. The line echoes the gender debate from Act 1 &mdash;
-                  Lady Macbeth&apos;s definition of manhood through violence has led to
-                  psychological destruction rather than strength.
+                  of a man with each crime. The line echoes the gender debate from Act 1 - Lady
+                  Macbeth&apos;s definition of manhood through violence has led to psychological
+                  destruction rather than strength.
                 </p>
               </div>
             </div>
@@ -547,7 +545,7 @@ export default async function MacbethAct3Page() {
             <p className="text-muted-foreground">
               The banquet scene is the climax of Act 3 and, arguably, of the entire play. It is a
               public spectacle that collapses into private nightmare. Structurally, it mirrors the
-              Porter scene &mdash; a social gathering interrupted by the consequences of murder. The
+              Porter scene - a social gathering interrupted by the consequences of murder. The
               ghost&apos;s appearance (and whether it is real or imagined) links to the dagger
               hallucination in Act 2, creating a pattern of escalating supernatural or psychological
               disturbance. After this scene, Macbeth&apos;s reign becomes openly tyrannical.
@@ -595,8 +593,8 @@ export default async function MacbethAct3Page() {
                   <span className="font-medium text-foreground">Technique:</span> Proverbial
                   statement &amp; dramatic irony. &ldquo;Security&rdquo; here means overconfidence.
                   Hecate reveals the witches&apos; strategy: make Macbeth feel invincible so he
-                  drops his guard. This is precisely what happens in Act 4 &mdash; the prophecies
-                  give Macbeth false security that leads to his downfall.
+                  drops his guard. This is precisely what happens in Act 4 - the prophecies give
+                  Macbeth false security that leads to his downfall.
                 </p>
               </div>
             </div>

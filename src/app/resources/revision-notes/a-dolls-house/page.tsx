@@ -72,7 +72,7 @@ function QuoteCard({
       <p className="text-sm font-semibold text-violet-800 dark:text-violet-200 italic">
         &ldquo;{quote}&rdquo;
       </p>
-      {speaker && <p className="mt-1 text-xs font-medium text-violet-600">&mdash; {speaker}</p>}
+      {speaker && <p className="mt-1 text-xs font-medium text-violet-600">- {speaker}</p>}
       <p className="mt-2 text-sm text-muted-foreground">{analysis}</p>
     </div>
   )
@@ -118,7 +118,7 @@ export default function ADollsHousePage() {
           </span>
         </div>
         <h1 className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
-          A Doll&apos;s House &mdash; Complete A-Level Revision Guide
+          A Doll&apos;s House - Complete A-Level Revision Guide
         </h1>
         <p className="mt-1 text-lg text-muted-foreground">
           Henrik Ibsen, 1879. Quotations from the English translations of William Archer and R.
@@ -181,15 +181,15 @@ export default function ADollsHousePage() {
                 <p className="mt-2 text-sm text-muted-foreground leading-relaxed">
                   The play opens on Christmas Eve in the Helmers&apos; comfortable bourgeois drawing
                   room. Nora Helmer returns home from shopping, eats macaroons in secret, and is
-                  greeted by her husband Torvald with diminutive pet names &mdash; in Archer&apos;s
+                  greeted by her husband Torvald with diminutive pet names - in Archer&apos;s
                   translation, &ldquo;little lark,&rdquo; &ldquo;little squirrel,&rdquo;
                   &ldquo;spendthrift.&rdquo; Torvald has just been appointed manager of the bank,
                   promising financial security after years of hardship. Two visitors arrive: Mrs
                   Linde (Christine), a widowed schoolfriend seeking work, and the family&apos;s
-                  ailing companion Dr Rank. Nora confides to Mrs Linde a long-held secret &mdash;
-                  she once obtained a loan that paid for a year&apos;s trip to Italy when Torvald
-                  was dangerously ill, and to do so she forged her dying father&apos;s signature on
-                  the bond. She has been repaying it from her household allowance ever since.
+                  ailing companion Dr Rank. Nora confides to Mrs Linde a long-held secret - she once
+                  obtained a loan that paid for a year&apos;s trip to Italy when Torvald was
+                  dangerously ill, and to do so she forged her dying father&apos;s signature on the
+                  bond. She has been repaying it from her household allowance ever since.
                 </p>
                 <p className="mt-2 text-sm text-muted-foreground leading-relaxed">
                   Nils Krogstad, a clerk at Torvald&apos;s bank and the moneylender who advanced the
@@ -205,21 +205,16 @@ export default function ADollsHousePage() {
                   </p>
                   <ul className="mt-2 space-y-1 text-sm text-muted-foreground">
                     <li>
-                      &bull; Nora&apos;s pet names &mdash; the &ldquo;doll&rdquo; relationship
-                      established
+                      &bull; Nora&apos;s pet names - the &ldquo;doll&rdquo; relationship established
                     </li>
-                    <li>&bull; The hidden macaroons &mdash; small acts of female disobedience</li>
+                    <li>&bull; The hidden macaroons - small acts of female disobedience</li>
                     <li>
-                      &bull; Confession to Mrs Linde &mdash; the secret loan and the forged
-                      signature
+                      &bull; Confession to Mrs Linde - the secret loan and the forged signature
                     </li>
                     <li>
-                      &bull; Krogstad&apos;s blackmail &mdash; the forgery exposed as a punishable
-                      crime
+                      &bull; Krogstad&apos;s blackmail - the forgery exposed as a punishable crime
                     </li>
-                    <li>
-                      &bull; Christmas tree decorated &mdash; the surface domesticity established
-                    </li>
+                    <li>&bull; Christmas tree decorated - the surface domesticity established</li>
                   </ul>
                 </div>
               </div>
@@ -233,13 +228,13 @@ export default function ADollsHousePage() {
                 </h4>
                 <p className="mt-2 text-sm text-muted-foreground leading-relaxed">
                   When the curtain rises on Act 2, the Christmas tree, once neat and decorated, is
-                  described in the stage directions as stripped and disordered &mdash; a visual
-                  signal that Nora&apos;s domestic illusion is unravelling. Anne-Marie, the family
-                  nanny, helps her with the costume for the ball: she will dance the tarantella, an
-                  Italian folk dance, in a Neapolitan fisher-girl&apos;s dress. Nora pleads with
-                  Torvald to keep Krogstad in his post; he refuses, insisting that to do so would
-                  humiliate him publicly &mdash; he was at school with Krogstad and finds the
-                  man&apos;s familiarity offensive.
+                  described in the stage directions as stripped and disordered - a visual signal
+                  that Nora&apos;s domestic illusion is unravelling. Anne-Marie, the family nanny,
+                  helps her with the costume for the ball: she will dance the tarantella, an Italian
+                  folk dance, in a Neapolitan fisher-girl&apos;s dress. Nora pleads with Torvald to
+                  keep Krogstad in his post; he refuses, insisting that to do so would humiliate him
+                  publicly - he was at school with Krogstad and finds the man&apos;s familiarity
+                  offensive.
                 </p>
                 <p className="mt-2 text-sm text-muted-foreground leading-relaxed">
                   Dr Rank visits and confesses to Nora that he is dying of an inherited disease (the
@@ -247,9 +242,9 @@ export default function ADollsHousePage() {
                   in love with her. Nora, who had been about to ask him for the money she needs,
                   finds she cannot now do so. Krogstad returns and, at the end of the act, drops his
                   blackmail letter into the locked letterbox in the hall, to which only Torvald has
-                  the key. Mrs Linde, hearing this, promises to intercede with Krogstad &mdash; her
-                  old lover. Desperate, Nora begs Torvald to coach her tarantella; she dances
-                  wildly, increasingly hysterically, while Torvald plays for her and then calls out
+                  the key. Mrs Linde, hearing this, promises to intercede with Krogstad - her old
+                  lover. Desperate, Nora begs Torvald to coach her tarantella; she dances wildly,
+                  increasingly hysterically, while Torvald plays for her and then calls out
                   corrections, in order to keep him from the letterbox until after the ball.
                 </p>
                 <div className="mt-3 rounded-lg bg-muted p-3">
@@ -257,17 +252,11 @@ export default function ADollsHousePage() {
                     Key Moments
                   </p>
                   <ul className="mt-2 space-y-1 text-sm text-muted-foreground">
-                    <li>
-                      &bull; Stripped Christmas tree at curtain-up &mdash; symbolic deterioration
-                    </li>
-                    <li>&bull; Torvald refuses to keep Krogstad &mdash; pride over compassion</li>
-                    <li>
-                      &bull; Dr Rank&apos;s declaration of love &mdash; closes off another option
-                    </li>
+                    <li>&bull; Stripped Christmas tree at curtain-up - symbolic deterioration</li>
+                    <li>&bull; Torvald refuses to keep Krogstad - pride over compassion</li>
+                    <li>&bull; Dr Rank&apos;s declaration of love - closes off another option</li>
                     <li>&bull; Krogstad&apos;s letter posted into the locked letterbox</li>
-                    <li>
-                      &bull; The frenzied tarantella &mdash; performance at its most desperate
-                    </li>
+                    <li>&bull; The frenzied tarantella - performance at its most desperate</li>
                   </ul>
                 </div>
               </div>
@@ -277,47 +266,43 @@ export default function ADollsHousePage() {
                   <span className="flex h-6 w-6 items-center justify-center rounded-full bg-violet-500/15 text-xs font-bold text-violet-700 dark:text-violet-300">
                     3
                   </span>
-                  Act Three: Boxing Day &mdash; the Door Slam
+                  Act Three: Boxing Day - the Door Slam
                 </h4>
                 <p className="mt-2 text-sm text-muted-foreground leading-relaxed">
                   While the Helmers are upstairs at the ball, Mrs Linde and Krogstad meet alone in
                   the drawing room. They rekindle their old relationship; Mrs Linde proposes they
                   unite. Krogstad offers to retract the letter, but Mrs Linde insists Torvald must
-                  read it &mdash; the marriage cannot survive on a hidden lie. The Helmers return;
-                  Nora is still in costume. Dr Rank pays a final visit to say goodbye before
-                  retreating home to die. Torvald reads the letter and erupts in fury, calling Nora
-                  a hypocrite and a criminal, and forbidding her from raising the children.
+                  read it - the marriage cannot survive on a hidden lie. The Helmers return; Nora is
+                  still in costume. Dr Rank pays a final visit to say goodbye before retreating home
+                  to die. Torvald reads the letter and erupts in fury, calling Nora a hypocrite and
+                  a criminal, and forbidding her from raising the children.
                 </p>
                 <p className="mt-2 text-sm text-muted-foreground leading-relaxed">
                   A second letter arrives from Krogstad, returning the bond and renouncing his
                   threat. Torvald immediately reverses himself: he cries that he is saved, he
-                  forgives Nora, he tells her she is doubly his &mdash; both his wife and as if his
-                  child. But Nora has seen everything she needs to see. She changes out of her
-                  costume into everyday clothes &mdash; visually shedding the doll &mdash; and tells
-                  Torvald to sit down. They have, she says, never had a serious conversation in
-                  their eight years of marriage. She has been her father&apos;s
-                  &ldquo;doll-child&rdquo; and is now Torvald&apos;s &ldquo;doll-wife.&rdquo; She
-                  must leave to educate herself, to discover whether she or society is right, and to
-                  find out, as she puts it in Archer&apos;s translation, whether she is even
-                  &ldquo;a human being.&rdquo; She returns her wedding ring, takes her bag, and
-                  walks out. The play ends with the famous slam of the front door &mdash; the
-                  &ldquo;door slam heard around the world,&rdquo; in the often-repeated phrase.
+                  forgives Nora, he tells her she is doubly his - both his wife and as if his child.
+                  But Nora has seen everything she needs to see. She changes out of her costume into
+                  everyday clothes - visually shedding the doll - and tells Torvald to sit down.
+                  They have, she says, never had a serious conversation in their eight years of
+                  marriage. She has been her father&apos;s &ldquo;doll-child&rdquo; and is now
+                  Torvald&apos;s &ldquo;doll-wife.&rdquo; She must leave to educate herself, to
+                  discover whether she or society is right, and to find out, as she puts it in
+                  Archer&apos;s translation, whether she is even &ldquo;a human being.&rdquo; She
+                  returns her wedding ring, takes her bag, and walks out. The play ends with the
+                  famous slam of the front door - the &ldquo;door slam heard around the
+                  world,&rdquo; in the often-repeated phrase.
                 </p>
                 <div className="mt-3 rounded-lg bg-muted p-3">
                   <p className="text-xs font-semibold text-muted-foreground uppercase tracking-wider">
                     Key Moments
                   </p>
                   <ul className="mt-2 space-y-1 text-sm text-muted-foreground">
-                    <li>
-                      &bull; Mrs Linde and Krogstad reunited &mdash; mature counter-relationship
-                    </li>
+                    <li>&bull; Mrs Linde and Krogstad reunited - mature counter-relationship</li>
                     <li>&bull; Torvald&apos;s fury at the first letter</li>
-                    <li>
-                      &bull; The second letter &mdash; Torvald&apos;s instant reversal exposes him
-                    </li>
-                    <li>&bull; Nora changes costume &mdash; performance ends</li>
-                    <li>&bull; The wedding ring returned &mdash; legal and symbolic separation</li>
-                    <li>&bull; The door slam &mdash; final stage direction, no closing speech</li>
+                    <li>&bull; The second letter - Torvald&apos;s instant reversal exposes him</li>
+                    <li>&bull; Nora changes costume - performance ends</li>
+                    <li>&bull; The wedding ring returned - legal and symbolic separation</li>
+                    <li>&bull; The door slam - final stage direction, no closing speech</li>
                   </ul>
                 </div>
               </div>
@@ -415,11 +400,11 @@ export default function ADollsHousePage() {
                   A Doll&apos;s House (Et dukkehjem) was published in Copenhagen on 4 December 1879
                   and first performed at the Royal Theatre, Copenhagen, on 21 December 1879. Ibsen
                   himself was living in Italy at the time of composition. The play is set in his own
-                  country &mdash; nineteenth-century urban Norway, in a society that called its
-                  capital Christiania (now Oslo) until 1925. Norway was in political union with
-                  Sweden and was undergoing rapid bourgeois expansion. The Norwegian middle class
-                  prized respectability, financial probity and the patriarchal household. Crucially,
-                  the legal regime of the period did not allow a married woman to take out a loan
+                  country - nineteenth-century urban Norway, in a society that called its capital
+                  Christiania (now Oslo) until 1925. Norway was in political union with Sweden and
+                  was undergoing rapid bourgeois expansion. The Norwegian middle class prized
+                  respectability, financial probity and the patriarchal household. Crucially, the
+                  legal regime of the period did not allow a married woman to take out a loan
                   without her husband&apos;s consent. Nora&apos;s forgery is therefore not a moral
                   aberration but the consequence of denying women independent financial standing.
                 </p>
@@ -433,7 +418,7 @@ export default function ADollsHousePage() {
                   repudiated her and she was briefly committed to an asylum. The biographical
                   parallel with Nora is direct: a wife&apos;s unauthorised loan, taken to save a
                   husband&apos;s health, met by male punishment when revealed. Nora&apos;s outcome
-                  in the play is, of course, Ibsen&apos;s own &mdash; not Kieler&apos;s.
+                  in the play is, of course, Ibsen&apos;s own - not Kieler&apos;s.
                 </p>
               </div>
               <div className="rounded-lg bg-primary/10 p-4">
@@ -445,12 +430,12 @@ export default function ADollsHousePage() {
                   play&rdquo; (la pi&egrave;ce bien faite) of French dramatists such as
                   Eug&egrave;ne Scribe and Victorien Sardou: tightly constructed plots built around
                   secrets, misunderstandings and a final reconciliation. A Doll&apos;s House borrows
-                  the apparatus of the well-made play &mdash; the secret loan, the incriminating
-                  letter, the locked box, the late revelation &mdash; but breaks the form by
-                  refusing the expected reconciliation. In the influential reading of critics such
-                  as James McFarlane, this generic betrayal is part of why first audiences were so
-                  disoriented: Ibsen turns the genre against itself, replacing the restoration of
-                  harmony with the woman&apos;s exit.
+                  the apparatus of the well-made play - the secret loan, the incriminating letter,
+                  the locked box, the late revelation - but breaks the form by refusing the expected
+                  reconciliation. In the influential reading of critics such as James McFarlane,
+                  this generic betrayal is part of why first audiences were so disoriented: Ibsen
+                  turns the genre against itself, replacing the restoration of harmony with the
+                  woman&apos;s exit.
                 </p>
               </div>
               <div className="rounded-lg bg-primary/10 p-4">
@@ -512,12 +497,12 @@ export default function ADollsHousePage() {
                   The Norwegian title Et dukkehjem is, more literally, &ldquo;a doll home&rdquo;
                   rather than the architectural English &ldquo;doll&apos;s house.&rdquo; The phrase
                   points to a sentimental ideal of the nineteenth-century home as ornamental
-                  sanctuary &mdash; the wife as decorative centre. John Ruskin&apos;s essay
-                  &ldquo;Of Queens&apos; Gardens&rdquo; (1865) and Coventry Patmore&apos;s poem The
-                  Angel in the House (1854&ndash;62) are the period&apos;s clearest articulations of
-                  this ideal: they celebrate the model that Ibsen dismantles. The play asks what
-                  happens when the doll begins to think, and what kind of &ldquo;home&rdquo; it
-                  really is when its inhabitants have never had a serious conversation.
+                  sanctuary - the wife as decorative centre. John Ruskin&apos;s essay &ldquo;Of
+                  Queens&apos; Gardens&rdquo; (1865) and Coventry Patmore&apos;s poem The Angel in
+                  the House (1854&ndash;62) are the period&apos;s clearest articulations of this
+                  ideal: they celebrate the model that Ibsen dismantles. The play asks what happens
+                  when the doll begins to think, and what kind of &ldquo;home&rdquo; it really is
+                  when its inhabitants have never had a serious conversation.
                 </p>
               </div>
             </div>
@@ -539,7 +524,7 @@ export default function ADollsHousePage() {
               <QuoteCard
                 quote="Is that my little lark twittering out there?"
                 speaker="Helmer (Act 1, opening exchange; Sharp)"
-                analysis="The play's opening exchange in Sharp's translation. The diminutive bird name &mdash; one of several across the play (lark, squirrel, songbird) &mdash; encodes the entire marriage in a single phrase. Animal vocabulary infantilises Nora and frames her as an exotic, decorative pet. The possessive &lsquo;my&rsquo; reveals ownership; &lsquo;twittering&rsquo; reduces her speech to charming pointlessness. Ibsen establishes the &lsquo;doll' relationship before any plot has developed."
+                analysis="The play's opening exchange in Sharp's translation. The diminutive bird name - one of several across the play (lark, squirrel, songbird) - encodes the entire marriage in a single phrase. Animal vocabulary infantilises Nora and frames her as an exotic, decorative pet. The possessive &lsquo;my&rsquo; reveals ownership; &lsquo;twittering&rsquo; reduces her speech to charming pointlessness. Ibsen establishes the &lsquo;doll' relationship before any plot has developed."
               />
               <QuoteCard
                 quote="It was I who saved Torvald's life."
@@ -554,17 +539,17 @@ export default function ADollsHousePage() {
               <QuoteCard
                 quote="Our home has been nothing but a playroom."
                 speaker="Nora to Helmer (Act 3; Sharp)"
-                analysis="One of the play's defining lines. The &lsquo;home&rsquo; that Torvald imagined as moral sanctuary is reclassified as a place of childish make-believe. &lsquo;Playroom&rsquo; combines the play's key symbols &mdash; doll, dance, costume &mdash; under one roof, and subverts the domestic ideal of Patmore and Ruskin: the angel in the house is in fact a child playing with adults."
+                analysis="One of the play's defining lines. The &lsquo;home&rsquo; that Torvald imagined as moral sanctuary is reclassified as a place of childish make-believe. &lsquo;Playroom&rsquo; combines the play's key symbols - doll, dance, costume - under one roof, and subverts the domestic ideal of Patmore and Ruskin: the angel in the house is in fact a child playing with adults."
               />
               <QuoteCard
                 quote="I have been your doll-wife, just as at home I used to be papa's doll-child."
                 speaker="Nora to Helmer (Act 3; Archer)"
-                analysis="The single most important sentence of Nora's self-analysis. She locates the marriage in a continuous lineage of infantilisation, passed from father to husband. The hyphenated coinages &lsquo;doll-wife&rsquo; and &lsquo;doll-child&rsquo; underline that for Nora, womanhood under patriarchy has never had two distinct phases &mdash; she has always been the toy. The line gives the play's title its full force."
+                analysis="The single most important sentence of Nora's self-analysis. She locates the marriage in a continuous lineage of infantilisation, passed from father to husband. The hyphenated coinages &lsquo;doll-wife&rsquo; and &lsquo;doll-child&rsquo; underline that for Nora, womanhood under patriarchy has never had two distinct phases - she has always been the toy. The line gives the play's title its full force."
               />
               <QuoteCard
                 quote="I must stand quite alone, if I am to understand myself and everything about me."
                 speaker="Nora to Helmer (Act 3; Sharp)"
-                analysis="The thesis of Nora's departure. &lsquo;Stand quite alone&rsquo; positions independence as an existential condition rather than a sentimental wish. Pairing &lsquo;myself&rsquo; with &lsquo;everything about me&rsquo; is crucial: she needs to learn both interior and world. This is why the children, however loved, cannot now be the answer &mdash; she cannot find herself while still defined by her duties to others."
+                analysis="The thesis of Nora's departure. &lsquo;Stand quite alone&rsquo; positions independence as an existential condition rather than a sentimental wish. Pairing &lsquo;myself&rsquo; with &lsquo;everything about me&rsquo; is crucial: she needs to learn both interior and world. This is why the children, however loved, cannot now be the answer - she cannot find herself while still defined by her duties to others."
               />
               <QuoteCard
                 quote="I must try to educate myself."
@@ -574,42 +559,42 @@ export default function ADollsHousePage() {
               <QuoteCard
                 quote="I believe that before all else I am a human being, just as much as you are."
                 speaker="Nora to Helmer (Act 3; Archer)"
-                analysis="Often quoted as the play's humanist core. &lsquo;Human being&rsquo; (Norwegian menneske) is the play's key term. Nora does not assert female superiority or special female nature &mdash; she demands the most basic recognition that she belongs to the same category as Torvald. The phrase &lsquo;just as much as you are&rsquo; is grammatically modest but historically charged: it places wife and husband on identical ontological footing, a premise nineteenth-century law did not always concede."
+                analysis="Often quoted as the play's humanist core. &lsquo;Human being&rsquo; (Norwegian menneske) is the play's key term. Nora does not assert female superiority or special female nature - she demands the most basic recognition that she belongs to the same category as Torvald. The phrase &lsquo;just as much as you are&rsquo; is grammatically modest but historically charged: it places wife and husband on identical ontological footing, a premise nineteenth-century law did not always concede."
               />
               <QuoteCard
                 quote="Millions of women have done so."
                 speaker="Nora to Helmer (Act 3; Archer)"
-                analysis="When Helmer protests that no man would sacrifice his honour for love, Nora's reply &mdash; that millions of women have done so &mdash; punctures his rhetoric. He has been speaking as if female sacrifice is unthinkable; she informs him it is the daily condition of half the population. Ibsen signals here that Nora's individual story is the most ordinary story in the world."
+                analysis="When Helmer protests that no man would sacrifice his honour for love, Nora's reply - that millions of women have done so - punctures his rhetoric. He has been speaking as if female sacrifice is unthinkable; she informs him it is the daily condition of half the population. Ibsen signals here that Nora's individual story is the most ordinary story in the world."
               />
               <QuoteCard
                 quote="I am saved!"
                 speaker="Helmer (Act 3, on the second letter; Archer and Sharp)"
-                analysis="On reading Krogstad's second letter, Torvald's first thought is for himself. The exclamation and the singular pronoun &mdash; &lsquo;I&rsquo; rather than &lsquo;we&rsquo; &mdash; expose the quality of his earlier marital protestations. Ibsen lets Torvald condemn himself in his own dialogue: he never claims to have saved Nora, only to have escaped scandal. This is the moment Nora sees the marriage clearly."
+                analysis="On reading Krogstad's second letter, Torvald's first thought is for himself. The exclamation and the singular pronoun - &lsquo;I&rsquo; rather than &lsquo;we&rsquo; - expose the quality of his earlier marital protestations. Ibsen lets Torvald condemn himself in his own dialogue: he never claims to have saved Nora, only to have escaped scandal. This is the moment Nora sees the marriage clearly."
               />
               <QuoteCard
                 quote="No man sacrifices his honour, even for one he loves."
                 speaker="Helmer to Nora (Act 3; Archer)"
-                analysis="A line that hands Nora her best argument. Helmer has just elevated &lsquo;honour&rsquo; (a public, masculine, abstract value) above love. Nora replies that millions of women have done exactly that &mdash; sacrificed their reputation, their private comfort, even their bodies, for those they love. Ibsen exposes &lsquo;honour&rsquo; as a male ideology that exempts men from the very sacrifices women are required to make."
+                analysis="A line that hands Nora her best argument. Helmer has just elevated &lsquo;honour&rsquo; (a public, masculine, abstract value) above love. Nora replies that millions of women have done exactly that - sacrificed their reputation, their private comfort, even their bodies, for those they love. Ibsen exposes &lsquo;honour&rsquo; as a male ideology that exempts men from the very sacrifices women are required to make."
               />
               <QuoteCard
-                quote="The most wonderful thing of all &mdash; ?"
+                quote="The most wonderful thing of all - ?"
                 speaker="Nora and Helmer (Act 3; Sharp)"
-                analysis="The play's final exchange before the door slam, in Sharp's translation. Nora has hoped throughout for &lsquo;the wonderful thing&rsquo; &mdash; the moment when Torvald would step forward and accept the consequences of her crime as theirs together. He did not. Now she names the further wonder: that their life together might become a real marriage. The em-dashed unfinished phrase, taken up by both speakers, leaves the future suspended. The door slam is the only answer."
+                analysis="The play's final exchange before the door slam, in Sharp's translation. Nora has hoped throughout for &lsquo;the wonderful thing&rsquo; - the moment when Torvald would step forward and accept the consequences of her crime as theirs together. He did not. Now she names the further wonder: that their life together might become a real marriage. The em-dashed unfinished phrase, taken up by both speakers, leaves the future suspended. The door slam is the only answer."
               />
               <QuoteCard
                 quote="From below is heard the reverberation of a heavy door closing."
                 speaker="Final stage direction (Act 3; Archer)"
-                analysis="The final stage direction in Archer's translation &mdash; the &lsquo;door slam heard around the world.&rsquo; The reverberation is acoustic but also political: a sound that travelled across European theatres and provoked the social panic of the 1880s. Ibsen ends not with speech but with a sound effect, refusing to give Helmer &mdash; or society &mdash; the last word. The slam is irreversible: a door that slams cannot be unslammed."
+                analysis="The final stage direction in Archer's translation - the &lsquo;door slam heard around the world.&rsquo; The reverberation is acoustic but also political: a sound that travelled across European theatres and provoked the social panic of the 1880s. Ibsen ends not with speech but with a sound effect, refusing to give Helmer - or society - the last word. The slam is irreversible: a door that slams cannot be unslammed."
               />
               <QuoteCard
                 quote="A room, comfortably and tastefully, but not expensively, furnished."
                 speaker="Opening stage direction (Act 1; Archer)"
-                analysis="Archer's translation of Ibsen's opening description of the Helmer drawing room. The carefully poised qualifier &lsquo;but not expensively&rsquo; sets the social register: this is bourgeois respectability, not aristocracy &mdash; a household trying to look right within its means. Realist drama begins with such precise stage directions; the room itself is a character, the &lsquo;doll's house&rsquo; of the title."
+                analysis="Archer's translation of Ibsen's opening description of the Helmer drawing room. The carefully poised qualifier &lsquo;but not expensively&rsquo; sets the social register: this is bourgeois respectability, not aristocracy - a household trying to look right within its means. Realist drama begins with such precise stage directions; the room itself is a character, the &lsquo;doll's house&rsquo; of the title."
               />
               <QuoteCard
-                quote="When your terror was over &mdash; not for what threatened me, but for yourself &mdash; when there was nothing more to fear &mdash; then it seemed to you as though nothing had happened."
+                quote="When your terror was over - not for what threatened me, but for yourself - when there was nothing more to fear - then it seemed to you as though nothing had happened."
                 speaker="Nora to Helmer (Act 3; Archer)"
-                analysis="Nora's clearest description of Helmer's reversal between the two letters. The structure of the sentence &mdash; the negative inserted parenthetical &lsquo;not for what threatened me, but for yourself&rsquo; &mdash; performs the analytic move of separating his self-interest from his rhetoric of love. This is Nora at her most lucid and is the moment she ceases to be the doll."
+                analysis="Nora's clearest description of Helmer's reversal between the two letters. The structure of the sentence - the negative inserted parenthetical &lsquo;not for what threatened me, but for yourself&rsquo; - performs the analytic move of separating his self-interest from his rhetoric of love. This is Nora at her most lucid and is the moment she ceases to be the doll."
               />
               <QuoteCard
                 quote="Henceforward there can be no question of happiness, but merely of saving the ruins, the shreds, the show"
@@ -631,9 +616,9 @@ export default function ADollsHousePage() {
                   stage directions at the start of Act 2 as stripped and dishevelled, with its
                   candles burnt out. It tracks Nora&apos;s own deterioration through the action:
                   ornament in Act 1, ruined in Act 2. As an object of bourgeois display imported
-                  into the home for one season of the year, it also figures Nora herself &mdash;
-                  brought in to decorate the room and discarded when its use is past. Ibsen places
-                  it centre-stage so that the audience watches the marriage and the tree decay
+                  into the home for one season of the year, it also figures Nora herself - brought
+                  in to decorate the room and discarded when its use is past. Ibsen places it
+                  centre-stage so that the audience watches the marriage and the tree decay
                   together.
                 </p>
               </div>
@@ -642,11 +627,10 @@ export default function ADollsHousePage() {
                 <p className="mt-1 text-sm text-muted-foreground leading-relaxed">
                   Forbidden by Torvald (he claims they will spoil her teeth), Nora eats them anyway
                   and lies about it. The macaroon is the smallest unit of female disobedience in the
-                  play &mdash; private, oral, immediate, a small pleasure taken from a regulated
-                  life. Their reappearance in scenes with Dr Rank, when she offers them openly,
-                  marks the few spaces in the household where Nora is not under marital
-                  surveillance. The trivial sweet stands in for the larger pattern of policed female
-                  appetite.
+                  play - private, oral, immediate, a small pleasure taken from a regulated life.
+                  Their reappearance in scenes with Dr Rank, when she offers them openly, marks the
+                  few spaces in the household where Nora is not under marital surveillance. The
+                  trivial sweet stands in for the larger pattern of policed female appetite.
                 </p>
               </div>
               <div className="rounded-lg bg-muted p-4">
@@ -672,7 +656,7 @@ export default function ADollsHousePage() {
                   literalises male legal authority: the household receives information through
                   Torvald&apos;s key. Mrs Linde&apos;s decision to leave the letter in the box is
                   therefore a deliberate act of routing the truth through, rather than around, male
-                  authority &mdash; a refusal to spare the husband at the wife&apos;s expense.
+                  authority - a refusal to spare the husband at the wife&apos;s expense.
                 </p>
               </div>
               <div className="rounded-lg bg-muted p-4">
@@ -709,11 +693,11 @@ export default function ADollsHousePage() {
                   paper object that contains both Nora&apos;s love (it paid for Torvald&apos;s
                   rescue) and her crime (the forgery). Money, banknotes, household allowances,
                   Torvald&apos;s new salary, Krogstad&apos;s wages, Mrs Linde&apos;s search for
-                  work, Anne-Marie&apos;s sacrifice for wages &mdash; the play is permeated by
-                  financial detail. When Krogstad returns the bond at the end of Act 3, the paper
-                  itself loses its threat, but the marriage built on its hidden weight cannot be
-                  repaired. Ibsen uses money to argue that bourgeois domestic intimacy is in fact a
-                  financial arrangement women are required to administer without legal personhood.
+                  work, Anne-Marie&apos;s sacrifice for wages - the play is permeated by financial
+                  detail. When Krogstad returns the bond at the end of Act 3, the paper itself loses
+                  its threat, but the marriage built on its hidden weight cannot be repaired. Ibsen
+                  uses money to argue that bourgeois domestic intimacy is in fact a financial
+                  arrangement women are required to administer without legal personhood.
                 </p>
               </div>
               <div className="rounded-lg bg-muted p-4">
@@ -765,18 +749,18 @@ export default function ADollsHousePage() {
                   </div>
                   <div>
                     <p className="text-xs font-semibold text-violet-700 dark:text-violet-300 uppercase tracking-wider">
-                      Paragraph 1 &mdash; Performed selfhood (Act 1)
+                      Paragraph 1 - Performed selfhood (Act 1)
                     </p>
                     <p className="mt-1 text-sm text-muted-foreground">
                       Pet names (lark, squirrel), hidden macaroons, secret loan. Nora&apos;s
                       identity is constituted by Helmer&apos;s language. But she also tells Mrs
-                      Linde &lsquo;It was I who saved Torvald&apos;s life&rsquo; &mdash; an early
-                      flash of agency the play will develop.
+                      Linde &lsquo;It was I who saved Torvald&apos;s life&rsquo; - an early flash of
+                      agency the play will develop.
                     </p>
                   </div>
                   <div>
                     <p className="text-xs font-semibold text-violet-700 dark:text-violet-300 uppercase tracking-wider">
-                      Paragraph 2 &mdash; Performance under pressure (Act 2)
+                      Paragraph 2 - Performance under pressure (Act 2)
                     </p>
                     <p className="mt-1 text-sm text-muted-foreground">
                       The tarantella scene: Nora dances increasingly wildly while Helmer plays for
@@ -788,7 +772,7 @@ export default function ADollsHousePage() {
                   </div>
                   <div>
                     <p className="text-xs font-semibold text-violet-700 dark:text-violet-300 uppercase tracking-wider">
-                      Paragraph 3 &mdash; The recognition (Act 3)
+                      Paragraph 3 - The recognition (Act 3)
                     </p>
                     <p className="mt-1 text-sm text-muted-foreground">
                       &lsquo;I have been your doll-wife, just as at home I used to be papa&apos;s
@@ -799,7 +783,7 @@ export default function ADollsHousePage() {
                   </div>
                   <div>
                     <p className="text-xs font-semibold text-violet-700 dark:text-violet-300 uppercase tracking-wider">
-                      Paragraph 4 &mdash; Counter-views
+                      Paragraph 4 - Counter-views
                     </p>
                     <p className="mt-1 text-sm text-muted-foreground">
                       Some critics read Nora&apos;s departure as politically essential; early
@@ -842,7 +826,7 @@ export default function ADollsHousePage() {
                   </div>
                   <div>
                     <p className="text-xs font-semibold text-violet-700 dark:text-violet-300 uppercase tracking-wider">
-                      Paragraph 1 &mdash; The opening: salary and shopping
+                      Paragraph 1 - The opening: salary and shopping
                     </p>
                     <p className="mt-1 text-sm text-muted-foreground">
                       Helmer&apos;s promotion frames the play; his teasing about Nora&apos;s
@@ -853,7 +837,7 @@ export default function ADollsHousePage() {
                   </div>
                   <div>
                     <p className="text-xs font-semibold text-violet-700 dark:text-violet-300 uppercase tracking-wider">
-                      Paragraph 2 &mdash; The unauthorised loan and the forgery
+                      Paragraph 2 - The unauthorised loan and the forgery
                     </p>
                     <p className="mt-1 text-sm text-muted-foreground">
                       Nora cannot legally borrow without male consent; the forgery is the
@@ -864,7 +848,7 @@ export default function ADollsHousePage() {
                   </div>
                   <div>
                     <p className="text-xs font-semibold text-violet-700 dark:text-violet-300 uppercase tracking-wider">
-                      Paragraph 3 &mdash; Female labour for wages
+                      Paragraph 3 - Female labour for wages
                     </p>
                     <p className="mt-1 text-sm text-muted-foreground">
                       Mrs Linde&apos;s loveless first marriage; her search for work in Act 1;
@@ -875,7 +859,7 @@ export default function ADollsHousePage() {
                   </div>
                   <div>
                     <p className="text-xs font-semibold text-violet-700 dark:text-violet-300 uppercase tracking-wider">
-                      Paragraph 4 &mdash; The bond as object
+                      Paragraph 4 - The bond as object
                     </p>
                     <p className="mt-1 text-sm text-muted-foreground">
                       The IOU as physical stage property: signed in love, weaponised in blackmail,
@@ -891,8 +875,8 @@ export default function ADollsHousePage() {
                     <p className="mt-1 text-sm text-muted-foreground">
                       The door slam is partly a question about money: how will Nora live? Ibsen
                       refuses to soften the question. The play is unsentimental about the financial
-                      structure of the &lsquo;doll&apos;s house&rsquo; &mdash; bourgeois affection
-                      rests on bourgeois capital.
+                      structure of the &lsquo;doll&apos;s house&rsquo; - bourgeois affection rests
+                      on bourgeois capital.
                     </p>
                   </div>
                 </div>
@@ -917,7 +901,7 @@ export default function ADollsHousePage() {
                   </div>
                   <div>
                     <p className="text-xs font-semibold text-violet-700 dark:text-violet-300 uppercase tracking-wider">
-                      Paragraph 1 &mdash; Helmer&apos;s evident virtues
+                      Paragraph 1 - Helmer&apos;s evident virtues
                     </p>
                     <p className="mt-1 text-sm text-muted-foreground">
                       Hard-working, refuses bribes, attentive husband, devoted father, financially
@@ -928,7 +912,7 @@ export default function ADollsHousePage() {
                   </div>
                   <div>
                     <p className="text-xs font-semibold text-violet-700 dark:text-violet-300 uppercase tracking-wider">
-                      Paragraph 2 &mdash; The pet-name regime
+                      Paragraph 2 - The pet-name regime
                     </p>
                     <p className="mt-1 text-sm text-muted-foreground">
                       Lark, squirrel, songbird. Linguistic infantilisation is so habitual Helmer
@@ -938,7 +922,7 @@ export default function ADollsHousePage() {
                   </div>
                   <div>
                     <p className="text-xs font-semibold text-violet-700 dark:text-violet-300 uppercase tracking-wider">
-                      Paragraph 3 &mdash; Honour and reputation
+                      Paragraph 3 - Honour and reputation
                     </p>
                     <p className="mt-1 text-sm text-muted-foreground">
                       Krogstad&apos;s familiarity humiliates him; the threatened scandal threatens
@@ -949,7 +933,7 @@ export default function ADollsHousePage() {
                   </div>
                   <div>
                     <p className="text-xs font-semibold text-violet-700 dark:text-violet-300 uppercase tracking-wider">
-                      Paragraph 4 &mdash; The reversal
+                      Paragraph 4 - The reversal
                     </p>
                     <p className="mt-1 text-sm text-muted-foreground">
                       &lsquo;I am saved!&rsquo; The instant pivot from rage to forgiveness as soon
@@ -991,7 +975,7 @@ export default function ADollsHousePage() {
                   </div>
                   <div>
                     <p className="text-xs font-semibold text-violet-700 dark:text-violet-300 uppercase tracking-wider">
-                      Paragraph 1 &mdash; The dance as performance
+                      Paragraph 1 - The dance as performance
                     </p>
                     <p className="mt-1 text-sm text-muted-foreground">
                       Costume chosen by Helmer, mended by Mrs Linde, taught by Helmer. Femininity
@@ -1001,7 +985,7 @@ export default function ADollsHousePage() {
                   </div>
                   <div>
                     <p className="text-xs font-semibold text-violet-700 dark:text-violet-300 uppercase tracking-wider">
-                      Paragraph 2 &mdash; The dance as concealment
+                      Paragraph 2 - The dance as concealment
                     </p>
                     <p className="mt-1 text-sm text-muted-foreground">
                       Nora dances in part to keep Helmer away from the letterbox. The performance is
@@ -1011,18 +995,18 @@ export default function ADollsHousePage() {
                   </div>
                   <div>
                     <p className="text-xs font-semibold text-violet-700 dark:text-violet-300 uppercase tracking-wider">
-                      Paragraph 3 &mdash; The dance&apos;s cultural meaning
+                      Paragraph 3 - The dance&apos;s cultural meaning
                     </p>
                     <p className="mt-1 text-sm text-muted-foreground">
                       The tarantella was historically believed to expel the venom of the spider bite
-                      &mdash; a frenzied dance on the edge of hysteria. Ibsen&apos;s setting is
+                      - a frenzied dance on the edge of hysteria. Ibsen&apos;s setting is
                       deliberate. The poison Nora is dancing out is, in the play&apos;s logic, the
                       lie of her marriage.
                     </p>
                   </div>
                   <div>
                     <p className="text-xs font-semibold text-violet-700 dark:text-violet-300 uppercase tracking-wider">
-                      Paragraph 4 &mdash; Costume change
+                      Paragraph 4 - Costume change
                     </p>
                     <p className="mt-1 text-sm text-muted-foreground">
                       In Act 3, Nora changes out of the costume into everyday dress before the door
@@ -1068,7 +1052,7 @@ export default function ADollsHousePage() {
                   </div>
                   <div>
                     <p className="text-xs font-semibold text-violet-700 dark:text-violet-300 uppercase tracking-wider">
-                      Paragraph 1 &mdash; Performed femininity
+                      Paragraph 1 - Performed femininity
                     </p>
                     <p className="mt-1 text-sm text-muted-foreground">
                       Nora&apos;s tarantella; Blanche&apos;s paper lanterns and Belle Reve fictions.
@@ -1079,7 +1063,7 @@ export default function ADollsHousePage() {
                   </div>
                   <div>
                     <p className="text-xs font-semibold text-violet-700 dark:text-violet-300 uppercase tracking-wider">
-                      Paragraph 2 &mdash; Male power and economic dependency
+                      Paragraph 2 - Male power and economic dependency
                     </p>
                     <p className="mt-1 text-sm text-muted-foreground">
                       Helmer&apos;s salary, Stanley&apos;s tenancy and the loss of Belle Reve. Both
@@ -1090,7 +1074,7 @@ export default function ADollsHousePage() {
                   </div>
                   <div>
                     <p className="text-xs font-semibold text-violet-700 dark:text-violet-300 uppercase tracking-wider">
-                      Paragraph 3 &mdash; The truth-event
+                      Paragraph 3 - The truth-event
                     </p>
                     <p className="mt-1 text-sm text-muted-foreground">
                       Krogstad&apos;s letter; Stanley&apos;s revelation of Blanche&apos;s past. Both
@@ -1102,7 +1086,7 @@ export default function ADollsHousePage() {
                   </div>
                   <div>
                     <p className="text-xs font-semibold text-violet-700 dark:text-violet-300 uppercase tracking-wider">
-                      Paragraph 4 &mdash; Endings: the door and the doctor
+                      Paragraph 4 - Endings: the door and the doctor
                     </p>
                     <p className="mt-1 text-sm text-muted-foreground">
                       Nora exits through her own front door, slamming it on the marriage. Blanche
@@ -1113,7 +1097,7 @@ export default function ADollsHousePage() {
                   </div>
                   <div>
                     <p className="text-xs font-semibold text-violet-700 dark:text-violet-300 uppercase tracking-wider">
-                      Paragraph 5 &mdash; Context
+                      Paragraph 5 - Context
                     </p>
                     <p className="mt-1 text-sm text-muted-foreground">
                       1879 first-wave feminism vs late-1940s postwar America. Ibsen&apos;s door slam
@@ -1155,10 +1139,10 @@ export default function ADollsHousePage() {
               </h4>
               <p className="mt-2 text-sm text-muted-foreground leading-relaxed">
                 Recognise the play&apos;s formal sleight of hand. Ibsen sets up the conventions of a
-                Scribean well-made plot &mdash; concealed letter, blackmail, locked box, late
-                documentary truth &mdash; and then refuses the genre&apos;s mandatory final
-                reconciliation. As James McFarlane observed, the door slam is not just a feminist
-                gesture but a generic one: Ibsen breaks the form on stage in front of his audience.
+                Scribean well-made plot - concealed letter, blackmail, locked box, late documentary
+                truth - and then refuses the genre&apos;s mandatory final reconciliation. As James
+                McFarlane observed, the door slam is not just a feminist gesture but a generic one:
+                Ibsen breaks the form on stage in front of his audience.
               </p>
             </div>
             <div className="rounded-lg border border-violet-500/30 bg-violet-500/5 p-4">
@@ -1167,10 +1151,10 @@ export default function ADollsHousePage() {
               </h4>
               <p className="mt-2 text-sm text-muted-foreground leading-relaxed">
                 Ibsen is often charged with making Nora a bad mother. A more careful reading notices
-                that the children are mostly off-stage &mdash; cared for by Anne-Marie &mdash; long
-                before Nora leaves. The play&apos;s domestic infrastructure already runs on
-                working-class female labour. Nora&apos;s departure does not abandon them to nothing;
-                it leaves them where, in practice, they have been throughout the play.
+                that the children are mostly off-stage - cared for by Anne-Marie - long before Nora
+                leaves. The play&apos;s domestic infrastructure already runs on working-class female
+                labour. Nora&apos;s departure does not abandon them to nothing; it leaves them
+                where, in practice, they have been throughout the play.
               </p>
             </div>
             <div className="rounded-lg border border-violet-500/30 bg-violet-500/5 p-4">
@@ -1178,12 +1162,12 @@ export default function ADollsHousePage() {
                 3. Nora and Krogstad as Mirror Forgers
               </h4>
               <p className="mt-2 text-sm text-muted-foreground leading-relaxed">
-                The parallel between Nora and Krogstad &mdash; both involved in forgeries, both
-                motivated by family responsibility, both threatened with social annihilation &mdash;
-                is the play&apos;s structural symmetry. Ibsen uses it to argue that
-                &lsquo;crime&rsquo; in this society is gender-neutral but social punishment is not.
-                Krogstad can be redeemed by reunion with Mrs Linde; Nora&apos;s redemption can only
-                come through walking out. The asymmetry makes the political point.
+                The parallel between Nora and Krogstad - both involved in forgeries, both motivated
+                by family responsibility, both threatened with social annihilation - is the
+                play&apos;s structural symmetry. Ibsen uses it to argue that &lsquo;crime&rsquo; in
+                this society is gender-neutral but social punishment is not. Krogstad can be
+                redeemed by reunion with Mrs Linde; Nora&apos;s redemption can only come through
+                walking out. The asymmetry makes the political point.
               </p>
             </div>
             <div className="rounded-lg border border-violet-500/30 bg-violet-500/5 p-4">
@@ -1193,9 +1177,9 @@ export default function ADollsHousePage() {
               <p className="mt-2 text-sm text-muted-foreground leading-relaxed">
                 It is Mrs Linde, not Nora or Helmer, who decides that the letter must remain in the
                 box. She is the play&apos;s moral hinge. Sophisticated responses recognise that her
-                counter-relationship with Krogstad &mdash; founded on shared damage and honesty
-                &mdash; is Ibsen&apos;s alternative model. The play is not against marriage; it is
-                for partnership between adults.
+                counter-relationship with Krogstad - founded on shared damage and honesty - is
+                Ibsen&apos;s alternative model. The play is not against marriage; it is for
+                partnership between adults.
               </p>
             </div>
             <div className="rounded-lg border border-violet-500/30 bg-violet-500/5 p-4">
@@ -1203,11 +1187,11 @@ export default function ADollsHousePage() {
                 5. The German Alternative Ending as Critical Evidence
               </h4>
               <p className="mt-2 text-sm text-muted-foreground leading-relaxed">
-                Reference Ibsen&apos;s reluctantly written second ending &mdash; in which Nora
-                collapses on seeing her sleeping children and stays &mdash; as evidence of the
-                cultural threat the original ending posed. He famously called it a &ldquo;barbaric
-                outrage&rdquo; on his own play. Citing this in an essay shows AO3 contextual depth
-                and AO5 awareness of how meaning is shaped by performance and reception history.
+                Reference Ibsen&apos;s reluctantly written second ending - in which Nora collapses
+                on seeing her sleeping children and stays - as evidence of the cultural threat the
+                original ending posed. He famously called it a &ldquo;barbaric outrage&rdquo; on his
+                own play. Citing this in an essay shows AO3 contextual depth and AO5 awareness of
+                how meaning is shaped by performance and reception history.
               </p>
             </div>
             <div className="rounded-lg border border-violet-500/30 bg-violet-500/5 p-4">
@@ -1245,12 +1229,11 @@ export default function ADollsHousePage() {
                 &ldquo;not even quite clear as to just what this women&apos;s rights movement really
                 is&rdquo; and that his task had been &ldquo;the description of humanity,&rdquo; not
                 the women&apos;s movement. A subtle response notes that this is an authorial
-                disclaimer to be read carefully &mdash; either as evasion, or as the universalist
-                humanism the play in fact dramatises, or as a strategic move to defend the
-                play&apos;s artistic seriousness against its political reception. Toril Moi&apos;s
-                Henrik Ibsen and the Birth of Modernism is a useful AO5 source on this question,
-                reading the play as foundational to dramatic modernism rather than narrowly to
-                feminism.
+                disclaimer to be read carefully - either as evasion, or as the universalist humanism
+                the play in fact dramatises, or as a strategic move to defend the play&apos;s
+                artistic seriousness against its political reception. Toril Moi&apos;s Henrik Ibsen
+                and the Birth of Modernism is a useful AO5 source on this question, reading the play
+                as foundational to dramatic modernism rather than narrowly to feminism.
               </p>
             </div>
           </div>

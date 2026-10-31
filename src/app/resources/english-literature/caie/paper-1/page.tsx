@@ -159,7 +159,7 @@ export default async function Paper1Page() {
             This cluster is based on the Cambridge IGCSE 0475 syllabus{' '}
             <em>{_tr(`Songs of Ourselves`)}</em> Vol&nbsp;1 Part&nbsp;4 plus the Ted Hughes cluster
             (<em>{_tr(`The Thought-Fox`)}</em>, <em>{_tr(`Hawk Roosting`)}</em>, <em>Wind</em>).
-            Cambridge International rotates set texts every two years &mdash; always confirm via{' '}
+            Cambridge International rotates set texts every two years - always confirm via{' '}
             <a
               href="https://www.cambridgeinternational.org/syllabus"
               target="_blank"
@@ -170,8 +170,8 @@ export default async function Paper1Page() {
             </a>{' '}
             before relying on this list for the current exam window. Prose options:{' '}
             <em>{_tr(`Things Fall Apart`)}</em> (Achebe) / <em>{_tr(`To Kill a Mockingbird`)}</em>{' '}
-            (Lee). The poem and prose lists below are legacy reference selections &mdash;
-            cross-check against the syllabus PDF for your exam window.
+            (Lee). The poem and prose lists below are legacy reference selections - cross-check
+            against the syllabus PDF for your exam window.
           </p>
           <p className="mt-3 text-muted-foreground leading-relaxed">
             <strong className="text-foreground">{_tr(`Cluster rights:`)}</strong> Four poems in the
@@ -242,7 +242,7 @@ export default async function Paper1Page() {
         {/* ── Songs of Ourselves ──────────────────────────────────── */}
         <section aria-labelledby="poetry-heading">
           <h2 id="poetry-heading" className="text-2xl font-bold text-foreground">
-            Songs of Ourselves &mdash; Selected Poems
+            Songs of Ourselves - Selected Poems
           </h2>
           <p className="mt-2 text-sm text-muted-foreground">
             The Cambridge anthology contains a wide selection of poems. Below are poems commonly
@@ -263,7 +263,7 @@ export default async function Paper1Page() {
                 <div className="flex flex-col gap-1 sm:flex-row sm:items-center sm:justify-between">
                   <h3 className="font-semibold text-foreground">
                     &ldquo;{p.title}&rdquo;
-                    <span className="ms-1 font-normal text-muted-foreground">&mdash; {p.poet}</span>
+                    <span className="ms-1 font-normal text-muted-foreground">- {p.poet}</span>
                   </h3>
                 </div>
                 <p className="mt-1 text-sm text-muted-foreground">
@@ -325,9 +325,7 @@ export default async function Paper1Page() {
                 <h3 className="font-semibold text-foreground">
                   {t.title}
                   {'author' in t && (
-                    <span className="ms-1 font-normal text-muted-foreground">
-                      &mdash; {t.author}
-                    </span>
+                    <span className="ms-1 font-normal text-muted-foreground">- {t.author}</span>
                   )}
                 </h3>
                 <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{t.detail}</p>
@@ -398,22 +396,20 @@ export default async function Paper1Page() {
             </h3>
             <div className="mt-3 space-y-2 text-sm text-muted-foreground">
               <p>
-                <strong className="text-primary">P</strong>oint &mdash; Make a clear analytical
-                point that directly addresses the question.
+                <strong className="text-primary">P</strong>oint - Make a clear analytical point that
+                directly addresses the question.
               </p>
               <p>
-                <strong className="text-primary">E</strong>vidence &mdash; Support with a short,
-                embedded quotation from the text.
+                <strong className="text-primary">E</strong>vidence - Support with a short, embedded
+                quotation from the text.
               </p>
               <p>
-                <strong className="text-primary">A</strong>nalysis &mdash; Analyse the language:
-                what specific words suggest, what techniques the writer uses, what effects are
-                created.
+                <strong className="text-primary">A</strong>nalysis - Analyse the language: what
+                specific words suggest, what techniques the writer uses, what effects are created.
               </p>
               <p>
-                <strong className="text-primary">L</strong>ink &mdash; Link back to the question
-                and, where possible, to wider themes, context, or the writer&rsquo;s overall
-                purpose.
+                <strong className="text-primary">L</strong>ink - Link back to the question and,
+                where possible, to wider themes, context, or the writer&rsquo;s overall purpose.
               </p>
             </div>
           </div>

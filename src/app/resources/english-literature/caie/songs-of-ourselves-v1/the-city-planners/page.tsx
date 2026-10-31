@@ -129,10 +129,9 @@ export default function TheCityPlannersPage() {
           <CardContent className="space-y-3 pt-6 text-sm text-muted-foreground">
             <p>
               Atwood positions a watchful speaker observing a Sunday-afternoon suburb. The
-              vocabulary of order &mdash; sanitary, levelled, planned &mdash; sits against small
-              disquieting details that suggest cracks in the facade. The poem belongs to
-              Atwood&rsquo;s broader ecological and political concern with North-American consumer
-              modernity.
+              vocabulary of order - sanitary, levelled, planned - sits against small disquieting
+              details that suggest cracks in the facade. The poem belongs to Atwood&rsquo;s broader
+              ecological and political concern with North-American consumer modernity.
             </p>
             <p>
               When comparing in Paper 1, this poem pairs effectively with <em>The Planners</em> by

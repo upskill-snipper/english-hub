@@ -20,7 +20,7 @@ export default function EditorialDashboard() {
     {
       label: 'Now reading',
       title: 'An Inspector Calls',
-      detail: 'Act 3 \u2014 The Inspector\u2019s final speech',
+      detail: 'Act 3 - The Inspector\u2019s final speech',
     },
     {
       label: 'Up next',
@@ -30,7 +30,7 @@ export default function EditorialDashboard() {
     {
       label: 'This week',
       title: 'Language Paper 2',
-      detail: 'Section B \u2014 Writing to argue and persuade',
+      detail: 'Section B - Writing to argue and persuade',
     },
   ]
 
@@ -211,7 +211,7 @@ export default function EditorialDashboard() {
                 <p className="text-xs text-muted-foreground mb-3">{day}</p>
                 <div className={`h-1 rounded-full ${i < 6 ? 'bg-primary/40' : 'bg-muted'}`} />
                 <p className="mt-3 text-xs tabular-nums text-muted-foreground">
-                  {i < 6 ? `${[45, 30, 60, 25, 50, 40][i]}m` : '\u2014'}
+                  {i < 6 ? `${[45, 30, 60, 25, 50, 40][i]}m` : '-'}
                 </p>
               </div>
             ))}

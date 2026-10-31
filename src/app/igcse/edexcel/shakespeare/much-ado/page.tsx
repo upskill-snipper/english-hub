@@ -61,15 +61,15 @@ const PLOT = [
 const CHARACTERS = [
   {
     name: 'Beatrice',
-    text: "Leonato's sharp-tongued niece and Hero's cousin. She has sworn never to marry and engages Benedick in a 'merry war' of wit. But she is also the play's fiercest moral voice \u2014 her Act 4 demand that Benedick 'Kill Claudio' is one of Shakespeare's most startling lines. Beatrice refuses to be silent about Hero's mistreatment.",
+    text: "Leonato's sharp-tongued niece and Hero's cousin. She has sworn never to marry and engages Benedick in a 'merry war' of wit. But she is also the play's fiercest moral voice - her Act 4 demand that Benedick 'Kill Claudio' is one of Shakespeare's most startling lines. Beatrice refuses to be silent about Hero's mistreatment.",
   },
   {
     name: 'Benedick',
-    text: "A soldier and confirmed bachelor who matches Beatrice's wit word for word. After being tricked by his friends into believing Beatrice loves him, he transforms \u2014 shaving, writing poetry, and agreeing to challenge Claudio for Beatrice's sake. Shakespeare shows that his pride is easier to puncture than he pretends.",
+    text: "A soldier and confirmed bachelor who matches Beatrice's wit word for word. After being tricked by his friends into believing Beatrice loves him, he transforms - shaving, writing poetry, and agreeing to challenge Claudio for Beatrice's sake. Shakespeare shows that his pride is easier to puncture than he pretends.",
   },
   {
     name: 'Hero',
-    text: "Leonato's gentle, obedient daughter and Claudio's love. She is largely silent for the first half of the play, then brutally slandered and publicly humiliated at her own wedding. Her 'death' and resurrection function almost like a ritual \u2014 she returns only when her honour can be publicly restored.",
+    text: "Leonato's gentle, obedient daughter and Claudio's love. She is largely silent for the first half of the play, then brutally slandered and publicly humiliated at her own wedding. Her 'death' and resurrection function almost like a ritual - she returns only when her honour can be publicly restored.",
   },
   {
     name: 'Claudio',
@@ -81,7 +81,7 @@ const CHARACTERS = [
   },
   {
     name: 'Don John',
-    text: "Don Pedro's bastard half-brother. He declares himself 'a plain-dealing villain' in Act 1 Scene 3 and spends the play trying to wreck others' happiness out of pure malice. He is the play's shadow \u2014 the reminder that the comedy exists only because the tragedy doesn't quite come off.",
+    text: "Don Pedro's bastard half-brother. He declares himself 'a plain-dealing villain' in Act 1 Scene 3 and spends the play trying to wreck others' happiness out of pure malice. He is the play's shadow - the reminder that the comedy exists only because the tragedy doesn't quite come off.",
   },
   {
     name: 'Leonato',
@@ -89,7 +89,7 @@ const CHARACTERS = [
   },
   {
     name: 'Dogberry',
-    text: "The bumbling constable whose malapropisms provide comic relief \u2014 but whose watchmen are the ones who actually uncover Don John's plot. Shakespeare uses him to argue that truth does not always come from the articulate, powerful or clever.",
+    text: "The bumbling constable whose malapropisms provide comic relief - but whose watchmen are the ones who actually uncover Don John's plot. Shakespeare uses him to argue that truth does not always come from the articulate, powerful or clever.",
   },
 ]
 
@@ -104,15 +104,15 @@ const THEMES_PREVIEW = [
   },
   {
     theme: 'Honour',
-    text: "Male honour in Messina depends on the sexual reputation of the women attached to them. One rumour about Hero's chastity is enough to make her father wish her dead. The play exposes how fragile \u2014 and how lethal \u2014 that system is.",
+    text: "Male honour in Messina depends on the sexual reputation of the women attached to them. One rumour about Hero's chastity is enough to make her father wish her dead. The play exposes how fragile - and how lethal - that system is.",
   },
   {
     theme: 'Marriage',
-    text: 'Marriage is a social contract, a religious sacrament, and (for Beatrice) a cage. Shakespeare gives us a rushed arranged marriage, a broken wedding, a faked marriage and two real ones \u2014 all in five acts.',
+    text: 'Marriage is a social contract, a religious sacrament, and (for Beatrice) a cage. Shakespeare gives us a rushed arranged marriage, a broken wedding, a faked marriage and two real ones - all in five acts.',
   },
   {
     theme: 'Gender',
-    text: "Hero is silenced, slandered and abandoned. Beatrice is the only character who speaks up for her \u2014 and to do so she has to ask a man to commit murder on her behalf. Shakespeare is unusually direct about women's lack of real power.",
+    text: "Hero is silenced, slandered and abandoned. Beatrice is the only character who speaks up for her - and to do so she has to ask a man to commit murder on her behalf. Shakespeare is unusually direct about women's lack of real power.",
   },
 ]
 
@@ -143,8 +143,8 @@ export default async function MuchAdoHubPage() {
             Much Ado About Nothing
           </h1>
           <p className="mx-auto mt-4 max-w-2xl text-lg text-muted-foreground">
-            Shakespeare&rsquo;s sharpest romantic comedy &mdash; and its hardest-edged examination
-            of honour, reputation and how women are judged.
+            Shakespeare&rsquo;s sharpest romantic comedy - and its hardest-edged examination of
+            honour, reputation and how women are judged.
           </p>
         </div>
       </section>
@@ -223,7 +223,7 @@ export default async function MuchAdoHubPage() {
               <h3 className="text-lg font-bold text-foreground">Themes</h3>
             </div>
             <p className="mt-3 text-sm text-muted-foreground leading-relaxed">
-              Love, deception, honour, marriage and gender &mdash; with key quotations for each.
+              Love, deception, honour, marriage and gender - with key quotations for each.
             </p>
             <span className="mt-4 inline-flex items-center gap-1 text-sm font-semibold text-primary group-hover:underline">
               Read the themes guide

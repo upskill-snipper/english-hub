@@ -100,16 +100,15 @@ export default function WindPage() {
         <Card>
           <CardContent className="space-y-3 pt-6 text-sm text-muted-foreground">
             <p>
-              <strong className="text-foreground">Poet:</strong> Ted Hughes &mdash; English poet,
-              born Mytholmroyd, West Yorkshire, 1930; Poet Laureate from 1984 until his death in
-              1998.
+              <strong className="text-foreground">Poet:</strong> Ted Hughes - English poet, born
+              Mytholmroyd, West Yorkshire, 1930; Poet Laureate from 1984 until his death in 1998.
             </p>
             <p>
               <strong className="text-foreground">Year:</strong> 1957
             </p>
             <p>
               <strong className="text-foreground">First publication:</strong>{' '}
-              <em>The Hawk in the Rain</em> (Faber &amp; Faber, 1957) &mdash; Hughes&rsquo;s debut
+              <em>The Hawk in the Rain</em> (Faber &amp; Faber, 1957) - Hughes&rsquo;s debut
               collection.
             </p>
             <p>
@@ -123,8 +122,7 @@ export default function WindPage() {
               iambic pentameter; ABBA rhyme scheme that loosens to half-rhyme and pararhyme. The
               poem moves from the house at night, through morning, into a description of the
               wind&rsquo;s violent action, and ends with two human figures sitting by a fire, unable
-              to speak. The form holds &mdash; just &mdash; while everything inside it is being
-              battered.
+              to speak. The form holds - just - while everything inside it is being battered.
             </p>
           </CardContent>
         </Card>

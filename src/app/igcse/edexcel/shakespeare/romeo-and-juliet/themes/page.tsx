@@ -41,7 +41,7 @@ const THEMES = [
   {
     theme: 'Love',
     summary:
-      "Shakespeare stages multiple competing versions of love. Romeo's opening love for Rosaline is pure Petrarchan performance \u2014 a catalogue of oxymorons ('O brawling love, O loving hate'). His love for Juliet, by contrast, is immediate and total. The Nurse sees love as bawdy and pragmatic. Paris represents the socially correct, arranged match. Shakespeare asks which of these forms of love is real \u2014 and whether the most intense kind can ever survive the world.",
+      "Shakespeare stages multiple competing versions of love. Romeo's opening love for Rosaline is pure Petrarchan performance - a catalogue of oxymorons ('O brawling love, O loving hate'). His love for Juliet, by contrast, is immediate and total. The Nurse sees love as bawdy and pragmatic. Paris represents the socially correct, arranged match. Shakespeare asks which of these forms of love is real - and whether the most intense kind can ever survive the world.",
     how_it_develops:
       "Act 1: Romeo's performative love for Rosaline. Act 1 Scene 5: the sonnet Romeo and Juliet share on first meeting. Act 2: the balcony scene transforms love from fantasy into vows. Act 3: love is tested against banishment. Act 5: love becomes a death-pact in the tomb.",
     quotes: [
@@ -55,7 +55,7 @@ const THEMES = [
   {
     theme: 'Fate',
     summary:
-      "The prologue calls the lovers 'star-cross'd' before the first scene has even begun. Shakespeare then peppers the play with premonitions, narrowly missed messages and near misses \u2014 Friar Lawrence's letter that never arrives, the timing of the tomb scene by seconds. The effect is double: the ending feels both inevitable (fate) and preventable (bad luck, bad timing, bad adult decisions). Shakespeare deliberately keeps both readings alive.",
+      "The prologue calls the lovers 'star-cross'd' before the first scene has even begun. Shakespeare then peppers the play with premonitions, narrowly missed messages and near misses - Friar Lawrence's letter that never arrives, the timing of the tomb scene by seconds. The effect is double: the ending feels both inevitable (fate) and preventable (bad luck, bad timing, bad adult decisions). Shakespeare deliberately keeps both readings alive.",
     how_it_develops:
       "Prologue: 'star-cross'd lovers' named. Act 1: Romeo's premonition of 'untimely death' before the ball. Act 3: Romeo calls himself 'fortune's fool' after killing Tybalt. Act 5: the Friar's letter fails, and Romeo arrives at the tomb minutes too early.",
     quotes: [
@@ -68,7 +68,7 @@ const THEMES = [
   {
     theme: 'Conflict',
     summary:
-      "The 'ancient grudge' between the Montagues and Capulets sits behind every scene. The feud poisons the play's language (Sampson and Gregory's bawdy threats in 1.1), its social order (the Prince repeatedly tries to impose peace), and its relationships (Juliet realising her beloved is a Montague, Tybalt hunting Romeo through the streets). Shakespeare suggests that inherited hatreds are irrational, self-perpetuating and lethal \u2014 especially to the children who had nothing to do with starting them.",
+      "The 'ancient grudge' between the Montagues and Capulets sits behind every scene. The feud poisons the play's language (Sampson and Gregory's bawdy threats in 1.1), its social order (the Prince repeatedly tries to impose peace), and its relationships (Juliet realising her beloved is a Montague, Tybalt hunting Romeo through the streets). Shakespeare suggests that inherited hatreds are irrational, self-perpetuating and lethal - especially to the children who had nothing to do with starting them.",
     how_it_develops:
       "Act 1 Scene 1: brawl in the streets, Prince's threat of death. Act 1 Scene 5: Tybalt's rage at finding Romeo at the ball. Act 3 Scene 1: Mercutio and Tybalt killed. Act 5 Scene 3: the families reconcile over the bodies of their children.",
     quotes: [
@@ -81,7 +81,7 @@ const THEMES = [
   {
     theme: 'Youth vs age',
     summary:
-      'The young characters feel and act at full intensity; the older characters delay, meddle and fail them. Juliet is not yet fourteen. Romeo is only a little older. Both act with full conviction. The adults around them \u2014 Capulet, Lady Capulet, Friar Lawrence, the Nurse \u2014 offer either rigid patriarchal control or wobbly, over-engineered counsel. Shakespeare is sharp-eyed about how adults betray the young who trust them.',
+      'The young characters feel and act at full intensity; the older characters delay, meddle and fail them. Juliet is not yet fourteen. Romeo is only a little older. Both act with full conviction. The adults around them - Capulet, Lady Capulet, Friar Lawrence, the Nurse - offer either rigid patriarchal control or wobbly, over-engineered counsel. Shakespeare is sharp-eyed about how adults betray the young who trust them.',
     how_it_develops:
       "Act 1: the decision that Juliet will marry Paris is made by adults without her consent. Act 2: the Friar plans a secret marriage in the belief it will fix everything. Act 3: the Nurse abruptly advises Juliet to marry Paris, abandoning her. Act 4: the Friar's potion plan. Act 5: the plan's collapse.",
     quotes: [
@@ -94,7 +94,7 @@ const THEMES = [
   {
     theme: 'Honour',
     summary:
-      "Honour is a trap. Mercutio fights Tybalt because Romeo's refusal to duel is 'dishonourable, vile submission'. Romeo kills Tybalt because honour demands he avenge Mercutio. The Capulet men escalate because backing down would shame them. Paris is bound to his betrothal by honour. Shakespeare lets us see that honour-codes don't protect anyone \u2014 they just supply polite justifications for unnecessary deaths.",
+      "Honour is a trap. Mercutio fights Tybalt because Romeo's refusal to duel is 'dishonourable, vile submission'. Romeo kills Tybalt because honour demands he avenge Mercutio. The Capulet men escalate because backing down would shame them. Paris is bound to his betrothal by honour. Shakespeare lets us see that honour-codes don't protect anyone - they just supply polite justifications for unnecessary deaths.",
     how_it_develops:
       "Act 1: Sampson and Gregory frame the feud as a matter of reputation. Act 3: Mercutio dies to defend Romeo's honour; Romeo avenges him out of his own. Act 3 Scene 5: Capulet frames Juliet's refusal as a personal dishonour. Act 5: Paris dies at the tomb defending his honourable claim on Juliet.",
     quotes: [
@@ -125,10 +125,10 @@ export default async function RomeoAndJulietThemesPage() {
             {await t('igcse.page.badge_edexcel_lit')}
           </div>
           <h1 className="mt-4 text-3xl font-bold tracking-tight text-foreground sm:text-4xl md:text-5xl">
-            Romeo and Juliet &mdash; Themes
+            Romeo and Juliet - Themes
           </h1>
           <p className="mx-auto mt-4 max-w-xl text-lg text-muted-foreground">
-            Love, fate, conflict, youth vs age and honour &mdash; tracked across the whole play.
+            Love, fate, conflict, youth vs age and honour - tracked across the whole play.
           </p>
         </div>
       </section>

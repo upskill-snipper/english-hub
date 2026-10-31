@@ -56,9 +56,7 @@ function QuoteCard({
   return (
     <div className="rounded-lg border-s-4 border-border bg-muted/50 p-4 mb-3">
       <p className="text-sm font-semibold text-foreground italic">&ldquo;{quote}&rdquo;</p>
-      {speaker && (
-        <p className="mt-1 text-xs font-medium text-muted-foreground">&mdash; {speaker}</p>
-      )}
+      {speaker && <p className="mt-1 text-xs font-medium text-muted-foreground">- {speaker}</p>}
       <p className="mt-2 text-sm text-muted-foreground">{analysis}</p>
     </div>
   )
@@ -136,7 +134,7 @@ export default function JaneEyrePage() {
                   Ten-year-old orphan Jane lives with her cruel aunt, Mrs Reed, and three cousins at
                   Gateshead Hall. John Reed bullies Jane, throwing a book at her head. Jane fights
                   back for the first time, declaring the injustice of her treatment. She is punished
-                  by being locked in the red room &mdash; the chamber where her uncle died.
+                  by being locked in the red room - the chamber where her uncle died.
                 </p>
               </div>
               <div>
@@ -203,8 +201,8 @@ export default function JaneEyrePage() {
                   A typhus epidemic sweeps Lowood, killing many pupils due to the school&apos;s
                   neglect. Helen Burns dies of consumption (tuberculosis) in Jane&apos;s arms,
                   speaking of her faith in heaven. Her death profoundly shapes Jane&apos;s character
-                  &mdash; she absorbs Helen&apos;s patience and self-control but never fully adopts
-                  her passive acceptance. The epidemic leads to an investigation and reform of the
+                  - she absorbs Helen&apos;s patience and self-control but never fully adopts her
+                  passive acceptance. The epidemic leads to an investigation and reform of the
                   school.
                 </p>
               </div>
@@ -213,8 +211,8 @@ export default function JaneEyrePage() {
                   {tr(`Chapter 10: Leaving Lowood`)}
                 </h5>
                 <p className="text-sm text-muted-foreground leading-relaxed">
-                  Jane spends eight years at Lowood &mdash; six as a pupil, two as a teacher. After
-                  Miss Temple marries and leaves, Jane feels restless and yearns for freedom. She
+                  Jane spends eight years at Lowood - six as a pupil, two as a teacher. After Miss
+                  Temple marries and leaves, Jane feels restless and yearns for freedom. She
                   advertises for a position as a governess and receives a reply from Thornfield
                   Hall. Before leaving, she is visited by Bessie, the former Gateshead servant, who
                   tells her that a paternal uncle (John Eyre) came looking for her.
@@ -237,7 +235,7 @@ export default function JaneEyrePage() {
                   Ad&egrave;le Varens, her young pupil (Rochester&apos;s ward). The house is grand
                   but mysterious. Jane hears strange laughter from the third storey, attributed to
                   the servant Grace Poole. Jane paces the third-floor corridor, reflecting on
-                  women&apos;s need for action and intellectual stimulation &mdash; a key feminist
+                  women&apos;s need for action and intellectual stimulation - a key feminist
                   passage.
                 </p>
               </div>
@@ -251,7 +249,7 @@ export default function JaneEyrePage() {
                   conversations are intellectual sparring matches between equals. Rochester confides
                   in Jane about Ad&egrave;le&apos;s mother, C&eacute;line Varens, a French opera
                   dancer who betrayed him. One night, Jane saves Rochester&apos;s life when his bed
-                  curtains catch fire &mdash; set alight by the mysterious third-storey occupant.
+                  curtains catch fire - set alight by the mysterious third-storey occupant.
                 </p>
               </div>
               <div>
@@ -262,9 +260,9 @@ export default function JaneEyrePage() {
                   Rochester leaves and returns with a party of fashionable guests, including the
                   beautiful Blanche Ingram. Jane is tormented by jealousy but forces herself to draw
                   portraits comparing her plain face with Blanche&apos;s beauty. Blanche is revealed
-                  as shallow, mercenary, and cruel &mdash; she mocks governesses openly. Rochester
-                  appears to court Blanche but shows no genuine affection. A mysterious stranger, Mr
-                  Mason, arrives from the West Indies.
+                  as shallow, mercenary, and cruel - she mocks governesses openly. Rochester appears
+                  to court Blanche but shows no genuine affection. A mysterious stranger, Mr Mason,
+                  arrives from the West Indies.
                 </p>
               </div>
               <div>
@@ -299,8 +297,8 @@ export default function JaneEyrePage() {
                   believes he is mocking her, as she expects him to marry Blanche. When she realises
                   his sincerity, she accepts. Jane delivers her famous speech: &ldquo;Do you think,
                   because I am poor, obscure, plain, and little, I am soulless and heartless?&rdquo;
-                  A lightning bolt strikes the chestnut tree, splitting it in two &mdash; a Gothic
-                  omen of the fractured relationship to come.
+                  A lightning bolt strikes the chestnut tree, splitting it in two - a Gothic omen of
+                  the fractured relationship to come.
                 </p>
               </div>
               <div>
@@ -326,9 +324,9 @@ export default function JaneEyrePage() {
                   storey as a violent lunatic. Rochester shows the wedding party Bertha, who attacks
                   him. He argues that his marriage was arranged by his father for money and that
                   Bertha&apos;s madness makes his marriage void. He begs Jane to live with him as
-                  his mistress in the south of France. Jane refuses &mdash; despite her love, she
-                  will not compromise her moral principles or self-respect. She leaves Thornfield in
-                  the dead of night.
+                  his mistress in the south of France. Jane refuses - despite her love, she will not
+                  compromise her moral principles or self-respect. She leaves Thornfield in the dead
+                  of night.
                 </p>
               </div>
             </div>
@@ -347,9 +345,9 @@ export default function JaneEyrePage() {
                   Jane wanders the moors, starving and sleeping outdoors. She begs for food and is
                   refused. On the point of death, she collapses on the doorstep of Moor House (Marsh
                   End), home of St John, Diana, and Mary Rivers. St John reluctantly takes her in.
-                  Jane gives a false name &mdash; &ldquo;Jane Elliott&rdquo; &mdash; to conceal her
-                  identity. Her destitution demonstrates the vulnerability of women without family,
-                  money, or connections in Victorian society.
+                  Jane gives a false name - &ldquo;Jane Elliott&rdquo; - to conceal her identity.
+                  Her destitution demonstrates the vulnerability of women without family, money, or
+                  connections in Victorian society.
                 </p>
               </div>
               <div>
@@ -374,9 +372,9 @@ export default function JaneEyrePage() {
                   Eyre, has died and left Jane twenty thousand pounds. Jane is overjoyed to discover
                   that the Rivers siblings are her cousins. She insists on dividing the inheritance
                   equally four ways. St John asks Jane to marry him and accompany him as a
-                  missionary to India. His proposal is cold and dutiful &mdash; he does not love
-                  Jane but considers her useful. Jane recognises that marriage to St John would
-                  destroy her spirit.
+                  missionary to India. His proposal is cold and dutiful - he does not love Jane but
+                  considers her useful. Jane recognises that marriage to St John would destroy her
+                  spirit.
                 </p>
               </div>
               <div>
@@ -408,8 +406,8 @@ export default function JaneEyrePage() {
                   Jane returns to find Thornfield Hall a burned ruin. She learns that Bertha Mason
                   set the fire and leapt from the roof to her death. Rochester tried to save the
                   servants and Bertha, losing his sight and his left hand in the blaze. Jane finds
-                  Rochester at Ferndean, a remote manor house. He is blind, scarred, and broken
-                  &mdash; physically diminished but morally humbled.
+                  Rochester at Ferndean, a remote manor house. He is blind, scarred, and broken -
+                  physically diminished but morally humbled.
                 </p>
               </div>
               <div>
@@ -417,7 +415,7 @@ export default function JaneEyrePage() {
                   {tr(`Chapters 37-38: Reunion and Marriage`)}
                 </h5>
                 <p className="text-sm text-muted-foreground leading-relaxed">
-                  Jane and Rochester are reunited. The power dynamic has shifted &mdash; Jane is now
+                  Jane and Rochester are reunited. The power dynamic has shifted - Jane is now
                   financially independent and Rochester is dependent on her. They marry as equals.
                   Rochester confesses that he called out Jane&apos;s name in despair, and she heard
                   him at exactly that moment. After two years, Rochester partially regains his
@@ -437,7 +435,7 @@ export default function JaneEyrePage() {
         <div className="grid gap-4 sm:grid-cols-2">
           <CharacterCard
             name="Jane Eyre"
-            description="The novel's narrator and protagonist. Jane is passionate, morally principled, and fiercely independent. Orphaned and abused, she refuses to accept the submissive role Victorian society assigns to poor, plain women. Her journey traces a balance between passion and reason, desire and duty. She rejects Rochester when accepting him would compromise her self-respect, and rejects St John when accepting him would crush her spirit. Jane's plainness is central to Bront&euml;'s argument: worth is not determined by beauty, birth, or wealth. She insists on being treated as Rochester's equal &mdash; 'as if both had passed through the grave, and we stood at God's feet, equal &mdash; as we are!' Jane is both a Romantic heroine (driven by feeling) and a moral agent (governed by principle)."
+            description="The novel's narrator and protagonist. Jane is passionate, morally principled, and fiercely independent. Orphaned and abused, she refuses to accept the submissive role Victorian society assigns to poor, plain women. Her journey traces a balance between passion and reason, desire and duty. She rejects Rochester when accepting him would compromise her self-respect, and rejects St John when accepting him would crush her spirit. Jane's plainness is central to Bront&euml;'s argument: worth is not determined by beauty, birth, or wealth. She insists on being treated as Rochester's equal - 'as if both had passed through the grave, and we stood at God's feet, equal - as we are!' Jane is both a Romantic heroine (driven by feeling) and a moral agent (governed by principle)."
           />
           <CharacterCard
             name="Edward Rochester"
@@ -445,7 +443,7 @@ export default function JaneEyrePage() {
           />
           <CharacterCard
             name="St John Rivers"
-            description="Jane's cousin, a clergyman preparing for missionary work in India. St John is handsome, cold, and rigidly self-disciplined. He suppresses his love for Rosamond Oliver because she would distract from his vocation. His proposal to Jane is framed as religious duty, not love: he wants a useful helpmate, not a wife. He represents the danger of religious fanaticism &mdash; his God is one of duty and sacrifice, not compassion or love. Jane recognises that marriage to St John would be spiritual death: 'If I join St John, I abandon half myself.' He serves as a foil to Rochester: where Rochester is all passion, St John is all repression. Bront&euml; critiques both extremes."
+            description="Jane's cousin, a clergyman preparing for missionary work in India. St John is handsome, cold, and rigidly self-disciplined. He suppresses his love for Rosamond Oliver because she would distract from his vocation. His proposal to Jane is framed as religious duty, not love: he wants a useful helpmate, not a wife. He represents the danger of religious fanaticism - his God is one of duty and sacrifice, not compassion or love. Jane recognises that marriage to St John would be spiritual death: 'If I join St John, I abandon half myself.' He serves as a foil to Rochester: where Rochester is all passion, St John is all repression. Bront&euml; critiques both extremes."
           />
           <CharacterCard
             name="Mrs Reed"
@@ -457,11 +455,11 @@ export default function JaneEyrePage() {
           />
           <CharacterCard
             name="Bertha Mason"
-            description="Rochester's first wife, a Creole woman from Jamaica, confined to Thornfield's third storey. Bertha is described as violent, animalistic, and insane. She functions as the Gothic 'madwoman in the attic' &mdash; a dark double for Jane, representing uncontrolled female passion. Feminist critics (notably Jean Rhys in 'Wide Sargasso Sea') have reinterpreted Bertha as a victim: forcibly married, removed from her homeland, imprisoned, and silenced. Her racial and colonial identity raises questions about Bront&euml;'s treatment of race. Rochester's account of her 'madness' is unreliable &mdash; we never hear Bertha's side. Her destruction of Thornfield liberates both herself and Jane."
+            description="Rochester's first wife, a Creole woman from Jamaica, confined to Thornfield's third storey. Bertha is described as violent, animalistic, and insane. She functions as the Gothic 'madwoman in the attic' - a dark double for Jane, representing uncontrolled female passion. Feminist critics (notably Jean Rhys in 'Wide Sargasso Sea') have reinterpreted Bertha as a victim: forcibly married, removed from her homeland, imprisoned, and silenced. Her racial and colonial identity raises questions about Bront&euml;'s treatment of race. Rochester's account of her 'madness' is unreliable - we never hear Bertha's side. Her destruction of Thornfield liberates both herself and Jane."
           />
           <CharacterCard
             name="Ad&egrave;le Varens"
-            description="Rochester's young French ward, possibly his illegitimate daughter by the opera dancer C&eacute;line Varens. Ad&egrave;le is cheerful, affectionate, and fond of pretty things. Jane treats her with genuine kindness and professionalism as her governess. Ad&egrave;le represents the governess's position in Victorian society &mdash; responsible for a child who is socially above her but dependent on her care. Rochester is dismissive of Ad&egrave;le, refusing to acknowledge her as his daughter. Jane's affection for Ad&egrave;le shows her capacity for nurturing love."
+            description="Rochester's young French ward, possibly his illegitimate daughter by the opera dancer C&eacute;line Varens. Ad&egrave;le is cheerful, affectionate, and fond of pretty things. Jane treats her with genuine kindness and professionalism as her governess. Ad&egrave;le represents the governess's position in Victorian society - responsible for a child who is socially above her but dependent on her care. Rochester is dismissive of Ad&egrave;le, refusing to acknowledge her as his daughter. Jane's affection for Ad&egrave;le shows her capacity for nurturing love."
           />
           <CharacterCard
             name="Blanche Ingram"
@@ -479,27 +477,27 @@ export default function JaneEyrePage() {
           />
           <ThemeCard
             title={tr(`Social Class and Inequality`)}
-            description="Jane occupies an ambiguous class position throughout: a gentleman's daughter raised as a dependent, educated but forced to earn her living as a governess. The governess was the most visible example of class instability in Victorian England &mdash; educated enough to teach the children of the wealthy, yet treated as a servant. Blanche Ingram sneers at governesses; Lady Ingram calls them 'a nuisance.' Jane's inheritance at the novel's end resolves her class instability, but Bront&euml;'s critique of a system that values birth over worth remains powerful. John Reed squanders his wealth and dies in disgrace, while Jane's merit brings her fulfilment."
+            description="Jane occupies an ambiguous class position throughout: a gentleman's daughter raised as a dependent, educated but forced to earn her living as a governess. The governess was the most visible example of class instability in Victorian England - educated enough to teach the children of the wealthy, yet treated as a servant. Blanche Ingram sneers at governesses; Lady Ingram calls them 'a nuisance.' Jane's inheritance at the novel's end resolves her class instability, but Bront&euml;'s critique of a system that values birth over worth remains powerful. John Reed squanders his wealth and dies in disgrace, while Jane's merit brings her fulfilment."
           />
           <ThemeCard
             title="Gender and the Role of Women"
-            description="Bront&euml; was explicitly feminist in her portrayal of Jane's inner life. Jane's famous declaration on the third floor of Thornfield &mdash; 'Women feel just as men feel&hellip; they suffer from too rigid a restraint' &mdash; is a direct challenge to the Victorian ideology of separate spheres. Every institution in the novel constrains women: the family (Gateshead), the school (Lowood), the household (Thornfield), and the church (St John's proposal). Jane refuses each form of constraint. Her marriage to the blinded, maimed Rochester reverses the conventional power dynamic: he is dependent on her, not she on him."
+            description="Bront&euml; was explicitly feminist in her portrayal of Jane's inner life. Jane's famous declaration on the third floor of Thornfield - 'Women feel just as men feel&hellip; they suffer from too rigid a restraint' - is a direct challenge to the Victorian ideology of separate spheres. Every institution in the novel constrains women: the family (Gateshead), the school (Lowood), the household (Thornfield), and the church (St John's proposal). Jane refuses each form of constraint. Her marriage to the blinded, maimed Rochester reverses the conventional power dynamic: he is dependent on her, not she on him."
           />
           <ThemeCard
             title={tr(`Religion and Morality`)}
-            description="Three models of religion are presented and critiqued. Brocklehurst's Evangelical hypocrisy uses religion to justify cruelty and control. Helen Burns's Christian endurance offers spiritual comfort but accepts suffering too passively. St John Rivers's Calvinist self-denial is presented as coldly inhumane &mdash; he would sacrifice Jane's happiness (and his own) for a rigid conception of duty. Jane develops her own moral code: she believes in God but refuses to accept religious authority that contradicts her conscience. Her morality is personal, not institutional. She leaves Rochester not because the church forbids bigamy, but because staying would violate her own self-respect."
+            description="Three models of religion are presented and critiqued. Brocklehurst's Evangelical hypocrisy uses religion to justify cruelty and control. Helen Burns's Christian endurance offers spiritual comfort but accepts suffering too passively. St John Rivers's Calvinist self-denial is presented as coldly inhumane - he would sacrifice Jane's happiness (and his own) for a rigid conception of duty. Jane develops her own moral code: she believes in God but refuses to accept religious authority that contradicts her conscience. Her morality is personal, not institutional. She leaves Rochester not because the church forbids bigamy, but because staying would violate her own self-respect."
           />
           <ThemeCard
             title={tr(`Love and Passion`)}
-            description="The novel explores multiple forms of love. Jane and Rochester's love is passionate, intellectual, and based on genuine equality of spirit. Their famous dialogue ('Do you think I am an automaton?') establishes love as a meeting of minds and souls, not a transaction of beauty and money. Bront&euml; contrasts this with St John's loveless proposal, Blanche's mercenary pursuit of Rochester, and Rochester's past liaisons with mistresses. True love in the novel requires honesty, equality, and mutual respect. The supernatural connection between Jane and Rochester &mdash; she hears him call across miles &mdash; suggests love transcends the physical world."
+            description="The novel explores multiple forms of love. Jane and Rochester's love is passionate, intellectual, and based on genuine equality of spirit. Their famous dialogue ('Do you think I am an automaton?') establishes love as a meeting of minds and souls, not a transaction of beauty and money. Bront&euml; contrasts this with St John's loveless proposal, Blanche's mercenary pursuit of Rochester, and Rochester's past liaisons with mistresses. True love in the novel requires honesty, equality, and mutual respect. The supernatural connection between Jane and Rochester - she hears him call across miles - suggests love transcends the physical world."
           />
           <ThemeCard
             title={tr(`Morality and Conscience`)}
-            description="Jane's moral compass is internal and absolute. When tempted to stay with Rochester as his mistress, she does not appeal to social convention or legal rules but to her own principles: 'I care for myself. The more solitary, the more friendless, the more unsustained I am, the more I will respect myself.' Her morality is tested repeatedly &mdash; by poverty, by love, by religious pressure &mdash; and she never compromises. Bront&euml; argues that true morality comes from within, not from external authority. This was radical in an age that expected women's moral decisions to be made by fathers, husbands, or clergymen."
+            description="Jane's moral compass is internal and absolute. When tempted to stay with Rochester as his mistress, she does not appeal to social convention or legal rules but to her own principles: 'I care for myself. The more solitary, the more friendless, the more unsustained I am, the more I will respect myself.' Her morality is tested repeatedly - by poverty, by love, by religious pressure - and she never compromises. Bront&euml; argues that true morality comes from within, not from external authority. This was radical in an age that expected women's moral decisions to be made by fathers, husbands, or clergymen."
           />
           <ThemeCard
             title={tr(`Forgiveness and Redemption`)}
-            description="Jane forgives Mrs Reed on her deathbed, even though Mrs Reed refuses to reciprocate. She forgives Rochester for his deception, returning to him after he has been punished and humbled. Rochester's blindness and maiming can be read as purgatorial suffering that redeems his moral failings. He prays sincerely for the first time, and his partial restoration of sight symbolises spiritual renewal. The novel suggests that genuine forgiveness requires the wrongdoer to acknowledge their fault &mdash; Mrs Reed, who never repents, dies unforgiven by herself, while Rochester, who humbles himself, is redeemed through Jane's love."
+            description="Jane forgives Mrs Reed on her deathbed, even though Mrs Reed refuses to reciprocate. She forgives Rochester for his deception, returning to him after he has been punished and humbled. Rochester's blindness and maiming can be read as purgatorial suffering that redeems his moral failings. He prays sincerely for the first time, and his partial restoration of sight symbolises spiritual renewal. The novel suggests that genuine forgiveness requires the wrongdoer to acknowledge their fault - Mrs Reed, who never repents, dies unforgiven by herself, while Rochester, who humbles himself, is redeemed through Jane's love."
           />
           <ThemeCard
             title={tr(`Gothic Elements`)}
@@ -514,30 +512,30 @@ export default function JaneEyrePage() {
           <QuoteCard
             quote="I am no bird; and no net ensnares me: I am a free human being with an independent will."
             speaker="Jane (Chapter 23)"
-            analysis="Jane's declaration of autonomy at the moment Rochester proposes. The bird metaphor recurs throughout the novel &mdash; Rochester calls Jane his 'caged bird.' Jane rejects this: she is not a creature to be trapped or kept. 'Free human being' asserts her personhood in a society that defined women by their relationships to men. 'Independent will' is the novel's central value."
+            analysis="Jane's declaration of autonomy at the moment Rochester proposes. The bird metaphor recurs throughout the novel - Rochester calls Jane his 'caged bird.' Jane rejects this: she is not a creature to be trapped or kept. 'Free human being' asserts her personhood in a society that defined women by their relationships to men. 'Independent will' is the novel's central value."
           />
           <QuoteCard
-            quote="Do you think, because I am poor, obscure, plain, and little, I am soulless and heartless? You think wrong! &mdash; I have as much soul as you &mdash; and full as much heart!"
+            quote="Do you think, because I am poor, obscure, plain, and little, I am soulless and heartless? You think wrong! - I have as much soul as you - and full as much heart!"
             speaker="Jane (Chapter 23)"
-            analysis="Jane's most famous speech, challenging Rochester's apparent intention to marry Blanche. She systematically lists every disadvantage Victorian society holds against her &mdash; poverty, obscurity, plainness, small stature &mdash; and refuses to accept that these diminish her inner worth. The exclamation marks convey passionate conviction. This is Bront&euml;'s feminist manifesto: worth is measured by soul and heart, not appearance or status."
+            analysis="Jane's most famous speech, challenging Rochester's apparent intention to marry Blanche. She systematically lists every disadvantage Victorian society holds against her - poverty, obscurity, plainness, small stature - and refuses to accept that these diminish her inner worth. The exclamation marks convey passionate conviction. This is Bront&euml;'s feminist manifesto: worth is measured by soul and heart, not appearance or status."
           />
           <QuoteCard
             quote="I care for myself. The more solitary, the more friendless, the more unsustained I am, the more I will respect myself."
             speaker="Jane (Chapter 27)"
-            analysis="Spoken as Jane resolves to leave Rochester after the failed wedding. This is her moral bedrock: self-respect is non-negotiable, even at the cost of love and companionship. The triple repetition ('the more... the more... the more') builds to a climax of resolve. Bront&euml; presents self-respect as the foundation of all other virtues &mdash; without it, love becomes servitude."
+            analysis="Spoken as Jane resolves to leave Rochester after the failed wedding. This is her moral bedrock: self-respect is non-negotiable, even at the cost of love and companionship. The triple repetition ('the more... the more... the more') builds to a climax of resolve. Bront&euml; presents self-respect as the foundation of all other virtues - without it, love becomes servitude."
           />
           <QuoteCard
             quote="Women feel just as men feel; they need exercise for their faculties, and a field for their efforts, as much as their brothers do."
             speaker="Jane (Chapter 12)"
-            analysis="Jane's direct address to the reader while pacing the third floor at Thornfield. This passage was considered shocking and 'unfeminine' by contemporary reviewers. Jane explicitly argues for gender equality in intellectual and emotional life. The language is deliberately plain and rational, not hysterical &mdash; Bront&euml; undercuts the accusation that women's demands for equality are mere emotional outbursts."
+            analysis="Jane's direct address to the reader while pacing the third floor at Thornfield. This passage was considered shocking and 'unfeminine' by contemporary reviewers. Jane explicitly argues for gender equality in intellectual and emotional life. The language is deliberately plain and rational, not hysterical - Bront&euml; undercuts the accusation that women's demands for equality are mere emotional outbursts."
           />
           <QuoteCard
             quote="Reader, I married him."
             speaker="Jane (Chapter 38)"
-            analysis="The novel's most iconic sentence. Jane &mdash; not Rochester &mdash; is the grammatical subject: she married him, not he married her. The direct address to the reader is characteristically bold and intimate. The simplicity of the sentence belies its radicalism: Jane has chosen her own husband, on her own terms, with her own money. It is a statement of agency, not submission."
+            analysis="The novel's most iconic sentence. Jane - not Rochester - is the grammatical subject: she married him, not he married her. The direct address to the reader is characteristically bold and intimate. The simplicity of the sentence belies its radicalism: Jane has chosen her own husband, on her own terms, with her own money. It is a statement of agency, not submission."
           />
           <QuoteCard
-            quote="I am not talking to you now through the medium of custom, conventionalities, nor even of mortal flesh: it is my spirit that addresses your spirit; just as if both had passed through the grave, and we stood at God's feet, equal &mdash; as we are!"
+            quote="I am not talking to you now through the medium of custom, conventionalities, nor even of mortal flesh: it is my spirit that addresses your spirit; just as if both had passed through the grave, and we stood at God's feet, equal - as we are!"
             speaker="Jane (Chapter 23)"
             analysis="Jane strips away every social barrier between herself and Rochester. 'Custom, conventionalities' are the social rules that separate governess from master. 'Mortal flesh' removes the physical body, which society judges by beauty and sex. Only at the level of the spirit can Jane and Rochester be truly equal. The religious language ('God's feet') appeals to a higher authority than human social hierarchy."
           />
@@ -549,7 +547,7 @@ export default function JaneEyrePage() {
           <QuoteCard
             quote="Laws and principles are not for the times when there is no temptation: they are for such moments as this, when body and soul rise in mutiny against their rigour."
             speaker="Jane (Chapter 27)"
-            analysis="Jane articulates why she must leave Rochester. Her argument is moral philosophy: principles exist precisely for the moments when breaking them is most tempting. 'Body and soul rise in mutiny' acknowledges the overwhelming power of her desire. 'Rigour' acknowledges that morality is hard. This is not cold duty but passionate self-governance &mdash; the novel's most mature ethical statement."
+            analysis="Jane articulates why she must leave Rochester. Her argument is moral philosophy: principles exist precisely for the moments when breaking them is most tempting. 'Body and soul rise in mutiny' acknowledges the overwhelming power of her desire. 'Rigour' acknowledges that morality is hard. This is not cold duty but passionate self-governance - the novel's most mature ethical statement."
           />
           <QuoteCard
             quote="Prejudices, it is well known, are most difficult to eradicate from the heart whose soil has never been loosened or fertilised by education."
@@ -559,7 +557,7 @@ export default function JaneEyrePage() {
           <QuoteCard
             quote="There was no possibility of taking a walk that day."
             speaker="Jane (Chapter 1, opening line)"
-            analysis="The novel's famous opening sets the tone immediately: confinement, restriction, impossibility. Jane is trapped &mdash; physically by the weather, socially by her dependent position. The passive construction ('no possibility') emphasises her powerlessness. The entire novel is the story of Jane finding the 'possibility' that this opening denies her."
+            analysis="The novel's famous opening sets the tone immediately: confinement, restriction, impossibility. Jane is trapped - physically by the weather, socially by her dependent position. The passive construction ('no possibility') emphasises her powerlessness. The entire novel is the story of Jane finding the 'possibility' that this opening denies her."
           />
           <QuoteCard
             quote="I resisted all the way: a new thing for me."
@@ -567,9 +565,9 @@ export default function JaneEyrePage() {
             analysis="Jane's first act of rebellion, as she is dragged to the red room. 'A new thing for me' signals the birth of her resistance. Until this moment, she has endured passively. The novel proper begins when Jane starts fighting back. The brevity of the sentence mirrors the decisiveness of the act. This resistance will define her character throughout."
           />
           <QuoteCard
-            quote="Unjust! &mdash; unjust!"
+            quote="Unjust! - unjust!"
             speaker="Jane (Chapter 2)"
-            analysis="Jane's cry in the red room, repeated for emphasis. The word 'unjust' is fundamental: Jane's moral compass is oriented by justice, not obedience. Her sense of injustice propels every major decision. Bront&euml; gives a child the language of moral philosophy &mdash; Jane does not cry 'unfair' but 'unjust,' appealing to a principle, not merely a feeling."
+            analysis="Jane's cry in the red room, repeated for emphasis. The word 'unjust' is fundamental: Jane's moral compass is oriented by justice, not obedience. Her sense of injustice propels every major decision. Bront&euml; gives a child the language of moral philosophy - Jane does not cry 'unfair' but 'unjust,' appealing to a principle, not merely a feeling."
           />
           <QuoteCard
             quote="You think I have no feelings, and that I can do without one bit of love or kindness; but I cannot live so."
@@ -589,7 +587,7 @@ export default function JaneEyrePage() {
           <QuoteCard
             quote="I could not unlove him now, merely because I found that he had ceased to notice me."
             speaker="Jane (Chapter 18)"
-            analysis="Jane reflects on her feelings during Rochester's apparent courtship of Blanche. 'Unlove' is a coinage &mdash; love, once given, cannot simply be withdrawn. Jane's love is presented as involuntary and irreversible, beyond rational control. Yet she does not surrender to it: she forces herself to accept her feelings without acting on them inappropriately. This is the tension between passion and principle that drives the novel."
+            analysis="Jane reflects on her feelings during Rochester's apparent courtship of Blanche. 'Unlove' is a coinage - love, once given, cannot simply be withdrawn. Jane's love is presented as involuntary and irreversible, beyond rational control. Yet she does not surrender to it: she forces herself to accept her feelings without acting on them inappropriately. This is the tension between passion and principle that drives the novel."
           />
           <QuoteCard
             quote="If all the world hated you, and believed you wicked, while your own conscience approved you, and absolved you from guilt, you would not be without friends."
@@ -599,15 +597,15 @@ export default function JaneEyrePage() {
           <QuoteCard
             quote="I am no bird; and no net ensnares me."
             speaker="Jane (Chapter 23)"
-            analysis="Rochester repeatedly compares Jane to a bird &mdash; a caged bird, a wild bird, a bird that will fly away. Jane rejects the metaphor entirely. She is not a creature to be caught, kept, or admired in a cage. The 'net' represents all the social traps that could ensnare a woman: financial dependence, marriage as ownership, beauty as currency. Jane insists on being fully, unmetaphorically human."
+            analysis="Rochester repeatedly compares Jane to a bird - a caged bird, a wild bird, a bird that will fly away. Jane rejects the metaphor entirely. She is not a creature to be caught, kept, or admired in a cage. The 'net' represents all the social traps that could ensnare a woman: financial dependence, marriage as ownership, beauty as currency. Jane insists on being fully, unmetaphorically human."
           />
           <QuoteCard
-            quote="The soul, fortunately, has an interpreter &mdash; often an unconscious, but still a truthful interpreter &mdash; in the eye."
+            quote="The soul, fortunately, has an interpreter - often an unconscious, but still a truthful interpreter - in the eye."
             speaker="Jane (Chapter 27)"
-            analysis="As Rochester, enraged that she will not stay with him, seizes her, Jane is 'powerless as stubble' in body but still possesses her soul, and her eye shows it to him. The 'eye as interpreter' connects to the novel's broader interest in seeing and being seen. Rochester, blinded at the novel's end, must see Jane with his soul rather than his eyes &mdash; the truest form of seeing. Appearance deceives; the soul does not."
+            analysis="As Rochester, enraged that she will not stay with him, seizes her, Jane is 'powerless as stubble' in body but still possesses her soul, and her eye shows it to him. The 'eye as interpreter' connects to the novel's broader interest in seeing and being seen. Rochester, blinded at the novel's end, must see Jane with his soul rather than his eyes - the truest form of seeing. Appearance deceives; the soul does not."
           />
           <QuoteCard
-            quote="I will hold to the principles received by me when I was sane, and not mad &mdash; as I am now."
+            quote="I will hold to the principles received by me when I was sane, and not mad - as I am now."
             speaker="Jane (Chapter 27)"
             analysis="Jane acknowledges that her grief at leaving Rochester is a form of temporary madness, but insists that her principles, formed in rational moments, must override her current anguish. This is Bront&euml;'s most sophisticated moral argument: we must live by rules established in clarity, not decisions made in crisis. The contrast between 'sane' and 'mad' also echoes Bertha's condition, distinguishing Jane's chosen self-control from Bertha's forced confinement."
           />
@@ -650,23 +648,23 @@ export default function JaneEyrePage() {
               She was expected to be invisible, compliant, and grateful. Charlotte Bront&euml;
               herself worked as a governess and hated the experience, writing to her sister Emily of
               feeling &ldquo;wretched&rdquo; and &ldquo;isolated.&rdquo; Jane&apos;s refusal to
-              accept this marginalisation &mdash; her insistence on being seen and heard &mdash; was
-              radical for its time. The &ldquo;governess novel&rdquo; became a significant Victorian
-              subgenre, exploring class anxiety and female agency.
+              accept this marginalisation - her insistence on being seen and heard - was radical for
+              its time. The &ldquo;governess novel&rdquo; became a significant Victorian subgenre,
+              exploring class anxiety and female agency.
             </p>
           </div>
           <div className="rounded-lg bg-muted p-4">
             <h4 className="font-bold text-foreground">{tr(`Colonialism and Empire`)}</h4>
             <p className="mt-1 text-sm text-muted-foreground leading-relaxed">
               The novel engages with the British Empire in several ways. Rochester&apos;s wealth
-              comes from his first marriage to Bertha Mason, a Creole heiress from Jamaica &mdash;
-              wealth built on the slave trade (abolished in 1833, but its economic legacy
-              persisted). Bertha&apos;s &ldquo;madness&rdquo; and her racialised description
-              (&ldquo;dark&rdquo; features, animalistic behaviour) have been critiqued by
-              postcolonial scholars as reflecting Victorian racism. St John&apos;s missionary zeal
-              to &ldquo;save&rdquo; India represents the paternalistic imperialism of the period.
-              Jean Rhys&apos;s <em>{tr(`Wide Sargasso Sea`)}</em> (1966) retells Bertha&apos;s
-              story, revealing the violence of colonial marriage and identity.
+              comes from his first marriage to Bertha Mason, a Creole heiress from Jamaica - wealth
+              built on the slave trade (abolished in 1833, but its economic legacy persisted).
+              Bertha&apos;s &ldquo;madness&rdquo; and her racialised description (&ldquo;dark&rdquo;
+              features, animalistic behaviour) have been critiqued by postcolonial scholars as
+              reflecting Victorian racism. St John&apos;s missionary zeal to &ldquo;save&rdquo;
+              India represents the paternalistic imperialism of the period. Jean Rhys&apos;s{' '}
+              <em>{tr(`Wide Sargasso Sea`)}</em> (1966) retells Bertha&apos;s story, revealing the
+              violence of colonial marriage and identity.
             </p>
           </div>
           <div className="rounded-lg bg-muted p-4">
@@ -687,13 +685,13 @@ export default function JaneEyrePage() {
             <h4 className="font-bold text-foreground">{tr(`Religion in Victorian England`)}</h4>
             <p className="mt-1 text-sm text-muted-foreground leading-relaxed">
               The novel engages critically with several strands of Victorian Christianity.
-              Brocklehurst represents Evangelical hypocrisy &mdash; using religion to justify
-              cruelty towards the poor. Helen Burns represents a sincere but overly passive
-              Christianity. St John embodies Calvinist rigour &mdash; a demanding, self-denying
-              faith that leaves no room for human warmth. Jane&apos;s own faith is personal and
-              intuitive: she believes in God but refuses to accept religious authority that
-              contradicts her conscience. This was considered dangerously unorthodox by some
-              Victorian readers, who expected women to submit to clerical authority.
+              Brocklehurst represents Evangelical hypocrisy - using religion to justify cruelty
+              towards the poor. Helen Burns represents a sincere but overly passive Christianity. St
+              John embodies Calvinist rigour - a demanding, self-denying faith that leaves no room
+              for human warmth. Jane&apos;s own faith is personal and intuitive: she believes in God
+              but refuses to accept religious authority that contradicts her conscience. This was
+              considered dangerously unorthodox by some Victorian readers, who expected women to
+              submit to clerical authority.
             </p>
           </div>
           <div className="rounded-lg bg-muted p-4">
@@ -704,10 +702,9 @@ export default function JaneEyrePage() {
               of Jane&apos;s moral and psychological development: Gateshead (oppression and
               rebellion), Lowood (education and endurance), Thornfield (passion and temptation),
               Moor House (independence and self-discovery), Ferndean (fulfilment and equality). The
-              form was more commonly used for male protagonists &mdash; Bront&euml;&apos;s
-              innovation was to apply it to a woman&apos;s inner life, insisting that women&apos;s
-              intellectual and moral development was as worthy of novelistic attention as
-              men&apos;s.
+              form was more commonly used for male protagonists - Bront&euml;&apos;s innovation was
+              to apply it to a woman&apos;s inner life, insisting that women&apos;s intellectual and
+              moral development was as worthy of novelistic attention as men&apos;s.
             </p>
           </div>
         </div>
@@ -749,9 +746,9 @@ export default function JaneEyrePage() {
                 {tr(`Paragraph 4: Financial independence (the inheritance)`)}
               </p>
               <p>
-                The inheritance transforms Jane from dependant to equal. She divides it equally
-                &mdash; generosity, not accumulation. She returns to Rochester as a free agent:
-                &ldquo;Reader, I married him&rdquo; &mdash; she is the subject, not the object.
+                The inheritance transforms Jane from dependant to equal. She divides it equally -
+                generosity, not accumulation. She returns to Rochester as a free agent:
+                &ldquo;Reader, I married him&rdquo; - she is the subject, not the object.
               </p>
             </div>
           </div>
@@ -813,8 +810,7 @@ export default function JaneEyrePage() {
               <p>
                 &ldquo;It is my spirit that addresses your spirit&hellip; equal &mdash; as we
                 are!&rdquo; Jane insists on equality despite the gulf of class, wealth, and gender.
-                Rochester values Jane&apos;s honesty and directness &mdash; qualities absent in
-                Blanche.
+                Rochester values Jane&apos;s honesty and directness - qualities absent in Blanche.
               </p>
               <p className="font-semibold text-foreground">
                 {tr(`Paragraph 3: Power and deception`)}
@@ -829,8 +825,8 @@ export default function JaneEyrePage() {
               </p>
               <p>
                 The fire redistributes power: Rochester is blind and dependent; Jane is wealthy and
-                free. Their final marriage is genuinely equal. &ldquo;Reader, I married him&rdquo;
-                &mdash; Jane is the agent of her own destiny.
+                free. Their final marriage is genuinely equal. &ldquo;Reader, I married him&rdquo; -
+                Jane is the agent of her own destiny.
               </p>
             </div>
           </div>
@@ -857,7 +853,7 @@ export default function JaneEyrePage() {
                 from Helen but cannot adopt her complete submission to injustice.
               </p>
               <p className="font-semibold text-foreground">
-                Paragraph 3: St John Rivers &mdash; Calvinist rigour
+                Paragraph 3: St John Rivers - Calvinist rigour
               </p>
               <p>
                 Duty without love. His proposal is religious coercion: he uses God&apos;s will as an
@@ -884,9 +880,9 @@ export default function JaneEyrePage() {
             <h4 className="font-bold text-foreground">{tr(`Use the Correct Terminology`)}</h4>
             <p className="mt-1 text-sm text-muted-foreground leading-relaxed">
               Refer to the novel as a <strong>Bildungsroman</strong> (novel of formation/growth).
-              Call Bront&euml; the <strong>author</strong> and Jane the <strong>narrator</strong>{' '}
-              &mdash; do not confuse the two. Use terms like <strong>first-person narration</strong>
-              ,<strong> direct address to the reader</strong>, <strong>{tr(`Byronic hero`)}</strong>{' '}
+              Call Bront&euml; the <strong>author</strong> and Jane the <strong>narrator</strong> -
+              do not confuse the two. Use terms like <strong>first-person narration</strong>,
+              <strong> direct address to the reader</strong>, <strong>{tr(`Byronic hero`)}</strong>{' '}
               (for Rochester), <strong>pathetic fallacy</strong>, and{' '}
               <strong>{tr(`Gothic conventions`)}</strong>. Refer to <strong>postcolonial</strong> or{' '}
               <strong>feminist</strong> readings when appropriate.

@@ -233,8 +233,8 @@ export default async function PunctuationEffectPage() {
           <p className="text-base leading-relaxed text-muted-foreground">
             This is a short open-response reading question worth {PUNCTUATION_TYPE.typicalMarks}{' '}
             marks. It assesses {RAO3.code}: {RAO3.descriptor.toLowerCase()} The examiner is not
-            asking you to spot the mark &mdash; you can already see it &mdash; but to explain what
-            it <em>does</em> for the reader at that exact point in the text.
+            asking you to spot the mark - you can already see it - but to explain what it{' '}
+            <em>does</em> for the reader at that exact point in the text.
           </p>
         </header>
 
@@ -255,17 +255,17 @@ export default async function PunctuationEffectPage() {
           <div className="grid gap-4 sm:grid-cols-2">
             <div className="rounded-md bg-card p-4 border border-border/60">
               <p className="mb-1 font-mono text-xs font-semibold text-primary">
-                Mark 1 &mdash; name the effect
+                Mark 1 - name the effect
               </p>
               <p className="text-sm leading-relaxed text-muted-foreground">
-                State what kind of effect the punctuation mark has, using clear terminology &mdash;
-                for example, that an exclamation mark adds emphasis, or that a dash creates a
-                dramatic pause.
+                State what kind of effect the punctuation mark has, using clear terminology - for
+                example, that an exclamation mark adds emphasis, or that a dash creates a dramatic
+                pause.
               </p>
             </div>
             <div className="rounded-md bg-card p-4 border border-border/60">
               <p className="mb-1 font-mono text-xs font-semibold text-primary">
-                Mark 2 &mdash; explain it from the text
+                Mark 2 - explain it from the text
               </p>
               <p className="text-sm leading-relaxed text-muted-foreground">
                 Link that effect to the actual content of the extract. Refer to what is being
@@ -405,7 +405,7 @@ export default async function PunctuationEffectPage() {
           <p className="mt-4 text-sm leading-relaxed text-muted-foreground">
             Work one row at a time and check both texts before you tick. &ldquo;Both texts&rdquo;
             only counts if the feature genuinely appears in each. Because partial credit is usually
-            available, never leave a row blank &mdash; an informed choice can still earn a mark.
+            available, never leave a row blank - an informed choice can still earn a mark.
           </p>
         </section>
 
@@ -432,8 +432,7 @@ export default async function PunctuationEffectPage() {
               <span aria-hidden="true" className="text-primary">
                 &#10003;
               </span>
-              Have I mentioned the reader &mdash; what the punctuation makes them feel, expect or
-              do?
+              Have I mentioned the reader - what the punctuation makes them feel, expect or do?
             </li>
             <li className="flex gap-3">
               <span aria-hidden="true" className="text-primary">

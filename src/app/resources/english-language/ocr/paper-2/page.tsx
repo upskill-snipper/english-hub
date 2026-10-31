@@ -95,13 +95,13 @@ export default async function OCRPaper2Page() {
                 </thead>
                 <tbody className="divide-y divide-border">
                   <tr>
-                    <td className="py-3 pe-4 font-medium">A &mdash; Reading</td>
+                    <td className="py-3 pe-4 font-medium">A - Reading</td>
                     <td className="py-3 pe-4">{tr(`Fiction and literary texts`)}</td>
                     <td className="py-3 pe-4">40 marks</td>
                     <td className="py-3">1 hour</td>
                   </tr>
                   <tr>
-                    <td className="py-3 pe-4 font-medium">B &mdash; Writing</td>
+                    <td className="py-3 pe-4 font-medium">B - Writing</td>
                     <td className="py-3 pe-4">{tr(`Imaginative / creative writing`)}</td>
                     <td className="py-3 pe-4">40 marks</td>
                     <td className="py-3">1 hour</td>
@@ -188,29 +188,29 @@ export default async function OCRPaper2Page() {
                   <h4 className="font-semibold text-foreground">{tr(`Word-Level Analysis`)}</h4>
                   <ul className="ms-4 mt-2 list-disc space-y-1 text-sm">
                     <li>
-                      <strong>Connotations</strong> &mdash; What associations does a particular word
+                      <strong>Connotations</strong> - What associations does a particular word
                       carry? Consider the difference between &ldquo;house&rdquo; and
                       &ldquo;home&rdquo;, or &ldquo;walked&rdquo; and &ldquo;trudged&rdquo;.
                     </li>
                     <li>
-                      <strong>{tr(`Semantic fields`)}</strong> &mdash; Groups of words relating to
-                      the same theme (e.g., a semantic field of violence: &ldquo;slashed&rdquo;,
+                      <strong>{tr(`Semantic fields`)}</strong> - Groups of words relating to the
+                      same theme (e.g., a semantic field of violence: &ldquo;slashed&rdquo;,
                       &ldquo;pierced&rdquo;, &ldquo;wounded&rdquo;).
                     </li>
                     <li>
-                      <strong>{tr(`Figurative language`)}</strong> &mdash; Similes, metaphors,
+                      <strong>{tr(`Figurative language`)}</strong> - Similes, metaphors,
                       personification, and symbolism. Explain what is being compared to what, and
                       what this reveals.
                     </li>
                     <li>
-                      <strong>{tr(`Sensory language`)}</strong> &mdash; Appeals to sight, sound,
-                      touch, taste, and smell. These create vivid imagery and draw the reader into
-                      the scene.
+                      <strong>{tr(`Sensory language`)}</strong> - Appeals to sight, sound, touch,
+                      taste, and smell. These create vivid imagery and draw the reader into the
+                      scene.
                     </li>
                     <li>
-                      <strong>Modifiers</strong> &mdash; Adjectives and adverbs that shape meaning.
-                      A &ldquo;dark, suffocating silence&rdquo; creates a very different effect from
-                      a &ldquo;peaceful silence&rdquo;.
+                      <strong>Modifiers</strong> - Adjectives and adverbs that shape meaning. A
+                      &ldquo;dark, suffocating silence&rdquo; creates a very different effect from a
+                      &ldquo;peaceful silence&rdquo;.
                     </li>
                   </ul>
                 </div>
@@ -219,24 +219,24 @@ export default async function OCRPaper2Page() {
                   <h4 className="font-semibold text-foreground">{tr(`Sentence-Level Analysis`)}</h4>
                   <ul className="ms-4 mt-2 list-disc space-y-1 text-sm">
                     <li>
-                      <strong>{tr(`Short sentences`)}</strong> &mdash; Create tension, shock, or
-                      emphasis. &ldquo;She stopped. The door was open.&rdquo;
+                      <strong>{tr(`Short sentences`)}</strong> - Create tension, shock, or emphasis.
+                      &ldquo;She stopped. The door was open.&rdquo;
                     </li>
                     <li>
-                      <strong>{tr(`Long, complex sentences`)}</strong> &mdash; Can build atmosphere,
+                      <strong>{tr(`Long, complex sentences`)}</strong> - Can build atmosphere,
                       convey stream of consciousness, or create a sense of accumulation.
                     </li>
                     <li>
-                      <strong>{tr(`Minor sentences / fragments`)}</strong> &mdash;
-                      &ldquo;Darkness.&rdquo; Used for dramatic effect.
+                      <strong>{tr(`Minor sentences / fragments`)}</strong> - &ldquo;Darkness.&rdquo;
+                      Used for dramatic effect.
                     </li>
                     <li>
-                      <strong>Questions</strong> &mdash; Create uncertainty or reflect a
-                      character&rsquo;s inner turmoil.
+                      <strong>Questions</strong> - Create uncertainty or reflect a character&rsquo;s
+                      inner turmoil.
                     </li>
                     <li>
-                      <strong>{tr(`Listing / accumulation`)}</strong> &mdash; Can create a sense of
-                      chaos, abundance, or overwhelming detail.
+                      <strong>{tr(`Listing / accumulation`)}</strong> - Can create a sense of chaos,
+                      abundance, or overwhelming detail.
                     </li>
                   </ul>
                 </div>
@@ -252,36 +252,34 @@ export default async function OCRPaper2Page() {
               </p>
               <ul className="ms-6 mt-2 list-disc space-y-2">
                 <li>
-                  <strong>Opening</strong> &mdash; How does the extract begin? In medias res (in the
+                  <strong>Opening</strong> - How does the extract begin? In medias res (in the
                   middle of action)? With setting? With dialogue? What effect does this create?
                 </li>
                 <li>
-                  <strong>{tr(`Focus shifts`)}</strong> &mdash; Does the writer shift from one
-                  character to another? From interior thoughts to external description? From present
-                  to past?
+                  <strong>{tr(`Focus shifts`)}</strong> - Does the writer shift from one character
+                  to another? From interior thoughts to external description? From present to past?
                 </li>
                 <li>
-                  <strong>Pace</strong> &mdash; Is the pace fast (short sentences, action verbs,
-                  dialogue) or slow (long descriptions, detailed imagery)? Where does the pace
-                  change, and why?
+                  <strong>Pace</strong> - Is the pace fast (short sentences, action verbs, dialogue)
+                  or slow (long descriptions, detailed imagery)? Where does the pace change, and
+                  why?
                 </li>
                 <li>
-                  <strong>{tr(`Narrative perspective`)}</strong> &mdash; First person
-                  (&ldquo;I&rdquo;), second person (&ldquo;you&rdquo;), third person
-                  (&ldquo;he/she&rdquo;), omniscient narrator, or limited narrator? How does this
-                  affect what the reader knows?
+                  <strong>{tr(`Narrative perspective`)}</strong> - First person (&ldquo;I&rdquo;),
+                  second person (&ldquo;you&rdquo;), third person (&ldquo;he/she&rdquo;), omniscient
+                  narrator, or limited narrator? How does this affect what the reader knows?
                 </li>
                 <li>
-                  <strong>{tr(`Tension and release`)}</strong> &mdash; How does the writer build
-                  tension? Is there a climax within the extract? Is tension sustained or released?
+                  <strong>{tr(`Tension and release`)}</strong> - How does the writer build tension?
+                  Is there a climax within the extract? Is tension sustained or released?
                 </li>
                 <li>
-                  <strong>Ending</strong> &mdash; How does the extract conclude? Cliffhanger?
-                  Resolution? Circular structure? Open ending?
+                  <strong>Ending</strong> - How does the extract conclude? Cliffhanger? Resolution?
+                  Circular structure? Open ending?
                 </li>
                 <li>
-                  <strong>{tr(`Paragraph length and structure`)}</strong> &mdash; A single-line
-                  paragraph can create dramatic emphasis. Dense paragraphs can convey complexity or
+                  <strong>{tr(`Paragraph length and structure`)}</strong> - A single-line paragraph
+                  can create dramatic emphasis. Dense paragraphs can convey complexity or
                   claustrophobia.
                 </li>
               </ul>

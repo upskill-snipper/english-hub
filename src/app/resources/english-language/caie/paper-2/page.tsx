@@ -176,8 +176,7 @@ export default async function Paper2Page() {
                   </li>
                   <li>&bull; Subject line (optional but useful)</li>
                   <li>
-                    &bull; Formal register throughout &mdash; no slang, contractions, or
-                    colloquialisms
+                    &bull; Formal register throughout - no slang, contractions, or colloquialisms
                   </li>
                   <li>
                     &bull; Sign off: &ldquo;Yours sincerely&rdquo; (if you used their name) or
@@ -196,12 +195,12 @@ export default async function Paper2Page() {
               <div className="mt-3 rounded bg-muted p-4 text-sm text-muted-foreground">
                 <p className="font-semibold text-foreground mb-2">{tr(`Format requirements:`)}</p>
                 <ul className="space-y-1">
-                  <li>&bull; Your address (top right) &mdash; optional in exam conditions</li>
+                  <li>&bull; Your address (top right) - optional in exam conditions</li>
                   <li>&bull; Date</li>
                   <li>
                     &bull; Salutation: &ldquo;Dear [first name]&rdquo; or &ldquo;Hi [name]&rdquo;
                   </li>
-                  <li>&bull; Warm, conversational tone &mdash; contractions are acceptable</li>
+                  <li>&bull; Warm, conversational tone - contractions are acceptable</li>
                   <li>&bull; May include personal anecdotes, humour, rhetorical questions</li>
                   <li>
                     &bull; Sign off: &ldquo;Best wishes&rdquo;, &ldquo;Love&rdquo;, &ldquo;Take
@@ -230,8 +229,8 @@ export default async function Paper2Page() {
                     &bull; Subheadings to organise sections (Introduction, Findings,
                     Recommendations, Conclusion)
                   </li>
-                  <li>&bull; Formal, impersonal tone &mdash; third person preferred</li>
-                  <li>&bull; Evidence-based &mdash; use facts and data from the passage</li>
+                  <li>&bull; Formal, impersonal tone - third person preferred</li>
+                  <li>&bull; Evidence-based - use facts and data from the passage</li>
                   <li>&bull; Clear recommendations at the end</li>
                 </ul>
               </div>
@@ -250,7 +249,7 @@ export default async function Paper2Page() {
                   <li>&bull; Eye-catching headline</li>
                   <li>&bull; Optional subheading or strapline</li>
                   <li>&bull; Byline: &ldquo;By [your name]&rdquo;</li>
-                  <li>&bull; Engaging opening &mdash; hook the reader immediately</li>
+                  <li>&bull; Engaging opening - hook the reader immediately</li>
                   <li>&bull; Relatively formal but accessible language</li>
                   <li>&bull; May include expert opinions, statistics, rhetorical questions</li>
                   <li>&bull; Strong concluding paragraph</li>
@@ -283,8 +282,7 @@ export default async function Paper2Page() {
                   <li>&bull; Emotive language and personal anecdotes</li>
                   <li>&bull; Strong call to action at the end</li>
                   <li>
-                    &bull; Register depends on audience &mdash; formal for adults, semi-formal for
-                    peers
+                    &bull; Register depends on audience - formal for adults, semi-formal for peers
                   </li>
                 </ul>
               </div>
@@ -304,9 +302,7 @@ export default async function Paper2Page() {
                 <ul className="space-y-1">
                   <li>&bull; Date at the top</li>
                   <li>&bull; First person throughout</li>
-                  <li>
-                    &bull; Personal, reflective tone &mdash; share thoughts, feelings, opinions
-                  </li>
+                  <li>&bull; Personal, reflective tone - share thoughts, feelings, opinions</li>
                   <li>
                     &bull; Can include informal language and incomplete sentences for authenticity
                   </li>
@@ -337,7 +333,7 @@ export default async function Paper2Page() {
                 <p className="text-2xl font-bold text-accent">25</p>
                 <p className="text-sm font-semibold text-foreground">{tr(`Writing (Language)`)}</p>
                 <p className="mt-1 text-xs text-muted-foreground leading-relaxed">
-                  How effectively you write &mdash; format, register, tone, vocabulary, sentence
+                  How effectively you write - format, register, tone, vocabulary, sentence
                   structures, accuracy of grammar and spelling.
                 </p>
               </div>
@@ -397,34 +393,34 @@ export default async function Paper2Page() {
                 <ul className="mt-3 space-y-2 text-sm text-muted-foreground">
                   <li className="flex items-start gap-2">
                     <span className="mt-1 h-1.5 w-1.5 shrink-0 rounded-full bg-accent" />
-                    <strong>Start in the middle of the action</strong> (in medias res) &mdash; avoid
+                    <strong>Start in the middle of the action</strong> (in medias res) - avoid
                     boring openings like &ldquo;One day I woke up and...&rdquo;
                   </li>
                   <li className="flex items-start gap-2">
                     <span className="mt-1 h-1.5 w-1.5 shrink-0 rounded-full bg-accent" />
-                    <strong>{tr(`Limit your characters`)}</strong> &mdash; 2 or 3 characters is
-                    enough. Give them names and distinct personalities.
+                    <strong>{tr(`Limit your characters`)}</strong> - 2 or 3 characters is enough.
+                    Give them names and distinct personalities.
                   </li>
                   <li className="flex items-start gap-2">
                     <span className="mt-1 h-1.5 w-1.5 shrink-0 rounded-full bg-accent" />
-                    <strong>{tr(`Focus on a single event`)}</strong> &mdash; do not try to cover an
-                    entire life story. A well-told small moment is better than a rushed epic.
+                    <strong>{tr(`Focus on a single event`)}</strong> - do not try to cover an entire
+                    life story. A well-told small moment is better than a rushed epic.
                   </li>
                   <li className="flex items-start gap-2">
                     <span className="mt-1 h-1.5 w-1.5 shrink-0 rounded-full bg-accent" />
-                    <strong>{tr(`Show, don’t tell`)}</strong> &mdash; instead of &ldquo;She was
+                    <strong>{tr(`Show, don’t tell`)}</strong> - instead of &ldquo;She was
                     scared&rdquo;, write &ldquo;Her hands trembled as she reached for the
                     handle&rdquo;.
                   </li>
                   <li className="flex items-start gap-2">
                     <span className="mt-1 h-1.5 w-1.5 shrink-0 rounded-full bg-accent" />
-                    <strong>{tr(`Use dialogue sparingly`)}</strong> &mdash; a few well-placed lines
-                    of dialogue can reveal character, but too much turns your story into a script.
+                    <strong>{tr(`Use dialogue sparingly`)}</strong> - a few well-placed lines of
+                    dialogue can reveal character, but too much turns your story into a script.
                   </li>
                   <li className="flex items-start gap-2">
                     <span className="mt-1 h-1.5 w-1.5 shrink-0 rounded-full bg-accent" />
-                    <strong>{tr(`End with impact`)}</strong> &mdash; avoid clich&eacute; endings
-                    like &ldquo;it was all a dream&rdquo;. Leave the reader with something to think
+                    <strong>{tr(`End with impact`)}</strong> - avoid clich&eacute; endings like
+                    &ldquo;it was all a dream&rdquo;. Leave the reader with something to think
                     about.
                   </li>
                 </ul>
@@ -436,8 +432,8 @@ export default async function Paper2Page() {
           <div className="mt-10">
             <h3 className="text-lg font-semibold text-foreground">{tr(`Descriptive Writing`)}</h3>
             <p className="mt-2 text-sm text-muted-foreground leading-relaxed">
-              Descriptive writing creates a vivid picture using language. There is no plot &mdash;
-              the focus is entirely on using your senses and language techniques to bring a scene to
+              Descriptive writing creates a vivid picture using language. There is no plot - the
+              focus is entirely on using your senses and language techniques to bring a scene to
               life.
             </p>
 
@@ -491,29 +487,29 @@ export default async function Paper2Page() {
                 <ul className="mt-3 space-y-2 text-sm text-muted-foreground">
                   <li className="flex items-start gap-2">
                     <span className="mt-1 h-1.5 w-1.5 shrink-0 rounded-full bg-accent" />
-                    <strong>{tr(`Zoom in and out`)}</strong> &mdash; start with a wide panoramic
-                    view, then focus on specific details, then pull back again.
+                    <strong>{tr(`Zoom in and out`)}</strong> - start with a wide panoramic view,
+                    then focus on specific details, then pull back again.
                   </li>
                   <li className="flex items-start gap-2">
                     <span className="mt-1 h-1.5 w-1.5 shrink-0 rounded-full bg-accent" />
-                    <strong>{tr(`Use varied sentence structures`)}</strong> &mdash; mix short,
-                    punchy sentences with longer, flowing ones.
+                    <strong>{tr(`Use varied sentence structures`)}</strong> - mix short, punchy
+                    sentences with longer, flowing ones.
                   </li>
                   <li className="flex items-start gap-2">
                     <span className="mt-1 h-1.5 w-1.5 shrink-0 rounded-full bg-accent" />
-                    <strong>{tr(`Choose precise vocabulary`)}</strong> &mdash; &ldquo;crimson&rdquo;
-                    is more effective than &ldquo;red&rdquo;; &ldquo;trudged&rdquo; is more
-                    evocative than &ldquo;walked&rdquo;.
+                    <strong>{tr(`Choose precise vocabulary`)}</strong> - &ldquo;crimson&rdquo; is
+                    more effective than &ldquo;red&rdquo;; &ldquo;trudged&rdquo; is more evocative
+                    than &ldquo;walked&rdquo;.
                   </li>
                   <li className="flex items-start gap-2">
                     <span className="mt-1 h-1.5 w-1.5 shrink-0 rounded-full bg-accent" />
-                    <strong>{tr(`Create atmosphere`)}</strong> &mdash; use pathetic fallacy (weather
+                    <strong>{tr(`Create atmosphere`)}</strong> - use pathetic fallacy (weather
                     reflecting mood), light/dark contrasts, and sensory details to build a mood.
                   </li>
                   <li className="flex items-start gap-2">
                     <span className="mt-1 h-1.5 w-1.5 shrink-0 rounded-full bg-accent" />
-                    <strong>{tr(`Avoid telling a story`)}</strong> &mdash; if the title is
-                    descriptive, do not write a narrative. Focus on painting the scene.
+                    <strong>{tr(`Avoid telling a story`)}</strong> - if the title is descriptive, do
+                    not write a narrative. Focus on painting the scene.
                   </li>
                 </ul>
               </div>
@@ -631,9 +627,7 @@ export default async function Paper2Page() {
                   <ul className="mt-1 space-y-1 text-sm text-muted-foreground">
                     <li>&bull; Relevant content that is developed with some detail</li>
                     <li>&bull; Awareness of purpose and audience</li>
-                    <li>
-                      &bull; Structured with some variety &mdash; clear beginning, middle, and end
-                    </li>
+                    <li>&bull; Structured with some variety - clear beginning, middle, and end</li>
                   </ul>
                 </div>
                 <div>
@@ -643,7 +637,7 @@ export default async function Paper2Page() {
                   <ul className="mt-1 space-y-1 text-sm text-muted-foreground">
                     <li>&bull; Reasonable range of vocabulary, sometimes effective</li>
                     <li>&bull; Some variety in sentence structures</li>
-                    <li>&bull; Mostly accurate &mdash; errors do not impede communication</li>
+                    <li>&bull; Mostly accurate - errors do not impede communication</li>
                   </ul>
                 </div>
               </div>
@@ -676,7 +670,7 @@ export default async function Paper2Page() {
                     Style &amp; Accuracy
                   </p>
                   <ul className="mt-1 space-y-1 text-sm text-muted-foreground">
-                    <li>&bull; Limited vocabulary &mdash; simple but functional</li>
+                    <li>&bull; Limited vocabulary - simple but functional</li>
                     <li>&bull; Mostly simple sentence structures</li>
                     <li>&bull; Errors are noticeable but meaning is still clear</li>
                   </ul>

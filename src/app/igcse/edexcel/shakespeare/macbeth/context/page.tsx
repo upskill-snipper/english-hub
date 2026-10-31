@@ -36,7 +36,7 @@ const CONTEXT_POINTS = [
   {
     topic: 'James I and the Scottish connection',
     detail:
-      "James I (James VI of Scotland) was Shakespeare's new royal patron \u2014 the company that staged Macbeth became known as 'The King's Men' after 1603. Macbeth is set in Scotland and flatters James by presenting his ancestor Banquo as noble and morally incorruptible. The procession of eight kings in Act 4 Scene 1 \u2014 descended from Banquo \u2014 is a direct nod to James and his lineage.",
+      "James I (James VI of Scotland) was Shakespeare's new royal patron - the company that staged Macbeth became known as 'The King's Men' after 1603. Macbeth is set in Scotland and flatters James by presenting his ancestor Banquo as noble and morally incorruptible. The procession of eight kings in Act 4 Scene 1 - descended from Banquo - is a direct nod to James and his lineage.",
   },
   {
     topic: 'The Gunpowder Plot (1605)',
@@ -46,32 +46,32 @@ const CONTEXT_POINTS = [
   {
     topic: 'Witchcraft and Daemonologie',
     detail:
-      'James I was genuinely afraid of witches. In 1597 he wrote Daemonologie, a treatise on witchcraft, and as king he presided over witch trials. The Witchcraft Act of 1604 made it a capital offence to invoke evil spirits. A Jacobean audience would have taken the weird sisters seriously \u2014 not as fantasy, but as real agents of the devil. Shakespeare leans into this by giving them verifiable prophecies and clear demonic associations, which would have made them chillingly recognisable.',
+      'James I was genuinely afraid of witches. In 1597 he wrote Daemonologie, a treatise on witchcraft, and as king he presided over witch trials. The Witchcraft Act of 1604 made it a capital offence to invoke evil spirits. A Jacobean audience would have taken the weird sisters seriously - not as fantasy, but as real agents of the devil. Shakespeare leans into this by giving them verifiable prophecies and clear demonic associations, which would have made them chillingly recognisable.',
   },
   {
     topic: 'The Divine Right of Kings',
     detail:
-      "James I championed the doctrine that kings were appointed directly by God and answerable only to God. Under this doctrine, killing a king was not merely a political act \u2014 it was a sin against the divine order. This is why Duncan's murder is met with unnatural omens (horses eating each other, day turning to night), and why Lady Macbeth's claim that 'a little water clears us of this deed' is grotesque: no amount of water can wash away a sin against God.",
+      "James I championed the doctrine that kings were appointed directly by God and answerable only to God. Under this doctrine, killing a king was not merely a political act - it was a sin against the divine order. This is why Duncan's murder is met with unnatural omens (horses eating each other, day turning to night), and why Lady Macbeth's claim that 'a little water clears us of this deed' is grotesque: no amount of water can wash away a sin against God.",
   },
   {
     topic: 'The Great Chain of Being',
     detail:
-      "Elizabethan and Jacobean thought inherited a medieval hierarchy called the Great Chain of Being: God at the top, then angels, then the monarch, then nobles, then commoners, then animals, then plants, then stones. Everything had its place. Killing the king didn't just unseat one man \u2014 it ruptured the whole chain. This explains the play's obsession with inversion and unnatural phenomena: they are the cosmos reacting to a broken link.",
+      "Elizabethan and Jacobean thought inherited a medieval hierarchy called the Great Chain of Being: God at the top, then angels, then the monarch, then nobles, then commoners, then animals, then plants, then stones. Everything had its place. Killing the king didn't just unseat one man - it ruptured the whole chain. This explains the play's obsession with inversion and unnatural phenomena: they are the cosmos reacting to a broken link.",
   },
   {
     topic: 'Gender in Jacobean society',
     detail:
-      "Women were expected to be pious, obedient, silent and nurturing. Lady Macbeth's call to the spirits to 'unsex' her \u2014 her demand to have her femininity stripped away so she can act with 'direst cruelty' \u2014 would have been deeply shocking. Her eventual sleepwalking, suicide, and the closing description of her as 'fiend-like' can be read as the play punishing her for that transgression. Macduff's insistence on feeling grief 'as a man' offers a very different, more sympathetic model of masculinity.",
+      "Women were expected to be pious, obedient, silent and nurturing. Lady Macbeth's call to the spirits to 'unsex' her - her demand to have her femininity stripped away so she can act with 'direst cruelty' - would have been deeply shocking. Her eventual sleepwalking, suicide, and the closing description of her as 'fiend-like' can be read as the play punishing her for that transgression. Macduff's insistence on feeling grief 'as a man' offers a very different, more sympathetic model of masculinity.",
   },
   {
     topic: 'Aristotelian tragedy',
     detail:
-      "Shakespeare inherits the Aristotelian model of tragedy: a noble hero with a fatal flaw (hamartia) experiences a reversal of fortune (peripeteia), comes to recognise his situation (anagnorisis), and suffers a catastrophic fall. The audience experiences catharsis \u2014 an emotional release through pity and fear. Macbeth fits this structure neatly: his hamartia is 'vaulting ambition', his peripeteia is the banquet scene, his recognition comes in the 'Tomorrow' soliloquy, and his death delivers the catharsis.",
+      "Shakespeare inherits the Aristotelian model of tragedy: a noble hero with a fatal flaw (hamartia) experiences a reversal of fortune (peripeteia), comes to recognise his situation (anagnorisis), and suffers a catastrophic fall. The audience experiences catharsis - an emotional release through pity and fear. Macbeth fits this structure neatly: his hamartia is 'vaulting ambition', his peripeteia is the banquet scene, his recognition comes in the 'Tomorrow' soliloquy, and his death delivers the catharsis.",
   },
   {
     topic: 'The Holinshed source',
     detail:
-      "Shakespeare drew his raw material from Raphael Holinshed's Chronicles of England, Scotland, and Ireland (1577, expanded 1587). The historical Macbeth was a successful king who reigned for seventeen years \u2014 but Shakespeare compresses time and darkens events to make Macbeth a tyrant and Banquo a saint. Knowing Shakespeare was shaping the source for James I is a powerful context point.",
+      "Shakespeare drew his raw material from Raphael Holinshed's Chronicles of England, Scotland, and Ireland (1577, expanded 1587). The historical Macbeth was a successful king who reigned for seventeen years - but Shakespeare compresses time and darkens events to make Macbeth a tyrant and Banquo a saint. Knowing Shakespeare was shaping the source for James I is a powerful context point.",
   },
 ]
 
@@ -94,7 +94,7 @@ export default async function MacbethContextPage() {
             {await t('igcse.page.badge_edexcel_lit')}
           </div>
           <h1 className="mt-4 text-3xl font-bold tracking-tight text-foreground sm:text-4xl md:text-5xl">
-            Macbeth &mdash; Context
+            Macbeth - Context
           </h1>
           <p className="mx-auto mt-4 max-w-xl text-lg text-muted-foreground">
             Jacobean England, James I, witchcraft, the Gunpowder Plot and the Divine Right of Kings.
@@ -111,8 +111,8 @@ export default async function MacbethContextPage() {
             On the Edexcel IGCSE Literature Shakespeare question, context is assessed through
             relating to context. The strongest answers <strong>weave context into analysis</strong>{' '}
             rather than treating it as a bolted-on paragraph. Aim for a single sharp sentence of
-            context inside each analytical paragraph &mdash; enough to frame a Jacobean
-            audience&rsquo;s reaction to a specific moment.
+            context inside each analytical paragraph - enough to frame a Jacobean audience&rsquo;s
+            reaction to a specific moment.
           </p>
         </div>
 
@@ -138,14 +138,14 @@ export default async function MacbethContextPage() {
           <div className="mt-4 rounded-lg border border-primary/30 bg-card p-4">
             <p className="text-sm text-muted-foreground italic leading-relaxed">
               &ldquo;When Lady Macbeth begs spirits to &lsquo;unsex&rsquo; her, a Jacobean audience
-              &mdash; for whom James I&rsquo;s <em>Daemonologie</em> was recent memory &mdash; would
-              have heard a genuine demonic invocation. The verb &lsquo;unsex&rsquo; not only rejects
+              &mdash; for whom James I&rsquo;s <em>Daemonologie</em> was recent memory - would have
+              heard a genuine demonic invocation. The verb &lsquo;unsex&rsquo; not only rejects
               femininity but pulls her out of the Great Chain of Being altogether.&rdquo;
             </p>
           </div>
           <p className="mt-4 text-sm text-muted-foreground leading-relaxed">
-            That&rsquo;s one sentence of context doing the work of a whole paragraph &mdash; exactly
-            what IGCSE examiners reward.
+            That&rsquo;s one sentence of context doing the work of a whole paragraph - exactly what
+            IGCSE examiners reward.
           </p>
         </section>
       </div>

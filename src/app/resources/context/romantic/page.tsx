@@ -417,14 +417,14 @@ export default function RomanticContextPage() {
                   Wordsworth fills him with awe and terror -- the defining Burkean&ndash;Kantian
                   Romantic experience. Nature is not a gentle backdrop but an overwhelming power
                   that reshapes the speaker&apos;s understanding of himself and his place in the
-                  world. Wordsworth believed such formative encounters &mdash; his &ldquo;spots of
-                  time&rdquo; &mdash; were essential for spiritual growth, reflecting the Romantic
+                  world. Wordsworth believed such formative encounters - his &ldquo;spots of
+                  time&rdquo; - were essential for spiritual growth, reflecting the Romantic
                   conviction that nature is humanity&apos;s greatest teacher.
                 </p>
                 <p className="mt-2 text-xs italic text-muted-foreground">
                   Version note: AQA prescribes the 1850 published <em>Prelude</em>; OCR prescribes
-                  the 1799 two-part <em>Prelude</em>. Wording differs between versions &mdash; quote
-                  from the AQA 1850 text on this page.
+                  the 1799 two-part <em>Prelude</em>. Wording differs between versions - quote from
+                  the AQA 1850 text on this page.
                 </p>
               </div>
 

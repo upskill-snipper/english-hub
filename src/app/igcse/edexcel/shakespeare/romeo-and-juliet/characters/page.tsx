@@ -160,7 +160,7 @@ export default async function RomeoAndJulietCharactersPage() {
             {await t('igcse.page.badge_edexcel_lit')}
           </div>
           <h1 className="mt-4 text-3xl font-bold tracking-tight text-foreground sm:text-4xl md:text-5xl">
-            Romeo and Juliet &mdash; Characters
+            Romeo and Juliet - Characters
           </h1>
           <p className="mx-auto mt-4 max-w-xl text-lg text-muted-foreground">
             Arcs, motivations and key quotations for the play&rsquo;s central figures.

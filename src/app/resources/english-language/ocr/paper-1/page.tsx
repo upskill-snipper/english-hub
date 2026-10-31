@@ -93,13 +93,13 @@ export default async function OCRPaper1Page() {
                 </thead>
                 <tbody className="divide-y divide-border">
                   <tr>
-                    <td className="py-3 pe-4 font-medium">A &mdash; Reading</td>
+                    <td className="py-3 pe-4 font-medium">A - Reading</td>
                     <td className="py-3 pe-4">{tr(`Non-fiction / literary non-fiction`)}</td>
                     <td className="py-3 pe-4">40 marks</td>
                     <td className="py-3">1 hour</td>
                   </tr>
                   <tr>
-                    <td className="py-3 pe-4 font-medium">B &mdash; Writing</td>
+                    <td className="py-3 pe-4 font-medium">B - Writing</td>
                     <td className="py-3 pe-4">{tr(`Writing to present information and ideas`)}</td>
                     <td className="py-3 pe-4">40 marks</td>
                     <td className="py-3">1 hour</td>
@@ -191,7 +191,7 @@ export default async function OCRPaper1Page() {
                   <div className="mt-3 rounded border border-accent/20 bg-primary/10 p-3">
                     <p className="text-sm font-medium text-primary">Top tip</p>
                     <p className="mt-1 text-sm text-primary">
-                      Don&rsquo;t just spot techniques &mdash; explain
+                      Don&rsquo;t just spot techniques - explain
                       <em> why</em> the writer used them and what effect they have on the reader.
                       Always link back to the writer&rsquo;s purpose.
                     </p>
@@ -231,24 +231,24 @@ export default async function OCRPaper1Page() {
               </h3>
               <ol className="ms-6 mt-2 list-decimal space-y-2">
                 <li>
-                  <strong>{tr(`Read the questions first`)}</strong> &mdash; this helps you know what
-                  to look for when you read the texts.
+                  <strong>{tr(`Read the questions first`)}</strong> - this helps you know what to
+                  look for when you read the texts.
                 </li>
                 <li>
-                  <strong>{tr(`Annotate as you read`)}</strong> &mdash; underline key words, circle
+                  <strong>{tr(`Annotate as you read`)}</strong> - underline key words, circle
                   techniques, and note your initial reactions in the margin.
                 </li>
                 <li>
-                  <strong>Consider the context</strong> &mdash; when was the text written? Who was
-                  the intended audience? What was the writer&rsquo;s purpose?
+                  <strong>Consider the context</strong> - when was the text written? Who was the
+                  intended audience? What was the writer&rsquo;s purpose?
                 </li>
                 <li>
-                  <strong>{tr(`Track the writer’s argument`)}</strong> &mdash; especially in
-                  non-fiction, identify the main argument and how the writer builds and supports it.
+                  <strong>{tr(`Track the writer’s argument`)}</strong> - especially in non-fiction,
+                  identify the main argument and how the writer builds and supports it.
                 </li>
                 <li>
-                  <strong>{tr(`Note shifts in tone or focus`)}</strong> &mdash; these structural
-                  choices are important for analysis questions.
+                  <strong>{tr(`Note shifts in tone or focus`)}</strong> - these structural choices
+                  are important for analysis questions.
                 </li>
               </ol>
             </div>
@@ -267,10 +267,10 @@ export default async function OCRPaper1Page() {
                   and reverence. The verb &ldquo;loomed&rdquo; suggests something imposing and
                   slightly threatening, while the metaphor of &ldquo;sentinels&rdquo; implies that
                   the mountains have a protective, watchful quality. This dual effect reflects the
-                  writer&rsquo;s ambivalence towards the wilderness &mdash; both drawn to its
-                  grandeur and respectful of its power. The use of the adjective
-                  &ldquo;ancient&rdquo; further reinforces the timelessness of the natural world,
-                  making the human traveller seem small and transient by comparison.
+                  writer&rsquo;s ambivalence towards the wilderness - both drawn to its grandeur and
+                  respectful of its power. The use of the adjective &ldquo;ancient&rdquo; further
+                  reinforces the timelessness of the natural world, making the human traveller seem
+                  small and transient by comparison.
                 </p>
               </div>
               <p className="mt-3 text-sm text-muted-foreground">
@@ -497,27 +497,27 @@ export default async function OCRPaper1Page() {
               </p>
               <ul className="ms-6 mt-2 list-disc space-y-1">
                 <li>
-                  <strong>Vary your sentence structures</strong> &mdash; use simple, compound, and
-                  complex sentences. Start some sentences with adverbials, subordinate clauses, or
+                  <strong>Vary your sentence structures</strong> - use simple, compound, and complex
+                  sentences. Start some sentences with adverbials, subordinate clauses, or
                   participial phrases.
                 </li>
                 <li>
-                  <strong>{tr(`Use ambitious vocabulary`)}</strong> &mdash; avoid generic words like
+                  <strong>{tr(`Use ambitious vocabulary`)}</strong> - avoid generic words like
                   &ldquo;good&rdquo;, &ldquo;bad&rdquo;, or &ldquo;nice&rdquo;. Choose precise,
                   vivid alternatives.
                 </li>
                 <li>
-                  <strong>{tr(`Punctuate accurately`)}</strong> &mdash; use full stops, commas,
+                  <strong>{tr(`Punctuate accurately`)}</strong> - use full stops, commas,
                   apostrophes, colons, semicolons, and dashes correctly. A well-placed semicolon
                   shows confidence.
                 </li>
                 <li>
-                  <strong>{tr(`Paragraph effectively`)}</strong> &mdash; each paragraph should have
-                  a clear focus. Use discourse markers to link paragraphs
-                  (&ldquo;Furthermore&rdquo;, &ldquo;In addition&rdquo;, &ldquo;Conversely&rdquo;).
+                  <strong>{tr(`Paragraph effectively`)}</strong> - each paragraph should have a
+                  clear focus. Use discourse markers to link paragraphs (&ldquo;Furthermore&rdquo;,
+                  &ldquo;In addition&rdquo;, &ldquo;Conversely&rdquo;).
                 </li>
                 <li>
-                  <strong>Proofread</strong> &mdash; leave 3&ndash;5 minutes at the end to check for
+                  <strong>Proofread</strong> - leave 3&ndash;5 minutes at the end to check for
                   errors. Correct mistakes neatly with a single line through the error.
                 </li>
               </ul>
@@ -569,29 +569,29 @@ export default async function OCRPaper1Page() {
               <h3 className="text-xl font-semibold text-foreground">Common Mistakes to Avoid</h3>
               <ul className="ms-6 mt-2 list-disc space-y-2">
                 <li>
-                  <strong>{tr(`Feature-spotting without analysis`)}</strong> &mdash; naming a
-                  technique without explaining its effect will not earn high marks. Always explain
-                  the &ldquo;so what?&rdquo;.
+                  <strong>{tr(`Feature-spotting without analysis`)}</strong> - naming a technique
+                  without explaining its effect will not earn high marks. Always explain the
+                  &ldquo;so what?&rdquo;.
                 </li>
                 <li>
-                  <strong>{tr(`Retelling the text`)}</strong> &mdash; paraphrasing what the writer
-                  says rather than analysing how and why they say it.
+                  <strong>{tr(`Retelling the text`)}</strong> - paraphrasing what the writer says
+                  rather than analysing how and why they say it.
                 </li>
                 <li>
-                  <strong>Ignoring the form conventions</strong> &mdash; if the question asks for a
+                  <strong>Ignoring the form conventions</strong> - if the question asks for a
                   letter, your response must look like a letter with appropriate openings, closings,
                   and register.
                 </li>
                 <li>
-                  <strong>{tr(`Writing one-sided arguments`)}</strong> &mdash; top-band answers
+                  <strong>{tr(`Writing one-sided arguments`)}</strong> - top-band answers
                   acknowledge counter-arguments before rebutting them.
                 </li>
                 <li>
-                  <strong>{tr(`Poor time management`)}</strong> &mdash; spending too long on Section
-                  A and rushing Section B, or vice versa.
+                  <strong>{tr(`Poor time management`)}</strong> - spending too long on Section A and
+                  rushing Section B, or vice versa.
                 </li>
                 <li>
-                  <strong>{tr(`Weak openings and endings`)}</strong> &mdash; your first and last
+                  <strong>{tr(`Weak openings and endings`)}</strong> - your first and last
                   paragraphs leave the strongest impression on the marker.
                 </li>
               </ul>

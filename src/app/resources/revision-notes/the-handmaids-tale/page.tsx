@@ -57,7 +57,7 @@ function QuoteCard({
       <p className="text-sm font-semibold text-violet-800 dark:text-violet-200 italic">
         &ldquo;{quote}&rdquo;
       </p>
-      {speaker && <p className="mt-1 text-xs font-medium text-violet-600">&mdash; {speaker}</p>}
+      {speaker && <p className="mt-1 text-xs font-medium text-violet-600">- {speaker}</p>}
       <p className="mt-2 text-sm text-muted-foreground">{analysis}</p>
     </div>
   )
@@ -110,7 +110,7 @@ export default function HandmaidsTalePage() {
           </span>
         </div>
         <h1 className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
-          The Handmaid&apos;s Tale &mdash; Complete A-Level Revision Guide
+          The Handmaid&apos;s Tale - Complete A-Level Revision Guide
         </h1>
         <p className="mt-1 text-lg text-muted-foreground">{tr(`Margaret Atwood, 1985`)}</p>
         <p className="mt-3 max-w-3xl text-muted-foreground leading-relaxed">
@@ -156,7 +156,7 @@ export default function HandmaidsTalePage() {
                   <span className="flex h-6 w-6 items-center justify-center rounded-full bg-violet-500/15 text-xs font-bold text-violet-700 dark:text-violet-300">
                     1
                   </span>
-                  The Republic of Gilead &mdash; The Present Tense
+                  The Republic of Gilead - The Present Tense
                 </h4>
                 <p className="mt-2 text-sm text-muted-foreground leading-relaxed">
                   The novel opens in the Rachel and Leah Re-education Centre, a converted gymnasium
@@ -187,8 +187,8 @@ export default function HandmaidsTalePage() {
                   (secret police) circulating in black vans. In her room, she discovers a Latin
                   inscription scratched into the cupboard by her predecessor: &ldquo;Nolite te
                   bastardes carborundorum.&rdquo; The household includes Marthas (domestic servants
-                  Cora and Rita), the chauffeur Nick, and Serena Joy &mdash; once a public advocate
-                  for women&apos;s confinement to the home, now bitterly trapped within it.
+                  Cora and Rita), the chauffeur Nick, and Serena Joy - once a public advocate for
+                  women&apos;s confinement to the home, now bitterly trapped within it.
                 </p>
               </div>
 
@@ -203,7 +203,7 @@ export default function HandmaidsTalePage() {
                   Interleaved with present-tense Gilead chapters are Offred&apos;s memories of the
                   world before: her job at a library digitising books, her husband Luke, their
                   daughter, her best friend Moira, and her feminist mother. She recalls the
-                  &ldquo;sudden&rdquo; coup &mdash; the President shot, Congress machine-gunned,
+                  &ldquo;sudden&rdquo; coup - the President shot, Congress machine-gunned,
                   women&apos;s bank accounts frozen overnight, jobs terminated. She remembers the
                   failed escape with Luke and their daughter to Canada, captured at the border; her
                   daughter taken; Luke&apos;s fate unknown. These analeptic chapters force the
@@ -220,13 +220,13 @@ export default function HandmaidsTalePage() {
                 </h4>
                 <p className="mt-2 text-sm text-muted-foreground leading-relaxed">
                   The Commander begins summoning Offred to his study at night, where they play
-                  Scrabble &mdash; an illicit, intimate act, since women are forbidden to read. He
-                  gives her old magazines and hand lotion. Serena Joy, desperate for a baby and
-                  suspecting the Commander is sterile, arranges for Offred to sleep with Nick, and
-                  offers in return to try to get her a picture of her daughter. Offred and Nick
-                  begin an affair that becomes emotional as well as physical. The Commander takes
-                  Offred to Jezebel&apos;s, an underground brothel for officials, where she
-                  encounters Moira, who has been recaptured and chosen sex work over the Colonies.
+                  Scrabble - an illicit, intimate act, since women are forbidden to read. He gives
+                  her old magazines and hand lotion. Serena Joy, desperate for a baby and suspecting
+                  the Commander is sterile, arranges for Offred to sleep with Nick, and offers in
+                  return to try to get her a picture of her daughter. Offred and Nick begin an
+                  affair that becomes emotional as well as physical. The Commander takes Offred to
+                  Jezebel&apos;s, an underground brothel for officials, where she encounters Moira,
+                  who has been recaptured and chosen sex work over the Colonies.
                 </p>
               </div>
 
@@ -265,9 +265,9 @@ export default function HandmaidsTalePage() {
                   with patronising scepticism, cautions the audience against passing moral judgment
                   upon the Gileadean society, makes jokes about her name and the Underground
                   Femaleroad, and laments that she did not provide more political detail about the
-                  regime&apos;s inner workings. Atwood&apos;s coda implicates academia &mdash; and
-                  her readers &mdash; in the patriarchal habits of mind that produced Gilead.
-                  Offred&apos;s ultimate fate, and her daughter&apos;s, is never confirmed.
+                  regime&apos;s inner workings. Atwood&apos;s coda implicates academia - and her
+                  readers - in the patriarchal habits of mind that produced Gilead. Offred&apos;s
+                  ultimate fate, and her daughter&apos;s, is never confirmed.
                 </p>
                 <div className="mt-3 rounded-lg bg-muted p-3">
                   <p className="text-xs font-semibold text-muted-foreground uppercase tracking-wider">
@@ -430,15 +430,15 @@ export default function HandmaidsTalePage() {
                   &ldquo;Nolite te bastardes carborundorum&rdquo;
                 </h4>
                 <p className="mt-1 text-sm text-muted-foreground leading-relaxed">
-                  The Latin graffito Offred finds in her wardrobe is mock-Latin schoolboy slang
-                  &mdash; not real Latin. It translates roughly as &ldquo;Don&apos;t let the
-                  bastards grind you down.&rdquo; Atwood has explained that it was a joke phrase she
-                  remembered from school. Its presence is a coded message of solidarity from the
-                  previous Offred (who, the Commander reveals, hanged herself), but its falseness is
-                  also the point: it is a private joke, untranslatable to Gilead, a piece of the
-                  pre-regime educated past that the regime cannot read or destroy. The
-                  Commander&apos;s ability to translate it &mdash; and his amusement &mdash; is one
-                  of the most sinister moments in the novel.
+                  The Latin graffito Offred finds in her wardrobe is mock-Latin schoolboy slang -
+                  not real Latin. It translates roughly as &ldquo;Don&apos;t let the bastards grind
+                  you down.&rdquo; Atwood has explained that it was a joke phrase she remembered
+                  from school. Its presence is a coded message of solidarity from the previous
+                  Offred (who, the Commander reveals, hanged herself), but its falseness is also the
+                  point: it is a private joke, untranslatable to Gilead, a piece of the pre-regime
+                  educated past that the regime cannot read or destroy. The Commander&apos;s ability
+                  to translate it - and his amusement - is one of the most sinister moments in the
+                  novel.
                 </p>
               </div>
               <div className="rounded-lg bg-primary/10 p-4">
@@ -590,14 +590,13 @@ export default function HandmaidsTalePage() {
               <div className="rounded-lg bg-muted p-4">
                 <h4 className="font-bold text-foreground">{tr(`The Colour Red`)}</h4>
                 <p className="mt-1 text-sm text-muted-foreground leading-relaxed">
-                  Handmaids wear red &mdash; the colour of menstrual blood, of fertility, of the
-                  scarlet letter worn by Hawthorne&apos;s Hester Prynne (a deliberate Atwood echo,
-                  given the New England setting). Red also marks the women as visible from a
-                  distance: there is no hiding. Offred reflects that &ldquo;everything except the
-                  wings ... is red: the colour of blood, which defines us.&rdquo; The colour
-                  combines biological essentialism, religious shame, and visibility into a single
-                  uniform. In contrast, Wives wear blue (the Virgin Mary), Marthas dull green, Aunts
-                  brown.
+                  Handmaids wear red - the colour of menstrual blood, of fertility, of the scarlet
+                  letter worn by Hawthorne&apos;s Hester Prynne (a deliberate Atwood echo, given the
+                  New England setting). Red also marks the women as visible from a distance: there
+                  is no hiding. Offred reflects that &ldquo;everything except the wings ... is red:
+                  the colour of blood, which defines us.&rdquo; The colour combines biological
+                  essentialism, religious shame, and visibility into a single uniform. In contrast,
+                  Wives wear blue (the Virgin Mary), Marthas dull green, Aunts brown.
                 </p>
               </div>
               <div className="rounded-lg bg-muted p-4">
@@ -619,15 +618,15 @@ export default function HandmaidsTalePage() {
                   The state&apos;s secret police are called the &ldquo;Eyes,&rdquo; their vehicles
                   bear winged-eye logos, and the phrase &ldquo;Under His Eye&rdquo; is the standard
                   farewell. Yet Handmaids&apos; bonnets are designed with white &ldquo;wings&rdquo;
-                  that obstruct their own peripheral vision &mdash; women cannot see, but are always
-                  seen. Atwood inverts the divine providence of the Old Testament &ldquo;Eyes of the
+                  that obstruct their own peripheral vision - women cannot see, but are always seen.
+                  Atwood inverts the divine providence of the Old Testament &ldquo;Eyes of the
                   Lord&rdquo; into a panoptic surveillance state.
                 </p>
               </div>
               <div className="rounded-lg bg-muted p-4">
                 <h4 className="font-bold text-foreground">{tr(`Flowers and Serena's Garden`)}</h4>
                 <p className="mt-1 text-sm text-muted-foreground leading-relaxed">
-                  Serena Joy tends an immaculate garden of tulips and irises &mdash; one of the few
+                  Serena Joy tends an immaculate garden of tulips and irises - one of the few
                   activities available to her. The flowers are described in language that
                   recurrently sexualises them (&ldquo;the tulips ... as if they have been cut and
                   are beginning to heal there&rdquo;). The garden is a displaced site of
@@ -724,7 +723,7 @@ export default function HandmaidsTalePage() {
                   </div>
                   <div>
                     <p className="text-xs font-semibold text-violet-700 dark:text-violet-300 uppercase tracking-wider">
-                      Paragraph 1 &mdash; Scripture as instrument
+                      Paragraph 1 - Scripture as instrument
                     </p>
                     <p className="mt-1 text-sm text-muted-foreground">
                       The Genesis 30 epigraph and the Ceremony&apos;s scriptural framing.
@@ -734,7 +733,7 @@ export default function HandmaidsTalePage() {
                   </div>
                   <div>
                     <p className="text-xs font-semibold text-violet-700 dark:text-violet-300 uppercase tracking-wider">
-                      Paragraph 2 &mdash; Spectacle: Salvagings, Particicutions, Prayvaganzas
+                      Paragraph 2 - Spectacle: Salvagings, Particicutions, Prayvaganzas
                     </p>
                     <p className="mt-1 text-sm text-muted-foreground">
                       Public ritual as instrument of theocratic control. Foucault on disciplinary
@@ -743,7 +742,7 @@ export default function HandmaidsTalePage() {
                   </div>
                   <div>
                     <p className="text-xs font-semibold text-violet-700 dark:text-violet-300 uppercase tracking-wider">
-                      Paragraph 3 &mdash; The Commanders&apos; private hypocrisy
+                      Paragraph 3 - The Commanders&apos; private hypocrisy
                     </p>
                     <p className="mt-1 text-sm text-muted-foreground">
                       Jezebel&apos;s, Scrabble, the Commander&apos;s lipstick gift. The architects
@@ -753,7 +752,7 @@ export default function HandmaidsTalePage() {
                   </div>
                   <div>
                     <p className="text-xs font-semibold text-violet-700 dark:text-violet-300 uppercase tracking-wider">
-                      Paragraph 4 &mdash; Counter-argument and AO5
+                      Paragraph 4 - Counter-argument and AO5
                     </p>
                     <p className="mt-1 text-sm text-muted-foreground">
                       Some critics (e.g. Mary McCarthy) argued the novel is too schematic. Counter:
@@ -794,7 +793,7 @@ export default function HandmaidsTalePage() {
                   </div>
                   <div>
                     <p className="text-xs font-semibold text-violet-700 dark:text-violet-300 uppercase tracking-wider">
-                      Paragraph 1 &mdash; Serena Joy
+                      Paragraph 1 - Serena Joy
                     </p>
                     <p className="mt-1 text-sm text-muted-foreground">
                       Former televangelist who argued women belonged in the home, now confined in
@@ -805,7 +804,7 @@ export default function HandmaidsTalePage() {
                   </div>
                   <div>
                     <p className="text-xs font-semibold text-violet-700 dark:text-violet-300 uppercase tracking-wider">
-                      Paragraph 2 &mdash; The Aunts
+                      Paragraph 2 - The Aunts
                     </p>
                     <p className="mt-1 text-sm text-muted-foreground">
                       Aunt Lydia&apos;s rhetoric of &ldquo;freedom from.&rdquo; Female collaborators
@@ -815,7 +814,7 @@ export default function HandmaidsTalePage() {
                   </div>
                   <div>
                     <p className="text-xs font-semibold text-violet-700 dark:text-violet-300 uppercase tracking-wider">
-                      Paragraph 3 &mdash; Janine
+                      Paragraph 3 - Janine
                     </p>
                     <p className="mt-1 text-sm text-muted-foreground">
                       Janine&apos;s public confession of her rape, led by Aunt Helena and chanted by
@@ -826,7 +825,7 @@ export default function HandmaidsTalePage() {
                   </div>
                   <div>
                     <p className="text-xs font-semibold text-violet-700 dark:text-violet-300 uppercase tracking-wider">
-                      Paragraph 4 &mdash; Offred&apos;s complicity
+                      Paragraph 4 - Offred&apos;s complicity
                     </p>
                     <p className="mt-1 text-sm text-muted-foreground">
                       Offred is not exempt: she takes Serena&apos;s deal, sleeps with Nick, fails to
@@ -866,7 +865,7 @@ export default function HandmaidsTalePage() {
                   </div>
                   <div>
                     <p className="text-xs font-semibold text-violet-700 dark:text-violet-300 uppercase tracking-wider">
-                      Paragraph 1 &mdash; Language as instrument of power
+                      Paragraph 1 - Language as instrument of power
                     </p>
                     <p className="mt-1 text-sm text-muted-foreground">
                       Newspeak parallels: &ldquo;Salvaging,&rdquo; &ldquo;Ceremony,&rdquo;
@@ -876,7 +875,7 @@ export default function HandmaidsTalePage() {
                   </div>
                   <div>
                     <p className="text-xs font-semibold text-violet-700 dark:text-violet-300 uppercase tracking-wider">
-                      Paragraph 2 &mdash; Language as resistance
+                      Paragraph 2 - Language as resistance
                     </p>
                     <p className="mt-1 text-sm text-muted-foreground">
                       Nolite te bastardes carborundorum. Offred&apos;s wordplay on
@@ -888,7 +887,7 @@ export default function HandmaidsTalePage() {
                   </div>
                   <div>
                     <p className="text-xs font-semibold text-violet-700 dark:text-violet-300 uppercase tracking-wider">
-                      Paragraph 3 &mdash; The narrative voice
+                      Paragraph 3 - The narrative voice
                     </p>
                     <p className="mt-1 text-sm text-muted-foreground">
                       Offred&apos;s self-revising sentences: &ldquo;I would like to believe this is
@@ -898,7 +897,7 @@ export default function HandmaidsTalePage() {
                   </div>
                   <div>
                     <p className="text-xs font-semibold text-violet-700 dark:text-violet-300 uppercase tracking-wider">
-                      Paragraph 4 &mdash; The Historical Notes and the question of testimony
+                      Paragraph 4 - The Historical Notes and the question of testimony
                     </p>
                     <p className="mt-1 text-sm text-muted-foreground">
                       The cassette tapes, the academic transcript, Pieixoto&apos;s mockery. AO5:
@@ -923,14 +922,13 @@ export default function HandmaidsTalePage() {
                     </p>
                     <p className="mt-1 text-sm text-muted-foreground">
                       Both novels diagnose totalitarianism through language, surveillance, and the
-                      destruction of individual interiority &mdash; but Atwood&apos;s focus on
-                      gendered embodiment marks a decisive feminist intervention in the dystopian
-                      tradition.
+                      destruction of individual interiority - but Atwood&apos;s focus on gendered
+                      embodiment marks a decisive feminist intervention in the dystopian tradition.
                     </p>
                   </div>
                   <div>
                     <p className="text-xs font-semibold text-violet-700 dark:text-violet-300 uppercase tracking-wider">
-                      Paragraph 1 &mdash; Shared inheritances
+                      Paragraph 1 - Shared inheritances
                     </p>
                     <p className="mt-1 text-sm text-muted-foreground">
                       Surveillance (Big Brother / the Eyes), language control (Newspeak / Gileadean
@@ -940,7 +938,7 @@ export default function HandmaidsTalePage() {
                   </div>
                   <div>
                     <p className="text-xs font-semibold text-violet-700 dark:text-violet-300 uppercase tracking-wider">
-                      Paragraph 2 &mdash; The body as battleground
+                      Paragraph 2 - The body as battleground
                     </p>
                     <p className="mt-1 text-sm text-muted-foreground">
                       Where Orwell&apos;s state controls thought through torture, Gilead controls
@@ -951,18 +949,18 @@ export default function HandmaidsTalePage() {
                   </div>
                   <div>
                     <p className="text-xs font-semibold text-violet-700 dark:text-violet-300 uppercase tracking-wider">
-                      Paragraph 3 &mdash; The protagonist&apos;s defeat
+                      Paragraph 3 - The protagonist&apos;s defeat
                     </p>
                     <p className="mt-1 text-sm text-muted-foreground">
                       Winston&apos;s explicit ideological defeat (&ldquo;he loved Big
                       Brother&rdquo;) versus Offred&apos;s ambiguous fate. Atwood refuses
-                      Orwell&apos;s closure. AO5: which is more frightening &mdash; certainty of
-                      defeat or unresolved disappearance?
+                      Orwell&apos;s closure. AO5: which is more frightening - certainty of defeat or
+                      unresolved disappearance?
                     </p>
                   </div>
                   <div>
                     <p className="text-xs font-semibold text-violet-700 dark:text-violet-300 uppercase tracking-wider">
-                      Paragraph 4 &mdash; The reader&apos;s implication
+                      Paragraph 4 - The reader&apos;s implication
                     </p>
                     <p className="mt-1 text-sm text-muted-foreground">
                       Pieixoto&apos;s 2195 mockery of Offred&apos;s testimony has no clear Orwellian
@@ -994,7 +992,7 @@ export default function HandmaidsTalePage() {
                   </div>
                   <div>
                     <p className="text-xs font-semibold text-violet-700 dark:text-violet-300 uppercase tracking-wider">
-                      Paragraph 1 &mdash; The apparent relief
+                      Paragraph 1 - The apparent relief
                     </p>
                     <p className="mt-1 text-sm text-muted-foreground">
                       Concede the surface reading: Gilead is gone, replaced by a multicultural
@@ -1003,7 +1001,7 @@ export default function HandmaidsTalePage() {
                   </div>
                   <div>
                     <p className="text-xs font-semibold text-violet-700 dark:text-violet-300 uppercase tracking-wider">
-                      Paragraph 2 &mdash; Pieixoto&apos;s misogyny
+                      Paragraph 2 - Pieixoto&apos;s misogyny
                     </p>
                     <p className="mt-1 text-sm text-muted-foreground">
                       His joking puns at the conference, his audible preference for the
@@ -1014,8 +1012,7 @@ export default function HandmaidsTalePage() {
                   </div>
                   <div>
                     <p className="text-xs font-semibold text-violet-700 dark:text-violet-300 uppercase tracking-wider">
-                      Paragraph 3 &mdash; &ldquo;We must be cautious about passing moral
-                      judgment&rdquo;
+                      Paragraph 3 - &ldquo;We must be cautious about passing moral judgment&rdquo;
                     </p>
                     <p className="mt-1 text-sm text-muted-foreground">
                       Pieixoto&apos;s insistence on contextual relativism. The professional
@@ -1026,7 +1023,7 @@ export default function HandmaidsTalePage() {
                   </div>
                   <div>
                     <p className="text-xs font-semibold text-violet-700 dark:text-violet-300 uppercase tracking-wider">
-                      Paragraph 4 &mdash; Form and reader address
+                      Paragraph 4 - Form and reader address
                     </p>
                     <p className="mt-1 text-sm text-muted-foreground">
                       The shift from Offred&apos;s lyric voice to Pieixoto&apos;s academic prose
@@ -1052,16 +1049,15 @@ export default function HandmaidsTalePage() {
             <span className="mt-0.5 h-1.5 w-1.5 shrink-0 rounded-full bg-accent" />
             <span>
               <strong>{tr(`Use Atwood's own framing.`)}</strong> She insists the novel is
-              &ldquo;speculative&rdquo; not &ldquo;science&rdquo; fiction &mdash; nothing in it has
-              not happened on Earth. Cite this for AO3.
+              &ldquo;speculative&rdquo; not &ldquo;science&rdquo; fiction - nothing in it has not
+              happened on Earth. Cite this for AO3.
             </span>
           </li>
           <li className="flex items-start gap-2">
             <span className="mt-0.5 h-1.5 w-1.5 shrink-0 rounded-full bg-accent" />
             <span>
-              <strong>{tr(`Quote precisely.`)}</strong> Atwood&apos;s lines &mdash; especially the
-              chiasmuses and self-revisions &mdash; reward close attention. Don&apos;t paraphrase:
-              quote.
+              <strong>{tr(`Quote precisely.`)}</strong> Atwood&apos;s lines - especially the
+              chiasmuses and self-revisions - reward close attention. Don&apos;t paraphrase: quote.
             </span>
           </li>
           <li className="flex items-start gap-2">

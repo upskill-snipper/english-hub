@@ -270,7 +270,7 @@ const PRACTICE_POEMS = [
     poet: 'Percy Bysshe Shelley (1818)',
     focus: 'Power and its transience',
     poem: `I met a traveller from an antique land,
-Who said\u2014"Two vast and trunkless legs of stone
+Who said - "Two vast and trunkless legs of stone
 Stand in the desert. . . . Near them, on the sand,
 Half sunk a shattered visage lies, whose frown,
 And wrinkled lip, and sneer of cold command,
@@ -317,7 +317,7 @@ The waves beside them danced; but they
 Out-did the sparkling waves in glee:
 A poet could not but be gay,
 In such a jocund company:
-I gazed\u2014and gazed\u2014but little thought
+I gazed - and gazed - but little thought
 What wealth the show to me had brought:
 
 For oft, when on my couch I lie
@@ -432,7 +432,7 @@ But limped on, blood-shod. All went lame; all blind;
 Drunk with fatigue; deaf to the hoots
 Of tired, outstripped Five-Nines that dropped behind.
 
-Gas! Gas! Quick, boys!\u2014An ecstasy of fumbling,
+Gas! Gas! Quick, boys! - An ecstasy of fumbling,
 Fitting the clumsy helmets just in time;
 But someone still was yelling out and stumbling,
 And flound'ring like a man in fire or lime . . .
@@ -449,7 +449,7 @@ His hanging face, like a devil's sick of sin;
 If you could hear, at every jolt, the blood
 Come gargling from the froth-corrupted lungs,
 Obscene as cancer, bitter as the cud
-Of vile, incurable sores on innocent tongues,\u2014
+Of vile, incurable sores on innocent tongues, -
 My friend, you would not tell with such high zest
 To children ardent for some desperate glory,
 The old Lie: Dulce et decorum est
@@ -823,12 +823,12 @@ export default async function UnseenPoetryGuidePage() {
             <blockquote className="border-s-2 border-emerald-500/40 ps-4 text-body-sm text-muted-foreground leading-relaxed">
               Owen uses the simile &ldquo;like old beggars under sacks&rdquo; to describe soldiers
               returning from the front line. Beggars are associated with poverty, exhaustion, and
-              social rejection &mdash; the complete opposite of the heroic, upright soldier
-              celebrated in wartime propaganda. By comparing young soldiers to elderly, broken
-              figures, Owen strips them of the dignity and glory that pro-war rhetoric had promised.
-              This forces the reader to confront the physical and emotional destruction that war
-              inflicts, setting up the poem&rsquo;s central argument that the Latin motto
-              &ldquo;Dulce et decorum est pro patria mori&rdquo; is a lie.
+              social rejection - the complete opposite of the heroic, upright soldier celebrated in
+              wartime propaganda. By comparing young soldiers to elderly, broken figures, Owen
+              strips them of the dignity and glory that pro-war rhetoric had promised. This forces
+              the reader to confront the physical and emotional destruction that war inflicts,
+              setting up the poem&rsquo;s central argument that the Latin motto &ldquo;Dulce et
+              decorum est pro patria mori&rdquo; is a lie.
             </blockquote>
           </CardContent>
         </Card>
@@ -965,15 +965,15 @@ export default async function UnseenPoetryGuidePage() {
               irony to show how political power is destroyed by time: the boastful inscription
               &ldquo;Look on my Works, ye Mighty, and despair!&rdquo; is undercut by the image of
               &ldquo;lone and level sands&rdquo; stretching endlessly around the ruined statue. The
-              destruction is quiet and gradual &mdash; nature has simply erased the king. In
-              contrast, Owen presents the destruction of power through its effect on individual
-              human bodies. The simile &ldquo;like old beggars under sacks&rdquo; shows soldiers
-              physically broken by the power of the state that sent them to war. While
-              Shelley&rsquo;s tone is detached and ironic, Owen&rsquo;s is angry and urgent,
-              addressing the reader directly with &ldquo;My friend, you would not tell...the old
-              Lie.&rdquo; Both poets ultimately argue that power built on suffering or arrogance
-              cannot endure, but Owen makes the human cost viscerally present in a way that
-              Shelley&rsquo;s historical perspective does not.
+              destruction is quiet and gradual - nature has simply erased the king. In contrast,
+              Owen presents the destruction of power through its effect on individual human bodies.
+              The simile &ldquo;like old beggars under sacks&rdquo; shows soldiers physically broken
+              by the power of the state that sent them to war. While Shelley&rsquo;s tone is
+              detached and ironic, Owen&rsquo;s is angry and urgent, addressing the reader directly
+              with &ldquo;My friend, you would not tell...the old Lie.&rdquo; Both poets ultimately
+              argue that power built on suffering or arrogance cannot endure, but Owen makes the
+              human cost viscerally present in a way that Shelley&rsquo;s historical perspective
+              does not.
             </blockquote>
           </CardContent>
         </Card>

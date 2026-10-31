@@ -225,7 +225,7 @@ export default function GradeBoundariesPage() {
 
           <div className="mt-4 space-y-6">
             <div className="rounded-lg border-s-4 border-success-500 bg-success-50/30 p-5">
-              <h3 className="text-lg font-bold text-success-700">Grade 9 &mdash; Exceptional</h3>
+              <h3 className="text-lg font-bold text-success-700">Grade 9 - Exceptional</h3>
               <div className="mt-3 space-y-2 text-sm">
                 <p>
                   <strong>Reading:</strong>
@@ -490,9 +490,8 @@ export default function GradeBoundariesPage() {
                 </li>
                 <li>
                   <strong>Writing:</strong> Develop a distinctive voice. The difference between
-                  Grade 7 and Grade 9 creative writing is often authenticity and originality &mdash;
-                  the sense that the writing has a unique perspective, not that it follows a
-                  formula.
+                  Grade 7 and Grade 9 creative writing is often authenticity and originality - the
+                  sense that the writing has a unique perspective, not that it follows a formula.
                 </li>
                 <li>
                   <strong>Precision:</strong> Every word should earn its place. Cut unnecessary
@@ -542,7 +541,7 @@ export default function GradeBoundariesPage() {
               <tbody className="divide-y divide-border">
                 <tr>
                   <td className="py-2 pe-4 font-semibold" rowSpan={5}>
-                    A &mdash; Reading
+                    A - Reading
                   </td>
                   <td className="py-2 pe-4">Q01</td>
                   <td className="py-2 pe-4">5 marks</td>
@@ -569,7 +568,7 @@ export default function GradeBoundariesPage() {
                   <td className="py-2 pe-4">{tr(`Extended critical response`)}</td>
                 </tr>
                 <tr className="bg-blue-500/5">
-                  <td className="py-2 pe-4 font-semibold">B &mdash; Writing</td>
+                  <td className="py-2 pe-4 font-semibold">B - Writing</td>
                   <td className="py-2 pe-4">Q11</td>
                   <td className="py-2 pe-4">40 marks</td>
                   <td className="py-2 pe-4">{tr(`Creative prose writing`)}</td>
@@ -603,7 +602,7 @@ export default function GradeBoundariesPage() {
               <tbody className="divide-y divide-border">
                 <tr>
                   <td className="py-2 pe-4 font-semibold" rowSpan={6}>
-                    A &mdash; Reading
+                    A - Reading
                   </td>
                   <td className="py-2 pe-4">1.1</td>
                   <td className="py-2 pe-4">3 marks</td>
@@ -638,7 +637,7 @@ export default function GradeBoundariesPage() {
                 </tr>
                 <tr className="bg-blue-500/5">
                   <td className="py-2 pe-4 font-semibold" rowSpan={2}>
-                    B &mdash; Writing
+                    B - Writing
                   </td>
                   <td className="py-2 pe-4">2.1</td>
                   <td className="py-2 pe-4">20 marks</td>

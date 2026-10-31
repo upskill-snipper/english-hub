@@ -41,10 +41,10 @@ export default function PicnicAtHangingRockPage() {
       {/* Title */}
       <header className="mb-10">
         <h1 className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
-          Picnic at Hanging Rock &mdash; Joan Lindsay
+          Picnic at Hanging Rock - Joan Lindsay
         </h1>
         <p className="mt-3 text-lg text-muted-foreground leading-relaxed">
-          CAIE IGCSE English Literature (0475 / 0992) &mdash; Complete Study Guide
+          CAIE IGCSE English Literature (0475 / 0992) - Complete Study Guide
         </p>
       </header>
 
@@ -62,16 +62,16 @@ export default function PicnicAtHangingRockPage() {
                 <p>
                   The novel is set on{' '}
                   <strong className="text-foreground">{tr(`St Valentine’s Day, 1900`)}</strong>, at
-                  the cusp of Australian Federation (1901). This liminal moment &mdash; between
-                  colonial rule and nationhood &mdash; mirrors the novel&rsquo;s preoccupation with
-                  thresholds, transitions, and the unknowable.
+                  the cusp of Australian Federation (1901). This liminal moment - between colonial
+                  rule and nationhood - mirrors the novel&rsquo;s preoccupation with thresholds,
+                  transitions, and the unknowable.
                 </p>
                 <p>
                   Lindsay published the novel in 1967 but deliberately presented it as though it
                   were a factual account, blurring the boundary between fiction and reality. The
-                  famous prefatory note &mdash; &ldquo;Whether{' '}
-                  <em>{tr(`Picnic at Hanging Rock`)}</em> is fact or fiction, my readers must
-                  decide&rdquo; &mdash; has fuelled decades of speculation.
+                  famous prefatory note - &ldquo;Whether <em>{tr(`Picnic at Hanging Rock`)}</em> is
+                  fact or fiction, my readers must decide&rdquo; - has fuelled decades of
+                  speculation.
                 </p>
               </CardContent>
             </Card>
@@ -103,7 +103,7 @@ export default function PicnicAtHangingRockPage() {
               <CardContent className="space-y-3 text-muted-foreground leading-relaxed">
                 <p>
                   Appleyard College is a private girls&rsquo; boarding school run by the
-                  authoritarian Mrs Appleyard. The school imposes strict routines &mdash; corseted
+                  authoritarian Mrs Appleyard. The school imposes strict routines - corseted
                   uniforms, surveillance, and a curriculum designed to produce
                   &ldquo;accomplished&rdquo; young women suitable for marriage. This environment of
                   repression intensifies the novel&rsquo;s themes of sexuality, freedom, and escape.
@@ -131,9 +131,9 @@ export default function PicnicAtHangingRockPage() {
                   Miranda is the novel&rsquo;s symbolic centre: beautiful, serene, and almost
                   otherworldly. She is repeatedly compared to a &ldquo;
                   <strong className="text-foreground">{tr(`Botticelli angel`)}</strong>&rdquo; and
-                  associated with nature and light. Her calm acceptance of the Rock &mdash;
-                  &ldquo;Everything begins and ends at exactly the right time and place&rdquo;
-                  &mdash; suggests she is attuned to forces beyond rational understanding.
+                  associated with nature and light. Her calm acceptance of the Rock -
+                  &ldquo;Everything begins and ends at exactly the right time and place&rdquo; -
+                  suggests she is attuned to forces beyond rational understanding.
                 </p>
                 <p>
                   Miranda functions as an idealised figure whose disappearance triggers a crisis of
@@ -157,8 +157,8 @@ export default function PicnicAtHangingRockPage() {
                 <p>
                   Irma is the only one of the missing party to be found alive, yet she has no memory
                   of what happened. Her survival deepens the mystery rather than resolving it. She
-                  is associated with wealth and sensuality &mdash; her &ldquo;little gold
-                  watch&rdquo; and expensive clothes symbolise the material world.
+                  is associated with wealth and sensuality - her &ldquo;little gold watch&rdquo; and
+                  expensive clothes symbolise the material world.
                 </p>
                 <p>
                   Her return to the school provokes a hysterical, almost violent reaction from the
@@ -182,7 +182,7 @@ export default function PicnicAtHangingRockPage() {
                 <p>
                   Marion is the intellectual of the group: practical, scientifically minded, and
                   interested in mathematics and geology. She represents the Enlightenment values of
-                  reason and empiricism &mdash; values that prove utterly inadequate in the face of
+                  reason and empiricism - values that prove utterly inadequate in the face of
                   Hanging Rock&rsquo;s ancient power.
                 </p>
                 <p>
@@ -210,13 +210,13 @@ export default function PicnicAtHangingRockPage() {
                   Miss McCraw is the school&rsquo;s mathematics mistress: austere, logical, and
                   physically ungainly. She is the only adult to vanish. Her disappearance is
                   particularly unsettling because she represents adult authority and scientific
-                  rationality &mdash; if she cannot resist the Rock&rsquo;s pull, nobody can.
+                  rationality - if she cannot resist the Rock&rsquo;s pull, nobody can.
                 </p>
                 <p>
                   She is last seen striding purposefully up the Rock without her skirt, a disturbing
                   image that suggests the stripping away of civilised propriety. Her fascination
-                  with geological time &mdash; &ldquo;a million years&rdquo; &mdash; foreshadows her
-                  absorption into the ancient landscape.
+                  with geological time - &ldquo;a million years&rdquo; - foreshadows her absorption
+                  into the ancient landscape.
                 </p>
                 <p className="text-sm italic border-s-2 border-primary/40 ps-3">
                   Key quotation: &ldquo;Miss McCraw... was seen... without her skirt... struggling
@@ -240,9 +240,9 @@ export default function PicnicAtHangingRockPage() {
                   culture.
                 </p>
                 <p>
-                  Sara&rsquo;s eventual death &mdash; which Mrs Appleyard attempts to disguise
-                  &mdash; exposes the cruelty beneath the College&rsquo;s respectable facade. She is
-                  the novel&rsquo;s most sympathetic victim: destroyed not by the Rock but by the
+                  Sara&rsquo;s eventual death - which Mrs Appleyard attempts to disguise - exposes
+                  the cruelty beneath the College&rsquo;s respectable facade. She is the
+                  novel&rsquo;s most sympathetic victim: destroyed not by the Rock but by the
                   institutional system that was supposed to protect her.
                 </p>
                 <p className="text-sm italic border-s-2 border-primary/40 ps-3">
@@ -256,7 +256,7 @@ export default function PicnicAtHangingRockPage() {
               <CardHeader>
                 <CardTitle>{tr(`Mrs Appleyard`)}</CardTitle>
                 <CardDescription>
-                  The headmistress &mdash; authority, hypocrisy, and collapse
+                  The headmistress - authority, hypocrisy, and collapse
                 </CardDescription>
               </CardHeader>
               <CardContent className="space-y-3 text-muted-foreground leading-relaxed">
@@ -267,8 +267,8 @@ export default function PicnicAtHangingRockPage() {
                   crisis deepens.
                 </p>
                 <p>
-                  Her background is deliberately obscure &mdash; &ldquo;nobody knew where she came
-                  from&rdquo; &mdash; which undermines her claims to respectability. As the school
+                  Her background is deliberately obscure - &ldquo;nobody knew where she came
+                  from&rdquo; - which undermines her claims to respectability. As the school
                   disintegrates, so does she, culminating in Sara&rsquo;s death and her own demise
                   at the Rock. She represents the failure of authoritarian structures when
                   confronted with forces beyond their control.
@@ -293,11 +293,10 @@ export default function PicnicAtHangingRockPage() {
                   whom he romanticises as a vision of unattainable beauty.
                 </p>
                 <p>
-                  His obsessive search &mdash; during which he finds Irma but not Miranda &mdash;
-                  represents the male gaze and colonial desire to possess the mysterious feminine /
-                  landscape. His privileged background offers no advantage against the Rock&rsquo;s
-                  impenetrable mystery. He is eventually sent to England, unable to recover from his
-                  experience.
+                  His obsessive search - during which he finds Irma but not Miranda - represents the
+                  male gaze and colonial desire to possess the mysterious feminine / landscape. His
+                  privileged background offers no advantage against the Rock&rsquo;s impenetrable
+                  mystery. He is eventually sent to England, unable to recover from his experience.
                 </p>
                 <p className="text-sm italic border-s-2 border-primary/40 ps-3">
                   Key quotation: &ldquo;He could think of nothing but the girl with the golden
@@ -322,9 +321,9 @@ export default function PicnicAtHangingRockPage() {
                 <p>
                   Albert provides a working-class perspective that contrasts with both the
                   College&rsquo;s gentility and Michael&rsquo;s aristocratic background. His
-                  connection to Sara &mdash; later revealed to be his long-lost sister &mdash; adds
-                  a note of personal tragedy and highlights the class divisions that separate
-                  families in colonial Australia.
+                  connection to Sara - later revealed to be his long-lost sister - adds a note of
+                  personal tragedy and highlights the class divisions that separate families in
+                  colonial Australia.
                 </p>
                 <p className="text-sm italic border-s-2 border-primary/40 ps-3">
                   Key quotation: &ldquo;Albert Crundall... was a rough diamond, shrewd and
@@ -347,12 +346,11 @@ export default function PicnicAtHangingRockPage() {
               </CardHeader>
               <CardContent className="space-y-3 text-muted-foreground leading-relaxed">
                 <p>
-                  The novel&rsquo;s central mystery &mdash; what happened to the girls and Miss
-                  McCraw &mdash; is never resolved. Lindsay deliberately withholds explanation,
-                  suggesting that some things lie beyond human comprehension. This refusal to
-                  provide closure challenges the reader&rsquo;s desire for rational answers and
-                  mirrors the limits of colonial knowledge when confronted with the ancient
-                  Australian landscape.
+                  The novel&rsquo;s central mystery - what happened to the girls and Miss McCraw -
+                  is never resolved. Lindsay deliberately withholds explanation, suggesting that
+                  some things lie beyond human comprehension. This refusal to provide closure
+                  challenges the reader&rsquo;s desire for rational answers and mirrors the limits
+                  of colonial knowledge when confronted with the ancient Australian landscape.
                 </p>
                 <p className="text-sm italic border-s-2 border-primary/40 ps-3">
                   &ldquo;What we see and what we seem / Are but a dream&rdquo; (The Poe epigraph
@@ -369,10 +367,10 @@ export default function PicnicAtHangingRockPage() {
               <CardContent className="space-y-3 text-muted-foreground leading-relaxed">
                 <p>
                   Hanging Rock is over a million years old; Appleyard College has existed for only a
-                  few years. The collision between the two &mdash; the corseted girls climbing the
-                  primordial rock formation &mdash; dramatises the fragility of European
-                  civilisation in Australia. The girls&rsquo; removal of gloves and the loosening of
-                  corsets as they ascend symbolises the shedding of social constraints.
+                  few years. The collision between the two - the corseted girls climbing the
+                  primordial rock formation - dramatises the fragility of European civilisation in
+                  Australia. The girls&rsquo; removal of gloves and the loosening of corsets as they
+                  ascend symbolises the shedding of social constraints.
                 </p>
                 <p className="text-sm italic border-s-2 border-primary/40 ps-3">
                   &ldquo;a landmark for a million years... a million years is quite a long
@@ -389,12 +387,12 @@ export default function PicnicAtHangingRockPage() {
               <CardContent className="space-y-3 text-muted-foreground leading-relaxed">
                 <p>
                   The Valentine&rsquo;s Day setting foregrounds desire and romance. The girls are
-                  presented as sexually awakening figures &mdash; their beauty is observed and
-                  desired by Michael, while their close physical bonds (Miranda and Sara, the girls
-                  sleeping together) hint at homoerotic attachment. The school&rsquo;s repressive
-                  environment intensifies these undercurrents. The Rock itself is described in terms
-                  that evoke both the womb and the phallus, adding a layer of sexual symbolism to
-                  the disappearance.
+                  presented as sexually awakening figures - their beauty is observed and desired by
+                  Michael, while their close physical bonds (Miranda and Sara, the girls sleeping
+                  together) hint at homoerotic attachment. The school&rsquo;s repressive environment
+                  intensifies these undercurrents. The Rock itself is described in terms that evoke
+                  both the womb and the phallus, adding a layer of sexual symbolism to the
+                  disappearance.
                 </p>
                 <p className="text-sm italic border-s-2 border-primary/40 ps-3">
                   &ldquo;On this Valentine&rsquo;s Day, the weights of destiny were already
@@ -413,9 +411,9 @@ export default function PicnicAtHangingRockPage() {
                   Time behaves strangely at Hanging Rock: watches stop at midday, chronological
                   sequence breaks down, and the geological timescale of the Rock dwarfs human
                   history. Lindsay uses the motif of stopped watches to signal the limits of
-                  human-measured time. The Rock exists in a different temporal register &mdash;
-                  geological deep time &mdash; which swallows the girls as European clock-time
-                  literally ceases to function.
+                  human-measured time. The Rock exists in a different temporal register - geological
+                  deep time - which swallows the girls as European clock-time literally ceases to
+                  function.
                 </p>
                 <p className="text-sm italic border-s-2 border-primary/40 ps-3">
                   &ldquo;At twelve o&rsquo;clock... all the watches had stopped.&rdquo;
@@ -434,8 +432,8 @@ export default function PicnicAtHangingRockPage() {
                   multiple responses to loss: Michael&rsquo;s romantic obsession, Sara&rsquo;s
                   silent despair, Mrs Appleyard&rsquo;s institutional panic, and the town&rsquo;s
                   morbid curiosity. The absence of bodies means grief cannot follow its normal
-                  course &mdash; there is no funeral, no burial, no closure. Lindsay shows how
-                  unresolved loss corrodes individuals and communities alike.
+                  course - there is no funeral, no burial, no closure. Lindsay shows how unresolved
+                  loss corrodes individuals and communities alike.
                 </p>
                 <p className="text-sm italic border-s-2 border-primary/40 ps-3">
                   &ldquo;talked of for years to come... nobody would ever forget that Saturday
@@ -455,8 +453,8 @@ export default function PicnicAtHangingRockPage() {
                   never acknowledge Aboriginal presence or history. This silence is itself
                   significant: the colonists&rsquo; ignorance of the land&rsquo;s deep history
                   leaves them unprepared for its power. The novel can be read as an allegory of
-                  colonial hubris &mdash; Europeans who believe they have tamed the landscape
-                  discover they understand nothing about it.
+                  colonial hubris - Europeans who believe they have tamed the landscape discover
+                  they understand nothing about it.
                 </p>
                 <p className="text-sm italic border-s-2 border-primary/40 ps-3">
                   &ldquo;The vast landscape of the Australian bush closed in about the little
@@ -603,10 +601,10 @@ export default function PicnicAtHangingRockPage() {
               <CardContent className="space-y-3 text-muted-foreground leading-relaxed">
                 <p>
                   Lindsay&rsquo;s defining technique is the deliberate withholding of explanation.
-                  The novel offers multiple possible readings &mdash; supernatural, psychological,
-                  allegorical &mdash; without confirming any of them. This structural ambiguity
-                  transforms the reader into another searcher, mirroring the characters&rsquo; own
-                  frustrated attempts to find answers.
+                  The novel offers multiple possible readings - supernatural, psychological,
+                  allegorical - without confirming any of them. This structural ambiguity transforms
+                  the reader into another searcher, mirroring the characters&rsquo; own frustrated
+                  attempts to find answers.
                 </p>
                 <p>
                   The famous &ldquo;Chapter 18&rdquo; (the final chapter that Lindsay originally
@@ -630,8 +628,8 @@ export default function PicnicAtHangingRockPage() {
                 </p>
                 <p>
                   Lindsay also uses reported speech and newspaper accounts within the narrative,
-                  layering unreliable sources to create an epistemological crisis: nobody &mdash;
-                  narrator, characters, or readers &mdash; truly knows what happened.
+                  layering unreliable sources to create an epistemological crisis: nobody -
+                  narrator, characters, or readers - truly knows what happened.
                 </p>
               </CardContent>
             </Card>
@@ -645,9 +643,9 @@ export default function PicnicAtHangingRockPage() {
                   Lindsay draws on the tradition of the{' '}
                   <strong className="text-foreground">Australian Gothic</strong>: the bush as a
                   place of terror rather than pastoral beauty. She uses dreamlike, hypnotic prose to
-                  create a sense of mounting unease. Sensory details &mdash; the oppressive heat,
-                  the buzzing of insects, the strange silence &mdash; build an atmosphere where the
-                  boundary between the ordinary and the uncanny dissolves.
+                  create a sense of mounting unease. Sensory details - the oppressive heat, the
+                  buzzing of insects, the strange silence - build an atmosphere where the boundary
+                  between the ordinary and the uncanny dissolves.
                 </p>
                 <p>
                   The Gothic mode allows Lindsay to explore anxieties about sexuality, death, and
@@ -689,7 +687,7 @@ export default function PicnicAtHangingRockPage() {
                   narrative choice. By denying closure, she forces readers to confront their own
                   need for certainty and rational explanation. The unresolved ending is thematically
                   essential: if the mystery were solved, the novel would lose its central argument
-                  that some things &mdash; the landscape, time, desire, death &mdash; resist human
+                  that some things - the landscape, time, desire, death - resist human
                   understanding.
                 </p>
                 <p>
@@ -738,7 +736,7 @@ export default function PicnicAtHangingRockPage() {
                 </ul>
                 <p className="mt-2 font-medium text-foreground">
                   Always embed short quotations from the extract and analyse individual word
-                  choices. Avoid feature-spotting &mdash; link every technique to its effect on the
+                  choices. Avoid feature-spotting - link every technique to its effect on the
                   reader.
                 </p>
               </CardContent>
@@ -756,7 +754,7 @@ export default function PicnicAtHangingRockPage() {
                 <ul className="list-disc space-y-1.5 ps-5">
                   <li>
                     <strong className="text-foreground">{tr(`Sustain a clear argument`)}</strong>{' '}
-                    throughout &mdash; avoid simply narrating the plot.
+                    throughout - avoid simply narrating the plot.
                   </li>
                   <li>
                     <strong className="text-foreground">Range across the text:</strong> refer to
@@ -875,8 +873,8 @@ export default function PicnicAtHangingRockPage() {
                     The Rock is described as having existed for &ldquo;a million years,&rdquo; a
                     phrase whose deliberate repetition throughout the novel emphasises the vast
                     geological timescale that dwarfs the human drama unfolding at its base. The
-                    personification of the landscape &mdash; the Rock &ldquo;brooded in silence over
-                    its own unfathomable secrets&rdquo; &mdash; grants it agency and consciousness,
+                    personification of the landscape - the Rock &ldquo;brooded in silence over its
+                    own unfathomable secrets&rdquo; - grants it agency and consciousness,
                     transforming setting into character.
                     <span className="text-xs text-primary ms-1">
                       [Writer's Methods - language analysis: repetition, personification]
@@ -898,9 +896,9 @@ export default function PicnicAtHangingRockPage() {
                     &ldquo;the most important character&rdquo; risks diminishing the human tragedy
                     at the novel&rsquo;s heart. Sara&rsquo;s death, Mrs Appleyard&rsquo;s
                     psychological disintegration, and Michael&rsquo;s obsessive grief are driven by
-                    human emotions &mdash; love, cruelty, desire &mdash; that the Rock merely
-                    catalyses. The Rock provides the conditions for tragedy, but it is the
-                    characters&rsquo; responses that give the novel its emotional power.
+                    human emotions - love, cruelty, desire - that the Rock merely catalyses. The
+                    Rock provides the conditions for tragedy, but it is the characters&rsquo;
+                    responses that give the novel its emotional power.
                     <span className="text-xs text-primary ms-1">
                       [Personal Response - personal response, alternative interpretation]
                     </span>

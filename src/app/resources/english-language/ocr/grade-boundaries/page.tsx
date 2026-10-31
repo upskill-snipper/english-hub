@@ -219,7 +219,7 @@ export default function GradeBoundariesPage() {
 
           <div className="mt-4 space-y-6">
             <div className="rounded-lg border-s-4 border-success-500 bg-success-50/30 p-5">
-              <h3 className="text-lg font-bold text-success-700">Grade 9 &mdash; Exceptional</h3>
+              <h3 className="text-lg font-bold text-success-700">Grade 9 - Exceptional</h3>
               <div className="mt-3 space-y-2 text-sm">
                 <p>
                   <strong>Reading:</strong>
@@ -501,7 +501,7 @@ export default function GradeBoundariesPage() {
                 <li>
                   <strong>{tr(`Component 01 tip:`)}</strong> On the non-fiction reading questions,
                   practise identifying the writer&rsquo;s viewpoint and the methods they use to
-                  persuade &mdash; this is where many Grade 4 students lose marks.
+                  persuade - this is where many Grade 4 students lose marks.
                 </li>
               </ul>
             </div>
@@ -548,9 +548,9 @@ export default function GradeBoundariesPage() {
                 </li>
                 <li>
                   <strong>Writing:</strong> Develop a distinctive voice. The difference between
-                  Grade 7 and Grade 9 writing is often authenticity and originality &mdash; the
-                  sense that the writing has a unique perspective, not that it follows a template.
-                  Avoid generic openings and predictable plots.
+                  Grade 7 and Grade 9 writing is often authenticity and originality - the sense that
+                  the writing has a unique perspective, not that it follows a template. Avoid
+                  generic openings and predictable plots.
                 </li>
                 <li>
                   <strong>Precision:</strong> Every word should earn its place. Cut unnecessary

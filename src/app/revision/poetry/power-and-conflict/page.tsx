@@ -322,7 +322,7 @@ export default function PowerAndConflictPage() {
           <div>
             <h2 className="text-sm font-semibold text-foreground">Rights notice</h2>
             <p className="mt-1 text-body-sm text-muted-foreground leading-relaxed">
-              Eight of these fifteen poems remain in copyright &mdash; Heaney&rsquo;s{' '}
+              Eight of these fifteen poems remain in copyright - Heaney&rsquo;s{' '}
               <em>Storm on the Island</em>, Hughes&rsquo;s <em>Bayonet Charge</em> and
               Armitage&rsquo;s <em>Remains</em> (&copy; Faber &amp; Faber), Duffy&rsquo;s{' '}
               <em>War Photographer</em> (&copy; Picador / Pan Macmillan and Rogers Coleridge &amp;

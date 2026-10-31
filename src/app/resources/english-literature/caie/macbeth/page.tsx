@@ -738,7 +738,7 @@ export default function MacbethStudyGuide() {
             Cambridge IGCSE English Literature (0475 / 0992)
           </p>
           <h1 className="mt-2 text-3xl font-bold tracking-tight sm:text-4xl md:text-5xl">
-            Macbeth &mdash; Complete Study Guide
+            Macbeth - Complete Study Guide
           </h1>
           <p className="mx-auto mt-4 max-w-2xl text-lg text-muted-foreground">
             Comprehensive CAIE-specific revision: act-by-act analysis, character studies, thematic
@@ -806,7 +806,7 @@ export default function MacbethStudyGuide() {
                             <span className="font-medium italic text-foreground">
                               &ldquo;{q.quote}&rdquo;
                             </span>{' '}
-                            &mdash; {q.context}
+                            - {q.context}
                           </li>
                         ))}
                       </ul>
@@ -944,7 +944,7 @@ export default function MacbethStudyGuide() {
                     &ldquo;{q.quote}&rdquo;
                   </blockquote>
                   <p className="mt-1 text-xs font-semibold text-primary">
-                    {q.speaker} &mdash; {q.act}
+                    {q.speaker} - {q.act}
                   </p>
                   <p className="mt-3 text-sm leading-relaxed text-muted-foreground">{q.analysis}</p>
                 </div>

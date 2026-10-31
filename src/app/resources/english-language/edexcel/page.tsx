@@ -166,7 +166,7 @@ export default function EdexcelEnglishLanguagePage() {
           <p className="mx-auto mt-4 max-w-2xl text-lg text-muted-foreground">
             Everything you need to ace your Edexcel English Language GCSE. Two papers, full
             marking-guide breakdowns, 30+ techniques, writing masterclasses, and grade boundary data
-            &mdash; all in one place.
+            - all in one place.
           </p>
 
           {/* Quick-jump pills */}
@@ -232,7 +232,7 @@ export default function EdexcelEnglishLanguagePage() {
               <tbody className="divide-y divide-border">
                 <tr className="hover:bg-muted">
                   <td className="px-4 py-3 font-medium text-foreground">
-                    Paper 1 &mdash; Fiction &amp; Imaginative Writing
+                    Paper 1 - Fiction &amp; Imaginative Writing
                   </td>
                   <td className="px-4 py-3 text-muted-foreground">1 hr 45 min</td>
                   <td className="px-4 py-3 text-muted-foreground">64</td>
@@ -240,7 +240,7 @@ export default function EdexcelEnglishLanguagePage() {
                 </tr>
                 <tr className="hover:bg-muted">
                   <td className="px-4 py-3 font-medium text-foreground">
-                    Paper 2 &mdash; Non-Fiction &amp; Writing for Real Purposes
+                    Paper 2 - Non-Fiction &amp; Writing for Real Purposes
                   </td>
                   <td className="px-4 py-3 text-muted-foreground">2 hr 5 min</td>
                   <td className="px-4 py-3 text-muted-foreground">96</td>

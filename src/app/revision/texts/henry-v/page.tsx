@@ -41,7 +41,7 @@ const data: TextGuideData = {
   category: 'Play',
   badge: 'Wider reading',
   intro:
-    'Henry V is the final play in Shakespeare\u2019s second Henriad, following Richard II and the two parts of Henry IV. Written and first performed around 1599, it dramatises the young king\u2019s invasion of France and his unlikely victory at the Battle of Agincourt in 1415. The play is famous for its soaring patriotic rhetoric \u2014 the St Crispin\u2019s Day speech, the rallying cry at Harfleur \u2014 but it also interrogates the cost of war, the theatricality of kingship, and the moral ambiguity of a ruler who threatens civilian slaughter one scene and walks disguised among his troops the next. A Chorus opens each act, apologising for the inadequacy of the stage and inviting the audience to piece out the play\u2019s imperfections with their thoughts. The result is a drama that is at once a celebration of English national identity and a sustained examination of the rhetoric that creates it.',
+    'Henry V is the final play in Shakespeare\u2019s second Henriad, following Richard II and the two parts of Henry IV. Written and first performed around 1599, it dramatises the young king\u2019s invasion of France and his unlikely victory at the Battle of Agincourt in 1415. The play is famous for its soaring patriotic rhetoric - the St Crispin\u2019s Day speech, the rallying cry at Harfleur - but it also interrogates the cost of war, the theatricality of kingship, and the moral ambiguity of a ruler who threatens civilian slaughter one scene and walks disguised among his troops the next. A Chorus opens each act, apologising for the inadequacy of the stage and inviting the audience to piece out the play\u2019s imperfections with their thoughts. The result is a drama that is at once a celebration of English national identity and a sustained examination of the rhetoric that creates it.',
   quickInfo: {
     genre: 'History play',
     setting: 'England and France, 1414\u201320',
@@ -50,8 +50,8 @@ const data: TextGuideData = {
   },
   plotSummary: [
     'The play opens with the Chorus inviting the audience to imagine the vast sweep of events the stage cannot show. In the first act, the Archbishop of Canterbury and the Bishop of Ely discuss a bill that threatens church lands, and Canterbury offers Henry a detailed legal justification (the Salic law speech) for pressing his claim to the French throne. The young king, newly transformed from the tavern-haunting Prince Hal of Henry IV, questions the clergy closely before committing to war. A contemptuous gift of tennis balls from the Dauphin of France seals Henry\u2019s resolve, and he promises that the Dauphin\u2019s mockery will be answered with an invasion.',
-    'Act 2 moves between the court and the Eastcheap tavern world of Henry\u2019s old companions. Bardolph, Pistol and Nym \u2014 veterans of the Henry IV plays \u2014 prepare to join the French campaign, while Mistress Quickly reports the offstage death of Sir John Falstaff, Henry\u2019s former surrogate father, now rejected and dying of a broken heart. At Southampton, Henry exposes and condemns three English traitors \u2014 Cambridge, Scroop and Grey \u2014 who have been bribed by France to kill him. The army sails, and Act 3 opens at the siege of Harfleur. Henry rouses his soldiers with the famous "Once more unto the breach, dear friends" before the walls, and when the town hesitates he delivers a chilling speech threatening the massacre of infants and the rape of women if Harfleur does not surrender. The governor yields.',
-    'As dysentery thins the English ranks, the exhausted army marches towards Calais and is intercepted by a vastly larger French force at Agincourt. The Chorus before Act 4 describes the night before the battle, with the "creeping murmur and the poring dark" of the two camps. Henry borrows a cloak and walks in disguise among his soldiers, arguing with the common man Williams about a king\u2019s responsibility for the souls of his men. Alone, he delivers the "Upon the King!" soliloquy, the most introspective speech of the play, on the burden of ceremony and command. At dawn he answers his cousin Westmoreland\u2019s wish for more troops with the St Crispin\u2019s Day speech \u2014 "We few, we happy few, we band of brothers" \u2014 promising that those who fight with him will be remembered forever.',
+    'Act 2 moves between the court and the Eastcheap tavern world of Henry\u2019s old companions. Bardolph, Pistol and Nym - veterans of the Henry IV plays - prepare to join the French campaign, while Mistress Quickly reports the offstage death of Sir John Falstaff, Henry\u2019s former surrogate father, now rejected and dying of a broken heart. At Southampton, Henry exposes and condemns three English traitors - Cambridge, Scroop and Grey - who have been bribed by France to kill him. The army sails, and Act 3 opens at the siege of Harfleur. Henry rouses his soldiers with the famous "Once more unto the breach, dear friends" before the walls, and when the town hesitates he delivers a chilling speech threatening the massacre of infants and the rape of women if Harfleur does not surrender. The governor yields.',
+    'As dysentery thins the English ranks, the exhausted army marches towards Calais and is intercepted by a vastly larger French force at Agincourt. The Chorus before Act 4 describes the night before the battle, with the "creeping murmur and the poring dark" of the two camps. Henry borrows a cloak and walks in disguise among his soldiers, arguing with the common man Williams about a king\u2019s responsibility for the souls of his men. Alone, he delivers the "Upon the King!" soliloquy, the most introspective speech of the play, on the burden of ceremony and command. At dawn he answers his cousin Westmoreland\u2019s wish for more troops with the St Crispin\u2019s Day speech - "We few, we happy few, we band of brothers" - promising that those who fight with him will be remembered forever.',
     'The English archers destroy the French cavalry and the battle becomes a slaughter. When a new alarm signals that the French have reinforced their scattered men, Henry orders every soldier to kill his prisoners. The next scene reports that French runaways have killed the boys guarding the English baggage; Gower calls the order the act of a gallant king, and Fluellen condemns the boys\u2019 killing as against the law of arms. The losses, as announced, are grotesquely one-sided: thousands of French nobility dead, only a handful of English. Henry credits God for the victory and forbids boasting. In Act 5 the Chorus carries the audience back to England and then across to France for the peace treaty. Henry woos the French Princess Katherine in a mixture of broken French and plain soldier\u2019s English, agreeing the marriage that will make him heir to the French throne. The Chorus closes the play with a sonnet reminding the audience that Henry\u2019s triumph was short-lived: his son Henry VI would lose all his father had won.',
   ],
   characters: [
@@ -68,7 +68,7 @@ const data: TextGuideData = {
     {
       name: 'The Dauphin',
       role: 'Heir to the French throne',
-      body: 'The Dauphin is arrogant, reckless and contemptuous of the English. His gift of tennis balls provokes the invasion, and his boastful night-before-Agincourt speeches \u2014 admiring his own horse, dismissing the English as sickly \u2014 set up the French defeat as a moral as well as military collapse. Shakespeare uses him as a foil to Henry, whose public confidence is always tied to disciplined calculation rather than vanity.',
+      body: 'The Dauphin is arrogant, reckless and contemptuous of the English. His gift of tennis balls provokes the invasion, and his boastful night-before-Agincourt speeches - admiring his own horse, dismissing the English as sickly - set up the French defeat as a moral as well as military collapse. Shakespeare uses him as a foil to Henry, whose public confidence is always tied to disciplined calculation rather than vanity.',
     },
     {
       name: 'Princess Katherine',
@@ -88,7 +88,7 @@ const data: TextGuideData = {
     {
       name: 'Exeter',
       role: 'Duke of Exeter; Henry\u2019s uncle and trusted ambassador',
-      body: 'Exeter is the king\u2019s steady lieutenant: he delivers the declaration of war to the French court, takes charge of the condemned traitors at Southampton, and reports the deaths of York and Suffolk at Agincourt in one of the play\u2019s most moving speeches. Shakespeare uses him as a figure of military gravitas, unshowy loyalty and emotional weight \u2014 the man who carries the play\u2019s sense of what is actually at stake when its rhetoric turns into battlefield reality.',
+      body: 'Exeter is the king\u2019s steady lieutenant: he delivers the declaration of war to the French court, takes charge of the condemned traitors at Southampton, and reports the deaths of York and Suffolk at Agincourt in one of the play\u2019s most moving speeches. Shakespeare uses him as a figure of military gravitas, unshowy loyalty and emotional weight - the man who carries the play\u2019s sense of what is actually at stake when its rhetoric turns into battlefield reality.',
     },
   ],
   themes: [
@@ -102,11 +102,11 @@ const data: TextGuideData = {
     },
     {
       title: 'Nationalism and English identity',
-      body: 'Henry V is the most overtly patriotic of Shakespeare\u2019s histories, and its St Crispin\u2019s Day rhetoric has been quoted in English propaganda as late as the Second World War. Yet the play\u2019s nationalism is carefully constructed rather than simply asserted. The multi-national army \u2014 English, Welsh, Scottish, Irish \u2014 presents a British rather than narrowly English identity, while the French characters are given their own language and dignity. The final Chorus\u2019s reminder that Henry VI lost France deflates the triumph, inviting the audience to view national glory as a performance that cannot be sustained.',
+      body: 'Henry V is the most overtly patriotic of Shakespeare\u2019s histories, and its St Crispin\u2019s Day rhetoric has been quoted in English propaganda as late as the Second World War. Yet the play\u2019s nationalism is carefully constructed rather than simply asserted. The multi-national army - English, Welsh, Scottish, Irish - presents a British rather than narrowly English identity, while the French characters are given their own language and dignity. The final Chorus\u2019s reminder that Henry VI lost France deflates the triumph, inviting the audience to view national glory as a performance that cannot be sustained.',
     },
     {
       title: 'Performance and persuasion',
-      body: 'The play is obsessed with rhetoric: the Archbishop\u2019s legal speech, Henry\u2019s public orations, the Chorus\u2019s framing, the Dauphin\u2019s boasts, Pistol\u2019s parody-verse. Shakespeare shows kingship itself as a performance requiring the right words at the right moment, and the Chorus\u2019s repeated appeals to the audience\u2019s imagination draw attention to the play\u2019s own theatrical artifice. Henry is at his most persuasive when he seems most plain \u2014 before Agincourt, in the wooing scene \u2014 but the play asks the audience to notice that plainness is itself a calculated style.',
+      body: 'The play is obsessed with rhetoric: the Archbishop\u2019s legal speech, Henry\u2019s public orations, the Chorus\u2019s framing, the Dauphin\u2019s boasts, Pistol\u2019s parody-verse. Shakespeare shows kingship itself as a performance requiring the right words at the right moment, and the Chorus\u2019s repeated appeals to the audience\u2019s imagination draw attention to the play\u2019s own theatrical artifice. Henry is at his most persuasive when he seems most plain - before Agincourt, in the wooing scene - but the play asks the audience to notice that plainness is itself a calculated style.',
     },
     {
       title: 'Honour',
@@ -118,130 +118,130 @@ const data: TextGuideData = {
     },
   ],
   historicalContext: [
-    'The historical Battle of Agincourt took place on 25 October 1415, during the Hundred Years\u2019 War between England and France. Henry V, aged around 28, had landed in Normandy earlier that year and captured Harfleur after a gruelling siege. His army, reduced by dysentery, was intercepted on a muddy field near the village of Agincourt by a French force perhaps three times its size. The English longbow and the narrow, waterlogged terrain produced a one-sided slaughter of the French nobility. The victory made Henry a legendary figure in English memory and eventually led, by the Treaty of Troyes in 1420, to his marriage to Princess Katherine of Valois and his recognition as heir to the French throne. He died of dysentery in 1422, and his infant son Henry VI inherited both crowns but lost France within a generation \u2014 the collapse that Shakespeare\u2019s closing Chorus anticipates.',
+    'The historical Battle of Agincourt took place on 25 October 1415, during the Hundred Years\u2019 War between England and France. Henry V, aged around 28, had landed in Normandy earlier that year and captured Harfleur after a gruelling siege. His army, reduced by dysentery, was intercepted on a muddy field near the village of Agincourt by a French force perhaps three times its size. The English longbow and the narrow, waterlogged terrain produced a one-sided slaughter of the French nobility. The victory made Henry a legendary figure in English memory and eventually led, by the Treaty of Troyes in 1420, to his marriage to Princess Katherine of Valois and his recognition as heir to the French throne. He died of dysentery in 1422, and his infant son Henry VI inherited both crowns but lost France within a generation - the collapse that Shakespeare\u2019s closing Chorus anticipates.',
     'Shakespeare\u2019s primary source was Raphael Holinshed\u2019s Chronicles of England, Scotland, and Ireland (second edition, 1587), which he had already used for Richard II and the Henry IV plays. Holinshed supplied the Salic law arguments, the Southampton plot, the siege of Harfleur, the Agincourt casualty figures and the Treaty of Troyes. Shakespeare also drew on Edward Hall\u2019s Union of the Two Noble Families (1548) and on a popular earlier play, The Famous Victories of Henry V, which survives only in a corrupt 1598 text but supplied the Eastcheap characters and the tennis-ball episode. Shakespeare compresses the campaign\u2019s timeline, reworks the wooing scene and adds the Chorus, turning chronicle material into theatre.',
-    'The play was written in 1599, late in the reign of Elizabeth I, at a moment of national anxiety. England faced the threat of a renewed Spanish invasion, and the Earl of Essex was leading an ill-fated expedition against rebels in Ireland. The Chorus before Act 5 compares Henry\u2019s return from France to the hoped-for return of "the general of our gracious empress" from Ireland, usually taken to mean Essex. An Elizabethan audience watching Henry V in 1599, perhaps at the newly opened Globe Theatre or at the Curtain, would have seen both a celebration of English martial identity and a commentary on their own uncertain campaigns. The Chorus convention \u2014 a single speaker who addresses the audience directly between acts \u2014 was unusual for the public stage, and Shakespeare uses it to draw attention to the limits of theatrical representation, asking the audience to "piece out our imperfections with your thoughts" and so become collaborators in the nation-building the play performs.',
+    'The play was written in 1599, late in the reign of Elizabeth I, at a moment of national anxiety. England faced the threat of a renewed Spanish invasion, and the Earl of Essex was leading an ill-fated expedition against rebels in Ireland. The Chorus before Act 5 compares Henry\u2019s return from France to the hoped-for return of "the general of our gracious empress" from Ireland, usually taken to mean Essex. An Elizabethan audience watching Henry V in 1599, perhaps at the newly opened Globe Theatre or at the Curtain, would have seen both a celebration of English martial identity and a commentary on their own uncertain campaigns. The Chorus convention - a single speaker who addresses the audience directly between acts - was unusual for the public stage, and Shakespeare uses it to draw attention to the limits of theatrical representation, asking the audience to "piece out our imperfections with your thoughts" and so become collaborators in the nation-building the play performs.',
   ],
   quotations: [
     {
       quote:
         '"O for a Muse of fire, that would ascend / The brightest heaven of invention, / A kingdom for a stage, princes to act, / And monarchs to behold the swelling scene!"',
-      who: 'Chorus \u2014 Prologue',
+      who: 'Chorus - Prologue',
       analysis:
         'The opening lines ask for epic poetic power while apologising for the bare Globe stage, framing the play\u2019s self-conscious theatricality from the first moment.',
     },
     {
       quote:
         '"Piece out our imperfections with your thoughts. / Into a thousand parts divide one man, / And make imaginary puissance."',
-      who: 'Chorus \u2014 Prologue',
+      who: 'Chorus - Prologue',
       analysis:
         'The Chorus invites the audience to collaborate in creating the play\u2019s world, making imagination itself a patriotic act and drawing attention to the artifice of history.',
     },
     {
       quote: '"Consideration like an angel came / And whipped th\u2019 offending Adam out of him."',
-      who: 'Archbishop of Canterbury \u2014 Act 1, Scene 1',
+      who: 'Archbishop of Canterbury - Act 1, Scene 1',
       analysis:
         'Canterbury describes Henry\u2019s transformation from Prince Hal into king in biblical terms, establishing the play\u2019s interest in Henry as a reformed and providentially chosen ruler.',
     },
     {
       quote:
         '"We are no tyrant, but a Christian king, / Unto whose grace our passion is as subject / As is our wretches fett\u2019red in our prisons."',
-      who: 'King Henry \u2014 Act 1, Scene 2',
+      who: 'King Henry - Act 1, Scene 2',
       analysis:
         'Henry\u2019s self-presentation to the French ambassadors insists on his moral restraint even as he declares war, showing the careful rhetoric by which he frames aggression as legitimacy.',
     },
     {
       quote:
         '"Once more unto the breach, dear friends, once more, / Or close the wall up with our English dead."',
-      who: 'King Henry \u2014 Act 3, Scene 1',
+      who: 'King Henry - Act 3, Scene 1',
       analysis:
         'The Harfleur rallying cry fuses exhortation with the stark image of English bodies as building material, showing Henry\u2019s ability to make sacrifice sound heroic.',
     },
     {
       quote:
         '"I see you stand like greyhounds in the slips, / Straining upon the start. The game\u2019s afoot! / Follow your spirit, and upon this charge / Cry, \u2018God for Harry! England and Saint George!\u2019"',
-      who: 'King Henry \u2014 Act 3, Scene 1',
+      who: 'King Henry - Act 3, Scene 1',
       analysis:
         'The hunting imagery turns soldiers into hounds and war into sport, while the rallying cry fuses monarch, nation and saint into a single patriotic utterance.',
     },
     {
       quote:
         '"Take pity of your town and of your people, / Whiles yet my soldiers are in my command ... / Your naked infants spitted upon pikes."',
-      who: 'King Henry \u2014 Act 3, Scene 3',
+      who: 'King Henry - Act 3, Scene 3',
       analysis:
         'Henry\u2019s threat to the governor of Harfleur shows the dark counterpart to the heroic rhetoric: the same voice that rallies the "band of brothers" can threaten civilian atrocity.',
     },
     {
       quote:
         '"Now entertain conjecture of a time / When creeping murmur and the poring dark / Fills the wide vessel of the universe."',
-      who: 'Chorus \u2014 Act 4',
+      who: 'Chorus - Act 4',
       analysis:
         'The Chorus before Agincourt shifts the play\u2019s register from triumphalism to quiet, fearful anticipation, asking the audience to imagine the two camps through poetic atmosphere rather than spectacle.',
     },
     {
       quote:
         '"For he today that sheds his blood with me / Shall be my brother; be he ne\u2019er so vile, / This day shall gentle his condition."',
-      who: 'King Henry \u2014 Act 4, Scene 3',
+      who: 'King Henry - Act 4, Scene 3',
       analysis:
-        'Part of the St Crispin\u2019s Day speech, promising that shared sacrifice dissolves class distinction \u2014 a radical claim delivered as battlefield motivation.',
+        'Part of the St Crispin\u2019s Day speech, promising that shared sacrifice dissolves class distinction - a radical claim delivered as battlefield motivation.',
     },
     {
       quote:
         '"We few, we happy few, we band of brothers. / For he today that sheds his blood with me / Shall be my brother."',
-      who: 'King Henry \u2014 Act 4, Scene 3',
+      who: 'King Henry - Act 4, Scene 3',
       analysis:
         'The most famous line in the play turns numerical disadvantage into moral superiority, and has been quoted in English military rhetoric ever since.',
     },
     {
       quote:
         '"And gentlemen in England now abed / Shall think themselves accurs\u2019d they were not here, / And hold their manhoods cheap whiles any speaks / That fought with us upon Saint Crispin\u2019s day."',
-      who: 'King Henry \u2014 Act 4, Scene 3',
+      who: 'King Henry - Act 4, Scene 3',
       analysis:
         'Henry promises enduring fame as the reward for risk, using the imagined envy of future generations to bind his soldiers to the coming battle.',
     },
     {
       quote:
         '"Upon the King! Let us our lives, our souls, / Our debts, our careful wives, / Our children, and our sins lay on the King!"',
-      who: 'King Henry \u2014 Act 4, Scene 1',
+      who: 'King Henry - Act 4, Scene 1',
       analysis:
         'Alone at night in the borrowed cloak, Henry voices the private burden of ceremony: every subject\u2019s suffering is laid on his conscience, exposing the hollow cost of royal public performance.',
     },
     {
       quote:
         '"What is\u2019t to me, when you yourselves are cause, / If your pure maidens fall into the hand / Of hot and forcing violation?"',
-      who: 'King Henry \u2014 Act 3, Scene 3',
+      who: 'King Henry - Act 3, Scene 3',
       analysis:
         'Henry displaces responsibility for the threatened sack of Harfleur onto its defenders, a rhetorical manoeuvre that raises hard questions about the ethics of his war.',
     },
     {
       quote: '"But if the cause be not good, the King himself hath a heavy reckoning to make."',
-      who: 'Williams \u2014 Act 4, Scene 1',
+      who: 'Williams - Act 4, Scene 1',
       analysis:
         'The common soldier argues with the disguised Henry that a king bears the souls of all his dead, forcing Henry to defend the morality of his war on equal terms.',
     },
     {
       quote: '"I know not if the day be ours or no."',
-      who: 'King Henry \u2014 Act 4, Scene 7',
+      who: 'King Henry - Act 4, Scene 7',
       analysis:
-        'Even at the moment of apparent victory, Henry hesitates \u2014 a rare admission of uncertainty that complicates the providential reading of the battle.',
+        'Even at the moment of apparent victory, Henry hesitates - a rare admission of uncertainty that complicates the providential reading of the battle.',
     },
     {
       quote: '"O God, thy arm was here; / And not to us, but to thy arm alone, / Ascribe we all!"',
-      who: 'King Henry \u2014 Act 4, Scene 8',
+      who: 'King Henry - Act 4, Scene 8',
       analysis:
         'Henry\u2019s reaction to the Agincourt casualty list frames the victory as divine intervention, supporting the play\u2019s providential reading of English success.',
     },
     {
       quote:
         '"\u2019A made a finer end and went away an it had been any christom child ... his nose was as sharp as a pen, and \u2019a babbled of green fields."',
-      who: 'Mistress Quickly \u2014 Act 2, Scene 3',
+      who: 'Mistress Quickly - Act 2, Scene 3',
       analysis:
         'Mistress Quickly\u2019s report of Falstaff\u2019s death is one of the play\u2019s most tender moments, quietly indicting the king who rejected his old companion and carrying the Henry IV plays into Henry V.',
     },
     {
       quote:
         '"Small time, but in that small most greatly lived / This star of England ... / Whose state so many had the managing, / That they lost France and made his England bleed."',
-      who: 'Chorus \u2014 Epilogue',
+      who: 'Chorus - Epilogue',
       analysis:
         'The final sonnet undercuts the play\u2019s triumph by reminding the audience that Henry VI would lose everything his father won, framing national glory as fleeting.',
     },
@@ -326,7 +326,7 @@ const QUIZ_QUESTIONS: QuizQuestion[] = [
     options: ['Bardolph', 'Falstaff', 'Nym', 'Scroop'],
     correctIndex: 1,
     explanation:
-      'Mistress Quickly reports the offstage death of Sir John Falstaff \u2014 Henry\u2019s former companion, rejected at the end of Henry IV Part 2 \u2014 with the famous detail that "\u2019a babbled of green fields".',
+      'Mistress Quickly reports the offstage death of Sir John Falstaff - Henry\u2019s former companion, rejected at the end of Henry IV Part 2 - with the famous detail that "\u2019a babbled of green fields".',
     topic: 'Plot',
     difficulty: 'foundation',
   },
@@ -342,7 +342,7 @@ const QUIZ_QUESTIONS: QuizQuestion[] = [
     ],
     correctIndex: 1,
     explanation:
-      'Katherine is the daughter of the French king, and her marriage to Henry is agreed in the Treaty of Troyes that ends the play \u2014 making Henry heir to the French throne.',
+      'Katherine is the daughter of the French king, and her marriage to Henry is agreed in the Treaty of Troyes that ends the play - making Henry heir to the French throne.',
     topic: 'Characters',
     difficulty: 'foundation',
   },
@@ -369,7 +369,7 @@ const QUIZ_QUESTIONS: QuizQuestion[] = [
     ],
     correctIndex: 1,
     explanation:
-      'The Chorus repeatedly asks the audience to "piece out our imperfections with your thoughts" \u2014 foregrounding the gap between event and performance, and making imagination itself a patriotic act.',
+      'The Chorus repeatedly asks the audience to "piece out our imperfections with your thoughts" - foregrounding the gap between event and performance, and making imagination itself a patriotic act.',
     topic: "Writer's Methods",
     difficulty: 'higher',
   },
@@ -379,13 +379,13 @@ const QUIZ_QUESTIONS: QuizQuestion[] = [
     type: 'multiple-choice',
     options: [
       'It proves Henry is purely noble',
-      'It shows Henry threatening civilian atrocity \u2014 "naked infants spitted upon pikes" \u2014 in the same voice he will later use for the St Crispin\u2019s speech, complicating the play\u2019s heroism',
+      'It shows Henry threatening civilian atrocity - "naked infants spitted upon pikes" - in the same voice he will later use for the St Crispin\u2019s speech, complicating the play\u2019s heroism',
       'It is spoken by the Dauphin',
       'It happens offstage',
     ],
     correctIndex: 1,
     explanation:
-      'Henry\u2019s threat to the governor of Harfleur \u2014 including rape and the killing of infants if the town does not surrender \u2014 is delivered in the same play as the celebrated St Crispin\u2019s Day speech, forcing the audience to hold heroism and brutality together.',
+      'Henry\u2019s threat to the governor of Harfleur - including rape and the killing of infants if the town does not surrender - is delivered in the same play as the celebrated St Crispin\u2019s Day speech, forcing the audience to hold heroism and brutality together.',
     topic: 'Themes',
     difficulty: 'higher',
   },
@@ -418,7 +418,7 @@ const QUIZ_QUESTIONS: QuizQuestion[] = [
     ],
     correctIndex: 1,
     explanation:
-      'Bardolph \u2014 Henry\u2019s old tavern companion \u2014 is hanged for looting a church, and Williams challenges the disguised Henry with the idea that a king bears the souls of all his dead. Both scenes undercut the celebratory rhetoric of the Chorus.',
+      'Bardolph - Henry\u2019s old tavern companion - is hanged for looting a church, and Williams challenges the disguised Henry with the idea that a king bears the souls of all his dead. Both scenes undercut the celebratory rhetoric of the Chorus.',
     topic: 'Themes',
     difficulty: 'higher',
   },
@@ -434,7 +434,7 @@ const QUIZ_QUESTIONS: QuizQuestion[] = [
     ],
     correctIndex: 1,
     explanation:
-      'The final Chorus reminds the audience that the victorious peace dies with Henry in 1422, and Henry VI would lose everything his father won \u2014 a deflationary ending that invites political reflection.',
+      'The final Chorus reminds the audience that the victorious peace dies with Henry in 1422, and Henry VI would lose everything his father won - a deflationary ending that invites political reflection.',
     topic: "Writer's Methods",
     difficulty: 'higher',
   },
@@ -509,7 +509,7 @@ const QUIZ_QUESTIONS: QuizQuestion[] = [
     type: 'multiple-choice',
     options: [
       'It abolishes the aristocracy',
-      'It promises that "he today that sheds his blood with me / Shall be my brother; be he ne\u2019er so vile, / This day shall gentle his condition" \u2014 claiming that shared risk dissolves class distinction within the battle',
+      'It promises that "he today that sheds his blood with me / Shall be my brother; be he ne\u2019er so vile, / This day shall gentle his condition" - claiming that shared risk dissolves class distinction within the battle',
       'It is a warning about rebellion',
       'It mocks the common soldier',
     ],
@@ -548,7 +548,7 @@ const QUIZ_QUESTIONS: QuizQuestion[] = [
     ],
     correctIndex: 1,
     explanation:
-      'Exeter describes York and Suffolk dying together, kissing "the gashes / That bloodily did yawn upon his face" \u2014 one of the most moving speeches in the play, introducing a note of human grief that the celebratory frame cannot accommodate.',
+      'Exeter describes York and Suffolk dying together, kissing "the gashes / That bloodily did yawn upon his face" - one of the most moving speeches in the play, introducing a note of human grief that the celebratory frame cannot accommodate.',
     topic: "Writer's Methods",
     difficulty: 'grade-9',
   },
@@ -692,7 +692,7 @@ export default async function HenryVPage() {
         ]}
         quizQuotes={data.quotations.slice(0, 10).map((q) => ({
           quote: q.quote.replace(/["\u201C\u201D]/g, ''),
-          character: q.who.split('\u2014')[0].trim(),
+          character: q.who.split(/ [-\u2014] /)[0].trim(),
           context: q.analysis.slice(0, 100) + '...',
         }))}
         essayQuestions={[

@@ -126,7 +126,7 @@ const chapterSummary = [
   {
     section: 'Chapters 16\u201320: The Costume Ball & Revelation',
     events:
-      'Mrs Danvers manipulates the narrator into wearing a costume identical to one Rebecca wore, causing Maxim\u2019s fury and the narrator\u2019s humiliation. That night, Mrs Danvers urges the narrator to jump from the window. A distress rocket interrupts, and a ship runs aground in the bay. Divers discover a boat on the sea bed \u2014 with Rebecca\u2019s body inside. Maxim confesses the truth to the narrator: he never loved Rebecca; she was cruel and manipulative; he shot her, placed her body in the boat, and sank it.',
+      'Mrs Danvers manipulates the narrator into wearing a costume identical to one Rebecca wore, causing Maxim\u2019s fury and the narrator\u2019s humiliation. That night, Mrs Danvers urges the narrator to jump from the window. A distress rocket interrupts, and a ship runs aground in the bay. Divers discover a boat on the sea bed - with Rebecca\u2019s body inside. Maxim confesses the truth to the narrator: he never loved Rebecca; she was cruel and manipulative; he shot her, placed her body in the boat, and sank it.',
     quotations: [
       {
         quote: 'You thought I killed her loving her? I hated her',
@@ -143,7 +143,7 @@ const chapterSummary = [
   {
     section: 'Chapters 21\u201327: The Inquest & Resolution',
     events:
-      'An inquest is held. The verdict is suicide, but Favell arrives and accuses Maxim of murder. He produces a note from Rebecca suggesting she had a motive to live. The investigation leads to Rebecca\u2019s London doctor, who reveals she had terminal cancer and only months to live \u2014 giving her a motive for provoking her own death. Maxim is cleared. On the drive home, the narrator sees the sky glowing red: Mrs Danvers has set Manderley ablaze. The house and everything it represented are destroyed.',
+      'An inquest is held. The verdict is suicide, but Favell arrives and accuses Maxim of murder. He produces a note from Rebecca suggesting she had a motive to live. The investigation leads to Rebecca\u2019s London doctor, who reveals she had terminal cancer and only months to live - giving her a motive for provoking her own death. Maxim is cleared. On the drive home, the narrator sees the sky glowing red: Mrs Danvers has set Manderley ablaze. The house and everything it represented are destroyed.',
     quotations: [
       {
         quote: 'The road to Manderley lay ahead. There was no moon ... inky black',
@@ -218,10 +218,10 @@ export default function RebeccaStudyGuide() {
       <section className="border-b bg-gradient-to-b from-primary/[0.06] to-transparent px-4 py-16 sm:py-20">
         <div className="mx-auto max-w-4xl text-center">
           <p className="text-sm font-semibold uppercase tracking-widest text-muted-foreground">
-            Cambridge IGCSE English Literature &mdash; Paper 1 (Prose)
+            Cambridge IGCSE English Literature - Paper 1 (Prose)
           </p>
           <h1 className="mt-2 text-3xl font-bold tracking-tight sm:text-4xl md:text-5xl">
-            Rebecca &mdash; Complete Study Guide
+            Rebecca - Complete Study Guide
           </h1>
           <p className="mx-auto mt-4 max-w-2xl text-lg text-muted-foreground">
             Characters, themes, chapter summaries with key quotations, du Maurier&rsquo;s narrative
@@ -395,7 +395,7 @@ export default function RebeccaStudyGuide() {
             <Card>
               <CardHeader>
                 <span className="inline-block w-fit rounded-full bg-purple-900/10 px-2.5 py-0.5 text-xs font-semibold text-foreground">
-                  Part (a) &mdash; Passage-Based
+                  Part (a) - Passage-Based
                 </span>
                 <CardTitle className="mt-2">How to Approach Passage-Based Questions</CardTitle>
               </CardHeader>
@@ -431,7 +431,7 @@ export default function RebeccaStudyGuide() {
             <Card>
               <CardHeader>
                 <span className="inline-block w-fit rounded-full bg-purple-900/10 px-2.5 py-0.5 text-xs font-semibold text-foreground">
-                  Part (b) &mdash; Essay Question
+                  Part (b) - Essay Question
                 </span>
                 <CardTitle className="mt-2">How to Approach Essay Questions</CardTitle>
               </CardHeader>
@@ -560,8 +560,8 @@ export default function RebeccaStudyGuide() {
                   </li>
                   <li>&bull; Embeds a precise, well-selected quotation (Textual Knowledge)</li>
                   <li>
-                    &bull; Analyses du Maurier&rsquo;s techniques &mdash; Gothic imagery,
-                    repetition, narrative perspective (Writer's Methods)
+                    &bull; Analyses du Maurier&rsquo;s techniques - Gothic imagery, repetition,
+                    narrative perspective (Writer's Methods)
                   </li>
                   <li>&bull; Offers an alternative reading of the passage (Interpretation)</li>
                   <li>

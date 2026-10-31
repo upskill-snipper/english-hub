@@ -79,13 +79,13 @@ const data: TextGuideData = {
     'The novella opens at 221B Baker Street, where Watson watches Holmes inject himself with a seven-percent solution of cocaine and complains about the habit. Their conversation is interrupted by the arrival of Miss Mary Morstan, a young governess with a puzzling story. Her father, Captain Arthur Morstan of the Indian Army, vanished without trace in London in 1878. In 1882, Mary began receiving a large lustrous pearl in the post every year from an anonymous sender. Now she has received a letter asking her to meet the sender, and she wants Holmes and Watson to accompany her. The three travel to the Lyceum Theatre and are taken by coach to a house in south London belonging to Thaddeus Sholto, who reveals that his late father, Major John Sholto, served with Captain Morstan in India and that the two men quarrelled on the night of Morstan\u2019s disappearance over a vast hidden treasure. On his deathbed, Major Sholto was about to confess the treasure\u2019s location when he saw a bearded face at the window and died of fright.',
     'Thaddeus takes the party to Pondicherry Lodge, the Sholto family home, where his twin brother Bartholomew has been searching the house for the treasure. When they arrive they find Bartholomew murdered in his locked laboratory at the top of the house, a poisoned thorn lodged just above his ear and the treasure chest gone. A note left beside the body reads simply "The sign of the four." Holmes examines the scene and deduces that the crime was committed by two men: one with a wooden leg who climbed in at the window, and a tiny accomplice who entered through the roof. Holmes sends Thaddeus to report the death to the police, and Athelney Jones of Scotland Yard, who happens to be at the station, arrives and promptly arrests the innocent Thaddeus. Holmes meanwhile uses the tracker dog Toby to follow a trail of creosote across London, eventually tracing the killers to a Thames-side wharf, where he learns they have escaped downriver in a steam launch called the Aurora.',
     'While the trail goes cold, Watson visits Mary repeatedly and finds himself in love with her, though he fears that if the treasure is recovered her new wealth will put her beyond his reach. Holmes, disguised as an old sailor, locates the Aurora and organises a police launch to chase it down the river. The pursuit ends in a dramatic night-time chase on the Thames. The wooden-legged fugitive is Jonathan Small, an English ex-soldier; his companion is Tonga, a small Andaman islander who shoots poisoned darts through a blowpipe. Tonga is shot and falls into the river; Small is captured when his wooden leg sinks into the mud of the riverbank. During the chase, Small throws the Agra treasure overboard, scattering it across the Thames so that no one will ever have it.',
-    'In the final chapters, Small gives a long confession. As a young soldier in India, he lost his leg to a crocodile and took work as an overseer on a plantation. During the 1857 Sepoy Rebellion he fled to the Agra fortress, where three Sikh soldiers \u2014 Mahomet Singh, Abdullah Khan and Dost Akbar \u2014 offered him a share of a merchant\u2019s treasure if he helped them murder and rob the man. They sealed a pact under the "sign of the four." They were caught, tried and sent as convicts to the Andaman Islands. There Small made a second pact with Major Sholto and Captain Morstan, two officers in debt, agreeing they would recover the buried treasure in return for helping the four to escape. Sholto betrayed them all, stole the treasure alone, and sailed for England. Small eventually escaped with the help of Tonga, whom he had nursed back to health, and pursued Sholto to London to take his revenge. With the treasure lost beneath the Thames, Watson tells Mary he loves her; no longer kept apart by her fortune, they agree to marry. Holmes, denied the glory of the case, turns back to his cocaine bottle.',
+    'In the final chapters, Small gives a long confession. As a young soldier in India, he lost his leg to a crocodile and took work as an overseer on a plantation. During the 1857 Sepoy Rebellion he fled to the Agra fortress, where three Sikh soldiers - Mahomet Singh, Abdullah Khan and Dost Akbar - offered him a share of a merchant\u2019s treasure if he helped them murder and rob the man. They sealed a pact under the "sign of the four." They were caught, tried and sent as convicts to the Andaman Islands. There Small made a second pact with Major Sholto and Captain Morstan, two officers in debt, agreeing they would recover the buried treasure in return for helping the four to escape. Sholto betrayed them all, stole the treasure alone, and sailed for England. Small eventually escaped with the help of Tonga, whom he had nursed back to health, and pursued Sholto to London to take his revenge. With the treasure lost beneath the Thames, Watson tells Mary he loves her; no longer kept apart by her fortune, they agree to marry. Holmes, denied the glory of the case, turns back to his cocaine bottle.',
   ],
   characters: [
     {
       name: 'Sherlock Holmes',
       role: 'Consulting detective of 221B Baker Street',
-      body: 'Holmes is a brilliant but restless thinker who treats detection as "an exact science" and demands problems to occupy his mind. When bored he injects cocaine; when engaged, he becomes a formidable machine of observation and deduction. In this novella he displays the full range of his methods \u2014 footprint analysis, chemistry, disguise, tracker dogs \u2014 and insists that emotion clouds reason. Conan Doyle uses him to dramatise a new kind of heroism based on intellect rather than physical courage, though his drug use and moodiness complicate any simple reading of him as a rational ideal.',
+      body: 'Holmes is a brilliant but restless thinker who treats detection as "an exact science" and demands problems to occupy his mind. When bored he injects cocaine; when engaged, he becomes a formidable machine of observation and deduction. In this novella he displays the full range of his methods - footprint analysis, chemistry, disguise, tracker dogs - and insists that emotion clouds reason. Conan Doyle uses him to dramatise a new kind of heroism based on intellect rather than physical courage, though his drug use and moodiness complicate any simple reading of him as a rational ideal.',
     },
     {
       name: 'Dr John Watson',
@@ -95,7 +95,7 @@ const data: TextGuideData = {
     {
       name: 'Mary Morstan',
       role: 'Holmes\u2019s client and Watson\u2019s future wife',
-      body: 'Mary arrives at Baker Street as a governess seeking help with her missing father and the mysterious pearls. Conan Doyle presents her as intelligent, courageous and composed \u2014 Holmes himself remarks on her clear judgement. She becomes the object of Watson\u2019s affections and the moral centre of the romantic plot. Her potential inheritance creates the central obstacle to the couple\u2019s happiness, and the treasure\u2019s loss paradoxically clears the way for their marriage, suggesting that true love is endangered rather than enabled by imperial wealth.',
+      body: 'Mary arrives at Baker Street as a governess seeking help with her missing father and the mysterious pearls. Conan Doyle presents her as intelligent, courageous and composed - Holmes himself remarks on her clear judgement. She becomes the object of Watson\u2019s affections and the moral centre of the romantic plot. Her potential inheritance creates the central obstacle to the couple\u2019s happiness, and the treasure\u2019s loss paradoxically clears the way for their marriage, suggesting that true love is endangered rather than enabled by imperial wealth.',
     },
     {
       name: 'Jonathan Small',
@@ -110,26 +110,26 @@ const data: TextGuideData = {
     {
       name: 'Bartholomew Sholto',
       role: 'Thaddeus\u2019s twin brother and the murder victim',
-      body: 'Bartholomew is obsessed with recovering his father\u2019s hidden treasure, searching Pondicherry Lodge inch by inch until he finally locates it in a sealed garret at the top of the house. His death \u2014 killed by one of Tonga\u2019s poisoned darts in a locked room \u2014 creates the central mystery for Holmes to solve. He represents greed without Thaddeus\u2019s conscience, and his fate suggests that the imperial treasure carries its own curse: those who pursue it most ruthlessly are destroyed by it.',
+      body: 'Bartholomew is obsessed with recovering his father\u2019s hidden treasure, searching Pondicherry Lodge inch by inch until he finally locates it in a sealed garret at the top of the house. His death - killed by one of Tonga\u2019s poisoned darts in a locked room - creates the central mystery for Holmes to solve. He represents greed without Thaddeus\u2019s conscience, and his fate suggests that the imperial treasure carries its own curse: those who pursue it most ruthlessly are destroyed by it.',
     },
     {
       name: 'Tonga',
       role: 'Small\u2019s companion from the Andaman Islands',
-      body: 'Tonga is a small Andaman islander whom Small rescued and who follows him in loyalty. He is the actual killer of Bartholomew, firing a poisoned dart through the roof. Modern readers should recognise that Tonga is drawn through the dehumanising racial caricatures of late-Victorian imperial fiction \u2014 described in animalistic terms and denied inner life. His portrayal is one of the most uncomfortable aspects of the novella and a central topic for critical analysis of race, empire and the "Other" in Conan Doyle\u2019s work.',
+      body: 'Tonga is a small Andaman islander whom Small rescued and who follows him in loyalty. He is the actual killer of Bartholomew, firing a poisoned dart through the roof. Modern readers should recognise that Tonga is drawn through the dehumanising racial caricatures of late-Victorian imperial fiction - described in animalistic terms and denied inner life. His portrayal is one of the most uncomfortable aspects of the novella and a central topic for critical analysis of race, empire and the "Other" in Conan Doyle\u2019s work.',
     },
   ],
   themes: [
     {
       title: 'Colonialism and empire',
-      body: 'The Agra treasure is the engine of the entire plot, and it is a colonial treasure: looted during the chaos of the 1857 Sepoy Rebellion and dragged back to Britain at terrible human cost. Every significant crime in the novella \u2014 murder, betrayal, imprisonment, revenge \u2014 radiates out from the acquisition of that imperial wealth. Conan Doyle suggests, perhaps despite himself, that the empire has imported violence, fear and moral corruption into the heart of Victorian London. Pondicherry Lodge is crammed with Indian artefacts; Thaddeus is surrounded by Oriental decor; the killers come from the Andamans. The story offers no clean separation between "respectable" England and the imperial periphery.',
+      body: 'The Agra treasure is the engine of the entire plot, and it is a colonial treasure: looted during the chaos of the 1857 Sepoy Rebellion and dragged back to Britain at terrible human cost. Every significant crime in the novella - murder, betrayal, imprisonment, revenge - radiates out from the acquisition of that imperial wealth. Conan Doyle suggests, perhaps despite himself, that the empire has imported violence, fear and moral corruption into the heart of Victorian London. Pondicherry Lodge is crammed with Indian artefacts; Thaddeus is surrounded by Oriental decor; the killers come from the Andamans. The story offers no clean separation between "respectable" England and the imperial periphery.',
     },
     {
       title: 'Greed and the Agra treasure',
-      body: 'The treasure is a moral test that almost everyone fails. Major Sholto betrays his friend and his prisoners to keep it; Bartholomew hunts it so obsessively he forgets anything else; Jonathan Small helps to murder the merchant Achmet for it and never stops pursuing it. Even the minor characters are warped by its pull. Conan Doyle pointedly has the treasure lost at the bottom of the Thames: it cannot be enjoyed, only pursued. The novella suggests that greed for imperial wealth destroys the people who chase it, and that only when the treasure is gone can ordinary human happiness \u2014 represented by Watson and Mary\u2019s engagement \u2014 become possible.',
+      body: 'The treasure is a moral test that almost everyone fails. Major Sholto betrays his friend and his prisoners to keep it; Bartholomew hunts it so obsessively he forgets anything else; Jonathan Small helps to murder the merchant Achmet for it and never stops pursuing it. Even the minor characters are warped by its pull. Conan Doyle pointedly has the treasure lost at the bottom of the Thames: it cannot be enjoyed, only pursued. The novella suggests that greed for imperial wealth destroys the people who chase it, and that only when the treasure is gone can ordinary human happiness - represented by Watson and Mary\u2019s engagement - become possible.',
     },
     {
       title: 'Justice and law',
-      body: 'The novella contrasts three kinds of justice. There is Inspector Jones\u2019s legal justice, which is loud, confident and wrong \u2014 he arrests innocent Thaddeus. There is Holmes\u2019s investigative justice, which is private, rational and usually correct. And there is Small\u2019s vigilante justice, a long revenge for real betrayal. Conan Doyle allows Small to speak at length and be partly believed, so the reader must consider whether legal punishment and moral justice coincide. The official system, by contrast, is mocked: Jones\u2019s errors are almost comic. Justice in this book is something individuals make, not something the state reliably delivers.',
+      body: 'The novella contrasts three kinds of justice. There is Inspector Jones\u2019s legal justice, which is loud, confident and wrong - he arrests innocent Thaddeus. There is Holmes\u2019s investigative justice, which is private, rational and usually correct. And there is Small\u2019s vigilante justice, a long revenge for real betrayal. Conan Doyle allows Small to speak at length and be partly believed, so the reader must consider whether legal punishment and moral justice coincide. The official system, by contrast, is mocked: Jones\u2019s errors are almost comic. Justice in this book is something individuals make, not something the state reliably delivers.',
     },
     {
       title: 'Reason versus emotion (Holmes and Watson)',
@@ -137,7 +137,7 @@ const data: TextGuideData = {
     },
     {
       title: 'Identity and trust',
-      body: 'Almost every character in the novella hides something. Major Sholto buries the treasure and lies on his deathbed. Small lives as a convict under surveillance. Holmes disguises himself as a sailor. Thaddeus is hidden away in a suburban villa and uses an intermediary to write to Mary. Even the pearls are a trace of concealed guilt. Conan Doyle suggests that Victorian London is a world of false faces, where the detective is needed precisely because respectable surfaces cannot be trusted. Mary, by contrast, is presented as transparently honest \u2014 a quality that marks her as the story\u2019s moral centre.',
+      body: 'Almost every character in the novella hides something. Major Sholto buries the treasure and lies on his deathbed. Small lives as a convict under surveillance. Holmes disguises himself as a sailor. Thaddeus is hidden away in a suburban villa and uses an intermediary to write to Mary. Even the pearls are a trace of concealed guilt. Conan Doyle suggests that Victorian London is a world of false faces, where the detective is needed precisely because respectable surfaces cannot be trusted. Mary, by contrast, is presented as transparently honest - a quality that marks her as the story\u2019s moral centre.',
     },
     {
       title: 'The "Other" and racial representation',
@@ -145,140 +145,140 @@ const data: TextGuideData = {
     },
   ],
   historicalContext: [
-    'The Sign of the Four was published in 1890, near the high-water mark of the British Empire, when roughly a quarter of the world\u2019s land and population was under British rule. India was the most important imperial possession, and the figure of the returning "Anglo-Indian" \u2014 the former officer or official home from service abroad \u2014 was a familiar one in the London of Conan Doyle\u2019s readers. The novella\u2019s plot depends on Captain Morstan, Major Sholto and Jonathan Small all being products of this imperial system, and on the treasure being the kind of looted wealth that moved, at scale, from the colonised world into Britain.',
+    'The Sign of the Four was published in 1890, near the high-water mark of the British Empire, when roughly a quarter of the world\u2019s land and population was under British rule. India was the most important imperial possession, and the figure of the returning "Anglo-Indian" - the former officer or official home from service abroad - was a familiar one in the London of Conan Doyle\u2019s readers. The novella\u2019s plot depends on Captain Morstan, Major Sholto and Jonathan Small all being products of this imperial system, and on the treasure being the kind of looted wealth that moved, at scale, from the colonised world into Britain.',
     'The key historical event behind the novella is the uprising of 1857, commonly called the Indian Mutiny or Sepoy Rebellion in British sources and the First War of Independence in Indian historiography. Jonathan Small\u2019s flight to the Agra fortress and the theft of the merchant\u2019s treasure are set during the collapse of order that followed the rebellion. For Conan Doyle\u2019s 1890 readership, this was living memory, and the rebellion was still used in Britain as justification for tightening imperial rule. The Andaman Islands, where Small is imprisoned, were a real British penal colony used for political prisoners after 1857.',
-    'The novella was published at a moment when detective fiction was becoming a recognisable genre. Conan Doyle had drawn on Edgar Allan Poe\u2019s earlier Dupin stories and on his own teacher Joseph Bell, whose diagnostic methods inspired Holmes. The success of the Strand magazine short stories that followed (from 1891) would turn Holmes into a global phenomenon, but The Sign of the Four is the book in which many of the genre\u2019s conventions \u2014 the eccentric detective, the loyal narrator-sidekick, the forensic method, the locked-room puzzle \u2014 are consolidated for the first time.',
+    'The novella was published at a moment when detective fiction was becoming a recognisable genre. Conan Doyle had drawn on Edgar Allan Poe\u2019s earlier Dupin stories and on his own teacher Joseph Bell, whose diagnostic methods inspired Holmes. The success of the Strand magazine short stories that followed (from 1891) would turn Holmes into a global phenomenon, but The Sign of the Four is the book in which many of the genre\u2019s conventions - the eccentric detective, the loyal narrator-sidekick, the forensic method, the locked-room puzzle - are consolidated for the first time.',
     'Holmes\u2019s cocaine use in Chapter 1 reflects the medical culture of 1890. Cocaine was legal, widely available, and sold in over-the-counter preparations; its addictive nature was only beginning to be understood. Watson\u2019s moral objections represent a growing medical concern rather than an established one. Modern readers should also be aware that the novella\u2019s treatment of Tonga, and of race more broadly, is shaped by late-Victorian pseudoscientific racism and imperial anxiety. These problematic depictions are not incidental to the text but central to its meaning, and engaging critically with them is part of studying the novella seriously.',
   ],
   quotations: [
     {
       quote:
         '"Sherlock Holmes took his bottle from the corner of the mantel-piece and his hypodermic syringe from its neat morocco case."',
-      who: 'Watson \u2014 Chapter 1',
+      who: 'Watson - Chapter 1',
       analysis:
         'The novella\u2019s opening image establishes Holmes as both brilliant and troubled, using cocaine to escape boredom. The precision of the description contrasts with the moral unease the habit provokes in Watson.',
     },
     {
       quote:
         '"Detection is, or ought to be, an exact science, and should be treated in the same cold and unemotional manner."',
-      who: 'Holmes \u2014 Chapter 1',
+      who: 'Holmes - Chapter 1',
       analysis:
         'Holmes states his intellectual creed in the opening chapter. Detection is to be a rational discipline, and feeling is disqualified from it. The line frames the Holmes/Watson contrast that structures the novella.',
     },
     {
       quote: '"I never guess. It is a shocking habit,\u2014destructive to the logical faculty."',
-      who: 'Holmes \u2014 Chapter 1',
+      who: 'Holmes - Chapter 1',
       analysis:
         'A key statement of Holmes\u2019s method. Deduction, not intuition, is his principle. The hyperbolic "shocking" parodies Victorian moral vocabulary and applies it to logic rather than behaviour.',
     },
     {
       quote:
         '"How often have I said to you that when you have eliminated the impossible whatever remains, however improbable, must be the truth?"',
-      who: 'Holmes \u2014 Chapter 6',
+      who: 'Holmes - Chapter 6',
       analysis:
         'The novella\u2019s most famous line of detective method. The logic is deliberately counter-intuitive: the "improbable" is the point. Conan Doyle\u2019s detective teaches the reader a new way of thinking about evidence.',
     },
     {
       quote: '"You know my methods. Apply them, and it will be instructive to compare results."',
-      who: 'Holmes \u2014 spoken to Watson',
+      who: 'Holmes - spoken to Watson',
       analysis:
-        'Holmes invites Watson \u2014 and through him the reader \u2014 to practise his form of analysis. The invitation makes detection participatory: the reader is not passive but trained in the method.',
+        'Holmes invites Watson - and through him the reader - to practise his form of analysis. The invitation makes detection participatory: the reader is not passive but trained in the method.',
     },
     {
       quote:
         '"My mind \u2026 rebels at stagnation. Give me problems, give me work, give me the most abstruse cryptogram or the most intricate analysis, and I am in my own proper atmosphere."',
-      who: 'Holmes \u2014 Chapter 1',
+      who: 'Holmes - Chapter 1',
       analysis:
         'Holmes explains his cocaine use as a response to intellectual boredom. Conan Doyle presents the detective\u2019s mind as requiring constant stimulation, which is both the source of his brilliance and of his vulnerability.',
     },
     {
       quote: '"The sign of the four."',
-      who: 'Note left beside Bartholomew\u2019s body \u2014 Chapter 5',
+      who: 'Note left beside Bartholomew\u2019s body - Chapter 5',
       analysis:
         'The phrase gives the novella its title and names the pact at its moral centre: Small, Mahomet Singh, Abdullah Khan and Dost Akbar. It is a sign of conspiracy, loyalty and, ultimately, betrayal.',
     },
     {
       quote: '"I am the last and highest court of appeal in detection."',
-      who: 'Holmes \u2014 Chapter 1',
+      who: 'Holmes - Chapter 1',
       analysis:
         'Holmes ranks himself above the official police, who lay their cases before him when they are "out of their depths". The boast reveals his awareness of himself as a new kind of figure, the only unofficial consulting detective.',
     },
     {
       quote:
         '"The main thing with people of that sort \u2026 is never to let them think that their information can be of the slightest importance to you."',
-      who: 'Holmes \u2014 Chapter 8',
+      who: 'Holmes - Chapter 8',
       analysis:
         'Holmes explains his method of handling informants. The line exposes his psychological sharpness and his slightly cold manipulation of ordinary people, a complicating trait beneath the heroic exterior.',
     },
     {
       quote: '"Women are never to be entirely trusted,\u2014not the best of them."',
-      who: 'Holmes \u2014 Chapter 9',
+      who: 'Holmes - Chapter 9',
       analysis:
         'A striking piece of Holmesian misogyny, immediately qualified by Watson\u2019s love for Mary. The novella stages the limits of Holmes\u2019s reason by having his general principle fail against an individual case.',
     },
     {
       quote:
         '"It is of the first importance \u2026 not to allow your judgment to be biased by personal qualities."',
-      who: 'Holmes \u2014 Chapter 2',
+      who: 'Holmes - Chapter 2',
       analysis:
         'Holmes\u2019s reply when Watson calls him an automaton for not noticing Mary Morstan\u2019s charm: a client, he says, is "a mere unit". The principle dramatises the reason/emotion contrast: Watson does not live by it, and the book will largely endorse his decision not to.',
     },
     {
       quote:
         '"What is the use of having powers, doctor, when one has no field upon which to exert them?"',
-      who: 'Holmes \u2014 Chapter 1',
+      who: 'Holmes - Chapter 1',
       analysis:
         'Holmes\u2019s complaint in the opening pages frames the whole case as a rescue from boredom. The line makes clear that crime is, for him, an intellectual opportunity rather than a moral catastrophe.',
     },
     {
       quote:
         '"It was soothing to catch even that passing glimpse of a tranquil English home in the midst of the wild, dark business which had absorbed us."',
-      who: 'Watson \u2014 on leaving Mary',
+      who: 'Watson - on leaving Mary',
       analysis:
         'Watson\u2019s narration quietly shifts from detection to romance. Conan Doyle interleaves Holmes\u2019s forensic thread with Watson\u2019s love plot, and the novella\u2019s emotional climax is marital, not criminal.',
     },
     {
       quote:
         '"It is a romance! \u2026 An injured lady, half a million in treasure, a black cannibal, and a wooden-legged ruffian."',
-      who: 'Mrs Forrester \u2014 Chapter 9',
+      who: 'Mrs Forrester - Chapter 9',
       analysis:
         'Mrs Forrester\u2019s phrasing gathers the story\u2019s sensational elements and, uncomfortably for modern readers, its racial caricature of Tonga. The line exposes how the novella\u2019s imperial material is packaged as entertainment.',
     },
     {
       quote: '"Whoever had lost a treasure, I knew that night that I had gained one."',
-      who: 'Watson \u2014 Chapter 11',
+      who: 'Watson - Chapter 11',
       analysis:
         'Watson\u2019s closing thought on the night the treasure is lost and Mary returns his love. Conan Doyle makes the romance turn on a rejection of the treasure\u2019s value, realigning money against love.',
     },
     {
       quote: '"Thank God!"',
-      who: 'Watson \u2014 on learning the treasure is lost',
+      who: 'Watson - on learning the treasure is lost',
       analysis:
         'Watson\u2019s relief at the treasure\u2019s loss is instantaneous and, for Mary, clarifying. The moment resolves the romantic plot and suggests that the imperial fortune was the obstacle to, not the condition of, their happiness.',
     },
     {
       quote: '"The treasure is lost."',
-      who: 'Mary Morstan \u2014 Chapter 11',
+      who: 'Mary Morstan - Chapter 11',
       analysis:
         'Mary\u2019s calm words as the box opens empty are the novella\u2019s material climax. Small has scattered the empire\u2019s loot in the London river, refused to every claimant.',
     },
     {
       quote:
         '"I would rather swing a score of times, or have one of Tonga\u2019s darts in my hide, than live in a convict\u2019s cell and feel that another man is at his ease in a palace with the money that should be mine."',
-      who: 'Jonathan Small \u2014 Chapter 12',
+      who: 'Jonathan Small - Chapter 12',
       analysis:
         'Small\u2019s defiance introduces his long confession. Conan Doyle gives the villain an unusual amount of narrative space and moral standing, so that the reader is asked to weigh his betrayal against his own.',
     },
     {
       quote:
         '"Whose loot is this, if it is not ours? Where is the justice that I should give it up to those who have never earned it?"',
-      who: 'Jonathan Small \u2014 Chapter 12',
+      who: 'Jonathan Small - Chapter 12',
       analysis:
         'Small frames his crimes as justice rather than criminality. The novella allows this framing seriously enough that official law, represented by Jones, looks shallow by comparison.',
     },
     {
       quote: '"For me \u2026 there still remains the cocaine-bottle."',
-      who: 'Holmes \u2014 final chapter',
+      who: 'Holmes - final chapter',
       analysis:
         'The novella ends where it began, with Holmes reaching for his drug. Watson gets Mary; Holmes is left with chemistry and boredom. The circularity is deliberate: emotion brings happiness, reason alone returns to the syringe.',
     },
@@ -320,7 +320,7 @@ const QUIZ_QUESTIONS: QuizQuestion[] = [
     ],
     correctIndex: 1,
     explanation:
-      'The original pact is between Jonathan Small and three Sikh soldiers \u2014 Mahomet Singh, Abdullah Khan and Dost Akbar \u2014 made in the Agra fortress during the 1857 Rebellion to seize a merchant\u2019s treasure.',
+      'The original pact is between Jonathan Small and three Sikh soldiers - Mahomet Singh, Abdullah Khan and Dost Akbar - made in the Agra fortress during the 1857 Rebellion to seize a merchant\u2019s treasure.',
     topic: 'Plot',
     difficulty: 'higher',
   },
@@ -465,7 +465,7 @@ const QUIZ_QUESTIONS: QuizQuestion[] = [
     question: 'What is problematic about the portrayal of Tonga?',
     type: 'multiple-choice',
     options: [
-      'Nothing \u2014 it is a fair depiction',
+      'Nothing - it is a fair depiction',
       'He is drawn through dehumanising racial caricature and denied inner life, while the English villain Small is given a full voice and sympathetic hearing',
       'He talks too much',
       'He is too intelligent to be believable',
@@ -547,7 +547,7 @@ const QUIZ_QUESTIONS: QuizQuestion[] = [
     question: 'What does Watson\u2019s narration contribute to the novella\u2019s effect?',
     type: 'multiple-choice',
     options: [
-      'Nothing \u2014 he just records events',
+      'Nothing - he just records events',
       'By filtering Holmes through an ordinary observer with feelings, Watson makes Holmes\u2019s brilliance striking and allows the romance plot to coexist with the detective plot',
       'He is an unreliable narrator who hides the truth',
       'He dislikes Holmes and undermines him',
@@ -564,7 +564,7 @@ const QUIZ_QUESTIONS: QuizQuestion[] = [
     type: 'multiple-choice',
     options: [
       'He is refusing to help Watson',
-      'He is inviting Watson \u2014 and, through him, the reader \u2014 to practise deductive reasoning, making the detective story participatory',
+      'He is inviting Watson - and, through him, the reader - to practise deductive reasoning, making the detective story participatory',
       'He wants Watson to take over the case',
       'He is teasing Watson for being slow',
     ],
@@ -580,7 +580,7 @@ const QUIZ_QUESTIONS: QuizQuestion[] = [
     type: 'multiple-choice',
     options: [
       'It is the first detective story ever written',
-      'It consolidates genre conventions \u2014 eccentric detective, loyal narrator-companion, forensic method, locked-room puzzle \u2014 and precedes the Strand short stories that made Holmes a global phenomenon',
+      'It consolidates genre conventions - eccentric detective, loyal narrator-companion, forensic method, locked-room puzzle - and precedes the Strand short stories that made Holmes a global phenomenon',
       'It invented forensic science',
       'It was rejected by readers',
     ],
@@ -600,7 +600,7 @@ const REVISION_TOPICS = [
     keyPoints: [
       'The treasure is stolen during the 1857 Sepoy Rebellion',
       'Sholto, Morstan and Small are all products of the imperial system',
-      'Pondicherry Lodge is crammed with Indian objects \u2014 the empire is at home',
+      'Pondicherry Lodge is crammed with Indian objects - the empire is at home',
       'The treasure is lost in the Thames, refused to every claimant',
       'Tonga and the Andamans represent the colonised body imported for violence',
     ],
@@ -634,11 +634,11 @@ const REVISION_TOPICS = [
     summary:
       'The central pair are opposed but interdependent. The novella quietly endorses Watson\u2019s sensibility over Holmes\u2019s cold logic.',
     keyPoints: [
-      '"Detection is, or ought to be, an exact science" \u2014 Holmes\u2019s creed',
+      '"Detection is, or ought to be, an exact science" - Holmes\u2019s creed',
       '"I never guess. It is a shocking habit,\u2014destructive to the logical faculty"',
       'Watson falls in love, Holmes warns against it',
       'The emotional climax is Watson\u2019s engagement, not the solution',
-      'The novella ends with Holmes alone with the cocaine \u2014 reason returns to boredom',
+      'The novella ends with Holmes alone with the cocaine - reason returns to boredom',
     ],
   },
   {
@@ -743,7 +743,7 @@ export default async function TheSignOfTheFourPage() {
         ]}
         quizQuotes={data.quotations.slice(0, 10).map((q) => ({
           quote: q.quote.replace(/["\u201C\u201D]/g, ''),
-          character: q.who.split('\u2014')[0].trim(),
+          character: q.who.split(/ [-\u2014] /)[0].trim(),
           context: q.analysis.slice(0, 100) + '...',
         }))}
         essayQuestions={[

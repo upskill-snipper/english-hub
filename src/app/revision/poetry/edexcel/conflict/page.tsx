@@ -187,9 +187,9 @@ export default function EdexcelConflictPage() {
             </h1>
           </div>
           <p className="mt-3 max-w-2xl text-body-lg text-muted-foreground">
-            All 15 poems in the Edexcel Conflict anthology. Conflict is explored in many forms
-            &mdash; war and violence, prejudice and racism, family tension, internal struggle and
-            the politics of class.
+            All 15 poems in the Edexcel Conflict anthology. Conflict is explored in many forms - war
+            and violence, prejudice and racism, family tension, internal struggle and the politics
+            of class.
           </p>
         </div>
       </section>
@@ -257,8 +257,8 @@ export default function EdexcelConflictPage() {
         </p>
         <p className="mb-5 text-body-sm text-muted-foreground max-w-2xl">
           <strong className="text-foreground">Rights notice.</strong> Seven of the fifteen Edexcel
-          Conflict poems remain in copyright &mdash; including Clarke&rsquo;s <em>Catrin</em>{' '}
-          (&copy; Carcanet Press), Weir&rsquo;s <em>Poppies</em> (&copy; Templar Poetry) and
+          Conflict poems remain in copyright - including Clarke&rsquo;s <em>Catrin</em> (&copy;
+          Carcanet Press), Weir&rsquo;s <em>Poppies</em> (&copy; Templar Poetry) and
           Zephaniah&rsquo;s <em>No Problem</em> (&copy; Zephaniah estate). Quotations on individual
           set-text pages are short fair-dealing extracts under CDPA 1988 &sect;30 (criticism,
           review, quotation). For full text, students should consult the board-licensed Pearson
@@ -301,8 +301,8 @@ export default function EdexcelConflictPage() {
           Edexcel often pairs a war poem with a poem about a different kind of conflict (personal,
           racial or class-based). Practice pairing
           <em> The Charge of the Light Brigade</em> with <em>Half-caste</em>, or
-          <em> Exposure</em> with <em>A Poison Tree</em> &mdash; the differences in form and tone
-          give you plenty to write about.
+          <em> Exposure</em> with <em>A Poison Tree</em> - the differences in form and tone give you
+          plenty to write about.
         </p>
       </section>
     </div>

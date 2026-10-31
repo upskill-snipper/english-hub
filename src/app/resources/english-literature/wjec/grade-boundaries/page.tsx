@@ -218,7 +218,7 @@ export default function GradeBoundariesPage() {
 
           <div className="mt-4 space-y-6">
             <div className="rounded-lg border-s-4 border-success-500 bg-success-50/30 p-5">
-              <h3 className="text-lg font-bold text-success-700">Grade 9 &mdash; Exceptional</h3>
+              <h3 className="text-lg font-bold text-success-700">Grade 9 - Exceptional</h3>
               <div className="mt-3 space-y-2 text-sm">
                 <ul className="ms-5 list-disc space-y-1">
                   <li>{tr(`Critical, exploratory, conceptualised response to texts.`)}</li>
@@ -367,7 +367,7 @@ export default function GradeBoundariesPage() {
                   writer&rsquo;s purpose.
                 </li>
                 <li>
-                  <strong>Terminology:</strong> Learn and use key literary terms accurately &mdash;
+                  <strong>Terminology:</strong> Learn and use key literary terms accurately -
                   metaphor, simile, pathetic fallacy, iambic pentameter, enjambment. Even basic
                   terminology used correctly lifts your analysis.
                 </li>
@@ -411,8 +411,8 @@ export default function GradeBoundariesPage() {
               <ul className="mt-2 ms-5 list-disc space-y-2 text-sm">
                 <li>
                   <strong>Conceptualised response:</strong> Frame your essay around a clear argument
-                  or interpretation. A Grade 9 response has a thesis &mdash; a thread that runs
-                  through every paragraph, not a series of disconnected points.
+                  or interpretation. A Grade 9 response has a thesis - a thread that runs through
+                  every paragraph, not a series of disconnected points.
                 </li>
                 <li>
                   <strong>{tr(`Alternative interpretations:`)}</strong> Explore how a text could be
@@ -457,13 +457,13 @@ export default function GradeBoundariesPage() {
               </thead>
               <tbody className="divide-y divide-border">
                 <tr>
-                  <td className="py-2 pe-4 font-semibold">A &mdash; Shakespeare</td>
+                  <td className="py-2 pe-4 font-semibold">A - Shakespeare</td>
                   <td className="py-2 pe-4">A1 (extract + essay)</td>
                   <td className="py-2 pe-4">32 marks</td>
                   <td className="py-2 pe-4">{tr(`Shakespeare play (extract-based essay)`)}</td>
                 </tr>
                 <tr>
-                  <td className="py-2 pe-4 font-semibold">B &mdash; Poetry</td>
+                  <td className="py-2 pe-4 font-semibold">B - Poetry</td>
                   <td className="py-2 pe-4">B1 (comparison)</td>
                   <td className="py-2 pe-4">32 marks</td>
                   <td className="py-2 pe-4">{tr(`Poetry anthology comparison (two poems)`)}</td>
@@ -480,7 +480,7 @@ export default function GradeBoundariesPage() {
           </div>
 
           <h3 className="font-bold text-foreground mt-6 mb-2">
-            Paper 2 &mdash; Post-1914 Prose/Drama and Unseen Poetry (60%)
+            Paper 2 - Post-1914 Prose/Drama and Unseen Poetry (60%)
           </h3>
           <div className="overflow-x-auto">
             <table className="w-full text-sm">
@@ -494,7 +494,7 @@ export default function GradeBoundariesPage() {
               </thead>
               <tbody className="divide-y divide-border">
                 <tr>
-                  <td className="py-2 pe-4 font-semibold">A &mdash; Prose/Drama</td>
+                  <td className="py-2 pe-4 font-semibold">A - Prose/Drama</td>
                   <td className="py-2 pe-4">A1 (extract + essay)</td>
                   <td className="py-2 pe-4">40 marks</td>
                   <td className="py-2 pe-4">
@@ -503,7 +503,7 @@ export default function GradeBoundariesPage() {
                 </tr>
                 <tr>
                   <td className="py-2 pe-4 font-semibold" rowSpan={2}>
-                    B &mdash; Unseen Poetry
+                    B - Unseen Poetry
                   </td>
                   <td className="py-2 pe-4">B1</td>
                   <td className="py-2 pe-4">32 marks</td>

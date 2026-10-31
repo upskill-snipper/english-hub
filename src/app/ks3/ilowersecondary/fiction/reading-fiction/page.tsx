@@ -217,8 +217,8 @@ export default async function ReadingFictionPage() {
         <h2>The guided-reading toolkit</h2>
         <p>
           The Teacher&rsquo;s Guide gives a set of guided-reading prompts for fiction, grouped into
-          three areas. Run a fiction extract through every prompt below before you answer anything
-          &mdash; the answers to the exam questions are almost always hiding behind one of them.
+          three areas. Run a fiction extract through every prompt below before you answer anything -
+          the answers to the exam questions are almost always hiding behind one of them.
         </p>
         <div className="not-prose my-6 space-y-5">
           {PROMPT_GROUPS.map(([group, prompts]) => {
@@ -246,8 +246,8 @@ export default async function ReadingFictionPage() {
         </div>
         <p className="text-sm text-muted-foreground">
           Notice the pattern in the style and language prompts: each one ends by asking for the{' '}
-          <em>reason</em> or the <em>impact</em>. That is the single most important habit &mdash;
-          never stop at naming a feature.
+          <em>reason</em> or the <em>impact</em>. That is the single most important habit - never
+          stop at naming a feature.
         </p>
       </section>
 
@@ -282,9 +282,7 @@ export default async function ReadingFictionPage() {
           <p className="font-mono text-[10px] tracking-[0.14em] uppercase text-primary mb-1">
             Fiction · original extract
           </p>
-          <h3 className="text-base font-semibold mb-3">
-            Extract &mdash; &ldquo;The paler grey&rdquo;
-          </h3>
+          <h3 className="text-base font-semibold mb-3">Extract - &ldquo;The paler grey&rdquo;</h3>
           <div className="space-y-3 border-s-2 border-primary/30 ps-4">
             {EXTRACT_LINES.map((line, i) => (
               <p key={i} className="text-sm leading-relaxed text-muted-foreground">
@@ -318,8 +316,8 @@ export default async function ReadingFictionPage() {
           ))}
         </div>
         <p className="text-sm text-muted-foreground">
-          Marks and phrasing above follow the style of the published mark scheme &mdash; exact
-          wording, order and number of items vary between papers.
+          Marks and phrasing above follow the style of the published mark scheme - exact wording,
+          order and number of items vary between papers.
         </p>
       </section>
 

@@ -95,7 +95,7 @@ function QuoteCard({
         &ldquo;{quote}&rdquo;
       </blockquote>
       <p className="mt-1 text-xs font-semibold text-primary">
-        {speaker} &mdash; {act}
+        {speaker} - {act}
       </p>
       <p className="mt-3 text-sm leading-relaxed text-muted-foreground">{analysis}</p>
     </div>
@@ -495,7 +495,7 @@ export default function MuchAdoStudyGuide() {
             GCSE English Literature
           </p>
           <h1 className="mt-2 text-3xl font-bold tracking-tight sm:text-4xl md:text-5xl">
-            Much Ado About Nothing &mdash; Complete Study Guide
+            Much Ado About Nothing - Complete Study Guide
           </h1>
           <p className="mx-auto mt-4 max-w-2xl text-lg text-muted-foreground">
             Scene-by-scene summary, 8 character analyses, 5 key themes, 20+ quotations with detailed

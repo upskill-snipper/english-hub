@@ -229,7 +229,7 @@ export default function ThingsFallApartStudyGuide() {
             Cambridge IGCSE English Literature
           </p>
           <h1 className="mt-2 text-3xl font-bold tracking-tight sm:text-4xl md:text-5xl">
-            Things Fall Apart &mdash; Complete Study Guide
+            Things Fall Apart - Complete Study Guide
           </h1>
           <p className="mx-auto mt-4 max-w-2xl text-lg text-muted-foreground">
             Characters, themes, part-by-part summary with key quotations, Achebe&rsquo;s narrative
@@ -609,22 +609,22 @@ export default function ThingsFallApartStudyGuide() {
                   <strong className="text-foreground">[Writer's Methods]</strong> Achebe uses a
                   sudden, jarring shift in narrative perspective from the intimate, Igbo-centred
                   voice that has governed the entire novel to the cold, detached viewpoint of the
-                  colonial administrator. The diminishing scale &mdash; from &lsquo;chapter&rsquo;
-                  to &lsquo;paragraph&rsquo; &mdash; structurally enacts the process of cultural
-                  reduction, while the Commissioner&rsquo;s title, with its dehumanising word
+                  colonial administrator. The diminishing scale - from &lsquo;chapter&rsquo; to
+                  &lsquo;paragraph&rsquo; - structurally enacts the process of cultural reduction,
+                  while the Commissioner&rsquo;s title, with its dehumanising word
                   &lsquo;Primitive&rsquo;, reveals the ideology that underpins colonial power.{' '}
                   <strong className="text-foreground">[Interpretation]</strong> Writing in 1958, two
                   years before Nigerian independence, Achebe was responding to a tradition of
-                  European literature &mdash; including Joseph Conrad&rsquo;s{' '}
-                  <em>Heart of Darkness</em> &mdash; that represented Africa as a place without
-                  history or civilisation. By spending the entire novel building the richness and
-                  complexity of Igbo culture, only to show it dismissed in a single sentence, Achebe
-                  forces the reader to recognise the violence inherent in colonial storytelling.{' '}
+                  European literature - including Joseph Conrad&rsquo;s <em>Heart of Darkness</em> -
+                  that represented Africa as a place without history or civilisation. By spending
+                  the entire novel building the richness and complexity of Igbo culture, only to
+                  show it dismissed in a single sentence, Achebe forces the reader to recognise the
+                  violence inherent in colonial storytelling.{' '}
                   <strong className="text-foreground">[Personal Response]</strong> The structural
-                  irony of this ending &mdash; the Commissioner plans to write about Africa, but
-                  Achebe has already written the book that exposes the inadequacy of such accounts
-                  &mdash; transforms the act of reading <em>Things Fall Apart</em> itself into an
-                  act of resistance against colonial erasure.
+                  irony of this ending - the Commissioner plans to write about Africa, but Achebe
+                  has already written the book that exposes the inadequacy of such accounts -
+                  transforms the act of reading <em>Things Fall Apart</em> itself into an act of
+                  resistance against colonial erasure.
                 </p>
               </div>
             </CardContent>

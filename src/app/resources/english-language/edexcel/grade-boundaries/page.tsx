@@ -168,7 +168,7 @@ export default function GradeBoundariesPage() {
 
           <div className="mt-4 space-y-6">
             <div className="rounded-lg border-s-4 border-success-500 bg-success-50/30 p-5">
-              <h3 className="text-lg font-bold text-success-700">Grade 9 &mdash; Exceptional</h3>
+              <h3 className="text-lg font-bold text-success-700">Grade 9 - Exceptional</h3>
               <div className="mt-3 space-y-2 text-sm">
                 <p>
                   <strong>Reading:</strong>
@@ -502,9 +502,8 @@ export default function GradeBoundariesPage() {
                 </li>
                 <li>
                   <strong>Writing:</strong> Develop a distinctive voice. The difference between
-                  Grade 7 and Grade 9 creative writing is often authenticity and originality &mdash;
-                  the sense that the writing has a unique perspective, not that it follows a
-                  formula.
+                  Grade 7 and Grade 9 creative writing is often authenticity and originality - the
+                  sense that the writing has a unique perspective, not that it follows a formula.
                 </li>
                 <li>
                   <strong>Precision:</strong> Every word should earn its place. Cut unnecessary
@@ -702,10 +701,9 @@ export default function GradeBoundariesPage() {
             Notice that the writing task on each paper is worth <strong>40 marks</strong>: that is
             62.5% of Paper 1 and about 42% of Paper 2. Paper 2&rsquo;s short-response questions are
             worth one or two marks each and come to six marks in total, so they are quick but they
-            are not where the paper is won. The three 15-mark questions &mdash; Paper 1 Q4, Paper 2
-            Q3 and Paper 2 Q6 &mdash; together with Paper 2 Q7(b) at 14 marks are the highest-tariff
-            reading questions, and they are where strong analytical skills make the biggest
-            difference.
+            are not where the paper is won. The three 15-mark questions - Paper 1 Q4, Paper 2 Q3 and
+            Paper 2 Q6 - together with Paper 2 Q7(b) at 14 marks are the highest-tariff reading
+            questions, and they are where strong analytical skills make the biggest difference.
           </p>
         </Section>
 
@@ -775,19 +773,18 @@ export default function GradeBoundariesPage() {
               <ul className="mt-3 space-y-2 text-sm text-muted-foreground">
                 <li className="flex items-start gap-2">
                   <span className="mt-1 h-1.5 w-1.5 shrink-0 rounded-full bg-warn" />
-                  Grade boundaries change every year &mdash; aim <strong>above</strong> the boundary
-                  to be safe
+                  Grade boundaries change every year - aim <strong>above</strong> the boundary to be
+                  safe
                 </li>
                 <li className="flex items-start gap-2">
                   <span className="mt-1 h-1.5 w-1.5 shrink-0 rounded-full bg-warn" />
                   Paper 1 Q4, Paper 2 Q3 and Paper 2 Q6 (15 marks each) and Paper 2 Q7(b) (14 marks)
-                  are the highest-tariff reading questions &mdash; prioritise these in revision
+                  are the highest-tariff reading questions - prioritise these in revision
                 </li>
                 <li className="flex items-start gap-2">
                   <span className="mt-1 h-1.5 w-1.5 shrink-0 rounded-full bg-warn" />
                   The writing sections on both papers total <strong>80 marks</strong>, exactly half
-                  the GCSE &mdash; improving your writing is one of the fastest ways to raise your
-                  grade
+                  the GCSE - improving your writing is one of the fastest ways to raise your grade
                 </li>
               </ul>
             </div>

@@ -339,9 +339,9 @@ export const PrintableWorksheet = forwardRef<HTMLDivElement, PrintableWorksheetP
           {/* ── Footer ────────────────────────────────────────── */}
           <div className="worksheet-footer mt-8 pt-3 border-t border-border text-center text-xs text-muted-foreground">
             {schoolName && <span>{schoolName}</span>}
-            {schoolName && title && <span> &mdash; </span>}
+            {schoolName && title && <span> - </span>}
             <span>{title}</span>
-            {computedTotalMarks > 0 && <span> &mdash; Total: {computedTotalMarks} marks</span>}
+            {computedTotalMarks > 0 && <span> - Total: {computedTotalMarks} marks</span>}
           </div>
         </div>
       </>

@@ -362,7 +362,7 @@ export default async function SynonymVocabularyPage() {
             <p>
               Both the &ldquo;{SYNONYM_SELECT.name}&rdquo; task and the &ldquo;
               {MULTIPLE_CHOICE.name}&rdquo; task draw on the same reading skill:{' '}
-              <span className="font-medium text-foreground">{RAO4.code}</span> &mdash;{' '}
+              <span className="font-medium text-foreground">{RAO4.code}</span> -{' '}
               {RAO4.descriptor.toLowerCase()} In plain terms, the examiner wants proof that you can
               work out a word&rsquo;s meaning from the words around it.
             </p>
@@ -486,7 +486,7 @@ export default async function SynonymVocabularyPage() {
         {/* Practice bank */}
         <section aria-labelledby="practice" className="mb-10 px-1">
           <h2 id="practice" className="mb-2 font-heading text-2xl font-semibold text-foreground">
-            Practice bank &mdash; {TOTAL_ITEMS} original items
+            Practice bank - {TOTAL_ITEMS} original items
           </h2>
           <p className="mb-8 text-sm text-muted-foreground">
             Cover the answers. For each sentence, pick the option closest in meaning to the bold
@@ -538,7 +538,7 @@ export default async function SynonymVocabularyPage() {
                         Answer &amp; reason
                       </summary>
                       <p className="mt-2 leading-relaxed text-muted-foreground">
-                        <span className="font-semibold text-foreground">{item.answer}</span> &mdash;{' '}
+                        <span className="font-semibold text-foreground">{item.answer}</span> -{' '}
                         {item.rationale}
                       </p>
                     </details>

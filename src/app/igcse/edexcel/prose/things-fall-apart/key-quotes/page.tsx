@@ -73,7 +73,7 @@ const themeGroups = [
         text: 'The clan was like a lizard; if it lost its tail ... soon grew another.',
         speaker: 'Narrator',
         analysis:
-          'Achebe presents Igbo society as resilient and adaptive before colonialism. Change is not inherently destructive \u2014 it is the kind of change that matters.',
+          'Achebe presents Igbo society as resilient and adaptive before colonialism. Change is not inherently destructive - it is the kind of change that matters.',
       },
       {
         text: 'It was the poetry of the new religion, something felt in the marrow.',
@@ -85,7 +85,7 @@ const themeGroups = [
         text: 'He mourned for the clan, which he saw breaking up and falling apart.',
         speaker: 'Narrator',
         analysis:
-          'Okonkwo\u2019s grief is real but his proposed solution \u2014 violence \u2014 cannot reverse the process. The mourning is the novel\u2019s tragic register.',
+          'Okonkwo\u2019s grief is real but his proposed solution - violence - cannot reverse the process. The mourning is the novel\u2019s tragic register.',
       },
     ],
   },
@@ -96,7 +96,7 @@ const themeGroups = [
         text: 'When a man says yes his chi also affirms.',
         speaker: 'Proverb',
         analysis:
-          'Igbo theology ties personal agency to spiritual destiny. Okonkwo\u2019s success seems to confirm this \u2014 until events overtake him.',
+          'Igbo theology ties personal agency to spiritual destiny. Okonkwo\u2019s success seems to confirm this - until events overtake him.',
       },
       {
         text: 'Clearly his personal god or chi was not made for great things.',
@@ -125,7 +125,7 @@ const themeGroups = [
         text: 'Proverbs are the palm-oil with which words are eaten.',
         speaker: 'Narrator',
         analysis:
-          'Language itself is presented through an image of nourishment \u2014 food, communal eating, maternal provision. Form and theme merge.',
+          'Language itself is presented through an image of nourishment - food, communal eating, maternal provision. Form and theme merge.',
       },
       {
         text: 'She walked through Okonkwo\u2019s hut ... and had not even looked at her dangerously.',
@@ -154,7 +154,7 @@ const themeGroups = [
         text: 'The Pacification of the Primitive Tribes of the Lower Niger.',
         speaker: 'District Commissioner\u2019s book title',
         analysis:
-          'The final sentence of the novel. Every word \u2014 "pacification", "primitive", "tribes" \u2014 is a colonial distortion. Achebe\u2019s novel is the counter-text.',
+          'The final sentence of the novel. Every word - "pacification", "primitive", "tribes" - is a colonial distortion. Achebe\u2019s novel is the counter-text.',
       },
     ],
   },
@@ -190,8 +190,8 @@ export default function ThingsFallApartKeyQuotesPage() {
             Things Fall Apart: Key Quotes
           </h1>
           <p className="mt-3 max-w-2xl text-body-lg text-muted-foreground">
-            Twenty essential quotations organised by theme &mdash; with speaker, context and
-            analysis for exam revision.
+            Twenty essential quotations organised by theme - with speaker, context and analysis for
+            exam revision.
           </p>
         </div>
       </section>
@@ -222,7 +222,7 @@ export default function ThingsFallApartKeyQuotesPage() {
                 <blockquote className="border-s-2 border-primary/40 ps-3 text-body-md italic text-foreground">
                   &ldquo;{q.text}&rdquo;
                 </blockquote>
-                <p className="mt-2 text-body-xs font-medium text-primary">&mdash; {q.speaker}</p>
+                <p className="mt-2 text-body-xs font-medium text-primary">- {q.speaker}</p>
                 <p className="mt-2 text-body-sm leading-relaxed text-muted-foreground">
                   {q.analysis}
                 </p>

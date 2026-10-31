@@ -21,12 +21,12 @@ const CONTEXT_SECTIONS: ContextSection[] = [
   {
     title: 'Post-WWII Britain',
     body: [
-      'Lord of the Flies was published in 1954, less than a decade after the end of World War Two. The war had shattered any remaining Victorian confidence in progress and civilisation. Britain had survived the Blitz, endured rationing, and witnessed the Holocaust \u2014 the industrialised murder of six million Jews by a nation previously regarded as one of the most cultured in Europe.',
+      'Lord of the Flies was published in 1954, less than a decade after the end of World War Two. The war had shattered any remaining Victorian confidence in progress and civilisation. Britain had survived the Blitz, endured rationing, and witnessed the Holocaust - the industrialised murder of six million Jews by a nation previously regarded as one of the most cultured in Europe.',
       'The revelation of the concentration camps forced a fundamental rethinking of human nature. If the citizens of Goethe and Beethoven could commit genocide, then civilisation was clearly no guarantee of decency. Golding\u2019s novel asks the question that haunted the post-war generation: is evil an aberration, or is it a permanent feature of human nature that civilisation merely suppresses?',
-      'Britain in the early 1950s was also dealing with the decline of its empire. India had gained independence in 1947, and colonial territories across Africa and Asia were demanding self-rule. The confidence of the British ruling class \u2014 the class represented by the boys\u2019 public-school background \u2014 was being challenged on every front.',
+      'Britain in the early 1950s was also dealing with the decline of its empire. India had gained independence in 1947, and colonial territories across Africa and Asia were demanding self-rule. The confidence of the British ruling class - the class represented by the boys\u2019 public-school background - was being challenged on every front.',
     ],
     keyPoint:
-      'The post-war context is essential to understanding Golding\u2019s pessimism. He is not writing a theoretical argument about human nature \u2014 he is responding to historical evidence that civilisation can collapse into barbarism. The Holocaust proved that the beast is real.',
+      'The post-war context is essential to understanding Golding\u2019s pessimism. He is not writing a theoretical argument about human nature - he is responding to historical evidence that civilisation can collapse into barbarism. The Holocaust proved that the beast is real.',
     examLink:
       'Reference WWII and the Holocaust when discussing Golding\u2019s views on human nature. Examiners reward candidates who show that the novel is a response to specific historical events, not an abstract philosophical exercise.',
   },
@@ -34,11 +34,11 @@ const CONTEXT_SECTIONS: ContextSection[] = [
     title: 'Golding\u2019s War Experience',
     body: [
       'William Golding (1911\u20131993) served in the Royal Navy during World War Two. He commanded a rocket-launching ship during the D-Day landings at Normandy in June 1944 and saw combat in the Atlantic. His wartime experience fundamentally changed his understanding of human nature.',
-      'Before the war, Golding later admitted, he had believed in the essential goodness of humanity. The war destroyed this belief. He witnessed ordinary men \u2014 not monsters, not psychopaths, but ordinary sailors and soldiers \u2014 commit acts of cruelty when given the opportunity and the permission of authority. He concluded that civilisation is a thin veneer and that savagery lies just beneath the surface of every human being.',
+      'Before the war, Golding later admitted, he had believed in the essential goodness of humanity. The war destroyed this belief. He witnessed ordinary men - not monsters, not psychopaths, but ordinary sailors and soldiers - commit acts of cruelty when given the opportunity and the permission of authority. He concluded that civilisation is a thin veneer and that savagery lies just beneath the surface of every human being.',
       'Golding said that his wartime experience showed him "what people were capable of doing", and that "man produces evil as a bee produces honey". This conviction is the philosophical foundation of Lord of the Flies.',
     ],
     keyPoint:
-      'Golding\u2019s war service is the biographical origin of the novel\u2019s thesis. He did not theorise about human evil \u2014 he observed it first-hand in ordinary men under extraordinary circumstances. The boys on the island are his dramatic experiment to test this observation.',
+      'Golding\u2019s war service is the biographical origin of the novel\u2019s thesis. He did not theorise about human evil - he observed it first-hand in ordinary men under extraordinary circumstances. The boys on the island are his dramatic experiment to test this observation.',
     examLink:
       'Quote Golding\u2019s "man produces evil as a bee produces honey" statement. This single sentence encapsulates his worldview and provides a powerful AO3 reference that examiners recognise.',
   },
@@ -46,8 +46,8 @@ const CONTEXT_SECTIONS: ContextSection[] = [
     title: 'The Atomic Age',
     body: [
       'The atomic bombs dropped on Hiroshima (6 August 1945) and Nagasaki (9 August 1945) killed over 200,000 people and inaugurated a new era of existential fear. For the first time in human history, humanity possessed the technology to destroy itself entirely. The nuclear arms race between the United States and the Soviet Union dominated the 1950s, and the threat of annihilation was ever-present.',
-      'Lord of the Flies is set during a nuclear war. The boys are being evacuated from Britain when their plane is shot down. The dead parachutist \u2014 the "beast from air" \u2014 is a casualty of the aerial conflict happening above the island. The island itself is scarred by the crash, described as a "scar" in the landscape, connecting the boys\u2019 arrival to the violence of the wider war.',
-      'Golding uses the nuclear context to frame the boys\u2019 savagery within a larger argument: the adults who sent them away are engaged in the same violence on a global scale. The naval officer who "rescues" the boys at the end is himself part of a warship. There is no rescue \u2014 only a transfer from one arena of human violence to another.',
+      'Lord of the Flies is set during a nuclear war. The boys are being evacuated from Britain when their plane is shot down. The dead parachutist - the "beast from air" - is a casualty of the aerial conflict happening above the island. The island itself is scarred by the crash, described as a "scar" in the landscape, connecting the boys\u2019 arrival to the violence of the wider war.',
+      'Golding uses the nuclear context to frame the boys\u2019 savagery within a larger argument: the adults who sent them away are engaged in the same violence on a global scale. The naval officer who "rescues" the boys at the end is himself part of a warship. There is no rescue - only a transfer from one arena of human violence to another.',
     ],
     keyPoint:
       'The atomic age provides the novel\u2019s framing device and its bleakest insight: the boys\u2019 island is a microcosm of the adult world. The adults have not transcended savagery; they have merely industrialised it. The naval officer represents civilisation\u2019s failure, not its triumph.',
@@ -57,12 +57,12 @@ const CONTEXT_SECTIONS: ContextSection[] = [
   {
     title: 'Response to The Coral Island',
     body: [
-      'R.M. Ballantyne\u2019s The Coral Island (1857) is a Victorian adventure novel in which three British boys \u2014 Ralph, Jack and Peterkin \u2014 are shipwrecked on a Pacific island and thrive through courage, resourcefulness and Christian virtue. They encounter "savages" (Pacific Islanders depicted in deeply racist terms) and pirates, but the boys remain morally upright throughout. The novel reflects the supreme confidence of Victorian Britain in its own civilisation and racial superiority.',
+      'R.M. Ballantyne\u2019s The Coral Island (1857) is a Victorian adventure novel in which three British boys - Ralph, Jack and Peterkin - are shipwrecked on a Pacific island and thrive through courage, resourcefulness and Christian virtue. They encounter "savages" (Pacific Islanders depicted in deeply racist terms) and pirates, but the boys remain morally upright throughout. The novel reflects the supreme confidence of Victorian Britain in its own civilisation and racial superiority.',
       'Golding deliberately names his protagonists Ralph and Jack as a direct reference to Ballantyne\u2019s characters. Lord of the Flies is a systematic demolition of The Coral Island\u2019s assumptions. Where Ballantyne\u2019s boys maintain civilised standards, Golding\u2019s descend into savagery. Where Ballantyne locates evil in racial "others," Golding locates it within the British boys themselves.',
       'The naval officer at the end of Lord of the Flies breaks off a rebuke: "I should have thought that a pack of British boys ... I mean \u2014" Moments later, in a separate reply to Ralph, he explicitly compares the boys to The Coral Island. The officer\u2019s stammering inability to finish the sentence reveals that Ballantyne\u2019s comfortable assumptions have been proved wrong.',
     ],
     keyPoint:
-      'Lord of the Flies is an anti-Coral Island. Golding takes the same premise \u2014 British boys stranded on a tropical island \u2014 and reaches the opposite conclusion. Where Ballantyne saw civilisation as innate, Golding sees it as learned, fragile and easily destroyed.',
+      'Lord of the Flies is an anti-Coral Island. Golding takes the same premise - British boys stranded on a tropical island - and reaches the opposite conclusion. Where Ballantyne saw civilisation as innate, Golding sees it as learned, fragile and easily destroyed.',
     examLink:
       'Reference The Coral Island by name. Examiners reward candidates who show that Golding wrote the novel as a deliberate challenge to Victorian optimism about British civilisation and childhood innocence.',
   },
@@ -70,11 +70,11 @@ const CONTEXT_SECTIONS: ContextSection[] = [
     title: 'Original Sin and Human Nature',
     body: [
       'Golding was deeply influenced by the Christian doctrine of original sin: the belief that all human beings are born with an innate tendency toward evil, inherited from the Fall of Adam and Eve in the Garden of Eden. This theological position shapes every aspect of the novel.',
-      'The island itself functions as a fallen Eden. It is initially described in paradisiacal terms \u2014 fruit, lagoon, warm beaches \u2014 but the boys corrupt it through violence, fire and the killing of the sow. Simon\u2019s glade, the most Edenic space on the island, becomes the site of the Lord of the Flies: a pig\u2019s head swarming with insects, a literal corruption of paradise.',
-      'Simon functions as a Christ figure: he is the only character who understands the true nature of the beast, he retreats to a solitary place to meditate, and he is murdered by the other boys when he tries to bring them the truth. His death is described in sacrificial, almost liturgical language. Golding \u2014 a Christian \u2014 presents Simon\u2019s murder as the re-enactment of humanity\u2019s oldest crime: the killing of the innocent by the guilty.',
+      'The island itself functions as a fallen Eden. It is initially described in paradisiacal terms - fruit, lagoon, warm beaches - but the boys corrupt it through violence, fire and the killing of the sow. Simon\u2019s glade, the most Edenic space on the island, becomes the site of the Lord of the Flies: a pig\u2019s head swarming with insects, a literal corruption of paradise.',
+      'Simon functions as a Christ figure: he is the only character who understands the true nature of the beast, he retreats to a solitary place to meditate, and he is murdered by the other boys when he tries to bring them the truth. His death is described in sacrificial, almost liturgical language. Golding - a Christian - presents Simon\u2019s murder as the re-enactment of humanity\u2019s oldest crime: the killing of the innocent by the guilty.',
     ],
     keyPoint:
-      'Original sin provides the novel\u2019s philosophical framework. Golding argues that evil is not created by bad environments or bad systems \u2014 it is inherent in human nature. The island is a controlled experiment that proves the doctrine: remove civilisation and the Fall happens again.',
+      'Original sin provides the novel\u2019s philosophical framework. Golding argues that evil is not created by bad environments or bad systems - it is inherent in human nature. The island is a controlled experiment that proves the doctrine: remove civilisation and the Fall happens again.',
     examLink:
       'Reference original sin and the Eden parallels when discussing Golding\u2019s message. This shows sophisticated understanding of the novel\u2019s theological underpinning. Connect the island\u2019s initial beauty to its corruption.',
   },
@@ -82,7 +82,7 @@ const CONTEXT_SECTIONS: ContextSection[] = [
     title: 'The Cold War',
     body: [
       'The Cold War (1947\u20131991) between the United States and the Soviet Union defined the geopolitical context in which Golding wrote. The two superpowers divided the world into hostile blocs, accumulated vast nuclear arsenals, and fought proxy wars across Asia, Africa and Latin America. The threat of nuclear annihilation was a constant reality.',
-      'The novel\u2019s setting \u2014 an evacuation during a nuclear war \u2014 reflects Cold War anxieties directly. The boys are not simply stranded; they are casualties of the adult world\u2019s failure to coexist peacefully. The dead parachutist, mistaken for the beast, is literally a product of the war above.',
+      'The novel\u2019s setting - an evacuation during a nuclear war - reflects Cold War anxieties directly. The boys are not simply stranded; they are casualties of the adult world\u2019s failure to coexist peacefully. The dead parachutist, mistaken for the beast, is literally a product of the war above.',
       'The division between Ralph and Jack mirrors the Cold War binary of democracy versus authoritarianism. Ralph leads through consent, assembly and debate; Jack leads through fear, ritual and force. Golding shows that both systems are unstable and that the authoritarian one, while destructive, is psychologically more powerful because it appeals to humanity\u2019s darker instincts.',
     ],
     keyPoint:
@@ -94,11 +94,11 @@ const CONTEXT_SECTIONS: ContextSection[] = [
     title: 'The Nobel Prize and Literary Legacy',
     body: [
       'William Golding was awarded the Nobel Prize in Literature in 1983, with the committee citing his novels for illuminating "the human condition in the world of today." Lord of the Flies, his first and most famous novel, has been in continuous print since 1954 and is one of the most widely studied texts in English-speaking schools worldwide.',
-      'The novel\u2019s enduring relevance lies in its refusal to offer comfort. Every generation that studies it confronts the same question: is civilisation strong enough to contain human savagery? The answer Golding gives \u2014 an uncertain, qualified "only just, and not always" \u2014 remains as unsettling today as it was in 1954.',
+      'The novel\u2019s enduring relevance lies in its refusal to offer comfort. Every generation that studies it confronts the same question: is civilisation strong enough to contain human savagery? The answer Golding gives - an uncertain, qualified "only just, and not always" - remains as unsettling today as it was in 1954.',
       'Golding wrote eleven further novels, including The Inheritors (1955), Pincher Martin (1956) and Rites of Passage (1980), all of which explore extreme situations that test the limits of human morality. But Lord of the Flies remains his defining achievement: a novel that changed how we think about children, civilisation and the darkness within.',
     ],
     keyPoint:
-      'The Nobel Prize confirmed Golding\u2019s status as one of the twentieth century\u2019s most important writers. Lord of the Flies endures because its central question \u2014 what are humans really like when the rules are removed? \u2014 never becomes irrelevant.',
+      'The Nobel Prize confirmed Golding\u2019s status as one of the twentieth century\u2019s most important writers. Lord of the Flies endures because its central question - what are humans really like when the rules are removed? - never becomes irrelevant.',
     examLink:
       'Mentioning the Nobel Prize is useful in a conclusion to show that Golding\u2019s ideas have been recognised as significant well beyond the classroom. It adds weight to your discussion of his purpose.',
   },
@@ -132,7 +132,7 @@ const TIMELINE: TimelineEvent[] = [
   },
   {
     year: '1944',
-    event: 'D-Day \u2014 Golding commands a landing craft',
+    event: 'D-Day - Golding commands a landing craft',
     relevance: 'Direct combat experience shapes his view of human nature',
   },
   {

@@ -179,8 +179,8 @@ export default async function AqaEnglishLiteraturePage() {
         <h2 className="text-2xl font-bold text-foreground">Exam Overview</h2>
         <p className="mt-3 max-w-3xl text-muted-foreground leading-relaxed">
           AQA GCSE English Literature (8702) is assessed through <strong>two written exams</strong>{' '}
-          with <strong>no coursework</strong>. Both papers are <strong>closed-book</strong> &mdash;
-          you cannot take your texts into the exam. The qualification is worth{' '}
+          with <strong>no coursework</strong>. Both papers are <strong>closed-book</strong> - you
+          cannot take your texts into the exam. The qualification is worth{' '}
           <strong>160 marks in total</strong>.
         </p>
 
@@ -303,7 +303,7 @@ export default async function AqaEnglishLiteraturePage() {
               </tr>
               <tr>
                 <td className="py-3 pe-4 font-medium text-muted-foreground">Section C</td>
-                <td className="py-3 pe-4 text-muted-foreground">&mdash;</td>
+                <td className="py-3 pe-4 text-muted-foreground">-</td>
                 <td className="py-3 text-muted-foreground">
                   Unseen poetry (analysis + comparison)
                 </td>

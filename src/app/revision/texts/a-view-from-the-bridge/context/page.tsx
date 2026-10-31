@@ -28,20 +28,20 @@ const CONTEXT_SECTIONS: ContextSection[] = [
     title: '1950s Red Hook, Brooklyn',
     body: [
       'Red Hook was a dockside neighbourhood on the western edge of Brooklyn, dominated by the shipping industry and its longshoremen. In the 1950s it was a tight-knit, working-class, predominantly Italian-American community where families had lived for generations and where the rhythms of daily life were shaped by the waterfront.',
-      'The docks were controlled by powerful unions, and work was distributed through a "shape-up" system where men gathered each morning hoping to be selected for the day. This created both solidarity and competition. Corruption was endemic \u2014 the waterfront was controlled partly by organised crime \u2014 and loyalty within the community was a matter of survival as well as honour.',
+      'The docks were controlled by powerful unions, and work was distributed through a "shape-up" system where men gathered each morning hoping to be selected for the day. This created both solidarity and competition. Corruption was endemic - the waterfront was controlled partly by organised crime - and loyalty within the community was a matter of survival as well as honour.',
       'Housing was cramped, families lived on top of each other and privacy was rare. Eddie\u2019s apartment, where much of the action takes place, is a pressure cooker: small enough that every emotion is visible and every conversation audible. Miller uses the physical setting to create the claustrophobic intensity the tragedy requires.',
     ],
     keyPoint:
-      'Red Hook is not just a setting but a character. The community\u2019s unwritten codes of loyalty and silence \u2014 particularly around illegal immigration \u2014 are what Eddie violates when he makes his phone call. Miller uses the neighbourhood to show that justice operates differently in close communities than it does in courtrooms.',
+      'Red Hook is not just a setting but a character. The community\u2019s unwritten codes of loyalty and silence - particularly around illegal immigration - are what Eddie violates when he makes his phone call. Miller uses the neighbourhood to show that justice operates differently in close communities than it does in courtrooms.',
     examLink:
       'Name Red Hook and describe it specifically. Examiners reward candidates who treat the setting as integral to the play\u2019s themes, not just background scenery. Connect the physical claustrophobia of the apartment to Eddie\u2019s psychological claustrophobia.',
   },
   {
     title: 'Italian Immigration to America',
     body: [
-      'Italian immigration to America peaked between 1880 and 1920, when millions of people left southern Italy and Sicily \u2014 regions devastated by poverty, malaria and political instability \u2014 in search of work. By the 1950s, established Italian-American communities existed in every major American city, with Brooklyn\u2019s being among the largest and most cohesive.',
+      'Italian immigration to America peaked between 1880 and 1920, when millions of people left southern Italy and Sicily - regions devastated by poverty, malaria and political instability - in search of work. By the 1950s, established Italian-American communities existed in every major American city, with Brooklyn\u2019s being among the largest and most cohesive.',
       'Illegal immigration from Italy continued after the formal quota systems of the 1920s and the Immigration and Nationality Act of 1952 restricted legal entry. Immigrants were smuggled into port cities and absorbed into existing communities. Harbouring illegals was common and openly tolerated, provided the community code of silence was maintained.',
-      'The code of omerta \u2014 silence \u2014 was central to the culture Marco and Eddie share. Informing to the authorities was considered the worst possible betrayal: it endangered not just the individual but the entire network of families who depended on each other. Eddie\u2019s phone call violates this code absolutely, and the community\u2019s response \u2014 shunning, accusation, violence \u2014 is predictable within the cultural framework Miller establishes.',
+      'The code of omerta - silence - was central to the culture Marco and Eddie share. Informing to the authorities was considered the worst possible betrayal: it endangered not just the individual but the entire network of families who depended on each other. Eddie\u2019s phone call violates this code absolutely, and the community\u2019s response - shunning, accusation, violence - is predictable within the cultural framework Miller establishes.',
     ],
     keyPoint:
       'The play\u2019s immigration context explains why Eddie\u2019s phone call is the unforgivable sin. In a community built on mutual protection of illegal immigrants, informing is not just a personal betrayal but an attack on the collective. Miller uses this to give Eddie\u2019s action the weight of a taboo violation.',
@@ -51,12 +51,12 @@ const CONTEXT_SECTIONS: ContextSection[] = [
   {
     title: 'Waterfront Workers and Longshoremen',
     body: [
-      'The longshoremen of Red Hook loaded and unloaded cargo ships by hand. The work was physically brutal, poorly paid and irregular. Men were hired by the day through the "shape-up" \u2014 a system in which a hiring boss selected workers from a crowd each morning. Those not chosen went home with nothing.',
+      'The longshoremen of Red Hook loaded and unloaded cargo ships by hand. The work was physically brutal, poorly paid and irregular. Men were hired by the day through the "shape-up" - a system in which a hiring boss selected workers from a crowd each morning. Those not chosen went home with nothing.',
       'This system bred both solidarity and exploitation. Workers depended on one another and on the goodwill of the hiring bosses, who were often connected to organised crime. The waterfront was investigated by the New York State Crime Commission in 1951, and journalist Malcolm Johnson\u2019s Pulitzer Prize-winning series "Crime on the Waterfront" (1948) exposed the corruption that dominated dock labour.',
-      'Elia Kazan\u2019s film On the Waterfront (1954) dramatised the same milieu. Kazan, who had named names before HUAC, presented informing as heroic. Miller, who refused to name names, wrote A View from the Bridge partly as a response \u2014 showing the devastating consequences of betrayal within a working community.',
+      'Elia Kazan\u2019s film On the Waterfront (1954) dramatised the same milieu. Kazan, who had named names before HUAC, presented informing as heroic. Miller, who refused to name names, wrote A View from the Bridge partly as a response - showing the devastating consequences of betrayal within a working community.',
     ],
     keyPoint:
-      'The waterfront is not just Eddie\u2019s workplace; it is the economic engine that sustains the community\u2019s code of honour. The precariousness of dock work \u2014 where a man\u2019s livelihood depends on community trust \u2014 is what makes Eddie\u2019s betrayal so catastrophic.',
+      'The waterfront is not just Eddie\u2019s workplace; it is the economic engine that sustains the community\u2019s code of honour. The precariousness of dock work - where a man\u2019s livelihood depends on community trust - is what makes Eddie\u2019s betrayal so catastrophic.',
     examLink:
       'Reference the shape-up system and waterfront corruption. This level of specific detail demonstrates that you understand the economic pressures that shape the characters\u2019 moral choices.',
   },
@@ -78,8 +78,8 @@ const CONTEXT_SECTIONS: ContextSection[] = [
     body: [
       'Miller consciously modelled A View from the Bridge on Greek tragedy. Alfieri\u2019s opening monologue reaches back to Roman times and explicitly invokes the classical sense of fate. The play\u2019s tight structure (a single main setting, a compressed timeline, an inevitable ending) mirrors the classical unities of time, place and action, rules that Renaissance critics formulated and credited to Aristotle.',
       'In Greek tragedy, the protagonist is a figure of stature who is destroyed by a flaw he cannot see: hubris (excessive pride), hamartia (a fatal error of judgment) or ate (divinely sent blindness). Eddie fits all three: his pride prevents him from seeing his own desires, his error is the phone call, and his blindness to his feelings is the engine of his destruction.',
-      'Alfieri functions as the chorus of Greek drama: a commentator who stands outside the action, addresses the audience directly and provides the moral framework within which the tragedy is understood. His inability to prevent the catastrophe is central to the form \u2014 the chorus sees everything and changes nothing, forcing the audience to ask why tragedy happens rather than whether it can be stopped.',
-      'The play\u2019s ending \u2014 Eddie\u2019s death at Marco\u2019s hands \u2014 echoes the violence of Greek tragedy, where the protagonist\u2019s destruction is both punishment and revelation. Miller insists that working-class characters deserve the same tragic dignity that Sophocles gave to kings.',
+      'Alfieri functions as the chorus of Greek drama: a commentator who stands outside the action, addresses the audience directly and provides the moral framework within which the tragedy is understood. His inability to prevent the catastrophe is central to the form - the chorus sees everything and changes nothing, forcing the audience to ask why tragedy happens rather than whether it can be stopped.',
+      'The play\u2019s ending - Eddie\u2019s death at Marco\u2019s hands - echoes the violence of Greek tragedy, where the protagonist\u2019s destruction is both punishment and revelation. Miller insists that working-class characters deserve the same tragic dignity that Sophocles gave to kings.',
     ],
     keyPoint:
       'The Greek tragedy structure gives the play its formal power. Without it, Eddie\u2019s story would be a domestic dispute. With it, his story becomes universal: a man destroyed by feelings he cannot name, in a world that offers no mercy for self-ignorance.',
@@ -102,20 +102,20 @@ const CONTEXT_SECTIONS: ContextSection[] = [
     title: 'Codes of Honour in Immigrant Communities',
     body: [
       'The Italian-American community in Red Hook operated according to an unwritten code of honour that predated American law. This code prioritised loyalty to family and community above obedience to the state. It demanded that disputes be settled internally, that illegal immigrants be sheltered without question, and that no member of the community ever cooperate with outside authorities.',
-      'This code has its roots in southern Italian and Sicilian culture, where centuries of foreign domination \u2014 by Spain, France, Austria and the Bourbon monarchy \u2014 had created a deep distrust of government. For many immigrants, the state was not a protector but an oppressor, and the only reliable source of justice was the community itself.',
-      'Eddie\u2019s phone call to Immigration is a violation of the deepest principle of this code. His punishment \u2014 public shaming, loss of his name, and ultimately death \u2014 is the community\u2019s enforcement mechanism. Marco\u2019s accusation "That one! He killed my children!" is not just personal anger but a formal denunciation within the honour system.',
+      'This code has its roots in southern Italian and Sicilian culture, where centuries of foreign domination - by Spain, France, Austria and the Bourbon monarchy - had created a deep distrust of government. For many immigrants, the state was not a protector but an oppressor, and the only reliable source of justice was the community itself.',
+      'Eddie\u2019s phone call to Immigration is a violation of the deepest principle of this code. His punishment - public shaming, loss of his name, and ultimately death - is the community\u2019s enforcement mechanism. Marco\u2019s accusation "That one! He killed my children!" is not just personal anger but a formal denunciation within the honour system.',
     ],
     keyPoint:
       'The honour code is the moral framework within which Eddie\u2019s tragedy operates. He is destroyed not by American law but by the older, stricter code of the community he has betrayed. Miller shows that immigrant communities create their own systems of justice, which can be more absolute than any courtroom.',
     examLink:
-      'Discuss the honour code as a system with specific rules and consequences. Avoid treating it as simply "old-fashioned" \u2014 show that it is a rational response to historical circumstances of oppression and distrust of the state.',
+      'Discuss the honour code as a system with specific rules and consequences. Avoid treating it as simply "old-fashioned" - show that it is a rational response to historical circumstances of oppression and distrust of the state.',
   },
   {
     title: 'The American Dream',
     body: [
-      'The American Dream \u2014 the belief that hard work and determination can bring prosperity, freedom and social mobility \u2014 is the engine that drives immigration in the play. Marco and Rodolpho come to America not to escape political persecution but to earn money and build better lives: Marco to feed his family in Italy, Rodolpho to reinvent himself as an American.',
-      'Eddie himself is a product of the Dream. He has achieved a modest version of it: steady work, a home, a family. But his version of the Dream is threatened by Catherine\u2019s desire for independence and Rodolpho\u2019s ambition. Eddie\u2019s tragedy is partly the tragedy of a man whose limited Dream \u2014 control over his household \u2014 is being outgrown by the people he loves.',
-      'Miller complicates the Dream by showing its costs. Marco\u2019s Dream requires separation from his wife and children. Rodolpho\u2019s Dream requires him to endure Eddie\u2019s contempt. Eddie\u2019s Dream requires the submission of Catherine. The play suggests that the American Dream, while powerful, exacts a price from everyone who pursues it \u2014 and that the price is often paid by the most vulnerable.',
+      'The American Dream - the belief that hard work and determination can bring prosperity, freedom and social mobility - is the engine that drives immigration in the play. Marco and Rodolpho come to America not to escape political persecution but to earn money and build better lives: Marco to feed his family in Italy, Rodolpho to reinvent himself as an American.',
+      'Eddie himself is a product of the Dream. He has achieved a modest version of it: steady work, a home, a family. But his version of the Dream is threatened by Catherine\u2019s desire for independence and Rodolpho\u2019s ambition. Eddie\u2019s tragedy is partly the tragedy of a man whose limited Dream - control over his household - is being outgrown by the people he loves.',
+      'Miller complicates the Dream by showing its costs. Marco\u2019s Dream requires separation from his wife and children. Rodolpho\u2019s Dream requires him to endure Eddie\u2019s contempt. Eddie\u2019s Dream requires the submission of Catherine. The play suggests that the American Dream, while powerful, exacts a price from everyone who pursues it - and that the price is often paid by the most vulnerable.',
     ],
     keyPoint:
       'The American Dream connects every character in the play. Each pursues a version of it, and each pays a different price. Miller does not reject the Dream outright, but he shows that it operates within structures of power, gender and law that determine who benefits and who suffers.',

@@ -114,7 +114,7 @@ function Quote({
     <div className="rounded-lg border-s-4 border-accent bg-primary/10 p-4">
       <p className="text-sm font-semibold italic text-foreground">&ldquo;{text}&rdquo;</p>
       <p className="mt-1 text-xs text-muted-foreground">
-        {speaker} &mdash; {act}
+        {speaker} - {act}
       </p>
       <p className="mt-2 text-sm text-muted-foreground">{analysis}</p>
     </div>
@@ -153,7 +153,7 @@ export default function MuchAdoRevisionPage() {
           </span>
         </div>
         <h1 className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
-          Much Ado About Nothing &mdash; Complete Revision Guide
+          Much Ado About Nothing - Complete Revision Guide
         </h1>
         <p className="mt-3 max-w-3xl text-lg text-muted-foreground">
           Everything you need to know for your GCSE English Literature exam. Scene-by-scene plot,
@@ -200,7 +200,7 @@ export default function MuchAdoRevisionPage() {
                 <span className="flex h-6 w-6 items-center justify-center rounded-full bg-blue-500/15 text-xs font-bold text-foreground">
                   1
                 </span>
-                Act 1 &mdash; Arrival and Sparring
+                Act 1 - Arrival and Sparring
               </h3>
               <p className="mt-2 text-sm text-muted-foreground leading-relaxed">
                 A messenger arrives in Messina to announce that Don Pedro, Prince of Aragon, is
@@ -244,7 +244,7 @@ export default function MuchAdoRevisionPage() {
                 <span className="flex h-6 w-6 items-center justify-center rounded-full bg-blue-500/15 text-xs font-bold text-foreground">
                   2
                 </span>
-                Act 2 &mdash; The Masked Ball and the Gulling Plots
+                Act 2 - The Masked Ball and the Gulling Plots
               </h3>
               <p className="mt-2 text-sm text-muted-foreground leading-relaxed">
                 At the masked ball, Don Pedro successfully woos Hero on Claudio&apos;s behalf.
@@ -270,8 +270,7 @@ export default function MuchAdoRevisionPage() {
                     &bull; Claudio and Hero betrothed; the week-long wait for the wedding (2.1)
                   </li>
                   <li>
-                    &bull; The gulling of Benedick in the orchard &mdash; a pivotal comic scene
-                    (2.3)
+                    &bull; The gulling of Benedick in the orchard - a pivotal comic scene (2.3)
                   </li>
                 </ul>
               </div>
@@ -282,7 +281,7 @@ export default function MuchAdoRevisionPage() {
                 <span className="flex h-6 w-6 items-center justify-center rounded-full bg-blue-500/15 text-xs font-bold text-foreground">
                   3
                 </span>
-                Act 3 &mdash; The Gulling of Beatrice and Don John&apos;s Plot
+                Act 3 - The Gulling of Beatrice and Don John&apos;s Plot
               </h3>
               <p className="mt-2 text-sm text-muted-foreground leading-relaxed">
                 Hero and Ursula carry out the gulling of Beatrice (3.1): Beatrice overhears them
@@ -307,8 +306,7 @@ export default function MuchAdoRevisionPage() {
                     adieu!&rdquo; (3.1)
                   </li>
                   <li>
-                    &bull; Benedick shaves his beard and acts lovesick &mdash; comic transformation
-                    (3.2)
+                    &bull; Benedick shaves his beard and acts lovesick - comic transformation (3.2)
                   </li>
                   <li>&bull; Don John tells Claudio and Don Pedro that Hero is disloyal (3.2)</li>
                   <li>&bull; The Watch arrest Borachio, after Dogberry has gone (3.3)</li>
@@ -324,7 +322,7 @@ export default function MuchAdoRevisionPage() {
                 <span className="flex h-6 w-6 items-center justify-center rounded-full bg-blue-500/15 text-xs font-bold text-foreground">
                   4
                 </span>
-                Act 4 &mdash; The Shaming of Hero
+                Act 4 - The Shaming of Hero
               </h3>
               <p className="mt-2 text-sm text-muted-foreground leading-relaxed">
                 The wedding scene (4.1) is the play&apos;s dramatic climax. At the altar, Claudio
@@ -364,7 +362,7 @@ export default function MuchAdoRevisionPage() {
                 <span className="flex h-6 w-6 items-center justify-center rounded-full bg-blue-500/15 text-xs font-bold text-foreground">
                   5
                 </span>
-                Act 5 &mdash; Resolution and Reconciliation
+                Act 5 - Resolution and Reconciliation
               </h3>
               <p className="mt-2 text-sm text-muted-foreground leading-relaxed">
                 Leonato and Antonio confront Claudio and Don Pedro angrily. Benedick then challenges
@@ -416,21 +414,20 @@ export default function MuchAdoRevisionPage() {
                   Beatrice
                 </h3>
                 <p className="mt-3 text-sm text-muted-foreground leading-relaxed">
-                  Beatrice is Shakespeare&apos;s most brilliant comic heroine &mdash; witty,
-                  independent, outspoken, and fiercely loyal. She engages in a &ldquo;merry
-                  war&rdquo; of words with Benedick, using humour to deflect emotional
-                  vulnerability. Her sharp tongue masks deeper feelings: the play hints that she and
-                  Benedick had a previous relationship that ended painfully (&ldquo;he lent it me
-                  awhile; and I gave him use for it, a double heart for a single one&rdquo;). She is
-                  an unconventional woman for her era, openly mocking marriage and male authority.
-                  However, she is not cold &mdash; her passionate defence of Hero in the church
-                  scene reveals her capacity for fierce love and moral courage. Her demand
-                  &ldquo;Kill Claudio&rdquo; is shocking but arises from genuine outrage at
-                  injustice. She recognises that as a woman she cannot challenge Claudio herself
-                  (&ldquo;O that I were a man!&rdquo;), making her frustration with patriarchal
-                  constraints painfully visible. Her eventual willingness to love Benedick
-                  represents not a surrender of independence but a mature acceptance of
-                  vulnerability.
+                  Beatrice is Shakespeare&apos;s most brilliant comic heroine - witty, independent,
+                  outspoken, and fiercely loyal. She engages in a &ldquo;merry war&rdquo; of words
+                  with Benedick, using humour to deflect emotional vulnerability. Her sharp tongue
+                  masks deeper feelings: the play hints that she and Benedick had a previous
+                  relationship that ended painfully (&ldquo;he lent it me awhile; and I gave him use
+                  for it, a double heart for a single one&rdquo;). She is an unconventional woman
+                  for her era, openly mocking marriage and male authority. However, she is not cold
+                  - her passionate defence of Hero in the church scene reveals her capacity for
+                  fierce love and moral courage. Her demand &ldquo;Kill Claudio&rdquo; is shocking
+                  but arises from genuine outrage at injustice. She recognises that as a woman she
+                  cannot challenge Claudio herself (&ldquo;O that I were a man!&rdquo;), making her
+                  frustration with patriarchal constraints painfully visible. Her eventual
+                  willingness to love Benedick represents not a surrender of independence but a
+                  mature acceptance of vulnerability.
                 </p>
                 <div className="mt-3 grid gap-3 sm:grid-cols-2">
                   <Quote
@@ -462,10 +459,10 @@ export default function MuchAdoRevisionPage() {
                   willingness to change shows emotional growth rather than weakness. Most
                   significantly, when Beatrice asks him to &ldquo;Kill Claudio,&rdquo; Benedick
                   faces a profound moral choice: loyalty to his male companions versus loyalty to
-                  Beatrice and justice. He chooses Beatrice, challenging Claudio to a duel &mdash;
-                  an act that requires courage and a willingness to break male bonds. By the end,
-                  Benedick has evolved from a posturing bachelor into a man capable of genuine love
-                  and moral action, while retaining his wit.
+                  Beatrice and justice. He chooses Beatrice, challenging Claudio to a duel - an act
+                  that requires courage and a willingness to break male bonds. By the end, Benedick
+                  has evolved from a posturing bachelor into a man capable of genuine love and moral
+                  action, while retaining his wit.
                 </p>
                 <div className="mt-3 grid gap-3 sm:grid-cols-2">
                   <Quote
@@ -492,13 +489,13 @@ export default function MuchAdoRevisionPage() {
                   Hero is the conventional Elizabethan ideal: modest, obedient, gentle, and largely
                   silent in public. She speaks very little in the early acts, especially around men,
                   which reflects the expected behaviour of well-born women. She contrasts sharply
-                  with Beatrice&apos;s outspokenness. However, Hero is not merely passive &mdash;
-                  she takes an active, witty role in the gulling of Beatrice (3.1), showing
-                  intelligence and humour. Her public shaming at the wedding is the play&apos;s most
-                  devastating scene. She is given almost no opportunity to defend herself; the men
-                  speak over her. Her fainting can be read as her only form of protest in a society
-                  that silences women. The fact that she forgives Claudio and agrees to marry him
-                  has troubled modern readers, but in the play&apos;s comic conventions, her
+                  with Beatrice&apos;s outspokenness. However, Hero is not merely passive - she
+                  takes an active, witty role in the gulling of Beatrice (3.1), showing intelligence
+                  and humour. Her public shaming at the wedding is the play&apos;s most devastating
+                  scene. She is given almost no opportunity to defend herself; the men speak over
+                  her. Her fainting can be read as her only form of protest in a society that
+                  silences women. The fact that she forgives Claudio and agrees to marry him has
+                  troubled modern readers, but in the play&apos;s comic conventions, her
                   &ldquo;resurrection&rdquo; from death represents renewal and the triumph of truth.
                   Hero embodies the vulnerability of women whose reputation and worth depended
                   entirely on male perception.
@@ -521,15 +518,15 @@ export default function MuchAdoRevisionPage() {
                   conventional. He falls in love with Hero&apos;s appearance and social status
                   (&ldquo;Can the world buy such a jewel?&rdquo;), treating her as a possession to
                   be acquired. He does not woo her himself but asks Don Pedro to do so, suggesting a
-                  passivity and immaturity. He is easily deceived &mdash; twice: first by Don John
-                  at the masquerade, then by the window plot. His public shaming of Hero at the
-                  altar is the play&apos;s most disturbing scene. Rather than speaking to Hero
-                  privately, he turns the wedding into a spectacle of humiliation, returning her to
-                  her father like damaged goods. His language is violent and misogynistic
-                  (&ldquo;rotten orange,&rdquo; &ldquo;approved wanton&rdquo;). His remorse after
-                  learning the truth is genuine, but modern audiences may find it insufficient.
-                  Claudio represents the dangers of a patriarchal code that values female chastity
-                  as male property and allows men to destroy women&apos;s lives on hearsay.
+                  passivity and immaturity. He is easily deceived - twice: first by Don John at the
+                  masquerade, then by the window plot. His public shaming of Hero at the altar is
+                  the play&apos;s most disturbing scene. Rather than speaking to Hero privately, he
+                  turns the wedding into a spectacle of humiliation, returning her to her father
+                  like damaged goods. His language is violent and misogynistic (&ldquo;rotten
+                  orange,&rdquo; &ldquo;approved wanton&rdquo;). His remorse after learning the
+                  truth is genuine, but modern audiences may find it insufficient. Claudio
+                  represents the dangers of a patriarchal code that values female chastity as male
+                  property and allows men to destroy women&apos;s lives on hearsay.
                 </p>
                 <Quote
                   text="Give not this rotten orange to your friend"
@@ -552,7 +549,7 @@ export default function MuchAdoRevisionPage() {
                   shaming of Hero, lending his princely authority to Claudio&apos;s accusations
                   without proper investigation. His willingness to believe Don John&apos;s story
                   reveals a troubling credulity and a society where male testimony automatically
-                  outweighs a woman&apos;s word. He is also something of a lonely figure &mdash; he
+                  outweighs a woman&apos;s word. He is also something of a lonely figure - he
                   facilitates love for others but remains unmatched himself. His proposal to
                   Beatrice (even if joking) is met with gentle rejection. He functions as both a
                   force for good (the gulling plots) and a force for harm (the shaming), embodying
@@ -566,19 +563,19 @@ export default function MuchAdoRevisionPage() {
                   Don John
                 </h3>
                 <p className="mt-3 text-sm text-muted-foreground leading-relaxed">
-                  Don John is the play&apos;s antagonist &mdash; a self-confessed
-                  &ldquo;plain-dealing villain.&rdquo; As Don Pedro&apos;s illegitimate brother, he
-                  occupies a marginal social position: he has recently rebelled against Don Pedro,
-                  been defeated, and now lives under his brother&apos;s grudging mercy. His villainy
-                  stems partly from resentment at his bastard status and social exclusion. Unlike
-                  Shakespeare&apos;s more complex villains (Iago, Edmund), Don John is relatively
-                  one-dimensional. He has no elaborate motive; he simply wants to cause pain. He
-                  says he would rather be &ldquo;disdained&rdquo; than try to win others&apos; love.
-                  His plot against Hero is enabled by the patriarchal system: he knows that an
-                  accusation of unchastity will be believed because men control the narrative about
-                  women&apos;s honour. His flight after the plot is exposed and his off-stage
-                  capture are almost an afterthought &mdash; the play is not really interested in
-                  punishing him, which some critics see as problematic.
+                  Don John is the play&apos;s antagonist - a self-confessed &ldquo;plain-dealing
+                  villain.&rdquo; As Don Pedro&apos;s illegitimate brother, he occupies a marginal
+                  social position: he has recently rebelled against Don Pedro, been defeated, and
+                  now lives under his brother&apos;s grudging mercy. His villainy stems partly from
+                  resentment at his bastard status and social exclusion. Unlike Shakespeare&apos;s
+                  more complex villains (Iago, Edmund), Don John is relatively one-dimensional. He
+                  has no elaborate motive; he simply wants to cause pain. He says he would rather be
+                  &ldquo;disdained&rdquo; than try to win others&apos; love. His plot against Hero
+                  is enabled by the patriarchal system: he knows that an accusation of unchastity
+                  will be believed because men control the narrative about women&apos;s honour. His
+                  flight after the plot is exposed and his off-stage capture are almost an
+                  afterthought - the play is not really interested in punishing him, which some
+                  critics see as problematic.
                 </p>
                 <Quote
                   text="I am a plain-dealing villain"
@@ -604,7 +601,7 @@ export default function MuchAdoRevisionPage() {
                   disgrace shames the entire family. Once the Friar convinces him of Hero&apos;s
                   innocence, Leonato&apos;s grief transforms into righteous anger against Claudio
                   and Don Pedro. His later confrontation with Claudio is genuinely powerful. He
-                  represents the patriarchal system &mdash; both its protective and its oppressive
+                  represents the patriarchal system - both its protective and its oppressive
                   dimensions.
                 </p>
                 <Quote
@@ -622,12 +619,12 @@ export default function MuchAdoRevisionPage() {
                 </h3>
                 <p className="mt-3 text-sm text-muted-foreground leading-relaxed">
                   Dogberry is the comically incompetent constable of Messina. He speaks in
-                  malapropisms &mdash; constantly using the wrong word (&ldquo;senseless&rdquo; for
+                  malapropisms - constantly using the wrong word (&ldquo;senseless&rdquo; for
                   &ldquo;sensible,&rdquo; &ldquo;desartless&rdquo; for &ldquo;deserving&rdquo;). He
                   is pompous, long-winded, and desperate for respect. However, Dogberry and his
-                  Watch are the ones who actually uncover Don John&apos;s plot &mdash; not the
-                  clever noblemen. This is deeply ironic: the lowest-status characters in the play
-                  see truth more clearly than the aristocrats. Dogberry&apos;s bumbling delays the
+                  Watch are the ones who actually uncover Don John&apos;s plot - not the clever
+                  noblemen. This is deeply ironic: the lowest-status characters in the play see
+                  truth more clearly than the aristocrats. Dogberry&apos;s bumbling delays the
                   revelation (he cannot communicate clearly with Leonato), creating dramatic irony
                   and tension for the audience who knows the truth is tantalisingly close. He
                   provides comic relief but also serves a thematic function: truth emerges from
@@ -651,12 +648,12 @@ export default function MuchAdoRevisionPage() {
                   John&apos;s plot. Borachio arranges for Margaret to appear at Hero&apos;s chamber
                   window, dressed in Hero&apos;s clothes, where Claudio and Don Pedro see her from a
                   distance and believe it to be Hero with a lover. Margaret&apos;s exact level of
-                  knowledge is ambiguous &mdash; Shakespeare never fully explains whether she knew
-                  what she was doing. She is notably not punished, and Leonato says she was
-                  &ldquo;in some fault for this, although against her will.&rdquo; Her role raises
-                  questions about class and vulnerability: as a servant, she has little power to
-                  refuse Borachio&apos;s requests. She is also witty and bawdy in her conversations
-                  with Hero and Beatrice, showing a more assertive side in private female spaces.
+                  knowledge is ambiguous - Shakespeare never fully explains whether she knew what
+                  she was doing. She is notably not punished, and Leonato says she was &ldquo;in
+                  some fault for this, although against her will.&rdquo; Her role raises questions
+                  about class and vulnerability: as a servant, she has little power to refuse
+                  Borachio&apos;s requests. She is also witty and bawdy in her conversations with
+                  Hero and Beatrice, showing a more assertive side in private female spaces.
                   Margaret&apos;s complicity, whether knowing or not, shows how women of all classes
                   can be used as instruments in male power games.
                 </p>
@@ -683,11 +680,11 @@ export default function MuchAdoRevisionPage() {
                   intellectual equality, mutual respect, and honest (if combative) communication.
                   Shakespeare suggests that love based on wit, self-knowledge, and genuine emotional
                   connection is more durable than love based on idealised appearance. The play also
-                  explores love&apos;s relationship with vulnerability &mdash; both Beatrice and
-                  Benedick must abandon their defences and risk being hurt. The title itself is a
-                  pun: &ldquo;nothing&rdquo; was pronounced &ldquo;noting&rdquo; in Elizabethan
-                  English, and much of the &ldquo;ado&rdquo; is caused by people overhearing
-                  (noting) things, both true and false.
+                  explores love&apos;s relationship with vulnerability - both Beatrice and Benedick
+                  must abandon their defences and risk being hurt. The title itself is a pun:
+                  &ldquo;nothing&rdquo; was pronounced &ldquo;noting&rdquo; in Elizabethan English,
+                  and much of the &ldquo;ado&rdquo; is caused by people overhearing (noting) things,
+                  both true and false.
                 </p>
                 <div className="mt-3 grid gap-3 sm:grid-cols-2">
                   <Quote
@@ -715,15 +712,15 @@ export default function MuchAdoRevisionPage() {
                   Honour is the play&apos;s most destructive force. In Messina&apos;s patriarchal
                   society, a woman&apos;s honour is equated with her sexual virtue, and it belongs
                   not to her but to the men in her family. When Hero is accused, it is
-                  Leonato&apos;s honour that is damaged &mdash; hence his rage at <em>her</em>.
+                  Leonato&apos;s honour that is damaged - hence his rage at <em>her</em>.
                   Claudio&apos;s honour demands public revenge for a public slight. The entire
                   shaming scene is driven by male honour codes rather than by any desire for truth.
                   The play exposes how dangerous these codes are: Hero is nearly destroyed by an
                   honour system that treats women as property and allows accusation without
                   evidence. Benedick&apos;s willingness to challenge Claudio represents a rejection
-                  of the male honour code &mdash; he prioritises justice and his bond with Beatrice
-                  over masculine loyalty. The play does not entirely resolve this tension: Hero
-                  forgives her accusers, and the comic ending smooths over the violence.
+                  of the male honour code - he prioritises justice and his bond with Beatrice over
+                  masculine loyalty. The play does not entirely resolve this tension: Hero forgives
+                  her accusers, and the comic ending smooths over the violence.
                 </p>
                 <div className="mt-3 grid gap-3 sm:grid-cols-2">
                   <Quote
@@ -757,10 +754,10 @@ export default function MuchAdoRevisionPage() {
                   &ldquo;noting&rdquo; (overhearing and observing): characters are constantly
                   eavesdropping, misinterpreting, and jumping to conclusions based on partial
                   information. The play asks whether deception can ever be justified. The gulling
-                  plots work because Beatrice and Benedick already love each other &mdash; the
-                  deception merely removes their pride. Don John&apos;s plot works because the men
-                  are predisposed to believe the worst of women. Deception succeeds when it aligns
-                  with what people already want or fear to believe.
+                  plots work because Beatrice and Benedick already love each other - the deception
+                  merely removes their pride. Don John&apos;s plot works because the men are
+                  predisposed to believe the worst of women. Deception succeeds when it aligns with
+                  what people already want or fear to believe.
                 </p>
                 <div className="mt-3 grid gap-3 sm:grid-cols-2">
                   <Quote
@@ -789,15 +786,15 @@ export default function MuchAdoRevisionPage() {
                   Women exist under male authority: Hero is passed from father (Leonato) to husband
                   (Claudio), and her worth is measured by her sexual purity. Beatrice chafes against
                   these constraints (&ldquo;O that I were a man!&rdquo;), recognising that women
-                  have no direct recourse to justice. She cannot challenge Claudio herself &mdash;
-                  she must rely on Benedick to act for her. Hero&apos;s silence throughout much of
-                  the play is significant: she speaks little in front of men, reflecting the
-                  expectation that women should be seen and not heard. The shaming scene dramatises
-                  the ultimate consequence of patriarchy: men have the power to destroy a
-                  woman&apos;s life based on their word alone, and even her own father accepts their
-                  testimony over hers. Beatrice and Benedick&apos;s relationship offers an
-                  alternative model &mdash; one based on mutual wit and equality &mdash; though even
-                  they cannot fully escape the patriarchal framework.
+                  have no direct recourse to justice. She cannot challenge Claudio herself - she
+                  must rely on Benedick to act for her. Hero&apos;s silence throughout much of the
+                  play is significant: she speaks little in front of men, reflecting the expectation
+                  that women should be seen and not heard. The shaming scene dramatises the ultimate
+                  consequence of patriarchy: men have the power to destroy a woman&apos;s life based
+                  on their word alone, and even her own father accepts their testimony over hers.
+                  Beatrice and Benedick&apos;s relationship offers an alternative model - one based
+                  on mutual wit and equality - though even they cannot fully escape the patriarchal
+                  framework.
                 </p>
                 <div className="mt-3 grid gap-3 sm:grid-cols-2">
                   <Quote
@@ -825,15 +822,15 @@ export default function MuchAdoRevisionPage() {
                   The play is structured around the gap between appearance and reality. The masked
                   ball is a literal embodiment of this theme: characters wear physical masks, and
                   identities are confused. Claudio mistakes Don Pedro&apos;s wooing (on his behalf)
-                  for betrayal. Don John&apos;s entire plot depends on creating a false appearance
-                  &mdash; making Margaret look like Hero. Beatrice and Benedick appear to hate each
-                  other but actually love each other. Hero appears unfaithful but is innocent. She
-                  then appears dead but is alive. The play repeatedly asks: can we trust what we see
-                  and hear? The answer is consistently no. Social performance is another dimension:
+                  for betrayal. Don John&apos;s entire plot depends on creating a false appearance -
+                  making Margaret look like Hero. Beatrice and Benedick appear to hate each other
+                  but actually love each other. Hero appears unfaithful but is innocent. She then
+                  appears dead but is alive. The play repeatedly asks: can we trust what we see and
+                  hear? The answer is consistently no. Social performance is another dimension:
                   Beatrice and Benedick perform hatred to hide love; Claudio performs courtly
                   romance that conceals a shallow, possessive attitude; Leonato performs fatherly
-                  devotion that crumbles at the first test. Only when masks are removed &mdash;
-                  literally in the final scene &mdash; can truth and love prevail.
+                  devotion that crumbles at the first test. Only when masks are removed - literally
+                  in the final scene - can truth and love prevail.
                 </p>
                 <div className="mt-3 grid gap-3 sm:grid-cols-2">
                   <Quote
@@ -1017,12 +1014,12 @@ export default function MuchAdoRevisionPage() {
                   property independently, vote, or hold public office. Marriage was the primary
                   route to social and economic security, and it was typically arranged by families
                   with financial and social considerations paramount. A woman&apos;s value was
-                  closely tied to her chastity &mdash; virginity before marriage and fidelity after
-                  were essential to family honour. The public shaming of Hero reflects a real
-                  phenomenon: women accused of sexual impropriety could be publicly humiliated, and
-                  the damage to their reputation was often irreparable. Beatrice&apos;s independence
-                  and wit make her an unusual figure for the period, though even she ultimately
-                  exists within the marriage framework.
+                  closely tied to her chastity - virginity before marriage and fidelity after were
+                  essential to family honour. The public shaming of Hero reflects a real phenomenon:
+                  women accused of sexual impropriety could be publicly humiliated, and the damage
+                  to their reputation was often irreparable. Beatrice&apos;s independence and wit
+                  make her an unusual figure for the period, though even she ultimately exists
+                  within the marriage framework.
                 </p>
               </div>
 
@@ -1031,14 +1028,14 @@ export default function MuchAdoRevisionPage() {
                 <p className="mt-2 text-sm text-muted-foreground leading-relaxed">
                   Elizabethan courtship followed strict social conventions. Among the gentry and
                   nobility, marriages were negotiated between families, with the father&apos;s
-                  consent essential. Claudio&apos;s approach &mdash; asking Don Pedro to woo Hero on
-                  his behalf and then seeking Leonato&apos;s permission &mdash; follows period
-                  conventions precisely. Direct courtship between the couple themselves was less
-                  common among the upper classes. The Petrarchan tradition of love poetry
-                  (idealising the beloved, suffering at her coldness) influenced how love was
-                  expressed. Beatrice and Benedick&apos;s relationship, based on witty verbal combat
-                  rather than idealised worship, deliberately subverts these conventions. Their love
-                  is presented as more authentic precisely because it rejects artifice.
+                  consent essential. Claudio&apos;s approach - asking Don Pedro to woo Hero on his
+                  behalf and then seeking Leonato&apos;s permission - follows period conventions
+                  precisely. Direct courtship between the couple themselves was less common among
+                  the upper classes. The Petrarchan tradition of love poetry (idealising the
+                  beloved, suffering at her coldness) influenced how love was expressed. Beatrice
+                  and Benedick&apos;s relationship, based on witty verbal combat rather than
+                  idealised worship, deliberately subverts these conventions. Their love is
+                  presented as more authentic precisely because it rejects artifice.
                 </p>
               </div>
 
@@ -1053,9 +1050,9 @@ export default function MuchAdoRevisionPage() {
                   modern audiences find troubling: Hero&apos;s forgiveness of Claudio, the
                   relatively light treatment of Don John, and the general sense that all is
                   forgiven. Comedy demands reconciliation, even at the expense of realism.
-                  Shakespeare pushes these conventions to their limits &mdash; the darkness of the
-                  shaming scene sits uncomfortably within the comic framework, creating a
-                  &ldquo;problem comedy&rdquo; that refuses easy resolution.
+                  Shakespeare pushes these conventions to their limits - the darkness of the shaming
+                  scene sits uncomfortably within the comic framework, creating a &ldquo;problem
+                  comedy&rdquo; that refuses easy resolution.
                 </p>
               </div>
 
@@ -1066,14 +1063,13 @@ export default function MuchAdoRevisionPage() {
                 <p className="mt-2 text-sm text-muted-foreground leading-relaxed">
                   Elizabethan society operated within a strict honour code, particularly for men of
                   rank. A man&apos;s honour depended on his reputation for bravery, honesty, and
-                  control over his household &mdash; including his wife&apos;s and daughters&apos;
-                  sexual behaviour. Being cuckolded (having an unfaithful wife) was considered the
-                  ultimate humiliation. Claudio&apos;s extreme reaction to Hero&apos;s supposed
-                  infidelity is driven by this code: he sees her alleged behaviour as a direct
-                  attack on his honour. Benedick&apos;s challenge to Claudio represents a
-                  counter-claim: that honour requires defending the innocent, not merely avenging
-                  perceived slights. The play examines how honour codes can be weaponised to harm
-                  the vulnerable.
+                  control over his household - including his wife&apos;s and daughters&apos; sexual
+                  behaviour. Being cuckolded (having an unfaithful wife) was considered the ultimate
+                  humiliation. Claudio&apos;s extreme reaction to Hero&apos;s supposed infidelity is
+                  driven by this code: he sees her alleged behaviour as a direct attack on his
+                  honour. Benedick&apos;s challenge to Claudio represents a counter-claim: that
+                  honour requires defending the innocent, not merely avenging perceived slights. The
+                  play examines how honour codes can be weaponised to harm the vulnerable.
                 </p>
               </div>
 
@@ -1091,8 +1087,7 @@ export default function MuchAdoRevisionPage() {
                   to resent those who benefit from the social order. Shakespeare also explores this
                   theme in <em>King Lear</em> (Edmund) and <em>{tr(`The Tempest`)}</em> (Caliban).
                   The association of illegitimacy with villainy reflects Elizabethan prejudice,
-                  which Shakespeare may be endorsing or critiquing &mdash; the ambiguity is
-                  deliberate.
+                  which Shakespeare may be endorsing or critiquing - the ambiguity is deliberate.
                 </p>
               </div>
 
@@ -1171,8 +1166,8 @@ export default function MuchAdoRevisionPage() {
                     <p>
                       &ldquo;I love you with so much of my heart that none is left to protest&rdquo;
                       (4.1). Both Beatrice and Benedick must abandon self-protection. &ldquo;Man is
-                      a giddy thing&rdquo; (5.4) &mdash; love is irrational but worth embracing. The
-                      comic ending celebrates imperfect, honest love.
+                      a giddy thing&rdquo; (5.4) - love is irrational but worth embracing. The comic
+                      ending celebrates imperfect, honest love.
                     </p>
                   </div>
                 </div>
@@ -1212,8 +1207,8 @@ export default function MuchAdoRevisionPage() {
                       {tr(`Paragraph 3: Beatrice as resistance`)}
                     </p>
                     <p>
-                      &ldquo;O that I were a man!&rdquo; (4.1) &mdash; Beatrice recognises and
-                      resists patriarchal constraints. &ldquo;Would it not grieve a woman to be
+                      &ldquo;O that I were a man!&rdquo; (4.1) - Beatrice recognises and resists
+                      patriarchal constraints. &ldquo;Would it not grieve a woman to be
                       over-mastered with a piece of valiant dust?&rdquo; (2.1). She cannot act
                       directly but uses wit and Benedick as her &ldquo;instrument.&rdquo;
                       Shakespeare gives voice to female frustration.
@@ -1256,7 +1251,7 @@ export default function MuchAdoRevisionPage() {
                     </p>
                     <p>
                       Don John creates a false appearance of Hero&apos;s infidelity. &ldquo;Are our
-                      eyes our own?&rdquo; (4.1) &mdash; Claudio trusts visual evidence that is
+                      eyes our own?&rdquo; (4.1) - Claudio trusts visual evidence that is
                       fabricated. The deception works because the men are predisposed to suspect
                       women. Context: honour culture, male anxiety about cuckoldry.
                     </p>
@@ -1281,7 +1276,7 @@ export default function MuchAdoRevisionPage() {
                       driven by characters noting (and misinterpreting) things. The Friar&apos;s
                       plan uses strategic deception (faking Hero&apos;s death) to undo malicious
                       deception. Shakespeare suggests that truth is not simply the absence of
-                      deception &mdash; sometimes deception is needed to reveal truth.
+                      deception - sometimes deception is needed to reveal truth.
                     </p>
                   </div>
                 </div>
@@ -1300,8 +1295,8 @@ export default function MuchAdoRevisionPage() {
                     <p>
                       Hero&apos;s honour (chastity) belongs to Leonato and then Claudio. When it is
                       questioned, both men feel <em>their</em> honour is damaged. &ldquo;Death is
-                      the fairest cover for her shame&rdquo; (4.1) &mdash; Leonato values his
-                      reputation over Hero&apos;s life. Context: patriarchal honour codes.
+                      the fairest cover for her shame&rdquo; (4.1) - Leonato values his reputation
+                      over Hero&apos;s life. Context: patriarchal honour codes.
                     </p>
                   </div>
                   <div className="rounded bg-muted p-3">
@@ -1309,7 +1304,7 @@ export default function MuchAdoRevisionPage() {
                       {tr(`Paragraph 2: Claudio's honour code`)}
                     </p>
                     <p>
-                      &ldquo;Give not this rotten orange to your friend&rdquo; (4.1) &mdash; public
+                      &ldquo;Give not this rotten orange to your friend&rdquo; (4.1) - public
                       shaming restores his honour at Hero&apos;s expense. He treats the wedding as a
                       performance of wounded pride. His honour requires a spectacle, not private
                       resolution. Link to appearance vs reality.
@@ -1322,8 +1317,8 @@ export default function MuchAdoRevisionPage() {
                     <p>
                       By challenging Claudio, Benedick prioritises justice over male loyalty. His
                       honour code values defending the innocent over avenging personal slights.
-                      &ldquo;Enough, I am engaged&rdquo; (4.1) &mdash; he commits to a new kind of
-                      honour, rooted in love and moral courage rather than masculine pride.
+                      &ldquo;Enough, I am engaged&rdquo; (4.1) - he commits to a new kind of honour,
+                      rooted in love and moral courage rather than masculine pride.
                     </p>
                   </div>
                   <div className="rounded bg-muted p-3">

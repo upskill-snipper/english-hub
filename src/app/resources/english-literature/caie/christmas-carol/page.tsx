@@ -344,10 +344,10 @@ export default async function ChristmasCarolStudyGuide() {
       <section className="border-b bg-gradient-to-b from-primary/[0.06] to-transparent px-4 py-16 sm:py-20">
         <div className="mx-auto max-w-4xl text-center">
           <p className="text-sm font-semibold uppercase tracking-widest text-muted-foreground">
-            Cambridge IGCSE English Literature &mdash; Paper 1 (Prose)
+            Cambridge IGCSE English Literature - Paper 1 (Prose)
           </p>
           <h1 className="mt-2 text-3xl font-bold tracking-tight sm:text-4xl md:text-5xl">
-            A Christmas Carol &mdash; Complete Study Guide
+            A Christmas Carol - Complete Study Guide
           </h1>
           <p className="mx-auto mt-4 max-w-2xl text-lg text-muted-foreground">
             Stave summaries, characters, themes, Scrooge&rsquo;s transformation,
@@ -475,7 +475,7 @@ export default async function ChristmasCarolStudyGuide() {
                   &ldquo;{q.quote}&rdquo;
                 </blockquote>
                 <p className="mt-1 text-xs font-semibold text-primary">
-                  {q.speaker} &mdash; {q.location}
+                  {q.speaker} - {q.location}
                 </p>
                 <p className="mt-3 text-sm leading-relaxed text-muted-foreground">{q.analysis}</p>
               </div>
@@ -623,7 +623,7 @@ export default async function ChristmasCarolStudyGuide() {
                   </li>
                   <li>
                     &bull; Discuss the narrator&rsquo;s tone: exclamatory, conversational, almost
-                    theatrical &mdash; link to the oral storytelling tradition
+                    theatrical - link to the oral storytelling tradition
                   </li>
                   <li>
                     &bull; Explore Dickens&rsquo;s use of weather and temperature imagery to

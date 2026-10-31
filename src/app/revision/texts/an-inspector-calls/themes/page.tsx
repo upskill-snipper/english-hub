@@ -45,7 +45,7 @@ const THEMES: ThemeStudy[] = [
     overview:
       'The Inspector\u2019s central message: we are not isolated individuals but interconnected people who owe duties to one another.',
     detailed:
-      'Social responsibility is the play\u2019s dominant theme and Priestley\u2019s explicit political argument. The Inspector exists to force every character \u2014 and, through them, the audience \u2014 to accept that their actions have consequences for others. Birling\u2019s opening philosophy of self-reliance ("a man has to look after himself and his own") is systematically dismantled as the Inspector reveals that each character\u2019s selfish action contributed to Eva\u2019s death. Priestley wrote the play in 1945 as Britain was building the welfare state under Clement Attlee\u2019s Labour government. The Inspector\u2019s final speech is a direct endorsement of this political moment: if we do not share responsibility for one another, we will face the consequences in "fire and blood and anguish." The play argues that social responsibility is not optional charity but a moral and political necessity.',
+      'Social responsibility is the play\u2019s dominant theme and Priestley\u2019s explicit political argument. The Inspector exists to force every character - and, through them, the audience - to accept that their actions have consequences for others. Birling\u2019s opening philosophy of self-reliance ("a man has to look after himself and his own") is systematically dismantled as the Inspector reveals that each character\u2019s selfish action contributed to Eva\u2019s death. Priestley wrote the play in 1945 as Britain was building the welfare state under Clement Attlee\u2019s Labour government. The Inspector\u2019s final speech is a direct endorsement of this political moment: if we do not share responsibility for one another, we will face the consequences in "fire and blood and anguish." The play argues that social responsibility is not optional charity but a moral and political necessity.',
     keyQuotes: [
       {
         quote: '"We are members of one body. We are responsible for each other."',
@@ -103,7 +103,7 @@ const THEMES: ThemeStudy[] = [
     overview:
       'The Birlings sit at the top of an Edwardian class hierarchy that treats those beneath them as expendable.',
     detailed:
-      'Class is the mechanism through which every injustice in the play operates. Eva is sacked, exploited, used, and rejected at every turn because she lacks money, status, and connections. Birling fires her for demanding fair wages; Sheila has her dismissed on a whim; Gerald makes her a "kept woman" dependent on his charity; Sybil refuses her help because a working-class girl has no right to "fine feelings." Priestley exposes how class privilege insulates the wealthy from accountability while crushing those without power. The Birlings never see Eva as a person \u2014 she is "cheap labour" to Arthur, a pretty object to Gerald, and beneath consideration to Sybil. Priestley argues that class is not a natural hierarchy but a man-made system of exploitation that must be dismantled.',
+      'Class is the mechanism through which every injustice in the play operates. Eva is sacked, exploited, used, and rejected at every turn because she lacks money, status, and connections. Birling fires her for demanding fair wages; Sheila has her dismissed on a whim; Gerald makes her a "kept woman" dependent on his charity; Sybil refuses her help because a working-class girl has no right to "fine feelings." Priestley exposes how class privilege insulates the wealthy from accountability while crushing those without power. The Birlings never see Eva as a person - she is "cheap labour" to Arthur, a pretty object to Gerald, and beneath consideration to Sybil. Priestley argues that class is not a natural hierarchy but a man-made system of exploitation that must be dismantled.',
     keyQuotes: [
       {
         quote: '"Girls of that class\u2014"',
@@ -161,7 +161,7 @@ const THEMES: ThemeStudy[] = [
     overview:
       'Eva\u2019s experiences expose the double oppression of being both working-class and female in Edwardian England.',
     detailed:
-      'Gender intersects with class throughout the play to produce Eva\u2019s suffering. She is sacked from a factory (economic exploitation), dismissed from a shop (female jealousy weaponised by class privilege), kept as a mistress (sexual exploitation), assaulted by a drunken young man (male violence), and denied charity when pregnant (punished for her sexuality by a woman who upholds patriarchal morality). Priestley shows how men like Gerald, Eric, and the unseen Alderman Meggarty exploit women with impunity because their wealth and gender give them unchecked power. But gender oppression is not exclusive to men: Sybil, a woman herself, enforces the patriarchal moral code by refusing help to a pregnant, unmarried woman. Sheila\u2019s transformation involves rejecting male authority \u2014 she returns Gerald\u2019s ring and challenges her father\u2019s worldview \u2014 making her moral growth inseparable from her growing independence as a woman.',
+      'Gender intersects with class throughout the play to produce Eva\u2019s suffering. She is sacked from a factory (economic exploitation), dismissed from a shop (female jealousy weaponised by class privilege), kept as a mistress (sexual exploitation), assaulted by a drunken young man (male violence), and denied charity when pregnant (punished for her sexuality by a woman who upholds patriarchal morality). Priestley shows how men like Gerald, Eric, and the unseen Alderman Meggarty exploit women with impunity because their wealth and gender give them unchecked power. But gender oppression is not exclusive to men: Sybil, a woman herself, enforces the patriarchal moral code by refusing help to a pregnant, unmarried woman. Sheila\u2019s transformation involves rejecting male authority - she returns Gerald\u2019s ring and challenges her father\u2019s worldview - making her moral growth inseparable from her growing independence as a woman.',
     keyQuotes: [
       {
         quote: '"She was very pretty \u2014 soft brown hair and big dark eyes."',
@@ -297,14 +297,14 @@ const THEMES: ThemeStudy[] = [
         speaker: 'Sybil Birling',
         act: 'Act 2',
         analysis:
-          'Sybil sees her institutional power as self-justifying. She does not need external validation \u2014 her position on the committee is sufficient authority. Priestley shows how institutional power can function without moral accountability.',
+          'Sybil sees her institutional power as self-justifying. She does not need external validation - her position on the committee is sufficient authority. Priestley shows how institutional power can function without moral accountability.',
       },
       {
         quote: '"I was in that state when a chap easily turns nasty."',
         speaker: 'Eric Birling',
         act: 'Act 3',
         analysis:
-          'Eric\u2019s assault is the most direct abuse of power in the play \u2014 physical, sexual, and class-based. The casual phrasing reveals how normalised male violence was in a society that gave men unchecked power over vulnerable women.',
+          'Eric\u2019s assault is the most direct abuse of power in the play - physical, sexual, and class-based. The casual phrasing reveals how normalised male violence was in a society that gave men unchecked power over vulnerable women.',
       },
     ],
     evidenceByAct: [
@@ -334,7 +334,7 @@ const THEMES: ThemeStudy[] = [
     overview:
       'Each character\u2019s response to guilt reveals their moral character. Priestley tests the audience alongside the Birlings.',
     detailed:
-      'The play functions as a moral test: each character is confronted with their responsibility for Eva\u2019s death and their response reveals their true nature. Sheila accepts guilt immediately and without evasion. Eric is anguished and genuinely remorseful, despite his more serious crimes. Gerald feels temporary shame but quickly seeks to discredit the Inspector. Sybil is defiant and refuses to accept guilt at all. Arthur is concerned only with avoiding a public scandal. Priestley uses these contrasting responses to test his audience: which reaction do you recognise in yourself? The play\u2019s cyclical ending \u2014 a real inspector is coming \u2014 denies the characters (and the audience) the comfort of escaping moral judgment. Guilt cannot be evaded; it can only be faced or denied.',
+      'The play functions as a moral test: each character is confronted with their responsibility for Eva\u2019s death and their response reveals their true nature. Sheila accepts guilt immediately and without evasion. Eric is anguished and genuinely remorseful, despite his more serious crimes. Gerald feels temporary shame but quickly seeks to discredit the Inspector. Sybil is defiant and refuses to accept guilt at all. Arthur is concerned only with avoiding a public scandal. Priestley uses these contrasting responses to test his audience: which reaction do you recognise in yourself? The play\u2019s cyclical ending - a real inspector is coming - denies the characters (and the audience) the comfort of escaping moral judgment. Guilt cannot be evaded; it can only be faced or denied.',
     keyQuotes: [
       {
         quote: '"I\u2019ll never, never do it again to anybody."',
@@ -392,7 +392,7 @@ const THEMES: ThemeStudy[] = [
     overview:
       'Birling represents capitalism; the Inspector represents socialism. The play dramatises the argument between them.',
     detailed:
-      'An Inspector Calls is explicitly a political play. Birling\u2019s opening speeches articulate the capitalist worldview: self-reliance, profit, competition, and the rejection of collective responsibility. The Inspector\u2019s closing speech articulates the socialist alternative: community, shared responsibility, and the recognition that "we are members of one body." Priestley structures the entire play as an argument between these two positions, and there is no doubt which side wins. Birling\u2019s predictions are wrong, his values produce suffering, and his philosophy is discredited by dramatic irony. The Inspector\u2019s message is vindicated by the two world wars the audience has lived through and by the 1945 Labour landslide that reflected the public\u2019s desire for a more equal society. Priestley\u2019s play is not a neutral exploration of both sides \u2014 it is an argument for socialism, delivered through the most powerful dramatic means available.',
+      'An Inspector Calls is explicitly a political play. Birling\u2019s opening speeches articulate the capitalist worldview: self-reliance, profit, competition, and the rejection of collective responsibility. The Inspector\u2019s closing speech articulates the socialist alternative: community, shared responsibility, and the recognition that "we are members of one body." Priestley structures the entire play as an argument between these two positions, and there is no doubt which side wins. Birling\u2019s predictions are wrong, his values produce suffering, and his philosophy is discredited by dramatic irony. The Inspector\u2019s message is vindicated by the two world wars the audience has lived through and by the 1945 Labour landslide that reflected the public\u2019s desire for a more equal society. Priestley\u2019s play is not a neutral exploration of both sides - it is an argument for socialism, delivered through the most powerful dramatic means available.',
     keyQuotes: [
       {
         quote:
@@ -400,7 +400,7 @@ const THEMES: ThemeStudy[] = [
         speaker: 'Arthur Birling',
         act: 'Act 1',
         analysis:
-          'Birling dismisses socialists as "cranks" \u2014 a word that implies irrationality. The play that follows proves the "cranks" right and Birling wrong. Priestley uses dramatic irony to let the audience see what Birling cannot.',
+          'Birling dismisses socialists as "cranks" - a word that implies irrationality. The play that follows proves the "cranks" right and Birling wrong. Priestley uses dramatic irony to let the audience see what Birling cannot.',
       },
       {
         quote: '"We are members of one body. We are responsible for each other."',
@@ -433,7 +433,7 @@ const THEMES: ThemeStudy[] = [
       {
         act: 'Act 2',
         evidence:
-          'Gerald\u2019s affair and Sybil\u2019s charity work show how capitalism shapes personal relationships and institutional power. Both characters exercise capitalist values \u2014 ownership, hierarchy, control \u2014 in their treatment of Eva.',
+          'Gerald\u2019s affair and Sybil\u2019s charity work show how capitalism shapes personal relationships and institutional power. Both characters exercise capitalist values - ownership, hierarchy, control - in their treatment of Eva.',
       },
       {
         act: 'Act 3',
@@ -444,7 +444,7 @@ const THEMES: ThemeStudy[] = [
     contextLink:
       'Priestley was a committed democratic socialist who believed the 1945 Labour victory was Britain\u2019s chance to build a fairer society. His wartime Postscripts broadcasts reached millions and argued against a return to pre-war inequality. An Inspector Calls is the dramatic expression of the same political argument.',
     essayTip:
-      'Always identify the play as a political argument, not a neutral exploration. Priestley does not present capitalism and socialism as equally valid \u2014 he systematically discredits Birling\u2019s position and endorses the Inspector\u2019s. State this clearly in your thesis.',
+      'Always identify the play as a political argument, not a neutral exploration. Priestley does not present capitalism and socialism as equally valid - he systematically discredits Birling\u2019s position and endorses the Inspector\u2019s. State this clearly in your thesis.',
   },
 ]
 
@@ -534,7 +534,7 @@ export default function ThemesPage() {
                   <div key={qi} className="rounded-xl border border-teal-500/20 bg-teal-500/5 p-4">
                     <p className="text-base font-medium italic text-foreground">{q.quote}</p>
                     <p className="mt-1 text-xs font-semibold uppercase tracking-wider text-teal-700 dark:text-teal-300">
-                      {q.speaker} &mdash; {q.act}
+                      {q.speaker} - {q.act}
                     </p>
                     <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
                       <span className="font-semibold text-foreground">

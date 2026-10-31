@@ -126,33 +126,33 @@ const data: TextGuideData = {
     {
       quote:
         '"If music be the food of love, play on, / Give me excess of it; that, surfeiting, / The appetite may sicken and so die."',
-      who: 'Orsino \u2014 Act 1, Scene 1',
+      who: 'Orsino - Act 1, Scene 1',
       analysis:
         'The play\u2019s opening line establishes Orsino\u2019s self-indulgent, performative melancholy: he wants love to exhaust itself like an over-fed appetite.',
     },
     {
       quote: '"I am not what I am."',
-      who: 'Viola \u2014 Act 3, Scene 1',
+      who: 'Viola - Act 3, Scene 1',
       analysis:
         'Viola\u2019s hint to Olivia captures the play\u2019s central paradox of disguise and identity, and deliberately echoes the devil\u2019s inversion of God\u2019s \u201cI am that I am.\u201d',
     },
     {
       quote:
         '"Some are born great, some achieve greatness, and some have greatness thrust upon \u2019em."',
-      who: 'Malvolio \u2014 Act 2, Scene 5 (reading the letter)',
+      who: 'Malvolio - Act 2, Scene 5 (reading the letter)',
       analysis:
         'The forged letter\u2019s most famous line feeds Malvolio\u2019s class ambition and sets up the cruel comedy of his gulling.',
     },
     {
       quote: '"I\'ll be revenged on the whole pack of you."',
-      who: 'Malvolio \u2014 Act 5, Scene 1',
+      who: 'Malvolio - Act 5, Scene 1',
       analysis:
         'Malvolio\u2019s exit line refuses the comedy\u2019s happy resolution and casts a shadow over the final pairings.',
     },
     {
       quote:
         '"She never told her love, / But let concealment, like a worm i’ th’ bud, / Feed on her damask cheek."',
-      who: 'Viola \u2014 Act 2, Scene 4',
+      who: 'Viola - Act 2, Scene 4',
       analysis:
         'Viola describes her own hidden love for Orsino in the third person, using the image of a canker-worm to capture the self-consuming pain of silence.',
     },
@@ -161,81 +161,81 @@ const data: TextGuideData = {
     // line of "O mistress mine" (2.3), a song with no refrain.
     {
       quote: '"Youth\'s a stuff will not endure."',
-      who: 'Feste \u2014 Act 2, Scene 3',
+      who: 'Feste - Act 2, Scene 3',
       analysis:
         'The closing line of Feste\u2019s song introduces the play\u2019s melancholy undertow, reminding the revellers that festive time is always running out.',
     },
     {
       quote: '"Journeys end in lovers meeting, / Every wise man\'s son doth know."',
-      who: 'Feste \u2014 Act 2, Scene 3',
+      who: 'Feste - Act 2, Scene 3',
       analysis:
         'Feste\u2019s song foreshadows the play\u2019s resolution in marriage, but the proverbial form hints at how conventional the comic ending will be.',
     },
     {
       quote:
         '"Cesario, come: / For so you shall be while you are a man; / But when in other habits you are seen, / Orsino\'s mistress, and his fancy\'s queen."',
-      who: 'Orsino \u2014 Act 5, Scene 1',
+      who: 'Orsino - Act 5, Scene 1',
       analysis:
         'Orsino\u2019s closing offer keeps addressing Viola as \u201cCesario,\u201d suggesting that the desire formed under her disguise persists beyond the reveal.',
     },
     {
       quote: '"Dost thou think, because thou art virtuous, there shall be no more cakes and ale?"',
-      who: 'Sir Toby Belch \u2014 Act 2, Scene 3',
+      who: 'Sir Toby Belch - Act 2, Scene 3',
       analysis:
         'Toby\u2019s retort to Malvolio crystallises the play\u2019s opposition between festive misrule and puritan order.',
     },
     {
       quote: '"Be not afraid of greatness."',
-      who: 'Maria\u2019s forged letter \u2014 Act 2, Scene 5',
+      who: 'Maria\u2019s forged letter - Act 2, Scene 5',
       analysis:
         'The letter pitches directly at Malvolio\u2019s vanity, inviting him to believe his ambitions are being invited rather than mocked.',
     },
     {
       quote: '"If this were played upon a stage now, I could condemn it as an improbable fiction."',
-      who: 'Fabian \u2014 Act 3, Scene 4',
+      who: 'Fabian - Act 3, Scene 4',
       analysis:
         'Fabian\u2019s metatheatrical remark winks at the audience, acknowledging how contrived the comic machinery has become.',
     },
     {
       quote: '"Better a witty fool than a foolish wit."',
-      who: 'Feste \u2014 Act 1, Scene 5',
+      who: 'Feste - Act 1, Scene 5',
       analysis:
         'Feste\u2019s inversion defines the licensed fool\u2019s role: wisdom speaks through apparent folly, a recurring motif in the play.',
     },
     {
       quote:
         '"O mistress mine, where are you roaming? / O stay and hear, your true love\'s coming, / That can sing both high and low."',
-      who: 'Feste \u2014 Act 2, Scene 3',
+      who: 'Feste - Act 2, Scene 3',
       analysis:
         'Feste\u2019s song to the revellers is gentle on the surface but insists that present joy must be seized before it fades.',
     },
     {
       quote: '"What country, friends, is this?"',
-      who: 'Viola \u2014 Act 1, Scene 2',
+      who: 'Viola - Act 1, Scene 2',
       analysis:
         'Viola\u2019s first line establishes her as a stranger and frames Illyria as an unknown, almost dreamlike country shaped by her arrival.',
     },
     {
       quote: '"Disguise, I see thou art a wickedness / Wherein the pregnant enemy does much."',
-      who: 'Viola \u2014 Act 2, Scene 2',
+      who: 'Viola - Act 2, Scene 2',
       analysis:
         'Viola recognises that her own disguise has unintentionally ensnared Olivia, acknowledging the moral danger of pretence.',
     },
     {
       quote: '"I was adored once too."',
-      who: 'Sir Andrew Aguecheek \u2014 Act 2, Scene 3',
+      who: 'Sir Andrew Aguecheek - Act 2, Scene 3',
       analysis:
         'Sir Andrew\u2019s sudden wistfulness breaks the comic surface and gives even the play\u2019s gull a flash of loneliness.',
     },
     {
       quote: '"And thus the whirligig of time brings in his revenges."',
-      who: 'Feste \u2014 Act 5, Scene 1',
+      who: 'Feste - Act 5, Scene 1',
       analysis:
         'Feste taunts Malvolio in the final scene, reminding him (and the audience) that comic reversal is itself a kind of revenge.',
     },
     {
       quote: '"The rain it raineth every day."',
-      who: 'Feste \u2014 Act 5, Scene 1 (closing song)',
+      who: 'Feste - Act 5, Scene 1 (closing song)',
       analysis:
         'The refrain of the play\u2019s final song replaces the expected wedding celebration with a weary acknowledgement of ordinary life resuming.',
     },
@@ -678,7 +678,7 @@ export default async function TwelfthNightPage() {
         ]}
         quizQuotes={data.quotations.slice(0, 10).map((q) => ({
           quote: q.quote.replace(/["\u201C\u201D]/g, ''),
-          character: q.who.split('\u2014')[0].trim(),
+          character: q.who.split(/ [-\u2014] /)[0].trim(),
           context: q.analysis.slice(0, 100) + '...',
         }))}
         essayQuestions={[

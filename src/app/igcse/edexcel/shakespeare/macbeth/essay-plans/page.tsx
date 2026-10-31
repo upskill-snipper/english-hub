@@ -311,11 +311,11 @@ export default async function MacbethEssayPlansPage() {
             {await t('igcse.page.badge_edexcel_lit')}
           </div>
           <h1 className="mt-4 text-3xl font-bold tracking-tight text-foreground sm:text-4xl md:text-5xl">
-            Macbeth &mdash; Essay Plans
+            Macbeth - Essay Plans
           </h1>
           <p className="mx-auto mt-4 max-w-xl text-lg text-muted-foreground">
-            Five model essay plans with paragraph structure, key quotations and context &mdash;
-            ready to adapt for the IGCSE Shakespeare question.
+            Five model essay plans with paragraph structure, key quotations and context - ready to
+            adapt for the IGCSE Shakespeare question.
           </p>
         </div>
       </section>
@@ -327,8 +327,8 @@ export default async function MacbethEssayPlansPage() {
           <p className="mt-2 text-sm text-muted-foreground leading-relaxed">
             Each plan gives you a thesis, five analytical paragraphs and a conclusion. Every
             paragraph has a topic sentence, an argument, a key quote and a context point. In the
-            exam, adapt the structure to the specific question &mdash; don&rsquo;t reproduce plans
-            from memory, but use the paragraph logic and quotation pairings as building blocks.
+            exam, adapt the structure to the specific question - don&rsquo;t reproduce plans from
+            memory, but use the paragraph logic and quotation pairings as building blocks.
           </p>
         </div>
 

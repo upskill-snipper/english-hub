@@ -31,15 +31,15 @@ export const metadata: Metadata = {
 const contextBlocks = [
   {
     title: '1950s Red Hook, Brooklyn',
-    body: 'Red Hook was a working-class waterfront neighbourhood dominated by Italian-American longshoremen. The docks provided hard, insecure work governed by the "shape-up" system, in which men were selected daily by hiring bosses. The close-knit community operated partly outside American law, with unwritten codes of loyalty, silence and mutual protection \u2014 especially regarding illegal immigrants. Miller lived and worked in Red Hook while researching the play, and the setting is not backdrop but a structural condition of the action.',
+    body: 'Red Hook was a working-class waterfront neighbourhood dominated by Italian-American longshoremen. The docks provided hard, insecure work governed by the "shape-up" system, in which men were selected daily by hiring bosses. The close-knit community operated partly outside American law, with unwritten codes of loyalty, silence and mutual protection - especially regarding illegal immigrants. Miller lived and worked in Red Hook while researching the play, and the setting is not backdrop but a structural condition of the action.',
   },
   {
     title: 'Italian-American immigration',
-    body: 'The first major waves of Italian immigration to New York arrived between the 1880s and 1920s. By the 1950s, Italian-Americans in Red Hook were established citizens, but many still harboured "submarines" \u2014 undocumented relatives who entered illegally to work and send money home. The Immigration and Nationality Act of 1952 tightened controls. Marco and Rodolpho arrive into this exact legal landscape: tolerated by the community but vulnerable to a single phone call. Eddie\u2019s betrayal has teeth because of the law\u2019s severity.',
+    body: 'The first major waves of Italian immigration to New York arrived between the 1880s and 1920s. By the 1950s, Italian-Americans in Red Hook were established citizens, but many still harboured "submarines" - undocumented relatives who entered illegally to work and send money home. The Immigration and Nationality Act of 1952 tightened controls. Marco and Rodolpho arrive into this exact legal landscape: tolerated by the community but vulnerable to a single phone call. Eddie\u2019s betrayal has teeth because of the law\u2019s severity.',
   },
   {
     title: 'The Italian-American honour code',
-    body: 'Sicilian culture brought to Red Hook a code of honour (onore) in which a man\u2019s reputation, his family\u2019s good name and the obligation of vendetta were paramount. Informing on a neighbour to the authorities was the gravest violation of this code \u2014 the story of Vinny Bolzano, thrown down the stairs by his own family for informing, establishes this early in the play. Eddie\u2019s tragedy is that he invokes the very code he betrays.',
+    body: 'Sicilian culture brought to Red Hook a code of honour (onore) in which a man\u2019s reputation, his family\u2019s good name and the obligation of vendetta were paramount. Informing on a neighbour to the authorities was the gravest violation of this code - the story of Vinny Bolzano, thrown down the stairs by his own family for informing, establishes this early in the play. Eddie\u2019s tragedy is that he invokes the very code he betrays.',
   },
   {
     title: 'McCarthyism and "naming names"',
@@ -47,7 +47,7 @@ const contextBlocks = [
   },
   {
     title: 'Arthur Miller\u2019s background',
-    body: 'Miller (1915\u20132005) was the son of Polish-Jewish immigrants and grew up in Harlem and Brooklyn during the Depression. His major works \u2014 Death of a Salesman, The Crucible, A View from the Bridge \u2014 share a preoccupation with the gap between the American Dream and American reality, and with ordinary men whose self-deceptions lead to catastrophe. A View from the Bridge began as a one-act play in 1955 and was revised into the two-act version studied today in 1956.',
+    body: 'Miller (1915\u20132005) was the son of Polish-Jewish immigrants and grew up in Harlem and Brooklyn during the Depression. His major works - Death of a Salesman, The Crucible, A View from the Bridge - share a preoccupation with the gap between the American Dream and American reality, and with ordinary men whose self-deceptions lead to catastrophe. A View from the Bridge began as a one-act play in 1955 and was revised into the two-act version studied today in 1956.',
   },
   {
     title: 'Greek tragedy and the chorus',
@@ -59,7 +59,7 @@ const contextBlocks = [
   },
   {
     title: 'The play\u2019s two versions',
-    body: 'The original 1955 one-act version was staged as a double bill with another Miller play, A Memory of Two Mondays. Miller revised it into a two-act play in 1956 for a London production directed by Peter Brook. The two-act version \u2014 the one studied at IGCSE \u2014 expanded Beatrice\u2019s role, deepened Catherine\u2019s character and gave Alfieri\u2019s chorus speeches greater weight. The revision shifted the balance from parable toward psychological drama.',
+    body: 'The original 1955 one-act version was staged as a double bill with another Miller play, A Memory of Two Mondays. Miller revised it into a two-act play in 1956 for a London production directed by Peter Brook. The two-act version - the one studied at IGCSE - expanded Beatrice\u2019s role, deepened Catherine\u2019s character and gave Alfieri\u2019s chorus speeches greater weight. The revision shifted the balance from parable toward psychological drama.',
   },
 ]
 
@@ -92,7 +92,7 @@ export default async function AViewContextPage() {
             A View from the Bridge: Context
           </h1>
           <p className="mt-3 max-w-2xl text-body-lg text-muted-foreground">
-            Historical, biographical and dramatic context for Miller's play &mdash; essential for
+            Historical, biographical and dramatic context for Miller's play - essential for
             responses on social, cultural and historical context.
           </p>
         </div>

@@ -1669,7 +1669,7 @@ Yet Macbeth's Act 1 self-awareness does not temper his ambition; instead, the pl
       ],
       correct: 1,
       explanation:
-        'The play was written in 1945 but set in 1912. This time gap creates dramatic irony \u2014 the audience knows about events the characters cannot foresee.',
+        'The play was written in 1945 but set in 1912. This time gap creates dramatic irony - the audience knows about events the characters cannot foresee.',
     },
     {
       id: 'edx-lt1-a8',
@@ -3047,7 +3047,7 @@ Rode the six hundred.</em><div class="source">Tennyson (1854), stanza 1</div></d
       ],
       correct: 2,
       explanation:
-        'A "stave" is a set of lines in music. Dickens reinforces the title \u2014 the text is a carol, a song of joy \u2014 and the structure mirrors the journey from discord to harmony.',
+        'A "stave" is a set of lines in music. Dickens reinforces the title - the text is a carol, a song of joy - and the structure mirrors the journey from discord to harmony.',
     },
     {
       id: 'edx-lt2-a5',
@@ -3063,7 +3063,7 @@ Rode the six hundred.</em><div class="source">Tennyson (1854), stanza 1</div></d
       options: ['Intention', 'Imagery', 'Interpretation', 'Irony'],
       correct: 1,
       explanation:
-        'The "I" stands for Imagery \u2014 identifying similes, metaphors, personification, and symbols the poet uses to create vivid pictures and convey meaning.',
+        'The "I" stands for Imagery - identifying similes, metaphors, personification, and symbols the poet uses to create vivid pictures and convey meaning.',
     },
     {
       id: 'edx-lt2-a7',
@@ -3089,7 +3089,7 @@ Rode the six hundred.</em><div class="source">Tennyson (1854), stanza 1</div></d
       ],
       correct: 1,
       explanation:
-        'An integrated comparison discusses both poems within each paragraph, weaving between them with comparative vocabulary \u2014 not two separate mini-essays.',
+        'An integrated comparison discusses both poems within each paragraph, weaving between them with comparative vocabulary - not two separate mini-essays.',
     },
     {
       id: 'edx-lt2-a9',
@@ -3097,7 +3097,7 @@ Rode the six hundred.</em><div class="source">Tennyson (1854), stanza 1</div></d
       options: ['Repetition', 'Response / Comparison', 'Review', 'Reference to context'],
       correct: 1,
       explanation:
-        'R stands for Response / Comparison \u2014 the crucial step where you draw both poems together and make an explicit comparative judgement about their effects or approaches.',
+        'R stands for Response / Comparison - the crucial step where you draw both poems together and make an explicit comparative judgement about their effects or approaches.',
     },
     {
       id: 'edx-lt2-a10',
@@ -3123,7 +3123,7 @@ Rode the six hundred.</em><div class="source">Tennyson (1854), stanza 1</div></d
       ],
       correct: 1,
       explanation:
-        "Tiny Tim is a symbol of innocence and consequence. His potential death makes both Scrooge and the reader complicit in poverty's toll \u2014 Dickens's most emotionally compelling argument.",
+        "Tiny Tim is a symbol of innocence and consequence. His potential death makes both Scrooge and the reader complicit in poverty's toll - Dickens's most emotionally compelling argument.",
     },
     {
       id: 'edx-lt2-a12',

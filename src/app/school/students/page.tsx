@@ -1010,7 +1010,7 @@ export default function StudentsPage() {
                             </span>
                           </div>
                         ) : (
-                          <span className="text-xs text-muted-foreground-subtle">&mdash;</span>
+                          <span className="text-xs text-muted-foreground-subtle">-</span>
                         )}
                       </td>
                       <td className="px-4 py-3">
@@ -1022,7 +1022,7 @@ export default function StudentsPage() {
                             {percentageToGCSEGrade(student.progress)}
                           </span>
                         ) : (
-                          <span className="text-xs text-muted-foreground-subtle">&mdash;</span>
+                          <span className="text-xs text-muted-foreground-subtle">-</span>
                         )}
                       </td>
                       <td className="px-4 py-3">

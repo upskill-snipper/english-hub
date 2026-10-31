@@ -159,7 +159,7 @@ export default async function SpokenLanguagePage() {
               The Spoken Language endorsement is a <strong>compulsory component</strong> of GCSE
               English Language. Every student must complete it, but it is reported{' '}
               <strong>separately</strong> from your main 9&ndash;1 GCSE grade. It does not affect
-              your English Language grade &mdash; instead, it appears on your certificate as its own
+              your English Language grade - instead, it appears on your certificate as its own
               result.
             </p>
             <p>
@@ -167,15 +167,14 @@ export default async function SpokenLanguagePage() {
               <strong>formal presentation or speech</strong> on a topic of your choice, respond to
               questions and feedback from the audience, and use spoken Standard English throughout.
               It is designed to assess your ability to communicate effectively in a formal spoken
-              context &mdash; a skill valued by employers, colleges, and universities.
+              context - a skill valued by employers, colleges, and universities.
             </p>
             <div className="rounded-lg border border-primary/20 bg-primary/5 p-5">
               <p className="text-sm font-semibold text-foreground">Key facts</p>
               <ul className="ms-4 mt-2 list-disc space-y-1 text-sm text-muted-foreground">
                 <li>{tr(`Required for all GCSE English Language students`)}</li>
                 <li>
-                  Reported separately &mdash; does <strong>not</strong> count towards your 9&ndash;1
-                  grade
+                  Reported separately - does <strong>not</strong> count towards your 9&ndash;1 grade
                 </li>
                 <li>{tr(`Assessed by your teacher, moderated by your exam board`)}</li>
                 <li>{tr(`You deliver a presentation, then answer questions`)}</li>
@@ -312,34 +311,34 @@ export default async function SpokenLanguagePage() {
             <h3 className="text-lg font-semibold text-foreground">Step-by-Step Planning Process</h3>
             <ol className="ms-6 list-decimal space-y-4">
               <li>
-                <strong>Choose your topic</strong> &mdash; Pick something you care about and can
-                speak on with authority. Ensure it has enough depth for 3&ndash;5 minutes of
-                sustained speaking and follow-up questions.
+                <strong>Choose your topic</strong> - Pick something you care about and can speak on
+                with authority. Ensure it has enough depth for 3&ndash;5 minutes of sustained
+                speaking and follow-up questions.
               </li>
               <li>
-                <strong>{tr(`Research thoroughly`)}</strong> &mdash; Gather facts, statistics,
-                expert opinions, and real-world examples. The stronger your evidence, the more
-                convincing your presentation.
+                <strong>{tr(`Research thoroughly`)}</strong> - Gather facts, statistics, expert
+                opinions, and real-world examples. The stronger your evidence, the more convincing
+                your presentation.
               </li>
               <li>
-                <strong>{tr(`Decide your angle`)}</strong> &mdash; Are you arguing for or against
+                <strong>{tr(`Decide your angle`)}</strong> - Are you arguing for or against
                 something? Informing? Persuading? Your angle shapes your entire structure.
               </li>
               <li>
-                <strong>{tr(`Structure your content`)}</strong> &mdash; Use the framework below to
+                <strong>{tr(`Structure your content`)}</strong> - Use the framework below to
                 organise your material into a clear, logical flow.
               </li>
               <li>
-                <strong>{tr(`Create cue cards`)}</strong> &mdash; Write key words and short phrases
-                on numbered cards. Never write full sentences &mdash; you should speak naturally,
-                not read aloud.
+                <strong>{tr(`Create cue cards`)}</strong> - Write key words and short phrases on
+                numbered cards. Never write full sentences - you should speak naturally, not read
+                aloud.
               </li>
               <li>
-                <strong>{tr(`Anticipate questions`)}</strong> &mdash; Think about what your audience
-                might ask and prepare thoughtful responses.
+                <strong>{tr(`Anticipate questions`)}</strong> - Think about what your audience might
+                ask and prepare thoughtful responses.
               </li>
               <li>
-                <strong>{tr(`Practise aloud`)}</strong> &mdash; Rehearse at least three times. Time
+                <strong>{tr(`Practise aloud`)}</strong> - Rehearse at least three times. Time
                 yourself. Practise in front of a friend or family member for feedback.
               </li>
             </ol>
@@ -465,9 +464,9 @@ export default async function SpokenLanguagePage() {
                   <h3 className="font-semibold text-foreground">Pace</h3>
                 </div>
                 <p className="mt-3 text-sm">
-                  Speak at a measured pace. Nerves often cause people to rush &mdash; consciously
-                  slow down. Use deliberate pauses after key points for emphasis. A well-timed pause
-                  can be more powerful than any word.
+                  Speak at a measured pace. Nerves often cause people to rush - consciously slow
+                  down. Use deliberate pauses after key points for emphasis. A well-timed pause can
+                  be more powerful than any word.
                 </p>
               </div>
 
@@ -492,8 +491,8 @@ export default async function SpokenLanguagePage() {
                 </div>
                 <p className="mt-3 text-sm">
                   Ensure everyone in the room can hear you clearly. Project your voice without
-                  shouting. Enunciate words properly &mdash; avoid mumbling. Vary your volume for
-                  effect: a quieter moment can draw the audience in.
+                  shouting. Enunciate words properly - avoid mumbling. Vary your volume for effect:
+                  a quieter moment can draw the audience in.
                 </p>
               </div>
 
@@ -518,8 +517,8 @@ export default async function SpokenLanguagePage() {
                 </div>
                 <p className="mt-3 text-sm">
                   Avoid speaking in a monotone. Vary your intonation to express enthusiasm, concern,
-                  humour, or urgency. Your voice should reflect the content &mdash; let your passion
-                  for the topic come through naturally.
+                  humour, or urgency. Your voice should reflect the content - let your passion for
+                  the topic come through naturally.
                 </p>
               </div>
 
@@ -597,16 +596,16 @@ export default async function SpokenLanguagePage() {
                 not interrupt or jump in prematurely.
               </li>
               <li>
-                <strong>{tr(`Take a moment to think`)}</strong> &mdash; it is perfectly acceptable
-                to pause briefly before responding. A thoughtful answer is always better than a
-                rushed one.
+                <strong>{tr(`Take a moment to think`)}</strong> - it is perfectly acceptable to
+                pause briefly before responding. A thoughtful answer is always better than a rushed
+                one.
               </li>
               <li>
                 <strong>{tr(`Answer in full sentences`)}</strong> using Standard English. Avoid
                 one-word answers or informal language.
               </li>
               <li>
-                <strong>{tr(`Develop your answers`)}</strong> &mdash; use phrases such as &ldquo;To
+                <strong>{tr(`Develop your answers`)}</strong> - use phrases such as &ldquo;To
                 elaborate on that&hellip;&rdquo;, &ldquo;Building on my earlier
                 point&hellip;&rdquo;, or &ldquo;An example of this would be&hellip;&rdquo;
               </li>
@@ -620,12 +619,12 @@ export default async function SpokenLanguagePage() {
                 mentioned earlier&hellip;&rdquo;
               </li>
               <li>
-                <strong>{tr(`Engage with challenging questions`)}</strong> &mdash; these are
-                opportunities to demonstrate critical thinking and depth of knowledge, not threats.
+                <strong>{tr(`Engage with challenging questions`)}</strong> - these are opportunities
+                to demonstrate critical thinking and depth of knowledge, not threats.
               </li>
               <li>
-                <strong>Stay calm and composed</strong> &mdash; maintain your formal register even
-                if a question catches you off guard.
+                <strong>Stay calm and composed</strong> - maintain your formal register even if a
+                question catches you off guard.
               </li>
             </ul>
 

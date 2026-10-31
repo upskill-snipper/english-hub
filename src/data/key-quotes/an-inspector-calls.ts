@@ -99,9 +99,9 @@ export const QUOTES: QuoteEntry[] = [
     act: 'Act 2',
     context: 'The Inspector\u2019s reply when Birling demands an apology to Sybil.',
     ao2Analysis:
-      'The balanced phrasing of "responsibilities as well as privileges" frames social duty as non-negotiable. The Inspector speaks to Birling as a moral equal \u2014 or superior \u2014 despite Birling\u2019s wealth and status.',
+      'The balanced phrasing of "responsibilities as well as privileges" frames social duty as non-negotiable. The Inspector speaks to Birling as a moral equal - or superior - despite Birling\u2019s wealth and status.',
     ao3Context:
-      'The Edwardian upper-middle class enjoyed privileges \u2014 wealth, political influence, social status \u2014 without proportional accountability. The post-war welfare state aimed to attach responsibility to power.',
+      'The Edwardian upper-middle class enjoyed privileges - wealth, political influence, social status - without proportional accountability. The post-war welfare state aimed to attach responsibility to power.',
     themes: ['Power & Abuse of Power', 'Social Responsibility'],
     examTip:
       'This quote immediately establishes the Inspector\u2019s moral authority. Use it to show how Priestley inverts the class hierarchy through the Inspector\u2019s language.',
@@ -118,7 +118,7 @@ export const QUOTES: QuoteEntry[] = [
       'Workers in 1912 had no legal protection against unfair dismissal. Trade unions were growing but strikes were risky. Eva\u2019s sacking for speaking up reflects the power imbalance of Edwardian labour relations.',
     themes: ['Power & Abuse of Power', 'Class & Inequality'],
     examTip:
-      'Analyse the word "go" \u2014 it reduces dismissal to a casual verb, sanitising the destruction of Eva\u2019s livelihood. This is strong AO2 on how language disguises exploitation.',
+      'Analyse the word "go" - it reduces dismissal to a casual verb, sanitising the destruction of Eva\u2019s livelihood. This is strong AO2 on how language disguises exploitation.',
   },
   /* ── Act 2 ──────────────────────────────────────────────────────────── */
   {
@@ -219,7 +219,7 @@ export const QUOTES: QuoteEntry[] = [
       'The belief that the working class lacked refined feelings was a cornerstone of Victorian and Edwardian class ideology. Priestley shows this assumption to be both cruel and self-serving.',
     themes: ['Class & Inequality', 'Gender'],
     examTip:
-      'This is an excellent quote for discussing how class prejudice operates through assumptions about moral capacity. Sybil does not just deny Eva help \u2014 she denies her full humanity.',
+      'This is an excellent quote for discussing how class prejudice operates through assumptions about moral capacity. Sybil does not just deny Eva help - she denies her full humanity.',
   },
   {
     id: 15,
@@ -290,7 +290,7 @@ export const QUOTES: QuoteEntry[] = [
       'The post-war consensus in Britain was built on the rejection of individualism. The NHS, national insurance, and council housing all expressed the principle that "we don\u2019t live alone."',
     themes: ['Social Responsibility', 'Capitalism vs Socialism'],
     examTip:
-      'Pair this with Birling\u2019s "a man has to look after himself and his own" to show the play\u2019s dialectical structure: thesis (Birling) \u2014 antithesis (Inspector).',
+      'Pair this with Birling\u2019s "a man has to look after himself and his own" to show the play\u2019s dialectical structure: thesis (Birling) - antithesis (Inspector).',
   },
   {
     id: 20,
@@ -304,7 +304,7 @@ export const QUOTES: QuoteEntry[] = [
       'The Edwardian father was expected to be an authority figure, not an emotional support. Priestley shows how this model of masculinity fails the younger generation and contributes to family dysfunction.',
     themes: ['Age & Generational Change', 'Power & Abuse of Power'],
     examTip:
-      'Use this to show that the Birling family\u2019s problems existed before the Inspector arrived. The investigation does not create dysfunction \u2014 it exposes dysfunction that was always there.',
+      'Use this to show that the Birling family\u2019s problems existed before the Inspector arrived. The investigation does not create dysfunction - it exposes dysfunction that was always there.',
   },
   {
     id: 21,
@@ -413,7 +413,7 @@ export const QUOTES: QuoteEntry[] = [
     act: 'Act 3',
     context: 'Sheila explains why she cannot dismiss the Inspector as a hoax.',
     ao2Analysis:
-      'The tricolon \u2014 "said," "looked," "feel" \u2014 moves from intellectual to visual to emotional, showing the Inspector\u2019s impact operated on every level. "Made me feel" acknowledges that genuine moral change is irreversible. Priestley argues that truth experienced cannot be un-experienced.',
+      'The tricolon - "said," "looked," "feel" - moves from intellectual to visual to emotional, showing the Inspector\u2019s impact operated on every level. "Made me feel" acknowledges that genuine moral change is irreversible. Priestley argues that truth experienced cannot be un-experienced.',
     ao3Context:
       'Priestley believed that theatre could change people\u2019s moral perceptions. Sheila\u2019s description of the Inspector\u2019s impact mirrors what Priestley hoped the play itself would do to its audience.',
     themes: ['Guilt & Morality', 'Age & Generational Change'],
@@ -427,7 +427,7 @@ export const QUOTES: QuoteEntry[] = [
     act: 'Act 3',
     context: 'Gerald tries to restore the engagement after the Inspector is discredited.',
     ao2Analysis:
-      '"Everything\u2019s all right now" dismisses the entire evening\u2019s moral reckoning. The ring becomes a symbol of Gerald\u2019s desire to return to comfortable ignorance. Priestley shows that Gerald has learned nothing \u2014 he wants to resume the status quo.',
+      '"Everything\u2019s all right now" dismisses the entire evening\u2019s moral reckoning. The ring becomes a symbol of Gerald\u2019s desire to return to comfortable ignorance. Priestley shows that Gerald has learned nothing - he wants to resume the status quo.',
     ao3Context:
       'The engagement ring represents the Birling-Croft business alliance as much as a personal relationship. Gerald\u2019s desire to restore it reflects the capitalist class\u2019s instinct to protect its interests after a crisis.',
     themes: ['Age & Generational Change', 'Capitalism vs Socialism'],

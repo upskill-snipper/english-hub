@@ -221,8 +221,8 @@ export default async function PersuasiveWritingPage() {
                         </h3>
                         <p className="text-sm italic text-muted-foreground">
                           <Annotation note="Subheading establishes the article's stance clearly. This is a key convention of broadsheet journalism.">
-                            Far from destroying communication, smartphones have transformed it
-                            &mdash; and it is time we stopped blaming young people for adapting.
+                            Far from destroying communication, smartphones have transformed it - and
+                            it is time we stopped blaming young people for adapting.
                           </Annotation>
                         </p>
                         <p>
@@ -230,10 +230,10 @@ export default async function PersuasiveWritingPage() {
                             Picture this: a family restaurant, Saturday evening.
                           </Annotation>{' '}
                           At the corner table, a teenager scrolls through her phone while her
-                          parents exchange weary glances. The scene is familiar, almost cliched
-                          &mdash; and it is precisely this familiarity that should make us
-                          suspicious of it. Because what the hand-wringing commentators never
-                          mention is what she is actually <em>doing</em> on that phone:
+                          parents exchange weary glances. The scene is familiar, almost cliched -
+                          and it is precisely this familiarity that should make us suspicious of it.
+                          Because what the hand-wringing commentators never mention is what she is
+                          actually <em>doing</em> on that phone:
                           <Annotation note="Rule of three (tricolon) with increasing significance - moves from personal to political.">
                             organising a fundraiser for her school&apos;s food bank, responding to a
                             friend in crisis, reading an article about climate policy
@@ -519,7 +519,7 @@ export default async function PersuasiveWritingPage() {
                         <p>
                           I am not here to give you another one of those speeches.
                           <Annotation note="Metacommentary - the speaker acknowledges the genre and subverts it.">
-                            I am here to argue that volunteering should not be optional &mdash; not
+                            I am here to argue that volunteering should not be optional - not
                             because it looks good on a university application, not because adults
                             say so, but because it is the single most effective way of understanding
                             a world that extends beyond these school gates.
@@ -554,8 +554,8 @@ export default async function PersuasiveWritingPage() {
                             you consider it.
                           </Annotation>{' '}
                           Because the world outside these walls is messy, complicated, and sometimes
-                          heartbreaking &mdash; and it needs people who have looked it in the eye
-                          and chosen to help anyway.
+                          heartbreaking - and it needs people who have looked it in the eye and
+                          chosen to help anyway.
                           <Annotation note="Powerful final sentence that elevates the argument from practical to moral.">
                             That is not a burden. That is a privilege.
                           </Annotation>

@@ -59,15 +59,15 @@ export default function OnlineSafetyPage() {
           </p>
           <ul className="list-disc ps-6 text-muted-foreground leading-relaxed space-y-1 mt-3">
             <li>
-              <strong className="text-foreground">Essay submissions</strong> &mdash; written
-              responses submitted for AI marking feedback.
+              <strong className="text-foreground">Essay submissions</strong> - written responses
+              submitted for AI marking feedback.
             </li>
             <li>
-              <strong className="text-foreground">Quiz responses</strong> &mdash; answers to
-              structured revision questions.
+              <strong className="text-foreground">Quiz responses</strong> - answers to structured
+              revision questions.
             </li>
             <li>
-              <strong className="text-foreground">Personal notes</strong> &mdash; notes saved by the
+              <strong className="text-foreground">Personal notes</strong> - notes saved by the
               student for their own revision (visible only to that student).
             </li>
           </ul>
@@ -122,28 +122,28 @@ export default function OnlineSafetyPage() {
           </p>
           <ul className="list-disc ps-6 text-muted-foreground leading-relaxed space-y-1 mt-2">
             <li>
-              <strong className="text-foreground">Illegal content</strong> &mdash; including child
-              sexual abuse material (CSAM), terrorism content, and content that incites violence.
+              <strong className="text-foreground">Illegal content</strong> - including child sexual
+              abuse material (CSAM), terrorism content, and content that incites violence.
             </li>
             <li>
-              <strong className="text-foreground">Content harmful to children</strong> &mdash;
-              including content promoting self-harm, suicide, eating disorders, or substance abuse.
+              <strong className="text-foreground">Content harmful to children</strong> - including
+              content promoting self-harm, suicide, eating disorders, or substance abuse.
             </li>
             <li>
-              <strong className="text-foreground">Hate speech</strong> &mdash; content targeting
+              <strong className="text-foreground">Hate speech</strong> - content targeting
               individuals or groups based on protected characteristics.
             </li>
             <li>
-              <strong className="text-foreground">Harassment and bullying</strong> &mdash; content
+              <strong className="text-foreground">Harassment and bullying</strong> - content
               intended to intimidate, threaten, or demean others.
             </li>
             <li>
-              <strong className="text-foreground">Explicit or sexual content</strong> &mdash;
-              including pornographic material or sexually explicit text.
+              <strong className="text-foreground">Explicit or sexual content</strong> - including
+              pornographic material or sexually explicit text.
             </li>
             <li>
-              <strong className="text-foreground">Fraudulent content</strong> &mdash; content
-              designed to scam, deceive, or phish other users or third parties.
+              <strong className="text-foreground">Fraudulent content</strong> - content designed to
+              scam, deceive, or phish other users or third parties.
             </li>
           </ul>
         </section>
@@ -164,7 +164,7 @@ export default function OnlineSafetyPage() {
                 <a href="mailto:safety@theenglishhub.app" className="underline text-foreground">
                   safety@theenglishhub.app
                 </a>{' '}
-                &mdash; we aim to acknowledge reports within 24 hours.
+                - we aim to acknowledge reports within 24 hours.
               </p>
             </div>
             <div>

@@ -31,17 +31,17 @@ const CONTEXT_POINTS = [
   {
     topic: 'Elizabethan England (1590s)',
     detail:
-      "Romeo and Juliet was written around 1594\u20131596, during the reign of Elizabeth I. England was Protestant, politically stable under an ageing queen, and experiencing a cultural explosion in theatre, poetry and exploration. Shakespeare's company performed at The Theatre (and later the Globe) to audiences ranging from illiterate groundlings to courtiers. The play would have been performed in daylight, with boys playing Juliet and the Nurse, and with minimal set design \u2014 Shakespeare's language had to create Verona in the audience's imagination.",
+      "Romeo and Juliet was written around 1594\u20131596, during the reign of Elizabeth I. England was Protestant, politically stable under an ageing queen, and experiencing a cultural explosion in theatre, poetry and exploration. Shakespeare's company performed at The Theatre (and later the Globe) to audiences ranging from illiterate groundlings to courtiers. The play would have been performed in daylight, with boys playing Juliet and the Nurse, and with minimal set design - Shakespeare's language had to create Verona in the audience's imagination.",
   },
   {
     topic: 'Patriarchy and the role of women',
     detail:
-      "Elizabethan England was a patriarchal society in which women had no legal independence. A daughter was her father's property until marriage, when she became her husband's. Lord Capulet's assumption that he can dictate Juliet's marriage to Paris is not villainy \u2014 it is normal. Juliet's defiance ('He shall not make me there a joyful bride', 3.5) would have been genuinely shocking: a thirteen-year-old daughter openly disobeying her father was a social rupture. The Nurse's eventual advice to marry Paris reflects the pragmatism a woman without power would logically adopt.",
+      "Elizabethan England was a patriarchal society in which women had no legal independence. A daughter was her father's property until marriage, when she became her husband's. Lord Capulet's assumption that he can dictate Juliet's marriage to Paris is not villainy - it is normal. Juliet's defiance ('He shall not make me there a joyful bride', 3.5) would have been genuinely shocking: a thirteen-year-old daughter openly disobeying her father was a social rupture. The Nurse's eventual advice to marry Paris reflects the pragmatism a woman without power would logically adopt.",
   },
   {
     topic: 'Arranged marriage',
     detail:
-      "Among the propertied classes, marriage was a dynastic transaction, not a romantic choice. Parents chose partners based on wealth, status and political alliance. Juliet's feelings about Paris are irrelevant to the Capulets \u2014 what matters is that he is 'a gentleman of noble parentage' (3.5). Shakespeare sets Romeo and Juliet's passionate, freely chosen love against this system. The play's tragedy is partly structural: the lovers' way of choosing is incompatible with the world they live in.",
+      "Among the propertied classes, marriage was a dynastic transaction, not a romantic choice. Parents chose partners based on wealth, status and political alliance. Juliet's feelings about Paris are irrelevant to the Capulets - what matters is that he is 'a gentleman of noble parentage' (3.5). Shakespeare sets Romeo and Juliet's passionate, freely chosen love against this system. The play's tragedy is partly structural: the lovers' way of choosing is incompatible with the world they live in.",
   },
   {
     topic: 'Honour culture and the blood feud',
@@ -51,12 +51,12 @@ const CONTEXT_POINTS = [
   {
     topic: 'The Italian setting',
     detail:
-      "Shakespeare sets the play in Verona, drawing on Arthur Brooke's 1562 poem The Tragicall Historye of Romeus and Juliet. Italy was associated in the English imagination with both romance and danger \u2014 passion, beauty, intrigue and vendetta. Setting the play abroad allowed Shakespeare to explore extreme emotions and violence at a safe distance from English censors, while still making points about honour, patriarchy and youth that applied directly to his own society.",
+      "Shakespeare sets the play in Verona, drawing on Arthur Brooke's 1562 poem The Tragicall Historye of Romeus and Juliet. Italy was associated in the English imagination with both romance and danger - passion, beauty, intrigue and vendetta. Setting the play abroad allowed Shakespeare to explore extreme emotions and violence at a safe distance from English censors, while still making points about honour, patriarchy and youth that applied directly to his own society.",
   },
   {
     topic: 'Petrarchan love poetry',
     detail:
-      "The Petrarchan sonnet tradition \u2014 named after the Italian poet Petrarch \u2014 dominated Elizabethan love poetry. It involved a male speaker worshipping an unattainable woman in elaborate, formulaic metaphors: eyes like stars, lips like coral, skin like snow. Romeo's early speeches about Rosaline are pure Petrarchan posturing: 'O brawling love, O loving hate' (1.1). When he meets Juliet, Shakespeare has them share a sonnet (1.5) \u2014 signalling real connection rather than one-sided performance. The play critiques Petrarchan convention even as it uses it.",
+      "The Petrarchan sonnet tradition - named after the Italian poet Petrarch - dominated Elizabethan love poetry. It involved a male speaker worshipping an unattainable woman in elaborate, formulaic metaphors: eyes like stars, lips like coral, skin like snow. Romeo's early speeches about Rosaline are pure Petrarchan posturing: 'O brawling love, O loving hate' (1.1). When he meets Juliet, Shakespeare has them share a sonnet (1.5) - signalling real connection rather than one-sided performance. The play critiques Petrarchan convention even as it uses it.",
   },
   {
     topic: 'The Elizabethan stage and audience',
@@ -66,12 +66,12 @@ const CONTEXT_POINTS = [
   {
     topic: 'Fate, fortune and the stars',
     detail:
-      "Elizabethans lived in a world where astrology was widely accepted. The stars were believed to influence human destiny. The prologue's 'star-cross'd lovers' would have been taken literally: their fate was written in the heavens. But Shakespeare complicates this by showing human decisions \u2014 the Friar's plan, the Nurse's betrayal, Capulet's ultimatum, Romeo's rashness \u2014 as equally responsible. The play holds fate and free will in tension, never fully resolving which one is to blame.",
+      "Elizabethans lived in a world where astrology was widely accepted. The stars were believed to influence human destiny. The prologue's 'star-cross'd lovers' would have been taken literally: their fate was written in the heavens. But Shakespeare complicates this by showing human decisions - the Friar's plan, the Nurse's betrayal, Capulet's ultimatum, Romeo's rashness - as equally responsible. The play holds fate and free will in tension, never fully resolving which one is to blame.",
   },
   {
     topic: 'Religion and the Friar',
     detail:
-      "England was officially Protestant after Henry VIII's break with Rome, but many Elizabethans retained Catholic sympathies. Friar Lawrence is a Catholic monk \u2014 he hears confession, performs secret sacraments, and resorts to a potion rather than legal channels. A Protestant audience might have seen his scheming as characteristically Catholic (equivocation, secrecy), while a Catholic-sympathetic audience might have seen a well-meaning holy man trapped by circumstances. Shakespeare leaves both readings available.",
+      "England was officially Protestant after Henry VIII's break with Rome, but many Elizabethans retained Catholic sympathies. Friar Lawrence is a Catholic monk - he hears confession, performs secret sacraments, and resorts to a potion rather than legal channels. A Protestant audience might have seen his scheming as characteristically Catholic (equivocation, secrecy), while a Catholic-sympathetic audience might have seen a well-meaning holy man trapped by circumstances. Shakespeare leaves both readings available.",
   },
 ]
 
@@ -94,7 +94,7 @@ export default async function RomeoAndJulietContextPage() {
             {await t('igcse.page.badge_edexcel_lit')}
           </div>
           <h1 className="mt-4 text-3xl font-bold tracking-tight text-foreground sm:text-4xl md:text-5xl">
-            Romeo and Juliet &mdash; Context
+            Romeo and Juliet - Context
           </h1>
           <p className="mx-auto mt-4 max-w-xl text-lg text-muted-foreground">
             Elizabethan society, patriarchy, honour culture, the Italian setting and Petrarchan love
@@ -112,7 +112,7 @@ export default async function RomeoAndJulietContextPage() {
             On the Edexcel IGCSE Literature Shakespeare question, context is assessed through
             relating to context. The strongest answers <strong>weave context into analysis</strong>{' '}
             rather than treating it as a bolted-on paragraph. Aim for a single sharp sentence of
-            context inside each analytical paragraph &mdash; enough to frame an Elizabethan
+            context inside each analytical paragraph - enough to frame an Elizabethan
             audience&rsquo;s reaction to a specific moment.
           </p>
         </div>
@@ -147,8 +147,8 @@ export default async function RomeoAndJulietContextPage() {
             </p>
           </div>
           <p className="mt-4 text-sm text-muted-foreground leading-relaxed">
-            That&rsquo;s context working <em>inside</em> an analytical argument &mdash; exactly what
-            IGCSE examiners reward.
+            That&rsquo;s context working <em>inside</em> an analytical argument - exactly what IGCSE
+            examiners reward.
           </p>
         </section>
       </div>

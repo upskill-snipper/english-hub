@@ -678,7 +678,7 @@ export default async function RomeoAndJulietPage() {
             AQA English Literature &middot; Paper 1
           </p>
           <h1 className="text-3xl font-bold tracking-tight sm:text-4xl md:text-5xl">
-            Romeo and Juliet &mdash; Complete Study Guide
+            Romeo and Juliet - Complete Study Guide
           </h1>
           <p className="mx-auto mt-4 max-w-2xl text-lg text-muted-foreground">
             William Shakespeare &middot; Written c. 1594&ndash;96 &middot; Tragedy
@@ -800,8 +800,8 @@ export default async function RomeoAndJulietPage() {
       <section id="characters" className="mx-auto max-w-5xl px-4 py-12 sm:py-16">
         <h2 className="text-2xl font-bold text-foreground">Character Analysis</h2>
         <p className="mt-2 text-muted-foreground">
-          Understanding characters as constructs &mdash; Shakespeare made deliberate choices about
-          how to present each character to convey meaning.
+          Understanding characters as constructs - Shakespeare made deliberate choices about how to
+          present each character to convey meaning.
         </p>
 
         <div className="mt-8 space-y-8">
@@ -846,7 +846,7 @@ export default async function RomeoAndJulietPage() {
       {/* ── Themes ───────────────────────────────────────────────── */}
       <section id="themes" className="bg-muted px-4 py-12 sm:py-16">
         <div className="mx-auto max-w-5xl">
-          <h2 className="text-2xl font-bold text-foreground">Key Themes &mdash; AQA Focus</h2>
+          <h2 className="text-2xl font-bold text-foreground">Key Themes - AQA Focus</h2>
           <p className="mt-2 text-muted-foreground">
             Themes are the big ideas Shakespeare explores through the plot, characters, and language
             of the play.
@@ -935,7 +935,7 @@ export default async function RomeoAndJulietPage() {
       <section id="command-words" className="bg-muted px-4 py-12 sm:py-16">
         <div className="mx-auto max-w-5xl">
           <h2 className="text-2xl font-bold text-foreground">
-            AQA Command Words &mdash; What They Really Mean
+            AQA Command Words - What They Really Mean
           </h2>
           <p className="mt-2 text-muted-foreground">
             Understanding the question wording is crucial. Here are the key phrases AQA uses and

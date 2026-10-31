@@ -860,13 +860,13 @@ export default async function MacbethPage() {
             The play&rsquo;s central themes are tightly interwoven. Ambition is the engine, but it
             cannot operate alone: it requires the supernatural prompting of the witches, the goading
             of Lady Macbeth, and Macbeth&rsquo;s own willingness to act. Guilt then haunts both
-            protagonists in markedly different ways &mdash; Macbeth externalises it as floating
-            daggers and the ghost of Banquo; Lady Macbeth suppresses it until it erupts in her
-            sleepwalking scene. Power and kingship are tested through the contrast of Duncan&rsquo;s
-            divinely sanctioned rule, Macbeth&rsquo;s tyranny, and Malcolm&rsquo;s restoration.
-            Running underneath all of this is a sustained interrogation of fate versus free will:
-            the witches prophesy what Macbeth might become, but Banquo hears the same words and
-            refuses to act on them.
+            protagonists in markedly different ways - Macbeth externalises it as floating daggers
+            and the ghost of Banquo; Lady Macbeth suppresses it until it erupts in her sleepwalking
+            scene. Power and kingship are tested through the contrast of Duncan&rsquo;s divinely
+            sanctioned rule, Macbeth&rsquo;s tyranny, and Malcolm&rsquo;s restoration. Running
+            underneath all of this is a sustained interrogation of fate versus free will: the
+            witches prophesy what Macbeth might become, but Banquo hears the same words and refuses
+            to act on them.
           </p>
           {/* Until 23 October 2026 this paragraph opened by saying Macbeth
               "sits on the Shakespeare paper of every major English Literature
@@ -884,7 +884,7 @@ export default async function MacbethPage() {
             Shakespeare&rsquo;s methods (AO2): the trochaic tetrameter of the witches, the chiastic
             phrasing of &ldquo;fair is foul, and foul is fair&rdquo;, the blood and sleep motifs,
             and the recurring images of light and darkness. Strong essays also locate the play in
-            its Jacobean context (AO3) &mdash; the Gunpowder Plot of 1605, James I&rsquo;s personal
+            its Jacobean context (AO3) - the Gunpowder Plot of 1605, James I&rsquo;s personal
             interest in witchcraft and his descent from Banquo, and the doctrine of the Divine Right
             of Kings.
           </p>
@@ -893,8 +893,8 @@ export default async function MacbethPage() {
             track each theme across the whole play, and practise pivoting from method to meaning to
             context within a single paragraph. That integrated movement is what distinguishes Grade
             7+ responses from competent retellings. The guide below covers plot, characters, themes,
-            key quotations, context and essay plans &mdash; start with the Top 5 quotes widget, then
-            move into the act-by-act analysis.
+            key quotations, context and essay plans - start with the Top 5 quotes widget, then move
+            into the act-by-act analysis.
           </p>
         </div>
       </section>

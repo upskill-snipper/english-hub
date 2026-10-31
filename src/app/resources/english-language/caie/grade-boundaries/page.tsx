@@ -346,8 +346,8 @@ export default function GradeBoundariesPage() {
         <Section title="9-1 grading scale">
           <p>
             The 9&ndash;1 grading variant uses the 9&ndash;1 grading scale (aligned with the UK
-            reformed GCSE system). The content and papers are identical to the A*&ndash;G variant
-            &mdash; only the grading scale differs. Here is how the two scales map onto each other:
+            reformed GCSE system). The content and papers are identical to the A*&ndash;G variant -
+            only the grading scale differs. Here is how the two scales map onto each other:
           </p>
 
           <div className="mt-4 overflow-x-auto">
@@ -422,7 +422,7 @@ export default function GradeBoundariesPage() {
           <p className="mt-4 text-sm text-muted-foreground">
             Key equivalences to remember: Grade 9 = top A*, Grade 7 = A, Grade 4 = C (standard
             pass). The 9&ndash;1 boundaries in raw marks are very similar to the A*&ndash;G variant
-            &mdash; they are simply mapped to the different scale.
+            - they are simply mapped to the different scale.
           </p>
         </Section>
 
@@ -704,7 +704,7 @@ export default function GradeBoundariesPage() {
             <p className="text-sm text-muted-foreground">
               Notice that reading and writing carry equal weight (50% each). Students who focus only
               on reading and neglect their writing skills are leaving half their marks on the table
-              &mdash; and vice versa.
+              - and vice versa.
             </p>
           </div>
         </Section>
@@ -728,13 +728,13 @@ export default function GradeBoundariesPage() {
                 </li>
                 <li>
                   <strong>Summary:</strong> Aim for at least 8&ndash;10 relevant content points.
-                  Start using your own words instead of copying from the passage &mdash; practise
+                  Start using your own words instead of copying from the passage - practise
                   paraphrasing individual sentences as a daily exercise.
                 </li>
                 <li>
-                  <strong>Writing:</strong> Focus on basic accuracy &mdash; full stops, capital
-                  letters, consistent tense. Use paragraphs to organise your ideas. Make sure your
-                  directed writing uses the correct format (letter, speech, article, etc.).
+                  <strong>Writing:</strong> Focus on basic accuracy - full stops, capital letters,
+                  consistent tense. Use paragraphs to organise your ideas. Make sure your directed
+                  writing uses the correct format (letter, speech, article, etc.).
                 </li>
                 <li>
                   <strong>Timing:</strong> Ensure you attempt every question. Unanswered questions
@@ -753,8 +753,8 @@ export default function GradeBoundariesPage() {
                 </li>
                 <li>
                   <strong>Summary:</strong> Aim for 12+ content points. Improve the quality of your
-                  own words &mdash; use a wider range of vocabulary and connectives. Group related
-                  points together for a more fluent response.
+                  own words - use a wider range of vocabulary and connectives. Group related points
+                  together for a more fluent response.
                 </li>
                 <li>
                   <strong>Writing:</strong> Vary your sentence structures. Include at least
@@ -842,22 +842,22 @@ export default function GradeBoundariesPage() {
               </h3>
               <ul className="mt-2 ms-5 list-disc space-y-1 text-sm text-muted-foreground">
                 <li>
-                  <strong>Feature-spotting</strong> &mdash; naming a technique (e.g., &ldquo;The
-                  writer uses a metaphor&rdquo;) without explaining its effect. Always follow up
-                  with &ldquo;This suggests / creates / emphasises...&rdquo;
+                  <strong>Feature-spotting</strong> - naming a technique (e.g., &ldquo;The writer
+                  uses a metaphor&rdquo;) without explaining its effect. Always follow up with
+                  &ldquo;This suggests / creates / emphasises...&rdquo;
                 </li>
                 <li>
-                  <strong>{tr(`Retelling the story`)}</strong> &mdash; summarising what happens
-                  instead of analysing how the writer achieves their effect.
+                  <strong>{tr(`Retelling the story`)}</strong> - summarising what happens instead of
+                  analysing how the writer achieves their effect.
                 </li>
                 <li>
-                  <strong>{tr(`Ignoring the question focus`)}</strong> &mdash; writing a general
-                  response about the passage instead of addressing the specific angle the question
-                  asks about.
+                  <strong>{tr(`Ignoring the question focus`)}</strong> - writing a general response
+                  about the passage instead of addressing the specific angle the question asks
+                  about.
                 </li>
                 <li>
-                  <strong>{tr(`Using overlong quotations`)}</strong> &mdash; quoting entire
-                  sentences when a short, precise phrase would be more effective to analyse.
+                  <strong>{tr(`Using overlong quotations`)}</strong> - quoting entire sentences when
+                  a short, precise phrase would be more effective to analyse.
                 </li>
               </ul>
             </div>
@@ -868,17 +868,17 @@ export default function GradeBoundariesPage() {
               </h3>
               <ul className="mt-2 ms-5 list-disc space-y-1 text-sm text-muted-foreground">
                 <li>
-                  <strong>{tr(`Copying from the passage`)}</strong> &mdash; lifting whole phrases
-                  instead of using your own words. Markers specifically look for evidence of your
-                  own vocabulary.
+                  <strong>{tr(`Copying from the passage`)}</strong> - lifting whole phrases instead
+                  of using your own words. Markers specifically look for evidence of your own
+                  vocabulary.
                 </li>
                 <li>
-                  <strong>Including irrelevant content</strong> &mdash; adding points that are not
+                  <strong>Including irrelevant content</strong> - adding points that are not
                   relevant to the specific summary question.
                 </li>
                 <li>
-                  <strong>{tr(`Writing too little`)}</strong> &mdash; many students under-write
-                  their summary. Aim for a full, developed paragraph.
+                  <strong>{tr(`Writing too little`)}</strong> - many students under-write their
+                  summary. Aim for a full, developed paragraph.
                 </li>
               </ul>
             </div>
@@ -889,20 +889,20 @@ export default function GradeBoundariesPage() {
               </h3>
               <ul className="mt-2 ms-5 list-disc space-y-1 text-sm text-muted-foreground">
                 <li>
-                  <strong>{tr(`Wrong format in directed writing`)}</strong> &mdash; writing a letter
-                  when asked for a speech, or missing key features like addresses and sign-offs.
+                  <strong>{tr(`Wrong format in directed writing`)}</strong> - writing a letter when
+                  asked for a speech, or missing key features like addresses and sign-offs.
                 </li>
                 <li>
-                  <strong>Overloading with techniques</strong> &mdash; cramming in every device you
-                  know rather than using a few well-chosen ones for genuine effect.
+                  <strong>Overloading with techniques</strong> - cramming in every device you know
+                  rather than using a few well-chosen ones for genuine effect.
                 </li>
                 <li>
-                  <strong>{tr(`Weak endings`)}</strong> &mdash; trailing off or rushing the
-                  conclusion. A strong ending can elevate the whole piece.
+                  <strong>{tr(`Weak endings`)}</strong> - trailing off or rushing the conclusion. A
+                  strong ending can elevate the whole piece.
                 </li>
                 <li>
-                  <strong>{tr(`Ignoring SPaG`)}</strong> &mdash; spelling, punctuation, and grammar
-                  carry significant marks. Basic errors (comma splicing, inconsistent tense, missing
+                  <strong>{tr(`Ignoring SPaG`)}</strong> - spelling, punctuation, and grammar carry
+                  significant marks. Basic errors (comma splicing, inconsistent tense, missing
                   capital letters) add up quickly.
                 </li>
               </ul>

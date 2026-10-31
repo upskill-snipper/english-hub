@@ -108,12 +108,12 @@ export default function WomanInBlackRevisionPage() {
           </span>
         </div>
         <h1 className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
-          The Woman in Black &mdash; Complete Revision Guide
+          The Woman in Black - Complete Revision Guide
         </h1>
         <p className="mt-3 max-w-3xl text-lg text-muted-foreground">
           Everything you need for your GCSE/IGCSE English Literature exam on Susan Hill&apos;s
           gothic novella. Chapter-by-chapter plot, character analysis, themes, context, and exam
-          technique &mdash; rebuilt April 2026 with direct quotations withheld pending verified
+          technique - rebuilt April 2026 with direct quotations withheld pending verified
           primary-source review.
         </p>
       </div>
@@ -177,8 +177,7 @@ export default function WomanInBlackRevisionPage() {
                 stepchildren are telling ghost stories, but Arthur cannot participate and leaves the
                 room, visibly disturbed. This framing device establishes that Arthur has experienced
                 something genuinely traumatic. He decides to write down his story as a form of
-                exorcism &mdash; to confront and release the terror that has haunted him for
-                decades.
+                exorcism - to confront and release the terror that has haunted him for decades.
               </p>
               <div className="mt-3 rounded-lg bg-muted p-3">
                 <p className="text-xs font-semibold text-muted-foreground uppercase tracking-wider">
@@ -186,7 +185,7 @@ export default function WomanInBlackRevisionPage() {
                 </p>
                 <ul className="mt-2 space-y-1 text-sm text-muted-foreground">
                   <li>
-                    &bull; Frame narrative creates dramatic irony &mdash; we know something terrible
+                    &bull; Frame narrative creates dramatic irony - we know something terrible
                     happened
                   </li>
                   <li>
@@ -210,8 +209,8 @@ export default function WomanInBlackRevisionPage() {
                 the funeral of Mrs Alice Drablow at her remote house, Eel Marsh House, in the
                 fictional town of Crythin Gifford. He must also sort through her papers. Arthur is
                 confident and rational, dismissing any notion of the supernatural. The thick London
-                fog of the chapter title &mdash; a &ldquo;London particular&rdquo; in period idiom
-                &mdash; foreshadows the mist and obscured vision that will dominate the story.
+                fog of the chapter title - a &ldquo;London particular&rdquo; in period idiom -
+                foreshadows the mist and obscured vision that will dominate the story.
               </p>
             </div>
 
@@ -252,9 +251,7 @@ export default function WomanInBlackRevisionPage() {
                 <ul className="mt-2 space-y-1 text-sm text-muted-foreground">
                   <li>&bull; First appearance of the Woman in Black at the funeral</li>
                   <li>&bull; The locals&apos; terrified silence when she is mentioned</li>
-                  <li>
-                    &bull; Arthur&apos;s rational dismissal of their fears &mdash; dramatic irony
-                  </li>
+                  <li>&bull; Arthur&apos;s rational dismissal of their fears - dramatic irony</li>
                 </ul>
               </div>
             </div>
@@ -286,8 +283,8 @@ export default function WomanInBlackRevisionPage() {
               </h3>
               <p className="mt-2 text-sm text-muted-foreground leading-relaxed">
                 Arthur spends a terrifying night at Eel Marsh House. He hears the ghostly sounds of
-                the pony and trap again &mdash; a child&apos;s screams and the sucking of the marsh.
-                He meets Mr Jerome, Mrs Drablow&apos;s land agent, who is terrified and unhelpful.
+                the pony and trap again - a child&apos;s screams and the sucking of the marsh. He
+                meets Mr Jerome, Mrs Drablow&apos;s land agent, who is terrified and unhelpful.
                 Arthur discovers letters and documents revealing that Mrs Drablow had a sister,
                 Jennet Humfrye, who had an illegitimate child. The child, Nathaniel, was taken from
                 Jennet and given to Mrs Drablow to raise. Nathaniel died when the pony and trap
@@ -303,7 +300,7 @@ export default function WomanInBlackRevisionPage() {
                 The Nursery / Spider
               </h3>
               <p className="mt-2 text-sm text-muted-foreground leading-relaxed">
-                Arthur discovers a locked room &mdash; a nursery, preserved exactly as it was when
+                Arthur discovers a locked room - a nursery, preserved exactly as it was when
                 Nathaniel was alive. He finds toys, clothes, and a child&apos;s rocking chair that
                 rocks by itself. The atmosphere of grief and rage is palpable. Mr Daily lends Arthur
                 his dog, Spider, for companionship. Spider becomes a crucial companion but also
@@ -325,8 +322,8 @@ export default function WomanInBlackRevisionPage() {
                 in Black watching from the house with an expression of malevolent triumph. Mr Daily
                 finally reveals the full story: Jennet Humfrye died of a wasting disease, consumed
                 by hatred for her sister and grief for her son. Her ghost appears whenever a child
-                is about to die &mdash; or causes a child&apos;s death. Every sighting of her has
-                been followed by the death of a child in Crythin Gifford.
+                is about to die - or causes a child&apos;s death. Every sighting of her has been
+                followed by the death of a child in Crythin Gifford.
               </p>
             </div>
 
@@ -344,7 +341,7 @@ export default function WomanInBlackRevisionPage() {
                 crashes. His son is killed instantly, and Stella dies from her injuries shortly
                 after. The Woman in Black has taken her final revenge. Arthur is left alone, haunted
                 forever. The ending is devastating because there is no escape, no resolution, and no
-                justice &mdash; the supernatural wins completely.
+                justice - the supernatural wins completely.
               </p>
               <div className="mt-3 rounded-lg bg-muted p-3">
                 <p className="text-xs font-semibold text-muted-foreground uppercase tracking-wider">
@@ -352,13 +349,12 @@ export default function WomanInBlackRevisionPage() {
                 </p>
                 <ul className="mt-2 space-y-1 text-sm text-muted-foreground">
                   <li>
-                    &bull; The cyclical structure &mdash; the story ends where it begins, with
-                    Arthur haunted
+                    &bull; The cyclical structure - the story ends where it begins, with Arthur
+                    haunted
                   </li>
                   <li>&bull; The death of an innocent child mirrors Nathaniel&apos;s death</li>
                   <li>
-                    &bull; No resolution or redemption &mdash; subverts the traditional ghost story
-                    ending
+                    &bull; No resolution or redemption - subverts the traditional ghost story ending
                   </li>
                 </ul>
               </div>
@@ -382,10 +378,10 @@ export default function WomanInBlackRevisionPage() {
                 <p className="mt-3 text-sm text-muted-foreground leading-relaxed">
                   Arthur is both the young protagonist and the older narrator looking back on
                   events. As a young man, he is rational, confident, and dismissive of superstition
-                  &mdash; a product of late-Victorian / Edwardian rationalism. He represents the
-                  educated, logical mindset that the gothic genre seeks to undermine. His arrogance
-                  in ignoring the locals&apos; warnings makes him a classic gothic protagonist:
-                  someone who ventures where they should not. As the older narrator, he is broken,
+                  - a product of late-Victorian / Edwardian rationalism. He represents the educated,
+                  logical mindset that the gothic genre seeks to undermine. His arrogance in
+                  ignoring the locals&apos; warnings makes him a classic gothic protagonist: someone
+                  who ventures where they should not. As the older narrator, he is broken,
                   traumatised, and deeply changed. His character arc traces the destruction of
                   rational certainty by supernatural terror.
                 </p>
@@ -420,12 +416,12 @@ export default function WomanInBlackRevisionPage() {
                   <Beat
                     moment="First sighting at Mrs Drablow's funeral"
                     chapter="The Funeral of Mrs Drablow"
-                    analysis="Her physical appearance &mdash; emaciated, wasted, dressed in black mourning &mdash; is described with restraint at first sight. Hill withholds explanation, creating curiosity rather than terror. The wasting of her body externalises both the disease that killed her and the grief and hatred that have consumed her since. Students should annotate the description in their own copy for words associated with illness, hollowness and shadow."
+                    analysis="Her physical appearance - emaciated, wasted, dressed in black mourning - is described with restraint at first sight. Hill withholds explanation, creating curiosity rather than terror. The wasting of her body externalises both the disease that killed her and the grief and hatred that have consumed her since. Students should annotate the description in their own copy for words associated with illness, hollowness and shadow."
                   />
                   <Beat
                     moment="The revealed pattern: every sighting precedes a child's death"
                     chapter="Mr Daily's revelation, late in the novella"
-                    analysis="The horror is structural rather than visual. Hill loads the meaning of each prior sighting retroactively: the reader, like Arthur, has unwittingly been counting deaths. Jennet's motivation is reduced to its primal essence &mdash; maternal grief twisted into murderous rage, exacted on other mothers' children. Students writing on the ghost should focus on this revelatory moment as the structural pivot of the novella."
+                    analysis="The horror is structural rather than visual. Hill loads the meaning of each prior sighting retroactively: the reader, like Arthur, has unwittingly been counting deaths. Jennet's motivation is reduced to its primal essence - maternal grief twisted into murderous rage, exacted on other mothers' children. Students writing on the ghost should focus on this revelatory moment as the structural pivot of the novella."
                   />
                 </div>
               </div>
@@ -445,7 +441,7 @@ export default function WomanInBlackRevisionPage() {
                 <Beat
                   moment="Mr Daily's repeated, restrained warnings on the train and afterwards"
                   chapter="The Journey North onwards"
-                  analysis="His reluctance to speak openly is itself the warning. Hill uses Daily's careful evasion &mdash; the half-finished sentence, the change of subject &mdash; to mirror the gothic tradition of knowledge withheld. The truth emerges gradually, increasing tension; an explicit warning early on would deflate the suspense. Students should annotate the moments where Daily breaks off mid-sentence."
+                  analysis="His reluctance to speak openly is itself the warning. Hill uses Daily's careful evasion - the half-finished sentence, the change of subject - to mirror the gothic tradition of knowledge withheld. The truth emerges gradually, increasing tension; an explicit warning early on would deflate the suspense. Students should annotate the moments where Daily breaks off mid-sentence."
                 />
               </div>
 
@@ -469,9 +465,9 @@ export default function WomanInBlackRevisionPage() {
                 <p className="mt-3 text-sm text-muted-foreground leading-relaxed">
                   The local man who drives Arthur across the causeway to Eel Marsh House in his pony
                   and trap. He is silent and uncommunicative, refusing to discuss the house or its
-                  history. The pony and trap he drives is deeply symbolic &mdash; it echoes the pony
-                  and trap that carried Nathaniel to his death. Keckwick&apos;s silence contributes
-                  to the atmosphere of fear and secrets.
+                  history. The pony and trap he drives is deeply symbolic - it echoes the pony and
+                  trap that carried Nathaniel to his death. Keckwick&apos;s silence contributes to
+                  the atmosphere of fear and secrets.
                 </p>
               </div>
 
@@ -503,18 +499,18 @@ export default function WomanInBlackRevisionPage() {
                 </h3>
                 <p className="mt-2 text-sm text-muted-foreground leading-relaxed">
                   Isolation is central to the novella&apos;s horror. Eel Marsh House is physically
-                  isolated &mdash; cut off by the tide, surrounded by marshes, accessible only via
-                  the Nine Lives Causeway. This geographical isolation mirrors Arthur&apos;s
+                  isolated - cut off by the tide, surrounded by marshes, accessible only via the
+                  Nine Lives Causeway. This geographical isolation mirrors Arthur&apos;s
                   psychological isolation: he is alone with the ghost, unable to communicate his
                   terror to others. The locals isolate themselves from him by refusing to discuss
-                  the haunting. Hill uses isolation to create vulnerability &mdash; Arthur cannot
-                  escape and has no one to help him. This connects to the gothic tradition of
-                  isolated settings where characters are at the mercy of supernatural forces.
+                  the haunting. Hill uses isolation to create vulnerability - Arthur cannot escape
+                  and has no one to help him. This connects to the gothic tradition of isolated
+                  settings where characters are at the mercy of supernatural forces.
                 </p>
                 <Beat
                   moment="Arthur stranded by the tide on his first night"
                   chapter="Across the Causeway"
-                  analysis="The tide is an indifferent natural force which cuts Arthur off without malice but with absolute effect. Hill uses geography itself as antagonist: there is no shelter, no neighbour, no telegraph &mdash; the marshes and the rising water remove every escape route. Students should track tidal language across the novella as a structural marker of vulnerability."
+                  analysis="The tide is an indifferent natural force which cuts Arthur off without malice but with absolute effect. Hill uses geography itself as antagonist: there is no shelter, no neighbour, no telegraph - the marshes and the rising water remove every escape route. Students should track tidal language across the novella as a structural marker of vulnerability."
                 />
               </div>
 
@@ -525,19 +521,18 @@ export default function WomanInBlackRevisionPage() {
                 </h3>
                 <p className="mt-2 text-sm text-muted-foreground leading-relaxed">
                   Unlike many ghost stories, Hill presents the supernatural as genuinely real and
-                  genuinely dangerous. There is no rational explanation for the events &mdash; the
-                  ghost is not a hallucination or a hoax. Arthur&apos;s rationalism is useless
-                  against Jennet&apos;s ghost. Hill builds fear through atmosphere, sound, and
-                  suggestion rather than graphic horror: the sounds of the pony and trap, the
-                  child&apos;s cry, the rocking chair, the figure in the graveyard. The technique of
-                  withholding information &mdash; delaying the full revelation &mdash; creates
-                  sustained tension throughout.
+                  genuinely dangerous. There is no rational explanation for the events - the ghost
+                  is not a hallucination or a hoax. Arthur&apos;s rationalism is useless against
+                  Jennet&apos;s ghost. Hill builds fear through atmosphere, sound, and suggestion
+                  rather than graphic horror: the sounds of the pony and trap, the child&apos;s cry,
+                  the rocking chair, the figure in the graveyard. The technique of withholding
+                  information - delaying the full revelation - creates sustained tension throughout.
                 </p>
                 <div className="mt-3 grid gap-3 sm:grid-cols-2">
                   <Beat
                     moment="The auditory replay of the pony and trap accident"
                     chapter="The Sound of a Pony and Trap"
-                    analysis="The horror is auditory rather than visual: a child screaming, hooves struggling, water swallowing the trap. Hill chooses sound because it carries across the empty marshes and forces the reader to imagine the scene rather than be shown it. The repetition of this haunting suggests a loop that cannot be ended &mdash; Nathaniel's death replaying eternally."
+                    analysis="The horror is auditory rather than visual: a child screaming, hooves struggling, water swallowing the trap. Hill chooses sound because it carries across the empty marshes and forces the reader to imagine the scene rather than be shown it. The repetition of this haunting suggests a loop that cannot be ended - Nathaniel's death replaying eternally."
                   />
                   <Beat
                     moment="Arthur's rational framework collapsing into uncertainty"
@@ -557,7 +552,7 @@ export default function WomanInBlackRevisionPage() {
                   intense that it transcends death, becoming a malevolent supernatural force. Her
                   grief has curdled into a desire to inflict the same suffering on others.
                   Arthur&apos;s grief at losing his wife and child at the novel&apos;s end mirrors
-                  Jennet&apos;s &mdash; the difference is that Arthur does not become vengeful. The
+                  Jennet&apos;s - the difference is that Arthur does not become vengeful. The
                   novella suggests that grief, when combined with injustice, can become destructive
                   and all-consuming. The preserved nursery is a physical manifestation of grief
                   frozen in time.
@@ -565,7 +560,7 @@ export default function WomanInBlackRevisionPage() {
                 <Beat
                   moment="Mr Daily's revelation of how Nathaniel was taken from Jennet"
                   chapter="The Full Truth"
-                  analysis="The injustice at the heart of the haunting is named in plain terms: Jennet had a moral and emotional claim to her son that the family overrode. Hill grounds the supernatural in concrete social cruelty &mdash; the horror has a real cause. Students should connect this revelation to the wider Victorian context of unmarried motherhood, and use that context to argue Jennet is both victim and villain."
+                  analysis="The injustice at the heart of the haunting is named in plain terms: Jennet had a moral and emotional claim to her son that the family overrode. Hill grounds the supernatural in concrete social cruelty - the horror has a real cause. Students should connect this revelation to the wider Victorian context of unmarried motherhood, and use that context to argue Jennet is both victim and villain."
                 />
               </div>
 
@@ -579,7 +574,7 @@ export default function WomanInBlackRevisionPage() {
                   before Arthur arrives, but it continues to affect the present. The nursery is
                   preserved, the sounds replay endlessly, and the ghost remains. The frame narrative
                   reinforces this: even decades later, Arthur cannot escape his experience. Hill
-                  suggests that suppressing or ignoring the past does not make it go away &mdash; it
+                  suggests that suppressing or ignoring the past does not make it go away - it
                   festers and grows more dangerous.
                 </p>
               </div>
@@ -607,10 +602,10 @@ export default function WomanInBlackRevisionPage() {
                 <p className="mt-2 text-sm text-muted-foreground leading-relaxed">
                   The townspeople of Crythin Gifford maintain a conspiracy of silence about the
                   Woman in Black. This silence is both self-protective and destructive: by refusing
-                  to speak, they leave Arthur unprepared. The original secret &mdash; Jennet&apos;s
-                  illegitimate child &mdash; was a product of Victorian shame about unmarried
-                  motherhood. The novella suggests that secrets and silence do not protect but
-                  rather perpetuate suffering.
+                  to speak, they leave Arthur unprepared. The original secret - Jennet&apos;s
+                  illegitimate child - was a product of Victorian shame about unmarried motherhood.
+                  The novella suggests that secrets and silence do not protect but rather perpetuate
+                  suffering.
                 </p>
               </div>
 
@@ -624,13 +619,13 @@ export default function WomanInBlackRevisionPage() {
                   isolation, decaying house, locked nursery, and graveyard are all traditional
                   gothic elements used with precision. The landscape is not merely a backdrop but an
                   active force: the tide traps Arthur, the mist disorients him, the marshes threaten
-                  to swallow him. Pathetic fallacy is used throughout &mdash; weather reflects
-                  emotional states and supernatural activity.
+                  to swallow him. Pathetic fallacy is used throughout - weather reflects emotional
+                  states and supernatural activity.
                 </p>
                 <Beat
                   moment="The sea fret rolling across the marshes and obscuring the house"
                   chapter="Across the Causeway"
-                  analysis="The mist is symbolic as well as literal: it blurs boundaries between land and sea, inside and outside, present and past, and the living and the dead. Hill personifies the weather as an active, encroaching force. Students should treat the fret descriptions as a structural motif &mdash; weather mirrors revelation."
+                  analysis="The mist is symbolic as well as literal: it blurs boundaries between land and sea, inside and outside, present and past, and the living and the dead. Hill personifies the weather as an active, encroaching force. Students should treat the fret descriptions as a structural motif - weather mirrors revelation."
                 />
               </div>
             </div>
@@ -647,9 +642,9 @@ export default function WomanInBlackRevisionPage() {
           >
             <p className="text-sm text-muted-foreground mb-4">
               Verified direct quotations have been withheld pending primary-source review. The
-              structural beats below tell you <em>where</em> in your own licensed copy to annotate
-              &mdash; mark each beat in your text and write its analytical function in the margin.
-              These beats are the ones examiners reward.
+              structural beats below tell you <em>where</em> in your own licensed copy to annotate -
+              mark each beat in your text and write its analytical function in the margin. These
+              beats are the ones examiners reward.
             </p>
             <div className="space-y-6">
               <div>
@@ -658,7 +653,7 @@ export default function WomanInBlackRevisionPage() {
                   <Beat
                     moment="Arthur's first impression of the bleak, featureless landscape on arrival"
                     chapter="The Journey North"
-                    analysis="A blank, colourless world &mdash; a canvas onto which horror can be projected. Mark superlatives and absences (no trees, no buildings, nothing on the horizon) as evidence of gothic emptiness."
+                    analysis="A blank, colourless world - a canvas onto which horror can be projected. Mark superlatives and absences (no trees, no buildings, nothing on the horizon) as evidence of gothic emptiness."
                   />
                   <Beat
                     moment="The merging of grey sky and grey estuary at Eel Marsh House"
@@ -679,19 +674,19 @@ export default function WomanInBlackRevisionPage() {
                 </h3>
                 <div className="grid gap-3 sm:grid-cols-2">
                   <Beat
-                    moment="Arthur's first auditory haunting &mdash; a child crying from the marshes"
+                    moment="Arthur's first auditory haunting - a child crying from the marshes"
                     chapter="The Sound of a Pony and Trap"
                     analysis="A child's cry triggers a primal protective instinct. The horror is auditory rather than visual; sound carries across the marshes when the mist hides everything else. Mark the verbs of hearing and the broken syntax of Arthur's response."
                   />
                   <Beat
                     moment="Direct sighting of Jennet's face filled with malevolence and hatred"
                     chapter="In the Nursery / Whistles and Lights"
-                    analysis="Hill builds Jennet's expression through accumulating noun phrases: malevolence, hatred, loathing &mdash; the technical effect is intensification through synonym. The shadow on her face is both literal (lighting) and metaphorical (the unknowable interior of the dead)."
+                    analysis="Hill builds Jennet's expression through accumulating noun phrases: malevolence, hatred, loathing - the technical effect is intensification through synonym. The shadow on her face is both literal (lighting) and metaphorical (the unknowable interior of the dead)."
                   />
                   <Beat
                     moment="Arthur's confession that he can no longer rationally explain what he has heard"
                     chapter="In the Nursery"
-                    analysis="The collapse of rationalism. Hill uses ellipsis-style hesitation to enact Arthur's hesitation on the page. Annotate the modal verbs and qualifying adverbs &mdash; they record his framework giving way."
+                    analysis="The collapse of rationalism. Hill uses ellipsis-style hesitation to enact Arthur's hesitation on the page. Annotate the modal verbs and qualifying adverbs - they record his framework giving way."
                   />
                 </div>
               </div>
@@ -702,7 +697,7 @@ export default function WomanInBlackRevisionPage() {
                   <Beat
                     moment="Mr Daily's revelation that Jennet went mad with grief and swore vengeance"
                     chapter="A Packet of Letters / The Woman in Black"
-                    analysis="Grief presented as a force that destroys sanity. The vow of revenge is oath-like &mdash; deliberate, calculated, eternal &mdash; rather than spontaneous. Mark the verbs of swearing and the temporal phrases that make the curse perpetual."
+                    analysis="Grief presented as a force that destroys sanity. The vow of revenge is oath-like - deliberate, calculated, eternal - rather than spontaneous. Mark the verbs of swearing and the temporal phrases that make the curse perpetual."
                   />
                   <Beat
                     moment="The pattern named: every sighting of Jennet has been followed by the death of a child"
@@ -718,12 +713,12 @@ export default function WomanInBlackRevisionPage() {
                   <Beat
                     moment="Early Arthur: defiant, almost exhilarated by the assignment"
                     chapter="The Journey North"
-                    analysis="Confident, even excited by the challenge. His youthful arrogance &mdash; the gothic protagonist's signature flaw &mdash; will be brutally punished. Mark the energy and forward-leaning verbs of these early chapters."
+                    analysis="Confident, even excited by the challenge. His youthful arrogance - the gothic protagonist's signature flaw - will be brutally punished. Mark the energy and forward-leaning verbs of these early chapters."
                   />
                   <Beat
                     moment="Arthur's admission that the place exceeds anything he has previously experienced"
                     chapter="Across the Causeway"
-                    analysis="His confidence cracks. Hill uses absolutes (never, utter) to mark this place as exceeding the comparative scale of his prior life. Desolation means both emptiness and despair &mdash; the geographic becomes psychological."
+                    analysis="His confidence cracks. Hill uses absolutes (never, utter) to mark this place as exceeding the comparative scale of his prior life. Desolation means both emptiness and despair - the geographic becomes psychological."
                   />
                   <Beat
                     moment="The frame-narrative opening: Arthur cannot tell his ghost story aloud"
@@ -773,8 +768,8 @@ export default function WomanInBlackRevisionPage() {
                   Jennet&apos;s powerlessness reflects the limited agency of women in Victorian
                   society. She could not keep her own child, could not challenge the family&apos;s
                   decision, and was effectively silenced. Her ghost can be read as a feminist symbol
-                  &mdash; a woman who refuses to be silenced even in death. However, her vengeance
-                  targets innocent children, complicating any straightforward feminist reading.
+                  - a woman who refuses to be silenced even in death. However, her vengeance targets
+                  innocent children, complicating any straightforward feminist reading.
                 </p>
               </div>
 
@@ -837,7 +832,7 @@ export default function WomanInBlackRevisionPage() {
                 <ul className="mt-3 space-y-2 text-sm text-muted-foreground">
                   <li>
                     &bull; <strong>{tr(`First-person narration:`)}</strong> Creates intimacy and
-                    reliability but limits perspective &mdash; we only see what Arthur sees.
+                    reliability but limits perspective - we only see what Arthur sees.
                   </li>
                   <li>
                     &bull; <strong>{tr(`Frame narrative:`)}</strong> Creates dramatic irony (we know
@@ -845,7 +840,7 @@ export default function WomanInBlackRevisionPage() {
                   </li>
                   <li>
                     &bull; <strong>{tr(`Pathetic fallacy:`)}</strong> Weather mirrors emotional
-                    states &mdash; fog, mist, darkness reflect danger and the unknown.
+                    states - fog, mist, darkness reflect danger and the unknown.
                   </li>
                   <li>
                     &bull; <strong>Foreshadowing:</strong> The London fog, the locals&apos; silence,
@@ -866,24 +861,24 @@ export default function WomanInBlackRevisionPage() {
                 <h3 className="font-bold text-foreground">{tr(`Common Mistakes to Avoid`)}</h3>
                 <ul className="mt-3 space-y-2 text-sm text-muted-foreground">
                   <li>
-                    &bull; Do not simply retell the story &mdash; analyse <em>how</em> Hill creates
+                    &bull; Do not simply retell the story - analyse <em>how</em> Hill creates
                     effects.
                   </li>
                   <li>
-                    &bull; Do not call the ghost &ldquo;evil&rdquo; without nuance &mdash; she is
-                    also a victim of injustice.
+                    &bull; Do not call the ghost &ldquo;evil&rdquo; without nuance - she is also a
+                    victim of injustice.
                   </li>
                   <li>
-                    &bull; Do not ignore context &mdash; the Victorian setting is essential to
+                    &bull; Do not ignore context - the Victorian setting is essential to
                     understanding Jennet&apos;s story.
                   </li>
                   <li>
-                    &bull; Do not confuse the novella with the film or stage play &mdash; they have
+                    &bull; Do not confuse the novella with the film or stage play - they have
                     significant differences.
                   </li>
                   <li>
                     &bull; Always cite quotations from your own licensed copy of the novella, not
-                    from third-party revision sites &mdash; misquotation is penalised.
+                    from third-party revision sites - misquotation is penalised.
                   </li>
                 </ul>
               </div>
@@ -909,7 +904,7 @@ export default function WomanInBlackRevisionPage() {
                 minWords={200}
                 timed
                 timeLimitMinutes={25}
-                modelAnswer="Hill creates fear through atmosphere, sound, and the withholding of information. The isolated setting of Eel Marsh House, cut off by the tide, traps Arthur with the ghost, removing any possibility of escape. The ghostly auditory hauntings &mdash; a child crying, the pony and trap sinking &mdash; are more terrifying than visual horror because they force the reader to imagine Nathaniel's death. Hill uses the first-person narrator to limit our knowledge to Arthur's perspective, so we share his confusion and fear. The gradual revelation of the Woman in Black's identity and purpose builds sustained tension across the novella. The frame narrative tells us from the outset that something terrible happened, creating dramatic irony that makes every chapter an exercise in dread. Students answering this question should bring evidence from their own licensed copy of the text."
+                modelAnswer="Hill creates fear through atmosphere, sound, and the withholding of information. The isolated setting of Eel Marsh House, cut off by the tide, traps Arthur with the ghost, removing any possibility of escape. The ghostly auditory hauntings - a child crying, the pony and trap sinking - are more terrifying than visual horror because they force the reader to imagine Nathaniel's death. Hill uses the first-person narrator to limit our knowledge to Arthur's perspective, so we share his confusion and fear. The gradual revelation of the Woman in Black's identity and purpose builds sustained tension across the novella. The frame narrative tells us from the outset that something terrible happened, creating dramatic irony that makes every chapter an exercise in dread. Students answering this question should bring evidence from their own licensed copy of the text."
               />
               <PracticeQuestion
                 question="How does Hill present the character of the Woman in Black as both a victim and a villain?"

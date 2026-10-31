@@ -57,7 +57,7 @@ function QuoteCard({
       <p className="text-sm font-semibold text-violet-800 dark:text-violet-200 italic">
         &ldquo;{quote}&rdquo;
       </p>
-      {speaker && <p className="mt-1 text-xs font-medium text-violet-600">&mdash; {speaker}</p>}
+      {speaker && <p className="mt-1 text-xs font-medium text-violet-600">- {speaker}</p>}
       <p className="mt-2 text-sm text-muted-foreground">{analysis}</p>
     </div>
   )
@@ -110,7 +110,7 @@ export default function ThingsFallApartPage() {
           </span>
         </div>
         <h1 className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
-          Things Fall Apart &mdash; Complete Revision Guide
+          Things Fall Apart - Complete Revision Guide
         </h1>
         <p className="mt-1 text-lg text-muted-foreground">
           {tr(`Chinua Achebe (1930-2013), 1958`)}
@@ -163,7 +163,7 @@ export default function ThingsFallApartPage() {
             </p>
 
             <h4 className="font-bold mt-4 mb-2 text-primary">
-              Part One &mdash; Umuofia (chapters 1&ndash;13)
+              Part One - Umuofia (chapters 1&ndash;13)
             </h4>
             <ul className="space-y-2 text-sm leading-relaxed list-disc ps-5">
               <li>
@@ -198,8 +198,8 @@ export default function ThingsFallApartPage() {
                 for three years; Nwoye looks up to him &ldquo;like an elder brother&rdquo;. The
                 Oracle of the Hills and the Caves declares that Ikemefuna must be killed. The elder{' '}
                 <em>Ezeudu</em> warns Okonkwo to take no part. Okonkwo accompanies the men, and when
-                the boy runs to him crying &ldquo;My father, they have killed me!&rdquo; Okonkwo
-                &mdash; afraid of being thought weak &mdash; cuts him down with his machete.
+                the boy runs to him crying &ldquo;My father, they have killed me!&rdquo; Okonkwo -
+                afraid of being thought weak - cuts him down with his machete.
               </li>
               <li>
                 <strong>{tr(`Chapter 8.`)}</strong> Okonkwo cannot eat for two days. Obierika
@@ -226,13 +226,13 @@ export default function ThingsFallApartPage() {
             </ul>
 
             <h4 className="font-bold mt-6 mb-2 text-primary">
-              Part Two &mdash; Mbanta and the missionaries (chapters 14&ndash;19)
+              Part Two - Mbanta and the missionaries (chapters 14&ndash;19)
             </h4>
             <ul className="space-y-2 text-sm leading-relaxed list-disc ps-5">
               <li>
                 <strong>{tr(`Chapter 14.`)}</strong> Okonkwo&rsquo;s mother&rsquo;s kinsman
                 <em> Uchendu</em> receives him kindly but reminds him: &ldquo;Mother is
-                Supreme&rdquo; &mdash; a man flees to his motherland in sorrow.
+                Supreme&rdquo; - a man flees to his motherland in sorrow.
               </li>
               <li>
                 <strong>{tr(`Chapter 15.`)}</strong> Obierika visits and reports the destruction of{' '}
@@ -264,7 +264,7 @@ export default function ThingsFallApartPage() {
             </ul>
 
             <h4 className="font-bold mt-6 mb-2 text-primary">
-              Part Three &mdash; Return and collapse (chapters 20&ndash;25)
+              Part Three - Return and collapse (chapters 20&ndash;25)
             </h4>
             <ul className="space-y-2 text-sm leading-relaxed list-disc ps-5">
               <li>
@@ -282,8 +282,8 @@ export default function ThingsFallApartPage() {
                 <strong>{tr(`Chapter 22.`)}</strong> Mr Brown leaves on health grounds and is
                 replaced by <em>{tr(`Reverend James Smith`)}</em>, who sees no compromise.
                 <em> Enoch</em>, an over-zealous convert, unmasks an
-                <em> egwugwu</em> (a masked ancestral spirit) at a public festival &mdash; in Igbo
-                terms, &ldquo;killing&rdquo; the ancestor. The egwugwu burn the church.
+                <em> egwugwu</em> (a masked ancestral spirit) at a public festival - in Igbo terms,
+                &ldquo;killing&rdquo; the ancestor. The egwugwu burn the church.
               </li>
               <li>
                 <strong>{tr(`Chapter 23.`)}</strong> The District Commissioner invites the Umuofia
@@ -307,10 +307,9 @@ export default function ThingsFallApartPage() {
             </ul>
 
             <p className="mt-4 text-sm italic text-muted-foreground">
-              The closing image &mdash; Okonkwo&rsquo;s long-resisted death reduced to a footnote in
-              someone else&rsquo;s book &mdash; is the novel&rsquo;s central irony. Achebe is
-              rebuking exactly the colonial historiography this fictional Commissioner intends to
-              write.
+              The closing image - Okonkwo&rsquo;s long-resisted death reduced to a footnote in
+              someone else&rsquo;s book - is the novel&rsquo;s central irony. Achebe is rebuking
+              exactly the colonial historiography this fictional Commissioner intends to write.
             </p>
           </Section>
         </div>
@@ -324,11 +323,11 @@ export default function ThingsFallApartPage() {
             />
             <CharacterCard
               name="Unoka"
-              description="Okonkwo&rsquo;s father. A talented flute-player and amiable conversationalist who could not feed his family, took loans he never repaid, and died of the &lsquo;swelling sickness&rsquo; (probably yaws or oedema). His corpse was carried to the Evil Forest because the disease was an abomination to the Earth. He represents what Okonkwo will spend his life trying not to be &mdash; and, more uncomfortably, the artistic, gentle qualities that the novel does not finally condemn."
+              description="Okonkwo&rsquo;s father. A talented flute-player and amiable conversationalist who could not feed his family, took loans he never repaid, and died of the &lsquo;swelling sickness&rsquo; (probably yaws or oedema). His corpse was carried to the Evil Forest because the disease was an abomination to the Earth. He represents what Okonkwo will spend his life trying not to be - and, more uncomfortably, the artistic, gentle qualities that the novel does not finally condemn."
             />
             <CharacterCard
               name="Nwoye"
-              description="Okonkwo&rsquo;s eldest son. From his earliest scenes he is described as preferring his mother&rsquo;s stories to his father&rsquo;s war tales. His attachment to Ikemefuna is the closest emotional bond he has, and the killing breaks something in him. The Christian hymn he hears in chapter 16 answers the questions that have haunted him &mdash; the abandoned twins, Ikemefuna&rsquo;s death &mdash; and he converts, taking the new name Isaac. Achebe uses him to dramatise how the church recruits where the clan has wounded."
+              description="Okonkwo&rsquo;s eldest son. From his earliest scenes he is described as preferring his mother&rsquo;s stories to his father&rsquo;s war tales. His attachment to Ikemefuna is the closest emotional bond he has, and the killing breaks something in him. The Christian hymn he hears in chapter 16 answers the questions that have haunted him - the abandoned twins, Ikemefuna&rsquo;s death - and he converts, taking the new name Isaac. Achebe uses him to dramatise how the church recruits where the clan has wounded."
             />
             <CharacterCard
               name="Ikemefuna"
@@ -336,7 +335,7 @@ export default function ThingsFallApartPage() {
             />
             <CharacterCard
               name="Ezinma"
-              description="Ekwefi&rsquo;s only surviving child after nine deaths in infancy &mdash; a suspected ogbanje (a child who repeatedly dies and returns). Ezinma is precocious, fearless, and the daughter Okonkwo loves most openly: he wishes more than once that she had been a boy. Her bond with her mother during the night-journey to Agbala&rsquo;s cave is the novel&rsquo;s most tender sequence."
+              description="Ekwefi&rsquo;s only surviving child after nine deaths in infancy - a suspected ogbanje (a child who repeatedly dies and returns). Ezinma is precocious, fearless, and the daughter Okonkwo loves most openly: he wishes more than once that she had been a boy. Her bond with her mother during the night-journey to Agbala&rsquo;s cave is the novel&rsquo;s most tender sequence."
             />
             <CharacterCard
               name="Ekwefi"
@@ -364,7 +363,7 @@ export default function ThingsFallApartPage() {
             />
             <CharacterCard
               name="The District Commissioner"
-              description="Unnamed throughout. He arrives at the very end to arrest Okonkwo and finds him already dead. His final reflection &mdash; that Okonkwo&rsquo;s story might make &lsquo;a reasonable paragraph&rsquo; in his book The Pacification of the Primitive Tribes of the Lower Niger &mdash; is the novel&rsquo;s closing irony and its target. Achebe wrote against precisely the kind of book this Commissioner is planning."
+              description="Unnamed throughout. He arrives at the very end to arrest Okonkwo and finds him already dead. His final reflection - that Okonkwo&rsquo;s story might make &lsquo;a reasonable paragraph&rsquo; in his book The Pacification of the Primitive Tribes of the Lower Niger - is the novel&rsquo;s closing irony and its target. Achebe wrote against precisely the kind of book this Commissioner is planning."
             />
           </Section>
         </div>
@@ -390,7 +389,7 @@ export default function ThingsFallApartPage() {
             />
             <ThemeCard
               title="Father and son"
-              description="Three generations: Unoka (gentle, artistic, broken); Okonkwo (his repudiation); Nwoye (Okonkwo&rsquo;s refusal turned against him). Achebe traces how a father&rsquo;s shame can shape a son&rsquo;s violence and how that violence in turn drives the next son into another father&rsquo;s arms &mdash; in Nwoye&rsquo;s case, the church&rsquo;s. The pattern is psychological and political at once."
+              description="Three generations: Unoka (gentle, artistic, broken); Okonkwo (his repudiation); Nwoye (Okonkwo&rsquo;s refusal turned against him). Achebe traces how a father&rsquo;s shame can shape a son&rsquo;s violence and how that violence in turn drives the next son into another father&rsquo;s arms - in Nwoye&rsquo;s case, the church&rsquo;s. The pattern is psychological and political at once."
             />
             <ThemeCard
               title={tr(`Fate and chi (personal god)`)}
@@ -410,8 +409,8 @@ export default function ThingsFallApartPage() {
               The quotations below are drawn from the standard Heinemann African Writers Series
               edition (1958, reissued 1962 onwards). Page numbers vary between editions; chapter
               references are given. A few items appear as paraphrase rather than direct quotation
-              where exact wording could not be confirmed &mdash; always check against your school
-              edition before using a line in an exam.
+              where exact wording could not be confirmed - always check against your school edition
+              before using a line in an exam.
             </p>
 
             <QuoteCard
@@ -429,7 +428,7 @@ export default function ThingsFallApartPage() {
             <QuoteCard
               quote="His whole life was dominated by fear, the fear of failure and of weakness."
               speaker="Narrator, chapter 2"
-              analysis="The most-cited line on Okonkwo&rsquo;s psychology. Fear, not strength, is the engine. Achebe locates the source in Okonkwo&rsquo;s shame at his father, then traces every subsequent action &mdash; the killing of Ikemefuna, the wife-beating, the suicide &mdash; back to it."
+              analysis="The most-cited line on Okonkwo&rsquo;s psychology. Fear, not strength, is the engine. Achebe locates the source in Okonkwo&rsquo;s shame at his father, then traces every subsequent action - the killing of Ikemefuna, the wife-beating, the suicide - back to it."
             />
 
             <QuoteCard
@@ -440,21 +439,21 @@ export default function ThingsFallApartPage() {
 
             <div className="my-4 rounded-lg border border-violet-200 bg-violet-50/50 p-4 dark:border-violet-900 dark:bg-violet-950/30">
               <p className="text-sm font-semibold text-violet-800 dark:text-violet-200">
-                Okonkwo before the killing of Ikemefuna (chapter 7) &mdash; paraphrase
+                Okonkwo before the killing of Ikemefuna (chapter 7) - paraphrase
               </p>
               <p className="mt-2 text-sm text-muted-foreground">
                 In the moments before he strikes Ikemefuna, Achebe&rsquo;s narration turns on
                 Okonkwo&rsquo;s fear of being thought weak. The clan&rsquo;s gendered insult
                 (&lsquo;old woman&rsquo;) is the language his own mind reaches for to override his
                 grief: fear of looking weak defeats moral conscience. This is given as paraphrase,
-                not direct quotation &mdash; check the exact wording against your edition.
+                not direct quotation - check the exact wording against your edition.
               </p>
             </div>
 
             <QuoteCard
               quote="That boy calls you father. Do not bear a hand in his death."
               speaker="Ezeudu to Okonkwo, chapter 7"
-              analysis="The elder warns Okonkwo to stand back from the killing. The clan therefore did not require Okonkwo to participate &mdash; the participation is a private decision driven by his fear of being thought weak. This matters for any essay on whether Igbo culture &lsquo;forces&rsquo; the killing: it does not. Okonkwo chooses."
+              analysis="The elder warns Okonkwo to stand back from the killing. The clan therefore did not require Okonkwo to participate - the participation is a private decision driven by his fear of being thought weak. This matters for any essay on whether Igbo culture &lsquo;forces&rsquo; the killing: it does not. Okonkwo chooses."
             />
 
             <QuoteCard
@@ -466,53 +465,53 @@ export default function ThingsFallApartPage() {
             <QuoteCard
               quote="He has put a knife on the things that held us together ... fallen apart."
               speaker="Obierika, chapter 20"
-              analysis="The most quotable diagnosis in the novel and the source of the title&rsquo;s explicit echo (&lsquo;fallen apart&rsquo;). Notice the rhetorical move in the full speech: Obierika does not blame the colonisers&rsquo; force, but their patience and their wedge. The clan&rsquo;s undoing is internal &mdash; converts, the osu admission, the unmasking &mdash; once the wedge is in."
+              analysis="The most quotable diagnosis in the novel and the source of the title&rsquo;s explicit echo (&lsquo;fallen apart&rsquo;). Notice the rhetorical move in the full speech: Obierika does not blame the colonisers&rsquo; force, but their patience and their wedge. The clan&rsquo;s undoing is internal - converts, the osu admission, the unmasking - once the wedge is in."
             />
 
             <div className="my-4 rounded-lg border border-violet-200 bg-violet-50/50 p-4 dark:border-violet-900 dark:bg-violet-950/30">
               <p className="text-sm font-semibold text-violet-800 dark:text-violet-200">
-                The clan&rsquo;s reaction to the new religion (chapter 17) &mdash; paraphrase
+                The clan&rsquo;s reaction to the new religion (chapter 17) - paraphrase
               </p>
               <p className="mt-2 text-sm text-muted-foreground">
                 After Nwoye joins the missionaries, the kinsmen in Mbanta condemn the new faith as
                 an abomination that lets a man abandon his father and his brothers. The grievance is
-                not theological in the abstract; it is the dissolution of kinship &mdash; the
+                not theological in the abstract; it is the dissolution of kinship - the
                 church&rsquo;s offence to Igbo culture is that it lets a son walk away from his
                 father&rsquo;s compound, with Nwoye the immediate example. Given as paraphrase, not
-                direct quotation &mdash; check the wording against your edition.
+                direct quotation - check the wording against your edition.
               </p>
             </div>
 
             <QuoteCard
               quote="Living fire begets cold, impotent ash."
               speaker="Okonkwo, of Nwoye, chapter 17"
-              analysis="Okonkwo&rsquo;s lament for his son. The metaphor is precise: he is the fire, Nwoye the ash. Note the gendered word &lsquo;impotent&rsquo;: the son&rsquo;s gentleness is read as failed manhood. The sentence is also self-condemning &mdash; a fire that produces only ash has produced nothing."
+              analysis="Okonkwo&rsquo;s lament for his son. The metaphor is precise: he is the fire, Nwoye the ash. Note the gendered word &lsquo;impotent&rsquo;: the son&rsquo;s gentleness is read as failed manhood. The sentence is also self-condemning - a fire that produces only ash has produced nothing."
             />
 
             <div className="my-4 rounded-lg border border-violet-200 bg-violet-50/50 p-4 dark:border-violet-900 dark:bg-violet-950/30">
               <p className="text-sm font-semibold text-violet-800 dark:text-violet-200">
-                The clan and Okonkwo&rsquo;s body (chapter 25) &mdash; paraphrase
+                The clan and Okonkwo&rsquo;s body (chapter 25) - paraphrase
               </p>
               <p className="mt-2 text-sm text-muted-foreground">
                 The clan will not touch or bury Okonkwo&rsquo;s body: suicide is an offence against
                 the Earth, and only strangers may handle him. Set this ritual refusal beside the
                 District Commissioner&rsquo;s contemporaneous thought that the same death might make
-                a reasonable paragraph &mdash; two ways of telling one end, one silent and ritual,
-                one bureaucratic and dismissive. Given as paraphrase, not direct quotation &mdash;
-                check the exact phrasing against your edition.
+                a reasonable paragraph - two ways of telling one end, one silent and ritual, one
+                bureaucratic and dismissive. Given as paraphrase, not direct quotation - check the
+                exact phrasing against your edition.
               </p>
             </div>
 
             <QuoteCard
               quote="One could almost write a whole chapter on him. ... reasonable paragraph, at any rate."
               speaker="The District Commissioner, chapter 25"
-              analysis="The novel&rsquo;s closing irony. A man whose interior life Achebe has just spent two hundred and forty pages tracing is reduced, in the colonist&rsquo;s mind, from a chapter to a paragraph. The book the Commissioner intends to write &mdash; The Pacification of the Primitive Tribes of the Lower Niger &mdash; is the kind of writing Things Fall Apart was published in 1958 to answer."
+              analysis="The novel&rsquo;s closing irony. A man whose interior life Achebe has just spent two hundred and forty pages tracing is reduced, in the colonist&rsquo;s mind, from a chapter to a paragraph. The book the Commissioner intends to write - The Pacification of the Primitive Tribes of the Lower Niger - is the kind of writing Things Fall Apart was published in 1958 to answer."
             />
 
             <QuoteCard
               quote="Things fall apart; the centre cannot hold; / Mere anarchy is loosed upon the world."
-              speaker="W.B. Yeats, &lsquo;The Second Coming&rsquo; (1919) &mdash; epigraph"
-              analysis="The novel&rsquo;s title comes from Yeats&rsquo;s post-First-World-War poem about civilisational breakdown. Achebe&rsquo;s use is double-edged: the line fits Umuofia&rsquo;s collapse, but Yeats&rsquo;s poem also imagines a &lsquo;rough beast&rsquo; arriving from the desert &mdash; an image that Western readers in 1958 might project onto Africa. By giving the line back to Igbo experience, Achebe redirects it."
+              speaker="W.B. Yeats, &lsquo;The Second Coming&rsquo; (1919) - epigraph"
+              analysis="The novel&rsquo;s title comes from Yeats&rsquo;s post-First-World-War poem about civilisational breakdown. Achebe&rsquo;s use is double-edged: the line fits Umuofia&rsquo;s collapse, but Yeats&rsquo;s poem also imagines a &lsquo;rough beast&rsquo; arriving from the desert - an image that Western readers in 1958 might project onto Africa. By giving the line back to Igbo experience, Achebe redirects it."
             />
           </Section>
         </div>
@@ -528,11 +527,11 @@ export default function ThingsFallApartPage() {
 
             <CharacterCard
               name="Chi"
-              description="A person&rsquo;s personal god or spiritual double; loosely, &lsquo;destiny&rsquo;. The proverb &lsquo;when a man says yes his chi says yes also&rsquo; is a near-Igbo equivalent of self-determination. The narrator notes that Okonkwo&rsquo;s chi said &lsquo;nay&rsquo; despite his affirmation &mdash; an unusual reversal that signals tragic mismatch."
+              description="A person&rsquo;s personal god or spiritual double; loosely, &lsquo;destiny&rsquo;. The proverb &lsquo;when a man says yes his chi says yes also&rsquo; is a near-Igbo equivalent of self-determination. The narrator notes that Okonkwo&rsquo;s chi said &lsquo;nay&rsquo; despite his affirmation - an unusual reversal that signals tragic mismatch."
             />
             <CharacterCard
               name="Egwugwu"
-              description="Masked dancers who embody the ancestral spirits of the clan. They preside at trials and at major ceremonies. To unmask one in public is to &lsquo;kill&rsquo; that ancestor &mdash; the act Enoch performs in chapter 22, which precipitates the burning of the church."
+              description="Masked dancers who embody the ancestral spirits of the clan. They preside at trials and at major ceremonies. To unmask one in public is to &lsquo;kill&rsquo; that ancestor - the act Enoch performs in chapter 22, which precipitates the burning of the church."
             />
             <CharacterCard
               name="Obi"
@@ -552,7 +551,7 @@ export default function ThingsFallApartPage() {
             />
             <CharacterCard
               name="Iba and the swelling sickness"
-              description="Iba is malarial fever; the &lsquo;swelling sickness&rsquo; that took Unoka was probably yaws or oedematous filariasis &mdash; conditions read by the clan as an abomination of the Earth, requiring burial in the Evil Forest."
+              description="Iba is malarial fever; the &lsquo;swelling sickness&rsquo; that took Unoka was probably yaws or oedematous filariasis - conditions read by the clan as an abomination of the Earth, requiring burial in the Evil Forest."
             />
             <CharacterCard
               name="Yams and the agricultural year"
@@ -594,7 +593,7 @@ export default function ThingsFallApartPage() {
             />
             <CharacterCard
               name="Language: writing English in Igbo rhythms"
-              description="In &lsquo;The African Writer and the English Language&rsquo; (1965) Achebe argued that he chose English because of its reach, but that the English he wrote &lsquo;in full communion with its ancestral home but altered to suit new African surroundings&rsquo; was deliberately Igbo-inflected. The proverbs, the litany of names, the elder&rsquo;s cadences, the untranslated terms (chi, egwugwu, osu) &mdash; all are part of the argument that English can carry, not erase, the cultures it travels into."
+              description="In &lsquo;The African Writer and the English Language&rsquo; (1965) Achebe argued that he chose English because of its reach, but that the English he wrote &lsquo;in full communion with its ancestral home but altered to suit new African surroundings&rsquo; was deliberately Igbo-inflected. The proverbs, the litany of names, the elder&rsquo;s cadences, the untranslated terms (chi, egwugwu, osu) - all are part of the argument that English can carry, not erase, the cultures it travels into."
             />
           </Section>
         </div>
@@ -616,7 +615,7 @@ export default function ThingsFallApartPage() {
             />
             <CharacterCard
               name="Proverbs and embedded folktales"
-              description="Proverbs are quoted constantly (&lsquo;man who pays respect to the great paves the way for his own greatness&rsquo;, &lsquo;a chick that will grow into a cock ... spotted the very day it hatches&rsquo;). Embedded folktales &mdash; the tortoise and the birds, told by Ekwefi to Ezinma in chapter 11 &mdash; carry thematic weight (cunning leads to a fall) without breaking the realist surface."
+              description="Proverbs are quoted constantly (&lsquo;man who pays respect to the great paves the way for his own greatness&rsquo;, &lsquo;a chick that will grow into a cock ... spotted the very day it hatches&rsquo;). Embedded folktales - the tortoise and the birds, told by Ekwefi to Ezinma in chapter 11 - carry thematic weight (cunning leads to a fall) without breaking the realist surface."
             />
             <CharacterCard
               name="The closing point-of-view shift"
@@ -640,10 +639,9 @@ export default function ThingsFallApartPage() {
                 agree?
               </h4>
               <p className="text-sm text-muted-foreground">
-                <strong>Thesis.</strong> Partly: his choices &mdash; killing Ikemefuna, killing the
-                messenger &mdash; are decisive. But the choices are made under cultural and
-                historical pressures the novel takes seriously, so &lsquo;entirely&rsquo; is too
-                strong.
+                <strong>Thesis.</strong> Partly: his choices - killing Ikemefuna, killing the
+                messenger - are decisive. But the choices are made under cultural and historical
+                pressures the novel takes seriously, so &lsquo;entirely&rsquo; is too strong.
               </p>
               <p className="text-sm text-muted-foreground mt-2">
                 <strong>{tr(`Para 1 (AO1/AO2).`)}</strong> The choices Okonkwo could have made
@@ -659,7 +657,7 @@ export default function ThingsFallApartPage() {
               </p>
               <p className="text-sm text-muted-foreground">
                 <strong>{tr(`Para 3 (AO2/AO3).`)}</strong> The chi proverb: &lsquo;when a man says
-                yes his chi says yes&rsquo; &mdash; reversed for Okonkwo. The Igbo conceptual frame
+                yes his chi says yes&rsquo; - reversed for Okonkwo. The Igbo conceptual frame
                 already holds individual choice and external destiny in balance, refusing the binary
                 the question implies.
               </p>
@@ -726,9 +724,8 @@ export default function ThingsFallApartPage() {
               <p className="text-sm text-muted-foreground">
                 <strong>Thesis.</strong> The novel&rsquo;s answer to Conrad is structural, not just
                 thematic. Igbo proverbs, untranslated terms, free indirect style giving Okonkwo
-                interiority, and the Commissioner&rsquo;s closing point-of-view jump &mdash;
-                together they refuse the colonial novel&rsquo;s reduction of Africa to silent
-                background.
+                interiority, and the Commissioner&rsquo;s closing point-of-view jump - together they
+                refuse the colonial novel&rsquo;s reduction of Africa to silent background.
               </p>
               <p className="text-sm text-muted-foreground mt-2">
                 <strong>Para 1.</strong> Proverbs as &lsquo;palm-oil&rsquo;; Igbo terms (chi,
@@ -754,9 +751,9 @@ export default function ThingsFallApartPage() {
               </h4>
               <p className="text-sm text-muted-foreground">
                 <strong>Thesis.</strong> The Umuofian world is patriarchal; the novel does not
-                pretend otherwise. But the female figures &mdash; Ekwefi, Ezinma, Chielo, the figure
-                of Ani (the Earth) and Uchendu&rsquo;s &lsquo;mother is supreme&rsquo; &mdash; carry
-                a counter-pressure the male protagonist cannot recognise but the narrator weighs
+                pretend otherwise. But the female figures - Ekwefi, Ezinma, Chielo, the figure of
+                Ani (the Earth) and Uchendu&rsquo;s &lsquo;mother is supreme&rsquo; - carry a
+                counter-pressure the male protagonist cannot recognise but the narrator weighs
                 against him.
               </p>
               <p className="text-sm text-muted-foreground mt-2">
@@ -794,9 +791,8 @@ export default function ThingsFallApartPage() {
                 <strong>{tr(`The novel’s argument with Yeats.`)}</strong> The title borrows
                 Yeats&rsquo;s &lsquo;Things fall apart; the centre cannot hold&rsquo;, but
                 Yeats&rsquo;s poem also imagines the &lsquo;rough beast slouching towards
-                Bethlehem&rsquo; &mdash; an image of post-imperial dread that colonialism would
-                project onto the South. By giving the line back to Igbo experience, Achebe redirects
-                it.
+                Bethlehem&rsquo; - an image of post-imperial dread that colonialism would project
+                onto the South. By giving the line back to Igbo experience, Achebe redirects it.
               </li>
               <li>
                 <strong>{tr(`The reversal of the chi proverb.`)}</strong> &lsquo;When a man says yes
@@ -830,15 +826,15 @@ export default function ThingsFallApartPage() {
                 Twins are abandoned; osu are excluded; Ikemefuna is killed; women are beaten. Achebe
                 does not present a paradisal pre-colonial society. The colonial argument is not that
                 Umuofia was perfect, but that it was articulate enough to argue with itself before
-                the missionaries arrived &mdash; and that the missionaries exploited gaps the clan
-                had been arguing about for generations.
+                the missionaries arrived - and that the missionaries exploited gaps the clan had
+                been arguing about for generations.
               </li>
               <li>
                 <strong>{tr(`The Earth (Ani) as the novel’s ethical centre.`)}</strong>
-                Each of Okonkwo&rsquo;s major transgressions &mdash; killing Ikemefuna, killing
-                Ezeudu&rsquo;s son, his suicide &mdash; is read explicitly as an offence against
-                Ani. The deity who matters most in the moral accounting is female. This complicates
-                any reading of the novel as straightforwardly patriarchal.
+                Each of Okonkwo&rsquo;s major transgressions - killing Ikemefuna, killing
+                Ezeudu&rsquo;s son, his suicide - is read explicitly as an offence against Ani. The
+                deity who matters most in the moral accounting is female. This complicates any
+                reading of the novel as straightforwardly patriarchal.
               </li>
             </ul>
           </Section>
@@ -907,7 +903,7 @@ export default function ThingsFallApartPage() {
             <li>
               <strong>{tr(`Don’t idealise Igbo society.`)}</strong> Achebe doesn&rsquo;t. The
               strongest essays read the novel&rsquo;s own internal criticisms of twins, <em>osu</em>
-              , the killing of Ikemefuna &mdash; and use them to show Achebe&rsquo;s argument is
+              , the killing of Ikemefuna - and use them to show Achebe&rsquo;s argument is
               documentary, not nostalgic.
             </li>
             <li>

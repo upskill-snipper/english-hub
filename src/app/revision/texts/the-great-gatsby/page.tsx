@@ -61,7 +61,7 @@ const data: TextGuideData = {
   },
   plotSummary: [
     'Nick Carraway, a young Midwesterner recently returned from the First World War, moves east to learn the bond business and rents a modest cottage in West Egg, Long Island, next door to the enormous mansion of the mysterious Jay Gatsby. Across the bay in East Egg live Nick\u2019s cousin Daisy Buchanan and her wealthy, arrogant husband Tom, a former Yale football star with a mistress in the city. Over dinner Nick meets Jordan Baker, a professional golfer and Daisy\u2019s friend, who first hints that Tom is unfaithful. Returning home that night, Nick sees Gatsby for the first time, stretching his arms towards a single green light at the end of Daisy\u2019s dock. Soon afterwards Tom takes Nick to meet his mistress Myrtle Wilson, who lives above a garage in the Valley of Ashes, a desolate industrial wasteland overlooked by the giant fading eyes of Doctor T. J. Eckleburg on a weathered billboard.',
-    'Nick begins to attend Gatsby\u2019s famous parties, where hundreds of strangers pour through the gardens every weekend drinking champagne and speculating about their host\u2019s fortune. Jordan tells Nick the truth: Gatsby and Daisy had a romance in Louisville in 1917 before he was shipped to France, and he has bought the mansion across the bay specifically to win her back. At Gatsby\u2019s request Nick arranges a reunion over tea, and the two are awkwardly, then ecstatically, reunited. Gatsby shows Daisy around his house, throwing his monogrammed shirts onto the table until she weeps into them. He has invented himself \u2014 his real name is James Gatz, a poor farm boy from North Dakota \u2014 and has made his money through bootlegging and other shadowy enterprises connected to the gambler Meyer Wolfshiem, who is said to have fixed the 1919 World Series.',
+    'Nick begins to attend Gatsby\u2019s famous parties, where hundreds of strangers pour through the gardens every weekend drinking champagne and speculating about their host\u2019s fortune. Jordan tells Nick the truth: Gatsby and Daisy had a romance in Louisville in 1917 before he was shipped to France, and he has bought the mansion across the bay specifically to win her back. At Gatsby\u2019s request Nick arranges a reunion over tea, and the two are awkwardly, then ecstatically, reunited. Gatsby shows Daisy around his house, throwing his monogrammed shirts onto the table until she weeps into them. He has invented himself - his real name is James Gatz, a poor farm boy from North Dakota - and has made his money through bootlegging and other shadowy enterprises connected to the gambler Meyer Wolfshiem, who is said to have fixed the 1919 World Series.',
     'On the hottest day of the summer the Buchanans, Gatsby, Nick and Jordan drive into New York and take a suite at the Plaza Hotel, where the tension finally breaks. Tom confronts Gatsby, exposes his criminal business dealings, and forces Daisy to admit that she cannot say she never loved her husband. The party drives home in two cars. Daisy is at the wheel of Gatsby\u2019s yellow car when it strikes and kills Myrtle Wilson, who has run out into the road, probably believing it to be Tom, whom she saw driving it that afternoon. Gatsby takes the blame to protect Daisy and keeps vigil outside her house that night, while inside Tom and Daisy reconcile over cold chicken. The next afternoon Myrtle\u2019s grief-stricken husband George, convinced by Tom that Gatsby was the driver, walks to West Egg, shoots Gatsby dead in his swimming pool, and then kills himself.',
     'Gatsby\u2019s funeral is attended by almost no one. Daisy and Tom have left town without forwarding address; Gatsby\u2019s business associates vanish; only Nick, Gatsby\u2019s elderly father Henry Gatz, a handful of servants and a man Nick calls Owl Eyes stand at the graveside in the rain. Disillusioned with the East, Nick moves back to the Midwest. In the novel\u2019s closing pages he reflects on Gatsby\u2019s extraordinary capacity for hope, on the green light he reached for, and on the impossibility of recapturing the past. Tom and Daisy, he concludes, were careless people who smashed up things and creatures and retreated into their money, leaving other people to clean up the mess they had made.',
   ],
@@ -74,12 +74,12 @@ const data: TextGuideData = {
     {
       name: 'Nick Carraway',
       role: 'The narrator; Daisy\u2019s cousin and Gatsby\u2019s neighbour',
-      body: 'A Yale-educated Midwesterner who moves east to enter the bond business, Nick narrates the novel in retrospective first person from somewhere in the Middle West after the events have concluded. He describes himself as one of the few honest people he has ever known, and Fitzgerald uses his position as both insider and outsider \u2014 connected to Daisy but poor enough to live next door to Gatsby \u2014 to give the reader an ambivalent, morally attentive view. His disillusionment frames the novel\u2019s critique of the East.',
+      body: 'A Yale-educated Midwesterner who moves east to enter the bond business, Nick narrates the novel in retrospective first person from somewhere in the Middle West after the events have concluded. He describes himself as one of the few honest people he has ever known, and Fitzgerald uses his position as both insider and outsider - connected to Daisy but poor enough to live next door to Gatsby - to give the reader an ambivalent, morally attentive view. His disillusionment frames the novel\u2019s critique of the East.',
     },
     {
       name: 'Daisy Buchanan',
       role: 'Nick\u2019s cousin; Gatsby\u2019s former lover and the object of his obsession',
-      body: 'Beautiful, charming and born into old money in Louisville, Daisy married Tom Buchanan while Gatsby was overseas. Her famous voice, Gatsby tells Nick, is "full of money" \u2014 Fitzgerald\u2019s single sharpest image of the inseparability of love and wealth in the novel. She is capable of genuine feeling but ultimately chooses security over passion, letting Gatsby take the blame for killing Myrtle and vanishing with Tom before the funeral. Her cynical wish that her daughter grow up to be "a beautiful little fool" captures her understanding of the world that traps her.',
+      body: 'Beautiful, charming and born into old money in Louisville, Daisy married Tom Buchanan while Gatsby was overseas. Her famous voice, Gatsby tells Nick, is "full of money" - Fitzgerald\u2019s single sharpest image of the inseparability of love and wealth in the novel. She is capable of genuine feeling but ultimately chooses security over passion, letting Gatsby take the blame for killing Myrtle and vanishing with Tom before the funeral. Her cynical wish that her daughter grow up to be "a beautiful little fool" captures her understanding of the world that traps her.',
     },
     {
       name: 'Tom Buchanan',
@@ -94,7 +94,7 @@ const data: TextGuideData = {
     {
       name: 'Myrtle Wilson',
       role: 'Tom\u2019s mistress; wife of the garage-owner George Wilson',
-      body: 'Myrtle lives above her husband\u2019s failing garage in the Valley of Ashes and throws herself into her affair with Tom as an escape from her grey life. In the New York apartment Tom keeps for her she plays at being a wealthy hostess, but his violence \u2014 he breaks her nose at a drunken party \u2014 reveals the brutal limits of the fantasy. Her death under the wheels of Gatsby\u2019s car triggers the novel\u2019s catastrophe and exposes the human cost of the Buchanans\u2019 carelessness.',
+      body: 'Myrtle lives above her husband\u2019s failing garage in the Valley of Ashes and throws herself into her affair with Tom as an escape from her grey life. In the New York apartment Tom keeps for her she plays at being a wealthy hostess, but his violence - he breaks her nose at a drunken party - reveals the brutal limits of the fantasy. Her death under the wheels of Gatsby\u2019s car triggers the novel\u2019s catastrophe and exposes the human cost of the Buchanans\u2019 carelessness.',
     },
     {
       name: 'George Wilson',
@@ -104,13 +104,13 @@ const data: TextGuideData = {
     {
       name: 'Meyer Wolfshiem',
       role: 'Gatsby\u2019s business associate; a New York gangster',
-      body: 'Based loosely on the real gambler Arnold Rothstein, Wolfshiem is the man Fitzgerald credits with having fixed the 1919 World Series. He wears cufflinks made of human molars and represents the world of organised crime that funds Gatsby\u2019s mansion and parties. His refusal to attend Gatsby\u2019s funeral \u2014 "let us learn to show our friendship for a man when he is alive and not after he is dead" \u2014 completes the picture of a milieu in which loyalty evaporates the moment the money stops.',
+      body: 'Based loosely on the real gambler Arnold Rothstein, Wolfshiem is the man Fitzgerald credits with having fixed the 1919 World Series. He wears cufflinks made of human molars and represents the world of organised crime that funds Gatsby\u2019s mansion and parties. His refusal to attend Gatsby\u2019s funeral - "let us learn to show our friendship for a man when he is alive and not after he is dead" - completes the picture of a milieu in which loyalty evaporates the moment the money stops.',
     },
   ],
   themes: [
     {
       title: 'The American Dream and its corruption',
-      body: 'The novel is the definitive fictional account of the American Dream in its Jazz Age form. Gatsby\u2019s rise from poor farm boy to Long Island millionaire embodies the promise that anyone can reinvent themselves through effort and will. But Fitzgerald shows that the dream has curdled: Gatsby\u2019s wealth is bootleg money, his love object is already married, and the world he wants to join treats him as an outsider to the end. The novel closes with Nick meditating on the "fresh, green breast of the new world" that greeted the first Dutch sailors \u2014 an original promise that has been hollowed out into careless consumption.',
+      body: 'The novel is the definitive fictional account of the American Dream in its Jazz Age form. Gatsby\u2019s rise from poor farm boy to Long Island millionaire embodies the promise that anyone can reinvent themselves through effort and will. But Fitzgerald shows that the dream has curdled: Gatsby\u2019s wealth is bootleg money, his love object is already married, and the world he wants to join treats him as an outsider to the end. The novel closes with Nick meditating on the "fresh, green breast of the new world" that greeted the first Dutch sailors - an original promise that has been hollowed out into careless consumption.',
     },
     {
       title: 'Wealth: old money versus new money',
@@ -126,7 +126,7 @@ const data: TextGuideData = {
     },
     {
       title: 'Illusion versus reality',
-      body: 'Gatsby\u2019s world is built on illusions: his invented name, his romanticised war record, the silk shirts he imports from England to impress a woman. His parties are attended by guests who do not know their host, and rumours swirl around him that he is a German spy, a murderer, a nephew of Kaiser Wilhelm. Fitzgerald uses symbols \u2014 the green light at the end of Daisy\u2019s dock, the vast unseeing eyes of Doctor T. J. Eckleburg, the ash-grey Valley \u2014 to show the gap between glittering appearances and the bleak truths beneath. Nick\u2019s role as narrator is to peel away the illusions and expose what lies underneath.',
+      body: 'Gatsby\u2019s world is built on illusions: his invented name, his romanticised war record, the silk shirts he imports from England to impress a woman. His parties are attended by guests who do not know their host, and rumours swirl around him that he is a German spy, a murderer, a nephew of Kaiser Wilhelm. Fitzgerald uses symbols - the green light at the end of Daisy\u2019s dock, the vast unseeing eyes of Doctor T. J. Eckleburg, the ash-grey Valley - to show the gap between glittering appearances and the bleak truths beneath. Nick\u2019s role as narrator is to peel away the illusions and expose what lies underneath.',
     },
     {
       title: 'The past and longing',
@@ -135,146 +135,146 @@ const data: TextGuideData = {
   ],
   historicalContext: [
     'Fitzgerald wrote The Great Gatsby during the mid-1920s, at the height of the Jazz Age boom he himself had named. The First World War had ended in 1918, leaving a generation disillusioned with the ideals that had sent them to the trenches, and America emerged from the conflict as the dominant economic power of the Atlantic world. Stock-market prices climbed year on year, mass-produced cars and radios transformed everyday life, and a new culture of conspicuous consumption spread from New York to the rest of the country. The novel\u2019s extravagant parties and bright young things belong to this moment of speculative exuberance, only four years before the Wall Street Crash of 1929 would end it.',
-    'Prohibition, in force from 1920 to 1933, is the unspoken engine of Gatsby\u2019s wealth. The national ban on the manufacture and sale of alcohol created a vast illegal market, and the men who supplied that market \u2014 bootleggers, speakeasy owners, gamblers \u2014 became some of the richest in America. Gatsby\u2019s partner Meyer Wolfshiem is a fictionalised version of Arnold Rothstein, the real New York gangster widely believed to have fixed the 1919 World Series. Fitzgerald uses this criminal economy to show how the supposedly meritocratic dream of wealth in the 1920s was inseparable from organised lawbreaking.',
-    'The novel is also shaped by the racial and cultural tensions of the decade. The Harlem Renaissance was transforming American literature and music a few miles north of Gatsby\u2019s parties, and jazz \u2014 a predominantly Black art form \u2014 provided the soundtrack to white affluence at West Egg. At the same time, the Ku Klux Klan was experiencing a resurgence, and Tom Buchanan\u2019s enthusiasm for pseudo-scientific books about the decline of the white race reflects a real current of Anglo-Saxon supremacism among the established rich. The Valley of Ashes, meanwhile, registers the industrial poverty that underpinned the decade\u2019s prosperity, as immigrant and working-class labour generated the wealth that the Buchanans carelessly enjoyed.',
+    'Prohibition, in force from 1920 to 1933, is the unspoken engine of Gatsby\u2019s wealth. The national ban on the manufacture and sale of alcohol created a vast illegal market, and the men who supplied that market - bootleggers, speakeasy owners, gamblers - became some of the richest in America. Gatsby\u2019s partner Meyer Wolfshiem is a fictionalised version of Arnold Rothstein, the real New York gangster widely believed to have fixed the 1919 World Series. Fitzgerald uses this criminal economy to show how the supposedly meritocratic dream of wealth in the 1920s was inseparable from organised lawbreaking.',
+    'The novel is also shaped by the racial and cultural tensions of the decade. The Harlem Renaissance was transforming American literature and music a few miles north of Gatsby\u2019s parties, and jazz - a predominantly Black art form - provided the soundtrack to white affluence at West Egg. At the same time, the Ku Klux Klan was experiencing a resurgence, and Tom Buchanan\u2019s enthusiasm for pseudo-scientific books about the decline of the white race reflects a real current of Anglo-Saxon supremacism among the established rich. The Valley of Ashes, meanwhile, registers the industrial poverty that underpinned the decade\u2019s prosperity, as immigrant and working-class labour generated the wealth that the Buchanans carelessly enjoyed.',
     'Fitzgerald drew heavily on his own life. His tumultuous marriage to Zelda Sayre, a Southern debutante who had initially rejected him because he was not rich enough, clearly informs Gatsby\u2019s pursuit of Daisy, and Fitzgerald\u2019s sense of himself as an outsider watching the rich from the edges gives the novel its ambivalent tone. Although Gatsby received respectful reviews on publication in April 1925, it sold modestly in Fitzgerald\u2019s lifetime; only after his death in 1940, and especially after its distribution to American servicemen in the Second World War, did it come to be regarded as the great American novel of the twentieth century.',
   ],
   quotations: [
     {
       quote:
         '"In my younger and more vulnerable years my father gave me some advice that I\u2019ve been turning over in my mind ever since."',
-      who: 'Nick Carraway \u2014 Chapter 1',
+      who: 'Nick Carraway - Chapter 1',
       analysis:
         'The opening line establishes Nick as a retrospective, morally reflective narrator, and sets up the novel\u2019s interest in judgement, memory and the attempt to understand the past.',
     },
     {
       quote:
         '"I hope she\u2019ll be a fool \u2014 that\u2019s the best thing a girl can be in this world, a beautiful little fool."',
-      who: 'Daisy Buchanan \u2014 Chapter 1',
+      who: 'Daisy Buchanan - Chapter 1',
       analysis:
         'Daisy\u2019s wish for her infant daughter is a startlingly clear-eyed indictment of the world she lives in, and hints at her own knowing complicity in the system that traps her.',
     },
     {
       quote:
         '"He stretched out his arms toward the dark water \u2026 I could have sworn he was trembling \u2026 a single green light, minute and far away."',
-      who: 'Nick describing Gatsby \u2014 Chapter 1',
+      who: 'Nick describing Gatsby - Chapter 1',
       analysis:
         'The first appearance of the green light at the end of Daisy\u2019s dock introduces the novel\u2019s central symbol of longing and unreachable hope.',
     },
     {
       quote:
         '"This is a valley of ashes \u2014 a fantastic farm where ashes grow like wheat into ridges and hills and grotesque gardens."',
-      who: 'Nick \u2014 Chapter 2',
+      who: 'Nick - Chapter 2',
       analysis:
         'The Valley of Ashes is the novel\u2019s emblem of the industrial waste that underpins the glittering life of the rich, and is watched over by the blank eyes of Doctor T. J. Eckleburg.',
     },
     {
       quote:
         '"The eyes of Doctor T. J. Eckleburg are blue and gigantic \u2026 they look out of no face, but, instead, from a pair of enormous yellow spectacles."',
-      who: 'Nick \u2014 Chapter 2',
+      who: 'Nick - Chapter 2',
       analysis:
         'Fitzgerald\u2019s billboard eyes become a secular stand-in for a watching God, presiding unseeing over a moral landscape that has abandoned traditional value.',
     },
     {
       quote:
         '"I was within and without, simultaneously enchanted and repelled by the inexhaustible variety of life."',
-      who: 'Nick \u2014 Chapter 2',
+      who: 'Nick - Chapter 2',
       analysis:
         'Nick captures his double position as participant and observer, a tension that structures his narration and frames the novel\u2019s ambivalent attitude towards wealth and glamour.',
     },
     {
       quote:
         '"I believe that on the first night I went to Gatsby\u2019s house I was one of the few guests who had actually been invited."',
-      who: 'Nick \u2014 Chapter 3',
+      who: 'Nick - Chapter 3',
       analysis:
         'The detail exposes the impersonal spectacle of Gatsby\u2019s parties: hundreds of strangers arriving uninvited to consume a host they barely acknowledge.',
     },
     {
       quote:
         '"I\u2019m inclined to reserve all judgments \u2026 Reserving judgments is a matter of infinite hope."',
-      who: 'Nick \u2014 Chapter 1',
+      who: 'Nick - Chapter 1',
       analysis:
         'Nick\u2019s claim to impartiality is both a moral stance and a narrative strategy, and the novel repeatedly tests whether he can sustain it.',
     },
     {
       quote:
         '"You can\u2019t repeat the past."\u2003"Can\u2019t repeat the past?" he cried incredulously. "Why of course you can!"',
-      who: 'Nick and Gatsby \u2014 Chapter 6',
+      who: 'Nick and Gatsby - Chapter 6',
       analysis:
         'The exchange crystallises Gatsby\u2019s defining delusion: that time can be reversed by willpower and wealth, and that a five-year-old love affair can be restarted where it left off.',
     },
     {
       quote: '"Her voice is full of money."',
-      who: 'Gatsby \u2014 Chapter 7',
+      who: 'Gatsby - Chapter 7',
       analysis:
-        'Gatsby\u2019s sharpest insight \u2014 that the charm of Daisy\u2019s voice is inseparable from the wealth that shaped it \u2014 exposes the inseparability of love and class in the novel.',
+        'Gatsby\u2019s sharpest insight - that the charm of Daisy\u2019s voice is inseparable from the wealth that shaped it - exposes the inseparability of love and class in the novel.',
     },
     {
       quote:
         '"Her voice is full of money \u2026 That was it. I\u2019d never understood before. It was full of money \u2014 that was the inexhaustible charm that rose and fell in it, the jingle of it, the cymbals\u2019 song of it."',
-      who: 'Nick reflecting on Gatsby\u2019s phrase \u2014 Chapter 7',
+      who: 'Nick reflecting on Gatsby\u2019s phrase - Chapter 7',
       analysis:
         'Nick\u2019s expansion of Gatsby\u2019s line turns a three-word diagnosis into a sustained meditation on the sound of privilege itself.',
     },
     {
       quote:
         '"\u2026 knelt in the road and mingled her thick dark blood with the dust \u2026 her left breast was swinging loose like a flap."',
-      who: 'Nick describing Myrtle\u2019s death \u2014 Chapter 7',
+      who: 'Nick describing Myrtle\u2019s death - Chapter 7',
       analysis:
-        'The violence of the passage \u2014 shocking in its graphic bodily detail \u2014 makes unavoidable the human cost of the Buchanans\u2019 carelessness and Gatsby\u2019s silk-shirt fantasies.',
+        'The violence of the passage - shocking in its graphic bodily detail - makes unavoidable the human cost of the Buchanans\u2019 carelessness and Gatsby\u2019s silk-shirt fantasies.',
     },
     {
       quote:
         '"They were careless people, Tom and Daisy \u2014 they smashed up things and creatures and then retreated back into their money \u2026 and let other people clean up the mess they had made."',
-      who: 'Nick \u2014 Chapter 9',
+      who: 'Nick - Chapter 9',
       analysis:
         'Nick\u2019s retrospective verdict on the Buchanans is the novel\u2019s most damning moral statement, and the phrase "retreated back into their money" captures how old wealth functions as both shield and weapon.',
     },
     {
       quote:
         '"Gatsby believed in the green light, the orgastic future that year by year recedes before us."',
-      who: 'Nick \u2014 Chapter 9',
+      who: 'Nick - Chapter 9',
       analysis:
         'In the closing pages, Nick transforms Gatsby\u2019s personal longing into a national and universal condition, binding him to the American Dream itself.',
     },
     {
       quote: '"So we beat on, boats against the current, borne back ceaselessly into the past."',
-      who: 'Nick \u2014 Chapter 9 (closing line)',
+      who: 'Nick - Chapter 9 (closing line)',
       analysis:
         'The famous final sentence turns the novel\u2019s central image of striving into a resigned, elegiac truth: forward motion is an illusion, and the past always catches us.',
     },
     {
       quote:
         '"He had come a long way to this blue lawn, and his dream must have seemed so close that he could hardly fail to grasp it."',
-      who: 'Nick \u2014 Chapter 9',
+      who: 'Nick - Chapter 9',
       analysis:
         'Nick\u2019s final evocation of Gatsby frames his whole life as a near-miss, making the novel\u2019s tragedy one of narrowly unrealised hope rather than foolish fantasy.',
     },
     {
       quote:
         '"The truth was that Jay Gatsby of West Egg, Long Island, sprang from his Platonic conception of himself."',
-      who: 'Nick \u2014 Chapter 6',
+      who: 'Nick - Chapter 6',
       analysis:
         'The phrase "Platonic conception of himself" gives philosophical weight to Gatsby\u2019s self-invention, presenting him as both fraud and visionary.',
     },
     {
       quote:
         '"Let us learn to show our friendship for a man when he is alive and not after he is dead."',
-      who: 'Meyer Wolfshiem \u2014 Chapter 9',
+      who: 'Meyer Wolfshiem - Chapter 9',
       analysis:
         'Wolfshiem\u2019s excuse for missing the funeral completes the picture of a world in which loyalty evaporates as soon as the money stops flowing.',
     },
     {
       quote:
         '"If personality is an unbroken series of successful gestures, then there was something gorgeous about him."',
-      who: 'Nick \u2014 Chapter 1',
+      who: 'Nick - Chapter 1',
       analysis:
         'Nick\u2019s early verdict on Gatsby captures the double quality of his persona: a construction of deliberate gestures that nevertheless amounts to something "gorgeous" and genuinely remarkable.',
     },
     {
       quote:
         '"They\u2019re a rotten crowd \u2026 You\u2019re worth the whole damn bunch put together."',
-      who: 'Nick to Gatsby \u2014 Chapter 8',
+      who: 'Nick to Gatsby - Chapter 8',
       analysis:
         'Nick\u2019s only compliment to Gatsby, shouted across a lawn on the morning of his death, mark the point at which his claim to reserve all judgements finally breaks down.',
     },
@@ -728,7 +728,7 @@ export default async function TheGreatGatsbyPage() {
         ]}
         quizQuotes={data.quotations.slice(0, 10).map((q) => ({
           quote: q.quote.replace(/["\u201C\u201D]/g, ''),
-          character: q.who.split('\u2014')[0].trim(),
+          character: q.who.split(/ [-\u2014] /)[0].trim(),
           context: q.analysis.slice(0, 100) + '...',
         }))}
         essayQuestions={[

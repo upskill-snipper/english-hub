@@ -97,7 +97,7 @@ function QuoteCard({
       <p className="text-sm font-semibold text-violet-800 dark:text-violet-200 italic">
         &ldquo;{quote}&rdquo;
       </p>
-      {speaker && <p className="mt-1 text-xs font-medium text-violet-600">&mdash; {speaker}</p>}
+      {speaker && <p className="mt-1 text-xs font-medium text-violet-600">- {speaker}</p>}
       <p className="mt-2 text-sm text-muted-foreground">{analysis}</p>
     </div>
   )
@@ -150,7 +150,7 @@ export default function KingLearPage() {
           </span>
         </div>
         <h1 className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
-          King Lear &mdash; Complete A-Level Revision Guide
+          King Lear - Complete A-Level Revision Guide
         </h1>
         <p className="mt-1 text-lg text-muted-foreground">
           {tr(`William Shakespeare, c.1605-1606`)}
@@ -209,22 +209,22 @@ export default function KingLearPage() {
                   <span className="flex h-6 w-6 items-center justify-center rounded-full bg-violet-500/15 text-xs font-bold text-violet-700 dark:text-violet-300">
                     I
                   </span>
-                  Act I &mdash; The Division of the Kingdom
+                  Act I - The Division of the Kingdom
                 </h4>
                 <p className="mt-2 text-sm text-muted-foreground leading-relaxed">
                   The aged King Lear announces his intention to divide Britain among his three
-                  daughters &mdash; Goneril, Regan and Cordelia &mdash; and to pass authority to
-                  them while retaining the title of king. He stages a public &ldquo;love-test&rdquo;
-                  in which each daughter must declare how much she loves him. Goneril and Regan
-                  respond with extravagant flattery; Cordelia, refusing to prostitute her affection
-                  in words, says she loves her father &ldquo;According to my bond, no more nor
-                  less.&rdquo; Enraged, Lear disowns and disinherits her. The Earl of Kent attempts
-                  to intervene and is banished. The King of France, recognising Cordelia&apos;s
-                  virtue, marries her without a dowry. Meanwhile Edmund, the bastard son of the Earl
-                  of Gloucester, hatches a plot against his legitimate brother Edgar, forging a
-                  letter that supposedly proves Edgar plans patricide. Gloucester believes Edmund
-                  instantly. Goneril and Regan, now sharing power, agree to curb their father&apos;s
-                  authority and his retinue of one hundred knights.
+                  daughters - Goneril, Regan and Cordelia - and to pass authority to them while
+                  retaining the title of king. He stages a public &ldquo;love-test&rdquo; in which
+                  each daughter must declare how much she loves him. Goneril and Regan respond with
+                  extravagant flattery; Cordelia, refusing to prostitute her affection in words,
+                  says she loves her father &ldquo;According to my bond, no more nor less.&rdquo;
+                  Enraged, Lear disowns and disinherits her. The Earl of Kent attempts to intervene
+                  and is banished. The King of France, recognising Cordelia&apos;s virtue, marries
+                  her without a dowry. Meanwhile Edmund, the bastard son of the Earl of Gloucester,
+                  hatches a plot against his legitimate brother Edgar, forging a letter that
+                  supposedly proves Edgar plans patricide. Gloucester believes Edmund instantly.
+                  Goneril and Regan, now sharing power, agree to curb their father&apos;s authority
+                  and his retinue of one hundred knights.
                 </p>
               </div>
 
@@ -233,7 +233,7 @@ export default function KingLearPage() {
                   <span className="flex h-6 w-6 items-center justify-center rounded-full bg-violet-500/15 text-xs font-bold text-violet-700 dark:text-violet-300">
                     II
                   </span>
-                  Act II &mdash; Rejection and Disguise
+                  Act II - Rejection and Disguise
                 </h4>
                 <p className="mt-2 text-sm text-muted-foreground leading-relaxed">
                   Edmund persuades Edgar to flee, then wounds himself to feign an attack and frame
@@ -253,7 +253,7 @@ export default function KingLearPage() {
                   <span className="flex h-6 w-6 items-center justify-center rounded-full bg-violet-500/15 text-xs font-bold text-violet-700 dark:text-violet-300">
                     III
                   </span>
-                  Act III &mdash; The Storm and the Blinding
+                  Act III - The Storm and the Blinding
                 </h4>
                 <p className="mt-2 text-sm text-muted-foreground leading-relaxed">
                   On the heath, Lear rages against the elements: &ldquo;Blow, winds, and crack your
@@ -263,7 +263,7 @@ export default function KingLearPage() {
                   simultaneously gaining moral insight. Gloucester secretly helps the king and tells
                   Edmund of a French invasion intended to restore Lear. Edmund betrays his father to
                   Cornwall. In one of the most brutal scenes in Shakespeare, Cornwall and Regan put
-                  out Gloucester&apos;s eyes on stage &mdash; &ldquo;Out, vile jelly!&rdquo; A loyal
+                  out Gloucester&apos;s eyes on stage - &ldquo;Out, vile jelly!&rdquo; A loyal
                   servant draws his sword in protest and mortally wounds Cornwall before being
                   killed himself. The blinded Gloucester is thrust out of his own gates to
                   &ldquo;smell his way to Dover.&rdquo;
@@ -275,7 +275,7 @@ export default function KingLearPage() {
                   <span className="flex h-6 w-6 items-center justify-center rounded-full bg-violet-500/15 text-xs font-bold text-violet-700 dark:text-violet-300">
                     IV
                   </span>
-                  Act IV &mdash; Suffering and Reunion
+                  Act IV - Suffering and Reunion
                 </h4>
                 <p className="mt-2 text-sm text-muted-foreground leading-relaxed">
                   The two plots converge. Edgar, still disguised, leads his blind father towards the
@@ -297,7 +297,7 @@ export default function KingLearPage() {
                   <span className="flex h-6 w-6 items-center justify-center rounded-full bg-violet-500/15 text-xs font-bold text-violet-700 dark:text-violet-300">
                     V
                   </span>
-                  Act V &mdash; Catastrophe
+                  Act V - Catastrophe
                 </h4>
                 <p className="mt-2 text-sm text-muted-foreground leading-relaxed">
                   The British forces under Edmund defeat the French; Lear and Cordelia are captured.
@@ -729,7 +729,7 @@ export default function KingLearPage() {
                   </div>
                   <div>
                     <p className="text-xs font-semibold text-violet-700 dark:text-violet-300 uppercase tracking-wider">
-                      Paragraph 1 &mdash; Suffering as education
+                      Paragraph 1 - Suffering as education
                     </p>
                     <p className="mt-1 text-sm text-muted-foreground">
                       Lear&apos;s &lsquo;Poor naked wretches&rsquo; speech in III.iv. Argue that the
@@ -739,7 +739,7 @@ export default function KingLearPage() {
                   </div>
                   <div>
                     <p className="text-xs font-semibold text-violet-700 dark:text-violet-300 uppercase tracking-wider">
-                      Paragraph 2 &mdash; The Gloucester subplot
+                      Paragraph 2 - The Gloucester subplot
                     </p>
                     <p className="mt-1 text-sm text-muted-foreground">
                       Gloucester&apos;s &lsquo;I stumbled when I saw.&rsquo; The blinding is the
@@ -749,7 +749,7 @@ export default function KingLearPage() {
                   </div>
                   <div>
                     <p className="text-xs font-semibold text-violet-700 dark:text-violet-300 uppercase tracking-wider">
-                      Paragraph 3 &mdash; The negation of reward
+                      Paragraph 3 - The negation of reward
                     </p>
                     <p className="mt-1 text-sm text-muted-foreground">
                       Cordelia&apos;s death and Lear&apos;s &lsquo;Never, never, never, never,
@@ -790,7 +790,7 @@ export default function KingLearPage() {
                   </div>
                   <div>
                     <p className="text-xs font-semibold text-violet-700 dark:text-violet-300 uppercase tracking-wider">
-                      Paragraph 1 &mdash; Truth-telling
+                      Paragraph 1 - Truth-telling
                     </p>
                     <p className="mt-1 text-sm text-muted-foreground">
                       &lsquo;Thou shouldst not have been old till thou hadst been wise.&rsquo; The
@@ -800,7 +800,7 @@ export default function KingLearPage() {
                   </div>
                   <div>
                     <p className="text-xs font-semibold text-violet-700 dark:text-violet-300 uppercase tracking-wider">
-                      Paragraph 2 &mdash; Surrogate Cordelia
+                      Paragraph 2 - Surrogate Cordelia
                     </p>
                     <p className="mt-1 text-sm text-muted-foreground">
                       The Fool first appears only after Cordelia is banished. AO5: discuss the
@@ -811,7 +811,7 @@ export default function KingLearPage() {
                   </div>
                   <div>
                     <p className="text-xs font-semibold text-violet-700 dark:text-violet-300 uppercase tracking-wider">
-                      Paragraph 3 &mdash; Disappearance
+                      Paragraph 3 - Disappearance
                     </p>
                     <p className="mt-1 text-sm text-muted-foreground">
                       &lsquo;And I&apos;ll go to bed at noon.&rsquo; His vanishing in III.vi is one
@@ -841,7 +841,7 @@ export default function KingLearPage() {
                   </div>
                   <div>
                     <p className="text-xs font-semibold text-violet-700 dark:text-violet-300 uppercase tracking-wider">
-                      Paragraph 1 &mdash; Doubling
+                      Paragraph 1 - Doubling
                     </p>
                     <p className="mt-1 text-sm text-muted-foreground">
                       Two fathers, both deceived by the wrong child. Doubling makes the tragedy a
@@ -850,7 +850,7 @@ export default function KingLearPage() {
                   </div>
                   <div>
                     <p className="text-xs font-semibold text-violet-700 dark:text-violet-300 uppercase tracking-wider">
-                      Paragraph 2 &mdash; Sight and blindness literalised
+                      Paragraph 2 - Sight and blindness literalised
                     </p>
                     <p className="mt-1 text-sm text-muted-foreground">
                       Gloucester&apos;s blinding makes the metaphorical blindness of Act I horribly
@@ -860,7 +860,7 @@ export default function KingLearPage() {
                   </div>
                   <div>
                     <p className="text-xs font-semibold text-violet-700 dark:text-violet-300 uppercase tracking-wider">
-                      Paragraph 3 &mdash; Edmund as new Machiavellianism
+                      Paragraph 3 - Edmund as new Machiavellianism
                     </p>
                     <p className="mt-1 text-sm text-muted-foreground">
                       Edmund is the play&apos;s only true ideologist of self-interest; without him,
@@ -894,7 +894,7 @@ export default function KingLearPage() {
                   </div>
                   <div>
                     <p className="text-xs font-semibold text-violet-700 dark:text-violet-300 uppercase tracking-wider">
-                      Paragraph 1 &mdash; Locus of ambition
+                      Paragraph 1 - Locus of ambition
                     </p>
                     <p className="mt-1 text-sm text-muted-foreground">
                       Macbeth himself is consumed by &lsquo;vaulting ambition&rsquo;; Lear&apos;s
@@ -906,7 +906,7 @@ export default function KingLearPage() {
                   </div>
                   <div>
                     <p className="text-xs font-semibold text-violet-700 dark:text-violet-300 uppercase tracking-wider">
-                      Paragraph 2 &mdash; Disrupted nature
+                      Paragraph 2 - Disrupted nature
                     </p>
                     <p className="mt-1 text-sm text-muted-foreground">
                       Both plays use cosmic disorder as a political symbol: the storms and prodigies
@@ -917,7 +917,7 @@ export default function KingLearPage() {
                   </div>
                   <div>
                     <p className="text-xs font-semibold text-violet-700 dark:text-violet-300 uppercase tracking-wider">
-                      Paragraph 3 &mdash; Endings
+                      Paragraph 3 - Endings
                     </p>
                     <p className="mt-1 text-sm text-muted-foreground">
                       Macbeth ends with restoration: Malcolm crowned, the body politic healed. Lear
@@ -959,7 +959,7 @@ export default function KingLearPage() {
                   </div>
                   <div>
                     <p className="text-xs font-semibold text-violet-700 dark:text-violet-300 uppercase tracking-wider">
-                      Paragraph 1 &mdash; Plain speech, not idealism
+                      Paragraph 1 - Plain speech, not idealism
                     </p>
                     <p className="mt-1 text-sm text-muted-foreground">
                       &lsquo;According to my bond, no more nor less.&rsquo; Cordelia is not a
@@ -970,7 +970,7 @@ export default function KingLearPage() {
                   </div>
                   <div>
                     <p className="text-xs font-semibold text-violet-700 dark:text-violet-300 uppercase tracking-wider">
-                      Paragraph 2 &mdash; Christ-like associations
+                      Paragraph 2 - Christ-like associations
                     </p>
                     <p className="mt-1 text-sm text-muted-foreground">
                       &lsquo;No cause, no cause.&rsquo; The forgiveness scene in IV.vii does invite
@@ -980,7 +980,7 @@ export default function KingLearPage() {
                   </div>
                   <div>
                     <p className="text-xs font-semibold text-violet-700 dark:text-violet-300 uppercase tracking-wider">
-                      Paragraph 3 &mdash; The shock of her death
+                      Paragraph 3 - The shock of her death
                     </p>
                     <p className="mt-1 text-sm text-muted-foreground">
                       Shakespeare departs from the source play <em>Leir</em>, in which Cordelia

@@ -134,7 +134,7 @@ export default function GradeBoundariesPage() {
 
           <div className="mt-4 space-y-6">
             <div className="rounded-lg border-s-4 border-success-500 bg-success-50/30 p-5">
-              <h3 className="text-lg font-bold text-success-700">Grade 9 &mdash; Exceptional</h3>
+              <h3 className="text-lg font-bold text-success-700">Grade 9 - Exceptional</h3>
               <div className="mt-3 space-y-2 text-sm">
                 <p>
                   <strong>Reading:</strong>
@@ -396,9 +396,8 @@ export default function GradeBoundariesPage() {
                 </li>
                 <li>
                   <strong>Writing:</strong> Develop a distinctive voice. The difference between
-                  Grade 7 and Grade 9 creative writing is often authenticity and originality &mdash;
-                  the sense that the writing has a unique perspective, not that it follows a
-                  formula.
+                  Grade 7 and Grade 9 creative writing is often authenticity and originality - the
+                  sense that the writing has a unique perspective, not that it follows a formula.
                 </li>
                 <li>
                   <strong>Precision:</strong> Every word should earn its place. Cut unnecessary
@@ -479,8 +478,8 @@ export default function GradeBoundariesPage() {
 
           <p className="mt-4 text-sm text-muted-foreground">
             Notice that Q5 on each paper is worth <strong>half the total marks</strong> for that
-            paper. This means your writing is just as important as your reading &mdash; if not more
-            so, since a strong piece of writing can be produced through preparation and practice
+            paper. This means your writing is just as important as your reading - if not more so,
+            since a strong piece of writing can be produced through preparation and practice
             regardless of what unseen text appears.
           </p>
         </Section>

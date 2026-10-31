@@ -494,7 +494,7 @@ export default async function PoetryAnalysisPage() {
             This cluster is based on the Cambridge IGCSE 0475 syllabus{' '}
             <em>{_tr(`Songs of Ourselves`)}</em> Vol&nbsp;1 Part&nbsp;4 plus the Ted Hughes cluster
             (<em>{_tr(`The Thought-Fox`)}</em>, <em>{_tr(`Hawk Roosting`)}</em>, <em>Wind</em>).
-            Cambridge International rotates set texts every two years &mdash; always confirm via{' '}
+            Cambridge International rotates set texts every two years - always confirm via{' '}
             <a
               href="https://www.cambridgeinternational.org/syllabus"
               target="_blank"
@@ -504,8 +504,8 @@ export default async function PoetryAnalysisPage() {
               cambridgeinternational.org/syllabus
             </a>{' '}
             before relying on this list for the current exam window. The poems analysed below are
-            legacy reference choices from the wider <em>{_tr(`Songs of Ourselves`)}</em> anthology
-            &mdash; use them as templates for technique, comparison, and AO coverage.
+            legacy reference choices from the wider <em>{_tr(`Songs of Ourselves`)}</em> anthology -
+            use them as templates for technique, comparison, and AO coverage.
           </p>
           <p className="mt-3 text-muted-foreground leading-relaxed">
             <strong className="text-foreground">{_tr(`Cluster rights:`)}</strong> Four poems in the
@@ -532,7 +532,7 @@ export default async function PoetryAnalysisPage() {
           <div className="mt-6 space-y-4">
             <div className="rounded-lg border border-border bg-card p-5 shadow-md">
               <h3 className="font-semibold text-foreground">
-                Band 6 (Excellent) &mdash; 21&ndash;25 marks
+                Band 6 (Excellent) - 21&ndash;25 marks
               </h3>
               <ul className="mt-2 space-y-1 text-sm text-muted-foreground">
                 <li>
@@ -633,7 +633,7 @@ export default async function PoetryAnalysisPage() {
                 </li>
                 <li>
                   &bull; <strong>{_tr(`Language and imagery:`)}</strong> Metaphor, simile,
-                  personification, sound devices &mdash; how do they differ?
+                  personification, sound devices - how do they differ?
                 </li>
                 <li>
                   &bull; <strong>{_tr(`Speaker and perspective:`)}</strong> First person vs. third
@@ -651,25 +651,23 @@ export default async function PoetryAnalysisPage() {
               <ul className="mt-2 space-y-2 text-sm text-muted-foreground">
                 <li>
                   <strong>Time and transience:</strong> &ldquo;Ozymandias&rdquo; and &ldquo;Sonnet
-                  18&rdquo; &mdash; both explore what endures, but Shelley focuses on political
-                  power while Shakespeare focuses on love and art.
+                  18&rdquo; - both explore what endures, but Shelley focuses on political power
+                  while Shakespeare focuses on love and art.
                 </li>
                 <li>
                   <strong>Childhood memory:</strong> &ldquo;Piano&rdquo; and &ldquo;Half-Past
-                  Two&rdquo; &mdash; both present childhood as a lost world, but Lawrence treats it
-                  with aching nostalgia while Fanthorpe uses humour and playful language.
+                  Two&rdquo; - both present childhood as a lost world, but Lawrence treats it with
+                  aching nostalgia while Fanthorpe uses humour and playful language.
                 </li>
                 <li>
                   <strong>{_tr(`Power and nature:`)}</strong> &ldquo;Hawk Roosting&rdquo; and
-                  &ldquo;Horses&rdquo; &mdash; both present powerful animals, but the hawk is a
-                  speaker asserting dominance while the horses are observed with awe by a human
-                  speaker.
+                  &ldquo;Horses&rdquo; - both present powerful animals, but the hawk is a speaker
+                  asserting dominance while the horses are observed with awe by a human speaker.
                 </li>
                 <li>
                   <strong>Place and identity:</strong> &ldquo;Where I Come From&rdquo; and
-                  &ldquo;Blessing&rdquo; &mdash; both connect landscape to human experience, but
-                  Brewster explores personal identity while Dharker focuses on community and
-                  survival.
+                  &ldquo;Blessing&rdquo; - both connect landscape to human experience, but Brewster
+                  explores personal identity while Dharker focuses on community and survival.
                 </li>
               </ul>
             </div>

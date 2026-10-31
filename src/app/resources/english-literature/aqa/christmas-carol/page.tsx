@@ -499,7 +499,7 @@ export default async function ChristmasCarolPage() {
             AQA English Literature &middot; Paper 1
           </p>
           <h1 className="text-3xl font-bold tracking-tight sm:text-4xl md:text-5xl">
-            A Christmas Carol &mdash; Complete Study Guide
+            A Christmas Carol - Complete Study Guide
           </h1>
           <p className="mx-auto mt-4 max-w-2xl text-lg text-muted-foreground">
             Charles Dickens &middot; Published 1843 &middot; Novella

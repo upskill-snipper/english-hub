@@ -98,7 +98,7 @@ function Quote({
     <div className="rounded-lg border-s-4 border-accent bg-primary/10 p-4">
       <p className="text-sm font-semibold italic text-foreground">&ldquo;{text}&rdquo;</p>
       <p className="mt-1 text-xs text-muted-foreground">
-        {speaker} &mdash; {act}
+        {speaker} - {act}
       </p>
       <p className="mt-2 text-sm text-muted-foreground">{analysis}</p>
     </div>
@@ -137,7 +137,7 @@ export default function MerchantOfVeniceRevisionPage() {
           </span>
         </div>
         <h1 className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
-          The Merchant of Venice &mdash; Complete Revision Guide
+          The Merchant of Venice - Complete Revision Guide
         </h1>
         <p className="mt-3 max-w-3xl text-lg text-muted-foreground">
           Everything you need for your GCSE English Literature exam. Act-by-act plot, character
@@ -185,7 +185,7 @@ export default function MerchantOfVeniceRevisionPage() {
                 <span className="flex h-6 w-6 items-center justify-center rounded-full bg-amber-500/15 text-xs font-bold text-amber-700">
                   1
                 </span>
-                Act 1 &mdash; The Bond
+                Act 1 - The Bond
               </h3>
               <p className="mt-2 text-sm text-muted-foreground leading-relaxed">
                 Antonio, a wealthy Venetian merchant, is melancholy for reasons he cannot explain.
@@ -210,8 +210,8 @@ export default function MerchantOfVeniceRevisionPage() {
                     so sad&rdquo; (1.1)
                   </li>
                   <li>
-                    &bull; Shylock&apos;s &ldquo;merry bond&rdquo; &mdash; the pound of flesh
-                    condition (1.3)
+                    &bull; Shylock&apos;s &ldquo;merry bond&rdquo; - the pound of flesh condition
+                    (1.3)
                   </li>
                   <li>
                     &bull; Shylock&apos;s &ldquo;suff&apos;rance is the badge of all our
@@ -227,19 +227,18 @@ export default function MerchantOfVeniceRevisionPage() {
                 <span className="flex h-6 w-6 items-center justify-center rounded-full bg-amber-500/15 text-xs font-bold text-amber-700">
                   2
                 </span>
-                Act 2 &mdash; Caskets and Elopement
+                Act 2 - Caskets and Elopement
               </h3>
               <p className="mt-2 text-sm text-muted-foreground leading-relaxed">
                 The Prince of Morocco chooses the gold casket, inscribed &ldquo;Who chooseth me
-                shall gain what many men desire,&rdquo; and finds a skull inside &mdash; he has
-                failed. The Prince of Arragon chooses the silver casket (&ldquo;Who chooseth me
-                shall get as much as he deserves&rdquo;) and finds a fool&apos;s head. Meanwhile in
-                Venice, Shylock&apos;s daughter Jessica elopes with Lorenzo, a Christian, taking a
-                significant amount of Shylock&apos;s money and jewels &mdash; including a turquoise
-                ring given to him by his late wife Leah. Shylock is devastated by this double
-                betrayal. Lancelot Gobbo, Shylock&apos;s comic servant, leaves his service for
-                Bassanio&apos;s household. News arrives that Antonio&apos;s ships are in danger at
-                sea.
+                shall gain what many men desire,&rdquo; and finds a skull inside - he has failed.
+                The Prince of Arragon chooses the silver casket (&ldquo;Who chooseth me shall get as
+                much as he deserves&rdquo;) and finds a fool&apos;s head. Meanwhile in Venice,
+                Shylock&apos;s daughter Jessica elopes with Lorenzo, a Christian, taking a
+                significant amount of Shylock&apos;s money and jewels - including a turquoise ring
+                given to him by his late wife Leah. Shylock is devastated by this double betrayal.
+                Lancelot Gobbo, Shylock&apos;s comic servant, leaves his service for Bassanio&apos;s
+                household. News arrives that Antonio&apos;s ships are in danger at sea.
               </p>
               <div className="mt-3 rounded-lg bg-muted p-3">
                 <p className="text-xs font-semibold text-muted-foreground uppercase tracking-wider">
@@ -262,7 +261,7 @@ export default function MerchantOfVeniceRevisionPage() {
                 <span className="flex h-6 w-6 items-center justify-center rounded-full bg-amber-500/15 text-xs font-bold text-amber-700">
                   3
                 </span>
-                Act 3 &mdash; The Casket Choice and the Bond Due
+                Act 3 - The Casket Choice and the Bond Due
               </h3>
               <p className="mt-2 text-sm text-muted-foreground leading-relaxed">
                 Shylock delivers his famous &ldquo;Hath not a Jew eyes?&rdquo; speech, passionately
@@ -297,18 +296,18 @@ export default function MerchantOfVeniceRevisionPage() {
                 <span className="flex h-6 w-6 items-center justify-center rounded-full bg-amber-500/15 text-xs font-bold text-amber-700">
                   4
                 </span>
-                Act 4 &mdash; The Trial
+                Act 4 - The Trial
               </h3>
               <p className="mt-2 text-sm text-muted-foreground leading-relaxed">
                 The Duke of Venice presides over the trial. Shylock demands his pound of flesh,
-                refusing all offers of money &mdash; even twice and three times the sum owed. Portia
+                refusing all offers of money - even twice and three times the sum owed. Portia
                 arrives disguised as &ldquo;Balthazar,&rdquo; a young doctor of law. She first
                 appeals to Shylock&apos;s mercy with the famous &ldquo;quality of mercy&rdquo;
                 speech, but he refuses. She then appears to rule in Shylock&apos;s favour, telling
-                him he may take the flesh &mdash; but turns the law against him: he may take exactly
-                one pound, no more and no less, and must not shed a single drop of blood (since the
-                bond specifies flesh only). Shylock is defeated. Further, as an alien who has sought
-                the life of a citizen, his wealth is forfeit. Antonio shows &ldquo;mercy&rdquo; by
+                him he may take the flesh - but turns the law against him: he may take exactly one
+                pound, no more and no less, and must not shed a single drop of blood (since the bond
+                specifies flesh only). Shylock is defeated. Further, as an alien who has sought the
+                life of a citizen, his wealth is forfeit. Antonio shows &ldquo;mercy&rdquo; by
                 allowing Shylock to keep half his wealth on condition he converts to Christianity
                 and leaves his estate to Jessica and Lorenzo. Shylock exits broken. Portia (still
                 disguised) tricks Bassanio into giving up the ring she gave him, creating the
@@ -322,7 +321,7 @@ export default function MerchantOfVeniceRevisionPage() {
                   <li>&bull; Portia&apos;s &ldquo;quality of mercy&rdquo; speech (4.1)</li>
                   <li>&bull; The legal technicality: no blood, exact pound (4.1)</li>
                   <li>&bull; Shylock&apos;s forced conversion to Christianity (4.1)</li>
-                  <li>&bull; The ring trick &mdash; Bassanio gives up the ring (4.1&ndash;4.2)</li>
+                  <li>&bull; The ring trick - Bassanio gives up the ring (4.1&ndash;4.2)</li>
                 </ul>
               </div>
             </div>
@@ -332,17 +331,17 @@ export default function MerchantOfVeniceRevisionPage() {
                 <span className="flex h-6 w-6 items-center justify-center rounded-full bg-amber-500/15 text-xs font-bold text-amber-700">
                   5
                 </span>
-                Act 5 &mdash; Reunion at Belmont
+                Act 5 - Reunion at Belmont
               </h3>
               <p className="mt-2 text-sm text-muted-foreground leading-relaxed">
                 In the moonlit gardens of Belmont, Jessica and Lorenzo exchange poetic vows about
                 famous lovers from mythology. Portia and Nerissa return and pretend to be angry
-                about the missing rings, teasing their husbands. Eventually they reveal the truth
-                &mdash; that they were the lawyer and clerk at the trial. Antonio receives news that
-                some of his ships have in fact returned safely. Lorenzo and Jessica learn they will
-                inherit Shylock&apos;s estate. The play ends on a comedic note, though the forced
-                conversion of Shylock and his absence from this final scene leave a shadow over the
-                apparent harmony. Shylock is never named again after Act 4.
+                about the missing rings, teasing their husbands. Eventually they reveal the truth -
+                that they were the lawyer and clerk at the trial. Antonio receives news that some of
+                his ships have in fact returned safely. Lorenzo and Jessica learn they will inherit
+                Shylock&apos;s estate. The play ends on a comedic note, though the forced conversion
+                of Shylock and his absence from this final scene leave a shadow over the apparent
+                harmony. Shylock is never named again after Act 4.
               </p>
               <div className="mt-3 rounded-lg bg-muted p-3">
                 <p className="text-xs font-semibold text-muted-foreground uppercase tracking-wider">
@@ -356,8 +355,7 @@ export default function MerchantOfVeniceRevisionPage() {
                   <li>&bull; The ring trick revealed (5.1)</li>
                   <li>&bull; Antonio&apos;s ships return safely (5.1)</li>
                   <li>
-                    &bull; The comedic resolution &mdash; but Shylock&apos;s absence haunts the
-                    ending
+                    &bull; The comedic resolution - but Shylock&apos;s absence haunts the ending
                   </li>
                 </ul>
               </div>
@@ -388,10 +386,10 @@ export default function MerchantOfVeniceRevisionPage() {
                   the male lawyer Balthazar, she delivers the famous &ldquo;quality of mercy&rdquo;
                   speech and then masterfully manipulates Venetian law to defeat Shylock. Her
                   intelligence surpasses every male character in the play. Yet Portia is morally
-                  complex &mdash; her mercy speech is eloquent, but her treatment of Shylock is
-                  arguably merciless. She also makes casually racist remarks about the Prince of
-                  Morocco. She represents the tension between appearance and reality, and between
-                  the ideals of mercy and their actual application.
+                  complex - her mercy speech is eloquent, but her treatment of Shylock is arguably
+                  merciless. She also makes casually racist remarks about the Prince of Morocco. She
+                  represents the tension between appearance and reality, and between the ideals of
+                  mercy and their actual application.
                 </p>
                 <div className="mt-3 grid gap-3 sm:grid-cols-2">
                   <Quote
@@ -421,7 +419,7 @@ export default function MerchantOfVeniceRevisionPage() {
                   is cruel, yet his &ldquo;Hath not a Jew eyes?&rdquo; speech is one of the most
                   powerful pleas for human equality in literature. He is a loving father devastated
                   by Jessica&apos;s elopement and conversion. His forced conversion to Christianity
-                  in the trial is deeply troubling to modern audiences &mdash; presented as
+                  in the trial is deeply troubling to modern audiences - presented as
                   &ldquo;mercy&rdquo; by Antonio, it is arguably the cruellest punishment of all,
                   stripping him of his identity, faith, and community. Shakespeare gives him dignity
                   and humanity that complicates the play&apos;s apparent anti-Semitism. Whether
@@ -452,15 +450,15 @@ export default function MerchantOfVeniceRevisionPage() {
                 <p className="mt-3 text-sm text-muted-foreground leading-relaxed">
                   The titular &ldquo;merchant of Venice,&rdquo; Antonio is a wealthy Christian
                   merchant who opens the play in a state of unexplained melancholy. His devotion to
-                  Bassanio is the play&apos;s deepest bond &mdash; he risks his life by agreeing to
+                  Bassanio is the play&apos;s deepest bond - he risks his life by agreeing to
                   Shylock&apos;s terms. He is generous and self-sacrificing with his friends, yet
                   viciously prejudiced against Shylock, admitting he has spat on him and called him
                   a &ldquo;misbeliever, cut-throat dog.&rdquo; His &ldquo;mercy&rdquo; in the trial
-                  &mdash; allowing Shylock to live on condition of Christian conversion &mdash; is
-                  deeply ambiguous. He represents how Christian society in the play operates:
-                  outwardly virtuous and merciful, yet cruel towards outsiders. His passivity in the
-                  trial scene, where he seems almost to welcome death, suggests a complex,
-                  melancholic psychology.
+                  - allowing Shylock to live on condition of Christian conversion - is deeply
+                  ambiguous. He represents how Christian society in the play operates: outwardly
+                  virtuous and merciful, yet cruel towards outsiders. His passivity in the trial
+                  scene, where he seems almost to welcome death, suggests a complex, melancholic
+                  psychology.
                 </p>
                 <div className="mt-3 grid gap-3 sm:grid-cols-2">
                   <Quote
@@ -485,7 +483,7 @@ export default function MerchantOfVeniceRevisionPage() {
                 </h3>
                 <p className="mt-3 text-sm text-muted-foreground leading-relaxed">
                   Bassanio is a young Venetian gentleman who has spent beyond his means. He
-                  describes Portia as &ldquo;a lady richly left&rdquo; &mdash; mentioning her wealth
+                  describes Portia as &ldquo;a lady richly left&rdquo; - mentioning her wealth
                   before her beauty or virtue, raising questions about his motives. He borrows money
                   from Antonio (at great risk) to court Portia. He is charming and socially adept
                   but arguably selfish, as he allows Antonio to enter a dangerous bond for his
@@ -516,7 +514,7 @@ export default function MerchantOfVeniceRevisionPage() {
                   escape what she sees as a &ldquo;hell.&rdquo; Her elopement is presented
                   sympathetically within the play&apos;s Christian framework, but modern audiences
                   often see her betrayal of Shylock as deeply troubling. She exchanges her
-                  mother&apos;s turquoise ring for a monkey &mdash; a detail that reveals either
+                  mother&apos;s turquoise ring for a monkey - a detail that reveals either
                   callousness or desperation. She occupies a liminal space between the Jewish and
                   Christian worlds, never fully accepted by either.
                 </p>
@@ -645,7 +643,7 @@ export default function MerchantOfVeniceRevisionPage() {
                   {tr(`Prejudice and Anti-Semitism`)}
                 </h3>
                 <p className="mt-3 text-sm text-muted-foreground leading-relaxed">
-                  Shylock is called &ldquo;the Jew&rdquo; more often than by his name &mdash; he is
+                  Shylock is called &ldquo;the Jew&rdquo; more often than by his name - he is
                   defined by his religion rather than his individuality. Antonio has spat on him,
                   kicked him, and called him a &ldquo;misbeliever, cut-throat dog.&rdquo; The
                   Christian characters assume moral superiority throughout. The play reflects
@@ -683,7 +681,7 @@ export default function MerchantOfVeniceRevisionPage() {
                   bond between Antonio and Bassanio; and the paternal love of Shylock for Jessica.
                   Love is tested throughout: by the casket test (which demands wisdom), by
                   Antonio&apos;s willingness to die for Bassanio, and by the ring trick (which tests
-                  marital fidelity). The play asks whether love can be quantified &mdash; Bassanio
+                  marital fidelity). The play asks whether love can be quantified - Bassanio
                   describes Portia&apos;s wealth before her character, and love seems entangled with
                   money throughout. Antonio&apos;s love for Bassanio creates a triangle of loyalty:
                   Bassanio must choose between his friend and his wife, a tension the ring plot
@@ -718,8 +716,8 @@ export default function MerchantOfVeniceRevisionPage() {
                   articulates the most powerful arguments for humanity. Bassanio&apos;s speech on
                   &ldquo;ornament&rdquo; argues that the world is &ldquo;still deceiv&apos;d&rdquo;
                   by appearances, yet he himself may be deceived by Portia&apos;s wealth. The rings
-                  &mdash; symbols of fidelity &mdash; are easily given away. Throughout the play,
-                  what appears good may be hollow, and what appears base may be valuable.
+                  - symbols of fidelity - are easily given away. Throughout the play, what appears
+                  good may be hollow, and what appears base may be valuable.
                 </p>
                 <div className="mt-3 grid gap-3 sm:grid-cols-2">
                   <Quote
@@ -774,7 +772,7 @@ export default function MerchantOfVeniceRevisionPage() {
                   power by disguising herself as a man. As a woman, she is subject to her
                   father&apos;s will (the casket test) and must submit to her husband. As
                   &ldquo;Balthazar,&rdquo; she commands the courtroom and outwits every man present.
-                  This exposes the limitations placed on women in Elizabethan society &mdash;
+                  This exposes the limitations placed on women in Elizabethan society -
                   Portia&apos;s abilities exist regardless of her gender, but she can only deploy
                   them when dressed as a man. The ring plot also tests gender dynamics: Portia uses
                   the rings to assert power over Bassanio, reminding him that her cleverness saved
@@ -950,9 +948,9 @@ export default function MerchantOfVeniceRevisionPage() {
                   the play, the Queen&apos;s physician Roderigo Lopez (a converted Jew) was executed
                   for allegedly plotting to poison Elizabeth I. Christopher Marlowe&apos;s
                   &ldquo;The Jew of Malta&rdquo; (1589) featured a grotesque Jewish villain.
-                  Shakespeare&apos;s Shylock is more complex than Marlowe&apos;s Barabas &mdash; he
-                  is given humanity, dignity, and compelling arguments &mdash; but the play still
-                  operates within an anti-Semitic framework that modern readers must acknowledge.
+                  Shakespeare&apos;s Shylock is more complex than Marlowe&apos;s Barabas - he is
+                  given humanity, dignity, and compelling arguments - but the play still operates
+                  within an anti-Semitic framework that modern readers must acknowledge.
                 </p>
               </div>
 
@@ -975,15 +973,15 @@ export default function MerchantOfVeniceRevisionPage() {
               <div>
                 <h3 className="font-bold text-foreground mb-2">{tr(`Venice as a Setting`)}</h3>
                 <p className="text-sm text-muted-foreground leading-relaxed">
-                  Venice was the most cosmopolitan city in Europe &mdash; a centre of trade where
-                  East met West. It was famous for its laws and contracts, making it the perfect
-                  setting for a play about bonds and legal disputes. Venice also had a Jewish ghetto
-                  (established 1516) &mdash; Jews were confined to a specific area and required to
-                  wear identifying clothing. This real-world segregation mirrors the social
-                  exclusion Shylock experiences. The play contrasts Venice (commerce, law, conflict)
-                  with Belmont (&ldquo;beautiful mountain&rdquo;), a fairy-tale world of music,
-                  love, and harmony. However, Belmont&apos;s harmony depends on wealth extracted
-                  from Venice&apos;s commercial world.
+                  Venice was the most cosmopolitan city in Europe - a centre of trade where East met
+                  West. It was famous for its laws and contracts, making it the perfect setting for
+                  a play about bonds and legal disputes. Venice also had a Jewish ghetto
+                  (established 1516) - Jews were confined to a specific area and required to wear
+                  identifying clothing. This real-world segregation mirrors the social exclusion
+                  Shylock experiences. The play contrasts Venice (commerce, law, conflict) with
+                  Belmont (&ldquo;beautiful mountain&rdquo;), a fairy-tale world of music, love, and
+                  harmony. However, Belmont&apos;s harmony depends on wealth extracted from
+                  Venice&apos;s commercial world.
                 </p>
               </div>
 
@@ -992,7 +990,7 @@ export default function MerchantOfVeniceRevisionPage() {
                 <p className="text-sm text-muted-foreground leading-relaxed">
                   In Elizabethan England, women were legally subordinate to their fathers and then
                   their husbands. Portia&apos;s subjection to her dead father&apos;s will reflects
-                  this &mdash; she cannot choose her own husband. Marriage was often an economic
+                  this - she cannot choose her own husband. Marriage was often an economic
                   arrangement as much as a romantic one. Portia&apos;s giving of herself and all her
                   property to Bassanio (&ldquo;Myself and what is mine to you and yours / Is now
                   converted&rdquo;) reflects the legal reality that a wife&apos;s property became
@@ -1006,7 +1004,7 @@ export default function MerchantOfVeniceRevisionPage() {
                 <p className="text-sm text-muted-foreground leading-relaxed">
                   Forced conversion of Jews to Christianity was practised across medieval and early
                   modern Europe. Many Elizabethan audience members would have seen Shylock&apos;s
-                  forced conversion as genuinely merciful &mdash; saving his soul. Modern audiences
+                  forced conversion as genuinely merciful - saving his soul. Modern audiences
                   recognise it as a destruction of identity and cultural erasure. The play sits at
                   this uncomfortable intersection: Shakespeare may have intended the conversion as a
                   happy ending (Shylock &ldquo;saved&rdquo;), or he may have been exposing the
@@ -1029,9 +1027,9 @@ export default function MerchantOfVeniceRevisionPage() {
             <div className="space-y-6">
               <p className="text-sm text-muted-foreground leading-relaxed">
                 Act 4, Scene 1 is the play&apos;s dramatic and thematic climax. It brings together
-                every major theme &mdash; justice vs mercy, prejudice, appearance vs reality, and
-                gender &mdash; in a single, extended courtroom sequence. This is the scene examiners
-                are most likely to ask about.
+                every major theme - justice vs mercy, prejudice, appearance vs reality, and gender -
+                in a single, extended courtroom sequence. This is the scene examiners are most
+                likely to ask about.
               </p>
 
               <div>
@@ -1112,8 +1110,8 @@ export default function MerchantOfVeniceRevisionPage() {
                           {tr(`Shylock's defeat`)}
                         </td>
                         <td className="px-4 py-2 text-muted-foreground">
-                          Shylock tries to take the money instead. Portia refuses &mdash; he has
-                          already chosen justice. His wealth is forfeit under Venetian law.
+                          Shylock tries to take the money instead. Portia refuses - he has already
+                          chosen justice. His wealth is forfeit under Venetian law.
                         </td>
                         <td className="px-4 py-2 text-muted-foreground">
                           {tr(
@@ -1225,10 +1223,10 @@ export default function MerchantOfVeniceRevisionPage() {
                     manipulate the system more effectively.
                   </li>
                   <li className="flex gap-2">
-                    <span className="text-amber-600 font-bold">5.</span> Shylock&apos;s exit &mdash;
-                    &ldquo;I am not well&rdquo; &mdash; is one of the most debated moments in
-                    Shakespeare. Does it invite <strong>sympathy</strong> or confirm his{' '}
-                    <strong>defeat</strong>? The answer depends on production and interpretation.
+                    <span className="text-amber-600 font-bold">5.</span> Shylock&apos;s exit -
+                    &ldquo;I am not well&rdquo; - is one of the most debated moments in Shakespeare.
+                    Does it invite <strong>sympathy</strong> or confirm his <strong>defeat</strong>?
+                    The answer depends on production and interpretation.
                   </li>
                 </ul>
               </div>
@@ -1291,24 +1289,24 @@ export default function MerchantOfVeniceRevisionPage() {
                     </p>
                     <div className="space-y-2 text-sm text-muted-foreground">
                       <p>
-                        <strong>Introduction:</strong> Thesis &mdash; Shakespeare deliberately
-                        creates ambiguity around Shylock, reflecting and challenging Elizabethan
+                        <strong>Introduction:</strong> Thesis - Shakespeare deliberately creates
+                        ambiguity around Shylock, reflecting and challenging Elizabethan
                         anti-Semitism.
                       </p>
                       <p>
                         <strong>{tr(`Paragraph 1 (Villain):`)}</strong> The pound of flesh bond.
-                        &ldquo;A pound of man&apos;s flesh&rdquo; &mdash; the dehumanising language
+                        &ldquo;A pound of man&apos;s flesh&rdquo; - the dehumanising language
                         reduces Antonio to meat. Shylock&apos;s refusal of money proves malice, not
                         business.
                       </p>
                       <p>
                         <strong>{tr(`Paragraph 2 (Victim):`)}</strong> &ldquo;Hath not a Jew
-                        eyes?&rdquo; &mdash; Shylock articulates his suffering with devastating
-                        eloquence. Context: Elizabethan anti-Semitism and the Lopez case.
+                        eyes?&rdquo; - Shylock articulates his suffering with devastating eloquence.
+                        Context: Elizabethan anti-Semitism and the Lopez case.
                       </p>
                       <p>
-                        <strong>{tr(`Paragraph 3 (Both):`)}</strong> The trial scene &mdash; Shylock
-                        demands justice but is destroyed by it. &ldquo;I am not well&rdquo; &mdash;
+                        <strong>{tr(`Paragraph 3 (Both):`)}</strong> The trial scene - Shylock
+                        demands justice but is destroyed by it. &ldquo;I am not well&rdquo; -
                         pathos. The forced conversion is &ldquo;mercy&rdquo; that reads as cruelty.
                       </p>
                       <p>
@@ -1317,7 +1315,7 @@ export default function MerchantOfVeniceRevisionPage() {
                         Whether Shakespeare intended sympathy or not, the play now provokes it.
                       </p>
                       <p>
-                        <strong>Conclusion:</strong> The ambiguity is the point &mdash; Shakespeare
+                        <strong>Conclusion:</strong> The ambiguity is the point - Shakespeare
                         creates a character who resists simple categorisation, forcing audiences to
                         examine their own prejudices.
                       </p>
@@ -1337,21 +1335,21 @@ export default function MerchantOfVeniceRevisionPage() {
                       </p>
                       <p>
                         <strong>{tr(`Paragraph 1:`)}</strong> Portia&apos;s &ldquo;quality of
-                        mercy&rdquo; speech &mdash; mercy as divine, natural, and freely given.
-                        Analyse the imagery and rhetorical structure.
+                        mercy&rdquo; speech - mercy as divine, natural, and freely given. Analyse
+                        the imagery and rhetorical structure.
                       </p>
                       <p>
-                        <strong>{tr(`Paragraph 2:`)}</strong> Shylock&apos;s refusal of mercy
-                        &mdash; &ldquo;I crave the law&rdquo;. Why? Context of his suffering. Mercy
-                        has never been shown to him.
+                        <strong>{tr(`Paragraph 2:`)}</strong> Shylock&apos;s refusal of mercy -
+                        &ldquo;I crave the law&rdquo;. Why? Context of his suffering. Mercy has
+                        never been shown to him.
                       </p>
                       <p>
-                        <strong>{tr(`Paragraph 3:`)}</strong> Antonio&apos;s &ldquo;mercy&rdquo;
-                        &mdash; the forced conversion. Ironic inversion of Portia&apos;s speech.
-                        What does this &ldquo;mercy&rdquo; actually mean?
+                        <strong>{tr(`Paragraph 3:`)}</strong> Antonio&apos;s &ldquo;mercy&rdquo; -
+                        the forced conversion. Ironic inversion of Portia&apos;s speech. What does
+                        this &ldquo;mercy&rdquo; actually mean?
                       </p>
                       <p>
-                        <strong>{tr(`Paragraph 4:`)}</strong> The play&apos;s conclusion &mdash;
+                        <strong>{tr(`Paragraph 4:`)}</strong> The play&apos;s conclusion -
                         Belmont&apos;s harmony vs Shylock&apos;s absence. Can there be mercy without
                         equality? Elizabethan vs modern audience responses.
                       </p>
@@ -1371,28 +1369,28 @@ export default function MerchantOfVeniceRevisionPage() {
                     <div className="space-y-2 text-sm text-muted-foreground">
                       <p>
                         <strong>Introduction:</strong> Portia is the most intelligent character in
-                        the play, but her power is constrained by gender &mdash; she can only act
-                        freely when disguised as a man.
+                        the play, but her power is constrained by gender - she can only act freely
+                        when disguised as a man.
                       </p>
                       <p>
-                        <strong>{tr(`Paragraph 1:`)}</strong> Portia in Belmont &mdash; subject to
-                        the casket test. &ldquo;I may neither choose who I would nor refuse who I
-                        dislike&rdquo; &mdash; lack of female agency.
+                        <strong>{tr(`Paragraph 1:`)}</strong> Portia in Belmont - subject to the
+                        casket test. &ldquo;I may neither choose who I would nor refuse who I
+                        dislike&rdquo; - lack of female agency.
                       </p>
                       <p>
-                        <strong>{tr(`Paragraph 2:`)}</strong> Portia as Balthazar &mdash; commands
-                        the courtroom, outwits Shylock, saves Antonio. Cross-dressing liberates her
+                        <strong>{tr(`Paragraph 2:`)}</strong> Portia as Balthazar - commands the
+                        courtroom, outwits Shylock, saves Antonio. Cross-dressing liberates her
                         intelligence. Context: women could not be lawyers.
                       </p>
                       <p>
-                        <strong>{tr(`Paragraph 3:`)}</strong> The ring trick &mdash; Portia
-                        reasserts control in her marriage. She proves she saved Antonio and tests
+                        <strong>{tr(`Paragraph 3:`)}</strong> The ring trick - Portia reasserts
+                        control in her marriage. She proves she saved Antonio and tests
                         Bassanio&apos;s loyalty. Power through wit.
                       </p>
                       <p>
-                        <strong>{tr(`Paragraph 4:`)}</strong> Portia&apos;s limitations &mdash;
-                        casual racism, mercilessness to Shylock. She is powerful but not morally
-                        perfect. Shakespeare creates a complex, realistic heroine.
+                        <strong>{tr(`Paragraph 4:`)}</strong> Portia&apos;s limitations - casual
+                        racism, mercilessness to Shylock. She is powerful but not morally perfect.
+                        Shakespeare creates a complex, realistic heroine.
                       </p>
                       <p>
                         <strong>Conclusion:</strong> Portia challenges Elizabethan gender norms but

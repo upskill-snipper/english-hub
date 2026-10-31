@@ -189,7 +189,7 @@ const textGuides = [
     title: 'Poetry Anthology',
     href: '/resources/english-literature/ocr/poetry',
     description:
-      'Detailed analysis of poems from the OCR poetry anthology \u2014 themes, techniques, and comparison strategies.',
+      'Detailed analysis of poems from the OCR poetry anthology - themes, techniques, and comparison strategies.',
     paper: 'Paper 2',
     genre: 'Poetry',
     icon: (
@@ -458,7 +458,7 @@ export default function OCREnglishLiteraturePage() {
             <div className="rounded-xl border border-border bg-card p-5 shadow-md">
               <h3 className="font-semibold text-primary">Comparative Skills</h3>
               <p className="mt-2 text-sm text-muted-foreground leading-relaxed">
-                For the poetry comparison, you must compare poems effectively &mdash; exploring
+                For the poetry comparison, you must compare poems effectively - exploring
                 similarities and differences in themes, methods, and effects.
               </p>
             </div>

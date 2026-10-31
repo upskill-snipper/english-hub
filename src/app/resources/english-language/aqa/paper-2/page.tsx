@@ -194,8 +194,8 @@ export default function Paper2Page() {
               )}
             </li>
             <li>
-              Go through each statement one at a time and check it against the text. Be precise
-              &mdash; a statement might be <em>almost</em> true but contain a subtle inaccuracy.
+              Go through each statement one at a time and check it against the text. Be precise - a
+              statement might be <em>almost</em> true but contain a subtle inaccuracy.
             </li>
             <li>
               {tr(
@@ -303,8 +303,8 @@ export default function Paper2Page() {
               <em>suggests</em> about the writers&rsquo; experiences or attitudes.
             </li>
             <li>
-              You do not need to analyse language here &mdash; that is Q3. Focus on{' '}
-              <strong>what</strong> is said, not <strong>how</strong> it is said.
+              You do not need to analyse language here - that is Q3. Focus on <strong>what</strong>{' '}
+              is said, not <strong>how</strong> it is said.
             </li>
           </ul>
 
@@ -641,32 +641,32 @@ export default function Paper2Page() {
           </p>
           <ul className="ms-5 list-disc space-y-2 mt-2">
             <li>
-              <strong>A &mdash; Alliteration:</strong> &ldquo;Dangerous, destructive, and deeply
+              <strong>A - Alliteration:</strong> &ldquo;Dangerous, destructive, and deeply
               damaging.&rdquo;
             </li>
             <li>
-              <strong>F &mdash; Facts (or statistics):</strong> &ldquo;According to recent research,
-              73% of teenagers report feeling stressed about exams.&rdquo; (You can make these up in
-              the exam.)
+              <strong>F - Facts (or statistics):</strong> &ldquo;According to recent research, 73%
+              of teenagers report feeling stressed about exams.&rdquo; (You can make these up in the
+              exam.)
             </li>
             <li>
-              <strong>O &mdash; Opinions (presented as facts):</strong> &ldquo;It is undeniable
+              <strong>O - Opinions (presented as facts):</strong> &ldquo;It is undeniable
               that&hellip;&rdquo;
             </li>
             <li>
-              <strong>R &mdash; Rhetorical questions:</strong> &ldquo;How can we, as a society,
-              continue to ignore this?&rdquo;
+              <strong>R - Rhetorical questions:</strong> &ldquo;How can we, as a society, continue
+              to ignore this?&rdquo;
             </li>
             <li>
-              <strong>E &mdash; Emotive language:</strong> &ldquo;Innocent children are being failed
-              by a system that has abandoned them.&rdquo;
+              <strong>E - Emotive language:</strong> &ldquo;Innocent children are being failed by a
+              system that has abandoned them.&rdquo;
             </li>
             <li>
-              <strong>S &mdash; Statistics:</strong> See Facts above.
+              <strong>S - Statistics:</strong> See Facts above.
             </li>
             <li>
-              <strong>T &mdash; Tricolon (rule of three):</strong> &ldquo;We need action,
-              accountability, and ambition.&rdquo;
+              <strong>T - Tricolon (rule of three):</strong> &ldquo;We need action, accountability,
+              and ambition.&rdquo;
             </li>
             <li>
               <strong>Anecdote:</strong> A brief personal story to make your argument relatable.
@@ -706,17 +706,17 @@ export default function Paper2Page() {
           </h3>
           <div className="rounded-lg bg-muted p-4 text-sm">
             <p className="font-bold text-foreground">
-              Screen time is rotting our children&rsquo;s brains &mdash; and we are handing them the
+              Screen time is rotting our children&rsquo;s brains - and we are handing them the
               device
             </p>
             <p className="mt-2 italic">
               Picture this: a family sitting around the dinner table. Nobody is talking. Four faces,
               four screens, four separate worlds colliding in silence. Sound familiar? If it does,
-              you are not alone &mdash; and that, frankly, is the problem. We have sleepwalked into
-              a digital dependency so profound that the average British teenager now spends more
-              time staring at a phone than they spend in the classroom. The question is no longer
-              whether screen time is harmful. The question is whether we have the courage to do
-              anything about it.
+              you are not alone - and that, frankly, is the problem. We have sleepwalked into a
+              digital dependency so profound that the average British teenager now spends more time
+              staring at a phone than they spend in the classroom. The question is no longer whether
+              screen time is harmful. The question is whether we have the courage to do anything
+              about it.
             </p>
           </div>
 

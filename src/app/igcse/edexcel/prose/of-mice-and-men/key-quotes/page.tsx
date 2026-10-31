@@ -41,7 +41,7 @@ const themeGroups = [
         text: 'Le\u2019s get that place now.',
         speaker: 'Candy',
         analysis:
-          'The Dream becomes financially real \u2014 and, in Steinbeck\u2019s logic, begins to die.',
+          'The Dream becomes financially real - and, in Steinbeck\u2019s logic, begins to die.',
       },
       {
         text: 'Every damn one of \u2019em\u2019s got a little piece of land in his head.',
@@ -65,7 +65,7 @@ const themeGroups = [
           'The novella\u2019s opening refrain names loneliness as the ranch workers\u2019 defining condition.',
       },
       {
-        text: 'A guy needs somebody \u2014 to be near him.',
+        text: 'A guy needs somebody - to be near him.',
         speaker: 'Crooks',
         analysis: 'Crooks diagnoses loneliness as a pathology, not simply a mood.',
       },
@@ -102,7 +102,7 @@ const themeGroups = [
         analysis: 'George\u2019s last words to Lennie are gentle, conversational and devastating.',
       },
       {
-        text: 'Tell me \u2014 like you done before.',
+        text: 'Tell me - like you done before.',
         speaker: 'Lennie',
         analysis: 'The dream is requested as a bedtime story; repetition intensifies the tragedy.',
       },

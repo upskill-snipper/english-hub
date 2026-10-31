@@ -61,7 +61,7 @@ export interface LessonPlanData {
 
 export interface WorksheetQuestion {
   question: string
-  type: "short-answer" | "extended-writing" | "multiple-choice" | "quote-analysis"
+  type: 'short-answer' | 'extended-writing' | 'multiple-choice' | 'quote-analysis'
   marks: number
   lines?: number
   options?: string[] // for multiple-choice
@@ -115,22 +115,50 @@ export interface HomeworkData {
 // ─── Shared helpers ─────────────────────────────────────────────────────────
 
 function currentDate(): string {
-  return new Date().toLocaleDateString("en-GB", { day: "numeric", month: "long", year: "numeric" })
+  return new Date().toLocaleDateString('en-GB', { day: 'numeric', month: 'long', year: 'numeric' })
 }
 
 function pickAccentWord(title: string | null | undefined): string {
   if (!title || typeof title !== 'string') return 'Document'
   // Filter out very short / generic words and pick the longest remaining word
   const stopWords = new Set([
-    'a', 'an', 'the', 'and', 'or', 'of', 'to', 'in', 'on', 'for', 'is',
-    'it', 'at', 'by', 'as', 'be', 'do', 'no', 'if', 'up', 'so', 'we',
-    'my', 'with', 'from', 'that', 'this', 'was', 'are', 'has', 'had',
+    'a',
+    'an',
+    'the',
+    'and',
+    'or',
+    'of',
+    'to',
+    'in',
+    'on',
+    'for',
+    'is',
+    'it',
+    'at',
+    'by',
+    'as',
+    'be',
+    'do',
+    'no',
+    'if',
+    'up',
+    'so',
+    'we',
+    'my',
+    'with',
+    'from',
+    'that',
+    'this',
+    'was',
+    'are',
+    'has',
+    'had',
   ])
-  const words = title.split(/\s+/).filter(w => w.length > 0)
-  const candidates = words.filter(w => !stopWords.has(w.toLowerCase()) && w.length > 2)
+  const words = title.split(/\s+/).filter((w) => w.length > 0)
+  const candidates = words.filter((w) => !stopWords.has(w.toLowerCase()) && w.length > 2)
   if (candidates.length === 0) return words[0] || title || 'Document'
   // Prefer the longest meaningful word
-  return candidates.reduce((a, b) => b.length > a.length ? b : a)
+  return candidates.reduce((a, b) => (b.length > a.length ? b : a))
 }
 
 function makeBrand(docType: string): AnthologyBrand {
@@ -140,7 +168,12 @@ function makeBrand(docType: string): AnthologyBrand {
   }
 }
 
-function makeCover(title: string, superText: string, sub: string, titleSize?: number): AnthologyCover {
+function makeCover(
+  title: string,
+  superText: string,
+  sub: string,
+  titleSize?: number,
+): AnthologyCover {
   return {
     super: superText,
     titleLines: [title],
@@ -336,7 +369,7 @@ export function generateRevisionGuide(topic: string, data: RevisionGuideData): v
   // Section: Key Quotes with Analysis
   chapters.push({ kind: 'section', title: 'Key Quotes with Analysis', numPrefix: 'IV' })
   data.keyQuotes.forEach((q) => {
-    chapters.push({ kind: 'pullquote', body: q.quote, cite: `${q.speaker} \u2014 ${q.context}` })
+    chapters.push({ kind: 'pullquote', body: q.quote, cite: `${q.speaker} - ${q.context}` })
     chapters.push({ kind: 'narrative', body: q.analysis })
   })
 
@@ -348,7 +381,7 @@ export function generateRevisionGuide(topic: string, data: RevisionGuideData): v
   chapters.push({ kind: 'section', title: 'Practice Questions', numPrefix: 'VI' })
   chapters.push({ kind: 'quote-list', items: data.practiceQuestions })
 
-  const title = `${topic} \u2014 Revision Guide`
+  const title = `${topic} - Revision Guide`
 
   const content: StudyGuideContent = {
     brand: makeBrand('Revision Guide'),
@@ -417,7 +450,7 @@ export function generateHomeworkMarkSchemePdf(data: HomeworkData): void {
   const content: MarkSchemeContent = {
     brand: makeBrand('Homework Answer Guide'),
     cover: makeCover(
-      `${data.title} \u2014 Answer Guide`,
+      `${data.title} - Answer Guide`,
       `${data.topic.toUpperCase()} \u00b7 ANSWER GUIDE`,
       `${data.yearGroup} \u00b7 Grade ${data.targetGrade} \u00b7 ${totalMarks} marks \u00b7 Teacher Copy`,
     ),

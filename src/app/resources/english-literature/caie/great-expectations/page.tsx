@@ -217,10 +217,10 @@ export default function GreatExpectationsStudyGuide() {
       <section className="border-b bg-gradient-to-b from-primary/[0.06] to-transparent px-4 py-16 sm:py-20">
         <div className="mx-auto max-w-4xl text-center">
           <p className="text-sm font-semibold uppercase tracking-widest text-muted-foreground">
-            Cambridge IGCSE English Literature &mdash; Paper 1 (Prose)
+            Cambridge IGCSE English Literature - Paper 1 (Prose)
           </p>
           <h1 className="mt-2 text-3xl font-bold tracking-tight sm:text-4xl md:text-5xl">
-            Great Expectations &mdash; Complete Study Guide
+            Great Expectations - Complete Study Guide
           </h1>
           <p className="mx-auto mt-4 max-w-2xl text-lg text-muted-foreground">
             Part-by-part summaries with key quotations, full character analysis, themes, narrative
@@ -539,13 +539,13 @@ export default function GreatExpectationsStudyGuide() {
                 <p className="text-sm leading-relaxed text-muted-foreground">
                   Dickens challenges Victorian assumptions about criminality most powerfully through
                   Pip&rsquo;s evolving perception of Magwitch. When Magwitch reveals himself as
-                  Pip&rsquo;s benefactor, Pip describes his reaction with a tricolon of revulsion
-                  &mdash; &ldquo;the abhorrence in which I held the man, the dread I had of him, the
-                  repugnance with which I shrank from him&rdquo; &mdash; each noun escalating his
-                  disgust <strong>(Textual Knowledge: precise embedded quotation)</strong>. The
+                  Pip&rsquo;s benefactor, Pip describes his reaction with a tricolon of revulsion -
+                  &ldquo;the abhorrence in which I held the man, the dread I had of him, the
+                  repugnance with which I shrank from him&rdquo; - each noun escalating his disgust{' '}
+                  <strong>(Textual Knowledge: precise embedded quotation)</strong>. The
                   retrospective narration is crucial here: the older Pip records these feelings
                   without excusing them, allowing the reader to recognise what the younger Pip
-                  cannot &mdash; that his horror is rooted in class prejudice, not moral judgement{' '}
+                  cannot - that his horror is rooted in class prejudice, not moral judgement{' '}
                   <strong>
                     (Writer's Methods: analysis of first-person retrospective technique)
                   </strong>
@@ -553,8 +553,7 @@ export default function GreatExpectationsStudyGuide() {
                   considered permanently degraded; returning illegally, as Magwitch does, carried
                   the death penalty. Dickens inverts this hierarchy by making the convict the most
                   generous and loyal character in the novel, while the &lsquo;gentleman&rsquo;
-                  Compeyson &mdash; well-spoken and well-dressed &mdash; is exposed as the true
-                  criminal{' '}
+                  Compeyson - well-spoken and well-dressed - is exposed as the true criminal{' '}
                   <strong>
                     (Interpretation: context of transportation and class-biased justice)
                   </strong>

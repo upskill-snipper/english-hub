@@ -501,7 +501,7 @@ export default async function Paper1ModelAnswersPage() {
 
       {/* ── Footer ────────────────────────────────────────────────────── */}
       <p className="text-center text-body-xs text-muted-foreground-subtle">
-        Aligns with Cambridge syllabus 0500 &mdash; Paper 1 Reading
+        Aligns with Cambridge syllabus 0500 - Paper 1 Reading
       </p>
     </div>
   )

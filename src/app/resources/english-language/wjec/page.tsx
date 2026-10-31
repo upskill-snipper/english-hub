@@ -94,8 +94,8 @@ export default function WJECEnglishLanguagePage() {
           <p className="mx-auto mt-4 max-w-2xl text-lg text-muted-foreground">
             Everything you need for your WJEC Eduqas English Language GCSE. Two components covering
             20th-century literature reading, creative prose writing, non-fiction reading, and
-            writing for real purposes &mdash; fully broken down with exam technique and
-            marking-guide guidance.
+            writing for real purposes - fully broken down with exam technique and marking-guide
+            guidance.
           </p>
         </div>
       </section>
@@ -136,7 +136,7 @@ export default function WJECEnglishLanguagePage() {
               <tbody className="divide-y divide-border">
                 <tr className="hover:bg-muted">
                   <td className="px-4 py-3 font-medium text-foreground">
-                    Paper 1 &mdash; 20th Century Literature Reading &amp; Creative Prose Writing
+                    Paper 1 - 20th Century Literature Reading &amp; Creative Prose Writing
                   </td>
                   <td className="px-4 py-3 text-muted-foreground">1 hr 45 min</td>
                   <td className="px-4 py-3 text-muted-foreground">80</td>
@@ -144,8 +144,8 @@ export default function WJECEnglishLanguagePage() {
                 </tr>
                 <tr className="hover:bg-muted">
                   <td className="px-4 py-3 font-medium text-foreground">
-                    Paper 2 &mdash; 19th &amp; 21st Century Non-Fiction Reading &amp; Writing for
-                    Real Purposes
+                    Paper 2 - 19th &amp; 21st Century Non-Fiction Reading &amp; Writing for Real
+                    Purposes
                   </td>
                   <td className="px-4 py-3 text-muted-foreground">2 hr</td>
                   <td className="px-4 py-3 text-muted-foreground">80</td>

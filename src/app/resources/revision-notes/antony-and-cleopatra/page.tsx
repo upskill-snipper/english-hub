@@ -57,7 +57,7 @@ function QuoteCard({
       <p className="text-sm font-semibold text-violet-800 dark:text-violet-200 italic">
         &ldquo;{quote}&rdquo;
       </p>
-      {speaker && <p className="mt-1 text-xs font-medium text-violet-600">&mdash; {speaker}</p>}
+      {speaker && <p className="mt-1 text-xs font-medium text-violet-600">- {speaker}</p>}
       <p className="mt-2 text-sm text-muted-foreground">{analysis}</p>
     </div>
   )
@@ -110,7 +110,7 @@ export default function AntonyAndCleopatraPage() {
           </span>
         </div>
         <h1 className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
-          Antony and Cleopatra &mdash; Complete A-Level Revision Guide
+          Antony and Cleopatra - Complete A-Level Revision Guide
         </h1>
         <p className="mt-1 text-lg text-muted-foreground">
           {tr(`William Shakespeare, c.1606-1607`)}
@@ -164,7 +164,7 @@ export default function AntonyAndCleopatraPage() {
                   <span className="flex h-6 w-6 items-center justify-center rounded-full bg-violet-500/15 text-xs font-bold text-violet-700 dark:text-violet-300">
                     I
                   </span>
-                  Act 1: Egypt &mdash; Pleasure and the Roman Summons
+                  Act 1: Egypt - Pleasure and the Roman Summons
                 </h4>
                 <p className="mt-2 text-sm text-muted-foreground leading-relaxed">
                   The play opens in Alexandria with Philo lamenting that Antony&apos;s
@@ -184,18 +184,18 @@ export default function AntonyAndCleopatraPage() {
                   </p>
                   <ul className="mt-2 space-y-1 text-sm text-muted-foreground">
                     <li>
-                      &bull; Philo&apos;s opening lament &mdash; Roman judgement frames the
+                      &bull; Philo&apos;s opening lament - Roman judgement frames the
                       audience&apos;s first view
                     </li>
                     <li>
-                      &bull; Antony&apos;s &ldquo;Let Rome in Tiber melt&rdquo; &mdash;
-                      world-renouncing love
+                      &bull; Antony&apos;s &ldquo;Let Rome in Tiber melt&rdquo; - world-renouncing
+                      love
                     </li>
                     <li>
-                      &bull; Soothsayer reads Charmian and Iras&apos;s fortunes &mdash; tragic
+                      &bull; Soothsayer reads Charmian and Iras&apos;s fortunes - tragic
                       foreshadowing
                     </li>
-                    <li>&bull; News of Fulvia&apos;s death &mdash; one tie to Rome severed</li>
+                    <li>&bull; News of Fulvia&apos;s death - one tie to Rome severed</li>
                     <li>
                       &bull; Antony resolves to return: &ldquo;I must from this enchanting queen
                       break off&rdquo;
@@ -209,7 +209,7 @@ export default function AntonyAndCleopatraPage() {
                   <span className="flex h-6 w-6 items-center justify-center rounded-full bg-violet-500/15 text-xs font-bold text-violet-700 dark:text-violet-300">
                     II
                   </span>
-                  Act 2: Rome &mdash; Reconciliation, Marriage, and Pompey&apos;s Galley
+                  Act 2: Rome - Reconciliation, Marriage, and Pompey&apos;s Galley
                 </h4>
                 <p className="mt-2 text-sm text-muted-foreground leading-relaxed">
                   Antony arrives in Rome and is reconciled with Caesar through a politically
@@ -228,12 +228,11 @@ export default function AntonyAndCleopatraPage() {
                   </p>
                   <ul className="mt-2 space-y-1 text-sm text-muted-foreground">
                     <li>
-                      &bull; The political marriage to Octavia &mdash; Antony binds himself to
-                      Caesar
+                      &bull; The political marriage to Octavia - Antony binds himself to Caesar
                     </li>
                     <li>
-                      &bull; Enobarbus&apos;s &ldquo;barge&rdquo; speech &mdash; Cleopatra
-                      mythologised in verse
+                      &bull; Enobarbus&apos;s &ldquo;barge&rdquo; speech - Cleopatra mythologised in
+                      verse
                     </li>
                     <li>
                       &bull; Soothsayer warns Antony that Caesar&apos;s fortune will outshine his
@@ -242,8 +241,8 @@ export default function AntonyAndCleopatraPage() {
                       &bull; Cleopatra interrogates the messenger about Octavia&apos;s appearance
                     </li>
                     <li>
-                      &bull; Pompey&apos;s galley feast &mdash; Lepidus drunk, Menas&apos;s
-                      assassination offer
+                      &bull; Pompey&apos;s galley feast - Lepidus drunk, Menas&apos;s assassination
+                      offer
                     </li>
                   </ul>
                 </div>
@@ -254,7 +253,7 @@ export default function AntonyAndCleopatraPage() {
                   <span className="flex h-6 w-6 items-center justify-center rounded-full bg-violet-500/15 text-xs font-bold text-violet-700 dark:text-violet-300">
                     III
                   </span>
-                  Act 3: The Triumvirate Breaks &mdash; Actium
+                  Act 3: The Triumvirate Breaks - Actium
                 </h4>
                 <p className="mt-2 text-sm text-muted-foreground leading-relaxed">
                   Antony returns to Cleopatra. Caesar removes Lepidus from the triumvirate and
@@ -272,17 +271,11 @@ export default function AntonyAndCleopatraPage() {
                     Key Moments
                   </p>
                   <ul className="mt-2 space-y-1 text-sm text-muted-foreground">
-                    <li>&bull; Lepidus removed &mdash; the triumvirate becomes a duumvirate</li>
-                    <li>
-                      &bull; Antony fights at sea against military advice &mdash; tragic error
-                    </li>
-                    <li>&bull; Cleopatra&apos;s flight at Actium &mdash; the turning point</li>
-                    <li>
-                      &bull; Thidias whipped &mdash; honour-driven response, politically disastrous
-                    </li>
-                    <li>
-                      &bull; Enobarbus&apos;s growing doubts &mdash; reason yielding to disillusion
-                    </li>
+                    <li>&bull; Lepidus removed - the triumvirate becomes a duumvirate</li>
+                    <li>&bull; Antony fights at sea against military advice - tragic error</li>
+                    <li>&bull; Cleopatra&apos;s flight at Actium - the turning point</li>
+                    <li>&bull; Thidias whipped - honour-driven response, politically disastrous</li>
+                    <li>&bull; Enobarbus&apos;s growing doubts - reason yielding to disillusion</li>
                   </ul>
                 </div>
               </div>
@@ -311,20 +304,16 @@ export default function AntonyAndCleopatraPage() {
                     Key Moments
                   </p>
                   <ul className="mt-2 space-y-1 text-sm text-muted-foreground">
-                    <li>&bull; Hercules&apos;s music &mdash; the protective god abandons Antony</li>
+                    <li>&bull; Hercules&apos;s music - the protective god abandons Antony</li>
                     <li>
-                      &bull; Enobarbus&apos;s death of grief &mdash; loyalty&apos;s posthumous
-                      return
+                      &bull; Enobarbus&apos;s death of grief - loyalty&apos;s posthumous return
+                    </li>
+                    <li>&bull; Antony&apos;s botched suicide - failure even in Roman death</li>
+                    <li>
+                      &bull; Antony hauled to the monument - visual emblem of fallen greatness
                     </li>
                     <li>
-                      &bull; Antony&apos;s botched suicide &mdash; failure even in Roman death
-                    </li>
-                    <li>
-                      &bull; Antony hauled to the monument &mdash; visual emblem of fallen greatness
-                    </li>
-                    <li>
-                      &bull; &ldquo;I am dying, Egypt, dying&rdquo; &mdash; final reconciliation in
-                      dying
+                      &bull; &ldquo;I am dying, Egypt, dying&rdquo; - final reconciliation in dying
                     </li>
                   </ul>
                 </div>
@@ -354,17 +343,12 @@ export default function AntonyAndCleopatraPage() {
                     Key Moments
                   </p>
                   <ul className="mt-2 space-y-1 text-sm text-muted-foreground">
+                    <li>&bull; Dream of the colossal Antony - mythologising the dead lover</li>
+                    <li>&bull; The clown with the figs - comic-grotesque interlude before death</li>
+                    <li>&bull; Cleopatra&apos;s royal robing - theatre of dying as queen</li>
+                    <li>&bull; The asp at the breast - eros and death fused</li>
                     <li>
-                      &bull; Dream of the colossal Antony &mdash; mythologising the dead lover
-                    </li>
-                    <li>
-                      &bull; The clown with the figs &mdash; comic-grotesque interlude before death
-                    </li>
-                    <li>&bull; Cleopatra&apos;s royal robing &mdash; theatre of dying as queen</li>
-                    <li>&bull; The asp at the breast &mdash; eros and death fused</li>
-                    <li>
-                      &bull; Caesar&apos;s closing order &mdash; politics absorbs the lovers&apos;
-                      legend
+                      &bull; Caesar&apos;s closing order - politics absorbs the lovers&apos; legend
                     </li>
                   </ul>
                 </div>
@@ -701,12 +685,12 @@ export default function AntonyAndCleopatraPage() {
                   Shakespeare wrote the play under James I, who in 1603 had united the crowns of
                   England and Scotland and styled himself &ldquo;King of Great Britain.&rdquo; James
                   was preoccupied with political union, the limits of royal power, and the figure of
-                  the monarch as Augustus. The play&apos;s Roman politics &mdash; in which a
-                  triumvirate gives way to single rule under a calm, calculating young leader
-                  &mdash; would have resonated with debates about James&apos;s centralising
-                  ambitions. Shakespeare&apos;s presentation of Caesar is notably ambivalent: he is
-                  competent and victorious but emotionally diminished, suggesting the play asks
-                  searching questions about the human cost of political consolidation.
+                  the monarch as Augustus. The play&apos;s Roman politics - in which a triumvirate
+                  gives way to single rule under a calm, calculating young leader - would have
+                  resonated with debates about James&apos;s centralising ambitions.
+                  Shakespeare&apos;s presentation of Caesar is notably ambivalent: he is competent
+                  and victorious but emotionally diminished, suggesting the play asks searching
+                  questions about the human cost of political consolidation.
                 </p>
               </div>
               <div className="rounded-lg bg-primary/10 p-4">
@@ -714,14 +698,14 @@ export default function AntonyAndCleopatraPage() {
                   Post-Triumvirate Rome and the Augustan Settlement
                 </h4>
                 <p className="mt-1 text-sm text-muted-foreground leading-relaxed">
-                  The historical events the play dramatises &mdash; the battle of Actium (31 BC),
-                  Antony&apos;s death (30 BC), the fall of Ptolemaic Egypt &mdash; established the
-                  Roman empire as the political form that would dominate the Mediterranean for
-                  centuries. Shakespeare&apos;s Renaissance audience read Roman history through
-                  humanist scholarship and saw the Augustan settlement as the foundational political
+                  The historical events the play dramatises - the battle of Actium (31 BC),
+                  Antony&apos;s death (30 BC), the fall of Ptolemaic Egypt - established the Roman
+                  empire as the political form that would dominate the Mediterranean for centuries.
+                  Shakespeare&apos;s Renaissance audience read Roman history through humanist
+                  scholarship and saw the Augustan settlement as the foundational political
                   achievement of the ancient world. The play&apos;s decision to make this triumph
-                  also a tragedy &mdash; to mourn what is lost when Caesar wins &mdash; is itself a
-                  critical comment on the Renaissance veneration of Augustan stability.
+                  also a tragedy - to mourn what is lost when Caesar wins - is itself a critical
+                  comment on the Renaissance veneration of Augustan stability.
                 </p>
               </div>
               <div className="rounded-lg bg-primary/10 p-4">
@@ -758,10 +742,10 @@ export default function AntonyAndCleopatraPage() {
                   The Renaissance imagination of Egypt was filtered through classical sources
                   (Plutarch, Herodotus, Plotinus) and through hieroglyphic mysticism revived by
                   humanists such as Marsilio Ficino. Egypt was the land of ancient wisdom, occult
-                  knowledge, sensual abandon, and feminine rule &mdash; a cluster of ideas
-                  Shakespeare draws on without ethnographic accuracy. The Egypt of the play is a
-                  poetic construct, set against an equally constructed Rome, and the binary should
-                  be read as imaginative geography rather than history.
+                  knowledge, sensual abandon, and feminine rule - a cluster of ideas Shakespeare
+                  draws on without ethnographic accuracy. The Egypt of the play is a poetic
+                  construct, set against an equally constructed Rome, and the binary should be read
+                  as imaginative geography rather than history.
                 </p>
               </div>
             </div>
@@ -815,8 +799,8 @@ export default function AntonyAndCleopatraPage() {
                   on the central pair. Enobarbus is the most developed: he interprets Cleopatra to a
                   Roman audience, predicts Antony&apos;s defeat, and finally collapses under the
                   weight of his own clarity. The play&apos;s use of multiple Roman commentators
-                  constructs the protagonists from outside as well as from within &mdash; a
-                  structural device unusual in Shakespearean tragedy.
+                  constructs the protagonists from outside as well as from within - a structural
+                  device unusual in Shakespearean tragedy.
                 </p>
               </div>
               <div className="rounded-lg bg-muted p-4">
@@ -825,8 +809,8 @@ export default function AntonyAndCleopatraPage() {
                   In Acts 4 and 5, Cleopatra retreats to her monument, an elevated stage space
                   probably represented by the Globe&apos;s gallery. Antony is hauled up to her,
                   dying. The visual emblem of the queen elevated above the dying hero structures the
-                  second half of the play and gives the suicide scenes a vertical theatricality
-                  &mdash; a self-conscious tableau. The monument also iconographically anticipates
+                  second half of the play and gives the suicide scenes a vertical theatricality - a
+                  self-conscious tableau. The monument also iconographically anticipates
                   Cleopatra&apos;s funeral monument and the play&apos;s own status as monument to
                   the lovers.
                 </p>
@@ -836,12 +820,12 @@ export default function AntonyAndCleopatraPage() {
                   Reported Action and Withheld Spectacle
                 </h4>
                 <p className="mt-1 text-sm text-muted-foreground leading-relaxed">
-                  Major events &mdash; the meeting at Cydnus, the battle of Actium, Pompey&apos;s
-                  death, Antony&apos;s suicide attempt &mdash; are reported rather than enacted.
-                  This places enormous rhetorical weight on the messengers and witnesses: Enobarbus
-                  does not show the barge, he describes it; Scarus narrates Actium rather than
-                  staging it. The play makes its language carry what other plays would stage,
-                  creating a verbal-visual tension that is itself a thematic device.
+                  Major events - the meeting at Cydnus, the battle of Actium, Pompey&apos;s death,
+                  Antony&apos;s suicide attempt - are reported rather than enacted. This places
+                  enormous rhetorical weight on the messengers and witnesses: Enobarbus does not
+                  show the barge, he describes it; Scarus narrates Actium rather than staging it.
+                  The play makes its language carry what other plays would stage, creating a
+                  verbal-visual tension that is itself a thematic device.
                 </p>
               </div>
             </div>
@@ -877,7 +861,7 @@ export default function AntonyAndCleopatraPage() {
                   </div>
                   <div>
                     <p className="text-xs font-semibold text-violet-700 dark:text-violet-300 uppercase tracking-wider">
-                      Paragraph 1 &mdash; Hyperbolic opening
+                      Paragraph 1 - Hyperbolic opening
                     </p>
                     <p className="mt-1 text-sm text-muted-foreground">
                       &ldquo;Let Rome in Tiber melt&rdquo; and &ldquo;there&apos;s beggary in the
@@ -888,7 +872,7 @@ export default function AntonyAndCleopatraPage() {
                   </div>
                   <div>
                     <p className="text-xs font-semibold text-violet-700 dark:text-violet-300 uppercase tracking-wider">
-                      Paragraph 2 &mdash; Cleopatra&apos;s theatricality
+                      Paragraph 2 - Cleopatra&apos;s theatricality
                     </p>
                     <p className="mt-1 text-sm text-muted-foreground">
                       &ldquo;My salad days&rdquo; and the messenger scene. Cleopatra constructs her
@@ -898,7 +882,7 @@ export default function AntonyAndCleopatraPage() {
                   </div>
                   <div>
                     <p className="text-xs font-semibold text-violet-700 dark:text-violet-300 uppercase tracking-wider">
-                      Paragraph 3 &mdash; The death scenes
+                      Paragraph 3 - The death scenes
                     </p>
                     <p className="mt-1 text-sm text-muted-foreground">
                       &ldquo;I am dying, Egypt, dying&rdquo; and &ldquo;Husband, I come!&rdquo;
@@ -909,7 +893,7 @@ export default function AntonyAndCleopatraPage() {
                   </div>
                   <div>
                     <p className="text-xs font-semibold text-violet-700 dark:text-violet-300 uppercase tracking-wider">
-                      Paragraph 4 &mdash; The play&apos;s formal endorsement
+                      Paragraph 4 - The play&apos;s formal endorsement
                     </p>
                     <p className="mt-1 text-sm text-muted-foreground">
                       Caesar&apos;s closing tribute and Enobarbus&apos;s Cydnus speech. Both Roman
@@ -953,7 +937,7 @@ export default function AntonyAndCleopatraPage() {
                   </div>
                   <div>
                     <p className="text-xs font-semibold text-violet-700 dark:text-violet-300 uppercase tracking-wider">
-                      Paragraph 1 &mdash; The case for the death
+                      Paragraph 1 - The case for the death
                     </p>
                     <p className="mt-1 text-sm text-muted-foreground">
                       &ldquo;I have / Immortal longings in me&rdquo;; &ldquo;Give me my robe. Put on
@@ -964,7 +948,7 @@ export default function AntonyAndCleopatraPage() {
                   </div>
                   <div>
                     <p className="text-xs font-semibold text-violet-700 dark:text-violet-300 uppercase tracking-wider">
-                      Paragraph 2 &mdash; The case against
+                      Paragraph 2 - The case against
                     </p>
                     <p className="mt-1 text-sm text-muted-foreground">
                       Cleopatra&apos;s flight at Actium, her ambiguous courting of Caesar through
@@ -974,19 +958,18 @@ export default function AntonyAndCleopatraPage() {
                   </div>
                   <div>
                     <p className="text-xs font-semibold text-violet-700 dark:text-violet-300 uppercase tracking-wider">
-                      Paragraph 3 &mdash; &ldquo;Infinite variety&rdquo; as Cleopatra&apos;s real
-                      claim
+                      Paragraph 3 - &ldquo;Infinite variety&rdquo; as Cleopatra&apos;s real claim
                     </p>
                     <p className="mt-1 text-sm text-muted-foreground">
                       Enobarbus&apos;s &ldquo;Age cannot wither her, nor custom stale / Her infinite
                       variety.&rdquo; Argue that the death is the integration of all her variety
-                      into a single act &mdash; not a discontinuous greatness but the culmination of
-                      a continuous one.
+                      into a single act - not a discontinuous greatness but the culmination of a
+                      continuous one.
                     </p>
                   </div>
                   <div>
                     <p className="text-xs font-semibold text-violet-700 dark:text-violet-300 uppercase tracking-wider">
-                      Paragraph 4 &mdash; The metatheatrical dimension
+                      Paragraph 4 - The metatheatrical dimension
                     </p>
                     <p className="mt-1 text-sm text-muted-foreground">
                       The boy-actor reference. Cleopatra fears being boyed; she dies a fully
@@ -1023,13 +1006,13 @@ export default function AntonyAndCleopatraPage() {
                     </p>
                     <p className="mt-1 text-sm text-muted-foreground">
                       Caesar is the play&apos;s political victor, but Shakespeare presents the
-                      Augustan settlement as a contraction of human possibility &mdash; competence
+                      Augustan settlement as a contraction of human possibility - competence
                       achieved at the cost of magnanimity.
                     </p>
                   </div>
                   <div>
                     <p className="text-xs font-semibold text-violet-700 dark:text-violet-300 uppercase tracking-wider">
-                      Paragraph 1 &mdash; Caesar&apos;s political competence
+                      Paragraph 1 - Caesar&apos;s political competence
                     </p>
                     <p className="mt-1 text-sm text-muted-foreground">
                       His handling of Pompey, Lepidus, and Antony. Caesar wins by waiting, by
@@ -1039,7 +1022,7 @@ export default function AntonyAndCleopatraPage() {
                   </div>
                   <div>
                     <p className="text-xs font-semibold text-violet-700 dark:text-violet-300 uppercase tracking-wider">
-                      Paragraph 2 &mdash; The emotional cost
+                      Paragraph 2 - The emotional cost
                     </p>
                     <p className="mt-1 text-sm text-muted-foreground">
                       Caesar&apos;s coldness towards Octavia&apos;s feelings; his cynical use of his
@@ -1049,7 +1032,7 @@ export default function AntonyAndCleopatraPage() {
                   </div>
                   <div>
                     <p className="text-xs font-semibold text-violet-700 dark:text-violet-300 uppercase tracking-wider">
-                      Paragraph 3 &mdash; Caesar&apos;s closing tribute
+                      Paragraph 3 - Caesar&apos;s closing tribute
                     </p>
                     <p className="mt-1 text-sm text-muted-foreground">
                       &ldquo;No grave upon the earth shall clip in it / A pair so famous.&rdquo;
@@ -1060,7 +1043,7 @@ export default function AntonyAndCleopatraPage() {
                   </div>
                   <div>
                     <p className="text-xs font-semibold text-violet-700 dark:text-violet-300 uppercase tracking-wider">
-                      Paragraph 4 &mdash; Jacobean political resonance
+                      Paragraph 4 - Jacobean political resonance
                     </p>
                     <p className="mt-1 text-sm text-muted-foreground">
                       James I&apos;s self-styling as Augustus; the union of crowns; Renaissance
@@ -1100,7 +1083,7 @@ export default function AntonyAndCleopatraPage() {
                   </div>
                   <div>
                     <p className="text-xs font-semibold text-violet-700 dark:text-violet-300 uppercase tracking-wider">
-                      Paragraph 1 &mdash; Roman cynic
+                      Paragraph 1 - Roman cynic
                     </p>
                     <p className="mt-1 text-sm text-muted-foreground">
                       Enobarbus&apos;s prose commentaries on Antony&apos;s decisions. He sees
@@ -1110,7 +1093,7 @@ export default function AntonyAndCleopatraPage() {
                   </div>
                   <div>
                     <p className="text-xs font-semibold text-violet-700 dark:text-violet-300 uppercase tracking-wider">
-                      Paragraph 2 &mdash; Egyptian celebrant
+                      Paragraph 2 - Egyptian celebrant
                     </p>
                     <p className="mt-1 text-sm text-muted-foreground">
                       The Cydnus speech: &ldquo;The barge she sat in, like a burnished throne, /
@@ -1121,7 +1104,7 @@ export default function AntonyAndCleopatraPage() {
                   </div>
                   <div>
                     <p className="text-xs font-semibold text-violet-700 dark:text-violet-300 uppercase tracking-wider">
-                      Paragraph 3 &mdash; The defection
+                      Paragraph 3 - The defection
                     </p>
                     <p className="mt-1 text-sm text-muted-foreground">
                       Enobarbus reasons his way to leaving Antony, and reason proves catastrophic
@@ -1132,7 +1115,7 @@ export default function AntonyAndCleopatraPage() {
                   </div>
                   <div>
                     <p className="text-xs font-semibold text-violet-700 dark:text-violet-300 uppercase tracking-wider">
-                      Paragraph 4 &mdash; The chorus that fails
+                      Paragraph 4 - The chorus that fails
                     </p>
                     <p className="mt-1 text-sm text-muted-foreground">
                       A traditional chorus survives the action; Enobarbus dies in the middle of it.
@@ -1165,14 +1148,14 @@ export default function AntonyAndCleopatraPage() {
                       Thesis
                     </p>
                     <p className="mt-1 text-sm text-muted-foreground">
-                      The geographic binary structures every level of the play &mdash; verse,
-                      scene-pattern, costume, gender &mdash; and the tragedy is generated not in
-                      either pole but in the impossibility of inhabiting both at once.
+                      The geographic binary structures every level of the play - verse,
+                      scene-pattern, costume, gender - and the tragedy is generated not in either
+                      pole but in the impossibility of inhabiting both at once.
                     </p>
                   </div>
                   <div>
                     <p className="text-xs font-semibold text-violet-700 dark:text-violet-300 uppercase tracking-wider">
-                      Paragraph 1 &mdash; The opening scene as model
+                      Paragraph 1 - The opening scene as model
                     </p>
                     <p className="mt-1 text-sm text-muted-foreground">
                       Philo&apos;s austere Roman framing followed immediately by Antony&apos;s
@@ -1183,7 +1166,7 @@ export default function AntonyAndCleopatraPage() {
                   </div>
                   <div>
                     <p className="text-xs font-semibold text-violet-700 dark:text-violet-300 uppercase tracking-wider">
-                      Paragraph 2 &mdash; Verse as geography
+                      Paragraph 2 - Verse as geography
                     </p>
                     <p className="mt-1 text-sm text-muted-foreground">
                       Egyptian verse uses hyperbole, dissolution-imagery (&ldquo;the crown o&apos;
@@ -1193,7 +1176,7 @@ export default function AntonyAndCleopatraPage() {
                   </div>
                   <div>
                     <p className="text-xs font-semibold text-violet-700 dark:text-violet-300 uppercase tracking-wider">
-                      Paragraph 3 &mdash; The forty-scene structure
+                      Paragraph 3 - The forty-scene structure
                     </p>
                     <p className="mt-1 text-sm text-muted-foreground">
                       The play ricochets between settings; the audience feels the moral
@@ -1203,7 +1186,7 @@ export default function AntonyAndCleopatraPage() {
                   </div>
                   <div>
                     <p className="text-xs font-semibold text-violet-700 dark:text-violet-300 uppercase tracking-wider">
-                      Paragraph 4 &mdash; The lovers&apos; death as geographic union
+                      Paragraph 4 - The lovers&apos; death as geographic union
                     </p>
                     <p className="mt-1 text-sm text-muted-foreground">
                       &ldquo;I am dying, Egypt, dying&rdquo; identifies Cleopatra with her country
@@ -1246,12 +1229,11 @@ export default function AntonyAndCleopatraPage() {
                   The verb &ldquo;melt&rdquo; appears in Antony&apos;s &ldquo;Let Rome in Tiber
                   melt&rdquo; (Act 1.1) and recurs in Cleopatra&apos;s &ldquo;the crown o&apos;
                   th&apos; earth doth melt&rdquo; (Act 4.15). The same word marks Antony&apos;s
-                  opening renunciation and his death. The play&apos;s vocabulary of dissolution
-                  &mdash; melting, drowning, fading &mdash; is structurally circular: what Antony
-                  invokes hyperbolically as gesture in Act 1 is enacted literally in Act 4. An A*
-                  candidate can trace the verb across the play and argue that Shakespeare&apos;s
-                  tragic mechanism is to make the metaphors of love come true as the metaphors of
-                  death.
+                  opening renunciation and his death. The play&apos;s vocabulary of dissolution -
+                  melting, drowning, fading - is structurally circular: what Antony invokes
+                  hyperbolically as gesture in Act 1 is enacted literally in Act 4. An A* candidate
+                  can trace the verb across the play and argue that Shakespeare&apos;s tragic
+                  mechanism is to make the metaphors of love come true as the metaphors of death.
                 </p>
               </div>
               <div className="rounded-lg border border-violet-500/30 bg-violet-500/5 p-4">
@@ -1295,8 +1277,8 @@ export default function AntonyAndCleopatraPage() {
                   response to the metatheatrical anxiety: Cleopatra escapes the Roman triumph and
                   the boy-actor&apos;s reduction by becoming an even more elaborate piece of theatre
                   under her own direction. The play is asking whether tragedy can survive its own
-                  theatricality, and answers yes &mdash; but only by absorbing the theatricality
-                  into the tragedy.
+                  theatricality, and answers yes - but only by absorbing the theatricality into the
+                  tragedy.
                 </p>
               </div>
               <div className="rounded-lg border border-violet-500/30 bg-violet-500/5 p-4">
@@ -1321,10 +1303,10 @@ export default function AntonyAndCleopatraPage() {
                 </h4>
                 <p className="mt-2 text-sm text-muted-foreground leading-relaxed">
                   Cleopatra&apos;s great Act 5 speech to Dolabella imagining Antony as a colossal
-                  demi-god &mdash; legs bestriding the ocean, arm crowning the world &mdash;
-                  constructs Antony&apos;s posthumous greatness through Cleopatra&apos;s rhetoric.
-                  Crucially, Antony in life was diminished, defeated, botched; he becomes great only
-                  in Cleopatra&apos;s mythologising. An A* reading argues that this is
+                  demi-god - legs bestriding the ocean, arm crowning the world - constructs
+                  Antony&apos;s posthumous greatness through Cleopatra&apos;s rhetoric. Crucially,
+                  Antony in life was diminished, defeated, botched; he becomes great only in
+                  Cleopatra&apos;s mythologising. An A* reading argues that this is
                   Shakespeare&apos;s philosophical claim: greatness is not a property of persons but
                   a posthumous construction of language. The speech is a meditation on how legend is
                   made, and on the play&apos;s own role in making legends.

@@ -145,10 +145,10 @@ export default async function AqaWorldsAndLivesHubPage() {
               {await t('poetry_hub.wl.rights_notice_label')}
             </strong>{' '}
             The Worlds and Lives cluster mixes pre-1900 poems that are in the public domain
-            (Wordsworth, Shelley, Brontë, Eliot) with contemporary work that remains in copyright
-            &mdash; Imtiaz Dharker (&copy; Bloodaxe Books), Caleb Femi (&copy; Penguin), Roger
-            Robinson (&copy; Peepal Tree Press), Raymond Antrobus (&copy; Picador / Pan Macmillan),
-            James Berry (&copy; Bloodaxe), Liz Berry (&copy; Chatto &amp; Windus) and Grace Nichols
+            (Wordsworth, Shelley, Brontë, Eliot) with contemporary work that remains in copyright -
+            Imtiaz Dharker (&copy; Bloodaxe Books), Caleb Femi (&copy; Penguin), Roger Robinson
+            (&copy; Peepal Tree Press), Raymond Antrobus (&copy; Picador / Pan Macmillan), James
+            Berry (&copy; Bloodaxe), Liz Berry (&copy; Chatto &amp; Windus) and Grace Nichols
             (&copy; Bloodaxe). Quotations on this site are short fair-dealing extracts under CDPA
             1988 &sect;30 (criticism, review, quotation). For full text, students should consult the
             board-licensed AQA Worlds and Lives anthology. No commercial use is intended; all

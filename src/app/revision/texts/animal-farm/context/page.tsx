@@ -21,12 +21,12 @@ const CONTEXT_SECTIONS: ContextSection[] = [
   {
     title: 'The Russian Revolution of 1917',
     body: [
-      'In February 1917 the Russian people overthrew Tsar Nicholas II, ending centuries of autocratic rule. In October of the same year, the Bolsheviks, led by Vladimir Lenin, seized power in a second revolution and established the world\u2019s first socialist state. The Bolsheviks promised equality, workers\u2019 control and an end to exploitation \u2014 principles directly mirrored in Old Major\u2019s speech and the Seven Commandments.',
+      'In February 1917 the Russian people overthrew Tsar Nicholas II, ending centuries of autocratic rule. In October of the same year, the Bolsheviks, led by Vladimir Lenin, seized power in a second revolution and established the world\u2019s first socialist state. The Bolsheviks promised equality, workers\u2019 control and an end to exploitation - principles directly mirrored in Old Major\u2019s speech and the Seven Commandments.',
       'The revolution was followed by a brutal civil war (1917\u20131922) in which the Bolsheviks fought the White Army (loyalists, foreign-backed forces) to consolidate power. The Battle of the Cowshed in the novel parallels this conflict. The revolution also led to widespread famine and suffering, despite its utopian promises.',
       'Orwell\u2019s novel traces the arc from revolutionary hope to totalitarian oppression. The Rebellion in Chapter 2 represents the October Revolution; the expulsion of Snowball represents Trotsky\u2019s exile; Napoleon\u2019s consolidation of power mirrors Stalin\u2019s rise to absolute authority. The allegorical structure is precise and deliberate.',
     ],
     keyPoint:
-      'The Russian Revolution is the historical foundation of the entire novel. Every major plot event \u2014 the Rebellion, the power struggle, the show trials, the betrayals \u2014 maps directly onto events between 1917 and the 1940s. Understanding the allegory is essential for AO3.',
+      'The Russian Revolution is the historical foundation of the entire novel. Every major plot event - the Rebellion, the power struggle, the show trials, the betrayals - maps directly onto events between 1917 and the 1940s. Understanding the allegory is essential for AO3.',
     examLink:
       'Name the key historical parallels explicitly: Old Major = Marx/Lenin, Napoleon = Stalin, Snowball = Trotsky, Boxer = the proletariat, the dogs = NKVD/secret police. Examiners reward precise allegorical identification over vague references to "Russia."',
   },
@@ -35,7 +35,7 @@ const CONTEXT_SECTIONS: ContextSection[] = [
     body: [
       'After Lenin\u2019s death in 1924, a power struggle erupted between Joseph Stalin and Leon Trotsky. Trotsky was an intellectual, a brilliant orator and a committed internationalist who believed the revolution should spread worldwide. Stalin was a pragmatist and political operator who believed in "socialism in one country" and who used bureaucratic control to accumulate power quietly.',
       'Stalin won the struggle not through superior ideas but through institutional manipulation. He controlled party appointments, built a network of loyalists and gradually marginalised Trotsky. By 1929 Trotsky was expelled from the Soviet Union; in 1940 he was assassinated on Stalin\u2019s orders in Mexico.',
-      'The Snowball\u2013Napoleon rivalry mirrors this precisely. Snowball is eloquent, visionary and popular (the windmill debates), while Napoleon is silent, strategic and ruthless. Napoleon does not defeat Snowball in argument \u2014 he has him expelled by force (the trained dogs). After Snowball\u2019s expulsion, Napoleon rewrites history to make Snowball a traitor and claims his ideas as his own, just as Stalin adopted Trotsky\u2019s industrialisation programme while denouncing him as a fascist agent.',
+      'The Snowball\u2013Napoleon rivalry mirrors this precisely. Snowball is eloquent, visionary and popular (the windmill debates), while Napoleon is silent, strategic and ruthless. Napoleon does not defeat Snowball in argument - he has him expelled by force (the trained dogs). After Snowball\u2019s expulsion, Napoleon rewrites history to make Snowball a traitor and claims his ideas as his own, just as Stalin adopted Trotsky\u2019s industrialisation programme while denouncing him as a fascist agent.',
     ],
     keyPoint:
       'The Stalin\u2013Trotsky parallel is the structural engine of the novel\u2019s middle section. Orwell shows that in a revolution without democratic safeguards, the ruthless political operator will always defeat the principled intellectual.',
@@ -45,13 +45,13 @@ const CONTEXT_SECTIONS: ContextSection[] = [
   {
     title: 'Orwell\u2019s Democratic Socialism',
     body: [
-      'George Orwell (1903\u20131950) was a committed democratic socialist who believed passionately in equality, workers\u2019 rights and freedom of speech. He was not opposed to socialism \u2014 he was opposed to the totalitarian version of socialism that Stalin had created in the Soviet Union.',
+      'George Orwell (1903\u20131950) was a committed democratic socialist who believed passionately in equality, workers\u2019 rights and freedom of speech. He was not opposed to socialism - he was opposed to the totalitarian version of socialism that Stalin had created in the Soviet Union.',
       'This distinction is crucial for understanding Animal Farm. Orwell does not argue that the Rebellion was wrong or that the animals\u2019 desire for equality was foolish. He argues that the revolution was betrayed by leaders who used socialist rhetoric to establish a new form of tyranny. The novel is not anti-socialist; it is anti-Stalinist.',
-      'Orwell joined the POUM (Workers\u2019 Party of Marxist Unification) militia in the Spanish Civil War in 1936 and fought on the Republican side against Franco\u2019s fascists. He was shot through the throat and nearly killed. More crucially, he witnessed the Soviet-backed communists suppressing and murdering their own allies \u2014 including members of the POUM. This experience of socialist-on-socialist violence is the biographical origin of Animal Farm.',
+      'Orwell joined the POUM (Workers\u2019 Party of Marxist Unification) militia in the Spanish Civil War in 1936 and fought on the Republican side against Franco\u2019s fascists. He was shot through the throat and nearly killed. More crucially, he witnessed the Soviet-backed communists suppressing and murdering their own allies - including members of the POUM. This experience of socialist-on-socialist violence is the biographical origin of Animal Farm.',
       'Orwell\u2019s essay "Why I Write" (1946) states his position clearly: "Every line of serious work ... directly or indirectly, against totalitarianism and for democratic socialism." Animal Farm is the purest expression of this dual commitment.',
     ],
     keyPoint:
-      'Orwell is not attacking the revolution\u2019s ideals \u2014 he is mourning their betrayal. The novel\u2019s power comes from the gap between what the revolution promised and what it delivered. Orwell\u2019s anger is directed at the pigs, not at the principles they corrupted.',
+      'Orwell is not attacking the revolution\u2019s ideals - he is mourning their betrayal. The novel\u2019s power comes from the gap between what the revolution promised and what it delivered. Orwell\u2019s anger is directed at the pigs, not at the principles they corrupted.',
     examLink:
       'Always distinguish between Orwell\u2019s socialism and his criticism of Stalinism. Examiners penalise essays that present the novel as "anti-communist" without nuance. Orwell supported the revolution\u2019s goals; he condemned the methods used to betray them.',
   },
@@ -61,22 +61,22 @@ const CONTEXT_SECTIONS: ContextSection[] = [
       'The Spanish Civil War (1936\u20131939) was a conflict between the elected Republican government (supported by socialists, communists and anarchists) and General Franco\u2019s Nationalists (supported by Hitler and Mussolini). It was a rehearsal for World War II and a defining experience for the European left.',
       'Orwell travelled to Spain in December 1936 intending to report on the war and instead joined the militia to fight. He described the early days of revolutionary Barcelona with genuine excitement: workers controlled the factories, class distinctions had disappeared and there was a sense of genuine equality. This experience shaped his vision of what socialism could be.',
       'The turning point came in May 1937, when Soviet-backed communists attacked their own left-wing allies in Barcelona. Orwell\u2019s POUM comrades were arrested, imprisoned and in some cases murdered. The Soviet Union, supposedly fighting for the same cause, was using the war to eliminate any socialist movement it could not control.',
-      'This experience \u2014 watching a revolution betrayed from within by its own supposed leaders \u2014 is the direct inspiration for Animal Farm. The pigs do not defeat an external enemy; they betray their own supporters. Orwell had watched this happen in real life.',
+      'This experience - watching a revolution betrayed from within by its own supposed leaders - is the direct inspiration for Animal Farm. The pigs do not defeat an external enemy; they betray their own supporters. Orwell had watched this happen in real life.',
     ],
     keyPoint:
       'Spain taught Orwell that the greatest threat to socialist ideals comes not from the right but from those who claim to represent the left while pursuing personal power. Animal Farm is the fictional expression of this devastating lesson.',
     examLink:
-      'Referencing the Spanish Civil War demonstrates sophisticated contextual understanding. It shows examiners that you know why Orwell wrote the novel \u2014 not as an abstract political argument but as a response to events he personally witnessed and survived.',
+      'Referencing the Spanish Civil War demonstrates sophisticated contextual understanding. It shows examiners that you know why Orwell wrote the novel - not as an abstract political argument but as a response to events he personally witnessed and survived.',
   },
   {
     title: 'Allegory and Satire as Genres',
     body: [
       'Animal Farm is both an allegory and a satire. An allegory is a narrative in which characters, events and settings represent abstract ideas or historical figures. A satire uses humour, irony and exaggeration to criticise human behaviour and institutions. Orwell combines both: the allegorical framework maps the story onto the Russian Revolution, while the satirical tone exposes the absurdity and cruelty of totalitarian power.',
       'The choice of animals is itself satirical. By depicting Soviet leaders as pigs, Orwell literalises the metaphor of greedy, self-serving rulers. The farmyard setting reduces the grandeur of revolution to the mundane reality of a barnyard, stripping away the propaganda and rhetoric that totalitarian regimes use to justify themselves.',
-      'Orwell subtitled the novel "A Fairy Story," which is both ironic and strategic. The fairy-story form \u2014 simple, allegorical, morally clear \u2014 makes the political argument accessible to a wide audience. It also provides cover: a "fairy story" about animals is harder to censor than a direct attack on the Soviet Union.',
+      'Orwell subtitled the novel "A Fairy Story," which is both ironic and strategic. The fairy-story form - simple, allegorical, morally clear - makes the political argument accessible to a wide audience. It also provides cover: a "fairy story" about animals is harder to censor than a direct attack on the Soviet Union.',
     ],
     keyPoint:
-      'The allegorical form is not decoration \u2014 it is the argument. By telling the story of the Russian Revolution through animals, Orwell strips away the justifications and reveals the naked mechanics of power. The simplicity of the form makes the corruption impossible to deny.',
+      'The allegorical form is not decoration - it is the argument. By telling the story of the Russian Revolution through animals, Orwell strips away the justifications and reveals the naked mechanics of power. The simplicity of the form makes the corruption impossible to deny.',
     examLink:
       'Use the terms "allegory" and "satire" precisely. Allegory means one-to-one correspondence between the narrative and its historical referent. Satire means the use of irony and exaggeration to criticise. Examiners value candidates who distinguish between these techniques.',
   },
@@ -97,7 +97,7 @@ const CONTEXT_SECTIONS: ContextSection[] = [
     body: [
       'Animal Farm was published in August 1945, just as the wartime alliance between Britain, America and the Soviet Union was collapsing. Within two years, the Cold War had begun: the world was divided between the capitalist West and the communist East, and the ideological conflict that would define the second half of the twentieth century was under way.',
       'The novel\u2019s timing was perfect. What had been diplomatically awkward in 1944 became politically powerful in 1947. Animal Farm was adopted by the American CIA as a propaganda tool during the Cold War: it funded translations, distributed copies behind the Iron Curtain and commissioned an animated film adaptation (1954). Orwell, who died in 1950, did not authorise or benefit from these uses.',
-      'The Cold War co-option of the novel is itself ironic. Orwell wrote Animal Farm as a left-wing critique of Stalinism, not as a right-wing defence of capitalism. The novel\u2019s final scene \u2014 in which pigs and humans are indistinguishable \u2014 condemns both sides equally. The CIA\u2019s appropriation of the novel involved ignoring its anti-capitalist implications, which is a form of the selective reading Orwell spent his career attacking.',
+      'The Cold War co-option of the novel is itself ironic. Orwell wrote Animal Farm as a left-wing critique of Stalinism, not as a right-wing defence of capitalism. The novel\u2019s final scene - in which pigs and humans are indistinguishable - condemns both sides equally. The CIA\u2019s appropriation of the novel involved ignoring its anti-capitalist implications, which is a form of the selective reading Orwell spent his career attacking.',
     ],
     keyPoint:
       'The Cold War made Animal Farm globally famous, but its appropriation by Western propaganda agencies distorted Orwell\u2019s message. The novel criticises all concentrations of power, not just Soviet ones.',
@@ -149,7 +149,7 @@ const TIMELINE: TimelineEvent[] = [
   },
   {
     year: '1937',
-    event: 'Barcelona May Days \u2014 communists attack allies',
+    event: 'Barcelona May Days - communists attack allies',
     relevance: 'Direct inspiration for the pigs\u2019 betrayal of the revolution',
   },
   {

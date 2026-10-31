@@ -27,7 +27,7 @@ export const QUOTES: QuoteEntry[] = [
     context:
       'The Seventh Commandment, painted on the barn wall after the Rebellion as the foundational principle of Animalism.',
     analysis:
-      'The simplicity of the declarative sentence gives it the force of an axiom. "Equal" carries the weight of the entire revolution\u2019s promise. Orwell places this commandment last \u2014 structurally the most important position \u2014 to establish it as the principle against which every subsequent betrayal will be measured.',
+      'The simplicity of the declarative sentence gives it the force of an axiom. "Equal" carries the weight of the entire revolution\u2019s promise. Orwell places this commandment last - structurally the most important position - to establish it as the principle against which every subsequent betrayal will be measured.',
     thematicLinks:
       'Links directly to its corrupted version in Chapter 10. The distance between the original and the alteration is the distance between revolution and tyranny.',
     themes: ['Revolution & Betrayal', 'Class & Inequality'],
@@ -41,7 +41,7 @@ export const QUOTES: QuoteEntry[] = [
     chapter: 'Chapter 10',
     context: 'The sole remaining commandment on the barn wall, replacing all seven originals.',
     analysis:
-      'The oxymoron "more equal" is logically impossible, which is Orwell\u2019s point: totalitarian language does not need to make sense, it only needs to go unchallenged. The sentence structurally mirrors the corruption of the revolution \u2014 the original principle still appears, but its meaning has been inverted by the qualifier. Orwell shows that tyranny does not abolish ideals; it redefines them.',
+      'The oxymoron "more equal" is logically impossible, which is Orwell\u2019s point: totalitarian language does not need to make sense, it only needs to go unchallenged. The sentence structurally mirrors the corruption of the revolution - the original principle still appears, but its meaning has been inverted by the qualifier. Orwell shows that tyranny does not abolish ideals; it redefines them.',
     thematicLinks:
       'The definitive statement of the novel\u2019s thesis. Connects to every theme: power corrupts language, language enables inequality, inequality betrays the revolution.',
     themes: ['Power & Corruption', 'Language & Propaganda', 'Class & Inequality'],
@@ -56,7 +56,7 @@ export const QUOTES: QuoteEntry[] = [
     context:
       'Snowball reduces the Seven Commandments to a single slogan for the less intelligent animals.',
     analysis:
-      'The binary slogan replaces complex principles with mindless repetition. Orwell shows that simplification of ideology is the first step toward its corruption. The sheep\u2019s inability to think beyond the slogan makes them perfect instruments of propaganda \u2014 they will drown out any dissent by bleating it endlessly.',
+      'The binary slogan replaces complex principles with mindless repetition. Orwell shows that simplification of ideology is the first step toward its corruption. The sheep\u2019s inability to think beyond the slogan makes them perfect instruments of propaganda - they will drown out any dissent by bleating it endlessly.',
     thematicLinks:
       'Directly parallels Soviet use of simple slogans to replace critical thought. The later alteration to "Four legs good, two legs better" proves how easily slogans can be reversed.',
     themes: ['Language & Propaganda', 'Power & Corruption'],
@@ -86,7 +86,7 @@ export const QUOTES: QuoteEntry[] = [
     context:
       'Boxer adopts this as his second personal maxim after Snowball\u2019s expulsion, alongside "I will work harder."',
     analysis:
-      'This is the most disturbing line in the novel because it comes from the most sympathetic character. The absolute "always" eliminates the possibility of critical thought. Boxer\u2019s blind loyalty is not presented as stupidity but as misplaced trust \u2014 the devotion of a good person given to those who do not deserve it. Orwell shows that totalitarian power depends on the voluntary submission of decent people.',
+      'This is the most disturbing line in the novel because it comes from the most sympathetic character. The absolute "always" eliminates the possibility of critical thought. Boxer\u2019s blind loyalty is not presented as stupidity but as misplaced trust - the devotion of a good person given to those who do not deserve it. Orwell shows that totalitarian power depends on the voluntary submission of decent people.',
     thematicLinks:
       'Connects Boxer\u2019s personal tragedy to the broader political argument: loyalty without scrutiny is the fuel that powers dictatorship.',
     themes: ['Power & Corruption', 'Loyalty & Exploitation'],
@@ -101,7 +101,7 @@ export const QUOTES: QuoteEntry[] = [
     context:
       'Boxer\u2019s personal motto, his response to every difficulty and setback on the farm.',
     analysis:
-      'The repetition throughout the novel creates increasingly painful dramatic irony. Each time Boxer says it, the reader sees his selfless labour being exploited by pigs who give nothing in return. Orwell presents hard work without political awareness as a form of self-destruction. The motto is admirable in isolation but tragic in context \u2014 Boxer\u2019s devotion accelerates his own death.',
+      'The repetition throughout the novel creates increasingly painful dramatic irony. Each time Boxer says it, the reader sees his selfless labour being exploited by pigs who give nothing in return. Orwell presents hard work without political awareness as a form of self-destruction. The motto is admirable in isolation but tragic in context - Boxer\u2019s devotion accelerates his own death.',
     thematicLinks:
       'Represents the Soviet working class (proletariat) whose labour built the state that ultimately destroyed them. Connects to the theme of education: Boxer\u2019s illiteracy prevents him from seeing what the reader can.',
     themes: ['Loyalty & Exploitation', 'Class & Inequality'],
@@ -116,7 +116,7 @@ export const QUOTES: QuoteEntry[] = [
     context:
       'The novel\u2019s final image: animals watch through the farmhouse window as pigs and humans play cards and quarrel.',
     analysis:
-      'The circular structure is Orwell\u2019s most powerful device. In the full sentence, the repetitive syntax ("from pig to man, and from man to pig") mirrors the interchangeability of oppressors, and "already" suggests the transformation is complete and irreversible. The pigs have not merely become like the humans \u2014 they have become indistinguishable from them, completing the revolution\u2019s total failure.',
+      'The circular structure is Orwell\u2019s most powerful device. In the full sentence, the repetitive syntax ("from pig to man, and from man to pig") mirrors the interchangeability of oppressors, and "already" suggests the transformation is complete and irreversible. The pigs have not merely become like the humans - they have become indistinguishable from them, completing the revolution\u2019s total failure.',
     thematicLinks:
       'The definitive image of the circular narrative. Manor Farm returns to its original name; the revolution has returned to exactly where it started. Connects to Orwell\u2019s argument that revolution without democratic safeguards replicates tyranny.',
     themes: ['Power & Corruption', 'Revolution & Betrayal'],
@@ -136,7 +136,7 @@ export const QUOTES: QuoteEntry[] = [
       'Each altered commandment is a structural marker of the revolution\u2019s corruption. The commandments function as a constitution that only the powerful can read and amend.',
     themes: ['Language & Propaganda', 'Power & Corruption'],
     examTip:
-      'Analyse the specific addition ("with sheets") and explain how it works rhetorically. The qualification appears reasonable, which is precisely how propaganda operates \u2014 by making the unacceptable seem logical.',
+      'Analyse the specific addition ("with sheets") and explain how it works rhetorically. The qualification appears reasonable, which is precisely how propaganda operates - by making the unacceptable seem logical.',
   },
   {
     id: 9,
@@ -176,7 +176,7 @@ export const QUOTES: QuoteEntry[] = [
     context:
       'Description of the animals\u2019 labour during the first construction of the windmill.',
     analysis:
-      'The simile is devastating in its irony. The revolution was fought to end slavery, yet the animals are now compared to the very thing they sought to escape. Orwell\u2019s narrator is not ironic by accident \u2014 the word "slaves" forces the reader to confront the revolution\u2019s failure at its most basic level.',
+      'The simile is devastating in its irony. The revolution was fought to end slavery, yet the animals are now compared to the very thing they sought to escape. Orwell\u2019s narrator is not ironic by accident - the word "slaves" forces the reader to confront the revolution\u2019s failure at its most basic level.',
     thematicLinks:
       'Connects to the Five Year Plans of the Soviet Union, where workers were driven to exhaustion for projects that primarily served the state\u2019s prestige.',
     themes: ['Revolution & Betrayal', 'Class & Inequality'],
@@ -191,7 +191,7 @@ export const QUOTES: QuoteEntry[] = [
     context:
       'Squealer\u2019s standard response whenever the animals question the pigs\u2019 growing privileges.',
     analysis:
-      'This rhetorical question is the pigs\u2019 most effective propaganda tool. It replaces reasoned argument with fear, deflecting every criticism by invoking the spectre of the old regime. Orwell shows that propaganda does not need to be convincing \u2014 it only needs to make the alternative seem worse. The repetition throughout the novel demonstrates how a single fear-based technique can sustain tyranny indefinitely.',
+      'This rhetorical question is the pigs\u2019 most effective propaganda tool. It replaces reasoned argument with fear, deflecting every criticism by invoking the spectre of the old regime. Orwell shows that propaganda does not need to be convincing - it only needs to make the alternative seem worse. The repetition throughout the novel demonstrates how a single fear-based technique can sustain tyranny indefinitely.',
     thematicLinks:
       'Parallels how totalitarian regimes invoke external threats to justify internal repression. "Jones" functions as the permanent emergency that prevents any questioning of authority.',
     themes: ['Language & Propaganda', 'Power & Corruption'],
@@ -211,7 +211,7 @@ export const QUOTES: QuoteEntry[] = [
     analysis:
       'The accumulation of absurd titles parodies Stalin\u2019s personality cult. "Father of All Animals" echoes "Father of the Peoples," an epithet Soviet propaganda gave Stalin. The contradiction between "Terror of Mankind" and "Ducklings\u2019 Friend" reveals the incoherence that personality cults require the public to accept without question. Orwell uses comic excess to expose the absurdity of totalitarian self-glorification.',
     thematicLinks:
-      'Connects to the broader theme of language as power. The titles do not describe reality \u2014 they construct it. Napoleon\u2019s authority is partly built through the language used to describe him.',
+      'Connects to the broader theme of language as power. The titles do not describe reality - they construct it. Napoleon\u2019s authority is partly built through the language used to describe him.',
     themes: ['Power & Corruption', 'Language & Propaganda'],
     examTip:
       'Analyse the contradictions within the titles. "Terror" and "Friend" in the same list reveals the absurdity that propaganda normalises. This is strong AO2 material.',
@@ -224,7 +224,7 @@ export const QUOTES: QuoteEntry[] = [
     context:
       'Benjamin reads the lettering on the van taking Boxer to the knacker\u2019s: "Alfred Simmonds, Horse Slaughterer."',
     analysis:
-      'Benjamin\u2019s outburst is the novel\u2019s most agonising moment. He has always been able to read but has chosen silence and disengagement. His cry comes too late to save Boxer. In the full line, the repetition of "Fools" \u2014 directed at the other animals \u2014 is also directed at himself. Orwell\u2019s sharpest critique falls not on the powerful but on the educated who refuse to act until it is too late.',
+      'Benjamin\u2019s outburst is the novel\u2019s most agonising moment. He has always been able to read but has chosen silence and disengagement. His cry comes too late to save Boxer. In the full line, the repetition of "Fools" - directed at the other animals - is also directed at himself. Orwell\u2019s sharpest critique falls not on the powerful but on the educated who refuse to act until it is too late.',
     thematicLinks:
       'The climax of both the Boxer and Benjamin arcs. Education without moral courage is worthless. Benjamin\u2019s literacy could have saved lives; his silence made him complicit.',
     themes: ['Loyalty & Exploitation', 'Education & Awareness'],
@@ -256,7 +256,7 @@ export const QUOTES: QuoteEntry[] = [
     analysis:
       'The milk and apples are the first visible sign of inequality on Animal Farm. Orwell places this incident early to show that corruption begins with small, apparently reasonable privileges, not grand betrayals. The pseudo-scientific justification ("brainworkers") parodies Soviet rhetoric about the intellectual superiority of the ruling class. Once this privilege is accepted, every subsequent one becomes easier.',
     thematicLinks:
-      'The thin end of the wedge. Every later privilege \u2014 beds, clothes, whisky, walking on two legs \u2014 follows the pattern established here: take the privilege, then justify it with propaganda.',
+      'The thin end of the wedge. Every later privilege - beds, clothes, whisky, walking on two legs - follows the pattern established here: take the privilege, then justify it with propaganda.',
     themes: ['Power & Corruption', 'Language & Propaganda', 'Class & Inequality'],
     examTip:
       'Use this as your example of how corruption begins. Orwell\u2019s structural choice to place it in Chapter 3 shows that the revolution was compromised almost immediately.',
@@ -272,12 +272,12 @@ export const QUOTES: QuoteEntry[] = [
     context:
       'Clover\u2019s thoughts as she looks down over the farm after Napoleon\u2019s purges and show trials: a climate in which animals were too frightened to speak openly while patrolling dogs intimidated the farm (Ch. 7).',
     analysis:
-      'The dogs are Orwell\u2019s equivalent of the NKVD \u2014 Stalin\u2019s secret police. "No one dared speak his mind" describes the defining condition of totalitarianism: the elimination of free thought through fear. The past perfect ("had come to a time") suggests the change was gradual and thus harder to resist \u2014 no single moment could have been identified as the point of no return.',
+      'The dogs are Orwell\u2019s equivalent of the NKVD - Stalin\u2019s secret police. "No one dared speak his mind" describes the defining condition of totalitarianism: the elimination of free thought through fear. The past perfect ("had come to a time") suggests the change was gradual and thus harder to resist - no single moment could have been identified as the point of no return.',
     thematicLinks:
       'Connects violence and silence: the dogs enforce the silence, and the silence enables further violence. This is the cycle that sustains totalitarian power.',
     themes: ['Power & Corruption', 'Language & Propaganda'],
     examTip:
-      'Analyse the past perfect ("had come to a time"). Orwell\u2019s grammar mirrors the way totalitarianism arrives \u2014 not in one dramatic moment but through a gradual, almost imperceptible erosion of freedom.',
+      'Analyse the past perfect ("had come to a time"). Orwell\u2019s grammar mirrors the way totalitarianism arrives - not in one dramatic moment but through a gradual, almost imperceptible erosion of freedom.',
   },
   {
     id: 18,
@@ -287,7 +287,7 @@ export const QUOTES: QuoteEntry[] = [
     context:
       'Old Major teaches the animals the anthem that will inspire the Rebellion and sustain their hope.',
     analysis:
-      '"Beasts of England" functions as the Internationale of Animal Farm \u2014 the revolutionary anthem that gives the movement its emotional power. Its later banning by Napoleon in Chapter 7 signals the moment when the regime officially repudiates its own origins. Orwell shows that totalitarian regimes must suppress their own founding ideals once those ideals become an embarrassment.',
+      '"Beasts of England" functions as the Internationale of Animal Farm - the revolutionary anthem that gives the movement its emotional power. Its later banning by Napoleon in Chapter 7 signals the moment when the regime officially repudiates its own origins. Orwell shows that totalitarian regimes must suppress their own founding ideals once those ideals become an embarrassment.',
     thematicLinks:
       'The song\u2019s banning is the cultural equivalent of rewriting the commandments. Both involve the destruction of the revolution\u2019s own history to protect the current regime.',
     themes: ['Revolution & Betrayal', 'Language & Propaganda'],
@@ -305,9 +305,9 @@ export const QUOTES: QuoteEntry[] = [
     context:
       'Napoleon announces the windmill will be built after all, despite having opposed it when Snowball proposed it. Squealer then explains privately to the other animals that this was Napoleon\u2019s cunning.',
     analysis:
-      'This is one of Orwell\u2019s clearest Stalin parallels: Stalin adopted Trotsky\u2019s industrialisation programme after exiling him. Squealer\u2019s explanation reveals that Napoleon\u2019s opposition was never ideological but purely strategic \u2014 he opposed the windmill not because it was wrong but because Snowball supported it. Power, not policy, is what matters.',
+      'This is one of Orwell\u2019s clearest Stalin parallels: Stalin adopted Trotsky\u2019s industrialisation programme after exiling him. Squealer\u2019s explanation reveals that Napoleon\u2019s opposition was never ideological but purely strategic - he opposed the windmill not because it was wrong but because Snowball supported it. Power, not policy, is what matters.',
     thematicLinks:
-      'Exposes the gap between political rhetoric and political reality. Napoleon\u2019s reversal proves that his ideology is infinitely flexible \u2014 it serves power, not principle.',
+      'Exposes the gap between political rhetoric and political reality. Napoleon\u2019s reversal proves that his ideology is infinitely flexible - it serves power, not principle.',
     themes: ['Power & Corruption', 'Revolution & Betrayal'],
     examTip:
       'Name the historical parallel: Stalin adopted Trotsky\u2019s Five Year Plan after exiling him. This earns AO3 marks for contextual knowledge.',
@@ -322,7 +322,7 @@ export const QUOTES: QuoteEntry[] = [
     analysis:
       'The final confrontation is between two groups of oppressors, not between oppressor and oppressed. The animals are reduced to silent spectators of a dispute between their new masters and their old ones. "All alike" is Orwell\u2019s final condemnation: the revolution has not failed because of one bad leader but because the structure of power itself produces identical outcomes regardless of who holds it.',
     thematicLinks:
-      'The culmination of the circular narrative. The "twelve voices" \u2014 six pigs, six humans \u2014 are mirror images, proving that the revolution has changed nothing.',
+      'The culmination of the circular narrative. The "twelve voices" - six pigs, six humans - are mirror images, proving that the revolution has changed nothing.',
     themes: ['Power & Corruption', 'Revolution & Betrayal'],
     examTip:
       'Use this alongside the "pig to man" quote for a devastating final paragraph. Together they provide Orwell\u2019s complete thesis: unchecked power produces identical tyranny regardless of the ideology that justifies it.',

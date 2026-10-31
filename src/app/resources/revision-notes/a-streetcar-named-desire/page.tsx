@@ -57,7 +57,7 @@ function QuoteCard({
       <p className="text-sm font-semibold text-violet-800 dark:text-violet-200 italic">
         &ldquo;{quote}&rdquo;
       </p>
-      {speaker && <p className="mt-1 text-xs font-medium text-violet-600">&mdash; {speaker}</p>}
+      {speaker && <p className="mt-1 text-xs font-medium text-violet-600">- {speaker}</p>}
       <p className="mt-2 text-sm text-muted-foreground">{analysis}</p>
     </div>
   )
@@ -110,7 +110,7 @@ export default function StreetcarNamedDesirePage() {
           </span>
         </div>
         <h1 className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
-          A Streetcar Named Desire &mdash; Complete A-Level Revision Guide
+          A Streetcar Named Desire - Complete A-Level Revision Guide
         </h1>
         <p className="mt-1 text-lg text-muted-foreground">{tr(`Tennessee Williams, 1947`)}</p>
         <p className="mt-3 max-w-3xl text-muted-foreground leading-relaxed">
@@ -173,15 +173,12 @@ export default function StreetcarNamedDesirePage() {
                     Key Moments
                   </p>
                   <ul className="mt-2 space-y-1 text-sm text-muted-foreground">
+                    <li>&bull; The streetcar journey - Desire to Cemeteries to Elysian Fields</li>
                     <li>
-                      &bull; The streetcar journey &mdash; Desire to Cemeteries to Elysian Fields
-                    </li>
-                    <li>
-                      &bull; Stanley&apos;s entrance with the meat package &mdash; primal
-                      masculinity
+                      &bull; Stanley&apos;s entrance with the meat package - primal masculinity
                     </li>
                     <li>&bull; Blanche&apos;s confession that Belle Reve has been lost</li>
-                    <li>&bull; Blanche drinks secretly &mdash; first hint of alcoholism</li>
+                    <li>&bull; Blanche drinks secretly - first hint of alcoholism</li>
                   </ul>
                 </div>
               </div>
@@ -206,9 +203,9 @@ export default function StreetcarNamedDesirePage() {
                     Key Moments
                   </p>
                   <ul className="mt-2 space-y-1 text-sm text-muted-foreground">
-                    <li>&bull; Stanley invokes the Napoleonic Code &mdash; legal patriarchy</li>
-                    <li>&bull; The trunk searched &mdash; violation of intimate space</li>
-                    <li>&bull; Blanche&apos;s flirtation &mdash; first sexual undercurrent</li>
+                    <li>&bull; Stanley invokes the Napoleonic Code - legal patriarchy</li>
+                    <li>&bull; The trunk searched - violation of intimate space</li>
+                    <li>&bull; Blanche&apos;s flirtation - first sexual undercurrent</li>
                     <li>&bull; Revelation that Stella is pregnant</li>
                   </ul>
                 </div>
@@ -236,14 +233,11 @@ export default function StreetcarNamedDesirePage() {
                     Key Moments
                   </p>
                   <ul className="mt-2 space-y-1 text-sm text-muted-foreground">
-                    <li>&bull; The poker night &mdash; ritual of male homosocial violence</li>
-                    <li>
-                      &bull; Mitch and Blanche meet &mdash; the paper lantern placed on the bulb
-                    </li>
+                    <li>&bull; The poker night - ritual of male homosocial violence</li>
+                    <li>&bull; Mitch and Blanche meet - the paper lantern placed on the bulb</li>
                     <li>&bull; Stanley smashes the radio and beats Stella</li>
                     <li>
-                      &bull; The famous &ldquo;STELLAAAAAAA!&rdquo; cry &mdash; sexual
-                      reconciliation
+                      &bull; The famous &ldquo;STELLAAAAAAA!&rdquo; cry - sexual reconciliation
                     </li>
                   </ul>
                 </div>
@@ -271,11 +265,11 @@ export default function StreetcarNamedDesirePage() {
                   </p>
                   <ul className="mt-2 space-y-1 text-sm text-muted-foreground">
                     <li>
-                      &bull; Blanche&apos;s &ldquo;ape&rdquo; / &ldquo;stone age&rdquo; speech
-                      &mdash; class disgust
+                      &bull; Blanche&apos;s &ldquo;ape&rdquo; / &ldquo;stone age&rdquo; speech -
+                      class disgust
                     </li>
                     <li>&bull; Stella&apos;s defence of physical desire</li>
-                    <li>&bull; Stanley overhears &mdash; antagonism becomes vendetta</li>
+                    <li>&bull; Stanley overhears - antagonism becomes vendetta</li>
                   </ul>
                 </div>
               </div>
@@ -302,7 +296,7 @@ export default function StreetcarNamedDesirePage() {
                   <ul className="mt-2 space-y-1 text-sm text-muted-foreground">
                     <li>&bull; Stanley mentions Shaw and the Hotel Flamingo</li>
                     <li>&bull; The kiss with the young paper-boy</li>
-                    <li>&bull; Mitch arrives with roses &mdash; courtship begins</li>
+                    <li>&bull; Mitch arrives with roses - courtship begins</li>
                   </ul>
                 </div>
               </div>
@@ -319,18 +313,18 @@ export default function StreetcarNamedDesirePage() {
                   confesses the central trauma of her life: she married a young poet, Allan Grey, at
                   sixteen. She discovered him with an older male lover; later, on the dance floor at
                   Moon Lake Casino, she told him he &ldquo;disgusted&rdquo; her. He ran out and shot
-                  himself. The Varsouviana polka &mdash; the music playing when Allan died &mdash;
-                  recurs in Blanche&apos;s mind whenever she remembers. Mitch promises &ldquo;You
-                  need somebody. And I need somebody, too.&rdquo;
+                  himself. The Varsouviana polka - the music playing when Allan died - recurs in
+                  Blanche&apos;s mind whenever she remembers. Mitch promises &ldquo;You need
+                  somebody. And I need somebody, too.&rdquo;
                 </p>
                 <div className="mt-3 rounded-lg bg-muted p-3">
                   <p className="text-xs font-semibold text-muted-foreground uppercase tracking-wider">
                     Key Moments
                   </p>
                   <ul className="mt-2 space-y-1 text-sm text-muted-foreground">
-                    <li>&bull; The Allan Grey backstory &mdash; trauma at the heart of the play</li>
+                    <li>&bull; The Allan Grey backstory - trauma at the heart of the play</li>
                     <li>&bull; The Varsouviana polka introduced as an auditory memory</li>
-                    <li>&bull; Mitch&apos;s implicit proposal &mdash; brief hope for Blanche</li>
+                    <li>&bull; Mitch&apos;s implicit proposal - brief hope for Blanche</li>
                   </ul>
                 </div>
               </div>
@@ -356,7 +350,7 @@ export default function StreetcarNamedDesirePage() {
                   <ul className="mt-2 space-y-1 text-sm text-muted-foreground">
                     <li>&bull; Stanley exposes Blanche&apos;s past in Laurel</li>
                     <li>&bull; The Hotel Flamingo and the seventeen-year-old pupil</li>
-                    <li>&bull; Mitch is told &mdash; the courtship is destroyed</li>
+                    <li>&bull; Mitch is told - the courtship is destroyed</li>
                   </ul>
                 </div>
               </div>
@@ -380,10 +374,8 @@ export default function StreetcarNamedDesirePage() {
                     Key Moments
                   </p>
                   <ul className="mt-2 space-y-1 text-sm text-muted-foreground">
-                    <li>&bull; The birthday dinner &mdash; Mitch&apos;s absence</li>
-                    <li>
-                      &bull; Stanley&apos;s &ldquo;birthday present&rdquo; &mdash; the bus ticket
-                    </li>
+                    <li>&bull; The birthday dinner - Mitch&apos;s absence</li>
+                    <li>&bull; Stanley&apos;s &ldquo;birthday present&rdquo; - the bus ticket</li>
                     <li>&bull; Stella goes into labour</li>
                   </ul>
                 </div>
@@ -400,21 +392,18 @@ export default function StreetcarNamedDesirePage() {
                   Mitch arrives unshaven and drunk. He tears the paper lantern from the bulb to look
                   at Blanche under the harsh light: &ldquo;I&apos;ve never had a real good look at
                   you, Blanche.&rdquo; Blanche admits her past. From the street comes the cry of the
-                  Mexican blind woman selling tin flowers &mdash; &ldquo;Flores. Flores para los
-                  muertos. Flowers for the dead&rdquo; &mdash; an emblem of her psychic
-                  disintegration. Mitch tries to force himself on her; she screams
-                  &ldquo;Fire!&rdquo; and he flees.
+                  Mexican blind woman selling tin flowers - &ldquo;Flores. Flores para los muertos.
+                  Flowers for the dead&rdquo; - an emblem of her psychic disintegration. Mitch tries
+                  to force himself on her; she screams &ldquo;Fire!&rdquo; and he flees.
                 </p>
                 <div className="mt-3 rounded-lg bg-muted p-3">
                   <p className="text-xs font-semibold text-muted-foreground uppercase tracking-wider">
                     Key Moments
                   </p>
                   <ul className="mt-2 space-y-1 text-sm text-muted-foreground">
-                    <li>&bull; The paper lantern torn off &mdash; brutal exposure</li>
+                    <li>&bull; The paper lantern torn off - brutal exposure</li>
                     <li>&bull; The Mexican woman&apos;s &ldquo;Flores para los muertos&rdquo;</li>
-                    <li>
-                      &bull; Mitch attempts assault &mdash; Blanche&apos;s &ldquo;Fire!&rdquo;
-                    </li>
+                    <li>&bull; Mitch attempts assault - Blanche&apos;s &ldquo;Fire!&rdquo;</li>
                   </ul>
                 </div>
               </div>
@@ -440,9 +429,9 @@ export default function StreetcarNamedDesirePage() {
                     Key Moments
                   </p>
                   <ul className="mt-2 space-y-1 text-sm text-muted-foreground">
-                    <li>&bull; The transparent walls &mdash; expressionist technique</li>
+                    <li>&bull; The transparent walls - expressionist technique</li>
                     <li>&bull; Stanley dismantles Blanche&apos;s fantasies</li>
-                    <li>&bull; The rape &mdash; the play&apos;s catastrophe</li>
+                    <li>&bull; The rape - the play&apos;s catastrophe</li>
                   </ul>
                 </div>
               </div>
@@ -470,8 +459,8 @@ export default function StreetcarNamedDesirePage() {
                   <ul className="mt-2 space-y-1 text-sm text-muted-foreground">
                     <li>&bull; Blanche taken to the asylum</li>
                     <li>&bull; Stella&apos;s decision to remain with Stanley</li>
-                    <li>&bull; &ldquo;The kindness of strangers&rdquo; &mdash; closing line</li>
-                    <li>&bull; The poker game resumes &mdash; cyclical violence</li>
+                    <li>&bull; &ldquo;The kindness of strangers&rdquo; - closing line</li>
+                    <li>&bull; The poker game resumes - cyclical violence</li>
                   </ul>
                 </div>
               </div>
@@ -485,23 +474,23 @@ export default function StreetcarNamedDesirePage() {
             <div className="grid gap-4 sm:grid-cols-2">
               <CharacterCard
                 name="Blanche DuBois"
-                description="Stella's older sister and the play's tragic protagonist. A former English teacher from Laurel, Mississippi, in her thirties, she arrives at Elysian Fields ostensibly on summer leave but is in fact homeless, jobless and ruined. Her surname &mdash; French for 'of the woods' &mdash; and her first name (meaning 'white') align her with paleness, fragility and a vanishing aristocratic past. Williams's stage directions describe her as resembling a moth attracted to light yet destroyed by it. She drinks compulsively, bathes ritualistically and avoids electric light, all signs of a woman trying to obliterate trauma. Her tragedy is rooted in the suicide of her young husband Allan Grey, whom she shamed for his homosexuality; since then she has sought 'protection' through serial sexual encounters culminating in disgrace at the Hotel Flamingo and her sacking for an affair with a seventeen-year-old pupil. She represents the death of the genteel Old South, but Williams refuses to romanticise her: she is simultaneously cruel, snobbish, deluded, and one of the most sympathetic figures in twentieth-century drama. Her descent into madness is the play's catastrophe."
+                description="Stella's older sister and the play's tragic protagonist. A former English teacher from Laurel, Mississippi, in her thirties, she arrives at Elysian Fields ostensibly on summer leave but is in fact homeless, jobless and ruined. Her surname - French for 'of the woods' - and her first name (meaning 'white') align her with paleness, fragility and a vanishing aristocratic past. Williams's stage directions describe her as resembling a moth attracted to light yet destroyed by it. She drinks compulsively, bathes ritualistically and avoids electric light, all signs of a woman trying to obliterate trauma. Her tragedy is rooted in the suicide of her young husband Allan Grey, whom she shamed for his homosexuality; since then she has sought 'protection' through serial sexual encounters culminating in disgrace at the Hotel Flamingo and her sacking for an affair with a seventeen-year-old pupil. She represents the death of the genteel Old South, but Williams refuses to romanticise her: she is simultaneously cruel, snobbish, deluded, and one of the most sympathetic figures in twentieth-century drama. Her descent into madness is the play's catastrophe."
               />
               <CharacterCard
                 name="Stella Kowalski"
-                description="Blanche's younger sister, in her mid-twenties, married to Stanley and pregnant throughout the play. Williams describes her as 'gentle' and of a 'background obviously quite different from her husband's.' She has chosen physical desire and working-class New Orleans over the dying gentility of Belle Reve, and frankly defends the sexual heart of her marriage: 'things that happen ... in the dark that sort of make everything else seem &mdash; unimportant.' Critics divide on Stella: some see her as morally compromised for staying with Stanley after the rape; others see her as a realist who recognises that to believe Blanche would be to lose her child's father. Her final sobs and the crucial line 'I couldn't believe her story and go on living with Stanley' make her complicity central to the play's tragic vision."
+                description="Blanche's younger sister, in her mid-twenties, married to Stanley and pregnant throughout the play. Williams describes her as 'gentle' and of a 'background obviously quite different from her husband's.' She has chosen physical desire and working-class New Orleans over the dying gentility of Belle Reve, and frankly defends the sexual heart of her marriage: 'things that happen ... in the dark that sort of make everything else seem - unimportant.' Critics divide on Stella: some see her as morally compromised for staying with Stanley after the rape; others see her as a realist who recognises that to believe Blanche would be to lose her child's father. Her final sobs and the crucial line 'I couldn't believe her story and go on living with Stanley' make her complicity central to the play's tragic vision."
               />
               <CharacterCard
                 name="Stanley Kowalski"
-                description="Stella's husband, a Polish-American working-class veteran of the Second World War. Williams's stage directions describe his 'animal joy in his being' and the 'centre' he forms in the all-male world of bowling alleys, factories and poker tables. He is sexually charismatic, territorial, and brutally direct &mdash; the antithesis of Blanche's gentility. Played originally by Marlon Brando, Stanley defined a new kind of American stage masculinity: rough, virile, ethnically marked. He represents the new urban America &mdash; democratic, aggressive, hostile to inherited privilege. He invokes the Napoleonic Code, weaponises information, and ultimately rapes Blanche. Williams resists turning him into a simple villain: he genuinely loves Stella, is loyal to his friends, and his suspicion of Blanche's stories is not always unfounded. He embodies the play's unresolved tension between honesty and cruelty, vitality and brutality."
+                description="Stella's husband, a Polish-American working-class veteran of the Second World War. Williams's stage directions describe his 'animal joy in his being' and the 'centre' he forms in the all-male world of bowling alleys, factories and poker tables. He is sexually charismatic, territorial, and brutally direct - the antithesis of Blanche's gentility. Played originally by Marlon Brando, Stanley defined a new kind of American stage masculinity: rough, virile, ethnically marked. He represents the new urban America - democratic, aggressive, hostile to inherited privilege. He invokes the Napoleonic Code, weaponises information, and ultimately rapes Blanche. Williams resists turning him into a simple villain: he genuinely loves Stella, is loyal to his friends, and his suspicion of Blanche's stories is not always unfounded. He embodies the play's unresolved tension between honesty and cruelty, vitality and brutality."
               />
               <CharacterCard
                 name="Harold 'Mitch' Mitchell"
-                description="Stanley's poker friend and Blanche's brief suitor, a factory worker who lives with his dying mother. Mitch is set apart from the other men by sensitivity, awkwardness and concern for his mother's health; he carries a silver cigarette case engraved with a quotation from Elizabeth Barrett Browning. He represents a tentative, decent masculinity and offers Blanche her last chance of refuge. After Stanley reveals her past, Mitch arrives drunk in scene 9 to demand the truth and to attempt assault. His failure of nerve &mdash; he is unwilling to marry her once she is 'not clean enough to bring in the house with my mother' &mdash; shows that even decent men in this world are policed by codes of female purity. He is the play's failed possibility of rescue."
+                description="Stanley's poker friend and Blanche's brief suitor, a factory worker who lives with his dying mother. Mitch is set apart from the other men by sensitivity, awkwardness and concern for his mother's health; he carries a silver cigarette case engraved with a quotation from Elizabeth Barrett Browning. He represents a tentative, decent masculinity and offers Blanche her last chance of refuge. After Stanley reveals her past, Mitch arrives drunk in scene 9 to demand the truth and to attempt assault. His failure of nerve - he is unwilling to marry her once she is 'not clean enough to bring in the house with my mother' - shows that even decent men in this world are policed by codes of female purity. He is the play's failed possibility of rescue."
               />
               <CharacterCard
                 name="Eunice and Steve Hubbell"
-                description="The upstairs neighbours and the Kowalskis' landlords. Their noisy, reconciliatory marriage &mdash; comic violence followed by rapid forgiveness &mdash; functions as a working-class echo of Stella and Stanley's, normalising domestic conflict in the world of Elysian Fields. Eunice is generous and direct; she shelters Stella after Stanley beats her and ultimately delivers the play's bleak realist creed: 'Don't ever believe it. Life has got to go on.' Steve is one of the poker-playing men, anonymous within the male collective. Together the Hubbells dramatise the working-class community Blanche refuses to be assimilated into."
+                description="The upstairs neighbours and the Kowalskis' landlords. Their noisy, reconciliatory marriage - comic violence followed by rapid forgiveness - functions as a working-class echo of Stella and Stanley's, normalising domestic conflict in the world of Elysian Fields. Eunice is generous and direct; she shelters Stella after Stanley beats her and ultimately delivers the play's bleak realist creed: 'Don't ever believe it. Life has got to go on.' Steve is one of the poker-playing men, anonymous within the male collective. Together the Hubbells dramatise the working-class community Blanche refuses to be assimilated into."
               />
               <CharacterCard
                 name="Pablo Gonzales"
@@ -525,15 +514,15 @@ export default function StreetcarNamedDesirePage() {
             <div className="grid gap-4 sm:grid-cols-2">
               <ThemeCard
                 title={tr(`Desire vs Death`)}
-                description="The play's structuring opposition. Blanche says 'the opposite is death' &mdash; the opposite, that is, of desire. Williams pairs the streetcar named Desire with the streetcar named Cemeteries, which Blanche must take to reach Elysian Fields (the Greek paradise of the dead). Sex in the play is presented as the only force strong enough to hold off mortality, but it is also linked to it: Blanche's promiscuity follows the deaths at Belle Reve, and Stanley's rape of her destroys what little remains of her sanity. Desire and death are not opposites but a single, inescapable continuum."
+                description="The play's structuring opposition. Blanche says 'the opposite is death' - the opposite, that is, of desire. Williams pairs the streetcar named Desire with the streetcar named Cemeteries, which Blanche must take to reach Elysian Fields (the Greek paradise of the dead). Sex in the play is presented as the only force strong enough to hold off mortality, but it is also linked to it: Blanche's promiscuity follows the deaths at Belle Reve, and Stanley's rape of her destroys what little remains of her sanity. Desire and death are not opposites but a single, inescapable continuum."
               />
               <ThemeCard
                 title={tr(`Illusion vs Reality`)}
-                description="Blanche openly champions illusion over fact: 'I don't want realism. I want magic!' She covers naked bulbs with paper lanterns, avoids daylight, and invents stories about plantations, telegrams and millionaires. Stanley, by contrast, is the play's relentless investigator of fact &mdash; the one who tears off the lantern, exposes Laurel's gossip, and confronts Blanche with the bus ticket. Williams refuses an easy moral: Stanley's brutal truth-telling is itself destructive, and Blanche's lies offer her dignity in the face of unbearable reality. The audience is asked whether truth, in such circumstances, is always preferable."
+                description="Blanche openly champions illusion over fact: 'I don't want realism. I want magic!' She covers naked bulbs with paper lanterns, avoids daylight, and invents stories about plantations, telegrams and millionaires. Stanley, by contrast, is the play's relentless investigator of fact - the one who tears off the lantern, exposes Laurel's gossip, and confronts Blanche with the bus ticket. Williams refuses an easy moral: Stanley's brutal truth-telling is itself destructive, and Blanche's lies offer her dignity in the face of unbearable reality. The audience is asked whether truth, in such circumstances, is always preferable."
               />
               <ThemeCard
                 title={tr(`Class & The Old South vs New America`)}
-                description="The play stages the collision between the dying agrarian aristocracy of the Old South and the working-class, multi-ethnic, urban modernity of post-war America. Blanche represents Belle Reve &mdash; the white plantation, the genteel teacher, the French surname, the cultivated reading of poetry. Stanley represents the new America &mdash; Polish, urban, industrial, democratic, brusque. Williams refuses to take a simple side. The Old South is shown to be already dead (Belle Reve foreclosed, the &lsquo;epic fornications&rsquo; of the male DuBois ancestors having ruined the estate), but the new America is figured as violent and crude. The play stages the historical defeat of one class by another."
+                description="The play stages the collision between the dying agrarian aristocracy of the Old South and the working-class, multi-ethnic, urban modernity of post-war America. Blanche represents Belle Reve - the white plantation, the genteel teacher, the French surname, the cultivated reading of poetry. Stanley represents the new America - Polish, urban, industrial, democratic, brusque. Williams refuses to take a simple side. The Old South is shown to be already dead (Belle Reve foreclosed, the &lsquo;epic fornications&rsquo; of the male DuBois ancestors having ruined the estate), but the new America is figured as violent and crude. The play stages the historical defeat of one class by another."
               />
               <ThemeCard
                 title={tr(`Sexual Violence`)}
@@ -601,13 +590,13 @@ export default function StreetcarNamedDesirePage() {
                 <h4 className="font-bold text-primary">{tr(`Southern Gothic Tradition`)}</h4>
                 <p className="mt-1 text-sm text-muted-foreground leading-relaxed">
                   Williams writes within the Southern Gothic tradition of William Faulkner, Carson
-                  McCullers and Flannery O&apos;Connor. Recurring features &mdash; decaying
-                  mansions, fading aristocratic families, sexual secrets, mental illness, the
-                  haunting weight of a violent past &mdash; are all central to <em>Streetcar</em>.
-                  Belle Reve (literally &lsquo;beautiful dream&rsquo;) is a quintessential Southern
-                  Gothic ruin: lost to mortgages and the &lsquo;epic fornications&rsquo; of the male
-                  ancestors, it haunts Blanche as a vanished paradise. Williams updates the
-                  tradition by transferring it from the plantation to the urban tenement.
+                  McCullers and Flannery O&apos;Connor. Recurring features - decaying mansions,
+                  fading aristocratic families, sexual secrets, mental illness, the haunting weight
+                  of a violent past - are all central to <em>Streetcar</em>. Belle Reve (literally
+                  &lsquo;beautiful dream&rsquo;) is a quintessential Southern Gothic ruin: lost to
+                  mortgages and the &lsquo;epic fornications&rsquo; of the male ancestors, it haunts
+                  Blanche as a vanished paradise. Williams updates the tradition by transferring it
+                  from the plantation to the urban tenement.
                 </p>
               </div>
               <div className="rounded-lg bg-primary/10 p-4">
@@ -616,12 +605,12 @@ export default function StreetcarNamedDesirePage() {
                   Belle Reve is the DuBois ancestral plantation in Laurel, Mississippi, &ldquo;a
                   great big place with white columns.&rdquo; By the time the play opens it has been
                   lost piece by piece to mortgages and the medical bills of dying relatives.
-                  Blanche&apos;s indictment to Stella &mdash; &ldquo;all of those deaths! The long
-                  parade to the graveyard!&rdquo; &mdash; positions Belle Reve as the place where
-                  the Old South literally died. The play is set within two years of the end of the
-                  Second World War, when the racial and economic order of the South was already
-                  under pressure; Williams stages, on a domestic scale, the historical displacement
-                  of the planter class by industrial modernity.
+                  Blanche&apos;s indictment to Stella - &ldquo;all of those deaths! The long parade
+                  to the graveyard!&rdquo; - positions Belle Reve as the place where the Old South
+                  literally died. The play is set within two years of the end of the Second World
+                  War, when the racial and economic order of the South was already under pressure;
+                  Williams stages, on a domestic scale, the historical displacement of the planter
+                  class by industrial modernity.
                 </p>
               </div>
               <div className="rounded-lg bg-primary/10 p-4">
@@ -667,7 +656,7 @@ export default function StreetcarNamedDesirePage() {
               <QuoteCard
                 quote="take a streetcar named Desire, and then transfer to one called Cemeteries, ... Elysian Fields!"
                 speaker="Blanche, Scene 1"
-                analysis="Blanche's opening account of her route into the play is also Williams's thesis statement. The three named stops &mdash; Desire, Cemeteries, Elysian Fields &mdash; form a symbolic itinerary from sexual desire, through death, to a Greek paradise of the dead. In the full line, the dash before &lsquo;Elysian Fields&rsquo; is a typical Williams stage rhythm: a beat of disbelief. From the first scene the play tells us Blanche has ridden Desire to its terminus."
+                analysis="Blanche's opening account of her route into the play is also Williams's thesis statement. The three named stops - Desire, Cemeteries, Elysian Fields - form a symbolic itinerary from sexual desire, through death, to a Greek paradise of the dead. In the full line, the dash before &lsquo;Elysian Fields&rsquo; is a typical Williams stage rhythm: a beat of disbelief. From the first scene the play tells us Blanche has ridden Desire to its terminus."
               />
               <QuoteCard
                 quote="I have always depended on the kindness of strangers."
@@ -677,7 +666,7 @@ export default function StreetcarNamedDesirePage() {
               <QuoteCard
                 quote="Stella! Hey, Stella!"
                 speaker="Stanley, Scene 3"
-                analysis="The famous bellowing cry from the street after Stanley has beaten Stella. The primal, animal call &mdash; reduced to her name &mdash; expresses both his violence and his erotic dependence. Stella's descent of the staircase to him stages the inseparability of desire and abuse in their marriage. Brando's 1947 delivery made the line one of the most quoted in American drama."
+                analysis="The famous bellowing cry from the street after Stanley has beaten Stella. The primal, animal call - reduced to her name - expresses both his violence and his erotic dependence. Stella's descent of the staircase to him stages the inseparability of desire and abuse in their marriage. Brando's 1947 delivery made the line one of the most quoted in American drama."
               />
               <QuoteCard
                 quote="I don't want realism. I want magic! ... I tell what ought to be truth."
@@ -687,12 +676,12 @@ export default function StreetcarNamedDesirePage() {
               <QuoteCard
                 quote="The opposite is desire."
                 speaker="Blanche, Scene 9"
-                analysis="Blanche replies to Mitch's mention of death with this stark counter. The line crystallises the play's structuring opposition: against the long parade of family deaths at Belle Reve, the only force she has known to set against mortality is sexual desire &mdash; which is also what has destroyed her. The line stands as the play's explicit philosophical statement."
+                analysis="Blanche replies to Mitch's mention of death with this stark counter. The line crystallises the play's structuring opposition: against the long parade of family deaths at Belle Reve, the only force she has known to set against mortality is sexual desire - which is also what has destroyed her. The line stands as the play's explicit philosophical statement."
               />
               <QuoteCard
                 quote="He acts like an animal, ... Eats like one, moves like one, talks like one!"
                 speaker="Blanche, Scene 4"
-                analysis="Blanche's denunciation of Stanley to Stella, overheard by him. The repetitive parallelism (&lsquo;eats... moves... talks&rsquo;) reduces Stanley to bestial functions. The speech is laced with class disgust &mdash; Stanley as the &lsquo;survivor of the stone age&rsquo; &mdash; and provokes his vendetta. Williams ironises Blanche: her revulsion is rooted in Old-South snobbery, but the audience is asked to weigh that against the genuine danger Stanley poses."
+                analysis="Blanche's denunciation of Stanley to Stella, overheard by him. The repetitive parallelism (&lsquo;eats... moves... talks&rsquo;) reduces Stanley to bestial functions. The speech is laced with class disgust - Stanley as the &lsquo;survivor of the stone age&rsquo; - and provokes his vendetta. Williams ironises Blanche: her revulsion is rooted in Old-South snobbery, but the audience is asked to weigh that against the genuine danger Stanley poses."
               />
               <QuoteCard
                 quote="a long way from being made in God's image, ... some progress since then!"
@@ -700,9 +689,9 @@ export default function StreetcarNamedDesirePage() {
                 analysis="Within the &lsquo;ape&rsquo; speech. The reference to the human as &lsquo;made in God's image&rsquo; situates the quarrel in a Christian-classical frame Blanche shares with the dying gentility of the Old South. &lsquo;Some progress&rsquo; is dryly understated; the implication is that Stanley represents a regression from civilisation. Williams gives Blanche a moralist's vocabulary even at her most snobbish."
               />
               <QuoteCard
-                quote="things that happen ... in the dark that sort of make everything else seem &mdash; unimportant."
+                quote="things that happen ... in the dark that sort of make everything else seem - unimportant."
                 speaker="Stella, Scene 4"
-                analysis="Stella's defence of her marriage. The euphemistic &lsquo;things that happen... in the dark&rsquo; refuses to specify but plainly invokes sex. The dash before &lsquo;unimportant&rsquo; is Williams's favourite mark for a half-acknowledged truth. Stella articulates the play's theme of desire as an obliterating force; everything else &mdash; abuse, class, decency &mdash; is rendered &lsquo;unimportant&rsquo; by it."
+                analysis="Stella's defence of her marriage. The euphemistic &lsquo;things that happen... in the dark&rsquo; refuses to specify but plainly invokes sex. The dash before &lsquo;unimportant&rsquo; is Williams's favourite mark for a half-acknowledged truth. Stella articulates the play's theme of desire as an obliterating force; everything else - abuse, class, decency - is rendered &lsquo;unimportant&rsquo; by it."
               />
               <QuoteCard
                 quote="We've had this date with each other from the beginning."
@@ -732,22 +721,22 @@ export default function StreetcarNamedDesirePage() {
               <QuoteCard
                 quote="I can't stand a naked light bulb, ... a rude remark or a vulgar action."
                 speaker="Blanche, Scene 3"
-                analysis="Blanche to Mitch as she covers the bulb with the paper lantern. The triple equation &mdash; bulb, rude remark, vulgar action &mdash; collapses literal and moral exposure. The bare bulb is rude; rudeness is a kind of bare bulb. Williams gives Blanche an aesthetic creed in a sentence: she requires soft light, soft speech, soft handling, and the world of Elysian Fields will deny her all three."
+                analysis="Blanche to Mitch as she covers the bulb with the paper lantern. The triple equation - bulb, rude remark, vulgar action - collapses literal and moral exposure. The bare bulb is rude; rudeness is a kind of bare bulb. Williams gives Blanche an aesthetic creed in a sentence: she requires soft light, soft speech, soft handling, and the world of Elysian Fields will deny her all three."
               />
               <QuoteCard
-                quote="Whoever you are &mdash; I have always depended on the kindness of strangers."
+                quote="Whoever you are - I have always depended on the kindness of strangers."
                 speaker="Blanche, Scene 11"
-                analysis="The full closing line, addressed to the Doctor whose face she has not properly seen. &lsquo;Whoever you are&rsquo; is the most painful phrase in the line: she no longer asks for identity, only courtesy. The triple dependence &mdash; on strangers, on kindness, on the protection of an unknown male hand &mdash; is Williams's final image of her condition. The Matron has been cruel; the Doctor is gentle; Blanche walks out on the gentle one."
+                analysis="The full closing line, addressed to the Doctor whose face she has not properly seen. &lsquo;Whoever you are&rsquo; is the most painful phrase in the line: she no longer asks for identity, only courtesy. The triple dependence - on strangers, on kindness, on the protection of an unknown male hand - is Williams's final image of her condition. The Matron has been cruel; the Doctor is gentle; Blanche walks out on the gentle one."
               />
               <QuoteCard
-                quote="Don't &mdash; don't hang back with the brutes!"
+                quote="Don't - don't hang back with the brutes!"
                 speaker="Blanche, Scene 4"
                 analysis="The climax of Blanche's ape-speech to Stella, urging her to leave Stanley. &lsquo;Brutes&rsquo; is a charged word in 1947 America, with overtones of bestiality and atavism. Stanley overhears the line, weaponising the insult into the personal antagonism that drives the second half of the play. Williams marks the moment at which their conflict becomes unavoidable."
               />
               <QuoteCard
                 quote="Poems a dead boy wrote."
                 speaker="Blanche, Scene 2"
-                analysis="When Stanley seizes the bundle of Allan Grey's papers. The four-word line &mdash; quietly devastating &mdash; is Blanche's most direct invocation of her dead husband. &lsquo;A dead boy&rsquo; refuses the dignity of a name and yet carries the entire weight of her grief. The scene establishes early that Blanche's past is mourned rather than boastful, and that Stanley's hands are an instinctive violation of the inner life he will keep tearing into."
+                analysis="When Stanley seizes the bundle of Allan Grey's papers. The four-word line - quietly devastating - is Blanche's most direct invocation of her dead husband. &lsquo;A dead boy&rsquo; refuses the dignity of a name and yet carries the entire weight of her grief. The scene establishes early that Blanche's past is mourned rather than boastful, and that Stanley's hands are an instinctive violation of the inner life he will keep tearing into."
               />
             </div>
           </Section>
@@ -888,16 +877,15 @@ export default function StreetcarNamedDesirePage() {
                       Thesis
                     </p>
                     <p className="mt-1 text-sm text-muted-foreground">
-                      Williams stages Blanche as primarily a victim &mdash; of bereavement,
-                      patriarchy, sexual violence and class displacement &mdash; but does not exempt
-                      her from agency: her cruelty to Allan Grey, her snobbery, and her
-                      self-deceptions are her own. The play&apos;s power lies in refusing to choose
-                      between these readings.
+                      Williams stages Blanche as primarily a victim - of bereavement, patriarchy,
+                      sexual violence and class displacement - but does not exempt her from agency:
+                      her cruelty to Allan Grey, her snobbery, and her self-deceptions are her own.
+                      The play&apos;s power lies in refusing to choose between these readings.
                     </p>
                   </div>
                   <div>
                     <p className="text-xs font-semibold text-violet-700 dark:text-violet-300 uppercase tracking-wider">
-                      Paragraph 1 &mdash; Victim of historical displacement
+                      Paragraph 1 - Victim of historical displacement
                     </p>
                     <p className="mt-1 text-sm text-muted-foreground">
                       Belle Reve, the &lsquo;long parade to the graveyard&rsquo;, the lost teaching
@@ -908,7 +896,7 @@ export default function StreetcarNamedDesirePage() {
                   </div>
                   <div>
                     <p className="text-xs font-semibold text-violet-700 dark:text-violet-300 uppercase tracking-wider">
-                      Paragraph 2 &mdash; Architect of her own ruin: Allan Grey
+                      Paragraph 2 - Architect of her own ruin: Allan Grey
                     </p>
                     <p className="mt-1 text-sm text-muted-foreground">
                       &lsquo;You disgust me.&rsquo; The dance-floor confession in Scene 6.
@@ -919,7 +907,7 @@ export default function StreetcarNamedDesirePage() {
                   </div>
                   <div>
                     <p className="text-xs font-semibold text-violet-700 dark:text-violet-300 uppercase tracking-wider">
-                      Paragraph 3 &mdash; Victim of patriarchal sexual codes
+                      Paragraph 3 - Victim of patriarchal sexual codes
                     </p>
                     <p className="mt-1 text-sm text-muted-foreground">
                       The Hotel Flamingo, the seventeen-year-old, Mitch&apos;s &lsquo;not clean
@@ -930,7 +918,7 @@ export default function StreetcarNamedDesirePage() {
                   </div>
                   <div>
                     <p className="text-xs font-semibold text-violet-700 dark:text-violet-300 uppercase tracking-wider">
-                      Paragraph 4 &mdash; Architect through illusion
+                      Paragraph 4 - Architect through illusion
                     </p>
                     <p className="mt-1 text-sm text-muted-foreground">
                       The paper lantern, &lsquo;magic&rsquo;, Shep Huntleigh, the rhinestone tiara.
@@ -972,7 +960,7 @@ export default function StreetcarNamedDesirePage() {
                   </div>
                   <div>
                     <p className="text-xs font-semibold text-violet-700 dark:text-violet-300 uppercase tracking-wider">
-                      Paragraph 1 &mdash; The new America
+                      Paragraph 1 - The new America
                     </p>
                     <p className="mt-1 text-sm text-muted-foreground">
                       Polish-American, working-class, ex-soldier. Williams&apos;s opening stage
@@ -983,7 +971,7 @@ export default function StreetcarNamedDesirePage() {
                   </div>
                   <div>
                     <p className="text-xs font-semibold text-violet-700 dark:text-violet-300 uppercase tracking-wider">
-                      Paragraph 2 &mdash; Truth-teller
+                      Paragraph 2 - Truth-teller
                     </p>
                     <p className="mt-1 text-sm text-muted-foreground">
                       The Napoleonic Code, the Hotel Flamingo, the bus ticket. Stanley relentlessly
@@ -994,7 +982,7 @@ export default function StreetcarNamedDesirePage() {
                   </div>
                   <div>
                     <p className="text-xs font-semibold text-violet-700 dark:text-violet-300 uppercase tracking-wider">
-                      Paragraph 3 &mdash; Sexuality and violence
+                      Paragraph 3 - Sexuality and violence
                     </p>
                     <p className="mt-1 text-sm text-muted-foreground">
                       &lsquo;STELLA!&rsquo;, the smashed radio, the rape. Williams insists on
@@ -1005,7 +993,7 @@ export default function StreetcarNamedDesirePage() {
                   </div>
                   <div>
                     <p className="text-xs font-semibold text-violet-700 dark:text-violet-300 uppercase tracking-wider">
-                      Paragraph 4 &mdash; Refusal of melodrama
+                      Paragraph 4 - Refusal of melodrama
                     </p>
                     <p className="mt-1 text-sm text-muted-foreground">
                       The closing poker game, Stanley comforting Stella as Blanche is led out.
@@ -1037,7 +1025,7 @@ export default function StreetcarNamedDesirePage() {
                   </div>
                   <div>
                     <p className="text-xs font-semibold text-violet-700 dark:text-violet-300 uppercase tracking-wider">
-                      Paragraph 1 &mdash; Sound: the Varsouviana
+                      Paragraph 1 - Sound: the Varsouviana
                     </p>
                     <p className="mt-1 text-sm text-muted-foreground">
                       Polka music tied to Allan Grey&apos;s suicide; only Blanche hears it;
@@ -1047,7 +1035,7 @@ export default function StreetcarNamedDesirePage() {
                   </div>
                   <div>
                     <p className="text-xs font-semibold text-violet-700 dark:text-violet-300 uppercase tracking-wider">
-                      Paragraph 2 &mdash; Sound: the blue piano and the street
+                      Paragraph 2 - Sound: the blue piano and the street
                     </p>
                     <p className="mt-1 text-sm text-muted-foreground">
                       The blue piano &lsquo;goes into a hectic breakdown&rsquo; in Scene 10; the cry
@@ -1058,7 +1046,7 @@ export default function StreetcarNamedDesirePage() {
                   </div>
                   <div>
                     <p className="text-xs font-semibold text-violet-700 dark:text-violet-300 uppercase tracking-wider">
-                      Paragraph 3 &mdash; Light and the paper lantern
+                      Paragraph 3 - Light and the paper lantern
                     </p>
                     <p className="mt-1 text-sm text-muted-foreground">
                       The paper lantern as physical metaphor for self-protection; Mitch tearing it
@@ -1069,7 +1057,7 @@ export default function StreetcarNamedDesirePage() {
                   </div>
                   <div>
                     <p className="text-xs font-semibold text-violet-700 dark:text-violet-300 uppercase tracking-wider">
-                      Paragraph 4 &mdash; The transparent walls of Scene 10
+                      Paragraph 4 - The transparent walls of Scene 10
                     </p>
                     <p className="mt-1 text-sm text-muted-foreground">
                       In the rape scene the walls of the flat &lsquo;become transparent&rsquo; and
@@ -1112,7 +1100,7 @@ export default function StreetcarNamedDesirePage() {
                   </div>
                   <div>
                     <p className="text-xs font-semibold text-violet-700 dark:text-violet-300 uppercase tracking-wider">
-                      Paragraph 1 &mdash; The streetcar itinerary
+                      Paragraph 1 - The streetcar itinerary
                     </p>
                     <p className="mt-1 text-sm text-muted-foreground">
                       Blanche&apos;s opening journey. Desire to Cemeteries to Elysian Fields. The
@@ -1121,7 +1109,7 @@ export default function StreetcarNamedDesirePage() {
                   </div>
                   <div>
                     <p className="text-xs font-semibold text-violet-700 dark:text-violet-300 uppercase tracking-wider">
-                      Paragraph 2 &mdash; Allan Grey
+                      Paragraph 2 - Allan Grey
                     </p>
                     <p className="mt-1 text-sm text-muted-foreground">
                       Blanche&apos;s desire for the &lsquo;tenderness&rsquo; of a young man, her
@@ -1132,7 +1120,7 @@ export default function StreetcarNamedDesirePage() {
                   </div>
                   <div>
                     <p className="text-xs font-semibold text-violet-700 dark:text-violet-300 uppercase tracking-wider">
-                      Paragraph 3 &mdash; Belle Reve and the &lsquo;long parade&rsquo;
+                      Paragraph 3 - Belle Reve and the &lsquo;long parade&rsquo;
                     </p>
                     <p className="mt-1 text-sm text-muted-foreground">
                       The &lsquo;epic fornications&rsquo; of the male DuBois ancestors that ruin the
@@ -1143,7 +1131,7 @@ export default function StreetcarNamedDesirePage() {
                   </div>
                   <div>
                     <p className="text-xs font-semibold text-violet-700 dark:text-violet-300 uppercase tracking-wider">
-                      Paragraph 4 &mdash; Stanley&apos;s rape
+                      Paragraph 4 - Stanley&apos;s rape
                     </p>
                     <p className="mt-1 text-sm text-muted-foreground">
                       &lsquo;We&apos;ve had this date with each other from the beginning.&rsquo; The
@@ -1157,9 +1145,9 @@ export default function StreetcarNamedDesirePage() {
                       Conclusion
                     </p>
                     <p className="mt-1 text-sm text-muted-foreground">
-                      Blanche&apos;s reply to Mitch &mdash; &lsquo;The opposite is desire&rsquo;
-                      &mdash; turns out to be the play&apos;s false premise. Desire is not the
-                      opposite of death but its companion, perhaps even its agent.
+                      Blanche&apos;s reply to Mitch - &lsquo;The opposite is desire&rsquo; - turns
+                      out to be the play&apos;s false premise. Desire is not the opposite of death
+                      but its companion, perhaps even its agent.
                     </p>
                   </div>
                 </div>
@@ -1186,7 +1174,7 @@ export default function StreetcarNamedDesirePage() {
                   </div>
                   <div>
                     <p className="text-xs font-semibold text-violet-700 dark:text-violet-300 uppercase tracking-wider">
-                      Paragraph 1 &mdash; Blanche and the policing of female sexuality
+                      Paragraph 1 - Blanche and the policing of female sexuality
                     </p>
                     <p className="mt-1 text-sm text-muted-foreground">
                       The double standard at Laurel: she is sacked, Stanley&apos;s appetites are
@@ -1197,7 +1185,7 @@ export default function StreetcarNamedDesirePage() {
                   </div>
                   <div>
                     <p className="text-xs font-semibold text-violet-700 dark:text-violet-300 uppercase tracking-wider">
-                      Paragraph 2 &mdash; Stella&apos;s economic and biological dependence
+                      Paragraph 2 - Stella&apos;s economic and biological dependence
                     </p>
                     <p className="mt-1 text-sm text-muted-foreground">
                       The pregnancy, the Napoleonic Code, the inability to leave. Stella&apos;s
@@ -1208,7 +1196,7 @@ export default function StreetcarNamedDesirePage() {
                   </div>
                   <div>
                     <p className="text-xs font-semibold text-violet-700 dark:text-violet-300 uppercase tracking-wider">
-                      Paragraph 3 &mdash; Eunice and working-class women
+                      Paragraph 3 - Eunice and working-class women
                     </p>
                     <p className="mt-1 text-sm text-muted-foreground">
                       &lsquo;Don&apos;t ever believe it. Life has got to go on.&rsquo; Eunice&apos;s
@@ -1219,7 +1207,7 @@ export default function StreetcarNamedDesirePage() {
                   </div>
                   <div>
                     <p className="text-xs font-semibold text-violet-700 dark:text-violet-300 uppercase tracking-wider">
-                      Paragraph 4 &mdash; Rose Williams and the asylum
+                      Paragraph 4 - Rose Williams and the asylum
                     </p>
                     <p className="mt-1 text-sm text-muted-foreground">
                       Williams&apos;s sister Rose, lobotomised in 1943, stands behind Blanche&apos;s
@@ -1256,8 +1244,8 @@ export default function StreetcarNamedDesirePage() {
             <span>
               <strong>{tr(`Treat the play as a play.`)}</strong> AQA and OCR examiners reward
               analysis of stagecraft. Discuss Williams&apos;s stage directions, the Varsouviana, the
-              blue piano, transparent walls, the paper lantern &mdash; these are dramatic methods,
-              not background detail.
+              blue piano, transparent walls, the paper lantern - these are dramatic methods, not
+              background detail.
             </span>
           </li>
           <li className="flex items-start gap-2">

@@ -250,12 +250,12 @@ export default async function ArticlesPage() {
         <span>{await t('ks3.page.text_types.articles.bc')}</span>
       </p>
 
-      <h1>Newspaper &amp; magazine articles &mdash; reading and writing</h1>
+      <h1>Newspaper &amp; magazine articles - reading and writing</h1>
       <p className="lead">
         Newspaper and magazine articles are one of the non-fiction text types you may meet in
         Section A and may be asked to write in Section B. This guide covers the conventions of the
         form, how to analyse an article when you read it, and how to write one for the writing task
-        &mdash; with two short original examples, practice questions and model answers.
+        - with two short original examples, practice questions and model answers.
       </p>
 
       <section className="my-10">
@@ -264,9 +264,9 @@ export default async function ArticlesPage() {
           &ldquo;{ARTICLES_TYPE}&rdquo; is listed among the non-fiction text types for this
           qualification, alongside{' '}
           {NON_FICTION_TEXT_TYPES.filter((t) => t !== ARTICLES_TYPE).join(', ')}. Articles can serve
-          any of the non-fiction purposes &mdash; {NON_FICTION_PURPOSES.join(', ')} &mdash; and a
-          single article often combines several: a news report mainly informs, while an opinion
-          column mainly argues or persuades.
+          any of the non-fiction purposes - {NON_FICTION_PURPOSES.join(', ')} - and a single article
+          often combines several: a news report mainly informs, while an opinion column mainly
+          argues or persuades.
         </p>
       </section>
 
@@ -275,7 +275,7 @@ export default async function ArticlesPage() {
         <p>
           An examiner reading your Section B article, or asking you to comment on one in Section A,
           expects these conventions. For each, the column that earns marks when you analyse is the
-          last one &mdash; the effect.
+          last one - the effect.
         </p>
         <div className="not-prose my-6 space-y-3">
           {CONVENTIONS.map((c) => (
@@ -331,8 +331,8 @@ export default async function ArticlesPage() {
         <h2>Learning toolkit: guided-reading prompts</h2>
         <p>
           These prompts are taken from the iLowerSecondary Teacher&rsquo;s Guide guided-reading
-          routine for non-fiction. Ask them of any article before you write an analysis answer
-          &mdash; they train you to read like an examiner.
+          routine for non-fiction. Ask them of any article before you write an analysis answer -
+          they train you to read like an examiner.
         </p>
         <div className="not-prose my-6 grid gap-3 sm:grid-cols-2">
           <div className="rounded-xl border border-primary/30 bg-primary/5 p-5">
@@ -367,10 +367,10 @@ export default async function ArticlesPage() {
       <section className="my-10">
         <h2>Two short original examples, annotated</h2>
         <p>
-          The two articles below are <strong>original texts written for this page</strong> &mdash;
-          they are not reproduced from any real newspaper or magazine, and the events and people in
-          them are invented. Read each one through, then study the annotations to see the
-          conventions at work.
+          The two articles below are <strong>original texts written for this page</strong> - they
+          are not reproduced from any real newspaper or magazine, and the events and people in them
+          are invented. Read each one through, then study the annotations to see the conventions at
+          work.
         </p>
 
         {EXAMPLES.map((ex) => (
@@ -448,8 +448,8 @@ export default async function ArticlesPage() {
 
         <h3>Model opening</h3>
         <p>
-          This is an <strong>original model opening</strong>, not a complete answer &mdash; it shows
-          the conventions in place so you can continue it with supporting detail and a background
+          This is an <strong>original model opening</strong>, not a complete answer - it shows the
+          conventions in place so you can continue it with supporting detail and a background
           paragraph in the inverted-pyramid order.
         </p>
         <div className="not-prose my-4 rounded-xl border border-border/60 bg-card p-5">
@@ -466,7 +466,7 @@ export default async function ArticlesPage() {
         <p className="text-sm text-muted-foreground">
           Notice the plain present-tense headline, the one-sentence strapline, the impersonal
           byline, a lead that answers who/what/where/when at once, and a named quotation for
-          authority &mdash; all in a formal register, with no opinion from the writer.
+          authority - all in a formal register, with no opinion from the writer.
         </p>
       </section>
 

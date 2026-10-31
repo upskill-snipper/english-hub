@@ -134,7 +134,7 @@ function ThemeTag({ theme }: { theme: string }) {
 function ComparisonSuggestion({ poem, reason }: { poem: string; reason: string }) {
   return (
     <li className="text-sm text-muted-foreground">
-      <span className="font-semibold text-foreground">{poem}</span> &mdash; {reason}
+      <span className="font-semibold text-foreground">{poem}</span> - {reason}
     </li>
   )
 }
@@ -723,11 +723,11 @@ export default function LoveAndRelationshipsPage() {
 
               <SubSection title="Summary">
                 <p className="text-sm text-muted-foreground leading-relaxed">
-                  The speaker uses a series of examples from the natural world &mdash; rivers
-                  meeting the sea, winds merging, flowers clasping &mdash; to argue that all things
-                  in nature exist in pairs and unions. The rhetorical logic is: if nature is
-                  designed for togetherness, then the beloved&apos;s refusal to reciprocate love is
-                  unnatural. Each stanza ends with a direct, frustrated appeal.
+                  The speaker uses a series of examples from the natural world - rivers meeting the
+                  sea, winds merging, flowers clasping - to argue that all things in nature exist in
+                  pairs and unions. The rhetorical logic is: if nature is designed for togetherness,
+                  then the beloved&apos;s refusal to reciprocate love is unnatural. Each stanza ends
+                  with a direct, frustrated appeal.
                 </p>
               </SubSection>
 
@@ -837,9 +837,9 @@ export default function LoveAndRelationshipsPage() {
                   Robert Browning was a Victorian poet known for his dramatic monologues that
                   explore the psychology of disturbed or morally complex speakers. This poem is one
                   of his earliest, published in 1836. It was written during the Victorian era when
-                  strict social hierarchies governed relationships &mdash; Porphyria appears to be
-                  of a higher social class. The poem explores obsessive love and the desire to
-                  possess another person completely.
+                  strict social hierarchies governed relationships - Porphyria appears to be of a
+                  higher social class. The poem explores obsessive love and the desire to possess
+                  another person completely.
                 </p>
               </SubSection>
 
@@ -1057,9 +1057,9 @@ export default function LoveAndRelationshipsPage() {
               <SubSection title="Form &amp; Structure">
                 <p className="text-sm text-muted-foreground leading-relaxed">
                   Four quatrains with an ABBA rhyme scheme (envelope rhyme). The cyclical structure
-                  &mdash; beginning and ending at the pond &mdash; traps the speaker in the painful
-                  memory, suggesting they cannot move past it. The regularity of the form contrasts
-                  with the emotional devastation, creating an effect of numb control. The
+                  - beginning and ending at the pond - traps the speaker in the painful memory,
+                  suggesting they cannot move past it. The regularity of the form contrasts with the
+                  emotional devastation, creating an effect of numb control. The
                   &ldquo;neutral&rdquo; title is ironic: nothing here is emotionally neutral.
                 </p>
               </SubSection>
@@ -1136,10 +1136,10 @@ export default function LoveAndRelationshipsPage() {
               <SubSection title="Context">
                 <p className="text-sm text-muted-foreground leading-relaxed">
                   Maura Dooley is a contemporary poet. This poem explores the connection between two
-                  people who live very different lives &mdash; one in Yorkshire, connected to the
-                  land and seasons, the other presumably in a city, working with words and screens.
-                  The poem questions whether a life closer to nature is more authentic and
-                  celebrates how communication can bridge distance.
+                  people who live very different lives - one in Yorkshire, connected to the land and
+                  seasons, the other presumably in a city, working with words and screens. The poem
+                  questions whether a life closer to nature is more authentic and celebrates how
+                  communication can bridge distance.
                 </p>
               </SubSection>
 
@@ -1901,10 +1901,10 @@ export default function LoveAndRelationshipsPage() {
               <SubSection title="Form &amp; Structure">
                 <p className="text-sm text-muted-foreground leading-relaxed">
                   Mostly tercets (three-line stanzas) with a final couplet. The tercets create an
-                  uneven, off-balance feeling &mdash; like the couple&apos;s relationship. The shift
-                  to a couplet at the end symbolises the couple coming back together: two lines
-                  united, just as two people reunite. Enjambment throughout mirrors the continuous,
-                  flowing movement of the walk and the gradual process of reconciliation.
+                  uneven, off-balance feeling - like the couple&apos;s relationship. The shift to a
+                  couplet at the end symbolises the couple coming back together: two lines united,
+                  just as two people reunite. Enjambment throughout mirrors the continuous, flowing
+                  movement of the walk and the gradual process of reconciliation.
                 </p>
               </SubSection>
 
@@ -1979,8 +1979,7 @@ export default function LoveAndRelationshipsPage() {
                   corner shop with his love for his new wife. The poem celebrates cultural
                   hybridity, using phonetic Punjabi-English to capture the vitality of a
                   multicultural Britain. The exclamation mark in the title suggests joy and energy.
-                  &ldquo;Singh&rdquo; puns on &ldquo;sing&rdquo; &mdash; this is literally a song of
-                  love.
+                  &ldquo;Singh&rdquo; puns on &ldquo;sing&rdquo; - this is literally a song of love.
                 </p>
               </SubSection>
 
@@ -1988,11 +1987,11 @@ export default function LoveAndRelationshipsPage() {
                 <p className="text-sm text-muted-foreground leading-relaxed">
                   The speaker is a young shopkeeper who repeatedly leaves his father&apos;s shop
                   unattended to be with his new wife upstairs. Customers complain about the state of
-                  the shop, but the speaker doesn&apos;t care &mdash; his wife is more important.
-                  The poem alternates between the complaints of customers (in italics) and the
-                  speaker&apos;s joyful descriptions of his wife and their love. The poem ends with
-                  the couple sitting in the shop at midnight, looking at the moon, completely
-                  absorbed in each other.
+                  the shop, but the speaker doesn&apos;t care - his wife is more important. The poem
+                  alternates between the complaints of customers (in italics) and the speaker&apos;s
+                  joyful descriptions of his wife and their love. The poem ends with the couple
+                  sitting in the shop at midnight, looking at the moon, completely absorbed in each
+                  other.
                 </p>
               </SubSection>
 
@@ -2375,8 +2374,8 @@ export default function LoveAndRelationshipsPage() {
       <section className="mx-auto max-w-6xl px-4 py-6 sm:px-6 lg:px-8">
         <div className="rounded-lg border border-border/40 bg-muted/30 px-4 py-3 text-[11px] leading-relaxed text-muted-foreground">
           <strong className="text-foreground">Rights notice.</strong> Several AQA Love &amp;
-          Relationships poems remain in copyright &mdash; including Heaney&rsquo;s <em>Follower</em>{' '}
-          (from <em>Death of a Naturalist</em>, Faber &amp; Faber, 1966), Armitage&rsquo;s{' '}
+          Relationships poems remain in copyright - including Heaney&rsquo;s <em>Follower</em> (from{' '}
+          <em>Death of a Naturalist</em>, Faber &amp; Faber, 1966), Armitage&rsquo;s{' '}
           <em>Mother, any distance</em> (from <em>Book of Matches</em>, Faber &amp; Faber, 1993),
           Sheers&rsquo;s <em>Winter Swans</em> (from <em>Skirrid Hill</em>, Seren, 2005),
           Duffy&rsquo;s <em>Before You Were Mine</em> (from <em>Mean Time</em>, Anvil, 1993),

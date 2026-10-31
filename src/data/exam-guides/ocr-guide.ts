@@ -282,7 +282,7 @@ export const ocrGuide: BoardExamGuide = {
               skill: 'Compare studied extract with unseen passage; analyse language and context',
               time: '25\u201328 minutes',
               advice:
-                'This is OCR\u2019s signature question format. You <strong>must</strong> write about both the studied extract and the unseen passage in an integrated way \u2014 weaving comparison throughout, not bolting it on at the end. For the studied text, deploy your knowledge of context and wider themes. For the unseen, apply close reading skills to find connections and contrasts. Level 6 requires "sustained, interwoven comparison" so aim for at least one reference to both texts in every paragraph.',
+                'This is OCR\u2019s signature question format. You <strong>must</strong> write about both the studied extract and the unseen passage in an integrated way - weaving comparison throughout, not bolting it on at the end. For the studied text, deploy your knowledge of context and wider themes. For the unseen, apply close reading skills to find connections and contrasts. Level 6 requires "sustained, interwoven comparison" so aim for at least one reference to both texts in every paragraph.',
             },
             {
               question: 'Part (b): Whole-text essay on your studied modern prose or drama text.',
@@ -308,7 +308,7 @@ export const ocrGuide: BoardExamGuide = {
                 'Compare studied 19th-century extract with unseen passage; analyse language and historical context',
               time: '25\u201328 minutes',
               advice:
-                'Apply the same interwoven comparison approach as Section A Part (a). The 19th-century context is crucial here \u2014 connect the themes of both passages to the social, historical and literary context of the era (e.g. Victorian values, industrialisation, class, gender). The unseen passage may be from the same or a different period; use this to sharpen your comparison.',
+                'Apply the same interwoven comparison approach as Section A Part (a). The 19th-century context is crucial here - connect the themes of both passages to the social, historical and literary context of the era (e.g. Victorian values, industrialisation, class, gender). The unseen passage may be from the same or a different period; use this to sharpen your comparison.',
             },
             {
               question: 'Part (b): Whole-text essay on your studied 19th-century novel.',
@@ -317,7 +317,7 @@ export const ocrGuide: BoardExamGuide = {
               skill: 'Sustained critical response across the entire 19th-century text',
               time: '25\u201328 minutes',
               advice:
-                'Range is essential \u2014 draw examples from across the whole novel, not just the most well-known scenes. Embed contextual knowledge naturally: show how the writer reflects or challenges the attitudes of their time. Use precise literary terminology and maintain a confident, critical voice throughout.',
+                'Range is essential - draw examples from across the whole novel, not just the most well-known scenes. Embed contextual knowledge naturally: show how the writer reflects or challenges the attitudes of their time. Use precise literary terminology and maintain a confident, critical voice throughout.',
             },
           ],
         },
@@ -343,7 +343,7 @@ export const ocrGuide: BoardExamGuide = {
               skill: 'Compare studied poem with unseen poem; analyse poetic methods',
               time: '25\u201328 minutes',
               advice:
-                'Read the unseen poem carefully at least twice before writing. Identify the shared theme and then explore how each poet treats it differently through their choices of language, imagery, form and structure. Use comparative connectives throughout (\u201cWhereas\u201d, \u201cConversely\u201d, \u201cBoth poets\u201d). Do <strong>not</strong> write about one poem and then the other \u2014 integrate your comparison paragraph by paragraph.',
+                'Read the unseen poem carefully at least twice before writing. Identify the shared theme and then explore how each poet treats it differently through their choices of language, imagery, form and structure. Use comparative connectives throughout (\u201cWhereas\u201d, \u201cConversely\u201d, \u201cBoth poets\u201d). Do <strong>not</strong> write about one poem and then the other - integrate your comparison paragraph by paragraph.',
             },
             {
               question:
@@ -477,7 +477,7 @@ export const ocrGuide: BoardExamGuide = {
         'The Part (a) linked-unseen question is OCR\u2019s signature format. You MUST write about both the studied extract and the unseen passage.',
         'Treat the unseen passage as an equal partner, not an afterthought. Aim for roughly equal coverage of both texts.',
         'For the studied text, deploy your contextual knowledge and awareness of the wider work. For the unseen, rely on close reading and inference.',
-        'The Part (b) whole-text essay requires range \u2014 draw on moments from across the entire text, not just the most famous scenes.',
+        'The Part (b) whole-text essay requires range - draw on moments from across the entire text, not just the most famous scenes.',
       ],
     },
     {
@@ -494,15 +494,15 @@ export const ocrGuide: BoardExamGuide = {
       tips: [
         'You have a genuine choice between extract-based and whole-play essay. Choose the route that plays to your strengths.',
         'For the extract route: analyse the passage in close detail first, then broaden to the whole play. Do not neglect either half.',
-        'Context must be embedded naturally. Avoid bolted-on paragraphs about \u201cIn Elizabethan times...\u201d \u2014 instead, weave contextual understanding into your analysis of the text.',
-        'Shakespeare\u2019s language is dense \u2014 select 3\u20134 short, precise quotations rather than copying out long passages. Analyse individual word choices.',
+        'Context must be embedded naturally. Avoid bolted-on paragraphs about \u201cIn Elizabethan times...\u201d - instead, weave contextual understanding into your analysis of the text.',
+        'Shakespeare\u2019s language is dense - select 3\u20134 short, precise quotations rather than copying out long passages. Analyse individual word choices.',
       ],
     },
     {
       question: 'OCR Marking Guide Annotation System',
       tips: [
         'OCR markers use a tick-based annotation: \u2713 (relevant point), \u2713+ (developed point), \u2713++ (analytical/perceptive point).',
-        'To earn \u2713++ annotations, go beyond identification and explanation \u2014 explore alternative interpretations, connotations, and the effect on different readers.',
+        'To earn \u2713++ annotations, go beyond identification and explanation - explore alternative interpretations, connotations, and the effect on different readers.',
         'A response full of \u2713 ticks but no \u2713++ will cap at Level 3\u20134. The top levels require consistent analytical depth.',
         'Markers are trained to reward quality over quantity. Five well-developed \u2713++ points will outscore ten superficial \u2713 points.',
       ],
@@ -530,13 +530,13 @@ export const ocrGuide: BoardExamGuide = {
 
   // ─── Unique Features ─────────────────────────────────────────────────────────
   uniqueFeatures: [
-    '<strong>Linked-unseen format</strong> \u2014 unique to OCR. In Literature, every Part (a) question pairs a studied text extract with an unseen passage on the same theme, requiring integrated comparison.',
+    '<strong>Linked-unseen format</strong> - unique to OCR. In Literature, every Part (a) question pairs a studied text extract with an unseen passage on the same theme, requiring integrated comparison.',
     '<strong>Cross-text comparison in both Language components</strong>: in each, Question 4 asks you to evaluate a statement about two unseen texts and compare them, non-fiction from two centuries in Component 01 and 20th or 21st-century literary prose in Component 02.',
     '<strong>One writing task in each Language component</strong>: Question 5 or 6, chosen from two, worth 40 marks, half the paper, with 24 for content and organisation and 16 for technical accuracy.',
-    '<strong>Tick-based marking guide annotation</strong> \u2014 markers use \u2713 (relevant), \u2713+ (developed), and \u2713++ (analytical/perceptive) to annotate responses, providing clear differentiation.',
-    '<strong>Level 6 requires "sustained, interwoven comparison"</strong> \u2014 comparison must run throughout every paragraph, not just appear in the introduction and conclusion.',
-    '<strong>AO1 and AO2 are equally weighted as dominant objectives</strong> in Literature \u2014 both carry ~30%, meaning personal response and language analysis are equally important.',
-    '<strong>Poetry anthology includes unseen comparison</strong> \u2014 Part (a) of the poetry section compares a studied anthology poem with a thematically linked unseen poem, testing genuine analytical skill rather than memorisation.',
-    '<strong>Shakespeare offers a genuine choice</strong> \u2014 students can opt for either an extract-based question or a whole-play essay, allowing them to play to their strengths.',
+    '<strong>Tick-based marking guide annotation</strong> - markers use \u2713 (relevant), \u2713+ (developed), and \u2713++ (analytical/perceptive) to annotate responses, providing clear differentiation.',
+    '<strong>Level 6 requires "sustained, interwoven comparison"</strong> - comparison must run throughout every paragraph, not just appear in the introduction and conclusion.',
+    '<strong>AO1 and AO2 are equally weighted as dominant objectives</strong> in Literature - both carry ~30%, meaning personal response and language analysis are equally important.',
+    '<strong>Poetry anthology includes unseen comparison</strong> - Part (a) of the poetry section compares a studied anthology poem with a thematically linked unseen poem, testing genuine analytical skill rather than memorisation.',
+    '<strong>Shakespeare offers a genuine choice</strong> - students can opt for either an extract-based question or a whole-play essay, allowing them to play to their strengths.',
   ],
 }

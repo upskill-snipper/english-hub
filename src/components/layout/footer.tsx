@@ -230,9 +230,7 @@ export function Footer({ lastUpdated }: { lastUpdated?: string }) {
               <Badge variant="secondary" className="bg-white/10 text-[#FBF7F0] border-0">
                 {boardConfig.shortName}
               </Badge>
-              <span className="hidden text-[#B5B8B3] sm:inline">
-                &mdash; {boardConfig.fullName}
-              </span>
+              <span className="hidden text-[#B5B8B3] sm:inline">- {boardConfig.fullName}</span>
             </div>
             <Link
               href="/board-select?change=1"

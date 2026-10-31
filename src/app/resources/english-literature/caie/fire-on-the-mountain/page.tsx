@@ -9,12 +9,12 @@ const characters = [
   {
     name: 'Nanda Kaul',
     description:
-      'The novel\u2019s central consciousness: a retired great-grandmother who has withdrawn to Carignano, a crumbling colonial house on a Kasauli ridge, to live in absolute solitude. Throughout the novel Desai reveals that Nanda\u2019s serene isolation is built on self-deception: her marriage to a Vice-Chancellor was loveless, her life as the \u2018perfect hostess\u2019 was a performance, and her children bring her no joy. She constructs an idealised narrative of her past and resents any intrusion that threatens it. Her reluctant acceptance of Raka and her devastating phone call with Ila Das force her to confront the gap between the life she has invented and the life she actually lived. She is Desai\u2019s study of how withdrawal can become its own kind of violence \u2014 an erasure of truth.',
+      'The novel\u2019s central consciousness: a retired great-grandmother who has withdrawn to Carignano, a crumbling colonial house on a Kasauli ridge, to live in absolute solitude. Throughout the novel Desai reveals that Nanda\u2019s serene isolation is built on self-deception: her marriage to a Vice-Chancellor was loveless, her life as the \u2018perfect hostess\u2019 was a performance, and her children bring her no joy. She constructs an idealised narrative of her past and resents any intrusion that threatens it. Her reluctant acceptance of Raka and her devastating phone call with Ila Das force her to confront the gap between the life she has invented and the life she actually lived. She is Desai\u2019s study of how withdrawal can become its own kind of violence - an erasure of truth.',
   },
   {
     name: 'Raka',
     description:
-      'Nanda Kaul\u2019s great-granddaughter, sent to Carignano to recover from an illness. Raka is feral, silent, and self-sufficient \u2014 a child who genuinely desires the solitude that Nanda only pretends to want. She is drawn to the wild ravine below the house and to images of destruction: the charred hillside, the abandoned pasteur institute, jackals, and fire. Unlike Nanda, whose isolation is a retreat from pain, Raka\u2019s is instinctive and unperformative. She has witnessed domestic violence (her father beating her mother) and carries trauma wordlessly. Her act of setting fire to the hillside in the novel\u2019s final line is both literal and symbolic \u2014 a child\u2019s destructive response to a world built on lies and violence.',
+      'Nanda Kaul\u2019s great-granddaughter, sent to Carignano to recover from an illness. Raka is feral, silent, and self-sufficient - a child who genuinely desires the solitude that Nanda only pretends to want. She is drawn to the wild ravine below the house and to images of destruction: the charred hillside, the abandoned pasteur institute, jackals, and fire. Unlike Nanda, whose isolation is a retreat from pain, Raka\u2019s is instinctive and unperformative. She has witnessed domestic violence (her father beating her mother) and carries trauma wordlessly. Her act of setting fire to the hillside in the novel\u2019s final line is both literal and symbolic - a child\u2019s destructive response to a world built on lies and violence.',
   },
   {
     name: 'Ila Das',
@@ -32,7 +32,7 @@ const themes = [
   {
     name: 'Isolation & Withdrawal',
     detail:
-      'The central preoccupation of the novel. Nanda Kaul seeks total solitude at Carignano, wanting \u2018nothing and no one\u2019. But Desai complicates this: Nanda\u2019s withdrawal is not peace but avoidance. She is fleeing a lifetime of emotional servitude as wife, mother, and hostess. Raka, by contrast, is naturally solitary \u2014 her isolation is authentic, not performed. Desai suggests that true withdrawal may be impossible in a world where human connections, however painful, are inescapable. Ila Das\u2019s intrusion and death shatter Nanda\u2019s carefully constructed solitude, proving that retreat from the world is ultimately a form of self-deception.',
+      'The central preoccupation of the novel. Nanda Kaul seeks total solitude at Carignano, wanting \u2018nothing and no one\u2019. But Desai complicates this: Nanda\u2019s withdrawal is not peace but avoidance. She is fleeing a lifetime of emotional servitude as wife, mother, and hostess. Raka, by contrast, is naturally solitary - her isolation is authentic, not performed. Desai suggests that true withdrawal may be impossible in a world where human connections, however painful, are inescapable. Ila Das\u2019s intrusion and death shatter Nanda\u2019s carefully constructed solitude, proving that retreat from the world is ultimately a form of self-deception.',
   },
   {
     name: 'Reality vs Illusion',
@@ -47,12 +47,12 @@ const themes = [
   {
     name: 'The Natural World',
     detail:
-      'Kasauli\u2019s landscape is not merely setting but a psychological mirror. The mountain, pines, ravine, and sky reflect the inner states of the characters. The natural world is presented as both beautiful and threatening: apricots ripen, but jackals scavenge; the view is magnificent, but the gorge is treacherous. Desai uses the environment to externalise emotion \u2014 the gathering heat mirrors rising tension, and fire (natural yet destructive) becomes the novel\u2019s central symbol. Nature in this novel is indifferent to human suffering, and its beauty does not redeem the violence it contains.',
+      'Kasauli\u2019s landscape is not merely setting but a psychological mirror. The mountain, pines, ravine, and sky reflect the inner states of the characters. The natural world is presented as both beautiful and threatening: apricots ripen, but jackals scavenge; the view is magnificent, but the gorge is treacherous. Desai uses the environment to externalise emotion - the gathering heat mirrors rising tension, and fire (natural yet destructive) becomes the novel\u2019s central symbol. Nature in this novel is indifferent to human suffering, and its beauty does not redeem the violence it contains.',
   },
   {
     name: 'Female Identity & Independence',
     detail:
-      'All three female protagonists embody different responses to patriarchal constraint. Nanda Kaul spent her life performing the role of dutiful wife and mother, suppressing her own desires; her retirement is an attempt to reclaim selfhood, but it is hollow because she has no authentic self left to reclaim. Ila Das fights actively for women\u2019s rights (against child marriage) but is destroyed by the very patriarchal violence she opposes. Raka, the child, rejects social roles entirely \u2014 she is pre-socialised, wild, and unconstrained. Desai offers no easy feminist resolution: each woman\u2019s path leads to pain, loss, or destruction.',
+      'All three female protagonists embody different responses to patriarchal constraint. Nanda Kaul spent her life performing the role of dutiful wife and mother, suppressing her own desires; her retirement is an attempt to reclaim selfhood, but it is hollow because she has no authentic self left to reclaim. Ila Das fights actively for women\u2019s rights (against child marriage) but is destroyed by the very patriarchal violence she opposes. Raka, the child, rejects social roles entirely - she is pre-socialised, wild, and unconstrained. Desai offers no easy feminist resolution: each woman\u2019s path leads to pain, loss, or destruction.',
   },
   {
     name: 'Old Age',
@@ -75,7 +75,7 @@ const chapterSummary = [
       {
         text: 'She had spent a lifetime, exposed, to eyes that cared nothing for her.',
         analysis:
-          'Reveals the hollowness of her past social role. The verb \u2018exposed\u2019 suggests vulnerability, not visibility \u2014 she was seen but never truly known.',
+          'Reveals the hollowness of her past social role. The verb \u2018exposed\u2019 suggests vulnerability, not visibility - she was seen but never truly known.',
       },
     ],
   },
@@ -99,7 +99,7 @@ const chapterSummary = [
   {
     section: 'Part 3: Ila Das\u2019s Visit',
     summary:
-      'Ila Das, Nanda\u2019s old friend, arrives uninvited for an afternoon visit. She is garrulous, impoverished, and pathetic \u2014 the opposite of Nanda\u2019s composed withdrawal. She reminisces about their youth, inadvertently exposing the lies in Nanda\u2019s self-constructed narrative: the Vice-Chancellor\u2019s infidelity, Nanda\u2019s suppressed misery. Ila Das describes her work campaigning against child marriage and her confrontation with Preet Singh, who has threatened her for trying to prevent his daughter\u2019s marriage. Nanda, uncomfortable, does not offer to walk her home.',
+      'Ila Das, Nanda\u2019s old friend, arrives uninvited for an afternoon visit. She is garrulous, impoverished, and pathetic - the opposite of Nanda\u2019s composed withdrawal. She reminisces about their youth, inadvertently exposing the lies in Nanda\u2019s self-constructed narrative: the Vice-Chancellor\u2019s infidelity, Nanda\u2019s suppressed misery. Ila Das describes her work campaigning against child marriage and her confrontation with Preet Singh, who has threatened her for trying to prevent his daughter\u2019s marriage. Nanda, uncomfortable, does not offer to walk her home.',
     quotes: [
       {
         text: 'It was the droning, ... meaningless droning of Ila Das that she could not bear.',
@@ -116,7 +116,7 @@ const chapterSummary = [
   {
     section: 'Part 4: The Fire',
     summary:
-      'After Ila Das leaves, Nanda receives a phone call informing her that Ila Das has been raped and murdered by Preet Singh on the path home. Nanda is devastated \u2014 partly by grief, partly by guilt for not walking her friend home, and partly by the final collapse of her illusions. While Nanda crumbles inside the house, Raka appears and announces: \u2018Look, Nana, I have set the forest on fire.\u2019 The novel ends with this single line, fusing the literal fire with the metaphorical destruction that has consumed every illusion in the book.',
+      'After Ila Das leaves, Nanda receives a phone call informing her that Ila Das has been raped and murdered by Preet Singh on the path home. Nanda is devastated - partly by grief, partly by guilt for not walking her friend home, and partly by the final collapse of her illusions. While Nanda crumbles inside the house, Raka appears and announces: \u2018Look, Nana, I have set the forest on fire.\u2019 The novel ends with this single line, fusing the literal fire with the metaphorical destruction that has consumed every illusion in the book.',
     quotes: [
       {
         text: 'lifeless on the stool, ... There was no illusion she was stripped of now.',
@@ -141,12 +141,12 @@ const narrativeTechniques = [
   {
     name: 'Symbolism: The Mountain',
     detail:
-      'Carignano\u2019s mountain ridge represents Nanda Kaul\u2019s elevated withdrawal from the world below. Height equals detachment: she literally looks down on the plains, the town, and ordinary human life. But the mountain is also precarious \u2014 the gorge yawns beneath, the terrain is harsh, and the house is crumbling. The mountain\u2019s apparent stability is undermined by the ravine, the fire, and the wildness of the natural world, mirroring the fragility of Nanda\u2019s constructed peace.',
+      'Carignano\u2019s mountain ridge represents Nanda Kaul\u2019s elevated withdrawal from the world below. Height equals detachment: she literally looks down on the plains, the town, and ordinary human life. But the mountain is also precarious - the gorge yawns beneath, the terrain is harsh, and the house is crumbling. The mountain\u2019s apparent stability is undermined by the ravine, the fire, and the wildness of the natural world, mirroring the fragility of Nanda\u2019s constructed peace.',
   },
   {
     name: 'Symbolism: Fire',
     detail:
-      'Fire operates on multiple symbolic levels. The burned hillside and the Pasteur Institute\u2019s incinerator foreshadow the conflagration of the final line. Fire represents the destruction of illusion, the eruption of suppressed violence, and the purging of falsehood. Raka is drawn to fire throughout the novel \u2014 she is fascinated by the charred landscape and the incinerator. Her final act of arson is both destructive and, in a dark sense, clarifying: it burns away the pretences that have sustained the adult world.',
+      'Fire operates on multiple symbolic levels. The burned hillside and the Pasteur Institute\u2019s incinerator foreshadow the conflagration of the final line. Fire represents the destruction of illusion, the eruption of suppressed violence, and the purging of falsehood. Raka is drawn to fire throughout the novel - she is fascinated by the charred landscape and the incinerator. Her final act of arson is both destructive and, in a dark sense, clarifying: it burns away the pretences that have sustained the adult world.',
   },
   {
     name: 'Symbolism: Animals',
@@ -166,7 +166,7 @@ const narrativeTechniques = [
   {
     name: 'Parallel Narratives',
     detail:
-      'Desai structures the novel around three parallel female experiences. Nanda Kaul\u2019s withdrawal, Raka\u2019s wildness, and Ila Das\u2019s vulnerability are distinct responses to the same patriarchal world. By intercutting between these perspectives, Desai creates a composite portrait of women\u2019s lives in postcolonial India. The parallels also generate ironic contrasts: Nanda\u2019s chosen isolation vs Ila Das\u2019s enforced loneliness; Nanda\u2019s performed detachment vs Raka\u2019s genuine detachment. The convergence of these narratives in the final pages \u2014 Ila Das\u2019s murder, Nanda\u2019s collapse, Raka\u2019s fire \u2014 creates the novel\u2019s devastating climax.',
+      'Desai structures the novel around three parallel female experiences. Nanda Kaul\u2019s withdrawal, Raka\u2019s wildness, and Ila Das\u2019s vulnerability are distinct responses to the same patriarchal world. By intercutting between these perspectives, Desai creates a composite portrait of women\u2019s lives in postcolonial India. The parallels also generate ironic contrasts: Nanda\u2019s chosen isolation vs Ila Das\u2019s enforced loneliness; Nanda\u2019s performed detachment vs Raka\u2019s genuine detachment. The convergence of these narratives in the final pages - Ila Das\u2019s murder, Nanda\u2019s collapse, Raka\u2019s fire - creates the novel\u2019s devastating climax.',
   },
 ]
 
@@ -174,12 +174,12 @@ const contextItems = [
   {
     title: 'Postcolonial India',
     detail:
-      'The novel is set in post-Independence India, but the legacies of British colonialism are everywhere: Carignano is a former colonial house; Kasauli was a British hill station; the Pasteur Institute is a remnant of colonial infrastructure. Desai does not address colonialism directly but embeds it in the landscape and architecture, suggesting that the structures \u2014 physical and social \u2014 that shaped Indian life under the British persist long after their departure. The hill station\u2019s faded grandeur mirrors Nanda Kaul\u2019s own fading identity.',
+      'The novel is set in post-Independence India, but the legacies of British colonialism are everywhere: Carignano is a former colonial house; Kasauli was a British hill station; the Pasteur Institute is a remnant of colonial infrastructure. Desai does not address colonialism directly but embeds it in the landscape and architecture, suggesting that the structures - physical and social - that shaped Indian life under the British persist long after their departure. The hill station\u2019s faded grandeur mirrors Nanda Kaul\u2019s own fading identity.',
   },
   {
     title: 'The Kasauli Setting',
     detail:
-      'Kasauli is a small town in the Himalayan foothills of Himachal Pradesh, historically a retreat for British colonial officers seeking refuge from the plains\u2019 heat. Desai herself spent time in Kasauli, and the novel\u2019s topography \u2014 the ridge, the ravine, the pine forests, the distant plains \u2014 is rendered with autobiographical precision. The setting\u2019s elevation and remoteness make it both a refuge and a trap: characters are physically above the world but psychologically unable to escape it. The mountain\u2019s beauty is real, but so is its harshness.',
+      'Kasauli is a small town in the Himalayan foothills of Himachal Pradesh, historically a retreat for British colonial officers seeking refuge from the plains\u2019 heat. Desai herself spent time in Kasauli, and the novel\u2019s topography - the ridge, the ravine, the pine forests, the distant plains - is rendered with autobiographical precision. The setting\u2019s elevation and remoteness make it both a refuge and a trap: characters are physically above the world but psychologically unable to escape it. The mountain\u2019s beauty is real, but so is its harshness.',
   },
   {
     title: 'Women\u2019s Lives in India',
@@ -200,7 +200,7 @@ export default function FireOnTheMountainStudyGuide() {
             Cambridge IGCSE English Literature
           </p>
           <h1 className="mt-2 text-3xl font-bold tracking-tight sm:text-4xl md:text-5xl">
-            Fire on the Mountain &mdash; Complete Study Guide
+            Fire on the Mountain - Complete Study Guide
           </h1>
           <p className="mx-auto mt-4 max-w-2xl text-lg text-muted-foreground">
             Anita Desai&rsquo;s haunting novella of isolation, illusion, and destruction. Character
@@ -366,7 +366,7 @@ export default function FireOnTheMountainStudyGuide() {
           <div className="mt-6 grid gap-5 sm:grid-cols-2">
             <Card>
               <CardHeader>
-                <CardTitle>Part (a) &mdash; Passage-Based Questions</CardTitle>
+                <CardTitle>Part (a) - Passage-Based Questions</CardTitle>
               </CardHeader>
               <CardContent>
                 <ul className="space-y-2 text-sm text-muted-foreground">
@@ -384,8 +384,8 @@ export default function FireOnTheMountainStudyGuide() {
                     discourse, pace).
                   </li>
                   <li>
-                    &bull; Comment on how the passage connects to the <strong>wider novel</strong>{' '}
-                    &mdash; what comes before and after.
+                    &bull; Comment on how the passage connects to the <strong>wider novel</strong> -
+                    what comes before and after.
                   </li>
                   <li>
                     &bull; Embed short, precise quotations from the extract and analyse them
@@ -397,7 +397,7 @@ export default function FireOnTheMountainStudyGuide() {
 
             <Card>
               <CardHeader>
-                <CardTitle>Part (b) &mdash; Essay Questions</CardTitle>
+                <CardTitle>Part (b) - Essay Questions</CardTitle>
               </CardHeader>
               <CardContent>
                 <ul className="space-y-2 text-sm text-muted-foreground">
@@ -434,7 +434,7 @@ export default function FireOnTheMountainStudyGuide() {
               <div className="grid gap-3 sm:grid-cols-2">
                 <div className="rounded-lg bg-primary/5 p-3">
                   <p className="text-xs font-semibold text-foreground">
-                    Textual Knowledge &mdash; Knowledge &amp; Understanding
+                    Textual Knowledge - Knowledge &amp; Understanding
                   </p>
                   <p className="mt-1 text-xs text-muted-foreground">
                     Show detailed knowledge of the text. Use accurate, well-selected quotations and
@@ -443,7 +443,7 @@ export default function FireOnTheMountainStudyGuide() {
                 </div>
                 <div className="rounded-lg bg-primary/5 p-3">
                   <p className="text-xs font-semibold text-foreground">
-                    Writer's Methods &mdash; Analysis of Language, Form &amp; Structure
+                    Writer's Methods - Analysis of Language, Form &amp; Structure
                   </p>
                   <p className="mt-1 text-xs text-muted-foreground">
                     Analyse how Desai uses language (imagery, diction, syntax), form (novella,
@@ -453,7 +453,7 @@ export default function FireOnTheMountainStudyGuide() {
                 </div>
                 <div className="rounded-lg bg-primary/5 p-3">
                   <p className="text-xs font-semibold text-foreground">
-                    Interpretation &mdash; Comparison (if required)
+                    Interpretation - Comparison (if required)
                   </p>
                   <p className="mt-1 text-xs text-muted-foreground">
                     Compare characters (Nanda vs Raka, Nanda vs Ila Das), contrasting their
@@ -462,7 +462,7 @@ export default function FireOnTheMountainStudyGuide() {
                 </div>
                 <div className="rounded-lg bg-primary/5 p-3">
                   <p className="text-xs font-semibold text-foreground">
-                    Personal Response &mdash; Context
+                    Personal Response - Context
                   </p>
                   <p className="mt-1 text-xs text-muted-foreground">
                     Reference postcolonial India, patriarchal social structures, the hill-station as
@@ -506,26 +506,26 @@ export default function FireOnTheMountainStudyGuide() {
                   <strong>[Writer's Methods]</strong> The short, declarative syntax mirrors
                   Nanda&rsquo;s desire for a simplified, emptied existence, while the anaphoric
                   repetition of &ldquo;she wanted&rdquo; ironically reveals that her withdrawal is
-                  itself a form of intense wanting &mdash; a craving for absence. Desai reinforces
-                  this through the novella&rsquo;s structure: Nanda&rsquo;s solitude is
-                  systematically disrupted, first by Raka&rsquo;s arrival, then by Ila Das&rsquo;s
-                  visit, and finally by the phone call announcing Ila Das&rsquo;s murder. Each
-                  intrusion strips away another layer of Nanda&rsquo;s carefully constructed
-                  detachment, so that the narrative arc itself enacts the impossibility of true
-                  isolation. <strong>[Interpretation]</strong> Desai draws a pointed contrast
-                  between Nanda&rsquo;s performed isolation and Raka&rsquo;s instinctive withdrawal.
-                  Where Nanda tells stories about her past to win Raka&rsquo;s attention &mdash;
-                  revealing that she still craves an audience &mdash; Raka &ldquo;did not
-                  listen&rdquo; and moves instead to &ldquo;the edge of the ridge&rdquo;, drawn to
-                  the gorge and the wild. Raka&rsquo;s isolation needs no justification or
-                  narrative; it simply is. <strong>[Personal Response]</strong> Contextually,
-                  Nanda&rsquo;s withdrawal must be read against the limited roles available to women
-                  in postcolonial India: having spent a lifetime defined entirely by her function as
-                  wife, mother, and hostess in the Vice-Chancellor &rsquo;s household, her
-                  retirement to Carignano &mdash; a crumbling former colonial hill-station house
-                  &mdash; represents an attempt to reclaim an identity that was never truly her own.
-                  Desai suggests, however, that this reclamation comes too late: Nanda has no
-                  authentic self left to inhabit, only the illusions she has constructed to survive.
+                  itself a form of intense wanting - a craving for absence. Desai reinforces this
+                  through the novella&rsquo;s structure: Nanda&rsquo;s solitude is systematically
+                  disrupted, first by Raka&rsquo;s arrival, then by Ila Das&rsquo;s visit, and
+                  finally by the phone call announcing Ila Das&rsquo;s murder. Each intrusion strips
+                  away another layer of Nanda&rsquo;s carefully constructed detachment, so that the
+                  narrative arc itself enacts the impossibility of true isolation.{' '}
+                  <strong>[Interpretation]</strong> Desai draws a pointed contrast between
+                  Nanda&rsquo;s performed isolation and Raka&rsquo;s instinctive withdrawal. Where
+                  Nanda tells stories about her past to win Raka&rsquo;s attention - revealing that
+                  she still craves an audience - Raka &ldquo;did not listen&rdquo; and moves instead
+                  to &ldquo;the edge of the ridge&rdquo;, drawn to the gorge and the wild.
+                  Raka&rsquo;s isolation needs no justification or narrative; it simply is.{' '}
+                  <strong>[Personal Response]</strong> Contextually, Nanda&rsquo;s withdrawal must
+                  be read against the limited roles available to women in postcolonial India: having
+                  spent a lifetime defined entirely by her function as wife, mother, and hostess in
+                  the Vice-Chancellor &rsquo;s household, her retirement to Carignano - a crumbling
+                  former colonial hill-station house - represents an attempt to reclaim an identity
+                  that was never truly her own. Desai suggests, however, that this reclamation comes
+                  too late: Nanda has no authentic self left to inhabit, only the illusions she has
+                  constructed to survive.
                 </p>
               </div>
             </CardContent>

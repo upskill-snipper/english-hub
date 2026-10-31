@@ -55,7 +55,7 @@ function QuoteCard({
       <p className="text-sm font-semibold text-violet-800 dark:text-violet-200 italic">
         &ldquo;{quote}&rdquo;
       </p>
-      {speaker && <p className="mt-1 text-xs font-medium text-violet-600">&mdash; {speaker}</p>}
+      {speaker && <p className="mt-1 text-xs font-medium text-violet-600">- {speaker}</p>}
       <p className="mt-2 text-sm text-muted-foreground">{analysis}</p>
     </div>
   )
@@ -139,7 +139,7 @@ export default function HamletPage() {
           </span>
         </div>
         <h1 className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
-          Hamlet &mdash; Complete Revision Guide
+          Hamlet - Complete Revision Guide
         </h1>
         <p className="mt-1 text-lg text-muted-foreground">
           William Shakespeare, c. 1600&ndash;1601
@@ -188,17 +188,17 @@ export default function HamletPage() {
                 </h4>
                 <p className="mt-2 text-sm text-muted-foreground leading-relaxed">
                   On the battlements of Elsinore, the guards Barnardo and Marcellus, with the
-                  scholar Horatio, see the Ghost of the late King Hamlet. Meanwhile, Claudius
-                  &mdash; the dead king&apos;s brother &mdash; has married the queen, Gertrude, and
-                  taken the throne. He addresses the court, dispatching ambassadors to Norway to
-                  neutralise the threat from young Fortinbras. Prince Hamlet appears in mourning
-                  black and is publicly chided for prolonged grief. Alone, he delivers his first
-                  soliloquy (&ldquo;O, that this too too solid flesh would melt&rdquo;), expressing
-                  disgust at his mother&apos;s hasty remarriage. Laertes warns his sister Ophelia
-                  against Hamlet&apos;s affections; Polonius forbids her to see him. Horatio brings
-                  Hamlet to meet the Ghost, who reveals he was murdered by Claudius and demands
-                  revenge. Hamlet swears the others to secrecy and resolves to feign madness &mdash;
-                  an &ldquo;antic disposition.&rdquo;
+                  scholar Horatio, see the Ghost of the late King Hamlet. Meanwhile, Claudius - the
+                  dead king&apos;s brother - has married the queen, Gertrude, and taken the throne.
+                  He addresses the court, dispatching ambassadors to Norway to neutralise the threat
+                  from young Fortinbras. Prince Hamlet appears in mourning black and is publicly
+                  chided for prolonged grief. Alone, he delivers his first soliloquy (&ldquo;O, that
+                  this too too solid flesh would melt&rdquo;), expressing disgust at his
+                  mother&apos;s hasty remarriage. Laertes warns his sister Ophelia against
+                  Hamlet&apos;s affections; Polonius forbids her to see him. Horatio brings Hamlet
+                  to meet the Ghost, who reveals he was murdered by Claudius and demands revenge.
+                  Hamlet swears the others to secrecy and resolves to feign madness - an
+                  &ldquo;antic disposition.&rdquo;
                 </p>
                 <div className="mt-3 rounded-lg bg-muted p-3">
                   <p className="text-xs font-semibold text-muted-foreground uppercase tracking-wider">
@@ -206,12 +206,10 @@ export default function HamletPage() {
                   </p>
                   <ul className="mt-2 space-y-1 text-sm text-muted-foreground">
                     <li>
-                      &bull; The Ghost&apos;s appearance &mdash; supernatural, providential, or
-                      demonic?
+                      &bull; The Ghost&apos;s appearance - supernatural, providential, or demonic?
                     </li>
                     <li>
-                      &bull; Claudius&apos;s smooth public rhetoric &mdash; &ldquo;mirth in
-                      funeral&rdquo;
+                      &bull; Claudius&apos;s smooth public rhetoric - &ldquo;mirth in funeral&rdquo;
                     </li>
                     <li>
                       &bull; Hamlet&apos;s first soliloquy establishes his disgust and inwardness
@@ -229,7 +227,7 @@ export default function HamletPage() {
                   Act 2: The Antic Disposition
                 </h4>
                 <p className="mt-2 text-sm text-muted-foreground leading-relaxed">
-                  Polonius sends Reynaldo to spy on Laertes in Paris &mdash; a small scene that
+                  Polonius sends Reynaldo to spy on Laertes in Paris - a small scene that
                   establishes the play&apos;s pervasive surveillance. Ophelia reports Hamlet&apos;s
                   strange visit to her closet; Polonius decides love-melancholy is the cause.
                   Claudius and Gertrude welcome Rosencrantz and Guildenstern, Hamlet&apos;s
@@ -237,22 +235,20 @@ export default function HamletPage() {
                   arrive. Hamlet, alone, berates himself for inaction in the &ldquo;rogue and
                   peasant slave&rdquo; soliloquy and conceives the Mousetrap plan: he will have the
                   Players perform a re-enactment of his father&apos;s murder to test Claudius&apos;s
-                  guilt &mdash; &ldquo;the play&apos;s the thing wherein I&apos;ll catch the
-                  conscience of the king.&rdquo;
+                  guilt - &ldquo;the play&apos;s the thing wherein I&apos;ll catch the conscience of
+                  the king.&rdquo;
                 </p>
                 <div className="mt-3 rounded-lg bg-muted p-3">
                   <p className="text-xs font-semibold text-muted-foreground uppercase tracking-wider">
                     Key Moments
                   </p>
                   <ul className="mt-2 space-y-1 text-sm text-muted-foreground">
-                    <li>
-                      &bull; Surveillance everywhere &mdash; spies, eavesdroppers, false friends
-                    </li>
+                    <li>&bull; Surveillance everywhere - spies, eavesdroppers, false friends</li>
                     <li>&bull; Hamlet&apos;s wit deployed as weapon (&ldquo;fishmonger&rdquo;)</li>
                     <li>
                       &bull; The Player&apos;s emotion for Hecuba shames Hamlet&apos;s passivity
                     </li>
-                    <li>&bull; The Mousetrap plan &mdash; Hamlet seeks empirical proof</li>
+                    <li>&bull; The Mousetrap plan - Hamlet seeks empirical proof</li>
                   </ul>
                 </div>
               </div>
@@ -271,8 +267,8 @@ export default function HamletPage() {
                   Hamlet is dangerous and resolves to send him to England. The Players perform
                   &ldquo;The Murder of Gonzago&rdquo;; Claudius rises in horror and the play breaks
                   off. Hamlet&apos;s suspicion is confirmed. Passing the chapel, he finds Claudius
-                  apparently praying and refuses to kill him &mdash; sending a soul to heaven would
-                  be &ldquo;hire and salary, not revenge.&rdquo; In Gertrude&apos;s closet, Hamlet
+                  apparently praying and refuses to kill him - sending a soul to heaven would be
+                  &ldquo;hire and salary, not revenge.&rdquo; In Gertrude&apos;s closet, Hamlet
                   rebukes his mother fiercely. Hearing a noise behind the arras, he stabs through it
                   and kills Polonius, mistaking him for Claudius. The Ghost reappears, visible only
                   to Hamlet, to remind him of his task and to spare Gertrude.
@@ -283,16 +279,13 @@ export default function HamletPage() {
                   </p>
                   <ul className="mt-2 space-y-1 text-sm text-muted-foreground">
                     <li>
-                      &bull; &ldquo;To be, or not to be&rdquo; &mdash; the central meditation on
-                      suicide and action
+                      &bull; &ldquo;To be, or not to be&rdquo; - the central meditation on suicide
+                      and action
                     </li>
-                    <li>&bull; The play-within-the-play succeeds &mdash; Claudius is exposed</li>
+                    <li>&bull; The play-within-the-play succeeds - Claudius is exposed</li>
+                    <li>&bull; Hamlet spares the praying Claudius - theological hesitation</li>
                     <li>
-                      &bull; Hamlet spares the praying Claudius &mdash; theological hesitation
-                    </li>
-                    <li>
-                      &bull; The killing of Polonius &mdash; Hamlet finally acts, but on the wrong
-                      target
+                      &bull; The killing of Polonius - Hamlet finally acts, but on the wrong target
                     </li>
                   </ul>
                 </div>
@@ -323,12 +316,10 @@ export default function HamletPage() {
                     Key Moments
                   </p>
                   <ul className="mt-2 space-y-1 text-sm text-muted-foreground">
-                    <li>&bull; Ophelia&apos;s madness &mdash; the cost of patriarchal control</li>
-                    <li>
-                      &bull; Fortinbras as foil &mdash; honour-driven action vs Hamlet&apos;s delay
-                    </li>
+                    <li>&bull; Ophelia&apos;s madness - the cost of patriarchal control</li>
+                    <li>&bull; Fortinbras as foil - honour-driven action vs Hamlet&apos;s delay</li>
                     <li>&bull; Claudius and Laertes hatch the poisoned-rapier plot</li>
-                    <li>&bull; Ophelia&apos;s drowning &mdash; reported, not staged</li>
+                    <li>&bull; Ophelia&apos;s drowning - reported, not staged</li>
                   </ul>
                 </div>
               </div>
@@ -361,15 +352,15 @@ export default function HamletPage() {
                     Key Moments
                   </p>
                   <ul className="mt-2 space-y-1 text-sm text-muted-foreground">
-                    <li>&bull; The graveyard scene &mdash; memento mori in dramatic form</li>
+                    <li>&bull; The graveyard scene - memento mori in dramatic form</li>
                     <li>
                       &bull; Hamlet&apos;s new fatalism: &ldquo;There&apos;s a special providence in
                       the fall of a sparrow&rdquo;
                     </li>
-                    <li>&bull; Four bodies on stage &mdash; Gertrude, Laertes, Claudius, Hamlet</li>
+                    <li>&bull; Four bodies on stage - Gertrude, Laertes, Claudius, Hamlet</li>
                     <li>
-                      &bull; Fortinbras inherits a stage piled with corpses &mdash; political
-                      restoration after personal tragedy
+                      &bull; Fortinbras inherits a stage piled with corpses - political restoration
+                      after personal tragedy
                     </li>
                   </ul>
                 </div>
@@ -473,8 +464,8 @@ export default function HamletPage() {
                   chain. Claudius&apos;s regicide explains why &ldquo;the time is out of
                   joint&rdquo; and why nature itself produces ill omens. Hamlet&apos;s sense that
                   Denmark is a &ldquo;prison&rdquo; and an &ldquo;unweeded garden&rdquo; is not
-                  merely personal mood &mdash; it reflects a cosmos that has been knocked askew by
-                  an unnatural act.
+                  merely personal mood - it reflects a cosmos that has been knocked askew by an
+                  unnatural act.
                 </p>
               </div>
               <div className="rounded-lg bg-primary/10 p-4">
@@ -482,13 +473,13 @@ export default function HamletPage() {
                 <p className="mt-1 text-sm text-muted-foreground leading-relaxed">
                   Shakespeare wrote in a Protestant England that had violently rejected Catholicism
                   within living memory. The Ghost claims to be &ldquo;confin&apos;d to fast in
-                  fires&rdquo; in Purgatory &mdash; a Catholic doctrine officially abolished by the
-                  Church of England. This makes the Ghost theologically suspect: a Protestant
-                  audience would worry he could be a demon. Hamlet&apos;s university, Wittenberg,
-                  was Luther&apos;s university &mdash; the cradle of Protestantism &mdash; making
-                  Hamlet a sceptical Protestant interrogating an apparently Catholic apparition. The
-                  graveyard scene&apos;s argument about Ophelia&apos;s burial directly engages
-                  Reformation debates over suicide and consecrated ground.
+                  fires&rdquo; in Purgatory - a Catholic doctrine officially abolished by the Church
+                  of England. This makes the Ghost theologically suspect: a Protestant audience
+                  would worry he could be a demon. Hamlet&apos;s university, Wittenberg, was
+                  Luther&apos;s university - the cradle of Protestantism - making Hamlet a sceptical
+                  Protestant interrogating an apparently Catholic apparition. The graveyard
+                  scene&apos;s argument about Ophelia&apos;s burial directly engages Reformation
+                  debates over suicide and consecrated ground.
                 </p>
               </div>
               <div className="rounded-lg bg-primary/10 p-4">
@@ -524,14 +515,13 @@ export default function HamletPage() {
                 <p className="mt-1 text-sm text-muted-foreground leading-relaxed">
                   Hamlet is the first of the four great tragedies (with <em>Othello</em>,{' '}
                   <em>King Lear</em>, and <em>Macbeth</em>) and the most introspective. It draws on
-                  Renaissance humanism &mdash; the recovery of classical learning that placed
-                  renewed value on individual conscience, rhetoric, and self-knowledge. Hamlet is a
-                  humanist hero: a university scholar, a wit, a critic of theatre, a moral
-                  philosopher. But the play also shows humanism in crisis: Hamlet&apos;s &ldquo;What
-                  a piece of work is man&rdquo; speech celebrates and then collapses humanist
-                  optimism (&ldquo;and yet, to me, what is this quintessence of dust?&rdquo;). The
-                  play asks whether the cultivated, reflective self can still act in a corrupted
-                  world.
+                  Renaissance humanism - the recovery of classical learning that placed renewed
+                  value on individual conscience, rhetoric, and self-knowledge. Hamlet is a humanist
+                  hero: a university scholar, a wit, a critic of theatre, a moral philosopher. But
+                  the play also shows humanism in crisis: Hamlet&apos;s &ldquo;What a piece of work
+                  is man&rdquo; speech celebrates and then collapses humanist optimism (&ldquo;and
+                  yet, to me, what is this quintessence of dust?&rdquo;). The play asks whether the
+                  cultivated, reflective self can still act in a corrupted world.
                 </p>
               </div>
             </div>
@@ -692,7 +682,7 @@ export default function HamletPage() {
                     <p className="mt-1 text-sm text-muted-foreground">
                       The prayer scene (&ldquo;Now might I do it pat&rdquo;): Hamlet refuses easy
                       revenge for theological reasons. Compare with Laertes&apos;s &ldquo;cut his
-                      throat i&apos; th&apos; church&rdquo; &mdash; honour-revenge unmoored from
+                      throat i&apos; th&apos; church&rdquo; - honour-revenge unmoored from
                       conscience.
                     </p>
                   </div>
@@ -702,8 +692,8 @@ export default function HamletPage() {
                     </p>
                     <p className="mt-1 text-sm text-muted-foreground">
                       Act 5: Hamlet kills Claudius only when forced by the poisoned plot. Revenge
-                      succeeds but at the cost of every major character. Link to genre &mdash; the
-                      bodies are conventional, the moral cost is Shakespeare&apos;s addition.
+                      succeeds but at the cost of every major character. Link to genre - the bodies
+                      are conventional, the moral cost is Shakespeare&apos;s addition.
                     </p>
                   </div>
                 </div>
@@ -729,9 +719,8 @@ export default function HamletPage() {
                     </p>
                     <p className="mt-1 text-sm text-muted-foreground">
                       Hamlet&apos;s &ldquo;antic disposition&rdquo; is announced, deliberate, and
-                      weaponised &mdash; e.g. &ldquo;fishmonger&rdquo; with Polonius.
-                      Polonius&apos;s &ldquo;method in&apos;t&rdquo; shows the strategy is partly
-                      visible.
+                      weaponised - e.g. &ldquo;fishmonger&rdquo; with Polonius. Polonius&apos;s
+                      &ldquo;method in&apos;t&rdquo; shows the strategy is partly visible.
                     </p>
                   </div>
                   <div>
@@ -768,8 +757,8 @@ export default function HamletPage() {
                       Plan
                     </p>
                     <p className="mt-1 text-sm text-muted-foreground">
-                      Argue Claudius is a complex Machiavellian, not a stock villain &mdash;
-                      eloquent, capable of conscience, but ultimately corrupted by his choices.
+                      Argue Claudius is a complex Machiavellian, not a stock villain - eloquent,
+                      capable of conscience, but ultimately corrupted by his choices.
                     </p>
                   </div>
                   <div>
@@ -789,7 +778,7 @@ export default function HamletPage() {
                     <p className="mt-1 text-sm text-muted-foreground">
                       Prayer scene: &ldquo;O, my offence is rank&rdquo; reveals genuine
                       self-awareness. Yet he cannot repent because he will not surrender crown or
-                      queen &mdash; choice over conscience.
+                      queen - choice over conscience.
                     </p>
                   </div>
                   <div>
@@ -797,8 +786,8 @@ export default function HamletPage() {
                       Paragraph 3
                     </p>
                     <p className="mt-1 text-sm text-muted-foreground">
-                      Act 4: manipulating Laertes shows escalation into pure scheming. Context
-                      &mdash; Elizabethan fear of usurpers and the divine right of kings makes
+                      Act 4: manipulating Laertes shows escalation into pure scheming. Context -
+                      Elizabethan fear of usurpers and the divine right of kings makes
                       Claudius&apos;s regicide a cosmic, not just personal, crime.
                     </p>
                   </div>
@@ -825,8 +814,8 @@ export default function HamletPage() {
                     </p>
                     <p className="mt-1 text-sm text-muted-foreground">
                       Act 1 Scene 3: instructed by Laertes and Polonius to reject Hamlet.
-                      Ophelia&apos;s &ldquo;I shall obey, my lord&rdquo; shows her position &mdash;
-                      speech is permitted only as obedience.
+                      Ophelia&apos;s &ldquo;I shall obey, my lord&rdquo; shows her position - speech
+                      is permitted only as obedience.
                     </p>
                   </div>
                   <div>
@@ -845,8 +834,8 @@ export default function HamletPage() {
                     </p>
                     <p className="mt-1 text-sm text-muted-foreground">
                       The mad scene gives Ophelia coded speech (the flowers) that addresses the
-                      court&apos;s guilt. Her offstage drowning is the final silencing &mdash; even
-                      her death is a story told by Gertrude.
+                      court&apos;s guilt. Her offstage drowning is the final silencing - even her
+                      death is a story told by Gertrude.
                     </p>
                   </div>
                 </div>
@@ -891,9 +880,9 @@ export default function HamletPage() {
                       Paragraph 3
                     </p>
                     <p className="mt-1 text-sm text-muted-foreground">
-                      By Act 5 Hamlet has stopped soliloquising &mdash; he speaks plainly to
-                      Horatio. &ldquo;The readiness is all&rdquo; replaces the looped
-                      self-questioning. The end of soliloquy marks the end of paralysis.
+                      By Act 5 Hamlet has stopped soliloquising - he speaks plainly to Horatio.
+                      &ldquo;The readiness is all&rdquo; replaces the looped self-questioning. The
+                      end of soliloquy marks the end of paralysis.
                     </p>
                   </div>
                 </div>
@@ -944,9 +933,9 @@ export default function HamletPage() {
                     </p>
                     <p className="mt-1 text-sm text-muted-foreground">
                       Re-read Hamlet&apos;s &ldquo;readiness is all&rdquo; as the play&apos;s
-                      positive resolution &mdash; not failure but Stoic acceptance. Engage with
-                      critics (Knight, Eliot&apos;s &ldquo;objective correlative&rdquo;) on whether
-                      the play succeeds in resolving its own questions.
+                      positive resolution - not failure but Stoic acceptance. Engage with critics
+                      (Knight, Eliot&apos;s &ldquo;objective correlative&rdquo;) on whether the play
+                      succeeds in resolving its own questions.
                     </p>
                   </div>
                 </div>
@@ -962,8 +951,8 @@ export default function HamletPage() {
                       Plan
                     </p>
                     <p className="mt-1 text-sm text-muted-foreground">
-                      Argue the Ghost is significant precisely because his status is unresolved
-                      &mdash; theological, generic, and political ambiguity all hinge on him.
+                      Argue the Ghost is significant precisely because his status is unresolved -
+                      theological, generic, and political ambiguity all hinge on him.
                     </p>
                   </div>
                   <div>
@@ -972,9 +961,8 @@ export default function HamletPage() {
                     </p>
                     <p className="mt-1 text-sm text-muted-foreground">
                       Theological reading: the Ghost claims Purgatory, suggesting Catholic afterlife
-                      in a Protestant England. Reformation context &mdash; Stephen Greenblatt&apos;s{' '}
-                      <em>Hamlet in Purgatory</em> &mdash; makes the Ghost a figure of an outlawed
-                      faith.
+                      in a Protestant England. Reformation context - Stephen Greenblatt&apos;s{' '}
+                      <em>Hamlet in Purgatory</em> - makes the Ghost a figure of an outlawed faith.
                     </p>
                   </div>
                   <div>
@@ -983,8 +971,8 @@ export default function HamletPage() {
                     </p>
                     <p className="mt-1 text-sm text-muted-foreground">
                       Generic reading: the Ghost is the inherited revenge-tragedy machine, a Senecan
-                      import. Shakespeare uses but tests the convention &mdash; Hamlet&apos;s
-                      &ldquo;the spirit that I have seen / May be the devil&rdquo; problematises the
+                      import. Shakespeare uses but tests the convention - Hamlet&apos;s &ldquo;the
+                      spirit that I have seen / May be the devil&rdquo; problematises the
                       genre&apos;s standard premise.
                     </p>
                   </div>
@@ -995,8 +983,8 @@ export default function HamletPage() {
                     <p className="mt-1 text-sm text-muted-foreground">
                       Political reading: the Ghost is the murdered legitimate king, a figure of the
                       displaced order. His invisibility to Gertrude in the closet scene reveals he
-                      speaks only to those willing to hear &mdash; the past confronts only the
-                      morally engaged.
+                      speaks only to those willing to hear - the past confronts only the morally
+                      engaged.
                     </p>
                   </div>
                 </div>
@@ -1046,7 +1034,7 @@ export default function HamletPage() {
                     </p>
                     <p className="mt-1 text-sm text-muted-foreground">
                       The closing &ldquo;rest is silence&rdquo; can be read as an admission that
-                      self-knowledge has limits &mdash; Hamlet stops trying to articulate himself.
+                      self-knowledge has limits - Hamlet stops trying to articulate himself.
                       Shakespeare grants depth without grant of conclusive self-understanding.
                     </p>
                   </div>
@@ -1090,8 +1078,8 @@ export default function HamletPage() {
             <span className="mt-0.5 h-1.5 w-1.5 shrink-0 rounded-full bg-accent" />
             <span>
               <strong>For A-Level: name your critics.</strong> Coleridge, Bradley, T. S. Eliot,
-              Ernest Jones (Freudian), Stephen Greenblatt, Harold Bloom &mdash; each gives a
-              different lens.
+              Ernest Jones (Freudian), Stephen Greenblatt, Harold Bloom - each gives a different
+              lens.
             </span>
           </li>
           <li className="flex items-start gap-2">
@@ -1106,7 +1094,7 @@ export default function HamletPage() {
             <span>
               <strong>Hold the play&apos;s ambiguities.</strong> Top responses do not resolve the
               question of Hamlet&apos;s madness, the Ghost&apos;s status, or Gertrude&apos;s
-              knowledge &mdash; they argue that the ambiguity is the point.
+              knowledge - they argue that the ambiguity is the point.
             </span>
           </li>
         </ul>

@@ -11,87 +11,81 @@
 
 // ─── Configuration ───────────────────────────────────────────────────────
 
-const BASE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://theenglishhub.app";
-const BRAND_COLOR = "#1A5276";
-const BRAND_ACCENT = "#2E86C1";
-const BRAND_LIGHT = "#D6EAF8";
-const ANALYTICS_URL = `${BASE_URL}/school/analytics`;
-const UNSUBSCRIBE_URL = `${BASE_URL}/school/settings`;
-const TERMS_URL = `${BASE_URL}/terms`;
-const PRIVACY_URL = `${BASE_URL}/privacy-policy`;
+const BASE_URL = process.env.NEXT_PUBLIC_SITE_URL || 'https://theenglishhub.app'
+const BRAND_COLOR = '#1A5276'
+const BRAND_ACCENT = '#2E86C1'
+const BRAND_LIGHT = '#D6EAF8'
+const ANALYTICS_URL = `${BASE_URL}/school/analytics`
+const UNSUBSCRIBE_URL = `${BASE_URL}/school/settings`
+const TERMS_URL = `${BASE_URL}/terms`
+const PRIVACY_URL = `${BASE_URL}/privacy-policy`
 
 // ─── Types ───────────────────────────────────────────────────────────────
 
 export interface StudentAttention {
-  name: string;
+  name: string
   /** Reason the student is flagged (e.g. "Lowest quiz score: 22%", "Inactive for 5 days") */
-  reason: string;
+  reason: string
 }
 
 export interface TopPerformer {
-  name: string;
+  name: string
   /** Achievement description (e.g. "Average score: 94%", "7-day streak") */
-  achievement: string;
+  achievement: string
 }
 
 export interface TeacherWeeklyData {
-  teacherName: string;
-  teacherEmail: string;
-  className: string;
-  weekStart: Date;
-  weekEnd: Date;
+  teacherName: string
+  teacherEmail: string
+  className: string
+  weekStart: Date
+  weekEnd: Date
 
   /** Total students in the class */
-  totalStudents: number;
+  totalStudents: number
   /** Students who were active at least once this week */
-  activeStudents: number;
+  activeStudents: number
 
   /** Class average quiz score as a percentage (0-100) */
-  averageQuizScore: number | null;
+  averageQuizScore: number | null
   /** Total quizzes taken across the class */
-  totalQuizzesTaken: number;
+  totalQuizzesTaken: number
 
   /** Students needing attention (low scorers, inactive, etc.) */
-  studentsNeedingAttention: StudentAttention[];
+  studentsNeedingAttention: StudentAttention[]
 
   /** Top performers to celebrate */
-  topPerformers: TopPerformer[];
+  topPerformers: TopPerformer[]
 
   /** Unsubscribe token for one-click unsubscribe */
-  unsubscribeToken?: string;
+  unsubscribeToken?: string
 }
 
 // ─── Builder ─────────────────────────────────────────────────────────────
 
-export function buildTeacherWeeklyEmail(
-  data: TeacherWeeklyData
-): { subject: string; html: string } {
-  const dateRange = `${formatDateShort(data.weekStart)} - ${formatDateShort(data.weekEnd)}`;
-  const subject = `English Hub Class Report \u2014 ${dateRange}`;
+export function buildTeacherWeeklyEmail(data: TeacherWeeklyData): {
+  subject: string
+  html: string
+} {
+  const dateRange = `${formatDateShort(data.weekStart)} - ${formatDateShort(data.weekEnd)}`
+  const subject = `English Hub Class Report - ${dateRange}`
 
   // ── Engagement rate ──────────────────────────────────────────────────
 
   const engagementRate =
-    data.totalStudents > 0
-      ? Math.round((data.activeStudents / data.totalStudents) * 100)
-      : 0;
+    data.totalStudents > 0 ? Math.round((data.activeStudents / data.totalStudents) * 100) : 0
   const engagementColor =
-    engagementRate >= 75
-      ? "#27AE60"
-      : engagementRate >= 50
-        ? "#F39C12"
-        : "#E74C3C";
+    engagementRate >= 75 ? '#27AE60' : engagementRate >= 50 ? '#F39C12' : '#E74C3C'
 
   // ── Score display ────────────────────────────────────────────────────
 
-  const scoreDisplay =
-    data.averageQuizScore !== null ? `${data.averageQuizScore}%` : "N/A";
+  const scoreDisplay = data.averageQuizScore !== null ? `${data.averageQuizScore}%` : 'N/A'
   const scoreColor =
     data.averageQuizScore !== null && data.averageQuizScore >= 70
-      ? "#27AE60"
+      ? '#27AE60'
       : data.averageQuizScore !== null && data.averageQuizScore >= 50
-        ? "#F39C12"
-        : "#E74C3C";
+        ? '#F39C12'
+        : '#E74C3C'
 
   // ── Attention rows ───────────────────────────────────────────────────
 
@@ -100,9 +94,9 @@ export function buildTeacherWeeklyEmail(
       (s) => `<tr>
         <td style="padding:8px 12px;font-size:14px;color:#555;border-bottom:1px solid #eee;">${escapeHtml(s.name)}</td>
         <td style="padding:8px 12px;font-size:14px;color:#E74C3C;border-bottom:1px solid #eee;">${escapeHtml(s.reason)}</td>
-      </tr>`
+      </tr>`,
     )
-    .join("");
+    .join('')
 
   // ── Top performer rows ───────────────────────────────────────────────
 
@@ -111,15 +105,15 @@ export function buildTeacherWeeklyEmail(
       (s) => `<tr>
         <td style="padding:8px 12px;font-size:14px;color:#555;border-bottom:1px solid #eee;">${escapeHtml(s.name)}</td>
         <td style="padding:8px 12px;font-size:14px;color:#27AE60;border-bottom:1px solid #eee;">${escapeHtml(s.achievement)}</td>
-      </tr>`
+      </tr>`,
     )
-    .join("");
+    .join('')
 
   // ── Unsubscribe link ─────────────────────────────────────────────────
 
   const unsubLink = data.unsubscribeToken
     ? `${BASE_URL}/unsubscribe?token=${data.unsubscribeToken}`
-    : UNSUBSCRIBE_URL;
+    : UNSUBSCRIBE_URL
 
   // ── Build HTML ───────────────────────────────────────────────────────
 
@@ -170,7 +164,7 @@ export function buildTeacherWeeklyEmail(
                     <p style="margin:4px 0 0 0;font-size:11px;color:#555;">Engagement</p>
                   </td>
                   <td width="25%" align="center" style="padding:14px 6px;background:${BRAND_LIGHT};">
-                    <p style="margin:0;font-size:24px;font-weight:700;color:${data.averageQuizScore !== null ? scoreColor : "#888"};">${scoreDisplay}</p>
+                    <p style="margin:0;font-size:24px;font-weight:700;color:${data.averageQuizScore !== null ? scoreColor : '#888'};">${scoreDisplay}</p>
                     <p style="margin:4px 0 0 0;font-size:11px;color:#555;">Avg Quiz Score</p>
                   </td>
                   <td width="25%" align="center" style="padding:14px 6px;background:${BRAND_LIGHT};border-radius:0 8px 8px 0;">
@@ -182,7 +176,9 @@ export function buildTeacherWeeklyEmail(
             </td>
           </tr>
 
-          ${data.studentsNeedingAttention.length > 0 ? `
+          ${
+            data.studentsNeedingAttention.length > 0
+              ? `
           <!-- Students needing attention -->
           <tr>
             <td style="padding:0 32px 24px 32px;">
@@ -195,9 +191,13 @@ export function buildTeacherWeeklyEmail(
                 ${attentionRows}
               </table>
             </td>
-          </tr>` : ""}
+          </tr>`
+              : ''
+          }
 
-          ${data.topPerformers.length > 0 ? `
+          ${
+            data.topPerformers.length > 0
+              ? `
           <!-- Top performers -->
           <tr>
             <td style="padding:0 32px 24px 32px;">
@@ -210,7 +210,9 @@ export function buildTeacherWeeklyEmail(
                 ${performerRows}
               </table>
             </td>
-          </tr>` : ""}
+          </tr>`
+              : ''
+          }
 
           <!-- CTA Button -->
           <tr>
@@ -252,33 +254,33 @@ export function buildTeacherWeeklyEmail(
     </tr>
   </table>
 </body>
-</html>`;
+</html>`
 
-  return { subject, html };
+  return { subject, html }
 }
 
 // ─── Helpers ─────────────────────────────────────────────────────────────
 
 function formatDate(date: Date): string {
-  return date.toLocaleDateString("en-GB", {
-    day: "numeric",
-    month: "long",
-    year: "numeric",
-  });
+  return date.toLocaleDateString('en-GB', {
+    day: 'numeric',
+    month: 'long',
+    year: 'numeric',
+  })
 }
 
 function formatDateShort(date: Date): string {
-  return date.toLocaleDateString("en-GB", {
-    day: "numeric",
-    month: "short",
-  });
+  return date.toLocaleDateString('en-GB', {
+    day: 'numeric',
+    month: 'short',
+  })
 }
 
 function escapeHtml(str: string): string {
   return str
-    .replace(/&/g, "&amp;")
-    .replace(/</g, "&lt;")
-    .replace(/>/g, "&gt;")
-    .replace(/"/g, "&quot;")
-    .replace(/'/g, "&#39;");
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;')
+    .replace(/"/g, '&quot;')
+    .replace(/'/g, '&#39;')
 }

@@ -100,8 +100,8 @@ export default function CuriousIncidentCharactersPage() {
             The Curious Incident: Characters
           </h1>
           <p className="mt-3 max-w-2xl text-body-lg text-muted-foreground">
-            Character profiles for Stephens and Haddon&rsquo;s play &mdash; Christopher, Ed, Judy,
-            Siobhan and the Swindon neighbours.
+            Character profiles for Stephens and Haddon&rsquo;s play - Christopher, Ed, Judy, Siobhan
+            and the Swindon neighbours.
           </p>
         </div>
       </section>

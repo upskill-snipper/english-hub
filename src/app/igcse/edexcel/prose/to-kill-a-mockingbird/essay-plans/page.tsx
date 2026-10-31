@@ -48,7 +48,7 @@ const essayPlans = [
           'The lynch mob scene shows how racism operates through collective action, erasing individual conscience.',
         evidence: '"A mob\u2019s always made up of people."',
         explanation:
-          'Atticus rehumanises the mob after Scout\u2019s intervention. The paradox \u2014 people who are decent individually become violent collectively \u2014 is Lee\u2019s sharpest insight into how racism functions.',
+          'Atticus rehumanises the mob after Scout\u2019s intervention. The paradox - people who are decent individually become violent collectively - is Lee\u2019s sharpest insight into how racism functions.',
         link: 'Link to the Scottsboro Boys context and the history of extrajudicial violence against Black men in the American South.',
       },
       {
@@ -73,7 +73,7 @@ const essayPlans = [
         evidence:
           '"Real courage is when you\u2019re licked before you begin but you begin anyway."',
         explanation:
-          'By attaching the novel\u2019s key definition to an unlikely figure \u2014 a dying, racist old woman \u2014 Lee separates moral courage from moral perfection. Courage is the act, not the person.',
+          'By attaching the novel\u2019s key definition to an unlikely figure - a dying, racist old woman - Lee separates moral courage from moral perfection. Courage is the act, not the person.',
         link: 'This definition retroactively frames Atticus\u2019s defence of Tom as courageous precisely because he expects to lose.',
       },
       {
@@ -89,12 +89,12 @@ const essayPlans = [
           'Scout\u2019s intervention at the jail demonstrates that innocence can be a form of moral courage.',
         evidence: '"Hey, Mr Cunningham. I go to school with your boy."',
         explanation:
-          'Scout does not intend to be brave \u2014 she uses social convention instinctively. Lee suggests that empathy, even naive empathy, can disrupt collective violence.',
+          'Scout does not intend to be brave - she uses social convention instinctively. Lee suggests that empathy, even naive empathy, can disrupt collective violence.',
         link: 'This links back to Atticus\u2019s empathy lesson in Chapter 3 and shows Scout beginning to apply it.',
       },
     ],
     conclusion:
-      'Lee presents moral courage as doing right when you know you will fail. It is available to all \u2014 the dying Mrs Dubose, the principled Atticus and the innocent Scout \u2014 and is defined by commitment to conscience over outcome.',
+      'Lee presents moral courage as doing right when you know you will fail. It is available to all - the dying Mrs Dubose, the principled Atticus and the innocent Scout - and is defined by commitment to conscience over outcome.',
   },
   {
     title: 'How does Scout change and develop throughout the novel?',
@@ -115,7 +115,7 @@ const essayPlans = [
           '"It\u2019s not right, Atticus." (Jem\u2019s line, echoing Scout\u2019s confusion)',
         explanation:
           'While Jem articulates his disillusionment, Scout absorbs the trial more quietly. Her naivety actually protects her: she does not yet grasp the sexual dimensions of the case.',
-        link: 'Lee\u2019s dual narration \u2014 child perspective, adult retrospection \u2014 allows the reader to see what Scout cannot.',
+        link: 'Lee\u2019s dual narration - child perspective, adult retrospection - allows the reader to see what Scout cannot.',
       },
       {
         point:
@@ -127,7 +127,7 @@ const essayPlans = [
       },
     ],
     conclusion:
-      'Scout\u2019s development is the novel\u2019s structural spine. She begins as a fighter, is educated through crisis, and ends standing on the Radley porch \u2014 the physical embodiment of empathy Atticus taught her.',
+      'Scout\u2019s development is the novel\u2019s structural spine. She begins as a fighter, is educated through crisis, and ends standing on the Radley porch - the physical embodiment of empathy Atticus taught her.',
   },
   {
     title: 'How does Lee use the mockingbird as a symbol?',
@@ -139,7 +139,7 @@ const essayPlans = [
           'Miss Maudie establishes the mockingbird as a symbol of harmless creatures that give only beauty.',
         evidence: '"Mockingbirds don\u2019t do one thing but make music for us to enjoy."',
         explanation:
-          'The definition is deliberately simple \u2014 pitched at a child\u2019s understanding \u2014 so that when it is later applied to human beings, the moral is already felt.',
+          'The definition is deliberately simple - pitched at a child\u2019s understanding - so that when it is later applied to human beings, the moral is already felt.',
         link: 'Link to the title: "to kill" a mockingbird is presented as the ultimate transgression against innocence.',
       },
       {
@@ -147,7 +147,7 @@ const essayPlans = [
           'Tom Robinson is the novel\u2019s primary mockingbird: innocent, helpful, destroyed by racism.',
         evidence: '"He likened Tom\u2019s death to the senseless slaughter of songbirds."',
         explanation:
-          'Mr Underwood\u2019s editorial makes the symbolism explicit. "Senseless" implies that Tom\u2019s death serves no purpose \u2014 the system kills him not out of necessity but out of reflex.',
+          'Mr Underwood\u2019s editorial makes the symbolism explicit. "Senseless" implies that Tom\u2019s death serves no purpose - the system kills him not out of necessity but out of reflex.',
         link: 'Connect to context: Lee wrote against the backdrop of ongoing racial violence in the American South.',
       },
       {
@@ -160,7 +160,7 @@ const essayPlans = [
       },
     ],
     conclusion:
-      'The mockingbird symbol unifies the novel\u2019s two main plots \u2014 the trial and the Boo Radley story \u2014 under a single moral principle: it is wrong to destroy what is innocent and harmless.',
+      'The mockingbird symbol unifies the novel\u2019s two main plots - the trial and the Boo Radley story - under a single moral principle: it is wrong to destroy what is innocent and harmless.',
   },
   {
     title: 'How does Lee present Atticus Finch as a moral figure?',
@@ -189,7 +189,7 @@ const essayPlans = [
         evidence: '"I know now what he was trying to do, ... Atticus was only a man."',
         explanation:
           'The adult narrator gently undermines the child\u2019s hero-worship. Lee\u2019s technique prevents Atticus from becoming a flat symbol: he is presented as morally serious but humanly limited.',
-        link: 'Link to structure: the dual narration is essential to how the reader receives Atticus \u2014 through the filter of a child who is growing up.',
+        link: 'Link to structure: the dual narration is essential to how the reader receives Atticus - through the filter of a child who is growing up.',
       },
     ],
     conclusion:

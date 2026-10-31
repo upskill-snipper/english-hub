@@ -100,16 +100,16 @@ export default function TheThoughtFoxPage() {
         <Card>
           <CardContent className="space-y-3 pt-6 text-sm text-muted-foreground">
             <p>
-              <strong className="text-foreground">Poet:</strong> Ted (Edward James) Hughes &mdash;
-              English poet, born Mytholmroyd, West Yorkshire, 1930; Poet Laureate from 1984 until
-              his death in 1998.
+              <strong className="text-foreground">Poet:</strong> Ted (Edward James) Hughes - English
+              poet, born Mytholmroyd, West Yorkshire, 1930; Poet Laureate from 1984 until his death
+              in 1998.
             </p>
             <p>
               <strong className="text-foreground">Year:</strong> 1957
             </p>
             <p>
               <strong className="text-foreground">First publication:</strong>{' '}
-              <em>The Hawk in the Rain</em> (Faber &amp; Faber, 1957) &mdash; Hughes&rsquo;s debut
+              <em>The Hawk in the Rain</em> (Faber &amp; Faber, 1957) - Hughes&rsquo;s debut
               collection.
             </p>
             <p>
@@ -143,10 +143,9 @@ export default function TheThoughtFoxPage() {
               sitting alone at his desk.
             </p>
             <p>
-              The famous closing turn &mdash; the page is printed; the fox has entered the head
-              &mdash; converts the poem from animal sighting into ars poetica. Hughes is writing
-              about writing, but he refuses to make the act of composition cerebral: it is sensory,
-              prowling, animal.
+              The famous closing turn - the page is printed; the fox has entered the head - converts
+              the poem from animal sighting into ars poetica. Hughes is writing about writing, but
+              he refuses to make the act of composition cerebral: it is sensory, prowling, animal.
             </p>
           </CardContent>
         </Card>
@@ -159,15 +158,15 @@ export default function TheThoughtFoxPage() {
             <p>
               <em>The Thought-Fox</em> is the most-discussed poem in Hughes&rsquo;s first book and
               one of the most famous poems about the writing process in English. The fox does not
-              arrive at the desk as metaphor first &mdash; it arrives as smell, footprint, then
-              form. Hughes treats inspiration as something external, alert and bodily, rather than
+              arrive at the desk as metaphor first - it arrives as smell, footprint, then form.
+              Hughes treats inspiration as something external, alert and bodily, rather than
               internal and intellectual.
             </p>
             <p>
-              The poem&rsquo;s closing transformation &mdash; the fox stepping into the head, the
-              page printing, the clock ticking &mdash; is one of the great endings in 20th-century
-              English poetry. The animal&rsquo;s appearance and the poem&rsquo;s appearance are the
-              same event.
+              The poem&rsquo;s closing transformation - the fox stepping into the head, the page
+              printing, the clock ticking - is one of the great endings in 20th-century English
+              poetry. The animal&rsquo;s appearance and the poem&rsquo;s appearance are the same
+              event.
             </p>
             <p>
               Within the Hughes cluster, this is the &lsquo;writer&rsquo;s&rsquo; poem: cool,

@@ -153,8 +153,8 @@ export default async function Paper1Page() {
                 </h3>
               </div>
               <p className="mt-2 text-sm text-muted-foreground">
-                <strong>{tr(`Reading and retrieval (AO1)`)}</strong> &mdash; A single-mark question
-                asking you to retrieve explicit information from a specific part of the text.
+                <strong>{tr(`Reading and retrieval (AO1)`)}</strong> - A single-mark question asking
+                you to retrieve explicit information from a specific part of the text.
               </p>
               <div className="mt-3 rounded-lg bg-muted p-4">
                 <p className="text-sm font-medium text-muted-foreground">
@@ -168,8 +168,8 @@ export default async function Paper1Page() {
               <div className="mt-3 rounded-lg bg-primary/10 p-4">
                 <p className="text-sm font-medium text-primary">Top tip:</p>
                 <p className="mt-1 text-sm text-muted-foreground">
-                  Copy the exact phrase from the text. Do not waste time explaining &mdash; this is
-                  a simple retrieval question. Spend about 2 minutes here.
+                  Copy the exact phrase from the text. Do not waste time explaining - this is a
+                  simple retrieval question. Spend about 2 minutes here.
                 </p>
               </div>
             </div>
@@ -185,8 +185,8 @@ export default async function Paper1Page() {
                 </h3>
               </div>
               <p className="mt-2 text-sm text-muted-foreground">
-                <strong>{tr(`Reading and retrieval (AO1)`)}</strong> &mdash; Two retrieval points
-                from a specified section of the text. You need to identify two things.
+                <strong>{tr(`Reading and retrieval (AO1)`)}</strong> - Two retrieval points from a
+                specified section of the text. You need to identify two things.
               </p>
               <div className="mt-3 rounded-lg bg-muted p-4">
                 <p className="text-sm font-medium text-muted-foreground">
@@ -217,8 +217,8 @@ export default async function Paper1Page() {
                 </h3>
               </div>
               <p className="mt-2 text-sm text-muted-foreground">
-                <strong>{tr(`Language and structure analysis (AO2)`)}</strong> &mdash; Explain how
-                the writer uses language and structure to show something the question names, such as
+                <strong>{tr(`Language and structure analysis (AO2)`)}</strong> - Explain how the
+                writer uses language and structure to show something the question names, such as
                 what a character feels. The question names a short section of the extract, and
                 recent papers print it with the question.
               </p>
@@ -275,9 +275,9 @@ export default async function Paper1Page() {
                 </h3>
               </div>
               <p className="mt-2 text-sm text-muted-foreground">
-                <strong>{tr(`Critical evaluation (AO4)`)}</strong> &mdash; The question names an
-                effect the writer is trying to create, such as tension or sympathy for a character,
-                and asks how successfully it is achieved. Recent papers have asked about the whole
+                <strong>{tr(`Critical evaluation (AO4)`)}</strong> - The question names an effect
+                the writer is trying to create, such as tension or sympathy for a character, and
+                asks how successfully it is achieved. Recent papers have asked about the whole
                 extract, so check the question for any line numbers.
               </p>
               <div className="mt-3 rounded-lg bg-muted p-4">
@@ -637,10 +637,10 @@ export default async function Paper1Page() {
               <p className="text-sm font-semibold text-primary">{tr(`Example opening:`)}</p>
               <div className="mt-2 text-sm text-foreground leading-relaxed">
                 <p>
-                  The world burned. Not with flames, but with colour &mdash; great swathes of amber
-                  and crimson bleeding across the horizon as though the sky had been wounded. She
-                  stood at the precipice, her silhouette carved against the dying light, and felt
-                  the wind tear at her coat like desperate hands trying to pull her back.
+                  The world burned. Not with flames, but with colour - great swathes of amber and
+                  crimson bleeding across the horizon as though the sky had been wounded. She stood
+                  at the precipice, her silhouette carved against the dying light, and felt the wind
+                  tear at her coat like desperate hands trying to pull her back.
                 </p>
                 <p className="mt-3">
                   Below, the sea churned. Restless. Relentless. It threw itself against the cliff
@@ -649,10 +649,10 @@ export default async function Paper1Page() {
                   different kind.
                 </p>
                 <p className="mt-3">
-                  She did not move. There was something defiant in her stillness &mdash; a refusal
-                  to be rushed by the encroaching darkness, by the gulls that screamed overhead, by
-                  the distant hum of a world that had already moved on without her. Here, at the
-                  edge of everything, time had agreed to wait.
+                  She did not move. There was something defiant in her stillness - a refusal to be
+                  rushed by the encroaching darkness, by the gulls that screamed overhead, by the
+                  distant hum of a world that had already moved on without her. Here, at the edge of
+                  everything, time had agreed to wait.
                 </p>
               </div>
             </div>
@@ -782,7 +782,7 @@ export default async function Paper1Page() {
                 <li>&bull; Retell or paraphrase the story</li>
                 <li>&bull; Write outside the given line references</li>
                 <li>&bull; Use overly long quotations</li>
-                <li>&bull; Try to write a full novel &mdash; quality over quantity</li>
+                <li>&bull; Try to write a full novel - quality over quantity</li>
                 <li>&bull; Forget punctuation variety in your creative writing</li>
               </ul>
             </div>

@@ -465,7 +465,7 @@ export default function MacbethThemesPage() {
                     <div key={i} className="rounded-lg border border-border/60 p-3">
                       <p className="font-medium">&ldquo;{q.quote}&rdquo;</p>
                       <p className="mt-0.5 text-xs text-muted-foreground-subtle">
-                        {q.speaker} &mdash; {q.actScene}
+                        {q.speaker} - {q.actScene}
                       </p>
                       <p className="mt-1.5 text-sm text-muted-foreground">
                         <span className="font-medium text-foreground">

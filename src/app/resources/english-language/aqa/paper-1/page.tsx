@@ -373,15 +373,14 @@ export default function Paper1Page() {
             <p>
               The writer personifies the fog through the verb &ldquo;crept,&rdquo; which connotes
               stealth and secrecy. This is reinforced by the simile &ldquo;like a thief,&rdquo;
-              which positions the fog as something threatening and dishonest &mdash; something that
-              takes without permission. The cumulative effect creates a sinister atmosphere, as the
-              reader begins to associate the natural phenomenon of fog with criminal intent. The
-              verb &ldquo;swallowing&rdquo; extends this sense of menace: it suggests the fog does
-              not merely obscure the light but consumes it entirely, as if the darkness is permanent
-              and inescapable. The phrase &ldquo;every last trace&rdquo; emphasises totality,
-              leaving the reader with a sense of hopelessness &mdash; there is no residual light to
-              cling to. The writer may be using the fog as a metaphor for the protagonist&rsquo;s
-              growing despair.
+              which positions the fog as something threatening and dishonest - something that takes
+              without permission. The cumulative effect creates a sinister atmosphere, as the reader
+              begins to associate the natural phenomenon of fog with criminal intent. The verb
+              &ldquo;swallowing&rdquo; extends this sense of menace: it suggests the fog does not
+              merely obscure the light but consumes it entirely, as if the darkness is permanent and
+              inescapable. The phrase &ldquo;every last trace&rdquo; emphasises totality, leaving
+              the reader with a sense of hopelessness - there is no residual light to cling to. The
+              writer may be using the fog as a metaphor for the protagonist&rsquo;s growing despair.
             </p>
           </div>
         </Section>
@@ -457,8 +456,8 @@ export default function Paper1Page() {
               roadside.&rdquo; This panoramic perspective creates a sense of desolation and scale,
               positioning the character as small and insignificant against the vast, decaying
               landscape. The writer then shifts focus inward as the character passes through the
-              gates, narrowing the lens to specific, unsettling details &mdash; &ldquo;a single
-              carousel horse, its painted eye staring.&rdquo; This zoom from wide to close creates a
+              gates, narrowing the lens to specific, unsettling details - &ldquo;a single carousel
+              horse, its painted eye staring.&rdquo; This zoom from wide to close creates a
               claustrophobic effect, trapping both character and reader inside the setting. By the
               final paragraph, the writer reverses this structural movement: the focus pulls back
               outward as the character retreats, but the &ldquo;painted eye&rdquo; from the carousel
@@ -609,7 +608,7 @@ export default function Paper1Page() {
             <li>
               <strong>{tr(`Open with your position.`)}</strong> State whether you agree, partially
               agree, or disagree with the statement. You can agree with parts and disagree with
-              others &mdash; nuance is rewarded.
+              others - nuance is rewarded.
             </li>
             <li>
               <strong>{tr(`For each paragraph:`)}</strong> Make a point that supports or challenges
@@ -625,16 +624,16 @@ export default function Paper1Page() {
             </li>
             <li>
               <strong>Consider alternative interpretations.</strong> Level 4 responses show critical
-              awareness &mdash; the ability to see that a text could be read in different ways.
+              awareness - the ability to see that a text could be read in different ways.
             </li>
           </ol>
 
           <h3 className="mt-4 font-bold text-primary">{tr(`Key difference from Q2`)}</h3>
           <p>
-            In Q2 you simply analyse language. In Q4 you must also <strong>evaluate</strong> &mdash;
-            that means giving a judgement about how successful or effective the writing is. Do not
-            just explain <em>what</em> the writer does; tell the marker <em>how well</em> they do it
-            and <em>whether</em> you find it convincing.
+            In Q2 you simply analyse language. In Q4 you must also <strong>evaluate</strong> - that
+            means giving a judgement about how successful or effective the writing is. Do not just
+            explain <em>what</em> the writer does; tell the marker <em>how well</em> they do it and{' '}
+            <em>whether</em> you find it convincing.
           </p>
 
           <h3 className="mt-4 font-bold text-primary">{tr(`Common mistakes`)}</h3>
@@ -913,7 +912,7 @@ export default function Paper1Page() {
             <li>
               <strong>{tr(`Proofread your creative writing.`)}</strong> Spend the last 3-5 minutes
               reading back through Q5 and correcting errors. AO6 (technical accuracy) is worth 16
-              marks &mdash; more than Q2 and Q3 combined.
+              marks - more than Q2 and Q3 combined.
             </li>
           </ul>
         </Section>

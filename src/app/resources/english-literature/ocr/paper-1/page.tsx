@@ -195,8 +195,8 @@ export default async function OCRLitPaper1Page() {
                   <h4 className="font-semibold text-foreground">3. Analyse Language Closely</h4>
                   <p className="mt-2 text-sm">
                     Every paragraph should include a quotation and close analysis of specific words.
-                    Don&rsquo;t just name techniques &mdash; explore the connotations of individual
-                    words and explain their effect on the reader.
+                    Don&rsquo;t just name techniques - explore the connotations of individual words
+                    and explain their effect on the reader.
                   </p>
                   <div className="mt-3 rounded border border-accent/20 bg-primary/10 p-3">
                     <p className="text-sm font-medium text-primary">{tr(`Model analysis`)}</p>
@@ -326,35 +326,34 @@ export default async function OCRLitPaper1Page() {
                   </p>
                   <ul className="ms-4 mt-2 list-disc space-y-1 text-sm">
                     <li>
-                      <strong>Class and social hierarchy</strong> &mdash; Victorian society was
-                      sharply divided by class, wealth, and birth. Many 19th-century writers
-                      critiqued or explored these divisions.
+                      <strong>Class and social hierarchy</strong> - Victorian society was sharply
+                      divided by class, wealth, and birth. Many 19th-century writers critiqued or
+                      explored these divisions.
                     </li>
                     <li>
-                      <strong>{tr(`Industrialisation and urbanisation`)}</strong> &mdash; The
-                      Industrial Revolution transformed Britain, creating immense wealth but also
-                      terrible poverty, pollution, and exploitation.
+                      <strong>{tr(`Industrialisation and urbanisation`)}</strong> - The Industrial
+                      Revolution transformed Britain, creating immense wealth but also terrible
+                      poverty, pollution, and exploitation.
                     </li>
                     <li>
-                      <strong>{tr(`Religion and morality`)}</strong> &mdash; Christianity played a
-                      central role in Victorian life. Many texts engage with questions of sin,
-                      redemption, and moral responsibility.
+                      <strong>{tr(`Religion and morality`)}</strong> - Christianity played a central
+                      role in Victorian life. Many texts engage with questions of sin, redemption,
+                      and moral responsibility.
                     </li>
                     <li>
-                      <strong>{tr(`Gender roles`)}</strong> &mdash; Women had limited rights and
-                      were expected to be submissive and domestic. Many novels challenge or explore
-                      these constraints.
+                      <strong>{tr(`Gender roles`)}</strong> - Women had limited rights and were
+                      expected to be submissive and domestic. Many novels challenge or explore these
+                      constraints.
                     </li>
                     <li>
-                      <strong>Science and progress</strong> &mdash; Darwin&rsquo;s theory of
-                      evolution (1859) challenged religious certainties. Texts like{' '}
-                      <em>Frankenstein</em> and <em>{tr(`Jekyll and Hyde`)}</em> explore anxieties
-                      about scientific progress.
+                      <strong>Science and progress</strong> - Darwin&rsquo;s theory of evolution
+                      (1859) challenged religious certainties. Texts like <em>Frankenstein</em> and{' '}
+                      <em>{tr(`Jekyll and Hyde`)}</em> explore anxieties about scientific progress.
                     </li>
                     <li>
-                      <strong>{tr(`Empire and colonialism`)}</strong> &mdash; Britain ruled a vast
-                      empire. Attitudes to race, civilisation, and &ldquo;otherness&rdquo; permeate
-                      much 19th-century literature.
+                      <strong>{tr(`Empire and colonialism`)}</strong> - Britain ruled a vast empire.
+                      Attitudes to race, civilisation, and &ldquo;otherness&rdquo; permeate much
+                      19th-century literature.
                     </li>
                   </ul>
                 </div>
@@ -388,24 +387,23 @@ export default async function OCRLitPaper1Page() {
                   </p>
                   <ul className="ms-4 mt-2 list-disc space-y-1 text-sm">
                     <li>
-                      <strong>{tr(`Omniscient narrator`)}</strong> &mdash; An all-knowing narrator
-                      who can access the thoughts and feelings of all characters.
+                      <strong>{tr(`Omniscient narrator`)}</strong> - An all-knowing narrator who can
+                      access the thoughts and feelings of all characters.
                     </li>
                     <li>
-                      <strong>{tr(`First-person retrospective`)}</strong> &mdash; A character
-                      looking back on their past (e.g., <em>{tr(`Great Expectations`)}</em>,{' '}
-                      <em>Jane Eyre</em>).
+                      <strong>{tr(`First-person retrospective`)}</strong> - A character looking back
+                      on their past (e.g., <em>{tr(`Great Expectations`)}</em>, <em>Jane Eyre</em>).
                     </li>
                     <li>
-                      <strong>{tr(`Frame narrative`)}</strong> &mdash; A story within a story (e.g.,{' '}
+                      <strong>{tr(`Frame narrative`)}</strong> - A story within a story (e.g.,{' '}
                       <em>Frankenstein</em>).
                     </li>
                     <li>
-                      <strong>Serialisation</strong> &mdash; Many novels were published in
-                      instalments, which affected their structure (cliffhangers, episodic plots).
+                      <strong>Serialisation</strong> - Many novels were published in instalments,
+                      which affected their structure (cliffhangers, episodic plots).
                     </li>
                     <li>
-                      <strong>{tr(`Gothic elements`)}</strong> &mdash; Atmosphere, suspense, the
+                      <strong>{tr(`Gothic elements`)}</strong> - Atmosphere, suspense, the
                       supernatural, decay, and isolation feature in many texts.
                     </li>
                   </ul>
@@ -483,33 +481,33 @@ export default async function OCRLitPaper1Page() {
           <div className="mt-4">
             <ul className="ms-6 list-disc space-y-3 text-muted-foreground leading-relaxed">
               <li>
-                <strong>{tr(`Retelling the story`)}</strong> &mdash; The marker knows the plot.
-                Focus on analysis, not narration. Every sentence should analyse, not describe.
+                <strong>{tr(`Retelling the story`)}</strong> - The marker knows the plot. Focus on
+                analysis, not narration. Every sentence should analyse, not describe.
               </li>
               <li>
-                <strong>Context dumping</strong> &mdash; Writing a paragraph of context that is not
+                <strong>Context dumping</strong> - Writing a paragraph of context that is not
                 connected to the question or your analysis. Context should always be embedded within
                 your analytical points.
               </li>
               <li>
-                <strong>Feature-spotting</strong> &mdash; Listing techniques without explaining
-                their effect. Always explain <em>why</em> a technique is used and its impact on the
+                <strong>Feature-spotting</strong> - Listing techniques without explaining their
+                effect. Always explain <em>why</em> a technique is used and its impact on the
                 reader.
               </li>
               <li>
-                <strong>{tr(`Not using quotations`)}</strong> &mdash; Since this is a closed-book
-                exam, you must memorise key quotations. Even short quotations (2&ndash;3 words) are
+                <strong>{tr(`Not using quotations`)}</strong> - Since this is a closed-book exam,
+                you must memorise key quotations. Even short quotations (2&ndash;3 words) are
                 effective when analysed closely.
               </li>
               <li>
-                <strong>Ignoring the writer</strong> &mdash; Always refer to the writer by name and
+                <strong>Ignoring the writer</strong> - Always refer to the writer by name and
                 discuss their choices deliberately. Use phrases like &ldquo;Dickens
                 presents&hellip;&rdquo;, &ldquo;Shelley suggests&hellip;&rdquo;, &ldquo;Stevenson
                 implies&hellip;&rdquo;
               </li>
               <li>
-                <strong>{tr(`Not tracking development`)}</strong> &mdash; Show how the theme or
-                character changes or develops across the whole text, not just at one moment.
+                <strong>{tr(`Not tracking development`)}</strong> - Show how the theme or character
+                changes or develops across the whole text, not just at one moment.
               </li>
             </ul>
           </div>

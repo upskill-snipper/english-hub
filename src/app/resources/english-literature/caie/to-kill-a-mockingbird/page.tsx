@@ -371,7 +371,7 @@ export default function ToKillAMockingbirdStudyGuide() {
             Cambridge IGCSE English Literature
           </p>
           <h1 className="mt-2 text-3xl font-bold tracking-tight sm:text-4xl md:text-5xl">
-            To Kill a Mockingbird &mdash; Complete Study Guide
+            To Kill a Mockingbird - Complete Study Guide
           </h1>
           <p className="mx-auto mt-4 max-w-2xl text-lg text-muted-foreground">
             Characters, themes, chapter-by-chapter events, {keyQuotes.length} key quotes with
@@ -484,7 +484,7 @@ export default function ToKillAMockingbirdStudyGuide() {
                   &ldquo;{q.quote}&rdquo;
                 </blockquote>
                 <p className="mt-1 text-xs font-semibold text-primary">
-                  {q.speaker} &mdash; {q.chapter}
+                  {q.speaker} - {q.chapter}
                 </p>
                 <p className="mt-3 text-sm leading-relaxed text-muted-foreground">{q.analysis}</p>
               </div>

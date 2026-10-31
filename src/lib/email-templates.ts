@@ -129,9 +129,9 @@ export function welcomeEmail(name: string, plan: string): string {
   Before you get started, here are some important links:
 </p>
 <ul style="font-size:15px;line-height:1.8;padding-left:20px;">
-  <li><a href="${TERMS_URL}" style="color:${BRAND_COLOR};">Terms &amp; Conditions</a> &mdash; the rules for using the service</li>
-  <li><a href="${PRIVACY_URL}" style="color:${BRAND_COLOR};">Privacy Policy</a> &mdash; how we look after your data</li>
-  <li><a href="${CANCELLATION_POLICY_URL}" style="color:${BRAND_COLOR};">Cancellation Policy</a> &mdash; how to cancel and get a refund</li>
+  <li><a href="${TERMS_URL}" style="color:${BRAND_COLOR};">Terms &amp; Conditions</a> - the rules for using the service</li>
+  <li><a href="${PRIVACY_URL}" style="color:${BRAND_COLOR};">Privacy Policy</a> - how we look after your data</li>
+  <li><a href="${CANCELLATION_POLICY_URL}" style="color:${BRAND_COLOR};">Cancellation Policy</a> - how to cancel and get a refund</li>
 </ul>
 <p style="font-size:16px;line-height:1.6;">
   You can cancel your subscription at any time from your account settings.
@@ -173,12 +173,12 @@ export function trialEndingEmail(
 ): string {
   return layout(
     'Your free trial ends soon',
-    `<h2 style="color:${BRAND_COLOR};margin:0 0 16px 0;">Heads up, ${name} &mdash; your trial ends soon</h2>
+    `<h2 style="color:${BRAND_COLOR};margin:0 0 16px 0;">Heads up, ${name} - your trial ends soon</h2>
 <p style="font-size:16px;line-height:1.6;">
   Your free trial of The English Hub ends on <strong>${formatDate(trialEndDate)}</strong>.
 </p>
 <p style="font-size:16px;line-height:1.6;">
-  After that date you'll be charged <strong>${amount}</strong>. If you'd like to keep using The English Hub, you don't need to do anything &mdash; your subscription will start automatically.
+  After that date you'll be charged <strong>${amount}</strong>. If you'd like to keep using The English Hub, you don't need to do anything - your subscription will start automatically.
 </p>
 <div style="background:${BRAND_LIGHT};border-radius:8px;padding:20px;margin:20px 0;">
   <p style="margin:0;font-size:16px;line-height:1.6;font-weight:600;color:${BRAND_COLOR};">
@@ -390,7 +390,7 @@ export function humanReviewSubmittedEmail(name: string, referenceNumber: string)
   A qualified reviewer will look at your essay and the AI feedback. We'll email you when the review is complete. This usually takes up to <strong>5 working days</strong>.
 </p>
 <p style="font-size:16px;line-height:1.6;">
-  Please keep your reference number safe &mdash; you'll need it if you contact us about this review.
+  Please keep your reference number safe - you'll need it if you contact us about this review.
 </p>
 ${ctaButton('View your reviews', `${BASE_URL}/reviews`)}`,
     { isSubscription: false },
@@ -470,7 +470,7 @@ export function dsarAcknowledgementEmail(
   Under UK GDPR, we have <strong>30 days</strong> to respond to your request. We'll email you when it's done, or if we need any more information from you.
 </p>
 <p style="font-size:16px;line-height:1.6;">
-  Please keep your reference number safe &mdash; you'll need it if you contact us about this request.
+  Please keep your reference number safe - you'll need it if you contact us about this request.
 </p>
 <p style="font-size:13px;color:#888888;line-height:1.5;">
   If you didn't make this request, please <a href="${BASE_URL}/contact" style="color:${BRAND_COLOR};">contact us</a> immediately.
@@ -489,7 +489,7 @@ export function parentLinkedEmail(parentName: string, studentFirstName: string):
   You have been successfully linked to <strong>${studentFirstName}</strong>'s account on The English Hub.
 </p>
 <p style="font-size:16px;line-height:1.6;">
-  You can now monitor their progress, view weekly reports, and stay up to date with their English studies &mdash; all for free.
+  You can now monitor their progress, view weekly reports, and stay up to date with their English studies - all for free.
 </p>
 <p style="font-size:16px;line-height:1.6;font-weight:600;">
   What you can access:
@@ -819,7 +819,7 @@ export function founderAccessExpiryWarningEmail(params: {
     subject,
     `<h2 style="color:${BRAND_COLOR};margin:0 0 16px 0;">Your FOUNDER access expires soon, ${adminName}</h2>
 <p style="font-size:16px;line-height:1.6;">
-  This is a reminder that <strong>${schoolName}</strong>'s FOUNDER access to The English Hub expires on <strong>${formatDate(accessUntil)}</strong> &mdash; that's 30 days away.
+  This is a reminder that <strong>${schoolName}</strong>'s FOUNDER access to The English Hub expires on <strong>${formatDate(accessUntil)}</strong> - that's 30 days away.
 </p>
 <div style="background:#FEF9E7;border-left:4px solid #D4AC0D;border-radius:4px;padding:20px;margin:20px 0;">
   <p style="margin:0 0 8px 0;font-size:16px;font-weight:700;color:#B7950B;">Don't lose access to The English Hub</p>

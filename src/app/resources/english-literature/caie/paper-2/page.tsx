@@ -234,7 +234,7 @@ export default async function Paper2Page() {
             This cluster is based on the Cambridge IGCSE 0475 syllabus <em>Songs of Ourselves</em>{' '}
             Vol&nbsp;1 Part&nbsp;4 plus the Ted Hughes cluster (<em>The Thought-Fox</em>,{' '}
             <em>Hawk Roosting</em>, <em>Wind</em>). Cambridge International rotates set texts every
-            two years &mdash; always confirm via{' '}
+            two years - always confirm via{' '}
             <a
               href="https://www.cambridgeinternational.org/syllabus"
               target="_blank"
@@ -246,7 +246,7 @@ export default async function Paper2Page() {
             before relying on this list for the current exam window. Drama options:{' '}
             <em>A Taste of Honey</em> (Delaney) / <em>A Midsummer Night&rsquo;s Dream</em> /{' '}
             <em>Antony and Cleopatra</em>. The Shakespeare and other-drama lists below are legacy
-            reference selections &mdash; cross-check the syllabus PDF for the current exam window.
+            reference selections - cross-check the syllabus PDF for the current exam window.
           </p>
           <p className="mt-3 text-muted-foreground leading-relaxed">
             <strong className="text-foreground">Cluster rights:</strong> Four poems in the companion
@@ -272,7 +272,7 @@ export default async function Paper2Page() {
           </h2>
           <div className="mt-6 grid gap-4 sm:grid-cols-2">
             <div className="rounded-lg border border-border bg-card p-5 shadow-md">
-              <h3 className="font-semibold text-foreground">Section A &mdash; Shakespeare</h3>
+              <h3 className="font-semibold text-foreground">Section A - Shakespeare</h3>
               <p className="mt-1 text-sm text-muted-foreground">25 marks</p>
               <ul className="mt-3 space-y-1 text-sm text-muted-foreground">
                 <li>
@@ -284,7 +284,7 @@ export default async function Paper2Page() {
               </ul>
             </div>
             <div className="rounded-lg border border-border bg-card p-5 shadow-md">
-              <h3 className="font-semibold text-foreground">Section B &mdash; Other Drama</h3>
+              <h3 className="font-semibold text-foreground">Section B - Other Drama</h3>
               <p className="mt-1 text-sm text-muted-foreground">25 marks</p>
               <ul className="mt-3 space-y-1 text-sm text-muted-foreground">
                 <li>
@@ -362,7 +362,7 @@ export default async function Paper2Page() {
               <div key={d.title} className="rounded-lg border border-border bg-card p-5 shadow-md">
                 <h3 className="text-lg font-semibold text-foreground">
                   {d.title}
-                  <span className="ms-1 font-normal text-muted-foreground">&mdash; {d.author}</span>
+                  <span className="ms-1 font-normal text-muted-foreground">- {d.author}</span>
                 </h3>
                 <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{d.summary}</p>
                 <div className="mt-3">

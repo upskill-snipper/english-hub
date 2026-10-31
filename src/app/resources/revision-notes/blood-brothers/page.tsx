@@ -538,7 +538,7 @@ export default function BloodBrothersStudyGuide() {
           {t('study.revnotes.common.eyebrow')}
         </p>
         <h1 className="mt-2 text-3xl font-bold tracking-tight sm:text-4xl md:text-5xl">
-          Blood Brothers &mdash; {t('study.revnotes.common.suffix.study_guide')}
+          Blood Brothers - {t('study.revnotes.common.suffix.study_guide')}
         </h1>
         <p className="mt-3 max-w-2xl text-lg text-muted-foreground">
           {t('study.revnotes.blood-brothers.lead')}
@@ -627,7 +627,7 @@ export default function BloodBrothersStudyGuide() {
                 &ldquo;{q.quote}&rdquo;
               </blockquote>
               <p className="mt-1 text-xs font-semibold text-primary">
-                {q.speaker} &mdash; {q.context}
+                {q.speaker} - {q.context}
               </p>
               <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{q.analysis}</p>
             </div>

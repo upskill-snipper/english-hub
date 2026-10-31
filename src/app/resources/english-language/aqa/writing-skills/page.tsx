@@ -130,7 +130,7 @@ export default function WritingSkillsPage() {
               <p className="mt-2 text-sm">
                 <strong>{tr(`When to use:`)}</strong> To connect two equally important ideas. Useful
                 for building a scene or showing cause and effect. Be careful not to over-rely on
-                &ldquo;and&rdquo; &mdash; vary your conjunctions.
+                &ldquo;and&rdquo; - vary your conjunctions.
               </p>
             </div>
 
@@ -165,8 +165,8 @@ export default function WritingSkillsPage() {
                 <strong>{tr(`When to use:`)}</strong> For dramatic impact, to slow the pace, or to
                 create emphasis. One-word sentences (&ldquo;Gone.&rdquo; &ldquo;Nothing.&rdquo;
                 &ldquo;Darkness.&rdquo;) are particularly powerful at turning points in a narrative
-                or description. Use sparingly &mdash; if every other sentence is a fragment, the
-                effect is lost.
+                or description. Use sparingly - if every other sentence is a fragment, the effect is
+                lost.
               </p>
             </div>
           </div>
@@ -248,17 +248,17 @@ export default function WritingSkillsPage() {
           </p>
           <ul className="mt-2 ms-5 list-disc space-y-2">
             <li>
-              <strong>P &mdash; Point:</strong> Make a clear point that answers the question.
+              <strong>P - Point:</strong> Make a clear point that answers the question.
             </li>
             <li>
-              <strong>E &mdash; Evidence:</strong> Provide a quotation or reference from the text.
+              <strong>E - Evidence:</strong> Provide a quotation or reference from the text.
             </li>
             <li>
-              <strong>E &mdash; Explain:</strong> Analyse the evidence. What technique is used? What
-              are the connotations? What effect does it create?
+              <strong>E - Explain:</strong> Analyse the evidence. What technique is used? What are
+              the connotations? What effect does it create?
             </li>
             <li>
-              <strong>L &mdash; Link:</strong> Link back to the question or to a wider theme.
+              <strong>L - Link:</strong> Link back to the question or to a wider theme.
             </li>
           </ul>
 
@@ -304,8 +304,8 @@ export default function WritingSkillsPage() {
             </li>
             <li>
               <strong>{tr(`Cyclical / circular structure:`)}</strong> End your piece with an echo of
-              the opening &mdash; the same image, phrase, or setting, but with a shift in meaning.
-              This creates a satisfying sense of closure and structural sophistication.
+              the opening - the same image, phrase, or setting, but with a shift in meaning. This
+              creates a satisfying sense of closure and structural sophistication.
             </li>
           </ul>
         </Section>
@@ -426,8 +426,8 @@ export default function WritingSkillsPage() {
         {/* ── Punctuation for effect ─────────────────────────────── */}
         <Section title={tr(`Punctuation for effect`)}>
           <p>
-            Punctuation is not just about accuracy &mdash; it is a tool for creating effects. The
-            marking guide rewards a &ldquo;wide range of punctuation used with a high level of
+            Punctuation is not just about accuracy - it is a tool for creating effects. The marking
+            guide rewards a &ldquo;wide range of punctuation used with a high level of
             accuracy.&rdquo; Here is how to use each type purposefully:
           </p>
 
@@ -444,8 +444,8 @@ export default function WritingSkillsPage() {
               <h4 className="font-bold text-accent">Comma (,)</h4>
               <p className="mt-1 text-sm">
                 Creates pauses, separates items in a list, sets off subordinate clauses. Avoid comma
-                splicing (using a comma to join two main clauses without a conjunction &mdash; this
-                is a common error).
+                splicing (using a comma to join two main clauses without a conjunction - this is a
+                common error).
               </p>
             </div>
             <div className="rounded-lg border border-border p-4">
@@ -461,8 +461,8 @@ export default function WritingSkillsPage() {
               <h4 className="font-bold text-accent">Colon (:)</h4>
               <p className="mt-1 text-sm">
                 Introduces an explanation, a list, or a dramatic reveal: &ldquo;There was only one
-                option left: run.&rdquo; The colon creates anticipation &mdash; the reader pauses
-                before the revelation.
+                option left: run.&rdquo; The colon creates anticipation - the reader pauses before
+                the revelation.
               </p>
             </div>
             <div className="rounded-lg border border-border p-4">
@@ -737,7 +737,7 @@ export default function WritingSkillsPage() {
 
             <h3 className="mt-6 font-bold text-primary">{tr(`Technical accuracy`)}</h3>
             <p className="text-sm text-muted-foreground">
-              (Same as the descriptive writing checklist above &mdash; sentence variety, punctuation
+              (Same as the descriptive writing checklist above - sentence variety, punctuation
               range, ambitious vocabulary, consistent tense, proofreading.)
             </p>
           </div>

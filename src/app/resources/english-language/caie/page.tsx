@@ -342,7 +342,7 @@ export default async function CaieEnglishLanguagePage() {
             <h3 className="font-semibold text-foreground">Use the Passages</h3>
             <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
               Cambridge markers reward candidates who engage closely with the text. Always refer to
-              the passage using short, embedded quotations. Avoid copying long chunks &mdash; select
+              the passage using short, embedded quotations. Avoid copying long chunks - select
               precise words and phrases that support your point.
             </p>
           </div>
@@ -358,7 +358,7 @@ export default async function CaieEnglishLanguagePage() {
             <h3 className="font-semibold text-foreground">Vocabulary Building</h3>
             <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
               Cambridge passages often use sophisticated vocabulary. Build your word bank by reading
-              widely &mdash; newspapers, quality magazines, and fiction. For each new word, note its
+              widely - newspapers, quality magazines, and fiction. For each new word, note its
               meaning, part of speech, and an example sentence.
             </p>
           </div>

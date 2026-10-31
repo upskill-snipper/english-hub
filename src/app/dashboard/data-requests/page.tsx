@@ -183,19 +183,18 @@ export default function DataRequestsPage() {
         </p>
         <ul className="mt-2 space-y-1 text-muted-foreground">
           <li>
-            <strong>Article 15</strong> &mdash; Right of Access: request a copy of all personal data
-            we hold about you.
+            <strong>Article 15</strong> - Right of Access: request a copy of all personal data we
+            hold about you.
           </li>
           <li>
-            <strong>Article 16</strong> &mdash; Right to Rectification: correct any inaccurate
-            personal data.
-          </li>
-          <li>
-            <strong>Article 17</strong> &mdash; Right to Erasure: request deletion of your personal
+            <strong>Article 16</strong> - Right to Rectification: correct any inaccurate personal
             data.
           </li>
           <li>
-            <strong>Article 20</strong> &mdash; Right to Data Portability: receive your data in a
+            <strong>Article 17</strong> - Right to Erasure: request deletion of your personal data.
+          </li>
+          <li>
+            <strong>Article 20</strong> - Right to Data Portability: receive your data in a
             machine-readable format.
           </li>
         </ul>

@@ -344,9 +344,9 @@ export default async function AutobiographyBiographyPage() {
 
       <h1>Autobiography &amp; biography</h1>
       <p className="lead">
-        A reading-and-writing guide to one of the non-fiction text types studied for LEH11 &mdash;
-        how to recognise life writing, the features to spot, how examiners question it, and how to
-        write your own for Section B. Every example below is original.
+        A reading-and-writing guide to one of the non-fiction text types studied for LEH11 - how to
+        recognise life writing, the features to spot, how examiners question it, and how to write
+        your own for Section B. Every example below is original.
       </p>
 
       {/* ── Definition and difference ─────────────────────────────── */}
@@ -369,7 +369,7 @@ export default async function AutobiographyBiographyPage() {
           ))}
         </div>
         <p className="mt-4 text-sm text-muted-foreground leading-relaxed">
-          Both are non-fiction, so they share the wider non-fiction purposes &mdash; most often to{' '}
+          Both are non-fiction, so they share the wider non-fiction purposes - most often to{' '}
           {NON_FICTION_PURPOSES.join(', ')}. Life writing usually sets out to inform and describe,
           but it also persuades the reader to see the subject in a particular way.
         </p>
@@ -379,8 +379,8 @@ export default async function AutobiographyBiographyPage() {
       <section className="my-10">
         <h2>Typical conventions</h2>
         <p className="text-sm text-muted-foreground">
-          These are the building blocks writers use. Spotting them helps you read closely &mdash;
-          and using them helps you write well.
+          These are the building blocks writers use. Spotting them helps you read closely - and
+          using them helps you write well.
         </p>
         <div className="not-prose mt-4 grid gap-3 sm:grid-cols-2">
           {CONVENTIONS.map((c) => (

@@ -194,13 +194,13 @@ export default async function Paper1ReadingPage() {
                   </li>
                   <li className="flex items-start gap-2">
                     <span className="mt-1 h-1.5 w-1.5 shrink-0 rounded-full bg-accent" />
-                    Use your own words where the question asks &mdash; do not &ldquo;lift&rdquo;
-                    entire sentences unless instructed.
+                    Use your own words where the question asks - do not &ldquo;lift&rdquo; entire
+                    sentences unless instructed.
                   </li>
                   <li className="flex items-start gap-2">
                     <span className="mt-1 h-1.5 w-1.5 shrink-0 rounded-full bg-accent" />
-                    Check how many marks are available &mdash; this tells you how many separate
-                    points are needed.
+                    Check how many marks are available - this tells you how many separate points are
+                    needed.
                   </li>
                 </ul>
               </div>
@@ -261,8 +261,8 @@ export default async function Paper1ReadingPage() {
                   </li>
                   <li className="flex items-start gap-2">
                     <span className="mt-1 h-1.5 w-1.5 shrink-0 rounded-full bg-accent" />
-                    Test your answer by mentally substituting it into the original sentence &mdash;
-                    it should still make sense.
+                    Test your answer by mentally substituting it into the original sentence - it
+                    should still make sense.
                   </li>
                   <li className="flex items-start gap-2">
                     <span className="mt-1 h-1.5 w-1.5 shrink-0 rounded-full bg-accent" />
@@ -294,12 +294,12 @@ export default async function Paper1ReadingPage() {
                   </li>
                   <li className="flex items-start gap-2">
                     <span className="mt-1 h-1.5 w-1.5 shrink-0 rounded-full bg-accent" />
-                    Make each point separate and distinct &mdash; avoid repeating the same idea in
+                    Make each point separate and distinct - avoid repeating the same idea in
                     different words.
                   </li>
                   <li className="flex items-start gap-2">
                     <span className="mt-1 h-1.5 w-1.5 shrink-0 rounded-full bg-accent" />
-                    Write concisely &mdash; one or two sentences per point is usually sufficient.
+                    Write concisely - one or two sentences per point is usually sufficient.
                   </li>
                 </ul>
               </div>
@@ -331,8 +331,8 @@ export default async function Paper1ReadingPage() {
                 <h3 className="font-semibold text-foreground">{_tr(`Read the question first`)}</h3>
                 <p className="mt-1 text-sm text-muted-foreground leading-relaxed">
                   Identify exactly what you are being asked to summarise. Underline the focus of the
-                  question &mdash; e.g. &ldquo;the challenges faced by the villagers&rdquo; or
-                  &ldquo;the reasons the writer gives for moving to the coast.&rdquo;
+                  question - e.g. &ldquo;the challenges faced by the villagers&rdquo; or &ldquo;the
+                  reasons the writer gives for moving to the coast.&rdquo;
                 </p>
               </div>
             </div>
@@ -407,8 +407,8 @@ export default async function Paper1ReadingPage() {
               </li>
               <li className="flex items-start gap-2">
                 <span className="mt-1 font-bold">&times;</span>
-                Including your own opinions or commentary &mdash; a summary should only contain
-                ideas from the passage.
+                Including your own opinions or commentary - a summary should only contain ideas from
+                the passage.
               </li>
               <li className="flex items-start gap-2">
                 <span className="mt-1 font-bold">&times;</span>
@@ -446,7 +446,7 @@ export default async function Paper1ReadingPage() {
               <ul className="mt-3 space-y-2 text-sm text-muted-foreground">
                 <li className="flex items-start gap-2">
                   <span className="mt-1 h-1.5 w-1.5 shrink-0 rounded-full bg-primary" />
-                  Clear, short points &mdash; not full sentences.
+                  Clear, short points - not full sentences.
                 </li>
                 <li className="flex items-start gap-2">
                   <span className="mt-1 h-1.5 w-1.5 shrink-0 rounded-full bg-primary" />
@@ -538,7 +538,7 @@ export default async function Paper1ReadingPage() {
                   {_tr(`Why / Effect`)}
                 </p>
                 <p className="mt-1 text-sm text-muted-foreground">
-                  Explain the effect on the reader &mdash; what does the writer achieve?
+                  Explain the effect on the reader - what does the writer achieve?
                 </p>
               </div>
             </div>
@@ -572,8 +572,7 @@ export default async function Paper1ReadingPage() {
             <div className="rounded-lg border border-border p-4">
               <p className="text-sm font-semibold text-primary">Imagery</p>
               <p className="mt-1 text-sm text-muted-foreground">
-                Metaphors, similes, personification &mdash; how does the writer paint pictures with
-                words?
+                Metaphors, similes, personification - how does the writer paint pictures with words?
               </p>
             </div>
             <div className="rounded-lg border border-border p-4">
@@ -601,8 +600,7 @@ export default async function Paper1ReadingPage() {
             <div className="rounded-lg border border-border p-4">
               <p className="text-sm font-semibold text-primary">{_tr(`Sound Devices`)}</p>
               <p className="mt-1 text-sm text-muted-foreground">
-                Alliteration, onomatopoeia, sibilance &mdash; how does the writing sound when read
-                aloud?
+                Alliteration, onomatopoeia, sibilance - how does the writing sound when read aloud?
               </p>
             </div>
             <div className="rounded-lg border border-border p-4">
@@ -660,9 +658,8 @@ export default async function Paper1ReadingPage() {
                 4
               </span>
               <span>
-                <strong>{_tr(`Answer in order`)}</strong> &mdash; Cambridge questions generally
-                follow the passage chronologically, so working through them in order is most
-                efficient.
+                <strong>{_tr(`Answer in order`)}</strong> - Cambridge questions generally follow the
+                passage chronologically, so working through them in order is most efficient.
               </span>
             </li>
             <li className="flex gap-3">
@@ -670,8 +667,8 @@ export default async function Paper1ReadingPage() {
                 5
               </span>
               <span>
-                <strong>{_tr(`Check mark allocations`)}</strong> &mdash; if a question is worth 3
-                marks, you need 3 distinct points. If it is worth 1 mark, keep your answer brief.
+                <strong>{_tr(`Check mark allocations`)}</strong> - if a question is worth 3 marks,
+                you need 3 distinct points. If it is worth 1 mark, keep your answer brief.
               </span>
             </li>
           </ol>

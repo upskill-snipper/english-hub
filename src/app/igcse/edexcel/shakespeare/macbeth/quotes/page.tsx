@@ -54,7 +54,7 @@ const QUOTES = [
     speaker: 'Lady Macbeth (1.5)',
     themes: ['Gender', 'Supernatural', 'Ambition'],
     analysis:
-      'She calls on literal demons to strip her of her femininity, which she sees as an obstacle to murder. For a Jacobean audience this would have been deeply transgressive \u2014 both demonic invocation and rejection of the natural order.',
+      'She calls on literal demons to strip her of her femininity, which she sees as an obstacle to murder. For a Jacobean audience this would have been deeply transgressive - both demonic invocation and rejection of the natural order.',
   },
   {
     quote: '"Look like the innocent flower, but be the serpent under\u2019t"',
@@ -69,7 +69,7 @@ const QUOTES = [
     speaker: 'Macbeth (1.7)',
     themes: ['Ambition', 'Fate vs free will'],
     analysis:
-      'The equestrian metaphor of a horse leaping so high it throws its rider frames ambition as self-defeating. Macbeth himself names ambition as his only motive \u2014 there is no grievance, no justice, just appetite.',
+      'The equestrian metaphor of a horse leaping so high it throws its rider frames ambition as self-defeating. Macbeth himself names ambition as his only motive - there is no grievance, no justice, just appetite.',
   },
   {
     quote: '"When you durst do it, then you were a man"',
@@ -83,28 +83,28 @@ const QUOTES = [
     speaker: 'Macbeth (2.1)',
     themes: ['Supernatural', 'Guilt', 'Fate vs free will'],
     analysis:
-      'Either a supernatural sign or a projection of his diseased mind \u2014 Shakespeare keeps both readings open. The dagger points toward Duncan, externalising the temptation Macbeth has already surrendered to.',
+      'Either a supernatural sign or a projection of his diseased mind - Shakespeare keeps both readings open. The dagger points toward Duncan, externalising the temptation Macbeth has already surrendered to.',
   },
   {
     quote: '"Will all great Neptune\u2019s ocean wash this blood clean from my hand?"',
     speaker: 'Macbeth (2.2)',
     themes: ['Guilt'],
     analysis:
-      "Hyperbolic, classical imagery. Not even a sea god's ocean can cleanse him \u2014 the blood is a moral stain, not a physical one. This is the first of many moments where guilt is figured as indelible.",
+      "Hyperbolic, classical imagery. Not even a sea god's ocean can cleanse him - the blood is a moral stain, not a physical one. This is the first of many moments where guilt is figured as indelible.",
   },
   {
     quote: '"A little water clears us of this deed"',
     speaker: 'Lady Macbeth (2.2)',
     themes: ['Guilt', 'Appearance vs reality'],
     analysis:
-      "The direct counter to Macbeth's despair. Her diminutive 'a little' is chilling \u2014 but the line is also brutal dramatic irony, because her sleepwalking scene will echo it back at her.",
+      "The direct counter to Macbeth's despair. Her diminutive 'a little' is chilling - but the line is also brutal dramatic irony, because her sleepwalking scene will echo it back at her.",
   },
   {
     quote: '"O, full of scorpions is my mind, dear wife!"',
     speaker: 'Macbeth (3.2)',
     themes: ['Guilt', 'Tyranny'],
     analysis:
-      "The metaphor of scorpions suggests paranoia that stings from within. Note the intimacy of 'dear wife' \u2014 even as their partnership is falling apart, Macbeth still turns to her for comfort.",
+      "The metaphor of scorpions suggests paranoia that stings from within. Note the intimacy of 'dear wife' - even as their partnership is falling apart, Macbeth still turns to her for comfort.",
   },
   {
     quote:
@@ -119,21 +119,21 @@ const QUOTES = [
     speaker: 'Witches (4.1)',
     themes: ['Supernatural'],
     analysis:
-      'Rhyming trochaic tetrameter sets the witches linguistically apart from everyone else. The incantation creates an atmosphere of ritual and unnatural magic \u2014 designed to unsettle a Jacobean audience who believed in witchcraft.',
+      'Rhyming trochaic tetrameter sets the witches linguistically apart from everyone else. The incantation creates an atmosphere of ritual and unnatural magic - designed to unsettle a Jacobean audience who believed in witchcraft.',
   },
   {
     quote: '"By the pricking of my thumbs, something wicked this way comes"',
     speaker: 'Second Witch (4.1)',
     themes: ['Supernatural'],
     analysis:
-      "The witches themselves now describe Macbeth as 'wicked' \u2014 he has passed even their moral threshold. Shakespeare uses the witches as a moral mirror to track how far Macbeth has fallen.",
+      "The witches themselves now describe Macbeth as 'wicked' - he has passed even their moral threshold. Shakespeare uses the witches as a moral mirror to track how far Macbeth has fallen.",
   },
   {
     quote: '"All my pretty chickens and their dam at one fell swoop"',
     speaker: 'Macduff (4.3)',
     themes: ['Tyranny', 'Masculinity'],
     analysis:
-      "The diminutive 'pretty chickens' and the maternal 'dam' feminise Macduff's grief \u2014 and that is the point. Against Lady Macbeth's toxic insistence that violence equals manhood, Shakespeare offers a father who grieves 'as a man'.",
+      "The diminutive 'pretty chickens' and the maternal 'dam' feminise Macduff's grief - and that is the point. Against Lady Macbeth's toxic insistence that violence equals manhood, Shakespeare offers a father who grieves 'as a man'.",
   },
   {
     quote: '"Out, damned spot! Out, I say!"',
@@ -147,7 +147,7 @@ const QUOTES = [
     speaker: 'Macbeth (5.3)',
     themes: ['Ambition', 'Tyranny'],
     analysis:
-      "Autumnal imagery. Macbeth recognises that he has lost everything that makes life meaningful \u2014 'honour, love, obedience, troops of friends'. This is quiet tragedy after all the noise.",
+      "Autumnal imagery. Macbeth recognises that he has lost everything that makes life meaningful - 'honour, love, obedience, troops of friends'. This is quiet tragedy after all the noise.",
   },
   {
     quote: '"Tomorrow, and tomorrow, and tomorrow, creeps in this petty pace from day to day"',
@@ -161,7 +161,7 @@ const QUOTES = [
     speaker: 'Macduff (5.8)',
     themes: ['Fate vs free will', 'Supernatural'],
     analysis:
-      "The witches' equivocation is exposed. 'None of woman born' turns out to be a technicality, not a guarantee \u2014 Macbeth has mistaken a half-truth for a promise, which is the play's final warning about trusting the supernatural.",
+      "The witches' equivocation is exposed. 'None of woman born' turns out to be a technicality, not a guarantee - Macbeth has mistaken a half-truth for a promise, which is the play's final warning about trusting the supernatural.",
   },
   {
     quote: '"This dead butcher and his fiend-like queen"',
@@ -170,7 +170,7 @@ const QUOTES = [
     speaker: 'Malcolm (5.8)',
     themes: ['Kingship', 'Gender'],
     analysis:
-      "The play's final verdict. 'Butcher' reduces Macbeth from tragic hero to mindless killer; 'fiend-like' demonises Lady Macbeth. The new king's language restores moral order \u2014 but notice how neatly it flattens the complexity we've just watched.",
+      "The play's final verdict. 'Butcher' reduces Macbeth from tragic hero to mindless killer; 'fiend-like' demonises Lady Macbeth. The new king's language restores moral order - but notice how neatly it flattens the complexity we've just watched.",
   },
 ]
 
@@ -193,7 +193,7 @@ export default async function MacbethQuotesPage() {
             {await t('igcse.page.badge_edexcel_lit')}
           </div>
           <h1 className="mt-4 text-3xl font-bold tracking-tight text-foreground sm:text-4xl md:text-5xl">
-            Macbeth &mdash; 20 key quotes
+            Macbeth - 20 key quotes
           </h1>
           {/* 10 October 2026: this said the exam is closed book, and the last
               revision tip below named a "part (b) whole-play question". 4ET1
@@ -214,8 +214,7 @@ export default async function MacbethQuotesPage() {
           <ul className="mt-3 space-y-2 text-sm text-muted-foreground">
             <li className="flex gap-2">
               <span className="mt-1 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-primary" />
-              Learn short, embeddable fragments &mdash; 3&ndash;6 words you can drop inside a
-              sentence.
+              Learn short, embeddable fragments - 3&ndash;6 words you can drop inside a sentence.
             </li>
             <li className="flex gap-2">
               <span className="mt-1 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-primary" />
@@ -243,7 +242,7 @@ export default async function MacbethQuotesPage() {
                 </span>
                 <div className="flex-1">
                   <p className="text-base italic font-semibold text-foreground">{q.quote}</p>
-                  <p className="mt-1 text-xs font-medium text-primary">&mdash; {q.speaker}</p>
+                  <p className="mt-1 text-xs font-medium text-primary">- {q.speaker}</p>
                   <div className="mt-3 flex flex-wrap gap-1.5">
                     {q.themes.map((t) => (
                       <span

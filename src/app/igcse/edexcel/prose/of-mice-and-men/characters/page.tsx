@@ -12,21 +12,21 @@ const characters = [
     name: 'George Milton',
     role: 'Lennie\u2019s companion and protector',
     analysis:
-      'George is "small and quick, dark of face, with restless eyes and sharp, strong features". He carries the burden of thinking for two men and suppresses his own desires to protect Lennie. His ritual recitation of the dream is both a lullaby for Lennie and a prayer for himself. Steinbeck gives George the novella\u2019s most morally agonising decision: the killing of Lennie is simultaneously a mercy, a failure, and a self-destruction \u2014 because without Lennie, George becomes exactly the lonely drifter he feared becoming.',
+      'George is "small and quick, dark of face, with restless eyes and sharp, strong features". He carries the burden of thinking for two men and suppresses his own desires to protect Lennie. His ritual recitation of the dream is both a lullaby for Lennie and a prayer for himself. Steinbeck gives George the novella\u2019s most morally agonising decision: the killing of Lennie is simultaneously a mercy, a failure, and a self-destruction - because without Lennie, George becomes exactly the lonely drifter he feared becoming.',
     quote: '\u201cGuys like us, that work on ranches, are the loneliest guys in the world.\u201d',
   },
   {
     name: 'Lennie Small',
     role: 'George\u2019s companion',
     analysis:
-      'Lennie is "a huge man, shapeless of face, with large, pale eyes". His name is ironic \u2014 he is physically enormous but mentally childlike. Steinbeck consistently describes him with animal imagery: he drinks "like a horse", moves "the way a bear drags his paws". His love of soft things \u2014 mice, puppies, Curley\u2019s wife\u2019s hair \u2014 is genuine but lethal because he cannot calibrate his own strength. Lennie\u2019s disability means he is always the most vulnerable person on the ranch and simultaneously the most dangerous.',
+      'Lennie is "a huge man, shapeless of face, with large, pale eyes". His name is ironic - he is physically enormous but mentally childlike. Steinbeck consistently describes him with animal imagery: he drinks "like a horse", moves "the way a bear drags his paws". His love of soft things - mice, puppies, Curley\u2019s wife\u2019s hair - is genuine but lethal because he cannot calibrate his own strength. Lennie\u2019s disability means he is always the most vulnerable person on the ranch and simultaneously the most dangerous.',
     quote: '\u201cI got you to look after me, ... you got me to look after you.\u201d',
   },
   {
     name: 'Candy',
     role: 'Ageing ranch handyman',
     analysis:
-      'Candy is old, one-handed, and increasingly aware that the ranch will discard him when he can no longer work. His attachment to his ancient dog parallels George\u2019s attachment to Lennie, and the dog\u2019s death at Carlson\u2019s hands foreshadows the ending. Candy\u2019s offer to invest his savings in the dream farm makes the dream briefly financially real \u2014 and its collapse all the more devastating. His final line, "I ought to of shot that dog myself", is the novella\u2019s clearest statement about the cost of letting others act on your behalf.',
+      'Candy is old, one-handed, and increasingly aware that the ranch will discard him when he can no longer work. His attachment to his ancient dog parallels George\u2019s attachment to Lennie, and the dog\u2019s death at Carlson\u2019s hands foreshadows the ending. Candy\u2019s offer to invest his savings in the dream farm makes the dream briefly financially real - and its collapse all the more devastating. His final line, "I ought to of shot that dog myself", is the novella\u2019s clearest statement about the cost of letting others act on your behalf.',
     quote: '\u201cI ought to of shot that dog myself, George.\u201d',
   },
   {
@@ -40,14 +40,14 @@ const characters = [
     name: 'Curley\u2019s wife',
     role: 'The only woman on the ranch',
     analysis:
-      'Steinbeck never names her. She is defined entirely by her relation to Curley, and the ranch men treat her as a threat. But her monologue in the barn reveals a young woman with her own failed dream \u2014 a man in Salinas who promised her a Hollywood career. Steinbeck presents her loneliness as genuine and her need for conversation as human, not predatory. Her death in the barn restores the humanity the narrative withheld in life: "She was very pretty and simple, and her face was sweet and young."',
+      'Steinbeck never names her. She is defined entirely by her relation to Curley, and the ranch men treat her as a threat. But her monologue in the barn reveals a young woman with her own failed dream - a man in Salinas who promised her a Hollywood career. Steinbeck presents her loneliness as genuine and her need for conversation as human, not predatory. Her death in the barn restores the humanity the narrative withheld in life: "She was very pretty and simple, and her face was sweet and young."',
     quote: '\u201cI never get to talk to nobody. I get awful lonely.\u201d',
   },
   {
     name: 'Crooks',
     role: 'Black stable buck',
     analysis:
-      'Crooks is the only Black man on the ranch. He lives alone in the harness room because racial segregation excludes him from the bunkhouse. His crooked spine \u2014 kicked by a horse \u2014 is a physical emblem of the damage done by marginalisation. In his one extended scene, he diagnoses loneliness as a pathology, briefly allows himself to believe in the dream, and then retreats when Curley\u2019s wife threatens to have him lynched. Steinbeck uses Crooks to show how racial oppression systematically destroys hope.',
+      'Crooks is the only Black man on the ranch. He lives alone in the harness room because racial segregation excludes him from the bunkhouse. His crooked spine - kicked by a horse - is a physical emblem of the damage done by marginalisation. In his one extended scene, he diagnoses loneliness as a pathology, briefly allows himself to believe in the dream, and then retreats when Curley\u2019s wife threatens to have him lynched. Steinbeck uses Crooks to show how racial oppression systematically destroys hope.',
     quote: '\u201cA guy needs somebody \u2014 to be near him.\u201d',
   },
   {
@@ -68,7 +68,7 @@ const characters = [
     name: 'The Boss',
     role: 'Ranch owner',
     analysis:
-      'The boss appears only briefly but establishes the power structure. He is suspicious of George speaking for Lennie and assumes exploitation. His small kindness \u2014 giving the men whiskey at Christmas \u2014 does not redeem the economic system he runs. Steinbeck positions him as the invisible hand behind the ranch\u2019s hierarchies.',
+      'The boss appears only briefly but establishes the power structure. He is suspicious of George speaking for Lennie and assumes exploitation. His small kindness - giving the men whiskey at Christmas - does not redeem the economic system he runs. Steinbeck positions him as the invisible hand behind the ranch\u2019s hierarchies.',
     quote: '\u201cI said what stake you got in this guy?\u201d',
   },
 ]
@@ -104,7 +104,7 @@ export default function OmamCharactersPage() {
           </h1>
           <p className="mt-3 max-w-2xl text-body-lg text-muted-foreground">
             Analytical profiles of George, Lennie, Candy, Curley, Curley&rsquo;s wife, Crooks, Slim
-            and the ranch workers &mdash; with key quotations.
+            and the ranch workers - with key quotations.
           </p>
         </div>
       </section>

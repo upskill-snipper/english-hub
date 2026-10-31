@@ -73,7 +73,7 @@ export default function MacbethKeyQuotesPage() {
             <CardHeader>
               <CardTitle className="flex items-center gap-2">
                 <div className={`size-3 rounded-full ${act.colour}`} />
-                {act.act} &mdash; {act.label}
+                {act.act} - {act.label}
               </CardTitle>
               <p className="text-sm text-muted-foreground">
                 {tr('rev.texts.common.key_quotes_count').replace('{n}', String(act.quotes.length))}
@@ -84,7 +84,7 @@ export default function MacbethKeyQuotesPage() {
                 <div key={i} className="rounded-lg border border-border/60 p-4 space-y-2">
                   <p className="text-lg font-medium leading-snug">&ldquo;{q.quote}&rdquo;</p>
                   <p className="text-xs text-muted-foreground-subtle">
-                    {q.speaker} &mdash; {q.actScene}
+                    {q.speaker} - {q.actScene}
                   </p>
                   <p className="text-sm text-muted-foreground leading-relaxed">
                     <span className="font-medium text-foreground">

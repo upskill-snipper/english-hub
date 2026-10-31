@@ -630,7 +630,7 @@ export default function AuthorsHubPage() {
           <h2 className="text-lg font-bold text-foreground">How to use author context in essays</h2>
           <p className="mt-2 text-sm text-muted-foreground">
             Don&apos;t bolt biographical paragraphs on top of analysis. Weave a single, precise
-            contextual fact into a sentence about meaning &mdash; for example, &quot;Writing in the
+            contextual fact into a sentence about meaning - for example, &quot;Writing in the
             immediate aftermath of the Crimean War, Tennyson&hellip;&quot; or &quot;Owen, killed in
             action one week before the Armistice, &hellip;&quot;. Generic life-and-times paragraphs
             lose AO3 marks.

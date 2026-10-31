@@ -21,7 +21,7 @@ export default function UnseenPoetryPage() {
       <section className="border-b bg-gradient-to-b from-primary/[0.06] to-transparent px-4 py-16 sm:py-20">
         <div className="mx-auto max-w-4xl text-center">
           <p className="text-sm font-semibold uppercase tracking-widest text-muted-foreground">
-            Cambridge IGCSE English Literature &mdash; Paper 4
+            Cambridge IGCSE English Literature - Paper 4
           </p>
           <h1 className="mt-2 text-3xl font-bold tracking-tight sm:text-4xl md:text-5xl">
             Unseen Poetry: The Complete Guide
@@ -227,8 +227,8 @@ export default function UnseenPoetryPage() {
                     personal response (Personal Response).
                   </li>
                   <li>
-                    &bull; Aim for at least one point on form or structure &mdash; this is where
-                    many students lose marks.
+                    &bull; Aim for at least one point on form or structure - this is where many
+                    students lose marks.
                   </li>
                   <li>
                     &bull; Decide on your order: you might move from surface meaning to deeper
@@ -260,7 +260,7 @@ export default function UnseenPoetryPage() {
                     the poem.
                   </li>
                   <li>
-                    &bull; <strong>{tr(`Body paragraphs:`)}</strong> Use the PEAL structure &mdash;{' '}
+                    &bull; <strong>{tr(`Body paragraphs:`)}</strong> Use the PEAL structure -{' '}
                     <strong>P</strong>oint (what the poet does), <strong>E</strong>vidence (short
                     embedded quotation), <strong>A</strong>nalysis (how the technique creates an
                     effect), <strong>L</strong>ink (connect to theme or wider meaning).
@@ -395,7 +395,7 @@ export default function UnseenPoetryPage() {
                   </li>
                   <li>
                     &bull; <strong>{tr(`Free verse:`)}</strong> No fixed rhyme or metre. This is not
-                    &ldquo;lazy&rdquo; &mdash; it allows the poet freedom to mirror natural speech,
+                    &ldquo;lazy&rdquo; - it allows the poet freedom to mirror natural speech,
                     thought patterns, or emotional chaos.
                   </li>
                   <li>
@@ -507,7 +507,7 @@ export default function UnseenPoetryPage() {
                   </li>
                   <li>
                     &bull; <strong>{tr(`Wider connections:`)}</strong> If the poem reminds you of
-                    universal human experiences (loss, love, conflict, identity), say so &mdash; but
+                    universal human experiences (loss, love, conflict, identity), say so - but
                     always ground your comments in the text.
                   </li>
                   <li>
@@ -613,29 +613,29 @@ the harbour holds its breath. And waits. For no one.`}
               <p>
                 &ldquo;The Harbour at Dawn&rdquo; presents a once-thriving harbour that has been
                 abandoned, using the natural landscape as both witness and metaphor for human
-                departure. The poem&rsquo;s tone is elegiac &mdash; quiet, resigned, and suffused
-                with a sense of inevitability rather than anger.
+                departure. The poem&rsquo;s tone is elegiac - quiet, resigned, and suffused with a
+                sense of inevitability rather than anger.
               </p>
               <p>
                 <span className="font-semibold text-foreground">
-                  [Writer&rsquo;s Methods &mdash; Imagery &amp; Language]
+                  [Writer&rsquo;s Methods - Imagery &amp; Language]
                 </span>{' '}
                 The opening metaphor, &ldquo;boats are sleeping,&rdquo; personifies the vessels as
                 dormant rather than dead, suggesting a fragile hope that they might wake. However,
                 this is immediately complicated by the simile &ldquo;their masts like fingers
-                pressed against the sky&rdquo; &mdash; the image of &lsquo;fingers pressed&rsquo;
-                evokes supplication or prayer, as though the boats themselves are reaching out for
-                help that will not come. The poet&rsquo;s choice of &lsquo;pressed&rsquo; rather
-                than &lsquo;pointing&rsquo; or &lsquo;reaching&rsquo; creates a sense of gentle
+                pressed against the sky&rdquo; - the image of &lsquo;fingers pressed&rsquo; evokes
+                supplication or prayer, as though the boats themselves are reaching out for help
+                that will not come. The poet&rsquo;s choice of &lsquo;pressed&rsquo; rather than
+                &lsquo;pointing&rsquo; or &lsquo;reaching&rsquo; creates a sense of gentle
                 desperation rather than active resistance.
               </p>
               <p>
                 <span className="font-semibold text-foreground">
-                  [Writer&rsquo;s Methods &mdash; Sound &amp; Personification]
+                  [Writer&rsquo;s Methods - Sound &amp; Personification]
                 </span>{' '}
                 The lighthouse &ldquo;blinks its slow, indifferent eye&rdquo; is a striking
                 personification: it sees the harbour&rsquo;s decay but is &lsquo;indifferent&rsquo;
-                to it. The word &lsquo;indifferent&rsquo; is carefully chosen &mdash; it implies not
+                to it. The word &lsquo;indifferent&rsquo; is carefully chosen - it implies not
                 cruelty but apathy, reflecting the wider world&rsquo;s lack of concern for this
                 forgotten place. The sibilance in &ldquo;water folds and sighs, / smoothing the
                 stones&rdquo; creates a soft, repetitive sound that mirrors the endless, unthinking
@@ -644,7 +644,7 @@ the harbour holds its breath. And waits. For no one.`}
               </p>
               <p>
                 <span className="font-semibold text-foreground">
-                  [Writer&rsquo;s Methods &mdash; Form &amp; Structure]
+                  [Writer&rsquo;s Methods - Form &amp; Structure]
                 </span>{' '}
                 Structurally, the poem moves from description to reflection to prophecy. The opening
                 stanzas observe; the middle stanzas introduce the concept of
@@ -660,7 +660,7 @@ the harbour holds its breath. And waits. For no one.`}
               </p>
               <p>
                 <span className="font-semibold text-foreground">
-                  [Interpretation &mdash; Effects on Reader]
+                  [Interpretation - Effects on Reader]
                 </span>{' '}
                 The image of nets &ldquo;heavy with nothing, dripping with the dark&rdquo; is
                 perhaps the poem&rsquo;s most powerful paradox. Nets are designed to be heavy with
@@ -671,14 +671,14 @@ the harbour holds its breath. And waits. For no one.`}
               </p>
               <p>
                 <span className="font-semibold text-foreground">[Personal Response]</span> The final
-                line &mdash; &ldquo;And waits. For no one.&rdquo; &mdash; is quietly devastating.
-                The caesura before &ldquo;For no one&rdquo; creates a pause in which the reader
-                momentarily expects a redemptive ending: perhaps someone will return, perhaps the
-                harbour will be saved. The two-word sentence &ldquo;For no one&rdquo; extinguishes
-                that hope. The poem does not rage against abandonment; it simply observes it with a
-                resigned clarity that is, in some ways, more affecting than anger. The harbour
-                becomes a symbol not just of a specific place but of anything &mdash; a
-                relationship, a community, a way of life &mdash; that has been quietly left behind.
+                line - &ldquo;And waits. For no one.&rdquo; - is quietly devastating. The caesura
+                before &ldquo;For no one&rdquo; creates a pause in which the reader momentarily
+                expects a redemptive ending: perhaps someone will return, perhaps the harbour will
+                be saved. The two-word sentence &ldquo;For no one&rdquo; extinguishes that hope. The
+                poem does not rage against abandonment; it simply observes it with a resigned
+                clarity that is, in some ways, more affecting than anger. The harbour becomes a
+                symbol not just of a specific place but of anything - a relationship, a community, a
+                way of life - that has been quietly left behind.
               </p>
             </div>
           </div>
@@ -902,7 +902,7 @@ the harbour holds its breath. And waits. For no one.`}
             <p className="mt-2 text-sm text-muted-foreground">
               The single biggest factor separating a 20+ response from a 10&ndash;15 response is{' '}
               <strong>depth of analysis</strong>. A top-band response does not necessarily cover
-              more techniques &mdash; it analyses fewer techniques in greater depth. It zooms in on
+              more techniques - it analyses fewer techniques in greater depth. It zooms in on
               individual words, explores connotations, considers alternative meanings, and always
               explains the effect on the reader. A mid-band response tends to identify techniques
               correctly but move on too quickly, without fully unpacking why the poet&rsquo;s

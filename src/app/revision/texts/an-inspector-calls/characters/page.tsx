@@ -47,14 +47,14 @@ const CHARACTERS: CharacterStudy[] = [
     role: 'The mysterious investigating inspector',
     colour: 'teal',
     overview:
-      'The Inspector is Priestley\u2019s most powerful dramatic device: a figure of absolute moral authority who arrives uninvited, controls the pace of the evening, and forces every character to confront their responsibility for Eva Smith\u2019s death. His name puns on "ghoul," suggesting a supernatural or spectral presence, and his origins are never explained. He does not behave like a real police inspector \u2014 he already seems to know the answers to the questions he asks, he shows the photograph to only one person at a time, and he delivers a final speech that sounds more like a sermon than a police report. Priestley uses the Inspector as a socialist mouthpiece: he voices the argument that society must take collective responsibility for its weakest members, and his prophetic warning of "fire and blood and anguish" carries the moral weight of two world wars the audience already knows about.',
-    arc: 'The Inspector does not change \u2014 he arrives with moral certainty and leaves with it. His function is to change others. He systematically dismantles the Birlings\u2019 self-image, moving from Arthur\u2019s economic exploitation to Sheila\u2019s petty jealousy, Gerald\u2019s sexual exploitation, Sybil\u2019s class prejudice, and Eric\u2019s violence. After his departure, the question of whether he was "real" becomes central \u2014 but Priestley\u2019s point is that his identity matters far less than his message.',
+      'The Inspector is Priestley\u2019s most powerful dramatic device: a figure of absolute moral authority who arrives uninvited, controls the pace of the evening, and forces every character to confront their responsibility for Eva Smith\u2019s death. His name puns on "ghoul," suggesting a supernatural or spectral presence, and his origins are never explained. He does not behave like a real police inspector - he already seems to know the answers to the questions he asks, he shows the photograph to only one person at a time, and he delivers a final speech that sounds more like a sermon than a police report. Priestley uses the Inspector as a socialist mouthpiece: he voices the argument that society must take collective responsibility for its weakest members, and his prophetic warning of "fire and blood and anguish" carries the moral weight of two world wars the audience already knows about.',
+    arc: 'The Inspector does not change - he arrives with moral certainty and leaves with it. His function is to change others. He systematically dismantles the Birlings\u2019 self-image, moving from Arthur\u2019s economic exploitation to Sheila\u2019s petty jealousy, Gerald\u2019s sexual exploitation, Sybil\u2019s class prejudice, and Eric\u2019s violence. After his departure, the question of whether he was "real" becomes central - but Priestley\u2019s point is that his identity matters far less than his message.',
     keyQuotes: [
       {
         quote: '"We are members of one body. We are responsible for each other."',
         act: 'Act 3',
         analysis:
-          'The play\u2019s thesis statement. The biblical echo of "one body" (from St Paul\u2019s letters) lends the socialist message moral authority that transcends politics. The simple present tense \u2014 "we are," not "we should be" \u2014 presents collective responsibility as a permanent, inescapable fact.',
+          'The play\u2019s thesis statement. The biblical echo of "one body" (from St Paul\u2019s letters) lends the socialist message moral authority that transcends politics. The simple present tense - "we are," not "we should be" - presents collective responsibility as a permanent, inescapable fact.',
       },
       {
         quote: '"Fire and blood and anguish."',
@@ -82,9 +82,9 @@ const CHARACTERS: CharacterStudy[] = [
       },
     ],
     themeLinks: [
-      'Social Responsibility \u2014 the Inspector is the voice of collective duty',
-      'Power \u2014 he temporarily inverts the class hierarchy, subjecting the powerful to moral scrutiny',
-      'Capitalism vs Socialism \u2014 he embodies Priestley\u2019s democratic socialist argument',
+      'Social Responsibility - the Inspector is the voice of collective duty',
+      'Power - he temporarily inverts the class hierarchy, subjecting the powerful to moral scrutiny',
+      'Capitalism vs Socialism - he embodies Priestley\u2019s democratic socialist argument',
     ],
     examTip:
       'Discuss the Inspector\u2019s dramatic function rather than treating him as a realistic character. He is a device Priestley uses to deliver his political message. Always link his speeches to the 1945 context and the welfare state being built when the play was written.',
@@ -101,7 +101,7 @@ const CHARACTERS: CharacterStudy[] = [
         quote: '"The Titanic ... unsinkable, absolutely unsinkable."',
         act: 'Act 1',
         analysis:
-          'Dramatic irony at its sharpest. The audience knows the Titanic sank in April 1912. Birling\u2019s absolute certainty immediately marks him as a man whose judgment cannot be trusted, inviting the audience to reject everything else he says \u2014 including his capitalist philosophy.',
+          'Dramatic irony at its sharpest. The audience knows the Titanic sank in April 1912. Birling\u2019s absolute certainty immediately marks him as a man whose judgment cannot be trusted, inviting the audience to reject everything else he says - including his capitalist philosophy.',
       },
       {
         quote: '"a man has to look after himself and his own"',
@@ -113,7 +113,7 @@ const CHARACTERS: CharacterStudy[] = [
         quote: '"If we were all responsible for everything ... it would be very awkward."',
         act: 'Act 1',
         analysis:
-          'Birling reduces a moral question to a practical inconvenience. The word "awkward" reveals the hollowness of his position \u2014 he cannot engage with the ethics of responsibility, only with its personal cost. Priestley uses understatement to expose moral emptiness.',
+          'Birling reduces a moral question to a practical inconvenience. The word "awkward" reveals the hollowness of his position - he cannot engage with the ethics of responsibility, only with its personal cost. Priestley uses understatement to expose moral emptiness.',
       },
       {
         quote:
@@ -130,20 +130,20 @@ const CHARACTERS: CharacterStudy[] = [
       },
     ],
     themeLinks: [
-      'Capitalism vs Socialism \u2014 Birling is the play\u2019s embodiment of capitalist self-interest',
-      'Social Responsibility \u2014 he rejects it completely and is punished for doing so',
-      'Age & Generational Change \u2014 he represents the old order that refuses to change',
+      'Capitalism vs Socialism - Birling is the play\u2019s embodiment of capitalist self-interest',
+      'Social Responsibility - he rejects it completely and is punished for doing so',
+      'Age & Generational Change - he represents the old order that refuses to change',
     ],
     examTip:
-      'Always connect Birling\u2019s dramatic irony to Priestley\u2019s political argument. His wrong predictions about the Titanic and war are not just comic \u2014 they discredit the capitalist worldview he represents. Birling is wrong about facts, so Priestley invites us to conclude he is wrong about values too.',
+      'Always connect Birling\u2019s dramatic irony to Priestley\u2019s political argument. His wrong predictions about the Titanic and war are not just comic - they discredit the capitalist worldview he represents. Birling is wrong about facts, so Priestley invites us to conclude he is wrong about values too.',
   },
   {
     name: 'Sybil Birling',
     role: 'Arthur\u2019s wife and charity committee chair',
     colour: 'clay',
     overview:
-      'Sybil Birling is the most class-conscious character in the play and the most resistant to the Inspector\u2019s message. Cold, snobbish, and rigidly hierarchical, she uses her position as chair of the Brumley Women\u2019s Charity Organisation to enforce class prejudice rather than provide genuine aid. When Eva \u2014 pregnant and desperate \u2014 appealed to the committee, Sybil rejected her application because Eva had used the name "Mrs Birling," which Sybil found presumptuous. Her refusal was motivated by class snobbery and personal pique, not by any assessment of need. Priestley uses Sybil to show how charitable institutions can be instruments of class prejudice rather than genuine compassion.',
-    arc: 'Sybil is the character who changes least. She enters the play confident in her social superiority and leaves it the same way. Even the revelation that her own son is the father of Eva\u2019s child does not produce genuine moral reflection \u2014 only embarrassment and deflection. Priestley presents her as the most hardened product of the class system: someone so insulated by privilege that moral awakening is impossible.',
+      'Sybil Birling is the most class-conscious character in the play and the most resistant to the Inspector\u2019s message. Cold, snobbish, and rigidly hierarchical, she uses her position as chair of the Brumley Women\u2019s Charity Organisation to enforce class prejudice rather than provide genuine aid. When Eva - pregnant and desperate - appealed to the committee, Sybil rejected her application because Eva had used the name "Mrs Birling," which Sybil found presumptuous. Her refusal was motivated by class snobbery and personal pique, not by any assessment of need. Priestley uses Sybil to show how charitable institutions can be instruments of class prejudice rather than genuine compassion.',
+    arc: 'Sybil is the character who changes least. She enters the play confident in her social superiority and leaves it the same way. Even the revelation that her own son is the father of Eva\u2019s child does not produce genuine moral reflection - only embarrassment and deflection. Priestley presents her as the most hardened product of the class system: someone so insulated by privilege that moral awakening is impossible.',
     keyQuotes: [
       {
         quote: '"In the circumstances I think I was justified."',
@@ -173,19 +173,19 @@ const CHARACTERS: CharacterStudy[] = [
       },
     ],
     themeLinks: [
-      'Class & Inequality \u2014 Sybil embodies rigid class prejudice disguised as respectability',
-      'Gender \u2014 she fails in solidarity with Eva, showing how class can override gender loyalty',
-      'Guilt & Morality \u2014 she is the character who most completely refuses to accept guilt',
+      'Class & Inequality - Sybil embodies rigid class prejudice disguised as respectability',
+      'Gender - she fails in solidarity with Eva, showing how class can override gender loyalty',
+      'Guilt & Morality - she is the character who most completely refuses to accept guilt',
     ],
     examTip:
-      'Focus on Sybil\u2019s language of class. Phrases like "Girls of that class" reveal that her prejudice operates through instinctive categorisation. Her charity work is not compassionate but controlling \u2014 a way of maintaining class boundaries while appearing virtuous.',
+      'Focus on Sybil\u2019s language of class. Phrases like "Girls of that class" reveal that her prejudice operates through instinctive categorisation. Her charity work is not compassionate but controlling - a way of maintaining class boundaries while appearing virtuous.',
   },
   {
     name: 'Sheila Birling',
     role: 'The Birlings\u2019 daughter, engaged to Gerald',
     colour: 'teal',
     overview:
-      'Sheila undergoes the most complete moral transformation in the play, moving from a sheltered, materialistic young woman to the play\u2019s moral conscience. At the start she is excited about her engagement ring and oblivious to the consequences of her own actions \u2014 it was her jealous complaint to the manager at Milwards that got Eva sacked. But the moment the Inspector reveals her involvement, Sheila accepts guilt immediately and without evasion. From that point, she becomes the Inspector\u2019s ally, seeing through Gerald\u2019s deception, challenging her parents\u2019 refusal to change, and insisting that the moral lesson matters regardless of whether the Inspector was "real." Priestley uses Sheila to represent the younger generation he believed could build a fairer post-war society.',
+      'Sheila undergoes the most complete moral transformation in the play, moving from a sheltered, materialistic young woman to the play\u2019s moral conscience. At the start she is excited about her engagement ring and oblivious to the consequences of her own actions - it was her jealous complaint to the manager at Milwards that got Eva sacked. But the moment the Inspector reveals her involvement, Sheila accepts guilt immediately and without evasion. From that point, she becomes the Inspector\u2019s ally, seeing through Gerald\u2019s deception, challenging her parents\u2019 refusal to change, and insisting that the moral lesson matters regardless of whether the Inspector was "real." Priestley uses Sheila to represent the younger generation he believed could build a fairer post-war society.',
     arc: 'Act 1: Sheila is naive, playful, and excited about her engagement. She is genuinely horrified to learn she played a part in Eva\u2019s story. Act 2: She returns the engagement ring to Gerald, demonstrating that moral awakening has real personal consequences. She begins to function as the Inspector\u2019s ally, predicting what the family will try to hide. Act 3: After the Inspector leaves, Sheila holds the lesson alive against her parents\u2019 attempts to forget it. She becomes the audience\u2019s representative on stage, insisting that truth matters more than comfort.',
     keyQuotes: [
       {
@@ -210,13 +210,13 @@ const CHARACTERS: CharacterStudy[] = [
         quote: '"I remember what he said, how he looked, and what he made me feel."',
         act: 'Act 3',
         analysis:
-          'Sheila explains why she cannot return to ignorance. The tricolon \u2014 "said," "looked," "feel" \u2014 moves from intellectual to emotional, showing that the Inspector\u2019s impact was not just rational but deeply felt. Priestley argues that genuine moral change is irreversible.',
+          'Sheila explains why she cannot return to ignorance. The tricolon - "said," "looked," "feel" - moves from intellectual to emotional, showing that the Inspector\u2019s impact was not just rational but deeply felt. Priestley argues that genuine moral change is irreversible.',
       },
     ],
     themeLinks: [
-      'Social Responsibility \u2014 Sheila is the first to accept it and the last to abandon it',
-      'Age & Generational Change \u2014 she represents the young generation Priestley believed in',
-      'Gender \u2014 her transformation involves rejecting male authority (Gerald, her father)',
+      'Social Responsibility - Sheila is the first to accept it and the last to abandon it',
+      'Age & Generational Change - she represents the young generation Priestley believed in',
+      'Gender - her transformation involves rejecting male authority (Gerald, her father)',
     ],
     examTip:
       'Track Sheila\u2019s language across the three acts. In Act 1 she speaks in short, emotional exclamations; by Act 3 she uses the Inspector\u2019s own measured, analytical register. This linguistic shift mirrors her moral growth and is strong AO2 evidence.',
@@ -226,8 +226,8 @@ const CHARACTERS: CharacterStudy[] = [
     role: 'The Birlings\u2019 son',
     colour: 'teal',
     overview:
-      'Eric is the most troubled member of the Birling family. His heavy drinking \u2014 hinted at throughout Act 1 through stage directions noting his "squiffy" behaviour \u2014 signals deeper dysfunction beneath the family\u2019s polished exterior. Eric forced himself on Eva when drunk, got her pregnant, and then stole money from his father\u2019s firm to support her. His confession in Act 3 is the most violent in the play, and Priestley does not soften it. Yet Eric, like Sheila, accepts genuine responsibility. He is anguished, ashamed, and furious with his parents for trying to cover things up. His accusation that Birling is "not the kind of father a chap could go to" exposes the emotional bankruptcy at the heart of the family.',
-    arc: 'Eric is largely absent or marginal in Acts 1 and 2, which builds suspense. His return in Act 3 brings the most dramatic revelations. Like Sheila, he undergoes genuine moral change: he accepts guilt, condemns his parents\u2019 evasion, and insists the lesson matters. But his change is more painful \u2014 he must confront not just his complicity but his violence.',
+      'Eric is the most troubled member of the Birling family. His heavy drinking - hinted at throughout Act 1 through stage directions noting his "squiffy" behaviour - signals deeper dysfunction beneath the family\u2019s polished exterior. Eric forced himself on Eva when drunk, got her pregnant, and then stole money from his father\u2019s firm to support her. His confession in Act 3 is the most violent in the play, and Priestley does not soften it. Yet Eric, like Sheila, accepts genuine responsibility. He is anguished, ashamed, and furious with his parents for trying to cover things up. His accusation that Birling is "not the kind of father a chap could go to" exposes the emotional bankruptcy at the heart of the family.',
+    arc: 'Eric is largely absent or marginal in Acts 1 and 2, which builds suspense. His return in Act 3 brings the most dramatic revelations. Like Sheila, he undergoes genuine moral change: he accepts guilt, condemns his parents\u2019 evasion, and insists the lesson matters. But his change is more painful - he must confront not just his complicity but his violence.',
     keyQuotes: [
       {
         quote: '"You\u2019re not the kind of father a chap could go to."',
@@ -261,9 +261,9 @@ const CHARACTERS: CharacterStudy[] = [
       },
     ],
     themeLinks: [
-      'Age & Generational Change \u2014 like Sheila, Eric accepts responsibility and challenges his parents',
-      'Power & Abuse of Power \u2014 his assault on Eva is the most violent abuse in the play',
-      'Guilt & Morality \u2014 his guilt is genuine but complicated by his own victimhood within the family',
+      'Age & Generational Change - like Sheila, Eric accepts responsibility and challenges his parents',
+      'Power & Abuse of Power - his assault on Eva is the most violent abuse in the play',
+      'Guilt & Morality - his guilt is genuine but complicated by his own victimhood within the family',
     ],
     examTip:
       'Do not excuse Eric\u2019s behaviour because he eventually shows remorse. Priestley presents his assault on Eva as a consequence of the entitled, unaccountable upbringing the Birling household provided. His guilt is real, but so is his crime.',
@@ -273,8 +273,8 @@ const CHARACTERS: CharacterStudy[] = [
     role: 'Sheila\u2019s fianc\u00e9, son of Sir George Croft',
     colour: 'clay',
     overview:
-      'Gerald occupies a complex middle ground in the play. His affair with Daisy Renton (Eva\u2019s assumed name) contained what appears to be genuine feeling \u2014 he rescued her from the predatory Alderman Meggarty and gave her accommodation, money, and affection. But the relationship was always shaped by a vast power imbalance: Gerald was a wealthy industrialist\u2019s son, Daisy was a desperate, penniless woman. He made her his "kept woman" and then ended the relationship when it suited him, leaving her worse off than before. After the Inspector leaves, Gerald leads the effort to discredit the investigation, aligning himself with the older generation rather than with Sheila and Eric. His dual nature \u2014 capable of kindness but ultimately self-serving \u2014 makes him one of Priestley\u2019s most nuanced creations.',
-    arc: 'Gerald begins as the charming, socially superior fianc\u00e9. His confession in Act 2 temporarily humanises him \u2014 he is the only character who seems to have genuinely cared for Eva. But his post-Inspector behaviour reveals his true allegiance: he wants to bury the truth, not learn from it. He offers Sheila the ring back as though nothing has changed, showing that he has not undergone the transformation that Sheila demands.',
+      'Gerald occupies a complex middle ground in the play. His affair with Daisy Renton (Eva\u2019s assumed name) contained what appears to be genuine feeling - he rescued her from the predatory Alderman Meggarty and gave her accommodation, money, and affection. But the relationship was always shaped by a vast power imbalance: Gerald was a wealthy industrialist\u2019s son, Daisy was a desperate, penniless woman. He made her his "kept woman" and then ended the relationship when it suited him, leaving her worse off than before. After the Inspector leaves, Gerald leads the effort to discredit the investigation, aligning himself with the older generation rather than with Sheila and Eric. His dual nature - capable of kindness but ultimately self-serving - makes him one of Priestley\u2019s most nuanced creations.',
+    arc: 'Gerald begins as the charming, socially superior fianc\u00e9. His confession in Act 2 temporarily humanises him - he is the only character who seems to have genuinely cared for Eva. But his post-Inspector behaviour reveals his true allegiance: he wants to bury the truth, not learn from it. He offers Sheila the ring back as though nothing has changed, showing that he has not undergone the transformation that Sheila demands.',
     keyQuotes: [
       {
         quote: '"I didn\u2019t feel about her as she felt about me."',
@@ -286,13 +286,13 @@ const CHARACTERS: CharacterStudy[] = [
         quote: '"She was young and pretty and warm-hearted \u2014 and intensely grateful."',
         act: 'Act 2',
         analysis:
-          'Gerald lists Daisy\u2019s qualities as though she were a pleasant acquisition. "Intensely grateful" is the most revealing phrase: he valued her gratitude \u2014 her dependence \u2014 rather than seeing her as an equal. The listing reduces her to a set of attractive attributes.',
+          'Gerald lists Daisy\u2019s qualities as though she were a pleasant acquisition. "Intensely grateful" is the most revealing phrase: he valued her gratitude - her dependence - rather than seeing her as an equal. The listing reduces her to a set of attractive attributes.',
       },
       {
         quote: '"Everything\u2019s all right now, Sheila. What about this ring?"',
         act: 'Act 3',
         analysis:
-          'Gerald tries to restore the status quo after the Inspector\u2019s departure. "Everything\u2019s all right now" dismisses the entire evening\u2019s moral reckoning. The ring becomes a symbol of his desire to return to comfortable ignorance \u2014 precisely what Sheila now refuses to do.',
+          'Gerald tries to restore the status quo after the Inspector\u2019s departure. "Everything\u2019s all right now" dismisses the entire evening\u2019s moral reckoning. The ring becomes a symbol of his desire to return to comfortable ignorance - precisely what Sheila now refuses to do.',
       },
       {
         quote: '"I think it was simply a piece of bluff."',
@@ -302,9 +302,9 @@ const CHARACTERS: CharacterStudy[] = [
       },
     ],
     themeLinks: [
-      'Gender \u2014 Gerald\u2019s "rescue" of Daisy reproduces patriarchal power under the guise of kindness',
-      'Class & Inequality \u2014 his relationship with Daisy is shaped entirely by their class difference',
-      'Power \u2014 he exercises power through charm and social position rather than through open authority',
+      'Gender - Gerald\u2019s "rescue" of Daisy reproduces patriarchal power under the guise of kindness',
+      'Class & Inequality - his relationship with Daisy is shaped entirely by their class difference',
+      'Power - he exercises power through charm and social position rather than through open authority',
     ],
     examTip:
       'Gerald is the character who most divides examiners. Some candidates call him sympathetic; others condemn him. The strongest approach is to acknowledge his genuine feeling for Daisy while showing that his class position made the relationship inherently exploitative. Discuss the gap between his intentions and his impact.',
@@ -314,7 +314,7 @@ const CHARACTERS: CharacterStudy[] = [
     role: 'The unseen working-class victim',
     colour: 'teal',
     overview:
-      'Eva never appears on stage, but she is the moral centre of the play. She is sacked from Birling\u2019s factory for leading a strike, dismissed from Milwards because of Sheila\u2019s jealousy, kept as Gerald\u2019s mistress, assaulted by Eric, refused help by Sybil\u2019s charity, and driven to suicide. Her multiple names \u2014 Eva Smith, Daisy Renton, "Mrs Birling" \u2014 suggest she may be several women or an everywoman figure representing all working-class victims of the class system. Priestley deliberately keeps her off stage to mirror the way the class system renders the poor invisible. She is talked about, judged, and categorised by every character, but never speaks for herself. This structural choice is itself a political argument: the voiceless are at the mercy of those who hold power.',
+      'Eva never appears on stage, but she is the moral centre of the play. She is sacked from Birling\u2019s factory for leading a strike, dismissed from Milwards because of Sheila\u2019s jealousy, kept as Gerald\u2019s mistress, assaulted by Eric, refused help by Sybil\u2019s charity, and driven to suicide. Her multiple names - Eva Smith, Daisy Renton, "Mrs Birling" - suggest she may be several women or an everywoman figure representing all working-class victims of the class system. Priestley deliberately keeps her off stage to mirror the way the class system renders the poor invisible. She is talked about, judged, and categorised by every character, but never speaks for herself. This structural choice is itself a political argument: the voiceless are at the mercy of those who hold power.',
     arc: 'Eva\u2019s story is told in reverse through the confessions of others. Each revelation adds a new layer of exploitation. She moves from independent worker (sacked by Birling) to shop assistant (dismissed by Sheila) to kept woman (abandoned by Gerald) to assault victim (Eric) to charity applicant (rejected by Sybil) to suicide. The downward trajectory is relentless, and Priestley ensures that every step was caused by a Birling or a Croft.',
     keyQuotes: [
       {
@@ -343,12 +343,12 @@ const CHARACTERS: CharacterStudy[] = [
       },
     ],
     themeLinks: [
-      'Social Responsibility \u2014 Eva\u2019s death is the consequence of collective irresponsibility',
-      'Class & Inequality \u2014 she is exploited at every level of the class system',
-      'Gender \u2014 she suffers the double oppression of being both working-class and female',
+      'Social Responsibility - Eva\u2019s death is the consequence of collective irresponsibility',
+      'Class & Inequality - she is exploited at every level of the class system',
+      'Gender - she suffers the double oppression of being both working-class and female',
     ],
     examTip:
-      'Refer to Eva as "Eva Smith/Daisy Renton" to show awareness of the ambiguity around her identity. Discuss whether she is one woman or several \u2014 and argue that Priestley\u2019s point is that it does not matter, because "millions of Eva Smiths" exist. Her absence from the stage is itself a dramatic technique worth analysing.',
+      'Refer to Eva as "Eva Smith/Daisy Renton" to show awareness of the ambiguity around her identity. Discuss whether she is one woman or several - and argue that Priestley\u2019s point is that it does not matter, because "millions of Eva Smiths" exist. Her absence from the stage is itself a dramatic technique worth analysing.',
   },
 ]
 

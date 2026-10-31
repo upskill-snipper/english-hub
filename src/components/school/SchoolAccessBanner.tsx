@@ -90,7 +90,7 @@ function FounderUrgentBanner({
     <div className="flex items-center gap-3 rounded-lg border border-red-600/50 bg-red-950/60 px-4 py-3 text-sm text-red-300">
       <AlertCircle className="h-4 w-4 shrink-0 animate-pulse text-red-400" aria-hidden="true" />
       <span>
-        <span className="font-semibold text-red-200">{headline}</span> &mdash;{' '}
+        <span className="font-semibold text-red-200">{headline}</span> -{' '}
         {t('school.banner.urgent_body')}
       </span>
       <a
@@ -160,7 +160,7 @@ function TrialActiveBanner({
         {daysRemaining !== null ? (
           <>
             {' '}
-            &mdash;{' '}
+            -{' '}
             <span className="font-medium">
               {daysRemaining}{' '}
               {daysRemaining === 1

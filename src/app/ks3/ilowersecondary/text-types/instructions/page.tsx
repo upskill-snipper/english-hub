@@ -249,14 +249,13 @@ export default async function InstructionsPage() {
         <span>{await t('ks3.page.text_types.instructions.bc')}</span>
       </p>
 
-      <h1>Instructional texts &mdash; a reading &amp; writing guide</h1>
+      <h1>Instructional texts - a reading &amp; writing guide</h1>
       <p className="lead">
         <strong>Instructions</strong> are one of the non-fiction <strong>{TEXT_TYPE}</strong> text
         types you may meet in Section A, and the form you may be asked to write in Section B. Their
-        purpose is to <strong>{PURPOSE_INFORM}</strong> and to <strong>{PURPOSE_EXPLAIN}</strong>{' '}
-        &mdash; they tell the reader how to do something, step by step, so clearly that the reader
-        can do it themselves. This page shows you how the form works, how it is tested, and how to
-        write it.
+        purpose is to <strong>{PURPOSE_INFORM}</strong> and to <strong>{PURPOSE_EXPLAIN}</strong> -
+        they tell the reader how to do something, step by step, so clearly that the reader can do it
+        themselves. This page shows you how the form works, how it is tested, and how to write it.
       </p>
 
       <section className="my-10">
@@ -264,7 +263,7 @@ export default async function InstructionsPage() {
         <p>
           An instructional text has one job: to get the reader from not being able to do something
           to being able to do it. Everything about the way it is written serves that job. There is
-          no room for opinion, for atmosphere, or for the writer&rsquo;s own story &mdash; only the
+          no room for opinion, for atmosphere, or for the writer&rsquo;s own story - only the
           actions the reader must take, in the right order, in words the reader cannot
           misunderstand.
         </p>
@@ -278,8 +277,8 @@ export default async function InstructionsPage() {
       <section className="my-10">
         <h2>The conventions of instructions</h2>
         <p>
-          When you read an instructional text in the exam &mdash; or write one &mdash; these are the
-          features to recognise. For each one, the column that earns marks is the last:{' '}
+          When you read an instructional text in the exam - or write one - these are the features to
+          recognise. For each one, the column that earns marks is the last:{' '}
           <strong>the effect on the reader</strong>.
         </p>
         <div className="not-prose my-6 space-y-3">
@@ -308,7 +307,7 @@ export default async function InstructionsPage() {
         <div className="not-prose my-6 space-y-3">
           <div className="rounded-xl border border-border/60 bg-card p-5">
             <div className="flex flex-wrap items-baseline gap-x-3 gap-y-1 mb-2">
-              <span className="text-sm font-medium">Word class &mdash; the imperative verb</span>
+              <span className="text-sm font-medium">Word class - the imperative verb</span>
               <span className="font-mono text-[10px] tracking-[0.12em] uppercase text-primary">
                 RAO4
               </span>
@@ -317,13 +316,13 @@ export default async function InstructionsPage() {
               You may be asked to <strong>underline</strong> or name the imperative (command) verb
               in a step, or to explain the effect of the imperative voice. Use the exact grammatical
               term: <em>imperative</em>. The command verb is the bossy &ldquo;do this&rdquo; word
-              with no subject in front of it &mdash; <em>cut</em>, <em>fold</em>, <em>wait</em>{' '}
-              &mdash; not the connective (<em>first</em>, <em>then</em>) that orders the steps.
+              with no subject in front of it - <em>cut</em>, <em>fold</em>, <em>wait</em> - not the
+              connective (<em>first</em>, <em>then</em>) that orders the steps.
             </p>
           </div>
           <div className="rounded-xl border border-border/60 bg-card p-5">
             <div className="flex flex-wrap items-baseline gap-x-3 gap-y-1 mb-2">
-              <span className="text-sm font-medium">Structure &mdash; the sequence</span>
+              <span className="text-sm font-medium">Structure - the sequence</span>
               <span className="font-mono text-[10px] tracking-[0.12em] uppercase text-primary">
                 RAO3
               </span>
@@ -332,7 +331,7 @@ export default async function InstructionsPage() {
               You may be asked how the writer makes the order clear, or to comment on the effect of
               the numbered list or the time and sequence connectives. Name the choice precisely
               (numbered list, sequence connective) and always finish with{' '}
-              <strong>what it does for the reader</strong> &mdash; that is where the marks are.
+              <strong>what it does for the reader</strong> - that is where the marks are.
             </p>
           </div>
         </div>
@@ -342,9 +341,9 @@ export default async function InstructionsPage() {
           </p>
           <p className="text-sm text-muted-foreground leading-relaxed">
             In &ldquo;<strong>Next, roll</strong> the paper tightly&rdquo;, the imperative verb is{' '}
-            <strong>roll</strong> &mdash; the action. <strong>Next</strong> is a sequence connective
-            &mdash; it orders the step, but it is not a command. The most common lost mark on the
-            underline question is selecting the connective instead of the verb.
+            <strong>roll</strong> - the action. <strong>Next</strong> is a sequence connective - it
+            orders the step, but it is not a command. The most common lost mark on the underline
+            question is selecting the connective instead of the verb.
           </p>
         </div>
       </section>
@@ -354,7 +353,7 @@ export default async function InstructionsPage() {
         <p>
           These prompts come from the iLowerSecondary Teacher&rsquo;s Guide guided-reading routine
           for non-fiction. Ask them of any instructional text before you answer a question about it
-          &mdash; the genre prompt in particular names the exact features you should be hunting for.
+          - the genre prompt in particular names the exact features you should be hunting for.
         </p>
         <div className="not-prose my-6 grid gap-3 sm:grid-cols-2">
           <div className="rounded-xl border border-primary/30 bg-primary/5 p-5">
@@ -389,10 +388,10 @@ export default async function InstructionsPage() {
       <section className="my-10">
         <h2>Practice extracts with annotations &amp; model answers</h2>
         <p>
-          The two extracts below are <strong>original texts written for this page</strong> &mdash;
-          they are not from any past paper. Read each one through, study the annotations that point
-          out the imperative verbs and sequence markers, then attempt the questions before checking
-          the model answers.
+          The two extracts below are <strong>original texts written for this page</strong> - they
+          are not from any past paper. Read each one through, study the annotations that point out
+          the imperative verbs and sequence markers, then attempt the questions before checking the
+          model answers.
         </p>
 
         {EXTRACTS.map((ex) => (
@@ -494,7 +493,7 @@ export default async function InstructionsPage() {
       </section>
 
       <section className="my-10">
-        <h2>Write clear instructions &mdash; task &amp; model</h2>
+        <h2>Write clear instructions - task &amp; model</h2>
         <div className="not-prose my-6 rounded-xl border border-primary/30 bg-primary/5 p-5">
           <p className="font-mono text-[10px] tracking-[0.14em] uppercase text-primary mb-2">
             Your task

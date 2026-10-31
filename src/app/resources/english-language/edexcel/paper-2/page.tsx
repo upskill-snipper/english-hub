@@ -160,8 +160,8 @@ export default async function Paper2Page() {
                 </h3>
               </div>
               <p className="mt-2 text-sm text-muted-foreground">
-                <strong>{tr(`Reading and retrieval (AO1)`)}</strong> &mdash; From the lines named in
-                the question, give two pieces of information from Text 1.
+                <strong>{tr(`Reading and retrieval (AO1)`)}</strong> - From the lines named in the
+                question, give two pieces of information from Text 1.
               </p>
               <div className="mt-3 rounded-lg bg-muted p-4">
                 <p className="text-sm font-medium text-muted-foreground">
@@ -191,8 +191,8 @@ export default async function Paper2Page() {
                 </h3>
               </div>
               <p className="mt-2 text-sm text-muted-foreground">
-                <strong>{tr(`Reading and retrieval (AO1)`)}</strong> &mdash; From a further set of
-                named lines in Text 1, give two more pieces of information.
+                <strong>{tr(`Reading and retrieval (AO1)`)}</strong> - From a further set of named
+                lines in Text 1, give two more pieces of information.
               </p>
               <div className="mt-3 rounded-lg bg-muted p-4">
                 <p className="text-sm font-medium text-muted-foreground">
@@ -222,9 +222,9 @@ export default async function Paper2Page() {
                 </h3>
               </div>
               <p className="mt-2 text-sm text-muted-foreground">
-                <strong>{tr(`Language and structure analysis (AO2)`)}</strong> &mdash; Analyse how
-                the writer of Text 1 uses language and structure to achieve effects. This is one of
-                the three highest-tariff reading questions on the paper.
+                <strong>{tr(`Language and structure analysis (AO2)`)}</strong> - Analyse how the
+                writer of Text 1 uses language and structure to achieve effects. This is one of the
+                three highest-tariff reading questions on the paper.
               </p>
               <div className="mt-3 rounded-lg bg-muted p-4">
                 <p className="text-sm font-medium text-muted-foreground">
@@ -256,8 +256,8 @@ export default async function Paper2Page() {
                 </h3>
               </div>
               <p className="mt-2 text-sm text-muted-foreground">
-                <strong>{tr(`Reading and retrieval (AO1)`)}</strong> &mdash; From the lines named in
-                the question, give one piece of information from Text 2.
+                <strong>{tr(`Reading and retrieval (AO1)`)}</strong> - From the lines named in the
+                question, give one piece of information from Text 2.
               </p>
               <div className="mt-3 rounded-lg bg-muted p-4">
                 <p className="text-sm font-medium text-muted-foreground">
@@ -286,8 +286,8 @@ export default async function Paper2Page() {
                 </h3>
               </div>
               <p className="mt-2 text-sm text-muted-foreground">
-                <strong>{tr(`Reading and retrieval (AO1)`)}</strong> &mdash; From a further set of
-                named lines in Text 2, give one more piece of information.
+                <strong>{tr(`Reading and retrieval (AO1)`)}</strong> - From a further set of named
+                lines in Text 2, give one more piece of information.
               </p>
               <div className="mt-3 rounded-lg bg-muted p-4">
                 <p className="text-sm font-medium text-muted-foreground">
@@ -317,8 +317,8 @@ export default async function Paper2Page() {
                 </h3>
               </div>
               <p className="mt-2 text-sm text-muted-foreground">
-                <strong>{tr(`Critical evaluation (AO4)`)}</strong> &mdash; Evaluate how successfully
-                the writer of Text 2 achieves a stated effect, supporting your views with detailed
+                <strong>{tr(`Critical evaluation (AO4)`)}</strong> - Evaluate how successfully the
+                writer of Text 2 achieves a stated effect, supporting your views with detailed
                 reference to the text.
               </p>
               <div className="mt-3 rounded-lg bg-muted p-4">
@@ -351,7 +351,7 @@ export default async function Paper2Page() {
                 </h3>
               </div>
               <p className="mt-2 text-sm text-muted-foreground">
-                <strong>{tr(`Reading and retrieval (AO1)`)}</strong> &mdash; Using both texts, bring
+                <strong>{tr(`Reading and retrieval (AO1)`)}</strong> - Using both texts, bring
                 together evidence of the similarities the question names.
               </p>
               <div className="mt-3 rounded-lg bg-muted p-4">
@@ -383,9 +383,9 @@ export default async function Paper2Page() {
                 </h3>
               </div>
               <p className="mt-2 text-sm text-muted-foreground">
-                <strong>{tr(`Compare writers’ ideas and perspectives (AO3)`)}</strong> &mdash;
-                Compare how the writers of Text 1 and Text 2 present their ideas and perspectives,
-                and how these are conveyed.
+                <strong>{tr(`Compare writers’ ideas and perspectives (AO3)`)}</strong> - Compare how
+                the writers of Text 1 and Text 2 present their ideas and perspectives, and how these
+                are conveyed.
               </p>
               <div className="mt-3 rounded-lg bg-muted p-4">
                 <p className="text-sm font-medium text-muted-foreground">
@@ -662,9 +662,9 @@ export default async function Paper2Page() {
                 <p className="mt-3">
                   Now, I understand the argument. Budgets are tight. Exam results matter.
                   Universities want to see grades in maths and science and English. And yes, those
-                  subjects are important &mdash; nobody is denying that. But to suggest that art and
-                  music are luxuries we can afford to lose is not just short-sighted; it is
-                  fundamentally wrong.
+                  subjects are important - nobody is denying that. But to suggest that art and music
+                  are luxuries we can afford to lose is not just short-sighted; it is fundamentally
+                  wrong.
                 </p>
               </div>
             </div>
