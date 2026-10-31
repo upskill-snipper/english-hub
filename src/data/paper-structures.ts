@@ -407,7 +407,8 @@ const EDEXCEL_PAPERS: Paper[] = [
     sections: [
       {
         title: 'Section A: Reading',
-        description: 'Questions on two thematically linked non-fiction sources.',
+        description:
+          'Seven questions on two thematically linked non-fiction texts from the 20th and 21st centuries.',
         links: [
           { label: 'Reading Skills Guide', href: '/revision/language/reading', type: 'technique' },
           {
@@ -424,7 +425,9 @@ const EDEXCEL_PAPERS: Paper[] = [
       },
       {
         title: 'Section B: Transactional Writing',
-        description: 'Two transactional/discursive writing tasks.',
+        // 31 October 2026: said "Two transactional/discursive writing tasks". Pearson's
+        // 1EN0/02 sets one piece, Question 8 or 9 (src/data/mark-scheme-guides/edexcel-lang-paper2.ts).
+        description: 'One transactional writing task, Question 8 or 9, from a choice of two.',
         links: [
           {
             label: 'Transactional Writing Guide',

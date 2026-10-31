@@ -443,9 +443,10 @@ export default function GradeBoundariesPage() {
                 </li>
                 <li>
                   <strong>{tr(`Paper 2 Q7(a) (summary):`)}</strong> Practise synthesising
-                  information from two texts. Use connectives like &ldquo;Both
-                  sources&hellip;&rdquo; and &ldquo;However, Source B differs&hellip;&rdquo; to show
-                  you can compare, not just list.
+                  information from two texts. The question asks for similarities, so use connectives
+                  like &ldquo;Both writers&hellip;&rdquo; and &ldquo;Similarly, in Text
+                  2&hellip;&rdquo; to join the texts in each point, not just list them. An answer on
+                  one text alone earns no marks.
                 </li>
                 <li>
                   <strong>Timing:</strong> Make sure you attempt every question and complete the
@@ -465,9 +466,11 @@ export default function GradeBoundariesPage() {
                   show you are exploring layers of meaning.
                 </li>
                 <li>
-                  <strong>{tr(`Paper 1 Q4 (evaluation):`)}</strong> This is worth 15 marks &mdash;
-                  engage critically with the statement given. Don&rsquo;t just agree; consider what
-                  the writer does and why, and use the text as evidence for a sustained argument.
+                  <strong>{tr(`Paper 1 Q4 (evaluation):`)}</strong> This is worth 15 marks. The
+                  question names an effect the writer is trying to create and asks how successfully
+                  it is achieved, so give a clear verdict. Don&rsquo;t just agree that it works;
+                  consider what the writer does and how well, and use the text as evidence for a
+                  sustained argument.
                 </li>
                 <li>
                   <strong>Writing:</strong> Upgrade your vocabulary. Replace basic verbs and
@@ -492,9 +495,10 @@ export default function GradeBoundariesPage() {
                   purpose and the text&rsquo;s context where relevant.
                 </li>
                 <li>
-                  <strong>Paper 2 Q8 (language analysis):</strong> This 12-mark question rewards
-                  depth. Analyse word-level choices, sentence-level patterns, and the cumulative
-                  effect of the writer&rsquo;s language across the extract.
+                  <strong>Paper 2 Q3 (language and structure):</strong> This 15-mark question
+                  rewards depth. Analyse word-level choices, sentence-level patterns, the structure
+                  of the whole text, and the cumulative effect of the writer&rsquo;s choices across
+                  Text 1.
                 </li>
                 <li>
                   <strong>Writing:</strong> Develop a distinctive voice. The difference between
@@ -722,8 +726,9 @@ export default function GradeBoundariesPage() {
                 </li>
                 <li className="flex items-start gap-2">
                   <span className="mt-1 h-1.5 w-1.5 shrink-0 rounded-full bg-primary" />
-                  Focus on getting full marks on the short-response questions, solid marks on Q4/Q8,
-                  and a competent writing response
+                  Focus on getting full marks on the short-response questions, solid marks on the
+                  15-mark questions (Paper 1 Q4, Paper 2 Q3 and Q6), and a competent writing
+                  response
                 </li>
               </ul>
             </div>

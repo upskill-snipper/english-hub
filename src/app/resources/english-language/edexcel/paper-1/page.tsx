@@ -72,9 +72,9 @@ export default async function Paper1Page() {
         <div className="mx-auto max-w-4xl">
           <h2 className="text-2xl font-bold text-foreground sm:text-3xl">{tr(`Paper Overview`)}</h2>
           <p className="mt-3 leading-relaxed text-muted-foreground">
-            Paper 1 tests your ability to read and analyse a 19th-century fiction extract, then
-            produce your own piece of imaginative writing. The paper is split into two sections and
-            you should aim to spend approximately
+            Paper 1 tests your ability to read and analyse an extract from a 19th-century novel or
+            story, then produce your own piece of imaginative writing. The paper is split into two
+            sections, and the front of the paper advises about
             <strong> 1 hour on Section A</strong> (reading) and{' '}
             <strong>45 minutes on Section B</strong> (writing).
           </p>
@@ -89,11 +89,11 @@ export default async function Paper1Page() {
               <ul className="mt-3 space-y-2 text-sm text-muted-foreground">
                 <li className="flex items-start gap-2">
                   <span className="mt-1 h-1.5 w-1.5 shrink-0 rounded-full bg-primary" />
-                  One unseen 19th-century fiction extract (approx. 500-700 words)
+                  One unseen 19th-century fiction extract (about 650 words)
                 </li>
                 <li className="flex items-start gap-2">
                   <span className="mt-1 h-1.5 w-1.5 shrink-0 rounded-full bg-primary" />
-                  Five compulsory questions testing Reading and retrieval (AO1), Language and
+                  Four compulsory questions testing Reading and retrieval (AO1), Language and
                   structure analysis (AO2), and Critical evaluation (AO4)
                 </li>
                 <li className="flex items-start gap-2">
@@ -113,11 +113,11 @@ export default async function Paper1Page() {
               <ul className="mt-3 space-y-2 text-sm text-muted-foreground">
                 <li className="flex items-start gap-2">
                   <span className="mt-1 h-1.5 w-1.5 shrink-0 rounded-full bg-accent" />
-                  Choice of two tasks (pick one)
+                  Choice of two tasks, Question 5 or Question 6 (pick one)
                 </li>
                 <li className="flex items-start gap-2">
                   <span className="mt-1 h-1.5 w-1.5 shrink-0 rounded-full bg-accent" />
-                  Often linked to the reading extract theme
+                  Both linked by theme to the reading extract; one comes with two pictures
                 </li>
                 <li className="flex items-start gap-2">
                   <span className="mt-1 h-1.5 w-1.5 shrink-0 rounded-full bg-accent" />
@@ -169,7 +169,7 @@ export default async function Paper1Page() {
                 <p className="text-sm font-medium text-primary">Top tip:</p>
                 <p className="mt-1 text-sm text-muted-foreground">
                   Copy the exact phrase from the text. Do not waste time explaining &mdash; this is
-                  a simple retrieval question. Spend no more than 1 minute here.
+                  a simple retrieval question. Spend about 2 minutes here.
                 </p>
               </div>
             </div>
@@ -201,7 +201,7 @@ export default async function Paper1Page() {
                 <p className="text-sm font-medium text-primary">Top tip:</p>
                 <p className="mt-1 text-sm text-muted-foreground">
                   Write two clear, separate points. Quote briefly or paraphrase. Do not
-                  over-explain. Spend 2-3 minutes maximum.
+                  over-explain. Spend about 4 minutes.
                 </p>
               </div>
             </div>
@@ -213,29 +213,32 @@ export default async function Paper1Page() {
                   3
                 </span>
                 <h3 className="text-lg font-bold text-foreground">
-                  {tr(`Language Analysis (6 marks)`)}
+                  {tr(`Language and Structure (6 marks)`)}
                 </h3>
               </div>
               <p className="mt-2 text-sm text-muted-foreground">
-                <strong>{tr(`Language and structure analysis (AO2)`)}</strong> &mdash; Analyse how
-                the writer uses language to create a specific effect. This question will direct you
-                to a particular section of the text.
+                <strong>{tr(`Language and structure analysis (AO2)`)}</strong> &mdash; Explain how
+                the writer uses language and structure to show something the question names, such as
+                what a character feels. The question names a short section of the extract, and
+                recent papers print it with the question.
               </p>
               <div className="mt-3 rounded-lg bg-muted p-4">
                 <p className="text-sm font-medium text-muted-foreground">
                   {tr(`Example question:`)}
                 </p>
                 <p className="mt-1 text-sm italic text-foreground">
-                  &ldquo;In lines 15-25, how does the writer use language to describe the
-                  setting?&rdquo;
+                  &ldquo;In lines 15-25, how does the writer use language and structure to show the
+                  narrator&rsquo;s unease?&rdquo;
                 </p>
               </div>
               <div className="mt-3 rounded-lg bg-primary/10 p-4">
                 <p className="text-sm font-medium text-primary">Top tip:</p>
                 <p className="mt-1 text-sm text-muted-foreground">
                   Use the <strong>What-How-Why</strong> method: identify a technique (what), name it
-                  using subject terminology (how), and explain the effect on the reader (why). Aim
-                  for 2-3 developed analytical points. Spend about 8-10 minutes.
+                  using subject terminology (how), and explain the effect on the reader (why). Write
+                  about structure as well as language, such as how the section opens, where the
+                  focus shifts and how it ends: an answer on language alone stays in Level 1. Spend
+                  about 12 minutes.
                 </p>
               </div>
               <div className="mt-4 rounded-lg border border-primary/20 bg-primary/10 p-4">
@@ -244,16 +247,18 @@ export default async function Paper1Page() {
                 </p>
                 <ul className="mt-2 space-y-1 text-sm text-muted-foreground">
                   <li>
-                    <strong>{tr(`Level 1 (1-2 marks):`)}</strong> Simple awareness of language,
-                    limited use of terminology.
+                    <strong>{tr(`Level 1 (1-2 marks):`)}</strong> A few comments on the writing,
+                    with suitable quotations, but brief explanations. An answer on language only, or
+                    structure only, cannot go above this level.
                   </li>
                   <li>
-                    <strong>{tr(`Level 2 (3-4 marks):`)}</strong> Some analysis of language with
-                    appropriate examples and terminology.
+                    <strong>{tr(`Level 2 (3-4 marks):`)}</strong> Explains how both the language and
+                    the structure create effects, with well-matched quotations.
                   </li>
                   <li>
-                    <strong>{tr(`Level 3 (5-6 marks):`)}</strong> Detailed analysis of language with
-                    well-chosen examples, precise terminology, and perceptive comments on effect.
+                    <strong>{tr(`Level 3 (5-6 marks):`)}</strong> Analyses closely how both the
+                    language and the structure work on the reader, with carefully picked quotations
+                    that sharpen every point.
                   </li>
                 </ul>
               </div>
@@ -270,27 +275,28 @@ export default async function Paper1Page() {
                 </h3>
               </div>
               <p className="mt-2 text-sm text-muted-foreground">
-                <strong>{tr(`Critical evaluation (AO4)`)}</strong> &mdash; Evaluate critically how
-                effective the writer has been, referring to the whole text. You will be given a
-                statement and asked to what extent you agree.
+                <strong>{tr(`Critical evaluation (AO4)`)}</strong> &mdash; The question names an
+                effect the writer is trying to create, such as tension or sympathy for a character,
+                and asks how successfully it is achieved. Recent papers have asked about the whole
+                extract, so check the question for any line numbers.
               </p>
               <div className="mt-3 rounded-lg bg-muted p-4">
                 <p className="text-sm font-medium text-muted-foreground">
                   {tr(`Example question:`)}
                 </p>
                 <p className="mt-1 text-sm italic text-foreground">
-                  &ldquo;A student said: &lsquo;This extract creates a strong sense of danger
-                  throughout.&rsquo; To what extent do you agree? You should refer to the
-                  writer&rsquo;s use of language and structure to support your answer.&rdquo;
+                  &ldquo;In this extract, the writer attempts to create a sense of danger. Evaluate
+                  how successfully this is achieved. Support your views with detailed reference to
+                  the text.&rdquo;
                 </p>
               </div>
               <div className="mt-3 rounded-lg bg-primary/10 p-4">
                 <p className="text-sm font-medium text-primary">Top tip:</p>
                 <p className="mt-1 text-sm text-muted-foreground">
                   This is the highest-tariff reading question. Structure your response as a
-                  mini-essay. Address the statement directly, use multiple quotations from across
-                  the whole text, analyse language and structure, and offer a balanced evaluation.
-                  Spend 20-25 minutes. Aim for 3-4 paragraphs.
+                  mini-essay. Open with a clear verdict on how successfully the effect is created,
+                  then test it with quotations from across the extract. Mention techniques only
+                  where they support your judgement. Spend about 32 minutes. Aim for 3-4 paragraphs.
                 </p>
               </div>
               <div className="mt-4 rounded-lg border border-primary/20 bg-primary/10 p-4">
@@ -299,25 +305,25 @@ export default async function Paper1Page() {
                 </p>
                 <ul className="mt-2 space-y-1 text-sm text-muted-foreground">
                   <li>
-                    <strong>{tr(`Level 1 (1-3 marks):`)}</strong> Limited evaluation with little
-                    textual reference. Simple, unsupported comments.
+                    <strong>{tr(`Level 1 (1-3 marks):`)}</strong> Mostly describes what happens.
+                    Opinions are given without reasons, and there are few quotations.
                   </li>
                   <li>
-                    <strong>{tr(`Level 2 (4-6 marks):`)}</strong> Some evaluation with references.
-                    Attempts to respond to the statement but may be descriptive.
+                    <strong>{tr(`Level 2 (4-6 marks):`)}</strong> Comments on what happens and
+                    offers simple opinions, backed by quotations that fit but are not explored.
                   </li>
                   <li>
-                    <strong>Level 3 (7-9 marks):</strong> Clear evaluation with relevant examples.
-                    Responds to the statement with some analysis of effects.
+                    <strong>Level 3 (7-9 marks):</strong> Explains how the writing creates the
+                    effect and gives a reasoned view of how well it works, with suitable quotations.
                   </li>
                   <li>
-                    <strong>{tr(`Level 4 (10-12 marks):`)}</strong> Detailed, developed evaluation.
-                    Convincing analysis of both language and structure across the text.
+                    <strong>{tr(`Level 4 (10-12 marks):`)}</strong> Analyses the extract and builds
+                    a well-argued judgement, with detailed quotations backing up every point.
                   </li>
                   <li>
-                    <strong>{tr(`Level 5 (13-15 marks):`)}</strong> Perceptive, evaluative response
-                    with sophisticated analysis. Precisely selected evidence; nuanced, original
-                    interpretation.
+                    <strong>{tr(`Level 5 (13-15 marks):`)}</strong> Evaluates the extract as a whole
+                    with a consistent, thoughtful judgement, and every reference is chosen to make
+                    the argument convincing.
                   </li>
                 </ul>
               </div>
@@ -333,9 +339,10 @@ export default async function Paper1Page() {
             {tr(`Section B: Imaginative Writing (40 marks)`)}
           </h2>
           <p className="mt-3 leading-relaxed text-muted-foreground">
-            You will be given a <strong>choice of two tasks</strong>. Pick the one that sparks your
-            imagination. Tasks are often linked thematically to the Section A extract. You might be
-            asked to write a description, a narrative, or a piece that begins with a given opening.
+            You will be given a <strong>choice of two tasks</strong>, Question 5 or Question 6, and
+            you answer one. Pick the one that sparks your imagination. Both are linked by theme to
+            the Section A extract. You might write a story, a description or a monologue, and one
+            task comes with two pictures you can use for ideas, or ignore.
           </p>
 
           <div className="mt-8 grid gap-6 sm:grid-cols-2">
@@ -407,64 +414,84 @@ export default async function Paper1Page() {
                   </th>
                 </tr>
               </thead>
+              {/* Five levels for each objective, as in Pearson's 1EN0/01 mark scheme and
+                  src/data/mark-scheme-guides/edexcel-lang-paper1.ts. Until 31 October 2026 this
+                  table had four levels, AO5 1-6, 7-12, 13-18, 19-24 and AO6 1-4, 5-8, 9-12, 13-16,
+                  which is no grid the board has published. */}
               <tbody className="divide-y divide-border">
                 <tr className="hover:bg-muted">
                   <td className="px-4 py-3 font-bold text-foreground">1</td>
-                  <td className="px-4 py-3 text-muted-foreground">1-6</td>
+                  <td className="px-4 py-3 text-muted-foreground">1-4</td>
                   <td className="px-4 py-3 text-muted-foreground">
                     {tr(
-                      `Simple communication; limited vocabulary; minimal paragraphing; little awareness of audience.`,
+                      `Some ideas come across, but little sense of who the piece is for or what it is trying to do; loosely organised.`,
                     )}
                   </td>
                   <td className="px-4 py-3 text-muted-foreground">1-4</td>
                   <td className="px-4 py-3 text-muted-foreground">
                     {tr(
-                      `Simple vocabulary; limited sentence structures; errors in spelling and punctuation impede meaning.`,
+                      `Simple, everyday words with frequent spelling mistakes; shaky punctuation; short or repetitive sentences.`,
                     )}
                   </td>
                 </tr>
                 <tr className="hover:bg-muted">
                   <td className="px-4 py-3 font-bold text-foreground">2</td>
-                  <td className="px-4 py-3 text-muted-foreground">7-12</td>
+                  <td className="px-4 py-3 text-muted-foreground">5-9</td>
                   <td className="px-4 py-3 text-muted-foreground">
                     {tr(
-                      `Some attempt to match purpose; some structural features; begins to engage the reader.`,
+                      `Knows what the piece is for and who will read it, in a simple, steady tone; ideas follow in order, in paragraphs, with some linking.`,
                     )}
                   </td>
-                  <td className="px-4 py-3 text-muted-foreground">5-8</td>
+                  <td className="px-4 py-3 text-muted-foreground">5-7</td>
                   <td className="px-4 py-3 text-muted-foreground">
                     {tr(
-                      `Some varied vocabulary; attempts complex sentences; mostly accurate spelling of common words.`,
+                      `Everyday words spelt correctly; punctuation mostly right; some varied sentences, including ones joined with words such as because or although.`,
                     )}
                   </td>
                 </tr>
                 <tr className="hover:bg-muted">
                   <td className="px-4 py-3 font-bold text-foreground">3</td>
-                  <td className="px-4 py-3 text-muted-foreground">13-18</td>
+                  <td className="px-4 py-3 text-muted-foreground">10-14</td>
                   <td className="px-4 py-3 text-muted-foreground">
                     {tr(
-                      `Clear, connected writing; sustained register; effective use of paragraphs and discourse markers.`,
+                      `Ideas and techniques picked to suit the task; the tone fits; each idea builds on the last, in paragraphs that are easy to follow.`,
                     )}
                   </td>
-                  <td className="px-4 py-3 text-muted-foreground">9-12</td>
+                  <td className="px-4 py-3 text-muted-foreground">8-10</td>
                   <td className="px-4 py-3 text-muted-foreground">
                     {tr(
-                      `Increasingly varied vocabulary; secure sentence control; generally accurate spelling and punctuation.`,
+                      `A good choice of words; tricky spellings mostly right; a mix of punctuation used correctly; sentences shaped to help the purpose.`,
                     )}
                   </td>
                 </tr>
                 <tr className="hover:bg-muted">
                   <td className="px-4 py-3 font-bold text-foreground">4</td>
-                  <td className="px-4 py-3 text-muted-foreground">19-24</td>
+                  <td className="px-4 py-3 text-muted-foreground">15-19</td>
                   <td className="px-4 py-3 text-muted-foreground">
                     {tr(
-                      `Compelling, convincing writing; sophisticated structural choices; highly engaging; assured control of tone and style.`,
+                      `Shaped deliberately to affect the reader; tone and style well judged; structure under control from start to finish.`,
                     )}
                   </td>
-                  <td className="px-4 py-3 text-muted-foreground">13-16</td>
+                  <td className="px-4 py-3 text-muted-foreground">11-13</td>
                   <td className="px-4 py-3 text-muted-foreground">
-                    Extensive, ambitious vocabulary; full range of sentence forms for effect;
-                    virtually faultless spelling and punctuation.
+                    {tr(
+                      `Words chosen with care from a wide range; only the odd spelling slip; punctuation placed to make meaning clear; sentences built with a purpose in mind.`,
+                    )}
+                  </td>
+                </tr>
+                <tr className="hover:bg-muted">
+                  <td className="px-4 py-3 font-bold text-foreground">5</td>
+                  <td className="px-4 py-3 text-muted-foreground">20-24</td>
+                  <td className="px-4 py-3 text-muted-foreground">
+                    {tr(
+                      `Steers the reader’s response in subtle ways; a confident voice throughout; complex ideas arranged so the whole piece holds together.`,
+                    )}
+                  </td>
+                  <td className="px-4 py-3 text-muted-foreground">14-16</td>
+                  <td className="px-4 py-3 text-muted-foreground">
+                    {tr(
+                      `Ambitious vocabulary used with purpose; errors so rare they never get in the way; precise punctuation and a full range of sentence types, each chosen for its effect.`,
+                    )}
                   </td>
                 </tr>
               </tbody>
@@ -483,13 +510,13 @@ export default async function Paper1Page() {
           {/* Q3 example */}
           <div className="mt-8 rounded-xl border border-border bg-card p-6 shadow-md">
             <h3 className="text-lg font-bold text-foreground">
-              {tr(`Question 3 - Language Analysis (Level 3 / 6 marks)`)}
+              {tr(`Question 3: Language and Structure (Level 3, 6 marks)`)}
             </h3>
             <div className="mt-3 rounded-lg bg-muted p-4">
               <p className="text-sm font-medium text-muted-foreground">Question:</p>
               <p className="mt-1 text-sm italic text-foreground">
-                &ldquo;In lines 10-20, how does the writer use language to create a sense of
-                fear?&rdquo;
+                &ldquo;In lines 10-20, how does the writer use language and structure to create a
+                sense of fear?&rdquo;
               </p>
               <p className="mt-2 text-sm font-medium text-muted-foreground">
                 {tr(`Extract context (imagined):`)}
@@ -523,15 +550,22 @@ export default async function Paper1Page() {
                   be a place of safety. This creates an unsettling sense that the environment is
                   hostile and sentient, deepening the atmosphere of fear.
                 </p>
+                <p>
+                  Structurally, the section moves from the darkness pressing against him to the echo
+                  of his own footsteps, and ends on the house itself, so the threat seems to
+                  surround him more completely as the section goes on. Ending on &ldquo;mocking his
+                  courage&rdquo; leaves the reader with his fear rather than with any escape.
+                </p>
               </div>
             </div>
             <div className="mt-3 rounded-lg bg-primary/10 p-4">
               <p className="text-sm font-medium text-primary">Marker commentary:</p>
               <p className="mt-1 text-sm text-muted-foreground">
-                This response achieves Level 3 because it makes perceptive comments about the
-                effects of language, uses precise subject terminology (personification, simile,
-                connotations), embeds quotations fluently, and analyses the effect on the reader
-                rather than merely describing what happens.
+                This response reaches Level 3 because it analyses both language and structure: it
+                uses precise subject terminology (personification, simile, connotations), embeds
+                quotations fluently, and explains how the order of the section, not only its word
+                choices, works on the reader. Without the paragraph on structure it could not go
+                above Level 1.
               </p>
             </div>
           </div>
@@ -544,8 +578,8 @@ export default async function Paper1Page() {
             <div className="mt-3 rounded-lg bg-muted p-4">
               <p className="text-sm font-medium text-muted-foreground">Question:</p>
               <p className="mt-1 text-sm italic text-foreground">
-                &ldquo;A student said: &lsquo;The writer successfully creates a character the reader
-                admires.&rsquo; To what extent do you agree?&rdquo;
+                &ldquo;In this extract, the writer attempts to create a character the reader
+                admires. Evaluate how successfully this is achieved.&rdquo;
               </p>
             </div>
             <div className="mt-4 rounded-lg border-s-4 border-accent bg-primary/10 p-4">
@@ -554,14 +588,14 @@ export default async function Paper1Page() {
               </p>
               <div className="mt-2 text-sm text-foreground leading-relaxed">
                 <p>
-                  I largely agree with this statement. The writer establishes the protagonist as
-                  admirable from the outset through her defiance of social conventions. In the
-                  opening lines, the narrator states she &ldquo;refused to lower her gaze,&rdquo;
-                  which immediately signals resilience and self-assurance. The verb
-                  &ldquo;refused&rdquo; is decisive and active, placing her in control of the
-                  situation. For a 19th-century female character, this refusal to submit to societal
-                  pressure would have been particularly striking to a contemporary reader, and it
-                  positions her as a figure worthy of admiration. However, the writer also
+                  The writer is largely successful in creating a character the reader admires,
+                  establishing the protagonist as admirable from the outset through her defiance of
+                  social conventions. In the opening lines, the narrator states she &ldquo;refused
+                  to lower her gaze,&rdquo; which immediately signals resilience and self-assurance.
+                  The verb &ldquo;refused&rdquo; is decisive and active, placing her in control of
+                  the situation. For a 19th-century female character, this refusal to submit to
+                  societal pressure would have been particularly striking to a contemporary reader,
+                  and it positions her as a figure worthy of admiration. However, the writer also
                   introduces complexity by hinting at the personal cost of this defiance through the
                   adverb &ldquo;wearily,&rdquo; suggesting that maintaining her principles is
                   exhausting, which makes her more human and therefore more deserving of the
@@ -572,10 +606,14 @@ export default async function Paper1Page() {
             <div className="mt-3 rounded-lg bg-primary/10 p-4">
               <p className="text-sm font-medium text-primary">{tr(`Why this works:`)}</p>
               <ul className="mt-1 space-y-1 text-sm text-muted-foreground">
-                <li>&bull; Directly addresses the statement (&ldquo;I largely agree&rdquo;)</li>
-                <li>&bull; Embeds quotations and analyses specific word choices</li>
                 <li>
-                  &bull; Considers the 19th-century context (demonstrates Critical evaluation (AO4))
+                  &bull; Opens with a clear verdict on how successful the writer is (&ldquo;largely
+                  successful&rdquo;)
+                </li>
+                <li>&bull; Embeds quotations and uses specific word choices as evidence</li>
+                <li>
+                  &bull; Uses the century the story was written in to explain why her defiance
+                  stands out, in support of the judgement
                 </li>
                 <li>&bull; Offers a balanced view (&ldquo;However...&rdquo;)</li>
                 <li>&bull; Discusses effect on the reader throughout</li>
@@ -591,8 +629,8 @@ export default async function Paper1Page() {
             <div className="mt-3 rounded-lg bg-muted p-4">
               <p className="text-sm font-medium text-muted-foreground">Task:</p>
               <p className="mt-1 text-sm italic text-foreground">
-                &ldquo;Write a description suggested by this image: a lone figure standing at the
-                edge of a cliff at sunset.&rdquo;
+                &ldquo;Write a description suggested by one of the two pictures: a lone figure
+                standing at the edge of a cliff at sunset.&rdquo;
               </p>
             </div>
             <div className="mt-4 rounded-lg border-s-4 border-accent bg-primary/10 p-4">
@@ -659,6 +697,11 @@ export default async function Paper1Page() {
           <h2 className="text-2xl font-bold text-foreground sm:text-3xl">
             {tr(`Exam Strategy & Timing`)}
           </h2>
+          <p className="mt-3 leading-relaxed text-muted-foreground">
+            The front of the paper advises about 1 hour on Section A and about 45 minutes on Section
+            B. The times below are our suggestion, worked out from the marks, after about 10 minutes
+            reading the extract.
+          </p>
           <div className="mt-6 overflow-x-auto rounded-xl border border-border bg-card shadow-md">
             <table className="w-full text-start text-sm">
               <thead className="bg-primary text-white">
@@ -673,7 +716,7 @@ export default async function Paper1Page() {
                 <tr className="hover:bg-muted">
                   <td className="px-4 py-3 font-medium text-foreground">Q1</td>
                   <td className="px-4 py-3 text-muted-foreground">1</td>
-                  <td className="px-4 py-3 text-muted-foreground">1 min</td>
+                  <td className="px-4 py-3 text-muted-foreground">2 min</td>
                   <td className="px-4 py-3 text-muted-foreground">
                     Copy exact phrase. Do not explain.
                   </td>
@@ -681,7 +724,7 @@ export default async function Paper1Page() {
                 <tr className="hover:bg-muted">
                   <td className="px-4 py-3 font-medium text-foreground">Q2</td>
                   <td className="px-4 py-3 text-muted-foreground">2</td>
-                  <td className="px-4 py-3 text-muted-foreground">2-3 min</td>
+                  <td className="px-4 py-3 text-muted-foreground">4 min</td>
                   <td className="px-4 py-3 text-muted-foreground">
                     {tr(`Two clear, separate points. Brief quotation or paraphrase.`)}
                   </td>
@@ -689,17 +732,19 @@ export default async function Paper1Page() {
                 <tr className="hover:bg-muted">
                   <td className="px-4 py-3 font-medium text-foreground">Q3</td>
                   <td className="px-4 py-3 text-muted-foreground">6</td>
-                  <td className="px-4 py-3 text-muted-foreground">8-10 min</td>
+                  <td className="px-4 py-3 text-muted-foreground">12 min</td>
                   <td className="px-4 py-3 text-muted-foreground">
-                    2-3 analytical points. What-How-Why. Use terminology.
+                    Language and structure, each quotation linked to its effect.
                   </td>
                 </tr>
                 <tr className="hover:bg-muted">
                   <td className="px-4 py-3 font-medium text-foreground">Q4</td>
                   <td className="px-4 py-3 text-muted-foreground">15</td>
-                  <td className="px-4 py-3 text-muted-foreground">20-25 min</td>
+                  <td className="px-4 py-3 text-muted-foreground">32 min</td>
                   <td className="px-4 py-3 text-muted-foreground">
-                    {tr(`Mini-essay. Address statement. Evidence from whole text. Balanced.`)}
+                    {tr(
+                      `Mini-essay. A clear verdict on how successfully the effect is created, with evidence from the whole extract.`,
+                    )}
                   </td>
                 </tr>
                 <tr className="hover:bg-muted">

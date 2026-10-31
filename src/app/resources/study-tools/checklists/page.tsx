@@ -261,15 +261,19 @@ const CHECKLISTS: ChecklistBoard[] = [
             label: 'Section A Q1: one-word/short answers',
             detail: 'Simple retrieval',
           },
+          // 31 October 2026: Q2 was "close language analysis" and Q3 "whole text
+          // analysis"; on Paper 2 the 19th century, Q1 to Q4, a Q5 comparison and a
+          // Q6 writing task with "two tasks from choice". Corrected to the 1EN0 guides
+          // in src/data/mark-scheme-guides/. The ids are kept so ticks survive.
           {
             id: 'edx-l-2',
-            label: 'Section A Q2: close language analysis',
-            detail: 'Focus on specific words/phrases',
+            label: 'Section A Q2: two points from a short section',
+            detail: 'Retrieval, quoted or in your own words',
           },
           {
             id: 'edx-l-3',
             label: 'Section A Q3: language and structure',
-            detail: 'Whole text analysis',
+            detail: 'A short section named in the question',
           },
           {
             id: 'edx-l-4',
@@ -279,7 +283,7 @@ const CHECKLISTS: ChecklistBoard[] = [
           {
             id: 'edx-l-5',
             label: 'Section B: imaginative writing (one task)',
-            detail: 'Narrative or descriptive',
+            detail: 'A story, a description or a monologue, from a choice of two',
           },
           {
             id: 'edx-l-6',
@@ -294,22 +298,22 @@ const CHECKLISTS: ChecklistBoard[] = [
           {
             id: 'edx-l-7',
             label: 'Section A: read and analyse two non-fiction texts',
-            detail: '19th and 21st century sources',
+            detail: 'From the 20th and 21st centuries, linked by a theme',
           },
           {
             id: 'edx-l-8',
-            label: 'Q1 to Q4: retrieval, inference, language, synthesis',
-            detail: 'Progress through question types',
+            label: 'Q1 to Q6: retrieval, language and structure, evaluation',
+            detail: 'Q1 to Q3 on Text 1, Q4 to Q6 on Text 2',
           },
           {
             id: 'edx-l-9',
-            label: "Q5: compare writers' perspectives",
+            label: "Q7(a) and Q7(b): synthesis, then compare writers' perspectives",
             detail: 'Use both texts with comparison connectives',
           },
           {
             id: 'edx-l-10',
-            label: 'Section B Q6: transactional writing',
-            detail: 'Two tasks from choice',
+            label: 'Section B Q8 or Q9: transactional writing',
+            detail: 'One task from a choice of two',
           },
           {
             id: 'edx-l-11',

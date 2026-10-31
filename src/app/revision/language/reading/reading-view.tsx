@@ -46,15 +46,20 @@ const READING_PAPERS: Partial<Record<ExamBoard, ReadingPaperInfo>> = {
       "Paper 2 Q4 (16 marks): Compare writers' attitudes/perspectives",
     ],
   },
+  // 31 October 2026: this said Paper 1 reads 20th/21st-century fiction and Paper 2
+  // compares 19th- and 20th/21st-century non-fiction, and listed a language-only
+  // question that neither paper sets. Corrected to the 1EN0 guides in
+  // src/data/mark-scheme-guides/edexcel-lang-paper1.ts and edexcel-lang-paper2.ts.
   edexcel: {
     paperLabel: 'Edexcel Paper 1 & Paper 2 Reading',
     description:
-      'Paper 1 (Fiction and Imaginative Writing) reads one 20th/21st century fiction extract. Paper 2 (Non-fiction and Transactional Writing) compares 19th and 20th/21st century non-fiction.',
+      'Paper 1 (Fiction and Imaginative Writing) reads one extract from a 19th-century novel or story: four questions, 24 marks, in a 1h 45m paper. Paper 2 (Non-fiction and Transactional Writing) reads two non-fiction texts from the 20th and 21st centuries, linked by a theme: seven questions, 56 marks, in a 2h 5m paper.',
     questionTypes: [
-      'Short retrieval questions on explicit meaning',
-      "Language analysis of writer's word choice and techniques",
-      "Analysis of writer's use of language and structure",
-      "Comparison of writers' ideas and perspectives (Paper 2)",
+      'Short retrieval questions on named lines (1 or 2 marks each)',
+      "Analysis of the writer's use of language and structure (Q3 on each paper)",
+      'Evaluation of how successfully the writer achieves an effect (Paper 1 Q4, Paper 2 Q6)',
+      'Synthesis of what the two texts have in common (Paper 2 Q7a)',
+      "Comparison of writers' ideas and perspectives (Paper 2 Q7b)",
     ],
   },
   ocr: {

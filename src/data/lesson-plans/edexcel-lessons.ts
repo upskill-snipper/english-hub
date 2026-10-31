@@ -36,6 +36,13 @@ export interface LessonPlan {
 }
 
 // ── Lesson 1: Edexcel Language Paper 1 - Fiction & Imaginative Writing Overview ──
+//
+// 31 October 2026: Lessons 1 and 2 were corrected to the 1EN0 guides in
+// src/data/mark-scheme-guides/. Lesson 1 gave Paper 1 five questions, a 6-mark
+// language Q2 and a separate 6-mark structure Q3, and 68 marks; Lesson 2 gave
+// Paper 2 a 19th-century Source A, AQA-style questions and the writing as Q6/Q7.
+// Paper 1 is 64 marks, Q1 to Q4 then Q5 or Q6; Paper 2 has two 20th- and
+// 21st-century texts, Q1 to Q7, and one piece of writing, Q8 or Q9.
 
 const lesson1: LessonPlan = {
   id: 'edexcel-01-lang-paper1-overview',
@@ -46,12 +53,12 @@ const lesson1: LessonPlan = {
   duration: '60 minutes',
   objectives: [
     'Understand the structure and timing of Edexcel Language Paper 1 (1EN0/01)',
-    'Identify the requirements for each question (Q1-Q5) and their mark allocations',
+    'Identify the requirements for each question (Q1 to Q4, and the writing task, Q5 or Q6) and their mark allocations',
     'Recognise how Edexcel assessment objectives AO1-AO6 map onto each question',
     'Develop a strategic approach to reading the fiction extract and planning responses',
   ],
   successCriteria: [
-    'I can outline the five questions on Paper 1 and their mark allocations',
+    'I can outline the questions on Paper 1 and their mark allocations',
     'I can explain what each assessment objective requires in my own words',
     'I can create a timing plan that allocates minutes proportionally to marks',
     'I can identify which AOs are tested in each question',
@@ -83,7 +90,7 @@ const lesson1: LessonPlan = {
       title: 'Mapping the Paper: Question-by-Question Breakdown',
       duration: '20 minutes',
       instructions:
-        'Distribute a blank Paper 1 overview grid. Walk through each question: Q1 (1 mark, short answer retrieval), Q2 (6 marks, language analysis AO2), Q3 (6 marks, structure analysis AO2), Q4 (15 marks, critical evaluation AO4), Q5 (40 marks, imaginative writing AO5/AO6). Students complete the grid noting mark allocation, AO focus, timing recommendation, and one top tip per question. Use an exemplar past paper to show how questions appear.',
+        'Distribute a blank Paper 1 overview grid. Walk through each question: Q1 (1 mark, short answer retrieval, AO1), Q2 (2 marks, two points from a short section, AO1), Q3 (6 marks, language and structure in a short section, AO2), Q4 (15 marks, critical evaluation of how successfully the writer creates an effect, AO4), and Q5 or Q6 (40 marks, one imaginative writing task from a choice of two, AO5/AO6). Students complete the grid noting mark allocation, AO focus, timing recommendation, and one top tip per question. Use an exemplar past paper to show how questions appear.',
       differentiation: {
         support: 'Pre-fill the grid with mark allocations; students add AOs and tips.',
         core: 'Students complete the full grid and write timing allocations independently.',
@@ -97,10 +104,10 @@ const lesson1: LessonPlan = {
       ],
     },
     {
-      title: 'Mini Practice: Tackling Q2 Language Analysis',
+      title: 'Mini Practice: Tackling Q3 Language and Structure',
       duration: '20 minutes',
       instructions:
-        "Provide a short fiction extract (approx. 400 words). Model how to approach Q2 by identifying language features, selecting a quotation, and analysing effects. Students practise writing one analytical paragraph following the Edexcel-friendly structure: identify technique, embed quotation, analyse effect on reader, link to writer's purpose. Peer-assess using a simplified mark scheme checklist.",
+        "Provide a short 19th-century fiction extract (approx. 400 words). Model how to approach Q3 by identifying language features and one structural choice, selecting a quotation, and analysing effects. Students practise writing one analytical paragraph on language and one on structure, following the Edexcel-friendly structure: identify technique, embed quotation, analyse effect on reader, link to writer's purpose. Peer-assess using a simplified mark scheme checklist.",
       differentiation: {
         support: 'Provide a sentence-starter frame and pre-highlighted quotations in the extract.',
         core: 'Students select their own quotations and write a full paragraph independently.',
@@ -109,7 +116,7 @@ const lesson1: LessonPlan = {
       },
       resources: [
         'Fiction extract handout',
-        'Q2 model paragraph on visualiser',
+        'Q3 model paragraphs on visualiser',
         'Peer-assessment checklist aligned to Edexcel mark scheme',
       ],
     },
@@ -127,28 +134,28 @@ const lesson1: LessonPlan = {
     },
   },
   homework:
-    'Using the AO reference card, write a 100-word explanation of why Q5 is worth the most marks. What skills does Edexcel want you to demonstrate in the imaginative writing task?',
+    'Using the AO reference card, write a 100-word explanation of why the writing task (Q5 or Q6) is worth the most marks. What skills does Edexcel want you to demonstrate in the imaginative writing task?',
   worksheetQuestions: [
     {
       question:
-        'List the five questions on Edexcel Language Paper 1 and state the mark allocation for each.',
+        'List the questions on Edexcel Language Paper 1 and state the mark allocation for each.',
       lines: 6,
       modelAnswer:
-        'Q1: 1 mark (short answer retrieval). Q2: 6 marks (language analysis, AO2). Q3: 6 marks (structure analysis, AO2). Q4: 15 marks (critical evaluation, AO4). Q5: 40 marks (imaginative writing, AO5 content/organisation and AO6 technical accuracy).',
+        'Q1: 1 mark (short answer retrieval, AO1). Q2: 2 marks (two points from a short section, AO1). Q3: 6 marks (language and structure, AO2). Q4: 15 marks (critical evaluation, AO4). Q5 or Q6: 40 marks (one imaginative writing task from a choice of two, AO5 content/organisation 24 and AO6 technical accuracy 16). Total: 64 marks.',
       marks: 5,
     },
     {
       question: 'Explain the difference between AO2 and AO4 in the context of Paper 1.',
       lines: 5,
       modelAnswer:
-        'AO2 requires analysis of how writers use language and structure to achieve effects and influence readers. It is about identifying specific techniques and explaining their impact. AO4 requires critical evaluation of texts, meaning students must make a judgement about a statement and argue for or against it using textual evidence. AO2 is analytical; AO4 is evaluative.',
+        'AO2 requires analysis of how writers use language and structure to achieve effects and influence readers. It is about identifying specific techniques and explaining their impact. AO4 requires critical evaluation of texts, meaning students must judge how successfully the writer achieves an effect the question names, and support that judgement with textual evidence. AO2 is analytical; AO4 is evaluative.',
       marks: 4,
     },
     {
       question: 'Why is time management especially important on Paper 1? Create a timing plan.',
       lines: 5,
       modelAnswer:
-        'Paper 1 is 1 hour 45 minutes with 68 marks available. Q5 alone is worth 40 marks (over half), so at least 45 minutes should be allocated to it. A suggested plan: Q1 (2 mins), Q2 (8 mins), Q3 (8 mins), Q4 (20 mins), Q5 (45 mins), checking (5 mins). Without a plan, students risk spending too long on lower-mark questions and rushing the highest-value task.',
+        'Paper 1 is 1 hour 45 minutes with 64 marks available. The writing task alone is worth 40 marks (over half), and the paper advises about 45 minutes on it. A suggested plan: reading the extract (10 mins), Q1 (2 mins), Q2 (4 mins), Q3 (12 mins), Q4 (32 mins), then Q5 or Q6 (45 mins, including about 5 to plan and 5 to check). Without a plan, students risk spending too long on lower-mark questions and rushing the highest-value task.',
       marks: 4,
     },
     {
@@ -156,29 +163,28 @@ const lesson1: LessonPlan = {
         "What does 'imaginative writing' mean in the context of Q5? What options might you be given?",
       lines: 4,
       modelAnswer:
-        'Imaginative writing on Edexcel Paper 1 Q5 can include descriptive writing or narrative writing. Students are typically given a choice of two prompts - one may be an image stimulus and the other a written prompt. The writing should demonstrate creative use of language, varied sentence structures, and effective organisation with a clear sense of audience and purpose.',
+        'Imaginative writing on Edexcel Paper 1 (Q5 or Q6) can be a story, a description or a monologue. Students choose one of two tasks, both linked by theme to the extract, and one of them comes with two pictures they may use for ideas. The writing should demonstrate creative use of language, varied sentence structures, and effective organisation with a clear sense of audience and purpose.',
       marks: 3,
     },
     {
       question:
-        'Identify two language features you might analyse in a Q2 response and explain why they are effective.',
+        'Identify two language features you might analyse in a Q3 response and explain why they are effective.',
       lines: 5,
       modelAnswer:
         'Metaphor: comparing one thing to another creates a vivid image and can convey abstract ideas concretely, helping the reader visualise and emotionally engage. Short sentences: these create tension or emphasis by slowing the pace and forcing the reader to focus on a single idea, often used at dramatic moments to heighten impact.',
       marks: 4,
     },
     {
-      question:
-        'What is the difference between language and structure in the context of Q2 and Q3?',
+      question: 'What is the difference between language and structure in the context of Q3?',
       lines: 5,
       modelAnswer:
-        'Language (Q2) refers to the specific words, phrases, and techniques a writer uses - such as metaphor, simile, alliteration, or emotive language. Structure (Q3) refers to how the text is organised and sequenced - such as the opening, shifts in focus, paragraph length, chronological or non-chronological order, and how the ending relates to the beginning.',
+        'Language refers to the specific words, phrases, and techniques a writer uses - such as metaphor, simile, alliteration, or emotive language. Structure refers to how the text is organised and sequenced - such as the opening, shifts in focus, paragraph length, chronological or non-chronological order, and how the ending relates to the beginning. Q3 asks for both: an answer on language alone, or structure alone, cannot go above Level 1.',
       marks: 4,
     },
   ],
   teacherNotes: [
     'Use the most recent available Edexcel specimen or past paper for authenticity. Check copyright permissions before photocopying.',
-    'Emphasise that Q5 is worth more than half the paper - students who rush this question significantly limit their grade.',
+    'Emphasise that the writing task (Q5 or Q6) is worth 40 of the 64 marks - students who rush it significantly limit their grade.',
     'The AO reference card should be kept in student folders for use throughout the course.',
     'This overview lesson is best delivered early in Year 10 and revisited in Year 11 revision.',
   ],
@@ -202,13 +208,13 @@ const lesson2: LessonPlan = {
   duration: '60 minutes',
   objectives: [
     'Understand the structure and timing of Edexcel Language Paper 2 (1EN0/02)',
-    'Identify the requirements for each question (Q1-Q7) including the two-source reading section',
-    'Recognise how AO1, AO2, AO3, AO5 and AO6 are tested across the paper',
+    'Identify the requirements for each question (Q1 to Q7 on the two reading texts, and the writing task, Q8 or Q9)',
+    'Recognise how AO1 to AO6 are tested across the paper',
     'Develop confidence with transactional writing formats: articles, letters, speeches, reviews, and reports',
   ],
   successCriteria: [
     'I can outline every question on Paper 2 and its mark allocation',
-    'I can explain the difference between the reading section (Sources A and B) and the writing section',
+    'I can explain the difference between the reading section (Text 1 and Text 2) and the writing section',
     'I can identify the key features of at least three transactional writing formats',
     'I can create a timing plan for Paper 2',
   ],
@@ -241,12 +247,12 @@ const lesson2: LessonPlan = {
       title: 'Deconstructing Paper 2: Section A (Reading) Deep Dive',
       duration: '22 minutes',
       instructions:
-        "Walk through Section A using an exemplar paper. Explain the two-source structure: Source A (19th century non-fiction) and Source B (20th/21st century non-fiction). Break down each reading question: Q1 (retrieval, 1 mark), Q2 (language analysis on one source, 6 marks), Q3 (language/structure on one source, 6 marks), Q4 (synthesis across both sources, 6 marks), Q5 (comparison of writers' viewpoints, 15 marks). Students annotate a Paper 2 overview sheet. Emphasise Q5 as the highest-value reading question requiring explicit comparison with connectives.",
+        "Walk through Section A using an exemplar paper. Explain the two-text structure: two unseen non-fiction texts from the 20th and 21st centuries, linked by a theme. Break down each reading question: Q1 and Q2 (retrieval from Text 1, 2 marks each), Q3 (language and structure in Text 1, 15 marks), Q4 and Q5 (retrieval from Text 2, 1 mark each), Q6 (evaluation of Text 2, 15 marks), Q7(a) (synthesis of similarities across both texts, 6 marks) and Q7(b) (comparison of the writers' perspectives and methods, 14 marks). Students annotate a Paper 2 overview sheet. Emphasise Q7(b) as the question requiring explicit comparison with connectives.",
       differentiation: {
         support: 'Pre-fill question numbers and marks; students add AOs and key strategies.',
         core: 'Students complete the full overview sheet and write a one-sentence strategy for each question.',
         stretch:
-          'Students write a model opening sentence for Q5 that demonstrates an explicit comparison structure.',
+          'Students write a model opening sentence for Q7(b) that demonstrates an explicit comparison structure.',
       },
       resources: [
         'Paper 2 overview worksheet',
@@ -258,7 +264,7 @@ const lesson2: LessonPlan = {
       title: 'Section B (Writing) Format Workshop',
       duration: '20 minutes',
       instructions:
-        'Focus on Q6 and Q7 (the transactional writing tasks). Explain that students choose one from two options, each specifying a format, audience, and purpose. Model the opening of an article and a letter side-by-side, showing how format conventions differ. Students then plan and write the opening paragraph of a given transactional writing prompt, choosing between article or speech format. Peer-assess focusing on: correct format conventions, clear sense of audience, persuasive/engaging tone.',
+        'Focus on Q8 and Q9, the two transactional writing tasks, of which students answer one. Explain that each task specifies a format, audience, and purpose. Model the opening of an article and a letter side-by-side, showing how format conventions differ. Students then plan and write the opening paragraph of a given transactional writing prompt, choosing between article or speech format. Peer-assess focusing on: correct format conventions, clear sense of audience, persuasive/engaging tone.',
       differentiation: {
         support:
           "Provide a format template with structural prompts (e.g. 'Dear...', headline, subheading).",
@@ -277,7 +283,7 @@ const lesson2: LessonPlan = {
     title: 'Paper 2 Comparison Relay',
     duration: '7 minutes',
     instructions:
-      "Divide the class into teams. Each team receives a set of quick-fire questions about Paper 2 (e.g. 'How many marks is Q5?', 'Name two comparison connectives', 'What century is Source A from?'). Teams relay answers on whiteboards. Fastest correct answer wins. Recap key takeaways as a class.",
+      "Divide the class into teams. Each team receives a set of quick-fire questions about Paper 2 (e.g. 'How many marks is Q7(b)?', 'Name two comparison connectives', 'Which centuries do the two texts come from?'). Teams relay answers on whiteboards. Fastest correct answer wins. Recap key takeaways as a class.",
     differentiation: {
       support: 'Questions are multiple-choice with two options.',
       core: 'Open recall questions requiring precise answers.',
@@ -293,21 +299,22 @@ const lesson2: LessonPlan = {
         'How does the structure of Paper 2 differ from Paper 1? Explain the key differences.',
       lines: 5,
       modelAnswer:
-        'Paper 1 has one fiction extract and tests imaginative/creative writing. Paper 2 has two non-fiction sources (one 19th century, one modern) and tests transactional writing. Paper 2 requires comparison skills across sources, while Paper 1 focuses on a single text. Paper 2 writing tasks specify a particular format (article, letter, speech, etc.), whereas Paper 1 offers more open creative prompts.',
+        'Paper 1 has one 19th-century fiction extract and tests imaginative writing. Paper 2 has two non-fiction texts from the 20th and 21st centuries, linked by a theme, and tests transactional writing. Paper 2 requires comparison skills across the texts, while Paper 1 focuses on a single text. On both papers students write one piece from a choice of two tasks; the Paper 2 task specifies a particular form (article, letter, speech, etc.), whereas Paper 1 offers more open creative prompts.',
       marks: 4,
     },
     {
       question: "What is 'synthesis' and which question on Paper 2 tests it?",
       lines: 4,
       modelAnswer:
-        'Synthesis means combining information or ideas from two different sources to identify similarities or differences. Q4 on Paper 2 tests synthesis by asking students to find and combine relevant points from both Source A and Source B on a given topic, showing how the sources relate to each other.',
+        'Synthesis means combining information or ideas from two different texts. Q7(a) on Paper 2 tests it by asking students to bring together evidence from both Text 1 and Text 2 to show the similarities the question names. An answer that uses one text only earns no marks.',
       marks: 3,
     },
     {
-      question: 'Explain what Q5 requires and why it is the most challenging reading question.',
+      question:
+        'Explain what Q7(b) requires and why it is one of the most demanding reading questions.',
       lines: 6,
       modelAnswer:
-        "Q5 asks students to compare writers' viewpoints and how they are conveyed across both sources. It is worth 15 marks and is challenging because students must identify what each writer thinks, analyse the methods they use to express those viewpoints, and make explicit comparisons using connectives. It tests both understanding (AO1) and analytical skill (AO2/AO3) simultaneously.",
+        "Q7(b) asks students to compare the writers' ideas and perspectives and how they are conveyed across both texts. It is worth 14 marks and is demanding because students must identify what each writer thinks, analyse the methods they use to express those viewpoints, and make explicit comparisons using connectives, drawing evenly on both texts. It is marked for AO3 alone: an answer that deals with only one text in detail cannot go above Level 2.",
       marks: 5,
     },
     {
@@ -330,14 +337,14 @@ const lesson2: LessonPlan = {
       question: 'Create a timing plan for Paper 2 (2 hours 5 minutes total, 96 marks).',
       lines: 5,
       modelAnswer:
-        'Q1: 2 minutes (1 mark). Q2: 10 minutes (6 marks). Q3: 10 minutes (6 marks). Q4: 10 minutes (6 marks). Q5: 25 minutes (15 marks). Q6/Q7: 45 minutes (40 marks, choosing one question). Checking/proofreading: 5 minutes. Total: 107 minutes. This ensures proportional time allocation based on marks available.',
+        'The paper advises about 1 hour 20 minutes on Section A and about 45 on Section B. A suggested plan: read Text 1 (6 minutes), Q1 and Q2 (2 minutes each), Q3 (18 minutes); read Text 2 (6 minutes), Q4 and Q5 (1 minute each), Q6 (18 minutes); Q7(a) (8 minutes), Q7(b) (18 minutes); Q8 or Q9 (45 minutes: 5 to plan, 35 to write, 5 to check). Total: 125 minutes. This ensures proportional time allocation based on marks available.',
       marks: 4,
     },
   ],
   teacherNotes: [
-    'Paper 2 timing is generous (2 hours 5 minutes) compared to Paper 1 - students should be encouraged to plan thoroughly, especially for the writing task.',
-    'The 19th-century source in Section A can be challenging for weaker readers. Build in regular exposure to 19th-century non-fiction throughout the course.',
-    'Emphasise that Q6/Q7 is a choice - students should read both options carefully before deciding.',
+    'Paper 2 is 20 minutes longer than Paper 1 but carries 32 more marks across seven reading questions - students need a firm timing plan, especially to protect the 45 minutes for the writing task.',
+    'Two unseen texts in one sitting can be challenging for weaker readers. Build in regular exposure to 20th- and 21st-century non-fiction (memoir, journalism, travel writing, speeches) throughout the course, including some from earlier decades of the 20th century.',
+    'Emphasise that Q8/Q9 is a choice - students should read both options carefully before deciding, then write one piece.',
     'Format conventions are a common area where students lose marks unnecessarily. Display format reference posters in the classroom.',
   ],
   targetedSkills: [

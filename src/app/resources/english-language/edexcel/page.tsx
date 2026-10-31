@@ -30,7 +30,7 @@ const sections = [
   {
     title: 'Paper 1: Fiction & Imaginative Writing',
     description:
-      'Section A: Reading 19th-century fiction extracts. Section B: Imaginative writing from a choice of two tasks. 1 hour 45 minutes, 64 marks.',
+      'Section A: Reading an extract from a 19th-century novel or story. Section B: Imaginative writing from a choice of two tasks. 1 hour 45 minutes, 64 marks.',
     href: '/resources/english-language/edexcel/paper-1',
     icon: (
       <svg
@@ -54,7 +54,7 @@ const sections = [
   {
     title: 'Paper 2: Non-Fiction & Writing for Real Purposes',
     description:
-      'Section A: Reading two linked non-fiction texts (19th & 21st century). Section B: Writing for real purposes. 2 hours 5 minutes, 96 marks.',
+      'Section A: Reading two linked non-fiction texts from the 20th and 21st centuries. Section B: One piece of writing for a real purpose, from a choice of two tasks. 2 hours 5 minutes, 96 marks.',
     href: '/resources/english-language/edexcel/paper-2',
     icon: (
       <svg
@@ -207,7 +207,7 @@ export default function EdexcelEnglishLanguagePage() {
               { label: 'Exam Board', value: 'Pearson Edexcel' },
               { label: 'Specification', value: '1EN0' },
               { label: 'Total Exam Time', value: '3 hrs 50 mins' },
-              { label: 'Total Marks', value: '128 (+ 20% Spoken Language)' },
+              { label: 'Total Marks', value: '160 (Spoken Language reported separately)' },
             ].map((item) => (
               <div
                 key={item.label}
@@ -243,7 +243,7 @@ export default function EdexcelEnglishLanguagePage() {
                     Paper 2 &mdash; Non-Fiction &amp; Writing for Real Purposes
                   </td>
                   <td className="px-4 py-3 text-muted-foreground">2 hr 5 min</td>
-                  <td className="px-4 py-3 text-muted-foreground">64</td>
+                  <td className="px-4 py-3 text-muted-foreground">96</td>
                   <td className="px-4 py-3 text-muted-foreground">60%</td>
                 </tr>
                 <tr className="hover:bg-muted">

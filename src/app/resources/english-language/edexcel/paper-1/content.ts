@@ -150,4 +150,62 @@ export const STRINGS: Record<string, Bi> = {
     ar: `السؤال 4 - التقييم النقدي (المستوى 4-5 / 13-15 نقطة)`,
   },
   s64: { en: `Q5 or Q6 (Writing)`, ar: `السؤال 5 أو 6 (الكتابة)` },
+
+  // ─── Added 31 October 2026 with the Paper 1 corrections ──────────────────
+  //
+  // Question 3 was taught as language analysis alone and the writing grid had
+  // four levels that match no Pearson grid. Both were rewritten to
+  // src/data/mark-scheme-guides/edexcel-lang-paper1.ts, which orphaned the
+  // Arabic of every rewritten string. These entries carry the new wording. The
+  // Arabic here was written by the session that made the change and wants a
+  // native speaker's read.
+  s65: { en: `Language and Structure (6 marks)`, ar: `اللغة والبنية (6 نقاط)` },
+  s66: {
+    en: `Question 3: Language and Structure (Level 3, 6 marks)`,
+    ar: `السؤال 3: اللغة والبنية (المستوى 3، 6 نقاط)`,
+  },
+  s67: {
+    en: `Some ideas come across, but little sense of who the piece is for or what it is trying to do; loosely organised.`,
+    ar: `تصل بعض الأفكار، لكن الإحساس بمن يُكتب له النص أو بما يحاول فعله ضعيف؛ والتنظيم مفكك.`,
+  },
+  s68: {
+    en: `Simple, everyday words with frequent spelling mistakes; shaky punctuation; short or repetitive sentences.`,
+    ar: `كلمات يومية بسيطة مع أخطاء إملائية متكررة؛ ترقيم غير مستقر؛ جمل قصيرة أو متكررة النمط.`,
+  },
+  s69: {
+    en: `Knows what the piece is for and who will read it, in a simple, steady tone; ideas follow in order, in paragraphs, with some linking.`,
+    ar: `يعرف غرض النص ومن سيقرؤه، بنبرة بسيطة وثابتة؛ والأفكار متتابعة في فقرات مع بعض الربط.`,
+  },
+  s70: {
+    en: `Everyday words spelt correctly; punctuation mostly right; some varied sentences, including ones joined with words such as because or although.`,
+    ar: `الكلمات اليومية مكتوبة بإملاء صحيح؛ الترقيم صحيح في معظمه؛ بعض التنوع في الجمل، ومنها جمل مربوطة بكلمات مثل because أو although.`,
+  },
+  s71: {
+    en: `Ideas and techniques picked to suit the task; the tone fits; each idea builds on the last, in paragraphs that are easy to follow.`,
+    ar: `أفكار وأساليب مختارة لتناسب المهمة؛ النبرة مناسبة؛ كل فكرة تبني على ما قبلها، في فقرات سهلة المتابعة.`,
+  },
+  s72: {
+    en: `A good choice of words; tricky spellings mostly right; a mix of punctuation used correctly; sentences shaped to help the purpose.`,
+    ar: `اختيار جيد للكلمات؛ معظم الكلمات الصعبة مكتوبة بإملاء صحيح؛ علامات ترقيم متنوعة مستخدمة بشكل صحيح؛ جمل مصاغة لخدمة الغرض.`,
+  },
+  s73: {
+    en: `Shaped deliberately to affect the reader; tone and style well judged; structure under control from start to finish.`,
+    ar: `مصاغ عن قصد للتأثير في القارئ؛ النبرة والأسلوب مضبوطان بعناية؛ البنية متماسكة من البداية إلى النهاية.`,
+  },
+  s74: {
+    en: `Words chosen with care from a wide range; only the odd spelling slip; punctuation placed to make meaning clear; sentences built with a purpose in mind.`,
+    ar: `كلمات مختارة بعناية من حصيلة واسعة؛ أخطاء إملائية نادرة؛ ترقيم يوضّح المعنى؛ جمل مبنية لهدف واضح.`,
+  },
+  s75: {
+    en: `Steers the reader’s response in subtle ways; a confident voice throughout; complex ideas arranged so the whole piece holds together.`,
+    ar: `توجّه استجابة القارئ بطرق خفية؛ صوت واثق من البداية إلى النهاية؛ أفكار معقدة مرتبة بحيث يتماسك النص كله.`,
+  },
+  s76: {
+    en: `Ambitious vocabulary used with purpose; errors so rare they never get in the way; precise punctuation and a full range of sentence types, each chosen for its effect.`,
+    ar: `مفردات طموحة تُستخدم لهدف واضح؛ أخطاء نادرة لا تعيق القراءة أبدًا؛ ترقيم دقيق وأنواع الجمل كلها، كل منها مختار لتأثيره.`,
+  },
+  s77: {
+    en: `Mini-essay. A clear verdict on how successfully the effect is created, with evidence from the whole extract.`,
+    ar: `مقال قصير. حكم واضح على مدى نجاح الكاتب في تحقيق التأثير، مع أدلة من المقتطف كله.`,
+  },
 }

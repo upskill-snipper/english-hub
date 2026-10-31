@@ -62,7 +62,7 @@ export const languageExtraQuestions: QuizQuestion[] = [
     options: ['Asyndeton', 'Polysyndeton', 'Anaphora', 'Hypophora'],
     correctIndex: 1,
     explanation:
-      'Polysyndeton repeats conjunctions (and…and…and) to create a breathless, accumulating rhythm - strong AO2 evidence in Q2.',
+      'Polysyndeton repeats conjunctions (and…and…and) to create a breathless, accumulating rhythm - strong AO2 evidence in a language analysis answer.',
     boards: ['aqa', 'edexcel', 'ocr', 'eduqas', 'cambridge-0500', 'cambridge-0990'],
   },
   {
@@ -185,7 +185,7 @@ export const languageExtraQuestions: QuizQuestion[] = [
     options: ['Anaphora', 'Epistrophe', 'Chiasmus', 'Zeugma'],
     correctIndex: 0,
     explanation:
-      'Anaphora is repetition at the start of successive clauses - a powerful rhetorical device for both Paper 1 Q5 and Paper 2 Q5.',
+      'Anaphora is repetition at the start of successive clauses - a powerful rhetorical device in both imaginative and transactional writing.',
     boards: ['aqa', 'edexcel', 'ocr', 'eduqas', 'cambridge-0500', 'cambridge-0990'],
   },
   {
@@ -238,7 +238,7 @@ export const languageExtraQuestions: QuizQuestion[] = [
     ],
     correctIndex: 0,
     explanation:
-      'Personifying the sky as "bruised" and "bleeding" creates a violent semantic field, suggesting menace - strong Paper 1 Q2/Q4 evidence.',
+      'Personifying the sky as "bruised" and "bleeding" creates a violent semantic field, suggesting menace - strong evidence in a language or evaluation answer.',
     boards: ['aqa', 'edexcel', 'ocr', 'eduqas', 'cambridge-0500', 'cambridge-0990'],
   },
   {
@@ -269,7 +269,7 @@ export const languageExtraQuestions: QuizQuestion[] = [
     ],
     correctIndex: 0,
     explanation:
-      'Three minor sentences create a clipped sensory list (sight/taste/smell), foregrounding atmosphere - high-level AO2 in Paper 1 Q2.',
+      'Three minor sentences create a clipped sensory list (sight/taste/smell), foregrounding atmosphere - high-level AO2 in a language analysis answer.',
     boards: ['aqa', 'edexcel', 'ocr', 'eduqas'],
   },
   {
@@ -291,7 +291,7 @@ export const languageExtraQuestions: QuizQuestion[] = [
   {
     id: 'language-extra-023',
     topic: 'language-techniques',
-    question: 'Which is the BEST AO2 sentence stem for Paper 1 Q2?',
+    question: 'Which is the BEST AO2 sentence stem for a language analysis answer?',
     options: [
       '"The writer uses lots of adjectives."',
       '"The verb ‘splintered’ has connotations of fragility, suggesting…"',
@@ -431,7 +431,7 @@ export const languageExtraQuestions: QuizQuestion[] = [
   {
     id: 'language-extra-033',
     topic: 'exam-technique',
-    question: 'Which feature is essential in a Paper 2 Q5 formal letter?',
+    question: 'Which feature is essential in a formal letter for the writing task?',
     options: [
       'Two addresses, date, formal salutation/sign-off',
       'Emojis and casual slang',
@@ -447,7 +447,7 @@ export const languageExtraQuestions: QuizQuestion[] = [
     id: 'language-extra-034',
     topic: 'exam-technique',
     question:
-      'In a Paper 2 Q5 newspaper article, the audience is general readers. Which register is most appropriate?',
+      'In a newspaper article for the writing task, the audience is general readers. Which register is most appropriate?',
     options: [
       'Highly colloquial slang throughout',
       'Formal but engaging - sophisticated vocabulary with rhetorical features',
@@ -463,7 +463,7 @@ export const languageExtraQuestions: QuizQuestion[] = [
     id: 'language-extra-035',
     topic: 'language-techniques',
     question:
-      'Which rhetorical device is BEST suited to opening a Paper 2 Q5 speech to engage the audience immediately?',
+      'Which rhetorical device is BEST suited to opening a persuasive speech to engage the audience immediately?',
     options: [
       'Direct address combined with a rhetorical question',
       'A semi-colon list of statistics',
@@ -479,7 +479,7 @@ export const languageExtraQuestions: QuizQuestion[] = [
     id: 'language-extra-036',
     topic: 'language-techniques',
     question:
-      'A SAMPLE Paper 2 source describes Victorian London as "soot-blackened, gas-lit and reeking with the day’s commerce". The triplet creates…',
+      'A SAMPLE non-fiction source describes Victorian London as "soot-blackened, gas-lit and reeking with the day’s commerce". The triplet creates…',
     options: [
       'A sensory list signalling oppressive atmosphere',
       'A simile chain',
@@ -535,7 +535,10 @@ export const languageExtraQuestions: QuizQuestion[] = [
     correctIndex: 1,
     explanation:
       'AO1 inference relies on understanding the source. Use context to decode archaic vocabulary; you don’t need a literal translation.',
-    boards: ['aqa', 'edexcel', 'ocr', 'eduqas'],
+    // 31 October 2026: 'edexcel' taken off. Pearson's Paper 2 prints two texts from
+    // the 20th and 21st centuries, so the premise is false there; it holds for AQA's
+    // Paper 2 and Eduqas's Component 2.
+    boards: ['aqa', 'ocr', 'eduqas'],
   },
   {
     id: 'language-extra-040',
@@ -545,7 +548,7 @@ export const languageExtraQuestions: QuizQuestion[] = [
     options: ['Anaphora', 'Asyndeton', 'Hypophora', 'Caesura'],
     correctIndex: 0,
     explanation:
-      'Repeating "We must act" at the start of successive sentences is anaphora - emphatic and rallying, ideal for Paper 2 Q5 speech.',
+      'Repeating "We must act" at the start of successive sentences is anaphora - emphatic and rallying, ideal for a persuasive speech.',
     boards: ['aqa', 'edexcel', 'ocr', 'eduqas', 'cambridge-0500', 'cambridge-0990'],
   },
   {
@@ -567,7 +570,7 @@ export const languageExtraQuestions: QuizQuestion[] = [
     id: 'language-extra-042',
     topic: 'exam-technique',
     question:
-      'A Paper 2 Q5 task asks you to "write a letter to your headteacher arguing…". The audience is…',
+      'A writing task asks you to "write a letter to your headteacher arguing…". The audience is…',
     options: [
       'General teenagers',
       'A single, named adult in authority - register should be formal but personal',
@@ -582,7 +585,7 @@ export const languageExtraQuestions: QuizQuestion[] = [
   {
     id: 'language-extra-043',
     topic: 'language-techniques',
-    question: 'Which is the BEST example of antithesis for a Paper 2 Q5 speech?',
+    question: 'Which is the BEST example of antithesis for a persuasive speech?',
     options: [
       '"It was the best of times; it was the worst of times."',
       '"The cat sat on the mat."',
@@ -608,7 +611,8 @@ export const languageExtraQuestions: QuizQuestion[] = [
   {
     id: 'language-extra-045',
     topic: 'language-techniques',
-    question: 'Which connective most clearly signals a contrasting perspective in Q4?',
+    question:
+      'Which connective most clearly signals a contrasting perspective in a comparison answer?',
     options: ['"Whereas"', '"And"', '"So"', '"Then"'],
     correctIndex: 0,
     explanation:
@@ -642,7 +646,7 @@ export const languageExtraQuestions: QuizQuestion[] = [
     ],
     correctIndex: 1,
     explanation:
-      'A semantic field clusters connected vocabulary (e.g. of warfare, of decay) - strong AO2 terminology in Q2 and Q3.',
+      'A semantic field clusters connected vocabulary (e.g. of warfare, of decay) - strong AO2 terminology in language and structure answers.',
     boards: ['aqa', 'edexcel', 'ocr', 'eduqas', 'cambridge-0500', 'cambridge-0990'],
   },
   {
@@ -697,15 +701,18 @@ export const languageExtraQuestions: QuizQuestion[] = [
     id: 'language-extra-051',
     topic: 'exam-technique',
     question: 'Edexcel GCSE English Language Paper 1 focuses on…',
+    // 31 October 2026: the answer was "20th- and 21st-century fiction" and the
+    // explanation put 19th-century non-fiction on Paper 2. Both centuries were the
+    // wrong way round (src/data/mark-scheme-guides/edexcel-lang-paper1.ts, paper2.ts).
     options: [
-      '20th- and 21st-century fiction (non-fiction comes in Paper 2)',
-      '19th-century poetry',
+      'An extract from a 19th-century novel or story (non-fiction comes in Paper 2)',
+      '20th- and 21st-century poetry',
       'Shakespeare extracts',
       'Translation work',
     ],
     correctIndex: 0,
     explanation:
-      'Edexcel Paper 1 = fiction (20th/21st-century). Paper 2 = non-fiction across the 19th, 20th and 21st centuries.',
+      'Edexcel Paper 1 = one extract from a 19th-century novel or story. Paper 2 = two non-fiction texts from the 20th and 21st centuries.',
     boards: ['edexcel', 'edexcel-igcse-lang'],
   },
   {
@@ -746,7 +753,7 @@ export const languageExtraQuestions: QuizQuestion[] = [
     ],
     correctIndex: 1,
     explanation:
-      'Edexcel Section B offers a choice of imaginative tasks, often with image stimuli - pick the one that allows your strongest AO5.',
+      'Edexcel Paper 1 Section B offers two imaginative tasks and you answer one; one of them comes with two pictures you may use for ideas. Pick the one that allows your strongest AO5.',
     boards: ['edexcel'],
   },
   {
@@ -800,7 +807,7 @@ export const languageExtraQuestions: QuizQuestion[] = [
     topic: 'language-techniques',
     question: 'Which sentence stem best evidences AO3 in Edexcel Paper 2 Q7(b)?',
     options: [
-      '"The writer of Source 1 presents X positively, whereas the writer of Source 2 conveys X with hostility through…"',
+      '"The writer of Text 1 presents X positively, whereas the writer of Text 2 conveys X with hostility through…"',
       '"Both writers use words."',
       '"This is a metaphor."',
       '"I think it is good."',

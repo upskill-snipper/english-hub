@@ -55,14 +55,19 @@ const BOARD_PAPERS: Record<
         'Two linked non-fiction texts (one 19th century, one 20th/21st) and a transactional writing task.',
     },
   },
+  // 31 October 2026: Paper 1 was "20th/21st century fiction" and Paper 2 "19th
+  // century and 20th/21st century non-fiction", which swaps the centuries and gives
+  // Edexcel AQA's Paper 2. Corrected to src/data/mark-scheme-guides/edexcel-lang-*.ts.
   edexcel: {
     paper1: {
       name: 'Paper 1: Fiction and Imaginative Writing',
-      focus: '20th/21st century fiction extract and a choice of imaginative writing tasks.',
+      focus:
+        'An extract from a 19th-century novel or story, and one imaginative writing task from a choice of two.',
     },
     paper2: {
       name: 'Paper 2: Non-fiction and Transactional Writing',
-      focus: '19th century and 20th/21st century non-fiction, plus a transactional writing task.',
+      focus:
+        'Two non-fiction texts from the 20th and 21st centuries, and one transactional writing task from a choice of two.',
     },
   },
   ocr: {
