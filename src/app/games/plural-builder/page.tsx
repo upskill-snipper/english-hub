@@ -131,7 +131,7 @@ export default function PluralBuilderPage() {
           gameId="plural-builder"
           audience="eal"
           title="Plural Builder"
-          description="Read the singular noun, then type its plural. Learn the spelling rule after each one."
+          description="Type the plural of each noun, on its own or in a sentence. Some sentences need no plural at all, so read them carefully."
           difficulty="Foundation"
           score={score}
           maxScore={totalAnswered || words.length || ROUND_SIZE}
@@ -150,15 +150,45 @@ export default function PluralBuilderPage() {
                 <span>{accuracyPct}% accuracy</span>
               </div>
 
-              {/* Singular card */}
+              {/* Word card. Since 24 October 2026 a question can be a sentence
+                  (`sentence`, with the noun in brackets after the gap) whose
+                  context decides the form: usually a plural, but sometimes
+                  the singular ("Every ___ (student)") or an uncountable noun
+                  unchanged ("some useful ___ (advice)"). So a sentence asks
+                  for the form that fits, not "the plural", and a real line
+                  shows its `source` under it. A word on its own is asked as
+                  before. */}
               <div className="rounded-xl border border-border bg-card p-6 text-center space-y-2">
-                <p className="text-xs uppercase tracking-wider text-muted-foreground">
-                  One singular
-                </p>
-                <p className="text-3xl font-bold text-foreground">{currentWord.singular}</p>
-                <p className="text-sm text-muted-foreground">
-                  Now write the plural: more than one.
-                </p>
+                {currentWord.sentence ? (
+                  <>
+                    <p className="text-xs uppercase tracking-wider text-muted-foreground">
+                      Fill the gap
+                    </p>
+                    <p className="text-xl leading-relaxed text-foreground">
+                      {currentWord.sentence.split('___')[0]}
+                      <span className="mx-1 inline-block min-w-[3rem] border-b-2 border-dashed border-primary/50 font-bold text-primary">
+                        {feedback ? currentWord.plural : '?'}
+                      </span>
+                      {currentWord.sentence.split('___')[1]}
+                    </p>
+                    {currentWord.source && (
+                      <p className="text-xs text-muted-foreground">{currentWord.source}</p>
+                    )}
+                    <p className="text-sm text-muted-foreground">
+                      Type the word in brackets in the form the sentence needs.
+                    </p>
+                  </>
+                ) : (
+                  <>
+                    <p className="text-xs uppercase tracking-wider text-muted-foreground">
+                      One singular
+                    </p>
+                    <p className="text-3xl font-bold text-foreground">{currentWord.singular}</p>
+                    <p className="text-sm text-muted-foreground">
+                      Now write the plural: more than one.
+                    </p>
+                  </>
+                )}
               </div>
 
               {/* Input area */}
@@ -170,7 +200,7 @@ export default function PluralBuilderPage() {
                   onChange={(e) => setInput(e.target.value)}
                   onKeyDown={handleKeyDown}
                   disabled={!!feedback}
-                  placeholder="Type the plural..."
+                  placeholder={currentWord.sentence ? 'Type the word...' : 'Type the plural...'}
                   autoComplete="off"
                   autoCapitalize="off"
                   spellCheck={false}
@@ -201,7 +231,8 @@ export default function PluralBuilderPage() {
                         </>
                       ) : (
                         <>
-                          <XCircle className="size-4" /> Not quite. The plural is:{' '}
+                          <XCircle className="size-4" /> Not quite.{' '}
+                          {currentWord.sentence ? 'The word that fits is:' : 'The plural is:'}{' '}
                           <span className="font-bold">{currentWord.plural}</span>
                         </>
                       )}
@@ -223,7 +254,7 @@ export default function PluralBuilderPage() {
                 {!feedback && (
                   <div className="flex justify-center">
                     <Button onClick={handleSubmit} disabled={input.trim().length === 0}>
-                      Check Plural
+                      {currentWord.sentence ? 'Check' : 'Check Plural'}
                     </Button>
                   </div>
                 )}

@@ -11,11 +11,7 @@ import { getBoardConfig } from '@/lib/board/board-store'
 import { AnswerExplanation } from '@/components/games/AnswerExplanation'
 import { useGameRound } from '@/components/games/game-round'
 import { useDealer } from '@/lib/games/start-round'
-import {
-  BANK,
-  distractorCandidates,
-  type CompItem,
-} from '@/data/games/banks/comparatives-superlatives'
+import { BANK, type CompItem } from '@/data/games/banks/comparatives-superlatives'
 
 // ─── Data ──────────────────────────────────────────────────────────────────────
 
@@ -36,11 +32,13 @@ function shuffle<T>(arr: T[]): T[] {
 
 const ROUND_SIZE = 15
 
-// Build a 4-option MCQ for an item using plausible distractors: three drawn from the
-// wrong forms in the bank (distractorCandidates), shuffled with the right one.
+// The options for an item: its own wrong options, each a mistake learners
+// really make (the bank's `wrong`, since 24 October 2026; they used to be
+// built by rule, which produced non-words such as "most dangerousest"),
+// shuffled with the right one.
 function buildOptions(item: CompItem): string[] {
   const { answer } = item
-  const picked = shuffle(distractorCandidates(item)).slice(0, 3)
+  const picked = item.wrong
   return shuffle([answer, ...picked])
 }
 
@@ -155,11 +153,13 @@ export default function ComparativesSuperlativesPage() {
           )}
         </div>
 
+        {/* The title had an exclamation mark until 31 October 2026, which the
+            house style does not allow. */}
         <GameShell
           gameId="comparatives-superlatives"
           audience="eal"
-          title="Bigger, Biggest!"
-          description="Read the sentence and choose the correct comparative or superlative form of the adjective."
+          title="Bigger, Biggest"
+          description="Read the sentence, and any table above it, then choose the comparison that fits the gap."
           difficulty="Foundation"
           score={score}
           maxScore={totalAnswered || questions.length || ROUND_SIZE}
@@ -178,15 +178,25 @@ export default function ComparativesSuperlativesPage() {
                 <span>{accuracyPct}% accuracy</span>
               </div>
 
-              {/* Sentence card */}
+              {/* Sentence card. Since 24 October 2026 it no longer says "Make the
+                  comparative" or "Make the superlative": that told the student
+                  the answer's form before they read the sentence, and deciding
+                  it from the sentence is the skill. A table or a dialogue line
+                  (`context`) shows above the sentence, and where a sentence
+                  is a real line, its `source` shows under it. */}
               <div className="rounded-xl border border-border bg-card p-6 space-y-4">
+                {current.context && (
+                  <p className="whitespace-pre-line rounded-lg border border-border bg-muted/50 px-4 py-3 text-sm text-foreground">
+                    {current.context}
+                  </p>
+                )}
                 {renderSentence(current)}
+                {current.source && (
+                  <p className="text-xs text-muted-foreground">{current.source}</p>
+                )}
                 <div className="flex flex-wrap items-center gap-2 text-sm">
                   <span className="rounded-full border border-primary/30 bg-primary/10 px-3 py-1 font-semibold text-primary">
                     {current.adjective}
-                  </span>
-                  <span className="rounded-full border border-border bg-accent px-3 py-1 text-muted-foreground">
-                    Make the {current.form}
                   </span>
                 </div>
               </div>

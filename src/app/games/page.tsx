@@ -1138,7 +1138,7 @@ const EAL_GAMES: GameDef[] = [
   mkGame(
     'plural-builder',
     'Plural Builder',
-    'Make the plural - regular, irregular and the odd ones out.',
+    'Choose the noun form a sentence needs: regular and irregular plurals, and nouns that stay singular.',
     <Shuffle className="size-6" />,
     'Easy',
     'text-teal-400',
@@ -1255,7 +1255,7 @@ const EAL_GAMES: GameDef[] = [
   mkGame(
     'comparatives-superlatives',
     'Big, Bigger, Biggest',
-    'big → bigger → biggest. Form comparatives and superlatives.',
+    'Choose the comparative or superlative a sentence needs, from tables, dialogues and real lines.',
     <Zap className="size-6" />,
     'Easy',
     'text-emerald-400',
