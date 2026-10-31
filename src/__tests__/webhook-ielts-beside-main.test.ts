@@ -399,3 +399,60 @@ describe('a no-card trialist who buys IELTS', () => {
     expect(row?.status).toBe('TRIALING')
   })
 })
+
+describe('a subscription switched in place between a main price and an IELTS price', () => {
+  // 31 October 2026, detection only. Every handler judges IELTS-only on the
+  // event in hand, so a switch on one subscription is never reconciled: a
+  // main plan moved to the IELTS price keeps 'pro' after it ends, and one
+  // moved off IELTS keeps ielts_status 'active'. The remedy is the founder's
+  // (the portal setting is not visible from here); the switch is now loud.
+  const updatedWithPrevious = (sub: Stripe.Subscription, previousPrice: string) => {
+    mockConstructEvent.mockReturnValue({
+      ...makeEvent('customer.subscription.updated', sub),
+      data: {
+        object: sub,
+        previous_attributes: {
+          items: { data: [{ price: { id: previousPrice, recurring: { interval: 'year' } } }] },
+        },
+      },
+    })
+    return import('@/app/api/stripe/webhook/route').then(({ POST }) =>
+      POST(
+        new NextRequest('http://localhost/api/stripe/webhook', {
+          method: 'POST',
+          headers: new Headers({ 'content-type': 'application/json', 'stripe-signature': 'sig' }),
+          body: '{}',
+        }),
+      ),
+    )
+  }
+  const switched = () =>
+    (console.error as unknown as { mock: { calls: unknown[][] } }).mock.calls.some((c) =>
+      String(c[0]).includes('SUBSCRIPTION_PRODUCT_SWITCHED_IN_PLACE'),
+    )
+
+  beforeEach(() => {
+    profile = { subscription_status: 'pro', ielts_status: 'free' }
+  })
+
+  it('reports a main plan moved onto the IELTS price', async () => {
+    const moved = subscription('sub_main', 'active', IELTS, IELTS_END)
+    stripeSubs = { sub_main: moved }
+    await updatedWithPrevious(moved, MAIN)
+    expect(switched()).toBe(true)
+  })
+
+  it('reports an IELTS plan moved onto a main price', async () => {
+    const moved = subscription('sub_ielts', 'active', MAIN, MAIN_END)
+    stripeSubs = { sub_ielts: moved }
+    await updatedWithPrevious(moved, IELTS)
+    expect(switched()).toBe(true)
+  })
+
+  it('says nothing about a change within the main catalogue (the control)', async () => {
+    const moved = subscription('sub_main', 'active', MAIN, MAIN_END)
+    stripeSubs = { sub_main: moved }
+    await updatedWithPrevious(moved, 'price_student_monthly')
+    expect(switched()).toBe(false)
+  })
+})

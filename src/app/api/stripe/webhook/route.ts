@@ -112,6 +112,50 @@ async function syncIeltsEntitlement(
 }
 
 /**
+ * A subscription moved IN PLACE (same id) onto or off an IELTS price, as a
+ * billing-portal plan switch between products would do. DETECTION ONLY
+ * (31 October 2026); nothing here changes an entitlement.
+ *
+ * Every handler judges `isIeltsOnly` on the event in hand, so such a switch
+ * is never reconciled. A main plan switched to the IELTS price is IELTS-only
+ * from then on: no later event writes `subscription_status`, and `.deleted`
+ * does not revoke an IELTS-only subscription, so the customer keeps the whole
+ * catalogue as 'pro' after their only subscription ends. A subscription that
+ * stops carrying IELTS leaves `ielts_status` 'active' for good, because
+ * syncIeltsEntitlement ignores a subscription with no IELTS price. Whether it
+ * can happen depends on the Stripe portal configuration, which cannot be
+ * seen from here (the portal route uses the default configuration), and the
+ * remedy (turn the switch off in the dashboard, or treat the switch as the
+ * old entitlement ending) is the founder's decision. Until then a switch is
+ * at least loud: one greppable line and a Sentry message, so a person can put
+ * that customer's entitlement right by hand.
+ */
+function reportProductSwitchInPlace(subscription: Stripe.Subscription, previous: unknown): void {
+  const before = (previous as { items?: { data?: unknown } } | null | undefined)?.items
+  if (!before || !Array.isArray(before.data)) return
+  const was = { items: before } as unknown as Stripe.Subscription
+  const ieltsOnlyChanged = isIeltsOnlySubscription(was) !== isIeltsOnlySubscription(subscription)
+  const ieltsChanged =
+    carriesIelts(was, isIeltsPriceId) !== carriesIelts(subscription, isIeltsPriceId)
+  if (!ieltsOnlyChanged && !ieltsChanged) return
+  const detail =
+    `subscription=${subscription.id} customer=${subscription.customer} ` +
+    `wasIeltsOnly=${isIeltsOnlySubscription(was)} nowIeltsOnly=${isIeltsOnlySubscription(subscription)} ` +
+    `wasCarryingIelts=${carriesIelts(was, isIeltsPriceId)} ` +
+    `nowCarriesIelts=${carriesIelts(subscription, isIeltsPriceId)}`
+  console.error(
+    `[stripe/webhook] SUBSCRIPTION_PRODUCT_SWITCHED_IN_PLACE ${detail}. Neither ` +
+      'subscription_status nor ielts_status follows a switch between products on one ' +
+      "subscription; check this customer's entitlements by hand.",
+  )
+  Sentry.captureMessage('Stripe subscription switched in place between a main and an IELTS price', {
+    level: 'error',
+    fingerprint: ['stripe-webhook', 'product-switched-in-place'],
+    extra: { subscriptionId: subscription.id, customer: subscription.customer, detail },
+  })
+}
+
+/**
  * Write the public."Subscription" Prisma row that the rest of the app
  * (entitlements, trial lifecycle, renewal reminders, grandfathered pricing)
  * reads from.
@@ -499,6 +543,10 @@ export async function POST(request: NextRequest) {
       }
 
       case 'customer.subscription.updated': {
+        reportProductSwitchInPlace(
+          event.data.object as Stripe.Subscription,
+          (event.data as { previous_attributes?: unknown }).previous_attributes,
+        )
         ignored = await handleSubscriptionUpdated(
           event.data.object as Stripe.Subscription,
           supabase,
@@ -1719,7 +1767,8 @@ async function handleSubscriptionDeleted(
   // cancel route handles the same case with otherPlanRemains. Here the email
   // is skipped rather than given new wording; a variant that names the IELTS
   // plan is copy for the founder to approve. An IELTS plan in its retry
-  // window counts, because past_due leaves ielts_status as it is.
+  // window counts, because past_due leaves ielts_status as it is. The notice
+  // held back here goes when that IELTS plan ends too (the last branch).
   const ieltsPlanRemains = cover.others.some(
     (other) => WEB_ACCESS_STATUSES.has(other.status) && carriesIelts(other, isIeltsPriceId),
   )
@@ -1735,8 +1784,52 @@ async function handleSubscriptionDeleted(
       subscriptionId: subscription.id,
       resolveEmail: () => resolveCustomerEmail(customerId, supabase),
     })
+  } else if (ieltsOnly && !cover.covered) {
+    // The M7 held back above, sent when the last live plan ends (31 October
+    // 2026). The skip left a customer who lost both plans with no notice at
+    // all: the main plan's M7 was held while this IELTS plan lived, and this
+    // deletion is IELTS-only, which revokes nothing, so neither subscription
+    // ever sent one. Now an IELTS-only deletion that leaves nothing live, after
+    // a main plan ended while this IELTS plan was running, sends that main
+    // plan's M7, keyed on its id so it can go once. Its copy is true by now:
+    // nothing paid remains. An IELTS-only customer who never held a main plan
+    // still gets nothing; an IELTS variant is copy for the founder.
+    const heldBack = mainPlanEndedBeside(subscription, cover.others)
+    if (heldBack) {
+      const customerId = subscription.customer as string
+      await sendPlanEndedEmail({
+        supabaseUserId: userId,
+        subscriptionId: heldBack.id,
+        resolveEmail: () => resolveCustomerEmail(customerId, supabase),
+      })
+    }
   }
   return null
+}
+
+/**
+ * The main plan whose M7 the `.deleted` handler held back because this IELTS
+ * plan remained, now that the IELTS plan has ended too: the most recently
+ * ended subscription that is not IELTS-only and ended on or after this IELTS
+ * plan began. Null when anything else is still live (active, trialing or in
+ * its retry window), since "your account stays open on the free plan" would
+ * be false, or when no main plan ended while this one ran.
+ */
+function mainPlanEndedBeside(
+  ieltsPlan: Stripe.Subscription,
+  others: Stripe.Subscription[],
+): Stripe.Subscription | null {
+  if (others.some((other) => WEB_ACCESS_STATUSES.has(other.status))) return null
+  const began = ieltsPlan.start_date ?? ieltsPlan.created
+  let latest: Stripe.Subscription | null = null
+  for (const other of others) {
+    if (other.status !== 'canceled' || isIeltsOnlySubscription(other)) continue
+    const endedAt = other.ended_at
+    if (typeof endedAt !== 'number') continue
+    if (typeof began === 'number' && endedAt < began) continue
+    if (!latest || endedAt > (latest.ended_at ?? 0)) latest = other
+  }
+  return latest
 }
 
 /**

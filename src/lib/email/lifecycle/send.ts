@@ -26,7 +26,8 @@
 // each retry of a failed invoice is a NEW event, so it does not make an
 // unledgered notice once per invoice: the caller passes `sendWithoutLedger`
 // only for the invoice's first attempt (corrected 24 October 2026, see
-// sendPaymentFailedEmail), which is what keeps it to one.
+// sendPaymentFailedEmail), which keeps it to one in the usual case. Not in
+// every case: sendPaymentFailedEmail lists the three where it does not.
 // ────────────────────────────────────────────────────────────────────────────
 
 import { prisma } from '@/lib/prisma'

@@ -84,12 +84,30 @@ export interface PaymentFailedArgs {
  *
  *   1. the user is resolved with tryPrismaUserId, which projects a missing
  *      row as M7 and the subscription sync already do for the same customer,
- *      so the ledger keys the notice whenever the customer has a profile;
+ *      so the ledger keys the notice whenever the profile can be projected
+ *      (not when the auth record has no email, is unreadable, or conflicts
+ *      with another Prisma row: IdentityConflict);
  *   2. when there is still no ledger row to claim (no profile linked to the
  *      Stripe customer, a projection that failed, or the ledger table
  *      missing), Stripe's own count decides: the notice goes on the
- *      invoice's first attempt only. The cost, accepted: if that one send is
- *      refused there is no later one for this invoice.
+ *      invoice's first attempt only.
+ *
+ * Where "one per invoice" does NOT hold without a ledger row (written down
+ * 31 October 2026, after a review found the claim above overstated):
+ *   - a refused first send (Resend non-2xx, or 429) is never retried, so the
+ *     invoice gets no notice at all. Accepted when this was written;
+ *   - Stripe counts only automatic retries in `attempt_count` ("manual
+ *     payment attempts after the first attempt do not affect the retry
+ *     schedule", stripe-node 20.4.1, API 2026-02-25.clover), so a customer
+ *     who tries again by hand from the hosted invoice page, if Stripe emits
+ *     invoice.payment_failed for it, produces another attempt 1 and another
+ *     notice. Read from the field's documentation, not seen live;
+ *   - a first send with no ledger user followed by a retry where the user
+ *     does resolve claims a fresh ledger row and sends again: two notices.
+ * Closing these needs a key that does not need a Prisma user (the Stripe
+ * customer and invoice ids in a table of their own, or an earlier
+ * payment_failed for the same invoice in webhook_events), which is a schema
+ * change and has not been made.
  */
 export async function sendPaymentFailedEmail(
   args: PaymentFailedArgs,
@@ -195,7 +213,10 @@ export interface PlanEndedArgs {
  * IELTS-only plan whose holder may still have a paid plan alongside it, and
  * (since 24 October 2026) never for a main plan that ended while an IELTS plan
  * remains, since "your account stays open on the free plan" would then be
- * false. The webhook decides all three before it calls this.
+ * false. That last one is held, not dropped (31 October 2026): when the
+ * IELTS plan ends too and nothing live remains, the webhook calls this with
+ * the main plan's subscription id, so the ledger still keeps it to one. The
+ * webhook decides all of this before it calls.
  */
 export async function sendPlanEndedEmail(args: PlanEndedArgs): Promise<BillingEmailOutcome> {
   const LOG = '[stripe/webhook:plan-ended]'

@@ -432,6 +432,91 @@ describe('M7 plan ended', () => {
     expect(resendBodies()).toHaveLength(1)
   })
 
+  // 31 October 2026. The skip above left a customer who lost both plans with
+  // no notice at all: the main plan's M7 was held back while the IELTS plan
+  // lived, and when the IELTS plan later ended the deletion was IELTS-only,
+  // which revokes nothing, so M7 was never sent for either. Now, when an
+  // IELTS-only deletion leaves nothing live and a main plan ended while this
+  // IELTS plan was running, the held-back M7 goes, keyed on that main plan.
+  const DAY = 24 * 60 * 60
+  const NOW_S = Math.floor(Date.now() / 1000)
+  const ieltsItems = {
+    data: [{ price: { id: 'price_ielts_monthly', recurring: { interval: 'month' } } }],
+  }
+  const mainItems = {
+    data: [{ price: { id: 'price_student_monthly', recurring: { interval: 'month' } } }],
+  }
+  const endedIelts = (over: Record<string, unknown> = {}) =>
+    endedSubscription({ id: 'sub_ielts', items: ieltsItems, created: NOW_S - 40 * DAY, ...over })
+
+  it('sends the held-back M7 when the IELTS plan beside an ended main plan ends too', async () => {
+    // Step 1: the main plan ends while the IELTS plan is past_due. Skipped.
+    mockListSubscriptions.mockResolvedValue({
+      data: [{ id: 'sub_ielts', status: 'past_due', created: NOW_S - 40 * DAY, items: ieltsItems }],
+    })
+    await deliver(
+      makeEvent(
+        'customer.subscription.deleted',
+        endedSubscription({ id: 'sub_main', ended_at: NOW_S - 5 * DAY, items: mainItems }),
+        'evt_main',
+      ),
+    )
+    expect(resendBodies()).toHaveLength(0)
+
+    // Step 2: dunning ends the IELTS plan. Nothing is live any more.
+    mockListSubscriptions.mockResolvedValue({
+      data: [
+        {
+          id: 'sub_main',
+          status: 'canceled',
+          ended_at: NOW_S - 5 * DAY,
+          created: NOW_S - 200 * DAY,
+          items: mainItems,
+        },
+      ],
+    })
+    await deliver(makeEvent('customer.subscription.deleted', endedIelts(), 'evt_ielts'))
+
+    const bodies = resendBodies()
+    expect(bodies).toHaveLength(1)
+    expect(bodies[0].subject).toBe('Your plan has ended')
+    expect(bodies[0].html).toContain('Your account stays open on the free plan.')
+    expect(order).toEqual(['claim:M7_PLAN_ENDED:sub_main', 'send'])
+  })
+
+  it('sends nothing when an IELTS-only customer, who never held a main plan, ends IELTS', async () => {
+    // A notice for this customer would be new copy (an IELTS variant), which
+    // is the founder's to approve.
+    mockListSubscriptions.mockResolvedValue({ data: [] })
+    await deliver(makeEvent('customer.subscription.deleted', endedIelts()))
+    expect(resendBodies()).toHaveLength(0)
+  })
+
+  it('sends nothing when the IELTS plan ends beside a main plan that is still live', async () => {
+    mockListSubscriptions.mockResolvedValue({
+      data: [{ id: 'sub_main', status: 'active', created: NOW_S - 200 * DAY, items: mainItems }],
+    })
+    await deliver(makeEvent('customer.subscription.deleted', endedIelts()))
+    expect(resendBodies()).toHaveLength(0)
+  })
+
+  it('sends nothing for a main plan that ended before this IELTS plan began', async () => {
+    // Its M7 was not held back for this IELTS plan, so there is none owed.
+    mockListSubscriptions.mockResolvedValue({
+      data: [
+        {
+          id: 'sub_main',
+          status: 'canceled',
+          ended_at: NOW_S - 100 * DAY,
+          created: NOW_S - 300 * DAY,
+          items: mainItems,
+        },
+      ],
+    })
+    await deliver(makeEvent('customer.subscription.deleted', endedIelts()))
+    expect(resendBodies()).toHaveLength(0)
+  })
+
   it('sends nothing when a duplicate is cleaned up and the paid plan lives on', async () => {
     mockListSubscriptions.mockResolvedValue({
       data: [
