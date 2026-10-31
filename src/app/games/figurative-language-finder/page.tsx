@@ -15,7 +15,6 @@ import {
   ALL_DEVICES,
   BANK,
   DEVICE_LABELS,
-  type Device,
   type Question,
 } from '@/data/games/banks/figurative-language-finder'
 
@@ -38,14 +37,33 @@ function shuffle<T>(arr: T[]): T[] {
 }
 
 /**
- * The sentence's device and three others drawn at random, never one the
- * sentence also uses (`alsoFits` in the bank), so only one option is right.
+ * The question asked of a sentence, unless the bank gives the question its
+ * own (`prompt`). "Most precise" since 24 October 2026: personification is a
+ * kind of metaphor, so Metaphor can now be offered beside a personification
+ * and still be wrong (the bank's docblock says why).
  */
-function buildOptions(q: Question): Device[] {
-  const correct = q.device
-  const distractors = shuffle(
-    ALL_DEVICES.filter((d) => d !== correct && !q.alsoFits?.includes(d)),
-  ).slice(0, 3)
+const DEVICE_PROMPT = 'Which device is used? Choose the most precise name.'
+
+/**
+ * The options as the student sees them. A question with its own options
+ * (`wrong` in the bank: what a word suggests, or which device a phrase uses)
+ * shows those. Otherwise the sentence's device, its near neighbour where the
+ * bank names one (`near`: genuinely wrong here, and the likeliest mistake),
+ * and others drawn at random, never one the sentence also uses (`alsoFits`),
+ * so only one option is right.
+ */
+function buildOptions(q: Question): string[] {
+  const correct = BANK.answer(q)
+  const distractors = q.wrong
+    ? [...q.wrong]
+    : [
+        ...(q.near ? [q.near] : []),
+        ...shuffle(
+          ALL_DEVICES.filter((d) => d !== q.device && d !== q.near && !q.alsoFits?.includes(d)),
+        ),
+      ]
+        .slice(0, 3)
+        .map((d) => DEVICE_LABELS[d])
   return shuffle([correct, ...distractors])
 }
 
@@ -60,15 +78,18 @@ export default function FigurativeLanguageFinderPage() {
   const [qIdx, setQIdx] = useState(0)
   const [score, setScore] = useState(0)
   const [totalAnswered, setTotalAnswered] = useState(0)
-  const [selected, setSelected] = useState<Device | null>(null)
+  const [selected, setSelected] = useState<string | null>(null)
   const [feedback, setFeedback] = useState<'correct' | 'wrong' | null>(null)
   const round = useGameRound('figurative-language-finder')
   const deal = useDealer(BANK)
 
   const currentQuestion = questions[qIdx] ?? null
 
-  const options = useMemo(
-    () => (currentQuestion ? buildOptions(currentQuestion) : []),
+  const view = useMemo(
+    () =>
+      currentQuestion
+        ? { options: buildOptions(currentQuestion), answer: BANK.answer(currentQuestion) }
+        : { options: [] as string[], answer: '' },
     [currentQuestion],
   )
 
@@ -96,14 +117,15 @@ export default function FigurativeLanguageFinderPage() {
    * (src/data/games/explanations/figurative-language-finder.ts), which takes
    * longer than that to read, so the student moves on with the button.
    *
-   * The wrong options are drawn at random, so the bank has no fixed options
-   * and only right or wrong is recorded, not the device picked.
+   * Most questions draw their wrong options at random, so only right or
+   * wrong is recorded, not the option picked. A question with its own options
+   * (24 October 2026) is recorded the same way, under the device it is about.
    */
   const handleSelect = useCallback(
-    (device: Device) => {
+    (option: string) => {
       if (!currentQuestion || feedback) return
-      const isCorrect = device === currentQuestion.device
-      setSelected(device)
+      const isCorrect = option === BANK.answer(currentQuestion)
+      setSelected(option)
       setTotalAnswered((t) => t + 1)
       if (isCorrect) {
         setScore((s) => s + 1)
@@ -151,7 +173,7 @@ export default function FigurativeLanguageFinderPage() {
           gameId="figurative-language-finder"
           audience="ks3"
           title="Figurative Language Finder"
-          description="Read each original sentence and identify the figurative language device it uses. Spot similes, metaphors, personification and more!"
+          description="Name the device in each line, most of them from real books and plays, or say what a word, an image or a pun suggests. Similes, metaphors, personification, pathetic fallacy and more."
           difficulty="Crossover"
           score={score}
           maxScore={totalAnswered || questions.length || QUESTIONS_PER_ROUND}
@@ -172,25 +194,35 @@ export default function FigurativeLanguageFinderPage() {
 
               {/* Sentence card */}
               <div className="rounded-xl border border-border bg-card p-6 text-center space-y-2">
-                <p className="text-xs font-medium uppercase tracking-wider text-muted-foreground">
-                  Which device is used?
-                </p>
-                <p className="text-lg font-medium text-foreground sm:text-xl">
+                {!currentQuestion.prompt && (
+                  <p className="text-xs font-medium uppercase tracking-wider text-muted-foreground">
+                    {DEVICE_PROMPT}
+                  </p>
+                )}
+                <p className="text-lg font-medium text-foreground whitespace-pre-line sm:text-xl">
                   &ldquo;{currentQuestion.sentence}&rdquo;
                 </p>
+                {currentQuestion.source && (
+                  <p className="text-xs text-muted-foreground">{currentQuestion.source}</p>
+                )}
+                {currentQuestion.prompt && (
+                  <p className="pt-2 text-base font-semibold text-foreground">
+                    {currentQuestion.prompt}
+                  </p>
+                )}
               </div>
 
               {/* Options */}
               <div className="grid grid-cols-1 gap-3 sm:grid-cols-2">
-                {options.map((device) => {
-                  const isChosen = selected === device
-                  const isAnswer = device === currentQuestion.device
+                {view.options.map((option) => {
+                  const isChosen = selected === option
+                  const isAnswer = option === view.answer
                   const showCorrect = !!feedback && isAnswer
                   const showWrong = feedback === 'wrong' && isChosen && !isAnswer
                   return (
                     <button
-                      key={device}
-                      onClick={() => handleSelect(device)}
+                      key={option}
+                      onClick={() => handleSelect(option)}
                       disabled={!!feedback}
                       className={cn(
                         'flex items-center justify-between rounded-lg border px-4 py-3 text-start text-base font-medium text-foreground transition-all',
@@ -201,7 +233,7 @@ export default function FigurativeLanguageFinderPage() {
                         !!feedback && !showCorrect && !showWrong && 'border-border opacity-60',
                       )}
                     >
-                      <span>{DEVICE_LABELS[device]}</span>
+                      <span>{option}</span>
                       {showCorrect && <CheckCircle className="size-5 shrink-0" />}
                       {showWrong && <XCircle className="size-5 shrink-0" />}
                     </button>
@@ -223,12 +255,11 @@ export default function FigurativeLanguageFinderPage() {
                     <div className="flex items-center gap-2 font-semibold">
                       {feedback === 'correct' ? (
                         <>
-                          <CheckCircle className="size-4" /> Brilliant - that&apos;s right!
+                          <CheckCircle className="size-4" /> Brilliant. That&apos;s right.
                         </>
                       ) : (
                         <>
-                          <XCircle className="size-4" /> Not quite. It&apos;s{' '}
-                          {DEVICE_LABELS[currentQuestion.device]}.
+                          <XCircle className="size-4" /> Not quite. The answer is: {view.answer}
                         </>
                       )}
                     </div>
@@ -237,7 +268,7 @@ export default function FigurativeLanguageFinderPage() {
                     game="figurative-language-finder"
                     question={BANK.key(currentQuestion)}
                     correct={feedback === 'correct'}
-                    chosen={selected ? DEVICE_LABELS[selected] : null}
+                    chosen={selected}
                   />
                   <div className="mt-4 flex justify-end">
                     <Button onClick={handleNext} autoFocus>

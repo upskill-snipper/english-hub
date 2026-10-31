@@ -3,7 +3,7 @@ import type { Metadata } from 'next'
 export const metadata: Metadata = {
   title: 'Figurative Language Finder | KS3 Game',
   description:
-    'Name the device: simile, metaphor or personification in real examples. A free figurative language game for KS3 and GCSE English revision.',
+    'Name the device in real lines from classic texts, then say what a word, image or pun suggests. A free figurative language game for KS3 and GCSE English.',
   alternates: { canonical: '/games/figurative-language-finder' },
 }
 

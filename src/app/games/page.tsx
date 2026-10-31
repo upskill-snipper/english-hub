@@ -1357,7 +1357,7 @@ const KS3_GAMES: GameDef[] = [
   mkGame(
     'figurative-language-finder',
     'Figurative Language Finder',
-    'Simile, metaphor, personification - name the device.',
+    'Name the device in real lines from classic texts, then say what a word, image or pun suggests.',
     <Target className="size-6" />,
     'Medium',
     'text-violet-400',
