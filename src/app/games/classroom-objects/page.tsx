@@ -174,7 +174,7 @@ export default function ClassroomObjectsPage() {
           gameId="classroom-objects"
           audience="eal"
           title="In the Classroom"
-          description="Look at the picture and choose the correct English word. Some rounds ask where things are: on, in, under or next to."
+          description="Look at the picture, or read the sentence, and choose the right English word. Some questions ask where things are."
           difficulty="Foundation"
           score={score}
           maxScore={totalAnswered || questions.length || QUESTIONS_PER_ROUND}
@@ -205,12 +205,18 @@ export default function ClassroomObjectsPage() {
                 </div>
               </div>
 
-              {/* Picture / prompt card */}
+              {/* Picture / prompt card. Since 24 October 2026 a question in a
+                  sentence or a dialogue has no picture, and a dialogue keeps
+                  its line breaks. */}
               <div className="rounded-xl border border-border bg-card p-6 text-center space-y-4">
-                <div className="text-7xl leading-none select-none" aria-hidden>
-                  {currentQ.item.emoji}
-                </div>
-                <p className="text-base font-medium text-foreground">{currentQ.prompt}</p>
+                {currentQ.item.emoji && (
+                  <div className="text-7xl leading-none select-none" aria-hidden>
+                    {currentQ.item.emoji}
+                  </div>
+                )}
+                <p className="text-base font-medium text-foreground whitespace-pre-line">
+                  {currentQ.prompt}
+                </p>
                 {/* A picture question's word is its answer, so Listen waits for the answer. */}
                 <button
                   onClick={() =>

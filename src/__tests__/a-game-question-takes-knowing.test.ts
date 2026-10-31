@@ -49,7 +49,6 @@ const MIN_ITEMS: Record<string, number> = {
 /** Banks being rebuilt, 24 October 2026: each leaves this list as it is done. */
 const NOT_YET = new Set([
   'article-a-an-the',
-  'classroom-objects',
   'grade-climber',
   'greetings-dialogue',
   'phrasal-verbs-match',

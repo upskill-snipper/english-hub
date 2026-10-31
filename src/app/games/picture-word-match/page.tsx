@@ -142,7 +142,7 @@ export default function PictureWordMatchPage() {
           gameId="picture-word-match"
           audience="eal"
           title="Picture Word Match"
-          description="Look at the picture and tap the English word that matches it. A friendly way to build everyday vocabulary."
+          description="Look at the picture, or read the sentence, and tap the English word that fits. A friendly way to build everyday vocabulary."
           difficulty="Foundation"
           score={score}
           maxScore={questions.length || QUESTIONS_PER_ROUND}
@@ -160,23 +160,45 @@ export default function PictureWordMatchPage() {
                 </span>
                 <div className="flex items-center gap-3">
                   <span>Score: {score}</span>
-                  <span className="text-xs px-2 py-0.5 rounded-full border text-emerald-400 border-emerald-500/30 bg-emerald-500/10">
-                    {currentQuestion.item.topic}
-                  </span>
+                  {/* The topic shows with a picture only, where every option
+                      shares it. Beside a sentence it could single the answer
+                      out: "Health" over dentist, library, hairdresser and bank
+                      (found checking the 24 October 2026 rebuild). */}
+                  {!currentQuestion.item.sentence && (
+                    <span className="text-xs px-2 py-0.5 rounded-full border text-emerald-400 border-emerald-500/30 bg-emerald-500/10">
+                      {currentQuestion.item.topic}
+                    </span>
+                  )}
                 </div>
               </div>
 
-              {/* Picture card */}
+              {/* Picture card: a picture to name, or (tiers 2 and 3, since 24
+                  October 2026) a sentence with a gap for the word. */}
               <div className="rounded-xl border border-border bg-card p-8 text-center">
-                <div
-                  className="text-7xl sm:text-8xl select-none"
-                  role="img"
-                  aria-label="Picture to match"
-                >
-                  {currentQuestion.item.emoji}
-                </div>
+                {currentQuestion.item.sentence ? (
+                  <>
+                    <p className="text-lg sm:text-xl font-medium leading-relaxed text-foreground whitespace-pre-line">
+                      {currentQuestion.item.sentence}
+                    </p>
+                    {currentQuestion.item.source && (
+                      <p className="mt-2 text-xs text-muted-foreground">
+                        {currentQuestion.item.source}
+                      </p>
+                    )}
+                  </>
+                ) : (
+                  <div
+                    className="text-7xl sm:text-8xl select-none"
+                    role="img"
+                    aria-label="Picture to match"
+                  >
+                    {currentQuestion.item.emoji}
+                  </div>
+                )}
                 <p className="mt-4 text-sm text-muted-foreground">
-                  Which word matches this picture?
+                  {currentQuestion.item.sentence
+                    ? 'Which word fills the gap?'
+                    : 'Which word matches this picture?'}
                 </p>
               </div>
 

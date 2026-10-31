@@ -3,7 +3,7 @@ import type { Metadata } from 'next'
 export const metadata: Metadata = {
   title: 'Picture Word Match | EAL Vocabulary Game',
   description:
-    'Match pictures to the right English word in this free beginner vocabulary game for EAL learners. Build everyday words fast, no signup needed.',
+    'Match pictures to English words, then choose the word that fits a sentence, a short text or a dialogue. A free vocabulary game for EAL learners.',
   alternates: { canonical: '/games/picture-word-match' },
 }
 

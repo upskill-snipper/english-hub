@@ -1111,7 +1111,7 @@ const EAL_GAMES: GameDef[] = [
   mkGame(
     'picture-word-match',
     'Picture Word Match',
-    'Match the picture to the right English word. Everyday vocabulary for beginners.',
+    'Match a picture to its English word, then find the word that fits a sentence, a short text or a dialogue.',
     <Layers className="size-6" />,
     'Easy',
     'text-emerald-400',
@@ -1174,7 +1174,7 @@ const EAL_GAMES: GameDef[] = [
   mkGame(
     'classroom-objects',
     'In the Classroom',
-    'Name classroom objects and say where things are.',
+    'Name school things from their pictures, find the school word that fits a sentence or a dialogue, and say where things are.',
     <BookOpen className="size-6" />,
     'Easy',
     'text-emerald-400',
