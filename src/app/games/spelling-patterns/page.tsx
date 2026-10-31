@@ -24,6 +24,38 @@ import { BANK, PATTERN_BANK, type PatternItem } from '@/data/games/banks/spellin
 const ROUND_SIZE = 15
 const LETTERS = ['A', 'B', 'C', 'D']
 const PROMPT = 'Which spelling is correct?'
+const GAP_PROMPT = 'Which spelling fills the gap?'
+
+/**
+ * What a question asks. Since 24 October 2026 a question may be a word to
+ * build from a root and an ending (`prompt`, "refer + -ed"), shown under the
+ * question, or a sentence with a gap (`sentence`), shown with its source
+ * (src/data/games/banks/spelling-patterns.ts).
+ */
+function askOf(q: PatternItem): string {
+  return q.sentence ? GAP_PROMPT : PROMPT
+}
+
+/** A sentence with its gap: blank until answered, then the right spelling. */
+function renderGap(sentence: string, filled: string | null): React.ReactNode {
+  const [before, after] = sentence.split('___')
+  return (
+    <>
+      {before}
+      <span
+        className={cn(
+          'mx-1 inline-block min-w-[4rem] rounded-md border-b-2 px-2 text-center font-bold',
+          filled
+            ? 'border-emerald-500 text-emerald-400'
+            : 'border-dashed border-muted-foreground text-muted-foreground',
+        )}
+      >
+        {filled ?? '?'}
+      </span>
+      {after}
+    </>
+  )
+}
 
 // ─── Component ─────────────────────────────────────────────────────────────────
 
@@ -68,7 +100,7 @@ export default function SpellingPatternsPage() {
             current.answerIndex,
             current.options.join('|'),
             salt,
-            PROMPT,
+            `${askOf(current)} ${current.prompt ?? current.sentence ?? ''}`,
           )
         : null,
     [current, salt],
@@ -147,7 +179,7 @@ export default function SpellingPatternsPage() {
           gameId="spelling-patterns"
           audience="ks3"
           title="Spelling Patterns"
-          description="Pick the correctly spelled word, then learn the rule behind it. Master patterns like 'i before e', consonant doubling, drop-the-e, y→i, -tion/-sion, and -ves plurals."
+          description="Pick the correct British spelling, then learn the rule behind it: i before e, doubling, dropping the e, y to i, endings that sound alike, and the words you use to write about a text."
           difficulty="Crossover"
           score={score}
           maxScore={totalAnswered || items.length || ROUND_SIZE}
@@ -166,9 +198,21 @@ export default function SpellingPatternsPage() {
                 <span>{accuracyPct}% accuracy</span>
               </div>
 
-              {/* Prompt */}
+              {/* Prompt: the question, then what to join or the sentence to fill */}
               <div className="rounded-xl border border-border bg-card p-6 text-center">
-                <p className="text-sm text-muted-foreground">{PROMPT}</p>
+                <p className="text-sm text-muted-foreground">{askOf(current)}</p>
+                {current.prompt && (
+                  <p className="mt-2 text-lg font-semibold text-foreground">{current.prompt}</p>
+                )}
+                {current.sentence && (
+                  <p className="mt-2 text-lg leading-relaxed text-foreground">
+                    {renderGap(current.sentence, revealed ? view.correctValue : null)}
+                  </p>
+                )}
+                {current.source && (
+                  <p className="mt-2 text-xs text-muted-foreground">From {current.source}</p>
+                )}
+                <p className="mt-3 text-xs text-muted-foreground">British spelling throughout.</p>
               </div>
 
               {/* Options - shuffled per attempt, so the letter is a position and nothing more */}

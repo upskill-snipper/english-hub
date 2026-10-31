@@ -1303,7 +1303,7 @@ const KS3_GAMES: GameDef[] = [
   mkGame(
     'homophone-hero',
     'Homophone Hero',
-    "their / there / they're - pick the right one.",
+    "their, there or they're? Pick the right homophone, in everyday sentences and real lines from the classics.",
     <Brain className="size-6" />,
     'Medium',
     'text-cyan-400',
