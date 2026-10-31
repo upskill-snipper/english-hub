@@ -1032,7 +1032,8 @@ const GAMES: GameDef[] = [
   {
     id: 'grade-climber',
     title: 'Grade Climber',
-    description: 'GCSE-style questions that get harder: three right to climb a grade.',
+    description:
+      'GCSE-style questions that get harder as you climb: three right to go up a rung, two wrong to go down.',
     titleKey: 'games_page.list.grade_climber.title',
     descriptionKey: 'games_page.list.grade_climber.desc',
     icon: <TrendingUp className="size-6" />,

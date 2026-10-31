@@ -49,6 +49,94 @@ const TEXT_REFERENCES: { needle: string; slug: string }[] = [
   { needle: 'Émigrée', slug: 'the-emigree' },
   { needle: 'Poppies', slug: 'poppies' },
   { needle: 'Dulce et Decorum Est', slug: 'dulce-et-decorum-est' },
+  // Added 24 October 2026, when the bank gained questions on every board's set
+  // texts. A title that could turn up in another prompt is matched in quotation
+  // marks ('"Night"', '"DNA"') or by its author ('Kipling', 'Rossetti').
+  // Dylan Thomas's villanelle has none: by decision no question is on it, and
+  // the needle added for it on 24 October was taken out on 31 October.
+  { needle: 'Much Ado About Nothing', slug: 'much-ado-about-nothing' },
+  { needle: 'Merchant of Venice', slug: 'the-merchant-of-venice' },
+  { needle: 'The Tempest', slug: 'the-tempest' },
+  { needle: 'Julius Caesar', slug: 'julius-caesar' },
+  { needle: 'Twelfth Night', slug: 'twelfth-night' },
+  { needle: 'Othello', slug: 'othello' },
+  { needle: "A Midsummer Night's Dream", slug: 'a-midsummer-nights-dream' },
+  { needle: 'Antony and Cleopatra', slug: 'antony-and-cleopatra' },
+  { needle: 'Pride and Prejudice', slug: 'pride-and-prejudice' },
+  { needle: 'Sign of Four', slug: 'the-sign-of-four' },
+  { needle: 'Silas Marner', slug: 'silas-marner' },
+  { needle: 'War of the Worlds', slug: 'the-war-of-the-worlds' },
+  { needle: 'Scarlet Letter', slug: 'the-scarlet-letter' },
+  { needle: 'Blood Brothers', slug: 'blood-brothers' },
+  { needle: 'Anita and Me', slug: 'anita-and-me' },
+  { needle: 'Pigeon English', slug: 'pigeon-english' },
+  { needle: '"DNA"', slug: 'dna' },
+  { needle: 'A Taste of Honey', slug: 'a-taste-of-honey' },
+  { needle: 'Telling Tales', slug: 'telling-tales' },
+  { needle: 'Princess & The Hustler', slug: 'princess-and-the-hustler' },
+  { needle: 'Leave Taking', slug: 'leave-taking' },
+  { needle: 'My Name is Leon', slug: 'my-name-is-leon' },
+  { needle: 'Never Let Me Go', slug: 'never-let-me-go' },
+  { needle: 'Curious Incident', slug: 'curious-incident' },
+  { needle: 'The Woman in Black', slug: 'the-woman-in-black' },
+  { needle: "Boys Don't Cry", slug: 'boys-dont-cry' },
+  { needle: 'Oranges are not the Only Fruit', slug: 'oranges-are-not-the-only-fruit' },
+  { needle: 'The History Boys', slug: 'the-history-boys' },
+  { needle: "Hobson's Choice", slug: 'hobsons-choice' },
+  { needle: "Journey's End", slug: 'journeys-end' },
+  { needle: 'The Empress', slug: 'the-empress' },
+  { needle: 'Refugee Boy', slug: 'refugee-boy' },
+  { needle: 'Coram Boy', slug: 'coram-boy' },
+  { needle: 'To Kill a Mockingbird', slug: 'to-kill-a-mockingbird' },
+  { needle: 'Things Fall Apart', slug: 'things-fall-apart' },
+  { needle: 'A View from the Bridge', slug: 'a-view-from-the-bridge' },
+  { needle: 'The Whale Rider', slug: 'the-whale-rider' },
+  { needle: 'The Joy Luck Club', slug: 'the-joy-luck-club' },
+  { needle: 'Klara and the Sun', slug: 'klara-and-the-sun' },
+  { needle: 'Western Lane', slug: 'western-lane' },
+  { needle: 'Kindertransport', slug: 'kindertransport' },
+  { needle: "Death and the King's Horseman", slug: 'death-and-the-kings-horseman' },
+  { needle: 'Blues for an Alabama Sky', slug: 'blues-for-an-alabama-sky' },
+  {
+    needle: 'What it Means When a Man Falls',
+    slug: 'what-it-means-when-a-man-falls-from-the-sky',
+  },
+  { needle: 'Fire on the Mountain', slug: 'fire-on-the-mountain' },
+  { needle: 'Hullaballoo in the Guava Orchard', slug: 'hullaballoo-in-the-guava-orchard' },
+  { needle: "I'm the King of the Castle", slug: 'im-the-king-of-the-castle' },
+  { needle: 'Kipling', slug: 'if' },
+  { needle: 'Prayer Before Birth', slug: 'prayer-before-birth' },
+  { needle: '"Piano"', slug: 'piano' },
+  { needle: 'Hide and Seek', slug: 'hide-and-seek' },
+  { needle: 'Half-past Two', slug: 'half-past-two' },
+  { needle: 'Sonnet 116', slug: 'sonnet-116' },
+  { needle: '"Blessing"', slug: 'blessing' },
+  { needle: 'Search For My Tongue', slug: 'search-for-my-tongue' },
+  { needle: 'La Belle Dame sans Merci', slug: 'la-belle-dame-sans-merci' },
+  { needle: 'Poem at Thirty-Nine', slug: 'poem-at-thirty-nine' },
+  { needle: 'The Tyger', slug: 'the-tyger' },
+  { needle: 'Half-caste', slug: 'half-caste' },
+  { needle: 'Rossetti', slug: 'remember' },
+  { needle: 'The Danger of a Single Story', slug: 'the-danger-of-a-single-story' },
+  { needle: 'A Passage to Africa', slug: 'a-passage-to-africa' },
+  { needle: "The Explorer's Daughter", slug: 'the-explorers-daughter' },
+  { needle: 'Explorers, or boys messing about', slug: 'explorers-or-boys-messing-about' },
+  { needle: 'Between a Rock and a Hard Place', slug: 'between-a-rock-and-a-hard-place' },
+  { needle: 'Young and dyslexic', slug: 'young-and-dyslexic' },
+  { needle: 'A Game of Polo with a Headless Goat', slug: 'a-game-of-polo-with-a-headless-goat' },
+  { needle: 'Beyond the Sky and the Earth', slug: 'beyond-the-sky-and-the-earth' },
+  { needle: 'H is for Hawk', slug: 'h-is-for-hawk' },
+  { needle: 'Chinese Cinderella', slug: 'chinese-cinderella' },
+  { needle: '"Disabled"', slug: 'disabled' },
+  { needle: 'Out, Out', slug: 'out-out' },
+  { needle: 'An Unknown Girl', slug: 'an-unknown-girl' },
+  { needle: 'The Bright Lights of Sarajevo', slug: 'the-bright-lights-of-sarajevo' },
+  { needle: 'Still I Rise', slug: 'still-i-rise' },
+  { needle: 'The Necklace', slug: 'the-necklace' },
+  { needle: 'Significant Cigarettes', slug: 'significant-cigarettes' },
+  { needle: "Whistle and I'll Come to You", slug: 'whistle-and-ill-come-to-you' },
+  { needle: '"Night"', slug: 'night' },
+  { needle: 'The Story of an Hour', slug: 'the-story-of-an-hour' },
 ]
 
 function questionAvailableForBoard(prompt: string, allowedSlugs: Set<string>): boolean {
@@ -60,7 +148,13 @@ function questionAvailableForBoard(prompt: string, allowedSlugs: Set<string>): b
   return true
 }
 
-// ─── Grade Ladder ─────────────────────────────────────────────────────────────
+// ─── The ladder ───────────────────────────────────────────────────────────────
+//
+// RUNGS, NOT GRADES (31 October 2026). The ladder was headed "Grade Ladder" and
+// the badge above each question read "Grade 5", so a student read a GCSE grade
+// all through play, which the founder ruled out on 23 October 2026
+// (src/__tests__/no-game-gives-a-gcse-grade.test.tsx). Both now name the rung.
+// The rungs, how they are scored and how the ladder moves are as they were.
 
 const GRADE_LEVELS: GCSEGrade[] = [3, 4, 5, 6, 7, 8, 9]
 const CORRECT_TO_ADVANCE = 3
@@ -76,7 +170,7 @@ function GradeLadder({
   return (
     <div className="flex flex-col items-center gap-1">
       <span className="mb-1 text-xs font-medium uppercase tracking-wider text-muted-foreground">
-        Grade Ladder
+        The ladder
       </span>
       {[...GRADE_LEVELS].reverse().map((g) => (
         <div
@@ -103,6 +197,18 @@ const TYPE_LABELS: Record<string, string> = {
   technique: 'Identify the Technique',
   meaning: 'What Does This Mean?',
   analysis: 'Complete the Analysis',
+}
+
+// The newer kinds of question (24 October 2026) say what they ask for instead.
+const KIND_LABELS: Record<string, string> = {
+  effect: 'Method and Effect',
+  word: 'Which Word Works?',
+  evidence: 'Best Evidence',
+  reading: 'Rival Readings',
+  context: 'Context and Choice',
+  sentence: 'Strongest Analysis',
+  critic: 'Weigh the Claim',
+  judgement: 'Judge the Evidence',
 }
 
 // ─── Page ─────────────────────────────────────────────────────────────────────
@@ -367,7 +473,7 @@ export default function GradeClimberPage() {
       >
         {currentQuestion && questionView && (
           <div className="flex gap-8">
-            {/* Grade Ladder */}
+            {/* The ladder */}
             <div className="hidden shrink-0 sm:block">
               <GradeLadder currentGrade={currentGrade} maxGradeReached={maxGradeReached} />
             </div>
@@ -386,10 +492,11 @@ export default function GradeClimberPage() {
                         : 'border-blue-500/20 bg-blue-500/10 text-blue-400',
                   )}
                 >
-                  Grade {currentGrade}
+                  Rung {currentGrade}
                 </span>
                 <span className="text-xs text-muted-foreground">
-                  {TYPE_LABELS[currentQuestion.type]}
+                  {(currentQuestion.kind && KIND_LABELS[currentQuestion.kind]) ??
+                    TYPE_LABELS[currentQuestion.type]}
                 </span>
                 <span className="ms-auto text-xs text-muted-foreground">
                   Streak: {correctStreak}/{CORRECT_TO_ADVANCE} to advance
@@ -401,6 +508,9 @@ export default function GradeClimberPage() {
                 <p className="text-base leading-relaxed text-foreground">
                   {currentQuestion.prompt}
                 </p>
+                {currentQuestion.source && (
+                  <p className="mt-2 text-xs text-muted-foreground">{currentQuestion.source}</p>
+                )}
               </div>
 
               {/* Options */}
