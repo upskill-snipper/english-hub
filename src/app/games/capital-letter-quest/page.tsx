@@ -24,12 +24,15 @@ import { BANK, type CapitalQuestion } from '@/data/games/banks/capital-letter-qu
 const QUESTIONS_PER_ROUND = 15
 const OPTION_LABELS = ['A', 'B', 'C', 'D']
 
-/** The stem every question shares. Also handed to the shuffle as the question text. */
+/**
+ * The stem of a question that does not set its own (`prompt`, for a question
+ * about one word of a sentence). Also handed to the shuffle as the question text.
+ */
 const PROMPT = 'Which sentence is written correctly?'
 
 /**
- * No question carries an id and they all share one stem, so the option set is
- * the only stable identity this bank offers for a shuffle seed.
+ * No question carries an id and most share a stem, so the option set is the
+ * only stable identity this bank offers for a shuffle seed.
  */
 function questionSeedId(question: CapitalQuestion): string {
   return question.options.join('|')
@@ -72,7 +75,7 @@ export default function CapitalLetterQuestPage() {
             currentQuestion.answerIndex,
             questionSeedId(currentQuestion),
             sessionSalt,
-            PROMPT,
+            currentQuestion.prompt ?? PROMPT,
           )
         : { options: [] as string[], correctValue: '' },
     [currentQuestion, sessionSalt],
@@ -160,7 +163,7 @@ export default function CapitalLetterQuestPage() {
           gameId="capital-letter-quest"
           audience="eal"
           title="Capital Letter Quest"
-          description="Read the sentence, then choose the version with the correct capital letters. Watch for names, places, days, months, languages, titles and brands."
+          description="Choose the sentence with the right capital letters, or find the word that needs a capital or should lose one. Watch for names, places, days, months, languages, titles, speech and letters."
           difficulty="Foundation"
           score={score}
           maxScore={totalAnswered || questions.length || QUESTIONS_PER_ROUND}
@@ -183,11 +186,17 @@ export default function CapitalLetterQuestPage() {
               <div className="rounded-xl border border-border bg-card p-6 text-center space-y-2">
                 <div className="inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-wider text-primary">
                   <Type className="size-4" />
-                  {PROMPT}
+                  {currentQuestion.prompt ?? PROMPT}
                 </div>
-                <p className="text-sm text-muted-foreground">
-                  Pick the option with capital letters in all the right places.
-                </p>
+                {/* A question about one word shows the sentence the four words
+                    come from (24 October 2026). */}
+                {currentQuestion.sentence ? (
+                  <p className="text-lg font-medium text-foreground">{currentQuestion.sentence}</p>
+                ) : (
+                  <p className="text-sm text-muted-foreground">
+                    Pick the option with capital letters in all the right places.
+                  </p>
+                )}
               </div>
 
               {/* Options */}
@@ -249,6 +258,15 @@ export default function CapitalLetterQuestPage() {
                         ? 'Brilliant. That is exactly right.'
                         : 'Not quite. Keep going, you are learning.'}
                     </p>
+                    {/* A real line names its book only once the answer is in,
+                        so a title cannot hint at a capital letter. The line
+                        was shown with its capitals changed, so it says so. */}
+                    {currentQuestion.source && (
+                      <p className="mt-1 text-xs opacity-80">
+                        This line is from {currentQuestion.source}. We changed its capital letters
+                        for this question.
+                      </p>
+                    )}
                   </div>
 
                   <AnswerExplanation
