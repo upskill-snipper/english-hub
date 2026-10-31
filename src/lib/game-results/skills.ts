@@ -88,7 +88,10 @@ export const QUEST_KINDS = {
   'theme-check': 'themes',
   order: 'plot',
   comic: 'plot',
-  // Deeper kinds, from 13 October 2026 (src/lib/games/quest/build.ts).
+  // Deeper kinds. Listed on 13 October 2026 for challenges the quests were to
+  // gain; only 'analysis-quote' is built so far: the evidence challenge, which
+  // matches a guide's reading of a line to the line (24 October 2026,
+  // src/lib/games/quest/build.ts, buildEvidence). The rest name nothing yet.
   significance: 'interpretation',
   'extract-note': 'methods',
   'analysis-quote': 'interpretation',

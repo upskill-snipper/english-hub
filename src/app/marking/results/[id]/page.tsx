@@ -15,6 +15,7 @@ import { ReadAloudButton } from '@/components/speech/ReadAloudButton'
 import { ReviewDecisionCard, SchoolReviewNote } from '@/components/marking/ReviewDecisionCard'
 import { InlineAIConsentPrompt } from '@/components/consent/InlineAIConsentPrompt'
 import { readConsentRefusal, type AIConsentRefusal } from '@/components/consent/ai-consent-refusal'
+import { labelWithoutCode } from '@/lib/marking/ao-label'
 import {
   canStudentSeeFeedback,
   hiddenStateFor,
@@ -175,17 +176,12 @@ function weakestAo(aos: AOScore[]): AOScore | null {
 }
 
 /**
- * Leading "AOn - " that model output often repeats inside the AO label.
- * Built from a string so the en/em dashes stay as unicode escapes rather
- * than literal characters, which keeps a repo-wide dash sweep clean.
+ * "AO2 (Analyse language, form and structure)" without repeating the code.
+ * A combined grid's code ("AO2-AO3") is stripped whole (src/lib/marking/
+ * ao-label.ts says why).
  */
-const AO_CODE_PREFIX = new RegExp('^AO\\s*\\d+\\s*[-:\\u2013\\u2014]\\s*', 'i')
-
-/** "AO2 (Analyse language, form and structure)" without repeating the code. */
 function aoDisplayName(ao: AOScore): string {
-  const label = (ao.label ?? '').trim()
-  // Model output often repeats the code inside the label ("AO2 - Analyse ...").
-  const stripped = label.replace(AO_CODE_PREFIX, '').trim()
+  const stripped = labelWithoutCode(ao.code, ao.label)
   if (!stripped) return ao.code
   return ao.code ? `${ao.code} (${stripped})` : stripped
 }

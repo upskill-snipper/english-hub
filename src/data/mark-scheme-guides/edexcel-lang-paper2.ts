@@ -21,8 +21,11 @@
  * schemes and the 2023 and 2024 question papers all agree, and so does the
  * marker. Section A totals 56, Section B 40.
  *
- * DIFFERENCES FROM THE AI MARKER (src/lib/marking/mark-schemes/edexcel-lang.ts,
- * deliberately not changed here: changing it changes how essays are scored).
+ * DIFFERENCES FROM THE AI MARKER, as this check found them
+ * (src/lib/marking/mark-schemes/edexcel-lang.ts). All were corrected in the
+ * marker on 24 October 2026, with the founder's approval (document 30), and
+ * src/lib/marking/mark-schemes/__tests__/edexcel-structure.test.ts now holds
+ * the marker to this guide. The record of what differed:
  * The total (96), the duration (125 minutes) and every question's marks and
  * objectives agree. These do not:
  *   - Q7a: marker, one band of 1-6 marked one point at a time; board, three
@@ -47,7 +50,8 @@
  *     notes do not say so.
  *
  * NOT CONFIRMED, SO NOT STATED: the marker's note that a response in the wrong
- * form loses only AO5 form marks is not in any board document checked. The
+ * form loses only AO5 form marks is not in any board document checked, and was
+ * taken out of the marker on 24 October 2026. The
  * June 2026 and November 2025 mark schemes are on Pearson's secure site (it
  * answered 401 to an unsigned request), so the grids here are the latest
  * public ones, June 2025, which match June 2024 and November 2024. The

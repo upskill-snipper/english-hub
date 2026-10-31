@@ -121,6 +121,13 @@ function bodyFor(dealt: DealtChallenge, answered: QuestAnswer, quest: Quest, t: 
         why: m.significance,
       }
     }
+    case 'evidence':
+      return {
+        answer: answered.correct ? undefined : <En>{c.answer}</En>,
+        where: c.where || undefined,
+        // The guide's reading, whole, its quotations no longer elided.
+        why: c.explanation,
+      }
   }
 }
 

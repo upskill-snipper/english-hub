@@ -1,6 +1,7 @@
 'use client'
 
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
+import { labelWithoutCode } from '@/lib/marking/ao-label'
 import { cn } from '@/lib/utils'
 import { useT } from '@/lib/i18n/use-t'
 
@@ -34,12 +35,15 @@ export function AOBreakdown({ scores, className }: AOBreakdownProps) {
       <CardContent className="space-y-4">
         {scores.map((ao) => {
           const pct = Math.round((ao.score / ao.max) * 100)
+          // The code is printed beside the label, so not inside it as well:
+          // "AO1+AO3" and "Response and context, on one grid".
+          const label = labelWithoutCode(ao.code, ao.label) || ao.label
           return (
             <div key={ao.code} className="space-y-1.5">
               <div className="flex items-baseline justify-between gap-2">
                 <div className="flex items-baseline gap-2">
                   <span className="font-heading text-sm font-bold text-foreground">{ao.code}</span>
-                  <span className="text-xs text-muted-foreground">{ao.label}</span>
+                  <span className="text-xs text-muted-foreground">{label}</span>
                 </div>
                 <span className="font-mono text-sm font-semibold tabular-nums text-foreground">
                   {ao.score}
@@ -52,7 +56,7 @@ export function AOBreakdown({ scores, className }: AOBreakdownProps) {
                 aria-valuenow={ao.score}
                 aria-valuemin={0}
                 aria-valuemax={ao.max}
-                aria-label={`${ao.code} ${ao.label}`}
+                aria-label={`${ao.code} ${label}`}
               >
                 <div
                   className="h-full rounded-full bg-primary transition-[width] duration-700 ease-out"

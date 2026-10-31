@@ -21,6 +21,13 @@ import { BANK, type AnalysisQuestion } from '@/data/games/banks/speed-analysis'
 
 const SECONDS_PER_QUESTION = 30
 const QUESTIONS_PER_ROUND = 20
+/**
+ * The question asked of most extracts. Since 24 October 2026 some questions
+ * ask their own (`prompt` in the bank): what one word or device does, or which
+ * of two devices in a line does the work. Those answers are effects as well as
+ * devices, so each answer is recorded under the device it is about
+ * (BANK.tag), as every answer was before.
+ */
 const PROMPT = 'What literary device is being used?'
 
 // ─── Helpers ───────────────────────────────────────────────────────────────────
@@ -67,7 +74,7 @@ export default function SpeedAnalysisPage() {
             // A question has no id, and no two extracts are the same.
             `speed|${currentQ.extract}`,
             sessionSalt,
-            PROMPT,
+            currentQ.prompt ?? PROMPT,
           )
         : { options: [] as string[], correctValue: '' },
     [currentQ, sessionSalt],
@@ -127,7 +134,7 @@ export default function SpeedAnalysisPage() {
       round.record({
         question: BANK.key(currentQ),
         correct,
-        tag: currentQ.correctDevice,
+        tag: BANK.tag?.(currentQ) ?? currentQ.correctDevice,
         chose: choice ?? undefined,
       })
     },
@@ -172,7 +179,7 @@ export default function SpeedAnalysisPage() {
           gameId="speed-analysis"
           audience="gcse"
           title="Speed Analysis"
-          description="Identify the literary device in each extract. 30 seconds per question, 20 questions per round."
+          description="Name the device in each extract, and say what it does. 30 seconds per question, 20 questions per round."
           difficulty="Higher"
           score={score}
           maxScore={questions.length || QUESTIONS_PER_ROUND}
@@ -213,7 +220,9 @@ export default function SpeedAnalysisPage() {
                 <p className="mt-2 text-xs text-muted-foreground">{currentQ.source}</p>
               </div>
 
-              <p className="text-center text-sm font-semibold text-muted-foreground">{PROMPT}</p>
+              <p className="text-center text-sm font-semibold text-muted-foreground">
+                {currentQ.prompt ?? PROMPT}
+              </p>
 
               {/* Options */}
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
@@ -248,7 +257,7 @@ export default function SpeedAnalysisPage() {
                 <div>
                   {answered === null && (
                     <p className="text-sm font-medium text-clay-600">
-                      Out of time. The answer was {view.correctValue}.
+                      Out of time. The answer was: {view.correctValue}
                     </p>
                   )}
                   <AnswerExplanation

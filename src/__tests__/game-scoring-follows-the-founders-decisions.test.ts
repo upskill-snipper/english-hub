@@ -75,9 +75,23 @@ describe('Spelling Bee: the spellings dictionaries accept are right', () => {
     expect(isAcceptedSpelling(' Definitely ', word('definitely'))).toBe(true)
   })
 
-  it('only those two words accept a second spelling, and their explanations say so', () => {
+  it('cesura is right for caesura, and hybris for hubris', () => {
+    // Added 24 October 2026 under the same decision: Collins lists both as
+    // variants, and the rebuilt bank's checker found the game marking them
+    // wrong.
+    expect(isAcceptedSpelling('cesura', word('caesura'))).toBe(true)
+    expect(isAcceptedSpelling('hybris', word('hubris'))).toBe(true)
+    expect(isAcceptedSpelling('ceasura', word('caesura'))).toBe(false)
+  })
+
+  it('only those words accept a second spelling, and their explanations say so', () => {
     const withAlternatives = SPELLING_BANK.filter((w) => w.alsoAccepted?.length)
-    expect(withAlternatives.map((w) => w.word).sort()).toEqual(['denouement', 'enjambment'])
+    expect(withAlternatives.map((w) => w.word).sort()).toEqual([
+      'caesura',
+      'denouement',
+      'enjambment',
+      'hubris',
+    ])
     for (const w of withAlternatives) {
       const text = JSON.stringify(SPELLING_EXPLANATIONS[w.word])
       expect(text, w.word).toContain('this game accepts it too')

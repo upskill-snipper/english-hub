@@ -8,6 +8,7 @@ import {
   finaleOpen,
   finishLevel,
   finishReview,
+  MISS_WAIT_MS,
   nextLevel,
   playerLevel,
   questStars,
@@ -119,9 +120,9 @@ describe('stars and XP', () => {
 })
 
 describe('spaced review', () => {
-  it('brings a miss back at once and a right answer back later, further apart each time', () => {
+  it('brings a miss back after a short break and a right answer back later, further apart each time', () => {
     let p = recordAnswer(emptyQuest(), 'q1', false, NOW)
-    expect(p.items.q1).toEqual({ box: 1, due: NOW, missed: true })
+    expect(p.items.q1).toEqual({ box: 1, due: NOW + MISS_WAIT_MS, missed: true })
 
     p = recordAnswer(emptyQuest(), 'q1', true, NOW)
     expect(p.items.q1).toEqual({ box: 1, due: NOW + 1 * DAY, missed: false })
@@ -135,9 +136,11 @@ describe('spaced review', () => {
     expect(gaps).toEqual([3 * DAY, 7 * DAY, 14 * DAY, 30 * DAY, 30 * DAY, 30 * DAY])
     expect(p.items.q1.box).toBe(5)
 
-    // A miss sends it back to the first box, however far it had climbed.
+    // A miss sends it back to the first box, however far it had climbed, and
+    // waits a short break before Review asks it (24 October 2026: straight
+    // after a level, Review was 89 per cent the questions just missed).
     p = recordAnswer(p, 'q1', false, NOW)
-    expect(p.items.q1).toEqual({ box: 1, due: NOW, missed: true })
+    expect(p.items.q1).toEqual({ box: 1, due: NOW + MISS_WAIT_MS, missed: true })
   })
 
   it('offers the latest misses first, then the longest overdue, and nothing not yet due', () => {

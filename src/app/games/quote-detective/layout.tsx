@@ -3,7 +3,7 @@ import type { Metadata } from 'next'
 export const metadata: Metadata = {
   title: 'Quote Detective | GCSE Set Text Quote Game',
   description:
-    'Identify which GCSE set text each quote comes from: Macbeth, An Inspector Calls and more. A free quote revision game for English Literature.',
+    'Name the set text a quotation comes from, who says it and when, and which line proves a point. A free GCSE English Literature quotation game.',
   alternates: { canonical: '/games/quote-detective' },
 }
 

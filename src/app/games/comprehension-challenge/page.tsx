@@ -26,6 +26,7 @@ import {
 // src/data/games/explanations/comprehension-challenge.ts.
 
 const TYPE_BADGE: Record<QuestionType, { label: string; color: string }> = {
+  retrieval: { label: 'Retrieval', color: 'bg-teal-500/10 text-teal-400 border-teal-500/20' },
   inference: { label: 'Inference', color: 'bg-blue-500/10 text-blue-400 border-blue-500/20' },
   language: { label: 'Language', color: 'bg-violet-500/10 text-violet-400 border-violet-500/20' },
   structure: { label: 'Structure', color: 'bg-amber-500/10 text-clay-600 border-amber-500/20' },
@@ -229,15 +230,21 @@ export default function ComprehensionChallengePage() {
               </span>
             </div>
 
-            {/* Passage card */}
+            {/* Passage card. A passage runs to 300 to 500 words in paragraphs, which
+                its structure questions name ("the third paragraph"), so each is
+                printed as its own paragraph (24 October 2026). */}
             <div className="rounded-xl border border-white/[0.06] bg-white/[0.02] p-6">
-              <div className="mb-3 flex items-center gap-2">
+              <div className="mb-3 flex flex-wrap items-center gap-2">
                 <h3 className="text-sm font-bold text-foreground">{currentPassage.title}</h3>
                 <span className="rounded-full border border-white/[0.08] bg-white/[0.03] px-2 py-0.5 text-xs text-muted-foreground">
                   {currentPassage.genre}
                 </span>
               </div>
-              <p className="text-sm leading-relaxed text-muted-foreground">{currentPassage.text}</p>
+              <div className="space-y-3 text-sm leading-relaxed text-muted-foreground">
+                {currentPassage.text.split('\n\n').map((paragraph, i) => (
+                  <p key={i}>{paragraph}</p>
+                ))}
+              </div>
             </div>
 
             {/* Question */}

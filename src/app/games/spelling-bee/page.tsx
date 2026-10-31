@@ -30,6 +30,34 @@ function speak(text: string) {
   window.speechSynthesis.speak(utterance)
 }
 
+/**
+ * The sentence a word belongs in, its place drawn as a blank (24 October
+ * 2026: SpellingWord.sentence). For a word that sounds like another, such as
+ * affect and effect, the sentence decides the spelling; the student still
+ * types one word. A screen reader hears "blank", not three underscores.
+ * Most are real lines from texts out of copyright, and say where from
+ * (SpellingWord.source).
+ */
+function SentenceWithGap({ sentence, source }: { sentence: string; source?: string }) {
+  const [before, after = ''] = sentence.split('___')
+  return (
+    <div className="space-y-1">
+      <p className="text-base text-foreground">
+        {before}
+        <span
+          aria-hidden="true"
+          className="mx-1 inline-block min-w-[3.5rem] border-b-2 border-dashed border-muted-foreground"
+        >
+          &nbsp;
+        </span>
+        <span className="sr-only">blank</span>
+        {after}
+      </p>
+      {source && <p className="text-xs italic text-muted-foreground">{source}</p>}
+    </div>
+  )
+}
+
 // ─── Component ─────────────────────────────────────────────────────────────────
 
 export default function SpellingBeePage() {
@@ -163,7 +191,7 @@ export default function SpellingBeePage() {
           gameId="spelling-bee"
           audience="gcse"
           title="Spelling Bee"
-          description="Listen to the word and its definition, then type the correct spelling. Difficulty increases as you progress."
+          description="Listen to the word, read its definition, then type the correct spelling. Where a sentence is shown, type the word that fits its gap. Difficulty increases as you progress."
           difficulty="Crossover"
           score={score}
           maxScore={totalAnswered || words.length || 20}
@@ -203,6 +231,9 @@ export default function SpellingBeePage() {
               {/* Definition card */}
               <div className="rounded-xl border border-border bg-card p-6 text-center space-y-4">
                 <p className="text-sm text-muted-foreground">{currentWord.definition}</p>
+                {currentWord.sentence && (
+                  <SentenceWithGap sentence={currentWord.sentence} source={currentWord.source} />
+                )}
 
                 <button
                   onClick={() => speak(currentWord.word)}
@@ -248,7 +279,7 @@ export default function SpellingBeePage() {
                   >
                     {feedback === 'correct' ? (
                       <>
-                        <CheckCircle className="size-4" /> Correct!
+                        <CheckCircle className="size-4" /> Correct.
                       </>
                     ) : (
                       <>

@@ -3,7 +3,7 @@ import type { Metadata } from 'next'
 export const metadata: Metadata = {
   title: 'Spelling Bee | GCSE & KS3 Spelling Game',
   description:
-    'Listen to the word and its definition, then type the correct spelling. A free audio spelling game for GCSE and KS3 English revision.',
+    'Hear each word, read its definition or the sentence it fits, then type the spelling. A free audio spelling game for GCSE and KS3 English.',
   alternates: { canonical: '/games/spelling-bee' },
 }
 

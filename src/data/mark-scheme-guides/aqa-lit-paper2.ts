@@ -20,8 +20,11 @@
  *   AQA prints no suggested times on this paper, so the minutes here are the
  *   guide's own suggestion from the marks, and say so.
  *
- * Compared with the AI marker's data (../../lib/marking/mark-schemes/aqa-lit-paper2.ts),
- * which is NOT changed here; the guide follows the board:
+ * Compared with the AI marker's data (../../lib/marking/mark-schemes/aqa-lit-paper2.ts)
+ * as it stood when this guide was written; the guide follows the board. On
+ * 24 October 2026, with the founder's approval (document 30), the marker was
+ * corrected to follow the board on each difference below, and its docblock
+ * records how:
  *   - Total (96), duration (135 minutes) and every question's marks and
  *     objective split agree: Section A 34 (AO1 12, AO2 12, AO3 6, AO4 4),
  *     Section B 30 (AO1 12, AO2 12, AO3 6), Section C (a) 24 (AO1 12, AO2

@@ -115,6 +115,28 @@ export interface ThemeCheckChallenge {
   carries: string[]
 }
 
+/**
+ * "Which quotation is this reading about?" (24 October 2026). The point is the
+ * guide's own analysis of one key quotation, with the words it quotes from
+ * that line elided; the options are quotations the guided path already asks
+ * about, the analysed one among them. It asks what no other challenge did:
+ * matching a reading of the text, a method and its effect, to the line that
+ * bears it out, which is the evidence an exam answer is built on.
+ */
+export interface EvidenceChallenge {
+  type: 'evidence'
+  id: string
+  /** The guide's analysis of the answer, its quotations of the line elided. */
+  point: string
+  /** Quotations, the answer among them. */
+  options: string[]
+  answer: string
+  /** Where the answer comes from, as the guide gives it. */
+  where: string
+  /** The guide's analysis, whole, shown with the feedback. */
+  explanation: string
+}
+
 export type Challenge =
   | ItemChallenge
   | PanelLineChallenge
@@ -123,6 +145,7 @@ export type Challenge =
   | WhoseChallenge
   | MarkerChallenge
   | ThemeCheckChallenge
+  | EvidenceChallenge
 
 export type LevelKind = 'chapter' | 'cast' | 'craft' | 'finale'
 
@@ -134,6 +157,14 @@ export interface Level {
   chapter?: number
   /** The first and last moment the chapter covers, as the guide titles them. */
   span?: { from: string; to: string }
+  /**
+   * Where in the text the chapter runs, as the guide places its first and
+   * last moments ("Act 1, Scene 1" to "Act 1, Scene 7"). The map shows this,
+   * not the titles, since 24 October 2026: the titles were the first and last
+   * cards of the chapter's own story order, on 329 of 332 parts, so the map
+   * answered half of the question each part opens with.
+   */
+  where?: { from: string; to: string }
   /**
    * The ids of the challenges the level may ask (in Quest.challenges); a play
    * deals PLAY_SIZE of them (./deal.ts). The finale's pool is every other

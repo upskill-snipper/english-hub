@@ -30,11 +30,21 @@
  * - Question 3's markerQuestionId was 'Q1'; it is now null. The marker's Q1 is
  *   out of 16 and describes a 19th-century or non-fiction source, so an answer to
  *   this 12-mark question would come back marked out of 16. Point it at the
- *   marker again once the marker matches OCR.
+ *   marker again once the marker matches OCR. (Done 24 October 2026, below.)
  *
- * DIFFERENCES FROM THE AI MARKER (ocrLangComponent02 in
- * src/lib/marking/mark-schemes/ocr-lang.ts). Its questions do not match the
- * paper's. The guide follows OCR; the marker is unchanged.
+ * THE MARKER NOW FOLLOWS OCR (24 October 2026). With the founder's approval
+ * (document 30), ocrLangComponent02 in src/lib/marking/mark-schemes/ocr-lang.ts
+ * was rebuilt from this guide: Q1 4 (AO1, point by point), Q2 6 (AO2, six
+ * one-mark levels), Q3 12 (AO2, six two-mark levels), Q4 18 (AO3 6 + AO4 12,
+ * two grids) and the writing as 'Q5/Q6' (AO5 24 on six levels + AO6 16).
+ * Every question's markerQuestionId now points at the marker question with
+ * the same number, and src/lib/marking/mark-schemes/__tests__/
+ * ocr-lang-structure.test.ts holds the marker to this guide. The two sections
+ * below are what differed, and what markerQuestionId was, until then.
+ *
+ * DIFFERENCES FROM THE AI MARKER, UNTIL 24 OCTOBER 2026 (ocrLangComponent02 in
+ * src/lib/marking/mark-schemes/ocr-lang.ts). Its questions did not match the
+ * paper's.
  * - marker: Q1 16 marks AO2 (language and structure); board: Q1 4 marks AO1
  *   (short retrieval parts, marked point by point).
  * - marker: Q2 16 marks AO4 (evaluating one text); board: Q2 6 marks AO2
@@ -55,12 +65,13 @@
  *   to 13-16), marker Q3 AO3 four two-mark levels (1-2 up to 7-8). AO6 on four
  *   four-mark levels agrees.
  *
- * markerQuestionId: Question 5 or 6 points to the marker's Q4 (40 marks, AO5 24 +
- * AO6 16, as OCR has it). Questions 1 to 4 are null: no marker question has the
- * same marks and objectives. Question 4's evaluation and comparison are split
- * across the marker's Q2 (one text, 16 marks) and Q3 (8 marks), neither of which
- * is OCR's question, and the marker's Q1, its only extended language and
- * structure question, is out of 16 where OCR's Question 3 is out of 12.
+ * markerQuestionId, until 24 October 2026: Question 5 or 6 pointed to the
+ * marker's Q4 (40 marks, AO5 24 + AO6 16, as OCR has it). Questions 1 to 4 were
+ * null: no marker question had the same marks and objectives. Question 4's
+ * evaluation and comparison were split across the marker's Q2 (one text, 16
+ * marks) and Q3 (8 marks), neither of which is OCR's question, and the marker's
+ * Q1, its only extended language and structure question, was out of 16 where
+ * OCR's Question 3 is out of 12.
  *
  * OCR's June 2024 mark scheme has two slips of its own: its AO grid splits
  * Question 1 as 1 + 1 + 2 though that paper set 3 + 1, and its Section B
@@ -145,7 +156,7 @@ export const GUIDE: MarkSchemeGuide = {
             'Spending more than a few minutes here: it is worth 4 of the 80 marks.',
           ],
           tip: 'Give exactly the number of answers asked for, one per line, each as short as it can be while still making sense.',
-          markerQuestionId: null,
+          markerQuestionId: 'Q1',
         },
         {
           label: 'Question 2',
@@ -203,7 +214,7 @@ export const GUIDE: MarkSchemeGuide = {
             'Ignoring structure.',
           ],
           tip: 'Two short paragraphs can be enough: one on a couple of word choices and one on how the lines are built or ordered.',
-          markerQuestionId: null,
+          markerQuestionId: 'Q2',
         },
         {
           label: 'Question 3',
@@ -263,7 +274,7 @@ export const GUIDE: MarkSchemeGuide = {
             'Going outside the lines you are given.',
           ],
           tip: 'Find three or four moments that show what the question asks about. For each, analyse a word choice, then say where that moment sits in the passage and why its placing matters.',
-          markerQuestionId: null,
+          markerQuestionId: 'Q3',
         },
         {
           label: 'Question 4',
@@ -362,7 +373,7 @@ export const GUIDE: MarkSchemeGuide = {
             'Quoting from only one of the texts.',
           ],
           tip: "Plan three or four points about the statement. In each paragraph, judge the point in both texts, compare the writers' methods and quote from each.",
-          markerQuestionId: null,
+          markerQuestionId: 'Q4',
         },
       ],
     },
@@ -458,7 +469,7 @@ export const GUIDE: MarkSchemeGuide = {
             'Leaving no time to check: spelling, punctuation and sentences (AO6) are worth 16 of the 40 marks.',
           ],
           tip: 'Plan the shape before you write: where the piece starts, the moment it builds to and how it ends. Then spend most of your words on a few moments described in close detail.',
-          markerQuestionId: 'Q4',
+          markerQuestionId: 'Q5/Q6',
         },
       ],
     },

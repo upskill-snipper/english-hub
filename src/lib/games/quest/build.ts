@@ -6,8 +6,11 @@
  * WHERE EACH CHALLENGE COMES FROM
  *
  *   item          the text-games builder's own items (who, where, finish,
- *                 method, theme, and story order), unchanged: each is proved
- *                 there to have one right answer
+ *                 method, theme, and story order), unchanged but for one
+ *                 thing: a "where is this from?" question asked in a part
+ *                 draws its wrong places from inside that part (localWhere
+ *                 below), each still a place the guide gives that cannot
+ *                 overlap the answer
  *   panel-line    a comic panel's verbatim quotation (src/data/comics), against
  *   line-panel    other panels' quotations, from moments that cannot be the
  *                 same place (wheresMayOverlap)
@@ -16,6 +19,9 @@
  *   marker        the same phrase, against the other markers on its portrait
  *   theme-check   a moment's own themes ("yes") or a guide theme that cannot
  *                 overlap any of them ("no"), as themesMayOverlap rules
+ *   evidence      a key quotation's own analysis, its quotation of the line
+ *                 elided, against quotations the guided path already asks
+ *                 about (24 October 2026; buildEvidence below)
  *
  * A TEXT IN COPYRIGHT gets no comic challenges (the comics are public-domain
  * texts only) and its quotations are exactly those its guided path already
@@ -27,13 +33,25 @@
 import type { ComicSet } from '@/lib/comics/types'
 import { buildTextGame, type HeldEdition } from '@/lib/games/text-games/build'
 import { hashSeed, rng, seededPick } from '@/lib/games/text-games/seed'
-import { normForMatch, themesMayOverlap, wheresMayOverlap } from '@/lib/games/text-games/text'
+import {
+  isStopWord,
+  normForMatch,
+  occurrences,
+  quoteFragments,
+  stem,
+  themesMayOverlap,
+  whereUnits,
+  wheresMayOverlap,
+  wordsOf,
+} from '@/lib/games/text-games/text'
 import type { GameArt, GameItem, MomentRef, OrderItem } from '@/lib/games/text-games/types'
+import type { FlatKeyQuote } from '@/data/key-quotes/types'
 import type { StudyGuide } from '@/lib/study-guides/types'
 
 import { pickVaried } from './deal'
 import type {
   Challenge,
+  EvidenceChallenge,
   Level,
   LinePanelChallenge,
   MarkerChallenge,
@@ -52,6 +70,13 @@ export interface QuestInput {
   /** Every served panel and portrait the text has, as the text-games loader gives them. */
   art: GameArt
   held?: HeldEdition | null
+  /**
+   * The key quotations on the text's revision page, where it has one
+   * (src/data/key-quotes): for the most studied texts the study guide is a
+   * supplement and these are its key quotations. Used for evidence
+   * challenges, for a text out of copyright with a held edition only.
+   */
+  keyQuotes?: FlatKeyQuote[] | null
 }
 
 /** A public-domain quest keeps every item the guide supports, up to this. */
@@ -278,6 +303,135 @@ function buildRebuilds(
   return out
 }
 
+/** The fewest words a point keeps once its quotations are elided: below it, there is nothing left to match. */
+export const EVIDENCE_MIN_WORDS = 12
+
+/** A quotation inside an analysis: in double, curly or single quotation marks. */
+const QUOTED_IN_ANALYSIS =
+  /[\u201c"][^\u201d"]+?[\u201d"]|\u2018[^\u2019]+?\u2019|'[^']{2,}?'(?![a-z])/g
+
+/** Content words worth comparing: four letters or more, not a stop word, by stem. */
+function contentStems(s: string): Set<string> {
+  return new Set(
+    wordsOf(s)
+      .filter((w) => w.length >= 4 && !isStopWord(w))
+      .map(stem),
+  )
+}
+
+/** The fewest words a quotation needs to be offered, as the answer or as a wrong option. */
+export const EVIDENCE_MIN_QUOTE_WORDS = 3
+
+/**
+ * Evidence challenges, from the guide's key quotations and their analyses.
+ *
+ * Only a quotation the guided path already asks about (a "where" or
+ * "finish" question) is used, as answer or as wrong option: those are located
+ * in the held edition where there is one, and for a text in copyright they are
+ * exactly what its measured path quotes, so this quotes nothing new.
+ *
+ * The point is the analysis with every quotation in it elided. It is asked
+ * only where nothing of the line is left in it (no content word of four
+ * letters or more survives: "Henna does fade within weeks" gave away "fade
+ * in a week") and EVIDENCE_MIN_WORDS words remain. Every option is a
+ * quotation of EVIDENCE_MIN_QUOTE_WORDS words or more. A wrong option shares
+ * no content word with the point, so it cannot be argued to bear it out, and
+ * the three are the nearest in length to the answer, so length does not give
+ * it away.
+ */
+function buildEvidence(
+  guide: StudyGuide,
+  items: GameItem[],
+  page: { held?: HeldEdition | null; keyQuotes?: FlatKeyQuote[] | null } = {},
+): EvidenceChallenge[] {
+  // The readings: the guide's key quotations, and for a text out of copyright
+  // with a held edition, its revision page's (page.keyQuotes, passed only
+  // then). A line read twice (a refrain, an opening line that returns at the
+  // end, or one line on both lists with two readings) has two readings,
+  // either of which would be the point: not asked.
+  // A page reading is taken only for a line the held edition prints once,
+  // word for word (its longest stretch between ellipses): a misquotation on
+  // the page is never asked, and nor is a refrain ("Four legs good, two legs
+  // better" is printed three times), whose reading could be about any of its
+  // places.
+  const printedOnce = (quote: string) => {
+    if (!page.held) return false
+    const parts = quoteFragments(quote)
+    if (parts.length === 0) return false
+    const longest = parts.reduce((a, b) => (b.length > a.length ? b : a))
+    return occurrences(page.held.joined, longest) === 1
+  }
+  const readings: { text: string; analysis: string }[] = [
+    ...(guide.keyQuotes ?? []).flatMap((k) =>
+      k.analysis ? [{ text: k.text, analysis: k.analysis }] : [],
+    ),
+    ...(page.keyQuotes ?? [])
+      .filter((k) => printedOnce(k.quote))
+      .map((k) => ({ text: k.quote, analysis: k.analysis })),
+  ]
+  const times = new Map<string, number>()
+  for (const r of readings)
+    times.set(normForMatch(r.text), (times.get(normForMatch(r.text)) ?? 0) + 1)
+  const analysed = new Map<string, { analysis: string }>()
+  for (const r of readings)
+    if (times.get(normForMatch(r.text)) === 1)
+      analysed.set(normForMatch(r.text), { analysis: r.analysis })
+  const asked: { quote: string; where: string }[] = []
+  const seen = new Set<string>()
+  const offer = (quote: string, where: string) => {
+    const k = normForMatch(quote)
+    if (!k || seen.has(k)) return
+    // One line once: a shorter cut of a quotation already offered, or a
+    // longer one around it ("they had better do it, and decrease the surplus
+    // population" inside "If they would rather die..."), is the same evidence.
+    if ([...seen].some((s) => s.includes(k) || k.includes(s))) return
+    seen.add(k)
+    if (wordsOf(quote).length < EVIDENCE_MIN_QUOTE_WORDS) return
+    asked.push({ quote, where })
+  }
+  for (const it of items) {
+    if (it.kind !== 'where' && it.kind !== 'finish') continue
+    offer(it.quote, it.where ?? '')
+  }
+  // The revision page's quotations, on the same terms as their readings.
+  for (const k of page.keyQuotes ?? []) if (printedOnce(k.quote)) offer(k.quote, k.where)
+  const out: EvidenceChallenge[] = []
+  for (const a of asked) {
+    const key = normForMatch(a.quote)
+    const found = analysed.get(key)
+    if (!found) continue
+    const point = found.analysis.replace(QUOTED_IN_ANALYSIS, '\u2026').replace(/\s+/g, ' ').trim()
+    if (wordsOf(point).length < EVIDENCE_MIN_WORDS) continue
+    const line = contentStems(a.quote)
+    const pointStems = contentStems(point)
+    if ([...line].some((w) => pointStems.has(w))) continue
+    const wrong = asked
+      .filter((o) => {
+        const k = normForMatch(o.quote)
+        if (k === key || k.includes(key) || key.includes(k)) return false
+        return ![...contentStems(o.quote)].some((w) => pointStems.has(w))
+      })
+      .sort(
+        (x, y) =>
+          Math.abs(x.quote.length - a.quote.length) - Math.abs(y.quote.length - a.quote.length),
+      )
+      .slice(0, 6)
+      .map((o) => o.quote)
+    if (wrong.length < 2) continue
+    const picked = seededPick(wrong, 3, hashSeed(guide.slug, 'evidence', key))
+    out.push({
+      type: 'evidence',
+      id: `evidence:${key.slice(0, 32)}`,
+      point,
+      options: [a.quote, ...picked],
+      answer: a.quote,
+      where: a.where,
+      explanation: found.analysis,
+    })
+  }
+  return out
+}
+
 function buildThemeChecks(
   slug: string,
   guide: StudyGuide,
@@ -361,6 +515,13 @@ export function momentOf(c: Challenge): MomentRef | undefined {
  * one; otherwise, for a quotation the guide places by act or chapter but not
  * in its timeline, the first moment whose place it could be. This only decides
  * WHEN a question is asked, never what its answer is.
+ *
+ * A place neither side can read decides nothing (24 October 2026).
+ * wheresMayOverlap says "may overlap" for a reference it cannot read, which
+ * is right for keeping wrong options apart and wrong here: every such
+ * quotation landed in the first part it was compared with, 285 of the 1,423
+ * placed by reference, so DNA's Part 1 quoted Acts Three and Four. Such a
+ * quotation is now asked in no part.
  */
 function placeOf(c: Challenge, moments: MomentRef[]): number | undefined {
   const own = momentOf(c)
@@ -368,11 +529,52 @@ function placeOf(c: Challenge, moments: MomentRef[]): number | undefined {
   const where =
     c.type === 'item' && (c.item.kind === 'where' || c.item.kind === 'finish')
       ? c.item.where
-      : c.type === 'rebuild'
+      : c.type === 'rebuild' || c.type === 'evidence'
         ? c.where
         : undefined
-  if (!where) return undefined
-  return moments.find((m) => wheresMayOverlap(where, m.where))?.index
+  if (!where || whereUnits(where).size === 0) return undefined
+  return moments.find((m) => whereUnits(m.where).size > 0 && wheresMayOverlap(where, m.where))
+    ?.index
+}
+
+/**
+ * A "where is this from?" question as a part asks it: its wrong places drawn
+ * from inside the part (24 October 2026). The map labels each part by where
+ * it runs in the text ("From Act 1, Scene 1 to Act 1, Scene 5"), so a wrong
+ * place from another part would be ruled out by the label alone. Places come
+ * from the same family of references as the question's own (a key quotation's
+ * against key quotations', a scene card's against scene cards'), as the
+ * text-games builder keeps them, since the two are written differently. A
+ * question its part cannot give two such places is not asked in the part.
+ */
+function localWhere(
+  c: Challenge,
+  partWheres: string[],
+  family: Map<string, string[]>,
+  seed: number,
+): Challenge | null {
+  if (c.type !== 'item' || c.item.kind !== 'where') return c
+  const it = c.item
+  const kin = family.get(familyOfWhere(it.id)) ?? []
+  const inPart = (w: string) =>
+    whereUnits(w).size > 0 &&
+    partWheres.some((p) => whereUnits(p).size > 0 && wheresMayOverlap(w, p))
+  const seen = new Set<string>([normForMatch(it.answer)])
+  const candidates: string[] = []
+  for (const w of kin) {
+    const k = normForMatch(w)
+    if (seen.has(k)) continue
+    seen.add(k)
+    if (!wheresMayOverlap(w, it.answer) && inPart(w)) candidates.push(w)
+  }
+  if (candidates.length < 2) return null
+  const wrong = seededPick(candidates, 3, seed)
+  return { ...c, item: { ...it, options: [it.answer, ...wrong] } }
+}
+
+/** A where question's family of references: its source key's prefix ("kq", "tl"). */
+function familyOfWhere(id: string): string {
+  return id.replace(/^where:/, '').split(':')[0]
 }
 
 interface Pools {
@@ -394,13 +596,24 @@ function assemble(
     list.forEach((c) => kept.set(c.id, c))
     return list.map((c) => c.id)
   }
+  // Every place each family of where questions offers, for localWhere.
+  const family = new Map<string, string[]>()
+  for (const ch of pools.chapter) {
+    if (ch.type !== 'item' || ch.item.kind !== 'where') continue
+    const f = familyOfWhere(ch.item.id)
+    family.set(f, [...(family.get(f) ?? []), ...ch.item.options])
+  }
   const chapterLevels: Level[] = []
   for (let c = 1; c <= chapters; c++) {
     const indices = moments.filter((m) => chapterOf(m.index, n, chapters) === c).map((m) => m.index)
-    const inChapter = pools.chapter.filter((ch) => {
-      const at = placeOf(ch, moments)
-      return at !== undefined && chapterOf(at, n, chapters) === c
-    })
+    const partWheres = indices.map((i) => moments[i].where)
+    const inChapter = pools.chapter
+      .filter((ch) => {
+        const at = placeOf(ch, moments)
+        return at !== undefined && chapterOf(at, n, chapters) === c
+      })
+      .map((ch) => localWhere(ch, partWheres, family, hashSeed(slug, 'where-local', ch.id)))
+      .filter((ch): ch is Challenge => ch !== null)
     const seq = sequenceOf(`order:chapter-${c}`, indices, moments)
     const all = [...(seq ? [item(seq)] : []), ...inChapter]
     if (all.length < MIN_CHAPTER) return null
@@ -409,6 +622,14 @@ function assemble(
       kind: 'chapter',
       chapter: c,
       span: { from: moments[indices[0]].title, to: moments[indices[indices.length - 1]].title },
+      ...(moments[indices[0]].where.trim() && moments[indices[indices.length - 1]].where.trim()
+        ? {
+            where: {
+              from: moments[indices[0]].where.trim(),
+              to: moments[indices[indices.length - 1]].where.trim(),
+            },
+          }
+        : {}),
       pool: keep(pickVaried(all, POOL_CAP.chapter, hashSeed(slug, 'pool', c), {})),
       panels: indices.filter((i) => moments[i].panel).map((i) => moments[i].title),
     })
@@ -450,7 +671,13 @@ function assemble(
   return { levels, kept: [...kept.values()] }
 }
 
-export function buildQuest({ guide, comics, art, held = null }: QuestInput): Quest {
+export function buildQuest({
+  guide,
+  comics,
+  art,
+  held = null,
+  keyQuotes = null,
+}: QuestInput): Quest {
   const game = buildTextGame({ guide, art, held, poolMax: QUEST_POOL_MAX })
   const moments = momentRefs(guide, art)
   const items = game.rounds.flatMap((r) => r.items)
@@ -466,6 +693,7 @@ export function buildQuest({ guide, comics, art, held = null }: QuestInput): Que
       ...buildLinePanels(guide.slug, lines),
       ...buildRebuilds(guide, lines, items, moments),
       ...buildThemeChecks(guide.slug, guide, moments),
+      ...buildEvidence(guide, items, publicDomain ? { held, keyQuotes } : {}),
     ],
     cast: [
       ...items.filter((i) => i.kind === 'who').map(item),

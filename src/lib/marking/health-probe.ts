@@ -63,6 +63,18 @@ import { cachedSystemBlock } from '@/lib/ai/cached-system'
 export const PROBE_SCHEME_ID = 'aqa-lang-paper1'
 
 /**
+ * The question the probe marks PROBE_ESSAY against, named rather than taken
+ * as the scheme's first. Until 24 October 2026 it was questions[0], AQA
+ * Paper 1 Question 1, which was then a "list four things" question on a
+ * ladder. From that day the marker follows the 2026 papers, where Question 1
+ * is four multiple-choice parts, so a paragraph of language analysis marked
+ * against it could be refused as not an answer and the probe would report a
+ * marking outage that was not one. Question 2 is the language question this
+ * paragraph answers.
+ */
+export const PROBE_QUESTION_ID = 'Q2'
+
+/**
  * Short but genuinely essay-shaped.
  *
  * Long enough that the model is doing the real task rather than refusing an
@@ -127,9 +139,14 @@ export async function runMarkingProbe(): Promise<MarkingProbeResult> {
     }
   }
 
-  const question = scheme.questions[0]
+  const question = scheme.questions.find((q) => q.id === PROBE_QUESTION_ID)
   if (!question) {
-    return { ...base, ok: false, stage: 'config', detail: 'Scheme has no questions' }
+    return {
+      ...base,
+      ok: false,
+      stage: 'config',
+      detail: `Scheme has no question "${PROBE_QUESTION_ID}"`,
+    }
   }
 
   const questionId = question.id

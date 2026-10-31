@@ -105,15 +105,16 @@ describe('every band grid in the corpus', () => {
    *
    * So the defect is enumerated rather than hidden. This list must SHRINK,
    * never grow: adding to it needs a deliberate edit and a reason.
+   *
+   * EMPTY SINCE 24 October 2026. Its six entries were A2's two objectives and
+   * A5's AO6 on both Eduqas Language components. The schemes were rebuilt to
+   * Eduqas's own papers that day, with every band range written out from the
+   * board's grids and the local rescaler deleted: A5 was a proofreading
+   * question neither paper has, and Component 1's A2 is Eduqas's Question 02,
+   * one AO2 grid of five one-mark bands, which the three-level heuristic
+   * reads as a real grid. No other scheme was ever listed here.
    */
-  const KNOWN_OVERLAPS = new Set([
-    'eduqas-lang-comp1/A2/AO1',
-    'eduqas-lang-comp1/A2/AO2',
-    'eduqas-lang-comp1/A5/AO6',
-    'eduqas-lang-comp2/A2/AO1',
-    'eduqas-lang-comp2/A2/AO2',
-    'eduqas-lang-comp2/A5/AO6',
-  ])
+  const KNOWN_OVERLAPS = new Set<string>()
 
   it('is contiguous, with no mark falling between two levels', () => {
     // The rounding bug the shared scaleAO was written to kill: independently
@@ -267,9 +268,11 @@ describe('AO4 on the England GCSE Literature papers', () => {
     // to 4ET1, which does not assess accuracy as an objective at all.
     const igcse = getMarkScheme('edexcel-igcse-lit')
     expect(igcse, 'the Pearson IGCSE scheme has gone, so this proves nothing').toBeTruthy()
+    // Since 24 October 2026 AO4 is marked with AO1 on Section C's one grid,
+    // id 'AO1+AO4', so the objective is found by the names in its id.
     const ao4 = (igcse?.questions ?? [])
       .flatMap((q) => q.assessmentObjectives)
-      .filter((a) => a.id === 'AO4')
+      .filter((a) => a.id.split(/[-+]/).includes('AO4'))
       .map((a) => a.label + ' ' + a.description)
     expect(ao4.length).toBeGreaterThan(0)
     for (const text of ao4) {
@@ -296,10 +299,12 @@ describe('AO4 on the England GCSE Literature papers', () => {
     // comparison. Students were told to do the opposite of what each question
     // asks on both.
     const igcse = getMarkScheme('edexcel-igcse-lit')
+    // A grid's id names every objective it covers ('AO2+AO3' and 'AO1+AO4',
+    // one grid per section since 24 October 2026).
     const label = (id: string) =>
       (igcse?.questions ?? [])
         .flatMap((q) => q.assessmentObjectives)
-        .filter((a) => a.id === id)
+        .filter((a) => a.id.split(/[-+]/).includes(id))
         .map((a) => a.label)
 
     const ao3 = label('AO3')

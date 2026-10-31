@@ -16,52 +16,58 @@
  *
  * NUMBERING. Live papers number the questions 01 to 05 (Section A) and 11
  * (Section B, options a to d). Only the sample assessment materials used A1
- * to A5, which is where the marker's ids come from. The Section A mark schemes
- * list their bands by mark range without numbering them; the guide calls them
- * Band 1 upwards, lowest first, because the board's marking instructions speak
- * of bands ("Band 2 and above" in the 2014 sample mark scheme). Question 02 is
- * marked one description per mark, so each of its bands is a single mark.
+ * to A5, which is where the marker's ids come from: since 24 October 2026 the
+ * marker's A1 to A5 are Questions 01 to 05 and its B1 is Question 11. The
+ * Section A mark schemes list their bands by mark range without numbering
+ * them; the guide calls them Band 1 upwards, lowest first, because the board's
+ * marking instructions speak of bands ("Band 2 and above" in the 2014 sample
+ * mark scheme). Question 02 is marked one description per mark, so each of its
+ * bands is a single mark.
  *
- * WHERE THE AI MARKER'S DATA DIFFERS (src/lib/marking/mark-schemes/eduqas-lang.ts,
- * eduqasLangComp1). Its declared total (80) and duration (105 minutes) agree,
- * but its questions add up to 75: the five-mark gap in KNOWN_TOTAL_MISMATCHES
- * (src/lib/marking/examiner/verification.ts), which says which question is
- * short "has not been established". No one question is short; Section A is
+ * THE AI MARKER (src/lib/marking/mark-schemes/eduqas-lang.ts, eduqasLangComp1)
+ * WAS CORRECTED TO THIS GUIDE on 24 October 2026, with the founder's approval
+ * (document 30): its questions, marks, objectives and band ranges are now the
+ * ones below, and __tests__/eduqas-lang-structure.test.ts in that folder holds
+ * them to this guide. Until then it differed as follows. Its declared total
+ * (80) and duration (105 minutes) agreed, but its questions added up to 75:
+ * the five-mark gap then in KNOWN_TOTAL_MISMATCHES
+ * (src/lib/marking/examiner/verification.ts), which said which question was
+ * short "has not been established". No one question was short; Section A was
  * built differently:
- *   - marker: A1's notes accept "explicit information ... only"; board: one
+ *   - marker: A1's notes accepted "explicit information ... only"; board: one
  *     mark for each point and/or inference (Question 01 tests explicit and
  *     implicit information in the Summer 2025, Summer 2024 and November 2024
  *     mark schemes).
  *   - marker: A2 5 marks, AO1 3 + AO2 2 (inference); board: Question 02 5 marks, AO2 5.
  *   - marker: one 10-mark AO2 question (A3); board: two, Question 03 10 marks
  *     AO2 (language) and Question 04 10 marks AO2 (language and structure).
- *     The marker has nothing for Question 04.
+ *     The marker had nothing for Question 04.
  *   - marker: A4 10 marks AO4 (evaluation); board: Question 04 is 10 marks AO2,
  *     and the evaluation is Question 05, 10 marks AO4.
  *   - marker: A5 5 marks AO6 (proofreading: find and correct five errors);
  *     board: no such question, and Section A carries no AO6 marks.
  *   - marker: Section A 35 marks (AO1 8, AO2 12, AO4 10, AO6 5), so the paper
  *     sums to 75; board: Section A 40 marks (AO1 5, AO2 25, AO4 10), paper 80.
- *   - marker: A3's notes ask for language and structure for the highest bands;
+ *   - marker: A3's notes asked for language and structure for the highest bands;
  *     board: Question 03 assesses language, and only Question 04 adds structure.
  *   - marker: B1 AO5 bands 0-6, 7-10, 11-16, 17-20, 21-24 and AO6 in four
  *     bands 0-4, 5-8, 9-12, 13-16; board: AO5 1-4, 5-9, 10-14, 15-19, 20-24
  *     and AO6 in five bands 1-3, 4-6, 7-10, 11-13, 14-16 (0 where nothing earns
  *     credit).
- *   - marker: B1 invites "a narrative or descriptive piece"; board: the
+ *   - marker: B1 invited "a narrative or descriptive piece"; board: the
  *     specification says the response should be a narrative or recount, and
  *     purely descriptive writing cannot reach the full mark range.
- *   - Not a board difference, but Question 02 links to it: A2's two ladders
- *     overlap, because eduqas-lang.ts rescales bands with its own local
- *     scaleAO, not the contiguous one in ./scale-ao. AO1 (out of 3) runs 0-1,
- *     1, 2, 2, 3 and AO2 (out of 2) runs 0, 1, 1, 1-2, 2, so one mark sits in
- *     two bands. A5's AO6 ladder (0-1, 2-3, 3-4, 4-5) overlaps the same way.
- *   - These agree: A1 5 marks AO1 (apart from its notes), A3 10 marks AO2,
+ *   - Not a board difference, but Question 02 linked to it: A2's two ladders
+ *     overlapped, because eduqas-lang.ts rescaled bands with its own local
+ *     scaleAO, not the contiguous one in ./scale-ao. AO1 (out of 3) ran 0-1,
+ *     1, 2, 2, 3 and AO2 (out of 2) ran 0, 1, 1, 1-2, 2, so one mark sat in
+ *     two bands. A5's AO6 ladder (0-1, 2-3, 3-4, 4-5) overlapped the same way.
+ *   - These agreed: A1 5 marks AO1 (apart from its notes), A3 10 marks AO2,
  *     B1 40 marks (AO5 24 + AO6 16).
  *
- * markerQuestionId: Questions 03 and 04 both point at A3, the marker's only
- * 10-mark AO2 question; until the marker is corrected, an answer to Question 03
- * is judged against A3's call for structure, which the board does not make.
+ * markerQuestionId: Questions 01 to 05 point at A1 to A5 and Question 11 at B1.
+ * Until the correction, Questions 03 and 04 both pointed at A3, the marker's
+ * only 10-mark AO2 question, and Question 05 at A4, its evaluation.
  *
  * SECOND CHECK, 24 October 2026 (an independent reader, against the same
  * documents). Fixed:
@@ -314,7 +320,7 @@ export const GUIDE: MarkSchemeGuide = {
             'Long quotations with no comment.',
           ],
           tip: 'For each part of the section ask two things: why the writer tells us this here, and which words make it work.',
-          markerQuestionId: 'A3',
+          markerQuestionId: 'A4',
         },
         {
           label: 'Question 05',
@@ -366,7 +372,7 @@ export const GUIDE: MarkSchemeGuide = {
             'Writing only about the final lines and ignoring the rest of the passage.',
           ],
           tip: 'Give your answer to the view in your first sentence, then prove it with three or four points from across the passage.',
-          markerQuestionId: 'A4',
+          markerQuestionId: 'A5',
         },
       ],
     },

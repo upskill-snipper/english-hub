@@ -11,7 +11,12 @@ import { getBoardConfig } from '@/lib/board/board-store'
 import { AnswerExplanation } from '@/components/games/AnswerExplanation'
 import { useGameRound } from '@/components/games/game-round'
 import { useDealer } from '@/lib/games/start-round'
-import { BANK, VOCAB_BANK, type VocabWord } from '@/data/games/banks/vocabulary-builder'
+import {
+  BANK,
+  VOCAB_BANK,
+  type VocabKind,
+  type VocabWord,
+} from '@/data/games/banks/vocabulary-builder'
 
 // ─── Data ──────────────────────────────────────────────────────────────────────
 // The words are in src/data/games/banks/vocabulary-builder.ts (moved there on
@@ -19,6 +24,19 @@ import { BANK, VOCAB_BANK, type VocabWord } from '@/data/games/banks/vocabulary-
 // src/data/games/explanations/vocabulary-builder.ts.
 
 const QUESTIONS_PER_ROUND = 20
+
+/**
+ * What the card asks, by kind of question (24 October 2026, when the bank
+ * gained a word in a sentence and a gap to fill). Where the word fills the
+ * gap it is the answer, so the card shows the sentence and not the word.
+ */
+const PROMPT: Record<VocabKind, string> = {
+  meaning: 'What does this word mean?',
+  'in-context': 'What does the word mean here?',
+  'precise-word': 'Which word fits the gap best?',
+  'paired-terms': 'Which term fits the gap?',
+}
+const FILLS_A_GAP: ReadonlySet<VocabKind> = new Set(['precise-word', 'paired-terms'])
 
 // ─── Helpers ───────────────────────────────────────────────────────────────────
 
@@ -174,7 +192,7 @@ export default function VocabularyBuilderPage() {
           gameId="vocabulary-builder"
           audience="gcse"
           title="Vocabulary Builder"
-          description="Select the correct definition for each word. Wrong answers reappear for spaced repetition."
+          description="Choose what each word means, alone or in a sentence, or the word that fits a gap. Wrong answers reappear for spaced repetition."
           difficulty="Crossover"
           score={score}
           maxScore={totalAnswered || QUESTIONS_PER_ROUND}
@@ -203,9 +221,19 @@ export default function VocabularyBuilderPage() {
               {/* Word prompt */}
               <div className="rounded-xl border border-border bg-card p-6 text-center">
                 <p className="text-xs uppercase tracking-wider text-muted-foreground mb-2">
-                  What does this word mean?
+                  {PROMPT[currentWord.kind ?? 'meaning']}
                 </p>
-                <h3 className="text-2xl font-bold text-foreground">{currentWord.word}</h3>
+                {!FILLS_A_GAP.has(currentWord.kind ?? 'meaning') && (
+                  <h3 className="text-2xl font-bold text-foreground">{currentWord.word}</h3>
+                )}
+                {currentWord.sentence && (
+                  <p className="mt-3 text-base leading-relaxed text-foreground">
+                    {currentWord.sentence}
+                  </p>
+                )}
+                {currentWord.source && (
+                  <p className="mt-2 text-xs text-muted-foreground">{currentWord.source}</p>
+                )}
               </div>
 
               {/* Options */}

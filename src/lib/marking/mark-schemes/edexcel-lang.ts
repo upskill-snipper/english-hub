@@ -1,28 +1,90 @@
 // ─── Edexcel GCSE English Language (1EN0) ────────────────────────────────────
 //
-// REBUILT 19 September 2026. THE DEFECT THIS REPLACES
+// CORRECTED TO PEARSON'S MARK SCHEMES, 24 October 2026
 //
-// This file was AQA's paper with Edexcel's totals written on it. Its own header
-// said so:
+// That day a guide was written for each paper and checked twice, by a writer
+// and an independent checker, against Pearson's own documents:
+// src/data/mark-scheme-guides/edexcel-lang-paper1.ts and edexcel-lang-paper2.ts,
+// which cite the 1EN0/01 and 1EN0/02 mark schemes for Summer 2025
+// (1EN0_01_2506_MS, 1EN0_02_2506_MS), the earlier series back to June 2023 and
+// the specification, Issue 6 (August 2024). Every question, mark, objective,
+// total and duration below already agreed with them. What follows did not, and
+// is corrected here to the guides and the mark schemes they cite. Changing it
+// changes how essays are scored, so it went to the founder, who approved it on
+// 24 October 2026 (document 30: "correct ai markers").
 //
-//   Paper 1: Q1 AO1 4 + Q2 AO2 8 + Q3 AO2 8 + Q4 AO4 20 + Q5 AO5 16 + AO6 8
-//   Paper 2: Q1 4 + Q2 8 + Q3 12 + Q4 16 + Q5 (16+12) + Q6 (16+12)
+// LEVEL RANGES. ladder() used to cut every grid into equal levels, on the
+// belief that "Pearson's generic grids divide the mark range into equal
+// levels". Three of Pearson's grids do not:
 //
-// That is the AQA 8700 shape. Pearson's 1EN0 specification gives:
+//   AO5 (Q5/Q6, Q8/Q9)  was 1-5, 6-10, 11-14, 15-19, 20-24
+//                       now 1-4, 5-9, 10-14, 15-19, 20-24
+//   AO6 (Q5/Q6, Q8/Q9)  was 1-3, 4-6, 7-10, 11-13, 14-16
+//                       now 1-4, 5-7, 8-10, 11-13, 14-16
+//   AO3 (Paper 2 Q7b)   was 1-3, 4-6, 7-8, 9-11, 12-14
+//                       now 1-2, 3-5, 6-8, 9-11, 12-14
 //
-//   Paper 1 (Fiction and Imaginative Writing, 64 marks)
+// Pearson moved AO6's spare mark from Level 5 to Level 1 from the June 2024
+// series (before it: 1-3, 4-6, 7-9, 10-12, 13-16); the computed ladder matched
+// neither grid. ladder() now takes the top of each of Pearson's levels, so the
+// boundaries are the board's and the ladder is still contiguous by construction.
+//
+// PAPER 2 QUESTION 7(a) was one band of 1-6 marked a point at a time, its task
+// asked for "similarities or differences" and its note said a point from one
+// text was "still creditable". Pearson marks it on three levels (1-2, 3-4, 5-6)
+// that describe the understanding of SIMILARITIES and how the two texts are
+// brought together, and an answer must draw on both texts to earn any mark.
+//
+// RULES THE MARKER WAS NOT TOLD, now in each question's examinerNotes:
+//   Paper 1 Q3   language only, structure only, or unbalanced: no higher than
+//                Level 1
+//   Paper 2 Q3   language only or structure only: no higher than Level 2; an
+//                unbalanced answer cannot reach Level 3
+//   P1 Q4, P2 Q6 from Level 2, references to the writer's techniques count only
+//                where they support the judgement
+//   Paper 2 Q7b  one text considered in detail: no higher than Level 2 (the
+//                note said "capped in the lowest level that its quality
+//                allows"); an unbalanced answer cannot reach Level 3
+//
+// PAPER 1 QUESTION 4 told the marker that the question names a section and that
+// nothing outside it is rewarded. The June 2023, November 2023, June 2024,
+// November 2024 and June 2025 papers all asked about the extract as a whole.
+//
+// TAKEN OUT, because no board document checked contains them (the guides mark
+// each NOT CONFIRMED) and a rule nobody can source should not decide a mark:
+//   Paper 1 Q1     "nothing is deducted for wrong material offered alongside a
+//                  correct answer"
+//   Paper 1 Q5/Q6  "where both are attempted, mark the better and say so"
+//   Paper 2 Q8/Q9  "a response in the wrong form ... loses the form marks
+//                  within AO5 and nothing further"
+//
+// ALSO: the level descriptors are rewritten, in our own words, to follow what
+// each of Pearson's levels asks for (adapted from the guides' level
+// descriptions, which are ours); `weighting` is now each objective's share of
+// its QUESTION, as types.ts defines it (it was the share of the paper, so the
+// prompt called AO5 "38%" of a writing task where it carries 24 of the 40);
+// and a point-marked question's single band is named "Points", because those
+// questions have no levels.
+//
+// STILL NOT VERIFIED BY A PERSON. The figures come from guides checked by two
+// agents, not from a person reading the mark schemes line by line, so this
+// scheme stays out of src/lib/marking/examiner/verification.ts and derives as
+// `unverified-grid`: the examiner tool badges it, the prompt tells the model to
+// disclose it, and the student picker warns before use.
+//
+// THE QUESTIONS (unchanged since 19 September 2026, and confirmed by the guides)
+//
+//   Paper 1 (Fiction and Imaginative Writing, 64 marks, 1 hour 45 minutes)
 //     Q1   1  AO1      Q2   2  AO1      Q3   6  AO2      Q4  15  AO4
 //     Q5 or Q6 (choice of one): 24 AO5 + 16 AO6 = 40
 //
-//   Paper 2 (Non-fiction and Transactional Writing, 96 marks)
+//   Paper 2 (Non-fiction and Transactional Writing, 96 marks, 2 hours 5 minutes)
 //     Q1   2  AO1      Q2   2  AO1      Q3  15  AO2      Q4   1  AO1
 //     Q5   1  AO1      Q6  15  AO4      Q7a  6  AO1      Q7b 14  AO3
 //     Q8 or Q9 (choice of one): 24 AO5 + 16 AO6 = 40
 //
-// Reading is 56 marks and writing 40 on Paper 2, not the other way round.
-//
-// The six qualification AO totals reconcile exactly against the specification's
-// own breakdown table, which is the check that this structure is right:
+// The six qualification totals reconcile with the specification's breakdown
+// table, which is the check that the structure is right:
 //
 //   AO1 15 = 1 + 2 (P1) + 2 + 2 + 1 + 1 + 6 (P2)
 //   AO2 21 = 6 (P1 Q3) + 15 (P2 Q3)
@@ -30,70 +92,68 @@
 //   AO4 30 = 15 (P1 Q4) + 15 (P2 Q6)
 //   AO5 48 = 24 + 24        AO6 32 = 16 + 16      TOTAL 160
 //
-// WHY IT MATTERED: Edexcel is the second GCSE cohort in England and the board
-// most often chosen by the academies a solo teacher works in. Until today the
-// product marked their students against 8-mark language questions that are 6
-// marks on their paper, and a 20-mark Q4 that is 15. The product's own public
-// pages already stated the correct Paper 1 tariffs (1, 2, 6, 15), so the site
-// contradicted its own marking engine.
+// REBUILT 19 September 2026, AND WHY. This file used to be AQA's paper with
+// Edexcel's totals written on it (Paper 1: 4, 8, 8, 20 and 24 + 8; Paper 2: 4,
+// 8, 12, 16 and two 28-mark writing tasks). Edexcel students were marked
+// against 8-mark language questions that are 6 marks on their paper and a
+// 20-mark Q4 that is 15, while the product's own public pages already stated
+// the correct tariffs. Question ids saved essays use ('Q5/Q6', 'Q8/Q9') have
+// not changed since.
 //
-// WHAT IS AND IS NOT SOURCED
-//
-// The question structure, tariffs and AO allocations above are the
-// specification's own and reconcile exactly. The level DESCRIPTORS below are
-// written in Pearson's ladder lexis but are not transcribed verbatim from the
-// published mark schemes, and the band widths follow Pearson's generic shapes
-// (Q3 three levels of two, the 15-mark questions five levels of three, AO5 and
-// AO6 five levels each) rather than a document checked line by line.
-//
-// So this scheme is deliberately NOT in src/lib/marking/examiner/verification.ts
-// and derives as `unverified-grid`: the examiner tool badges it red, the prompt
-// tells the model to disclose it, and the student picker warns before use.
-// Promoting it is EXAM-2's job and needs the four published mark schemes
-// (1EN0/01 and 1EN0/02) checked line by line by a person.
-//
-// Sources for the structure:
+// Sources:
 //   https://qualifications.pearson.com/en/qualifications/edexcel-gcses/english-language-2015.html
 //   1EN0 specification Issue 6 (August 2024), "Breakdown of Assessment
-//   Objectives by component".
+//   Objectives by component"; 1EN0/01 and 1EN0/02 mark schemes, Summer 2025.
 // ────────────────────────────────────────────────────────────────────────────
 
 import type { AssessmentObjective, BandDescriptor, MarkScheme } from './types'
 
+/** What a level says, in our own words. */
+interface LevelText {
+  label: string
+  descriptor: string
+  indicators: readonly string[]
+}
+
+/** One of Pearson's levels: the top mark of its range, then what it says. */
+type Level = readonly [top: number, text: LevelText]
+
 /**
- * Build a contiguous level ladder over `max` marks.
+ * A level ladder from the tops of Pearson's levels.
  *
- * Pearson's generic grids divide the mark range into equal levels, so the
- * ranges are computed rather than typed: a hand-typed ladder is how the
- * corpus acquired overlapping and gapped bands elsewhere. The last level
- * always ends on `max`, so the top mark is always awardable.
+ * Each level starts one mark above the previous level's top, so the ladder is
+ * contiguous by construction and starts at 1, and the last top is the grid's
+ * maximum. The tops are the board's, typed from its grid: computing them by
+ * dividing the marks equally is the defect described at the head of this file.
  */
-function ladder(
-  max: number,
-  levels: readonly { label: string; descriptor: string; indicators: readonly string[] }[],
-): BandDescriptor[] {
-  const n = levels.length
+function ladder(levels: readonly Level[]): BandDescriptor[] {
   const out: BandDescriptor[] = []
   let lo = 1
-  for (let i = 0; i < n; i++) {
-    // Spread any remainder across the lower levels, which is how Pearson's
-    // uneven grids (14 marks over five levels) actually sit.
-    const hi = i === n - 1 ? max : Math.round(((i + 1) * max) / n)
-    const l = levels[i]!
-    out.push({
-      band: `Level ${i + 1}`,
-      minMarks: lo,
-      maxMarks: hi,
-      label: l.label,
-      descriptor: l.descriptor,
-      indicators: l.indicators,
-    })
-    lo = hi + 1
-  }
+  levels.forEach(([top, text], i) => {
+    out.push({ band: `Level ${i + 1}`, minMarks: lo, maxMarks: top, ...text })
+    lo = top + 1
+  })
   return out
 }
 
+/**
+ * A levelled objective. Its marks are the top of its last level, so the grid
+ * always reaches the marks it claims; `weighting` is its share of the question.
+ */
+function grid(
+  id: string,
+  label: string,
+  description: string,
+  questionMarks: number,
+  levels: readonly Level[],
+): AssessmentObjective {
+  const bands = ladder(levels)
+  const maxMarks = bands[bands.length - 1]!.maxMarks
+  return { id, label, description, maxMarks, weighting: maxMarks / questionMarks, bands }
+}
+
 // ─── Reading objectives ─────────────────────────────────────────────────────
+// The objectives' statements are the specification's; everything else is ours.
 
 const AO1_DESC =
   'Identify and interpret explicit and implicit information and ideas; select and synthesise evidence from different texts.'
@@ -107,268 +167,413 @@ const AO5_DESC =
 const AO6_DESC =
   'Use a range of vocabulary and sentence structures for clarity, purpose and effect, with accurate spelling and punctuation.'
 
-/** AO1 short-answer retrieval. One object per question, because the tariffs differ. */
-function ao1Retrieval(max: number, paperMax: number): AssessmentObjective {
+/**
+ * AO1 short-answer retrieval: a mark for each acceptable answer, no levels.
+ * The single band is the shape the type requires; it is named "Points", not
+ * "Level 1", because these questions have no levels.
+ */
+function ao1Retrieval(max: number): AssessmentObjective {
   return {
     id: 'AO1',
     label: 'AO1 - Identify and interpret',
     description: AO1_DESC,
     maxMarks: max,
-    weighting: max / paperMax,
-    // One mark per acceptable point, so no levelled grid. Two bands keep the
-    // shape the type requires without implying a ladder that does not exist.
+    weighting: 1,
     bands: [
       {
-        band: 'Level 1',
+        band: 'Points',
         minMarks: 1,
         maxMarks: max,
-        label: 'Points credited',
-        descriptor: `One mark for each acceptable point drawn from the specified lines, to a maximum of ${max}.`,
-        indicators: [
-          'The point comes from the lines named in the question',
-          'The point is distinct from one already credited',
-        ],
+        label: 'One mark per acceptable answer',
+        descriptor: `One mark for each acceptable answer drawn from the lines the question names, to a maximum of ${max}.`,
+        indicators:
+          max > 1
+            ? [
+                'Each answer comes from the named lines',
+                'Each answer is different from one already credited',
+              ]
+            : ['The answer comes from the named lines'],
       },
     ],
   }
 }
 
-/** AO2 language analysis. Paper 1 Q3 is 6 marks; Paper 2 Q3 is 15. */
-function ao2Language(max: number, paperMax: number, levels: 3 | 5): AssessmentObjective {
-  const three = [
+/** Paper 1 Question 3: three levels of two marks, both language and structure from Level 2. */
+const P1_Q3_LEVELS: readonly Level[] = [
+  [
+    2,
     {
-      label: 'Basic',
+      label: 'Comment',
       descriptor:
-        'Basic identification of language features with little or no comment on effect. Little or no use of subject terminology.',
-      indicators: ['Names a device without explaining its effect', 'Textual reference is thin'],
-    },
-    {
-      label: 'Some understanding',
-      descriptor:
-        'Some understanding of how language is used to achieve effects. Some accurate use of subject terminology.',
-      indicators: ['Comments briefly on the effect of a choice', 'Uses relevant quotation'],
-    },
-    {
-      label: 'Clear analysis',
-      descriptor:
-        'Clear analysis of how language is used to achieve effects, supported by well-chosen references. Accurate and relevant subject terminology.',
+        'Comments on the language or the structure of the section, with relevant references that are not developed; points are explained only briefly.',
       indicators: [
-        'Explains how the choice works on the reader',
-        'Terminology is embedded and purposeful',
+        'A few points on the writing, each briefly explained',
+        'Quotations are relevant but not explored',
+        'An answer on language only, or structure only, stays in this level',
       ],
     },
-  ]
-  const five = [
-    ...three.slice(0, 3),
+  ],
+  [
+    4,
     {
-      label: 'Thorough analysis',
+      label: 'Explanation',
       descriptor:
-        'Thorough analysis of language and structure, exploring how choices shape meaning across the text. Terminology is precise.',
+        'Explains how both the language and the structure of the section create effects on the reader, with references that fit the points being made.',
       indicators: [
-        'Connects choices across the whole text',
-        'Discriminates between similar techniques',
+        'Covers both language and structure',
+        'Each reference is followed by its effect',
+        'Subject terms used accurately where they help',
       ],
     },
+  ],
+  [
+    6,
     {
-      label: 'Perceptive analysis',
+      label: 'Analysis',
       descriptor:
-        "Perceptive, detailed analysis of layered meanings and the cumulative effect of the writer's choices. Terminology is used with precision throughout.",
+        'Analyses closely how both the language and the structure work on the reader, with detailed, well-chosen references that sharpen every point.',
       indicators: [
-        'Analyses connotation and implication, not only device',
+        'Close analysis of word choices and of structural choices',
+        'References are precise and back every point',
+      ],
+    },
+  ],
+]
+
+/** Paper 2 Question 3: five levels of three marks, both language and structure from Level 3. */
+const P2_Q3_LEVELS: readonly Level[] = [
+  [
+    3,
+    {
+      label: 'Limited comment',
+      descriptor:
+        'Says a little about the text and identifies some features, with few references and little sense of their effect.',
+      indicators: ['Features are named rather than explained', 'References are thin'],
+    },
+  ],
+  [
+    6,
+    {
+      label: 'Comment',
+      descriptor:
+        'Comments on how the writing works, with references that fit but are not explored. An answer on language only, or structure only, goes no higher than this level.',
+      indicators: ['Some comment on effect', 'Quotations are relevant but undeveloped'],
+    },
+  ],
+  [
+    9,
+    {
+      label: 'Explanation',
+      descriptor:
+        'Explains how both the language and the structure create effects on the reader, with well-matched references and relevant subject terms.',
+      indicators: [
+        'Both language and structure are covered',
+        'Effects are explained, not only named',
+      ],
+    },
+  ],
+  [
+    12,
+    {
+      label: 'Exploration',
+      descriptor:
+        'Explores both the language and the structure in detail, with plenty of well-chosen references supporting each point.',
+      indicators: [
+        "Connects the writer's choices across the text",
+        'Terminology is accurate and purposeful',
+      ],
+    },
+  ],
+  [
+    15,
+    {
+      label: 'Insightful analysis',
+      descriptor:
+        'Analyses both the language and the structure with insight, using carefully selected references that sharpen every point.',
+      indicators: [
+        "Layered readings of the writer's choices",
         'References are exact and integrated',
       ],
     },
-  ]
-  return {
-    id: 'AO2',
-    label: 'AO2 - Analyse language and structure',
-    description: AO2_DESC,
-    maxMarks: max,
-    weighting: max / paperMax,
-    bands: ladder(max, levels === 3 ? three : five),
-  }
-}
+  ],
+]
 
-/** AO3 comparison of ideas and perspectives across two texts. Paper 2 Q7b, 14 marks. */
-function ao3Comparison(max: number, paperMax: number): AssessmentObjective {
-  return {
-    id: 'AO3',
-    label: "AO3 - Compare writers' ideas and perspectives",
-    description: AO3_DESC,
-    maxMarks: max,
-    weighting: max / paperMax,
-    bands: ladder(max, [
-      {
-        label: 'Basic',
-        descriptor:
-          'Basic comparison of ideas or perspectives. Points are largely about one text at a time.',
-        indicators: ['Describes each text in turn', 'Little comparative language'],
-      },
-      {
-        label: 'Some comparison',
-        descriptor:
-          'Some comparison of ideas and perspectives, with some comment on how they are conveyed.',
-        indicators: ['Some linking of the two texts', 'Some supporting reference'],
-      },
-      {
-        label: 'Clear comparison',
-        descriptor:
-          'Clear comparison of ideas and perspectives and of the methods used to convey them, supported by relevant references from both texts.',
-        indicators: ['Sustains comparison across the response', 'Both texts are evidenced'],
-      },
-      {
-        label: 'Thorough comparison',
-        descriptor:
-          'Thorough comparison, examining similarity and difference in perspective and in the means of conveying it.',
-        indicators: ['Weighs the two perspectives against each other', 'References are apt'],
-      },
-      {
-        label: 'Perceptive comparison',
-        descriptor:
-          "Perceptive comparison that discriminates between the writers' positions and the effects of their methods.",
-        indicators: ['Comparison drives the argument', 'Evidence is precise and integrated'],
-      },
-    ]),
-  }
-}
+/**
+ * Paper 1 Question 4 and Paper 2 Question 6: five levels of three marks. From
+ * Level 2, a technique counts only where it supports the judgement.
+ */
+const EVALUATION_LEVELS: readonly Level[] = [
+  [
+    3,
+    {
+      label: 'Description',
+      descriptor:
+        'Mostly describes the content of the text. Views are given without reasons, and references are few.',
+      indicators: ['Retells rather than evaluates', 'Opinions are asserted, not supported'],
+    },
+  ],
+  [
+    6,
+    {
+      label: 'Simple judgement',
+      descriptor:
+        'Comments on the content and offers simple judgements, supported by references that fit but are not explored.',
+      indicators: [
+        'A view is given and partly supported',
+        'A technique counts only where it supports the judgement',
+      ],
+    },
+  ],
+  [
+    9,
+    {
+      label: 'Reasoned judgement',
+      descriptor:
+        'Explains how the writing creates the effect the question names and gives a reasoned view of how well it works, with suitable references.',
+      indicators: [
+        'Responds to the effect the question names',
+        'References are chosen to back the judgement',
+      ],
+    },
+  ],
+  [
+    12,
+    {
+      label: 'Developed judgement',
+      descriptor:
+        'Analyses the text and develops a well-argued judgement of how successful it is, with detailed references supporting every point.',
+      indicators: [
+        'The judgement is sustained across the answer',
+        "The writer's methods are discussed as evidence for the judgement",
+      ],
+    },
+  ],
+  [
+    15,
+    {
+      label: 'Critical judgement',
+      descriptor:
+        'Evaluates the text as a whole with a consistent, thoughtful judgement, and every reference is chosen to make the argument convincing.',
+      indicators: [
+        'A discriminating view of how far the writer succeeds',
+        'The argument builds from point to point',
+      ],
+    },
+  ],
+]
 
-/** AO4 critical evaluation. Paper 1 Q4 and Paper 2 Q6 are 15 marks each. */
-function ao4Evaluation(max: number, paperMax: number): AssessmentObjective {
-  return {
-    id: 'AO4',
-    label: 'AO4 - Evaluate critically',
-    description: AO4_DESC,
-    maxMarks: max,
-    weighting: max / paperMax,
-    bands: ladder(max, [
-      {
-        label: 'Basic',
-        descriptor:
-          'Basic evaluation of the text, with assertion rather than judgement. Textual reference is limited.',
-        indicators: ['Agrees or disagrees without reasons', 'Retells rather than evaluates'],
-      },
-      {
-        label: 'Some evaluation',
-        descriptor:
-          'Some evaluation supported by textual reference, with some awareness of the writer at work.',
-        indicators: ['Offers a view and part-supports it', 'Some relevant quotation'],
-      },
-      {
-        label: 'Clear evaluation',
-        descriptor:
-          "Clear and relevant evaluation of the text, supported by appropriate references, showing understanding of the writer's methods.",
-        indicators: [
-          'Responds to the statement in the question',
-          'References chosen to support judgement',
-        ],
-      },
-      {
-        label: 'Thorough evaluation',
-        descriptor:
-          'Thorough evaluation, sustained across the section named in the question, with well-selected references.',
-        indicators: ['Evaluates method as well as content', 'Judgement is consistent'],
-      },
-      {
-        label: 'Perceptive evaluation',
-        descriptor:
-          'Perceptive, critical evaluation of how the writer achieves effects, with precisely chosen references.',
-        indicators: ["Discriminating judgement on the writer's choices", 'Argument is cumulative'],
-      },
-    ]),
-  }
-}
+/** Paper 2 Question 7(a): three levels of two marks, on similarities drawn from both texts. */
+const Q7A_LEVELS: readonly Level[] = [
+  [
+    2,
+    {
+      label: 'Limited synthesis',
+      descriptor:
+        'Identifies one or two similarities between the texts but links them only loosely, with little evidence from either.',
+      indicators: [
+        'Similarities are stated in general terms',
+        'Evidence is thin, or comes mostly from one text',
+      ],
+    },
+  ],
+  [
+    4,
+    {
+      label: 'Sound synthesis',
+      descriptor:
+        'Identifies sensible similarities and brings the two texts together clearly, with suitable evidence, though one text may receive more attention than the other.',
+      indicators: [
+        'Each point names something the texts share',
+        'Evidence is given from both texts',
+      ],
+    },
+  ],
+  [
+    6,
+    {
+      label: 'Detailed synthesis',
+      descriptor:
+        'Identifies well-observed similarities and combines the two texts throughout, with well-chosen evidence from both.',
+      indicators: [
+        'Every point draws on both texts',
+        'The evidence is apt and brought together, not listed text by text',
+      ],
+    },
+  ],
+]
+
+/** Paper 2 Question 7(b): Pearson's five levels, 1-2, 3-5, 6-8, 9-11, 12-14. */
+const Q7B_LEVELS: readonly Level[] = [
+  [
+    2,
+    {
+      label: 'Little comparison',
+      descriptor:
+        "Describes what each text is about with little real comparison of the writers' ideas, and few references.",
+      indicators: ['Each text is dealt with separately', 'Little comparative language'],
+    },
+  ],
+  [
+    5,
+    {
+      label: 'Obvious comparisons',
+      descriptor:
+        "Makes the more obvious comparisons and comments on the writers' views, with references that fit but are not explored. An answer that considers only one text in detail goes no higher than this level.",
+      indicators: ['Some links between the texts', 'Views are identified rather than explained'],
+    },
+  ],
+  [
+    8,
+    {
+      label: 'Clear comparison',
+      descriptor:
+        "Makes a range of comparisons and explains each writer's ideas and perspectives and how they are conveyed, with well-matched references from both texts.",
+      indicators: ['Comparison is sustained across the answer', 'Both texts are evidenced'],
+    },
+  ],
+  [
+    11,
+    {
+      label: 'Developed comparison',
+      descriptor:
+        'Compares the texts on many points and explores how each writer conveys their perspective, with references drawn evenly from both.',
+      indicators: [
+        'Weighs the two perspectives against each other',
+        'Methods are compared as well as ideas',
+      ],
+    },
+  ],
+  [
+    14,
+    {
+      label: 'Perceptive comparison',
+      descriptor:
+        'Compares the texts in depth and from many angles, analysing how each writer conveys their perspective, with precisely chosen evidence from both.',
+      indicators: ['Comparison drives the whole argument', 'Evidence is precise and balanced'],
+    },
+  ],
+]
 
 // ─── Writing objectives ─────────────────────────────────────────────────────
 
-/** AO5 communication and organisation. 24 marks on both papers. */
-function ao5Writing(max: number, paperMax: number): AssessmentObjective {
-  return {
-    id: 'AO5',
-    label: 'AO5 - Communicate and organise',
-    description: AO5_DESC,
-    maxMarks: max,
-    weighting: max / paperMax,
-    bands: ladder(max, [
-      {
-        label: 'Basic',
-        descriptor:
-          'Basic communication with limited awareness of purpose, form or audience. Little structural control.',
-        indicators: ['Register is not adapted', 'Ideas are listed rather than organised'],
-      },
-      {
-        label: 'Some control',
-        descriptor:
-          'Some communication of ideas with some awareness of purpose, form and audience. Some structural features used.',
-        indicators: ['Attempts the form asked for', 'Paragraphs are present but uneven'],
-      },
-      {
-        label: 'Clear control',
-        descriptor:
-          'Clear, effective communication, with tone, style and register adapted to purpose, form and audience. Coherent organisation.',
-        indicators: ['Form and register sustained', 'Paragraphing supports the argument'],
-      },
-      {
-        label: 'Thorough control',
-        descriptor:
-          'Thoroughly effective communication, with well-judged adaptation of tone and style and a clear structural design.',
-        indicators: ['Openings and endings are deliberate', 'Cohesive devices are varied'],
-      },
-      {
-        label: 'Perceptive control',
-        descriptor:
-          'Communication is convincing and consistently controlled; structure is shaped for effect throughout.',
-        indicators: ['Structure serves meaning', 'Voice is assured and sustained'],
-      },
-    ]),
-  }
-}
+/** AO5 on both papers: Pearson's five levels, 1-4, 5-9, 10-14, 15-19, 20-24. */
+const AO5_LEVELS: readonly Level[] = [
+  [
+    4,
+    {
+      label: 'Limited',
+      descriptor:
+        'Some ideas are communicated, but with little sense of the audience or the purpose, and the writing is loosely organised.',
+      indicators: ['The register does not suit the task', 'Ideas are listed rather than shaped'],
+    },
+  ],
+  [
+    9,
+    {
+      label: 'Some awareness',
+      descriptor:
+        'Shows awareness of the purpose and the audience in a simple, consistent tone; ideas follow in order, in paragraphs, with some linking.',
+      indicators: ['Attempts the form asked for', 'Paragraphs are present, links are basic'],
+    },
+  ],
+  [
+    14,
+    {
+      label: 'Clear',
+      descriptor:
+        'Ideas and techniques are chosen to suit the purpose, audience and form, the tone fits, and paragraphs build one idea on another so the writing is easy to follow.',
+      indicators: [
+        'Form and register are sustained',
+        'Paragraphing supports the development of ideas',
+      ],
+    },
+  ],
+  [
+    19,
+    {
+      label: 'Deliberate',
+      descriptor:
+        'The writing is shaped deliberately to affect the reader, tone and style are well judged, and the structure is controlled from start to finish.',
+      indicators: ['Openings and endings are deliberate', 'Structural choices are made for effect'],
+    },
+  ],
+  [
+    24,
+    {
+      label: 'Assured',
+      descriptor:
+        "The writing steers the reader's response in subtle ways, the voice is confident throughout, and complex ideas are organised so the whole piece holds together.",
+      indicators: ['Structure serves meaning throughout', 'The voice is assured and sustained'],
+    },
+  ],
+]
 
-/** AO6 vocabulary, sentence structures and technical accuracy. 16 marks. */
-function ao6Technical(max: number, paperMax: number): AssessmentObjective {
-  return {
-    id: 'AO6',
-    label: 'AO6 - Vocabulary, sentences and accuracy',
-    description: AO6_DESC,
-    maxMarks: max,
-    weighting: max / paperMax,
-    bands: ladder(max, [
-      {
-        label: 'Basic',
-        descriptor:
-          'Simple vocabulary and sentence structures. Frequent errors in spelling and punctuation that impede meaning.',
-        indicators: ['Sentence demarcation is unreliable', 'Vocabulary is repetitive'],
-      },
-      {
-        label: 'Some range',
-        descriptor:
-          'Some range of vocabulary and sentence structures. Errors are noticeable but meaning is usually clear.',
-        indicators: ['Some variety of sentence opening', 'Common words mostly spelt correctly'],
-      },
-      {
-        label: 'Clear range',
-        descriptor:
-          'A clear range of vocabulary and sentence structures used for effect. Spelling and punctuation are generally accurate.',
-        indicators: ['Sentence forms are varied purposefully', 'Punctuation is mostly secure'],
-      },
-      {
-        label: 'Wide range',
-        descriptor:
-          'A wide range of vocabulary and sentence structures chosen for clarity, purpose and effect. Accuracy is secure.',
-        indicators: ['Ambitious vocabulary used precisely', 'A range of punctuation used well'],
-      },
-      {
-        label: 'Extensive range',
-        descriptor:
-          'Extensive and ambitious vocabulary and a full range of sentence structures, with consistently accurate spelling and punctuation.',
-        indicators: ['Errors are rare and do not impede', 'Choices are consistently deliberate'],
-      },
-    ]),
-  }
+/**
+ * AO6 on both papers: Pearson's five levels from the June 2024 series, 1-4,
+ * 5-7, 8-10, 11-13, 14-16.
+ */
+const AO6_LEVELS: readonly Level[] = [
+  [
+    4,
+    {
+      label: 'Basic',
+      descriptor:
+        'Simple, everyday vocabulary with frequent spelling errors; punctuation is insecure, and sentences are short or repeat the same pattern.',
+      indicators: ['Sentence boundaries are often missed', 'Vocabulary is limited and repetitive'],
+    },
+  ],
+  [
+    7,
+    {
+      label: 'Some control',
+      descriptor:
+        'Everyday words are mostly spelt correctly, punctuation is mostly accurate, and sentences vary, including some joined with words such as because or although.',
+      indicators: ['Some variety of sentence forms', 'Common words are spelt correctly'],
+    },
+  ],
+  [
+    10,
+    {
+      label: 'Clear control',
+      descriptor:
+        'Vocabulary is well chosen, more complex words are mostly spelt correctly, a mix of punctuation is used accurately, and sentences are shaped to suit the purpose.',
+      indicators: ['Sentence forms are varied on purpose', 'Punctuation is mostly secure'],
+    },
+  ],
+  [
+    13,
+    {
+      label: 'Secure range',
+      descriptor:
+        'Vocabulary is selected with care from a wide range, with only occasional spelling slips; punctuation makes meaning clear, and sentences are built with a purpose in mind.',
+      indicators: ['Ambitious words are used precisely', 'A range of punctuation is used well'],
+    },
+  ],
+  [
+    16,
+    {
+      label: 'Extensive range',
+      descriptor:
+        'Ambitious vocabulary is used with purpose, errors are so rare that they never get in the way, and punctuation is precise, with a full range of sentence forms each chosen for its effect.',
+      indicators: ['Errors are rare and minor', 'Choices are consistently deliberate'],
+    },
+  ],
+]
+
+const AO2_LABEL = 'AO2 - Analyse language and structure'
+const AO4_LABEL = 'AO4 - Evaluate critically'
+const AO5_LABEL = 'AO5 - Communicate and organise'
+const AO6_LABEL = 'AO6 - Vocabulary, sentences and accuracy'
+
+/** The two writing objectives of a 40-mark writing task, each on its own grid. */
+function writingObjectives(): AssessmentObjective[] {
+  return [
+    grid('AO5', AO5_LABEL, AO5_DESC, 40, AO5_LEVELS),
+    grid('AO6', AO6_LABEL, AO6_DESC, 40, AO6_LEVELS),
+  ]
 }
 
 // ─── Paper 1: Fiction and Imaginative Writing (64 marks) ─────────────────────
-
-const P1 = 64
 
 export const edexcelLangPaper1: MarkScheme = {
   id: 'edexcel-lang-paper1',
@@ -376,7 +581,7 @@ export const edexcelLangPaper1: MarkScheme = {
   subject: 'English Language',
   paper: 'Paper 1',
   title: 'Fiction and Imaginative Writing',
-  totalMarks: P1,
+  totalMarks: 64,
   durationMinutes: 105,
   version: '1EN0/01',
   sourceUrl:
@@ -386,56 +591,56 @@ export const edexcelLangPaper1: MarkScheme = {
       id: 'Q1',
       questionType: 'Information retrieval',
       taskDescription:
-        'From lines named in the question, identify one piece of explicit information. 1 mark.',
+        'From the few lines of the extract that the question names, give one detail, usually a word or short phrase showing something about a character, a place or a moment. 1 mark.',
       totalMarks: 1,
-      assessmentObjectives: [ao1Retrieval(1, P1)],
+      assessmentObjectives: [ao1Retrieval(1)],
       examinerNotes:
-        'One mark for one acceptable point. Nothing is deducted for additional wrong material offered alongside a correct answer.',
+        'One mark for one acceptable answer taken from the lines the question names. A single word or a short quotation is enough, and no explanation is needed.',
     },
     {
       id: 'Q2',
       questionType: 'Information retrieval',
-      taskDescription: 'From the lines named in the question, give two pieces of information.',
+      taskDescription:
+        "From a short section of the extract, which the question names by line number or prints, give two pieces of information, in quotation or in the candidate's own words. 2 marks.",
       totalMarks: 2,
-      assessmentObjectives: [ao1Retrieval(2, P1)],
-      examinerNotes: 'One mark per acceptable point. Points must be distinct from one another.',
+      assessmentObjectives: [ao1Retrieval(2)],
+      examinerNotes:
+        "One mark for each acceptable answer from the named lines, up to 2. Quotations and the candidate's own words are both acceptable. The two answers must be different: a second that repeats the first in other words earns nothing.",
     },
     {
       id: 'Q3',
       questionType: 'Language and structure analysis',
       taskDescription:
-        'Analyse how the writer uses language and structure in the named lines to achieve effects.',
+        "Analyse the writer's use of language and structure in a short section of the extract, named by line number or printed with the question, to show what the question asks about, such as what a character feels or experiences. 6 marks.",
       totalMarks: 6,
-      assessmentObjectives: [ao2Language(6, P1, 3)],
+      assessmentObjectives: [grid('AO2', AO2_LABEL, AO2_DESC, 6, P1_Q3_LEVELS)],
       examinerNotes:
-        'Three levels of two marks. Reward analysis of effect rather than identification of device.',
+        'Pearson marks this on three levels of two marks. Level 2 and above need analysis of both language and structure: an answer that considers only language, or only structure, cannot go above the top of Level 1 (2 marks), and nor can one that is unbalanced between them. Naming a feature without its effect earns little.',
     },
     {
       id: 'Q4',
       questionType: 'Critical evaluation',
       taskDescription:
-        'Evaluate how successfully the writer achieves a stated effect in a named section of the text, supporting your views with detailed reference.',
+        'The question names an effect the writer attempts in the extract, such as mystery, tension or sympathy for a character, and asks how successfully it is achieved. Give a judgement, supported by detailed references to the text. The June 2023 to June 2025 papers all asked about the extract as a whole. 15 marks.',
       totalMarks: 15,
-      assessmentObjectives: [ao4Evaluation(15, P1)],
+      assessmentObjectives: [grid('AO4', AO4_LABEL, AO4_DESC, 15, EVALUATION_LEVELS)],
       examinerNotes:
-        'Five levels of three marks. The question names a section; material from outside it is not rewarded.',
+        "Pearson marks this on five levels of three marks. From Level 2 upwards, references to the writer's techniques earn credit only where they support the judgement of how successfully the effect is achieved: analysis of technique for its own sake does not raise the mark.",
     },
     {
       id: 'Q5/Q6',
       questionType: 'Imaginative writing (choice of one)',
       taskDescription:
-        'Answer ONE of the two imaginative writing tasks. AO5 is marked out of 24 and AO6 out of 16, levelled separately and summed.',
+        'Answer ONE of the two imaginative writing tasks: a narrative, a description or a monologue, real or imagined. One task offers two pictures, which may be used as a stimulus or not. AO5 is marked out of 24 and AO6 out of 16, each on its own five levels, and the two marks are added. 40 marks.',
       totalMarks: 40,
-      assessmentObjectives: [ao5Writing(24, P1), ao6Technical(16, P1)],
+      assessmentObjectives: writingObjectives(),
       examinerNotes:
-        'The candidate answers one task, not both. Mark the one attempted; where both are attempted, mark the better and say so.',
+        'The paper asks for one of the two tasks. Pearson marks AO5 (24 marks) and AO6 (16 marks) separately, each on its own grid of five levels, and adds the two marks.',
     },
   ],
 }
 
 // ─── Paper 2: Non-fiction and Transactional Writing (96 marks) ───────────────
-
-const P2 = 96
 
 export const edexcelLangPaper2: MarkScheme = {
   id: 'edexcel-lang-paper2',
@@ -443,7 +648,7 @@ export const edexcelLangPaper2: MarkScheme = {
   subject: 'English Language',
   paper: 'Paper 2',
   title: 'Non-fiction and Transactional Writing',
-  totalMarks: P2,
+  totalMarks: 96,
   durationMinutes: 125,
   version: '1EN0/02',
   sourceUrl:
@@ -452,82 +657,96 @@ export const edexcelLangPaper2: MarkScheme = {
     {
       id: 'Q1',
       questionType: 'Information retrieval (Text 1)',
-      taskDescription: 'From the named lines of Text 1, give two pieces of information.',
+      taskDescription:
+        'From the lines of Text 1 that the question names, give two pieces of information, for example two places or two activities the writer mentions. 2 marks.',
       totalMarks: 2,
-      assessmentObjectives: [ao1Retrieval(2, P2)],
-      examinerNotes: 'One mark per acceptable point.',
+      assessmentObjectives: [ao1Retrieval(2)],
+      examinerNotes:
+        'One mark for each acceptable answer from the named lines of Text 1, up to 2. A word or a short phrase is enough; explanation earns nothing extra.',
     },
     {
       id: 'Q2',
       questionType: 'Information retrieval (Text 1)',
-      taskDescription: 'From the named lines of Text 1, give two further pieces of information.',
+      taskDescription:
+        "From a short section of Text 1, which the question names by line number or prints, give two pieces of information, in quotation or in the candidate's own words. 2 marks.",
       totalMarks: 2,
-      assessmentObjectives: [ao1Retrieval(2, P2)],
-      examinerNotes: 'One mark per acceptable point.',
+      assessmentObjectives: [ao1Retrieval(2)],
+      examinerNotes:
+        "One mark for each acceptable answer from the named lines, up to 2. Quotations and the candidate's own words are both acceptable. The two answers must be different.",
     },
     {
       id: 'Q3',
       questionType: 'Language and structure analysis (Text 1)',
       taskDescription:
-        'Analyse how the writer of Text 1 uses language and structure to achieve effects.',
+        "Analyse the language and the structure of Text 1 and how the writer uses them to hold the reader's interest. Recent papers have set the whole of Text 1. 15 marks.",
       totalMarks: 15,
-      assessmentObjectives: [ao2Language(15, P2, 5)],
-      examinerNotes: 'Five levels of three marks.',
+      assessmentObjectives: [grid('AO2', AO2_LABEL, AO2_DESC, 15, P2_Q3_LEVELS)],
+      examinerNotes:
+        'Pearson marks this on five levels of three marks. An answer that considers only language, or only structure, cannot go above the top of Level 2 (6 marks), and an answer that is unbalanced between language and structure cannot reach Level 3.',
     },
     {
       id: 'Q4',
       questionType: 'Information retrieval (Text 2)',
-      taskDescription: 'From the named lines of Text 2, give one piece of information.',
+      taskDescription:
+        'From the lines of Text 2 that the question names, give one piece of information. 1 mark.',
       totalMarks: 1,
-      assessmentObjectives: [ao1Retrieval(1, P2)],
-      examinerNotes: 'One mark for one acceptable point.',
+      assessmentObjectives: [ao1Retrieval(1)],
+      examinerNotes:
+        "One mark for one acceptable answer from the named lines of Text 2. A quotation or the candidate's own words are both acceptable.",
     },
     {
       id: 'Q5',
       questionType: 'Information retrieval (Text 2)',
-      taskDescription: 'From the named lines of Text 2, give one further piece of information.',
+      taskDescription:
+        'From a different set of lines in Text 2, named in the question, give one piece of information. 1 mark.',
       totalMarks: 1,
-      assessmentObjectives: [ao1Retrieval(1, P2)],
-      examinerNotes: 'One mark for one acceptable point.',
+      assessmentObjectives: [ao1Retrieval(1)],
+      examinerNotes:
+        "One mark for one acceptable answer from the named lines of Text 2. A quotation or the candidate's own words are both acceptable.",
     },
     {
       id: 'Q6',
       questionType: 'Critical evaluation (Text 2)',
       taskDescription:
-        'Evaluate how successfully the writer of Text 2 achieves a stated effect, supporting your views with detailed reference.',
+        'The question names something the writer of Text 2 sets out to do, such as building a sense of danger or making the reader sympathise, and asks how successfully it is done. Give a judgement, supported by detailed references to Text 2. 15 marks.',
       totalMarks: 15,
-      assessmentObjectives: [ao4Evaluation(15, P2)],
-      examinerNotes: 'Five levels of three marks.',
+      assessmentObjectives: [grid('AO4', AO4_LABEL, AO4_DESC, 15, EVALUATION_LEVELS)],
+      examinerNotes:
+        "Pearson marks this on five levels of three marks. From Level 2 upwards, references to the writer's techniques earn credit only where they support the judgement of how successfully the writer achieves the aim: analysis of technique for its own sake does not raise the mark. The question is about Text 2 alone.",
     },
     {
       id: 'Q7a',
       questionType: 'Synthesis across both texts',
       taskDescription:
-        'Using both texts, identify and synthesise the similarities or differences the question names.',
+        'Using evidence from both texts, set out the similarities the question asks about, for example between the people, places or experiences the two writers describe, bringing the evidence from the two texts together in each point. 6 marks.',
       totalMarks: 6,
-      assessmentObjectives: [ao1Retrieval(6, P2)],
+      assessmentObjectives: [
+        grid('AO1', 'AO1 - Select and synthesise evidence', AO1_DESC, 6, Q7A_LEVELS),
+      ],
       examinerNotes:
-        'Reward points drawn from both texts. A point supported from one text only is still creditable where the question allows.',
+        'Both texts must be drawn on for any mark: an answer that uses one text only scores 0. Credit similarities, which is what the question asks for and what every level describes. Pearson marks this on three levels of two marks, judged on the understanding of the similarities and how well the evidence from the two texts is brought together, not a mark per point. It is AO1 alone: analysis of language is not assessed here.',
     },
     {
       id: 'Q7b',
       questionType: "Comparison of writers' ideas and perspectives",
       taskDescription:
-        'Compare how the writers of Text 1 and Text 2 present their ideas and perspectives, and how these are conveyed.',
+        "Compare the two writers' ideas and perspectives on the topic they share, and the methods each uses to convey them, with references from both texts. 14 marks.",
       totalMarks: 14,
-      assessmentObjectives: [ao3Comparison(14, P2)],
+      assessmentObjectives: [
+        grid('AO3', "AO3 - Compare writers' ideas and perspectives", AO3_DESC, 14, Q7B_LEVELS),
+      ],
       examinerNotes:
-        'Both texts must be addressed. A response on one text alone is capped in the lowest level that its quality allows.',
+        'Both texts must be compared. An answer that considers only one text in detail cannot go above the top of Level 2 (5 marks), and an answer that is unbalanced between the two texts cannot reach Level 3. Reward comparison of the ideas and perspectives and of the methods that convey them.',
     },
     {
       id: 'Q8/Q9',
       questionType: 'Transactional writing (choice of one)',
       taskDescription:
-        'Answer ONE of the two transactional writing tasks. AO5 is marked out of 24 and AO6 out of 16, levelled separately and summed.',
+        'Answer ONE of the two transactional writing tasks, in the form and for the audience and purpose the task sets: for example an article, a letter, a review, a speech or a section of a guide that informs, advises or persuades. AO5 is marked out of 24 and AO6 out of 16, each on its own five levels, and the two marks are added. 40 marks.',
       totalMarks: 40,
-      assessmentObjectives: [ao5Writing(24, P2), ao6Technical(16, P2)],
+      assessmentObjectives: writingObjectives(),
       examinerNotes:
-        'The candidate answers one task, not both. A response in the wrong form is not over-penalised: it loses the form marks within AO5 and nothing further.',
+        'The paper asks for one of the two tasks. Pearson marks AO5 (24 marks) and AO6 (16 marks) separately, each on its own grid of five levels, and adds the two marks.',
     },
   ],
 }

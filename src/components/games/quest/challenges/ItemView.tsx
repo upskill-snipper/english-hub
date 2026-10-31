@@ -111,7 +111,7 @@ export function ItemView(props: ChallengeProps) {
           <Question headingRef={headingRef} eyebrow={t('quest.kind.method')}>
             {t('text_games.q.method')}
           </Question>
-          <QuoteCard>{item.example}</QuoteCard>
+          <QuoteCard>{item.quoted}</QuoteCard>
           {options}
         </div>
       )

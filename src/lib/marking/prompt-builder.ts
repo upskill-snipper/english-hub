@@ -123,7 +123,7 @@ function buildSystemPrompt(
     `7. Write 2-3 NEXT STEPS the student can take to move into the next grade band.`,
     `8. Write a holistic 2-3 sentence summary of the response.`,
     ``,
-    `RESPONSE CONTRACT - respond with ONLY a valid JSON object (no markdown, no code fences, no prose outside the JSON). Use exactly this shape:`,
+    `RESPONSE CONTRACT - respond with ONLY a valid JSON object (no markdown, no code fences, no prose outside the JSON). "aoScores" has one entry for each Assessment Objective heading above, its "id" exactly as the heading begins ("AO1", or a grid's combined id such as "AO1+AO3"): a grid that covers several objectives is ONE entry, never split into its objectives. Use exactly this shape:`,
     `{`,
     `  "aoScores": [`,
     `    {`,

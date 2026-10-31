@@ -2,6 +2,33 @@
 // Explorations in Creative Reading and Writing - 1 hour 45 minutes, 80 marks.
 // Based on the AQA 8700 specification.
 //
+// CORRECTED 24 October 2026, with the founder's approval (document 30). The
+// mark-scheme guide for this paper (src/data/mark-scheme-guides/aqa-lang-paper1.ts),
+// written and checked against AQA's 8700/1 sample question paper and mark
+// scheme (version 1.1, Sample set 1, first exam June 2026) and the 8700
+// specification (version 1.6, March 2026), found that this data had not
+// followed AQA's summer 2026 rewording. The paper's 80 marks, every
+// question's marks and objectives, and the level ranges of Q2 to Q5 already
+// agreed and are unchanged. What changed:
+//   - Q1 is four multiple-choice parts, 1.1 to 1.4, a mark for each correct
+//     answer and no levels. It was "list four things" on a four-level ladder
+//     ending "Level 4: Perceptive" for one mark, which neither form of AQA's
+//     question has: the list it replaced was also a mark a point, and an
+//     answer in that form is still marked that way.
+//   - Q2's note said "Precise quotation is essential at Level 3+"; AQA's
+//     Level 3 asks for a range of relevant detail and sets no quotation
+//     rule. The cap for an answer only about lines outside the ones printed
+//     in the question (Level 2 at most) was missing.
+//   - Q3 asks how the whole source is structured to create one effect the
+//     question names (tension, on the sample), not to interest the reader.
+//   - Q4 asks how far you agree and/or disagree with a view about a part of
+//     the source the question names.
+//   - Q5 is a description, any picture given for ideas only, or narrative
+//     writing (the opening of a story, on the sample); the cap of 12 of 24
+//     for AO5 when the writing does not address the focus of the task was
+//     missing.
+// No question id changed: saved essays name Q2 to Q5.
+//
 // Source: https://www.aqa.org.uk/subjects/english/gcse/english-8700
 // ────────────────────────────────────────────────────────────────────────────
 
@@ -9,48 +36,27 @@ import type { MarkScheme, AssessmentObjective } from './types'
 
 // ─── Reading Assessment Objectives ──────────────────────────────────────────
 
-const ao1Reading: AssessmentObjective = {
+// Question 1 is point-marked: one band, so the examiner tool counts points
+// rather than placing the answer in a level (../examiner/packs/derive.ts).
+const ao1Retrieval: AssessmentObjective = {
   id: 'AO1',
-  label: 'AO1 - Identify and interpret',
+  label: 'AO1 - Identify information and ideas',
   description:
-    'Identify and interpret explicit and implicit information and ideas. Select and synthesise evidence from different texts.',
+    'Identify explicit and implicit information and ideas in the lines the question names.',
   maxMarks: 4,
   weighting: 0.05,
   bands: [
     {
-      band: 'Level 1',
+      band: 'Per mark',
       minMarks: 1,
-      maxMarks: 1,
-      label: 'Simple',
-      descriptor: 'Attempts to identify relevant information from the text. Answer lacks focus.',
-      indicators: ['Lists simple facts', 'Limited relevance'],
-    },
-    {
-      band: 'Level 2',
-      minMarks: 2,
-      maxMarks: 2,
-      label: 'Some',
-      descriptor:
-        'Identifies some relevant information from the text, with some focus on the question.',
-      indicators: ['Selects some relevant explicit detail'],
-    },
-    {
-      band: 'Level 3',
-      minMarks: 3,
-      maxMarks: 3,
-      label: 'Clear',
-      descriptor:
-        'Identifies relevant information from the text clearly, with clear focus on the question.',
-      indicators: ['Clear, relevant, focused selection of information'],
-    },
-    {
-      band: 'Level 4',
-      minMarks: 4,
       maxMarks: 4,
-      label: 'Perceptive',
+      label: 'One mark per correct answer',
       descriptor:
-        'Identifies perceptive, relevant information from the text, with perceptive focus on the question.',
-      indicators: ['Judicious, precise, perceptive selection'],
+        'One mark for each of the four parts, 1.1 to 1.4, answered correctly, up to 4. There are no levels.',
+      indicators: [
+        'Each answer checked against the lines the question names',
+        'Four things listed from the named lines, the form set before summer 2026: one mark per valid point',
+      ],
     },
   ],
 }
@@ -323,52 +329,53 @@ export const aqaLangPaper1: MarkScheme = {
   questions: [
     {
       id: 'Q1',
-      questionType: 'Information retrieval (List four things)',
-      taskDescription: 'List four things from this part of the source about [topic].',
+      questionType: 'Multiple choice (parts 1.1 to 1.4)',
+      taskDescription:
+        'Four short multiple-choice parts, 1.1 to 1.4, on the lines of the source the question names: for each part, choose the one correct answer from the options given.',
       totalMarks: 4,
-      assessmentObjectives: [ao1Reading],
+      assessmentObjectives: [ao1Retrieval],
       examinerNotes:
-        'Reward any four valid explicit details from the specified lines. Do not penalise repetition of the stem.',
+        'Point-marked, with no levels: one mark for each part answered correctly, 4 in all. Check each answer against the lines the question names; the paper asks for one answer in each part. An answer in the form set before summer 2026, four things listed from the named lines, is marked the same way: one mark for each valid point from those lines, up to 4.',
     },
     {
       id: 'Q2',
       questionType: 'Language Analysis',
       taskDescription:
-        'Analyse how the writer uses language to describe [topic]. Focus on words, phrases, language features, and techniques.',
+        'Look closely at the lines of the source printed in the question and analyse how the writer uses language to describe [topic]: words and phrases, language features and techniques, and sentence forms.',
       totalMarks: 8,
       assessmentObjectives: [ao2Language],
       examinerNotes:
-        'Reward analysis of effect, not device-spotting. Precise quotation is essential at Level 3+.',
+        'Reward analysis of effect, not device-spotting. Level 3 asks for a range of relevant detail from the given lines, quoted or closely referred to, with no rule that quotation must be precise. An answer that writes only about language outside the lines printed in the question stays in Level 1 or Level 2, 4 marks at most.',
     },
     {
       id: 'Q3',
       questionType: 'Structure Analysis',
       taskDescription:
-        'Analyse how the writer has structured the whole source to interest the reader - beginnings and endings, shifts of focus, perspective changes.',
+        'Think about the whole source and analyse how the writer has structured it to create the effect the question names (from summer 2026 one named effect, such as tension on the sample paper; earlier papers asked how it was structured to interest the reader): beginnings and endings, shifts of focus or perspective, changes of pace or mood, turning points.',
       totalMarks: 8,
       assessmentObjectives: [ao2Structure],
       examinerNotes:
-        'Students must consider the whole text. Reward whole-text structural awareness, not just language within paragraphs.',
+        'Students must consider the whole text. Reward whole-text structural awareness, not just language within paragraphs. Each structural point should be linked to the effect the question names.',
     },
     {
       id: 'Q4',
       questionType: 'Evaluation',
       taskDescription:
-        "To what extent do you agree with a given statement about the text? Evaluate the writer's methods and your own response.",
+        "The question names a part of the source and gives a view about it: how far do you agree and/or disagree? Evaluate that part of the source, what happens in it and the writer's methods, and your own response, with references to the text.",
       totalMarks: 20,
       assessmentObjectives: [ao4Evaluation],
       examinerNotes:
-        'Reward critical personal engagement supported by analysis of methods. Level 4 requires convincing, perceptive evaluation.',
+        'Reward critical personal engagement supported by analysis of methods. Agreeing, disagreeing or doing some of both are equally valid; the evaluation should be of the part of the source the question names. Level 4 requires convincing, perceptive evaluation.',
     },
     {
       id: 'Q5',
       questionType: 'Creative Writing (Descriptive or Narrative)',
       taskDescription:
-        'Either describe a scene suggested by a picture, or write the opening of a story suggested by a title. Approximately 45 minutes.',
+        'Choose one of two tasks: a description from your imagination, where a picture may be given for ideas only and need not be described exactly as shown, or narrative writing (on the 2026 sample, the opening of a story about a given subject). The task sets a situation and a reader, such as a competition entry. Approximately 45 minutes.',
       totalMarks: 40,
       assessmentObjectives: [ao5Writing, ao6TechnicalAccuracy],
       examinerNotes:
-        'AO5 is marked out of 24, AO6 out of 16. Reward deliberate crafting, distinctive voice and structural control.',
+        'AO5 is marked out of 24, AO6 out of 16. Reward deliberate crafting, distinctive voice and structural control. Writing that does not address the focus of the task cannot score more than 12 of the 24 AO5 marks.',
     },
   ],
 }

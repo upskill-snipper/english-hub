@@ -15,8 +15,11 @@
  *     reading on the front cover, about 45 minutes at the start of each
  *     section) is from the sample question paper.
  *
- * Compared with the AI marker's data (../../lib/marking/mark-schemes/aqa-lang-paper1.ts),
- * which is NOT changed here; the guide follows the board:
+ * Compared with the AI marker's data (../../lib/marking/mark-schemes/aqa-lang-paper1.ts)
+ * as it stood when this guide was written; the guide follows the board. On
+ * 24 October 2026, with the founder's approval (document 30), the marker was
+ * corrected to follow the board on each difference below, and its docblock
+ * records how:
  *   - Total (80), duration (105 minutes) and every question's marks and
  *     objective agree: Q1 4 AO1, Q2 8 AO2, Q3 8 AO2, Q4 20 AO4, Q5 40 (AO5 24,
  *     AO6 16). The level ranges for Q2 to Q5 agree.

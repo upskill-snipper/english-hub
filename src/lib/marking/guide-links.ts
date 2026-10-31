@@ -56,16 +56,12 @@ export function guidePageForScheme(schemeId: string): string | null {
  * guide for this paper. Each difference is listed in the guide's docblock.
  */
 export const MARKER_NOT_ALIGNED: ReadonlySet<string> = new Set([
-  // Question 4 marked out of 10 (OCR: 18), and an 8-mark proofreading
-  // question the paper does not have.
-  'ocr-lang-component01',
-  // None of the reading questions match the paper's.
-  'ocr-lang-component02',
-  // A proofreading question the paper does not have; the paper's Q04 missing.
-  'eduqas-lang-comp1',
-  // Reading questions and marks that do not match; the writing tasks are both
-  // compulsory on the paper, a choice in the marker.
-  'eduqas-lang-comp2',
-  // The comparison and context grids are swapped in what the marker is told.
-  'edexcel-igcse-lit',
+  // ocr-lang-component01 and ocr-lang-component02 left on 24 October 2026,
+  // when the marker took OCR's questions (mark-schemes/ocr-lang.ts).
+  // eduqas-lang-comp1 and eduqas-lang-comp2 left on 24 October 2026, when the
+  // marker took Eduqas's questions, marks and writing tasks
+  // (mark-schemes/eduqas-lang.ts).
+  // edexcel-igcse-lit left on 24 October 2026, when the marker took Pearson's
+  // one grid per section and the AO3 and AO4 guidance was the right way round
+  // (mark-schemes/edexcel-igcse-lit.ts).
 ])

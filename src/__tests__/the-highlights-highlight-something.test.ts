@@ -214,9 +214,17 @@ describe('every note is authored, not generated', () => {
     let checked = 0
     for (const slug of SLUGS) {
       const page = join(ROOT, 'src/app/revision/texts', slug, 'page.tsx')
+      // The key quotations moved out of key-quotes/page.tsx into
+      // src/data/key-quotes/<slug>.ts on 24 October 2026, as the generator now
+      // reads them: authored data, so tracing a note to it is the same
+      // guarantee.
       const guide =
-        ['page.tsx', 'key-quotes/page.tsx', 'themes/page.tsx']
-          .map((rel) => join(ROOT, 'src/app/revision/texts', slug, rel))
+        [
+          ...['page.tsx', 'key-quotes/page.tsx', 'themes/page.tsx'].map((rel) =>
+            join(ROOT, 'src/app/revision/texts', slug, rel),
+          ),
+          join(ROOT, 'src/data/key-quotes', `${slug}.ts`),
+        ]
           .filter((p) => existsSync(p))
           .map((p) => readFileSync(p, 'utf8'))
           .join('\n') +

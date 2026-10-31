@@ -156,12 +156,16 @@ afterEach(() => {
 })
 
 describe('marking against a named scheme question', () => {
+  // Edexcel Literature Paper 1 Section B since 24 October 2026: two grids, as
+  // Pearson marks it, AO1 and AO3 together out of 32 ('AO1+AO3') and AO4 out
+  // of 8. Until then this used Paper 2 Section B Part 1 with AO2 15 and AO3 5
+  // on ladders of their own, which Pearson marks on one grid.
   const body = {
     board: 'Edexcel',
-    paper: 'Paper 2',
-    questionType: 'Poetry anthology comparison',
-    schemeId: 'edexcel-lit-paper2',
-    questionId: 'Section B Part 1',
+    paper: 'Paper 1',
+    questionType: 'Post-1914 literature essay',
+    schemeId: 'edexcel-lit-paper1',
+    questionId: 'Section B',
     questionText: QUESTION,
     essay: ESSAY,
   }
@@ -169,53 +173,56 @@ describe('marking against a named scheme question', () => {
   it('tells the model that question’s objectives and tariffs, and its status', async () => {
     mockCreate.mockResolvedValue(
       reply([
-        { id: 'AO2', score: 13, maxScore: 15 },
-        { id: 'AO3', score: 4, maxScore: 5 },
+        { id: 'AO1+AO3', score: 26, maxScore: 32 },
+        { id: 'AO4', score: 6, maxScore: 8 },
       ]),
     )
     const { status } = await post(body)
     expect(status).toBe(200)
     const system = systemPrompt()
     expect(system).toContain(
-      'You are marking a response to Edexcel English Literature, Paper 2, question Section B Part 1',
+      'You are marking a response to Edexcel English Literature, Paper 1, question Section B',
     )
-    expect(system).toContain('AO2 - Analyse language, form and structure - maximum 15 marks.')
-    expect(system).toContain('AO3 - Context - maximum 5 marks.')
-    expect(system).not.toMatch(/^AO[1456] - /m)
+    expect(system).toContain('AO1+AO3 - Response and context, on one grid - maximum 32 marks.')
+    expect(system).toContain('AO4 - Spelling, punctuation and grammar - maximum 8 marks.')
+    expect(system).not.toMatch(/^AO[256] - /m)
     expect(system).toContain('NOT VERIFIED')
+    // A reply that split the combined grid into AO1 and AO3 would be refused
+    // as incomplete (below), so the model is told it is one entry.
+    expect(system).toContain('never split into its objectives')
     expect(system).not.toContain('NO MARK SCHEME')
   })
 
   it('holds the marks to the scheme, and reports which scheme it used', async () => {
     mockCreate.mockResolvedValue(
       reply([
-        { id: 'AO2', score: 18, maxScore: 40, comment: 'Detailed.' },
-        { id: 'AO3', score: 4, maxScore: 40 },
-        { id: 'AO4', score: 8, maxScore: 8 },
+        { id: 'ao1+ao3', score: 40, maxScore: 40, comment: 'Detailed.' },
+        { id: 'AO4', score: 6, maxScore: 40 },
+        { id: 'AO2', score: 8, maxScore: 8 },
       ]),
     )
     const { status, json } = await post(body)
     expect(status).toBe(200)
     expect(json.feedback.aoScores).toEqual([
-      expect.objectContaining({ id: 'AO2', score: 15, maxScore: 15, comment: 'Detailed.' }),
-      expect.objectContaining({ id: 'AO3', score: 4, maxScore: 5 }),
+      expect.objectContaining({ id: 'AO1+AO3', score: 32, maxScore: 32, comment: 'Detailed.' }),
+      expect.objectContaining({ id: 'AO4', score: 6, maxScore: 8 }),
     ])
     expect(json.scheme).toMatchObject({
-      id: 'edexcel-lit-paper2',
-      questionId: 'Section B Part 1',
-      question: 'Section B Part 1 - Poetry anthology comparison (20 marks)',
+      id: 'edexcel-lit-paper1',
+      questionId: 'Section B',
+      question: 'Section B - Post-1914 literature essay (40 marks)',
       verified: false,
     })
     expect(mockAudit).toHaveBeenCalledWith(
-      expect.objectContaining({ promptSchemeId: 'edexcel-lit-paper2/Section B Part 1' }),
+      expect.objectContaining({ promptSchemeId: 'edexcel-lit-paper1/Section B' }),
     )
   })
 
   it('stores Literature, Edexcel, and columns by meaning', async () => {
     mockCreate.mockResolvedValue(
       reply([
-        { id: 'AO2', score: 15, maxScore: 15 },
-        { id: 'AO3', score: 4, maxScore: 5 },
+        { id: 'AO1+AO3', score: 24, maxScore: 32 },
+        { id: 'AO4', score: 8, maxScore: 8 },
       ]),
     )
     await post(body)
@@ -223,20 +230,21 @@ describe('marking against a named scheme question', () => {
     expect(data.subject).toBe('LITERATURE')
     expect(data.examBoard).toBe('EDEXCEL')
     expect(data.aiFeedback.create).toMatchObject({
-      overallScore: 95,
-      structureScore: 100,
-      // This question does not assess AO1 or AO4: neutral, not zero.
-      argumentScore: 95,
-      vocabularyScore: 95,
-      grammarScore: 95,
+      overallScore: 80,
+      // AO2 is not assessed, and AO1 is marked together with AO3 on one grid,
+      // so neither column has an objective of its own: neutral, not zero.
+      structureScore: 80,
+      argumentScore: 80,
+      vocabularyScore: 100,
+      grammarScore: 100,
     })
     expect(data.aiFeedback.create.limitations).toContain(
-      'edexcel-lit-paper2, Section B Part 1 (an unverified scheme)',
+      'edexcel-lit-paper1, Section B (an unverified scheme)',
     )
   })
 
   it('refuses a reply that leaves out one of the question’s objectives', async () => {
-    mockCreate.mockResolvedValue(reply([{ id: 'AO2', score: 12, maxScore: 15 }]))
+    mockCreate.mockResolvedValue(reply([{ id: 'AO1+AO3', score: 20, maxScore: 32 }]))
     const { status, json } = await post(body)
     expect(status).toBe(500)
     expect(json.error).toMatch(/incomplete response/)

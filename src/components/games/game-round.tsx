@@ -9,6 +9,7 @@ import {
   type MutableRefObject,
 } from 'react'
 import { useAuthStore } from '@/store/auth-store'
+import { noteAnswer } from '@/lib/games/progression'
 import { rememberMissed } from '@/lib/games/round-history'
 import { getGameTaxon } from '@/lib/learning-profile/taxonomy'
 import {
@@ -75,6 +76,9 @@ export function useGameRound(slug: string): GameRound {
       // A wrong answer comes back two rounds later, in this browser
       // (src/lib/games/round-history.ts), signed in or not.
       if (!a.correct) rememberMissed(slug, a.question)
+      // And every answer counts towards the round's XP and the game's level
+      // (src/lib/games/progression.ts), in this browser too.
+      noteAnswer(slug, a.question, a.correct)
     },
     [fallbackKind, slug],
   )

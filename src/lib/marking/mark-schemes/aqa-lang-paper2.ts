@@ -2,6 +2,29 @@
 // Writers' Viewpoints and Perspectives - 1 hour 45 minutes, 80 marks.
 // Based on the AQA 8700 specification.
 //
+// CORRECTED 24 October 2026, with the founder's approval (document 30). The
+// mark-scheme guide for this paper (src/data/mark-scheme-guides/aqa-lang-paper2.ts),
+// written and checked against AQA's 8700/2 sample question paper and mark
+// scheme (version 1.0, Sample set 1, first exam June 2026) and the 8700
+// specification (version 1.6, March 2026), found that this data had not
+// followed AQA's summer 2026 rewording and lacked the mark scheme's caps.
+// The paper's 80 marks, every question's marks and objectives, and every
+// level range already agreed and are unchanged. What changed:
+//   - Q2 asks what you can infer about the differences the question names,
+//     using both sources. It was "write a summary of the differences (or
+//     similarities)", and its grid spoke of a summary.
+//   - The caps: Q2 on one source only scores 3 at most, and Level 3 or above
+//     needs both sources and the question's focus; Q3 on the wrong source or
+//     outside the named lines goes to the bottom of its level, and Level 3
+//     or above needs the focus; Q4 on one source only scores 6 at most, and
+//     Level 3 or above needs both; Q5's AO5 cannot pass 12 of 24 when the
+//     writing does not address the focus of the task.
+//   - Q3 says that the question names one source and the lines in it.
+//   - Q4's note said "Sustained comparison is required for Level 3+"; AQA's
+//     Level 3 needs both texts, and no level asks for the comparison to be
+//     sustained, so its Level 3 indicator no longer says so either.
+// No question id changed: saved essays name Q3.
+//
 // Source: https://www.aqa.org.uk/subjects/english/gcse/english-8700
 // ────────────────────────────────────────────────────────────────────────────
 
@@ -30,9 +53,9 @@ const ao1Retrieval: AssessmentObjective = {
 
 const ao1Synthesis: AssessmentObjective = {
   id: 'AO1',
-  label: 'AO1 - Summarise and synthesise',
+  label: 'AO1 - Infer and synthesise',
   description:
-    'Summarise and synthesise differences (or similarities) between two sources using inference and selected quotations.',
+    'Make inferences about the differences the question names, and bring together (synthesise) details from both sources to support them.',
   maxMarks: 8,
   weighting: 0.1,
   bands: [
@@ -42,7 +65,7 @@ const ao1Synthesis: AssessmentObjective = {
       maxMarks: 2,
       label: 'Simple',
       descriptor:
-        'Simple awareness of differences/similarities. Simple references to texts. Simple inferences.',
+        'Mostly retells what the sources say rather than working anything out, noting a simple difference with a detail or two.',
       indicators: ['Lists details without linking the two texts'],
     },
     {
@@ -51,7 +74,7 @@ const ao1Synthesis: AssessmentObjective = {
       maxMarks: 4,
       label: 'Some',
       descriptor:
-        'Attempts summary of differences/similarities. Selects some relevant quotations. Attempts inference.',
+        'Makes some attempt to work out what details suggest about the differences, with some relevant references from the sources.',
       indicators: ['Begins to compare explicit information'],
     },
     {
@@ -60,7 +83,7 @@ const ao1Synthesis: AssessmentObjective = {
       maxMarks: 6,
       label: 'Clear',
       descriptor:
-        'Clear and relevant summary of differences/similarities. Clear synthesis of evidence. Clear inferences.',
+        'Draws clear inferences about the differences from both sources, linking well-chosen details from each.',
       indicators: ['Explicit comparison with quotations from both texts'],
     },
     {
@@ -69,7 +92,7 @@ const ao1Synthesis: AssessmentObjective = {
       maxMarks: 8,
       label: 'Perceptive',
       descriptor:
-        'Perceptive summary. Judicious synthesis of evidence from both texts. Perceptive inferences.',
+        'Makes perceptive inferences about the differences, weaving precise details from both sources together.',
       indicators: ['Sophisticated inference and judicious synthesis'],
     },
   ],
@@ -158,7 +181,7 @@ const ao3Comparison: AssessmentObjective = {
       label: 'Clear',
       descriptor:
         "Clear comparison of ideas and perspectives. Clear explanation of writers' methods. Clear references to textual detail.",
-      indicators: ['Sustained comparison with clear comparative connectives'],
+      indicators: ['Direct comparison with clear comparative connectives'],
     },
     {
       band: 'Level 4',
@@ -300,20 +323,23 @@ export const aqaLangPaper2: MarkScheme = {
     },
     {
       id: 'Q2',
-      questionType: 'Summary and Synthesis',
-      taskDescription: 'Write a summary of the differences (or similarities) between two sources.',
+      questionType: 'Inference and synthesis',
+      taskDescription:
+        'Using details from both sources, explain what you can infer about the differences the question names (on the 2026 sample, the differences between two trains).',
       totalMarks: 8,
       assessmentObjectives: [ao1Synthesis],
-      examinerNotes: 'Reward inference and synthesis - not mere listing of details.',
+      examinerNotes:
+        'Reward inference and synthesis, not mere listing of details. An answer that uses only one source scores 3 marks at most. Level 3 and above need both sources and the focus the question names.',
     },
     {
       id: 'Q3',
       questionType: 'Language Analysis',
-      taskDescription: 'Analyse how the writer uses language to describe [topic].',
+      taskDescription:
+        'The question names one source and a set of lines in it: analyse how the writer uses language in those lines to describe [topic].',
       totalMarks: 12,
       assessmentObjectives: [ao2Language],
       examinerNotes:
-        'Reward analysis of effect, not device-spotting. Subject terminology should be accurate.',
+        'Reward analysis of effect, not device-spotting. Subject terminology should be accurate. An answer that writes about the other source, or about lines outside the ones named, goes to the bottom of the level it would otherwise reach. Level 3 and above need the focus the question names.',
     },
     {
       id: 'Q4',
@@ -323,7 +349,7 @@ export const aqaLangPaper2: MarkScheme = {
       totalMarks: 16,
       assessmentObjectives: [ao3Comparison],
       examinerNotes:
-        'Both ideas and methods must be compared. Sustained comparison is required for Level 3+.',
+        'Both ideas and methods must be compared. An answer that uses only one source scores 6 marks at most, and Level 3 and above need both sources.',
     },
     {
       id: 'Q5',
@@ -333,7 +359,7 @@ export const aqaLangPaper2: MarkScheme = {
       totalMarks: 40,
       assessmentObjectives: [ao5Writing, ao6TechnicalAccuracy],
       examinerNotes:
-        'AO5 is marked out of 24, AO6 out of 16. Reward rhetorical awareness, clear form conventions and sophisticated argument.',
+        'AO5 is marked out of 24, AO6 out of 16. Reward rhetorical awareness, clear form conventions and sophisticated argument. Writing that does not address the focus of the task (the statement, in the way the task asks) cannot score more than 12 of the 24 AO5 marks.',
     },
   ],
 }

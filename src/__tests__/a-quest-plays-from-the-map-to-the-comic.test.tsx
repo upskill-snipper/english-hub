@@ -17,6 +17,7 @@ import {
 } from '@/lib/games/quest/deal'
 import {
   dueForReview,
+  MISS_WAIT_MS,
   readPlayer,
   readQuestProgress,
   XP_PERFECT,
@@ -81,6 +82,7 @@ beforeEach(() => {
 afterEach(() => {
   cleanup()
   vi.unstubAllGlobals()
+  vi.restoreAllMocks()
 })
 
 const level = (id: string) => quest.levels.find((l) => l.id === id)!
@@ -238,6 +240,12 @@ describe('a level, from the map and back', () => {
     const qp = readQuestProgress(SLUG)
     expect(qp.levels[first.id].stars).toBe(1)
     expect(readPlayer().xp).toBe(0)
+    // Nothing is due straight away: a miss waits MISS_WAIT_MS (24 October 2026).
+    expect(
+      dueForReview(readQuestProgress(SLUG), Date.now(), new Set(quest.challenges.map((c) => c.id))),
+    ).toEqual([])
+    const later = Date.now() + MISS_WAIT_MS + 1000
+    vi.spyOn(Date, 'now').mockReturnValue(later)
     expect(within(screen.getByRole('dialog')).queryByText('quest.ach.perfect.name')).toBeNull()
 
     fireEvent.click(screen.getByRole('button', { name: 'quest.done.map' }))

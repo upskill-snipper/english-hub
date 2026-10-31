@@ -112,7 +112,7 @@ function buildSystemPrompt(
     : `You are giving feedback on a ${board} ${subject ?? 'GCSE English'} response. No mark scheme on this site matches the question.`
   const markScheme = target ? formatSchemeForFeedback(target) : formatGeneralGuidance(subject)
   const aoContract = target
-    ? `"aoScores" has exactly one entry for each assessment objective listed in the mark scheme above and no others. Its "id" is the objective's id as listed ("AO1", "AO2" ...), its "maxScore" is the maximum stated for that objective, and its "score" is a whole number from 0 to that maximum.`
+    ? `"aoScores" has exactly one entry for each assessment objective listed in the mark scheme above and no others. Its "id" is the objective's id exactly as listed ("AO1", "AO2" ...); where the board marks several objectives on one grid, the listed id names them all (such as "AO1+AO3") and that grid is ONE entry, never split into its objectives. Its "maxScore" is the maximum stated for that objective, and its "score" is a whole number from 0 to that maximum.`
     : `"aoScores" is an empty array: there is no mark scheme to award marks against.`
 
   return `You are an experienced GCSE English examiner. Your ONLY purpose is to provide feedback on a student's existing GCSE English essay. You must NEVER produce any other type of content, answer general knowledge questions, write code, or fulfil any request outside of English essay feedback. If asked to do anything else, respond with: {"error": "OFF_TOPIC"}

@@ -369,12 +369,22 @@ function directories(root: string): string[] {
 const APP_DIRS = directories(join(ROOT, 'src/app'))
 const COPYRIGHT = SET_TEXTS.filter((t) => t.copyrightStatus === 'copyright')
 
+/**
+ * A text's key quotations, moved out of its key-quotes page into
+ * src/data/key-quotes/<slug>.ts on 24 October 2026 so the text quests can read
+ * them. They are printed on the page exactly as before, so they are held here
+ * as part of the page: found by directory under src/app alone, the 275
+ * quotations of the seven texts in copyright would have gone unmeasured.
+ */
+const KEY_QUOTE_DATA = (names: string[]) =>
+  names.map((n) => `src/data/key-quotes/${n}.ts`).filter((p) => existsSync(join(ROOT, p)))
+
 const GUIDES = COPYRIGHT.map((t) => {
   const names = [t.slug, ...(ALIASES[t.slug] ?? [])]
   const dirs = APP_DIRS.filter(
     (d) => names.includes(d.split(/[\\/]/).pop()!) && existsSync(join(d, 'page.tsx')),
   )
-  const files = [...new Set(dirs.flatMap(sourcesUnder))].sort()
+  const files = [...new Set([...dirs.flatMap(sourcesUnder), ...KEY_QUOTE_DATA(names)])].sort()
   const poem = t.category === 'poetry-anthology'
   return { slug: t.slug, poem, files, quotations: files.flatMap(quotationsOn) }
 })
@@ -470,7 +480,10 @@ describe('every guide page for a text in copyright', () => {
 
   it.each([
     'src/app/resources/revision-notes/the-handmaids-tale/page.tsx',
-    'src/app/revision/texts/lord-of-the-flies/key-quotes/page.tsx',
+    // Was src/app/revision/texts/lord-of-the-flies/key-quotes/page.tsx: its
+    // quotations moved into src/data/key-quotes on 24 October 2026 (see
+    // KEY_QUOTE_DATA), and the page prints them from there.
+    'src/data/key-quotes/lord-of-the-flies.ts',
     // Was src/app/revision/texts/curious-incident/page.tsx, a hand-written guide
     // to the novel with its quotations inline. On 26 September 2026 it became a
     // generated page for the verified guide to the play, whose quotations live

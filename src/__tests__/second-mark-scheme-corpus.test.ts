@@ -107,43 +107,28 @@ describe('Edexcel Literature, marked per question', () => {
   // Edexcel Literature answer AO1 to AO4 at 20 marks each, whichever question
   // it answered, and the inline feedback sent Paper 2 answers to the
   // LANGUAGE paper's objectives.
+  //
+  // 24 October 2026: where Pearson marks an answer on ONE grid covering two
+  // objectives, the question now carries that grid as one entry ('AO1+AO3'),
+  // in place of a ladder for each objective (AO1 15 and AO3 5 here before).
+  // The split is unchanged and stated in the grid's description;
+  // src/lib/marking/mark-schemes/__tests__/edexcel-structure.test.ts holds it
+  // to the guides checked against Pearson's 2025 mark schemes.
   it.each([
     ['edexcel-lit-paper1', 'Section A (a)', [['AO2', 20]]],
-    [
-      'edexcel-lit-paper1',
-      'Section A (b)',
-      [
-        ['AO1', 15],
-        ['AO3', 5],
-      ],
-    ],
+    ['edexcel-lit-paper1', 'Section A (b)', [['AO1+AO3', 20]]],
     [
       'edexcel-lit-paper1',
       'Section B',
       [
-        ['AO1', 16],
-        ['AO3', 16],
+        ['AO1+AO3', 32],
         ['AO4', 8],
       ],
     ],
     ['edexcel-lit-paper2', 'Section A (a)', [['AO2', 20]]],
     ['edexcel-lit-paper2', 'Section A (b)', [['AO1', 20]]],
-    [
-      'edexcel-lit-paper2',
-      'Section B Part 1',
-      [
-        ['AO2', 15],
-        ['AO3', 5],
-      ],
-    ],
-    [
-      'edexcel-lit-paper2',
-      'Section B Part 2',
-      [
-        ['AO1', 8],
-        ['AO2', 12],
-      ],
-    ],
+    ['edexcel-lit-paper2', 'Section B Part 1', [['AO2+AO3', 20]]],
+    ['edexcel-lit-paper2', 'Section B Part 2', [['AO1+AO2', 20]]],
   ] as const)('%s %s carries %j', (schemeId, questionId, expected) => {
     expect(tariffs(schemeId, questionId)).toEqual(expected)
   })
@@ -163,14 +148,12 @@ describe('Edexcel Literature, marked per question', () => {
     const prompt = formatSchemeForFeedback(target('edexcel-lit-paper2', 'Section B Part 1'))
     expect(prompt).toContain('Mark these objectives and no others')
     expect(prompt).toContain('The marks for the question total 20.')
-    const listed = [...prompt.matchAll(/^(AO\d) - .* - maximum (\d+) marks\./gm)].map((m) => [
-      m[1],
-      Number(m[2]),
-    ])
-    expect(listed).toEqual([
-      ['AO2', 15],
-      ['AO3', 5],
-    ])
+    // One grid for comparison, AO2 and AO3 since 24 October 2026, as Pearson
+    // marks it (was AO2 15 and AO3 5 on ladders of their own).
+    const listed = [...prompt.matchAll(/^(AO\d(?:\+AO\d)*) - .* - maximum (\d+) marks\./gm)].map(
+      (m) => [m[1], Number(m[2])],
+    )
+    expect(listed).toEqual([['AO2+AO3', 20]])
   })
 })
 
@@ -188,7 +171,9 @@ describe('what the model is told', () => {
     ['edexcel-lit-paper2', 'Section A (a)'],
     ['edexcel-lang-paper1', 'Q4'],
     ['aqa-lit-paper1', 'Section A'],
-    ['ocr-lang-component01', 'Q5'],
+    // 'Q5' until 24 October 2026, when the writing took OCR's numbering,
+    // Question 5 or 6 (ocr-lang.ts). Still unverified: no person checked it.
+    ['ocr-lang-component01', 'Q5/Q6'],
     ['eduqas-lang-comp1', 'B1'],
   ])('warns that %s %s is unverified, and says to disclose it', (schemeId, questionId) => {
     const prompt = formatSchemeForFeedback(target(schemeId, questionId))

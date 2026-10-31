@@ -4,7 +4,14 @@ import { join } from 'node:path'
 
 import { STUDY_GUIDE_LOADERS } from '@/data/study-guides'
 import { getSetText } from '@/lib/board/set-texts'
-import { buildTextGame, heldEdition, MIN_ITEMS } from '@/lib/games/text-games/build'
+import {
+  buildTextGame,
+  FINISH_MIN_WORDS,
+  heldEdition,
+  METHOD_MIN_WORDS,
+  MIN_ITEMS,
+  quotedSpans,
+} from '@/lib/games/text-games/build'
 import { loadGameArt, loadHeldEdition, loadTextGame } from '@/lib/games/text-games/load'
 import {
   DESCRIPTION_LIMIT,
@@ -176,8 +183,16 @@ describe('the held editions are found', () => {
 
 describe.each(slugs)('%s', (slug) => {
   it('has a path of at least four rounds, each with enough to ask', () => {
-    const { game } = get(slug)
-    expect(game.rounds.length).toBeGreaterThanOrEqual(4)
+    const { game, guide } = get(slug)
+    // Three, where the text's quotations are too short to finish: since 24
+    // October 2026 no quotation under FINISH_MIN_WORDS words is blanked (a
+    // one-word line was being blanked whole), which leaves the short poems
+    // whose every quotation is a few words (Half-past Two, Hide and Seek, The
+    // Door) without a finish round.
+    const finishable = quotationsOf(guide).filter(
+      (q) => q.split(/\s+/).filter(Boolean).length >= FINISH_MIN_WORDS,
+    ).length
+    expect(game.rounds.length).toBeGreaterThanOrEqual(finishable >= MIN_ITEMS ? 4 : 3)
     for (const r of game.rounds)
       expect(r.items.length, r.kind).toBeGreaterThanOrEqual(r.kind === 'order' ? 1 : MIN_ITEMS)
   })
@@ -306,6 +321,10 @@ describe.each(slugs)('%s', (slug) => {
             (x) => x.example === item.example && x.technique === item.answer,
           )
           expect(tech, at).toBeTruthy()
+          // What the question shows is the example's quoted words and only
+          // those (24 October 2026), enough of them to name a method from.
+          expect(item.quoted, at).toBe(quotedSpans(item.example).join(' \u2026 '))
+          expect(item.quoted.split(/\s+/).length, at).toBeGreaterThanOrEqual(METHOD_MIN_WORDS)
           expect(item.explanation, at).toBe(tech!.effect)
           for (const w of wrong)
             expect(

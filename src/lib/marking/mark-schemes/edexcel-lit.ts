@@ -1,355 +1,513 @@
 // ─── Edexcel GCSE English Literature (1ET0) ─────────────────────────────────
 //
-// REBUILT 19 September 2026. THE DEFECT THIS REPLACES
+// CORRECTED TO PEARSON'S ONE-GRID MARKING, 24 October 2026
 //
-// The assessment-objective allocations were wrong in kind, not just in
-// quantity, and one objective did not exist. The file defined an
-// "AO4 - Comparison" worth 16 marks on Paper 2 Section B while, forty lines
-// away, defining AO4 correctly as spelling, punctuation and grammar. Pearson's
-// AO4 is "Use a range of vocabulary and sentence structures for clarity,
-// purpose and effect, with accurate spelling and punctuation", it is worth 8
-// marks in the whole qualification, and it appears on Paper 1 Section B only.
-// Comparison is AO3 and is never worth 16 marks in one place.
+// That day a guide was written for each paper and checked twice, by a writer
+// and an independent checker, against Pearson's own documents:
+// src/data/mark-scheme-guides/edexcel-lit-paper1.ts and edexcel-lit-paper2.ts,
+// which cite the 1ET0/01 and 1ET0/02 mark schemes for Summer 2025
+// (1ET0_01_2506_MS, 1ET0_02_2506_MS), the June 2024 mark schemes and the
+// specification, Issue 2. The questions, marks, totals, durations and the
+// split of marks between objectives below already agreed with them. The way
+// the marks were awarded did not, and is corrected here to the guides and the
+// mark schemes they cite. Changing it changes how essays are scored, so it went
+// to the founder, who approved it on 24 October 2026 (document 30: "correct ai
+// markers").
 //
-// The specification's breakdown by component:
+// ONE GRID, NOT ONE LADDER PER OBJECTIVE. Pearson marks each answer on ONE grid
+// whose levels describe every objective the answer is assessed on, and labels
+// which bullets of each level belong to which objective ("AO1 (15 marks)",
+// "AO3 (5 marks)"). This file gave each objective a ladder of its own, so the
+// model placed context, for instance, in a level of its own out of 5 and added
+// it to a separate mark out of 15, where Pearson's examiner places the whole
+// answer in one level. Each such grid is now one AssessmentObjective:
 //
-//   Paper 1 (80)  Section A Shakespeare  (a) 20 AO2
-//                                        (b) 15 AO1 + 5 AO3
-//                 Section B Post-1914    16 AO1 + 16 AO3 + 8 AO4
-//   Paper 2 (80)  Section A 19c novel    (a) 20 AO2
-//                                        (b) 20 AO1
-//                 Section B Part 1       anthology: 15 AO2 + 5 AO3
-//                           Part 2       unseen poetry: 8 AO1 + 12 AO2
+//   P1 Section A (b)     was AO1 /15 (1-3, 4-6, 7-9, 10-12, 13-15) + AO3 /5
+//                        (one mark a level)
+//                        now AO1+AO3 /20: 1-4, 5-8, 9-12, 13-16, 17-20
+//   P1 Section B         was AO1 /16 + AO3 /16 (each 1-3, 4-6, 7-10, 11-13,
+//                        14-16) + AO4 /8
+//                        now AO1+AO3 /32: 1-6, 7-12, 13-19, 20-26, 27-32,
+//                        plus AO4 /8 on its own grid, as Pearson has it
+//   P2 Section B Part 1  was AO2 /15 (1-3 ... 13-15) + AO3 /5
+//                        now AO2+AO3 /20: 1-4, 5-8, 9-12, 13-16, 17-20
+//   P2 Section B Part 2  was AO1 /8 (1-2, 3, 4-5, 6, 7-8) + AO2 /12 (1-2,
+//                        3-5, 6-7, 8-10, 11-12)
+//                        now AO1+AO2 /20: 1-4, 5-8, 9-12, 13-16, 17-20
 //
-// Qualification totals, which reconcile exactly and are the check that this is
-// right: AO1 59, AO2 67, AO3 26, AO4 8 = 160.
+// Section A (a) on both papers (AO2 /20) and Paper 2 Section A (b) (AO1 /20)
+// were already one objective on one grid, with Pearson's ranges.
 //
-//   AO1 59 = 15 + 16 + 20 + 8        AO2 67 = 20 + 20 + 15 + 12
-//   AO3 26 =  5 + 16 +  5            AO4  8 =  8 (Paper 1 Section B only)
+// THE IDS. A combined grid's id lists the objectives it covers joined by '+'.
+// Not 'AO1-AO3': that reads as AO1 to AO3, and AO2 is not assessed on either
+// AO1-and-AO3 grid. The engine upper-cases the id the model returns and looks
+// it up exactly (feedback-generator.ts, essay-feedback.ts), and both prompts
+// show an objective's label rather than its id, so every label begins with its
+// id and each question's examinerNotes say to give one mark for the grid.
 //
-// Note what this corrects beyond the invented objective: Paper 1 Section A had
-// AO1, AO2 and AO3 all assessed on both parts; in fact part (a) is AO2 alone
-// and part (b) is AO1 with AO3. Paper 2 Section A carried AO3, which is not
-// assessed there at all.
+// ALSO CORRECTED:
+//   AO4's levels keep their ranges (1-2, 3-5, 6-8) and take Pearson's names,
+//   Level 1 to Level 3; they were "Threshold", "Intermediate" and "High", the
+//   words Pearson uses to describe them.
+//   Rules the marker was not told: on both parts of Paper 2 Section B an answer
+//   on only one poem cannot go above Level 2, and a considerably unbalanced one
+//   cannot reach Level 3.
+//   Task wording: part (b) asks about the theme elsewhere in the play or novel,
+//   outside the printed extract (the June 2024 and June 2025 papers, whose mark
+//   schemes reward references from elsewhere), not "the play as a whole" or
+//   "the novel as a whole"; Part 1's second poem comes from the same anthology
+//   collection, not "one other of your choice".
+//   The level descriptors are rewritten in our own words. The old ones
+//   followed Pearson's level wording closely: a check of five-word runs against
+//   the 2025 mark schemes found dozens shared.
+//   `weighting` is each objective's share of its QUESTION, as types.ts defines
+//   it; it was the share of the paper.
 //
-// WHAT IS AND IS NOT SOURCED: the structure and AO allocations are the
-// specification's own, and since 9 October 2026 so are the five levels and
-// their mark ranges (Pearson's June 2024 1ET0/01 mark scheme; see the note on
-// the ladders below). The level descriptors are written in Pearson's ladder
-// lexis and are NOT transcribed verbatim from the four published mark schemes,
-// so this scheme is deliberately absent from
-// src/lib/marking/examiner/verification.ts and derives as `unverified-grid`.
+// THE QUALIFICATION TOTALS still reconcile with the specification's breakdown
+// by component, which is the check that the structure is right. Each combined
+// grid's description states its split, and the structure test holds it to the
+// guides:
+//
+//   Paper 1 (80)  Section A (a) AO2 20; (b) AO1 15 + AO3 5
+//                 Section B AO1 16 + AO3 16 + AO4 8
+//   Paper 2 (80)  Section A (a) AO2 20; (b) AO1 20
+//                 Section B Part 1 AO2 15 + AO3 5; Part 2 AO1 8 + AO2 12
+//   AO1 59 = 15 + 16 + 20 + 8      AO2 67 = 20 + 20 + 15 + 12
+//   AO3 26 =  5 + 16 +  5          AO4  8 (Paper 1 Section B only)
+//
+// STILL NOT VERIFIED BY A PERSON. The figures come from guides checked by two
+// agents, not from a person reading the mark schemes line by line, so this
+// scheme stays out of src/lib/marking/examiner/verification.ts and derives as
+// `unverified-grid`.
+//
+// HISTORY, kept so that the next reader does not bring any of it back:
+//   19 September 2026: the file had an invented "AO4 - Comparison" worth 16 on
+//   Paper 2 Section B, beside a correct AO4 (spelling, punctuation and grammar,
+//   8 marks, Paper 1 Section B only); comparison is never an objective of its
+//   own here. Part (a) on Paper 1 carried AO1, AO2 and AO3 where it is AO2
+//   alone, and Paper 2 Section A carried AO3, which it does not assess.
+//   9 October 2026: every ladder had six levels written for this site, topping
+//   out at 16 and scaled to each question, so a 20-mark question had a "Level
+//   6" of 17-20 that Pearson does not have; rebuilt to Pearson's five levels.
+//   2 October 2026: the unseen task read as AQA's two-step question; Pearson
+//   sets one question comparing two unseen poems.
 //
 // Sources:
 //   https://qualifications.pearson.com/en/qualifications/edexcel-gcses/english-literature-2015.html
 //   1ET0 specification Issue 2, "Breakdown of Assessment Objectives by
-//   component".
-//   1ET0/01 mark scheme, June 2024, the level grids for Sections A and B.
+//   component"; 1ET0/01 and 1ET0/02 mark schemes, Summer 2025.
 // ────────────────────────────────────────────────────────────────────────────
 
-import type { MarkScheme, AssessmentObjective } from './types'
-import { scaleAO } from './scale-ao'
+import type { AssessmentObjective, BandDescriptor, MarkScheme } from './types'
 
-// ─── Assessment Objectives ─────────────────────────────────────────────────
-// Edexcel Literature uses AO1-AO4. AO1, AO2 and AO3 below each carry a ladder
-// of Pearson's five levels at 20 marks, which scaleAO fits to each question.
-//
-// REBUILT TO PEARSON'S FIVE LEVELS, 9 October 2026. Until then each ladder had
-// six levels, written for this site, topping out at 16: scaled to a 20-mark
-// question they ran 1-3, 4-5, 6-9, 10-13, 14-16 and a "Level 6" of 17-20.
-// Pearson's grids have five levels and no Level 6 (its 1ET0/01 mark scheme,
-// June 2024): a 20-mark question runs 1-4, 5-8, 9-12, 13-16, 17-20. So the
-// marker was asked to place answers in a level Pearson does not have, its
-// written justifications, which students see, could name it, and the
-// boundaries below the top differed from Pearson's by up to three marks. The
-// founder approved the rebuild the same day.
-//
-// What the rebuild changes, question by question, for each objective's ladder:
-//
-//   20 marks (P1 A(a) AO2, P2 A(a) AO2, P2 A(b) AO1)
-//     was 1-3, 4-5, 6-9, 10-13, 14-16, 17-20   now 1-4, 5-8, 9-12, 13-16, 17-20
-//   16 marks (P1 Section B AO1 and AO3)
-//     was 1-2, 3-4, 5-7, 8-10, 11-13, 14-16    now 1-3, 4-6, 7-10, 11-13, 14-16
-//   15 marks (P1 A(b) AO1, P2 B Part 1 AO2)
-//     was 1-2, 3-4, 5-7, 8-9, 10-12, 13-15     now 1-3, 4-6, 7-9, 10-12, 13-15
-//   12 marks (P2 B Part 2 AO2)
-//     was 1-2, 3, 4-5, 6-8, 9-10, 11-12        now 1-2, 3-5, 6-7, 8-10, 11-12
-//    8 marks (P2 B Part 2 AO1)
-//     was 1, 2, 3-4, 5, 6-7, 8                 now 1-2, 3, 4-5, 6, 7-8
-//    5 marks (P1 A(b) AO3, P2 B Part 1 AO3)
-//     was 1, 2, 3, 4, 5 under Levels 1, 3, 4, 5 and 6   now one mark a level, Levels 1-5
-//
-// Pearson marks each question on ONE grid: Paper 1 part (b) on a 20-mark grid
-// whose bullets are AO1 (15) and AO3 (5), the post-1914 essay's AO1 and AO3 on
-// one 32-mark grid (1-6, 7-12, 13-19, 20-26, 27-32). This file keeps one ladder
-// per objective, so each objective's share of a level is that grid's range in
-// proportion: half the 32-mark grid is 1-3, 4-6, 7-10 (9.5 rounds up), 11-13,
-// 14-16. AO4 keeps the three levels it already had, which are Pearson's
-// (1-2, 3-5, 6-8). The descriptors paraphrase Pearson's level wording; they
-// are not transcribed, so the scheme still derives as `unverified-grid`.
+/** What a level says, in our own words. */
+interface LevelText {
+  label: string
+  descriptor: string
+  indicators: readonly string[]
+}
 
-// AO1 - used across multiple questions with different mark allocations
-const ao1Base: Omit<AssessmentObjective, 'maxMarks' | 'weighting'> = {
-  id: 'AO1',
-  label: 'AO1 - Read, understand and respond',
-  description:
-    'Read, understand and respond to texts. Students should be able to: maintain a critical style and develop an informed personal response; use textual references, including quotations, to support and illustrate interpretations.',
-  bands: [
+/** One of Pearson's levels: the top mark of its range, then what it says. */
+type Level = readonly [top: number, text: LevelText]
+
+/**
+ * A level ladder from the tops of Pearson's levels. Each level starts one mark
+ * above the previous level's top, so the ladder is contiguous by construction
+ * and starts at 1; the last top is the grid's maximum.
+ */
+function ladder(levels: readonly Level[]): BandDescriptor[] {
+  const out: BandDescriptor[] = []
+  let lo = 1
+  levels.forEach(([top, text], i) => {
+    out.push({ band: `Level ${i + 1}`, minMarks: lo, maxMarks: top, ...text })
+    lo = top + 1
+  })
+  return out
+}
+
+/**
+ * One of Pearson's grids as one objective. Its marks are the top of its last
+ * level, so the grid always reaches the marks it claims; `weighting` is its
+ * share of the question.
+ */
+function grid(
+  id: string,
+  label: string,
+  description: string,
+  questionMarks: number,
+  levels: readonly Level[],
+): AssessmentObjective {
+  const bands = ladder(levels)
+  const maxMarks = bands[bands.length - 1]!.maxMarks
+  return { id, label, description, maxMarks, weighting: maxMarks / questionMarks, bands }
+}
+
+// ─── The objectives' statements (the specification's) ──────────────────────
+
+const AO1_STATEMENT =
+  'Read, understand and respond to texts: maintain a critical style and develop an informed personal response, using textual references, including quotations, to support and illustrate interpretations.'
+const AO2_STATEMENT =
+  'Analyse the language, form and structure used by a writer to create meanings and effects, using relevant subject terminology where appropriate.'
+const AO4_STATEMENT =
+  'Use a range of vocabulary and sentence structures for clarity, purpose and effect, with accurate spelling and punctuation.'
+
+/** Said of every combined grid, so the model returns one mark for it. */
+const ONE_MARK = 'Give one mark for the grid, not a separate mark for each objective.'
+
+// ─── Section A (a), both papers: AO2 alone, out of 20 ───────────────────────
+
+function extractLevels(who: 'audience' | 'reader'): readonly Level[] {
+  return [
+    [
+      4,
+      {
+        label: 'Minimal',
+        descriptor:
+          'Says very little about how the extract is written: a feature or two may be identified, with almost no explanation and little subject terminology.',
+        indicators: ['Features are named without their effect', 'Little or no subject terminology'],
+      },
+    ],
+    [
+      8,
+      {
+        label: 'Mostly descriptive',
+        descriptor:
+          'Mostly describes what happens in the extract, with some comment on how it is written and a few subject terms.',
+        indicators: ['Some comment on the methods used', 'Retelling outweighs analysis'],
+      },
+    ],
+    [
+      12,
+      {
+        label: 'Explained',
+        descriptor: `Explains how several of the writer's methods work and the effect of each on the ${who}, with relevant subject terminology.`,
+        indicators: ['Methods are linked to their effects', 'Terminology is accurate and relevant'],
+      },
+    ],
+    [
+      16,
+      {
+        label: 'Detailed',
+        descriptor: `Analyses closely, throughout, how the extract's language, form and structure work and what they do to the ${who}, with subject terms used accurately to take ideas further.`,
+        indicators: [
+          'Form and structure are explored alongside language',
+          'Terminology supports the argument',
+        ],
+      },
+    ],
+    [
+      20,
+      {
+        label: 'Evaluative',
+        descriptor: `Weighs up how the extract's language, form and structure combine to shape the ${who}'s response, with precise subject terminology built naturally into the argument.`,
+        indicators: [
+          'Considers how methods work together, not only what they are',
+          'Terminology is a tool of analysis, not a label',
+        ],
+      },
+    ],
+  ]
+}
+
+const AO2_LABEL = 'AO2 - Analyse language, form and structure'
+
+// ─── Paper 1 Section A (b): AO1 and AO3 on one grid, out of 20 ──────────────
+
+const P1_B_LEVELS: readonly Level[] = [
+  [
+    4,
     {
-      band: 'Level 1',
-      minMarks: 1,
-      maxMarks: 4,
       label: 'Simple',
       descriptor:
-        'A simple response with little personal response and little sign of a critical style. Few references to the text, with little relevance to the task.',
-      indicators: [
-        'Retells or paraphrases rather than responds to the question',
-        'References are general or narrative-based',
-        'Little sense of a personal response',
-      ],
+        'A simple answer with little personal view, only brief reference to the play and little awareness of context.',
+      indicators: ['Mostly retells events', 'Context is barely mentioned'],
     },
+  ],
+  [
+    8,
     {
-      band: 'Level 2',
-      minMarks: 5,
-      maxMarks: 8,
-      label: 'Some response',
+      label: 'Partly narrative',
       descriptor:
-        'A response that may be largely narrative but has some personal response and some critical style, not always applied securely. Some valid points, without consistent focus.',
-      indicators: [
-        'Makes some relevant points about the text',
-        'Some references support the ideas',
-        'Focus on the question is not always secure',
-      ],
+        'Retells a fair amount of the plot, but some personal view comes through, with some relevant points, some sense of context and a focus on the question that comes and goes.',
+      indicators: ['Some points answer the question', 'Context is mentioned but loosely linked'],
     },
+  ],
+  [
+    12,
     {
-      band: 'Level 3',
-      minMarks: 9,
-      maxMarks: 12,
       label: 'Sound',
       descriptor:
-        'A relevant personal response, soundly related to the text, in an appropriate critical style. Focused points supported from the text show a sound interpretation.',
-      indicators: [
-        'Clear and relevant points developed with explanation',
-        'Quotations are well-chosen and embedded',
-        'A coherent line of argument is maintained',
-      ],
+        'Stays relevant and answers the question with a sound personal reading of the play, points supported by references, and sensible links to context.',
+      indicators: ['A clear line of argument', 'Context is linked to points about the play'],
     },
+  ],
+  [
+    16,
     {
-      band: 'Level 4',
-      minMarks: 13,
-      maxMarks: 16,
-      label: 'Developed',
+      label: 'Sustained',
       descriptor:
-        'A developed personal response with thorough engagement, fully related to the text. A sustained critical style and well-developed interpretation, with well-chosen references supporting a range of points.',
-      indicators: [
-        'Sustained interpretation across the response',
-        'References are precise and serve the argument',
-        'Personal response is informed and engaged',
-      ],
+        'A well-structured argument that stays close to the play throughout, with references that fit each point closely and context discussed in detail.',
+      indicators: ['The argument holds across the answer', 'Context informs the reading'],
     },
+  ],
+  [
+    20,
     {
-      band: 'Level 5',
-      minMarks: 17,
-      maxMarks: 20,
       label: 'Assured',
       descriptor:
-        'An assured personal response showing a high level of engagement. A mature critical style with perceptive interpretation, in which discerning references are integral to the argument.',
-      indicators: [
-        'Perceptive, independent reading of the text',
-        'Evidence is judiciously selected and integral to the argument',
-        'Critical argument is sustained, mature and convincing',
-      ],
+        'A confident argument with fresh, thoughtful readings; every reference does real work, and context is built into the points rather than added on.',
+      indicators: ['An independent, perceptive reading', 'Context is part of the argument'],
     },
   ],
-}
+]
 
-const ao2Base: Omit<AssessmentObjective, 'maxMarks' | 'weighting'> = {
-  id: 'AO2',
-  label: 'AO2 - Analyse language, form and structure',
-  description:
-    'Analyse the language, form and structure used by a writer to create meanings and effects, using relevant subject terminology where appropriate.',
-  bands: [
+// ─── Paper 1 Section B: AO1 and AO3 on one grid, out of 32, then AO4 ────────
+
+const P1_SECTION_B_LEVELS: readonly Level[] = [
+  [
+    6,
     {
-      band: 'Level 1',
-      minMarks: 1,
-      maxMarks: 4,
-      label: 'Simple identification',
+      label: 'Simple',
       descriptor:
-        'A simple response with minimal identification of language, form and structure, and little relevant subject terminology.',
-      indicators: [
-        'Identifies obvious features (e.g. simile) without discussing effect',
-        'Subject terminology is limited or misapplied',
-      ],
-    },
-    {
-      band: 'Level 2',
-      minMarks: 5,
-      maxMarks: 8,
-      label: 'Largely descriptive',
-      descriptor:
-        'Largely descriptive, with some comment on language, form and structure. Limited subject terminology in support of the examples given.',
-      indicators: [
-        'Names methods and makes simple comments on effect',
-        'Some accurate subject terminology used',
-      ],
-    },
-    {
-      band: 'Level 3',
-      minMarks: 9,
-      maxMarks: 12,
-      label: 'Understanding',
-      descriptor:
-        'Understanding of a range of language, form and structure features, linked to their effect on the reader. Relevant subject terminology supports the examples.',
-      indicators: [
-        'Explains how methods create meaning and effects',
-        'Accurate subject terminology used consistently',
-        'Considers the writer as a deliberate craftsperson',
-      ],
-    },
-    {
-      band: 'Level 4',
-      minMarks: 13,
-      maxMarks: 16,
-      label: 'Sustained analysis',
-      descriptor:
-        'A focused, detailed response that sustains analysis of language, form and structure and their effect on the reader. Subject terminology is used accurately to develop ideas.',
-      indicators: [
-        'Considers layered effects of language and structure',
-        'Terminology is embedded and supports the argument',
-        'Explores form and structure alongside language',
-      ],
-    },
-    {
-      band: 'Level 5',
-      minMarks: 17,
-      maxMarks: 20,
-      label: 'Cohesive evaluation',
-      descriptor:
-        'A cohesive evaluation of how language, form and structure work together and affect the reader. Subject terminology is precise and integrated.',
-      indicators: [
-        'Perceptive, layered analysis of craft and reader response',
-        'Terminology is a precise analytical tool, not decoration',
-        'Considers how methods combine, not just what they are',
-      ],
+        'A simple answer with little personal view, little support from the text and little awareness of context.',
+      indicators: ['Mostly retells the story', 'Context is barely mentioned'],
     },
   ],
-}
-
-const ao3Base: Omit<AssessmentObjective, 'maxMarks' | 'weighting'> = {
-  id: 'AO3',
-  label: 'AO3 - Context',
-  description:
-    'Show understanding of the relationships between texts and the contexts in which they were written.',
-  bands: [
+  [
+    12,
     {
-      band: 'Level 1',
-      minMarks: 1,
-      maxMarks: 4,
-      label: 'Little awareness',
+      label: 'Partly narrative',
       descriptor:
-        'Little awareness of relevant context, and little comment on how the text and its context relate.',
-      indicators: [
-        'Bolt-on contextual facts with no integration',
-        'No link between context and meaning',
-      ],
-    },
-    {
-      band: 'Level 2',
-      minMarks: 5,
-      maxMarks: 8,
-      label: 'Some awareness',
-      descriptor:
-        'Some awareness of relevant context, with some comment on the relationship between text and context.',
-      indicators: [
-        'Some relevant contextual points linked to the text',
-        'Context begins to inform interpretation',
-      ],
-    },
-    {
-      band: 'Level 3',
-      minMarks: 9,
-      maxMarks: 12,
-      label: 'Sound comment',
-      descriptor:
-        'Sound comment on relevant context, and on how it relates to the text and the task.',
-      indicators: [
-        'Context is used to support points about theme or character',
-        'Understanding of ideas and attitudes of the period',
-      ],
-    },
-    {
-      band: 'Level 4',
-      minMarks: 13,
-      maxMarks: 16,
-      label: 'Sustained comment',
-      descriptor:
-        'Sustained comment on relevant context, with detailed awareness of the relationship between text and context.',
-      indicators: [
-        'Context is woven into the argument throughout',
-        "Understands how context shapes the writer's purpose and choices",
-      ],
-    },
-    {
-      band: 'Level 5',
-      minMarks: 17,
-      maxMarks: 20,
-      label: 'Convincing integration',
-      descriptor:
-        'An excellent grasp of relevant context, with the relationship between text and context integrated convincingly into the argument.',
-      indicators: [
-        'Context is seamlessly integrated as a critical lens',
-        'Considers how context shapes meaning at more than one level',
-      ],
+        'Retells a fair amount of the story, but some personal view comes through, with some references and some sense of context, though the focus wanders.',
+      indicators: ['Some points answer the question', 'Context is mentioned but loosely linked'],
     },
   ],
-}
-
-// ─── Paper 1: Shakespeare and Post-1914 Literature ─────────────────────────
+  [
+    19,
+    {
+      label: 'Sound',
+      descriptor:
+        'A relevant answer with a sound reading of the text, focused references, and sensible comment on context and how it connects with the text.',
+      indicators: ['A clear line of argument', 'Context is used to explain the text'],
+    },
+  ],
+  [
+    26,
+    {
+      label: 'Sustained',
+      descriptor:
+        'A well-structured argument that stays close to the text throughout, with references that fit each point closely and context discussed in detail.',
+      indicators: ['References range across the whole text', 'Context informs the reading'],
+    },
+  ],
+  [
+    32,
+    {
+      label: 'Assured',
+      descriptor:
+        'A confident argument with fresh, thoughtful readings, carefully chosen references, and context built into the whole answer rather than added on.',
+      indicators: ['An independent, perceptive reading', 'Context is part of the argument'],
+    },
+  ],
+]
 
 /**
  * AO4: spelling, punctuation and grammar. Pearson assesses it once in the whole
- * qualification - Paper 1 Section B - and it is worth 8 marks. The file used to
- * ALSO define an "AO4 - Comparison" worth 16 marks on Paper 2 Section B, which
- * does not exist: comparison is AO3.
+ * qualification, Paper 1 Section B, on its own grid of three levels.
  */
-const ao4Spag: Omit<AssessmentObjective, 'maxMarks' | 'weighting'> = {
-  id: 'AO4',
-  label: 'AO4 - Spelling, punctuation and grammar',
-  description:
-    'Use a range of vocabulary and sentence structures for clarity, purpose and effect, with accurate spelling and punctuation.',
-  bands: [
+const AO4_LEVELS: readonly Level[] = [
+  [
+    2,
     {
-      band: 'Threshold',
-      minMarks: 1,
-      maxMarks: 2,
       label: 'Threshold',
       descriptor:
-        'Reasonable accuracy in spelling, punctuation and grammar. Errors do not hinder meaning.',
-      indicators: ['Generally clear writing with some minor errors'],
+        'Spelling and punctuation are accurate often enough for the meaning always to come through, with a fair variety of words and sentence forms.',
+      indicators: ['Errors do not obscure the meaning'],
     },
+  ],
+  [
+    5,
     {
-      band: 'Intermediate',
-      minMarks: 3,
-      maxMarks: 5,
       label: 'Intermediate',
       descriptor:
-        'Considerable accuracy in spelling, punctuation and grammar. Good range of vocabulary and sentence structures.',
-      indicators: ['Mostly accurate with varied sentence structures'],
+        'Spelling and punctuation are accurate nearly all the time, and a good spread of vocabulary and sentence types keeps the meaning clear.',
+      indicators: ['Mostly accurate, with varied sentences'],
     },
+  ],
+  [
+    8,
     {
-      band: 'High',
-      minMarks: 6,
-      maxMarks: 8,
       label: 'High',
       descriptor:
-        'Consistently accurate spelling, punctuation and grammar. A wide range of vocabulary and sentence structures used to achieve effective control of meaning.',
+        'Spelling and punctuation are accurate throughout, and vocabulary and sentences are chosen so that the meaning is exactly what the writer intends.',
+      indicators: ['Consistently accurate and well controlled', 'Vocabulary is precise'],
+    },
+  ],
+]
+
+// ─── Paper 2 Section A (b): AO1 alone, out of 20 ────────────────────────────
+
+const P2_B_LEVELS: readonly Level[] = [
+  [
+    4,
+    {
+      label: 'Simple',
+      descriptor:
+        'A simple answer with little personal view, little sense of an essay written to argue a case, and only brief reference to the novel.',
+      indicators: ['Mostly retells events', 'References are general'],
+    },
+  ],
+  [
+    8,
+    {
+      label: 'Partly narrative',
+      descriptor:
+        'Retells a fair amount of the story, but some personal view comes through, with a few relevant points and a focus that comes and goes.',
+      indicators: ['Some points answer the question', 'Focus on the question is not secure'],
+    },
+  ],
+  [
+    12,
+    {
+      label: 'Sound',
+      descriptor:
+        'Stays relevant, with a sound personal reading of the novel and focused points supported by references.',
+      indicators: ['A clear line of argument', 'References support each point'],
+    },
+  ],
+  [
+    16,
+    {
+      label: 'Sustained',
+      descriptor:
+        'A well-structured argument that stays close to the novel in a steady critical style, with references that fit each of several points closely.',
+      indicators: ['The argument holds across the answer', 'References are precise'],
+    },
+  ],
+  [
+    20,
+    {
+      label: 'Assured',
+      descriptor:
+        'A confident argument with fresh, thoughtful readings, in which each carefully chosen reference does real work.',
+      indicators: ['An independent, perceptive reading', 'Evidence is integral to the argument'],
+    },
+  ],
+]
+
+// ─── Paper 2 Section B Part 1: comparison, AO2 and AO3 on one grid ──────────
+
+const ANTHOLOGY_LEVELS: readonly Level[] = [
+  [
+    4,
+    {
+      label: 'Little comparison',
+      descriptor:
+        'Hardly compares the poems, says little about how they are written, and shows little awareness of context.',
+      indicators: ['The poems are dealt with separately', 'Methods are barely discussed'],
+    },
+  ],
+  [
+    8,
+    {
+      label: 'Obvious comparisons',
+      descriptor:
+        'Identifies the more obvious similarities or differences without developing them, with some comment on how the poems are written and a little context. An answer on only one poem goes no higher than this level.',
+      indicators: ['Some links between the poems', 'Context is mentioned rather than used'],
+    },
+  ],
+  [
+    12,
+    {
+      label: 'Clear comparison',
+      descriptor:
+        'Makes a range of clear comparisons and explains how language, form and structure shape each poem, with relevant terminology and sensible comment on context.',
       indicators: [
-        'Consistently accurate and ambitious in expression',
-        'Precise vocabulary used with control',
+        'Comparison runs through the answer',
+        'Both poems are given substantial treatment',
       ],
     },
   ],
-}
+  [
+    16,
+    {
+      label: 'Developed comparison',
+      descriptor:
+        'Compares the poems well on many points, with detailed analysis supported by evidence from both and context discussed throughout.',
+      indicators: [
+        'Methods are compared, not only ideas',
+        'Context explains the differences and likenesses',
+      ],
+    },
+  ],
+  [
+    20,
+    {
+      label: 'Perceptive comparison',
+      descriptor:
+        "Compares the poems with real insight on many fronts, shows exactly how each poet's methods work, uses precise terminology, and makes context part of the argument.",
+      indicators: ['The comparison drives the whole answer', 'Evidence from both poems is precise'],
+    },
+  ],
+]
+
+// ─── Paper 2 Section B Part 2: comparison, AO1 and AO2 on one grid ──────────
+
+const UNSEEN_LEVELS: readonly Level[] = [
+  [
+    4,
+    {
+      label: 'Little comparison',
+      descriptor:
+        'Hardly compares the poems, gives a simple response with little evidence, and says little about how they are written.',
+      indicators: ['The poems are dealt with separately', 'Paraphrase rather than response'],
+    },
+  ],
+  [
+    8,
+    {
+      label: 'Obvious comparisons',
+      descriptor:
+        'Identifies obvious similarities or differences without developing them, partly retells the poems, and comments a little on how they are written. An answer on only one poem goes no higher than this level.',
+      indicators: ['Some links between the poems', 'Methods are named more than explained'],
+    },
+  ],
+  [
+    12,
+    {
+      label: 'Clear comparison',
+      descriptor:
+        'Makes a range of clear comparisons, with a relevant personal response, a sensible reading of both poems and a clear sense of how language, form and structure work.',
+      indicators: [
+        'Comparison runs through the answer',
+        'Both poems are given substantial treatment',
+      ],
+    },
+  ],
+  [
+    16,
+    {
+      label: 'Developed comparison',
+      descriptor:
+        'Compares the poems well on many points, with a well-supported personal response and detailed analysis of how both poets write.',
+      indicators: ['Ideas and methods are both compared', 'Evidence supports each comparison'],
+    },
+  ],
+  [
+    20,
+    {
+      label: 'Perceptive comparison',
+      descriptor:
+        "Compares the poems with real insight on many fronts, with a confident personal response, carefully chosen evidence and precise analysis of both poets' methods.",
+      indicators: [
+        'An independent reading of both poems',
+        'The comparison drives the whole answer',
+      ],
+    },
+  ],
+]
+
+const AO4_LABEL = 'AO4 - Spelling, punctuation and grammar'
 
 // ─── Paper 1: Shakespeare and Post-1914 Literature (80 marks) ───────────────
 
@@ -369,35 +527,48 @@ export const edexcelLitPaper1: MarkScheme = {
       id: 'Section A (a)',
       questionType: 'Shakespeare extract',
       taskDescription:
-        'Explore how Shakespeare presents a theme, character or idea in the printed extract. 20 marks, AO2 only.',
+        'Analyse how Shakespeare presents a character, a relationship or an idea in the printed extract of about 30 lines, through its language, form and structure. 20 marks, AO2 only.',
       totalMarks: 20,
-      assessmentObjectives: [scaleAO(ao2Base, 20, 20 / 80)],
+      assessmentObjectives: [grid('AO2', AO2_LABEL, AO2_STATEMENT, 20, extractLevels('audience'))],
       examinerNotes:
-        'AO2 alone. Reward analysis of language, form and structure in the extract. Context and whole-text knowledge earn nothing here - they belong in part (b).',
+        'AO2 alone, on one grid of five levels. Reward analysis of the language, form and structure of the extract and their effect on the audience. Context and the rest of the play earn nothing in part (a): they belong to part (b).',
     },
     {
       id: 'Section A (b)',
       questionType: 'Shakespeare whole text',
       taskDescription:
-        'Explore how Shakespeare presents the same theme, character or idea in the play as a whole. 20 marks: AO1 15 and AO3 5.',
+        "Explain the importance of a theme from the extract, such as power or loyalty, elsewhere in the play, outside the printed extract. The question lists points to cover and asks for reference to the play's context. 20 marks: AO1 and AO3 on one grid.",
       totalMarks: 20,
-      assessmentObjectives: [scaleAO(ao1Base, 15, 15 / 80), scaleAO(ao3Base, 5, 5 / 80)],
+      assessmentObjectives: [
+        grid(
+          'AO1+AO3',
+          'AO1+AO3 - Response and context, on one grid',
+          `One grid for two objectives, as Pearson marks this answer: AO1 (15 marks), a critical, informed personal response supported by references to the play; and AO3 (5 marks), the relationship between the play and the contexts in which it was written. ${ONE_MARK}`,
+          20,
+          P1_B_LEVELS,
+        ),
+      ],
       examinerNotes:
-        'AO1 carries the weight; AO3 context is worth 5 and is rewarded where it illuminates the text, not where it is bolted on.',
+        'Pearson marks this answer on one grid covering AO1 and AO3 together, out of 20: place it in one of the five levels by weighing the argument, the references and the use of context together, and give one mark under AO1+AO3; context is not scored on its own. The question is about the theme elsewhere in the play: reward relevant references, short quotations and close paraphrase from outside the printed extract. Analysis of language, form and structure (AO2) is assessed in part (a), not here.',
     },
     {
       id: 'Section B',
       questionType: 'Post-1914 literature essay',
       taskDescription:
-        'Answer one essay question on the studied post-1914 text. 40 marks: AO1 16, AO3 16 and AO4 8.',
+        'Answer one of the two essay questions on the studied post-1914 British play or novel, about a character, theme, setting or event. The quotation printed with the question is a starting point; the answer ranges across the whole text and refers to its context. 40 marks: AO1 and AO3 on one grid out of 32, and AO4 out of 8.',
       totalMarks: 40,
       assessmentObjectives: [
-        scaleAO(ao1Base, 16, 16 / 80),
-        scaleAO(ao3Base, 16, 16 / 80),
-        scaleAO(ao4Spag, 8, 8 / 80),
+        grid(
+          'AO1+AO3',
+          'AO1+AO3 - Response and context, on one grid',
+          `One grid for two objectives, as Pearson marks this answer: AO1 (16 marks), a critical, informed personal response supported by references to the text; and AO3 (16 marks), the relationship between the text and the contexts in which it was written. ${ONE_MARK} AO4 is marked separately.`,
+          40,
+          P1_SECTION_B_LEVELS,
+        ),
+        grid('AO4', AO4_LABEL, AO4_STATEMENT, 40, AO4_LEVELS),
       ],
       examinerNotes:
-        'This is the only place in the qualification where AO4 (spelling, punctuation and grammar) is assessed, and it is worth 8 marks. AO2 is NOT assessed in this section.',
+        'Two marks, added together: one out of 32 under AO1+AO3, from a single grid that weighs the argument, the references and the use of context together (context is not scored on its own), and one out of 8 for AO4 on its own grid. This is the only question in the qualification where AO4 (spelling, punctuation and grammar) is assessed. AO2 is not assessed in this section.',
     },
   ],
 }
@@ -420,43 +591,59 @@ export const edexcelLitPaper2: MarkScheme = {
       id: 'Section A (a)',
       questionType: '19th-century novel extract',
       taskDescription:
-        'Explore how the writer presents a theme, character or idea in the printed extract. 20 marks, AO2 only.',
+        'Analyse how the writer presents a character, a setting or an event in the printed extract of about 400 words, through its language, form and structure. 20 marks, AO2 only.',
       totalMarks: 20,
-      assessmentObjectives: [scaleAO(ao2Base, 20, 20 / 80)],
-      examinerNotes: 'AO2 alone. AO3 is not assessed anywhere in Section A of this paper.',
+      assessmentObjectives: [grid('AO2', AO2_LABEL, AO2_STATEMENT, 20, extractLevels('reader'))],
+      examinerNotes:
+        'AO2 alone, on one grid of five levels. Part (a) is about the printed extract, and context (AO3) is not assessed anywhere in Section A of this paper.',
     },
     {
       id: 'Section A (b)',
       questionType: '19th-century novel whole text',
       taskDescription:
-        'Explore how the writer presents the same theme, character or idea in the novel as a whole. 20 marks, AO1 only.',
+        'Explain how an idea from the extract, such as friendship, fear or ambition, is shown elsewhere in the novel, outside the printed extract. The question lists points to consider. 20 marks, AO1 only.',
       totalMarks: 20,
-      assessmentObjectives: [scaleAO(ao1Base, 20, 20 / 80)],
+      assessmentObjectives: [
+        grid('AO1', 'AO1 - Read, understand and respond', AO1_STATEMENT, 20, P2_B_LEVELS),
+      ],
       examinerNotes:
-        'AO1 alone: response to the text supported by reference. Do not credit context here.',
+        'AO1 alone, on one grid of five levels: the personal response, the critical style and the references. The question is about the idea elsewhere in the novel: reward references from beyond the printed extract. Context is not credited in this part.',
     },
     {
       id: 'Section B Part 1',
       questionType: 'Poetry anthology comparison',
       taskDescription:
-        'Compare the presentation of a theme or idea in one named anthology poem and one other of your choice. 20 marks: AO2 15 and AO3 5.',
+        "Compare how a theme is presented in the named anthology poem, which is printed, and one other poem chosen from the same anthology collection, considering the poets' use of language, form and structure and the influence of the contexts in which the poems were written. 20 marks: AO2 and AO3 on one grid.",
       totalMarks: 20,
-      assessmentObjectives: [scaleAO(ao2Base, 15, 15 / 80), scaleAO(ao3Base, 5, 5 / 80)],
+      assessmentObjectives: [
+        grid(
+          'AO2+AO3',
+          'AO2+AO3 - Comparison of methods and contexts, on one grid',
+          `One grid, as Pearson marks this answer, covering comparison together with AO2 (15 marks), how each poet uses language, form and structure to create meanings and effects; and AO3 (5 marks), the contexts in which the poems were written. Comparison is not an objective of its own: it runs through every level. ${ONE_MARK}`,
+          20,
+          ANTHOLOGY_LEVELS,
+        ),
+      ],
       examinerNotes:
-        'Comparison is rewarded under AO2 and AO3 here, not under a separate comparison objective. AO1 is not assessed in this part.',
+        'Pearson marks this answer on one grid covering comparison, AO2 and AO3 together, out of 20: give one mark under AO2+AO3. An answer on only one poem cannot go above the top of Level 2 (8 marks), and one that is considerably unbalanced between the poems cannot reach Level 3: the two need not be covered equally, but the second poem needs substantial treatment. The second poem must come from the same collection as the named one. AO1 is not assessed in this part.',
     },
     {
       id: 'Section B Part 2',
       questionType: 'Unseen poetry',
-      // Until 2 October 2026 this read "Respond to one unseen poem, then compare it with a
-      // second", the two-step shape of AQA's unseen section. Pearson sets ONE question comparing
-      // two unseen contemporary poems linked by a theme (1ET0 specification, Issue 2).
       taskDescription:
-        'Compare two unseen contemporary poems, linked by a theme, in one response. 20 marks: AO1 8 and AO2 12.',
+        "Compare how two contemporary poems the candidate has not studied, printed on the paper and linked by a theme, present it: the ideas in the poems and the poets' use of language, form and structure, supported by evidence from both. 20 marks: AO1 and AO2 on one grid.",
       totalMarks: 20,
-      assessmentObjectives: [scaleAO(ao1Base, 8, 8 / 80), scaleAO(ao2Base, 12, 12 / 80)],
+      assessmentObjectives: [
+        grid(
+          'AO1+AO2',
+          'AO1+AO2 - Comparison of response and methods, on one grid',
+          `One grid, as Pearson marks this answer, covering comparison together with AO1 (8 marks), an informed personal response to the ideas in both poems, supported by evidence; and AO2 (12 marks), how each poet uses language, form and structure to create meanings and effects. Comparison is not an objective of its own: it runs through every level. ${ONE_MARK}`,
+          20,
+          UNSEEN_LEVELS,
+        ),
+      ],
       examinerNotes:
-        'Candidates have not studied these poems. Reward a defensible reading generously; do not require contextual knowledge, which is not assessed here.',
+        'Pearson marks this answer on one grid covering comparison, AO1 and AO2 together, out of 20: give one mark under AO1+AO2. An answer on only one poem cannot go above the top of Level 2 (8 marks), and one that is considerably unbalanced between the poems cannot reach Level 3. The poems are unseen: reward any reasonable reading the poems support, and do not credit contextual knowledge, which is not assessed here.',
     },
   ],
 }

@@ -46,8 +46,12 @@
  * objectives, so each `objectives` entry groups the codes that share the marks
  * (for example 'R1, R2, R5': 10).
  *
- * DIFFERENCES FROM THE AI MARKER (src/lib/marking/mark-schemes/cambridge-0500.ts,
- * not changed here; changing it changes how essays are scored). Totals agree:
+ * DIFFERENCES FROM THE AI MARKER (src/lib/marking/mark-schemes/cambridge-0500.ts),
+ * CORRECTED 24 October 2026. The founder approved changing the marker
+ * (document 30), and it now marks every question as this guide describes,
+ * each part on its own grid with these level ranges, held to this guide by
+ * src/lib/marking/mark-schemes/__tests__/cambridge-structure.test.ts. Kept
+ * below as the record of what it did before. Totals agree:
  * 80 marks, 120 minutes, four questions of 20, and each question's reading and
  * writing totals agree (Q2 reading 15 and writing 5, Q4 reading 10 and
  * writing 10). What differs is how marks are given inside a question:
@@ -94,9 +98,10 @@
  *    level descriptions are now plain words; the meaning is unchanged.
  *
  * DIFFERENCES THE LIST ABOVE MISSED, in the marker's wording rather than its
- * marks. src/lib/marking/prompt-builder.ts puts each objective's description
- * and every band's descriptor and indicators into the marking prompt, so this
- * wording is what an answer is scored against:
+ * marks, also corrected on 24 October 2026 (the marker's grids were rewritten
+ * for the 2027 papers). src/lib/marking/prompt-builder.ts puts each
+ * objective's description and every band's descriptor and indicators into
+ * the marking prompt, so this wording was what an answer was scored against:
  *  - Q1: description and bands cover explicit and implicit meaning and
  *    selection only (R1 R2 R5, the 2024-2026 comprehension objectives);
  *    board Q1 also tests R3 and R4 (syllabus p. 13; p. 39 'all five').

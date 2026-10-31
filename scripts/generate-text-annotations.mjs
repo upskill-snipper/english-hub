@@ -702,7 +702,14 @@ function candidatesFor(slug) {
   // 5. The key-quotes page, where one exists. Richer than the guide's own list
   //    - A Christmas Carol has twenty-nine here against eleven in the guide -
   //    and the only source that carries an explicit per-quotation theme.
-  const kqPath = join(PAGES_DIR, slug, 'key-quotes', 'page.tsx')
+  //    Since 24 October 2026 the data is in src/data/key-quotes/<slug>.ts,
+  //    moved out of the page so the text quests can read it too; it is
+  //    declared there exactly as it was in the page, so it is read the same
+  //    way. The page is still read where no module exists. Reading the page
+  //    alone after the move would have found no data array and dropped every
+  //    key-quotes annotation without a word.
+  const kqData = join(ROOT, 'src/data/key-quotes', `${slug}.ts`)
+  const kqPath = existsSync(kqData) ? kqData : join(PAGES_DIR, slug, 'key-quotes', 'page.tsx')
   if (existsSync(kqPath)) {
     const src = readFileSync(kqPath, 'utf8')
     const block = dataArray(src)

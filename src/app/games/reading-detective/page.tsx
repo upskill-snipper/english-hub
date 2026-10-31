@@ -12,7 +12,7 @@ import { AnswerExplanation } from '@/components/games/AnswerExplanation'
 import { useGameRound } from '@/components/games/game-round'
 import { dealSetsNow } from '@/lib/games/start-round'
 import { shuffledOptionsFor, newSessionSalt } from '@/lib/quiz/shuffle'
-import { BANK, PASSAGES, type Passage } from '@/data/games/banks/reading-detective'
+import { BANK, PASSAGES, type Passage, type QType } from '@/data/games/banks/reading-detective'
 
 // ─── Data ──────────────────────────────────────────────────────────────────────
 // The passages and their questions are in src/data/games/banks/reading-detective.ts
@@ -21,20 +21,53 @@ import { BANK, PASSAGES, type Passage } from '@/data/games/banks/reading-detecti
 
 // ─── Helpers ───────────────────────────────────────────────────────────────────
 
+/**
+ * What the page says after an answer. Until 24 October 2026 the praise ended
+ * in exclamation marks and the spaced hyphens stood in for dashes, neither of
+ * which the site's house style allows.
+ */
 const ENCOURAGE = [
-  'Great detective work!',
-  'Sharp eyes - well spotted!',
-  'Excellent reading!',
-  'You cracked it!',
+  'Great detective work.',
+  'Sharp eyes: well spotted.',
+  'Excellent reading.',
+  'You cracked it.',
 ]
 
 const TRY_AGAIN = [
-  'Not quite - look closely at the clue.',
-  'Good effort - the text holds the answer.',
-  'Almost! Re-read and you’ll see it.',
+  'Not quite. Look closely at the clue.',
+  'Good effort. The text holds the answer.',
+  'Almost. Re-read and you’ll see it.',
 ]
 
-const ROUND_LENGTH = 5
+/**
+ * Passages in a round. Three passages of five questions, fifteen questions a
+ * round, as five passages of three questions were before the rebuild for
+ * depth (24 October 2026).
+ */
+const ROUND_LENGTH = 3
+
+/** The badge over each question: what kind of reading it asks for. */
+const KIND_LABEL: Record<QType, string> = {
+  retrieval: 'Find it',
+  inference: 'Work it out',
+  language: 'Word choice',
+  structure: 'Structure',
+  viewpoint: 'Viewpoint',
+  evidence: 'Best evidence',
+}
+
+/** A paragraph as printed: the author's italics, marked _thus_ in the bank, in italics. */
+function withItalics(paragraph: string) {
+  return paragraph
+    .split(/(_[^_\n]+_)/)
+    .map((part, i) =>
+      part.length > 2 && part.startsWith('_') && part.endsWith('_') ? (
+        <em key={i}>{part.slice(1, -1)}</em>
+      ) : (
+        part
+      ),
+    )
+}
 
 /** A passage as the dealer sees it: its title, and its questions as the bank keys them. */
 const PASSAGE_SET = {
@@ -63,8 +96,11 @@ export default function ReadingDetectivePage() {
 
   const currentPassage = passages[pIdx] ?? null
   const currentQuestion = currentPassage?.questions[qIdx] ?? null
-  const totalQuestions = passages.length * 3
-  const questionNumber = pIdx * 3 + qIdx + 1
+  // Counted, not multiplied: a passage held three questions before 24 October
+  // 2026 and holds five now.
+  const totalQuestions = passages.reduce((n, p) => n + p.questions.length, 0)
+  const questionNumber =
+    passages.slice(0, pIdx).reduce((n, p) => n + p.questions.length, 0) + qIdx + 1
   // How the bank, the explanations and the student's account name this question.
   const questionKey =
     currentPassage && currentQuestion
@@ -186,7 +222,7 @@ export default function ReadingDetectivePage() {
           gameId="reading-detective"
           audience="ks3"
           title="Reading Detective"
-          description="Read each short passage carefully, then crack the clues. Mix of fact-finding and reading-between-the-lines questions."
+          description="Read each passage carefully, then crack the clues: find the facts, read between the lines, and weigh the writer's words, structure and viewpoint."
           difficulty="Crossover"
           score={score}
           maxScore={totalAnswered || totalQuestions || 15}
@@ -197,12 +233,15 @@ export default function ReadingDetectivePage() {
         >
           {currentPassage && currentQuestion && (
             <div className="space-y-6">
-              {/* Progress */}
-              <div className="flex items-center justify-between text-sm text-muted-foreground">
-                <span>
-                  Question {questionNumber} of {passages.length * 3}
+              {/* Progress. Each part stays whole and the row wraps between
+                  them: at 360px "Question 5 of 15", "100% accuracy" and the
+                  "Best evidence" badge had each broken over two lines
+                  (24 October 2026). */}
+              <div className="flex flex-wrap items-center justify-between gap-x-3 gap-y-2 text-sm text-muted-foreground">
+                <span className="whitespace-nowrap">
+                  Question {questionNumber} of {totalQuestions}
                 </span>
-                <div className="flex items-center gap-3">
+                <div className="flex items-center gap-3 whitespace-nowrap">
                   <span>{accuracyPct}% accuracy</span>
                   <span
                     className={cn(
@@ -213,21 +252,20 @@ export default function ReadingDetectivePage() {
                     )}
                   >
                     {currentQuestion.type === 'retrieval' ? (
-                      <>
-                        <Search className="size-3" /> Find it
-                      </>
+                      <Search className="size-3" />
                     ) : (
-                      <>
-                        <Lightbulb className="size-3" /> Work it out
-                      </>
-                    )}
+                      <Lightbulb className="size-3" />
+                    )}{' '}
+                    {KIND_LABEL[currentQuestion.type]}
                   </span>
                 </div>
               </div>
 
-              {/* Passage card */}
+              {/* Passage card. A passage runs to 200-350 words in paragraphs, and a
+                  poem keeps its lines; a real extract says where it comes from
+                  (24 October 2026). */}
               <div className="rounded-xl border border-border bg-card p-6 space-y-3">
-                <div className="flex items-center gap-2">
+                <div className="flex flex-wrap items-center gap-2">
                   <span className="text-[11px] font-bold uppercase tracking-wider text-primary">
                     {currentPassage.kind}
                   </span>
@@ -236,7 +274,19 @@ export default function ReadingDetectivePage() {
                     {currentPassage.title}
                   </span>
                 </div>
-                <p className="text-base leading-relaxed text-foreground">{currentPassage.text}</p>
+                <div className="space-y-3 text-base leading-relaxed text-foreground">
+                  {currentPassage.text.split('\n\n').map((paragraph, i) => (
+                    <p key={i} className="whitespace-pre-line">
+                      {withItalics(paragraph)}
+                    </p>
+                  ))}
+                </div>
+                {currentPassage.source && (
+                  <p className="text-xs text-muted-foreground">
+                    From <em>{currentPassage.source.work}</em> by {currentPassage.source.author},{' '}
+                    {currentPassage.source.where}
+                  </p>
+                )}
               </div>
 
               {/* Question */}
@@ -307,7 +357,7 @@ export default function ReadingDetectivePage() {
 
                     <div className="flex justify-center">
                       <Button onClick={handleNext}>
-                        {questionNumber >= passages.length * 3 ? 'See Results' : 'Next Question'}
+                        {questionNumber >= totalQuestions ? 'See Results' : 'Next Question'}
                       </Button>
                     </div>
                   </div>
