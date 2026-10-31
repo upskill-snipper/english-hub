@@ -47,7 +47,7 @@ const MIN_ITEMS: Record<string, number> = {
 }
 
 /** Banks being rebuilt, 24 October 2026: each leaves this list as it is done. */
-const NOT_YET = new Set(['article-a-an-the', 'grade-climber', 'phrasal-verbs-match'])
+const NOT_YET = new Set(['article-a-an-the', 'grade-climber'])
 
 const BANKS_DIR = join(process.cwd(), 'src/data/games/banks')
 const SLUGS = existsSync(BANKS_DIR)

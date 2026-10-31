@@ -1228,7 +1228,7 @@ const EAL_GAMES: GameDef[] = [
   mkGame(
     'phrasal-verbs-match',
     'Phrasal Verb Match',
-    'Match common phrasal verbs to their meaning.',
+    'Match phrasal verbs to their meanings, then choose the one a sentence or a conversation needs.',
     <Layers className="size-6" />,
     'Medium',
     'text-violet-400',

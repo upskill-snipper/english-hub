@@ -20,7 +20,34 @@ import { BANK, type PhrasalVerb } from '@/data/games/banks/phrasal-verbs-match'
 
 const ROUND_SIZE = 15
 
+// The line above each question, by kind. Since 24 October 2026 a question can
+// also give a sentence with a gap and ask which phrasal verb fills it (the
+// phrasal verb is then the answer, so it is not shown), or ask for the
+// opposite of the phrasal verb shown.
+const PROMPT: Record<NonNullable<PhrasalVerb['kind']> | 'meaning', string> = {
+  meaning: 'What does this phrasal verb mean here?',
+  sense: 'What does this phrasal verb mean here?',
+  opposite: 'Which phrasal verb means the opposite here?',
+  gap: 'Which phrasal verb fills the gap?',
+}
+
 // ─── Helpers ───────────────────────────────────────────────────────────────────
+
+/** A sentence as shown, its gap ("___") drawn as a blank. */
+function Sentence({ text }: { text: string }) {
+  const [before, after] = text.split('___')
+  if (after === undefined) return <>{text}</>
+  return (
+    <>
+      {before}
+      <span className="font-bold not-italic text-primary" aria-hidden="true">
+        _____
+      </span>
+      <span className="sr-only">blank</span>
+      {after}
+    </>
+  )
+}
 
 function shuffle<T>(arr: T[]): T[] {
   const a = [...arr]
@@ -127,7 +154,7 @@ export default function PhrasalVerbsMatchPage() {
           gameId="phrasal-verbs-match"
           audience="eal"
           title="Phrasal Verb Match"
-          description="Read the example sentence, then choose the correct meaning of the phrasal verb. Build the everyday English you need with confidence."
+          description="Read each sentence, then choose what the phrasal verb means, or the phrasal verb that fits. Build the everyday English you need with confidence."
           difficulty="Crossover"
           score={score}
           maxScore={totalAnswered || questions.length || ROUND_SIZE}
@@ -146,15 +173,37 @@ export default function PhrasalVerbsMatchPage() {
                 <span>{accuracyPct}% accuracy</span>
               </div>
 
-              {/* Phrasal verb + example */}
+              {/* Phrasal verb (not for a gap, where it is the answer) + sentence,
+                  after any dialogue or text it follows, and where a real line
+                  comes from */}
               <div className="rounded-xl border border-border bg-card p-6 text-center space-y-3">
                 <p className="text-xs uppercase tracking-wider text-muted-foreground">
-                  What does this phrasal verb mean?
+                  {PROMPT[currentQuestion.kind ?? 'meaning']}
                 </p>
-                <p className="text-2xl font-bold text-primary">{currentQuestion.phrasal}</p>
-                <p className="text-base text-foreground italic">
-                  &ldquo;{currentQuestion.exampleSentence}&rdquo;
-                </p>
+                {currentQuestion.kind !== 'gap' && (
+                  <p className="text-2xl font-bold text-primary">{currentQuestion.phrasal}</p>
+                )}
+                {currentQuestion.context ? (
+                  <div className="space-y-1 text-base">
+                    {currentQuestion.context.map((line) => (
+                      <p key={line} className="text-muted-foreground">
+                        {line}
+                      </p>
+                    ))}
+                    <p className="text-foreground">
+                      <Sentence text={currentQuestion.sentence} />
+                    </p>
+                  </div>
+                ) : (
+                  <p className="text-base text-foreground italic">
+                    &ldquo;
+                    <Sentence text={currentQuestion.sentence} />
+                    &rdquo;
+                  </p>
+                )}
+                {currentQuestion.source && (
+                  <p className="text-xs text-muted-foreground">{currentQuestion.source}</p>
+                )}
               </div>
 
               {/* Options */}
@@ -205,6 +254,16 @@ export default function PhrasalVerbsMatchPage() {
                     {isCorrectSelection ? (
                       <>
                         <CheckCircle className="size-4" /> Well done, that&rsquo;s right.
+                      </>
+                    ) : currentQuestion.kind === 'gap' ? (
+                      <>
+                        <XCircle className="size-4" /> Not quite. The gap needs:{' '}
+                        <span className="font-bold">{currentQuestion.meaning}</span>
+                      </>
+                    ) : currentQuestion.kind === 'opposite' ? (
+                      <>
+                        <XCircle className="size-4" /> Not quite. The opposite here is:{' '}
+                        <span className="font-bold">{currentQuestion.meaning}</span>
                       </>
                     ) : (
                       <>

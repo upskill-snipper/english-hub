@@ -26,6 +26,13 @@ import {
 
 const ROUND_SIZE = 14
 
+// How many cards of each level a round deals: A1, A2 and B1 (the bank's tiers,
+// since 24 October 2026). A self-marked card earns no level
+// (src/lib/games/progression.ts), so a deck dealt by the student's level
+// would stay on A1 for ever and never show a B1 card; a fixed mix shows all
+// three in every round, easier first. The parts add up to ROUND_SIZE.
+const CARD_MIX = { '1': 5, '2': 5, '3': 4 }
+
 // ─── Helpers ───────────────────────────────────────────────────────────────────
 
 function speak(text: string) {
@@ -44,6 +51,13 @@ const TOPIC_STYLES: Record<Topic, string> = {
   Actions: 'text-clay-600 border-amber-500/30 bg-amber-500/10',
   Feelings: 'text-rose-400 border-rose-500/30 bg-rose-500/10',
   Objects: 'text-teal-400 border-teal-500/30 bg-teal-500/10',
+  // Added 24 October 2026 with the topics a learner needs.
+  Home: 'text-orange-400 border-orange-500/30 bg-orange-500/10',
+  School: 'text-blue-400 border-blue-500/30 bg-blue-500/10',
+  Shops: 'text-pink-400 border-pink-500/30 bg-pink-500/10',
+  Travel: 'text-cyan-400 border-cyan-500/30 bg-cyan-500/10',
+  Health: 'text-lime-400 border-lime-500/30 bg-lime-500/10',
+  Work: 'text-indigo-400 border-indigo-500/30 bg-indigo-500/10',
 }
 
 // ─── Component ─────────────────────────────────────────────────────────────────
@@ -76,7 +90,9 @@ export default function EverydayVocabFlashcardsPage() {
   const score = knownWords.size
 
   const handleStart = useCallback(() => {
-    const selected = deal(roundTotal)
+    const selected = deal(roundTotal, {
+      quota: { of: (c) => String(c.tier), counts: CARD_MIX },
+    })
     setQueue(selected)
     setFlipped(false)
     setKnownWords(new Set())
@@ -201,7 +217,13 @@ export default function EverydayVocabFlashcardsPage() {
                     <span className="text-[11px] font-semibold uppercase tracking-wider text-muted-foreground">
                       What does this word mean?
                     </span>
-                    <span className="text-4xl font-bold text-foreground">{currentCard.word}</span>
+                    {/* Smaller on a phone (31 October 2026): at 360px the deck's
+                        longest words since the rebuild ("accommodation", 283px
+                        in text-4xl) were wider than the card's 212px inside
+                        and crossed its border. */}
+                    <span className="text-3xl font-bold text-foreground sm:text-4xl">
+                      {currentCard.word}
+                    </span>
                     <span className="text-sm italic text-muted-foreground">
                       &ldquo;{currentCard.exampleSentence}&rdquo;
                     </span>
@@ -218,9 +240,15 @@ export default function EverydayVocabFlashcardsPage() {
                     <span className="text-base text-foreground">
                       {currentCard.simpleDefinition}
                     </span>
+                    {/* Since 24 October 2026 the back shows the word in a second
+                        sentence, not the front's again, so the meaning is checked
+                        in a new place; a real line names its book. */}
                     <span className="text-sm italic text-muted-foreground">
-                      &ldquo;{currentCard.exampleSentence}&rdquo;
+                      &ldquo;{currentCard.sentence}&rdquo;
                     </span>
+                    {currentCard.source && (
+                      <span className="text-xs text-muted-foreground">{currentCard.source}</span>
+                    )}
                   </>
                 )}
               </button>
