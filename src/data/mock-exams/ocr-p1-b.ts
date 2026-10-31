@@ -2,6 +2,90 @@
 
 /**
  * OCR GCSE English Language, Component 01 (J351/01), Communicating Information
+ * and Ideas: mock papers 06 to 10, each set as OCR sets the paper.
+ *
+ * RESTRUCTURED TO OCR'S PAPER (24 October 2026).
+ *
+ * WHAT WAS WRONG. These papers set questions worth 4, 8, 12, 16 and 40, and
+ * marked the writing 32 for content and 8 for accuracy. OCR's Component 01 is
+ * Question 1 for 4, Question 2 for 6, Question 3 for 12 and Question 4 for 18,
+ * then Question 5 or Question 6, one task of the candidate's choice, for 40
+ * (content and organisation 24, technical accuracy 16): the guide
+ * src/data/mark-scheme-guides/ocr-lang-component01.ts, checked twice against
+ * OCR's June 2024 mark scheme, its specification and its sample paper. A
+ * student sat a paper that does not exist, and an answer to Question 2 or 4
+ * sent to the marker found no question of its worth, so it got general
+ * feedback with no marks (src/__tests__/a-language-mock-is-the-boards-
+ * paper.test.ts). The tasks were not OCR's either: Question 2 analysed the
+ * nineteenth-century text's language, where OCR's Question 2 brings the two
+ * texts together (synthesis, AO1, no marks for analysis); Question 3 analysed
+ * the present-day text, where OCR sets it on the second text; Question 4 asked
+ * only for a comparison, where OCR's sets a statement about both texts to
+ * evaluate (AO4, 12) as well as to compare (AO3, 6); and there was one writing
+ * task, not a choice of two.
+ *
+ * WHAT WAS DONE.
+ *   - The texts are unchanged, and below as they were: each paper's
+ *     present-day article, labelled as specially written, is now Text 1, and
+ *     its genuine nineteenth-century passage is Text 2. One from each century
+ *     is what OCR sets.
+ *   - The questions are OCR's, in OCR's order, worth what OCR's are: Question
+ *     1, 4 marks in parts on one paragraph of Text 1; Question 2, 6 marks, what
+ *     the two texts share; Question 3, 12 marks, language and structure in
+ *     Text 2; Question 4, 18 marks, a statement about both texts to evaluate
+ *     and compare; and Questions 5 and 6 as one entry worth 40 with both tasks,
+ *     labelled "Q5 or Q6" (questionNumber 5 is what reaches the marker's
+ *     'Q5/Q6'). Questions name paragraphs, never line numbers, because the
+ *     mock page prints each text as wrapped prose. Times are OCR's advice, an
+ *     hour a section; each question's minutes are the guide's suggestion.
+ *   - Each question has a mark scheme in this site's words, from the guide's
+ *     account of what earns marks, and each worth 6 or more one strong model
+ *     answer. Every quotation in them was checked against the texts by script.
+ *     The September review's corrections were kept in view: "nothing is so
+ *     detestable as" is not called a superlative, Southey's visitor is not a
+ *     comic creation, Ruskin's blessing is the palate the ban produced, and his
+ *     cook's asking leave shows his parents' control.
+ *   - Question 1 prints both texts, since the mock page shows the texts of a
+ *     section's first question.
+ *
+ * CHECKED 31 OCTOBER 2026 by a second reader, every claim against the two
+ * texts and the guide. What was wrong, and what changed:
+ *   - Board wording, all five papers: Question 2 opened with AQA's "Use
+ *     details from both sources" (with "texts") and closed with OCR's own
+ *     sentence reordered, Question 3 closed with OCR's sample-paper sentence
+ *     nearly word for word, and Question 4's frame and bullets were OCR's
+ *     ("How far do you agree with this statement? In your answer you
+ *     should: discuss what..."); all are now in this site's words, asking
+ *     for the same things.
+ *   - 06 Text 1: "Nearly half of all workers aged 25-34 reported feeling
+ *     "emotionally exhausted"" named no survey, and none found gives it (the
+ *     ones found give other figures); a pupil could repeat it as fact. It now
+ *     says surveys find younger workers among the most likely to say so, and
+ *     the 06-q2 answer follows.
+ *   - 06-q3: said "Apparently, nothing could be easier" gives the task "as
+ *     the adults saw it"; the text names no viewer. Now "as it first seemed".
+ *   - 07-q4: called the extra pyramids "discovery rather than disappointment",
+ *     though Edwards sees them as "intruders"; the answer now says so.
+ *   - 08-q2: said the visitor is surprised by "almost everything" at table,
+ *     though he praises the porcelain, the tea and the butter; now "much".
+ *   - 08-q3: "the personified urn" that "smokes and sings": it is the boiling
+ *     water that does, in the urn. Model answer and mark scheme corrected.
+ *   - 09-q1 (b): the model answer drew on "the rest of the article", where
+ *     answers must come from the first paragraph; it now rests on that one.
+ *   - 10-q2: said Ruskin counts his parents' rules among his "blessings", the
+ *     misreading the September review removed (the blessing is the palate
+ *     the ban produced); now says so.
+ *   - 10-q3: called "no more loved than the sun and the moon" a simile (no
+ *     "like" or "as"); model answer and mark scheme now say comparison.
+ *   - 10-q3: "his nearest approach to disobedience"; the text says "one of
+ *     the nearest approaches". Corrected.
+ *   - 10-q4: "his "strength was never exercised, my patience..."" mixed his
+ *     and the quotation's "my"; the quotation now stands whole.
+ *
+ * The September notes that follow are kept for the history of the texts. The
+ * questions and answers they discuss were all replaced on 24 October 2026.
+ *
+ * OCR GCSE English Language, Component 01 (J351/01), Communicating Information
  * and Ideas: mock papers 06 to 10, each with a modern Source A and a
  * nineteenth-century Source B, as the real paper sets them.
  *
@@ -98,7 +182,7 @@ import type { MockExamPaper } from './types'
 // Exam 06 - Work & Employment
 const EXTRACT_06_A = `The modern workplace is, by almost every measurable standard, safer, cleaner, and more comfortable than at any point in human history. We do not send children into mines. We do not expect seamstresses to work eighteen-hour shifts by candlelight. We have ergonomic chairs, adjustable monitors, and entire departments devoted to our wellbeing. And yet something is profoundly wrong.
 
-The Health and Safety Executive estimates that 17.1 million working days were lost to work-related stress, depression, and anxiety in 2022/23. Nearly half of all workers aged 25-34 reported feeling "emotionally exhausted" by their jobs. The language of modern employment is revealing: we speak of "burnout" as though human beings were machines that had overheated, of "quiet quitting" as though setting boundaries were a form of sabotage.
+The Health and Safety Executive estimates that 17.1 million working days were lost to work-related stress, depression, and anxiety in 2022/23. Surveys find younger workers among the most likely to say that their jobs leave them "emotionally exhausted". The language of modern employment is revealing: we speak of "burnout" as though human beings were machines that had overheated, of "quiet quitting" as though setting boundaries were a form of sabotage.
 
 The problem, I believe, is not that we work too hard - though many of us do - but that we have lost any coherent sense of what work is for. When a job provides neither financial security nor personal meaning, when it demands total availability while offering zero loyalty, when "flexibility" means the company can change your hours but you cannot, then the contract between employer and employee has become something closer to a confidence trick.`
 
@@ -188,11 +272,74 @@ For (second of chief calamities) I had nothing to endure. Danger or pain of any 
 const EXTRACT_10_B_REF =
   'John Ruskin, Fors Clavigera, Letter LIV (1875), one of his monthly public letters "to the workmen and labourers of Great Britain", from his account of his own childhood, beginning with the last of the good things he has listed'
 
-// ─── Exam Papers ─────────────────────────────────────────────────────────────
+// ─── Mark scheme levels ──────────────────────────────────────────────────────
+// In this site's words, from the guide's levels and its account of what earns
+// marks (src/data/mark-scheme-guides/ocr-lang-component01.ts). OCR's own
+// descriptors are its copyright and are not copied. Each question adds what
+// its own paper's texts give a student to say.
+
+const MARK_LEVELS_Q2 = [
+  'Level 3 (5-6 marks): connects the two texts confidently and in detail, with well-chosen evidence from both, and sees the ideas, attitudes or feelings they share as well as the surface facts.',
+  'Level 2 (3-4 marks): makes sensible connections between the texts with relevant evidence, though one text may get more attention than the other.',
+  'Level 1 (1-2 marks): picks out a few details, mostly obvious ones and often from one text, and does little to connect them.',
+  'Reward points that link the texts, each backed by evidence from both, and a fair balance between the two. There are no marks here for analysing language.',
+]
+
+const MARK_LEVELS_Q3 = [
+  'Level 6 (11-12 marks): detailed, subtle analysis of language and structure in every point, showing exactly how the writer steers the reader; subject terms are exact and strengthen the argument.',
+  'Level 5 (9-10 marks): analyses with insight, giving language and structure fairly even, detailed attention; terms fit naturally into the explanations.',
+  'Level 4 (7-8 marks): explains with understanding, and in some depth, what both the language and the structure do, though one may get more attention than the other.',
+  'Level 3 (5-6 marks): explains some effects clearly and mentions both language and structure, though one is explained less fully.',
+  'Level 2 (3-4 marks): notices some features but says much more about one of language or structure, and often names features without explaining them.',
+  'Level 1 (1-2 marks): mostly describes or retells the text, with little sense of how the writer creates effects.',
+  'An answer that leaves structure out, or adds one sentence about it at the end, cannot reach the higher levels. Reward short, precise quotations, each followed by what it suggests and how it affects the reader.',
+]
+
+const MARK_LEVELS_AO4 = [
+  'Level 6 (11-12 marks): judges the statement sharply and with balance from start to finish, explains fully how both texts work on the reader, and builds exactly the right quotations into the argument.',
+  'Level 5 (9-10 marks): weighs up the statement with care, explains clearly how the texts affect the reader, and chooses quotations that make the case convincing.',
+  'Level 4 (7-8 marks): develops its judgements on the statement, comments on the effect on the reader and chooses quotations well.',
+  'Level 3 (5-6 marks): makes clear judgements on the statement, with some sense of how the texts affect a reader and suitable quotations.',
+  'Level 2 (3-4 marks): gives simple judgements, notices a little of how the texts affect a reader, and uses some suitable quotations.',
+  'Level 1 (1-2 marks): mostly says what happens in the texts, by retelling or copying, with little real judgement.',
+  'The verdict may differ between the two texts. An answer that quotes from only one text cannot reach the higher levels.',
+]
+
+const MARK_LEVELS_AO3 = [
+  'Level 6 (6 marks): moves between the texts all the way through, exploring in detail what each writer thinks and how each one shows it.',
+  'Level 5 (5 marks): keeps the comparison going through the whole answer, covering both ideas and methods.',
+  'Level 4 (4 marks): develops the comparison of both what the writers think and how they show it.',
+  "Level 3 (3 marks): sets the writers' ideas side by side clearly, and begins to compare their methods.",
+  "Level 2 (2 marks): spots the main ways the writers' ideas and viewpoints are alike or different.",
+  'Level 1 (1 mark): notes one or two basic likenesses or differences.',
+  'Evaluation and comparison may be woven together all the way through. Writing about the texts separately, never linking them, earns very little of this mark.',
+]
+
+const MARK_LEVELS_AO5 = [
+  'Level 6 (21-24 marks): bends the form on purpose to influence the reader; bold, well-judged choices of tone and style drive the purpose; every part of the structure is controlled and used for effect.',
+  'Level 5 (17-20 marks): uses the form confidently, with a sure sense of reader and purpose; tone and style hold steady throughout; paragraphs and sentences are planned to do particular jobs.',
+  'Level 4 (13-16 marks): adapts the form clearly for the reader and purpose, with a suitable tone and style; well organised, and sometimes uses structure for effect.',
+  'Level 3 (9-12 marks): keeps to the form with audience and purpose in mind; the tone is right but slips at times; a clear overall shape, with paragraphs and links that mostly work.',
+  'Level 2 (5-8 marks): mostly keeps to a suitable form, tries for a fitting tone, and shows some organisation through paragraphs and links.',
+  'Level 1 (1-4 marks): makes some attempt at a suitable form, but does little to suit the tone to the reader, with little planned structure.',
+]
+
+const MARK_LEVELS_AO6 = [
+  'Level 4 (13-16 marks): bold, varied sentences give each idea its full force; punctuation is accurate and chosen for effect; vocabulary is precise, and even difficult words are spelt correctly, with only the very occasional slip.',
+  'Level 3 (9-12 marks): sentences are varied widely and on purpose; punctuation is accurate and makes the meaning clear; some ambitious words work well, with the odd slip on irregular or unusual spellings.',
+  'Level 2 (5-8 marks): different kinds of sentence, mostly correct and now and then used for effect; punctuation usually right; some words clearly chosen for effect; a few spelling slips, including on harder words.',
+  'Level 1 (1-4 marks): mostly simple sentences with some longer ones attempted; uneven punctuation; plain but relevant vocabulary; everyday words largely spelt correctly.',
+]
+
+const MARK_WRITING_NOTE =
+  'Both tasks are marked the same way, on two grids marked separately and added: AO5 for content and organisation (24) and AO6 for technical accuracy (16).'
+
+// ─── The papers ──────────────────────────────────────────────────────────────
+// In each, Text 1 is the paper's EXTRACT_NN_A and Text 2 its EXTRACT_NN_B.
 
 export const ocrP1B: MockExamPaper[] = [
   // ═══════════════════════════════════════════════════════════════════════════
-  // EXAM 06 - Work & Employment
+  // EXAM 06: work
   // ═══════════════════════════════════════════════════════════════════════════
   {
     id: 'ocr-p1-06',
@@ -207,96 +354,86 @@ export const ocrP1B: MockExamPaper[] = [
       {
         id: 'ocr-p1-06-reading',
         title: 'Section A: Reading',
-        description: `Read the two source texts carefully. Then answer all the questions in this section.\n\nSource A: ${EXTRACT_06_A_REF}\nSource B: ${EXTRACT_06_B_REF}`,
+        description: `Read the two texts below, then answer all four questions. You are advised to spend about one hour on this section, about 12 minutes of it reading the texts.\n\nText 1: ${EXTRACT_06_A_REF}\nText 2: ${EXTRACT_06_B_REF}`,
         totalMarks: 40,
         suggestedTimeMinutes: 60,
         questions: [
           {
             id: 'ocr-p1-06-q1',
             questionNumber: 1,
-            questionText:
-              'Read Source A. Identify four problems the writer associates with the modern workplace.',
+            questionText: `Look again at the first paragraph of Text 1, from "The modern workplace is" to "something is profoundly wrong."\n\n(a) Give two ways in which, according to the writer, work today is better than it was in the past. [2]\n\n(b) The writer says workplaces have "entire departments devoted to our wellbeing". Explain, in your own words, what this means. [2]`,
             marks: 4,
             suggestedTimeMinutes: 5,
             questionType: 'short-answer',
-            extract: EXTRACT_06_A,
-            extractSource: EXTRACT_06_A_REF,
+            extract: `Text 1:\n${EXTRACT_06_A}\n\nText 2:\n${EXTRACT_06_B}`,
+            extractSource: `Text 1: ${EXTRACT_06_A_REF} | Text 2: ${EXTRACT_06_B_REF}`,
             modelAnswers: {
-              'Grade 4-5':
-                '1. An estimated 17.1 million working days were lost to work-related stress, depression, and anxiety in 2022/23. 2. Nearly half of workers aged 25-34 reported feeling "emotionally exhausted" by their jobs. 3. Jobs can provide neither financial security nor personal meaning. 4. What is called "flexibility" means the company can change your hours but you cannot change them.',
+              'Grade 4-5': `(a) Workplaces are safer, and children are no longer sent to work in mines.\n(b) Companies have whole teams of staff (1) whose job is to look after the health and happiness of the people who work there (1).`,
             },
-            markScheme: ['1 mark per valid point identified from the text, maximum 4'],
+            markScheme: [
+              '(a) 1 mark each, up to 2, for: safer, cleaner or more comfortable; children are not sent into mines; seamstresses are not expected to work eighteen-hour shifts by candlelight; ergonomic chairs or adjustable monitors; departments devoted to wellbeing.',
+              "(b) 2 marks, in the student's own words: 1 for the idea of whole teams or sections of a company, 1 for their purpose, looking after workers' health, comfort or happiness.",
+              'Every answer must come from the first paragraph of Text 1.',
+            ],
           },
           {
             id: 'ocr-p1-06-q2',
             questionNumber: 2,
-            questionText:
-              "Read Source B. Explain how the writer conveys Robert Blincoe's experience of his first day at the mill. Use evidence from the text to support your answer.",
-            marks: 8,
-            suggestedTimeMinutes: 10,
-            questionType: 'analysis',
-            extract: EXTRACT_06_B,
-            extractSource: EXTRACT_06_B_REF,
+            questionText: `What do the two writers show about the ways in which work can harm people?\n\nBack up each point with evidence from both texts.`,
+            marks: 6,
+            suggestedTimeMinutes: 8,
+            questionType: 'summary',
+            extract: `Text 1:\n${EXTRACT_06_A}\n\nText 2:\n${EXTRACT_06_B}`,
+            extractSource: `Text 1: ${EXTRACT_06_A_REF} | Text 2: ${EXTRACT_06_B_REF}`,
             modelAnswers: {
-              'Grade 4-5':
-                'The writer shows that the mill overwhelmed Blincoe from the moment he arrived. Even before he went in he "heard the burring sound" and "smelt the fumes of the oil", and once inside "the noise appalled him, and the stench seemed intolerable". The number "twenty thousand wheels and spindles" makes the machinery seem enormous next to a small child. His first job sounds simple - "Apparently, nothing could be easier" - but the word "Apparently" warns the reader that it was not: he was "much terrified by the whirling motion and noise of the machinery", "half suffocated" by the dust, felt sick, and "his back ached". When he sat down he was told "he must keep on his legs", and he worked "six hours and a half, without the least intermission". The way the fresh air at dinner time "revived him instantaneously" shows how bad the air inside had been.',
-              'Grade 6-7':
-                'Blincoe\'s first day reaches the reader at one remove: John Brown tells it in the third person from Blincoe\'s own memories ("He did not recollect", "Blincoe does not remember"), which lets the account move between a child\'s senses and an adult\'s judgement. The arrival is built through the senses in the order the child met them - sound, then smell, then the shock inside the doors - and the huge number "twenty thousand wheels and spindles" dwarfs him before he has begun. It is humiliating as well as frightening: the new children were "looked at, and laughed at", like goods being sorted. Irony does much of the work. "Apparently, nothing could be easier" gives the task as the adults saw it, and the rest of the sentence takes that back; "took the liberty to sit down" borrows the language of good manners to show that a child resting was treated as an offence, and the flat statement that sitting "was strictly forbidden in cotton mills" shows the rule was general, not one overseer\'s cruelty. Exact time ("till twelve o\'clock, being six hours and a half") turns endurance into a record, and "suffered at once by thirst and hunger" piles one need on another. The run of exclamations as the children leave for dinner, and the image of the unhappy ones who "seemed to mingle their tears", let the writer\'s feeling show. The closing comparison is the bitterest point of all: the food was "below the standard of the ordinary fare of the workhouse", so even the workhouse had fed him better.',
+              'Grade 8-9': `Both writers show work damaging the health of the people who do it, though in Text 1 the harm is to the mind and in Text 2 to the body. The modern article reports that "17.1 million working days were lost to work-related stress, depression, and anxiety", and that younger workers are among the most likely to feel "emotionally exhausted"; Blincoe, on his first morning, was "half suffocated" by dust, "soon felt sick", and his back "ached". Both also show workers at the mercy of rules they cannot change. In Text 1, "flexibility" means "the company can change your hours but you cannot", and a job "demands total availability"; in Text 2, Blincoe learns that sitting down "was strictly forbidden in cotton mills" and that he "must keep on his legs" for "six hours and a half, without the least intermission". Finally, in both texts the harm hides behind something that looks acceptable. The modern workplace is "safer, cleaner, and more comfortable" than ever, "And yet something is profoundly wrong"; Blincoe's task looked as if "nothing could be easier", yet it left him "sick almost to fainting".`,
             },
             markScheme: [
-              'Explains how experience is conveyed through language and detail',
-              'Uses evidence from the text',
-              'Analyses specific techniques and their effects',
-              'Top band: perceptive, detailed analysis with well-integrated evidence',
+              ...MARK_LEVELS_Q2,
+              'Links to credit: harm to health, of the mind in Text 1 ("emotionally exhausted") and of the body in Text 2 ("half suffocated"); workers powerless before rules they cannot change ("flexibility"; "must keep on his legs"); harm hidden behind what looks acceptable ("safer, cleaner, and more comfortable"; "nothing could be easier").',
             ],
           },
           {
             id: 'ocr-p1-06-q3',
             questionNumber: 3,
-            questionText:
-              'Read Source A. How does the writer use language and structure to argue that something has gone wrong with modern work?\n\nAnalyse the techniques used and their effects on the reader.',
+            questionText: `Look again at Text 2, the whole text.\n\nHow does the writer use language and structure to show what Blincoe's first morning in the mill was like?\n\nRefer closely to the text, and use relevant subject terms to explain its effects.`,
             marks: 12,
             suggestedTimeMinutes: 15,
             questionType: 'analysis',
-            extract: EXTRACT_06_A,
-            extractSource: EXTRACT_06_A_REF,
+            extract: EXTRACT_06_B,
+            extractSource: EXTRACT_06_B_REF,
             modelAnswers: {
-              'Grade 4-5':
-                'The writer uses a contrast structure to make the argument. The article begins by listing positive things about modern work - "safer, cleaner, and more comfortable" - before using "And yet" to introduce the problems. This makes the reader see that despite improvements, something is still wrong. The writer uses statistics ("17.1 million working days") as evidence, and picks out the word "burnout" to show that we talk about people as though they "were machines that had overheated". In the final paragraph three clauses beginning with "when" pile up the complaints one after another, which builds a sense of frustration.',
-              'Grade 6-7':
-                'The writer constructs the argument through a rhetorical reversal. The opening paragraph sets out a deliberately complacent inventory of progress - the tricolon "safer, cleaner, and more comfortable" - before the pivotal "And yet" demolishes the reassurance. Concession followed by demolition is the article\'s habit: the workplace has "ergonomic chairs" and "entire departments devoted to our wellbeing", yet produces widespread psychological harm, and the final paragraph concedes "though many of us do" work too hard before insisting that overwork is not the real problem. The treatment of workplace vocabulary is particularly effective: "burnout" and "quiet quitting" are examined as symptoms of a system that has gone wrong, and the comparison that explains the first, speaking of people "as though human beings were machines that had overheated", exposes how the language of work dehumanises. The three "when" clauses of the final paragraph create a rhythmic accumulation of grievances, and the sentence they open ends with the metaphor of the employment contract as "a confidence trick", which reframes the relationship between employer and employee as a fraud.',
+              'Grade 8-9': `The writer tells Blincoe's first morning in time order, and the structure lets the reader live through it at a child's pace, from arrival to the dinner bell. The opening is exact and flat, "They reached the mill about half past five", and the precise early hour already suggests a long day ahead.\n\nThe arrival is built through the senses in the order a child would meet them. First sound, "the burring sound before he reached the portals", then smell, "the fumes of the oil with which the axles of twenty thousand wheels and spindles were bathed", and finally the shock of entering: "the noise appalled him, and the stench seemed intolerable". The huge number "twenty thousand" dwarfs the small boy before his work has begun, and the strong words "appalled" and "intolerable" make the mill an assault on the body.\n\nThe second paragraph slows into a sequence of humiliations. The new children are "mustered", a military word, and "looked at, and laughed at", a repeated pattern that makes them sound like goods inspected and mocked. Irony does much of the work. "Apparently, nothing could be easier" gives the task as it first seemed, and the rest of the sentence takes it back: he was "much terrified by the whirling motion and noise of the machinery", and "half suffocated" by dust. "Took the liberty to sit down" borrows the language of good manners to show that a tired child's rest was treated as an offence, and the flat statement that sitting "was strictly forbidden in cotton mills" makes the cruelty a rule of the industry, not of one man.\n\nTime becomes a measure of endurance: he stood "till twelve o'clock, being six hours and a half, without the least intermission". The dashes that break up these sentences give the account a breathless, remembered quality, as if facts were being added as they came back to him. The release at the dinner bell changes the rhythm. A run of exclamations, "it revived him instantaneously!" and "the melancholy seemed to mingle their tears!", lets the writer's feeling break through, and the fresh air he valued "so perfectly" shows how foul the mill had been.\n\nThe third-person telling matters too. "He did not recollect" and "Blincoe does not remember" remind us that this is memory, which makes the details he does remember feel burned in. The account ends on its bitterest comparison: the food was "very much below the standard of the ordinary fare of the workhouse in which he had been reared". A workhouse was a byword for hardship, so by ending here the writer shows that the mill was worse than the place Blincoe had been sent from.`,
             },
             markScheme: [
-              'Analyses language techniques and their effects',
-              'Analyses structural choices and their effects',
-              'Uses subject terminology accurately',
-              "Comments on the writer's methods and their impact on the reader",
-              'Top band: perceptive, conceptualised analysis with judicious references',
+              ...MARK_LEVELS_Q3,
+              'Language to credit: the senses of sound and smell, and "twenty thousand wheels and spindles"; "mustered" and "looked at, and laughed at"; the irony of "Apparently, nothing could be easier" and "took the liberty to sit down"; the exclamations at the dinner bell; the closing comparison with the workhouse.',
+              'Structure to credit: time order, from "about half past five" to the dinner bell; the arrival told in the order the senses meet it; the exact record of "six hours and a half"; the change of rhythm at the dinner bell; the third-person telling from Blincoe\'s memory; an ending on the bitterest detail.',
             ],
           },
           {
             id: 'ocr-p1-06-q4',
             questionNumber: 4,
-            questionText:
-              'Read Source A and Source B. Compare how the two writers convey their different perspectives on work.\n\nIn your answer you should:\n• compare their different perspectives on work\n• compare the methods they use to convey those perspectives\n• use evidence from both texts to support your answer.',
-            marks: 16,
+            questionText: `"In both texts, work takes far more from people than it gives them."\n\nDecide how far you agree with this view.\n\nIn your answer:\n• weigh up what each writer says about work, and how far the statement fits each text\n• explain the effect each text has on you as a reader\n• compare the writers' ideas, and the ways each of them gets those ideas across\n• quote from both texts to back up your points.`,
+            marks: 18,
             suggestedTimeMinutes: 20,
-            questionType: 'comparison',
-            extract: EXTRACT_06_A + '\n\n---\n\n' + EXTRACT_06_B,
-            extractSource: EXTRACT_06_A_REF + ' / ' + EXTRACT_06_B_REF,
+            questionType: 'evaluation',
+            extract: `Text 1:\n${EXTRACT_06_A}\n\nText 2:\n${EXTRACT_06_B}`,
+            extractSource: `Text 1: ${EXTRACT_06_A_REF} | Text 2: ${EXTRACT_06_B_REF}`,
             modelAnswers: {
-              'Grade 4-5':
-                'Both writers show that work can harm people, but in very different ways. The modern writer argues that today\'s workplace is "safer, cleaner, and more comfortable" than ever but leaves people stressed and without a sense of purpose, while Source B shows a child\'s work in a cotton mill that hurt his body from the first hour. The modern writer uses statistics ("17.1 million working days were lost") and argument, while Brown tells a story full of physical detail: the noise that "appalled him", the dust that left him "half suffocated" and the back that "ached". The modern writer complains that a job can demand "total availability", and Blincoe was not even allowed to sit down: "he must keep on his legs". Both texts show workers at the mercy of rules they did not make, even though working conditions have changed completely.',
-              'Grade 6-7':
-                'The two texts present a striking inversion. Source B records work that attacked the body of a child - noise, stench, dust, thirst and hunger - while Source A describes work that is "safer, cleaner, and more comfortable" than ever and yet exhausts the mind. The modern writer even measures progress against the industrial past ("We do not send children into mines"), and Brown\'s account shows what that progress left behind: a child who, after "six hours and a half, without the least intermission", was "sick almost to fainting". Their methods differ as much as their subjects. The article argues in the present tense from evidence and diagnosis, using a national figure and the vocabulary of modern work ("burnout", "quiet quitting") to generalise; Brown narrates one child\'s morning in the past tense, and his authority comes from detail remembered by the person who lived it. Both writers use irony to expose what employers treat as normal. The article puts "flexibility" in inverted commas to show a word that has come to mean its opposite; Brown\'s "took the liberty to sit down" treats a tired child\'s rest as a breach of manners, and "Apparently, nothing could be easier" gives the task as the adults saw it. Both end on a judgement of worth: the article decides the employment contract has become "a confidence trick", and Source B leaves Blincoe eating food "below the standard of the ordinary fare of the workhouse". Where the modern worker has lost "any coherent sense of what work is for", nobody asked the child what his work was for at all.',
+              'Grade 8-9': `I agree strongly in the case of Text 2, and largely in the case of Text 1, although the modern writer admits that today's work gives people much that Blincoe never had.\n\nBlincoe's mill takes everything and gives almost nothing. On his first morning it takes his health, since he was "half suffocated" by dust and "sick almost to fainting"; it takes his rest, since sitting down "was strictly forbidden in cotton mills"; and it takes his dignity, since the new children were "looked at, and laughed at". What it gives him in return is food "very much below the standard of the ordinary fare of the workhouse". The precise, unemotional record of time, "six hours and a half, without the least intermission", makes the reader feel each hour he stood. As a reader I find the account more upsetting for being told so plainly, and the few exclamations at the dinner bell show how little relief it took to revive him.\n\nThe writer of Text 1 begins by granting that modern work gives a great deal. It is "safer, cleaner, and more comfortable than at any point in human history", and the short sentence "We do not send children into mines" points straight back to workers like Blincoe. So the statement cannot be true of modern work in the same physical sense. "And yet something is profoundly wrong": what work now takes is mental and emotional. The figure of "17.1 million working days" lost to stress, depression and anxiety, and the way people are spoken of "as though human beings were machines that had overheated", show minds worn out rather than bodies. The final paragraph comes closest to the statement. A job that "provides neither financial security nor personal meaning" while it "demands total availability while offering zero loyalty" plainly takes more than it gives, and the metaphor of "a confidence trick" suggests that workers are cheated without noticing. The writer's anger made me think about what I would want from a job, beyond a wage.\n\nThe texts make their case in very different ways. Text 2 is a narrative of one child's morning, told in the past tense and the third person from Blincoe's memories, and its power comes from physical detail and irony ("Apparently, nothing could be easier"). Text 1 is an argument in the present tense, built on contrast, a national figure and a close look at words such as "burnout" and "flexibility", which the writer puts in inverted commas to show how far they have drifted from their meaning. Yet both rely on a gap between appearance and reality: the easy-looking task that leaves Blincoe sick, and the comfortable office that leaves workers exhausted.\n\nOverall, the statement is true of both texts, but in different senses. Blincoe's work takes his body and gives him almost nothing; modern work gives comfort and safety but, the writer argues, can take people's time, security and sense of purpose. Text 2 shows the worse exchange, but Text 1 warns that a better-looking exchange can still be unfair.`,
             },
-            markScheme: [
-              'Compares perspectives on the subject with clear understanding',
-              'Compares methods used by both writers',
-              'Uses evidence from both texts',
-              'Analyses the effects of specific techniques',
-              'Top band: perceptive, sustained comparison with well-selected evidence',
-            ],
+            markScheme: {
+              'AO4, evaluation (12 marks)': [
+                ...MARK_LEVELS_AO4,
+                'In this paper: Text 2 shows work taking a child\'s health, rest and dignity for food "below the standard" of the workhouse; Text 1 grants that work is "safer, cleaner, and more comfortable" but argues that it takes time, security and meaning. Credit a verdict that differs between the texts.',
+              ],
+              'AO3, comparison (6 marks)': [
+                ...MARK_LEVELS_AO3,
+                'Methods to compare: a past-tense narrative from memory against a present-tense argument; physical detail against figures and the critical look at words such as "burnout"; irony in both; a gap between appearance and reality in both.',
+              ],
+              Marking: ['The two grids are marked separately and the marks added, out of 18.'],
+            },
           },
         ],
       },
@@ -304,30 +441,30 @@ export const ocrP1B: MockExamPaper[] = [
         id: 'ocr-p1-06-writing',
         title: 'Section B: Writing',
         description:
-          'You are advised to spend about 45 minutes on this section, including planning time.',
+          'Answer ONE question: Question 5 or Question 6. You are advised to spend about one hour on this section, including time to plan and to check your work.',
         totalMarks: 40,
-        suggestedTimeMinutes: 45,
+        suggestedTimeMinutes: 60,
         questions: [
           {
             id: 'ocr-p1-06-q5',
             questionNumber: 5,
-            questionText:
-              '"Young people today are lazy and expect everything to be handed to them."\n\nWrite an article for a broadsheet newspaper in which you argue for or against this view.\n\n(32 marks for content and organisation / 8 marks for technical accuracy)',
+            label: 'Q5 or Q6',
+            questionText: `Answer ONE of the following questions.\n\nQuestion 5\n"A good job is one that pays well."\nWrite an article for a careers website for young people in which you argue for or against this view.\nIn your article you could:\n• write about what people want from their work\n• explain what makes a job worth doing\n• give advice to readers choosing a career.\n\nOR\n\nQuestion 6\nWrite a speech for a school assembly about the right of young people to be treated fairly in their first part-time jobs.\nIn your speech you could:\n• describe the kinds of jobs young people do\n• explain the problems they can face\n• suggest what employers and young workers can do.\n\nIn your answer you will be assessed on content and organisation (24 marks) and on technical accuracy (16 marks).`,
             marks: 40,
-            suggestedTimeMinutes: 45,
+            suggestedTimeMinutes: 60,
             questionType: 'transactional-writing',
             modelAnswers: {
-              'Grade 4-5':
-                'A clear article with a sustained argument that challenges or supports the statement. Uses some persuasive techniques (rhetorical questions, direct address) and appropriate register for a broadsheet newspaper. Generally accurate spelling and punctuation with some variety of sentence forms.',
-              'Grade 6-7':
-                'A well-crafted article with a compelling, nuanced argument. Sophisticated use of rhetorical devices, counter-argument, and evidence. Appropriate broadsheet register maintained throughout. Consistent technical accuracy with ambitious vocabulary and varied sentence structures.',
-              'Grade 8-9':
-                'An outstanding article with a distinctive, authoritative voice. Compelling argument that engages with the complexity of the issue. Structural sophistication - perhaps subverting or interrogating the premise of the quotation. Ambitious vocabulary deployed with precision. Technical accuracy throughout.',
+              'Grade 8-9': `Question 5, an article against the view.\n\nMore than a payslip: what makes a job worth doing\n\nAsk a room of sixteen-year-olds what makes a good job, and most of the hands will go up for the same answer: money. It is a sensible answer. Money pays the rent, feeds a family and buys the freedom to make choices. Nobody should be embarrassed to want a decent wage. But if pay is the only thing you look for, you may end up well paid and miserable, and that is a poor bargain for forty years of your life.\n\nThink about how much time a job takes. If you work full time until you retire, you will spend roughly ninety thousand hours at work. That is more time than you will spend with your friends, and for many people more than they spend with their families. A job that pays well but bores you, frightens you or makes you feel worthless will take those hours and give back only money. Ask anyone who has walked out of a job, and they will often tell you that it was because of how they were treated, not what they were paid.\n\nSo what else should you look for? First, respect. A good employer treats people as people: it trains them, listens to them and does not expect them to be available at every hour of the day and night. Second, security. A job that can vanish with a week's notice, or whose hours change without warning, makes it impossible to plan a life. Third, and most important, meaning. Nurses, electricians, teachers, bus drivers and care workers rarely become rich, but many of them go home knowing that their work mattered to someone. That feeling is worth more than most bonuses.\n\nNone of this means that you should take the first worthwhile job you see and accept whatever it pays. Fair pay is part of respect, and an employer who underpays you is telling you how much it values you. The point is balance. When you compare two jobs, put the salary in one column, and in the other put the people, the training, the hours and the purpose. Then be honest about which column matters more to you.\n\nHere is some practical advice. When you look for work experience or a first job, ask the people already doing it what they enjoy and what they would change. Notice how a business treats its youngest staff. Look for employers who offer training or apprenticeships, because skills last longer than any single job. And remember that your first job is not your last: it is a chance to learn what you value.\n\nA good job pays you enough to live. A great job also gives you a reason to get up in the morning. Aim for the second, and do not settle for a payslip.`,
             },
-            markScheme: [
-              'Content & Organisation (32 marks): Clear viewpoint, persuasive techniques, appropriate form and register, coherent structure',
-              'Technical Accuracy (8 marks): Sentence demarcation, spelling, punctuation, vocabulary range',
-            ],
+            markScheme: {
+              'AO5, content and organisation (24 marks)': MARK_LEVELS_AO5,
+              'AO6, technical accuracy (16 marks)': MARK_LEVELS_AO6,
+              'For these tasks': [
+                MARK_WRITING_NOTE,
+                'Question 5 is an article for young readers: a headline, a clear view on the statement, an engaging and direct voice, and practical advice.',
+                'Question 6 is a speech for an assembly: it should sound spoken, address the audience, explain the problem clearly and end with a call to action.',
+              ],
+            },
           },
         ],
       },
@@ -335,7 +472,7 @@ export const ocrP1B: MockExamPaper[] = [
   },
 
   // ═══════════════════════════════════════════════════════════════════════════
-  // EXAM 07 - Travel
+  // EXAM 07: travel
   // ═══════════════════════════════════════════════════════════════════════════
   {
     id: 'ocr-p1-07',
@@ -350,96 +487,87 @@ export const ocrP1B: MockExamPaper[] = [
       {
         id: 'ocr-p1-07-reading',
         title: 'Section A: Reading',
-        description: `Read the two source texts carefully. Then answer all the questions in this section.\n\nSource A: ${EXTRACT_07_A_REF}\nSource B: ${EXTRACT_07_B_REF}`,
+        description: `Read the two texts below, then answer all four questions. You are advised to spend about one hour on this section, about 12 minutes of it reading the texts.\n\nText 1: ${EXTRACT_07_A_REF}\nText 2: ${EXTRACT_07_B_REF}`,
         totalMarks: 40,
         suggestedTimeMinutes: 60,
         questions: [
           {
             id: 'ocr-p1-07-q1',
             questionNumber: 1,
-            questionText:
-              'Read Source A. Identify four things the writer found disappointing about Venice.',
+            questionText: `Look again at the second paragraph of Text 1, from "The Venice I visited" to "fourteen euros."\n\n(a) Identify two things about Venice that the writer found unpleasant. [2]\n\n(b) Give the phrase the writer uses to describe how the gondoliers looked. [1]\n\n(c) How much did a coffee in St Mark's Square cost? [1]`,
             marks: 4,
             suggestedTimeMinutes: 5,
             questionType: 'short-answer',
-            extract: EXTRACT_07_A,
-            extractSource: EXTRACT_07_A_REF,
+            extract: `Text 1:\n${EXTRACT_07_A}\n\nText 2:\n${EXTRACT_07_B}`,
+            extractSource: `Text 1: ${EXTRACT_07_A_REF} | Text 2: ${EXTRACT_07_B_REF}`,
             modelAnswers: {
-              'Grade 4-5':
-                "1. The acqua alta barriers were being tested with loud mechanical noise. 2. Enormous cruise ships filled the streets with thousands of day-trippers. 3. The gondoliers looked exhausted and hostile. 4. A coffee in St Mark's Square cost fourteen euros.",
+              'Grade 4-5': `(a) The flood barriers were being tested with a loud grinding roar, and cruise ships filled the narrow streets with thousands of day-trippers.\n(b) "exhausted and faintly hostile".\n(c) Fourteen euros.`,
             },
-            markScheme: ['1 mark per valid point identified from the text, maximum 4'],
+            markScheme: [
+              '(a) 1 mark each, up to 2, for: the barriers tested with a grinding mechanical roar; cruise ships disgorging thousands of day-trippers; streets too crowded or narrow; tired or unfriendly gondoliers; expensive coffee.',
+              '(b) 1 mark: "exhausted and faintly hostile" (accept "faintly hostile").',
+              '(c) 1 mark: fourteen euros.',
+              'Every answer must come from the second paragraph of Text 1.',
+            ],
           },
           {
             id: 'ocr-p1-07-q2',
             questionNumber: 2,
-            questionText:
-              'Read Source B. Explain how Amelia Edwards conveys her reactions to the pyramids. Use evidence from the text to support your answer.',
-            marks: 8,
-            suggestedTimeMinutes: 10,
-            questionType: 'analysis',
-            extract: EXTRACT_07_B,
-            extractSource: EXTRACT_07_B_REF,
+            questionText: `In what ways are the two writers' experiences of visiting a famous place similar?\n\nBack up each point with evidence from both texts.`,
+            marks: 6,
+            suggestedTimeMinutes: 8,
+            questionType: 'summary',
+            extract: `Text 1:\n${EXTRACT_07_A}\n\nText 2:\n${EXTRACT_07_B}`,
+            extractSource: `Text 1: ${EXTRACT_07_A_REF} | Text 2: ${EXTRACT_07_B_REF}`,
             modelAnswers: {
-              'Grade 4-5':
-                'Edwards shows that the reaction changes as the traveller gets closer. From the railway carriage, the first view most travellers get, the pyramids "look small and shadowy" and are "too familiar to be in any way startling", so at first they are not impressive. Close to the great pyramid the effect is "as sudden as it is overwhelming", and she repeats "It shuts out" three times to show how it fills the whole view until nothing is left "but the sense of awe and wonder". She admits that "the clearest photographs" had done "little or nothing" to prepare her, and she is surprised by details: two of the pyramids "are bigger than we had expected", and there are "nine pyramids, instead of three". Calling the extra ones "intruders", and one of them "little more than a big cairn", shows a lively, honest and slightly humorous reaction.',
-              'Grade 6-7':
-                'Edwards structures her account as a movement from anticlimax to revelation and then to correction. She begins by lowering expectations: seen from a distance, the pyramids do not take "one\'s breath away" as the Alps or the Acropolis do, because they are "too familiar to be in any way startling". The impersonal "one" makes the reaction a general truth about travellers rather than a private whim. The approach is then built as a single long sentence of clauses joined by "and" - the desert reached, "the long sand-slope climbed", the platform gained - so that the reader climbs with her until the pyramid "towers close above one\'s head". The triple repetition "It shuts out the sky and the horizon. It shuts out all the other pyramids. It shuts out everything but the sense of awe and wonder" narrows the world, sentence by sentence, to a single feeling. The final paragraph is quieter and more analytical: "plans and measurements, the clearest photographs, the most elaborate descriptions" had done "little or nothing", and the ground "pitted with open graves" is "wholly unlike the desert of our dreams". Her precision ("bigger than we had expected", "smaller", "nine pyramids, instead of three") and her wry treatment of the extra pyramids as "intruders" show a traveller testing the picture she brought with her against what is actually there.',
+              'Grade 8-9': `Both writers arrive with a picture in their heads that the real place does not match. The writer of Text 1 has "seen the photographs, read the guidebooks, watched the documentaries", and Edwards admits that "the clearest photographs, the most elaborate descriptions, had done little or nothing" to prepare her. In each case the reality is a surprise: the place "bears almost no resemblance to the place you imagined" in Text 1, and the ground round the pyramids is "wholly unlike the desert of our dreams" in Text 2. Both are disappointed at first. Venice is crowded and expensive, with "thousands of day-trippers" and a coffee at "fourteen euros", and Edwards's first glimpse from the train "is not impressive", since the pyramids "look small and shadowy". Yet both then have a moment that makes the journey worthwhile. The modern writer, alone by a canal at dawn, "understood why people had been falling in love with this city for a thousand years"; Edwards, under the great pyramid, feels "the sense of awe and wonder". The difference is that the modern writer's moment lasts "perhaps ninety seconds", while Edwards's wonder grows the closer she gets.`,
             },
             markScheme: [
-              'Explains how reactions are conveyed through language and detail',
-              'Uses evidence from the text',
-              'Analyses specific techniques and their effects',
-              'Top band: perceptive, detailed analysis with well-integrated evidence',
+              ...MARK_LEVELS_Q2,
+              'Links to credit: expectations formed by pictures and descriptions in both; a reality unlike what was imagined; a first disappointment (Venice\'s crowds and prices; the pyramids "small and shadowy" from the train); a moment of wonder that redeems the visit in both.',
             ],
           },
           {
             id: 'ocr-p1-07-q3',
             questionNumber: 3,
-            questionText:
-              'Read Source A. How does the writer use language and structure to convey complex feelings about modern travel?\n\nAnalyse the techniques used and their effects on the reader.',
+            questionText: `Look again at Text 2, the whole text.\n\nHow does Edwards use language and structure to show how her impression of the pyramids changes?\n\nRefer closely to the text, and use relevant subject terms to explain its effects.`,
             marks: 12,
             suggestedTimeMinutes: 15,
             questionType: 'analysis',
-            extract: EXTRACT_07_A,
-            extractSource: EXTRACT_07_A_REF,
+            extract: EXTRACT_07_B,
+            extractSource: EXTRACT_07_B_REF,
             modelAnswers: {
-              'Grade 4-5':
-                'The writer structures the text in three parts: expectation, disappointment, and a brief moment of beauty. The second person "you" involves the reader directly. The list of preparations - "seen the photographs, read the guidebooks, watched the documentaries" - shows how much effort goes into imagining a place. The short sentence "Then you arrive" creates a dramatic turning point. The description of the quiet canal with the cat creates a contrast with the busy tourist scenes. The final sentence - "Then a water taxi roared past and the moment was gone" - shows beauty is fleeting.',
-              'Grade 6-7':
-                'The writer structures the article as a triptych: anticipation, disillusion, and qualified redemption. The opening paragraph\'s second-person address ("You have seen... You have constructed") implicates the reader in the very delusion being critiqued, while the tricolon of preparation activities creates a rhythm of accumulating expectation. The pivotal "Then you arrive" - a brutally short sentence after the elaborate build-up - performs syntactically what it describes thematically: the collapse of fantasy into reality. The Venice description deploys bathos masterfully: "drowning - not romantically... but literally and bureaucratically" deflates centuries of poetic association. The "And yet" paragraph reverses the reversal, its catalogue of sensory specifics (the "perfectly still and green" water, the cat\'s "imperial disinterest") offering an alternative Venice accessible only through patience and solitude. The time-stamping - "perhaps ninety seconds" - is structurally crucial: genuine experience is measured in moments, not itineraries. The final sentence\'s water taxi is both literal and symbolic, modernity destroying the very beauty that tourism seeks.',
+              'Grade 8-9': `Edwards structures the passage as a journey from anticlimax to revelation and then to correction, so that the reader's impression changes with hers.\n\nShe begins by lowering expectations. The first view, from "the window of the railway carriage", is "not impressive", and she sets it against greater sights: it "does not take one's breath away" as the Alps or the Acropolis do. The pyramids "look small and shadowy" and are "too familiar to be in any way startling". The impersonal "one" makes the disappointment a general truth about travellers rather than a private complaint, and her explanation, that every view "too distant to afford the means of scaling them against other objects" misleads, gives her reaction a reasoned, almost scientific basis. The last sentence of the paragraph prepares the turn: only "in approaching them, and observing how they grow with every foot of the road" does the truth begin to show.\n\nThe second paragraph is the climax. It opens with "But" and one long sentence of clauses joined by "and", "the edge of the desert is reached, and the long sand-slope climbed, and the rocky platform gained", so that the reader climbs with her, the passive verbs keeping the focus on the place rather than the traveller. The delay ends with the great pyramid "in all its unexpected bulk and majesty", and the balanced phrase "as sudden as it is overwhelming" captures the shock. Then come three short sentences with the same opening: "It shuts out the sky and the horizon. It shuts out all the other pyramids. It shuts out everything but the sense of awe and wonder." The repetition narrows the world, sentence by sentence, until only feeling is left.\n\nThe third paragraph steps back into reflection. "Now, too, one discovers" signals a calmer, more analytical voice. A list of what she had not known, "their surface, their color, their relative position, their number", and another of what had failed her, "plans and measurements, the clearest photographs, the most elaborate descriptions", show how little preparation was worth. Her description of the ground "pitted with open graves and cumbered with mounds of shapeless masonry" is far from romantic, and the corrections that follow, "bigger than we had expected", "smaller", "nine pyramids, instead of three", have the exactness of someone checking the facts. The ending is wry: the extra pyramids seem "intruders", and one "is little more than a big cairn". By finishing on this deflating detail, Edwards keeps her awe honest; she is moved, but she will not pretend that everything she saw was magnificent.`,
             },
             markScheme: [
-              'Analyses language techniques and their effects',
-              'Analyses structural choices and their effects',
-              'Uses subject terminology accurately',
-              "Comments on the writer's methods and their impact on the reader",
-              'Top band: perceptive, conceptualised analysis with judicious references',
+              ...MARK_LEVELS_Q3,
+              'Language to credit: the comparison with the Alps and the Acropolis; "small and shadowy"; the balanced "as sudden as it is overwhelming"; the repetition of "It shuts out"; the unromantic "pitted with open graves"; the wry "intruders" and "a big cairn".',
+              'Structure to credit: anticlimax, then climax, then reflection, one paragraph each; the long climbing sentence joined by "and"; three short sentences that narrow the view; the closing corrections and the deflating last detail.',
             ],
           },
           {
             id: 'ocr-p1-07-q4',
             questionNumber: 4,
-            questionText:
-              'Read Source A and Source B. Compare how the two writers convey their different experiences and attitudes towards travel.\n\nIn your answer you should:\n• compare their different attitudes to travel\n• compare the methods they use to convey those attitudes\n• use evidence from both texts to support your answer.',
-            marks: 16,
+            questionText: `"Both writers suggest that famous places are always a disappointment."\n\nDecide how far you agree with this view.\n\nIn your answer:\n• weigh up what each writer says about visiting a famous place, and how far the statement fits each text\n• explain the effect each text has on you as a reader\n• compare the writers' experiences, and the ways each of them presents them\n• quote from both texts to back up your points.`,
+            marks: 18,
             suggestedTimeMinutes: 20,
-            questionType: 'comparison',
-            extract: EXTRACT_07_A + '\n\n---\n\n' + EXTRACT_07_B,
-            extractSource: EXTRACT_07_A_REF + ' / ' + EXTRACT_07_B_REF,
+            questionType: 'evaluation',
+            extract: `Text 1:\n${EXTRACT_07_A}\n\nText 2:\n${EXTRACT_07_B}`,
+            extractSource: `Text 1: ${EXTRACT_07_A_REF} | Text 2: ${EXTRACT_07_B_REF}`,
             modelAnswers: {
-              'Grade 4-5':
-                'Both writers describe arriving at a famous place they had seen in pictures, and both find it different from what they imagined. The modern writer is disappointed: Venice is crowded by "Cruise ships the size of apartment blocks", and a coffee costs "fourteen euros". Edwards is not impressed at first, because from a distance the pyramids "look small and shadowy", but close up she is overwhelmed and feels "awe and wonder". Both mention photographs: the modern writer says "You have seen the photographs", and Edwards says "the clearest photographs" did not prepare her. The modern writer uses "you" to involve the reader and short, blunt sentences like "Then you arrive", while Edwards uses long, carefully built sentences and repetition. The modern writer\'s moment of beauty lasts "perhaps ninety seconds", while Edwards\'s sense of wonder is the high point of her account.',
-              'Grade 6-7':
-                'Both texts are about the gap between the place imagined and the place found, but they move in opposite directions. The modern writer arrives with a Venice "luminous, uncrowded, and entirely your own" and finds it "drowning"; Edwards arrives expecting little, because the pyramids are "too familiar to be in any way startling", and is overwhelmed. Both blame second-hand images for the gap. The article\'s tricolon "seen the photographs, read the guidebooks, watched the documentaries" is closely matched by Edwards\'s "plans and measurements, the clearest photographs, the most elaborate descriptions": writing well over a century apart, both conclude that no amount of looking at pictures prepares you for being there. Their methods differ. The modern writer\'s second-person address ("You have constructed") makes the reader share the illusion, and the humour deflates it: "fourteen euros", gondoliers "faintly hostile". Edwards writes in the impersonal "one", in long sentences that build towards their subject, and her repetition of "It shuts out" makes the pyramid fill the page as it filled her view. Each text has a moment of real encounter, but the modern writer\'s quiet canal lasts "perhaps ninety seconds" before a water taxi destroys it, while in Edwards\'s account nothing from outside breaks in, and her awe gives way to careful observation. The difference lies partly in what surrounds them: the modern writer\'s Venice is crowded by tourism, while the only intruders Edwards meets are "six extra pyramids".',
+              'Grade 8-9': `I disagree with this statement, although both writers begin with disappointment. What they actually show is that famous places disappoint the traveller who expects the picture, and reward the one who keeps looking.\n\nThe writer of Text 1 comes closest to agreeing. The opening generalises about "a particular kind of disappointment that belongs exclusively to travel", and the second person, "You have seen the photographs", draws every reader into the habit of imagining a place before seeing it. The short sentence "Then you arrive." lands like a blow. Venice is "drowning", crowded with "thousands of day-trippers" from "Cruise ships the size of apartment blocks", and even the gondoliers look "exhausted and faintly hostile". The tone is witty and bitter, and as a reader I enjoy the deflation, especially the coffee at "fourteen euros". But the article does not end there. "And yet." begins a final paragraph in which the writer finds a still canal, a cat watching with "imperial disinterest" and "someone practising scales on a piano", and, "For perhaps ninety seconds", understands why people have loved the city "for a thousand years". So the disappointment is real, but it is not the whole truth.\n\nEdwards disagrees even more clearly. Her first view is "not impressive", and she explains why: from afar, the pyramids are "too familiar to be in any way startling". But close to, "the effect is as sudden as it is overwhelming", and the three sentences beginning "It shuts out" end by shutting out "everything but the sense of awe and wonder". Her experience reverses the statement: the disappointment comes from distance, and the wonder from being there. Even her corrections in the last paragraph, "nine pyramids, instead of three", are discoveries rather than a lament, though she cannot help seeing the six extra ones as "intruders", and her mild joke about one pyramid being "little more than a big cairn" shows a traveller enjoying the truth rather than mourning the picture.\n\nThe writers share one idea: both blame expectations made from images. Text 1 lists "the photographs", "the guidebooks" and "the documentaries"; Edwards lists "plans and measurements, the clearest photographs, the most elaborate descriptions". Yet they shape their experiences differently. Text 1 is built as disappointment followed by a brief, fragile moment that a "water taxi" destroys, so its final effect is bittersweet. Edwards builds upward, from anticlimax to climax, and then steps back to reflect, so her final effect is of a mind enlarged. Text 1 uses short sentences and fragments ("No tourists. No noise.") for its key moments; Edwards uses one long, climbing sentence and then repetition.\n\nOverall, neither text supports the word "always". Both writers are disappointed at first, but both find something that justifies the journey. Text 1 finds it only for ninety seconds and only by escaping the crowds; Edwards finds it in the place itself, once she is close enough to see it.`,
             },
-            markScheme: [
-              'Compares attitudes to travel with clear understanding',
-              'Compares methods used by both writers',
-              'Uses evidence from both texts',
-              'Analyses the effects of specific techniques',
-              'Top band: perceptive, sustained comparison with well-selected evidence',
-            ],
+            markScheme: {
+              'AO4, evaluation (12 marks)': [
+                ...MARK_LEVELS_AO4,
+                'In this paper: Text 1 is mostly disappointment, redeemed by "perhaps ninety seconds" of beauty; Text 2 moves from a disappointing distant view to "awe and wonder". Credit an answer that challenges the word "always".',
+              ],
+              'AO3, comparison (6 marks)': [
+                ...MARK_LEVELS_AO3,
+                'Methods to compare: the second person in Text 1 against the impersonal "one" in Text 2; short sentences and fragments against a long climbing sentence and repetition; a bittersweet ending against reflection and correction; expectations made from images in both.',
+              ],
+              Marking: ['The two grids are marked separately and the marks added, out of 18.'],
+            },
           },
         ],
       },
@@ -447,30 +575,30 @@ export const ocrP1B: MockExamPaper[] = [
         id: 'ocr-p1-07-writing',
         title: 'Section B: Writing',
         description:
-          'You are advised to spend about 45 minutes on this section, including planning time.',
+          'Answer ONE question: Question 5 or Question 6. You are advised to spend about one hour on this section, including time to plan and to check your work.',
         totalMarks: 40,
-        suggestedTimeMinutes: 45,
+        suggestedTimeMinutes: 60,
         questions: [
           {
             id: 'ocr-p1-07-q5',
             questionNumber: 5,
-            questionText:
-              '"Travel broadens the mind - but only if you leave the tourist trail."\n\nWrite an article for a travel magazine in which you argue for or against this view.\n\n(32 marks for content and organisation / 8 marks for technical accuracy)',
+            label: 'Q5 or Q6',
+            questionText: `Answer ONE of the following questions.\n\nQuestion 5\n"Travelling abroad is the best way to learn about the world."\nWrite an article for a travel magazine for young people in which you argue for or against this statement.\nIn your article you could:\n• write about what travel can teach people\n• consider other ways of learning about the world\n• draw on your own experience or that of people you know.\n\nOR\n\nQuestion 6\nWrite a letter to a friend who is about to visit a place you know well, advising them how to get the most out of their visit.\nIn your letter you could:\n• describe what is worth seeing and doing there\n• warn them about any disappointments\n• suggest how to find the place's best moments.\n\nIn your answer you will be assessed on content and organisation (24 marks) and on technical accuracy (16 marks).`,
             marks: 40,
-            suggestedTimeMinutes: 45,
+            suggestedTimeMinutes: 60,
             questionType: 'transactional-writing',
             modelAnswers: {
-              'Grade 4-5':
-                'A clear article with a sustained argument about the value or limitations of modern travel. Uses persuasive techniques and appropriate register for a travel magazine. Generally accurate spelling and punctuation.',
-              'Grade 6-7':
-                'A well-crafted article with a nuanced argument that engages with the complexity of modern tourism. Sophisticated rhetorical devices and well-chosen examples. Consistent technical accuracy with varied sentence structures.',
-              'Grade 8-9':
-                'An outstanding article with a distinctive voice and compelling argument. Structural sophistication - perhaps using personal anecdote alongside broader cultural analysis. Ambitious vocabulary and flawless technical accuracy.',
+              'Grade 8-9': `Question 6, a letter to a friend.\n\nDear Sam,\n\nI am so glad that you are finally coming to stay in my grandparents' town this summer, and I promised I would tell you how to make the most of it. Here goes.\n\nFirst, forget whatever you have seen in the tourist leaflets. The pictures all show the harbour on a sunny afternoon, crowded with queues for ice cream and people photographing the same three boats. It does look like that at four o'clock in August, and you will be disappointed if that is all you see. The trick is to go at the right time.\n\nSo set your alarm. If you walk down to the harbour at half past six in the morning, you will have it almost to yourself. The fishing boats come back in around then, and the gulls go wild over the catch. The man who runs the bait shop will tell you the name of every boat if you ask him, and the story of at least one of them. Then go to the bakery on the corner by the church, where the first batch of pasties comes out of the oven at seven. Buy two. You will want the second one.\n\nAfter breakfast, take the cliff path east of the town. It is steep for the first ten minutes and then levels out, and after about an hour you reach a cove that you can only get to on foot. Most visitors never find it, because there is no sign. Take a towel and something to eat, and check the tide times at the harbour office before you set off, because the beach disappears completely at high tide.\n\nOn a rainy day, and there will be at least one, go to the little museum above the library. It is free, it is run by volunteers, and it has a room about the shipwrecks along this coast that is better than anything I have seen in a big city museum. Ask for Jean. She knows everything.\n\nFinally, my most important piece of advice: talk to people. My grandparents' neighbours have lived there all their lives, and they know things about the town that no guidebook will ever tell you. The best afternoon I ever spent there was listening to an old man describe the winter the sea came right up into the square.\n\nYou will have a wonderful time. Send me a photograph of the cove, so that I can be jealous.\n\nLots of love,\nPriya`,
             },
-            markScheme: [
-              'Content & Organisation (32 marks): Clear viewpoint, persuasive techniques, appropriate form and register, coherent structure',
-              'Technical Accuracy (8 marks): Sentence demarcation, spelling, punctuation, vocabulary range',
-            ],
+            markScheme: {
+              'AO5, content and organisation (24 marks)': MARK_LEVELS_AO5,
+              'AO6, technical accuracy (16 marks)': MARK_LEVELS_AO6,
+              'For these tasks': [
+                MARK_WRITING_NOTE,
+                'Question 5 is a magazine article for young readers: a clear view on the statement, examples, and a lively voice.',
+                'Question 6 is a letter to a friend: set out and addressed as a letter, informal but well organised, with practical advice and a warm tone.',
+              ],
+            },
           },
         ],
       },
@@ -478,7 +606,7 @@ export const ocrP1B: MockExamPaper[] = [
   },
 
   // ═══════════════════════════════════════════════════════════════════════════
-  // EXAM 08 - Food & Diet
+  // EXAM 08: food
   // ═══════════════════════════════════════════════════════════════════════════
   {
     id: 'ocr-p1-08',
@@ -493,96 +621,87 @@ export const ocrP1B: MockExamPaper[] = [
       {
         id: 'ocr-p1-08-reading',
         title: 'Section A: Reading',
-        description: `Read the two source texts carefully. Then answer all the questions in this section.\n\nSource A: ${EXTRACT_08_A_REF}\nSource B: ${EXTRACT_08_B_REF}`,
+        description: `Read the two texts below, then answer all four questions. You are advised to spend about one hour on this section, about 12 minutes of it reading the texts.\n\nText 1: ${EXTRACT_08_A_REF}\nText 2: ${EXTRACT_08_B_REF}`,
         totalMarks: 40,
         suggestedTimeMinutes: 60,
         questions: [
           {
             id: 'ocr-p1-08-q1',
             questionNumber: 1,
-            questionText:
-              'Read Source A. Identify four concerns the writer raises about modern attitudes to food.',
+            questionText: `Look again at the second paragraph of Text 1, from "Consider the supermarket" to "make an omelette."\n\n(a) Give the phrase the writer uses to describe the supermarket. [1]\n\n(b) Identify two of the questions the writer says a shopper might ask about an egg. [2]\n\n(c) What, according to the writer, has the shopper lost by the end of all these questions? [1]`,
             marks: 4,
             suggestedTimeMinutes: 5,
             questionType: 'short-answer',
-            extract: EXTRACT_08_A,
-            extractSource: EXTRACT_08_A_REF,
+            extract: `Text 1:\n${EXTRACT_08_A}\n\nText 2:\n${EXTRACT_08_B}`,
+            extractSource: `Text 1: ${EXTRACT_08_A_REF} | Text 2: ${EXTRACT_08_B_REF}`,
             modelAnswers: {
-              'Grade 4-5':
-                '1. Food has become a moral battlefield and source of anxiety. 2. Choosing something as simple as an egg involves navigating many ethical questions. 3. The moralisation of food choices has made eating a source of guilt. 4. The people who care most about food often enjoy it least.',
+              'Grade 4-5': `(a) "that cathedral of modern abundance".\n(b) Is the egg free-range or organic? Is the packaging recyclable?\n(c) The will to make an omelette.`,
             },
-            markScheme: ['1 mark per valid point identified from the text, maximum 4'],
+            markScheme: [
+              '(a) 1 mark: "that cathedral of modern abundance" (accept "cathedral of modern abundance").',
+              '(b) 1 mark each, up to 2, for: free-range or organic; barn-reared or pasture-raised; food miles, or whether the local farm is less efficient; whether the packaging is recyclable; whether the brand is ethical; whether the hens have been spoken to kindly.',
+              '(c) 1 mark: the will to make an omelette.',
+              'Every answer must come from the second paragraph of Text 1.',
+            ],
           },
           {
             id: 'ocr-p1-08-q2',
             questionNumber: 2,
-            questionText:
-              "Read Source B. Robert Southey wrote these letters in the character of a Spanish visitor to England. Explain how he conveys the visitor's attitude towards English food and meals. Use evidence from the text to support your answer.",
-            marks: 8,
-            suggestedTimeMinutes: 10,
-            questionType: 'analysis',
-            extract: EXTRACT_08_B,
-            extractSource: EXTRACT_08_B_REF,
+            questionText: `What do the two writers find strange or surprising about the way people eat?\n\nBack up each point with evidence from both texts.`,
+            marks: 6,
+            suggestedTimeMinutes: 8,
+            questionType: 'summary',
+            extract: `Text 1:\n${EXTRACT_08_A}\n\nText 2:\n${EXTRACT_08_B}`,
+            extractSource: `Text 1: ${EXTRACT_08_A_REF} | Text 2: ${EXTRACT_08_B_REF}`,
             modelAnswers: {
-              'Grade 4-5':
-                'The visitor has mixed feelings about English meals, and Southey shows this through strong opinions and comparisons with Spain. He likes the look of breakfast - "The breakfast-table is a cheerful sight" - but is scornful of the coffee: "nothing is so detestable as an Englishman\'s coffee", and he jokes that the water used to wash "our after-dinner cups" at home "would make a mixture as good". He praises the tea, which makes "a very delightful beverage". At dinner he is amazed by how much the English eat: "The quantity of meat which they consume is astonishing". He exaggerates that one English dinner would feed the same number of people in Spain "for a week", and complains that meat and vegetables come "in the same crude and insipid state". Comparing everything with Spain makes English habits seem strange and funny.',
-              'Grade 6-7':
-                'Southey\'s visitor is an invented persona, and his attitude to English food is built from confident judgements, each measured against home. He opens by correcting other writers - the English do not eat beef-steaks for breakfast, "as lying travellers have told us" - which makes him seem a careful and fair witness, so that his later verdicts carry weight. The breakfast-table is described with admiration, the water in the urn that "smokes and sings" given a cheerful life of its own, before the sudden, sweeping verdict "nothing is so detestable as an Englishman\'s coffee". The joke that follows compares it with the water from "our after-dinner cups" and quietly asserts Spanish superiority, and the English excuse, that proper coffee "would prevent them from sleeping", follows the flat judgement "they know no better" and is left to condemn itself. Praise is given as carefully as blame: the English "make amends" with their tea, and the butter they eat with their bread is "the best thing in the country". At dinner the tone rises to astonishment, with hyperbole in the claim that one English dinner would feed as many in Spain "for a week, even if no fast-days intervened", a reminder that the visitor comes from a Catholic country where fasting is part of the year. The phrase "crude and insipid" condemns English cooking in two adjectives, and the short sentence "Beer is the common drink" marks a difference of custom without comment. The extract ends in approval of the hour after supper, "the pleasantest in the day", so the attitude that emerges is amused, critical and fair rather than simply hostile.',
+              'Grade 8-9': `Both writers look at their society's eating habits as if from outside, and both find them odd. The writer of Text 1 is surprised that food, once "the simplest thing in the world", has become "a moral battlefield, a status symbol, an identity statement"; Southey's Spanish visitor is surprised by much at the English table, from coffee so weak that "nothing is so detestable as an Englishman's coffee" to "The quantity of meat which they consume", which "is astonishing". Both notice excess. Text 1 calls the supermarket "that cathedral of modern abundance", and Southey's visitor believes that one English dinner "would supply the same number of persons in Spain for a week". Both also find rules getting in the way of a simple pleasure: in Text 1 the shopper must navigate "the moral labyrinth of egg purchase", and in Text 2 "an act of parliament" stops the English from roasting their own coffee. Finally, both writers mix mockery with a serious point. The modern writer jokes, "Have the hens been spoken to kindly?", before warning that eating has become "a source of guilt and paralysis", and Southey laughs at English coffee while noting that the poor "subsist so generally" on the potato.`,
             },
             markScheme: [
-              'Explains how attitude is conveyed through language and tone',
-              'Uses evidence from the text',
-              'Analyses specific techniques and their effects',
-              'Top band: perceptive, detailed analysis with well-integrated evidence',
+              ...MARK_LEVELS_Q2,
+              'Links to credit: an outsider\'s eye on ordinary habits in both; excess ("cathedral of modern abundance"; meat "astonishing"); rules or morals that spoil a pleasure ("moral labyrinth"; "an act of parliament"); humour with a serious edge in both.',
             ],
           },
           {
             id: 'ocr-p1-08-q3',
             questionNumber: 3,
-            questionText:
-              'Read Source A. How does the writer use language and structure to argue that modern attitudes to food have become problematic?\n\nAnalyse the techniques used and their effects on the reader.',
+            questionText: `Look again at Text 2, the whole text. Southey wrote it in the character of a Spanish visitor to England.\n\nHow does Southey use language and structure to present English meals?\n\nRefer closely to the text, and use relevant subject terms to explain its effects.`,
             marks: 12,
             suggestedTimeMinutes: 15,
             questionType: 'analysis',
-            extract: EXTRACT_08_A,
-            extractSource: EXTRACT_08_A_REF,
+            extract: EXTRACT_08_B,
+            extractSource: EXTRACT_08_B_REF,
             modelAnswers: {
-              'Grade 4-5':
-                'The writer uses a contrast between the simplicity of eating in the past ("you were hungry, you ate") and the complexity of food choices today. The supermarket is called a "cathedral of modern abundance" which is a metaphor showing how shopping has become almost religious. The series of questions about the egg ("Free-range or organic? Barn-reared or pasture-raised?") creates a breathless, overwhelming effect. The humour of "Have the hens been spoken to kindly?" exaggerates to make a point. The final paragraph uses a concessive structure - acknowledging real problems before arguing that moralising has gone too far.',
-              'Grade 6-7':
-                'The writer structures the argument through escalating absurdity, beginning with a deliberately reductive summary of eating - "you were hungry, you ate, you stopped being hungry" - whose three short, plain clauses contrast jarringly with the crowded, anxious questions that follow. The supermarket paragraph is the rhetorical centrepiece: the metaphor "cathedral of modern abundance" sacralises the mundane, while the cascading interrogatives about eggs create a syntactic enactment of decision paralysis. The questions accelerate from the reasonable ("Free-range or organic?") to the satirical ("Have the hens been spoken to kindly?"), and the punchline - "you have lost the will to make an omelette" - bathetically deflates the entire moral edifice. The final paragraph\'s concessive opening ("I am not making light") is strategically positioned: by acknowledging genuine ethical concerns, the writer guards against the accusation of flippancy before delivering the central point. The concluding paradox - "The people I know who care most about food are often the people who enjoy it least" - is devastating precisely because it cannot be easily dismissed.',
+              'Grade 8-9': `Southey's letter follows the English day from breakfast to supper, and that simple structure lets him alternate praise and criticism, so that his judgements seem fair even when they are sharp.\n\nHe opens by correcting other writers: "The English do not eat beef-steaks for breakfast, as lying travellers have told us". Beginning with a rebuttal gives his visitor authority as an honest observer. The breakfast table is then described with pleasure, "a cheerful sight", and with careful detail: porcelain that "excels the Chinese in elegance of form and ornament", and water that "smokes and sings in an urn of Etruscan shape". The personification of the boiling water makes the scene homely and lively. Yet even the praise carries a sly aside, "for here they imitate every thing", which hints that English elegance is borrowed.\n\nThe coffee is the comic centre of the first paragraph. The sweeping judgement "nothing is so detestable as an Englishman's coffee" is followed by an insulting comparison, "The washing of our after-dinner cups would make a mixture as good", and by a precise, disgusted description: "just strong enough to make the water brown and bitter". The visitor then reports the English defence, that strong coffee "would prevent them from sleeping", which makes their excuse sound feeble, and adds that "an act of parliament" stops them roasting it, a detail that makes bad coffee seem almost a national institution. The paragraph turns at "They make amends however", and the praise of tea and cream, "a very delightful beverage", restores the balance. Its last words are a backhanded compliment: butter "is the best thing in the country".\n\nThe second paragraph is organised by the clock, "The dinner hour is usually five", "Tea is served between seven and eight", like a guide for a foreign reader, and it notes how class divides the day: the labouring people "dine at one, the highest ranks at six, seven, or even eight". The exclamation "The quantity of meat which they consume is astonishing!" and the hyperbole that one English dinner would feed the same number "in Spain for a week" make the outsider's viewpoint vivid, while "crude and insipid" shows the visitor's taste. Wit returns in the explanation that long drinking has declined "as much from the gradual progress of the taxes as of good sense".\n\nThe ending softens. "Supper is rather a ceremony than a meal" is a neat antithesis, and the final clause, "the hour afterwards, over our wine and water, or spirits, is the pleasantest in the day", uses "our" to show the visitor now sharing English habits. The letter has moved from correction and mockery to something like affection.`,
             },
             markScheme: [
-              'Analyses language techniques and their effects',
-              'Analyses structural choices and their effects',
-              'Uses subject terminology accurately',
-              "Comments on the writer's methods and their impact on the reader",
-              'Top band: perceptive, conceptualised analysis with judicious references',
+              ...MARK_LEVELS_Q3,
+              'Language to credit: the rebuttal of "lying travellers"; the personified boiling water that "smokes and sings"; the sweeping judgement of the coffee and the comparison with "after-dinner cups" (not a superlative in form); the backhanded compliment to the butter; the exclamation and hyperbole about meat; the antithesis of "ceremony" and "meal".',
+              'Structure to credit: the day followed from breakfast to supper; praise and criticism in turn, with "They make amends however" as a turning point; times of day as signposts; the softening ending and the shift to "our".',
             ],
           },
           {
             id: 'ocr-p1-08-q4',
             questionNumber: 4,
-            questionText:
-              'Read Source A and Source B. Compare how the two writers convey their different perspectives on food and eating.\n\nIn your answer you should:\n• compare their different perspectives on food\n• compare the methods they use to convey those perspectives\n• use evidence from both texts to support your answer.',
-            marks: 16,
+            questionText: `"Both writers make fun of the way people eat, but each has a serious point to make."\n\nDecide how far you agree with this view.\n\nIn your answer:\n• weigh up what each writer says about food and eating, and how far the statement fits each text\n• explain the effect each text has on you as a reader\n• compare the writers' ideas, and the ways each of them gets those ideas across\n• quote from both texts to back up your points.`,
+            marks: 18,
             suggestedTimeMinutes: 20,
-            questionType: 'comparison',
-            extract: EXTRACT_08_A + '\n\n---\n\n' + EXTRACT_08_B,
-            extractSource: EXTRACT_08_A_REF + ' / ' + EXTRACT_08_B_REF,
+            questionType: 'evaluation',
+            extract: `Text 1:\n${EXTRACT_08_A}\n\nText 2:\n${EXTRACT_08_B}`,
+            extractSource: `Text 1: ${EXTRACT_08_A_REF} | Text 2: ${EXTRACT_08_B_REF}`,
             modelAnswers: {
-              'Grade 4-5':
-                'Both writers look at food with humour, but from different angles. The modern writer worries that people now think too much about food, turning it into "a moral battlefield", while Southey\'s Spanish visitor comments on English meals from the outside, sometimes approving and sometimes appalled. Both make their points through comparison or questioning: the modern writer piles up questions about eggs, while the visitor compares English customs with Spain, saying one English dinner would feed the same number there "for a week". Both use exaggeration for comic effect: "Have the hens been spoken to kindly?" and "nothing is so detestable as an Englishman\'s coffee". The modern writer is anxious about choice, while the visitor is amazed by quantity: "The quantity of meat which they consume is astonishing".',
-              'Grade 6-7':
-                'Both texts look at how a society eats, but from opposite positions. The modern writer writes from inside a culture of plenty and argues that it has turned eating into "a source of guilt and paralysis"; Southey\'s visitor writes from outside English culture and judges its meals by the standards of home. The article\'s problem is too much thought about food, and the visitor\'s complaint is too little care in cooking it ("crude and insipid"), yet both notice excess: the "cathedral of modern abundance" has its counterpart in an English dinner that would feed as many Spaniards "for a week". Their humour works differently. The article escalates, from sensible questions ("Free-range or organic?") to absurd ones ("Have the hens been spoken to kindly?") until "you have lost the will to make an omelette"; the visitor\'s humour is dry and comparative, as when English coffee is no better than the water from "our after-dinner cups", or when the English explain that strong coffee "would prevent them from sleeping". Both writers also concede before they criticise, or balance blame with praise. The article states "I am not making light of genuine ethical concerns" before its main point, and the visitor sets his scorn for the coffee against real praise for "the excellence of their tea". The most telling difference is in pleasure: the modern writer ends by observing that those who care most about food "enjoy it least", while the visitor, for all his complaints, finds the hour after supper "the pleasantest in the day".',
+              'Grade 8-9': `I agree with this statement for both texts, but the balance is different: Text 1 uses humour to serve a serious argument, while in Text 2 the serious points are smaller and mostly tucked inside the comedy.\n\nThe writer of Text 1 makes fun of modern shoppers with a run of questions about a single egg, "Free-range or organic? Barn-reared or pasture-raised?", ending with the absurd "Have the hens been spoken to kindly?" The mock-heroic phrase "the moral labyrinth of egg purchase", and the punchline that the shopper has "lost the will to make an omelette", make the reader laugh at a habit they may share. Yet the writer is careful to say "I am not making light of genuine ethical concerns", and lists them seriously: "Factory farming is cruel, food waste is obscene". The real point comes at the end. Eating, "one of life's fundamental pleasures", has become "a source of guilt and paralysis", and the paradox that "The people I know who care most about food are often the people who enjoy it least" leaves the reader thinking rather than laughing.\n\nSouthey's Spanish visitor is funnier and less earnest. The attack on English coffee, "nothing is so detestable as an Englishman's coffee", and the comparison with "The washing of our after-dinner cups", are pure comedy, and the backhanded compliment that butter "is the best thing in the country" mocks English food with a straight face. But serious observations are there. He notices that "the poor subsist so generally upon this root", the potato, which hints at how little else the poor have to eat. He criticises government, noting that "an act of parliament" spoils English coffee and that "the ministry, in violation of an explicit bargain," raised the tax on tea "four fold". And he records class differences in the dinner hour, from "the labouring part of the community" at one to "the highest ranks" as late as eight. These points are made lightly, as a traveller's notes, not as an argument.\n\nAs a reader, I enjoy Text 2 more as entertainment, but Text 1 has more effect on my own thinking, because it is aimed at readers like me. The methods explain this. Text 1 addresses the reader as "you" in the supermarket, so the joke is on us, and then turns to "I wonder whether" to make its case. Southey writes as a foreigner reporting to people at home, so the joke is on the English, and his viewpoint, a visitor used to Spanish meals and "fast-days", lets him see as strange what English readers took for granted. Both use exaggeration ("cathedral of modern abundance"; a dinner that "would supply the same number of persons in Spain for a week"), but Text 1's exaggeration supports an argument, while Southey's mostly delights.\n\nOverall, both writers mock eating habits and both make serious points, so the statement is true. But only Text 1 is written for the sake of its serious point; in Text 2, the seriousness comes as a by-product of a sharp-eyed and amused visitor's honesty.`,
             },
-            markScheme: [
-              'Compares perspectives on food with clear understanding',
-              'Compares methods used by both writers',
-              'Uses evidence from both texts',
-              'Analyses the effects of specific techniques',
-              'Top band: perceptive, sustained comparison with well-selected evidence',
-            ],
+            markScheme: {
+              'AO4, evaluation (12 marks)': [
+                ...MARK_LEVELS_AO4,
+                'In this paper: Text 1 jokes about the "moral labyrinth of egg purchase" but argues seriously that eating has become "a source of guilt and paralysis"; Text 2 is mostly comedy, with serious notes on the poor, taxes and class. Credit a judgement about how serious each text is.',
+              ],
+              'AO3, comparison (6 marks)': [
+                ...MARK_LEVELS_AO3,
+                'Methods to compare: the second person in the supermarket against a visitor\'s letter home; exaggeration in both, for argument in Text 1 and for delight in Text 2; a serious turn in Text 1 ("I am not making light") against serious points made in passing in Text 2.',
+              ],
+              Marking: ['The two grids are marked separately and the marks added, out of 18.'],
+            },
           },
         ],
       },
@@ -590,30 +709,30 @@ export const ocrP1B: MockExamPaper[] = [
         id: 'ocr-p1-08-writing',
         title: 'Section B: Writing',
         description:
-          'You are advised to spend about 45 minutes on this section, including planning time.',
+          'Answer ONE question: Question 5 or Question 6. You are advised to spend about one hour on this section, including time to plan and to check your work.',
         totalMarks: 40,
-        suggestedTimeMinutes: 45,
+        suggestedTimeMinutes: 60,
         questions: [
           {
             id: 'ocr-p1-08-q5',
             questionNumber: 5,
-            questionText:
-              '"Schools should be responsible for teaching children how to cook and eat healthily."\n\nWrite a speech to be delivered at a school governors\' meeting in which you argue for or against this proposal.\n\n(32 marks for content and organisation / 8 marks for technical accuracy)',
+            label: 'Q5 or Q6',
+            questionText: `Answer ONE of the following questions.\n\nQuestion 5\n"Every school should teach every student how to cook."\nWrite a speech for a school council meeting in which you argue for or against this idea.\nIn your speech you could:\n• explain what students know about cooking now\n• consider what cooking lessons could teach\n• answer the objections of people who disagree with you.\n\nOR\n\nQuestion 6\nWrite an article for a food magazine about a meal that matters to you or your family, explaining what food can mean to people beyond simply feeding them.\nIn your article you could:\n• describe the meal and the people who share it\n• explain what it means to you\n• suggest why shared meals still matter today.\n\nIn your answer you will be assessed on content and organisation (24 marks) and on technical accuracy (16 marks).`,
             marks: 40,
-            suggestedTimeMinutes: 45,
+            suggestedTimeMinutes: 60,
             questionType: 'transactional-writing',
             modelAnswers: {
-              'Grade 4-5':
-                'A clear speech with a sustained argument about schools and food education. Uses persuasive techniques appropriate to the audience (school governors) and form (speech). Generally accurate spelling and punctuation.',
-              'Grade 6-7':
-                'A well-crafted speech with a compelling argument that addresses practical and philosophical dimensions. Sophisticated rhetorical devices including direct address, anecdote, and counter-argument. Consistent technical accuracy throughout.',
-              'Grade 8-9':
-                'An outstanding speech with a distinctive, authoritative voice. Engages with the complexity of the issue - perhaps questioning the assumptions behind the statement. Structural sophistication with a memorable conclusion. Flawless technical accuracy.',
+              'Grade 8-9': `Question 6, an article for a food magazine.\n\nSunday at my grandmother's table\n\nEvery Sunday for as long as I can remember, my grandmother has cooked the same meal: rice with black-eyed peas, chicken stewed until it falls off the bone, fried plantain and a salad that nobody eats. She starts at nine in the morning. By one o'clock, eleven of us are squeezed round a table built for six, and the noise can be heard from the street.\n\nOn paper, it is just lunch. Any nutritionist could tell you how many calories are on that plate, and would probably frown at the amount of oil in the plantain. But if you think that a meal is only fuel, you have never eaten at my grandmother's.\n\nFood, for her, is a way of saying things she does not put into words. She came to this country with very little, and for years she worked two jobs. She does not often talk about that time. Instead, she cooks the dishes her own mother made, and every Sunday she hands them on to us. When she shows my younger cousin how long to leave the chicken, she is giving him a piece of her history. When she piles extra rice onto my plate in exam season, she is telling me that she is proud of me, and that she worries.\n\nThe table matters as much as the food. It is the only time in the week when my uncles, who live in different cities, sit in the same room. Arguments start there and are settled there. News is shared, good and bad. When my cousin passed her driving test at the fourth attempt, the whole family raised a glass of my grandmother's ginger beer to her, and she has never been allowed to forget it.\n\nWe live in an age that worries about food constantly. We count it, photograph it, judge it and feel guilty about it. Some of that care is sensible: it matters what we eat, and how it is produced. But I sometimes think we have forgotten the oldest purpose of a meal, which is to bring people together. Families who eat together talk together, and neighbours who share food learn more about each other than any leaflet could teach them.\n\nSo here is my suggestion. This week, cook something that someone you love used to cook for you, or ask an older relative to teach you their best dish. Write down the recipe, and the story that comes with it. Then invite people to eat it with you, and put the phones in another room.\n\nYou will be feeding more than their bodies. You will be keeping something alive.`,
             },
-            markScheme: [
-              'Content & Organisation (32 marks): Clear viewpoint, persuasive techniques, appropriate form and register, coherent structure',
-              'Technical Accuracy (8 marks): Sentence demarcation, spelling, punctuation, vocabulary range',
-            ],
+            markScheme: {
+              'AO5, content and organisation (24 marks)': MARK_LEVELS_AO5,
+              'AO6, technical accuracy (16 marks)': MARK_LEVELS_AO6,
+              'For these tasks': [
+                MARK_WRITING_NOTE,
+                'Question 5 is a speech to a school council: it should sound spoken, take a clear side, give reasons and answer objections.',
+                'Question 6 is a magazine article: a title, vivid description of the meal, and reflection on what food means, in a voice that suits the readers of a food magazine.',
+              ],
+            },
           },
         ],
       },
@@ -621,7 +740,7 @@ export const ocrP1B: MockExamPaper[] = [
   },
 
   // ═══════════════════════════════════════════════════════════════════════════
-  // EXAM 09 - Fashion
+  // EXAM 09: fashion
   // ═══════════════════════════════════════════════════════════════════════════
   {
     id: 'ocr-p1-09',
@@ -636,96 +755,86 @@ export const ocrP1B: MockExamPaper[] = [
       {
         id: 'ocr-p1-09-reading',
         title: 'Section A: Reading',
-        description: `Read the two source texts carefully. Then answer all the questions in this section.\n\nSource A: ${EXTRACT_09_A_REF}\nSource B: ${EXTRACT_09_B_REF}`,
+        description: `Read the two texts below, then answer all four questions. You are advised to spend about one hour on this section, about 12 minutes of it reading the texts.\n\nText 1: ${EXTRACT_09_A_REF}\nText 2: ${EXTRACT_09_B_REF}`,
         totalMarks: 40,
         suggestedTimeMinutes: 60,
         questions: [
           {
             id: 'ocr-p1-09-q1',
             questionNumber: 1,
-            questionText:
-              'Read Source A. Identify four facts or statistics the writer uses about the fashion industry.',
+            questionText: `Look again at the first paragraph of Text 1, from "The fashion industry tells us" to "towards responsibility."\n\n(a) Identify two things that, the fashion industry claims, it is becoming. [2]\n\n(b) The writer puts the word "journey" in inverted commas. Explain, in your own words, what this suggests about the writer's view of the chief executives. [2]`,
             marks: 4,
             suggestedTimeMinutes: 5,
             questionType: 'short-answer',
-            extract: EXTRACT_09_A,
-            extractSource: EXTRACT_09_A_REF,
+            extract: `Text 1:\n${EXTRACT_09_A}\n\nText 2:\n${EXTRACT_09_B}`,
+            extractSource: `Text 1: ${EXTRACT_09_A_REF} | Text 2: ${EXTRACT_09_B_REF}`,
             modelAnswers: {
-              'Grade 4-5':
-                '1. The global fashion industry produces approximately 100 billion garments per year. 2. This is roughly thirteen garments for every person on the planet. 3. The average British consumer buys 26.7 kilograms of clothing annually. 4. A garment bought for £4.99 will be worn on average seven times before being discarded.',
+              'Grade 4-5': `(a) Sustainable and inclusive.\n(b) The writer does not believe what the chief executives say (1): "journey" is a fashionable word that makes them sound as if they are changing, without showing that anything has really changed (1).`,
             },
-            markScheme: ['1 mark per valid fact or statistic identified from the text, maximum 4'],
+            markScheme: [
+              '(a) 1 mark each, up to 2, for: sustainable; inclusive; conscious.',
+              "(b) 2 marks, in the student's own words: 1 for the writer's doubt or disbelief; 1 for why, that the word is a fashionable or empty phrase that suggests change without proving it.",
+              'Every answer must come from the first paragraph of Text 1.',
+            ],
           },
           {
             id: 'ocr-p1-09-q2',
             questionNumber: 2,
-            questionText:
-              'Read Source B. Explain how the writer conveys views on fashion and dress. Use evidence from the text to support your answer.',
-            marks: 8,
-            suggestedTimeMinutes: 10,
-            questionType: 'analysis',
-            extract: EXTRACT_09_B,
-            extractSource: EXTRACT_09_B_REF,
+            questionText: `What do the two writers suggest about the power that fashion has over people?\n\nBack up each point with evidence from both texts.`,
+            marks: 6,
+            suggestedTimeMinutes: 8,
+            questionType: 'summary',
+            extract: `Text 1:\n${EXTRACT_09_A}\n\nText 2:\n${EXTRACT_09_B}`,
+            extractSource: `Text 1: ${EXTRACT_09_A_REF} | Text 2: ${EXTRACT_09_B_REF}`,
             modelAnswers: {
-              'Grade 4-5':
-                'The writer presents fashion as a powerful ruler that everyone obeys. "Fashion prescribes rules for all", and "All classes of society bow" to her decrees, from "The fine lady who frequents the Court" to "the servant-girl". The long list of what fashion controls, beginning with "the size and shape of bonnets, the make of gowns", shows how far its power reaches, and the writer is critical of long skirts that "trail along in all the dirt and dust" of the streets. However, the writer does not simply reject fashion. In the final paragraph the best-dressed people are neither those "led blindfold by the prevailing fashion" nor those who "defy it": the rebel "will provoke a smile", while the woman who "follows fashion like a slave" becomes "an advertisement for the milliner she employs". The writer\'s view is that dressing well needs judgement about age, figure, station and means.',
-              'Grade 6-7':
-                'The writer builds the argument on a sustained personification of Fashion as a female lawgiver. The language is legal and political throughout: Fashion "prescribes", issues "decrees", subjects every detail of dress to "legislation", and is compared to an "act of uniformity", an allusion to the laws that once required the whole country to worship in one way. The short opening sentence, "Fashion prescribes rules for all", states the rule as bluntly as a statute, and the next sentences prove its reach across society, from "The fine lady who frequents the Court" to "the servant-girl who sweeps out the area of a London lodging-house". The long list of what Fashion governs, down to the "colour of gloves" and the "dye of hair", enacts the minuteness it describes. Yet the view is not simply hostile, since Fashion also "defines the boundaries within which ladies may safely indulge their own conceits": it protects as well as restrains. The final paragraph is built on antithesis. The writer rejects both extremes, those "led blindfold by the prevailing fashion" and those "strong-minded enough to defy it", and gives each a portrait: the rebel, in one long, breathless sentence of odd choices, "looks like a whipping post" and will only "provoke a smile"; the slave of fashion considers neither "her age, nor her figure, nor her station, nor her means" and becomes "an advertisement for the milliner she employs". The sting is that both end looking odd, since the slave of fashion will also "appear eccentric, and generally ill-dressed". Good dress, by implication, is a matter of independent judgement within the rules.',
+              'Grade 8-9': `Both writers present fashion as a power that rules people's choices across the whole of society. Text 2 says so outright: "Fashion prescribes rules for all. All classes of society bow, more or less, to her decrees", from "The fine lady who frequents the Court" to "the servant-girl who sweeps out the area of a London lodging-house". The writer of Text 1 shows the same reach through numbers: "approximately 100 billion garments per year", "roughly thirteen for every person on the planet", with the average British consumer buying "26.7 kilograms of clothing annually". Both also show fashion reaching into the smallest details. The Victorian writer says "There is no part of a lady's dress too minute" for fashion's "inspection and care and legislation", down to "The colour of gloves"; Text 1 follows a single "£4.99" garment from purchase to "two hundred years in a landfill". Finally, both suggest that people follow fashion without thinking clearly about it. Text 2 criticises those who are "led blindfold by the prevailing fashion" and the woman who "follows fashion like a slave"; Text 1 says the true price is "hidden so effectively that we can pretend it does not exist". The difference is that Text 2 criticises individuals' foolish responses to fashion, while Text 1 blames "an economic system" as much as the shoppers.`,
             },
             markScheme: [
-              'Explains how views are conveyed through language and argument',
-              'Uses evidence from the text',
-              'Analyses specific techniques and their effects',
-              'Top band: perceptive, detailed analysis with well-integrated evidence',
+              ...MARK_LEVELS_Q2,
+              'Links to credit: fashion\'s rule over everyone ("All classes of society bow"; garments by the billion); its reach into detail ("too minute"; one "£4.99" garment); people following it without thinking ("led blindfold"; "pretend it does not exist").',
             ],
           },
           {
             id: 'ocr-p1-09-q3',
             questionNumber: 3,
-            questionText:
-              "Read Source A. How does the writer use language and structure to argue that the fashion industry's claims of change are not genuine?\n\nAnalyse the techniques used and their effects on the reader.",
+            questionText: `Look again at Text 2, the whole text.\n\nHow does the writer use language and structure to present the power of fashion, and the best way to respond to it?\n\nRefer closely to the text, and use relevant subject terms to explain its effects.`,
             marks: 12,
             suggestedTimeMinutes: 15,
             questionType: 'analysis',
-            extract: EXTRACT_09_A,
-            extractSource: EXTRACT_09_A_REF,
+            extract: EXTRACT_09_B,
+            extractSource: EXTRACT_09_B_REF,
             modelAnswers: {
-              'Grade 4-5':
-                'The writer structures the text in three paragraphs that move from the industry\'s claims to the reality behind them. The first paragraph repeats the industry\'s own words - "sustainable", "inclusive", "conscious" - and the only word the writer puts in inverted commas, "journey", suggests the chief executives\' language is not to be trusted. The pivotal "And yet" introduces damning statistics. The contrast between a £4.99 garment worn seven times and spending "two hundred years in a landfill" is shocking. The final paragraph argues the problem is the whole system, not individual shoppers, using the powerful image of a T-shirt that costs "less than a sandwich".',
-              'Grade 6-7':
-                'The writer constructs the argument through a three-stage rhetorical demolition. The first paragraph ventriloquises the fashion industry\'s language of transformation - "sustainable", "inclusive", "conscious" - in three short sentences with no comment, which allows the reader to sense the hollowness of the words before the writer states it; the inverted commas round "journey" are the one open sign of scepticism. The pivotal "And yet", a two-word sentence that turns the whole article, introduces the statistical counter-evidence, and the escalation from global scale ("100 billion garments") to individual behaviour ("seven times before being discarded") to environmental consequence ("two hundred years in a landfill") creates a causal chain the reader cannot escape. The most effective technique is the final paragraph\'s reframing: the comparison of a T-shirt with a sandwich makes the abstract economic argument concrete. The tricolon of hidden costs - "polluted rivers, exhausted workers, and mountains of textile waste" - uses concrete nouns to make visible what the industry keeps out of sight. The closing words, "we can pretend it does not exist", include the reader in "we", completing the article\'s movement from criticism of the industry to the complicity of its customers.',
+              'Grade 8-9': `The writer presents fashion as a ruler, and the structure moves from describing its power to advising readers how to live under it.\n\nThe first sentence is short and absolute: "Fashion prescribes rules for all." The capital letter and the pronoun "her" in "bow, more or less, to her decrees" turn fashion into a queen or lawgiver, and the vocabulary of law runs through the paragraph, "prescribes", "decrees", "legislation", and finally "act of uniformity", the name of a real kind of law that forced everyone to conform. The writer proves the reach of this rule by setting extremes side by side: "The fine lady who frequents the Court, as well as the servant-girl who sweeps out the area of a London lodging-house". The contrast between the Court and the basement area shows that no one escapes, and the remark that a fashion "invariably finds its way downward in the course of time" suggests how slowly but surely it spreads.\n\nLong lists show how much fashion controls: "the size and shape of bonnets, the make of gowns, their length and their size - the number of breadths and gores - the trimmings, the petticoats". Piling up details in this way imitates fashion's own fussiness, and the claim that "There is no part of a lady's dress too minute" for its "inspection and care and legislation" is both a criticism and a joke. Yet the paragraph ends by granting fashion a use: it "defines the boundaries within which ladies may safely indulge their own conceits".\n\nThe second paragraph turns from description to judgement, and its opening sets up a balance: the best-dressed are neither "led blindfold by the prevailing fashion" nor "strong-minded enough to defy it". The writer then builds a long sentence from a chain of "who" clauses to describe the rebel, with comic images: she "looks like a whipping post" without a crinoline and wears a bonnet "of the coal-scuttle cut". The length of the sentence makes her protest seem exhausting, and the short verdict that follows, "She will provoke a smile", dismisses her. The slave of fashion is treated just as firmly: she "considers neither her age, nor her figure, nor her station, nor her means", a list of what she ignores, and "allows herself to be an advertisement for the milliner she employs".\n\nThe ending is a paradox. The woman who follows fashion most closely "will often appear eccentric, and generally ill-dressed", which is exactly what she was trying to avoid. By leaving both extremes looking foolish, the writer guides the reader towards the sensible middle way without needing to state it.`,
             },
             markScheme: [
-              'Analyses language techniques and their effects',
-              'Analyses structural choices and their effects',
-              'Uses subject terminology accurately',
-              "Comments on the writer's methods and their impact on the reader",
-              'Top band: perceptive, conceptualised analysis with judicious references',
+              ...MARK_LEVELS_Q3,
+              'Language to credit: fashion personified as a ruler ("her decrees"); the vocabulary of law, up to "act of uniformity"; the contrast of the "fine lady" and the "servant-girl"; the lists of garments; the comic images of the rebel ("a whipping post", "the coal-scuttle cut"); the paradox that the slave of fashion looks "eccentric".',
+              'Structure to credit: a short, absolute first sentence; the first paragraph on fashion\'s power, the second on how to respond; the long chain of "who" clauses and the short verdicts after it; an ending that leaves the middle way implied.',
             ],
           },
           {
             id: 'ocr-p1-09-q4',
             questionNumber: 4,
-            questionText:
-              'Read Source A and Source B. Compare how the two writers convey their different perspectives on fashion and clothing.\n\nIn your answer you should:\n• compare their different perspectives on fashion\n• compare the methods they use to convey those perspectives\n• use evidence from both texts to support your answer.',
-            marks: 16,
+            questionText: `"Both writers believe that people should think for themselves instead of following fashion."\n\nDecide how far you agree with this view.\n\nIn your answer:\n• weigh up what each writer says about fashion, and how far the statement fits each text\n• explain the effect each text has on you as a reader\n• compare the writers' ideas, and the ways each of them gets those ideas across\n• quote from both texts to back up your points.`,
+            marks: 18,
             suggestedTimeMinutes: 20,
-            questionType: 'comparison',
-            extract: EXTRACT_09_A + '\n\n---\n\n' + EXTRACT_09_B,
-            extractSource: EXTRACT_09_A_REF + ' / ' + EXTRACT_09_B_REF,
+            questionType: 'evaluation',
+            extract: `Text 1:\n${EXTRACT_09_A}\n\nText 2:\n${EXTRACT_09_B}`,
+            extractSource: `Text 1: ${EXTRACT_09_A_REF} | Text 2: ${EXTRACT_09_B_REF}`,
             modelAnswers: {
-              'Grade 4-5':
-                'Both writers are critical of fashion, but for different reasons. The modern writer focuses on the environmental and human cost of fast fashion, using statistics to expose the industry\'s dishonesty. The Victorian writer is concerned with how women dress and behave, and shows that everyone, from "The fine lady" to "the servant-girl", obeys Fashion\'s rules. Both writers show shoppers who do not see what they are doing: the modern writer says we "pretend it does not exist", and the Victorian writer describes women "led blindfold by the prevailing fashion". The modern writer uses facts such as "100 billion garments per year", while the Victorian writer uses personification, making Fashion a ruler whose "decrees" all must obey. Both suggest that the people who buy clothes need better judgement.',
-              'Grade 6-7':
-                'Both writers set themselves against the power of fashion, but their critiques work in different registers and centuries. The modern writer\'s argument is systemic and data-driven: the problem is an economic structure that hides its costs ("polluted rivers, exhausted workers"), and the "journey" the chief executives describe is not being made. The Victorian writer\'s argument is social and personal: Fashion is a lawgiver whose "decrees" reach from the Court to the lodging-house, and the answer lies in each woman\'s judgement of "her age", "her figure" and "her means". Yet both see a gap between appearance and reality. The modern writer sets the press releases\' "organic cotton" and "carbon-neutral supply chains" against 100 billion garments a year; the Victorian writer shows that slavish obedience to fashion produces the opposite of elegance, leaving a woman "generally ill-dressed". Both also show fashion overruling common sense: the Victorian skirts are "suffered to trail along in all the dirt and dust of pavement and crossings", and the modern garment is thrown away after being worn "seven times". Their methods are almost reversed. The modern writer builds from statistics to a moral charge that includes the reader ("we can pretend it does not exist"), while the Victorian writer begins with a principle ("Fashion prescribes rules for all") and illustrates it with portraits of two kinds of badly dressed woman. Both, finally, place responsibility on the wearer as well as on the trade: the modern consumer who could find out the truth "within thirty seconds", and the Victorian lady who lets herself become "an advertisement for the milliner she employs".',
+              'Grade 8-9': `I only partly agree. Both writers criticise people who follow fashion without thinking, but neither simply tells readers to ignore it: the Victorian writer advises a sensible middle way within fashion's rules, and the modern writer blames a whole economic system rather than individual shoppers alone.\n\nThe writer of Text 1 does want readers to think. The opening repeats the industry's claims, "It is becoming sustainable. It is becoming inclusive. It is becoming conscious.", in short sentences that sound like slogans, and puts the executives' "journey" in inverted commas to show disbelief. Then "And yet." introduces the facts that expose the slogans: "100 billion garments per year", a "£4.99" garment "worn seven times", "two hundred years in a landfill". The reader is clearly meant to stop believing the press releases and look at the numbers. But the last paragraph changes the focus. "The problem is not that we lack information", the writer says; the problem is "an economic system in which clothing is cheaper than food". So thinking for ourselves is not enough, because the true price "is hidden so effectively that we can pretend it does not exist". The word "pretend" does accuse us, but the main target is the system that makes pretending easy. As a reader I feel uncomfortable, especially at the comparison with "a sandwich", because I recognise my own habits.\n\nThe Victorian writer is closer to the statement in criticising mindless followers. The woman "who follows fashion like a slave" and "allows herself to be an advertisement for the milliner she employs" is mocked, and so is anyone "led blindfold by the prevailing fashion". Yet the writer is just as scornful of the woman who thinks for herself so fiercely that she defies fashion altogether: she "looks like a whipping post" and "will provoke a smile". The ideal is not independence but judgement: to dress according to one's "age", "figure", "station" and "means", within the limits fashion sets. Fashion even "defines the boundaries within which ladies may safely indulge their own conceits", so the writer accepts its authority. To a modern reader this advice sounds cautious, even timid, but it is also practical: it tells people how to look well, not how to change the world.\n\nThe methods match these purposes. Text 1 argues with statistics, contrast and a final list of hidden costs, "polluted rivers, exhausted workers, and mountains of textile waste". Text 2 instructs through description and gentle satire, building long sentences of "who" clauses to sketch two foolish types for readers to avoid. Both, however, present fashion as a powerful force: a ruler with "her decrees" in Text 2, and in Text 1 an industry that "tells us, with considerable frequency and conviction, that it is changing".\n\nOverall, the statement is too simple for either text. Text 1 wants readers to see through fashion, but it places most of the blame on a system. Text 2 wants readers to use their judgement, but within fashion's rules, not instead of them.`,
             },
-            markScheme: [
-              'Compares perspectives on fashion with clear understanding',
-              'Compares methods used by both writers',
-              'Uses evidence from both texts',
-              'Analyses the effects of specific techniques',
-              'Top band: perceptive, sustained comparison with well-selected evidence',
-            ],
+            markScheme: {
+              'AO4, evaluation (12 marks)': [
+                ...MARK_LEVELS_AO4,
+                'In this paper: Text 1 wants readers to see through the industry\'s claims but blames "an economic system" most; Text 2 mocks both the slave of fashion and the rebel against it, and advises judgement within fashion\'s "boundaries". Credit a verdict that differs between the texts.',
+              ],
+              'AO3, comparison (6 marks)': [
+                ...MARK_LEVELS_AO3,
+                'Methods to compare: statistics and contrast against description and satire; slogans mocked in Text 1 against types mocked in Text 2; fashion as an industry in Text 1 and as a ruler in Text 2.',
+              ],
+              Marking: ['The two grids are marked separately and the marks added, out of 18.'],
+            },
           },
         ],
       },
@@ -733,30 +842,30 @@ export const ocrP1B: MockExamPaper[] = [
         id: 'ocr-p1-09-writing',
         title: 'Section B: Writing',
         description:
-          'You are advised to spend about 45 minutes on this section, including planning time.',
+          'Answer ONE question: Question 5 or Question 6. You are advised to spend about one hour on this section, including time to plan and to check your work.',
         totalMarks: 40,
-        suggestedTimeMinutes: 45,
+        suggestedTimeMinutes: 60,
         questions: [
           {
             id: 'ocr-p1-09-q5',
             questionNumber: 5,
-            questionText:
-              '"Schools should introduce a uniform-free dress code to encourage students to express their individuality."\n\nWrite a letter to your headteacher in which you argue for or against this proposal.\n\n(32 marks for content and organisation / 8 marks for technical accuracy)',
+            label: 'Q5 or Q6',
+            questionText: `Answer ONE of the following questions.\n\nQuestion 5\n"What you wear says nothing important about who you are."\nWrite an article for a magazine for teenagers in which you argue for or against this statement.\nIn your article you could:\n• write about why people choose the clothes they do\n• consider how others judge us by our clothes\n• draw on your own experience.\n\nOR\n\nQuestion 6\nWrite a letter to the head of a clothing company, persuading them to change the way they make and sell clothes.\nIn your letter you could:\n• explain why you are writing\n• describe the problems you want them to address\n• suggest what the company could do.\n\nIn your answer you will be assessed on content and organisation (24 marks) and on technical accuracy (16 marks).`,
             marks: 40,
-            suggestedTimeMinutes: 45,
+            suggestedTimeMinutes: 60,
             questionType: 'transactional-writing',
             modelAnswers: {
-              'Grade 4-5':
-                'A clear letter with a sustained argument about school uniform policy. Uses appropriate formal register and persuasive techniques. Generally accurate spelling and punctuation with some variety of sentence forms.',
-              'Grade 6-7':
-                'A well-crafted letter with a compelling, balanced argument. Sophisticated use of rhetorical devices and counter-argument. Appropriate formal register maintained throughout with consistent technical accuracy.',
-              'Grade 8-9':
-                'An outstanding letter with a distinctive voice and compelling argument that engages with the underlying assumptions about individuality, conformity, and education. Structural sophistication and flawless technical accuracy.',
+              'Grade 8-9': `Question 6, a letter to a clothing company.\n\nDear Chief Executive,\n\nI am fifteen, and for the last three years I have bought almost all my clothes from your website. I am writing to tell you why I have stopped, and what would bring me back.\n\nLast month our geography class studied the clothing industry. We learned how much water it takes to grow the cotton for a single T-shirt, and we saw pictures of a river that ran blue with dye from the factories beside it. Then our teacher asked us to check the labels of what we were wearing. Mine carried your name. I felt as if I had been part of something without being told.\n\nI do not believe that your company wants to pollute rivers or underpay the people who sew its clothes. I have read the statements about sustainability on your website, and I am sure that some of the people who wrote them mean what they say. But statements are not the same as changes. When a dress costs less than my lunch, somebody, somewhere, is paying the difference, and it is not me.\n\nI would like to ask you to do three things.\n\nFirst, tell your customers the truth. Show on every product page where the item was made, what it is made of, and how much the people who made it were paid. Shoppers like me are not stupid. If we are given the facts, many of us will choose better.\n\nSecond, make fewer clothes, and make them to last. I would happily pay twice as much for a pair of jeans that survives two years instead of two months. A smaller range of better garments would also mean less waste in your warehouses and in our bins.\n\nThird, take your clothes back. Offer a repair service, or a scheme in which customers return worn items to be resold or recycled, with a discount on their next order. Some companies already do this, and it would show that you take responsibility for what happens to your clothes after they are sold.\n\nI understand that these changes would cost money, and that your company has to make a profit. But young people are paying more attention than you might think. We talk to each other, we share what we learn, and we remember which brands told us the truth. The company that changes first will not only do the right thing; it will win a generation of customers.\n\nI would be very grateful for a reply, and I would be glad to share it with my class.\n\nYours faithfully,\n\nJordan Ellis`,
             },
-            markScheme: [
-              'Content & Organisation (32 marks): Clear viewpoint, persuasive techniques, appropriate form and register, coherent structure',
-              'Technical Accuracy (8 marks): Sentence demarcation, spelling, punctuation, vocabulary range',
-            ],
+            markScheme: {
+              'AO5, content and organisation (24 marks)': MARK_LEVELS_AO5,
+              'AO6, technical accuracy (16 marks)': MARK_LEVELS_AO6,
+              'For these tasks': [
+                MARK_WRITING_NOTE,
+                'Question 5 is a magazine article for teenagers: a clear view on the statement, examples from life, and a voice that suits young readers.',
+                'Question 6 is a formal letter: set out and addressed as a letter, polite but firm, with a clear purpose, reasons and specific requests.',
+              ],
+            },
           },
         ],
       },
@@ -764,7 +873,7 @@ export const ocrP1B: MockExamPaper[] = [
   },
 
   // ═══════════════════════════════════════════════════════════════════════════
-  // EXAM 10 - Childhood
+  // EXAM 10: childhood
   // ═══════════════════════════════════════════════════════════════════════════
   {
     id: 'ocr-p1-10',
@@ -779,96 +888,87 @@ export const ocrP1B: MockExamPaper[] = [
       {
         id: 'ocr-p1-10-reading',
         title: 'Section A: Reading',
-        description: `Read the two source texts carefully. Then answer all the questions in this section.\n\nSource A: ${EXTRACT_10_A_REF}\nSource B: ${EXTRACT_10_B_REF}`,
+        description: `Read the two texts below, then answer all four questions. You are advised to spend about one hour on this section, about 12 minutes of it reading the texts.\n\nText 1: ${EXTRACT_10_A_REF}\nText 2: ${EXTRACT_10_B_REF}`,
         totalMarks: 40,
         suggestedTimeMinutes: 60,
         questions: [
           {
             id: 'ocr-p1-10-q1',
             questionNumber: 1,
-            questionText:
-              'Read Source A. Identify four ways the writer says modern parents monitor or restrict their children.',
+            questionText: `Look again at the first paragraph of Text 1, from "We have, as a society" to "every thirty seconds."\n\n(a) Identify two things about children that, the writer says, adults monitor. [2]\n\n(b) Until what age, according to the writer, do adults walk children to school? [1]\n\n(c) What, according to the writer, can a twelve-year-old not do without a risk assessment? [1]`,
             marks: 4,
             suggestedTimeMinutes: 5,
             questionType: 'short-answer',
-            extract: EXTRACT_10_A,
-            extractSource: EXTRACT_10_A_REF,
+            extract: `Text 1:\n${EXTRACT_10_A}\n\nText 2:\n${EXTRACT_10_B}`,
+            extractSource: `Text 1: ${EXTRACT_10_A_REF} | Text 2: ${EXTRACT_10_B_REF}`,
             modelAnswers: {
-              'Grade 4-5':
-                "1. They monitor children's screen time. 2. They track children's phones until they are eighteen. 3. A twelve-year-old cannot climb a tree without a risk assessment. 4. A fourteen-year-old cannot walk to the shops without GPS tracking every thirty seconds.",
+              'Grade 4-5': `(a) Their screen time and their sugar intake.\n(b) Eleven.\n(c) Climb a tree.`,
             },
-            markScheme: ['1 mark per valid point identified from the text, maximum 4'],
+            markScheme: [
+              '(a) 1 mark each, up to 2, for: screen time; sugar intake; friendship groups; emotional vocabulary; exposure to ideas adults consider inappropriate.',
+              '(b) 1 mark: eleven.',
+              '(c) 1 mark: climb a tree.',
+              'Every answer must come from the first paragraph of Text 1.',
+            ],
           },
           {
             id: 'ocr-p1-10-q2',
             questionNumber: 2,
-            questionText:
-              'Read Source B. Explain how John Ruskin conveys the nature of his childhood. Use evidence from the text to support your answer.',
-            marks: 8,
-            suggestedTimeMinutes: 10,
-            questionType: 'analysis',
-            extract: EXTRACT_10_B,
-            extractSource: EXTRACT_10_B_REF,
+            questionText: `What do the two writers suggest children miss when they are protected too much?\n\nBack up each point with evidence from both texts.`,
+            marks: 6,
+            suggestedTimeMinutes: 8,
+            questionType: 'summary',
+            extract: `Text 1:\n${EXTRACT_10_A}\n\nText 2:\n${EXTRACT_10_B}`,
+            extractSource: `Text 1: ${EXTRACT_10_A_REF} | Text 2: ${EXTRACT_10_B_REF}`,
             modelAnswers: {
-              'Grade 4-5':
-                'Ruskin presents his childhood as comfortable but empty. He calls the good things "blessings", such as the "extreme perfection in palate" that came from "the utter prohibition of cake, wine, comfits", and then lists the "calamities". The first is blunt: "I had nothing to love." His parents were like "the sun and the moon" to him, always there but not loved. He had "no companions to quarrel with", and the servants were not allowed to do anything for him beyond their duty, so there was "nobody to assist, and nobody to thank". The second calamity is that he "had nothing to endure": his "courage never fortified" because he never faced danger. The detail that he tried hard to get leave to play with "the lion\'s cubs in Wombwell\'s menagerie" shows a boy who wanted adventure and was never given it.',
-              'Grade 6-7':
-                'Ruskin, looking back from middle age, sets out his childhood like an account book. Having counted the "blessings", he turns to "the equally dominant calamities", and the numbered structure ("First", "second of chief calamities") makes the analysis seem cool and exact, which gives the painful admissions more force. The first calamity is stated in one short sentence, "I had nothing to love", and then explained through a startling comparison: his parents were "visible powers of nature", "no more loved than the sun and the moon". The balanced phrases "nobody to assist, and nobody to thank" describe a life with no give and take in it, and the detail that the cook "dared not give me a baked potato without asking leave" shows how strictly his parents controlled everything he was given, so that the servants had no kindness of their own to offer him. He is candid about the result: when affection did come, it came "with violence utterly rampant and unmanageable". The second calamity is given in a tricolon of negatives: "my strength was never exercised, my patience never tried, and my courage never fortified". The irony of the passage is that the boy was not timid (he was never "afraid of anything") and longed for risk, as his "passionate effort" to play with the lion\'s cubs shows. The childhood Ruskin presents was so protected that it kept from him the experiences that build character.',
+              'Grade 8-9': `Both writers argue that children who are protected from every difficulty miss the very experiences that make them strong. The writer of Text 1 says that "children need risk": they "need to fall out of trees, lose arguments, get lost, and find their way back", and to learn "that failure is survivable". Ruskin, looking back on his own childhood, counts it a calamity that he "had nothing to endure": "my strength was never exercised, my patience never tried, and my courage never fortified". Both also notice what children lose with other people. Text 1 lists the arguments children should be allowed to lose, and Ruskin had "no companions to quarrel with", "nobody to assist, and nobody to thank". And both see a cost that shows later. The modern writer fears a generation "less resilient and more anxious than any that preceded it", and Ruskin found that, because he had never had to manage his feelings, affection "came with violence utterly rampant and unmanageable". Both writers accept that the protection had its reasons, since "The intention, of course, is love" in Text 1 and Ruskin counts among the "blessings" of his childhood the fine palate that his parents' strict rules gave him, yet both conclude that a child kept from struggle is kept from growing.`,
             },
             markScheme: [
-              'Explains how the nature of childhood is conveyed through language and detail',
-              'Uses evidence from the text',
-              'Analyses specific techniques and their effects',
-              'Top band: perceptive, detailed analysis with well-integrated evidence',
+              ...MARK_LEVELS_Q2,
+              'Links to credit: risk, struggle or endurance ("children need risk"; "nothing to endure"); quarrels and other people ("lose arguments"; "no companions to quarrel with"); a cost that appears later ("less resilient"; affection "unmanageable"); protection meant well in both.',
             ],
           },
           {
             id: 'ocr-p1-10-q3',
             questionNumber: 3,
-            questionText:
-              'Read Source A. How does the writer use language and structure to argue that modern childhood is too restrictive?\n\nAnalyse the techniques used and their effects on the reader.',
+            questionText: `Look again at Text 2, the whole text.\n\nHow does Ruskin use language and structure to show what his childhood lacked?\n\nRefer closely to the text, and use relevant subject terms to explain its effects.`,
             marks: 12,
             suggestedTimeMinutes: 15,
             questionType: 'analysis',
-            extract: EXTRACT_10_A,
-            extractSource: EXTRACT_10_A_REF,
+            extract: EXTRACT_10_B,
+            extractSource: EXTRACT_10_B_REF,
             modelAnswers: {
-              'Grade 4-5':
-                'The writer uses listing to show how many parts of children\'s lives are controlled: "their screen time, their sugar intake, their friendship groups, their emotional vocabulary". This accumulation feels overwhelming. The examples of the tree and the GPS tracking use exaggeration to make the restrictions seem absurd. The short sentence "The intention, of course, is love" acknowledges parents\' motives before the writer argues that the effects are harmful. The research on outdoor play provides evidence. The final list - "fall out of trees, lose arguments, get lost" - makes risk sound natural and necessary.',
-              'Grade 6-7':
-                'The writer structures the argument through a tension between acknowledged good intention and unintended harm. The opening paragraph\'s list, with "their" repeated before each item - "their screen time, their sugar intake, their friendship groups, their emotional vocabulary" - creates a suffocating rhythm that enacts the over-monitoring it describes. The specificity of "every thirty seconds" and "a risk assessment" turns parental concern into bureaucratic absurdity. The second paragraph concedes motive ("The intention, of course, is love") before introducing the paradox that drives the argument: "safety and growth are not always the same thing". This antithesis is the article\'s conceptual engine. The research on outdoor play provides evidence, but the writer is careful to admit its limits ("correlation is not causation"), which strengthens the article\'s credibility. The final paragraph\'s list - "fall out of trees, lose arguments, get lost, and find their way back" - moves from physical to social to practical risk and ends in recovery, preparing for the assertion that children need "to discover that failure is survivable". The movement from the practical to the general turns an argument about parenting into one about how people grow.',
+              'Grade 8-9': `Ruskin sets out his childhood like a set of accounts, and the structure is what makes the losses so striking. He has just listed its "blessings", ending with the "extreme perfection in palate" that the ban on cake and sweets gave him, and now he turns the page: "next, let me count the equally dominant calamities". The word "count" and the balancing of "blessings" against "calamities" make the passage sound calm and exact, as if he were weighing his life rather than complaining about it. That calm makes the first calamity hit harder. It is given a paragraph of its own, one short sentence: "First, that I had nothing to love."\n\nThe next paragraph explains it through comparison. His parents were "visible powers of nature to me, no more loved than the sun and the moon". The comparison suggests that they were constant, distant and necessary, but not people he could feel close to. A bracketed exclamation then breaks in from the present, "(how much, now, when both are darkened!)", and the metaphor of the sun and moon "darkened" shows his grief for them now that they are dead, which makes the earlier lack of love more painful. The list of absences continues with repeated negatives: "no companions to quarrel with", "nobody to assist, and nobody to thank".\n\nHis examples are specific and almost comic. The rhetorical question about the servants asks why he should have been grateful "to the cook for cooking, or the gardener for gardening", when the cook "dared not give me a baked potato without asking leave" and the gardener "would not let my ants' nests alone". The tiny details show how controlled the household was, and the verb "dared" suggests that the servants feared his parents. He then corrects the reader's likely assumption, "not, however, what might perhaps have been expected", before naming the real consequence in strong language: affection "came with violence utterly rampant and unmanageable".\n\nThe second calamity is announced in brackets, "(second of chief calamities)", continuing the structure of a list. "I had nothing to endure" is followed by a carefully balanced three-part sentence, "my strength was never exercised, my patience never tried, and my courage never fortified", and the repeated "never" makes the lack seem complete. Ruskin ends, though, with an anecdote that is gently ironic: one of his nearest approaches to disobedience was "passionate effort to get leave to play with the lion's cubs in Wombwell's menagerie". A child with nothing to endure longed for danger, and even then he asked for "leave". The ending shows, in one picture, both his courage and the control that never let him use it.`,
             },
             markScheme: [
-              'Analyses language techniques and their effects',
-              'Analyses structural choices and their effects',
-              'Uses subject terminology accurately',
-              "Comments on the writer's methods and their impact on the reader",
-              'Top band: perceptive, conceptualised analysis with judicious references',
+              ...MARK_LEVELS_Q3,
+              'Language to credit: the comparison of the parents with "the sun and the moon"; the bracketed grief of "darkened"; the repeated negatives; the cook who "dared not give me a baked potato without asking leave" (his parents\' control, not a house arranged round him); the strong words "rampant and unmanageable"; the three-part sentence built on "never"; the ironic last anecdote.',
+              'Structure to credit: the passage set out as accounts, blessings then calamities; the one-sentence paragraph for the first calamity; the bracketed "(second of chief calamities)"; the correction of what "might perhaps have been expected"; the ending on a single picture.',
             ],
           },
           {
             id: 'ocr-p1-10-q4',
             questionNumber: 4,
-            questionText:
-              'Read Source A and Source B. Compare how the two writers convey their different perspectives on childhood and freedom.\n\nIn your answer you should:\n• compare their different perspectives on childhood\n• compare the methods they use to convey those perspectives\n• use evidence from both texts to support your answer.',
-            marks: 16,
+            questionText: `"Both writers argue that protecting children too much does them more harm than good."\n\nDecide how far you agree with this view.\n\nIn your answer:\n• weigh up what each writer says about protecting children, and how far the statement fits each text\n• explain the effect each text has on you as a reader\n• compare the writers' ideas, and the ways each of them gets those ideas across\n• quote from both texts to back up your points.`,
+            marks: 18,
             suggestedTimeMinutes: 20,
-            questionType: 'comparison',
-            extract: EXTRACT_10_A + '\n\n---\n\n' + EXTRACT_10_B,
-            extractSource: EXTRACT_10_A_REF + ' / ' + EXTRACT_10_B_REF,
+            questionType: 'evaluation',
+            extract: `Text 1:\n${EXTRACT_10_A}\n\nText 2:\n${EXTRACT_10_B}`,
+            extractSource: `Text 1: ${EXTRACT_10_A_REF} | Text 2: ${EXTRACT_10_B_REF}`,
             modelAnswers: {
-              'Grade 4-5':
-                'Both writers suggest that children need some freedom and risk. The modern writer uses research and examples to argue that today\'s children are over-protected, while Ruskin looks back on his own over-protected childhood in the 1820s. The modern writer lists what parents control, such as "their screen time", and Ruskin lists what he lacked, saying he "had nothing to endure". The modern writer says children "need to fall out of trees", and Ruskin shows what happens when they never do: his "courage never fortified". The modern writer\'s tone is concerned and persuasive, while Ruskin\'s is calm and honest about his own weaknesses. Both suggest that keeping children too safe can harm them.',
-              'Grade 6-7':
-                'The two texts form an unexpected partnership: the modern writer argues that children need risk, and Ruskin, writing in 1875, supplies a case study of a childhood without it. Their methods differ. The modern writer argues from outside, as an observer marshalling examples, research and cultural criticism; Ruskin argues from within, testing his own upbringing and finding it wanting. The article\'s language creates urgency - children made "less resilient and more anxious", a "GPS signal" every "thirty seconds" - while Ruskin\'s is measured and self-examining, and his admissions ("I had nothing to love") carry more weight for being made so calmly. Both writers use lists. The article\'s repeated "their" catalogues what parents monitor; Ruskin\'s tricolon of negatives ("my strength was never exercised, my patience never tried, and my courage never fortified") catalogues what that kind of protection took from him. Both also acknowledge the care behind the protection. The article says "The intention, of course, is love", and Ruskin counts his upbringing\'s "blessings" before its "calamities". Where the article asserts that children need "to discover that failure is survivable", Ruskin shows the cost of never finding out: a boy who was not afraid "of anything", who longed to play with "the lion\'s cubs", and who was given nothing to endure. The irony is that some of the strongest evidence for the modern argument comes from a text written a century and a half earlier.',
+              'Grade 8-9': `I agree that both writers see real harm in over-protection, but only the writer of Text 1 argues that the harm outweighs the good. Ruskin weighs his childhood more evenly, and his account is a reflection rather than an argument.\n\nThe writer of Text 1 builds a clear case. The first paragraph lists what adults monitor, "their screen time, their sugar intake, their friendship groups, their emotional vocabulary", and the examples of a twelve-year-old who "cannot climb a tree without a risk assessment" and a fourteen-year-old tracked by "a GPS signal confirming their location every thirty seconds" make modern parenting look absurd. The writer accepts that "The intention, of course, is love", but argues that "safety and growth are not always the same thing", and that removing risk may produce a generation "less resilient and more anxious than any that preceded it". The final paragraph turns this into a demand: "children need risk". The list of what they need, to "fall out of trees, lose arguments, get lost, and find their way back", is lively and convincing, and as a reader I find the closing idea, that "failure is survivable", reassuring. Yet the writer is careful too: the studies' authors note that "correlation is not causation", and "may be producing" is a cautious verb. So the claim is made firmly, but not as proven fact.\n\nRuskin, by contrast, does not set out to prove anything. He counts his "blessings" before his "calamities", and he calls the calamities "equally dominant", which suggests a balance rather than a verdict. The protection he describes certainly harmed him: he "had nothing to love" and "nothing to endure": "my strength was never exercised, my patience never tried, and my courage never fortified". When affection came, it came "with violence utterly rampant and unmanageable". But the same strict upbringing gave him an "extreme perfection in palate", and he insists that he did not grow up "selfish or unaffectionate". His tone is regretful rather than angry, and the bracketed grief for his parents, "(how much, now, when both are darkened!)", makes it impossible to read the passage as an attack on them.\n\nTheir methods differ accordingly. Text 1 uses "we" to include the reader among the anxious adults, piles up modern examples, and appeals to research. Ruskin writes in the first person about one childhood, using the structure of accounts ("count", "First", "second") and precise, sometimes comic, details such as the gardener who "would not let my ants' nests alone". Both, though, reach the same conclusion about what children miss: struggle. Text 1 says children need "to fail", and Ruskin regrets that "Danger or pain of any kind I knew not".\n\nOverall, the statement fits Text 1 well, and Text 2 only in part. Ruskin shows that protection harmed him, but he sets that harm beside real benefits and leaves the reader to judge, and that honesty makes his warning, in a way, more powerful than an argument would be.`,
             },
-            markScheme: [
-              'Compares perspectives on childhood with clear understanding',
-              'Compares methods used by both writers',
-              'Uses evidence from both texts',
-              'Analyses the effects of specific techniques',
-              'Top band: perceptive, sustained comparison with well-selected evidence',
-            ],
+            markScheme: {
+              'AO4, evaluation (12 marks)': [
+                ...MARK_LEVELS_AO4,
+                'In this paper: Text 1 argues firmly that children "need risk", though it calls its evidence a correlation; Text 2 sets "blessings" beside "equally dominant calamities" and blames no one. Credit a verdict that differs between the texts.',
+              ],
+              'AO3, comparison (6 marks)': [
+                ...MARK_LEVELS_AO3,
+                'Methods to compare: "we" and modern examples against one man\'s memories; an argument against a reflection set out as accounts; research in Text 1 against comic, exact detail in Text 2; the same conclusion about struggle in both.',
+              ],
+              Marking: ['The two grids are marked separately and the marks added, out of 18.'],
+            },
           },
         ],
       },
@@ -876,30 +976,30 @@ export const ocrP1B: MockExamPaper[] = [
         id: 'ocr-p1-10-writing',
         title: 'Section B: Writing',
         description:
-          'You are advised to spend about 45 minutes on this section, including planning time.',
+          'Answer ONE question: Question 5 or Question 6. You are advised to spend about one hour on this section, including time to plan and to check your work.',
         totalMarks: 40,
-        suggestedTimeMinutes: 45,
+        suggestedTimeMinutes: 60,
         questions: [
           {
             id: 'ocr-p1-10-q5',
             questionNumber: 5,
-            questionText:
-              '"Children today spend too much time indoors and on screens. The government should guarantee every child at least two hours of outdoor play per day."\n\nWrite an article for a national newspaper in which you argue for or against this proposal.\n\n(32 marks for content and organisation / 8 marks for technical accuracy)',
+            label: 'Q5 or Q6',
+            questionText: `Answer ONE of the following questions.\n\nQuestion 5\n"Young people today are not given enough freedom."\nWrite an article for a newspaper in which you argue for or against this statement.\nIn your article you could:\n• compare the freedom young people have now with the past\n• explain what freedom gives young people\n• suggest how adults could get the balance right.\n\nOR\n\nQuestion 6\nWrite a letter to your younger self, aged ten, giving advice about the challenges and risks that lie ahead.\nIn your letter you could:\n• describe some of the challenges you have faced\n• explain what you learned from them\n• give advice for the years to come.\n\nIn your answer you will be assessed on content and organisation (24 marks) and on technical accuracy (16 marks).`,
             marks: 40,
-            suggestedTimeMinutes: 45,
+            suggestedTimeMinutes: 60,
             questionType: 'transactional-writing',
             modelAnswers: {
-              'Grade 4-5':
-                'A clear article with a sustained argument about children, outdoor play, and government responsibility. Uses persuasive techniques and appropriate register. Generally accurate spelling and punctuation.',
-              'Grade 6-7':
-                'A well-crafted article with a nuanced argument that considers practical implications alongside the principle. Sophisticated rhetorical devices and well-chosen evidence. Consistent technical accuracy with varied sentence structures.',
-              'Grade 8-9':
-                'An outstanding article with a distinctive voice that interrogates the assumptions behind the proposal. Compelling argument with structural sophistication. Ambitious vocabulary and flawless technical accuracy throughout.',
+              'Grade 8-9': `Question 5, an article for the statement.\n\nLet us out\n\nWhen my grandmother was eleven, she caught two buses across the city on her own to visit her cousins every Saturday. When my mother was eleven, she cycled to the park with her friends and came home when the street lights came on. When I was eleven, I was not allowed to walk to the corner shop without sending a message when I arrived. I am not complaining about my parents, who love me. I am asking whether, as a society, we have gone too far.\n\nThe case for more freedom starts with a simple fact: people learn by doing. Nobody learns to cross a road safely by being held by the hand until they are fourteen. Nobody learns to manage money by never being trusted with any. Every time an adult solves a problem for a young person, the young person loses a chance to practise solving it. Small risks, taken early, are how we prepare for the large ones that come later, when no one will be there to help.\n\nThere is also the question of happiness. Some of my best memories are of the rare afternoons when my friends and I were left to ourselves: building a den in the woods behind our estate, getting lost on the way home and finding the way back. Those afternoons made us feel capable. A childhood spent indoors, supervised and scheduled, may be safe, but it can also be anxious and dull.\n\nOf course, the world has real dangers, and I understand why parents worry. Roads are busier than they were. The internet has brought risks that my grandmother never faced. Freedom does not mean abandoning children to these dangers. It means preparing them for them. A child who has been taught to read a map, use a bus timetable and say no to a stranger is safer on her own than a child who has never been allowed out at all.\n\nWhat would more freedom look like? It could mean letting eleven-year-olds walk to school with friends instead of being driven. It could mean parks with adventure playgrounds rather than padded surfaces and warning signs. It could mean parents agreeing a time to be home, then trusting their children to keep it, instead of tracking them minute by minute.\n\nWe will make mistakes. We will scrape our knees, miss buses and get things wrong. But that is exactly the point. The adults who are trying so hard to protect us will not always be there. The best gift they can give us is the confidence to manage without them.`,
             },
-            markScheme: [
-              'Content & Organisation (32 marks): Clear viewpoint, persuasive techniques, appropriate form and register, coherent structure',
-              'Technical Accuracy (8 marks): Sentence demarcation, spelling, punctuation, vocabulary range',
-            ],
+            markScheme: {
+              'AO5, content and organisation (24 marks)': MARK_LEVELS_AO5,
+              'AO6, technical accuracy (16 marks)': MARK_LEVELS_AO6,
+              'For these tasks': [
+                MARK_WRITING_NOTE,
+                'Question 5 is a newspaper article: a headline, a clear position, concessions answered, and an ending that lands.',
+                'Question 6 is a personal letter: set out and addressed as a letter, a reflective but warm voice, with advice drawn from experience.',
+              ],
+            },
           },
         ],
       },

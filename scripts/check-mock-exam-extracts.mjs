@@ -127,6 +127,8 @@ const WORKS = [
   { key: 'the-war-of-the-worlds', title: 'The War of the Worlds', author: 'H. G. Wells', died: 1946, setText: 'the-war-of-the-worlds', match: /war of the worlds/i, held: 'the-war-of-the-worlds' },
   { key: 'the-scarlet-letter', title: 'The Scarlet Letter', author: 'Nathaniel Hawthorne', died: 1864, setText: 'the-scarlet-letter', match: /scarlet letter/i, held: 'the-scarlet-letter' },
   { key: 'animal-farm', title: 'Animal Farm', author: 'George Orwell', died: 1950, setText: 'animal-farm', match: /animal farm/i, held: 'animal-farm' },
+  // The OCR Component 02 mocks print Gatsby as their 20th-century text (24 October 2026).
+  { key: 'the-great-gatsby', title: 'The Great Gatsby', author: 'F. Scott Fitzgerald', died: 1940, setText: 'the-great-gatsby', match: /great gatsby/i, held: 'the-great-gatsby' },
   { key: 'macbeth', title: 'Macbeth', ...SH, setText: 'macbeth', match: /macbeth/i, ctx: /\bMacbeth\b|\bMACBETH\b/, held: 'macbeth' },
   { key: 'romeo-and-juliet', title: 'Romeo and Juliet', ...SH, setText: 'romeo-and-juliet', match: /romeo|juliet/i, ctx: /Romeo|Juliet|ROMEO|JULIET/, held: 'romeo-and-juliet' },
   { key: 'the-tempest', title: 'The Tempest', ...SH, setText: 'the-tempest', match: /the tempest/i, ctx: /The Tempest|TEMPEST_/, held: 'the-tempest' },
