@@ -9,7 +9,8 @@
     "checker reports a pinned advisory that no longer fires, because an allowlist",
     "that outlives its contents is how a checker starts lying.",
     "",
-    "Reviewed 19 September 2026 (SEC-1)."
+    "Reviewed 19 September 2026 (SEC-1). The glob and minimatch entries were",
+    "added on 31 October 2026, both reached only at build."
   ],
   "accepted": [
     {
@@ -38,6 +39,24 @@
       "summary": "Stack exhaustion merging recursive object graphs",
       "why": "Reached when the Prisma CLI merges its own configuration at build and migration time, from files in this repository. It is not on any request path. The fixes available are an override to a new major of Prisma's internals, or prisma 8, which is a release candidate. Migrations are the one place in this repository where a silent failure has already cost four months, so neither is worth doing for a build-time parser.",
       "revisit": "When a stable prisma release depends on deepmerge-ts >= 8."
+    },
+    {
+      "id": "GHSA-3g3m-2fjr-6pw4",
+      "package": "glob",
+      "via": "@sentry/bundler-plugins, from @sentry/nextjs",
+      "severity": "moderate",
+      "summary": "AbortSignal cancellation bypass allows post-timeout filesystem traversal",
+      "why": "Reached only in two of Sentry's build hooks, which find the source maps to upload after next build and delete them afterwards, with patterns from the plugin's own configuration and no AbortSignal. Nothing on a request path calls it and it takes no input from a user. The fix is glob 14.0.2, a major outside the ^13.0.6 that @sentry/bundler-plugins 10.76.2 declares; forcing it under the plugin risks a source-map upload that fails quietly at build.",
+      "revisit": "When an @sentry/nextjs release depends on glob >= 14.0.2."
+    },
+    {
+      "id": "GHSA-g3hv-75wg-m249",
+      "package": "minimatch",
+      "via": "glob, from @sentry/bundler-plugins",
+      "severity": "moderate",
+      "summary": "Denial of service via globparts amplification",
+      "why": "Same path as GHSA-3g3m-2fjr-6pw4: minimatch matches only the bundler plugin's own patterns, at build time, never a pattern a user supplies. The fix is minimatch 11.0.1, a major outside the ^10.2.2 that glob 13 declares.",
+      "revisit": "With GHSA-3g3m-2fjr-6pw4."
     }
   ]
 }
