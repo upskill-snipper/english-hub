@@ -492,7 +492,7 @@ const KEEPS_ITS_OWN_ORDER: Record<string, string> = {
   'src/app/games/tense-timeline/page.tsx':
     'shuffle([correct, ...distractors]) at build, scores option === currentQ.tense; no index exists',
   'src/app/games/synonym-shuffle/page.tsx':
-    'reshuffles on every question change, scores option === current.answer',
+    'shuffles the options of each question once, when the round is dealt, scores option === current.answer',
   'src/app/resources/study-tools/tester/page.tsx':
     'options: shuffle([correct, ...wrongs]) at generation, scores chosen === currentQuestion.correctAnswer',
   // The options do not exist until generateQuestions() runs and it shuffles

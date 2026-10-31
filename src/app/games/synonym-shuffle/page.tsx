@@ -1,6 +1,6 @@
 'use client'
 
-import { useState, useCallback, useEffect } from 'react'
+import { useState, useCallback } from 'react'
 import Link from 'next/link'
 import GameShell, { type GameState } from '@/components/games/GameShell'
 import { Button } from '@/components/ui/button'
@@ -57,7 +57,7 @@ export default function SynonymShufflePage() {
   const [gameState, setGameState] = useState<GameState>('idle')
   const [items, setItems] = useState<SynonymItem[]>([])
   const [idx, setIdx] = useState(0)
-  const [shuffledOptions, setShuffledOptions] = useState<string[]>([])
+  const [optionSets, setOptionSets] = useState<string[][]>([])
   const [score, setScore] = useState(0)
   const [totalAnswered, setTotalAnswered] = useState(0)
   const [selected, setSelected] = useState<string | null>(null)
@@ -66,15 +66,18 @@ export default function SynonymShufflePage() {
   const deal = useDealer(BANK)
 
   const current = items[idx] ?? null
-
-  // Re-shuffle options whenever the question changes
-  useEffect(() => {
-    if (current) setShuffledOptions(shuffle(current.options))
-  }, [idx, items])
+  // Each question's four words are shuffled once, when the round is dealt, so
+  // they always belong to the sentence on screen. Until 24 October 2026 an
+  // effect shuffled them after the render, so for one paint after Next or Play
+  // Again the previous question's words stood under the new sentence, and a
+  // quick tap could answer it with one of them. Stale options were seen once on
+  // production after Play Again that day; this was the only path found to them.
+  const shuffledOptions = optionSets[idx] ?? []
 
   const handleStart = useCallback(() => {
     const picked = deal(ROUND_SIZE)
     setItems(picked)
+    setOptionSets(picked.map((q) => shuffle(q.options)))
     setIdx(0)
     setScore(0)
     setTotalAnswered(0)
@@ -169,6 +172,10 @@ export default function SynonymShufflePage() {
                 <p className="text-lg sm:text-xl font-medium leading-relaxed text-foreground">
                   {renderSentence(current.sentence)}
                 </p>
+                {/* A real line names its book (24 October 2026); the site's own sentences have none. */}
+                {current.source && (
+                  <p className="mt-3 text-xs text-muted-foreground">{current.source}</p>
+                )}
               </div>
 
               {/* Options */}

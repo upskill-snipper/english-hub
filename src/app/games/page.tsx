@@ -1366,7 +1366,7 @@ const KS3_GAMES: GameDef[] = [
   mkGame(
     'dictionary-skills',
     'Dictionary Skills',
-    'Alphabetical order, guide words and definitions.',
+    'Alphabetical order, guide words, meanings in context and word classes.',
     <BookOpen className="size-6" />,
     'Easy',
     'text-emerald-400',
