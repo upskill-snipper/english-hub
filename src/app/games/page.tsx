@@ -1375,7 +1375,7 @@ const KS3_GAMES: GameDef[] = [
   mkGame(
     'paragraph-jumble',
     'Paragraph Jumble',
-    'Reorder sentences into a coherent paragraph.',
+    'Put sentences in order to make a paragraph, and choose the connective a gap needs, many from real books.',
     <Shuffle className="size-6" />,
     'Medium',
     'text-amber-400',

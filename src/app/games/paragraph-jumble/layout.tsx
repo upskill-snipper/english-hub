@@ -3,7 +3,7 @@ import type { Metadata } from 'next'
 export const metadata: Metadata = {
   title: 'Paragraph Jumble | KS3 Writing Game',
   description:
-    'Reorder jumbled sentences into a coherent paragraph. A free structure and cohesion game for KS3 English and GCSE writing practice.',
+    'Put jumbled sentences in order to make a paragraph, and choose the connective each gap needs. A free structure and cohesion game for KS3 and GCSE English.',
   alternates: { canonical: '/games/paragraph-jumble' },
 }
 

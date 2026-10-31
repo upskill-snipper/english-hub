@@ -11,12 +11,20 @@ import { getBoardConfig } from '@/lib/board/board-store'
 import { AnswerExplanation } from '@/components/games/AnswerExplanation'
 import { useGameRound } from '@/components/games/game-round'
 import { useDealer } from '@/lib/games/start-round'
-import { BANK, type Genre, type Paragraph } from '@/data/games/banks/paragraph-jumble'
+import { newSessionSalt, shuffleOptionsDeterministic } from '@/lib/quiz/shuffle'
+import { BANK, isGap, type JumbleItem } from '@/data/games/banks/paragraph-jumble'
 
 // ─── Data ──────────────────────────────────────────────────────────────────────
 // The paragraphs are in src/data/games/banks/paragraph-jumble.ts (moved there
 // on 16 October 2026), and the explanation of each order in
 // src/data/games/explanations/paragraph-jumble.ts.
+//
+// REBUILT FOR DEPTH (24 October 2026). The genre was shown above every
+// paragraph, and it told an argument's shape before a sentence was read: it is
+// no longer shown. A real paragraph's `source` is shown under its topic. And a
+// question may now be a "choose the connective" gap (isGap): two or three
+// sentences with ___ where the linking word goes, and four options, shuffled
+// with the shared shuffle and marked by value, as every other options game is.
 
 // ─── Helpers ───────────────────────────────────────────────────────────────────
 
@@ -43,11 +51,24 @@ function shuffleOrder(length: number): number[] {
 
 const ROUND_LENGTH = 8
 
-const GENRE_STYLES: Record<Genre, string> = {
-  Recount: 'text-sky-400 border-sky-500/30 bg-sky-500/10',
-  Explanation: 'text-emerald-400 border-emerald-500/30 bg-emerald-500/10',
-  Argument: 'text-clay-600 border-amber-500/30 bg-amber-500/10',
-  Story: 'text-purple-400 border-purple-500/30 bg-purple-500/10',
+/** A gap's text with the gap shown as a blank, or filled with `fill` once answered. */
+function GapText({ text, fill }: { text: string; fill?: string }) {
+  const [before, after] = text.split('___')
+  return (
+    <>
+      {before}
+      <span
+        className={cn(
+          'mx-0.5 inline-block border-b-2 text-center font-semibold',
+          // Filled, the gap fits its word, so a comma after it sits close.
+          fill ? 'border-emerald-500 text-emerald-400' : 'min-w-[4.5rem] border-primary/60',
+        )}
+      >
+        {fill ?? '\u00a0'}
+      </span>
+      {after}
+    </>
+  )
 }
 
 // ─── Component ─────────────────────────────────────────────────────────────────
@@ -57,7 +78,7 @@ export default function ParagraphJumblePage() {
   const boardConfig = getBoardConfig(board)
 
   const [gameState, setGameState] = useState<GameState>('idle')
-  const [rounds, setRounds] = useState<Paragraph[]>([])
+  const [rounds, setRounds] = useState<JumbleItem[]>([])
   const [rIdx, setRIdx] = useState(0)
   const [score, setScore] = useState(0)
   const [answered, setAnswered] = useState(0)
@@ -65,16 +86,30 @@ export default function ParagraphJumblePage() {
   const [order, setOrder] = useState<number[]>([])
   const [checked, setChecked] = useState(false)
   const [wasCorrect, setWasCorrect] = useState(false)
+  // A gap question's options as shown, and the one the student chose.
+  const [choices, setChoices] = useState<string[]>([])
+  const [chosen, setChosen] = useState<string | null>(null)
+  const [salt] = useState(newSessionSalt)
   const round = useGameRound('paragraph-jumble')
   const deal = useDealer(BANK)
 
   const current = rounds[rIdx] ?? null
 
-  const loadParagraph = useCallback((para: Paragraph) => {
-    setOrder(shuffleOrder(para.sentences.length))
-    setChecked(false)
-    setWasCorrect(false)
-  }, [])
+  const loadParagraph = useCallback(
+    (item: JumbleItem) => {
+      if (isGap(item)) {
+        setOrder([])
+        setChoices(shuffleOptionsDeterministic(item.options, `${BANK.key(item)}|${salt}`))
+      } else {
+        setOrder(shuffleOrder(item.sentences.length))
+        setChoices([])
+      }
+      setChosen(null)
+      setChecked(false)
+      setWasCorrect(false)
+    },
+    [salt],
+  )
 
   const handleStart = useCallback(() => {
     const picked = deal(ROUND_LENGTH)
@@ -82,13 +117,9 @@ export default function ParagraphJumblePage() {
     setRIdx(0)
     setScore(0)
     setAnswered(0)
-    if (picked[0]) {
-      setOrder(shuffleOrder(picked[0].sentences.length))
-    }
-    setChecked(false)
-    setWasCorrect(false)
+    if (picked[0]) loadParagraph(picked[0])
     setGameState('playing')
-  }, [deal])
+  }, [deal, loadParagraph])
 
   const handleFinish = useCallback(() => {
     setGameState('finished')
@@ -115,7 +146,7 @@ export default function ParagraphJumblePage() {
    * press Next (16 October 2026).
    */
   const handleCheck = useCallback(() => {
-    if (!current || checked) return
+    if (!current || checked || isGap(current)) return
     const correct = order.every((v, i) => v === i)
     setChecked(true)
     setWasCorrect(correct)
@@ -123,6 +154,26 @@ export default function ParagraphJumblePage() {
     if (correct) setScore((s) => s + 1)
     round.record({ question: BANK.key(current), correct, tag: current.genre })
   }, [current, checked, order, round])
+
+  /** A gap question is marked when an option is chosen, by its text: a point if right. */
+  const handleChoose = useCallback(
+    (option: string) => {
+      if (!current || checked || !isGap(current)) return
+      const correct = option === current.answer
+      setChosen(option)
+      setChecked(true)
+      setWasCorrect(correct)
+      setAnswered((a) => a + 1)
+      if (correct) setScore((s) => s + 1)
+      round.record({
+        question: BANK.key(current),
+        correct,
+        tag: current.link,
+        ...(correct ? {} : { chose: option }),
+      })
+    },
+    [current, checked, round],
+  )
 
   const handleNext = useCallback(() => {
     if (rIdx + 1 >= rounds.length) {
@@ -153,7 +204,7 @@ export default function ParagraphJumblePage() {
           gameId="paragraph-jumble"
           audience="ks3"
           title="Paragraph Jumble"
-          description="The sentences are mixed up! Reorder them into a paragraph that makes sense. Use the topic sentence, connectives and pronouns as your clues."
+          description="Put each paragraph's sentences back in order, or choose the word that links two sentences. Use the topic sentence, pronouns, time and cause as your clues."
           difficulty="Crossover"
           score={score}
           maxScore={answered > 0 ? answered : rounds.length || ROUND_LENGTH}
@@ -164,83 +215,121 @@ export default function ParagraphJumblePage() {
         >
           {current && (
             <div className="space-y-6">
-              {/* Progress */}
+              {/* Progress (the genre is no longer shown: it told an argument's shape) */}
               <div className="flex items-center justify-between text-sm text-muted-foreground">
                 <span>
-                  Paragraph {rIdx + 1} of {rounds.length}
+                  Question {rIdx + 1} of {rounds.length}
                 </span>
-                <div className="flex items-center gap-3">
-                  <span>{score} correct so far</span>
-                  <span
-                    className={cn(
-                      'text-xs px-2 py-0.5 rounded-full border',
-                      GENRE_STYLES[current.genre],
+                <span>{score} correct so far</span>
+              </div>
+
+              {isGap(current) ? (
+                <div className="space-y-4">
+                  {/* A gap: the sentences, and the linking word to choose */}
+                  <div className="rounded-xl border border-border bg-card p-4">
+                    <p className="text-xs uppercase tracking-wider text-muted-foreground">
+                      Choose the word or phrase that links these sentences
+                    </p>
+                    <p className="mt-2 text-base leading-relaxed text-foreground">
+                      <GapText text={current.text} fill={checked ? current.answer : undefined} />
+                    </p>
+                    {current.source && (
+                      <p className="mt-2 text-xs text-muted-foreground">{current.source}</p>
                     )}
-                  >
-                    {current.genre}
-                  </span>
-                </div>
-              </div>
-
-              {/* Topic prompt */}
-              <div className="rounded-xl border border-border bg-card p-4 text-center">
-                <p className="text-xs uppercase tracking-wider text-muted-foreground">Topic</p>
-                <p className="mt-1 text-base font-semibold text-foreground">{current.topic}</p>
-              </div>
-
-              {/* Sentence list */}
-              <ol className="space-y-2">
-                {order.map((sentenceIdx, pos) => {
-                  const isInRightPlace = checked && sentenceIdx === pos
-                  return (
-                    <li
-                      key={sentenceIdx}
-                      className={cn(
-                        'flex items-start gap-3 rounded-lg border px-3 py-3 transition-colors',
-                        !checked && 'border-border bg-card',
-                        checked && isInRightPlace && 'border-emerald-500 bg-emerald-500/10',
-                        checked && !isInRightPlace && 'border-red-500 bg-red-500/10',
-                      )}
-                    >
-                      <span
+                  </div>
+                  <div className="grid gap-2 sm:grid-cols-2">
+                    {choices.map((option) => (
+                      <button
+                        key={option}
+                        onClick={() => handleChoose(option)}
+                        disabled={checked}
                         className={cn(
-                          'mt-0.5 flex size-6 shrink-0 items-center justify-center rounded-full text-xs font-bold',
-                          checked && isInRightPlace
-                            ? 'bg-emerald-500/20 text-emerald-400'
-                            : checked
-                              ? 'bg-red-500/20 text-red-400'
-                              : 'bg-primary/10 text-primary',
+                          'rounded-lg border px-4 py-3 text-sm font-medium transition-colors',
+                          !checked && 'border-border bg-card hover:bg-accent',
+                          checked &&
+                            option === current.answer &&
+                            'border-emerald-500 bg-emerald-500/10 text-emerald-400',
+                          checked &&
+                            option === chosen &&
+                            option !== current.answer &&
+                            'border-red-500 bg-red-500/10 text-red-400',
+                          checked &&
+                            option !== chosen &&
+                            option !== current.answer &&
+                            'border-border bg-card opacity-60',
                         )}
                       >
-                        {pos + 1}
-                      </span>
-                      <p className="flex-1 text-sm leading-relaxed text-foreground">
-                        {current.sentences[sentenceIdx]}
-                      </p>
-                      {!checked && (
-                        <div className="flex shrink-0 flex-col gap-1">
-                          <button
-                            onClick={() => move(pos, -1)}
-                            disabled={pos === 0}
-                            aria-label="Move sentence up"
-                            className="rounded-md border border-border p-1 text-muted-foreground transition-colors hover:bg-accent hover:text-foreground disabled:opacity-30"
+                        {option}
+                      </button>
+                    ))}
+                  </div>
+                </div>
+              ) : (
+                <>
+                  {/* Topic prompt */}
+                  <div className="rounded-xl border border-border bg-card p-4 text-center">
+                    <p className="text-xs uppercase tracking-wider text-muted-foreground">Topic</p>
+                    <p className="mt-1 text-base font-semibold text-foreground">{current.topic}</p>
+                    {current.source && (
+                      <p className="mt-1 text-xs text-muted-foreground">{current.source}</p>
+                    )}
+                  </div>
+
+                  {/* Sentence list */}
+                  <ol className="space-y-2">
+                    {order.map((sentenceIdx, pos) => {
+                      const isInRightPlace = checked && sentenceIdx === pos
+                      return (
+                        <li
+                          key={sentenceIdx}
+                          className={cn(
+                            'flex items-start gap-3 rounded-lg border px-3 py-3 transition-colors',
+                            !checked && 'border-border bg-card',
+                            checked && isInRightPlace && 'border-emerald-500 bg-emerald-500/10',
+                            checked && !isInRightPlace && 'border-red-500 bg-red-500/10',
+                          )}
+                        >
+                          <span
+                            className={cn(
+                              'mt-0.5 flex size-6 shrink-0 items-center justify-center rounded-full text-xs font-bold',
+                              checked && isInRightPlace
+                                ? 'bg-emerald-500/20 text-emerald-400'
+                                : checked
+                                  ? 'bg-red-500/20 text-red-400'
+                                  : 'bg-primary/10 text-primary',
+                            )}
                           >
-                            <ArrowUp className="size-4" />
-                          </button>
-                          <button
-                            onClick={() => move(pos, 1)}
-                            disabled={pos === order.length - 1}
-                            aria-label="Move sentence down"
-                            className="rounded-md border border-border p-1 text-muted-foreground transition-colors hover:bg-accent hover:text-foreground disabled:opacity-30"
-                          >
-                            <ArrowDown className="size-4" />
-                          </button>
-                        </div>
-                      )}
-                    </li>
-                  )
-                })}
-              </ol>
+                            {pos + 1}
+                          </span>
+                          <p className="flex-1 text-sm leading-relaxed text-foreground">
+                            {current.sentences[sentenceIdx]}
+                          </p>
+                          {!checked && (
+                            <div className="flex shrink-0 flex-col gap-1">
+                              <button
+                                onClick={() => move(pos, -1)}
+                                disabled={pos === 0}
+                                aria-label="Move sentence up"
+                                className="rounded-md border border-border p-1 text-muted-foreground transition-colors hover:bg-accent hover:text-foreground disabled:opacity-30"
+                              >
+                                <ArrowUp className="size-4" />
+                              </button>
+                              <button
+                                onClick={() => move(pos, 1)}
+                                disabled={pos === order.length - 1}
+                                aria-label="Move sentence down"
+                                className="rounded-md border border-border p-1 text-muted-foreground transition-colors hover:bg-accent hover:text-foreground disabled:opacity-30"
+                              >
+                                <ArrowDown className="size-4" />
+                              </button>
+                            </div>
+                          )}
+                        </li>
+                      )
+                    })}
+                  </ol>
+                </>
+              )}
 
               {/* Feedback + reveal */}
               {checked && (
@@ -255,18 +344,22 @@ export default function ParagraphJumblePage() {
                   >
                     {wasCorrect ? (
                       <>
-                        <CheckCircle className="size-4" /> Brilliant! That paragraph flows
-                        perfectly.
+                        <CheckCircle className="size-4" />{' '}
+                        {isGap(current)
+                          ? 'Right. That word links the two ideas.'
+                          : 'Brilliant. That paragraph flows perfectly.'}
                       </>
                     ) : (
                       <>
-                        <XCircle className="size-4" /> Not quite - here is the order that works
-                        best.
+                        <XCircle className="size-4" />{' '}
+                        {isGap(current)
+                          ? 'Not quite. The right word is shown in the gap.'
+                          : 'Not quite. Here is the order that works best.'}
                       </>
                     )}
                   </div>
 
-                  {!wasCorrect && (
+                  {!wasCorrect && !isGap(current) && (
                     <div className="rounded-lg border border-border bg-card p-4">
                       <p className="mb-2 text-xs font-semibold uppercase tracking-wider text-muted-foreground">
                         Correct paragraph
@@ -281,6 +374,7 @@ export default function ParagraphJumblePage() {
                     game="paragraph-jumble"
                     question={BANK.key(current)}
                     correct={wasCorrect}
+                    chosen={chosen}
                   />
                 </div>
               )}
@@ -288,10 +382,10 @@ export default function ParagraphJumblePage() {
               {/* Actions */}
               <div className="flex justify-center">
                 {!checked ? (
-                  <Button onClick={handleCheck}>Check Order</Button>
+                  !isGap(current) && <Button onClick={handleCheck}>Check Order</Button>
                 ) : (
                   <Button onClick={handleNext}>
-                    {rIdx + 1 >= rounds.length ? 'See Results' : 'Next Paragraph'}
+                    {rIdx + 1 >= rounds.length ? 'See Results' : 'Next Question'}
                   </Button>
                 )}
               </div>
