@@ -35,6 +35,18 @@ vi.mock('@/lib/supabase/server', () => ({
 
 let reserveShouldFail = false
 
+// The gate's age and consent steps (31 October 2026): the email age group and
+// isMarketingAllowed, as for triggerTrustpilotInvite. Stubbed to a known adult
+// who may receive marketing; the steps themselves are tested in
+// src/__tests__/trustpilot-every-path-gated.test.ts.
+vi.mock('@/lib/identity', () => ({
+  resolveEmailAgeGroup: async () => 'ADULT',
+  isAdultForEmail: (group: string) => group === 'ADULT',
+}))
+vi.mock('@/lib/email/marketing-preference', () => ({
+  isMarketingAllowed: async () => true,
+}))
+
 vi.mock('@/lib/prisma', () => ({
   prisma: {
     user: {
@@ -44,7 +56,7 @@ vi.mock('@/lib/prisma', () => ({
           if (where.email === 'a@b.com' || where.id === 'u1') {
             return {
               id: 'u1',
-              dateOfBirth: new Date('2000-01-01'),
+              supabaseUserId: '11111111-2222-4333-8444-555555555555',
               isMinor: false,
               deletedAt: null,
               privacySettings: { marketingEnabled: true, aiOptOut: false },

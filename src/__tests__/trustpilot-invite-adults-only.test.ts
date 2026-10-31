@@ -139,4 +139,36 @@ describe('the Trustpilot invitation', () => {
     await fireStudentFirstMark(SUPABASE_UUID)
     expect(sentToSendGrid()).toBe(0)
   })
+
+  // 31 October 2026. The fix above calls a review request "marketing in all
+  // but name", yet the message carried no means of refusing it (PECR regs 22
+  // and 23 ask for one in every marketing message) and switched on SendGrid's
+  // open pixel and click rewriting, which the ICO treats as similar
+  // technologies under reg 6. Every other marketing email here carries the
+  // signed unsubscribe link.
+  it('carries a way to refuse it, and no open pixel or click tracking', async () => {
+    ageGroup = 'ADULT'
+    marketingAllowed = true
+    process.env.CRON_SECRET = 'test-cron-secret'
+    await fire90d()
+    const call = (fetchSpy.mock.calls as unknown as unknown[][]).find((c) =>
+      String(c[0]).includes('api.sendgrid.com'),
+    )
+    const body = JSON.parse((call![1] as { body: string }).body) as {
+      headers?: Record<string, string>
+      content: Array<{ type: string; value: string }>
+      tracking_settings: {
+        open_tracking: { enable: boolean }
+        click_tracking: { enable: boolean }
+      }
+    }
+    expect(body.headers?.['List-Unsubscribe']).toMatch(/\/api\/unsubscribe\?token=/)
+    expect(body.headers?.['List-Unsubscribe-Post']).toBe('List-Unsubscribe=One-Click')
+    const text = body.content.find((c) => c.type === 'text/plain')!.value
+    expect(text).toMatch(
+      /Unsubscribe from marketing email: https:\/\/theenglishhub\.app\/unsubscribe\?token=/,
+    )
+    expect(body.tracking_settings.open_tracking.enable).toBe(false)
+    expect(body.tracking_settings.click_tracking.enable).toBe(false)
+  })
 })

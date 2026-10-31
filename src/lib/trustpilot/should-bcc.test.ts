@@ -1,8 +1,13 @@
 /**
- * Unit tests for shouldBccTrustpilot - the pure eligibility gate.
+ * Unit tests for shouldBccTrustpilot - the eligibility gate.
  *
- * The Prisma + Supabase deps are fully stubbed. Tests cover the 10 cases
- * called out in the BCC rollout brief.
+ * The Prisma + Supabase deps are fully stubbed, and so are the email age
+ * group and the marketing read, which since 31 October 2026 decide the age
+ * and consent steps as they do for triggerTrustpilotInvite. Until then the
+ * happy-path fixture's "adult" date of birth was 2000-01-01, the placeholder
+ * that identity/age.ts says is never an age, and this file passed with it;
+ * src/__tests__/trustpilot-every-path-gated.test.ts runs the real age
+ * reading against that placeholder.
  */
 
 import { describe, it, expect, beforeEach, vi, afterEach } from 'vitest'
@@ -45,6 +50,24 @@ function chain(which: 'perTrigger' | 'globalWindow') {
   }
 }
 
+// ── Age group and marketing ────────────────────────────────────────────────
+
+let ageGroup = 'ADULT'
+let marketingAllowed = true
+const askedFor: string[] = []
+
+vi.mock('@/lib/identity', () => ({
+  resolveEmailAgeGroup: async (id: string) => {
+    askedFor.push(id)
+    return ageGroup
+  },
+  isAdultForEmail: (group: string) => group === 'ADULT',
+}))
+
+vi.mock('@/lib/email/marketing-preference', () => ({
+  isMarketingAllowed: async () => marketingAllowed,
+}))
+
 // ── Prisma mock ────────────────────────────────────────────────────────────
 
 const makePrisma = (user: unknown) =>
@@ -53,12 +76,11 @@ const makePrisma = (user: unknown) =>
   }) as unknown as import('@prisma/client').PrismaClient
 
 const NOW = new Date('2026-04-23T12:00:00.000Z')
-const adultDob = new Date('2000-01-01T00:00:00.000Z')
-const minorDob = new Date('2012-01-01T00:00:00.000Z')
+const SUPABASE_UUID = '11111111-2222-4333-8444-555555555555'
 
 const eligibleUser = {
   id: 'u1',
-  dateOfBirth: adultDob,
+  supabaseUserId: SUPABASE_UUID,
   isMinor: false,
   deletedAt: null,
   privacySettings: { marketingEnabled: true, aiOptOut: false },
@@ -71,6 +93,9 @@ beforeEach(() => {
   process.env.TRUSTPILOT_INVITE_EMAIL = 'theenglishhub.app+x@invite.trustpilot.com'
   dedupState.perTrigger = []
   dedupState.globalWindow = []
+  ageGroup = 'ADULT'
+  marketingAllowed = true
+  askedFor.length = 0
 })
 afterEach(() => {
   vi.restoreAllMocks()
@@ -121,10 +146,63 @@ describe('shouldBccTrustpilot', () => {
     const r = await shouldBccTrustpilot({
       userId: 'u1',
       trigger: 'student_first_mark',
-      prisma: makePrisma({ ...eligibleUser, dateOfBirth: minorDob, isMinor: true }),
+      prisma: makePrisma({ ...eligibleUser, isMinor: true }),
       now: NOW,
     })
     expect(r).toEqual({ ok: false, reason: 'under_18' })
+  })
+
+  it('a known minor by date of birth, with isMinor false - under_18', async () => {
+    ageGroup = 'MINOR_16_17'
+    const r = await shouldBccTrustpilot({
+      userId: 'u1',
+      trigger: 'student_first_mark',
+      prisma: makePrisma(eligibleUser),
+      now: NOW,
+    })
+    expect(r).toEqual({ ok: false, reason: 'under_18' })
+  })
+
+  it('age not known, isMinor false - not_known_adult', async () => {
+    ageGroup = 'UNKNOWN'
+    const r = await shouldBccTrustpilot({
+      userId: 'u1',
+      trigger: 'student_first_mark',
+      prisma: makePrisma(eligibleUser),
+      now: NOW,
+    })
+    expect(r).toEqual({ ok: false, reason: 'not_known_adult' })
+  })
+
+  it('asks the age group of the Supabase uuid, not the Prisma id', async () => {
+    await shouldBccTrustpilot({
+      userId: 'u1',
+      trigger: 'student_first_mark',
+      prisma: makePrisma(eligibleUser),
+      now: NOW,
+    })
+    expect(askedFor).toEqual([SUPABASE_UUID])
+  })
+
+  it('no Supabase identity - refused', async () => {
+    const r = await shouldBccTrustpilot({
+      userId: 'u1',
+      trigger: 'student_first_mark',
+      prisma: makePrisma({ ...eligibleUser, supabaseUserId: null }),
+      now: NOW,
+    })
+    expect(r).toEqual({ ok: false, reason: 'no_supabase_identity' })
+  })
+
+  it('no PrivacySettings row and isMarketingAllowed says no - no_marketing_consent', async () => {
+    marketingAllowed = false
+    const r = await shouldBccTrustpilot({
+      userId: 'u1',
+      trigger: 'student_first_mark',
+      prisma: makePrisma({ ...eligibleUser, privacySettings: null }),
+      now: NOW,
+    })
+    expect(r).toEqual({ ok: false, reason: 'no_marketing_consent' })
   })
 
   it('marketing opted out', async () => {

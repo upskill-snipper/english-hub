@@ -17,8 +17,20 @@
  *   Cloudflare Email Routing (see FILING-DAY-WORKSHEET.md Section "Email
  *   aliases") AND the domain's SPF / DKIM must authorise SendGrid or the
  *   email will land in spam.
+ *
+ * A way to refuse, and no tracking (31 October 2026):
+ *   triggerTrustpilotInvite treats a review request as marketing (7e701d004),
+ *   but this message carried no unsubscribe link and no List-Unsubscribe
+ *   header (PECR regs 22 and 23 ask for a means of refusing in every
+ *   marketing message), and it switched on SendGrid's open pixel and click
+ *   rewriting, which the ICO treats as similar technologies needing consent
+ *   under reg 6. It now carries the signed unsubscribe link the lifecycle
+ *   emails carry (footer, in their wording, and RFC 8058 headers), and both
+ *   kinds of tracking are off. Turning tracking back on is the founder's
+ *   decision, and needs consent that covers it.
  */
 
+import { unsubscribeLinkFor } from '@/lib/email/lifecycle/send'
 import {
   renderTrustpilotEmail,
   type TrustpilotTrigger,
@@ -84,6 +96,11 @@ export async function sendTrustpilotInvite(
     return { sent: false, skipped: 'invalid', error: 'trustpilot_invite_link missing' }
   }
 
+  // `userId` is the Supabase uuid (see triggerTrustpilotInvite), which is
+  // what the unsubscribe token signs.
+  const unsubscribe = unsubscribeLinkFor(userId)
+  const body = `${email.body}\n\nUnsubscribe from marketing email: ${unsubscribe.pageUrl}`
+
   try {
     const apiKey = process.env.SENDGRID_API_KEY
     if (!apiKey) throw new Error('SENDGRID_API_KEY not set')
@@ -104,13 +121,14 @@ export async function sendTrustpilotInvite(
         ],
         from: { email: email.from.email, name: email.from.name },
         reply_to: { email: email.replyTo },
+        ...(unsubscribe.headers ? { headers: unsubscribe.headers } : {}),
         content: [
           // Plain-text first then HTML. Keeping plain-text is important for
           // deliverability + for the "headers/preview" fallback on mail clients.
-          { type: 'text/plain', value: email.body },
+          { type: 'text/plain', value: body },
           {
             type: 'text/html',
-            value: email.body
+            value: body
               .split('\n\n')
               .map(
                 (p) =>
@@ -122,9 +140,11 @@ export async function sendTrustpilotInvite(
         mail_settings: {
           sandbox_mode: { enable: process.env.SENDGRID_SANDBOX === 'true' },
         },
+        // Off: see the header. A review request is marketing, and a pixel or
+        // a rewritten link needs consent that covers it.
         tracking_settings: {
-          click_tracking: { enable: true, enable_text: false },
-          open_tracking: { enable: true },
+          click_tracking: { enable: false, enable_text: false },
+          open_tracking: { enable: false },
         },
       }),
     })
