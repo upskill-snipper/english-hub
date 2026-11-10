@@ -9875,6 +9875,7 @@ export const EN_MESSAGES: Record<string, string> = {
     'AI marking on your essays is part of a paid plan. Everything you have already had marked stays where it is.',
   'billing.notpro.keeps': 'Revision notes, flashcards and the exam-board content stay free.',
   'billing.notpro.cta': 'See plans',
+  'pricing.see_marked_samples': 'See sample essays marked by AI',
   'account.billing.plan_trial': 'Free trial',
   'account.billing.trial_ends': 'Free trial ends',
   'account.billing.trial_blurb':
@@ -20703,6 +20704,7 @@ export const EN_MESSAGES: Record<string, string> = {
   'home.story.write.p2':
     "AI marking is part of the 7-day free trial or a plan. 13 to 15-year-olds need a parent's approval or their school's recorded authorisation before AI feedback is switched on.",
   'home.story.write.link': 'Send an essay for marking',
+  'home.story.write.sample': 'See sample essays marked by AI',
   'home.story.write.shot_alt':
     'The essay submission form on a laptop: exam board, paper and question selects, a field for the question you answered, an optional title and a box for your essay, all empty.',
   'home.story.write.caption': 'The marking form, before anything is typed.',

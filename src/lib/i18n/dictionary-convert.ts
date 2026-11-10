@@ -95,6 +95,14 @@ export const CONVERT_DICTIONARY: Record<string, { en: string; ar: string; es?: s
     ar: 'شوف الخطط',
     es: 'Ver planes',
   },
+  // ─── /pricing: the marked samples (10 November 2026) ──────────────────
+  // Repeats the title of /marking/sample. Arabic and Spanish await a native
+  // speaker.
+  'pricing.see_marked_samples': {
+    en: 'See sample essays marked by AI',
+    ar: 'شاهد مقالات نموذجية صحّحها الذكاء الاصطناعي',
+    es: 'Mira redacciones de ejemplo corregidas con IA',
+  },
   // ─── /account/billing for a no-card trialist ──────────────────────────
   //
   // Added 10 November 2026. A trialist holds subscription_status 'pro' like a

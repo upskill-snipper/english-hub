@@ -787,6 +787,15 @@ function PricingContent() {
                   {PRICING.STUDENT_MONTHLY}
                   {t('pricing.prefer_monthly_suffix')}
                 </button>
+                {/* What the plan's main feature returns, before anyone pays
+                    (10 November 2026): /marking/sample existed but nothing on
+                    this page pointed to it. */}
+                <Link
+                  href="/marking/sample"
+                  className="mt-2 block w-full text-center text-xs font-medium text-primary underline-offset-4 hover:underline"
+                >
+                  {t('pricing.see_marked_samples')}
+                </Link>
                 {studentError && (
                   <p className="mt-3 text-center text-xs text-destructive">{studentError}</p>
                 )}

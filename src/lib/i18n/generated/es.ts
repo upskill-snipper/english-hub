@@ -10114,6 +10114,7 @@ export const ES_MESSAGES: Record<string, string> = {
   'billing.notpro.keeps':
     'Los apuntes de repaso, las tarjetas y el contenido de los consejos examinadores siguen siendo gratuitos.',
   'billing.notpro.cta': 'Ver planes',
+  'pricing.see_marked_samples': 'Mira redacciones de ejemplo corregidas con IA',
   'account.billing.plan_trial': 'Prueba gratuita',
   'account.billing.trial_ends': 'La prueba gratuita termina el',
   'account.billing.trial_blurb':
@@ -21211,6 +21212,7 @@ export const ES_MESSAGES: Record<string, string> = {
   'home.story.write.p2':
     'La corrección con IA forma parte de la prueba gratuita de 7 días o de un plan. Los estudiantes de 13 a 15 años necesitan la aprobación de un padre o madre, o la autorización registrada de su colegio antes de activar el feedback de IA.',
   'home.story.write.link': 'Envía una redacción para corregir',
+  'home.story.write.sample': 'Mira redacciones de ejemplo corregidas con IA',
   'home.story.write.shot_alt':
     'El formulario de envío de redacciones en un portátil: selectores de junta, examen y pregunta, un campo para la pregunta que respondiste, un título opcional y un cuadro para tu redacción, todos vacíos.',
   'home.story.write.caption': 'El formulario de corrección, antes de escribir nada.',

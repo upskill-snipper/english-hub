@@ -401,6 +401,14 @@ export const HOME_STORY_DICTIONARY: Dictionary = {
     ar: 'أرسل مقال للتصحيح',
     es: 'Envía una redacción para corregir',
   },
+  // Added 10 November 2026: the paid feature had a working sample at
+  // /marking/sample that nothing on the home page linked to. The label
+  // repeats that page's own title. Arabic and Spanish await a native speaker.
+  'home.story.write.sample': {
+    en: 'See sample essays marked by AI',
+    ar: 'شاهد مقالات نموذجية صحّحها الذكاء الاصطناعي',
+    es: 'Mira redacciones de ejemplo corregidas con IA',
+  },
   'home.story.write.shot_alt': {
     en: 'The essay submission form on a laptop: exam board, paper and question selects, a field for the question you answered, an optional title and a box for your essay, all empty.',
     ar: 'نموذج إرسال المقال على لابتوب: قوائم لاختيار البورد والورقة والسؤال، وخانة للسؤال اللي جاوبت عليه، وعنوان اختياري، ومربع للمقال، كلها فاضية.',

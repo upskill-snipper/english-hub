@@ -9679,6 +9679,7 @@ export const AR_MESSAGES: Record<string, string> = {
   'billing.notpro.keeps':
     'ملاحظات المراجعة والبطاقات التعليمية ومحتوى مجالس الامتحانات تبقى مجانية.',
   'billing.notpro.cta': 'شوف الخطط',
+  'pricing.see_marked_samples': 'شاهد مقالات نموذجية صحّحها الذكاء الاصطناعي',
   'account.billing.plan_trial': 'فترة تجريبية مجانية',
   'account.billing.trial_ends': 'تنتهي الفترة التجريبية المجانية في',
   'account.billing.trial_blurb':
@@ -20177,6 +20178,7 @@ export const AR_MESSAGES: Record<string, string> = {
   'home.story.write.p2':
     'تصحيح الـ AI جزء من التجربة المجانية لمدة 7 أيام أو من الاشتراك. الطلاب من 13 إلى 15 سنة يحتاجون موافقة ولي الأمر أو إذن المدرسة المسجّل قبل ما تشتغل ملاحظات الـ AI.',
   'home.story.write.link': 'أرسل مقال للتصحيح',
+  'home.story.write.sample': 'شاهد مقالات نموذجية صحّحها الذكاء الاصطناعي',
   'home.story.write.shot_alt':
     'نموذج إرسال المقال على لابتوب: قوائم لاختيار البورد والورقة والسؤال، وخانة للسؤال اللي جاوبت عليه، وعنوان اختياري، ومربع للمقال، كلها فاضية.',
   'home.story.write.caption': 'نموذج التصحيح، قبل ما ينكتب فيه شي.',

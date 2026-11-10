@@ -20,6 +20,7 @@ export async function ChapterWrite({ ctx }: { ctx: ChapterContext }) {
     p1: 'home.story.write.p1',
     p2: 'home.story.write.p2',
     link: 'home.story.write.link',
+    sample: 'home.story.write.sample',
     searchAgain: 'home.story.search_again',
     shotAlt: 'home.story.write.shot_alt',
     caption: 'home.story.write.caption',
@@ -67,6 +68,11 @@ export async function ChapterWrite({ ctx }: { ctx: ChapterContext }) {
       <ChapterText>{c.p2}</ChapterText>
       <PrimaryCta className="mt-1" />
       <ChapterLinks>
+        {/* The worked samples (10 November 2026): a visitor can see what the
+            paid feature returns before starting a trial. */}
+        <TextLink href="/marking/sample" muted>
+          {c.sample}
+        </TextLink>
         <TextLink href="/marking/submit" muted>
           {c.link}
         </TextLink>
