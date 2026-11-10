@@ -74,6 +74,14 @@ export function allowanceExhaustedResponse(state: {
   limit: number
   resetsAt: Date
   subjectType?: 'user' | 'ip'
+  /**
+   * Which no-card trial bucket ran out, when it was one (10 November 2026).
+   * The whole-trial bucket's `resetsAt` is the trial END, so the generic
+   * sentence used to tell a trialist their checks "renew on" the very day
+   * the trial stopped. 'trial' is the 40-check total, which never renews;
+   * 'trial-daily' is the 15-a-day cap, which really does renew tomorrow.
+   */
+  scope?: 'trial' | 'trial-daily'
 }) {
   const resetsAt = state.resetsAt.toISOString()
   const resetLabel = state.resetsAt.toLocaleDateString('en-GB', {
@@ -87,16 +95,23 @@ export function allowanceExhaustedResponse(state: {
   // matters because a school, a library or a household behind one public IP
   // shares a single counter, and this is the route out of it.
   const message =
-    state.subjectType === 'ip'
-      ? `You have used all ${state.limit} free AI checks from this connection for now. They renew on ${resetLabel}. Sign in for a larger free allowance, or see our plans for unlimited checks.`
-      : `You have used all ${state.limit} of your free AI checks for now. They renew on ${resetLabel}. See our plans to carry on straight away.`
+    state.scope === 'trial'
+      ? `You have used all ${state.limit} AI checks in your free trial. Choose a plan to keep using AI marking.`
+      : state.scope === 'trial-daily'
+        ? `You have used today's ${state.limit} AI checks in your free trial. They renew on ${resetLabel}, or choose a plan to carry on now.`
+        : state.subjectType === 'ip'
+          ? `You have used all ${state.limit} free AI checks from this connection for now. They renew on ${resetLabel}. Sign in for a larger free allowance, or see our plans for unlimited checks.`
+          : `You have used all ${state.limit} of your free AI checks for now. They renew on ${resetLabel}. See our plans to carry on straight away.`
 
+  // The body keeps its shape and its code: clients, including the mobile app,
+  // switch on `code`. `scope` is additive.
   return errorResponse(message, 402, undefined, {
     code: 'free_allowance_exhausted',
     used: state.used,
     limit: state.limit,
     resetsAt,
     upgradeUrl: '/pricing',
+    ...(state.scope ? { scope: state.scope } : {}),
   })
 }
 
