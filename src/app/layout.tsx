@@ -62,9 +62,10 @@ const jetBrainsMono = JetBrains_Mono({
 //
 // `preload: false` (10 November 2026). next/font preloads by default, so
 // every ENGLISH page sent preload links for five Arabic font files, about
-// 230 KB, ahead of its own stylesheet. A lab run of twelve pages on a
-// throttled phone measured first paint about one second earlier with those
-// requests held back. Without the preload the @font-face rules still apply:
+// 230 KB, ahead of its own stylesheet. On a throttled phone profile, all
+// twelve key pages tested took 5.2 to 6.5 s to show their main content, and
+// the four pages re-run with those requests held back painted about one
+// second earlier. Without the preload the @font-face rules still apply:
 // the browser fetches an Arabic file only when a page actually draws Arabic
 // text, which is what unicode-range is for.
 const notoNaskhArabic = Noto_Naskh_Arabic({
