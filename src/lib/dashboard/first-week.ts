@@ -119,6 +119,49 @@ export function nextStep(steps: FirstWeekStep[]): FirstWeekStep | null {
   return steps.find((s) => !s.done) ?? null
 }
 
+/**
+ * What the card's last line says about the person's plan.
+ *
+ * THE DEFECT THIS FIXES (found 10 November 2026). The line was a two-way
+ * choice: 'pro' with a date read "Your plan is active until ...", and
+ * EVERYTHING else read "You are on the free trial." The card shows for the
+ * first fourteen days of an account and the no-card trial lasts seven, so on
+ * days 8 to 14 every ex-trialist, whose profile the expiry cron has set back
+ * to 'free', was told they were still on the free trial, at the moment the
+ * product should have been telling them it had ended and what a plan costs.
+ * An account that never had a trial was told the same thing.
+ *
+ * It reads the same two profile fields as before, because those are what the
+ * web gates read. 'free' with an end date in the past is a trial the cron has
+ * closed (the cron leaves `subscription_end_date` in place, see
+ * src/lib/billing/trial-state.ts). 'cancelled' is somebody who paid, so it is
+ * never called a finished trial.
+ */
+export type PlanLine =
+  | { kind: 'active'; until: Date }
+  | { kind: 'trial' }
+  | { kind: 'trial-ended'; endedAt: Date }
+  | { kind: 'free' }
+  /** 'pro' with no usable date: say nothing rather than something untrue. */
+  | { kind: 'none' }
+
+export function planLine(
+  subscriptionStatus: string | null | undefined,
+  subscriptionEndDate: string | null | undefined,
+  now: number,
+): PlanLine {
+  const status = (subscriptionStatus ?? '').toLowerCase()
+  const end = subscriptionEndDate ? new Date(subscriptionEndDate) : null
+  const endOk = end !== null && !Number.isNaN(end.getTime())
+
+  if (status === 'pro') return endOk ? { kind: 'active', until: end! } : { kind: 'none' }
+  if (status === 'trialing') return { kind: 'trial' }
+  if ((status === 'free' || status === '') && endOk && end!.getTime() <= now) {
+    return { kind: 'trial-ended', endedAt: end! }
+  }
+  return { kind: 'free' }
+}
+
 /** Record that a marking result has been opened. Never throws. */
 export function markResultOpened(): void {
   try {

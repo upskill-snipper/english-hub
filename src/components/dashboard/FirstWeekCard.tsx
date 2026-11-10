@@ -24,6 +24,7 @@ import { Card, CardContent } from '@/components/ui/card'
 import {
   firstWeekSteps,
   nextStep,
+  planLine,
   readFirstWeekSignals,
   type FirstWeekSignals,
 } from '@/lib/dashboard/first-week'
@@ -61,12 +62,17 @@ export function FirstWeekCard({
   const next = nextStep(steps)
   const doneCount = steps.filter((s) => s.done).length
 
-  const isPaid = subscriptionStatus === 'pro'
-  const renewal = subscriptionEndDate ? new Date(subscriptionEndDate) : null
-  const renewalLabel =
-    renewal && !Number.isNaN(renewal.getTime())
-      ? renewal.toLocaleDateString('en-GB', { day: 'numeric', month: 'long', year: 'numeric' })
-      : null
+  // Days 8 to 14 used to say "You are on the free trial" to people whose
+  // trial had ended. See planLine for the defect.
+  const plan = planLine(subscriptionStatus, subscriptionEndDate, Date.now())
+  const seePlans = (
+    <Link
+      href="/pricing?plan=student_monthly"
+      className="ms-1 font-semibold text-primary underline underline-offset-2"
+    >
+      {t('billing.notpro.cta')}
+    </Link>
+  )
 
   return (
     <Card className="mb-6 border-primary/20 bg-primary/[0.03]">
@@ -107,11 +113,31 @@ export function FirstWeekCard({
           ))}
         </ol>
 
-        <p className="mt-4 text-xs text-muted-foreground">
-          {isPaid && renewalLabel
-            ? `${t('dash.first_week.plan_active')} ${renewalLabel}`
-            : t('dash.first_week.plan_trial')}
-        </p>
+        {plan.kind !== 'none' && (
+          <p className="mt-4 text-xs text-muted-foreground" data-testid="first-week-plan-line">
+            {plan.kind === 'active' &&
+              `${t('dash.first_week.plan_active')} ${plan.until.toLocaleDateString('en-GB', {
+                day: 'numeric',
+                month: 'long',
+                year: 'numeric',
+              })}`}
+            {plan.kind === 'trial' && t('dash.first_week.plan_trial')}
+            {plan.kind === 'trial-ended' && (
+              <>
+                {t('billing.notpro.ended_title').replace(
+                  '{date}',
+                  plan.endedAt.toLocaleDateString('en-GB', { day: 'numeric', month: 'long' }),
+                )}
+                .{seePlans}
+              </>
+            )}
+            {plan.kind === 'free' && (
+              <>
+                {t('billing.notpro.title')}.{seePlans}
+              </>
+            )}
+          </p>
+        )}
       </CardContent>
     </Card>
   )
