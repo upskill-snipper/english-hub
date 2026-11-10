@@ -59,17 +59,27 @@ const jetBrainsMono = JetBrains_Mono({
 // via the unicode-range fallback chain. No JS branching needed - the
 // English fonts continue to render Latin text even when the layout is
 // in dir="rtl" mode.
+//
+// `preload: false` (10 November 2026). next/font preloads by default, so
+// every ENGLISH page sent preload links for five Arabic font files, about
+// 230 KB, ahead of its own stylesheet. A lab run of twelve pages on a
+// throttled phone measured first paint about one second earlier with those
+// requests held back. Without the preload the @font-face rules still apply:
+// the browser fetches an Arabic file only when a page actually draws Arabic
+// text, which is what unicode-range is for.
 const notoNaskhArabic = Noto_Naskh_Arabic({
   subsets: ['arabic'],
   variable: '--font-arabic-serif',
   display: 'swap',
   weight: ['400', '500', '600', '700'],
+  preload: false,
 })
 const plexSansArabic = IBM_Plex_Sans_Arabic({
   subsets: ['arabic'],
   variable: '--font-arabic-sans',
   display: 'swap',
   weight: ['400', '500', '600', '700'],
+  preload: false,
 })
 
 export const metadata: Metadata = {
