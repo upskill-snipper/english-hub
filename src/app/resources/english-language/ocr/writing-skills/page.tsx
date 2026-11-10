@@ -124,7 +124,7 @@ export default async function OCRWritingSkillsPage() {
             <div className="space-y-4">
               <div className="rounded-lg border border-success/30 bg-success-50 p-5">
                 <h3 className="font-semibold text-success-700">
-                  Top Band &mdash; Content and Organisation
+                  Top Band - Content and Organisation
                 </h3>
                 <ul className="ms-4 mt-2 list-disc space-y-1 text-sm text-muted-foreground">
                   <li>{tr(`Communication is convincing and compelling throughout`)}</li>
@@ -144,9 +144,7 @@ export default async function OCRWritingSkillsPage() {
               </div>
 
               <div className="rounded-lg border border-success/30 bg-success-50 p-5">
-                <h3 className="font-semibold text-success-700">
-                  Top Band &mdash; Technical Accuracy
-                </h3>
+                <h3 className="font-semibold text-success-700">Top Band - Technical Accuracy</h3>
                 <ul className="ms-4 mt-2 list-disc space-y-1 text-sm text-muted-foreground">
                   <li>{tr(`Sentence demarcation is consistently secure and accurate`)}</li>
                   <li>{tr(`Wide range of punctuation used with a high level of accuracy`)}</li>
@@ -188,20 +186,20 @@ export default async function OCRWritingSkillsPage() {
               </p>
               <ol className="ms-6 mt-3 list-decimal space-y-2">
                 <li>
-                  <strong>{tr(`Identify PAF`)}</strong> &mdash; Circle or underline the Purpose,
-                  Audience, and Form in the question.
+                  <strong>{tr(`Identify PAF`)}</strong> - Circle or underline the Purpose, Audience,
+                  and Form in the question.
                 </li>
                 <li>
-                  <strong>{tr(`Brainstorm ideas`)}</strong> &mdash; Write down 5&ndash;6 key points
-                  or arguments you want to make.
+                  <strong>{tr(`Brainstorm ideas`)}</strong> - Write down 5&ndash;6 key points or
+                  arguments you want to make.
                 </li>
                 <li>
-                  <strong>{tr(`Order your points`)}</strong> &mdash; Decide on the most logical or
+                  <strong>{tr(`Order your points`)}</strong> - Decide on the most logical or
                   impactful order. Consider starting with your second-strongest point and ending
                   with your strongest.
                 </li>
                 <li>
-                  <strong>{tr(`Plan your opening and closing`)}</strong> &mdash; These are the most
+                  <strong>{tr(`Plan your opening and closing`)}</strong> - These are the most
                   important parts. Your opening must hook the reader; your closing must leave a
                   lasting impression.
                 </li>
@@ -661,7 +659,7 @@ export default async function OCRWritingSkillsPage() {
                 (don&rsquo;t)
               </li>
               <li>
-                Commas used correctly (not comma splices &mdash; two full sentences joined only by a
+                Commas used correctly (not comma splices - two full sentences joined only by a
                 comma)
               </li>
               <li>

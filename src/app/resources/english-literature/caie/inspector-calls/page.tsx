@@ -324,7 +324,7 @@ export default async function InspectorCallsStudyGuide() {
             Cambridge IGCSE English Literature
           </p>
           <h1 className="mt-2 text-3xl font-bold tracking-tight sm:text-4xl md:text-5xl">
-            An Inspector Calls &mdash; Complete Study Guide
+            An Inspector Calls - Complete Study Guide
           </h1>
           <p className="mx-auto mt-4 max-w-2xl text-lg text-muted-foreground">
             Plot, characters, themes, {keyQuotes.length}+ key quotes with analysis, dramatic
@@ -425,7 +425,7 @@ export default async function InspectorCallsStudyGuide() {
                   &ldquo;{q.quote}&rdquo;
                 </blockquote>
                 <p className="mt-1 text-xs font-semibold text-primary">
-                  {q.speaker} &mdash; {q.act}
+                  {q.speaker} - {q.act}
                 </p>
                 <p className="mt-3 text-sm leading-relaxed text-muted-foreground">{q.analysis}</p>
               </div>

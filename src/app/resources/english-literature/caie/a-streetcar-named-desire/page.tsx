@@ -385,7 +385,7 @@ export default function StreetcarStudyGuide() {
             Cambridge IGCSE English Literature
           </p>
           <h1 className="mt-2 text-3xl font-bold tracking-tight sm:text-4xl md:text-5xl">
-            A Streetcar Named Desire &mdash; Complete Study Guide
+            A Streetcar Named Desire - Complete Study Guide
           </h1>
           <p className="mx-auto mt-4 max-w-2xl text-lg text-muted-foreground">
             Characters, themes, scene-by-scene summary with key quotations, Williams&rsquo; dramatic
@@ -512,10 +512,10 @@ export default function StreetcarStudyGuide() {
             Williams&rsquo; Dramatic Techniques
           </h2>
           <p className="mt-2 text-sm text-muted-foreground">
-            Williams&rsquo; concept of &lsquo;plastic theatre&rsquo; &mdash; using lighting, sound,
-            set design, and staging expressively &mdash; is essential for Analysis of Writer's
-            Methods. Markers reward responses that analyse <em>how</em> Williams creates meaning,
-            not just <em>what</em> happens.
+            Williams&rsquo; concept of &lsquo;plastic theatre&rsquo; - using lighting, sound, set
+            design, and staging expressively - is essential for Analysis of Writer's Methods.
+            Markers reward responses that analyse <em>how</em> Williams creates meaning, not just{' '}
+            <em>what</em> happens.
           </p>
           <div className="mt-6 grid gap-5 sm:grid-cols-2">
             {dramaticTechniques.map((d) => (
@@ -651,9 +651,9 @@ export default function StreetcarStudyGuide() {
                   <strong className="text-foreground">
                     Discuss &lsquo;plastic theatre&rsquo;:
                   </strong>{' '}
-                  Williams coined this term for drama that uses all theatrical elements &mdash;
-                  lighting, sound, set design, music &mdash; expressively. Referencing this concept
-                  demonstrates sophisticated understanding of his dramatic method.
+                  Williams coined this term for drama that uses all theatrical elements - lighting,
+                  sound, set design, music - expressively. Referencing this concept demonstrates
+                  sophisticated understanding of his dramatic method.
                 </li>
                 <li>
                   <strong className="text-foreground">Quote precisely:</strong> Short, embedded

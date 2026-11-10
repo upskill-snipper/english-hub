@@ -261,7 +261,7 @@ function Quote({
     <div className="rounded-lg border-s-4 border-accent bg-primary/10 p-4">
       <p className="text-sm font-semibold italic text-foreground">&ldquo;{text}&rdquo;</p>
       <p className="mt-1 text-xs text-muted-foreground">
-        {speaker} &mdash; {act}
+        {speaker} - {act}
       </p>
       <p className="mt-2 text-sm text-muted-foreground">{analysis}</p>
     </div>
@@ -285,7 +285,7 @@ function QuoteCompact({
     <div className="rounded-lg border-s-4 border-accent bg-primary/10 p-4">
       <p className="text-sm font-semibold italic text-foreground">&ldquo;{text}&rdquo;</p>
       <p className="mt-1 text-xs text-muted-foreground">
-        {speaker} &mdash; {act}
+        {speaker} - {act}
       </p>
       <div className="mt-1.5 flex flex-wrap gap-1">
         {themes.map((t) => (

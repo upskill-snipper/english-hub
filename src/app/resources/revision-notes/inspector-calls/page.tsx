@@ -74,7 +74,7 @@ function Quote({
     <div className="rounded-lg border-s-4 border-primary bg-primary/5 p-4">
       <p className="text-sm font-semibold italic text-foreground">&ldquo;{text}&rdquo;</p>
       <p className="mt-1 text-xs text-muted-foreground">
-        {speaker} &mdash; {act}
+        {speaker} - {act}
       </p>
       <p className="mt-2 text-sm text-muted-foreground">{analysis}</p>
     </div>
@@ -113,7 +113,7 @@ export default function InspectorCallsRevisionPage() {
           </span>
         </div>
         <h1 className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
-          An Inspector Calls &mdash; Complete Revision Guide
+          An Inspector Calls - Complete Revision Guide
         </h1>
         <p className="mt-3 max-w-3xl text-lg text-muted-foreground">
           Everything you need to know for your GCSE English Literature exam. Act-by-act summary,
@@ -163,7 +163,7 @@ export default function InspectorCallsRevisionPage() {
                   <span className="flex h-6 w-6 items-center justify-center rounded-full bg-primary/10 text-xs font-bold text-foreground">
                     1
                   </span>
-                  Act 1 &mdash; The Inspector Arrives
+                  Act 1 - The Inspector Arrives
                 </h3>
                 <p className="mt-2 text-sm text-muted-foreground leading-relaxed">
                   The play opens in the Birling family&apos;s dining room in the fictional
@@ -172,8 +172,8 @@ export default function InspectorCallsRevisionPage() {
                   businesses. Arthur Birling delivers a series of confident speeches, dismissing the
                   possibility of war, praising the unsinkable Titanic, and insisting that a man
                   &ldquo;has to mind his own business and look after himself and his own.&rdquo; The
-                  lighting is described as &ldquo;pink and intimate&rdquo; &mdash; a warm,
-                  complacent glow that reflects the family&apos;s self-satisfaction.
+                  lighting is described as &ldquo;pink and intimate&rdquo; - a warm, complacent glow
+                  that reflects the family&apos;s self-satisfaction.
                 </p>
                 <p className="mt-2 text-sm text-muted-foreground leading-relaxed">
                   Inspector Goole arrives and announces that a young woman named Eva Smith has died
@@ -220,7 +220,7 @@ export default function InspectorCallsRevisionPage() {
                   <span className="flex h-6 w-6 items-center justify-center rounded-full bg-primary/10 text-xs font-bold text-foreground">
                     2
                   </span>
-                  Act 2 &mdash; Gerald and Mrs Birling
+                  Act 2 - Gerald and Mrs Birling
                 </h3>
                 <p className="mt-2 text-sm text-muted-foreground leading-relaxed">
                   Gerald confesses that he met Daisy Renton at the Palace Bar in March 1911. She was
@@ -268,16 +268,16 @@ export default function InspectorCallsRevisionPage() {
                   <span className="flex h-6 w-6 items-center justify-center rounded-full bg-primary/10 text-xs font-bold text-foreground">
                     3
                   </span>
-                  Act 3 &mdash; Eric, the Aftermath, and the Final Call
+                  Act 3 - Eric, the Aftermath, and the Final Call
                 </h3>
                 <p className="mt-2 text-sm text-muted-foreground leading-relaxed">
                   Eric confesses his part: he met Eva/Daisy at the Palace Bar, forced himself on her
-                  when drunk, and got her pregnant. He gave her money &mdash; about fifty pounds
-                  &mdash; which he had stolen from his father&apos;s office. When Eva discovered the
-                  money was stolen, she refused to accept any more and went to the Brumley
-                  Women&apos;s Charity Organisation for help, where Mrs Birling turned her away.
-                  Eric is distraught and turns on his mother: &ldquo;you killed her &mdash; and the
-                  child she&apos;d have had too.&rdquo;
+                  when drunk, and got her pregnant. He gave her money - about fifty pounds - which
+                  he had stolen from his father&apos;s office. When Eva discovered the money was
+                  stolen, she refused to accept any more and went to the Brumley Women&apos;s
+                  Charity Organisation for help, where Mrs Birling turned her away. Eric is
+                  distraught and turns on his mother: &ldquo;you killed her &mdash; and the child
+                  she&apos;d have had too.&rdquo;
                 </p>
                 <p className="mt-2 text-sm text-muted-foreground leading-relaxed">
                   The Inspector delivers his final speech about &ldquo;fire and blood and
@@ -308,7 +308,7 @@ export default function InspectorCallsRevisionPage() {
                     </li>
                     <li>&bull; Gerald&apos;s revelation that the Inspector was not real</li>
                     <li>&bull; The generational split: Sheila and Eric vs. the older Birlings</li>
-                    <li>&bull; The final phone call &mdash; a real inspector is coming</li>
+                    <li>&bull; The final phone call - a real inspector is coming</li>
                     <li>
                       &bull; Stage direction: Birling &ldquo;panic-stricken&rdquo; as the curtain
                       falls
@@ -348,15 +348,15 @@ export default function InspectorCallsRevisionPage() {
                 <p className="mt-3 text-sm text-muted-foreground leading-relaxed">
                   The Inspector is Priestley&apos;s mouthpiece and the play&apos;s moral centre. He
                   is described as creating &ldquo;an impression of massiveness, solidity and
-                  purposefulness&rdquo; and speaks &ldquo;carefully, weightily.&rdquo; His name
-                  &mdash; &ldquo;Goole&rdquo; &mdash; is a homophone of &ldquo;ghoul,&rdquo;
-                  suggesting he may be a supernatural figure: a ghost, an angel, or the embodiment
-                  of collective conscience. He does not behave like a real police inspector: he
-                  shows the photograph to only one person at a time, he already seems to know all
-                  the answers, and he has an extraordinary power to make each character confess. His
-                  function is not to solve a crime but to force the Birlings (and the audience) to
-                  recognise their social responsibility. He is classless, unintimidated by wealth,
-                  and immovable. His final speech is essentially a socialist sermon, warning that if
+                  purposefulness&rdquo; and speaks &ldquo;carefully, weightily.&rdquo; His name -
+                  &ldquo;Goole&rdquo; - is a homophone of &ldquo;ghoul,&rdquo; suggesting he may be
+                  a supernatural figure: a ghost, an angel, or the embodiment of collective
+                  conscience. He does not behave like a real police inspector: he shows the
+                  photograph to only one person at a time, he already seems to know all the answers,
+                  and he has an extraordinary power to make each character confess. His function is
+                  not to solve a crime but to force the Birlings (and the audience) to recognise
+                  their social responsibility. He is classless, unintimidated by wealth, and
+                  immovable. His final speech is essentially a socialist sermon, warning that if
                   people do not learn to share responsibility for one another, they will be taught
                   in &ldquo;fire and blood and anguish.&rdquo;
                 </p>
@@ -468,9 +468,9 @@ export default function InspectorCallsRevisionPage() {
                   claiming to have been wronged by a man of higher class was simply lying. She is
                   completely lacking in empathy, judging Eva entirely by class rather than need. Her
                   cruelest moment is when she insists the father of the child should accept
-                  &ldquo;public responsibility&rdquo; &mdash; not realising she is condemning her
-                  own son Eric. Even when the truth is revealed, she refuses to accept blame. Like
-                  her husband, she represents the entrenched, unrepentant upper-middle class.
+                  &ldquo;public responsibility&rdquo; - not realising she is condemning her own son
+                  Eric. Even when the truth is revealed, she refuses to accept blame. Like her
+                  husband, she represents the entrenched, unrepentant upper-middle class.
                 </p>
                 <div className="mt-3 grid gap-3 sm:grid-cols-2">
                   <Quote
@@ -514,17 +514,16 @@ export default function InspectorCallsRevisionPage() {
                   Sheila begins the play as a &ldquo;pretty girl in her early twenties, very pleased
                   with life and rather excited&rdquo; about her engagement. She is initially
                   frivolous and sheltered, a product of her privileged upbringing. Her involvement
-                  with Eva &mdash; having her sacked from Milwards out of jealousy &mdash; reveals
-                  her potential for cruelty. However, Sheila is the character who undergoes the
-                  greatest transformation. She is the first to recognise the Inspector&apos;s power
-                  and to accept genuine responsibility, saying she will &ldquo;never, never do it
-                  again to anybody.&rdquo; As the play progresses, she takes on an almost
-                  Inspector-like role, warning her parents and Gerald that the Inspector already
-                  knows everything and that they should not try to hide the truth. By the end, she
-                  has fundamentally changed: she sees through her parents&apos; hypocrisy,
-                  challenges their values, and insists that the lessons learned matter regardless of
-                  whether the Inspector was real. She represents Priestley&apos;s hope for the
-                  younger generation.
+                  with Eva - having her sacked from Milwards out of jealousy - reveals her potential
+                  for cruelty. However, Sheila is the character who undergoes the greatest
+                  transformation. She is the first to recognise the Inspector&apos;s power and to
+                  accept genuine responsibility, saying she will &ldquo;never, never do it again to
+                  anybody.&rdquo; As the play progresses, she takes on an almost Inspector-like
+                  role, warning her parents and Gerald that the Inspector already knows everything
+                  and that they should not try to hide the truth. By the end, she has fundamentally
+                  changed: she sees through her parents&apos; hypocrisy, challenges their values,
+                  and insists that the lessons learned matter regardless of whether the Inspector
+                  was real. She represents Priestley&apos;s hope for the younger generation.
                 </p>
                 <div className="mt-3 grid gap-3 sm:grid-cols-2">
                   <Quote
@@ -577,13 +576,13 @@ export default function InspectorCallsRevisionPage() {
                   is the character with the most serious involvement in Eva&apos;s story: he forced
                   himself upon her while drunk (an assault), got her pregnant, and stole money from
                   his father&apos;s firm. His behaviour reveals the darker side of upper-class
-                  privilege &mdash; young men like Eric can exploit working-class women with
-                  impunity. However, like Sheila, Eric undergoes genuine moral change. He is
-                  horrified by what he has done and accepts responsibility. He turns on his mother
-                  with real anger when he learns she rejected Eva&apos;s plea for help. By the end,
-                  he stands with Sheila against his parents, insisting that their guilt is real
-                  regardless of whether the Inspector was genuine. He represents both the failings
-                  and the potential for redemption in the younger generation.
+                  privilege - young men like Eric can exploit working-class women with impunity.
+                  However, like Sheila, Eric undergoes genuine moral change. He is horrified by what
+                  he has done and accepts responsibility. He turns on his mother with real anger
+                  when he learns she rejected Eva&apos;s plea for help. By the end, he stands with
+                  Sheila against his parents, insisting that their guilt is real regardless of
+                  whether the Inspector was genuine. He represents both the failings and the
+                  potential for redemption in the younger generation.
                 </p>
                 <div className="mt-3 grid gap-3 sm:grid-cols-2">
                   <Quote
@@ -628,12 +627,12 @@ export default function InspectorCallsRevisionPage() {
                   Croft, whose company is a rival to Birling&apos;s. He is socially superior to the
                   Birlings (landed aristocracy vs. new money). His involvement with Daisy Renton is
                   the most ambiguous: he genuinely rescued her from Alderman Meggarty, gave her a
-                  home, and seems to have cared for her &mdash; but he also kept her as his mistress
-                  while engaged to Sheila, and discarded her when it suited him. He is the only
-                  character who made Eva &ldquo;happy for a time,&rdquo; but his kindness was
-                  ultimately self-serving. Gerald is the one who discovers the Inspector is not a
-                  real police officer and leads the effort to discredit the evening&apos;s events.
-                  He aligns with the older Birlings in his relief and desire to return to normal. He
+                  home, and seems to have cared for her - but he also kept her as his mistress while
+                  engaged to Sheila, and discarded her when it suited him. He is the only character
+                  who made Eva &ldquo;happy for a time,&rdquo; but his kindness was ultimately
+                  self-serving. Gerald is the one who discovers the Inspector is not a real police
+                  officer and leads the effort to discredit the evening&apos;s events. He aligns
+                  with the older Birlings in his relief and desire to return to normal. He
                   represents the ruling class who can acknowledge individual kindness but refuse
                   systemic responsibility.
                 </p>
@@ -674,16 +673,15 @@ export default function InspectorCallsRevisionPage() {
                   character. She represents every working-class person exploited by the wealthy. Her
                   name is symbolic: &ldquo;Eva&rdquo; suggests Eve (the first woman, representing
                   all women) and &ldquo;Smith&rdquo; is the most common English surname. She changes
-                  her name to &ldquo;Daisy Renton&rdquo; &mdash; &ldquo;Daisy&rdquo; suggests
-                  innocence and freshness, while &ldquo;Renton&rdquo; may echo &ldquo;rent,&rdquo;
-                  connecting her to the commodification of people. Her absence from the stage is
-                  deliberate: she has no voice, no power, no ability to speak for herself. Each
-                  Birling tells their own version of events, and Eva is constructed through their
-                  perspectives. Whether she is one girl or several is ambiguous and ultimately
-                  irrelevant &mdash; the point is that there are countless Eva Smiths being failed
-                  by society. She is shown to have dignity and moral courage: she refused stolen
-                  money, she led a strike for fair wages, and she tried to protect Eric from
-                  himself.
+                  her name to &ldquo;Daisy Renton&rdquo; - &ldquo;Daisy&rdquo; suggests innocence
+                  and freshness, while &ldquo;Renton&rdquo; may echo &ldquo;rent,&rdquo; connecting
+                  her to the commodification of people. Her absence from the stage is deliberate:
+                  she has no voice, no power, no ability to speak for herself. Each Birling tells
+                  their own version of events, and Eva is constructed through their perspectives.
+                  Whether she is one girl or several is ambiguous and ultimately irrelevant - the
+                  point is that there are countless Eva Smiths being failed by society. She is shown
+                  to have dignity and moral courage: she refused stolen money, she led a strike for
+                  fair wages, and she tried to protect Eric from himself.
                 </p>
                 <div className="mt-3">
                   <Quote
@@ -711,8 +709,8 @@ export default function InspectorCallsRevisionPage() {
                 <p className="mt-3 text-sm text-muted-foreground leading-relaxed">
                   Edna is the Birlings&apos; parlour maid and has very few lines, but her presence
                   is significant. She represents the working class who are invisible to the Birlings
-                  &mdash; present in the house, serving their needs, but never acknowledged as a
-                  person. She is the one who announces the Inspector&apos;s arrival, inadvertently
+                  - present in the house, serving their needs, but never acknowledged as a person.
+                  She is the one who announces the Inspector&apos;s arrival, inadvertently
                   introducing the force that will expose her employers. Her silence and servitude
                   are a reminder that there is a real Eva Smith in every wealthy household: someone
                   whose labour is taken for granted, whose feelings are never considered, and who
@@ -744,9 +742,8 @@ export default function InspectorCallsRevisionPage() {
                   requesting fair wages, having her dismissed out of jealousy, using her as a
                   mistress, assaulting her, and denying her charity. The play asks the audience
                   directly: are you a Birling, or will you accept responsibility? Writing in 1945,
-                  Priestley wanted to influence the post-war settlement toward a welfare state
-                  &mdash; a society built on collective responsibility rather than individual
-                  profit.
+                  Priestley wanted to influence the post-war settlement toward a welfare state - a
+                  society built on collective responsibility rather than individual profit.
                 </p>
                 <div className="mt-3 grid gap-3 sm:grid-cols-2">
                   <Quote
@@ -777,7 +774,7 @@ export default function InspectorCallsRevisionPage() {
                   morals. Birling sacks Eva partly because workers demanding better pay threatens
                   the class hierarchy. Gerald&apos;s relationship with Daisy is shaped by class: he
                   has the power and she has none, making genuine equality impossible. Even within
-                  the Birling family, class dynamics operate &mdash; Sybil married beneath her, and
+                  the Birling family, class dynamics operate - Sybil married beneath her, and
                   Birling is anxious about his social status (hoping for a knighthood, emphasising
                   his connections). The Inspector ignores class entirely, treating each character
                   the same regardless of wealth or position. Eva&apos;s name (&ldquo;Smith&rdquo;)
@@ -808,7 +805,7 @@ export default function InspectorCallsRevisionPage() {
                   a mistress; Eric assaults her. Even Mrs Birling, who has social power, uses it to
                   uphold patriarchal values, blaming Eva for being &ldquo;impertinent&rdquo; and
                   insisting the man should take responsibility for the pregnancy. Sheila&apos;s
-                  transformation can be read as a feminist awakening &mdash; she moves from being a
+                  transformation can be read as a feminist awakening - she moves from being a
                   compliant daughter and fianc&eacute;e to an independent moral voice who challenges
                   male authority. Gerald&apos;s offer of the ring at the end suggests he expects
                   Sheila to return to her pre-Inspector role; her refusal shows she has outgrown it.
@@ -873,8 +870,8 @@ export default function InspectorCallsRevisionPage() {
                   those she deems undeserving. Birling lectures on civic duty while exploiting his
                   workers. The Inspector exposes what Priestley sees as the only true morality:
                   treating every human being with dignity and accepting that our actions affect
-                  others. Eva herself demonstrates greater moral integrity than any Birling &mdash;
-                  she refuses stolen money and tries to protect Eric. The play argues that morality
+                  others. Eva herself demonstrates greater moral integrity than any Birling - she
+                  refuses stolen money and tries to protect Eric. The play argues that morality
                   cannot be separated from social justice.
                 </p>
               </div>
@@ -886,12 +883,12 @@ export default function InspectorCallsRevisionPage() {
                   Power
                 </h3>
                 <p className="mt-2 text-sm text-muted-foreground leading-relaxed">
-                  The play examines how power is used and abused. Each Birling uses their power
-                  &mdash; economic, social, or personal &mdash; against Eva, who has none. Birling
-                  wields economic power (sacking workers), Sheila wields consumer power (threatening
-                  to withdraw custom from Milwards), Mrs Birling wields institutional power (the
-                  charity committee), Gerald wields sexual and economic power over his mistress, and
-                  Eric wields physical and sexual power through assault. The Inspector disrupts the
+                  The play examines how power is used and abused. Each Birling uses their power -
+                  economic, social, or personal - against Eva, who has none. Birling wields economic
+                  power (sacking workers), Sheila wields consumer power (threatening to withdraw
+                  custom from Milwards), Mrs Birling wields institutional power (the charity
+                  committee), Gerald wields sexual and economic power over his mistress, and Eric
+                  wields physical and sexual power through assault. The Inspector disrupts the
                   Birlings&apos; power: he is unintimidated by Birling&apos;s threats of connections
                   and cuts through their evasions. His power is moral rather than social or
                   economic, and this makes it more formidable. The final phone call restores the
@@ -916,8 +913,8 @@ export default function InspectorCallsRevisionPage() {
                   was choosing between continuing the pre-war capitalist system or building a
                   welfare state. The play argues that capitalism led to exploitation, inequality,
                   and ultimately to war. The 1945 audience voted Labour in a landslide, implementing
-                  the NHS and the welfare state &mdash; exactly the kind of collective
-                  responsibility Priestley advocated.
+                  the NHS and the welfare state - exactly the kind of collective responsibility
+                  Priestley advocated.
                 </p>
                 <div className="mt-3">
                   <Quote
@@ -1196,7 +1193,7 @@ export default function InspectorCallsRevisionPage() {
                         industries
                       </li>
                       <li>
-                        &bull; Audience had lived through two world wars &mdash; Birling&apos;s
+                        &bull; Audience had lived through two world wars - Birling&apos;s
                         predictions were proven catastrophically wrong
                       </li>
                       <li>
@@ -1224,7 +1221,7 @@ export default function InspectorCallsRevisionPage() {
                   justice with such power that Churchill had them taken off air, seeing Priestley as
                   a political threat. Priestley was instrumental in founding the Common Wealth Party
                   and campaigning for the welfare state. <em>An Inspector Calls</em> is not a subtle
-                  play &mdash; it is a deliberate, passionate argument for socialism and collective
+                  play - it is a deliberate, passionate argument for socialism and collective
                   responsibility, aimed at a 1945 audience who had the power to vote for a new kind
                   of society.
                 </p>
@@ -1237,7 +1234,7 @@ export default function InspectorCallsRevisionPage() {
                   unsinkable&rdquo; is the play&apos;s most devastating piece of dramatic irony. The
                   Titanic sank on 15 April 1912, killing over 1,500 people. The disaster became a
                   metaphor for the arrogance of the Edwardian age: a belief that technology, wealth,
-                  and progress made them invincible. The ship also exposed class inequality &mdash;
+                  and progress made them invincible. The ship also exposed class inequality -
                   first-class passengers were far more likely to survive than third-class. Priestley
                   uses the Titanic to symbolise the entire worldview he is attacking: the complacent
                   certainty of men like Birling that nothing can go wrong.
@@ -1252,8 +1249,8 @@ export default function InspectorCallsRevisionPage() {
                   Birling confidently states that &ldquo;the Germans don&apos;t want war&rdquo; and
                   that the world is progressing toward peace. The 1945 audience knew that two world
                   wars had killed tens of millions. WWI (1914-18) shattered the Edwardian world
-                  Birling represents, killing a generation of young men &mdash; disproportionately
-                  from the working class. WWII (1939-45) further proved that selfish nationalism and
+                  Birling represents, killing a generation of young men - disproportionately from
+                  the working class. WWII (1939-45) further proved that selfish nationalism and
                   unchecked capitalism lead to catastrophe. The Inspector&apos;s warning about
                   &ldquo;fire and blood and anguish&rdquo; resonated powerfully with audiences who
                   had survived the Blitz and lost family members. Priestley argues that the wars
@@ -1269,10 +1266,10 @@ export default function InspectorCallsRevisionPage() {
                   classes (like the Birlings) enjoyed enormous wealth and privilege while the
                   working class (like Eva) endured poverty, long hours, low wages, and no social
                   protection. There was no NHS, no unemployment benefit, and no state pension beyond
-                  a very basic one introduced in 1909. If you lost your job, you relied on charity
-                  &mdash; charity controlled by people like Mrs Birling, who could refuse help on a
-                  whim. Women were doubly disadvantaged by class and gender. The play exposes how
-                  this system allowed the comfortable to ignore or exploit the vulnerable without
+                  a very basic one introduced in 1909. If you lost your job, you relied on charity -
+                  charity controlled by people like Mrs Birling, who could refuse help on a whim.
+                  Women were doubly disadvantaged by class and gender. The play exposes how this
+                  system allowed the comfortable to ignore or exploit the vulnerable without
                   consequence.
                 </p>
               </div>
@@ -1313,12 +1310,12 @@ export default function InspectorCallsRevisionPage() {
                   unity of time (the play takes place in a single evening in real time), unity of
                   place (the entire play is set in the Birling dining room), and unity of action
                   (there is a single plot with no subplots). This creates an intense, claustrophobic
-                  atmosphere &mdash; there is no escape for the characters or the audience. The
-                  single room becomes a pressure cooker in which each character is exposed in turn.
-                  The real-time structure means the audience experiences the revelations as they
-                  happen, without the release of scene changes or time jumps. This formal discipline
-                  also mirrors the Inspector&apos;s method: he is systematic, methodical, dealing
-                  with &ldquo;one person and one line of enquiry at a time.&rdquo;
+                  atmosphere - there is no escape for the characters or the audience. The single
+                  room becomes a pressure cooker in which each character is exposed in turn. The
+                  real-time structure means the audience experiences the revelations as they happen,
+                  without the release of scene changes or time jumps. This formal discipline also
+                  mirrors the Inspector&apos;s method: he is systematic, methodical, dealing with
+                  &ldquo;one person and one line of enquiry at a time.&rdquo;
                 </p>
               </div>
 
@@ -1334,7 +1331,7 @@ export default function InspectorCallsRevisionPage() {
                   each link leading inevitably to the next. However, Priestley subverts the
                   well-made play form with his ambiguous ending: instead of a neat resolution, the
                   final phone call reopens all the questions the characters thought they had
-                  settled. The play does not end &mdash; it cycles.
+                  settled. The play does not end - it cycles.
                 </p>
               </div>
 
@@ -1342,17 +1339,16 @@ export default function InspectorCallsRevisionPage() {
                 <h3 className="font-bold text-foreground">{tr(`The Cliff-Hanger Ending`)}</h3>
                 <p className="mt-2 text-sm text-muted-foreground leading-relaxed">
                   The play&apos;s ending is one of the most discussed in English Literature. The
-                  phone call announcing that a real inspector is on his way &mdash; and that a girl
-                  has just died &mdash; has several possible interpretations. It may suggest that
-                  the events are about to replay (a cyclical structure), giving the Birlings a
-                  second chance to respond differently. It may imply that the Inspector was a
-                  supernatural figure who foresaw the future. It may mean that there are many Eva
-                  Smiths, and the suffering continues. Whatever the interpretation, the effect is
-                  devastating: the Birlings&apos; relief is shattered, Birling is
-                  &ldquo;panic-stricken,&rdquo; and the audience is left with the Inspector&apos;s
-                  warning ringing in their ears. There is no comfortable resolution &mdash; the
-                  audience must leave the theatre and decide for themselves what kind of society
-                  they want.
+                  phone call announcing that a real inspector is on his way - and that a girl has
+                  just died - has several possible interpretations. It may suggest that the events
+                  are about to replay (a cyclical structure), giving the Birlings a second chance to
+                  respond differently. It may imply that the Inspector was a supernatural figure who
+                  foresaw the future. It may mean that there are many Eva Smiths, and the suffering
+                  continues. Whatever the interpretation, the effect is devastating: the
+                  Birlings&apos; relief is shattered, Birling is &ldquo;panic-stricken,&rdquo; and
+                  the audience is left with the Inspector&apos;s warning ringing in their ears.
+                  There is no comfortable resolution - the audience must leave the theatre and
+                  decide for themselves what kind of society they want.
                 </p>
               </div>
 
@@ -1362,13 +1358,12 @@ export default function InspectorCallsRevisionPage() {
                   Priestley&apos;s lighting direction is symbolic: &ldquo;pink and intimate&rdquo;
                   before the Inspector arrives, changing to &ldquo;brighter and harder&rdquo; when
                   he enters. &ldquo;Pink and intimate&rdquo; suggests warmth, comfort, and
-                  rose-tinted self-deception &mdash; the Birlings see themselves and the world
-                  through a flattering lens. &ldquo;Brighter and harder&rdquo; suggests
-                  interrogation, exposure, and truth. The lighting literally strips away their
-                  pretensions. This single stage direction encapsulates the entire play: the
-                  movement from comfortable illusion to uncomfortable truth. It also suggests the
-                  Inspector brings enlightenment &mdash; he forces the Birlings (and the audience)
-                  to see clearly.
+                  rose-tinted self-deception - the Birlings see themselves and the world through a
+                  flattering lens. &ldquo;Brighter and harder&rdquo; suggests interrogation,
+                  exposure, and truth. The lighting literally strips away their pretensions. This
+                  single stage direction encapsulates the entire play: the movement from comfortable
+                  illusion to uncomfortable truth. It also suggests the Inspector brings
+                  enlightenment - he forces the Birlings (and the audience) to see clearly.
                 </p>
               </div>
 
@@ -1381,8 +1376,8 @@ export default function InspectorCallsRevisionPage() {
                   that the Birlings may be talking about different girls. The ambiguity is
                   deliberate: it does not matter whether they are talking about one girl or many.
                   The point is that each Birling contributed to the exploitation of vulnerable
-                  people. The photograph also functions as a mirror &mdash; each character sees in
-                  it a reflection of their own guilt.
+                  people. The photograph also functions as a mirror - each character sees in it a
+                  reflection of their own guilt.
                 </p>
               </div>
             </div>
@@ -1429,7 +1424,7 @@ export default function InspectorCallsRevisionPage() {
                     Context: Priestley appeals to the younger 1945 audience.
                   </p>
                   <p>
-                    <strong>{tr(`Paragraph 4:`)}</strong> The ending &mdash; the phone call forces
+                    <strong>{tr(`Paragraph 4:`)}</strong> The ending - the phone call forces
                     responsibility back onto the Birlings. Cyclical structure suggests that
                     responsibility cannot be evaded. &ldquo;Fire and blood and anguish&rdquo; as
                     prophecy fulfilled by two world wars.
@@ -1443,15 +1438,15 @@ export default function InspectorCallsRevisionPage() {
                 </h3>
                 <div className="mt-3 space-y-2 text-sm text-muted-foreground">
                   <p>
-                    <strong>{tr(`Paragraph 1:`)}</strong> First impression &mdash;
-                    &ldquo;massiveness, solidity and purposefulness.&rdquo; Analyse the tricolon: he
-                    is immovable. Stage direction &ldquo;brighter and harder&rdquo; lighting = he
-                    brings truth. He is not intimidated by Birling&apos;s social status.
+                    <strong>{tr(`Paragraph 1:`)}</strong> First impression - &ldquo;massiveness,
+                    solidity and purposefulness.&rdquo; Analyse the tricolon: he is immovable. Stage
+                    direction &ldquo;brighter and harder&rdquo; lighting = he brings truth. He is
+                    not intimidated by Birling&apos;s social status.
                   </p>
                   <p>
-                    <strong>{tr(`Paragraph 2:`)}</strong> His method &mdash; &ldquo;one person and
-                    one line of enquiry at a time.&rdquo; Systematic, controlled, inescapable. Shows
-                    the photograph one at a time. Contrast with Birling&apos;s bluster.
+                    <strong>{tr(`Paragraph 2:`)}</strong> His method - &ldquo;one person and one
+                    line of enquiry at a time.&rdquo; Systematic, controlled, inescapable. Shows the
+                    photograph one at a time. Contrast with Birling&apos;s bluster.
                   </p>
                   <p>
                     <strong>{tr(`Paragraph 3:`)}</strong> His role as Priestley&apos;s mouthpiece.
@@ -1460,7 +1455,7 @@ export default function InspectorCallsRevisionPage() {
                     desire for welfare state.
                   </p>
                   <p>
-                    <strong>{tr(`Paragraph 4:`)}</strong> His ambiguity &mdash; is he a ghost, time
+                    <strong>{tr(`Paragraph 4:`)}</strong> His ambiguity - is he a ghost, time
                     traveller, angel, or conscience? &ldquo;Goole&rdquo; = ghoul. He knows things
                     before they are told. The final phone call validates his moral authority even if
                     his identity is uncertain.
@@ -1474,24 +1469,24 @@ export default function InspectorCallsRevisionPage() {
                 </h3>
                 <div className="mt-3 space-y-2 text-sm text-muted-foreground">
                   <p>
-                    <strong>{tr(`Paragraph 1:`)}</strong> Sheila at the start &mdash; &ldquo;very
-                    pleased with life and rather excited.&rdquo; Sheltered, privileged,
-                    materialistic (delighted by the ring). A product of her class and gender.
+                    <strong>{tr(`Paragraph 1:`)}</strong> Sheila at the start - &ldquo;very pleased
+                    with life and rather excited.&rdquo; Sheltered, privileged, materialistic
+                    (delighted by the ring). A product of her class and gender.
                   </p>
                   <p>
-                    <strong>{tr(`Paragraph 2:`)}</strong> Her involvement with Eva &mdash; having
-                    her sacked from Milwards out of jealousy. But her immediate guilt shows moral
+                    <strong>{tr(`Paragraph 2:`)}</strong> Her involvement with Eva - having her
+                    sacked from Milwards out of jealousy. But her immediate guilt shows moral
                     potential: &ldquo;I know I&apos;m to blame.&rdquo; Contrast with her
                     mother&apos;s refusal.
                   </p>
                   <p>
-                    <strong>{tr(`Paragraph 3:`)}</strong> Her transformation &mdash; she takes on
-                    the Inspector&apos;s role, warning her parents: &ldquo;You&apos;re pretending
+                    <strong>{tr(`Paragraph 3:`)}</strong> Her transformation - she takes on the
+                    Inspector&apos;s role, warning her parents: &ldquo;You&apos;re pretending
                     everything&apos;s just as it was before.&rdquo; She sees through pretence.
                     Analyse her language becoming more direct, assertive.
                   </p>
                   <p>
-                    <strong>{tr(`Paragraph 4:`)}</strong> Sheila at the end &mdash; she rejects
+                    <strong>{tr(`Paragraph 4:`)}</strong> Sheila at the end - she rejects
                     Gerald&apos;s ring and her parents&apos; denial. She represents Priestley&apos;s
                     hope for the younger generation. Context: 1945 audience choosing between old
                     values and new.
@@ -1505,7 +1500,7 @@ export default function InspectorCallsRevisionPage() {
                 </h3>
                 <div className="mt-3 space-y-2 text-sm text-muted-foreground">
                   <p>
-                    <strong>{tr(`Paragraph 1:`)}</strong> Mrs Birling &mdash; &ldquo;girls of that
+                    <strong>{tr(`Paragraph 1:`)}</strong> Mrs Birling - &ldquo;girls of that
                     class.&rdquo; Three words that encapsulate class prejudice. She cannot believe a
                     working-class girl could have morals. Context: rigid Edwardian class hierarchy.
                   </p>
@@ -1516,16 +1511,16 @@ export default function InspectorCallsRevisionPage() {
                     1912.
                   </p>
                   <p>
-                    <strong>{tr(`Paragraph 3:`)}</strong> Birling&apos;s economic power &mdash;
-                    sacking workers who asked for fair wages. &ldquo;It&apos;s my duty to keep
-                    labour costs down.&rdquo; Analyse &ldquo;duty&rdquo; &mdash; he reframes
-                    exploitation as moral obligation.
+                    <strong>{tr(`Paragraph 3:`)}</strong> Birling&apos;s economic power - sacking
+                    workers who asked for fair wages. &ldquo;It&apos;s my duty to keep labour costs
+                    down.&rdquo; Analyse &ldquo;duty&rdquo; - he reframes exploitation as moral
+                    obligation.
                   </p>
                   <p>
                     <strong>{tr(`Paragraph 4:`)}</strong> The Inspector ignores class. He is
                     unimpressed by Birling&apos;s connections and treats everyone equally. Context:
-                    1945 &mdash; wartime had weakened class barriers. Priestley argues for a
-                    classless society.
+                    1945 - wartime had weakened class barriers. Priestley argues for a classless
+                    society.
                   </p>
                 </div>
               </div>
@@ -1537,21 +1532,20 @@ export default function InspectorCallsRevisionPage() {
                 </h3>
                 <div className="mt-3 space-y-2 text-sm text-muted-foreground">
                   <p>
-                    <strong>{tr(`Paragraph 1:`)}</strong> Birling as spokesman for capitalism
-                    &mdash; &ldquo;a man has to mind his own business.&rdquo; Context: laissez-faire
+                    <strong>{tr(`Paragraph 1:`)}</strong> Birling as spokesman for capitalism -
+                    &ldquo;a man has to mind his own business.&rdquo; Context: laissez-faire
                     economics. Priestley makes Birling the voice of everything he opposes.
                   </p>
                   <p>
-                    <strong>{tr(`Paragraph 2:`)}</strong> Dramatic irony &mdash; Titanic, no war.
+                    <strong>{tr(`Paragraph 2:`)}</strong> Dramatic irony - Titanic, no war.
                     Priestley destroys Birling&apos;s credibility to discredit his capitalist
                     philosophy. The audience is positioned to reject everything Birling says.
                   </p>
                   <p>
-                    <strong>{tr(`Paragraph 3:`)}</strong> His treatment of Eva &mdash; sacking her
-                    for requesting fair wages, and the defence that begins &ldquo;If you don&apos;t
-                    come down sharply on some of these people&rdquo;. Analyse &ldquo;these
-                    people&rdquo; (dehumanising), &ldquo;sharply&rdquo; (violent language for
-                    economic decisions).
+                    <strong>{tr(`Paragraph 3:`)}</strong> His treatment of Eva - sacking her for
+                    requesting fair wages, and the defence that begins &ldquo;If you don&apos;t come
+                    down sharply on some of these people&rdquo;. Analyse &ldquo;these people&rdquo;
+                    (dehumanising), &ldquo;sharply&rdquo; (violent language for economic decisions).
                   </p>
                   <p>
                     <strong>{tr(`Paragraph 4:`)}</strong> His refusal to change. After the Inspector
@@ -1568,7 +1562,7 @@ export default function InspectorCallsRevisionPage() {
                 <div className="mt-3 space-y-2 text-sm text-muted-foreground">
                   <p>
                     <strong>{tr(`Paragraph 1:`)}</strong> The Inspector&apos;s exit and final speech
-                    &mdash; &ldquo;fire and blood and anguish.&rdquo; Analyse the prophetic tone,
+                    - &ldquo;fire and blood and anguish.&rdquo; Analyse the prophetic tone,
                     tricolon, and link to the world wars. He leaves his message as a challenge.
                   </p>
                   <p>
@@ -1578,16 +1572,16 @@ export default function InspectorCallsRevisionPage() {
                     crystallises the play&apos;s central argument.
                   </p>
                   <p>
-                    <strong>{tr(`Paragraph 3:`)}</strong> The phone call &mdash; cyclical structure.
-                    The events are about to repeat. This denies the older Birlings their escape and
+                    <strong>{tr(`Paragraph 3:`)}</strong> The phone call - cyclical structure. The
+                    events are about to repeat. This denies the older Birlings their escape and
                     forces the audience to confront the question: have <em>you</em> learned the
                     lesson?
                   </p>
                   <p>
-                    <strong>{tr(`Paragraph 4:`)}</strong> Birling &ldquo;panic-stricken&rdquo;
-                    &mdash; the final image. The man who was so confident at the start is now
-                    terrified. Priestley&apos;s structural arc: from complacent certainty to fear.
-                    Context: the audience must choose a better path.
+                    <strong>{tr(`Paragraph 4:`)}</strong> Birling &ldquo;panic-stricken&rdquo; - the
+                    final image. The man who was so confident at the start is now terrified.
+                    Priestley&apos;s structural arc: from complacent certainty to fear. Context: the
+                    audience must choose a better path.
                   </p>
                 </div>
               </div>
@@ -1651,11 +1645,11 @@ export default function InspectorCallsRevisionPage() {
                   The phone call at the end creates a cyclical structure: the events are about to
                   begin again. This is not merely a dramatic twist but a structural embodiment of
                   Priestley&apos;s argument. If the Birlings have not learned from the first visit,
-                  they will be forced to learn again &mdash; and, by extension, if the 1945 audience
-                  does not learn from the world wars, history will repeat itself. The cyclical
-                  structure turns the play into a warning that has no endpoint: every generation
-                  must choose whether to accept social responsibility or face the consequences of
-                  refusing. The form <em>is</em> the argument.
+                  they will be forced to learn again - and, by extension, if the 1945 audience does
+                  not learn from the world wars, history will repeat itself. The cyclical structure
+                  turns the play into a warning that has no endpoint: every generation must choose
+                  whether to accept social responsibility or face the consequences of refusing. The
+                  form <em>is</em> the argument.
                 </p>
               </div>
 
@@ -1696,15 +1690,15 @@ export default function InspectorCallsRevisionPage() {
                 </h3>
                 <p className="mt-2 text-sm text-muted-foreground leading-relaxed">
                   The Inspector shows the photograph to one person at a time. Gerald later suggests
-                  they may have been shown different photographs &mdash; different girls. A
-                  top-level response might argue that this does not matter, and that Priestley
-                  intends it not to matter. Whether Eva is one person or many, the Birlings&apos;
-                  actions were still wrong. But the ambiguity also raises a philosophical question:
-                  does moral responsibility depend on provable cause and effect, or on the nature of
-                  the action itself? Priestley argues the latter. The older Birlings cling to the
-                  idea that if they cannot be <em>proven</em> guilty of killing{' '}
-                  <em>this specific girl</em>, they are innocent. The Inspector (and Priestley)
-                  insists that moral responsibility transcends legal proof.
+                  they may have been shown different photographs - different girls. A top-level
+                  response might argue that this does not matter, and that Priestley intends it not
+                  to matter. Whether Eva is one person or many, the Birlings&apos; actions were
+                  still wrong. But the ambiguity also raises a philosophical question: does moral
+                  responsibility depend on provable cause and effect, or on the nature of the action
+                  itself? Priestley argues the latter. The older Birlings cling to the idea that if
+                  they cannot be <em>proven</em> guilty of killing <em>this specific girl</em>, they
+                  are innocent. The Inspector (and Priestley) insists that moral responsibility
+                  transcends legal proof.
                 </p>
               </div>
 
@@ -1720,9 +1714,9 @@ export default function InspectorCallsRevisionPage() {
                   (&ldquo;you killed her&rdquo;). Eric exposes the hypocrisy of the class system
                   from within: the son of respectable parents turns out to be a drunk and an
                   assailant. Priestley uses Eric to argue that the upper class is not morally
-                  superior &mdash; it merely has the privilege of hiding its sins. Eric&apos;s shame
-                  is genuine, unlike his parents&apos; self-justification, but his crimes are real
-                  too. He represents the painful, messy reality of confronting one&apos;s own guilt.
+                  superior - it merely has the privilege of hiding its sins. Eric&apos;s shame is
+                  genuine, unlike his parents&apos; self-justification, but his crimes are real too.
+                  He represents the painful, messy reality of confronting one&apos;s own guilt.
                 </p>
               </div>
 
@@ -1738,8 +1732,8 @@ export default function InspectorCallsRevisionPage() {
                   Priestley&apos;s play is, in this reading, not just a drama but a piece of
                   political persuasion. The Inspector&apos;s &ldquo;fire and blood and
                   anguish&rdquo; speech is not a prediction but a statement of historical fact for
-                  the 1945 audience &mdash; the fires of the Blitz, the blood of the trenches, the
-                  anguish of millions. Priestley asks: will you learn, or must you be taught again?
+                  the 1945 audience - the fires of the Blitz, the blood of the trenches, the anguish
+                  of millions. Priestley asks: will you learn, or must you be taught again?
                 </p>
               </div>
             </div>

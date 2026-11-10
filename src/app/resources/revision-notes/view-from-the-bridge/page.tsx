@@ -74,7 +74,7 @@ function Quote({
     <div className="rounded-lg border-s-4 border-accent bg-primary/10 p-4">
       <p className="text-sm font-semibold italic text-foreground">&ldquo;{text}&rdquo;</p>
       <p className="mt-1 text-xs text-muted-foreground">
-        {speaker} &mdash; {act}
+        {speaker} - {act}
       </p>
       <p className="mt-2 text-sm text-muted-foreground">{analysis}</p>
     </div>
@@ -113,7 +113,7 @@ export default function ViewFromTheBridgeRevisionPage() {
           </span>
         </div>
         <h1 className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
-          A View from the Bridge &mdash; Complete Revision Guide
+          A View from the Bridge - Complete Revision Guide
         </h1>
         <p className="mt-3 max-w-3xl text-lg text-muted-foreground">
           Everything you need for your GCSE/IGCSE English Literature exam. Full plot summary,
@@ -164,7 +164,7 @@ export default function ViewFromTheBridgeRevisionPage() {
                 Act 1
               </h3>
               <p className="mt-2 text-sm text-muted-foreground leading-relaxed">
-                The play is set in the 1950s in Red Hook, Brooklyn &mdash; a poor, close-knit
+                The play is set in the 1950s in Red Hook, Brooklyn - a poor, close-knit
                 Italian-American community near the docks. Eddie Carbone, a longshoreman, lives with
                 his wife Beatrice and her orphaned niece Catherine, whom he has raised since
                 childhood. The lawyer Alfieri serves as narrator, framing the story as a Greek
@@ -190,9 +190,9 @@ export default function ViewFromTheBridgeRevisionPage() {
                     &ldquo;walkin&apos; wavy&rdquo;
                   </li>
                   <li>&bull; The arrival of Marco and Rodolpho</li>
-                  <li>&bull; Eddie teaching Rodolpho to box &mdash; thinly veiled aggression</li>
+                  <li>&bull; Eddie teaching Rodolpho to box - thinly veiled aggression</li>
                   <li>&bull; Marco&apos;s chair-lifting warning to Eddie</li>
-                  <li>&bull; Eddie&apos;s two kisses &mdash; Catherine and then Rodolpho</li>
+                  <li>&bull; Eddie&apos;s two kisses - Catherine and then Rodolpho</li>
                 </ul>
               </div>
             </div>
@@ -208,26 +208,23 @@ export default function ViewFromTheBridgeRevisionPage() {
                 Catherine and Rodolpho have grown closer and plan to marry. Eddie, desperate and
                 unable to accept this, makes the fateful decision to telephone the Immigration
                 Bureau and report Marco and Rodolpho. When the officers arrive, they also discover
-                two other immigrants living upstairs with Lipari and his wife &mdash; collateral
-                damage from Eddie&apos;s betrayal. The community instantly recognises Eddie&apos;s
+                two other immigrants living upstairs with Lipari and his wife - collateral damage
+                from Eddie&apos;s betrayal. The community instantly recognises Eddie&apos;s
                 treachery. Beatrice&apos;s cousin spits in his face. Marco, being taken away,
                 publicly accuses Eddie: &ldquo;That one! He killed my children!&rdquo; Eddie&apos;s
-                reputation &mdash; his &ldquo;name&rdquo; &mdash; is destroyed. Alfieri posts bail
-                for Marco and Rodolpho. Catherine and Rodolpho marry quickly. Eddie demands Marco
-                take back his accusation and restore his name. Marco refuses. In the final
-                confrontation outside the Carbone apartment on Catherine&apos;s wedding day, Eddie
-                pulls a knife on Marco, but Marco turns the blade and Eddie dies in Beatrice&apos;s
-                arms. Alfieri delivers a closing speech reflecting on Eddie&apos;s story with pity
-                and alarm.
+                reputation - his &ldquo;name&rdquo; - is destroyed. Alfieri posts bail for Marco and
+                Rodolpho. Catherine and Rodolpho marry quickly. Eddie demands Marco take back his
+                accusation and restore his name. Marco refuses. In the final confrontation outside
+                the Carbone apartment on Catherine&apos;s wedding day, Eddie pulls a knife on Marco,
+                but Marco turns the blade and Eddie dies in Beatrice&apos;s arms. Alfieri delivers a
+                closing speech reflecting on Eddie&apos;s story with pity and alarm.
               </p>
               <div className="mt-3 rounded-lg bg-muted p-3">
                 <p className="text-xs font-semibold text-muted-foreground uppercase tracking-wider">
                   {tr(`Key Moments`)}
                 </p>
                 <ul className="mt-2 space-y-1 text-sm text-muted-foreground">
-                  <li>
-                    &bull; Eddie&apos;s phone call to Immigration &mdash; the point of no return
-                  </li>
+                  <li>&bull; Eddie&apos;s phone call to Immigration - the point of no return</li>
                   <li>&bull; The arrest of Marco and Rodolpho</li>
                   <li>
                     &bull; Marco&apos;s public accusation: &ldquo;That one! He killed my
@@ -237,7 +234,7 @@ export default function ViewFromTheBridgeRevisionPage() {
                     &bull; Beatrice&apos;s confrontation: &ldquo;You want somethin&apos; else,
                     Eddie, and you can never have her!&rdquo;
                   </li>
-                  <li>&bull; Eddie&apos;s death &mdash; killed by his own knife</li>
+                  <li>&bull; Eddie&apos;s death - killed by his own knife</li>
                   <li>&bull; Alfieri&apos;s final speech on Eddie&apos;s tragic nature</li>
                 </ul>
               </div>
@@ -270,7 +267,7 @@ export default function ViewFromTheBridgeRevisionPage() {
                   behaviour becomes increasingly irrational and destructive. He breaks the
                   community&apos;s most sacred code by informing on the immigrants, destroying his
                   reputation and ultimately himself. Miller presents Eddie as both sympathetic and
-                  deeply flawed &mdash; a man destroyed by desires he cannot understand or control.
+                  deeply flawed - a man destroyed by desires he cannot understand or control.
                 </p>
                 <div className="mt-3 grid gap-3 sm:grid-cols-2">
                   <Quote
@@ -326,7 +323,7 @@ export default function ViewFromTheBridgeRevisionPage() {
                   and the need to protect her niece and her cousins. She is the only character who
                   directly confronts Eddie with the truth about his desires. Miller uses Beatrice to
                   articulate what Eddie cannot. She represents the cost of Eddie&apos;s obsession on
-                  those closest to him &mdash; their marriage has become sexless and strained.
+                  those closest to him - their marriage has become sexless and strained.
                 </p>
                 <Quote
                   text="You want somethin' else, Eddie, and you can never have her!"
@@ -343,7 +340,7 @@ export default function ViewFromTheBridgeRevisionPage() {
                 </h3>
                 <p className="mt-3 text-sm text-muted-foreground leading-relaxed">
                   Rodolpho is Marco&apos;s younger brother, an illegal immigrant from Italy. He is
-                  blond, can sing, cook, and sew &mdash; qualities that Eddie uses to question his
+                  blond, can sing, cook, and sew - qualities that Eddie uses to question his
                   masculinity. However, Rodolpho is simply a different kind of man: charming,
                   artistic, and adaptable. He genuinely loves Catherine and is excited by the
                   possibilities America offers. Eddie accuses him of only wanting to marry Catherine
@@ -367,13 +364,13 @@ export default function ViewFromTheBridgeRevisionPage() {
                 <p className="mt-3 text-sm text-muted-foreground leading-relaxed">
                   Marco is the older, stronger, and more traditionally masculine of the two
                   brothers. He came to America to earn money for his starving family in Italy. He is
-                  quiet, hardworking, and respectful &mdash; but he operates by a strict code of
-                  justice. When Eddie teaches Rodolpho to box (thinly veiled aggression), Marco
-                  responds by lifting a chair above Eddie&apos;s head with one hand &mdash; a silent
-                  warning. After Eddie&apos;s betrayal, Marco publicly accuses Eddie and ultimately
-                  kills him. Marco represents old-world justice: an eye for an eye. His actions
-                  raise the question of whether his form of justice is any more legitimate than the
-                  legal system.
+                  quiet, hardworking, and respectful - but he operates by a strict code of justice.
+                  When Eddie teaches Rodolpho to box (thinly veiled aggression), Marco responds by
+                  lifting a chair above Eddie&apos;s head with one hand - a silent warning. After
+                  Eddie&apos;s betrayal, Marco publicly accuses Eddie and ultimately kills him.
+                  Marco represents old-world justice: an eye for an eye. His actions raise the
+                  question of whether his form of justice is any more legitimate than the legal
+                  system.
                 </p>
                 <Quote
                   text="That one! He killed my children! That one stole the food from my children!"
@@ -392,7 +389,7 @@ export default function ViewFromTheBridgeRevisionPage() {
                   Alfieri is the play&apos;s narrator and chorus figure, modelled on the chorus of
                   Greek tragedy. As a lawyer, he bridges the Italian community&apos;s informal
                   justice system and American law. He can see the tragedy coming but is powerless to
-                  prevent it &mdash; mirroring the audience&apos;s experience. His opening monologue
+                  prevent it - mirroring the audience&apos;s experience. His opening monologue
                   establishes the inevitability of the events. He tries to warn Eddie, telling him
                   the law cannot help with his situation. Alfieri&apos;s final speech is crucial: he
                   says he mourns Eddie &ldquo;with a certain... alarm,&rdquo; acknowledging that
@@ -424,12 +421,12 @@ export default function ViewFromTheBridgeRevisionPage() {
                   The play explores the tension between formal law and community justice. In Red
                   Hook, the Italian-American community operates by an unwritten code: you never
                   inform on someone to the authorities. Eddie breaks this code when he calls
-                  Immigration, and his punishment is swift &mdash; complete social ostracism and
+                  Immigration, and his punishment is swift - complete social ostracism and
                   ultimately death. Alfieri represents the legal system but acknowledges its
                   limitations. Marco&apos;s revenge represents a more primal form of justice. Miller
-                  asks the audience to consider which system is more just &mdash; or whether both
-                  are inadequate. The play suggests that when formal law cannot address human
-                  passions, people revert to older, more violent codes.
+                  asks the audience to consider which system is more just - or whether both are
+                  inadequate. The play suggests that when formal law cannot address human passions,
+                  people revert to older, more violent codes.
                 </p>
                 <div className="mt-3 grid gap-3 sm:grid-cols-2">
                   <Quote
@@ -457,10 +454,10 @@ export default function ViewFromTheBridgeRevisionPage() {
                   Eddie&apos;s concept of masculinity is rigid and ultimately destructive. He
                   equates manhood with physical strength, being a provider, and controlling his
                   family. He attacks Rodolpho&apos;s masculinity because Rodolpho sings, cooks, and
-                  sews &mdash; activities Eddie considers feminine. The boxing scene and the two
-                  kisses are Eddie&apos;s attempts to assert masculine dominance. His obsession with
-                  his &ldquo;name&rdquo; (reputation/honour) is linked to his masculine identity.
-                  Miller shows how toxic masculinity damages everyone: Eddie cannot acknowledge his
+                  sews - activities Eddie considers feminine. The boxing scene and the two kisses
+                  are Eddie&apos;s attempts to assert masculine dominance. His obsession with his
+                  &ldquo;name&rdquo; (reputation/honour) is linked to his masculine identity. Miller
+                  shows how toxic masculinity damages everyone: Eddie cannot acknowledge his
                   feelings, Rodolpho is unfairly demeaned, and the women are caught between
                   competing male egos.
                 </p>
@@ -482,7 +479,7 @@ export default function ViewFromTheBridgeRevisionPage() {
                   The play is set against the backdrop of Italian immigration to America. Marco and
                   Rodolpho risk everything for economic opportunity. Marco comes to feed his
                   starving children; Rodolpho dreams of a new life. The community in Red Hook is
-                  built on immigration &mdash; everyone understands the immigrants&apos; desperation
+                  built on immigration - everyone understands the immigrants&apos; desperation
                   because their own families made similar journeys. Eddie&apos;s betrayal is
                   therefore doubly shocking: he violates both community loyalty and the shared
                   immigrant experience. Miller, himself the son of immigrants, uses the play to
@@ -498,14 +495,14 @@ export default function ViewFromTheBridgeRevisionPage() {
                   Betrayal and Loyalty
                 </h3>
                 <p className="mt-2 text-sm text-muted-foreground leading-relaxed">
-                  The community&apos;s code of loyalty &mdash; never informing to the authorities
-                  &mdash; is the moral framework of the play. Eddie himself tells the story of Vinny
-                  Bolzano, who was violently punished for informing on his uncle. This makes
-                  Eddie&apos;s own act of betrayal even more devastating: he knows exactly what the
-                  consequences will be but does it anyway, driven by his obsession with Catherine.
-                  His betrayal is not just of Marco and Rodolpho but of Beatrice, Catherine, and the
-                  entire community. The play explores how personal desire can overwhelm even deeply
-                  held moral convictions.
+                  The community&apos;s code of loyalty - never informing to the authorities - is the
+                  moral framework of the play. Eddie himself tells the story of Vinny Bolzano, who
+                  was violently punished for informing on his uncle. This makes Eddie&apos;s own act
+                  of betrayal even more devastating: he knows exactly what the consequences will be
+                  but does it anyway, driven by his obsession with Catherine. His betrayal is not
+                  just of Marco and Rodolpho but of Beatrice, Catherine, and the entire community.
+                  The play explores how personal desire can overwhelm even deeply held moral
+                  convictions.
                 </p>
                 <Quote
                   text="He's gonna take that back. He's gonna take that back or I'll kill him!"
@@ -527,7 +524,7 @@ export default function ViewFromTheBridgeRevisionPage() {
                   niece, but the subtext is clear. Eddie&apos;s jealousy of Rodolpho, his physical
                   reactions to Catherine&apos;s appearance, and the disturbing kiss all point to
                   desires he cannot admit even to himself. This repression is central to his tragedy
-                  &mdash; because he cannot name his feelings, he cannot deal with them rationally.
+                  - because he cannot name his feelings, he cannot deal with them rationally.
                   Instead, they emerge as hostility toward Rodolpho and increasingly erratic
                   behaviour. Miller draws on psychoanalytic ideas about repressed desire and
                   self-destruction.
@@ -545,12 +542,12 @@ export default function ViewFromTheBridgeRevisionPage() {
                   functions as a chorus, framing the events and commenting on their inevitability.
                   Eddie is a tragic hero in the Aristotelian sense: a man brought down by a fatal
                   flaw (<em>hamartia</em>). Like classical tragedies, the outcome is known from the
-                  beginning &mdash; Alfieri tells us in the opening monologue that events ran
-                  &ldquo;a bloody course.&rdquo; Miller adapts the form: Eddie is not a king but a
-                  common man, asserting Miller&apos;s belief (expressed in &ldquo;Tragedy and the
-                  Common Man&rdquo;) that ordinary people can be tragic figures. Eddie&apos;s
-                  willingness to sacrifice everything for his &ldquo;name&rdquo; gives him tragic
-                  dignity, even as we condemn his actions.
+                  beginning - Alfieri tells us in the opening monologue that events ran &ldquo;a
+                  bloody course.&rdquo; Miller adapts the form: Eddie is not a king but a common
+                  man, asserting Miller&apos;s belief (expressed in &ldquo;Tragedy and the Common
+                  Man&rdquo;) that ordinary people can be tragic figures. Eddie&apos;s willingness
+                  to sacrifice everything for his &ldquo;name&rdquo; gives him tragic dignity, even
+                  as we condemn his actions.
                 </p>
                 <Quote
                   text="I mourn him -- I admit it -- with a certain... alarm"
@@ -687,11 +684,11 @@ export default function ViewFromTheBridgeRevisionPage() {
                 <p className="mt-2 text-sm text-muted-foreground leading-relaxed">
                   Between 1880 and 1960, millions of Italians emigrated to America, many settling in
                   New York. Red Hook, Brooklyn was a centre for Italian-American longshoremen.
-                  Illegal immigration was common &mdash; families would harbour
-                  &ldquo;submarines&rdquo; (illegal immigrants) who worked on the docks. The
-                  community operated by a code of <em>omert&agrave;</em> (silence) &mdash; you never
-                  informed on fellow Italians to the American authorities. Miller spent time on the
-                  waterfront researching the play and heard the real story that inspired it.
+                  Illegal immigration was common - families would harbour &ldquo;submarines&rdquo;
+                  (illegal immigrants) who worked on the docks. The community operated by a code of{' '}
+                  <em>omert&agrave;</em> (silence) - you never informed on fellow Italians to the
+                  American authorities. Miller spent time on the waterfront researching the play and
+                  heard the real story that inspired it.
                 </p>
               </div>
 
@@ -714,12 +711,12 @@ export default function ViewFromTheBridgeRevisionPage() {
                 <h3 className="font-bold text-foreground">1950s Gender Roles</h3>
                 <p className="mt-2 text-sm text-muted-foreground leading-relaxed">
                   The play reflects 1950s attitudes toward gender. Eddie&apos;s narrow definition of
-                  masculinity &mdash; strength, providing, controlling the household &mdash; was
-                  typical of the era. Women were expected to be domestic and obedient.
-                  Catherine&apos;s desire for independence challenges these norms. Rodolpho&apos;s
-                  artistic sensibility challenges them further. Miller critiques the damage caused
-                  by rigid gender expectations while also showing how deeply embedded they are in
-                  community identity.
+                  masculinity - strength, providing, controlling the household - was typical of the
+                  era. Women were expected to be domestic and obedient. Catherine&apos;s desire for
+                  independence challenges these norms. Rodolpho&apos;s artistic sensibility
+                  challenges them further. Miller critiques the damage caused by rigid gender
+                  expectations while also showing how deeply embedded they are in community
+                  identity.
                 </p>
               </div>
             </div>
@@ -742,8 +739,8 @@ export default function ViewFromTheBridgeRevisionPage() {
                   </li>
                   <li>
                     &bull; <strong>{tr(`Link to the tragic form:`)}</strong> Discuss how Miller uses
-                    the structure of Greek tragedy &mdash; Alfieri as chorus, Eddie&apos;s hamartia,
-                    the sense of inevitability.
+                    the structure of Greek tragedy - Alfieri as chorus, Eddie&apos;s hamartia, the
+                    sense of inevitability.
                   </li>
                   <li>
                     &bull;{' '}
@@ -775,7 +772,7 @@ export default function ViewFromTheBridgeRevisionPage() {
                   <span className="rounded bg-purple-800 px-2 py-0.5 text-xs font-bold text-white">
                     AQA
                   </span>
-                  AQA GCSE English Literature &mdash; Paper 2, Section A
+                  AQA GCSE English Literature - Paper 2, Section A
                 </h3>
                 <ul className="mt-3 space-y-2 text-sm text-muted-foreground">
                   <li>
@@ -802,7 +799,7 @@ export default function ViewFromTheBridgeRevisionPage() {
                   <span className="rounded bg-emerald-600 px-2 py-0.5 text-xs font-bold text-white">
                     CAIE
                   </span>
-                  Cambridge IGCSE Literature &mdash; Paper 1 (Drama)
+                  Cambridge IGCSE Literature - Paper 1 (Drama)
                 </h3>
                 <ul className="mt-3 space-y-2 text-sm text-muted-foreground">
                   <li>

@@ -11,7 +11,7 @@ const quotes = [
   {
     quote: '\u201cI find people confusing.\u201d',
     speaker: 'Christopher',
-    context: 'Early in the play \u2014 Christopher explains his worldview',
+    context: 'Early in the play - Christopher explains his worldview',
     analysis:
       'Christopher\u2019s opening self-description. The line establishes that the play will present a perspective in which social interaction, not logic, is the hard problem.',
   },
@@ -20,7 +20,7 @@ const quotes = [
     speaker: 'Christopher',
     context: 'Explaining his personal code',
     analysis:
-      'Christopher\u2019s insistence on literal truth sets up the play\u2019s moral engine. Every hidden thing \u2014 Ed\u2019s lies, the hidden letters \u2014 becomes a betrayal of this principle.',
+      'Christopher\u2019s insistence on literal truth sets up the play\u2019s moral engine. Every hidden thing - Ed\u2019s lies, the hidden letters - becomes a betrayal of this principle.',
   },
   {
     quote: '\u201cPrime numbers are what is left when you have taken all the patterns away.\u201d',
@@ -41,7 +41,7 @@ const quotes = [
     speaker: 'Ed Boone',
     context: 'Ed\u2019s confession',
     analysis:
-      'The confession collapses Christopher\u2019s trust entirely. Ed\u2019s crime against a dog becomes, for Christopher, proof that his father can do anything \u2014 including harm him.',
+      'The confession collapses Christopher\u2019s trust entirely. Ed\u2019s crime against a dog becomes, for Christopher, proof that his father can do anything - including harm him.',
   },
   {
     quote: '\u201cI wasn\u2019t a very good mother, Christopher.\u201d',
@@ -55,7 +55,7 @@ const quotes = [
     speaker: 'Siobhan',
     context: 'Responding to Christopher\u2019s book',
     analysis:
-      'Siobhan validates Christopher\u2019s storytelling on its own terms. The line is metatheatrical \u2014 it comments on the play we are watching as well as on Christopher\u2019s writing.',
+      'Siobhan validates Christopher\u2019s storytelling on its own terms. The line is metatheatrical - it comments on the play we are watching as well as on Christopher\u2019s writing.',
   },
   {
     quote: '\u201cYou have to do things even if they scare you.\u201d',
@@ -74,7 +74,7 @@ const quotes = [
   {
     quote: '\u201cI think I\u2019m going to write a book.\u201d',
     speaker: 'Christopher',
-    context: 'Early in the play \u2014 establishing the framing device',
+    context: 'Early in the play - establishing the framing device',
     analysis:
       'The metatheatrical frame begins. Christopher\u2019s book becomes the play itself, narrated by Siobhan and performed by his classmates.',
   },
@@ -117,9 +117,9 @@ const quotes = [
   {
     quote: '\u201cWhat in God\u2019s name have you done to my dog?\u201d',
     speaker: 'Mrs Shears',
-    context: 'Opening scene \u2014 discovering Christopher with Wellington',
+    context: 'Opening scene - discovering Christopher with Wellington',
     analysis:
-      'The inciting incident. The accusation is unjust but comprehensible \u2014 Christopher is found holding the dead dog and a garden fork.',
+      'The inciting incident. The accusation is unjust but comprehensible - Christopher is found holding the dead dog and a garden fork.',
   },
   {
     quote:
@@ -172,8 +172,8 @@ export default function CuriousIncidentKeyQuotesPage() {
             The Curious Incident: Key Quotes
           </h1>
           <p className="mt-3 max-w-2xl text-body-lg text-muted-foreground">
-            Eighteen essential quotations with speaker, context and analysis &mdash; designed for
-            exam revision and essay planning.
+            Eighteen essential quotations with speaker, context and analysis - designed for exam
+            revision and essay planning.
           </p>
         </div>
       </section>
@@ -203,7 +203,7 @@ export default function CuriousIncidentKeyQuotesPage() {
               <blockquote className="border-s-2 border-primary/40 ps-3 text-body-md italic text-foreground">
                 {q.quote}
               </blockquote>
-              <p className="mt-2 text-body-xs font-medium text-primary">&mdash; {q.speaker}</p>
+              <p className="mt-2 text-body-xs font-medium text-primary">- {q.speaker}</p>
               <p className="mt-1 text-body-xs text-muted-foreground">{q.context}</p>
               <p className="mt-2 text-body-sm leading-relaxed text-muted-foreground">
                 {q.analysis}

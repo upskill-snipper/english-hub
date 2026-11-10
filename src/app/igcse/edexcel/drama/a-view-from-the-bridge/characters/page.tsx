@@ -33,42 +33,42 @@ const characters = [
     name: 'Eddie Carbone',
     role: 'Longshoreman and tragic protagonist',
     analysis:
-      'Eddie is a hard-working, well-respected docker in Red Hook who has raised his orphaned niece Catherine as his own. His protectiveness toward her gradually reveals itself as something more possessive and darker \u2014 a repressed desire he cannot name. Miller frames Eddie as a flawed tragic hero in the Greek mould: a man of genuine loyalty and decency who is destroyed by the one feeling he refuses to acknowledge. His decision to call Immigration and betray Marco and Rodolpho is the play\u2019s catastrophe, transforming him from community man to pariah. His final demand \u2014 "I want my name!" \u2014 shows that honour and reputation are the only currencies he understands, even as he has squandered both.',
+      'Eddie is a hard-working, well-respected docker in Red Hook who has raised his orphaned niece Catherine as his own. His protectiveness toward her gradually reveals itself as something more possessive and darker - a repressed desire he cannot name. Miller frames Eddie as a flawed tragic hero in the Greek mould: a man of genuine loyalty and decency who is destroyed by the one feeling he refuses to acknowledge. His decision to call Immigration and betray Marco and Rodolpho is the play\u2019s catastrophe, transforming him from community man to pariah. His final demand - "I want my name!" - shows that honour and reputation are the only currencies he understands, even as he has squandered both.',
     quote: '"I want my name!\u2026 Marco\u2019s got my name"',
   },
   {
     name: 'Catherine',
     role: 'Eddie and Beatrice\u2019s niece',
     analysis:
-      'Catherine is seventeen, bright and eager for independence. Her excitement about her first job and her growing love for Rodolpho represent normal adolescent development, but Eddie experiences them as abandonment and betrayal. Miller positions Catherine as innocent but not passive: she challenges Eddie\u2019s authority with increasing confidence as the play progresses. Her affection for Eddie is genuine and uncomplicated \u2014 she loves him as a father \u2014 which makes his feelings all the more tragic. By the final scene, she has moved from dependence to a painful kind of autonomy.',
+      'Catherine is seventeen, bright and eager for independence. Her excitement about her first job and her growing love for Rodolpho represent normal adolescent development, but Eddie experiences them as abandonment and betrayal. Miller positions Catherine as innocent but not passive: she challenges Eddie\u2019s authority with increasing confidence as the play progresses. Her affection for Eddie is genuine and uncomplicated - she loves him as a father - which makes his feelings all the more tragic. By the final scene, she has moved from dependence to a painful kind of autonomy.',
     quote: '"I\u2019m not a baby. I know a lot more than people think"',
   },
   {
     name: 'Beatrice',
     role: 'Eddie\u2019s wife',
     analysis:
-      'Beatrice is the play\u2019s most emotionally intelligent character. She is the first to see what Eddie cannot admit about his feelings for Catherine, and she names it directly in the climax: "You want somethin\u2019 else, Eddie, and you can never have her!" She is also the character who suffers most quietly \u2014 her question "When am I gonna be a wife again?" reveals that Eddie has withdrawn from their marriage. Miller gives Beatrice a double burden: she loves a husband who is emotionally absent and must protect a niece who is emotionally blind to the danger. Her presence in the final scene, holding Eddie as he dies, is the play\u2019s emotional anchor.',
+      'Beatrice is the play\u2019s most emotionally intelligent character. She is the first to see what Eddie cannot admit about his feelings for Catherine, and she names it directly in the climax: "You want somethin\u2019 else, Eddie, and you can never have her!" She is also the character who suffers most quietly - her question "When am I gonna be a wife again?" reveals that Eddie has withdrawn from their marriage. Miller gives Beatrice a double burden: she loves a husband who is emotionally absent and must protect a niece who is emotionally blind to the danger. Her presence in the final scene, holding Eddie as he dies, is the play\u2019s emotional anchor.',
     quote: '"When am I gonna be a wife again, Eddie?"',
   },
   {
     name: 'Marco',
     role: 'Beatrice\u2019s older cousin from Italy',
     analysis:
-      'Marco is physically powerful, quiet and driven by an absolute code of honour. He has come to America to earn money for his starving wife and children in Sicily \u2014 his motivation is entirely selfless. When Eddie betrays the cousins to Immigration, Marco\u2019s response is governed by the Sicilian honour code: a wrong done to his family must be answered. His public accusation ("That one! He killed my children!") and the final street fight are the inevitable consequences of Eddie\u2019s betrayal. Miller uses Marco to show that the old-world code Eddie once claimed to respect is also the instrument of his destruction.',
+      'Marco is physically powerful, quiet and driven by an absolute code of honour. He has come to America to earn money for his starving wife and children in Sicily - his motivation is entirely selfless. When Eddie betrays the cousins to Immigration, Marco\u2019s response is governed by the Sicilian honour code: a wrong done to his family must be answered. His public accusation ("That one! He killed my children!") and the final street fight are the inevitable consequences of Eddie\u2019s betrayal. Miller uses Marco to show that the old-world code Eddie once claimed to respect is also the instrument of his destruction.',
     quote: '"He degraded my brother. My blood."',
   },
   {
     name: 'Rodolpho',
     role: 'Beatrice\u2019s younger cousin from Italy',
     analysis:
-      'Rodolpho is blond, cheerful, and talented in ways that make Eddie suspicious: he sings, cooks, sews and dreams of motorcycles. His un-stereotypical masculinity \u2014 he does not conform to Eddie\u2019s definition of what a man should be \u2014 becomes the axis on which the plot turns. Eddie labels him "the guy ain\u2019t right", using homophobic shorthand to rationalise his jealousy. Miller presents Rodolpho sympathetically: his love for Catherine appears genuine, and his desire for American citizenship, while real, does not cancel out his feelings. He represents a more flexible, less self-destructive model of manhood than Eddie can tolerate.',
+      'Rodolpho is blond, cheerful, and talented in ways that make Eddie suspicious: he sings, cooks, sews and dreams of motorcycles. His un-stereotypical masculinity - he does not conform to Eddie\u2019s definition of what a man should be - becomes the axis on which the plot turns. Eddie labels him "the guy ain\u2019t right", using homophobic shorthand to rationalise his jealousy. Miller presents Rodolpho sympathetically: his love for Catherine appears genuine, and his desire for American citizenship, while real, does not cancel out his feelings. He represents a more flexible, less self-destructive model of manhood than Eddie can tolerate.',
     quote: '"I want to be an American so I can work"',
   },
   {
     name: 'Alfieri',
     role: 'Lawyer and chorus',
     analysis:
-      'Alfieri is an Italian-American lawyer who functions as the play\u2019s narrator and Greek chorus. His opening and closing speeches frame the action as a tragedy whose end is already known: "This one\u2019s name was Eddie Carbone." He attempts to counsel Eddie within the limits of the law but cannot prevent the catastrophe. His phrase "settle for half" \u2014 meaning the compromise between old-world honour and American legality \u2014 is the play\u2019s central moral formula. Alfieri\u2019s final speech refuses to condemn Eddie, instead offering the ambiguous tribute: "He allowed himself to be wholly known." Miller uses Alfieri to hold judgement and compassion in tension.',
+      'Alfieri is an Italian-American lawyer who functions as the play\u2019s narrator and Greek chorus. His opening and closing speeches frame the action as a tragedy whose end is already known: "This one\u2019s name was Eddie Carbone." He attempts to counsel Eddie within the limits of the law but cannot prevent the catastrophe. His phrase "settle for half" - meaning the compromise between old-world honour and American legality - is the play\u2019s central moral formula. Alfieri\u2019s final speech refuses to condemn Eddie, instead offering the ambiguous tribute: "He allowed himself to be wholly known." Miller uses Alfieri to hold judgement and compassion in tension.',
     quote: '"He allowed himself to be wholly known"',
   },
 ]
@@ -102,8 +102,8 @@ export default async function AViewCharactersPage() {
             A View from the Bridge: Characters
           </h1>
           <p className="mt-3 max-w-2xl text-body-lg text-muted-foreground">
-            Analytical profiles of Eddie, Catherine, Beatrice, Marco, Rodolpho and Alfieri &mdash;
-            with one short, fair-dealing quotation each.
+            Analytical profiles of Eddie, Catherine, Beatrice, Marco, Rodolpho and Alfieri - with
+            one short, fair-dealing quotation each.
           </p>
         </div>
       </section>

@@ -115,6 +115,80 @@
  * speech in dialect and compares them to "maggots in a cheese": that is
  * the text as he published it, and the Question 4 answer invites students
  * to question it.
+ *
+ * THIRD PASS (31 October 2026): the questions AQA sets from summer 2026.
+ * The marks already matched 8700/2, but the questions were in the old forms
+ * and much of their wording was AQA's own rubric, copied. Checked against
+ * src/data/mark-scheme-guides/aqa-lang-paper2.ts:
+ *   - Question 2 asked for "a summary of the similarities and differences"
+ *     (paper 3's, of the differences). AQA now asks what the student can
+ *     infer about differences the question names, so each names one person,
+ *     group or thing in each source, and its answers and mark scheme infer
+ *     differences only, from both sources. The answers are new;
+ *   - Question 3 named no lines, and its answers ranged over all of Source
+ *     A. AQA's names lines, so each now names two paragraphs (the second and
+ *     third; paper 2's the first and second, where its answers lay), and the
+ *     answers were rewritten to stay inside them, since an answer from
+ *     outside the lines goes to the bottom of its level;
+ *   - every Question 1 had A and C among its four true statements, so a
+ *     student who always chose A and C took two marks on each paper unread.
+ *     The same statements, some reworded so that they do not just repeat the
+ *     source, are reordered, and each was checked against its paragraph:
+ *     the true ones are B D E H, A D F G, C D F H, A B E G and B C F H. Their
+ *     mark scheme said nothing was lost for choosing more than four, which
+ *     the guide does not support; the paper asks for no more than four;
+ *   - "You now need to refer only to Source A", "For this question, you
+ *     need to refer to the whole of Source A, together with the whole of
+ *     Source B", "In your answer, you could:", "in which you argue your
+ *     point of view on this statement" and both section instructions are now
+ *     in the site's words. Question 4 asks for the writers' feelings and
+ *     perspectives, as the guide records AQA's question;
+ *   - the minutes follow AQA's advice: Question 2 about 8 (was 10) and
+ *     Question 3 about 12 (was 15), after 15 minutes' reading;
+ *   - each mark scheme was the same few generic lines, Question 4's asking
+ *     for "historical contexts", which AO3 does not mark. Each now gives its
+ *     paper's points, with the guide's levels and caps (Q2_LEVELS and the
+ *     rest, below the sources);
+ *   - the Question 5 statements lost their dashes, paper 4's essay was given
+ *     readers, and paper 1's Question 4 answer no longer quotes Greenwood's
+ *     man who threw his wife from a window: "violent criminals" says enough.
+ *
+ * FOURTH PASS (31 October 2026): a second reader of the third pass, each
+ * paper read whole against the guide. Every Question 1 key was checked
+ * against its paragraph and is right. Fixed:
+ *   - Question 1 keys: B, D, F and H were the letters most often true, so
+ *     always choosing alternate letters from B scored 12 of 20. Paper 3's F
+ *     and G are swapped (key now C D G H), and no simple pattern (first
+ *     four, last four, alternate letters) scores more than 11;
+ *   - paper 1's Question 2: the pauper "became poor" out of misfortune;
+ *     Greenwood says he became a casual pauper. Both answers now say so;
+ *   - paper 1's Question 2: "the only help in Source A" was the volunteers,
+ *     but Source A names temporary accommodation; now the only help David is
+ *     shown receiving;
+ *   - paper 1's Question 4: Source A "blames the government", quoting "We
+ *     are actively manufacturing it", whose "We" is society, the reader
+ *     included; it now says so;
+ *   - paper 2's Question 2: "Arnold's students are fed too narrow a diet"
+ *     made his warning a fact; it is now his danger, as the answer goes on;
+ *   - paper 2's Question 3: "The problem is not our teachers" was called a
+ *     concession, but it grants nothing: it rules out a counter-argument,
+ *     and the answer, mark scheme and terms now call it that;
+ *   - paper 4's Question 2: every woman "maintained by her father, brother
+ *     or husband" dropped Martineau's "(except domestic servants)"; now kept;
+ *   - paper 4's Question 3: "an invisible architecture of limitation" was
+ *     called an extended metaphor; it is one metaphor, in one sentence;
+ *   - paper 4's Question 4: both answers sent a girl "as far into the depths
+ *     of science" as her brother; Martineau's "as far" runs to "as her
+ *     powers and opportunities permit", and "as her brother does" is how she
+ *     goes on. Both now quote it so;
+ *   - paper 5's Question 2: "the youngest children" behind the door are one
+ *     family's three youngest;
+ *   - Question 5: every answer was an outline of what a good answer does.
+ *     Each paper's Grade 8-9 is now a full model answer to the task as set,
+ *     in its form and for its readers (526 to 547 words, written for this
+ *     site); the Grade 4-5 and 6-7 outlines are unchanged. They give no
+ *     statistics, the only writers they quote are the paper's own Greenwood
+ *     and Martineau, and their facts are dates (1849, 1869, 1918).
  */
 
 import type { MockExamPaper } from './types'
@@ -223,6 +297,50 @@ Thus, we make our New Oxford Streets, and our other new streets, never heeding, 
 const EXAM_05_SOURCE_B_REF =
   'Charles Dickens, "On Duty with Inspector Field", Household Words (1851), as collected in Reprinted Pieces'
 
+// ─── Levels ────────────────────────────────────────────────────────────────────
+// In the words of src/data/mark-scheme-guides/aqa-lang-paper2.ts, which was
+// checked against AQA's 8700/2 sample mark scheme for the 2026 exams, with its
+// caps. Shared by all five papers, so a correction is made once.
+
+const Q2_LEVELS = [
+  'Level 4, 7-8 marks: sharp, thoughtful inferences, with precise details from both sources woven together to bring out the differences.',
+  'Level 3, 5-6 marks: sound inferences from both sources, linking well-chosen details from each to show the differences.',
+  'Level 2, 3-4 marks: some attempt to work out what details suggest, with some useful references and some differences noted.',
+  'Level 1, 1-2 marks: retells what the sources say rather than working anything out, with a simple difference and a detail or two.',
+  'An answer that uses only one source scores 3 marks at most. Level 3 and above need both sources and the differences the question names.',
+]
+
+const Q3_LEVELS = [
+  "Level 4, 10-12 marks: looks beneath the surface, analysing how the writer's choices work together, with sharply chosen quotations and confident, precise terms.",
+  'Level 3, 7-9 marks: for each quotation, says plainly what effect the words have on the reader and why, using several well-chosen quotations and correct terms.',
+  'Level 2, 4-6 marks: tries to say what some of the language does, with a few suitable quotations and some terms.',
+  'Level 1, 1-3 marks: says something basic about a word or two, or names a technique without saying what it does.',
+  'An answer that writes about the other source, or about lines outside the ones named, is placed at the bottom of the level it would otherwise reach. Level 3 and above need the focus the question names.',
+]
+
+const Q4_LEVELS = [
+  "Level 4, 13-16 marks: a thoughtful, sustained comparison, analysing how each writer's methods shape their view, with well-chosen detail from both sources.",
+  'Level 3, 9-12 marks: compares the views directly and well, explaining how each writer conveys them, with relevant detail from both sources.',
+  "Level 2, 5-8 marks: tries to compare the writers' views, with some comment on their methods and some useful detail.",
+  "Level 1, 1-4 marks: makes a basic link between the writers' views and spots a method or two, with simple references.",
+  'An answer that uses only one source scores 6 marks at most. Level 3 and above need both sources.',
+]
+
+const Q5_AO5_LEVELS = [
+  'Level 4, 19-24 marks: argues with real force and confidence, pitched exactly for the audience. Ambitious, exact vocabulary and a carefully planned structure carry the reader through a developed argument.',
+  'Level 3, 13-18 marks: argues clearly throughout, in a tone that suits the form and audience. Vocabulary and persuasive methods are chosen for effect, and well-linked paragraphs build the case.',
+  'Level 2, 7-12 marks: puts a view across in places. There is some attempt at a suitable tone and form, some deliberate word choices, and paragraphs and linking phrases begin to organise the argument.',
+  'Level 1, 1-6 marks: states a view simply, with little sense of the audience. Ideas are few and loosely joined, and paragraphs, if used, do not really organise the argument.',
+  'Writing that does not respond to the statement in the way the task asks cannot score more than 12 of these 24 marks.',
+]
+
+const Q5_AO6_LEVELS = [
+  'Level 4, 13-16 marks: every sentence starts and ends in the right place, and every kind of punctuation is used with skill. Even adventurous words are spelt right, and long sentences stay clear and correct.',
+  'Level 3, 9-12 marks: sentences nearly always start and end in the right place, and most punctuation is used well. Most words are spelt right, hard ones included, and sentence types are varied on purpose.',
+  'Level 2, 5-8 marks: sentences usually start and end in the right place, and several kinds of punctuation are tried. Some harder words are spelt correctly, with some variety in sentences and words.',
+  'Level 1, 1-4 marks: a few sentences start and end in the right place, and some punctuation is used on purpose. Simple words are spelt correctly, but sentences and vocabulary are mostly simple.',
+]
+
 // ─── Mock Exam Papers ──────────────────────────────────────────────────────────
 
 export const aqaP2A: MockExamPaper[] = [
@@ -242,7 +360,7 @@ export const aqaP2A: MockExamPaper[] = [
       {
         id: 'aqa-p2-01-reading',
         title: 'Section A: Reading',
-        description: `Read Source A and Source B carefully. Then answer all the questions in this section.\n\nSource A: ${EXAM_01_SOURCE_A_REF}\nSource B: ${EXAM_01_SOURCE_B_REF}`,
+        description: `Spend about 15 minutes reading Source A, Source B and the questions. Then answer all four questions in this section, allowing about 45 minutes for them.\n\nSource A: ${EXAM_01_SOURCE_A_REF}\nSource B: ${EXAM_01_SOURCE_B_REF}`,
         totalMarks: 40,
         suggestedTimeMinutes: 60,
         questions: [
@@ -250,7 +368,7 @@ export const aqaP2A: MockExamPaper[] = [
             id: 'aqa-p2-01-q1',
             questionNumber: 1,
             questionText:
-              "Read again Source A, the first paragraph.\n\nChoose four statements below which are TRUE.\n\nA) The writer volunteered with a street outreach team.\nB) The writer spent a month in Manchester.\nC) Figures were huddled in doorways.\nD) Sleeping bags offered strong protection.\nE) The outreach work took place in the summer.\nF) The writer's understanding of homelessness changed.\nG) The writer blames poor personal choices for homelessness.\nH) The wind was described as biting.",
+              'Look again at the first paragraph of Source A, from "Walk through any British city centre" to "designed to protect".\n\nWhich four of the statements below are true? Write down their letters, and choose no more than four.\n\nA) The sleeping bags give strong protection against the wind.\nB) After midnight, people can be seen huddled in doorways in British city centres.\nC) The writer spent a month in Manchester.\nD) The writer describes the wind as biting.\nE) The writer volunteered with a street outreach team.\nF) The outreach work took place in the summer.\nG) The writer blames poor personal choices for homelessness.\nH) What the writer saw changed their understanding of homelessness.',
             marks: 4,
             suggestedTimeMinutes: 5,
             questionType: 'multiple-choice',
@@ -258,73 +376,83 @@ export const aqaP2A: MockExamPaper[] = [
             extractSource: `Source A: ${EXAM_01_SOURCE_A_REF} | Source B: ${EXAM_01_SOURCE_B_REF}`,
             modelAnswers: {
               'Grade 4-5':
-                'A, C, F, H - A: "I spent a week volunteering with a street outreach team". C: "figures huddled in doorways". F: "fundamentally changed my understanding of homelessness." H: "the biting wind." B is false (a week, not a month). D is false (they offered "little protection"). E is false (it was "Last January"). G is false (the writer says it is not "a matter of poor choices").',
+                'B, D, E, H. B: "after midnight and you will see them: figures huddled in doorways". D: "the biting wind". E: "I spent a week volunteering with a street outreach team". H: "what I witnessed fundamentally changed my understanding of homelessness". A is false: the sleeping bags "offer little protection". C is false: the writer spent "a week" there, not a month. F is false: the work was done "Last January". G is false: homelessness is not "a matter of poor choices".',
               'Grade 6-7':
-                'A, C, F, H. B is false: the writer spent "a week", not a month. D is contradicted by "little protection". E is false: the work took place "Last January", in winter. G is refuted directly: homelessness is "not, as comfortable narratives suggest, a matter of poor choices."',
+                'B, D, E, H. A is contradicted by "little protection against the biting wind". C is false: the writer spent "a week" volunteering, not a month. F is false: the work took place "Last January", in winter. G is refuted directly: homelessness is "not, as comfortable narratives suggest, a matter of poor choices", but "a matter of systems failing the people they were designed to protect".',
             },
             markScheme: [
-              '1 mark for each correct answer',
-              'Maximum 4 marks',
-              'No marks deducted for incorrect selections beyond four',
+              'True: B, D, E, H. One mark for each, up to 4.',
+              'B: "you will see them: figures huddled in doorways", after midnight.',
+              'D: "the biting wind".',
+              'E: the writer spent a week "volunteering with a street outreach team".',
+              'H: what the writer witnessed "fundamentally changed" their understanding.',
+              'Not true: A (the bags give "little protection"), C (a week, not a month), F (it was "Last January"), G (homelessness is not "a matter of poor choices").',
+              'Each statement is judged against the first paragraph alone. The paper asks for no more than four.',
             ],
           },
           {
             id: 'aqa-p2-01-q2',
             questionNumber: 2,
             questionText:
-              'You need to refer to Source A and Source B for this question.\n\nUse details from both sources. Write a summary of the similarities and differences in the conditions experienced by homeless people in each source.',
+              'This question is about both sources.\n\nDavid, in Source A, and the man Greenwood calls a "casual pauper", in Source B, both have nowhere to live. What can you infer about the differences between their situations?\n\nBack up what you infer with details from both sources.',
             marks: 8,
-            suggestedTimeMinutes: 10,
+            suggestedTimeMinutes: 8,
             questionType: 'summary',
             extract: `Source A:\n${EXAM_01_SOURCE_A}\n\nSource B:\n${EXAM_01_SOURCE_B}`,
             extractSource: `Source A: ${EXAM_01_SOURCE_A_REF} | Source B: ${EXAM_01_SOURCE_B_REF}`,
             modelAnswers: {
               'Grade 4-5':
-                'Both sources show homeless people living in hard conditions. In Source A, people sleep outside, "huddled in doorways" in sleeping bags that give "little protection against the biting wind". In Source B, the homeless man is "poor and houseless and hungry" and has to come "knocking at the workhouse-gate, craving shelter and a mouthful of bread". Both writers show that homeless people are ignored or treated badly by others. David in Source A says that once he lost his home he became "invisible", and the man in Source B "was without a voice or a single friend". A difference is that the man in Source B is treated as if he were worse than a criminal: the official in charge thinks a man who begs for bread is "more mean and contemptible" than one who steals it. In Source A, David ended up on the streets after an injury and eviction, while the man in Source B has fallen "out of sheer misfortune and hard necessity".',
+                'David and the casual pauper are in different situations, first because of how they became homeless. David was a "former electrician" who lost his job "after a back injury" and was "evicted within six weeks", which suggests that in Source A someone with a steady job can lose everything very quickly. Greenwood says only that the man became a casual pauper "out of sheer misfortune and hard necessity", and that the officials "never considered" why he came to them, which suggests that nobody asked about his story at all. They also look for help in different places. David has been "sleeping rough for eight months", so he seems to have nowhere to go, and it is volunteers on a "street outreach team" who find him. The pauper goes to an institution: he comes "knocking at the workhouse-gate, craving shelter and a mouthful of bread", which suggests there was somewhere for him, but that he had to beg to get in. The biggest difference is how other people treat them. David feels "invisible", as if people do not even notice him. The pauper is noticed but judged: the official thinks a man who begs is "more mean and contemptible" than a thief, so he is treated almost like a criminal.',
               'Grade 6-7':
-                'Both writers present homelessness as a condition of exposure and need, though the settings differ: the writer of Source A describes rough sleepers outdoors, "huddled in doorways" with "little protection against the biting wind", while Greenwood\'s casual pauper has reached the workhouse, "knocking at the workhouse-gate, craving shelter and a mouthful of bread". Both insist that the people they describe did not choose their condition. The writer of Source A rejects the "comfortable narratives" of "poor choices" and traces David\'s fall through injury, debt and eviction; Greenwood\'s man became a pauper "out of sheer misfortune and hard necessity", and chose to beg rather than steal: he preferred "a crust off a parish loaf" to "stolen roast beef". Both also suggest that the worst of the condition is how others see these people. David says he became "invisible"; Greenwood\'s pauper "was without a voice or a single friend". The difference lies in who is to blame. In Source A it is "systems" and government spending that fail people. In Source B it is the workhouse official Greenwood calls Bumble, after the beadle in Dickens\'s Oliver Twist: a "pig-headed Jack-in-office" who treats a hungry man as worse than a thief, so that the homeless are not only ignored but punished.',
+                'The clearest difference between David and Greenwood\'s casual pauper lies less in their poverty than in the way the world responds to it. David\'s fall is traced in detail: a "former electrician", he lost his job "after a back injury", fell behind on rent and was "evicted within six weeks". The precision suggests that in Source A homelessness can strike a working, tax-paying man almost overnight, and that someone has taken the trouble to hear his story. The pauper is given no story of his own. He became a pauper "out of sheer misfortune and hard necessity" and is "without a voice or a single friend": where David is quoted in his own words, the pauper never speaks, and Greenwood has to speak for him. Their needs, and where they turn, differ too. The pauper asks for the barest things, "shelter and a mouthful of bread", and must come "knocking at the workhouse-gate" for them, which implies that relief existed but had to be pleaded for. David is "sleeping rough", and the only help he is shown receiving comes from volunteers on the street, which suggests that the institutions meant to catch him have not done so; the writer calls it "systems failing the people they were designed to protect". Above all, they are wronged in opposite ways. David\'s word for himself is "invisible", a word the writer heard "again and again" from rough sleepers: society does not see him at all. The pauper is seen only too clearly, and judged. The official Greenwood calls "Bumble", after the beadle in Dickens\'s Oliver Twist, believes a man who begs a loaf "more mean and contemptible" than one who steals it, and treats the pauper as his "victim". One man is ignored; the other is treated almost as a criminal.',
             },
-            markScheme: [
-              'Must reference both sources',
-              'Identifies clear similarities and/or differences in conditions',
-              'Uses evidence from both texts to support points',
-              'Synthesises information rather than alternating between texts',
-              'Infers beyond surface-level details',
-              'Top band: perceptive synthesis with judicious references',
-            ],
+            markScheme: {
+              'What to reward': [
+                "Inferences about how David's situation differs from the casual pauper's, each backed by details from both sources.",
+                'How they became homeless: David\'s fall is precise and sudden ("former electrician", "evicted within six weeks"); the pauper\'s is put down to "sheer misfortune and hard necessity", and the officials "never considered" his reasons.',
+                'Voice: David is quoted in his own words; the pauper is "without a voice or a single friend".',
+                'Help: David sleeps rough and is found by volunteers; the pauper must come "knocking at the workhouse-gate" to beg for "shelter and a mouthful of bread".',
+                'How others see them: David is "invisible"; the pauper is seen and judged "more mean and contemptible" than a thief.',
+                "Points about similarities, or about the writers' language, are not what this question rewards.",
+              ],
+              'Levels (8 marks)': Q2_LEVELS,
+            },
           },
           {
             id: 'aqa-p2-01-q3',
             questionNumber: 3,
             questionText:
-              'You now need to refer only to Source A.\n\nHow does the writer use language to convey the urgency of the homelessness crisis?',
+              'This question is about Source A only.\n\nLook again at the second and third paragraphs, from "On our first night" to the end of the source.\n\nHow does the writer use language in these lines to make the homelessness crisis seem urgent?\n\nSupport your points with short quotations from these lines, using subject terms where they help.',
             marks: 12,
-            suggestedTimeMinutes: 15,
+            suggestedTimeMinutes: 12,
             questionType: 'analysis',
             extract: `Source A:\n${EXAM_01_SOURCE_A}`,
             extractSource: EXAM_01_SOURCE_A_REF,
             modelAnswers: {
               'Grade 4-5':
-                'The writer uses strong language to show how serious homelessness is. The phrase "biting wind" uses personification to make the cold seem aggressive. Statistics like "300,000 people" and "one billion pounds" shock the reader with the scale of the problem. The direct quotation from David, who says that one day "you\'re paying taxes" and the next "you\'re invisible", makes the problem personal and real. The writer uses repetition of "invisible" to emphasise how society ignores homeless people. At the end, the sentence "We are actively manufacturing it" is powerful because "manufacturing" suggests the crisis is being produced deliberately.',
+                'The writer uses David\'s story to make the crisis feel real and urgent. David lost his job, fell behind on his rent and was "evicted within six weeks", and putting these events one after another shows how quickly a person can lose their home. The writer calls the speed of it "breathtaking", which suggests shock. David\'s own words, that one day "you\'re paying taxes" and the next "you\'re invisible", make the problem personal. The writer repeats "invisible" to emphasise how society ignores homeless people, and the short sentences "Not forgotten. Invisible." make the reader stop and think. The statistics, "over 300,000 people" and "over one billion pounds", shock the reader with the size of the problem. At the end, the sentence "We are actively manufacturing it" is powerful because "manufacturing" suggests the crisis is being made on purpose, so it needs to be stopped now.',
               'Grade 6-7':
-                'The writer deploys a multi-layered rhetorical strategy that moves from sensory immediacy to statistical authority to moral accusation. The opening imperative - "Walk through any British city centre after midnight" - positions the reader as witness, making the crisis inescapable. The phrase "little protection against the biting wind" combines understatement ("little") with personification ("biting") to create a visceral sense of vulnerability. The anecdote of David is rhetorically precise: his former occupation as an "electrician" establishes respectability, while the temporal compression "lost his job... fallen behind on rent... been evicted within six weeks" uses the tricolon to dramatise the speed of descent. David\'s word "invisible" is emphasised through repetition - "Not forgotten. Invisible" - the sentence fragments forcing a distinction that redefines the problem from neglect to erasure. The final paragraph\'s statistics ("300,000", "one billion pounds", "twenty-three per cent") accumulate as an indictment, but the most devastating technique is the concluding antithesis: "managing a crisis rather than preventing one" and "We are not merely failing to solve this problem. We are actively manufacturing it." The verb "manufacturing" transforms government policy from passive neglect to deliberate production, converting a social tragedy into a political crime.',
+                'The writer makes the crisis urgent by moving from one man\'s story to national figures, so that a single case becomes a pattern. David is introduced with precise detail, a "forty-three-year-old former electrician" who had been "sleeping rough for eight months", and "former electrician" presents him as a skilled, working man, which closes off any idea that homelessness happens only to other kinds of people. His fall is told in a list of three, he had "lost his job", "fallen behind on rent" and "been evicted within six weeks", and the quick run of the list mirrors the speed of the descent, which the writer calls "breathtaking". David\'s own antithesis, "One day you\'re paying taxes" and "the next you\'re invisible", compresses a life into a sentence, and his "you" warns the reader that this could happen to anyone. The word "invisible" is then repeated and sharpened by two sentence fragments, "Not forgotten. Invisible.", which insist on a distinction: the forgotten were once noticed, but the invisible are not seen at all. The final paragraph turns to statistics, "over 300,000 people", "over one billion pounds annually", "twenty-three per cent", which give the argument authority and scale. The most urgent language comes last. The contrast in "managing a crisis rather than preventing one" suggests that money is spent on the wrong task, and the closing pair of sentences moves from failure to guilt: "We are not merely failing to solve this problem. We are actively manufacturing it." The verb "manufacturing" turns policy into a factory process that produces homelessness, and the inclusive "We" makes the reader share the blame, so the need to act feels immediate.',
               'Grade 8-9':
-                'The writer constructs urgency through a rhetorical architecture that systematically closes every exit the reader might use to avoid engagement. The opening second-person imperative - "Walk through any British city centre after midnight and you will see them" - is not an invitation but a confrontation: the future tense "you will see" presents the crisis as an inevitability the reader must face. The pronoun "them" is deliberately dehumanising, before the subsequent phrase "figures huddled in doorways" restores specificity - this oscillation between abstraction and detail is a technique the writer uses throughout to prevent emotional distance. David\'s testimony operates as a rhetorical centrepiece: the antithetical structure of "One day you\'re paying taxes" and "the next you\'re invisible" compresses a life\'s catastrophe into a single sentence, the second-person "you" generalising his experience into a universal vulnerability. The word "invisible" is then subjected to a forensic correction - "Not forgotten. Invisible" - where the sentence fragments perform the precision of a diagnosis. The distinction matters: to be forgotten implies prior knowledge; to be invisible is to have been erased from perception entirely. The final paragraph shifts to institutional language - "300,000 people", "one billion pounds", "twenty-three per cent" - but the writer subverts the bureaucratic register through the concluding metaphor. "Manufacturing" imports the language of industry: homelessness is not a natural disaster but a product, assembled from policy decisions ("mental health services have been cut", "social housing waiting lists") as deliberately as any commodity. The participial progression from "managing" to "manufacturing" implies an economy of suffering - the crisis is sustained because it generates the very spending that justifies the system\'s existence.',
+                'The writer builds urgency by refusing the reader any distance from the crisis, first through one man\'s testimony and then through figures that turn it into an accusation. David is introduced with the detail of a case file, "a forty-three-year-old former electrician", and the occupation matters: an electrician is skilled, employed and ordinary, so the reader cannot treat him as a stranger to their own world. His descent is compressed into a single sentence of three clauses, from losing "his job after a back injury" to being "evicted within six weeks", with the time phrase arriving last, like a verdict; the short sentence that follows, "The speed of his descent was breathtaking.", names the reader\'s own shock. David\'s testimony is the centre of the passage. The antithesis of "One day you\'re paying taxes" and "the next you\'re invisible" turns a whole life into a before and after, and the general "you" makes his experience a vulnerability anyone might share. The writer then subjects "invisible" to a kind of correction, "Not forgotten. Invisible.", where the fragments work with the precision of a diagnosis. The distinction matters: to be forgotten implies that one was once known, while to be invisible is to have been erased from sight altogether, "As though they had ceased to exist entirely." The final paragraph shifts into the language of government, "over 300,000 people", "over one billion pounds annually", "twenty-three per cent in real terms", but the writer turns that bureaucratic register against itself. The phrase "money spent managing a crisis rather than preventing one" exposes the spending as waste, and the closing sentences replace failure with intent: "We are not merely failing to solve this problem. We are actively manufacturing it." The verb "manufacturing" imports the vocabulary of industry, so that homelessness becomes a product, assembled from the cuts and waiting lists the paragraph has just listed, and the adverb "actively" removes the excuse of accident. Because the pronoun is "We", the reader is implicated in the manufacture, and the urgency becomes personal: a crisis that is being made can also be stopped.',
             },
-            markScheme: [
-              "Analyses the effects of the writer's language choices in detail",
-              'Selects judicious quotations and embeds them within analysis',
-              'Uses subject terminology accurately (e.g., imperative, tricolon, antithesis)',
-              'Considers how language positions and manipulates the reader',
-              'Explores layers of meaning in individual words and phrases',
-              'Top band: perceptive, detailed, conceptualised analysis of language',
-            ],
+            markScheme: {
+              'What to reward': [
+                'Analysis of language from the second and third paragraphs only, focused on how it makes the crisis seem urgent.',
+                'David\'s story: the precise detail ("former electrician", "evicted within six weeks"), the list of three that tells his fall, and the word "breathtaking".',
+                'David\'s antithesis, "One day you\'re paying taxes" and "the next you\'re invisible", and the repetition of "invisible" in the fragments "Not forgotten. Invisible."',
+                'The statistics, which give scale and authority ("over 300,000 people", "over one billion pounds annually").',
+                'The contrast "managing a crisis rather than preventing one" and the closing accusation, with the verb "manufacturing", the adverb "actively" and the inclusive "We".',
+                'Subject terms used accurately where they help: list of three, antithesis, sentence fragment, statistics, inclusive pronoun.',
+              ],
+              'Levels (12 marks)': Q3_LEVELS,
+            },
           },
           {
             id: 'aqa-p2-01-q4',
             questionNumber: 4,
             questionText:
-              "For this question, you need to refer to the whole of Source A, together with the whole of Source B.\n\nCompare how the two writers convey their different perspectives on society's treatment of homeless people.\n\nIn your answer, you could:\n- compare their different perspectives\n- compare the methods they use to convey their perspectives\n- support your response with references to both texts.",
+              "This question is about the whole of Source A and the whole of Source B.\n\nBoth sources are about the way society treats people who have no home. Compare the two writers' feelings and perspectives on it, and the methods each one uses to convey them.\n\nAim to:\n- set the two writers' feelings and views side by side, point by point\n- explain how each writer's language, tone and structure convey those views\n- back up your points with short quotations from both sources.",
             marks: 16,
             suggestedTimeMinutes: 20,
             questionType: 'comparison',
@@ -332,18 +460,20 @@ export const aqaP2A: MockExamPaper[] = [
             extractSource: `Source A: ${EXAM_01_SOURCE_A_REF} | Source B: ${EXAM_01_SOURCE_B_REF}`,
             modelAnswers: {
               'Grade 4-5':
-                'Both writers criticise the way society treats homeless people. The writer of Source A uses statistics such as "over 300,000 people" and "one billion pounds" to show how big the problem is, and blames the government: "We are actively manufacturing it." Greenwood uses no statistics. Instead he compares the homeless man with criminals: a robber, or "the brute who precipitated his wife from a third-floor window", is given "calm judicial investigation", but the workhouse official has "no mercy" for the hungry pauper. Both writers use a person to make the problem real: Source A quotes David, while Source B describes "the poor fellow" who comes to the workhouse for bread. Greenwood also mocks the official, saying his head is "the otherwise empty region" under his hat. The writer of Source A sounds urgent and serious, while Greenwood is angry but uses mockery. Both want the reader to see that these people have been treated unfairly.',
+                'Both writers criticise the way society treats homeless people. The writer of Source A uses statistics such as "over 300,000 people" and "one billion pounds" to show how big the problem is, and blames society as a whole, the reader included: "We are actively manufacturing it." Greenwood uses no statistics. Instead he compares the homeless man with violent criminals, who are given "calm judicial investigation", while the workhouse official has "no mercy" for the hungry pauper. Both writers use a person to make the problem real: Source A quotes David, while Source B describes "the poor fellow" who comes to the workhouse for bread. Greenwood also mocks the official, saying his head is "the otherwise empty region" under his hat. The writer of Source A sounds urgent and serious, while Greenwood is angry but uses mockery. Both want the reader to see that these people have been treated unfairly.',
               'Grade 6-7':
                 'Both writers argue that society has failed homeless people, but they place the failure differently and use different methods. The writer of Source A addresses the reader directly ("Walk through any British city centre after midnight and you will see them") and builds from one man\'s story to national figures, ending with the accusation that "We are actively manufacturing it": the inclusive "We" makes every reader part of the system that produces homelessness. Greenwood, writing in 1869, looks back on a way of thinking he hopes is passing ("It is to be hoped that we are gradually emerging from our bemuddlement"), and his method is ironic comparison. One long sentence sets the treatment of violent criminals, who "claimed and was entitled to calm judicial investigation", against that of "the poor fellow who became a casual pauper", who "was without a voice or a single friend": the pauper arrives only at the end of the sentence, after all the consideration given to the criminals, and is given nothing. Where the writer of Source A blames "systems", Greenwood gives the system a face, the official he calls Bumble, a "pig-headed Jack-in-office" whose head is "the otherwise empty region that Bumble\'s cocked-hat covered". The contrast between "a crust off a parish loaf" and "stolen roast beef" exposes the absurd logic by which begging is judged worse than stealing. Both writers deny that the homeless deserve their fate: David lost his job "after a back injury", and Greenwood\'s man fell "out of sheer misfortune and hard necessity". The tones differ, though. The writer of Source A is urgent and uses evidence; Greenwood is scornful, and his closing words, "he treated his victim accordingly", call the pauper a "victim", making the official, not the pauper, the wrongdoer.',
             },
-            markScheme: [
-              'Compares perspectives from both sources throughout the response',
-              'Analyses methods used by both writers to convey their viewpoints',
-              'Uses well-selected evidence from both texts',
-              'Shows clear understanding of different historical contexts',
-              'Sustains a comparative structure rather than writing about each source separately',
-              'Top band: perceptive, detailed comparison with a sustained critical voice',
-            ],
+            markScheme: {
+              'What to reward': [
+                'A comparison of the writers\' feelings and perspectives: both deny that the homeless deserve their fate, but the writer of Source A blames "systems" and government spending, and Greenwood a merciless parish official and the ratepayers who trust him.',
+                'Methods compared: Source A\'s direct address, one man\'s story widened by national figures, and the inclusive "We"; Greenwood\'s long ironic sentence setting criminals\' "calm judicial investigation" against the pauper\'s treatment, his mockery of "Bumble", and "a crust off a parish loaf" set against "stolen roast beef".',
+                'Tone: urgent and evidence-led in Source A; scornful in Source B, which ends by calling the pauper a "victim".',
+                'Perspectives shaped by their times: a modern writer counting the cost of a national crisis; a Victorian writer hoping his society is "gradually emerging" from an old way of thinking.',
+                'Comparison kept up across both whole sources, rather than one source and then the other.',
+              ],
+              'Levels (16 marks)': Q4_LEVELS,
+            },
           },
         ],
       },
@@ -351,7 +481,7 @@ export const aqaP2A: MockExamPaper[] = [
         id: 'aqa-p2-01-writing',
         title: 'Section B: Writing',
         description:
-          'You are advised to spend about 45 minutes on this section. Write in full sentences. You are reminded of the need to plan your answer. You should leave enough time to check your work at the end.',
+          'Spend about 45 minutes on this section: about 5 minutes planning, 35 writing and 5 checking. Write in full sentences, and leave time at the end to check your spelling and punctuation.',
         totalMarks: 40,
         suggestedTimeMinutes: 45,
         questions: [
@@ -359,7 +489,7 @@ export const aqaP2A: MockExamPaper[] = [
             id: 'aqa-p2-01-q5',
             questionNumber: 5,
             questionText:
-              '"Homelessness is not a natural disaster - it is a political choice, and it is a choice we can reverse."\n\nWrite an article for a broadsheet newspaper in which you argue your point of view on this statement.\n\n(24 marks for content and organisation / 16 marks for technical accuracy)',
+              '"Homelessness is not a natural disaster. It is a political choice, and it is a choice we can reverse."\n\nA broadsheet newspaper has invited its readers to send in opinion articles on this statement. Write your article for the paper, setting out your own view and arguing for it.\n\n[40 marks: 24 for content and organisation, 16 for technical accuracy]',
             marks: 40,
             suggestedTimeMinutes: 45,
             questionType: 'transactional-writing',
@@ -368,17 +498,18 @@ export const aqaP2A: MockExamPaper[] = [
                 'A clear argumentative article that: directly addresses the statement; uses some persuasive devices such as rhetorical questions and statistics; has a clear introduction, body, and conclusion; matches the register of a newspaper article; demonstrates generally accurate spelling and punctuation with some sentence variety.',
               'Grade 6-7':
                 'A compelling argument that: engages critically with the statement rather than simply agreeing or disagreeing; uses a range of persuasive techniques including counter-argument; deploys evidence and examples effectively (may draw on source material); sustains an appropriate register for a broadsheet audience; demonstrates consistent technical accuracy with ambitious vocabulary and varied sentence structures.',
-              'Grade 8-9':
-                'An assured, sophisticated argument that: develops a nuanced and original perspective on the statement; crafts a distinctive authorial voice appropriate to a broadsheet readership; deploys rhetorical strategies with precision - anaphora, tricolon, antithesis, strategic concession; uses counter-argument to strengthen rather than undermine the central position; demonstrates extensive vocabulary, varied syntax, and technical virtuosity throughout; structures the argument for cumulative impact.',
+              'Grade 8-9': `Nobody Is Born in a Doorway\n\nHomelessness is not bad luck on a national scale. It is the result of decisions, and decisions can be changed.\n\nWhen a river floods a village, nobody asks whose fault the rain was. We send help, we rebuild and, if we are wise, we raise the flood defences. Homelessness is often spoken about in the same way, as though it simply happens to a country, like a storm arriving from somewhere beyond our control. That comparison is not only wrong but convenient, because it lets us feel sorry without feeling responsible. The statement is right. Homelessness is a political choice, and a choice is something we can make differently.\n\nConsider how a person actually loses a home. It is rarely one dramatic event. More often it is a chain: a job lost after an illness, a rent that rises faster than wages, a family that breaks apart, a support service that has closed or keeps people waiting for months. Every link in that chain is shaped by decisions that someone has made, about how many homes are built, how much rents may rise and how quickly help arrives. None of them is a law of nature. A chain forged by human hands can be broken by human hands.\n\nSome readers will object that people make their own choices, and that no government can protect everyone from their mistakes. There is truth in this. Everyone makes mistakes, and some people who sleep rough face difficulties that no housing policy could solve on its own. But the argument proves less than it seems to. Not everyone who makes a mistake is punished for it by losing a roof. What turns a setback into a catastrophe is usually the absence of a safety net, and the strength of that net is decided in Parliament and in council chambers, not in the sky.\n\nHistory offers an encouraging lesson. In 1869 the journalist James Greenwood described how a man who begged for bread at the workhouse gate could be treated as worse than a thief: he was "without a voice or a single friend". The officials who ran such places were sure that poverty was a moral failing, and they treated the poor accordingly. We no longer think that way, and the workhouses have gone. Attitudes that once seemed as fixed as the weather turned out to be choices, and they were reversed.\n\nWhat would reversing this choice look like now? It would mean building enough homes that ordinary people can afford, so that one lost pay packet does not lead to an eviction notice. It would mean help that reaches people before they reach the street, instead of emergency measures once the damage is done. Above all, it would mean treating a person without a home as a fellow citizen with a claim on us, not as a problem to be moved along.\n\nNone of this is simple, and none of it is free. But it costs far less, in money and in human misery, than paying for the consequences of a crisis we refuse to prevent. A natural disaster is something we must endure. Homelessness is something we have allowed. The good news is that anything we have allowed, we can also stop allowing.`,
             },
-            markScheme: [
-              'AO5 Content & Organisation (24 marks): Compelling, convincing communication matched to purpose and audience',
-              'AO5: Sustained crafting of a structured, coherent argument',
-              'AO6 Technical Accuracy (16 marks): Accurate and consistent sentence demarcation',
-              'AO6: Wide range of punctuation used accurately for effect',
-              'AO6: Accurate spelling of ambitious vocabulary',
-              'AO6: Varied sentence forms used for purpose and effect',
-            ],
+            markScheme: {
+              'What to reward': [
+                'A clear view of the statement, argued consistently: the writer may agree, disagree or argue for a position in between.',
+                'The conventions of an opinion article for broadsheet readers: a headline, an opening that draws the reader in, a measured but forceful register, paragraphs that build the case, and a strong ending.',
+                'Evidence and examples chosen for a purpose. Ideas from the sources may be used, though they are not required.',
+                'An opposing view answered rather than ignored.',
+              ],
+              'Content and organisation (AO5, 24 marks)': Q5_AO5_LEVELS,
+              'Technical accuracy (AO6, 16 marks)': Q5_AO6_LEVELS,
+            },
           },
         ],
       },
@@ -401,7 +532,7 @@ export const aqaP2A: MockExamPaper[] = [
       {
         id: 'aqa-p2-02-reading',
         title: 'Section A: Reading',
-        description: `Read Source A and Source B carefully. Then answer all the questions in this section.\n\nSource A: ${EXAM_02_SOURCE_A_REF}\nSource B: ${EXAM_02_SOURCE_B_REF}`,
+        description: `Spend about 15 minutes reading Source A, Source B and the questions. Then answer all four questions in this section, allowing about 45 minutes for them.\n\nSource A: ${EXAM_02_SOURCE_A_REF}\nSource B: ${EXAM_02_SOURCE_B_REF}`,
         totalMarks: 40,
         suggestedTimeMinutes: 60,
         questions: [
@@ -409,7 +540,7 @@ export const aqaP2A: MockExamPaper[] = [
             id: 'aqa-p2-02-q1',
             questionNumber: 1,
             questionText:
-              'Read again Source A, the first paragraph.\n\nChoose four statements below which are TRUE.\n\nA) Five-year-olds enter school with curiosity.\nB) Sixteen-year-olds leave school feeling confident.\nC) The writer believes the education system is broken.\nD) Children receive a string of letters on results day.\nE) Five-year-olds are described as bright-eyed.\nF) Sixteen-year-olds leave school feeling anxious.\nG) Children start school at the age of seven.\nH) The writer thinks the system works well for most students.',
+              'Look again at the first paragraph of Source A, from "Our education system is broken" to "catastrophically wrong".\n\nWhich four of the statements below are true? Write down their letters, and choose no more than four.\n\nA) The writer thinks the education system is not working.\nB) Children start school at the age of seven.\nC) The writer thinks the system works well for most students.\nD) Five-year-olds are described as bright-eyed.\nE) Sixteen-year-olds leave school feeling confident.\nF) Five-year-olds start school full of curiosity.\nG) Sixteen-year-olds leave school feeling anxious.\nH) Pupils\' results are given as a string of letters.',
             marks: 4,
             suggestedTimeMinutes: 5,
             questionType: 'multiple-choice',
@@ -417,73 +548,82 @@ export const aqaP2A: MockExamPaper[] = [
             extractSource: `Source A: ${EXAM_02_SOURCE_A_REF} | Source B: ${EXAM_02_SOURCE_B_REF}`,
             modelAnswers: {
               'Grade 4-5':
-                'A, C, E, F - A: "a fresh cohort of five-year-olds enters school bright-eyed and bursting with curiosity". C: "Our education system is broken". E: "bright-eyed". F: "drained, anxious". B is false (they leave "drained" and "anxious"). D is false (it says "numbers", not "letters"). G is false (it is "five-year-olds" who enter school). H is false.',
+                'A, D, F, G. A: "Our education system is broken". D: five-year-olds enter school "bright-eyed". F: they are "bursting with curiosity". G: sixteen-year-olds leave "drained, anxious". B is false: it is "five-year-olds" who enter school. C is false: the writer says "something goes catastrophically wrong". E is false: they leave "drained, anxious", not confident. H is false: the results slip shows "a string of numbers", not letters.',
               'Grade 6-7':
-                'A, C, E, F. B is false: the sixteen-year-olds leave "drained, anxious", not confident. D is false: the results slip carries "a string of numbers", not letters. G is false: "a fresh cohort of five-year-olds enters school". H is contradicted by "something goes catastrophically wrong".',
+                'A, D, F, G. B is false: "a fresh cohort of five-year-olds enters school", so children start at five, not seven. C is contradicted by "Our education system is broken" and "something goes catastrophically wrong". E is false: the sixteen-year-olds leave "drained, anxious", not confident. H is false: the results slip carries "a string of numbers", not letters.',
             },
             markScheme: [
-              '1 mark for each correct answer',
-              'Maximum 4 marks',
-              'No marks deducted for incorrect selections beyond four',
+              'True: A, D, F, G. One mark for each, up to 4.',
+              'A: "Our education system is broken".',
+              'D: five-year-olds enter school "bright-eyed".',
+              'F: they are "bursting with curiosity".',
+              'G: sixteen-year-olds leave "drained, anxious".',
+              'Not true: B (school starts at five), C (something goes "catastrophically wrong"), E (they leave "drained, anxious"), H (the results slip shows "a string of numbers").',
+              'Each statement is judged against the first paragraph alone. The paper asks for no more than four.',
             ],
           },
           {
             id: 'aqa-p2-02-q2',
             questionNumber: 2,
             questionText:
-              "You need to refer to Source A and Source B for this question.\n\nUse details from both sources. Write a summary of the similarities and differences in the writers' criticisms of the education systems they describe.",
+              'This question is about both sources.\n\nWhat can you infer about the differences between the young people described in Source A and the young people described in Source B?\n\nBack up what you infer with details from both sources.',
             marks: 8,
-            suggestedTimeMinutes: 10,
+            suggestedTimeMinutes: 8,
             questionType: 'summary',
             extract: `Source A:\n${EXAM_02_SOURCE_A}\n\nSource B:\n${EXAM_02_SOURCE_B}`,
             extractSource: `Source A: ${EXAM_02_SOURCE_A_REF} | Source B: ${EXAM_02_SOURCE_B_REF}`,
             modelAnswers: {
               'Grade 4-5':
-                'Both writers criticise education for giving students the wrong kind of learning. Source A says the system is "so obsessed with measurement" that it tests children again and again, and that its idea of standards "excludes creativity, critical thinking, collaboration, and emotional intelligence". Source B criticises an education in science alone, which leaves a student knowing "nothing of humane letters" (literature and history), so that he is "incomplete". Both writers give an example of what goes wrong. Source A describes children who start school "bursting with curiosity" but leave "drained, anxious". Source B describes a student at a teacher-training college who turned a line of Macbeth into "Can you not wait upon the lunatic?", which shows that he did not understand it. A difference is that Source A worries about pupils\' mental health, saying they develop "anxiety disorders", while Source B is concerned with what students understand, not how they feel.',
+                'The young people in the two sources are let down by education in different ways. In Source A they are harmed in how they feel. They start school "bright-eyed and bursting with curiosity" but leave "drained, anxious", which suggests that years of tests have worn out their energy and confidence. Arnold\'s young man is let down in his understanding instead. He was at a training college, so he was training to be a teacher, but he turned a line of Macbeth into "Can you not wait upon the lunatic?", which shows he had not understood what Shakespeare meant. This suggests his education had not taught him to read literature closely, even though he would soon be teaching others. They also face different pressures. In Source A children are tested "at seven, at eleven, at sixteen, and at eighteen", so they are measured all the time. In Source B the danger is a student who learns only science and so knows "nothing of humane letters", meaning literature and history. The writer of Source A worries that young people are unhappy, with "anxiety disorders", while Arnold worries that they will be "incomplete".',
               'Grade 6-7':
-                'Both writers attack an education that values the storing of facts above the kind of understanding that makes a person whole, though they place the fault differently. The writer of Source A blames a system "so obsessed with measurement that it has forgotten what it is supposed to be measuring", where children are tested "at seven, at eleven, at sixteen, and at eighteen" and a narrow idea of standards shuts out "creativity, critical thinking, collaboration, and emotional intelligence". Arnold\'s target is an education in natural science alone. A student trained only in science will know "nothing of humane letters" and, "perpetually accumulating natural knowledge", will be left "unsatisfied, or at any rate incomplete". His evidence is a case he once described in a school-report: a young man at a training college who paraphrased "Can\'st thou not minister to a mind diseased?" as "Can you not wait upon the lunatic?". Both writers, then, contrast what can be counted with what matters. The writer of Source A sets numbers "on a results slip" against children\'s "worth as human beings"; Arnold sets knowing that "the moon is two thousand one hundred and sixty miles in diameter" against understanding a line of Shakespeare, and would "rather have a young person ignorant about the moon\'s diameter". The differences are of focus and feeling. The writer of Source A is concerned with the harm to children\'s well-being, "anxiety disorders at twice the rate of previous generations", and is openly angry ("catastrophically wrong"). Arnold is concerned with what an education leaves out of the mind, and argues calmly, even with humour, beginning with the concession that comparisons between subjects should be avoided "as much as possible".',
+                'The young people in Source A are damaged in their feelings, while those in Source B are left lacking in understanding. The writer of Source A traces a change from "bright-eyed and bursting with curiosity" at five to "drained, anxious" at sixteen, and the word "drained" suggests that something has been taken out of them in the years between. They even come to believe that "their worth as human beings" can be measured in "a string of numbers", which implies that constant testing has taught them to judge themselves by their grades. Arnold is concerned less with how his young people feel than with what they understand. His example is "a young man in one of our English training colleges", someone being trained to teach, who paraphrased "Can\'st thou not minister to a mind diseased?" as "Can you not wait upon the lunatic?". The flatness of the paraphrase suggests a mind that can handle words but cannot hear what they mean, and because he is to be a teacher, the gap is likely to be passed on to his pupils. The causes differ too. Source A\'s children are tested "at seven, at eleven, at sixteen, and at eighteen": they are measured too often. Arnold\'s danger is too narrow a diet, natural science without "humane letters", so that a student "perpetually accumulating natural knowledge" will be left "unsatisfied, or at any rate incomplete". Finally, the scale differs. Source A speaks for a whole "generation", with "anxiety disorders at twice the rate of previous generations", which suggests a harm already spread across the country. Arnold builds his case on a single student and on imagined pupils who know that "the moon is two thousand one hundred and sixty miles in diameter", and his "what a curious state of things it would be" suggests that, for him, the danger is still a possibility to be prevented.',
             },
-            markScheme: [
-              'Must reference both sources throughout',
-              'Identifies clear similarities and differences in criticisms',
-              'Uses evidence from both texts',
-              'Synthesises rather than alternating between sources',
-              'Infers beyond surface-level details',
-              'Top band: perceptive inferences with judicious textual support',
-            ],
+            markScheme: {
+              'What to reward': [
+                'Inferences about how the young people in Source A differ from those in Source B, each backed by details from both sources.',
+                'What is harmed: feelings and self-worth in Source A ("drained, anxious", "their worth as human beings"); understanding in Source B (the paraphrase "Can you not wait upon the lunatic?").',
+                'The cause: constant testing in Source A ("at seven, at eleven, at sixteen, and at eighteen"); in Source B, an education in natural science alone, knowing "nothing of humane letters".',
+                'Scale: a whole "generation" in Source A, a harm already widespread; in Source B one student teacher and pupils Arnold imagines, a danger still to be prevented.',
+                "Points about similarities, or about the writers' language, are not what this question rewards.",
+              ],
+              'Levels (8 marks)': Q2_LEVELS,
+            },
           },
           {
             id: 'aqa-p2-02-q3',
             questionNumber: 3,
             questionText:
-              'You now need to refer only to Source A.\n\nHow does the writer use language to argue that the education system needs fundamental reform?',
+              'This question is about Source A only.\n\nLook again at the first two paragraphs, from "Our education system is broken" to "twice the rate of previous generations".\n\nHow does the writer use language in these lines to argue that the education system needs fundamental reform?\n\nSupport your points with short quotations from these lines, using subject terms where they help.',
             marks: 12,
-            suggestedTimeMinutes: 15,
+            suggestedTimeMinutes: 12,
             questionType: 'analysis',
             extract: `Source A:\n${EXAM_02_SOURCE_A}`,
             extractSource: EXAM_02_SOURCE_A_REF,
             modelAnswers: {
               'Grade 4-5':
-                'The writer starts with the blunt statement "Our education system is broken" which immediately tells the reader there is a serious problem. The word "broken" suggests something that needs fixing. The contrast between five-year-olds who are "bright-eyed and bursting with curiosity" and sixteen-year-olds who are "drained, anxious" shows how school damages children. The word "drained" is powerful because it suggests all their energy has been taken away. The writer uses the metaphor of testing as an obsession to criticise the system. The reference to Finland is used to show that there is a better way of doing things.',
+                'The writer starts with the blunt statement "Our education system is broken", which immediately tells the reader there is a serious problem. The word "broken" suggests something that no longer works and needs fixing. The contrast between five-year-olds who are "bright-eyed and bursting with curiosity" and sixteen-year-olds who are "drained, anxious" shows how school damages children. The word "drained" is powerful because it suggests all their energy has been taken away. The writer says the system is "obsessed with measurement", which makes it sound out of control. The list "at seven, at eleven, at sixteen, and at eighteen" shows how often children are tested, and the verbs in "rank them, grade them, sort them into sets" make children sound like objects being sorted. Because the writer says "The problem is not our teachers", the reader sees that the whole system has to change, not just the people in it.',
               'Grade 6-7':
-                'The writer structures the argument through a devastating before-and-after contrast that frames the education system as actively destructive. The opening paragraph\'s juxtaposition of "bright-eyed and bursting with curiosity" against "drained, anxious, and convinced that their worth... can be reduced to a string of numbers" uses the semantic field of energy depletion - "drained" implies the system has extracted something vital. The alliterative "bright-eyed and bursting" creates a sense of abundant potential, making its loss more keenly felt. The phrase "something goes catastrophically wrong" is strategically vague - the adverb "catastrophically" is emotionally charged, but "something" withholds the specific cause, creating a mystery the article then solves. The second paragraph deploys strategic concession: "The problem is not our teachers" preemptively defuses the most common objection before redirecting blame to "a system that has become so obsessed with measurement". The metaphor of obsession pathologises the system - it is not merely mistaken but compulsive. The listing of test points - "at seven, at eleven, at sixteen, and at eighteen" - creates a claustrophobic rhythm of relentless assessment. The final paragraph uses the example of Finland as a rhetorical trump card, the three short sentences - "Its teachers are trusted professionals... Its students are among the happiest in Europe. There is another way" - building to a conclusion that is both hopeful and accusatory: if another way exists, the failure to adopt it is a choice.',
+                'The writer frames the education system as actively destructive through a before-and-after contrast. The first paragraph sets "bright-eyed and bursting with curiosity" against "drained, anxious", and "drained" implies that the system has taken something vital out of children. The alliteration of "bright-eyed and bursting" suggests energy and potential, which makes the loss more keenly felt. The phrase "something goes catastrophically wrong" is deliberately vague: the adverb "catastrophically" is emotionally charged, but "something" holds back the cause, raising a question that the next paragraph answers. That paragraph opens by ruling out the obvious culprit, "The problem is not our teachers", which answers the most likely counter-argument before the blame moves to a system "so obsessed with measurement". The word "obsessed" presents the system as compulsive rather than merely mistaken, and the paradox that it "has forgotten what it is supposed to be measuring" suggests that it has lost its purpose. The list of test points, "at seven, at eleven, at sixteen, and at eighteen", creates a relentless rhythm, and the run of verbs in "rank them, grade them, sort them into sets" treats children like goods on a production line. The paragraph ends in irony: we "express surprise" when they develop "anxiety disorders at twice the rate of previous generations", as though the result were not obvious. Because the fault lies in the system itself rather than in its teachers, the language leaves fundamental reform as the only answer.',
               'Grade 8-9':
-                'The writer constructs the argument as a diagnostic narrative: the education system is presented not merely as flawed but as pathological, a system whose dysfunction has become its defining characteristic. The opening sentence - "Our education system is broken - and we all know it" - performs two rhetorical operations simultaneously. The dash creates a pause that mimics reluctant admission, while "we all know it" transforms a controversial claim into received wisdom, recruiting the reader\'s complicity before the argument has even begun. The first paragraph\'s temporal structure - "every autumn" to "every summer" - frames education as a cyclical process of destruction, the seasonal language imbuing it with the inevitability of natural law. The verb "reduced" in "their worth... can be reduced to a string of numbers" is precisely chosen: it means both "diminished" and "converted", implying that the examination system performs an act of violent simplification upon human complexity. The second paragraph\'s relative clause - "who work, on average, fifty-four hours per week for salaries that would make a city banker laugh" - is rhetorically sophisticated: the statistical precision of "fifty-four hours" lends authority, while "make a city banker laugh" introduces class politics through the image of contemptuous amusement, positioning teachers as exploited by the same economic logic that drives the testing regime. The metaphor of measurement obsession is extended through the listing "rank them, grade them, sort them into sets" - three verbs that progressively dehumanise, moving from numerical ("rank") through evaluative ("grade") to institutional ("sort them into sets"), each step further from the individual child. The final paragraph\'s invocation of Finland is an argument from example, but its real power lies in the three terminal sentences whose parallel structure ("Its teachers... Its students... There is") creates a litany of contrast that makes the British system seem not merely inferior but wilfully perverse.',
+                'The writer constructs the argument as a diagnosis: the education system is presented not merely as flawed but as pathological, a system whose dysfunction has become its defining characteristic. The opening sentence, "Our education system is broken - and we all know it", performs two rhetorical operations at once. Its dash creates a pause that mimics reluctant admission, while "we all know it" turns a contested claim into received wisdom, recruiting the reader\'s agreement before the argument has begun. The first paragraph\'s time structure, from "Every autumn" to "every summer", frames schooling as a cycle repeated year after year, and the seasonal language gives the damage the inevitability of a natural law. The verb "reduced" in "can be reduced to a string of numbers" is precisely chosen: it means both "diminished" and "converted", implying that examinations perform an act of violent simplification upon human complexity. In the second paragraph, the precision of "fifty-four hours per week" lends authority, while "salaries that would make a city banker laugh" introduces class through an image of contemptuous amusement, presenting teachers as undervalued by the same logic that drives the testing regime. The paradox at the centre of the paragraph, a system "so obsessed with measurement" that it "has forgotten what it is supposed to be measuring", accuses it of having lost its purpose. The list "rank them, grade them, sort them into sets" extends the idea through three verbs that progressively dehumanise, moving from numerical ("rank") through evaluative ("grade") to institutional ("sort them into sets"), each step further from the individual child. The repeated "We" makes the reader part of the machine, and the closing irony, that we "express surprise" at "anxiety disorders at twice the rate of previous generations", exposes a system that cannot see its own effects. A system whose faults are this structural cannot be patched, and the language leaves fundamental reform as the only response.',
             },
-            markScheme: [
-              'Analyses the effects of specific language choices in detail',
-              'Selects judicious quotations and embeds them in analysis',
-              'Uses subject terminology accurately (metaphor, antithesis, tricolon, etc.)',
-              'Considers how language positions and persuades the reader',
-              'Explores multiple layers of meaning',
-              'Top band: perceptive, detailed, conceptualised analysis of language',
-            ],
+            markScheme: {
+              'What to reward': [
+                'Analysis of language from the first two paragraphs only, focused on how it argues that the system needs fundamental reform.',
+                'The blunt opening, "Our education system is broken", and the assumed agreement of "we all know it".',
+                'The contrast between "bright-eyed and bursting with curiosity" and "drained, anxious", and the vague but charged "something goes catastrophically wrong".',
+                'The counter-argument ruled out in "The problem is not our teachers", and the blame moved to a system "so obsessed with measurement".',
+                'The lists "at seven, at eleven, at sixteen, and at eighteen" and "rank them, grade them, sort them into sets", and the irony of "express surprise".',
+                'Subject terms used accurately where they help: contrast, alliteration, counter-argument, paradox, list, irony, inclusive pronoun.',
+              ],
+              'Levels (12 marks)': Q3_LEVELS,
+            },
           },
           {
             id: 'aqa-p2-02-q4',
             questionNumber: 4,
             questionText:
-              'For this question, you need to refer to the whole of Source A, together with the whole of Source B.\n\nCompare how the two writers convey their different attitudes to the failings of the education system.\n\nIn your answer, you could:\n- compare their different attitudes\n- compare the methods they use to convey their attitudes\n- support your response with references to both texts.',
+              "This question is about the whole of Source A and the whole of Source B.\n\nBoth sources are about the failings of education. Compare the two writers' feelings and perspectives on those failings, and the methods each one uses to convey them.\n\nAim to:\n- set the two writers' feelings and views side by side, point by point\n- explain how each writer's language, tone and structure convey those views\n- back up your points with short quotations from both sources.",
             marks: 16,
             suggestedTimeMinutes: 20,
             questionType: 'comparison',
@@ -495,14 +635,16 @@ export const aqaP2A: MockExamPaper[] = [
               'Grade 6-7':
                 'Both writers see the failings of education as a narrowing of the mind, but their attitudes differ: the writer of Source A is alarmed and accusing, Arnold wry and persuasive. The writer of Source A opens with a blunt declaration, "Our education system is broken - and we all know it", in which "we all know it" presents a disputed claim as common sense. Arnold opens with a concession, urging that we "avoid indeed as much as possible any invidious comparison" between subjects, and only then answers the claim that literature and history are "the less useful alternative". His courtesy makes his counter-attack harder to dismiss. Both use contrast to expose what the system values. The writer of Source A sets "bright-eyed and bursting with curiosity" against "drained, anxious", a before-and-after picture of damage done. Arnold\'s contrast is comic: he quotes "Can\'st thou not minister to a mind diseased?" twice, each time followed by "Can you not wait upon the lunatic?", and the repetition lets the absurdity of the paraphrase speak for itself, while the precise figure "two thousand one hundred and sixty miles" mocks the kind of fact an education might prize instead. Their evidence differs too. The writer of Source A relies on statistics and on Finland, a country that "does not test its children until they are sixteen"; Arnold relies on a single case from his own experience and on reasoning. Both end on a preference rather than a complaint. The writer of Source A insists "There is another way"; Arnold, more modestly, says "I think I would rather have" a young person who can tell a good paraphrase from a bad one than one who knows the moon\'s diameter. The difference in tone reflects their situations: a modern writer addressing readers who share the anxiety, and a Victorian lecturer answering a man of science who had called literature and history "the less useful alternative".',
             },
-            markScheme: [
-              'Compares attitudes from both sources throughout the response',
-              'Analyses methods used by both writers',
-              'Uses well-selected evidence from both texts',
-              'Shows understanding of how context shapes perspective and method',
-              'Sustains a comparative framework',
-              'Top band: perceptive, detailed comparison with a sustained critical voice',
-            ],
+            markScheme: {
+              'What to reward': [
+                'A comparison of feelings and perspectives: both writers think an education can narrow the mind; the writer of Source A is alarmed and angry about testing and children\'s well-being, Arnold wry and courteous about a training in science that leaves out "humane letters".',
+                'Methods compared: Source A\'s blunt declaration ("Our education system is broken - and we all know it"), its before-and-after contrast and its statistics; Arnold\'s opening concession, his comic example ("Can you not wait upon the lunatic?") repeated for effect, and the precise figure for the moon\'s diameter.',
+                'Endings: Source A\'s confident "There is another way"; Arnold\'s modest "I think I would rather have".',
+                'Perspectives shaped by their times and roles: a modern writer speaking for anxious families; a Victorian lecturer answering a man of science who had called literature and history "the less useful alternative".',
+                'Comparison kept up across both whole sources, rather than one source and then the other.',
+              ],
+              'Levels (16 marks)': Q4_LEVELS,
+            },
           },
         ],
       },
@@ -510,7 +652,7 @@ export const aqaP2A: MockExamPaper[] = [
         id: 'aqa-p2-02-writing',
         title: 'Section B: Writing',
         description:
-          'You are advised to spend about 45 minutes on this section. Write in full sentences. You are reminded of the need to plan your answer. You should leave enough time to check your work at the end.',
+          'Spend about 45 minutes on this section: about 5 minutes planning, 35 writing and 5 checking. Write in full sentences, and leave time at the end to check your spelling and punctuation.',
         totalMarks: 40,
         suggestedTimeMinutes: 45,
         questions: [
@@ -518,7 +660,7 @@ export const aqaP2A: MockExamPaper[] = [
             id: 'aqa-p2-02-q5',
             questionNumber: 5,
             questionText:
-              '"Examinations are the enemy of real learning. Schools should assess students through coursework, projects, and portfolios instead."\n\nWrite a speech to be delivered at a schools conference in which you argue your point of view on this statement.\n\n(24 marks for content and organisation / 16 marks for technical accuracy)',
+              '"Examinations are the enemy of real learning. Schools should assess students through coursework, projects, and portfolios instead."\n\nYou have been invited to speak about this statement at a conference for teachers, parents and school leaders. Write the speech you would give, setting out your own view and arguing for it.\n\n[40 marks: 24 for content and organisation, 16 for technical accuracy]',
             marks: 40,
             suggestedTimeMinutes: 45,
             questionType: 'transactional-writing',
@@ -526,18 +668,19 @@ export const aqaP2A: MockExamPaper[] = [
               'Grade 4-5':
                 'A clear speech that: addresses the audience directly; uses some persuasive devices (rhetorical questions, personal anecdotes); has a logical structure; matches the register of a speech (direct address, spoken markers); demonstrates generally accurate spelling and punctuation.',
               'Grade 6-7':
-                'A well-crafted speech that: engages with both sides of the argument; uses rhetorical techniques appropriate to the spoken form - repetition, tricolon, direct audience engagement; deploys evidence and personal experience effectively; maintains a consistent spoken register; demonstrates consistent technical accuracy with ambitious vocabulary.',
-              'Grade 8-9':
-                'An assured, persuasive speech that: develops a nuanced argument that acknowledges complexity; crafts a distinctive, authoritative voice; deploys sophisticated rhetorical strategies - anaphora, antithesis, strategic pauses, humour; builds to a powerful conclusion; demonstrates extensive vocabulary, varied syntax, and faultless technical accuracy throughout.',
+                'A well-crafted speech that: engages with both sides of the argument; uses rhetorical techniques suited to the spoken form, such as repetition, tricolon and direct audience engagement; deploys evidence and personal experience effectively; maintains a consistent spoken register; demonstrates consistent technical accuracy with ambitious vocabulary.',
+              'Grade 8-9': `Good morning, everyone, and thank you for inviting a student to speak at a conference about students. It happens less often than it should.\n\nI have been asked whether examinations are the enemy of real learning. I want to give you an honest answer, and it is not quite the one the statement expects. Exams are not the enemy. But they have grown into a bully, and a bully needs to be put back in its place.\n\nLet me begin with what exams do well, because those who want to abolish them sometimes forget it. An exam is fair in one important way. Everyone sits the same paper, at the same time, in the same silence. Nobody's older sister helped to write it. Nobody's parents paid a tutor to polish it the night before. Coursework, for all its strengths, can quietly reward the students who have the most help at home. If every exam were replaced by a portfolio, I am not convinced that the students who gained most would be the ones who need it most.\n\nSo why do I still believe that something has gone wrong? Because of what exams have done to the way we learn. Think about the question you hear most often in a classroom. It does not begin with why, or with what if. It is this: will it be in the exam? That one question tells you everything. When the test becomes the purpose of learning, curiosity becomes a waste of time. We learn to memorise paragraphs instead of forming our own ideas. We learn which topics we can safely ignore. In the end, we learn that a subject is worth knowing only for as long as it can be marked.\n\nWe learn something else too, something no syllabus ever intended. I have watched friends who love history, who read about it for pleasure, decide that they are "bad at it" because they panic in a timed paper. A single morning in a sports hall can undo years of genuine interest. That is not a measure of learning. It is a measure of nerve.\n\nWhat, then, am I asking you to do? Not to tear down the exam hall, but to make it one room in a larger house. Let a project sit beside the written paper, so that a student who can research, plan and present over several weeks has the chance to show it. Let a portfolio record how far a student has come, not only where they stood on one morning in June. Use exams for what they measure well, and stop asking them to measure everything.\n\nSome of you will say that this means more work for teachers who are already stretched. You are right, and I do not say it lightly. But I would ask you to weigh that work against the cost of doing nothing: a generation that can pass tests but has forgotten why it ever wanted to learn.\n\nYou are the people who decide how we are assessed. Please remember that we are more than the results we produce. Measure us, by all means. Just make sure you are measuring the things that matter.\n\nThank you.`,
             },
-            markScheme: [
-              'AO5 Content & Organisation (24 marks): Compelling communication matched to the speech form',
-              'AO5: Structured argument with effective use of discourse markers',
-              'AO6 Technical Accuracy (16 marks): Accurate sentence demarcation',
-              'AO6: Range of punctuation used accurately',
-              'AO6: Accurate spelling of ambitious vocabulary',
-              'AO6: Varied sentence forms for effect',
-            ],
+            markScheme: {
+              'What to reward': [
+                'A clear view of the statement, argued consistently: the writer may agree, disagree or argue for a position in between.',
+                'The conventions of a speech to teachers, parents and school leaders: a greeting, direct address, spoken signposts, devices that work when heard aloud, and an ending that stays with the audience.',
+                'Evidence and examples chosen for a purpose. Ideas from the sources may be used, though they are not required.',
+                'An opposing view answered rather than ignored.',
+              ],
+              'Content and organisation (AO5, 24 marks)': Q5_AO5_LEVELS,
+              'Technical accuracy (AO6, 16 marks)': Q5_AO6_LEVELS,
+            },
           },
         ],
       },
@@ -560,7 +703,7 @@ export const aqaP2A: MockExamPaper[] = [
       {
         id: 'aqa-p2-03-reading',
         title: 'Section A: Reading',
-        description: `Read Source A and Source B carefully. Then answer all the questions in this section.\n\nSource A: ${EXAM_03_SOURCE_A_REF}\nSource B: ${EXAM_03_SOURCE_B_REF}`,
+        description: `Spend about 15 minutes reading Source A, Source B and the questions. Then answer all four questions in this section, allowing about 45 minutes for them.\n\nSource A: ${EXAM_03_SOURCE_A_REF}\nSource B: ${EXAM_03_SOURCE_B_REF}`,
         totalMarks: 40,
         suggestedTimeMinutes: 60,
         questions: [
@@ -568,7 +711,7 @@ export const aqaP2A: MockExamPaper[] = [
             id: 'aqa-p2-03-q1',
             questionNumber: 1,
             questionText:
-              "Read again Source A, the first paragraph.\n\nChoose four statements below which are TRUE.\n\nA) The writer's daughter is fourteen years old.\nB) The daughter was reading a magazine.\nC) She managed three pages before picking up her phone.\nD) She scrolled through notifications for five minutes.\nE) She re-read a paragraph she had already finished.\nF) The writer blames laziness for this behaviour.\nG) The writer attributes this behaviour to what technology has done.\nH) The writer thinks we should pretend that everything is fine.",
+              'Look again at the first paragraph of Source A, from "Last Tuesday" to "everything is fine".\n\nWhich four of the statements below are true? Write down their letters, and choose no more than four.\n\nA) The daughter was reading a magazine.\nB) She scrolled through notifications for five minutes.\nC) The writer\'s daughter is fourteen years old.\nD) She read three pages before she reached for her phone.\nE) The writer blames laziness for this behaviour.\nF) The writer thinks we should pretend that everything is fine.\nG) She went back to her book and read the same paragraph again.\nH) The writer blames technology for her behaviour.',
             marks: 4,
             suggestedTimeMinutes: 5,
             questionType: 'multiple-choice',
@@ -576,73 +719,84 @@ export const aqaP2A: MockExamPaper[] = [
             extractSource: `Source A: ${EXAM_03_SOURCE_A_REF} | Source B: ${EXAM_03_SOURCE_B_REF}`,
             modelAnswers: {
               'Grade 4-5':
-                'A, C, E, G - A: "my fourteen-year-old daughter". C: "She managed three pages before reaching for her phone". E: "only to re-read the same paragraph she had already finished." G: "This is what technology has done to the adolescent brain". B is false (a novel). D is false (ten minutes). F is explicitly denied ("This is not laziness"). H is false (we should talk about it "honestly rather than pretending that everything is fine").',
+                'C, D, G, H. C: "my fourteen-year-old daughter". D: "She managed three pages before reaching for her phone". G: she returned "to the book" only "to re-read the same paragraph she had already finished". H: "This is what technology has done to the adolescent brain". A is false: she was reading "a novel". B is false: she scrolled for "ten minutes". E is false: "This is not laziness." F is false: the writer wants us to talk about it "honestly rather than pretending that everything is fine".',
               'Grade 6-7':
-                'A, C, E, G. B is false: she was reading "a novel". D is false: she scrolled for "ten minutes", not five. F is directly contradicted by "This is not laziness." H reverses the writer\'s view, which is that we should talk about it "honestly rather than pretending that everything is fine."',
+                'C, D, G, H. A is false: she was trying to read "a novel", not a magazine. B is false: she scrolled for "ten minutes", not five. E is directly contradicted by "This is not laziness." F reverses the writer\'s view, which is that we need to talk about it "honestly rather than pretending that everything is fine".',
             },
             markScheme: [
-              '1 mark for each correct answer',
-              'Maximum 4 marks',
-              'No marks deducted for incorrect selections beyond four',
+              'True: C, D, G, H. One mark for each, up to 4.',
+              'C: "my fourteen-year-old daughter".',
+              'D: "She managed three pages before reaching for her phone".',
+              'G: she went back only "to re-read the same paragraph".',
+              'H: "This is what technology has done to the adolescent brain".',
+              'Not true: A (it was "a novel"), B (it was "ten minutes"), E ("This is not laziness"), F (we should talk about it "honestly rather than pretending").',
+              'Each statement is judged against the first paragraph alone. The paper asks for no more than four.',
             ],
           },
           {
             id: 'aqa-p2-03-q2',
             questionNumber: 2,
             questionText:
-              "You need to refer to Source A and Source B for this question.\n\nUse details from both sources. Write a summary of the differences between what the writers say new technology has done to people's lives.",
+              'This question is about both sources.\n\nEach writer describes the new technology of their own time: in Source A, the phone and its screen; in Source B, machinery and the new means of travel and communication. What can you infer about the differences between these two kinds of technology?\n\nBack up what you infer with details from both sources.',
             marks: 8,
-            suggestedTimeMinutes: 10,
+            suggestedTimeMinutes: 8,
             questionType: 'summary',
             extract: `Source A:\n${EXAM_03_SOURCE_A}\n\nSource B:\n${EXAM_03_SOURCE_B}`,
             extractSource: `Source A: ${EXAM_03_SOURCE_A_REF} | Source B: ${EXAM_03_SOURCE_B_REF}`,
             modelAnswers: {
               'Grade 4-5':
-                'The writers see the effects of new technology very differently. The writer of Source A thinks technology is harming young people: teenagers who spend a long time on screens have "reduced attention spans" and "higher rates of anxiety and depression", and the writer\'s own daughter cannot read more than three pages before "reaching for her phone". Huxley, in Source B, thinks new machines have made life much better. He says that because of machinery "the general standard of comfort has been raised" and "the ravages of pestilence and famine have been checked". The writer of Source A says the phone\'s algorithm is designed "to addict", but Huxley says that new ways of travelling and communicating have brought people together and reduced "local ignorance and prejudice". Even where both mention the same benefit, they differ: Source A mentions "connection across distances" only briefly before returning to the harm, while for Huxley the shrinking of the obstacles of time and space is one of the great achievements of his age. The main difference is that Source A thinks children need "boundaries", while Huxley calls the change a "revolution" and does not mention any harm.',
+                'The technology in the two sources does very different things to people. In Source A the phone affects the mind: teenagers who spend a long time on screens have "reduced attention spans" and more "anxiety and depression", and the writer\'s daughter manages only "three pages" of her book before "reaching for her phone". This suggests that the phone pulls people away from things that matter. Huxley\'s machines change the way people live. Because of them "the general standard of comfort has been raised" and "the ravages of pestilence and famine have been checked", which suggests that the inventions of his time made ordinary life safer and easier. They also seem to be made for different reasons. In Source A the phone runs on "an algorithm designed not to inform or educate but to addict", so it seems to work against the people using it. Huxley\'s new ways of travelling and communicating bring people together, helping to remove "local ignorance and prejudice". The writer of Source A thinks children need "boundaries" to protect them from technology, while Huxley calls the change a "revolution" and mentions no harm that it has done.',
               'Grade 6-7':
-                'The two writers reach opposite verdicts on what new technology does to people. For the writer of Source A its effect falls on the mind, and it is harmful: screens bring "measurably reduced attention spans, lower reading comprehension scores" and more "anxiety and depression", and the phone is driven by "an algorithm designed not to inform or educate but to addict". Huxley sees its effect as material and social, and entirely good: machinery, better processes and "the invention of new ones" have multiplied "the commodities and conveniences of existence", raised "the general standard of comfort" and checked famine and disease. Where Source A fears that technology distracts the young and is built to addict them, Huxley believes the new "means of locomotion and intercommunication" (in his time, the railway, the steamship and the telegraph) bring people together, creating "common interests among the most widely separated peoples". Even the benefit they share shows the difference: the writer of Source A grants that technology has brought "extraordinary benefits", including "connection across distances", but only as a concession before the case against it, whereas for Huxley the reduction of the obstacles "which time and space offer" is part of his central claim. The difference is also one of scale. The writer of Source A starts from one teenager in one household; Huxley surveys "the History of Civilisation, during the last fifty years" and "the present and future fortunes of mankind". Their views of the future differ too: the writer of Source A wants "boundaries" for children, while Huxley thinks the full significance of the change "cannot, as yet, be estimated at its full value", which suggests that its benefits have only begun.',
+                'The technology in Source A acts on the mind and harms it; the technology in Source B acts on the material world and improves it. The phone and its screens bring "measurably reduced attention spans, lower reading comprehension scores" and more "anxiety and depression", and they run on "an algorithm designed not to inform or educate but to addict", which implies a technology that serves its makers rather than its users. Huxley\'s machinery, better processes and "the invention of new ones" have multiplied "the commodities and conveniences of existence", raised "the general standard of comfort" and checked "the ravages of pestilence and famine", which suggests that for his readers new technology meant longer and easier lives. Connection works differently too. The phone draws a teenager away from the book in front of her and into her "notifications"; the new "means of locomotion and intercommunication" of Huxley\'s age (the railway, the steamship and the telegraph) have reduced "the natural obstacles, which time and space offer", creating "common interests among the most widely separated peoples". Source A does grant "connection across distances", but only in passing, before its case against screens, which suggests that for its writer connection is a small gain set against a large loss. The scale differs as well: Source A\'s technology is measured in one household and in "four hours and twenty-two minutes" a day, Huxley\'s in "the History of Civilisation, during the last fifty years". Finally, the two technologies point to different futures. The writer of Source A thinks children must be given "boundaries", implying a danger that is still growing, while Huxley thinks the full significance of the change "cannot, as yet, be estimated at its full value", implying that its benefits have only begun.',
             },
-            markScheme: [
-              'Must reference both sources',
-              "Identifies clear differences in the writers' views of what technology does to people",
-              'Uses evidence from both texts',
-              'Synthesises rather than alternating',
-              'Infers beyond surface details',
-              'Top band: perceptive synthesis with judicious textual references',
-            ],
+            markScheme: {
+              'What to reward': [
+                'Inferences about how the technology in Source A differs from the technology in Source B, each backed by details from both sources.',
+                'What it acts on: the mind in Source A ("reduced attention spans", "anxiety and depression"); daily life in Source B ("the general standard of comfort has been raised").',
+                'Whom it serves: "an algorithm designed not to inform or educate but to addict", against machines that multiply "the commodities and conveniences of existence".',
+                'Connection: a phone that pulls a reader from her book, with "connection across distances" granted only in passing, against transport and communication that create "common interests among the most widely separated peoples".',
+                'Scale and future: one household and a call for "boundaries", against fifty years of civilisation and benefits that "cannot, as yet, be estimated".',
+                "Points about similarities, or about the writers' language, are not what this question rewards.",
+              ],
+              'Levels (8 marks)': Q2_LEVELS,
+            },
           },
           {
             id: 'aqa-p2-03-q3',
             questionNumber: 3,
             questionText:
-              'You now need to refer only to Source A.\n\nHow does the writer use language to express concerns about the impact of technology on young people?',
+              'This question is about Source A only.\n\nLook again at the second and third paragraphs, from "The evidence is now overwhelming" to the end of the source.\n\nHow does the writer use language in these lines to express concern about what technology is doing to young people?\n\nSupport your points with short quotations from these lines, using subject terms where they help.',
             marks: 12,
-            suggestedTimeMinutes: 15,
+            suggestedTimeMinutes: 12,
             questionType: 'analysis',
             extract: `Source A:\n${EXAM_03_SOURCE_A}`,
             extractSource: EXAM_03_SOURCE_A_REF,
             modelAnswers: {
               'Grade 4-5':
-                'The writer uses a personal anecdote about a daughter to make the issue feel real and relatable. The phrase "reaching for her phone" suggests an automatic, almost addictive action. The statistics about screen time - "four hours and twenty-two minutes" - shock the reader with how much time is wasted. The phrase "algorithm designed not to inform or educate but to addict" suggests technology companies are deliberately harming young people. The phrase "being used by it" reverses the normal idea of using technology, making young people sound like victims.',
+                'The writer begins with the short, confident sentence "The evidence is now overwhelming", which makes the concern sound proven rather than just an opinion. The list of findings, from "reduced attention spans" to "significantly higher rates of anxiety and depression", builds up the harm one problem after another. The figure "four hours and twenty-two minutes" is precise, which makes it believable, and when the writer adds "That is not a statistic", the reader is made to think of it as part of a real life. The verb "surrendered" suggests that young people have given up in a battle, and the phrase "designed not to inform or educate but to addict" suggests that technology companies are hooking children on purpose, as if phones were a drug. The phrase "being used by it" reverses the normal idea of using technology, making young people sound like victims. The ending, "a childhood only partially lived", is sad because it suggests that children are missing out on part of growing up.',
               'Grade 6-7':
-                'The writer constructs the argument through an escalation from the domestic to the societal, anchored by the opening anecdote that transforms private concern into public crisis. The scene of the daughter\'s failed attempt to read is narrated with clinical precision - "three pages", "ten minutes", "the same paragraph" - the specificity creating an almost experimental quality, as though the daughter is an unwitting subject in a study of attention collapse. The phrase "reaching for her phone" is significant: "reaching" connotes involuntary compulsion, an instinct rather than a decision. The second paragraph shifts to statistical authority, but the most powerful technique is the redefinition of a number: "That is not a statistic. That is nearly a third of their waking life surrendered to an algorithm". The verb "surrendered" militarises the image - this is territory lost, autonomy ceded - while "algorithm" reduces the opponent to cold mechanics. The tripartite purpose of the algorithm - "not to inform or educate but to addict" - uses the rule of three with a devastating twist: two positive verbs negated, followed by one that reframes technology as a drug. The final paragraph\'s central antithesis - "using technology and being used by it" - is the article\'s rhetorical centrepiece: the same verb turns from active to passive, so that the user becomes the used, exposing the power imbalance. The concluding phrase "a childhood only partially lived" is deliberately understated, the adverb "partially" more haunting than a more dramatic formulation because it concedes that something is experienced while insisting that something essential is missing.',
+                'The writer expresses concern by building from scientific evidence to a moral judgement, so that worry becomes a demand for action. The second paragraph opens with the blunt declarative "The evidence is now overwhelming", which closes down doubt before any findings are given. The findings come as a list of three, from "measurably reduced attention spans" to "significantly higher rates of anxiety and depression", and the clinical adverbs "measurably" and "significantly" borrow the authority of research, while the harms grow more serious as the list moves from learning to mental health. The most powerful technique is the redefinition of a number. After "four hours and twenty-two minutes", the writer insists "That is not a statistic. That is nearly a third of their waking life", turning a figure into a share of a young person\'s existence. The verb "surrendered" makes the image military, of ground lost and freedom handed over, while "algorithm" reduces the opponent to cold machinery. The phrase "designed not to inform or educate but to addict" negates two positive verbs before ending on one that presents technology as a drug. In the final paragraph, the concession "I am not a Luddite" and the list of "extraordinary benefits" make the writer sound fair, which strengthens the turn on "But". The antithesis "using technology and being used by it" repeats one verb, first active and then passive, so that the user becomes the used, and "overwhelmingly" stresses how many children are on the wrong side. The verb "owe" in "We owe them boundaries" makes action a debt that adults must pay. The closing phrase "a childhood only partially lived" is deliberately understated: the adverb "partially" concedes that something is lived while insisting that something essential is missing.',
               'Grade 8-9':
-                'The writer\'s linguistic strategy operates through a systematic dismantling of the reader\'s defences, beginning with the deliberately mundane and escalating to the existential. The opening anecdote is structured as a micro-narrative of cognitive failure: "managed three pages" (the verb "managed" implies struggle against resistance), "reaching for her phone" (the present participle suggesting habitual compulsion), "re-read the same paragraph" (the prefix "re-" encoding futility). The sentence "This is not laziness" performs a pre-emptive counter-argument, its blunt declarative closing down the most comfortable interpretation before offering the more disturbing one: "This is what technology has done to the adolescent brain". The shift from "my fourteen-year-old daughter" to "the adolescent brain" is itself significant - the definite article and scientific noun depersonalise, transforming a parent\'s worry into a neurological diagnosis. The second paragraph moves from a study to a figure, "four hours and twenty-two minutes", and then refuses to let it stay a figure: "That is not a statistic." The sentence is a metacommentary that instructs the reader how to process the information, converting a number into a portion of a life. The phrase "surrendered to an algorithm designed not to inform or educate but to addict" layers multiple techniques: the passive voice of "surrendered" removes young people\'s agency; the tricolon negates two Enlightenment values before introducing a medical-criminal verb. The final paragraph\'s antithesis - "using technology and being used by it" - repeats one verb, first active and then passive, and so performs the reversal it describes, the subject becoming the object. The closing image, "a childhood only partially lived", achieves its power through calculated understatement: "partially" is more devastating than "not at all" because it concedes that something exists while insisting it is insufficient - the linguistic equivalent of a half-empty room.',
+                'The writer\'s language works by dismantling the reader\'s defences: each sentence closes an escape route, until concern becomes obligation. The paragraph opens with an unqualified declarative, "The evidence is now overwhelming", whose adverb "now" implies that a debate has ended. The findings follow in a cumulative list, from "measurably reduced attention spans" to "significantly higher rates of anxiety and depression", and the order matters: the harms move from the classroom to the mind, so the list grows more serious as it goes. The writer then moves from a study to a single figure, "four hours and twenty-two minutes", and refuses to let it remain a figure: "That is not a statistic." The sentence tells the reader how to process the information, converting a number into "nearly a third of their waking life". The phrase "surrendered to an algorithm designed not to inform or educate but to addict" layers several techniques. The verb "surrendered" casts young people as a defeated army, giving up their time to an enemy; "algorithm" makes that enemy impersonal; and the pattern "not to inform or educate but to addict" negates two values of the Enlightenment before introducing a verb from medicine and crime. The final paragraph begins with a pre-emptive concession, "I am not a Luddite calling for the smashing of machines", whose historical allusion makes the opposite extreme look absurd and so makes the writer\'s position sound moderate. The list of "extraordinary benefits" is generous, but it exists to be overturned by the conjunction "But". The antithesis "using technology and being used by it" repeats a single verb, first active and then passive, and so performs the reversal it describes, the subject becoming the object. The adverb "overwhelmingly" echoes "overwhelming" from the start of these lines, binding the evidence to the judgement. The closing sentence turns concern into duty through the verb "owe", and its final image, "a childhood only partially lived", draws its power from calculated understatement: "partially" is more unsettling than a total loss would be, because it concedes that something exists while insisting that it is not enough.',
             },
-            markScheme: [
-              "Analyses the effects of the writer's language choices in detail",
-              'Selects judicious quotations embedded within analysis',
-              'Uses subject terminology accurately',
-              'Considers how language positions and persuades the reader',
-              'Explores layers of meaning in individual words and phrases',
-              'Top band: perceptive, detailed, conceptualised analysis',
-            ],
+            markScheme: {
+              'What to reward': [
+                'Analysis of language from the second and third paragraphs only, focused on how it expresses concern about what technology does to young people.',
+                'The certainty of "The evidence is now overwhelming", and the list of findings with the clinical adverbs "measurably" and "significantly".',
+                'The redefinition of a number in "That is not a statistic", and the image in "surrendered to an algorithm".',
+                'The pattern "not to inform or educate but to addict", which ends on a verb from addiction.',
+                'The concession "I am not a Luddite", the turn on "But", and the antithesis "using technology and being used by it".',
+                'The moral verb in "We owe them boundaries", and the understatement of "a childhood only partially lived".',
+                'Subject terms used accurately where they help: declarative, list, metaphor, concession, antithesis, active and passive voice, understatement.',
+              ],
+              'Levels (12 marks)': Q3_LEVELS,
+            },
           },
           {
             id: 'aqa-p2-03-q4',
             questionNumber: 4,
             questionText:
-              'For this question, you need to refer to the whole of Source A, together with the whole of Source B.\n\nCompare how the two writers convey their different attitudes to new technology and what it does to people.\n\nIn your answer, you could:\n- compare their different attitudes\n- compare the methods they use to convey their attitudes\n- support your response with references to both texts.',
+              "This question is about the whole of Source A and the whole of Source B.\n\nBoth sources are about new technology and what it does to people. Compare the two writers' feelings and perspectives on it, and the methods each one uses to convey them.\n\nAim to:\n- set the two writers' feelings and views side by side, point by point\n- explain how each writer's language, tone and structure convey those views\n- back up your points with short quotations from both sources.",
             marks: 16,
             suggestedTimeMinutes: 20,
             questionType: 'comparison',
@@ -654,14 +808,16 @@ export const aqaP2A: MockExamPaper[] = [
               'Grade 6-7':
                 'The writer of Source A regards new technology with alarm, Huxley with pride, and their methods follow from their attitudes. The writer of Source A works from the particular to the general: the opening anecdote of a daughter who "managed three pages before reaching for her phone" makes the harm domestic and visible before any statistics arrive, and the verb "managed" makes reading sound like a struggle. Huxley works entirely in the general. His first sentence surveys "the History of Civilisation, during the last fifty years", and his long sentences pile up abstract nouns ("production", "improvement", "invention", "development") so that progress seems vast and orderly. Their vocabulary is opposed. The writer of Source A reaches for the language of loss and addiction: life "surrendered to an algorithm", a technology designed "to addict", "a childhood only partially lived". Huxley\'s language is admiring and elevated: "wonderful increase", "no less marvellous", and, in "This revolution - for it is nothing less -", a pause that insists on the scale of the change. Both writers use contrast, but differently. The writer of Source A draws a moral line "between using technology and being used by it"; Huxley\'s contrast is historical, between the present and "former ages", and he ends with an image of science as a stream that, "after being dammed up for a thousand years, once more began to flow", which makes progress seem natural and unstoppable. The writer of Source A concedes that technology has brought "extraordinary benefits" and is "not a Luddite", which makes the call for "boundaries" sound reasonable; Huxley admits no drawback at all, which makes his confidence seem complete. His first readers, looking back over fifty years of railways, telegraphs and factories, had seen the benefits for themselves; the writer of Source A is writing about a technology whose effects on children are still being measured.',
             },
-            markScheme: [
-              'Compares attitudes from both sources throughout',
-              'Analyses methods used by both writers to convey their views',
-              'Uses well-selected evidence from both texts',
-              'Shows understanding of how historical context shapes perspective',
-              'Sustains a comparative structure',
-              'Top band: perceptive, detailed comparison with sustained critical engagement',
-            ],
+            markScheme: {
+              'What to reward': [
+                'A comparison of feelings and perspectives: the writer of Source A is alarmed by what screens do to children, though not opposed to technology; Huxley is proud and confident, and admits no drawback to the changes he describes.',
+                'Methods compared: Source A moves from one daughter to statistics and a moral demand, in the language of addiction and loss ("surrendered", "to addict"); Huxley surveys "the History of Civilisation" in long, formal sentences, with admiring words ("wonderful", "marvellous") and the image of science as a stream "dammed up for a thousand years".',
+                'Contrast used differently: a moral line "between using technology and being used by it"; a historical line between the present and "former ages".',
+                'Perspectives shaped by their times: a parent writing while the effects on children are still being measured; a Victorian scientist looking back on fifty years of railways, telegraphs and factories.',
+                'Comparison kept up across both whole sources, rather than one source and then the other.',
+              ],
+              'Levels (16 marks)': Q4_LEVELS,
+            },
           },
         ],
       },
@@ -669,7 +825,7 @@ export const aqaP2A: MockExamPaper[] = [
         id: 'aqa-p2-03-writing',
         title: 'Section B: Writing',
         description:
-          'You are advised to spend about 45 minutes on this section. Write in full sentences. You are reminded of the need to plan your answer. You should leave enough time to check your work at the end.',
+          'Spend about 45 minutes on this section: about 5 minutes planning, 35 writing and 5 checking. Write in full sentences, and leave time at the end to check your spelling and punctuation.',
         totalMarks: 40,
         suggestedTimeMinutes: 45,
         questions: [
@@ -677,7 +833,7 @@ export const aqaP2A: MockExamPaper[] = [
             id: 'aqa-p2-03-q5',
             questionNumber: 5,
             questionText:
-              '"Smartphones should be banned in schools. They are destroying young people\'s ability to learn, to concentrate, and to connect with each other."\n\nWrite a letter to the Secretary of State for Education in which you argue your point of view on this statement.\n\n(24 marks for content and organisation / 16 marks for technical accuracy)',
+              '"Smartphones should be banned in schools. They are destroying young people\'s ability to learn, to concentrate, and to connect with each other."\n\nWrite a letter to the Secretary of State for Education, the government minister responsible for schools in England, giving your own view of this statement and the reasons for it.\n\n[40 marks: 24 for content and organisation, 16 for technical accuracy]',
             marks: 40,
             suggestedTimeMinutes: 45,
             questionType: 'transactional-writing',
@@ -686,17 +842,18 @@ export const aqaP2A: MockExamPaper[] = [
                 'A clear formal letter that: addresses the recipient appropriately; uses some persuasive devices; presents a logical argument with examples; matches the formal register of a letter to a government minister; demonstrates generally accurate spelling, punctuation, and grammar.',
               'Grade 6-7':
                 'A well-structured formal letter that: engages with the complexity of the issue; deploys a range of persuasive techniques including counter-argument; uses evidence effectively; sustains an appropriately formal and respectful register throughout; demonstrates consistent technical accuracy with varied sentence forms.',
-              'Grade 8-9':
-                'A sophisticated formal letter that: develops a nuanced position that goes beyond simple agreement or disagreement; uses the conventions of formal correspondence to powerful rhetorical effect; deploys precisely chosen evidence and examples; crafts a distinctive, authoritative voice; demonstrates faultless technical accuracy with ambitious vocabulary and syntactic variety.',
+              'Grade 8-9': `Dear Secretary of State,\n\nI am writing as a Year 11 student to ask you to support a simple change that would make a real difference in schools across England: keeping smartphones out of lessons and corridors for the whole of the school day. I agree that phones should be banned in schools, although, as I will explain, I think the word "destroying" claims more than my own experience can show.\n\nLet me describe an ordinary lesson. A teacher begins to explain a difficult idea, and somewhere in the room a phone vibrates. It lasts only a second, but in that second, half the class looks up, and the student whose phone it is stops listening altogether. Concentration is not a tap that can be turned off and on again at no cost. Every interruption is paid for with the minutes it takes to find the thread again, and over a school day those minutes add up to lessons that were never really taught.\n\nThe harm does not end when the bell rings. At lunchtime I have seen groups of friends sitting together in complete silence, each of them looking at a screen. They are together and apart at the same time. School is one of the few places where young people from very different homes spend every day in each other's company, and it would be a great loss if we spent that time scrolling rather than talking.\n\nI am aware of the arguments against a ban, and I do not dismiss them. Some parents want to be able to reach their children, especially on the journey to and from school. Some students need their phones for medical reasons, or because they care for a relative at home. These are real needs, and any rule must respect them. But they are arguments for sensible exceptions, not for allowing phones in every lesson. A phone that is switched off and kept in a bag or a locker until home time is still there in an emergency.\n\nOthers will say that phones are tools for learning. Occasionally they can be, but schools already have computers and tablets that a teacher can hand out when a lesson needs them, without the messages, games and notifications that come with a personal phone. The difference is control. A school device serves the lesson; a personal phone competes with it.\n\nI would not go as far as the statement when it says that phones are destroying our ability to learn. Many students use them sensibly, and blaming the device alone lets us ignore the habits that surround it. That is why I believe any ban should come with lessons on using technology well, so that we leave school with self-control as well as qualifications.\n\nMost of all, I am asking for clarity. A student who moves from one school to another can find that what was normal in the first is forbidden in the second. A clear expectation from you, with exceptions for genuine need, would be fair because it would be the same for everyone.\n\nThank you for taking the time to read my letter. I hope you will consider what students themselves have to say about the places where we learn.\n\nYours sincerely,\n\n[Your name]`,
             },
-            markScheme: [
-              'AO5 Content & Organisation (24 marks): Compelling communication matched to the letter form and audience',
-              'AO5: Coherent argument with effective structural choices',
-              'AO6 Technical Accuracy (16 marks): Accurate sentence demarcation',
-              'AO6: Range of punctuation used accurately',
-              'AO6: Accurate spelling of ambitious vocabulary',
-              'AO6: Varied sentence forms for purpose and effect',
-            ],
+            markScheme: {
+              'What to reward': [
+                'A clear view of the statement, argued consistently: the writer may agree, disagree or argue for a position in between.',
+                'The conventions of a formal letter to a government minister: a suitable greeting and sign-off, a clear statement of purpose, a respectful and formal register, and paragraphs that build the case.',
+                'Evidence and examples chosen for a purpose. Ideas from the sources may be used, though they are not required.',
+                'An opposing view answered rather than ignored.',
+              ],
+              'Content and organisation (AO5, 24 marks)': Q5_AO5_LEVELS,
+              'Technical accuracy (AO6, 16 marks)': Q5_AO6_LEVELS,
+            },
           },
         ],
       },
@@ -719,7 +876,7 @@ export const aqaP2A: MockExamPaper[] = [
       {
         id: 'aqa-p2-04-reading',
         title: 'Section A: Reading',
-        description: `Read Source A and Source B carefully. Then answer all the questions in this section.\n\nSource A: ${EXAM_04_SOURCE_A_REF}\nSource B: ${EXAM_04_SOURCE_B_REF}`,
+        description: `Spend about 15 minutes reading Source A, Source B and the questions. Then answer all four questions in this section, allowing about 45 minutes for them.\n\nSource A: ${EXAM_04_SOURCE_A_REF}\nSource B: ${EXAM_04_SOURCE_B_REF}`,
         totalMarks: 40,
         suggestedTimeMinutes: 60,
         questions: [
@@ -727,7 +884,7 @@ export const aqaP2A: MockExamPaper[] = [
             id: 'aqa-p2-04-q1',
             questionNumber: 1,
             questionText:
-              "Read again Source A, the first paragraph.\n\nChoose four statements below which are TRUE.\n\nA) The writer's daughter wanted to be an engineer.\nB) The teacher suggested that the daughter become a doctor.\nC) The teacher suggested nursing as an alternative.\nD) The daughter was seven years old.\nE) The teacher smiled indulgently.\nF) The writer describes the redirection as devastating.\nG) The daughter was at secondary school.\nH) The daughter had already learned about gender expectations.",
+              'Look again at the first paragraph of Source A, from "When my daughter told me" to "gender equality in Britain".\n\nWhich four of the statements below are true? Write down their letters, and choose no more than four.\n\nA) The writer\'s daughter wanted to be an engineer.\nB) The teacher smiled indulgently.\nC) The daughter was at secondary school.\nD) The teacher suggested that the daughter become a doctor.\nE) The teacher suggested nursing as another career to consider.\nF) The daughter was seven years old.\nG) The writer describes the redirection as devastating.\nH) The daughter had already learned about gender expectations.',
             marks: 4,
             suggestedTimeMinutes: 5,
             questionType: 'multiple-choice',
@@ -735,73 +892,82 @@ export const aqaP2A: MockExamPaper[] = [
             extractSource: `Source A: ${EXAM_04_SOURCE_A_REF} | Source B: ${EXAM_04_SOURCE_B_REF}`,
             modelAnswers: {
               'Grade 4-5':
-                'A, C, E, F - A: "my daughter told me she wanted to be an engineer". C: "suggested she might also like to consider teaching or nursing." E: "smiled indulgently". F: "gentle, well-meaning, devastating redirection". B is false (the teacher suggested "teaching or nursing"). D is false (she was six). G is false (it was her "primary school teacher"). H is false ("She had not yet learned").',
+                'A, B, E, G. A: "my daughter told me she wanted to be an engineer". B: the teacher "smiled indulgently". E: she "suggested she might also like to consider teaching or nursing". G: "gentle, well-meaning, devastating redirection". C is false: it was her "primary school teacher". D is false: the teacher suggested "teaching or nursing". F is false: she was "six years old". H is false: "She had not yet learned".',
               'Grade 6-7':
-                'A, C, E, F. B is false: the teacher suggested "teaching or nursing", not medicine. D is false: "My daughter was six years old." G is false: the teacher was her "primary school teacher". H is contradicted by "She had not yet learned that society had opinions".',
+                'A, B, E, G. C is false: the teacher was her "primary school teacher". D is false: the teacher suggested "teaching or nursing", not medicine. F is false: "My daughter was six years old." H is contradicted by "She had not yet learned that society had opinions".',
             },
             markScheme: [
-              '1 mark for each correct answer',
-              'Maximum 4 marks',
-              'No marks deducted for incorrect selections beyond four',
+              'True: A, B, E, G. One mark for each, up to 4.',
+              'A: "my daughter told me she wanted to be an engineer".',
+              'B: the teacher "smiled indulgently".',
+              'E: she might "also like to consider teaching or nursing".',
+              'G: "that gentle, well-meaning, devastating redirection".',
+              'Not true: C (a "primary school teacher"), D (it was "teaching or nursing"), F (she was "six years old"), H ("She had not yet learned").',
+              'Each statement is judged against the first paragraph alone. The paper asks for no more than four.',
             ],
           },
           {
             id: 'aqa-p2-04-q2',
             questionNumber: 2,
             questionText:
-              'You need to refer to Source A and Source B for this question.\n\nUse details from both sources. Write a summary of the similarities and differences in how the writers present the barriers women face.',
+              "This question is about both sources.\n\nWhat can you infer about the differences between the barriers facing the writer's daughter in Source A and the barriers facing the women Martineau writes about in Source B?\n\nBack up what you infer with details from both sources.",
             marks: 8,
-            suggestedTimeMinutes: 10,
+            suggestedTimeMinutes: 8,
             questionType: 'summary',
             extract: `Source A:\n${EXAM_04_SOURCE_A}\n\nSource B:\n${EXAM_04_SOURCE_B}`,
             extractSource: `Source A: ${EXAM_04_SOURCE_A_REF} | Source B: ${EXAM_04_SOURCE_B_REF}`,
             modelAnswers: {
               'Grade 4-5':
-                'Both writers describe barriers that hold women back. In Source A the barriers are mostly hidden: a teacher steering a girl who wants to be an engineer towards "teaching or nursing", and "gendered toys" and "classroom assumptions". In Source B the barriers are more open. Martineau says a girl should not be "shut out, because she is a woman" from subjects she could study, and that the jobs women can do to support themselves "are so few", with many of them taken by men. Both writers show that people expect women to follow a set path. Source A says society has "opinions about which ambitions were appropriate", and Source B says that in the past "the only occupation thought of for a woman was keeping her husband\'s house". A difference is that Source A gives statistics, such as the "14.3 per cent" pay gap, while Source B argues that girls should be educated "as carefully as boys\'" because many women now have to support themselves.',
+                'The barriers facing the daughter in Source A are hidden, while the barriers in Source B are open. Nobody tells the daughter that she cannot be an engineer: "No law prevents my daughter from becoming an engineer". Instead a teacher gently suggests "teaching or nursing", which suggests that today girls are steered rather than stopped. In Source B a girl could be "shut out, because she is a woman, from any study", which suggests that in Martineau\'s time some subjects were closed to girls altogether. The barriers also come at different points in life. The daughter meets hers at six, in a primary school, so it starts early and quietly. Martineau\'s women meet theirs when they have to earn a living: "A multitude of women have to maintain themselves", but the jobs open to them "are so few", and many are "engrossed by men". This suggests that their problem was practical and about money, not only about what people expected of them. Finally, the writer of Source A can list rights that women have won, "vote, own property, pursue careers", whereas in Martineau\'s "former times" every woman but a servant was "maintained by her father, brother or husband", which suggests that a woman\'s whole life once depended on the men around her.',
               'Grade 6-7':
-                'Both writers show that women are held back less by their own abilities than by what society expects of them, but the barriers they describe belong to different stages of the same struggle. For the writer of Source A the barrier is now invisible: "No law prevents my daughter from becoming an engineer", yet "a thousand small signals", from "the gendered toys" to "the well-meaning teacher suggesting nursing", build "an invisible architecture of limitation". For Martineau, writing in 1849, the barriers are open and practical. She has to argue that a girl\'s mind should be trained "as carefully as boys\'", and that no girl should be "shut out, because she is a woman, from any study that she is capable of pursuing"; and the ways a woman might earn a living "are so few; and of those few, so many engrossed by men". Both writers identify an expectation that decides a woman\'s path in advance. In Source A it is the teacher\'s gentle redirection of a six-year-old; in Source B it is the old assumption that "every woman was destined to be married" and that her only occupation was "keeping her husband\'s house, and being a wife and mother". A key difference is the direction of change each describes. The writer of Source A warns that legal progress has produced only "the comfortable illusion of equality". Martineau sees the ground already shifting under women: "The footing of women is changed, and it will change more", and because "A multitude of women have to maintain themselves", keeping them from learning has become not only unjust but impractical.',
+                'The barriers facing the daughter in Source A are invisible and work on her expectations; those facing Martineau\'s women are visible and work on their lives. The writer of Source A stresses that "No law prevents my daughter from becoming an engineer", yet "a thousand small signals", from "the gendered toys" to "the well-meaning teacher suggesting nursing", combine into "an invisible architecture of limitation". This suggests a barrier that works "through expectation rather than prohibition", one that a girl may come to accept without ever noticing it. Martineau\'s barriers are open enough to be argued against directly. She has to insist that no girl be "shut out, because she is a woman, from any study", which implies that such shutting out was openly argued for; and she notes that the ways a woman might earn a living "are so few; and of those few, so many engrossed by men". Where the daughter\'s barrier limits what she hopes for, the Victorian woman\'s limits whether she can support herself at all: "A multitude of women have to maintain themselves", and Martineau\'s case is that every woman "ought to be fitted to take care of herself". Their places in time differ too. The daughter is surrounded by rights already won, as women "can vote, own property, pursue careers, and run for office", so her barrier survives inside legal equality, which is why the writer calls it "the comfortable illusion of equality". Martineau\'s women are only beginning to leave a world in which "every woman was destined to be married" and her only occupation was "keeping her husband\'s house". For them the barrier is already giving way, under the pressure of need: "The footing of women is changed, and it will change more". The daughter\'s barrier, by contrast, is "all the more powerful for being unacknowledged", which suggests that it may be harder to remove because it is harder to see.',
             },
-            markScheme: [
-              'Must reference both sources',
-              'Identifies clear similarities and differences in barriers',
-              'Uses evidence from both texts',
-              'Synthesises rather than alternating',
-              'Infers beyond surface-level details',
-              'Top band: perceptive synthesis with judicious references',
-            ],
+            markScheme: {
+              'What to reward': [
+                'Inferences about how the barriers facing the daughter in Source A differ from those facing the women in Source B, each backed by details from both sources.',
+                'Hidden against open: "No law prevents my daughter", "an invisible architecture of limitation"; against a girl "shut out, because she is a woman, from any study".',
+                'Expectation against livelihood: a teacher "suggesting nursing" to a six-year-old; women who "have to maintain themselves" when the occupations open to them "are so few".',
+                'Their place in time: rights already won in Source A, so the barrier survives inside legal equality; in Source B a world where "every woman was destined to be married", now changing ("it will change more").',
+                "Points about similarities, or about the writers' language, are not what this question rewards.",
+              ],
+              'Levels (8 marks)': Q2_LEVELS,
+            },
           },
           {
             id: 'aqa-p2-04-q3',
             questionNumber: 3,
             questionText:
-              'You now need to refer only to Source A.\n\nHow does the writer use language to challenge the idea that gender equality has been achieved?',
+              'This question is about Source A only.\n\nLook again at the second and third paragraphs, from "We like to congratulate ourselves" to the end of the source.\n\nHow does the writer use language in these lines to challenge the idea that gender equality has been achieved?\n\nSupport your points with short quotations from these lines, using subject terms where they help.',
             marks: 12,
-            suggestedTimeMinutes: 15,
+            suggestedTimeMinutes: 12,
             questionType: 'analysis',
             extract: `Source A:\n${EXAM_04_SOURCE_A}`,
             extractSource: EXAM_04_SOURCE_A_REF,
             modelAnswers: {
               'Grade 4-5':
-                'The writer uses the personal story of a daughter to show that inequality starts very young. The phrase "smiled indulgently" suggests the teacher didn\'t take the daughter seriously. The list of achievements - "Women can vote, own property, pursue careers" - is then undercut by the statistics showing inequality still exists. The phrase "comfortable illusion of equality" is powerful because "illusion" means it isn\'t real. The metaphor "invisible architecture of limitation" suggests barriers that are built deliberately but cannot be seen. The listing of "gendered toys, the classroom assumptions, the media representations" shows how many different things limit women.',
+                'The writer starts by listing what women have won: "Women can vote, own property, pursue careers, and run for office". This makes it sound as if equality has been achieved, but then the short sentence "But equality in law is not equality in practice" shows that it has not. The statistics, such as the pay gap of "14.3 per cent" and women holding "only eight per cent" of the top jobs in Britain\'s biggest companies, give evidence that women are still held back, and the word "only" makes the figure sound unfair. The phrase "comfortable illusion of equality" is powerful because "illusion" means it is not real, and "comfortable" suggests that people prefer not to look closely. The metaphor "invisible architecture of limitation" suggests barriers that are built like a building but cannot be seen. The list of "the gendered toys, the classroom assumptions, the media representations" shows how many different things hold girls back.',
               'Grade 6-7':
-                'The writer constructs the argument through a rhetorical architecture of revelation - systematically stripping away the surface of equality to expose the structures beneath. The opening anecdote operates at multiple levels: "smiled indulgently" encodes the teacher\'s condescension in a single adverb - "indulgently" implies tolerance of a childish whim, reducing engineering to a phase to be grown out of. The tricolon of adjectives describing the redirection - "gentle, well-meaning, devastating" - performs a rhetorical ambush: the first two adjectives establish benign intent before the third detonates their complacency. The second paragraph uses the strategy of concession and demolition: "Women can vote, own property, pursue careers, and run for office" builds a catalogue of progress before "But equality in law is not equality in practice" introduces the devastating distinction. The statistics that follow - "14.3 per cent", "eight per cent", "Two women a week" - form a descending scale from financial to existential, the climax of "killed by a current or former partner" transforming the argument from economics to survival. The extended metaphor of "invisible architecture" in the final paragraph is the article\'s conceptual centrepiece: "architecture" implies deliberate design, not accidental inequality, while "invisible" explains why it persists unchallenged. The listing of contributing factors - "the gendered toys, the classroom assumptions, the media representations" - uses the definite article before each noun to present these as known, catalogued phenomena that society has simply chosen not to address.',
+                'The writer challenges the idea of equality by first granting it and then taking it apart. The paragraph opens with irony, "We like to congratulate ourselves on how far we have come", where the inclusive "We" and the verb "congratulate" suggest a society pleased with itself, perhaps too soon. The list "Women can vote, own property, pursue careers, and run for office" builds a catalogue of progress, and the writer even calls these "genuine achievements, won through generations of struggle", a concession that makes what follows harder to dismiss. Then the short sentence "But equality in law is not equality in practice" turns the argument on a single distinction, its repeated "equality" setting the two kinds side by side. The statistics that follow move from pay ("14.3 per cent") to power ("only eight per cent of FTSE 100 CEO positions") to women\'s safety, and the sentences stay short and plain, so that the facts seem to speak for themselves. The next two sentences repeat the frame "a society that has achieved", so that the only change, "the comfortable illusion of", carries the whole charge. In the final paragraph the adjective "insidious" suggests a harm that spreads unseen, and the contrast "through expectation rather than prohibition" explains why laws have not ended it. The list of "small signals", "the gendered toys, the classroom assumptions, the media representations", repeats the definite article, presenting each as familiar, and the metaphor "invisible architecture of limitation" is the passage\'s centrepiece: "architecture" implies design and permanence, while "invisible" explains why it is so rarely challenged.',
               'Grade 8-9':
-                'The writer\'s linguistic strategy is one of controlled demolition: each paragraph removes a layer of the reader\'s assumption that equality has been achieved, until the structural foundations of inequality are exposed. The opening anecdote\'s power lies in its specificity and its misdirection. "Smiled indulgently" performs an entire ideology in two words: the adverb "indulgently" connotes parental tolerance of fantasy, encoding the assumption that a girl wanting to be an engineer is cute rather than serious. The three-part adjectival phrase "gentle, well-meaning, devastating" is syntactically calibrated - the comma before "devastating" creates a pause that mimics the moment of realisation, the rhythmic disruption forcing the reader to reassess the apparently innocuous scene. The second paragraph\'s opening - "We like to congratulate ourselves" - uses the inclusive first person to implicate the reader in collective self-delusion, before the verb "congratulate" is revealed as premature through the conjunction "But". The statistical sequence enacts a descent from economic inequality (14.3%) through professional exclusion (8%) to gendered violence ("Two women a week are killed"), the diminishing numbers paradoxically increasing the horror as the metric shifts from percentages to bodies. The final paragraph\'s extended metaphor of "invisible architecture of limitation" is the essay\'s conceptual keystone. "Architecture" implies intentionality - these barriers are designed, not accidental - while "invisible" explains their durability: what cannot be seen cannot be challenged. The concluding paradox - "all the more powerful for being unacknowledged" - identifies the mechanism by which inequality perpetuates itself: it is sustained not by active oppression but by the collective refusal to see the structures that produce it.',
+                'The writer\'s strategy is a controlled demolition: each sentence removes a layer of the reader\'s belief that equality has been achieved, until the structure beneath is exposed. The opening, "We like to congratulate ourselves on how far we have come", uses the inclusive first person to implicate the reader in a shared self-satisfaction, and "like to" hints that the congratulation is a habit rather than a judgement. The catalogue "Women can vote, own property, pursue careers, and run for office" is granted generously, even honoured as "genuine achievements, won through generations of struggle", so that the turn, when it comes, cannot be dismissed as ingratitude. That turn, "But equality in law is not equality in practice", is built on a repeated noun: the sentence holds two equalities side by side and opens the gap between them. The statistics then descend in a deliberate order, from pay ("14.3 per cent") through power ("only eight per cent") to safety, and the plain declaratives offer no comment, as though the numbers need none. The pair of sentences that follows repeats "a society that has achieved", altering only its object, so that "the comfortable illusion of equality" arrives as a correction of the reader\'s own assumption; "comfortable" names the motive for the illusion, since believing in equality spares a society the effort of achieving it. The final paragraph names the mechanism. The adjective "insidious" suggests a harm that spreads unseen, and the antithesis "through expectation rather than prohibition" explains why the law has not reached it, a point the next sentence proves with the writer\'s own daughter: "No law prevents my daughter from becoming an engineer." The list set between dashes, "the gendered toys, the classroom assumptions, the media representations", moves from home to school to the wider culture before arriving at "the well-meaning teacher suggesting nursing", a small, ordinary figure who becomes one signal among "a thousand". The metaphor "an invisible architecture of limitation" is the passage\'s keystone: "architecture" implies design and endurance, while "invisible" explains why it survives. The closing paradox, "all the more powerful for being unacknowledged", identifies how inequality lasts: not through open oppression, but through a society\'s refusal to see the structures that produce it.',
             },
-            markScheme: [
-              'Analyses the effects of specific language choices in detail',
-              'Selects and embeds judicious quotations',
-              'Uses subject terminology accurately',
-              "Considers how language challenges the reader's assumptions",
-              'Explores multiple layers of meaning',
-              'Top band: perceptive, detailed, conceptualised analysis',
-            ],
+            markScheme: {
+              'What to reward': [
+                'Analysis of language from the second and third paragraphs only, focused on how it challenges the idea that equality has been achieved.',
+                'The irony of "We like to congratulate ourselves", and the rights granted as "genuine achievements" before the turn "But equality in law is not equality in practice".',
+                'The statistics, their order (pay, power, safety) and their plain presentation; the repeated frame "a society that has achieved" and the phrase "the comfortable illusion of equality".',
+                'The adjective "insidious", the contrast "through expectation rather than prohibition", and the list of "small signals".',
+                'The metaphor "invisible architecture of limitation" and the paradox "all the more powerful for being unacknowledged".',
+                'Subject terms used accurately where they help: irony, inclusive pronoun, concession, repetition, statistics, metaphor, paradox.',
+              ],
+              'Levels (12 marks)': Q3_LEVELS,
+            },
           },
           {
             id: 'aqa-p2-04-q4',
             questionNumber: 4,
             questionText:
-              'For this question, you need to refer to the whole of Source A, together with the whole of Source B.\n\nCompare how the two writers convey their perspectives on the position of women in society.\n\nIn your answer, you could:\n- compare their different perspectives\n- compare the methods they use to convey their perspectives\n- support your response with references to both texts.',
+              "This question is about the whole of Source A and the whole of Source B.\n\nBoth sources are about the position of women in society. Compare the two writers' feelings and perspectives on it, and the methods each one uses to convey them.\n\nAim to:\n- set the two writers' feelings and views side by side, point by point\n- explain how each writer's language, tone and structure convey those views\n- back up your points with short quotations from both sources.",
             marks: 16,
             suggestedTimeMinutes: 20,
             questionType: 'comparison',
@@ -809,18 +975,20 @@ export const aqaP2A: MockExamPaper[] = [
             extractSource: `Source A: ${EXAM_04_SOURCE_A_REF} | Source B: ${EXAM_04_SOURCE_B_REF}`,
             modelAnswers: {
               'Grade 4-5':
-                'Both writers argue that women are held back, and both want girls to be able to go as far as they can. The writer of Source A uses a personal story about a six-year-old daughter who wanted to be an engineer, and statistics such as "eight per cent of FTSE 100 CEO positions". Martineau does not use statistics or a personal story. She argues step by step, explaining how women\'s lives have changed: in the past a woman was supported by "her father, brother or husband", but now many "have to maintain themselves". Both writers say girls should not be limited: the writer of Source A says "No law prevents my daughter from becoming an engineer", and Martineau says a girl should go "as far into the depths of science" as her brother. Martineau repeats words for effect: "in all justice, in all honour, in all humanity, in all prudence". The writer of Source A is angry that equality is only an "illusion", while Martineau is calmer, and even says that an educated woman will be "the more womanly", which shows she is trying to reassure the readers of her own time.',
+                'Both writers argue that women are held back, and both want girls to be able to go as far as they can. The writer of Source A uses a personal story about a six-year-old daughter who wanted to be an engineer, and statistics such as "eight per cent of FTSE 100 CEO positions". Martineau does not use statistics or a personal story. She argues step by step, explaining how women\'s lives have changed: in the past a woman was supported by "her father, brother or husband", but now many "have to maintain themselves". Both writers say girls should not be limited: the writer of Source A says "No law prevents my daughter from becoming an engineer", and Martineau says a girl should "go on, as her brother does", as far into science "as her powers and opportunities permit". Martineau repeats words for effect: "in all justice, in all honour, in all humanity, in all prudence". The writer of Source A is angry that equality is only an "illusion", while Martineau is calmer, and even says that an educated woman will be "the more womanly", which shows she is trying to reassure the readers of her own time.',
               'Grade 6-7':
-                'Both writers believe that women\'s position is shaped by society rather than by nature, but they write from opposite ends of a long change, and their methods reflect it. The writer of Source A must persuade readers who think equality has been won, so the article first grants the victories ("Women can vote, own property, pursue careers, and run for office") before turning with "But equality in law is not equality in practice." Martineau must persuade readers who doubt that women need learning at all, so she begins by dismissing that doubt as something no one "should undertake to say in our day", and then argues from changed facts: a woman was once "maintained by her father, brother or husband", but "it is not so now". Her repetition of "It is not so now" and "This is not the place" gives the argument the feel of a patient but firm lesson. Both writers make their case through contrast. The writer of Source A sets the ambition of a six-year-old against a teacher\'s "gentle, well-meaning, devastating redirection"; Martineau sets the girl beside "her brother", insisting that she should go "as far into the depths of science, and up to the heights of philosophy" as he does. Martineau\'s four-part repetition, "in all justice, in all honour, in all humanity, in all prudence", appeals to morality and to good sense at once, while the writer of Source A relies on statistics and on the metaphor of an "invisible architecture of limitation". The clearest difference lies in how far each writer questions the ideas of the day. The writer of Source A ends on a warning about a barrier "all the more powerful for being unacknowledged". Near her close, Martineau reassures her readers that an educated woman will be "the more reasonable, disciplined and docile" and "the more womanly": she argues for change within her era\'s idea of what a woman should be, where the writer of Source A questions the ideas themselves.',
+                'Both writers believe that women\'s position is shaped by society rather than by nature, but they write from opposite ends of a long change, and their methods reflect it. The writer of Source A must persuade readers who think equality has been won, so the article first grants the victories ("Women can vote, own property, pursue careers, and run for office") before turning with "But equality in law is not equality in practice." Martineau must persuade readers who doubt that women need learning at all, so she begins by dismissing that doubt as something no one "should undertake to say in our day", and then argues from changed facts: a woman was once "maintained by her father, brother or husband", but "it is not so now". Her repetition of "It is not so now" and "This is not the place" gives the argument the feel of a patient but firm lesson. Both writers make their case through contrast. The writer of Source A sets the ambition of a six-year-old against a teacher\'s "gentle, well-meaning, devastating redirection"; Martineau sets the girl beside "her brother", insisting that she should "go on, as her brother does", as far "into the depths of science, and up to the heights of philosophy as her powers and opportunities permit". Martineau\'s four-part repetition, "in all justice, in all honour, in all humanity, in all prudence", appeals to morality and to good sense at once, while the writer of Source A relies on statistics and on the metaphor of an "invisible architecture of limitation". The clearest difference lies in how far each writer questions the ideas of the day. The writer of Source A ends on a warning about a barrier "all the more powerful for being unacknowledged". Near her close, Martineau reassures her readers that an educated woman will be "the more reasonable, disciplined and docile" and "the more womanly": she argues for change within her era\'s idea of what a woman should be, where the writer of Source A questions the ideas themselves.',
             },
-            markScheme: [
-              'Compares perspectives from both sources throughout',
-              'Analyses methods used by both writers',
-              'Uses well-selected evidence from both texts',
-              'Shows understanding of how context influences method and argument',
-              'Sustains a comparative structure',
-              'Top band: perceptive, detailed comparison with sustained critical voice',
-            ],
+            markScheme: {
+              'What to reward': [
+                "A comparison of feelings and perspectives: both writers see women's position as shaped by society rather than by nature; the writer of Source A is angry that legal equality hides real inequality, while Martineau argues calmly that changed times make girls' education a necessity.",
+                'Methods compared: Source A\'s anecdote, statistics and the metaphor "invisible architecture of limitation"; Martineau\'s step-by-step argument from changed facts ("It is not so now"), her four-part repetition "in all justice, in all honour, in all humanity, in all prudence", and the comparison of a girl with "her brother".',
+                'How far each questions the ideas of her day: Source A questions the expectations themselves; Martineau reassures her readers that an educated woman will be "the more womanly".',
+                'Perspectives shaped by their times: a modern parent facing hidden barriers; a writer in 1849, when many women "have to maintain themselves" but few occupations were open to them.',
+                'Comparison kept up across both whole sources, rather than one source and then the other.',
+              ],
+              'Levels (16 marks)': Q4_LEVELS,
+            },
           },
         ],
       },
@@ -828,7 +996,7 @@ export const aqaP2A: MockExamPaper[] = [
         id: 'aqa-p2-04-writing',
         title: 'Section B: Writing',
         description:
-          'You are advised to spend about 45 minutes on this section. Write in full sentences. You are reminded of the need to plan your answer. You should leave enough time to check your work at the end.',
+          'Spend about 45 minutes on this section: about 5 minutes planning, 35 writing and 5 checking. Write in full sentences, and leave time at the end to check your spelling and punctuation.',
         totalMarks: 40,
         suggestedTimeMinutes: 45,
         questions: [
@@ -836,26 +1004,27 @@ export const aqaP2A: MockExamPaper[] = [
             id: 'aqa-p2-04-q5',
             questionNumber: 5,
             questionText:
-              '"Gender equality is not just a women\'s issue - it is a human issue, and it requires action from everyone."\n\nWrite an essay in which you argue your point of view on this statement.\n\n(24 marks for content and organisation / 16 marks for technical accuracy)',
+              '"Gender equality is not just a women\'s issue. It is a human issue, and it requires action from everyone."\n\nYour school is publishing a collection of students\' essays on the theme of fairness, to be read by students, parents and teachers. Write your essay for the collection, giving your own view of this statement and the reasons for it.\n\n[40 marks: 24 for content and organisation, 16 for technical accuracy]',
             marks: 40,
             suggestedTimeMinutes: 45,
             questionType: 'transactional-writing',
             modelAnswers: {
               'Grade 4-5':
-                'A clear essay that: addresses the statement directly; uses some persuasive devices and examples; has an introduction, developed paragraphs, and a conclusion; maintains a formal register appropriate to an essay; demonstrates generally accurate spelling and punctuation.',
+                'A clear essay that: addresses the statement directly; uses some persuasive devices and examples; has an introduction, developed paragraphs, and a conclusion; keeps a register suited to an essay that students, parents and teachers will read; demonstrates generally accurate spelling and punctuation.',
               'Grade 6-7':
                 'A well-structured essay that: develops a thoughtful argument engaging with the complexity of the statement; uses a range of evidence and examples; employs counter-argument effectively; maintains a consistent academic register; demonstrates strong technical accuracy with ambitious vocabulary and varied syntax.',
-              'Grade 8-9':
-                'A sophisticated essay that: constructs a nuanced, original argument; demonstrates intellectual rigour and independence of thought; uses precisely selected evidence and examples; creates a distinctive, authoritative voice; deploys varied rhetorical strategies with control; shows faultless technical accuracy throughout.',
+              'Grade 8-9': `Fairness Belongs to Everyone\n\nWhen people hear the words "gender equality", many picture a debate that belongs to women: women asking for equal pay, for a fair share of senior jobs, for the right to be taken seriously. Those arguments matter, and they are far from won. But I want to argue that the statement is right to call this a human issue. Unfairness between the sexes harms everyone it touches, and it will end only when everyone helps to end it.\n\nStart with the people this debate usually leaves out: boys and men. From an early age, many boys learn that some feelings are not allowed. They are told to toughen up, to stop crying, to laugh things off. A boy who wants to study dance, or who hopes one day to stay at home and look after his children, may find his ambition treated as a joke. These are the same narrow expectations that tell a girl engineering is not for her, simply pointed in a different direction. If we challenge only half of them, the other half stays standing.\n\nHistory shows that progress has never been the work of one group alone. A little over a hundred years ago, no woman in Britain could vote for a Member of Parliament. When the law changed in 1918, it was passed by a Parliament made up entirely of men, enough of whom had been persuaded that the old rule was unjust. The women who campaigned made that change possible, but they needed others to act as well. As long ago as 1849, Harriet Martineau insisted that every girl's mind should be developed "as carefully as boys'". Her argument began to win only when enough people, men among them, decided that she was right.\n\nSome readers may worry that talking about boys distracts attention from the disadvantages that women and girls still face. I understand that concern, and I share it. It would be wrong to pretend that boys and girls meet exactly the same obstacles, or that every problem is equally serious. But fairness is not a cake, where a slice given to one person leaves less for someone else. A school that questions lazy assumptions about boys will question lazy assumptions about girls too, because the habit of questioning does not choose its targets.\n\nSo what does action from everyone look like? It need not be dramatic. It might be a father who does his share of the cooking and the school run without being asked. It might be a student who notices that the girls in a group project always end up taking the notes, and suggests swapping roles. It might be a teacher who thinks twice before asking for "strong boys" to carry the chairs. Each of these is small, but expectations are built from small things, and small things can take them apart.\n\nFairness is not a gift that one half of humanity hands to the other. It is a way of living together that benefits all of us: daughters and sons, mothers and fathers, students and teachers. That is why it requires action from everyone, including you, and including me.`,
             },
-            markScheme: [
-              'AO5 Content & Organisation (24 marks): Compelling communication matched to the essay form',
-              'AO5: Coherent, sustained argument with effective structural choices',
-              'AO6 Technical Accuracy (16 marks): Accurate sentence demarcation',
-              'AO6: Range of punctuation used accurately for effect',
-              'AO6: Accurate spelling of ambitious vocabulary',
-              'AO6: Varied sentence forms for purpose and effect',
-            ],
+            markScheme: {
+              'What to reward': [
+                'A clear view of the statement, argued consistently: the writer may agree, disagree or argue for a position in between.',
+                'The conventions of an essay for a school collection: an introduction that sets out the argument, developed paragraphs, a measured register that suits students, parents and teachers, and a conclusion that draws the argument together.',
+                'Evidence and examples chosen for a purpose. Ideas from the sources may be used, though they are not required.',
+                'An opposing view answered rather than ignored.',
+              ],
+              'Content and organisation (AO5, 24 marks)': Q5_AO5_LEVELS,
+              'Technical accuracy (AO6, 16 marks)': Q5_AO6_LEVELS,
+            },
           },
         ],
       },
@@ -878,7 +1047,7 @@ export const aqaP2A: MockExamPaper[] = [
       {
         id: 'aqa-p2-05-reading',
         title: 'Section A: Reading',
-        description: `Read Source A and Source B carefully. Then answer all the questions in this section.\n\nSource A: ${EXAM_05_SOURCE_A_REF}\nSource B: ${EXAM_05_SOURCE_B_REF}`,
+        description: `Spend about 15 minutes reading Source A, Source B and the questions. Then answer all four questions in this section, allowing about 45 minutes for them.\n\nSource A: ${EXAM_05_SOURCE_A_REF}\nSource B: ${EXAM_05_SOURCE_B_REF}`,
         totalMarks: 40,
         suggestedTimeMinutes: 60,
         questions: [
@@ -886,7 +1055,7 @@ export const aqaP2A: MockExamPaper[] = [
             id: 'aqa-p2-05-q1',
             questionNumber: 1,
             questionText:
-              'Read again Source A, the first paragraph.\n\nChoose four statements below which are TRUE.\n\nA) A shopping centre is being built where a garden was.\nB) The diggers arrived on a Tuesday.\nC) Margaret Chen is seventy-eight years old.\nD) Margaret has tended a plot for thirty-one years.\nE) The first daffodils of spring had appeared.\nF) Margaret stood at the fence.\nG) The decision was made by local residents.\nH) Petitions persuaded the developers to change their plans.',
+              'Look again at the first paragraph of Source A, from "They are building a shopping centre" to "altered it".\n\nWhich four of the statements below are true? Write down their letters, and choose no more than four.\n\nA) The diggers arrived on a Tuesday.\nB) A shopping centre is going up on the site of a community garden.\nC) Margaret Chen is seventy-eight.\nD) The first daffodils of spring had appeared.\nE) The decision was made by local residents.\nF) Margaret has looked after a plot there for over thirty years.\nG) Petitions persuaded the developers to change their plans.\nH) Margaret stood at the fence without speaking.',
             marks: 4,
             suggestedTimeMinutes: 5,
             questionType: 'multiple-choice',
@@ -894,73 +1063,83 @@ export const aqaP2A: MockExamPaper[] = [
             extractSource: `Source A: ${EXAM_05_SOURCE_A_REF} | Source B: ${EXAM_05_SOURCE_B_REF}`,
             modelAnswers: {
               'Grade 4-5':
-                'A, C, D, F - A: "They are building a shopping centre where the community garden used to be." C: "who is seventy-eight". D: "has tended a plot there for thirty-one years". F: "stood at the fence". B is false (Monday). E is false (crocuses, not daffodils). G is false (the decision was made "in a boardroom"). H is false ("no amount of petitions or protests had altered it").',
+                'B, C, F, H. B: "They are building a shopping centre where the community garden used to be." C: Margaret Chen "is seventy-eight". F: she "has tended a plot there for thirty-one years". H: she "stood at the fence with her hands in her pockets and said nothing". A is false: the diggers came "on a Monday morning". D is false: the flowers were "the first crocuses of spring", not daffodils. E is false: the decision was made "in a boardroom". G is false: "no amount of petitions or protests had altered it".',
               'Grade 6-7':
-                'A, C, D, F. B is false: the diggers arrived "on a Monday morning". E is false: the flowers were "the first crocuses of spring", not daffodils. G is contradicted: the decision was made "in a boardroom, by people who had never set foot in the garden". H is contradicted: "no amount of petitions or protests had altered it."',
+                'B, C, F, H. A is false: the diggers arrived "on a Monday morning in March". D is false: the soil had held "the first crocuses of spring", not daffodils. E is contradicted: the decision was made "in a boardroom, by people who had never set foot in the garden". G is contradicted: "no amount of petitions or protests had altered it."',
             },
             markScheme: [
-              '1 mark for each correct answer',
-              'Maximum 4 marks',
-              'No marks deducted for incorrect selections beyond four',
+              'True: B, C, F, H. One mark for each, up to 4.',
+              'B: "They are building a shopping centre where the community garden used to be."',
+              'C: Margaret Chen "is seventy-eight".',
+              'F: she "has tended a plot there for thirty-one years".',
+              'H: she "stood at the fence" and "said nothing".',
+              'Not true: A (it was "a Monday morning"), D (it was "the first crocuses of spring"), E (the decision was made "in a boardroom"), G ("no amount of petitions or protests had altered it").',
+              'Each statement is judged against the first paragraph alone. The paper asks for no more than four.',
             ],
           },
           {
             id: 'aqa-p2-05-q2',
             questionNumber: 2,
             questionText:
-              'You need to refer to Source A and Source B for this question.\n\nUse details from both sources. Write a summary of the similarities and differences in how the writers present the impact of development on communities.',
+              'This question is about both sources.\n\nWhat can you infer about the differences between the people who lose their garden in Source A and the people crowded into the dark outhouse in Source B?\n\nBack up what you infer with details from both sources.',
             marks: 8,
-            suggestedTimeMinutes: 10,
+            suggestedTimeMinutes: 8,
             questionType: 'summary',
             extract: `Source A:\n${EXAM_05_SOURCE_A}\n\nSource B:\n${EXAM_05_SOURCE_B}`,
             extractSource: `Source A: ${EXAM_05_SOURCE_A_REF} | Source B: ${EXAM_05_SOURCE_B_REF}`,
             modelAnswers: {
               'Grade 4-5':
-                'Both writers show that when new things are built, the people who were already there suffer. In Source A a community garden is replaced by a shopping centre, and Margaret Chen, who had a plot there "for thirty-one years", loses it; her "mental health has measurably deteriorated". In Source B, Dickens says that when new streets such as New Oxford Street are built, the poor people who are cleared out go and crowd into other places, and nobody asks where. He describes one of these places, a dark outhouse in St Giles packed with families: "Ten, twenty, thirty - who can count them!" Both writers show that the people who make the changes do not care about those affected. In Source A the decision was made by "people who had never set foot in the garden", and in Source B new streets are made "never heeding, never asking" what happens to the poor. A difference is that Source A is about losing a place that made people happy, while Source B is about people being pushed into terrible, overcrowded conditions.',
+                'The people in the two sources lose very different things. In Source A, Margaret Chen loses a plot in a community garden that she had looked after "for thirty-one years", and the writer says such places hold "the memories, the relationships, the community". This suggests that what is taken from her is part of her life and her friendships, and her "mental health has measurably deteriorated" since. In Source B the people have lost their homes altogether: Dickens says that when new streets are built, the poor are cleared out and "crowd" somewhere else. He shows "Men, women, children, for the most part naked, heaped upon the floor", which suggests that they have no beds and hardly any clothes, and whole families share one room, like the widow "with six children". Their poverty is different too. In Source A the new jobs will be "mostly minimum-wage, mostly zero-hours", so people there will be badly paid but in work. In Source B people get money by "selling Lucifers", which are matches, or "a-cadging in the streets" late at night, which suggests they have no proper work at all. Margaret is described on her own, standing in silence at the fence, while the people in Source B are so crowded together that the narrator asks "who can count them!"',
               'Grade 6-7':
-                'Both writers present development as something done to a community by people who never see its cost, but the communities and the costs are very different. The writer of Source A describes a loss: a community garden, a place of "memories" and "relationships", replaced by a shopping centre, with the damage traced through one woman, Margaret Chen, who "stood at the fence with her hands in her pockets and said nothing". Dickens describes where the losers of development end up. His final paragraph makes the link explicit: "we make our New Oxford Streets, and our other new streets, never heeding, never asking, where the wretches whom we clear out, crowd." The scene before it shows the answer, a dark outhouse in St Giles where "Men, women, children" lie "heaped upon the floor", family after family, among them a widow "with six children" and a man with his wife and "eight poor babes". Both writers accuse those responsible of distance. In Source A the decision was made "in a boardroom, by people who had never set foot in the garden"; Dickens widens the blame to "we", the nation and its lawmakers, and mocks "our electioneering ducking to little vestrymen and our gentlemanly handling of Red Tape". The difference is in what is being destroyed. For the writer of Source A, development destroys a community\'s shared life and well-being; for Dickens it destroys homes and packs the poor into overcrowding and disease, "the plagues of Egypt ... so near our homes", a danger he suggests reaches the rest of society too.',
+                'The people in Source A lose a shared place and the life it held; the people in Source B have already lost their homes and live at the edge of survival. Margaret Chen, "seventy-eight", had tended her plot "for thirty-one years", and the writer says that land like hers sustained "the memories, the relationships, the community". What is taken from her is belonging, and the damage is inward: she "said nothing", and her "mental health has measurably deteriorated". Dickens\'s lodgers have nothing left to lose but floor space. They are the "wretches whom we clear out" to make "our New Oxford Streets", and they have crowded into a single outhouse, "Men, women, children, for the most part naked, heaped upon the floor". The families listed, a widow "with six children" and a man with his wife and "eight poor babes", suggest that whole households have been pushed out together, and one family\'s three youngest are "squeezed between the open door and the wall". The ways they live differ too. Source A\'s people are offered jobs, "mostly minimum-wage, mostly zero-hours", so they are poor but employed; Dickens\'s lodgers get by "selling Lucifers" (matches) and "a-cadging in the streets", still out after eleven at night, which suggests they have no work at all. How far they are seen differs as well. Margaret is a named woman whose suffering, the writer complains, "does not appear on any spreadsheet"; the lodgers are a crowd too large to count ("who can count them!"), mostly unnamed, cleared away by a nation "never heeding, never asking" where they go. The garden\'s people are overlooked by distant decision-makers; the outhouse\'s people are not even counted as a cost.',
             },
-            markScheme: [
-              'Must reference both sources',
-              'Identifies clear similarities and differences',
-              'Uses evidence from both texts',
-              'Synthesises rather than alternating between sources',
-              'Infers beyond surface-level detail',
-              'Top band: perceptive synthesis with judicious textual references',
-            ],
+            markScheme: {
+              'What to reward': [
+                'Inferences about how the people who lose the garden in Source A differ from the people in the outhouse in Source B, each backed by details from both sources.',
+                'What is lost: a shared place of "memories" and "relationships", tended "for thirty-one years"; against homes, with whole families "heaped upon the floor" of one outhouse.',
+                'The harm: inward and quiet in Source A (Margaret "said nothing"; her "mental health has measurably deteriorated"); overcrowding and destitution in Source B ("for the most part naked").',
+                'Work: badly paid jobs, "mostly minimum-wage, mostly zero-hours"; against "selling Lucifers" (matches) and "a-cadging in the streets" late at night.',
+                'Being seen: a named woman left off "any spreadsheet"; against a crowd cleared away "never heeding, never asking".',
+                "Points about similarities, or about the writers' language, are not what this question rewards.",
+              ],
+              'Levels (8 marks)': Q2_LEVELS,
+            },
           },
           {
             id: 'aqa-p2-05-q3',
             questionNumber: 3,
             questionText:
-              'You now need to refer only to Source A.\n\nHow does the writer use language to criticise modern urban development?',
+              'This question is about Source A only.\n\nLook again at the second and third paragraphs, from "This is how modern urban development works" to the end of the source.\n\nHow does the writer use language in these lines to criticise modern urban development?\n\nSupport your points with short quotations from these lines, using subject terms where they help.',
             marks: 12,
-            suggestedTimeMinutes: 15,
+            suggestedTimeMinutes: 12,
             questionType: 'analysis',
             extract: `Source A:\n${EXAM_05_SOURCE_A}`,
             extractSource: EXAM_05_SOURCE_A_REF,
             modelAnswers: {
               'Grade 4-5':
-                'The writer starts with a specific, personal example to show the impact of development. The image of diggers "churning the soil" that had held "the first crocuses of spring" contrasts destruction with nature and new life. Margaret Chen, who "stood at the fence" with "her hands in her pockets", creates a picture of helplessness. The phrase "made in a boardroom, by people who had never set foot in the garden" criticises how decisions are made by distant people. The sarcastic listing of "minimum-wage, mostly zero-hours" jobs shows the writer doesn\'t think the benefits are real. The quote from Oscar Wilde at the end - "the price of everything and the value of nothing" - sums up the argument powerfully.',
+                'The writer opens with "This is how modern urban development works", which makes the process sound like a cold routine. The passive verbs in "A piece of land is identified, its commercial value calculated" hide who is doing it, so the developers seem faceless. The contrast between "commercial value" and "human value" shows that money is put before people, and the phrase "dismissed as sentimental" shows how people\'s feelings are brushed aside. The words "we are told" suggest that the writer does not believe the promises. The repetition of "mostly" in "mostly minimum-wage, mostly zero-hours" is sarcastic and shows that the jobs are not really good ones. The short sentence "These are the metrics that matter, apparently." ends on "apparently", which mocks the developers. The quotation from Oscar Wilde, "the price of everything and the value of nothing", sums up the argument powerfully, and the list "identikit retail parks, luxury apartment blocks, and artisan coffee shops" suggests that every town is starting to look the same.',
               'Grade 6-7':
-                'The writer constructs this criticism through a sustained opposition between the language of human value and the language of commercial transaction. The opening paragraph establishes this through concrete imagery: "caterpillar tracks churning the soil that, just days earlier, had held the first crocuses of spring" juxtaposes mechanical destruction with organic life, the specificity of "crocuses" lending the loss a seasonal poignancy - this is not merely land being destroyed but a cycle of renewal being interrupted. Margaret Chen is introduced with precise biographical detail - "seventy-eight", "thirty-one years" - numbers that quantify human investment in the language of measurement, challenging the development\'s own quantitative logic on its own terms. The phrase "said nothing. There was nothing to say" uses the repetition of "nothing" to perform the silencing of community voice, while the passive construction "the decision had been made in a boardroom" strips agency from both Margaret and the reader. The second paragraph deploys sarcasm through accumulation: "mostly minimum-wage, mostly zero-hours, mostly performed by people who would rather have kept their allotments" - the anaphoric "mostly" reduces the promised benefits to grudging qualifications. The clause "does not appear on any spreadsheet" is the paragraph\'s devastating conclusion, its language of bureaucratic exclusion exposing the limits of economic rationality. The Wilde quotation in the final paragraph - "the price of everything and the value of nothing" - functions as an epigram that crystallises the entire argument, while "identikit retail parks, luxury apartment blocks, and artisan coffee shops" uses the tricolon to satirise the monotonous homogeneity that replaces distinctive community.',
+                'The writer builds the criticism through a sustained opposition between the language of human value and the language of commercial transaction. The flat opening, "This is how modern urban development works", presents the process as a routine, and the passive verbs that follow, "is identified", "calculated", "is dismissed", remove the people responsible, so that development seems to happen without anyone choosing it. The parallel of "its commercial value calculated" and "its human value" sets the two kinds of value side by side, and the list of what is lost, "the memories, the relationships, the community it sustained", gives the human side a weight that the dismissive word "sentimental" cannot cancel. The rest of the paragraph turns to sarcasm. The phrase "we are told" distances the writer from the promises, and the repeated "mostly" in "mostly minimum-wage, mostly zero-hours" turns three hundred jobs into a grudging list of qualifications, ending on people "who would rather have kept their allotments". The short sentences beginning "It will" mimic a sales pitch, which the single word "apparently" then punctures. The paragraph closes on "does not appear on any spreadsheet", where the language of bookkeeping exposes what the system cannot count. In the final paragraph the borrowed epigram, "the price of everything and the value of nothing", sums up the argument, and the antithesis "not for the people who live in them but for the money" makes money the city\'s new resident. The closing list, "identikit retail parks, luxury apartment blocks, and artisan coffee shops", mocks a sameness in which even "artisan" has become a brand, and the final clause, "where communities used to be", ends on loss.',
               'Grade 8-9':
-                'The writer\'s linguistic strategy operates through a systematic exposure of the epistemological violence of economic language - the way in which the vocabulary of development renders invisible the human realities it displaces. The opening scene is structured as an elegy: "caterpillar tracks churning the soil that, just days earlier, had held the first crocuses of spring" layers temporal registers - the industrial present ("churning") obliterating the organic past ("had held"), with the pluperfect tense encoding the garden as already lost. The specificity of "crocuses" is crucial: spring flowers connote renewal, and their destruction by machinery transforms the development from construction into a negation of the natural cycle. Margaret Chen\'s silence - "stood at the fence with her hands in her pockets and said nothing" - is the paragraph\'s rhetorical centre. The somatic detail of "hands in her pockets" connotes both resignation and concealment of emotion, while the repetition in "said nothing. There was nothing to say" collapses the distinction between choice and impossibility: silence becomes the only adequate response to a decision that has already been made outside the vocabulary of community. The second paragraph performs a devastating act of rhetorical judo, appropriating the language of economic benefit only to expose its emptiness: "three hundred jobs" is immediately qualified by "minimum-wage, mostly zero-hours" - the anaphoric "mostly" functioning as a slow deflation of each promise. The sentence "The fact that Margaret Chen\'s mental health has measurably deteriorated since losing her garden does not appear on any spreadsheet" uses the language of quantification ("measurably") against the system that relies upon it, exposing a paradox: the harm is measurable but unmeasured, because the spreadsheet decides what counts as data. The concluding Wilde quotation is strategically positioned as an authoritative reformulation of the article\'s central thesis, while the final tricolon - "identikit retail parks, luxury apartment blocks, and artisan coffee shops where communities used to be" - uses the relative clause "where communities used to be" as a temporal haunting, each commercial space carrying the ghost of what it replaced.',
+                'The writer\'s language exposes how the vocabulary of development hides the human realities it displaces. The paragraph opens as a demonstration, "This is how modern urban development works", and the sentence that follows is built like a process: land "is identified", its value "calculated", its human value "dismissed as sentimental". The passive verbs leave no one responsible, and the missing verb in "its commercial value calculated" gives the clause the brisk shorthand of a report. Set between dashes, "the memories, the relationships, the community it sustained" interrupts the process with what it destroys, and the interruption is itself the point: human value has to break into a sentence that has no room for it. The adjective "sentimental", the developers\' word rather than the writer\'s, shows how a language of calculation can make feeling sound like weakness. The writer then adopts the language of economic benefit only to empty it. The promise of "three hundred jobs" is qualified at once by "we are told", and the triple "mostly" deflates each promise in turn, ending on people "who would rather have kept their allotments". The repeated openings "It will generate" and "It will attract" imitate a developer\'s brochure, and the one-word comment "apparently" turns the brochure into satire. The sentence about Margaret Chen uses the language of measurement against the system that relies on it: her mental health "has measurably deteriorated", yet it "does not appear on any spreadsheet". The harm is measurable but unmeasured, because the spreadsheet decides what counts. The final paragraph widens from one garden to "a society", borrowing Wilde\'s epigram, "the price of everything and the value of nothing", as the authority for a judgement the article has already earned. Its antithesis, "not for the people who live in them but for the money", makes money the city\'s real resident, and the closing list, "identikit retail parks, luxury apartment blocks, and artisan coffee shops", ends in the relative clause "where communities used to be", so that each new building carries the ghost of what it replaced.',
             },
-            markScheme: [
-              'Analyses the effects of specific language choices in detail',
-              'Selects judicious quotations and embeds them within analysis',
-              'Uses subject terminology accurately',
-              "Considers how language positions the reader and conveys the writer's attitude",
-              'Explores multiple layers of meaning in words and phrases',
-              'Top band: perceptive, detailed, conceptualised analysis of language',
-            ],
+            markScheme: {
+              'What to reward': [
+                'Analysis of language from the second and third paragraphs only, focused on how it criticises modern urban development.',
+                'The routine of "This is how modern urban development works", and the passive verbs that hide who decides ("is identified", "dismissed as sentimental").',
+                'The contrast of "commercial value" with "human value", and the list "the memories, the relationships, the community it sustained".',
+                'Sarcasm: "we are told", the repeated "mostly", the brochure-like sentences beginning "It will", and the deflating "apparently".',
+                'The bookkeeping language of "does not appear on any spreadsheet", Wilde\'s epigram, the antithesis "not for the people who live in them but for the money", and the closing list that ends "where communities used to be".',
+                'Subject terms used accurately where they help: passive voice, contrast, list, repetition, sarcasm, epigram, antithesis.',
+              ],
+              'Levels (12 marks)': Q3_LEVELS,
+            },
           },
           {
             id: 'aqa-p2-05-q4',
             questionNumber: 4,
             questionText:
-              'For this question, you need to refer to the whole of Source A, together with the whole of Source B.\n\nCompare how the two writers convey their attitudes to urban development and its impact on communities.\n\nIn your answer, you could:\n- compare their different attitudes\n- compare the methods they use to convey their attitudes\n- support your response with references to both texts.',
+              "This question is about the whole of Source A and the whole of Source B.\n\nBoth sources are about new building in a city and what it does to the people already living there. Compare the two writers' feelings and perspectives on it, and the methods each one uses to convey them.\n\nAim to:\n- set the two writers' feelings and views side by side, point by point\n- explain how each writer's language, tone and structure convey those views\n- back up your points with short quotations from both sources.",
             marks: 16,
             suggestedTimeMinutes: 20,
             questionType: 'comparison',
@@ -972,14 +1151,16 @@ export const aqaP2A: MockExamPaper[] = [
               'Grade 6-7':
                 'Both writers condemn development that ignores the people it displaces, but their methods differ as much as their subjects. The writer of Source A builds an argument: a single scene (the diggers "churning the soil"), then an analysis of "how modern urban development works", then a general judgement, borrowed from Wilde, that we know "the price of everything and the value of nothing". Dickens offers almost no argument until the last paragraph. Instead he takes the reader into the scene, in the present tense and the first person plural ("as we open it", "let us look!"), so that we stand in the doorway beside Inspector Field and are "stricken back by the pestilent breath". His exclamations ("Ten, twenty, thirty - who can count them!") and the rapid questions and answers that follow make the crowding felt rather than stated. Only then does he turn to the cause: "Thus, we make our New Oxford Streets". The word "Thus" turns the scene into evidence, and "we" makes the reader part of the cause, much as the writer of Source A implicates "a society that knows the price of everything". Their imagery differs sharply. The writer of Source A uses gentle, natural images, "the first crocuses of spring", to show what is lost. Dickens uses images of death and decay, "maggots in a cheese", "a grave of rags", "spectres", which shock the reader but also strip the lodgers of their humanity, a choice a modern reader may question. Both turn to scorn. The writer of Source A dismisses the "metrics that matter, apparently", the last word heavy with sarcasm; Dickens ends by mocking "our electioneering ducking to little vestrymen and our gentlemanly handling of Red Tape", the "our" again refusing to let his readers off. The difference in their views is one of stakes: the writer of Source A grieves for a lost community space, while Dickens warns that clearing the poor from one street only packs them more tightly into another.',
             },
-            markScheme: [
-              'Compares attitudes from both sources throughout',
-              'Analyses methods used by both writers to convey their views',
-              'Uses well-selected evidence from both texts',
-              'Shows understanding of how context shapes perspective',
-              'Sustains a comparative framework',
-              'Top band: perceptive, detailed comparison with sustained critical engagement',
-            ],
+            markScheme: {
+              'What to reward': [
+                'A comparison of feelings and perspectives: both writers condemn development that ignores the people it displaces; the writer of Source A grieves for a lost community space, while Dickens warns that clearing the poor from one street packs them into another.',
+                'Methods compared: Source A builds an argument from one scene and one woman to a general judgement borrowed from Wilde; Dickens takes the reader into the outhouse in the present tense ("let us look!"), with exclamations, quick questions and answers, and images of death and decay ("a grave of rags").',
+                'Blame: "people who had never set foot in the garden" in Source A; in Source B "we", the nation and its readers, with their "gentlemanly handling of Red Tape".',
+                'Perspectives shaped by their times: a modern writer counting human costs left off "any spreadsheet"; a Victorian journalist describing overcrowding and disease close to his readers\' homes.',
+                'Comparison kept up across both whole sources, rather than one source and then the other.',
+              ],
+              'Levels (16 marks)': Q4_LEVELS,
+            },
           },
         ],
       },
@@ -987,7 +1168,7 @@ export const aqaP2A: MockExamPaper[] = [
         id: 'aqa-p2-05-writing',
         title: 'Section B: Writing',
         description:
-          'You are advised to spend about 45 minutes on this section. Write in full sentences. You are reminded of the need to plan your answer. You should leave enough time to check your work at the end.',
+          'Spend about 45 minutes on this section: about 5 minutes planning, 35 writing and 5 checking. Write in full sentences, and leave time at the end to check your spelling and punctuation.',
         totalMarks: 40,
         suggestedTimeMinutes: 45,
         questions: [
@@ -995,7 +1176,7 @@ export const aqaP2A: MockExamPaper[] = [
             id: 'aqa-p2-05-q5',
             questionNumber: 5,
             questionText:
-              '"New buildings and developments are the sign of a thriving town. Those who resist change are simply standing in the way of progress."\n\nWrite an article for your local newspaper in which you argue your point of view on this statement.\n\n(24 marks for content and organisation / 16 marks for technical accuracy)',
+              '"New buildings and developments are the sign of a thriving town. Those who resist change are simply standing in the way of progress."\n\nYour local newspaper has asked its readers what they think of plans to build on open land in the town. Write an article for the paper giving your own view of this statement and the reasons for it.\n\n[40 marks: 24 for content and organisation, 16 for technical accuracy]',
             marks: 40,
             suggestedTimeMinutes: 45,
             questionType: 'transactional-writing',
@@ -1004,17 +1185,18 @@ export const aqaP2A: MockExamPaper[] = [
                 'A clear newspaper article that: addresses the statement with a personal point of view; uses some persuasive techniques such as rhetorical questions, emotive language, and examples; has a clear structure with a headline, introduction, body, and conclusion; matches the register of a local newspaper; demonstrates generally accurate spelling and punctuation.',
               'Grade 6-7':
                 'A compelling article that: engages critically with both sides of the statement; uses a range of rhetorical techniques fluently; deploys local and national examples effectively; sustains an appropriate register for a local newspaper audience; demonstrates consistent technical accuracy with varied and ambitious sentence structures.',
-              'Grade 8-9':
-                'An assured, sophisticated article that: develops a nuanced argument that redefines "progress" and "change" on the writer\'s own terms; crafts a distinctive journalistic voice; deploys rhetorical strategies with precision - irony, concession, escalation; uses counter-argument strategically; demonstrates faultless technical accuracy with extensive vocabulary and masterful control of syntax.',
+              'Grade 8-9': `Progress Is a Direction, Not a Bulldozer\n\nEvery town needs to grow. Our families need homes they can afford, our high street needs shoppers, and our young people need reasons to stay here rather than leave for the city. On that much, I agree with the supporters of the plans to build on the open land at the edge of town. Where I part company with them is the idea, in the statement this paper has asked us to consider, that anyone who resists change is simply standing in the way of progress.\n\nThe trouble lies in that word "simply". It assumes that every new building is a step forward and every objection a step back. But progress and construction are not the same thing. A town does not thrive because it has more concrete; it thrives because the people who live in it have what they need. A new estate with no doctor's surgery, no bus route and no school places is not progress. It is a problem postponed until the first residents move in.\n\nThink about what the open land does for us now. On any dry weekend you will find families walking their dogs there, children wobbling along on their first bikes, and older neighbours who rarely go anywhere else stopping for a chat on the path. None of this appears in a planning application, because none of it makes money. Yet it is exactly what makes a town a community rather than a collection of buildings. And once a field has been built on, it is gone for good. An ugly car park can be knocked down, but a meadow cannot be put back.\n\nThe developers will reply that we cannot have it both ways: if we want homes, they have to go somewhere. That is a fair point, and I will not pretend that every objection is noble. Some people who oppose new housing already have comfortable homes and would rather nobody else joined them. But the choice is not between building on our green spaces and building nothing at all. Our town is full of land that has already been spoiled: the empty factory by the canal, the flats above the high street shops that have stood empty for years, the old bus depot behind its rusting fence. Build there first. Turn neglected places into homes, and you improve the town twice, once by adding houses and once by removing an eyesore.\n\nReal progress also means listening to the people it is supposed to serve. The residents who filled the community hall at last month's consultation were not enemies of the future. They were its neighbours, and they knew things about traffic, flooding and the primary school that no glossy brochure could tell you. Hearing them out is not a delay. It is how good plans are made.\n\nSo yes, let our town grow. Let it grow upwards on old sites and inwards towards its centre, and outwards only when there is no better choice. A thriving town is not one that says yes to every developer. It is one that knows the difference between change that improves people's lives and change that only improves somebody's profits.`,
             },
-            markScheme: [
-              'AO5 Content & Organisation (24 marks): Compelling, convincing communication matched to purpose and audience',
-              'AO5: Sustained, coherent argument with effective structural choices',
-              'AO6 Technical Accuracy (16 marks): Accurate and consistent sentence demarcation',
-              'AO6: Wide range of punctuation used accurately',
-              'AO6: Accurate spelling of ambitious vocabulary',
-              'AO6: Varied sentence forms for purpose and effect',
-            ],
+            markScheme: {
+              'What to reward': [
+                'A clear view of the statement, argued consistently: the writer may agree, disagree or argue for a position in between.',
+                'The conventions of an article for a local newspaper: a headline, an opening that draws readers in, local examples they will recognise, a register that suits a general readership, and a strong ending.',
+                'Evidence and examples chosen for a purpose. Ideas from the sources may be used, though they are not required.',
+                'An opposing view answered rather than ignored.',
+              ],
+              'Content and organisation (AO5, 24 marks)': Q5_AO5_LEVELS,
+              'Technical accuracy (AO6, 16 marks)': Q5_AO6_LEVELS,
+            },
           },
         ],
       },

@@ -28,6 +28,17 @@ export const metadata: Metadata = {
 
 /* ─── Page component ─────────────────────────────────────────── */
 
+// 31 October 2026: corrected to the J351/01 guide in
+// src/data/mark-scheme-guides/ocr-lang-component01.ts. Section B was "two"
+// writing tasks, one shorter and one longer, timed separately; it is one task,
+// Question 5 or 6, chosen from two, for 40 marks. Comparison was called
+// "typically the highest-mark question" and the evaluation a statement about one
+// text: Question 4 is 18 marks, evaluating a statement about both texts (12) and
+// comparing them (6). The older text was "at least one" from the 19th century or
+// the literary heritage; one is 19th-century, the other 20th or 21st.
+// Second read, 31 October 2026: Question 1 is on "one of the texts" (the guide
+// has Text 1 only for the papers it checked), and the heading over Questions 1
+// and 2 said "Retrieval and Inference" where Question 2 is synthesis.
 export default async function OCRPaper1Page() {
   const _hdrs = await headers()
   const _lang = _hdrs.get('x-lang') === 'ar' ? 'ar' : 'en'
@@ -82,13 +93,13 @@ export default async function OCRPaper1Page() {
                 </thead>
                 <tbody className="divide-y divide-border">
                   <tr>
-                    <td className="py-3 pe-4 font-medium">A &mdash; Reading</td>
+                    <td className="py-3 pe-4 font-medium">A - Reading</td>
                     <td className="py-3 pe-4">{tr(`Non-fiction / literary non-fiction`)}</td>
                     <td className="py-3 pe-4">40 marks</td>
                     <td className="py-3">1 hour</td>
                   </tr>
                   <tr>
-                    <td className="py-3 pe-4 font-medium">B &mdash; Writing</td>
+                    <td className="py-3 pe-4 font-medium">B - Writing</td>
                     <td className="py-3 pe-4">{tr(`Writing to present information and ideas`)}</td>
                     <td className="py-3 pe-4">40 marks</td>
                     <td className="py-3">1 hour</td>
@@ -128,8 +139,8 @@ export default async function OCRPaper1Page() {
                 <li>{tr(`Literary non-fiction from the 19th, 20th, or 21st century`)}</li>
               </ul>
               <p className="mt-3">
-                At least one text will be from the 19th century or the literary heritage, so
-                practising with older, more complex texts is essential.
+                One text will be from the 19th century and the other from the 20th or 21st century,
+                so practising with older, more complex texts is essential.
               </p>
             </div>
 
@@ -139,39 +150,48 @@ export default async function OCRPaper1Page() {
                 Understanding the Question Types
               </h3>
               <p className="mt-2">
-                The reading section typically contains questions that test the following skills:
+                The reading section has four questions, worth 40 marks in all, that test the
+                following skills:
               </p>
 
               <div className="mt-4 space-y-4">
                 <div className="rounded-lg border border-border bg-muted p-5">
-                  <h4 className="font-semibold text-foreground">Retrieval and Inference</h4>
+                  <h4 className="font-semibold text-foreground">
+                    Retrieval and Synthesis (Questions 1 and 2)
+                  </h4>
                   <p className="mt-2 text-sm">
-                    You will be asked to identify explicit information from the text and make
-                    inferences. &ldquo;Explicit&rdquo; means information that is directly stated,
-                    while &ldquo;implicit&rdquo; means information that is suggested or implied.
+                    Question 1 (4 marks) asks short questions on a set of lines from one of the
+                    texts, in two or three parts. Question 2 (6 marks) asks you to bring the two
+                    texts together on a link the question names, using evidence from both: there are
+                    no marks there for analysing language. &ldquo;Explicit&rdquo; means information
+                    that is directly stated, while &ldquo;implicit&rdquo; means information that is
+                    suggested or implied.
                   </p>
                   <div className="mt-3 rounded border border-accent/20 bg-primary/10 p-3">
                     <p className="text-sm font-medium text-primary">Top tip</p>
                     <p className="mt-1 text-sm text-primary">
-                      When making inferences, always support your point with a short, embedded
-                      quotation from the text. Use the Point-Evidence-Explain (PEE) structure to
-                      keep your answers focused.
+                      For Question 2, make three linked points. State each link in a sentence, then
+                      support it with a short, embedded quotation from each text.
                     </p>
                   </div>
                 </div>
 
                 <div className="rounded-lg border border-border bg-muted p-5">
-                  <h4 className="font-semibold text-foreground">Language and Structure Analysis</h4>
+                  <h4 className="font-semibold text-foreground">
+                    Language and Structure Analysis (Question 3)
+                  </h4>
                   <p className="mt-2 text-sm">
-                    These questions ask you to analyse <em>how</em> the writer uses language and/or
-                    structure to achieve effects. You must identify specific techniques and explain
-                    their impact on the reader. Subject terminology (e.g., metaphor, hyperbole,
-                    anaphora) should be used where relevant.
+                    Question 3 (12 marks) asks you to analyse <em>how</em> the writer of one text
+                    uses language and structure to create the effect the question names. You must
+                    identify specific techniques and explain their impact on the reader, and an
+                    answer that does not give language and structure a fair share cannot reach the
+                    higher levels. Subject terminology (e.g., metaphor, hyperbole, anaphora) should
+                    be used where relevant.
                   </p>
                   <div className="mt-3 rounded border border-accent/20 bg-primary/10 p-3">
                     <p className="text-sm font-medium text-primary">Top tip</p>
                     <p className="mt-1 text-sm text-primary">
-                      Don&rsquo;t just spot techniques &mdash; explain
+                      Don&rsquo;t just spot techniques - explain
                       <em> why</em> the writer used them and what effect they have on the reader.
                       Always link back to the writer&rsquo;s purpose.
                     </p>
@@ -179,37 +199,25 @@ export default async function OCRPaper1Page() {
                 </div>
 
                 <div className="rounded-lg border border-border bg-muted p-5">
-                  <h4 className="font-semibold text-foreground">Comparison</h4>
+                  <h4 className="font-semibold text-foreground">
+                    Evaluation and Comparison (Question 4)
+                  </h4>
                   <p className="mt-2 text-sm">
-                    You will need to compare the two texts, focusing on writers&rsquo; ideas,
-                    perspectives, and methods. This is typically the highest-mark question in
-                    Section A. You must compare <strong>both</strong> what the writers say and
-                    <strong> how</strong> they say it.
+                    Question 4 (18 marks) is the highest-mark question in Section A. It gives you a
+                    statement about both texts: you decide how far you agree (evaluation, 12 marks)
+                    and compare the writers&rsquo; ideas, perspectives, and methods (comparison, 6
+                    marks). You must compare <strong>both</strong> what the writers say and
+                    <strong> how</strong> they say it, supporting your answer with evidence from
+                    both texts.
                   </p>
                   <div className="mt-3 rounded border border-accent/20 bg-primary/10 p-3">
                     <p className="text-sm font-medium text-primary">Top tip</p>
                     <p className="mt-1 text-sm text-primary">
-                      Use comparative connectives: &ldquo;Similarly&rdquo;, &ldquo;In
-                      contrast&rdquo;, &ldquo;Whereas&rdquo;, &ldquo;On the other hand&rdquo;.
-                      Integrate comparison throughout your answer rather than writing about each
-                      text separately.
-                    </p>
-                  </div>
-                </div>
-
-                <div className="rounded-lg border border-border bg-muted p-5">
-                  <h4 className="font-semibold text-foreground">Evaluation</h4>
-                  <p className="mt-2 text-sm">
-                    You may be asked to evaluate a statement or viewpoint about one of the texts.
-                    This requires you to critically assess the text and decide how far you agree
-                    with a given interpretation, supporting your answer with evidence.
-                  </p>
-                  <div className="mt-3 rounded border border-accent/20 bg-primary/10 p-3">
-                    <p className="text-sm font-medium text-primary">Top tip</p>
-                    <p className="mt-1 text-sm text-primary">
-                      Show a nuanced response. Consider multiple interpretations and weigh up
-                      evidence for and against the statement. Top-band answers demonstrate critical
-                      evaluation, not just agreement.
+                      Show a nuanced response: weigh up evidence for and against the statement,
+                      which may be truer of one text than the other. Use comparative connectives:
+                      &ldquo;Similarly&rdquo;, &ldquo;In contrast&rdquo;, &ldquo;Whereas&rdquo;,
+                      &ldquo;On the other hand&rdquo;. Integrate comparison throughout your answer
+                      rather than writing about each text separately.
                     </p>
                   </div>
                 </div>
@@ -223,24 +231,24 @@ export default async function OCRPaper1Page() {
               </h3>
               <ol className="ms-6 mt-2 list-decimal space-y-2">
                 <li>
-                  <strong>{tr(`Read the questions first`)}</strong> &mdash; this helps you know what
-                  to look for when you read the texts.
+                  <strong>{tr(`Read the questions first`)}</strong> - this helps you know what to
+                  look for when you read the texts.
                 </li>
                 <li>
-                  <strong>{tr(`Annotate as you read`)}</strong> &mdash; underline key words, circle
+                  <strong>{tr(`Annotate as you read`)}</strong> - underline key words, circle
                   techniques, and note your initial reactions in the margin.
                 </li>
                 <li>
-                  <strong>Consider the context</strong> &mdash; when was the text written? Who was
-                  the intended audience? What was the writer&rsquo;s purpose?
+                  <strong>Consider the context</strong> - when was the text written? Who was the
+                  intended audience? What was the writer&rsquo;s purpose?
                 </li>
                 <li>
-                  <strong>{tr(`Track the writer’s argument`)}</strong> &mdash; especially in
-                  non-fiction, identify the main argument and how the writer builds and supports it.
+                  <strong>{tr(`Track the writer’s argument`)}</strong> - especially in non-fiction,
+                  identify the main argument and how the writer builds and supports it.
                 </li>
                 <li>
-                  <strong>{tr(`Note shifts in tone or focus`)}</strong> &mdash; these structural
-                  choices are important for analysis questions.
+                  <strong>{tr(`Note shifts in tone or focus`)}</strong> - these structural choices
+                  are important for analysis questions.
                 </li>
               </ol>
             </div>
@@ -259,10 +267,10 @@ export default async function OCRPaper1Page() {
                   and reverence. The verb &ldquo;loomed&rdquo; suggests something imposing and
                   slightly threatening, while the metaphor of &ldquo;sentinels&rdquo; implies that
                   the mountains have a protective, watchful quality. This dual effect reflects the
-                  writer&rsquo;s ambivalence towards the wilderness &mdash; both drawn to its
-                  grandeur and respectful of its power. The use of the adjective
-                  &ldquo;ancient&rdquo; further reinforces the timelessness of the natural world,
-                  making the human traveller seem small and transient by comparison.
+                  writer&rsquo;s ambivalence towards the wilderness - both drawn to its grandeur and
+                  respectful of its power. The use of the adjective &ldquo;ancient&rdquo; further
+                  reinforces the timelessness of the natural world, making the human traveller seem
+                  small and transient by comparison.
                 </p>
               </div>
               <p className="mt-3 text-sm text-muted-foreground">
@@ -288,9 +296,10 @@ export default async function OCRPaper1Page() {
                 What Are You Asked to Write?
               </h3>
               <p className="mt-2">
-                In Section B, you will complete <strong>two</strong> writing tasks. These are
-                writing for real purposes tasks where you write for a specific purpose, audience,
-                and form. You might be asked to write:
+                In Section B, you will complete <strong>one</strong> writing task, Question 5 or 6,
+                chosen from two. It is worth 40 marks: 24 for content and organisation and 16 for
+                technical accuracy. These are writing for real purposes tasks where you write for a
+                specific purpose, audience, and form. You might be asked to write:
               </p>
               <ul className="ms-6 mt-2 list-disc space-y-1">
                 <li>A letter (formal or informal)</li>
@@ -302,8 +311,8 @@ export default async function OCRPaper1Page() {
                 <li>A report</li>
               </ul>
               <p className="mt-3">
-                One task is typically shorter (worth fewer marks) and the other is a longer,
-                extended response.
+                Read both tasks before you choose: each sets its own form, audience and purpose,
+                linked to the theme of the reading texts.
               </p>
             </div>
 
@@ -488,27 +497,27 @@ export default async function OCRPaper1Page() {
               </p>
               <ul className="ms-6 mt-2 list-disc space-y-1">
                 <li>
-                  <strong>Vary your sentence structures</strong> &mdash; use simple, compound, and
-                  complex sentences. Start some sentences with adverbials, subordinate clauses, or
+                  <strong>Vary your sentence structures</strong> - use simple, compound, and complex
+                  sentences. Start some sentences with adverbials, subordinate clauses, or
                   participial phrases.
                 </li>
                 <li>
-                  <strong>{tr(`Use ambitious vocabulary`)}</strong> &mdash; avoid generic words like
+                  <strong>{tr(`Use ambitious vocabulary`)}</strong> - avoid generic words like
                   &ldquo;good&rdquo;, &ldquo;bad&rdquo;, or &ldquo;nice&rdquo;. Choose precise,
                   vivid alternatives.
                 </li>
                 <li>
-                  <strong>{tr(`Punctuate accurately`)}</strong> &mdash; use full stops, commas,
+                  <strong>{tr(`Punctuate accurately`)}</strong> - use full stops, commas,
                   apostrophes, colons, semicolons, and dashes correctly. A well-placed semicolon
                   shows confidence.
                 </li>
                 <li>
-                  <strong>{tr(`Paragraph effectively`)}</strong> &mdash; each paragraph should have
-                  a clear focus. Use discourse markers to link paragraphs
-                  (&ldquo;Furthermore&rdquo;, &ldquo;In addition&rdquo;, &ldquo;Conversely&rdquo;).
+                  <strong>{tr(`Paragraph effectively`)}</strong> - each paragraph should have a
+                  clear focus. Use discourse markers to link paragraphs (&ldquo;Furthermore&rdquo;,
+                  &ldquo;In addition&rdquo;, &ldquo;Conversely&rdquo;).
                 </li>
                 <li>
-                  <strong>Proofread</strong> &mdash; leave 3&ndash;5 minutes at the end to check for
+                  <strong>Proofread</strong> - leave 3&ndash;5 minutes at the end to check for
                   errors. Correct mistakes neatly with a single line through the error.
                 </li>
               </ul>
@@ -528,19 +537,19 @@ export default async function OCRPaper1Page() {
                   <tbody className="divide-y divide-border">
                     <tr>
                       <td className="py-3 pe-4">{tr(`Reading the texts and annotating`)}</td>
-                      <td className="py-3">10&ndash;15 minutes</td>
+                      <td className="py-3">About 12 minutes</td>
                     </tr>
                     <tr>
                       <td className="py-3 pe-4">{tr(`Section A: Reading questions`)}</td>
-                      <td className="py-3">45&ndash;50 minutes</td>
+                      <td className="py-3">About 48 minutes (Q1 5, Q2 8, Q3 15, Q4 20)</td>
                     </tr>
                     <tr>
-                      <td className="py-3 pe-4">{tr(`Section B: Shorter writing task`)}</td>
-                      <td className="py-3">20&ndash;25 minutes</td>
+                      <td className="py-3 pe-4">{tr(`Section B: Planning your chosen task`)}</td>
+                      <td className="py-3">5 to 10 minutes</td>
                     </tr>
                     <tr>
-                      <td className="py-3 pe-4">{tr(`Section B: Longer writing task`)}</td>
-                      <td className="py-3">30&ndash;35 minutes</td>
+                      <td className="py-3 pe-4">{tr(`Section B: Writing your chosen task`)}</td>
+                      <td className="py-3">About 45 minutes</td>
                     </tr>
                     <tr>
                       <td className="py-3 pe-4">Proofreading</td>
@@ -549,6 +558,10 @@ export default async function OCRPaper1Page() {
                   </tbody>
                 </table>
               </div>
+              <p className="mt-3 text-sm">
+                OCR&rsquo;s own advice is about an hour on each section. The times inside each
+                section are a suggestion worked out from the marks.
+              </p>
             </div>
 
             {/* Common mistakes */}
@@ -556,29 +569,29 @@ export default async function OCRPaper1Page() {
               <h3 className="text-xl font-semibold text-foreground">Common Mistakes to Avoid</h3>
               <ul className="ms-6 mt-2 list-disc space-y-2">
                 <li>
-                  <strong>{tr(`Feature-spotting without analysis`)}</strong> &mdash; naming a
-                  technique without explaining its effect will not earn high marks. Always explain
-                  the &ldquo;so what?&rdquo;.
+                  <strong>{tr(`Feature-spotting without analysis`)}</strong> - naming a technique
+                  without explaining its effect will not earn high marks. Always explain the
+                  &ldquo;so what?&rdquo;.
                 </li>
                 <li>
-                  <strong>{tr(`Retelling the text`)}</strong> &mdash; paraphrasing what the writer
-                  says rather than analysing how and why they say it.
+                  <strong>{tr(`Retelling the text`)}</strong> - paraphrasing what the writer says
+                  rather than analysing how and why they say it.
                 </li>
                 <li>
-                  <strong>Ignoring the form conventions</strong> &mdash; if the question asks for a
+                  <strong>Ignoring the form conventions</strong> - if the question asks for a
                   letter, your response must look like a letter with appropriate openings, closings,
                   and register.
                 </li>
                 <li>
-                  <strong>{tr(`Writing one-sided arguments`)}</strong> &mdash; top-band answers
+                  <strong>{tr(`Writing one-sided arguments`)}</strong> - top-band answers
                   acknowledge counter-arguments before rebutting them.
                 </li>
                 <li>
-                  <strong>{tr(`Poor time management`)}</strong> &mdash; spending too long on Section
-                  A and rushing Section B, or vice versa.
+                  <strong>{tr(`Poor time management`)}</strong> - spending too long on Section A and
+                  rushing Section B, or vice versa.
                 </li>
                 <li>
-                  <strong>{tr(`Weak openings and endings`)}</strong> &mdash; your first and last
+                  <strong>{tr(`Weak openings and endings`)}</strong> - your first and last
                   paragraphs leave the strongest impression on the marker.
                 </li>
               </ul>

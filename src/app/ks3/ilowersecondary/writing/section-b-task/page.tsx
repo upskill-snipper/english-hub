@@ -237,7 +237,7 @@ export default async function SectionBTaskPage() {
           <div className="grid gap-4 sm:grid-cols-2">
             <div className="rounded-lg bg-card p-5 border border-border/60">
               <h3 className="mb-1 font-heading text-lg font-semibold text-foreground">
-                WAO1 &mdash; form, audience &amp; organisation
+                WAO1 - form, audience &amp; organisation
               </h3>
               <p className="text-sm leading-relaxed text-muted-foreground">
                 Worth up to {WAO1_GRID[WAO1_GRID.length - 1].marks.split('-')[1]} marks. Rewards
@@ -247,7 +247,7 @@ export default async function SectionBTaskPage() {
             </div>
             <div className="rounded-lg bg-card p-5 border border-border/60">
               <h3 className="mb-1 font-heading text-lg font-semibold text-foreground">
-                WAO2 &mdash; grammar, punctuation &amp; spelling
+                WAO2 - grammar, punctuation &amp; spelling
               </h3>
               <p className="text-sm leading-relaxed text-muted-foreground">
                 Worth up to {WAO2_GRID[WAO2_GRID.length - 1].marks.split('-')[1]} marks. Rewards
@@ -405,7 +405,7 @@ export default async function SectionBTaskPage() {
             10 ways to lose easy marks
           </h2>
           <p className="mb-6 text-sm text-muted-foreground">
-            None of these is about clever ideas &mdash; they are all avoidable with a plan and a
+            None of these is about clever ideas - they are all avoidable with a plan and a
             proofread.
           </p>
           <ol className="space-y-3">

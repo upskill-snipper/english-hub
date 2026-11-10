@@ -349,9 +349,9 @@ export default async function GrammarPunctuationSpellingPage() {
           <span className="text-foreground">
             {WAO2.descriptor.toLowerCase().replace(/\.$/, '')}
           </span>
-          . It is the second of the two writing objectives and the one you can improve fastest
-          &mdash; accuracy is a skill you can train, not a talent you are born with. Get it right
-          and your ideas reach the reader exactly as you intended.
+          . It is the second of the two writing objectives and the one you can improve fastest -
+          accuracy is a skill you can train, not a talent you are born with. Get it right and your
+          ideas reach the reader exactly as you intended.
         </p>
         <dl className="mt-6 flex flex-wrap gap-x-8 gap-y-3 text-sm">
           <div>
@@ -460,7 +460,7 @@ export default async function GrammarPunctuationSpellingPage() {
             &ldquo;Although the harbour looked calm, the captain refused to leave port until the
             wind dropped.&rdquo;
           </em>{' '}
-          One sentence now carries concession, a main point and a time condition &mdash; far more
+          One sentence now carries concession, a main point and a time condition - far more
           controlled than three short statements.
         </p>
       </section>
@@ -470,11 +470,11 @@ export default async function GrammarPunctuationSpellingPage() {
           Punctuation for effect and impact: a mini-bank
         </h2>
         <p>
-          The skill descriptor asks for the five named marks &mdash;{' '}
-          <strong>capital letters, end punctuation, commas, speech marks and apostrophes</strong>{' '}
-          &mdash; to be used not just correctly but <em>for effect and impact</em>. The top bands
-          reward punctuation that shapes meaning. Every example below is original; study what each
-          mark <em>does</em> to the reader.
+          The skill descriptor asks for the five named marks -{' '}
+          <strong>capital letters, end punctuation, commas, speech marks and apostrophes</strong> -
+          to be used not just correctly but <em>for effect and impact</em>. The top bands reward
+          punctuation that shapes meaning. Every example below is original; study what each mark{' '}
+          <em>does</em> to the reader.
         </p>
         <div className="not-prose mt-6 space-y-3">
           {EFFECT_BANK.map((e) => (
@@ -548,13 +548,13 @@ export default async function GrammarPunctuationSpellingPage() {
         <div className="not-prose mt-6 grid gap-4 lg:grid-cols-2">
           <div className="rounded-xl border border-border/60 bg-card p-5">
             <p className="font-mono text-[10px] tracking-[0.14em] uppercase text-muted-foreground mb-3">
-              Before &mdash; ten errors
+              Before - ten errors
             </p>
             <p className="text-[15px] leading-relaxed text-foreground/90">{FAULTY_PARAGRAPH}</p>
           </div>
           <div className="rounded-xl border border-border/60 bg-card p-5">
             <p className="font-mono text-[10px] tracking-[0.14em] uppercase text-muted-foreground mb-3">
-              After &mdash; corrected
+              After - corrected
             </p>
             <p className="text-[15px] leading-relaxed text-foreground/90">{CORRECTED_PARAGRAPH}</p>
           </div>
@@ -619,9 +619,9 @@ export default async function GrammarPunctuationSpellingPage() {
         </h2>
         <p>
           The mark grid never rewards long words for their own sake. It rewards{' '}
-          <strong>ambitious choices used appropriately</strong> &mdash; the right word, spelled
-          correctly, in the right place. A precise <em>everyday</em> word always beats an impressive
-          word used wrongly.
+          <strong>ambitious choices used appropriately</strong> - the right word, spelled correctly,
+          in the right place. A precise <em>everyday</em> word always beats an impressive word used
+          wrongly.
         </p>
         <p>
           Before you reach for a bigger word, ask: do I know exactly what it means, can I spell it,

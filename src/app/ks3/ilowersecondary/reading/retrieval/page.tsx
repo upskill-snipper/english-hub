@@ -211,8 +211,8 @@ export default async function RetrievalRAO1Page() {
           <span className="text-foreground">
             {RAO1.descriptor.toLowerCase().replace(/\.$/, '')}
           </span>
-          . It is the first thing the exam tests and the most reliable mark on the paper &mdash; if
-          you can read carefully and point to the right words, you cannot get it wrong.
+          . It is the first thing the exam tests and the most reliable mark on the paper - if you
+          can read carefully and point to the right words, you cannot get it wrong.
         </p>
         <dl className="mt-6 flex flex-wrap gap-x-8 gap-y-3 text-sm">
           <div>
@@ -238,9 +238,9 @@ export default async function RetrievalRAO1Page() {
         </h2>
         <p>
           Retrieval is the literal, surface layer of reading. The answer is{' '}
-          <strong>already in the text</strong> &mdash; you are not working it out, guessing, or
-          reading between the lines. That deeper work belongs to the next reading skill: the second
-          bullet of {SKILL_1_1.code} covers{' '}
+          <strong>already in the text</strong> - you are not working it out, guessing, or reading
+          between the lines. That deeper work belongs to the next reading skill: the second bullet
+          of {SKILL_1_1.code} covers{' '}
           <em>{SKILL_1_1.bullets[1].toLowerCase().replace(/\.$/, '')}</em>. Retrieval is only the
           first bullet: <em>{SKILL_1_1.bullets[0].toLowerCase().replace(/\.$/, '')}</em>.
         </p>
@@ -266,23 +266,22 @@ export default async function RetrievalRAO1Page() {
         </p>
         <ul>
           <li>
-            <strong>&ldquo;Why&hellip;?&rdquo;</strong> &mdash; the text gives a stated reason; find
-            it.
+            <strong>&ldquo;Why&hellip;?&rdquo;</strong> - the text gives a stated reason; find it.
           </li>
           <li>
-            <strong>&ldquo;How does X&hellip;?&rdquo;</strong> &mdash; the method or fact is
-            described directly.
+            <strong>&ldquo;How does X&hellip;?&rdquo;</strong> - the method or fact is described
+            directly.
           </li>
           <li>
             <strong>
               &ldquo;How many&hellip;?&rdquo; / &ldquo;Where&hellip;?&rdquo; /
               &ldquo;When&hellip;?&rdquo;
             </strong>{' '}
-            &mdash; a specific figure, place or time.
+            - a specific figure, place or time.
           </li>
           <li>
-            <strong>&ldquo;Give one/two&hellip;&rdquo;</strong> &mdash; list the exact number asked
-            for; no more, no fewer.
+            <strong>&ldquo;Give one/two&hellip;&rdquo;</strong> - list the exact number asked for;
+            no more, no fewer.
           </li>
         </ul>
         <p className="text-sm text-muted-foreground">
@@ -306,7 +305,7 @@ export default async function RetrievalRAO1Page() {
           </li>
           <li>
             <strong>Slow down and read the sentence around it</strong> to check it genuinely answers
-            the question that was asked &mdash; not a similar-sounding one nearby.
+            the question that was asked - not a similar-sounding one nearby.
           </li>
         </ol>
         <p>
@@ -320,7 +319,7 @@ export default async function RetrievalRAO1Page() {
         <h2 id="quoting" className="text-2xl font-semibold text-foreground">
           Quoting precisely vs answering in your own words
         </h2>
-        <p>Both are accepted for retrieval &mdash; but each has a trap.</p>
+        <p>Both are accepted for retrieval - but each has a trap.</p>
         <ul>
           <li>
             <strong>A short, precise quotation</strong> is safest when the exact wording matters.

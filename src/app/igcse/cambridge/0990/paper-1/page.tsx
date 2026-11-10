@@ -36,34 +36,41 @@ export const metadata: Metadata = {
   alternates: { canonical: 'https://theenglishhub.app/igcse/cambridge/0990/paper-1' },
 }
 
+// 31 October 2026: rewritten to src/data/mark-scheme-guides/cambridge-0990-paper1.ts,
+// which is 0500 Paper 1 under 9-1 grading. The rows were Q1(a)-(e) 15, a 10-mark
+// language analysis as 1(f), a 25-mark extended response as Q2 and a summary of
+// Texts A and B "15 + 25" as Q3: 90 marks on an 80-mark paper, on "two unseen
+// non-fiction texts". From 2027 the paper is four questions of 20 on three texts;
+// the November 2026 paper is three questions of 30, 25 and 25, which the note
+// under the hero says. The timing follows the guide.
 const questions = [
   {
-    q: 'Question 1(a)-(e)',
-    marks: '15 marks',
+    q: 'Question 1',
+    marks: '20 marks',
     focus: 'Comprehension of Text A',
     description:
-      'Short answer questions testing explicit meaning, implicit meaning and understanding of specific details in Text A.',
-  },
-  {
-    q: 'Question 1(f)',
-    marks: '10 marks',
-    focus: 'Language analysis of Text A',
-    description:
-      'Select three effective words or phrases from a passage and explain how the writer uses language for effect.',
+      'Short answer questions testing explicit meaning, implicit meaning and understanding of specific details in Text A, each part marked point by point.',
   },
   {
     q: 'Question 2',
-    marks: '25 marks',
-    focus: 'Extended response on Texts A and/or B',
+    marks: '20 marks',
+    focus: 'Summary task on Text B',
     description:
-      'Longer analytical response - explore how the writer of one of the texts uses language and structure to create effects.',
+      "2(a): a summary in your own words, of no more than 120 words, of the points in Text B that fit the focus given (reading 10, writing 5). 2(b): the writer's attitude, with details from the text (5).",
   },
   {
     q: 'Question 3',
-    marks: '15 + 25 marks',
-    focus: 'Summary task',
+    marks: '20 marks',
+    focus: 'Short answers and language task on Text C',
     description:
-      'Select and summarise information from Texts A and B on a given topic. Marked for content (15) and writing (25 for the whole paper is split - see mark scheme).',
+      "Short answers on words and phrases (10), then about 200-250 words on how the writer's language creates effects in an extract (10).",
+  },
+  {
+    q: 'Question 4',
+    marks: '20 marks',
+    focus: 'Extended response to reading on Text C',
+    description:
+      'About 250-300 words in the form the question sets, such as a letter, report, journal, speech, interview or article, using and developing ideas from Text C (reading 10, writing 10).',
   },
 ]
 
@@ -78,10 +85,11 @@ const boundaries = [
 ]
 
 const timingRows = [
-  { step: 'Read Text A and Text B carefully', time: '15 min' },
-  { step: 'Question 1 (comprehension + language)', time: '35 min' },
-  { step: 'Question 2 (extended analysis)', time: '35 min' },
-  { step: 'Question 3 (summary)', time: '30 min' },
+  { step: 'Read Texts A, B and C carefully', time: '15 min' },
+  { step: 'Question 1 (comprehension)', time: '25 min' },
+  { step: "Question 2 (summary and writer's attitude)", time: '25 min' },
+  { step: 'Question 3 (short answers and language task)', time: '25 min' },
+  { step: 'Question 4 (extended response to reading)', time: '25 min' },
   { step: 'Review and check', time: '5 min' },
 ]
 
@@ -112,8 +120,13 @@ export default async function Paper1Page() {
             Paper 1: Reading
           </h1>
           <p className="mt-3 max-w-3xl text-body-lg text-muted-foreground">
-            Two hours. Two unseen non-fiction texts. Three compulsory questions worth 80 marks - 50%
-            of the IGCSE Language B qualification.
+            Two hours. Three unseen texts. Four compulsory questions of 20 marks, 80 in all: 50% of
+            the IGCSE Language B qualification.
+          </p>
+          <p className="mt-3 max-w-3xl text-body-sm text-muted-foreground">
+            This is the paper for exams from 2027. If you sit Paper 1 in November 2026, your paper
+            follows the older 2024-2026 syllabus: three questions worth 30, 25 and 25 marks, so its
+            question numbers and marks are not the ones below.
           </p>
           <div className="mt-6 flex flex-wrap gap-3 text-body-sm text-muted-foreground">
             <span className="inline-flex items-center gap-1.5 rounded-md border border-border/60 bg-muted/40 px-3 py-1.5">
@@ -254,14 +267,15 @@ export default async function Paper1Page() {
             <CheckCircle2 className="mt-0.5 size-4 shrink-0 text-primary" />
             <span>
               <strong className="text-foreground">Own words in the summary</strong> - paraphrase
-              rather than copy whole phrases from the original texts.
+              rather than copy whole phrases from Text B, and stay within 120 words.
             </span>
           </li>
           <li className="flex items-start gap-3">
             <CheckCircle2 className="mt-0.5 size-4 shrink-0 text-primary" />
             <span>
-              <strong className="text-foreground">Cover the full range</strong> - the extended
-              analysis should explore language <em>and</em> structure, not just word choices.
+              <strong className="text-foreground">Words first</strong> - in the language task,
+              comments on sentence shape or punctuation earn credit only on top of comments on the
+              words themselves, so build each point on a word or phrase.
             </span>
           </li>
         </ul>

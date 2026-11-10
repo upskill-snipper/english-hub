@@ -72,7 +72,15 @@ export default async function Paper2Page() {
           <h1 className="text-3xl font-bold tracking-tight sm:text-4xl md:text-5xl">
             Paper 2: Directed Writing &amp; Composition
           </h1>
-          <p className="mt-2 text-lg text-muted-foreground">{tr(`Extended Tier`)}</p>
+          {/* 31 October 2026: corrected to src/data/mark-scheme-guides/cambridge-0500-paper2.ts.
+              The page named an "Extended Tier" (the paper has had no tiers since 2020), split
+              Section A as 25 reading and 15 writing (it is 15 and 25) with no 1(a), listed a
+              journal entry as a directed writing form, and gave combined composition bands
+              that do not add up from Cambridge's two grids. From 2027 Section A is 1(a), 5
+              marks, then 1(b), 35; the bands below add the same level on both grids. Second
+              read: the November 2026 note now says Section B is unchanged, as the guide's
+              summary does. */}
+          <p className="mt-2 text-lg text-muted-foreground">{tr(`2 hours, 80 marks`)}</p>
           <p className="mt-3 max-w-2xl text-muted-foreground">
             This paper tests your ability to write for specific purposes and audiences (directed
             writing) and to produce creative writing in narrative or descriptive form (composition).
@@ -99,17 +107,17 @@ export default async function Paper2Page() {
               </thead>
               <tbody className="divide-y divide-border text-muted-foreground">
                 <tr>
-                  <td className="py-3 pe-4 font-medium">Section 1</td>
+                  <td className="py-3 pe-4 font-medium">Section A</td>
                   <td className="py-3 pe-4">
                     {tr(
-                      `Directed Writing - write in a specified format using ideas from a passage and your own ideas`,
+                      `Directed Writing: 1(a), a short answer on the text, then 1(b), writing in a specified form that uses and develops ideas from the text`,
                     )}
                   </td>
-                  <td className="py-3 pe-4">40 (25 content + 15 language)</td>
-                  <td className="py-3">45 minutes</td>
+                  <td className="py-3 pe-4">40 (15 reading + 25 writing)</td>
+                  <td className="py-3">60 minutes</td>
                 </tr>
                 <tr>
-                  <td className="py-3 pe-4 font-medium">Section 2</td>
+                  <td className="py-3 pe-4 font-medium">Section B</td>
                   <td className="py-3 pe-4">
                     {tr(
                       `Composition - choose one from a selection of narrative OR descriptive titles`,
@@ -122,23 +130,25 @@ export default async function Paper2Page() {
             </table>
           </div>
           <p className="mt-3 text-sm text-muted-foreground">
-            Total: 80 marks in approximately 2 hours. Quality of written communication (grammar,
-            spelling, punctuation, vocabulary) is assessed throughout both sections.
+            Total: 80 marks in 2 hours. Spelling, punctuation and grammar are assessed in both the
+            directed writing and the composition. This is the paper for exams from 2027; on the
+            November 2026 paper, Section A is one directed writing task worth 40 marks, with no
+            1(a), and Section B, the composition, is the same as here.
           </p>
         </section>
 
         <hr className="my-10 border-border" />
 
-        {/* ── Section 1: Directed Writing ─────────────────────── */}
+        {/* ── Section A: Directed Writing ─────────────────────── */}
         <section aria-labelledby="directed-heading">
           <h2 id="directed-heading" className="text-2xl font-bold text-foreground">
-            Section 1: Directed Writing
+            Section A: Directed Writing
           </h2>
           <p className="mt-3 text-muted-foreground leading-relaxed">
-            You will be given a short reading passage and asked to write a response in a specific
-            format (e.g. a letter, report, speech, article, or journal entry). You must use ideas
-            from the passage
-            <strong> and </strong> include your own ideas and opinions.
+            You will be given one or two short texts. Question 1(a) asks a short question on them,
+            worth 5 marks. Question 1(b) asks you to write a response in a specific form (a speech,
+            letter, article or report) that uses, develops and evaluates their ideas
+            <strong> and </strong> adds your own reasoning.
           </p>
 
           <h3 className="mt-8 text-lg font-semibold text-foreground">Directed Writing Formats</h3>
@@ -166,8 +176,7 @@ export default async function Paper2Page() {
                   </li>
                   <li>&bull; Subject line (optional but useful)</li>
                   <li>
-                    &bull; Formal register throughout &mdash; no slang, contractions, or
-                    colloquialisms
+                    &bull; Formal register throughout - no slang, contractions, or colloquialisms
                   </li>
                   <li>
                     &bull; Sign off: &ldquo;Yours sincerely&rdquo; (if you used their name) or
@@ -186,12 +195,12 @@ export default async function Paper2Page() {
               <div className="mt-3 rounded bg-muted p-4 text-sm text-muted-foreground">
                 <p className="font-semibold text-foreground mb-2">{tr(`Format requirements:`)}</p>
                 <ul className="space-y-1">
-                  <li>&bull; Your address (top right) &mdash; optional in exam conditions</li>
+                  <li>&bull; Your address (top right) - optional in exam conditions</li>
                   <li>&bull; Date</li>
                   <li>
                     &bull; Salutation: &ldquo;Dear [first name]&rdquo; or &ldquo;Hi [name]&rdquo;
                   </li>
-                  <li>&bull; Warm, conversational tone &mdash; contractions are acceptable</li>
+                  <li>&bull; Warm, conversational tone - contractions are acceptable</li>
                   <li>&bull; May include personal anecdotes, humour, rhetorical questions</li>
                   <li>
                     &bull; Sign off: &ldquo;Best wishes&rdquo;, &ldquo;Love&rdquo;, &ldquo;Take
@@ -220,8 +229,8 @@ export default async function Paper2Page() {
                     &bull; Subheadings to organise sections (Introduction, Findings,
                     Recommendations, Conclusion)
                   </li>
-                  <li>&bull; Formal, impersonal tone &mdash; third person preferred</li>
-                  <li>&bull; Evidence-based &mdash; use facts and data from the passage</li>
+                  <li>&bull; Formal, impersonal tone - third person preferred</li>
+                  <li>&bull; Evidence-based - use facts and data from the passage</li>
                   <li>&bull; Clear recommendations at the end</li>
                 </ul>
               </div>
@@ -240,7 +249,7 @@ export default async function Paper2Page() {
                   <li>&bull; Eye-catching headline</li>
                   <li>&bull; Optional subheading or strapline</li>
                   <li>&bull; Byline: &ldquo;By [your name]&rdquo;</li>
-                  <li>&bull; Engaging opening &mdash; hook the reader immediately</li>
+                  <li>&bull; Engaging opening - hook the reader immediately</li>
                   <li>&bull; Relatively formal but accessible language</li>
                   <li>&bull; May include expert opinions, statistics, rhetorical questions</li>
                   <li>&bull; Strong concluding paragraph</li>
@@ -273,8 +282,7 @@ export default async function Paper2Page() {
                   <li>&bull; Emotive language and personal anecdotes</li>
                   <li>&bull; Strong call to action at the end</li>
                   <li>
-                    &bull; Register depends on audience &mdash; formal for adults, semi-formal for
-                    peers
+                    &bull; Register depends on audience - formal for adults, semi-formal for peers
                   </li>
                 </ul>
               </div>
@@ -285,15 +293,16 @@ export default async function Paper2Page() {
               <h4 className="font-semibold text-primary">{tr(`Journal / Diary Entry`)}</h4>
               <p className="mt-2 text-sm text-muted-foreground leading-relaxed">
                 A personal, reflective piece written from a specific character&rsquo;s perspective.
+                It is not a Paper 2 form: the directed writing is a speech, letter, article or
+                report. Paper 1 Question 4 can ask for a journal entry, so the conventions are worth
+                knowing.
               </p>
               <div className="mt-3 rounded bg-muted p-4 text-sm text-muted-foreground">
                 <p className="font-semibold text-foreground mb-2">{tr(`Format requirements:`)}</p>
                 <ul className="space-y-1">
                   <li>&bull; Date at the top</li>
                   <li>&bull; First person throughout</li>
-                  <li>
-                    &bull; Personal, reflective tone &mdash; share thoughts, feelings, opinions
-                  </li>
+                  <li>&bull; Personal, reflective tone - share thoughts, feelings, opinions</li>
                   <li>
                     &bull; Can include informal language and incomplete sentences for authenticity
                   </li>
@@ -308,22 +317,23 @@ export default async function Paper2Page() {
           <div className="mt-8 rounded-lg border-2 border-primary/20 bg-primary/5 p-6">
             <h3 className="text-lg font-semibold text-primary">Directed Writing Marking Guide</h3>
             <p className="mt-2 text-sm text-muted-foreground leading-relaxed">
-              The 40 marks are split into two Assessment Objectives:
+              The 40 marks are split between reading and writing:
             </p>
             <div className="mt-4 grid gap-4 sm:grid-cols-2">
               <div className="rounded bg-card p-4 shadow-md">
-                <p className="text-2xl font-bold text-primary">25</p>
+                <p className="text-2xl font-bold text-primary">15</p>
                 <p className="text-sm font-semibold text-foreground">{tr(`Reading (Content)`)}</p>
                 <p className="mt-1 text-xs text-muted-foreground leading-relaxed">
-                  How well you use ideas from the passage and develop your own relevant ideas. Top
-                  band: thorough and perceptive understanding with ideas developed and supported.
+                  Five for Question 1(a), judging something in the text such as a person&rsquo;s
+                  attitude, and ten for how well you use, develop and evaluate the text&rsquo;s
+                  ideas in 1(b).
                 </p>
               </div>
               <div className="rounded bg-card p-4 shadow-md">
-                <p className="text-2xl font-bold text-accent">15</p>
+                <p className="text-2xl font-bold text-accent">25</p>
                 <p className="text-sm font-semibold text-foreground">{tr(`Writing (Language)`)}</p>
                 <p className="mt-1 text-xs text-muted-foreground leading-relaxed">
-                  How effectively you write &mdash; format, register, tone, vocabulary, sentence
+                  How effectively you write - format, register, tone, vocabulary, sentence
                   structures, accuracy of grammar and spelling.
                 </p>
               </div>
@@ -333,10 +343,10 @@ export default async function Paper2Page() {
 
         <hr className="my-10 border-border" />
 
-        {/* ── Section 2: Composition ──────────────────────────── */}
+        {/* ── Section B: Composition ──────────────────────────── */}
         <section aria-labelledby="composition-heading">
           <h2 id="composition-heading" className="text-2xl font-bold text-foreground">
-            Section 2: Composition
+            Section B: Composition
           </h2>
           <p className="mt-3 text-muted-foreground leading-relaxed">
             You choose <strong>one</strong> composition from a selection of titles. These are split
@@ -383,34 +393,34 @@ export default async function Paper2Page() {
                 <ul className="mt-3 space-y-2 text-sm text-muted-foreground">
                   <li className="flex items-start gap-2">
                     <span className="mt-1 h-1.5 w-1.5 shrink-0 rounded-full bg-accent" />
-                    <strong>Start in the middle of the action</strong> (in medias res) &mdash; avoid
+                    <strong>Start in the middle of the action</strong> (in medias res) - avoid
                     boring openings like &ldquo;One day I woke up and...&rdquo;
                   </li>
                   <li className="flex items-start gap-2">
                     <span className="mt-1 h-1.5 w-1.5 shrink-0 rounded-full bg-accent" />
-                    <strong>{tr(`Limit your characters`)}</strong> &mdash; 2 or 3 characters is
-                    enough. Give them names and distinct personalities.
+                    <strong>{tr(`Limit your characters`)}</strong> - 2 or 3 characters is enough.
+                    Give them names and distinct personalities.
                   </li>
                   <li className="flex items-start gap-2">
                     <span className="mt-1 h-1.5 w-1.5 shrink-0 rounded-full bg-accent" />
-                    <strong>{tr(`Focus on a single event`)}</strong> &mdash; do not try to cover an
-                    entire life story. A well-told small moment is better than a rushed epic.
+                    <strong>{tr(`Focus on a single event`)}</strong> - do not try to cover an entire
+                    life story. A well-told small moment is better than a rushed epic.
                   </li>
                   <li className="flex items-start gap-2">
                     <span className="mt-1 h-1.5 w-1.5 shrink-0 rounded-full bg-accent" />
-                    <strong>{tr(`Show, don’t tell`)}</strong> &mdash; instead of &ldquo;She was
+                    <strong>{tr(`Show, don’t tell`)}</strong> - instead of &ldquo;She was
                     scared&rdquo;, write &ldquo;Her hands trembled as she reached for the
                     handle&rdquo;.
                   </li>
                   <li className="flex items-start gap-2">
                     <span className="mt-1 h-1.5 w-1.5 shrink-0 rounded-full bg-accent" />
-                    <strong>{tr(`Use dialogue sparingly`)}</strong> &mdash; a few well-placed lines
-                    of dialogue can reveal character, but too much turns your story into a script.
+                    <strong>{tr(`Use dialogue sparingly`)}</strong> - a few well-placed lines of
+                    dialogue can reveal character, but too much turns your story into a script.
                   </li>
                   <li className="flex items-start gap-2">
                     <span className="mt-1 h-1.5 w-1.5 shrink-0 rounded-full bg-accent" />
-                    <strong>{tr(`End with impact`)}</strong> &mdash; avoid clich&eacute; endings
-                    like &ldquo;it was all a dream&rdquo;. Leave the reader with something to think
+                    <strong>{tr(`End with impact`)}</strong> - avoid clich&eacute; endings like
+                    &ldquo;it was all a dream&rdquo;. Leave the reader with something to think
                     about.
                   </li>
                 </ul>
@@ -422,8 +432,8 @@ export default async function Paper2Page() {
           <div className="mt-10">
             <h3 className="text-lg font-semibold text-foreground">{tr(`Descriptive Writing`)}</h3>
             <p className="mt-2 text-sm text-muted-foreground leading-relaxed">
-              Descriptive writing creates a vivid picture using language. There is no plot &mdash;
-              the focus is entirely on using your senses and language techniques to bring a scene to
+              Descriptive writing creates a vivid picture using language. There is no plot - the
+              focus is entirely on using your senses and language techniques to bring a scene to
               life.
             </p>
 
@@ -477,29 +487,29 @@ export default async function Paper2Page() {
                 <ul className="mt-3 space-y-2 text-sm text-muted-foreground">
                   <li className="flex items-start gap-2">
                     <span className="mt-1 h-1.5 w-1.5 shrink-0 rounded-full bg-accent" />
-                    <strong>{tr(`Zoom in and out`)}</strong> &mdash; start with a wide panoramic
-                    view, then focus on specific details, then pull back again.
+                    <strong>{tr(`Zoom in and out`)}</strong> - start with a wide panoramic view,
+                    then focus on specific details, then pull back again.
                   </li>
                   <li className="flex items-start gap-2">
                     <span className="mt-1 h-1.5 w-1.5 shrink-0 rounded-full bg-accent" />
-                    <strong>{tr(`Use varied sentence structures`)}</strong> &mdash; mix short,
-                    punchy sentences with longer, flowing ones.
+                    <strong>{tr(`Use varied sentence structures`)}</strong> - mix short, punchy
+                    sentences with longer, flowing ones.
                   </li>
                   <li className="flex items-start gap-2">
                     <span className="mt-1 h-1.5 w-1.5 shrink-0 rounded-full bg-accent" />
-                    <strong>{tr(`Choose precise vocabulary`)}</strong> &mdash; &ldquo;crimson&rdquo;
-                    is more effective than &ldquo;red&rdquo;; &ldquo;trudged&rdquo; is more
-                    evocative than &ldquo;walked&rdquo;.
+                    <strong>{tr(`Choose precise vocabulary`)}</strong> - &ldquo;crimson&rdquo; is
+                    more effective than &ldquo;red&rdquo;; &ldquo;trudged&rdquo; is more evocative
+                    than &ldquo;walked&rdquo;.
                   </li>
                   <li className="flex items-start gap-2">
                     <span className="mt-1 h-1.5 w-1.5 shrink-0 rounded-full bg-accent" />
-                    <strong>{tr(`Create atmosphere`)}</strong> &mdash; use pathetic fallacy (weather
+                    <strong>{tr(`Create atmosphere`)}</strong> - use pathetic fallacy (weather
                     reflecting mood), light/dark contrasts, and sensory details to build a mood.
                   </li>
                   <li className="flex items-start gap-2">
                     <span className="mt-1 h-1.5 w-1.5 shrink-0 rounded-full bg-accent" />
-                    <strong>{tr(`Avoid telling a story`)}</strong> &mdash; if the title is
-                    descriptive, do not write a narrative. Focus on painting the scene.
+                    <strong>{tr(`Avoid telling a story`)}</strong> - if the title is descriptive, do
+                    not write a narrative. Focus on painting the scene.
                   </li>
                 </ul>
               </div>
@@ -517,7 +527,9 @@ export default async function Paper2Page() {
           <p className="mt-3 text-muted-foreground leading-relaxed">
             Understanding the band descriptors is essential. Here is what Cambridge markers are
             looking for at each level. The composition is marked out of 40: up to 16 for content and
-            structure, and up to 24 for style and accuracy.
+            structure, and up to 24 for style and accuracy. Each band below adds the same level on
+            both grids (Band 6 is 14-16 plus 21-24); a composition can sit at different levels on
+            the two.
           </p>
 
           <div className="mt-6 space-y-4">
@@ -568,7 +580,7 @@ export default async function Paper2Page() {
                   5
                 </span>
                 <div>
-                  <p className="font-semibold text-foreground">{tr(`Very Good (29-34 marks)`)}</p>
+                  <p className="font-semibold text-foreground">{tr(`Very Good (28-33 marks)`)}</p>
                   <p className="text-xs text-primary">A / Grade 7&ndash;8 standard</p>
                 </div>
               </div>
@@ -603,7 +615,7 @@ export default async function Paper2Page() {
                   4
                 </span>
                 <div>
-                  <p className="font-semibold text-foreground">{tr(`Good (22-28 marks)`)}</p>
+                  <p className="font-semibold text-foreground">{tr(`Good (21-26 marks)`)}</p>
                   <p className="text-xs text-muted-foreground">B / Grade 5&ndash;6 standard</p>
                 </div>
               </div>
@@ -615,9 +627,7 @@ export default async function Paper2Page() {
                   <ul className="mt-1 space-y-1 text-sm text-muted-foreground">
                     <li>&bull; Relevant content that is developed with some detail</li>
                     <li>&bull; Awareness of purpose and audience</li>
-                    <li>
-                      &bull; Structured with some variety &mdash; clear beginning, middle, and end
-                    </li>
+                    <li>&bull; Structured with some variety - clear beginning, middle, and end</li>
                   </ul>
                 </div>
                 <div>
@@ -627,7 +637,7 @@ export default async function Paper2Page() {
                   <ul className="mt-1 space-y-1 text-sm text-muted-foreground">
                     <li>&bull; Reasonable range of vocabulary, sometimes effective</li>
                     <li>&bull; Some variety in sentence structures</li>
-                    <li>&bull; Mostly accurate &mdash; errors do not impede communication</li>
+                    <li>&bull; Mostly accurate - errors do not impede communication</li>
                   </ul>
                 </div>
               </div>
@@ -640,7 +650,7 @@ export default async function Paper2Page() {
                   3
                 </span>
                 <div>
-                  <p className="font-semibold text-foreground">{tr(`Adequate (15-21 marks)`)}</p>
+                  <p className="font-semibold text-foreground">{tr(`Adequate (14-19 marks)`)}</p>
                   <p className="text-xs text-muted-foreground">C / Grade 4 standard</p>
                 </div>
               </div>
@@ -660,7 +670,7 @@ export default async function Paper2Page() {
                     Style &amp; Accuracy
                   </p>
                   <ul className="mt-1 space-y-1 text-sm text-muted-foreground">
-                    <li>&bull; Limited vocabulary &mdash; simple but functional</li>
+                    <li>&bull; Limited vocabulary - simple but functional</li>
                     <li>&bull; Mostly simple sentence structures</li>
                     <li>&bull; Errors are noticeable but meaning is still clear</li>
                   </ul>
@@ -675,7 +685,7 @@ export default async function Paper2Page() {
                   2
                 </span>
                 <div>
-                  <p className="font-semibold text-foreground">{tr(`Limited (8-14 marks)`)}</p>
+                  <p className="font-semibold text-foreground">{tr(`Limited (8-12 marks)`)}</p>
                   <p className="text-xs text-muted-foreground">
                     D&ndash;E / Grade 2&ndash;3 standard
                   </p>
@@ -697,7 +707,7 @@ export default async function Paper2Page() {
                   1
                 </span>
                 <div>
-                  <p className="font-semibold text-foreground">{tr(`Poor (1-7 marks)`)}</p>
+                  <p className="font-semibold text-foreground">{tr(`Poor (2-6 marks)`)}</p>
                   <p className="text-xs text-muted-foreground">F&ndash;G / Grade 1 standard</p>
                 </div>
               </div>

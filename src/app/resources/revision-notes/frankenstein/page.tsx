@@ -73,9 +73,7 @@ function QuoteCard({
   return (
     <div className="rounded-lg border-s-4 border-border bg-muted/50 p-4 mb-3">
       <p className="text-sm font-semibold text-foreground italic">&ldquo;{quote}&rdquo;</p>
-      {speaker && (
-        <p className="mt-1 text-xs font-medium text-muted-foreground">&mdash; {speaker}</p>
-      )}
+      {speaker && <p className="mt-1 text-xs font-medium text-muted-foreground">- {speaker}</p>}
       <p className="mt-2 text-sm text-muted-foreground">{analysis}</p>
     </div>
   )
@@ -151,10 +149,9 @@ export default function FrankensteinPage() {
             <p className="text-sm text-muted-foreground leading-relaxed">
               Captain Robert Walton writes letters to his sister Margaret Saville from a ship
               heading to the North Pole. He is driven by ambition to discover new lands. His crew
-              rescue a half-frozen stranger &mdash; Victor Frankenstein &mdash; who begins to tell
-              his story as a warning against obsessive ambition. Walton mirrors Victor&apos;s
-              dangerous desire for glory, establishing the theme of unchecked ambition from the
-              outset.
+              rescue a half-frozen stranger - Victor Frankenstein - who begins to tell his story as
+              a warning against obsessive ambition. Walton mirrors Victor&apos;s dangerous desire
+              for glory, establishing the theme of unchecked ambition from the outset.
             </p>
           </div>
 
@@ -227,7 +224,7 @@ export default function FrankensteinPage() {
                 <p className="text-sm text-muted-foreground leading-relaxed">
                   Victor retreats to the Alps to find solace. On the Mer de Glace glacier, the
                   Creature confronts him and demands to be heard. Despite his revulsion, Victor
-                  agrees to listen. The Creature&apos;s narrative begins &mdash; the novel&apos;s
+                  agrees to listen. The Creature&apos;s narrative begins - the novel&apos;s
                   innermost frame. This is a pivotal moment: Shelley gives the supposedly monstrous
                   Creature the most articulate, sympathetic voice in the novel.
                 </p>
@@ -265,10 +262,10 @@ export default function FrankensteinPage() {
                 <p className="text-sm text-muted-foreground leading-relaxed">
                   The Creature approaches the blind old De Lacey, who responds kindly. But when
                   Felix, Agatha, and Safie return, Felix attacks the Creature, who flees. The De
-                  Laceys abandon the cottage. This rejection &mdash; by the people he loved most
-                  &mdash; is the turning point. The Creature travels to Geneva, saves a drowning
-                  girl, and is shot for his trouble. His faith in humanity destroyed, he murders
-                  William and frames Justine.
+                  Laceys abandon the cottage. This rejection - by the people he loved most - is the
+                  turning point. The Creature travels to Geneva, saves a drowning girl, and is shot
+                  for his trouble. His faith in humanity destroyed, he murders William and frames
+                  Justine.
                 </p>
               </div>
             </div>
@@ -296,11 +293,10 @@ export default function FrankensteinPage() {
                 </h5>
                 <p className="text-sm text-muted-foreground leading-relaxed">
                   On a remote Orkney island, Victor begins building the female creature but is
-                  overcome by fear &mdash; what if they breed and create a race of monsters? He
-                  destroys the unfinished female as the Creature watches through the window. The
-                  Creature vows revenge: &ldquo;I shall be with you on your wedding-night.&rdquo;
-                  Victor disposes of the remains at sea, drifts to Ireland, and is arrested for
-                  murder.
+                  overcome by fear - what if they breed and create a race of monsters? He destroys
+                  the unfinished female as the Creature watches through the window. The Creature
+                  vows revenge: &ldquo;I shall be with you on your wedding-night.&rdquo; Victor
+                  disposes of the remains at sea, drifts to Ireland, and is arrested for murder.
                 </p>
               </div>
               <div>
@@ -311,8 +307,8 @@ export default function FrankensteinPage() {
                   The murder victim is Henry Clerval, strangled by the Creature. Victor suffers
                   another breakdown and is eventually acquitted. He returns to Geneva and marries
                   Elizabeth, despite the Creature&apos;s threat. On their wedding night, Victor
-                  patrols the house with a pistol, misunderstanding the threat &mdash; the Creature
-                  kills Elizabeth, not Victor. Victor&apos;s father dies of grief shortly after.
+                  patrols the house with a pistol, misunderstanding the threat - the Creature kills
+                  Elizabeth, not Victor. Victor&apos;s father dies of grief shortly after.
                 </p>
               </div>
               <div>
@@ -550,9 +546,9 @@ export default function FrankensteinPage() {
             <p className="mt-1 text-sm text-muted-foreground leading-relaxed">
               The novel uses three nested narratives: Walton&apos;s letters contain Victor&apos;s
               story, which contains the Creature&apos;s story. This structure mirrors Russian dolls
-              or Chinese boxes. The Creature&apos;s tale is at the innermost layer &mdash; the heart
-              of the novel &mdash; forcing the reader to work through layers of mediation to reach
-              the most important voice. Each narrator filters the story through their own biases and
+              or Chinese boxes. The Creature&apos;s tale is at the innermost layer - the heart of
+              the novel - forcing the reader to work through layers of mediation to reach the most
+              important voice. Each narrator filters the story through their own biases and
               limitations.
             </p>
           </div>
@@ -598,10 +594,10 @@ export default function FrankensteinPage() {
             <p className="mt-1 text-sm text-muted-foreground leading-relaxed">
               The Alps, the Arctic, and the Scottish Highlands provide sublime settings that
               overwhelm human characters with their scale and power. These landscapes reflect the
-              characters&apos; emotional states &mdash; Victor finds temporary peace in mountain
-              scenery but is ultimately dwarfed by nature. The Creature inhabits these wild spaces,
-              existing outside civilisation. Shelley draws on Romantic ideas of the sublime as both
-              beautiful and terrifying.
+              characters&apos; emotional states - Victor finds temporary peace in mountain scenery
+              but is ultimately dwarfed by nature. The Creature inhabits these wild spaces, existing
+              outside civilisation. Shelley draws on Romantic ideas of the sublime as both beautiful
+              and terrifying.
             </p>
           </div>
           <div className="rounded-lg bg-muted p-4">
@@ -609,9 +605,8 @@ export default function FrankensteinPage() {
             <p className="mt-1 text-sm text-muted-foreground leading-relaxed">
               Victor is the Gothic &ldquo;overreacher&rdquo; who transgresses natural and divine
               boundaries. Like Faust, Prometheus, and later Dr Moreau, he seeks forbidden knowledge
-              and pays the ultimate price. The laboratory scene &mdash; the &ldquo;dreary night of
-              November,&rdquo; the candle guttering &mdash; creates a classic Gothic atmosphere of
-              dread.
+              and pays the ultimate price. The laboratory scene - the &ldquo;dreary night of
+              November,&rdquo; the candle guttering - creates a classic Gothic atmosphere of dread.
             </p>
           </div>
           <div className="rounded-lg bg-muted p-4">
@@ -620,8 +615,7 @@ export default function FrankensteinPage() {
               The Creature is both a literal monster (physically grotesque) and Victor&apos;s
               psychological double. They haunt each other, and neither can exist peacefully while
               the other lives. The Creature may be read as Victor&apos;s repressed guilt and
-              unconscious desires given physical form &mdash; a Gothic externalisation of inner
-              conflict.
+              unconscious desires given physical form - a Gothic externalisation of inner conflict.
             </p>
           </div>
           <div className="rounded-lg bg-muted p-4">
@@ -646,7 +640,7 @@ export default function FrankensteinPage() {
               Mary Shelley (1797&ndash;1851) wrote <em>Frankenstein</em> when she was just 18,
               beginning it during the famous &ldquo;ghost story competition&rdquo; at Lake Geneva in
               1816 with Percy Shelley, Lord Byron, and John Polidori. Her mother, the feminist Mary
-              Wollstonecraft, died giving birth to her &mdash; a fact that profoundly shapes the
+              Wollstonecraft, died giving birth to her - a fact that profoundly shapes the
               novel&apos;s exploration of creation and parental responsibility. Shelley also lost
               her own premature baby and dreamed of warming it back to life by the fire, an image
               eerily echoed in the novel.
@@ -658,9 +652,9 @@ export default function FrankensteinPage() {
               <em>Frankenstein</em> both embraces and critiques Romanticism. The novel celebrates
               nature&apos;s sublime power and individual emotional experience, but it warns against
               the Romantic elevation of the individual genius. Victor is a Romantic hero gone wrong
-              &mdash; his passion and ambition, traits celebrated by Romantic poets, lead to
-              destruction. Shelley, surrounded by Romantic poets (her husband Percy Shelley and
-              Byron), understood the movement&apos;s appeal but also its dangers.
+              - his passion and ambition, traits celebrated by Romantic poets, lead to destruction.
+              Shelley, surrounded by Romantic poets (her husband Percy Shelley and Byron),
+              understood the movement&apos;s appeal but also its dangers.
             </p>
           </div>
           <div className="rounded-lg bg-primary/10 p-4">
@@ -680,8 +674,8 @@ export default function FrankensteinPage() {
               The early 19th century saw rapid industrialisation, creating both wonder and anxiety.
               New technologies were transforming society, raising questions about the moral
               responsibility of inventors and scientists. The Creature can be read as a metaphor for
-              the working class &mdash; created by the powerful to serve their interests, then
-              abandoned and demonised when no longer convenient.
+              the working class - created by the powerful to serve their interests, then abandoned
+              and demonised when no longer convenient.
             </p>
           </div>
           <div className="rounded-lg bg-primary/10 p-4">
@@ -689,8 +683,8 @@ export default function FrankensteinPage() {
             <p className="mt-1 text-sm text-muted-foreground leading-relaxed">
               Milton&apos;s <em>Paradise Lost</em> (1667) is directly referenced throughout the
               novel. The Creature reads it and identifies with both Adam (the first created being)
-              and Satan (the fallen angel who rebels against his creator). Victor parallels God
-              &mdash; a creator who abandons his creation. The novel&apos;s epigraph is from{' '}
+              and Satan (the fallen angel who rebels against his creator). Victor parallels God - a
+              creator who abandons his creation. The novel&apos;s epigraph is from{' '}
               <em>Paradise Lost</em>. Shelley uses Milton to explore the relationship between
               creator and created, free will and determinism, and the nature of evil.
             </p>
@@ -720,8 +714,8 @@ export default function FrankensteinPage() {
               GCSE literature essays on <em>Frankenstein</em> typically require you to respond to an
               extract and then write about the wider novel. Use the <strong>PEEL</strong> structure
               (Point, Evidence, Explain, Link) or <strong>What-How-Why</strong> (What is Shelley
-              saying? How does she convey it through language, structure, and form? Why &mdash; what
-              is the effect on the reader and what is the contextual significance?). Always consider
+              saying? How does she convey it through language, structure, and form? Why - what is
+              the effect on the reader and what is the contextual significance?). Always consider
               Shelley&apos;s intentions as a writer.
             </p>
           </div>
@@ -751,8 +745,8 @@ export default function FrankensteinPage() {
               </p>
               <p>
                 <strong>{tr(`Paragraph 3 - The Creature's argument:`)}</strong> &ldquo;I ought to be
-                thy Adam&rdquo; &mdash; the Creature uses biblical language to frame responsibility
-                as a creator&apos;s <em>duty</em>. Link to Paradise Lost and the idea that God has
+                thy Adam&rdquo; - the Creature uses biblical language to frame responsibility as a
+                creator&apos;s <em>duty</em>. Link to Paradise Lost and the idea that God has
                 obligations to his creations.
               </p>
               <p>
@@ -783,27 +777,26 @@ export default function FrankensteinPage() {
               </p>
               <p>
                 <strong>{tr(`Paragraph 1 - The Creature's appearance:`)}</strong> &ldquo;dull yellow
-                eye&rdquo; &mdash; Victor judges entirely on looks. Discuss how the novel critiques
+                eye&rdquo; - Victor judges entirely on looks. Discuss how the novel critiques
                 prejudice. Only the blind De Lacey shows kindness. Link to contemporary debates
                 about physiognomy.
               </p>
               <p>
                 <strong>{tr(`Paragraph 2 - Victor's moral monstrosity:`)}</strong> Victor abandons
                 his creation, allows Justine to die, and destroys the female creature out of selfish
-                fear. &ldquo;I compassionated him&rdquo; but revulsion overrides compassion &mdash;
+                fear. &ldquo;I compassionated him&rdquo; but revulsion overrides compassion -
                 appearance defeats morality.
               </p>
               <p>
                 <strong>{tr(`Paragraph 3 - The Creature's transformation:`)}</strong> &ldquo;I was
-                benevolent and good; misery made me a fiend.&rdquo; Nature vs nurture &mdash;
-                monstrosity is created by society, not born. Link to Rousseau and Romantic
-                philosophy.
+                benevolent and good; misery made me a fiend.&rdquo; Nature vs nurture - monstrosity
+                is created by society, not born. Link to Rousseau and Romantic philosophy.
               </p>
               <p>
                 <strong>{tr(`Paragraph 4 - Structural presentation:`)}</strong> The frame narrative
-                places the Creature&apos;s voice at the centre &mdash; the heart of the novel.
-                Shelley gives him the most eloquent speech, undermining Victor&apos;s
-                characterisation of him as a &ldquo;wretch.&rdquo;
+                places the Creature&apos;s voice at the centre - the heart of the novel. Shelley
+                gives him the most eloquent speech, undermining Victor&apos;s characterisation of
+                him as a &ldquo;wretch.&rdquo;
               </p>
               <p>
                 <strong>Conclusion:</strong> Shelley argues that monstrosity is a social construct.
@@ -843,9 +836,9 @@ export default function FrankensteinPage() {
               </p>
               <p>
                 <strong>{tr(`Paragraph 4 - Structural isolation:`)}</strong> The nested narrative
-                itself enacts isolation &mdash; each voice is contained within another, unable to
-                speak directly to the reader. The Arctic setting symbolises ultimate isolation:
-                cold, empty, lifeless.
+                itself enacts isolation - each voice is contained within another, unable to speak
+                directly to the reader. The Arctic setting symbolises ultimate isolation: cold,
+                empty, lifeless.
               </p>
               <p>
                 <strong>Conclusion:</strong> Shelley presents isolation as both a cause and
@@ -987,7 +980,7 @@ export default function FrankensteinPage() {
             <span className="mt-0.5 h-1.5 w-1.5 shrink-0 rounded-full bg-accent" />
             <span>
               <strong>Challenge the idea of the &ldquo;monster.&rdquo;</strong> The best essays
-              explore who is truly monstrous &mdash; the Creature or Victor.
+              explore who is truly monstrous - the Creature or Victor.
             </span>
           </li>
           <li className="flex items-start gap-2">
@@ -1000,8 +993,8 @@ export default function FrankensteinPage() {
           <li className="flex items-start gap-2">
             <span className="mt-0.5 h-1.5 w-1.5 shrink-0 rounded-full bg-accent" />
             <span>
-              <strong>{tr(`Analyse language closely.`)}</strong> Pick apart individual words &mdash;
-              &ldquo;wretch,&rdquo; &ldquo;dæmon,&rdquo; &ldquo;abortion&rdquo; &mdash; to show how
+              <strong>{tr(`Analyse language closely.`)}</strong> Pick apart individual words -
+              &ldquo;wretch,&rdquo; &ldquo;dæmon,&rdquo; &ldquo;abortion&rdquo; - to show how
               Shelley shapes the reader&apos;s response through diction.
             </span>
           </li>
@@ -1009,16 +1002,16 @@ export default function FrankensteinPage() {
             <span className="mt-0.5 h-1.5 w-1.5 shrink-0 rounded-full bg-accent" />
             <span>
               <strong>{tr(`Link themes together.`)}</strong> The strongest essays connect multiple
-              themes &mdash; e.g., ambition leads to isolation, which leads to failed
-              responsibility, which leads to monstrosity.
+              themes - e.g., ambition leads to isolation, which leads to failed responsibility,
+              which leads to monstrosity.
             </span>
           </li>
           <li className="flex items-start gap-2">
             <span className="mt-0.5 h-1.5 w-1.5 shrink-0 rounded-full bg-accent" />
             <span>
-              <strong>{tr(`Discuss Gothic conventions.`)}</strong> Show awareness of the genre
-              &mdash; sublime landscapes, transgressive science, the doppelg&auml;nger &mdash; and
-              how Shelley uses and subverts them.
+              <strong>{tr(`Discuss Gothic conventions.`)}</strong> Show awareness of the genre -
+              sublime landscapes, transgressive science, the doppelg&auml;nger - and how Shelley
+              uses and subverts them.
             </span>
           </li>
         </ul>

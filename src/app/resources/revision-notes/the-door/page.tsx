@@ -99,7 +99,7 @@ function QuoteCard({
           &ldquo;{quote}&rdquo;
         </p>
       )}
-      {speaker && <p className="mt-1 text-xs font-medium text-violet-600">&mdash; {speaker}</p>}
+      {speaker && <p className="mt-1 text-xs font-medium text-violet-600">- {speaker}</p>}
       <p className="mt-2 text-sm text-muted-foreground">{analysis}</p>
     </div>
   )
@@ -143,7 +143,7 @@ export default function TheDoorPage() {
           </span>
         </div>
         <h1 className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
-          The Door &mdash; Complete Revision Guide
+          The Door - Complete Revision Guide
         </h1>
         <p className="mt-1 text-lg text-muted-foreground">
           Miroslav Holub, translated by Ian Milner

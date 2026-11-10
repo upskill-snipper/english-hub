@@ -469,7 +469,7 @@ function RevisionMode({
               <ul className="space-y-1">
                 {t.keyPoints.map((pt, j) => (
                   <li key={j} className="flex items-start gap-2 text-xs text-ink-700">
-                    <span className="text-clay-500 shrink-0 mt-0.5">&mdash;</span>
+                    <span className="text-clay-500 shrink-0 mt-0.5">-</span>
                     {pt}
                   </li>
                 ))}

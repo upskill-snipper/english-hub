@@ -74,7 +74,7 @@ function Quote({
     <div className="rounded-lg border-s-4 border-accent bg-primary/10 p-4">
       <p className="text-sm font-semibold italic text-foreground">&ldquo;{text}&rdquo;</p>
       <p className="mt-1 text-xs text-muted-foreground">
-        {speaker} &mdash; {act}
+        {speaker} - {act}
       </p>
       <p className="mt-2 text-sm text-muted-foreground">{analysis}</p>
     </div>
@@ -133,7 +133,7 @@ export default function ChristmasCarolRevisionPage() {
           </span>
         </div>
         <h1 className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
-          A Christmas Carol &mdash; Complete Revision Guide
+          A Christmas Carol - Complete Revision Guide
         </h1>
         <p className="mt-3 max-w-3xl text-lg text-muted-foreground">
           Everything you need for your GCSE English Literature exam on Dickens&apos;s classic
@@ -192,7 +192,7 @@ export default function ChristmasCarolRevisionPage() {
                 <span className="flex h-6 w-6 items-center justify-center rounded-full bg-green-500/15 text-xs font-bold text-green-700 dark:text-green-300">
                   1
                 </span>
-                Stave One &mdash; Marley&apos;s Ghost
+                Stave One - Marley&apos;s Ghost
               </h3>
               <p className="mt-2 text-sm text-muted-foreground leading-relaxed">
                 The novella opens on Christmas Eve with the famous declaration: &ldquo;Marley was
@@ -230,10 +230,10 @@ export default function ChristmasCarolRevisionPage() {
                 <span className="flex h-6 w-6 items-center justify-center rounded-full bg-green-500/15 text-xs font-bold text-green-700 dark:text-green-300">
                   2
                 </span>
-                Stave Two &mdash; The First of the Three Spirits
+                Stave Two - The First of the Three Spirits
               </h3>
               <p className="mt-2 text-sm text-muted-foreground leading-relaxed">
-                At one o&apos;clock, the Ghost of Christmas Past appears &mdash; a strange, ethereal
+                At one o&apos;clock, the Ghost of Christmas Past appears - a strange, ethereal
                 figure that is both old and young, with a bright light emanating from its head. It
                 takes Scrooge on a journey through his own memories. First, they visit Scrooge as a
                 lonely boy left at boarding school during the holidays, evoking Scrooge&apos;s first
@@ -251,12 +251,12 @@ export default function ChristmasCarolRevisionPage() {
                   {tr(`Key Moments`)}
                 </p>
                 <ul className="mt-2 space-y-1 text-sm text-muted-foreground">
-                  <li>&bull; Young Scrooge alone at school &mdash; the root of his isolation</li>
+                  <li>&bull; Young Scrooge alone at school - the root of his isolation</li>
                   <li>
                     &bull; Fan&apos;s arrival: &ldquo;Father is so much kinder than he used to
                     be&rdquo;
                   </li>
-                  <li>&bull; Fezziwig&apos;s party &mdash; the power of generosity</li>
+                  <li>&bull; Fezziwig&apos;s party - the power of generosity</li>
                   <li>&bull; Belle breaking off their engagement</li>
                   <li>
                     &bull; Scrooge extinguishing the spirit&apos;s light (suppressing memory and
@@ -271,7 +271,7 @@ export default function ChristmasCarolRevisionPage() {
                 <span className="flex h-6 w-6 items-center justify-center rounded-full bg-green-500/15 text-xs font-bold text-green-700 dark:text-green-300">
                   3
                 </span>
-                Stave Three &mdash; The Second of the Three Spirits
+                Stave Three - The Second of the Three Spirits
               </h3>
               <p className="mt-2 text-sm text-muted-foreground leading-relaxed">
                 The Ghost of Christmas Present is a giant, jolly spirit seated upon a throne of
@@ -282,8 +282,8 @@ export default function ChristmasCarolRevisionPage() {
                 every one!&rdquo; The Ghost reveals that Tiny Tim will die if the future remains
                 unchanged. They visit Fred&apos;s Christmas party, where the guests mock Scrooge but
                 Fred defends him with genuine warmth. The spirit also shows scenes of Christmas
-                being celebrated everywhere &mdash; by miners, lighthouse keepers, and sailors.
-                Before departing, the Ghost reveals two emaciated children hiding beneath its robe:
+                being celebrated everywhere - by miners, lighthouse keepers, and sailors. Before
+                departing, the Ghost reveals two emaciated children hiding beneath its robe:
                 Ignorance and Want, representing society&apos;s neglect of the poor. Scrooge&apos;s
                 own words (&ldquo;Are there no prisons?&rdquo;) are thrown back at him.
               </p>
@@ -292,11 +292,11 @@ export default function ChristmasCarolRevisionPage() {
                   {tr(`Key Moments`)}
                 </p>
                 <ul className="mt-2 space-y-1 text-sm text-muted-foreground">
-                  <li>&bull; The Cratchit family dinner &mdash; joy in poverty</li>
+                  <li>&bull; The Cratchit family dinner - joy in poverty</li>
                   <li>&bull; Tiny Tim&apos;s &ldquo;God bless us, every one!&rdquo;</li>
                   <li>&bull; The Ghost&apos;s warning about Tiny Tim&apos;s death</li>
                   <li>&bull; Fred&apos;s party and his defence of Scrooge</li>
-                  <li>&bull; Ignorance and Want &mdash; &ldquo;beware them both&rdquo;</li>
+                  <li>&bull; Ignorance and Want - &ldquo;beware them both&rdquo;</li>
                   <li>&bull; Scrooge&apos;s own words used against him</li>
                 </ul>
               </div>
@@ -307,32 +307,31 @@ export default function ChristmasCarolRevisionPage() {
                 <span className="flex h-6 w-6 items-center justify-center rounded-full bg-green-500/15 text-xs font-bold text-green-700 dark:text-green-300">
                   4
                 </span>
-                Stave Four &mdash; The Last of the Spirits
+                Stave Four - The Last of the Spirits
               </h3>
               <p className="mt-2 text-sm text-muted-foreground leading-relaxed">
                 The Ghost of Christmas Yet to Come is the most terrifying spirit: a dark, hooded
                 phantom that never speaks, only points. It shows Scrooge a series of scenes
                 connected to a man who has recently died. Businessmen discuss the death with callous
                 indifference. A charwoman, a laundress, and an undertaker&apos;s man steal the dead
-                man&apos;s possessions &mdash; even the shirt off his body and the curtains from his
-                bed &mdash; and sell them to a fence called Old Joe. A young couple feel relief at
-                the death because it gives them more time to pay their debt. The only emotion the
-                death has caused is pleasure or indifference. Then, in devastating contrast, the
-                Ghost shows the Cratchit household mourning Tiny Tim, who has died. Finally, Scrooge
-                is taken to a neglected, overgrown grave and sees his own name on the headstone. He
-                begs the spirit for a chance to change, promising to honour Christmas and live a
-                better life.
+                man&apos;s possessions - even the shirt off his body and the curtains from his bed -
+                and sell them to a fence called Old Joe. A young couple feel relief at the death
+                because it gives them more time to pay their debt. The only emotion the death has
+                caused is pleasure or indifference. Then, in devastating contrast, the Ghost shows
+                the Cratchit household mourning Tiny Tim, who has died. Finally, Scrooge is taken to
+                a neglected, overgrown grave and sees his own name on the headstone. He begs the
+                spirit for a chance to change, promising to honour Christmas and live a better life.
               </p>
               <div className="mt-3 rounded-lg bg-muted p-3">
                 <p className="text-xs font-semibold text-muted-foreground uppercase tracking-wider">
                   {tr(`Key Moments`)}
                 </p>
                 <ul className="mt-2 space-y-1 text-sm text-muted-foreground">
-                  <li>&bull; The silent, hooded phantom &mdash; the most frightening spirit</li>
+                  <li>&bull; The silent, hooded phantom - the most frightening spirit</li>
                   <li>&bull; Businessmen discussing the death with no sorrow</li>
                   <li>&bull; The thieves stripping the dead man&apos;s belongings</li>
                   <li>&bull; Tiny Tim&apos;s death and the Cratchits&apos; grief</li>
-                  <li>&bull; Scrooge&apos;s own gravestone &mdash; the climactic revelation</li>
+                  <li>&bull; Scrooge&apos;s own gravestone - the climactic revelation</li>
                   <li>&bull; Scrooge&apos;s desperate promise to change</li>
                 </ul>
               </div>
@@ -343,7 +342,7 @@ export default function ChristmasCarolRevisionPage() {
                 <span className="flex h-6 w-6 items-center justify-center rounded-full bg-green-500/15 text-xs font-bold text-green-700 dark:text-green-300">
                   5
                 </span>
-                Stave Five &mdash; The End of It
+                Stave Five - The End of It
               </h3>
               <p className="mt-2 text-sm text-muted-foreground leading-relaxed">
                 Scrooge wakes on Christmas morning, alive and overjoyed. His transformation is
@@ -367,7 +366,7 @@ export default function ChristmasCarolRevisionPage() {
                   </li>
                   <li>&bull; Sending the prize turkey to the Cratchits anonymously</li>
                   <li>&bull; Meeting the charity collector and whispering a generous donation</li>
-                  <li>&bull; Arriving at Fred&apos;s party &mdash; reconciliation with family</li>
+                  <li>&bull; Arriving at Fred&apos;s party - reconciliation with family</li>
                   <li>&bull; Raising Bob&apos;s salary and becoming Tiny Tim&apos;s benefactor</li>
                   <li>
                     &bull; The narrator&apos;s final confirmation that Scrooge kept Christmas well
@@ -414,10 +413,10 @@ export default function ChristmasCarolRevisionPage() {
                   Fezziwig showed him a model of generous, joyful employment, but Scrooge chose
                   greed instead. Through the three spirits, Scrooge is forced to confront what he
                   has become, what he is missing, and what awaits him. His transformation in Stave
-                  Five is joyous, almost childlike &mdash; he becomes generous, warm, sociable, and
-                  deeply connected to his community. Dickens uses Scrooge to argue that change is
-                  always possible and that no one is beyond redemption. He represents the Victorian
-                  wealthy class whom Dickens wanted to awaken to their social responsibilities.
+                  Five is joyous, almost childlike - he becomes generous, warm, sociable, and deeply
+                  connected to his community. Dickens uses Scrooge to argue that change is always
+                  possible and that no one is beyond redemption. He represents the Victorian wealthy
+                  class whom Dickens wanted to awaken to their social responsibilities.
                 </p>
                 <div className="mt-3 grid gap-3 sm:grid-cols-2">
                   <Quote
@@ -461,17 +460,17 @@ export default function ChristmasCarolRevisionPage() {
                   </span>
                 </div>
                 <p className="mt-3 text-sm text-muted-foreground leading-relaxed">
-                  The first spirit is an androgynous, contradictory figure &mdash; simultaneously
-                  old and young, strong and gentle, with a bright jet of light shining from its
-                  crown. It represents memory, truth, and the light of self-knowledge. Its shifting
-                  appearance suggests the fluid, unstable nature of memory itself. The light
-                  symbolises the truth that Scrooge has tried to suppress. Significantly, Scrooge
-                  can extinguish the light (suppress his memories) but not destroy the spirit
-                  &mdash; the past cannot be erased. This ghost speaks gently and does not judge; it
-                  simply shows. The visions it presents establish the origins of Scrooge&apos;s
-                  character: his neglected childhood explains his emotional isolation, Fezziwig
-                  provides a counter-example to his miserly employment of Bob Cratchit, and Belle
-                  shows the personal cost of his greed.
+                  The first spirit is an androgynous, contradictory figure - simultaneously old and
+                  young, strong and gentle, with a bright jet of light shining from its crown. It
+                  represents memory, truth, and the light of self-knowledge. Its shifting appearance
+                  suggests the fluid, unstable nature of memory itself. The light symbolises the
+                  truth that Scrooge has tried to suppress. Significantly, Scrooge can extinguish
+                  the light (suppress his memories) but not destroy the spirit - the past cannot be
+                  erased. This ghost speaks gently and does not judge; it simply shows. The visions
+                  it presents establish the origins of Scrooge&apos;s character: his neglected
+                  childhood explains his emotional isolation, Fezziwig provides a counter-example to
+                  his miserly employment of Bob Cratchit, and Belle shows the personal cost of his
+                  greed.
                 </p>
                 <div className="mt-3 grid gap-3 sm:grid-cols-2">
                   <Quote
@@ -511,15 +510,14 @@ export default function ChristmasCarolRevisionPage() {
                 <p className="mt-3 text-sm text-muted-foreground leading-relaxed">
                   A giant, jolly spirit dressed in a green robe bordered with white fur, wearing a
                   holly wreath and carrying a torch shaped like a cornucopia. It sits on a throne of
-                  Christmas food &mdash; turkeys, geese, game, fruit, and punch. It represents
-                  abundance, generosity, and the spirit of Christmas celebration. However, it also
-                  delivers the novella&apos;s harshest social criticism. It ages visibly during the
-                  stave (it has over 1,800 brothers, one for each year of Christianity), and before
-                  it dies, it reveals Ignorance and Want &mdash; two wretched children &mdash;
-                  beneath its robe. The spirit&apos;s warmth contrasts with its devastating warning
-                  about society&apos;s neglect. Its torch sprinkles goodwill on food, particularly
-                  the food of the poor, showing that generosity of spirit matters more than material
-                  wealth.
+                  Christmas food - turkeys, geese, game, fruit, and punch. It represents abundance,
+                  generosity, and the spirit of Christmas celebration. However, it also delivers the
+                  novella&apos;s harshest social criticism. It ages visibly during the stave (it has
+                  over 1,800 brothers, one for each year of Christianity), and before it dies, it
+                  reveals Ignorance and Want - two wretched children - beneath its robe. The
+                  spirit&apos;s warmth contrasts with its devastating warning about society&apos;s
+                  neglect. Its torch sprinkles goodwill on food, particularly the food of the poor,
+                  showing that generosity of spirit matters more than material wealth.
                 </p>
                 <div className="mt-3 grid gap-3 sm:grid-cols-2">
                   <Quote
@@ -558,15 +556,15 @@ export default function ChristmasCarolRevisionPage() {
                 </div>
                 <p className="mt-3 text-sm text-muted-foreground leading-relaxed">
                   The final spirit is the most terrifying. It is a dark, hooded phantom, shrouded in
-                  black, that never speaks &mdash; it only points. Its silence makes it more
-                  menacing and gives Scrooge (and the reader) no comfort or explanation. It
-                  resembles the Grim Reaper and represents death, judgement, and the inevitable
-                  consequences of one&apos;s choices. Unlike the other ghosts, it shows not
-                  certainties but possibilities &mdash; what <em>will</em> happen if Scrooge does
-                  not change. Its visions are the novella&apos;s darkest: a death that causes no
-                  grief, the stripping of a corpse&apos;s possessions, and a neglected grave. The
-                  contrast between the unmourned rich man and the deeply mourned Tiny Tim provides
-                  the final catalyst for Scrooge&apos;s transformation.
+                  black, that never speaks - it only points. Its silence makes it more menacing and
+                  gives Scrooge (and the reader) no comfort or explanation. It resembles the Grim
+                  Reaper and represents death, judgement, and the inevitable consequences of
+                  one&apos;s choices. Unlike the other ghosts, it shows not certainties but
+                  possibilities - what <em>will</em> happen if Scrooge does not change. Its visions
+                  are the novella&apos;s darkest: a death that causes no grief, the stripping of a
+                  corpse&apos;s possessions, and a neglected grave. The contrast between the
+                  unmourned rich man and the deeply mourned Tiny Tim provides the final catalyst for
+                  Scrooge&apos;s transformation.
                 </p>
                 <div className="mt-3 grid gap-3 sm:grid-cols-2">
                   <Quote
@@ -604,11 +602,11 @@ export default function ChristmasCarolRevisionPage() {
                   &ldquo;comforter&rdquo; (scarf) because Scrooge will not allow a sufficient fire.
                   He tries to toast Scrooge at Christmas dinner, even though Mrs. Cratchit refuses.
                   He is patient, long-suffering, and morally superior to his employer. Bob
-                  represents the exploited working class &mdash; hardworking people trapped in
-                  poverty by the greed of their employers. His love for Tiny Tim is deeply
-                  emotional, and his grief in Stave Four over Tim&apos;s death is one of the
-                  novella&apos;s most moving passages. He acts as a foil to Scrooge: where Scrooge
-                  is rich but emotionally impoverished, Bob is poor but rich in love and family.
+                  represents the exploited working class - hardworking people trapped in poverty by
+                  the greed of their employers. His love for Tiny Tim is deeply emotional, and his
+                  grief in Stave Four over Tim&apos;s death is one of the novella&apos;s most moving
+                  passages. He acts as a foil to Scrooge: where Scrooge is rich but emotionally
+                  impoverished, Bob is poor but rich in love and family.
                 </p>
                 <div className="mt-3 grid gap-3 sm:grid-cols-2">
                   <Quote
@@ -645,11 +643,10 @@ export default function ChristmasCarolRevisionPage() {
                   spiritual. He is Dickens&apos;s most potent tool for evoking the reader&apos;s
                   sympathy and is used to represent all the innocent poor who suffer and die because
                   of society&apos;s neglect. His potential death is directly linked to
-                  Scrooge&apos;s choices &mdash; if Scrooge changes, Tiny Tim lives; if not, he
-                  dies. This makes the consequences of greed and social indifference tangible and
-                  personal rather than abstract. Tim is not a fully developed character but a
-                  symbolic figure designed to move both Scrooge and the reader to compassion and
-                  action.
+                  Scrooge&apos;s choices - if Scrooge changes, Tiny Tim lives; if not, he dies. This
+                  makes the consequences of greed and social indifference tangible and personal
+                  rather than abstract. Tim is not a fully developed character but a symbolic figure
+                  designed to move both Scrooge and the reader to compassion and action.
                 </p>
                 <div className="mt-3 grid gap-3 sm:grid-cols-2">
                   <Quote
@@ -692,9 +689,9 @@ export default function ChristmasCarolRevisionPage() {
                   spirit of Christmas. Despite Scrooge&apos;s repeated rejections, Fred returns
                   every year to invite his uncle to dinner, showing unconditional love and patience.
                   He refuses to be angry at Scrooge, instead pitying him. At his party, he defends
-                  Scrooge and insists on toasting him. Fred represents what Scrooge could be &mdash;
-                  he has little money but is rich in love and happiness. He is the living connection
-                  to Fan, and his warmth contrasts sharply with Scrooge&apos;s coldness. His
+                  Scrooge and insists on toasting him. Fred represents what Scrooge could be - he
+                  has little money but is rich in love and happiness. He is the living connection to
+                  Fan, and his warmth contrasts sharply with Scrooge&apos;s coldness. His
                   persistence is ultimately rewarded when the transformed Scrooge arrives at his
                   door on Christmas Day.
                 </p>
@@ -734,7 +731,7 @@ export default function ChristmasCarolRevisionPage() {
                   brother. Fan died young (giving birth to Fred), and her death is one of the losses
                   that hardened Scrooge. She represents warmth, familial love, and innocence. Her
                   brief appearance is crucial because it shows that Scrooge was once capable of deep
-                  love and was once loved in return. Fan also connects Scrooge to Fred &mdash; by
+                  love and was once loved in return. Fan also connects Scrooge to Fred - by
                   rejecting his nephew, Scrooge is rejecting the living legacy of the sister he
                   cherished.
                 </p>
@@ -800,11 +797,11 @@ export default function ChristmasCarolRevisionPage() {
                 </div>
                 <p className="mt-3 text-sm text-muted-foreground leading-relaxed">
                   Scrooge&apos;s former employer, a fat, jovial businessman who throws a generous
-                  Christmas party for his workers. Fezziwig represents the ideal employer &mdash;
-                  someone who understands that he has power over his employees&apos; happiness and
-                  uses it benevolently. His party costs relatively little money but creates enormous
-                  joy. He is a direct foil to Scrooge&apos;s treatment of Bob Cratchit: Fezziwig
-                  gives warmth, celebration, and community; Scrooge gives cold offices and fifteen
+                  Christmas party for his workers. Fezziwig represents the ideal employer - someone
+                  who understands that he has power over his employees&apos; happiness and uses it
+                  benevolently. His party costs relatively little money but creates enormous joy. He
+                  is a direct foil to Scrooge&apos;s treatment of Bob Cratchit: Fezziwig gives
+                  warmth, celebration, and community; Scrooge gives cold offices and fifteen
                   shillings a week. The Ghost of Christmas Past forces Scrooge to see the contrast,
                   and Scrooge begins to understand that an employer has moral obligations beyond
                   paying wages. Fezziwig demonstrates Dickens&apos;s belief that the wealthy can
@@ -844,9 +841,9 @@ export default function ChristmasCarolRevisionPage() {
                   begins. His ghost appears in Stave One, bound in heavy chains made of
                   &ldquo;cash-boxes, keys, padlocks, ledgers, deeds, and heavy purses wrought in
                   steel.&rdquo; These chains represent the greed and materialism that defined his
-                  life. Marley is tormented not by what he did but by what he failed to do &mdash;
-                  he did not help others when he had the chance. He serves as a mirror and a
-                  warning: Scrooge was his equal in life, and unless Scrooge changes, he will share
+                  life. Marley is tormented not by what he did but by what he failed to do - he did
+                  not help others when he had the chance. He serves as a mirror and a warning:
+                  Scrooge was his equal in life, and unless Scrooge changes, he will share
                   Marley&apos;s fate. Marley&apos;s appearance sets the supernatural plot in motion
                   and establishes the novella&apos;s moral framework: we are judged not by our
                   wealth but by our impact on others.
@@ -892,8 +889,8 @@ export default function ChristmasCarolRevisionPage() {
                   matter how far they have fallen. The structure of the novella mirrors a redemption
                   arc: confrontation with the past (guilt), recognition of the present (awareness),
                   fear of the future (motivation), and transformation (action). Importantly,
-                  Scrooge&apos;s redemption is not passive &mdash; he must actively choose to change
-                  and then demonstrate it through action (buying the turkey, donating to charity,
+                  Scrooge&apos;s redemption is not passive - he must actively choose to change and
+                  then demonstrate it through action (buying the turkey, donating to charity,
                   raising Bob&apos;s wages). Dickens suggests redemption requires both internal
                   transformation and external, practical generosity. The Christian context is
                   significant: Christmas celebrates Christ&apos;s birth, and the novella echoes the
@@ -925,15 +922,15 @@ export default function ChristmasCarolRevisionPage() {
                   Dickens wrote <em>A Christmas Carol</em> partly as a response to the 1843
                   government report on child labour and the harsh conditions in workhouses under the
                   Poor Law Amendment Act of 1834. The novella argues passionately that the wealthy
-                  have a duty to help the poor. Scrooge&apos;s early attitude &mdash; &ldquo;Are
-                  there no prisons? ... And the Union workhouses?&rdquo; &mdash; reflects the
-                  prevailing view among many wealthy Victorians that poverty was the poor&apos;s own
-                  fault and that institutions (however brutal) were sufficient. Dickens uses
-                  Marley&apos;s ghost, the Ghost of Christmas Present, and the figure of Tiny Tim to
-                  demolish this view. Marley&apos;s regret, the children Ignorance and Want, and
-                  Tim&apos;s potential death all demonstrate that society&apos;s neglect of the poor
-                  has devastating consequences. The novella targets the reader&apos;s conscience
-                  just as the spirits target Scrooge&apos;s.
+                  have a duty to help the poor. Scrooge&apos;s early attitude - &ldquo;Are there no
+                  prisons? ... And the Union workhouses?&rdquo; - reflects the prevailing view among
+                  many wealthy Victorians that poverty was the poor&apos;s own fault and that
+                  institutions (however brutal) were sufficient. Dickens uses Marley&apos;s ghost,
+                  the Ghost of Christmas Present, and the figure of Tiny Tim to demolish this view.
+                  Marley&apos;s regret, the children Ignorance and Want, and Tim&apos;s potential
+                  death all demonstrate that society&apos;s neglect of the poor has devastating
+                  consequences. The novella targets the reader&apos;s conscience just as the spirits
+                  target Scrooge&apos;s.
                 </p>
                 <div className="mt-3 grid gap-3 sm:grid-cols-2">
                   <Quote
@@ -958,18 +955,18 @@ export default function ChristmasCarolRevisionPage() {
                   The Christmas Spirit
                 </h3>
                 <p className="mt-2 text-sm text-muted-foreground leading-relaxed">
-                  Christmas functions in the novella as more than a holiday &mdash; it is a moral
-                  and social principle. Dickens presents Christmas as a time when people are at
-                  their most generous, forgiving, and communal. Fred&apos;s speech in Stave One
-                  defines it as &ldquo;a kind, forgiving, charitable, pleasant time&rdquo; &mdash;
-                  not primarily a religious festival but a moral practice. The Cratchits celebrate
-                  Christmas with warmth and love despite their poverty, showing that the spirit of
-                  Christmas transcends material wealth. The Ghost of Christmas Present embodies
-                  abundance and generosity. Dickens helped shape the modern understanding of
-                  Christmas as a time for family, charity, and goodwill. Scrooge&apos;s
-                  transformation is measured by his ability to embrace Christmas &mdash; and his
-                  pledge to &ldquo;honour Christmas in my heart, and try to keep it all the
-                  year&rdquo; extends the spirit of Christmas into a year-round moral commitment.
+                  Christmas functions in the novella as more than a holiday - it is a moral and
+                  social principle. Dickens presents Christmas as a time when people are at their
+                  most generous, forgiving, and communal. Fred&apos;s speech in Stave One defines it
+                  as &ldquo;a kind, forgiving, charitable, pleasant time&rdquo; - not primarily a
+                  religious festival but a moral practice. The Cratchits celebrate Christmas with
+                  warmth and love despite their poverty, showing that the spirit of Christmas
+                  transcends material wealth. The Ghost of Christmas Present embodies abundance and
+                  generosity. Dickens helped shape the modern understanding of Christmas as a time
+                  for family, charity, and goodwill. Scrooge&apos;s transformation is measured by
+                  his ability to embrace Christmas - and his pledge to &ldquo;honour Christmas in my
+                  heart, and try to keep it all the year&rdquo; extends the spirit of Christmas into
+                  a year-round moral commitment.
                 </p>
                 <Quote
                   text="I have always thought of Christmas time... as a good time; a kind, forgiving, charitable, pleasant time; the only time I know of, in the long calendar of the year, when men and women seem by one consent to open their shut-up hearts freely"
@@ -989,13 +986,13 @@ export default function ChristmasCarolRevisionPage() {
                   The novella presents a stark contrast between wealth and poverty. Scrooge has more
                   money than he could ever spend but lives in cold, dark misery. The Cratchits have
                   almost nothing but overflow with warmth and love. Dickens does not romanticise
-                  poverty &mdash; Tiny Tim will die without help, and the children Ignorance and
-                  Want are &ldquo;wretched, abject, frightful, hideous, miserable.&rdquo; Instead,
-                  he exposes the moral obscenity of a society in which some have far more than they
-                  need while others die for want of basic necessities. The thieves in Stave Four,
-                  who steal from a dead man without remorse, represent the moral degradation that
-                  poverty can cause. Dickens argues that poverty is not a moral failing of the poor
-                  but a failure of the wealthy to share.
+                  poverty - Tiny Tim will die without help, and the children Ignorance and Want are
+                  &ldquo;wretched, abject, frightful, hideous, miserable.&rdquo; Instead, he exposes
+                  the moral obscenity of a society in which some have far more than they need while
+                  others die for want of basic necessities. The thieves in Stave Four, who steal
+                  from a dead man without remorse, represent the moral degradation that poverty can
+                  cause. Dickens argues that poverty is not a moral failing of the poor but a
+                  failure of the wealthy to share.
                 </p>
                 <div className="mt-3 grid gap-3 sm:grid-cols-2">
                   <Quote
@@ -1024,8 +1021,8 @@ export default function ChristmasCarolRevisionPage() {
                   He is &ldquo;solitary as an oyster,&rdquo; lives alone in dark chambers, and has
                   driven away everyone who ever cared for him. The novella traces the origins of
                   this isolation: his father&apos;s neglect, being left alone at school, the loss of
-                  Fan, the departure of Belle. Dickens suggests that isolation breeds selfishness
-                  &mdash; cut off from human connection, Scrooge loses the ability to empathise. His
+                  Fan, the departure of Belle. Dickens suggests that isolation breeds selfishness -
+                  cut off from human connection, Scrooge loses the ability to empathise. His
                   redemption is fundamentally a return to community: he reconnects with Fred,
                   becomes a benefactor to the Cratchits, and engages warmly with people on the
                   street. The contrast between Scrooge&apos;s lonely Christmas Eve and his joyful
@@ -1050,13 +1047,12 @@ export default function ChristmasCarolRevisionPage() {
                   it is absent. The Cratchit family, despite their poverty, have love, togetherness,
                   and mutual support. Fred&apos;s warm household contrasts with Scrooge&apos;s
                   solitary existence. Belle&apos;s happy family in the later vision shows Scrooge
-                  the life he could have had. Scrooge&apos;s loss of family &mdash; his neglectful
-                  father, Fan&apos;s death, his broken engagement &mdash; explains his emotional
-                  withdrawal. Dickens suggests that family bonds are more valuable than any amount
-                  of money, and that rejecting family (as Scrooge rejects Fred) is a form of
-                  self-destruction. Scrooge&apos;s redemption includes reconnecting with Fred and
-                  becoming a &ldquo;second father&rdquo; to Tiny Tim &mdash; he rebuilds the family
-                  he lost.
+                  the life he could have had. Scrooge&apos;s loss of family - his neglectful father,
+                  Fan&apos;s death, his broken engagement - explains his emotional withdrawal.
+                  Dickens suggests that family bonds are more valuable than any amount of money, and
+                  that rejecting family (as Scrooge rejects Fred) is a form of self-destruction.
+                  Scrooge&apos;s redemption includes reconnecting with Fred and becoming a
+                  &ldquo;second father&rdquo; to Tiny Tim - he rebuilds the family he lost.
                 </p>
                 <Quote
                   text="I wish... but it's too late now... I should like to have given him something: that's all."
@@ -1076,8 +1072,8 @@ export default function ChristmasCarolRevisionPage() {
                   The novella is structured as a moral argument between generosity and greed.
                   Scrooge begins as the embodiment of greed; Fezziwig, Fred, and the Cratchits
                   embody generosity. Crucially, Dickens shows that generosity is not about the
-                  amount spent &mdash; Fezziwig&apos;s party costs &ldquo;but a few pounds&rdquo;
-                  yet creates immense happiness, while Scrooge&apos;s vast wealth brings him no joy.
+                  amount spent - Fezziwig&apos;s party costs &ldquo;but a few pounds&rdquo; yet
+                  creates immense happiness, while Scrooge&apos;s vast wealth brings him no joy.
                   Marley&apos;s chains are forged from the tools of commerce, showing that greed
                   literally enslaves. The Ghost of Christmas Present&apos;s cornucopia represents
                   natural abundance that is meant to be shared. Scrooge&apos;s redemption is
@@ -1112,12 +1108,12 @@ export default function ChristmasCarolRevisionPage() {
                   became who he is; the present shows the consequences of his current behaviour; the
                   future reveals where his path leads. Dickens suggests that the past cannot be
                   changed but can be learned from, the present is where choices are made, and the
-                  future is not fixed &mdash; it can be altered by action in the present. The entire
-                  story takes place in a single night, creating urgency. Scrooge&apos;s pledge to
+                  future is not fixed - it can be altered by action in the present. The entire story
+                  takes place in a single night, creating urgency. Scrooge&apos;s pledge to
                   &ldquo;live in the Past, the Present, and the Future&rdquo; suggests that wisdom
-                  requires integrating all three perspectives. Time is also linked to mortality
-                  &mdash; the Ghost of Christmas Present ages and dies within the stave, reminding
-                  us that life is finite and must not be wasted.
+                  requires integrating all three perspectives. Time is also linked to mortality -
+                  the Ghost of Christmas Present ages and dies within the stave, reminding us that
+                  life is finite and must not be wasted.
                 </p>
                 <Quote
                   text="I will live in the Past, the Present, and the Future. The Spirits of all Three shall strive within me. I will not shut out the lessons that they teach"
@@ -1345,14 +1341,13 @@ export default function ChristmasCarolRevisionPage() {
                 <p className="text-sm text-muted-foreground leading-relaxed">
                   The Poor Law Amendment Act of 1834 replaced outdoor relief (giving money to the
                   poor in their homes) with the workhouse system. Workhouses were deliberately
-                  designed to be unpleasant &mdash; families were separated, food was minimal, and
-                  inmates performed hard labour &mdash; to deter all but the truly desperate from
-                  seeking help. The philosophy behind this was that poverty was caused by laziness
-                  and that making relief unpleasant would motivate the poor to find work.
-                  Scrooge&apos;s reference to &ldquo;prisons&rdquo; and &ldquo;workhouses&rdquo;
-                  reflects this attitude. Dickens was horrified by these conditions and used the
-                  novella to challenge the idea that institutional cruelty was an acceptable
-                  response to poverty.
+                  designed to be unpleasant - families were separated, food was minimal, and inmates
+                  performed hard labour - to deter all but the truly desperate from seeking help.
+                  The philosophy behind this was that poverty was caused by laziness and that making
+                  relief unpleasant would motivate the poor to find work. Scrooge&apos;s reference
+                  to &ldquo;prisons&rdquo; and &ldquo;workhouses&rdquo; reflects this attitude.
+                  Dickens was horrified by these conditions and used the novella to challenge the
+                  idea that institutional cruelty was an acceptable response to poverty.
                 </p>
               </div>
 
@@ -1430,9 +1425,9 @@ export default function ChristmasCarolRevisionPage() {
                 </h3>
                 <p className="text-sm text-muted-foreground leading-relaxed">
                   In the early Victorian period, Christmas was not the major celebration it is
-                  today. Many of the traditions we associate with Christmas &mdash; cards, crackers,
+                  today. Many of the traditions we associate with Christmas - cards, crackers,
                   decorated trees (popularised by Prince Albert in 1848), and large family
-                  gatherings &mdash; were either new or emerging. Dickens is often credited with
+                  gatherings - were either new or emerging. Dickens is often credited with
                   &ldquo;inventing&rdquo; the modern Christmas through this novella and his other
                   Christmas writings. He promoted the idea of Christmas as a time of family,
                   charity, forgiveness, and feasting. The novella helped establish Christmas as a
@@ -1454,7 +1449,7 @@ export default function ChristmasCarolRevisionPage() {
                   Marley&apos;s chain, made of &ldquo;cash-boxes, keys, padlocks, ledgers, deeds,
                   and heavy purses,&rdquo; symbolises the burden of greed and selfishness
                   accumulated over a lifetime. Each link represents an act of avarice or a failure
-                  of compassion. The chain is self-forged &mdash; Marley created his own punishment.
+                  of compassion. The chain is self-forged - Marley created his own punishment.
                   Scrooge&apos;s chain is even longer, suggesting his sins are greater. The chains
                   represent the idea that materialism enslaves rather than frees, trapping people in
                   a prison of their own making. In Stave Five, Scrooge&apos;s redemption implicitly
@@ -1471,9 +1466,9 @@ export default function ChristmasCarolRevisionPage() {
                   are dark; his chambers are dark; his personality is described in terms of cold and
                   shadow. Light represents truth, warmth, and redemption. The Ghost of Christmas
                   Past has a bright light shining from its head (the light of memory and
-                  self-knowledge), which Scrooge tries to extinguish &mdash; he wants to suppress
-                  the truth about himself. The Ghost of Christmas Present carries a glowing torch
-                  that spreads goodwill. Scrooge&apos;s transformed Christmas morning is bright and
+                  self-knowledge), which Scrooge tries to extinguish - he wants to suppress the
+                  truth about himself. The Ghost of Christmas Present carries a glowing torch that
+                  spreads goodwill. Scrooge&apos;s transformed Christmas morning is bright and
                   clear. The progression from darkness to light mirrors his moral journey.
                 </p>
               </div>
@@ -1482,13 +1477,13 @@ export default function ChristmasCarolRevisionPage() {
                 <h3 className="text-base font-bold text-foreground mb-2">{tr(`Weather & Cold`)}</h3>
                 <p className="text-sm text-muted-foreground leading-relaxed">
                   The cold, foggy weather of Stave One reflects Scrooge&apos;s emotional state
-                  (pathetic fallacy). &ldquo;No warmth could warm&rdquo; him &mdash; Scrooge is
-                  colder than the weather itself. The fog represents moral confusion and obscured
-                  vision. As Scrooge transforms, the weather on Christmas morning is bright and cold
-                  but invigorating &mdash; the same cold, but experienced joyfully because Scrooge
-                  is now emotionally warm. Weather also differentiates settings: the Cratchit home
-                  is warm despite the cold outside; Scrooge&apos;s chambers are cold despite being
-                  indoors. Warmth becomes a metaphor for love and human connection.
+                  (pathetic fallacy). &ldquo;No warmth could warm&rdquo; him - Scrooge is colder
+                  than the weather itself. The fog represents moral confusion and obscured vision.
+                  As Scrooge transforms, the weather on Christmas morning is bright and cold but
+                  invigorating - the same cold, but experienced joyfully because Scrooge is now
+                  emotionally warm. Weather also differentiates settings: the Cratchit home is warm
+                  despite the cold outside; Scrooge&apos;s chambers are cold despite being indoors.
+                  Warmth becomes a metaphor for love and human connection.
                 </p>
               </div>
 
@@ -1497,8 +1492,8 @@ export default function ChristmasCarolRevisionPage() {
                 <p className="text-sm text-muted-foreground leading-relaxed">
                   Food symbolises generosity, abundance, and community throughout the novella. The
                   Ghost of Christmas Present sits on a throne of food. The Cratchits&apos; modest
-                  Christmas dinner &mdash; described in loving detail (the goose, the pudding, the
-                  chestnuts) &mdash; represents love and family rather than material wealth.
+                  Christmas dinner - described in loving detail (the goose, the pudding, the
+                  chestnuts) - represents love and family rather than material wealth.
                   Fezziwig&apos;s party features food and drink shared freely. Scrooge&apos;s first
                   act of generosity is buying the &ldquo;prize Turkey&rdquo; for the Cratchits. In
                   contrast, Scrooge eats alone (he &ldquo;took his melancholy dinner in his usual
@@ -1511,11 +1506,11 @@ export default function ChristmasCarolRevisionPage() {
                 <h3 className="text-base font-bold text-foreground mb-2">Fire</h3>
                 <p className="text-sm text-muted-foreground leading-relaxed">
                   Fire represents warmth, comfort, and human connection. Bob Cratchit tries to warm
-                  himself at a candle because Scrooge will not allow a proper fire &mdash; a literal
+                  himself at a candle because Scrooge will not allow a proper fire - a literal
                   symbol of Scrooge&apos;s refusal to share warmth. The Cratchit home has a small
                   but cheerful fire. Fred&apos;s home is bright with firelight. Fezziwig&apos;s
                   party is lit by a roaring fire. Scrooge&apos;s own fire is &ldquo;very
-                  small&rdquo; &mdash; he denies warmth even to himself. The Ghost of Christmas
+                  small&rdquo; - he denies warmth even to himself. The Ghost of Christmas
                   Present&apos;s torch functions like a portable fire, spreading warmth wherever it
                   goes. By Stave Five, one can infer that Scrooge&apos;s fire will burn brightly.
                 </p>
@@ -1527,13 +1522,13 @@ export default function ChristmasCarolRevisionPage() {
                 </h3>
                 <p className="text-sm text-muted-foreground leading-relaxed">
                   Each ghost&apos;s appearance symbolises its message. The Ghost of Christmas Past
-                  is ethereal, shifting, and luminous &mdash; like memory itself, which is vivid yet
-                  intangible. The Ghost of Christmas Present is large, warm, and abundant &mdash;
+                  is ethereal, shifting, and luminous - like memory itself, which is vivid yet
+                  intangible. The Ghost of Christmas Present is large, warm, and abundant -
                   embodying the generosity of the season but aging and dying within the stave,
                   reminding us that the present is fleeting. The Ghost of Christmas Yet to Come is
-                  dark, silent, and hooded &mdash; like death itself, unknown and terrifying.
-                  Together, they form a complete symbolic framework: memory teaches, the present
-                  demands action, and the future warns.
+                  dark, silent, and hooded - like death itself, unknown and terrifying. Together,
+                  they form a complete symbolic framework: memory teaches, the present demands
+                  action, and the future warns.
                 </p>
               </div>
             </div>
@@ -1569,29 +1564,29 @@ export default function ChristmasCarolRevisionPage() {
                   </p>
                   <ul className="space-y-2 text-sm text-muted-foreground">
                     <li>
-                      <strong>Para 1:</strong> Scrooge at the start &mdash; the barrage of negative
+                      <strong>Para 1:</strong> Scrooge at the start - the barrage of negative
                       adjectives (&ldquo;squeezing, wrenching, grasping&rdquo;), pathetic fallacy
                       (cold), isolation (&ldquo;solitary as an oyster&rdquo;). He represents the
                       indifferent wealthy class.
                     </li>
                     <li>
                       <strong>Para 2:</strong> The Ghost of Christmas Past reveals the roots of his
-                      character &mdash; neglected childhood, loss of Fan and Belle. This creates
-                      sympathy and shows Scrooge was not always cold. Key quote: &ldquo;A solitary
-                      child, neglected by his friends.&rdquo;
+                      character - neglected childhood, loss of Fan and Belle. This creates sympathy
+                      and shows Scrooge was not always cold. Key quote: &ldquo;A solitary child,
+                      neglected by his friends.&rdquo;
                     </li>
                     <li>
                       <strong>Para 3:</strong> The Ghost of Christmas Present forces confrontation
-                      with consequences &mdash; the Cratchits, Tiny Tim, Ignorance and Want. Scrooge
+                      with consequences - the Cratchits, Tiny Tim, Ignorance and Want. Scrooge
                       begins to show empathy. His own words thrown back at him.
                     </li>
                     <li>
-                      <strong>Para 4:</strong> The Ghost of Christmas Yet to Come &mdash; terror of
-                      the unmourned death, the gravestone revelation. Scrooge&apos;s climactic plea:
+                      <strong>Para 4:</strong> The Ghost of Christmas Yet to Come - terror of the
+                      unmourned death, the gravestone revelation. Scrooge&apos;s climactic plea:
                       &ldquo;I am not the man I was.&rdquo;
                     </li>
                     <li>
-                      <strong>Para 5:</strong> Stave Five &mdash; joyful transformation, similes of
+                      <strong>Para 5:</strong> Stave Five - joyful transformation, similes of
                       happiness (&ldquo;as light as a feather, I am as happy as an angel&rdquo;),
                       practical acts of generosity (turkey, donation, salary). &ldquo;As good a man
                       as the good old city knew.&rdquo;
@@ -1616,7 +1611,7 @@ export default function ChristmasCarolRevisionPage() {
                   </p>
                   <ul className="space-y-2 text-sm text-muted-foreground">
                     <li>
-                      <strong>Para 1:</strong> Scrooge&apos;s rejection of responsibility &mdash;
+                      <strong>Para 1:</strong> Scrooge&apos;s rejection of responsibility -
                       &ldquo;Are there no prisons?&rdquo;, &ldquo;decrease the surplus
                       population.&rdquo; Link to Malthus and Poor Laws. Scrooge represents the
                       callous wealthy class.
@@ -1627,19 +1622,19 @@ export default function ChristmasCarolRevisionPage() {
                       of ignoring social duty. Marley&apos;s regret is a warning.
                     </li>
                     <li>
-                      <strong>Para 3:</strong> The Cratchits as the deserving poor &mdash;
-                      hardworking, loving, but vulnerable. Tiny Tim&apos;s potential death shows the
-                      human cost of indifference. Dickens builds sympathy to motivate action.
+                      <strong>Para 3:</strong> The Cratchits as the deserving poor - hardworking,
+                      loving, but vulnerable. Tiny Tim&apos;s potential death shows the human cost
+                      of indifference. Dickens builds sympathy to motivate action.
                     </li>
                     <li>
-                      <strong>Para 4:</strong> Ignorance and Want &mdash; Dickens&apos;s most direct
+                      <strong>Para 4:</strong> Ignorance and Want - Dickens&apos;s most direct
                       social criticism. &ldquo;Beware this boy, for on his brow I see that written
                       which is Doom.&rdquo; An argument for education and welfare reform.
                     </li>
                     <li>
-                      <strong>Para 5:</strong> Scrooge&apos;s practical redemption &mdash; the
-                      turkey, the donation (&ldquo;back-payments&rdquo;), the salary increase. These
-                      are not just emotional changes but concrete social actions.
+                      <strong>Para 5:</strong> Scrooge&apos;s practical redemption - the turkey, the
+                      donation (&ldquo;back-payments&rdquo;), the salary increase. These are not
+                      just emotional changes but concrete social actions.
                     </li>
                     <li>
                       <strong>Conclusion:</strong> Dickens uses the novella as a vehicle for social
@@ -1660,24 +1655,24 @@ export default function ChristmasCarolRevisionPage() {
                   </p>
                   <ul className="space-y-2 text-sm text-muted-foreground">
                     <li>
-                      <strong>Para 1:</strong> Marley&apos;s ghost as catalyst &mdash; the chains,
-                      the warning, the tormented spirits outside the window. The supernatural
-                      creates urgency and makes consequences visible.
+                      <strong>Para 1:</strong> Marley&apos;s ghost as catalyst - the chains, the
+                      warning, the tormented spirits outside the window. The supernatural creates
+                      urgency and makes consequences visible.
                     </li>
                     <li>
-                      <strong>Para 2:</strong> Ghost of Christmas Past &mdash; ethereal, luminous,
-                      gentle. Its light represents truth and memory. It forces Scrooge to confront
-                      his past without judgement.
+                      <strong>Para 2:</strong> Ghost of Christmas Past - ethereal, luminous, gentle.
+                      Its light represents truth and memory. It forces Scrooge to confront his past
+                      without judgement.
                     </li>
                     <li>
-                      <strong>Para 3:</strong> Ghost of Christmas Present &mdash; abundance and
-                      warmth, but also warning. The cornucopia vs Ignorance and Want. The spirit
-                      ages and dies, showing the present is fleeting.
+                      <strong>Para 3:</strong> Ghost of Christmas Present - abundance and warmth,
+                      but also warning. The cornucopia vs Ignorance and Want. The spirit ages and
+                      dies, showing the present is fleeting.
                     </li>
                     <li>
-                      <strong>Para 4:</strong> Ghost of Christmas Yet to Come &mdash; silent,
-                      terrifying, death-like. The most effective because it shows consequences
-                      without explanation, forcing Scrooge to interpret and act.
+                      <strong>Para 4:</strong> Ghost of Christmas Yet to Come - silent, terrifying,
+                      death-like. The most effective because it shows consequences without
+                      explanation, forcing Scrooge to interpret and act.
                     </li>
                     <li>
                       <strong>Para 5:</strong> The progression of the ghosts mirrors Scrooge&apos;s
@@ -1704,28 +1699,28 @@ export default function ChristmasCarolRevisionPage() {
                   </p>
                   <ul className="space-y-2 text-sm text-muted-foreground">
                     <li>
-                      <strong>Para 1:</strong> The Cratchits &mdash; dignified poverty. Their small
-                      goose and pudding described with loving detail. They are happy despite having
+                      <strong>Para 1:</strong> The Cratchits - dignified poverty. Their small goose
+                      and pudding described with loving detail. They are happy despite having
                       little, but their happiness is fragile (Tiny Tim).
                     </li>
                     <li>
-                      <strong>Para 2:</strong> Tiny Tim as the face of poverty&apos;s victims
-                      &mdash; innocent, disabled, dying. Dickens makes poverty personal rather than
+                      <strong>Para 2:</strong> Tiny Tim as the face of poverty&apos;s victims -
+                      innocent, disabled, dying. Dickens makes poverty personal rather than
                       statistical. &ldquo;Decrease the surplus population&rdquo; becomes monstrous
                       when applied to Tim.
                     </li>
                     <li>
-                      <strong>Para 3:</strong> Ignorance and Want &mdash; the systemic view.
+                      <strong>Para 3:</strong> Ignorance and Want - the systemic view.
                       &ldquo;Yellow, meagre, ragged, scowling, wolfish.&rdquo; Poverty as social
                       failure, not individual moral weakness. The warning about &ldquo;Doom.&rdquo;
                     </li>
                     <li>
-                      <strong>Para 4:</strong> The thieves in Stave Four &mdash; poverty&apos;s
-                      moral degradation. Old Joe&apos;s shop. These characters show what happens
-                      when society abandons people to destitution.
+                      <strong>Para 4:</strong> The thieves in Stave Four - poverty&apos;s moral
+                      degradation. Old Joe&apos;s shop. These characters show what happens when
+                      society abandons people to destitution.
                     </li>
                     <li>
-                      <strong>Para 5:</strong> Victorian context &mdash; workhouses, Malthus, child
+                      <strong>Para 5:</strong> Victorian context - workhouses, Malthus, child
                       labour. Dickens writing from personal experience of poverty. The novella as a
                       deliberate intervention.
                     </li>
@@ -1748,29 +1743,29 @@ export default function ChristmasCarolRevisionPage() {
                   </p>
                   <ul className="space-y-2 text-sm text-muted-foreground">
                     <li>
-                      <strong>Para 1:</strong> The Cratchits &mdash; the ideal family despite
-                      poverty. Bob&apos;s love for Tiny Tim, the warmth of their Christmas dinner,
-                      their mutual support. Family as the greatest wealth.
+                      <strong>Para 1:</strong> The Cratchits - the ideal family despite poverty.
+                      Bob&apos;s love for Tiny Tim, the warmth of their Christmas dinner, their
+                      mutual support. Family as the greatest wealth.
                     </li>
                     <li>
-                      <strong>Para 2:</strong> Scrooge&apos;s lost family &mdash; neglectful father,
+                      <strong>Para 2:</strong> Scrooge&apos;s lost family - neglectful father,
                       lonely school years, Fan&apos;s death. These losses created his emotional
                       isolation. Family breakdown as the origin of his miserliness.
                     </li>
                     <li>
-                      <strong>Para 3:</strong> Fred&apos;s persistence &mdash; unconditional family
-                      love. He keeps inviting Scrooge despite rejection. He is Fan&apos;s legacy.
+                      <strong>Para 3:</strong> Fred&apos;s persistence - unconditional family love.
+                      He keeps inviting Scrooge despite rejection. He is Fan&apos;s legacy.
                       Scrooge&apos;s rejection of Fred is a rejection of his last family connection.
                     </li>
                     <li>
-                      <strong>Para 4:</strong> Belle&apos;s happy family &mdash; the life Scrooge
-                      could have had. The vision of domestic warmth and laughing children contrasts
-                      with his cold, empty chambers.
+                      <strong>Para 4:</strong> Belle&apos;s happy family - the life Scrooge could
+                      have had. The vision of domestic warmth and laughing children contrasts with
+                      his cold, empty chambers.
                     </li>
                     <li>
-                      <strong>Para 5:</strong> Scrooge&apos;s redemption through family &mdash;
-                      joining Fred&apos;s dinner, becoming a &ldquo;second father&rdquo; to Tiny
-                      Tim. He rebuilds the family he lost through generosity and connection.
+                      <strong>Para 5:</strong> Scrooge&apos;s redemption through family - joining
+                      Fred&apos;s dinner, becoming a &ldquo;second father&rdquo; to Tiny Tim. He
+                      rebuilds the family he lost through generosity and connection.
                     </li>
                     <li>
                       <strong>Conclusion:</strong> Dickens presents family as essential to human
@@ -1791,31 +1786,30 @@ export default function ChristmasCarolRevisionPage() {
                   </p>
                   <ul className="space-y-2 text-sm text-muted-foreground">
                     <li>
-                      <strong>Para 1:</strong> Tim as a sympathetic figure &mdash; disabled, small,
-                      brave, cheerful. His crutch and Bob&apos;s devotion create immediate emotional
+                      <strong>Para 1:</strong> Tim as a sympathetic figure - disabled, small, brave,
+                      cheerful. His crutch and Bob&apos;s devotion create immediate emotional
                       impact. Dickens designs Tim to evoke maximum sympathy.
                     </li>
                     <li>
-                      <strong>Para 2:</strong> Tim as a moral catalyst &mdash; his potential death
-                      is the consequence of Scrooge&apos;s and society&apos;s indifference.
-                      &ldquo;If these shadows remain unaltered...&rdquo; Tim makes abstract poverty
-                      personal.
+                      <strong>Para 2:</strong> Tim as a moral catalyst - his potential death is the
+                      consequence of Scrooge&apos;s and society&apos;s indifference. &ldquo;If these
+                      shadows remain unaltered...&rdquo; Tim makes abstract poverty personal.
                     </li>
                     <li>
-                      <strong>Para 3:</strong> Tim as a Christ-like figure &mdash; &ldquo;God bless
-                      us, every one!&rdquo;, his hope that people see him in church. He is innocent,
+                      <strong>Para 3:</strong> Tim as a Christ-like figure - &ldquo;God bless us,
+                      every one!&rdquo;, his hope that people see him in church. He is innocent,
                       suffering, and redemptive. His forgiveness contrasts with society&apos;s
                       cruelty.
                     </li>
                     <li>
-                      <strong>Para 4:</strong> Tim&apos;s death in Stave Four &mdash; the emotional
+                      <strong>Para 4:</strong> Tim&apos;s death in Stave Four - the emotional
                       climax. The empty chair, the crutch without an owner. Contrasted with the
                       unmourned rich man (Scrooge). Tim is deeply loved; Scrooge is not.
                     </li>
                     <li>
-                      <strong>Para 5:</strong> Tim&apos;s survival in Stave Five &mdash; proof that
-                      change works. Scrooge becomes his &ldquo;second father.&rdquo; Tim&apos;s life
-                      is saved by generosity, proving Dickens&apos;s thesis.
+                      <strong>Para 5:</strong> Tim&apos;s survival in Stave Five - proof that change
+                      works. Scrooge becomes his &ldquo;second father.&rdquo; Tim&apos;s life is
+                      saved by generosity, proving Dickens&apos;s thesis.
                     </li>
                     <li>
                       <strong>Conclusion:</strong> Tiny Tim is Dickens&apos;s most powerful
@@ -1844,11 +1838,11 @@ export default function ChristmasCarolRevisionPage() {
                   Dickens uses a third-person omniscient narrator who speaks directly to the reader
                   in a chatty, engaging tone. The narrator jokes (&ldquo;Old Marley was as dead as a
                   door-nail&rdquo;), moralises, and guides the reader&apos;s response. This
-                  narrative voice creates intimacy and persuasion &mdash; the reader is drawn into
-                  the narrator&apos;s worldview. The narrator is essentially Dickens himself, using
-                  the story as a vehicle for his social argument. The direct address
-                  (&ldquo;Oh!&rdquo;, &ldquo;Mind!&rdquo;) makes the novella feel like a fireside
-                  story, reinforcing its oral, carol-like quality.
+                  narrative voice creates intimacy and persuasion - the reader is drawn into the
+                  narrator&apos;s worldview. The narrator is essentially Dickens himself, using the
+                  story as a vehicle for his social argument. The direct address (&ldquo;Oh!&rdquo;,
+                  &ldquo;Mind!&rdquo;) makes the novella feel like a fireside story, reinforcing its
+                  oral, carol-like quality.
                 </p>
               </div>
               <div className="rounded-lg border border-border p-4">
@@ -1859,7 +1853,7 @@ export default function ChristmasCarolRevisionPage() {
                   represent the consequences of greed; Ignorance and Want represent society&apos;s
                   neglected children. Each character and event carries symbolic weight beyond its
                   literal meaning. This allegorical structure gives the story universal significance
-                  &mdash; it is not about one man but about all of society.
+                  - it is not about one man but about all of society.
                 </p>
               </div>
               <div className="rounded-lg border border-border p-4">
@@ -1878,9 +1872,9 @@ export default function ChristmasCarolRevisionPage() {
                 <h3 className="font-bold text-foreground">{tr(`Listing and Accumulation`)}</h3>
                 <p className="mt-2 text-sm text-muted-foreground leading-relaxed">
                   Dickens is famous for his lists. Scrooge is described as &ldquo;a squeezing,
-                  wrenching, grasping, scraping, clutching, covetous, old sinner&rdquo; &mdash;
-                  seven relentless adjectives that overwhelm the reader. The Christmas feast scenes
-                  use lists of food to create abundance and warmth. This technique of accumulation
+                  wrenching, grasping, scraping, clutching, covetous, old sinner&rdquo; - seven
+                  relentless adjectives that overwhelm the reader. The Christmas feast scenes use
+                  lists of food to create abundance and warmth. This technique of accumulation
                   creates sensory richness and emotional intensity. When describing misery, the
                   lists are oppressive; when describing joy, they are generous and celebratory.
                 </p>
@@ -1896,7 +1890,7 @@ export default function ChristmasCarolRevisionPage() {
                   bright. After his transformation, Scrooge notices &ldquo;Golden sunlight; Heavenly
                   sky; sweet fresh air; merry bells.&rdquo; The weather literally changes to reflect
                   his emotional state. The chain Marley wears is a physical symbol of his greed in
-                  life &mdash; each link forged by selfishness.
+                  life - each link forged by selfishness.
                 </p>
               </div>
               <div className="rounded-lg border border-border p-4">
@@ -1919,8 +1913,8 @@ export default function ChristmasCarolRevisionPage() {
                   Five&apos;s warm, joyful, connected Scrooge. The same situations recur but with
                   different outcomes: the charity collectors return and receive generosity;
                   Christmas dinner happens with Scrooge present. This circular structure reinforces
-                  the theme of redemption &mdash; the same circumstances can produce different
-                  results if a person chooses to change.
+                  the theme of redemption - the same circumstances can produce different results if
+                  a person chooses to change.
                 </p>
               </div>
               <div className="rounded-lg border border-border p-4">
@@ -1931,9 +1925,9 @@ export default function ChristmasCarolRevisionPage() {
                   Dickens uses exclamation marks abundantly, creating a tone of urgency,
                   indignation, and joy depending on the context. The narrator exclaims with horror
                   at Scrooge&apos;s behaviour and with delight at his transformation. This
-                  rhetorical energy makes the novella feel passionate and persuasive &mdash; it is
-                  not a detached narrative but an impassioned argument. The narrator&apos;s
-                  emotional involvement models the response Dickens wants from his readers.
+                  rhetorical energy makes the novella feel passionate and persuasive - it is not a
+                  detached narrative but an impassioned argument. The narrator&apos;s emotional
+                  involvement models the response Dickens wants from his readers.
                 </p>
               </div>
               <div className="rounded-lg border border-border p-4">
@@ -1980,7 +1974,7 @@ export default function ChristmasCarolRevisionPage() {
                   wrote <em>A Christmas Carol</em>, realising that fiction would be more persuasive
                   than polemic. The novella was priced cheaply (five shillings) to reach the widest
                   possible audience. A Grade 9 response should recognise that the text is a
-                  calculated intervention &mdash; Dickens chose the form (fiction), the timing
+                  calculated intervention - Dickens chose the form (fiction), the timing
                   (Christmas), and the price (affordable) to maximise its social impact.
                 </p>
               </div>
@@ -1993,13 +1987,12 @@ export default function ChristmasCarolRevisionPage() {
                   Most readings take Scrooge&apos;s transformation at face value. A more
                   sophisticated response might question its completeness. Scrooge changes from fear
                   of death, not from genuine empathy. His good deeds in Stave Five are performative
-                  and public &mdash; buying the turkey, tipping boys, joining parties. Some critics
-                  argue this is &ldquo;Christmas capitalism&rdquo; rather than genuine social
-                  change: individual charity replacing systemic reform. A Grade 9 answer could argue
-                  that Dickens presents individual transformation as necessary but perhaps
-                  insufficient &mdash; the underlying system of workhouses, child labour, and
-                  poverty requires structural change that Scrooge&apos;s generosity alone cannot
-                  provide.
+                  and public - buying the turkey, tipping boys, joining parties. Some critics argue
+                  this is &ldquo;Christmas capitalism&rdquo; rather than genuine social change:
+                  individual charity replacing systemic reform. A Grade 9 answer could argue that
+                  Dickens presents individual transformation as necessary but perhaps insufficient -
+                  the underlying system of workhouses, child labour, and poverty requires structural
+                  change that Scrooge&apos;s generosity alone cannot provide.
                 </p>
               </div>
 
@@ -2010,13 +2003,13 @@ export default function ChristmasCarolRevisionPage() {
                 <p className="mt-2 text-sm text-muted-foreground leading-relaxed">
                   While Stave Four&apos;s gravestone revelation is the plot climax, the allegorical
                   climax occurs when the Ghost of Christmas Present reveals the children Ignorance
-                  and Want. They are &ldquo;yellow, meagre, ragged, scowling, wolfish&rdquo; &mdash;
-                  more animal than human, deformed by neglect. The Ghost warns: &ldquo;Beware them
+                  and Want. They are &ldquo;yellow, meagre, ragged, scowling, wolfish&rdquo; - more
+                  animal than human, deformed by neglect. The Ghost warns: &ldquo;Beware them
                   both... but most of all beware this boy, for on his brow I see that written which
                   is Doom.&rdquo; This is Dickens&apos;s most direct political statement:
                   society&apos;s wilful ignorance of poverty will lead to its own destruction. The
-                  children are not Scrooge&apos;s victims specifically but <em>society&apos;s</em>{' '}
-                  &mdash; making this a critique that extends far beyond one man&apos;s greed.
+                  children are not Scrooge&apos;s victims specifically but <em>society&apos;s</em> -
+                  making this a critique that extends far beyond one man&apos;s greed.
                 </p>
               </div>
 
@@ -2027,9 +2020,9 @@ export default function ChristmasCarolRevisionPage() {
                 <p className="mt-2 text-sm text-muted-foreground leading-relaxed">
                   The first ghost has a &ldquo;bright clear jet of light&rdquo; springing from its
                   head. When Scrooge cannot bear the painful memories, he presses the extinguisher
-                  cap down and suppresses the light &mdash; but the light still gleams underneath.
-                  This is a metaphor for truth and self-knowledge: Scrooge can try to suppress the
-                  past, but he cannot destroy it. The act of extinguishing light = the act of wilful
+                  cap down and suppresses the light - but the light still gleams underneath. This is
+                  a metaphor for truth and self-knowledge: Scrooge can try to suppress the past, but
+                  he cannot destroy it. The act of extinguishing light = the act of wilful
                   ignorance. The fact that the light persists suggests that truth is indestructible,
                   even when we refuse to look at it. Scrooge&apos;s entire miserliness is built on
                   suppression of painful truths about his own past.
@@ -2041,15 +2034,15 @@ export default function ChristmasCarolRevisionPage() {
                   5. Fezziwig vs. Scrooge as Contrasting Models of Capitalism
                 </h3>
                 <p className="mt-2 text-sm text-muted-foreground leading-relaxed">
-                  Fezziwig is not anti-capitalist &mdash; he is a successful businessman. But he
-                  uses his wealth to create joy. Scrooge uses his to accumulate power. The contrast
-                  is not between wealth and poverty but between generous and selfish uses of wealth.
+                  Fezziwig is not anti-capitalist - he is a successful businessman. But he uses his
+                  wealth to create joy. Scrooge uses his to accumulate power. The contrast is not
+                  between wealth and poverty but between generous and selfish uses of wealth.
                   Dickens is not arguing that capitalism is wrong but that capitalism without
                   conscience is destructive. A Grade 9 response might note that Dickens&apos;s
                   message is reformist rather than revolutionary: he wants to change how the wealthy
                   behave, not overthrow the system. The young Scrooge admires Fezziwig but later
-                  chooses the path of cold accumulation &mdash; showing that moral choices, not
-                  economic systems, are what Dickens holds responsible.
+                  chooses the path of cold accumulation - showing that moral choices, not economic
+                  systems, are what Dickens holds responsible.
                 </p>
               </div>
 
@@ -2062,10 +2055,9 @@ export default function ChristmasCarolRevisionPage() {
                   acknowledges this but argues that the sentimentality is <em>intentional</em> and{' '}
                   <em>strategic</em>. Dickens knew that statistics about child mortality did not
                   move the wealthy to action; emotional appeal did. Tim is not meant to be a
-                  realistic portrayal of a disabled child but a rhetorical tool &mdash; a figure
-                  designed to make Scrooge (and the reader) <em>feel</em> the human cost of poverty
-                  so intensely that they are moved to act. The sentimentality is the point, not a
-                  flaw.
+                  realistic portrayal of a disabled child but a rhetorical tool - a figure designed
+                  to make Scrooge (and the reader) <em>feel</em> the human cost of poverty so
+                  intensely that they are moved to act. The sentimentality is the point, not a flaw.
                 </p>
               </div>
 
@@ -2077,8 +2069,8 @@ export default function ChristmasCarolRevisionPage() {
                   The omniscient narrator is not neutral. He exclaims, judges, and guides the
                   reader&apos;s response at every turn. When describing Scrooge, the narrator uses
                   aggressive, relentless language. When describing the Cratchits, the language
-                  becomes tender and warm. This is deliberate emotional manipulation &mdash; Dickens
-                  uses his narrator to ensure the reader responds in the &ldquo;right&rdquo; way. A
+                  becomes tender and warm. This is deliberate emotional manipulation - Dickens uses
+                  his narrator to ensure the reader responds in the &ldquo;right&rdquo; way. A
                   top-level answer might argue that the narrator functions as a preacher, with the
                   novella as his sermon. The reader is not invited to form their own judgement but
                   is guided firmly toward Dickens&apos;s conclusion.
@@ -2097,7 +2089,7 @@ export default function ChristmasCarolRevisionPage() {
                   mirrors the eventual restoration of family. This autobiographical dimension gives
                   the novella its emotional authenticity. A Grade 9 response might argue that
                   Dickens&apos;s personal experience gives him unique authority to write about both
-                  poverty and the possibility of redemption &mdash; he knew both intimately.
+                  poverty and the possibility of redemption - he knew both intimately.
                 </p>
               </div>
             </div>

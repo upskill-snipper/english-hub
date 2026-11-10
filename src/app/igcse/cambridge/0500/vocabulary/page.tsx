@@ -869,12 +869,15 @@ export default async function VocabularyPage() {
             </h3>
             <ul className="space-y-1.5 text-body-sm text-muted-foreground">
               <li>Recognising these words in a passage speeds up comprehension.</li>
+              {/* 31 October 2026: these named the language task Q2 and the summary Q3.
+                  They are Q3 and Q2 from 2027 but part of Q2 and Q1 in November 2026
+                  (src/data/mark-scheme-guides/cambridge-0500-paper1.ts), so no number. */}
               <li>
-                In Q2, use precise vocabulary to describe effects: &quot;ominous connotations&quot;
-                is stronger than &quot;it sounds bad.&quot;
+                In the language task, use precise vocabulary to describe effects: &quot;ominous
+                connotations&quot; is stronger than &quot;it sounds bad.&quot;
               </li>
               <li>
-                In Q3, use synonyms from this list to rephrase passage ideas in your own words.
+                In the summary, use synonyms from this list to rephrase ideas in your own words.
               </li>
             </ul>
           </div>

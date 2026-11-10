@@ -122,7 +122,7 @@ function buildLessonPlanPptx(
   // ── Slide 1: Title ──────────────────────────────────────────────────
   titleSlide(pptx, {
     title: data.title,
-    subtitle: `${topic} \u2014 Lesson Plan`,
+    subtitle: `${topic} - Lesson Plan`,
     yearGroup: data.yearGroup,
     examBoard: data.examBoard,
     duration: data.duration,
@@ -151,7 +151,7 @@ function buildLessonPlanPptx(
     differentiationSlide(
       pptx,
       'starter',
-      'Starter \u2014 Differentiation',
+      'Starter - Differentiation',
       data.starterActivity.differentiation,
     )
   }
@@ -180,7 +180,7 @@ function buildLessonPlanPptx(
 
     // Differentiation slide
     if (act.differentiation) {
-      differentiationSlide(pptx, 'main', `${label} \u2014 Differentiation`, act.differentiation)
+      differentiationSlide(pptx, 'main', `${label} - Differentiation`, act.differentiation)
     }
   })
 
@@ -196,12 +196,7 @@ function buildLessonPlanPptx(
 
   // ── Plenary Differentiation ─────────────────────────────────────────
   if (data.plenary.differentiation) {
-    differentiationSlide(
-      pptx,
-      'plenary',
-      'Plenary \u2014 Differentiation',
-      data.plenary.differentiation,
-    )
+    differentiationSlide(pptx, 'plenary', 'Plenary - Differentiation', data.plenary.differentiation)
   }
 
   // ── Vocabulary Slide ────────────────────────────────────────────────

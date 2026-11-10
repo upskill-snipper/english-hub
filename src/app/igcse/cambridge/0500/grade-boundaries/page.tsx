@@ -37,12 +37,16 @@ const boundaries = [
   { series: 'June 2019', aStar: 128, a: 113, b: 98, c: 82, d: 67, e: 52, f: 38, g: 24 },
 ]
 
+// 31 October 2026: Paper 1's profile named the old paper (a directed response,
+// eight words for Q2, 15+ summary points for Q3). From 2027 Paper 1 is four
+// questions of 20 (src/data/mark-scheme-guides/cambridge-0500-paper1.ts). Second
+// reader: now says it is the 2027 paper, as November 2026 has three questions.
 const aStarProfile = [
   {
     paper: 'Paper 1 Reading',
     target: '65+ / 80',
     detail:
-      'Q1 short answers all correct; a sharp directed response showing wide reading; eight well-chosen words analysed for Q2; 15+ own-words summary points for Q3.',
+      'On the paper for exams from 2027: Q1 parts all answered with the points their marks ask for; a 2(a) summary of the points that matter, in no more than 120 words of your own; sharp language analysis in Q3; a Q4 response that develops ideas from Text C under every bullet.',
   },
   {
     paper: 'Paper 2 Writing',
@@ -56,7 +60,7 @@ const tips = [
   'Treat every practice paper as if it were the real thing - full timing, no notes.',
   'Target your weakest question type once a week, not your strongest.',
   'Build a personal bank of sophisticated vocabulary and test yourself weekly.',
-  'Read 15 minutes of non-fiction daily - broadsheet opinion pieces are perfect for Q2-style analysis.',
+  'Read 15 minutes of non-fiction daily - broadsheet opinion pieces are perfect for practising the language task.',
   'Get a second pair of eyes on your descriptive/narrative compositions - self-marking rarely catches style issues.',
   "Memorise the examiner's assessment language so your writing sounds like it meets the criteria before the marker has to look.",
 ]

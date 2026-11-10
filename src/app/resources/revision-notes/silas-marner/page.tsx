@@ -74,7 +74,7 @@ function Quote({
     <div className="rounded-lg border-s-4 border-accent bg-primary/10 p-4">
       <p className="text-sm font-semibold italic text-foreground">&ldquo;{text}&rdquo;</p>
       <p className="mt-1 text-xs text-muted-foreground">
-        {speaker} &mdash; {act}
+        {speaker} - {act}
       </p>
       <p className="mt-2 text-sm text-muted-foreground">{analysis}</p>
     </div>
@@ -151,7 +151,7 @@ export default function SilasMarnerRevisionPage() {
           </span>
         </div>
         <h1 className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
-          Silas Marner &mdash; Complete Revision Guide
+          Silas Marner - Complete Revision Guide
         </h1>
         <p className="mt-3 max-w-3xl text-lg text-muted-foreground">
           Everything you need for your GCSE/IGCSE English Literature exam. Part-by-part plot
@@ -199,7 +199,7 @@ export default function SilasMarnerRevisionPage() {
                 <span className="flex h-6 w-6 items-center justify-center rounded-full bg-amber-500/15 text-xs font-bold text-amber-700">
                   1
                 </span>
-                Part One &mdash; Betrayal, Isolation, and the Coming of Eppie
+                Part One - Betrayal, Isolation, and the Coming of Eppie
               </h3>
               <p className="mt-2 text-sm text-muted-foreground leading-relaxed">
                 Silas Marner is a weaver who once lived in a close religious community called
@@ -245,7 +245,7 @@ export default function SilasMarnerRevisionPage() {
                 <span className="flex h-6 w-6 items-center justify-center rounded-full bg-amber-500/15 text-xs font-bold text-amber-700">
                   2
                 </span>
-                Part Two &mdash; Sixteen Years Later
+                Part Two - Sixteen Years Later
               </h3>
               <p className="mt-2 text-sm text-muted-foreground leading-relaxed">
                 Sixteen years have passed. Silas is now a respected member of the Raveloe community,
@@ -260,8 +260,8 @@ export default function SilasMarnerRevisionPage() {
                 scene, Eppie firmly refuses, choosing to stay with Silas: &ldquo;I can&apos;t feel
                 as I&apos;ve got any father but one.&rdquo; She marries Aaron Winthrop in a garden
                 that Godfrey&apos;s money has paid for (his only remaining connection to her). Silas
-                revisits Lantern Yard but finds it demolished and replaced by a factory &mdash; his
-                past is irrecoverable, but he has found a new life in Raveloe.
+                revisits Lantern Yard but finds it demolished and replaced by a factory - his past
+                is irrecoverable, but he has found a new life in Raveloe.
               </p>
               <div className="mt-3 rounded-lg bg-muted p-3">
                 <p className="text-xs font-semibold text-muted-foreground uppercase tracking-wider">
@@ -274,7 +274,7 @@ export default function SilasMarnerRevisionPage() {
                   </li>
                   <li>&bull; Godfrey&apos;s confession to Nancy about Eppie</li>
                   <li>&bull; Godfrey and Nancy&apos;s offer to adopt Eppie</li>
-                  <li>&bull; Eppie&apos;s refusal &mdash; she chooses Silas over wealth</li>
+                  <li>&bull; Eppie&apos;s refusal - she chooses Silas over wealth</li>
                   <li>&bull; Eppie&apos;s marriage to Aaron Winthrop</li>
                   <li>&bull; Silas&apos;s return to find Lantern Yard destroyed</li>
                 </ul>
@@ -301,14 +301,14 @@ export default function SilasMarnerRevisionPage() {
                   Silas is the novel&apos;s protagonist, and his transformation is its central arc.
                   He begins as a trusting, devout young man in Lantern Yard, is broken by betrayal
                   and false accusation, and retreats into miserly isolation in Raveloe. For fifteen
-                  years, his gold replaces human connection &mdash; he counts and handles it
-                  obsessively, and his weaving becomes purely mechanical. The theft of his gold
-                  leaves him devastated but also, crucially, open. When Eppie arrives, she fills the
-                  void the gold left. Through raising her, Silas reconnects with humanity, the
-                  natural world, and the Raveloe community. Eliot presents his journey as one from
-                  spiritual death to resurrection &mdash; from the worship of gold to the experience
-                  of genuine love. His cataleptic fits (trances) symbolise his state: he is
-                  physically present but spiritually absent until Eppie awakens him.
+                  years, his gold replaces human connection - he counts and handles it obsessively,
+                  and his weaving becomes purely mechanical. The theft of his gold leaves him
+                  devastated but also, crucially, open. When Eppie arrives, she fills the void the
+                  gold left. Through raising her, Silas reconnects with humanity, the natural world,
+                  and the Raveloe community. Eliot presents his journey as one from spiritual death
+                  to resurrection - from the worship of gold to the experience of genuine love. His
+                  cataleptic fits (trances) symbolise his state: he is physically present but
+                  spiritually absent until Eppie awakens him.
                 </p>
                 <div className="mt-3 grid gap-3 sm:grid-cols-2">
                   <Quote
@@ -333,15 +333,15 @@ export default function SilasMarnerRevisionPage() {
                 </h3>
                 <p className="mt-3 text-sm text-muted-foreground leading-relaxed">
                   Eppie is the golden-haired child who transforms Silas&apos;s life. Her arrival is
-                  almost miraculous &mdash; she wanders in through his open door on New Year&apos;s
-                  Eve, replacing the gold that was stolen. As a child, she is playful, curious, and
+                  almost miraculous - she wanders in through his open door on New Year&apos;s Eve,
+                  replacing the gold that was stolen. As a child, she is playful, curious, and
                   demanding, forcing Silas to engage with the world (he must take her outdoors, seek
                   advice from neighbours, participate in village life). As a young woman, she is
                   warm, sensible, and loyal. Her refusal of Godfrey&apos;s offer is the novel&apos;s
                   moral climax: she chooses love, community, and the working-class life she knows
                   over wealth and status. Eliot uses Eppie to argue that true richness lies in human
                   bonds, not material wealth. Her golden hair explicitly links her to the gold she
-                  replaces, but she is living gold &mdash; warm, growing, and reciprocal.
+                  replaces, but she is living gold - warm, growing, and reciprocal.
                 </p>
                 <Quote
                   text="I can't feel as I've got any father but one... I can't think o' no other home. I wasn't brought up to be a lady"
@@ -361,12 +361,12 @@ export default function SilasMarnerRevisionPage() {
                   gentry. He is essentially good-natured but repeatedly takes the easy path: he
                   keeps his secret marriage hidden, he fails to claim Eppie when Molly dies, and he
                   marries Nancy under false pretences. His cowardice contrasts with Silas&apos;s
-                  eventual courage. Godfrey believes he can buy his way to redemption &mdash;
-                  offering Eppie money and status sixteen years too late. When Eppie refuses, he is
-                  forced to confront the consequences of his choices. Eliot shows that moral debt
-                  cannot be settled with money. Godfrey&apos;s childless marriage to Nancy is
-                  presented as a natural consequence of his failure to fulfil his duty as a father
-                  &mdash; a kind of poetic justice.
+                  eventual courage. Godfrey believes he can buy his way to redemption - offering
+                  Eppie money and status sixteen years too late. When Eppie refuses, he is forced to
+                  confront the consequences of his choices. Eliot shows that moral debt cannot be
+                  settled with money. Godfrey&apos;s childless marriage to Nancy is presented as a
+                  natural consequence of his failure to fulfil his duty as a father - a kind of
+                  poetic justice.
                 </p>
                 <div className="mt-3 grid gap-3 sm:grid-cols-2">
                   <Quote
@@ -390,14 +390,14 @@ export default function SilasMarnerRevisionPage() {
                   {tr(`Dunstan (Dunsey) Cass`)}
                 </h3>
                 <p className="mt-3 text-sm text-muted-foreground leading-relaxed">
-                  Dunsey is Godfrey&apos;s younger brother &mdash; a vicious, selfish bully who
-                  blackmails Godfrey and steals Silas&apos;s gold. He represents the worst of the
-                  idle gentry: he gambles, drinks, and exploits others without conscience. His theft
-                  of the gold is opportunistic and cruel. He drowns in the Stone-pits on the same
-                  night, and his skeleton is not discovered for sixteen years. When it is found
-                  alongside the gold, it serves as a physical symbol of the link between greed and
-                  death. Dunsey functions as a catalyst: his theft removes Silas&apos;s gold,
-                  creating the emotional void that Eppie fills.
+                  Dunsey is Godfrey&apos;s younger brother - a vicious, selfish bully who blackmails
+                  Godfrey and steals Silas&apos;s gold. He represents the worst of the idle gentry:
+                  he gambles, drinks, and exploits others without conscience. His theft of the gold
+                  is opportunistic and cruel. He drowns in the Stone-pits on the same night, and his
+                  skeleton is not discovered for sixteen years. When it is found alongside the gold,
+                  it serves as a physical symbol of the link between greed and death. Dunsey
+                  functions as a catalyst: his theft removes Silas&apos;s gold, creating the
+                  emotional void that Eppie fills.
                 </p>
               </div>
 
@@ -409,12 +409,12 @@ export default function SilasMarnerRevisionPage() {
                 <p className="mt-3 text-sm text-muted-foreground leading-relaxed">
                   Nancy is Godfrey&apos;s second wife, a woman of strong principles and conventional
                   morality. She is neat, proper, and earnest. She refuses to adopt a child because
-                  she believes it goes against Providence &mdash; if God has not given them
-                  children, they should accept it. This rigid thinking, while sincere, contributes
-                  to Godfrey&apos;s suffering. When Godfrey confesses, Nancy is hurt but responds
-                  with dignity. She supports his attempt to claim Eppie, believing it is their duty.
-                  Eliot presents Nancy sympathetically but also critiques her inflexibility &mdash;
-                  her firm moral principles sometimes lack the warmth and adaptability of characters
+                  she believes it goes against Providence - if God has not given them children, they
+                  should accept it. This rigid thinking, while sincere, contributes to
+                  Godfrey&apos;s suffering. When Godfrey confesses, Nancy is hurt but responds with
+                  dignity. She supports his attempt to claim Eppie, believing it is their duty.
+                  Eliot presents Nancy sympathetically but also critiques her inflexibility - her
+                  firm moral principles sometimes lack the warmth and adaptability of characters
                   like Dolly Winthrop.
                 </p>
               </div>
@@ -430,10 +430,10 @@ export default function SilasMarnerRevisionPage() {
                   the theft, brings him food, and later helps him raise Eppie, offering practical
                   advice and moral support. Dolly represents the best of the Raveloe community:
                   unpretentious, generous, and grounded in simple faith. Her theology is not
-                  sophisticated &mdash; she tells Silas that &ldquo;Them above&rdquo; will sort
-                  things out &mdash; but it is sincere and comforting. She is the vehicle through
-                  which Silas reconnects with community and, eventually, with a kind of faith. Her
-                  son Aaron marries Eppie, completing the bond between the families.
+                  sophisticated - she tells Silas that &ldquo;Them above&rdquo; will sort things out
+                  - but it is sincere and comforting. She is the vehicle through which Silas
+                  reconnects with community and, eventually, with a kind of faith. Her son Aaron
+                  marries Eppie, completing the bond between the families.
                 </p>
                 <Quote
                   text="You'll happen be a bit moithered with it while it's so little; but I'll come, and welcome, and see to it for you"
@@ -451,12 +451,12 @@ export default function SilasMarnerRevisionPage() {
                 <p className="mt-3 text-sm text-muted-foreground leading-relaxed">
                   William Dane is Silas&apos;s supposed best friend at Lantern Yard who frames him
                   for theft. He manipulates the drawing of lots, steals the money himself, and then
-                  marries Silas&apos;s fianc&eacute;e Sarah. He represents religious hypocrisy
-                  &mdash; outwardly devout but inwardly corrupt. His betrayal destroys Silas&apos;s
-                  faith in both God and human goodness. Dane functions as a narrative catalyst:
-                  without his treachery, Silas would never have come to Raveloe. He is never seen
-                  again, but his shadow hangs over the novel as a reminder of how institutional
-                  religion can be abused.
+                  marries Silas&apos;s fianc&eacute;e Sarah. He represents religious hypocrisy -
+                  outwardly devout but inwardly corrupt. His betrayal destroys Silas&apos;s faith in
+                  both God and human goodness. Dane functions as a narrative catalyst: without his
+                  treachery, Silas would never have come to Raveloe. He is never seen again, but his
+                  shadow hangs over the novel as a reminder of how institutional religion can be
+                  abused.
                 </p>
               </div>
 
@@ -467,7 +467,7 @@ export default function SilasMarnerRevisionPage() {
                 </h3>
                 <p className="mt-3 text-sm text-muted-foreground leading-relaxed">
                   The Squire is the largest landowner in Raveloe and the father of Godfrey and
-                  Dunsey. He is loud, bullying, and neglectful &mdash; a poor father who has raised
+                  Dunsey. He is loud, bullying, and neglectful - a poor father who has raised
                   dissolute sons. He represents the irresponsible rural gentry: he lives off his
                   land but does little to earn respect. His household is disorderly, reflecting a
                   moral chaos that contrasts with the simple but warm homes of the working class.
@@ -496,7 +496,7 @@ export default function SilasMarnerRevisionPage() {
                   Eppie&apos;s arrival forces him back into village life: he needs help raising her,
                   which means accepting the community&apos;s generosity (especially Dolly
                   Winthrop&apos;s). Eliot presents the Raveloe community warmly but not uncritically
-                  &mdash; they are superstitious and initially suspicious of Silas. However, their
+                  - they are superstitious and initially suspicious of Silas. However, their
                   fundamental decency prevails. The novel argues that human beings need community to
                   flourish: isolation, whether chosen or imposed, is a kind of death.
                 </p>
@@ -515,16 +515,16 @@ export default function SilasMarnerRevisionPage() {
                   Wealth, Class, and Moral Worth
                 </h3>
                 <p className="mt-2 text-sm text-muted-foreground leading-relaxed">
-                  Eliot consistently shows that moral worth and social class are unrelated &mdash;
-                  and often inversely correlated. The gentry (Squire Cass, Dunsey, even Godfrey) are
+                  Eliot consistently shows that moral worth and social class are unrelated - and
+                  often inversely correlated. The gentry (Squire Cass, Dunsey, even Godfrey) are
                   morally weak: idle, self-indulgent, and irresponsible. The working-class
                   characters (Silas, Dolly Winthrop, Aaron) possess genuine warmth, integrity, and
                   community spirit. Silas&apos;s gold becomes a powerful symbol: when it is his only
                   treasure, he is spiritually dead. When it is replaced by Eppie (living wealth), he
-                  comes alive. Godfrey&apos;s attempt to buy Eppie with money and status fails
-                  &mdash; true richness cannot be purchased. Eppie&apos;s choice of the
-                  working-class life is the novel&apos;s strongest statement: love and belonging
-                  matter more than wealth.
+                  comes alive. Godfrey&apos;s attempt to buy Eppie with money and status fails -
+                  true richness cannot be purchased. Eppie&apos;s choice of the working-class life
+                  is the novel&apos;s strongest statement: love and belonging matter more than
+                  wealth.
                 </p>
                 <div className="mt-3 grid gap-3 sm:grid-cols-2">
                   <Quote
@@ -576,11 +576,11 @@ export default function SilasMarnerRevisionPage() {
                 </h3>
                 <p className="mt-2 text-sm text-muted-foreground leading-relaxed">
                   Eliot structures the novel so that moral choices have natural consequences.
-                  Godfrey&apos;s cowardice in hiding his daughter results in childlessness &mdash;
-                  he cannot have what he refused to claim. Dunsey&apos;s greed leads to his death.
+                  Godfrey&apos;s cowardice in hiding his daughter results in childlessness - he
+                  cannot have what he refused to claim. Dunsey&apos;s greed leads to his death.
                   Silas&apos;s selfless adoption of Eppie leads to his redemption and happiness.
-                  This is not divine punishment but what Eliot calls natural consequence &mdash;
-                  actions produce results. The novel&apos;s moral framework is humanist: goodness is
+                  This is not divine punishment but what Eliot calls natural consequence - actions
+                  produce results. The novel&apos;s moral framework is humanist: goodness is
                   rewarded not by God but by the natural outcomes of living well. Godfrey&apos;s
                   realisation that &ldquo;there&apos;s debts we can&apos;t pay like money
                   debts&rdquo; captures this perfectly.
@@ -598,11 +598,10 @@ export default function SilasMarnerRevisionPage() {
                   (lower class), but she is raised by Silas (working class). When Godfrey claims
                   her, she chooses Silas without hesitation. Eliot argues powerfully that nurture
                   trumps nature: it is the parent who raises you, not the one who conceived you, who
-                  deserves your love and loyalty. Eppie&apos;s character &mdash; warm, grounded,
-                  connected to nature &mdash; reflects her upbringing with Silas and the village,
-                  not her biological inheritance from the Cass family. This was a progressive
-                  argument in the Victorian period, when heredity and &ldquo;blood&rdquo; were
-                  considered paramount.
+                  deserves your love and loyalty. Eppie&apos;s character - warm, grounded, connected
+                  to nature - reflects her upbringing with Silas and the village, not her biological
+                  inheritance from the Cass family. This was a progressive argument in the Victorian
+                  period, when heredity and &ldquo;blood&rdquo; were considered paramount.
                 </p>
               </div>
 
@@ -617,10 +616,10 @@ export default function SilasMarnerRevisionPage() {
                   look back at a vanishing rural world. Lantern Yard, a pre-industrial religious
                   community, has been replaced by a factory when Silas returns. Raveloe represents
                   an older, slower, more organic way of life. Eliot is partly nostalgic for this
-                  world but does not idealise it &mdash; Raveloe has its superstitions, snobberies,
-                  and injustices. The novel implicitly asks what is lost when industrialisation
-                  replaces traditional communities: warmth, mutual support, and a connection to the
-                  natural world.
+                  world but does not idealise it - Raveloe has its superstitions, snobberies, and
+                  injustices. The novel implicitly asks what is lost when industrialisation replaces
+                  traditional communities: warmth, mutual support, and a connection to the natural
+                  world.
                 </p>
               </div>
 
@@ -637,8 +636,8 @@ export default function SilasMarnerRevisionPage() {
                   purpose. The novel draws on Christian imagery (Eppie arrives on New Year&apos;s
                   Eve, a time of renewal, and Silas believes she was &ldquo;sent&rdquo; to him), but
                   the redemption is fundamentally secular. It is human love, not divine grace, that
-                  saves Silas. Godfrey, by contrast, seeks redemption but arrives too late &mdash;
-                  his moral debts have accumulated beyond payment. Eliot suggests that redemption is
+                  saves Silas. Godfrey, by contrast, seeks redemption but arrives too late - his
+                  moral debts have accumulated beyond payment. Eliot suggests that redemption is
                   possible but must be earned through genuine connection, not purchased with money.
                 </p>
               </div>
@@ -769,7 +768,7 @@ export default function SilasMarnerRevisionPage() {
                   a figure of the transition: he is a weaver whose skill is becoming mechanised.
                   Lantern Yard&apos;s replacement by a factory symbolises the sweeping away of old
                   communities and belief systems. Raveloe represents a pre-industrial world of
-                  organic social bonds &mdash; but Eliot does not idealise it entirely.
+                  organic social bonds - but Eliot does not idealise it entirely.
                 </p>
               </div>
 
@@ -833,7 +832,7 @@ export default function SilasMarnerRevisionPage() {
                   <li>
                     &bull; <strong>{tr(`Discuss the omniscient narrator:`)}</strong> Eliot&apos;s
                     narrator is intrusive and philosophical. The narrator&apos;s commentary is part
-                    of the text &mdash; quote and analyse it.
+                    of the text - quote and analyse it.
                   </li>
                   <li>
                     &bull; <strong>{tr(`Use the gold/Eppie contrast:`)}</strong> This central symbol
@@ -862,7 +861,7 @@ export default function SilasMarnerRevisionPage() {
                   <span className="rounded bg-purple-800 px-2 py-0.5 text-xs font-bold text-white">
                     AQA
                   </span>
-                  AQA GCSE English Literature &mdash; Paper 1, Section B (19th Century Novel)
+                  AQA GCSE English Literature - Paper 1, Section B (19th Century Novel)
                 </h3>
                 <ul className="mt-3 space-y-2 text-sm text-muted-foreground">
                   <li>
@@ -888,7 +887,7 @@ export default function SilasMarnerRevisionPage() {
                   <span className="rounded bg-emerald-600 px-2 py-0.5 text-xs font-bold text-white">
                     CAIE
                   </span>
-                  Cambridge IGCSE Literature &mdash; Paper 2 (Prose)
+                  Cambridge IGCSE Literature - Paper 2 (Prose)
                 </h3>
                 <ul className="mt-3 space-y-2 text-sm text-muted-foreground">
                   <li>

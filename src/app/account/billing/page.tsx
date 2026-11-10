@@ -14,6 +14,7 @@ import { capture as phCapture, EVENTS as PH_EVENTS } from '@/lib/posthog'
 import { getCourseName } from '@/lib/utils'
 import { fireTrustpilotInvite } from '@/lib/trustpilot/fire-invite-js'
 import { useT } from '@/lib/i18n/use-t'
+import { billingPlanView } from '@/lib/billing/billing-plan-view'
 import {
   CreditCard,
   Crown,
@@ -75,7 +76,11 @@ export default function BillingPage() {
     setPageLoading(false)
   }
 
-  const isPro = profile?.subscription_status === 'pro'
+  // A no-card trialist also holds 'pro', so status alone used to show them
+  // "Premium, Renews" and a portal button that errors. See billingPlanView.
+  const planView = billingPlanView(profile)
+  const isPro = planView === 'premium'
+  const isTrial = planView === 'trial'
 
   // Trustpilot InviteJS - fire on mount for Premium subscribers returning to
   // the billing page (the Stripe checkout return URL). The server-side
@@ -95,7 +100,7 @@ export default function BillingPage() {
       trigger: 'student_90d_retention',
     })
   }, [user, isPro, profile])
-  const isCancelled = profile?.subscription_status === 'cancelled'
+  const isCancelled = planView === 'cancelled'
   const subscriptionEnd = profile?.subscription_end_date
     ? new Date(profile.subscription_end_date)
     : null
@@ -309,26 +314,32 @@ export default function BillingPage() {
           <div className="flex items-center gap-3 mb-4">
             <span
               className={`inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full text-sm font-medium ${
-                isPro
+                isPro || isTrial
                   ? 'bg-primary/10 text-primary border border-primary/30'
                   : isCancelled
                     ? 'bg-yellow-500/10 text-clay-600 border border-yellow-500/30'
                     : 'bg-border text-muted-foreground border border-border'
               }`}
             >
-              {isPro && <Sparkles className="w-3.5 h-3.5" />}
+              {(isPro || isTrial) && <Sparkles className="w-3.5 h-3.5" />}
               {isPro
                 ? t('account.billing.plan_premium')
-                : isCancelled
-                  ? t('account.billing.plan_premium_cancelled')
-                  : t('account.billing.plan_free')}
+                : isTrial
+                  ? t('account.billing.plan_trial')
+                  : isCancelled
+                    ? t('account.billing.plan_premium_cancelled')
+                    : t('account.billing.plan_free')}
             </span>
           </div>
 
           {subscriptionEnd && (
             <div className="flex items-center gap-2 text-sm text-muted-foreground mb-4">
               <Calendar className="w-4 h-4" />
-              {isPro ? t('account.billing.renews') : t('account.billing.access_until')}{' '}
+              {isPro
+                ? t('account.billing.renews')
+                : isTrial
+                  ? t('account.billing.trial_ends')
+                  : t('account.billing.access_until')}{' '}
               {subscriptionEnd.toLocaleDateString('en-GB', {
                 day: 'numeric',
                 month: 'long',
@@ -357,7 +368,11 @@ export default function BillingPage() {
             </button>
           ) : (
             <div className="space-y-4">
-              <p className="text-muted-foreground text-sm">{t('account.billing.upgrade_blurb')}</p>
+              {/* A trialist gets the plans, not the portal: they have no Stripe
+                  subscription to manage yet, and this is where they came to buy. */}
+              <p className="text-muted-foreground text-sm">
+                {isTrial ? t('account.billing.trial_blurb') : t('account.billing.upgrade_blurb')}
+              </p>
 
               {/* Promo / affiliate code field - same component as /pricing.
                   Renders above the plan options so users can apply a code

@@ -10,103 +10,99 @@
 
 // ─── Configuration ───────────────────────────────────────────────────────
 
-const BASE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://theenglishhub.app";
-const BRAND_COLOR = "#1A5276";
-const BRAND_ACCENT = "#2E86C1";
-const BRAND_LIGHT = "#D6EAF8";
-const REVISION_URL = `${BASE_URL}/revision`;
-const UNSUBSCRIBE_URL = `${BASE_URL}/dashboard/settings`;
-const TERMS_URL = `${BASE_URL}/terms`;
-const PRIVACY_URL = `${BASE_URL}/privacy-policy`;
+const BASE_URL = process.env.NEXT_PUBLIC_SITE_URL || 'https://theenglishhub.app'
+const BRAND_COLOR = '#1A5276'
+const BRAND_ACCENT = '#2E86C1'
+const BRAND_LIGHT = '#D6EAF8'
+const REVISION_URL = `${BASE_URL}/revision`
+const UNSUBSCRIBE_URL = `${BASE_URL}/dashboard/settings`
+const TERMS_URL = `${BASE_URL}/terms`
+const PRIVACY_URL = `${BASE_URL}/privacy-policy`
 
 // ─── Types ───────────────────────────────────────────────────────────────
 
 export interface StudentWeeklyData {
-  studentName: string;
-  studentEmail: string;
-  weekStart: Date;
-  weekEnd: Date;
+  studentName: string
+  studentEmail: string
+  weekStart: Date
+  weekEnd: Date
 
   /** Poems studied this week */
-  poemsStudied: string[];
+  poemsStudied: string[]
   /** Prose / extract texts studied this week */
-  textsStudied: string[];
+  textsStudied: string[]
   /** Games played (e.g. vocabulary, matching) */
-  gamesPlayed: number;
+  gamesPlayed: number
 
   /** Quiz scores as percentages (0-100). Empty array if no quizzes taken. */
-  quizScores: number[];
+  quizScores: number[]
 
   /** Consecutive days active (streak) */
-  streakDays: number;
+  streakDays: number
 
   /** 1-2 specific focus recommendations for next week */
-  suggestedFocus: string[];
+  suggestedFocus: string[]
 
   /** Unsubscribe token for one-click unsubscribe */
-  unsubscribeToken?: string;
+  unsubscribeToken?: string
 }
 
 // ─── Builder ─────────────────────────────────────────────────────────────
 
-export function buildStudentWeeklyEmail(
-  data: StudentWeeklyData
-): { subject: string; html: string } {
-  const dateRange = `${formatDateShort(data.weekStart)} - ${formatDateShort(data.weekEnd)}`;
-  const subject = `Your English Hub Weekly Summary \u2014 ${dateRange}`;
+export function buildStudentWeeklyEmail(data: StudentWeeklyData): {
+  subject: string
+  html: string
+} {
+  const dateRange = `${formatDateShort(data.weekStart)} - ${formatDateShort(data.weekEnd)}`
+  const subject = `Your English Hub Weekly Summary - ${dateRange}`
 
   // ── Studied items ────────────────────────────────────────────────────
 
-  const poemsList = data.poemsStudied.length > 0
-    ? data.poemsStudied
-        .map((p) => `<li style="padding:3px 0;font-size:14px;color:#555;">${escapeHtml(p)}</li>`)
-        .join("")
-    : "";
+  const poemsList =
+    data.poemsStudied.length > 0
+      ? data.poemsStudied
+          .map((p) => `<li style="padding:3px 0;font-size:14px;color:#555;">${escapeHtml(p)}</li>`)
+          .join('')
+      : ''
 
-  const textsList = data.textsStudied.length > 0
-    ? data.textsStudied
-        .map((t) => `<li style="padding:3px 0;font-size:14px;color:#555;">${escapeHtml(t)}</li>`)
-        .join("")
-    : "";
+  const textsList =
+    data.textsStudied.length > 0
+      ? data.textsStudied
+          .map((t) => `<li style="padding:3px 0;font-size:14px;color:#555;">${escapeHtml(t)}</li>`)
+          .join('')
+      : ''
 
   const hasStudied =
-    data.poemsStudied.length > 0 ||
-    data.textsStudied.length > 0 ||
-    data.gamesPlayed > 0;
+    data.poemsStudied.length > 0 || data.textsStudied.length > 0 || data.gamesPlayed > 0
 
   // ── Quiz summary ─────────────────────────────────────────────────────
 
-  const hasQuizzes = data.quizScores.length > 0;
+  const hasQuizzes = data.quizScores.length > 0
   const avgScore = hasQuizzes
-    ? Math.round(
-        data.quizScores.reduce((a, b) => a + b, 0) / data.quizScores.length
-      )
-    : 0;
-  const bestScore = hasQuizzes ? Math.max(...data.quizScores) : 0;
+    ? Math.round(data.quizScores.reduce((a, b) => a + b, 0) / data.quizScores.length)
+    : 0
+  const bestScore = hasQuizzes ? Math.max(...data.quizScores) : 0
 
   // ── Streak display ───────────────────────────────────────────────────
 
   const streakEmoji =
     data.streakDays >= 7
-      ? "&#128293;" // fire
+      ? '&#128293;' // fire
       : data.streakDays >= 3
-        ? "&#11088;" // star
-        : "&#128170;"; // flexed bicep
+        ? '&#11088;' // star
+        : '&#128170;' // flexed bicep
 
   // ── Focus recommendations ────────────────────────────────────────────
 
   const focusList = data.suggestedFocus
-    .map(
-      (f) =>
-        `<li style="padding:4px 0;font-size:14px;color:#555;">${escapeHtml(f)}</li>`
-    )
-    .join("");
+    .map((f) => `<li style="padding:4px 0;font-size:14px;color:#555;">${escapeHtml(f)}</li>`)
+    .join('')
 
   // ── Unsubscribe link ─────────────────────────────────────────────────
 
   const unsubLink = data.unsubscribeToken
     ? `${BASE_URL}/unsubscribe?token=${data.unsubscribeToken}`
-    : UNSUBSCRIBE_URL;
+    : UNSUBSCRIBE_URL
 
   // ── Build HTML ───────────────────────────────────────────────────────
 
@@ -152,11 +148,13 @@ export function buildStudentWeeklyEmail(
                       ${streakEmoji} ${data.streakDays}-day streak ${streakEmoji}
                     </p>
                     <p style="margin:4px 0 0 0;font-size:12px;color:#888;">
-                      ${data.streakDays >= 7
-                        ? "Amazing consistency \u2014 keep it going!"
-                        : data.streakDays >= 3
-                          ? "Great momentum this week!"
-                          : "Every day counts \u2014 try to build your streak!"}
+                      ${
+                        data.streakDays >= 7
+                          ? 'Amazing consistency - keep it going!'
+                          : data.streakDays >= 3
+                            ? 'Great momentum this week!'
+                            : 'Every day counts - try to build your streak!'
+                      }
                     </p>
                   </td>
                 </tr>
@@ -164,30 +162,45 @@ export function buildStudentWeeklyEmail(
             </td>
           </tr>
 
-          ${hasStudied ? `
+          ${
+            hasStudied
+              ? `
           <!-- This week you studied -->
           <tr>
             <td style="padding:0 32px 24px 32px;">
               <h3 style="margin:0 0 12px 0;font-size:16px;color:${BRAND_COLOR};">This week you studied:</h3>
 
-              ${data.poemsStudied.length > 0 ? `
+              ${
+                data.poemsStudied.length > 0
+                  ? `
               <p style="margin:0 0 6px 0;font-size:13px;font-weight:600;color:#888;text-transform:uppercase;letter-spacing:0.5px;">Poems</p>
               <ul style="margin:0 0 12px 0;padding-left:20px;list-style-type:disc;">
                 ${poemsList}
-              </ul>` : ""}
+              </ul>`
+                  : ''
+              }
 
-              ${data.textsStudied.length > 0 ? `
+              ${
+                data.textsStudied.length > 0
+                  ? `
               <p style="margin:0 0 6px 0;font-size:13px;font-weight:600;color:#888;text-transform:uppercase;letter-spacing:0.5px;">Texts</p>
               <ul style="margin:0 0 12px 0;padding-left:20px;list-style-type:disc;">
                 ${textsList}
-              </ul>` : ""}
+              </ul>`
+                  : ''
+              }
 
-              ${data.gamesPlayed > 0 ? `
+              ${
+                data.gamesPlayed > 0
+                  ? `
               <p style="margin:0;font-size:14px;color:#555;">
-                <strong>${data.gamesPlayed}</strong> revision game${data.gamesPlayed !== 1 ? "s" : ""} played
-              </p>` : ""}
+                <strong>${data.gamesPlayed}</strong> revision game${data.gamesPlayed !== 1 ? 's' : ''} played
+              </p>`
+                  : ''
+              }
             </td>
-          </tr>` : `
+          </tr>`
+              : `
           <!-- No activity -->
           <tr>
             <td style="padding:0 32px 24px 32px;">
@@ -204,9 +217,12 @@ export function buildStudentWeeklyEmail(
                 </tr>
               </table>
             </td>
-          </tr>`}
+          </tr>`
+          }
 
-          ${hasQuizzes ? `
+          ${
+            hasQuizzes
+              ? `
           <!-- Quiz scores -->
           <tr>
             <td style="padding:0 32px 24px 32px;">
@@ -228,9 +244,13 @@ export function buildStudentWeeklyEmail(
                 </tr>
               </table>
             </td>
-          </tr>` : ""}
+          </tr>`
+              : ''
+          }
 
-          ${data.suggestedFocus.length > 0 ? `
+          ${
+            data.suggestedFocus.length > 0
+              ? `
           <!-- Suggested focus -->
           <tr>
             <td style="padding:0 32px 24px 32px;">
@@ -239,7 +259,9 @@ export function buildStudentWeeklyEmail(
                 ${focusList}
               </ul>
             </td>
-          </tr>` : ""}
+          </tr>`
+              : ''
+          }
 
           <!-- CTA Button -->
           <tr>
@@ -281,33 +303,33 @@ export function buildStudentWeeklyEmail(
     </tr>
   </table>
 </body>
-</html>`;
+</html>`
 
-  return { subject, html };
+  return { subject, html }
 }
 
 // ─── Helpers ─────────────────────────────────────────────────────────────
 
 function formatDate(date: Date): string {
-  return date.toLocaleDateString("en-GB", {
-    day: "numeric",
-    month: "long",
-    year: "numeric",
-  });
+  return date.toLocaleDateString('en-GB', {
+    day: 'numeric',
+    month: 'long',
+    year: 'numeric',
+  })
 }
 
 function formatDateShort(date: Date): string {
-  return date.toLocaleDateString("en-GB", {
-    day: "numeric",
-    month: "short",
-  });
+  return date.toLocaleDateString('en-GB', {
+    day: 'numeric',
+    month: 'short',
+  })
 }
 
 function escapeHtml(str: string): string {
   return str
-    .replace(/&/g, "&amp;")
-    .replace(/</g, "&lt;")
-    .replace(/>/g, "&gt;")
-    .replace(/"/g, "&quot;")
-    .replace(/'/g, "&#39;");
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;')
+    .replace(/"/g, '&quot;')
+    .replace(/'/g, '&#39;')
 }

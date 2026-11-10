@@ -19,7 +19,7 @@ export const STRINGS: Record<string, Bi> = {
   s2: { en: `Section B: Writing`, ar: `SECTION B: الكتابة` },
   s3: { en: `Read both texts carefully`, ar: `اقرأ النصين بعناية شديدة` },
   s4: { en: `Question 1 (true/false)`, ar: `سؤال 1 (صح/خطأ)` },
-  s5: { en: `Question 2 (summary/synthesis)`, ar: `سؤال 2 (ملخص/تكامل)` },
+  s5: { en: `Question 2 (inference/synthesis)`, ar: `سؤال 2 (استنتاج/تكامل)` },
   s6: { en: `Question 3 (language analysis)`, ar: `سؤال 3 (تحليل اللغة)` },
   s7: { en: `Question 4 (comparison)`, ar: `السؤال الرابع (المقارنة)` },
   s8: { en: `Question 5 (writing)`, ar: `السؤال الخامس (كتابة)` },
@@ -262,7 +262,10 @@ export const STRINGS: Record<string, Bi> = {
     en: `Question 1: Choose four true statements (4 marks)`,
     ar: `السؤال الأول: اختر أربع جمل صحيحة (أربعة نقاط)`,
   },
-  s114: { en: `Question 2: Summary and synthesis (8 marks)`, ar: `سؤال 2: ملخص وتكامل (8 نقاط)` },
+  s114: {
+    en: `Question 2: Inference and synthesis (8 marks)`,
+    ar: `سؤال 2: استنتاج وتكامل (8 نقاط)`,
+  },
   s115: {
     en: `Question 3: How does the writer use language...? (12 marks)`,
     ar: `كيف يستخدم الكاتب اللغة...؟ (12 نقطة)`,

@@ -247,9 +247,9 @@ export default async function StructurePage() {
         <span>{await t('ks3.page.reading.structure.bc')}</span>
       </p>
 
-      <h1>Structure &amp; organisation of texts &mdash; a masterclass</h1>
+      <h1>Structure &amp; organisation of texts - a masterclass</h1>
       <p className="lead">
-        This page is a deep dive into one assessment objective: <strong>{RAO3.code}</strong> &mdash;
+        This page is a deep dive into one assessment objective: <strong>{RAO3.code}</strong> -
         &ldquo;{RAO3.descriptor}&rdquo; It is examined under reading skill{' '}
         <strong>
           {SKILL_1_2B.code}: {SKILL_1_2B.title}
@@ -277,9 +277,8 @@ export default async function StructurePage() {
           ))}
         </ul>
         <p className="text-sm text-muted-foreground">
-          The third bullet is the one students forget. Naming a feature is only half the answer
-          &mdash; the marks come from explaining{' '}
-          <strong>the effect of that choice on the reader</strong>.
+          The third bullet is the one students forget. Naming a feature is only half the answer -
+          the marks come from explaining <strong>the effect of that choice on the reader</strong>.
         </p>
       </section>
 
@@ -288,7 +287,7 @@ export default async function StructurePage() {
         <p>
           When you are asked to comment on structure and organisation, work through the text from
           the outside in: how it begins, how it is ordered, how it is signposted, and how it ends.
-          For each feature below, the column that earns marks is the last one &mdash; the effect.
+          For each feature below, the column that earns marks is the last one - the effect.
         </p>
         <div className="not-prose my-6 space-y-3">
           {STRUCTURE_FEATURES.map((f) => (
@@ -312,7 +311,7 @@ export default async function StructurePage() {
         <p>
           These prompts are taken from the iLowerSecondary Teacher&rsquo;s Guide guided-reading
           routine for non-fiction. Use them as questions to ask yourself about any non-fiction text
-          before you write a structure answer &mdash; they train you to read like an examiner.
+          before you write a structure answer - they train you to read like an examiner.
         </p>
         <div className="not-prose my-6 grid gap-3 sm:grid-cols-2">
           <div className="rounded-xl border border-primary/30 bg-primary/5 p-5">
@@ -379,12 +378,11 @@ export default async function StructurePage() {
           </p>
           <p className="text-sm text-muted-foreground leading-relaxed">
             For a 2-mark punctuation-effect question, write <strong>two sentences</strong>. Sentence
-            one <strong>names the effect</strong> of the mark &mdash; an exclamation mark adds
-            emphasis, surprise or excitement; dashes mark off and emphasise an inserted detail;
-            brackets add extra, lower-priority information; a question mark draws the reader in or
-            signals doubt. Sentence two <strong>explains that effect using the text</strong> in
-            front of you. Naming the mark alone, or quoting without explaining, does not earn the
-            second mark.
+            one <strong>names the effect</strong> of the mark - an exclamation mark adds emphasis,
+            surprise or excitement; dashes mark off and emphasise an inserted detail; brackets add
+            extra, lower-priority information; a question mark draws the reader in or signals doubt.
+            Sentence two <strong>explains that effect using the text</strong> in front of you.
+            Naming the mark alone, or quoting without explaining, does not earn the second mark.
           </p>
         </div>
         <div className="not-prose my-6 rounded-xl border border-primary/30 bg-primary/5 p-5">
@@ -392,10 +390,10 @@ export default async function StructurePage() {
             The feature-tick-table
           </p>
           <p className="text-sm text-muted-foreground leading-relaxed">
-            Here you are given a small table of features &mdash; question marks, apostrophes for
-            possession, dashes, brackets, a heading &mdash; and you tick which text uses each one.
-            Work one feature at a time and scan <em>both</em> texts before you tick. Do not leave
-            rows blank: partial credit is usually available for most rows correct, so an unsure tick
+            Here you are given a small table of features - question marks, apostrophes for
+            possession, dashes, brackets, a heading - and you tick which text uses each one. Work
+            one feature at a time and scan <em>both</em> texts before you tick. Do not leave rows
+            blank: partial credit is usually available for most rows correct, so an unsure tick
             beats no tick.
           </p>
         </div>
@@ -404,10 +402,10 @@ export default async function StructurePage() {
       <section className="my-10">
         <h2>Practice extracts with model answers</h2>
         <p>
-          The three extracts below are <strong>original texts written for this page</strong> &mdash;
-          they are not from any past paper. Read each one right through first, then attempt the
-          questions before you read the model answers. The model answers are written in the Pearson
-          mark style: identify the choice, then comment on its effect on the reader.
+          The three extracts below are <strong>original texts written for this page</strong> - they
+          are not from any past paper. Read each one right through first, then attempt the questions
+          before you read the model answers. The model answers are written in the Pearson mark
+          style: identify the choice, then comment on its effect on the reader.
         </p>
 
         {EXTRACTS.map((ex) => (

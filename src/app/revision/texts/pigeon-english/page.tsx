@@ -54,7 +54,7 @@ const data: TextGuideData = {
   category: 'Novel',
   badge: 'AQA GCSE',
   intro:
-    'Stephen Kelman\u2019s debut novel, shortlisted for the 2011 Man Booker Prize, is narrated by Harrison \u2018Harri\u2019 Opoku, an eleven-year-old Ghanaian boy newly arrived on the fictional Dell Farm estate in London. The novel opens in the aftermath of the stabbing of a local schoolboy \u2014 referred to throughout only as \u2018the dead boy\u2019 \u2014 and follows Harri as he turns amateur detective, determined to find the killer with his friend Dean. Kelman interweaves Harri\u2019s exuberant, slang-rich, Ghanaian English voice with the silent interludes of a pigeon that watches the estate from above. What begins as the comic story of a curious child trying to make sense of a strange new country darkens steadily into a study of gang violence, migration, faith and the vulnerability of childhood. The novel is set on AQA\u2019s GCSE specification and is widely admired for its formal inventiveness and the moral tenderness of its narration.',
+    'Stephen Kelman\u2019s debut novel, shortlisted for the 2011 Man Booker Prize, is narrated by Harrison \u2018Harri\u2019 Opoku, an eleven-year-old Ghanaian boy newly arrived on the fictional Dell Farm estate in London. The novel opens in the aftermath of the stabbing of a local schoolboy - referred to throughout only as \u2018the dead boy\u2019 - and follows Harri as he turns amateur detective, determined to find the killer with his friend Dean. Kelman interweaves Harri\u2019s exuberant, slang-rich, Ghanaian English voice with the silent interludes of a pigeon that watches the estate from above. What begins as the comic story of a curious child trying to make sense of a strange new country darkens steadily into a study of gang violence, migration, faith and the vulnerability of childhood. The novel is set on AQA\u2019s GCSE specification and is widely admired for its formal inventiveness and the moral tenderness of its narration.',
   quickInfo: {
     genre: 'Contemporary literary fiction',
     setting: 'Dell Farm estate, London; present day',
@@ -71,7 +71,7 @@ const data: TextGuideData = {
     {
       name: 'Harrison \u2018Harri\u2019 Opoku',
       role: 'Eleven-year-old narrator and protagonist',
-      body: 'Harri is curious, gentle, fast on his feet and almost painfully hopeful. His voice \u2014 a mixture of Ghanaian English, playground London slang and his own invented vocabulary \u2014 is Kelman\u2019s greatest technical achievement and the engine of the novel\u2019s emotional force. \u2018Asweh\u2019 (meaning \u2018I swear\u2019) is his verbal tic; \u2018hutious\u2019 is his word for scary; he sorts the world into what is \u2018brutal\u2019 or \u2018bo-styles\u2019. Harri\u2019s moral instincts \u2014 to help, to pray, to believe the best of people \u2014 run directly against the logic of the estate around him, and Kelman makes the reader feel the cost of that mismatch without ever breaking the child\u2019s perspective.',
+      body: 'Harri is curious, gentle, fast on his feet and almost painfully hopeful. His voice - a mixture of Ghanaian English, playground London slang and his own invented vocabulary - is Kelman\u2019s greatest technical achievement and the engine of the novel\u2019s emotional force. \u2018Asweh\u2019 (meaning \u2018I swear\u2019) is his verbal tic; \u2018hutious\u2019 is his word for scary; he sorts the world into what is \u2018brutal\u2019 or \u2018bo-styles\u2019. Harri\u2019s moral instincts - to help, to pray, to believe the best of people - run directly against the logic of the estate around him, and Kelman makes the reader feel the cost of that mismatch without ever breaking the child\u2019s perspective.',
     },
     {
       name: 'Lydia Opoku',
@@ -81,7 +81,7 @@ const data: TextGuideData = {
     {
       name: 'Mamma',
       role: 'Harri\u2019s mother',
-      body: 'Mamma works long night shifts as a midwife and holds the family together through prayer, discipline and a love that is sometimes expressed through scolding. She has left her own mother, her husband and her baby daughter behind in Ghana and is saving for the flights that will reunite them. Her absences from the flat mean that Harri is often unsupervised on a dangerous estate, and her faith \u2014 evangelical, practical, loud \u2014 shapes the family\u2019s moral vocabulary.',
+      body: 'Mamma works long night shifts as a midwife and holds the family together through prayer, discipline and a love that is sometimes expressed through scolding. She has left her own mother, her husband and her baby daughter behind in Ghana and is saving for the flights that will reunite them. Her absences from the flat mean that Harri is often unsupervised on a dangerous estate, and her faith - evangelical, practical, loud - shapes the family\u2019s moral vocabulary.',
     },
     {
       name: 'Papa',
@@ -112,7 +112,7 @@ const data: TextGuideData = {
   themes: [
     {
       title: 'Innocence and violence',
-      body: 'Kelman places a child\u2019s voice against an adult world of knives and gangs. Harri\u2019s innocence is not ignorance \u2014 he notices the blood, the tape, the fear \u2014 but a way of processing threat through play, naming and hope. The gap between his cheerful narration and the reality closing in around him is the book\u2019s central technique, and the ending forces the reader to confront how fragile that innocence always was. Kelman refuses either to sentimentalise childhood or to blame Harri for misreading his world.',
+      body: 'Kelman places a child\u2019s voice against an adult world of knives and gangs. Harri\u2019s innocence is not ignorance - he notices the blood, the tape, the fear - but a way of processing threat through play, naming and hope. The gap between his cheerful narration and the reality closing in around him is the book\u2019s central technique, and the ending forces the reader to confront how fragile that innocence always was. Kelman refuses either to sentimentalise childhood or to blame Harri for misreading his world.',
     },
     {
       title: 'Identity and belonging',
@@ -124,7 +124,7 @@ const data: TextGuideData = {
     },
     {
       title: 'Class and estate life',
-      body: 'Dell Farm is a fictional composite but a recognisably real kind of place: underfunded, high-rise, policed but not protected. Kelman writes the estate from the inside \u2014 its smells, rituals, nicknames and hierarchies \u2014 rather than as an abstraction or a warning. The novel asks what it means to grow up in a place the rest of the country has largely written off, and it refuses the tabloid shorthand that would flatten its children into statistics.',
+      body: 'Dell Farm is a fictional composite but a recognisably real kind of place: underfunded, high-rise, policed but not protected. Kelman writes the estate from the inside - its smells, rituals, nicknames and hierarchies - rather than as an abstraction or a warning. The novel asks what it means to grow up in a place the rest of the country has largely written off, and it refuses the tabloid shorthand that would flatten its children into statistics.',
     },
     {
       title: 'Religion, luck and superstition',
@@ -136,27 +136,27 @@ const data: TextGuideData = {
     },
   ],
   historicalContext: [
-    'Pigeon English was directly inspired by the 2000 killing of Damilola Taylor, a ten-year-old Nigerian boy who bled to death in a stairwell on the North Peckham estate after being attacked on his way home from a library. Stephen Kelman has said in interviews that he wanted to imagine the inner life of a child like Damilola \u2014 not as a victim but as a narrator \u2014 and the final chapters echo the real case deliberately. The novel is not a reconstruction of the Taylor case but a fictional response to it, and readers and critics have discussed at length the ethics of using such a recent killing as material for a children\u2019s-voice novel.',
-    'The novel\u2019s London setting belongs to a specific urban history. The tower-block estates built in the post-war decades had, by the early twenty-first century, become shorthand in the British press for poverty, crime and social failure. Kelman grew up near estates of this kind in Luton and draws on the textures of that childhood \u2014 the lifts that do not work, the stairwells, the fried-chicken shops, the nicknames, the local geography of safety and threat \u2014 rather than treating the estate as an abstraction. Dell Farm is invented but grounded in observed detail.',
+    'Pigeon English was directly inspired by the 2000 killing of Damilola Taylor, a ten-year-old Nigerian boy who bled to death in a stairwell on the North Peckham estate after being attacked on his way home from a library. Stephen Kelman has said in interviews that he wanted to imagine the inner life of a child like Damilola - not as a victim but as a narrator - and the final chapters echo the real case deliberately. The novel is not a reconstruction of the Taylor case but a fictional response to it, and readers and critics have discussed at length the ethics of using such a recent killing as material for a children\u2019s-voice novel.',
+    'The novel\u2019s London setting belongs to a specific urban history. The tower-block estates built in the post-war decades had, by the early twenty-first century, become shorthand in the British press for poverty, crime and social failure. Kelman grew up near estates of this kind in Luton and draws on the textures of that childhood - the lifts that do not work, the stairwells, the fried-chicken shops, the nicknames, the local geography of safety and threat - rather than treating the estate as an abstraction. Dell Farm is invented but grounded in observed detail.',
     'Ghanaian migration to the UK has a long history, and the Opokus are part of an established diaspora. The family speaks Twi at home while Harri and Lydia learn to code-switch into playground English at school. Kelman has said that a growing Ghanaian community where he lived let him take in its everyday life and overhear its conversations; the novel\u2019s cultural detail is carried lightly but deliberately. The voice draws on that listening as well as on invention.',
-    'Published in 2011 by Bloomsbury, Pigeon English appeared during a decade of heightened public anxiety about knife crime in London. It was shortlisted for the Man Booker Prize and for the Guardian First Book Award, and widely reviewed as an unusually formally ambitious debut. Kelman \u2014 who had worked as a warehouseman and care worker before publication \u2014 became one of the most discussed new British voices of the year. The novel\u2019s place on the AQA GCSE specification has introduced it to a generation of students, and it is now taught alongside the Damilola Taylor case in many classrooms.',
+    'Published in 2011 by Bloomsbury, Pigeon English appeared during a decade of heightened public anxiety about knife crime in London. It was shortlisted for the Man Booker Prize and for the Guardian First Book Award, and widely reviewed as an unusually formally ambitious debut. Kelman - who had worked as a warehouseman and care worker before publication - became one of the most discussed new British voices of the year. The novel\u2019s place on the AQA GCSE specification has introduced it to a generation of students, and it is now taught alongside the Damilola Taylor case in many classrooms.',
   ],
   quotations: [
     {
       quote: '"You could see the blood. It was darker than you thought."',
-      who: 'Harri \u2014 opening line',
+      who: 'Harri - opening line',
       analysis:
         'The novel\u2019s unsettling first line. Harri\u2019s flat, almost clinical tone is both childlike and already traumatised, and the short declarative sentences set the register for the whole book.',
     },
     {
       quote: '"Asweh, it was brutal."',
-      who: 'Harri \u2014 recurring',
+      who: 'Harri - recurring',
       analysis:
         '\u2018Asweh\u2019 (I swear) is Harri\u2019s signature Ghanaian interjection and anchors his voice throughout the novel. Paired with the street-English \u2018brutal\u2019 it shows how his vocabulary is constantly code-switching between home and London.',
     },
     {
       quote: '"The dead boy\'s mamma was guarding the blood."',
-      who: 'Harri \u2014 early chapters',
+      who: 'Harri - early chapters',
       analysis:
         'The victim is never named, only \u2018the dead boy\u2019. Calling his mother into the sentence gives the murder its adult weight while keeping the child narrator\u2019s perspective intact.',
     },

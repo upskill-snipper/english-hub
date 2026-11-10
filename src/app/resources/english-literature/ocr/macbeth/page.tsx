@@ -193,7 +193,7 @@ export default async function OCRMacbethPage() {
             <div className="rounded-lg border border-border bg-card p-6 shadow-md">
               <h3 className="text-xl font-semibold text-primary">Macbeth</h3>
               <p className="mt-3 text-sm text-muted-foreground leading-relaxed">
-                Macbeth is Shakespeare&rsquo;s tragic hero &mdash; a brave and loyal warrior who is
+                Macbeth is Shakespeare&rsquo;s tragic hero - a brave and loyal warrior who is
                 corrupted by ambition and supernatural influence. At the start of the play, he is
                 celebrated as &ldquo;brave Macbeth&rdquo; and &ldquo;Bellona&rsquo;s
                 bridegroom,&rdquo; a valiant soldier fighting for his king. However, the
@@ -202,12 +202,11 @@ export default async function OCRMacbethPage() {
               </p>
               <p className="mt-3 text-sm text-muted-foreground leading-relaxed">
                 What makes Macbeth a tragic figure is his awareness of his own moral deterioration.
-                His soliloquies reveal intense inner conflict &mdash; he knows murder is wrong, yet
-                he cannot resist the pull of ambition. As the play progresses, he becomes
-                increasingly isolated, paranoid, and tyrannical, ordering murders without the
-                hesitation he showed before Duncan&rsquo;s death. By Act 5, he has lost everything
-                &mdash; his wife, his honour, his humanity &mdash; and is reduced to nihilistic
-                despair.
+                His soliloquies reveal intense inner conflict - he knows murder is wrong, yet he
+                cannot resist the pull of ambition. As the play progresses, he becomes increasingly
+                isolated, paranoid, and tyrannical, ordering murders without the hesitation he
+                showed before Duncan&rsquo;s death. By Act 5, he has lost everything - his wife, his
+                honour, his humanity - and is reduced to nihilistic despair.
               </p>
               <div className="mt-4 rounded border border-accent/20 bg-primary/10 p-3">
                 <p className="text-sm font-medium text-primary">{_tr(`Key character arc`)}</p>
@@ -232,10 +231,10 @@ export default async function OCRMacbethPage() {
                 She is the driving force behind Duncan&rsquo;s murder, questioning Macbeth&rsquo;s
                 manhood (&ldquo;When you durst do it, then you were a man&rdquo;) and taking
                 practical charge of the plot. Yet her earlier composure crumbles as guilt overwhelms
-                her. The sleepwalking scene (Act 5, Scene 1) shows her psychological destruction
-                &mdash; she compulsively washes imaginary blood from her hands, echoing
-                Macbeth&rsquo;s earlier guilt. Her death (implied suicide) represents the ultimate
-                consequence of suppressing conscience.
+                her. The sleepwalking scene (Act 5, Scene 1) shows her psychological destruction -
+                she compulsively washes imaginary blood from her hands, echoing Macbeth&rsquo;s
+                earlier guilt. Her death (implied suicide) represents the ultimate consequence of
+                suppressing conscience.
               </p>
               <div className="mt-4 rounded border border-accent/20 bg-primary/10 p-3">
                 <p className="text-sm font-medium text-primary">{_tr(`Key character arc`)}</p>
@@ -253,8 +252,8 @@ export default async function OCRMacbethPage() {
                 The three witches (or &ldquo;Weird Sisters&rdquo;) are agents of chaos and moral
                 disruption. They open the play with their paradoxical chant and return to give
                 Macbeth the prophecies that drive his ambition. Shakespeare leaves their nature
-                ambiguous &mdash; are they supernatural beings with real power, or do they merely
-                reveal desires that already exist within Macbeth?
+                ambiguous - are they supernatural beings with real power, or do they merely reveal
+                desires that already exist within Macbeth?
               </p>
               <p className="mt-3 text-sm text-muted-foreground leading-relaxed">
                 For a Jacobean audience, the witches would have been genuinely terrifying. King
@@ -322,8 +321,8 @@ export default async function OCRMacbethPage() {
                 Macbeth&rsquo;s guilt manifests immediately after Duncan&rsquo;s murder (&ldquo;Will
                 all great Neptune&rsquo;s ocean wash this blood clean from my hand?&rdquo;), while
                 Lady Macbeth&rsquo;s suppressed guilt surfaces later in her sleepwalking scene.
-                Shakespeare suggests that guilt is an inescapable consequence of immoral action
-                &mdash; it cannot be washed away or hidden forever.
+                Shakespeare suggests that guilt is an inescapable consequence of immoral action - it
+                cannot be washed away or hidden forever.
               </p>
             </div>
 
@@ -345,9 +344,9 @@ export default async function OCRMacbethPage() {
                 Shakespeare contrasts legitimate kingship (Duncan, Malcolm) with tyranny (Macbeth).
                 Duncan is described as a gracious, generous king whose murder disrupts the natural
                 order. Macbeth rules through fear and violence. The play reflects Jacobean beliefs
-                in the Divine Right of Kings &mdash; that monarchs were appointed by God, and to
-                kill a king was to defy God Himself. This would have been particularly relevant for
-                James I, who had survived the Gunpowder Plot (1605).
+                in the Divine Right of Kings - that monarchs were appointed by God, and to kill a
+                king was to defy God Himself. This would have been particularly relevant for James
+                I, who had survived the Gunpowder Plot (1605).
               </p>
             </div>
 
@@ -369,7 +368,7 @@ export default async function OCRMacbethPage() {
                 Lady Macbeth challenges gender norms by associating masculinity with violence and
                 ruthlessness (&ldquo;unsex me here&rdquo;). She manipulates Macbeth by questioning
                 his manhood. Macbeth himself equates being a man with being brave enough to kill.
-                However, Macduff offers a different model of masculinity &mdash; one that includes
+                However, Macduff offers a different model of masculinity - one that includes
                 emotional vulnerability (&ldquo;I must also feel it as a man&rdquo;). Shakespeare
                 suggests that true courage is moral, not merely physical.
               </p>
@@ -454,9 +453,9 @@ export default async function OCRMacbethPage() {
                 <p className="mt-2 text-sm">
                   The Jacobean belief that monarchs were chosen by God and that challenging their
                   authority was a sin. Duncan is described in almost saintly terms, and his murder
-                  disrupts the natural and divine order. The Great Chain of Being &mdash; a
-                  hierarchy with God at the top, then the king, then nobles, then commoners &mdash;
-                  was believed to govern the universe.
+                  disrupts the natural and divine order. The Great Chain of Being - a hierarchy with
+                  God at the top, then the king, then nobles, then commoners - was believed to
+                  govern the universe.
                 </p>
               </div>
               <div className="rounded-lg border border-border bg-muted p-5">

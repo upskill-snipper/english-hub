@@ -307,7 +307,7 @@ export default async function LanguageRAO4Page() {
       <h1>Language analysis masterclass</h1>
       <p className="lead">
         How to explore a writer&rsquo;s grammatical and literary language at word and sentence level
-        &mdash; the single highest-weighted reading skill on the paper. This is the masterclass for{' '}
+        - the single highest-weighted reading skill on the paper. This is the masterclass for{' '}
         {RAO4.code}.
       </p>
 
@@ -317,7 +317,7 @@ export default async function LanguageRAO4Page() {
         <div className="not-prose grid gap-3 sm:grid-cols-3">
           <div className="rounded-xl border border-border/60 bg-card p-4 sm:col-span-2">
             <p className="font-mono text-[10px] tracking-[0.14em] uppercase text-muted-foreground mb-2">
-              {RAO4.code} &mdash; assessment objective
+              {RAO4.code} - assessment objective
             </p>
             <p className="text-sm text-foreground leading-relaxed">{RAO4.descriptor}</p>
           </div>
@@ -333,7 +333,7 @@ export default async function LanguageRAO4Page() {
         </div>
         <div className="not-prose mt-3 rounded-xl border border-border/60 bg-card p-4">
           <p className="font-mono text-[10px] tracking-[0.14em] uppercase text-muted-foreground mb-2">
-            Content skill {SKILL_1_3.code} &mdash; {SKILL_1_3.title}
+            Content skill {SKILL_1_3.code} - {SKILL_1_3.title}
           </p>
           <ul className="space-y-1.5 text-sm text-muted-foreground">
             {SKILL_1_3.bullets.map((b) => (
@@ -403,7 +403,7 @@ export default async function LanguageRAO4Page() {
         <h2>Literary device glossary</h2>
         <div className="not-prose rounded-xl border border-primary/40 bg-card p-5">
           <p className="font-mono text-[10px] tracking-[0.14em] uppercase text-muted-foreground mb-4">
-            Quick reference &mdash; every example original
+            Quick reference - every example original
           </p>
           <dl className="grid gap-4 sm:grid-cols-2">
             {DEVICE_GLOSSARY.map((d) => (
@@ -423,7 +423,7 @@ export default async function LanguageRAO4Page() {
       <section className="my-10">
         <h2>Applying grammatical terminology precisely</h2>
         <p className="text-sm text-muted-foreground">
-          Closed questions may ask you to name a verb class. Use the exact term &mdash; an examiner
+          Closed questions may ask you to name a verb class. Use the exact term - an examiner
           accepts any clear positive indication, but only the correct terminology earns the mark.
         </p>
         <div className="not-prose mt-4 grid gap-3 sm:grid-cols-2">
@@ -464,9 +464,9 @@ export default async function LanguageRAO4Page() {
       <section className="my-10">
         <h2>Practice extracts and model answers</h2>
         <p className="text-sm text-muted-foreground">
-          Three short, original extracts &mdash; non-fiction and fiction &mdash; with {RAO4.code}{' '}
-          questions and model answers written in the Pearson mark style. None of these texts is
-          reproduced from any past paper.
+          Three short, original extracts - non-fiction and fiction - with {RAO4.code} questions and
+          model answers written in the Pearson mark style. None of these texts is reproduced from
+          any past paper.
         </p>
         <div className="not-prose mt-4 space-y-6">
           {PRACTICE.map((p) => (

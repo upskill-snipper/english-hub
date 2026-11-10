@@ -27,7 +27,11 @@ export const metadata: Metadata = {
 const paper1Questions = [
   {
     slug: 'aqa-language-paper-1-question-1-guide',
-    title: 'Paper 1 Question 1 - List 4 things (4 marks)',
+    // 31 October 2026: this was "List 4 things", Question 1's format before
+    // summer 2026; it is now four multiple-choice parts (src/data/mark-scheme-guides/
+    // aqa-lang-paper1.ts). Paper 2's "summary question" below is, from 2026, a
+    // question on what you can infer about the differences (aqa-lang-paper2.ts).
+    title: 'Paper 1 Question 1 - Multiple choice (4 marks)',
   },
   {
     slug: 'aqa-language-paper-1-question-2-language-analysis',
@@ -74,7 +78,7 @@ const paper2Questions = [
   },
   {
     slug: 'aqa-language-paper-2-question-2-summary',
-    title: 'Paper 2 Question 2 - Summary (8 marks)',
+    title: 'Paper 2 Question 2 - Inferring differences (8 marks)',
   },
   {
     slug: 'aqa-language-paper-2-question-3-language',
@@ -97,7 +101,10 @@ const paper2Technique = [
   },
   { slug: 'paper-2-letter-writing-grade-9-guide', title: 'Paper 2 letter writing - Grade 9 guide' },
   { slug: 'paper-2-speech-writing-grade-9-guide', title: 'Paper 2 speech writing - Grade 9 guide' },
-  { slug: 'paper-2-summary-question-step-by-step', title: 'Paper 2 summary question step-by-step' },
+  {
+    slug: 'paper-2-summary-question-step-by-step',
+    title: 'Paper 2 Question 2 (inferring differences) step-by-step',
+  },
   {
     slug: 'paper-2-comparison-question-phrases-to-use',
     title: 'Paper 2 comparison question - phrases to use',

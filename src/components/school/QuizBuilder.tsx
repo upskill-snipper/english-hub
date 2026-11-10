@@ -1048,7 +1048,7 @@ function QuizPreview({ quiz, onClose }: { quiz: Quiz; onClose: () => void }) {
           <div>
             <h2 className="text-sm font-semibold">{quiz.settings.title || 'Untitled Quiz'}</h2>
             <p className="text-xs text-muted-foreground">
-              Preview Mode &mdash; {questions.length} questions &mdash; {totalPoints} points
+              Preview Mode - {questions.length} questions - {totalPoints} points
             </p>
           </div>
         </div>

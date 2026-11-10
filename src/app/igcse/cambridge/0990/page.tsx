@@ -45,6 +45,11 @@ export const metadata: Metadata = {
   alternates: { canonical: 'https://theenglishhub.app/igcse/cambridge/0990' },
 }
 
+// 31 October 2026: the Reading Paper was "three linked questions on two unseen
+// non-fiction texts". From 2027 it is four questions of 20 on three texts
+// (src/data/mark-scheme-guides/cambridge-0990-paper1.ts). Second reader: the card
+// now names November 2026's paper, and "Practice papers" below no longer calls both
+// full-length with model answers (Paper 1 is a 60-mark set without them).
 const papers = [
   {
     code: 'Reading Paper',
@@ -53,7 +58,7 @@ const papers = [
     marks: '80 marks',
     weight: '50%',
     description:
-      'Three linked questions on two unseen non-fiction texts. Tests comprehension, language analysis and summary skills.',
+      'From 2027, four questions of 20 marks on three unseen texts (November 2026 still sits the older three-question paper). Tests comprehension, summary, language analysis and an extended response to reading.',
     href: '/igcse/cambridge/0990/paper-1',
     icon: BookOpen,
     subLinks: [{ label: 'Question types', href: '/igcse/cambridge/0990/paper-1/question-types' }],
@@ -573,9 +578,9 @@ export default async function Cambridge0990HubPage() {
           <h2 className="text-heading-md font-heading text-foreground">Practice papers</h2>
         </div>
         <p className="text-body-sm text-muted-foreground leading-relaxed">
-          Full-length practice papers built around public-domain extracts, mirroring the Language B
-          format and question style. Work under exam conditions and compare your answers with our
-          worked model responses.
+          Two practice papers in the Language B format for exams from 2027: a Paper 1 set on
+          public-domain extracts covering Questions 1, 3 and 4, and a full Paper 2 with worked model
+          answers. Work under exam conditions.
         </p>
         <div className="mt-5 grid gap-3 sm:grid-cols-2">
           {practicePapers.map((pp) => (

@@ -57,7 +57,7 @@ function QuoteCard({
       <p className="text-sm font-semibold text-violet-800 dark:text-violet-200 italic">
         &ldquo;{quote}&rdquo;
       </p>
-      {speaker && <p className="mt-1 text-xs font-medium text-violet-600">&mdash; {speaker}</p>}
+      {speaker && <p className="mt-1 text-xs font-medium text-violet-600">- {speaker}</p>}
       <p className="mt-2 text-sm text-muted-foreground">{analysis}</p>
     </div>
   )
@@ -110,7 +110,7 @@ export default function ToKillAMockingbirdPage() {
           </span>
         </div>
         <h1 className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
-          To Kill a Mockingbird &mdash; Complete Revision Guide
+          To Kill a Mockingbird - Complete Revision Guide
         </h1>
         <p className="mt-1 text-lg text-muted-foreground">{tr(`Harper Lee, 1960`)}</p>
         <p className="mt-3 max-w-3xl text-muted-foreground leading-relaxed">
@@ -166,19 +166,18 @@ export default function ToKillAMockingbirdPage() {
                   Meridian who comes to stay with his aunt Miss Rachel. The three children become
                   obsessed with the Radley house next door and its mysterious occupant Boo Radley,
                   whom they have never seen and who is the subject of every local rumour. Their
-                  games &mdash; daring each other to touch the house, dramatising Boo&apos;s life
-                  &mdash; reveal a blend of curiosity and prejudice they have absorbed from the
-                  community. Over two summers, unseen gifts begin appearing in the knothole of an
-                  oak tree on the Radley property: chewing gum, pennies, soap figures of Scout and
-                  Jem, a watch. Eventually Nathan Radley, Boo&apos;s brother, fills the knothole
-                  with cement.
+                  games - daring each other to touch the house, dramatising Boo&apos;s life - reveal
+                  a blend of curiosity and prejudice they have absorbed from the community. Over two
+                  summers, unseen gifts begin appearing in the knothole of an oak tree on the Radley
+                  property: chewing gum, pennies, soap figures of Scout and Jem, a watch. Eventually
+                  Nathan Radley, Boo&apos;s brother, fills the knothole with cement.
                 </p>
                 <p className="mt-2 text-sm text-muted-foreground leading-relaxed">
                   Scout&apos;s schooling begins disastrously with Miss Caroline. At home, Atticus
                   accepts the case of Tom Robinson, a Black man falsely accused of raping a white
                   woman, Mayella Ewell. The case attracts hostility. Scout fights classmates who
-                  insult her father. Atticus shoots a rabid dog, Tim Johnson, in the street &mdash;
-                  an episode revealing his hidden marksmanship, a skill he had quietly given up. Mrs
+                  insult her father. Atticus shoots a rabid dog, Tim Johnson, in the street - an
+                  episode revealing his hidden marksmanship, a skill he had quietly given up. Mrs
                   Dubose, a dying neighbour who taunts the children, becomes Jem&apos;s test of
                   self-control after he destroys her camellias; Atticus reveals after her death that
                   she was conquering a morphine addiction, exemplifying real courage.
@@ -322,10 +321,10 @@ export default function ToKillAMockingbirdPage() {
                 <p className="mt-1 text-sm text-muted-foreground leading-relaxed">
                   The novel is set between 1933 and 1935, the depths of the Great Depression.
                   Atticus tells Scout the Cunninghams are &ldquo;hit hardest&rdquo; because they are
-                  country people whose cash crops have collapsed. Maycomb&apos;s shabbiness &mdash;
-                  the unpaved streets, the &ldquo;tired old town&rdquo; &mdash; reflects the rural
-                  Southern economy in collapse. Black Alabamans were doubly disadvantaged: poor and
-                  excluded from political and legal power.
+                  country people whose cash crops have collapsed. Maycomb&apos;s shabbiness - the
+                  unpaved streets, the &ldquo;tired old town&rdquo; - reflects the rural Southern
+                  economy in collapse. Black Alabamans were doubly disadvantaged: poor and excluded
+                  from political and legal power.
                 </p>
               </div>
               <div className="rounded-lg bg-primary/10 p-4">
@@ -338,7 +337,7 @@ export default function ToKillAMockingbirdPage() {
                   courthouse balcony, the Black church on the edge of town, the impossibility of an
                   interracial jury, and the social code that punishes any inversion of racial
                   hierarchy. The legal apparatus of segregation was upheld by social violence
-                  including lynching &mdash; the threat that hangs over the jailhouse scene.
+                  including lynching - the threat that hangs over the jailhouse scene.
                 </p>
               </div>
               <div className="rounded-lg bg-primary/10 p-4">
@@ -522,9 +521,9 @@ export default function ToKillAMockingbirdPage() {
                   he could not have made true, and <strong>{tr(`Boo Radley`)}</strong>, a gentle
                   recluse who is &ldquo;mocked&rdquo; by gossip and whom Scout recognises must not
                   be exposed to public view (&ldquo;sort of like shootin&apos; a
-                  mockingbird&rdquo;). The symbol unites the two halves of the novel &mdash; the Boo
-                  plot of Part One and the Tom plot of Part Two &mdash; into a single moral
-                  statement: it is a sin to destroy the harmless.
+                  mockingbird&rdquo;). The symbol unites the two halves of the novel - the Boo plot
+                  of Part One and the Tom plot of Part Two - into a single moral statement: it is a
+                  sin to destroy the harmless.
                 </p>
               </div>
               <div className="rounded-lg bg-muted p-4">
@@ -534,10 +533,10 @@ export default function ToKillAMockingbirdPage() {
                   Heck Tate hands his rifle to Atticus, who shoots the dog cleanly with a single
                   bullet. The rabid dog is widely read as a symbol of the disease of racism: a
                   normally harmless creature (Maycomb&apos;s civility) infected with a madness that
-                  must be confronted. Atticus &mdash; the only person willing and capable &mdash;
-                  takes the shot. The scene also reveals Atticus&apos;s hidden physical courage
-                  &mdash; he was once a noted marksman &mdash; and prepares us for his moral courage
-                  at the trial: he is the man who must face what others cannot.
+                  must be confronted. Atticus - the only person willing and capable - takes the
+                  shot. The scene also reveals Atticus&apos;s hidden physical courage - he was once
+                  a noted marksman - and prepares us for his moral courage at the trial: he is the
+                  man who must face what others cannot.
                 </p>
               </div>
               <div className="rounded-lg bg-muted p-4">
@@ -565,8 +564,8 @@ export default function ToKillAMockingbirdPage() {
                   forehead, takes aim, and fires. His glasses fall and a lens shatters. The broken
                   glasses are a symbolic moment: his spectacled, gentle persona is set aside to
                   reveal the marksman beneath. They symbolise the contrast between Atticus&apos;s
-                  outward mildness and inner steel &mdash; appearance versus essence, a theme echoed
-                  in Boo Radley&apos;s arc.
+                  outward mildness and inner steel - appearance versus essence, a theme echoed in
+                  Boo Radley&apos;s arc.
                 </p>
               </div>
               <div className="rounded-lg bg-muted p-4">
@@ -575,13 +574,13 @@ export default function ToKillAMockingbirdPage() {
                 </h4>
                 <p className="mt-1 text-sm text-muted-foreground leading-relaxed">
                   The Tim Johnson scene operates on multiple symbolic levels. The dog is sick
-                  through no fault of its own &mdash; rabies infects the innocent. The community
-                  must trust Atticus, the most peaceable man in Maycomb, to handle the threat
-                  because no one else will or can. The scene foreshadows the trial structurally: a
-                  sick situation, a community in retreat, and Atticus alone willing to act. Some
-                  critics also read the rabid dog as a warning that prejudice infects communities
-                  like a disease, and that those who refuse to engage with it ultimately let others
-                  bear the danger.
+                  through no fault of its own - rabies infects the innocent. The community must
+                  trust Atticus, the most peaceable man in Maycomb, to handle the threat because no
+                  one else will or can. The scene foreshadows the trial structurally: a sick
+                  situation, a community in retreat, and Atticus alone willing to act. Some critics
+                  also read the rabid dog as a warning that prejudice infects communities like a
+                  disease, and that those who refuse to engage with it ultimately let others bear
+                  the danger.
                 </p>
               </div>
               <div className="rounded-lg bg-muted p-4">
@@ -599,13 +598,12 @@ export default function ToKillAMockingbirdPage() {
               <div className="rounded-lg bg-muted p-4">
                 <h4 className="font-bold text-foreground">{tr(`Mayella's Geraniums`)}</h4>
                 <p className="mt-1 text-sm text-muted-foreground leading-relaxed">
-                  Among the squalor of the Ewell yard &mdash; described as a dump &mdash; Mayella
-                  tends red geraniums in chipped pots. The geraniums are a symbol of her stunted
-                  humanity: a desperate attempt at beauty in a place that should produce none. They
-                  humanise her without exonerating her, contributing to Lee&apos;s complex portrait
-                  of a victim who becomes a perpetrator. Scout&apos;s recognition of the geraniums
-                  marks the start of her empathetic engagement with Mayella as a person rather than
-                  an enemy.
+                  Among the squalor of the Ewell yard - described as a dump - Mayella tends red
+                  geraniums in chipped pots. The geraniums are a symbol of her stunted humanity: a
+                  desperate attempt at beauty in a place that should produce none. They humanise her
+                  without exonerating her, contributing to Lee&apos;s complex portrait of a victim
+                  who becomes a perpetrator. Scout&apos;s recognition of the geraniums marks the
+                  start of her empathetic engagement with Mayella as a person rather than an enemy.
                 </p>
               </div>
             </div>
@@ -645,7 +643,7 @@ export default function ToKillAMockingbirdPage() {
                   </div>
                   <div>
                     <p className="text-xs font-semibold text-violet-700 dark:text-violet-300 uppercase tracking-wider">
-                      Paragraph 1 &mdash; Racial prejudice
+                      Paragraph 1 - Racial prejudice
                     </p>
                     <p className="mt-1 text-sm text-muted-foreground">
                       &ldquo;it&apos;s a white man&apos;s word against a black man&apos;s, the white
@@ -655,7 +653,7 @@ export default function ToKillAMockingbirdPage() {
                   </div>
                   <div>
                     <p className="text-xs font-semibold text-violet-700 dark:text-violet-300 uppercase tracking-wider">
-                      Paragraph 2 &mdash; Class prejudice
+                      Paragraph 2 - Class prejudice
                     </p>
                     <p className="mt-1 text-sm text-muted-foreground">
                       Aunt Alexandra forbids Walter Cunningham. Jem&apos;s &ldquo;four kinds of
@@ -665,7 +663,7 @@ export default function ToKillAMockingbirdPage() {
                   </div>
                   <div>
                     <p className="text-xs font-semibold text-violet-700 dark:text-violet-300 uppercase tracking-wider">
-                      Paragraph 3 &mdash; Prejudice against Boo Radley
+                      Paragraph 3 - Prejudice against Boo Radley
                     </p>
                     <p className="mt-1 text-sm text-muted-foreground">
                       Maycomb&apos;s gossip constructs Boo as a monster. The children inherit and
@@ -674,7 +672,7 @@ export default function ToKillAMockingbirdPage() {
                   </div>
                   <div>
                     <p className="text-xs font-semibold text-violet-700 dark:text-violet-300 uppercase tracking-wider">
-                      Paragraph 4 &mdash; Hypocrisy of &ldquo;polite&rdquo; prejudice
+                      Paragraph 4 - Hypocrisy of &ldquo;polite&rdquo; prejudice
                     </p>
                     <p className="mt-1 text-sm text-muted-foreground">
                       Miss Gates condemning Hitler while accepting segregation. The missionary tea
@@ -687,9 +685,9 @@ export default function ToKillAMockingbirdPage() {
                       Conclusion
                     </p>
                     <p className="mt-1 text-sm text-muted-foreground">
-                      Lee&apos;s antidote is empathy &mdash; &ldquo;climb into his skin and walk
-                      around in it&rdquo; &mdash; but the novel ends ambiguously: Tom is dead, Boo
-                      is safe, the system unchanged. Reform is conscience-by-conscience.
+                      Lee&apos;s antidote is empathy - &ldquo;climb into his skin and walk around in
+                      it&rdquo; - but the novel ends ambiguously: Tom is dead, Boo is safe, the
+                      system unchanged. Reform is conscience-by-conscience.
                     </p>
                   </div>
                 </div>
@@ -708,23 +706,23 @@ export default function ToKillAMockingbirdPage() {
                     </p>
                     <p className="mt-1 text-sm text-muted-foreground">
                       Lee redefines courage through Atticus, distancing it from violence and
-                      locating it in principled action against social pressure &mdash; a form of
-                      moral integrity that demands more than physical bravery.
+                      locating it in principled action against social pressure - a form of moral
+                      integrity that demands more than physical bravery.
                     </p>
                   </div>
                   <div>
                     <p className="text-xs font-semibold text-violet-700 dark:text-violet-300 uppercase tracking-wider">
-                      Paragraph 1 &mdash; Atticus&apos;s definition
+                      Paragraph 1 - Atticus&apos;s definition
                     </p>
                     <p className="mt-1 text-sm text-muted-foreground">
                       &ldquo;It&apos;s when you know you&apos;re licked before you begin but you
-                      begin anyway.&rdquo; This is offered after Mrs Dubose&apos;s death &mdash; a
+                      begin anyway.&rdquo; This is offered after Mrs Dubose&apos;s death - a
                       deliberately unromantic example.
                     </p>
                   </div>
                   <div>
                     <p className="text-xs font-semibold text-violet-700 dark:text-violet-300 uppercase tracking-wider">
-                      Paragraph 2 &mdash; Defending Tom
+                      Paragraph 2 - Defending Tom
                     </p>
                     <p className="mt-1 text-sm text-muted-foreground">
                       Atticus accepts knowing he will lose. &ldquo;licked a hundred years ... is no
@@ -733,7 +731,7 @@ export default function ToKillAMockingbirdPage() {
                   </div>
                   <div>
                     <p className="text-xs font-semibold text-violet-700 dark:text-violet-300 uppercase tracking-wider">
-                      Paragraph 3 &mdash; Standing alone at the jail
+                      Paragraph 3 - Standing alone at the jail
                     </p>
                     <p className="mt-1 text-sm text-muted-foreground">
                       Atticus reads under a single bulb, ready to face a lynch mob. His courage is
@@ -742,7 +740,7 @@ export default function ToKillAMockingbirdPage() {
                   </div>
                   <div>
                     <p className="text-xs font-semibold text-violet-700 dark:text-violet-300 uppercase tracking-wider">
-                      Paragraph 4 &mdash; Restraint after Bob Ewell&apos;s spit
+                      Paragraph 4 - Restraint after Bob Ewell&apos;s spit
                     </p>
                     <p className="mt-1 text-sm text-muted-foreground">
                       Atticus refuses to retaliate when Ewell spits on him: courage is patience and
@@ -775,13 +773,13 @@ export default function ToKillAMockingbirdPage() {
                     </p>
                     <p className="mt-1 text-sm text-muted-foreground">
                       Lee uses the children to expose adult prejudice while tracking the painful,
-                      gradual education of Scout and Jem &mdash; childhood is both a moral vantage
-                      point and a state that must be lost.
+                      gradual education of Scout and Jem - childhood is both a moral vantage point
+                      and a state that must be lost.
                     </p>
                   </div>
                   <div>
                     <p className="text-xs font-semibold text-violet-700 dark:text-violet-300 uppercase tracking-wider">
-                      Paragraph 1 &mdash; Dual narrative voice
+                      Paragraph 1 - Dual narrative voice
                     </p>
                     <p className="mt-1 text-sm text-muted-foreground">
                       Adult Jean Louise narrates events lived by child Scout. The retrospective
@@ -791,7 +789,7 @@ export default function ToKillAMockingbirdPage() {
                   </div>
                   <div>
                     <p className="text-xs font-semibold text-violet-700 dark:text-violet-300 uppercase tracking-wider">
-                      Paragraph 2 &mdash; Jem&apos;s breaking
+                      Paragraph 2 - Jem&apos;s breaking
                     </p>
                     <p className="mt-1 text-sm text-muted-foreground">
                       After the verdict Jem weeps; the trial &ldquo;crystallised&rdquo; his
@@ -801,7 +799,7 @@ export default function ToKillAMockingbirdPage() {
                   </div>
                   <div>
                     <p className="text-xs font-semibold text-violet-700 dark:text-violet-300 uppercase tracking-wider">
-                      Paragraph 3 &mdash; Scout&apos;s moral education
+                      Paragraph 3 - Scout&apos;s moral education
                     </p>
                     <p className="mt-1 text-sm text-muted-foreground">
                       Scout learns empathy in stages: Walter at lunch, recognising Mr Cunningham at
@@ -811,7 +809,7 @@ export default function ToKillAMockingbirdPage() {
                   </div>
                   <div>
                     <p className="text-xs font-semibold text-violet-700 dark:text-violet-300 uppercase tracking-wider">
-                      Paragraph 4 &mdash; Dill&apos;s moral instinct
+                      Paragraph 4 - Dill&apos;s moral instinct
                     </p>
                     <p className="mt-1 text-sm text-muted-foreground">
                       Dill cries during the trial because he has not learned to tolerate cruelty.
@@ -825,7 +823,7 @@ export default function ToKillAMockingbirdPage() {
                     </p>
                     <p className="mt-1 text-sm text-muted-foreground">
                       The novel suggests that growing up means becoming aware of injustice without
-                      becoming complicit in it &mdash; a balance Atticus models and Scout begins to
+                      becoming complicit in it - a balance Atticus models and Scout begins to
                       inherit.
                     </p>
                   </div>
@@ -850,7 +848,7 @@ export default function ToKillAMockingbirdPage() {
                   </div>
                   <div>
                     <p className="text-xs font-semibold text-violet-700 dark:text-violet-300 uppercase tracking-wider">
-                      Paragraph 1 &mdash; Constructed monster
+                      Paragraph 1 - Constructed monster
                     </p>
                     <p className="mt-1 text-sm text-muted-foreground">
                       &ldquo;Malevolent phantom&rdquo; in the children&apos;s imaginations. Maycomb
@@ -859,7 +857,7 @@ export default function ToKillAMockingbirdPage() {
                   </div>
                   <div>
                     <p className="text-xs font-semibold text-violet-700 dark:text-violet-300 uppercase tracking-wider">
-                      Paragraph 2 &mdash; Gifts in the knothole
+                      Paragraph 2 - Gifts in the knothole
                     </p>
                     <p className="mt-1 text-sm text-muted-foreground">
                       Boo communicates through soap dolls, pennies, the watch. Reader recognises
@@ -869,7 +867,7 @@ export default function ToKillAMockingbirdPage() {
                   </div>
                   <div>
                     <p className="text-xs font-semibold text-violet-700 dark:text-violet-300 uppercase tracking-wider">
-                      Paragraph 3 &mdash; Saviour at Halloween
+                      Paragraph 3 - Saviour at Halloween
                     </p>
                     <p className="mt-1 text-sm text-muted-foreground">
                       Boo emerges to kill Bob Ewell defending Jem and Scout. The recluse becomes the
@@ -878,7 +876,7 @@ export default function ToKillAMockingbirdPage() {
                   </div>
                   <div>
                     <p className="text-xs font-semibold text-violet-700 dark:text-violet-300 uppercase tracking-wider">
-                      Paragraph 4 &mdash; Mockingbird
+                      Paragraph 4 - Mockingbird
                     </p>
                     <p className="mt-1 text-sm text-muted-foreground">
                       &ldquo;Sort of like shootin&apos; a mockingbird, wouldn&apos;t it?&rdquo; Heck
@@ -919,7 +917,7 @@ export default function ToKillAMockingbirdPage() {
                   </div>
                   <div>
                     <p className="text-xs font-semibold text-violet-700 dark:text-violet-300 uppercase tracking-wider">
-                      Paragraph 1 &mdash; The opening characterisation
+                      Paragraph 1 - The opening characterisation
                     </p>
                     <p className="mt-1 text-sm text-muted-foreground">
                       &ldquo;Maycomb was an old town, ... a tired old town when I first knew
@@ -929,7 +927,7 @@ export default function ToKillAMockingbirdPage() {
                   </div>
                   <div>
                     <p className="text-xs font-semibold text-violet-700 dark:text-violet-300 uppercase tracking-wider">
-                      Paragraph 2 &mdash; Stratified geography
+                      Paragraph 2 - Stratified geography
                     </p>
                     <p className="mt-1 text-sm text-muted-foreground">
                       Black community on the edge of town, Ewells behind the dump, Cunninghams in
@@ -939,7 +937,7 @@ export default function ToKillAMockingbirdPage() {
                   </div>
                   <div>
                     <p className="text-xs font-semibold text-violet-700 dark:text-violet-300 uppercase tracking-wider">
-                      Paragraph 3 &mdash; The courthouse
+                      Paragraph 3 - The courthouse
                     </p>
                     <p className="mt-1 text-sm text-muted-foreground">
                       Segregated balcony where Black observers must sit. Symbolic centre of
@@ -949,12 +947,12 @@ export default function ToKillAMockingbirdPage() {
                   </div>
                   <div>
                     <p className="text-xs font-semibold text-violet-700 dark:text-violet-300 uppercase tracking-wider">
-                      Paragraph 4 &mdash; The Radley house
+                      Paragraph 4 - The Radley house
                     </p>
                     <p className="mt-1 text-sm text-muted-foreground">
                       A Gothic interior within ordinary suburbia. Maycomb projects its fears onto
-                      its closed doors. The novel&apos;s final reversal &mdash; Scout standing on
-                      Boo&apos;s porch &mdash; recasts the house from threat to refuge.
+                      its closed doors. The novel&apos;s final reversal - Scout standing on
+                      Boo&apos;s porch - recasts the house from threat to refuge.
                     </p>
                   </div>
                   <div>
@@ -962,9 +960,9 @@ export default function ToKillAMockingbirdPage() {
                       Conclusion
                     </p>
                     <p className="mt-1 text-sm text-muted-foreground">
-                      Maycomb is a settled, slow place that resists change &mdash; its physical
-                      layout mirrors its social structure. Lee uses setting to argue that prejudice
-                      is built into the very streets and buildings of the South.
+                      Maycomb is a settled, slow place that resists change - its physical layout
+                      mirrors its social structure. Lee uses setting to argue that prejudice is
+                      built into the very streets and buildings of the South.
                     </p>
                   </div>
                 </div>
@@ -995,7 +993,7 @@ export default function ToKillAMockingbirdPage() {
                   </div>
                   <div>
                     <p className="text-xs font-semibold text-violet-700 dark:text-violet-300 uppercase tracking-wider">
-                      Paragraph 1 &mdash; The Finches
+                      Paragraph 1 - The Finches
                     </p>
                     <p className="mt-1 text-sm text-muted-foreground">
                       Atticus parents through reading, conversation, and example. Calpurnia provides
@@ -1005,7 +1003,7 @@ export default function ToKillAMockingbirdPage() {
                   </div>
                   <div>
                     <p className="text-xs font-semibold text-violet-700 dark:text-violet-300 uppercase tracking-wider">
-                      Paragraph 2 &mdash; The Ewells
+                      Paragraph 2 - The Ewells
                     </p>
                     <p className="mt-1 text-sm text-muted-foreground">
                       Bob Ewell&apos;s violence and abuse trap Mayella. Family becomes coercion. The
@@ -1015,7 +1013,7 @@ export default function ToKillAMockingbirdPage() {
                   </div>
                   <div>
                     <p className="text-xs font-semibold text-violet-700 dark:text-violet-300 uppercase tracking-wider">
-                      Paragraph 3 &mdash; The Radleys
+                      Paragraph 3 - The Radleys
                     </p>
                     <p className="mt-1 text-sm text-muted-foreground">
                       Boo is locked away by his father and brother. Family suppresses individuality.
@@ -1047,13 +1045,13 @@ export default function ToKillAMockingbirdPage() {
                     </p>
                     <p className="mt-1 text-sm text-muted-foreground">
                       The trial is structured to make Tom&apos;s innocence visible to the reader and
-                      the verdict&apos;s injustice unmistakable &mdash; Lee dramatises how a system
-                      can deliver a wrong outcome despite overwhelming evidence.
+                      the verdict&apos;s injustice unmistakable - Lee dramatises how a system can
+                      deliver a wrong outcome despite overwhelming evidence.
                     </p>
                   </div>
                   <div>
                     <p className="text-xs font-semibold text-violet-700 dark:text-violet-300 uppercase tracking-wider">
-                      Paragraph 1 &mdash; The physical evidence
+                      Paragraph 1 - The physical evidence
                     </p>
                     <p className="mt-1 text-sm text-muted-foreground">
                       Mayella&apos;s bruises on the right side suggest a left-handed assailant. Bob
@@ -1063,7 +1061,7 @@ export default function ToKillAMockingbirdPage() {
                   </div>
                   <div>
                     <p className="text-xs font-semibold text-violet-700 dark:text-violet-300 uppercase tracking-wider">
-                      Paragraph 2 &mdash; Tom&apos;s testimony
+                      Paragraph 2 - Tom&apos;s testimony
                     </p>
                     <p className="mt-1 text-sm text-muted-foreground">
                       &ldquo;I felt right sorry for her.&rdquo; The fatal phrase: a Black man
@@ -1073,7 +1071,7 @@ export default function ToKillAMockingbirdPage() {
                   </div>
                   <div>
                     <p className="text-xs font-semibold text-violet-700 dark:text-violet-300 uppercase tracking-wider">
-                      Paragraph 3 &mdash; The verdict
+                      Paragraph 3 - The verdict
                     </p>
                     <p className="mt-1 text-sm text-muted-foreground">
                       An all-white jury convicts despite the evidence. &ldquo;In the secret courts
@@ -1086,9 +1084,8 @@ export default function ToKillAMockingbirdPage() {
                       Conclusion
                     </p>
                     <p className="mt-1 text-sm text-muted-foreground">
-                      Tom&apos;s death &mdash; shot trying to escape &mdash; is the brutal coda. Lee
-                      uses the trial to indict not individual prejudice but the apparatus of Jim
-                      Crow itself.
+                      Tom&apos;s death - shot trying to escape - is the brutal coda. Lee uses the
+                      trial to indict not individual prejudice but the apparatus of Jim Crow itself.
                     </p>
                   </div>
                 </div>
@@ -1106,15 +1103,14 @@ export default function ToKillAMockingbirdPage() {
                       Thesis
                     </p>
                     <p className="mt-1 text-sm text-muted-foreground">
-                      Lee presents women across the social spectrum &mdash; from Aunt Alexandra to
-                      Mayella to Calpurnia &mdash; to interrogate the constraints of gender within
-                      Southern society and to suggest that Scout&apos;s task is to forge her own
-                      path.
+                      Lee presents women across the social spectrum - from Aunt Alexandra to Mayella
+                      to Calpurnia - to interrogate the constraints of gender within Southern
+                      society and to suggest that Scout&apos;s task is to forge her own path.
                     </p>
                   </div>
                   <div>
                     <p className="text-xs font-semibold text-violet-700 dark:text-violet-300 uppercase tracking-wider">
-                      Paragraph 1 &mdash; Scout vs &ldquo;ladyhood&rdquo;
+                      Paragraph 1 - Scout vs &ldquo;ladyhood&rdquo;
                     </p>
                     <p className="mt-1 text-sm text-muted-foreground">
                       Aunt Alexandra and the missionary ladies pressure Scout into dresses and
@@ -1124,7 +1120,7 @@ export default function ToKillAMockingbirdPage() {
                   </div>
                   <div>
                     <p className="text-xs font-semibold text-violet-700 dark:text-violet-300 uppercase tracking-wider">
-                      Paragraph 2 &mdash; Mayella
+                      Paragraph 2 - Mayella
                     </p>
                     <p className="mt-1 text-sm text-muted-foreground">
                       A poor white woman with no friends, abused by her father, cleaning herself for
@@ -1134,12 +1130,12 @@ export default function ToKillAMockingbirdPage() {
                   </div>
                   <div>
                     <p className="text-xs font-semibold text-violet-700 dark:text-violet-300 uppercase tracking-wider">
-                      Paragraph 3 &mdash; Calpurnia and Miss Maudie
+                      Paragraph 3 - Calpurnia and Miss Maudie
                     </p>
                     <p className="mt-1 text-sm text-muted-foreground">
                       Two women of moral authority. Calpurnia bridges racial worlds; Miss Maudie
                       articulates much of the novel&apos;s wisdom. Both stand outside the
-                      &ldquo;ladyhood&rdquo; ideal &mdash; one through race, one through unmarried
+                      &ldquo;ladyhood&rdquo; ideal - one through race, one through unmarried
                       independence.
                     </p>
                   </div>
@@ -1242,8 +1238,8 @@ export default function ToKillAMockingbirdPage() {
             <span className="mt-0.5 h-1.5 w-1.5 shrink-0 rounded-full bg-accent" />
             <span>
               <strong>{tr(`Connect themes.`)}</strong> Every quote should link to at least two
-              themes &mdash; the trial connects to racial injustice, class, moral courage, and the
-              loss of innocence simultaneously.
+              themes - the trial connects to racial injustice, class, moral courage, and the loss of
+              innocence simultaneously.
             </span>
           </li>
           <li className="flex items-start gap-2">
@@ -1257,9 +1253,9 @@ export default function ToKillAMockingbirdPage() {
           <li className="flex items-start gap-2">
             <span className="mt-0.5 h-1.5 w-1.5 shrink-0 rounded-full bg-accent" />
             <span>
-              <strong>{tr(`Address the whole novel.`)}</strong> Don&apos;t focus only on the trial
-              &mdash; reference the Boo Radley plot, the rabid dog scene, Mrs Dubose, and the final
-              chapter to demonstrate full knowledge.
+              <strong>{tr(`Address the whole novel.`)}</strong> Don&apos;t focus only on the trial -
+              reference the Boo Radley plot, the rabid dog scene, Mrs Dubose, and the final chapter
+              to demonstrate full knowledge.
             </span>
           </li>
           <li className="flex items-start gap-2">

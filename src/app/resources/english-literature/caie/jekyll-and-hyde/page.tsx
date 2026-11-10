@@ -310,10 +310,10 @@ export default async function JekyllAndHydeStudyGuide() {
       <section className="border-b bg-gradient-to-b from-primary/[0.06] to-transparent px-4 py-16 sm:py-20">
         <div className="mx-auto max-w-4xl text-center">
           <p className="text-sm font-semibold uppercase tracking-widest text-muted-foreground">
-            Cambridge IGCSE English Literature &mdash; Paper 1 (Prose)
+            Cambridge IGCSE English Literature - Paper 1 (Prose)
           </p>
           <h1 className="mt-2 text-3xl font-bold tracking-tight sm:text-4xl md:text-5xl">
-            The Strange Case of Dr Jekyll and Mr Hyde &mdash; Complete Study Guide
+            The Strange Case of Dr Jekyll and Mr Hyde - Complete Study Guide
           </h1>
           <p className="mx-auto mt-4 max-w-2xl text-lg text-muted-foreground">
             Plot, characters, themes, {keyQuotes.length} key quotes with analysis, Victorian
@@ -416,7 +416,7 @@ export default async function JekyllAndHydeStudyGuide() {
                   &ldquo;{q.quote}&rdquo;
                 </blockquote>
                 <p className="mt-1 text-xs font-semibold text-primary">
-                  {q.speaker} &mdash; {q.location}
+                  {q.speaker} - {q.location}
                 </p>
                 <p className="mt-3 text-sm leading-relaxed text-muted-foreground">{q.analysis}</p>
               </div>
@@ -565,15 +565,15 @@ export default async function JekyllAndHydeStudyGuide() {
                   </li>
                   <li>
                     &bull; Analyse the contrast between &lsquo;plod&rsquo; and &lsquo;spring&rsquo;
-                    &mdash; repression versus freedom
+                    - repression versus freedom
                   </li>
                   <li>
                     &bull; Discuss the metaphor of &lsquo;lendings&rsquo;: respectability as
                     borrowed clothing, not genuine identity
                   </li>
                   <li>
-                    &bull; Consider tone: Jekyll sounds excited, even boastful &mdash; what does
-                    this reveal about his character?
+                    &bull; Consider tone: Jekyll sounds excited, even boastful - what does this
+                    reveal about his character?
                   </li>
                   <li>
                     &bull; Link outward: connect to the theme of Victorian hypocrisy and the idea of
@@ -723,7 +723,7 @@ export default async function JekyllAndHydeStudyGuide() {
                   </li>
                   <li>
                     &bull; Conclude with a nuanced argument: neither is the &lsquo;real&rsquo; self
-                    &mdash; both are aspects of one person, which is Stevenson&rsquo;s central point
+                    - both are aspects of one person, which is Stevenson&rsquo;s central point
                   </li>
                 </ul>
               </div>

@@ -289,7 +289,7 @@ const poem: PoemData = {
 
   /* ── Context ─────────────────────────────────────────────────── */
   context: `<p><strong>The Crimean War (1853\u20131856)</strong> was fought between Russia and an alliance of Britain, France, the Ottoman Empire and Sardinia. It was one of the first wars to be covered by newspaper reporters and photographers, bringing the reality of conflict directly to the British public.</p>
-<p><strong>The Battle of Balaclava (25 October 1854)</strong> saw a catastrophic miscommunication in the British chain of command. Lord Raglan intended the Light Brigade to prevent Russians from removing captured guns from a redoubt, but a vague order\u2014carried by Captain Nolan\u2014was misinterpreted by Lord Lucan and Lord Cardigan. The Light Brigade of roughly 670 cavalrymen charged directly into a valley flanked on three sides by Russian cannon.</p>
+<p><strong>The Battle of Balaclava (25 October 1854)</strong> saw a catastrophic miscommunication in the British chain of command. Lord Raglan intended the Light Brigade to prevent Russians from removing captured guns from a redoubt, but a vague order - carried by Captain Nolan - was misinterpreted by Lord Lucan and Lord Cardigan. The Light Brigade of roughly 670 cavalrymen charged directly into a valley flanked on three sides by Russian cannon.</p>
 <p>Of the approximately 670 men who charged, around <strong>110 were killed, 161 wounded, and dozens captured</strong>. The charge lasted only about twenty minutes but became one of the most infamous military blunders in British history.</p>
 <p><strong>Alfred Lord Tennyson</strong> (1809\u20131892) was <strong>Poet Laureate</strong> at the time, a role that carried an expectation to respond to national events. He composed the poem on <strong>2 December 1854</strong>, reportedly in just a few minutes after reading a report in <em>The Times</em> newspaper by W. H. Russell. The phrase <em>\u201Csome one had blunder\u2019d\u201D</em> comes directly from that report.</p>
 <p>Tennyson\u2019s poem was published in <em>The Examiner</em> on 9 December 1854, just weeks after the battle. He later sent 1,000 copies to soldiers in the Crimea at their request, showing that the poem served a <strong>morale-boosting and memorialising function</strong>.</p>`,
@@ -332,13 +332,13 @@ STANZA LENGTH: The six stanzas vary in length (8, 9, 9, 12, 11, 6 lines), reflec
 
 REFRAIN: The repeated line "Rode the six hundred" anchors each stanza but changes through the poem: "Rode the six hundred" \u2192 "Not the six hundred" \u2192 "Left of six hundred" \u2192 "Noble six hundred." This progression tracks the narrative from charge to loss to tribute.
 
-REPETITION: Tennyson uses extensive repetition at every level\u2014words ("cannon," "valley of Death"), phrases ("Theirs not to"), and whole lines. This creates a hypnotic, incantatory quality, as though the poem itself is a drumbeat or a memorial chant.
+REPETITION: Tennyson uses extensive repetition at every level - words ("cannon," "valley of Death"), phrases ("Theirs not to"), and whole lines. This creates a hypnotic, incantatory quality, as though the poem itself is a drumbeat or a memorial chant.
 
 RHYME: The poem uses irregular rhyme (often couplets or triplets) rather than a fixed scheme. This gives it a ballad-like quality suited to oral recitation and public memorial.
 
 NARRATIVE ARC: The poem follows a clear chronological structure: the order to charge (1\u20132), the charge itself (3\u20134), the retreat (5), and the memorial (6). This mirrors the trajectory of the battle itself.
 
-VOLTA: The shift from Stanza 5 to Stanza 6 marks a turn from narrative to exhortation\u2014Tennyson stops telling the story and starts commanding the reader to remember.`,
+VOLTA: The shift from Stanza 5 to Stanza 6 marks a turn from narrative to exhortation - Tennyson stops telling the story and starts commanding the reader to remember.`,
 
   formAndStructureAr: `الوزن (METRE): القصيدة غالباً مكتوبة في dactylic dimeter (مقطع مشدّد يتلوه مقطعين غير مشدّدين: DUM-da-da DUM-da-da)، مثل "Half a league, half a league" واللازمة "Rode the six hundred" (DUM-da-da DUM-da). هذا الإيقاع المتسارع يحاكي صوت حوافر الخيل، ويجرّ القارئ للأمام بسرعة الهجوم نفسه. والأبيات غالباً end-stopped، وهذا يدعم انتظام إيقاع الطبل.
 
@@ -413,7 +413,7 @@ VOLTA: الانتقال من المقطع 5 للمقطع 6 يمثّل تحوّل
     {
       quote: 'Then they rode back, but not / Not the six hundred',
       analysis:
-        'The enjambment forces a pause before the devastating "Not the six hundred." The double negative and the repetition of "not" make the loss hit harder. The refrain has changed\u2014this structural shift marks the human cost.',
+        'The enjambment forces a pause before the devastating "Not the six hundred." The double negative and the repetition of "not" make the loss hit harder. The refrain has changed - this structural shift marks the human cost.',
       themes: ['Loss', 'Reality of conflict', 'Human cost of war'],
       analysisAr:
         'الـenjambment يفرض توقّف قبل العبارة المدمّرة "Not the six hundred." النفي المزدوج وتكرار "not" يخلّي الخسارة توجع أكثر. اللازمة تغيّرت - وهذا التحوّل البنيوي هو اللي يأشّر للكلفة الإنسانية.',
@@ -422,7 +422,7 @@ VOLTA: الانتقال من المقطع 5 للمقطع 6 يمثّل تحوّل
     {
       quote: 'When can their glory fade? / O the wild charge they made!',
       analysis:
-        'The rhetorical question demands the answer "never." "Wild" is ambiguous\u2014it suggests both bravery and recklessness. Tennyson insists the charge should be remembered for its courage, not its futility.',
+        'The rhetorical question demands the answer "never." "Wild" is ambiguous - it suggests both bravery and recklessness. Tennyson insists the charge should be remembered for its courage, not its futility.',
       themes: ['Memory and remembrance', 'Honour', 'Glory'],
       analysisAr:
         'السؤال البلاغي ينتظر الإجابة "أبداً". وكلمة "wild" غامضة - تحتمل الشجاعة، وتحتمل التهوّر. Tennyson يصرّ إن الهجوم لازم ينذكر بسبب الشجاعة، مو بسبب عبثيّته.',
@@ -431,7 +431,7 @@ VOLTA: الانتقال من المقطع 5 للمقطع 6 يمثّل تحوّل
     {
       quote: 'Honour the charge they made! / Honour the Light Brigade, / Noble six hundred!',
       analysis:
-        'The imperative "Honour" directly commands the reader to remember. "Noble" redefines the soldiers\u2019 refrain\u2014they are no longer just "six hundred" but "Noble six hundred." Tennyson transforms the poem into a permanent memorial.',
+        'The imperative "Honour" directly commands the reader to remember. "Noble" redefines the soldiers\u2019 refrain - they are no longer just "six hundred" but "Noble six hundred." Tennyson transforms the poem into a permanent memorial.',
       themes: ['Memory and remembrance', 'Honour', 'Duty'],
       analysisAr:
         'الفعل بصيغة الأمر "Honour" يأمر القارئ مباشرة إنه يتذكّر. وكلمة "Noble" تعيد تعريف لازمة الجنود - هم ما عادوا مجرّد "six hundred"، صاروا "Noble six hundred". Tennyson يحوّل القصيدة لنصب تذكاري دائم.',
@@ -504,10 +504,10 @@ VOLTA: الانتقال من المقطع 5 للمقطع 6 يمثّل تحوّل
       device: 'Imperative verbs',
       example: 'Honour the charge they made! / Honour the Light Brigade',
       effect:
-        'Tennyson shifts from third-person narrative to second-person command. The imperative "Honour" transforms the poem from a story about the past into a demand upon the present reader\u2014it is not enough to know what happened; you must actively remember and revere it.',
+        'Tennyson shifts from third-person narrative to second-person command. The imperative "Honour" transforms the poem from a story about the past into a demand upon the present reader - it is not enough to know what happened; you must actively remember and revere it.',
       lineRef: 57,
       effectAr:
-        'Tennyson \u064a\u0646\u062a\u0642\u0644 \u0645\u0646 \u0633\u0631\u062f \u0628\u0636\u0645\u064a\u0631 \u0627\u0644\u063a\u0627\u0626\u0628 \u0625\u0644\u0649 \u0623\u0645\u0631 \u0628\u0636\u0645\u064a\u0631 \u0627\u0644\u0645\u062e\u0627\u0637\u0628. \u0648\u0641\u0639\u0644 \u0627\u0644\u0623\u0645\u0631 "Honour" \u064a\u062d\u0648\u0651\u0644 \u0627\u0644\u0642\u0635\u064a\u062f\u0629 \u0645\u0646 \u0642\u0635\u0629 \u0639\u0646 \u0627\u0644\u0645\u0627\u0636\u064a \u0644\u0645\u0637\u0644\u0628 \u0639\u0644\u0649 \u0627\u0644\u0642\u0627\u0631\u0626 \u0641\u064a \u0627\u0644\u062d\u0627\u0636\u0631 \u2014 \u0645\u0648 \u0643\u0627\u0641\u064a \u0625\u0646\u0643 \u062a\u0639\u0631\u0641 \u0627\u064a\u0634 \u0635\u0627\u0631\u061b \u0644\u0627\u0632\u0645 \u062a\u062a\u0630\u0643\u0651\u0631 \u0648\u062a\u0643\u0631\u0651\u0645.',
+        'Tennyson \u064a\u0646\u062a\u0642\u0644 \u0645\u0646 \u0633\u0631\u062f \u0628\u0636\u0645\u064a\u0631 \u0627\u0644\u063a\u0627\u0626\u0628 \u0625\u0644\u0649 \u0623\u0645\u0631 \u0628\u0636\u0645\u064a\u0631 \u0627\u0644\u0645\u062e\u0627\u0637\u0628. \u0648\u0641\u0639\u0644 \u0627\u0644\u0623\u0645\u0631 "Honour" \u064a\u062d\u0648\u0651\u0644 \u0627\u0644\u0642\u0635\u064a\u062f\u0629 \u0645\u0646 \u0642\u0635\u0629 \u0639\u0646 \u0627\u0644\u0645\u0627\u0636\u064a \u0644\u0645\u0637\u0644\u0628 \u0639\u0644\u0649 \u0627\u0644\u0642\u0627\u0631\u0626 \u0641\u064a \u0627\u0644\u062d\u0627\u0636\u0631 - \u0645\u0648 \u0643\u0627\u0641\u064a \u0625\u0646\u0643 \u062a\u0639\u0631\u0641 \u0627\u064a\u0634 \u0635\u0627\u0631\u061b \u0644\u0627\u0632\u0645 \u062a\u062a\u0630\u0643\u0651\u0631 \u0648\u062a\u0643\u0631\u0651\u0645.',
     },
     {
       device: 'Diminishing refrain',
@@ -741,7 +741,7 @@ const comparisons = [
     points: [
       'Both poems depict the suffering of soldiers, but Tennyson glorifies their sacrifice while Owen emphasises futility and the monotony of waiting to die.',
       'Tennyson\u2019s galloping rhythm conveys action and heroism; Owen\u2019s half-rhymes and slow pace create exhaustion and hopelessness.',
-      'Tennyson was Poet Laureate writing from home; Owen was a soldier writing from the trenches\u2014their perspectives on duty and honour differ fundamentally.',
+      'Tennyson was Poet Laureate writing from home; Owen was a soldier writing from the trenches - their perspectives on duty and honour differ fundamentally.',
     ],
   },
   {

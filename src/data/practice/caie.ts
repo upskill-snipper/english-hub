@@ -16,17 +16,22 @@ import type { PracticeQuestion } from './types'
 
 export const caiePracticeQuestions: PracticeQuestion[] = [
   {
+    // 31 October 2026: this was a 500-600 word argumentative essay for 50 marks on
+    // "Paper 1", a task no 0500 or 0990 paper sets. Argument is written in Paper 2
+    // Question 1(b), 35 marks of which 25 are for writing, in about 250-350 words
+    // using one or two short texts (src/data/mark-scheme-guides/cambridge-0500-paper2.ts).
+    // It is now practice for those writing marks; the id is kept for saved progress.
     id: 'caie-p1-arg-1',
     board: 'CAIE',
-    paper: 1,
+    paper: 2,
     type: 'Argumentative Writing',
     difficulty: 'Higher',
     title: 'Technology and human connection',
     extract: ``,
     question:
-      'Write an argumentative essay: Has technology primarily strengthened or weakened human connection? (500-600 words)',
-    marks: 50,
-    timing: '60 minutes',
+      'Practise for Paper 2 Question 1(b): write a piece arguing whether technology has primarily strengthened or weakened human connection. (In the exam, 1(b) gives you one or two short texts to use, sets the form, such as a speech, letter, article or report, and asks for about 250 to 350 words.)',
+    marks: 25,
+    timing: '42 minutes',
     modelAnswers: {
       'Grade 4-5': `Technology has both helped and hurt human connection. On one hand, technology lets people stay in touch across distances. Fifty years ago, if you moved away from family, you could only contact them by expensive phone calls or slow letters. Now you can video call anyone for free. Social media lets you maintain friendships even without seeing people daily. Parents can watch children grow up through videos even if they work in different countries. Technology has made the world smaller.\n\nOn the other hand, some worry technology is replacing real connection. When people are together, they are often looking at phones instead of talking. Young people spend hours on social media but may not have deep friendships. Texting is not as meaningful as talking face-to-face. Video calls are not the same as being in the same room. Technology can make people feel lonely even when connected to hundreds online.\n\nI think technology has mainly strengthened connection, but it depends on how we use it. Technology gives us tools to stay in touch, but we must choose to use them well. The problem is not technology itself but how we use it. If we use technology to maintain real relationships, it is helpful. If we use it to avoid real relationships, it is harmful. In the future, people will learn to use technology better and find balance between online and offline connection.`,
       'Grade 6-7': `The question of whether technology has strengthened or weakened human connection requires examining what we mean by "connection" and how we measure its quality. I argue that whilst technology has expanded quantity and reach of connection, the crucial question is whether it has deepened capacity for sustained, embodied, vulnerable interaction associated with meaningful relationship.\n\nThe case for technology\'s positive impact is compelling. Digital communication has dissolved geographical barriers once imposing natural limits on relationship formation and maintenance. A person separated from family by continents can now maintain daily visual and auditory contact in ways unimaginable a generation ago. For those with shared interests, the internet has enabled formation of communities impossible within geographically bounded spaces. For marginalised or isolated individuals - those with rare conditions, or those in rural areas - technology has provided access to support networks and friendship groups otherwise inaccessible. These are genuine goods.\n\nHowever, increased connectivity may not translate to increased connection in any meaningful sense. Sociological research suggests that digital communication prevalence may be associated with declining social skills and increased loneliness, particularly among young people. When communication occurs through mediated channels, certain crucial dimensions of human interaction are necessarily absent: embodied presence of the other, involuntary body-language communication, temporal synchronicity of genuine dialogue, requirement to be genuinely vulnerable in shared physical space. Social media incentivises a particular kind of self-presentation (curated, performed, optimised for audience approval) potentially antithetical to the authenticity genuine connection requires. The phenomenon of "phubbing" (snubbing someone through phone use) suggests technology creates "presence without attention," where bodies are co-located but conscious attention is directed elsewhere.\n\nI contend that technology has expanded capacity for what we might call "contact" - maintenance of ongoing awareness of others\' lives - but not necessarily strengthened capacity for "connection" - experience of being genuinely known and valued. These are not the same. One can have hundreds of social media friends and feel profoundly lonely; one can have limited contact with a single person and experience deep connection. Technology may make maintaining superficial ties easier whilst potentially making it harder to develop deeper ones, insofar as it reduces friction and temporal commitment required to maintain relationship.\n\nThe solution is not rejecting technology but developing intentionality about how we use it. Technology should serve connection, not replace it. A video call with a distant relative is meaningful insofar as it sustains existing relationship; it cannot substitute for embodied presence required to initiate new relationships or deepen existing ones. In this view, technology has strengthened capacity to maintain connection across distance, but this is a different and perhaps lesser good than capacity to generate genuine connection in the first place.`,
@@ -45,6 +50,7 @@ export const caiePracticeQuestions: PracticeQuestion[] = [
       'Consider what assumptions underlie different positions.',
       'Use specific examples to illustrate abstract claims.',
       'Your argument should develop and become more sophisticated as you write.',
+      'In the exam, aim for about 250 to 350 words and build on the ideas in the texts you are given: the Grade 6-7 and 8-9 answers here run longer than that.',
     ],
   },
 ]

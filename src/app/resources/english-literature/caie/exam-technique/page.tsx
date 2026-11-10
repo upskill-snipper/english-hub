@@ -228,8 +228,8 @@ export default function CAIEExamTechniquePage() {
                   point&ndash;evidence&ndash;analysis.
                 </li>
                 <li>
-                  Always link technique to effect &mdash; &ldquo;the metaphor suggests...&rdquo;,
-                  not just &ldquo;the poet uses a metaphor&rdquo;.
+                  Always link technique to effect - &ldquo;the metaphor suggests...&rdquo;, not just
+                  &ldquo;the poet uses a metaphor&rdquo;.
                 </li>
               </ol>
             </TipCard>
@@ -270,7 +270,7 @@ export default function CAIEExamTechniquePage() {
             <TipCard heading="How to approach it">
               <ol className="list-decimal list-inside space-y-1">
                 <li>
-                  Focus on the passage first &mdash; close-read the language, narrative voice, and
+                  Focus on the passage first - close-read the language, narrative voice, and
                   structure.
                 </li>
                 <li>
@@ -278,8 +278,7 @@ export default function CAIEExamTechniquePage() {
                 </li>
                 <li>Comment on the significance of where this passage falls in the plot.</li>
                 <li>
-                  Avoid simply retelling the story &mdash; every paragraph should analyse, not
-                  narrate.
+                  Avoid simply retelling the story - every paragraph should analyse, not narrate.
                 </li>
               </ol>
             </TipCard>
@@ -310,8 +309,8 @@ export default function CAIEExamTechniquePage() {
           <p>
             You have <strong>90 minutes</strong> for two 25-mark answers. Spend roughly{' '}
             <strong>45 minutes per section</strong>: 5 minutes planning, 35 minutes writing, 5
-            minutes checking. Do not overrun on Section A &mdash; your Section B answer is worth the
-            same marks.
+            minutes checking. Do not overrun on Section A - your Section B answer is worth the same
+            marks.
           </p>
         </TipCard>
       </Section>
@@ -324,8 +323,8 @@ export default function CAIEExamTechniquePage() {
       >
         <p className="text-sm text-muted-foreground leading-relaxed mb-4">
           You answer <strong>one question on each of two set drama texts</strong> (e.g. Shakespeare
-          + a modern play). This is a <strong>closed-text</strong> exam &mdash; you do not have the
-          book in front of you.
+          + a modern play). This is a <strong>closed-text</strong> exam - you do not have the book
+          in front of you.
         </p>
 
         <Card className="mb-4">
@@ -365,8 +364,8 @@ export default function CAIEExamTechniquePage() {
         <TipCard heading="Closed-text tip">
           <p>
             Since you cannot refer to the text, learn <strong>short, precise quotations</strong>{' '}
-            (5&ndash;8 words). You do not need to be word-perfect &mdash; close paraphrase with a
-            few key words is acceptable and still earns credit.
+            (5&ndash;8 words). You do not need to be word-perfect - close paraphrase with a few key
+            words is acceptable and still earns credit.
           </p>
         </TipCard>
       </Section>
@@ -391,8 +390,8 @@ export default function CAIEExamTechniquePage() {
             <ul className="list-disc list-inside text-sm text-muted-foreground space-y-2">
               <li>
                 <strong>{tr(`Before the exam:`)}</strong> Use colour-coded tabs or sticky notes for
-                key themes, turning points, and important speeches. Do not over-annotate &mdash; too
-                many notes become impossible to navigate under pressure.
+                key themes, turning points, and important speeches. Do not over-annotate - too many
+                notes become impossible to navigate under pressure.
               </li>
               <li>
                 <strong>{tr(`In the exam:`)}</strong> Use your text to find precise quotations, but
@@ -420,8 +419,8 @@ export default function CAIEExamTechniquePage() {
         <TipCard heading="Time is tight">
           <p>
             You only have <strong>45 minutes</strong>. Spend 5 minutes planning, 35 minutes writing,
-            and 5 minutes reviewing. Be selective &mdash; three well-developed points beat five
-            rushed ones.
+            and 5 minutes reviewing. Be selective - three well-developed points beat five rushed
+            ones.
           </p>
         </TipCard>
       </Section>
@@ -433,8 +432,8 @@ export default function CAIEExamTechniquePage() {
         subtitle="1 h 15 min | 25 marks | Critical commentary on an unseen passage"
       >
         <p className="text-sm text-muted-foreground leading-relaxed mb-4">
-          Paper 4 tests your ability to respond to a piece of writing you have never seen before
-          &mdash; it could be prose or poetry. You write a <strong>critical commentary</strong>.
+          Paper 4 tests your ability to respond to a piece of writing you have never seen before -
+          it could be prose or poetry. You write a <strong>critical commentary</strong>.
         </p>
 
         <Card className="mb-4">

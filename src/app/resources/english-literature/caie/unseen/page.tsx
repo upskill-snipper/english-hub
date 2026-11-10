@@ -229,14 +229,13 @@ export default async function UnseenAnalysisPage() {
             <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
               The poet conveys the storm&rsquo;s overwhelming power through violent personification.
               The wind &ldquo;tore the roof from its hinges and flung it like a playing card&rdquo;
-              &mdash; the verbs &lsquo;tore&rsquo; and &lsquo;flung&rsquo; are forceful and
-              deliberate, suggesting the storm acts with intent rather than randomness. The simile
-              &lsquo;like a playing card&rsquo; reduces the solid, heavy roof to something flimsy
-              and weightless, emphasising the disparity between human construction and natural
-              force. The effect on the reader is one of awe and helplessness: if a roof is a
-              &lsquo;playing card&rsquo;, then human beings are even more insignificant. This sense
-              of human vulnerability is central to the poem&rsquo;s exploration of nature&rsquo;s
-              indifference.
+              - the verbs &lsquo;tore&rsquo; and &lsquo;flung&rsquo; are forceful and deliberate,
+              suggesting the storm acts with intent rather than randomness. The simile &lsquo;like a
+              playing card&rsquo; reduces the solid, heavy roof to something flimsy and weightless,
+              emphasising the disparity between human construction and natural force. The effect on
+              the reader is one of awe and helplessness: if a roof is a &lsquo;playing card&rsquo;,
+              then human beings are even more insignificant. This sense of human vulnerability is
+              central to the poem&rsquo;s exploration of nature&rsquo;s indifference.
             </p>
           </div>
 
@@ -289,11 +288,11 @@ export default async function UnseenAnalysisPage() {
               towards her&rdquo;. The juxtaposition of physical proximity and emotional distance is
               striking: the crowd becomes a mass of indifference rather than a source of connection.
               The writer&rsquo;s choice of the word &lsquo;thick&rsquo; to describe the crowd is
-              significant &mdash; it suggests something oppressive and impenetrable, as though the
-              people form a barrier rather than a community. The short sentence that follows &mdash;
-              &ldquo;She stopped walking.&rdquo; &mdash; creates a moment of stillness that
-              interrupts the bustling pace of the previous paragraph, mirroring the
-              character&rsquo;s sense of being out of step with the world around her.
+              significant - it suggests something oppressive and impenetrable, as though the people
+              form a barrier rather than a community. The short sentence that follows - &ldquo;She
+              stopped walking.&rdquo; - creates a moment of stillness that interrupts the bustling
+              pace of the previous paragraph, mirroring the character&rsquo;s sense of being out of
+              step with the world around her.
             </p>
           </div>
 

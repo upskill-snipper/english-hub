@@ -239,14 +239,24 @@ export async function enforceTrialAllowance(
   try {
     const daily = await consumeAllowance(subject, 'trial_ai_daily', options)
     if (!daily.allowed) {
-      return { response: allowanceExhaustedResponse(daily), consumed: null, state: daily }
+      return {
+        response: allowanceExhaustedResponse({ ...daily, scope: 'trial-daily' }),
+        consumed: null,
+        state: daily,
+      }
     }
     consumedMeters.push('trial_ai_daily')
 
     const whole = await consumeAllowance(subject, 'trial_ai', options)
     if (!whole.allowed) {
       await refundAllowance(subject, 'trial_ai_daily', options)
-      return { response: allowanceExhaustedResponse(whole), consumed: null, state: whole }
+      // 'trial': this bucket's resetsAt is the trial end, so it must not be
+      // described as renewing (see allowanceExhaustedResponse).
+      return {
+        response: allowanceExhaustedResponse({ ...whole, scope: 'trial' }),
+        consumed: null,
+        state: whole,
+      }
     }
     consumedMeters.push('trial_ai')
 

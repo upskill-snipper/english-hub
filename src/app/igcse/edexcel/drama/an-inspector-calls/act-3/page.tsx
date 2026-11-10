@@ -34,31 +34,31 @@ const sections = [
   {
     title: 'Eric\u2019s confession',
     analysis:
-      'Eric returns and confesses. He met Eva at the Palace Bar, forced himself on her while drunk ("I was in that state when a chap easily turns nasty"), got her pregnant, and stole money from his father\u2019s firm to support her. The confession is the play\u2019s ugliest moment. Priestley does not soften it: the phrase "turns nasty" is a euphemism the audience is meant to hear through. Yet, unlike his parents, Eric accepts responsibility \u2014 the gap between what he did and what he admits is smaller than anyone else\u2019s.',
+      'Eric returns and confesses. He met Eva at the Palace Bar, forced himself on her while drunk ("I was in that state when a chap easily turns nasty"), got her pregnant, and stole money from his father\u2019s firm to support her. The confession is the play\u2019s ugliest moment. Priestley does not soften it: the phrase "turns nasty" is a euphemism the audience is meant to hear through. Yet, unlike his parents, Eric accepts responsibility - the gap between what he did and what he admits is smaller than anyone else\u2019s.',
     quote: '"I was in that state when a chap easily turns nasty"',
   },
   {
     title: 'Eric confronts his mother',
     analysis:
-      'When Eric learns that his mother refused Eva help at the charity, his fury is explosive: "You killed her \u2014 and the child she\u2019d have had too." The confrontation shatters the family\u2019s pretence of unity. Priestley uses Eric\u2019s directness to align the younger generation with the Inspector\u2019s moral position. The scene also reveals that Eric\u2019s drinking has been an open secret the family chose to ignore \u2014 another instance of wilful blindness.',
+      'When Eric learns that his mother refused Eva help at the charity, his fury is explosive: "You killed her \u2014 and the child she\u2019d have had too." The confrontation shatters the family\u2019s pretence of unity. Priestley uses Eric\u2019s directness to align the younger generation with the Inspector\u2019s moral position. The scene also reveals that Eric\u2019s drinking has been an open secret the family chose to ignore - another instance of wilful blindness.',
     quote: '"You killed her \u2014 and the child she\u2019d have had too"',
   },
   {
     title: 'The Inspector\u2019s final speech',
     analysis:
-      'The Inspector\u2019s exit speech is the play\u2019s rhetorical climax. "We are members of one body. ... taught it in fire and blood and anguish." The speech has the cadence of a sermon and the politics of a Labour manifesto. The phrase "fire and blood and anguish" resonates with a 1945 audience who have already lived through two world wars \u2014 the "lesson" of the full speech, which the Birlings refused to learn.',
+      'The Inspector\u2019s exit speech is the play\u2019s rhetorical climax. "We are members of one body. ... taught it in fire and blood and anguish." The speech has the cadence of a sermon and the politics of a Labour manifesto. The phrase "fire and blood and anguish" resonates with a 1945 audience who have already lived through two world wars - the "lesson" of the full speech, which the Birlings refused to learn.',
     quote: '"fire and blood and anguish"',
   },
   {
     title: 'The family splits',
     analysis:
-      'After the Inspector leaves, the family divides along generational lines. Birling, Sybil and Gerald attempt to prove the Inspector was a fraud: they phone the Infirmary (no recent suicide), check the police (no Inspector Goole on the force). Sheila and Eric refuse to participate in the retreat. Sheila\u2019s line \u2014 "You\u2019re beginning to pretend now that nothing\u2019s really happened at all" \u2014 is the moral axis of Act Three. Priestley makes clear that whether the Inspector was real is irrelevant to the question of responsibility.',
+      'After the Inspector leaves, the family divides along generational lines. Birling, Sybil and Gerald attempt to prove the Inspector was a fraud: they phone the Infirmary (no recent suicide), check the police (no Inspector Goole on the force). Sheila and Eric refuse to participate in the retreat. Sheila\u2019s line - "You\u2019re beginning to pretend now that nothing\u2019s really happened at all" - is the moral axis of Act Three. Priestley makes clear that whether the Inspector was real is irrelevant to the question of responsibility.',
     quote: '"You\u2019re beginning to pretend now that nothing\u2019s really happened"',
   },
   {
     title: 'Gerald\u2019s regression',
     analysis:
-      'Gerald returns with "good news": no Inspector Goole exists on the police register. He offers Sheila her ring back, as though the evening can be undone. Gerald\u2019s regression is significant because he is young enough to have changed \u2014 but chooses the comfort of denial. Priestley uses him as a counterweight to Sheila and Eric: youth alone is not enough; moral courage is also required.',
+      'Gerald returns with "good news": no Inspector Goole exists on the police register. He offers Sheila her ring back, as though the evening can be undone. Gerald\u2019s regression is significant because he is young enough to have changed - but chooses the comfort of denial. Priestley uses him as a counterweight to Sheila and Eric: youth alone is not enough; moral courage is also required.',
     quote: '"Everything\u2019s all right now, Sheila. What about this ring?"',
   },
   {
@@ -76,7 +76,7 @@ const sections = [
   {
     title: 'Priestley\u2019s use of time',
     analysis:
-      'The phone-call ending connects to Priestley\u2019s interest in cyclical time, influenced by J. W. Dunne\u2019s theories. The Birlings may be caught in a loop, offered a rehearsal they squander. This reading gives the play a quasi-supernatural dimension: the Inspector is not investigating a past event but staging a future one. The 1945 audience, watching from the other side of two world wars, is effectively the Inspector\u2019s collaborator \u2014 they know the Birlings\u2019 world will collapse.',
+      'The phone-call ending connects to Priestley\u2019s interest in cyclical time, influenced by J. W. Dunne\u2019s theories. The Birlings may be caught in a loop, offered a rehearsal they squander. This reading gives the play a quasi-supernatural dimension: the Inspector is not investigating a past event but staging a future one. The 1945 audience, watching from the other side of two world wars, is effectively the Inspector\u2019s collaborator - they know the Birlings\u2019 world will collapse.',
     quote: '"We are members of one body"',
   },
 ]
@@ -110,8 +110,8 @@ export default async function InspectorCallsAct3Page() {
             An Inspector Calls: Act 3
           </h1>
           <p className="mt-3 max-w-2xl text-body-lg text-muted-foreground">
-            Detailed analysis of the final act &mdash; Eric's confession, the Inspector's "fire and
-            blood" speech, the generational split, and the devastating phone-call twist.
+            Detailed analysis of the final act - Eric's confession, the Inspector's "fire and blood"
+            speech, the generational split, and the devastating phone-call twist.
           </p>
         </div>
       </section>

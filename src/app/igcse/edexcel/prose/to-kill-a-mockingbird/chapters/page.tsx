@@ -638,7 +638,7 @@ const chapters = [
         technique: 'Jem\u2019s metaphor expresses his painful transformation',
       },
       {
-        text: 'We\u2019re making a step \u2014 it\u2019s just a baby step, but it\u2019s a step.',
+        text: 'We\u2019re making a step - it\u2019s just a baby step, but it\u2019s a step.',
         technique: 'Miss Maudie\u2019s incremental optimism tempers despair',
       },
       {
@@ -683,7 +683,7 @@ const chapters = [
       'Alexandra hosts a missionary tea where the ladies discuss "saving" African people while ignoring local racism. Atticus interrupts to report that Tom Robinson has been shot dead trying to escape prison.',
     keyEvents: [
       'The missionary circle\u2019s hypocrisy is exposed',
-      'Atticus reports Tom\u2019s death \u2014 shot seventeen times',
+      'Atticus reports Tom\u2019s death - shot seventeen times',
       'Alexandra and Miss Maudie compose themselves and return to the tea',
     ],
     characterDevelopment:
@@ -802,7 +802,7 @@ const chapters = [
       'The Gothic and legal plots converge. Boo\u2019s emergence completes the novel\u2019s central moral arc: the "phantom" becomes the protector.',
     quotes: [
       {
-        text: 'Somebody was staggerin\u2019 around and pantin\u2019 and \u2014 coughing fit to die.',
+        text: 'Somebody was staggerin\u2019 around and pantin\u2019 and - coughing fit to die.',
         technique: 'Scout\u2019s fragmented sensory narration conveys the confusion of the attack',
       },
       {

@@ -170,7 +170,7 @@ export default async function OCRInspectorCallsPage() {
           </h1>
           <p className="mx-auto mt-4 max-w-xl text-lg text-muted-foreground">
             Everything you need to know about An Inspector Calls for OCR GCSE English Literature
-            Paper 2, Section B &mdash; Modern Drama.
+            Paper 2, Section B - Modern Drama.
           </p>
         </div>
       </section>
@@ -188,9 +188,9 @@ export default async function OCRInspectorCallsPage() {
                 {_tr(`Paper 2: Exploring Effects and Impact`)}
               </p>
               <p className="mt-1 text-sm text-muted-foreground">
-                Section B &mdash; 19th Century and Modern Prose/Drama. You will answer one question
-                on An Inspector Calls. The question is an essay question{' '}
-                <strong>without an extract</strong> &mdash; you must write from memory. You have
+                Section B - 19th Century and Modern Prose/Drama. You will answer one question on An
+                Inspector Calls. The question is an essay question{' '}
+                <strong>without an extract</strong> - you must write from memory. You have
                 approximately 45 minutes.
               </p>
             </div>
@@ -252,8 +252,7 @@ export default async function OCRInspectorCallsPage() {
                   keeping her as his mistress before ending the relationship. Mrs Birling is
                   revealed to have used her position on a charity committee to deny the pregnant Eva
                   help, claiming her case was impertinent. Mrs Birling insists the father of the
-                  child should be held responsible &mdash; not realising the father is her own son
-                  Eric.
+                  child should be held responsible - not realising the father is her own son Eric.
                 </p>
               </div>
               <div className="rounded-lg border border-border bg-muted p-4">
@@ -287,8 +286,8 @@ export default async function OCRInspectorCallsPage() {
             <div className="rounded-lg border border-border bg-card p-6 shadow-md">
               <h3 className="text-xl font-semibold text-primary">{_tr(`Inspector Goole`)}</h3>
               <p className="mt-3 text-sm text-muted-foreground leading-relaxed">
-                The Inspector is Priestley&rsquo;s mouthpiece &mdash; a dramatic device rather than
-                a realistic character. His name, &ldquo;Goole,&rdquo; is a homophone of
+                The Inspector is Priestley&rsquo;s mouthpiece - a dramatic device rather than a
+                realistic character. His name, &ldquo;Goole,&rdquo; is a homophone of
                 &ldquo;ghoul,&rdquo; suggesting a supernatural or spectral presence. He controls the
                 pace and direction of the interrogation, refusing to let characters see the
                 photograph simultaneously, which raises questions about whether they are all
@@ -298,8 +297,8 @@ export default async function OCRInspectorCallsPage() {
                 He speaks with moral authority, cutting through the Birlings&rsquo;
                 self-justification with blunt, powerful language. His final speech is the climax of
                 Priestley&rsquo;s message: that society must choose compassion or face destruction.
-                His mysterious nature &mdash; he is not a real police inspector &mdash; gives his
-                words a prophetic, almost divine quality.
+                His mysterious nature - he is not a real police inspector - gives his words a
+                prophetic, almost divine quality.
               </p>
               <div className="mt-4 rounded border border-accent/20 bg-primary/10 p-3">
                 <p className="text-sm font-medium text-primary">Key role</p>
@@ -346,7 +345,7 @@ export default async function OCRInspectorCallsPage() {
               </p>
               <p className="mt-3 text-sm text-muted-foreground leading-relaxed">
                 Her refusal to help Eva at the charity committee is perhaps the most damning act in
-                the play &mdash; she turned away a desperate, pregnant woman because she found her
+                the play - she turned away a desperate, pregnant woman because she found her
                 &ldquo;impertinent.&rdquo; Her dramatic irony moment, when she unknowingly condemns
                 her own son by demanding the father be held responsible, is one of the play&rsquo;s
                 most powerful scenes. Like her husband, she refuses to accept responsibility even
@@ -367,8 +366,8 @@ export default async function OCRInspectorCallsPage() {
                 As the play progresses, Sheila becomes increasingly perceptive, almost taking on the
                 Inspector&rsquo;s role by challenging her parents and Gerald. She refuses
                 Gerald&rsquo;s ring at the end, recognising that everything has changed. Her moral
-                awakening is permanent &mdash; she insists the lesson matters regardless of whether
-                the Inspector was real. She represents Priestley&rsquo;s hope that the younger
+                awakening is permanent - she insists the lesson matters regardless of whether the
+                Inspector was real. She represents Priestley&rsquo;s hope that the younger
                 generation will build a fairer society.
               </p>
               <div className="mt-4 rounded border border-accent/20 bg-primary/10 p-3">
@@ -385,10 +384,9 @@ export default async function OCRInspectorCallsPage() {
               <h3 className="text-xl font-semibold text-primary">{_tr(`Eric Birling`)}</h3>
               <p className="mt-3 text-sm text-muted-foreground leading-relaxed">
                 Eric is presented as troubled, immature, and a heavy drinker. His behaviour towards
-                Eva &mdash; forcing himself on her when drunk, getting her pregnant, then stealing
-                money &mdash; represents the worst excesses of male privilege and entitlement.
-                However, like Sheila, he accepts responsibility and is changed by the
-                Inspector&rsquo;s visit.
+                Eva - forcing himself on her when drunk, getting her pregnant, then stealing money -
+                represents the worst excesses of male privilege and entitlement. However, like
+                Sheila, he accepts responsibility and is changed by the Inspector&rsquo;s visit.
               </p>
               <p className="mt-3 text-sm text-muted-foreground leading-relaxed">
                 His accusation that his father is not the kind of man &ldquo;a chap could go to when
@@ -406,7 +404,7 @@ export default async function OCRInspectorCallsPage() {
                 Gerald occupies a middle ground. He is from a higher social class than the Birlings
                 and shows some genuine feeling for Eva/Daisy, but ultimately he exploited her
                 vulnerability for his own pleasure and then discarded her. His relationship with Eva
-                was unequal from the start &mdash; he had all the power.
+                was unequal from the start - he had all the power.
               </p>
               <p className="mt-3 text-sm text-muted-foreground leading-relaxed">
                 Crucially, Gerald aligns himself with Mr and Mrs Birling in the final act. He is the
@@ -429,11 +427,11 @@ export default async function OCRInspectorCallsPage() {
                 representing all women), and &ldquo;Smith&rdquo; is the most common English surname.
               </p>
               <p className="mt-3 text-sm text-muted-foreground leading-relaxed">
-                Each member of the Birling family exploits her in a different way &mdash;
-                economically, socially, sexually, and through the denial of charity. Her death by
-                swallowing disinfectant is horrific and visceral, designed to shock the audience
-                into recognising the human cost of social inequality. She is Priestley&rsquo;s
-                reminder that behind every statistic is a real person.
+                Each member of the Birling family exploits her in a different way - economically,
+                socially, sexually, and through the denial of charity. Her death by swallowing
+                disinfectant is horrific and visceral, designed to shock the audience into
+                recognising the human cost of social inequality. She is Priestley&rsquo;s reminder
+                that behind every statistic is a real person.
               </p>
             </div>
           </div>
@@ -452,12 +450,12 @@ export default async function OCRInspectorCallsPage() {
               <h3 className="text-lg font-semibold text-foreground">Social Responsibility</h3>
               <p className="mt-2 text-sm text-muted-foreground leading-relaxed">
                 The play&rsquo;s central theme. Priestley argues that we are all connected and have
-                a duty to care for one another. The Inspector&rsquo;s message &mdash; &ldquo;We are
-                members of one body&rdquo; &mdash; is a direct rejection of Mr Birling&rsquo;s
-                philosophy that &ldquo;a man has to look after himself.&rdquo; Each
-                character&rsquo;s treatment of Eva demonstrates the consequences of failing to take
-                responsibility for others. The play is structured to force the audience to examine
-                their own social responsibility.
+                a duty to care for one another. The Inspector&rsquo;s message - &ldquo;We are
+                members of one body&rdquo; - is a direct rejection of Mr Birling&rsquo;s philosophy
+                that &ldquo;a man has to look after himself.&rdquo; Each character&rsquo;s treatment
+                of Eva demonstrates the consequences of failing to take responsibility for others.
+                The play is structured to force the audience to examine their own social
+                responsibility.
               </p>
             </div>
 
@@ -569,8 +567,8 @@ export default async function OCRInspectorCallsPage() {
                   was ending, but set it in 1912, before World War One. This allows him to use
                   dramatic irony: the audience knows that Birling&rsquo;s confident predictions
                   about peace and prosperity are wrong. Priestley is warning his 1945 audience not
-                  to repeat the mistakes of 1912 &mdash; not to return to a society of inequality
-                  and selfishness.
+                  to repeat the mistakes of 1912 - not to return to a society of inequality and
+                  selfishness.
                 </p>
               </div>
               <div className="rounded-lg border border-border bg-muted p-5">
@@ -579,8 +577,8 @@ export default async function OCRInspectorCallsPage() {
                 </h3>
                 <p className="mt-2 text-sm">
                   The play was first performed in 1945, the year Labour won a landslide election and
-                  began building the welfare state &mdash; the NHS, social security, and public
-                  housing. Priestley was a vocal supporter of these reforms. The play can be read as
+                  began building the welfare state - the NHS, social security, and public housing.
+                  Priestley was a vocal supporter of these reforms. The play can be read as
                   propaganda for collective responsibility: a dramatic argument for why Britain
                   needed a welfare state.
                 </p>
@@ -616,7 +614,7 @@ export default async function OCRInspectorCallsPage() {
                   Birling&rsquo;s claim that the Titanic is &ldquo;unsinkable&rdquo; is the
                   play&rsquo;s most obvious dramatic irony. The Titanic sank on its maiden voyage in
                   April 1912, killing over 1,500 people. Birling also dismisses the possibility of
-                  war &mdash; World War One began in 1914, killing millions. These errors destroy
+                  war - World War One began in 1914, killing millions. These errors destroy
                   Birling&rsquo;s credibility and, by extension, discredit his capitalist
                   philosophy.
                 </p>
@@ -720,8 +718,7 @@ export default async function OCRInspectorCallsPage() {
                 </li>
                 <li>
                   &bull; <strong>{_tr(`Contextual understanding:`)}</strong> Integrate context
-                  naturally. Don&rsquo;t bolt on context paragraphs &mdash; weave it into your
-                  analysis.
+                  naturally. Don&rsquo;t bolt on context paragraphs - weave it into your analysis.
                 </li>
                 <li>
                   &bull; <strong>{_tr(`Written accuracy:`)}</strong> Write clearly and accurately.

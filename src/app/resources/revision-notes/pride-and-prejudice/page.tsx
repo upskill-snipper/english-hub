@@ -53,7 +53,7 @@ function QuoteCard({
   return (
     <div className="rounded-lg border-s-4 border-rose-400 bg-rose-500/5 p-4 mb-3">
       <p className="text-sm font-semibold text-rose-900 italic">&ldquo;{quote}&rdquo;</p>
-      {speaker && <p className="mt-1 text-xs font-medium text-rose-600">&mdash; {speaker}</p>}
+      {speaker && <p className="mt-1 text-xs font-medium text-rose-600">- {speaker}</p>}
       <p className="mt-2 text-sm text-muted-foreground">{analysis}</p>
     </div>
   )
@@ -150,7 +150,7 @@ export default function PrideAndPrejudicePage() {
             <p className="text-sm text-muted-foreground leading-relaxed">
               Elizabeth visits Charlotte at Hunsford parsonage, near Rosings Park, the estate of
               Lady Catherine de Bourgh (Darcy&apos;s aunt). Darcy arrives and, to Elizabeth&apos;s
-              astonishment, proposes. His proposal is insulting &mdash; he emphasises her inferior
+              astonishment, proposes. His proposal is insulting - he emphasises her inferior
               connections and says he has struggled against his feelings. Elizabeth rejects him
               furiously, accusing him of ruining Jane&apos;s happiness (by separating her from
               Bingley) and Wickham&apos;s prospects. Darcy writes her a letter explaining that he
@@ -177,9 +177,9 @@ export default function PrideAndPrejudicePage() {
               Lydia&apos;s Elopement (Chapters 43&ndash;50)
             </h4>
             <p className="text-sm text-muted-foreground leading-relaxed">
-              Lydia, the youngest Bennet sister, elopes with Wickham &mdash; a scandal that
-              threatens to ruin the entire family&apos;s reputation. If they are not married, all
-              the Bennet sisters will be socially disgraced. Darcy secretly finds the couple, pays
+              Lydia, the youngest Bennet sister, elopes with Wickham - a scandal that threatens to
+              ruin the entire family&apos;s reputation. If they are not married, all the Bennet
+              sisters will be socially disgraced. Darcy secretly finds the couple, pays
               Wickham&apos;s debts, and ensures the marriage takes place. Elizabeth learns of
               Darcy&apos;s intervention through Mrs Gardiner and is deeply moved by his generosity.
             </p>
@@ -395,11 +395,11 @@ export default function PrideAndPrejudicePage() {
             <p className="mt-1 text-sm text-muted-foreground leading-relaxed">
               The Regency period, when the Prince of Wales ruled as regent for the incapacitated
               George III, was a time of social elegance, rigid etiquette, and sharp class
-              distinctions. Austen&apos;s novels capture the world of the landed gentry &mdash; a
-              class dependent on inherited wealth, property, and social connections. Balls, visits,
-              and letter-writing were the main forms of social interaction. The Napoleonic Wars
-              (1803&ndash;1815) form the background to the novel &mdash; the militia officers
-              stationed near Meryton (including Wickham) are a direct consequence of the war effort.
+              distinctions. Austen&apos;s novels capture the world of the landed gentry - a class
+              dependent on inherited wealth, property, and social connections. Balls, visits, and
+              letter-writing were the main forms of social interaction. The Napoleonic Wars
+              (1803&ndash;1815) form the background to the novel - the militia officers stationed
+              near Meryton (including Wickham) are a direct consequence of the war effort.
             </p>
           </div>
           <div className="rounded-lg bg-primary/10 p-4">
@@ -416,8 +416,8 @@ export default function PrideAndPrejudicePage() {
           <div className="rounded-lg bg-primary/10 p-4">
             <h4 className="font-bold text-primary">Entailment</h4>
             <p className="mt-1 text-sm text-muted-foreground leading-relaxed">
-              The Bennet estate is &ldquo;entailed&rdquo; &mdash; legally restricted to pass only to
-              male heirs. Since the Bennets have no sons, the estate will go to Mr Collins on Mr
+              The Bennet estate is &ldquo;entailed&rdquo; - legally restricted to pass only to male
+              heirs. Since the Bennets have no sons, the estate will go to Mr Collins on Mr
               Bennet&apos;s death, leaving Mrs Bennet and her daughters homeless. This legal
               mechanism drives the entire plot: Mrs Bennet&apos;s desperation to marry her daughters
               is not merely comic but a survival strategy. Entailment was a real and common practice

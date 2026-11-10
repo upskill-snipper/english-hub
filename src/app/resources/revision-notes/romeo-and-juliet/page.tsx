@@ -68,7 +68,7 @@ function QuoteCard({
         &ldquo;{quote}&rdquo;
       </blockquote>
       <p className="mt-1 text-xs font-semibold text-primary">
-        {speaker} &mdash; {act}
+        {speaker} - {act}
       </p>
       <p className="mt-3 text-sm leading-relaxed text-muted-foreground">{analysis}</p>
     </div>
@@ -110,7 +110,7 @@ export default function RomeoAndJulietRevisionPage() {
           ))}
         </div>
         <h1 className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
-          Romeo and Juliet &mdash; Complete Revision Guide
+          Romeo and Juliet - Complete Revision Guide
         </h1>
         <p className="mt-3 max-w-3xl text-lg leading-relaxed text-muted-foreground">
           Full act-by-act summary, character profiles, themes with evidence, 25+ key quotations with
@@ -623,10 +623,10 @@ export default function RomeoAndJulietRevisionPage() {
         <Card title={tr(`Sonnet Form`)}>
           <p className="text-sm leading-relaxed text-muted-foreground">
             The Prologue is a sonnet, the traditional form for love poetry. More significantly,
-            Romeo and Juliet&apos;s first conversation (1.5) takes the form of a shared sonnet
-            &mdash; they each speak alternate quatrains and share the final couplet. This is
-            structurally unique: sonnets are usually written by a solitary lover. By sharing the
-            form, Shakespeare makes their love collaborative and equal, distinguishing it from
+            Romeo and Juliet&apos;s first conversation (1.5) takes the form of a shared sonnet -
+            they each speak alternate quatrains and share the final couplet. This is structurally
+            unique: sonnets are usually written by a solitary lover. By sharing the form,
+            Shakespeare makes their love collaborative and equal, distinguishing it from
             Romeo&apos;s earlier one-sided Petrarchan infatuation with Rosaline. The religious
             imagery (pilgrim, saint, prayer) elevates their love beyond the physical.
           </p>
@@ -718,7 +718,7 @@ export default function RomeoAndJulietRevisionPage() {
             By revealing the ending at the start, Shakespeare removes suspense and replaces it with
             dramatic irony. The audience watches not to discover <em>what</em> happens but{' '}
             <em>how</em> and <em>why</em>. This shifts responsibility from fate to the feuding
-            families &mdash; and, by extension, to the audience. Shakespeare is not asking us to be
+            families - and, by extension, to the audience. Shakespeare is not asking us to be
             surprised by the deaths but to interrogate what causes them. The Prologue is less a plot
             summary than an accusation.
           </p>
@@ -729,8 +729,8 @@ export default function RomeoAndJulietRevisionPage() {
             While the play is named for both lovers, Juliet undergoes the more significant character
             arc and makes the braver choices. She defies her father, takes the terrifying potion
             alone, and kills herself without hesitation. Romeo, by contrast, is impulsive rather
-            than courageous &mdash; he acts on emotion, not principle. Juliet&apos;s language is
-            more rational, her soliloquies more complex, and her agency more deliberate. A top-level
+            than courageous - he acts on emotion, not principle. Juliet&apos;s language is more
+            rational, her soliloquies more complex, and her agency more deliberate. A top-level
             answer might argue that Shakespeare deliberately centres the emotional and moral weight
             on a thirteen-year-old girl in a patriarchal society, making a radical statement about
             female capability.
@@ -739,8 +739,8 @@ export default function RomeoAndJulietRevisionPage() {
 
         <Card title="3. The Feud as Original Sin">
           <p className="text-sm leading-relaxed text-muted-foreground">
-            The &ldquo;ancient grudge&rdquo; has no known origin &mdash; its cause is forgotten, yet
-            it persists. A sophisticated reading connects this to the concept of original sin:
+            The &ldquo;ancient grudge&rdquo; has no known origin - its cause is forgotten, yet it
+            persists. A sophisticated reading connects this to the concept of original sin:
             inherited guilt that individuals did not create but cannot escape. Romeo and Juliet are
             born into the feud; their love is their attempt to transcend it. Their deaths function
             as a sacrificial atonement: through their blood, the feud is finally ended. This reading
@@ -755,21 +755,21 @@ export default function RomeoAndJulietRevisionPage() {
             that Shakespeare deliberately blurs the boundary. Romeo&apos;s &ldquo;Then I defy you,
             stars!&rdquo; is an act of free will that fulfils the fated outcome. The plague that
             stops the letter is both random chance and the apparent fulfilment of Mercutio&apos;s
-            curse. Shakespeare suggests that fate operates <em>through</em> human choices &mdash;
-            the characters&apos; impulsiveness, the families&apos; hatred, the Friar&apos;s schemes
-            &mdash; not despite them. Agency and destiny are intertwined, not opposed.
+            curse. Shakespeare suggests that fate operates <em>through</em> human choices - the
+            characters&apos; impulsiveness, the families&apos; hatred, the Friar&apos;s schemes -
+            not despite them. Agency and destiny are intertwined, not opposed.
           </p>
         </Card>
 
         <Card title="5. The Shared Sonnet as Structural Revolution">
           <p className="text-sm leading-relaxed text-muted-foreground">
             The shared sonnet at the Capulet ball (1.5) is not merely a clever literary device but a
-            radical structural statement. The Petrarchan sonnet tradition is monologic &mdash; one
-            male poet worships a distant, silent woman. By splitting the sonnet between two speakers
-            and making Juliet an equal participant, Shakespeare transforms a form of male desire
-            into a form of mutual love. This is revolutionary: in the 1590s, the beloved was
-            traditionally objectified. Shakespeare makes Juliet a co-author, not just the object of
-            Romeo&apos;s gaze.
+            radical structural statement. The Petrarchan sonnet tradition is monologic - one male
+            poet worships a distant, silent woman. By splitting the sonnet between two speakers and
+            making Juliet an equal participant, Shakespeare transforms a form of male desire into a
+            form of mutual love. This is revolutionary: in the 1590s, the beloved was traditionally
+            objectified. Shakespeare makes Juliet a co-author, not just the object of Romeo&apos;s
+            gaze.
           </p>
         </Card>
 
@@ -788,9 +788,9 @@ export default function RomeoAndJulietRevisionPage() {
         <Card title="7. Shakespeare's Critique of Honour Culture">
           <p className="text-sm leading-relaxed text-muted-foreground">
             Tybalt and Mercutio are both destroyed by the code of male honour. Romeo&apos;s attempt
-            to reject this code (refusing Tybalt&apos;s challenge) is more mature, but it fails
-            &mdash; the culture is too powerful. Shakespeare suggests that toxic masculinity, not
-            personal villainy, drives the tragedy. There is no true villain in the play; there is a{' '}
+            to reject this code (refusing Tybalt&apos;s challenge) is more mature, but it fails -
+            the culture is too powerful. Shakespeare suggests that toxic masculinity, not personal
+            villainy, drives the tragedy. There is no true villain in the play; there is a{' '}
             <em>system</em> of honour that demands violence and punishes peace. This is a remarkably
             modern critique: Shakespeare locates the problem in culture, not individuals.
           </p>
@@ -798,13 +798,13 @@ export default function RomeoAndJulietRevisionPage() {
 
         <Card title="8. 'All Are Punish'd' -- Collective Guilt">
           <p className="text-sm leading-relaxed text-muted-foreground">
-            The Prince&apos;s final line includes himself &mdash; &ldquo;All are
-            punish&apos;d&rdquo; means everyone, including the authority that failed to end the
-            feud. This collective guilt challenges the audience: if everyone in Verona is
-            responsible, is the audience complicit too? Shakespeare uses the play&apos;s final
-            moments to extend responsibility beyond the stage. The &ldquo;glooming peace&rdquo; is
-            not triumphant but mournful &mdash; peace achieved through the death of children is not
-            something to celebrate but a devastating indictment of the adults who failed them.
+            The Prince&apos;s final line includes himself - &ldquo;All are punish&apos;d&rdquo;
+            means everyone, including the authority that failed to end the feud. This collective
+            guilt challenges the audience: if everyone in Verona is responsible, is the audience
+            complicit too? Shakespeare uses the play&apos;s final moments to extend responsibility
+            beyond the stage. The &ldquo;glooming peace&rdquo; is not triumphant but mournful -
+            peace achieved through the death of children is not something to celebrate but a
+            devastating indictment of the adults who failed them.
           </p>
         </Card>
       </Section>

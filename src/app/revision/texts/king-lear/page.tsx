@@ -53,9 +53,9 @@ const data: TextGuideData = {
     published: 'First quarto 1608; first folio 1623 (textual variants debated)',
   },
   plotSummary: [
-    'The play opens in the court of the ageing King Lear, who intends to divide his realm between his three daughters and retire. He stages a love test: whichever daughter professes to love him most will receive the largest share. Goneril and Regan, his elder daughters, deliver extravagant speeches of flattery and are rewarded. Cordelia, his youngest and favourite, refuses to perform. Her answer \u2014 "Nothing, my lord" \u2014 enrages Lear, who disinherits her on the spot. The Earl of Kent defends her and is banished. Cordelia leaves with the King of France, who marries her without a dowry. The kingdom is split between Goneril (married to the Duke of Albany) and Regan (married to the Duke of Cornwall). In a parallel subplot, the Earl of Gloucester is deceived by his illegitimate son Edmund into believing that his legitimate son Edgar is plotting against him. Edgar is forced to flee and disguises himself as "Poor Tom", a mad beggar.',
-    'Lear attempts to keep his royal retinue of one hundred knights, moving first to Goneril\u2019s household. She rapidly demands he reduce the number, provoking Lear\u2019s first great explosion of rage. The loyal Kent, disguised as the servant Caius, attaches himself to the King, and the Fool accompanies Lear with riddling, melancholy truth-telling. Lear flees to Regan, only to find she is even harsher, and the two sisters together strip him of every attendant. Humiliated, exposed and beginning to unravel, Lear rushes out onto the heath as a great storm breaks. He rages against the elements \u2014 "Blow, winds, and crack your cheeks!" \u2014 and against filial ingratitude. On the heath he encounters Edgar as Poor Tom, whose wild speeches seem to mirror and accelerate his own descent into madness.',
-    'The storm scenes form the moral heart of the play. Gloucester, still loyal to the King, helps smuggle him toward Dover, where Cordelia has landed with a French army to rescue her father. For this act of loyalty Gloucester is captured by Cornwall and Regan, who put out his eyes on stage \u2014 one of the most shocking moments in the Shakespearean canon. In the struggle a servant mortally wounds Cornwall. The blinded Gloucester, cast out onto the heath, is led by Edgar (still disguised) and, despairing, asks to be guided to the cliffs of Dover so that he may kill himself. Edgar saves him through a staged fall that teaches Gloucester a painful patience. Lear, meanwhile, wanders the fields half-mad, crowned with wild flowers, uttering fragmentary truths about justice, authority and human nature.',
+    'The play opens in the court of the ageing King Lear, who intends to divide his realm between his three daughters and retire. He stages a love test: whichever daughter professes to love him most will receive the largest share. Goneril and Regan, his elder daughters, deliver extravagant speeches of flattery and are rewarded. Cordelia, his youngest and favourite, refuses to perform. Her answer - "Nothing, my lord" - enrages Lear, who disinherits her on the spot. The Earl of Kent defends her and is banished. Cordelia leaves with the King of France, who marries her without a dowry. The kingdom is split between Goneril (married to the Duke of Albany) and Regan (married to the Duke of Cornwall). In a parallel subplot, the Earl of Gloucester is deceived by his illegitimate son Edmund into believing that his legitimate son Edgar is plotting against him. Edgar is forced to flee and disguises himself as "Poor Tom", a mad beggar.',
+    'Lear attempts to keep his royal retinue of one hundred knights, moving first to Goneril\u2019s household. She rapidly demands he reduce the number, provoking Lear\u2019s first great explosion of rage. The loyal Kent, disguised as the servant Caius, attaches himself to the King, and the Fool accompanies Lear with riddling, melancholy truth-telling. Lear flees to Regan, only to find she is even harsher, and the two sisters together strip him of every attendant. Humiliated, exposed and beginning to unravel, Lear rushes out onto the heath as a great storm breaks. He rages against the elements - "Blow, winds, and crack your cheeks!" - and against filial ingratitude. On the heath he encounters Edgar as Poor Tom, whose wild speeches seem to mirror and accelerate his own descent into madness.',
+    'The storm scenes form the moral heart of the play. Gloucester, still loyal to the King, helps smuggle him toward Dover, where Cordelia has landed with a French army to rescue her father. For this act of loyalty Gloucester is captured by Cornwall and Regan, who put out his eyes on stage - one of the most shocking moments in the Shakespearean canon. In the struggle a servant mortally wounds Cornwall. The blinded Gloucester, cast out onto the heath, is led by Edgar (still disguised) and, despairing, asks to be guided to the cliffs of Dover so that he may kill himself. Edgar saves him through a staged fall that teaches Gloucester a painful patience. Lear, meanwhile, wanders the fields half-mad, crowned with wild flowers, uttering fragmentary truths about justice, authority and human nature.',
     'Cordelia\u2019s forces meet Lear, and father and daughter are briefly reconciled in one of the most tender scenes Shakespeare ever wrote. The French army is nonetheless defeated by the British forces under Edmund, and Lear and Cordelia are captured. Edmund secretly orders their execution. In the final act the subplots converge: Edgar, still disguised, challenges Edmund in single combat and mortally wounds him; Goneril, having poisoned Regan out of jealous rivalry over Edmund, kills herself; the dying Edmund repents and tries to rescind the execution order, but too late. Lear enters carrying the hanged body of Cordelia, crying "Howl, howl, howl, howl!", and later says "Never, never, never, never, never!" before dying of grief over her. Kent, the Fool having long since vanished from the play, indicates he will follow his master. Albany and Edgar are left to restore a shattered kingdom.',
   ],
   characters: [
@@ -67,12 +67,12 @@ const data: TextGuideData = {
     {
       name: 'Cordelia',
       role: 'Lear\u2019s youngest daughter; Queen of France',
-      body: 'Cordelia is truthful, principled and unwilling to flatter. Her refusal to perform love in the opening scene is an act of moral integrity rather than coldness: she will not debase language to win a kingdom. Banished and married into France without a dowry, she returns at the head of an army not for conquest but to rescue her father. Her reconciliation scene with Lear is marked by extraordinary gentleness. Her execution \u2014 carried out off stage on Edmund\u2019s orders \u2014 is the darkest stroke of the play and refuses the audience any comforting providential order.',
+      body: 'Cordelia is truthful, principled and unwilling to flatter. Her refusal to perform love in the opening scene is an act of moral integrity rather than coldness: she will not debase language to win a kingdom. Banished and married into France without a dowry, she returns at the head of an army not for conquest but to rescue her father. Her reconciliation scene with Lear is marked by extraordinary gentleness. Her execution - carried out off stage on Edmund\u2019s orders - is the darkest stroke of the play and refuses the audience any comforting providential order.',
     },
     {
       name: 'Goneril',
       role: 'Lear\u2019s eldest daughter; Duchess of Albany',
-      body: 'Goneril is ruthless, politically shrewd and contemptuous of her father\u2019s remaining authority. Her flattery in the opening scene is strategic, and once she holds half the kingdom she moves swiftly to strip Lear of his retinue and dignity. Her marriage to the gentler Albany becomes increasingly strained as she pursues Edmund, and she ends the play poisoning her sister Regan out of sexual rivalry before killing herself. She is Shakespeare\u2019s unflinching portrait of appetite \u2014 for power, sex and control \u2014 unchecked by conscience.',
+      body: 'Goneril is ruthless, politically shrewd and contemptuous of her father\u2019s remaining authority. Her flattery in the opening scene is strategic, and once she holds half the kingdom she moves swiftly to strip Lear of his retinue and dignity. Her marriage to the gentler Albany becomes increasingly strained as she pursues Edmund, and she ends the play poisoning her sister Regan out of sexual rivalry before killing herself. She is Shakespeare\u2019s unflinching portrait of appetite - for power, sex and control - unchecked by conscience.',
     },
     {
       name: 'Regan',
@@ -82,28 +82,28 @@ const data: TextGuideData = {
     {
       name: 'Edmund',
       role: 'Illegitimate son of Gloucester; the principal antagonist',
-      body: 'Edmund is charming, intellectually gifted and coldly Machiavellian. His opening soliloquy \u2014 "Thou, Nature, art my goddess" \u2014 rejects the social and religious codes that brand him a bastard, and he uses deception to oust his brother Edgar and then his father. His seduction of both Goneril and Regan accelerates the sisters\u2019 destruction. Mortally wounded by Edgar in the final act, he experiences a flicker of remorse and attempts too late to save Cordelia, complicating what might otherwise have been a pure study in villainy.',
+      body: 'Edmund is charming, intellectually gifted and coldly Machiavellian. His opening soliloquy - "Thou, Nature, art my goddess" - rejects the social and religious codes that brand him a bastard, and he uses deception to oust his brother Edgar and then his father. His seduction of both Goneril and Regan accelerates the sisters\u2019 destruction. Mortally wounded by Edgar in the final act, he experiences a flicker of remorse and attempts too late to save Cordelia, complicating what might otherwise have been a pure study in villainy.',
     },
     {
       name: 'Edgar',
       role: 'Legitimate son of Gloucester; disguised as "Poor Tom"',
-      body: 'Edgar is forced by Edmund\u2019s deceit to flee his home and survives by adopting the persona of Poor Tom, a naked, lice-ridden beggar speaking in tatters of religious and folk language. Through this disguise he becomes Lear\u2019s companion on the heath and guides his own blinded father without revealing himself. His range \u2014 from credulous son to feigned madman to avenging knight \u2014 makes him one of Shakespeare\u2019s most theatrically demanding roles. He ends the play speaking the final lines in the Folio text, charged with sustaining a broken kingdom.',
+      body: 'Edgar is forced by Edmund\u2019s deceit to flee his home and survives by adopting the persona of Poor Tom, a naked, lice-ridden beggar speaking in tatters of religious and folk language. Through this disguise he becomes Lear\u2019s companion on the heath and guides his own blinded father without revealing himself. His range - from credulous son to feigned madman to avenging knight - makes him one of Shakespeare\u2019s most theatrically demanding roles. He ends the play speaking the final lines in the Folio text, charged with sustaining a broken kingdom.',
     },
     {
       name: 'The Earl of Gloucester',
       role: 'Lear\u2019s old ally; father of Edgar and Edmund',
-      body: 'Gloucester is the play\u2019s second old man, and his fate shadows Lear\u2019s. Like Lear, he is deceived about which child truly loves him, and like Lear he is punished with physical suffering \u2014 in his case the onstage loss of his eyes at Cornwall\u2019s hands. His blinding forces a literalisation of the play\u2019s central metaphor: only when he cannot see does he begin to understand. Guided by the disguised Edgar, he moves from suicidal despair toward a painful, Christian-inflected patience before dying of a heart that "burst smilingly" on learning his son\u2019s identity.',
+      body: 'Gloucester is the play\u2019s second old man, and his fate shadows Lear\u2019s. Like Lear, he is deceived about which child truly loves him, and like Lear he is punished with physical suffering - in his case the onstage loss of his eyes at Cornwall\u2019s hands. His blinding forces a literalisation of the play\u2019s central metaphor: only when he cannot see does he begin to understand. Guided by the disguised Edgar, he moves from suicidal despair toward a painful, Christian-inflected patience before dying of a heart that "burst smilingly" on learning his son\u2019s identity.',
     },
     {
       name: 'The Fool',
       role: 'Lear\u2019s court jester and truth-teller',
-      body: 'The Fool accompanies Lear through the first half of the play, using riddles, songs and bitter proverbs to tell the King the truths no courtier will. Licensed by his role, he mocks Lear\u2019s folly and mourns Cordelia\u2019s absence. As Lear\u2019s madness deepens, the Fool\u2019s function seems to be absorbed into the King himself, and the character disappears from the play after Act 3 with the enigmatic line "And I\u2019ll go to bed at noon." Critics have long debated whether the Fool and Cordelia were doubled on the Jacobean stage \u2014 a theatrical reading that reinforces their linked roles as loving truth-tellers to the King.',
+      body: 'The Fool accompanies Lear through the first half of the play, using riddles, songs and bitter proverbs to tell the King the truths no courtier will. Licensed by his role, he mocks Lear\u2019s folly and mourns Cordelia\u2019s absence. As Lear\u2019s madness deepens, the Fool\u2019s function seems to be absorbed into the King himself, and the character disappears from the play after Act 3 with the enigmatic line "And I\u2019ll go to bed at noon." Critics have long debated whether the Fool and Cordelia were doubled on the Jacobean stage - a theatrical reading that reinforces their linked roles as loving truth-tellers to the King.',
     },
   ],
   themes: [
     {
       title: 'Power and authority',
-      body: 'The play opens with an act that ought to be unthinkable: a king formally abdicating his authority while attempting to retain its trappings. Lear\u2019s division of the kingdom destabilises every hierarchy \u2014 royal, familial, cosmological \u2014 that Jacobean society depended upon. Once sovereign power is handed away, it cannot be reclaimed by gesture. Shakespeare dramatises the physical consequences of political authority stripped from its bearer: Lear pleads, rages and is refused even fifty knights, then twenty-five, then one. The play interrogates whether legitimate authority rests on divine right, on force, on reciprocal duty or on performance. The violent struggle between Goneril, Regan, Cornwall, Albany and Edmund shows power as a vacuum that is filled by whoever is most ruthless.',
+      body: 'The play opens with an act that ought to be unthinkable: a king formally abdicating his authority while attempting to retain its trappings. Lear\u2019s division of the kingdom destabilises every hierarchy - royal, familial, cosmological - that Jacobean society depended upon. Once sovereign power is handed away, it cannot be reclaimed by gesture. Shakespeare dramatises the physical consequences of political authority stripped from its bearer: Lear pleads, rages and is refused even fifty knights, then twenty-five, then one. The play interrogates whether legitimate authority rests on divine right, on force, on reciprocal duty or on performance. The violent struggle between Goneril, Regan, Cornwall, Albany and Edmund shows power as a vacuum that is filled by whoever is most ruthless.',
     },
     {
       title: 'Family and ingratitude',
@@ -115,142 +115,142 @@ const data: TextGuideData = {
     },
     {
       title: 'Blindness (literal and figurative)',
-      body: 'The play relentlessly links seeing and understanding. Lear cannot see that Cordelia loves him; Gloucester cannot see that Edmund lies. Only when Gloucester is physically blinded \u2014 "Out, vile jelly!" \u2014 does he begin to perceive the truth about his sons, just as Lear\u2019s mental darkness brings intellectual light. The motif is Christianised in parts of the Gloucester plot, where blindness becomes a path to patience, but Shakespeare resists a simple religious reading. The image of an old man led across the heath by the son he wronged, guided toward a cliff that does not exist, is among the most devastating in the canon, and suggests that insight in this play is always purchased at a ruinous price.',
+      body: 'The play relentlessly links seeing and understanding. Lear cannot see that Cordelia loves him; Gloucester cannot see that Edmund lies. Only when Gloucester is physically blinded - "Out, vile jelly!" - does he begin to perceive the truth about his sons, just as Lear\u2019s mental darkness brings intellectual light. The motif is Christianised in parts of the Gloucester plot, where blindness becomes a path to patience, but Shakespeare resists a simple religious reading. The image of an old man led across the heath by the son he wronged, guided toward a cliff that does not exist, is among the most devastating in the canon, and suggests that insight in this play is always purchased at a ruinous price.',
     },
     {
       title: 'Nature and order',
-      body: 'The word "nature" recurs throughout the play, and each character defines it differently. For Lear, nature means the patriarchal and cosmic order in which children owe fathers unconditional duty. For Edmund, nature is a self-interested force that disregards legitimacy: "Thou, Nature, art my goddess". The storm is both a meteorological event and a symbolic rupture of the natural hierarchy \u2014 the heavens themselves protesting the inversions of the opening scene. Shakespeare draws on contemporary debates about whether the universe is benign, indifferent or actively malign; Gloucester\u2019s appalled "As flies to wanton boys are we to the gods, / They kill us for their sport" articulates the bleakest answer the play contains.',
+      body: 'The word "nature" recurs throughout the play, and each character defines it differently. For Lear, nature means the patriarchal and cosmic order in which children owe fathers unconditional duty. For Edmund, nature is a self-interested force that disregards legitimacy: "Thou, Nature, art my goddess". The storm is both a meteorological event and a symbolic rupture of the natural hierarchy - the heavens themselves protesting the inversions of the opening scene. Shakespeare draws on contemporary debates about whether the universe is benign, indifferent or actively malign; Gloucester\u2019s appalled "As flies to wanton boys are we to the gods, / They kill us for their sport" articulates the bleakest answer the play contains.',
     },
     {
       title: 'Suffering and redemption',
-      body: 'King Lear is famously the Shakespeare tragedy that refuses consolation. Lear suffers, learns and is reconciled with Cordelia in a scene of extraordinary tenderness \u2014 and then Cordelia is hanged. Samuel Johnson could not bear the ending and preferred Nahum Tate\u2019s rewritten version in which Cordelia survives. Shakespeare\u2019s original denies the audience redemptive closure: suffering produces understanding, but understanding does not save anyone. The play\u2019s final speeches suggest only the exhausted duty of the living to "speak what we feel, not what we ought to say" and to go on. Critics disagree whether the ending is nihilistic, stoic or grimly Christian, but the refusal of easy comfort is central to the play\u2019s power.',
+      body: 'King Lear is famously the Shakespeare tragedy that refuses consolation. Lear suffers, learns and is reconciled with Cordelia in a scene of extraordinary tenderness - and then Cordelia is hanged. Samuel Johnson could not bear the ending and preferred Nahum Tate\u2019s rewritten version in which Cordelia survives. Shakespeare\u2019s original denies the audience redemptive closure: suffering produces understanding, but understanding does not save anyone. The play\u2019s final speeches suggest only the exhausted duty of the living to "speak what we feel, not what we ought to say" and to go on. Critics disagree whether the ending is nihilistic, stoic or grimly Christian, but the refusal of easy comfort is central to the play\u2019s power.',
     },
   ],
   historicalContext: [
     'Shakespeare drew his story from two main sources. The first was Raphael Holinshed\u2019s Chronicles (1577/1587), which relates the legendary history of King Leir of Britain, and the second was an older anonymous play called The True Chronicle History of King Leir, printed in 1605. In the older versions of the story Lear is restored to his throne and Cordelia survives; Shakespeare\u2019s decision to end his tragedy with the deaths of both is a radical departure that audiences and later editors found deeply troubling. The Gloucester subplot was adapted from Sir Philip Sidney\u2019s Arcadia.',
     'The play was written in the early years of James I\u2019s reign, a period of acute political anxiety about succession and the unity of the realm. James had inherited the English throne in 1603 and was attempting, against strong parliamentary resistance, to unite England and Scotland into a single kingdom of "Great Britain". A play that opens with a king disastrously dividing Britain into three would have carried obvious contemporary force. The Gunpowder Plot of November 1605, discovered shortly before the play\u2019s likely first performances, intensified fears about political legitimacy, treachery and the fragility of the body politic.',
-    'The legal doctrine of primogeniture \u2014 the inheritance of land and title by the eldest son \u2014 underpins the Gloucester subplot. Edmund\u2019s illegitimacy excludes him from inheritance, and his soliloquies give voice to the resentment such exclusion could breed. Lear\u2019s decision to divide his kingdom among daughters (with Cordelia intended as the chief heir) would have struck a Jacobean audience as a fundamental violation of normal inheritance patterns. Shakespeare exposes both the cruelty of the system and the chaos that follows its disruption.',
+    'The legal doctrine of primogeniture - the inheritance of land and title by the eldest son - underpins the Gloucester subplot. Edmund\u2019s illegitimacy excludes him from inheritance, and his soliloquies give voice to the resentment such exclusion could breed. Lear\u2019s decision to divide his kingdom among daughters (with Cordelia intended as the chief heir) would have struck a Jacobean audience as a fundamental violation of normal inheritance patterns. Shakespeare exposes both the cruelty of the system and the chaos that follows its disruption.',
     'Shakespeare set the action in a legendary, pre-Christian Britain, a choice that allows characters to swear by pagan gods (Apollo, Jupiter, Hecate) without offending Jacobean religious sensibilities. This setting lets the play raise questions about divine justice and cosmic order without tying itself to Christian doctrine. Some critics read the ending as a specifically post-Reformation articulation of a universe in which providence is hidden or absent; others see a quasi-Stoic philosophy of endurance. Either way, the pre-Christian framing lets Shakespeare stage questions about suffering, justice and order at a level more searching than any of his other tragedies.',
   ],
   quotations: [
     {
       quote: '"Nothing will come of nothing: speak again."',
-      who: 'King Lear \u2014 Act 1, Scene 1',
+      who: 'King Lear - Act 1, Scene 1',
       analysis:
         'Lear\u2019s warning to Cordelia fuses logic and threat; the word "nothing" becomes one of the most insistent motifs of the play, echoing through Lear\u2019s madness and the play\u2019s final losses.',
     },
     {
       quote: '"Nothing, my lord."',
-      who: 'Cordelia \u2014 Act 1, Scene 1',
+      who: 'Cordelia - Act 1, Scene 1',
       analysis:
         'Cordelia\u2019s refusal to quantify love with rhetoric is the ethical pivot of the play. Her "nothing" exposes the hollowness of her sisters\u2019 speeches and triggers Lear\u2019s catastrophic misjudgement.',
     },
     {
       quote: '"How sharper than a serpent\'s tooth it is / To have a thankless child!"',
-      who: 'King Lear \u2014 Act 1, Scene 4',
+      who: 'King Lear - Act 1, Scene 4',
       analysis:
         'Lear\u2019s curse on Goneril condenses Jacobean anxieties about filial ingratitude into a single image. The biblical resonance of the serpent hints that he reads disobedience as cosmic sin rather than family conflict.',
     },
     {
       quote: '"Thou shouldst not have been old till thou hadst been wise."',
-      who: 'The Fool \u2014 Act 1, Scene 5',
+      who: 'The Fool - Act 1, Scene 5',
       analysis:
         'The Fool diagnoses Lear\u2019s tragedy in a single line: wisdom has arrived after power has been given away. The proverbial form gives the judgement the weight of folk truth.',
     },
     {
       quote: '"Blow, winds, and crack your cheeks! Rage! blow!"',
-      who: 'King Lear \u2014 Act 3, Scene 2',
+      who: 'King Lear - Act 3, Scene 2',
       analysis:
         'Lear addresses the storm as a sentient participant in his ordeal, personifying the heavens as allies in his rage. The imperative verbs blur internal fury with external weather, dramatising a collapse of the boundary between self and cosmos.',
     },
     {
       quote: '"I am a man / More sinn\u2019d against than sinning."',
-      who: 'King Lear \u2014 Act 3, Scene 2',
+      who: 'King Lear - Act 3, Scene 2',
       analysis:
         'Lear\u2019s appeal for moral recognition is ambiguous: the audience has seen him behave tyrannically in the opening scene. The line captures his partial self-awareness and the play\u2019s refusal to let him fully own his share of blame.',
     },
     {
       quote: '"Is man no more than this? Consider him well."',
-      who: 'King Lear \u2014 Act 3, Scene 4',
+      who: 'King Lear - Act 3, Scene 4',
       analysis:
         'Confronted with Poor Tom\u2019s nakedness, Lear is forced to see "unaccommodated man" stripped of borrowed trappings. The question is the play\u2019s central one about human nature and identity.',
     },
     {
       quote: '"Unaccommodated man is no more but such a poor, bare, forked animal as thou art."',
-      who: 'King Lear \u2014 Act 3, Scene 4',
+      who: 'King Lear - Act 3, Scene 4',
       analysis:
         'Lear\u2019s vision of stripped humanity reduces the king and the beggar to the same creature. This levelling moment is the intellectual climax of his madness and of the play\u2019s political radicalism.',
     },
     {
       quote: '"Out, vile jelly! Where is thy lustre now?"',
-      who: 'Cornwall \u2014 Act 3, Scene 7',
+      who: 'Cornwall - Act 3, Scene 7',
       analysis:
         'Cornwall\u2019s grotesque address to Gloucester\u2019s torn-out eye enacts the play\u2019s motif of blindness in the most literal and violent form imaginable. The contrast between "jelly" and "lustre" captures Shakespeare\u2019s willingness to render horror in physical detail.',
     },
     {
       quote: '"As flies to wanton boys are we to the gods, / They kill us for their sport."',
-      who: 'Gloucester \u2014 Act 4, Scene 1',
+      who: 'Gloucester - Act 4, Scene 1',
       analysis:
         'Gloucester\u2019s despair articulates the bleakest cosmology of the play: not a benign providence but an arbitrary, cruel divinity. The domestic image of boys and flies makes the injustice unbearably familiar.',
     },
     {
       quote: '"The worst is not / So long as we can say \'This is the worst.\'"',
-      who: 'Edgar \u2014 Act 4, Scene 1',
+      who: 'Edgar - Act 4, Scene 1',
       analysis:
         'Edgar\u2019s paradox recognises that articulate suffering still implies a speaker, and therefore more suffering to come. The line foreshadows the fresh horrors of Act 5 in which even worse is in fact delivered.',
     },
     {
       quote: '"Pray you now, forget and forgive: I am old and foolish."',
-      who: 'King Lear \u2014 Act 4, Scene 7',
+      who: 'King Lear - Act 4, Scene 7',
       analysis:
         'Lear\u2019s reconciliation with Cordelia strips away royal grandeur to a simple, devastating admission. The line\u2019s plainness contrasts with the rhetorical extravagance of the opening scene and marks his transformation.',
     },
     {
       quote:
         '"The weight of this sad time we must obey; / Speak what we feel, not what we ought to say."',
-      who: 'Edgar (Folio) / Albany (Quarto) \u2014 Act 5, Scene 3',
+      who: 'Edgar (Folio) / Albany (Quarto) - Act 5, Scene 3',
       analysis:
         'The closing couplet of the play, attributed differently in the two texts, demands a new, painful honesty in the ruined kingdom. It signals a moral code earned only through catastrophe.',
     },
     {
       quote: '"Pray you undo this button."',
-      who: 'King Lear \u2014 Act 5, Scene 3',
+      who: 'King Lear - Act 5, Scene 3',
       analysis:
         'Lear\u2019s quietly domestic request as he dies beside Cordelia\u2019s body is one of the most devastating lines in Shakespeare. The smallness of the request against the enormity of the grief exposes the limits of language under extreme feeling.',
     },
     {
       quote: '"Never, never, never, never, never!"',
-      who: 'King Lear \u2014 Act 5, Scene 3',
+      who: 'King Lear - Act 5, Scene 3',
       analysis:
         'Five repetitions of a two-syllable word, each stressed on its first syllable, make a line of trochees, the reverse of the iambic beat of blank verse, and render grief as a rhythmic blow (the five come from the Folio; the 1608 Quarto has three). The absolute finality of the word stands against any redemptive reading of the ending.',
     },
     {
       quote: '"Thou, Nature, art my goddess; to thy law / My services are bound."',
-      who: 'Edmund \u2014 Act 1, Scene 2',
+      who: 'Edmund - Act 1, Scene 2',
       analysis:
         'Edmund\u2019s opening soliloquy replaces patriarchal and providential order with a self-serving "nature" that honours no hierarchy. The line crystallises his ideological challenge to the world of the play.',
     },
     {
       quote: '"Kill thy physician, and the fee bestow / Upon the foul disease."',
-      who: 'Kent \u2014 Act 1, Scene 1',
+      who: 'Kent - Act 1, Scene 1',
       analysis:
         'Kent\u2019s blunt defence of Cordelia casts Lear\u2019s rejection of her as self-harming folly. The medical metaphor elevates Kent\u2019s loyalty to a kind of moral surgery.',
     },
     {
       quote: '"Allow not nature more than nature needs, / Man\'s life is cheap as beast\'s."',
-      who: 'King Lear \u2014 Act 2, Scene 4',
+      who: 'King Lear - Act 2, Scene 4',
       analysis:
         'Lear\u2019s retort to Regan\u2019s demand that he cut his retinue insists that human dignity depends on more than biological survival. The line anticipates his later discovery that stripped humanity is exactly what he feared.',
     },
     {
       quote: '"O, reason not the need!"',
-      who: 'King Lear \u2014 Act 2, Scene 4',
+      who: 'King Lear - Act 2, Scene 4',
       analysis:
         'Lear\u2019s cry against his daughters\u2019 calculation of how many knights he "needs" is a defence of human excess against pure utility. The line is often cited as a foundational moment in Shakespeare\u2019s interrogation of economic reasoning.',
     },
     {
       quote: '"When we are born, we cry that we are come / To this great stage of fools."',
-      who: 'King Lear \u2014 Act 4, Scene 6',
+      who: 'King Lear - Act 4, Scene 6',
       analysis:
         'Lear\u2019s crowned-in-weeds speech uses the theatrical metaphor to place human life within a tragic drama whose participants do not choose their roles. The line captures the play\u2019s bleakest existential vision.',
     },
@@ -409,7 +409,7 @@ const QUIZ_QUESTIONS: QuizQuestion[] = [
     ],
     correctIndex: 1,
     explanation:
-      'Confronted with Poor Tom\u2019s nakedness, Lear confronts "unaccommodated man" \u2014 humanity stripped of the borrowed trappings of rank and wealth. The question is the intellectual climax of his heath madness.',
+      'Confronted with Poor Tom\u2019s nakedness, Lear confronts "unaccommodated man" - humanity stripped of the borrowed trappings of rank and wealth. The question is the intellectual climax of his heath madness.',
     topic: 'Themes',
     difficulty: 'higher',
   },
@@ -574,7 +574,7 @@ const QUIZ_QUESTIONS: QuizQuestion[] = [
     ],
     correctIndex: 1,
     explanation:
-      'Act 4 Scene 7 \u2014 "Pray you now, forget and forgive: I am old and foolish" \u2014 reconciles father and daughter in the gentlest language of the play. Shakespeare then destroys this hard-won love by hanging Cordelia, refusing the audience redemptive closure and intensifying rather than relieving the tragedy.',
+      'Act 4 Scene 7 - "Pray you now, forget and forgive: I am old and foolish" - reconciles father and daughter in the gentlest language of the play. Shakespeare then destroys this hard-won love by hanging Cordelia, refusing the audience redemptive closure and intensifying rather than relieving the tragedy.',
     topic: 'Themes',
     difficulty: 'grade-9',
   },
@@ -719,7 +719,7 @@ export default async function KingLearPage() {
         ]}
         quizQuotes={data.quotations.slice(0, 10).map((q) => ({
           quote: q.quote.replace(/["\u201C\u201D]/g, ''),
-          character: q.who.split('\u2014')[0].trim(),
+          character: q.who.split(/ [-\u2014] /)[0].trim(),
           context: q.analysis.slice(0, 100) + '...',
         }))}
         essayQuestions={[

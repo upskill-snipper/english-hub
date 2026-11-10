@@ -162,7 +162,7 @@ export default async function ProseHubPage() {
               <strong className="text-foreground">
                 {await t('igcse.page.prose.rights_label')}
               </strong>{' '}
-              All prose set texts on this hub remain in copyright &mdash; including Hill&rsquo;s{' '}
+              All prose set texts on this hub remain in copyright - including Hill&rsquo;s{' '}
               <em>The Woman in Black</em> (&copy; Vintage / Penguin Random House). Quotations on
               individual set-text pages are short fair-dealing extracts under CDPA 1988 &sect;30
               (criticism, review, quotation). For full text, students should consult the licensed

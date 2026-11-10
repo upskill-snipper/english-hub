@@ -7,6 +7,23 @@ export const ocrWjecLessons: LessonPlan[] = [
   // ══════════════════════════════════════════════════════════════════════════
 
   // ── 1. OCR Language Component 1: Exploring Non-Fiction & Media Texts ────
+  //
+  // 31 October 2026, against the J351 and C700 guides in
+  // src/data/mark-scheme-guides/: here the synthesis question asked how both
+  // writers present ideas, which is Question 4's comparison; Question 2 is the
+  // link between the texts, with no marks for language. Lesson 2 said OCR's
+  // creative tasks offer image, title or opening-line stimuli; the tasks OCR set
+  // in its sample and June 2024 papers were a story from a title and personal
+  // writing. Lesson 5's timing answer ignored OCR's hour per section. Lesson 6
+  // called a language-and-structure question (Question 04) the evaluation
+  // question (Question 05). Lesson 7 said Component 1 has no extended writing
+  // and that communication and organisation are marked apart (they share AO5).
+  // Second read, 31 October 2026: lesson 1's model for Question 2 compared what
+  // each writer "uses", which is Question 4's job; lesson 6 quoted a 17-word
+  // question stem in exam-paper style, now in our own words; lesson 7's
+  // plenary credited punctuation to communication and organisation (it is
+  // AO6), and its notes and lesson 6's now say the lessons follow Eduqas, not
+  // WJEC's Welsh GCSE.
   {
     id: 'ocr-lang-c1-nonfiction-media',
     title: 'OCR Language Component 1: Exploring Non-Fiction & Media Texts',
@@ -71,7 +88,7 @@ export const ocrWjecLessons: LessonPlan[] = [
         title: 'Synthesis Challenge - Comparing Two Sources',
         duration: '20 minutes',
         instructions:
-          "Distribute a second non-fiction text on the same topic (e.g. a personal blog post about climate activism). Explain the OCR synthesis question format: students must identify similarities and differences in how both writers present ideas. Model one comparative point using the structure: 'Both writers… However, Source A uses… whereas Source B…'. Students write three comparative paragraphs independently. Select two or three to share under the visualiser for peer critique.",
+          "Distribute a second non-fiction text on the same topic (e.g. a personal blog post about climate activism). Explain the OCR synthesis question (Question 2, 6 marks): students write about a link between the two texts that the question names, such as what the writers or their experiences have in common, with evidence from both. There are no marks there for analysing language: comparing how the writers present their ideas belongs to Question 4. Model one linked point using the structure: 'Both writers… In Source A… while in Source B…'. Students write three linked points independently, each with evidence from both sources. Select two or three to share under the visualiser for peer critique.",
         differentiation: {
           support:
             'Provide a Venn diagram template and sentence starters for comparative connectives (similarly, in contrast, whereas).',
@@ -129,7 +146,7 @@ export const ocrWjecLessons: LessonPlan[] = [
           "What is meant by the term 'synthesis' in the context of OCR Language Component 1?",
         lines: 3,
         modelAnswer:
-          'Synthesis means combining information from two or more sources to identify similarities, differences, and connections. Rather than analysing each text separately, students must draw the sources together, comparing how they present ideas, perspectives, or information on a shared topic.',
+          'Synthesis means combining information from two or more sources to identify similarities, differences, and connections. Rather than writing about each text separately, students draw the sources together, bringing out the ideas, experiences or attitudes the texts share or differ on, with evidence from both. In Component 1 this is Question 2 (6 marks), and it is about what the texts say, not how they are written.',
         marks: 2,
       },
       {
@@ -153,6 +170,7 @@ export const ocrWjecLessons: LessonPlan[] = [
       'Choose non-fiction texts that are topical and engaging for your cohort. Climate activism, social media regulation, and youth mental health work well.',
       "The OCR Component 1 mark scheme rewards 'clear and relevant' responses at the mid-band - drill this vocabulary so students understand what examiners expect.",
       'If time is tight, the synthesis activity can be set as a follow-up homework task.',
+      'On the paper one of the two texts is from the 19th century and the other from the 20th or 21st. Pair a modern text with a 19th-century one (for example a Victorian letter or travel account) in at least one practice.',
       'Ensure students understand that OCR non-fiction questions often require comments on both language AND structure, not just one.',
     ],
     targetedSkills: [
@@ -212,7 +230,7 @@ export const ocrWjecLessons: LessonPlan[] = [
         title: 'Crafting an Atmospheric Opening - Guided Writing',
         duration: '22 minutes',
         instructions:
-          'Display an image stimulus (e.g. an abandoned fairground, a stormy coastline, a crowded market at night). Model writing an opening paragraph step by step: (1) Choose a narrative perspective, (2) Open with a striking sensory detail, (3) Build atmosphere through carefully chosen vocabulary, (4) Vary sentence length for pace and tension. Students then write their own opening paragraph (150-200 words) in response to the same image. Circulate, offering targeted feedback. After 15 minutes, select two or three students to read aloud. Class identifies the techniques used.',
+          "Display an image stimulus as a practice prompt (e.g. an abandoned fairground, a stormy coastline, a crowded market at night); OCR's own tasks set a title or an experience to write about, with bullet points. Model writing an opening paragraph step by step: (1) Choose a narrative perspective, (2) Open with a striking sensory detail, (3) Build atmosphere through carefully chosen vocabulary, (4) Vary sentence length for pace and tension. Students then write their own opening paragraph (150-200 words) in response to the same image. Circulate, offering targeted feedback. After 15 minutes, select two or three students to read aloud. Class identifies the techniques used.",
         differentiation: {
           support:
             "Provide a writing scaffold with sentence starters and a word bank of atmospheric vocabulary (e.g. 'looming', 'suffocating', 'fractured').",
@@ -311,7 +329,7 @@ export const ocrWjecLessons: LessonPlan[] = [
     ],
     teacherNotes: [
       'Select image stimuli that offer rich sensory possibilities. Avoid overly busy images - atmospheric, slightly ambiguous settings work best.',
-      'Emphasise that OCR creative writing tasks may offer a choice of stimulus (image, title, opening line). Practise all three formats across the unit.',
+      "Emphasise that OCR's Section B is a choice of two tasks: in OCR's sample and June 2024 papers, a story from a given title and a piece of personal writing about an experience, each with bullet points suggesting what to include. Images work well for practice, but practise from titles and personal experiences across the unit too.",
       'Higher-attaining students often over-write. Remind them that precision is valued over volume - 300 well-crafted words outperform 600 generic ones.',
       'The peer assessment activity requires clear modelling. Demonstrate giving feedback before students attempt it independently.',
     ],
@@ -753,7 +771,7 @@ export const ocrWjecLessons: LessonPlan[] = [
           'If the OCR Language Paper 1 is 2 hours long and worth 80 marks, how many minutes per mark should you allocate? How would you divide your time across the sections?',
         lines: 4,
         modelAnswer:
-          "2 hours = 120 minutes for 80 marks, which gives 1.5 minutes per mark. A question worth 10 marks should therefore take approximately 15 minutes, while one worth 20 marks should take 30 minutes. Students should plan their time before the exam and stick to it, even if they haven't finished a question - moving on to secure marks elsewhere is often more effective than perfecting one answer.",
+          "2 hours = 120 minutes for 80 marks, about 1.5 minutes per mark, but OCR's own advice is simpler: about an hour on Section A (40 marks) and an hour on Section B (40 marks). Inside Section A, after about 12 minutes reading both texts, that leaves roughly 5 minutes for Question 1 (4 marks), 8 for Question 2 (6), 15 for Question 3 (12) and 20 for Question 4 (18). Students should plan their time before the exam and stick to it, even if they haven't finished a question - moving on to secure marks elsewhere is often more effective than perfecting one answer.",
         marks: 3,
       },
       {
@@ -849,7 +867,7 @@ export const ocrWjecLessons: LessonPlan[] = [
         title: "The WJEC 'Tracking' Question - Reading Through the Extract",
         duration: '25 minutes',
         instructions:
-          "Distribute a 20th century prose extract (approximately 40 lines). Explain the WJEC 'tracking' question format: 'What impressions do you get of [character/setting] from the extract? You must refer to the language used in the extract.' Model the tracking approach: work through the extract from top to bottom, selecting key quotations at different points and analysing the impression each creates. Annotate the first third of the extract as a class on the visualiser. Students annotate the remainder independently, selecting at least four quotations with analysis notes. Then students write a response using the structure: impression → quotation → analysis, tracking through the extract sequentially.",
+          "Distribute a 20th century prose extract (approximately 40 lines). Explain the WJEC 'tracking' question format (Question 03): students explain the impressions they get of a character or setting across a longer section of the extract, looking closely at the language. Model the tracking approach: work through the extract from top to bottom, selecting key quotations at different points and analysing the impression each creates. Annotate the first third of the extract as a class on the visualiser. Students annotate the remainder independently, selecting at least four quotations with analysis notes. Then students write a response using the structure: impression → quotation → analysis, tracking through the extract sequentially.",
         differentiation: {
           support:
             'Provide a response scaffold dividing the extract into three sections (beginning, middle, end) with spaces for one quotation and analysis per section. Sentence starters included.',
@@ -867,7 +885,7 @@ export const ocrWjecLessons: LessonPlan[] = [
         title: 'Evaluation Question Practice',
         duration: '17 minutes',
         instructions:
-          "Display the WJEC evaluation question: 'How does [the writer] make [a specific moment] particularly [effective/dramatic/tense]? You should comment on: what happens, the language used, the structure of the extract.' Explain that this question requires a judgement - students must explain why the methods work, not just identify them. Model one evaluative paragraph. Students write one paragraph independently in 8 minutes. Pairs then swap and use the WJEC mark scheme to identify one strength and one area for improvement.",
+          "Display a WJEC-style evaluation question (Question 05): a view about a character or the story, such as 'In the final lines the writer makes us feel sorry for [character]', with the instruction to say how far you agree, using those lines and the passage as a whole, and to explain how the writer creates your thoughts and feelings. (A question on how the writer makes a moment dramatic or tense, through what happens, the language and the structure, is Question 04.) Explain that this question requires a judgement - students must explain why the methods work, not just identify them. Model one evaluative paragraph. Students write one paragraph independently in 8 minutes. Pairs then swap and use the WJEC mark scheme to identify one strength and one area for improvement.",
         differentiation: {
           support:
             "Provide sentence starters for evaluative language (e.g. 'This is effective because…', 'The writer successfully creates tension by…').",
@@ -949,7 +967,7 @@ export const ocrWjecLessons: LessonPlan[] = [
     teacherNotes: [
       'WJEC Component 1 always uses a 20th century literary prose extract. Ensure students are familiar with a range of 20th century styles (modernism, post-war realism, contemporary literary fiction).',
       "The 'tracking' question is distinctive to WJEC and Eduqas. Drill the sequential approach - students who jump around the extract will be penalised.",
-      'Welsh-medium schools may use Eduqas rather than WJEC; confirm which specification your centre follows.',
+      "These lessons follow Eduqas (C700), the GCSE WJEC offers in England; schools in Wales take WJEC's own specification, which is set differently. Confirm which your centre follows.",
       'Select extracts that offer rich language for analysis but are accessible enough for all ability levels.',
     ],
     targetedSkills: [
@@ -1048,7 +1066,7 @@ export const ocrWjecLessons: LessonPlan[] = [
       title: 'Two Stars and a Wish',
       duration: '7 minutes',
       instructions:
-        "Students read their own transactional writing and complete a self-assessment card: two things they did well (stars) and one thing they would improve (wish). Each star and wish must reference a specific WJEC mark scheme criterion (e.g. 'I used varied punctuation for effect - this meets the Organisation and Communication Band 4 descriptor'). Share wishes in pairs and agree an action step for next time.",
+        "Students read their own transactional writing and complete a self-assessment card: two things they did well (stars) and one thing they would improve (wish). Each star and wish must reference a specific WJEC mark scheme criterion (e.g. 'I used varied punctuation for effect - this meets the Band 4 descriptor for accuracy (AO6)'). Share wishes in pairs and agree an action step for next time.",
       differentiation: {
         support: 'Display simplified WJEC mark scheme criteria on the board for reference.',
         core: 'Students complete the card independently with specific mark scheme references.',
@@ -1085,10 +1103,10 @@ export const ocrWjecLessons: LessonPlan[] = [
       },
       {
         question:
-          "Explain why the WJEC mark scheme assesses 'organisation' separately from 'communication' in transactional writing.",
+          'Explain why the WJEC mark scheme gives separate marks for communication and organisation (AO5) and for accuracy (AO6) in transactional writing.',
         lines: 4,
         modelAnswer:
-          'Organisation and communication are separate skills. A student might communicate persuasive ideas effectively but present them in a disorganised, rambling structure - or they might have a clear structure but dull, generic content. By assessing them separately, the WJEC mark scheme recognises that high-quality transactional writing requires both compelling ideas AND a logical, well-signposted structure. This also means students can identify which specific skill they need to improve.',
+          "Communication and organisation (AO5, 12 of each task's 20 marks) reward what you say and how you shape it for the reader; accuracy (AO6, 8 marks) rewards spelling, punctuation, grammar, vocabulary and sentence variety. A student might communicate persuasive ideas in a clear structure but make frequent errors, or write accurately with dull, generic content. By assessing them separately, the WJEC mark scheme recognises that high-quality transactional writing requires both, and students can identify which specific skill they need to improve.",
         marks: 3,
       },
       {
@@ -1103,14 +1121,14 @@ export const ocrWjecLessons: LessonPlan[] = [
         question: 'How does WJEC Component 2 differ from Component 1 in terms of what is assessed?',
         lines: 4,
         modelAnswer:
-          "WJEC Component 1 focuses on reading 20th century literary prose, assessing students' ability to analyse language, track impressions, and evaluate effectiveness. Component 2 combines non-fiction reading (analysing persuasive and informational texts) with transactional writing (producing texts for specific audiences and purposes in specified formats). Component 2 therefore has a broader range of skills and includes both reading and extended writing.",
+          'WJEC Component 1 pairs reading 20th century literary prose (five questions on one extract) with creative prose writing (one story or account, from a choice of four titles, for 40 marks). Component 2 pairs non-fiction reading (one 19th-century and one 21st-century text, six questions) with transactional writing: two compulsory tasks of 20 marks each, in forms and for readers the paper sets. Both components include reading and extended writing; Component 2 is worth more, 60% of the GCSE against 40%.',
         marks: 3,
       },
     ],
     teacherNotes: [
       'Use topical, engaging non-fiction texts. Issues relevant to Wales (e.g. Welsh language policy, tourism, devolution) add authenticity for WJEC students.',
       'The transactional writing formats (letter, article, speech, report, review) must be explicitly taught - students lose marks for incorrect format conventions.',
-      'WJEC/Eduqas Component 2 writing is worth 40 marks. Emphasise that SPaG (spelling, punctuation, grammar) carries significant weight in the writing assessment.',
+      'Eduqas Component 2 writing, which these lessons follow, is worth 40 marks, in two compulsory tasks of 20 (12 for communication and organisation, 8 for accuracy, in each). Emphasise that SPaG (spelling, punctuation, grammar) carries significant weight in the writing assessment.',
       'Students in Welsh centres should be aware that WJEC questions may reference Welsh contexts - this is normal and should be embraced, not seen as unusual.',
     ],
     targetedSkills: [

@@ -118,7 +118,7 @@ const resourceGroups: ResourceGroup[] = [
   {
     heading: 'Shakespeare',
     subtitle:
-      'Set Shakespeare plays for Paper 2, Section A \u2014 full study guides with plot, characters, themes, key quotes, and stagecraft analysis.',
+      'Set Shakespeare plays for Paper 2, Section A - full study guides with plot, characters, themes, key quotes, and stagecraft analysis.',
     items: [
       {
         title: 'Macbeth',
@@ -161,7 +161,7 @@ const resourceGroups: ResourceGroup[] = [
   {
     heading: 'Modern Drama',
     subtitle:
-      'Non-Shakespeare drama texts for Paper 2, Section B \u2014 detailed guides covering dramatic technique and stagecraft.',
+      'Non-Shakespeare drama texts for Paper 2, Section B - detailed guides covering dramatic technique and stagecraft.',
     items: [
       {
         title: 'A Streetcar Named Desire',
@@ -190,7 +190,7 @@ const resourceGroups: ResourceGroup[] = [
   {
     heading: 'Contemporary Prose',
     subtitle:
-      'Modern set prose texts for Paper 1, Section B \u2014 in-depth guides covering plot, characters, themes, and exam technique.',
+      'Modern set prose texts for Paper 1, Section B - in-depth guides covering plot, characters, themes, and exam technique.',
     items: [
       {
         title: 'To Kill a Mockingbird',
@@ -233,7 +233,7 @@ const resourceGroups: ResourceGroup[] = [
   {
     heading: 'Classic Prose',
     subtitle:
-      'Pre-20th century set texts \u2014 study guides with chapter summaries, contextual analysis, and exam strategies.',
+      'Pre-20th century set texts - study guides with chapter summaries, contextual analysis, and exam strategies.',
     items: [
       {
         title: 'Great Expectations',
@@ -262,7 +262,7 @@ const resourceGroups: ResourceGroup[] = [
   {
     heading: 'Poetry',
     subtitle:
-      'Comprehensive poetry guides \u2014 full analysis of set anthology poems, comparison techniques, unseen poetry preparation, and A*\u2013G marking guidance.',
+      'Comprehensive poetry guides - full analysis of set anthology poems, comparison techniques, unseen poetry preparation, and A*\u2013G marking guidance.',
     items: [
       {
         title: 'Songs of Ourselves Volume 1',
@@ -327,8 +327,8 @@ export default function CaieEnglishLiteratureHub() {
           </h1>
           <p className="mx-auto mt-4 max-w-2xl text-lg text-muted-foreground">
             Everything you need to prepare for Cambridge IGCSE English Literature. Poetry, prose,
-            drama, unseen analysis &mdash; structured around Papers&nbsp;1 and&nbsp;2 with real
-            study content and exam technique to help you achieve an A* (CAIE grades A*&ndash;G).
+            drama, unseen analysis - structured around Papers&nbsp;1 and&nbsp;2 with real study
+            content and exam technique to help you achieve an A* (CAIE grades A*&ndash;G).
           </p>
         </div>
       </section>
@@ -341,7 +341,7 @@ export default function CaieEnglishLiteratureHub() {
             This cluster is based on the Cambridge IGCSE 0475 syllabus <em>Songs of Ourselves</em>{' '}
             Vol&nbsp;1 Part&nbsp;4 plus the Ted Hughes cluster (<em>The Thought-Fox</em>,{' '}
             <em>Hawk Roosting</em>, <em>Wind</em>). Cambridge International rotates set texts every
-            two years &mdash; always confirm via{' '}
+            two years - always confirm via{' '}
             <a
               href="https://www.cambridgeinternational.org/syllabus"
               target="_blank"
@@ -358,7 +358,7 @@ export default function CaieEnglishLiteratureHub() {
           <p className="mt-3 text-muted-foreground leading-relaxed">
             <strong className="text-foreground">Cluster rights:</strong> Four poems are in copyright
             (Atwood, Auden, Hughes&nbsp;&times;3). Quotations on linked pages are short fair-dealing
-            extracts. Anthology publisher: Cambridge University Press &mdash; permissions via{' '}
+            extracts. Anthology publisher: Cambridge University Press - permissions via{' '}
             <a
               href="https://www.cambridge.org/permissions"
               target="_blank"
@@ -382,8 +382,8 @@ export default function CaieEnglishLiteratureHub() {
               1 hour 30 minutes &middot; 50 marks
             </p>
             <ul className="mt-3 space-y-1 text-sm text-muted-foreground">
-              <li>&bull; Section A &mdash; Set poetry (Songs of Ourselves)</li>
-              <li>&bull; Section B &mdash; Set prose text</li>
+              <li>&bull; Section A - Set poetry (Songs of Ourselves)</li>
+              <li>&bull; Section B - Set prose text</li>
               <li>&bull; Passage-based and essay questions</li>
             </ul>
           </div>
@@ -393,8 +393,8 @@ export default function CaieEnglishLiteratureHub() {
               1 hour 30 minutes &middot; 50 marks
             </p>
             <ul className="mt-3 space-y-1 text-sm text-muted-foreground">
-              <li>&bull; Section A &mdash; Set Shakespeare play</li>
-              <li>&bull; Section B &mdash; Other set drama text</li>
+              <li>&bull; Section A - Set Shakespeare play</li>
+              <li>&bull; Section B - Other set drama text</li>
               <li>&bull; Focus on dramatic technique and stagecraft</li>
             </ul>
           </div>
@@ -415,21 +415,21 @@ export default function CaieEnglishLiteratureHub() {
           <h3 className="font-semibold text-foreground">Assessment Objectives</h3>
           <ul className="mt-3 space-y-2 text-sm text-muted-foreground">
             <li>
-              <strong className="text-foreground">Textual Knowledge</strong> &mdash; Show detailed
+              <strong className="text-foreground">Textual Knowledge</strong> - Show detailed
               knowledge of the content of literary texts, supported by reference to the text.
             </li>
             <li>
-              <strong className="text-foreground">Interpretation and Ideas</strong> &mdash;
-              Understand the meanings of literary texts and their contexts, and explore texts beyond
-              surface meanings to show deeper awareness of ideas and attitudes.
+              <strong className="text-foreground">Interpretation and Ideas</strong> - Understand the
+              meanings of literary texts and their contexts, and explore texts beyond surface
+              meanings to show deeper awareness of ideas and attitudes.
             </li>
             <li>
-              <strong className="text-foreground">Analysis of Writer&rsquo;s Methods</strong>{' '}
-              &mdash; Recognise and appreciate ways in which writers use language, structure, and
-              form to create and shape meanings and effects.
+              <strong className="text-foreground">Analysis of Writer&rsquo;s Methods</strong> -
+              Recognise and appreciate ways in which writers use language, structure, and form to
+              create and shape meanings and effects.
             </li>
             <li>
-              <strong className="text-foreground">Personal Response</strong> &mdash; Communicate a
+              <strong className="text-foreground">Personal Response</strong> - Communicate a
               sensitive and informed personal response to literary texts.
             </li>
           </ul>
@@ -441,8 +441,8 @@ export default function CaieEnglishLiteratureHub() {
         <div className="mx-auto max-w-5xl">
           <h2 className="text-2xl font-bold text-foreground">Study Resources</h2>
           <p className="mt-2 text-muted-foreground">
-            Focused guides covering every part of the Cambridge IGCSE English Literature course
-            &mdash; drama, prose, poetry, and exam skills.
+            Focused guides covering every part of the Cambridge IGCSE English Literature course -
+            drama, prose, poetry, and exam skills.
           </p>
 
           {resourceGroups.map((group) => (

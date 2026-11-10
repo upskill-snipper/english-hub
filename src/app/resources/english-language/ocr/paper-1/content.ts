@@ -107,8 +107,13 @@ export const STRINGS: Record<string, Bi> = {
   s50: { en: `Suggested Time`, ar: `الوقت المقترح` },
   s51: { en: `Reading the texts and annotating`, ar: `اقرأ النصوص و.annotate عليها` },
   s52: { en: `Section A: Reading questions`, ar: `قسم أ: أسئلة القراءة` },
-  s53: { en: `Section B: Shorter writing task`, ar: `القسم ب: مهمة الكتابة القصيرة` },
-  s54: { en: `Section B: Longer writing task`, ar: `SECTION B: مهمة الكتابة الأطول` },
+  // 31 October 2026: s53 and s54 were the "shorter" and "longer" writing tasks.
+  // Component 01 sets one task, Question 5 or 6, chosen from two.
+  s53: {
+    en: `Section B: Planning your chosen task`,
+    ar: `القسم ب: التخطيط للمهمة التي اخترتها`,
+  },
+  s54: { en: `Section B: Writing your chosen task`, ar: `القسم ب: كتابة المهمة التي اخترتها` },
   s55: { en: `Feature-spotting without analysis`, ar: `الملاحظة دون تحليل` },
   s56: { en: `Retelling the text`, ar: `رواية النص` },
   s58: { en: `Writing one-sided arguments`, ar: `كتابة حجج جانبية` },

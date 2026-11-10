@@ -139,8 +139,8 @@ export default async function MacbethHubPage() {
             Macbeth
           </h1>
           <p className="mx-auto mt-4 max-w-2xl text-lg text-muted-foreground">
-            Shakespeare&rsquo;s shortest and bleakest tragedy &mdash; the story of how ambition,
-            once unchained, consumes everything it touches.
+            Shakespeare&rsquo;s shortest and bleakest tragedy - the story of how ambition, once
+            unchained, consumes everything it touches.
           </p>
         </div>
       </section>
@@ -219,7 +219,7 @@ export default async function MacbethHubPage() {
             {KEY_QUOTES_PREVIEW.map((q) => (
               <div key={q.quote} className="rounded-lg border border-border bg-card p-4 shadow-sm">
                 <p className="text-sm italic font-semibold text-foreground">{q.quote}</p>
-                <p className="mt-1 text-xs font-medium text-primary">&mdash; {q.who}</p>
+                <p className="mt-1 text-xs font-medium text-primary">- {q.who}</p>
               </div>
             ))}
           </div>

@@ -135,11 +135,11 @@ export default async function MacbethThemesPage() {
             {await t('igcse.page.badge_edexcel_lit')}
           </div>
           <h1 className="mt-4 text-3xl font-bold tracking-tight text-foreground sm:text-4xl md:text-5xl">
-            Macbeth &mdash; Themes
+            Macbeth - Themes
           </h1>
           <p className="mx-auto mt-4 max-w-xl text-lg text-muted-foreground">
-            The seven big ideas examiners ask about &mdash; and how to track each one across the
-            whole play.
+            The seven big ideas examiners ask about - and how to track each one across the whole
+            play.
           </p>
         </div>
       </section>

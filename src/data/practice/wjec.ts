@@ -14,12 +14,22 @@
 
 import type { PracticeQuestion } from './types'
 
+// 31 October 2026: the Language items were corrected to the C700 guides in
+// src/data/mark-scheme-guides/eduqas-lang-comp1.ts and eduqas-lang-comp2.ts. A
+// 10-mark language question was labelled Q2 and "language and structure" (Q02 is
+// 5 marks; this is Question 03, language only); the Component 1 story was split
+// 20 and 20 (it is AO5 24 + AO6 16); each Component 2 writing task was given 20
+// marks for accuracy or 40 in all (each is 20: AO5 12 + AO6 8); and Question 01
+// was set as "choose five true statements", where it asks you to list five things.
+// Second reading, same day: wjec-p2-comp-1 was a 30-mark comparison; the paper's
+// comparison, 1.6, is 10 marks. Its two sources are both modern, not one 19th and
+// one 21st-century text, which still needs a decision.
 export const wjecPracticeQuestions: PracticeQuestion[] = [
   {
     id: 'wjec-c1-lang-1',
     board: 'WJEC',
     paper: 1,
-    questionType: 'Language and Structure Analysis (Q2)',
+    questionType: 'Language Analysis (Q3)',
     difficulty: 'Foundation',
     extract: `The factory whistle blew at six. By ten past, the street was full of men - a dark river of caps and boots flowing downhill towards the gates. Thomas walked among them with his hands in his pockets and his collar turned up against the cold. He was eighteen and had worked at the mill for four years, since the day after his fourteenth birthday, when his father had shaken his hand and said, "You're a man now," as if manhood were a door you stepped through rather than a thing that grew on you slowly, like moss on a wall.\n\nThe mill loomed ahead, its chimney drawing a black line against the pale sky. The noise reached him before the building did - a low, mechanical hum that he felt in his teeth before he heard it in his ears. Inside, the air was thick with cotton dust that coated your throat and settled in your lungs like snow filling a ditch. The machines were already running. They were always already running. Thomas took his place at the loom and became, as he did every morning, a small moving part in a large, indifferent engine.`,
     extractSource: 'Original composition in the style of early 20th-century realism',
@@ -48,12 +58,12 @@ export const wjecPracticeQuestions: PracticeQuestion[] = [
     id: 'wjec-c1-write-1',
     board: 'WJEC',
     paper: 1,
-    questionType: 'Narrative Writing (Q6)',
+    questionType: 'Narrative Writing (Q11)',
     difficulty: 'Higher',
     extract: '',
     extractSource: '',
     question:
-      'Write about a time when someone had to make a difficult decision. You may write from any perspective. (20 marks for communication and organisation, 20 marks for writing accuracy)',
+      'Write about a time when someone had to make a difficult decision. You may write from any perspective. (40 marks: 24 for communication and organisation, 16 for writing accuracy)',
     modelAnswers: {
       'Grade 4-5': `The letter sat on the kitchen table for three days before she opened it. Everyone knew what it was. The envelope was brown and official-looking, with a typed address and a postmark from London. Her mother walked past it every morning, pretending not to notice.\n\nWhen she finally opened it, her hands were shaking. She read it twice, put it down, picked it up, and read it again. The offer was everything she had worked for: a place at a university three hundred miles away, studying the subject she loved. It should have been the happiest moment of her life.\n\nBut her mother was ill. Not seriously ill - not yet - but the kind of ill that meant someone needed to be around. To check the medication. To drive to appointments. To sit in the kitchen in the evenings and make things feel normal. Her brother had already left. Her father had left long before that.\n\nShe sat at the table for a long time, the letter in front of her. The kitchen clock ticked loudly. Outside, a bird was singing. She picked up her phone, found the number, and dialled. When the voice at the other end answered, she took a breath and said the words she had practised in her head all morning.`,
       'Grade 6-7': `He told himself he would decide by Friday. On Friday he told himself he would decide by Monday. On Monday he told himself that some decisions make themselves if you leave them long enough, and he went to work and did not think about it, except that he thought about nothing else.\n\nThe facts were simple. His father needed help. Not the kind of help that could be delivered from two hundred miles away via weekly phone calls and guilt - the physical, daily, undramatic help of someone being present. Meals prepared. Bills opened. The slow bureaucracy of aging navigated by someone who could still read the small print.\n\nThe facts on the other side were also simple. He had a life. A flat. A job he had spent five years building. A relationship that was beginning, cautiously, to use the word "we" instead of "I." None of these things were portable.\n\nHe drove up on Saturday. The house smelled of toast and loneliness - that particular combination of unwashed dishes and drawn curtains that means someone has stopped performing the rituals of order. His father was in the kitchen, attempting to change a lightbulb from a chair that wobbled. He was not frail. That was the difficult thing. He was not frail, not helpless, not incapable. He was just old enough that the distance between managing and not managing had narrowed to a margin that could be erased by a fall, a flu, a letter left unopened.\n\n"You didn't need to come," his father said, which was the sentence that settled it.`,
@@ -68,7 +78,7 @@ export const wjecPracticeQuestions: PracticeQuestion[] = [
       'Maintains a consistent and appropriate narrative voice',
     ],
     examinerTips: [
-      'WJEC Eduqas allocates equal marks for content/organisation and accuracy - do not neglect either.',
+      'WJEC Eduqas gives 24 marks for content and organisation and 16 for accuracy - do not neglect either.',
       'The prompt says "a time when someone had to make a difficult decision" - you can write about yourself or a character.',
       "Show the difficulty of the decision through the character's thought process, not just by telling the reader it was difficult.",
       'A strong ending that resonates is more valuable than a dramatic plot twist.',
@@ -78,7 +88,7 @@ export const wjecPracticeQuestions: PracticeQuestion[] = [
     id: 'wjec-c2-comp-1',
     board: 'WJEC',
     paper: 2,
-    questionType: 'Reading Across Centuries Comparison (Q4)',
+    questionType: 'Reading Across Centuries Comparison (Q1.6)',
     difficulty: 'Foundation',
     extract: `Text A (1847): "The governess occupies a position of peculiar difficulty. She is not a servant, yet she is not family. She eats alone in her room or, if permitted to join the family table, sits in a silence that is expected rather than chosen. She educates the children, yet her own education - often superior to that of her employer - earns her no respect, only suspicion. She is, in short, a gentlewoman who must earn her bread without ever appearing to need it."\n- Adapted from a Victorian essay on women's employment\n\nText B (2023): "Teaching assistants are the invisible infrastructure of the education system. They arrive before the teachers, leave after them, and spend the hours between managing behaviour, supporting SEND pupils, running interventions, and performing a hundred daily acts of patience that never appear on any data spreadsheet. Their average salary is £18,000. Their average level of commitment is immeasurable. We talk endlessly about teacher retention while the people who hold classrooms together are paid less than supermarket shelf-stackers."`,
     extractSource:
@@ -93,12 +103,12 @@ export const wjecPracticeQuestions: PracticeQuestion[] = [
     markScheme: [
       "Compares the writers' attitudes and methods across both texts",
       'Analyses how language is used to influence the reader in each text',
-      'Considers differences in historical context and how they shape the writing',
+      'Covers both what the writers say and how they say it',
       'Uses embedded textual references from both texts',
       'Maintains a comparative rather than sequential structure',
     ],
     examinerTips: [
-      'WJEC Eduqas Component 2 often pairs a 19th-century text with a modern one - consider how context shapes both argument and method.',
+      "WJEC Eduqas Component 2 always pairs a 19th-century text with a 21st-century one - consider how each writer's time and audience shape their method.",
       'Compare HOW the writers try to influence you, not just WHAT they think.',
       'Find points of similarity AND difference between the texts.',
       'The best answers treat differences in time period as something that explains differences in method.',
@@ -108,12 +118,12 @@ export const wjecPracticeQuestions: PracticeQuestion[] = [
     id: 'wjec-c2-write-1',
     board: 'WJEC',
     paper: 2,
-    questionType: 'Persuasive/Discursive Writing (Q6)',
+    questionType: 'Persuasive/Discursive Writing (Q2.1)',
     difficulty: 'Higher',
     extract: '',
     extractSource: '',
     question:
-      '"Every young person should spend a year doing voluntary or community work before starting university or full-time employment." Write an article for a newspaper giving your views on this proposal. (20 marks for communication and organisation, 20 marks for writing accuracy)',
+      '"Every young person should spend a year doing voluntary or community work before starting university or full-time employment." Write an article for a newspaper giving your views on this proposal. (20 marks: 12 for communication and organisation, 8 for writing accuracy)',
     modelAnswers: {
       'Grade 4-5': `Should every young person spend a year doing community work before going to university or starting a job? Some people think this is a great idea, but I think it is more complicated than it sounds.\n\nOn the one hand, community work could be very beneficial. Young people would gain real-world experience that they cannot get in a classroom. They would learn skills like teamwork, communication, and problem-solving. They would also get to help other people, which could make them feel more confident and mature.\n\nHowever, there are problems with making this compulsory. Not every family can afford for their child to spend a year without earning money. Some young people need to start working straight away to support themselves or their families. Making everyone do voluntary work could actually make inequality worse, because richer students would find it easy while poorer students would struggle.\n\nAlso, forced volunteering is a contradiction. The whole point of voluntary work is that it is freely chosen. If you make it compulsory, you take away the thing that makes it valuable.\n\nIn conclusion, while community work is a good thing, I do not believe it should be forced on all young people. Instead, it should be encouraged and made accessible, with financial support for those who need it.`,
       'Grade 6-7': `There is something seductive about the idea of a national service year for young people. It promises to fix everything we worry about: a generation staring at screens, communities coming apart, graduates who can write essays but cannot change a tyre. One year of "real" work, the argument goes, and they will emerge as responsible, empathetic, employable adults. It is a compelling narrative. It is also, I would suggest, a fantasy.\n\nLet me be clear: I am not against voluntary work. I spent six months working in a food bank after my A-levels, and it taught me more about the country I live in than three years of university managed. But the key word in that sentence is "I." I chose it. I had parents who could support me financially while I did it. I had a university place waiting for me afterwards. These are not universally available conditions.\n\nThe proposal to make a service year compulsory ignores the single most important fact about young people in this country: they are not all the same. For a middle-class student with a safety net, a gap year of volunteering is an enriching experience. For a care leaver, a young carer, or someone from a family where every adult wage matters, it is a year of financial hardship imposed by people who have never experienced financial hardship.\n\nThere is also the philosophical objection, which is simple and, I think, unanswerable: compulsory volunteering is an oxymoron. The value of voluntary work lies precisely in its voluntariness - in the decision to give your time freely. Mandate it and you do not create a culture of service; you create a culture of resentment.\n\nThe instinct behind this proposal is a good one. We should want young people to engage with their communities. But we should do so by removing barriers - funding gap-year placements, offering bursaries, creating meaningful opportunities - not by adding another compulsory hoop to a generation that is already over-tested, over-examined, and under-trusted.`,
@@ -128,7 +138,7 @@ export const wjecPracticeQuestions: PracticeQuestion[] = [
       'Achieves a high standard of technical accuracy throughout',
     ],
     examinerTips: [
-      'WJEC Eduqas allocates 20 marks for accuracy - careful proofreading is essential.',
+      "WJEC Eduqas gives 8 of each task's 20 marks for accuracy - careful proofreading is essential.",
       'A discursive article can argue a position while acknowledging complexity - you do not have to be one-sided.',
       'Use concrete examples and hypothetical scenarios to make abstract arguments vivid.',
       'The strongest writing has a distinctive voice - let your personality come through while maintaining appropriate register.',
@@ -147,24 +157,25 @@ The building stood empty for six years. Rain found its way through the slate roo
 In 1993, a woman called Helen Rhys moved to the village from Cardiff and, within six months, had persuaded the council to let her reopen the building as a community centre. She raised fourteen thousand pounds through bake sales, sponsored walks, and what she called "the systematic exploitation of middle-class guilt." The centre opened on September 3rd, 1994. Miss Griffiths cut the ribbon. She was eighty-two years old and used the occasion to deliver a short speech about the importance of education that the local newspaper described as "moving" and the parish councillor seated nearest to her described as "fifteen minutes too long."`,
     extractSource: 'Original composition in the style of local history writing',
     question:
-      'Read lines 1-15 carefully. Choose five statements below which are true. Write the correct letter in each box. (5 marks)\n\n(a) The school had twelve pupils when it closed.\n(b) Miss Griffiths taught at the school for over forty years.\n(c) Miss Griffiths posted the key through the education office letterbox.\n(d) The building was empty for ten years.\n(e) Vandals damaged the building.\n(f) The parish council quickly agreed on a new use.\n(g) Helen Rhys was originally from Cardiff.\n(h) The community centre opened in 1993.\n(i) Miss Griffiths cut the ribbon at the opening.\n(j) The local newspaper called Miss Griffiths\'s speech "fifteen minutes too long."',
+      'Read the first paragraph again. List five things you learn about Miss Griffiths and the village school in these lines. (5 marks)',
     marks: 5,
-    timing: '10 minutes',
+    timing: '5 minutes',
     markScheme: [
-      'Correctly identifies true statements: (a), (c), (e), (g), (i)',
-      'Award one mark for each correct answer, up to five marks',
-      'No marks deducted for incorrect answers',
+      'One mark for each correct, separate point, up to five',
+      'Any five of: the school had twelve pupils when it closed; it closed in 1987; Miss Griffiths had taught there for thirty-one years; she locked the door for the last time on a Friday afternoon in July; she posted the key through the county education office letterbox; she did not attend the closure meeting; she thought people who had never set foot in a classroom should not decide its fate',
+      'Points taken only from the lines named',
+      'Points the lines suggest can count as well as points they state, as long as the lines support them',
     ],
     examinerTips: [
-      'Read each statement carefully and check it against the text.',
-      'Watch out for statements that are almost true but change a key detail.',
-      'If unsure, go back to the exact line in the text to verify.',
-      'This question tests close reading, not interpretation.',
+      'Write five short bullet points, one clear point each, in the order they appear in the lines.',
+      'Copying out whole sentences without picking out the point earns nothing.',
+      'Do not put two ideas in one point, or the same idea twice in different words.',
+      'Use only the lines the question names, not the rest of the extract.',
     ],
     modelAnswers: {
-      'Grade 4-5': `The five true statements are (a), (c), (e), (g), and (i). Statement (a) is true because the text says "the village school had twelve pupils when it closed." Statement (c) is confirmed by "posted the key through the letterbox of the county education office." Statement (e) is true because "vandals broke three windows and spray-painted something on the back wall." Statement (g) is true as the text says Helen Rhys "moved to the village from Cardiff." Statement (i) is correct because "Miss Griffiths cut the ribbon."`,
-      'Grade 6-7': `The correct answers are (a), (c), (e), (g), and (i). The distractors are carefully designed: (b) is false because she taught for thirty-one years, not over forty; (d) is false because the building was empty for six years, not ten; (f) is the opposite of what happened, as the council "could not agree"; (h) is false because the centre opened in 1994, not 1993; and (j) attributes the "fifteen minutes too long" comment to the newspaper, when it was actually said by the parish councillor.`,
-      'Grade 8-9': `The correct answers are (a), (c), (e), (g), and (i). Each false statement contains a specific distortion: (b) inflates thirty-one years to "over forty"; (d) doubles the vacancy period from six to ten years; (f) reverses the council's indecision; (h) confuses Helen Rhys's arrival date (1993) with the centre's opening date (1994); and (j) misattributes a quotation, assigning the councillor's remark to the newspaper. The question tests precision of reading rather than inference.`,
+      'Grade 4-5': `- The school had twelve pupils when it closed.\n- Miss Griffiths taught there for thirty-one years.\n- She locked the door and posted the key through the letterbox.\n- She did not go to the closure meeting.\n- She was a teacher at the school.\n\n(4 marks: the third point puts two ideas into one, and the last repeats the second.)`,
+      'Grade 6-7': `- The school had twelve pupils when it closed in 1987.\n- Miss Griffiths had taught there for thirty-one years.\n- She locked the door for the last time on a Friday afternoon in July.\n- She posted the key through the letterbox of the county education office.\n- She did not attend the closure meeting.\n\n(5 marks.)`,
+      'Grade 8-9': `- The school was small: it had twelve pupils when it closed.\n- Miss Griffiths had taught there for thirty-one years.\n- She posted the key through the education office letterbox the following Monday.\n- She chose not to attend the closure meeting.\n- She thought it pointless to watch people with no classroom experience decide the school's future.\n\n(5 marks: the last point puts her words into a few words of the student's own.)`,
     },
   },
   {
@@ -175,8 +186,8 @@ In 1993, a woman called Helen Rhys moved to the village from Cardiff and, within
     title: 'Component 2 Section B Persuasive Writing',
     extract: '',
     question:
-      'Your local park is threatened with being sold for housing development. Write a letter to the local newspaper persuading readers that the park must be saved. (20 marks for communication and organisation, 20 marks for writing accuracy)',
-    marks: 40,
+      'Your local park is threatened with being sold for housing development. Write a letter to the local newspaper persuading readers that the park must be saved. (20 marks: 12 for communication and organisation, 8 for writing accuracy)',
+    marks: 20,
     timing: '30 minutes',
     markScheme: [
       'Matches the conventions of a letter to a newspaper',
@@ -187,7 +198,7 @@ In 1993, a woman called Helen Rhys moved to the village from Cardiff and, within
       'Maintains a high standard of technical accuracy',
     ],
     examinerTips: [
-      'WJEC gives equal marks for content and accuracy. Proofread carefully.',
+      'WJEC gives 12 marks for content and organisation and 8 for accuracy. Proofread carefully.',
       'A letter to a newspaper is semi-formal: passionate but controlled.',
       'Use concrete local details to make your argument feel real and specific.',
       'The best persuasive writing acknowledges the opposing view before dismantling it.',
@@ -675,9 +686,9 @@ The final stanza consummates the poem\'s argument with an image that retrospecti
     extract: `Source A - Urban commute:\n\nThe train car smelled of synthetic fabrics and human fatigue. By 7:45 a.m., every seat was occupied, and standing room was at a premium. A businessman checked his phone for the third time in two minutes. A young mother gripped a shopping bag with one hand and her daughter\'s wrist with the other. An elderly man clutched a newspaper as though it were a life raft. Everyone faced forward, eyes fixed on the door at the far end. No one spoke. The fluorescent lights hummed their constant, nerve-testing song.\n\nSource B - Rural journey:\n\nThe bus wound through the Cotswolds, and time seemed to slow. The passengers - perhaps fifteen in total - seemed to know one another. An old woman offered the woman next to her a boiled sweet from a tin. Two farmers discussed the autumn planting in voices suggesting a conversation ongoing for decades. The driver knew everyone by name. When we stopped at a village of perhaps a hundred people, he called out: "Mrs Hartwell, your stop!" As if the entire vehicle were a social apparatus designed to move people not efficiently, but together.`,
     extractSource: 'Original compositions',
     question:
-      'Compare the presentations of transport and community in these two sources. What values does each prioritise? (30 marks)',
-    marks: 30,
-    timing: '35 minutes',
+      'Compare the presentations of transport and community in these two sources. What values does each prioritise? (10 marks)',
+    marks: 10,
+    timing: '13 minutes',
     modelAnswers: {
       'Grade 4-5': `Source A shows a modern city where people travel together but feel alone. "Every seat was occupied, and standing room was at a premium" shows the train is crowded, but "No one spoke" shows people avoid each other. The businessman checks his phone repeatedly, the mother grips her daughter, and the elderly man clutches his newspaper "as though it were a life raft," suggesting people are protecting themselves from each other. The fluorescent lights create an unpleasant "nerve-testing" atmosphere. Source A values efficiency and speed - getting people somewhere fast.\n\nSource B is different. The bus "wound through the Cotswolds, and time seemed to slow," which makes the journey seem peaceful. Passengers "seemed to know one another," and people are caring: the woman offers sweets, farmers talk together, the driver knows everyone by name. The final phrase says the bus is designed "to move people not efficiently, but together." Source B values community and relationships over speed. Both sources are about transport, but Source A values efficiency while Source B values connection.`,
       'Grade 6-7': `The two sources present contrasting visions of transport as either isolating or communal. Source A constructs the urban train as an experience of enforced proximity without genuine connection. The opening sensory detail - "the train car smelled of synthetic fabrics and human fatigue" - establishes both physical and affective environment; "fatigue" suggests exhaustion and emotional disconnection rather than mere tiredness. The writer catalogues passengers by functional role ("businessman," "mother," "elderly man") rather than by name or relationship, fragmenting the group into isolated subjects. Key structural contrast: crowding (every seat occupied) versus isolation (no one speaks, eyes fixed forward). The metaphor of the newspaper as "a life raft" suggests passengers use objects as barriers against connection. The simile about fluorescent lights creating a "nerve-testing song" conveys oppressive sensory environment through synesthesia.\n\nSource B inverts nearly every element. The bus "wound through the Cotswolds, and time seemed to slow" - verbs "wound" and "slow" create organic, leisurely movement rather than urgent transit. Small number of passengers ("perhaps fifteen in total") establishes pre-existing community. Writer records acts of care: old woman offering sweets, farmers in ongoing conversation, driver calling passengers by name. These details construct transport as vehicle for relationships. The final statement - "as if the entire vehicle were a social apparatus designed to move people not efficiently, but together" - explicitly contrasts efficiency with togetherness. The comparison reveals fundamentally different philosophies: urban transport processes individuals; rural transport maintains community bonds.`,

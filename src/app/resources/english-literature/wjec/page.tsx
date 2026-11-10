@@ -92,7 +92,7 @@ export default function WJECEnglishLiteraturePage() {
           </h1>
           <p className="mx-auto mt-4 max-w-xl text-lg text-muted-foreground">
             Everything you need to revise for WJEC Eduqas GCSE English Literature. Paper overviews,
-            set text guides, poetry anthology analysis, and exam technique &mdash; all in one place.
+            set text guides, poetry anthology analysis, and exam technique - all in one place.
           </p>
         </div>
       </section>
@@ -103,7 +103,7 @@ export default function WJECEnglishLiteraturePage() {
         <p className="mt-2 text-muted-foreground">
           The WJEC Eduqas GCSE English Literature qualification is assessed through two externally
           examined papers. Paper 1 is worth 40% and Paper 2 is worth 60% of the final grade. Both
-          papers are closed-book &mdash; no texts are allowed in the exam room.
+          papers are closed-book - no texts are allowed in the exam room.
         </p>
 
         <div className="mt-8 grid gap-6 sm:grid-cols-2">
@@ -151,9 +151,7 @@ export default function WJECEnglishLiteraturePage() {
                   whole
                 </li>
                 <li>&bull; Must explore language, structure, and context</li>
-                <li>
-                  &bull; No choice of question &mdash; one compulsory question on your set text
-                </li>
+                <li>&bull; No choice of question - one compulsory question on your set text</li>
               </ul>
             </div>
             <div className="rounded-lg border border-border bg-card p-5">

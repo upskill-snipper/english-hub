@@ -38,6 +38,13 @@ export const metadata: Metadata = {
   alternates: { canonical: 'https://theenglishhub.app/igcse/cambridge/0990/paper-2' },
 }
 
+// 31 October 2026: corrected to src/data/mark-scheme-guides/cambridge-0990-paper2.ts
+// (0500 Paper 2 under 9-1 grading). Section B was split "24 content + 16 style"; it
+// is 16 for content and structure and 24 for style and accuracy. Section A had no
+// 1(a), the 5-mark question on the text that comes first from 2027, and listed a
+// journal entry and an interview, which are Paper 1 Question 4 forms; the directed
+// writing is a speech, letter, article or report. The timing had no time for 1(a).
+// Second reader: "What examiners reward" still set a speech against a journal entry.
 const sections = [
   {
     code: 'Section A',
@@ -45,14 +52,14 @@ const sections = [
     marks: '40 marks (25 writing + 15 reading)',
     wordCount: '250-350 words',
     description:
-      'Respond to a short text by writing in a specified form - e.g. a speech, letter, article or report - for a defined audience and purpose.',
-    forms: ['Speech', 'Letter', 'Journal entry', 'Article', 'Report', 'Interview'],
+      'One question in two parts on one or two short texts. 1(a), 5 marks: a short answer analysing and evaluating something in the text. 1(b), 35 marks: writing in a specified form, a speech, letter, article or report, that discusses, argues or persuades, for a defined audience and purpose.',
+    forms: ['Speech', 'Letter', 'Article', 'Report'],
     icon: FileText,
   },
   {
     code: 'Section B',
     title: 'Composition',
-    marks: '40 marks (24 content + 16 style)',
+    marks: '40 marks (16 content and structure + 24 style and accuracy)',
     wordCount: '350-450 words',
     description:
       'Choose one task from four options - two narrative and two descriptive - and write an extended composition. Plan carefully before you begin.',
@@ -72,10 +79,11 @@ const boundaries = [
 ]
 
 const timingRows = [
-  { step: 'Read Section A stimulus text and plan', time: '15 min' },
-  { step: 'Write Section A directed writing', time: '45 min' },
-  { step: 'Choose and plan Section B task', time: '10 min' },
-  { step: 'Write Section B composition', time: '45 min' },
+  { step: 'Read the Section A text or texts', time: '10 min' },
+  { step: 'Answer Question 1(a)', time: '8 min' },
+  { step: 'Plan and write Question 1(b) directed writing', time: '42 min' },
+  { step: 'Choose and plan Section B task', time: '5 min' },
+  { step: 'Write Section B composition', time: '50 min' },
   { step: 'Proofread both answers', time: '5 min' },
 ]
 
@@ -106,8 +114,13 @@ export default async function Paper2Page() {
             Paper 2: Directed Writing & Composition
           </h1>
           <p className="mt-3 max-w-3xl text-body-lg text-muted-foreground">
-            Two hours. Two pieces of writing - one directed response and one extended composition.
-            80 marks, worth 50% of the IGCSE Language B qualification.
+            Two hours, two sections: a directed response with a short question before it, and one
+            extended composition. 80 marks, worth 50% of the IGCSE Language B qualification.
+          </p>
+          <p className="mt-3 max-w-3xl text-body-sm text-muted-foreground">
+            This is the paper for exams from 2027. If you sit Paper 2 in November 2026, Section A is
+            one directed writing task worth 40 marks, with no 5-mark question first; the composition
+            is the same.
           </p>
           <div className="mt-6 flex flex-wrap gap-3 text-body-sm text-muted-foreground">
             <span className="inline-flex items-center gap-1.5 rounded-md border border-border/60 bg-muted/40 px-3 py-1.5">
@@ -259,8 +272,7 @@ export default async function Paper2Page() {
             <CheckCircle2 className="mt-0.5 size-4 shrink-0 text-primary" />
             <span>
               <strong className="text-foreground">A clear voice.</strong> Match register to the form
-              - a speech sounds different from a journal entry. Don&apos;t write both in the same
-              voice.
+              - a speech sounds different from a letter. Don&apos;t write both in the same voice.
             </span>
           </li>
           <li className="flex items-start gap-3">
@@ -289,7 +301,8 @@ export default async function Paper2Page() {
             <CheckCircle2 className="mt-0.5 size-4 shrink-0 text-primary" />
             <span>
               <strong className="text-foreground">Section A uses the text.</strong> The 15 reading
-              marks come from how well you develop ideas from the stimulus. Don&apos;t ignore it.
+              marks come from 1(a) and from how well you develop ideas from the text in 1(b).
+              Don&apos;t ignore it.
             </span>
           </li>
         </ul>

@@ -69,32 +69,42 @@ const WRITING_PAPERS: Partial<Record<ExamBoard, WritingPaperInfo>> = {
       timing: 'Around 45 minutes',
     },
   },
+  // 31 October 2026: OCR's timing was "Around 45 minutes"; OCR advises about an
+  // hour on Section B, about 45 of it writing (src/data/mark-scheme-guides/
+  // ocr-lang-component01.ts, -component02.ts), and each paper's task is one of
+  // two. Eduqas now gives the papers' own word guidance and 30 minutes a task
+  // (eduqas-lang-comp1.ts, -comp2.ts). Second read: the OCR split of the hour is
+  // the guides' suggestion, not OCR's own figure, and now says so.
   ocr: {
     creative: {
-      paperLabel: 'OCR Paper 2 Section B: Original Creative Writing',
+      paperLabel:
+        'OCR Paper 2 Section B: Original Creative Writing (one task from a choice of two)',
       wordCount: 'Around 400-500 words',
-      marks: '40 marks, including 16 for technical accuracy',
-      timing: 'Around 45 minutes',
+      marks: '40 marks (24 content/organisation + 16 technical accuracy)',
+      timing:
+        'About an hour, as OCR advises; a suggested split is 5-10 minutes planning, about 45 writing and 5 checking',
     },
     transactional: {
-      paperLabel: 'OCR Paper 1 Section B: Original Non-fiction Writing',
+      paperLabel:
+        'OCR Paper 1 Section B: Original Non-fiction Writing (one task from a choice of two)',
       wordCount: 'Around 400-500 words',
-      marks: '40 marks, including 16 for technical accuracy',
-      timing: 'Around 45 minutes',
+      marks: '40 marks (24 content/organisation + 16 technical accuracy)',
+      timing:
+        'About an hour, as OCR advises; a suggested split is 5-10 minutes planning, about 45 writing and 5 checking',
     },
   },
   eduqas: {
     creative: {
       paperLabel: 'Eduqas Component 1 Section B: Creative Prose Writing',
-      wordCount: 'One extended task',
+      wordCount: 'About 450-600 words: one story or account, from a choice of four titles',
       marks: '40 marks (24 content/organisation + 16 technical accuracy)',
-      timing: 'Around 45 minutes',
+      timing: 'Around 45 minutes: about 10 planning and 35 writing',
     },
     transactional: {
       paperLabel: 'Eduqas Component 2 Section B: Transactional Writing',
-      wordCount: 'Two shorter transactional tasks',
-      marks: '40 marks total across the two tasks',
-      timing: 'Around 60 minutes split between both tasks',
+      wordCount: 'Two compulsory tasks of about 300-400 words each',
+      marks: '40 marks: 20 for each task (12 content/organisation + 8 technical accuracy)',
+      timing: 'About 30 minutes on each task, as the paper advises',
     },
   },
 }

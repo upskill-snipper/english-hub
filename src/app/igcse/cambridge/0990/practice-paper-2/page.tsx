@@ -69,6 +69,10 @@ export default async function PracticePaper2Page() {
             A full Paper 2 with Section A directed writing and Section B composition. Stimulus text
             is original. Model answers included for both sections.
           </p>
+          <p className="mt-3 max-w-3xl text-body-sm text-muted-foreground">
+            Set out as the paper for exams from 2027. On the November 2026 paper, Section A is the
+            directed writing task alone, worth 40 marks, with no 1(a).
+          </p>
           <div className="mt-6 flex flex-wrap gap-3 text-body-sm text-muted-foreground">
             <span className="inline-flex items-center gap-1.5 rounded-md border border-border/60 bg-muted/40 px-3 py-1.5">
               <Clock className="size-3.5" />2 hours
@@ -92,8 +96,11 @@ export default async function PracticePaper2Page() {
           <div>
             <h2 className="text-heading-md font-heading text-foreground">Instructions</h2>
             <ul className="mt-3 space-y-2 text-body-sm text-muted-foreground">
-              <li>• Answer Section A (1 task) and Section B (1 task).</li>
-              <li>• Spend about 1 hour on each section.</li>
+              <li>
+                • Answer both parts of Section A, Questions 1(a) and 1(b), and one task from Section
+                B.
+              </li>
+              <li>• Spend about 1 hour on each section: about 8 minutes of Section A on 1(a).</li>
               <li>• Plan before you write.</li>
               <li>• Proofread at the end.</li>
             </ul>
@@ -150,16 +157,27 @@ export default async function PracticePaper2Page() {
         <Card className="mt-4 border-primary/20">
           <CardHeader className="pb-3">
             <div className="flex items-start justify-between gap-3">
-              <CardTitle className="text-heading-sm font-heading">Task</CardTitle>
+              <CardTitle className="text-heading-sm font-heading">Question 1(a) and 1(b)</CardTitle>
               <Badge variant="secondary">40 marks</Badge>
             </div>
           </CardHeader>
           <CardContent className="space-y-3 text-body-sm text-muted-foreground">
+            {/* 31 October 2026: this was one 40-mark task, the 2024-2026 Section A, and
+                Section B below gave content and structure 24 and style and accuracy 16.
+                From 2027 Section A is 1(a), 5 marks, then 1(b), 35 (reading 10, writing
+                25), and the composition is 16 and 24 (src/data/mark-scheme-guides/
+                cambridge-0990-paper2.ts). Second reader: word counts are "about", as there. */}
             <p>
-              Imagine your school is considering introducing a phone ban. Write a{' '}
-              <strong className="text-foreground">speech</strong> to be delivered to the student
-              council, in which you present your view on the proposed ban and persuade them to agree
-              with you.
+              <strong className="text-foreground">1(a)</strong> What is the writer&apos;s attitude
+              to phones in schools? Explain the attitude in your own words, supporting your answer
+              with details from the text.
+              <span className="ms-2 italic text-body-xs">[5]</span>
+            </p>
+            <p>
+              <strong className="text-foreground">1(b)</strong> Imagine your school is considering
+              introducing a phone ban. Write a <strong className="text-foreground">speech</strong>{' '}
+              to be delivered to the student council, in which you present your view on the proposed
+              ban and persuade them to agree with you.
             </p>
             <p>You should:</p>
             <ul className="space-y-1 ps-5 list-disc">
@@ -168,7 +186,7 @@ export default async function PracticePaper2Page() {
               <li>speak in a persuasive but appropriate register.</li>
             </ul>
             <p>
-              Write between <strong className="text-foreground">250 and 350 words</strong>. Up to 15
+              Write about <strong className="text-foreground">250 to 350 words</strong>. Up to 10
               marks are available for reading and up to 25 for writing.
             </p>
           </CardContent>
@@ -296,8 +314,8 @@ export default async function PracticePaper2Page() {
               </p>
             </div>
             <p className="pt-2">
-              Write between <strong className="text-foreground">350 and 450 words</strong>. Up to 24
-              marks are available for content and structure, and up to 16 for style and accuracy.
+              Write about <strong className="text-foreground">350 to 450 words</strong>. Up to 16
+              marks are available for content and structure, and up to 24 for style and accuracy.
             </p>
           </CardContent>
         </Card>

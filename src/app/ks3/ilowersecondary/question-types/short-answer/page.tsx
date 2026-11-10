@@ -287,17 +287,17 @@ export default async function ShortAnswerPage() {
       <p className="lead">
         These are the {SHORT_RETRIEVAL.typicalMarks}- and 2-mark questions that begin
         &ldquo;Why&hellip;?&rdquo;, &ldquo;How does&hellip;?&rdquo; or &ldquo;What does X
-        mean&hellip;?&rdquo;. They look easy, and they are &mdash; if you say one precise thing and
-        stop. Most lost marks here are not lost to ignorance but to vagueness, padding and answering
-        a question that was never asked.
+        mean&hellip;?&rdquo;. They look easy, and they are - if you say one precise thing and stop.
+        Most lost marks here are not lost to ignorance but to vagueness, padding and answering a
+        question that was never asked.
       </p>
 
       <section className="my-10">
         <h2>What these questions assess</h2>
         <p>
-          Short retrieval items sit under <strong>{RAO1.code}</strong> &mdash;{' '}
+          Short retrieval items sit under <strong>{RAO1.code}</strong> -{' '}
           {RAO1.descriptor.toLowerCase()} Short inference items sit under{' '}
-          <strong>{RAO2.code}</strong> &mdash; {RAO2.descriptor.toLowerCase()} The first asks you to{' '}
+          <strong>{RAO2.code}</strong> - {RAO2.descriptor.toLowerCase()} The first asks you to{' '}
           <em>find</em> something the text states; the second asks you to <em>work out</em>{' '}
           something the text implies.
         </p>
@@ -391,9 +391,9 @@ export default async function ShortAnswerPage() {
           </table>
         </div>
         <p className="text-sm text-muted-foreground">
-          The jump from one mark to two is not &ldquo;write more&rdquo; &mdash; it is &ldquo;say a
-          second creditable thing&rdquo;. Padding a 1-mark answer never reaches the second mark; a
-          precise, developed sentence does.
+          The jump from one mark to two is not &ldquo;write more&rdquo; - it is &ldquo;say a second
+          creditable thing&rdquo;. Padding a 1-mark answer never reaches the second mark; a precise,
+          developed sentence does.
         </p>
       </section>
 
@@ -401,7 +401,7 @@ export default async function ShortAnswerPage() {
         <h2>Why &ldquo;do not accept vague references / lifts&rdquo;?</h2>
         <p>
           Mark schemes for these items repeatedly say <em>do not accept vague references</em> and{' '}
-          <em>do not credit unexplained lifts</em>. This is not the examiner being harsh &mdash; it
+          <em>do not credit unexplained lifts</em>. This is not the examiner being harsh - it
           follows from what the question assesses:
         </p>
         <ul className="not-prose my-4 space-y-2">
@@ -417,9 +417,9 @@ export default async function ShortAnswerPage() {
       <section className="my-10">
         <h2>Worked extracts</h2>
         <p>
-          Every extract below is an <strong>original text written for this page</strong> &mdash; no
-          past paper material is reproduced. For each, compare the weak answer with the credited
-          model answer and read the mark note, which is written in the style Pearson examiners use.
+          Every extract below is an <strong>original text written for this page</strong> - no past
+          paper material is reproduced. For each, compare the weak answer with the credited model
+          answer and read the mark note, which is written in the style Pearson examiners use.
         </p>
         <div className="not-prose my-6 space-y-8">
           {EXTRACTS.map((ex) => (
@@ -485,8 +485,8 @@ export default async function ShortAnswerPage() {
           Re-read your answer against the question word. Does it{' '}
           <em>finish the sentence the question started</em>? Is it specific enough that it could
           only be true of this text? Is it the right length for the marks? If yes to all three, move
-          on &mdash; the marks you save here are the marks you spend on the comparison and the
-          writing task.
+          on - the marks you save here are the marks you spend on the comparison and the writing
+          task.
         </p>
       </section>
 

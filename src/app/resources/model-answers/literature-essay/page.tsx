@@ -12,19 +12,21 @@ import { hasActiveSubscription } from '@/lib/course-access'
 // GCSE model answers are gated by the global subscription/trial flag (NOT the
 // separate IELTS entitlement). Resolved server-side; anonymous + Googlebot
 // fall through to `false` and see only the free teaser grade band.
-async function resolveHasAccess(): Promise<boolean> {
+async function resolveAccess(): Promise<{ hasAccess: boolean; signedIn: boolean }> {
   try {
     const supabase = createServerSupabaseClient()
     const {
       data: { user },
     } = await supabase.auth.getUser()
     if (user) {
-      return await hasActiveSubscription(supabase, user.id)
+      // `signedIn` lets the lock panel offer plans, not sign-up, to a signed-in
+      // reader without a plan (10 November 2026, see LockedContent).
+      return { hasAccess: await hasActiveSubscription(supabase, user.id), signedIn: true }
     }
   } catch {
     // Signed out / auth unavailable → no access.
   }
-  return false
+  return { hasAccess: false, signedIn: false }
 }
 
 /* ─── Metadata ───────────────────────────────────────────────── */
@@ -144,7 +146,7 @@ export default async function LiteratureEssayPage() {
     'study.skills.ma.lit.sec.criteria',
     'study.skills.common.examiner_commentary',
   ])
-  const hasAccess = await resolveHasAccess()
+  const { hasAccess, signedIn } = await resolveAccess()
   return (
     <>
       {/* Hero */}
@@ -218,7 +220,7 @@ export default async function LiteratureEssayPage() {
           {/* Main content */}
           <div className="space-y-16">
             {/* ─── MACBETH ─────────────────────────────────────── */}
-            <Section id="macbeth" title="Macbeth &mdash; Ambition">
+            <Section id="macbeth" title="Macbeth - Ambition">
               <div className="mb-6 rounded-xl border border-border bg-card p-6 shadow-md">
                 <p className="mb-2 text-xs font-bold uppercase tracking-wider text-primary">
                   GCSE Literature -- Extract + Essay
@@ -235,7 +237,7 @@ export default async function LiteratureEssayPage() {
               <GradeTabs defaultGrade={hasAccess ? 9 : 3}>
                 {{
                   9: !hasAccess ? (
-                    <LockedContent label="the Grade 5, 7 and 9 model essays" />
+                    <LockedContent signedIn={signedIn} label="the Grade 5, 7 and 9 model essays" />
                   ) : (
                     <>
                       <div className="mb-4 flex items-center gap-3">
@@ -252,7 +254,7 @@ export default async function LiteratureEssayPage() {
                           Through Macbeth&apos;s trajectory from &ldquo;valiant cousin&rdquo; to
                           &ldquo;dead butcher,&rdquo; Shakespeare dramatises the Jacobean anxiety
                           that unchecked ambition could destabilise the divinely ordained hierarchy
-                          &mdash;
+                          -
                           <Annotation note="Contextual integration from the outset. This is not a bolted-on context paragraph but woven into the argument.">
                             a fear acutely relevant to a king who had survived the Gunpowder Plot
                             just a year before the play&apos;s first performance
@@ -268,8 +270,8 @@ export default async function LiteratureEssayPage() {
                             equestrian metaphor in which ambition is figured as a rider who, in
                             attempting to mount the horse, falls on the other side
                           </Annotation>
-                          . The prefix &ldquo;o&apos;er&rdquo; emphasises excess &mdash; ambition
-                          does not simply leap but
+                          . The prefix &ldquo;o&apos;er&rdquo; emphasises excess - ambition does not
+                          simply leap but
                           <Annotation note="Precise analysis of a single word. This level of close reading is characteristic of top-band responses.">
                             over-leaps, transgressing the natural boundary of what is achievable or
                             permissible
@@ -316,7 +318,7 @@ export default async function LiteratureEssayPage() {
                   ),
 
                   7: !hasAccess ? (
-                    <LockedContent label="the Grade 5, 7 and 9 model essays" />
+                    <LockedContent signedIn={signedIn} label="the Grade 5, 7 and 9 model essays" />
                   ) : (
                     <>
                       <div className="mb-4 flex items-center gap-3">
@@ -379,7 +381,7 @@ export default async function LiteratureEssayPage() {
                   ),
 
                   5: !hasAccess ? (
-                    <LockedContent label="the Grade 5, 7 and 9 model essays" />
+                    <LockedContent signedIn={signedIn} label="the Grade 5, 7 and 9 model essays" />
                   ) : (
                     <>
                       <div className="mb-4 flex items-center gap-3">
@@ -499,10 +501,7 @@ export default async function LiteratureEssayPage() {
             </Section>
 
             {/* ─── A CHRISTMAS CAROL ──────────────────────────── */}
-            <Section
-              id="christmas-carol"
-              title="A Christmas Carol &mdash; Scrooge's Transformation"
-            >
+            <Section id="christmas-carol" title="A Christmas Carol - Scrooge's Transformation">
               <div className="mb-6 rounded-xl border border-border bg-card p-6 shadow-md">
                 <p className="mb-2 text-xs font-bold uppercase tracking-wider text-primary">
                   Question
@@ -571,7 +570,7 @@ export default async function LiteratureEssayPage() {
                   ),
 
                   9: !hasAccess ? (
-                    <LockedContent label="the Grade 9 model essay" />
+                    <LockedContent signedIn={signedIn} label="the Grade 9 model essay" />
                   ) : (
                     <>
                       <div className="mb-4 flex items-center gap-3">
@@ -583,16 +582,16 @@ export default async function LiteratureEssayPage() {
                             Dickens constructs Scrooge&apos;s transformation as a moral parable
                             designed to agitate the conscience of his middle-class readership.
                           </Annotation>{' '}
-                          The opening catalogue of participial adjectives &mdash; &ldquo;squeezing,
-                          wrenching, grasping, scraping, clutching&rdquo; &mdash;
+                          The opening catalogue of participial adjectives - &ldquo;squeezing,
+                          wrenching, grasping, scraping, clutching&rdquo; -
                           <Annotation note="Analyses the grammatical form (participles) and their effect, not just the content of the words.">
                             reduces Scrooge to a series of grasping actions, each present participle
                             suggesting continuous, habitual greed rather than a single instance of
                             meanness
                           </Annotation>
                           . The cumulative effect is almost comic in its excess, yet Dickens
-                          immediately undercuts this with &ldquo;covetous old sinner&rdquo; &mdash;
-                          a term that
+                          immediately undercuts this with &ldquo;covetous old sinner&rdquo; - a term
+                          that
                           <Annotation note="Links a single word to the Ten Commandments and Dickens's moral framework.">
                             invokes the Tenth Commandment and positions Scrooge&apos;s avarice as a
                             spiritual crime, not merely a social failing
@@ -606,8 +605,8 @@ export default async function LiteratureEssayPage() {
                             Scrooge does not change because he sees something new but because he is
                             forced to see what he has refused to see
                           </Annotation>{' '}
-                          &mdash; Tiny Tim&apos;s empty chair, his own neglected grave.
-                          Dickens&apos;s strategy is one of
+                          - Tiny Tim&apos;s empty chair, his own neglected grave. Dickens&apos;s
+                          strategy is one of
                           <Annotation note="Evaluative vocabulary: 'strategic discomfort' shows the student thinking about Dickens as a craftsman with a purpose.">
                             strategic discomfort: by making his protagonist witness the consequences
                             of indifference, he simultaneously confronts the reader
@@ -644,7 +643,7 @@ export default async function LiteratureEssayPage() {
             </Section>
 
             {/* ─── AN INSPECTOR CALLS ─────────────────────────── */}
-            <Section id="inspector-calls" title="An Inspector Calls &mdash; Responsibility">
+            <Section id="inspector-calls" title="An Inspector Calls - Responsibility">
               <div className="mb-6 rounded-xl border border-border bg-card p-6 shadow-md">
                 <p className="mb-2 text-xs font-bold uppercase tracking-wider text-primary">
                   GCSE Literature -- Essay Question
@@ -658,7 +657,7 @@ export default async function LiteratureEssayPage() {
               <GradeTabs defaultGrade={9} levels={[9]}>
                 {{
                   9: !hasAccess ? (
-                    <LockedContent label="the Grade 9 model essay" />
+                    <LockedContent signedIn={signedIn} label="the Grade 9 model essay" />
                   ) : (
                     <>
                       <div className="mb-4 flex items-center gap-3">
@@ -697,8 +696,8 @@ export default async function LiteratureEssayPage() {
                           .
                         </p>
                         <p>
-                          The final telephone call &mdash; &ldquo;a girl has just died&rdquo;
-                          &mdash; is Priestley&apos;s masterstroke.
+                          The final telephone call - &ldquo;a girl has just died&rdquo; - is
+                          Priestley&apos;s masterstroke.
                           <Annotation note="Analyses the ending as a structural and ideological choice.">
                             It shatters the Birlings&apos; relief and the audience&apos;s
                             complacency simultaneously, suggesting that responsibility is a
@@ -736,7 +735,7 @@ export default async function LiteratureEssayPage() {
             </Section>
 
             {/* ─── POETRY COMPARISON ──────────────────────────── */}
-            <Section id="poetry" title="Poetry Comparison &mdash; Power of Nature">
+            <Section id="poetry" title="Poetry Comparison - Power of Nature">
               <div className="mb-6 rounded-xl border border-border bg-card p-6 shadow-md">
                 <p className="mb-2 text-xs font-bold uppercase tracking-wider text-primary">
                   GCSE Literature -- Poetry Comparison
@@ -753,7 +752,7 @@ export default async function LiteratureEssayPage() {
               <GradeTabs defaultGrade={9} levels={[9]}>
                 {{
                   9: !hasAccess ? (
-                    <LockedContent label="the Grade 9 model essay" />
+                    <LockedContent signedIn={signedIn} label="the Grade 9 model essay" />
                   ) : (
                     <>
                       <div className="mb-4 flex items-center gap-3">
@@ -773,9 +772,9 @@ export default async function LiteratureEssayPage() {
                           Heaney opens with a deceptive sense of preparedness: &ldquo;We are
                           prepared: we build our houses squat.&rdquo;
                           <Annotation note="Analyses the colon as a grammatical choice - attention to punctuation is a grade 9 skill.">
-                            The colon after &ldquo;prepared&rdquo; implies a causal logic &mdash; we
-                            are prepared because we have built well &mdash; yet the poem
-                            systematically dismantles this confidence
+                            The colon after &ldquo;prepared&rdquo; implies a causal logic - we are
+                            prepared because we have built well - yet the poem systematically
+                            dismantles this confidence
                           </Annotation>
                           . The storm is personified as a military aggressor that
                           &ldquo;pummels&rdquo; and &ldquo;strafes,&rdquo; the latter

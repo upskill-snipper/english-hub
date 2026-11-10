@@ -455,6 +455,14 @@ const EDEXCEL_PAPERS: Paper[] = [
 // the student's choice, and gave the paper a "Section C: Unseen Poetry" it does
 // not have: the unseen poem is part (a) of Section A, compared with a poem from
 // the student's cluster. See src/lib/board/ocr-anthology.ts.
+//
+// LANGUAGE CORRECTED 31 October 2026 against the J351 guides in
+// src/data/mark-scheme-guides/ocr-lang-component01.ts and -component02.ts.
+// Both Section B rows said "Two writing tasks: one short and one extended",
+// and Component 02's reading was "one unseen 19th-century literary fiction
+// text". Each component sets ONE writing task, a choice of Question 5 or 6
+// for 40 marks; Component 02 has no 19th-century text (that is Component 01,
+// beside a 20th or 21st-century one), and its two texts are literary prose.
 
 const OCR_PAPERS: Paper[] = [
   {
@@ -546,7 +554,8 @@ const OCR_PAPERS: Paper[] = [
     sections: [
       {
         title: 'Section A: Reading',
-        description: 'Questions on unseen non-fiction and literary non-fiction texts.',
+        description:
+          'Four questions on two unseen non-fiction texts, one from the 19th century and one from the 20th or 21st.',
         links: [
           { label: 'Reading Skills Guide', href: '/revision/language/reading', type: 'technique' },
           {
@@ -559,7 +568,8 @@ const OCR_PAPERS: Paper[] = [
       },
       {
         title: 'Section B: Writing',
-        description: 'Two writing tasks: one short and one extended piece of non-fiction writing.',
+        description:
+          'One piece of non-fiction writing, such as a speech, letter or article, from a choice of two tasks.',
         links: [
           { label: 'Writing Skills Guide', href: '/revision/language/writing', type: 'technique' },
           { label: 'SPAG Guide', href: '/revision/language/spag', type: 'technique' },
@@ -578,7 +588,8 @@ const OCR_PAPERS: Paper[] = [
     sections: [
       {
         title: 'Section A: Reading',
-        description: 'Questions on one unseen 19th-century literary fiction text.',
+        description:
+          'Four questions on two unseen literary prose texts from the 20th or 21st century, at least one of them fiction.',
         links: [
           { label: 'Reading Skills Guide', href: '/revision/language/reading', type: 'technique' },
           {
@@ -591,7 +602,7 @@ const OCR_PAPERS: Paper[] = [
       },
       {
         title: 'Section B: Writing',
-        description: 'Two writing tasks: one short and one extended piece of fiction writing.',
+        description: 'One piece of creative writing, from a choice of two tasks.',
         links: [
           {
             label: 'Creative Writing Guide',

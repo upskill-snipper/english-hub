@@ -126,7 +126,105 @@
  * compares every sentence with the Gutenberg text, so a passage here that
  * drifted from its edition would be reported.
  *
- * NOT CHANGED: marks, timings and Section B.
+ * NOT CHANGED on 27 September 2026: marks, timings and Section B.
+ *
+ * REWORDED 31 OCTOBER 2026, to the questions AQA has set since summer 2026.
+ * The reference is the guide, src/data/mark-scheme-guides/aqa-lang-paper2.ts,
+ * checked against AQA's 8700/2 sample paper and mark scheme for June 2026.
+ * Marks, totals, sections, sources and each question's number and type are
+ * unchanged, and src/__tests__/a-language-mock-is-the-boards-paper.test.ts
+ * still holds every paper to the marker's scheme. What was wrong, and what
+ * changed:
+ *   - Question 2 asked for "a summary of the similarities and differences".
+ *     Since 2026 AQA asks what the student can infer about the differences
+ *     the question names, and about differences only. Each now names two
+ *     things, one in each source: the two groups of prisoners (Exam 11), the
+ *     press now and in Wilde's day (12), the people who produce food (13),
+ *     the young footballers and the two prize-fighters (14) and the two kinds
+ *     of art (15). Its answers and mark scheme were rewritten to infer
+ *     differences from both sources.
+ *   - Question 3 asked about the whole of Source A. AQA's names lines of one
+ *     source, and its mark scheme caps an answer that strays outside them.
+ *     Each now names the second and third paragraphs, by their first words,
+ *     since the page prints no line numbers; that also keeps it clear of the
+ *     first paragraph, which Question 1 uses. Its answers were rewritten to
+ *     quote those paragraphs only, and checked by script against them.
+ *   - The wording was largely AQA's own rubric: "You need to refer to Source
+ *     A and Source B for this question", "In your answer, you could:", "in
+ *     which you argue your point of view on this statement" and, in Section
+ *     B, "You are advised to spend about 45 minutes on this section". Every
+ *     question and section note is now in this site's words, with AQA's
+ *     advice on time.
+ *   - Questions 2 and 3 suggested 10 and 15 minutes; AQA's Exam Timing Ideas
+ *     give 8 and 12.
+ *   - The mark schemes were the same five generic lines on every paper, and
+ *     Question 2's credited similarities. Each now says what earns marks in
+ *     that question, gives the guide's levels in plain words and states
+ *     AQA's caps: one source only scores at most 3 on Question 2 and 6 on
+ *     Question 4; Question 3 outside the named paragraphs goes to the bottom
+ *     of its level; a Question 5 that misses the statement keeps at most 12
+ *     of the 24 content marks.
+ *   - Question 1: every statement was checked against its paragraph. Exam
+ *     13's B ("Supermarkets deliberately maintain this disconnection") was
+ *     looser than the paragraph, and Exam 14's A ("compares professional
+ *     sport to capitalism") and H ("Billionaire oligarchs are involved in
+ *     club ownership", when the clubs are only "backed by" them) could be
+ *     read as not stated. Each is reworded to what the paragraph says. The
+ *     keys are unchanged, and each still names exactly four true statements.
+ *   - Question 4: the strongest answer, filed under Grade 6-7, is now Grade
+ *     8-9. Claims corrected: Dickens "lets the reader judge" (he judges the
+ *     boys openly); both writers "use comparisons" (Source A's dying
+ *     democracy is not one); both "measure the value of farm work by how
+ *     much it produces and how few people produce it" (Source A does not);
+ *     both "disagree with people who think art is unimportant" (Ruskin
+ *     answers a different criticism); "accommodation" was "bitterly" polite
+ *     (it is ironic); Cobbett's last sentence was "a curse"; and Hickman,
+ *     still fighting, was "the beaten man".
+ *   - Question 5's three model answers described a good answer without
+ *     giving one. Each paper now has one written out, under Grade 8-9, and
+ *     none uses a figure its sources do not give. Exam 15's statement lost a
+ *     dash, and the dashes in the site's own prose went with the old answers.
+ *
+ * CHECKED 31 OCTOBER 2026 by a second reader, against the guide and each
+ * source as printed. What was wrong, and what changed:
+ *   - Question 1 keys: Exams 14 and 15 both had A, C, E and H, and across the
+ *     five papers A, C, E and H were each true four times and D and G never.
+ *     Exam 14's statements are reordered (key now B, D, F and G) and Exam
+ *     15's put in the paragraph's order (now A, C, D and G); no two keys
+ *     match and every letter is true on two or three papers. Their mark
+ *     schemes and model answers follow. The statements themselves are as
+ *     they were.
+ *   - Question 1 mark schemes: the only run of four letters was the false
+ *     list ("A, D, F and G are false"), which reads as the key at a glance;
+ *     each now opens with the true letters.
+ *   - Question 1 quotations (Exams 12, 13, 15): a full stop inside the
+ *     quotation marks where the source's sentence goes on ("Journalism is
+ *     dying."); now outside.
+ *   - Exam 12 Question 2: Source A's journalists "report on" council
+ *     meetings that the source says now have no reporter (now "used to");
+ *     Wilde's press watched "ordinary people", which his passage does not
+ *     say (now private lives).
+ *   - Exam 13 Question 2: the farmers "own their farms", which the source
+ *     does not say (now "have property of their own").
+ *   - Exam 13 Question 3: "the single verb" wept, in a sentence of several
+ *     verbs (now "plain"); "the short sentences that follow" one objection,
+ *     where one sentence follows (now quoted); the antithesis "ends on"
+ *     existential, when its last word is "one" (answer and mark scheme).
+ *   - Exam 14 Question 3: the list "ends on" shattered, which is in its last
+ *     item (reworded); "as it almost certainly will" made failure sound
+ *     "certain" (now "all but certain"); "the clubs" hide the exploitation,
+ *     where the writer says "what we have built" (now the exploitation is
+ *     hidden).
+ *   - Exam 14 Question 4: the writers held "opposite views on competition",
+ *     and competition damaged Source A's boys, when Source A says "I am not
+ *     against competition" and that what we have built "is not
+ *     competition"; the answers and the mark scheme now compare the sport
+ *     each describes. "The fallen Hickman" was compared to Dante's figures;
+ *     the passage gives his aspect "just before he fell" (now "bloodied").
+ *   - Exam 15 Question 3: "an optional extra" showed that schools treat art
+ *     as unimportant; the source says the curriculum does.
+ *   - Exam 15 Question 4: Ruskin's "law of nature" was the pleasure we take
+ *     "in useful things"; it is our pleasure in making a useful thing well.
  */
 import type { MockExamPaper } from './types'
 
@@ -210,6 +308,50 @@ Much that I have hitherto tried to teach has been disputed on the ground that I 
 const EXAM15_SOURCE_B_REF =
   'John Ruskin, Lectures on Art, delivered before the University of Oxford in Hilary Term, 1870: Lecture IV, "The Relation of Art to Use", sections 97 and 98 (Project Gutenberg #19164). Ruskin was then the first Slade Professor of Fine Art at Oxford.'
 
+// ─── Mark-scheme levels, shared by the five papers ──────────────────────────
+// In plain words, from the guide (src/data/mark-scheme-guides/aqa-lang-paper2.ts),
+// which follows AQA's 8700/2 sample mark scheme for June 2026.
+
+/** Question 2, inference and synthesis (AO1): eight marks on four levels. */
+const Q2_LEVELS = [
+  'Level 4, 7-8 marks: sharp, thoughtful inferences, with precise details from both sources woven together to bring out the differences.',
+  'Level 3, 5-6 marks: sound inferences from both sources, linking well-chosen details from each to show the differences.',
+  'Level 2, 3-4 marks: some attempt to work out what details suggest, with some useful references and some differences noted.',
+  'Level 1, 1-2 marks: retells what the sources say rather than working anything out, with a simple difference and a detail or two.',
+]
+
+/** Question 3, language (AO2): twelve marks on four levels. */
+const Q3_LEVELS = [
+  "Level 4, 10-12 marks: looks beneath the surface, analysing how the writer's choices work together, with sharply chosen quotations and confident, precise subject terms.",
+  'Level 3, 7-9 marks: says plainly what effect the words of each quotation have on the reader and why, with several well-chosen quotations and correct terms.',
+  'Level 2, 4-6 marks: tries to say what some of the language does, with a few suitable quotations and some terms.',
+  'Level 1, 1-3 marks: says something basic about a word or two, or names a technique without saying what it does.',
+]
+
+/** Question 4, comparison (AO3): sixteen marks on four levels. */
+const Q4_LEVELS = [
+  "Level 4, 13-16 marks: a thoughtful, sustained comparison, analysing how each writer's methods shape their view, with well-chosen detail from both sources.",
+  'Level 3, 9-12 marks: compares the views directly and well, explaining how each writer conveys them, with relevant detail from both sources.',
+  "Level 2, 5-8 marks: tries to compare the writers' views, with some comment on their methods and some useful detail.",
+  "Level 1, 1-4 marks: makes a basic link between the writers' views and spots a method or two, with simple references.",
+]
+
+/** Question 5, content and organisation (AO5): twenty-four marks on four levels. */
+const Q5_AO5_LEVELS = [
+  'Level 4, 19-24 marks: argues with real force and confidence, pitched exactly for the audience; ambitious, exact vocabulary and a carefully planned structure carry the reader through a developed argument.',
+  'Level 3, 13-18 marks: argues clearly throughout, in a tone that suits the form and audience; vocabulary and persuasive methods are chosen for effect, and well-linked paragraphs build the case.',
+  'Level 2, 7-12 marks: puts a view across in places, with some attempt at a suitable tone and form and some deliberate word choices; paragraphs and linking phrases begin to organise the argument.',
+  'Level 1, 1-6 marks: states a view simply, with little sense of the audience; ideas are few and loosely joined, and paragraphs, if used, do not really organise the argument.',
+]
+
+/** Question 5, technical accuracy (AO6): sixteen marks on four levels. */
+const Q5_AO6_LEVELS = [
+  'Level 4, 13-16 marks: every sentence starts and ends in the right place and every kind of punctuation is used with skill; even adventurous words are spelt right, and long sentences stay clear and correct.',
+  'Level 3, 9-12 marks: sentences nearly always start and end in the right place and most punctuation is used well; most words are spelt right, hard ones included, and sentence types are varied on purpose.',
+  'Level 2, 5-8 marks: sentences usually start and end in the right place and several kinds of punctuation are tried; some harder words are spelt correctly, with some variety in sentences and words.',
+  'Level 1, 1-4 marks: a few sentences start and end in the right place and some punctuation is used on purpose; simple words are spelt correctly, but sentences and vocabulary are mostly simple.',
+]
+
 // ─── Mock Exam Papers ────────────────────────────────────────────────────────
 
 export const aqaP2C: MockExamPaper[] = [
@@ -229,7 +371,7 @@ export const aqaP2C: MockExamPaper[] = [
       {
         id: 'aqa-p2-11-reading',
         title: 'Section A: Reading',
-        description: `Read Source A and Source B carefully. Then answer all the questions in this section.\n\nSource A: ${EXAM11_SOURCE_A_REF}\nSource B: ${EXAM11_SOURCE_B_REF}`,
+        description: `Spend about 15 minutes reading both sources and all five questions before you start writing. Then allow about 45 minutes for Questions 1 to 4, which must all be answered.\n\nSource A: ${EXAM11_SOURCE_A_REF}\nSource B: ${EXAM11_SOURCE_B_REF}`,
         totalMarks: 40,
         suggestedTimeMinutes: 60,
         questions: [
@@ -237,7 +379,7 @@ export const aqaP2C: MockExamPaper[] = [
             id: 'aqa-p2-11-q1',
             questionNumber: 1,
             questionText:
-              'Read again Source A, the first paragraph.\n\nChoose four statements below which are TRUE.\n\nA) The writer visited prisons in Scotland.\nB) The writer spoke to inmates and guards.\nC) Cells designed for one person sometimes house two or three.\nD) Prisoners eat their meals at a dining table.\nE) A plastic curtain separates the toilet from the bed.\nF) The writer spent three weeks visiting prisons.\nG) The writer believes the system is designed to rehabilitate.\nH) Prisoners mark off days on walls.',
+              'Look again at the first paragraph of Source A, from "There is something profoundly wrong" to "the only currency they possess".\n\nWhich four of the statements below are true, according to this paragraph? Choose four letters, and no more.\n\nA) The writer visited prisons in Scotland.\nB) The writer spoke to inmates and guards.\nC) Cells designed for one person sometimes house two or three.\nD) Prisoners eat their meals at a dining table.\nE) A plastic curtain separates the toilet from the bed.\nF) The writer spent three weeks visiting prisons.\nG) The writer believes the system is designed to rehabilitate.\nH) Prisoners mark off days on walls.',
             marks: 4,
             suggestedTimeMinutes: 5,
             questionType: 'multiple-choice',
@@ -245,69 +387,87 @@ export const aqaP2C: MockExamPaper[] = [
             extractSource: `Source A: ${EXAM11_SOURCE_A_REF} | Source B: ${EXAM11_SOURCE_B_REF}`,
             modelAnswers: {
               'Grade 4-5':
-                'B, C, E, H - B: "speaking to inmates, guards, and governors." C: "cells built for one but housing two or three." E: "a plastic curtain separating the toilet from the bed." H: "marking off days on walls."',
+                'B, C, E and H.\nB: the writer was "speaking to inmates, guards, and governors".\nC: the cells were "built for one but housing two or three".\nE: there is "a plastic curtain separating the toilet from the bed".\nH: prisoners are "marking off days on walls".',
             },
             markScheme: [
-              '1 mark for each correct answer',
-              'Maximum 4 marks',
-              'No marks for incorrect selections',
+              'True: B, C, E and H.',
+              'B is true: the writer was "speaking to inmates, guards, and governors".',
+              'C is true: the cells were "built for one but housing two or three".',
+              'E is true: there is "a plastic curtain separating the toilet from the bed".',
+              'H is true: prisoners are "marking off days on walls".',
+              'A, D, F and G are false: the prisons were "across England and Wales"; meals are eaten "on their laps because there is no table"; the visits took "three months"; and the writer found "not a system designed to rehabilitate".',
+              'One mark for each true statement chosen, 4 marks in all. A false statement earns no mark.',
             ],
           },
           {
             id: 'aqa-p2-11-q2',
             questionNumber: 2,
             questionText:
-              'You need to refer to Source A and Source B for this question.\n\nUse details from both sources. Write a summary of the similarities and differences in how the two writers describe the conditions prisoners experience.',
+              'Use both sources to answer this question.\n\nThink about the prisoners in Source A and the prisoners Dickens sees in Newgate in Source B. What can you infer from the two sources about how these two groups differ?\n\nSupport each inference with details from both sources.',
             marks: 8,
-            suggestedTimeMinutes: 10,
+            suggestedTimeMinutes: 8,
             questionType: 'summary',
             extract: `Source A:\n${EXAM11_SOURCE_A}\n\nSource B:\n${EXAM11_SOURCE_B}`,
             extractSource: `Source A: ${EXAM11_SOURCE_A_REF} | Source B: ${EXAM11_SOURCE_B_REF}`,
             modelAnswers: {
               'Grade 4-5':
-                'Both sources describe prisons that hold people without giving them anything useful to do. In Source A, prisoners are "crammed" into cells "built for one but housing two or three", with only "a plastic curtain" between the toilet and the bed, and they pass the time "marking off days on walls". In Source B, Dickens visits Newgate and finds the men "all idle and listless" because of "the utter absence of any employment": they sit by the fire, wander about or lean against the wall. Both writers also show that prison does little to make people better. Source A says the system gave prisoners time and "nothing else", while Dickens meets boys under fourteen, held for trial for pocket-picking, who show no "shame or contrition". A difference is that Source A describes crowded cells, while Dickens describes a shared ward where about twenty men sit "huddled together" round one fire. Another is that Source A describes prisoners who achieved something, such as "a woman who had written a novel", while in every ward Dickens entered the men were idle, apart from the odd man reading "an old newspaper".',
-              'Grade 6-7':
-                'Both writers describe prisons that hold people without giving them anything to do, although the conditions they describe are different. The writer of Source A describes overcrowding: cells "built for one but housing two or three", a "plastic curtain" for privacy and meals eaten "on their laps because there is no table". Dickens, visiting Newgate in the 1830s, describes shared wards instead, where about twenty men sit "huddled together on two opposite forms" by the fire, and he notes the "dark cells" kept for "refractory prisoners". In both prisons the worst condition is empty time. Source A\'s prisoners mark off the days because "time has become the only currency they possess"; Dickens is struck by "the utter absence of any employment", and the men he watches are "all idle and listless", "vacantly swinging their bodies to and fro". The writers differ most in the prisoners they notice. Source A dwells on people who used their time well, a man "who had taught himself to read in prison" and "a woman who had written a novel". Dickens\'s most memorable prisoners are fourteen boys "under fourteen years of age", held for trial on charges of pocket-picking, "some with shoes, some without". He sees no "shame or contrition" in them, yet he does not simply blame them: they are "hopeless creatures of neglect". Both writers suggest that prison wastes the people it holds, but Source A sees wasted potential where Dickens sees children who already seem lost.',
+                'The prisoners in Source A are men and women, but many of the prisoners in Source B are boys "under fourteen years of age". This suggests that in Dickens\'s time even young children were held in prison. The prisoners in Source A are "crammed into cells built for one", so they have very little space, while in Newgate a ward of perhaps twenty men sits together "by the fireside". Some prisoners in Source A have worked hard, like the man who "taught himself to read in prison", which shows that they want to improve themselves. The men in Source B are "all idle and listless", which suggests that they are bored and have given up. The boys in Source B also seem pleased to be there and show no "shame or contrition", whereas the prisoners in Source A seem unhappy, "marking off days on walls".',
+              'Grade 8-9':
+                'The prisoners in Source A are adults serving sentences, while many of those Dickens sees are children: boys "under fourteen years of age" who have been "committed for trial" and are waiting to be tried. This suggests that Newgate held children who had not yet been found guilty in the same prison as grown men.\n\nThe two groups also feel their imprisonment differently. Source A\'s prisoners are "marking off days on walls", which suggests people counting down to their release because time is all they have left. Dickens\'s boys show no wish to leave. They are "quite gratified at being thought worth the trouble of looking at", which implies that they are not used to being noticed, and each seems "as pleased and important" as if getting there were an achievement. For them, Newgate seems to bring a kind of status.\n\nThe biggest difference is in what they do with their time. Some of Source A\'s prisoners have used it to change themselves: one "taught himself to read in prison" and another "gained three A-levels", even though the system gave them "no support". This suggests ambition and hope that survive without help. In Newgate there is "the utter absence of any employment", and the men are "all idle and listless", "vacantly swinging their bodies to and fro", with only the odd man reading "an old newspaper". With nothing to do, they seem to have given up, and Dickens sees nothing ahead of the boys but "the gallows and the hulks".',
             },
-            markScheme: [
-              'Must reference both sources',
-              'Identifies clear differences and/or similarities',
-              'Uses evidence from both texts',
-              'Synthesises rather than alternates between texts',
-              'Infers beyond surface-level details',
-            ],
+            markScheme: {
+              'What to reward': [
+                'Inferences, not just retelling: what the details suggest about how the two groups of prisoners differ, with details from both sources.',
+                'Who they are: adults serving sentences ("Men and women", "a young father") against boys "under fourteen years of age" waiting for trial, beside yards full of men.',
+                'How they feel about prison: counting the days ("marking off days on walls") against boys "quite gratified at being thought worth the trouble of looking at", with no "shame or contrition".',
+                'What they do with their time: some in Source A achieve something with "no support"; the men in Newgate, with "the utter absence of any employment", are "all idle and listless".',
+                'How they live: cells "built for one but housing two or three", with "a plastic curtain" for privacy, against a ward where the men sit together "by the fireside".',
+                'Credit any other sound inference about a difference between the two groups, backed from both sources.',
+              ],
+              'Levels (8 marks)': Q2_LEVELS,
+              Limits: [
+                'An answer that uses one source only scores 3 marks at most.',
+                'Level 3 and above need both sources and the difference the question names, between the two groups of prisoners.',
+                "Marks are for what is inferred. Comment on the writers' language belongs to Question 3 and is not rewarded here.",
+              ],
+            },
           },
           {
             id: 'aqa-p2-11-q3',
             questionNumber: 3,
             questionText:
-              'You now need to refer only to Source A.\n\nHow does the writer use language to persuade the reader that the prison system is failing?',
+              'Look again at the second and third paragraphs of Source A, from "The numbers tell their own story" to the end.\n\nIn these two paragraphs, how does the writer\'s language persuade the reader that the prison system is failing?\n\nQuote short phrases from these paragraphs only, and explain the effect of the words, images and kinds of sentence the writer chooses. Use subject terms where they help.',
             marks: 12,
-            suggestedTimeMinutes: 15,
+            suggestedTimeMinutes: 12,
             questionType: 'analysis',
             extract: `Source A:\n${EXAM11_SOURCE_A}`,
             extractSource: EXAM11_SOURCE_A_REF,
             modelAnswers: {
               'Grade 4-5':
-                'The writer uses the metaphor "warehouse" to describe prisons, which suggests prisoners are treated like objects rather than people. Statistics like "more than four in ten adults" reoffending and "more than fifty thousand pounds per prisoner" are used to shock the reader and show the system is wasting money. The comparison to a hospital is effective because it makes us see how unacceptable the failure rate is. The listing of achievements - "taught himself to read," "written a novel," "gained three A-levels" - shows that prisoners can change but the system does not help them.',
-              'Grade 6-7':
-                'The writer constructs the argument through a carefully sequenced rhetorical strategy that moves from visceral description to statistical proof to moral appeal. The first paragraph\'s central metaphor - "warehouse" - is devastating in its precision: it reduces rehabilitation to mere storage, stripping the system of any pretence to purpose. The first paragraph\'s accumulation of degrading details ("plastic curtain," "eating meals on their laps," "marking off days on walls") creates a sensory catalogue of indignity, each image more diminishing than the last. The second paragraph shifts register to data-driven argument: "more than four in ten", "about two in three" and "more than fifty thousand pounds" are deployed as evidence of systematic failure. The hospital analogy is rhetorically powerful because it reframes prison failure in terms the reader instinctively recognises as unacceptable - we would not tolerate four in ten patients coming back with the same condition, so why do we accept it in criminal justice? The final paragraph performs the most sophisticated persuasive move: the tricolon of individual achievement ("taught himself to read... written a novel... gained three A-levels") humanises the statistics, while the devastating anaphoric negation - "no support, no pathway, no reason to believe" - systematically strips away any comfort the reader might take from these success stories.',
+                'The writer starts the second paragraph with "The numbers tell their own story", which makes the statistics sound like proof. Figures such as "more than four in ten" show how often prison fails. The comparison with a hospital makes the reader see that we would never accept this failure anywhere else, because "we would call it a scandal". The word "scandal" is emotive and contrasts with "inevitable", which suggests that we have simply given up on prisons. In the third paragraph the writer gives three examples of prisoners who achieved something, such as "a woman who had written a novel". This makes the reader feel sympathy, because they are real people. The repetition of "no" in "no support, no pathway, no reason to believe" emphasises how little help the prisoners are given.',
               'Grade 8-9':
-                'The writer orchestrates a tripartite rhetorical architecture - sensory, analytical, and moral - that systematically dismantles the reader\'s capacity for complacency. The opening paragraph\'s controlling metaphor, "warehouse," performs double duty: it dehumanises the system\'s intent while literalising its practice, since the subsequent description of cells "built for one but housing two or three" is precisely how one describes warehousing - maximising capacity with no regard for the contents. The verb "crammed" extends this semantic field, its connotations of compression and force denying prisoners any agency. The paragraph\'s most subtle technique is the shift to present participles - "eating," "marking" - which grammatically enact the endless, unchanging present of incarceration. The second paragraph executes a register shift from sensory to statistical, but the statistics are not merely presented; they are framed through analogy. The hospital comparison is a masterclass in audience manipulation: by mapping prison onto healthcare, the writer exploits the reader\'s existing moral framework. The word "scandal" is carefully positioned - its association with public outrage makes the contrasting "inevitable" (applied to prison failure) sound like moral surrender. The final paragraph achieves its power through juxtaposition: the individual achievements represent human flourishing against systemic indifference, while the anaphoric "no support, no pathway, no reason to believe" uses syntactic repetition to perform the system\'s emptiness. The final clause - "what they had achieved mattered to anyone beyond those walls" - positions the reader as implicitly complicit: if this essay has made us care, we are already among those who should have been there sooner.',
+                'The writer persuades by making the failure measurable and then making it personal.\n\nThe second paragraph opens with a short, confident sentence, "The numbers tell their own story", which personifies the figures as witnesses whose evidence needs no comment. The statistics are given in words rather than percentages, "more than four in ten" and "about two in three", which makes them easier to picture as people, and the verb "rises" shows the failure growing worse for shorter sentences. The writer then sets cost against result: "We are spending" over fifty thousand pounds a prisoner every year "to achieve a system that fails". The inclusive "We" makes every taxpayer a partner in the waste, and "achieve" is ironic, since what is achieved is failure. The hospital analogy turns reoffending into an illness that prison is supposed to cure, and the paragraph ends on two sentences built the same way, so that "we would call it a scandal" is answered by "we call it inevitable". The antithesis of "scandal" and "inevitable" exposes a double standard and suggests that the reader has simply accepted failure.\n\nThe third paragraph moves from numbers to people. The structure "not the overcrowding or the violence ... but the sheer waste of human potential" sets two evils aside to make room for a worse one, even though the aside admits that both are "endemic". The word is often used of diseases, so it continues the hospital image: the prisons seem sick, and their worst symptom is waste. Three examples follow, a man who "taught himself to read", "a woman who had written a novel" and "a young father", and they turn the statistics back into people. The repeated "the system had given them" sets "time" against "nothing else", and the list after the colon, "no support, no pathway, no reason to believe", drives home the absence with one negative after another. The metaphor of a "pathway" suggests a route out of prison that does not exist, and the final phrase, "beyond those walls", leaves the reader looking at the walls that shut these achievements in.',
             },
-            markScheme: [
-              'Analyses persuasive language techniques in detail',
-              'Comments on the effect of specific words and phrases',
-              'Considers how language positions the reader',
-              'Uses subject terminology accurately and precisely',
-              'Top band: perceptive, detailed, conceptualised analysis',
-            ],
+            markScheme: {
+              'What to reward': [
+                'How the figures are made to persuade: the opening "The numbers tell their own story", fractions in words ("more than four in ten", "about two in three") and the cost set against the failure.',
+                'The hospital analogy, and the antithesis of "scandal" and "inevitable", which exposes a double standard.',
+                'The move from numbers to people: "the sheer waste of human potential", the word "endemic" and the three prisoners who achieved something.',
+                'The repeated "the system had given them", the list "no support, no pathway, no reason to believe" and the closing image of "those walls".',
+                'Subject terms (analogy, antithesis, list of three, repetition, inclusive pronoun) earn credit when the effect is explained, not for being named.',
+              ],
+              'Levels (12 marks)': Q3_LEVELS,
+              Limits: [
+                'Only the second and third paragraphs of Source A count. Writing about the first paragraph or about Source B places the answer at the bottom of the level it would otherwise reach.',
+                'Level 3 and above need the focus of the question: how the language shows the prison system failing.',
+              ],
+            },
           },
           {
             id: 'aqa-p2-11-q4',
             questionNumber: 4,
             questionText:
-              'For this question, you need to refer to the whole of Source A, together with the whole of Source B.\n\nCompare how the two writers convey their different attitudes to the prison system and its purpose.\n\nIn your answer, you could:\n- compare their different attitudes\n- compare the methods they use to convey their attitudes\n- support your response with references to both texts.',
+              "Answer this question using both sources, from beginning to end.\n\nCompare the two writers' feelings and perspectives on prisons and the people held in them. Explain how each writer gets them across, through choices such as tone, language and structure, and refer closely to both sources.",
             marks: 16,
             suggestedTimeMinutes: 20,
             questionType: 'comparison',
@@ -315,17 +475,23 @@ export const aqaP2C: MockExamPaper[] = [
             extractSource: `Source A: ${EXAM11_SOURCE_A_REF} | Source B: ${EXAM11_SOURCE_B_REF}`,
             modelAnswers: {
               'Grade 4-5':
-                'Both writers criticise prisons, but in different ways. Source A attacks the whole system, saying it is "designed to warehouse" people rather than to rehabilitate them, and uses statistics and a comparison with a hospital to show that prisons fail. Dickens, in Source B, does not use statistics. He describes what he sees on a visit to Newgate and lets the reader judge: men who are "idle and listless" because there is no work for them, and boys who show no "shame or contrition". Both writers suggest that prison does nothing to make people better. Source A says the system gave prisoners time and "nothing else", and Dickens shows men with nothing to do. Their attitudes to the prisoners are different. Source A is sympathetic and describes prisoners who achieved something, like the man who "taught himself to read". Dickens is much harsher: he says there was "not one redeeming feature" among the boys. However, he ends his description of them by calling them "hopeless creatures of neglect", which suggests that he also blames the people who should have looked after them.',
-              'Grade 6-7':
-                'Both writers judge a prison by what it does with the people it holds, and both find that it does almost nothing, but their attitudes to the prisoners themselves are very different. The writer of Source A argues openly. The prison system is "a system designed to warehouse", and the case is built from visits, statistics and an analogy: if a hospital failed its patients like this, "we would call it a scandal". Dickens argues by showing. He writes as a visitor being shown round, and his criticism lies in what he chooses to notice: "dark cells for the accommodation of refractory prisoners", where "accommodation" sounds bitterly polite, and wards marked by "the utter absence of any employment". His long sentence listing the men by the fire, from "a boy in livery" to "a miserable being of distressed appearance", ends on what they all share: they are "all idle and listless". Like Source A\'s warehouse, Newgate stores people and gives them nothing to do. The writers differ in how they see the prisoners. Source A humanises them through individuals who did "something extraordinary" with their time, and blames the system that gave them "nothing else". Dickens\'s first response to the boys is disgust: "fourteen such terrible little faces we never beheld", with "not one redeeming feature among them" and nothing ahead of them but "the gallows and the hulks". His irony mocks their pride, as if each boy had done "something excessively meritorious in getting there at all". Yet his last sentence about them shifts the blame: he has never seen "fourteen such hopeless creatures of neglect". Neglect implies someone who should have cared for them and did not. Both writers therefore end up looking beyond the prisoners: Source A to whether their achievements matter to anyone "beyond those walls", Dickens to the neglect that brought children to Newgate.',
+                'Both writers criticise prisons, but in different ways. Source A attacks the whole system, saying it is "designed to warehouse" people rather than to rehabilitate them, and uses statistics and a comparison with a hospital to show that prisons fail. Dickens, in Source B, does not use statistics. He describes what he sees on a visit to Newgate: men who are "idle and listless" because there is no work for them, and boys who show no "shame or contrition". Both writers suggest that prison does nothing to make people better. Source A says the system gave prisoners time and "nothing else", and Dickens shows men with nothing to do. Their attitudes to the prisoners are different. Source A is sympathetic and describes prisoners who achieved something, like the man who "taught himself to read". Dickens is much harsher: he says there was "not one redeeming feature" among the boys. However, he ends his description of them by calling them "hopeless creatures of neglect", which suggests that he also blames the people who should have looked after them.',
+              'Grade 8-9':
+                'Both writers judge a prison by what it does with the people it holds, and both find that it does almost nothing, but their attitudes to the prisoners themselves are very different. The writer of Source A argues openly. The prison system is "a system designed to warehouse", and the case is built from visits, statistics and an analogy: if a hospital failed its patients like this, "we would call it a scandal". Dickens argues by showing. He writes as a visitor being shown round, and his criticism lies in what he chooses to notice: "dark cells for the accommodation of refractory prisoners", where "accommodation" is ironically polite, and wards marked by "the utter absence of any employment". His long sentence listing the men by the fire, from "a boy in livery" to "a miserable being of distressed appearance", ends on what they all share: they are "all idle and listless". Like Source A\'s warehouse, Newgate stores people and gives them nothing to do. The writers differ in how they see the prisoners. Source A humanises them through individuals who did "something extraordinary" with their time, and blames the system that gave them "nothing else". Dickens\'s first response to the boys is disgust: "fourteen such terrible little faces we never beheld", with "not one redeeming feature among them" and nothing ahead of them but "the gallows and the hulks". His irony mocks their pride, as if each boy had done "something excessively meritorious in getting there at all". Yet his last sentence about them shifts the blame: he has never seen "fourteen such hopeless creatures of neglect". Neglect implies someone who should have cared for them and did not. Both writers therefore end up looking beyond the prisoners: Source A to whether their achievements matter to anyone "beyond those walls", Dickens to the neglect that brought children to Newgate.',
             },
-            markScheme: [
-              'Compares attitudes from both sources throughout',
-              'Analyses methods used by both writers',
-              'Uses evidence from both texts',
-              'Shows clear understanding of different perspectives',
-              'Top band: perceptive, detailed comparison with sustained critical voice',
-            ],
+            markScheme: {
+              'What to reward': [
+                'A comparison of perspectives: Source A attacks a system "designed to warehouse" and mourns "the sheer waste of human potential"; Dickens is repelled by the boys ("not one redeeming feature") yet ends by calling them "hopeless creatures of neglect".',
+                'A comparison of methods: Source A argues openly, with statistics, a hospital analogy and individual cases; Dickens writes as a visitor being shown round, with irony ("something excessively meritorious") and a long, listing sentence that ends "all idle and listless".',
+                'Where they meet: both show people given nothing to do with their time ("nothing else"; "the utter absence of any employment"), and both look past the prisoners to those responsible for them.',
+                'Evidence from across both whole sources, with comment on what each detail shows. Linking words such as whereas and similarly help, but the comparison must be of views and methods, not only of content.',
+              ],
+              'Levels (16 marks)': Q4_LEVELS,
+              Limits: [
+                'An answer that uses one source only scores 6 marks at most.',
+                'Level 3 and above need both sources.',
+              ],
+            },
           },
         ],
       },
@@ -333,7 +499,7 @@ export const aqaP2C: MockExamPaper[] = [
         id: 'aqa-p2-11-writing',
         title: 'Section B: Writing',
         description:
-          'You are advised to spend about 45 minutes on this section. Write in full sentences. You are reminded of the need to plan your answer.',
+          'Allow about 45 minutes for this section: about 5 minutes to plan, 35 to write and 5 to check your work. Question 5 is marked for content and organisation (24 marks) and for technical accuracy (16 marks).',
         totalMarks: 40,
         suggestedTimeMinutes: 45,
         questions: [
@@ -341,26 +507,27 @@ export const aqaP2C: MockExamPaper[] = [
             id: 'aqa-p2-11-q5',
             questionNumber: 5,
             questionText:
-              '"Prison should focus on rehabilitation, not punishment. Locking people up and throwing away the key helps nobody."\n\nWrite an article for a broadsheet newspaper in which you argue your point of view on this statement.\n\n(24 marks for content and organisation / 16 marks for technical accuracy)',
+              '"Prison should focus on rehabilitation, not punishment. Locking people up and throwing away the key helps nobody."\n\nWrite an article for a broadsheet newspaper in which you give your own view on this statement and make the case for it.\n\n(40 marks: 24 for content and organisation, 16 for technical accuracy)',
             marks: 40,
             suggestedTimeMinutes: 45,
             questionType: 'transactional-writing',
             modelAnswers: {
-              'Grade 4-5':
-                'A clear argumentative piece that: addresses the statement directly; uses some persuasive devices (rhetorical questions, direct address, statistics); has a clear structure with introduction, body paragraphs, and conclusion; demonstrates generally accurate spelling and punctuation.',
-              'Grade 6-7':
-                'A well-crafted argument that: engages with the complexity of the debate (acknowledging victims, public safety, and rehabilitation); uses a range of rhetorical techniques fluently; deploys evidence and examples effectively; matches the register of a broadsheet article; demonstrates consistent technical accuracy with ambitious vocabulary.',
               'Grade 8-9':
-                'A compelling, assured argument that: offers a nuanced perspective acknowledging the tension between justice, deterrence, and rehabilitation; crafts a distinctive voice appropriate to the form; deploys rhetorical strategies with precision and control; uses counter-argument to strengthen the position; demonstrates extensive vocabulary and varied syntax; shows technical virtuosity throughout.',
+                'Punishment That Changes Nothing\n\nEvery few years, a politician promises to be "tough on crime". Longer sentences, fuller prisons, harsher regimes: the words change, but the message stays the same. Lock them up, and the problem goes away. It is a comforting idea. It is also wrong.\n\nLet me be clear about what I am not saying. Prison must punish. Someone who has burgled a home or attacked a stranger has done real harm, and victims are entitled to see that harm taken seriously. A few people are so dangerous that the public needs protecting from them for a very long time. Nobody sensible wants to throw open the prison gates.\n\nBut punishment and rehabilitation are not opposites, and we should stop pretending that we must choose between them. The question is not whether we punish, but what we want punishment to achieve. If the answer is a safer country, then a prison that releases people as likely to offend as when they went in has failed on its own terms. In England and Wales, more than four in ten adults released from prison reoffend within a year. Every one of those failures has a victim.\n\nConsider what we actually do with people inside. We take a young man who may never have held a steady job, who may have left school barely able to read, and we give him years of empty time. Then we release him with a small sum of money and a bag of belongings, and we are surprised when he returns. A prison that teaches a man to read, trains him for a trade and helps him find somewhere to live is not being soft. It is doing the one thing that makes the rest of us safer.\n\nThose who call this too generous often speak for victims, and their anger deserves respect. Yet many victims want something more lasting than revenge: they want to know that what happened to them will not happen to anyone else. "Throwing away the key" sounds strong, but almost every prisoner comes home one day. The key is never really thrown away. The only choice we have is what kind of person walks out through the gate.\n\nThere is a practical argument, too. Prison is expensive, and every reoffender starts the cycle again: another arrest, another trial, another sentence, another bill. Money spent on education and support inside prison is not a gift to criminals. It is an investment in fewer crimes.\n\nSo yes, prison should punish. The loss of freedom is itself a heavy punishment, and it should be. But a prison that does nothing except punish helps nobody: not the prisoner, not the victim and not the public who pay for it. We should judge our prisons not by how harsh they feel, but by how few of the people who leave them ever come back.',
             },
-            markScheme: [
-              'AO5 (24 marks): Clear, effective communication matched to form, purpose, audience',
-              'AO5: Structured argument with coherent paragraphing',
-              'AO6 (16 marks): Accurate sentence demarcation',
-              'AO6: Range of punctuation used effectively',
-              'AO6: Accurate spelling of ambitious vocabulary',
-              'AO6: Varied sentence forms for purpose and effect',
-            ],
+            markScheme: {
+              'What to reward in this task': [
+                'A clear view on the statement, held and developed all the way through.',
+                'The features of a broadsheet article: a headline, an opening that draws the reader in and paragraphs that build to a firm conclusion, in a formal, thoughtful voice.',
+                'Reasons developed with examples, and the other side answered fairly, for instance the needs of victims or the wish to keep the public safe.',
+                'Accurate spelling and punctuation, with varied sentences and well-chosen words, which earn the separate 16 marks.',
+              ],
+              'Content and organisation (AO5, 24 marks)': Q5_AO5_LEVELS,
+              'Technical accuracy (AO6, 16 marks)': Q5_AO6_LEVELS,
+              Limit: [
+                'Writing that does not respond to the statement in the way the task asks cannot score more than 12 of the 24 content marks.',
+              ],
+            },
           },
         ],
       },
@@ -383,7 +550,7 @@ export const aqaP2C: MockExamPaper[] = [
       {
         id: 'aqa-p2-12-reading',
         title: 'Section A: Reading',
-        description: `Read Source A and Source B carefully. Then answer all the questions in this section.\n\nSource A: ${EXAM12_SOURCE_A_REF}\nSource B: ${EXAM12_SOURCE_B_REF}`,
+        description: `Spend about 15 minutes reading both sources and all five questions before you start writing. Then allow about 45 minutes for Questions 1 to 4, which must all be answered.\n\nSource A: ${EXAM12_SOURCE_A_REF}\nSource B: ${EXAM12_SOURCE_B_REF}`,
         totalMarks: 40,
         suggestedTimeMinutes: 60,
         questions: [
@@ -391,7 +558,7 @@ export const aqaP2C: MockExamPaper[] = [
             id: 'aqa-p2-12-q1',
             questionNumber: 1,
             questionText:
-              'Read again Source A, the first paragraph.\n\nChoose four statements below which are TRUE.\n\nA) The writer believes journalism is in decline.\nB) The writer blames only the government for this.\nC) People scroll past paywalls.\nD) People always read articles fully before sharing them.\nE) Some people distrust mainstream media.\nF) People uncritically consume social media claims.\nG) The writer says journalism is thriving.\nH) The writer says readers bear no blame for the decline.',
+              'Look again at the first paragraph of Source A, from "Journalism is dying" to "the coffin of accountability".\n\nWhich four of the statements below are true, according to this paragraph? Choose four letters, and no more.\n\nA) The writer believes journalism is in decline.\nB) The writer blames only the government for this.\nC) People scroll past paywalls.\nD) People always read articles fully before sharing them.\nE) Some people distrust mainstream media.\nF) People uncritically consume social media claims.\nG) The writer says journalism is thriving.\nH) The writer says readers bear no blame for the decline.',
             marks: 4,
             suggestedTimeMinutes: 5,
             questionType: 'multiple-choice',
@@ -399,69 +566,87 @@ export const aqaP2C: MockExamPaper[] = [
             extractSource: `Source A: ${EXAM12_SOURCE_A_REF} | Source B: ${EXAM12_SOURCE_B_REF}`,
             modelAnswers: {
               'Grade 4-5':
-                'A, C, E, F - A: "Journalism is dying." C: "every time you scroll past a paywall." E: "the mainstream media can\'t be trusted." F: "uncritically consuming the claims of anonymous social media accounts."',
+                'A, C, E and F.\nA: "Journalism is dying".\nC: "Every time you scroll past a paywall".\nE: people declare that "the mainstream media can\'t be trusted".\nF: they are "uncritically consuming the claims of anonymous social media accounts".',
             },
             markScheme: [
-              '1 mark for each correct answer',
-              'Maximum 4 marks',
-              'No marks for incorrect selections',
+              'True: A, C, E and F.',
+              'A is true: "Journalism is dying".',
+              'C is true: "Every time you scroll past a paywall".',
+              'E is true: people declare that "the mainstream media can\'t be trusted".',
+              'F is true: they are "uncritically consuming the claims of anonymous social media accounts".',
+              'B, D, G and H are false: the government is never mentioned, and the writer blames readers instead ("we are all complicit"); people share an article "without reading beyond the headline"; journalism "is dying"; and readers are "complicit in its murder".',
+              'One mark for each true statement chosen, 4 marks in all. A false statement earns no mark.',
             ],
           },
           {
             id: 'aqa-p2-12-q2',
             questionNumber: 2,
             questionText:
-              'You need to refer to Source A and Source B for this question.\n\nUse details from both sources. Write a summary of the similarities and differences in the concerns the two writers express about the press and its role in society.',
+              'Use both sources to answer this question.\n\nThink about the press as the writer of Source A describes it today and the press Wilde describes in Source B. What can you infer from the two sources about how they differ?\n\nSupport each inference with details from both sources.',
             marks: 8,
-            suggestedTimeMinutes: 10,
+            suggestedTimeMinutes: 8,
             questionType: 'summary',
             extract: `Source A:\n${EXAM12_SOURCE_A}\n\nSource B:\n${EXAM12_SOURCE_B}`,
             extractSource: `Source A: ${EXAM12_SOURCE_A_REF} | Source B: ${EXAM12_SOURCE_B_REF}`,
             modelAnswers: {
               'Grade 4-5':
-                'Both writers are worried about the press, but for opposite reasons. Source A is worried that journalism is disappearing: newsrooms have shrunk from "a hundred reporters to skeleton crews of fifteen", and towns have nobody to report on "their council meetings, their courts, their schools." Source B, by Oscar Wilde, is worried that the press has too much power: he says journalism "has eaten up the other three" estates and that "We are dominated by Journalism." Both writers think readers share the blame. Source A says "we are all complicit" because of the way we read the news, and Wilde says the public "have an insatiable curiosity to know everything, except what is worth knowing", which journalism then satisfies. However, Source A wants more journalism, while Wilde wants much less of it in people\'s private lives.',
-              'Grade 6-7':
-                'Both writers are concerned with the relationship between the press, the public and power, though they diagnose opposite illnesses. The writer of Source A fears the absence of journalism: the number of local newspaper journalists "has at least halved", and "Entire towns have no reporter assigned" to watch those in authority. Wilde fears its presence: once one power among four, journalism "has eaten up the other three", and in America it "governs for ever and ever" while a President "reigns for four years". Both writers connect the press to the behaviour of its readers. Source A accuses readers who share an article "without reading beyond the headline" of being "complicit" in journalism\'s decline; Wilde accuses the public of an "insatiable curiosity" that journalism, with its "tradesman-like habits", simply supplies. Their concerns about society differ most sharply. Source A argues that without reporters public money goes unwatched, and cites research in which places that lost their newspaper then paid more to borrow. Wilde\'s concern is not public money but private life: "The tyranny that it proposes to exercise over people\'s private lives seems to me to be quite extraordinary." One writer wants the press to watch the powerful more closely; the other wants it to stop watching everybody else.',
+                'In Source A the press is getting weaker, because newsrooms have shrunk to "skeleton crews of fifteen". In Source B the press is very powerful, and Wilde says "We are dominated by Journalism". This suggests that in Wilde\'s time the press had great power over people, but now it is struggling to survive. The journalists in Source A used to report on important things like "their council meetings, their courts, their schools", which shows that they helped the public. Wilde\'s journalists are interested in "people\'s private lives", which suggests that they are nosy. The readers are different too. In Source A readers "scroll past a paywall", so they do not want to pay for news, but in Source B the public have "an insatiable curiosity", so they want to know everything.',
+              'Grade 8-9':
+                'The press in Source A is weak and shrinking, while the press Wilde describes is so strong that it rules. Source A\'s newsrooms are down to "skeleton crews of fifteen", and "Entire towns have no reporter", which suggests a press that can no longer cover the places it once served. Wilde says that journalism "has eaten up the other three" estates and that "We are dominated by Journalism", which suggests that, as he saw it in 1891, the press had more power than Parliament itself.\n\nThey also watch different things. The journalists in Source A watched the powerful, at "their council meetings, their courts, their schools", and without them "public money is watched less closely". This implies that their work protected the public. Wilde\'s journalists watch private lives instead: he attacks journalism\'s "tyranny" over "people\'s private lives", and his image of journalists who "have nailed their own ears to the keyhole" suggests a press that spies on homes rather than on governments.\n\nTheir readers differ as well. In Source A, readers will not pay or even read: they "scroll past a paywall" and share articles "without reading beyond the headline". This suggests a public that no longer values journalism. Wilde\'s public cannot get enough of it, with "an insatiable curiosity to know everything, except what is worth knowing", and the press, with its "tradesman-like habits", sells them what they want. So Wilde\'s press seems to thrive by feeding curiosity about private lives, while the press in Source A is dying even though what it offers is worth having.',
             },
-            markScheme: [
-              'Must reference both sources',
-              'Identifies clear differences and/or similarities',
-              'Uses evidence from both texts',
-              'Synthesises rather than alternates between texts',
-              'Infers beyond surface-level details',
-            ],
+            markScheme: {
+              'What to reward': [
+                'Inferences, not just retelling: what the details suggest about how the two presses differ, with details from both sources.',
+                'Power: a shrinking press ("skeleton crews of fifteen", "Entire towns have no reporter") against one that "has eaten up the other three" estates.',
+                'Who is watched: council meetings, courts, schools and public money in Source A; "people\'s private lives", seen through "the keyhole", in Source B.',
+                'Readers: a public that will not pay or read ("scroll past a paywall") against one with "an insatiable curiosity" that the press feeds.',
+                'Money: journalists leaving for "the security that journalism no longer can" offer, against a press with "tradesman-like habits" that sells what is wanted.',
+                'Credit any other sound inference about a difference between the two presses, backed from both sources.',
+              ],
+              'Levels (8 marks)': Q2_LEVELS,
+              Limits: [
+                'An answer that uses one source only scores 3 marks at most.',
+                'Level 3 and above need both sources and the difference the question names, between the press of today and the press Wilde describes.',
+                "Marks are for what is inferred. Comment on the writers' language belongs to Question 3 and is not rewarded here.",
+              ],
+            },
           },
           {
             id: 'aqa-p2-12-q3',
             questionNumber: 3,
             questionText:
-              'You now need to refer only to Source A.\n\nHow does the writer use language to convey a sense of urgency about the decline of journalism?',
+              'Look again at the second and third paragraphs of Source A, from "I have been a journalist" to the end.\n\nIn these two paragraphs, how does the writer\'s language show what is being lost as journalism declines?\n\nQuote short phrases from these paragraphs only, and explain the effect of the words, images and kinds of sentence the writer chooses. Use subject terms where they help.',
             marks: 12,
-            suggestedTimeMinutes: 15,
+            suggestedTimeMinutes: 12,
             questionType: 'analysis',
             extract: `Source A:\n${EXAM12_SOURCE_A}`,
             extractSource: EXAM12_SOURCE_A_REF,
             modelAnswers: {
               'Grade 4-5':
-                'The writer uses the metaphor "murder" in the opening sentence to make the decline of journalism sound violent and criminal. The phrase "we are all complicit" uses the pronoun "we" to include the reader in the blame. The repetition of "every time you" at the start of three phrases creates a sense of accumulating guilt. The statistic that the number of local newspaper journalists "has at least halved" shows the scale of the loss. The phrase "Democracy does not die in darkness - it dies in the spaces where nobody is watching" is powerful because it rewrites a famous saying to make a new point.',
-              'Grade 6-7':
-                'The writer constructs urgency through a systematic escalation from personal accusation to statistical evidence to democratic crisis. The opening sentence\'s extended metaphor of "murder" - with readers as "complicit" - immediately criminalises passive consumption, elevating indifference to active harm. The anaphoric "every time you" creates a litany of everyday sins, each action (scrolling, sharing, declaring) presented as a discrete act of destruction. The verb phrase "drive another nail into the coffin" extends the death metaphor with grim specificity. The second paragraph shifts from accusation to elegy: the juxtaposition of "bustling floors of a hundred reporters" with "skeleton crews of fifteen" compresses decades of decline into a single image. The adjective "skeleton" is doubly resonant - it suggests both minimal staffing and death. The paragraph\'s closing sentence, adapted from a Washington Post slogan, reframes the familiar: "Democracy does not die in darkness - it dies in the spaces where nobody is watching." The dash creates a pause that performs the very absence it describes. The final paragraph deploys research evidence (the American study of places that lost their local newspaper) to convert emotional argument into material proof, ensuring the reader cannot dismiss the urgency as mere sentiment.',
+                'The writer repeats "I have watched" to show that they have seen the decline happen with their own eyes. The contrast between "bustling floors" and "skeleton crews" shows how much smaller newsrooms have become, and "skeleton" makes it sound as if journalism is dying. The writer describes colleagues as "brilliant, dedicated, irreplaceable", a list of three adjectives that shows how much has been lost. The list "their council meetings, their courts, their schools" shows the important things that nobody reports on now. The sentence "Democracy does not die in darkness - it dies in the spaces where nobody is watching" personifies democracy and warns the reader that it is in danger. In the last paragraph, "we all pay for it" uses the pronoun "we" to show that the problem affects everyone, including the reader.',
               'Grade 8-9':
-                'The writer engineers urgency through a rhetorical structure that progressively closes the escape routes available to the complacent reader. The opening sentence performs a dual provocation: "dying" is dramatic enough, but "murder" reframes decline as crime, and "complicit" redistributes guilt from the abstraction of market forces to the individual reader. The subsequent anaphora - "every time you scroll... every time you share... every time you declare" - constructs a catalogue of quotidian betrayals in which the second person pronoun functions as an accusatory finger. The syntactic parallelism creates inevitability: each clause is another count in an indictment. The second paragraph\'s most sophisticated technique is temporal compression: "twenty-two years" of experience is condensed into the single image of newsrooms shrinking from "bustling floors" to "skeleton crews." The noun "skeleton" operates across two semantic fields - the literal (bare minimum) and the morbid (bones, death) - collapsing the distinction between understaffing and extinction. The emotional weight falls on the parenthetical "brilliant, dedicated, irreplaceable" - three adjectives whose ascending syllable count performs the very accumulation of loss they describe. The adapted epigram in the paragraph\'s final sentence achieves its force through subversion: by contradicting the familiar ("does not die in darkness"), the writer claims the reader\'s attention before delivering the real insight ("in the spaces where nobody is watching"), which is syntactically positioned as a correction, giving it the rhetorical authority of revealed truth. The final paragraph\'s appeal to research transforms the argument from polemic to evidence: the finding that it "cost their local governments more to borrow" gives the abstract danger a price, which prevents the reader from dismissing the preceding rhetoric as hyperbole.',
+                'The writer shows the loss first as something witnessed, then as something with a price.\n\nThe second paragraph opens with the writer\'s authority, "I have been a journalist for twenty-two years", and the repeated "I have watched" makes the writer a witness who could do nothing to stop the decline. The contrast between "bustling floors of a hundred reporters" and "skeleton crews of fifteen" is sharp: "bustling" suggests noise and energy, while "skeleton" means a bare minimum and also suggests death, so the newsroom itself seems to be dying. The phrase set between dashes, "brilliant, dedicated, irreplaceable colleagues", interrupts the sentence to honour these people, and the three adjectives build to "irreplaceable", which tells the reader that this loss cannot be undone. The short sentence "That number has at least halved since" states the fact plainly and lets it land. In "their council meetings, their courts, their schools", the repeated "their" shows that what now goes unwatched belongs to the community, and "Entire towns" stresses the scale. The paragraph ends by correcting a well-known saying, that democracy dies in darkness: "it dies in the spaces where nobody is watching". Democracy is personified as something that can die quietly, through neglect, rather than in some dramatic event.\n\nThe third paragraph opens with another short sentence, "The consequences are not abstract", which promises proof. The phrase "we all pay for it" works in two ways: the reader pays in money and in lost accountability. The research makes the cost concrete, and the balanced "not because ... but because" structure rules out one explanation before giving the real one. The last words, "nobody was watching any more", echo the end of the second paragraph, so the idea of watching ties the argument together and leaves the reader picturing a town that nobody is keeping an eye on.',
             },
-            markScheme: [
-              'Analyses persuasive language techniques in detail',
-              'Comments on the effect of specific words and phrases',
-              'Considers how language positions the reader',
-              'Uses subject terminology accurately and precisely',
-              'Top band: perceptive, detailed, conceptualised analysis',
-            ],
+            markScheme: {
+              'What to reward': [
+                'The writer as witness: "I have been a journalist for twenty-two years" and the repeated "I have watched".',
+                'The contrast of "bustling floors of a hundred reporters" with "skeleton crews of fifteen", and the double sense of "skeleton".',
+                'The interrupting phrase "brilliant, dedicated, irreplaceable colleagues", the plain statistic, and the list "their council meetings, their courts, their schools".',
+                'The reworked saying "it dies in the spaces where nobody is watching", the short "The consequences are not abstract", "we all pay for it", and the echo in "nobody was watching any more".',
+                'Subject terms (contrast, repetition, list of three, personification, inclusive pronoun) earn credit when the effect is explained, not for being named.',
+              ],
+              'Levels (12 marks)': Q3_LEVELS,
+              Limits: [
+                'Only the second and third paragraphs of Source A count. Writing about the first paragraph or about Source B places the answer at the bottom of the level it would otherwise reach.',
+                'Level 3 and above need the focus of the question: what is being lost as journalism declines.',
+              ],
+            },
           },
           {
             id: 'aqa-p2-12-q4',
             questionNumber: 4,
             questionText:
-              'For this question, you need to refer to the whole of Source A, together with the whole of Source B.\n\nCompare how the two writers convey their different perspectives on the power and responsibility of the press.\n\nIn your answer, you could:\n- compare their different perspectives\n- compare the methods they use to convey their perspectives\n- support your response with references to both texts.',
+              "Answer this question using both sources, from beginning to end.\n\nCompare the two writers' feelings and perspectives on the power and responsibility of the press. Explain how each writer gets them across, through choices such as tone, language and structure, and refer closely to both sources.",
             marks: 16,
             suggestedTimeMinutes: 20,
             questionType: 'comparison',
@@ -469,17 +654,23 @@ export const aqaP2C: MockExamPaper[] = [
             extractSource: `Source A: ${EXAM12_SOURCE_A_REF} | Source B: ${EXAM12_SOURCE_B_REF}`,
             modelAnswers: {
               'Grade 4-5':
-                'Both writers care about the press but see different problems. Source A is worried that journalism is disappearing and uses a statistic to prove it: the number of local newspaper journalists "has at least halved". Wilde (Source B) is worried that journalism has too much power and misuses it. Both use comparisons to make their point: Source A says democracy "dies in the spaces where nobody is watching", and Wilde compares the press to "the rack", an instrument of torture. Both writers think the press matters to how the country is run. Source A says that without journalists public money is watched less closely, while Wilde jokes that journalism "has eaten up the other three" estates. Source A uses direct address ("you") to make readers feel guilty, while Wilde uses short, witty sentences such as "That is much worse."',
-              'Grade 6-7':
+                'Both writers care about the press but see different problems. Source A is worried that journalism is disappearing and uses a statistic to prove it: the number of local newspaper journalists "has at least halved". Wilde (Source B) is worried that journalism has too much power and misuses it. Both use striking images to make their point: Source A says democracy "dies in the spaces where nobody is watching", and Wilde compares the press to "the rack", an instrument of torture. Both writers think the press matters to how the country is run. Source A says that without journalists public money is watched less closely, while Wilde jokes that journalism "has eaten up the other three" estates. Source A uses direct address ("you") to make readers feel guilty, while Wilde uses short, witty sentences such as "That is much worse."',
+              'Grade 8-9':
                 'The two writers occupy mirror positions. The writer of Source A defends the power of the press as a public good and mourns its loss; Wilde, writing in 1891, attacks that power as a tyranny. Both, though, judge the press by what it does to the people it reports on and the people who read it. Source A presents journalism as a watchman. Its power is the power to see: democracy "dies in the spaces where nobody is watching", and research on places that lost their paper shows what happens to public money when the watching stops. The responsibility the writer demands is the reader\'s, to pay for journalism and read it properly. Wilde presents journalism as a ruler. His historical sequence, from "the rack" to "the press", calls the change "an improvement certainly" before turning, with the conjunction "But", to "very bad, and wrong". He borrows the political language of estates and reigns to show journalism overtaking every other institution, and closes on a pair of balanced sentences: once "the public nailed the ears of journalists to the pump", now "journalists have nailed their own ears to the keyhole". The keyhole makes his charge concrete: the press has used its power to spy on private lives. Their methods differ as much as their views. Source A builds urgency with direct address ("every time you"), a death metaphor and statistics; Wilde works through epigram and understatement, each short sentence ("That was quite hideous." "That is much worse.") landing like the end of a joke that is not really a joke. Where Source A holds readers responsible for letting the press die, Wilde holds them responsible for its excesses: journalism "supplies their demands".',
             },
-            markScheme: [
-              'Compares attitudes from both sources throughout',
-              'Analyses methods used by both writers',
-              'Uses evidence from both texts',
-              'Shows clear understanding of different perspectives',
-              'Top band: perceptive, detailed comparison with sustained critical voice',
-            ],
+            markScheme: {
+              'What to reward': [
+                'A comparison of perspectives: Source A mourns a press that "is dying" and defends it as the public\'s watchman; Wilde attacks a press that "has eaten up the other three" estates and calls its hold over private lives a "tyranny".',
+                'A comparison of methods: Source A uses direct address ("every time you"), a death metaphor, personal testimony and statistics; Wilde uses epigram, irony and short, balanced sentences ("That was quite hideous." "That is much worse.").',
+                'Responsibility: Source A blames readers who will not pay or read ("we are all complicit"); Wilde blames the public\'s "insatiable curiosity", which journalism "supplies".',
+                'Evidence from across both whole sources, with comment on what each detail shows. Linking words such as whereas and similarly help, but the comparison must be of views and methods, not only of content.',
+              ],
+              'Levels (16 marks)': Q4_LEVELS,
+              Limits: [
+                'An answer that uses one source only scores 6 marks at most.',
+                'Level 3 and above need both sources.',
+              ],
+            },
           },
         ],
       },
@@ -487,7 +678,7 @@ export const aqaP2C: MockExamPaper[] = [
         id: 'aqa-p2-12-writing',
         title: 'Section B: Writing',
         description:
-          'You are advised to spend about 45 minutes on this section. Write in full sentences. You are reminded of the need to plan your answer.',
+          'Allow about 45 minutes for this section: about 5 minutes to plan, 35 to write and 5 to check your work. Question 5 is marked for content and organisation (24 marks) and for technical accuracy (16 marks).',
         totalMarks: 40,
         suggestedTimeMinutes: 45,
         questions: [
@@ -495,26 +686,27 @@ export const aqaP2C: MockExamPaper[] = [
             id: 'aqa-p2-12-q5',
             questionNumber: 5,
             questionText:
-              '"Social media has made traditional journalism irrelevant. Anyone with a phone can be a reporter now."\n\nWrite a speech to be delivered at a school assembly in which you argue your point of view on this statement.\n\n(24 marks for content and organisation / 16 marks for technical accuracy)',
+              '"Social media has made traditional journalism irrelevant. Anyone with a phone can be a reporter now."\n\nWrite a speech for a school assembly in which you give your own view on this statement and make the case for it.\n\n(40 marks: 24 for content and organisation, 16 for technical accuracy)',
             marks: 40,
             suggestedTimeMinutes: 45,
             questionType: 'transactional-writing',
             modelAnswers: {
-              'Grade 4-5':
-                'A clear argumentative speech that: addresses the statement directly; uses some persuasive devices (rhetorical questions, direct address to the audience, anecdote); has a clear structure with opening, body, and conclusion; demonstrates generally accurate spelling and punctuation; adopts an appropriate register for a school assembly.',
-              'Grade 6-7':
-                'A well-crafted speech that: engages critically with both sides of the argument; uses a range of rhetorical techniques appropriate to spoken discourse (tricolon, anaphora, shifts in pace); deploys examples and evidence effectively; demonstrates awareness of the school assembly audience; shows consistent technical accuracy with ambitious vocabulary.',
               'Grade 8-9':
-                'A compelling, assured speech that: offers a nuanced perspective on the relationship between citizen journalism and professional reporting; crafts a distinctive and engaging speaking voice; deploys rhetorical strategies with precision, including pauses, repetition, and audience engagement; uses counter-argument to strengthen the position; demonstrates extensive vocabulary and varied syntax; shows technical virtuosity throughout.',
+                "Good morning, everyone.\n\nHands up if you found out about something important this week from your phone. Keep your hand up if you checked whether it was true. Not quite so many hands now, are there?\n\nThe statement I have been asked to talk about says that social media has made traditional journalism irrelevant, because anyone with a phone can be a reporter. I want to agree with half of it and argue against the other half.\n\nThe half I agree with is this: anyone with a phone can record what is happening. When something dramatic happens in a town centre, the first pictures usually come from people who were standing nearby. That is a real change, and in many ways a good one. Ordinary people can show the world things that the powerful would rather hide, and nobody needs permission to do it.\n\nBut recording something is not the same as reporting it. A reporter does not just point a camera. A reporter asks who was involved and why, checks the story with more than one person and decides what the public needs to know. A reporter's name goes on the story, so a reporter can be held to account for getting it wrong. The person who posts a clip and moves on has made no such promise. Most of the time they are honest. Sometimes they are mistaken. Occasionally they are lying on purpose, and the clip spreads just as fast either way.\n\nThink about the stories that matter most to a town like ours: how the council spends our money, what happens in the local courts, whether the new housing estate gets the doctors' surgery it was promised. None of those stories is dramatic enough to film. They are found by someone who sits through a three-hour meeting, reads the documents nobody else reads and asks the awkward question at the end. That someone is a journalist, and if nobody pays for that work, nobody will do it.\n\nSome of you will say that newspapers are old-fashioned, and you are partly right. Many of you have never bought one. But journalism is not paper. It is the job of finding out what is true, and you can read it on the same phone you use for everything else. What matters is not where a story appears but whether someone has done the work behind it.\n\nSo here is my challenge to you. The next time a story reaches you, ask three questions before you share it. Who says so? How do they know? What do they gain if I believe them? If you can answer those questions, you are already thinking like a journalist, and that is exactly why we still need real ones.\n\nThank you.",
             },
-            markScheme: [
-              'AO5 (24 marks): Clear, effective communication matched to form, purpose, audience',
-              'AO5: Structured argument with coherent paragraphing',
-              'AO6 (16 marks): Accurate sentence demarcation',
-              'AO6: Range of punctuation used effectively',
-              'AO6: Accurate spelling of ambitious vocabulary',
-              'AO6: Varied sentence forms for purpose and effect',
-            ],
+            markScheme: {
+              'What to reward in this task': [
+                'A clear view on the statement, held and developed all the way through.',
+                'The features of a speech: a greeting and an opening that engages listeners, signposts that help them follow the argument and a memorable ending, pitched for an audience of students and teachers.',
+                'Reasons developed with examples, and the other side answered fairly, for instance the real value of people filming events as they happen.',
+                'Accurate spelling and punctuation, with varied sentences and well-chosen words, which earn the separate 16 marks.',
+              ],
+              'Content and organisation (AO5, 24 marks)': Q5_AO5_LEVELS,
+              'Technical accuracy (AO6, 16 marks)': Q5_AO6_LEVELS,
+              Limit: [
+                'Writing that does not respond to the statement in the way the task asks cannot score more than 12 of the 24 content marks.',
+              ],
+            },
           },
         ],
       },
@@ -537,7 +729,7 @@ export const aqaP2C: MockExamPaper[] = [
       {
         id: 'aqa-p2-13-reading',
         title: 'Section A: Reading',
-        description: `Read Source A and Source B carefully. Then answer all the questions in this section.\n\nSource A: ${EXAM13_SOURCE_A_REF}\nSource B: ${EXAM13_SOURCE_B_REF}`,
+        description: `Spend about 15 minutes reading both sources and all five questions before you start writing. Then allow about 45 minutes for Questions 1 to 4, which must all be answered.\n\nSource A: ${EXAM13_SOURCE_A_REF}\nSource B: ${EXAM13_SOURCE_B_REF}`,
         totalMarks: 40,
         suggestedTimeMinutes: 60,
         questions: [
@@ -545,7 +737,7 @@ export const aqaP2C: MockExamPaper[] = [
             id: 'aqa-p2-13-q1',
             questionNumber: 1,
             questionText:
-              'Read again Source A, the first paragraph.\n\nChoose four statements below which are TRUE.\n\nA) The writer believes people are disconnected from their food sources.\nB) Supermarkets deliberately maintain this disconnection.\nC) The writer praises the convenience of modern shopping.\nD) A chicken breast in a tray looks like a real chicken.\nE) Supermarket produce is sold without packaging.\nF) Migrant workers pick salad leaves.\nG) Workers are always paid above the minimum wage.\nH) Supermarkets use fluorescent lighting.',
+              'Look again at the first paragraph of Source A, from "We have become a nation" to "less than the minimum wage".\n\nWhich four of the statements below are true, according to this paragraph? Choose four letters, and no more.\n\nA) The writer believes people are disconnected from their food sources.\nB) The writer says people\'s ignorance about food is no accident.\nC) The writer praises the convenience of modern shopping.\nD) A chicken breast in a tray looks like a real chicken.\nE) Supermarket produce is sold without packaging.\nF) Migrant workers pick salad leaves.\nG) Workers are always paid above the minimum wage.\nH) Supermarkets use fluorescent lighting.',
             marks: 4,
             suggestedTimeMinutes: 5,
             questionType: 'multiple-choice',
@@ -553,69 +745,87 @@ export const aqaP2C: MockExamPaper[] = [
             extractSource: `Source A: ${EXAM13_SOURCE_A_REF} | Source B: ${EXAM13_SOURCE_B_REF}`,
             modelAnswers: {
               'Grade 4-5':
-                'A, B, F, H - A: "We have become a nation of people who do not know where their food comes from." B: "this ignorance is not accidental - it is cultivated." F: "the migrant workers who picked them." H: "fluorescent lights."',
+                'A, B, F and H.\nA: "We have become a nation of people who do not know where their food comes from".\nB: "this ignorance is not accidental - it is cultivated."\nF: the leaves were picked by "migrant workers".\nH: the supermarket has "fluorescent lights".',
             },
             markScheme: [
-              '1 mark for each correct answer',
-              'Maximum 4 marks',
-              'No marks for incorrect selections',
+              'True: A, B, F and H.',
+              'A is true: we are "a nation of people who do not know where their food comes from".',
+              'B is true: "this ignorance is not accidental - it is cultivated".',
+              'F is true: the salad leaves were picked by "migrant workers".',
+              'H is true: the supermarket has "fluorescent lights".',
+              'C, D, E and G are false: the writer criticises supermarkets and never praises them; a chicken breast in a tray "bears no resemblance to a chicken"; the produce is "plastic-wrapped"; and the workers are paid "less than the minimum wage".',
+              'One mark for each true statement chosen, 4 marks in all. A false statement earns no mark.',
             ],
           },
           {
             id: 'aqa-p2-13-q2',
             questionNumber: 2,
             questionText:
-              'You need to refer to Source A and Source B for this question.\n\nUse details from both sources. Write a summary of the similarities and differences in the difficulties faced by the people who produce food, as described in each source.',
+              'Use both sources to answer this question.\n\nThink about the people who produce food in Source A and the labourers of the parish of Milton in Source B. What can you infer from the two sources about how their situations differ?\n\nSupport each inference with details from both sources.',
             marks: 8,
-            suggestedTimeMinutes: 10,
+            suggestedTimeMinutes: 8,
             questionType: 'summary',
             extract: `Source A:\n${EXAM13_SOURCE_A}\n\nSource B:\n${EXAM13_SOURCE_B}`,
             extractSource: `Source A: ${EXAM13_SOURCE_A_REF} | Source B: ${EXAM13_SOURCE_B_REF}`,
             modelAnswers: {
               'Grade 4-5':
-                'Both sources describe people who produce food but are not properly rewarded for it. In Source A, the dairy farmer is paid "less per litre than it cost to produce", and salad is picked by migrant workers for "less than the minimum wage". In Source B, the labourers of one Wiltshire parish grow enough food for "more, and many more, than fifteen hundred families", yet "those who do the work are half starved". Both writers show the people who grow the food losing out to others. Source A blames supermarkets and cheap imports, while Cobbett blames "a hellish system" that carries the food away "to be heaped on the fund-holders, pensioners, soldiers" and other "tax-eaters". A difference is that the farmers in Source A are being driven out of farming, while Cobbett\'s labourers are still working but go hungry.',
-              'Grade 6-7':
-                'Both writers describe food producers who are poorly rewarded for work on which everyone else depends, though the injustice takes a different form in each century. The writer of Source A describes farmers ruined by prices: the Somerset dairy farmer paid "less per litre than it cost to produce", the pig farmer "undercut by imports". Cobbett, writing in 1826, describes labourers who are not ruined but robbed: one hundred families in a Wiltshire parish "raise enough to supply more, and many more, than fifteen hundred families", and yet "those who do the work are half starved". Both writers emphasise how much is produced by how few. Source A shows fruit rotting because there are no longer "enough seasonal workers to pick them"; Cobbett exclaims, "What a handful of people to raise such a quantity of food!" The key difference is who is to blame. Source A points to supermarkets, whose prices drive farmers out, and to imports produced under weaker rules. Cobbett points to the state: the produce is "carried away" to "fund-holders, pensioners, soldiers, dead-weight, and other swarms of tax-eaters", all of them paid out of taxes. Both writers, however, conclude that the country depends on people it treats unjustly: Source A warns that "We lose the ability to feed ourselves", while Cobbett declares that if such a system does not need "putting an end to, then the devil himself is a saint."',
+                'The farmers in Source A have property of their own, like the dairy farmer who is "selling his herd", but the labourers in Source B do not seem to own anything, since they are left with "skin and bone and nakedness". The farmers in Source A are losing money because the supermarkets pay "less per litre than it cost to produce", which suggests that they cannot make a living. The labourers in Source B grow plenty of food, enough for "more, and many more, than fifteen hundred families", but they are "half starved" because the food is "carried away". This suggests that the system is unfair to them. The dairy farmer "wept", which shows that he is upset about losing his herd, while Cobbett\'s labourers suffer from hunger.',
+              'Grade 8-9':
+                'The farmers in Source A are owners who are losing their businesses, while Cobbett\'s labourers seem to own nothing at all. The dairy farmer is "selling his herd" and the pig farmer "had invested everything", which suggests people who once had property and savings to lose. Cobbett\'s workers are left with "skin and bone and nakedness", which implies that they have nothing but their labour.\n\nThe cause of their hardship is different. In Source A the farmers cannot get a fair price: the supermarkets pay "less per litre than it cost to produce", and the pig farmer is "undercut by imports". The market is ruining them. Cobbett\'s labourers have no trouble producing food, since one hundred families raise enough for "more, and many more, than fifteen hundred families". Their problem is that it is taken from them, "carried away" to the "fund-holders, pensioners, soldiers" and other "tax-eaters", so they go hungry in the middle of plenty.\n\nThey suffer in different ways, too. The dairy farmer "wept" as he told the writer about his herd, which suggests grief at losing a way of life. Cobbett\'s labourers are "half starved", a physical suffering and not only a sorrow. Even the work is done by different people. The farms in Source A depend on hired help that has disappeared, with "no longer enough seasonal workers to pick" the strawberries, and the salad in the supermarket was picked by "migrant workers" for "less than the minimum wage". In Milton the work is done by the parish\'s own families: "80 able working men", as many boys and, at times, "the women and stout girls". This suggests that in 1826 whole families of the village laboured on the land, while modern food production relies on seasonal and migrant workers, some of them badly paid.',
             },
-            markScheme: [
-              'Must reference both sources',
-              'Identifies clear differences and/or similarities',
-              'Uses evidence from both texts',
-              'Synthesises rather than alternates between texts',
-              'Infers beyond surface-level details',
-            ],
+            markScheme: {
+              'What to reward': [
+                "Inferences, not just retelling: what the details suggest about how the two groups' situations differ, with details from both sources.",
+                'Property: farmers with herds and savings to lose ("selling his herd", "invested everything") against labourers left with "skin and bone and nakedness".',
+                'The cause: prices below cost and cheap imports in Source A; in Source B plenty of food, "carried away" from those who grew it.',
+                'The suffering: grief at a lost living (the dairy farmer "wept") against hunger ("half starved").',
+                'The workforce: farms short of "seasonal workers" and salad picked by "migrant workers", against a parish whose own families, boys and girls included, do the work.',
+                'Credit any other sound inference about a difference between the two groups, backed from both sources.',
+              ],
+              'Levels (8 marks)': Q2_LEVELS,
+              Limits: [
+                'An answer that uses one source only scores 3 marks at most.',
+                'Level 3 and above need both sources and the difference the question names, between the food producers of Source A and the labourers of Source B.',
+                "Marks are for what is inferred. Comment on the writers' language belongs to Question 3 and is not rewarded here.",
+              ],
+            },
           },
           {
             id: 'aqa-p2-13-q3',
             questionNumber: 3,
             questionText:
-              'You now need to refer only to Source A.\n\nHow does the writer use language to argue that the decline of British farming is a serious threat?',
+              'Look again at the second and third paragraphs of Source A, from "I spent a year working on farms" to the end.\n\nIn these two paragraphs, how does the writer\'s language make the case that the decline of British farming is a serious threat?\n\nQuote short phrases from these paragraphs only, and explain the effect of the words, images and kinds of sentence the writer chooses. Use subject terms where they help.',
             marks: 12,
-            suggestedTimeMinutes: 15,
+            suggestedTimeMinutes: 12,
             questionType: 'analysis',
             extract: `Source A:\n${EXAM13_SOURCE_A}`,
             extractSource: EXAM13_SOURCE_A_REF,
             modelAnswers: {
               'Grade 4-5':
-                'The writer describes the supermarket as designed to "sever the connection" between food and where it comes from - the verb "sever" sounds violent, like cutting something with force. The writer uses personal stories to make us care: the dairy farmer who "wept" is emotional and makes us sympathise. The three farmers in the second paragraph work like a rule of three, each showing a different way that farming is failing, and the pig farmer "undercut by imports" shows the unfairness. The final paragraph uses strong language: "existential" means it threatens our very survival, which makes the reader take the issue seriously.',
-              'Grade 6-7':
-                'The writer constructs the argument through a strategic movement from the abstract to the personal to the political, each stage escalating the stakes. The opening paragraph\'s central metaphor - the supermarket as a machine designed to "sever the connection" - uses a verb connoting violence to characterise what appears benign. The description of a "chicken breast in a polystyrene tray" is deliberately flat, its prosaic specificity enacting the very disconnection it describes. The second paragraph shifts to personal testimony, deploying a tricolon of individual farmers whose stories embody different facets of the crisis. The Somerset dairy farmer who "wept" is emotionally devastating because the verb is so stark and unadorned; the writer does not elaborate or sentimentalise, letting the single verb carry the full weight of despair. The fruit farmer\'s "strawberries rotted in the fields" creates a visceral image of waste that operates as a synecdoche for the entire agricultural crisis. The pig farmer\'s situation - "undercut by imports from countries where the regulations he was legally required to meet simply did not exist" - transforms individual hardship into systemic injustice through the irony of regulatory asymmetry. The final paragraph\'s most powerful technique is the escalation from "food security" through "the ability to feed ourselves" to "an existential one" - each phrase raises the stakes, culminating in a word ("existential") that reframes farming as a matter of national survival.',
+                'The writer uses personal experience, "I spent a year working on farms across Britain", to show that they know what they are talking about. The three farmers are examples that each show a different problem. The verb "wept" is emotive and makes the reader feel sorry for the dairy farmer. The image of strawberries that "rotted in the fields" shows food being wasted. The pig farmer is "undercut by imports", which shows that the situation is unfair. In the last paragraph the writer uses short sentences and repetition: "We lose food security. We lose the ability to feed ourselves." The pronoun "We" shows that this affects everyone. The word "existential" at the end suggests that the decline of farming threatens our survival, so the reader sees it as a serious threat.',
               'Grade 8-9':
-                'The writer\'s rhetorical strategy operates through a progressive unveiling of concealed violence - moving from the systemic concealment of food production to the human cost of that concealment to its geopolitical consequences. The opening paragraph\'s key claim - "this ignorance is not accidental - it is cultivated" - performs a linguistic irony (using the agricultural verb "cultivated" to describe the deliberate growing of ignorance) that establishes the essay\'s central paradox: the more efficiently we produce food, the less we understand its production. The supermarket is presented as an epistemological machine: "fluorescent lights" and "plastic-wrapped produce" create a hermetic environment where the origins of food are systematically erased. The phrase "bears no resemblance to a chicken" achieves its effect through understatement - the gap between animal and product is so vast that the writer need only name it to make the point. The second paragraph\'s three farmer portraits are structured as a tricolon of decline, but their power lies in the writer\'s restraint. The dairy farmer "wept" - a single-syllable verb, its brevity refusing the reader the comfort of elaboration. The strawberries that "rotted in the fields" invert the agricultural order: food that should sustain becomes waste, the plain past tense "rotted" recording the waste as a settled fact. The final paragraph executes a rhetorical pivot from the personal to the geopolitical through the devastating parenthetical "and make no mistake, that is what is happening" - an aside that refuses the reader\'s temptation to read the preceding as hypothetical. The climactic adjective "existential" is earned precisely because the writer has spent two paragraphs establishing the material reality that warrants it.',
+                'The writer builds the case from first-hand evidence to a warning about the nation\'s survival.\n\nThe second paragraph rests on experience. "I spent a year working on farms across Britain" gives the writer authority, and the list between dashes, "arable, dairy, livestock, organic, industrial", shows how wide that experience is, so the conclusions seem to hold for every kind of farming. Three portraits follow, each a sentence without a main verb, like a series of snapshots: "The dairy farmer in Somerset", "The fruit farmer in Kent", "The pig farmer in Yorkshire". The places stretch across the country, so the crisis seems national. The plain verb "wept" is stark and unexpected, and makes the reader feel the farmer\'s grief at "selling his herd". The phrase "less per litre than it cost to produce" shows, in the plain language of a balance sheet, that he is paid to lose money. The image of strawberries that "rotted in the fields" turns food into waste, and the pig farmer who "invested everything" only to be "undercut" by imports suggests that doing the right thing is punished, since the rules he must follow "simply did not exist" for his competitors.\n\nThe third paragraph answers an objection before the reader can make it: "These are not sentimental stories." The short sentence that follows, "They are economic realities with profound consequences", sounds firm and factual. "When we allow our farming industry to collapse" makes the reader share the blame, and the aside "and make no mistake, that is what is happening" insists that the danger is real and present. The writer then raises the stakes. The loss of "picturesque landscapes" is set aside with "not merely", and two short sentences with the same opening, "We lose food security. We lose the ability to feed ourselves.", strike like blows. The final antithesis, "not a romantic concern. It is an existential one.", saves the word "existential" for the last sentence, which turns the decline of farming into a threat to the nation\'s survival.',
             },
-            markScheme: [
-              'Analyses persuasive language techniques in detail',
-              'Comments on the effect of specific words and phrases',
-              'Considers how language positions the reader',
-              'Uses subject terminology accurately and precisely',
-              'Top band: perceptive, detailed, conceptualised analysis',
-            ],
+            markScheme: {
+              'What to reward': [
+                'First-hand authority: "I spent a year working on farms across Britain" and the list "arable, dairy, livestock, organic, industrial".',
+                'The three portraits, written as sentences without main verbs and set in places across the country, with the stark "wept", the waste in "rotted in the fields" and the unfairness of "undercut by imports".',
+                'The answer to an objection, "These are not sentimental stories", the aside "and make no mistake, that is what is happening" and the inclusive "we".',
+                'The rising stakes, through "We lose food security. We lose the ability to feed ourselves." to the closing antithesis, "not a romantic concern. It is an existential one."',
+                'Subject terms (list, sentence fragment, repetition, antithesis, inclusive pronoun) earn credit when the effect is explained, not for being named.',
+              ],
+              'Levels (12 marks)': Q3_LEVELS,
+              Limits: [
+                'Only the second and third paragraphs of Source A count. Writing about the first paragraph or about Source B places the answer at the bottom of the level it would otherwise reach.',
+                'Level 3 and above need the focus of the question: how the language presents the decline of farming as a serious threat.',
+              ],
+            },
           },
           {
             id: 'aqa-p2-13-q4',
             questionNumber: 4,
             questionText:
-              'For this question, you need to refer to the whole of Source A, together with the whole of Source B.\n\nCompare how the two writers convey their perspectives on the value of farming and the treatment of those who work the land.\n\nIn your answer, you could:\n- compare their different perspectives\n- compare the methods they use to convey their perspectives\n- support your response with references to both texts.',
+              "Answer this question using both sources, from beginning to end.\n\nCompare the two writers' feelings and perspectives on farming and the way those who work the land are treated. Explain how each writer gets them across, through choices such as tone, language and structure, and refer closely to both sources.",
             marks: 16,
             suggestedTimeMinutes: 20,
             questionType: 'comparison',
@@ -624,16 +834,22 @@ export const aqaP2C: MockExamPaper[] = [
             modelAnswers: {
               'Grade 4-5':
                 'Both writers argue that the people who produce our food are treated unfairly. Source A shows supermarkets paying a farmer "less per litre than it cost to produce", while Cobbett (Source B) shows labourers who grow huge amounts of food but are "half starved". Both writers use evidence to make their point. Source A describes three farmers the writer met, and Cobbett works out that a hundred families feed "more, and many more, than fifteen hundred families". Both writers show that the rest of the country depends on these people: Source A warns that we will lose "food security", and Cobbett shows the food being "carried away" to others. They differ in tone. Source A is serious and controlled, while Cobbett is furious, calling it "a hellish system" and ending with the claim that otherwise "the devil himself is a saint."',
-              'Grade 6-7':
-                'Both writers value farming as the work on which a whole nation depends, and both argue that the people who do it are treated unjustly, but their methods reflect their different centuries. The writer of Source A combines personal testimony with economic argument: three farmers, each standing for part of the crisis, and a conclusion that widens from farms to the nation, "We lose food security. We lose the ability to feed ourselves." Cobbett works like an accountant who has lost his temper. He calculates, from the census, that one hundred families "raise enough to supply more, and many more, than fifteen hundred families", and then lets the sum speak: "And yet those who do the work are half starved!" His exclamations build to open fury at "a hellish system". Both writers measure the value of farm work by how much it produces and how few people produce it. Source A describes strawberries rotting for want of "enough seasonal workers to pick them"; Cobbett marvels, "What a handful of people to raise such a quantity of food!" They differ in whom they blame. Source A blames supermarkets and imports produced under weaker rules, forces that are driving farmers out of the industry. Cobbett blames taxation: the produce is "carried away to be heaped on the fund-holders, pensioners, soldiers, dead-weight, and other swarms of tax-eaters". The tone of each ending reflects this. Source A insists calmly that the danger is "not a romantic concern", while Cobbett ends with a curse: if such a system does not need "putting an end to, then the devil himself is a saint."',
+              'Grade 8-9':
+                'Both writers value farming as the work on which a whole nation depends, and both argue that the people who do it are treated unjustly, but their methods reflect their different centuries. The writer of Source A combines personal testimony with economic argument: three farmers, each standing for part of the crisis, and a conclusion that widens from farms to the nation, "We lose food security. We lose the ability to feed ourselves." Cobbett works like an accountant who has lost his temper. He calculates, from the census, that one hundred families "raise enough to supply more, and many more, than fifteen hundred families", and then lets the sum speak: "And yet those who do the work are half starved!" His exclamations build to open fury at "a hellish system". Both writers show how much depends on the people who do the work. Source A describes strawberries rotting for want of "enough seasonal workers to pick them"; Cobbett marvels, "What a handful of people to raise such a quantity of food!" They differ in whom they blame. Source A blames supermarkets and imports produced under weaker rules, forces that are driving farmers out of the industry. Cobbett blames taxation: the produce is "carried away to be heaped on the fund-holders, pensioners, soldiers, dead-weight, and other swarms of tax-eaters". The tone of each ending reflects this. Source A insists calmly that the danger is "not a romantic concern", while Cobbett ends with a furious flourish: if such a system does not need "putting an end to, then the devil himself is a saint."',
             },
-            markScheme: [
-              'Compares attitudes from both sources throughout',
-              'Analyses methods used by both writers',
-              'Uses evidence from both texts',
-              'Shows clear understanding of different perspectives',
-              'Top band: perceptive, detailed comparison with sustained critical voice',
-            ],
+            markScheme: {
+              'What to reward': [
+                'A comparison of perspectives: both value farm work and think its workers are wronged; Source A blames supermarkets and imports for ruining farmers, while Cobbett blames a system that carries the food away to "tax-eaters".',
+                'A comparison of methods: Source A uses first-hand portraits of three farmers and a calm, rising conclusion ("We lose food security."); Cobbett calculates from the census, then breaks into exclamations and open anger ("a hellish system").',
+                'Tone: Source A insists that the danger is "not a romantic concern"; Cobbett ends with the furious claim that otherwise "the devil himself is a saint".',
+                'Evidence from across both whole sources, with comment on what each detail shows. Linking words such as whereas and similarly help, but the comparison must be of views and methods, not only of content.',
+              ],
+              'Levels (16 marks)': Q4_LEVELS,
+              Limits: [
+                'An answer that uses one source only scores 6 marks at most.',
+                'Level 3 and above need both sources.',
+              ],
+            },
           },
         ],
       },
@@ -641,7 +857,7 @@ export const aqaP2C: MockExamPaper[] = [
         id: 'aqa-p2-13-writing',
         title: 'Section B: Writing',
         description:
-          'You are advised to spend about 45 minutes on this section. Write in full sentences. You are reminded of the need to plan your answer.',
+          'Allow about 45 minutes for this section: about 5 minutes to plan, 35 to write and 5 to check your work. Question 5 is marked for content and organisation (24 marks) and for technical accuracy (16 marks).',
         totalMarks: 40,
         suggestedTimeMinutes: 45,
         questions: [
@@ -649,26 +865,27 @@ export const aqaP2C: MockExamPaper[] = [
             id: 'aqa-p2-13-q5',
             questionNumber: 5,
             questionText:
-              '"We should all know exactly where our food comes from and how it is produced. Ignorance about what we eat is no longer acceptable."\n\nWrite a letter to the editor of a national newspaper in which you argue your point of view on this statement.\n\n(24 marks for content and organisation / 16 marks for technical accuracy)',
+              '"We should all know exactly where our food comes from and how it is produced. Ignorance about what we eat is no longer acceptable."\n\nWrite a letter to the editor of a national newspaper in which you give your own view on this statement and make the case for it.\n\n(40 marks: 24 for content and organisation, 16 for technical accuracy)',
             marks: 40,
             suggestedTimeMinutes: 45,
             questionType: 'transactional-writing',
             modelAnswers: {
-              'Grade 4-5':
-                'A clear argumentative letter that: addresses the statement directly; uses appropriate letter conventions (Dear Sir/Madam, Yours faithfully); uses some persuasive devices (rhetorical questions, examples, statistics); has a clear structure; demonstrates generally accurate spelling and punctuation.',
-              'Grade 6-7':
-                'A well-crafted letter that: engages with the complexity of food production and consumer responsibility; uses a range of rhetorical techniques appropriate to a formal letter; deploys evidence and examples effectively; demonstrates awareness of audience (editor and readers); shows consistent technical accuracy with ambitious vocabulary.',
               'Grade 8-9':
-                'A compelling, assured letter that: offers a nuanced perspective on food transparency, economic realities, and ethical consumption; crafts a distinctive voice appropriate to the form; deploys rhetorical strategies with precision; uses counter-argument effectively; demonstrates extensive vocabulary and varied syntax; shows technical virtuosity throughout.',
+                'Dear Editor,\n\nI am writing in response to a view I have often heard lately: that we should all know exactly where our food comes from and how it is produced, and that ignorance about what we eat is no longer acceptable. I agree with the spirit of that statement, but I think it puts the blame in the wrong place.\n\nIt is true that most of us know very little about our food. Ask a shopper where the apples in their basket were grown, or who picked them, and the honest answer is usually a shrug. We buy meat that looks nothing like an animal and vegetables that seem to have no season. That ignorance has a cost. It allows farmers to be paid less than their work is worth, and it hides the conditions of the people who pick and pack what we eat.\n\nBut is ignorance really a personal failing? A family doing its weekly shop on a tight budget, with tired children and half an hour to spare, cannot be expected to research the history of every tin and packet. Labels are often vague, and a picture of a farmhouse on a box tells you nothing about where its contents were grown. Shoppers are not refusing to learn. Too often, they are simply not told.\n\nThat is why the responsibility should fall first on those who sell our food. Supermarkets know exactly where every product comes from, because their whole business depends on it. They could print that information clearly, in plain English, on the front of the pack: which country a vegetable was grown in, and how an animal was raised. If they will not do so willingly, the government should require it.\n\nSchools have a part to play as well. Children who grow a tomato plant or visit a working farm learn something that no label can teach: that food comes from land, weather and human effort. A generation that understands that will value farmers more and waste less.\n\nSome of your readers will argue that people do not care, and that more information will make no difference. I do not believe it. When people learn how something was made, many of them change what they buy, and the shops soon notice. Honest facts lead to better choices.\n\nSo yes, ignorance about what we eat should no longer be accepted. But the cure is not to lecture shoppers about what they do not know. It is to make the truth easy to find, and then to trust the public to act on it.\n\nYours faithfully,\n\nA concerned reader',
             },
-            markScheme: [
-              'AO5 (24 marks): Clear, effective communication matched to form, purpose, audience',
-              'AO5: Structured argument with coherent paragraphing',
-              'AO6 (16 marks): Accurate sentence demarcation',
-              'AO6: Range of punctuation used effectively',
-              'AO6: Accurate spelling of ambitious vocabulary',
-              'AO6: Varied sentence forms for purpose and effect',
-            ],
+            markScheme: {
+              'What to reward in this task': [
+                'A clear view on the statement, held and developed all the way through.',
+                'The features of a letter to a newspaper: a greeting to the editor, an opening that says why you are writing, clear paragraphs and a formal sign-off, in a formal but lively voice.',
+                'Reasons developed with examples, and the other side answered fairly, for instance the pressures of time and money on families who shop on a budget.',
+                'Accurate spelling and punctuation, with varied sentences and well-chosen words, which earn the separate 16 marks.',
+              ],
+              'Content and organisation (AO5, 24 marks)': Q5_AO5_LEVELS,
+              'Technical accuracy (AO6, 16 marks)': Q5_AO6_LEVELS,
+              Limit: [
+                'Writing that does not respond to the statement in the way the task asks cannot score more than 12 of the 24 content marks.',
+              ],
+            },
           },
         ],
       },
@@ -691,7 +908,7 @@ export const aqaP2C: MockExamPaper[] = [
       {
         id: 'aqa-p2-14-reading',
         title: 'Section A: Reading',
-        description: `Read Source A and Source B carefully. Then answer all the questions in this section.\n\nSource A: ${EXAM14_SOURCE_A_REF}\nSource B: ${EXAM14_SOURCE_B_REF}`,
+        description: `Spend about 15 minutes reading both sources and all five questions before you start writing. Then allow about 45 minutes for Questions 1 to 4, which must all be answered.\n\nSource A: ${EXAM14_SOURCE_A_REF}\nSource B: ${EXAM14_SOURCE_B_REF}`,
         totalMarks: 40,
         suggestedTimeMinutes: 60,
         questions: [
@@ -699,7 +916,7 @@ export const aqaP2C: MockExamPaper[] = [
             id: 'aqa-p2-14-q1',
             questionNumber: 1,
             questionText:
-              'Read again Source A, the first paragraph.\n\nChoose four statements below which are TRUE.\n\nA) The writer compares professional sport to capitalism.\nB) The Premier League is described as a sporting competition.\nC) Some clubs are backed by sovereign wealth funds.\nD) Ticket prices at the Emirates are affordable.\nE) Communities are being priced out of stadiums.\nF) The writer says the beautiful game is open to everyone.\nG) The writer supports the current financial model.\nH) Billionaire oligarchs are involved in club ownership.',
+              'Look again at the first paragraph of Source A, from "Professional sport has become" to "the exclusive game".\n\nWhich four of the statements below are true, according to this paragraph? Choose four letters, and no more.\n\nA) The writer supports the current financial model.\nB) The writer links professional sport with the faults of modern capitalism.\nC) The Premier League is described as a sporting competition.\nD) Some clubs are backed by sovereign wealth funds.\nE) Ticket prices at the Emirates are affordable.\nF) Clubs compete to spend huge sums on players.\nG) Communities are being priced out of stadiums.\nH) The writer says the beautiful game is open to everyone.',
             marks: 4,
             suggestedTimeMinutes: 5,
             questionType: 'multiple-choice',
@@ -707,69 +924,87 @@ export const aqaP2C: MockExamPaper[] = [
             extractSource: `Source A: ${EXAM14_SOURCE_A_REF} | Source B: ${EXAM14_SOURCE_B_REF}`,
             modelAnswers: {
               'Grade 4-5':
-                'A, C, E, H - A: "a laboratory for everything that is wrong with modern capitalism." C: "clubs backed by sovereign wealth funds." E: "communities those clubs were built to serve are priced out of their own stadiums." H: "billionaire oligarchs."',
+                'B, D, F and G.\nB: sport is "a laboratory for everything that is wrong with modern capitalism".\nD: "clubs backed by sovereign wealth funds".\nF: clubs "compete to spend the most obscene sums on human talent".\nG: communities "are priced out of their own stadiums".',
             },
             markScheme: [
-              '1 mark for each correct answer',
-              'Maximum 4 marks',
-              'No marks for incorrect selections',
+              'True: B, D, F and G.',
+              'B is true: professional sport is "a laboratory for everything that is wrong with modern capitalism".',
+              'D is true: the clubs are "backed by sovereign wealth funds and billionaire oligarchs".',
+              'F is true: clubs "compete to spend the most obscene sums on human talent".',
+              'G is true: the communities "are priced out of their own stadiums".',
+              'A, C, E and H are false: the writer calls the Premier League "a financial arms race" and the sums spent "obscene"; it "is not a sporting competition"; a season ticket "can cost nearly a month\'s wages" for a worker on the national living wage; and "The beautiful game has become the exclusive game".',
+              'One mark for each true statement chosen, 4 marks in all. A false statement earns no mark.',
             ],
           },
           {
             id: 'aqa-p2-14-q2',
             questionNumber: 2,
             questionText:
-              "You need to refer to Source A and Source B for this question.\n\nUse details from both sources. Write a summary of the similarities and differences in the writers' views on what sport reveals about human nature.",
+              'Use both sources to answer this question.\n\nThink about the young footballers in Source A and the two prize-fighters Hazlitt watches in Source B. What can you infer from the two sources about how their experiences differ?\n\nSupport each inference with details from both sources.',
             marks: 8,
-            suggestedTimeMinutes: 10,
+            suggestedTimeMinutes: 8,
             questionType: 'summary',
             extract: `Source A:\n${EXAM14_SOURCE_A}\n\nSource B:\n${EXAM14_SOURCE_B}`,
             extractSource: `Source A: ${EXAM14_SOURCE_A_REF} | Source B: ${EXAM14_SOURCE_B_REF}`,
             modelAnswers: {
               'Grade 4-5':
-                'The two writers see very different things in sport. Source A sees modern professional sport as revealing greed: it calls it "exploitation dressed in the language of aspiration" and says young players are "discarded". Source B, by Hazlitt, sees a bare-knuckle fight as revealing courage: when two men who have been "smashed to the ground" get up and fight on, he calls it "the high and heroic state of man". Both writers admit that sport has a dark side. Source A shows the harm done to children in academies, and Hazlitt describes Hickman\'s face as "a death\'s head, spouting blood". However, Hazlitt admires the fighters for enduring this, while Source A blames the system for the harm. Hazlitt also challenges people who look down on boxing to show "as much pluck" themselves.',
-              'Grade 6-7':
-                'The writers draw opposite conclusions about what competitive sport shows us, partly because they look at different things. The writer of Source A looks at the system around professional football and sees it revealing the worst of us: clubs in "a financial arms race", and academies that take boys "as young as nine" and release most of them "with no qualifications, no fallback, and a shattered sense of identity". Hazlitt looks at the fighters themselves and sees the best. What astonishes him is not the violence but the recovery from it: men "smashed to the ground, smeared with gore, stunned, senseless" who rise "with new strength and courage". That, he says, "is the high and heroic state of man". Both writers acknowledge suffering. Source A describes psychological damage; Hazlitt describes physical ruin in unflinching detail, Hickman\'s face "like a human skull" and a mouth that "gaped blood". The difference lies in what each makes of it. For Source A, suffering is inflicted on the young by adults who profit from them, and we "forget the hundred" who fail. For Hazlitt, suffering chosen and endured shows character, and he admires even the beaten man, who "fought on after this for several rounds". His final challenge is aimed at the spectator who disapproves: "Ye who despise the Fancy" should "do something to shew as much pluck, or as much self-possession as this". Source A turns its scrutiny on the spectator from the other direction: "we cheer it on from the stands".',
+                'The footballers in Source A are children, "boys as young as nine", but the fighters in Source B are grown men. This suggests that the boys do not really choose what happens to them. The boys suffer "psychological pressure" and are left with "a shattered sense of identity", while the fighters are hurt physically and are "smashed to the ground". The boys who fail are "discarded", which suggests that nobody cares about them, but Hazlitt admires the fighters and calls what he sees "the high and heroic state of man". This shows that the fighters are respected even when they are hurt.',
+              'Grade 8-9':
+                'The young footballers in Source A are children, while Hazlitt\'s fighters are grown men. The academies recruit "boys as young as nine", which suggests that the choice to enter the game is made for them, long before they can judge the risks. Neate and Hickman are adults who have chosen to fight, and Hazlitt shows them rising after being knocked down "with new strength and courage", as if each decision to carry on is their own.\n\nThe harm they suffer is different. The footballers\' damage is mostly hidden: years of "intense physical and psychological pressure" leave them with "no qualifications, no fallback, and a shattered sense of identity". This suggests a harm that lasts long after their hopes of a career have ended. The fighters\' harm is physical and immediate: they are "smashed to the ground", "stunned, senseless", and their injuries are there for everyone to see.\n\nThe way others see them is different too. The boys who fail are "discarded", and "We celebrate the one and forget the hundred", which implies that nobody values them once they are of no use. Hazlitt admires the loser as well as the winner. Hickman "fought on after this for several rounds", and Hazlitt challenges those who look down on boxing to show "as much pluck, or as much self-possession as this". So the fighters, even the one who is beaten, are honoured for their courage, while the young players who do not make it are left alone: "we will not be there to catch him."',
             },
-            markScheme: [
-              'Must reference both sources',
-              'Identifies clear differences and/or similarities',
-              'Uses evidence from both texts',
-              'Synthesises rather than alternates between texts',
-              'Infers beyond surface-level details',
-            ],
+            markScheme: {
+              'What to reward': [
+                "Inferences, not just retelling: what the details suggest about how the two groups' experiences differ, with details from both sources.",
+                'Age and choice: "boys as young as nine", recruited by academies, against grown men who rise to fight on "with new strength and courage".',
+                'The harm: hidden and lasting ("a shattered sense of identity") against physical and immediate ("smashed to the ground").',
+                'How they are seen: the many who fail are "discarded" and forgotten, while Hazlitt honours the "pluck" and "self-possession" of the fight.',
+                'After defeat: the boy whose dream collapses has nobody "there to catch him"; Hickman "fought on after this for several rounds".',
+                'Credit any other sound inference about a difference between the two groups, backed from both sources.',
+              ],
+              'Levels (8 marks)': Q2_LEVELS,
+              Limits: [
+                'An answer that uses one source only scores 3 marks at most.',
+                'Level 3 and above need both sources and the difference the question names, between the young footballers and the two fighters.',
+                "Marks are for what is inferred. Comment on the writers' language belongs to Question 3 and is not rewarded here.",
+              ],
+            },
           },
           {
             id: 'aqa-p2-14-q3',
             questionNumber: 3,
             questionText:
-              'You now need to refer only to Source A.\n\nHow does the writer use language to present professional sport as morally corrupt?',
+              'Look again at the second and third paragraphs of Source A, from "But the corruption runs deeper" to the end.\n\nIn these two paragraphs, how does the writer\'s language present the way professional sport treats young players as morally wrong?\n\nQuote short phrases from these paragraphs only, and explain the effect of the words, images and kinds of sentence the writer chooses. Use subject terms where they help.',
             marks: 12,
-            suggestedTimeMinutes: 15,
+            suggestedTimeMinutes: 12,
             questionType: 'analysis',
             extract: `Source A:\n${EXAM14_SOURCE_A}`,
             extractSource: EXAM14_SOURCE_A_REF,
             modelAnswers: {
               'Grade 4-5':
-                'The writer uses the metaphor "laboratory" to compare sport to a scientific experiment, suggesting something cold and unnatural. The phrase "financial arms race" makes football sound like a war about money rather than a sport. The writer uses contrast between the cost of a season ticket and "nearly a month\'s wages for a worker" to show the unfairness. The phrase "the beautiful game has become the exclusive game" is effective because it changes a well-known saying to make a new point about how football has become only for the rich.',
-              'Grade 6-7':
-                'The writer constructs professional sport as a system of concealed exploitation through a sustained semantic field of corruption and deception. The opening metaphor - "a laboratory for everything that is wrong with modern capitalism" - is precisely chosen: a laboratory is a controlled environment where experiments are conducted on subjects, positioning athletes as test subjects rather than participants. The phrase "financial arms race" combines the lexis of warfare with economics, suggesting that spending has become weaponised. The paragraph\'s most devastating technique is the redefinition: "The beautiful game has become the exclusive game" - the substitution of a single adjective transforms celebration into critique. The second paragraph exposes the exploitation of youth through deliberately clinical language: "recruit," "subject," "release" form a lexical chain borrowed from institutional processing. The parenthesis "children, really", set off by dashes, is a calculated interruption - the aside mimics the way society pushes this uncomfortable truth to the margins. The ratio "for every player who makes it, there are a hundred who are discarded" uses the passive voice "discarded" to deny agency, framing young people as waste products of an industrial process. The final paragraph performs its most sophisticated manoeuvre by conceding ("I am not against competition") before redefining: "exploitation dressed in the language of aspiration" is a metaphor of disguise that positions the entire sporting industry as a confidence trick.',
+                'The writer uses the word "corruption" to show that sport is dishonest and wrong. The phrase "children, really" reminds the reader that the young players are only children, which makes their treatment seem worse. The list "no qualifications, no fallback, and a shattered sense of identity" shows how much the boys lose when they are released. The word "discarded" makes it sound as if the players are thrown away like rubbish. The writer uses a contrast: "We celebrate the one and forget the hundred". In the last paragraph the writer says "We are using him", a short sentence which is blunt and shocking. The phrase "dressed in the language of aspiration" suggests that the exploitation is hidden behind talk of dreams.',
               'Grade 8-9':
-                'The writer systematically unpicks the language of sport - aspiration, competition, opportunity - revealing exploitation beneath each term. The controlling metaphor of "laboratory" in the opening sentence is multivalent: it suggests experimentation (on human subjects), controlled conditions (that benefit the experimenter, not the subject), and the clinical detachment of profit-driven observation. The subsequent "financial arms race" extends the semantic field of systemic violence, while the specification of "sovereign wealth funds and billionaire oligarchs" roots the abstraction in identifiable power structures. The paragraph\'s rhetorical climax - "The beautiful game has become the exclusive game" - achieves its force through minimal substitution: a single adjective change transforms a cliché of affection into an indictment, the matching length of "beautiful" and "exclusive" (three syllables each) making the corruption sound almost natural. The second paragraph\'s most devastating technique is the chronological compression of an academy career into a single sentence: "recruit boys as young as nine... subject them to years of intense physical and psychological pressure... release the vast majority at sixteen or seventeen". The verbs form a euphemistic lifecycle that, when stripped of sporting context, reads as institutional abuse. The parenthesis "children, really" weaponises the aside form: its informality mimics the reader\'s own suppressed awareness, the adverb "really" functioning as a gentle insistence on a truth we prefer to avoid. The final paragraph\'s definition - "exploitation dressed in the language of aspiration" - operates as the essay\'s thesis in miniature: the clothing metaphor suggests that aspiration is not merely co-opted but actively worn as camouflage, a deliberate rhetorical strategy employed by those who profit from young people\'s dreams.',
+                'The writer presents the treatment of young players as a moral failure disguised as opportunity.\n\nThe second paragraph opens with "But" and the metaphor "the corruption runs deeper than ticket prices", which suggests a rot that goes below the surface. The aside "children, really" corrects the polite phrase "young athletes" and makes the reader see how young the victims are, while "the true moral character of professional sport" judges the industry as if it were a person. The three verbs in the next sentence, "recruit", "subject" and "release", sum up an academy career as something done to boys rather than a path they choose, and "as young as nine" stresses their age. The list "no qualifications, no fallback, and a shattered sense of identity" piles up what they are left without, and its last item turns on the metaphor "shattered", as if the boy himself were broken. The verb "discarded" treats those who fail as waste, and the antithesis "We celebrate the one and forget the hundred" blames the reader along with the clubs, since "We" takes in every fan. The last clause exposes the motive: success is "commercially useful", so it is the story that gets told.\n\nThe third paragraph begins with a concession, "I am not against competition", so the writer seems fair before turning on the system: "it is exploitation dressed in the language of aspiration". The clothing metaphor suggests a disguise, and the matching endings of "exploitation" and "aspiration" make two opposite ideas sound alike. The long sentence about "the next Marcus Rashford" ends "we are not inspiring him", and the short one that follows, "We are using him.", is blunt. The paragraph ends with the image of a fall: when the boy\'s dream "collapses", "we will not be there to catch him". The aside "as it almost certainly will" makes failure sound all but certain, and the reader is left with a picture of a boy falling with nobody to catch him.',
             },
-            markScheme: [
-              'Analyses persuasive language techniques in detail',
-              'Comments on the effect of specific words and phrases',
-              'Considers how language positions the reader',
-              'Uses subject terminology accurately and precisely',
-              'Top band: perceptive, detailed, conceptualised analysis',
-            ],
+            markScheme: {
+              'What to reward': [
+                'The opening metaphor "the corruption runs deeper than ticket prices" and the correcting aside "children, really".',
+                'The verbs "recruit", "subject" and "release", the list that ends "a shattered sense of identity", and "discarded".',
+                'The antithesis "We celebrate the one and forget the hundred" and the motive it exposes, "commercially useful".',
+                'The concession "I am not against competition", the clothing metaphor in "exploitation dressed in the language of aspiration", the blunt "We are using him." and the closing image of a dream that "collapses".',
+                'Subject terms (metaphor, list, antithesis, concession, short sentence) earn credit when the effect is explained, not for being named.',
+              ],
+              'Levels (12 marks)': Q3_LEVELS,
+              Limits: [
+                'Only the second and third paragraphs of Source A count. Writing about the first paragraph or about Source B places the answer at the bottom of the level it would otherwise reach.',
+                'Level 3 and above need the focus of the question: how the language presents the treatment of young players as wrong.',
+              ],
+            },
           },
           {
             id: 'aqa-p2-14-q4',
             questionNumber: 4,
             questionText:
-              'For this question, you need to refer to the whole of Source A, together with the whole of Source B.\n\nCompare how the two writers convey their contrasting attitudes to competition and its effects.\n\nIn your answer, you could:\n- compare their different attitudes\n- compare the methods they use to convey their attitudes\n- support your response with references to both texts.',
+              "Answer this question using both sources, from beginning to end.\n\nCompare the two writers' feelings and perspectives on competition and what it does to the people who take part. Explain how each writer gets them across, through choices such as tone, language and structure, and refer closely to both sources.",
             marks: 16,
             suggestedTimeMinutes: 20,
             questionType: 'comparison',
@@ -777,17 +1012,23 @@ export const aqaP2C: MockExamPaper[] = [
             extractSource: `Source A: ${EXAM14_SOURCE_A_REF} | Source B: ${EXAM14_SOURCE_B_REF}`,
             modelAnswers: {
               'Grade 4-5':
-                'The two writers have opposite views on competition. Source A thinks professional sport has become corrupt, calling it "a laboratory for everything that is wrong with modern capitalism". Hazlitt thinks the fight he watched showed people at their best: "the high and heroic state of man". Source A uses facts and examples, such as ticket prices and football academies, to criticise sport, while Hazlitt uses vivid description of the fight, including Hickman\'s bloody face, to show what the fighters endured. Both writers deal with the moral argument. Source A says "I am not against competition" but attacks exploitation, while Hazlitt argues against people who "despise the Fancy". Source A ends with a warning about what happens to a boy whose dream collapses, while Hazlitt ends by challenging his critics to show the same courage.',
-              'Grade 6-7':
-                'The writers hold opposing views of competition, and their methods suit their purposes. The writer of Source A is prosecuting a system. The lexis comes from economics and warfare ("financial arms race", "sovereign wealth funds and billionaire oligarchs"), and the evidence is gathered like a case: ticket prices, academy recruitment, the ratio of "a hundred who are discarded" to every success. Hazlitt, writing in 1822, is bearing witness to an event. His method is description so close that the reader seems to stand at the ringside: Neate\'s "tremendous lunge", Hickman hanging "suspended for a second or two" before falling back "with his face lifted up to the sky". The description is unsparing, and Hazlitt reaches for literature to measure it, comparing the beaten man to "one of the figures in Dante\'s Inferno". Both writers anticipate objections. Source A concedes that "Competition is fundamental to human flourishing" before separating true competition from "exploitation dressed in the language of aspiration". Hazlitt concedes nothing to his critics: he turns on them in the second person, with the archaic "Ye" of a preacher, and accuses them of claiming "a superiority which you have never given a single proof of". The deepest difference is in what competition does to people. For Source A it damages them, above all the young: "we will not be there to catch him." For Hazlitt it reveals them, and the effect of the fight is to show "the high and heroic state of man".',
+                'The two writers have opposite views of the sport they describe. Source A thinks professional sport has become corrupt, calling it "a laboratory for everything that is wrong with modern capitalism". Hazlitt thinks the fight he watched showed people at their best: "the high and heroic state of man". Source A uses facts and examples, such as ticket prices and football academies, to criticise sport, while Hazlitt uses vivid description of the fight, including Hickman\'s bloody face, to show what the fighters endured. Both writers deal with the moral argument. Source A says "I am not against competition" but attacks exploitation, while Hazlitt argues against people who "despise the Fancy". Source A ends with a warning about what happens to a boy whose dream collapses, while Hazlitt ends by challenging his critics to show the same courage.',
+              'Grade 8-9':
+                'The writers judge the sport in front of them in opposite ways, and their methods suit their purposes. The writer of Source A is prosecuting a system. The lexis comes from economics and warfare ("financial arms race", "sovereign wealth funds and billionaire oligarchs"), and the evidence is gathered like a case: ticket prices, academy recruitment, the ratio of "a hundred who are discarded" to every success. Hazlitt, writing in 1822, is bearing witness to an event. His method is description so close that the reader seems to stand at the ringside: Neate\'s "tremendous lunge", Hickman hanging "suspended for a second or two" before falling back "with his face lifted up to the sky". The description is unsparing, and Hazlitt reaches for literature to measure it, comparing the bloodied Hickman to "one of the figures in Dante\'s Inferno". Both writers anticipate objections. Source A concedes that "Competition is fundamental to human flourishing" before separating true competition from "exploitation dressed in the language of aspiration". Hazlitt concedes nothing to his critics: he turns on them in the second person, with the archaic "Ye" of a preacher, and accuses them of claiming "a superiority which you have never given a single proof of". The deepest difference is in what the sport each describes does to the people in it. For Source A, sport as it is now run damages them, above all the young: "we will not be there to catch him." For Hazlitt the fight reveals them, and what it shows is "the high and heroic state of man".',
             },
-            markScheme: [
-              'Compares attitudes from both sources throughout',
-              'Analyses methods used by both writers',
-              'Uses evidence from both texts',
-              'Shows clear understanding of different perspectives',
-              'Top band: perceptive, detailed comparison with sustained critical voice',
-            ],
+            markScheme: {
+              'What to reward': [
+                'A comparison of perspectives: Source A sees professional sport as "exploitation dressed in the language of aspiration" that harms the young; Hazlitt sees in the prize-fight "the high and heroic state of man".',
+                'A comparison of methods: Source A builds a case in the language of money and war ("financial arms race"), with figures and a concession ("I am not against competition"); Hazlitt gives close, vivid description of the fight, a comparison with Dante and a direct challenge to his critics ("Ye who despise the Fancy").',
+                'What the sport does to people: for Source A the academies leave boys with "a shattered sense of identity", though competition itself is "fundamental to human flourishing"; for Hazlitt the fight brings out "pluck" and "self-possession".',
+                'Evidence from across both whole sources, with comment on what each detail shows. Linking words such as whereas and similarly help, but the comparison must be of views and methods, not only of content.',
+              ],
+              'Levels (16 marks)': Q4_LEVELS,
+              Limits: [
+                'An answer that uses one source only scores 6 marks at most.',
+                'Level 3 and above need both sources.',
+              ],
+            },
           },
         ],
       },
@@ -795,7 +1036,7 @@ export const aqaP2C: MockExamPaper[] = [
         id: 'aqa-p2-14-writing',
         title: 'Section B: Writing',
         description:
-          'You are advised to spend about 45 minutes on this section. Write in full sentences. You are reminded of the need to plan your answer.',
+          'Allow about 45 minutes for this section: about 5 minutes to plan, 35 to write and 5 to check your work. Question 5 is marked for content and organisation (24 marks) and for technical accuracy (16 marks).',
         totalMarks: 40,
         suggestedTimeMinutes: 45,
         questions: [
@@ -803,26 +1044,27 @@ export const aqaP2C: MockExamPaper[] = [
             id: 'aqa-p2-14-q5',
             questionNumber: 5,
             questionText:
-              '"Competitive sport builds character and teaches young people valuable life lessons. Every child should be encouraged to compete."\n\nWrite an article for a magazine aimed at parents in which you argue your point of view on this statement.\n\n(24 marks for content and organisation / 16 marks for technical accuracy)',
+              '"Competitive sport builds character and teaches young people valuable life lessons. Every child should be encouraged to compete."\n\nWrite an article for a magazine aimed at parents in which you give your own view on this statement and make the case for it.\n\n(40 marks: 24 for content and organisation, 16 for technical accuracy)',
             marks: 40,
             suggestedTimeMinutes: 45,
             questionType: 'transactional-writing',
             modelAnswers: {
-              'Grade 4-5':
-                'A clear argumentative article that: addresses the statement directly; uses some persuasive devices (rhetorical questions, anecdotes, direct address); has a clear structure with headline, introduction, body, and conclusion; demonstrates generally accurate spelling and punctuation; adopts an appropriate register for a parenting magazine.',
-              'Grade 6-7':
-                'A well-crafted article that: engages with both the benefits and risks of competitive sport for young people; uses a range of rhetorical techniques appropriate to the form; deploys evidence, examples, and personal experience effectively; demonstrates awareness of the parent audience; shows consistent technical accuracy with ambitious vocabulary.',
               'Grade 8-9':
-                'A compelling, assured article that: offers a nuanced perspective balancing the developmental value of competition with the psychological risks of excessive pressure; crafts a distinctive voice appropriate to the form and audience; deploys rhetorical strategies with precision; uses counter-argument to strengthen the position; demonstrates extensive vocabulary and varied syntax; shows technical virtuosity throughout.',
+                'Let Them Play, Let Them Lose\n\nOn Saturday mornings, up and down the country, parents stand at the edge of muddy pitches clutching flasks of coffee. Some cheer quietly. Some shout instructions their children cannot hear. And some, if we are honest, care rather more about the result than the eight-year-olds who are actually playing.\n\nThe claim that competitive sport builds character, and that every child should be encouraged to compete, is one most of us have heard since we were children ourselves. I believe it is largely true. But the word that matters most in it is "encouraged", and how we encourage our children makes all the difference.\n\nStart with what competition gives. A child who plays in a team learns that other people depend on her. She learns to turn up on a cold morning because her teammates are expecting her. She learns that effort in training shows on the day, and that talent without practice rarely wins. Most valuable of all, she learns how to lose. Losing a match at ten, shaking hands and trying again next week is a gentle rehearsal for the disappointments that adult life will certainly bring. A child who has never been allowed to lose will find that lesson much harder at twenty-five.\n\nCompetition also offers something children badly need: a place where hard work is rewarded clearly and fairly. In a classroom, progress can feel slow and invisible. On a running track, a child can see that she ran faster than last month, and that pride is hers alone.\n\nYet competition can also do harm, and we parents are often the cause. When a child is pushed to win at all costs, sport stops being play and becomes pressure. Children who feel that our approval depends on the scoreboard do not build character; they build worry, and many give up sport altogether as soon as they are allowed to. The child who is shouted at from the touchline learns not resilience but fear.\n\nThen there is the child who simply does not enjoy competing. Not every young person wants to be measured against others, and forcing them can put them off exercise for life. For that child, encouragement might mean a dance class, a long walk with the dog or a kickabout in the park where nobody keeps score. Being active matters far more than winning.\n\nSo should every child be encouraged to compete? Yes, if encouragement means offering the chance, praising the effort and letting the child decide how far to take it. No, if it means demanding results. The lessons of sport are real, but they are learned best by children who are allowed to enjoy it.\n\nNext Saturday, try a small experiment. When the final whistle blows, do not ask who won. Ask whether they had fun. You may be surprised by how much more you find out.',
             },
-            markScheme: [
-              'AO5 (24 marks): Clear, effective communication matched to form, purpose, audience',
-              'AO5: Structured argument with coherent paragraphing',
-              'AO6 (16 marks): Accurate sentence demarcation',
-              'AO6: Range of punctuation used effectively',
-              'AO6: Accurate spelling of ambitious vocabulary',
-              'AO6: Varied sentence forms for purpose and effect',
-            ],
+            markScheme: {
+              'What to reward in this task': [
+                'A clear view on the statement, held and developed all the way through.',
+                'The features of a magazine article: a headline, an opening that draws the reader in and paragraphs that build to a clear conclusion, in a warm, direct voice that suits parents.',
+                'Reasons developed with examples, and the other side answered fairly, for instance the children who do not enjoy competing or who feel pushed too hard.',
+                'Accurate spelling and punctuation, with varied sentences and well-chosen words, which earn the separate 16 marks.',
+              ],
+              'Content and organisation (AO5, 24 marks)': Q5_AO5_LEVELS,
+              'Technical accuracy (AO6, 16 marks)': Q5_AO6_LEVELS,
+              Limit: [
+                'Writing that does not respond to the statement in the way the task asks cannot score more than 12 of the 24 content marks.',
+              ],
+            },
           },
         ],
       },
@@ -845,7 +1087,7 @@ export const aqaP2C: MockExamPaper[] = [
       {
         id: 'aqa-p2-15-reading',
         title: 'Section A: Reading',
-        description: `Read Source A and Source B carefully. Then answer all the questions in this section.\n\nSource A: ${EXAM15_SOURCE_A_REF}\nSource B: ${EXAM15_SOURCE_B_REF}`,
+        description: `Spend about 15 minutes reading both sources and all five questions before you start writing. Then allow about 45 minutes for Questions 1 to 4, which must all be answered.\n\nSource A: ${EXAM15_SOURCE_A_REF}\nSource B: ${EXAM15_SOURCE_B_REF}`,
         totalMarks: 40,
         suggestedTimeMinutes: 60,
         questions: [
@@ -853,7 +1095,7 @@ export const aqaP2C: MockExamPaper[] = [
             id: 'aqa-p2-15-q1',
             questionNumber: 1,
             questionText:
-              'Read again Source A, the first paragraph.\n\nChoose four statements below which are TRUE.\n\nA) Arts education is being dismantled.\nB) Arts GCSE entries have risen since 2010.\nC) Drama entries have dropped by 48%.\nD) Music entries have increased by 35%.\nE) The decline has happened since 2010.\nF) The writer says the decline is accidental.\nG) The writer calls the fall in entries a statistical fluctuation.\nH) Creativity has been treated as a luxury.',
+              'Look again at the first paragraph of Source A, from "Arts education is being systematically dismantled" to "a luxury, not a necessity".\n\nWhich four of the statements below are true, according to this paragraph? Choose four letters, and no more.\n\nA) Arts education is being dismantled.\nB) Arts GCSE entries have risen since 2010.\nC) The decline has happened since 2010.\nD) Drama entries have dropped by 48%.\nE) Music entries have increased by 35%.\nF) The writer calls the fall in entries a statistical fluctuation.\nG) Creativity has been treated as a luxury.\nH) The writer says the decline is accidental.',
             marks: 4,
             suggestedTimeMinutes: 5,
             questionType: 'multiple-choice',
@@ -861,69 +1103,86 @@ export const aqaP2C: MockExamPaper[] = [
             extractSource: `Source A: ${EXAM15_SOURCE_A_REF} | Source B: ${EXAM15_SOURCE_B_REF}`,
             modelAnswers: {
               'Grade 4-5':
-                'A, C, E, H - A: "Arts education is being systematically dismantled." C: "Drama entries have dropped by 48%." E: "Since 2010." H: "creativity is a luxury, not a necessity."',
+                'A, C, D and G.\nA: "Arts education is being systematically dismantled".\nC: "Since 2010, the number of students taking arts GCSEs has fallen by 40%."\nD: "Drama entries have dropped by 48%."\nG: policy has "told an entire generation that creativity is a luxury, not a necessity".',
             },
             markScheme: [
-              '1 mark for each correct answer',
-              'Maximum 4 marks',
-              'No marks for incorrect selections',
+              'True: A, C, D and G.',
+              'A is true: "Arts education is being systematically dismantled".',
+              'C is true: "Since 2010, the number of students taking arts GCSEs has fallen by 40%."',
+              'D is true: "Drama entries have dropped by 48%."',
+              'G is true: policy has "told an entire generation that creativity is a luxury, not a necessity".',
+              'B, E, F and H are false: arts GCSE entries have "fallen by 40%"; "Music by 35%" is one more fall in the list; "These are not statistical fluctuations"; and the falls are "the consequences of deliberate policy choices".',
+              'One mark for each true statement chosen, 4 marks in all. A false statement earns no mark.',
             ],
           },
           {
             id: 'aqa-p2-15-q2',
             questionNumber: 2,
             questionText:
-              'You need to refer to Source A and Source B for this question.\n\nUse details from both sources. Write a summary of the similarities and differences in how the two writers argue for the value of the arts.',
+              'Use both sources to answer this question.\n\nThink about the arts that the writer of Source A defends and the art that Ruskin describes in Source B. What can you infer from the two sources about how they differ?\n\nSupport each inference with details from both sources.',
             marks: 8,
-            suggestedTimeMinutes: 10,
+            suggestedTimeMinutes: 8,
             questionType: 'summary',
             extract: `Source A:\n${EXAM15_SOURCE_A}\n\nSource B:\n${EXAM15_SOURCE_B}`,
             extractSource: `Source A: ${EXAM15_SOURCE_A_REF} | Source B: ${EXAM15_SOURCE_B_REF}`,
             modelAnswers: {
               'Grade 4-5':
-                'Both writers argue that the arts are valuable, but they give different reasons. Source A argues that the arts are worth money, since the creative industries contribute "over a hundred billion pounds" to the economy, and that they give young people a way to express feelings, like the teenager "who cannot articulate her grief but can paint it". Source B, by Ruskin, argues that art is valuable because it is connected to truth and to use: it "gives Form to knowledge, and Grace to utility". Both writers reject the idea that art is a luxury. Source A objects to treating creativity as "a luxury, not a necessity", and Ruskin says art "must never exist alone". However, Source A values art partly as a way of expressing yourself, while Ruskin says art is of an "inferior kind" unless it states a truth or makes something useful better.',
-              'Grade 6-7':
-                'Both writers defend the arts against the charge that they are an indulgence, but their defences rest on different ideas of what art is for. The writer of Source A argues on two levels. The first is economic, meeting critics on their own ground: the creative industries contribute "over a hundred billion pounds" and employ "over two million people". The second is personal: art is "a language" for "what cannot be expressed in essays or equations", a lifeline for the grieving teenager and the restless boy. Ruskin, lecturing at Oxford in 1870, also refuses to treat art as a luxury, but not because it is profitable or expressive. For him art is valuable when it serves: it "gives Form to knowledge, and Grace to utility", making visible what science cannot describe and adding "delightfulness and worth to the implements of daily use". He also sets a condition that Source A never sets: art pursued for its own sake is "of inferior kind", however "pleasant, wonderful or impressive" it may be. The similarity is therefore real but limited. Both writers join art to everyday life: Source A to the timetable and the job market, Ruskin to "dress, furniture and lodging". The difference is that Source A treats self-expression as one of the highest purposes of art, while Ruskin would judge a work by whether it states "a true thing" or adorns "a serviceable one".',
+                'The arts in Source A are school subjects such as drama and music, but Ruskin writes about art that decorates useful things, such as "dress, furniture and lodging". This suggests that Ruskin thinks of art as part of everyday life rather than something you study for an exam. In Source A, art helps young people express their feelings, like "The teenager who cannot articulate her grief but can paint it". Ruskin\'s art is more about truth and use: he says art should be "full of truth, or full of use". This suggests that he values art for what it gives other people, while Source A values it for what it does for the person making it.',
+              'Grade 8-9':
+                'The arts in Source A are subjects taught in school, while the art Ruskin describes belongs to the things people make and use every day. Source A is concerned with "arts GCSEs", with drama and music, and with what happens to a subject on "the timetable", which suggests art as something young people study, practise and perform. Ruskin\'s art gives "delightfulness and worth" to "the implements of daily use" and to "dress, furniture and lodging", which implies that for him art lives in the crafts that make clothes, furniture and homes.\n\nThe two kinds of art also do different work. In Source A, art lets a person express what is inside them: "The teenager who cannot articulate her grief but can paint it." Its value lies in what it does for the person who makes it. Ruskin\'s art faces outwards: it "makes permanently visible to us" what science could not describe and memory could not keep. This suggests art as a record of the world, valued for what it shows to others.\n\nThey differ, finally, over what makes art worth having. Source A does point to its economic value, "over a hundred billion pounds" a year, but saves its strongest claim for art as "a language" and one of the "lifelines" of the young, valued for the feelings it lets out. Ruskin insists that art "must never exist alone", never "for itself", and that art which is merely pleasant is "of inferior kind". So Ruskin would ask of any work whether it states "a true thing" or adorns "a serviceable one", a test that Source A never sets.',
             },
-            markScheme: [
-              'Must reference both sources',
-              'Identifies clear differences and/or similarities',
-              'Uses evidence from both texts',
-              'Synthesises rather than alternates between texts',
-              'Infers beyond surface-level details',
-            ],
+            markScheme: {
+              'What to reward': [
+                'Inferences, not just retelling: what the details suggest about how the two kinds of art differ, with details from both sources.',
+                'Where art belongs: school subjects ("arts GCSEs", "the timetable") against the crafts of daily life ("dress, furniture and lodging").',
+                'What art does: it lets the person who makes it express feeling ("cannot articulate her grief but can paint it"), against recording truth for others ("makes permanently visible to us").',
+                'What makes it worth having: "lifelines" and "a language" for the young, as well as money, against Ruskin\'s rule that art which is only pleasant is "of inferior kind".',
+                'Credit any other sound inference about a difference between the two kinds of art, backed from both sources.',
+              ],
+              'Levels (8 marks)': Q2_LEVELS,
+              Limits: [
+                'An answer that uses one source only scores 3 marks at most.',
+                'Level 3 and above need both sources and the difference the question names, between the arts Source A defends and the art Ruskin describes.',
+                "Marks are for what is inferred. Comment on the writers' language belongs to Question 3 and is not rewarded here.",
+              ],
+            },
           },
           {
             id: 'aqa-p2-15-q3',
             questionNumber: 3,
             questionText:
-              'You now need to refer only to Source A.\n\nHow does the writer use language to argue that the decline in arts education is both damaging and unjust?',
+              'Look again at the second and third paragraphs of Source A, from "The argument against the arts" to the end.\n\nIn these two paragraphs, how does the writer\'s language make the case that cutting arts education does real harm?\n\nQuote short phrases from these paragraphs only, and explain the effect of the words, images and kinds of sentence the writer chooses. Use subject terms where they help.',
             marks: 12,
-            suggestedTimeMinutes: 15,
+            suggestedTimeMinutes: 12,
             questionType: 'analysis',
             extract: `Source A:\n${EXAM15_SOURCE_A}`,
             extractSource: EXAM15_SOURCE_A_REF,
             modelAnswers: {
               'Grade 4-5':
-                'The writer uses the adverb "systematically" in "systematically dismantled" to suggest the destruction of arts education is deliberate and planned. Statistics like "40%," "48%" and "35%" shock the reader with the scale of decline. The phrase "an optional extra" shows how the curriculum wrongly treats the arts as unimportant. The writer uses emotional examples of the "teenager who cannot articulate her grief but can paint it" and the "boy who cannot sit still in a classroom but can lose himself for hours in a drum kit" to show that the arts help real people in important ways.',
-              'Grade 6-7':
-                'The writer constructs the argument through a rhetorical strategy that first dismantles the opposition\'s economic argument, then reveals the deeper human cost that economics cannot capture. The opening sentence\'s passive construction - "is being systematically dismantled" - is carefully chosen: the passive voice implies a perpetrator who remains unnamed, while "systematically" transforms what might be seen as neglect into calculated destruction. The statistical tricolon ("40%... 48%... 35%") gives the decline a hammering rhythm, and the clipped final fragment, "Music by 35%", drops even the verb, as if the losses no longer needed explaining. The second paragraph executes an audacious rhetorical pivot: having established the scale of the decline, the writer attacks the economic objection on its own territory. The specification that creative industries contribute "more than aerospace, automotive, and life sciences combined" is devastating precisely because it compares art to the industries most revered by utilitarian thinkers. The phrase "subjects that actually matter" deploys sarcasm by echoing the system\'s own voice - the contempt is not the writer\'s but the system\'s, and by ventriloquising it the writer exposes its absurdity. The final paragraph\'s most powerful technique is the metaphor of art as "a language": this reframes cutting arts education not as removing a subject but as silencing a form of communication. The two specific examples - the grieving teenager, the restless boy - are precisely chosen to represent populations typically failed by conventional education, making the cut personal and unjust. The final image, of lifelines being cut "with the smiling efficiency of people who have never needed them," concentrates the essay\'s anger into a single devastating accusation of privileged indifference.',
+                'The writer lists the arguments against the arts, "expensive to teach, difficult to measure, and unlikely to lead to employment", and then says "This argument is wrong on every count", which sounds confident. The writer uses facts, such as "over a hundred billion pounds", to show that the arts matter to the economy. The phrase "an optional extra" shows that the curriculum treats art as unimportant. In the last paragraph, the writer calls the arts "a language", which suggests that they help young people express their feelings. The examples of "The teenager who cannot articulate her grief but can paint it" and the boy with the drum kit make the reader sympathise. The metaphor "lifelines" suggests that the arts save people, so cutting them does real harm.',
               'Grade 8-9':
-                'The writer\'s linguistic strategy operates through a series of redefinitions that progressively reframe arts education from peripheral luxury to essential human infrastructure. The opening verb phrase "systematically dismantled" sets the register: "dismantled" implies a structure being deliberately taken apart, while "systematically" denies any defence of accidental neglect. The adverb transforms policy into sabotage. The statistical evidence - "40%... 48%... 35%" - functions not merely as proof but as a rhetorical device: three sentences, each shorter than the last and the last without a verb, their proximity replicating the cumulative nature of the cuts. The sentence "These are not statistical fluctuations" performs the act of interpretive insistence: the negation forces the reader to abandon the comfortable explanation before the writer supplies the uncomfortable one ("deliberate policy choices"). The second paragraph\'s masterful move is to colonise the opposition\'s territory. By demonstrating that creative industries outperform "aerospace, automotive, and life sciences combined," the writer does not merely counter the economic argument but humiliates it, using the comparison to industries associated with rigour and productivity to expose the intellectual laziness of dismissing the arts. The verb phrase "told an entire generation" positions policy as a form of speech act, making the curriculum itself a rhetorical device that communicates values. The final paragraph\'s controlling metaphor - art as "a language" - achieves its power through what it implies: that removing it is an act of silencing, and that those silenced are specifically the most vulnerable ("the teenager who cannot articulate her grief"). The closing image is the essay\'s most concentrated moment of moral accusation: "the smiling efficiency of people who have never needed them" compresses privilege, indifference, and cruelty into a single phrase, the unsettling pairing of "smiling" with "efficiency" making the perpetrators more disturbing for their pleasant competence.',
+                'The writer argues in two stages: first against the economic case for cutting the arts, then for the human cost of doing so.\n\nThe second paragraph sets out the opposing view fairly, as a list of three objections after a colon: the arts are "expensive to teach, difficult to measure, and unlikely to lead to employment". The short sentence that follows, "This argument is wrong on every count", rejects all three at once, and "count" sounds like a charge being thrown out of court. The evidence is chosen to beat the critics on their own ground. The creative industries contribute "more than aerospace, automotive, and life sciences combined", industries the reader thinks of as serious and modern, and the plain sentence "They employ over two million people" lets the figure speak for itself. The verb "undermining" suggests the future being dug away from below, and "an optional extra" shows how little the curriculum values art. The paragraph ends with sarcasm: "the subjects that actually matter" repeats the critics\' own view so that it sounds narrow.\n\nThe third paragraph turns on two short sentences, "But the deeper damage is not economic. It is human.", which move to what the writer thinks matters most. The direct address "When you cut arts education" puts the reader in the place of those making the cuts, and the correction "you do not simply remove a subject ... You remove a language" turns art into a way of speaking. Two sentences without main verbs then give portraits of real need, each built on "cannot" and "can": "The teenager who cannot articulate her grief but can paint it." The antithesis "These are not indulgences. They are lifelines." turns art from a luxury into something that keeps people afloat, and the last sentence extends the image, since "we are cutting them" suggests a rope being cut. The pairing in "the smiling efficiency of people who have never needed them" is unsettling: "smiling" makes the cuts seem cheerful and "efficiency" makes them cold, and the final words accuse those in charge of taking away what they have never needed themselves.',
             },
-            markScheme: [
-              'Analyses persuasive language techniques in detail',
-              'Comments on the effect of specific words and phrases',
-              'Considers how language positions the reader',
-              'Uses subject terminology accurately and precisely',
-              'Top band: perceptive, detailed, conceptualised analysis',
-            ],
+            markScheme: {
+              'What to reward': [
+                'The opposing view set out and dismissed: the list "expensive to teach, difficult to measure, and unlikely to lead to employment" and the blunt "This argument is wrong on every count".',
+                'Evidence chosen to beat the critics on their own ground ("more than aerospace, automotive, and life sciences combined"), the verb "undermining", and the sarcasm of "the subjects that actually matter".',
+                'The turn in "But the deeper damage is not economic. It is human.", the direct address "When you cut arts education" and the metaphor of art as "a language".',
+                'The two portraits built on "cannot" and "can", the antithesis of "indulgences" and "lifelines", and the unsettling pairing in "the smiling efficiency of people who have never needed them".',
+                'Subject terms (list, short sentence, sarcasm, direct address, metaphor, antithesis) earn credit when the effect is explained, not for being named.',
+              ],
+              'Levels (12 marks)': Q3_LEVELS,
+              Limits: [
+                'Only the second and third paragraphs of Source A count. Writing about the first paragraph or about Source B places the answer at the bottom of the level it would otherwise reach.',
+                'Level 3 and above need the focus of the question: how the language shows that cutting arts education does real harm.',
+              ],
+            },
           },
           {
             id: 'aqa-p2-15-q4',
             questionNumber: 4,
             questionText:
-              'For this question, you need to refer to the whole of Source A, together with the whole of Source B.\n\nCompare how the two writers convey their attitudes towards the value of the arts and what the arts are for.\n\nIn your answer, you could:\n- compare their different attitudes\n- compare the methods they use to convey their attitudes\n- support your response with references to both texts.',
+              "Answer this question using both sources, from beginning to end.\n\nCompare the two writers' feelings and perspectives on the value of the arts and what the arts are for. Explain how each writer gets them across, through choices such as tone, language and structure, and refer closely to both sources.",
             marks: 16,
             suggestedTimeMinutes: 20,
             questionType: 'comparison',
@@ -931,17 +1190,23 @@ export const aqaP2C: MockExamPaper[] = [
             extractSource: `Source A: ${EXAM15_SOURCE_A_REF} | Source B: ${EXAM15_SOURCE_B_REF}`,
             modelAnswers: {
               'Grade 4-5':
-                'Both writers believe the arts matter. Source A uses modern statistics to show the arts are important to the economy ("over a hundred billion pounds") and emotional examples to show they matter to young people. Ruskin, in Source B, uses the calm, formal language of a university lecture to explain what art is for: "the entire vitality of art depends upon its being either full of truth, or full of use". Both writers disagree with people who think art is unimportant. Source A attacks the idea that art is "an optional extra", and Ruskin says art gives "delightfulness and worth" to the objects of everyday life. The main difference is that Source A is angry and urgent, accusing those who cut arts education of "smiling efficiency", while Ruskin is calm and explains his ideas step by step, as a teacher would.',
-              'Grade 6-7':
-                'Both writers value the arts highly, but they convey that value in different voices and for different reasons. The writer of Source A writes as a campaigner under pressure. The lexis is urgent and accusatory ("systematically dismantled", "cutting them"), and the argument is built from evidence meant to win a public debate: entries falling since 2010, the size of the creative industries. The deepest claim is that art is "a language" and a lifeline, and the closing image, of lifelines cut "with the smiling efficiency of people who have never needed them", turns the argument into an accusation. Ruskin writes as a professor addressing students, and his method is definition. He divides the "offices" of art into two, "Form to knowledge, and Grace to utility", and then explains each in balanced, parallel clauses: "it gives precision and charm to truth; in the second it gives precision and charm to service." Where Source A persuades by emotion and statistics, Ruskin persuades by the confident statement of principle, presenting the pleasure we take in useful things as "a law of nature". Their attitudes also differ. Source A defends art that lets young people express "what cannot be expressed in essays or equations"; Ruskin is wary of art valued only as pleasure, saying it "must never exist alone" and exists "rightly only when it is the means of knowledge, or the grace of agency for life". What unites them is the belief that art is not an extra but part of how people learn and live: for Source A a language, for Ruskin a way of giving "Form to truth".',
+                'Both writers believe the arts matter. Source A uses modern statistics to show the arts are important to the economy ("over a hundred billion pounds") and emotional examples to show they matter to young people. Ruskin, in Source B, uses the calm, formal language of a university lecture to explain what art is for: "the entire vitality of art depends upon its being either full of truth, or full of use". Both writers argue that art is more than an extra. Source A attacks the idea that art is "an optional extra", and Ruskin says art gives "delightfulness and worth" to the objects of everyday life. The main difference is that Source A is angry and urgent, accusing those who cut arts education of "smiling efficiency", while Ruskin is calm and explains his ideas step by step, as a teacher would.',
+              'Grade 8-9':
+                'Both writers value the arts highly, but they convey that value in different voices and for different reasons. The writer of Source A writes as a campaigner under pressure. The lexis is urgent and accusatory ("systematically dismantled", "cutting them"), and the argument is built from evidence meant to win a public debate: entries falling since 2010, the size of the creative industries. The deepest claim is that art is "a language" and a lifeline, and the closing image, of lifelines cut "with the smiling efficiency of people who have never needed them", turns the argument into an accusation. Ruskin writes as a professor addressing students, and his method is definition. He divides the "offices" of art into two, "Form to knowledge, and Grace to utility", and then explains each in balanced, parallel clauses: "it gives precision and charm to truth; in the second it gives precision and charm to service." Where Source A persuades by emotion and statistics, Ruskin persuades by the confident statement of principle, presenting the pleasure we take in making a useful thing well as "a law of nature". Their attitudes also differ. Source A defends art that lets young people express "what cannot be expressed in essays or equations"; Ruskin is wary of art valued only as pleasure, saying it "must never exist alone" and exists "rightly only when it is the means of knowledge, or the grace of agency for life". What unites them is the belief that art is not an extra but part of how people learn and live: for Source A a language, for Ruskin a way of giving "Form to truth".',
             },
-            markScheme: [
-              'Compares attitudes from both sources throughout',
-              'Analyses methods used by both writers',
-              'Uses evidence from both texts',
-              'Shows clear understanding of different perspectives',
-              'Top band: perceptive, detailed comparison with sustained critical voice',
-            ],
+            markScheme: {
+              'What to reward': [
+                'A comparison of perspectives: Source A defends the arts as "a language" and as "lifelines" for the young, and as an industry worth "over a hundred billion pounds"; Ruskin values art when it is "either full of truth, or full of use", and thinks art for its own sake "of inferior kind".',
+                'A comparison of methods: Source A writes as an angry campaigner, with statistics, rebuttal ("wrong on every count") and an accusing final image ("smiling efficiency"); Ruskin writes as a lecturer, defining and dividing ("Form to knowledge, and Grace to utility") in calm, balanced clauses.',
+                'Where they meet: both join art to everyday life, and neither treats it as a mere extra.',
+                'Evidence from across both whole sources, with comment on what each detail shows. Linking words such as whereas and similarly help, but the comparison must be of views and methods, not only of content.',
+              ],
+              'Levels (16 marks)': Q4_LEVELS,
+              Limits: [
+                'An answer that uses one source only scores 6 marks at most.',
+                'Level 3 and above need both sources.',
+              ],
+            },
           },
         ],
       },
@@ -949,7 +1214,7 @@ export const aqaP2C: MockExamPaper[] = [
         id: 'aqa-p2-15-writing',
         title: 'Section B: Writing',
         description:
-          'You are advised to spend about 45 minutes on this section. Write in full sentences. You are reminded of the need to plan your answer.',
+          'Allow about 45 minutes for this section: about 5 minutes to plan, 35 to write and 5 to check your work. Question 5 is marked for content and organisation (24 marks) and for technical accuracy (16 marks).',
         totalMarks: 40,
         suggestedTimeMinutes: 45,
         questions: [
@@ -957,26 +1222,27 @@ export const aqaP2C: MockExamPaper[] = [
             id: 'aqa-p2-15-q5',
             questionNumber: 5,
             questionText:
-              '"The arts are a waste of time and money in schools. Students would be better off focusing on maths, science, and technology - the subjects that will actually get them jobs."\n\nWrite a speech to be delivered at a public debate in which you argue your point of view on this statement.\n\n(24 marks for content and organisation / 16 marks for technical accuracy)',
+              '"The arts are a waste of time and money in schools. Students would be better off focusing on maths, science and technology, the subjects that will actually get them jobs."\n\nWrite a speech for a public debate in which you give your own view on this statement and make the case for it.\n\n(40 marks: 24 for content and organisation, 16 for technical accuracy)',
             marks: 40,
             suggestedTimeMinutes: 45,
             questionType: 'transactional-writing',
             modelAnswers: {
-              'Grade 4-5':
-                'A clear argumentative speech that: addresses the statement directly and takes a clear position; uses some persuasive devices (rhetorical questions, direct address, emotive language); has a clear structure with opening, body paragraphs, and conclusion; demonstrates generally accurate spelling and punctuation; adopts an appropriate register for a public debate.',
-              'Grade 6-7':
-                'A well-crafted speech that: engages critically with both the economic and human arguments for and against arts education; uses a range of rhetorical techniques appropriate to debate (tricolon, anaphora, counter-argument, shifts in register); deploys evidence and examples effectively; demonstrates awareness of the debate audience; shows consistent technical accuracy with ambitious vocabulary.',
               'Grade 8-9':
-                'A compelling, assured speech that: offers a nuanced perspective that engages with the complexity of education funding, employability, and human development; crafts a distinctive and authoritative speaking voice; deploys rhetorical strategies with precision, including pauses, repetition, concession, and audience engagement; demonstrates extensive vocabulary and varied syntax; shows technical virtuosity throughout; uses counter-argument not as a concession but as a springboard for a more powerful case.',
+                "Good evening. I would like to thank the organisers for inviting me, and all of you for coming out on a weeknight to talk about something that matters.\n\nTonight's motion says that the arts are a waste of time and money in schools, and that students would be better off concentrating on maths, science and technology, because those are the subjects that will get them jobs. I want to take that argument seriously, because it comes from a good place. Every parent here wants their child to find work. Every teacher wants their pupils to have a future. But I believe the motion is wrong, and I want to explain why.\n\nFirst, it misunderstands the economy. The creative industries are not a hobby. Film, music, design, games, advertising and architecture employ huge numbers of people in this country, and Britain is admired for them across the world. When we cut art, drama and music in schools, we are not protecting our children's job prospects. We are closing doors on some of the careers they might have had.\n\nSecond, it misunderstands how science and technology actually work. The engineer who designs a new phone needs to understand how people will feel when they hold it. The surgeon needs steady hands and a trained eye. The programmer who builds a game needs a sense of story. Creativity is not the opposite of science. It is often what turns a good scientist into a great one.\n\nBut my third reason is the one I care about most. School is not only a factory for producing workers. It is where children learn who they are. For some young people, the art room or the music practice room is the one place in the school day where they feel confident, where nobody is ranking them and where they can say something they cannot put into words. Take that away, and you do not make them better mathematicians. You make school a place they want to leave.\n\nThose who support the motion will say that time is limited, and they are right. Every hour of drama is an hour not spent on equations. But a good education is not measured only in hours of maths. It is measured in the kind of people who leave our schools: curious, resilient, able to think for themselves and to work with others. The arts teach all of those things.\n\nSo I ask you to vote against this motion. Not because maths, science and technology do not matter, but because they matter most when they are taught alongside the subjects that teach our children to imagine. A school without the arts might produce workers. A school with them produces people.\n\nThank you.",
             },
-            markScheme: [
-              'AO5 (24 marks): Clear, effective communication matched to form, purpose, audience',
-              'AO5: Structured argument with coherent paragraphing',
-              'AO6 (16 marks): Accurate sentence demarcation',
-              'AO6: Range of punctuation used effectively',
-              'AO6: Accurate spelling of ambitious vocabulary',
-              'AO6: Varied sentence forms for purpose and effect',
-            ],
+            markScheme: {
+              'What to reward in this task': [
+                'A clear view on the statement, held and developed all the way through.',
+                'The features of a speech for a debate: a greeting, a clear statement of where you stand, signposts that help listeners follow the argument and a closing appeal, pitched for an adult audience.',
+                "Reasons developed with examples, and the other side answered fairly, for instance the real pressure on school time and every family's wish for good jobs.",
+                'Accurate spelling and punctuation, with varied sentences and well-chosen words, which earn the separate 16 marks.',
+              ],
+              'Content and organisation (AO5, 24 marks)': Q5_AO5_LEVELS,
+              'Technical accuracy (AO6, 16 marks)': Q5_AO6_LEVELS,
+              Limit: [
+                'Writing that does not respond to the statement in the way the task asks cannot score more than 12 of the 24 content marks.',
+              ],
+            },
           },
         ],
       },

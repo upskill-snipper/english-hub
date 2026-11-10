@@ -74,7 +74,7 @@ const sennacherib: PoemData = {
       annotations: [
         {
           type: 'Simile',
-          note: 'The army at full strength is like a forest in midsummer \u2014 lush, vast, alive. The image is one of irresistible abundance.',
+          note: 'The army at full strength is like a forest in midsummer - lush, vast, alive. The image is one of irresistible abundance.',
           color: '#10b981',
         },
       ],
@@ -84,7 +84,7 @@ const sennacherib: PoemData = {
       annotations: [
         {
           type: 'Time marker',
-          note: '"Sunset" sets up the contrast that follows. The army is at its peak just as day ends \u2014 a hint that night, and disaster, is coming.',
+          note: '"Sunset" sets up the contrast that follows. The army is at its peak just as day ends - a hint that night, and disaster, is coming.',
           color: '#3b82f6',
         },
       ],
@@ -109,7 +109,7 @@ const sennacherib: PoemData = {
       annotations: [
         {
           type: 'Imagery',
-          note: '"Wither\'d and strown" turns the soldiers into dead leaves on the ground \u2014 anonymous, scattered, lifeless. Their grandeur is gone overnight.',
+          note: '"Wither\'d and strown" turns the soldiers into dead leaves on the ground - anonymous, scattered, lifeless. Their grandeur is gone overnight.',
           color: '#ef4444',
         },
       ],
@@ -125,7 +125,7 @@ const sennacherib: PoemData = {
         },
         {
           type: 'Key quote',
-          note: 'Byron names the killer. The agent of destruction is divine, not human \u2014 the Israelites do not lift a sword.',
+          note: 'Byron names the killer. The agent of destruction is divine, not human - the Israelites do not lift a sword.',
           color: '#f59e0b',
         },
       ],
@@ -135,7 +135,7 @@ const sennacherib: PoemData = {
       annotations: [
         {
           type: 'Imagery',
-          note: 'A single breath kills an entire army. The action is almost gentle \u2014 no battle, no struggle. Death is intimate and instantaneous.',
+          note: 'A single breath kills an entire army. The action is almost gentle - no battle, no struggle. Death is intimate and instantaneous.',
           color: '#3b82f6',
         },
       ],
@@ -145,7 +145,7 @@ const sennacherib: PoemData = {
       annotations: [
         {
           type: 'Diction',
-          note: '"Wax\'d deadly and chill" uses old, almost funereal language. The soldiers do not wake \u2014 their eyes simply glaze and freeze.',
+          note: '"Wax\'d deadly and chill" uses old, almost funereal language. The soldiers do not wake - their eyes simply glaze and freeze.',
           color: '#3b82f6',
         },
       ],
@@ -176,7 +176,7 @@ const sennacherib: PoemData = {
       annotations: [
         {
           type: 'Pride motif',
-          note: '"Pride" links the horse to the Assyrian army\u2019s arrogance. The breath of life and the breath of pride are the same \u2014 both gone.',
+          note: '"Pride" links the horse to the Assyrian army\u2019s arrogance. The breath of life and the breath of pride are the same - both gone.',
           color: '#ef4444',
         },
       ],
@@ -196,7 +196,7 @@ const sennacherib: PoemData = {
       annotations: [
         {
           type: 'Simile',
-          note: 'The dead horse\u2019s foam is "cold as the spray" of sea against rock \u2014 Byron returns to water imagery, linking the army\u2019s fall to natural forces.',
+          note: 'The dead horse\u2019s foam is "cold as the spray" of sea against rock - Byron returns to water imagery, linking the army\u2019s fall to natural forces.',
           color: '#10b981',
         },
       ],
@@ -253,7 +253,7 @@ const sennacherib: PoemData = {
       annotations: [
         {
           type: 'Aftermath',
-          note: 'For the first time in the poem we hear human voices \u2014 but only the cries of grieving widows. The cost of imperial ambition is borne by women left behind.',
+          note: 'For the first time in the poem we hear human voices - but only the cries of grieving widows. The cost of imperial ambition is borne by women left behind.',
           color: '#3b82f6',
         },
       ],
@@ -273,7 +273,7 @@ const sennacherib: PoemData = {
       annotations: [
         {
           type: 'Irony',
-          note: '"Unsmote by the sword" \u2014 the army was defeated without anyone striking a blow. The mighty empire is destroyed by a single divine breath.',
+          note: '"Unsmote by the sword" - the army was defeated without anyone striking a blow. The mighty empire is destroyed by a single divine breath.',
           color: '#f59e0b',
         },
       ],
@@ -283,7 +283,7 @@ const sennacherib: PoemData = {
       annotations: [
         {
           type: 'Closing simile',
-          note: 'The empire melts "like snow in the glance of the Lord" \u2014 a single look from God is enough. The exclamation mark seals the moral with thunderous finality.',
+          note: 'The empire melts "like snow in the glance of the Lord" - a single look from God is enough. The exclamation mark seals the moral with thunderous finality.',
           color: '#10b981',
         },
         {
@@ -303,10 +303,10 @@ const sennacherib: PoemData = {
     <p>"The Destruction of Sennacherib" was published in <em>Hebrew Melodies</em>, a collection set to traditional Jewish music by the composer Isaac Nathan. The poems retell stories from the Hebrew Bible and reflect Byron\u2019s sympathy for oppressed peoples and his fascination with Old Testament drama.</p>
 
     <h3>Biblical source: 2 Kings 19</h3>
-    <p>The poem dramatises a story from 2 Kings 19. Sennacherib, king of Assyria, besieges Jerusalem during the reign of Hezekiah. The Bible says that "the angel of the Lord went out, and smote in the camp of the Assyrians a hundred fourscore and five thousand" \u2014 the entire army died in a single night, without battle.</p>
+    <p>The poem dramatises a story from 2 Kings 19. Sennacherib, king of Assyria, besieges Jerusalem during the reign of Hezekiah. The Bible says that "the angel of the Lord went out, and smote in the camp of the Assyrians a hundred fourscore and five thousand" - the entire army died in a single night, without battle.</p>
 
     <h3>Romantic context</h3>
-    <p>Byron was writing in the aftermath of the Napoleonic Wars (1803–1815). The collapse of Napoleon\u2019s seemingly invincible army would have been very recent in Byron\u2019s readers\u2019 minds. The poem can be read as a commentary on the fragility of all earthly empires \u2014 ancient or modern.</p>
+    <p>Byron was writing in the aftermath of the Napoleonic Wars (1803–1815). The collapse of Napoleon\u2019s seemingly invincible army would have been very recent in Byron\u2019s readers\u2019 minds. The poem can be read as a commentary on the fragility of all earthly empires - ancient or modern.</p>
   `,
 
   contextAr: `
@@ -317,39 +317,39 @@ const sennacherib: PoemData = {
     <p>"The Destruction of Sennacherib" \u0646\u0634\u0631\u062a \u0641\u064a <em>Hebrew Melodies</em>\u060c \u0648\u0647\u0648 \u062f\u064a\u0648\u0627\u0646 \u0648\u064f\u0636\u0639 \u0644\u0647 \u0644\u062d\u0646 \u0639\u0644\u0649 \u0623\u0644\u062d\u0627\u0646 \u064a\u0647\u0648\u062f\u064a\u0651\u0629 \u062a\u0642\u0644\u064a\u062f\u064a\u0651\u0629 \u0645\u0646 \u0642\u0628\u0644 \u0627\u0644\u0645\u0644\u062d\u0651\u0646 Isaac Nathan. \u0627\u0644\u0642\u0635\u0627\u0626\u062f \u062a\u0639\u064a\u062f \u0631\u0648\u0627\u064a\u0629 \u0642\u0635\u0635 \u0645\u0646 \u0627\u0644\u0643\u062a\u0627\u0628 \u0627\u0644\u0645\u0642\u062f\u0651\u0633 \u0627\u0644\u0639\u0628\u0631\u064a\u060c \u0648\u062a\u0639\u0643\u0633 \u062a\u0639\u0627\u0637\u0641 Byron \u0645\u0639 \u0627\u0644\u0634\u0639\u0648\u0628 \u0627\u0644\u0645\u0636\u0637\u0647\u062f\u0629 \u0648\u0627\u0646\u0628\u0647\u0627\u0631\u0647 \u0628\u062f\u0631\u0627\u0645\u0627 \u0627\u0644\u0639\u0647\u062f \u0627\u0644\u0642\u062f\u064a\u0645.</p>
 
     <h3>\u0627\u0644\u0645\u0635\u062f\u0631 \u0627\u0644\u062f\u064a\u0646\u064a: 2 Kings 19</h3>
-    <p>\u0627\u0644\u0642\u0635\u064a\u062f\u0629 \u062a\u062c\u0633\u0651\u062f \u0642\u0635\u0651\u0629 \u0645\u0646 \u0633\u0641\u0631 \u0627\u0644\u0645\u0644\u0648\u0643 \u0627\u0644\u062b\u0627\u0646\u064a\u060c \u0627\u0644\u0625\u0635\u062d\u0627\u062d 19. Sennacherib\u060c \u0645\u0644\u0643 \u0622\u0634\u0648\u0631\u060c \u064a\u062d\u0627\u0635\u0631 \u0627\u0644\u0642\u062f\u0633 \u0641\u064a \u0639\u0647\u062f Hezekiah. \u0627\u0644\u0643\u062a\u0627\u0628 \u0627\u0644\u0645\u0642\u062f\u0651\u0633 \u064a\u0642\u0648\u0644 \u0625\u0646 "\u0645\u0644\u0627\u0643 \u0627\u0644\u0631\u0628\u0651 \u062e\u0631\u062c \u0648\u0636\u0631\u0628 \u0645\u0646 \u0645\u0639\u0633\u0643\u0631 \u0627\u0644\u0622\u0634\u0648\u0631\u064a\u064a\u0646 \u0645\u0626\u0629 \u0648\u062e\u0645\u0633\u0629 \u0648\u062b\u0645\u0627\u0646\u064a\u0646 \u0623\u0644\u0641" \u2014 \u0643\u0644 \u0627\u0644\u062c\u064a\u0634 \u0645\u0627\u062a \u0641\u064a \u0644\u064a\u0644\u0629 \u0648\u062d\u062f\u0629\u060c \u0628\u062f\u0648\u0646 \u0645\u0639\u0631\u0643\u0629.</p>
+    <p>\u0627\u0644\u0642\u0635\u064a\u062f\u0629 \u062a\u062c\u0633\u0651\u062f \u0642\u0635\u0651\u0629 \u0645\u0646 \u0633\u0641\u0631 \u0627\u0644\u0645\u0644\u0648\u0643 \u0627\u0644\u062b\u0627\u0646\u064a\u060c \u0627\u0644\u0625\u0635\u062d\u0627\u062d 19. Sennacherib\u060c \u0645\u0644\u0643 \u0622\u0634\u0648\u0631\u060c \u064a\u062d\u0627\u0635\u0631 \u0627\u0644\u0642\u062f\u0633 \u0641\u064a \u0639\u0647\u062f Hezekiah. \u0627\u0644\u0643\u062a\u0627\u0628 \u0627\u0644\u0645\u0642\u062f\u0651\u0633 \u064a\u0642\u0648\u0644 \u0625\u0646 "\u0645\u0644\u0627\u0643 \u0627\u0644\u0631\u0628\u0651 \u062e\u0631\u062c \u0648\u0636\u0631\u0628 \u0645\u0646 \u0645\u0639\u0633\u0643\u0631 \u0627\u0644\u0622\u0634\u0648\u0631\u064a\u064a\u0646 \u0645\u0626\u0629 \u0648\u062e\u0645\u0633\u0629 \u0648\u062b\u0645\u0627\u0646\u064a\u0646 \u0623\u0644\u0641" - \u0643\u0644 \u0627\u0644\u062c\u064a\u0634 \u0645\u0627\u062a \u0641\u064a \u0644\u064a\u0644\u0629 \u0648\u062d\u062f\u0629\u060c \u0628\u062f\u0648\u0646 \u0645\u0639\u0631\u0643\u0629.</p>
 
     <h3>\u0627\u0644\u0633\u064a\u0627\u0642 \u0627\u0644\u0631\u0648\u0645\u0627\u0646\u0633\u064a</h3>
-    <p>Byron \u0643\u062a\u0628 \u0627\u0644\u0642\u0635\u064a\u062f\u0629 \u0628\u0639\u062f \u0627\u0644\u062d\u0631\u0648\u0628 \u0627\u0644\u0646\u0627\u0628\u0644\u064a\u0648\u0646\u064a\u0629 (1803\u20131815). \u0627\u0646\u0647\u064a\u0627\u0631 \u062c\u064a\u0634 Napoleon \u0627\u0644\u0644\u064a \u0643\u0627\u0646 \u064a\u0628\u064a\u0651\u0646 \u0625\u0646\u0647 \u0645\u0627 \u064a\u064f\u0642\u0647\u0631 \u0643\u0627\u0646 \u0637\u0627\u0632\u062c \u0641\u064a \u0623\u0630\u0647\u0627\u0646 \u0642\u0631\u0651\u0627\u0621 Byron. \u0627\u0644\u0642\u0635\u064a\u062f\u0629 \u062a\u0646\u0642\u0631\u0649 \u0643\u062a\u0639\u0644\u064a\u0642 \u0639\u0644\u0649 \u0647\u0634\u0627\u0634\u0629 \u0643\u0644 \u0627\u0644\u0625\u0645\u0628\u0631\u0627\u0637\u0648\u0631\u064a\u0627\u062a \u0627\u0644\u0623\u0631\u0636\u064a\u0651\u0629 \u2014 \u0642\u062f\u064a\u0645\u0629 \u0643\u0627\u0646\u062a \u0648\u0644\u0651\u0627 \u062d\u062f\u064a\u062b\u0629.</p>
+    <p>Byron \u0643\u062a\u0628 \u0627\u0644\u0642\u0635\u064a\u062f\u0629 \u0628\u0639\u062f \u0627\u0644\u062d\u0631\u0648\u0628 \u0627\u0644\u0646\u0627\u0628\u0644\u064a\u0648\u0646\u064a\u0629 (1803\u20131815). \u0627\u0646\u0647\u064a\u0627\u0631 \u062c\u064a\u0634 Napoleon \u0627\u0644\u0644\u064a \u0643\u0627\u0646 \u064a\u0628\u064a\u0651\u0646 \u0625\u0646\u0647 \u0645\u0627 \u064a\u064f\u0642\u0647\u0631 \u0643\u0627\u0646 \u0637\u0627\u0632\u062c \u0641\u064a \u0623\u0630\u0647\u0627\u0646 \u0642\u0631\u0651\u0627\u0621 Byron. \u0627\u0644\u0642\u0635\u064a\u062f\u0629 \u062a\u0646\u0642\u0631\u0649 \u0643\u062a\u0639\u0644\u064a\u0642 \u0639\u0644\u0649 \u0647\u0634\u0627\u0634\u0629 \u0643\u0644 \u0627\u0644\u0625\u0645\u0628\u0631\u0627\u0637\u0648\u0631\u064a\u0627\u062a \u0627\u0644\u0623\u0631\u0636\u064a\u0651\u0629 - \u0642\u062f\u064a\u0645\u0629 \u0643\u0627\u0646\u062a \u0648\u0644\u0651\u0627 \u062d\u062f\u064a\u062b\u0629.</p>
   `,
 
-  summary: `Stanzas 1\u20132: Byron describes the Assyrian army at its most magnificent. They sweep down "like the wolf on the fold" in shining purple and gold, their spears glittering like stars on the sea. They are compared to a forest in summer \u2014 vast, lush, irresistible.
+  summary: `Stanzas 1\u20132: Byron describes the Assyrian army at its most magnificent. They sweep down "like the wolf on the fold" in shining purple and gold, their spears glittering like stars on the sea. They are compared to a forest in summer - vast, lush, irresistible.
 
 Stanza 2 turn: The same forest simile is repeated, but now in autumn. By the morning, the army lies "wither'd and strown" like fallen leaves. Two seasons in two lines: the rise and fall of empire compressed into a single image.
 
-Stanza 3: Byron names the agent of destruction. The Angel of Death (from 2 Kings 19) spreads his wings on the wind and breathes in the face of the soldiers. They die in their sleep \u2014 their hearts beat once and stop forever.
+Stanza 3: Byron names the agent of destruction. The Angel of Death (from 2 Kings 19) spreads his wings on the wind and breathes in the face of the soldiers. They die in their sleep - their hearts beat once and stop forever.
 
 Stanzas 4\u20135: Byron zooms in on a dead horse and a dead rider. The horse\u2019s nostril is wide but no breath comes through; the rider lies pale and distorted, dew on his brow and rust on his armour. The tents are silent; the banners stand alone.
 
-Stanza 6: We hear, for the first time, human voices \u2014 the wails of the Assyrian widows back home in Ashur. Their idols are smashed; their empire has been destroyed without a sword being lifted. The poem ends with the army melting "like snow in the glance of the Lord".
+Stanza 6: We hear, for the first time, human voices - the wails of the Assyrian widows back home in Ashur. Their idols are smashed; their empire has been destroyed without a sword being lifted. The poem ends with the army melting "like snow in the glance of the Lord".
 
 Overall meaning: A poem about the fragility of human power. The mightiest empire on earth is wiped out in a single night by a single divine action. The cavalry never fights; the Israelites never strike. Byron uses biblical narrative to dramatise how easily proud, dazzling power can be undone.`,
 
-  summaryAr: `Stanzas 1\u20132: Byron \u064a\u0648\u0635\u0641 \u0627\u0644\u062c\u064a\u0634 \u0627\u0644\u0622\u0634\u0648\u0631\u064a \u0641\u064a \u0623\u0628\u0647\u0649 \u0644\u062d\u0638\u0627\u062a\u0647. \u064a\u0646\u0642\u0636\u0651\u0648\u0646 "like the wolf on the fold" \u0628\u062b\u064a\u0627\u0628 \u0623\u0631\u062c\u0648\u0627\u0646\u064a\u0629 \u0648\u0630\u0647\u0628\u064a\u0629 \u0644\u0627\u0645\u0639\u0629\u060c \u0648\u0631\u0645\u0627\u062d\u0647\u0645 \u062a\u0644\u0645\u0639 \u0645\u062b\u0644 \u0627\u0644\u0646\u062c\u0648\u0645 \u0639\u0644\u0649 \u0627\u0644\u0628\u062d\u0631. \u0648\u064a\u0634\u0628\u0651\u0647\u0647\u0645 \u0628\u063a\u0627\u0628\u0629 \u0641\u064a \u0627\u0644\u0635\u064a\u0641 \u2014 \u0634\u0627\u0633\u0639\u0629\u060c \u062e\u0636\u0631\u0627\u060c \u0645\u0627 \u064a\u0645\u0643\u0646 \u062a\u0642\u0627\u0648\u0645\u0647\u0627.
+  summaryAr: `Stanzas 1\u20132: Byron \u064a\u0648\u0635\u0641 \u0627\u0644\u062c\u064a\u0634 \u0627\u0644\u0622\u0634\u0648\u0631\u064a \u0641\u064a \u0623\u0628\u0647\u0649 \u0644\u062d\u0638\u0627\u062a\u0647. \u064a\u0646\u0642\u0636\u0651\u0648\u0646 "like the wolf on the fold" \u0628\u062b\u064a\u0627\u0628 \u0623\u0631\u062c\u0648\u0627\u0646\u064a\u0629 \u0648\u0630\u0647\u0628\u064a\u0629 \u0644\u0627\u0645\u0639\u0629\u060c \u0648\u0631\u0645\u0627\u062d\u0647\u0645 \u062a\u0644\u0645\u0639 \u0645\u062b\u0644 \u0627\u0644\u0646\u062c\u0648\u0645 \u0639\u0644\u0649 \u0627\u0644\u0628\u062d\u0631. \u0648\u064a\u0634\u0628\u0651\u0647\u0647\u0645 \u0628\u063a\u0627\u0628\u0629 \u0641\u064a \u0627\u0644\u0635\u064a\u0641 - \u0634\u0627\u0633\u0639\u0629\u060c \u062e\u0636\u0631\u0627\u060c \u0645\u0627 \u064a\u0645\u0643\u0646 \u062a\u0642\u0627\u0648\u0645\u0647\u0627.
 
 \u0627\u0644\u062a\u062d\u0648\u0651\u0644 \u0641\u064a Stanza 2: \u0646\u0641\u0633 \u062a\u0634\u0628\u064a\u0647 \u0627\u0644\u063a\u0627\u0628\u0629 \u064a\u062a\u0643\u0631\u0651\u0631\u060c \u0628\u0633 \u0647\u0630\u064a \u0627\u0644\u0645\u0631\u0651\u0629 \u0641\u064a \u0627\u0644\u062e\u0631\u064a\u0641. \u0648\u0642\u062a \u0627\u0644\u0635\u0628\u0627\u062d\u060c \u0627\u0644\u062c\u064a\u0634 \u064a\u0631\u0642\u062f "wither'd and strown" \u0645\u062b\u0644 \u0623\u0648\u0631\u0627\u0642 \u0645\u062a\u0633\u0627\u0642\u0637\u0629. \u0641\u0635\u0644\u064a\u0646 \u0641\u064a \u0628\u064a\u062a\u064a\u0646: \u0635\u0639\u0648\u062f \u0627\u0644\u0625\u0645\u0628\u0631\u0627\u0637\u0648\u0631\u064a\u0629 \u0648\u0633\u0642\u0648\u0637\u0647\u0627 \u0645\u0643\u062b\u0651\u0641\u064a\u0646 \u0641\u064a \u0635\u0648\u0631\u0629 \u0648\u062d\u062f\u0629.
 
-Stanza 3: Byron \u064a\u0633\u0645\u0651\u064a \u0627\u0644\u0645\u0633\u0624\u0648\u0644 \u0639\u0646 \u0627\u0644\u062f\u0645\u0627\u0631. \u0645\u0644\u0627\u0643 \u0627\u0644\u0645\u0648\u062a (\u0645\u0646 2 Kings 19) \u064a\u0641\u0631\u062f \u062c\u0646\u0627\u062d\u0627\u062a\u0647 \u0639\u0644\u0649 \u0627\u0644\u0631\u064a\u062d\u060c \u0648\u064a\u0646\u0641\u062e \u0641\u064a \u0648\u062c\u0648\u0647 \u0627\u0644\u062c\u0646\u0648\u062f. \u064a\u0645\u0648\u062a\u0648\u0646 \u0648\u0647\u0645 \u0646\u0627\u064a\u0645\u064a\u0646 \u2014 \u0642\u0644\u0648\u0628\u0647\u0645 \u062a\u0646\u0628\u0636 \u0645\u0631\u0651\u0629 \u0648\u062d\u062f\u0629 \u0648\u062a\u0633\u0643\u0646 \u0644\u0644\u0623\u0628\u062f.
+Stanza 3: Byron \u064a\u0633\u0645\u0651\u064a \u0627\u0644\u0645\u0633\u0624\u0648\u0644 \u0639\u0646 \u0627\u0644\u062f\u0645\u0627\u0631. \u0645\u0644\u0627\u0643 \u0627\u0644\u0645\u0648\u062a (\u0645\u0646 2 Kings 19) \u064a\u0641\u0631\u062f \u062c\u0646\u0627\u062d\u0627\u062a\u0647 \u0639\u0644\u0649 \u0627\u0644\u0631\u064a\u062d\u060c \u0648\u064a\u0646\u0641\u062e \u0641\u064a \u0648\u062c\u0648\u0647 \u0627\u0644\u062c\u0646\u0648\u062f. \u064a\u0645\u0648\u062a\u0648\u0646 \u0648\u0647\u0645 \u0646\u0627\u064a\u0645\u064a\u0646 - \u0642\u0644\u0648\u0628\u0647\u0645 \u062a\u0646\u0628\u0636 \u0645\u0631\u0651\u0629 \u0648\u062d\u062f\u0629 \u0648\u062a\u0633\u0643\u0646 \u0644\u0644\u0623\u0628\u062f.
 
 Stanzas 4\u20135: Byron \u064a\u0643\u0628\u0651\u0631 \u0627\u0644\u0635\u0648\u0631\u0629 \u0639\u0644\u0649 \u0641\u0631\u0633 \u0645\u064a\u0651\u062a \u0648\u0641\u0627\u0631\u0633 \u0645\u064a\u0651\u062a. \u0645\u0646\u062e\u0627\u0631 \u0627\u0644\u0641\u0631\u0633 \u0645\u0641\u062a\u0648\u062d \u0628\u0633 \u0645\u0627 \u064a\u0637\u0644\u0639 \u0645\u0646\u0647 \u0646\u0641\u0633\u061b \u0648\u0627\u0644\u0641\u0627\u0631\u0633 \u0645\u0645\u062f\u0648\u062f \u0634\u0627\u062d\u0628 \u0648\u0645\u0634\u0648\u0651\u0647\u060c \u0627\u0644\u0646\u062f\u0649 \u0639\u0644\u0649 \u062c\u0628\u064a\u0646\u0647 \u0648\u0627\u0644\u0635\u062f\u0623 \u0639\u0644\u0649 \u062f\u0631\u0639\u0647. \u0627\u0644\u062e\u064a\u0627\u0645 \u0635\u0627\u0645\u062a\u0629\u061b \u0648\u0627\u0644\u0623\u0639\u0644\u0627\u0645 \u0648\u0627\u0642\u0641\u0629 \u0644\u062d\u0627\u0644\u0647\u0627.
 
-Stanza 6: \u0644\u0623\u0648\u0651\u0644 \u0645\u0631\u0651\u0629 \u0641\u064a \u0627\u0644\u0642\u0635\u064a\u062f\u0629\u060c \u0646\u0633\u0645\u0639 \u0623\u0635\u0648\u0627\u062a \u0628\u0634\u0631\u064a\u0651\u0629 \u2014 \u0639\u0648\u064a\u0644 \u0623\u0631\u0627\u0645\u0644 \u0627\u0644\u0622\u0634\u0648\u0631\u064a\u064a\u0646 \u0641\u064a \u0645\u0648\u0637\u0646\u0647\u0645 \u0641\u064a Ashur. \u0623\u0635\u0646\u0627\u0645\u0647\u0645 \u062a\u062d\u0637\u0651\u0645\u062a\u061b \u0648\u0625\u0645\u0628\u0631\u0627\u0637\u0648\u0631\u064a\u0651\u062a\u0647\u0645 \u0627\u0646\u0651\u062f\u0645\u0631\u062a \u0628\u062f\u0648\u0646 \u0645\u0627 \u064a\u0631\u062a\u0641\u0639 \u0633\u064a\u0641. \u0627\u0644\u0642\u0635\u064a\u062f\u0629 \u062a\u0646\u062a\u0647\u064a \u0628\u0627\u0644\u062c\u064a\u0634 \u0648\u0647\u0648 \u064a\u0630\u0648\u0628 "like snow in the glance of the Lord".
+Stanza 6: \u0644\u0623\u0648\u0651\u0644 \u0645\u0631\u0651\u0629 \u0641\u064a \u0627\u0644\u0642\u0635\u064a\u062f\u0629\u060c \u0646\u0633\u0645\u0639 \u0623\u0635\u0648\u0627\u062a \u0628\u0634\u0631\u064a\u0651\u0629 - \u0639\u0648\u064a\u0644 \u0623\u0631\u0627\u0645\u0644 \u0627\u0644\u0622\u0634\u0648\u0631\u064a\u064a\u0646 \u0641\u064a \u0645\u0648\u0637\u0646\u0647\u0645 \u0641\u064a Ashur. \u0623\u0635\u0646\u0627\u0645\u0647\u0645 \u062a\u062d\u0637\u0651\u0645\u062a\u061b \u0648\u0625\u0645\u0628\u0631\u0627\u0637\u0648\u0631\u064a\u0651\u062a\u0647\u0645 \u0627\u0646\u0651\u062f\u0645\u0631\u062a \u0628\u062f\u0648\u0646 \u0645\u0627 \u064a\u0631\u062a\u0641\u0639 \u0633\u064a\u0641. \u0627\u0644\u0642\u0635\u064a\u062f\u0629 \u062a\u0646\u062a\u0647\u064a \u0628\u0627\u0644\u062c\u064a\u0634 \u0648\u0647\u0648 \u064a\u0630\u0648\u0628 "like snow in the glance of the Lord".
 
 \u0627\u0644\u0645\u0639\u0646\u0649 \u0627\u0644\u0639\u0627\u0645: \u0642\u0635\u064a\u062f\u0629 \u0639\u0646 \u0647\u0634\u0627\u0634\u0629 \u0627\u0644\u0633\u0644\u0637\u0629 \u0627\u0644\u0628\u0634\u0631\u064a\u0651\u0629. \u0623\u0639\u062a\u0649 \u0625\u0645\u0628\u0631\u0627\u0637\u0648\u0631\u064a\u0629 \u0641\u064a \u0627\u0644\u0623\u0631\u0636 \u062a\u0646\u0651\u0645\u062d\u064a \u0641\u064a \u0644\u064a\u0644\u0629 \u0648\u062d\u062f\u0629 \u0628\u0641\u0639\u0644 \u0625\u0644\u0647\u064a \u0648\u0627\u062d\u062f. \u0627\u0644\u0641\u0631\u0633\u0627\u0646 \u0645\u0627 \u064a\u062d\u0627\u0631\u0628\u0648\u0646\u061b \u0648\u0627\u0644\u0625\u0633\u0631\u0627\u0626\u064a\u0644\u064a\u0648\u0646 \u0645\u0627 \u064a\u0636\u0631\u0628\u0648\u0646. Byron \u064a\u0633\u062a\u062e\u062f\u0645 \u0627\u0644\u0633\u0631\u062f \u0627\u0644\u062f\u064a\u0646\u064a \u0639\u0634\u0627\u0646 \u064a\u062c\u0633\u0651\u062f \u0643\u064a\u0641 \u0625\u0646 \u0627\u0644\u0633\u0644\u0637\u0629 \u0627\u0644\u0645\u062a\u0639\u062c\u0631\u0641\u0629 \u0627\u0644\u0645\u0628\u0647\u0631\u0629 \u064a\u0645\u0643\u0646 \u062a\u062a\u0642\u0648\u0651\u0636 \u0628\u0643\u0644 \u0633\u0647\u0648\u0644\u0629.`,
 
   formAndStructure: `Form: Six quatrains in rhyming couplets (AABB throughout). The neat, song-like structure suits the poem\u2019s origins in <em>Hebrew Melodies</em>, which were intended to be sung.
 
-Metre: Anapaestic tetrameter (four anapaests per line: da-da-DUM da-da-DUM da-da-DUM da-da-DUM). The galloping rhythm imitates the sound of cavalry charging, then continues even after the army is destroyed \u2014 making the silence at the end feel ironic.
+Metre: Anapaestic tetrameter (four anapaests per line: da-da-DUM da-da-DUM da-da-DUM da-da-DUM). The galloping rhythm imitates the sound of cavalry charging, then continues even after the army is destroyed - making the silence at the end feel ironic.
 
 Rhyme scheme: AABB couplets give the poem the feel of a chant or ballad. The couplets close the action down repeatedly, mirroring how each step of the destruction completes itself.
 
@@ -388,10 +388,10 @@ Anaphora: عبارات مثل "And there lay the steed" و"And there lay the rid
     {
       quote: 'the sheen of their spears was like stars on the sea',
       analysis:
-        'A beautiful, almost peaceful image of military might. By making the spears as cosmic as starlight, Byron raises the army\u2019s stature \u2014 only to make their fall more devastating in the next stanza.',
+        'A beautiful, almost peaceful image of military might. By making the spears as cosmic as starlight, Byron raises the army\u2019s stature - only to make their fall more devastating in the next stanza.',
       themes: ['Power', 'Beauty', 'War'],
       analysisAr:
-        '\u0635\u0648\u0631\u0629 \u062c\u0645\u064a\u0644\u0629\u060c \u062a\u0643\u0627\u062f \u062a\u0643\u0648\u0646 \u0645\u0633\u0627\u0644\u0645\u0629\u060c \u0644\u0642\u0648\u0651\u0629 \u0639\u0633\u0643\u0631\u064a\u0651\u0629. \u0644\u0645\u0651\u0627 Byron \u064a\u062e\u0644\u0651\u064a \u0627\u0644\u0631\u0645\u0627\u062d \u0628\u062d\u062c\u0645 \u0646\u062c\u0648\u0645 \u0627\u0644\u0643\u0648\u0646\u060c \u064a\u0631\u0641\u0639 \u0645\u0642\u0627\u0645 \u0627\u0644\u062c\u064a\u0634 \u0644\u0623\u0639\u0644\u0649 \u2014 \u0639\u0634\u0627\u0646 \u0628\u0633 \u064a\u062e\u0644\u0651\u064a \u0633\u0642\u0648\u0637\u0647\u0645 \u0641\u064a \u0627\u0644\u0645\u0642\u0637\u0639 \u0627\u0644\u062a\u0627\u0644\u064a \u0623\u0643\u062b\u0631 \u062a\u062f\u0645\u064a\u0631\u0627\u064b.',
+        '\u0635\u0648\u0631\u0629 \u062c\u0645\u064a\u0644\u0629\u060c \u062a\u0643\u0627\u062f \u062a\u0643\u0648\u0646 \u0645\u0633\u0627\u0644\u0645\u0629\u060c \u0644\u0642\u0648\u0651\u0629 \u0639\u0633\u0643\u0631\u064a\u0651\u0629. \u0644\u0645\u0651\u0627 Byron \u064a\u062e\u0644\u0651\u064a \u0627\u0644\u0631\u0645\u0627\u062d \u0628\u062d\u062c\u0645 \u0646\u062c\u0648\u0645 \u0627\u0644\u0643\u0648\u0646\u060c \u064a\u0631\u0641\u0639 \u0645\u0642\u0627\u0645 \u0627\u0644\u062c\u064a\u0634 \u0644\u0623\u0639\u0644\u0649 - \u0639\u0634\u0627\u0646 \u0628\u0633 \u064a\u062e\u0644\u0651\u064a \u0633\u0642\u0648\u0637\u0647\u0645 \u0641\u064a \u0627\u0644\u0645\u0642\u0637\u0639 \u0627\u0644\u062a\u0627\u0644\u064a \u0623\u0643\u062b\u0631 \u062a\u062f\u0645\u064a\u0631\u0627\u064b.',
       themesAr: [
         '\u0627\u0644\u0633\u0644\u0637\u0629',
         '\u0627\u0644\u062c\u0645\u0627\u0644',
@@ -401,10 +401,10 @@ Anaphora: عبارات مثل "And there lay the steed" و"And there lay the rid
     {
       quote: 'Like the leaves of the forest when Autumn hath blown',
       analysis:
-        'The mirror of the summer simile in the previous stanza. The same forest, the same syntax \u2014 but a different season. Byron compresses the rise and fall of empire into a single seasonal turn. The army is reduced to dead leaves overnight.',
+        'The mirror of the summer simile in the previous stanza. The same forest, the same syntax - but a different season. Byron compresses the rise and fall of empire into a single seasonal turn. The army is reduced to dead leaves overnight.',
       themes: ['Decay', 'Time', 'Power'],
       analysisAr:
-        '\u0645\u0631\u0622\u0629 \u0644\u062a\u0634\u0628\u064a\u0647 \u0627\u0644\u0635\u064a\u0641 \u0641\u064a \u0627\u0644\u0645\u0642\u0637\u0639 \u0627\u0644\u0644\u064a \u0642\u0628\u0644\u0647. \u0646\u0641\u0633 \u0627\u0644\u063a\u0627\u0628\u0629\u060c \u0646\u0641\u0633 \u0627\u0644\u062a\u0631\u0643\u064a\u0628 \u0627\u0644\u0646\u062d\u0648\u064a \u2014 \u0628\u0633 \u0641\u0635\u0644 \u0645\u062e\u062a\u0644\u0641. Byron \u064a\u0643\u062b\u0651\u0641 \u0635\u0639\u0648\u062f \u0627\u0644\u0625\u0645\u0628\u0631\u0627\u0637\u0648\u0631\u064a\u0629 \u0648\u0633\u0642\u0648\u0637\u0647\u0627 \u0641\u064a \u062a\u062d\u0648\u0651\u0644 \u0641\u0635\u0644\u064a \u0648\u0627\u062d\u062f. \u0627\u0644\u062c\u064a\u0634 \u064a\u062a\u062d\u0648\u0651\u0644 \u0644\u0623\u0648\u0631\u0627\u0642 \u0645\u064a\u0651\u062a\u0629 \u0628\u064a\u0646 \u0639\u0634\u064a\u0651\u0629 \u0648\u0636\u062d\u0627\u0647\u0627.',
+        '\u0645\u0631\u0622\u0629 \u0644\u062a\u0634\u0628\u064a\u0647 \u0627\u0644\u0635\u064a\u0641 \u0641\u064a \u0627\u0644\u0645\u0642\u0637\u0639 \u0627\u0644\u0644\u064a \u0642\u0628\u0644\u0647. \u0646\u0641\u0633 \u0627\u0644\u063a\u0627\u0628\u0629\u060c \u0646\u0641\u0633 \u0627\u0644\u062a\u0631\u0643\u064a\u0628 \u0627\u0644\u0646\u062d\u0648\u064a - \u0628\u0633 \u0641\u0635\u0644 \u0645\u062e\u062a\u0644\u0641. Byron \u064a\u0643\u062b\u0651\u0641 \u0635\u0639\u0648\u062f \u0627\u0644\u0625\u0645\u0628\u0631\u0627\u0637\u0648\u0631\u064a\u0629 \u0648\u0633\u0642\u0648\u0637\u0647\u0627 \u0641\u064a \u062a\u062d\u0648\u0651\u0644 \u0641\u0635\u0644\u064a \u0648\u0627\u062d\u062f. \u0627\u0644\u062c\u064a\u0634 \u064a\u062a\u062d\u0648\u0651\u0644 \u0644\u0623\u0648\u0631\u0627\u0642 \u0645\u064a\u0651\u062a\u0629 \u0628\u064a\u0646 \u0639\u0634\u064a\u0651\u0629 \u0648\u0636\u062d\u0627\u0647\u0627.',
       themesAr: [
         '\u0627\u0644\u062a\u062d\u0644\u0651\u0644',
         '\u0627\u0644\u0632\u0645\u0646',
@@ -427,10 +427,10 @@ Anaphora: عبارات مثل "And there lay the steed" و"And there lay the rid
     {
       quote: 'their hearts but once heaved, and for ever grew still',
       analysis:
-        'The most intimate image of death in the poem. After the cosmic similes, Byron shrinks the focus to a single heartbeat. The caesura ("heaved, and") mimics the final pulse before stillness. The line is quiet, almost gentle \u2014 there is no struggle.',
+        'The most intimate image of death in the poem. After the cosmic similes, Byron shrinks the focus to a single heartbeat. The caesura ("heaved, and") mimics the final pulse before stillness. The line is quiet, almost gentle - there is no struggle.',
       themes: ['Death', 'Stillness', 'War'],
       analysisAr:
-        '\u0623\u0643\u062b\u0631 \u0635\u0648\u0631\u0629 \u0645\u0648\u062a \u062d\u0645\u064a\u0645\u0629 \u0641\u064a \u0627\u0644\u0642\u0635\u064a\u062f\u0629. \u0628\u0639\u062f \u0627\u0644\u062a\u0634\u0628\u064a\u0647\u0627\u062a \u0627\u0644\u0643\u0648\u0646\u064a\u0629\u060c Byron \u064a\u0642\u0644\u0651\u0635 \u0627\u0644\u0639\u062f\u0633\u0629 \u0639\u0644\u0649 \u0646\u0628\u0636\u0629 \u0642\u0644\u0628 \u0648\u062d\u062f\u0629. \u0648\u0627\u0644\u0640caesura (\u0627\u0644\u0641\u0627\u0635\u0644\u0629 \u0628\u0639\u062f "heaved, and") \u062a\u062d\u0627\u0643\u064a \u0627\u0644\u0646\u0628\u0636\u0629 \u0627\u0644\u0623\u062e\u064a\u0631\u0629 \u0642\u0628\u0644 \u0627\u0644\u0633\u0643\u0648\u0646. \u0627\u0644\u0628\u064a\u062a \u0647\u0627\u062f\u064a\u060c \u064a\u0643\u0627\u062f \u064a\u0643\u0648\u0646 \u0631\u0642\u064a\u0642 \u2014 \u0645\u0627 \u0641\u064a\u0647 \u0635\u0631\u0627\u0639.',
+        '\u0623\u0643\u062b\u0631 \u0635\u0648\u0631\u0629 \u0645\u0648\u062a \u062d\u0645\u064a\u0645\u0629 \u0641\u064a \u0627\u0644\u0642\u0635\u064a\u062f\u0629. \u0628\u0639\u062f \u0627\u0644\u062a\u0634\u0628\u064a\u0647\u0627\u062a \u0627\u0644\u0643\u0648\u0646\u064a\u0629\u060c Byron \u064a\u0642\u0644\u0651\u0635 \u0627\u0644\u0639\u062f\u0633\u0629 \u0639\u0644\u0649 \u0646\u0628\u0636\u0629 \u0642\u0644\u0628 \u0648\u062d\u062f\u0629. \u0648\u0627\u0644\u0640caesura (\u0627\u0644\u0641\u0627\u0635\u0644\u0629 \u0628\u0639\u062f "heaved, and") \u062a\u062d\u0627\u0643\u064a \u0627\u0644\u0646\u0628\u0636\u0629 \u0627\u0644\u0623\u062e\u064a\u0631\u0629 \u0642\u0628\u0644 \u0627\u0644\u0633\u0643\u0648\u0646. \u0627\u0644\u0628\u064a\u062a \u0647\u0627\u062f\u064a\u060c \u064a\u0643\u0627\u062f \u064a\u0643\u0648\u0646 \u0631\u0642\u064a\u0642 - \u0645\u0627 \u0641\u064a\u0647 \u0635\u0631\u0627\u0639.',
       themesAr: [
         '\u0627\u0644\u0645\u0648\u062a',
         '\u0627\u0644\u0633\u0643\u0648\u0646',
@@ -440,10 +440,10 @@ Anaphora: عبارات مثل "And there lay the steed" و"And there lay the rid
     {
       quote: 'The lances unlifted, the trumpet unblown',
       analysis:
-        'Anaphora and the prefix "un-" build a battlefield defined by absence. The weapons of war remain on the ground; the trumpet that should signal the charge is silent. Byron paints a war scene with no war \u2014 only its objects, and the silence around them.',
+        'Anaphora and the prefix "un-" build a battlefield defined by absence. The weapons of war remain on the ground; the trumpet that should signal the charge is silent. Byron paints a war scene with no war - only its objects, and the silence around them.',
       themes: ['Silence', 'Aftermath', 'War'],
       analysisAr:
-        '\u0627\u0644\u0640anaphora \u0648\u0627\u0644\u0628\u0627\u062f\u0626\u0629 "un-" \u062a\u0628\u0646\u064a\u0627\u0646 \u0633\u0627\u062d\u0629 \u0645\u0639\u0631\u0643\u0629 \u062a\u062a\u062d\u062f\u0651\u062f \u0628\u0627\u0644\u063a\u064a\u0627\u0628. \u0623\u0633\u0644\u062d\u0629 \u0627\u0644\u062d\u0631\u0628 \u0645\u0631\u0645\u064a\u0651\u0629 \u0639\u0644\u0649 \u0627\u0644\u0623\u0631\u0636\u061b \u0648\u0627\u0644\u0628\u0648\u0642 \u0627\u0644\u0644\u064a \u064a\u0641\u062a\u0631\u0636 \u064a\u0637\u0644\u0642 \u0625\u0634\u0627\u0631\u0629 \u0627\u0644\u0647\u062c\u0648\u0645 \u0633\u0627\u0643\u062a. Byron \u064a\u0631\u0633\u0645 \u0645\u0634\u0647\u062f \u062d\u0631\u0628 \u0628\u062f\u0648\u0646 \u062d\u0631\u0628 \u2014 \u0628\u0633 \u0623\u062f\u0648\u0627\u062a\u0647\u0627 \u0648\u0627\u0644\u0635\u0645\u062a \u0627\u0644\u0644\u064a \u064a\u062d\u0648\u0637\u0647\u0627.',
+        '\u0627\u0644\u0640anaphora \u0648\u0627\u0644\u0628\u0627\u062f\u0626\u0629 "un-" \u062a\u0628\u0646\u064a\u0627\u0646 \u0633\u0627\u062d\u0629 \u0645\u0639\u0631\u0643\u0629 \u062a\u062a\u062d\u062f\u0651\u062f \u0628\u0627\u0644\u063a\u064a\u0627\u0628. \u0623\u0633\u0644\u062d\u0629 \u0627\u0644\u062d\u0631\u0628 \u0645\u0631\u0645\u064a\u0651\u0629 \u0639\u0644\u0649 \u0627\u0644\u0623\u0631\u0636\u061b \u0648\u0627\u0644\u0628\u0648\u0642 \u0627\u0644\u0644\u064a \u064a\u0641\u062a\u0631\u0636 \u064a\u0637\u0644\u0642 \u0625\u0634\u0627\u0631\u0629 \u0627\u0644\u0647\u062c\u0648\u0645 \u0633\u0627\u0643\u062a. Byron \u064a\u0631\u0633\u0645 \u0645\u0634\u0647\u062f \u062d\u0631\u0628 \u0628\u062f\u0648\u0646 \u062d\u0631\u0628 - \u0628\u0633 \u0623\u062f\u0648\u0627\u062a\u0647\u0627 \u0648\u0627\u0644\u0635\u0645\u062a \u0627\u0644\u0644\u064a \u064a\u062d\u0648\u0637\u0647\u0627.',
       themesAr: [
         '\u0627\u0644\u0635\u0645\u062a',
         '\u0645\u0627 \u0628\u0639\u062f \u0627\u0644\u0645\u0639\u0631\u0643\u0629',
@@ -453,10 +453,10 @@ Anaphora: عبارات مثل "And there lay the steed" و"And there lay the rid
     {
       quote: 'And the might of the Gentile, unsmote by the sword',
       analysis:
-        'The poem\u2019s central irony. Sennacherib\u2019s army was the mightiest in the ancient world, yet not a single blow was struck. "Unsmote" sounds biblical and emphasises the absence of human violence \u2014 it is divine power, not Israelite swords, that destroys them.',
+        'The poem\u2019s central irony. Sennacherib\u2019s army was the mightiest in the ancient world, yet not a single blow was struck. "Unsmote" sounds biblical and emphasises the absence of human violence - it is divine power, not Israelite swords, that destroys them.',
       themes: ['Irony', 'Power', 'Religion'],
       analysisAr:
-        '\u0627\u0644\u0645\u0641\u0627\u0631\u0642\u0629 \u0627\u0644\u0645\u0631\u0643\u0632\u064a\u0629 \u0641\u064a \u0627\u0644\u0642\u0635\u064a\u062f\u0629. \u062c\u064a\u0634 Sennacherib \u0643\u0627\u0646 \u0623\u0639\u062a\u0649 \u062c\u064a\u0634 \u0641\u064a \u0627\u0644\u0639\u0627\u0644\u0645 \u0627\u0644\u0642\u062f\u064a\u0645\u060c \u0628\u0633 \u0645\u0627 \u0636\u064f\u0631\u0628\u062a \u0636\u0631\u0628\u0629 \u0648\u062d\u062f\u0629. \u0643\u0644\u0645\u0629 "Unsmote" \u062a\u062d\u0633\u0651 \u062f\u064a\u0646\u064a\u060c \u0648\u062a\u0623\u0643\u0651\u062f \u0639\u0644\u0649 \u063a\u064a\u0627\u0628 \u0627\u0644\u0639\u0646\u0641 \u0627\u0644\u0628\u0634\u0631\u064a \u2014 \u0627\u0644\u0644\u064a \u062f\u0645\u0651\u0631\u0647\u0645 \u0647\u0648 \u0627\u0644\u0633\u0644\u0637\u0629 \u0627\u0644\u0625\u0644\u0647\u064a\u0629\u060c \u0645\u0648 \u0633\u064a\u0648\u0641 \u0627\u0644\u0625\u0633\u0631\u0627\u0626\u064a\u0644\u064a\u0651\u064a\u0646.',
+        '\u0627\u0644\u0645\u0641\u0627\u0631\u0642\u0629 \u0627\u0644\u0645\u0631\u0643\u0632\u064a\u0629 \u0641\u064a \u0627\u0644\u0642\u0635\u064a\u062f\u0629. \u062c\u064a\u0634 Sennacherib \u0643\u0627\u0646 \u0623\u0639\u062a\u0649 \u062c\u064a\u0634 \u0641\u064a \u0627\u0644\u0639\u0627\u0644\u0645 \u0627\u0644\u0642\u062f\u064a\u0645\u060c \u0628\u0633 \u0645\u0627 \u0636\u064f\u0631\u0628\u062a \u0636\u0631\u0628\u0629 \u0648\u062d\u062f\u0629. \u0643\u0644\u0645\u0629 "Unsmote" \u062a\u062d\u0633\u0651 \u062f\u064a\u0646\u064a\u060c \u0648\u062a\u0623\u0643\u0651\u062f \u0639\u0644\u0649 \u063a\u064a\u0627\u0628 \u0627\u0644\u0639\u0646\u0641 \u0627\u0644\u0628\u0634\u0631\u064a - \u0627\u0644\u0644\u064a \u062f\u0645\u0651\u0631\u0647\u0645 \u0647\u0648 \u0627\u0644\u0633\u0644\u0637\u0629 \u0627\u0644\u0625\u0644\u0647\u064a\u0629\u060c \u0645\u0648 \u0633\u064a\u0648\u0641 \u0627\u0644\u0625\u0633\u0631\u0627\u0626\u064a\u0644\u064a\u0651\u064a\u0646.',
       themesAr: [
         '\u0627\u0644\u0645\u0641\u0627\u0631\u0642\u0629',
         '\u0627\u0644\u0633\u0644\u0637\u0629',
@@ -466,10 +466,10 @@ Anaphora: عبارات مثل "And there lay the steed" و"And there lay the rid
     {
       quote: 'Hath melted like snow in the glance of the Lord',
       analysis:
-        'The closing simile. The mighty empire melts not in fire or blood but at a single look from God. The image is delicate and almost weightless \u2014 the precise opposite of the army\u2019s armoured grandeur. Byron lets the contrast carry the moral.',
+        'The closing simile. The mighty empire melts not in fire or blood but at a single look from God. The image is delicate and almost weightless - the precise opposite of the army\u2019s armoured grandeur. Byron lets the contrast carry the moral.',
       themes: ['Religion', 'Power', 'Transience'],
       analysisAr:
-        '\u0627\u0644\u062a\u0634\u0628\u064a\u0647 \u0627\u0644\u062e\u062a\u0627\u0645\u064a. \u0627\u0644\u0625\u0645\u0628\u0631\u0627\u0637\u0648\u0631\u064a\u0629 \u0627\u0644\u062c\u0628\u0651\u0627\u0631\u0629 \u0645\u0627 \u062a\u0630\u0648\u0628 \u0628\u0627\u0644\u0646\u0627\u0631 \u0648\u0644\u0627 \u0628\u0627\u0644\u062f\u0645\u060c \u0628\u0644 \u0628\u0646\u0638\u0631\u0629 \u0648\u062d\u062f\u0629 \u0645\u0646 \u0627\u0644\u0631\u0628. \u0627\u0644\u0635\u0648\u0631\u0629 \u0631\u0642\u064a\u0642\u0629 \u062a\u0643\u0627\u062f \u062a\u0643\u0648\u0646 \u0628\u0644\u0627 \u0648\u0632\u0646 \u2014 \u0627\u0644\u0639\u0643\u0633 \u0627\u0644\u062a\u0627\u0645 \u0644\u0641\u062e\u0627\u0645\u0629 \u0627\u0644\u062c\u064a\u0634 \u0627\u0644\u0645\u062f\u0631\u0651\u0639. Byron \u064a\u062e\u0644\u0651\u064a \u0627\u0644\u062a\u0636\u0627\u062f \u0646\u0641\u0633\u0647 \u064a\u0648\u0635\u0644 \u0627\u0644\u0639\u0628\u0631\u0629.',
+        '\u0627\u0644\u062a\u0634\u0628\u064a\u0647 \u0627\u0644\u062e\u062a\u0627\u0645\u064a. \u0627\u0644\u0625\u0645\u0628\u0631\u0627\u0637\u0648\u0631\u064a\u0629 \u0627\u0644\u062c\u0628\u0651\u0627\u0631\u0629 \u0645\u0627 \u062a\u0630\u0648\u0628 \u0628\u0627\u0644\u0646\u0627\u0631 \u0648\u0644\u0627 \u0628\u0627\u0644\u062f\u0645\u060c \u0628\u0644 \u0628\u0646\u0638\u0631\u0629 \u0648\u062d\u062f\u0629 \u0645\u0646 \u0627\u0644\u0631\u0628. \u0627\u0644\u0635\u0648\u0631\u0629 \u0631\u0642\u064a\u0642\u0629 \u062a\u0643\u0627\u062f \u062a\u0643\u0648\u0646 \u0628\u0644\u0627 \u0648\u0632\u0646 - \u0627\u0644\u0639\u0643\u0633 \u0627\u0644\u062a\u0627\u0645 \u0644\u0641\u062e\u0627\u0645\u0629 \u0627\u0644\u062c\u064a\u0634 \u0627\u0644\u0645\u062f\u0631\u0651\u0639. Byron \u064a\u062e\u0644\u0651\u064a \u0627\u0644\u062a\u0636\u0627\u062f \u0646\u0641\u0633\u0647 \u064a\u0648\u0635\u0644 \u0627\u0644\u0639\u0628\u0631\u0629.',
       themesAr: [
         '\u0627\u0644\u062f\u064a\u0646',
         '\u0627\u0644\u0633\u0644\u0637\u0629',
@@ -489,10 +489,10 @@ Anaphora: عبارات مثل "And there lay the steed" و"And there lay the rid
       device: 'Anapaestic tetrameter',
       example: 'The Assyrian came down like the wolf on the fold',
       effect:
-        'The four-beat anapaestic rhythm imitates galloping cavalry. The metre is so insistent that it carries the reader along on the army\u2019s charge \u2014 until the destruction stanza, where the same beat starts to feel hollow and unstoppable.',
+        'The four-beat anapaestic rhythm imitates galloping cavalry. The metre is so insistent that it carries the reader along on the army\u2019s charge - until the destruction stanza, where the same beat starts to feel hollow and unstoppable.',
       lineRef: 0,
       effectAr:
-        '\u0627\u0644\u0625\u064a\u0642\u0627\u0639 \u0627\u0644\u0640anapaest \u0627\u0644\u0631\u0628\u0627\u0639\u064a \u064a\u062d\u0627\u0643\u064a \u0631\u0643\u0636 \u0627\u0644\u0641\u0631\u0633\u0627\u0646. \u0627\u0644\u0648\u0632\u0646 \u0625\u0644\u062d\u0627\u062d\u064a \u0644\u062f\u0631\u062c\u0629 \u0625\u0646\u0647 \u064a\u062c\u0631\u0651 \u0627\u0644\u0642\u0627\u0631\u0626 \u0645\u0639\u0627\u0647 \u0639\u0644\u0649 \u0647\u062c\u0648\u0645 \u0627\u0644\u062c\u064a\u0634 \u2014 \u0644\u064a\u0646 \u0646\u0648\u0635\u0644 \u0645\u0642\u0637\u0639 \u0627\u0644\u062f\u0645\u0627\u0631\u060c \u0641\u0646\u0641\u0633 \u0627\u0644\u0625\u064a\u0642\u0627\u0639 \u064a\u0628\u062f\u0623 \u064a\u062d\u0633\u0651 \u0623\u062c\u0648\u0641 \u0648\u0644\u0627 \u064a\u0645\u0643\u0646 \u064a\u0648\u0642\u0641.',
+        '\u0627\u0644\u0625\u064a\u0642\u0627\u0639 \u0627\u0644\u0640anapaest \u0627\u0644\u0631\u0628\u0627\u0639\u064a \u064a\u062d\u0627\u0643\u064a \u0631\u0643\u0636 \u0627\u0644\u0641\u0631\u0633\u0627\u0646. \u0627\u0644\u0648\u0632\u0646 \u0625\u0644\u062d\u0627\u062d\u064a \u0644\u062f\u0631\u062c\u0629 \u0625\u0646\u0647 \u064a\u062c\u0631\u0651 \u0627\u0644\u0642\u0627\u0631\u0626 \u0645\u0639\u0627\u0647 \u0639\u0644\u0649 \u0647\u062c\u0648\u0645 \u0627\u0644\u062c\u064a\u0634 - \u0644\u064a\u0646 \u0646\u0648\u0635\u0644 \u0645\u0642\u0637\u0639 \u0627\u0644\u062f\u0645\u0627\u0631\u060c \u0641\u0646\u0641\u0633 \u0627\u0644\u0625\u064a\u0642\u0627\u0639 \u064a\u0628\u062f\u0623 \u064a\u062d\u0633\u0651 \u0623\u062c\u0648\u0641 \u0648\u0644\u0627 \u064a\u0645\u0643\u0646 \u064a\u0648\u0642\u0641.',
     },
     {
       device: 'Repeated simile',
@@ -509,10 +509,10 @@ Anaphora: عبارات مثل "And there lay the steed" و"And there lay the rid
       device: 'Personification',
       example: 'For the Angel of Death spread his wings on the blast',
       effect:
-        'Death is given a body \u2014 wings, a face, breath. By personifying the destroyer, Byron makes divine intervention feel immediate and almost physical. The Angel acts as the agent of God\u2019s judgement on imperial pride.',
+        'Death is given a body - wings, a face, breath. By personifying the destroyer, Byron makes divine intervention feel immediate and almost physical. The Angel acts as the agent of God\u2019s judgement on imperial pride.',
       lineRef: 10,
       effectAr:
-        '\u0627\u0644\u0645\u0648\u062a \u064a\u0627\u062e\u0630 \u062c\u0633\u062f \u2014 \u062c\u0646\u0627\u062d\u0627\u062a \u0648\u0648\u062c\u0647 \u0648\u0646\u0641\u0633. \u0644\u0645\u0651\u0627 Byron \u064a\u062c\u0633\u0651\u062f \u0627\u0644\u0640destroyer\u060c \u064a\u062e\u0644\u0651\u064a \u0627\u0644\u062a\u062f\u062e\u0651\u0644 \u0627\u0644\u0625\u0644\u0647\u064a \u064a\u062d\u0633\u0651 \u062d\u0627\u0636\u0631 \u0648\u0645\u0644\u0645\u0648\u0633 \u062a\u0642\u0631\u064a\u0628\u0627\u064b. \u0648\u0627\u0644\u0645\u0644\u0627\u0643 \u064a\u0634\u062a\u063a\u0644 \u0643\u0623\u062f\u0627\u0629 \u0644\u062d\u0643\u0645 \u0627\u0644\u0644\u0647 \u0639\u0644\u0649 \u0643\u0628\u0631\u064a\u0627\u0621 \u0627\u0644\u0625\u0645\u0628\u0631\u0627\u0637\u0648\u0631\u064a\u0629.',
+        '\u0627\u0644\u0645\u0648\u062a \u064a\u0627\u062e\u0630 \u062c\u0633\u062f - \u062c\u0646\u0627\u062d\u0627\u062a \u0648\u0648\u062c\u0647 \u0648\u0646\u0641\u0633. \u0644\u0645\u0651\u0627 Byron \u064a\u062c\u0633\u0651\u062f \u0627\u0644\u0640destroyer\u060c \u064a\u062e\u0644\u0651\u064a \u0627\u0644\u062a\u062f\u062e\u0651\u0644 \u0627\u0644\u0625\u0644\u0647\u064a \u064a\u062d\u0633\u0651 \u062d\u0627\u0636\u0631 \u0648\u0645\u0644\u0645\u0648\u0633 \u062a\u0642\u0631\u064a\u0628\u0627\u064b. \u0648\u0627\u0644\u0645\u0644\u0627\u0643 \u064a\u0634\u062a\u063a\u0644 \u0643\u0623\u062f\u0627\u0629 \u0644\u062d\u0643\u0645 \u0627\u0644\u0644\u0647 \u0639\u0644\u0649 \u0643\u0628\u0631\u064a\u0627\u0621 \u0627\u0644\u0625\u0645\u0628\u0631\u0627\u0637\u0648\u0631\u064a\u0629.',
     },
     {
       device: 'Anaphora',
@@ -559,7 +559,7 @@ const comparisons = [
     poet: 'Wilfred Owen',
     href: '/revision/poetry/edexcel/conflict',
     reason:
-      'Both poems show soldiers killed by something other than weapons \u2014 Byron by divine intervention, Owen by the freezing weather. Compare how each poet uses non-human forces to expose human powerlessness.',
+      'Both poems show soldiers killed by something other than weapons - Byron by divine intervention, Owen by the freezing weather. Compare how each poet uses non-human forces to expose human powerlessness.',
     themes: ['War', 'Suffering', 'Nature vs man'],
   },
   {

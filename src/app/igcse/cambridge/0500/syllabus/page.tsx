@@ -38,12 +38,20 @@ export const metadata: Metadata = {
   robots: { index: false, follow: false },
 }
 
+// 31 October 2026: corrected to the 0500 guides in src/data/mark-scheme-guides/
+// cambridge-0500-paper1.ts and -paper2.ts. The reading skills included synthesising
+// and comparing across texts, which are not among Cambridge's objectives (R1 to R5,
+// below). Paper 1 was the old four-row paper (a 25-mark "directed response" as
+// 1(f), language analysis of Text B as Q2, a 250-word summary of Texts A and C as
+// Q3) and was split "Reading 50, Writing 30"; Paper 2 "Writing 50, Reading 30".
+// Paper 1 carries 65 reading and 15 writing marks, Paper 2 15 and 65. The rows are
+// the 2027-2029 syllabus, as the guides and the marker follow.
 const readingSkills = [
-  'Identify and interpret explicit and implicit information and ideas',
-  'Select and synthesise evidence from different texts',
-  'Explain and comment on how writers use language and structure to achieve effects',
-  'Analyse and evaluate how writers present ideas, events and characters',
-  "Compare writers' ideas and perspectives across texts",
+  'Understand what a text says directly: the facts and details on the page (R1)',
+  'Work out what a text suggests, including what the writer or the people in it think and feel (R2)',
+  'Examine, judge and develop the facts, ideas and opinions in a text, with details as evidence (R3)',
+  'Show how a writer creates effects and influences the reader, for example through word choices (R4)',
+  'Select the information a task needs and use it for that task (R5)',
   'Demonstrate understanding of words in context',
 ]
 
@@ -62,27 +70,27 @@ const paperContent = [
     title: 'Reading',
     duration: '2 hours',
     marks: 80,
-    aoSplit: 'Reading skills 50 marks • Writing skills 30 marks',
+    aoSplit: 'Reading skills 65 marks • Writing skills 15 marks',
     questions: [
       {
-        q: 'Question 1',
-        marks: 15,
-        desc: 'Short-answer comprehension questions on Text A (including word meanings and inference).',
+        q: 'Question 1 - Comprehension',
+        marks: 20,
+        desc: 'Short-answer questions on Text A: details, word meanings in your own words, and what the writer suggests. Marked point by point.',
       },
       {
-        q: 'Question 1(f) - Directed Response',
-        marks: 25,
-        desc: 'A longer task based on Text A, usually a letter, interview or speech in response to the ideas in the passage. Tests reading (15) and writing (10).',
+        q: 'Question 2 - Summary task',
+        marks: 20,
+        desc: "On Text B: 2(a) a summary in your own words of no more than 120 words, marked on reading (10) and writing (5); 2(b) a short answer on the writer's attitude (5).",
       },
       {
-        q: 'Question 2 - Language Analysis',
-        marks: 15,
-        desc: 'Analyse how the writer of Text B uses language to create effects. Focus on word choice, imagery and phrase selection.',
+        q: 'Question 3 - Short answers and language task',
+        marks: 20,
+        desc: "On Text C: short answers on words and phrases (10), then about 200-250 words on how the writer's language creates effects in an extract (10).",
       },
       {
-        q: 'Question 3 - Summary',
-        marks: 25,
-        desc: 'Summarise information from Texts A and C in about 250 words. Tests reading (15) and writing (10).',
+        q: 'Question 4 - Extended response to reading',
+        marks: 20,
+        desc: 'About 250-300 words on Text C in a set form, such as a letter, report, journal, speech, interview or article. Tests reading (10) and writing (10).',
       },
     ],
   },
@@ -91,12 +99,12 @@ const paperContent = [
     title: 'Directed Writing and Composition',
     duration: '2 hours',
     marks: 80,
-    aoSplit: 'Writing skills 50 marks • Reading skills 30 marks',
+    aoSplit: 'Writing skills 65 marks • Reading skills 15 marks',
     questions: [
       {
         q: 'Section A - Directed Writing',
         marks: 40,
-        desc: 'Read one or two short texts and respond in a specific form: a letter, speech, article or report. 250-350 words. Marked on reading (15) and writing (25).',
+        desc: 'One question in two parts on one or two short texts: 1(a) a 5-mark structured question on the text, in your own words; 1(b) a speech, letter, article or report of about 250-350 words using the texts. Marked on reading (15) and writing (25).',
       },
       {
         q: 'Section B - Composition (choose one)',
@@ -225,6 +233,12 @@ export default async function SyllabusPage() {
           <ListChecks className="size-5 text-primary" />
           <h2 className="text-heading-lg font-heading text-foreground">Paper-by-paper content</h2>
         </div>
+        <p className="mb-5 text-body-sm text-muted-foreground leading-relaxed">
+          These are the papers for exams from 2027. In November 2026 the older 2024-2026 syllabus is
+          sat for the last time: its Paper 1 has three questions, worth 30, 25 and 25 marks, and its
+          Paper 2 Section A is one directed writing task worth 40 marks. The composition is the
+          same.
+        </p>
         <div className="space-y-6">
           {paperContent.map((paper) => (
             <Card key={paper.paper}>

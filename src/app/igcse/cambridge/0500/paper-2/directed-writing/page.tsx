@@ -91,14 +91,20 @@ const forms = [
   },
 ]
 
+// 31 October 2026: rewritten to src/data/mark-scheme-guides/cambridge-0500-paper2.ts.
+// The page treated Section A as one directed writing task, the 2024-2026 paper,
+// with purposes of "informing, advising, reporting". From 2027 it is 1(a), a
+// 5-mark structured question on the text, then 1(b), 35 marks, a piece that
+// discusses, argues or persuades. The marks were right in total (reading 15,
+// writing 25); the reading 15 is now 1(a) 5 and 1(b) 10.
 const process = [
-  'Identify the TASK VERB - are you persuading, informing, advising, reporting?',
-  'Identify the FORM - letter, speech, article, report - and who the reader is.',
-  'Annotate the stimulus text for every usable idea you can reshape.',
-  'Plan three to four paragraphs, each with a clear function.',
-  'Open with the right salutation/greeting and state your purpose up front.',
-  'Develop ideas from the stimulus in your OWN words - do not lift whole phrases.',
-  'Close with a line that matches the form and purpose.',
+  'Answer 1(a) first: two or three short judgements in your own words, each followed by the detail from the text that proves it.',
+  'Identify the PURPOSE of 1(b): are you asked to discuss (explore different sides), argue (make a case) or persuade (win the reader over)?',
+  'Identify the FORM (letter, speech, article or report) and who the reader is.',
+  'Annotate the text or texts for every usable idea you can reshape, under each point the question asks you to cover.',
+  'Plan three to four paragraphs, each with a clear function, moving the reader towards your view.',
+  'Develop and evaluate ideas from the text in your OWN words: do not lift whole phrases.',
+  'Open and close in a way that matches the form and purpose.',
 ]
 
 export default async function DirectedWritingPage() {
@@ -126,9 +132,15 @@ export default async function DirectedWritingPage() {
         </Badge>
         <h1 className="text-display-sm font-heading text-foreground">Directed writing</h1>
         <p className="mt-3 max-w-2xl text-body-lg text-muted-foreground">
-          Section A is worth 40 marks. Fifteen for how well you read the stimulus, twenty-five for
-          how well you adapt tone and style to the required form. Getting the form wrong costs you
-          half your writing marks, so the first thing to get right is the shape.
+          Section A is worth 40 marks, in two parts. Question 1(a), worth 5, asks you to analyse and
+          evaluate something in the text in your own words. Question 1(b), worth 35, is the directed
+          writing: 10 marks for how well you use the text and 25 for how well you write for the form
+          and audience. The first thing to get right in 1(b) is the shape.
+        </p>
+        <p className="mt-3 max-w-2xl text-body-sm text-muted-foreground">
+          This is the paper for exams from 2027. On the November 2026 paper, Section A is one
+          directed writing task worth 40 marks (reading 15, writing 25), with no 1(a), and the form
+          is a speech, letter or article.
         </p>
       </section>
 
@@ -144,8 +156,9 @@ export default async function DirectedWritingPage() {
               Reading - 15 marks
             </Badge>
             <p className="text-body-sm text-muted-foreground">
-              Select and develop relevant ideas from the stimulus text. Show that you understand
-              implicit as well as explicit meanings.
+              Five in 1(a): judge something in the text, such as a person&apos;s attitude, with
+              details as evidence. Ten in 1(b): use, develop and evaluate the ideas in the text or
+              texts, rather than just repeating them.
             </p>
           </div>
           <div className="rounded-xl border border-border/60 bg-muted/30 p-5">

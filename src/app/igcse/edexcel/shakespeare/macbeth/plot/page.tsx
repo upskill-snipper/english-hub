@@ -230,7 +230,7 @@ export default async function MacbethPlotPage() {
             {await t('igcse.page.badge_edexcel_lit')}
           </div>
           <h1 className="mt-4 text-3xl font-bold tracking-tight text-foreground sm:text-4xl md:text-5xl">
-            Macbeth &mdash; Plot summary
+            Macbeth - Plot summary
           </h1>
           <p className="mx-auto mt-4 max-w-xl text-lg text-muted-foreground">
             A detailed act-by-act and scene-by-scene walkthrough of Shakespeare&rsquo;s shortest

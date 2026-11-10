@@ -490,10 +490,13 @@ export const IGCSE_PAGES_DICTIONARY: Record<string, { en: string; ar?: string; e
     ar: 'اللغة',
     es: 'Lengua',
   },
+  // 31 October 2026: this said Q3. The Cambridge 0500/0990 summary is Question
+  // 2(a) from 2027 (src/data/mark-scheme-guides/cambridge-0500-paper1.ts), and
+  // was part of Question 1 in 2024-2026; it was never Question 3.
   'igcse.page.reading.summary_task': {
-    en: 'Summary Task (Paper 1 Q3)',
-    ar: 'مهمّة التلخيص (Paper 1 Q3)',
-    es: 'Tarea de resumen (Paper 1 Q3)',
+    en: 'Summary Task (Paper 1 Q2)',
+    ar: 'مهمّة التلخيص (Paper 1 Q2)',
+    es: 'Tarea de resumen (Paper 1 Q2)',
   },
   'igcse.page.reading.reading_summary_marks': {
     en: 'Reading + Summary',

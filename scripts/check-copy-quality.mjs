@@ -137,7 +137,11 @@ const RULES = [
     id: 'em-dash',
     chrome: 'error',
     content: 'off', // literary quotation legitimately uses em dashes
-    test: (s) => /—/.test(s),
+    // The escapes as well as the character: until 31 October 2026 this saw
+    // only the character, and 4,668 dashes written as `&mdash;` or a JS
+    // escape stood in the site's prose unseen. The-site-writes-no-escaped-em-dash.test.ts
+    // now holds both zones' prose to it, quotations excepted.
+    test: (s) => /—|&mdash;|&#0*8212;|&#x0*2014;|\\u2014/i.test(s),
     message: 'em dash - house style uses a spaced hyphen ( - )',
   },
   {

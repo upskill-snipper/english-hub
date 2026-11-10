@@ -144,7 +144,7 @@ export default async function MacbethAct1Page() {
                   <span className="font-medium text-foreground">Technique:</span> Alliteration
                   (&ldquo;fog&rdquo; / &ldquo;filthy&rdquo;) and pathetic fallacy. The alliterative
                   &lsquo;f&rsquo; sounds create a hissing, sinister tone. The fog symbolises moral
-                  confusion and obscured vision &mdash; no one in this play will see clearly.
+                  confusion and obscured vision - no one in this play will see clearly.
                 </p>
               </div>
               <div className="rounded-lg border border-border/60 p-3">
@@ -228,7 +228,7 @@ export default async function MacbethAct1Page() {
                     note said "Unseamed" until 2 October 2026. */}
                 <p className="text-sm text-muted-foreground mt-1">
                   <span className="font-medium text-foreground">Technique:</span> Violent imagery
-                  &amp; metaphor. &ldquo;Unseam’d&rdquo; is a tailoring metaphor &mdash; Macbeth has
+                  &amp; metaphor. &ldquo;Unseam’d&rdquo; is a tailoring metaphor - Macbeth has
                   ripped his enemy open like fabric. The graphic brutality establishes Macbeth as
                   capable of extreme violence, which becomes significant when that capacity is
                   turned against innocent targets.
@@ -261,20 +261,20 @@ export default async function MacbethAct1Page() {
             <h4 className="font-semibold mb-1">{_tr(`Character Development`)}</h4>
             <p className="text-muted-foreground">
               <strong>Duncan</strong> is established as a generous, trusting king who rewards
-              loyalty lavishly. His character flaw &mdash; excessive trust &mdash; is already
-              visible in his immediate willingness to elevate Macbeth. <strong>Macbeth</strong> is
-              presented entirely through others&apos; reports, building him as a heroic figure
-              before the audience sees him conflicted.
+              loyalty lavishly. His character flaw - excessive trust - is already visible in his
+              immediate willingness to elevate Macbeth. <strong>Macbeth</strong> is presented
+              entirely through others&apos; reports, building him as a heroic figure before the
+              audience sees him conflicted.
             </p>
           </div>
           <div>
             <h4 className="font-semibold mb-1">{_tr(`Structural Analysis`)}</h4>
             <p className="text-muted-foreground">
               This scene serves as exposition, establishing Macbeth&apos;s reputation before we
-              witness his corruption. Shakespeare uses the &ldquo;reported action&rdquo; technique
-              &mdash; we hear about the battle rather than seeing it &mdash; which keeps focus on
-              language and character rather than spectacle. The scene also establishes the theme of
-              deceptive appearances: the previous Cawdor seemed loyal but was a traitor, directly
+              witness his corruption. Shakespeare uses the &ldquo;reported action&rdquo; technique -
+              we hear about the battle rather than seeing it - which keeps focus on language and
+              character rather than spectacle. The scene also establishes the theme of deceptive
+              appearances: the previous Cawdor seemed loyal but was a traitor, directly
               foreshadowing the new Cawdor&apos;s trajectory.
             </p>
           </div>
@@ -306,7 +306,7 @@ export default async function MacbethAct1Page() {
               &ldquo;lesser than Macbeth, and greater&rdquo; and that his descendants will be kings.
               Ross arrives to confirm Macbeth has been named Thane of Cawdor. Macbeth, shaken by the
               accuracy of the first prophecy, delivers his first aside about &ldquo;murder yet is
-              but fantastical&rdquo; &mdash; already imagining regicide.
+              but fantastical&rdquo; - already imagining regicide.
             </p>
           </div>
           <div>
@@ -400,7 +400,7 @@ export default async function MacbethAct1Page() {
             <h4 className="font-semibold mb-1">{_tr(`Character Development`)}</h4>
             <p className="text-muted-foreground">
               <strong>Macbeth</strong> is immediately captivated by the prophecy and begins
-              imagining murder in his first aside &mdash; revealing a pre-existing ambition that the
+              imagining murder in his first aside - revealing a pre-existing ambition that the
               witches merely awaken. <strong>Banquo</strong> responds with healthy scepticism,
               acting as a moral foil. His caution highlights Macbeth&apos;s moral weakness by
               contrast. <strong>Ross</strong> functions as a messenger whose confirmation of the
@@ -414,7 +414,7 @@ export default async function MacbethAct1Page() {
               question: will Macbeth act on it? Shakespeare uses the aside and soliloquy to give the
               audience access to Macbeth&apos;s inner conflict, establishing the intimate
               psychological focus that distinguishes this tragedy. The rapid confirmation of the
-              Cawdor prophecy creates momentum &mdash; if one prophecy comes true immediately, the
+              Cawdor prophecy creates momentum - if one prophecy comes true immediately, the
               kingship prophecy feels inevitable.
             </p>
           </div>
@@ -445,9 +445,9 @@ export default async function MacbethAct1Page() {
               At the palace, Duncan receives confirmation that the former Thane of Cawdor has been
               executed and &ldquo;died as one that had been studied in his death.&rdquo; Duncan
               reflects on the impossibility of reading character from appearance. He praises Macbeth
-              and Banquo lavishly, then names his son Malcolm as Prince of Cumberland &mdash; heir
-              to the throne. This represents a direct obstacle to Macbeth&apos;s ambition, and
-              Macbeth responds with a dark aside.
+              and Banquo lavishly, then names his son Malcolm as Prince of Cumberland - heir to the
+              throne. This represents a direct obstacle to Macbeth&apos;s ambition, and Macbeth
+              responds with a dark aside.
             </p>
           </div>
           <div>
@@ -479,8 +479,8 @@ export default async function MacbethAct1Page() {
                 <p className="text-sm text-muted-foreground mt-1">
                   <span className="font-medium text-foreground">Technique:</span> Dramatic irony.
                   Duncan speaks about the impossibility of reading treachery in someone&apos;s
-                  appearance &mdash; at the exact moment he is placing absolute trust in Macbeth.
-                  The irony is compounded because Duncan has just been betrayed by one Cawdor and is
+                  appearance - at the exact moment he is placing absolute trust in Macbeth. The
+                  irony is compounded because Duncan has just been betrayed by one Cawdor and is
                   about to be betrayed by the next.
                 </p>
               </div>
@@ -494,8 +494,8 @@ export default async function MacbethAct1Page() {
                   light/dark imagery &amp; rhyming couplet. Macbeth directly addresses the stars,
                   asking heaven to look away. The opposition of &ldquo;fires&rdquo; (light,
                   goodness) and &ldquo;black&rdquo; (darkness, evil) externalises his inner
-                  conflict. The rhyming couplet gives the aside a decisive, spell-like quality
-                  &mdash; as if speaking the words makes the commitment real.
+                  conflict. The rhyming couplet gives the aside a decisive, spell-like quality - as
+                  if speaking the words makes the commitment real.
                 </p>
               </div>
               <div className="rounded-lg border border-border/60 p-3">
@@ -596,7 +596,7 @@ export default async function MacbethAct1Page() {
                   <span className="font-medium text-foreground">Technique:</span> Metaphor.
                   &ldquo;Milk&rdquo; associates kindness with femininity and nurturing. Lady Macbeth
                   sees her husband&apos;s conscience as a weakness to be overcome. Ironically, her
-                  assessment reveals that she understands his fundamental decency &mdash; she must
+                  assessment reveals that she understands his fundamental decency - she must
                   actively corrupt it.
                 </p>
               </div>
@@ -658,9 +658,9 @@ export default async function MacbethAct1Page() {
               character. Her soliloquy reveals formidable intelligence, ruthless ambition, and a
               willingness to invoke supernatural evil. She immediately takes charge of the plot,
               relegating Macbeth to a subordinate role. Her language is more decisive and commanding
-              than his &mdash; she uses imperatives where he uses questions. However, her need to
-              call on spirits to suppress her femininity reveals that cruelty does not come
-              naturally to her &mdash; a crucial point for understanding her later breakdown.
+              than his - she uses imperatives where he uses questions. However, her need to call on
+              spirits to suppress her femininity reveals that cruelty does not come naturally to her
+              - a crucial point for understanding her later breakdown.
             </p>
           </div>
           <div>
@@ -698,9 +698,9 @@ export default async function MacbethAct1Page() {
             <h4 className="font-semibold mb-1">Summary</h4>
             <p className="text-muted-foreground">
               Duncan arrives at Macbeth&apos;s castle (Inverness) and praises its pleasant location.
-              Banquo notes that the house martin &mdash; a bird associated with domestic peace
-              &mdash; nests there, suggesting a safe and welcoming environment. Lady Macbeth greets
-              Duncan with elaborate courtesy and performs the role of the perfect hostess.
+              Banquo notes that the house martin - a bird associated with domestic peace - nests
+              there, suggesting a safe and welcoming environment. Lady Macbeth greets Duncan with
+              elaborate courtesy and performs the role of the perfect hostess.
             </p>
           </div>
           <div>
@@ -735,7 +735,7 @@ export default async function MacbethAct1Page() {
                   <span className="font-medium text-foreground">Technique:</span> Dramatic irony
                   &amp; sensory language. Duncan finds the air &ldquo;sweet&rdquo; at the very place
                   where he will be murdered. The gentle, pleasant language of this scene creates a
-                  calm surface that masks the violence beneath &mdash; the ultimate expression of
+                  calm surface that masks the violence beneath - the ultimate expression of
                   &ldquo;fair is foul.&rdquo;
                 </p>
               </div>
@@ -757,7 +757,7 @@ export default async function MacbethAct1Page() {
               This short, peaceful scene functions as the calm before the storm. Shakespeare
               deliberately creates a tone of domestic tranquillity to heighten the horror of what
               follows. The scene also demonstrates Lady Macbeth&apos;s ability to perform innocence
-              &mdash; she follows her own advice to &ldquo;look like the innocent flower&rdquo; with
+              - she follows her own advice to &ldquo;look like the innocent flower&rdquo; with
               complete success. Duncan&apos;s trusting nature makes him an easy victim.
             </p>
           </div>
@@ -871,12 +871,11 @@ export default async function MacbethAct1Page() {
                 </p>
                 <p className="text-sm text-muted-foreground mt-1">
                   <span className="font-medium text-foreground">Technique:</span> Hyperbolic imagery
-                  &amp; shocking contrast. Lady Macbeth uses the most horrifying image imaginable
-                  &mdash; killing her own nursing baby &mdash; to demonstrate her commitment. The
-                  juxtaposition of tender maternal language (&ldquo;tender,&rdquo;
-                  &ldquo;smiling,&rdquo; &ldquo;boneless gums&rdquo;) with extreme violence
-                  (&ldquo;dash’d the brains out&rdquo;) is designed to shame Macbeth into matching
-                  her resolve.
+                  &amp; shocking contrast. Lady Macbeth uses the most horrifying image imaginable -
+                  killing her own nursing baby - to demonstrate her commitment. The juxtaposition of
+                  tender maternal language (&ldquo;tender,&rdquo; &ldquo;smiling,&rdquo;
+                  &ldquo;boneless gums&rdquo;) with extreme violence (&ldquo;dash’d the brains
+                  out&rdquo;) is designed to shame Macbeth into matching her resolve.
                 </p>
               </div>
               <div className="rounded-lg border border-border/60 p-3">
@@ -887,7 +886,7 @@ export default async function MacbethAct1Page() {
                   <span className="font-medium text-foreground">Technique:</span> Alliteration &amp;
                   rhyming couplet. The repeated &ldquo;false&rdquo; emphasises the theme of
                   deception, while the couplet gives the line a sense of dark resolution. Macbeth
-                  has accepted the need for hypocrisy &mdash; a fundamental moral surrender.
+                  has accepted the need for hypocrisy - a fundamental moral surrender.
                 </p>
               </div>
             </div>
@@ -912,8 +911,8 @@ export default async function MacbethAct1Page() {
               temptation to decision. Macbeth&apos;s soliloquy represents the last moment where he
               could turn back, and Lady Macbeth&apos;s intervention pushes him past the point of no
               return. The scene ends with the couple united in purpose, but their unity is built on
-              moral corruption &mdash; it will not survive the consequences. The rhyming couplet at
-              the end provides a sense of grim resolution and formal closure to the act.
+              moral corruption - it will not survive the consequences. The rhyming couplet at the
+              end provides a sense of grim resolution and formal closure to the act.
             </p>
           </div>
           <div>

@@ -385,7 +385,7 @@ export default async function TextsRevisionPage() {
           <ul className="mt-2 list-disc space-y-1 ps-6 text-slate-700">
             <li>
               <Link className="text-blue-700 hover:underline" href="/revision/texts/if">
-                If&mdash;
+                If -
               </Link>
               ,{' '}
               <Link

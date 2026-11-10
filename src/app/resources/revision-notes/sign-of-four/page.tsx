@@ -107,7 +107,7 @@ function QuoteCard({
   return (
     <div className="rounded-lg border-s-4 border-primary bg-primary/5 p-4 mb-3">
       <p className="text-sm font-semibold text-foreground italic">&ldquo;{quote}&rdquo;</p>
-      {speaker && <p className="mt-1 text-xs font-medium text-primary">&mdash; {speaker}</p>}
+      {speaker && <p className="mt-1 text-xs font-medium text-primary">- {speaker}</p>}
       <p className="mt-2 text-sm text-muted-foreground">{analysis}</p>
     </div>
   )
@@ -161,7 +161,7 @@ export default function SignOfFourPage() {
           Conan Doyle&apos;s second Sherlock Holmes novel follows the detective and Dr Watson as
           they investigate a case brought to them by the mysterious Mary Morstan. A tale of stolen
           treasure, betrayal, and colonial violence, the novel explores themes of justice, empire,
-          greed, and the tension between reason and emotion &mdash; all set against the backdrop of
+          greed, and the tension between reason and emotion - all set against the backdrop of
           Victorian London and the legacy of the British Raj.
         </p>
       </div>
@@ -202,10 +202,10 @@ export default function SignOfFourPage() {
                 Watson finds Holmes injecting himself with a seven-per-cent solution of cocaine, a
                 habit Watson disapproves of but cannot prevent. Holmes is bored without a case and
                 demonstrates his deductive method by analysing Watson&apos;s pocket watch, correctly
-                deducing details about Watson&apos;s late brother&apos;s life &mdash; his
-                inheritance, alcoholism, and death. Watson is both amazed and distressed. This
-                chapter establishes Holmes&apos;s brilliance, his drug dependency, and the central
-                tension between reason and emotion that runs through the novel.
+                deducing details about Watson&apos;s late brother&apos;s life - his inheritance,
+                alcoholism, and death. Watson is both amazed and distressed. This chapter
+                establishes Holmes&apos;s brilliance, his drug dependency, and the central tension
+                between reason and emotion that runs through the novel.
               </p>
             </div>
             <div>
@@ -306,13 +306,13 @@ export default function SignOfFourPage() {
               <h4 className="font-bold text-foreground">{tr(`Chapter 9: A Break in the Chain`)}</h4>
               <p className="text-sm text-muted-foreground leading-relaxed">
                 Watson visits Mary and Mrs Forrester in Camberwell to tell them what has happened,
-                and his feelings for Mary deepen. Athelney Jones&apos;s investigation falters
-                &mdash; he has arrested the wrong suspect and has no real leads. Holmes disguises
-                himself as an old sailor and personally searches the docks for the <em>Aurora</em>,
-                eventually locating it at Jacobson&apos;s Yard. He arranges for a police steam
-                launch to pursue Small that evening. Holmes&apos;s willingness to go undercover and
-                physically pursue leads contrasts with the official police approach. His disguise
-                also highlights the theme of identity and appearance versus reality.
+                and his feelings for Mary deepen. Athelney Jones&apos;s investigation falters - he
+                has arrested the wrong suspect and has no real leads. Holmes disguises himself as an
+                old sailor and personally searches the docks for the <em>Aurora</em>, eventually
+                locating it at Jacobson&apos;s Yard. He arranges for a police steam launch to pursue
+                Small that evening. Holmes&apos;s willingness to go undercover and physically pursue
+                leads contrasts with the official police approach. His disguise also highlights the
+                theme of identity and appearance versus reality.
               </p>
             </div>
             <div>
@@ -354,9 +354,9 @@ export default function SignOfFourPage() {
                 Major Sholto and Captain Morstan to share the treasure in return for his freedom,
                 but Sholto betrayed them all. Small&apos;s narrative reveals the violence and
                 exploitation at the heart of the British Empire, while complicating the
-                reader&apos;s view of justice &mdash; Small is both criminal and victim. The novel
-                ends with Watson engaged to Mary and Jones taking the credit, while Holmes reaches
-                for the cocaine-bottle. The contrast between Watson&apos;s emotional fulfilment and
+                reader&apos;s view of justice - Small is both criminal and victim. The novel ends
+                with Watson engaged to Mary and Jones taking the credit, while Holmes reaches for
+                the cocaine-bottle. The contrast between Watson&apos;s emotional fulfilment and
                 Holmes&apos;s retreat into drugs powerfully illustrates the reason-versus-emotion
                 duality.
               </p>
@@ -558,10 +558,10 @@ export default function SignOfFourPage() {
                 overlook. His analysis of Watson&apos;s pocket watch in Chapter 1 is a masterclass:
                 from scratches around the keyhole he deduces the owner&apos;s alcoholism; from the
                 pawnbroker&apos;s marks he infers financial difficulty. Holmes insists that
-                observation must be systematic and detached from emotion. His famous principle
-                &mdash; &ldquo;Eliminate all other factors, and the one which remains must be the
-                truth&rdquo; &mdash; encapsulates his logical approach. However, Conan Doyle shows
-                that this method has limits when applied to complex human situations.
+                observation must be systematic and detached from emotion. His famous principle -
+                &ldquo;Eliminate all other factors, and the one which remains must be the
+                truth&rdquo; - encapsulates his logical approach. However, Conan Doyle shows that
+                this method has limits when applied to complex human situations.
               </p>
             </div>
             <div className="rounded-lg bg-muted p-4">
@@ -580,12 +580,12 @@ export default function SignOfFourPage() {
               <h4 className="font-bold text-foreground">Disguise and Undercover Work</h4>
               <p className="mt-1 text-sm text-muted-foreground leading-relaxed">
                 In Chapter 9, Holmes disguises himself as an old sailor to search the docks for the
-                <em> Aurora</em>. This shows that Holmes&apos;s method is not purely cerebral
-                &mdash; he is willing to take physical risks and immerse himself in London&apos;s
-                underworld. His ability to transform his appearance connects to the novel&apos;s
-                broader theme of identity and duality: the detective, like the criminal, can become
-                someone else. Disguise also allows Holmes to cross class boundaries, moving through
-                social strata that a gentleman could not normally access.
+                <em> Aurora</em>. This shows that Holmes&apos;s method is not purely cerebral - he
+                is willing to take physical risks and immerse himself in London&apos;s underworld.
+                His ability to transform his appearance connects to the novel&apos;s broader theme
+                of identity and duality: the detective, like the criminal, can become someone else.
+                Disguise also allows Holmes to cross class boundaries, moving through social strata
+                that a gentleman could not normally access.
               </p>
             </div>
             <div className="rounded-lg bg-muted p-4">
@@ -596,8 +596,8 @@ export default function SignOfFourPage() {
                 Holmes employs a network of street children to gather intelligence across London.
                 The Irregulars can go where adults cannot, blending into the urban landscape. This
                 practical resourcefulness complements Holmes&apos;s intellectual powers. It also
-                reveals the class structure of Victorian London &mdash; Holmes exploits the labour
-                of impoverished children, paying them a shilling each. Conan Doyle presents this
+                reveals the class structure of Victorian London - Holmes exploits the labour of
+                impoverished children, paying them a shilling each. Conan Doyle presents this
                 uncritically, but modern readers may note the parallel with colonial exploitation:
                 the powerful using the vulnerable as tools.
               </p>
@@ -605,7 +605,7 @@ export default function SignOfFourPage() {
             <div className="rounded-lg bg-muted p-4">
               <h4 className="font-bold text-foreground">{tr(`Holmes vs the Official Police`)}</h4>
               <p className="mt-1 text-sm text-muted-foreground leading-relaxed">
-                Athelney Jones represents the official police &mdash; confident but incompetent. He
+                Athelney Jones represents the official police - confident but incompetent. He
                 arrests Thaddeus Sholto based on circumstantial evidence and personal prejudice,
                 while Holmes patiently builds a case from physical evidence. The contrast highlights
                 a key theme: institutional authority is no guarantee of justice. Jones eventually
@@ -622,7 +622,7 @@ export default function SignOfFourPage() {
                 he is unable to find meaning in life beyond intellectual puzzles. His return to
                 cocaine at the novel&apos;s end suggests that his method, while effective for
                 solving crimes, cannot solve the problem of human existence. Conan Doyle implies
-                that reason alone is insufficient &mdash; emotional intelligence, empathy, and human
+                that reason alone is insufficient - emotional intelligence, empathy, and human
                 connection are equally important.
               </p>
             </div>
@@ -641,21 +641,21 @@ export default function SignOfFourPage() {
                 <em> The Moonstone</em> (1868), which also involves a stolen Indian jewel and
                 colonial guilt. The detective figure appealed to Victorian readers because he
                 represented the power of rational thought to impose order on a chaotic, rapidly
-                changing world. Holmes became the archetype of the fictional detective &mdash;
-                brilliant, eccentric, and operating outside official institutions.
+                changing world. Holmes became the archetype of the fictional detective - brilliant,
+                eccentric, and operating outside official institutions.
               </p>
             </div>
             <div className="rounded-lg bg-primary/5 p-4">
               <h4 className="font-bold text-foreground">{tr(`The British Empire and India`)}</h4>
               <p className="mt-1 text-sm text-muted-foreground leading-relaxed">
                 By 1890, the British Empire controlled approximately a quarter of the world&apos;s
-                land surface. India was the &ldquo;jewel in the crown&rdquo; &mdash; a phrase that
+                land surface. India was the &ldquo;jewel in the crown&rdquo; - a phrase that
                 resonates with the Agra treasure. The Indian Rebellion of 1857 (referred to in the
                 novel as the &ldquo;Mutiny&rdquo;) was a traumatic event for the British, leading to
                 direct Crown rule. Conan Doyle sets Small&apos;s backstory during this period,
                 linking the treasure to imperial violence. The novel reflects both pride in empire
-                and anxiety about its moral cost &mdash; the treasure brings only death and betrayal
-                to everyone who touches it.
+                and anxiety about its moral cost - the treasure brings only death and betrayal to
+                everyone who touches it.
               </p>
             </div>
             <div className="rounded-lg bg-primary/5 p-4">
@@ -664,19 +664,19 @@ export default function SignOfFourPage() {
                 The Agra treasure represents the vast wealth extracted from India by the British.
                 Agra is a real city, home to the Taj Mahal, and was a centre of Mughal power. By
                 setting the treasure&apos;s origin in a real place, Conan Doyle grounds the fiction
-                in historical reality. The treasure&apos;s journey &mdash; from India to England,
-                through theft and murder, ultimately lost in the Thames &mdash; can be read as an
-                allegory for the moral bankruptcy of colonial extraction. The wealth enriches no one
-                and destroys many.
+                in historical reality. The treasure&apos;s journey - from India to England, through
+                theft and murder, ultimately lost in the Thames - can be read as an allegory for the
+                moral bankruptcy of colonial extraction. The wealth enriches no one and destroys
+                many.
               </p>
             </div>
             <div className="rounded-lg bg-primary/5 p-4">
               <h4 className="font-bold text-foreground">{tr(`Opium and Drug Use`)}</h4>
               <p className="mt-1 text-sm text-muted-foreground leading-relaxed">
                 Holmes&apos;s cocaine use reflects a real Victorian phenomenon. Cocaine and opium
-                were legal and widely available in the 1890s &mdash; cocaine was even an ingredient
-                in some medicines and drinks. However, growing awareness of addiction was beginning
-                to shift attitudes. Watson&apos;s disapproval of Holmes&apos;s habit represents this
+                were legal and widely available in the 1890s - cocaine was even an ingredient in
+                some medicines and drinks. However, growing awareness of addiction was beginning to
+                shift attitudes. Watson&apos;s disapproval of Holmes&apos;s habit represents this
                 emerging medical view. The drug theme also connects to empire: opium was a major
                 commodity of imperial trade (the Opium Wars with China), and the novel links drug
                 use, colonial wealth, and moral corruption.
@@ -689,9 +689,9 @@ export default function SignOfFourPage() {
                 she stands to inherit a fortune because the class gap would make the proposal appear
                 mercenary. Holmes employs working-class children (the Irregulars) as disposable
                 labour. Jonathan Small is a working-class soldier exploited by officers above him.
-                The detective genre itself reflects class anxiety &mdash; crime threatens the
-                property and safety of the middle and upper classes, and the detective restores
-                social order. Conan Doyle both reflects and quietly critiques this system.
+                The detective genre itself reflects class anxiety - crime threatens the property and
+                safety of the middle and upper classes, and the detective restores social order.
+                Conan Doyle both reflects and quietly critiques this system.
               </p>
             </div>
             <div className="rounded-lg bg-primary/5 p-4">
@@ -700,11 +700,11 @@ export default function SignOfFourPage() {
                 The novel&apos;s treatment of race, particularly through Tonga and the Sikh
                 characters, reflects deeply problematic Victorian attitudes. Indigenous peoples are
                 described in animalistic, dehumanising language. Tonga is presented as barely human
-                &mdash; a &ldquo;savage&rdquo; whose death provokes no moral concern. The three Sikh
-                men in &ldquo;the Four&rdquo; are given little individuality. Holmes himself refers
-                to a &ldquo;gazetteer&rdquo; description of Andaman Islanders that is essentially
-                racist pseudo-science. These elements must be acknowledged as products of their time
-                and critiqued in any modern analysis.
+                - a &ldquo;savage&rdquo; whose death provokes no moral concern. The three Sikh men
+                in &ldquo;the Four&rdquo; are given little individuality. Holmes himself refers to a
+                &ldquo;gazetteer&rdquo; description of Andaman Islanders that is essentially racist
+                pseudo-science. These elements must be acknowledged as products of their time and
+                critiqued in any modern analysis.
               </p>
             </div>
             <div className="rounded-lg bg-primary/5 p-4">
@@ -712,11 +712,11 @@ export default function SignOfFourPage() {
               <p className="mt-1 text-sm text-muted-foreground leading-relaxed">
                 The late Victorian period saw enormous faith in scientific progress. Darwin&apos;s
                 theory of evolution, advances in chemistry and medicine, and the rise of forensic
-                science all shaped the cultural landscape. Holmes embodies this faith &mdash; he
-                applies the scientific method to criminal investigation. However, the novel also
-                shows the limits of pure rationalism: Holmes cannot understand love, cannot find
-                happiness, and cannot stop using drugs. Conan Doyle suggests that science, while
-                powerful, is not sufficient for a fully human life.
+                science all shaped the cultural landscape. Holmes embodies this faith - he applies
+                the scientific method to criminal investigation. However, the novel also shows the
+                limits of pure rationalism: Holmes cannot understand love, cannot find happiness,
+                and cannot stop using drugs. Conan Doyle suggests that science, while powerful, is
+                not sufficient for a fully human life.
               </p>
             </div>
           </div>
@@ -747,7 +747,7 @@ export default function SignOfFourPage() {
                   </p>
                   <p>
                     Small believes the treasure is rightfully his. His decision to throw it into the
-                    Thames is an act of rough justice &mdash; &ldquo;if I can&apos;t have the loot
+                    Thames is an act of rough justice - &ldquo;if I can&apos;t have the loot
                     I&apos;ll take darned good care that no one else does.&rdquo; Conan Doyle
                     complicates the reader&apos;s moral response: Small is a murderer but also a
                     victim of betrayal.
@@ -761,7 +761,7 @@ export default function SignOfFourPage() {
                     The treasure was originally stolen from Achmet through murder. Major Sholto then
                     stole it from Small. Each &ldquo;transfer&rdquo; involves violence and betrayal.
                     Conan Doyle implies that the treasure is cursed because it was born of injustice
-                    &mdash; colonial wealth cannot be legitimised.
+                    - colonial wealth cannot be legitimised.
                   </p>
                 </div>
                 <div>
@@ -771,8 +771,8 @@ export default function SignOfFourPage() {
                   <p>
                     The treasure is lost, Small is captured, and Watson finds love. Conan Doyle
                     creates a morally satisfying ending: greed is punished and love is rewarded.
-                    However, Holmes&apos;s return to cocaine complicates this &mdash; not everyone
-                    finds resolution.
+                    However, Holmes&apos;s return to cocaine complicates this - not everyone finds
+                    resolution.
                   </p>
                 </div>
               </div>
@@ -792,8 +792,8 @@ export default function SignOfFourPage() {
                   <p>
                     Holmes represents reason; Watson represents emotion. &ldquo;You really are an
                     automaton,—a calculating-machine!&rdquo; Watson&apos;s criticism shows both
-                    frustration and intimacy &mdash; only a close friend could speak so bluntly.
-                    Their differences make them effective together.
+                    frustration and intimacy - only a close friend could speak so bluntly. Their
+                    differences make them effective together.
                   </p>
                 </div>
                 <div>
@@ -823,9 +823,9 @@ export default function SignOfFourPage() {
                   </p>
                   <p>
                     Watson gains a wife; Holmes gains the cocaine bottle. The contrast at the
-                    novel&apos;s end is poignant &mdash; Watson has found happiness through
-                    connection, while Holmes retreats into isolation and self-destruction. Conan
-                    Doyle implies that friendship alone cannot save Holmes from himself.
+                    novel&apos;s end is poignant - Watson has found happiness through connection,
+                    while Holmes retreats into isolation and self-destruction. Conan Doyle implies
+                    that friendship alone cannot save Holmes from himself.
                   </p>
                 </div>
               </div>
@@ -844,7 +844,7 @@ export default function SignOfFourPage() {
                   </p>
                   <p>
                     The treasure originates in India and brings death to everyone who possesses it.
-                    Conan Doyle uses it as a symbol for colonial wealth &mdash; extracted through
+                    Conan Doyle uses it as a symbol for colonial wealth - extracted through
                     violence, it corrupts all who touch it. Link to context: India was the economic
                     engine of the British Empire.
                   </p>
@@ -854,10 +854,10 @@ export default function SignOfFourPage() {
                     {tr(`Paragraph 2 - Jonathan Small's backstory`)}
                   </p>
                   <p>
-                    Small&apos;s narrative in Chapter 12 immerses the reader in colonial India
-                    &mdash; military service, the 1857 Rebellion, imprisonment in the Andaman
-                    Islands. Conan Doyle shows how the Empire creates men like Small: ordinary
-                    soldiers drawn into extraordinary violence by imperial circumstances.
+                    Small&apos;s narrative in Chapter 12 immerses the reader in colonial India -
+                    military service, the 1857 Rebellion, imprisonment in the Andaman Islands. Conan
+                    Doyle shows how the Empire creates men like Small: ordinary soldiers drawn into
+                    extraordinary violence by imperial circumstances.
                   </p>
                 </div>
                 <div>
@@ -878,8 +878,8 @@ export default function SignOfFourPage() {
                   <p>
                     Colonial influence permeates London: Pondicherry Lodge (named after an Indian
                     territory), Thaddeus&apos;s Eastern luxuries, Watson&apos;s Afghan war wound.
-                    Conan Doyle shows that empire is not distant &mdash; it shapes domestic English
-                    life. The treasure&apos;s loss in the Thames symbolises the ultimate futility of
+                    Conan Doyle shows that empire is not distant - it shapes domestic English life.
+                    The treasure&apos;s loss in the Thames symbolises the ultimate futility of
                     imperial extraction.
                   </p>
                 </div>

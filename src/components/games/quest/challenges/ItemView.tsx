@@ -2,12 +2,14 @@
 
 import { midSentence } from '@/lib/games/text-games/text'
 import type { ChoiceItem } from '@/lib/games/text-games/types'
+import { cn } from '@/lib/utils'
 
 import { SequenceView } from './SequenceView'
 import {
+  BESIDE,
   En,
   fill,
-  PlainPanel,
+  MomentCard,
   PortraitPlate,
   Question,
   QuoteCard,
@@ -65,14 +67,16 @@ export function ItemView(props: ChallengeProps) {
               to: <En>{midSentence(item.to)}</En>,
             })}
           </Question>
-          {portraits.length > 0 && (
-            <div className="mx-auto grid max-w-xs grid-cols-2 gap-3">
-              {portraits.map((p) => (
-                <PortraitPlate key={p.name} portrait={p.piece} name={p.name} />
-              ))}
-            </div>
-          )}
-          {options}
+          <div className={cn('space-y-5', portraits.length > 0 && BESIDE)}>
+            {portraits.length > 0 && (
+              <div className="mx-auto grid max-w-xs grid-cols-2 gap-3 lg:max-w-none">
+                {portraits.map((p) => (
+                  <PortraitPlate key={p.name} portrait={p.piece} name={p.name} />
+                ))}
+              </div>
+            )}
+            {options}
+          </div>
         </div>
       )
     }
@@ -122,24 +126,16 @@ export function ItemView(props: ChallengeProps) {
           <Question headingRef={headingRef} eyebrow={t('quest.kind.theme')}>
             {t('text_games.q.theme')}
           </Question>
-          <div className="overflow-hidden rounded-2xl border border-border/70 bg-card">
-            {panel && <PlainPanel panel={panel} className="mx-auto max-w-sm p-2" />}
-            <div className="px-4 py-3">
-              <En as="p" className="font-heading text-lg">
-                {item.moment.title}
-              </En>
-              <En as="p" className="text-sm text-muted-foreground">
-                {item.moment.where}
-              </En>
-            </div>
+          <div className={cn('space-y-5', panel && BESIDE)}>
+            <MomentCard panel={panel} title={item.moment.title} where={item.moment.where} />
+            <TextOptions
+              options={dealt.options}
+              answer={item.answer}
+              answered={answered}
+              onAnswer={onAnswer}
+              t={t}
+            />
           </div>
-          <TextOptions
-            options={dealt.options}
-            answer={item.answer}
-            answered={answered}
-            onAnswer={onAnswer}
-            t={t}
-          />
         </div>
       )
     }

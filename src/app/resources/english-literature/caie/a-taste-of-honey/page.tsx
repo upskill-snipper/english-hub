@@ -268,7 +268,7 @@ export default function ATasteOfHoneyStudyGuide() {
             Cambridge IGCSE English Literature
           </p>
           <h1 className="mt-2 text-3xl font-bold tracking-tight sm:text-4xl md:text-5xl">
-            A Taste of Honey &mdash; Complete Study Guide
+            A Taste of Honey - Complete Study Guide
           </h1>
           <p className="mx-auto mt-4 max-w-2xl text-lg text-muted-foreground">
             Characters, themes, {keyQuotes.length}+ key quotes with analysis, dramatic techniques,
@@ -319,9 +319,7 @@ export default function ATasteOfHoneyStudyGuide() {
                     {act.keyQuotations.map((q, i) => (
                       <p key={i} className="text-xs italic text-muted-foreground">
                         &ldquo;{q.quote}&rdquo;{' '}
-                        <span className="not-italic font-medium text-primary">
-                          &mdash; {q.speaker}
-                        </span>
+                        <span className="not-italic font-medium text-primary">- {q.speaker}</span>
                       </p>
                     ))}
                   </div>
@@ -391,7 +389,7 @@ export default function ATasteOfHoneyStudyGuide() {
                   &ldquo;{q.quote}&rdquo;
                 </blockquote>
                 <p className="mt-1 text-xs font-semibold text-primary">
-                  {q.speaker} &mdash; {q.act}
+                  {q.speaker} - {q.act}
                 </p>
                 <p className="mt-3 text-sm leading-relaxed text-muted-foreground">{q.analysis}</p>
               </div>

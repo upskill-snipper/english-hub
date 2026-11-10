@@ -90,6 +90,39 @@ function isNoCardTrial(stripeSubscriptionId: string | null): boolean {
 }
 
 /**
+ * Is this a no-card web trial that the expiry cron has already closed?
+ *
+ * THE DEFECT THIS FIXES (found 10 November 2026). `/api/cron/trial-expiry`
+ * runs at 04:15 UTC and marks every expired no-card trial CANCELLED, with
+ * `cancelledAt` set. This resolver only recognised a finished trial while the
+ * row still said TRIALING, so from 04:15 on day 8 every ex-trialist fell
+ * through to EMPTY and NotOnProCard, the one place the dashboard tells them
+ * their trial is over and what a plan costs, never rendered again. Production
+ * on 10 November: 287 finished trials, every one of them CANCELLED, 0 paid.
+ *
+ * A CANCELLED row with no Stripe subscription is not always a trial, so this
+ * asks for exactly what the trial-ending cron's follow-up query asks for: the
+ * web platform, no RevenueCat identity and no recorded payment. An app-store
+ * subscription that lapsed has no Stripe id either, and must never be told
+ * its "free trial ended".
+ */
+function isClosedNoCardWebTrial(sub: {
+  status: string
+  stripeSubscriptionId: string | null
+  platform?: string | null
+  revenuecatAppUserId?: string | null
+  paymentCount?: number | null
+}): boolean {
+  return (
+    sub.status.toUpperCase() === 'CANCELLED' &&
+    isNoCardTrial(sub.stripeSubscriptionId) &&
+    sub.platform === 'WEB' &&
+    sub.revenuecatAppUserId == null &&
+    (sub.paymentCount ?? 0) === 0
+  )
+}
+
+/**
  * Fetches the trial state for the currently authenticated user.
  *
  * Returns `{ trialEndsAt: null, isPremium: false }` when:
@@ -143,10 +176,11 @@ export async function getTrialState(): Promise<TrialState> {
             cancelledAt: true,
             // The safety discriminator. See isNoCardTrial.
             stripeSubscriptionId: true,
-            // A mobile RevenueCat row also carries a null Stripe id, so the
-            // CANCELLED branch below needs these two as well.
+            // Tell a cron-closed trial from a lapsed app-store plan. See
+            // isClosedNoCardWebTrial.
             platform: true,
             revenuecatAppUserId: true,
+            paymentCount: true,
           },
         })
       : null
@@ -243,7 +277,12 @@ export async function getTrialState(): Promise<TrialState> {
     // Past the period and not premium. ONLY call this a finished trial when
     // there was no Stripe subscription behind it - otherwise a lapsed or
     // cancelled payer is told their "free trial has ended". See isNoCardTrial.
-    if (!stillInPeriod && status === 'TRIALING' && isNoCardTrial(sub.stripeSubscriptionId)) {
+    // TRIALING covers the hours before the 04:15 expiry cron; CANCELLED covers
+    // every day after it (see isClosedNoCardWebTrial).
+    const wasNoCardTrial =
+      (status === 'TRIALING' && isNoCardTrial(sub.stripeSubscriptionId)) ||
+      isClosedNoCardWebTrial(sub)
+    if (!stillInPeriod && wasNoCardTrial) {
       return {
         trialEndsAt: null,
         isPremium: false,
@@ -252,32 +291,10 @@ export async function getTrialState(): Promise<TrialState> {
       }
     }
 
-    // ── The row the expiry cron leaves behind (fixed 23 October 2026) ──────
-    //
-    // `/api/cron/trial-expiry` ends a no-card trial by setting the row to
-    // CANCELLED with `cancelledAt`, at 04:15 on day 8. The branch above only
-    // knew TRIALING, so from that morning on this answered 'unknown' for every
-    // trialist the cron had processed: the "your trial ended on {date}" card
-    // and the day-8 email described an account the resolver could not name.
-    //
-    // The same three facts the trial-ending cron's follow-up query uses keep a
-    // payer out: no Stripe subscription id, the WEB platform, and no
-    // RevenueCat id (a mobile row also carries a null Stripe id, and its
-    // CANCELLED means a lapsed store purchase, not a finished trial).
-    if (
-      !stillInPeriod &&
-      status === 'CANCELLED' &&
-      isNoCardTrial(sub.stripeSubscriptionId) &&
-      sub.platform === 'WEB' &&
-      sub.revenuecatAppUserId === null
-    ) {
-      return {
-        trialEndsAt: null,
-        isPremium: false,
-        kind: 'trial-ended',
-        trialEndedAt: sub.currentPeriodEnd,
-      }
-    }
+    // (This branch fixed the same CANCELLED row on 23 October 2026 with its
+    // own block here; main fixed it independently on 10 November with
+    // isClosedNoCardWebTrial above, which also requires no recorded payment.
+    // The merge keeps main's one check rather than two that do the same.)
 
     // A lapsed payer, a past-due row, or anything else we cannot name
     // confidently. Say nothing rather than guess.

@@ -7,9 +7,11 @@ import { placedIsRight } from '@/lib/games/quest/deal'
 import { cn } from '@/lib/utils'
 
 import {
+  BESIDE,
   En,
   fill,
   fillText,
+  MomentCard,
   optionState,
   OptionButton,
   PlainPanel,
@@ -49,24 +51,16 @@ export function PanelLineView({ dealt, quest, answered, onAnswer, headingRef, t 
       <Question headingRef={headingRef} eyebrow={t('quest.kind.panel_line')}>
         {t('quest.q.panel_line')}
       </Question>
-      <div className="overflow-hidden rounded-2xl border border-border/70 bg-card">
-        {panel && <PlainPanel panel={panel} motion className="mx-auto max-w-sm p-2" />}
-        <div className="px-4 pb-3 pt-1">
-          <En as="p" className="font-heading text-lg">
-            {c.moment.title}
-          </En>
-          <En as="p" className="text-sm text-muted-foreground">
-            {c.moment.where}
-          </En>
-        </div>
+      <div className={cn('space-y-5', panel && BESIDE)}>
+        <MomentCard panel={panel} title={c.moment.title} where={c.moment.where} motion />
+        <TextOptions
+          options={dealt.options}
+          answer={c.answer}
+          answered={answered}
+          onAnswer={onAnswer}
+          t={t}
+        />
       </div>
-      <TextOptions
-        options={dealt.options}
-        answer={c.answer}
-        answered={answered}
-        onAnswer={onAnswer}
-        t={t}
-      />
     </div>
   )
 }
@@ -76,38 +70,52 @@ export function LinePanelView({ dealt, quest, answered, onAnswer, headingRef, t 
   const c = dealt.challenge
   if (c.type !== 'line-panel') return null
   const byTitle = new Map(quest.moments.map((m) => [m.title, m]))
+  const panels = dealt.options.map((title) => {
+    const m = byTitle.get(title)
+    return m?.panel ? quest.art.panels[m.panel] : undefined
+  })
   return (
     <div className="space-y-5">
       <Question headingRef={headingRef} eyebrow={t('quest.kind.line_panel')}>
         {t('quest.q.line_panel')}
       </Question>
-      <QuoteCard>{c.quote}</QuoteCard>
+      {/* On a desktop the line takes a third of the width and the four
+          panels, larger, the two thirds beside it: in two rows under the
+          line, panels that size would not fit a laptop's screen. */}
       <div
-        className="grid grid-cols-2 gap-2.5"
-        role="group"
-        aria-label={t('quest.options')}
-        data-quest-options
+        className={cn(
+          'space-y-5',
+          panels.some(Boolean) &&
+            'lg:grid lg:grid-cols-[minmax(0,1fr)_minmax(0,2fr)] lg:items-start lg:gap-8 lg:space-y-0',
+        )}
       >
-        {dealt.options.map((title, i) => {
-          const m = byTitle.get(title)
-          const panel = m?.panel ? quest.art.panels[m.panel] : undefined
-          const state = optionState(title, c.answer, answered)
-          return (
-            <OptionButton
-              key={title}
-              index={i}
-              state={state}
-              onChoose={() => onAnswer({ correct: title === c.answer, chosen: title })}
-              t={t}
-              className="flex-col items-stretch gap-2 p-2"
-            >
-              {panel && <PlainPanel panel={panel} className="pointer-events-none" />}
-              <En as="span" className="block px-1 text-sm font-medium leading-snug">
-                {title}
-              </En>
-            </OptionButton>
-          )
-        })}
+        <QuoteCard>{c.quote}</QuoteCard>
+        <div
+          className="grid grid-cols-2 gap-2.5 lg:gap-3"
+          role="group"
+          aria-label={t('quest.options')}
+          data-quest-options
+        >
+          {dealt.options.map((title, i) => {
+            const panel = panels[i]
+            const state = optionState(title, c.answer, answered)
+            return (
+              <OptionButton
+                key={title}
+                index={i}
+                state={state}
+                onChoose={() => onAnswer({ correct: title === c.answer, chosen: title })}
+                t={t}
+                className="flex-col items-stretch gap-2 p-2"
+              >
+                {panel && <PlainPanel panel={panel} className="pointer-events-none" />}
+                <En as="span" className="block px-1 text-sm font-medium leading-snug">
+                  {title}
+                </En>
+              </OptionButton>
+            )
+          })}
+        </div>
       </div>
     </div>
   )
@@ -261,8 +269,10 @@ export function WhoseView({ dealt, quest, answered, onAnswer, headingRef, t }: C
       </Question>
       <QuoteCard>{c.phrase}</QuoteCard>
       {anyArt ? (
+        // Four abreast on a desktop: in two rows the second fell below the
+        // bottom of a laptop's screen.
         <div
-          className="grid grid-cols-2 gap-2.5"
+          className="grid grid-cols-2 gap-2.5 lg:grid-cols-4 lg:gap-3"
           role="group"
           aria-label={t('quest.options')}
           data-quest-options
@@ -328,71 +338,81 @@ export function MarkerView({ dealt, quest, answered, onAnswer, headingRef, t }: 
       <Question headingRef={headingRef} eyebrow={t('quest.kind.marker')}>
         {fill(t('quest.q.marker'), { name: <En>{c.portrait}</En> })}
       </Question>
-      <QuoteCard>{c.phrase}</QuoteCard>
-      <div className="relative mx-auto w-full max-w-[19rem]" dir="ltr">
-        <PortraitPlate portrait={portrait} />
-        {/* A ring over each printed marker: the plate draws the discs, these make them tappable. */}
-        <div className="pointer-events-none absolute inset-1.5" aria-hidden="true">
-          {markers.at.map(([x, y], i) => {
+      {/* On a desktop the portrait stands half as big again, with the words
+          and the numbers beside it rather than under it. The third row takes
+          the portrait's extra height, so the numbers stay under the words. */}
+      <div className="space-y-5 lg:grid lg:grid-cols-[minmax(0,28rem)_minmax(0,1fr)] lg:grid-rows-[auto_auto_1fr] lg:items-start lg:gap-x-10 lg:gap-y-6 lg:space-y-0">
+        <QuoteCard className="lg:col-start-2 lg:row-start-1">{c.phrase}</QuoteCard>
+        <div
+          className="relative mx-auto w-full max-w-[19rem] lg:col-start-1 lg:row-span-3 lg:row-start-1 lg:max-w-none"
+          dir="ltr"
+        >
+          <PortraitPlate portrait={portrait} />
+          {/* A ring over each printed marker: the plate draws the discs, these make them tappable. */}
+          <div className="pointer-events-none absolute inset-1.5" aria-hidden="true">
+            {markers.at.map(([x, y], i) => {
+              const n = i + 1
+              const s = stateOf(n)
+              return (
+                <button
+                  key={n}
+                  type="button"
+                  tabIndex={-1}
+                  onClick={() => choose(n)}
+                  className={cn(
+                    'pointer-events-auto absolute flex size-11 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full border-[3px] transition-colors',
+                    s === 'idle' && 'border-transparent hover:border-primary',
+                    (s === 'right' || s === 'missed') &&
+                      'q-pop border-emerald-500 bg-emerald-500/20',
+                    s === 'wrong' && 'q-shake border-red-500 bg-red-500/20',
+                    s === 'faded' && 'border-transparent',
+                  )}
+                  style={{
+                    left: `${(x / markers.width) * 100}%`,
+                    top: `${(y / markers.height) * 100}%`,
+                  }}
+                />
+              )
+            })}
+          </div>
+        </div>
+        <div
+          className="flex flex-wrap justify-center gap-2.5 lg:col-start-2 lg:row-start-2 lg:justify-start"
+          role="group"
+          aria-label={t('quest.marker.numbers')}
+          data-quest-options
+        >
+          {markers.at.map((_, i) => {
             const n = i + 1
             const s = stateOf(n)
             return (
               <button
                 key={n}
                 type="button"
-                tabIndex={-1}
                 onClick={() => choose(n)}
+                aria-disabled={!!answered}
+                aria-label={fillText(t('quest.marker.label'), { n })}
                 className={cn(
-                  'pointer-events-auto absolute flex size-11 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full border-[3px] transition-colors',
-                  s === 'idle' && 'border-transparent hover:border-primary',
-                  (s === 'right' || s === 'missed') && 'q-pop border-emerald-500 bg-emerald-500/20',
-                  s === 'wrong' && 'q-shake border-red-500 bg-red-500/20',
-                  s === 'faded' && 'border-transparent',
+                  'q-key flex size-14 items-center justify-center rounded-2xl border-2 text-xl font-bold',
+                  s === 'idle' && 'border-border bg-card hover:border-primary/60',
+                  (s === 'right' || s === 'missed') &&
+                    'border-emerald-500 bg-emerald-500 text-white',
+                  s === 'wrong' && 'border-red-500 bg-red-500 text-white',
+                  s === 'faded' && 'border-border/60 opacity-50',
                 )}
-                style={{
-                  left: `${(x / markers.width) * 100}%`,
-                  top: `${(y / markers.height) * 100}%`,
-                }}
-              />
+              >
+                {s === 'right' || s === 'missed' ? (
+                  <Check className="size-6" strokeWidth={3} />
+                ) : s === 'wrong' ? (
+                  <X className="size-6" strokeWidth={3} />
+                ) : (
+                  n
+                )}
+                <StateLabel state={s} t={t} />
+              </button>
             )
           })}
         </div>
-      </div>
-      <div
-        className="flex flex-wrap justify-center gap-2.5"
-        role="group"
-        aria-label={t('quest.marker.numbers')}
-        data-quest-options
-      >
-        {markers.at.map((_, i) => {
-          const n = i + 1
-          const s = stateOf(n)
-          return (
-            <button
-              key={n}
-              type="button"
-              onClick={() => choose(n)}
-              aria-disabled={!!answered}
-              aria-label={fillText(t('quest.marker.label'), { n })}
-              className={cn(
-                'q-key flex size-14 items-center justify-center rounded-2xl border-2 text-xl font-bold',
-                s === 'idle' && 'border-border bg-card hover:border-primary/60',
-                (s === 'right' || s === 'missed') && 'border-emerald-500 bg-emerald-500 text-white',
-                s === 'wrong' && 'border-red-500 bg-red-500 text-white',
-                s === 'faded' && 'border-border/60 opacity-50',
-              )}
-            >
-              {s === 'right' || s === 'missed' ? (
-                <Check className="size-6" strokeWidth={3} />
-              ) : s === 'wrong' ? (
-                <X className="size-6" strokeWidth={3} />
-              ) : (
-                n
-              )}
-              <StateLabel state={s} t={t} />
-            </button>
-          )
-        })}
       </div>
     </div>
   )
@@ -449,20 +469,13 @@ export function ThemeCheckView({
       <Question headingRef={headingRef} eyebrow={t('quest.kind.theme_check')}>
         {fill(t('quest.q.theme_check'), { theme: <En className="text-primary">{c.theme}</En> })}
       </Question>
-      <div className="overflow-hidden rounded-2xl border border-border/70 bg-card">
-        {panel && <PlainPanel panel={panel} motion className="mx-auto max-w-sm p-2" />}
-        <div className="px-4 pb-3 pt-1">
-          <En as="p" className="font-heading text-lg">
-            {c.moment.title}
-          </En>
-          <En as="p" className="text-sm text-muted-foreground">
-            {c.moment.where}
-          </En>
+      <div className={cn('space-y-5', panel && BESIDE)}>
+        <MomentCard panel={panel} title={c.moment.title} where={c.moment.where} motion />
+        {/* Beside the panel, one above the other and level with its middle. */}
+        <div className={cn('flex gap-3', panel && 'lg:flex-col lg:self-center')} data-quest-options>
+          {button(true)}
+          {button(false)}
         </div>
-      </div>
-      <div className="flex gap-3" data-quest-options>
-        {button(true)}
-        {button(false)}
       </div>
     </div>
   )

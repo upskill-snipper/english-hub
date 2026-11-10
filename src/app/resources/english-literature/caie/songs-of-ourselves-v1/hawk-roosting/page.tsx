@@ -99,16 +99,15 @@ export default function HawkRoostingPage() {
         <Card>
           <CardContent className="space-y-3 pt-6 text-sm text-muted-foreground">
             <p>
-              <strong className="text-foreground">Poet:</strong> Ted Hughes &mdash; English poet,
-              born Mytholmroyd, West Yorkshire, 1930; Poet Laureate from 1984 until his death in
-              1998.
+              <strong className="text-foreground">Poet:</strong> Ted Hughes - English poet, born
+              Mytholmroyd, West Yorkshire, 1930; Poet Laureate from 1984 until his death in 1998.
             </p>
             <p>
               <strong className="text-foreground">Year:</strong> 1960
             </p>
             <p>
               <strong className="text-foreground">First publication:</strong> <em>Lupercal</em>{' '}
-              (Faber &amp; Faber, 1960) &mdash; Hughes&rsquo;s second collection. The book won the
+              (Faber &amp; Faber, 1960) - Hughes&rsquo;s second collection. The book won the
               Hawthornden Prize.
             </p>
             <p>
@@ -137,9 +136,9 @@ export default function HawkRoostingPage() {
             <p>
               The first line of the poem. The hawk speaks in the first person. &lsquo;The top of the
               wood&rsquo; establishes hierarchical elevation; &lsquo;my eyes closed&rsquo; signals
-              untroubled dominance &mdash; he does not need to look. The hawk is effortlessly at the
-              apex of his world. The closed eye is also a deliberately unnerving image: power that
-              does not need to watch is power that cannot be challenged.
+              untroubled dominance - he does not need to look. The hawk is effortlessly at the apex
+              of his world. The closed eye is also a deliberately unnerving image: power that does
+              not need to watch is power that cannot be challenged.
             </p>
           </CardContent>
         </Card>
@@ -153,8 +152,8 @@ export default function HawkRoostingPage() {
               The dramatic monologue convention is crucial here. Hughes does not describe the hawk;
               he ventriloquises it. The reader is forced to inhabit a non-human, amoral
               consciousness for the duration of the poem. Hughes said in interview that he meant to
-              give voice to a creature that had not been corrupted by human moral self-doubt &mdash;
-              a clean, focused predator. Critics have read the bird as a fascist persona; Hughes
+              give voice to a creature that had not been corrupted by human moral self-doubt - a
+              clean, focused predator. Critics have read the bird as a fascist persona; Hughes
               insisted the bird was simply &lsquo;Nature thinking&rsquo;.
             </p>
             <p>

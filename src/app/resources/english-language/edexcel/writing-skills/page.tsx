@@ -148,7 +148,7 @@ export default async function WritingSkillsPage() {
                 <div>
                   <p className="font-semibold text-foreground">{tr(`Byline (optional)`)}</p>
                   <p className="text-sm text-muted-foreground">
-                    &ldquo;By [Your Name]&rdquo; &mdash; shows awareness of form conventions.
+                    &ldquo;By [Your Name]&rdquo; - shows awareness of form conventions.
                   </p>
                 </div>
               </div>
@@ -197,15 +197,15 @@ export default async function WritingSkillsPage() {
             <h3 className="font-bold text-primary">{tr(`Example Article Opening`)}</h3>
             <div className="mt-3 text-sm text-foreground leading-relaxed space-y-2">
               <p className="font-bold text-lg text-foreground">
-                The Library Is Dying &mdash; And Nobody Seems to Care
+                The Library Is Dying - And Nobody Seems to Care
               </p>
               <p className="text-xs italic text-muted-foreground">{tr(`By J. Carter`)}</p>
               <p>
-                Picture this. It is a Tuesday afternoon and the local library &mdash; the one your
+                Picture this. It is a Tuesday afternoon and the local library - the one your
                 grandmother used, the one where you read your first chapter book, the one with the
-                creaky floorboards and the smell of decades &mdash; is empty. Not just quiet. Empty.
-                The shelves are still there, but the council has already decided their fate. By
-                March, this building will be a car park.
+                creaky floorboards and the smell of decades - is empty. Not just quiet. Empty. The
+                shelves are still there, but the council has already decided their fate. By March,
+                this building will be a car park.
               </p>
               <p>
                 Across the country, 800 libraries have closed since 2010. Eight hundred. That is not
@@ -255,9 +255,7 @@ export default async function WritingSkillsPage() {
                     &bull; If you don&rsquo;t: &ldquo;Dear Sir/Madam&rdquo; &rarr; &ldquo;Yours
                     faithfully&rdquo;
                   </li>
-                  <li>
-                    &bull; Formal register throughout &mdash; no slang, no contractions ideally
-                  </li>
+                  <li>&bull; Formal register throughout - no slang, no contractions ideally</li>
                   <li>&bull; State your purpose in the first paragraph</li>
                 </ul>
               </div>
@@ -271,7 +269,7 @@ export default async function WritingSkillsPage() {
                 <p>[Date]</p>
                 <p className="mt-2">{tr(`Dear [First name],`)}</p>
                 <p className="mt-2 italic text-muted-foreground">
-                  [Body paragraphs &mdash; personal, warm tone]
+                  [Body paragraphs - personal, warm tone]
                 </p>
                 <p className="mt-2">{tr(`Best wishes / Love / See you soon,`)}</p>
                 <p>[Your name]</p>
@@ -302,11 +300,11 @@ export default async function WritingSkillsPage() {
                 impact this decision would have on our community.
               </p>
               <p>
-                The centre is far more than a building. It is the heartbeat of our neighbourhood
-                &mdash; a place where elderly residents gather for companionship, where young people
-                find safe spaces after school, and where families from all backgrounds come
-                together. To close it would be to sever the very connections that make Greenfield a
-                community rather than merely a collection of houses.
+                The centre is far more than a building. It is the heartbeat of our neighbourhood - a
+                place where elderly residents gather for companionship, where young people find safe
+                spaces after school, and where families from all backgrounds come together. To close
+                it would be to sever the very connections that make Greenfield a community rather
+                than merely a collection of houses.
               </p>
             </div>
           </div>
@@ -322,7 +320,7 @@ export default async function WritingSkillsPage() {
           <p className="mt-3 text-muted-foreground leading-relaxed">
             A speech is written to be <strong>heard</strong>, not read. It needs to sound natural,
             use rhetorical devices, and engage the audience directly. Think of it as a conversation
-            with a large group &mdash; you need rhythm, emotion, and a clear call to action.
+            with a large group - you need rhythm, emotion, and a clear call to action.
           </p>
 
           <div className="mt-8 rounded-xl border border-border bg-card p-6 shadow-md">
@@ -379,9 +377,9 @@ export default async function WritingSkillsPage() {
               </p>
               <p className="mt-3">
                 Good morning, everyone. Before I begin, I want you to do something for me. Look at
-                the person sitting next to you. Go on &mdash; actually look at them. Notice their
-                expression. Are they paying attention? Are they here, in this moment, with us? Or
-                &mdash; and be honest &mdash; are they thinking about their phone?
+                the person sitting next to you. Go on - actually look at them. Notice their
+                expression. Are they paying attention? Are they here, in this moment, with us? Or -
+                and be honest - are they thinking about their phone?
               </p>
               <p>
                 I am not judging. I am guilty of it too. We all are. Because the truth is, we have
@@ -402,9 +400,9 @@ export default async function WritingSkillsPage() {
         <div className="mx-auto max-w-4xl">
           <h2 className="text-2xl font-bold text-foreground sm:text-3xl">{tr(`Review Writing`)}</h2>
           <p className="mt-3 text-muted-foreground leading-relaxed">
-            Reviews evaluate something &mdash; a film, book, restaurant, product, or event &mdash;
-            and offer a personal opinion supported by evidence. The key is a{' '}
-            <strong>distinctive voice</strong> that balances opinion with description.
+            Reviews evaluate something - a film, book, restaurant, product, or event - and offer a
+            personal opinion supported by evidence. The key is a <strong>distinctive voice</strong>{' '}
+            that balances opinion with description.
           </p>
 
           <div className="mt-8 rounded-xl border border-border bg-card p-6 shadow-md">
@@ -486,11 +484,11 @@ export default async function WritingSkillsPage() {
               <p className="text-xs text-muted-foreground">{tr(`Rating: 3/5`)}</p>
               <p>
                 The Jade Dragon wants you to be impressed, and for the first five minutes, you are.
-                The restaurant is stunning &mdash; all exposed brick, hanging lanterns, and the kind
-                of moody lighting that makes everyone look like a film star. The menu is a work of
-                art, hand-printed on textured card with descriptions that read like love letters to
-                each dish. &ldquo;Pan-seared sea bass with a whisper of yuzu and micro herbs foraged
-                from the Kentish hillside.&rdquo; It sounds extraordinary.
+                The restaurant is stunning - all exposed brick, hanging lanterns, and the kind of
+                moody lighting that makes everyone look like a film star. The menu is a work of art,
+                hand-printed on textured card with descriptions that read like love letters to each
+                dish. &ldquo;Pan-seared sea bass with a whisper of yuzu and micro herbs foraged from
+                the Kentish hillside.&rdquo; It sounds extraordinary.
               </p>
               <p>{tr(`The problem is, it tastes ordinary.`)}</p>
             </div>
@@ -506,8 +504,8 @@ export default async function WritingSkillsPage() {
           <h2 className="text-2xl font-bold text-foreground sm:text-3xl">{tr(`Essay Writing`)}</h2>
           <p className="mt-3 text-muted-foreground leading-relaxed">
             An essay presents a structured argument or discussion on a given topic. Unlike articles,
-            essays do not need headlines or bylines &mdash; they are structured around a clear
-            thesis, developed paragraphs, and a conclusion.
+            essays do not need headlines or bylines - they are structured around a clear thesis,
+            developed paragraphs, and a conclusion.
           </p>
 
           <div className="mt-8 rounded-xl border border-border bg-card p-6 shadow-md">
@@ -518,7 +516,7 @@ export default async function WritingSkillsPage() {
                 <ul className="mt-2 space-y-1 text-sm text-muted-foreground">
                   <li>&bull; Open with a hook: a question, a quotation, or a bold statement</li>
                   <li>&bull; Introduce the topic and its relevance</li>
-                  <li>&bull; State your thesis &mdash; your main argument or position</li>
+                  <li>&bull; State your thesis - your main argument or position</li>
                 </ul>
               </div>
               <div className="rounded-lg bg-muted p-4">
@@ -631,7 +629,7 @@ export default async function WritingSkillsPage() {
                 </li>
                 <li className="flex items-start gap-2">
                   <span className="mt-1 h-1.5 w-1.5 shrink-0 rounded-full bg-accent" />
-                  Avoid repetition &mdash; use synonyms
+                  Avoid repetition - use synonyms
                 </li>
               </ul>
             </div>
@@ -669,23 +667,23 @@ export default async function WritingSkillsPage() {
               <ul className="mt-3 space-y-2 text-sm text-muted-foreground">
                 <li className="flex items-start gap-2">
                   <span className="mt-1 h-1.5 w-1.5 shrink-0 rounded-full bg-warn" />
-                  <strong>Semicolons:</strong> link related clauses &mdash; &ldquo;The sun set; the
-                  city held its breath.&rdquo;
+                  <strong>Semicolons:</strong> link related clauses - &ldquo;The sun set; the city
+                  held its breath.&rdquo;
                 </li>
                 <li className="flex items-start gap-2">
                   <span className="mt-1 h-1.5 w-1.5 shrink-0 rounded-full bg-warn" />
-                  <strong>Colons:</strong> introduce a list or explanation &mdash; &ldquo;There was
-                  one problem: nobody was listening.&rdquo;
+                  <strong>Colons:</strong> introduce a list or explanation - &ldquo;There was one
+                  problem: nobody was listening.&rdquo;
                 </li>
                 <li className="flex items-start gap-2">
                   <span className="mt-1 h-1.5 w-1.5 shrink-0 rounded-full bg-warn" />
-                  <strong>Dashes:</strong> for parenthetical asides &mdash; &ldquo;The school
-                  &mdash; once a beacon of hope &mdash; now stood empty.&rdquo;
+                  <strong>Dashes:</strong> for parenthetical asides - &ldquo;The school &mdash; once
+                  a beacon of hope &mdash; now stood empty.&rdquo;
                 </li>
                 <li className="flex items-start gap-2">
                   <span className="mt-1 h-1.5 w-1.5 shrink-0 rounded-full bg-warn" />
-                  <strong>Ellipsis:</strong> create suspense or trailing thought &mdash; &ldquo;And
-                  then she realised...&rdquo;
+                  <strong>Ellipsis:</strong> create suspense or trailing thought - &ldquo;And then
+                  she realised...&rdquo;
                 </li>
               </ul>
             </div>

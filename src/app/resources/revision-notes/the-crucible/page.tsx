@@ -74,7 +74,7 @@ function Quote({
     <div className="rounded-lg border-s-4 border-accent bg-primary/10 p-4">
       <p className="text-sm font-semibold italic text-foreground">&ldquo;{text}&rdquo;</p>
       <p className="mt-1 text-xs text-muted-foreground">
-        {speaker} &mdash; {act}
+        {speaker} - {act}
       </p>
       <p className="mt-2 text-sm text-muted-foreground">{analysis}</p>
     </div>
@@ -113,7 +113,7 @@ export default function CrucibleRevisionPage() {
           </span>
         </div>
         <h1 className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
-          The Crucible &mdash; Complete Revision Guide
+          The Crucible - Complete Revision Guide
         </h1>
         <p className="mt-3 max-w-3xl text-lg text-muted-foreground">
           Everything you need for your GCSE/IGCSE English Literature exam. Act-by-act plot summary,
@@ -161,7 +161,7 @@ export default function CrucibleRevisionPage() {
                 <span className="flex h-6 w-6 items-center justify-center rounded-full bg-red-500/15 text-xs font-bold text-red-700 dark:text-red-300">
                   1
                 </span>
-                Act 1 &mdash; The Discovery
+                Act 1 - The Discovery
               </h3>
               <p className="mt-2 text-sm text-muted-foreground leading-relaxed">
                 The play opens in Salem, Massachusetts, 1692. Reverend Parris has discovered his
@@ -170,7 +170,7 @@ export default function CrucibleRevisionPage() {
                 state. Parris fears witchcraft rumours will destroy his reputation. The community
                 gathers, and old grudges surface: the Putnams blame witchcraft for their dead
                 children; Thomas Putnam eyes land he might acquire if neighbours are convicted. John
-                Proctor arrives and privately confronts Abigail &mdash; they had an affair while she
+                Proctor arrives and privately confronts Abigail - they had an affair while she
                 worked as his servant, and he has ended it. Abigail is still obsessed with Proctor
                 and reveals the girls were only dancing, not conjuring spirits. Reverend Hale, an
                 expert on witchcraft, arrives to investigate. Under pressure, Tituba
@@ -194,8 +194,8 @@ export default function CrucibleRevisionPage() {
                     &bull; Tituba&apos;s forced &ldquo;confession&rdquo; under threat of violence
                   </li>
                   <li>
-                    &bull; Abigail and Betty begin naming &ldquo;witches&rdquo; &mdash; mass
-                    hysteria begins
+                    &bull; Abigail and Betty begin naming &ldquo;witches&rdquo; - mass hysteria
+                    begins
                   </li>
                 </ul>
               </div>
@@ -206,7 +206,7 @@ export default function CrucibleRevisionPage() {
                 <span className="flex h-6 w-6 items-center justify-center rounded-full bg-red-500/15 text-xs font-bold text-red-700 dark:text-red-300">
                   2
                 </span>
-                Act 2 &mdash; The Accusations Spread
+                Act 2 - The Accusations Spread
               </h3>
               <p className="mt-2 text-sm text-muted-foreground leading-relaxed">
                 Eight days later, John and Elizabeth Proctor discuss the trials at home. Their
@@ -215,7 +215,7 @@ export default function CrucibleRevisionPage() {
                 accusers, returns from court and reveals that thirty-nine people have been arrested
                 and that Elizabeth has been &ldquo;somewhat mentioned.&rdquo; She gives Elizabeth a
                 poppet (doll) she made in court. Reverend Hale visits the Proctors to assess their
-                Christian character, and John struggles to remember the Ten Commandments &mdash;
+                Christian character, and John struggles to remember the Ten Commandments -
                 significantly forgetting the one about adultery. Ezekiel Cheever and Marshal Herrick
                 arrive with an arrest warrant for Elizabeth: Abigail has accused her. The evidence
                 is a poppet with a needle in it, supposedly used to harm Abigail by witchcraft. John
@@ -231,9 +231,7 @@ export default function CrucibleRevisionPage() {
                   <li>&bull; The tension between John and Elizabeth over the affair</li>
                   <li>&bull; Mary Warren&apos;s revelation about the scale of the trials</li>
                   <li>&bull; The poppet as false evidence of witchcraft</li>
-                  <li>
-                    &bull; Elizabeth&apos;s arrest &mdash; Proctor resolves to fight the court
-                  </li>
+                  <li>&bull; Elizabeth&apos;s arrest - Proctor resolves to fight the court</li>
                 </ul>
               </div>
             </div>
@@ -243,18 +241,18 @@ export default function CrucibleRevisionPage() {
                 <span className="flex h-6 w-6 items-center justify-center rounded-full bg-red-500/15 text-xs font-bold text-red-700 dark:text-red-300">
                   3
                 </span>
-                Act 3 &mdash; The Trial
+                Act 3 - The Trial
               </h3>
               <p className="mt-2 text-sm text-muted-foreground leading-relaxed">
                 The act takes place in the Salem courthouse. Proctor brings Mary Warren to testify
                 that the girls are faking. Giles Corey presents evidence that Thomas Putnam is using
                 the trials to grab land. Judge Danforth, proud and rigid, refuses to postpone
                 proceedings or consider that the girls might be lying. Proctor presents a petition
-                signed by ninety-one people attesting to the good character of the accused &mdash;
+                signed by ninety-one people attesting to the good character of the accused -
                 Danforth orders all signers arrested for examination. When Mary Warren testifies
                 that the girls are pretending, Abigail and the girls turn on her, pretending she is
                 sending out her spirit against them. In desperation, Proctor confesses his adultery
-                with Abigail to discredit her. Danforth brings Elizabeth in to confirm &mdash; but
+                with Abigail to discredit her. Danforth brings Elizabeth in to confirm - but
                 Elizabeth, not knowing John has confessed, lies to protect his reputation, denying
                 the affair. Abigail resumes her performance. Mary Warren, terrified, turns on
                 Proctor and accuses him of being &ldquo;the Devil&apos;s man.&rdquo; Proctor is
@@ -270,8 +268,8 @@ export default function CrucibleRevisionPage() {
                   </li>
                   <li>&bull; Proctor&apos;s public confession of adultery</li>
                   <li>
-                    &bull; Elizabeth&apos;s lie &mdash; the one time she is dishonest, it condemns
-                    her husband
+                    &bull; Elizabeth&apos;s lie - the one time she is dishonest, it condemns her
+                    husband
                   </li>
                   <li>&bull; Hale denounces the proceedings and quits the court</li>
                 </ul>
@@ -283,7 +281,7 @@ export default function CrucibleRevisionPage() {
                 <span className="flex h-6 w-6 items-center justify-center rounded-full bg-red-500/15 text-xs font-bold text-red-700 dark:text-red-300">
                   4
                 </span>
-                Act 4 &mdash; The Choice
+                Act 4 - The Choice
               </h3>
               <p className="mt-2 text-sm text-muted-foreground leading-relaxed">
                 Three months later. The jail is overcrowded; crops rot in the fields because the
@@ -294,22 +292,21 @@ export default function CrucibleRevisionPage() {
                 save their lives. Elizabeth is brought to persuade Proctor. In their painful
                 reunion, Elizabeth admits her own coldness contributed to the affair. Proctor
                 considers confessing falsely. He signs a confession but refuses to let it be
-                displayed publicly &mdash; he will not give up his name. When Danforth demands the
-                signed paper, Proctor tears it up, choosing to die rather than live a lie. He goes
-                to the gallows with Rebecca Nurse and Martha Corey. Elizabeth, asked to change his
-                mind, refuses: &ldquo;He have his goodness now. God forbid I take it from
-                him.&rdquo;
+                displayed publicly - he will not give up his name. When Danforth demands the signed
+                paper, Proctor tears it up, choosing to die rather than live a lie. He goes to the
+                gallows with Rebecca Nurse and Martha Corey. Elizabeth, asked to change his mind,
+                refuses: &ldquo;He have his goodness now. God forbid I take it from him.&rdquo;
               </p>
               <div className="mt-3 rounded-lg bg-muted p-3">
                 <p className="text-xs font-semibold text-muted-foreground uppercase tracking-wider">
                   {tr(`Key Moments`)}
                 </p>
                 <ul className="mt-2 space-y-1 text-sm text-muted-foreground">
-                  <li>&bull; Abigail&apos;s flight &mdash; exposing her fraud</li>
+                  <li>&bull; Abigail&apos;s flight - exposing her fraud</li>
                   <li>&bull; Hale begging prisoners to confess to save their lives</li>
                   <li>&bull; John and Elizabeth&apos;s final conversation and reconciliation</li>
                   <li>&bull; Proctor signs then tears up his confession</li>
-                  <li>&bull; Proctor&apos;s execution &mdash; choosing death over dishonour</li>
+                  <li>&bull; Proctor&apos;s execution - choosing death over dishonour</li>
                 </ul>
               </div>
             </div>
@@ -333,13 +330,13 @@ export default function CrucibleRevisionPage() {
                 <p className="mt-3 text-sm text-muted-foreground leading-relaxed">
                   Proctor is the play&apos;s tragic hero. He is a farmer, independent-minded, and
                   respected in the community, but he carries deep guilt for his affair with Abigail
-                  Williams. His internal conflict &mdash; between his sense of himself as a sinner
-                  and his desire to do what is right &mdash; drives the play. Proctor is sceptical
-                  of the hysteria from the start but is reluctant to act because exposing Abigail
-                  means exposing his own sin. His journey is toward moral redemption: by choosing to
-                  die rather than sign a false confession, he reclaims his integrity and his
-                  &ldquo;name.&rdquo; Miller modelled Proctor as a common man who achieves tragic
-                  stature through his willingness to sacrifice everything for his principles.
+                  Williams. His internal conflict - between his sense of himself as a sinner and his
+                  desire to do what is right - drives the play. Proctor is sceptical of the hysteria
+                  from the start but is reluctant to act because exposing Abigail means exposing his
+                  own sin. His journey is toward moral redemption: by choosing to die rather than
+                  sign a false confession, he reclaims his integrity and his &ldquo;name.&rdquo;
+                  Miller modelled Proctor as a common man who achieves tragic stature through his
+                  willingness to sacrifice everything for his principles.
                 </p>
                 <div className="mt-3 grid gap-3 sm:grid-cols-2">
                   <Quote
@@ -369,9 +366,9 @@ export default function CrucibleRevisionPage() {
                   he rejects her, she weaponises the witch trials to destroy Elizabeth Proctor and
                   reclaim him. Abigail understands the power dynamics of Salem: in a society where
                   girls have no voice, the trials give her extraordinary authority. Adults, judges,
-                  and ministers defer to her. However, Miller also invites some sympathy &mdash;
-                  Abigail is a product of a repressive society that offers young women no legitimate
-                  path to power. When the trials collapse, she steals Parris&apos;s money and flees,
+                  and ministers defer to her. However, Miller also invites some sympathy - Abigail
+                  is a product of a repressive society that offers young women no legitimate path to
+                  power. When the trials collapse, she steals Parris&apos;s money and flees,
                   revealing her self-interest.
                 </p>
                 <div className="mt-3 grid gap-3 sm:grid-cols-2">
@@ -400,12 +397,12 @@ export default function CrucibleRevisionPage() {
                   struggles to forgive John&apos;s affair, and their marriage is cold and strained
                   at the play&apos;s opening. Abigail describes her as &ldquo;a cold, snivelling
                   woman,&rdquo; but Elizabeth&apos;s reserve comes from pain, not cruelty. Her one
-                  lie &mdash; denying John&apos;s adultery to protect him &mdash; is tragically the
-                  one moment her honesty fails, and it condemns him. In Act 4, she achieves
-                  remarkable growth, acknowledging her own share of responsibility: &ldquo;I have
-                  sins of my own to count.&rdquo; Her final line, &ldquo;He have his goodness
-                  now,&rdquo; shows her understanding that Proctor&apos;s death is an act of moral
-                  reclamation she must respect.
+                  lie - denying John&apos;s adultery to protect him - is tragically the one moment
+                  her honesty fails, and it condemns him. In Act 4, she achieves remarkable growth,
+                  acknowledging her own share of responsibility: &ldquo;I have sins of my own to
+                  count.&rdquo; Her final line, &ldquo;He have his goodness now,&rdquo; shows her
+                  understanding that Proctor&apos;s death is an act of moral reclamation she must
+                  respect.
                 </p>
                 <Quote
                   text="He have his goodness now. God forbid I take it from him"
@@ -426,7 +423,7 @@ export default function CrucibleRevisionPage() {
                   certain of his mission. As the trials progress, he grows increasingly uneasy. By
                   Act 3, he denounces the proceedings and quits the court. In Act 4, he returns,
                   consumed by guilt, begging the condemned to confess falsely and save their lives.
-                  His arc represents the journey from certainty to doubt &mdash; from intellectual
+                  His arc represents the journey from certainty to doubt - from intellectual
                   arrogance to moral humility. Miller uses Hale to show how intelligent,
                   well-meaning people can become complicit in injustice when they trust systems more
                   than their own conscience.
@@ -448,11 +445,11 @@ export default function CrucibleRevisionPage() {
                   Danforth is the senior judge of the witch trials. He is intelligent,
                   authoritative, and utterly convinced of his own rightness. He refuses to entertain
                   the possibility that the girls are lying because to do so would mean the court has
-                  condemned innocent people &mdash; and that would undermine the authority of the
-                  law and the church. Danforth prioritises the institution over justice: he cannot
-                  afford to be wrong, so he will not allow evidence that contradicts the girls. He
-                  represents the danger of institutional authority that values its own legitimacy
-                  above truth. Even when the evidence collapses, he proceeds with the executions.
+                  condemned innocent people - and that would undermine the authority of the law and
+                  the church. Danforth prioritises the institution over justice: he cannot afford to
+                  be wrong, so he will not allow evidence that contradicts the girls. He represents
+                  the danger of institutional authority that values its own legitimacy above truth.
+                  Even when the evidence collapses, he proceeds with the executions.
                 </p>
                 <Quote
                   text="A person is either with this court or he must be counted against it"
@@ -473,9 +470,9 @@ export default function CrucibleRevisionPage() {
                   the witchcraft rumours to protect himself, then supports the trials when they
                   enhance his authority. He is a poor leader: self-pitying, paranoid, and
                   materialistic. By Act 4, when Abigail has stolen his money and the community is
-                  turning against the trials, he becomes a weak advocate for postponement &mdash;
-                  not out of justice but out of fear. Miller uses Parris to show how self-serving
-                  leaders enable injustice.
+                  turning against the trials, he becomes a weak advocate for postponement - not out
+                  of justice but out of fear. Miller uses Parris to show how self-serving leaders
+                  enable injustice.
                 </p>
               </div>
 
@@ -485,7 +482,7 @@ export default function CrucibleRevisionPage() {
                   {tr(`Rebecca Nurse`)}
                 </h3>
                 <p className="mt-3 text-sm text-muted-foreground leading-relaxed">
-                  Rebecca is the moral heart of the community &mdash; elderly, respected, and deeply
+                  Rebecca is the moral heart of the community - elderly, respected, and deeply
                   pious. Her arrest shocks everyone because she is universally known to be good. She
                   refuses to confess falsely, choosing execution over a lie. Rebecca represents
                   genuine Christian virtue against the corrupted Christianity of the trials. Her
@@ -503,10 +500,10 @@ export default function CrucibleRevisionPage() {
                   Giles is an elderly but spirited farmer who inadvertently contributed to his
                   wife&apos;s arrest by mentioning she reads books. He tries to fight the trials
                   through legal means, presenting evidence that Putnam is manipulating the
-                  accusations. When pressed to reveal his informant, Giles refuses to name names
-                  &mdash; a direct parallel to Miller&apos;s own refusal before HUAC. Historically,
-                  Giles Corey was pressed to death with stones, refusing to enter a plea. His last
-                  words, &ldquo;More weight,&rdquo; are an act of extraordinary defiance.
+                  accusations. When pressed to reveal his informant, Giles refuses to name names - a
+                  direct parallel to Miller&apos;s own refusal before HUAC. Historically, Giles
+                  Corey was pressed to death with stones, refusing to enter a plea. His last words,
+                  &ldquo;More weight,&rdquo; are an act of extraordinary defiance.
                 </p>
               </div>
             </div>
@@ -524,7 +521,7 @@ export default function CrucibleRevisionPage() {
                   Mass Hysteria
                 </h3>
                 <p className="mt-2 text-sm text-muted-foreground leading-relaxed">
-                  The witch trials are driven by collective hysteria &mdash; a contagious fear that
+                  The witch trials are driven by collective hysteria - a contagious fear that
                   overrides reason, evidence, and compassion. Miller shows how hysteria operates: it
                   begins with a small event (the girls dancing), is amplified by existing tensions
                   (land disputes, grudges, religious anxiety), and is sustained by the authority of
@@ -549,15 +546,15 @@ export default function CrucibleRevisionPage() {
                   Reputation and Integrity
                 </h3>
                 <p className="mt-2 text-sm text-muted-foreground leading-relaxed">
-                  In the theocratic society of Salem, reputation is everything &mdash; it determines
+                  In the theocratic society of Salem, reputation is everything - it determines
                   social standing, economic opportunity, and even survival. Parris fears the
                   witchcraft accusations will damage his position. Proctor&apos;s reluctance to
-                  expose Abigail stems from his fear of public shame. His final choice &mdash;
-                  tearing up the confession rather than having his &ldquo;name&rdquo; displayed on
-                  the church door &mdash; is the climactic moment. Miller distinguishes between
-                  reputation (what others think of you) and integrity (what you know about
-                  yourself). Proctor ultimately chooses integrity: he would rather die with his
-                  goodness than live with a lie attached to his name.
+                  expose Abigail stems from his fear of public shame. His final choice - tearing up
+                  the confession rather than having his &ldquo;name&rdquo; displayed on the church
+                  door - is the climactic moment. Miller distinguishes between reputation (what
+                  others think of you) and integrity (what you know about yourself). Proctor
+                  ultimately chooses integrity: he would rather die with his goodness than live with
+                  a lie attached to his name.
                 </p>
                 <div className="mt-3 grid gap-3 sm:grid-cols-2">
                   <Quote
@@ -584,13 +581,13 @@ export default function CrucibleRevisionPage() {
                 <p className="mt-2 text-sm text-muted-foreground leading-relaxed">
                   The play explores how power operates in a theocracy. In Salem, church and state
                   are one: religious authority is political authority. The trials give power to
-                  those who previously had none &mdash; young girls, slaves, and marginalized people
-                  can accuse the most respected members of society. Abigail, who has no social
-                  standing, becomes the most powerful person in Salem. Danforth and the judges wield
-                  enormous power but are trapped by it: they cannot reverse course without admitting
-                  they have killed innocent people. Miller shows that unchecked power, whether
-                  wielded by a teenage girl or a deputy governor, is equally dangerous when there
-                  are no mechanisms for accountability.
+                  those who previously had none - young girls, slaves, and marginalized people can
+                  accuse the most respected members of society. Abigail, who has no social standing,
+                  becomes the most powerful person in Salem. Danforth and the judges wield enormous
+                  power but are trapped by it: they cannot reverse course without admitting they
+                  have killed innocent people. Miller shows that unchecked power, whether wielded by
+                  a teenage girl or a deputy governor, is equally dangerous when there are no
+                  mechanisms for accountability.
                 </p>
               </div>
 
@@ -602,7 +599,7 @@ export default function CrucibleRevisionPage() {
                 </h3>
                 <p className="mt-2 text-sm text-muted-foreground leading-relaxed">
                   The play asks: what is the moral choice when the law itself is unjust? Proctor,
-                  Rebecca Nurse, and Giles Corey choose death over false confession &mdash; they
+                  Rebecca Nurse, and Giles Corey choose death over false confession - they
                   prioritise their conscience over survival. Hale, by contrast, begs them to lie and
                   save themselves, arguing that life itself is the highest good. Miller leaves this
                   tension unresolved, but the play&apos;s emotional weight falls with the martyrs.
@@ -644,14 +641,14 @@ export default function CrucibleRevisionPage() {
                 </h3>
                 <p className="mt-2 text-sm text-muted-foreground leading-relaxed">
                   Proctor&apos;s guilt over his affair drives much of the plot. He sees himself as a
-                  fraud &mdash; &ldquo;I am no good man&rdquo; &mdash; and this self-doubt paralyses
-                  him when he should be opposing the trials. His final act of tearing up the
-                  confession is simultaneously an act of defiance and of self-forgiveness: by
-                  choosing to die honestly, he reclaims his sense of himself as a good man.
-                  Hale&apos;s arc is also one of guilt: he helped set the trials in motion and
-                  spends Act 4 trying desperately to undo the damage. Elizabeth&apos;s admission
-                  that she too bears responsibility for the affair (&ldquo;I have sins of my own to
-                  count&rdquo;) completes the play&apos;s pattern of moral reckoning.
+                  fraud - &ldquo;I am no good man&rdquo; - and this self-doubt paralyses him when he
+                  should be opposing the trials. His final act of tearing up the confession is
+                  simultaneously an act of defiance and of self-forgiveness: by choosing to die
+                  honestly, he reclaims his sense of himself as a good man. Hale&apos;s arc is also
+                  one of guilt: he helped set the trials in motion and spends Act 4 trying
+                  desperately to undo the damage. Elizabeth&apos;s admission that she too bears
+                  responsibility for the affair (&ldquo;I have sins of my own to count&rdquo;)
+                  completes the play&apos;s pattern of moral reckoning.
                 </p>
               </div>
 
@@ -665,11 +662,11 @@ export default function CrucibleRevisionPage() {
                   Fear drives the trials at every level. The community fears the Devil, Parris fears
                   for his position, the girls fear punishment, the accused fear execution. This
                   pervasive fear produces conformity: people confess to crimes they did not commit
-                  because confession is the only way to survive. Those who resist &mdash; Proctor,
-                  Rebecca, Giles &mdash; are destroyed. Miller shows how fear creates a society
-                  where truth is impossible because honesty is punished and lies are rewarded. This
-                  is the direct parallel to McCarthyism: in both Salem and 1950s America, people
-                  were coerced into conformity through fear.
+                  because confession is the only way to survive. Those who resist - Proctor,
+                  Rebecca, Giles - are destroyed. Miller shows how fear creates a society where
+                  truth is impossible because honesty is punished and lies are rewarded. This is the
+                  direct parallel to McCarthyism: in both Salem and 1950s America, people were
+                  coerced into conformity through fear.
                 </p>
               </div>
             </div>
@@ -784,10 +781,10 @@ export default function CrucibleRevisionPage() {
                   which investigated suspected communists in government, the military, and the
                   entertainment industry. Like the Salem trials, McCarthyism relied on accusation as
                   proof: being named was enough to destroy your career. People were pressured to
-                  &ldquo;name names&rdquo; &mdash; to inform on colleagues and friends. Miller
-                  himself was called before HUAC in 1956 and, like Proctor, refused to name others.
-                  He was found guilty of contempt of Congress (later overturned). The parallel is
-                  deliberate and central to understanding the play.
+                  &ldquo;name names&rdquo; - to inform on colleagues and friends. Miller himself was
+                  called before HUAC in 1956 and, like Proctor, refused to name others. He was found
+                  guilty of contempt of Congress (later overturned). The parallel is deliberate and
+                  central to understanding the play.
                 </p>
               </div>
 
@@ -811,10 +808,10 @@ export default function CrucibleRevisionPage() {
                   believed in original sin, predestination, and the constant presence of the Devil.
                   Their society was strict, suspicious of pleasure, and intolerant of dissent.
                   Individual expression was distrusted; conformity was enforced. The forest
-                  represented the wilderness beyond civilisation &mdash; the Devil&apos;s domain.
-                  Miller shows how this repressive environment created the conditions for the
-                  trials: suppressed desires, unexpressed resentments, and fear of the unknown all
-                  erupted as accusations of witchcraft.
+                  represented the wilderness beyond civilisation - the Devil&apos;s domain. Miller
+                  shows how this repressive environment created the conditions for the trials:
+                  suppressed desires, unexpressed resentments, and fear of the unknown all erupted
+                  as accusations of witchcraft.
                 </p>
               </div>
 
@@ -826,8 +823,7 @@ export default function CrucibleRevisionPage() {
                   for the trials themselves: under extreme pressure, each character&apos;s true
                   nature is revealed. Proctor is &ldquo;purified&rdquo; through his ordeal, emerging
                   with his integrity intact. Others (Parris, the Putnams) are exposed as base. The
-                  title also suggests a severe test or trial &mdash; which is what every character
-                  faces.
+                  title also suggests a severe test or trial - which is what every character faces.
                 </p>
               </div>
             </div>
@@ -843,8 +839,8 @@ export default function CrucibleRevisionPage() {
                 <ul className="mt-3 space-y-2 text-sm text-muted-foreground">
                   <li>
                     &bull; <strong>{tr(`Always link to McCarthyism:`)}</strong> The play is an
-                    allegory. Every essay should connect Salem to 1950s America &mdash; this is
-                    essential context.
+                    allegory. Every essay should connect Salem to 1950s America - this is essential
+                    context.
                   </li>
                   <li>
                     &bull; <strong>{tr(`Refer to Miller as the dramatist:`)}</strong> Use phrases
@@ -853,8 +849,8 @@ export default function CrucibleRevisionPage() {
                   </li>
                   <li>
                     &bull; <strong>{tr(`Discuss the title:`)}</strong> The crucible metaphor is
-                    always relevant &mdash; use it to discuss how characters are tested and revealed
-                    under pressure.
+                    always relevant - use it to discuss how characters are tested and revealed under
+                    pressure.
                   </li>
                   <li>
                     &bull; <strong>{tr(`Explore the stage directions:`)}</strong> Miller&apos;s
@@ -878,7 +874,7 @@ export default function CrucibleRevisionPage() {
                   <span className="rounded bg-purple-800 px-2 py-0.5 text-xs font-bold text-white">
                     AQA
                   </span>
-                  AQA GCSE English Literature &mdash; Paper 2, Section A
+                  AQA GCSE English Literature - Paper 2, Section A
                 </h3>
                 <ul className="mt-3 space-y-2 text-sm text-muted-foreground">
                   <li>
@@ -905,7 +901,7 @@ export default function CrucibleRevisionPage() {
                   <span className="rounded bg-emerald-600 px-2 py-0.5 text-xs font-bold text-white">
                     CAIE
                   </span>
-                  Cambridge IGCSE Literature &mdash; Paper 1 (Drama)
+                  Cambridge IGCSE Literature - Paper 1 (Drama)
                 </h3>
                 <ul className="mt-3 space-y-2 text-sm text-muted-foreground">
                   <li>

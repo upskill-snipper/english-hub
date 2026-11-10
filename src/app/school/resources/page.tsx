@@ -519,8 +519,8 @@ export default function ResourceLibraryPage() {
           <h1 className="text-2xl font-bold text-foreground">Teacher Resource Library</h1>
         </div>
         <p className="text-sm text-muted-foreground">
-          Model answers, mark schemes, writing frames, quote banks and more &mdash; ready to
-          preview, save and print.
+          Model answers, mark schemes, writing frames, quote banks and more - ready to preview, save
+          and print.
         </p>
       </div>
 

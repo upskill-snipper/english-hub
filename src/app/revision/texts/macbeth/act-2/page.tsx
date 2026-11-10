@@ -99,8 +99,7 @@ export default async function MacbethAct2Page() {
               later. Left alone, Macbeth hallucinates a floating dagger pointing towards
               Duncan&apos;s chamber. He delivers the famous &ldquo;Is this a dagger&rdquo;
               soliloquy, questioning whether the vision is real or a projection of his guilty mind.
-              A bell rings &mdash; Lady Macbeth&apos;s signal &mdash; and Macbeth goes to commit the
-              murder.
+              A bell rings - Lady Macbeth&apos;s signal - and Macbeth goes to commit the murder.
             </p>
           </div>
           <div>
@@ -134,9 +133,9 @@ export default async function MacbethAct2Page() {
                   <span className="font-medium text-foreground">Technique:</span> Rhetorical
                   question &amp; ambiguity. Macbeth questions whether the dagger is real or
                   imagined, dramatising the conflict between reality and hallucination. The handle
-                  pointing towards him suggests temptation offering itself willingly &mdash; the
-                  murder is being placed in his hands. The ambiguity (supernatural vision or
-                  psychological projection?) is never resolved.
+                  pointing towards him suggests temptation offering itself willingly - the murder is
+                  being placed in his hands. The ambiguity (supernatural vision or psychological
+                  projection?) is never resolved.
                 </p>
               </div>
               <div className="rounded-lg border border-border/60 p-3">
@@ -176,10 +175,10 @@ export default async function MacbethAct2Page() {
                 <p className="text-sm text-muted-foreground mt-1">
                   <span className="font-medium text-foreground">Technique:</span> Classical
                   allusion, personification &amp; semantic field. Macbeth aligns himself with
-                  Tarquin (the Roman rapist-king), witchcraft, wolves, and ghosts &mdash; all
-                  figures of predatory evil. He is narrating his own transformation from soldier to
-                  predator. The heavy, monosyllabic rhythm (&ldquo;moves like a ghost&rdquo;) mimics
-                  the slow, stealthy approach.
+                  Tarquin (the Roman rapist-king), witchcraft, wolves, and ghosts - all figures of
+                  predatory evil. He is narrating his own transformation from soldier to predator.
+                  The heavy, monosyllabic rhythm (&ldquo;moves like a ghost&rdquo;) mimics the slow,
+                  stealthy approach.
                 </p>
               </div>
               <div className="rounded-lg border border-border/60 p-3">
@@ -192,8 +191,8 @@ export default async function MacbethAct2Page() {
                   &amp; apostrophe. The couplet closes the soliloquy with a sense of grim finality.
                   &ldquo;Knell&rdquo; is a funeral bell, transforming Lady Macbeth&apos;s signal
                   into a death toll. The antithesis of &ldquo;heaven or to hell&rdquo; captures the
-                  moral stakes. Addressing the sleeping Duncan creates dramatic irony &mdash;
-                  Macbeth warns the man he is about to kill.
+                  moral stakes. Addressing the sleeping Duncan creates dramatic irony - Macbeth
+                  warns the man he is about to kill.
                 </p>
               </div>
             </div>
@@ -203,10 +202,10 @@ export default async function MacbethAct2Page() {
             <p className="text-muted-foreground">
               <strong>Macbeth</strong> is at the extreme limit of his psychological endurance. The
               hallucination shows a mind fracturing under moral pressure. Crucially, he proceeds
-              despite his terror &mdash; his ambition overrides every warning his conscience
-              produces. <strong>Banquo</strong> is troubled by bad dreams but maintains his moral
-              integrity, refusing to act on the witches&apos; prophecy. His unease provides a quiet
-              contrast to Macbeth&apos;s violent inner turmoil.
+              despite his terror - his ambition overrides every warning his conscience produces.{' '}
+              <strong>Banquo</strong> is troubled by bad dreams but maintains his moral integrity,
+              refusing to act on the witches&apos; prophecy. His unease provides a quiet contrast to
+              Macbeth&apos;s violent inner turmoil.
             </p>
           </div>
           <div>
@@ -307,8 +306,8 @@ export default async function MacbethAct2Page() {
                   <span className="font-medium text-foreground">Technique:</span> Hyperbole &amp;
                   classical allusion. The image of an entire ocean unable to cleanse his guilt
                   conveys the enormity of regicide. Neptune, the Roman sea god, evokes the vastness
-                  of the ocean. The blood here is both literal and metaphorical &mdash; it
-                  represents ineradicable guilt.
+                  of the ocean. The blood here is both literal and metaphorical - it represents
+                  ineradicable guilt.
                 </p>
               </div>
               <div className="rounded-lg border border-border/60 p-3">
@@ -404,8 +403,8 @@ export default async function MacbethAct2Page() {
               the king. Macduff discovers Duncan&apos;s body and raises the alarm: &ldquo;O horror,
               horror, horror!&rdquo; In the ensuing chaos, Macbeth kills the two grooms, claiming he
               was overcome by fury. Lady Macbeth faints (or pretends to). Duncan&apos;s sons Malcolm
-              and Donalbain decide to flee &mdash; Malcolm to England, Donalbain to Ireland &mdash;
-              fearing they may be next.
+              and Donalbain decide to flee - Malcolm to England, Donalbain to Ireland - fearing they
+              may be next.
             </p>
           </div>
           <div>
@@ -482,9 +481,9 @@ export default async function MacbethAct2Page() {
                 </p>
                 <p className="text-sm text-muted-foreground mt-1">
                   <span className="font-medium text-foreground">Technique:</span> Metaphor.
-                  Donalbain captures the atmosphere of danger and deception &mdash; smiling faces
-                  hide murderous intent. This compact image encapsulates the play&apos;s entire
-                  theme of appearance vs reality in six words.
+                  Donalbain captures the atmosphere of danger and deception - smiling faces hide
+                  murderous intent. This compact image encapsulates the play&apos;s entire theme of
+                  appearance vs reality in six words.
                 </p>
               </div>
             </div>
@@ -496,10 +495,10 @@ export default async function MacbethAct2Page() {
               contrasts with Macbeth&apos;s performance. <strong>Macbeth</strong> improvises under
               pressure, killing the grooms and delivering elaborate speeches of grief, but his
               performance is noticeably over-the-top. <strong>{_tr(`Lady Macbeth`)}</strong> faints
-              &mdash; whether genuinely or to divert attention from Macbeth&apos;s suspicious
-              behaviour is deliberately ambiguous. <strong>{_tr(`Malcolm and Donalbain`)}</strong>{' '}
-              show political shrewdness in recognising the danger and fleeing, though their flight
-              will be used against them.
+              - whether genuinely or to divert attention from Macbeth&apos;s suspicious behaviour is
+              deliberately ambiguous. <strong>{_tr(`Malcolm and Donalbain`)}</strong> show political
+              shrewdness in recognising the danger and fleeing, though their flight will be used
+              against them.
             </p>
           </div>
           <div>
@@ -541,7 +540,7 @@ export default async function MacbethAct2Page() {
               killing a falcon. Macduff reports that Malcolm and Donalbain are suspected of paying
               the grooms to murder their father. Macbeth has been named king and gone to Scone for
               his coronation. Macduff pointedly refuses to attend, choosing instead to go home to
-              Fife &mdash; an early signal of his opposition.
+              Fife - an early signal of his opposition.
             </p>
           </div>
           <div>
@@ -578,8 +577,7 @@ export default async function MacbethAct2Page() {
                   &amp; personification. Unnatural darkness covers the land in daylight.
                   &ldquo;Strangles&rdquo; personifies night as a violent assailant attacking the sun
                   (&ldquo;travelling lamp&rdquo;). The natural disorder mirrors the political
-                  disorder &mdash; the rightful king has been murdered, and the universe itself
-                  rebels.
+                  disorder - the rightful king has been murdered, and the universe itself rebels.
                 </p>
               </div>
               <div className="rounded-lg border border-border/60 p-3">
@@ -615,9 +613,9 @@ export default async function MacbethAct2Page() {
               impact of Duncan&apos;s murder. The Old Man is a choric figure whose role is to
               provide commentary and establish that the murder has disrupted the entire natural
               order. Macduff&apos;s refusal to attend the coronation is a seed planted for future
-              conflict &mdash; Shakespeare is already preparing the audience for the opposition that
-              will eventually bring Macbeth down. The scene closes Act 2 on a note of unease rather
-              than triumph, signalling that Macbeth&apos;s reign is cursed from its inception.
+              conflict - Shakespeare is already preparing the audience for the opposition that will
+              eventually bring Macbeth down. The scene closes Act 2 on a note of unease rather than
+              triumph, signalling that Macbeth&apos;s reign is cursed from its inception.
             </p>
           </div>
           <div>

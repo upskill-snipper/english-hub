@@ -34,7 +34,7 @@ const sections = [
   {
     title: 'Gerald\u2019s confession',
     analysis:
-      'Act Two opens with the Inspector pressing Gerald about his relationship with Eva, now living under the name Daisy Renton. Gerald met her at the Palace Bar \u2014 a venue associated with prostitution \u2014 and set her up in rooms at Morgan Terrace. He frames the relationship as rescue, but Priestley complicates it: Gerald had power, money and a home to offer, and Daisy had none. His claim that "I didn\u2019t install her there so that I could make love to her" invites scepticism. The affair is presented with more sympathy than Birling\u2019s factory sacking, but it is still exploitation disguised as kindness.',
+      'Act Two opens with the Inspector pressing Gerald about his relationship with Eva, now living under the name Daisy Renton. Gerald met her at the Palace Bar - a venue associated with prostitution - and set her up in rooms at Morgan Terrace. He frames the relationship as rescue, but Priestley complicates it: Gerald had power, money and a home to offer, and Daisy had none. His claim that "I didn\u2019t install her there so that I could make love to her" invites scepticism. The affair is presented with more sympathy than Birling\u2019s factory sacking, but it is still exploitation disguised as kindness.',
     quote: '"She was young and pretty and warm-hearted"',
   },
   {
@@ -52,7 +52,7 @@ const sections = [
   {
     title: 'Mrs Birling and the charity board',
     analysis:
-      'Sybil Birling chaired the Brumley Women\u2019s Charity Organisation and refused Eva\u2019s appeal for help. Her reasons are class-based: Eva used the name "Mrs Birling", which Sybil found presumptuous, and Eva\u2019s account of her situation seemed "a pack of lies". Sybil\u2019s language \u2014 "girls of that class" \u2014 reduces Eva to a social category. Priestley structures the scene so that Sybil unwittingly condemns her own son: she argues that "the father of the child" should bear full responsibility.',
+      'Sybil Birling chaired the Brumley Women\u2019s Charity Organisation and refused Eva\u2019s appeal for help. Her reasons are class-based: Eva used the name "Mrs Birling", which Sybil found presumptuous, and Eva\u2019s account of her situation seemed "a pack of lies". Sybil\u2019s language - "girls of that class" - reduces Eva to a social category. Priestley structures the scene so that Sybil unwittingly condemns her own son: she argues that "the father of the child" should bear full responsibility.',
     quote: '"Girls of that class \u2014"',
   },
   {
@@ -64,7 +64,7 @@ const sections = [
   {
     title: 'The Inspector\u2019s method in Act Two',
     analysis:
-      'The Inspector controls the pace and order of revelations. He refuses to let Birling see the photograph; he addresses one person at a time; he already seems to know the answers before he asks. Priestley uses this quasi-omniscient technique to build a sense of inevitability \u2014 the Birlings are not being investigated but being confronted with what they already know and have hidden from themselves.',
+      'The Inspector controls the pace and order of revelations. He refuses to let Birling see the photograph; he addresses one person at a time; he already seems to know the answers before he asks. Priestley uses this quasi-omniscient technique to build a sense of inevitability - the Birlings are not being investigated but being confronted with what they already know and have hidden from themselves.',
     quote: '"I\u2019ve been round to the room she had"',
   },
   {
@@ -104,8 +104,8 @@ export default async function InspectorCallsAct2Page() {
             An Inspector Calls: Act 2
           </h1>
           <p className="mt-3 max-w-2xl text-body-lg text-muted-foreground">
-            Detailed analysis of the middle act &mdash; Gerald's affair, Mrs Birling's charity
-            refusal, and the dramatic irony that closes around Eric.
+            Detailed analysis of the middle act - Gerald's affair, Mrs Birling's charity refusal,
+            and the dramatic irony that closes around Eric.
           </p>
         </div>
       </section>

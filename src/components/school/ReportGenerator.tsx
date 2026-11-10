@@ -354,7 +354,7 @@ function ReportPreview({ report }: { report: ReportData }) {
             <p>Academic Year: {report.header.academicYear}</p>
             {report.header.dateRange && (
               <p>
-                Period: {formatDate(report.header.dateRange.from)} &mdash;{' '}
+                Period: {formatDate(report.header.dateRange.from)} -{' '}
                 {formatDate(report.header.dateRange.to)}
               </p>
             )}
@@ -370,9 +370,9 @@ function ReportPreview({ report }: { report: ReportData }) {
       {/* Footer */}
       <div className="report-footer mt-8 pt-3 border-t border-border text-center text-xs text-muted-foreground">
         <span>{report.header.schoolName}</span>
-        <span> &mdash; </span>
+        <span> - </span>
         <span>{report.header.reportTitle}</span>
-        <span> &mdash; </span>
+        <span> - </span>
         <span>{report.header.generatedDate}</span>
       </div>
     </div>

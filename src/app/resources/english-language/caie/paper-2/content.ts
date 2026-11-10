@@ -11,11 +11,13 @@
 export type Bi = { en: string; ar: string }
 
 export const STRINGS: Record<string, Bi> = {
-  s0: { en: `Extended Tier`, ar: `المستوى الممدود` },
+  // 31 October 2026: s0, s2 and s39 to s43 rewritten with the page (see its note).
+  // Their Arabic is new and wants a native speaker's read.
+  s0: { en: `2 hours, 80 marks`, ar: `ساعتان، 80 درجة` },
   s1: { en: `Suggested Time`, ar: `الوقت المقترح` },
   s2: {
-    en: `Directed Writing - write in a specified format using ideas from a passage and your own ideas`,
-    ar: `كتابة موجهة - اكتب بناءً على صيغة محددة باستخدام أفكار من نص وافكارك الخاصة`,
+    en: `Directed Writing: 1(a), a short answer on the text, then 1(b), writing in a specified form that uses and develops ideas from the text`,
+    ar: `الكتابة الموجّهة: 1(a) إجابة قصيرة عن النص، ثم 1(b) كتابة بصيغة محددة تستخدم أفكار النص وتطوّرها`,
   },
   s3: {
     en: `Composition - choose one from a selection of narrative OR descriptive titles`,
@@ -66,10 +68,10 @@ Oops! It seems there was a misunderstanding in translating "Story Structure" int
     en: `Content & Structure`,
     ar: `المحتوى وestructure (تركز على الكلمة الإنجليزية "Structure" لأنها مصطلح تكنولوجي أو أدبي يجب الحفاظ عليه باللغة الأصلية)`,
   },
-  s39: { en: `Very Good (29-34 marks)`, ar: `جيد جدًا (29 إلى 34 نقطة)` },
-  s40: { en: `Good (22-28 marks)`, ar: `جيد (من 22 إلى 28 نقطة)` },
-  s41: { en: `Adequate (15-21 marks)`, ar: `مناسب (15 إلى 21 نقطة)` },
-  s42: { en: `Limited (8-14 marks)`, ar: `محدود (8 إلى 14 نقطة)` },
-  s43: { en: `Poor (1-7 marks)`, ar: `عديب (من 1 إلى 7 نقاط)` },
+  s39: { en: `Very Good (28-33 marks)`, ar: `جيد جدًا (28 إلى 33 نقطة)` },
+  s40: { en: `Good (21-26 marks)`, ar: `جيد (من 21 إلى 26 نقطة)` },
+  s41: { en: `Adequate (14-19 marks)`, ar: `مناسب (14 إلى 19 نقطة)` },
+  s42: { en: `Limited (8-12 marks)`, ar: `محدود (8 إلى 12 نقطة)` },
+  s43: { en: `Poor (2-6 marks)`, ar: `ضعيف (من 2 إلى 6 نقاط)` },
   s44: { en: `Continue studying`, ar: `استمر في الدراسة` },
 }

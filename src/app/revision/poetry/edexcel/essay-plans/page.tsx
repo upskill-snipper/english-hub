@@ -66,12 +66,12 @@ const ESSAY_PLANS: EssayPlan[] = [
           // "anapaestic" until 16 October 2026; the poem is predominantly dactylic dimeter.
           'Tennyson uses the driving dactylic metre to convey the momentum of the charge.',
         poemAEvidence:
-          '"Half a league, half a league, / Half a league onward" \u2014 the repetition creates a drumbeat rhythm.',
+          '"Half a league, half a league, / Half a league onward" - the repetition creates a drumbeat rhythm.',
         poemAAnalysis:
           'The galloping rhythm sweeps the reader forward, mirroring the cavalry\u2019s unstoppable advance and making us feel the excitement of the charge.',
         poemBPoint:
           'Owen uses half-rhyme and ellipsis to show the paralysing tedium of trench life.',
-        poemBEvidence: '"But nothing happens" \u2014 the refrain that closes multiple stanzas.',
+        poemBEvidence: '"But nothing happens" - the refrain that closes multiple stanzas.',
         poemBAnalysis:
           'The anti-climactic refrain deflates any expectation of action, forcing the reader to share the soldiers\u2019 frustration and hopelessness.',
         comparison:
@@ -82,11 +82,11 @@ const ESSAY_PLANS: EssayPlan[] = [
         poemAPoint:
           'Tennyson uses vivid, dramatic imagery of the battle to honour the soldiers\u2019 bravery.',
         poemAEvidence:
-          '"Into the jaws of Death, / Into the mouth of Hell" \u2014 personification of death as a consuming beast.',
+          '"Into the jaws of Death, / Into the mouth of Hell" - personification of death as a consuming beast.',
         poemAAnalysis:
           'The capitalised personification elevates the danger into something mythic, making the soldiers\u2019 willingness to ride forward seem all the more heroic.',
         poemBPoint: 'Owen personifies nature itself as the true enemy.',
-        poemBEvidence: '"the merciless iced east winds that knive us" \u2014 nature is weaponised.',
+        poemBEvidence: '"the merciless iced east winds that knive us" - nature is weaponised.',
         poemBAnalysis:
           'The sibilance and harsh consonants make the wind feel actively cruel; Owen implies that the enemy is irrelevant because the conditions alone are deadly.',
         comparison:
@@ -96,12 +96,11 @@ const ESSAY_PLANS: EssayPlan[] = [
         topic: 'The poets\u2019 attitudes to duty and sacrifice',
         poemAPoint: 'Tennyson argues the soldiers\u2019 obedience deserves eternal honour.',
         poemAEvidence:
-          '"Honour the charge they made! / Honour the Light Brigade" \u2014 the imperative commands the reader to respect them.',
+          '"Honour the charge they made! / Honour the Light Brigade" - the imperative commands the reader to respect them.',
         poemAAnalysis:
           'The imperative tone turns the poem into a public monument; Tennyson positions the reader as an audience with a moral obligation to remember.',
         poemBPoint: 'Owen questions whether sacrifice achieves anything.',
-        poemBEvidence:
-          '"For love of God seems dying" \u2014 even faith cannot sustain the soldiers.',
+        poemBEvidence: '"For love of God seems dying" - even faith cannot sustain the soldiers.',
         poemBAnalysis:
           'The progressive present tense ("seems dying") suggests a slow erosion of everything that once gave meaning, including patriotic duty.',
         comparison:
@@ -134,7 +133,7 @@ const ESSAY_PLANS: EssayPlan[] = [
           'The neat parallelism of the opening stanza gives the poem the tone of a moral lesson, almost a nursery rhyme. The simplicity of the language makes the lesson feel obvious, which makes the speaker\u2019s later choice to suppress seem all the more disturbing.',
         poemBPoint: 'Rossetti\u2019s speaker suppresses her pain beneath a narrative of blame.',
         poemBEvidence:
-          '"O Lady Kate, my Cousin Kate, / You grow more fair than I" \u2014 the repeated address to Kate is accusatory.',
+          '"O Lady Kate, my Cousin Kate, / You grow more fair than I" - the repeated address to Kate is accusatory.',
         poemBAnalysis:
           'The ballad form and direct address give the impression of a story being retold, but the speaker\u2019s restrained tone masks deep resentment that erupts by the final stanza.',
         comparison:
@@ -144,28 +143,28 @@ const ESSAY_PLANS: EssayPlan[] = [
         topic: 'How the consequences of suppression are shown',
         poemAPoint: 'Blake\u2019s suppressed anger produces a literal poisoned fruit.',
         poemAEvidence:
-          '"And it grew both day and night, / Till it bore an apple bright" \u2014 the anger becomes an alluring weapon.',
+          '"And it grew both day and night, / Till it bore an apple bright" - the anger becomes an alluring weapon.',
         poemAAnalysis:
           'The Biblical allusion to the tree of knowledge links the speaker\u2019s deception to original sin, suggesting that concealed anger is a fundamental human failing.',
         poemBPoint: 'Rossetti\u2019s speaker turns her pain into a weapon: her illegitimate son.',
         poemBEvidence:
-          '"Yet I\u2019ve a gift you have not got / And seem not like to get" \u2014 the child becomes a trump card.',
+          '"Yet I\u2019ve a gift you have not got / And seem not like to get" - the child becomes a trump card.',
         poemBAnalysis:
           'The triumphant tone of the final stanza is disturbing because the speaker weaponises her own child, showing how long-suppressed pain distorts even maternal love.',
         comparison:
-          'In both poems, the thing produced by suppression \u2014 the apple and the child \u2014 becomes a weapon. Blake\u2019s is used to kill; Rossetti\u2019s is used to wound. Both suggest that buried feelings do not disappear but mutate into something dangerous.',
+          'In both poems, the thing produced by suppression - the apple and the child - becomes a weapon. Blake\u2019s is used to kill; Rossetti\u2019s is used to wound. Both suggest that buried feelings do not disappear but mutate into something dangerous.',
       },
       {
         topic: 'The poets\u2019 moral and social commentary',
         poemAPoint: 'Blake implies that society encourages dishonesty.',
         poemAEvidence:
-          '"And I sunned it with smiles, / And with soft deceitful wiles" \u2014 the sibilance suggests seduction.',
+          '"And I sunned it with smiles, / And with soft deceitful wiles" - the sibilance suggests seduction.',
         poemAAnalysis:
           'The alliterative sibilance links the speaker to the serpent of Eden; Blake is criticising a polite society that teaches people to hide their true feelings.',
         poemBPoint:
           'Rossetti critiques a patriarchal society that punishes women for men\u2019s actions.',
         poemBEvidence:
-          '"He lured me to his palace-home" \u2014 the verb "lured" places blame on the lord.',
+          '"He lured me to his palace-home" - the verb "lured" places blame on the lord.',
         poemBAnalysis:
           'Rossetti exposes the double standard: the lord is free to discard one woman for another, while the speaker bears all the social shame. Her suppressed anger is justified.',
         comparison:
@@ -175,7 +174,7 @@ const ESSAY_PLANS: EssayPlan[] = [
     conclusion:
       'Blake and Rossetti both show that suppressed feelings are not resolved but transformed into something destructive. Blake\u2019s parable warns universally; Rossetti\u2019s ballad grounds the same warning in the specific injustice of Victorian gender politics.',
     examTip:
-      'Linking the form of each poem (parable vs. ballad) to its theme of suppression is a strong structural point. The simple surfaces hide complex emotions \u2014 just as the speakers do.',
+      'Linking the form of each poem (parable vs. ballad) to its theme of suppression is a strong structural point. The simple surfaces hide complex emotions - just as the speakers do.',
   },
   {
     id: 3,
@@ -198,7 +197,7 @@ const ESSAY_PLANS: EssayPlan[] = [
           'The absurd image of standing on one leg literalises the insult, exposing its stupidity. The informal, spoken register makes the poem feel like a face-to-face confrontation.',
         poemBPoint: 'Casey directly challenges the middle-class listener\u2019s judgement.',
         poemBEvidence:
-          '"How can you tell what class I\u2019m from?" \u2014 the opening question is a dare.',
+          '"How can you tell what class I\u2019m from?" - the opening question is a dare.',
         poemBAnalysis:
           'The rhetorical question immediately puts the listener on the defensive, establishing the speaker as someone who refuses to be ashamed.',
         comparison:
@@ -241,7 +240,7 @@ const ESSAY_PLANS: EssayPlan[] = [
     conclusion:
       'Agard and Casey both weaponise language to fight prejudice, but their targets are different. Agard dismantles racial categories through logic and absurdity; Casey attacks class snobbery through raw pride. Both make the listener confront their own narrow-mindedness.',
     examTip:
-      'The Class Game is copyrighted, so you cannot quote it in full. Focus on the effect of the confrontational second-person address and the use of dialect \u2014 these points can be made without extended quotation.',
+      'The Class Game is copyrighted, so you cannot quote it in full. Focus on the effect of the confrontational second-person address and the use of dialect - these points can be made without extended quotation.',
   },
   {
     id: 4,
@@ -259,11 +258,11 @@ const ESSAY_PLANS: EssayPlan[] = [
         topic: 'How nature is personified',
         poemAPoint: 'Wordsworth personifies the mountain as a living, judging presence.',
         poemAEvidence:
-          '"a huge peak, black and huge... / With purpose of its own / And measured motion like a living thing, / Strode after me" \u2014 the mountain pursues the boy.',
+          '"a huge peak, black and huge... / With purpose of its own / And measured motion like a living thing, / Strode after me" - the mountain pursues the boy.',
         poemAAnalysis:
           'The enjambment and caesura create a sense of the mountain slowly rising, as if waking up. The verb "strode" gives it intentional, deliberate movement.',
         poemBPoint: 'Owen personifies the wind as a deliberate aggressor.',
-        poemBEvidence: '"the merciless iced east winds that knive us" \u2014 nature is weaponised.',
+        poemBEvidence: '"the merciless iced east winds that knive us" - nature is weaponised.',
         poemBAnalysis:
           'The neologism "knive" (used as a verb) makes the wind an active assailant, blurring the line between nature and enemy combatant.',
         comparison:
@@ -273,14 +272,14 @@ const ESSAY_PLANS: EssayPlan[] = [
         topic: 'The human response to nature\u2019s power',
         poemAPoint: 'The boy is transformed by his encounter with nature.',
         poemAEvidence:
-          '"but after I had seen / That spectacle, for many days, my brain / Worked with a dim and undetermined sense / Of unknown modes of being" \u2014 nature reshapes his understanding of the world.',
+          '"but after I had seen / That spectacle, for many days, my brain / Worked with a dim and undetermined sense / Of unknown modes of being" - nature reshapes his understanding of the world.',
         poemAAnalysis:
           'The abstract language ("unknown modes of being") suggests the experience is beyond words, a spiritual awakening that cannot be fully articulated.',
         poemBPoint: 'The soldiers are numbed into passive acceptance.',
         poemBEvidence:
-          '"We only know war lasts, rain soaks, and clouds sag stormy" \u2014 knowledge is reduced to mere sensation.',
+          '"We only know war lasts, rain soaks, and clouds sag stormy" - knowledge is reduced to mere sensation.',
         poemBAnalysis:
-          'The flat, monosyllabic listing strips away any higher meaning. The soldiers have no spiritual awakening \u2014 only endurance.',
+          'The flat, monosyllabic listing strips away any higher meaning. The soldiers have no spiritual awakening - only endurance.',
         comparison:
           'Wordsworth\u2019s speaker grows from his encounter; Owen\u2019s soldiers are diminished. Both responses are authentic, but they reflect very different ideas about what nature reveals about the human condition.',
       },
@@ -293,7 +292,7 @@ const ESSAY_PLANS: EssayPlan[] = [
           'The lack of end-stopping creates a sense of thoughts tumbling forward, just as the boy\u2019s boat heaves forward with each stroke of the oars. The single-block structure mimics the overwhelming, unbroken power of the mountain.',
         poemBPoint: 'Owen uses pararhyme (half-rhyme) to create unease.',
         poemBEvidence:
-          '"knive us / nervous", "silent / salient" \u2014 the rhymes almost match but never quite land.',
+          '"knive us / nervous", "silent / salient" - the rhymes almost match but never quite land.',
         poemBAnalysis:
           'The near-misses in rhyme mirror the soldiers\u2019 frustrated expectations: they wait for something to happen, and it never does. The form enacts the content.',
         comparison:
@@ -301,7 +300,7 @@ const ESSAY_PLANS: EssayPlan[] = [
       },
     ],
     conclusion:
-      'Both poets show nature as more powerful than humanity, but they draw opposite conclusions. For Wordsworth, nature\u2019s power is ultimately beneficial \u2014 it humbles and educates. For Owen, nature\u2019s power is merely another source of suffering in an already cruel world.',
+      'Both poets show nature as more powerful than humanity, but they draw opposite conclusions. For Wordsworth, nature\u2019s power is ultimately beneficial - it humbles and educates. For Owen, nature\u2019s power is merely another source of suffering in an already cruel world.',
     examTip:
       'The Prelude extract is autobiographical, while Exposure speaks for a collective "we". Noting the shift from personal to communal experience is a strong contextual point.',
   },
@@ -321,12 +320,12 @@ const ESSAY_PLANS: EssayPlan[] = [
         topic: 'How the poets give voice to ordinary people',
         poemAPoint: 'Hardy uses a working-class speaker who struggles to justify what he has done.',
         poemAEvidence:
-          '"Yes; quaint and curious war is! / You shoot a fellow down / You\u2019d treat if met where any bar is" \u2014 the casual tone jars with the subject.',
+          '"Yes; quaint and curious war is! / You shoot a fellow down / You\u2019d treat if met where any bar is" - the casual tone jars with the subject.',
         poemAAnalysis:
-          'The colloquial language ("fellow", "bar") makes the speaker relatable, while the exclamation mark after "quaint and curious war is" is unconvincing \u2014 the speaker is trying and failing to make sense of his experience.',
+          'The colloquial language ("fellow", "bar") makes the speaker relatable, while the exclamation mark after "quaint and curious war is" is unconvincing - the speaker is trying and failing to make sense of his experience.',
         poemBPoint: 'Levertov\u2019s second voice describes a people who have been silenced.',
         poemBEvidence:
-          '"It is not remembered" \u2014 the passive voice erases the culture\u2019s agency.',
+          '"It is not remembered" - the passive voice erases the culture\u2019s agency.',
         poemBAnalysis:
           'By removing the subject from the sentence, Levertov enacts the erasure she describes. The culture has not just been destroyed; it has been forgotten.',
         comparison:
@@ -351,12 +350,12 @@ const ESSAY_PLANS: EssayPlan[] = [
         topic: 'The poets\u2019 attitudes to war',
         poemAPoint: 'Hardy suggests that soldiers on both sides are identical.',
         poemAEvidence:
-          '"He thought he\u2019d \u2019list, perhaps, / Off-hand like \u2013 just as I" \u2014 the speaker imagines his victim\u2019s motives were the same as his own.',
+          '"He thought he\u2019d \u2019list, perhaps, / Off-hand like \u2013 just as I" - the speaker imagines his victim\u2019s motives were the same as his own.',
         poemAAnalysis:
           'The symmetry of motive makes the killing feel arbitrary and senseless. Hardy implies that war forces ordinary people to kill mirror images of themselves.',
         poemBPoint: 'Levertov implies that the destruction of a culture is a crime beyond war.',
         poemBEvidence:
-          '"their light hearts turned to stone" \u2014 the metaphor suggests permanent, irreversible damage.',
+          '"their light hearts turned to stone" - the metaphor suggests permanent, irreversible damage.',
         poemBAnalysis:
           'The shift from "light" to "stone" suggests a total transformation: not just death, but the destruction of joy, art and identity.',
         comparison:
@@ -385,14 +384,14 @@ const ESSAY_PLANS: EssayPlan[] = [
         topic: 'First impressions of the city',
         poemAPoint: 'Wordsworth is overwhelmed by London\u2019s beauty at dawn.',
         poemAEvidence:
-          '"Earth has not anything to show more fair" \u2014 the hyperbole places London above all natural scenery.',
+          '"Earth has not anything to show more fair" - the hyperbole places London above all natural scenery.',
         poemAAnalysis:
           'The Petrarchan sonnet form gives the poem a sense of control and classical beauty. The superlative "not anything... more fair" is a deliberate shock from a Romantic poet who usually celebrates nature.',
         poemBPoint: 'Blake is overwhelmed by London\u2019s suffering.',
         poemBEvidence:
-          '"I wander thro\u2019 each charter\u2019d street / Near where the charter\u2019d Thames does flow" \u2014 the repetition of "charter\u2019d" exposes institutional control.',
+          '"I wander thro\u2019 each charter\u2019d street / Near where the charter\u2019d Thames does flow" - the repetition of "charter\u2019d" exposes institutional control.',
         poemBAnalysis:
-          'The word "charter\u2019d" is politically loaded: it means mapped, owned and controlled. Even the river \u2014 a natural feature \u2014 has been claimed by authority.',
+          'The word "charter\u2019d" is politically loaded: it means mapped, owned and controlled. Even the river - a natural feature - has been claimed by authority.',
         comparison:
           'Wordsworth sees a city freed from its inhabitants at dawn; Blake sees a city defined by the suffering of its inhabitants. Wordsworth\u2019s London is beautiful because it is empty; Blake\u2019s is terrible because it is full.',
       },
@@ -400,12 +399,12 @@ const ESSAY_PLANS: EssayPlan[] = [
         topic: 'The role of the speaker',
         poemAPoint: 'Wordsworth is a passive observer, standing still on the bridge.',
         poemAEvidence:
-          '"Ne\u2019er saw I, never felt, a calm so deep!" \u2014 the speaker is emotionally moved but physically stationary.',
+          '"Ne\u2019er saw I, never felt, a calm so deep!" - the speaker is emotionally moved but physically stationary.',
         poemAAnalysis:
           'The sonnet\u2019s volta at line 9 shifts from description to personal feeling, but Wordsworth remains a spectator. His London is a painting, not a lived experience.',
         poemBPoint: 'Blake is an active walker, moving through the streets.',
         poemBEvidence:
-          '"I wander thro\u2019 each charter\u2019d street" \u2014 the verb "wander" implies both movement and aimlessness.',
+          '"I wander thro\u2019 each charter\u2019d street" - the verb "wander" implies both movement and aimlessness.',
         poemBAnalysis:
           'Blake\u2019s walking forces direct contact with suffering. The repeated "I hear... I hear" makes the speaker a witness, not a tourist.',
         comparison:
@@ -415,13 +414,13 @@ const ESSAY_PLANS: EssayPlan[] = [
         topic: 'The natural world within the city',
         poemAPoint: 'Wordsworth sees nature and city as harmonious.',
         poemAEvidence:
-          '"The river glideth at his own sweet will" \u2014 the Thames is free and natural.',
+          '"The river glideth at his own sweet will" - the Thames is free and natural.',
         poemAAnalysis:
           'Personifying the river as free suggests a London at peace with nature. The verb "glideth" is gentle and effortless.',
         poemBPoint: 'Blake sees the natural world as corrupted.',
-        poemBEvidence: '"the charter\u2019d Thames" \u2014 even the river is owned and controlled.',
+        poemBEvidence: '"the charter\u2019d Thames" - even the river is owned and controlled.',
         poemBAnalysis:
-          'Where Wordsworth\u2019s Thames glides freely, Blake\u2019s Thames is "charter\u2019d" \u2014 mapped, taxed and enclosed. Nature in Blake\u2019s London has been claimed by power.',
+          'Where Wordsworth\u2019s Thames glides freely, Blake\u2019s Thames is "charter\u2019d" - mapped, taxed and enclosed. Nature in Blake\u2019s London has been claimed by power.',
         comparison:
           'The Thames is the perfect comparison point: Wordsworth and Blake describe the same river at roughly the same period but see completely opposite things. The difference is not what they see but how they see it.',
       },
@@ -448,7 +447,7 @@ const ESSAY_PLANS: EssayPlan[] = [
         poemAPoint:
           'Alvi\u2019s speaker is drawn to Pakistani culture but feels she cannot fully belong to it.',
         poemAEvidence:
-          '"I could never be as lovely / as those clothes" \u2014 the clothes represent a culture she admires but feels excluded from.',
+          '"I could never be as lovely / as those clothes" - the clothes represent a culture she admires but feels excluded from.',
         poemAAnalysis:
           'The comparative "as lovely as" creates a gap between the speaker and the cultural objects. She can wear the clothes but not inhabit the identity they represent.',
         poemBPoint:
@@ -464,7 +463,7 @@ const ESSAY_PLANS: EssayPlan[] = [
         topic: 'How objects and nature carry cultural meaning',
         poemAPoint: 'Alvi uses the clothes as symbols of cultural identity.',
         poemAEvidence:
-          '"My salwar kameez / didn\u2019t impress the schoolfriend" \u2014 the clothes attract attention and mark difference.',
+          '"My salwar kameez / didn\u2019t impress the schoolfriend" - the clothes attract attention and mark difference.',
         poemAAnalysis:
           'The contrast between Pakistani garments and English school life makes cultural difference visible and tangible. The "schoolfriend" represents the gaze of English society.',
         poemBPoint:
@@ -482,7 +481,7 @@ const ESSAY_PLANS: EssayPlan[] = [
         poemAEvidence:
           '"I was there \u2013 / of no fixed nationality" (lines 66 to 67): the speaker remains between two worlds.',
         poemAAnalysis:
-          'The phrase "no fixed nationality" echoes "no fixed abode" \u2014 language associated with homelessness. Alvi suggests that cultural hybridity is not always enriching; it can be alienating.',
+          'The phrase "no fixed nationality" echoes "no fixed abode" - language associated with homelessness. Alvi suggests that cultural hybridity is not always enriching; it can be alienating.',
         poemBPoint: 'Nichols\u2019s poem ends with a moment of reconciliation.',
         poemBEvidence:
           '"the earth is the earth is the earth" (the final line): the repetition insists on unity.',
@@ -515,7 +514,7 @@ const ESSAY_PLANS: EssayPlan[] = [
         poemAPoint:
           'Hardy returns to the exact spot of a past picnic and finds it transformed by time.',
         poemAEvidence:
-          '"Where we made the fire / In the summer time / Of branch and briar" \u2014 the simple past tense marks a lost time.',
+          '"Where we made the fire / In the summer time / Of branch and briar" - the simple past tense marks a lost time.',
         poemAAnalysis:
           'The short, clipped lines and simple diction give the description a stark, factual quality, as if the speaker is cataloguing what remains. The monosyllables slow the reading and create a heavy mood.',
         poemBPoint: 'Jennings returns to a place that looks the same but feels utterly different.',
@@ -560,13 +559,13 @@ const ESSAY_PLANS: EssayPlan[] = [
         poemBAnalysis:
           'The metaphor turns grief into a natural force that disturbs everything the first two stanzas found calm, the fountains and the birds included. The upheaval is caused only by the speaker thinking of the absent person\u2019s name, so the loss is felt inwardly rather than seen. Because the cause of the absence is never named, the poem could apply to any kind of loss.',
         comparison:
-          'Both endings refuse consolation. Hardy finds decay; Jennings finds unbearable familiarity. Neither poet offers the comfort of nostalgia \u2014 the return to a loved place only sharpens the sense of what has been lost.',
+          'Both endings refuse consolation. Hardy finds decay; Jennings finds unbearable familiarity. Neither poet offers the comfort of nostalgia - the return to a loved place only sharpens the sense of what has been lost.',
       },
     ],
     conclusion:
       'Hardy and Jennings both explore the pain of returning to a place associated with happier times, but Hardy emphasises physical change while Jennings emphasises psychological change. Together, they show that loss transforms not just how we feel but how we see the world around us.',
     examTip:
-      'Absence is copyrighted \u2014 keep quotations very short. Emphasise the contrast between physical permanence and emotional change, which works well without extended quotation.',
+      'Absence is copyrighted - keep quotations very short. Emphasise the contrast between physical permanence and emotional change, which works well without extended quotation.',
   },
   {
     id: 9,
@@ -584,12 +583,12 @@ const ESSAY_PLANS: EssayPlan[] = [
         topic: 'How the poets use personification',
         poemAPoint: 'Keats personifies Autumn as a benign, drowsy figure.',
         poemAEvidence:
-          '"sitting careless on a granary floor, / Thy hair soft-lifted by the winnowing wind" \u2014 Autumn is a relaxed harvest worker.',
+          '"sitting careless on a granary floor, / Thy hair soft-lifted by the winnowing wind" - Autumn is a relaxed harvest worker.',
         poemAAnalysis:
           'The languid, unhurried image of Autumn sitting "careless" suggests abundance without effort. The soft sibilance creates a feeling of warmth and contentment.',
         poemBPoint: 'Dickinson personifies the sea as a pursuer with almost romantic intentions.',
         poemBEvidence:
-          '"But no Man moved Me \u2013 till the Tide / Went past my simple Shoe" \u2014 the sea encroaches on the speaker\u2019s body.',
+          '"But no Man moved Me \u2013 till the Tide / Went past my simple Shoe" - the sea encroaches on the speaker\u2019s body.',
         poemBAnalysis:
           'Dickinson\u2019s dashes create a breathless pace, and the sea\u2019s advance past the "simple Shoe" is both playful and threatening. The word "simple" emphasises the speaker\u2019s vulnerability.',
         comparison:
@@ -604,9 +603,9 @@ const ESSAY_PLANS: EssayPlan[] = [
           'The rhetorical question about spring is immediately answered: autumn has its own beauty. Keats argues that every stage of the natural cycle deserves appreciation, even the one closest to death.',
         poemBPoint: 'Dickinson\u2019s speaker is drawn into nature against her will.',
         poemBEvidence:
-          '"He followed \u2013 close behind \u2013 / I felt his Silver Heel / Upon my Ankle" \u2014 the sea pursues the speaker up the beach.',
+          '"He followed \u2013 close behind \u2013 / I felt his Silver Heel / Upon my Ankle" - the sea pursues the speaker up the beach.',
         poemBAnalysis:
-          'The enjambment and dashes create a sense of breathless retreat. The "Silver Heel" is beautiful but threatening \u2014 Dickinson refuses to separate attraction from danger.',
+          'The enjambment and dashes create a sense of breathless retreat. The "Silver Heel" is beautiful but threatening - Dickinson refuses to separate attraction from danger.',
         comparison:
           'Keats contemplates nature from a position of calm acceptance; Dickinson is physically chased by it. The difference reflects Romantic serenity versus a more modern, ambivalent relationship with the natural world.',
       },
@@ -648,14 +647,14 @@ const ESSAY_PLANS: EssayPlan[] = [
         topic: 'How the poets establish the moment of longing',
         poemAPoint: 'Browning\u2019s longing is stated directly and enthusiastically.',
         poemAEvidence:
-          '"Oh, to be in England / Now that April\u2019s there" \u2014 the exclamation opens the poem with unashamed yearning.',
+          '"Oh, to be in England / Now that April\u2019s there" - the exclamation opens the poem with unashamed yearning.',
         poemAAnalysis:
           'The exclamatory "Oh" and the present tense "April\u2019s there" make the longing feel immediate and urgent. The speaker imagines England in the present tense while he is physically absent.',
         poemBPoint: 'Thomas\u2019s longing emerges from an accidental stop.',
         poemBEvidence:
-          '"Yes. I remember Adlestrop \u2014 / The name, because one afternoon / Of heat the express-train drew up there / Unwontedly" \u2014 the memory is triggered by the name.',
+          '"Yes. I remember Adlestrop \u2014 / The name, because one afternoon / Of heat the express-train drew up there / Unwontedly" - the memory is triggered by the name.',
         poemBAnalysis:
-          'The word "unwontedly" (unusually) signals that this moment was unplanned. Thomas\u2019s longing is not for a grand landscape but for an ordinary station glimpsed in passing \u2014 which makes it more poignant.',
+          'The word "unwontedly" (unusually) signals that this moment was unplanned. Thomas\u2019s longing is not for a grand landscape but for an ordinary station glimpsed in passing - which makes it more poignant.',
         comparison:
           'Browning chooses to long for England; Thomas stumbles into longing through an accidental memory. Both approaches are sincere, but Browning is passionate while Thomas is contemplative.',
       },
@@ -668,7 +667,7 @@ const ESSAY_PLANS: EssayPlan[] = [
           'The specificity of "whitethroat" and "pear-tree" makes the longing concrete. Browning is not homesick for England in general but for particular, remembered details.',
         poemBPoint: 'Thomas expands from a small station to all of England.',
         poemBEvidence:
-          '"And for that minute a blackbird sang / Close by, and round him, mistier, / Farther and farther, all the birds / Of Oxfordshire and Gloucestershire" \u2014 the sound radiates outward.',
+          '"And for that minute a blackbird sang / Close by, and round him, mistier, / Farther and farther, all the birds / Of Oxfordshire and Gloucestershire" - the sound radiates outward.',
         poemBAnalysis:
           'The expanding concentric circles of birdsong turn a single blackbird into a symbol of the entire English countryside. The enjambment enacts the widening scope.',
         comparison:
@@ -694,7 +693,7 @@ const ESSAY_PLANS: EssayPlan[] = [
       },
     ],
     conclusion:
-      'Both Browning and Thomas love the English landscape, but Browning\u2019s love is exuberant and confident while Thomas\u2019s is wistful and fragile. Thomas, remembering a June afternoon on the eve of war, captures an England he senses may not survive \u2014 which gives Adlestrop its distinctive, haunting quality.',
+      'Both Browning and Thomas love the English landscape, but Browning\u2019s love is exuberant and confident while Thomas\u2019s is wistful and fragile. Thomas, remembering a June afternoon on the eve of war, captures an England he senses may not survive - which gives Adlestrop its distinctive, haunting quality.',
     examTip:
       'Thomas wrote Adlestrop in 1915 about a train stop in June 1914, and it was published in 1917, weeks after he was killed in action. Mentioning this context enriches the poem\u2019s atmosphere of fragile beauty without being "bolted on".',
   },
@@ -946,30 +945,30 @@ export default function EdexcelEssayPlansPage() {
           <li className="flex items-start gap-2">
             <CheckCircle2 className="mt-0.5 size-4 shrink-0 text-emerald-400" />
             <span>
-              <strong className="text-foreground">Read the thesis first</strong> &mdash; it tells
-              you the argument the whole essay will make. Every paragraph should link back to it.
+              <strong className="text-foreground">Read the thesis first</strong> - it tells you the
+              argument the whole essay will make. Every paragraph should link back to it.
             </span>
           </li>
           <li className="flex items-start gap-2">
             <CheckCircle2 className="mt-0.5 size-4 shrink-0 text-emerald-400" />
             <span>
-              <strong className="text-foreground">Practise the comparison sentences</strong> &mdash;
-              the green &ldquo;Compare&rdquo; boxes show you how to link the two poems within a
-              single paragraph.
+              <strong className="text-foreground">Practise the comparison sentences</strong> - the
+              green &ldquo;Compare&rdquo; boxes show you how to link the two poems within a single
+              paragraph.
             </span>
           </li>
           <li className="flex items-start gap-2">
             <CheckCircle2 className="mt-0.5 size-4 shrink-0 text-emerald-400" />
             <span>
-              <strong className="text-foreground">Swap in your own poem</strong> &mdash; if the exam
-              names a different poem, keep the same comparative framework and replace one side of
-              the comparison.
+              <strong className="text-foreground">Swap in your own poem</strong> - if the exam names
+              a different poem, keep the same comparative framework and replace one side of the
+              comparison.
             </span>
           </li>
           <li className="flex items-start gap-2">
             <CheckCircle2 className="mt-0.5 size-4 shrink-0 text-emerald-400" />
             <span>
-              <strong className="text-foreground">Time yourself</strong> &mdash; aim for 35&ndash;40
+              <strong className="text-foreground">Time yourself</strong> - aim for 35&ndash;40
               minutes on the comparison question. These plans are designed to be writable in that
               time.
             </span>

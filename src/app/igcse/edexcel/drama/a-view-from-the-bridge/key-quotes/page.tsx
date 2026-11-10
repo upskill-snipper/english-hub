@@ -32,105 +32,105 @@ const quotes = [
   {
     quote: '"This one\u2019s name was Eddie Carbone"',
     speaker: 'Alfieri',
-    context: 'Prologue \u2014 opening the play',
+    context: 'Prologue - opening the play',
     analysis:
       'The past tense announces tragedy. The audience knows from the first line that Eddie\u2019s story has already ended.',
   },
   {
     quote: '"settle for half, and I like it better"',
     speaker: 'Alfieri',
-    context: 'Prologue \u2014 on Italian-American compromise',
+    context: 'Prologue - on Italian-American compromise',
     analysis:
       'The play\u2019s central moral formula: the accommodation between old-world honour and American law.',
   },
   {
     quote: '"You can\u2019t marry him, you\u2019re a baby"',
     speaker: 'Eddie',
-    context: 'Act 1 \u2014 objecting to Catherine and Rodolpho',
+    context: 'Act 1 - objecting to Catherine and Rodolpho',
     analysis:
       'Eddie infantilises Catherine to disguise his possessiveness. The word "baby" does double work.',
   },
   {
     quote: '"The guy ain\u2019t right"',
     speaker: 'Eddie',
-    context: 'Act 1 \u2014 accusing Rodolpho',
+    context: 'Act 1 - accusing Rodolpho',
     analysis:
       'Homophobic shorthand. Eddie cannot articulate his jealousy and resorts to attacking Rodolpho\u2019s masculinity.',
   },
   {
     quote: '"When am I gonna be a wife again, Eddie?"',
     speaker: 'Beatrice',
-    context: 'Act 1 \u2014 confronting Eddie privately',
+    context: 'Act 1 - confronting Eddie privately',
     analysis:
       'The most devastating domestic line. Beatrice names the sexual withdrawal Eddie cannot explain.',
   },
   {
     quote: '"She\u2019s the madonna type"',
     speaker: 'Eddie',
-    context: 'Act 1 \u2014 defending Catherine\u2019s purity',
+    context: 'Act 1 - defending Catherine\u2019s purity',
     analysis:
       'The Madonna-whore framing reveals Eddie\u2019s inability to see Catherine as an adult woman.',
   },
   {
     quote: '"My wife is dying\u2026 they eat the sunshine"',
     speaker: 'Marco',
-    context: 'Act 1 \u2014 explaining why he came to America',
+    context: 'Act 1 - explaining why he came to America',
     analysis:
       'Marco\u2019s motivation is selfless and desperate. His family\u2019s hunger gives the betrayal its moral weight.',
   },
   {
     quote: '"You can quicker get back a million dollars than a word"',
     speaker: 'Eddie',
-    context: 'Act 1 \u2014 the Vinny Bolzano story',
+    context: 'Act 1 - the Vinny Bolzano story',
     analysis:
       'Eddie describes the community\u2019s code against informing. He will violate the very principle he articulates.',
   },
   {
     quote: '"He degraded my brother. My blood."',
     speaker: 'Marco',
-    context: 'Act 2 \u2014 after the arrest',
+    context: 'Act 2 - after the arrest',
     analysis:
       'Marco\u2019s honour code is absolute. His plain noun phrases track a worldview that demands physical retribution.',
   },
   {
     quote: '"You want somethin\u2019 else, Eddie, and you can never have her!"',
     speaker: 'Beatrice',
-    context: 'Act 2 \u2014 the climactic accusation',
+    context: 'Act 2 - the climactic accusation',
     analysis:
       'Beatrice finally speaks the unspoken. The line comes too late to save anyone but names the truth.',
   },
   {
     quote: '"I want my name!"',
     speaker: 'Eddie',
-    context: 'Act 2 \u2014 the final confrontation',
+    context: 'Act 2 - the final confrontation',
     analysis:
       'Eddie frames the catastrophe as theft of reputation. Miller lets the audience see he has ruined his own name.',
   },
   {
     quote: '"Oh, B., my B.!"',
     speaker: 'Eddie (dying)',
-    context: 'Act 2 \u2014 Eddie\u2019s last words',
+    context: 'Act 2 - Eddie\u2019s last words',
     analysis:
       'Eddie\u2019s final line reveals that his real grief is the loss of Beatrice, not Catherine.',
   },
   {
     quote: '"He allowed himself to be wholly known"',
     speaker: 'Alfieri',
-    context: 'Epilogue \u2014 closing the play',
+    context: 'Epilogue - closing the play',
     analysis:
       'The play\u2019s ambiguous epitaph. Miller refuses to condemn Eddie, offering the classical tragic gesture.',
   },
   {
     quote: '"To promise not to kill is not dishonourable"',
     speaker: 'Alfieri',
-    context: 'Act 2 \u2014 counselling Marco',
+    context: 'Act 2 - counselling Marco',
     analysis:
       'Alfieri tries to bridge two justice systems. Marco agrees in letter but not in spirit.',
   },
   {
     quote: '"The law is very specific"',
     speaker: 'Alfieri',
-    context: 'Act 1 \u2014 Eddie\u2019s first visit',
+    context: 'Act 1 - Eddie\u2019s first visit',
     analysis:
       'Alfieri tells Eddie the law cannot help him. The legal void forces Eddie toward his own catastrophic solution.',
   },
@@ -165,8 +165,8 @@ export default async function AViewKeyQuotesPage() {
             A View from the Bridge: Key Quotes
           </h1>
           <p className="mt-3 max-w-2xl text-body-lg text-muted-foreground">
-            Fifteen essential quotations with speaker, context and analysis &mdash; designed for
-            exam revision and essay planning.
+            Fifteen essential quotations with speaker, context and analysis - designed for exam
+            revision and essay planning.
           </p>
         </div>
       </section>
@@ -196,7 +196,7 @@ export default async function AViewKeyQuotesPage() {
               <blockquote className="border-s-2 border-primary/40 ps-3 text-body-md italic text-foreground">
                 {q.quote}
               </blockquote>
-              <p className="mt-2 text-body-xs font-medium text-primary">&mdash; {q.speaker}</p>
+              <p className="mt-2 text-body-xs font-medium text-primary">- {q.speaker}</p>
               <p className="mt-1 text-body-xs text-muted-foreground">{q.context}</p>
               <p className="mt-2 text-body-sm leading-relaxed text-muted-foreground">
                 {q.analysis}

@@ -32,7 +32,7 @@ const essays = [
   {
     question: 'How does Miller present Eddie Carbone as a tragic figure in A View from the Bridge?',
     thesis:
-      'Miller adapts the Greek tragic model \u2014 hamartia, peripeteia, anagnorisis \u2014 to a 1950s Brooklyn longshoreman, arguing that tragedy can belong to ordinary people.',
+      'Miller adapts the Greek tragic model - hamartia, peripeteia, anagnorisis - to a 1950s Brooklyn longshoreman, arguing that tragedy can belong to ordinary people.',
     paragraphs: [
       {
         point: 'Alfieri\u2019s prologue frames Eddie as tragic from the start',
@@ -49,13 +49,13 @@ const essays = [
       {
         point: 'The betrayal as peripeteia',
         detail:
-          'Eddie\u2019s phone call to Immigration is the play\u2019s turning point. It reverses his status: from respected community member to despised informer. Miller makes the betrayal feel both shocking and inevitable \u2014 the logic of Eddie\u2019s unspoken feelings leads him here.',
+          'Eddie\u2019s phone call to Immigration is the play\u2019s turning point. It reverses his status: from respected community member to despised informer. Miller makes the betrayal feel both shocking and inevitable - the logic of Eddie\u2019s unspoken feelings leads him here.',
         quote: '"You want somethin\u2019 else, Eddie, and you can never have her!"',
       },
       {
         point: 'The final fight and death',
         detail:
-          'Eddie pulls a knife on Marco and is killed with his own blade. The image of self-destruction is literal: Eddie is destroyed by the weapon he brought. His dying words \u2014 "Oh, B., my B.!" \u2014 suggest a last moment of recognition that Beatrice, not Catherine, was his real loss.',
+          'Eddie pulls a knife on Marco and is killed with his own blade. The image of self-destruction is literal: Eddie is destroyed by the weapon he brought. His dying words - "Oh, B., my B.!" - suggest a last moment of recognition that Beatrice, not Catherine, was his real loss.',
         quote: '"Oh, B., my B.!"',
       },
       {
@@ -74,19 +74,19 @@ const essays = [
       {
         point: 'Eddie\u2019s definition of manhood',
         detail:
-          'Eddie\u2019s masculinity is rooted in physical labour, provider status and control of his household. He cannot articulate his feelings and resorts to action \u2014 the boxing lesson, the forced kiss \u2014 when language fails him. Miller shows masculinity as a vocabulary problem.',
+          'Eddie\u2019s masculinity is rooted in physical labour, provider status and control of his household. He cannot articulate his feelings and resorts to action - the boxing lesson, the forced kiss - when language fails him. Miller shows masculinity as a vocabulary problem.',
         quote: '"I was just tellin\u2019 him the basics"',
       },
       {
         point: 'Rodolpho as threat to gender norms',
         detail:
-          'Rodolpho\u2019s singing, cooking and blond hair violate Eddie\u2019s definition of manliness. Eddie\u2019s accusation ("the guy ain\u2019t right") is homophobic shorthand. Miller shows that the anxiety is Eddie\u2019s, not Rodolpho\u2019s \u2014 the "wrong" masculinity is the one that exposes his.',
+          'Rodolpho\u2019s singing, cooking and blond hair violate Eddie\u2019s definition of manliness. Eddie\u2019s accusation ("the guy ain\u2019t right") is homophobic shorthand. Miller shows that the anxiety is Eddie\u2019s, not Rodolpho\u2019s - the "wrong" masculinity is the one that exposes his.',
         quote: '"He\u2019s like a weird\u2026 he comes out, he\u2019s a blond guy"',
       },
       {
         point: 'The boxing scene and the chair',
         detail:
-          'Eddie teaches Rodolpho to box and punches him. Marco responds by silently lifting a chair one-handed over Eddie\u2019s head. The chair scene replaces verbal challenge with physical display \u2014 a wordless contest of male authority that Eddie loses.',
+          'Eddie teaches Rodolpho to box and punches him. Marco responds by silently lifting a chair one-handed over Eddie\u2019s head. The chair scene replaces verbal challenge with physical display - a wordless contest of male authority that Eddie loses.',
         quote: 'Stage direction: Marco lifts the chair',
       },
       {
@@ -98,7 +98,7 @@ const essays = [
       {
         point: '"I want my name!"',
         detail:
-          'Eddie\u2019s final cry fuses masculine honour with personal identity. His "name" is his reputation, his manhood and his standing in the community \u2014 all of which he has destroyed. Miller shows that the code of masculinity is ultimately self-consuming.',
+          'Eddie\u2019s final cry fuses masculine honour with personal identity. His "name" is his reputation, his manhood and his standing in the community - all of which he has destroyed. Miller shows that the code of masculinity is ultimately self-consuming.',
         quote: '"I want my name!"',
       },
     ],
@@ -136,7 +136,7 @@ const essays = [
       {
         point: 'Alfieri\u2019s failure to reconcile the two systems',
         detail:
-          'Alfieri tries to persuade Marco to promise not to kill Eddie. Marco agrees in words but not in spirit. The failure shows that the two justice systems are incommensurable \u2014 there is no "half" that satisfies both.',
+          'Alfieri tries to persuade Marco to promise not to kill Eddie. Marco agrees in words but not in spirit. The failure shows that the two justice systems are incommensurable - there is no "half" that satisfies both.',
         quote: '"To promise not to kill is not dishonourable"',
       },
     ],
@@ -145,7 +145,7 @@ const essays = [
     question:
       'How does Miller use Alfieri to shape the audience\u2019s response in A View from the Bridge?',
     thesis:
-      'Alfieri functions as chorus, narrator and moral compass, and Miller uses his dual perspective \u2014 Italian heritage, American profession \u2014 to hold judgement and compassion in tension.',
+      'Alfieri functions as chorus, narrator and moral compass, and Miller uses his dual perspective - Italian heritage, American profession - to hold judgement and compassion in tension.',
     paragraphs: [
       {
         point: 'The prologue: framing the story as tragedy',
@@ -162,7 +162,7 @@ const essays = [
       {
         point: 'Warning Eddie',
         detail:
-          'In his office scenes with Eddie, Alfieri warns him repeatedly to let Catherine go. His advice \u2014 "settle for half" \u2014 is the play\u2019s moral thesis. Eddie\u2019s refusal to take it confirms his tragic trajectory and makes the audience complicit: we see the crash coming too.',
+          'In his office scenes with Eddie, Alfieri warns him repeatedly to let Catherine go. His advice - "settle for half" - is the play\u2019s moral thesis. Eddie\u2019s refusal to take it confirms his tragic trajectory and makes the audience complicit: we see the crash coming too.',
         quote: '"You won\u2019t have a friend in the world, Eddie!"',
       },
       {
@@ -174,7 +174,7 @@ const essays = [
       {
         point: 'The epilogue: tragic recognition',
         detail:
-          'Alfieri\u2019s closing lines \u2014 "He allowed himself to be wholly known\u2026 and so I mourn him" \u2014 refuse easy judgement. Miller asks the audience to feel both pity and horror, the classical response to tragedy, and Alfieri is the vehicle for that instruction.',
+          'Alfieri\u2019s closing lines - "He allowed himself to be wholly known\u2026 and so I mourn him" - refuse easy judgement. Miller asks the audience to feel both pity and horror, the classical response to tragedy, and Alfieri is the vehicle for that instruction.',
         quote: '"I will love him more than all my sensible clients"',
       },
     ],
@@ -211,7 +211,7 @@ const essays = [
       {
         point: 'The final confrontation and Eddie\u2019s death',
         detail:
-          'The street fight condenses all the play\u2019s tensions into a single, brief, violent scene. Eddie pulls a knife and is killed with his own blade. Miller makes the death both shocking and structurally inevitable \u2014 it has been promised since the prologue.',
+          'The street fight condenses all the play\u2019s tensions into a single, brief, violent scene. Eddie pulls a knife and is killed with his own blade. Miller makes the death both shocking and structurally inevitable - it has been promised since the prologue.',
         quote: '"Oh, B., my B.!"',
       },
     ],
@@ -262,7 +262,7 @@ export default async function AViewEssayPlansPage() {
             </h2>
             <p className="text-body-xs text-muted-foreground leading-relaxed">
               Short extracts are included under fair dealing for study and criticism. These plans
-              are starting frameworks &mdash; always develop your own argument.
+              are starting frameworks - always develop your own argument.
             </p>
           </div>
         </div>

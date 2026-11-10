@@ -799,25 +799,25 @@ export default function SpokenLanguageTopicsPage() {
             <p>The best topic is one that ticks all of these boxes:</p>
             <ul className="ms-4 list-disc space-y-2">
               <li>
-                <strong>You are genuinely interested in it</strong> &mdash; passion and enthusiasm
-                come across naturally when you speak and will engage your audience.
+                <strong>You are genuinely interested in it</strong> - passion and enthusiasm come
+                across naturally when you speak and will engage your audience.
               </li>
               <li>
-                <strong>It allows you to present an argument or viewpoint</strong> &mdash;
-                persuasive topics give you the chance to use rhetorical devices and demonstrate
-                higher-level speaking skills.
+                <strong>It allows you to present an argument or viewpoint</strong> - persuasive
+                topics give you the chance to use rhetorical devices and demonstrate higher-level
+                speaking skills.
               </li>
               <li>
-                <strong>It has enough depth</strong> &mdash; you need to speak for 3&ndash;5 minutes
-                and then answer questions, so your topic must have substance.
+                <strong>It has enough depth</strong> - you need to speak for 3&ndash;5 minutes and
+                then answer questions, so your topic must have substance.
               </li>
               <li>
-                <strong>You can find evidence and examples</strong> &mdash; statistics, expert
-                opinions, and real-world cases will strengthen your presentation.
+                <strong>You can find evidence and examples</strong> - statistics, expert opinions,
+                and real-world cases will strengthen your presentation.
               </li>
               <li>
-                <strong>It is appropriate for a formal setting</strong> &mdash; remember, this is
-                assessed in a formal context by your teacher.
+                <strong>It is appropriate for a formal setting</strong> - remember, this is assessed
+                in a formal context by your teacher.
               </li>
             </ul>
           </div>

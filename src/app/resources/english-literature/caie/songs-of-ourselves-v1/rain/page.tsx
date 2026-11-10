@@ -76,7 +76,7 @@ export default function RainPage() {
         <Card>
           <CardContent className="space-y-3 pt-6 text-sm text-muted-foreground">
             <p>
-              <strong className="text-foreground">Poet:</strong> Edward Thomas &mdash; English; born
+              <strong className="text-foreground">Poet:</strong> Edward Thomas - English; born
               London 1878, killed at the Battle of Arras, 9 April 1917.
             </p>
             <p>
@@ -114,8 +114,8 @@ export default function RainPage() {
               <p className="mt-2">
                 The opening line. The triple repetition of &lsquo;rain&rsquo; surrounds the speaker;
                 the rain is everything. &lsquo;Wild&rsquo; personifies the storm into something
-                ungoverned. The line is self-enclosing &mdash; rain begins it, rain ends it &mdash;
-                enacting the speaker&rsquo;s entrapment.
+                ungoverned. The line is self-enclosing - rain begins it, rain ends it - enacting the
+                speaker&rsquo;s entrapment.
               </p>
             </div>
             <div>
@@ -134,9 +134,8 @@ export default function RainPage() {
               </blockquote>
               <p className="mt-2">
                 A devastatingly direct statement of mortality. &lsquo;Again&rsquo; tells us this is
-                not a new thought but a recurring one &mdash; the rain has triggered it before.
-                Thomas would be killed in action in April 1917, fifteen months after the poem was
-                written.
+                not a new thought but a recurring one - the rain has triggered it before. Thomas
+                would be killed in action in April 1917, fifteen months after the poem was written.
               </p>
             </div>
           </CardContent>
@@ -152,14 +151,14 @@ export default function RainPage() {
               volunteered in 1915 despite being thirty-seven, married, and a father; the poem
               captures the night-time foreboding of a man preparing for a war he expected not to
               survive. The hut, the solitude and the rain all belong to a real biographical moment,
-              but Thomas refuses to specify the war &mdash; the poem speaks more broadly about
-              mortality and sleeplessness.
+              but Thomas refuses to specify the war - the poem speaks more broadly about mortality
+              and sleeplessness.
             </p>
             <p>
               The famous final movement contemplates a love &lsquo;perfect and disappointing&rsquo;,
-              in which the speaker recognises that he loves nothing now &mdash; an icy, almost
-              mystical state of detachment. Critics often link the poem to Thomas&rsquo;s difficult
-              marriage to Helen Thomas and to his broader psychological struggle with depression.
+              in which the speaker recognises that he loves nothing now - an icy, almost mystical
+              state of detachment. Critics often link the poem to Thomas&rsquo;s difficult marriage
+              to Helen Thomas and to his broader psychological struggle with depression.
             </p>
             <p>
               Pairs effectively with Wilfred Owen&rsquo;s <em>Exposure</em> (also weather-as-enemy,

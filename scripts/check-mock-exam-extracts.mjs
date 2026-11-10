@@ -217,6 +217,10 @@ const WORKS = [
   { key: 'agnes-grey', title: 'Agnes Grey', author: 'Anne Brontë', died: 1849, match: /agnes grey/i, gutenberg: [767] },
   { key: 'david-copperfield', title: 'David Copperfield', author: 'Charles Dickens', died: 1870, match: /david copperfield/i, gutenberg: [766] },
   { key: 'nightingale-notes-on-nursing', title: 'Notes on Nursing', author: 'Florence Nightingale', died: 1910, match: /nightingale.*notes on nursing/i, gutenberg: [12439] },
+  // Her letters as Sir Edward Cook printed them (aqa-p2-08 sets the letter of
+  // 14 November 1854 to Dr Bowman). Above the generic entry, which reads only
+  // Notes on Nursing and so could only ever call this passage unverified.
+  { key: 'nightingale-cook-life', title: "The Life of Florence Nightingale (Sir Edward Cook), vol. 1", author: 'Florence Nightingale', died: 1937, match: /nightingale.*cook'?s life of florence nightingale/i, gutenberg: [40057] },
   { key: 'ruskin-fors', title:'Fors Clavigera (Letters to the Workmen), vols 1-2', author: 'John Ruskin', died: 1900, match: /ruskin.*letters to the working men/i, gutenberg: [59456, 61591], exact: false },
   { key: 'ruskin-other', title: 'a lecture', author: 'John Ruskin', died: 1900, match: /ruskin/i, gutenberg: [26716], exact: false },
   // Sources put into src/data/mock-exams-ocr.ts on 27 September 2026 in

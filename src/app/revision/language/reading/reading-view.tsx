@@ -31,17 +31,26 @@ interface ReadingPaperInfo {
 }
 
 const READING_PAPERS: Partial<Record<ExamBoard, ReadingPaperInfo>> = {
+  // 31 October 2026: AQA's Paper 1 Q1 was "List four things" and Paper 2 Q2 a
+  // "Summary of differences", their wording before summer 2026; the 2026 papers
+  // are in src/data/mark-scheme-guides/aqa-lang-paper1.ts and paper2.ts. OCR's
+  // Paper 1 texts were "from the 19th and 21st century" (the modern one is 20th or
+  // 21st) and Paper 2's "prose fiction extracts" (literary prose, at least one of
+  // them fiction), per ocr-lang-component01.ts and -component02.ts. Eduqas's list
+  // gave structure the whole extract and left out evaluation and synthesis
+  // (eduqas-lang-comp1.ts, -comp2.ts). Second read: OCR's "four questions worth 40
+  // marks, in 2 hours" read as the whole paper; the reading is half of an 80-mark paper.
   aqa: {
     paperLabel: 'AQA Paper 1 & Paper 2 Reading',
     description:
       'Paper 1 Section A is a single unseen literary fiction extract (40 marks, four questions, 1h 45m paper). Paper 2 Section A is two linked non-fiction texts -- one 19th century and one 20th/21st century -- (40 marks, four questions including comparison, 1h 45m paper).',
     questionTypes: [
-      'Paper 1 Q1 (4 marks): List four things from the source',
+      'Paper 1 Q1 (4 marks): Four multiple-choice parts on the lines named',
       'Paper 1 Q2 (8 marks): How does the writer use language...',
       'Paper 1 Q3 (8 marks): How has the writer structured the text...',
       'Paper 1 Q4 (20 marks): Evaluation of a critical statement',
       'Paper 2 Q1 (4 marks): Identify true statements about Source A',
-      'Paper 2 Q2 (8 marks): Summary of differences between the texts',
+      'Paper 2 Q2 (8 marks): What you can infer about the differences between the texts',
       'Paper 2 Q3 (12 marks): Language analysis of one text',
       "Paper 2 Q4 (16 marks): Compare writers' attitudes/perspectives",
     ],
@@ -65,12 +74,12 @@ const READING_PAPERS: Partial<Record<ExamBoard, ReadingPaperInfo>> = {
   ocr: {
     paperLabel: 'OCR Paper 1 & Paper 2 Reading',
     description:
-      'Paper 1 (Communicating Information and Ideas) reads two non-fiction texts from the 19th and 21st century. Paper 2 (Exploring Effects and Impact) reads two 20th/21st century prose fiction extracts.',
+      'Paper 1 (Communicating Information and Ideas) reads two non-fiction texts, one from the 19th century and one from the 20th or 21st. Paper 2 (Exploring Effects and Impact) reads two 20th/21st century literary prose texts, at least one of them fiction. In each 2-hour, 80-mark paper, the reading is four questions worth 40 marks.',
     questionTypes: [
-      'Information retrieval questions',
-      'Language and structural analysis',
-      "Comparison of writers' viewpoints and methods",
-      'Evaluative response to a critical statement',
+      'Q1 (4 marks): Information retrieval from named lines',
+      'Paper 1 Q2 (6 marks): Bringing the two texts together',
+      'Q3 (12 marks): Language and structural analysis (Paper 2 Q2, 6 marks, too)',
+      "Q4 (18 marks): Evaluating a statement about both texts, comparing the writers' viewpoints and methods",
     ],
   },
   eduqas: {
@@ -80,8 +89,9 @@ const READING_PAPERS: Partial<Record<ExamBoard, ReadingPaperInfo>> = {
     questionTypes: [
       'Short retrieval and comprehension questions',
       'Language analysis (how the writer creates effect)',
-      'Structural analysis of whole-extract choices',
-      'Comparison of the two Component 2 texts',
+      'Language and structure in a later section (Component 1 Q04)',
+      'Evaluation of a view or statement (Component 1 Q05, Component 2 Q1.4)',
+      'Bringing details together, then comparing the two Component 2 texts (Q1.5, Q1.6)',
     ],
   },
 }

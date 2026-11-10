@@ -4,6 +4,15 @@ export const y11IgcseLessons: LessonPlan[] = [
   // ═══════════════════════════════════════════════════════════════════════════
   // LANGUAGE PAPER 2 (5 lessons)
   // ═══════════════════════════════════════════════════════════════════════════
+  //
+  // 31 October 2026: corrected to src/data/mark-scheme-guides/cambridge-0500-paper2.ts.
+  // Lesson 1 described Paper 2 as 1 hour 30 with a descriptive Section A and a
+  // narrative Section B. It is 2 hours and 80 marks: Section A is directed writing
+  // (Question 1(a), 5 marks, then 1(b), 35) and Section B the composition (one of
+  // four titles, two descriptive and two narrative, 40 marks). Lessons 2 to 5 teach
+  // the composition, and Lesson 5 now says it practises Section B. Second read, same
+  // day: a Lesson 1 model answer still split the composition marks "equally or
+  // near-equally"; it is 16 and 24, as the main activity says.
 
   // ── Lesson 1: Paper 2 Overview and Expectations ────────────────────────────
   {
@@ -15,7 +24,7 @@ export const y11IgcseLessons: LessonPlan[] = [
     duration: '60 minutes',
     objectives: [
       'Understand the structure and timing of Language Paper 2',
-      'Identify the assessment objectives and how marks are allocated across descriptive and narrative writing',
+      'Identify how the 80 marks are allocated between the directed writing and the composition',
       'Analyse the differences between Band 4 and Band 6 responses using examiner commentary',
       'Create a personal exam strategy for approaching Paper 2',
     ],
@@ -54,7 +63,7 @@ export const y11IgcseLessons: LessonPlan[] = [
         title: 'Dissecting the Paper 2 Structure',
         duration: '15 minutes',
         instructions:
-          'Distribute a copy of a past Paper 2 front cover and both question options. Walk students through the paper structure: Section A (descriptive writing) and Section B (narrative writing), the choice element, word count guidance, and time allocation. Students annotate the paper with key information using a colour-coded system. Then display the mark scheme grid and explain how marks are split between content/structure and style/accuracy. Students complete a summary table showing marks available for each assessment strand.',
+          'Distribute a copy of the 2027 specimen Paper 2 (past papers before 2027 set one 40-mark directed writing task in Section A). Walk students through the paper structure: Section A, directed writing, with Question 1(a) (5 marks) and 1(b) (35 marks) on one or two short texts; Section B, the composition, a choice of four titles, two descriptive and two narrative (40 marks, about 350 to 450 words); and the time allocation. Students annotate the paper with key information using a colour-coded system. Then display the composition mark scheme grids and explain how its 40 marks are split: 16 for content and structure, 24 for style and accuracy. Students complete a summary table showing marks available for each assessment strand.',
         differentiation: {
           support:
             'Provide a pre-filled summary table with some cells already completed for students to finish.',
@@ -107,7 +116,7 @@ export const y11IgcseLessons: LessonPlan[] = [
           'Describe the structure of Language Paper 2. How many sections are there and what does each section require?',
         lines: 4,
         modelAnswer:
-          'Language Paper 2 has two sections. Section A is descriptive writing and Section B is narrative writing. Candidates choose one question from each section or may be given a single prompt. The paper assesses both content/structure and style/accuracy.',
+          'Language Paper 2 has two sections, 40 marks each. Section A is directed writing: Question 1(a), a short answer on one or two texts (5 marks), then 1(b), a speech, letter, article or report that uses and develops their ideas (35 marks). Section B is the composition: candidates choose one of four titles, two descriptive and two narrative, and write about 350 to 450 words, marked for content and structure (16) and style and accuracy (24).',
         marks: 3,
       },
       {
@@ -115,7 +124,7 @@ export const y11IgcseLessons: LessonPlan[] = [
           'Explain how marks are divided between content/structure and style/accuracy. Why is this division important for exam preparation?',
         lines: 4,
         modelAnswer:
-          'Marks are typically split equally or near-equally between content/structure and style/accuracy. This is important because it means technical accuracy - spelling, punctuation, grammar, and sentence variety - carries as much weight as the quality of ideas and organisation. Students must practise both.',
+          'In the composition, 16 of the 40 marks are for content and structure and 24 for style and accuracy. This is important because style and accuracy (vocabulary, sentence variety, spelling, punctuation and grammar) carry more marks than the ideas and their organisation. Students must practise both.',
         marks: 3,
       },
       {
@@ -128,10 +137,10 @@ export const y11IgcseLessons: LessonPlan[] = [
       },
       {
         question:
-          'Write a personal timing plan for a 1 hour 30 minute Paper 2 exam. Justify how you have allocated your time.',
+          'Write a personal timing plan for the 2-hour Paper 2 exam. Justify how you have allocated your time.',
         lines: 6,
         modelAnswer:
-          'Planning: 10 minutes - essential for structure and ideas. Writing: 60 minutes (30 per piece) - allows sustained development. Proofreading: 10 minutes (5 per piece) - catches SPaG errors. Remaining 10 minutes split as buffer. This ensures I do not rush the ending and have time to check accuracy, which is worth half the marks.',
+          'Section A, about an hour: 10 minutes to read the texts, about 8 minutes for 1(a) and about 42 minutes for 1(b), including a short plan. Section B, about an hour: 5 to 10 minutes to choose a title and plan, about 45 minutes writing and 5 minutes checking. The two sections carry 40 marks each, so they get equal time, and checking matters in both because accuracy is marked in both.',
         marks: 4,
       },
       {
@@ -603,16 +612,16 @@ export const y11IgcseLessons: LessonPlan[] = [
     targetedSkills: ['Planning', 'Exam Technique', 'Time Management', 'Structural Decision-Making'],
   },
 
-  // ── Lesson 5: Full Paper 2 Practice ────────────────────────────────────────
+  // ── Lesson 5: Paper 2 Section B Practice ────────────────────────────────────────
   {
     id: 'y11-igcse-05-full-paper2-practice',
-    title: 'Full Paper 2 Practice',
+    title: 'Paper 2 Section B Practice: The Composition',
     text: 'IGCSE English Language',
     board: 'Cambridge IGCSE',
     yearGroup: 'Year 11',
     duration: '60 minutes',
     objectives: [
-      'Complete a full Paper 2 response under timed exam conditions',
+      'Complete a full Section B composition under timed exam conditions',
       'Apply planning, structural, and stylistic techniques developed in previous lessons',
       'Manage time effectively across planning, writing, and proofreading',
       'Self-assess using mark scheme band descriptors to identify strengths and areas for improvement',
@@ -637,7 +646,7 @@ export const y11IgcseLessons: LessonPlan[] = [
       title: 'Pre-Exam Mindset',
       duration: '5 minutes',
       instructions:
-        'Teacher leads a brief focused discussion: "What will you do in the first 5 minutes of the exam?" Students write their answer, then share with a partner. Teacher reinforces the non-negotiables: read both prompts carefully, choose the one that sparks the most ideas, plan for 5 minutes before writing a word. Display a clock graphic showing the ideal time split. Students set up their desks in exam conditions.',
+        'Teacher leads a brief focused discussion: "What will you do in the first 5 minutes of Section B?" Students write their answer, then share with a partner. Teacher reinforces the non-negotiables: read all four titles carefully, choose the one that sparks the most ideas, plan for 5 minutes before writing a word. Display a clock graphic showing the ideal time split. Students set up their desks in exam conditions.',
       differentiation: {
         support:
           'Provide a laminated time plan card for students to keep on their desk during the practice.',
@@ -652,7 +661,7 @@ export const y11IgcseLessons: LessonPlan[] = [
         title: 'Timed Writing - Full Response',
         duration: '40 minutes',
         instructions:
-          'Students choose one of two prompts (one descriptive, one narrative) and complete a full response under timed conditions. The 40 minutes should be split: 5 minutes planning, 30 minutes writing, 5 minutes proofreading and editing. Teacher writes time checkpoints on the board (e.g. "By 10 minutes you should have finished your first paragraph"). During the writing phase, the room should be silent. Teacher circulates silently, noting common strengths and weaknesses for the debrief. At the 35-minute mark, announce that students should begin proofreading.',
+          'Students choose one of four titles (two descriptive and two narrative, as in the exam) and complete a full response under timed conditions. This is a shortened version of the hour Section B allows in the exam; split the 40 minutes: 5 minutes planning, 30 minutes writing, 5 minutes proofreading and editing. Teacher writes time checkpoints on the board (e.g. "By 10 minutes you should have finished your first paragraph"). During the writing phase, the room should be silent. Teacher circulates silently, noting common strengths and weaknesses for the debrief. At the 35-minute mark, announce that students should begin proofreading.',
         differentiation: {
           support:
             'Provide a planning template and a proofreading checklist on the desk. Allow an additional 5 minutes if needed.',
@@ -661,7 +670,7 @@ export const y11IgcseLessons: LessonPlan[] = [
             'Students attempt to write both a descriptive and a narrative response, managing their time across both pieces.',
         },
         resources: [
-          'Exam-style prompt sheet (two options)',
+          'Exam-style title sheet (four titles: two descriptive, two narrative)',
           'Plain lined paper',
           'Planning templates (support tier)',
           'Proofreading checklist (support tier)',
@@ -682,7 +691,7 @@ export const y11IgcseLessons: LessonPlan[] = [
       resources: ['Simplified band descriptors sheet', 'Self-assessment frame (support tier)'],
     },
     homework:
-      'Complete a second full response to the prompt you did not choose in the exam practice. You have no time limit at home but should still plan before writing. Annotate three moments where you have used deliberate techniques.',
+      'Complete a second full response to one of the titles you did not choose in the exam practice. You have no time limit at home but should still plan before writing. Annotate three moments where you have used deliberate techniques.',
     worksheetQuestions: [
       {
         question:
@@ -718,10 +727,10 @@ export const y11IgcseLessons: LessonPlan[] = [
       },
       {
         question:
-          'Write a list of five things you will do in the first 5 minutes of the real Paper 2 exam.',
+          'Write a list of five things you will do in the first 5 minutes of Section B in the real Paper 2 exam.',
         lines: 5,
         modelAnswer:
-          '1. Read both prompts twice carefully before choosing. 2. Choose the prompt that gives me the most ideas, not the one that sounds easiest. 3. Decide on a structure (e.g. zoom for descriptive, in medias res for narrative). 4. Create a paragraph plan with key vocabulary and at least two techniques per paragraph. 5. Decide on my ending before I start writing - this is what separates good responses from great ones.',
+          '1. Read all four titles twice carefully before choosing. 2. Choose the title that gives me the most ideas, not the one that sounds easiest. 3. Decide on a structure (e.g. zoom for descriptive, in medias res for narrative). 4. Create a paragraph plan with key vocabulary and at least two techniques per paragraph. 5. Decide on my ending before I start writing: this is what separates good responses from great ones.',
         marks: 5,
       },
     ],

@@ -91,7 +91,7 @@ function Quote({
     <div className="rounded-lg border-s-4 border-accent bg-primary/10/40 p-4">
       <p className="text-sm font-semibold italic text-foreground">&ldquo;{text}&rdquo;</p>
       <p className="mt-1 text-xs text-muted-foreground">
-        {speaker} &mdash; {act}
+        {speaker} - {act}
       </p>
       <p className="mt-2 text-sm text-muted-foreground">{analysis}</p>
     </div>
@@ -130,7 +130,7 @@ export default function TheTempestRevisionPage() {
           </span>
         </div>
         <h1 className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
-          The Tempest &mdash; Complete Revision Guide
+          The Tempest - Complete Revision Guide
         </h1>
         <p className="mt-3 max-w-3xl text-lg text-muted-foreground">
           Everything you need for your GCSE English Literature exam. Scene-by-scene plot, 10
@@ -177,7 +177,7 @@ export default function TheTempestRevisionPage() {
                 <span className="flex h-6 w-6 items-center justify-center rounded-full bg-blue-500/15 text-xs font-bold text-blue-700 dark:text-blue-300">
                   1
                 </span>
-                Act 1, Scene 1 &mdash; The Storm
+                Act 1, Scene 1 - The Storm
               </h3>
               <p className="mt-2 text-sm text-muted-foreground leading-relaxed">
                 A violent tempest threatens to destroy a ship carrying Alonso (King of Naples), his
@@ -210,7 +210,7 @@ export default function TheTempestRevisionPage() {
                 <span className="flex h-6 w-6 items-center justify-center rounded-full bg-blue-500/15 text-xs font-bold text-blue-700 dark:text-blue-300">
                   2
                 </span>
-                Act 1, Scene 2 &mdash; Prospero&apos;s Story
+                Act 1, Scene 2 - Prospero&apos;s Story
               </h3>
               <p className="mt-2 text-sm text-muted-foreground leading-relaxed">
                 On the island, Prospero reveals to Miranda that he caused the storm using magic. He
@@ -245,7 +245,7 @@ export default function TheTempestRevisionPage() {
                 <span className="flex h-6 w-6 items-center justify-center rounded-full bg-blue-500/15 text-xs font-bold text-blue-700 dark:text-blue-300">
                   3
                 </span>
-                Act 2, Scene 1 &mdash; The Nobles on the Island
+                Act 2, Scene 1 - The Nobles on the Island
               </h3>
               <p className="mt-2 text-sm text-muted-foreground leading-relaxed">
                 The shipwrecked nobles explore the island. Gonzalo optimistically imagines a utopian
@@ -265,7 +265,7 @@ export default function TheTempestRevisionPage() {
                     Cannibals&rdquo;)
                   </li>
                   <li>
-                    &bull; Antonio&apos;s temptation of Sebastian &mdash; repeating the cycle of
+                    &bull; Antonio&apos;s temptation of Sebastian - repeating the cycle of
                     usurpation
                   </li>
                   <li>&bull; Ariel&apos;s invisible intervention saves Alonso&apos;s life</li>
@@ -278,7 +278,7 @@ export default function TheTempestRevisionPage() {
                 <span className="flex h-6 w-6 items-center justify-center rounded-full bg-blue-500/15 text-xs font-bold text-blue-700 dark:text-blue-300">
                   4
                 </span>
-                Act 2, Scene 2 &mdash; Caliban, Stephano, and Trinculo
+                Act 2, Scene 2 - Caliban, Stephano, and Trinculo
               </h3>
               <p className="mt-2 text-sm text-muted-foreground leading-relaxed">
                 Caliban encounters Trinculo (a jester) and Stephano (a drunken butler). Caliban,
@@ -294,12 +294,11 @@ export default function TheTempestRevisionPage() {
                 </p>
                 <ul className="mt-2 space-y-1 text-sm text-muted-foreground">
                   <li>
-                    &bull; Caliban&apos;s &ldquo;freedom song&rdquo; &mdash; ironic, as he
-                    immediately adopts a new master
+                    &bull; Caliban&apos;s &ldquo;freedom song&rdquo; - ironic, as he immediately
+                    adopts a new master
                   </li>
                   <li>
-                    &bull; Trinculo considers exhibiting Caliban in England &mdash; colonial
-                    exploitation
+                    &bull; Trinculo considers exhibiting Caliban in England - colonial exploitation
                   </li>
                   <li>
                     &bull; Stephano&apos;s pretension to kingship satirises European claims of
@@ -314,7 +313,7 @@ export default function TheTempestRevisionPage() {
                 <span className="flex h-6 w-6 items-center justify-center rounded-full bg-blue-500/15 text-xs font-bold text-blue-700 dark:text-blue-300">
                   5
                 </span>
-                Act 3, Scene 1 &mdash; Ferdinand and Miranda
+                Act 3, Scene 1 - Ferdinand and Miranda
               </h3>
               <p className="mt-2 text-sm text-muted-foreground leading-relaxed">
                 Ferdinand carries logs as punishment from Prospero but willingly endures the labour
@@ -328,10 +327,10 @@ export default function TheTempestRevisionPage() {
                   {tr(`Key Moments`)}
                 </p>
                 <ul className="mt-2 space-y-1 text-sm text-muted-foreground">
-                  <li>&bull; Ferdinand&apos;s willing servitude &mdash; love vs forced labour</li>
+                  <li>&bull; Ferdinand&apos;s willing servitude - love vs forced labour</li>
                   <li>&bull; Miranda&apos;s agency in proposing marriage</li>
                   <li>
-                    &bull; Prospero&apos;s hidden approval &mdash; still controlling from behind the
+                    &bull; Prospero&apos;s hidden approval - still controlling from behind the
                     scenes
                   </li>
                 </ul>
@@ -343,7 +342,7 @@ export default function TheTempestRevisionPage() {
                 <span className="flex h-6 w-6 items-center justify-center rounded-full bg-blue-500/15 text-xs font-bold text-blue-700 dark:text-blue-300">
                   6
                 </span>
-                Act 3, Scene 2 &mdash; The Assassination Plot
+                Act 3, Scene 2 - The Assassination Plot
               </h3>
               <p className="mt-2 text-sm text-muted-foreground leading-relaxed">
                 Caliban persuades the increasingly drunk Stephano to kill Prospero and become king
@@ -360,12 +359,10 @@ export default function TheTempestRevisionPage() {
                 <ul className="mt-2 space-y-1 text-sm text-muted-foreground">
                   <li>&bull; Caliban&apos;s murder plot mirrors Antonio&apos;s usurpation</li>
                   <li>
-                    &bull; &ldquo;Be not afeard&rdquo; speech &mdash; Caliban&apos;s poetry and
+                    &bull; &ldquo;Be not afeard&rdquo; speech - Caliban&apos;s poetry and
                     sensitivity (3.2)
                   </li>
-                  <li>
-                    &bull; Ariel&apos;s invisible disruption &mdash; Prospero&apos;s unseen control
-                  </li>
+                  <li>&bull; Ariel&apos;s invisible disruption - Prospero&apos;s unseen control</li>
                 </ul>
               </div>
             </div>
@@ -375,7 +372,7 @@ export default function TheTempestRevisionPage() {
                 <span className="flex h-6 w-6 items-center justify-center rounded-full bg-blue-500/15 text-xs font-bold text-blue-700 dark:text-blue-300">
                   7
                 </span>
-                Act 3, Scene 3 &mdash; The Banquet
+                Act 3, Scene 3 - The Banquet
               </h3>
               <p className="mt-2 text-sm text-muted-foreground leading-relaxed">
                 The weary nobles encounter a magical banquet laid by spirits. When they reach for
@@ -389,11 +386,11 @@ export default function TheTempestRevisionPage() {
                   {tr(`Key Moments`)}
                 </p>
                 <ul className="mt-2 space-y-1 text-sm text-muted-foreground">
-                  <li>&bull; Ariel as harpy &mdash; instrument of divine justice</li>
-                  <li>&bull; The vanishing banquet &mdash; illusory nature of power and wealth</li>
+                  <li>&bull; Ariel as harpy - instrument of divine justice</li>
+                  <li>&bull; The vanishing banquet - illusory nature of power and wealth</li>
                   <li>
-                    &bull; Alonso&apos;s guilt vs Antonio&apos;s defiance &mdash; contrasting
-                    responses to judgement
+                    &bull; Alonso&apos;s guilt vs Antonio&apos;s defiance - contrasting responses to
+                    judgement
                   </li>
                 </ul>
               </div>
@@ -404,7 +401,7 @@ export default function TheTempestRevisionPage() {
                 <span className="flex h-6 w-6 items-center justify-center rounded-full bg-blue-500/15 text-xs font-bold text-blue-700 dark:text-blue-300">
                   8
                 </span>
-                Act 4, Scene 1 &mdash; The Masque
+                Act 4, Scene 1 - The Masque
               </h3>
               <p className="mt-2 text-sm text-muted-foreground leading-relaxed">
                 Prospero blesses Ferdinand and Miranda&apos;s engagement with a masque (a court
@@ -420,10 +417,10 @@ export default function TheTempestRevisionPage() {
                   {tr(`Key Moments`)}
                 </p>
                 <ul className="mt-2 space-y-1 text-sm text-muted-foreground">
-                  <li>&bull; The masque &mdash; Jacobean court entertainment celebrating order</li>
+                  <li>&bull; The masque - Jacobean court entertainment celebrating order</li>
                   <li>
-                    &bull; &ldquo;Our revels now are ended&rdquo; speech &mdash; transience of life
-                    and art (4.1)
+                    &bull; &ldquo;Our revels now are ended&rdquo; speech - transience of life and
+                    art (4.1)
                   </li>
                   <li>&bull; &ldquo;We are such stuff as dreams are made on&rdquo; (4.1)</li>
                   <li>&bull; Caliban, Stephano, and Trinculo punished with spirit-hounds</li>
@@ -436,7 +433,7 @@ export default function TheTempestRevisionPage() {
                 <span className="flex h-6 w-6 items-center justify-center rounded-full bg-blue-500/15 text-xs font-bold text-blue-700 dark:text-blue-300">
                   9
                 </span>
-                Act 5, Scene 1 &amp; Epilogue &mdash; Resolution and Renunciation
+                Act 5, Scene 1 &amp; Epilogue - Resolution and Renunciation
               </h3>
               <p className="mt-2 text-sm text-muted-foreground leading-relaxed">
                 Ariel reports that the nobles are imprisoned and distressed, especially Alonso.
@@ -455,8 +452,8 @@ export default function TheTempestRevisionPage() {
                 <ul className="mt-2 space-y-1 text-sm text-muted-foreground">
                   <li>&bull; Ariel&apos;s compassion prompts Prospero&apos;s forgiveness (5.1)</li>
                   <li>
-                    &bull; &ldquo;The rarer action is in virtue than in vengeance&rdquo; &mdash;
-                    moral climax (5.1)
+                    &bull; &ldquo;The rarer action is in virtue than in vengeance&rdquo; - moral
+                    climax (5.1)
                   </li>
                   <li>&bull; &ldquo;This thing of darkness I acknowledge mine&rdquo; (5.1)</li>
                   <li>
@@ -464,8 +461,7 @@ export default function TheTempestRevisionPage() {
                     (5.1)
                   </li>
                   <li>
-                    &bull; Prospero breaks his staff and drowns his book &mdash; renunciation of
-                    power
+                    &bull; Prospero breaks his staff and drowns his book - renunciation of power
                   </li>
                   <li>&bull; Epilogue: the audience must &ldquo;set me free&rdquo;</li>
                 </ul>

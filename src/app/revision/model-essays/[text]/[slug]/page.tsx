@@ -23,7 +23,7 @@ import {
 // (hasAccess) must be evaluated against the real request session, never
 // baked at build time. This page used to be statically generated via
 // generateStaticParams; that prerendered hasAccess=false into the cached
-// HTML (getUser() has no cookies at build, and resolveHasAccess's
+// HTML (getUser() has no cookies at build, and resolveAccess's
 // try/catch swallowed the "Dynamic server usage" throw), so a paying
 // subscriber was served a cached LOCKED page. generateStaticParams has
 // been removed (see the note where it used to live) and this flag makes
@@ -36,19 +36,21 @@ export const dynamic = 'force-dynamic'
 // Model essays are GCSE premium content, gated by the global subscription/trial
 // flag (NOT the separate IELTS entitlement). Resolved server-side; anonymous +
 // Googlebot fall through to `false` and see only the free teaser paragraphs.
-async function resolveHasAccess(): Promise<boolean> {
+async function resolveAccess(): Promise<{ hasAccess: boolean; signedIn: boolean }> {
   try {
     const supabase = createServerSupabaseClient()
     const {
       data: { user },
     } = await supabase.auth.getUser()
     if (user) {
-      return await hasActiveSubscription(supabase, user.id)
+      // `signedIn` lets the lock panel offer plans, not sign-up, to a signed-in
+      // reader without a plan (10 November 2026, see LockedContent).
+      return { hasAccess: await hasActiveSubscription(supabase, user.id), signedIn: true }
     }
   } catch {
     // Signed out / auth unavailable → no access.
   }
-  return false
+  return { hasAccess: false, signedIn: false }
 }
 
 /* ─── Catalogue ────────────────────────────────────────────────── */
@@ -143,7 +145,7 @@ export default async function ModelEssayPage({
 
   if (!essay) notFound()
 
-  const hasAccess = await resolveHasAccess()
+  const { hasAccess, signedIn } = await resolveAccess()
   // Teaser slice: show ~30% of the paragraphs (at least the first one)
   // to everyone — anonymous visitors and crawlers included — then lock the rest
   // behind the paywall for non-subscribers. Subscribers see every paragraph.
@@ -257,6 +259,7 @@ export default async function ModelEssayPage({
           ))}
           {lockedCount > 0 && (
             <LockedContent
+              signedIn={signedIn}
               label={`the remaining ${lockedCount} annotated paragraph${lockedCount === 1 ? '' : 's'}`}
             />
           )}

@@ -237,7 +237,7 @@ const data: TextGuideData = {
     {
       quote: '"We are members of one body. We are responsible for each other."',
       who: 'Inspector Goole - Act 3',
-      whoAr: 'Inspector Goole \u2014 \u0627\u0644\u0641\u0635\u0644 3',
+      whoAr: 'Inspector Goole - \u0627\u0644\u0641\u0635\u0644 3',
       analysis:
         'The play\u2019s thesis statement, delivered as the Inspector\u2019s final warning. It echoes the communal ethos of the 1945 welfare-state moment.',
       analysisAr:
@@ -255,7 +255,7 @@ const data: TextGuideData = {
     {
       quote: '"The Titanic ... unsinkable, absolutely unsinkable."',
       who: 'Arthur Birling - Act 1',
-      whoAr: 'Arthur Birling \u2014 \u0627\u0644\u0641\u0635\u0644 1',
+      whoAr: 'Arthur Birling - \u0627\u0644\u0641\u0635\u0644 1',
       analysis:
         'Dramatic irony at its sharpest. Birling\u2019s certainty immediately marks him as a man whose judgment cannot be trusted.',
       analysisAr:
@@ -273,7 +273,7 @@ const data: TextGuideData = {
     {
       quote: '"But these girls aren\u2019t cheap labour \u2014 they\u2019re people."',
       who: 'Sheila Birling - Act 1',
-      whoAr: 'Sheila Birling \u2014 \u0627\u0644\u0641\u0635\u0644 1',
+      whoAr: 'Sheila Birling - \u0627\u0644\u0641\u0635\u0644 1',
       analysis:
         'Sheila\u2019s awakening to social responsibility, phrased simply but powerfully against her father\u2019s economic logic.',
       analysisAr:
@@ -291,7 +291,7 @@ const data: TextGuideData = {
     {
       quote: '"You\u2019re not the kind of father a chap could go to."',
       who: 'Eric Birling - Act 3',
-      whoAr: 'Eric Birling \u2014 \u0627\u0644\u0641\u0635\u0644 3',
+      whoAr: 'Eric Birling - \u0627\u0644\u0641\u0635\u0644 3',
       analysis:
         'Eric\u2019s accusation exposes the emotional bankruptcy beneath Birling\u2019s patriarchal authority.',
       analysisAr:
@@ -300,7 +300,7 @@ const data: TextGuideData = {
     {
       quote: '"We don\u2019t live alone. We are members of one body."',
       who: 'Inspector Goole - Act 3',
-      whoAr: 'Inspector Goole \u2014 \u0627\u0644\u0641\u0635\u0644 3',
+      whoAr: 'Inspector Goole - \u0627\u0644\u0641\u0635\u0644 3',
       analysis:
         'A compressed restatement of the play\u2019s core socialist message, linking individual action to communal consequence.',
       analysisAr:
@@ -309,7 +309,7 @@ const data: TextGuideData = {
     {
       quote: '"Public men, Mr Birling, have responsibilities as well as privileges."',
       who: 'Inspector Goole - Act 2',
-      whoAr: 'Inspector Goole \u2014 \u0627\u0644\u0641\u0635\u0644 2',
+      whoAr: 'Inspector Goole - \u0627\u0644\u0641\u0635\u0644 2',
       analysis:
         'The Inspector directly challenges Birling\u2019s belief that wealth entitles him to immunity from scrutiny.',
       analysisAr:
@@ -318,7 +318,7 @@ const data: TextGuideData = {
     {
       quote: '"what happened to the girl and what we all did to her that matters."',
       who: 'Eric Birling - Act 3',
-      whoAr: 'Eric Birling \u2014 \u0627\u0644\u0641\u0635\u0644 3',
+      whoAr: 'Eric Birling - \u0627\u0644\u0641\u0635\u0644 3',
       analysis:
         'Eric cuts through his parents\u2019 evasion, insisting that the moral lesson matters regardless of the Inspector\u2019s identity.',
       analysisAr:
@@ -327,7 +327,7 @@ const data: TextGuideData = {
     {
       quote: '"In the circumstances I think I was justified."',
       who: 'Sybil Birling - Act 2',
-      whoAr: 'Sybil Birling \u2014 \u0627\u0644\u0641\u0635\u0644 2',
+      whoAr: 'Sybil Birling - \u0627\u0644\u0641\u0635\u0644 2',
       analysis:
         'Sybil\u2019s stubborn self-righteousness. She refuses to accept guilt even when the evidence is overwhelming.',
       analysisAr:
@@ -336,7 +336,7 @@ const data: TextGuideData = {
     {
       quote: '"Girls of that class\u2014"',
       who: 'Sybil Birling - Act 2',
-      whoAr: 'Sybil Birling \u2014 \u0627\u0644\u0641\u0635\u0644 2',
+      whoAr: 'Sybil Birling - \u0627\u0644\u0641\u0635\u0644 2',
       analysis:
         'An interrupted phrase that exposes Sybil\u2019s deep-rooted class prejudice as instinctive and unexamined.',
       analysisAr:
@@ -345,7 +345,7 @@ const data: TextGuideData = {
     {
       quote: '"I didn\u2019t feel about her as she felt about me."',
       who: 'Gerald Croft - Act 2',
-      whoAr: 'Gerald Croft \u2014 \u0627\u0644\u0641\u0635\u0644 2',
+      whoAr: 'Gerald Croft - \u0627\u0644\u0641\u0635\u0644 2',
       analysis:
         'Gerald\u2019s admission reveals the power imbalance in his relationship with Daisy: he could leave, she could not.',
       analysisAr:
@@ -364,7 +364,7 @@ const data: TextGuideData = {
     {
       quote: '"One Eva Smith has gone \u2014 but there are millions and millions and millions"',
       who: 'Inspector Goole - Act 3',
-      whoAr: 'Inspector Goole \u2014 \u0627\u0644\u0641\u0635\u0644 3',
+      whoAr: 'Inspector Goole - \u0627\u0644\u0641\u0635\u0644 3',
       analysis:
         'The Inspector universalises Eva\u2019s suffering, turning a single case into a political argument about systemic injustice. The tripled "millions" insists on scale: this is not exceptional suffering but structural.',
       analysisAr:
@@ -373,7 +373,7 @@ const data: TextGuideData = {
     {
       quote: '"You began to learn something. And now you\u2019ve stopped."',
       who: 'Sheila Birling - Act 3',
-      whoAr: 'Sheila Birling \u2014 \u0627\u0644\u0641\u0635\u0644 3',
+      whoAr: 'Sheila Birling - \u0627\u0644\u0641\u0635\u0644 3',
       analysis:
         'Sheila accuses Gerald and her parents of moral regression, sharpening the generational divide at the play\u2019s climax.',
       analysisAr:

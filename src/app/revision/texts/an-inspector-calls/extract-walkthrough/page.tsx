@@ -232,23 +232,23 @@ export default function ExtractWalkthroughPage() {
               The Inspector&rsquo;s final speech is the structural and ideological climax of the
               play because it transposes Priestley&rsquo;s socialist argument into a prophetic
               register that the audience cannot easily refuse. Priestley begins with a balanced
-              declarative &mdash; the claim that the Birlings are &ldquo;members of one body&rdquo;
-              &mdash; whose Pauline cadence borrows the ethical authority of scripture, then
-              immediately re-translates the same idea into the secular vocabulary of being
-              &ldquo;responsible for each other.&rdquo; The doubling closes the escape route a
-              sceptical viewer might use: whether received as Christian conscience or civic duty,
-              the conclusion is identical. From this twin-stated thesis Priestley pivots into
-              prophecy. The Inspector announces that &ldquo;the time will soon come&rdquo; when men
-              who refuse the lesson will be taught it &ldquo;in fire and blood and anguish&rdquo;
-              &mdash; a tricolon that escalates from physical destruction through bodily suffering
-              to psychological torment, and which an audience watching in 1945 could only hear as a
-              documentary description of the two world wars they had just lived through. The passive
-              &ldquo;will be taught&rdquo; converts history itself into the disciplinarian.
-              Priestley then deflates the rhetoric to a clipped, civil &ldquo;Good night,&rdquo;
-              transferring the moral weight onto the audience by refusing the catharsis of a grand
-              exit. Across roughly forty seconds of stage time, Priestley moves the play from
-              drawing-room investigation to political sermon, leaving the audience &mdash; not the
-              Birlings &mdash; as the people on whom the verdict still depends.
+              declarative - the claim that the Birlings are &ldquo;members of one body&rdquo; -
+              whose Pauline cadence borrows the ethical authority of scripture, then immediately
+              re-translates the same idea into the secular vocabulary of being &ldquo;responsible
+              for each other.&rdquo; The doubling closes the escape route a sceptical viewer might
+              use: whether received as Christian conscience or civic duty, the conclusion is
+              identical. From this twin-stated thesis Priestley pivots into prophecy. The Inspector
+              announces that &ldquo;the time will soon come&rdquo; when men who refuse the lesson
+              will be taught it &ldquo;in fire and blood and anguish&rdquo; - a tricolon that
+              escalates from physical destruction through bodily suffering to psychological torment,
+              and which an audience watching in 1945 could only hear as a documentary description of
+              the two world wars they had just lived through. The passive &ldquo;will be
+              taught&rdquo; converts history itself into the disciplinarian. Priestley then deflates
+              the rhetoric to a clipped, civil &ldquo;Good night,&rdquo; transferring the moral
+              weight onto the audience by refusing the catharsis of a grand exit. Across roughly
+              forty seconds of stage time, Priestley moves the play from drawing-room investigation
+              to political sermon, leaving the audience - not the Birlings - as the people on whom
+              the verdict still depends.
             </p>
           </div>
         </section>

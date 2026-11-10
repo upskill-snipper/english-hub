@@ -161,12 +161,12 @@ export default async function OCRLitPaper2Page() {
               <p className="mt-3">This means your response must do two things:</p>
               <ol className="ms-6 mt-2 list-decimal space-y-2">
                 <li>
-                  <strong>{_tr(`Analyse the extract in detail`)}</strong> &mdash; close language
-                  analysis of Shakespeare&rsquo;s words, imagery, and dramatic techniques in the
-                  given passage.
+                  <strong>{_tr(`Analyse the extract in detail`)}</strong> - close language analysis
+                  of Shakespeare&rsquo;s words, imagery, and dramatic techniques in the given
+                  passage.
                 </li>
                 <li>
-                  <strong>{_tr(`Explore the wider play`)}</strong> &mdash; discuss how the same
+                  <strong>{_tr(`Explore the wider play`)}</strong> - discuss how the same
                   theme/character is presented elsewhere in the play, showing knowledge of the whole
                   text.
                 </li>
@@ -209,10 +209,10 @@ export default async function OCRLitPaper2Page() {
                 <div className="rounded-lg border border-border bg-muted p-5">
                   <h4 className="font-semibold text-foreground">{_tr(`Iambic Pentameter`)}</h4>
                   <p className="mt-2 text-sm">
-                    Shakespeare&rsquo;s verse typically follows iambic pentameter &mdash; ten
-                    syllables per line with alternating unstressed and stressed syllables (da-DUM
-                    da-DUM da-DUM da-DUM da-DUM). When this rhythm is broken, it often signals
-                    emotional disturbance, conflict, or a shift in power.
+                    Shakespeare&rsquo;s verse typically follows iambic pentameter - ten syllables
+                    per line with alternating unstressed and stressed syllables (da-DUM da-DUM
+                    da-DUM da-DUM da-DUM). When this rhythm is broken, it often signals emotional
+                    disturbance, conflict, or a shift in power.
                   </p>
                 </div>
 
@@ -231,10 +231,10 @@ export default async function OCRLitPaper2Page() {
                   <h4 className="font-semibold text-foreground">{_tr(`Dramatic Irony`)}</h4>
                   <p className="mt-2 text-sm">
                     When the audience knows something that characters on stage do not. This creates
-                    tension, suspense, and engagement. Shakespeare uses dramatic irony extensively
-                    &mdash; for example, in <em>Macbeth</em>, Duncan&rsquo;s praise of
-                    Macbeth&rsquo;s castle is deeply ironic because the audience knows Macbeth plans
-                    to murder him there.
+                    tension, suspense, and engagement. Shakespeare uses dramatic irony extensively -
+                    for example, in <em>Macbeth</em>, Duncan&rsquo;s praise of Macbeth&rsquo;s
+                    castle is deeply ironic because the audience knows Macbeth plans to murder him
+                    there.
                   </p>
                 </div>
               </div>
@@ -289,8 +289,8 @@ export default async function OCRLitPaper2Page() {
                     1. Choose Your Comparison Poem Wisely
                   </h4>
                   <p className="mt-2 text-sm">
-                    Pick a poem that offers rich comparison possibilities &mdash; ideally one with
-                    both similarities and differences in theme, methods, or perspective. A nuanced
+                    Pick a poem that offers rich comparison possibilities - ideally one with both
+                    similarities and differences in theme, methods, or perspective. A nuanced
                     comparison is more rewarding than two poems that say the same thing.
                   </p>
                 </div>
@@ -413,8 +413,8 @@ export default async function OCRLitPaper2Page() {
               <h3 className="text-xl font-semibold text-foreground">What to Expect</h3>
               <p className="mt-2">
                 You will be given a poem (or poems) you have never seen before and asked to analyse
-                it. This tests your ability to respond independently to unfamiliar texts &mdash; a
-                skill that can be developed with practice.
+                it. This tests your ability to respond independently to unfamiliar texts - a skill
+                that can be developed with practice.
               </p>
             </div>
 
@@ -424,30 +424,29 @@ export default async function OCRLitPaper2Page() {
               </h3>
               <ol className="ms-6 mt-3 list-decimal space-y-3">
                 <li>
-                  <strong>{_tr(`Read the poem through twice`)}</strong> &mdash; First for overall
-                  meaning and feeling. Second to notice specific language, imagery, and structural
-                  choices.
+                  <strong>{_tr(`Read the poem through twice`)}</strong> - First for overall meaning
+                  and feeling. Second to notice specific language, imagery, and structural choices.
                 </li>
                 <li>
-                  <strong>{_tr(`Identify the subject and theme`)}</strong> &mdash; What is the poem
-                  about on the surface? What deeper themes or ideas does it explore?
+                  <strong>{_tr(`Identify the subject and theme`)}</strong> - What is the poem about
+                  on the surface? What deeper themes or ideas does it explore?
                 </li>
                 <li>
-                  <strong>Consider the speaker and tone</strong> &mdash; Who is speaking? What is
-                  their attitude towards the subject? How does the tone shift (if it does)?
+                  <strong>Consider the speaker and tone</strong> - Who is speaking? What is their
+                  attitude towards the subject? How does the tone shift (if it does)?
                 </li>
                 <li>
-                  <strong>{_tr(`Annotate the poem`)}</strong> &mdash; Underline striking words and
+                  <strong>{_tr(`Annotate the poem`)}</strong> - Underline striking words and
                   phrases. Circle techniques. Note the effect of key choices in the margin.
                 </li>
                 <li>
-                  <strong>Consider the form and structure</strong> &mdash; How many stanzas? Regular
-                  or irregular? Does the poem follow a pattern? Are there enjambments, caesurae, or
+                  <strong>Consider the form and structure</strong> - How many stanzas? Regular or
+                  irregular? Does the poem follow a pattern? Are there enjambments, caesurae, or
                   other structural features?
                 </li>
                 <li>
-                  <strong>{_tr(`Plan your response`)}</strong> &mdash; Identify 3&ndash;4 points to
-                  make, each with a quotation and analysis.
+                  <strong>{_tr(`Plan your response`)}</strong> - Identify 3&ndash;4 points to make,
+                  each with a quotation and analysis.
                 </li>
               </ol>
             </div>

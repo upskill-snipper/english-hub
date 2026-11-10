@@ -326,7 +326,7 @@ export default function GradeBoundariesPage() {
                   writer&rsquo;s purpose.
                 </li>
                 <li>
-                  <strong>Terminology:</strong> Learn and use key literary terms accurately &mdash;
+                  <strong>Terminology:</strong> Learn and use key literary terms accurately -
                   metaphor, simile, pathetic fallacy, iambic pentameter, enjambment. Even basic
                   terminology used correctly lifts your analysis.
                 </li>
@@ -373,7 +373,7 @@ export default function GradeBoundariesPage() {
               <ul className="mt-2 ms-5 list-disc space-y-2 text-sm">
                 <li>
                   <strong>{tr(`Conceptualised response:`)}</strong> Frame your essay around a clear
-                  argument or interpretation. An A* response has a thesis &mdash; a thread that runs
+                  argument or interpretation. An A* response has a thesis - a thread that runs
                   through every paragraph, not a series of disconnected points.
                 </li>
                 <li>
@@ -425,7 +425,7 @@ export default function GradeBoundariesPage() {
                     1h 30m total
                   </td>
                   <td className="py-2 pe-4">
-                    Set poetry texts &mdash; passage-based and essay questions
+                    Set poetry texts - passage-based and essay questions
                   </td>
                 </tr>
                 <tr>

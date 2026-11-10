@@ -14,9 +14,9 @@
  */
 
 /** A separator after a code: a hyphen, colon, en or em dash. Escaped, for the repo's dash sweep. */
-const SEPARATOR = new RegExp('^\\s*[-:\\u2013\\u2014]\\s*')
+const SEPARATOR = new RegExp('^\\s*[-:\\u2013\ - ]\\s*')
 /** One leading "AOn - " where the label starts with a code other than the row's. */
-const SINGLE_CODE = new RegExp('^AO\\s*\\d+\\s*[-:\\u2013\\u2014]\\s*', 'i')
+const SINGLE_CODE = new RegExp('^AO\\s*\\d+\\s*[-:\\u2013\ - ]\\s*', 'i')
 
 export function labelWithoutCode(code: string | undefined, label: string | undefined): string {
   const l = (label ?? '').trim()

@@ -4,6 +4,17 @@ export const y10IgcseLessons: LessonPlan[] = [
   // ═══════════════════════════════════════════════════════════════════════════
   // LANGUAGE PAPER 1 (5 lessons)
   // ═══════════════════════════════════════════════════════════════════════════
+  //
+  // 31 October 2026: corrected to src/data/mark-scheme-guides/cambridge-0500-paper1.ts.
+  // These lessons described a Paper 1 of 1 hour 45 with a 50-mark reading section
+  // and a 40-mark writing section, and labelled language analysis AO2, which is
+  // Writing. Paper 1 is 2 hours and 80 marks: four questions of 20 on three texts,
+  // with the writing marks in the summary and in Question 4. Language analysis is
+  // AO1 Reading, marked in five levels in the Question 3 language task.
+  // Second read, same day: Lesson 3 still judged paragraphs against "AO2" bands in its
+  // main activity; Lesson 4's homework length now gives Question 4's 250-300 words and
+  // 1(b)'s 250-350; Lesson 5 asked for the "band" of an inference answer, which
+  // Question 1 marks by points, not levels, so it now asks for the language task's level.
 
   // ── Lesson 1: Paper 1 Overview - Format, Timing, AOs ─────────────────────
   {
@@ -17,7 +28,7 @@ export const y10IgcseLessons: LessonPlan[] = [
       'Understand the structure and format of IGCSE English Language Paper 1',
       'Identify the assessment objectives (AO1: Reading, AO2: Writing) and how marks are distributed',
       'Develop a timing strategy for each section of the paper',
-      'Recognise the command words and question types across both reading and writing sections',
+      'Recognise the command words and question types across the four questions of the paper',
     ],
     successCriteria: [
       'I can describe the format of Paper 1, including the number of questions and marks available',
@@ -39,7 +50,7 @@ export const y10IgcseLessons: LessonPlan[] = [
       title: 'Exam Myth-Busters',
       duration: '8 minutes',
       instructions:
-        'Display a series of true/false statements about the IGCSE English Language exam on the board (e.g. "You only need to read the passage once", "Spelling doesn\'t matter in the reading section", "You should spend equal time on every question"). Students vote using mini-whiteboards. Teacher reveals answers and uses this to surface common misconceptions, establishing a baseline of understanding.',
+        'Display a series of true/false statements about the IGCSE English Language exam on the board (e.g. "You only need to read the passage once", "The summary can be as long as you like", "You should spend equal time on every question"). Students vote using mini-whiteboards. Teacher reveals answers and uses this to surface common misconceptions, establishing a baseline of understanding.',
       differentiation: {
         support:
           'Provide a glossary card defining key terms such as "assessment objective", "mark allocation" and "command word" for reference during the activity.',
@@ -54,7 +65,7 @@ export const y10IgcseLessons: LessonPlan[] = [
         title: 'Paper 1 Anatomy: Mapping the Exam',
         duration: '18 minutes',
         instructions:
-          'Distribute a blank Paper 1 overview grid with columns for Question Number, Skill Tested, AO, Marks, Suggested Timing, and Key Command Words. Using an annotated specimen paper projected on the board, teacher guides students through each question, pausing for students to fill in the grid. Highlight how marks translate to minutes (roughly 1 mark = 1 minute plus planning/checking time). Students colour-code reading questions (AO1) and writing questions (AO2) to visualise the balance.',
+          'Distribute a blank Paper 1 overview grid with columns for Question Number, Skill Tested, AO, Marks, Suggested Timing, and Key Command Words. Using an annotated specimen paper projected on the board, teacher guides students through each question, pausing for students to fill in the grid. Highlight how marks translate to minutes: all four questions are worth 20 marks, so each deserves about 25 minutes after about 15 minutes of reading. Students colour-code the reading marks (AO1) and the writing marks (AO2) to visualise the balance: 65 for reading and 15 for writing, which fall in the summary and in Question 4.',
         differentiation: {
           support:
             'Provide a partially completed grid with some rows already filled in; students complete the remaining rows.',
@@ -112,10 +123,10 @@ export const y10IgcseLessons: LessonPlan[] = [
       },
       {
         question:
-          'A student has 1 hour 45 minutes for Paper 1. The reading section is worth 50 marks and the writing section is worth 40 marks. Suggest a timing plan and justify your allocation.',
+          'A student has 2 hours for Paper 1: four compulsory questions worth 20 marks each, on three texts. Suggest a timing plan and justify your allocation.',
         lines: 5,
         modelAnswer:
-          'Approximately 55-60 minutes for reading and 40-45 minutes for writing, leaving 5 minutes for checking. This reflects the mark weighting - reading carries more marks and requires careful textual evidence, while writing needs planning time built in. A rough guide is 1 minute per mark plus 5 minutes planning for the writing task.',
+          'About 15 minutes to read the three texts, then about 25 minutes for each question, leaving 5 minutes for checking. Every question carries the same 20 marks, so each deserves the same time. Within Questions 2 and 3 the time is split by the marks for each part, so the 15-mark summary takes most of the 25 minutes for Question 2.',
         marks: 4,
       },
       {
@@ -136,10 +147,10 @@ export const y10IgcseLessons: LessonPlan[] = [
       },
       {
         question:
-          'A student spends 40 minutes on Question 1 (worth 10 marks) and rushes the final writing question (worth 25 marks) in 15 minutes. What advice would you give them?',
+          'A student spends 40 minutes on Question 1 and has only 10 minutes left for Question 4, the extended response. Both are worth 20 marks. What advice would you give them?',
         lines: 5,
         modelAnswer:
-          'The student has spent disproportionate time on a lower-mark question. They should spend roughly 10-12 minutes on a 10-mark question and 25-30 minutes on a 25-mark question. Advice: practise under timed conditions, use the mark = minute rule as a guide, plan writing tasks before starting, and leave 5 minutes at the end to proofread.',
+          'The student has given one 20-mark question four times the time of another. Each question deserves about 25 minutes. Advice: practise under timed conditions, note the time at which each question should end, plan Question 4 briefly before starting it, and leave 5 minutes at the end to proofread.',
         marks: 3,
       },
     ],
@@ -312,10 +323,10 @@ export const y10IgcseLessons: LessonPlan[] = [
     ],
   },
 
-  // ── Lesson 3: Reading - Language Analysis (AO2) ──────────────────────────
+  // ── Lesson 3: Reading - Language Analysis (AO1) ──────────────────────────
   {
     id: 'y10-igcse-03-language-analysis',
-    title: 'Reading: Language Analysis (AO2)',
+    title: 'Reading: Language Analysis (AO1)',
     text: 'IGCSE English Language',
     board: 'CIE IGCSE',
     yearGroup: 'Year 10',
@@ -379,7 +390,7 @@ export const y10IgcseLessons: LessonPlan[] = [
         title: 'From Feature-Spotting to Analysis: Writing PEAL Paragraphs',
         duration: '22 minutes',
         instructions:
-          "Teacher models a full PEAL (Point, Evidence, Analysis, Link) paragraph on the board using one technique from the passage, thinking aloud to show the process. Emphasise: Analysis means exploring connotations, explaining the effect on the reader, and considering the writer's purpose - not just naming the technique. Students then write two PEAL paragraphs of their own, choosing different techniques from their annotations. After 14 minutes of writing, two volunteers share their work under the visualiser. The class evaluates each paragraph against the AO2 mark scheme band descriptors, identifying what moves a response from Band 2 (identifies features) to Band 4 (analyses effects with precision).",
+          "Teacher models a full PEAL (Point, Evidence, Analysis, Link) paragraph on the board using one technique from the passage, thinking aloud to show the process. Emphasise: Analysis means exploring connotations, explaining the effect on the reader, and considering the writer's purpose - not just naming the technique. Students then write two PEAL paragraphs of their own, choosing different techniques from their annotations. After 14 minutes of writing, two volunteers share their work under the visualiser. The class evaluates each paragraph against the level descriptors for the Question 3 language task, identifying what moves a response from Level 2 (names techniques, comments vaguely) to Level 4 (explains the choices confidently and begins to explain images).",
         differentiation: {
           support:
             'Provide a PEAL writing frame with sentence starters: "The writer creates a sense of...", "This is evident in the phrase...", "The word ___ connotes...", "This suggests to the reader that...".',
@@ -389,7 +400,7 @@ export const y10IgcseLessons: LessonPlan[] = [
         },
         resources: [
           'PEAL writing frame (support tier)',
-          'AO2 mark scheme band descriptors',
+          'Level descriptors for the Question 3 language task',
           'Vocabulary mat: analytical verbs (connotes, implies, evokes, reinforces)',
         ],
       },
@@ -398,7 +409,7 @@ export const y10IgcseLessons: LessonPlan[] = [
       title: 'Band It: Mark Scheme Bingo',
       duration: '6 minutes',
       instructions:
-        'Display three anonymous student responses (pre-prepared or from the lesson). Students read each response and decide which mark scheme band it falls into (Band 1-4), writing their answer on a mini-whiteboard. Teacher reveals the correct band for each and highlights the key features that distinguish between bands - particularly the difference between identifying a technique and analysing its effect.',
+        'Display three anonymous student responses (pre-prepared or from the lesson). Students read each response and decide which level of the Question 3 language task it reaches (Level 1-5), writing their answer on a mini-whiteboard. Teacher reveals the correct level for each and highlights the key features that distinguish between levels - particularly the difference between identifying a technique and analysing its effect.',
       differentiation: {
         support: 'Provide a simplified band descriptor summary to reference.',
         core: 'Students justify their band decision with a specific reason.',
@@ -407,11 +418,11 @@ export const y10IgcseLessons: LessonPlan[] = [
       },
     },
     homework:
-      'Write three PEAL paragraphs analysing language in a new unseen extract. Focus on word-level analysis and aim for Band 3 or above. Underline the Analysis section of each paragraph to self-check that you have moved beyond feature-spotting.',
+      'Write three PEAL paragraphs analysing language in a new unseen extract. Focus on word-level analysis and aim for Level 3 or above. Underline the Analysis section of each paragraph to self-check that you have moved beyond feature-spotting.',
     worksheetQuestions: [
       {
         question:
-          'What is the difference between identifying a language technique and analysing its effect? Explain with an example. [AO2]',
+          'What is the difference between identifying a language technique and analysing its effect? Explain with an example. [AO1]',
         lines: 5,
         modelAnswer:
           'Identifying means naming the technique, e.g. "The writer uses a metaphor." Analysing means explaining the effect on the reader, e.g. "The metaphor \'the city was a jungle\' suggests chaos and survival instincts, creating an atmosphere of danger. The connotations of \'jungle\' - wildness, predators, entanglement - imply the city is unpredictable and threatening." Analysis explores meaning; identification merely labels.',
@@ -419,7 +430,7 @@ export const y10IgcseLessons: LessonPlan[] = [
       },
       {
         question:
-          'Read the following sentence: "The wind screamed through the broken windows, clawing at the curtains." Identify two language techniques and analyse the effect of each. [AO2]',
+          'Read the following sentence: "The wind screamed through the broken windows, clawing at the curtains." Identify two language techniques and analyse the effect of each. [AO1]',
         lines: 8,
         modelAnswer:
           'Personification: "The wind screamed" gives the wind a human voice, suggesting pain or fury. The verb "screamed" has connotations of distress and violence, which makes the setting feel hostile and alive, unsettling the reader. Personification: "clawing at the curtains" suggests the wind is an animal or predator, with "clawing" implying aggression and desperation. Together, these techniques create an atmosphere of threat, as if the house is under attack from nature itself.',
@@ -427,7 +438,7 @@ export const y10IgcseLessons: LessonPlan[] = [
       },
       {
         question:
-          'Write a PEAL paragraph analysing the effect of the following: "She moved through the crowd like smoke, unseen and untouchable." [AO2]',
+          'Write a PEAL paragraph analysing the effect of the following: "She moved through the crowd like smoke, unseen and untouchable." [AO1]',
         lines: 8,
         modelAnswer:
           'The writer presents the character as elusive and mysterious. This is evident in the simile "like smoke", which compares her movement to something intangible and ephemeral. The connotations of smoke - impermanence, obscurity, and the inability to grasp it - suggest she deliberately avoids attention. The parallel adjectives "unseen and untouchable" reinforce this impression, implying she exists on a different plane from the crowd, either by choice or by nature. This creates intrigue for the reader and positions her as a figure of quiet power.',
@@ -435,7 +446,7 @@ export const y10IgcseLessons: LessonPlan[] = [
       },
       {
         question:
-          'Explain what a "semantic field" is and why a writer might use one. Give an example. [AO2]',
+          'Explain what a "semantic field" is and why a writer might use one. Give an example. [AO1]',
         lines: 4,
         modelAnswer:
           'A semantic field is a group of words that relate to the same theme or concept. A writer might use a semantic field of war (e.g. "battle", "armour", "siege", "defeated") to describe a relationship, suggesting conflict and hostility. This creates a sustained impression and reinforces the writer\'s intended tone or message throughout the text.',
@@ -443,7 +454,7 @@ export const y10IgcseLessons: LessonPlan[] = [
       },
       {
         question:
-          'A student writes: "The writer uses alliteration in \'dark, desolate depths.\' This is effective because it sounds good." Rewrite this response to achieve a higher mark. [AO2]',
+          'A student writes: "The writer uses alliteration in \'dark, desolate depths.\' This is effective because it sounds good." Rewrite this response to achieve a higher mark. [AO1]',
         lines: 6,
         modelAnswer:
           'The writer employs the alliterative phrase "dark, desolate depths" to create a heavy, oppressive rhythm that mirrors the bleakness of the setting. The repetition of the harsh plosive "d" sound creates a drumming effect, suggesting something inescapable and relentless. The adjective "desolate" connotes emptiness and abandonment, while "depths" implies something hidden and unknowable, contributing to an atmosphere of dread and hopelessness.',
@@ -454,10 +465,10 @@ export const y10IgcseLessons: LessonPlan[] = [
       'The most common weakness at IGCSE is feature-spotting without analysis. Repeatedly model the difference using "So what?" questioning: "You\'ve identified a metaphor - so what? What does it do to the reader?"',
       'Encourage students to analyse individual words within a technique, not just the technique as a whole. Word-level zoom is what distinguishes top-band responses.',
       'The PEAL frame should be seen as a scaffold that students eventually internalise, not a rigid template. Top responses integrate analysis fluidly.',
-      'Band descriptors should become a familiar reference tool - consider laminating them for regular use.',
+      'Level descriptors should become a familiar reference tool: consider laminating them for regular use.',
     ],
     targetedSkills: [
-      'AO2 Language Analysis',
+      'AO1 Language Analysis',
       'Subject Terminology',
       'PEAL Paragraphs',
       'Connotation Analysis',
@@ -532,7 +543,7 @@ export const y10IgcseLessons: LessonPlan[] = [
         title: 'Timed Writing: Article or Speech Opening',
         duration: '20 minutes',
         instructions:
-          'Present an exam-style transactional writing prompt, e.g. "Write an article for a local newspaper in which you argue that more green spaces are needed in urban areas." Students have 3 minutes to plan (using a planning template: Purpose, Audience, Form, Key Arguments, Techniques) and 17 minutes to write an opening paragraph and two developed body paragraphs. Emphasise: the opening must hook the reader, establish the form, and make the purpose clear. After writing, teacher projects a model response and students compare their work, noting strengths and areas for development.',
+          'Present an exam-style transactional writing prompt, e.g. "Write an article for a local newspaper in which you argue that more green spaces are needed in urban areas." Students have 3 minutes to plan (using a planning template: Purpose, Audience, Form, Key Arguments, Techniques) and 17 minutes to write an opening paragraph and two developed body paragraphs. Emphasise: the opening must hook the reader, establish the form, and make the purpose clear. After writing, teacher projects a model response and students compare their work, noting strengths and areas for development. In the exam this writing is based on a text: Paper 1 Question 4 on Text C, and Paper 2 Question 1(b) on one or two short texts, so for full practice give students a short text whose ideas they must use.',
         differentiation: {
           support:
             'Provide a structured planning template with prompts and a writing frame for the opening paragraph.',
@@ -560,7 +571,7 @@ export const y10IgcseLessons: LessonPlan[] = [
       },
     },
     homework:
-      'Redraft your timed piece from this lesson into a complete article or speech (minimum 350 words). Include at least five different persuasive techniques and highlight each one with a margin annotation explaining its intended effect.',
+      'Redraft your timed piece from this lesson into a complete article or speech (about 250 to 300 words, as Paper 1 Question 4 asks, or 250 to 350 for Paper 2 Question 1(b)). Include at least five different persuasive techniques and highlight each one with a margin annotation explaining its intended effect.',
     worksheetQuestions: [
       {
         question:
@@ -628,7 +639,7 @@ export const y10IgcseLessons: LessonPlan[] = [
     duration: '60 minutes',
     objectives: [
       'Apply reading and writing skills under timed exam conditions',
-      'Manage time effectively across both sections of Paper 1',
+      'Manage time effectively across the four questions of Paper 1',
       'Self-assess responses using mark scheme criteria and band descriptors',
       'Identify personal strengths and areas for targeted improvement',
     ],
@@ -666,10 +677,10 @@ export const y10IgcseLessons: LessonPlan[] = [
     },
     mainActivities: [
       {
-        title: 'Timed Exam Practice: Reading Section',
+        title: 'Timed Exam Practice: Reading Questions',
         duration: '22 minutes',
         instructions:
-          'Distribute a past/specimen paper reading passage and a selection of questions covering retrieval (1-2 marks), inference (3-4 marks), and language analysis (5-6 marks). Students work in silence under strict timed conditions. Teacher displays a countdown timer. Students should annotate the passage before answering, as practised in previous lessons. No teacher input during the timed period - this simulates exam conditions. After 22 minutes, pens down.',
+          'Distribute a past/specimen paper reading passage and a selection of short questions on retrieval and inference, as in Question 1, and a shortened language task, as in Question 3. Students work in silence under strict timed conditions. Teacher displays a countdown timer. Students should annotate the passage before answering, as practised in previous lessons. No teacher input during the timed period - this simulates exam conditions. After 22 minutes, pens down.',
         differentiation: {
           support:
             'Provide a reduced question set (three questions instead of five) to allow adequate time. Include an annotation prompt sheet as a reminder.',
@@ -685,10 +696,10 @@ export const y10IgcseLessons: LessonPlan[] = [
         ],
       },
       {
-        title: 'Timed Exam Practice: Writing Section',
+        title: 'Timed Exam Practice: Question 4',
         duration: '18 minutes',
         instructions:
-          'Present a transactional writing prompt from a past paper (e.g. article, speech, or letter). Students spend 3 minutes planning using the PAF method (Purpose, Audience, Form) and 15 minutes writing their response. Emphasise: quality of opening, structural features appropriate to form, and variety of persuasive techniques. Pens down at 18 minutes. Students immediately underline any persuasive techniques they used and note the form conventions they included in the margin.',
+          'Present a Question 4 task from a specimen or past paper: writing in a set form, such as an article, speech or letter, that uses and develops ideas from the text students have just read. Students spend 3 minutes planning using the PAF method (Purpose, Audience, Form) and 15 minutes writing their response (in the exam the question has about 25 minutes). Emphasise: quality of opening, structural features appropriate to form, variety of persuasive techniques, and use of the text, which earns half the marks. Pens down at 18 minutes. Students immediately underline any persuasive techniques they used and note the form conventions they included in the margin.',
         differentiation: {
           support:
             'Provide a planning template and a form conventions checklist to reference during writing.',
@@ -707,7 +718,7 @@ export const y10IgcseLessons: LessonPlan[] = [
       title: 'Self-Assessment and Target Setting',
       duration: '10 minutes',
       instructions:
-        'Distribute the mark scheme for both sections. Students self-assess their reading responses, awarding marks with justification. For the writing section, students use the band descriptors to identify which band their response falls into. Students then complete a target-setting pro forma: (1) My strongest area was... (2) I need to improve... (3) My specific target for next time is... Teacher collects these for review and uses them to inform future lesson planning.',
+        'Distribute the mark scheme. Students self-assess their reading responses, awarding marks with justification. For Question 4, students use the level descriptors to place their response, once for reading and once for writing. Students then complete a target-setting pro forma: (1) My strongest area was... (2) I need to improve... (3) My specific target for next time is... Teacher collects these for review and uses them to inform future lesson planning.',
       differentiation: {
         support:
           'Provide a simplified mark scheme with student-friendly language and examples of each band.',
@@ -737,10 +748,10 @@ export const y10IgcseLessons: LessonPlan[] = [
       },
       {
         question:
-          'Using the mark scheme, identify which band your best reading answer falls into. Quote the band descriptor that matches your response and explain why.',
+          'Using the mark scheme, identify which level your language task answer reaches. Refer to the level descriptor that matches your response and explain why.',
         lines: 5,
         modelAnswer:
-          "Responses will vary. A strong self-assessment might say: \"My inference response falls into Band 3 because I 'make clear inferences supported by relevant textual reference' - I used a short quotation and explained what it suggests. To reach Band 4, I would need to 'analyse the effects of language with precision', which means exploring word-level connotations in more depth.\"",
+          'Responses will vary. A strong self-assessment might say: "My language task answer reaches Level 3: I chose sensible words and explained what most of them mean, but my comments on their effect were basic. To reach Level 4, I would need to explain what my choices mean in the passage with confidence and begin to explain the images, which means exploring word-level connotations in more depth."',
         marks: 3,
       },
       {
@@ -748,15 +759,15 @@ export const y10IgcseLessons: LessonPlan[] = [
           'Write three specific targets for your Paper 1 revision, based on today\'s practice. Each target should be measurable (e.g. "I will practise two timed inference questions per week").',
         lines: 6,
         modelAnswer:
-          'Example targets: (1) I will practise one timed language analysis paragraph every other day, focusing on word-level analysis. (2) I will learn the form conventions for all five transactional writing forms and test myself weekly. (3) I will complete one full timed Paper 1 practice every fortnight and self-assess using the mark scheme.',
+          'Example targets: (1) I will practise one timed language analysis paragraph every other day, focusing on word-level analysis. (2) I will learn the conventions of the six forms Question 4 can set (letter, report, journal, speech, interview and article) and test myself weekly. (3) I will complete one full timed Paper 1 practice every fortnight and self-assess using the mark scheme.',
         marks: 3,
       },
       {
         question:
-          'A student runs out of time on the writing section and only writes one paragraph. What three pieces of advice would you give them for next time?',
+          'A student runs out of time on Question 4 and only writes one paragraph. What three pieces of advice would you give them for next time?',
         lines: 5,
         modelAnswer:
-          '(1) Plan before writing - spend 3 minutes creating a brief outline so you know where you are going. (2) Use the "1 mark = 1 minute" rule to allocate time proportionally, and set a mental checkpoint halfway through. (3) Practise writing under timed conditions regularly so that speed and fluency improve over time. A one-paragraph response will be capped at Band 1 regardless of quality.',
+          '(1) Plan before writing - spend 3 minutes creating a brief outline so you know where you are going. (2) Give each 20-mark question about 25 minutes, and note the time at which each should end. (3) Practise writing under timed conditions regularly so that speed and fluency improve over time. A one-paragraph response cannot cover the bullet points the task sets, which limits its marks however well it is written.',
         marks: 3,
       },
     ],

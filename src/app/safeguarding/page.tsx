@@ -247,8 +247,8 @@ export default async function SafeguardingPolicyPage() {
               The English Hub currently operates a single-DSL model: Lauren Johnson is the only
               Designated Safeguarding Lead and there is no Deputy DSL. During any period in which
               the DSL is unavailable, urgent concerns should be escalated directly to the relevant
-              external service listed below &mdash; Childline, NSPCC, CEOP, or, in an emergency,
-              999. We will appoint a Deputy DSL as the team grows.
+              external service listed below - Childline, NSPCC, CEOP, or, in an emergency, 999. We
+              will appoint a Deputy DSL as the team grows.
             </p>
           </div>
           <p>{await t('safeguard.s3.p_outro')}</p>
@@ -384,7 +384,7 @@ export default async function SafeguardingPolicyPage() {
           <ul className="ms-4 list-disc space-y-1">
             <li>Do not investigate or interview the child yourself.</li>
             <li>Do not promise confidentiality you cannot keep.</li>
-            <li>Do not delete any evidence &mdash; preserve the record.</li>
+            <li>Do not delete any evidence - preserve the record.</li>
             <li>Do not discuss the concern with anyone who does not need to know.</li>
           </ul>
 
@@ -451,12 +451,12 @@ export default async function SafeguardingPolicyPage() {
           <p>
             Confidentiality is <strong>not</strong> absolute. We share information about a
             safeguarding concern on a strict need-to-know basis, and we will share with statutory
-            agencies when required to keep a child safe &mdash; even without consent. We never
-            promise a child that a disclosure will be kept secret; we explain, in age-appropriate
-            language, what we will do with the information they share. Where informing a parent or
-            carer might put the child at greater risk (for example where the concern is about harm
-            within the home), we escalate directly to social services and take their advice before
-            contacting the family.
+            agencies when required to keep a child safe - even without consent. We never promise a
+            child that a disclosure will be kept secret; we explain, in age-appropriate language,
+            what we will do with the information they share. Where informing a parent or carer might
+            put the child at greater risk (for example where the concern is about harm within the
+            home), we escalate directly to social services and take their advice before contacting
+            the family.
           </p>
         </PolicySection>
 
@@ -576,9 +576,9 @@ export default async function SafeguardingPolicyPage() {
         <PolicySection id="whistleblowing" number="10" title="Whistleblowing">
           <p>
             Any staff member, contractor, or volunteer who believes that a safeguarding concern is
-            not being handled properly &mdash; or who is concerned that the safeguarding policy
-            itself is being ignored or undermined &mdash; can raise the issue with any of the
-            following, in any order:
+            not being handled properly - or who is concerned that the safeguarding policy itself is
+            being ignored or undermined - can raise the issue with any of the following, in any
+            order:
           </p>
           <ul className="ms-4 list-disc space-y-1">
             <li>The DSL&rsquo;s line manager (the CEO)</li>
@@ -625,30 +625,29 @@ export default async function SafeguardingPolicyPage() {
           </p>
           <ul className="ms-4 list-disc space-y-1">
             <li>
-              <strong className="text-primary">Keeping Children Safe in Education (KCSIE)</strong>{' '}
-              &mdash; statutory guidance for organisations working with children in the English
-              education system.
+              <strong className="text-primary">Keeping Children Safe in Education (KCSIE)</strong> -
+              statutory guidance for organisations working with children in the English education
+              system.
             </li>
             <li>
-              <strong className="text-primary">Working Together to Safeguard Children</strong>{' '}
-              &mdash; the inter-agency framework for safeguarding and promoting the welfare of
-              children.
+              <strong className="text-primary">Working Together to Safeguard Children</strong> - the
+              inter-agency framework for safeguarding and promoting the welfare of children.
             </li>
             <li>
-              <strong className="text-primary">Children Act 2004</strong> &mdash; the underlying
-              statutory framework for safeguarding in England and Wales.
+              <strong className="text-primary">Children Act 2004</strong> - the underlying statutory
+              framework for safeguarding in England and Wales.
             </li>
             <li>
-              <strong className="text-primary">Online Safety Act 2023</strong> &mdash; applied to
-              the extent our service is in scope, with particular attention to age-appropriate
-              design and harms to children.
+              <strong className="text-primary">Online Safety Act 2023</strong> - applied to the
+              extent our service is in scope, with particular attention to age-appropriate design
+              and harms to children.
             </li>
             <li>
               <strong className="text-primary">
                 UK GDPR and the Data Protection Act 2018, alongside the ICO Age Appropriate Design
                 Code
               </strong>{' '}
-              &mdash; governing how we handle children&rsquo;s personal data.
+              - governing how we handle children&rsquo;s personal data.
             </li>
           </ul>
           <p>

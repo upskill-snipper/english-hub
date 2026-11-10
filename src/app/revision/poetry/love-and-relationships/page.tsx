@@ -319,7 +319,7 @@ export default function LoveAndRelationshipsPage() {
           <span className="font-medium text-foreground">
             {t('poetry_hub.lr.rights_notice_label')}{' '}
           </span>
-          Seven of these fifteen poems remain in copyright &mdash; Heaney&rsquo;s <em>Follower</em>,
+          Seven of these fifteen poems remain in copyright - Heaney&rsquo;s <em>Follower</em>,
           Nagra&rsquo;s <em>Singh Song!</em> and Waterhouse&rsquo;s <em>Climbing My Grandfather</em>{' '}
           (&copy; Faber &amp; Faber), Causley&rsquo;s <em>Eden Rock</em> (&copy; David Higham
           Associates), Day-Lewis&rsquo;s <em>Walking Away</em> (&copy; Peters Fraser &amp; Dunlop),

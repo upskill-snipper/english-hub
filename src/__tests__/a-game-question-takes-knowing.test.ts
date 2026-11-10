@@ -46,8 +46,11 @@ const MIN_ITEMS: Record<string, number> = {
   'paragraph-jumble': 80,
 }
 
-/** Banks being rebuilt, 24 October 2026: each leaves this list as it is done. */
-const NOT_YET = new Set(['grade-climber'])
+/**
+ * Banks being rebuilt, 24 October 2026: each left this list as it was done.
+ * Empty since 31 October 2026, when Grade Climber, the last, passed.
+ */
+const NOT_YET = new Set<string>()
 
 const BANKS_DIR = join(process.cwd(), 'src/data/games/banks')
 const SLUGS = existsSync(BANKS_DIR)

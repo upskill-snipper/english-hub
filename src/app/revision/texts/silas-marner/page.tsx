@@ -136,116 +136,116 @@ const data: TextGuideData = {
     {
       quote:
         '"In the days when the spinning-wheels hummed busily in the farmhouses\u2014and even great ladies, clothed in silk and thread-lace, had their toy spinning-wheels of polished oak\u2014there might be seen in districts far away among the lanes, or deep in the bosom of the hills, certain pallid undersized men, who, by the side of the brawny country-folk, looked like the remnants of a disinherited race."',
-      who: 'Narrator \u2014 Chapter 1, opening',
+      who: 'Narrator - Chapter 1, opening',
       analysis:
         'The famous opening places the novel in a vanished pre-industrial world of spinning-wheels and handloom weaving, and it introduces the weavers as marginal, alien, almost ghostly figures. Eliot\u2019s long, flowing sentence and the phrase "remnants of a disinherited race" prepare the reader for a story about exile and outsider status, and locate Silas within a wider social change that the Victorian reader was already living through.',
     },
     {
       quote:
         '"Minds that have been unhinged from their old faith and love, have perhaps sought this Lethean influence of exile, in which the past becomes dreamy because its symbols have all vanished, and the present too is dreamy because it is linked with no memories."',
-      who: 'Narrator \u2014 Chapter 2',
+      who: 'Narrator - Chapter 2',
       analysis:
         'Eliot\u2019s narrator explains what exile does to the mind: without familiar people, places and rituals, past and present both lose reality. The reference to Lethe, the classical river of forgetting, lifts Silas\u2019s case to a mythic plane, while the repeated adjective "dreamy" enacts the drifting, unanchored quality of his existence. The sentence sets up the fifteen years of numb, mechanical life that follow his arrival in Raveloe.',
     },
     {
       quote:
         '"The livelong day he sat in his loom, his ear filled with its monotony, his eyes bent close down on the slow growth of sameness in the brownish web, his muscles moving with such even repetition that their pause seemed almost as much a constraint as the holding of his breath."',
-      who: 'Narrator \u2014 Chapter 2',
+      who: 'Narrator - Chapter 2',
       analysis:
         'The dense, rhythmic prose enacts the deadening repetition of Silas\u2019s weaving. Eliot reduces him almost to the machine he works, with "sameness" and "even repetition" suggesting a life drained of variety or meaning, and the final comparison of his body\u2019s rest to a held breath makes even stillness feel unnatural. The passage makes clear that mechanical labour without human contact is itself a form of spiritual damage.',
     },
     {
       quote:
         '"He had seemed to love it little in the years when every penny had its purpose for him; for he loved the purpose then."',
-      who: 'Narrator \u2014 Chapter 2',
+      who: 'Narrator - Chapter 2',
       analysis:
         'Eliot tracks the psychological shift by which Silas\u2019s gold moves from ordinary earnings to beloved hoard. The word "then" is the key: once the purpose has gone, the coins take a relational role, which Eliot calls their "companionship", and fill a space that should be occupied by a person. The quiet horror of the sentence is that Silas himself no longer seems to recognise the difference, which tells us how far his isolation has damaged him.',
     },
     {
       quote:
         '"The gold had asked that he should sit weaving longer and longer, deafened and blinded more and more to all things except the monotony of his loom and the repetition of his web; but Eppie called him away from his weaving, and made him think all its pauses a holiday, reawakening his senses with her fresh life."',
-      who: 'Narrator \u2014 Chapter 14',
+      who: 'Narrator - Chapter 14',
       analysis:
         'The sentence sets gold and child against each other as opposed moral principles. The coins demanded isolation and narrowing; Eppie demands attention to the world outside the loom. The repeated verbs "deafened and blinded" give way to "reawakening his senses," and the structural parallel makes the novel\u2019s argument explicit without abandoning its realist restraint. Eliot\u2019s syntax, with its long accumulating clauses before the turn at "but Eppie," enacts the slow transformation in prose rhythm.',
     },
     {
       quote:
         '"In old days there were angels who came and took men by the hand and led them away from the city of destruction. We see no white-winged angels now. But yet men are led away from threatening destruction: a hand is put into theirs, which leads them forth gently towards a calm and bright land, so that they look no more backward; and the hand may be a little child\u2019s."',
-      who: 'Narrator \u2014 Chapter 14',
+      who: 'Narrator - Chapter 14',
       analysis:
         'One of the most widely quoted passages in the novel. Eliot rewrites the religious image of the guiding angel in secular, domestic terms: a small child can do the work that theology once assigned to the supernatural. The allusion to the "city of destruction" in Bunyan\u2019s Pilgrim\u2019s Progress deepens the religious echo while quietly replacing it. The quiet substitution is characteristic of Eliot\u2019s humanism and states the novel\u2019s moral argument in a single, memorable sentence.',
     },
     {
       quote:
         '"it\u2019s a lone thing\u2014and I\u2019m a lone thing. My money\u2019s gone, I don\u2019t know where\u2014and this is come from I don\u2019t know where."',
-      who: 'Silas Marner \u2014 Chapter 13',
+      who: 'Silas Marner - Chapter 13',
       analysis:
         'Silas\u2019s plain-speaking claim to the child on the night of her arrival, made to Godfrey at the cottage hearth. The parallel of "lone thing" and the deliberate echo between the lost gold and the found child crystallise the novel\u2019s central substitution, while the repeated "I don\u2019t know where" gives his grief and wonder equal weight. Eliot writes Silas\u2019s speech in a restrained dialect register that gives moral weight to his simplicity and contrasts with Godfrey\u2019s polished evasiveness in the same scene.',
     },
     {
       quote:
         '"Eh, my precious child, the blessing was mine. If you hadn\u2019t been sent to save me, I should ha\u2019 gone to the grave in my misery."',
-      who: 'Silas Marner \u2014 Chapter 19',
+      who: 'Silas Marner - Chapter 19',
       analysis:
         'Alone with Eppie on the evening his gold is recovered, before Godfrey and Nancy arrive, Silas answers her words that but for him she would have been taken to the workhouse, with "nobody to love me". He states openly what the narrative has been arguing throughout: Eppie has saved him, not the other way around. The reversal of the Victorian expectation that the adult rescues the child is a key part of Eliot\u2019s revaluation of parenthood. The passive phrase "been sent" leaves the source of Eppie\u2019s arrival ambiguous between chance and providence, which is exactly the space Eliot wants the novel to inhabit.',
     },
     {
       quote: '"I can\u2019t feel as I\u2019ve got any father but one."',
-      who: 'Eppie \u2014 Chapter 19',
+      who: 'Eppie - Chapter 19',
       analysis:
         'Eppie\u2019s rejection of Godfrey\u2019s claim, made "impetuously, while the tears gathered", is the moral climax of the novel. The grammar is deliberately simple because the argument is absolute: her sense of fatherhood is not about biology but about who has cared for her. Eliot makes the case through the voice of an uneducated young woman, implicitly contrasting Eppie\u2019s clarity with Godfrey\u2019s years of concealment and his unspoken assumption that blood and class outweigh years of daily care.',
     },
     {
       quote:
         '"I\u2019m promised to marry a working-man, as\u2019ll live with father, and help me to take care of him."',
-      who: 'Eppie \u2014 Chapter 19',
+      who: 'Eppie - Chapter 19',
       analysis:
         'Eppie follows her refusal with a social as well as personal commitment: she will marry inside her class, and her future husband Aaron will join the household rather than take her out of it. Eliot is careful to make the decision economic and social as well as emotional, so that it cannot be reduced to sentimental loyalty. The working life with Aaron is shown as a positive choice rather than a sacrifice, which is a significant departure from Victorian narratives of rising in society.',
     },
     {
       quote:
         '"There\u2019s good i\u2019 this world\u2014I\u2019ve a feeling o\u2019 that now; and it makes a man feel as there\u2019s a good more nor he can see, i\u2019 spite o\u2019 the trouble and the wickedness."',
-      who: 'Silas Marner \u2014 Chapter 16',
+      who: 'Silas Marner - Chapter 16',
       analysis:
         'Silas\u2019s recovered faith is expressed in carefully modest terms. He does not reclaim the theology of Lantern Yard or any particular creed; he describes a feeling, rooted in experience, that there is good beyond what he can see, even "i’ spite o’ the trouble and the wickedness" he has suffered. Eliot uses the weaver\u2019s dialect to give the claim weight without overstating it, and the sentence is a key statement of the novel\u2019s humanist theology.',
     },
     {
       quote:
         '"The sense of security more frequently springs from habit than from conviction, and for this reason it often subsists after such a change in the conditions as might have been expected to suggest alarm."',
-      who: 'Narrator \u2014 Chapter 5',
+      who: 'Narrator - Chapter 5',
       analysis:
         'One of Eliot\u2019s sharpest aphorisms about false security. The sentence explains how Silas can walk home at ease on the night his gold is stolen, and it reaches beyond him to a general claim about human psychology: people keep feeling safe long after the reasons for safety have disappeared. Eliot\u2019s narrator regularly lifts a local situation into a universal observation in this way, which is characteristic of the essayistic voice of her mature fiction.',
     },
     {
       quote:
         '"Favourable Chance, I fancy, is the god of all men who follow their own devices instead of obeying a law they believe in."',
-      who: 'Narrator \u2014 Chapter 9',
+      who: 'Narrator - Chapter 9',
       analysis:
         'Eliot names Godfrey\u2019s moral failing with unusual directness. By calling Chance a "god" worshipped by the weak, she exposes the drift by which Godfrey has allowed his situation to rot, hoping that something accidental will save him from the consequences of his concealment. The formulation also stands behind the whole novel\u2019s treatment of chance events, which are never presented as neutral but always as moral tests the characters can pass or fail.',
     },
     {
       quote: '"Raveloe was not a place where moral censure was severe."',
-      who: 'Narrator \u2014 Chapter 3',
+      who: 'Narrator - Chapter 3',
       analysis:
         'A deceptively mild sentence that does important work. Eliot sketches Raveloe as a place of easy-going tolerance, which is partly a virtue because Silas is eventually received back without hostility, and partly a failing because the Cass brothers grow up unchecked. The line captures Eliot\u2019s realist refusal to present any community as simply good or bad, and quietly contrasts the village\u2019s lax mood with the unforgiving chapel world that falsely condemned Silas at Lantern Yard.',
     },
     {
       quote:
         '"It\u2019s the will o\u2019 Them above as a many things should be dark to us; but there\u2019s some things as I\u2019ve never felt i\u2019 the dark about, and they\u2019re mostly what comes i\u2019 the day\u2019s work."',
-      who: 'Dolly Winthrop \u2014 Chapter 21',
+      who: 'Dolly Winthrop - Chapter 21',
       analysis:
         'Dolly\u2019s rough village theology condenses the novel\u2019s moral position. Big metaphysical questions may be dark, but the daily work of care and kindness is clear enough, and that is where moral life is actually lived. Eliot gives this central statement to an uneducated woman, not a clergyman or the narrator, and the reader is meant to take Dolly\u2019s practical authority entirely seriously. The line also echoes the recovered faith Silas voices to her in Chapter 16.',
     },
     {
       quote: '"The past becomes dreamy because its symbols have all vanished."',
-      who: 'Narrator \u2014 Chapter 2',
+      who: 'Narrator - Chapter 2',
       analysis:
         'A short extract from the longer passage about exile, often cited on its own. The line explains why Silas\u2019s Lantern Yard life fades from him during his years in Raveloe: without the chapel, the familiar faces, the streets and the hymns, memory itself loses hold. It also anticipates his final visit to the demolished Lantern Yard in Part Two, where the "symbols" have literally vanished beneath a new factory and he is forced to accept that there is nothing left to return to.',
     },
     {
       quote:
         '"O father," said Eppie, "what a pretty home ours is! I think nobody could be happier than we are."',
-      who: 'Eppie \u2014 Conclusion, closing lines',
+      who: 'Eppie - Conclusion, closing lines',
       analysis:
         'Eliot ends the novel on an exchange of simple domestic happiness rather than a grand moral pronouncement. Eppie\u2019s line values the modest cottage above the Red House and closes the theme of class choice begun in the confrontation of Chapter 19. The deliberate understatement of the final scene is characteristic of Eliot\u2019s restrained realism: the transformed world of the novel is summed up not in rhetoric but in a quiet domestic sentence spoken by a young woman to the father who has raised her.',
     },
@@ -579,7 +579,7 @@ const REVISION_TOPICS = [
     summary: 'Eliot argues that fatherhood is earned through daily care, not through biology.',
     keyPoints: [
       'Godfrey is the biological father; Silas is the real one',
-      '"I can\u2019t feel as I\u2019ve got any father but one" \u2014 Eppie\u2019s decisive line',
+      '"I can\u2019t feel as I\u2019ve got any father but one" - Eppie\u2019s decisive line',
       'Eppie refuses class promotion to stay with Silas',
       'The reclamation scene stages the nature/nurture argument',
       'Aaron Winthrop will join the household rather than take Eppie away',
@@ -692,7 +692,7 @@ export default async function SilasMarnerPage() {
         ]}
         quizQuotes={data.quotations.slice(0, 10).map((q) => ({
           quote: q.quote.replace(/["\u201C\u201D]/g, ''),
-          character: q.who.split('\u2014')[0].trim(),
+          character: q.who.split(/ [-\u2014] /)[0].trim(),
           context: q.analysis.slice(0, 100) + '...',
         }))}
         essayQuestions={[

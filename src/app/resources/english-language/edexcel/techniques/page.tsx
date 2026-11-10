@@ -164,7 +164,7 @@ const techniques: Technique[] = [
     name: 'Semantic Field',
     type: 'Language',
     definition: 'A group of words within a text that relate to the same topic or theme.',
-    example: '"Trapped, caged, imprisoned, shackled" \u2014 a semantic field of captivity.',
+    example: '"Trapped, caged, imprisoned, shackled" - a semantic field of captivity.',
     source: 'Common across all text types',
     effect:
       "Reinforces a theme or mood by creating a pattern of related associations. The cumulative effect builds a dominant impression in the reader's mind.",
@@ -474,7 +474,7 @@ export default function TechniquesPage() {
                 <div className="mt-3 rounded-lg bg-muted p-4">
                   <p className="text-sm font-medium text-muted-foreground">Example:</p>
                   <p className="mt-1 text-sm italic text-foreground">{t.example}</p>
-                  <p className="mt-1 text-xs text-muted-foreground">&mdash; {t.source}</p>
+                  <p className="mt-1 text-xs text-muted-foreground">- {t.source}</p>
                 </div>
                 <div className="mt-3 rounded-lg bg-primary/10 p-4">
                   <p className="text-sm font-medium text-primary">Effect on the reader:</p>
@@ -504,7 +504,7 @@ export default function TechniquesPage() {
                 <div className="mt-3 rounded-lg bg-muted p-4">
                   <p className="text-sm font-medium text-muted-foreground">Example:</p>
                   <p className="mt-1 text-sm italic text-foreground">{t.example}</p>
-                  <p className="mt-1 text-xs text-muted-foreground">&mdash; {t.source}</p>
+                  <p className="mt-1 text-xs text-muted-foreground">- {t.source}</p>
                 </div>
                 <div className="mt-3 rounded-lg bg-primary/10 p-4">
                   <p className="text-sm font-medium text-primary">Effect on the reader:</p>
@@ -536,7 +536,7 @@ export default function TechniquesPage() {
                 <div className="mt-3 rounded-lg bg-muted p-4">
                   <p className="text-sm font-medium text-muted-foreground">Example:</p>
                   <p className="mt-1 text-sm italic text-foreground">{t.example}</p>
-                  <p className="mt-1 text-xs text-muted-foreground">&mdash; {t.source}</p>
+                  <p className="mt-1 text-xs text-muted-foreground">- {t.source}</p>
                 </div>
                 <div className="mt-3 rounded-lg bg-success-50 p-4">
                   <p className="text-sm font-medium text-success-700">Effect on the reader:</p>

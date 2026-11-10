@@ -59,7 +59,7 @@ function QuoteCard({
       <p className="text-sm font-semibold text-violet-800 dark:text-violet-200 italic">
         {paraphrase ? quote : <>&ldquo;{quote}&rdquo;</>}
       </p>
-      {speaker && <p className="mt-1 text-xs font-medium text-violet-600">&mdash; {speaker}</p>}
+      {speaker && <p className="mt-1 text-xs font-medium text-violet-600">- {speaker}</p>}
       <p className="mt-2 text-sm text-muted-foreground">{analysis}</p>
     </div>
   )
@@ -106,7 +106,7 @@ export default function AnitaAndMePage() {
           </span>
         </div>
         <h1 className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
-          Anita and Me &mdash; Complete Revision Guide
+          Anita and Me - Complete Revision Guide
         </h1>
         <p className="mt-1 text-lg text-muted-foreground">Meera Syal, 1996</p>
         <p className="mt-3 max-w-3xl text-muted-foreground leading-relaxed">
@@ -151,12 +151,12 @@ export default function AnitaAndMePage() {
                 <h4 className="font-bold text-primary">{tr(`Setting and Frame`)}</h4>
                 <p className="mt-1 text-sm text-muted-foreground leading-relaxed">
                   The novel is set in 1972 in Tollington, a fictional ex-mining village in the West
-                  Midlands of England. Meena Kumar &mdash; nine years old at the start &mdash; is
-                  the only child of Punjabi parents who emigrated to Britain. The narrative is
-                  retrospective: an adult Meena looks back on the year that changed her, framing
-                  childhood through storytelling and memory. The village is on the brink of change
-                  as a new motorway is planned, and the close-knit, predominantly white
-                  working-class community begins to fracture.
+                  Midlands of England. Meena Kumar - nine years old at the start - is the only child
+                  of Punjabi parents who emigrated to Britain. The narrative is retrospective: an
+                  adult Meena looks back on the year that changed her, framing childhood through
+                  storytelling and memory. The village is on the brink of change as a new motorway
+                  is planned, and the close-knit, predominantly white working-class community begins
+                  to fracture.
                 </p>
               </div>
 
@@ -170,10 +170,10 @@ export default function AnitaAndMePage() {
                 <p className="mt-2 text-sm text-muted-foreground leading-relaxed">
                   Meena introduces Tollington and her parents (Mama and Papa), recalling the
                   gatherings of family friends she calls &ldquo;Aunties&rdquo; and
-                  &ldquo;Uncles.&rdquo; She is a compulsive liar &mdash; storytelling is how she
-                  navigates the gap between her Indian home life and her English village life. She
-                  steals a charity collection tin from Mr Ormerod&apos;s shop, an early sign of her
-                  moral confusion and her desire to be more like the village children.
+                  &ldquo;Uncles.&rdquo; She is a compulsive liar - storytelling is how she navigates
+                  the gap between her Indian home life and her English village life. She steals a
+                  charity collection tin from Mr Ormerod&apos;s shop, an early sign of her moral
+                  confusion and her desire to be more like the village children.
                 </p>
               </div>
 
@@ -186,10 +186,10 @@ export default function AnitaAndMePage() {
                 </h4>
                 <p className="mt-2 text-sm text-muted-foreground leading-relaxed">
                   Anita Rutter, three years older, becomes the queen of the village children and the
-                  object of Meena&apos;s fascination. Anita is bold, glamorous, and rebellious
-                  &mdash; everything Meena&apos;s parents are not. Meena begins to copy Anita&apos;s
-                  slang, her walk, and her contempt for adult authority. The friendship pulls Meena
-                  away from her family and toward a tougher, more violent peer culture.
+                  object of Meena&apos;s fascination. Anita is bold, glamorous, and rebellious -
+                  everything Meena&apos;s parents are not. Meena begins to copy Anita&apos;s slang,
+                  her walk, and her contempt for adult authority. The friendship pulls Meena away
+                  from her family and toward a tougher, more violent peer culture.
                 </p>
               </div>
 
@@ -216,11 +216,11 @@ export default function AnitaAndMePage() {
                   Nanima Arrives from India
                 </h4>
                 <p className="mt-2 text-sm text-muted-foreground leading-relaxed">
-                  Meena&apos;s maternal grandmother &mdash; Nanima &mdash; comes from the Punjab to
-                  live with the family. She speaks little English but communicates with Meena
-                  through stories, food, and physical warmth. Nanima becomes a counterweight to
-                  Anita, reconnecting Meena to her Punjabi heritage. For the first time, Meena
-                  begins to see her Indian identity as a source of pride rather than embarrassment.
+                  Meena&apos;s maternal grandmother - Nanima - comes from the Punjab to live with
+                  the family. She speaks little English but communicates with Meena through stories,
+                  food, and physical warmth. Nanima becomes a counterweight to Anita, reconnecting
+                  Meena to her Punjabi heritage. For the first time, Meena begins to see her Indian
+                  identity as a source of pride rather than embarrassment.
                 </p>
               </div>
 
@@ -232,13 +232,13 @@ export default function AnitaAndMePage() {
                   The F&ecirc;te and Sam Lowbridge
                 </h4>
                 <p className="mt-2 text-sm text-muted-foreground leading-relaxed">
-                  At the village f&ecirc;te, Sam Lowbridge &mdash; the local skinhead and
-                  Anita&apos;s boyfriend &mdash; makes a racist outburst about &ldquo;them
-                  blackies&rdquo; in front of the assembled community, including Meena&apos;s
-                  family. The moment shatters Meena&apos;s sense of belonging in Tollington. The
-                  community&apos;s embarrassed silence reveals how thin the village&apos;s tolerance
-                  has been all along. Meena realises that the racism she has tried to ignore is
-                  closer to home than she wanted to believe.
+                  At the village f&ecirc;te, Sam Lowbridge - the local skinhead and Anita&apos;s
+                  boyfriend - makes a racist outburst about &ldquo;them blackies&rdquo; in front of
+                  the assembled community, including Meena&apos;s family. The moment shatters
+                  Meena&apos;s sense of belonging in Tollington. The community&apos;s embarrassed
+                  silence reveals how thin the village&apos;s tolerance has been all along. Meena
+                  realises that the racism she has tried to ignore is closer to home than she wanted
+                  to believe.
                 </p>
               </div>
 
@@ -503,14 +503,14 @@ export default function AnitaAndMePage() {
               <p className="mt-2 text-sm text-muted-foreground leading-relaxed">
                 <em>{tr(`Anita and Me`)}</em> is a contemporary novel still in copyright. Its
                 quotations are not as standardised across study guides as the lines from Shakespeare
-                or Dickens. For the exam, you do not need long verbatim quotations &mdash; short,
-                embedded phrases are usually more effective. If you cannot remember the exact
-                wording, use a clear paraphrase: &ldquo;Meena describes herself as too Indian for
-                Tollington and not Indian enough to be a &lsquo;real&rsquo; Indian girl.&rdquo;
-                Examiners credit accurate reference even without verbatim quotation. The cards above
-                marked as paraphrased references summarise the novel rather than quote it; if you
-                want to use any of these as a direct quotation, cross-check the exact wording
-                against your own copy of the novel first.
+                or Dickens. For the exam, you do not need long verbatim quotations - short, embedded
+                phrases are usually more effective. If you cannot remember the exact wording, use a
+                clear paraphrase: &ldquo;Meena describes herself as too Indian for Tollington and
+                not Indian enough to be a &lsquo;real&rsquo; Indian girl.&rdquo; Examiners credit
+                accurate reference even without verbatim quotation. The cards above marked as
+                paraphrased references summarise the novel rather than quote it; if you want to use
+                any of these as a direct quotation, cross-check the exact wording against your own
+                copy of the novel first.
               </p>
             </div>
           </Section>
@@ -522,7 +522,7 @@ export default function AnitaAndMePage() {
             <div className="space-y-4">
               <div className="rounded-lg bg-muted p-4">
                 <h4 className="font-bold text-foreground">
-                  1. The Two Languages &mdash; English and Punjabi
+                  1. The Two Languages - English and Punjabi
                 </h4>
                 <p className="mt-1 text-sm text-muted-foreground leading-relaxed">
                   Punjabi words (Nanima, dhal, the names of foods and rituals) sit untranslated
@@ -539,7 +539,7 @@ export default function AnitaAndMePage() {
                 <p className="mt-1 text-sm text-muted-foreground leading-relaxed">
                   Tollington&apos;s pond is the locus of the novel&apos;s climax: the rescue of
                   Tracey. Stagnant, dangerous, and central to village geography, the pond is a
-                  symbol of Tollington itself &mdash; superficially familiar, in fact perilous,
+                  symbol of Tollington itself - superficially familiar, in fact perilous,
                   particularly for the children left unsupervised inside it. The rescue is also the
                   moment Meena chooses her own moral compass over Anita&apos;s indifference, so the
                   pond becomes the literal ground on which her break with Anita is enacted.
@@ -550,12 +550,12 @@ export default function AnitaAndMePage() {
                   3. Anita&apos;s Vanity Bag / Possessions
                 </h4>
                 <p className="mt-1 text-sm text-muted-foreground leading-relaxed">
-                  Anita&apos;s little prized possessions &mdash; her bag, her makeup, the small kit
-                  of early-teenage femininity she parades in front of the younger children &mdash;
-                  symbolise the &ldquo;grown-up&rdquo; English girlhood Meena envies. To Meena,
-                  these objects represent freedom, glamour, and acceptance. Syal slowly exposes them
-                  as cheap, performative, and bound up with the cruelty of the Rutter household. The
-                  objects shrink in value as Meena grows.
+                  Anita&apos;s little prized possessions - her bag, her makeup, the small kit of
+                  early-teenage femininity she parades in front of the younger children - symbolise
+                  the &ldquo;grown-up&rdquo; English girlhood Meena envies. To Meena, these objects
+                  represent freedom, glamour, and acceptance. Syal slowly exposes them as cheap,
+                  performative, and bound up with the cruelty of the Rutter household. The objects
+                  shrink in value as Meena grows.
                 </p>
               </div>
               <div className="rounded-lg bg-muted p-4">
@@ -578,8 +578,8 @@ export default function AnitaAndMePage() {
                   recklessness she has watched in the village children. Riding it is a small act of
                   becoming-Anita. The accident that breaks her leg punishes that wish: the freedom
                   she imagined is also a danger she cannot control. The bicycle is a classic
-                  coming-of-age symbol &mdash; the first vehicle, the first crash &mdash; weaponised
-                  by Syal to engineer the stillness Meena needs in order to think.
+                  coming-of-age symbol - the first vehicle, the first crash - weaponised by Syal to
+                  engineer the stillness Meena needs in order to think.
                 </p>
               </div>
               <div className="rounded-lg bg-muted p-4">
@@ -651,11 +651,10 @@ export default function AnitaAndMePage() {
                   Enoch Powell&apos;s &ldquo;Rivers of Blood&rdquo; speech in April 1968 had
                   legitimised open anti-immigration rhetoric in mainstream British politics. The
                   early 1970s saw the rise of the National Front and the arrival of Ugandan Asians
-                  expelled by Idi Amin in 1972. The casual racism of Tollington &mdash; the stares,
-                  the charity tin, Sam Lowbridge&apos;s outburst &mdash; sits inside this political
-                  weather. Syal is not inventing a hostile climate; she is recording one. The novel
-                  asks the reader to see how high-profile rhetoric reaches down into a small village
-                  street.
+                  expelled by Idi Amin in 1972. The casual racism of Tollington - the stares, the
+                  charity tin, Sam Lowbridge&apos;s outburst - sits inside this political weather.
+                  Syal is not inventing a hostile climate; she is recording one. The novel asks the
+                  reader to see how high-profile rhetoric reaches down into a small village street.
                 </p>
               </div>
               <div className="rounded-lg bg-primary/10 p-4">
@@ -691,9 +690,9 @@ export default function AnitaAndMePage() {
                   Angelou&apos;s
                   <em> I Know Why the Caged Bird Sings</em>. Like those books, it uses a child
                   protagonist to defamiliarise the adult world&apos;s racial and class injustices.
-                  The first-person retrospective narration &mdash; an adult voice looking back
-                  &mdash; is a defining feature of the form, allowing simultaneous childhood
-                  immediacy and adult interpretive distance.
+                  The first-person retrospective narration - an adult voice looking back - is a
+                  defining feature of the form, allowing simultaneous childhood immediacy and adult
+                  interpretive distance.
                 </p>
               </div>
               <div className="rounded-lg bg-primary/10 p-4">
@@ -742,7 +741,7 @@ export default function AnitaAndMePage() {
                   </div>
                   <div>
                     <p className="text-xs font-semibold text-violet-700 dark:text-violet-300 uppercase tracking-wider">
-                      Paragraph 1 (AO2) &mdash; The bilingual narrative voice
+                      Paragraph 1 (AO2) - The bilingual narrative voice
                     </p>
                     <p className="mt-1 text-sm text-muted-foreground">
                       Punjabi words sit untranslated inside English sentences. Black Country slang
@@ -753,7 +752,7 @@ export default function AnitaAndMePage() {
                   </div>
                   <div>
                     <p className="text-xs font-semibold text-violet-700 dark:text-violet-300 uppercase tracking-wider">
-                      Paragraph 2 (AO1/AO2) &mdash; &ldquo;too Indian / not Indian enough&rdquo;
+                      Paragraph 2 (AO1/AO2) - &ldquo;too Indian / not Indian enough&rdquo;
                     </p>
                     <p className="mt-1 text-sm text-muted-foreground">
                       Use Meena&apos;s self-description (too mouthy, scabby, etc.) to argue that the
@@ -763,7 +762,7 @@ export default function AnitaAndMePage() {
                   </div>
                   <div>
                     <p className="text-xs font-semibold text-violet-700 dark:text-violet-300 uppercase tracking-wider">
-                      Paragraph 3 (AO2) &mdash; Nanima as cultural anchor
+                      Paragraph 3 (AO2) - Nanima as cultural anchor
                     </p>
                     <p className="mt-1 text-sm text-muted-foreground">
                       Nanima reverses the polarity of Meena&apos;s feelings about her heritage.
@@ -773,7 +772,7 @@ export default function AnitaAndMePage() {
                   </div>
                   <div>
                     <p className="text-xs font-semibold text-violet-700 dark:text-violet-300 uppercase tracking-wider">
-                      Paragraph 4 (AO3) &mdash; 1972 context
+                      Paragraph 4 (AO3) - 1972 context
                     </p>
                     <p className="mt-1 text-sm text-muted-foreground">
                       Post-Powell political weather; arrival of Ugandan Asians; Heath government.
@@ -814,7 +813,7 @@ export default function AnitaAndMePage() {
                   </div>
                   <div>
                     <p className="text-xs font-semibold text-violet-700 dark:text-violet-300 uppercase tracking-wider">
-                      Paragraph 1 (AO2) &mdash; Casual racism / Mr Ormerod
+                      Paragraph 1 (AO2) - Casual racism / Mr Ormerod
                     </p>
                     <p className="mt-1 text-sm text-muted-foreground">
                       The &ldquo;darkest Africa&rdquo; charity tin. Syal weaponises a colonial-era
@@ -825,7 +824,7 @@ export default function AnitaAndMePage() {
                   </div>
                   <div>
                     <p className="text-xs font-semibold text-violet-700 dark:text-violet-300 uppercase tracking-wider">
-                      Paragraph 2 (AO2) &mdash; Sam Lowbridge at the f&ecirc;te
+                      Paragraph 2 (AO2) - Sam Lowbridge at the f&ecirc;te
                     </p>
                     <p className="mt-1 text-sm text-muted-foreground">
                       The post-Powell language of &ldquo;them,&rdquo; &ldquo;sponging,&rdquo; the
@@ -836,7 +835,7 @@ export default function AnitaAndMePage() {
                   </div>
                   <div>
                     <p className="text-xs font-semibold text-violet-700 dark:text-violet-300 uppercase tracking-wider">
-                      Paragraph 3 (AO2) &mdash; Casual racism in the friendship group
+                      Paragraph 3 (AO2) - Casual racism in the friendship group
                     </p>
                     <p className="mt-1 text-sm text-muted-foreground">
                       Anita and the gang use racial slurs as ordinary playground vocabulary. Syal
@@ -846,12 +845,12 @@ export default function AnitaAndMePage() {
                   </div>
                   <div>
                     <p className="text-xs font-semibold text-violet-700 dark:text-violet-300 uppercase tracking-wider">
-                      Paragraph 4 (AO3) &mdash; Historical context
+                      Paragraph 4 (AO3) - Historical context
                     </p>
                     <p className="mt-1 text-sm text-muted-foreground">
                       Powell&apos;s 1968 speech, rise of the National Front, 1972 arrival of Ugandan
-                      Asians. Tollington is not exceptional &mdash; it is a typical British village
-                      in a politically charged decade.
+                      Asians. Tollington is not exceptional - it is a typical British village in a
+                      politically charged decade.
                     </p>
                   </div>
                   <div>
@@ -887,7 +886,7 @@ export default function AnitaAndMePage() {
                   </div>
                   <div>
                     <p className="text-xs font-semibold text-violet-700 dark:text-violet-300 uppercase tracking-wider">
-                      Paragraph 1 (AO2) &mdash; Anita as idol
+                      Paragraph 1 (AO2) - Anita as idol
                     </p>
                     <p className="mt-1 text-sm text-muted-foreground">
                       &ldquo;Cock of our yard.&rdquo; Anita is initially pure glamour, freedom,
@@ -897,7 +896,7 @@ export default function AnitaAndMePage() {
                   </div>
                   <div>
                     <p className="text-xs font-semibold text-violet-700 dark:text-violet-300 uppercase tracking-wider">
-                      Paragraph 2 (AO2) &mdash; The cracks open
+                      Paragraph 2 (AO2) - The cracks open
                     </p>
                     <p className="mt-1 text-sm text-muted-foreground">
                       Sam Lowbridge&apos;s outburst (Anita is his girlfriend); Anita&apos;s casual
@@ -907,7 +906,7 @@ export default function AnitaAndMePage() {
                   </div>
                   <div>
                     <p className="text-xs font-semibold text-violet-700 dark:text-violet-300 uppercase tracking-wider">
-                      Paragraph 3 (AO2) &mdash; The pond / Tracey
+                      Paragraph 3 (AO2) - The pond / Tracey
                     </p>
                     <p className="mt-1 text-sm text-muted-foreground">
                       The rescue of Tracey is the moral climax. Meena&apos;s instincts diverge from
@@ -916,7 +915,7 @@ export default function AnitaAndMePage() {
                   </div>
                   <div>
                     <p className="text-xs font-semibold text-violet-700 dark:text-violet-300 uppercase tracking-wider">
-                      Paragraph 4 (AO3) &mdash; Bildungsroman tradition
+                      Paragraph 4 (AO3) - Bildungsroman tradition
                     </p>
                     <p className="mt-1 text-sm text-muted-foreground">
                       Place the novel in the Bildungsroman lineage (Dickens, Lee, Angelou). The
@@ -949,14 +948,14 @@ export default function AnitaAndMePage() {
                     </p>
                     <p className="mt-1 text-sm text-muted-foreground">
                       Syal argues that cultural identity is carried in the small daily rituals of
-                      family life &mdash; food, language, music, gathering. Meena&apos;s
-                      reconciliation with her Punjabi heritage is achieved not by abstraction but
-                      through Nanima&apos;s body, voice, and cooking.
+                      family life - food, language, music, gathering. Meena&apos;s reconciliation
+                      with her Punjabi heritage is achieved not by abstraction but through
+                      Nanima&apos;s body, voice, and cooking.
                     </p>
                   </div>
                   <div>
                     <p className="text-xs font-semibold text-violet-700 dark:text-violet-300 uppercase tracking-wider">
-                      Paragraph 1 (AO2) &mdash; The Aunties and Uncles
+                      Paragraph 1 (AO2) - The Aunties and Uncles
                     </p>
                     <p className="mt-1 text-sm text-muted-foreground">
                       The fictive-kin community of family friends. Capitalisation in the narration
@@ -966,7 +965,7 @@ export default function AnitaAndMePage() {
                   </div>
                   <div>
                     <p className="text-xs font-semibold text-violet-700 dark:text-violet-300 uppercase tracking-wider">
-                      Paragraph 2 (AO2) &mdash; Mama&apos;s ethics
+                      Paragraph 2 (AO2) - Mama&apos;s ethics
                     </p>
                     <p className="mt-1 text-sm text-muted-foreground">
                       &ldquo;If you can&apos;t respect what we believe in, then you don&apos;t
@@ -976,7 +975,7 @@ export default function AnitaAndMePage() {
                   </div>
                   <div>
                     <p className="text-xs font-semibold text-violet-700 dark:text-violet-300 uppercase tracking-wider">
-                      Paragraph 3 (AO2) &mdash; Nanima
+                      Paragraph 3 (AO2) - Nanima
                     </p>
                     <p className="mt-1 text-sm text-muted-foreground">
                       Communication through touch, food, Punjabi tales rather than English speech.
@@ -986,7 +985,7 @@ export default function AnitaAndMePage() {
                   </div>
                   <div>
                     <p className="text-xs font-semibold text-violet-700 dark:text-violet-300 uppercase tracking-wider">
-                      Paragraph 4 (AO3) &mdash; Partition and diaspora
+                      Paragraph 4 (AO3) - Partition and diaspora
                     </p>
                     <p className="mt-1 text-sm text-muted-foreground">
                       Punjabi heritage carries the unspoken weight of 1947 Partition. Papa&apos;s
@@ -1025,7 +1024,7 @@ export default function AnitaAndMePage() {
                   </div>
                   <div>
                     <p className="text-xs font-semibold text-violet-700 dark:text-violet-300 uppercase tracking-wider">
-                      Paragraph 1 (AO2/AO3) &mdash; The closed pit and the motorway
+                      Paragraph 1 (AO2/AO3) - The closed pit and the motorway
                     </p>
                     <p className="mt-1 text-sm text-muted-foreground">
                       Tollington is post-industrial; the planned motorway is top-down modernisation.
@@ -1035,7 +1034,7 @@ export default function AnitaAndMePage() {
                   </div>
                   <div>
                     <p className="text-xs font-semibold text-violet-700 dark:text-violet-300 uppercase tracking-wider">
-                      Paragraph 2 (AO2) &mdash; The Rutter household
+                      Paragraph 2 (AO2) - The Rutter household
                     </p>
                     <p className="mt-1 text-sm text-muted-foreground">
                       Drink, neglect, casual cruelty. Anita&apos;s glamour conceals a damaged home.
@@ -1045,7 +1044,7 @@ export default function AnitaAndMePage() {
                   </div>
                   <div>
                     <p className="text-xs font-semibold text-violet-700 dark:text-violet-300 uppercase tracking-wider">
-                      Paragraph 3 (AO2) &mdash; The Kumars&apos; awkward class position
+                      Paragraph 3 (AO2) - The Kumars&apos; awkward class position
                     </p>
                     <p className="mt-1 text-sm text-muted-foreground">
                       Educated, middle-class immigrants in a working-class village: ethnically
@@ -1055,7 +1054,7 @@ export default function AnitaAndMePage() {
                   </div>
                   <div>
                     <p className="text-xs font-semibold text-violet-700 dark:text-violet-300 uppercase tracking-wider">
-                      Paragraph 4 (AO2) &mdash; Tollington as character
+                      Paragraph 4 (AO2) - Tollington as character
                     </p>
                     <p className="mt-1 text-sm text-muted-foreground">
                       The repeated ritual naming of Tollington in the narration. The pond, the
@@ -1128,8 +1127,8 @@ export default function AnitaAndMePage() {
             <span className="mt-0.5 h-1.5 w-1.5 shrink-0 rounded-full bg-accent" />
             <span>
               <strong>Use the AO triangle.</strong> AQA wants AO1 (response), AO2 (writer&apos;s
-              methods), and AO3 (context) braided through every paragraph &mdash; not separated.
-              Plus AO4 (SPaG).
+              methods), and AO3 (context) braided through every paragraph - not separated. Plus AO4
+              (SPaG).
             </span>
           </li>
           <li className="flex items-start gap-2">

@@ -39,7 +39,7 @@ const essayPlans = [
           'The Dream is introduced as a ritual between George and Lennie, repeated rather than planned.',
         evidence: '"An\u2019 live off the fatta the lan\u2019."',
         explanation:
-          'The phrase is Lennie\u2019s refrain, learned by heart. Steinbeck presents the Dream as a verbal ritual \u2014 a story told for comfort rather than a realistic ambition. Its repetition sustains the men emotionally.',
+          'The phrase is Lennie\u2019s refrain, learned by heart. Steinbeck presents the Dream as a verbal ritual - a story told for comfort rather than a realistic ambition. Its repetition sustains the men emotionally.',
         link: 'Context: during the Great Depression, itinerant workers had almost no chance of buying land, making the Dream a shared fiction of the era.',
       },
       {
@@ -47,7 +47,7 @@ const essayPlans = [
           'Candy\u2019s investment makes the Dream briefly concrete, which paradoxically signals its death.',
         evidence: '"Le\u2019s get that place now."',
         explanation:
-          'The moment the Dream becomes financially possible is, in Steinbeck\u2019s fatalistic structure, the moment it begins to collapse. Candy\u2019s urgency is driven by the loss of his dog \u2014 he needs a reason to live.',
+          'The moment the Dream becomes financially possible is, in Steinbeck\u2019s fatalistic structure, the moment it begins to collapse. Candy\u2019s urgency is driven by the loss of his dog - he needs a reason to live.',
         link: 'Steinbeck structures the novella so that hope and disaster are tightly interlocked: the Dream peaks in Chapter 3 and dies in Chapter 5.',
       },
       {
@@ -55,7 +55,7 @@ const essayPlans = [
           'Curley\u2019s wife\u2019s Hollywood dream is a gendered variant of the same illusion.',
         evidence: '"I coulda made somethin\u2019 of myself. Maybe I will yet."',
         explanation:
-          'Her dream is no less unrealistic than George\u2019s farm. Steinbeck shows that the American Dream fails women as thoroughly as it fails men, but through different mechanisms \u2014 marriage rather than employment traps her.',
+          'Her dream is no less unrealistic than George\u2019s farm. Steinbeck shows that the American Dream fails women as thoroughly as it fails men, but through different mechanisms - marriage rather than employment traps her.',
         link: 'Link to the Burns epigraph: all "best laid schemes" in the novella are defeated, regardless of the dreamer.',
       },
     ],
@@ -72,14 +72,14 @@ const essayPlans = [
         evidence: '"A guy needs somebody ... A guy goes nuts if he ain\u2019t got nobody."',
         explanation:
           'Crooks diagnoses loneliness as a pathology, not merely a feeling. His medical language ("goes nuts") elevates loneliness from mood to illness. His isolated room is a physical manifestation of Jim Crow segregation.',
-        link: 'Context: Steinbeck wrote during the Depression when Black workers faced double marginalisation \u2014 economic precarity and racial segregation.',
+        link: 'Context: Steinbeck wrote during the Depression when Black workers faced double marginalisation - economic precarity and racial segregation.',
       },
       {
         point:
           'Candy\u2019s loss of his dog removes his only companion and drives him towards the Dream.',
         evidence: '"I ought to of shot that dog myself, George."',
         explanation:
-          'The line is functional and structural: it prepares George\u2019s final decision. But it is also about loneliness \u2014 Candy\u2019s regret is that a stranger ended his most important relationship.',
+          'The line is functional and structural: it prepares George\u2019s final decision. But it is also about loneliness - Candy\u2019s regret is that a stranger ended his most important relationship.',
         link: 'Link to the ending: George shoots Lennie himself, having learned from Candy\u2019s mistake.',
       },
       {
@@ -135,7 +135,7 @@ const essayPlans = [
           'The dream speech is a ritual that maintains the relationship through shared language.',
         evidence: '"I got you to look after me, ... you got me to look after you."',
         explanation:
-          'Lennie\u2019s echo of George\u2019s words creates the illusion of reciprocity. In practice, the care flows one way \u2014 but the ritual itself is the relationship\u2019s sustaining mechanism.',
+          'Lennie\u2019s echo of George\u2019s words creates the illusion of reciprocity. In practice, the care flows one way - but the ritual itself is the relationship\u2019s sustaining mechanism.',
         link: 'Slim\u2019s observation "Ain\u2019t many guys travel around together" marks this friendship as exceptional in a world of isolation.',
       },
       {
@@ -151,7 +151,7 @@ const essayPlans = [
           'The ending transforms the relationship from one of protection to one of mercy killing.',
         evidence: '"I ain\u2019t mad. I never been mad, an\u2019 I ain\u2019t now."',
         explanation:
-          'George\u2019s final words are spoken in the same gentle, conversational register as the dream speech. The killing is an act of love \u2014 more humane than the lynch mob \u2014 but it ends the relationship that defined him.',
+          'George\u2019s final words are spoken in the same gentle, conversational register as the dream speech. The killing is an act of love - more humane than the lynch mob - but it ends the relationship that defined him.',
         link: 'Structural echo: Candy\u2019s regret about his dog ("I ought to of shot that dog myself") directly informs George\u2019s decision.',
       },
     ],
@@ -177,7 +177,7 @@ const essayPlans = [
         evidence: '"The bunk house was a long, rectangular building."',
         explanation:
           'Steinbeck\u2019s stage-direction prose strips the interiors to bare surfaces. Each interior space is more confined: bunkhouse, then Crooks\u2019s tiny room, then the barn. The claustrophobia mirrors the characters\u2019 shrinking options.',
-        link: 'Steinbeck originally titled the novella "Something That Happened" \u2014 the settings are stages in a predetermined plot.',
+        link: 'Steinbeck originally titled the novella "Something That Happened" - the settings are stages in a predetermined plot.',
       },
       {
         point:

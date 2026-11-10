@@ -432,25 +432,25 @@ export default function OCRTechniquesPage() {
             <h3 className="mt-8 text-lg font-semibold text-foreground">Common Analysis Mistakes</h3>
             <ul className="ms-6 list-disc space-y-2">
               <li>
-                <strong>Feature-spotting</strong> &mdash; Simply naming a technique without
-                explaining its effect. &ldquo;The writer uses a simile&rdquo; is not analysis.
+                <strong>Feature-spotting</strong> - Simply naming a technique without explaining its
+                effect. &ldquo;The writer uses a simile&rdquo; is not analysis.
               </li>
               <li>
-                <strong>Vague effects</strong> &mdash; Saying a technique &ldquo;makes the reader
-                want to read on&rdquo; or &ldquo;makes the writing more interesting&rdquo; is too
-                generic. Be specific about <em>what</em> the reader thinks or feels.
+                <strong>Vague effects</strong> - Saying a technique &ldquo;makes the reader want to
+                read on&rdquo; or &ldquo;makes the writing more interesting&rdquo; is too generic.
+                Be specific about <em>what</em> the reader thinks or feels.
               </li>
               <li>
-                <strong>Ignoring connotations</strong> &mdash; The best analysis zooms into
-                individual words and explores their connotations. Don&rsquo;t just quote a phrase
-                &mdash; pull apart the specific word choices.
+                <strong>Ignoring connotations</strong> - The best analysis zooms into individual
+                words and explores their connotations. Don&rsquo;t just quote a phrase - pull apart
+                the specific word choices.
               </li>
               <li>
-                <strong>Forgetting structure</strong> &mdash; Many students focus only on language.
+                <strong>Forgetting structure</strong> - Many students focus only on language.
                 Structural analysis is equally important and can differentiate your answer.
               </li>
               <li>
-                <strong>Overloading with techniques</strong> &mdash; It is better to analyse three
+                <strong>Overloading with techniques</strong> - It is better to analyse three
                 techniques in depth than to name ten techniques superficially.
               </li>
             </ul>

@@ -204,8 +204,8 @@ export default async function OCRRomeoAndJulietPage() {
                 {_tr(`Paper 1: Exploring Modern and Literary Heritage Texts`)}
               </p>
               <p className="mt-1 text-sm text-muted-foreground">
-                Section A &mdash; Shakespeare. You will be given an extract from Romeo and Juliet
-                and asked a question about a theme or character. You must analyse the extract{' '}
+                Section A - Shakespeare. You will be given an extract from Romeo and Juliet and
+                asked a question about a theme or character. You must analyse the extract{' '}
                 <strong>and</strong> refer to the wider play. The question is worth{' '}
                 <strong>40 marks</strong> and you should spend approximately{' '}
                 <strong>50 minutes</strong> on it.
@@ -228,13 +228,13 @@ export default async function OCRRomeoAndJulietPage() {
                   {_tr(`Act 1: The Feud and the Meeting`)}
                 </p>
                 <p className="mt-2 text-sm">
-                  The Prologue reveals that two feuding families in Verona &mdash; the Montagues and
-                  Capulets &mdash; will lose their children to a tragic love story. A street brawl
-                  between servants escalates, and Prince Escalus threatens death to anyone who
-                  disturbs the peace again. Romeo, lovesick over Rosaline, is persuaded by Benvolio
-                  and Mercutio to attend a Capulet feast. There, he sees Juliet and they fall
-                  instantly in love. Tybalt recognises Romeo and vows revenge. Romeo and Juliet
-                  share a sonnet and a kiss, only to discover they belong to rival families.
+                  The Prologue reveals that two feuding families in Verona - the Montagues and
+                  Capulets - will lose their children to a tragic love story. A street brawl between
+                  servants escalates, and Prince Escalus threatens death to anyone who disturbs the
+                  peace again. Romeo, lovesick over Rosaline, is persuaded by Benvolio and Mercutio
+                  to attend a Capulet feast. There, he sees Juliet and they fall instantly in love.
+                  Tybalt recognises Romeo and vows revenge. Romeo and Juliet share a sonnet and a
+                  kiss, only to discover they belong to rival families.
                 </p>
               </div>
               <div className="rounded-lg border border-border bg-muted p-4">
@@ -301,12 +301,12 @@ export default async function OCRRomeoAndJulietPage() {
             <div className="rounded-lg border border-border bg-card p-6 shadow-md">
               <h3 className="text-xl font-semibold text-primary">Romeo</h3>
               <p className="mt-3 text-sm text-muted-foreground leading-relaxed">
-                Romeo Montague is the play&rsquo;s tragic hero &mdash; a passionate, impulsive young
-                man whose capacity for intense love is matched by his tendency towards rash action.
-                When we first meet him, he is lovesick over Rosaline, using elaborate Petrarchan
-                conceits (&ldquo;O brawling love, O loving hate&rdquo;) that suggest his love is
-                more performative than genuine. His instant shift to Juliet raises questions about
-                the depth of his feelings, yet his language transforms from clich&eacute;d to
+                Romeo Montague is the play&rsquo;s tragic hero - a passionate, impulsive young man
+                whose capacity for intense love is matched by his tendency towards rash action. When
+                we first meet him, he is lovesick over Rosaline, using elaborate Petrarchan conceits
+                (&ldquo;O brawling love, O loving hate&rdquo;) that suggest his love is more
+                performative than genuine. His instant shift to Juliet raises questions about the
+                depth of his feelings, yet his language transforms from clich&eacute;d to
                 transcendent when he meets her.
               </p>
               <p className="mt-3 text-sm text-muted-foreground leading-relaxed">
@@ -341,10 +341,10 @@ export default async function OCRRomeoAndJulietPage() {
                 Unlike Romeo, Juliet is pragmatic as well as passionate. She insists on marriage
                 rather than mere declarations of love, and she is more aware of the dangers they
                 face. When abandoned by her parents and the Nurse, she shows remarkable resilience,
-                choosing to take the Friar&rsquo;s potion despite her terror. Her final act &mdash;
-                stabbing herself with Romeo&rsquo;s dagger &mdash; is both a declaration of love and
-                an assertion of autonomy in a society that has denied her any choice. Shakespeare
-                uses Juliet to challenge Elizabethan expectations of female passivity.
+                choosing to take the Friar&rsquo;s potion despite her terror. Her final act -
+                stabbing herself with Romeo&rsquo;s dagger - is both a declaration of love and an
+                assertion of autonomy in a society that has denied her any choice. Shakespeare uses
+                Juliet to challenge Elizabethan expectations of female passivity.
               </p>
               <div className="mt-4 rounded border border-accent/20 bg-primary/10 p-3">
                 <p className="text-sm font-medium text-primary">{_tr(`Key character arc`)}</p>
@@ -368,7 +368,7 @@ export default async function OCRRomeoAndJulietPage() {
               </p>
               <p className="mt-3 text-sm text-muted-foreground leading-relaxed">
                 The Friar repeatedly warns against haste (&ldquo;Wisely and slow. They stumble that
-                run fast&rdquo;), yet ironically devises the most reckless plan of all &mdash; the
+                run fast&rdquo;), yet ironically devises the most reckless plan of all - the
                 sleeping potion. His failure to deliver the letter to Romeo is the immediate cause
                 of the tragedy. Shakespeare uses the Friar to explore the gap between wisdom and
                 action, and to suggest that well-meaning adults can cause as much harm as the
@@ -381,16 +381,16 @@ export default async function OCRRomeoAndJulietPage() {
               <h3 className="text-xl font-semibold text-primary">Mercutio</h3>
               <p className="mt-3 text-sm text-muted-foreground leading-relaxed">
                 Mercutio is Romeo&rsquo;s closest friend and the play&rsquo;s most charismatic
-                character &mdash; witty, irreverent, and scornful of romantic love. His Queen Mab
-                speech (Act 1, Scene 4) reveals a darker side beneath the humour, as the fairy
-                fantasy descends into images of violence and corruption. He mocks Romeo&rsquo;s love
-                as weakness and reduces everything to bawdy physicality, offering a counterpoint to
+                character - witty, irreverent, and scornful of romantic love. His Queen Mab speech
+                (Act 1, Scene 4) reveals a darker side beneath the humour, as the fairy fantasy
+                descends into images of violence and corruption. He mocks Romeo&rsquo;s love as
+                weakness and reduces everything to bawdy physicality, offering a counterpoint to
                 Romeo&rsquo;s idealism.
               </p>
               <p className="mt-3 text-sm text-muted-foreground leading-relaxed">
                 Mercutio is neither Montague nor Capulet, which makes his death at Tybalt&rsquo;s
-                hands particularly tragic &mdash; he is an innocent casualty of a feud that is not
-                his own. His dying curse, &ldquo;A plague o&rsquo; both your houses!&rdquo; condemns
+                hands particularly tragic - he is an innocent casualty of a feud that is not his
+                own. His dying curse, &ldquo;A plague o&rsquo; both your houses!&rdquo; condemns
                 both families and marks the play&rsquo;s irreversible turn from comedy to tragedy.
                 His death removes the play&rsquo;s primary source of humour and lightness, leaving
                 only darkness.
@@ -401,7 +401,7 @@ export default async function OCRRomeoAndJulietPage() {
             <div className="rounded-lg border border-border bg-card p-6 shadow-md">
               <h3 className="text-xl font-semibold text-primary">Tybalt</h3>
               <p className="mt-3 text-sm text-muted-foreground leading-relaxed">
-                Tybalt is the embodiment of the feud &mdash; aggressive, honour-driven, and defined
+                Tybalt is the embodiment of the feud - aggressive, honour-driven, and defined
                 entirely by his hatred of the Montagues. Known as the &ldquo;Prince of Cats&rdquo;
                 for his fencing skill, he represents the toxic masculinity and violence that
                 pervades Verona. His fury at Romeo&rsquo;s presence at the Capulet feast
@@ -428,12 +428,12 @@ export default async function OCRRomeoAndJulietPage() {
                 showing loyalty to Juliet&rsquo;s happiness over her parents&rsquo; wishes.
               </p>
               <p className="mt-3 text-sm text-muted-foreground leading-relaxed">
-                However, the Nurse&rsquo;s betrayal in Act 3, Scene 5 &mdash; advising Juliet to
-                forget Romeo and marry Paris (&ldquo;I think it best you married with the
-                County&rdquo;) &mdash; is a turning point in Juliet&rsquo;s isolation. The Nurse
-                cannot comprehend the depth of Juliet&rsquo;s love because she sees marriage as a
-                practical arrangement rather than a spiritual bond. Her abandonment drives Juliet to
-                the Friar and towards the desperate plan that ends in tragedy.
+                However, the Nurse&rsquo;s betrayal in Act 3, Scene 5 - advising Juliet to forget
+                Romeo and marry Paris (&ldquo;I think it best you married with the County&rdquo;) -
+                is a turning point in Juliet&rsquo;s isolation. The Nurse cannot comprehend the
+                depth of Juliet&rsquo;s love because she sees marriage as a practical arrangement
+                rather than a spiritual bond. Her abandonment drives Juliet to the Friar and towards
+                the desperate plan that ends in tragedy.
               </p>
             </div>
 
@@ -483,8 +483,8 @@ export default async function OCRRomeoAndJulietPage() {
               <p className="mt-2 text-sm text-muted-foreground leading-relaxed">
                 <strong>{_tr(`Key quote:`)}</strong> &ldquo;My bounty is as boundless as the sea, /
                 My love as deep; the more I give to thee, / The more I have, for both are
-                infinite&rdquo; &mdash; Juliet presents love as infinitely renewable, contrasting
-                with the zero-sum game of the feud.
+                infinite&rdquo; - Juliet presents love as infinitely renewable, contrasting with the
+                zero-sum game of the feud.
               </p>
             </div>
 
@@ -495,13 +495,13 @@ export default async function OCRRomeoAndJulietPage() {
                 suggesting their fate is written in the stars. Throughout the play, references to
                 fate, fortune, and destiny create a sense of inevitability. Romeo calls himself
                 &ldquo;fortune&rsquo;s fool&rdquo; and later defies the stars. Yet Shakespeare also
-                presents the tragedy as the result of human choices &mdash; the feud, impulsive
-                decisions, failed communication, and the adults&rsquo; inability to protect their
-                children. The play invites the audience to question whether the lovers are truly
-                fated, or whether their tragedy is the consequence of a society poisoned by hatred.
+                presents the tragedy as the result of human choices - the feud, impulsive decisions,
+                failed communication, and the adults&rsquo; inability to protect their children. The
+                play invites the audience to question whether the lovers are truly fated, or whether
+                their tragedy is the consequence of a society poisoned by hatred.
               </p>
               <p className="mt-2 text-sm text-muted-foreground leading-relaxed">
-                <strong>{_tr(`Key quote:`)}</strong> &ldquo;Then I defy you, stars!&rdquo; &mdash;
+                <strong>{_tr(`Key quote:`)}</strong> &ldquo;Then I defy you, stars!&rdquo; -
                 Romeo&rsquo;s attempt to defy fate ironically fulfils it.
               </p>
             </div>
@@ -510,19 +510,18 @@ export default async function OCRRomeoAndJulietPage() {
               <h3 className="text-lg font-semibold text-foreground">Conflict and Violence</h3>
               <p className="mt-2 text-sm text-muted-foreground leading-relaxed">
                 The feud between the Montagues and Capulets is the engine of the tragedy.
-                Shakespeare presents the conflict as senseless and self-perpetuating &mdash; an
+                Shakespeare presents the conflict as senseless and self-perpetuating - an
                 &ldquo;ancient grudge&rdquo; whose original cause is never explained. Violence
                 erupts from trivial provocations (thumb-biting) and escalates to murder and suicide.
                 The play connects violence to masculine honour: Tybalt fights to defend family
                 pride, Mercutio fights because he despises cowardice, and Romeo kills in a rage he
-                cannot control. Shakespeare suggests that such violence is ultimately futile &mdash;
-                the feud achieves nothing except the destruction of the families&rsquo; own
-                children.
+                cannot control. Shakespeare suggests that such violence is ultimately futile - the
+                feud achieves nothing except the destruction of the families&rsquo; own children.
               </p>
               <p className="mt-2 text-sm text-muted-foreground leading-relaxed">
                 <strong>{_tr(`Key quote:`)}</strong> &ldquo;A plague o&rsquo; both your
-                houses!&rdquo; &mdash; Mercutio&rsquo;s dying curse condemns the senselessness of
-                the feud.
+                houses!&rdquo; - Mercutio&rsquo;s dying curse condemns the senselessness of the
+                feud.
               </p>
             </div>
 
@@ -531,7 +530,7 @@ export default async function OCRRomeoAndJulietPage() {
               <p className="mt-2 text-sm text-muted-foreground leading-relaxed">
                 Light and dark imagery permeates the play. Romeo repeatedly associates Juliet with
                 light (&ldquo;Juliet is the sun,&rdquo; &ldquo;she doth teach the torches to burn
-                bright&rdquo;), yet their love flourishes only in darkness &mdash; they meet at a
+                bright&rdquo;), yet their love flourishes only in darkness - they meet at a
                 night-time feast, declare their love under cover of night, and are separated by the
                 dawn. This paradox suggests that their love is too brilliant for the dark world of
                 the feud, and that it can only exist in the hidden spaces between day and night,
@@ -540,8 +539,7 @@ export default async function OCRRomeoAndJulietPage() {
               </p>
               <p className="mt-2 text-sm text-muted-foreground leading-relaxed">
                 <strong>{_tr(`Key quote:`)}</strong> &ldquo;It is the East, and Juliet is the
-                sun&rdquo; &mdash; Romeo elevates Juliet to a cosmic force, yet the sun must always
-                set.
+                sun&rdquo; - Romeo elevates Juliet to a cosmic force, yet the sun must always set.
               </p>
             </div>
 
@@ -549,8 +547,8 @@ export default async function OCRRomeoAndJulietPage() {
               <h3 className="text-lg font-semibold text-foreground">Youth vs Age</h3>
               <p className="mt-2 text-sm text-muted-foreground leading-relaxed">
                 The play dramatises a generational divide. The young lovers represent hope, passion,
-                and the possibility of change, while the older generation &mdash; Lord Capulet, Lord
-                Montague, and to some extent the Friar and the Nurse &mdash; represent tradition,
+                and the possibility of change, while the older generation - Lord Capulet, Lord
+                Montague, and to some extent the Friar and the Nurse - represent tradition,
                 authority, and the status quo. The adults&rsquo; failure to protect their children
                 is central to the tragedy: Lord Capulet forces an unwanted marriage, the Nurse
                 abandons Juliet, and the Friar&rsquo;s plan fails catastrophically. Shakespeare
@@ -560,7 +558,7 @@ export default async function OCRRomeoAndJulietPage() {
               </p>
               <p className="mt-2 text-sm text-muted-foreground leading-relaxed">
                 <strong>{_tr(`Key quote:`)}</strong> &ldquo;These violent delights have violent
-                ends&rdquo; &mdash; the Friar understands the danger but cannot prevent it.
+                ends&rdquo; - the Friar understands the danger but cannot prevent it.
               </p>
             </div>
 
@@ -569,18 +567,18 @@ export default async function OCRRomeoAndJulietPage() {
               <p className="mt-2 text-sm text-muted-foreground leading-relaxed">
                 Death haunts the play from the Prologue&rsquo;s revelation of the
                 &ldquo;death-mark&rsquo;d&rdquo; love. Shakespeare repeatedly personifies Death as
-                Juliet&rsquo;s rival lover &mdash; Lord Capulet tells Paris that the night before
-                his wedding &ldquo;hath death lain with thy bride&rdquo;, and Romeo finds Death has
-                not marred her beauty. Time is compressed to an extraordinary degree: the entire
-                action unfolds over four days, creating a relentless momentum that mirrors the
+                Juliet&rsquo;s rival lover - Lord Capulet tells Paris that the night before his
+                wedding &ldquo;hath death lain with thy bride&rdquo;, and Romeo finds Death has not
+                marred her beauty. Time is compressed to an extraordinary degree: the entire action
+                unfolds over four days, creating a relentless momentum that mirrors the
                 lovers&rsquo; urgency and leaves no space for reflection or reconciliation. The
-                haste itself becomes a cause of the tragedy &mdash; if Romeo had waited even moments
+                haste itself becomes a cause of the tragedy - if Romeo had waited even moments
                 longer, Juliet would have woken.
               </p>
               <p className="mt-2 text-sm text-muted-foreground leading-relaxed">
                 <strong>{_tr(`Key quote:`)}</strong> &ldquo;Wisely and slow. They stumble that run
-                fast&rdquo; &mdash; the Friar&rsquo;s warning about the danger of haste proves
-                tragically prophetic.
+                fast&rdquo; - the Friar&rsquo;s warning about the danger of haste proves tragically
+                prophetic.
               </p>
             </div>
 
@@ -590,18 +588,17 @@ export default async function OCRRomeoAndJulietPage() {
                 Juliet exists within a patriarchal society where women are expected to obey their
                 fathers and husbands. Lord Capulet treats her as property to be given in marriage
                 (&ldquo;And you be mine, I&rsquo;ll give you to my friend&rdquo;), and the Nurse
-                sees marriage as a practical transaction. Juliet&rsquo;s rebellion &mdash; choosing
-                her own husband, defying her father, and ultimately choosing death over a life
-                without Romeo &mdash; represents a radical challenge to patriarchal authority.
-                Shakespeare invites sympathy for Juliet&rsquo;s position, presenting her
-                father&rsquo;s rage as tyrannical rather than justified. The male characters&rsquo;
-                obsession with honour and violence is also critiqued as a form of toxic masculinity
-                that destroys everything it claims to protect.
+                sees marriage as a practical transaction. Juliet&rsquo;s rebellion - choosing her
+                own husband, defying her father, and ultimately choosing death over a life without
+                Romeo - represents a radical challenge to patriarchal authority. Shakespeare invites
+                sympathy for Juliet&rsquo;s position, presenting her father&rsquo;s rage as
+                tyrannical rather than justified. The male characters&rsquo; obsession with honour
+                and violence is also critiqued as a form of toxic masculinity that destroys
+                everything it claims to protect.
               </p>
               <p className="mt-2 text-sm text-muted-foreground leading-relaxed">
                 <strong>{_tr(`Key quote:`)}</strong> &ldquo;O happy dagger, / This is thy
-                sheath&rdquo; &mdash; Juliet&rsquo;s final act is one of agency and
-                self-determination.
+                sheath&rdquo; - Juliet&rsquo;s final act is one of agency and self-determination.
               </p>
             </div>
           </div>
@@ -678,20 +675,20 @@ export default async function OCRRomeoAndJulietPage() {
                   authority. Marriage was a sacrament that could not be undone, which is why Juliet
                   cannot simply marry Paris after secretly marrying Romeo. The Friar&rsquo;s
                   involvement in the secret marriage and his use of potions would have been morally
-                  ambiguous to an Elizabethan audience &mdash; he is acting against parental
-                  authority and using deception, even if his intentions are good.
+                  ambiguous to an Elizabethan audience - he is acting against parental authority and
+                  using deception, even if his intentions are good.
                 </p>
               </div>
               <div className="rounded-lg border border-border bg-muted p-5">
                 <h3 className="font-semibold text-foreground">{_tr(`Petrarchan Love Poetry`)}</h3>
                 <p className="mt-2 text-sm">
-                  Romeo&rsquo;s early language draws on the conventions of Petrarchan love poetry
-                  &mdash; a tradition where the male lover worships an unattainable woman using
-                  elaborate conceits, oxymorons, and hyperbole. Shakespeare both uses and subverts
-                  this tradition: Romeo&rsquo;s Petrarchan language for Rosaline is exposed as
-                  shallow when contrasted with the more genuine, mutual love he shares with Juliet.
-                  The sonnet form &mdash; used in the Prologue and in Romeo and Juliet&rsquo;s first
-                  exchange &mdash; connects the play to this poetic tradition.
+                  Romeo&rsquo;s early language draws on the conventions of Petrarchan love poetry -
+                  a tradition where the male lover worships an unattainable woman using elaborate
+                  conceits, oxymorons, and hyperbole. Shakespeare both uses and subverts this
+                  tradition: Romeo&rsquo;s Petrarchan language for Rosaline is exposed as shallow
+                  when contrasted with the more genuine, mutual love he shares with Juliet. The
+                  sonnet form - used in the Prologue and in Romeo and Juliet&rsquo;s first exchange
+                  - connects the play to this poetic tradition.
                 </p>
               </div>
               <div className="rounded-lg border border-border bg-muted p-5">
@@ -700,8 +697,8 @@ export default async function OCRRomeoAndJulietPage() {
                 </h3>
                 <p className="mt-2 text-sm">
                   Elizabethans believed in the influence of the stars and fortune on human affairs.
-                  The concept of the &ldquo;wheel of fortune&rdquo; &mdash; where individuals rise
-                  and fall according to fate &mdash; was widely understood. Romeo and Juliet as
+                  The concept of the &ldquo;wheel of fortune&rdquo; - where individuals rise and
+                  fall according to fate - was widely understood. Romeo and Juliet as
                   &ldquo;star-cross&rsquo;d lovers&rdquo; would have resonated with an audience who
                   believed that celestial forces could determine human destiny. However, Shakespeare
                   also allows for human agency, creating a deliberate ambiguity about whether the
@@ -718,9 +715,9 @@ export default async function OCRRomeoAndJulietPage() {
                   in the English imagination with passion, violence, and intrigue. The
                   Prince&rsquo;s repeated interventions to restore order reflect Elizabethan
                   anxieties about civil disorder and the importance of strong governance. The
-                  play&rsquo;s message &mdash; that private feuds endanger the entire community
-                  &mdash; would have resonated in a society that had experienced its own religious
-                  and political conflicts.
+                  play&rsquo;s message - that private feuds endanger the entire community - would
+                  have resonated in a society that had experienced its own religious and political
+                  conflicts.
                 </p>
               </div>
             </div>

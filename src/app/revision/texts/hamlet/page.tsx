@@ -55,7 +55,7 @@ const data: TextGuideData = {
   // (Elements of crime writing, Version 1.4, page 24), and 7717 has no board id.
   badge: 'Edexcel A-Level / OCR A-Level / Eduqas A-Level / Edexcel IAL',
   intro:
-    'Shakespeare\u2019s longest and most philosophically searching tragedy, Hamlet follows a young prince of Denmark commanded by his father\u2019s ghost to avenge a secret murder. Written around 1599\u20131601, at the turn of a new century and the end of the Elizabethan age, the play takes the conventions of the revenge tragedy and turns them inwards, producing a protagonist who cannot simply act. Hamlet delays, philosophises, stages a play, feigns madness, and agonises over the meaning of existence itself. The play explores the collapse of a court corrupted from within, the unstable boundary between performance and truth, and the tension between moral thought and violent action. Its central soliloquies \u2014 including "To be, or not to be" \u2014 have become defining statements of existential crisis in Western literature. Hamlet is set by Edexcel, OCR and Eduqas at A-level and by Pearson\u2019s International A-level, though not by AQA\u2019s Literature A (7712), and remains Shakespeare\u2019s most quoted and most debated play.',
+    'Shakespeare\u2019s longest and most philosophically searching tragedy, Hamlet follows a young prince of Denmark commanded by his father\u2019s ghost to avenge a secret murder. Written around 1599\u20131601, at the turn of a new century and the end of the Elizabethan age, the play takes the conventions of the revenge tragedy and turns them inwards, producing a protagonist who cannot simply act. Hamlet delays, philosophises, stages a play, feigns madness, and agonises over the meaning of existence itself. The play explores the collapse of a court corrupted from within, the unstable boundary between performance and truth, and the tension between moral thought and violent action. Its central soliloquies - including "To be, or not to be" - have become defining statements of existential crisis in Western literature. Hamlet is set by Edexcel, OCR and Eduqas at A-level and by Pearson\u2019s International A-level, though not by AQA\u2019s Literature A (7712), and remains Shakespeare\u2019s most quoted and most debated play.',
   quickInfo: {
     genre: 'Revenge tragedy',
     setting: 'Elsinore Castle, Denmark',
@@ -63,8 +63,8 @@ const data: TextGuideData = {
     published: 'First quarto 1603 (bad); Second quarto 1604/05; First folio 1623',
   },
   plotSummary: [
-    'The play opens on the battlements of Elsinore Castle, where guards have seen the ghost of the recently deceased King Hamlet. Prince Hamlet, still in mourning, is bitter about his mother Gertrude\u2019s hasty remarriage to his uncle Claudius, who has taken the throne. The Ghost appears to Hamlet and reveals that Claudius poisoned him while he slept in the orchard, demanding that Hamlet take revenge \u2014 but spare Gertrude. Shaken and uncertain whether the Ghost is honest or a demonic trick, Hamlet resolves to feign an "antic disposition" to conceal his intentions while he investigates.',
-    'As Hamlet\u2019s erratic behaviour unsettles the court, Polonius, the lord chamberlain, decides it is love-madness caused by his daughter Ophelia, whom Hamlet has been courting. Polonius and Claudius spy on the couple, and Hamlet cruelly rejects Ophelia, telling her to "get thee to a nunnery." To test the Ghost\u2019s story, Hamlet stages a play \u2014 "The Mousetrap" \u2014 that re-enacts the murder. Claudius\u2019s guilty reaction confirms his guilt. Shortly afterwards, Hamlet confronts Gertrude in her closet; hearing a noise behind the arras and assuming it is Claudius, he stabs and kills Polonius. Claudius, now alarmed, sends Hamlet to England with his childhood friends Rosencrantz and Guildenstern, carrying sealed orders for Hamlet\u2019s execution.',
+    'The play opens on the battlements of Elsinore Castle, where guards have seen the ghost of the recently deceased King Hamlet. Prince Hamlet, still in mourning, is bitter about his mother Gertrude\u2019s hasty remarriage to his uncle Claudius, who has taken the throne. The Ghost appears to Hamlet and reveals that Claudius poisoned him while he slept in the orchard, demanding that Hamlet take revenge - but spare Gertrude. Shaken and uncertain whether the Ghost is honest or a demonic trick, Hamlet resolves to feign an "antic disposition" to conceal his intentions while he investigates.',
+    'As Hamlet\u2019s erratic behaviour unsettles the court, Polonius, the lord chamberlain, decides it is love-madness caused by his daughter Ophelia, whom Hamlet has been courting. Polonius and Claudius spy on the couple, and Hamlet cruelly rejects Ophelia, telling her to "get thee to a nunnery." To test the Ghost\u2019s story, Hamlet stages a play - "The Mousetrap" - that re-enacts the murder. Claudius\u2019s guilty reaction confirms his guilt. Shortly afterwards, Hamlet confronts Gertrude in her closet; hearing a noise behind the arras and assuming it is Claudius, he stabs and kills Polonius. Claudius, now alarmed, sends Hamlet to England with his childhood friends Rosencrantz and Guildenstern, carrying sealed orders for Hamlet\u2019s execution.',
     'In Hamlet\u2019s absence, Ophelia descends into genuine madness, singing fragmented songs and distributing symbolic flowers. She drowns in a brook. Gertrude reports the death as an accident, but the gravediggers and the Priest later treat it as a possible suicide. Laertes, Ophelia\u2019s brother, returns from France burning for revenge against Hamlet for killing his father. Claudius manipulates his grief, proposing a fencing match in which Laertes will use a poison-tipped sword. Meanwhile Hamlet, having discovered the death warrant at sea, rewrites it to condemn Rosencrantz and Guildenstern instead and escapes back to Denmark after a pirate encounter.',
     'Hamlet returns to find gravediggers preparing Ophelia\u2019s grave. In the famous graveyard scene he contemplates the skull of Yorick, the court jester, and meditates on the universal levelling power of death. Ophelia\u2019s funeral procession arrives; Hamlet and Laertes grapple in her grave. The duel is arranged. In the final scene, Gertrude drinks from a poisoned cup Claudius intended for Hamlet. Laertes wounds Hamlet with the envenomed blade; the swords are switched and Hamlet wounds Laertes in turn. As they die, Laertes confesses the plot. Hamlet stabs Claudius and forces him to drink the poison. Hamlet dies in Horatio\u2019s arms, asking him to "tell my story." The Norwegian prince Fortinbras arrives to find the Danish court destroyed and claims the throne.',
   ],
@@ -82,12 +82,12 @@ const data: TextGuideData = {
     {
       name: 'Gertrude',
       role: 'Queen of Denmark; Hamlet\u2019s mother, remarried to Claudius',
-      body: 'Gertrude remarries Claudius within a month of her husband\u2019s death, a speed Hamlet finds obscene. Shakespeare leaves her complicity in the murder deliberately ambiguous; the Ghost warns Hamlet to leave her judgement to heaven. In the closet scene she appears genuinely shaken by Hamlet\u2019s accusations. Her final act \u2014 drinking the poisoned cup, possibly knowingly \u2014 allows a reading of quiet maternal sacrifice. Critics have disagreed for centuries about whether she is weak, guilty, or simply trapped.',
+      body: 'Gertrude remarries Claudius within a month of her husband\u2019s death, a speed Hamlet finds obscene. Shakespeare leaves her complicity in the murder deliberately ambiguous; the Ghost warns Hamlet to leave her judgement to heaven. In the closet scene she appears genuinely shaken by Hamlet\u2019s accusations. Her final act - drinking the poisoned cup, possibly knowingly - allows a reading of quiet maternal sacrifice. Critics have disagreed for centuries about whether she is weak, guilty, or simply trapped.',
     },
     {
       name: 'Ophelia',
       role: 'Daughter of Polonius; Hamlet\u2019s former beloved',
-      body: 'Ophelia is obedient, gentle and caught between the men who claim authority over her: her father Polonius, her brother Laertes, and Hamlet himself. She is instructed to reject Hamlet\u2019s advances and then used as bait to spy on him. When her father is killed by her lover, her mind breaks. Her mad scenes \u2014 singing bawdy songs and distributing flowers \u2014 have been read by feminist critics as a suppressed voice finally speaking. Her drowning, reported by Gertrude in lyrical verse, is the play\u2019s most haunting offstage event.',
+      body: 'Ophelia is obedient, gentle and caught between the men who claim authority over her: her father Polonius, her brother Laertes, and Hamlet himself. She is instructed to reject Hamlet\u2019s advances and then used as bait to spy on him. When her father is killed by her lover, her mind breaks. Her mad scenes - singing bawdy songs and distributing flowers - have been read by feminist critics as a suppressed voice finally speaking. Her drowning, reported by Gertrude in lyrical verse, is the play\u2019s most haunting offstage event.',
     },
     {
       name: 'Polonius',
@@ -102,7 +102,7 @@ const data: TextGuideData = {
     {
       name: 'Horatio',
       role: 'Hamlet\u2019s close friend; a scholar from Wittenberg',
-      body: 'Horatio is the play\u2019s voice of rational scepticism and loyal friendship. Hamlet praises him for being "not passion\u2019s slave" \u2014 a man whose reason governs his feeling. He is the one Hamlet trusts to test the Ghost\u2019s guilt, the one he confides in after returning from the sea, and the one he asks to survive and tell his story. Horatio is the sole major character left standing at the end, giving the play a witness to carry its meaning outward.',
+      body: 'Horatio is the play\u2019s voice of rational scepticism and loyal friendship. Hamlet praises him for being "not passion\u2019s slave" - a man whose reason governs his feeling. He is the one Hamlet trusts to test the Ghost\u2019s guilt, the one he confides in after returning from the sea, and the one he asks to survive and tell his story. Horatio is the sole major character left standing at the end, giving the play a witness to carry its meaning outward.',
     },
     {
       name: 'The Ghost',
@@ -113,19 +113,19 @@ const data: TextGuideData = {
   themes: [
     {
       title: 'Revenge and delay',
-      body: 'Hamlet is framed as a revenge tragedy but repeatedly frustrates the genre\u2019s expectations. Where the conventional avenger acts swiftly, Hamlet thinks, questions and procrastinates. Shakespeare surrounds him with foils who do act \u2014 Laertes returns immediately to avenge Polonius; Fortinbras leads armies to reclaim lost land \u2014 throwing Hamlet\u2019s paralysis into relief. Critics have offered many explanations: moral scruple, Christian anxiety about damnation, Oedipal attachment to Gertrude, or an intellectual inability to settle on a single interpretation of events. The delay itself becomes the subject of the play, forcing the audience to examine what revenge costs the avenger.',
+      body: 'Hamlet is framed as a revenge tragedy but repeatedly frustrates the genre\u2019s expectations. Where the conventional avenger acts swiftly, Hamlet thinks, questions and procrastinates. Shakespeare surrounds him with foils who do act - Laertes returns immediately to avenge Polonius; Fortinbras leads armies to reclaim lost land - throwing Hamlet\u2019s paralysis into relief. Critics have offered many explanations: moral scruple, Christian anxiety about damnation, Oedipal attachment to Gertrude, or an intellectual inability to settle on a single interpretation of events. The delay itself becomes the subject of the play, forcing the audience to examine what revenge costs the avenger.',
     },
     {
-      title: 'Madness \u2014 real and performed',
-      body: 'Madness runs throughout the play as both strategy and consequence. Hamlet adopts an "antic disposition" as a cover for his investigation, but his performances become increasingly difficult to distinguish from genuine disturbance. Polonius famously observes "Though this be madness, yet there is method in\u2019t," registering the ambiguity. Ophelia\u2019s madness, by contrast, is unambiguously real \u2014 a disintegration caused by grief, male manipulation and the unbearable fact of her lover killing her father. Shakespeare contrasts performed and authentic madness to ask what sanity means in a court where everyone is lying.',
+      title: 'Madness - real and performed',
+      body: 'Madness runs throughout the play as both strategy and consequence. Hamlet adopts an "antic disposition" as a cover for his investigation, but his performances become increasingly difficult to distinguish from genuine disturbance. Polonius famously observes "Though this be madness, yet there is method in\u2019t," registering the ambiguity. Ophelia\u2019s madness, by contrast, is unambiguously real - a disintegration caused by grief, male manipulation and the unbearable fact of her lover killing her father. Shakespeare contrasts performed and authentic madness to ask what sanity means in a court where everyone is lying.',
     },
     {
       title: 'Death and mortality',
-      body: 'Hamlet is saturated with death: a ghost, a murder, a drowning, a stabbing, multiple poisonings. The "To be, or not to be" soliloquy interrogates suicide as a philosophical option, weighing the pain of existence against the unknown terrors of what follows. The graveyard scene \u2014 Hamlet holding Yorick\u2019s skull, imagining the dust of Alexander stopping a beer barrel \u2014 meditates on death as the great leveller that makes kings and jesters indistinguishable. Shakespeare uses these moments to place revenge within a vast existential frame, asking whether any earthly action can matter in the face of mortality.',
+      body: 'Hamlet is saturated with death: a ghost, a murder, a drowning, a stabbing, multiple poisonings. The "To be, or not to be" soliloquy interrogates suicide as a philosophical option, weighing the pain of existence against the unknown terrors of what follows. The graveyard scene - Hamlet holding Yorick\u2019s skull, imagining the dust of Alexander stopping a beer barrel - meditates on death as the great leveller that makes kings and jesters indistinguishable. Shakespeare uses these moments to place revenge within a vast existential frame, asking whether any earthly action can matter in the face of mortality.',
     },
     {
       title: 'Appearance vs reality',
-      body: 'The court of Elsinore runs on surveillance, disguise and performance. Claudius performs kingly grief while concealing murder; Polonius hides behind arrases; Rosencrantz and Guildenstern pose as friends while spying for the crown; Hamlet himself performs madness. Shakespeare uses the recurring motifs of acting, watching and masks \u2014 including the embedded play-within-a-play \u2014 to ask how truth can be found in a world where everyone performs. Hamlet\u2019s instinct that "seeming" is universal and dangerous underlies much of his philosophical paralysis.',
+      body: 'The court of Elsinore runs on surveillance, disguise and performance. Claudius performs kingly grief while concealing murder; Polonius hides behind arrases; Rosencrantz and Guildenstern pose as friends while spying for the crown; Hamlet himself performs madness. Shakespeare uses the recurring motifs of acting, watching and masks - including the embedded play-within-a-play - to ask how truth can be found in a world where everyone performs. Hamlet\u2019s instinct that "seeming" is universal and dangerous underlies much of his philosophical paralysis.',
     },
     {
       title: 'Corruption and decay',
@@ -137,131 +137,131 @@ const data: TextGuideData = {
     },
   ],
   historicalContext: [
-    'Shakespeare wrote Hamlet around 1599\u20131601, at the turn of the century and near the end of Elizabeth I\u2019s long reign. The play\u2019s source is ultimately the legend of Amleth in Saxo Grammaticus\u2019s twelfth-century Gesta Danorum, reaching Shakespeare through Fran\u00e7ois de Belleforest\u2019s Histoires Tragiques (1570). An earlier Elizabethan play on the same story \u2014 the so-called Ur-Hamlet, now lost and possibly by Thomas Kyd \u2014 almost certainly influenced Shakespeare\u2019s version. Kyd\u2019s The Spanish Tragedy had established the English revenge-play tradition, with its ghost demanding vengeance, its delayed avenger, its feigned madness and its bloody finale. Shakespeare both uses and radically interiorises these conventions.',
-    'The play emerges out of the religious uncertainty of post-Reformation England. Protestant doctrine had officially abolished Purgatory, yet the Ghost describes himself as suffering for "the foul crimes done in my days of nature" \u2014 a distinctly Catholic image. Hamlet\u2019s hesitation about whether the Ghost is honest or demonic reflects genuine Elizabethan anxieties about spirits: a devil could take the shape of a dead loved one to tempt the living into damnation. Hamlet\u2019s refusal to kill Claudius at prayer, for fear of sending him to heaven, depends on a theology his Protestant audience had been taught to distrust even while they understood it.',
-    'The play also echoes the political unease of its moment. Elizabeth was ageing and childless, and the succession was openly contested. In February 1601 the Earl of Essex launched his short-lived rebellion against the Queen; Shakespeare\u2019s company was briefly implicated when supporters of Essex commissioned a revival of Richard II on the eve of the rising. A play about usurpation, a diseased court, an uncertain succession and a young man caught between his father\u2019s authority and his own conscience carried a charge no Elizabethan audience could have missed. Hamlet\u2019s Denmark \u2014 rotten, watched, militarised on the edge of foreign invasion \u2014 holds up a mirror to the England of 1601.',
+    'Shakespeare wrote Hamlet around 1599\u20131601, at the turn of the century and near the end of Elizabeth I\u2019s long reign. The play\u2019s source is ultimately the legend of Amleth in Saxo Grammaticus\u2019s twelfth-century Gesta Danorum, reaching Shakespeare through Fran\u00e7ois de Belleforest\u2019s Histoires Tragiques (1570). An earlier Elizabethan play on the same story - the so-called Ur-Hamlet, now lost and possibly by Thomas Kyd - almost certainly influenced Shakespeare\u2019s version. Kyd\u2019s The Spanish Tragedy had established the English revenge-play tradition, with its ghost demanding vengeance, its delayed avenger, its feigned madness and its bloody finale. Shakespeare both uses and radically interiorises these conventions.',
+    'The play emerges out of the religious uncertainty of post-Reformation England. Protestant doctrine had officially abolished Purgatory, yet the Ghost describes himself as suffering for "the foul crimes done in my days of nature" - a distinctly Catholic image. Hamlet\u2019s hesitation about whether the Ghost is honest or demonic reflects genuine Elizabethan anxieties about spirits: a devil could take the shape of a dead loved one to tempt the living into damnation. Hamlet\u2019s refusal to kill Claudius at prayer, for fear of sending him to heaven, depends on a theology his Protestant audience had been taught to distrust even while they understood it.',
+    'The play also echoes the political unease of its moment. Elizabeth was ageing and childless, and the succession was openly contested. In February 1601 the Earl of Essex launched his short-lived rebellion against the Queen; Shakespeare\u2019s company was briefly implicated when supporters of Essex commissioned a revival of Richard II on the eve of the rising. A play about usurpation, a diseased court, an uncertain succession and a young man caught between his father\u2019s authority and his own conscience carried a charge no Elizabethan audience could have missed. Hamlet\u2019s Denmark - rotten, watched, militarised on the edge of foreign invasion - holds up a mirror to the England of 1601.',
   ],
   quotations: [
     {
       quote: '"To be, or not to be, that is the question."',
-      who: 'Hamlet \u2014 Act 3, Scene 1',
+      who: 'Hamlet - Act 3, Scene 1',
       analysis:
         'The play\u2019s most famous line opens a soliloquy weighing existence against suicide, framing suffering as a philosophical problem rather than a personal one.',
     },
     {
       quote: '"Something is rotten in the state of Denmark."',
-      who: 'Marcellus \u2014 Act 1, Scene 4',
+      who: 'Marcellus - Act 1, Scene 4',
       analysis:
         'Marcellus\u2019s line establishes the play\u2019s dominant metaphor of the kingdom as a diseased body, with corruption at the top infecting the whole state.',
     },
     {
       quote: '"Though this be madness, yet there is method in\u2019t."',
-      who: 'Polonius \u2014 Act 2, Scene 2',
+      who: 'Polonius - Act 2, Scene 2',
       analysis:
         'Polonius registers the central ambiguity of Hamlet\u2019s behaviour, unintentionally voicing the audience\u2019s question about whether the prince is feigning or breaking.',
     },
     {
       quote: '"The lady protests too much, methinks."',
-      who: 'Gertrude \u2014 Act 3, Scene 2',
+      who: 'Gertrude - Act 3, Scene 2',
       analysis:
         'Watching the Player Queen swear fidelity, Gertrude\u2019s comment lands with ironic weight given her own hasty remarriage; Shakespeare makes her the unwitting critic of herself.',
     },
     {
       quote: '"Get thee to a nunnery."',
-      who: 'Hamlet \u2014 Act 3, Scene 1',
+      who: 'Hamlet - Act 3, Scene 1',
       analysis:
-        'Hamlet\u2019s cruel dismissal of Ophelia has a double edge \u2014 "nunnery" was Elizabethan slang for brothel \u2014 fusing rejection with bitter misogyny about female sexuality.',
+        'Hamlet\u2019s cruel dismissal of Ophelia has a double edge - "nunnery" was Elizabethan slang for brothel - fusing rejection with bitter misogyny about female sexuality.',
     },
     {
       quote: '"Alas, poor Yorick. I knew him, Horatio."',
-      who: 'Hamlet \u2014 Act 5, Scene 1',
+      who: 'Hamlet - Act 5, Scene 1',
       analysis:
         'Holding the jester\u2019s skull, Hamlet confronts death as the great leveller; memory and laughter are reduced to bone, setting up the philosophical tone of the final act.',
     },
     {
       quote: '"Good night, sweet prince, / And flights of angels sing thee to thy rest."',
-      who: 'Horatio \u2014 Act 5, Scene 2',
+      who: 'Horatio - Act 5, Scene 2',
       analysis:
         'Horatio\u2019s farewell grants Hamlet a Christian blessing denied to almost everyone else in the play, letting the audience say goodbye to the protagonist with tenderness.',
     },
     {
       quote: '"O what a rogue and peasant slave am I!"',
-      who: 'Hamlet \u2014 Act 2, Scene 2',
+      who: 'Hamlet - Act 2, Scene 2',
       analysis:
         'Comparing himself to the actor who can weep for Hecuba, Hamlet turns his self-contempt into performance criticism, exposing the gap between feeling and action that defines him.',
     },
     {
       quote: '"What a piece of work is man."',
-      who: 'Hamlet \u2014 Act 2, Scene 2',
+      who: 'Hamlet - Act 2, Scene 2',
       analysis:
-        'The great Renaissance paean to human dignity is placed in the mouth of a man who no longer believes it \u2014 Hamlet ends the speech calling humanity a "quintessence of dust."',
+        'The great Renaissance paean to human dignity is placed in the mouth of a man who no longer believes it - Hamlet ends the speech calling humanity a "quintessence of dust."',
     },
     {
       quote: '"Frailty, thy name is woman!"',
-      who: 'Hamlet \u2014 Act 1, Scene 2',
+      who: 'Hamlet - Act 1, Scene 2',
       analysis:
         'Hamlet\u2019s disgust at Gertrude\u2019s remarriage is generalised into a misogynistic aphorism; Shakespeare shows the prince\u2019s grief curdling into contempt for female sexuality.',
     },
     {
       quote: '"The rest is silence."',
-      who: 'Hamlet \u2014 Act 5, Scene 2',
+      who: 'Hamlet - Act 5, Scene 2',
       analysis:
         'Hamlet\u2019s dying words refuse the long speeches that have defined him, leaving the play\u2019s unanswered metaphysical questions deliberately unspoken.',
     },
     {
       quote: '"The time is out of joint. O cursed spite, / That ever I was born to set it right."',
-      who: 'Hamlet \u2014 Act 1, Scene 5',
+      who: 'Hamlet - Act 1, Scene 5',
       analysis:
-        'Immediately after the Ghost\u2019s revelation, Hamlet frames his mission as restoring a dislocated world \u2014 an impossibly large task that foreshadows his paralysis.',
+        'Immediately after the Ghost\u2019s revelation, Hamlet frames his mission as restoring a dislocated world - an impossibly large task that foreshadows his paralysis.',
     },
     {
       quote: '"O, my offence is rank, it smells to heaven."',
-      who: 'Claudius \u2014 Act 3, Scene 3',
+      who: 'Claudius - Act 3, Scene 3',
       analysis:
         'Claudius\u2019s prayer soliloquy gives the audience unambiguous proof of his guilt and humanises him, complicating the moral clarity Hamlet needs to act.',
     },
     {
       quote: '"The play\u2019s the thing / Wherein I\u2019ll catch the conscience of the King."',
-      who: 'Hamlet \u2014 Act 2, Scene 2',
+      who: 'Hamlet - Act 2, Scene 2',
       analysis:
         'Hamlet turns theatre into forensic instrument, announcing the Mousetrap plan and exposing Shakespeare\u2019s own faith in drama as a way of reaching the truth.',
     },
     {
       quote: '"Now might I do it pat, now he is praying."',
-      who: 'Hamlet \u2014 Act 3, Scene 3',
+      who: 'Hamlet - Act 3, Scene 3',
       analysis:
-        'Hamlet finds Claudius apparently at prayer and refuses to kill him, fearing he would send his soul to heaven \u2014 a theological reasoning that becomes his fatal delay.',
+        'Hamlet finds Claudius apparently at prayer and refuses to kill him, fearing he would send his soul to heaven - a theological reasoning that becomes his fatal delay.',
     },
     {
       quote: '"How all occasions do inform against me, / And spur my dull revenge."',
-      who: 'Hamlet \u2014 Act 4, Scene 4',
+      who: 'Hamlet - Act 4, Scene 4',
       analysis:
         'Watching Fortinbras\u2019s army march for a worthless patch of ground, Hamlet measures himself against a man of action and finds himself intolerably wanting.',
     },
     {
       quote: '"There\u2019s a divinity that shapes our ends, / Rough-hew them how we will."',
-      who: 'Hamlet \u2014 Act 5, Scene 2',
+      who: 'Hamlet - Act 5, Scene 2',
       analysis:
         'After escaping from the voyage to England, Hamlet arrives at a calmer providential view; his philosophical restlessness gives way to a kind of religious acceptance before the final scene.',
     },
     {
       quote: '"There is nothing either good or bad but thinking makes it so."',
-      who: 'Hamlet \u2014 Act 2, Scene 2',
+      who: 'Hamlet - Act 2, Scene 2',
       analysis:
-        'Spoken to Rosencrantz and Guildenstern, the line captures Hamlet\u2019s relativism and his tendency to dissolve moral certainties under analysis \u2014 a mindset that hinders revenge.',
+        'Spoken to Rosencrantz and Guildenstern, the line captures Hamlet\u2019s relativism and his tendency to dissolve moral certainties under analysis - a mindset that hinders revenge.',
     },
     {
       quote: '"This above all: to thine own self be true."',
-      who: 'Polonius \u2014 Act 1, Scene 3',
+      who: 'Polonius - Act 1, Scene 3',
       analysis:
         'Polonius\u2019s advice to Laertes sounds noble but is undercut by the speaker\u2019s own hypocrisy; Shakespeare turns proverbial wisdom into characterisation of a meddling courtier.',
     },
     {
       quote:
         '"There are more things in heaven and earth, Horatio, / Than are dreamt of in your philosophy."',
-      who: 'Hamlet \u2014 Act 1, Scene 5',
+      who: 'Hamlet - Act 1, Scene 5',
       analysis:
-        'Hamlet rebukes his friend\u2019s scepticism after the Ghost\u2019s appearance, asserting that rational philosophy cannot account for everything \u2014 a claim the play will test relentlessly.',
+        'Hamlet rebukes his friend\u2019s scepticism after the Ghost\u2019s appearance, asserting that rational philosophy cannot account for everything - a claim the play will test relentlessly.',
     },
   ],
 }
@@ -296,7 +296,7 @@ const QUIZ_QUESTIONS: QuizQuestion[] = [
     options: ['Verona, Italy', 'Elsinore Castle, Denmark', 'London, England', 'Paris, France'],
     correctIndex: 1,
     explanation:
-      'The play is set at Elsinore Castle in Denmark. The Danish court is depicted as corrupt, watched, and militarised \u2014 "something is rotten in the state of Denmark."',
+      'The play is set at Elsinore Castle in Denmark. The Danish court is depicted as corrupt, watched, and militarised - "something is rotten in the state of Denmark."',
     topic: 'Plot',
     difficulty: 'foundation',
   },
@@ -393,7 +393,7 @@ const QUIZ_QUESTIONS: QuizQuestion[] = [
     ],
     correctIndex: 1,
     explanation:
-      'Hamlet decides to put on an "antic disposition" \u2014 feigned madness \u2014 to conceal his intentions and investigate the Ghost\'s claims. The performance becomes increasingly hard to distinguish from real disturbance.',
+      'Hamlet decides to put on an "antic disposition" - feigned madness - to conceal his intentions and investigate the Ghost\'s claims. The performance becomes increasingly hard to distinguish from real disturbance.',
     topic: 'Themes',
     difficulty: 'higher',
   },
@@ -409,7 +409,7 @@ const QUIZ_QUESTIONS: QuizQuestion[] = [
     ],
     correctIndex: 1,
     explanation:
-      'Hamlet reasons that killing Claudius while he prays would send his soul to heaven \u2014 an inadequate revenge for a man who murdered King Hamlet "full of bread." The theological reasoning is one of his fatal delays.',
+      'Hamlet reasons that killing Claudius while he prays would send his soul to heaven - an inadequate revenge for a man who murdered King Hamlet "full of bread." The theological reasoning is one of his fatal delays.',
     topic: 'Themes',
     difficulty: 'higher',
   },
@@ -436,7 +436,7 @@ const QUIZ_QUESTIONS: QuizQuestion[] = [
     ],
     correctIndex: 1,
     explanation:
-      "Laertes returns from France at the head of a rebellion immediately upon hearing of his father's death. His decisive action throws Hamlet's philosophical delay into sharp relief \u2014 both sons must avenge murdered fathers.",
+      "Laertes returns from France at the head of a rebellion immediately upon hearing of his father's death. His decisive action throws Hamlet's philosophical delay into sharp relief - both sons must avenge murdered fathers.",
     topic: 'Characters',
     difficulty: 'higher',
   },
@@ -478,7 +478,7 @@ const QUIZ_QUESTIONS: QuizQuestion[] = [
     type: 'multiple-choice',
     options: [
       'Everyone in the play is entirely honest',
-      'The court runs on surveillance, disguise and performance \u2014 Claudius performs grief, Polonius hides behind arrases, Hamlet performs madness, and a play-within-a-play dramatises the question directly',
+      'The court runs on surveillance, disguise and performance - Claudius performs grief, Polonius hides behind arrases, Hamlet performs madness, and a play-within-a-play dramatises the question directly',
       'Only Hamlet is deceptive',
       'The motif appears once',
     ],
@@ -494,13 +494,13 @@ const QUIZ_QUESTIONS: QuizQuestion[] = [
     type: 'multiple-choice',
     options: [
       'Shakespeare forgot to clarify',
-      'The Ghost describes Catholic purgatory, but Protestant doctrine had abolished it \u2014 Hamlet must consider whether the spirit is truly his father or a devil tempting him to damnation',
+      'The Ghost describes Catholic purgatory, but Protestant doctrine had abolished it - Hamlet must consider whether the spirit is truly his father or a devil tempting him to damnation',
       'The Ghost is explicitly an angel',
       'No audience cared about ghosts',
     ],
     correctIndex: 1,
     explanation:
-      'The Ghost describes suffering for "foul crimes done in my days of nature" \u2014 a Catholic image of purgatory. Post-Reformation English audiences knew a devil could take a dead loved one\'s shape to tempt the living, justifying Hamlet\'s delay in trusting him.',
+      'The Ghost describes suffering for "foul crimes done in my days of nature" - a Catholic image of purgatory. Post-Reformation English audiences knew a devil could take a dead loved one\'s shape to tempt the living, justifying Hamlet\'s delay in trusting him.',
     topic: 'Context',
     difficulty: 'grade-9',
   },
@@ -510,7 +510,7 @@ const QUIZ_QUESTIONS: QuizQuestion[] = [
     type: 'multiple-choice',
     options: [
       'It is a comedy',
-      "It keeps the genre's ghost, feigned madness and bloody finale but radically interiorises the form \u2014 the avenger delays, philosophises, and the delay itself becomes the play's subject",
+      "It keeps the genre's ghost, feigned madness and bloody finale but radically interiorises the form - the avenger delays, philosophises, and the delay itself becomes the play's subject",
       'It has no revenge plot',
       'It ignores earlier plays',
     ],
@@ -526,7 +526,7 @@ const QUIZ_QUESTIONS: QuizQuestion[] = [
     type: 'multiple-choice',
     options: [
       'She has no choice',
-      'Her complicity is deliberately left ambiguous \u2014 readings range from accident to quiet maternal sacrifice, with some seeing her knowingly drinking to save Hamlet',
+      'Her complicity is deliberately left ambiguous - readings range from accident to quiet maternal sacrifice, with some seeing her knowingly drinking to save Hamlet',
       'She is obviously murdered by Claudius',
       'She wanted the throne',
     ],
@@ -548,7 +548,7 @@ const QUIZ_QUESTIONS: QuizQuestion[] = [
     ],
     correctIndex: 1,
     explanation:
-      'Hamlet\'s final line rejects the philosophical speechifying that has characterised the whole play. The "rest" \u2014 what lies beyond death, the meaning of his suffering \u2014 remains silent, refusing the audience the consolation of an answer.',
+      'Hamlet\'s final line rejects the philosophical speechifying that has characterised the whole play. The "rest" - what lies beyond death, the meaning of his suffering - remains silent, refusing the audience the consolation of an answer.',
     topic: 'Themes',
     difficulty: 'grade-9',
   },
@@ -562,19 +562,19 @@ const REVISION_TOPICS = [
     keyPoints: [
       "The Ghost's command binds Hamlet to a code that destroys him",
       'Laertes and Fortinbras act as foils who do act decisively',
-      'Hamlet refuses to kill Claudius at prayer \u2014 a theological delay',
-      '"How all occasions do inform against me" \u2014 self-contempt at inaction',
+      'Hamlet refuses to kill Claudius at prayer - a theological delay',
+      '"How all occasions do inform against me" - self-contempt at inaction',
       "The delay itself becomes the play's central subject",
     ],
   },
   {
-    topic: 'Madness \u2014 Real and Performed',
+    topic: 'Madness - Real and Performed',
     summary:
       'Madness runs throughout the play as both strategy and consequence, with the boundary between performed and genuine disturbance increasingly unstable.',
     keyPoints: [
       'Hamlet\'s "antic disposition" is initially a cover for investigation',
       'Polonius: "Though this be madness, yet there is method in\'t"',
-      "Ophelia's madness is unambiguously real \u2014 grief and manipulation",
+      "Ophelia's madness is unambiguously real - grief and manipulation",
       'Her flower scene: suppressed female voice finally speaking',
       'Feminist critics read her breakdown as a political statement',
     ],
@@ -597,7 +597,7 @@ const REVISION_TOPICS = [
       'The court runs on surveillance, disguise and performance, making truth difficult to find in a world where everyone performs.',
     keyPoints: [
       'Claudius performs grief while concealing murder',
-      'Polonius hides behind arrases \u2014 dies of his own spying',
+      'Polonius hides behind arrases - dies of his own spying',
       'Rosencrantz and Guildenstern pose as friends while spying',
       'The Mousetrap: play-within-a-play as forensic instrument',
       '"Seeming" as a universal Elizabethan anxiety',
@@ -606,7 +606,7 @@ const REVISION_TOPICS = [
   {
     topic: 'Corruption and Decay',
     summary:
-      '"Something is rotten in the state of Denmark" \u2014 the kingdom is presented as a diseased body, with murder at the top infecting the whole state.',
+      '"Something is rotten in the state of Denmark" - the kingdom is presented as a diseased body, with murder at the top infecting the whole state.',
     keyPoints: [
       'Recurring imagery of disease, weeds, ulcers and poison',
       "Claudius's crime is political as well as personal",
@@ -693,7 +693,7 @@ export default async function HamletPage() {
         ]}
         quizQuotes={data.quotations.slice(0, 10).map((q) => ({
           quote: q.quote.replace(/["\u201C\u201D]/g, ''),
-          character: q.who.split('\u2014')[0].trim(),
+          character: q.who.split(/ [-\u2014] /)[0].trim(),
           context: q.analysis.slice(0, 100) + '...',
         }))}
         essayQuestions={[

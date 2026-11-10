@@ -207,7 +207,7 @@ export default async function RecountPage() {
         <span>{await t('ks3.page.text_types.recount.bc')}</span>
       </p>
 
-      <h1>The recount &mdash; a reading and writing guide</h1>
+      <h1>The recount - a reading and writing guide</h1>
       <p className="lead">
         The recount sits in two places on this qualification at once. It is one of the{' '}
         {READING_TYPE_COUNT} set non-fiction text types you may have to read and analyse in Section
@@ -222,10 +222,10 @@ export default async function RecountPage() {
         <p className="text-sm text-muted-foreground leading-relaxed">
           A recount retells events that really happened, in the order they happened, so that a
           reader can follow them. Its main purposes are usually to <em>inform</em> and to{' '}
-          <em>describe</em> &mdash; two of the recognised non-fiction purposes ({PURPOSE_LIST})
-          &mdash; and a personal recount often adds the aim of letting the reader share an
-          experience. Because it is anchored to true events, a recount must be accurate; but
-          accuracy alone is not enough, so good recounts also select detail and control pace.
+          <em>describe</em> - two of the recognised non-fiction purposes ({PURPOSE_LIST}) - and a
+          personal recount often adds the aim of letting the reader share an experience. Because it
+          is anchored to true events, a recount must be accurate; but accuracy alone is not enough,
+          so good recounts also select detail and control pace.
         </p>
       </section>
 
@@ -320,7 +320,7 @@ export default async function RecountPage() {
 
       {/* ── Annotated extract: personal recount ─────────────────────── */}
       <section className="my-10">
-        <h2>Annotated extract 1 &mdash; a personal recount</h2>
+        <h2>Annotated extract 1 - a personal recount</h2>
         <p className="text-sm text-muted-foreground">
           An original extract written by The English Hub. Read the left-hand column as the text and
           the right-hand note as the structural analysis.
@@ -340,7 +340,7 @@ export default async function RecountPage() {
 
       {/* ── Annotated extract: event recount ────────────────────────── */}
       <section className="my-10">
-        <h2>Annotated extract 2 &mdash; a factual / event recount</h2>
+        <h2>Annotated extract 2 - a factual / event recount</h2>
         <p className="text-sm text-muted-foreground">
           A second original extract written by The English Hub. Notice the third-person, objective
           voice compared with extract 1.
@@ -392,8 +392,8 @@ export default async function RecountPage() {
           orientation, retell events in chronological order using controlled time connectives, place
           your most striking moment where it has the most impact rather than simply first, and close
           with a reorientation that reflects or states the outcome. If the task names a related form
-          &mdash; a diary or a letter &mdash; keep the recount shape but add that form&rsquo;s
-          conventions on top.
+          - a diary or a letter - keep the recount shape but add that form&rsquo;s conventions on
+          top.
         </p>
       </section>
 
@@ -426,11 +426,11 @@ export default async function RecountPage() {
           ))}
         </div>
         <p className="mt-3 text-sm text-muted-foreground leading-relaxed">
-          From here, the next paragraphs would retell the reopening in order &mdash; the doors
-          opening, the first room, the moment it met or defied expectation &mdash; linked by time
-          connectives, before a short reorientation that reflects on why the wait was worth it. That
-          orientation &rarr; events &rarr; reorientation shape is exactly what the {WAO1.code} grid
-          means by a form that is &ldquo;established and maintained&rdquo;.
+          From here, the next paragraphs would retell the reopening in order - the doors opening,
+          the first room, the moment it met or defied expectation - linked by time connectives,
+          before a short reorientation that reflects on why the wait was worth it. That orientation
+          &rarr; events &rarr; reorientation shape is exactly what the {WAO1.code} grid means by a
+          form that is &ldquo;established and maintained&rdquo;.
         </p>
       </section>
 

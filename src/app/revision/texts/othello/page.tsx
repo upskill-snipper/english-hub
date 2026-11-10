@@ -60,7 +60,7 @@ const data: TextGuideData = {
   category: 'Play',
   badge: 'Eduqas / AQA A-Level / Edexcel A-Level / OCR A-Level / Eduqas A-Level / Edexcel IAL',
   intro:
-    'Shakespeare\u2019s Othello is a domestic tragedy of jealousy, race and manipulation. Written around 1603 at the beginning of the Jacobean era, the play follows a distinguished Moorish general in the service of Venice who is destroyed from within by his trusted ensign, Iago. Iago\u2019s motiveless malignity, Othello\u2019s susceptibility to doubt and the destructive power of a patriarchal honour culture combine to produce one of Shakespeare\u2019s most intimate and devastating tragedies. Studied widely at A-Level, the play raises urgent questions about race and outsider identity in early modern Europe, the vulnerability of marriage to external poison, and the gap between appearance and reality. Its structure \u2014 a rapid public rise followed by a claustrophobic descent \u2014 gives Othello a psychological intensity that continues to generate powerful critical and performance readings today.',
+    'Shakespeare\u2019s Othello is a domestic tragedy of jealousy, race and manipulation. Written around 1603 at the beginning of the Jacobean era, the play follows a distinguished Moorish general in the service of Venice who is destroyed from within by his trusted ensign, Iago. Iago\u2019s motiveless malignity, Othello\u2019s susceptibility to doubt and the destructive power of a patriarchal honour culture combine to produce one of Shakespeare\u2019s most intimate and devastating tragedies. Studied widely at A-Level, the play raises urgent questions about race and outsider identity in early modern Europe, the vulnerability of marriage to external poison, and the gap between appearance and reality. Its structure - a rapid public rise followed by a claustrophobic descent - gives Othello a psychological intensity that continues to generate powerful critical and performance readings today.',
   quickInfo: {
     genre: 'Tragedy',
     setting: 'Venice, then Cyprus',
@@ -70,7 +70,7 @@ const data: TextGuideData = {
   plotSummary: [
     'The play opens in Venice at night, where Iago, ensign to the Moorish general Othello, wakes the senator Brabantio with the news that his daughter Desdemona has eloped with Othello. Iago is already burning with resentment because Othello has promoted the younger Cassio to lieutenant over him. Roderigo, a foolish suitor still hoping to win Desdemona, is funding Iago\u2019s schemes. Brabantio hauls Othello before the Duke and the senate to answer the charge that he has seduced Desdemona by witchcraft. Othello defends himself with a calm, eloquent account of how Desdemona came to love him through his stories of travel and danger, and Desdemona herself declares her choice in public. The Duke sides with Othello and dispatches him to Cyprus to defend the island against a Turkish invasion. Desdemona insists on sailing with him.',
     'In Act 2, a storm scatters the Turkish fleet before the battle can begin, and the focus of the play narrows to the confined military garrison on Cyprus. Iago engineers his first trap: he gets Cassio drunk on the night of Othello\u2019s wedding celebrations, provokes a fight with Roderigo, and draws Montano, the former governor, into the brawl. Othello strips Cassio of his lieutenancy. Iago then persuades the distraught Cassio to plead for reinstatement through Desdemona, knowing that her kindness will look like something darker when seen through suspicious eyes.',
-    'Act 3 is the hinge of the tragedy. In the long central temptation scene, Iago gradually poisons Othello\u2019s mind with hints, hesitations and pretended reluctance, suggesting that Desdemona is in a liaison with Cassio. A handkerchief that Othello gave Desdemona as his first gift \u2014 embroidered with strawberries \u2014 falls from her hand and is picked up by Iago\u2019s wife Emilia, who gives it to Iago without knowing his purpose. Iago plants it in Cassio\u2019s lodgings. By the end of the act Othello has sworn revenge and promoted Iago to lieutenant, while Desdemona, bewildered by her husband\u2019s change, keeps trying to advocate for Cassio, unintentionally confirming the suspicion.',
+    'Act 3 is the hinge of the tragedy. In the long central temptation scene, Iago gradually poisons Othello\u2019s mind with hints, hesitations and pretended reluctance, suggesting that Desdemona is in a liaison with Cassio. A handkerchief that Othello gave Desdemona as his first gift - embroidered with strawberries - falls from her hand and is picked up by Iago\u2019s wife Emilia, who gives it to Iago without knowing his purpose. Iago plants it in Cassio\u2019s lodgings. By the end of the act Othello has sworn revenge and promoted Iago to lieutenant, while Desdemona, bewildered by her husband\u2019s change, keeps trying to advocate for Cassio, unintentionally confirming the suspicion.',
     'In Act 4 Othello\u2019s collapse becomes visible. He eavesdrops on a conversation with Cassio that Iago has stage-managed to refer to the courtesan Bianca, interpreting the laughter as proof of adultery. Othello then watches Bianca hand the handkerchief back to Cassio. Othello strikes Desdemona in public before the Venetian ambassador Lodovico and decides she must die. In Act 5 Iago engineers Roderigo\u2019s attack on Cassio; Cassio is wounded, Roderigo is killed by Iago to silence him. Othello smothers Desdemona in their bed. Emilia breaks in, discovers what has happened, and exposes the handkerchief plot, revealing Iago as the architect of everything. Iago stabs Emilia and is arrested. Othello, recognising what he has done, delivers a final speech about how he should be remembered and kills himself beside Desdemona\u2019s body. Cassio is left to govern Cyprus and Iago is led away to be tortured.',
   ],
   characters: [
@@ -87,7 +87,7 @@ const data: TextGuideData = {
     {
       name: 'Iago',
       role: 'Othello\u2019s ensign; the antagonist',
-      body: 'Iago speaks more lines than anyone else in the play, Othello included, and is one of the most disturbing characters in Shakespeare. He offers multiple motives for his hatred of Othello \u2014 being passed over for promotion, unsubstantiated rumour that Othello has slept with Emilia, racial contempt, sheer resentment of virtue \u2014 without any of them fully explaining his conduct. Coleridge famously called this \u201cmotiveless malignity.\u201d Iago manipulates every other character through tailored language, exploiting their specific vulnerabilities: Roderigo\u2019s lust, Cassio\u2019s anxiety about reputation, Othello\u2019s racial self-doubt, Emilia\u2019s desire to please. His refusal to explain himself at the end (\u201cDemand me nothing\u201d) denies the audience closure.',
+      body: 'Iago speaks more lines than anyone else in the play, Othello included, and is one of the most disturbing characters in Shakespeare. He offers multiple motives for his hatred of Othello - being passed over for promotion, unsubstantiated rumour that Othello has slept with Emilia, racial contempt, sheer resentment of virtue - without any of them fully explaining his conduct. Coleridge famously called this \u201cmotiveless malignity.\u201d Iago manipulates every other character through tailored language, exploiting their specific vulnerabilities: Roderigo\u2019s lust, Cassio\u2019s anxiety about reputation, Othello\u2019s racial self-doubt, Emilia\u2019s desire to please. His refusal to explain himself at the end (\u201cDemand me nothing\u201d) denies the audience closure.',
     },
     {
       name: 'Cassio',
@@ -97,35 +97,35 @@ const data: TextGuideData = {
     {
       name: 'Emilia',
       role: 'Iago\u2019s wife and Desdemona\u2019s attendant',
-      body: 'Emilia grows in importance across the play. Initially she seems loyal to Iago, handing him the handkerchief without understanding what he will do with it. But her great speech in Act 4 scene 3 on the mutual duties of husbands and wives is one of Shakespeare\u2019s most striking proto-feminist statements, and in Act 5 she becomes the play\u2019s truth-teller. She exposes Iago in front of everyone, defies his command to be silent \u2014 \u201cI will not charm my tongue\u201d \u2014 and is murdered for it. Her courage redeems the network of female silence that Iago has exploited.',
+      body: 'Emilia grows in importance across the play. Initially she seems loyal to Iago, handing him the handkerchief without understanding what he will do with it. But her great speech in Act 4 scene 3 on the mutual duties of husbands and wives is one of Shakespeare\u2019s most striking proto-feminist statements, and in Act 5 she becomes the play\u2019s truth-teller. She exposes Iago in front of everyone, defies his command to be silent - \u201cI will not charm my tongue\u201d - and is murdered for it. Her courage redeems the network of female silence that Iago has exploited.',
     },
     {
       name: 'Roderigo',
       role: 'A Venetian gentleman in love with Desdemona',
-      body: 'Roderigo is Iago\u2019s dupe and his ATM. He has been pursuing Desdemona with gifts that Iago has mostly pocketed, and he is gullible enough to believe each new plan will finally win her. Shakespeare uses Roderigo to show Iago\u2019s technique in miniature: the manipulator spots appetite, flatters it and empties it. Roderigo\u2019s attempted murder of Cassio in Act 5 goes wrong, and Iago kills him to silence him \u2014 a fate that exposes the disposable nature of Iago\u2019s alliances.',
+      body: 'Roderigo is Iago\u2019s dupe and his ATM. He has been pursuing Desdemona with gifts that Iago has mostly pocketed, and he is gullible enough to believe each new plan will finally win her. Shakespeare uses Roderigo to show Iago\u2019s technique in miniature: the manipulator spots appetite, flatters it and empties it. Roderigo\u2019s attempted murder of Cassio in Act 5 goes wrong, and Iago kills him to silence him - a fate that exposes the disposable nature of Iago\u2019s alliances.',
     },
     {
       name: 'Brabantio',
       role: 'A Venetian senator and Desdemona\u2019s father',
-      body: 'Brabantio appears chiefly in Act 1. His response to Desdemona\u2019s elopement combines racist outrage \u2014 he cannot believe she would choose Othello without enchantment \u2014 with wounded patriarchal authority. His parting warning to Othello (\u201cShe has deceiv\u2019d her father, and may thee\u201d) plants the first seed of doubt that Iago will later cultivate. Off-stage his death of grief at Desdemona\u2019s marriage is reported in Act 5, adding another layer of collateral damage to the tragedy.',
+      body: 'Brabantio appears chiefly in Act 1. His response to Desdemona\u2019s elopement combines racist outrage - he cannot believe she would choose Othello without enchantment - with wounded patriarchal authority. His parting warning to Othello (\u201cShe has deceiv\u2019d her father, and may thee\u201d) plants the first seed of doubt that Iago will later cultivate. Off-stage his death of grief at Desdemona\u2019s marriage is reported in Act 5, adding another layer of collateral damage to the tragedy.',
     },
   ],
   themes: [
     {
       title: 'Jealousy',
-      body: 'Jealousy is the engine of the tragedy, named directly by Iago as the \u201cgreen-ey\u2019d monster which doth mock / The meat it feeds on.\u201d Shakespeare is careful to show that Othello is not innately jealous \u2014 his initial response to Iago\u2019s hints is resistance \u2014 but that jealousy, once planted, consumes its host. The play distinguishes between different kinds of jealousy: Iago\u2019s professional resentment of Cassio, his vague sexual jealousy of Othello with Emilia, Roderigo\u2019s frustrated desire for Desdemona, and finally Othello\u2019s overwhelming sexual jealousy. Each feeds on imagination rather than evidence. Shakespeare dramatises how jealousy generates its own proof: Othello increasingly sees what he expects to see, and the handkerchief becomes \u201cocular proof\u201d only because he has already decided.',
+      body: 'Jealousy is the engine of the tragedy, named directly by Iago as the \u201cgreen-ey\u2019d monster which doth mock / The meat it feeds on.\u201d Shakespeare is careful to show that Othello is not innately jealous - his initial response to Iago\u2019s hints is resistance - but that jealousy, once planted, consumes its host. The play distinguishes between different kinds of jealousy: Iago\u2019s professional resentment of Cassio, his vague sexual jealousy of Othello with Emilia, Roderigo\u2019s frustrated desire for Desdemona, and finally Othello\u2019s overwhelming sexual jealousy. Each feeds on imagination rather than evidence. Shakespeare dramatises how jealousy generates its own proof: Othello increasingly sees what he expects to see, and the handkerchief becomes \u201cocular proof\u201d only because he has already decided.',
     },
     {
       title: 'Race and otherness',
-      body: 'Othello is the only non-white tragic protagonist in Shakespeare, and his race is inseparable from the play\u2019s action. From the opening scene Iago and Roderigo use animal and sexual imagery to describe him \u2014 \u201can old black ram / Is tupping your white ewe\u201d \u2014 establishing a racist Venetian discourse that Othello has had to live inside. Shakespeare complicates this by giving Othello the most eloquent language in the early acts, inviting the audience to see his dignity before seeing his skin. But Othello has also internalised some of the surrounding prejudice: his line \u201cHaply, for I am black\u201d shows how racial self-doubt makes him vulnerable to Iago\u2019s insinuations. The play asks whether the tragedy happens to Othello because he is an outsider, or because the society around him is ready to read every action through a racial lens.',
+      body: 'Othello is the only non-white tragic protagonist in Shakespeare, and his race is inseparable from the play\u2019s action. From the opening scene Iago and Roderigo use animal and sexual imagery to describe him - \u201can old black ram / Is tupping your white ewe\u201d - establishing a racist Venetian discourse that Othello has had to live inside. Shakespeare complicates this by giving Othello the most eloquent language in the early acts, inviting the audience to see his dignity before seeing his skin. But Othello has also internalised some of the surrounding prejudice: his line \u201cHaply, for I am black\u201d shows how racial self-doubt makes him vulnerable to Iago\u2019s insinuations. The play asks whether the tragedy happens to Othello because he is an outsider, or because the society around him is ready to read every action through a racial lens.',
     },
     {
       title: 'Appearance vs reality',
-      body: 'Every major disaster in the play arises from a gap between how things look and what they are. Iago\u2019s famous line \u201cI am not what I am\u201d defines him as pure dissimulation. Desdemona\u2019s kindness to Cassio looks like flirtation when reframed by Iago; a handkerchief dropped by accident looks like incriminating evidence; laughter about Bianca looks like laughter about Desdemona. Shakespeare builds the whole architecture of the tragedy on misinterpreted signs, and he reinforces the theme with the repeated use of the word \u201chonest\u201d to describe Iago \u2014 a word that, over the course of the play, is drained of meaning. The audience\u2019s privileged position, hearing Iago\u2019s soliloquies, intensifies the dramatic irony.',
+      body: 'Every major disaster in the play arises from a gap between how things look and what they are. Iago\u2019s famous line \u201cI am not what I am\u201d defines him as pure dissimulation. Desdemona\u2019s kindness to Cassio looks like flirtation when reframed by Iago; a handkerchief dropped by accident looks like incriminating evidence; laughter about Bianca looks like laughter about Desdemona. Shakespeare builds the whole architecture of the tragedy on misinterpreted signs, and he reinforces the theme with the repeated use of the word \u201chonest\u201d to describe Iago - a word that, over the course of the play, is drained of meaning. The audience\u2019s privileged position, hearing Iago\u2019s soliloquies, intensifies the dramatic irony.',
     },
     {
       title: 'Honour and reputation',
-      body: 'The world of Othello is structured around masculine honour and female reputation, two codes that the play shows to be both powerful and destructive. Cassio\u2019s lament after his drunken brawl \u2014 \u201cReputation, reputation, reputation! O, I have lost my reputation\u201d \u2014 captures how a soldier\u2019s identity rests on public standing. Iago exploits this by attacking reputations from the outside: he destroys Cassio\u2019s by getting him drunk, Desdemona\u2019s by insinuating adultery, Othello\u2019s by pushing him to behaviour that confirms Venetian stereotypes. Female reputation is even more fragile, being tied to sexual fidelity; a rumour is enough to condemn Desdemona in Othello\u2019s mind. Emilia\u2019s defiance in Act 5 is partly a rejection of the reputation-based silence that has been required of her.',
+      body: 'The world of Othello is structured around masculine honour and female reputation, two codes that the play shows to be both powerful and destructive. Cassio\u2019s lament after his drunken brawl - \u201cReputation, reputation, reputation! O, I have lost my reputation\u201d - captures how a soldier\u2019s identity rests on public standing. Iago exploits this by attacking reputations from the outside: he destroys Cassio\u2019s by getting him drunk, Desdemona\u2019s by insinuating adultery, Othello\u2019s by pushing him to behaviour that confirms Venetian stereotypes. Female reputation is even more fragile, being tied to sexual fidelity; a rumour is enough to condemn Desdemona in Othello\u2019s mind. Emilia\u2019s defiance in Act 5 is partly a rejection of the reputation-based silence that has been required of her.',
     },
     {
       title: 'Gender and marriage',
@@ -133,125 +133,125 @@ const data: TextGuideData = {
     },
     {
       title: 'Manipulation and trust',
-      body: 'Iago\u2019s method is not force but manipulation \u2014 the careful placement of language, images and objects into minds already primed to receive them. He rarely tells a direct lie; instead he pauses, hesitates, asks questions, and lets the listener draw the ruinous conclusion. Shakespeare examines the particular vulnerabilities trust creates: Othello\u2019s faith in Iago as his ensign, Cassio\u2019s friendship with the man who gets him drunk, Emilia\u2019s wifely habit of handing over the handkerchief. Every destruction in the play is made possible by a relationship of trust that Iago inverts. The tragedy is in some sense a tragedy of misplaced faith, and the play asks whether faith itself \u2014 in a spouse, in a soldier, in a god \u2014 is ever safe in a world where signs can be forged.',
+      body: 'Iago\u2019s method is not force but manipulation - the careful placement of language, images and objects into minds already primed to receive them. He rarely tells a direct lie; instead he pauses, hesitates, asks questions, and lets the listener draw the ruinous conclusion. Shakespeare examines the particular vulnerabilities trust creates: Othello\u2019s faith in Iago as his ensign, Cassio\u2019s friendship with the man who gets him drunk, Emilia\u2019s wifely habit of handing over the handkerchief. Every destruction in the play is made possible by a relationship of trust that Iago inverts. The tragedy is in some sense a tragedy of misplaced faith, and the play asks whether faith itself - in a spouse, in a soldier, in a god - is ever safe in a world where signs can be forged.',
     },
   ],
   historicalContext: [
     'Shakespeare wrote Othello around 1603, at the start of the reign of King James I. The play was performed at court in November 1604 and published in quarto in 1622, then in the First Folio in 1623. The early Jacobean period was a moment of heightened anxiety about outsiders and about the stability of marriage: James\u2019s succession had only just resolved the question of who would rule, plague had closed the theatres, and there was intense public interest in honour, duelling and reputation. Othello sits at the beginning of Shakespeare\u2019s major tragic sequence, close to Hamlet and written just before King Lear and Macbeth.',
-    'Venice in the early seventeenth century was, in the English imagination, both a respected commercial republic and a morally ambiguous city of intrigue, sexual sophistication and military professionalism. Its practice of hiring foreign generals \u2014 because Venetian patricians feared a citizen commander \u2014 makes Othello\u2019s position plausible rather than fantastical. Cyprus, the play\u2019s second location, was a Venetian colony on the front line against the Ottoman empire until it fell to the Turks in 1571. By setting the military crisis on Cyprus, Shakespeare places his tragedy on a specific historical frontier between Christian Europe and the Islamic Mediterranean.',
-    'Moorish characters had appeared on the English stage before Othello \u2014 notably Aaron in Titus Andronicus and the Prince of Morocco in The Merchant of Venice \u2014 usually as either exoticised figures or villains. Shakespeare breaks with that tradition by making his Moor the tragic hero. \u201cMoor\u201d in early modern English was a flexible term covering North Africans, sub-Saharan Africans and, sometimes, Muslims generally; Othello\u2019s exact background is deliberately ambiguous. Contemporary accounts of the visit of a Moroccan ambassador to Elizabeth\u2019s court in 1600 and public anxiety about the status of \u201cblackamoors\u201d in England provide a specific context for the racial language of the play.',
+    'Venice in the early seventeenth century was, in the English imagination, both a respected commercial republic and a morally ambiguous city of intrigue, sexual sophistication and military professionalism. Its practice of hiring foreign generals - because Venetian patricians feared a citizen commander - makes Othello\u2019s position plausible rather than fantastical. Cyprus, the play\u2019s second location, was a Venetian colony on the front line against the Ottoman empire until it fell to the Turks in 1571. By setting the military crisis on Cyprus, Shakespeare places his tragedy on a specific historical frontier between Christian Europe and the Islamic Mediterranean.',
+    'Moorish characters had appeared on the English stage before Othello - notably Aaron in Titus Andronicus and the Prince of Morocco in The Merchant of Venice - usually as either exoticised figures or villains. Shakespeare breaks with that tradition by making his Moor the tragic hero. \u201cMoor\u201d in early modern English was a flexible term covering North Africans, sub-Saharan Africans and, sometimes, Muslims generally; Othello\u2019s exact background is deliberately ambiguous. Contemporary accounts of the visit of a Moroccan ambassador to Elizabeth\u2019s court in 1600 and public anxiety about the status of \u201cblackamoors\u201d in England provide a specific context for the racial language of the play.',
     'The honour culture in which Othello operates was familiar to Jacobean audiences: male status depended on public reputation, female status on sexual fidelity, and offences to either were felt to demand violent redress. Duelling was a live social problem. Shakespeare\u2019s immediate source was an Italian novella by Cinthio, \u201cUn Capitano Moro\u201d, published in Hecatommithi (1565). In Cinthio\u2019s version the Moor has no name, the ensign has clearer motives and dies later under torture over another matter, and the murder of the Desdemona figure is more prolonged and more brutal. Shakespeare compresses and elevates the story, gives his Moor eloquence, names, and interior life, and builds the deception around the handkerchief, which he found in Cinthio.',
   ],
   quotations: [
     {
       quote: '"I am not what I am."',
-      who: 'Iago \u2014 Act 1, Scene 1',
+      who: 'Iago - Act 1, Scene 1',
       analysis:
         'Iago\u2019s perverse inversion of the biblical \u201cI am that I am\u201d announces his nature as pure dissimulation and frames the whole play as a tragedy of misread signs.',
     },
     {
       quote: '"An old black ram / Is tupping your white ewe."',
-      who: 'Iago \u2014 Act 1, Scene 1',
+      who: 'Iago - Act 1, Scene 1',
       analysis:
         'Iago rouses Brabantio with animal, racist and sexual imagery, establishing the Venetian racial vocabulary that shadows Othello from the opening scene.',
     },
     {
       quote:
         '"She lov\u2019d me for the dangers I had pass\u2019d, / And I lov\u2019d her that she did pity them."',
-      who: 'Othello \u2014 Act 1, Scene 3',
+      who: 'Othello - Act 1, Scene 3',
       analysis:
-        'Othello\u2019s account of his courtship to the Senate defines the marriage as one founded on narrative and sympathy \u2014 a bond that Iago will later reframe as seduction.',
+        'Othello\u2019s account of his courtship to the Senate defines the marriage as one founded on narrative and sympathy - a bond that Iago will later reframe as seduction.',
     },
     {
       quote: '"Put money in thy purse."',
-      who: 'Iago \u2014 Act 1, Scene 3',
+      who: 'Iago - Act 1, Scene 3',
       analysis:
         'Iago\u2019s refrain to Roderigo, repeated insistently, shows how he manipulates through rhythm and repetition as much as content, and reduces his dupe to a wallet.',
     },
     {
       quote: '"Reputation, reputation, reputation! O, I have lost my reputation!"',
-      who: 'Cassio \u2014 Act 2, Scene 3',
+      who: 'Cassio - Act 2, Scene 3',
       analysis:
         'Cassio\u2019s triple cry after his drunken disgrace dramatises the weight of honour culture on male identity and gives Iago the opening he needs to manipulate him.',
     },
     {
       quote:
         '"O, beware, my lord, of jealousy; / It is the green-ey\u2019d monster which doth mock / The meat it feeds on."',
-      who: 'Iago \u2014 Act 3, Scene 3',
+      who: 'Iago - Act 3, Scene 3',
       analysis:
         'Iago names the emotion he is deliberately planting, the hypocrisy sharpened by the vivid metaphor of jealousy as a predator that mocks what it consumes.',
     },
     {
       quote: '"Haply, for I am black."',
-      who: 'Othello \u2014 Act 3, Scene 3',
+      who: 'Othello - Act 3, Scene 3',
       analysis:
         'Othello\u2019s first explanation for why Desdemona might betray him is racial self-doubt, exposing how thoroughly he has internalised the society\u2019s prejudice.',
     },
     {
       quote: '"She did deceive her father, marrying you."',
-      who: 'Iago \u2014 Act 3, Scene 3',
+      who: 'Iago - Act 3, Scene 3',
       analysis:
         'Iago reactivates Brabantio\u2019s parting warning, turning Desdemona\u2019s original act of love into evidence of a general capacity for deception.',
     },
     {
       quote: '"O, now, for ever / Farewell the tranquil mind! Farewell content!"',
-      who: 'Othello \u2014 Act 3, Scene 3',
+      who: 'Othello - Act 3, Scene 3',
       analysis:
         'Othello\u2019s farewell-to-occupation speech shows how the poisoning of his personal life annihilates his public identity as a soldier and commander.',
     },
     {
       quote: '"I\u2019ll tear her all to pieces."',
-      who: 'Othello \u2014 Act 3, Scene 3',
+      who: 'Othello - Act 3, Scene 3',
       analysis:
         'The sudden, violent image signals the collapse of Othello\u2019s measured early-act eloquence into the fragmented, savage language of jealous rage.',
     },
     {
       quote: '"Think on thy sins."',
-      who: 'Othello \u2014 Act 5, Scene 2',
+      who: 'Othello - Act 5, Scene 2',
       analysis:
         'Othello enters the bedroom casting himself as a priest of justice rather than a murderer, a self-deception that the scene will dismantle line by line.',
     },
     {
       quote: '"Put out the light, and then put out the light."',
-      who: 'Othello \u2014 Act 5, Scene 2',
+      who: 'Othello - Act 5, Scene 2',
       analysis:
         'The repeated phrase equates extinguishing the candle with extinguishing Desdemona\u2019s life, and hesitates with appalling clarity on the irreversibility of the second act.',
     },
     {
       quote: '"I kiss\u2019d thee ere I kill\u2019d thee."',
-      who: 'Othello \u2014 Act 5, Scene 2',
+      who: 'Othello - Act 5, Scene 2',
       analysis:
         'The chiasmus of kiss and kill compresses love and murder into a single line and shows Othello\u2019s attempt to aestheticise what he has done.',
     },
     {
       quote: '"I will not charm my tongue; I am bound to speak."',
-      who: 'Emilia \u2014 Act 5, Scene 2',
+      who: 'Emilia - Act 5, Scene 2',
       analysis:
         'Emilia\u2019s refusal to be silenced by her husband makes her the play\u2019s truth-teller and breaks the network of female silence that Iago has exploited.',
     },
     {
       quote:
         '"Demand me nothing. What you know, you know. / From this time forth I never will speak word."',
-      who: 'Iago \u2014 Act 5, Scene 2',
+      who: 'Iago - Act 5, Scene 2',
       analysis:
         'Iago\u2019s final refusal to explain himself denies the audience closure and leaves his malignity permanently unresolved.',
     },
     {
       quote: '"Then must you speak / Of one that loved not wisely, but too well."',
-      who: 'Othello \u2014 Act 5, Scene 2',
+      who: 'Othello - Act 5, Scene 2',
       analysis:
         'Othello shapes his own epitaph, trying to reclaim dignity and narrative control over how Venice will remember him after his suicide.',
     },
     {
       quote: '"I took by the throat the circumcised dog, / And smote him, thus."',
-      who: 'Othello \u2014 Act 5, Scene 2',
+      who: 'Othello - Act 5, Scene 2',
       analysis:
         'Othello re-enacts a past military execution of a Turk and completes it on himself, splitting his identity into Venetian judge and foreign enemy in a single gesture.',
     },
     {
       quote:
         '"O Spartan dog, / More fell than anguish, hunger, or the sea, / Look on the tragic loading of this bed."',
-      who: 'Lodovico \u2014 Act 5, Scene 2',
+      who: 'Lodovico - Act 5, Scene 2',
       analysis:
         'Lodovico\u2019s final denunciation of Iago uses an image of ruthless animal violence, returning to the animal imagery with which Iago opened the play.',
     },
@@ -289,7 +289,7 @@ const QUIZ_QUESTIONS: QuizQuestion[] = [
     options: ['A letter', 'A ring', 'A handkerchief embroidered with strawberries', 'A locket'],
     correctIndex: 2,
     explanation:
-      'The handkerchief \u2014 Othello\u2019s first gift to Desdemona \u2014 is dropped, picked up by Emilia, passed to Iago, and planted in Cassio\u2019s lodgings. It becomes the material evidence that convinces Othello.',
+      'The handkerchief - Othello\u2019s first gift to Desdemona - is dropped, picked up by Emilia, passed to Iago, and planted in Cassio\u2019s lodgings. It becomes the material evidence that convinces Othello.',
     topic: 'Plot',
     difficulty: 'foundation',
   },
@@ -338,7 +338,7 @@ const QUIZ_QUESTIONS: QuizQuestion[] = [
     options: ['Cassio', 'Emilia', 'Roderigo', 'Lodovico'],
     correctIndex: 1,
     explanation:
-      'Emilia reveals that she gave the handkerchief to Iago. She defies his order to be silent \u2014 \u201cI will not charm my tongue\u201d \u2014 and he stabs her for it.',
+      'Emilia reveals that she gave the handkerchief to Iago. She defies his order to be silent - \u201cI will not charm my tongue\u201d - and he stabs her for it.',
     topic: 'Plot',
     difficulty: 'foundation',
   },
@@ -398,7 +398,7 @@ const QUIZ_QUESTIONS: QuizQuestion[] = [
     options: ['Noble villain', 'Motiveless malignity', 'Frustrated soldier', 'Tragic servant'],
     correctIndex: 1,
     explanation:
-      'Coleridge described Iago\u2019s malice as \u201cmotiveless malignity\u201d: he offers several possible reasons for his hatred \u2014 missed promotion, sexual suspicion, sheer resentment of virtue \u2014 but none of them fully accounts for his conduct.',
+      'Coleridge described Iago\u2019s malice as \u201cmotiveless malignity\u201d: he offers several possible reasons for his hatred - missed promotion, sexual suspicion, sheer resentment of virtue - but none of them fully accounts for his conduct.',
     topic: 'Characters',
     difficulty: 'higher',
   },
@@ -555,7 +555,7 @@ const REVISION_TOPICS = [
       'Jealousy is the engine of the tragedy, planted by Iago and fed by Othello\u2019s insecurities rather than any real evidence.',
     keyPoints: [
       'Iago names it as the \u201cgreen-ey\u2019d monster\u201d while deliberately planting it',
-      'Othello is not innately jealous \u2014 his early response is resistance',
+      'Othello is not innately jealous - his early response is resistance',
       'Jealousy generates its own proof: the handkerchief becomes \u201cocular proof\u201d because Othello has already decided',
       'Shakespeare distinguishes professional, sexual and racial jealousies',
       'Jealousy is shown to destroy both its subject and its object',
@@ -602,7 +602,7 @@ const REVISION_TOPICS = [
     summary:
       'Iago\u2019s method is the careful placement of language and objects into minds already primed to receive them.',
     keyPoints: [
-      'He rarely tells a direct lie \u2014 he pauses, questions, hesitates',
+      'He rarely tells a direct lie - he pauses, questions, hesitates',
       'Each destruction uses a trust relationship (ensign, friend, wife)',
       'He tailors his manipulation to each target\u2019s specific vulnerability',
       '\u201cPut money in thy purse\u201d shows rhythm and repetition as manipulation tools',
@@ -693,7 +693,7 @@ export default async function OthelloPage() {
         ]}
         quizQuotes={data.quotations.slice(0, 10).map((q) => ({
           quote: q.quote.replace(/["\u201C\u201D]/g, ''),
-          character: q.who.split('\u2014')[0].trim(),
+          character: q.who.split(/ [-\u2014] /)[0].trim(),
           context: q.analysis.slice(0, 100) + '...',
         }))}
         essayQuestions={[

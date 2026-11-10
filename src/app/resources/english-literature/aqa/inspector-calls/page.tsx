@@ -520,7 +520,7 @@ export default async function InspectorCallsPage() {
             AQA English Literature &middot; Paper 2
           </p>
           <h1 className="text-3xl font-bold tracking-tight sm:text-4xl md:text-5xl">
-            An Inspector Calls &mdash; Complete Study Guide
+            An Inspector Calls - Complete Study Guide
           </h1>
           <p className="mx-auto mt-4 max-w-2xl text-lg text-muted-foreground">
             J.B. Priestley &middot; Written 1945 &middot; Set in 1912 &middot; Three-Act Play

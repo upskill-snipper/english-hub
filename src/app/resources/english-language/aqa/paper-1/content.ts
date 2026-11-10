@@ -14,7 +14,7 @@ export const STRINGS: Record<string, Bi> = {
   s0: { en: `Paper overview`, ar: `محة عن ورقة الامتحان` },
   s1: { en: `Section A: Reading`, ar: `قسم أ: القراءة` },
   s2: { en: `Section B: Writing`, ar: `SECTION B: الكتابة` },
-  s4: { en: `Question 1 (list 4 things)`, ar: `سؤال 1 (اكتب أربع نقاط)` },
+  s4: { en: `Question 1 (multiple choice)`, ar: `سؤال 1 (اختيار من متعدد)` },
   s5: { en: `Question 2 (language analysis)`, ar: `سؤال 2 (تحليل اللغة)` },
   s6: { en: `Question 3 (structure)`, ar: `السؤال الثالث (البنية)` },
   s7: { en: `Question 4 (evaluation)`, ar: `السؤال الرابع (التقييم)` },
@@ -178,8 +178,8 @@ export const STRINGS: Record<string, Bi> = {
   s95: { en: `Continue studying`, ar: `استمر في الدراسة` },
   s96: { en: `Recommended timing strategy`, ar: `استراتيجية التوقيت الموصى بها` },
   s97: {
-    en: `Question 1: List four things... (4 marks)`,
-    ar: `السؤال الأول: سجل أربع أمور... (4 نقاط)`,
+    en: `Question 1: Four multiple-choice parts (4 marks)`,
+    ar: `السؤال الأول: أربعة أجزاء اختيار من متعدد (4 نقاط)`,
   },
   s98: {
     en: `Question 2: How does the writer use language...? (8 marks)`,
@@ -198,4 +198,14 @@ export const STRINGS: Record<string, Bi> = {
     ar: `السؤال الخامس: الكتابة الإبداعية (40 نقطة)`,
   },
   s102: { en: `General exam tips for Paper 1`, ar: `نصائح عامة للامتحان لورقة الامتحان الأولى` },
+  // 31 October 2026: Question 1 is four multiple-choice parts from summer 2026
+  // (src/data/mark-scheme-guides/aqa-lang-paper1.ts). s4 and s97 were "list four
+  // things"; s103 to s105 belong to the new example. Written with the change,
+  // not by the translation pass: they want a native speaker's read.
+  s103: { en: `The front door has just been painted.`, ar: `الباب الأمامي مصبوغ من جديد.` },
+  s104: { en: `The house is about to be sold.`, ar: `البيت على وشك أن يُباع.` },
+  s105: {
+    en: `Answer: B. These words in the lines prove it:`,
+    ar: `الإجابة: B. هذه الكلمات في السطور تثبت ذلك:`,
+  },
 }

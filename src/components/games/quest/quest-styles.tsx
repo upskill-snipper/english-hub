@@ -30,6 +30,16 @@ const CSS = `
 .q-pulse { animation: q-pulse 2.2s ease-in-out infinite }
 .q-burst { animation: q-burst .9s cubic-bezier(.16,1,.3,1) forwards; animation-delay: var(--q-delay, 0s) }
 
+/* A comic panel's quotation and caption boxes, in the player and the comic
+   book. Wider than 560px a panel pastes its boxes onto the picture, and the
+   comic's own rule then scales their words with it, from as small as 12px:
+   in the comic book on a desktop, 848px wide, a quotation printed at 13.5px
+   and a caption at 12.5px, where under a phone's panel they print at 15px
+   and 14px. Here they never go below the phone's size, and grow a little
+   with the panel. */
+.q-stage .lc-panel .lc-box { font-size: clamp(14px, 1.6cqi, 16px) }
+.q-stage .lc-panel .lc-quote { font-size: clamp(15px, 1.75cqi, 17px) }
+
 /* A pressable button with depth: it sinks when pressed. */
 .q-key { box-shadow: 0 3px 0 0 hsl(var(--border)); transition: transform .08s ease, box-shadow .08s ease, background-color .15s ease, border-color .15s ease }
 .q-key:active:not([aria-disabled="true"]):not(:disabled) { transform: translateY(2px); box-shadow: 0 1px 0 0 hsl(var(--border)) }

@@ -16,21 +16,21 @@ import { requireIgcseBoard } from '@/app/igcse/_lib/guard'
 
 export const metadata: Metadata = {
   openGraph: {
-    title: 'Language Analysis - IGCSE Language A Paper 1 Q2',
+    title: 'Language Analysis - IGCSE Language A Paper 1 Q3',
     description:
-      'How to analyse language in IGCSE Language A Paper 1 Question 2, worth 15 marks. A five-step paragraph framework, analytical vocabulary and a worked paragraph.',
+      'How to analyse language in IGCSE Language A Paper 1 Question 3, the 10-mark language task: a five-step paragraph framework and a worked paragraph.',
     images: [
       {
-        url: '/api/og?title=Language+Analysis+-+IGCSE+Language+A+Paper+1+Q2',
+        url: '/api/og?title=Language+Analysis+-+IGCSE+Language+A+Paper+1+Q3',
         width: 1200,
         height: 630,
-        alt: 'Language Analysis - IGCSE Language A Paper 1 Q2',
+        alt: 'Language Analysis - IGCSE Language A Paper 1 Q3',
       },
     ],
   },
-  title: 'Language Analysis - IGCSE Language A Paper 1 Q2',
+  title: 'Language Analysis - IGCSE Language A Paper 1 Q3',
   description:
-    'How to analyse language in IGCSE Language A Paper 1 Question 2, worth 15 marks. A five-step paragraph framework, analytical vocabulary and a worked paragraph.',
+    'How to analyse language in IGCSE Language A Paper 1 Question 3, the 10-mark language task: a five-step framework, analytical vocabulary and a worked paragraph.',
   alternates: {
     canonical: 'https://theenglishhub.app/igcse/cambridge/0500/paper-1/language-analysis',
   },
@@ -114,7 +114,7 @@ const mistakes = [
   'Generic labels like "it makes it more interesting" or "it adds description".',
   'Confusing similes and metaphors, or calling any adjective "imagery".',
   'Ignoring connotations and just paraphrasing the surface meaning.',
-  'Running out of time after five words because every paragraph is too long.',
+  'Running out of time because every paragraph is too long, so later choices get one line.',
 ]
 
 export default async function LanguageAnalysisPage() {
@@ -140,11 +140,21 @@ export default async function LanguageAnalysisPage() {
         <Badge className="mb-3 bg-primary/10 text-primary border-primary/20">
           IGCSE Language A
         </Badge>
-        <h1 className="text-display-sm font-heading text-foreground">Language analysis (Q2)</h1>
+        {/* 31 October 2026: this taught the language task as Question 2, 15 marks,
+            about 25 minutes and eight choices, with levels out of 15: the 2024-2026
+            paper. From 2027 it is the second part of Question 3 on Text C, 10 marks in
+            five levels, about 200 to 250 words (src/data/mark-scheme-guides/
+            cambridge-0500-paper1.ts). */}
+        <h1 className="text-display-sm font-heading text-foreground">Language analysis (Q3)</h1>
         <p className="mt-3 max-w-2xl text-body-lg text-muted-foreground">
-          Question 2 asks how the writer uses language to convey meaning and create effect. Fifteen
-          marks. Around 25 minutes. Choose eight powerful words or phrases and analyse them in
-          layered detail.
+          The language task in Question 3 asks how the writer of Text C uses language to convey
+          meaning and create effect, in an extract the question names. Ten marks. Around 13 minutes
+          and about 200 to 250 words. Choose a few striking words or phrases (three in the specimen
+          paper), including images, and analyse them in layered detail.
+        </p>
+        <p className="mt-3 max-w-2xl text-body-sm text-muted-foreground">
+          This is the paper for exams from 2027. On the November 2026 paper the language task is
+          part of Question 2: 15 marks, about 200 to 300 words, on two paragraphs of the text.
         </p>
       </section>
 
@@ -157,20 +167,20 @@ export default async function LanguageAnalysisPage() {
         <div className="grid gap-4 sm:grid-cols-2">
           <div className="rounded-xl border border-border/60 bg-muted/30 p-4">
             <Badge className="mb-2 bg-primary/10 text-primary border-primary/20">
-              Level 5 (13-15)
+              Level 5 (9-10)
             </Badge>
             <p className="text-body-sm text-muted-foreground">
-              Judicious and wide-ranging choices; precise explanation of connotations and effects
-              across the whole response.
+              The sharpest choices, each opened up to show what it suggests and why the writer used
+              it, with images explained exactly and thoughtfully.
             </p>
           </div>
           <div className="rounded-xl border border-border/60 bg-muted/30 p-4">
             <Badge variant="secondary" className="mb-2">
-              Level 2 (4-6)
+              Level 2 (3-4)
             </Badge>
             <p className="text-body-sm text-muted-foreground">
-              Limited range of choices; mostly paraphrase of meaning with little or no explanation
-              of effect.
+              Less telling choices; the comments mostly repeat the text or stay vague, even if
+              techniques are named correctly.
             </p>
           </div>
         </div>

@@ -12,19 +12,21 @@ import { hasActiveSubscription } from '@/lib/course-access'
 // GCSE model answers are gated by the global subscription/trial flag (NOT the
 // separate IELTS entitlement). Resolved server-side; anonymous + Googlebot
 // fall through to `false` and see only the free teaser grade band.
-async function resolveHasAccess(): Promise<boolean> {
+async function resolveAccess(): Promise<{ hasAccess: boolean; signedIn: boolean }> {
   try {
     const supabase = createServerSupabaseClient()
     const {
       data: { user },
     } = await supabase.auth.getUser()
     if (user) {
-      return await hasActiveSubscription(supabase, user.id)
+      // `signedIn` lets the lock panel offer plans, not sign-up, to a signed-in
+      // reader without a plan (10 November 2026, see LockedContent).
+      return { hasAccess: await hasActiveSubscription(supabase, user.id), signedIn: true }
     }
   } catch {
     // Signed out / auth unavailable → no access.
   }
-  return false
+  return { hasAccess: false, signedIn: false }
 }
 
 /* ─── Metadata ───────────────────────────────────────────────── */
@@ -154,7 +156,7 @@ export default async function LanguageAnalysisPage() {
     'study.skills.ma.lang.table.skill',
     'study.skills.common.examiner_commentary',
   ])
-  const hasAccess = await resolveHasAccess()
+  const { hasAccess, signedIn } = await resolveAccess()
   return (
     <>
       {/* Hero */}
@@ -263,7 +265,7 @@ export default async function LanguageAnalysisPage() {
                 {{
                   /* ── Grade 9 ────────────────────────────── */
                   9: !hasAccess ? (
-                    <LockedContent label="the Grade 5, 7 and 9 model answers" />
+                    <LockedContent signedIn={signedIn} label="the Grade 5, 7 and 9 model answers" />
                   ) : (
                     <>
                       <div className="mb-4 flex items-center gap-3">
@@ -282,7 +284,7 @@ export default async function LanguageAnalysisPage() {
                         <p className="mt-4">
                           The extract opens with a metaphor of physical trauma: the sky has
                           &ldquo;turned the colour of a bruise.&rdquo; The passive construction here
-                          is significant &mdash;
+                          is significant -
                           <Annotation note="Excellent: analyses the grammatical choice (passive voice) and links it to a wider interpretation about human helplessness.">
                             the sky has not changed but has been changed, as though acted upon by a
                             force beyond comprehension
@@ -301,16 +303,16 @@ export default async function LanguageAnalysisPage() {
                           The wind is characterised as &ldquo;a living thing,&rdquo; and the writer
                           sustains this personification through a
                           <Annotation note="Analyses the rhythm and structure of the sentence, not just the content. This is a hallmark of a top-band response.">
-                            breathless asyndetic list &mdash; &ldquo;rattling shutters, upending
-                            bins, sending newspapers&rdquo; &mdash; whose accumulative rhythm
-                            mirrors the relentless, escalating force of the gale
+                            breathless asyndetic list - &ldquo;rattling shutters, upending bins,
+                            sending newspapers&rdquo; - whose accumulative rhythm mirrors the
+                            relentless, escalating force of the gale
                           </Annotation>
                           . The simile &ldquo;like startled birds&rdquo; is a momentary shift in
                           register: amid the violence, the newspapers become almost graceful, yet
                           the word &ldquo;startled&rdquo; ensures that even this image is
                           underpinned by fear. The effect is one of
                           <Annotation note="Sophisticated synthesis: links micro-level language choices to a macro-level emotional effect on the reader.">
-                            dissonance &mdash; beauty and terror coexisting in a single image
+                            dissonance - beauty and terror coexisting in a single image
                           </Annotation>
                           .
                         </p>
@@ -353,7 +355,7 @@ export default async function LanguageAnalysisPage() {
 
                   /* ── Grade 7 ────────────────────────────── */
                   7: !hasAccess ? (
-                    <LockedContent label="the Grade 5, 7 and 9 model answers" />
+                    <LockedContent signedIn={signedIn} label="the Grade 5, 7 and 9 model answers" />
                   ) : (
                     <>
                       <div className="mb-4 flex items-center gap-3">
@@ -381,10 +383,10 @@ export default async function LanguageAnalysisPage() {
                           The personification of the wind as &ldquo;a living thing&rdquo; is
                           developed through a
                           <Annotation note="Strong point: identifies how a list of verbs builds an effect rather than just naming the technique.">
-                            tricolon of violent verbs &mdash; &ldquo;rattling,&rdquo;
+                            tricolon of violent verbs - &ldquo;rattling,&rdquo;
                             &ldquo;upending,&rdquo; &ldquo;sending&rdquo;
                           </Annotation>{' '}
-                          &mdash; which creates a breathless sense of chaos. The simile &ldquo;like
+                          - which creates a breathless sense of chaos. The simile &ldquo;like
                           startled birds&rdquo; briefly introduces a sense of panic into the scene,
                           as though even inanimate objects are afraid of the storm&apos;s power.
                         </p>
@@ -423,7 +425,7 @@ export default async function LanguageAnalysisPage() {
 
                   /* ── Grade 5 ────────────────────────────── */
                   5: !hasAccess ? (
-                    <LockedContent label="the Grade 5, 7 and 9 model answers" />
+                    <LockedContent signedIn={signedIn} label="the Grade 5, 7 and 9 model answers" />
                   ) : (
                     <>
                       <div className="mb-4 flex items-center gap-3">
@@ -630,13 +632,13 @@ export default async function LanguageAnalysisPage() {
                         Conceptualised Response
                       </td>
                       <td className="border border-border p-3 text-muted-foreground">
-                        None &mdash; retelling content
+                        None - retelling content
                       </td>
                       <td className="border border-border p-3 text-muted-foreground">
-                        Limited &mdash; point-by-point
+                        Limited - point-by-point
                       </td>
                       <td className="border border-border p-3 text-muted-foreground">
-                        Emerging &mdash; some linking between points
+                        Emerging - some linking between points
                       </td>
                       <td className="border border-border p-3 text-muted-foreground">
                         Clear overarching interpretation from the start
@@ -671,7 +673,7 @@ export default async function LanguageAnalysisPage() {
                     <li>&bull; Name the technique you spot</li>
                     <li>&bull; Use &ldquo;suggests&rdquo; instead of &ldquo;shows&rdquo;</li>
                     <li>&bull; Explain the effect on the reader</li>
-                    <li>&bull; Stop retelling &mdash; start analysing</li>
+                    <li>&bull; Stop retelling - start analysing</li>
                   </ul>
                 </div>
                 <div className="rounded-xl border-2 border-border bg-card p-5">
@@ -695,7 +697,7 @@ export default async function LanguageAnalysisPage() {
                 <div className="rounded-xl border-2 border-border bg-card p-5">
                   <h3 className="font-bold text-foreground">Top Tips</h3>
                   <ul className="mt-2 space-y-1 text-sm text-muted-foreground">
-                    <li>&bull; Quality over quantity &mdash; fewer points, deeper analysis</li>
+                    <li>&bull; Quality over quantity - fewer points, deeper analysis</li>
                     <li>&bull; Use &ldquo;perhaps&rdquo; to explore alternative interpretations</li>
                     <li>&bull; Always return to the question focus</li>
                     <li>&bull; Read the extract twice before writing</li>

@@ -752,14 +752,19 @@ export const CATEGORY_CONTEXT: Record<string, CategoryContext> = {
   'language-paper': {
     slug: 'language-paper',
     label: 'Language Paper',
+    // 31 October 2026: the overview and the FAQ below said every board weights its
+    // two papers 50% each. AQA and OCR do; Edexcel (1EN0) and Eduqas (C700) weight
+    // Paper or Component 1 at 40% and 2 at 60% (src/data/mark-scheme-guides/
+    // edexcel-lang-paper1.ts, eduqas-lang-comp1.ts and their pairs). AQA's Q1 was
+    // "a four-mark list", its format before summer 2026 (aqa-lang-paper1.ts).
     overview:
-      'GCSE English Language - unseen fiction and non-fiction texts, reading and writing skills, two papers at 50% each of the total qualification.',
+      'GCSE English Language - unseen fiction and non-fiction texts, reading and writing skills, two papers: 50% each on AQA and OCR, 40% and 60% on Edexcel and Eduqas.',
     about: [
       'GCSE English Language is the separate qualification from GCSE English Literature - almost every UK student sits both. AQA, Edexcel, OCR, WJEC/Eduqas all use the same broad two-paper structure: one paper focused on creative / descriptive fiction, one on non-fiction / viewpoint writing.',
       'The paper is unseen: you do not prepare texts in advance. What you prepare are the techniques - structural analysis for Q3, comparison frameworks for Q4, descriptive writing for Section B - so that whatever extract appears on the day, you already have the tools.',
       // 9 October 2026: this said "one-mark list, four-mark language analysis". AQA 8700/1 is 4, 8,
       // 8, 20 and 40 (src/lib/marking/mark-schemes/aqa-lang-paper1.ts, verified against AQA).
-      'AQA Paper 1 has five questions: a four-mark list, eight-mark language analysis, eight-mark structural analysis, twenty-mark evaluation, and a forty-mark writing task. Total 80 marks. Edexcel, OCR, and Eduqas follow similar but distinctive question mixes.',
+      'AQA Paper 1 has five questions: a four-mark multiple-choice question, eight-mark language analysis, eight-mark structural analysis, twenty-mark evaluation, and a forty-mark writing task. Total 80 marks. Edexcel, OCR, and Eduqas follow similar but distinctive question mixes.',
     ],
     boards: ['AQA', 'Edexcel', 'OCR', 'Eduqas'],
     assessmentContext: [
@@ -798,7 +803,7 @@ export const CATEGORY_CONTEXT: Record<string, CategoryContext> = {
       {
         question: 'Are Paper 1 and Paper 2 weighted equally?',
         answer:
-          'Yes. On AQA, Edexcel, OCR, and WJEC/Eduqas, Paper 1 and Paper 2 each contribute 50% of the total GCSE English Language grade.',
+          'It depends on the board. On AQA and OCR, yes: each paper (OCR calls them components) is 50% of the GCSE English Language grade. On Edexcel and WJEC/Eduqas, no: Paper 1 (Eduqas Component 1) is 40% and Paper 2 (Component 2) is 60%.',
       },
     ],
   },

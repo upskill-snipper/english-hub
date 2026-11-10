@@ -57,7 +57,7 @@ function QuoteCard({
       <p className="text-sm font-semibold text-violet-800 dark:text-violet-200 italic">
         &ldquo;{quote}&rdquo;
       </p>
-      {speaker && <p className="mt-1 text-xs font-medium text-violet-600">&mdash; {speaker}</p>}
+      {speaker && <p className="mt-1 text-xs font-medium text-violet-600">- {speaker}</p>}
       <p className="mt-2 text-sm text-muted-foreground">{analysis}</p>
     </div>
   )
@@ -110,7 +110,7 @@ export default function CuriousIncidentPage() {
           </span>
         </div>
         <h1 className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
-          The Curious Incident of the Dog in the Night-Time &mdash; Complete Revision Guide
+          The Curious Incident of the Dog in the Night-Time - Complete Revision Guide
         </h1>
         <p className="mt-1 text-lg text-muted-foreground">{tr(`Mark Haddon, 2003 (novel)`)}</p>
         <p className="mt-3 max-w-3xl text-muted-foreground leading-relaxed">
@@ -188,12 +188,10 @@ export default function CuriousIncidentPage() {
                   </p>
                   <ul className="mt-2 space-y-1 text-sm text-muted-foreground">
                     <li>
-                      &bull; Wellington discovered with a garden fork through him &mdash; the
-                      central mystery
+                      &bull; Wellington discovered with a garden fork through him - the central
+                      mystery
                     </li>
-                    <li>
-                      &bull; Christopher hits the policeman &mdash; sensory overload, not malice
-                    </li>
+                    <li>&bull; Christopher hits the policeman - sensory overload, not malice</li>
                     <li>
                       &bull; Title alludes to Conan Doyle&apos;s Sherlock Holmes story &ldquo;Silver
                       Blaze&rdquo;
@@ -224,10 +222,10 @@ export default function CuriousIncidentPage() {
                   </p>
                   <ul className="mt-2 space-y-1 text-sm text-muted-foreground">
                     <li>
-                      &bull; Christopher decides to write a detective novel &mdash; the book we are
+                      &bull; Christopher decides to write a detective novel - the book we are
                       reading
                     </li>
-                    <li>&bull; Father forbids the investigation &mdash; foreshadows his lies</li>
+                    <li>&bull; Father forbids the investigation - foreshadows his lies</li>
                     <li>&bull; Siobhan&apos;s mentorship guides the narrative voice</li>
                   </ul>
                 </div>
@@ -254,9 +252,7 @@ export default function CuriousIncidentPage() {
                   </p>
                   <ul className="mt-2 space-y-1 text-sm text-muted-foreground">
                     <li>&bull; Mrs Alexander&apos;s revelation about the affair</li>
-                    <li>
-                      &bull; Christopher&apos;s deductive reasoning &mdash; logical but limited
-                    </li>
+                    <li>&bull; Christopher&apos;s deductive reasoning - logical but limited</li>
                     <li>&bull; Christopher accidentally uncovers a family secret</li>
                   </ul>
                 </div>
@@ -273,18 +269,18 @@ export default function CuriousIncidentPage() {
                   Ed discovers the book Christopher has been writing about Wellington. Furious, he
                   hits Christopher (the only time in the book), then later confiscates the
                   manuscript. While searching for it in his father&apos;s bedroom, Christopher finds
-                  a shirt box containing letters addressed to him from his mother &mdash; dated long
-                  after her supposed death. Reading them, he realises his mother is alive in London.
-                  The shock makes him physically ill; he vomits and sits in his own vomit for over
-                  an hour, unable to move.
+                  a shirt box containing letters addressed to him from his mother - dated long after
+                  her supposed death. Reading them, he realises his mother is alive in London. The
+                  shock makes him physically ill; he vomits and sits in his own vomit for over an
+                  hour, unable to move.
                 </p>
                 <div className="mt-3 rounded-lg bg-muted p-3">
                   <p className="text-xs font-semibold text-muted-foreground uppercase tracking-wider">
                     Key Moments
                   </p>
                   <ul className="mt-2 space-y-1 text-sm text-muted-foreground">
-                    <li>&bull; The hidden letters &mdash; the central betrayal exposed</li>
-                    <li>&bull; Mother is alive &mdash; with Mr Shears in London</li>
+                    <li>&bull; The hidden letters - the central betrayal exposed</li>
+                    <li>&bull; Mother is alive - with Mr Shears in London</li>
                     <li>
                       &bull; Christopher&apos;s catatonic response to overwhelming new information
                     </li>
@@ -313,8 +309,7 @@ export default function CuriousIncidentPage() {
                   </p>
                   <ul className="mt-2 space-y-1 text-sm text-muted-foreground">
                     <li>
-                      &bull; The double confession &mdash; the lie about mother and the murder of
-                      the dog
+                      &bull; The double confession - the lie about mother and the murder of the dog
                     </li>
                     <li>&bull; Trust between father and son is shattered</li>
                     <li>
@@ -345,7 +340,7 @@ export default function CuriousIncidentPage() {
                     Key Moments
                   </p>
                   <ul className="mt-2 space-y-1 text-sm text-muted-foreground">
-                    <li>&bull; Christopher leaves home alone &mdash; his most independent act</li>
+                    <li>&bull; Christopher leaves home alone - his most independent act</li>
                     <li>&bull; The chaos of the railway station versus his ordered mind</li>
                     <li>&bull; Toby and the Swiss Army knife as comfort objects</li>
                   </ul>
@@ -372,13 +367,9 @@ export default function CuriousIncidentPage() {
                     Key Moments
                   </p>
                   <ul className="mt-2 space-y-1 text-sm text-muted-foreground">
-                    <li>
-                      &bull; The Tube map &mdash; pattern that finally makes London comprehensible
-                    </li>
-                    <li>&bull; Toby&apos;s rescue from the rails &mdash; courage born of love</li>
-                    <li>
-                      &bull; Strangers help repeatedly &mdash; the world is not entirely hostile
-                    </li>
+                    <li>&bull; The Tube map - pattern that finally makes London comprehensible</li>
+                    <li>&bull; Toby&apos;s rescue from the rails - courage born of love</li>
+                    <li>&bull; Strangers help repeatedly - the world is not entirely hostile</li>
                   </ul>
                 </div>
               </div>
@@ -409,8 +400,7 @@ export default function CuriousIncidentPage() {
                     </li>
                     <li>&bull; Mr Shears as the new domestic antagonist</li>
                     <li>
-                      &bull; Christopher&apos;s priority is the Maths exam &mdash; his ordered
-                      future
+                      &bull; Christopher&apos;s priority is the Maths exam - his ordered future
                     </li>
                   </ul>
                 </div>
@@ -424,7 +414,7 @@ export default function CuriousIncidentPage() {
                   The A-Level Maths Exam and Resolution
                 </h4>
                 <p className="mt-2 text-sm text-muted-foreground leading-relaxed">
-                  Christopher sits his A-Level Mathematics paper in Swindon &mdash; a remarkable
+                  Christopher sits his A-Level Mathematics paper in Swindon - a remarkable
                   achievement at fifteen. He is anxious but completes it. Ed slowly begins to repair
                   the relationship by giving Christopher a puppy, Sandy, as a sign of trust. The
                   novel ends with Christopher passing his A-Level with an A grade and looking ahead
@@ -437,14 +427,11 @@ export default function CuriousIncidentPage() {
                     Key Moments
                   </p>
                   <ul className="mt-2 space-y-1 text-sm text-muted-foreground">
+                    <li>&bull; The puppy Sandy - symbolic replacement of the dead Wellington</li>
                     <li>
-                      &bull; The puppy Sandy &mdash; symbolic replacement of the dead Wellington
+                      &bull; The A-Level Maths success - an external reward in an ordered system
                     </li>
-                    <li>
-                      &bull; The A-Level Maths success &mdash; an external reward in an ordered
-                      system
-                    </li>
-                    <li>&bull; The hopeful but qualified ending &mdash; trust is rebuilt slowly</li>
+                    <li>&bull; The hopeful but qualified ending - trust is rebuilt slowly</li>
                   </ul>
                 </div>
               </div>
@@ -655,7 +642,7 @@ export default function CuriousIncidentPage() {
                   he says, &ldquo;I like prime numbers.&rdquo; Primes represent for him a perfect
                   category: rule-bound but irreducible. They are also &ldquo;what is left when you
                   have taken all the patterns away,&rdquo; making them an emblem of the novel&apos;s
-                  philosophy &mdash; pattern exists, but is not exhaustive. The prime numbering is a
+                  philosophy - pattern exists, but is not exhaustive. The prime numbering is a
                   structural rebellion against the conventional novel and a daily declaration of
                   Christopher&apos;s intellectual identity.
                 </p>
@@ -667,7 +654,7 @@ export default function CuriousIncidentPage() {
                   and Christopher&apos;s own diagrams. They embody his preferred mode of
                   communication: the visual and the precise. Maps make hostile territory navigable;
                   they are the difference between chaos and order. The first time Christopher feels
-                  in control of London is when he understands the Tube map &mdash; cartography as
+                  in control of London is when he understands the Tube map - cartography as
                   cognitive rescue.
                 </p>
               </div>
@@ -692,9 +679,8 @@ export default function CuriousIncidentPage() {
                   &ldquo;Super Good Day,&rdquo; and four yellow cars make a &ldquo;Black Day,&rdquo;
                   on which he must speak to nobody and avoid risks. He hates yellow and brown
                   specifically and refuses to eat foods that are these colours. The colour system is
-                  both a coping mechanism and a form of personal augury &mdash; a private cosmology
-                  that imposes order on the unpredictable. Yellow becomes a recurrent motif of
-                  dread.
+                  both a coping mechanism and a form of personal augury - a private cosmology that
+                  imposes order on the unpredictable. Yellow becomes a recurrent motif of dread.
                 </p>
               </div>
               <div className="rounded-lg bg-muted p-4">
@@ -711,11 +697,11 @@ export default function CuriousIncidentPage() {
               <div className="rounded-lg bg-muted p-4">
                 <h4 className="font-bold text-foreground">6. The Swiss Army Knife</h4>
                 <p className="mt-1 text-sm text-muted-foreground leading-relaxed">
-                  Christopher takes his Swiss Army knife with him on the journey to London &mdash;
-                  not primarily as a weapon but as a portable system of tools. The knife embodies
-                  the same principle as his routines and lists: a discrete, ordered set of solutions
-                  to a possible range of problems. It is a portable miniature of his ordered mind.
-                  He uses it to defend himself when threatened, but its symbolic weight is in its
+                  Christopher takes his Swiss Army knife with him on the journey to London - not
+                  primarily as a weapon but as a portable system of tools. The knife embodies the
+                  same principle as his routines and lists: a discrete, ordered set of solutions to
+                  a possible range of problems. It is a portable miniature of his ordered mind. He
+                  uses it to defend himself when threatened, but its symbolic weight is in its
                   self-containment: everything he might need, in one calm object, that he controls.
                 </p>
               </div>
@@ -724,11 +710,11 @@ export default function CuriousIncidentPage() {
                 <p className="mt-1 text-sm text-muted-foreground leading-relaxed">
                   Toby travels with Christopher from Swindon to London inside his pocket. As a
                   small, living, dependent creature, Toby symbolises Christopher&apos;s capacity for
-                  tender attachment &mdash; a side of him that conventional emotional vocabulary
-                  tends not to capture. The rescue from the Underground tracks is one of the
-                  novel&apos;s most heroic scenes precisely because it is risked for a creature most
-                  strangers would dismiss as vermin. Toby&apos;s eventual death by old age is the
-                  novel&apos;s only natural, uncomplicated bereavement.
+                  tender attachment - a side of him that conventional emotional vocabulary tends not
+                  to capture. The rescue from the Underground tracks is one of the novel&apos;s most
+                  heroic scenes precisely because it is risked for a creature most strangers would
+                  dismiss as vermin. Toby&apos;s eventual death by old age is the novel&apos;s only
+                  natural, uncomplicated bereavement.
                 </p>
               </div>
             </div>
@@ -758,7 +744,7 @@ export default function CuriousIncidentPage() {
                 <h4 className="font-bold text-primary">2003 Publication and Reception</h4>
                 <p className="mt-1 text-sm text-muted-foreground leading-relaxed">
                   The novel was published simultaneously in adult and children&apos;s editions in
-                  2003 by Jonathan Cape and David Fickling Books respectively &mdash; a then-unusual
+                  2003 by Jonathan Cape and David Fickling Books respectively - a then-unusual
                   decision that helped it cross age boundaries. It became an international
                   bestseller. It won the Whitbread Book of the Year (2003) and the Commonwealth
                   Writers&apos; Prize for Best First Book (2004), and was translated into more than
@@ -794,12 +780,12 @@ export default function CuriousIncidentPage() {
               </div>
               <div className="rounded-lg bg-primary/10 p-4">
                 <h4 className="font-bold text-primary">
-                  Sherlock Holmes &mdash; &ldquo;Silver Blaze&rdquo;
+                  Sherlock Holmes - &ldquo;Silver Blaze&rdquo;
                 </h4>
                 <p className="mt-1 text-sm text-muted-foreground leading-relaxed">
                   The title is taken directly from Arthur Conan Doyle&apos;s 1892 short story
                   &ldquo;The Adventure of Silver Blaze,&rdquo; in which Holmes solves a mystery by
-                  noting that the household dog did not bark in the night &mdash; the &ldquo;curious
+                  noting that the household dog did not bark in the night - the &ldquo;curious
                   incident&rdquo; being the dog&apos;s silence. Christopher names Holmes as a hero,
                   models his investigative method on Holmes&apos;s, and explicitly quotes the
                   &ldquo;Silver Blaze&rdquo; story. Haddon&apos;s use of the allusion places
@@ -822,21 +808,21 @@ export default function CuriousIncidentPage() {
                   to say that Christopher&apos;s perceptual and social experiences resemble what is
                   sometimes described as autistic experience, but inappropriate to treat the novel
                   as a documentary or to flatten Christopher into a diagnostic label. Recent
-                  autistic writers and critics have engaged with the novel variously &mdash; some
-                  celebrating, some critiquing it &mdash; and a sophisticated response will
-                  acknowledge this ongoing conversation. When citing specific Haddon comments, refer
-                  to his blog post &ldquo;Asperger&apos;s &amp; Autism&rdquo; and always check the
-                  exact wording against the original source before quoting.
+                  autistic writers and critics have engaged with the novel variously - some
+                  celebrating, some critiquing it - and a sophisticated response will acknowledge
+                  this ongoing conversation. When citing specific Haddon comments, refer to his blog
+                  post &ldquo;Asperger&apos;s &amp; Autism&rdquo; and always check the exact wording
+                  against the original source before quoting.
                 </p>
               </div>
               <div className="rounded-lg bg-primary/10 p-4">
                 <h4 className="font-bold text-primary">{tr(`Swindon and Setting`)}</h4>
                 <p className="mt-1 text-sm text-muted-foreground leading-relaxed">
                   Christopher lives in Swindon, a railway and industrial town in Wiltshire. The
-                  choice of Swindon &mdash; ordinary, functional, unromantic &mdash; grounds the
-                  novel in the everyday rather than in Gothic or fantastical territory. The contrast
-                  with London is geographical (small town vs metropolis) and sensorial (manageable
-                  vs overwhelming). The Swindon-to-London journey via Paddington is a real route
+                  choice of Swindon - ordinary, functional, unromantic - grounds the novel in the
+                  everyday rather than in Gothic or fantastical territory. The contrast with London
+                  is geographical (small town vs metropolis) and sensorial (manageable vs
+                  overwhelming). The Swindon-to-London journey via Paddington is a real route
                   familiar to many readers, which intensifies the realism of Christopher&apos;s
                   panic.
                 </p>
@@ -883,8 +869,8 @@ export default function CuriousIncidentPage() {
                   amateur investigator, door-to-door inquiries, a trail of clues, a confession. Yet
                   the genre is partly a vehicle: the &ldquo;real&rdquo; mystery that emerges is not
                   Wellington but the family. Haddon uses Christopher&apos;s genre awareness
-                  self-consciously &mdash; Christopher knows he is writing a detective novel and
-                  tells the reader so.
+                  self-consciously - Christopher knows he is writing a detective novel and tells the
+                  reader so.
                 </p>
               </div>
               <div className="rounded-lg bg-muted p-4">
@@ -971,14 +957,14 @@ export default function CuriousIncidentPage() {
                     </p>
                     <p className="mt-1 text-sm text-muted-foreground">
                       Haddon presents Christopher&apos;s relationship with truth as cognitive rather
-                      than moral &mdash; a structural condition that makes the family&apos;s
-                      deceptions devastating but also makes his eventual reconciliation with his
-                      father a hard-won ethical achievement.
+                      than moral - a structural condition that makes the family&apos;s deceptions
+                      devastating but also makes his eventual reconciliation with his father a
+                      hard-won ethical achievement.
                     </p>
                   </div>
                   <div>
                     <p className="text-xs font-semibold text-violet-700 dark:text-violet-300 uppercase tracking-wider">
-                      Paragraph 1 &mdash; Christopher&apos;s rule
+                      Paragraph 1 - Christopher&apos;s rule
                     </p>
                     <p className="mt-1 text-sm text-muted-foreground">
                       &ldquo;I do not tell lies&hellip; It is because I can&rsquo;t tell
@@ -988,7 +974,7 @@ export default function CuriousIncidentPage() {
                   </div>
                   <div>
                     <p className="text-xs font-semibold text-violet-700 dark:text-violet-300 uppercase tracking-wider">
-                      Paragraph 2 &mdash; The lie about mother
+                      Paragraph 2 - The lie about mother
                     </p>
                     <p className="mt-1 text-sm text-muted-foreground">
                       The hidden letters and the lie that Judy died of a heart attack. Discuss how
@@ -998,7 +984,7 @@ export default function CuriousIncidentPage() {
                   </div>
                   <div>
                     <p className="text-xs font-semibold text-violet-700 dark:text-violet-300 uppercase tracking-wider">
-                      Paragraph 3 &mdash; Animals and the moral category
+                      Paragraph 3 - Animals and the moral category
                     </p>
                     <p className="mt-1 text-sm text-muted-foreground">
                       &ldquo;Dogs are faithful and they do not tell lies because they cannot
@@ -1009,7 +995,7 @@ export default function CuriousIncidentPage() {
                   </div>
                   <div>
                     <p className="text-xs font-semibold text-violet-700 dark:text-violet-300 uppercase tracking-wider">
-                      Paragraph 4 &mdash; Restoring trust
+                      Paragraph 4 - Restoring trust
                     </p>
                     <p className="mt-1 text-sm text-muted-foreground">
                       The puppy Sandy and Ed&apos;s slow rebuilding of relationship. Note that trust
@@ -1023,8 +1009,8 @@ export default function CuriousIncidentPage() {
                     </p>
                     <p className="mt-1 text-sm text-muted-foreground">
                       Haddon perhaps suggests that truth-telling is not a moral luxury but a
-                      cognitive necessity for those who, like Christopher, build their world on it
-                      &mdash; and that the rest of us underestimate its weight.
+                      cognitive necessity for those who, like Christopher, build their world on it -
+                      and that the rest of us underestimate its weight.
                     </p>
                   </div>
                 </div>
@@ -1048,7 +1034,7 @@ export default function CuriousIncidentPage() {
                   </div>
                   <div>
                     <p className="text-xs font-semibold text-violet-700 dark:text-violet-300 uppercase tracking-wider">
-                      Paragraph 1 &mdash; Departure
+                      Paragraph 1 - Departure
                     </p>
                     <p className="mt-1 text-sm text-muted-foreground">
                       Discuss the planning and the choice of objects: the Swiss Army knife, Toby,
@@ -1058,7 +1044,7 @@ export default function CuriousIncidentPage() {
                   </div>
                   <div>
                     <p className="text-xs font-semibold text-violet-700 dark:text-violet-300 uppercase tracking-wider">
-                      Paragraph 2 &mdash; Sensory overload at Swindon and Paddington
+                      Paragraph 2 - Sensory overload at Swindon and Paddington
                     </p>
                     <p className="mt-1 text-sm text-muted-foreground">
                       &ldquo;I screamed.&rdquo; Discuss Haddon&apos;s minimalist treatment of
@@ -1069,7 +1055,7 @@ export default function CuriousIncidentPage() {
                   </div>
                   <div>
                     <p className="text-xs font-semibold text-violet-700 dark:text-violet-300 uppercase tracking-wider">
-                      Paragraph 3 &mdash; Toby on the rails
+                      Paragraph 3 - Toby on the rails
                     </p>
                     <p className="mt-1 text-sm text-muted-foreground">
                       Christopher climbs onto the Tube tracks to rescue Toby. Discuss this as an act
@@ -1079,7 +1065,7 @@ export default function CuriousIncidentPage() {
                   </div>
                   <div>
                     <p className="text-xs font-semibold text-violet-700 dark:text-violet-300 uppercase tracking-wider">
-                      Paragraph 4 &mdash; Arrival and aftermath
+                      Paragraph 4 - Arrival and aftermath
                     </p>
                     <p className="mt-1 text-sm text-muted-foreground">
                       The reunion with Judy is presented through Christopher&apos;s practical
@@ -1111,7 +1097,7 @@ export default function CuriousIncidentPage() {
                   </div>
                   <div>
                     <p className="text-xs font-semibold text-violet-700 dark:text-violet-300 uppercase tracking-wider">
-                      Paragraph 1 &mdash; Daily love
+                      Paragraph 1 - Daily love
                     </p>
                     <p className="mt-1 text-sm text-muted-foreground">
                       The opening establishes Ed as the parent who manages routine, food, and
@@ -1120,7 +1106,7 @@ export default function CuriousIncidentPage() {
                   </div>
                   <div>
                     <p className="text-xs font-semibold text-violet-700 dark:text-violet-300 uppercase tracking-wider">
-                      Paragraph 2 &mdash; The lie
+                      Paragraph 2 - The lie
                     </p>
                     <p className="mt-1 text-sm text-muted-foreground">
                       Ed&apos;s confession that Judy is alive. Note the language of love mixed with
@@ -1130,7 +1116,7 @@ export default function CuriousIncidentPage() {
                   </div>
                   <div>
                     <p className="text-xs font-semibold text-violet-700 dark:text-violet-300 uppercase tracking-wider">
-                      Paragraph 3 &mdash; The killing of Wellington
+                      Paragraph 3 - The killing of Wellington
                     </p>
                     <p className="mt-1 text-sm text-muted-foreground">
                       Ed&apos;s admission that he killed Wellington in fury. Discuss this as the
@@ -1140,7 +1126,7 @@ export default function CuriousIncidentPage() {
                   </div>
                   <div>
                     <p className="text-xs font-semibold text-violet-700 dark:text-violet-300 uppercase tracking-wider">
-                      Paragraph 4 &mdash; Sandy and slow trust
+                      Paragraph 4 - Sandy and slow trust
                     </p>
                     <p className="mt-1 text-sm text-muted-foreground">
                       The puppy at the end. Discuss how Haddon refuses an easy reconciliation: trust
@@ -1170,7 +1156,7 @@ export default function CuriousIncidentPage() {
                   </div>
                   <div>
                     <p className="text-xs font-semibold text-violet-700 dark:text-violet-300 uppercase tracking-wider">
-                      Paragraph 1 &mdash; Voice and register
+                      Paragraph 1 - Voice and register
                     </p>
                     <p className="mt-1 text-sm text-muted-foreground">
                       &ldquo;It was 7 minutes after midnight.&rdquo; Discuss the precise, literal
@@ -1180,7 +1166,7 @@ export default function CuriousIncidentPage() {
                   </div>
                   <div>
                     <p className="text-xs font-semibold text-violet-700 dark:text-violet-300 uppercase tracking-wider">
-                      Paragraph 2 &mdash; Dramatic irony
+                      Paragraph 2 - Dramatic irony
                     </p>
                     <p className="mt-1 text-sm text-muted-foreground">
                       Mrs Alexander&apos;s revelation. Christopher misses the implication; the
@@ -1190,7 +1176,7 @@ export default function CuriousIncidentPage() {
                   </div>
                   <div>
                     <p className="text-xs font-semibold text-violet-700 dark:text-violet-300 uppercase tracking-wider">
-                      Paragraph 3 &mdash; Cognitive transparency
+                      Paragraph 3 - Cognitive transparency
                     </p>
                     <p className="mt-1 text-sm text-muted-foreground">
                       Digressions about primes, the Monty Hall problem, the universe. The reader is
@@ -1200,7 +1186,7 @@ export default function CuriousIncidentPage() {
                   </div>
                   <div>
                     <p className="text-xs font-semibold text-violet-700 dark:text-violet-300 uppercase tracking-wider">
-                      Paragraph 4 &mdash; Affect through restraint
+                      Paragraph 4 - Affect through restraint
                     </p>
                     <p className="mt-1 text-sm text-muted-foreground">
                       &ldquo;I screamed.&rdquo; Argue that the flatness of the narration intensifies
@@ -1222,15 +1208,15 @@ export default function CuriousIncidentPage() {
                       Thesis
                     </p>
                     <p className="mt-1 text-sm text-muted-foreground">
-                      Haddon presents order &mdash; in the form of mathematics, lists, prime
-                      numbers, and routines &mdash; not as a defect of Christopher&apos;s mind but
-                      as a coherent strategy for living in a sensorily overwhelming world, while
-                      showing that the world&apos;s disorder cannot be wholly tamed.
+                      Haddon presents order - in the form of mathematics, lists, prime numbers, and
+                      routines - not as a defect of Christopher&apos;s mind but as a coherent
+                      strategy for living in a sensorily overwhelming world, while showing that the
+                      world&apos;s disorder cannot be wholly tamed.
                     </p>
                   </div>
                   <div>
                     <p className="text-xs font-semibold text-violet-700 dark:text-violet-300 uppercase tracking-wider">
-                      Paragraph 1 &mdash; Prime numbers and chapter structure
+                      Paragraph 1 - Prime numbers and chapter structure
                     </p>
                     <p className="mt-1 text-sm text-muted-foreground">
                       &ldquo;Prime numbers are what is left when you have taken all the patterns
@@ -1240,7 +1226,7 @@ export default function CuriousIncidentPage() {
                   </div>
                   <div>
                     <p className="text-xs font-semibold text-violet-700 dark:text-violet-300 uppercase tracking-wider">
-                      Paragraph 2 &mdash; Yellow vs red, &lsquo;Black Days&rsquo;
+                      Paragraph 2 - Yellow vs red, &lsquo;Black Days&rsquo;
                     </p>
                     <p className="mt-1 text-sm text-muted-foreground">
                       Discuss the colour-coding system as a private method of imposing
@@ -1249,7 +1235,7 @@ export default function CuriousIncidentPage() {
                   </div>
                   <div>
                     <p className="text-xs font-semibold text-violet-700 dark:text-violet-300 uppercase tracking-wider">
-                      Paragraph 3 &mdash; The London Underground
+                      Paragraph 3 - The London Underground
                     </p>
                     <p className="mt-1 text-sm text-muted-foreground">
                       The Tube map as an abstract pattern superimposed on chaos. Christopher only
@@ -1258,7 +1244,7 @@ export default function CuriousIncidentPage() {
                   </div>
                   <div>
                     <p className="text-xs font-semibold text-violet-700 dark:text-violet-300 uppercase tracking-wider">
-                      Paragraph 4 &mdash; The limits of order
+                      Paragraph 4 - The limits of order
                     </p>
                     <p className="mt-1 text-sm text-muted-foreground">
                       The hidden letters and Ed&apos;s confession reveal what Christopher&apos;s
@@ -1285,15 +1271,15 @@ export default function CuriousIncidentPage() {
                       Thesis
                     </p>
                     <p className="mt-1 text-sm text-muted-foreground">
-                      The plot is conventional &mdash; a domestic mystery with a coming-of-age arc
-                      &mdash; but the formal architecture (prime-numbered chapters, embedded
-                      diagrams, first-person literalism, the appendix) is genuinely innovative and
-                      inseparable from the novel&apos;s meaning.
+                      The plot is conventional - a domestic mystery with a coming-of-age arc - but
+                      the formal architecture (prime-numbered chapters, embedded diagrams,
+                      first-person literalism, the appendix) is genuinely innovative and inseparable
+                      from the novel&apos;s meaning.
                     </p>
                   </div>
                   <div>
                     <p className="text-xs font-semibold text-violet-700 dark:text-violet-300 uppercase tracking-wider">
-                      Paragraph 1 &mdash; Form as character
+                      Paragraph 1 - Form as character
                     </p>
                     <p className="mt-1 text-sm text-muted-foreground">
                       The prime-numbered chapters and digressions on mathematics. Discuss how the
@@ -1302,7 +1288,7 @@ export default function CuriousIncidentPage() {
                   </div>
                   <div>
                     <p className="text-xs font-semibold text-violet-700 dark:text-violet-300 uppercase tracking-wider">
-                      Paragraph 2 &mdash; Detective genre repurposed
+                      Paragraph 2 - Detective genre repurposed
                     </p>
                     <p className="mt-1 text-sm text-muted-foreground">
                       Compare with Conan Doyle. Haddon adopts the genre of the murder mystery but
@@ -1312,7 +1298,7 @@ export default function CuriousIncidentPage() {
                   </div>
                   <div>
                     <p className="text-xs font-semibold text-violet-700 dark:text-violet-300 uppercase tracking-wider">
-                      Paragraph 3 &mdash; The non-narrative appendix
+                      Paragraph 3 - The non-narrative appendix
                     </p>
                     <p className="mt-1 text-sm text-muted-foreground">
                       Concluding the novel with a worked maths solution is a striking generic
@@ -1322,7 +1308,7 @@ export default function CuriousIncidentPage() {
                   </div>
                   <div>
                     <p className="text-xs font-semibold text-violet-700 dark:text-violet-300 uppercase tracking-wider">
-                      Paragraph 4 &mdash; Counter-argument and resolution
+                      Paragraph 4 - Counter-argument and resolution
                     </p>
                     <p className="mt-1 text-sm text-muted-foreground">
                       Acknowledge the strength of the plotting (the double-mystery structure is
@@ -1359,7 +1345,7 @@ export default function CuriousIncidentPage() {
                   </div>
                   <div>
                     <p className="text-xs font-semibold text-violet-700 dark:text-violet-300 uppercase tracking-wider">
-                      Paragraph 1 &mdash; Textual evidence of autistic-coded experience
+                      Paragraph 1 - Textual evidence of autistic-coded experience
                     </p>
                     <p className="mt-1 text-sm text-muted-foreground">
                       Sensory overload, literalism, dislike of touch, special interests, routines.
@@ -1368,7 +1354,7 @@ export default function CuriousIncidentPage() {
                   </div>
                   <div>
                     <p className="text-xs font-semibold text-violet-700 dark:text-violet-300 uppercase tracking-wider">
-                      Paragraph 2 &mdash; The novel&apos;s linguistic restraint
+                      Paragraph 2 - The novel&apos;s linguistic restraint
                     </p>
                     <p className="mt-1 text-sm text-muted-foreground">
                       The words &lsquo;autism&rsquo; and &lsquo;Asperger&apos;s&rsquo; never appear
@@ -1378,7 +1364,7 @@ export default function CuriousIncidentPage() {
                   </div>
                   <div>
                     <p className="text-xs font-semibold text-violet-700 dark:text-violet-300 uppercase tracking-wider">
-                      Paragraph 3 &mdash; Haddon&apos;s public position
+                      Paragraph 3 - Haddon&apos;s public position
                     </p>
                     <p className="mt-1 text-sm text-muted-foreground">
                       Haddon has stated he did no specific research on autism and prefers not to
@@ -1389,13 +1375,13 @@ export default function CuriousIncidentPage() {
                   </div>
                   <div>
                     <p className="text-xs font-semibold text-violet-700 dark:text-violet-300 uppercase tracking-wider">
-                      Paragraph 4 &mdash; The autistic critical response
+                      Paragraph 4 - The autistic critical response
                     </p>
                     <p className="mt-1 text-sm text-muted-foreground">
-                      Acknowledge that autistic writers have responded to the novel variously
-                      &mdash; some valuing it as a sympathetic portrait, others critiquing it as a
-                      non-autistic author&apos;s imagining. A sophisticated answer takes this
-                      conversation seriously.
+                      Acknowledge that autistic writers have responded to the novel variously - some
+                      valuing it as a sympathetic portrait, others critiquing it as a non-autistic
+                      author&apos;s imagining. A sophisticated answer takes this conversation
+                      seriously.
                     </p>
                   </div>
                   <div>
@@ -1427,15 +1413,15 @@ export default function CuriousIncidentPage() {
                       Thesis
                     </p>
                     <p className="mt-1 text-sm text-muted-foreground">
-                      Haddon adopts the surface architecture of the Holmes story &mdash;
-                      observation, deduction, the &lsquo;curious incident&rsquo; itself &mdash; and
-                      reorients it from public spectacle to private psychology, transforming the
-                      detective genre into a vehicle for domestic and personal revelation.
+                      Haddon adopts the surface architecture of the Holmes story - observation,
+                      deduction, the &lsquo;curious incident&rsquo; itself - and reorients it from
+                      public spectacle to private psychology, transforming the detective genre into
+                      a vehicle for domestic and personal revelation.
                     </p>
                   </div>
                   <div>
                     <p className="text-xs font-semibold text-violet-700 dark:text-violet-300 uppercase tracking-wider">
-                      Paragraph 1 &mdash; The borrowed title
+                      Paragraph 1 - The borrowed title
                     </p>
                     <p className="mt-1 text-sm text-muted-foreground">
                       &ldquo;Silver Blaze&rdquo; (1892) and Holmes&apos;s &lsquo;curious incident of
@@ -1445,7 +1431,7 @@ export default function CuriousIncidentPage() {
                   </div>
                   <div>
                     <p className="text-xs font-semibold text-violet-700 dark:text-violet-300 uppercase tracking-wider">
-                      Paragraph 2 &mdash; Christopher as Holmesian observer
+                      Paragraph 2 - Christopher as Holmesian observer
                     </p>
                     <p className="mt-1 text-sm text-muted-foreground">
                       &ldquo;The world is full of obvious things which nobody by any chance ever
@@ -1455,7 +1441,7 @@ export default function CuriousIncidentPage() {
                   </div>
                   <div>
                     <p className="text-xs font-semibold text-violet-700 dark:text-violet-300 uppercase tracking-wider">
-                      Paragraph 3 &mdash; The Watson-figure reimagined
+                      Paragraph 3 - The Watson-figure reimagined
                     </p>
                     <p className="mt-1 text-sm text-muted-foreground">
                       Holmes has Watson; Christopher has Siobhan and the reader. Discuss how Haddon
@@ -1465,14 +1451,14 @@ export default function CuriousIncidentPage() {
                   </div>
                   <div>
                     <p className="text-xs font-semibold text-violet-700 dark:text-violet-300 uppercase tracking-wider">
-                      Paragraph 4 &mdash; Genre transformation
+                      Paragraph 4 - Genre transformation
                     </p>
                     <p className="mt-1 text-sm text-muted-foreground">
                       In Holmes the mystery is exterior and the detective remains psychologically
-                      intact. In Haddon the mystery becomes interior &mdash; the detective&apos;s
-                      own family &mdash; and the resolution alters the detective&apos;s life.
-                      Conclude on Haddon&apos;s use of generic conventions to make the detective
-                      novel a domestic and developmental form.
+                      intact. In Haddon the mystery becomes interior - the detective&apos;s own
+                      family - and the resolution alters the detective&apos;s life. Conclude on
+                      Haddon&apos;s use of generic conventions to make the detective novel a
+                      domestic and developmental form.
                     </p>
                   </div>
                 </div>
@@ -1497,12 +1483,12 @@ export default function CuriousIncidentPage() {
               </h4>
               <p className="mt-2 text-sm text-muted-foreground leading-relaxed">
                 A surface reading describes Christopher&apos;s personality and lists his routines. A
-                Grade 9 reading recognises that Haddon&apos;s formal choices &mdash; the
-                prime-numbered chapters, embedded diagrams, mathematical digressions, the appendix
-                &mdash; are not ornaments to characterisation but its primary mode. Christopher is
-                not described; he is instantiated. The novel&apos;s structure is itself an extended
-                characterisation. This argument allows a candidate to write seriously about
-                typography, pagination, and pacing as elements of meaning rather than as background.
+                Grade 9 reading recognises that Haddon&apos;s formal choices - the prime-numbered
+                chapters, embedded diagrams, mathematical digressions, the appendix - are not
+                ornaments to characterisation but its primary mode. Christopher is not described; he
+                is instantiated. The novel&apos;s structure is itself an extended characterisation.
+                This argument allows a candidate to write seriously about typography, pagination,
+                and pacing as elements of meaning rather than as background.
               </p>
             </div>
             <div className="rounded-lg border border-violet-500/30 bg-violet-500/5 p-4">
@@ -1551,7 +1537,7 @@ export default function CuriousIncidentPage() {
                 5. Comedy as a Sympathy Mechanism
               </h4>
               <p className="mt-2 text-sm text-muted-foreground leading-relaxed">
-                The novel is often funny &mdash; the literalism, the misunderstood idioms, the
+                The novel is often funny - the literalism, the misunderstood idioms, the
                 professional astronaut digressions. A surface reading either misses the comedy or
                 treats it as light relief. A sophisticated reading argues that Haddon uses humour to
                 bring the reader into Christopher&apos;s point of view: laughing with him rather
@@ -1565,9 +1551,9 @@ export default function CuriousIncidentPage() {
               </h4>
               <p className="mt-2 text-sm text-muted-foreground leading-relaxed">
                 Judy&apos;s letters represent the only sustained voice in the novel that is not
-                Christopher&apos;s. They give the reader a different perspective on the family
-                &mdash; a mother who felt unable to cope, who loved her son, who knew she was
-                failing him. A top-band candidate notes the formal significance: the only break from
+                Christopher&apos;s. They give the reader a different perspective on the family - a
+                mother who felt unable to cope, who loved her son, who knew she was failing him. A
+                top-band candidate notes the formal significance: the only break from
                 Christopher&apos;s first-person voice comes in the form of letters, which
                 Christopher transcribes. The novel is therefore epistolary at one of its most
                 important moments, and the contrast in voice (Judy&apos;s emotional adult prose vs

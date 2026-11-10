@@ -169,7 +169,7 @@ export default async function AnalyticalWritingPage() {
 
               <div className="grid gap-4 sm:grid-cols-2 mb-8">
                 <div className="rounded-xl border-s-4 border-[primary] bg-primary/5 p-5">
-                  <h4 className="font-bold text-foreground text-lg">P &mdash; Point</h4>
+                  <h4 className="font-bold text-foreground text-lg">P - Point</h4>
                   <p className="mt-2 text-sm text-muted-foreground">
                     Your topic sentence. It makes a clear, arguable claim that directly addresses
                     the question. A strong point is <strong>specific</strong> and
@@ -191,7 +191,7 @@ export default async function AnalyticalWritingPage() {
                 </div>
 
                 <div className="rounded-xl border-s-4 border-primary bg-primary/5 p-5">
-                  <h4 className="font-bold text-primary text-lg">E &mdash; Evidence</h4>
+                  <h4 className="font-bold text-primary text-lg">E - Evidence</h4>
                   <p className="mt-2 text-sm text-muted-foreground">
                     A carefully selected quotation or reference from the text that directly supports
                     your point. Short, embedded quotations are always preferable to long block
@@ -215,7 +215,7 @@ export default async function AnalyticalWritingPage() {
                 </div>
 
                 <div className="rounded-xl border-s-4 border-[primary] bg-primary/5 p-5">
-                  <h4 className="font-bold text-foreground text-lg">E &mdash; Explain</h4>
+                  <h4 className="font-bold text-foreground text-lg">E - Explain</h4>
                   <p className="mt-2 text-sm text-muted-foreground">
                     The most important part. Analyse <strong>how</strong> and <strong>why</strong>{' '}
                     the evidence supports your point. Zoom in on specific words, techniques, and
@@ -233,7 +233,7 @@ export default async function AnalyticalWritingPage() {
                 </div>
 
                 <div className="rounded-xl border-s-4 border-primary bg-primary/5 p-5">
-                  <h4 className="font-bold text-primary text-lg">L &mdash; Link</h4>
+                  <h4 className="font-bold text-primary text-lg">L - Link</h4>
                   <p className="mt-2 text-sm text-muted-foreground">
                     Connect back to the question, to the wider text, or to relevant context. This
                     demonstrates a holistic understanding and keeps your essay focused on the
@@ -270,17 +270,15 @@ export default async function AnalyticalWritingPage() {
                     Macbeth&apos;s guilt from a personal emotion to something cosmic and
                     mythological in scale. The verb &ldquo;wash&rdquo; connotes purification and
                     baptism, yet the rhetorical question form reveals his agonised conviction that
-                    no such cleansing is possible. Furthermore, the image of &ldquo;blood&rdquo;
-                    &mdash; a motif that recurs throughout the play &mdash; becomes a permanent
-                    stain on his conscience, symbolising the irreversible moral corruption caused by
-                    regicide.
+                    no such cleansing is possible. Furthermore, the image of &ldquo;blood&rdquo; - a
+                    motif that recurs throughout the play - becomes a permanent stain on his
+                    conscience, symbolising the irreversible moral corruption caused by regicide.
                   </Annotation>{' '}
                   <Annotation note="LINK: Connects to context and the broader question">
                     This reflects the Jacobean understanding that killing a king was not merely
-                    murder but a violation of the divine right of kings &mdash; a sin so profound
-                    that it could never be absolved. Shakespeare uses Macbeth&apos;s torment as a
-                    warning to his audience about the devastating consequences of unchecked
-                    ambition.
+                    murder but a violation of the divine right of kings - a sin so profound that it
+                    could never be absolved. Shakespeare uses Macbeth&apos;s torment as a warning to
+                    his audience about the devastating consequences of unchecked ambition.
                   </Annotation>
                 </p>
               </div>
@@ -351,8 +349,8 @@ export default async function AnalyticalWritingPage() {
                 </div>
                 <p className="text-sm text-muted-foreground mb-3">
                   Isolate individual words or very short phrases to zoom in on the writer&apos;s
-                  specific language choices. This allows you to analyse at word level &mdash; a
-                  hallmark of top-grade responses.
+                  specific language choices. This allows you to analyse at word level - a hallmark
+                  of top-grade responses.
                 </p>
                 <div className="space-y-3">
                   <div className="rounded-lg bg-green-500/10 p-3 border border-green-500/30">
@@ -435,7 +433,7 @@ export default async function AnalyticalWritingPage() {
                   <p className="text-sm text-muted-foreground font-semibold mb-2">Analysis:</p>
                   <p className="text-sm text-muted-foreground">
                     The verb &ldquo;dragged&rdquo; connotes extreme exhaustion and physical
-                    suffering &mdash; it implies the creature lacks the strength to walk or crawl,
+                    suffering - it implies the creature lacks the strength to walk or crawl,
                     reducing it to the most basic, painful form of movement. The reflexive pronoun
                     &ldquo;itself&rdquo; (rather than &ldquo;he&rdquo; or &ldquo;she&rdquo;)
                     dehumanises the figure, presenting it as something less than human. This word
@@ -465,8 +463,8 @@ export default async function AnalyticalWritingPage() {
                   </p>
                   <p className="text-sm text-muted-foreground font-semibold mb-2">Analysis:</p>
                   <p className="text-sm text-muted-foreground">
-                    The writer employs a trio of short, simple sentences &mdash; &ldquo;She ran. She
-                    stumbled. She fell.&rdquo; &mdash; to create a staccato rhythm that mirrors the
+                    The writer employs a trio of short, simple sentences - &ldquo;She ran. She
+                    stumbled. She fell.&rdquo; - to create a staccato rhythm that mirrors the
                     character&apos;s rapid, panicked movements. Each sentence is progressively more
                     desperate, charting a decline from action to helplessness. This is then
                     juxtaposed with a long, complex sentence that seems to envelop the reader,
@@ -494,8 +492,8 @@ export default async function AnalyticalWritingPage() {
                   </p>
                   <p className="text-sm text-muted-foreground">
                     Throughout the extract, the writer constructs a semantic field of decay and
-                    decomposition &mdash; &ldquo;rotting,&rdquo; &ldquo;crumbling,&rdquo;
-                    &ldquo;withered,&rdquo; &ldquo;hollowed&rdquo; &mdash; which permeates every
+                    decomposition - &ldquo;rotting,&rdquo; &ldquo;crumbling,&rdquo;
+                    &ldquo;withered,&rdquo; &ldquo;hollowed&rdquo; - which permeates every
                     description of the setting. This sustained pattern transforms the landscape into
                     a symbol of moral and social decline, suggesting that the physical environment
                     reflects the inner corruption of its inhabitants. The relentless accumulation of
@@ -515,8 +513,7 @@ export default async function AnalyticalWritingPage() {
                 Structure refers to how a writer organises and sequences their text to guide the
                 reader&apos;s experience. Many students struggle with structural analysis because
                 they confuse it with language analysis. Structure is about
-                <strong> order, arrangement, and movement</strong> &mdash; not individual word
-                choices.
+                <strong> order, arrangement, and movement</strong> - not individual word choices.
               </p>
 
               <h3 className="mb-4 text-lg font-bold text-foreground">{tr(`What to Look For`)}</h3>
@@ -573,12 +570,12 @@ export default async function AnalyticalWritingPage() {
                     &ldquo;Then the screaming started.&rdquo;
                   </Annotation>{' '}
                   <Annotation note="EXPLAIN: analyses the effect of the structural choice">
-                    This dramatic structural shift &mdash; from expansive, leisurely prose to a
-                    terse, violent declaration &mdash; jolts the reader out of their complacency.
-                    The paragraph break acts as a caesura, forcing a pause before the revelation
-                    that mirrors the sudden rupture of peace within the narrative. By front-loading
-                    the tranquillity, the writer makes the disruption feel more shocking, as the
-                    reader&apos;s expectations are deliberately subverted.
+                    This dramatic structural shift - from expansive, leisurely prose to a terse,
+                    violent declaration - jolts the reader out of their complacency. The paragraph
+                    break acts as a caesura, forcing a pause before the revelation that mirrors the
+                    sudden rupture of peace within the narrative. By front-loading the tranquillity,
+                    the writer makes the disruption feel more shocking, as the reader&apos;s
+                    expectations are deliberately subverted.
                   </Annotation>{' '}
                   <Annotation note="LINK: connects to the writer's broader purpose">
                     This technique of structural contrast reflects a key theme of the text: that
@@ -833,7 +830,7 @@ export default async function AnalyticalWritingPage() {
                     </Annotation>{' '}
                     <Annotation note="Signals the argument the essay will develop">
                       From the moment of Duncan&apos;s murder, guilt manifests physically,
-                      psychologically, and spiritually &mdash; becoming the mechanism through which
+                      psychologically, and spiritually - becoming the mechanism through which
                       Shakespeare dramatises the consequences of unchecked ambition for his Jacobean
                       audience.
                     </Annotation>
@@ -856,9 +853,9 @@ export default async function AnalyticalWritingPage() {
                       hand?&rdquo;
                     </Annotation>{' '}
                     <Annotation note="EXPLAIN: Multi-layered word-level analysis">
-                      The hyperbolic allusion to &ldquo;Neptune&rdquo; &mdash; the Roman god who
-                      commands the entirety of the sea &mdash; elevates Macbeth&apos;s guilt from a
-                      personal emotion to something cosmic and mythological in scale. The verb
+                      The hyperbolic allusion to &ldquo;Neptune&rdquo; - the Roman god who commands
+                      the entirety of the sea - elevates Macbeth&apos;s guilt from a personal
+                      emotion to something cosmic and mythological in scale. The verb
                       &ldquo;wash&rdquo; connotes ritual purification and baptism, yet the
                       rhetorical question form reveals his agonised conviction that such cleansing
                       is impossible. The image of &ldquo;blood&rdquo;, functioning metonymically for
@@ -878,8 +875,8 @@ export default async function AnalyticalWritingPage() {
                     <Annotation note="LINK: Context woven into the analysis">
                       For Shakespeare&apos;s Jacobean audience, who believed in the divine right of
                       kings, this image of blood that can never be washed away would have carried
-                      profound theological weight &mdash; regicide was not merely murder but a sin
-                      against God himself.
+                      profound theological weight - regicide was not merely murder but a sin against
+                      God himself.
                     </Annotation>
                   </p>
                 </div>
@@ -902,7 +899,7 @@ export default async function AnalyticalWritingPage() {
                     </Annotation>{' '}
                     <Annotation note="EXPLAIN: Comparative analysis of both characters">
                       The spectral dagger is described as a &ldquo;false creation / Proceeding from
-                      the heat-oppressed brain&rdquo; &mdash; Shakespeare&apos;s use of
+                      the heat-oppressed brain&rdquo; - Shakespeare&apos;s use of
                       &ldquo;heat-oppressed&rdquo; presents the mind as physically burdened, almost
                       feverish with guilt before the crime has even been committed. The parallel
                       between Macbeth&apos;s blood-stained hands and Lady Macbeth&apos;s obsessive
@@ -937,17 +934,16 @@ export default async function AnalyticalWritingPage() {
                     <Annotation note="EXPLAIN: Analysis of pathetic fallacy and the Great Chain of Being">
                       The personification of the earth as &ldquo;feverous&rdquo; employs pathetic
                       fallacy to suggest that Macbeth&apos;s guilt has literally infected the
-                      natural world. The unnatural behaviour of the horses &mdash; herbivores
-                      turning carnivorous &mdash; symbolises the grotesque inversion of the natural
-                      order caused by regicide. Shakespeare presents a world in which guilt is not
-                      contained within the individual but ripples outward, corrupting everything it
-                      touches.
+                      natural world. The unnatural behaviour of the horses - herbivores turning
+                      carnivorous - symbolises the grotesque inversion of the natural order caused
+                      by regicide. Shakespeare presents a world in which guilt is not contained
+                      within the individual but ripples outward, corrupting everything it touches.
                     </Annotation>{' '}
                     <Annotation note="LINK: Context about the Great Chain of Being">
                       This reflects the Jacobean concept of the Great Chain of Being, in which the
                       king occupied a divinely ordained position. His murder would inevitably cause
-                      cosmic disruption &mdash; a belief Shakespeare dramatises to reinforce the
-                      message that ambition that defies divine order leads to universal chaos.
+                      cosmic disruption - a belief Shakespeare dramatises to reinforce the message
+                      that ambition that defies divine order leads to universal chaos.
                     </Annotation>
                   </p>
                 </div>
@@ -966,9 +962,9 @@ export default async function AnalyticalWritingPage() {
                     </Annotation>{' '}
                     <Annotation note="Final evaluative statement about writer's purpose">
                       Through this multifaceted presentation, Shakespeare constructs guilt as the
-                      inevitable and inescapable consequence of violating moral and divine law
-                      &mdash; a message that resonated powerfully with his Jacobean audience and
-                      continues to unsettle readers today.
+                      inevitable and inescapable consequence of violating moral and divine law - a
+                      message that resonated powerfully with his Jacobean audience and continues to
+                      unsettle readers today.
                     </Annotation>
                   </p>
                 </div>
@@ -1078,15 +1074,15 @@ export default async function AnalyticalWritingPage() {
                       to the stark minor sentence, &ldquo;And then, silence.&rdquo;
                     </Annotation>{' '}
                     <Annotation note="EXPLAIN: Analysis of the structural effect">
-                      The breathless, accumulative syntax of the storm description &mdash; clause
-                      piling upon clause &mdash; creates a relentless momentum that mirrors the
-                      storm&apos;s overwhelming intensity. The abrupt shift to &ldquo;And then,
-                      silence&rdquo; is devastatingly effective: the minor sentence, stripped of all
-                      elaboration, enacts the very suddenness it describes. The commas around
+                      The breathless, accumulative syntax of the storm description - clause piling
+                      upon clause - creates a relentless momentum that mirrors the storm&apos;s
+                      overwhelming intensity. The abrupt shift to &ldquo;And then, silence&rdquo; is
+                      devastatingly effective: the minor sentence, stripped of all elaboration,
+                      enacts the very suddenness it describes. The commas around
                       &ldquo;silence&rdquo; isolate the word, forcing the reader to pause and
-                      experience the stillness. The subsequent simile &mdash; &ldquo;like a held
-                      breath&rdquo; &mdash; sustains the tension by suggesting the calm is
-                      temporary, pregnant with the threat of what is to come.
+                      experience the stillness. The subsequent simile - &ldquo;like a held
+                      breath&rdquo; - sustains the tension by suggesting the calm is temporary,
+                      pregnant with the threat of what is to come.
                     </Annotation>{' '}
                     <Annotation note="LINK: Effect on the reader">
                       This structural technique leaves the reader in a state of suspense, arguably
@@ -1213,8 +1209,8 @@ export default async function AnalyticalWritingPage() {
                   <Annotation note="Analysis of Source B">
                     describing the waves as &ldquo;monstrous walls of black water that obliterated
                     the horizon.&rdquo; The adjective &ldquo;monstrous&rdquo; dehumanises the sea,
-                    while &ldquo;obliterated&rdquo; &mdash; a verb associated with total destruction
-                    &mdash; suggests the sea has the power to erase the world itself.
+                    while &ldquo;obliterated&rdquo; - a verb associated with total destruction -
+                    suggests the sea has the power to erase the world itself.
                   </Annotation>{' '}
                   <Annotation note="Evaluative summary linking both">
                     This contrast arguably reflects the writers&apos; different purposes: Source A,
@@ -1296,7 +1292,7 @@ export default async function AnalyticalWritingPage() {
                     &ldquo;unsex me here, / And fill me from the crown to the toe top-full / Of
                     direst cruelty,&rdquo; is a deliberate appeal to dark, supernatural forces. The
                     imperative &ldquo;unsex me&rdquo; suggests she views her gender as an obstacle
-                    to power &mdash; she must be stripped of femininity before she can act with the
+                    to power - she must be stripped of femininity before she can act with the
                     ruthlessness she believes the situation demands. The phrase &ldquo;top-full of
                     direst cruelty&rdquo; implies she wants to be completely consumed by cruelty,
                     leaving no room for compassion or hesitation. The superlative
@@ -1334,7 +1330,7 @@ export default async function AnalyticalWritingPage() {
                 <div className="rounded-lg bg-card p-4 border border-purple-500/30">
                   <p className="text-sm text-foreground leading-relaxed">
                     Shakespeare constructs Lady Macbeth&apos;s power as fundamentally transgressive
-                    &mdash; a deliberate violation of the gender hierarchy that underpinned Jacobean
+                    - a deliberate violation of the gender hierarchy that underpinned Jacobean
                     society. Her soliloquy is not merely a request but a ritualistic invocation:
                     &ldquo;Come, you spirits / That tend on mortal thoughts, unsex me here.&rdquo;
                     The imperative &ldquo;come&rdquo; and the direct address to supernatural
@@ -1342,19 +1338,19 @@ export default async function AnalyticalWritingPage() {
                     the witches&apos; incantations earlier in the play. Shakespeare thus
                     structurally parallels Lady Macbeth with the Weird Sisters, positioning her
                     power as inherently unnatural and dangerous. The verb &ldquo;unsex&rdquo; is a
-                    Shakespearean coinage &mdash; a word so radical that it had to be invented,
-                    implying that what Lady Macbeth desires is so far beyond the boundaries of
-                    accepted femininity that existing language is insufficient to express it. She
-                    demands to be filled &ldquo;from the crown to the toe top-full / Of direst
-                    cruelty&rdquo; &mdash; the anatomical progression from &ldquo;crown&rdquo; to
-                    &ldquo;toe&rdquo; suggests a complete, systematic replacement of her humanity
-                    with cruelty, while the compound &ldquo;top-full&rdquo; implies a vessel filled
-                    to overflowing. Arguably, however, the very extremity of her language reveals
-                    its opposite: if Lady Macbeth truly possessed innate ruthlessness, she would not
-                    need to plead for it from supernatural forces. Her invocation, paradoxically,
-                    exposes the vulnerability and humanity she is so desperate to suppress &mdash; a
-                    reading that gains devastating retrospective force in the sleepwalking scene of
-                    Act 5, when her suppressed guilt finally overwhelms her.
+                    Shakespearean coinage - a word so radical that it had to be invented, implying
+                    that what Lady Macbeth desires is so far beyond the boundaries of accepted
+                    femininity that existing language is insufficient to express it. She demands to
+                    be filled &ldquo;from the crown to the toe top-full / Of direst cruelty&rdquo; -
+                    the anatomical progression from &ldquo;crown&rdquo; to &ldquo;toe&rdquo;
+                    suggests a complete, systematic replacement of her humanity with cruelty, while
+                    the compound &ldquo;top-full&rdquo; implies a vessel filled to overflowing.
+                    Arguably, however, the very extremity of her language reveals its opposite: if
+                    Lady Macbeth truly possessed innate ruthlessness, she would not need to plead
+                    for it from supernatural forces. Her invocation, paradoxically, exposes the
+                    vulnerability and humanity she is so desperate to suppress - a reading that
+                    gains devastating retrospective force in the sleepwalking scene of Act 5, when
+                    her suppressed guilt finally overwhelms her.
                   </p>
                 </div>
                 <div className="mt-4 space-y-2">

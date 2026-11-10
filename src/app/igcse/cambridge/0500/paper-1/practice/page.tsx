@@ -28,6 +28,11 @@ export const metadata: Metadata = {
   },
 }
 
+// 31 October 2026: each set's language analysis was 15 marks, the 2024-2026
+// language task. From 2027 the language task is worth 10, in Question 3 after its
+// short answers (src/data/mark-scheme-guides/cambridge-0500-paper1.ts), and the
+// suggested time per set follows. Second reader: the parts were labelled Q1 to Q3,
+// which read as the paper's question numbers; they are now (a) to (c) of one set.
 const practiceSets = [
   {
     id: 'dickens',
@@ -36,15 +41,15 @@ const practiceSets = [
     passage: `London. Michaelmas Term lately over, and the Lord Chancellor sitting in Lincoln\u2019s Inn Hall. Implacable November weather. As much mud in the streets as if the waters had but newly retired from the face of the earth, and it would not be wonderful to meet a Megalosaurus, forty feet long or so, waddling like an elephantine lizard up Holborn Hill. Smoke lowering down from chimney-pots, making a soft black drizzle, with flakes of soot in it as big as full-grown snow-flakes - gone into mourning, one might imagine, for the death of the sun. Dogs, undistinguishable in mire. Horses, scarcely better; splashed to their very blinkers. Foot passengers, jostling one another\u2019s umbrellas in a general infection of ill-temper, and losing their foot-hold at street-corners, where tens of thousands of other foot passengers have been slipping and sliding since the day broke (if this day ever broke), adding new deposits to the crust upon crust of mud, sticking at those points tenaciously to the pavement, and accumulating at compound interest.`,
     questions: [
       {
-        q: 'Q1. Give two words or phrases from the passage that show the weather is unpleasant. (2 marks)',
+        q: '(a) Give two words or phrases from the passage that show the weather is unpleasant. (2 marks)',
         a: 'Any two of: "Implacable November weather"; "soft black drizzle"; "flakes of soot"; "mud".',
       },
       {
-        q: 'Q2. Explain, using your own words, what the writer means by "gone into mourning ... for the death of the sun". (3 marks)',
+        q: '(b) Explain, using your own words, what the writer means by "gone into mourning ... for the death of the sun". (3 marks)',
         a: 'The sky is so dark and grey that it looks as though the city is wearing funeral clothes because the sun has disappeared and will never shine again.',
       },
       {
-        q: 'Q3. (Language) Analyse how the writer uses language to create a vivid impression of London. (15 marks) - outline answer.',
+        q: '(c) Language task. Analyse how the writer uses language to create a vivid impression of London. (10 marks) - outline answer.',
         a: 'Focus on: "implacable" (personifies November as merciless, uncaring); "Megalosaurus ... waddling" (prehistoric imagery suggests London has regressed to a primeval swamp); "crust upon crust" (repetition and the image of hardening layers suggest accumulated decay); "compound interest" (financial metaphor hints that the city\u2019s corruption is self-multiplying). Each choice should be linked to the reader\u2019s feeling of oppressive, almost fantastical gloom.',
       },
     ],
@@ -58,15 +63,15 @@ const practiceSets = [
 \u201cMy dear Mr. Bennet,\u201d said his lady to him one day, \u201chave you heard that Netherfield Park is let at last?\u201d Mr. Bennet replied that he had not. \u201cBut it is,\u201d returned she; \u201cfor Mrs. Long has just been here, and she told me all about it.\u201d Mr. Bennet made no answer. \u201cDo not you want to know who has taken it?\u201d cried his wife impatiently. \u201cYou want to tell me, and I have no objection to hearing it.\u201d This was invitation enough.`,
     questions: [
       {
-        q: 'Q1. In your own words, explain what "a truth universally acknowledged" means here. (2 marks)',
+        q: '(a) In your own words, explain what "a truth universally acknowledged" means here. (2 marks)',
         a: 'Something that everybody in society treats as an obvious, unchallenged fact.',
       },
       {
-        q: 'Q2. What does the phrase "rightful property of some one or other of their daughters" suggest about attitudes to marriage? (3 marks)',
+        q: '(b) What does the phrase "rightful property of some one or other of their daughters" suggest about attitudes to marriage? (3 marks)',
         a: 'It suggests that, in this community, wealthy single men are treated as objects to be claimed by local families and that marriage is viewed almost as a property transaction between households, not a matter of mutual feeling.',
       },
       {
-        q: 'Q3. (Language) Analyse how Austen uses language to introduce the character of Mr Bennet. (15 marks) - outline answer.',
+        q: '(c) Language task. Analyse how Austen uses language to introduce the character of Mr Bennet. (10 marks) - outline answer.',
         a: 'Focus on: the tag "made no answer" (deliberately withholding speech suggests dry detachment); "You want to tell me, and I have no objection to hearing it" (balanced syntax and wry tone suggest an ironic, teasing intelligence); the narrator\u2019s opening aphorism ("It is a truth universally acknowledged") frames him as someone who will see through social conventions. Each point should link language choice to effect on the reader\u2019s sense of character.',
       },
     ],
@@ -80,15 +85,15 @@ const practiceSets = [
 The heaven being spread with this pallid screen and the earth with the darkest vegetation, their meeting-line at the horizon was clearly marked. In such contrast the heath wore the appearance of an instalment of night which had taken up its place before its astronomical hour was come: darkness had to a great extent arrived hereon, while day stood distinct in the sky. Looking upwards, a furze-cutter would have been inclined to continue work; looking down, he would have decided to finish his faggot and go home. The distant rims of the world and of the firmament seemed to be a division in time no less than a division in matter.`,
     questions: [
       {
-        q: 'Q1. Give two ways in which the sky and the heath look different from each other. (2 marks)',
+        q: '(a) Give two ways in which the sky and the heath look different from each other. (2 marks)',
         a: 'The sky is "whitish" / "pallid" and still light, while the heath is "embrowned" / dark and already covered in "darkness".',
       },
       {
-        q: 'Q2. What does the image of the sky as "a tent which had the whole heath for its floor" suggest about the landscape? (3 marks)',
+        q: '(b) What does the image of the sky as "a tent which had the whole heath for its floor" suggest about the landscape? (3 marks)',
         a: 'It suggests the heath is enormous and enclosed - the clouds feel like a roof pressing down on it, making the whole place feel like a vast, sealed-in room under a lid of cloud.',
       },
       {
-        q: 'Q3. (Language) Analyse how Hardy uses language to create an atmosphere of gloom and timelessness. (15 marks) - outline answer.',
+        q: '(c) Language task. Analyse how Hardy uses language to create an atmosphere of gloom and timelessness. (10 marks) - outline answer.',
         a: 'Focus on: "embrowned itself moment by moment" (reflexive verb personifies the heath as consciously darkening); "instalment of night" (commercial metaphor suggests darkness arrives in separate portions, making time feel mechanical); "darkness had to a great extent arrived" (passive phrasing turns night into an inevitable, almost fated visitor); "division in time no less than a division in matter" (philosophical abstraction elevates the scene beyond weather into something almost metaphysical). Link each to the oppressive, suspended-in-time atmosphere.',
       },
     ],
@@ -141,7 +146,11 @@ export default async function PracticePage() {
           </li>
           <li className="flex items-start gap-2">
             <CheckCircle2 className="mt-0.5 size-4 shrink-0 text-primary" />
-            <span>Give yourself 25-30 minutes per set.</span>
+            <span>
+              Give yourself about 20 minutes per set: a few minutes on the short questions, then
+              about 13 on the language analysis, as in Question 3 of the paper for exams from 2027.
+              On the November 2026 paper the language task is part of Question 2 and worth 15 marks.
+            </span>
           </li>
           <li className="flex items-start gap-2">
             <CheckCircle2 className="mt-0.5 size-4 shrink-0 text-primary" />

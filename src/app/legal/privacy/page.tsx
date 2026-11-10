@@ -512,7 +512,7 @@ export default async function PrivacyPolicyPage() {
 
         <h3 className="text-lg font-semibold mb-2">{s1HDpo}</h3>
         <p className="mb-3">
-          <strong>{dpoName}</strong> &mdash;{' '}
+          <strong>{dpoName}</strong> -{' '}
           <a href="mailto:cj@upskillenergy.com" className="underline">
             cj@upskillenergy.com
           </a>
@@ -522,7 +522,7 @@ export default async function PrivacyPolicyPage() {
         <p className="mb-3">
           {dslIntro}
           <br />
-          <strong>{dpoName}</strong> &mdash;{' '}
+          <strong>{dpoName}</strong> -{' '}
           <a href="mailto:cj@upskillenergy.com" className="underline">
             cj@upskillenergy.com
           </a>

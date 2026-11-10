@@ -135,8 +135,8 @@ export default async function OCRPoetryPage() {
               <h3 className="font-semibold text-foreground">2. Voice and Tone</h3>
               <p className="mt-2 text-sm">
                 Who is the speaker (persona)? Is it the poet themselves, or a fictional character?
-                What is the tone &mdash; bitter, nostalgic, angry, celebratory, mournful, ironic,
-                defiant? Does the tone shift during the poem? If so, where and why?
+                What is the tone - bitter, nostalgic, angry, celebratory, mournful, ironic, defiant?
+                Does the tone shift during the poem? If so, where and why?
               </p>
               <p className="mt-2 text-sm">
                 <strong>{tr(`Key vocabulary for tone:`)}</strong> wistful, sardonic, melancholic,
@@ -154,29 +154,28 @@ export default async function OCRPoetryPage() {
               </p>
               <ul className="ms-4 mt-2 list-disc space-y-1 text-sm">
                 <li>
-                  <strong>Imagery</strong> &mdash; What pictures does the poet create? Are there
-                  recurring images (motifs)? What do they symbolise?
+                  <strong>Imagery</strong> - What pictures does the poet create? Are there recurring
+                  images (motifs)? What do they symbolise?
                 </li>
                 <li>
-                  <strong>{tr(`Figurative language`)}</strong> &mdash; Similes, metaphors,
+                  <strong>{tr(`Figurative language`)}</strong> - Similes, metaphors,
                   personification, symbolism. What is being compared to what? What does this reveal?
                 </li>
                 <li>
-                  <strong>{tr(`Word choice (diction)`)}</strong> &mdash; Zoom into individual words.
-                  What are their connotations? Why has the poet chosen this word over an
-                  alternative?
+                  <strong>{tr(`Word choice (diction)`)}</strong> - Zoom into individual words. What
+                  are their connotations? Why has the poet chosen this word over an alternative?
                 </li>
                 <li>
-                  <strong>{tr(`Semantic fields`)}</strong> &mdash; Are there groups of related
-                  words? What atmosphere or theme do they reinforce?
+                  <strong>{tr(`Semantic fields`)}</strong> - Are there groups of related words? What
+                  atmosphere or theme do they reinforce?
                 </li>
                 <li>
-                  <strong>{tr(`Sound devices`)}</strong> &mdash; Alliteration, sibilance, assonance,
+                  <strong>{tr(`Sound devices`)}</strong> - Alliteration, sibilance, assonance,
                   onomatopoeia. What auditory effect do they create?
                 </li>
                 <li>
-                  <strong>{tr(`Sensory language`)}</strong> &mdash; Appeals to sight, sound, touch,
-                  taste, and smell.
+                  <strong>{tr(`Sensory language`)}</strong> - Appeals to sight, sound, touch, taste,
+                  and smell.
                 </li>
               </ul>
             </div>
@@ -190,37 +189,37 @@ export default async function OCRPoetryPage() {
               </p>
               <ul className="ms-4 mt-2 list-disc space-y-1 text-sm">
                 <li>
-                  <strong>Form</strong> &mdash; Is it a sonnet, ballad, free verse, dramatic
-                  monologue, or another form? Why has the poet chosen this form? How does the form
-                  relate to the content?
+                  <strong>Form</strong> - Is it a sonnet, ballad, free verse, dramatic monologue, or
+                  another form? Why has the poet chosen this form? How does the form relate to the
+                  content?
                 </li>
                 <li>
-                  <strong>{tr(`Stanza structure`)}</strong> &mdash; How many stanzas? Are they
-                  regular or irregular? What does the structure suggest?
+                  <strong>{tr(`Stanza structure`)}</strong> - How many stanzas? Are they regular or
+                  irregular? What does the structure suggest?
                 </li>
                 <li>
-                  <strong>{tr(`Rhyme scheme`)}</strong> &mdash; Is there a regular rhyme scheme?
+                  <strong>{tr(`Rhyme scheme`)}</strong> - Is there a regular rhyme scheme?
                   Half-rhyme? No rhyme? What effect does this create?
                 </li>
                 <li>
-                  <strong>{tr(`Metre and rhythm`)}</strong> &mdash; Is there a regular beat? Where
-                  does it break? What effect does this have?
+                  <strong>{tr(`Metre and rhythm`)}</strong> - Is there a regular beat? Where does it
+                  break? What effect does this have?
                 </li>
                 <li>
-                  <strong>Enjambment</strong> &mdash; Lines that run on without a pause. Creates
-                  flow, urgency, or a sense of something uncontainable.
+                  <strong>Enjambment</strong> - Lines that run on without a pause. Creates flow,
+                  urgency, or a sense of something uncontainable.
                 </li>
                 <li>
-                  <strong>Caesura</strong> &mdash; A pause in the middle of a line. Creates a
-                  dramatic break, shift, or moment of reflection.
+                  <strong>Caesura</strong> - A pause in the middle of a line. Creates a dramatic
+                  break, shift, or moment of reflection.
                 </li>
                 <li>
-                  <strong>Volta</strong> &mdash; A turn or shift in the poem&rsquo;s argument, mood,
-                  or direction. Common in sonnets.
+                  <strong>Volta</strong> - A turn or shift in the poem&rsquo;s argument, mood, or
+                  direction. Common in sonnets.
                 </li>
                 <li>
-                  <strong>{tr(`Opening and ending`)}</strong> &mdash; How does the poem begin and
-                  end? Is there a circular structure? A dramatic shift? A resolution or lack of one?
+                  <strong>{tr(`Opening and ending`)}</strong> - How does the poem begin and end? Is
+                  there a circular structure? A dramatic shift? A resolution or lack of one?
                 </li>
               </ul>
             </div>
@@ -396,7 +395,7 @@ export default async function OCRPoetryPage() {
               <div className="rounded-lg border border-border bg-muted p-5">
                 <h3 className="text-lg font-semibold text-foreground">{tr(`Loss and Memory`)}</h3>
                 <p className="mt-2 text-sm">
-                  Many poems explore the pain of loss &mdash; of a person, a place, innocence, or
+                  Many poems explore the pain of loss - of a person, a place, innocence, or
                   identity. How does the poet use memory as a way of coping with loss? Is the tone
                   nostalgic, bitter, accepting, or angry? Consider how time is represented: linear,
                   fragmented, circular?
@@ -586,28 +585,27 @@ export default async function OCRPoetryPage() {
           <div className="mt-4">
             <ul className="ms-6 list-disc space-y-3 text-muted-foreground leading-relaxed">
               <li>
-                <strong>{tr(`Writing about each poem separately`)}</strong> &mdash; This is the most
+                <strong>{tr(`Writing about each poem separately`)}</strong> - This is the most
                 common mistake. You must compare throughout, not write about Poem A then Poem B.
               </li>
               <li>
-                <strong>{tr(`Only comparing themes`)}</strong> &mdash; Saying &ldquo;both poems are
-                about love&rdquo; is not enough. You must compare
+                <strong>{tr(`Only comparing themes`)}</strong> - Saying &ldquo;both poems are about
+                love&rdquo; is not enough. You must compare
                 <em> methods</em>: how the poets use language, form, and structure to explore the
                 theme.
               </li>
               <li>
-                <strong>{tr(`Forgetting to analyse the printed poem`)}</strong> &mdash; The printed
-                poem is right in front of you. Use it. Quote directly and analyse word-level
-                choices.
+                <strong>{tr(`Forgetting to analyse the printed poem`)}</strong> - The printed poem
+                is right in front of you. Use it. Quote directly and analyse word-level choices.
               </li>
               <li>
-                <strong>{tr(`Not knowing quotations from memory`)}</strong> &mdash; Your chosen poem
-                is not printed. If you can&rsquo;t quote from it, your analysis will be thin and
+                <strong>{tr(`Not knowing quotations from memory`)}</strong> - Your chosen poem is
+                not printed. If you can&rsquo;t quote from it, your analysis will be thin and
                 unsubstantiated.
               </li>
               <li>
-                <strong>{tr(`Ignoring form and structure`)}</strong> &mdash; Many students focus
-                only on language. Analysing form, stanza structure, rhyme, enjambment, and caesura
+                <strong>{tr(`Ignoring form and structure`)}</strong> - Many students focus only on
+                language. Analysing form, stanza structure, rhyme, enjambment, and caesura
                 demonstrates sophisticated understanding.
               </li>
               <li>
@@ -616,9 +614,9 @@ export default async function OCRPoetryPage() {
                 poem&rsquo;s background only where it explains a choice the poet made.
               </li>
               <li>
-                <strong>{tr(`Superficial analysis`)}</strong> &mdash; Don&rsquo;t just name a
-                technique. Zoom into individual words, explore their connotations, and explain
-                precisely what effect they create for the reader.
+                <strong>{tr(`Superficial analysis`)}</strong> - Don&rsquo;t just name a technique.
+                Zoom into individual words, explore their connotations, and explain precisely what
+                effect they create for the reader.
               </li>
             </ul>
           </div>

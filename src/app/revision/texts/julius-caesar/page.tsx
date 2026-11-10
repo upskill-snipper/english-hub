@@ -50,25 +50,25 @@ const data: TextGuideData = {
   },
   plotSummary: [
     'The play opens in Rome during the Feast of Lupercal in February 44 BCE. Julius Caesar has returned victorious from civil war against Pompey, and the streets are crowded with citizens celebrating him. The tribunes Flavius and Marullus rebuke the commoners for their fickle loyalty, stripping decorations from Caesar\u2019s statues. A soothsayer warns Caesar to "beware the Ides of March," but Caesar dismisses him as a dreamer. In the same act, Cassius begins working on Brutus, flattering him with comparisons to his famous ancestor who helped expel the last Roman king, and planting the suggestion that Caesar has grown dangerously powerful. Omens multiply across the city: a storm rages, a lion walks near the Capitol, and graves are said to yield up their dead.',
-    'Cassius recruits a group of senators to join the conspiracy, and Brutus \u2014 torn between his love for Caesar and his fear of tyranny \u2014 finally agrees to lead them. On the night before the ides of March, Calpurnia dreams of Caesar\u2019s statue running with blood and begs him to stay home. Caesar is persuaded to remain, but the conspirator Decius reinterprets the dream as a sign of Rome\u2019s rebirth through Caesar and flatters him into going to the Capitol. There, on 15 March, Casca strikes the first blow and the other conspirators follow. Caesar, seeing Brutus among them, utters "Et tu, Brute?" and dies at the foot of Pompey\u2019s statue.',
-    'Mark Antony, Caesar\u2019s ally, pretends to make peace with the conspirators and asks permission to speak at the funeral. Brutus addresses the crowd first, explaining in measured prose that he killed Caesar not because he loved him less but because he loved Rome more. The citizens are convinced \u2014 until Antony rises. In one of the most famous speeches in English drama, Antony repeatedly calls Brutus "an honourable man" while showing the crowd Caesar\u2019s wounds and reading his will, inciting the mob to fury. The city erupts into riot. In the chaos, Cinna the poet is mistaken for Cinna the conspirator and torn apart in the street. Antony joins Octavius and Lepidus to form a new triumvirate, coolly agreeing to political murders, and marches against the conspirators.',
+    'Cassius recruits a group of senators to join the conspiracy, and Brutus - torn between his love for Caesar and his fear of tyranny - finally agrees to lead them. On the night before the ides of March, Calpurnia dreams of Caesar\u2019s statue running with blood and begs him to stay home. Caesar is persuaded to remain, but the conspirator Decius reinterprets the dream as a sign of Rome\u2019s rebirth through Caesar and flatters him into going to the Capitol. There, on 15 March, Casca strikes the first blow and the other conspirators follow. Caesar, seeing Brutus among them, utters "Et tu, Brute?" and dies at the foot of Pompey\u2019s statue.',
+    'Mark Antony, Caesar\u2019s ally, pretends to make peace with the conspirators and asks permission to speak at the funeral. Brutus addresses the crowd first, explaining in measured prose that he killed Caesar not because he loved him less but because he loved Rome more. The citizens are convinced - until Antony rises. In one of the most famous speeches in English drama, Antony repeatedly calls Brutus "an honourable man" while showing the crowd Caesar\u2019s wounds and reading his will, inciting the mob to fury. The city erupts into riot. In the chaos, Cinna the poet is mistaken for Cinna the conspirator and torn apart in the street. Antony joins Octavius and Lepidus to form a new triumvirate, coolly agreeing to political murders, and marches against the conspirators.',
     'The action then moves to the conspirators\u2019 camp near Sardis and finally to Philippi in 42 BCE, where the armies of Brutus and Cassius face Antony and Octavius. Tensions between the two conspirators almost break their alliance, and Brutus receives news that his wife Portia has killed herself by swallowing fire. The ghost of Caesar appears to Brutus, announcing they will meet again at Philippi. In the battle that follows, Cassius mistakenly believes his friend Titinius has been captured and orders his servant to kill him. Brutus, defeated in the second engagement, runs onto his own sword held by Strato. Antony enters and delivers the final judgement that Brutus was "the noblest Roman of them all," the only conspirator who acted for the common good rather than from envy.',
   ],
   characters: [
     {
       name: 'Julius Caesar',
       role: 'Roman general and dictator; the title character',
-      body: 'Caesar appears in only three scenes before his death, yet dominates the play. Shakespeare presents him as simultaneously great and vulnerable: a supreme public figure who speaks of himself in the third person and compares himself to the Northern Star, while suffering epileptic fits and deafness in one ear. His refusal of the crown three times at the Lupercal is ambiguous \u2014 calculated modesty or genuine restraint? After his assassination, his spirit continues to shape events, appearing as a ghost to Brutus and inspiring the triumvirate\u2019s revenge.',
+      body: 'Caesar appears in only three scenes before his death, yet dominates the play. Shakespeare presents him as simultaneously great and vulnerable: a supreme public figure who speaks of himself in the third person and compares himself to the Northern Star, while suffering epileptic fits and deafness in one ear. His refusal of the crown three times at the Lupercal is ambiguous - calculated modesty or genuine restraint? After his assassination, his spirit continues to shape events, appearing as a ghost to Brutus and inspiring the triumvirate\u2019s revenge.',
     },
     {
       name: 'Marcus Brutus',
       role: 'Senator; leader of the conspiracy against Caesar',
-      body: 'Brutus is the play\u2019s tragic centre \u2014 an idealistic, philosophical Stoic descended from the Junius Brutus who helped expel Rome\u2019s last king. Shakespeare makes him agonise over the decision to kill his friend Caesar, and his soliloquy in the orchard ("It must be by his death") reveals how carefully he constructs a moral justification. His honourable intentions repeatedly undermine him in practice: he overrules Cassius by sparing Antony, by letting Antony speak at the funeral, and by engaging at Philippi too early. His suicide completes Shakespeare\u2019s portrait of noble failure.',
+      body: 'Brutus is the play\u2019s tragic centre - an idealistic, philosophical Stoic descended from the Junius Brutus who helped expel Rome\u2019s last king. Shakespeare makes him agonise over the decision to kill his friend Caesar, and his soliloquy in the orchard ("It must be by his death") reveals how carefully he constructs a moral justification. His honourable intentions repeatedly undermine him in practice: he overrules Cassius by sparing Antony, by letting Antony speak at the funeral, and by engaging at Philippi too early. His suicide completes Shakespeare\u2019s portrait of noble failure.',
     },
     {
       name: 'Cassius',
       role: 'Senator and chief instigator of the conspiracy',
-      body: 'Cassius is shrewd, envious and passionately republican. Shakespeare gives him the play\u2019s most penetrating political analysis \u2014 "The fault, dear Brutus, is not in our stars, / But in ourselves" \u2014 and makes him the practical engine of the plot. Caesar calls him dangerous because he reads too much and rarely smiles. Cassius manipulates Brutus through forged letters and flattery, but defers to him once Brutus joins, and this deference proves fatal: Cassius is right about Antony and about the timing of battle, and Brutus is wrong on both. He kills himself at Philippi on the anniversary of his birth.',
+      body: 'Cassius is shrewd, envious and passionately republican. Shakespeare gives him the play\u2019s most penetrating political analysis - "The fault, dear Brutus, is not in our stars, / But in ourselves" - and makes him the practical engine of the plot. Caesar calls him dangerous because he reads too much and rarely smiles. Cassius manipulates Brutus through forged letters and flattery, but defers to him once Brutus joins, and this deference proves fatal: Cassius is right about Antony and about the timing of battle, and Brutus is wrong on both. He kills himself at Philippi on the anniversary of his birth.',
     },
     {
       name: 'Mark Antony',
@@ -98,7 +98,7 @@ const data: TextGuideData = {
     },
     {
       title: 'Fate versus free will',
-      body: 'Omens saturate the play: the soothsayer\u2019s warning, Calpurnia\u2019s dream, the storm, the supernatural lions, Caesar\u2019s ghost. Characters disagree sharply about what these portents mean. Cassius insists, "Men at some time are masters of their fates," treating omens as political tools. Caesar oscillates between fatalism ("What can be avoided / Whose end is purpos\u2019d by the mighty gods?") and bravado. Shakespeare leaves the question open: events seem fated in retrospect, yet every disaster follows from a specific human choice \u2014 Caesar ignoring his wife, Brutus sparing Antony, Cassius giving in to Brutus.',
+      body: 'Omens saturate the play: the soothsayer\u2019s warning, Calpurnia\u2019s dream, the storm, the supernatural lions, Caesar\u2019s ghost. Characters disagree sharply about what these portents mean. Cassius insists, "Men at some time are masters of their fates," treating omens as political tools. Caesar oscillates between fatalism ("What can be avoided / Whose end is purpos\u2019d by the mighty gods?") and bravado. Shakespeare leaves the question open: events seem fated in retrospect, yet every disaster follows from a specific human choice - Caesar ignoring his wife, Brutus sparing Antony, Cassius giving in to Brutus.',
     },
     {
       title: 'Rhetoric and persuasion',
@@ -106,11 +106,11 @@ const data: TextGuideData = {
     },
     {
       title: 'Honour',
-      body: 'Honour is a word Brutus and Antony both keep returning to. Brutus kills Caesar because his conception of honour demands it, then refuses to be seen breaking his word even when pragmatism would save him. Antony weaponises the word in the funeral speech, repeating "Brutus is an honourable man" until the repetition itself becomes accusation. Shakespeare makes the audience feel how honour can be a sincere ethical compass and a hollow slogan at the same time. The play\u2019s final tribute \u2014 "This was the noblest Roman of them all" \u2014 grants Brutus the honour he sought, yet at the cost of his life and of Rome itself.',
+      body: 'Honour is a word Brutus and Antony both keep returning to. Brutus kills Caesar because his conception of honour demands it, then refuses to be seen breaking his word even when pragmatism would save him. Antony weaponises the word in the funeral speech, repeating "Brutus is an honourable man" until the repetition itself becomes accusation. Shakespeare makes the audience feel how honour can be a sincere ethical compass and a hollow slogan at the same time. The play\u2019s final tribute - "This was the noblest Roman of them all" - grants Brutus the honour he sought, yet at the cost of his life and of Rome itself.',
     },
     {
       title: 'Public versus private duty',
-      body: 'Every major character is torn between private loyalty and public obligation. Brutus loves Caesar but loves Rome more. Portia demands to be treated as a political partner rather than a decorative wife. Calpurnia\u2019s private dream is dismissed in favour of public ceremony. Caesar himself insists the public man must override the private body. Shakespeare stages the cost of this split in domestic scenes \u2014 Brutus and Portia in the orchard, Caesar and Calpurnia in his house \u2014 where private counsel is repeatedly drowned out by political reputation. When Brutus learns of Portia\u2019s suicide, his Stoic denial of grief reveals how far the public role has consumed the man.',
+      body: 'Every major character is torn between private loyalty and public obligation. Brutus loves Caesar but loves Rome more. Portia demands to be treated as a political partner rather than a decorative wife. Calpurnia\u2019s private dream is dismissed in favour of public ceremony. Caesar himself insists the public man must override the private body. Shakespeare stages the cost of this split in domestic scenes - Brutus and Portia in the orchard, Caesar and Calpurnia in his house - where private counsel is repeatedly drowned out by political reputation. When Brutus learns of Portia\u2019s suicide, his Stoic denial of grief reveals how far the public role has consumed the man.',
     },
     {
       title: 'Republic versus tyranny',
@@ -119,9 +119,9 @@ const data: TextGuideData = {
   ],
   historicalContext: [
     'Shakespeare\u2019s principal source was Sir Thomas North\u2019s 1579 translation of Plutarch\u2019s Parallel Lives, in particular the lives of Caesar, Brutus and Antony. North\u2019s English was already vivid and speech-filled, and Shakespeare lifted whole passages, reshaping dialogue and compressing timelines. The assassination took place on 15 March 44 BCE; the battles of Philippi followed in October 42 BCE. Shakespeare telescopes these events so they appear almost continuous, heightening the sense that one act of political violence leads directly to civil war.',
-    'Julius Caesar was probably one of the first plays performed at the newly built Globe Theatre in 1599. A Swiss visitor, Thomas Platter, recorded seeing a tragedy of Julius Caesar at a Bankside playhouse on 21 September that year, most likely this play. Elizabeth I was in her late sixties with no direct heir, and the English political elite was openly anxious about the succession \u2014 a topic it was effectively illegal to discuss. A Roman play about the assassination of a ruler, the overthrow of a republic, and the dangers of mob rhetoric allowed Shakespeare to explore live political questions with some protective distance.',
+    'Julius Caesar was probably one of the first plays performed at the newly built Globe Theatre in 1599. A Swiss visitor, Thomas Platter, recorded seeing a tragedy of Julius Caesar at a Bankside playhouse on 21 September that year, most likely this play. Elizabeth I was in her late sixties with no direct heir, and the English political elite was openly anxious about the succession - a topic it was effectively illegal to discuss. A Roman play about the assassination of a ruler, the overthrow of a republic, and the dangers of mob rhetoric allowed Shakespeare to explore live political questions with some protective distance.',
     'Classical republicanism was central to the Elizabethan grammar-school curriculum. Educated playgoers would have read Cicero, Plutarch and Livy in Latin, and knew the standard Tudor interpretation of Roman history: that Caesar had destroyed the republic, that Brutus was a noble liberator, and that the resulting civil wars showed the dangers of ambition. Shakespeare complicates this inherited reading. His Brutus is sympathetic but politically naive; his Caesar is arrogant but not clearly tyrannical; his Antony is both heroic and ruthless. The play invites the audience to weigh the arguments rather than accept the schoolroom verdict.',
-    'The violence of the play also reflected the real precariousness of Elizabethan public order. The Essex Rebellion of 1601 \u2014 in which a faction including Shakespeare\u2019s own patron tried to seize power from the Queen \u2014 occurred less than two years after Julius Caesar was first performed. In the interval between assassination and battle, Shakespeare\u2019s Rome slips into mob violence, property seizure and political murder by list. His audience, living under a government nervous about plots, exiles and the unknown succession, would have recognised these anxieties as their own.',
+    'The violence of the play also reflected the real precariousness of Elizabethan public order. The Essex Rebellion of 1601 - in which a faction including Shakespeare\u2019s own patron tried to seize power from the Queen - occurred less than two years after Julius Caesar was first performed. In the interval between assassination and battle, Shakespeare\u2019s Rome slips into mob violence, property seizure and political murder by list. His audience, living under a government nervous about plots, exiles and the unknown succession, would have recognised these anxieties as their own.',
   ],
   quotations: [
     {
@@ -155,7 +155,7 @@ const data: TextGuideData = {
         '"It must be by his death: and for my part, / I know no personal cause to spurn at him, / But for the general."',
       who: 'Brutus - Act 2, Scene 1',
       analysis:
-        'Brutus\u2019s orchard soliloquy. He admits he has no personal grievance and constructs a hypothetical justification \u2014 Caesar must die not for what he is but for what he might become.',
+        'Brutus\u2019s orchard soliloquy. He admits he has no personal grievance and constructs a hypothetical justification - Caesar must die not for what he is but for what he might become.',
     },
     {
       quote:
@@ -187,7 +187,7 @@ const data: TextGuideData = {
       quote: '"Not that I loved Caesar less, but that I loved Rome more."',
       who: 'Brutus - Act 3, Scene 2',
       analysis:
-        'The core of Brutus\u2019s funeral speech, delivered in balanced prose. It persuades the crowd \u2014 briefly \u2014 that personal affection has been sacrificed to public duty.',
+        'The core of Brutus\u2019s funeral speech, delivered in balanced prose. It persuades the crowd - briefly - that personal affection has been sacrificed to public duty.',
     },
     {
       quote:
@@ -328,7 +328,7 @@ const QUIZ_QUESTIONS: QuizQuestion[] = [
     type: 'multiple-choice',
     options: [
       'Astrology is unreliable',
-      'Submission to Caesar is a choice, not a destiny \u2014 men make their own political fate',
+      'Submission to Caesar is a choice, not a destiny - men make their own political fate',
       'Brutus should study the stars more',
       'The gods are punishing Rome',
     ],
@@ -485,7 +485,7 @@ const QUIZ_QUESTIONS: QuizQuestion[] = [
     type: 'multiple-choice',
     options: [
       'Omens always prove correct and characters who ignore them die',
-      'Characters interpret omens in radically different ways \u2014 Calpurnia reads them as warnings, Decius reinterprets them flatteringly, Cassius treats them as political tools \u2014 leaving the audience to weigh fate against choice',
+      'Characters interpret omens in radically different ways - Calpurnia reads them as warnings, Decius reinterprets them flatteringly, Cassius treats them as political tools - leaving the audience to weigh fate against choice',
       'Only Caesar sees omens',
       'The play has no omens',
     ],
@@ -553,8 +553,8 @@ const REVISION_TOPICS = [
     summary:
       'Shakespeare centres the play on an unresolved question: was Caesar genuinely a tyrant-in-waiting, or a powerful man undone by envy?',
     keyPoints: [
-      'Brutus admits in soliloquy he has no personal cause \u2014 only fears what Caesar "may" become',
-      'Caesar refuses the crown three times at the Lupercal \u2014 modesty or calculation?',
+      'Brutus admits in soliloquy he has no personal cause - only fears what Caesar "may" become',
+      'Caesar refuses the crown three times at the Lupercal - modesty or calculation?',
       'The triumvirate that replaces Caesar is coldly murderous, suggesting the problem is power itself',
       'The cycle of violence continues after the assassination',
       'Eliminating one ambitious man clears space for others',
@@ -611,13 +611,13 @@ const REVISION_TOPICS = [
   {
     topic: 'Republic vs Tyranny',
     summary:
-      'Behind every speech is an argument about what kind of state Rome should be \u2014 and Shakespeare leaves the debate genuinely open.',
+      'Behind every speech is an argument about what kind of state Rome should be - and Shakespeare leaves the debate genuinely open.',
     keyPoints: [
       'Cassius and Brutus invoke the expulsion of the Tarquins and Roman liberty',
       'Antony and Octavius stand for concentrated executive power after chaos',
       'The conspirators are flawed and self-deceiving',
       'The triumvirate is coldly murderous, marking relatives for death',
-      'Neither side offers a clean answer \u2014 part of why the play remains politically resonant',
+      'Neither side offers a clean answer - part of why the play remains politically resonant',
     ],
   },
 ]

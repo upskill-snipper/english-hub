@@ -280,7 +280,7 @@ export default function MidsummerNightsDreamStudyGuide() {
             Cambridge IGCSE English Literature
           </p>
           <h1 className="mt-2 text-3xl font-bold tracking-tight sm:text-4xl md:text-5xl">
-            A Midsummer Night&rsquo;s Dream &mdash; Complete Study Guide
+            A Midsummer Night&rsquo;s Dream - Complete Study Guide
           </h1>
           <p className="mx-auto mt-4 max-w-2xl text-lg text-muted-foreground">
             Characters, themes, act-by-act summary with key quotations, Shakespeare&rsquo;s dramatic

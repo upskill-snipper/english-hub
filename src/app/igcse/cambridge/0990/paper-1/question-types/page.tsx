@@ -11,7 +11,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Paper 1 Question Types | Cambridge IGCSE Language B | The English Hub',
     description:
-      'The three question types on Cambridge IGCSE Language B Paper 1 - comprehension, language analysis and summary - and the technique each one needs.',
+      'The four questions on Cambridge IGCSE Language B Paper 1: comprehension, the summary, the language task and the extended response, and how to answer each.',
     images: [
       {
         url: '/api/og?title=Paper+1+Question+Types+%7C+Cambridge+IGCSE+Language+B+%7C+The+English+Hub',
@@ -23,7 +23,7 @@ export const metadata: Metadata = {
   },
   title: 'Paper 1 Question Types | Cambridge IGCSE Language B',
   description:
-    'The three question types on Cambridge IGCSE Language B Paper 1 - comprehension, language analysis and summary - and the technique each one needs.',
+    'The four questions on Cambridge IGCSE Language B Paper 1: comprehension, the summary, the language task and the extended response, and how to answer each.',
   alternates: {
     canonical: 'https://theenglishhub.app/igcse/cambridge/0990/paper-1/question-types',
   },
@@ -56,11 +56,23 @@ export default async function QuestionTypesPage() {
             Paper 1 question types
           </h1>
           <p className="mt-3 max-w-3xl text-body-lg text-muted-foreground">
-            Three questions. Three different skills. Each needs a different approach - get them
-            mixed up and you lose marks on questions you&apos;d otherwise ace.
+            Four questions. Four different skills. Each needs a different approach - get them mixed
+            up and you lose marks on questions you&apos;d otherwise ace.
+          </p>
+          <p className="mt-3 max-w-3xl text-body-sm text-muted-foreground">
+            This is the paper for exams from 2027. If you sit Paper 1 in November 2026, your paper
+            follows the older 2024-2026 syllabus: three questions worth 30, 25 and 25 marks.
           </p>
         </div>
       </section>
+
+      {/* 31 October 2026: rewritten to src/data/mark-scheme-guides/cambridge-0990-paper1.ts
+          (0500 Paper 1 under 9-1 grading). This gave three questions: Q1(a-e) 15, a
+          25-mark language analysis of Text A or B as Q2 and a summary of both texts in
+          "usually 250 words" as Q3. From 2027 there are four of 20: Q1 comprehension
+          (Text A), Q2 the summary (Text B, no more than 120 words) and 2(b), Q3 short
+          answers and the language task (Text C), Q4 the extended response (Text C).
+          Each card keeps its technique where it serves the real question. */}
 
       {/* Q1 Comprehension */}
       <section>
@@ -68,19 +80,17 @@ export default async function QuestionTypesPage() {
           <CardHeader>
             <div className="flex items-start justify-between gap-3">
               <div>
-                <Badge className="bg-primary/10 text-primary border-primary/20">
-                  Question 1 (a-e)
-                </Badge>
+                <Badge className="bg-primary/10 text-primary border-primary/20">Question 1</Badge>
                 <CardTitle className="mt-2 text-heading-md font-heading">Comprehension</CardTitle>
               </div>
-              <Badge variant="secondary">15 marks</Badge>
+              <Badge variant="secondary">20 marks</Badge>
             </div>
           </CardHeader>
           <CardContent className="space-y-5">
             <p className="text-body-sm text-muted-foreground leading-relaxed">
               Short-answer questions testing explicit and implicit meaning from Text A. Questions
-              usually ask you to identify a fact, an attitude, or an inference from a specific
-              paragraph.
+              usually ask you to identify a fact, explain a word or phrase in your own words, or say
+              what the writer suggests in a specific paragraph. Each part is marked point by point.
             </p>
 
             <div className="rounded-xl border border-border/60 bg-muted/30 p-4">
@@ -118,7 +128,7 @@ export default async function QuestionTypesPage() {
                 </div>
                 <ul className="space-y-1 text-body-xs text-muted-foreground">
                   <li>• Copy whole sentences from the text</li>
-                  <li>• Analyse language - save that for Q2</li>
+                  <li>• Analyse language - save that for the Q3 language task</li>
                   <li>• Overwrite - 2 marks only needs 2 points</li>
                 </ul>
               </div>
@@ -127,25 +137,98 @@ export default async function QuestionTypesPage() {
         </Card>
       </section>
 
-      {/* Q2 Language analysis */}
+      {/* Q2 Summary */}
       <section>
         <Card>
           <CardHeader>
             <div className="flex items-start justify-between gap-3">
               <div>
                 <Badge className="bg-primary/10 text-primary border-primary/20">Question 2</Badge>
-                <CardTitle className="mt-2 text-heading-md font-heading">
-                  Language analysis
-                </CardTitle>
+                <CardTitle className="mt-2 text-heading-md font-heading">Summary task</CardTitle>
               </div>
-              <Badge variant="secondary">25 marks</Badge>
+              <Badge variant="secondary">20 marks</Badge>
             </div>
           </CardHeader>
           <CardContent className="space-y-5">
             <p className="text-body-sm text-muted-foreground leading-relaxed">
-              The big analytical question. You will be asked to explore how a writer uses language
-              (and sometimes structure) to achieve specific effects in Text A or Text B. This is
-              where Grade 9 candidates earn their grade.
+              2(a): select the points in Text B that fit a given focus and summarise them in your
+              own words, in no more than 120 words. Marked for reading (10: the points you select)
+              and writing (5: the quality of your own written style). 2(b), worth 5, asks about the
+              writer&apos;s attitude.
+            </p>
+
+            <div className="rounded-xl border border-border/60 bg-muted/30 p-4">
+              <div className="mb-2 flex items-center gap-2">
+                <Lightbulb className="size-4 text-primary" />
+                <h3 className="text-body-sm font-semibold text-foreground">Technique</h3>
+              </div>
+              <ol className="list-decimal space-y-1.5 ps-5 text-body-sm text-muted-foreground">
+                <li>
+                  Re-read Text B with the summary focus in mind. Underline every point that fits it,
+                  including points the text only implies.
+                </li>
+                <li>
+                  Group similar points together so you can combine them into single sentences.
+                </li>
+                <li>
+                  Translate each point into your own words - this is non-negotiable for top marks.
+                </li>
+                <li>
+                  Write in continuous prose, not bullet points. Use linking words to group related
+                  ideas.
+                </li>
+                <li>Stay within the limit: no more than 120 words.</li>
+              </ol>
+            </div>
+
+            <div className="grid gap-4 sm:grid-cols-2">
+              <div className="rounded-xl border border-primary/20 bg-primary/5 p-4">
+                <div className="mb-2 flex items-center gap-2">
+                  <CheckCircle2 className="size-4 text-primary" />
+                  <h4 className="text-body-sm font-semibold text-foreground">Do</h4>
+                </div>
+                <ul className="space-y-1 text-body-xs text-muted-foreground">
+                  <li>• Use your own vocabulary throughout</li>
+                  <li>• Combine related points into single sentences</li>
+                  <li>• Write in fluent, connected prose</li>
+                </ul>
+              </div>
+              <div className="rounded-xl border border-border/60 bg-muted/30 p-4">
+                <div className="mb-2 flex items-center gap-2">
+                  <XCircle className="size-4 text-muted-foreground" />
+                  <h4 className="text-body-sm font-semibold text-foreground">Don&apos;t</h4>
+                </div>
+                <ul className="space-y-1 text-body-xs text-muted-foreground">
+                  <li>• Include your own opinion</li>
+                  <li>• Quote directly from the text</li>
+                  <li>• Analyse language - that&apos;s Q3 territory</li>
+                </ul>
+              </div>
+            </div>
+          </CardContent>
+        </Card>
+      </section>
+
+      {/* Q3 Short answers and language task */}
+      <section>
+        <Card>
+          <CardHeader>
+            <div className="flex items-start justify-between gap-3">
+              <div>
+                <Badge className="bg-primary/10 text-primary border-primary/20">Question 3</Badge>
+                <CardTitle className="mt-2 text-heading-md font-heading">
+                  Short answers and language task
+                </CardTitle>
+              </div>
+              <Badge variant="secondary">20 marks</Badge>
+            </div>
+          </CardHeader>
+          <CardContent className="space-y-5">
+            <p className="text-body-sm text-muted-foreground leading-relaxed">
+              Short answers on words and phrases in Text C (10 marks), then the language task (10
+              marks): about 200 to 250 words exploring how the writer uses language to achieve
+              effects in an extract the question names. This is where Grade 9 candidates earn their
+              grade.
             </p>
 
             <div className="rounded-xl border border-border/60 bg-muted/30 p-4">
@@ -189,7 +272,7 @@ export default async function QuestionTypesPage() {
                   <h4 className="text-body-sm font-semibold text-foreground">Do</h4>
                 </div>
                 <ul className="space-y-1 text-body-xs text-muted-foreground">
-                  <li>• Pick quotations from across the extract</li>
+                  <li>• Choose a few striking words, including images</li>
                   <li>• Explore multiple effects of a single word</li>
                   <li>• Use connectives: moreover, however, furthermore</li>
                 </ul>
@@ -202,7 +285,7 @@ export default async function QuestionTypesPage() {
                 <ul className="space-y-1 text-body-xs text-muted-foreground">
                   <li>• Feature-spot without explaining effect</li>
                   <li>• Quote long chunks</li>
-                  <li>• Paraphrase the whole text before analysing</li>
+                  <li>• Write about lines outside the extract</li>
                 </ul>
               </div>
             </div>
@@ -210,23 +293,25 @@ export default async function QuestionTypesPage() {
         </Card>
       </section>
 
-      {/* Q3 Summary */}
+      {/* Q4 Extended response to reading */}
       <section>
         <Card>
           <CardHeader>
             <div className="flex items-start justify-between gap-3">
               <div>
-                <Badge className="bg-primary/10 text-primary border-primary/20">Question 3</Badge>
-                <CardTitle className="mt-2 text-heading-md font-heading">Summary</CardTitle>
+                <Badge className="bg-primary/10 text-primary border-primary/20">Question 4</Badge>
+                <CardTitle className="mt-2 text-heading-md font-heading">
+                  Extended response to reading
+                </CardTitle>
               </div>
-              <Badge variant="secondary">15 + writing marks</Badge>
+              <Badge variant="secondary">20 marks</Badge>
             </div>
           </CardHeader>
           <CardContent className="space-y-5">
             <p className="text-body-sm text-muted-foreground leading-relaxed">
-              Select and synthesise information from both Text A and Text B on a given topic. Marked
-              for content (the number of relevant points) and for the quality of your own written
-              style.
+              About 250 to 300 words based on Text C, in the form the question sets: a letter,
+              report, journal, speech, interview or article. You use and develop ideas from the text
+              to cover each bullet point. Marked for reading (10) and writing (10).
             </p>
 
             <div className="rounded-xl border border-border/60 bg-muted/30 p-4">
@@ -235,23 +320,12 @@ export default async function QuestionTypesPage() {
                 <h3 className="text-body-sm font-semibold text-foreground">Technique</h3>
               </div>
               <ol className="list-decimal space-y-1.5 ps-5 text-body-sm text-muted-foreground">
+                <li>Note two or three ideas from Text C under each bullet point.</li>
                 <li>
-                  Re-read both texts with the summary topic in mind. Underline any relevant point -
-                  aim for 15+ points.
+                  Add what each idea suggests or leads to: that development earns reading marks.
                 </li>
-                <li>
-                  Group similar points together so you can combine them into single sentences.
-                </li>
-                <li>
-                  Translate each point into your own words - this is non-negotiable for top marks.
-                </li>
-                <li>
-                  Write in continuous prose, not bullet points. Use linking words to group related
-                  ideas.
-                </li>
-                <li>
-                  Stay under the word limit (usually 250 words) - examiners stop marking beyond it.
-                </li>
+                <li>Reorganise the material around the bullets, not the order of the text.</li>
+                <li>Keep a voice that suits the role and the form all the way through.</li>
               </ol>
             </div>
 
@@ -262,9 +336,9 @@ export default async function QuestionTypesPage() {
                   <h4 className="text-body-sm font-semibold text-foreground">Do</h4>
                 </div>
                 <ul className="space-y-1 text-body-xs text-muted-foreground">
-                  <li>• Use your own vocabulary throughout</li>
-                  <li>• Combine points from A and B</li>
-                  <li>• Write in fluent, connected prose</li>
+                  <li>• Cover every bullet in a balanced way</li>
+                  <li>• Back points with details from Text C</li>
+                  <li>• Use the conventions of the form</li>
                 </ul>
               </div>
               <div className="rounded-xl border border-border/60 bg-muted/30 p-4">
@@ -273,9 +347,9 @@ export default async function QuestionTypesPage() {
                   <h4 className="text-body-sm font-semibold text-foreground">Don&apos;t</h4>
                 </div>
                 <ul className="space-y-1 text-body-xs text-muted-foreground">
-                  <li>• Include your own opinion</li>
-                  <li>• Quote directly from the texts</li>
-                  <li>• Analyse language - that&apos;s Q2 territory</li>
+                  <li>• Retell Text C in its own order</li>
+                  <li>• Invent content with no basis in the text</li>
+                  <li>• Give a bullet only a line</li>
                 </ul>
               </div>
             </div>

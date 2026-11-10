@@ -26,6 +26,13 @@ export function collectablePanels(quest: Quest): { title: string; level: Level |
  * A blank page keeps the panel's own shape, so the book does not jump about
  * as it fills, and names the moment it will show: the guide's title for it,
  * which the chapter's own questions are about anyway.
+ *
+ * On a desktop the pages are about the size the panels were drawn (860
+ * pixels), their boxes pasted onto the picture. Until 31 October 2026 the
+ * book kept to its 36rem column there, panels 528 pixels wide, and the
+ * founder found them too small to see. The quest's styles keep the boxes'
+ * words from getting smaller as they move onto the picture
+ * (quest-styles.tsx).
  */
 export function ComicBook({
   quest,
@@ -67,10 +74,10 @@ export function ComicBook({
       role="dialog"
       aria-modal="true"
       aria-labelledby="quest-comic-title"
-      className="fixed inset-0 z-[60] flex flex-col bg-background"
+      className="q-stage fixed inset-0 z-[60] flex flex-col bg-background"
     >
       <div className="border-b border-border/60 bg-background/95 backdrop-blur">
-        <div className="mx-auto flex max-w-xl items-center gap-3 px-4 py-3 sm:px-6">
+        <div className="mx-auto flex max-w-xl items-center gap-3 px-4 py-3 sm:px-6 lg:max-w-4xl">
           <button
             ref={close}
             type="button"
@@ -99,7 +106,7 @@ export function ComicBook({
       </div>
 
       <div className="flex-1 overflow-y-auto">
-        <div className="mx-auto max-w-xl space-y-6 px-4 pb-16 pt-6 sm:px-6">
+        <div className="mx-auto max-w-xl space-y-6 px-4 pb-16 pt-6 sm:px-6 lg:max-w-4xl">
           <header className="space-y-1 text-center">
             <En as="p" className="font-heading text-2xl">
               {quest.title}
@@ -109,7 +116,7 @@ export function ComicBook({
             </p>
           </header>
 
-          <ol className="space-y-6">
+          <ol className="space-y-6 lg:space-y-10">
             {panels.map(({ title, level }, i) => {
               const panel = quest.art.panels[title]
               const isInked = have.has(title)

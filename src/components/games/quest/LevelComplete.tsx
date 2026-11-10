@@ -264,13 +264,15 @@ export function LevelComplete({
         </section>
       )}
 
+      {/* The panels reach past the results column on a desktop, ten rem
+          each side: within it two abreast were 256 pixels wide. */}
       {summary.newlyInked.length > 0 && (
-        <section className="space-y-3" aria-label={t('quest.done.inked')}>
+        <section className="space-y-3 lg:-mx-40" aria-label={t('quest.done.inked')}>
           <h3 className="flex items-center justify-center gap-2 font-heading text-xl">
             <BookOpenCheck className="size-5 text-primary" aria-hidden="true" />
             {t('quest.done.inked')}
           </h3>
-          <div className="grid gap-4 sm:grid-cols-2">
+          <div className={cn('grid gap-4', summary.newlyInked.length > 1 && 'sm:grid-cols-2')}>
             {summary.newlyInked.map((title, i) => {
               const panel = quest.art.panels[title]
               if (!panel) return null

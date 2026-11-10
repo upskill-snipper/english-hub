@@ -57,7 +57,7 @@ function QuoteCard({
       <p className="text-sm font-semibold text-violet-800 dark:text-violet-200 italic">
         &ldquo;{quote}&rdquo;
       </p>
-      {speaker && <p className="mt-1 text-xs font-medium text-violet-600">&mdash; {speaker}</p>}
+      {speaker && <p className="mt-1 text-xs font-medium text-violet-600">- {speaker}</p>}
       <p className="mt-2 text-sm text-muted-foreground">{analysis}</p>
     </div>
   )
@@ -119,7 +119,7 @@ export default function JekyllAndHydePage() {
           </span>
         </div>
         <h1 className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
-          The Strange Case of Dr Jekyll and Mr Hyde &mdash; Complete Revision Guide
+          The Strange Case of Dr Jekyll and Mr Hyde - Complete Revision Guide
         </h1>
         <p className="mt-1 text-lg text-muted-foreground">{tr(`Robert Louis Stevenson, 1886`)}</p>
         <p className="mt-3 max-w-3xl text-muted-foreground leading-relaxed">
@@ -171,10 +171,10 @@ export default function JekyllAndHydePage() {
                 <p className="mt-2 text-sm text-muted-foreground leading-relaxed">
                   Mr Utterson, a London lawyer, walks with his cousin Mr Enfield. Enfield tells of
                   witnessing a small, deformed man (Hyde) trample a young girl at a doorway. The man
-                  paid compensation with a cheque signed by a respectable gentleman &mdash; Dr
-                  Jekyll. The mysterious door connects to Jekyll&apos;s laboratory. Utterson is
-                  troubled but the two agree never to discuss the matter again, establishing the
-                  theme of secrecy that pervades the novella.
+                  paid compensation with a cheque signed by a respectable gentleman - Dr Jekyll. The
+                  mysterious door connects to Jekyll&apos;s laboratory. Utterson is troubled but the
+                  two agree never to discuss the matter again, establishing the theme of secrecy
+                  that pervades the novella.
                 </p>
                 <div className="mt-3 rounded-lg bg-muted p-3">
                   <p className="text-xs font-semibold text-muted-foreground uppercase tracking-wider">
@@ -183,15 +183,10 @@ export default function JekyllAndHydePage() {
                   <ul className="mt-2 space-y-1 text-sm text-muted-foreground">
                     <li>&bull; Enfield&apos;s eyewitness account of Hyde trampling the girl</li>
                     <li>
-                      &bull; The &ldquo;blistered and distained&rdquo; door &mdash; symbol of hidden
-                      vice
+                      &bull; The &ldquo;blistered and distained&rdquo; door - symbol of hidden vice
                     </li>
-                    <li>
-                      &bull; The cheque from Jekyll &mdash; first link between the two identities
-                    </li>
-                    <li>
-                      &bull; Agreement to suppress the story &mdash; Victorian secrecy established
-                    </li>
+                    <li>&bull; The cheque from Jekyll - first link between the two identities</li>
+                    <li>&bull; Agreement to suppress the story - Victorian secrecy established</li>
                   </ul>
                 </div>
               </div>
@@ -217,16 +212,16 @@ export default function JekyllAndHydePage() {
                   </p>
                   <ul className="mt-2 space-y-1 text-sm text-muted-foreground">
                     <li>
-                      &bull; Jekyll&apos;s will &mdash; in case of his &ldquo;disappearance or
-                      unexplained absence&rdquo;
+                      &bull; Jekyll&apos;s will - in case of his &ldquo;disappearance or unexplained
+                      absence&rdquo;
                     </li>
                     <li>&bull; Lanyon&apos;s rift with Jekyll over science</li>
                     <li>
-                      &bull; Utterson&apos;s first encounter with Hyde &mdash; instinctive revulsion
+                      &bull; Utterson&apos;s first encounter with Hyde - instinctive revulsion
                     </li>
                     <li>
-                      &bull; &ldquo;If he be Mr Hyde... I shall be Mr Seek&rdquo; &mdash; detective
-                      role established
+                      &bull; &ldquo;If he be Mr Hyde... I shall be Mr Seek&rdquo; - detective role
+                      established
                     </li>
                   </ul>
                 </div>
@@ -251,11 +246,9 @@ export default function JekyllAndHydePage() {
                     {tr(`Key Moments`)}
                   </p>
                   <ul className="mt-2 space-y-1 text-sm text-muted-foreground">
-                    <li>&bull; The dinner party &mdash; facade of Victorian respectability</li>
-                    <li>
-                      &bull; Jekyll&apos;s confidence he can control Hyde &mdash; dramatic irony
-                    </li>
-                    <li>&bull; Title &ldquo;Quite at Ease&rdquo; &mdash; ironic foreshadowing</li>
+                    <li>&bull; The dinner party - facade of Victorian respectability</li>
+                    <li>&bull; Jekyll&apos;s confidence he can control Hyde - dramatic irony</li>
+                    <li>&bull; Title &ldquo;Quite at Ease&rdquo; - ironic foreshadowing</li>
                   </ul>
                 </div>
               </div>
@@ -279,15 +272,13 @@ export default function JekyllAndHydePage() {
                     {tr(`Key Moments`)}
                   </p>
                   <ul className="mt-2 space-y-1 text-sm text-muted-foreground">
-                    <li>
-                      &bull; The brutal, unprovoked murder of Carew &mdash; escalation of violence
-                    </li>
+                    <li>&bull; The brutal, unprovoked murder of Carew - escalation of violence</li>
                     <li>
                       &bull; The cane &ldquo;had broken in the middle under the stress of this
                       insensate cruelty&rdquo;
                     </li>
-                    <li>&bull; Hyde&apos;s Soho lodgings &mdash; luxury and squalor combined</li>
-                    <li>&bull; The maid&apos;s moonlit witness &mdash; Gothic atmosphere</li>
+                    <li>&bull; Hyde&apos;s Soho lodgings - luxury and squalor combined</li>
+                    <li>&bull; The maid&apos;s moonlit witness - Gothic atmosphere</li>
                   </ul>
                 </div>
               </div>
@@ -311,8 +302,8 @@ export default function JekyllAndHydePage() {
                     {tr(`Key Moments`)}
                   </p>
                   <ul className="mt-2 space-y-1 text-sm text-muted-foreground">
-                    <li>&bull; Jekyll&apos;s pallor and distress &mdash; physical deterioration</li>
-                    <li>&bull; The forged letter &mdash; matching handwriting as key clue</li>
+                    <li>&bull; Jekyll&apos;s pallor and distress - physical deterioration</li>
+                    <li>&bull; The forged letter - matching handwriting as key clue</li>
                     <li>&bull; Utterson suppresses suspicion rather than confront the truth</li>
                   </ul>
                 </div>
@@ -337,8 +328,8 @@ export default function JekyllAndHydePage() {
                     {tr(`Key Moments`)}
                   </p>
                   <ul className="mt-2 space-y-1 text-sm text-muted-foreground">
-                    <li>&bull; Lanyon&apos;s shocking decline &mdash; knowledge destroys him</li>
-                    <li>&bull; The sealed letter &mdash; truth deferred through documents</li>
+                    <li>&bull; Lanyon&apos;s shocking decline - knowledge destroys him</li>
+                    <li>&bull; The sealed letter - truth deferred through documents</li>
                     <li>&bull; Jekyll&apos;s brief return to sociability then relapse</li>
                   </ul>
                 </div>
@@ -362,11 +353,9 @@ export default function JekyllAndHydePage() {
                     {tr(`Key Moments`)}
                   </p>
                   <ul className="mt-2 space-y-1 text-sm text-muted-foreground">
-                    <li>&bull; Jekyll as prisoner &mdash; trapped by his own experiment</li>
+                    <li>&bull; Jekyll as prisoner - trapped by his own experiment</li>
                     <li>&bull; The aborted transformation at the window</li>
-                    <li>
-                      &bull; Utterson and Enfield&apos;s horrified silence &mdash; the unspeakable
-                    </li>
+                    <li>&bull; Utterson and Enfield&apos;s horrified silence - the unspeakable</li>
                   </ul>
                 </div>
               </div>
@@ -391,10 +380,10 @@ export default function JekyllAndHydePage() {
                     {tr(`Key Moments`)}
                   </p>
                   <ul className="mt-2 space-y-1 text-sm text-muted-foreground">
-                    <li>&bull; Poole&apos;s loyalty and fear &mdash; servant breaks convention</li>
-                    <li>&bull; The locked door and changed voice &mdash; Gothic suspense</li>
-                    <li>&bull; Hyde&apos;s body in Jekyll&apos;s clothes &mdash; visual duality</li>
-                    <li>&bull; Discovery of the letters &mdash; truth finally accessible</li>
+                    <li>&bull; Poole&apos;s loyalty and fear - servant breaks convention</li>
+                    <li>&bull; The locked door and changed voice - Gothic suspense</li>
+                    <li>&bull; Hyde&apos;s body in Jekyll&apos;s clothes - visual duality</li>
+                    <li>&bull; Discovery of the letters - truth finally accessible</li>
                   </ul>
                 </div>
               </div>
@@ -419,13 +408,12 @@ export default function JekyllAndHydePage() {
                   </p>
                   <ul className="mt-2 space-y-1 text-sm text-muted-foreground">
                     <li>
-                      &bull; The on-page transformation &mdash; the novella&apos;s climactic
-                      revelation
+                      &bull; The on-page transformation - the novella&apos;s climactic revelation
                     </li>
                     <li>
                       &bull; &ldquo;The slime of the pit seemed to utter cries and voices&rdquo;
                     </li>
-                    <li>&bull; Lanyon&apos;s death from shock &mdash; knowledge as destruction</li>
+                    <li>&bull; Lanyon&apos;s death from shock - knowledge as destruction</li>
                     <li>&bull; Shift to first-person epistolary narration</li>
                   </ul>
                 </div>
@@ -453,18 +441,16 @@ export default function JekyllAndHydePage() {
                   </p>
                   <ul className="mt-2 space-y-1 text-sm text-muted-foreground">
                     <li>
-                      &bull; Jekyll&apos;s confession of &ldquo;irregularities&rdquo; &mdash;
-                      Victorian euphemism
+                      &bull; Jekyll&apos;s confession of &ldquo;irregularities&rdquo; - Victorian
+                      euphemism
                     </li>
                     <li>
-                      &bull; &ldquo;Man is not truly one, but truly two&rdquo; &mdash; the thesis
+                      &bull; &ldquo;Man is not truly one, but truly two&rdquo; - the thesis
                       statement
                     </li>
-                    <li>&bull; The involuntary transformations &mdash; loss of control</li>
-                    <li>&bull; The impure salt &mdash; science&apos;s unpredictability</li>
-                    <li>
-                      &bull; The statement ending mid-sentence &mdash; Jekyll consumed by Hyde
-                    </li>
+                    <li>&bull; The involuntary transformations - loss of control</li>
+                    <li>&bull; The impure salt - science&apos;s unpredictability</li>
+                    <li>&bull; The statement ending mid-sentence - Jekyll consumed by Hyde</li>
                   </ul>
                 </div>
               </div>
@@ -702,7 +688,7 @@ export default function JekyllAndHydePage() {
                   streets conceal sinister spaces. The contrast between Jekyll&apos;s grand front
                   door and the &ldquo;blistered and distained&rdquo; laboratory entrance physically
                   represents duality. Soho, where Hyde lives, is described as a &ldquo;dismal
-                  quarter&rdquo; &mdash; a geographic representation of moral corruption.
+                  quarter&rdquo; - a geographic representation of moral corruption.
                 </p>
               </div>
               <div className="rounded-lg bg-muted p-4">
@@ -720,8 +706,8 @@ export default function JekyllAndHydePage() {
                   {tr(`The Monstrous Double (Doppelgänger)`)}
                 </h4>
                 <p className="mt-1 text-sm text-muted-foreground leading-relaxed">
-                  The doppelg&auml;nger is a classic Gothic device &mdash; the idea of a dark twin
-                  or shadow self. Hyde is Jekyll&apos;s monstrous other. Unlike traditional
+                  The doppelg&auml;nger is a classic Gothic device - the idea of a dark twin or
+                  shadow self. Hyde is Jekyll&apos;s monstrous other. Unlike traditional
                   doppelg&auml;ngers, they share one body, making the horror internal rather than
                   external. This connects to Freudian theory (published later) about the id, ego,
                   and superego. The tradition stretches back to German Romantic literature and
@@ -732,10 +718,10 @@ export default function JekyllAndHydePage() {
               <div className="rounded-lg bg-muted p-4">
                 <h4 className="font-bold text-foreground">{tr(`Supernatural Transformation`)}</h4>
                 <p className="mt-1 text-sm text-muted-foreground leading-relaxed">
-                  The potion-induced transformation is a Gothic trope &mdash; the boundary between
-                  science and the supernatural is deliberately blurred. The transformation scene,
-                  witnessed by Lanyon, combines scientific apparatus with horrifying physical
-                  change, creating the novella&apos;s most viscerally Gothic moment.
+                  The potion-induced transformation is a Gothic trope - the boundary between science
+                  and the supernatural is deliberately blurred. The transformation scene, witnessed
+                  by Lanyon, combines scientific apparatus with horrifying physical change, creating
+                  the novella&apos;s most viscerally Gothic moment.
                 </p>
               </div>
               <div className="rounded-lg bg-muted p-4">
@@ -763,8 +749,8 @@ export default function JekyllAndHydePage() {
               <div className="rounded-lg bg-muted p-4">
                 <h4 className="font-bold text-foreground">{tr(`Entrapment and Isolation`)}</h4>
                 <p className="mt-1 text-sm text-muted-foreground leading-relaxed">
-                  Jekyll becomes increasingly imprisoned &mdash; first within his house, then within
-                  his laboratory, and finally within Hyde&apos;s body. The locked door of Chapter 8,
+                  Jekyll becomes increasingly imprisoned - first within his house, then within his
+                  laboratory, and finally within Hyde&apos;s body. The locked door of Chapter 8,
                   behind which something terrible lurks, is a quintessentially Gothic image.
                   Jekyll&apos;s isolation from society as Hyde takes over mirrors the Gothic trope
                   of the protagonist trapped in a castle or confined space, unable to escape their
@@ -796,7 +782,7 @@ export default function JekyllAndHydePage() {
                   Charles Darwin&apos;s <em>{tr(`On the Origin of Species`)}</em> (1859) shocked
                   Victorian society by suggesting humans evolved from animals. Hyde&apos;s ape-like
                   appearance and &ldquo;troglodytic&rdquo; nature reflect the fear that humans could
-                  &ldquo;devolve&rdquo; &mdash; revert to a primitive, bestial state. This
+                  &ldquo;devolve&rdquo; - revert to a primitive, bestial state. This
                   &ldquo;degeneration anxiety&rdquo; was widespread in the 1880s. Stevenson taps
                   into the fear that civilisation is a thin veneer over animal instincts.
                 </p>
@@ -863,8 +849,8 @@ export default function JekyllAndHydePage() {
                   The novella is structured as a mystery with Utterson as an amateur detective. The
                   reader pieces together clues alongside Utterson, and the truth is only fully
                   revealed in the final two chapters. This structure mirrors the theme of
-                  concealment &mdash; just as Victorian society hides its true nature, the narrative
-                  hides its central secret.
+                  concealment - just as Victorian society hides its true nature, the narrative hides
+                  its central secret.
                 </p>
               </div>
               <div className="rounded-lg bg-muted p-4">
@@ -876,8 +862,8 @@ export default function JekyllAndHydePage() {
                   Utterson (Chapters 1&ndash;8), Lanyon&apos;s first-person letter (Chapter 9), and
                   Jekyll&apos;s first-person confession (Chapter 10). This fragmented structure
                   reflects the fragmented identity at the story&apos;s heart. No single narrator has
-                  the complete truth &mdash; the reader must assemble it from multiple sources, just
-                  as Jekyll&apos;s identity is assembled from multiple selves.
+                  the complete truth - the reader must assemble it from multiple sources, just as
+                  Jekyll&apos;s identity is assembled from multiple selves.
                 </p>
               </div>
               <div className="rounded-lg bg-muted p-4">
@@ -885,10 +871,10 @@ export default function JekyllAndHydePage() {
                 <p className="mt-1 text-sm text-muted-foreground leading-relaxed">
                   Letters, wills, and written statements are crucial to the plot. The will,
                   Lanyon&apos;s letter, and Jekyll&apos;s confession are all documents within the
-                  narrative. This epistolary element adds authenticity and creates dramatic irony
-                  &mdash; the reader learns truths that characters discover only after death.
-                  Written documents outlast their authors, giving the dead a voice. The reliance on
-                  written testimony also reflects Victorian legal and scientific culture, where
+                  narrative. This epistolary element adds authenticity and creates dramatic irony -
+                  the reader learns truths that characters discover only after death. Written
+                  documents outlast their authors, giving the dead a voice. The reliance on written
+                  testimony also reflects Victorian legal and scientific culture, where
                   documentation carried authority.
                 </p>
               </div>
@@ -989,10 +975,9 @@ export default function JekyllAndHydePage() {
                       Conclusion
                     </p>
                     <p className="mt-1 text-sm text-muted-foreground">
-                      Stevenson perhaps suggests that accepting human complexity &mdash; rather than
-                      forcing an artificial division &mdash; is the only way to prevent
-                      self-destruction. The novella remains relevant because it addresses universal
-                      human psychology.
+                      Stevenson perhaps suggests that accepting human complexity - rather than
+                      forcing an artificial division - is the only way to prevent self-destruction.
+                      The novella remains relevant because it addresses universal human psychology.
                     </p>
                   </div>
                 </div>
@@ -1085,8 +1070,8 @@ export default function JekyllAndHydePage() {
                       &ldquo;I concealed my pleasures&rdquo; and &ldquo;I stood already committed to
                       a profound duplicity of life.&rdquo; Analyse how Jekyll&apos;s concealment is
                       driven by social expectation, not genuine evil. He hides
-                      &ldquo;irregularities&rdquo; &mdash; Victorian euphemism for behaviours that
-                      are ordinary but socially unacceptable.
+                      &ldquo;irregularities&rdquo; - Victorian euphemism for behaviours that are
+                      ordinary but socially unacceptable.
                     </p>
                   </div>
                   <div>
@@ -1107,8 +1092,8 @@ export default function JekyllAndHydePage() {
                     <p className="mt-1 text-sm text-muted-foreground">
                       Utterson admits, &ldquo;I incline to Cain&apos;s heresy&rdquo;, letting others
                       go their own way. All characters collude in secrecy. Stevenson shows
-                      repression is not individual but systemic &mdash; an entire society built on
-                      not asking questions.
+                      repression is not individual but systemic - an entire society built on not
+                      asking questions.
                     </p>
                   </div>
                   <div>
@@ -1136,10 +1121,9 @@ export default function JekyllAndHydePage() {
                       Thesis
                     </p>
                     <p className="mt-1 text-sm text-muted-foreground">
-                      Stevenson uses Victorian London as more than a backdrop &mdash; the city
-                      itself embodies duality, with its respectable facades concealing sinister
-                      spaces, its fog obscuring moral boundaries, and its geography reflecting the
-                      divided self.
+                      Stevenson uses Victorian London as more than a backdrop - the city itself
+                      embodies duality, with its respectable facades concealing sinister spaces, its
+                      fog obscuring moral boundaries, and its geography reflecting the divided self.
                     </p>
                   </div>
                   <div>
@@ -1149,9 +1133,8 @@ export default function JekyllAndHydePage() {
                     <p className="mt-1 text-sm text-muted-foreground">
                       The grand front entrance vs the &ldquo;blistered and distained&rdquo; back
                       door. The house physically represents Jekyll&apos;s divided identity: public
-                      respectability at the front, hidden depravity at the rear. The laboratory
-                      &mdash; a space of dangerous experimentation &mdash; is deliberately
-                      concealed.
+                      respectability at the front, hidden depravity at the rear. The laboratory - a
+                      space of dangerous experimentation - is deliberately concealed.
                     </p>
                   </div>
                   <div>
@@ -1184,7 +1167,7 @@ export default function JekyllAndHydePage() {
                     <p className="mt-1 text-sm text-muted-foreground">
                       Almost all significant events occur at night. Darkness enables Hyde&apos;s
                       crimes and symbolises the hidden world of Victorian vice. Connect to the
-                      real-life anxieties about London at night &mdash; crime, prostitution, and the
+                      real-life anxieties about London at night - crime, prostitution, and the
                       anonymity that darkness provides.
                     </p>
                   </div>
@@ -1213,8 +1196,8 @@ export default function JekyllAndHydePage() {
                       {tr(`Paragraph 1 - Jekyll as Promethean scientist`)}
                     </p>
                     <p className="mt-1 text-sm text-muted-foreground">
-                      Jekyll attempts to separate good from evil &mdash; a power that belongs to
-                      God. His experiment echoes Frankenstein&apos;s creation of life. The
+                      Jekyll attempts to separate good from evil - a power that belongs to God. His
+                      experiment echoes Frankenstein&apos;s creation of life. The
                       &ldquo;transcendental medicine&rdquo; combines science with the supernatural,
                       blurring boundaries that Victorian society wanted kept separate.
                     </p>
@@ -1233,14 +1216,14 @@ export default function JekyllAndHydePage() {
                   </div>
                   <div>
                     <p className="text-xs font-semibold text-violet-700 dark:text-violet-300 uppercase tracking-wider">
-                      Paragraph 3 &mdash; Religious language throughout
+                      Paragraph 3 - Religious language throughout
                     </p>
                     <p className="mt-1 text-sm text-muted-foreground">
                       &ldquo;Satan&apos;s signature,&rdquo; &ldquo;child of Hell,&rdquo;
                       &ldquo;chief of sinners.&rdquo; Characters describe Hyde in biblical terms,
                       and Jekyll uses them of himself. This religious framework suggests science has
-                      released something diabolical &mdash; that Jekyll has committed a sin, not
-                      merely a scientific error.
+                      released something diabolical - that Jekyll has committed a sin, not merely a
+                      scientific error.
                     </p>
                   </div>
                   <div>
@@ -1279,8 +1262,8 @@ export default function JekyllAndHydePage() {
                 is entirely honest. He frames himself as a victim: &ldquo;It was Hyde, after all,
                 and Hyde alone, that was guilty.&rdquo; But this is self-serving. Jekyll created
                 Hyde, chose to become him, and experienced pleasure in doing so. His confession is
-                an exercise in blame-shifting &mdash; he uses the language of scientific detachment
-                to distance himself from his own actions. A Grade 9 response might argue that
+                an exercise in blame-shifting - he uses the language of scientific detachment to
+                distance himself from his own actions. A Grade 9 response might argue that
                 Jekyll&apos;s statement is not a confession but a defence, and that Stevenson
                 deliberately makes the reader question whether Jekyll is truly penitent or merely
                 performing penitence.
@@ -1294,10 +1277,10 @@ export default function JekyllAndHydePage() {
                 Lower-grade answers treat Hyde purely as a monster. A sophisticated reading
                 acknowledges that Jekyll&apos;s first transformation is described in terms of
                 freedom and pleasure: &ldquo;I felt younger, lighter, happier in body.&rdquo; This
-                complicates the moral framework &mdash; Hyde is not experienced as evil by the
-                person within him. Stevenson suggests that the appeal of vice is precisely what
-                makes it dangerous. Hyde represents not just evil but the intoxicating freedom from
-                social constraint. This makes the novella a far more nuanced critique of Victorian
+                complicates the moral framework - Hyde is not experienced as evil by the person
+                within him. Stevenson suggests that the appeal of vice is precisely what makes it
+                dangerous. Hyde represents not just evil but the intoxicating freedom from social
+                constraint. This makes the novella a far more nuanced critique of Victorian
                 morality: it is not that repressed desires are inherently wicked, but that
                 repressing them creates a dangerous craving for release.
               </p>
@@ -1313,8 +1296,8 @@ export default function JekyllAndHydePage() {
                 through written confessions discovered after death. Stevenson suggests that the
                 rational, empirical mindset that Victorians prized cannot comprehend the irrational
                 depths of human nature. Lanyon, another man of science, dies from the shock of
-                witnessing the irrational. The novella argues that some truths are beyond reason
-                &mdash; a deeply unsettling message for a society that worshipped rationality.
+                witnessing the irrational. The novella argues that some truths are beyond reason - a
+                deeply unsettling message for a society that worshipped rationality.
               </p>
             </div>
             <div className="rounded-lg border border-violet-500/30 bg-violet-500/5 p-4">
@@ -1326,11 +1309,11 @@ export default function JekyllAndHydePage() {
                 essential to the transformation. He cannot replicate it. This seemingly minor plot
                 detail carries enormous thematic weight: it suggests that the experiment was never
                 fully under scientific control. The transformation depended on an accident, an
-                impurity &mdash; something unplanned and unrepeatable. This undermines the
-                deterministic, mechanistic worldview of Victorian science. The universe contains
-                elements that cannot be predicted, controlled, or replicated. Stevenson uses this
-                detail to argue that humanity&apos;s attempt to master nature through science is
-                fundamentally flawed.
+                impurity - something unplanned and unrepeatable. This undermines the deterministic,
+                mechanistic worldview of Victorian science. The universe contains elements that
+                cannot be predicted, controlled, or replicated. Stevenson uses this detail to argue
+                that humanity&apos;s attempt to master nature through science is fundamentally
+                flawed.
               </p>
             </div>
             <div className="rounded-lg border border-violet-500/30 bg-violet-500/5 p-4">
@@ -1343,7 +1326,7 @@ export default function JekyllAndHydePage() {
                 &ldquo;I&rdquo; (himself). The grammatical confusion mirrors the metaphysical
                 crisis: the boundary between self and other has dissolved. Language itself breaks
                 down because identity has broken down. A Grade 9 response might argue that this is
-                the most important sentence in the novella &mdash; the moment where Stevenson&apos;s
+                the most important sentence in the novella - the moment where Stevenson&apos;s
                 exploration of duality moves from theme to form, where the content and the style
                 become one.
               </p>
@@ -1356,12 +1339,12 @@ export default function JekyllAndHydePage() {
                 The novella&apos;s all-male world is not accidental but thematically significant.
                 These men socialise through dinner parties and walks, communicate through formal
                 letters, and express care through silent loyalty. Emotional expression is entirely
-                absent. Stevenson shows that Victorian masculine norms &mdash; restraint,
-                discretion, never discussing the personal &mdash; create the very conditions for
-                Jekyll&apos;s tragedy. The men around Jekyll could have helped him if they had asked
-                direct questions, but their code of gentlemanly discretion prevents it. Stevenson
-                argues that a society that forbids men from being emotionally honest will produce
-                men who are secretly monstrous.
+                absent. Stevenson shows that Victorian masculine norms - restraint, discretion,
+                never discussing the personal - create the very conditions for Jekyll&apos;s
+                tragedy. The men around Jekyll could have helped him if they had asked direct
+                questions, but their code of gentlemanly discretion prevents it. Stevenson argues
+                that a society that forbids men from being emotionally honest will produce men who
+                are secretly monstrous.
               </p>
             </div>
             <div className="rounded-lg border border-violet-500/30 bg-violet-500/5 p-4">
@@ -1491,7 +1474,7 @@ export default function JekyllAndHydePage() {
             <span className="mt-0.5 h-1.5 w-1.5 shrink-0 rounded-full bg-accent" />
             <span>
               <strong>{tr(`Address the whole novella.`)}</strong> Don&apos;t focus only on the
-              extract &mdash; reference other chapters to show knowledge of the text as a whole.
+              extract - reference other chapters to show knowledge of the text as a whole.
             </span>
           </li>
         </ul>

@@ -79,10 +79,9 @@ export default function OnFindingASmallFlyCrushedInABookPage() {
         <Card>
           <CardContent className="space-y-3 pt-6 text-sm text-muted-foreground">
             <p>
-              <strong className="text-foreground">Poet:</strong> Charles Tennyson Turner &mdash;
-              English clergyman and sonneteer; born Somersby, Lincolnshire, 1808; died 1879. The
-              elder brother of Alfred, Lord Tennyson, whose fame eclipsed his own throughout his
-              lifetime.
+              <strong className="text-foreground">Poet:</strong> Charles Tennyson Turner - English
+              clergyman and sonneteer; born Somersby, Lincolnshire, 1808; died 1879. The elder
+              brother of Alfred, Lord Tennyson, whose fame eclipsed his own throughout his lifetime.
             </p>
             <p>
               <strong className="text-foreground">Year:</strong> 1873
@@ -115,11 +114,11 @@ export default function OnFindingASmallFlyCrushedInABookPage() {
           <CardContent className="space-y-3 pt-6 text-sm text-muted-foreground">
             <p>
               Turner specialised in the small Victorian observational sonnet: a fly, a swallow, a
-              country churchyard, a frosted hedge. His poems often turn on a quietly comic premise
-              &mdash; here, the accident of finding an insect that has been preserved between the
-              pages of a book &mdash; and ask the reader to think harder about it than the situation
-              seems to warrant. The sonnet uses a mock-tomb image: the book is the fly&rsquo;s
-              sarcophagus, the printed page its monument.
+              country churchyard, a frosted hedge. His poems often turn on a quietly comic premise -
+              here, the accident of finding an insect that has been preserved between the pages of a
+              book - and ask the reader to think harder about it than the situation seems to
+              warrant. The sonnet uses a mock-tomb image: the book is the fly&rsquo;s sarcophagus,
+              the printed page its monument.
             </p>
             <p>
               The poem&rsquo;s gentle conscience is characteristic of Turner. Where Tennyson reaches

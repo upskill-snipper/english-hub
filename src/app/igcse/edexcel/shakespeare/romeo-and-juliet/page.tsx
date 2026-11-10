@@ -34,7 +34,7 @@ const PLOT = [
   {
     act: 'Act 1',
     title: 'The ancient grudge',
-    text: "The Prince of Verona ends a street brawl between the Montagues and Capulets and warns that any future disturbance will be punished by death. Romeo, lovesick for Rosaline, is persuaded by Benvolio to crash the Capulets' masked ball. There he meets Juliet. They fall in love instantly \u2014 before either realises who the other is.",
+    text: "The Prince of Verona ends a street brawl between the Montagues and Capulets and warns that any future disturbance will be punished by death. Romeo, lovesick for Rosaline, is persuaded by Benvolio to crash the Capulets' masked ball. There he meets Juliet. They fall in love instantly - before either realises who the other is.",
   },
   {
     act: 'Act 2',
@@ -61,7 +61,7 @@ const PLOT = [
 const CHARACTERS = [
   {
     name: 'Romeo',
-    text: "A Montague and a romantic idealist. He swings between extremes \u2014 lovesick despair over Rosaline in Act 1, ecstatic love for Juliet from Act 1 Scene 5, vengeful rage after Mercutio's death, and suicidal grief at the tomb. Shakespeare uses him to ask whether passionate love is a form of youthful recklessness.",
+    text: "A Montague and a romantic idealist. He swings between extremes - lovesick despair over Rosaline in Act 1, ecstatic love for Juliet from Act 1 Scene 5, vengeful rage after Mercutio's death, and suicidal grief at the tomb. Shakespeare uses him to ask whether passionate love is a form of youthful recklessness.",
   },
   {
     name: 'Juliet',
@@ -73,11 +73,11 @@ const CHARACTERS = [
   },
   {
     name: 'The Nurse',
-    text: "Juliet's surrogate mother. Warm, bawdy and practical, she is initially the Nurse who helps Juliet marry Romeo. But in Act 3 she pragmatically advises Juliet to marry Paris instead \u2014 a betrayal that isolates Juliet and pushes her toward the Friar.",
+    text: "Juliet's surrogate mother. Warm, bawdy and practical, she is initially the Nurse who helps Juliet marry Romeo. But in Act 3 she pragmatically advises Juliet to marry Paris instead - a betrayal that isolates Juliet and pushes her toward the Friar.",
   },
   {
     name: 'Mercutio',
-    text: "Romeo's best friend and cousin of the Prince. Witty, profane and restless, he is the play's verbal fireworks display. His death \u2014 'A plague o\u2019 both your houses!' \u2014 marks the tonal switch from comedy to tragedy.",
+    text: "Romeo's best friend and cousin of the Prince. Witty, profane and restless, he is the play's verbal fireworks display. His death - 'A plague o\u2019 both your houses!' - marks the tonal switch from comedy to tragedy.",
   },
   {
     name: 'Tybalt',
@@ -89,7 +89,7 @@ const CHARACTERS = [
   },
   {
     name: 'Paris',
-    text: "A young nobleman, kinsman to the Prince, who wants to marry Juliet. Paris is not villainous \u2014 he is courteous and genuinely mournful at the tomb \u2014 but he represents the socially correct marriage Juliet's parents demand.",
+    text: "A young nobleman, kinsman to the Prince, who wants to marry Juliet. Paris is not villainous - he is courteous and genuinely mournful at the tomb - but he represents the socially correct marriage Juliet's parents demand.",
   },
 ]
 
@@ -100,7 +100,7 @@ const THEMES_PREVIEW = [
   },
   {
     theme: 'Fate',
-    text: "The prologue calls the lovers 'star-cross'd'. Shakespeare then seeds the play with premonitions, bad timing and narrowly missed messages \u2014 so that the ending feels both inevitable and avoidable.",
+    text: "The prologue calls the lovers 'star-cross'd'. Shakespeare then seeds the play with premonitions, bad timing and narrowly missed messages - so that the ending feels both inevitable and avoidable.",
   },
   {
     theme: 'Conflict',
@@ -223,7 +223,7 @@ export default async function RomeoAndJulietHubPage() {
               <h3 className="text-lg font-bold text-foreground">Themes</h3>
             </div>
             <p className="mt-3 text-sm text-muted-foreground leading-relaxed">
-              Love, fate, conflict, youth vs age and honour &mdash; with key quotations for each.
+              Love, fate, conflict, youth vs age and honour - with key quotations for each.
             </p>
             <span className="mt-4 inline-flex items-center gap-1 text-sm font-semibold text-primary group-hover:underline">
               Read the themes guide

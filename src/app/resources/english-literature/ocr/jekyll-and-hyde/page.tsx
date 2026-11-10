@@ -177,7 +177,7 @@ export default async function OCRJekyllAndHydePage() {
           </h1>
           <p className="mx-auto mt-4 max-w-xl text-lg text-muted-foreground">
             Everything you need to know about The Strange Case of Dr Jekyll and Mr Hyde for OCR GCSE
-            English Literature Paper 2, Section B &mdash; 19th Century Prose.
+            English Literature Paper 2, Section B - 19th Century Prose.
           </p>
         </div>
       </section>
@@ -195,9 +195,9 @@ export default async function OCRJekyllAndHydePage() {
                 {tr(`Paper 2: Exploring Effects and Impact`)}
               </p>
               <p className="mt-1 text-sm text-muted-foreground">
-                Section B &mdash; 19th Century and Modern Prose/Drama. You will answer one question
-                on Jekyll and Hyde. The question is an essay question{' '}
-                <strong>without an extract</strong> &mdash; you must write from memory. You have
+                Section B - 19th Century and Modern Prose/Drama. You will answer one question on
+                Jekyll and Hyde. The question is an essay question{' '}
+                <strong>without an extract</strong> - you must write from memory. You have
                 approximately 45 minutes.
               </p>
             </div>
@@ -322,12 +322,11 @@ export default async function OCRJekyllAndHydePage() {
               </p>
               <p className="mt-3 text-sm text-muted-foreground leading-relaxed">
                 His experiment to separate his dual nature is born from a desire to indulge his
-                darker impulses without damaging his reputation. This makes him morally culpable
-                &mdash; he does not stumble into evil but actively seeks it out. His eventual
-                inability to control Hyde represents the danger of indulging repressed desires: once
-                released, they consume the individual. Jekyll&rsquo;s tragedy is that he created a
-                monster he could not control, and his death is the ultimate consequence of his
-                hubris.
+                darker impulses without damaging his reputation. This makes him morally culpable -
+                he does not stumble into evil but actively seeks it out. His eventual inability to
+                control Hyde represents the danger of indulging repressed desires: once released,
+                they consume the individual. Jekyll&rsquo;s tragedy is that he created a monster he
+                could not control, and his death is the ultimate consequence of his hubris.
               </p>
               <div className="mt-4 rounded border border-accent/20 bg-primary/10 p-3">
                 <p className="text-sm font-medium text-primary">{tr(`Key character arc`)}</p>
@@ -344,18 +343,17 @@ export default async function OCRJekyllAndHydePage() {
               <h3 className="text-xl font-semibold text-primary">{tr(`Mr Edward Hyde`)}</h3>
               <p className="mt-3 text-sm text-muted-foreground leading-relaxed">
                 Hyde is the physical embodiment of Jekyll&rsquo;s repressed evil. He is described as
-                small, deformed, and repulsive &mdash; every character who meets him feels an
-                instinctive revulsion. His appearance reflects Victorian physiognomy, the belief
-                that physical features reveal moral character. His smaller stature represents the
-                fact that Jekyll has suppressed his evil side for years, so it is &ldquo;less
-                exercised.&rdquo;
+                small, deformed, and repulsive - every character who meets him feels an instinctive
+                revulsion. His appearance reflects Victorian physiognomy, the belief that physical
+                features reveal moral character. His smaller stature represents the fact that Jekyll
+                has suppressed his evil side for years, so it is &ldquo;less exercised.&rdquo;
               </p>
               <p className="mt-3 text-sm text-muted-foreground leading-relaxed">
                 Hyde is characterised by violence without conscience. He tramples a child, murders
                 Sir Danvers Carew with savage glee, and shows no remorse. He grows stronger as
                 Jekyll continues to use the potion, eventually becoming the dominant personality.
-                Stevenson suggests that evil, once indulged, does not remain contained &mdash; it
-                grows and eventually overwhelms the good.
+                Stevenson suggests that evil, once indulged, does not remain contained - it grows
+                and eventually overwhelms the good.
               </p>
             </div>
 
@@ -425,11 +423,11 @@ export default async function OCRJekyllAndHydePage() {
               <p className="mt-2 text-sm text-muted-foreground leading-relaxed">
                 The novella&rsquo;s central theme. Stevenson argues that every human being contains
                 both good and evil, and that these forces are &ldquo;commingled&rdquo; inseparably.
-                Jekyll&rsquo;s experiment attempts to separate them, but this proves impossible
-                &mdash; the result is not a pure good self and a pure evil self, but Jekyll (who
-                retains his moral awareness) and Hyde (who is pure evil). Stevenson suggests that
-                the human condition is defined by this internal conflict, and that attempting to
-                deny or separate the two sides is catastrophic.
+                Jekyll&rsquo;s experiment attempts to separate them, but this proves impossible -
+                the result is not a pure good self and a pure evil self, but Jekyll (who retains his
+                moral awareness) and Hyde (who is pure evil). Stevenson suggests that the human
+                condition is defined by this internal conflict, and that attempting to deny or
+                separate the two sides is catastrophic.
               </p>
             </div>
 
@@ -443,7 +441,7 @@ export default async function OCRJekyllAndHydePage() {
                 more strictly society represses natural desires, the more violently they emerge when
                 released. Jekyll creates Hyde precisely because Victorian morality will not allow
                 him to express his full humanity. The novella argues that repression does not
-                eliminate evil &mdash; it concentrates and intensifies it.
+                eliminate evil - it concentrates and intensifies it.
               </p>
             </div>
 
@@ -455,8 +453,8 @@ export default async function OCRJekyllAndHydePage() {
                 between Jekyll and Lanyon mirrors a real Victorian debate between
                 &ldquo;transcendental&rdquo; science (pushing boundaries) and &ldquo;rational&rdquo;
                 science (staying within established limits). Stevenson suggests that science
-                divorced from ethics is dangerous &mdash; a theme that resonated with Victorian
-                anxieties about Darwinism, vivisection, and rapid technological change.
+                divorced from ethics is dangerous - a theme that resonated with Victorian anxieties
+                about Darwinism, vivisection, and rapid technological change.
               </p>
             </div>
 
@@ -476,11 +474,11 @@ export default async function OCRJekyllAndHydePage() {
               <h3 className="text-lg font-semibold text-foreground">Appearance vs Reality</h3>
               <p className="mt-2 text-sm text-muted-foreground leading-relaxed">
                 Nothing in the novella is as it seems. Jekyll&rsquo;s respectable exterior conceals
-                dark desires. The two entrances to his house &mdash; the handsome front door and the
-                sinister back door &mdash; symbolise his double life. Hyde&rsquo;s physical
-                deformity is the visible sign of an inner evil that other characters keep hidden.
-                Stevenson challenges the Victorian assumption that a respectable appearance
-                guarantees a virtuous character.
+                dark desires. The two entrances to his house - the handsome front door and the
+                sinister back door - symbolise his double life. Hyde&rsquo;s physical deformity is
+                the visible sign of an inner evil that other characters keep hidden. Stevenson
+                challenges the Victorian assumption that a respectable appearance guarantees a
+                virtuous character.
               </p>
             </div>
 
@@ -556,8 +554,8 @@ export default async function OCRJekyllAndHydePage() {
                   and social propriety, particularly for professional men. Gentlemen were expected
                   to be rational, restrained, and morally upright. This created intense pressure to
                   conceal any behaviour that deviated from the ideal. Jekyll&rsquo;s double life is
-                  a product of this culture &mdash; he cannot be both respectable and free, so he
-                  creates Hyde to satisfy desires that respectability forbids.
+                  a product of this culture - he cannot be both respectable and free, so he creates
+                  Hyde to satisfy desires that respectability forbids.
                 </p>
               </div>
               <div className="rounded-lg border border-border bg-muted p-5">
@@ -568,8 +566,7 @@ export default async function OCRJekyllAndHydePage() {
                   that humans evolved from animals. This raised terrifying questions: if we are
                   descended from beasts, is the beast still within us? Hyde&rsquo;s ape-like
                   appearance and animalistic behaviour represent Victorian fears of evolutionary
-                  regression &mdash; the idea that civilised humans could revert to a primitive
-                  state.
+                  regression - the idea that civilised humans could revert to a primitive state.
                 </p>
               </div>
               <div className="rounded-lg border border-border bg-muted p-5">
@@ -579,10 +576,10 @@ export default async function OCRJekyllAndHydePage() {
                 <p className="mt-2 text-sm">
                   Although Freud&rsquo;s major works were published after the novella (1886), the
                   idea of the unconscious was emerging. Jekyll&rsquo;s experiment can be read as an
-                  attempt to access the unconscious &mdash; the hidden part of the psyche where
-                  repressed desires are stored. Hyde represents the &ldquo;id&rdquo; (primitive
-                  desires), Jekyll the &ldquo;ego&rdquo; (the conscious, social self), and Victorian
-                  society the &ldquo;superego&rdquo; (the moral rules that constrain behaviour).
+                  attempt to access the unconscious - the hidden part of the psyche where repressed
+                  desires are stored. Hyde represents the &ldquo;id&rdquo; (primitive desires),
+                  Jekyll the &ldquo;ego&rdquo; (the conscious, social self), and Victorian society
+                  the &ldquo;superego&rdquo; (the moral rules that constrain behaviour).
                 </p>
               </div>
               <div className="rounded-lg border border-border bg-muted p-5">
@@ -602,10 +599,9 @@ export default async function OCRJekyllAndHydePage() {
                 <p className="mt-2 text-sm">
                   The Victorian era saw increasing tension between scientific progress and religious
                   belief. Jekyll&rsquo;s experiment transgresses both scientific ethics and
-                  religious morality &mdash; he attempts to play God by altering human nature.
-                  Stevenson draws on the tradition of the &ldquo;over-reacher&rdquo; (like
-                  Frankenstein and Faustus) &mdash; figures who are punished for pursuing knowledge
-                  beyond human limits.
+                  religious morality - he attempts to play God by altering human nature. Stevenson
+                  draws on the tradition of the &ldquo;over-reacher&rdquo; (like Frankenstein and
+                  Faustus) - figures who are punished for pursuing knowledge beyond human limits.
                 </p>
               </div>
               <div className="rounded-lg border border-border bg-muted p-5">

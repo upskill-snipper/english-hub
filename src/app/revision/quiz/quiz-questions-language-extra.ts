@@ -8,19 +8,23 @@ import type { QuizQuestion } from './quiz-data'
 export const languageExtraQuestions: QuizQuestion[] = [
   // ─── AQA Paper 1 (Q1-Q5)  - IDs 001-025 ──────────────────────────────────
   {
+    // 31 October 2026: this asked about Question 1 as "list four things", the
+    // format before summer 2026. From then it is four multiple-choice parts, 1.1 to
+    // 1.4 (src/data/mark-scheme-guides/aqa-lang-paper1.ts), and the guide names the
+    // trap: an option that repeats a word from the source.
     id: 'language-extra-001',
     topic: 'exam-technique',
     question:
-      'AQA Paper 1 Question 1 asks you to "list four things" from a specified section. What is the safest approach?',
+      'AQA Paper 1 Question 1 is four multiple-choice parts (1.1 to 1.4) on the lines named. What is the safest approach?',
     options: [
-      'Quote whole sentences word-for-word',
-      'Paraphrase or quote short pieces of explicit information from the lines named',
+      'Shade the option that repeats the most words from the source',
+      'Find the words in the named lines that prove an option before you shade it',
       'Infer feelings the character probably has',
       'Comment on the writer’s techniques',
     ],
     correctIndex: 1,
     explanation:
-      'AO1 (identify and interpret explicit information) is tested. You only need short, explicit answers from the lines named - inference and analysis are not required.',
+      'AO1 (identify and interpret information) is tested, one mark for each part. Check each option against the lines named: the right answer often says the same thing as the source in different words, so an option that just repeats a word from the source can be a trap.',
     boards: ['aqa'],
   },
   {
@@ -354,22 +358,25 @@ export const languageExtraQuestions: QuizQuestion[] = [
   {
     id: 'language-extra-027',
     topic: 'exam-technique',
-    question: 'AQA Paper 2 Q2 (summary, 8 marks) requires you to write about…',
+    // 31 October 2026: this called Q2 a summary of differences or similarities, its
+    // wording before summer 2026. AQA now asks what you can infer about the
+    // differences the question names (src/data/mark-scheme-guides/aqa-lang-paper2.ts).
+    question: 'AQA Paper 2 Q2 (8 marks) requires you to write about…',
     options: [
       'The language techniques in Source A only',
-      'Differences (or similarities) between the two sources using inference',
+      'The differences the question names, inferred from both sources',
       'Your own opinion on the writers',
       'A creative re-write of the sources',
     ],
     correctIndex: 1,
     explanation:
-      'Q2 tests AO1 (inference and synthesis) - make inferred points about both sources and support with brief evidence.',
+      'Q2 tests AO1 (inference and synthesis): it asks what you can infer about the differences the question names. Make inferred points about both sources and support them with brief evidence.',
     boards: ['aqa'],
   },
   {
     id: 'language-extra-028',
     topic: 'exam-technique',
-    question: 'In a Paper 2 Q2 summary paragraph, the strongest structure is…',
+    question: 'In a Paper 2 Q2 paragraph, the strongest structure is…',
     options: [
       'Source A point + quote, then a separate Source B point + quote, then explicit comparative inference',
       'Two long quotations only',
@@ -525,7 +532,7 @@ export const languageExtraQuestions: QuizQuestion[] = [
     id: 'language-extra-039',
     topic: 'exam-technique',
     question:
-      'Paper 2 sources often include a 19th-century non-fiction text. What should you do FIRST when reading it?',
+      'AQA Paper 2, OCR Component 01 and Eduqas Component 2 each print a 19th-century non-fiction text beside a modern one. What should you do FIRST when reading it?',
     options: [
       'Skip it - it’s too hard',
       'Read it carefully, decoding archaic vocabulary using context',
@@ -538,6 +545,9 @@ export const languageExtraQuestions: QuizQuestion[] = [
     // 31 October 2026: 'edexcel' taken off. Pearson's Paper 2 prints two texts from
     // the 20th and 21st centuries, so the premise is false there; it holds for AQA's
     // Paper 2 and Eduqas's Component 2.
+    // The same day the premise named the papers: it said "Paper 2", and OCR's
+    // 19th-century text is in Component 01. Component 02 has none (both guides in
+    // src/data/mark-scheme-guides/ocr-lang-component0*.ts).
     boards: ['aqa', 'ocr', 'eduqas'],
   },
   {
@@ -605,7 +615,7 @@ export const languageExtraQuestions: QuizQuestion[] = [
     options: ['10 minutes', '20 minutes', '45 minutes', '60 minutes'],
     correctIndex: 2,
     explanation:
-      'Most schemes recommend ~45 minutes on Q5 (15 reading the sources + ~10 mins each on Q1-Q4 then 45 mins on Q5).',
+      'AQA’s own advice is about 45 minutes on Q5: about 15 minutes reading the sources, then about 5, 8, 12 and 20 minutes on Q1 to Q4, and 45 on Q5.',
     boards: ['aqa'],
   },
   {
@@ -927,20 +937,28 @@ export const languageExtraQuestions: QuizQuestion[] = [
   },
 
   // ─── OCR Language - IDs 066-075 (10) ─────────────────────────────────────
+  //
+  // 31 October 2026, against src/data/mark-scheme-guides/ocr-lang-component01.ts
+  // and -component02.ts: 066 dated Paper 1's modern text 21st-century only (it is
+  // 20th or 21st); 067 gave Paper 2 "original writing tasks" (it sets one, from a
+  // choice of two); 068 called Question 4 a comparison question, where it is 18
+  // marks, 12 for evaluating a statement and 6 for comparing; 070 offered a
+  // descriptive piece, where the tasks are a story or personal writing. Second read:
+  // 067's wrong option "Two literature texts" also fitted two literary prose texts.
   {
     id: 'language-extra-066',
     topic: 'exam-technique',
     question:
       'OCR GCSE English Language Paper 1 ("Communicating Information and Ideas") focuses on…',
     options: [
-      '19th- and 21st-century non-fiction texts',
+      '19th-century and 20th- or 21st-century non-fiction texts',
       'Pre-1900 poetry',
       'Shakespeare',
       'Translation',
     ],
     correctIndex: 0,
     explanation:
-      'OCR Paper 1 (J351/01) pairs a 19th-century and a 21st-century non-fiction text - comparison is central.',
+      'OCR Paper 1 (J351/01) pairs a 19th-century non-fiction text with one from the 20th or 21st century, and its last reading question asks you to evaluate and compare them.',
     boards: ['ocr'],
   },
   {
@@ -948,30 +966,30 @@ export const languageExtraQuestions: QuizQuestion[] = [
     topic: 'exam-technique',
     question: 'OCR GCSE English Language Paper 2 ("Exploring Effects and Impact") focuses on…',
     options: [
-      'Two literature texts',
+      'Two set texts you have studied in advance',
       '20th- and 21st-century literary prose extracts',
       'Only modern poetry',
       'Drama scripts only',
     ],
     correctIndex: 1,
     explanation:
-      'OCR Paper 2 (J351/02) examines 20th/21st-century prose, with reading and original writing tasks.',
+      'OCR Paper 2 (J351/02) examines two 20th/21st-century literary prose texts, at least one of them fiction, with four reading questions and one piece of creative writing chosen from two tasks.',
     boards: ['ocr'],
   },
   {
     id: 'language-extra-068',
     topic: 'exam-technique',
     question:
-      'OCR uses an extended comparison question on Paper 1. The strongest opening line for it would…',
+      'OCR Paper 1 Question 4 asks how far you agree with a statement about both texts, and rewards comparing them too. The strongest opening line would…',
     options: [
-      'State a comparative thesis about the two writers’ shared/differing focus or attitude',
+      'Give a verdict on the statement that compares the two writers’ focus or attitude',
       'List the techniques you will use',
       'Translate the 19th-century text',
       'Apologise for word count',
     ],
     correctIndex: 0,
     explanation:
-      'A clear comparative thesis sentence orients the response and supports AO3 throughout.',
+      'A clear opening verdict that already compares the texts sets up both parts of the mark: evaluating the statement (AO4, 12 marks) and comparing the writers (AO3, 6 marks).',
     boards: ['ocr'],
   },
   {
@@ -996,7 +1014,7 @@ export const languageExtraQuestions: QuizQuestion[] = [
     question:
       'OCR Paper 2 includes an original writing task. Which choice usually best supports AO5/AO6 under timed conditions?',
     options: [
-      'A focused, single-scene narrative or descriptive piece with a clear arc',
+      'A focused, single-scene story or account of an experience, with a clear arc',
       'A multi-chapter epic',
       'A bibliography',
       'A literary essay',
@@ -1130,16 +1148,21 @@ export const languageExtraQuestions: QuizQuestion[] = [
   {
     id: 'language-extra-079',
     topic: 'exam-technique',
+    // 31 October 2026: the answer was "to describe and/or narrate" and the
+    // explanation called the task descriptive/narrative. The specification asks
+    // for a narrative or recount, and writing that only describes cannot reach the
+    // top of the mark range (src/data/mark-scheme-guides/eduqas-lang-comp1.ts).
+    // 085 offered images and description for the same reason.
     question: 'In Eduqas creative writing, the "purpose" of the task is most often…',
     options: [
-      'To describe and/or narrate compellingly for a general reader',
+      'To tell a story, or recount an experience, compellingly for a general reader',
       'To persuade a council',
       'To analyse a novel',
       'To translate Latin',
     ],
     correctIndex: 0,
     explanation:
-      'Component 1 creative writing prioritises descriptive/narrative craft - vivid sensory detail and structural shaping (AO5).',
+      'Component 1 asks for a narrative or recount, real or imagined. Description helps bring it to life, but a piece that only describes cannot reach the top of the mark range: shape the story and develop it with detail (AO5).',
     boards: ['eduqas'],
   },
   {
@@ -1227,33 +1250,45 @@ export const languageExtraQuestions: QuizQuestion[] = [
     topic: 'exam-technique',
     question: 'On Eduqas Component 1 creative writing, candidates are usually offered…',
     options: [
-      'A choice of titles, prompts and/or images for description or narrative',
+      'A choice of four titles for a story or an account of an experience',
       'No choice at all',
       'Only a translation task',
       'Only a play script task',
     ],
     correctIndex: 0,
     explanation:
-      'Eduqas typically offers multiple stimuli (titles, opening lines, images). Choose the option that lets you craft your strongest AO5/AO6.',
+      'Eduqas offers four titles: a title may be a phrase, a time you did something, an opening line or a closing line. Choose the one that lets you craft your strongest AO5/AO6.',
     boards: ['eduqas'],
   },
 
   // ─── Cambridge IGCSE 0500/0990 - IDs 086-100 (15) ────────────────────────
+  //
+  // 31 October 2026, against src/data/mark-scheme-guides/cambridge-0500-paper1.ts
+  // and -paper2.ts. Until then, comments here marked VERIFIED said "syllabus
+  // 2024-2026" and still numbered the questions wrongly for it: the extended response to
+  // reading was "Question 2, 30 marks (15 R + 15 W)", where that syllabus has it as
+  // Question 3, 25 marks (15 + 10), and the language task was "Question 1(e) on
+  // Text A", where it is part of Question 2, on Text C. The site follows the
+  // 2027-2029 syllabus, as the guides and the marker do: four questions of 20, the
+  // summary as 2(a), the language task in Question 3 and the extended response as
+  // Question 4 (10 + 10). Each item now gives that numbering, with the November
+  // 2026 one beside it where a candidate sitting it would be misled. Second read:
+  // 089 and 096 called the November 2026 summary "1(f)"; the guides give it only as
+  // part of Question 1, so the items now say that.
   {
     id: 'language-extra-086',
     topic: 'exam-technique',
     question:
-      'Cambridge IGCSE English (0500/0990) Paper 1 Question 2 is the EXTENDED RESPONSE TO READING (based on Text C). Marks are split into…',
+      'Cambridge IGCSE English (0500/0990) Paper 1 Question 4 is the EXTENDED RESPONSE TO READING (based on Text C). Marks are split into…',
     options: [
-      'Reading (R) marks for understanding/development AND Writing (W) marks for accuracy/structure',
+      'Reading (R) marks for using and developing ideas from the text AND Writing (W) marks for organisation, style and vocabulary',
       'Only writing marks',
       'Only spelling marks',
       'Only reading marks',
     ],
     correctIndex: 0,
-    // VERIFIED: Cambridge 0500/0990 syllabus 2024-2026, Paper 1 (Reading) - Q2 extended response = 30 marks (15 R + 15 W); accessed 2026
     explanation:
-      'Paper 1 Question 2 (extended response to reading, based on Text C) is worth 30 marks: 15 Reading marks and 15 Writing marks. Directed writing (40 marks: 15 R + 25 W) is on Paper 2 Section A, not Paper 1.',
+      'From 2027, Paper 1 Question 4 (about 250-300 words on Text C, in a form such as a letter or speech) is worth 20 marks: 10 Reading and 10 Writing. On the November 2026 paper it is Question 3, worth 25 (15 Reading + 10 Writing). Directed writing (40 marks: 15 R + 25 W) is on Paper 2 Section A, not Paper 1.',
     boards: ['cambridge-0500', 'cambridge-0990'],
   },
   {
@@ -1277,7 +1312,7 @@ export const languageExtraQuestions: QuizQuestion[] = [
     id: 'language-extra-088',
     topic: 'exam-technique',
     question:
-      'Cambridge 0500/0990 Paper 1 Question 1(e) (analysis of language used by writers to achieve effects) - which approach is BEST?',
+      'The Cambridge 0500/0990 Paper 1 language task (analysis of language used by writers to achieve effects) - which approach is BEST?',
     options: [
       'Quote shorter phrases or single words and analyse connotations and effect',
       'Quote whole paragraphs without analysis',
@@ -1285,43 +1320,41 @@ export const languageExtraQuestions: QuizQuestion[] = [
       'Only list techniques without quotations',
     ],
     correctIndex: 0,
-    // VERIFIED: Cambridge 0500/0990 syllabus 2024-2026, Paper 1 Q1(e) language analysis on Text A; accessed 2026
     explanation:
-      'Paper 1 Q1(e) rewards close, focused analysis of writers’ language choices - short embedded quotations and explored effects. (Paper 2 Q1 is directed writing, not language analysis.)',
+      'The language task, on Text C (part of Question 3 from 2027, of Question 2 on the November 2026 paper), rewards close, focused analysis of the writer’s language choices - short embedded quotations and explored effects. (Paper 2 Q1 is directed writing, not language analysis.)',
     boards: ['cambridge-0500', 'cambridge-0990'],
   },
   {
     id: 'language-extra-089',
     topic: 'exam-technique',
     question:
-      'Cambridge 0500/0990 Paper 1 Question 1(f) is the SUMMARY question. Which is most important?',
+      'Cambridge 0500/0990 Paper 1 Question 2(a) is the SUMMARY question (part of Question 1 on the November 2026 paper). Which is most important?',
     options: [
-      'Use your own words and concise prose, focusing only on points relevant to the bullet(s)',
+      'Use your own words and concise prose, focusing only on points relevant to the focus the question gives',
       'Quote the source word-for-word',
       'Add personal opinion',
       'Use bullet points throughout',
     ],
     correctIndex: 0,
-    // VERIFIED: Cambridge 0500/0990 syllabus 2024-2026, Paper 1 Q1(f) summary = 15 marks (10 R + 5 W); accessed 2026
+    // Summary = 15 marks (10 R + 5 W) on both syllabuses: 2(a) from 2027, part of Q1 in 2024-2026.
     explanation:
-      'Paper 1 Q1(f) summary (15 marks: 10 Reading + 5 Writing) demands concise own-words summary of relevant points - direct copying loses Reading and Writing marks. (Paper 2 Q2 is composition.)',
+      'The Paper 1 summary (15 marks: 10 Reading + 5 Writing, no more than 120 words, on Text B) demands a concise own-words summary of the relevant points - direct copying loses Reading and Writing marks. (On Paper 2, Question 2 is one of the composition titles.)',
     boards: ['cambridge-0500', 'cambridge-0990'],
   },
   {
     id: 'language-extra-090',
     topic: 'exam-technique',
     question:
-      'Cambridge 0500/0990 Paper 1 Question 1(e) (analysis of writers’ effects) usually targets…',
+      'From 2027, the Cambridge 0500/0990 Paper 1 language task (analysis of writers’ effects, in Question 3) usually targets…',
     options: [
-      'Two short sub-paragraphs from the source, analysed for choices and effects',
+      'A short extract of Text C named in the question, analysed for word choices and their effects',
       'The whole source in equal detail',
       'Only the title',
       'Only the final line',
     ],
     correctIndex: 0,
-    // VERIFIED: Cambridge 0500/0990 syllabus 2024-2026, Paper 1 Q1(e) language analysis names two short paragraphs from Text A; accessed 2026
     explanation:
-      'Q1(e) names two short paragraphs from Text A; analyse word/phrase choice and effect within them - concentrated language analysis.',
+      'The task names an extract of Text C: pick a few striking words or phrases from it (three in the specimen paper) and explain their effects, in about 200-250 words. On the November 2026 paper the language task covers two paragraphs of the text instead.',
     boards: ['cambridge-0500', 'cambridge-0990'],
   },
   {
@@ -1386,7 +1419,7 @@ export const languageExtraQuestions: QuizQuestion[] = [
     id: 'language-extra-095',
     topic: 'language-techniques',
     question:
-      'Which sentence stem most clearly evidences AO2-style analysis suitable for Cambridge Paper 2 Q1?',
+      'Which sentence stem most clearly evidences AO2-style analysis suitable for the Cambridge Paper 1 language task?',
     options: [
       '"The verb ‘shattered’ has violent, brittle connotations, suggesting…"',
       '"There is a verb here."',
@@ -1402,7 +1435,7 @@ export const languageExtraQuestions: QuizQuestion[] = [
     id: 'language-extra-096',
     topic: 'exam-technique',
     question:
-      'In the Cambridge Paper 1 Q1(f) summary, what proportion of marks is for Reading vs. Writing?',
+      'In the Cambridge Paper 1 summary (Question 2(a) from 2027, part of Question 1 in November 2026), what proportion of marks is for Reading vs. Writing?',
     options: [
       '10 Reading + 5 Writing (Reading-dominant, but writing style still assessed)',
       'Only Writing marks',
@@ -1410,9 +1443,9 @@ export const languageExtraQuestions: QuizQuestion[] = [
       'Equal split with no Writing marks',
     ],
     correctIndex: 0,
-    // VERIFIED: Cambridge 0500/0990 syllabus 2024-2026, Paper 1 Q1(f) summary = 15 marks (10 R + 5 W); accessed 2026
+    // Summary = 15 marks (10 R + 5 W) on both syllabuses: 2(a) from 2027, part of Q1 in 2024-2026.
     explanation:
-      'The Paper 1 Q1(f) summary is 15 marks: 10 Reading + 5 Writing - Reading-dominant, but Writing marks reward concise, well-organised own-words prose.',
+      'The Paper 1 summary is 15 marks: 10 Reading + 5 Writing - Reading-dominant, but Writing marks reward concise, well-organised own-words prose.',
     boards: ['cambridge-0500', 'cambridge-0990'],
   },
   {

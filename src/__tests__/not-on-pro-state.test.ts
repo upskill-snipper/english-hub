@@ -89,6 +89,61 @@ describe('an expired no-card trial', () => {
   })
 })
 
+// ─── After 04:15: the row the expiry cron has closed ────────────────────
+//
+// THE DEFECT (found 10 November 2026). The tests above only ever handed the
+// resolver a row still marked TRIALING, which is true for a few hours at
+// most: /api/cron/trial-expiry runs at 04:15 UTC and marks every expired
+// no-card trial CANCELLED with cancelledAt set. The resolver did not
+// recognise that row, so the day-8 card vanished for every ex-trialist from
+// then on, and this file stayed green throughout.
+
+/** The row exactly as trial-expiry/route.ts leaves it. */
+function cronClosedTrial(over: Record<string, unknown> = {}) {
+  return sub({
+    status: 'CANCELLED',
+    cancelledAt: past,
+    platform: 'WEB',
+    revenuecatAppUserId: null,
+    paymentCount: 0,
+    ...over,
+  })
+}
+
+describe('a trial the expiry cron has closed', () => {
+  it('is still named as a finished trial', async () => {
+    mockSubFindUnique.mockResolvedValue(cronClosedTrial())
+    const s = await getTrialState()
+    expect(s.kind).toBe('trial-ended')
+    expect(s.isPremium).toBe(false)
+    expect(s.trialEndedAt?.toISOString()).toBe(past.toISOString())
+  })
+
+  it('asks Prisma for the fields that tell it apart from a lapsed plan', async () => {
+    mockSubFindUnique.mockResolvedValue(cronClosedTrial())
+    await getTrialState()
+    const select = mockSubFindUnique.mock.calls[0][0].select
+    expect(select).toMatchObject({ platform: true, revenuecatAppUserId: true, paymentCount: true })
+  })
+
+  it('is not an app-store subscription that lapsed', async () => {
+    mockSubFindUnique.mockResolvedValue(
+      cronClosedTrial({ platform: 'IOS', revenuecatAppUserId: 'rc_user_1' }),
+    )
+    expect((await getTrialState()).kind).not.toBe('trial-ended')
+  })
+
+  it('is not an Android subscription with no RevenueCat id recorded', async () => {
+    mockSubFindUnique.mockResolvedValue(cronClosedTrial({ platform: 'ANDROID' }))
+    expect((await getTrialState()).kind).not.toBe('trial-ended')
+  })
+
+  it('is not a row with a payment recorded against it', async () => {
+    mockSubFindUnique.mockResolvedValue(cronClosedTrial({ paymentCount: 1 }))
+    expect((await getTrialState()).kind).not.toBe('trial-ended')
+  })
+})
+
 // ─── The hazard ─────────────────────────────────────────────────────────
 
 describe('a customer who paid is never told their trial ended', () => {

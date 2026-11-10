@@ -188,8 +188,8 @@ export default function EdexcelTimeAndPlacePage() {
           </div>
           <p className="mt-3 max-w-2xl text-body-lg text-muted-foreground">
             All 15 poems in the Edexcel Time and Place anthology. From Romantic celebrations of
-            nature to modern poems about migration, identity and belonging, the collection explores how
-            places shape us and how time changes the way we see them.
+            nature to modern poems about migration, identity and belonging, the collection explores
+            how places shape us and how time changes the way we see them.
           </p>
         </div>
       </section>
@@ -289,9 +289,8 @@ export default function EdexcelTimeAndPlacePage() {
         </div>
         <p className="text-body-sm text-muted-foreground leading-relaxed">
           Time and Place rewards strong contrasts of attitude. Pair a celebratory poem like{' '}
-          <em>Composed Upon Westminster Bridge</em> with a darker urban view in <em>London</em>{' '}
-          &mdash; they describe the same city only a few years apart, with utterly different
-          feelings.
+          <em>Composed Upon Westminster Bridge</em> with a darker urban view in <em>London</em> -
+          they describe the same city only a few years apart, with utterly different feelings.
         </p>
       </section>
     </div>

@@ -278,16 +278,14 @@ export default function OCREnglishLanguagePage() {
             </p>
             <div className="space-y-3">
               <div className="rounded-lg border border-border bg-muted p-4">
-                <p className="font-semibold text-foreground">
-                  Retrieval and inference &mdash; Reading
-                </p>
+                <p className="font-semibold text-foreground">Retrieval and inference - Reading</p>
                 <p className="mt-1 text-sm">
                   Identify and interpret explicit and implicit information and ideas. Select and
                   synthesise evidence from different texts.
                 </p>
               </div>
               <div className="rounded-lg border border-border bg-muted p-4">
-                <p className="font-semibold text-foreground">Language analysis &mdash; Reading</p>
+                <p className="font-semibold text-foreground">Language analysis - Reading</p>
                 <p className="mt-1 text-sm">
                   Explain, comment on and analyse how writers use language and structure to achieve
                   effects and influence readers, using relevant subject terminology to support their
@@ -295,22 +293,20 @@ export default function OCREnglishLanguagePage() {
                 </p>
               </div>
               <div className="rounded-lg border border-border bg-muted p-4">
-                <p className="font-semibold text-foreground">Comparison &mdash; Reading</p>
+                <p className="font-semibold text-foreground">Comparison - Reading</p>
                 <p className="mt-1 text-sm">
                   Compare writers&rsquo; ideas and perspectives, as well as how these are conveyed,
                   across two or more texts.
                 </p>
               </div>
               <div className="rounded-lg border border-border bg-muted p-4">
-                <p className="font-semibold text-foreground">Evaluation &mdash; Reading</p>
+                <p className="font-semibold text-foreground">Evaluation - Reading</p>
                 <p className="mt-1 text-sm">
                   Evaluate texts critically and support this with appropriate textual references.
                 </p>
               </div>
               <div className="rounded-lg border border-border bg-muted p-4">
-                <p className="font-semibold text-foreground">
-                  Content and organisation &mdash; Writing
-                </p>
+                <p className="font-semibold text-foreground">Content and organisation - Writing</p>
                 <p className="mt-1 text-sm">
                   Communicate clearly, effectively and imaginatively, selecting and adapting tone,
                   style and register for different forms, purposes and audiences. Organise
@@ -319,19 +315,19 @@ export default function OCREnglishLanguagePage() {
                 </p>
               </div>
               <div className="rounded-lg border border-border bg-muted p-4">
-                <p className="font-semibold text-foreground">Technical accuracy &mdash; Writing</p>
+                <p className="font-semibold text-foreground">Technical accuracy - Writing</p>
                 <p className="mt-1 text-sm">
                   Use a range of vocabulary and sentence structures for clarity, purpose and effect,
                   with accurate spelling and punctuation.
                 </p>
               </div>
               <div className="rounded-lg border border-border bg-muted p-4">
-                <p className="font-semibold text-foreground">Presenting &mdash; Spoken Language</p>
+                <p className="font-semibold text-foreground">Presenting - Spoken Language</p>
                 <p className="mt-1 text-sm">Demonstrate presentation skills in a formal setting.</p>
               </div>
               <div className="rounded-lg border border-border bg-muted p-4">
                 <p className="font-semibold text-foreground">
-                  Listening and responding &mdash; Spoken Language
+                  Listening and responding - Spoken Language
                 </p>
                 <p className="mt-1 text-sm">
                   Listen and respond appropriately to spoken language, including to questions and
@@ -339,9 +335,7 @@ export default function OCREnglishLanguagePage() {
                 </p>
               </div>
               <div className="rounded-lg border border-border bg-muted p-4">
-                <p className="font-semibold text-foreground">
-                  Standard English &mdash; Spoken Language
-                </p>
+                <p className="font-semibold text-foreground">Standard English - Spoken Language</p>
                 <p className="mt-1 text-sm">
                   Use spoken Standard English effectively in speeches and presentations.
                 </p>

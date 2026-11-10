@@ -490,7 +490,7 @@ export default function LordOfTheFliesStudyGuide() {
           {t('study.revnotes.common.eyebrow')}
         </p>
         <h1 className="mt-2 text-3xl font-bold tracking-tight sm:text-4xl md:text-5xl">
-          Lord of the Flies &mdash; {t('study.revnotes.common.suffix.study_guide')}
+          Lord of the Flies - {t('study.revnotes.common.suffix.study_guide')}
         </h1>
         <p className="mt-3 max-w-2xl text-lg text-muted-foreground">
           {t('study.revnotes.lord-of-the-flies.lead')}

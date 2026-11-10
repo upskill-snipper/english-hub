@@ -411,9 +411,9 @@ export default async function BlogsJournalsPage() {
 
       <h1>Blogs &amp; journals</h1>
       <p className="lead">
-        A reading-and-writing guide to blogs and journals &mdash; including diary-style journals
-        &mdash; as non-fiction text types. Learn the conventions, how to identify and analyse them
-        when reading, and how to write one confidently for Section B.
+        A reading-and-writing guide to blogs and journals - including diary-style journals - as
+        non-fiction text types. Learn the conventions, how to identify and analyse them when
+        reading, and how to write one confidently for Section B.
       </p>
 
       {/* ── Where these sit in the spec ───────────────────────────── */}
@@ -437,7 +437,7 @@ export default async function BlogsJournalsPage() {
             </p>
             <p className="text-sm text-foreground leading-relaxed">
               Non-fiction writing can aim to: {PURPOSE_LIST}. Blogs and journals usually combine
-              more than one &mdash; they recount and inform while also expressing a strong personal
+              more than one - they recount and inform while also expressing a strong personal
               opinion.
             </p>
           </div>
@@ -468,7 +468,7 @@ export default async function BlogsJournalsPage() {
         <div className="not-prose grid gap-3 sm:grid-cols-2">
           <div className="rounded-xl border border-primary/40 bg-card p-5">
             <p className="font-mono text-[10px] tracking-[0.14em] uppercase text-muted-foreground mb-3">
-              Blog &mdash; written for an audience
+              Blog - written for an audience
             </p>
             <ul className="space-y-3 text-sm text-muted-foreground">
               {BLOG_FEATURES.map((f) => (
@@ -481,7 +481,7 @@ export default async function BlogsJournalsPage() {
           </div>
           <div className="rounded-xl border border-primary/40 bg-card p-5">
             <p className="font-mono text-[10px] tracking-[0.14em] uppercase text-muted-foreground mb-3">
-              Journal / diary &mdash; written close to the moment
+              Journal / diary - written close to the moment
             </p>
             <ul className="space-y-3 text-sm text-muted-foreground">
               {JOURNAL_FEATURES.map((f) => (
@@ -553,8 +553,8 @@ export default async function BlogsJournalsPage() {
       <section className="my-10">
         <h2>Annotated original extracts</h2>
         <p className="text-sm text-muted-foreground">
-          Two short, fully original extracts &mdash; one blog post, one journal entry &mdash;
-          annotated for their features. Neither is reproduced from any past paper.
+          Two short, fully original extracts - one blog post, one journal entry - annotated for
+          their features. Neither is reproduced from any past paper.
         </p>
         <div className="not-prose mt-4 space-y-6">
           {ANNOTATED_EXTRACTS.map((p) => (
@@ -657,7 +657,7 @@ export default async function BlogsJournalsPage() {
           <p className="text-sm text-foreground leading-relaxed">{WRITING_TASK.prompt}</p>
           <p className="mt-2 text-xs text-muted-foreground">{WRITING_TASK.formNote}</p>
           <p className="mt-4 font-mono text-[10px] tracking-[0.14em] uppercase text-muted-foreground mb-2">
-            Model response &mdash; original
+            Model response - original
           </p>
           <div className="space-y-2 rounded-lg border border-border/60 bg-background p-4">
             {WRITING_TASK.model.map((para, i) => (

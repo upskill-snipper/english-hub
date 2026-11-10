@@ -179,7 +179,7 @@ export default async function OCRChristmasCarolPage() {
           </h1>
           <p className="mx-auto mt-4 max-w-xl text-lg text-muted-foreground">
             Everything you need to know about A Christmas Carol for OCR GCSE English Literature
-            Paper 2, Section B &mdash; 19th Century Prose.
+            Paper 2, Section B - 19th Century Prose.
           </p>
         </div>
       </section>
@@ -195,9 +195,9 @@ export default async function OCRChristmasCarolPage() {
             <div className="rounded-lg border border-primary/20 bg-primary/10 p-4">
               <p className="font-semibold text-primary">Paper 2: Exploring Effects and Impact</p>
               <p className="mt-1 text-sm text-muted-foreground">
-                Section B &mdash; 19th Century and Modern Prose/Drama. You will answer one question
-                on A Christmas Carol. The question is an essay question{' '}
-                <strong>without an extract</strong> &mdash; you must write from memory. You have
+                Section B - 19th Century and Modern Prose/Drama. You will answer one question on A
+                Christmas Carol. The question is an essay question{' '}
+                <strong>without an extract</strong> - you must write from memory. You have
                 approximately 45 minutes.
               </p>
             </div>
@@ -268,9 +268,8 @@ export default async function OCRChristmasCarolPage() {
                   The second spirit shows Scrooge how others celebrate Christmas. He visits the
                   Cratchit family, where he sees the disabled Tiny Tim and learns the boy will die
                   unless things change. He also sees his nephew Fred&rsquo;s party, where guests
-                  mock Scrooge but Fred defends him. The spirit reveals two allegorical children
-                  &mdash; Ignorance and Want &mdash; hidden beneath his robe as a warning to
-                  society.
+                  mock Scrooge but Fred defends him. The spirit reveals two allegorical children -
+                  Ignorance and Want - hidden beneath his robe as a warning to society.
                 </p>
               </div>
               <div className="rounded-lg border border-border bg-muted p-4">
@@ -311,18 +310,18 @@ export default async function OCRChristmasCarolPage() {
             <div className="rounded-lg border border-border bg-card p-6 shadow-md">
               <h3 className="text-xl font-semibold text-primary">{_tr(`Ebenezer Scrooge`)}</h3>
               <p className="mt-3 text-sm text-muted-foreground leading-relaxed">
-                Scrooge is Dickens&rsquo;s most famous creation &mdash; a miser whose name has
-                become synonymous with greed. At the start of the novella, he is cold, isolated, and
+                Scrooge is Dickens&rsquo;s most famous creation - a miser whose name has become
+                synonymous with greed. At the start of the novella, he is cold, isolated, and
                 contemptuous of the poor. He refuses charity, dismisses Christmas as
                 &ldquo;humbug,&rdquo; and treats his clerk Bob Cratchit with disdain.
               </p>
               <p className="mt-3 text-sm text-muted-foreground leading-relaxed">
                 However, Dickens is careful to show that Scrooge was not always this way. His lonely
-                childhood and the loss of Belle reveal that his miserliness is a defence mechanism
-                &mdash; a response to emotional pain. This makes his eventual transformation
-                believable and deeply moving. By the end of the novella, Scrooge embodies the
-                generosity and compassion that Dickens believed were the essence of true
-                Christianity. His transformation is Dickens&rsquo;s argument that anyone can change.
+                childhood and the loss of Belle reveal that his miserliness is a defence mechanism -
+                a response to emotional pain. This makes his eventual transformation believable and
+                deeply moving. By the end of the novella, Scrooge embodies the generosity and
+                compassion that Dickens believed were the essence of true Christianity. His
+                transformation is Dickens&rsquo;s argument that anyone can change.
               </p>
               <div className="mt-4 rounded border border-accent/20 bg-primary/10 p-3">
                 <p className="text-sm font-medium text-primary">{_tr(`Key character arc`)}</p>
@@ -346,9 +345,9 @@ export default async function OCRChristmasCarolPage() {
               <p className="mt-3 text-sm text-muted-foreground leading-relaxed">
                 Dickens uses Bob to show that poverty does not destroy goodness. The Cratchit
                 family&rsquo;s warmth and love stand in deliberate contrast to Scrooge&rsquo;s
-                wealth and loneliness. Bob is also a figure of pathos &mdash; his devotion to Tiny
-                Tim and his inability to afford medical care make the case for social reform deeply
-                personal and emotional.
+                wealth and loneliness. Bob is also a figure of pathos - his devotion to Tiny Tim and
+                his inability to afford medical care make the case for social reform deeply personal
+                and emotional.
               </p>
             </div>
 
@@ -358,14 +357,14 @@ export default async function OCRChristmasCarolPage() {
               <p className="mt-3 text-sm text-muted-foreground leading-relaxed">
                 Tiny Tim is the emotional heart of the novella. His disability, his cheerful
                 resilience, and his potential death create powerful emotional pressure on both
-                Scrooge and the reader. He represents the innocent victims of social inequality
-                &mdash; children who suffer because of their parents&rsquo; poverty.
+                Scrooge and the reader. He represents the innocent victims of social inequality -
+                children who suffer because of their parents&rsquo; poverty.
               </p>
               <p className="mt-3 text-sm text-muted-foreground leading-relaxed">
                 His catchphrase &ldquo;God bless us, every one!&rdquo; embodies the inclusive,
                 generous spirit that Dickens advocates. His potential death is the most powerful
-                tool in Dickens&rsquo;s armoury &mdash; by making the consequences of inequality
-                personal, he forces his audience to care.
+                tool in Dickens&rsquo;s armoury - by making the consequences of inequality personal,
+                he forces his audience to care.
               </p>
             </div>
 
@@ -392,10 +391,10 @@ export default async function OCRChristmasCarolPage() {
               <p className="mt-3 text-sm text-muted-foreground leading-relaxed">
                 The Ghost of Christmas Past is a flickering, ethereal figure who shows Scrooge the
                 emotional roots of his miserliness. The Ghost of Christmas Present is a generous,
-                jolly giant surrounded by abundance &mdash; he embodies the spirit of Christmas
-                generosity but also reveals the suffering hidden beneath society&rsquo;s surface
-                (Ignorance and Want). The Ghost of Christmas Yet to Come is the most terrifying: a
-                silent, shrouded figure who shows Scrooge his death and Tiny Tim&rsquo;s.
+                jolly giant surrounded by abundance - he embodies the spirit of Christmas generosity
+                but also reveals the suffering hidden beneath society&rsquo;s surface (Ignorance and
+                Want). The Ghost of Christmas Yet to Come is the most terrifying: a silent, shrouded
+                figure who shows Scrooge his death and Tiny Tim&rsquo;s.
               </p>
               <p className="mt-3 text-sm text-muted-foreground leading-relaxed">
                 Together, the three ghosts represent a journey of moral education. The past provides
@@ -436,11 +435,11 @@ export default async function OCRChristmasCarolPage() {
               </h3>
               <p className="mt-2 text-sm text-muted-foreground leading-relaxed">
                 The novella&rsquo;s central message is that people can change. Scrooge&rsquo;s
-                redemption arc &mdash; from cold miser to joyful philanthropist &mdash; is the
-                story&rsquo;s emotional core. Dickens presents redemption as a process:
-                understanding the past, seeing the present clearly, and taking responsibility for
-                the future. The Christian framework of sin, repentance, and salvation reinforces the
-                idea that no one is beyond redemption.
+                redemption arc - from cold miser to joyful philanthropist - is the story&rsquo;s
+                emotional core. Dickens presents redemption as a process: understanding the past,
+                seeing the present clearly, and taking responsibility for the future. The Christian
+                framework of sin, repentance, and salvation reinforces the idea that no one is
+                beyond redemption.
               </p>
             </div>
 
@@ -498,8 +497,8 @@ export default async function OCRChristmasCarolPage() {
                 The supernatural elements serve a moral purpose. Marley&rsquo;s ghost, the three
                 spirits, and the time-travelling structure allow Dickens to show Scrooge (and the
                 reader) the consequences of selfishness in a compressed, dramatic way. The
-                supernatural also connects to the Christian context of Christmas &mdash; the
-                possibility of miracles, forgiveness, and spiritual transformation.
+                supernatural also connects to the Christian context of Christmas - the possibility
+                of miracles, forgiveness, and spiritual transformation.
               </p>
             </div>
           </div>
@@ -549,8 +548,8 @@ export default async function OCRChristmasCarolPage() {
                   In 1843 when Dickens wrote the novella, poverty in Britain was extreme. The
                   Industrial Revolution had created vast wealth for factory owners but left workers
                   in appalling conditions. Child labour was common, workhouses were brutal, and
-                  there was no welfare state. Dickens had personal experience of poverty &mdash; as
-                  a child, he worked in a blacking factory when his father was imprisoned for debt.
+                  there was no welfare state. Dickens had personal experience of poverty - as a
+                  child, he worked in a blacking factory when his father was imprisoned for debt.
                 </p>
               </div>
               <div className="rounded-lg border border-border bg-muted p-5">
@@ -584,7 +583,7 @@ export default async function OCRChristmasCarolPage() {
                 </h3>
                 <p className="mt-2 text-sm">
                   Dickens saw true Christianity as being about compassion, generosity, and love for
-                  one&rsquo;s neighbour &mdash; not rigid church attendance or moral judgement. The
+                  one&rsquo;s neighbour - not rigid church attendance or moral judgement. The
                   novella uses Christmas as a symbol of Christian charity. Scrooge&rsquo;s
                   redemption is a spiritual awakening as well as a moral one. The novella was so
                   influential that it is credited with shaping modern Christmas traditions and
@@ -599,8 +598,8 @@ export default async function OCRChristmasCarolPage() {
                   Dickens used his writing as a tool for social change. He visited a &ldquo;Ragged
                   School&rdquo; (free school for destitute children) in 1843, shortly before writing
                   A Christmas Carol. The experience deeply affected him. He chose the novella form
-                  deliberately &mdash; it was short, affordable, and accessible to a wide audience.
-                  He wanted to reach hearts, not just minds: &ldquo;I have a great faith in the
+                  deliberately - it was short, affordable, and accessible to a wide audience. He
+                  wanted to reach hearts, not just minds: &ldquo;I have a great faith in the
                   poor,&rdquo; he wrote.
                 </p>
               </div>
@@ -610,9 +609,9 @@ export default async function OCRChristmasCarolPage() {
                   Dickens chose to write a novella rather than a full novel because he wanted
                   maximum impact in minimum time. The five-stave structure mirrors a musical
                   composition (a &ldquo;carol&rdquo;), giving the narrative a sense of harmony and
-                  resolution. The compressed time frame &mdash; a single night &mdash; creates
-                  urgency and dramatic intensity. The allegorical, parable-like quality makes the
-                  moral message clear and memorable.
+                  resolution. The compressed time frame - a single night - creates urgency and
+                  dramatic intensity. The allegorical, parable-like quality makes the moral message
+                  clear and memorable.
                 </p>
               </div>
             </div>

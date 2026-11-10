@@ -278,6 +278,11 @@ export const languageP1LessonPlans: LessonPlan[] = [
   },
 
   // ── Lesson 2: Q1 Information Retrieval ──────────────────────────────────
+  // 31 October 2026: this lesson taught Paper 1 Q1 as four true statements chosen
+  // from eight, which is Paper 2's Question 1. Paper 1's Question 1 is, from summer
+  // 2026, four multiple-choice parts, 1.1 to 1.4, one answer each; before that it
+  // asked for four things listed (src/data/mark-scheme-guides/aqa-lang-paper1.ts).
+  // The activities now use multiple-choice parts; the distractor work is kept.
   {
     id: 'lang-p1-02-q1-retrieval',
     title: 'Q1: Information Retrieval - Finding the Right Details',
@@ -288,7 +293,7 @@ export const languageP1LessonPlans: LessonPlan[] = [
     objectives: [
       'Understand what Q1 requires and how it is marked',
       'Identify explicit information from a specified section of text',
-      'Select four correct statements from a list of eight',
+      'Choose the one correct option in each of four multiple-choice parts',
       'Develop strategies for eliminating incorrect options',
     ],
     successCriteria: [
@@ -302,7 +307,7 @@ export const languageP1LessonPlans: LessonPlan[] = [
       'implicit',
       'information retrieval',
       'shade',
-      'true statement',
+      'option',
       'specified lines',
       'inference',
       'distractor',
@@ -323,7 +328,7 @@ export const languageP1LessonPlans: LessonPlan[] = [
         title: 'Understanding Q1: What the Examiner Wants',
         duration: '10 minutes',
         instructions:
-          'Teacher explains Q1 format: students read a specified section of the source and choose four true statements from eight options. Worth 4 marks (1 per correct shade). No partial marks, no justification needed. Display a sample Q1 from AQA specimen materials. Discuss common errors: selecting more than four, not reading specified lines, falling for distractors based on information from outside the specified section.',
+          "Teacher explains the Q1 format: from summer 2026, four multiple-choice parts (1.1 to 1.4) on a specified section of the source. Each part offers a few options (three on AQA's sample paper) and students shade the one that is correct. Worth 4 marks (1 per correct part). No justification needed. Display a sample Q1 from AQA's 2026 sample materials. Discuss common errors: shading more than one option in a part, not reading the specified lines, and choosing an option because it repeats a word from the source rather than because the lines prove it. (Before 2026 this question asked for four things to be listed; choosing four true statements from eight is Paper 2's Question 1.)",
         differentiation: {
           support: 'Provide a printed summary of Q1 rules to glue into books.',
           core: 'Students make their own notes on Q1 requirements.',
@@ -335,26 +340,28 @@ export const languageP1LessonPlans: LessonPlan[] = [
         title: 'Practising with the Extract',
         duration: '20 minutes',
         instructions:
-          'Distribute the extract about the flood (EXTRACT_Q1). Read aloud as a class. Then present eight statements (four true, four false) about lines 1-15 only. Students work independently to select four true statements, underlining evidence in the text for each. After 8 minutes, pairs compare answers and resolve disagreements by returning to the text. Teacher reveals correct answers and models the process of elimination for each distractor.',
+          'Distribute the extract about the flood (EXTRACT_Q1). Read aloud as a class. Then present four multiple-choice parts about lines 1-15 only, each with three options. Students work independently to choose one answer in each part, underlining the evidence in the text that proves it. After 8 minutes, pairs compare answers and resolve disagreements by returning to the text. Teacher reveals correct answers and models the process of elimination for each distractor.',
         differentiation: {
-          support:
-            'Provide line numbers next to each statement indicating where to look for evidence.',
-          core: 'Students work with the eight statements and the specified lines only.',
+          support: 'Provide line numbers next to each part indicating where to look for evidence.',
+          core: 'Students work with the four parts and the specified lines only.',
           stretch:
             'Students explain in writing why each distractor is incorrect, identifying the specific word or detail that makes it false.',
         },
-        resources: ['Printed extract (one per student)', 'Q1 practice sheet with eight statements'],
+        resources: [
+          'Printed extract (one per student)',
+          'Q1 practice sheet with four multiple-choice parts',
+        ],
       },
       {
         title: 'Speed Round: Timed Q1 Practice',
         duration: '15 minutes',
         instructions:
-          'Present a second set of eight statements based on a different section of the same extract (lines 16-end). Students complete this under timed conditions: 5 minutes only. When the timer ends, students swap papers and peer-mark using the answer key. Discuss: Did time pressure cause mistakes? What strategies helped you work quickly and accurately?',
+          'Present a second set of four multiple-choice parts based on a different section of the same extract (lines 16-end). Students complete this under timed conditions: 5 minutes only. When the timer ends, students swap papers and peer-mark using the answer key. Discuss: Did time pressure cause mistakes? What strategies helped you work quickly and accurately?',
         differentiation: {
-          support: 'Allow 7 minutes instead of 5. Provide the line references for each statement.',
+          support: 'Allow 7 minutes instead of 5. Provide the line references for each part.',
           core: 'Students complete within 5 minutes and self-correct.',
           stretch:
-            'Students write their own set of eight statements (four true, four false) for a partner to complete.',
+            'Students write their own four-part multiple-choice question (three options each, one correct) for a partner to complete.',
         },
         resources: ['Timer (projected)', 'Second Q1 practice sheet', 'Answer key for peer marking'],
       },
@@ -375,10 +382,10 @@ export const languageP1LessonPlans: LessonPlan[] = [
       'Complete a Q1 practice question using a different fiction extract (provided on homework sheet). Time yourself - aim for under 5 minutes.',
     worksheetQuestions: [
       {
-        question: 'How many marks is Q1 worth, and how many statements must you select as true?',
+        question: 'How many marks is Q1 worth, and how many answers do you shade in each part?',
         lines: 2,
         modelAnswer:
-          'Q1 is worth 4 marks. You must select exactly four true statements from a list of eight.',
+          'Q1 is worth 4 marks: four multiple-choice parts, 1.1 to 1.4, with one answer shaded in each.',
         marks: 2,
       },
       {
@@ -407,10 +414,10 @@ export const languageP1LessonPlans: LessonPlan[] = [
       },
       {
         question:
-          'Read lines 9-18. Which of the following statements are TRUE? Select two. A) Sarah panics when she sees the water. B) The power is out in the house. C) Daniel puts on socks and shoes before going downstairs. D) Water is seeping under the back door.',
+          'Read lines 9-18. Which ONE of these is true? Explain why the other two are wrong. A) Sarah panics when she sees the water. B) The power is out in the house. C) Daniel puts on socks and shoes before going downstairs.',
         lines: 3,
         modelAnswer:
-          "B and D are true. B: 'The power was out too; the bedside clock was dark.' D: 'Water was already seeping under the back door.' A is false because Sarah is described as calm. C is false because Daniel did not bother with socks.",
+          "B is true: 'The power was out too; the bedside clock was dark.' A is false because Sarah is described as calm. C is false because Daniel did not bother with socks.",
         marks: 2,
       },
       {
@@ -423,7 +430,7 @@ export const languageP1LessonPlans: LessonPlan[] = [
       },
       {
         question:
-          'Write your own Q1-style statement that is FALSE but would be a convincing distractor. Explain why it is false.',
+          'Write your own Q1-style option that is FALSE but would be a convincing distractor. Explain why it is false.',
         lines: 5,
         modelAnswer:
           "Example: 'The family moved their furniture upstairs before the water entered the kitchen.' This is false because the text says water was 'already seeping under the back door' and 'spreading across the kitchen tiles' before they began moving things - they carried 'photo albums, the laptop, shoes, the dog's bed', not furniture.",
@@ -432,10 +439,10 @@ export const languageP1LessonPlans: LessonPlan[] = [
     ],
     teacherNotes: [
       'Q1 is the most accessible question but students still lose marks through carelessness. Emphasise precision and reading the specified lines only.',
-      'Common mistakes: selecting more or fewer than four options; choosing statements based on inference rather than explicit detail; using information from outside the specified lines.',
+      'Common mistakes: shading more than one option in a part; choosing an option because it repeats a word from the source rather than because the lines prove it; using information from outside the specified lines.',
       'The timed practice in the Speed Round is important - students must learn to do Q1 quickly so they can spend more time on higher-mark questions.',
       'Keep the energy up during Q1 lessons - the content is straightforward, so the challenge should be about accuracy and speed.',
-      'Consider displaying the eight statements on the board rather than printing them separately, to save resources.',
+      'Consider displaying the four parts on the board rather than printing them separately, to save resources.',
     ],
     targetedSkills: [
       'Information retrieval',
@@ -1778,7 +1785,7 @@ export const languageP1LessonPlans: LessonPlan[] = [
         title: 'Timed Paper 1 Practice (Adapted for 60 Minutes)',
         duration: '44 minutes',
         instructions:
-          'NOTE: A full Paper 1 is 1 hour 45 minutes. This adapted version focuses on the reading section (Q1-Q4) in reduced time, with Q5 set as a homework/follow-up task. Distribute the exam paper with the extract (EXTRACT_Q4 - the harbour text about Arthur) and all four questions. Time breakdown: Reading time: 5 minutes (read the extract carefully, annotate). Q1: 4 minutes (4 marks - identify four true statements). Q2: 7 minutes (8 marks - analyse language). Q3: 7 minutes (8 marks - analyse structure). Q4: 18 minutes (20 marks - evaluate). Remaining 3 minutes: check and proofread. Teacher displays a countdown timer on the board. Call out time warnings at each transition. Students work in strict exam silence.',
+          'NOTE: A full Paper 1 is 1 hour 45 minutes. This adapted version focuses on the reading section (Q1-Q4) in reduced time, with Q5 set as a homework/follow-up task. Distribute the exam paper with the extract (EXTRACT_Q4 - the harbour text about Arthur) and all four questions. Time breakdown: Reading time: 5 minutes (read the extract carefully, annotate). Q1: 4 minutes (4 marks - four multiple-choice parts). Q2: 7 minutes (8 marks - analyse language). Q3: 7 minutes (8 marks - analyse structure). Q4: 18 minutes (20 marks - evaluate). Remaining 3 minutes: check and proofread. Teacher displays a countdown timer on the board. Call out time warnings at each transition. Students work in strict exam silence.',
         differentiation: {
           support:
             'Provide individual time prompts (a printed timeline they can keep on their desk). Allow an additional 5 minutes if needed, though encourage them to try the full timed conditions first.',
@@ -1813,7 +1820,7 @@ export const languageP1LessonPlans: LessonPlan[] = [
     worksheetQuestions: [
       {
         question:
-          'Reflect on your Q1 response. Did you answer within 4-5 minutes? Were you confident in your four selections? What would you do differently next time?',
+          'Reflect on your Q1 response. Did you answer within 4-5 minutes? Were you confident in your four answers? What would you do differently next time?',
         lines: 4,
         modelAnswer:
           "Strong reflection should include: specific reference to timing (finished in time or not), confidence level in selections (did they change answers? Were they unsure about any?), and a specific strategy for improvement (e.g. 'Next time, I will cross out options I'm certain are wrong before selecting my final four').",

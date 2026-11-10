@@ -78,7 +78,7 @@ function QuoteCard({
       <p className="text-sm font-semibold text-violet-800 dark:text-violet-200 italic">
         &ldquo;{quote}&rdquo;
       </p>
-      {speaker && <p className="mt-1 text-xs font-medium text-violet-600">&mdash; {speaker}</p>}
+      {speaker && <p className="mt-1 text-xs font-medium text-violet-600">- {speaker}</p>}
       <p className="mt-2 text-sm text-muted-foreground">{analysis}</p>
     </div>
   )
@@ -115,7 +115,7 @@ export default function WhenGreekMeetsGreekPage() {
           </span>
         </div>
         <h1 className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
-          When Greek Meets Greek &mdash; Complete Revision Guide
+          When Greek Meets Greek - Complete Revision Guide
         </h1>
         <p className="mt-1 text-lg text-muted-foreground">
           Samuel Selvon (earliest printings found: 1965)

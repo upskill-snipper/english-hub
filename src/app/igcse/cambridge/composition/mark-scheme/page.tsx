@@ -95,10 +95,14 @@ const contentBands = [
   },
 ]
 
+// 31 October 2026: these ranges were 1-5, 6-9, 10-13, 14-17, 18-21 and 22-24, the
+// shape of the 25-mark directed writing grid. The 24-mark style and accuracy grid
+// runs 1-4, 5-8, 9-12, 13-16, 17-20 and 21-24 (src/data/mark-scheme-guides/
+// cambridge-0500-paper2.ts, from Cambridge's specimen and June 2024 mark schemes).
 const styleBands = [
   {
     band: '6',
-    marks: '22-24',
+    marks: '21-24',
     label: 'Highly skilful',
     descriptors: [
       'A wide range of ambitious vocabulary used precisely for effect.',
@@ -109,7 +113,7 @@ const styleBands = [
   },
   {
     band: '5',
-    marks: '18-21',
+    marks: '17-20',
     label: 'Skilful',
     descriptors: [
       'A range of ambitious vocabulary used effectively.',
@@ -120,7 +124,7 @@ const styleBands = [
   },
   {
     band: '4',
-    marks: '14-17',
+    marks: '13-16',
     label: 'Competent',
     descriptors: [
       'Vocabulary is mostly clear and sometimes ambitious.',
@@ -130,7 +134,7 @@ const styleBands = [
   },
   {
     band: '3',
-    marks: '10-13',
+    marks: '9-12',
     label: 'Straightforward',
     descriptors: [
       'Vocabulary is mostly simple but usually correct.',
@@ -140,7 +144,7 @@ const styleBands = [
   },
   {
     band: '2',
-    marks: '6-9',
+    marks: '5-8',
     label: 'Limited',
     descriptors: [
       'Vocabulary is simple and often imprecise.',
@@ -150,7 +154,7 @@ const styleBands = [
   },
   {
     band: '1',
-    marks: '1-5',
+    marks: '1-4',
     label: 'Basic',
     descriptors: [
       'Vocabulary is very limited.',

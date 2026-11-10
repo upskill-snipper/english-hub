@@ -85,7 +85,7 @@ export default function SecurityPage() {
 
         <section>
           <h2 className="text-xl font-semibold text-foreground mt-2 mb-3">
-            Good-faith research &mdash; please do
+            Good-faith research - please do
           </h2>
           <ul className="list-disc ps-6 space-y-1 text-muted-foreground">
             <li>Test only against accounts and data you own or have explicit permission to use.</li>
@@ -98,8 +98,8 @@ export default function SecurityPage() {
           <h2 className="text-xl font-semibold text-foreground mt-2 mb-3">Please do not</h2>
           <ul className="list-disc ps-6 space-y-1 text-muted-foreground">
             <li>
-              Access, modify, delete or exfiltrate data belonging to other users &mdash;
-              particularly any data relating to children.
+              Access, modify, delete or exfiltrate data belonging to other users - particularly any
+              data relating to children.
             </li>
             <li>Run denial-of-service tests, spam, or social-engineer our staff or users.</li>
             <li>Publicly disclose an unresolved issue, or test physical or third-party systems.</li>

@@ -121,7 +121,7 @@ const climbingMyGrandfatherPoem: PoemData = {
       annotations: [
         {
           type: 'Detail',
-          note: '"Earth-stained" suggests the grandfather is a man of the outdoors \u2014 perhaps a gardener or farmer. The detail places him in nature and reinforces the landscape metaphor.',
+          note: '"Earth-stained" suggests the grandfather is a man of the outdoors - perhaps a gardener or farmer. The detail places him in nature and reinforces the landscape metaphor.',
           color: '#10b981',
         },
       ],
@@ -166,7 +166,7 @@ const climbingMyGrandfatherPoem: PoemData = {
       annotations: [
         {
           type: 'History',
-          note: 'A scar is a record of a wound, a piece of history written on the body. "Glassy ridge" makes it sound geological \u2014 even injury becomes part of the landscape.',
+          note: 'A scar is a record of a wound, a piece of history written on the body. "Glassy ridge" makes it sound geological - even injury becomes part of the landscape.',
           color: '#10b981',
         },
       ],
@@ -290,7 +290,7 @@ const climbingMyGrandfatherPoem: PoemData = {
       annotations: [
         {
           type: 'Double meaning',
-          note: '"Good heart" works literally (a steady, healthy heartbeat) and metaphorically (the grandfather\'s kind nature). The two meanings fuse \u2014 physical and moral worth are inseparable.',
+          note: '"Good heart" works literally (a steady, healthy heartbeat) and metaphorically (the grandfather\'s kind nature). The two meanings fuse - physical and moral worth are inseparable.',
           color: '#ef4444',
         },
         {
@@ -300,7 +300,7 @@ const climbingMyGrandfatherPoem: PoemData = {
         },
         {
           type: 'Posthumous resonance',
-          note: "Given Waterhouse's early death in 2001, the calm intimacy of the closing image has acquired an additional poignancy \u2014 a record of how deeply a grandchild can know a grandparent.",
+          note: "Given Waterhouse's early death in 2001, the calm intimacy of the closing image has acquired an additional poignancy - a record of how deeply a grandchild can know a grandparent.",
           color: '#8b5cf6',
         },
       ],
@@ -309,19 +309,19 @@ const climbingMyGrandfatherPoem: PoemData = {
 
   context:
     '<p><strong>Andrew Waterhouse (1958\u20132001)</strong> was an English poet and environmentalist from Northumberland. He won the Forward Prize for Best First Collection with <em>In</em> (2000). Tragically, he took his own life in 2001, making his poetry posthumously poignant.</p>' +
-    '<p><strong>"Climbing My Grandfather"</strong> was published in <em>In</em> (2000). The poem uses a single sustained metaphor \u2014 climbing a mountain \u2014 to explore the speaker\'s relationship with his grandfather.</p>' +
+    '<p><strong>"Climbing My Grandfather"</strong> was published in <em>In</em> (2000). The poem uses a single sustained metaphor - climbing a mountain - to explore the speaker\'s relationship with his grandfather.</p>' +
     "<p>The <strong>extended metaphor of mountaineering</strong> transforms the act of getting to know a grandparent into a physical journey. The grandfather's body becomes a landscape to explore, with clothing as terrain and features as geological formations.</p>" +
     '<p>The poem is <strong>entirely positive</strong>. Unlike many poems in the anthology that explore conflict, loss, or difficulty, "Climbing My Grandfather" presents family love as a source of wonder, warmth, and discovery.</p>' +
     "<p>Given Waterhouse's <strong>posthumous publication</strong> and early death, the poem has acquired additional layers of meaning. The view from the summit, of open sky and wheeling birds, can be read as the grandfather looking towards heaven, or as the infinite, ungraspable nature of truly knowing another person.</p>" +
-    '<p>The poem may also reflect on <strong>intergenerational connection</strong> \u2014 how a grandchild can bridge the gap between generations through patient, loving attention to physical detail.</p>',
+    '<p>The poem may also reflect on <strong>intergenerational connection</strong> - how a grandchild can bridge the gap between generations through patient, loving attention to physical detail.</p>',
 
   contextAr:
     '<p><strong>Andrew Waterhouse (1958\u20132001)</strong> \u0634\u0627\u0639\u0631 \u0625\u0646\u062c\u0644\u064a\u0632\u064a \u0648\u0646\u0627\u0634\u0637 \u0628\u064a\u0626\u064a \u0645\u0646 Northumberland. \u0641\u0627\u0632 \u0628\u062c\u0627\u0626\u0632\u0629 Forward Prize \u0644\u0623\u062d\u0633\u0646 \u0645\u062c\u0645\u0648\u0639\u0629 \u0623\u0648\u0644\u0649 \u0639\u0646 \u062f\u064a\u0648\u0627\u0646\u0647 <em>In</em> (2000). \u0644\u0644\u0623\u0633\u0641\u060c \u0623\u0646\u0647\u0649 \u062d\u064a\u0627\u062a\u0647 \u0628\u0646\u0641\u0633\u0647 \u0633\u0646\u0629 2001\u060c \u0648\u0647\u0630\u0627 \u0627\u0644\u0644\u064a \u062e\u0644\u0651\u0649 \u0634\u0639\u0631\u0647 \u062b\u0642\u064a\u0644 \u0639\u0644\u0649 \u0627\u0644\u0642\u0644\u0628 \u0628\u0639\u062f \u0631\u062d\u064a\u0644\u0647.</p>' +
-    '<p>\u0642\u0635\u064a\u062f\u0629 <strong>"Climbing My Grandfather"</strong> \u0627\u0646\u062a\u0634\u0631\u062a \u0641\u064a \u062f\u064a\u0648\u0627\u0646 <em>In</em> (2000). \u0627\u0644\u0642\u0635\u064a\u062f\u0629 \u062a\u0634\u062a\u063a\u0644 \u0639\u0644\u0649 extended metaphor \u0648\u0627\u062d\u062f\u0629 \u2014 \u062a\u0633\u0644\u0651\u0642 \u062c\u0628\u0644 \u2014 \u0639\u0634\u0627\u0646 \u062a\u0633\u062a\u0643\u0634\u0641 \u0639\u0644\u0627\u0642\u0629 \u0627\u0644\u0645\u062a\u0643\u0644\u0651\u0645 \u0628\u062c\u062f\u0651\u0647.</p>' +
+    '<p>\u0642\u0635\u064a\u062f\u0629 <strong>"Climbing My Grandfather"</strong> \u0627\u0646\u062a\u0634\u0631\u062a \u0641\u064a \u062f\u064a\u0648\u0627\u0646 <em>In</em> (2000). \u0627\u0644\u0642\u0635\u064a\u062f\u0629 \u062a\u0634\u062a\u063a\u0644 \u0639\u0644\u0649 extended metaphor \u0648\u0627\u062d\u062f\u0629 - \u062a\u0633\u0644\u0651\u0642 \u062c\u0628\u0644 - \u0639\u0634\u0627\u0646 \u062a\u0633\u062a\u0643\u0634\u0641 \u0639\u0644\u0627\u0642\u0629 \u0627\u0644\u0645\u062a\u0643\u0644\u0651\u0645 \u0628\u062c\u062f\u0651\u0647.</p>' +
     '<p>\u0627\u0644\u0640<strong>extended metaphor</strong> \u0644\u062a\u0633\u0644\u0651\u0642 \u0627\u0644\u062c\u0628\u0627\u0644 \u062a\u062d\u0648\u0651\u0644 \u0641\u0639\u0644 \u0627\u0644\u062a\u0639\u0631\u0651\u0641 \u0639\u0644\u0649 \u0627\u0644\u062c\u062f\u0651 \u0625\u0644\u0649 \u0631\u062d\u0644\u0629 \u062c\u0633\u062f\u064a\u0629. \u062c\u0633\u0645 \u0627\u0644\u062c\u062f\u0651 \u064a\u0635\u064a\u0631 \u0645\u0646\u0638\u0631 \u0637\u0628\u064a\u0639\u064a \u064a\u0633\u062a\u0643\u0634\u0641\u060c \u0648\u0627\u0644\u0645\u0644\u0627\u0628\u0633 \u062a\u0635\u064a\u0631 \u062a\u0636\u0627\u0631\u064a\u0633\u060c \u0648\u0645\u0644\u0627\u0645\u062d \u0627\u0644\u0648\u062c\u0647 \u062a\u0635\u064a\u0631 \u062a\u0643\u0648\u064a\u0646\u0627\u062a \u062c\u064a\u0648\u0644\u0648\u062c\u064a\u0629.</p>' +
     '<p>\u0627\u0644\u0642\u0635\u064a\u062f\u0629 <strong>\u0625\u064a\u062c\u0627\u0628\u064a\u0629 \u0628\u0627\u0644\u0643\u0627\u0645\u0644</strong>. \u0639\u0643\u0633 \u0648\u0627\u064a\u062f \u0642\u0635\u0627\u064a\u062f \u062b\u0627\u0646\u064a\u0629 \u0641\u064a \u0627\u0644\u0623\u0646\u0637\u0648\u0644\u0648\u062c\u064a\u0627 \u0627\u0644\u0644\u064a \u062a\u0634\u062a\u063a\u0644 \u0639\u0644\u0649 \u0627\u0644\u0635\u0631\u0627\u0639 \u0648\u0627\u0644\u0641\u0642\u062f \u0648\u0627\u0644\u0635\u0639\u0648\u0628\u0627\u062a\u060c "Climbing My Grandfather" \u062a\u0642\u062f\u0651\u0645 \u062d\u0628 \u0627\u0644\u0639\u0627\u0626\u0644\u0629 \u0643\u0645\u0635\u062f\u0631 \u062f\u0647\u0634\u0629 \u0648\u062f\u0641\u0621 \u0648\u0627\u0643\u062a\u0634\u0627\u0641.</p>' +
     '<p>بحكم <strong>نشر الديوان قريب من رحيل Waterhouse المبكّر</strong>، القصيدة اكتسبت طبقات معاني إضافية. المنظر من القمة، السما المفتوحة والطيور اللي تحوم، يحتمل قراءتين: الجدّ يتطلّع لورا فوق نحو السماء، أو إن معرفة الإنسان الثاني فعلاً شي لا محدود ولا يدركه أحد.</p>' +
-    '<p>\u0627\u0644\u0642\u0635\u064a\u062f\u0629 \u0643\u0630\u0644\u0643 \u064a\u062d\u062a\u0645\u0644 \u0625\u0646\u0647\u0627 \u062a\u062a\u0623\u0645\u0651\u0644 \u0641\u064a <strong>\u0627\u0644\u062a\u0648\u0627\u0635\u0644 \u0628\u064a\u0646 \u0627\u0644\u0623\u062c\u064a\u0627\u0644</strong> \u2014 \u0643\u064a\u0641 \u0627\u0644\u062d\u0641\u064a\u062f \u064a\u0642\u062f\u0631 \u064a\u0633\u062f \u0627\u0644\u0641\u062c\u0648\u0629 \u0628\u064a\u0646 \u062c\u064a\u0644\u064a\u0646 \u0639\u0646 \u0637\u0631\u064a\u0642 \u0627\u0644\u0627\u0646\u062a\u0628\u0627\u0647 \u0627\u0644\u0635\u0628\u0648\u0631 \u0648\u0627\u0644\u0645\u062d\u0628\u0651 \u0644\u0643\u0644 \u062a\u0641\u0635\u064a\u0644\u0629 \u062c\u0633\u062f\u064a\u0629.</p>',
+    '<p>\u0627\u0644\u0642\u0635\u064a\u062f\u0629 \u0643\u0630\u0644\u0643 \u064a\u062d\u062a\u0645\u0644 \u0625\u0646\u0647\u0627 \u062a\u062a\u0623\u0645\u0651\u0644 \u0641\u064a <strong>\u0627\u0644\u062a\u0648\u0627\u0635\u0644 \u0628\u064a\u0646 \u0627\u0644\u0623\u062c\u064a\u0627\u0644</strong> - \u0643\u064a\u0641 \u0627\u0644\u062d\u0641\u064a\u062f \u064a\u0642\u062f\u0631 \u064a\u0633\u062f \u0627\u0644\u0641\u062c\u0648\u0629 \u0628\u064a\u0646 \u062c\u064a\u0644\u064a\u0646 \u0639\u0646 \u0637\u0631\u064a\u0642 \u0627\u0644\u0627\u0646\u062a\u0628\u0627\u0647 \u0627\u0644\u0635\u0628\u0648\u0631 \u0648\u0627\u0644\u0645\u062d\u0628\u0651 \u0644\u0643\u0644 \u062a\u0641\u0635\u064a\u0644\u0629 \u062c\u0633\u062f\u064a\u0629.</p>',
 
   summary:
     'Lines 1–4: The speaker decides to climb his grandfather "free", with no rope or net, starting at the old, cracked shoes and making an easy "scramble" onto the trousers, where he digs his fingers into the cloth for a hold.\n\n' +

@@ -12,14 +12,14 @@ const characters = [
     name: 'Okonkwo',
     role: 'Protagonist and tragic hero',
     analysis:
-      'Okonkwo is the most powerful warrior in Umuofia, a man who has built his reputation through sheer will against the memory of his lazy, debtor father Unoka. His entire identity is a reaction formation: he equates feeling with weakness, gentleness with effeminacy, and silence with control. Achebe presents this rigidity as both culturally legible \u2014 Umuofia rewards exactly the qualities Okonkwo embodies \u2014 and personally destructive. He kills Ikemefuna against Ezeudu\u2019s advice, beats his wives during sacred weeks, and alienates his son Nwoye. His seven-year exile in Mbanta forces a confrontation with the feminine principle he has suppressed, but he returns unchanged. His final act \u2014 killing the court messenger and then hanging himself \u2014 is simultaneously heroic resistance and proof that his inflexibility has nowhere left to go.',
+      'Okonkwo is the most powerful warrior in Umuofia, a man who has built his reputation through sheer will against the memory of his lazy, debtor father Unoka. His entire identity is a reaction formation: he equates feeling with weakness, gentleness with effeminacy, and silence with control. Achebe presents this rigidity as both culturally legible - Umuofia rewards exactly the qualities Okonkwo embodies - and personally destructive. He kills Ikemefuna against Ezeudu\u2019s advice, beats his wives during sacred weeks, and alienates his son Nwoye. His seven-year exile in Mbanta forces a confrontation with the feminine principle he has suppressed, but he returns unchanged. His final act - killing the court messenger and then hanging himself - is simultaneously heroic resistance and proof that his inflexibility has nowhere left to go.',
     quote: '\u201cHis whole life was dominated by fear, the fear of failure and of weakness.\u201d',
   },
   {
     name: 'Obierika',
     role: 'Okonkwo\u2019s closest friend',
     analysis:
-      'Obierika is Okonkwo\u2019s intellectual counterpart: thoughtful, questioning, and willing to voice doubts about Igbo customs. He refuses to join the expedition to kill Ikemefuna. He questions the exile system. He visits Okonkwo in Mbanta and reports on the missionaries\u2019 progress. Achebe uses Obierika to show that critical thinking about tradition is not a colonial import \u2014 it existed within Igbo culture before the Europeans arrived. His final speech to the District Commissioner, "That man was one of the greatest men in Umuofia", is the novel\u2019s moral verdict.',
+      'Obierika is Okonkwo\u2019s intellectual counterpart: thoughtful, questioning, and willing to voice doubts about Igbo customs. He refuses to join the expedition to kill Ikemefuna. He questions the exile system. He visits Okonkwo in Mbanta and reports on the missionaries\u2019 progress. Achebe uses Obierika to show that critical thinking about tradition is not a colonial import - it existed within Igbo culture before the Europeans arrived. His final speech to the District Commissioner, "That man was one of the greatest men in Umuofia", is the novel\u2019s moral verdict.',
     quote: '\u201cHe has put a knife on the things that held us together ... fallen apart.\u201d',
   },
   {
@@ -33,14 +33,14 @@ const characters = [
     name: 'Ikemefuna',
     role: 'Boy given to Umuofia as settlement',
     analysis:
-      'Ikemefuna lives with Okonkwo\u2019s family for three years and becomes, in effect, Okonkwo\u2019s ideal son: brave, hardworking, and a good influence on Nwoye. His killing \u2014 ordered by the Oracle, carried out by Okonkwo personally \u2014 is the novel\u2019s moral turning point. Achebe makes the reader love Ikemefuna precisely so that his death will be felt as an injustice, not merely a ritual necessity. His final cry, "My father, they have killed me!", implicates Okonkwo irreversibly.',
+      'Ikemefuna lives with Okonkwo\u2019s family for three years and becomes, in effect, Okonkwo\u2019s ideal son: brave, hardworking, and a good influence on Nwoye. His killing - ordered by the Oracle, carried out by Okonkwo personally - is the novel\u2019s moral turning point. Achebe makes the reader love Ikemefuna precisely so that his death will be felt as an injustice, not merely a ritual necessity. His final cry, "My father, they have killed me!", implicates Okonkwo irreversibly.',
     quote: '\u201cMy father, they have killed me!\u201d',
   },
   {
     name: 'Ezinma',
     role: 'Okonkwo\u2019s favourite daughter',
     analysis:
-      'Ezinma is the child of Okonkwo and Ekwefi. She is bold, intelligent, and the only person who can argue with Okonkwo. He repeatedly wishes she had been a boy \u2014 a remark that reveals both his genuine respect for her and his inability to value feminine qualities as such. Ezinma\u2019s survival (she was believed to be an ogbanje, a spirit child destined to die young) makes her precious. She represents the suppressed possibility of a different relationship between strength and gender.',
+      'Ezinma is the child of Okonkwo and Ekwefi. She is bold, intelligent, and the only person who can argue with Okonkwo. He repeatedly wishes she had been a boy - a remark that reveals both his genuine respect for her and his inability to value feminine qualities as such. Ezinma\u2019s survival (she was believed to be an ogbanje, a spirit child destined to die young) makes her precious. She represents the suppressed possibility of a different relationship between strength and gender.',
     quote: '\u201cShe should have been a boy.\u201d \u2014 Okonkwo',
   },
   {
@@ -54,7 +54,7 @@ const characters = [
     name: 'Unoka',
     role: 'Okonkwo\u2019s father',
     analysis:
-      'Unoka is dead before the novel begins but alive in every decision Okonkwo makes. He was a musician, a debtor, and a man who loved conversation and palm-wine but could not feed his family. Achebe presents him with gentle humour \u2014 his response to a creditor who shows him his debt-sticks is genuinely funny \u2014 but refuses to sentimentalise him. Unoka\u2019s failure is real, and its shadow drives the novel\u2019s tragedy.',
+      'Unoka is dead before the novel begins but alive in every decision Okonkwo makes. He was a musician, a debtor, and a man who loved conversation and palm-wine but could not feed his family. Achebe presents him with gentle humour - his response to a creditor who shows him his debt-sticks is genuinely funny - but refuses to sentimentalise him. Unoka\u2019s failure is real, and its shadow drives the novel\u2019s tragedy.',
     quote:
       '\u201cHe was lazy and improvident and was quite incapable of thinking about tomorrow.\u201d',
   },
@@ -76,7 +76,7 @@ const characters = [
     name: 'The District Commissioner',
     role: 'Colonial administrator',
     analysis:
-      'The District Commissioner appears only in the final pages but delivers the novel\u2019s most devastating irony. Looking at Okonkwo\u2019s body, he considers that the man\u2019s story might merit "a reasonable paragraph" in his planned book, The Pacification of the Primitive Tribes of the Lower Niger. Achebe\u2019s entire novel is the answer to that paragraph \u2014 a complete, complex, dignified account of the world the Commissioner can only footnote.',
+      'The District Commissioner appears only in the final pages but delivers the novel\u2019s most devastating irony. Looking at Okonkwo\u2019s body, he considers that the man\u2019s story might merit "a reasonable paragraph" in his planned book, The Pacification of the Primitive Tribes of the Lower Niger. Achebe\u2019s entire novel is the answer to that paragraph - a complete, complex, dignified account of the world the Commissioner can only footnote.',
     quote:
       '\u201cOne could almost write a whole chapter on him. ... but a reasonable paragraph.\u201d',
   },
@@ -112,7 +112,7 @@ export default function ThingsFallApartCharactersPage() {
             Things Fall Apart: Characters
           </h1>
           <p className="mt-3 max-w-2xl text-body-lg text-muted-foreground">
-            Character profiles for Achebe&rsquo;s novel &mdash; Okonkwo, Obierika, Nwoye, Ikemefuna,
+            Character profiles for Achebe&rsquo;s novel - Okonkwo, Obierika, Nwoye, Ikemefuna,
             Ezinma and the missionaries.
           </p>
         </div>

@@ -77,7 +77,7 @@ function QuoteCard({
       <p className="text-sm font-semibold text-violet-800 dark:text-violet-200 italic">
         &ldquo;{quote}&rdquo;
       </p>
-      {speaker && <p className="mt-1 text-xs font-medium text-violet-600">&mdash; {speaker}</p>}
+      {speaker && <p className="mt-1 text-xs font-medium text-violet-600">- {speaker}</p>}
       <p className="mt-2 text-sm text-muted-foreground">{analysis}</p>
     </div>
   )
@@ -133,7 +133,7 @@ export default function JuliusCaesarPage() {
           </span>
         </div>
         <h1 className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
-          Julius Caesar &mdash; Complete Revision Guide
+          Julius Caesar - Complete Revision Guide
         </h1>
         <p className="mt-1 text-lg text-muted-foreground">{tr(`William Shakespeare, c.1599`)}</p>
         <p className="mt-3 max-w-3xl text-muted-foreground leading-relaxed">
@@ -190,8 +190,8 @@ export default function JuliusCaesarPage() {
                   dismisses him as &ldquo;a dreamer.&rdquo; Cassius begins working on Brutus,
                   planting seeds of resentment against Caesar&apos;s growing power. Casca reports
                   that Mark Antony offered Caesar a crown three times, and three times he refused it
-                  &mdash; though Cassius interprets this as performative ambition. A violent storm
-                  rages through Rome, accompanied by supernatural omens, which Cassius reads as
+                  - though Cassius interprets this as performative ambition. A violent storm rages
+                  through Rome, accompanied by supernatural omens, which Cassius reads as
                   nature&apos;s protest against tyranny. By the end of Act 1, the conspirators have
                   agreed to recruit Brutus, knowing his moral reputation will legitimise their plot.
                 </p>
@@ -201,16 +201,15 @@ export default function JuliusCaesarPage() {
                   </p>
                   <ul className="mt-2 space-y-1 text-sm text-muted-foreground">
                     <li>
-                      &bull; The tribunes&apos; rebuke of the commoners &mdash; political fickleness
+                      &bull; The tribunes&apos; rebuke of the commoners - political fickleness
                       exposed
                     </li>
                     <li>
-                      &bull; The Soothsayer&apos;s warning &mdash; &ldquo;Beware the Ides of
-                      March&rdquo;
+                      &bull; The Soothsayer&apos;s warning - &ldquo;Beware the Ides of March&rdquo;
                     </li>
                     <li>&bull; Cassius seduces Brutus through flattery and fabricated letters</li>
-                    <li>&bull; The thrice-refused crown &mdash; Antony&apos;s public theatre</li>
-                    <li>&bull; The supernatural storm &mdash; cosmic disorder foreshadowing</li>
+                    <li>&bull; The thrice-refused crown - Antony&apos;s public theatre</li>
+                    <li>&bull; The supernatural storm - cosmic disorder foreshadowing</li>
                   </ul>
                 </div>
               </div>
@@ -224,7 +223,7 @@ export default function JuliusCaesarPage() {
                 </h4>
                 <p className="mt-2 text-sm text-muted-foreground leading-relaxed">
                   Brutus, alone in his orchard, wrestles with his conscience. He concludes that
-                  Caesar must die not for what he has done but for what he might become &mdash; a
+                  Caesar must die not for what he has done but for what he might become - a
                   pre-emptive killing to protect the Republic. The conspirators meet at
                   Brutus&apos;s house at night. Brutus refuses to allow Cicero to join (claiming he
                   will not follow others) and rejects Cassius&apos;s suggestion that Antony also be
@@ -240,13 +239,11 @@ export default function JuliusCaesarPage() {
                     Key Moments
                   </p>
                   <ul className="mt-2 space-y-1 text-sm text-muted-foreground">
-                    <li>&bull; Brutus&apos;s soliloquy &mdash; rationalising assassination</li>
-                    <li>&bull; The midnight conspiracy meeting &mdash; secrecy and oath-refusal</li>
-                    <li>&bull; Portia&apos;s self-wounding &mdash; demanding emotional honesty</li>
-                    <li>&bull; Calpurnia&apos;s prophetic dream &mdash; bleeding statue</li>
-                    <li>
-                      &bull; Decius reinterprets the dream &mdash; manipulation through flattery
-                    </li>
+                    <li>&bull; Brutus&apos;s soliloquy - rationalising assassination</li>
+                    <li>&bull; The midnight conspiracy meeting - secrecy and oath-refusal</li>
+                    <li>&bull; Portia&apos;s self-wounding - demanding emotional honesty</li>
+                    <li>&bull; Calpurnia&apos;s prophetic dream - bleeding statue</li>
+                    <li>&bull; Decius reinterprets the dream - manipulation through flattery</li>
                   </ul>
                 </div>
               </div>
@@ -265,14 +262,14 @@ export default function JuliusCaesarPage() {
                   surround him; Casca strikes first, and the others follow. Caesar, seeing Brutus
                   among them, utters &ldquo;Et tu, Brute? Then fall, Caesar!&rdquo; and dies. The
                   conspirators bathe their hands in his blood. Antony arrives, feigning friendship
-                  with the conspirators, but Brutus &mdash; against Cassius&apos;s warning &mdash;
-                  permits him to speak at Caesar&apos;s funeral. Brutus addresses the crowd in
-                  measured prose, justifying the killing as patriotic duty: he loved Rome more than
-                  Caesar. The crowd is convinced. Then Antony delivers his masterpiece of rhetoric
-                  &mdash; &ldquo;Friends, Romans, countrymen, lend me your ears&rdquo; &mdash; using
-                  verse, irony, and Caesar&apos;s will to turn the crowd into a vengeful mob. Riots
-                  erupt. The innocent poet Cinna is torn apart simply because he shares the
-                  conspirator&apos;s name. The conspirators flee Rome.
+                  with the conspirators, but Brutus - against Cassius&apos;s warning - permits him
+                  to speak at Caesar&apos;s funeral. Brutus addresses the crowd in measured prose,
+                  justifying the killing as patriotic duty: he loved Rome more than Caesar. The
+                  crowd is convinced. Then Antony delivers his masterpiece of rhetoric -
+                  &ldquo;Friends, Romans, countrymen, lend me your ears&rdquo; - using verse, irony,
+                  and Caesar&apos;s will to turn the crowd into a vengeful mob. Riots erupt. The
+                  innocent poet Cinna is torn apart simply because he shares the conspirator&apos;s
+                  name. The conspirators flee Rome.
                 </p>
                 <div className="mt-3 rounded-lg bg-muted p-3">
                   <p className="text-xs font-semibold text-muted-foreground uppercase tracking-wider">
@@ -280,13 +277,12 @@ export default function JuliusCaesarPage() {
                   </p>
                   <ul className="mt-2 space-y-1 text-sm text-muted-foreground">
                     <li>
-                      &bull; The assassination &mdash; &ldquo;Et tu, Brute? Then fall,
-                      Caesar!&rdquo;
+                      &bull; The assassination - &ldquo;Et tu, Brute? Then fall, Caesar!&rdquo;
                     </li>
-                    <li>&bull; The bloody handwashing &mdash; ritual sacrifice imagery</li>
-                    <li>&bull; Brutus&apos;s prose oration &mdash; logic and patriotism</li>
-                    <li>&bull; Antony&apos;s funeral oration &mdash; rhetorical mastery</li>
-                    <li>&bull; Cinna the Poet murdered &mdash; mob irrationality</li>
+                    <li>&bull; The bloody handwashing - ritual sacrifice imagery</li>
+                    <li>&bull; Brutus&apos;s prose oration - logic and patriotism</li>
+                    <li>&bull; Antony&apos;s funeral oration - rhetorical mastery</li>
+                    <li>&bull; Cinna the Poet murdered - mob irrationality</li>
                   </ul>
                 </div>
               </div>
@@ -299,17 +295,17 @@ export default function JuliusCaesarPage() {
                   Act 4: Civil War and the Quarrel
                 </h4>
                 <p className="mt-2 text-sm text-muted-foreground leading-relaxed">
-                  In Rome, the Second Triumvirate &mdash; Antony, Octavius, and Lepidus &mdash;
-                  coldly draw up a list of political enemies to be executed. Antony privately
-                  dismisses Lepidus as a &ldquo;slight unmeritable man,&rdquo; foreshadowing later
-                  betrayals among the victors. At Sardis, Brutus and Cassius quarrel bitterly.
-                  Cassius accuses Brutus of ingratitude; Brutus accuses Cassius of taking bribes and
-                  condemning honest men. They reconcile, but Brutus then reveals that Portia has
-                  died, having swallowed fire in despair at his absence and Antony&apos;s growing
-                  power. They debate strategy: Cassius argues to wait at Sardis and let the enemy
-                  come to them; Brutus insists on marching to Philippi. As ever, Brutus&apos;s view
-                  prevails. Alone that night, Brutus is visited by the ghost of Caesar, who promises
-                  to meet him &ldquo;at Philippi.&rdquo;
+                  In Rome, the Second Triumvirate - Antony, Octavius, and Lepidus - coldly draw up a
+                  list of political enemies to be executed. Antony privately dismisses Lepidus as a
+                  &ldquo;slight unmeritable man,&rdquo; foreshadowing later betrayals among the
+                  victors. At Sardis, Brutus and Cassius quarrel bitterly. Cassius accuses Brutus of
+                  ingratitude; Brutus accuses Cassius of taking bribes and condemning honest men.
+                  They reconcile, but Brutus then reveals that Portia has died, having swallowed
+                  fire in despair at his absence and Antony&apos;s growing power. They debate
+                  strategy: Cassius argues to wait at Sardis and let the enemy come to them; Brutus
+                  insists on marching to Philippi. As ever, Brutus&apos;s view prevails. Alone that
+                  night, Brutus is visited by the ghost of Caesar, who promises to meet him
+                  &ldquo;at Philippi.&rdquo;
                 </p>
                 <div className="mt-3 rounded-lg bg-muted p-3">
                   <p className="text-xs font-semibold text-muted-foreground uppercase tracking-wider">
@@ -317,13 +313,12 @@ export default function JuliusCaesarPage() {
                   </p>
                   <ul className="mt-2 space-y-1 text-sm text-muted-foreground">
                     <li>
-                      &bull; The Triumvirate&apos;s proscription list &mdash; cold political
-                      pragmatism
+                      &bull; The Triumvirate&apos;s proscription list - cold political pragmatism
                     </li>
-                    <li>&bull; Antony&apos;s contempt for Lepidus &mdash; new tyranny emerging</li>
-                    <li>&bull; The Brutus/Cassius quarrel &mdash; cracks in the conspiracy</li>
-                    <li>&bull; Portia&apos;s death &mdash; Brutus&apos;s stoic restraint</li>
-                    <li>&bull; The ghost of Caesar &mdash; supernatural vengeance</li>
+                    <li>&bull; Antony&apos;s contempt for Lepidus - new tyranny emerging</li>
+                    <li>&bull; The Brutus/Cassius quarrel - cracks in the conspiracy</li>
+                    <li>&bull; Portia&apos;s death - Brutus&apos;s stoic restraint</li>
+                    <li>&bull; The ghost of Caesar - supernatural vengeance</li>
                   </ul>
                 </div>
               </div>
@@ -355,13 +350,12 @@ export default function JuliusCaesarPage() {
                     Key Moments
                   </p>
                   <ul className="mt-2 space-y-1 text-sm text-muted-foreground">
-                    <li>&bull; The pre-battle parley &mdash; rhetoric replaced by force</li>
-                    <li>&bull; Cassius&apos;s suicide on his birthday &mdash; tragic irony</li>
-                    <li>&bull; Titinius&apos;s death &mdash; loyalty to the end</li>
-                    <li>&bull; Brutus&apos;s suicide &mdash; choosing honour over capture</li>
+                    <li>&bull; The pre-battle parley - rhetoric replaced by force</li>
+                    <li>&bull; Cassius&apos;s suicide on his birthday - tragic irony</li>
+                    <li>&bull; Titinius&apos;s death - loyalty to the end</li>
+                    <li>&bull; Brutus&apos;s suicide - choosing honour over capture</li>
                     <li>
-                      &bull; Antony&apos;s eulogy &mdash; &ldquo;the noblest Roman of them
-                      all&rdquo;
+                      &bull; Antony&apos;s eulogy - &ldquo;the noblest Roman of them all&rdquo;
                     </li>
                   </ul>
                 </div>
@@ -577,9 +571,9 @@ export default function JuliusCaesarPage() {
                   ritual. Antony pretends to shake those bloody hands, then weeps over Caesar&apos;s
                   &ldquo;bleeding piece of earth.&rdquo; In the funeral oration he displays
                   Caesar&apos;s mantle and wounds as ocular proof. Blood signifies both sacred
-                  sacrifice (Brutus&apos;s framing) and desecration (Antony&apos;s framing) &mdash;
-                  the same liquid carrying opposite meanings depending on the rhetoric applied. The
-                  play asks: who controls the meaning of blood?
+                  sacrifice (Brutus&apos;s framing) and desecration (Antony&apos;s framing) - the
+                  same liquid carrying opposite meanings depending on the rhetoric applied. The play
+                  asks: who controls the meaning of blood?
                 </p>
               </div>
               <div className="rounded-lg bg-muted p-4">
@@ -588,11 +582,11 @@ export default function JuliusCaesarPage() {
                   The bloodied cloak Caesar wore at the assassination becomes Antony&apos;s most
                   powerful prop. He displays it to the crowd, pointing to specific tears made by
                   specific conspirators, narrating each blow. The mantle materialises Caesar&apos;s
-                  body &mdash; making the absent victim physically present. Antony exploits the
-                  Roman context that the cloak Caesar wore the day of his triumph over the Nervii is
-                  also the cloak in which he died, layering victorious triumph with brutal betrayal.
-                  The mantle is a synecdoche for the body, and through it the dead Caesar speaks
-                  louder than any living orator.
+                  body - making the absent victim physically present. Antony exploits the Roman
+                  context that the cloak Caesar wore the day of his triumph over the Nervii is also
+                  the cloak in which he died, layering victorious triumph with brutal betrayal. The
+                  mantle is a synecdoche for the body, and through it the dead Caesar speaks louder
+                  than any living orator.
                 </p>
               </div>
               <div className="rounded-lg bg-muted p-4">
@@ -636,11 +630,11 @@ export default function JuliusCaesarPage() {
                   The play dramatises events of February to October 44 BC and the battles of
                   Philippi in 42 BC. Julius Caesar had defeated Pompey and his sons in the civil
                   war, returning to Rome as virtual dictator. He had been declared &ldquo;dictator
-                  perpetuo&rdquo; (dictator for life). The Senate &mdash; nominally the governing
-                  body of the Republic &mdash; feared that he would accept the title of king (rex),
-                  which Romans had hated since the expulsion of Tarquinius Superbus in 509 BC. The
-                  conspirators saw themselves as defenders of the 500-year-old Republic against
-                  incipient monarchy. Their failure ushered in the Empire under Octavian (Augustus).
+                  perpetuo&rdquo; (dictator for life). The Senate - nominally the governing body of
+                  the Republic - feared that he would accept the title of king (rex), which Romans
+                  had hated since the expulsion of Tarquinius Superbus in 509 BC. The conspirators
+                  saw themselves as defenders of the 500-year-old Republic against incipient
+                  monarchy. Their failure ushered in the Empire under Octavian (Augustus).
                 </p>
               </div>
               <div className="rounded-lg bg-primary/10 p-4">
@@ -654,8 +648,8 @@ export default function JuliusCaesarPage() {
                   Jacques Amyot&apos;s French version rather than directly from the Greek.
                   Shakespeare drew especially on the lives of Caesar, Brutus, and Antony, often
                   following North&apos;s phrasing closely. Some lines from the play are nearly
-                  verbatim from North. Plutarch&apos;s moralistic biographical method &mdash;
-                  comparing pairs of Greek and Roman figures to draw ethical lessons &mdash; shaped
+                  verbatim from North. Plutarch&apos;s moralistic biographical method - comparing
+                  pairs of Greek and Roman figures to draw ethical lessons - shaped
                   Shakespeare&apos;s tendency to weigh Caesar and Brutus as moral types rather than
                   purely historical figures.
                 </p>
@@ -665,10 +659,10 @@ export default function JuliusCaesarPage() {
                 <p className="mt-1 text-sm text-muted-foreground leading-relaxed">
                   When Shakespeare wrote the play around 1599, Queen Elizabeth I was 66 years old,
                   childless, and refused to name a successor. England feared civil war on her death.
-                  The play&apos;s questions &mdash; what to do with an over-mighty ruler, when (if
-                  ever) is political assassination justified, how does power transfer peacefully
-                  &mdash; were not antiquarian but urgent. Caesar&apos;s death produced civil war
-                  and a new dictatorship; Elizabethan audiences would have found the warning highly
+                  The play&apos;s questions - what to do with an over-mighty ruler, when (if ever)
+                  is political assassination justified, how does power transfer peacefully - were
+                  not antiquarian but urgent. Caesar&apos;s death produced civil war and a new
+                  dictatorship; Elizabethan audiences would have found the warning highly
                   contemporary. The Earl of Essex&apos;s rebellion in 1601 (against Elizabeth) and
                   the famous use of Shakespeare&apos;s <em>{tr(`Richard II`)}</em> by his supporters
                   confirm how directly Elizabethan theatre engaged with succession politics.
@@ -680,12 +674,11 @@ export default function JuliusCaesarPage() {
                   Julius Caesar is widely thought to be one of the first plays performed at the new
                   Globe Theatre, which opened in 1599 on the south bank of the Thames. Thomas
                   Platter, a Swiss tourist, recorded seeing a tragedy of Julius Caesar at a London
-                  playhouse on 21 September 1599 &mdash; very likely Shakespeare&apos;s play at the
-                  Globe. The Globe&apos;s features (large open-air arena, populist groundlings, no
-                  scenery) shaped the play&apos;s rhetorical style: the funeral oration scene
-                  depends on the actor commanding a real, noisy crowd. The play&apos;s focus on
-                  public speech and crowd manipulation reflects the new theatre&apos;s scale and
-                  audience.
+                  playhouse on 21 September 1599 - very likely Shakespeare&apos;s play at the Globe.
+                  The Globe&apos;s features (large open-air arena, populist groundlings, no scenery)
+                  shaped the play&apos;s rhetorical style: the funeral oration scene depends on the
+                  actor commanding a real, noisy crowd. The play&apos;s focus on public speech and
+                  crowd manipulation reflects the new theatre&apos;s scale and audience.
                 </p>
               </div>
               <div className="rounded-lg bg-primary/10 p-4">
@@ -700,7 +693,7 @@ export default function JuliusCaesarPage() {
                   Machiavelli and Erasmus had recently engaged with it. Tudor political thought was
                   ambivalent: official ideology defended monarchy and the divine right of kings, yet
                   humanist scholarship celebrated republican virtue. Shakespeare&apos;s Brutus
-                  embodies this tension &mdash; revered for principle, doomed for naivety.
+                  embodies this tension - revered for principle, doomed for naivety.
                 </p>
               </div>
               <div className="rounded-lg bg-primary/10 p-4">
@@ -710,7 +703,7 @@ export default function JuliusCaesarPage() {
                 <p className="mt-1 text-sm text-muted-foreground leading-relaxed">
                   Brutus and Portia are explicitly Stoics. Stoicism taught that virtue is the only
                   good and that the wise man should remain calm in the face of fortune, illness, and
-                  death &mdash; even welcoming suicide as the rational response to dishonour. Cato,
+                  death - even welcoming suicide as the rational response to dishonour. Cato,
                   Portia&apos;s father, was the most famous Stoic of the late Republic, killing
                   himself rather than submit to Caesar at Utica in 46 BC. Brutus&apos;s suppression
                   of grief at Portia&apos;s death and his composed suicide reflect Stoic ideals.
@@ -731,14 +724,13 @@ export default function JuliusCaesarPage() {
                   Five-Act Structure with Mid-Play Climax
                 </h4>
                 <p className="mt-1 text-sm text-muted-foreground leading-relaxed">
-                  Unusually, the title character dies at the end of Act 3, scene 1 &mdash; almost
-                  exactly the structural midpoint. This challenges Aristotelian convention. The play
-                  is really two halves: the first three acts build to the assassination; the last
-                  two trace its consequences. This bipartite shape reflects the play&apos;s central
-                  question &mdash; what comes after the killing? &mdash; and dramatises how
-                  political violence does not produce the resolution its perpetrators imagine.
-                  Caesar&apos;s body lies on the stage at the centre of the play, around which the
-                  entire structure pivots.
+                  Unusually, the title character dies at the end of Act 3, scene 1 - almost exactly
+                  the structural midpoint. This challenges Aristotelian convention. The play is
+                  really two halves: the first three acts build to the assassination; the last two
+                  trace its consequences. This bipartite shape reflects the play&apos;s central
+                  question - what comes after the killing? - and dramatises how political violence
+                  does not produce the resolution its perpetrators imagine. Caesar&apos;s body lies
+                  on the stage at the centre of the play, around which the entire structure pivots.
                 </p>
               </div>
               <div className="rounded-lg bg-muted p-4">
@@ -746,12 +738,12 @@ export default function JuliusCaesarPage() {
                 <p className="mt-1 text-sm text-muted-foreground leading-relaxed">
                   Shakespeare&apos;s use of verse and prose is meaningful throughout. Aristocrats
                   speak in blank verse; the plebeians and the Cobbler in prose. Crucially,
-                  Brutus&apos;s funeral oration is delivered in measured, balanced prose &mdash; a
-                  reasoned, philosophical appeal &mdash; while Antony&apos;s reply is in passionate
-                  iambic pentameter. The shift from prose to verse signals the shift from
-                  rationality to emotion, and Antony&apos;s rhetorical superiority is partly
-                  metrical: his lines have momentum, music, and flow that Brutus&apos;s controlled
-                  cadences cannot match.
+                  Brutus&apos;s funeral oration is delivered in measured, balanced prose - a
+                  reasoned, philosophical appeal - while Antony&apos;s reply is in passionate iambic
+                  pentameter. The shift from prose to verse signals the shift from rationality to
+                  emotion, and Antony&apos;s rhetorical superiority is partly metrical: his lines
+                  have momentum, music, and flow that Brutus&apos;s controlled cadences cannot
+                  match.
                 </p>
               </div>
               <div className="rounded-lg bg-muted p-4">
@@ -799,12 +791,12 @@ export default function JuliusCaesarPage() {
                 <p className="mt-1 text-sm text-muted-foreground leading-relaxed">
                   Caesar&apos;s ghost appears to Brutus at the end of Act 4, identifying itself as
                   &ldquo;thy evil spirit&rdquo; and promising to meet him at Philippi. Structurally,
-                  this is the moment when Caesar &mdash; physically dead since Act 3 &mdash; returns
-                  as supernatural force. The ghost personifies the way Caesar&apos;s power outlives
-                  his body: through the will, through Antony&apos;s rhetoric, through
-                  Octavius&apos;s rise. The ghost also confirms the supernatural framework set up by
-                  the omens of Act 1, ensuring that the play&apos;s metaphysical claims are not
-                  merely human superstition but dramatically real.
+                  this is the moment when Caesar - physically dead since Act 3 - returns as
+                  supernatural force. The ghost personifies the way Caesar&apos;s power outlives his
+                  body: through the will, through Antony&apos;s rhetoric, through Octavius&apos;s
+                  rise. The ghost also confirms the supernatural framework set up by the omens of
+                  Act 1, ensuring that the play&apos;s metaphysical claims are not merely human
+                  superstition but dramatically real.
                 </p>
               </div>
             </div>
@@ -839,7 +831,7 @@ export default function JuliusCaesarPage() {
                   </div>
                   <div>
                     <p className="text-xs font-semibold text-violet-700 dark:text-violet-300 uppercase tracking-wider">
-                      Paragraph 1 &mdash; Brutus&apos;s self-image as honourable
+                      Paragraph 1 - Brutus&apos;s self-image as honourable
                     </p>
                     <p className="mt-1 text-sm text-muted-foreground">
                       &ldquo;Let&apos;s carve him as a dish fit for the gods.&rdquo; Brutus elevates
@@ -850,7 +842,7 @@ export default function JuliusCaesarPage() {
                   </div>
                   <div>
                     <p className="text-xs font-semibold text-violet-700 dark:text-violet-300 uppercase tracking-wider">
-                      Paragraph 2 &mdash; Caesar&apos;s ambiguous ambition
+                      Paragraph 2 - Caesar&apos;s ambiguous ambition
                     </p>
                     <p className="mt-1 text-sm text-muted-foreground">
                       The thrice-refused crown is theatre. Caesar speaks of himself as
@@ -862,7 +854,7 @@ export default function JuliusCaesarPage() {
                   </div>
                   <div>
                     <p className="text-xs font-semibold text-violet-700 dark:text-violet-300 uppercase tracking-wider">
-                      Paragraph 3 &mdash; Antony&apos;s rhetorical inversion
+                      Paragraph 3 - Antony&apos;s rhetorical inversion
                     </p>
                     <p className="mt-1 text-sm text-muted-foreground">
                       &ldquo;For Brutus is an honourable man.&rdquo; Antony empties the word through
@@ -874,7 +866,7 @@ export default function JuliusCaesarPage() {
                   </div>
                   <div>
                     <p className="text-xs font-semibold text-violet-700 dark:text-violet-300 uppercase tracking-wider">
-                      Paragraph 4 &mdash; Final equilibrium in Antony&apos;s eulogy
+                      Paragraph 4 - Final equilibrium in Antony&apos;s eulogy
                     </p>
                     <p className="mt-1 text-sm text-muted-foreground">
                       &ldquo;This was the noblest Roman of them all.&rdquo; Antony retroactively
@@ -917,7 +909,7 @@ export default function JuliusCaesarPage() {
                   </div>
                   <div>
                     <p className="text-xs font-semibold text-violet-700 dark:text-violet-300 uppercase tracking-wider">
-                      Paragraph 1 &mdash; Cassius&apos;s seduction of Brutus
+                      Paragraph 1 - Cassius&apos;s seduction of Brutus
                     </p>
                     <p className="mt-1 text-sm text-muted-foreground">
                       &ldquo;The fault, dear Brutus, is not in our stars, / But in ourselves, that
@@ -928,17 +920,17 @@ export default function JuliusCaesarPage() {
                   </div>
                   <div>
                     <p className="text-xs font-semibold text-violet-700 dark:text-violet-300 uppercase tracking-wider">
-                      Paragraph 2 &mdash; Brutus&apos;s funeral oration
+                      Paragraph 2 - Brutus&apos;s funeral oration
                     </p>
                     <p className="mt-1 text-sm text-muted-foreground">
                       Brutus&apos;s prose is balanced, rational, philosophical. The plebeians are
-                      persuaded. Shakespeare shows reasoned argument can prevail &mdash; but only
-                      when unopposed.
+                      persuaded. Shakespeare shows reasoned argument can prevail - but only when
+                      unopposed.
                     </p>
                   </div>
                   <div>
                     <p className="text-xs font-semibold text-violet-700 dark:text-violet-300 uppercase tracking-wider">
-                      Paragraph 3 &mdash; Antony&apos;s funeral oration
+                      Paragraph 3 - Antony&apos;s funeral oration
                     </p>
                     <p className="mt-1 text-sm text-muted-foreground">
                       &ldquo;Friends, Romans, countrymen, lend me your ears.&rdquo; Antony reverses
@@ -949,7 +941,7 @@ export default function JuliusCaesarPage() {
                   </div>
                   <div>
                     <p className="text-xs font-semibold text-violet-700 dark:text-violet-300 uppercase tracking-wider">
-                      Paragraph 4 &mdash; Cinna the Poet
+                      Paragraph 4 - Cinna the Poet
                     </p>
                     <p className="mt-1 text-sm text-muted-foreground">
                       Once rhetoric has unleashed the mob, language no longer functions. Cinna is
@@ -981,18 +973,18 @@ export default function JuliusCaesarPage() {
                   </div>
                   <div>
                     <p className="text-xs font-semibold text-violet-700 dark:text-violet-300 uppercase tracking-wider">
-                      Paragraph 1 &mdash; Cassius&apos;s defence of free will
+                      Paragraph 1 - Cassius&apos;s defence of free will
                     </p>
                     <p className="mt-1 text-sm text-muted-foreground">
                       &ldquo;The fault, dear Brutus, is not in our stars, / But in ourselves.&rdquo;
                       Cassius&apos;s humanism rejects astrological determinism. He uses free will to
-                      recruit conspirators &mdash; yet ironically dies on his birthday, suggesting
-                      fate has its way regardless.
+                      recruit conspirators - yet ironically dies on his birthday, suggesting fate
+                      has its way regardless.
                     </p>
                   </div>
                   <div>
                     <p className="text-xs font-semibold text-violet-700 dark:text-violet-300 uppercase tracking-wider">
-                      Paragraph 2 &mdash; The omens always prove right
+                      Paragraph 2 - The omens always prove right
                     </p>
                     <p className="mt-1 text-sm text-muted-foreground">
                       The Soothsayer, Calpurnia&apos;s dream, the storm, the augurers&apos; failure.
@@ -1003,25 +995,24 @@ export default function JuliusCaesarPage() {
                   </div>
                   <div>
                     <p className="text-xs font-semibold text-violet-700 dark:text-violet-300 uppercase tracking-wider">
-                      Paragraph 3 &mdash; Caesar&apos;s ghost at Philippi
+                      Paragraph 3 - Caesar&apos;s ghost at Philippi
                     </p>
                     <p className="mt-1 text-sm text-muted-foreground">
-                      The ghost promises to meet Brutus at Philippi &mdash; and does. The
-                      supernatural literally returns to enforce its promise. Brutus&apos;s suicide
-                      quotation &mdash; &ldquo;Caesar, now be still: / I kill&apos;d not thee with
-                      half so good a will&rdquo; &mdash; acknowledges Caesar&apos;s posthumous
-                      victory.
+                      The ghost promises to meet Brutus at Philippi - and does. The supernatural
+                      literally returns to enforce its promise. Brutus&apos;s suicide quotation -
+                      &ldquo;Caesar, now be still: / I kill&apos;d not thee with half so good a
+                      will&rdquo; - acknowledges Caesar&apos;s posthumous victory.
                     </p>
                   </div>
                   <div>
                     <p className="text-xs font-semibold text-violet-700 dark:text-violet-300 uppercase tracking-wider">
-                      Paragraph 4 &mdash; Yet choices still matter
+                      Paragraph 4 - Yet choices still matter
                     </p>
                     <p className="mt-1 text-sm text-muted-foreground">
-                      Brutus&apos;s three crucial choices &mdash; sparing Antony, allowing the
-                      funeral oration, marching to Philippi &mdash; show that human decisions shape
-                      outcomes. The tragedy is precisely that Brutus had agency to act differently.
-                      Determinism and choice coexist as the play&apos;s irreducible paradox.
+                      Brutus&apos;s three crucial choices - sparing Antony, allowing the funeral
+                      oration, marching to Philippi - show that human decisions shape outcomes. The
+                      tragedy is precisely that Brutus had agency to act differently. Determinism
+                      and choice coexist as the play&apos;s irreducible paradox.
                     </p>
                   </div>
                 </div>
@@ -1046,7 +1037,7 @@ export default function JuliusCaesarPage() {
                   </div>
                   <div>
                     <p className="text-xs font-semibold text-violet-700 dark:text-violet-300 uppercase tracking-wider">
-                      Paragraph 1 &mdash; Caesar as public monument
+                      Paragraph 1 - Caesar as public monument
                     </p>
                     <p className="mt-1 text-sm text-muted-foreground">
                       Caesar speaks of himself in the third person: &ldquo;Caesar shall
@@ -1057,7 +1048,7 @@ export default function JuliusCaesarPage() {
                   </div>
                   <div>
                     <p className="text-xs font-semibold text-violet-700 dark:text-violet-300 uppercase tracking-wider">
-                      Paragraph 2 &mdash; Brutus&apos;s orchard soliloquy
+                      Paragraph 2 - Brutus&apos;s orchard soliloquy
                     </p>
                     <p className="mt-1 text-sm text-muted-foreground">
                       In private at night, Brutus reveals the agony beneath his stoic surface. The
@@ -1067,7 +1058,7 @@ export default function JuliusCaesarPage() {
                   </div>
                   <div>
                     <p className="text-xs font-semibold text-violet-700 dark:text-violet-300 uppercase tracking-wider">
-                      Paragraph 3 &mdash; Portia&apos;s self-wounding
+                      Paragraph 3 - Portia&apos;s self-wounding
                     </p>
                     <p className="mt-1 text-sm text-muted-foreground">
                       &ldquo;Giving myself a voluntary wound / Here, in the thigh.&rdquo; Portia
@@ -1077,7 +1068,7 @@ export default function JuliusCaesarPage() {
                   </div>
                   <div>
                     <p className="text-xs font-semibold text-violet-700 dark:text-violet-300 uppercase tracking-wider">
-                      Paragraph 4 &mdash; Antony&apos;s political masks
+                      Paragraph 4 - Antony&apos;s political masks
                     </p>
                     <p className="mt-1 text-sm text-muted-foreground">
                       In the soliloquy over Caesar&apos;s body, Antony&apos;s grief is private and
@@ -1108,7 +1099,7 @@ export default function JuliusCaesarPage() {
                   </div>
                   <div>
                     <p className="text-xs font-semibold text-violet-700 dark:text-violet-300 uppercase tracking-wider">
-                      Paragraph 1 &mdash; High standing and noble nature
+                      Paragraph 1 - High standing and noble nature
                     </p>
                     <p className="mt-1 text-sm text-muted-foreground">
                       Brutus is descended from the founder of the Republic. He carries inherited
@@ -1119,7 +1110,7 @@ export default function JuliusCaesarPage() {
                   </div>
                   <div>
                     <p className="text-xs font-semibold text-violet-700 dark:text-violet-300 uppercase tracking-wider">
-                      Paragraph 2 &mdash; Hamartia: idealism without political wisdom
+                      Paragraph 2 - Hamartia: idealism without political wisdom
                     </p>
                     <p className="mt-1 text-sm text-muted-foreground">
                       Three fatal errors: sparing Antony, granting the funeral, marching to
@@ -1130,7 +1121,7 @@ export default function JuliusCaesarPage() {
                   </div>
                   <div>
                     <p className="text-xs font-semibold text-violet-700 dark:text-violet-300 uppercase tracking-wider">
-                      Paragraph 3 &mdash; Anagnorisis (recognition)
+                      Paragraph 3 - Anagnorisis (recognition)
                     </p>
                     <p className="mt-1 text-sm text-muted-foreground">
                       &ldquo;Caesar, now be still: / I kill&apos;d not thee with half so good a
@@ -1140,7 +1131,7 @@ export default function JuliusCaesarPage() {
                   </div>
                   <div>
                     <p className="text-xs font-semibold text-violet-700 dark:text-violet-300 uppercase tracking-wider">
-                      Paragraph 4 &mdash; Counter-argument: complicity in murder
+                      Paragraph 4 - Counter-argument: complicity in murder
                     </p>
                     <p className="mt-1 text-sm text-muted-foreground">
                       Unlike Hamlet or Othello, Brutus participates willingly in killing an unarmed
@@ -1170,7 +1161,7 @@ export default function JuliusCaesarPage() {
                   </div>
                   <div>
                     <p className="text-xs font-semibold text-violet-700 dark:text-violet-300 uppercase tracking-wider">
-                      Paragraph 1 &mdash; Caesar and Brutus
+                      Paragraph 1 - Caesar and Brutus
                     </p>
                     <p className="mt-1 text-sm text-muted-foreground">
                       &ldquo;Et tu, Brute? Then fall, Caesar!&rdquo; The Latin marks the moment
@@ -1180,7 +1171,7 @@ export default function JuliusCaesarPage() {
                   </div>
                   <div>
                     <p className="text-xs font-semibold text-violet-700 dark:text-violet-300 uppercase tracking-wider">
-                      Paragraph 2 &mdash; Antony and Caesar
+                      Paragraph 2 - Antony and Caesar
                     </p>
                     <p className="mt-1 text-sm text-muted-foreground">
                       &ldquo;O, pardon me, thou bleeding piece of earth.&rdquo; Antony&apos;s grief
@@ -1190,7 +1181,7 @@ export default function JuliusCaesarPage() {
                   </div>
                   <div>
                     <p className="text-xs font-semibold text-violet-700 dark:text-violet-300 uppercase tracking-wider">
-                      Paragraph 3 &mdash; Brutus and Cassius
+                      Paragraph 3 - Brutus and Cassius
                     </p>
                     <p className="mt-1 text-sm text-muted-foreground">
                       The Sardis quarrel becomes the play&apos;s most touching reconciliation.
@@ -1217,7 +1208,7 @@ export default function JuliusCaesarPage() {
                   </div>
                   <div>
                     <p className="text-xs font-semibold text-violet-700 dark:text-violet-300 uppercase tracking-wider">
-                      Paragraph 1 &mdash; The Soothsayer
+                      Paragraph 1 - The Soothsayer
                     </p>
                     <p className="mt-1 text-sm text-muted-foreground">
                       &ldquo;Beware the Ides of March.&rdquo; Caesar dismisses the warning as
@@ -1227,7 +1218,7 @@ export default function JuliusCaesarPage() {
                   </div>
                   <div>
                     <p className="text-xs font-semibold text-violet-700 dark:text-violet-300 uppercase tracking-wider">
-                      Paragraph 2 &mdash; The storm and Calpurnia&apos;s dream
+                      Paragraph 2 - The storm and Calpurnia&apos;s dream
                     </p>
                     <p className="mt-1 text-sm text-muted-foreground">
                       The wild storm and the dream of the bleeding statue create Gothic atmosphere
@@ -1236,7 +1227,7 @@ export default function JuliusCaesarPage() {
                   </div>
                   <div>
                     <p className="text-xs font-semibold text-violet-700 dark:text-violet-300 uppercase tracking-wider">
-                      Paragraph 3 &mdash; Caesar&apos;s ghost
+                      Paragraph 3 - Caesar&apos;s ghost
                     </p>
                     <p className="mt-1 text-sm text-muted-foreground">
                       The ghost confirms that Caesar&apos;s power outlives his body. The
@@ -1263,7 +1254,7 @@ export default function JuliusCaesarPage() {
                   </div>
                   <div>
                     <p className="text-xs font-semibold text-violet-700 dark:text-violet-300 uppercase tracking-wider">
-                      Paragraph 1 &mdash; Underestimated
+                      Paragraph 1 - Underestimated
                     </p>
                     <p className="mt-1 text-sm text-muted-foreground">
                       Brutus dismisses Antony as &ldquo;but a limb of Caesar.&rdquo; This judgement
@@ -1273,7 +1264,7 @@ export default function JuliusCaesarPage() {
                   </div>
                   <div>
                     <p className="text-xs font-semibold text-violet-700 dark:text-violet-300 uppercase tracking-wider">
-                      Paragraph 2 &mdash; Master of rhetoric
+                      Paragraph 2 - Master of rhetoric
                     </p>
                     <p className="mt-1 text-sm text-muted-foreground">
                       &ldquo;Friends, Romans, countrymen, lend me your ears.&rdquo; Antony deploys
@@ -1282,7 +1273,7 @@ export default function JuliusCaesarPage() {
                   </div>
                   <div>
                     <p className="text-xs font-semibold text-violet-700 dark:text-violet-300 uppercase tracking-wider">
-                      Paragraph 3 &mdash; Cold political operator
+                      Paragraph 3 - Cold political operator
                     </p>
                     <p className="mt-1 text-sm text-muted-foreground">
                       By Act 4 Antony is signing death warrants and dismissing Lepidus. His final
@@ -1326,8 +1317,8 @@ export default function JuliusCaesarPage() {
                 2. The Death of the Title Character at the Midpoint
               </h4>
               <p className="mt-2 text-sm text-muted-foreground leading-relaxed">
-                Caesar dies at the end of Act 3, scene 1 &mdash; the structural midpoint. This is
-                unusual in tragedy and signals that the play is not really about Caesar but about
+                Caesar dies at the end of Act 3, scene 1 - the structural midpoint. This is unusual
+                in tragedy and signals that the play is not really about Caesar but about
                 Caesar&apos;s aftermath. The structural choice argues that political assassination
                 does not produce resolution. Caesar&apos;s body lying on stage becomes the centre
                 around which the entire play pivots. He grows more powerful in death than in life:
@@ -1349,8 +1340,8 @@ export default function JuliusCaesarPage() {
                 performs emotional immediacy. The Aristotelian appeals correspond: Brutus relies on
                 logos, Antony on pathos and ethos. A top-band reading argues that Shakespeare is
                 staging the tension between two models of public discourse, one rational and stoic,
-                one emotive and populist &mdash; with the latter winning, sounding a note of warning
-                about democratic politics.
+                one emotive and populist - with the latter winning, sounding a note of warning about
+                democratic politics.
               </p>
             </div>
             <div className="rounded-lg border border-violet-500/30 bg-violet-500/5 p-4">
@@ -1388,14 +1379,13 @@ export default function JuliusCaesarPage() {
                 6. Stoicism as Both Strength and Limitation
               </h4>
               <p className="mt-2 text-sm text-muted-foreground leading-relaxed">
-                Brutus and Portia are explicitly Stoic, and Stoicism gives them their nobility
-                &mdash; the composure to face death, the willingness to suffer for principle. Yet
-                Shakespeare also shows its dangers. Brutus&apos;s suppression of emotion at
-                Portia&apos;s death is admirable but inhuman. His refusal to allow his fellow
-                conspirators to swear an oath is principled but politically naive. Stoicism gives
-                Brutus the strength to act but blinds him to others&apos; less philosophical
-                motivations. Shakespeare critically tests classical philosophy against the messiness
-                of political life.
+                Brutus and Portia are explicitly Stoic, and Stoicism gives them their nobility - the
+                composure to face death, the willingness to suffer for principle. Yet Shakespeare
+                also shows its dangers. Brutus&apos;s suppression of emotion at Portia&apos;s death
+                is admirable but inhuman. His refusal to allow his fellow conspirators to swear an
+                oath is principled but politically naive. Stoicism gives Brutus the strength to act
+                but blinds him to others&apos; less philosophical motivations. Shakespeare
+                critically tests classical philosophy against the messiness of political life.
               </p>
             </div>
             <div className="rounded-lg border border-violet-500/30 bg-violet-500/5 p-4">
@@ -1407,7 +1397,7 @@ export default function JuliusCaesarPage() {
                 done? He has won wars, refused the crown three times, and pardoned his enemies
                 (including Brutus and Cassius). He shows political prudence in dismissing Cassius as
                 dangerous but does nothing against him. Brutus admits in his soliloquy that he must
-                kill Caesar not for what he is but for what he might become &mdash; a pre-emptive
+                kill Caesar not for what he is but for what he might become - a pre-emptive
                 justification that requires speculation rather than evidence. Shakespeare
                 deliberately places the audience in a position where the assassination cannot be
                 morally certain. This is the play&apos;s most uncomfortable challenge to political
@@ -1551,7 +1541,7 @@ export default function JuliusCaesarPage() {
             <span className="mt-0.5 h-1.5 w-1.5 shrink-0 rounded-full bg-accent" />
             <span>
               <strong>{tr(`Address the whole play.`)}</strong> Don&apos;t focus only on the
-              assassination scene &mdash; the second half (Acts 4 and 5) is essential for showing
+              assassination scene - the second half (Acts 4 and 5) is essential for showing
               consequences and Brutus&apos;s tragic arc.
             </span>
           </li>

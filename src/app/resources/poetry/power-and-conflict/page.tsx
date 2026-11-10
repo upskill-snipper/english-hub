@@ -134,7 +134,7 @@ function ThemeTag({ theme }: { theme: string }) {
 function ComparisonSuggestion({ poem, reason }: { poem: string; reason: string }) {
   return (
     <li className="text-sm text-muted-foreground">
-      <span className="font-semibold text-foreground">{poem}</span> &mdash; {reason}
+      <span className="font-semibold text-foreground">{poem}</span> - {reason}
     </li>
   )
 }
@@ -715,8 +715,8 @@ export default function PowerAndConflictPage() {
                   oppression everywhere. Each stanza presents a different aspect of the city&apos;s
                   misery: the restricted lives of its people, the cries of chimney sweepers and
                   soldiers, and the moral corruption symbolised by disease and exploitation. Blake
-                  attacks the institutions he blames &mdash; the Church, the monarchy, and the
-                  government &mdash; for creating and maintaining this suffering.
+                  attacks the institutions he blames - the Church, the monarchy, and the government
+                  - for creating and maintaining this suffering.
                 </p>
               </SubSection>
 
@@ -818,8 +818,8 @@ export default function PowerAndConflictPage() {
                   <strong>
                     1799 two-part <em>Prelude</em>
                   </strong>{' '}
-                  &mdash; the wording is materially different. Always quote from the AQA-anthology
-                  (1850) version on this page.
+                  - the wording is materially different. Always quote from the AQA-anthology (1850)
+                  version on this page.
                 </p>
               </SubSection>
 
@@ -829,9 +829,8 @@ export default function PowerAndConflictPage() {
                   at night and rowing across a lake. Initially confident and excited, he is
                   terrified when a huge mountain appears to rise up and pursue him. He returns the
                   boat and is left deeply unsettled for days, haunted by the experience. The episode
-                  represents a key moment in his spiritual development &mdash; one of his
-                  &ldquo;spots of time&rdquo; &mdash; where nature asserts its sublime power over
-                  human confidence.
+                  represents a key moment in his spiritual development - one of his &ldquo;spots of
+                  time&rdquo; - where nature asserts its sublime power over human confidence.
                 </p>
               </SubSection>
 
@@ -934,9 +933,9 @@ export default function PowerAndConflictPage() {
                   The rhyming couplets suggest the Duke&apos;s desire for order and control, but the
                   heavy use of enjambment works against the neat rhyme, mirroring the way his
                   controlled surface barely conceals his sinister nature. The single, unbroken
-                  stanza reflects the Duke&apos;s domination of the conversation &mdash; the envoy
-                  never speaks. The poem&apos;s structure mirrors the Duke&apos;s character:
-                  polished on the surface, disturbing beneath.
+                  stanza reflects the Duke&apos;s domination of the conversation - the envoy never
+                  speaks. The poem&apos;s structure mirrors the Duke&apos;s character: polished on
+                  the surface, disturbing beneath.
                 </p>
               </SubSection>
 
@@ -2254,13 +2253,13 @@ export default function PowerAndConflictPage() {
       <section className="mx-auto max-w-6xl px-4 py-6 sm:px-6 lg:px-8">
         <div className="rounded-lg border border-border/40 bg-muted/30 px-4 py-3 text-[11px] leading-relaxed text-muted-foreground">
           <strong className="text-foreground">Rights notice.</strong> Several AQA Power &amp;
-          Conflict poems remain in copyright &mdash; including Heaney&rsquo;s{' '}
-          <em>Storm on the Island</em> (&copy; Faber &amp; Faber), Armitage&rsquo;s <em>Remains</em>{' '}
-          (&copy; Faber &amp; Faber), Weir&rsquo;s <em>Poppies</em> (&copy; Templar Poetry),
-          Duffy&rsquo;s <em>War Photographer</em> (&copy; Picador / Pan Macmillan and Rogers
-          Coleridge &amp; White), Garland&rsquo;s <em>Kamikaze</em> (&copy; Templar Poetry),
-          Dharker&rsquo;s <em>Tissue</em> (&copy; Imtiaz Dharker, by permission of Bloodaxe Books),
-          Rumens&rsquo;s <em>The &Eacute;migr&eacute;e</em> (&copy; Carol Rumens) and Agard&rsquo;s{' '}
+          Conflict poems remain in copyright - including Heaney&rsquo;s <em>Storm on the Island</em>{' '}
+          (&copy; Faber &amp; Faber), Armitage&rsquo;s <em>Remains</em> (&copy; Faber &amp; Faber),
+          Weir&rsquo;s <em>Poppies</em> (&copy; Templar Poetry), Duffy&rsquo;s{' '}
+          <em>War Photographer</em> (&copy; Picador / Pan Macmillan and Rogers Coleridge &amp;
+          White), Garland&rsquo;s <em>Kamikaze</em> (&copy; Templar Poetry), Dharker&rsquo;s{' '}
+          <em>Tissue</em> (&copy; Imtiaz Dharker, by permission of Bloodaxe Books), Rumens&rsquo;s{' '}
+          <em>The &Eacute;migr&eacute;e</em> (&copy; Carol Rumens) and Agard&rsquo;s{' '}
           <em>Checking Out Me History</em> (&copy; John Agard). Quotations are short fair-dealing
           extracts under CDPA 1988 &sect;30 (criticism, review, quotation). For full text, students
           should consult the board-licensed AQA Power &amp; Conflict anthology.

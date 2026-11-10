@@ -110,8 +110,8 @@ export default async function OCRSpokenLanguagePage() {
                 feedback on presentations. After your presentation, you will be asked questions by
                 your teacher and/or classmates. You need to listen carefully, understand the
                 question, and respond thoughtfully and fully. This is not just about answering
-                correctly &mdash; it is about demonstrating that you can engage in a spoken exchange
-                at a formal level.
+                correctly - it is about demonstrating that you can engage in a spoken exchange at a
+                formal level.
               </p>
             </div>
 
@@ -140,21 +140,21 @@ export default async function OCRSpokenLanguagePage() {
             </p>
             <ul className="ms-6 list-disc space-y-2">
               <li>
-                <strong>{tr(`You are genuinely interested in`)}</strong> &mdash; passion and
-                enthusiasm come across when you speak and make your presentation more engaging.
+                <strong>{tr(`You are genuinely interested in`)}</strong> - passion and enthusiasm
+                come across when you speak and make your presentation more engaging.
               </li>
               <li>
-                <strong>{tr(`Allow you to present a viewpoint or argument`)}</strong> &mdash;
-                persuasive or argumentative topics give you the chance to use rhetorical devices and
+                <strong>{tr(`Allow you to present a viewpoint or argument`)}</strong> - persuasive
+                or argumentative topics give you the chance to use rhetorical devices and
                 demonstrate higher-level speaking skills.
               </li>
               <li>
-                <strong>Have enough depth for extended discussion</strong> &mdash; you need to speak
-                for a sustained period and answer questions, so your topic must have substance.
+                <strong>Have enough depth for extended discussion</strong> - you need to speak for a
+                sustained period and answer questions, so your topic must have substance.
               </li>
               <li>
-                <strong>{tr(`Are appropriate for a formal setting`)}</strong> &mdash; remember, this
-                is assessed in a formal context.
+                <strong>{tr(`Are appropriate for a formal setting`)}</strong> - remember, this is
+                assessed in a formal context.
               </li>
             </ul>
 
@@ -203,26 +203,25 @@ export default async function OCRSpokenLanguagePage() {
             </p>
             <ol className="ms-6 list-decimal space-y-3">
               <li>
-                <strong>Introduction</strong> &mdash; Hook your audience with a compelling opening:
-                a question, a surprising fact, a quotation, or a bold statement. State your topic
-                and your main argument or position clearly. Example: &ldquo;Imagine a world where
-                every young person&rsquo;s voice is heard in elections. Today, I want to argue that
-                the voting age should be lowered to sixteen.&rdquo;
+                <strong>Introduction</strong> - Hook your audience with a compelling opening: a
+                question, a surprising fact, a quotation, or a bold statement. State your topic and
+                your main argument or position clearly. Example: &ldquo;Imagine a world where every
+                young person&rsquo;s voice is heard in elections. Today, I want to argue that the
+                voting age should be lowered to sixteen.&rdquo;
               </li>
               <li>
-                <strong>{tr(`Main points (3-4)`)}</strong> &mdash; Each main point should be
-                supported with evidence, examples, or statistics. Organise them logically, with the
-                strongest point either first (for immediate impact) or last (for a powerful
-                conclusion).
+                <strong>{tr(`Main points (3-4)`)}</strong> - Each main point should be supported
+                with evidence, examples, or statistics. Organise them logically, with the strongest
+                point either first (for immediate impact) or last (for a powerful conclusion).
               </li>
               <li>
-                <strong>Counter-argument</strong> &mdash; Acknowledge the opposing view and explain
-                why your position is still stronger. This shows maturity and critical thinking.
+                <strong>Counter-argument</strong> - Acknowledge the opposing view and explain why
+                your position is still stronger. This shows maturity and critical thinking.
               </li>
               <li>
-                <strong>Conclusion</strong> &mdash; Summarise your key points, restate your
-                argument, and end with a memorable closing line or call to action. Circle back to
-                your opening hook for a satisfying circular structure.
+                <strong>Conclusion</strong> - Summarise your key points, restate your argument, and
+                end with a memorable closing line or call to action. Circle back to your opening
+                hook for a satisfying circular structure.
               </li>
             </ol>
 
@@ -257,9 +256,9 @@ export default async function OCRSpokenLanguagePage() {
               <div className="rounded-lg border border-border bg-muted p-5">
                 <h3 className="font-semibold text-foreground">Pace</h3>
                 <p className="mt-2 text-sm">
-                  Speak at a measured pace. Nerves often cause people to rush &mdash; consciously
-                  slow down. Use pauses for emphasis after key points. A deliberate pause can be
-                  more powerful than any word.
+                  Speak at a measured pace. Nerves often cause people to rush - consciously slow
+                  down. Use pauses for emphasis after key points. A deliberate pause can be more
+                  powerful than any word.
                 </p>
               </div>
 
@@ -267,8 +266,7 @@ export default async function OCRSpokenLanguagePage() {
                 <h3 className="font-semibold text-foreground">{tr(`Volume and Projection`)}</h3>
                 <p className="mt-2 text-sm">
                   Ensure everyone in the room can hear you clearly. Project your voice without
-                  shouting. Vary your volume for effect &mdash; a quieter moment can draw the
-                  audience in.
+                  shouting. Vary your volume for effect - a quieter moment can draw the audience in.
                 </p>
               </div>
 
@@ -319,8 +317,8 @@ export default async function OCRSpokenLanguagePage() {
                 Don&rsquo;t interrupt or jump in prematurely.
               </li>
               <li>
-                <strong>{tr(`Take a moment to think`)}</strong> &mdash; it is perfectly acceptable
-                to pause briefly before responding. A thoughtful answer is better than a rushed one.
+                <strong>{tr(`Take a moment to think`)}</strong> - it is perfectly acceptable to
+                pause briefly before responding. A thoughtful answer is better than a rushed one.
               </li>
               <li>
                 <strong>{tr(`Answer in full sentences`)}</strong> using Standard English. Avoid
@@ -336,8 +334,8 @@ export default async function OCRSpokenLanguagePage() {
                 mentioned earlier&hellip;&rdquo;
               </li>
               <li>
-                <strong>{tr(`Engage with challenging questions`)}</strong> &mdash; these are
-                opportunities to demonstrate critical thinking, not threats.
+                <strong>{tr(`Engage with challenging questions`)}</strong> - these are opportunities
+                to demonstrate critical thinking, not threats.
               </li>
             </ul>
           </div>

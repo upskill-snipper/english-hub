@@ -761,7 +761,7 @@ const blessingModules: CourseModule[] = [
 
 <p>Imtiaz Dharker (born 1954) is a Pakistani-born British poet; raised in Glasgow; divides time between London and Mumbai. Working as a poet, artist, and filmmaker, her poetry often explores themes of <strong>identity, displacement, community, and faith</strong>. "Blessing" is set in a slum in Mumbai (then Bombay), India, and describes the moment a water pipe bursts, bringing a sudden, miraculous abundance of water to a community that normally endures severe scarcity.</p>
 
-<p class="rights-notice"><em>&copy; Bloodaxe Books &mdash; fair-dealing extract. Quotations from "Blessing" used here for educational commentary; full text licence available from <a href="https://www.bloodaxebooks.com">bloodaxebooks.com</a>.</em></p>
+<p class="rights-notice"><em>&copy; Bloodaxe Books - fair-dealing extract. Quotations from "Blessing" used here for educational commentary; full text licence available from <a href="https://www.bloodaxebooks.com">bloodaxebooks.com</a>.</em></p>
 
 <h3>Context: Water Scarcity</h3>
 <p>The poem draws on the real experience of communities in the developing world where access to clean water is not guaranteed. In the slums of Mumbai, water is often rationed and supplied through communal taps for limited periods. A burst pipe - which in a wealthy country would be an inconvenience - becomes in this context a moment of <strong>joy, celebration, and almost religious ecstasy</strong>.</p>
@@ -1010,7 +1010,7 @@ const blessingModules: CourseModule[] = [
 <div class="text-extract">
 <p><em>Dharker uses a semantic field of religion to transform the arrival of water from a mundane accident into a transcendent experience. The crowd that gathers is described as a "congregation" - a word that reframes the dusty street as a place of worship and the burst pipe as an altar. The phrase "the voice of a kindly god" attributes divine agency to the sound of flowing water, suggesting that for this community, the arrival of water is as profound and miraculous as a religious revelation. The title itself - "Blessing" - frames the entire poem within a spiritual vocabulary. Dharker does not present poverty as a condition to be pitied but as a context in which people find deep meaning and joy in what others take for granted. This challenges the reader's assumptions about happiness and value, implicitly questioning whether affluent societies - which waste water daily - are truly richer in any meaningful sense.</em></p>
 </div>
-<p class="rights-notice"><em>Quotations from "Blessing" by Imtiaz Dharker. &copy; Bloodaxe Books &mdash; fair-dealing extract.</em></p>
+<p class="rights-notice"><em>Quotations from "Blessing" by Imtiaz Dharker. &copy; Bloodaxe Books - fair-dealing extract.</em></p>
 
 <h3>What Makes This Paragraph Effective?</h3>
 <ul>

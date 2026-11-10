@@ -237,14 +237,14 @@ export default async function SentenceVarietyPage() {
         <span>{await t('ks3.page.writing.sentence_variety.bc')}</span>
       </p>
 
-      <h1>A range of sentences &amp; sentence openings &mdash; a masterclass</h1>
+      <h1>A range of sentences &amp; sentence openings - a masterclass</h1>
       <p className="lead">
         This page is a deep dive into a single writing skill bullet: &ldquo;{SENTENCE_BULLET}&rdquo;
         It sits under writing skill{' '}
         <strong>
           {SKILL_2_3.code}: {SKILL_2_3.title}
         </strong>{' '}
-        and is assessed under <strong>{WAO2.code}</strong> &mdash; &ldquo;
+        and is assessed under <strong>{WAO2.code}</strong> - &ldquo;
         {WAO2.descriptor}&rdquo; The matching Year&nbsp;9 objective is <strong>{W9_3C.code}</strong>
         : &ldquo;{W9_3C.descriptor}&rdquo;
       </p>
@@ -252,10 +252,10 @@ export default async function SentenceVarietyPage() {
       <section className="my-10">
         <h2>Why sentence variety earns marks</h2>
         <p>
-          The {WAO2.code} mark grid does not reward long sentences or short sentences &mdash; it
-          rewards <strong>control</strong>. Look at how the grid moves: from sentences that are
-          merely &ldquo;grammatically sound&rdquo; with &ldquo;some complex connectives&rdquo;, up
-          through an &ldquo;emerging range&rdquo;, then &ldquo;complex connectives used to develop
+          The {WAO2.code} mark grid does not reward long sentences or short sentences - it rewards{' '}
+          <strong>control</strong>. Look at how the grid moves: from sentences that are merely
+          &ldquo;grammatically sound&rdquo; with &ldquo;some complex connectives&rdquo;, up through
+          an &ldquo;emerging range&rdquo;, then &ldquo;complex connectives used to develop
           sentences&rdquo;, and finally sentences that are{' '}
           <strong>&ldquo;grammatically assured and used effectively throughout&rdquo;</strong>. The
           jump to the top band is about using a range of structures <em>on purpose</em>, not about
@@ -281,12 +281,11 @@ export default async function SentenceVarietyPage() {
       </section>
 
       <section className="my-10">
-        <h2>The four sentence types &mdash; and when each works</h2>
+        <h2>The four sentence types - and when each works</h2>
         <p>
           You cannot vary sentences if you only have one kind. These are the four building blocks.
-          The column that earns marks is the last one &mdash;{' '}
-          <strong>when the type is effective</strong>, because that is the &ldquo;for effect and
-          impact&rdquo; part of the skill.
+          The column that earns marks is the last one - <strong>when the type is effective</strong>,
+          because that is the &ldquo;for effect and impact&rdquo; part of the skill.
         </p>
         <div className="not-prose my-6 space-y-3">
           {SENTENCE_TYPES.map((t) => (
@@ -315,12 +314,11 @@ export default async function SentenceVarietyPage() {
             A <strong>short sentence</strong> after several longer ones acts like a full stop on the
             whole paragraph: the reader is forced to slow down and the short sentence carries weight
             it would not have on its own. This is the <strong>short-then-long rhythm</strong>: build
-            an idea across a longer sentence, then snap it shut with a short one &mdash; or open
-            with a short hook and follow with a developed sentence that explains it. Used at a
-            moment of fear or surprise, a cluster of short sentences raises tension because the pace
-            quickens and the reader has less to hold onto. The skill is not &ldquo;use short
-            sentences&rdquo; &mdash; it is <strong>placing</strong> them where the rhythm change
-            does work.
+            an idea across a longer sentence, then snap it shut with a short one - or open with a
+            short hook and follow with a developed sentence that explains it. Used at a moment of
+            fear or surprise, a cluster of short sentences raises tension because the pace quickens
+            and the reader has less to hold onto. The skill is not &ldquo;use short sentences&rdquo;
+            - it is <strong>placing</strong> them where the rhythm change does work.
           </p>
         </div>
       </section>
@@ -328,8 +326,8 @@ export default async function SentenceVarietyPage() {
       <section className="my-10">
         <h2>Varied sentence openings</h2>
         <p>
-          The fastest way to spot weak writing is that every sentence opens the same way &mdash;
-          usually with the subject (&ldquo;I&hellip;&rdquo;, &ldquo;The&hellip;&rdquo;,
+          The fastest way to spot weak writing is that every sentence opens the same way - usually
+          with the subject (&ldquo;I&hellip;&rdquo;, &ldquo;The&hellip;&rdquo;,
           &ldquo;He&hellip;&rdquo;). Changing where a sentence <em>starts</em> changes what the
           reader notices first. Each opening below is a deliberate tool, not decoration.
         </p>
@@ -355,11 +353,11 @@ export default async function SentenceVarietyPage() {
           <p className="text-sm text-muted-foreground leading-relaxed">
             {W9_3C.code} asks for two opposite skills. A{' '}
             <strong>tight single-clause sentence</strong> is precise: it states one thing and stops,
-            so nothing dilutes it &mdash; ideal for a key fact or a hard final beat. A{' '}
+            so nothing dilutes it - ideal for a key fact or a hard final beat. A{' '}
             <strong>subordinate structure</strong> develops an idea by adding cause, time, condition
             or description, so the reader gets depth and the relationship between ideas. Top-band
-            writing does not pick one; it moves between them on purpose &mdash; developing where the
-            idea needs room, then cutting to a single clause where impact matters more than detail.
+            writing does not pick one; it moves between them on purpose - developing where the idea
+            needs room, then cutting to a single clause where impact matters more than detail.
           </p>
         </div>
       </section>
@@ -465,14 +463,14 @@ export default async function SentenceVarietyPage() {
             <span className="font-medium text-foreground">
               Why this would sit in the top band:{' '}
             </span>
-            sentence types are mixed on purpose (a one-word build &mdash; &ldquo;Then the man
-            stood.&rdquo; &mdash; against developed complex sentences); openings are varied
-            (participle &ldquo;Wiping a circle&hellip;&rdquo;, subordinate &ldquo;When the bus
-            finally arrived&hellip;&rdquo;, prepositional &ldquo;Of all the empty
-            seats&hellip;&rdquo;); a deliberate short sentence &ldquo;The man followed.&rdquo;
-            spikes the tension; and the writing moves between single-clause precision and
-            subordinate development rather than staying flat. That is &ldquo;grammatically assured
-            and used effectively throughout&rdquo;.
+            sentence types are mixed on purpose (a one-word build - &ldquo;Then the man
+            stood.&rdquo; - against developed complex sentences); openings are varied (participle
+            &ldquo;Wiping a circle&hellip;&rdquo;, subordinate &ldquo;When the bus finally
+            arrived&hellip;&rdquo;, prepositional &ldquo;Of all the empty seats&hellip;&rdquo;); a
+            deliberate short sentence &ldquo;The man followed.&rdquo; spikes the tension; and the
+            writing moves between single-clause precision and subordinate development rather than
+            staying flat. That is &ldquo;grammatically assured and used effectively
+            throughout&rdquo;.
           </p>
         </div>
       </section>

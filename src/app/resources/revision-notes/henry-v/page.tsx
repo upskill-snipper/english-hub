@@ -130,7 +130,7 @@ function QuoteCard({
       <p className="text-sm font-semibold text-violet-800 dark:text-violet-200 italic">
         &ldquo;{quote}&rdquo;
       </p>
-      {speaker && <p className="mt-1 text-xs font-medium text-violet-600">&mdash; {speaker}</p>}
+      {speaker && <p className="mt-1 text-xs font-medium text-violet-600">- {speaker}</p>}
       <p className="mt-2 text-sm text-muted-foreground">{analysis}</p>
     </div>
   )
@@ -176,7 +176,7 @@ export default function HenryVPage() {
           </span>
         </div>
         <h1 className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
-          Henry V &mdash; A-Level Revision Guide
+          Henry V - A-Level Revision Guide
         </h1>
         <p className="mt-1 text-lg text-muted-foreground">William Shakespeare, c. 1599</p>
         <p className="mt-3 max-w-3xl text-muted-foreground leading-relaxed">
@@ -242,12 +242,12 @@ export default function HenryVPage() {
                   </p>
                   <ul className="mt-2 space-y-1 text-sm text-muted-foreground">
                     <li>
-                      &bull; The Chorus&apos;s prologue &mdash; metatheatrical apology for the stage
+                      &bull; The Chorus&apos;s prologue - metatheatrical apology for the stage
                     </li>
                     <li>&bull; Canterbury&apos;s self-interested justification of war</li>
-                    <li>&bull; The Salic Law speech &mdash; legal pretext for invasion</li>
+                    <li>&bull; The Salic Law speech - legal pretext for invasion</li>
                     <li>
-                      &bull; The tennis balls &mdash; the Dauphin&apos;s insult and Henry&apos;s vow
+                      &bull; The tennis balls - the Dauphin&apos;s insult and Henry&apos;s vow
                     </li>
                   </ul>
                 </div>
@@ -276,11 +276,9 @@ export default function HenryVPage() {
                     Key Moments
                   </p>
                   <ul className="mt-2 space-y-1 text-sm text-muted-foreground">
+                    <li>&bull; The Eastcheap tavern crew - Pistol, Nym, Bardolph, the Hostess</li>
                     <li>
-                      &bull; The Eastcheap tavern crew &mdash; Pistol, Nym, Bardolph, the Hostess
-                    </li>
-                    <li>
-                      &bull; The traitors&apos; trap at Southampton &mdash; Henry&apos;s ruthless
+                      &bull; The traitors&apos; trap at Southampton - Henry&apos;s ruthless
                       statecraft
                     </li>
                     <li>&bull; The Hostess&apos;s account of Falstaff&apos;s death (offstage)</li>
@@ -314,19 +312,11 @@ export default function HenryVPage() {
                     Key Moments
                   </p>
                   <ul className="mt-2 space-y-1 text-sm text-muted-foreground">
-                    <li>
-                      &bull; The siege of Harfleur &mdash; &ldquo;Once more unto the breach&rdquo;
-                    </li>
-                    <li>
-                      &bull; Henry&apos;s threats to the Harfleur citizens &mdash; brutal rhetoric
-                    </li>
-                    <li>&bull; Katherine&apos;s English lesson &mdash; comic relief in French</li>
-                    <li>
-                      &bull; The execution of Bardolph &mdash; royal justice over personal loyalty
-                    </li>
-                    <li>
-                      &bull; Mountjoy&apos;s embassy &mdash; Henry&apos;s defiance despite weakness
-                    </li>
+                    <li>&bull; The siege of Harfleur - &ldquo;Once more unto the breach&rdquo;</li>
+                    <li>&bull; Henry&apos;s threats to the Harfleur citizens - brutal rhetoric</li>
+                    <li>&bull; Katherine&apos;s English lesson - comic relief in French</li>
+                    <li>&bull; The execution of Bardolph - royal justice over personal loyalty</li>
+                    <li>&bull; Mountjoy&apos;s embassy - Henry&apos;s defiance despite weakness</li>
                   </ul>
                 </div>
               </div>
@@ -360,16 +350,13 @@ export default function HenryVPage() {
                   </p>
                   <ul className="mt-2 space-y-1 text-sm text-muted-foreground">
                     <li>
-                      &bull; The night before Agincourt &mdash; &ldquo;a little touch of Harry in
-                      the night&rdquo;
+                      &bull; The night before Agincourt - &ldquo;a little touch of Harry in the
+                      night&rdquo;
                     </li>
-                    <li>&bull; The disguised King and Williams &mdash; common-soldier dialogue</li>
+                    <li>&bull; The disguised King and Williams - common-soldier dialogue</li>
+                    <li>&bull; &ldquo;Upon the King&rdquo; soliloquy - the loneliness of office</li>
                     <li>
-                      &bull; &ldquo;Upon the King&rdquo; soliloquy &mdash; the loneliness of office
-                    </li>
-                    <li>
-                      &bull; The St Crispin&apos;s Day speech &mdash; &ldquo;we few, we happy
-                      few&rdquo;
+                      &bull; The St Crispin&apos;s Day speech - &ldquo;we few, we happy few&rdquo;
                     </li>
                     <li>&bull; The battle and the controversial killing of the prisoners</li>
                     <li>&bull; The glove plot resolved; the casualty lists read</li>
@@ -402,13 +389,12 @@ export default function HenryVPage() {
                     Key Moments
                   </p>
                   <ul className="mt-2 space-y-1 text-sm text-muted-foreground">
-                    <li>&bull; Fluellen and the leek &mdash; comic punishment of Pistol</li>
+                    <li>&bull; Fluellen and the leek - comic punishment of Pistol</li>
                     <li>
-                      &bull; The wooing of Katherine &mdash; political marriage, soldier&apos;s
-                      plainness
+                      &bull; The wooing of Katherine - political marriage, soldier&apos;s plainness
                     </li>
-                    <li>&bull; The Treaty of Troyes &mdash; English inheritance of France</li>
-                    <li>&bull; The Epilogue &mdash; ironic awareness of the future loss</li>
+                    <li>&bull; The Treaty of Troyes - English inheritance of France</li>
+                    <li>&bull; The Epilogue - ironic awareness of the future loss</li>
                   </ul>
                 </div>
               </div>
@@ -625,15 +611,15 @@ export default function HenryVPage() {
                 <h4 className="font-bold text-foreground">2. The Leek</h4>
                 <p className="mt-1 text-sm text-muted-foreground leading-relaxed">
                   In Act 5 Scene 1 Fluellen forces Pistol to eat the Welsh leek that Pistol mocked.
-                  The leek &mdash; a Welsh national emblem worn for St David&apos;s Day &mdash;
-                  becomes a comic symbol of national pride and the cost of mocking it. Henry
-                  himself, in disguise the night before Agincourt, tells Pistol &ldquo;I am a
-                  Welshman&rdquo; (he was born at Monmouth), and after the battle tells Fluellen
-                  that he wears the leek &ldquo;for a memorable honour; / For I am Welsh, you
-                  know&rdquo;. The scene celebrates British rather than narrowly English identity at
-                  a moment when the multinational composition of Henry&apos;s army (Welsh Fluellen,
-                  Scots Jamy, Irish Macmorris) was politically charged for an Elizabethan audience
-                  watching Essex&apos;s campaign in Ireland.
+                  The leek - a Welsh national emblem worn for St David&apos;s Day - becomes a comic
+                  symbol of national pride and the cost of mocking it. Henry himself, in disguise
+                  the night before Agincourt, tells Pistol &ldquo;I am a Welshman&rdquo; (he was
+                  born at Monmouth), and after the battle tells Fluellen that he wears the leek
+                  &ldquo;for a memorable honour; / For I am Welsh, you know&rdquo;. The scene
+                  celebrates British rather than narrowly English identity at a moment when the
+                  multinational composition of Henry&apos;s army (Welsh Fluellen, Scots Jamy, Irish
+                  Macmorris) was politically charged for an Elizabethan audience watching
+                  Essex&apos;s campaign in Ireland.
                 </p>
               </div>
               <div className="rounded-lg bg-muted p-4">
@@ -664,9 +650,9 @@ export default function HenryVPage() {
                 <h4 className="font-bold text-foreground">5. The Crown and Ceremony</h4>
                 <p className="mt-1 text-sm text-muted-foreground leading-relaxed">
                   Henry&apos;s &ldquo;Upon the King&rdquo; soliloquy interrogates the symbolism of
-                  &ldquo;ceremony&rdquo; &mdash; the crown, the throne, the &ldquo;intertissued robe
-                  of gold and pearl&rdquo; &mdash; arguing that these emblems do not buy ease,
-                  health, or peaceful sleep. The crown becomes in this speech a symbol of crushing
+                  &ldquo;ceremony&rdquo; - the crown, the throne, the &ldquo;intertissued robe of
+                  gold and pearl&rdquo; - arguing that these emblems do not buy ease, health, or
+                  peaceful sleep. The crown becomes in this speech a symbol of crushing
                   responsibility rather than sovereignty. Henry envies the &ldquo;wretched
                   slave&rdquo; who sleeps soundly because no kingdom rests on him. Ceremony itself
                   is addressed as an &ldquo;idol&rdquo;, a god &ldquo;that suffer’st more / Of
@@ -702,17 +688,17 @@ export default function HenryVPage() {
                   Bankside. The Chorus&apos;s reference to the &ldquo;wooden O&rdquo; is widely
                   taken as a self-reference to the Globe&apos;s circular polygonal architecture,
                   although the play may also have been performed at the older Curtain. The Globe was
-                  built using timbers from the dismantled Theatre in Shoreditch &mdash; the timbers
-                  were carried across the Thames in 1598 by Burbage and his company. The
-                  metatheatrical opening &ldquo;O for a Muse of fire&rdquo; thus inaugurates not
-                  only a new play but, plausibly, a new playhouse.
+                  built using timbers from the dismantled Theatre in Shoreditch - the timbers were
+                  carried across the Thames in 1598 by Burbage and his company. The metatheatrical
+                  opening &ldquo;O for a Muse of fire&rdquo; thus inaugurates not only a new play
+                  but, plausibly, a new playhouse.
                 </p>
               </div>
               <div className="rounded-lg bg-primary/10 p-4">
                 <h4 className="font-bold text-primary">The Henriad Cycle</h4>
                 <p className="mt-1 text-sm text-muted-foreground leading-relaxed">
-                  <em>Henry V</em> completes Shakespeare&apos;s second tetralogy &mdash; the Henriad
-                  &mdash; following <em>Richard II</em>, <em>1 Henry IV</em>, and
+                  <em>Henry V</em> completes Shakespeare&apos;s second tetralogy - the Henriad -
+                  following <em>Richard II</em>, <em>1 Henry IV</em>, and
                   <em>2 Henry IV</em>. The cycle traces the deposition of Richard II by Bolingbroke
                   (Henry IV), the troubled reign of the usurper, and the redemption of Hal into
                   Henry V. By the time the audience reaches <em>Henry V</em> they have watched the
@@ -766,8 +752,8 @@ export default function HenryVPage() {
                   imperial ambition. The intended parallel between Henry V&apos;s French campaign
                   and Essex&apos;s Irish one was bold: Essex returned in disgrace, having failed,
                   and was eventually executed in 1601. The lines preserve a moment when the play was
-                  straightforwardly endorsing a contemporary military adventure &mdash; an
-                  endorsement history rapidly disowned.
+                  straightforwardly endorsing a contemporary military adventure - an endorsement
+                  history rapidly disowned.
                 </p>
               </div>
               <div className="rounded-lg bg-primary/10 p-4">
@@ -777,11 +763,11 @@ export default function HenryVPage() {
                   Crispin&apos;s and St Crispian&apos;s Day. Henry&apos;s English army of perhaps
                   6,000 (heavily weighted toward longbowmen) defeated a French force several times
                   its size. The French disaster was historically devastating; the English losses
-                  were genuinely small. The killing of the French prisoners during the battle
-                  &mdash; ordered by Henry when the French rear rallied &mdash; was historically
-                  real, and Shakespeare preserves it. The Treaty of Troyes (1420) followed years
-                  later and made Henry heir to the French throne, a position vacated by his early
-                  death in 1422.
+                  were genuinely small. The killing of the French prisoners during the battle -
+                  ordered by Henry when the French rear rallied - was historically real, and
+                  Shakespeare preserves it. The Treaty of Troyes (1420) followed years later and
+                  made Henry heir to the French throne, a position vacated by his early death in
+                  1422.
                 </p>
               </div>
               <div className="rounded-lg bg-primary/10 p-4">
@@ -824,14 +810,14 @@ export default function HenryVPage() {
                     <p className="mt-1 text-sm text-muted-foreground">
                       Shakespeare offers a portrait of kingship that contains both ideal qualities
                       and the ruthless statecraft that makes them effective. The play celebrates
-                      Henry but builds in enough material &mdash; the threats at Harfleur, the
-                      killing of the prisoners, the betrayal of Falstaff, Williams&apos; challenge
-                      &mdash; that the celebration becomes interrogative as well as affirmative.
+                      Henry but builds in enough material - the threats at Harfleur, the killing of
+                      the prisoners, the betrayal of Falstaff, Williams&apos; challenge - that the
+                      celebration becomes interrogative as well as affirmative.
                     </p>
                   </div>
                   <div>
                     <p className="text-xs font-semibold text-violet-700 dark:text-violet-300 uppercase tracking-wider">
-                      Paragraph 1 &mdash; The ideal king
+                      Paragraph 1 - The ideal king
                     </p>
                     <p className="mt-1 text-sm text-muted-foreground">
                       Henry as Christian warrior. The St Crispin&apos;s Day speech: &ldquo;We few,
@@ -842,18 +828,18 @@ export default function HenryVPage() {
                   </div>
                   <div>
                     <p className="text-xs font-semibold text-violet-700 dark:text-violet-300 uppercase tracking-wider">
-                      Paragraph 2 &mdash; The ruthless realist
+                      Paragraph 2 - The ruthless realist
                     </p>
                     <p className="mt-1 text-sm text-muted-foreground">
                       The traitors trapped at Southampton. The execution of Bardolph. The threats to
                       the Harfleur citizens. The killing of the prisoners. Argue that these scenes
-                      show the cost of effective kingship &mdash; the ideal must absorb the ruthless
-                      to function.
+                      show the cost of effective kingship - the ideal must absorb the ruthless to
+                      function.
                     </p>
                   </div>
                   <div>
                     <p className="text-xs font-semibold text-violet-700 dark:text-violet-300 uppercase tracking-wider">
-                      Paragraph 3 &mdash; The lonely man behind the office
+                      Paragraph 3 - The lonely man behind the office
                     </p>
                     <p className="mt-1 text-sm text-muted-foreground">
                       The &ldquo;Upon the King&rdquo; soliloquy. Ceremony as &ldquo;idol.&rdquo;
@@ -863,13 +849,13 @@ export default function HenryVPage() {
                   </div>
                   <div>
                     <p className="text-xs font-semibold text-violet-700 dark:text-violet-300 uppercase tracking-wider">
-                      Paragraph 4 &mdash; Williams as the play&apos;s moral counterweight
+                      Paragraph 4 - Williams as the play&apos;s moral counterweight
                     </p>
                     <p className="mt-1 text-sm text-muted-foreground">
                       &ldquo;If the cause be not good, the King himself hath a heavy reckoning to
                       make.&rdquo; The play allows a common soldier to outface its hero. The glove
-                      plot resolves materially but not morally &mdash; Williams is bought off with
-                      crowns rather than answered.
+                      plot resolves materially but not morally - Williams is bought off with crowns
+                      rather than answered.
                     </p>
                   </div>
                   <div>
@@ -903,7 +889,7 @@ export default function HenryVPage() {
                   </div>
                   <div>
                     <p className="text-xs font-semibold text-violet-700 dark:text-violet-300 uppercase tracking-wider">
-                      Paragraph 1 &mdash; The metatheatrical apology
+                      Paragraph 1 - The metatheatrical apology
                     </p>
                     <p className="mt-1 text-sm text-muted-foreground">
                       &ldquo;O for a Muse of fire,&rdquo; &ldquo;Can this cockpit hold / The vasty
@@ -915,7 +901,7 @@ export default function HenryVPage() {
                   </div>
                   <div>
                     <p className="text-xs font-semibold text-violet-700 dark:text-violet-300 uppercase tracking-wider">
-                      Paragraph 2 &mdash; The patriotic narrator
+                      Paragraph 2 - The patriotic narrator
                     </p>
                     <p className="mt-1 text-sm text-muted-foreground">
                       The Chorus celebrates Henry: &ldquo;the warlike Harry,&rdquo; &ldquo;this star
@@ -926,7 +912,7 @@ export default function HenryVPage() {
                   </div>
                   <div>
                     <p className="text-xs font-semibold text-violet-700 dark:text-violet-300 uppercase tracking-wider">
-                      Paragraph 3 &mdash; Promised tone vs staged reality
+                      Paragraph 3 - Promised tone vs staged reality
                     </p>
                     <p className="mt-1 text-sm text-muted-foreground">
                       The Chorus promises &ldquo;a little touch of Harry in the night&rdquo; before
@@ -938,7 +924,7 @@ export default function HenryVPage() {
                   </div>
                   <div>
                     <p className="text-xs font-semibold text-violet-700 dark:text-violet-300 uppercase tracking-wider">
-                      Paragraph 4 &mdash; Audience as collaborator
+                      Paragraph 4 - Audience as collaborator
                     </p>
                     <p className="mt-1 text-sm text-muted-foreground">
                       By openly admitting limits, the Chorus enlists the audience. Imagination is
@@ -970,7 +956,7 @@ export default function HenryVPage() {
                   </div>
                   <div>
                     <p className="text-xs font-semibold text-violet-700 dark:text-violet-300 uppercase tracking-wider">
-                      Paragraph 1 &mdash; Rhetoric as weapon
+                      Paragraph 1 - Rhetoric as weapon
                     </p>
                     <p className="mt-1 text-sm text-muted-foreground">
                       The tennis balls reply: &ldquo;We will, in France, by God&apos;s grace, play a
@@ -981,7 +967,7 @@ export default function HenryVPage() {
                   </div>
                   <div>
                     <p className="text-xs font-semibold text-violet-700 dark:text-violet-300 uppercase tracking-wider">
-                      Paragraph 2 &mdash; Battle oratory
+                      Paragraph 2 - Battle oratory
                     </p>
                     <p className="mt-1 text-sm text-muted-foreground">
                       &ldquo;Once more unto the breach, dear friends, once more.&rdquo; &ldquo;We
@@ -992,17 +978,17 @@ export default function HenryVPage() {
                   </div>
                   <div>
                     <p className="text-xs font-semibold text-violet-700 dark:text-violet-300 uppercase tracking-wider">
-                      Paragraph 3 &mdash; Strategic plainness in the wooing
+                      Paragraph 3 - Strategic plainness in the wooing
                     </p>
                     <p className="mt-1 text-sm text-muted-foreground">
                       In the wooing scene Henry deliberately strips off ceremony: &ldquo;I speak to
-                      thee plain soldier.&rdquo; The plainness is itself a performance &mdash; a
-                      king choosing the most disarming idiom for a political marriage.
+                      thee plain soldier.&rdquo; The plainness is itself a performance - a king
+                      choosing the most disarming idiom for a political marriage.
                     </p>
                   </div>
                   <div>
                     <p className="text-xs font-semibold text-violet-700 dark:text-violet-300 uppercase tracking-wider">
-                      Paragraph 4 &mdash; Other voices, other languages
+                      Paragraph 4 - Other voices, other languages
                     </p>
                     <p className="mt-1 text-sm text-muted-foreground">
                       Fluellen&apos;s Welsh-inflected pedantry, Pistol&apos;s parodic bombast,
@@ -1028,13 +1014,13 @@ export default function HenryVPage() {
                     <p className="mt-1 text-sm text-muted-foreground">
                       Alongside Henry&apos;s heroic vision the play insists on the unromantic
                       experience of war from below: theft, disease, fear, ransom, hanging, and moral
-                      doubt. The common-soldier perspective complicates &mdash; without quite
-                      contradicting &mdash; the king&apos;s rhetoric.
+                      doubt. The common-soldier perspective complicates - without quite
+                      contradicting - the king&apos;s rhetoric.
                     </p>
                   </div>
                   <div>
                     <p className="text-xs font-semibold text-violet-700 dark:text-violet-300 uppercase tracking-wider">
-                      Paragraph 1 &mdash; The Eastcheap crew
+                      Paragraph 1 - The Eastcheap crew
                     </p>
                     <p className="mt-1 text-sm text-muted-foreground">
                       Pistol, Nym, Bardolph hang back at the breach until Fluellen drives them
@@ -1045,7 +1031,7 @@ export default function HenryVPage() {
                   </div>
                   <div>
                     <p className="text-xs font-semibold text-violet-700 dark:text-violet-300 uppercase tracking-wider">
-                      Paragraph 2 &mdash; Williams the moral challenger
+                      Paragraph 2 - Williams the moral challenger
                     </p>
                     <p className="mt-1 text-sm text-muted-foreground">
                       &ldquo;If the cause be not good, the King himself hath a heavy reckoning to
@@ -1056,7 +1042,7 @@ export default function HenryVPage() {
                   </div>
                   <div>
                     <p className="text-xs font-semibold text-violet-700 dark:text-violet-300 uppercase tracking-wider">
-                      Paragraph 3 &mdash; Fluellen and military tradition
+                      Paragraph 3 - Fluellen and military tradition
                     </p>
                     <p className="mt-1 text-sm text-muted-foreground">
                       Fluellen&apos;s pedantic obsession with the &ldquo;disciplines of the
@@ -1067,7 +1053,7 @@ export default function HenryVPage() {
                   </div>
                   <div>
                     <p className="text-xs font-semibold text-violet-700 dark:text-violet-300 uppercase tracking-wider">
-                      Paragraph 4 &mdash; The killing of the prisoners and the boys
+                      Paragraph 4 - The killing of the prisoners and the boys
                     </p>
                     <p className="mt-1 text-sm text-muted-foreground">
                       Henry orders the killing of the prisoners after the French rally. The luggage
@@ -1099,10 +1085,10 @@ export default function HenryVPage() {
                   </div>
                   <div>
                     <p className="text-xs font-semibold text-violet-700 dark:text-violet-300 uppercase tracking-wider">
-                      Paragraph 1 &mdash; Katherine as political prize
+                      Paragraph 1 - Katherine as political prize
                     </p>
                     <p className="mt-1 text-sm text-muted-foreground">
-                      Her marriage is a clause of the Treaty of Troyes &mdash; she is not chosen but
+                      Her marriage is a clause of the Treaty of Troyes - she is not chosen but
                       inherited. Her earlier English lesson with Alice prepared her for the new
                       sovereignty; she has been studying her conqueror&apos;s language while he
                       marched.
@@ -1110,18 +1096,17 @@ export default function HenryVPage() {
                   </div>
                   <div>
                     <p className="text-xs font-semibold text-violet-700 dark:text-violet-300 uppercase tracking-wider">
-                      Paragraph 2 &mdash; Henry&apos;s strategic plainness
+                      Paragraph 2 - Henry&apos;s strategic plainness
                     </p>
                     <p className="mt-1 text-sm text-muted-foreground">
                       &ldquo;I speak to thee plain soldier.&rdquo; Henry adopts the persona of the
-                      blunt soldier &mdash; the persona furthest from courtly sophistication. The
-                      choice of register is calculated: it disarms her and masks the political
-                      reality.
+                      blunt soldier - the persona furthest from courtly sophistication. The choice
+                      of register is calculated: it disarms her and masks the political reality.
                     </p>
                   </div>
                   <div>
                     <p className="text-xs font-semibold text-violet-700 dark:text-violet-300 uppercase tracking-wider">
-                      Paragraph 3 &mdash; Code-switching and conquest
+                      Paragraph 3 - Code-switching and conquest
                     </p>
                     <p className="mt-1 text-sm text-muted-foreground">
                       The scene moves between English and broken French. Henry&apos;s linguistic
@@ -1131,7 +1116,7 @@ export default function HenryVPage() {
                   </div>
                   <div>
                     <p className="text-xs font-semibold text-violet-700 dark:text-violet-300 uppercase tracking-wider">
-                      Paragraph 4 &mdash; Romantic-comedy ending or political imposition?
+                      Paragraph 4 - Romantic-comedy ending or political imposition?
                     </p>
                     <p className="mt-1 text-sm text-muted-foreground">
                       The play closes with a wedding and a treaty. Generic convention reads this as
@@ -1231,7 +1216,7 @@ export default function HenryVPage() {
             <span>
               <strong>Quote verbatim.</strong> Examiners reward accurate quotation. &ldquo;Once more
               unto the breach,&rdquo; &ldquo;we few, we happy few,&rdquo; &ldquo;Cry, &lsquo;God for
-              Harry! England and Saint George!&rsquo;&rdquo; &mdash; learn the exact words.
+              Harry! England and Saint George!&rsquo;&rdquo; - learn the exact words.
             </span>
           </li>
           <li className="flex items-start gap-2">

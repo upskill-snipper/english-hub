@@ -112,7 +112,7 @@ function QuoteCard({
       <p className="text-sm font-semibold text-violet-800 dark:text-violet-200 italic">
         &ldquo;{quote}&rdquo;
       </p>
-      {speaker && <p className="mt-1 text-xs font-medium text-violet-600">&mdash; {speaker}</p>}
+      {speaker && <p className="mt-1 text-xs font-medium text-violet-600">- {speaker}</p>}
       <p className="mt-2 text-sm text-muted-foreground">{analysis}</p>
     </div>
   )
@@ -168,7 +168,7 @@ export default function TwelfthNightPage() {
           </span>
         </div>
         <h1 className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
-          Twelfth Night, or What You Will &mdash; Complete Revision Guide
+          Twelfth Night, or What You Will - Complete Revision Guide
         </h1>
         <p className="mt-1 text-lg text-muted-foreground">
           {tr(`William Shakespeare, c.1601-1602`)}
@@ -217,7 +217,7 @@ export default function TwelfthNightPage() {
                   <span className="flex h-6 w-6 items-center justify-center rounded-full bg-violet-500/15 text-xs font-bold text-violet-700 dark:text-violet-300">
                     1
                   </span>
-                  Act 1 &mdash; Shipwreck and Disguise
+                  Act 1 - Shipwreck and Disguise
                 </h4>
                 <p className="mt-2 text-sm text-muted-foreground leading-relaxed">
                   The play opens in Illyria with Duke Orsino lovesick for the Countess Olivia, who
@@ -225,7 +225,7 @@ export default function TwelfthNightPage() {
                   shipwrecked on the Illyrian coast and believes her twin brother Sebastian drowned.
                   Aided by a kindly Sea-Captain, she resolves to disguise herself as a young man and
                   serve Orsino. As &ldquo;Cesario,&rdquo; she becomes Orsino&apos;s trusted page and
-                  is sent to woo Olivia on his behalf &mdash; but Olivia falls for Cesario instead.
+                  is sent to woo Olivia on his behalf - but Olivia falls for Cesario instead.
                   Meanwhile, in Olivia&apos;s household, her drunken uncle Sir Toby Belch entertains
                   his foolish friend Sir Andrew Aguecheek, whom Toby encourages as a suitor for
                   Olivia. Feste the clown returns after an absence and talks Olivia round with witty
@@ -237,15 +237,14 @@ export default function TwelfthNightPage() {
                   </p>
                   <ul className="mt-2 space-y-1 text-sm text-muted-foreground">
                     <li>
-                      &bull; Orsino&apos;s opening speech &mdash; &ldquo;If music be the food of
-                      love, play on&rdquo;
+                      &bull; Orsino&apos;s opening speech - &ldquo;If music be the food of love,
+                      play on&rdquo;
                     </li>
                     <li>
-                      &bull; Viola&apos;s shipwreck &mdash; &ldquo;What country, friends, is
-                      this?&rdquo;
+                      &bull; Viola&apos;s shipwreck - &ldquo;What country, friends, is this?&rdquo;
                     </li>
                     <li>
-                      &bull; Viola decides to &ldquo;Conceal me what I am&rdquo; &mdash; the central
+                      &bull; Viola decides to &ldquo;Conceal me what I am&rdquo; - the central
                       disguise
                     </li>
                     <li>
@@ -265,16 +264,16 @@ export default function TwelfthNightPage() {
                   <span className="flex h-6 w-6 items-center justify-center rounded-full bg-violet-500/15 text-xs font-bold text-violet-700 dark:text-violet-300">
                     2
                   </span>
-                  Act 2 &mdash; Sebastian Surfaces, the Letter Plot Begins
+                  Act 2 - Sebastian Surfaces, the Letter Plot Begins
                 </h4>
                 <p className="mt-2 text-sm text-muted-foreground leading-relaxed">
                   We discover that Sebastian survived the wreck, rescued by the sea-captain Antonio,
                   who has grown devoted to him. Sebastian sets off for Orsino&apos;s court, with
                   Antonio following secretly despite having enemies there. Olivia sends Malvolio
-                  after Cesario with a ring &mdash; a pretext to renew contact &mdash; and Viola
-                  realises with horror the chaos her disguise has caused: &ldquo;Disguise, I see
-                  thou art a wickedness.&rdquo; Late at night, Sir Toby, Sir Andrew, Maria and Feste
-                  hold a drinking party. Malvolio bursts in to scold them. Maria, the sharp-witted
+                  after Cesario with a ring - a pretext to renew contact - and Viola realises with
+                  horror the chaos her disguise has caused: &ldquo;Disguise, I see thou art a
+                  wickedness.&rdquo; Late at night, Sir Toby, Sir Andrew, Maria and Feste hold a
+                  drinking party. Malvolio bursts in to scold them. Maria, the sharp-witted
                   lady-in-waiting, plots revenge: she will forge a letter in Olivia&apos;s
                   handwriting making Malvolio believe Olivia loves him. Meanwhile, Viola talks with
                   Orsino about love. The famous &ldquo;Patience on a monument&rdquo; speech
@@ -288,19 +287,17 @@ export default function TwelfthNightPage() {
                   </p>
                   <ul className="mt-2 space-y-1 text-sm text-muted-foreground">
                     <li>
-                      &bull; Antonio&apos;s devotion to Sebastian &mdash; risking arrest to follow
-                      him
+                      &bull; Antonio&apos;s devotion to Sebastian - risking arrest to follow him
                     </li>
                     <li>
-                      &bull; Viola&apos;s ring soliloquy &mdash; recognising Olivia loves
+                      &bull; Viola&apos;s ring soliloquy - recognising Olivia loves
                       &ldquo;Cesario&rdquo;
                     </li>
                     <li>
-                      &bull; The midnight revel &mdash; cakes and ale vs Malvolio&apos;s puritan
-                      rebuke
+                      &bull; The midnight revel - cakes and ale vs Malvolio&apos;s puritan rebuke
                     </li>
                     <li>
-                      &bull; The forged letter &mdash; Maria&apos;s &ldquo;great P&apos;s&rdquo; in
+                      &bull; The forged letter - Maria&apos;s &ldquo;great P&apos;s&rdquo; in
                       Olivia&apos;s hand
                     </li>
                     <li>
@@ -316,21 +313,20 @@ export default function TwelfthNightPage() {
                   <span className="flex h-6 w-6 items-center justify-center rounded-full bg-violet-500/15 text-xs font-bold text-violet-700 dark:text-violet-300">
                     3
                   </span>
-                  Act 3 &mdash; Cross-Garters, Duels, and Mistaken Twins
+                  Act 3 - Cross-Garters, Duels, and Mistaken Twins
                 </h4>
                 <p className="mt-2 text-sm text-muted-foreground leading-relaxed">
                   Cesario returns to Olivia and the two have a charged exchange in which Olivia
                   openly declares her love. Sir Andrew, jealous of Cesario, is encouraged by Toby to
                   challenge him to a duel. Malvolio appears to Olivia transformed: smiling, in
                   yellow stockings, cross-gartered, quoting the letter. Olivia, baffled, thinks he
-                  has gone mad and entrusts him to Toby&apos;s care &mdash; exactly what the
-                  conspirators need. They lock him in a dark room as a &ldquo;mad&rdquo; man. The
-                  duel between Cesario and Sir Andrew is comic: both are terrified. Antonio
-                  intervenes, mistaking Cesario for Sebastian, and is arrested by Orsino&apos;s
-                  officers. He asks Cesario for the purse he gave Sebastian, and Viola&apos;s
-                  confused refusal devastates him &mdash; though Viola begins to hope: &ldquo;Prove
-                  true, imagination, O, prove true, / That I, dear brother, be now ta&apos;en for
-                  you!&rdquo;
+                  has gone mad and entrusts him to Toby&apos;s care - exactly what the conspirators
+                  need. They lock him in a dark room as a &ldquo;mad&rdquo; man. The duel between
+                  Cesario and Sir Andrew is comic: both are terrified. Antonio intervenes, mistaking
+                  Cesario for Sebastian, and is arrested by Orsino&apos;s officers. He asks Cesario
+                  for the purse he gave Sebastian, and Viola&apos;s confused refusal devastates him
+                  - though Viola begins to hope: &ldquo;Prove true, imagination, O, prove true, /
+                  That I, dear brother, be now ta&apos;en for you!&rdquo;
                 </p>
                 <div className="mt-3 rounded-lg bg-muted p-3">
                   <p className="text-xs font-semibold text-muted-foreground uppercase tracking-wider">
@@ -338,20 +334,18 @@ export default function TwelfthNightPage() {
                   </p>
                   <ul className="mt-2 space-y-1 text-sm text-muted-foreground">
                     <li>
-                      &bull; Olivia&apos;s open declaration &mdash; &ldquo;love sought is good; but
-                      given unsought is better&rdquo;
+                      &bull; Olivia&apos;s open declaration - &ldquo;love sought is good; but given
+                      unsought is better&rdquo;
                     </li>
                     <li>
-                      &bull; Malvolio in yellow stockings &mdash; &ldquo;Why, this is very midsummer
+                      &bull; Malvolio in yellow stockings - &ldquo;Why, this is very midsummer
                       madness&rdquo;
                     </li>
+                    <li>&bull; Sir Andrew&apos;s feeble challenge letter - comic ineffectuality</li>
+                    <li>&bull; The aborted duel - Antonio&apos;s mistaken intervention</li>
                     <li>
-                      &bull; Sir Andrew&apos;s feeble challenge letter &mdash; comic ineffectuality
-                    </li>
-                    <li>&bull; The aborted duel &mdash; Antonio&apos;s mistaken intervention</li>
-                    <li>
-                      &bull; Antonio&apos;s arrest &mdash; the moment of mistaken identity that
-                      resolves the plot
+                      &bull; Antonio&apos;s arrest - the moment of mistaken identity that resolves
+                      the plot
                     </li>
                   </ul>
                 </div>
@@ -362,11 +356,11 @@ export default function TwelfthNightPage() {
                   <span className="flex h-6 w-6 items-center justify-center rounded-full bg-violet-500/15 text-xs font-bold text-violet-700 dark:text-violet-300">
                     4
                   </span>
-                  Act 4 &mdash; Sebastian Mistaken for Cesario; Sir Topas
+                  Act 4 - Sebastian Mistaken for Cesario; Sir Topas
                 </h4>
                 <p className="mt-2 text-sm text-muted-foreground leading-relaxed">
                   Sebastian, wandering Illyria, is accosted first by Feste (mistaking him for
-                  Cesario), then by Sir Andrew, who attacks him &mdash; only for Sebastian to floor
+                  Cesario), then by Sir Andrew, who attacks him - only for Sebastian to floor
                   Andrew. Olivia rushes in and, thinking Sebastian is Cesario at last yielding to
                   her, takes him home. Sebastian, dazzled and bewildered, accepts: &ldquo;Or I am
                   mad, or else this is a dream.&rdquo; They are betrothed by a priest. Meanwhile,
@@ -382,16 +376,14 @@ export default function TwelfthNightPage() {
                   </p>
                   <ul className="mt-2 space-y-1 text-sm text-muted-foreground">
                     <li>
-                      &bull; Sebastian floors Sir Andrew &mdash; the &ldquo;Cesario&rdquo; nobody
+                      &bull; Sebastian floors Sir Andrew - the &ldquo;Cesario&rdquo; nobody
                       recognises
                     </li>
                     <li>&bull; Olivia&apos;s impulsive proposal accepted by the wrong twin</li>
-                    <li>&bull; The dark room &mdash; Malvolio imprisoned as a madman</li>
+                    <li>&bull; The dark room - Malvolio imprisoned as a madman</li>
+                    <li>&bull; Sir Topas the curate - Feste&apos;s most cutting performance</li>
                     <li>
-                      &bull; Sir Topas the curate &mdash; Feste&apos;s most cutting performance
-                    </li>
-                    <li>
-                      &bull; The priest&apos;s betrothal &mdash; sealed offstage, decisive for Act 5
+                      &bull; The priest&apos;s betrothal - sealed offstage, decisive for Act 5
                     </li>
                   </ul>
                 </div>
@@ -402,19 +394,19 @@ export default function TwelfthNightPage() {
                   <span className="flex h-6 w-6 items-center justify-center rounded-full bg-violet-500/15 text-xs font-bold text-violet-700 dark:text-violet-300">
                     5
                   </span>
-                  Act 5 &mdash; The Twins Meet; Festive and Bitter Endings
+                  Act 5 - The Twins Meet; Festive and Bitter Endings
                 </h4>
                 <p className="mt-2 text-sm text-muted-foreground leading-relaxed">
                   Orsino arrives at Olivia&apos;s house with Cesario; Antonio is brought in under
                   guard, and Antonio accuses Cesario of betrayal. Olivia enters and addresses
                   Cesario as her husband; the priest confirms the betrothal. Orsino, enraged at
                   Cesario&apos;s &ldquo;treachery,&rdquo; threatens violence. Sir Andrew and Sir
-                  Toby stagger in, beaten by Sebastian. Then Sebastian himself enters &mdash; and
-                  the twins finally see each other. Olivia exclaims &ldquo;Most wonderful!&rdquo;
-                  Viola and Sebastian recognise each other through testimony of their dead father.
-                  Orsino, now realising Cesario is a woman, immediately offers her his hand.
-                  Malvolio is released, shows Olivia the letter that ruined him, and learns it was
-                  forged by Maria. He exits vowing &ldquo;I&apos;ll be revenged on the whole pack of
+                  Toby stagger in, beaten by Sebastian. Then Sebastian himself enters - and the
+                  twins finally see each other. Olivia exclaims &ldquo;Most wonderful!&rdquo; Viola
+                  and Sebastian recognise each other through testimony of their dead father. Orsino,
+                  now realising Cesario is a woman, immediately offers her his hand. Malvolio is
+                  released, shows Olivia the letter that ruined him, and learns it was forged by
+                  Maria. He exits vowing &ldquo;I&apos;ll be revenged on the whole pack of
                   you,&rdquo; while Toby and Maria have married offstage. Feste closes the play
                   alone with his melancholy song: &ldquo;the rain it raineth every day.&rdquo;
                 </p>
@@ -424,20 +416,17 @@ export default function TwelfthNightPage() {
                   </p>
                   <ul className="mt-2 space-y-1 text-sm text-muted-foreground">
                     <li>
-                      &bull; Antonio&apos;s grief at Cesario&apos;s denial &mdash; the
-                      queer/devotional pain
+                      &bull; Antonio&apos;s grief at Cesario&apos;s denial - the queer/devotional
+                      pain
                     </li>
-                    <li>
-                      &bull; The twins meet &mdash; &ldquo;An apple cleft in two&rdquo; (Antonio)
-                    </li>
+                    <li>&bull; The twins meet - &ldquo;An apple cleft in two&rdquo; (Antonio)</li>
                     <li>&bull; Viola names herself at last: &ldquo;That I am Viola&rdquo;</li>
                     <li>
-                      &bull; Malvolio&apos;s exit &mdash; the unhealed wound in the play&apos;s
-                      comedy
+                      &bull; Malvolio&apos;s exit - the unhealed wound in the play&apos;s comedy
                     </li>
                     <li>
-                      &bull; Feste&apos;s &ldquo;wind and the rain&rdquo; song &mdash; the
-                      play&apos;s sober envoi
+                      &bull; Feste&apos;s &ldquo;wind and the rain&rdquo; song - the play&apos;s
+                      sober envoi
                     </li>
                   </ul>
                 </div>
@@ -652,8 +641,8 @@ export default function TwelfthNightPage() {
                   never undone onstage: Viola&apos;s women&apos;s clothes are in the keeping of the
                   Sea-Captain, who is being detained at the play&apos;s end. Viola is promised to
                   Orsino while still dressed as Cesario. Many critics treat this as
-                  Shakespeare&apos;s most subversive symbolic gesture &mdash; the comedy ends with
-                  the heroine in trousers.
+                  Shakespeare&apos;s most subversive symbolic gesture - the comedy ends with the
+                  heroine in trousers.
                 </p>
               </div>
               <div className="rounded-lg bg-muted p-4">
@@ -675,8 +664,8 @@ export default function TwelfthNightPage() {
                   Maria&apos;s letter is the central prop of the sub-plot. It works through textual
                   interpretation: Malvolio &ldquo;reads&rdquo; M.O.A.I., decides it spells him, and
                   constructs a delusional narrative from it. The letter symbolises the danger of
-                  self-flattering reading &mdash; how a written text can be made to reflect whatever
-                  the reader most wants to find. It also operates as a parody of the love-letter
+                  self-flattering reading - how a written text can be made to reflect whatever the
+                  reader most wants to find. It also operates as a parody of the love-letter
                   convention central to Petrarchan courtship in the main plot.
                 </p>
               </div>
@@ -685,12 +674,12 @@ export default function TwelfthNightPage() {
                   The Wind and the Rain (Feste&apos;s song)
                 </h4>
                 <p className="mt-1 text-sm text-muted-foreground leading-relaxed">
-                  The closing song&apos;s refrain &mdash; &ldquo;the wind and the rain&rdquo;
-                  &mdash; symbolises the ordinary, unromantic continuance of life beyond the comic
-                  resolution. Where comedy ends with marriage, weather goes on. The repeated weather
-                  refrain undercuts the comic music of the play: every stanza, no matter what stage
-                  of life, returns to the same wet, wind-blown reality. Shakespeare uses the song as
-                  a structural counterweight to the festivity of the title.
+                  The closing song&apos;s refrain - &ldquo;the wind and the rain&rdquo; - symbolises
+                  the ordinary, unromantic continuance of life beyond the comic resolution. Where
+                  comedy ends with marriage, weather goes on. The repeated weather refrain undercuts
+                  the comic music of the play: every stanza, no matter what stage of life, returns
+                  to the same wet, wind-blown reality. Shakespeare uses the song as a structural
+                  counterweight to the festivity of the title.
                 </p>
               </div>
               <div className="rounded-lg bg-muted p-4">
@@ -699,9 +688,9 @@ export default function TwelfthNightPage() {
                   The space where Malvolio is imprisoned in Act 4 as a &ldquo;madman.&rdquo;
                   Symbolically, the dark room reverses the play&apos;s festive light: instead of
                   midsummer madness as joyful release, here madness is enforced punishment. The room
-                  is a literal version of the metaphor &mdash; Malvolio is in the dark, while Feste,
-                  in the curate&apos;s costume of Sir Topas, decides what reality is. This is the
-                  most disturbing symbol in the play: madness as a thing one person can impose on
+                  is a literal version of the metaphor - Malvolio is in the dark, while Feste, in
+                  the curate&apos;s costume of Sir Topas, decides what reality is. This is the most
+                  disturbing symbol in the play: madness as a thing one person can impose on
                   another.
                 </p>
               </div>
@@ -709,12 +698,12 @@ export default function TwelfthNightPage() {
                 <h4 className="font-bold text-foreground">The Ring</h4>
                 <p className="mt-1 text-sm text-muted-foreground leading-relaxed">
                   The ring Olivia sends after Cesario at the end of Act 1, claiming Cesario left it
-                  behind. The ring is fictional &mdash; Cesario never gave it &mdash; and is the
-                  first sign that Olivia has fallen in love. Symbolically, the ring is a circular
-                  object of completion (and conventional sign of betrothal) used here as a lie. It
-                  marks the moment when Viola realises &ldquo;She loves me, sure&rdquo;, and within
-                  a few lines her soliloquy turns to &ldquo;disguise&rdquo;. The whole emotional
-                  knot of the play is encoded in this single circular prop.
+                  behind. The ring is fictional - Cesario never gave it - and is the first sign that
+                  Olivia has fallen in love. Symbolically, the ring is a circular object of
+                  completion (and conventional sign of betrothal) used here as a lie. It marks the
+                  moment when Viola realises &ldquo;She loves me, sure&rdquo;, and within a few
+                  lines her soliloquy turns to &ldquo;disguise&rdquo;. The whole emotional knot of
+                  the play is encoded in this single circular prop.
                 </p>
               </div>
             </div>
@@ -739,16 +728,15 @@ export default function TwelfthNightPage() {
               <div className="rounded-lg bg-primary/10 p-4">
                 <h4 className="font-bold text-primary">{tr(`The Twelfth Night Holiday`)}</h4>
                 <p className="mt-1 text-sm text-muted-foreground leading-relaxed">
-                  The play&apos;s title refers to the festive end of the twelve days of Christmas
-                  &mdash; the evening of 5 January, the eve of Epiphany. In the Elizabethan and
-                  earlier English tradition, Twelfth Night was the climax of the Christmas misrule:
-                  a Lord of Misrule (or in the universities, a &ldquo;Boy Bishop&rdquo;) was crowned
-                  to invert ordinary social hierarchies. Servants were served by masters, men
-                  dressed as women, drinking and disorder were licensed. The subtitle &ldquo;What
-                  You Will&rdquo; gestures at this licence: anything goes. Shakespeare&apos;s play
-                  dramatises both the joy and the limits of such inversion &mdash; the comedy ends
-                  with order restored, but Malvolio&apos;s exit shows the cost of the festive
-                  licence.
+                  The play&apos;s title refers to the festive end of the twelve days of Christmas -
+                  the evening of 5 January, the eve of Epiphany. In the Elizabethan and earlier
+                  English tradition, Twelfth Night was the climax of the Christmas misrule: a Lord
+                  of Misrule (or in the universities, a &ldquo;Boy Bishop&rdquo;) was crowned to
+                  invert ordinary social hierarchies. Servants were served by masters, men dressed
+                  as women, drinking and disorder were licensed. The subtitle &ldquo;What You
+                  Will&rdquo; gestures at this licence: anything goes. Shakespeare&apos;s play
+                  dramatises both the joy and the limits of such inversion - the comedy ends with
+                  order restored, but Malvolio&apos;s exit shows the cost of the festive licence.
                 </p>
               </div>
               <div className="rounded-lg bg-primary/10 p-4">
@@ -757,9 +745,9 @@ export default function TwelfthNightPage() {
                   Illyria was the ancient name for the eastern Adriatic coast (roughly modern
                   Croatia and Albania), but for Shakespeare and his audience it functioned mainly as
                   a romance-name: an exotic Mediterranean nowhere where dukes are lovesick and
-                  storms wash up disguised heroines. Italian comic theatre &mdash; especially the
-                  commedia dell&apos;arte and Italian prose comedies &mdash; lies behind much of the
-                  plot architecture: a 1531 Italian play <em>Gl&apos;Ingannati</em>
+                  storms wash up disguised heroines. Italian comic theatre - especially the commedia
+                  dell&apos;arte and Italian prose comedies - lies behind much of the plot
+                  architecture: a 1531 Italian play <em>Gl&apos;Ingannati</em>
                   (&ldquo;The Deceived&rdquo;) features a cross-dressing girl wooing one woman for a
                   man she herself loves. Shakespeare&apos;s Illyria is half-real geography,
                   half-stage-comedy fairyland.
@@ -792,7 +780,7 @@ export default function TwelfthNightPage() {
                   humiliation, Antonio&apos;s exclusion, and Feste&apos;s closing song push the
                   comedy towards a tone the earlier romantic plays do not reach. Many critics
                   describe Twelfth Night as the &ldquo;last&rdquo; or &ldquo;ripest&rdquo; festive
-                  comedy &mdash; the moment before Shakespeare&apos;s comic mood gives way.
+                  comedy - the moment before Shakespeare&apos;s comic mood gives way.
                 </p>
               </div>
               <div className="rounded-lg bg-primary/10 p-4">
@@ -801,10 +789,10 @@ export default function TwelfthNightPage() {
                 </h4>
                 <p className="mt-1 text-sm text-muted-foreground leading-relaxed">
                   Stephen Greenblatt&apos;s <em>{tr(`Will in the World`)}</em> (2004) influentially
-                  links Twelfth Night to the death of Shakespeare&apos;s only son Hamnet in 1596
-                  &mdash; Hamnet was twin brother to Judith. Greenblatt argues that Viola&apos;s
-                  anguish at believing her twin Sebastian dead, and her line &ldquo;I am all the
-                  daughters of my father&apos;s house, / And all the brothers too,&rdquo; carries
+                  links Twelfth Night to the death of Shakespeare&apos;s only son Hamnet in 1596 -
+                  Hamnet was twin brother to Judith. Greenblatt argues that Viola&apos;s anguish at
+                  believing her twin Sebastian dead, and her line &ldquo;I am all the daughters of
+                  my father&apos;s house, / And all the brothers too,&rdquo; carries
                   Shakespeare&apos;s own bereavement. Sebastian&apos;s late survival becomes, on
                   this reading, a wishful resurrection of the lost twin. Greenblatt&apos;s reading
                   is speculative biography but has reshaped how A-Level and undergraduate criticism
@@ -817,12 +805,12 @@ export default function TwelfthNightPage() {
                   C. L. Barber&apos;s <em>{tr(`Shakespeare's Festive Comedy`)}</em> (1959) defined
                   the dominant twentieth-century reading of Twelfth Night. Barber argued that
                   Shakespeare&apos;s comedies follow a pattern of &ldquo;saturnalian release and
-                  clarification&rdquo; &mdash; festive inversion temporarily releases social
-                  pressure, then releases its participants back into a reformed normal. Twelfth
-                  Night fits the pattern, but it also strains it: Malvolio&apos;s refusal of
-                  resolution, Feste&apos;s closing song, and Antonio&apos;s pain mark the limits of
-                  the festive model. Later critics (Leah Marcus, Anne Barton) have read the play as
-                  testing rather than confirming Barber&apos;s thesis.
+                  clarification&rdquo; - festive inversion temporarily releases social pressure,
+                  then releases its participants back into a reformed normal. Twelfth Night fits the
+                  pattern, but it also strains it: Malvolio&apos;s refusal of resolution,
+                  Feste&apos;s closing song, and Antonio&apos;s pain mark the limits of the festive
+                  model. Later critics (Leah Marcus, Anne Barton) have read the play as testing
+                  rather than confirming Barber&apos;s thesis.
                 </p>
               </div>
               <div className="rounded-lg bg-primary/10 p-4">
@@ -835,8 +823,8 @@ export default function TwelfthNightPage() {
                   Malvolio&apos;s killjoy interruption of the midnight revel is one of
                   Shakespeare&apos;s sharpest in-house jokes about this opposition. Forty-one years
                   after Twelfth Night, in 1642, the puritan Parliament closed the theatres for
-                  eighteen years. Malvolio&apos;s threat &mdash; &ldquo;I&apos;ll be revenged on the
-                  whole pack of you&rdquo; &mdash; reads, in retrospect, almost prophetic.
+                  eighteen years. Malvolio&apos;s threat - &ldquo;I&apos;ll be revenged on the whole
+                  pack of you&rdquo; - reads, in retrospect, almost prophetic.
                 </p>
               </div>
             </div>
@@ -853,9 +841,9 @@ export default function TwelfthNightPage() {
                   The play runs two plots in parallel: the romance triangle of Orsino, Olivia, and
                   Viola/Sebastian; and the gulling of Malvolio in the Olivia household. Both turn on
                   misreading: Olivia misreads Cesario&apos;s sex, Malvolio misreads the letter. Both
-                  end in marriages made or promised (Viola/Orsino, Sebastian/Olivia, Toby/Maria)
-                  &mdash; except Malvolio, who is left out. Shakespeare crosses the two plots
-                  structurally so that the gulling and the romance climax in the same Act 5 scene.
+                  end in marriages made or promised (Viola/Orsino, Sebastian/Olivia, Toby/Maria) -
+                  except Malvolio, who is left out. Shakespeare crosses the two plots structurally
+                  so that the gulling and the romance climax in the same Act 5 scene.
                 </p>
               </div>
               <div className="rounded-lg bg-muted p-4">
@@ -876,8 +864,8 @@ export default function TwelfthNightPage() {
                   art a wickedness&rdquo;, the &ldquo;ring&rdquo; soliloquy of 2.2). These give her
                   an interiority no other character reaches. Malvolio also has a long fantasy speech
                   in 2.5 (&ldquo;To be Count Malvolio&rdquo;), but his is overheard by the
-                  conspirators &mdash; his interiority is mocked, where Viola&apos;s is privileged.
-                  The play distributes its interiority asymmetrically: empathy is not equal.
+                  conspirators - his interiority is mocked, where Viola&apos;s is privileged. The
+                  play distributes its interiority asymmetrically: empathy is not equal.
                 </p>
               </div>
               <div className="rounded-lg bg-muted p-4">
@@ -888,7 +876,7 @@ export default function TwelfthNightPage() {
                   death&rdquo; in 2.4 (love-as-death, melancholy), and &ldquo;The wind and the
                   rain&rdquo; in 5.1 (after-the-comedy melancholy). The songs trace an emotional arc
                   from holiday energy to bittersweet acceptance. They also belong to a single
-                  character &mdash; Feste &mdash; whose voice frames the comedy from inside it.
+                  character - Feste - whose voice frames the comedy from inside it.
                 </p>
               </div>
               <div className="rounded-lg bg-muted p-4">
@@ -934,7 +922,7 @@ export default function TwelfthNightPage() {
                   </div>
                   <div>
                     <p className="text-xs font-semibold text-violet-700 dark:text-violet-300 uppercase tracking-wider">
-                      Paragraph 1 &mdash; Disguise as plot mechanism
+                      Paragraph 1 - Disguise as plot mechanism
                     </p>
                     <p className="mt-1 text-sm text-muted-foreground">
                       &ldquo;Conceal me what I am.&rdquo; Show how Viola&apos;s disguise generates
@@ -944,7 +932,7 @@ export default function TwelfthNightPage() {
                   </div>
                   <div>
                     <p className="text-xs font-semibold text-violet-700 dark:text-violet-300 uppercase tracking-wider">
-                      Paragraph 2 &mdash; Disguise as moral cost
+                      Paragraph 2 - Disguise as moral cost
                     </p>
                     <p className="mt-1 text-sm text-muted-foreground">
                       &ldquo;Disguise, I see thou art a wickedness.&rdquo; Viola&apos;s 2.2
@@ -954,7 +942,7 @@ export default function TwelfthNightPage() {
                   </div>
                   <div>
                     <p className="text-xs font-semibold text-violet-700 dark:text-violet-300 uppercase tracking-wider">
-                      Paragraph 3 &mdash; Disguise and gender performance
+                      Paragraph 3 - Disguise and gender performance
                     </p>
                     <p className="mt-1 text-sm text-muted-foreground">
                       Boy actor &rarr; Viola &rarr; Cesario layers. Connect to Greenblatt and Garber
@@ -964,7 +952,7 @@ export default function TwelfthNightPage() {
                   </div>
                   <div>
                     <p className="text-xs font-semibold text-violet-700 dark:text-violet-300 uppercase tracking-wider">
-                      Paragraph 4 &mdash; Disguise and Malvolio
+                      Paragraph 4 - Disguise and Malvolio
                     </p>
                     <p className="mt-1 text-sm text-muted-foreground">
                       Disguise is not only Viola&apos;s. Feste disguises as Sir Topas; Malvolio
@@ -978,8 +966,8 @@ export default function TwelfthNightPage() {
                     </p>
                     <p className="mt-1 text-sm text-muted-foreground">
                       Viola is still in male clothes at the end; her women&apos;s clothes are
-                      off-stage with the detained Captain. The disguise is never fully resolved
-                      &mdash; Shakespeare&apos;s comic logic stops just short of restoration.
+                      off-stage with the detained Captain. The disguise is never fully resolved -
+                      Shakespeare&apos;s comic logic stops just short of restoration.
                     </p>
                   </div>
                 </div>
@@ -998,23 +986,22 @@ export default function TwelfthNightPage() {
                     <p className="mt-1 text-sm text-muted-foreground">
                       Twelfth Night repeatedly equates love with madness, but Shakespeare
                       distinguishes between the productive madness of festive recognition and the
-                      destructive madness of self-deception &mdash; with Malvolio paying for the
-                      second.
+                      destructive madness of self-deception - with Malvolio paying for the second.
                     </p>
                   </div>
                   <div>
                     <p className="text-xs font-semibold text-violet-700 dark:text-violet-300 uppercase tracking-wider">
-                      Paragraph 1 &mdash; Orsino&apos;s Petrarchan excess
+                      Paragraph 1 - Orsino&apos;s Petrarchan excess
                     </p>
                     <p className="mt-1 text-sm text-muted-foreground">
                       &ldquo;If music be the food of love, play on.&rdquo; Argue that Orsino&apos;s
-                      love is performance &mdash; he is in love with the experience of loving. Use
-                      his constant changes of mind as evidence.
+                      love is performance - he is in love with the experience of loving. Use his
+                      constant changes of mind as evidence.
                     </p>
                   </div>
                   <div>
                     <p className="text-xs font-semibold text-violet-700 dark:text-violet-300 uppercase tracking-wider">
-                      Paragraph 2 &mdash; Olivia&apos;s instant infatuation
+                      Paragraph 2 - Olivia&apos;s instant infatuation
                     </p>
                     <p className="mt-1 text-sm text-muted-foreground">
                       &ldquo;Love sought is good; but given unsought is better.&rdquo; Olivia&apos;s
@@ -1025,18 +1012,18 @@ export default function TwelfthNightPage() {
                   </div>
                   <div>
                     <p className="text-xs font-semibold text-violet-700 dark:text-violet-300 uppercase tracking-wider">
-                      Paragraph 3 &mdash; Malvolio&apos;s dangerous fantasy
+                      Paragraph 3 - Malvolio&apos;s dangerous fantasy
                     </p>
                     <p className="mt-1 text-sm text-muted-foreground">
                       &ldquo;Why, this is very midsummer madness.&rdquo; Olivia diagnoses Malvolio.
                       But the conspirators take her diagnosis literally and lock him in the dark
                       room. Argue that Malvolio is punished because his madness is interpretive, not
-                      affective &mdash; he reads a text wrong.
+                      affective - he reads a text wrong.
                     </p>
                   </div>
                   <div>
                     <p className="text-xs font-semibold text-violet-700 dark:text-violet-300 uppercase tracking-wider">
-                      Paragraph 4 &mdash; Antonio&apos;s grief
+                      Paragraph 4 - Antonio&apos;s grief
                     </p>
                     <p className="mt-1 text-sm text-muted-foreground">
                       Antonio&apos;s love for Sebastian is the most painful in the play. His sense
@@ -1077,7 +1064,7 @@ export default function TwelfthNightPage() {
                   </div>
                   <div>
                     <p className="text-xs font-semibold text-violet-700 dark:text-violet-300 uppercase tracking-wider">
-                      Paragraph 1 &mdash; Misrule embodied
+                      Paragraph 1 - Misrule embodied
                     </p>
                     <p className="mt-1 text-sm text-muted-foreground">
                       Sir Toby and Maria&apos;s midnight revel as Twelfth Night Lord-of-Misrule
@@ -1087,7 +1074,7 @@ export default function TwelfthNightPage() {
                   </div>
                   <div>
                     <p className="text-xs font-semibold text-violet-700 dark:text-violet-300 uppercase tracking-wider">
-                      Paragraph 2 &mdash; Festive inversions
+                      Paragraph 2 - Festive inversions
                     </p>
                     <p className="mt-1 text-sm text-muted-foreground">
                       Cross-dressing (Viola), a gentlewoman servant marrying a knight (Maria/Toby),
@@ -1097,7 +1084,7 @@ export default function TwelfthNightPage() {
                   </div>
                   <div>
                     <p className="text-xs font-semibold text-violet-700 dark:text-violet-300 uppercase tracking-wider">
-                      Paragraph 3 &mdash; The puritan resistance
+                      Paragraph 3 - The puritan resistance
                     </p>
                     <p className="mt-1 text-sm text-muted-foreground">
                       Malvolio as &ldquo;a kind of puritan&rdquo;; the gulling as the holiday&apos;s
@@ -1108,7 +1095,7 @@ export default function TwelfthNightPage() {
                   </div>
                   <div>
                     <p className="text-xs font-semibold text-violet-700 dark:text-violet-300 uppercase tracking-wider">
-                      Paragraph 4 &mdash; The end of the holiday
+                      Paragraph 4 - The end of the holiday
                     </p>
                     <p className="mt-1 text-sm text-muted-foreground">
                       &ldquo;The wind and the rain.&rdquo; Feste&apos;s final song reframes the
@@ -1147,7 +1134,7 @@ export default function TwelfthNightPage() {
                   </div>
                   <div>
                     <p className="text-xs font-semibold text-violet-700 dark:text-violet-300 uppercase tracking-wider">
-                      Paragraph 1 &mdash; Reasons given for the gulling
+                      Paragraph 1 - Reasons given for the gulling
                     </p>
                     <p className="mt-1 text-sm text-muted-foreground">
                       Maria: &ldquo;a kind of puritan.&rdquo; Sir Toby: &ldquo;cakes and ale.&rdquo;
@@ -1157,7 +1144,7 @@ export default function TwelfthNightPage() {
                   </div>
                   <div>
                     <p className="text-xs font-semibold text-violet-700 dark:text-violet-300 uppercase tracking-wider">
-                      Paragraph 2 &mdash; Cruelty escalates
+                      Paragraph 2 - Cruelty escalates
                     </p>
                     <p className="mt-1 text-sm text-muted-foreground">
                       Yellow stockings (humiliation) &rarr; dark room (imprisonment) &rarr; Sir
@@ -1167,24 +1154,24 @@ export default function TwelfthNightPage() {
                   </div>
                   <div>
                     <p className="text-xs font-semibold text-violet-700 dark:text-violet-300 uppercase tracking-wider">
-                      Paragraph 3 &mdash; Class anxiety
+                      Paragraph 3 - Class anxiety
                     </p>
                     <p className="mt-1 text-sm text-muted-foreground">
-                      A modern reading: Malvolio is also punished for ambition above his rank
-                      &mdash; for the fantasy of marrying his lady. The comedy may police class
-                      boundaries as much as religious style. Connect to Cristina Malcolmson&apos;s
-                      critical work on stewards and class on the Elizabethan stage.
+                      A modern reading: Malvolio is also punished for ambition above his rank - for
+                      the fantasy of marrying his lady. The comedy may police class boundaries as
+                      much as religious style. Connect to Cristina Malcolmson&apos;s critical work
+                      on stewards and class on the Elizabethan stage.
                     </p>
                   </div>
                   <div>
                     <p className="text-xs font-semibold text-violet-700 dark:text-violet-300 uppercase tracking-wider">
-                      Paragraph 4 &mdash; The exit line
+                      Paragraph 4 - The exit line
                     </p>
                     <p className="mt-1 text-sm text-muted-foreground">
                       &ldquo;I&apos;ll be revenged on the whole pack of you.&rdquo; He leaves before
                       anyone can make peace with him; only then does Orsino send after him to
                       &ldquo;entreat him to a peace&rdquo;. The comedy is therefore structurally
-                      incomplete &mdash; one major figure refuses inclusion.
+                      incomplete - one major figure refuses inclusion.
                     </p>
                   </div>
                   <div>
@@ -1218,7 +1205,7 @@ export default function TwelfthNightPage() {
                   </div>
                   <div>
                     <p className="text-xs font-semibold text-violet-700 dark:text-violet-300 uppercase tracking-wider">
-                      Paragraph 1 &mdash; Wise folly
+                      Paragraph 1 - Wise folly
                     </p>
                     <p className="mt-1 text-sm text-muted-foreground">
                       &ldquo;Better a witty fool than a foolish wit.&rdquo; The Renaissance topos of
@@ -1228,33 +1215,33 @@ export default function TwelfthNightPage() {
                   </div>
                   <div>
                     <p className="text-xs font-semibold text-violet-700 dark:text-violet-300 uppercase tracking-wider">
-                      Paragraph 2 &mdash; The professional
+                      Paragraph 2 - The professional
                     </p>
                     <p className="mt-1 text-sm text-muted-foreground">
                       Feste is paid in coins by Orsino, by Viola, by Sebastian. The play emphasises
-                      the economic side of folly. He is the only mobile character &mdash; he
-                      literally crosses the play&apos;s social geography.
+                      the economic side of folly. He is the only mobile character - he literally
+                      crosses the play&apos;s social geography.
                     </p>
                   </div>
                   <div>
                     <p className="text-xs font-semibold text-violet-700 dark:text-violet-300 uppercase tracking-wider">
-                      Paragraph 3 &mdash; Sir Topas
+                      Paragraph 3 - Sir Topas
                     </p>
                     <p className="mt-1 text-sm text-muted-foreground">
                       Feste&apos;s curate-disguise. The dark scene is the play&apos;s most morally
-                      compromised, and Feste is its agent. Argue that the fool is not innocent
-                      &mdash; he participates in cruelty as well as wit.
+                      compromised, and Feste is its agent. Argue that the fool is not innocent - he
+                      participates in cruelty as well as wit.
                     </p>
                   </div>
                   <div>
                     <p className="text-xs font-semibold text-violet-700 dark:text-violet-300 uppercase tracking-wider">
-                      Paragraph 4 &mdash; The closing song
+                      Paragraph 4 - The closing song
                     </p>
                     <p className="mt-1 text-sm text-muted-foreground">
                       &ldquo;When that I was and a little tiny boy.&rdquo; The fool ends the play
                       alone, narrating an entire life-cycle while everyone else is offstage
-                      marrying. Feste&apos;s final word is the play&apos;s real ending &mdash; a
-                      balance to the festive resolution that nobody else is qualified to deliver.
+                      marrying. Feste&apos;s final word is the play&apos;s real ending - a balance
+                      to the festive resolution that nobody else is qualified to deliver.
                     </p>
                   </div>
                   <div>
@@ -1288,17 +1275,17 @@ export default function TwelfthNightPage() {
                   </div>
                   <div>
                     <p className="text-xs font-semibold text-violet-700 dark:text-violet-300 uppercase tracking-wider">
-                      Paragraph 1 &mdash; Resourceful in crisis
+                      Paragraph 1 - Resourceful in crisis
                     </p>
                     <p className="mt-1 text-sm text-muted-foreground">
                       &ldquo;What country, friends, is this?&rdquo; Show how Viola adapts
-                      immediately to the new world &mdash; her plan to disguise herself is practical
+                      immediately to the new world - her plan to disguise herself is practical
                       survival, not escapade.
                     </p>
                   </div>
                   <div>
                     <p className="text-xs font-semibold text-violet-700 dark:text-violet-300 uppercase tracking-wider">
-                      Paragraph 2 &mdash; Her honest love
+                      Paragraph 2 - Her honest love
                     </p>
                     <p className="mt-1 text-sm text-muted-foreground">
                       &ldquo;She never told her love.&rdquo; Viola loves Orsino in silence. Her
@@ -1307,7 +1294,7 @@ export default function TwelfthNightPage() {
                   </div>
                   <div>
                     <p className="text-xs font-semibold text-violet-700 dark:text-violet-300 uppercase tracking-wider">
-                      Paragraph 3 &mdash; Moral self-awareness
+                      Paragraph 3 - Moral self-awareness
                     </p>
                     <p className="mt-1 text-sm text-muted-foreground">
                       &ldquo;Disguise, I see thou art a wickedness.&rdquo; Unlike Orsino or Olivia,
@@ -1339,14 +1326,13 @@ export default function TwelfthNightPage() {
                     </p>
                     <p className="mt-1 text-sm text-muted-foreground">
                       Shakespeare uses mistaken identity as both a source of comedy and a way of
-                      testing how well the characters know one another &mdash; with Viola,
-                      Sebastian, and Antonio at the centre of a chain of recognitions and
-                      misrecognitions.
+                      testing how well the characters know one another - with Viola, Sebastian, and
+                      Antonio at the centre of a chain of recognitions and misrecognitions.
                     </p>
                   </div>
                   <div>
                     <p className="text-xs font-semibold text-violet-700 dark:text-violet-300 uppercase tracking-wider">
-                      Paragraph 1 &mdash; Olivia falls for Cesario
+                      Paragraph 1 - Olivia falls for Cesario
                     </p>
                     <p className="mt-1 text-sm text-muted-foreground">
                       Olivia thinks Cesario is a young man and falls in love with &ldquo;him.&rdquo;
@@ -1355,7 +1341,7 @@ export default function TwelfthNightPage() {
                   </div>
                   <div>
                     <p className="text-xs font-semibold text-violet-700 dark:text-violet-300 uppercase tracking-wider">
-                      Paragraph 2 &mdash; Antonio mistakes Cesario for Sebastian
+                      Paragraph 2 - Antonio mistakes Cesario for Sebastian
                     </p>
                     <p className="mt-1 text-sm text-muted-foreground">
                       In 3.4 Antonio rescues Cesario from the duel because he thinks he is
@@ -1365,7 +1351,7 @@ export default function TwelfthNightPage() {
                   </div>
                   <div>
                     <p className="text-xs font-semibold text-violet-700 dark:text-violet-300 uppercase tracking-wider">
-                      Paragraph 3 &mdash; The recognition scene
+                      Paragraph 3 - The recognition scene
                     </p>
                     <p className="mt-1 text-sm text-muted-foreground">
                       &ldquo;Most wonderful!&rdquo; In Act 5 the twins meet and the truth is
@@ -1404,7 +1390,7 @@ export default function TwelfthNightPage() {
                   </div>
                   <div>
                     <p className="text-xs font-semibold text-violet-700 dark:text-violet-300 uppercase tracking-wider">
-                      Paragraph 1 &mdash; Vanity and ambition
+                      Paragraph 1 - Vanity and ambition
                     </p>
                     <p className="mt-1 text-sm text-muted-foreground">
                       &ldquo;Some are born great, some achieve greatness, and some have greatness
@@ -1415,7 +1401,7 @@ export default function TwelfthNightPage() {
                   </div>
                   <div>
                     <p className="text-xs font-semibold text-violet-700 dark:text-violet-300 uppercase tracking-wider">
-                      Paragraph 2 &mdash; Public humiliation
+                      Paragraph 2 - Public humiliation
                     </p>
                     <p className="mt-1 text-sm text-muted-foreground">
                       &ldquo;Why, this is very midsummer madness.&rdquo; Yellow stockings,
@@ -1424,7 +1410,7 @@ export default function TwelfthNightPage() {
                   </div>
                   <div>
                     <p className="text-xs font-semibold text-violet-700 dark:text-violet-300 uppercase tracking-wider">
-                      Paragraph 3 &mdash; The dark room
+                      Paragraph 3 - The dark room
                     </p>
                     <p className="mt-1 text-sm text-muted-foreground">
                       Imprisoned, exorcised by the fool. The cruelty makes the audience
@@ -1523,10 +1509,10 @@ export default function TwelfthNightPage() {
                 Viola&apos;s &ldquo;I am not what I am&rdquo; (3.1) uses the same words Iago uses to
                 declare his villainy in Othello. Shakespeare wrote the two plays close in time. The
                 repetition is unlikely to be accidental. Where Iago&apos;s line is malign deception,
-                Viola&apos;s is forced disguise &mdash; she is hiding to survive, not to destroy.
-                Reading the two lines side by side argues that Shakespeare uses identical language
-                to map opposite ethics, raising the deep question of when concealment is wickedness
-                and when it is necessity.
+                Viola&apos;s is forced disguise - she is hiding to survive, not to destroy. Reading
+                the two lines side by side argues that Shakespeare uses identical language to map
+                opposite ethics, raising the deep question of when concealment is wickedness and
+                when it is necessity.
               </p>
             </div>
             <div className="rounded-lg border border-violet-500/30 bg-violet-500/5 p-4">
@@ -1538,7 +1524,7 @@ export default function TwelfthNightPage() {
                 death,&rdquo; the after-everything refrain of &ldquo;the wind and the rain.&rdquo;
                 Music is the play&apos;s timekeeping. Where prose comedy of the period uses scenes
                 and acts to track time, Twelfth Night uses songs. The structural use of music is one
-                reason the play is unusually atmospheric &mdash; it is composed as much as plotted.
+                reason the play is unusually atmospheric - it is composed as much as plotted.
               </p>
             </div>
             <div className="rounded-lg border border-violet-500/30 bg-violet-500/5 p-4">
@@ -1550,9 +1536,9 @@ export default function TwelfthNightPage() {
                 colloquial Elizabethan English for &ldquo;or whatever you want.&rdquo; Read
                 structurally, it is Shakespeare advertising the festive licence of his story:
                 anything goes, on Twelfth Night. Read sceptically, it is also an admission that the
-                title is interchangeable &mdash; the play could be called anything. Some critics
-                (Anne Barton) take the subtitle as Shakespeare&apos;s ironic gesture toward the
-                increasing arbitrariness of the festive convention he is using.
+                title is interchangeable - the play could be called anything. Some critics (Anne
+                Barton) take the subtitle as Shakespeare&apos;s ironic gesture toward the increasing
+                arbitrariness of the festive convention he is using.
               </p>
             </div>
             <div className="rounded-lg border border-violet-500/30 bg-violet-500/5 p-4">
@@ -1561,8 +1547,8 @@ export default function TwelfthNightPage() {
               </h4>
               <p className="mt-2 text-sm text-muted-foreground leading-relaxed">
                 Modern readings (Cristina Malcolmson, Mark Thornton Burnett) emphasise that Malvolio
-                is a steward &mdash; a senior household servant whose ambitions to marry his lady
-                would have been received as class-transgressive in Shakespeare&apos;s England. The
+                is a steward - a senior household servant whose ambitions to marry his lady would
+                have been received as class-transgressive in Shakespeare&apos;s England. The
                 yellow-stockings humiliation and the dark-room imprisonment are then not just
                 punishments of vanity but reassertions of class hierarchy disguised as festive
                 comedy. The fact that Maria, who plots his downfall, is rewarded with marriage to
@@ -1654,8 +1640,7 @@ export default function TwelfthNightPage() {
             <span className="mt-0.5 h-1.5 w-1.5 shrink-0 rounded-full bg-accent" />
             <span>
               <strong>{tr(`Cite criticism by name.`)}</strong> Greenblatt on Hamnet, Barber on
-              festive comedy, Garber/Orgel on gender performance &mdash; named critics impress
-              examiners.
+              festive comedy, Garber/Orgel on gender performance - named critics impress examiners.
             </span>
           </li>
           <li className="flex items-start gap-2">
@@ -1663,15 +1648,15 @@ export default function TwelfthNightPage() {
             <span>
               <strong>{tr(`Use precise dramatic terminology.`)}</strong> &ldquo;Soliloquy,&rdquo;
               &ldquo;subplot,&rdquo; &ldquo;recognition scene,&rdquo; &ldquo;saturnalian,&rdquo;
-              &ldquo;metatheatrical&rdquo; &mdash; precise terms beat vague ones.
+              &ldquo;metatheatrical&rdquo; - precise terms beat vague ones.
             </span>
           </li>
           <li className="flex items-start gap-2">
             <span className="mt-0.5 h-1.5 w-1.5 shrink-0 rounded-full bg-accent" />
             <span>
               <strong>{tr(`Address the whole play.`)}</strong> Don&apos;t focus only on the extract
-              &mdash; reference Feste&apos;s closing song and Malvolio&apos;s exit line to show
-              whole-play knowledge.
+              - reference Feste&apos;s closing song and Malvolio&apos;s exit line to show whole-play
+              knowledge.
             </span>
           </li>
         </ul>

@@ -101,7 +101,7 @@ function Quote({
     <div className="rounded-lg border-s-4 border-accent bg-primary/10/40 p-4">
       <p className="text-sm font-semibold italic text-foreground">&ldquo;{text}&rdquo;</p>
       <p className="mt-1 text-xs text-muted-foreground">
-        {speaker} &mdash; {act}
+        {speaker} - {act}
       </p>
       <p className="mt-2 text-sm text-muted-foreground">{analysis}</p>
     </div>
@@ -140,7 +140,7 @@ export default function OthelloRevisionPage() {
           </span>
         </div>
         <h1 className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
-          Othello &mdash; Complete Revision Guide
+          Othello - Complete Revision Guide
         </h1>
         <p className="mt-3 max-w-3xl text-lg text-muted-foreground">
           Everything you need for your GCSE/IGCSE English Literature exam on Othello. Act-by-act
@@ -188,7 +188,7 @@ export default function OthelloRevisionPage() {
                 <span className="flex h-6 w-6 items-center justify-center rounded-full bg-red-500/15 text-xs font-bold text-red-700 dark:text-red-300">
                   1
                 </span>
-                Act 1 &mdash; Elopement and Accusations
+                Act 1 - Elopement and Accusations
               </h3>
               <p className="mt-2 text-sm text-muted-foreground leading-relaxed">
                 The play opens in Venice at night. Iago, a soldier passed over for promotion in
@@ -222,7 +222,7 @@ export default function OthelloRevisionPage() {
                 <span className="flex h-6 w-6 items-center justify-center rounded-full bg-red-500/15 text-xs font-bold text-red-700 dark:text-red-300">
                   2
                 </span>
-                Act 2 &mdash; Arrival in Cyprus and Cassio&apos;s Downfall
+                Act 2 - Arrival in Cyprus and Cassio&apos;s Downfall
               </h3>
               <p className="mt-2 text-sm text-muted-foreground leading-relaxed">
                 A storm destroys the Turkish fleet, removing the military threat and leaving the
@@ -232,8 +232,8 @@ export default function OthelloRevisionPage() {
                 fight with the drunk Cassio, who wounds Montano (the outgoing governor). Othello is
                 furious and strips Cassio of his lieutenancy. Cassio is devastated. Iago then
                 advises the disgraced Cassio to seek Desdemona&apos;s help in regaining
-                Othello&apos;s favour &mdash; seemingly kind advice that is actually the next step
-                in Iago&apos;s plan to make it look as though Cassio and Desdemona are having an
+                Othello&apos;s favour - seemingly kind advice that is actually the next step in
+                Iago&apos;s plan to make it look as though Cassio and Desdemona are having an
                 affair.
               </p>
               <div className="mt-3 rounded-lg bg-muted p-3">
@@ -257,7 +257,7 @@ export default function OthelloRevisionPage() {
                 <span className="flex h-6 w-6 items-center justify-center rounded-full bg-red-500/15 text-xs font-bold text-red-700 dark:text-red-300">
                   3
                 </span>
-                Act 3 &mdash; The Temptation
+                Act 3 - The Temptation
               </h3>
               <p className="mt-2 text-sm text-muted-foreground leading-relaxed">
                 This is the play&apos;s pivotal act. Desdemona pleads with Othello on Cassio&apos;s
@@ -266,13 +266,13 @@ export default function OthelloRevisionPage() {
                 concern. He warns Othello to &ldquo;beware, my lord, of jealousy&rdquo; while
                 simultaneously stoking it. He suggests Desdemona is unnatural for choosing Othello
                 over men &ldquo;of her own clime, complexion, and degree.&rdquo; Othello begins to
-                crack. By a stroke of fate, Desdemona drops her handkerchief &mdash; Othello&apos;s
-                first gift to her. Emilia finds it and gives it to Iago, who plants it in
-                Cassio&apos;s lodgings. Iago then tells Othello that Cassio has been seen wiping his
-                beard with the handkerchief and fabricates a story about Cassio talking in his sleep
-                about Desdemona. By the end of the act, Othello is consumed by jealousy and vows to
-                kill Desdemona. He kneels with Iago in a dark parody of a marriage ceremony,
-                swearing vengeance.
+                crack. By a stroke of fate, Desdemona drops her handkerchief - Othello&apos;s first
+                gift to her. Emilia finds it and gives it to Iago, who plants it in Cassio&apos;s
+                lodgings. Iago then tells Othello that Cassio has been seen wiping his beard with
+                the handkerchief and fabricates a story about Cassio talking in his sleep about
+                Desdemona. By the end of the act, Othello is consumed by jealousy and vows to kill
+                Desdemona. He kneels with Iago in a dark parody of a marriage ceremony, swearing
+                vengeance.
               </p>
               <div className="mt-3 rounded-lg bg-muted p-3">
                 <p className="text-xs font-semibold text-muted-foreground uppercase tracking-wider">
@@ -293,21 +293,20 @@ export default function OthelloRevisionPage() {
                 <span className="flex h-6 w-6 items-center justify-center rounded-full bg-red-500/15 text-xs font-bold text-red-700 dark:text-red-300">
                   4
                 </span>
-                Act 4 &mdash; Jealousy Takes Hold
+                Act 4 - Jealousy Takes Hold
               </h3>
               <p className="mt-2 text-sm text-muted-foreground leading-relaxed">
                 Othello&apos;s disintegration accelerates. Iago arranges for Othello to eavesdrop on
                 a conversation with Cassio, who is actually talking about his mistress Bianca, but
                 Othello believes the laughter and boasting are about Desdemona. Bianca then enters,
-                furiously returning the handkerchief she found in Cassio&apos;s room &mdash; which
-                Othello recognises as Desdemona&apos;s. He is now fully convinced. Othello strikes
-                Desdemona publicly in front of visiting Venetian dignitaries (Lodovico), shocking
-                everyone. He interrogates Emilia, who insists on Desdemona&apos;s innocence, but
-                Othello dismisses her. In a harrowing scene, he calls Desdemona a
-                &ldquo;strumpet&rdquo; to her face. Meanwhile, Roderigo confronts Iago about his
-                empty promises. Iago convinces him to murder Cassio. Desdemona, bewildered and
-                frightened, prepares for bed, singing the &ldquo;Willow Song&rdquo; &mdash; a song
-                of abandoned love.
+                furiously returning the handkerchief she found in Cassio&apos;s room - which Othello
+                recognises as Desdemona&apos;s. He is now fully convinced. Othello strikes Desdemona
+                publicly in front of visiting Venetian dignitaries (Lodovico), shocking everyone. He
+                interrogates Emilia, who insists on Desdemona&apos;s innocence, but Othello
+                dismisses her. In a harrowing scene, he calls Desdemona a &ldquo;strumpet&rdquo; to
+                her face. Meanwhile, Roderigo confronts Iago about his empty promises. Iago
+                convinces him to murder Cassio. Desdemona, bewildered and frightened, prepares for
+                bed, singing the &ldquo;Willow Song&rdquo; - a song of abandoned love.
               </p>
               <div className="mt-3 rounded-lg bg-muted p-3">
                 <p className="text-xs font-semibold text-muted-foreground uppercase tracking-wider">
@@ -328,7 +327,7 @@ export default function OthelloRevisionPage() {
                 <span className="flex h-6 w-6 items-center justify-center rounded-full bg-red-500/15 text-xs font-bold text-red-700 dark:text-red-300">
                   5
                 </span>
-                Act 5 &mdash; Murder, Revelation, and Death
+                Act 5 - Murder, Revelation, and Death
               </h3>
               <p className="mt-2 text-sm text-muted-foreground leading-relaxed">
                 Iago directs Roderigo to ambush Cassio in the dark. Roderigo is wounded and Cassio
@@ -377,14 +376,14 @@ export default function OthelloRevisionPage() {
                   prowess but always an outsider due to his race. He is noble, eloquent, and
                   dignified in Acts 1&ndash;2, commanding respect in the Senate and winning
                   Desdemona through the power of his storytelling. His tragic flaw is not simply
-                  jealousy but a deep insecurity about his place in Venetian society &mdash; his
-                  age, his race, his unfamiliarity with Venetian women &mdash; which Iago expertly
-                  exploits. Once the poison of jealousy takes hold, Othello&apos;s language
-                  deteriorates from grand, controlled verse to fragmented, bestial imagery. He
-                  becomes obsessive, violent, and irrational. His final speech attempts to reclaim
-                  his former dignity, asking to be remembered as one who &ldquo;loved not wisely,
-                  but too well.&rdquo; Whether this represents genuine self-knowledge or continued
-                  self-deception is a key critical debate.
+                  jealousy but a deep insecurity about his place in Venetian society - his age, his
+                  race, his unfamiliarity with Venetian women - which Iago expertly exploits. Once
+                  the poison of jealousy takes hold, Othello&apos;s language deteriorates from
+                  grand, controlled verse to fragmented, bestial imagery. He becomes obsessive,
+                  violent, and irrational. His final speech attempts to reclaim his former dignity,
+                  asking to be remembered as one who &ldquo;loved not wisely, but too well.&rdquo;
+                  Whether this represents genuine self-knowledge or continued self-deception is a
+                  key critical debate.
                 </p>
                 <div className="mt-3 grid gap-3 sm:grid-cols-2">
                   <Quote
@@ -411,17 +410,17 @@ export default function OthelloRevisionPage() {
                   Iago is Shakespeare&apos;s most sophisticated villain. Unlike Macbeth, who
                   agonises over evil, Iago revels in it. He is Othello&apos;s ensign
                   (standard-bearer) and supposed friend, but he hates Othello for promoting Cassio
-                  over him. He offers multiple motives &mdash; professional jealousy, suspicion that
-                  Othello slept with Emilia, racism, a possible attraction to Desdemona &mdash; but
-                  none fully explains the depth of his malice. Coleridge famously called this
+                  over him. He offers multiple motives - professional jealousy, suspicion that
+                  Othello slept with Emilia, racism, a possible attraction to Desdemona - but none
+                  fully explains the depth of his malice. Coleridge famously called this
                   &ldquo;motiveless malignity.&rdquo; Iago is a master manipulator who adopts
                   different personas for different people: loyal soldier to Othello, drinking buddy
                   to Cassio, wise advisor to Roderigo, dutiful husband to Emilia. His soliloquies
                   reveal his true contempt for everyone. He understands human psychology with
-                  terrifying precision. Crucially, he never directly lies about Desdemona &mdash; he
-                  uses insinuation, questions, and planted evidence to let Othello&apos;s
-                  imagination do the work. His final refusal to explain himself (&ldquo;Demand me
-                  nothing; what you know, you know&rdquo;) denies closure and deepens his menace.
+                  terrifying precision. Crucially, he never directly lies about Desdemona - he uses
+                  insinuation, questions, and planted evidence to let Othello&apos;s imagination do
+                  the work. His final refusal to explain himself (&ldquo;Demand me nothing; what you
+                  know, you know&rdquo;) denies closure and deepens his menace.
                 </p>
                 <div className="mt-3 grid gap-3 sm:grid-cols-2">
                   <Quote
@@ -452,11 +451,11 @@ export default function OthelloRevisionPage() {
                   However, as Othello&apos;s jealousy intensifies, Desdemona becomes increasingly
                   passive and bewildered. She cannot comprehend what she has done wrong because she
                   has done nothing wrong. Her loyalty to Othello never wavers, even as he abuses her
-                  &mdash; she tells Emilia she would not commit adultery &ldquo;for all the
-                  world,&rdquo; and with her dying breath she tries to protect Othello by claiming
-                  she killed herself. Some critics see this as saintly devotion; others see it as a
-                  tragic illustration of how patriarchal society conditions women to accept abuse.
-                  Her innocence makes her murder all the more devastating.
+                  - she tells Emilia she would not commit adultery &ldquo;for all the world,&rdquo;
+                  and with her dying breath she tries to protect Othello by claiming she killed
+                  herself. Some critics see this as saintly devotion; others see it as a tragic
+                  illustration of how patriarchal society conditions women to accept abuse. Her
+                  innocence makes her murder all the more devastating.
                 </p>
                 <div className="mt-3 grid gap-3 sm:grid-cols-2">
                   <Quote
@@ -480,16 +479,16 @@ export default function OthelloRevisionPage() {
                   Cassio
                 </h3>
                 <p className="mt-3 text-sm text-muted-foreground leading-relaxed">
-                  Michael Cassio is Othello&apos;s lieutenant &mdash; the promotion that enrages
-                  Iago. He is a Florentine, well-educated, courteous, and handsome, described by
-                  Iago contemptuously as a &ldquo;great arithmetician&rdquo; who knows war only from
+                  Michael Cassio is Othello&apos;s lieutenant - the promotion that enrages Iago. He
+                  is a Florentine, well-educated, courteous, and handsome, described by Iago
+                  contemptuously as a &ldquo;great arithmetician&rdquo; who knows war only from
                   books. His gentlemanly manners with women, especially his gallant greeting of
                   Desdemona on Cyprus, are innocent but provide Iago with material to twist. His key
                   weakness is alcohol: one night of drinking leads to a brawl that costs him his
                   position. His desperate desire to regain Othello&apos;s favour makes him seek
                   Desdemona&apos;s help, unwittingly feeding Iago&apos;s narrative. His relationship
                   with Bianca provides Iago with further opportunities for deception. Cassio
-                  survives and is appointed governor of Cyprus, but he is not a hero &mdash; he is a
+                  survives and is appointed governor of Cyprus, but he is not a hero - he is a
                   well-meaning man used as a pawn.
                 </p>
                 <Quote
@@ -511,7 +510,7 @@ export default function OthelloRevisionPage() {
                   Desdemona is idealistic and gentle. Her speech in Act 4, Scene 3, arguing that
                   women have the same desires and rights as men, is one of the most proto-feminist
                   passages in Shakespeare. She gives Iago the handkerchief to please him, not
-                  knowing his purpose &mdash; a small act of wifely obedience with catastrophic
+                  knowing his purpose - a small act of wifely obedience with catastrophic
                   consequences. In the final scene, she becomes the play&apos;s moral voice, defying
                   Iago and Othello to tell the truth even though it costs her life. Her courage in
                   exposing Iago contrasts with her earlier silence and complicity, making her arc
@@ -561,11 +560,11 @@ export default function OthelloRevisionPage() {
                   horrified by his daughter&apos;s marriage to Othello and cannot believe she chose
                   him freely, insisting Othello must have used witchcraft or drugs. His language is
                   steeped in racial prejudice: he sees the match as unnatural and against the
-                  &ldquo;rules of nature.&rdquo; His warning to Othello &mdash; &ldquo;She has
-                  deceiv&apos;d her father, and may thee&rdquo; &mdash; is later echoed by Iago and
-                  lodges in Othello&apos;s mind. Brabantio represents the racist attitudes of
-                  Venetian society that Othello can never fully escape. He reportedly dies of grief
-                  over the marriage (mentioned in Act 5).
+                  &ldquo;rules of nature.&rdquo; His warning to Othello - &ldquo;She has
+                  deceiv&apos;d her father, and may thee&rdquo; - is later echoed by Iago and lodges
+                  in Othello&apos;s mind. Brabantio represents the racist attitudes of Venetian
+                  society that Othello can never fully escape. He reportedly dies of grief over the
+                  marriage (mentioned in Act 5).
                 </p>
                 <Quote
                   text="Look to her, Moor, if thou hast eyes to see: / She has deceiv'd her father, and may thee"
@@ -587,10 +586,10 @@ export default function OthelloRevisionPage() {
                   the plot is crucial: when she returns the handkerchief angrily in front of
                   Othello, it confirms his worst suspicions. Despite being at the bottom of the
                   social hierarchy, she shows genuine emotion and loyalty. Her treatment by the male
-                  characters &mdash; dismissed as a &ldquo;strumpet&rdquo; and a
-                  &ldquo;housewife&rdquo; &mdash; mirrors the way Desdemona is treated once Othello
-                  suspects her, suggesting that in a misogynistic society, all women are vulnerable
-                  to the same accusations regardless of their actual behaviour.
+                  characters - dismissed as a &ldquo;strumpet&rdquo; and a &ldquo;housewife&rdquo; -
+                  mirrors the way Desdemona is treated once Othello suspects her, suggesting that in
+                  a misogynistic society, all women are vulnerable to the same accusations
+                  regardless of their actual behaviour.
                 </p>
               </div>
             </div>
@@ -616,7 +615,7 @@ export default function OthelloRevisionPage() {
                   also motivates Iago (professional jealousy over the promotion, possibly sexual
                   jealousy over Emilia), Roderigo (jealous of Othello), and Bianca (jealous over the
                   handkerchief). The play demonstrates that jealousy destroys the jealous person
-                  first &mdash; it consumes Othello&apos;s reason, dignity, and humanity before it
+                  first - it consumes Othello&apos;s reason, dignity, and humanity before it
                   destroys Desdemona&apos;s life.
                 </p>
                 <div className="mt-3 grid gap-3 sm:grid-cols-2">
@@ -647,7 +646,7 @@ export default function OthelloRevisionPage() {
                   race before his rank: Iago and Roderigo call him &ldquo;the Moor,&rdquo;
                   &ldquo;thick-lips,&rdquo; &ldquo;an old black ram,&rdquo; and &ldquo;the
                   devil&rdquo; (blackness was associated with the devil in Elizabethan culture).
-                  Brabantio cannot accept that Desdemona chose Othello freely &mdash; it must be
+                  Brabantio cannot accept that Desdemona chose Othello freely - it must be
                   witchcraft. Even the Duke&apos;s compliment (&ldquo;far more fair than
                   black&rdquo;) reinforces the assumption that blackness is negative. Iago exploits
                   Othello&apos;s racial insecurity, suggesting Desdemona&apos;s choice is
@@ -707,8 +706,8 @@ export default function OthelloRevisionPage() {
                   The play explores different kinds of love and their vulnerabilities. Othello and
                   Desdemona&apos;s love is passionate and genuine but tested by social pressures,
                   cultural difference, and Iago&apos;s interference. Their love is rooted in
-                  admiration rather than deep mutual knowledge &mdash; they are newly married and
-                  have spent little time together privately. Othello loves Desdemona intensely but
+                  admiration rather than deep mutual knowledge - they are newly married and have
+                  spent little time together privately. Othello loves Desdemona intensely but
                   struggles to trust her independence. His love becomes possessive: &ldquo;I had
                   rather be a toad / And live upon the vapour of a dungeon / Than keep a corner in
                   the thing I love / For others&apos; uses.&rdquo; Desdemona&apos;s love is constant
@@ -735,14 +734,14 @@ export default function OthelloRevisionPage() {
                   Iago is one of literature&apos;s greatest manipulators, and the play is a
                   masterclass in how manipulation works. He tailors his approach to each victim:
                   flattery and appeals to honour for Cassio, promises of Desdemona for Roderigo,
-                  insinuation and fake reluctance for Othello. He never commands &mdash; he
-                  suggests, implies, and lets others draw conclusions. He creates situations
-                  (getting Cassio drunk, planting the handkerchief) rather than making direct
-                  accusations. He exploits existing weaknesses: Cassio&apos;s drinking,
-                  Othello&apos;s insecurity, Roderigo&apos;s desperation. He turns virtues into
-                  weapons: Desdemona&apos;s kindness becomes &ldquo;evidence&rdquo; of guilt,
-                  Othello&apos;s trust becomes gullibility. The play shows how manipulation depends
-                  on the victim&apos;s pre-existing fears and desires.
+                  insinuation and fake reluctance for Othello. He never commands - he suggests,
+                  implies, and lets others draw conclusions. He creates situations (getting Cassio
+                  drunk, planting the handkerchief) rather than making direct accusations. He
+                  exploits existing weaknesses: Cassio&apos;s drinking, Othello&apos;s insecurity,
+                  Roderigo&apos;s desperation. He turns virtues into weapons: Desdemona&apos;s
+                  kindness becomes &ldquo;evidence&rdquo; of guilt, Othello&apos;s trust becomes
+                  gullibility. The play shows how manipulation depends on the victim&apos;s
+                  pre-existing fears and desires.
                 </p>
               </div>
 
@@ -775,17 +774,17 @@ export default function OthelloRevisionPage() {
                 </h3>
                 <p className="mt-2 text-sm text-muted-foreground leading-relaxed">
                   Othello is deeply concerned with gender roles and the treatment of women. All
-                  three female characters &mdash; Desdemona, Emilia, and Bianca &mdash; are defined
-                  and judged by the men around them. Desdemona is called &ldquo;strumpet&rdquo; by
-                  her own husband; Bianca is dismissed as a prostitute; Emilia is silenced and
-                  ultimately killed by Iago. Desdemona&apos;s initial assertiveness (choosing her
-                  own husband, speaking before the Senate) is gradually crushed by Othello&apos;s
-                  growing tyranny. The &ldquo;Willow Song&rdquo; scene (4.3), where Desdemona and
-                  Emilia discuss marriage and infidelity, is the play&apos;s most sustained
-                  exploration of women&apos;s experience. Emilia&apos;s argument that women have the
-                  same desires and rights as men is radical for its time. The play ultimately shows
-                  patriarchy as a system that destroys women, whether they are obedient (Desdemona)
-                  or defiant (Emilia).
+                  three female characters - Desdemona, Emilia, and Bianca - are defined and judged
+                  by the men around them. Desdemona is called &ldquo;strumpet&rdquo; by her own
+                  husband; Bianca is dismissed as a prostitute; Emilia is silenced and ultimately
+                  killed by Iago. Desdemona&apos;s initial assertiveness (choosing her own husband,
+                  speaking before the Senate) is gradually crushed by Othello&apos;s growing
+                  tyranny. The &ldquo;Willow Song&rdquo; scene (4.3), where Desdemona and Emilia
+                  discuss marriage and infidelity, is the play&apos;s most sustained exploration of
+                  women&apos;s experience. Emilia&apos;s argument that women have the same desires
+                  and rights as men is radical for its time. The play ultimately shows patriarchy as
+                  a system that destroys women, whether they are obedient (Desdemona) or defiant
+                  (Emilia).
                 </p>
               </div>
             </div>
@@ -971,8 +970,8 @@ export default function OthelloRevisionPage() {
                 </h3>
                 <p className="mt-3 text-sm text-muted-foreground leading-relaxed">
                   The play&apos;s two settings are symbolically significant. <strong>Venice</strong>{' '}
-                  was the centre of European trade, diplomacy, and culture in the 16th century
-                  &mdash; sophisticated, cosmopolitan, and wealthy. It prided itself on justice and
+                  was the centre of European trade, diplomacy, and culture in the 16th century -
+                  sophisticated, cosmopolitan, and wealthy. It prided itself on justice and
                   tolerance, employing foreign mercenaries (like Othello) while maintaining strict
                   social hierarchies. The Venetian Senate scenes show a functioning, rational
                   society. <strong>Cyprus</strong>, by contrast, is a military outpost far from
@@ -992,15 +991,15 @@ export default function OthelloRevisionPage() {
                   The term &ldquo;Moor&rdquo; in Elizabethan England was applied loosely to people
                   of North African, Middle Eastern, or sub-Saharan African origin. Attitudes were
                   complex and contradictory. On one hand, Moors were associated with military
-                  strength, wealth, and exotic appeal &mdash; the Moroccan ambassador visited
-                  Elizabeth I&apos;s court in 1600. On the other hand, blackness was symbolically
-                  linked to sin, the devil, and moral corruption in English culture. In 1601,
-                  Elizabeth I issued a proclamation expelling &ldquo;Negroes and Blackamoors&rdquo;
-                  from England. Shakespeare wrote Othello around 1603, when racial tensions were
-                  real. By making a Moor his tragic hero &mdash; noble, eloquent, and sympathetic
-                  &mdash; Shakespeare challenged audience prejudices, even as the play also shows
-                  how those prejudices destroy. The play asks whether Othello falls because of his
-                  race or because of the racism around him.
+                  strength, wealth, and exotic appeal - the Moroccan ambassador visited Elizabeth
+                  I&apos;s court in 1600. On the other hand, blackness was symbolically linked to
+                  sin, the devil, and moral corruption in English culture. In 1601, Elizabeth I
+                  issued a proclamation expelling &ldquo;Negroes and Blackamoors&rdquo; from
+                  England. Shakespeare wrote Othello around 1603, when racial tensions were real. By
+                  making a Moor his tragic hero - noble, eloquent, and sympathetic - Shakespeare
+                  challenged audience prejudices, even as the play also shows how those prejudices
+                  destroy. The play asks whether Othello falls because of his race or because of the
+                  racism around him.
                 </p>
               </div>
 
@@ -1018,7 +1017,7 @@ export default function OthelloRevisionPage() {
                   at losing his rank, Iago&apos;s festering anger at being passed over,
                   Othello&apos;s vulnerability when his domestic life threatens his professional
                   identity. On Cyprus, without a war to fight, the military virtues of decisiveness
-                  and action become destructive &mdash; Othello treats Desdemona&apos;s supposed
+                  and action become destructive - Othello treats Desdemona&apos;s supposed
                   infidelity like a military problem to be solved through execution.
                 </p>
               </div>
@@ -1033,14 +1032,13 @@ export default function OthelloRevisionPage() {
                   woman&apos;s honour was defined almost entirely by her sexual chastity, and a
                   man&apos;s honour was partly contingent on his wife&apos;s faithfulness
                   (&ldquo;cuckoldry&rdquo; was a source of intense social shame). Desdemona&apos;s
-                  elopement &mdash; choosing her own husband &mdash; would have shocked some
-                  audience members as much as her choice of a Moor. The play presents three women at
-                  different social levels (Desdemona the noblewoman, Emilia the soldier&apos;s wife,
-                  Bianca the courtesan) and shows how all three are subject to male control,
-                  accusation, and violence. Emilia&apos;s proto-feminist speech in 4.3 directly
-                  questions these double standards, but the play&apos;s ending &mdash; two women
-                  dead, the third falsely accused &mdash; shows the deadly consequences of
-                  patriarchal power.
+                  elopement - choosing her own husband - would have shocked some audience members as
+                  much as her choice of a Moor. The play presents three women at different social
+                  levels (Desdemona the noblewoman, Emilia the soldier&apos;s wife, Bianca the
+                  courtesan) and shows how all three are subject to male control, accusation, and
+                  violence. Emilia&apos;s proto-feminist speech in 4.3 directly questions these
+                  double standards, but the play&apos;s ending - two women dead, the third falsely
+                  accused - shows the deadly consequences of patriarchal power.
                 </p>
               </div>
             </div>
@@ -1068,8 +1066,8 @@ export default function OthelloRevisionPage() {
                   </h4>
                   <p className="mt-2 text-sm text-muted-foreground">
                     Iago is called &ldquo;honest&rdquo; by virtually every character. This
-                    reputation is his greatest weapon &mdash; no one suspects him because they all
-                    believe he is blunt, truthful, and loyal. He cultivates this image by appearing
+                    reputation is his greatest weapon - no one suspects him because they all believe
+                    he is blunt, truthful, and loyal. He cultivates this image by appearing
                     reluctant to speak ill of anyone, saying things like &ldquo;I like not
                     that&rdquo; and then pretending he did not mean to say it.
                   </p>
@@ -1095,8 +1093,7 @@ export default function OthelloRevisionPage() {
                     outsider. He weaponises this by suggesting that Desdemona&apos;s choice of
                     Othello was &ldquo;unnatural&rdquo; and that she will inevitably return to men
                     &ldquo;of her own clime, complexion, and degree.&rdquo; He turns Othello&apos;s
-                    greatest fear &mdash; that he does not belong &mdash; into a reason for
-                    suspicion.
+                    greatest fear - that he does not belong - into a reason for suspicion.
                   </p>
                 </div>
 
@@ -1190,19 +1187,19 @@ export default function OthelloRevisionPage() {
                 </p>
                 <div className="mt-3 grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
                   <div className="rounded-lg bg-primary/5 p-3 border border-primary/20">
-                    <p className="font-bold text-primary text-sm">P &mdash; Point</p>
+                    <p className="font-bold text-primary text-sm">P - Point</p>
                     <p className="mt-1 text-xs text-muted-foreground">
                       {tr(`Make a clear argument that directly answers the question.`)}
                     </p>
                   </div>
                   <div className="rounded-lg bg-primary/5 p-3 border border-primary/20">
-                    <p className="font-bold text-primary text-sm">E &mdash; Evidence</p>
+                    <p className="font-bold text-primary text-sm">E - Evidence</p>
                     <p className="mt-1 text-xs text-muted-foreground">
                       A short, embedded quotation from the text to support your point.
                     </p>
                   </div>
                   <div className="rounded-lg bg-primary/5 p-3 border border-primary/20">
-                    <p className="font-bold text-primary text-sm">E &mdash; Explain</p>
+                    <p className="font-bold text-primary text-sm">E - Explain</p>
                     <p className="mt-1 text-xs text-muted-foreground">
                       {tr(
                         `Analyse language, structure, or form. What does the quotation suggest? How does it work?`,
@@ -1210,7 +1207,7 @@ export default function OthelloRevisionPage() {
                     </p>
                   </div>
                   <div className="rounded-lg bg-primary/5 p-3 border border-primary/20">
-                    <p className="font-bold text-primary text-sm">L &mdash; Link</p>
+                    <p className="font-bold text-primary text-sm">L - Link</p>
                     <p className="mt-1 text-xs text-muted-foreground">
                       {tr(
                         `Link to context, the wider text, another interpretation, or the writer's purpose.`,
@@ -1237,8 +1234,8 @@ export default function OthelloRevisionPage() {
                         </span>
                         <p className="text-sm text-muted-foreground">
                           <strong>{tr(`Iago as the origin:`)}</strong> &ldquo;green-ey&apos;d
-                          monster&rdquo; &mdash; he names jealousy while creating it. Link to the
-                          Vice figure tradition. His own professional jealousy is the play&apos;s
+                          monster&rdquo; - he names jealousy while creating it. Link to the Vice
+                          figure tradition. His own professional jealousy is the play&apos;s
                           catalyst.
                         </p>
                       </div>
@@ -1249,7 +1246,7 @@ export default function OthelloRevisionPage() {
                         <p className="text-sm text-muted-foreground">
                           <strong>{tr(`Othello's transformation:`)}</strong> Track his language from
                           controlled verse to fragmented, bestial imagery. &ldquo;Farewell the
-                          tranquil mind&rdquo; &mdash; jealousy destroys his identity. Link to his
+                          tranquil mind&rdquo; - jealousy destroys his identity. Link to his
                           insecurity as an outsider.
                         </p>
                       </div>
@@ -1271,9 +1268,9 @@ export default function OthelloRevisionPage() {
                         </span>
                         <p className="text-sm text-muted-foreground">
                           <strong>{tr(`Jealousy as self-destruction:`)}</strong> &ldquo;It is the
-                          cause&rdquo; &mdash; Othello murders love itself. His suicide shows
-                          jealousy destroys the jealous person most of all. Shakespeare&apos;s wider
-                          purpose: warning against the dangers of passion overriding reason.
+                          cause&rdquo; - Othello murders love itself. His suicide shows jealousy
+                          destroys the jealous person most of all. Shakespeare&apos;s wider purpose:
+                          warning against the dangers of passion overriding reason.
                         </p>
                       </div>
                     </div>
@@ -1291,8 +1288,8 @@ export default function OthelloRevisionPage() {
                         </span>
                         <p className="text-sm text-muted-foreground">
                           <strong>{tr(`Racist language from others:`)}</strong> &ldquo;old black
-                          ram,&rdquo; &ldquo;thick-lips,&rdquo; &ldquo;the devil&rdquo; &mdash; Iago
-                          and Roderigo reduce Othello to racial stereotypes. Shakespeare exposes how
+                          ram,&rdquo; &ldquo;thick-lips,&rdquo; &ldquo;the devil&rdquo; - Iago and
+                          Roderigo reduce Othello to racial stereotypes. Shakespeare exposes how
                           racism dehumanises through language. Context: Moors in Elizabethan
                           England.
                         </p>
@@ -1305,8 +1302,7 @@ export default function OthelloRevisionPage() {
                           <strong>{tr(`Othello's dignity vs prejudice:`)}</strong> &ldquo;Keep up
                           your bright swords&rdquo; and the Senate speech show Othello transcending
                           racial prejudice through eloquence and authority. He is valued for his
-                          service but never fully accepted &mdash; Venice&apos;s tolerance has
-                          limits.
+                          service but never fully accepted - Venice&apos;s tolerance has limits.
                         </p>
                       </div>
                       <div className="flex gap-2">
@@ -1315,9 +1311,9 @@ export default function OthelloRevisionPage() {
                         </span>
                         <p className="text-sm text-muted-foreground">
                           <strong>{tr(`Internalised racism:`)}</strong> &ldquo;Haply, for I am
-                          black&rdquo; &mdash; Othello begins to see himself through racist eyes.
-                          Iago succeeds because he exploits an insecurity that Venetian society
-                          created. This is the play&apos;s most psychologically devastating insight.
+                          black&rdquo; - Othello begins to see himself through racist eyes. Iago
+                          succeeds because he exploits an insecurity that Venetian society created.
+                          This is the play&apos;s most psychologically devastating insight.
                         </p>
                       </div>
                       <div className="flex gap-2">
@@ -1347,9 +1343,9 @@ export default function OthelloRevisionPage() {
                         </span>
                         <p className="text-sm text-muted-foreground">
                           <strong>{tr(`Soliloquies and dramatic irony:`)}</strong> &ldquo;I am not
-                          what I am&rdquo; &mdash; an inversion of God&apos;s words, aligning Iago
-                          with the devil. His soliloquies let the audience see behind the mask. Link
-                          to the Vice figure in medieval morality plays.
+                          what I am&rdquo; - an inversion of God&apos;s words, aligning Iago with
+                          the devil. His soliloquies let the audience see behind the mask. Link to
+                          the Vice figure in medieval morality plays.
                         </p>
                       </div>
                       <div className="flex gap-2">
@@ -1359,7 +1355,7 @@ export default function OthelloRevisionPage() {
                         <p className="text-sm text-muted-foreground">
                           <strong>{tr(`Manipulation techniques:`)}</strong> He never directly lies
                           but uses insinuation, questions, and planted evidence. &ldquo;Ha! I like
-                          not that&rdquo; &mdash; the exclamation plants suspicion while appearing
+                          not that&rdquo; - the exclamation plants suspicion while appearing
                           innocent. He makes Othello the author of his own destruction.
                         </p>
                       </div>
@@ -1371,8 +1367,8 @@ export default function OthelloRevisionPage() {
                           <strong>{tr(`Motiveless malignity:`)}</strong> Iago offers multiple
                           motives (promotion, Emilia, racism) but none is sufficient.
                           Coleridge&apos;s phrase &ldquo;motiveless malignity&rdquo; captures the
-                          sense that evil needs no reason. This makes Iago more terrifying &mdash;
-                          and more universal.
+                          sense that evil needs no reason. This makes Iago more terrifying - and
+                          more universal.
                         </p>
                       </div>
                       <div className="flex gap-2">
@@ -1415,9 +1411,9 @@ export default function OthelloRevisionPage() {
                         <p className="text-sm text-muted-foreground">
                           <strong>{tr(`Emilia's defiance:`)}</strong> Her Act 4 speech challenges
                           the sexual double standard. &ldquo;I will not charm my tongue&rdquo; in
-                          Act 5 shows her choosing truth over obedience. She dies for speaking out
-                          &mdash; Shakespeare shows the lethal cost of female resistance in a
-                          patriarchal world.
+                          Act 5 shows her choosing truth over obedience. She dies for speaking out -
+                          Shakespeare shows the lethal cost of female resistance in a patriarchal
+                          world.
                         </p>
                       </div>
                       <div className="flex gap-2">
@@ -1427,9 +1423,9 @@ export default function OthelloRevisionPage() {
                         <p className="text-sm text-muted-foreground">
                           <strong>{tr(`Bianca as mirror:`)}</strong> Despite being a courtesan,
                           Bianca shows genuine love and jealousy. She is dismissed as a
-                          &ldquo;strumpet&rdquo; &mdash; the same word used against Desdemona.
-                          Shakespeare suggests that in a misogynistic society, any woman can be
-                          reduced to this accusation.
+                          &ldquo;strumpet&rdquo; - the same word used against Desdemona. Shakespeare
+                          suggests that in a misogynistic society, any woman can be reduced to this
+                          accusation.
                         </p>
                       </div>
                       <div className="flex gap-2">
@@ -1440,7 +1436,7 @@ export default function OthelloRevisionPage() {
                           <strong>{tr(`Male control and violence:`)}</strong> All three women are
                           controlled, accused, or killed by men. Context: Jacobean women were
                           legally their husbands&apos; property. Shakespeare critiques this system
-                          by showing its fatal consequences &mdash; the play&apos;s tragedy is
+                          by showing its fatal consequences - the play&apos;s tragedy is
                           fundamentally about what happens when men treat women as possessions.
                         </p>
                       </div>
@@ -1460,8 +1456,8 @@ export default function OthelloRevisionPage() {
                     </p>
                     <p className="mt-1 text-xs text-muted-foreground">
                       Remember, characters are constructs. Don&apos;t write &ldquo;Othello is
-                      jealous&rdquo; &mdash; write &ldquo;Shakespeare presents Othello as consumed
-                      by jealousy to warn the audience about...&rdquo; This shows awareness of
+                      jealous&rdquo; - write &ldquo;Shakespeare presents Othello as consumed by
+                      jealousy to warn the audience about...&rdquo; This shows awareness of
                       authorial intent.
                     </p>
                   </div>
@@ -1482,8 +1478,8 @@ export default function OthelloRevisionPage() {
                     </p>
                     <p className="mt-1 text-xs text-muted-foreground">
                       Identify specific techniques (metaphor, irony, repetition, animal imagery,
-                      antithesis) and explain their <em>effect</em>. Don&apos;t just name them
-                      &mdash; explain what they reveal about character, theme, or Shakespeare&apos;s
+                      antithesis) and explain their <em>effect</em>. Don&apos;t just name them -
+                      explain what they reveal about character, theme, or Shakespeare&apos;s
                       purpose.
                     </p>
                   </div>

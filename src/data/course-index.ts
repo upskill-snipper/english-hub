@@ -473,7 +473,9 @@ export const COURSE_INDEX: CourseIndexEntry[] = [
       },
       {
         id: 'gcse-lr-m6',
-        title: 'Paper 2 Q2: Summary & Synthesis',
+        // 31 October 2026, second read: "Summary & Synthesis", Q2's wording before
+        // summer 2026; the module in src/data/gcse-courses.ts carries the same title.
+        title: 'Paper 2 Q2: Inference & Synthesis',
         duration: '35 mins',
       },
       {
@@ -1267,7 +1269,7 @@ export const COURSE_INDEX: CourseIndexEntry[] = [
     duration: '10 weeks',
     level: 'GCSE (Years 10-11)',
     description:
-      'Master WJEC/Eduqas Component 1: analyse 20th-century fiction extracts and craft compelling creative prose. Covers retrieval, language analysis, structural analysis, evaluation, narrative and descriptive writing with WJEC-specific strategies and examiner insights.',
+      'Master WJEC/Eduqas Component 1: analyse 20th-century fiction extracts and craft compelling creative prose. Covers retrieval, language analysis, structural analysis, evaluation, and narrative writing with the descriptive techniques that bring it to life, with WJEC-specific strategies and examiner insights.',
     color: '#dc2626',
     moduleCount: 9,
     quizCount: 37,
@@ -1289,7 +1291,7 @@ export const COURSE_INDEX: CourseIndexEntry[] = [
       },
       {
         id: 'wjec-c1-m4',
-        title: 'Structural Analysis: Organisation and Effect (A4)',
+        title: 'Language and Structure: Organisation and Effect (A4)',
         duration: '50 min',
       },
       {
@@ -1342,27 +1344,27 @@ export const COURSE_INDEX: CourseIndexEntry[] = [
       },
       {
         id: 'wjec-c2-m2',
-        title: 'Reading 19th and 21st Century Non-Fiction (A1)',
+        title: 'Reading 19th and 21st Century Non-Fiction (1.1 and 1.3)',
         duration: '45 min',
       },
       {
         id: 'wjec-c2-m3',
-        title: 'Synthesis: Drawing Together Two Texts (A2)',
+        title: 'Synthesis: Drawing Together Two Texts (1.5)',
         duration: '50 min',
       },
       {
         id: 'wjec-c2-m4',
-        title: 'Language Analysis in Non-Fiction (A3)',
+        title: 'Language Analysis in Non-Fiction (1.2)',
         duration: '50 min',
       },
       {
         id: 'wjec-c2-m5',
-        title: 'Comparing Viewpoints and Perspectives (A4)',
+        title: 'Comparing Viewpoints and Perspectives (1.6)',
         duration: '55 min',
       },
       {
         id: 'wjec-c2-m6',
-        title: 'The Proofreading Task (A5)',
+        title: 'Proofreading Your Own Writing (AO6)',
         duration: '30 min',
       },
       {
@@ -1464,7 +1466,7 @@ export const COURSE_INDEX: CourseIndexEntry[] = [
     duration: '12 weeks',
     level: 'GCSE (Years 10-11)',
     description:
-      'Master OCR Component 02: analyse fiction extracts for language, structure, and evaluation, then craft powerful narrative and descriptive writing with advanced creative techniques.',
+      'Master OCR Component 02: analyse 20th and 21st-century literary prose for language, structure, evaluation and comparison, then craft powerful stories and personal writing with advanced creative techniques.',
     color: '#0e7490',
     moduleCount: 10,
     quizCount: 41,

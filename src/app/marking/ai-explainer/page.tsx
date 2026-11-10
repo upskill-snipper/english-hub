@@ -81,7 +81,7 @@ export default async function AiExplainerPage() {
             <strong className="text-foreground">AI model</strong> to read your work, compare it
             against the official GCSE marking guide, and give you a predicted grade with feedback.
             Think of it like a very fast practice marker that can help you spot strengths and areas
-            to improve &mdash; but it is <em>not</em> a real marker and the grade is <em>not</em> an
+            to improve - but it is <em>not</em> a real marker and the grade is <em>not</em> an
             official result.
           </p>
         </section>
@@ -155,8 +155,8 @@ export default async function AiExplainerPage() {
           <h2 className="text-xl font-semibold text-foreground mt-8 mb-3">{h2Optout}</h2>
           <p className="text-muted-foreground leading-relaxed">
             You (or your parent/guardian) can turn off AI features at any time. When AI features are
-            turned off, you will still be able to use every other part of The English Hub &mdash;
-            only the AI essay marking and AI-powered recommendations will be disabled.
+            turned off, you will still be able to use every other part of The English Hub - only the
+            AI essay marking and AI-powered recommendations will be disabled.
           </p>
           <div className="mt-4 rounded-lg border border-border bg-muted/50 p-5">
             <p className="text-sm font-medium text-foreground mb-2">{optoutBoxHeading}</p>

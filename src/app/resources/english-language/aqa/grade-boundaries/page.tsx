@@ -134,7 +134,7 @@ export default function GradeBoundariesPage() {
 
           <div className="mt-4 space-y-6">
             <div className="rounded-lg border-s-4 border-success-500 bg-success-50/30 p-5">
-              <h3 className="text-lg font-bold text-success-700">Grade 9 &mdash; Exceptional</h3>
+              <h3 className="text-lg font-bold text-success-700">Grade 9 - Exceptional</h3>
               <div className="mt-3 space-y-2 text-sm">
                 <p>
                   <strong>Reading:</strong>
@@ -396,9 +396,8 @@ export default function GradeBoundariesPage() {
                 </li>
                 <li>
                   <strong>Writing:</strong> Develop a distinctive voice. The difference between
-                  Grade 7 and Grade 9 creative writing is often authenticity and originality &mdash;
-                  the sense that the writing has a unique perspective, not that it follows a
-                  formula.
+                  Grade 7 and Grade 9 creative writing is often authenticity and originality - the
+                  sense that the writing has a unique perspective, not that it follows a formula.
                 </li>
                 <li>
                   <strong>Precision:</strong> Every word should earn its place. Cut unnecessary
@@ -416,7 +415,9 @@ export default function GradeBoundariesPage() {
           </div>
         </Section>
 
-        {/* Marks per question */}
+        {/* Marks per question. 31 October 2026: Paper 1 Q1 was "list 4 things" and
+            Paper 2 Q2 "summary / synthesis", their formats before summer 2026; see
+            src/data/mark-scheme-guides/aqa-lang-paper1.ts and paper2.ts. */}
         <Section title={tr(`Marks per question at a glance`)}>
           <div className="overflow-x-auto">
             <table className="w-full text-sm">
@@ -431,14 +432,14 @@ export default function GradeBoundariesPage() {
               <tbody className="divide-y divide-border">
                 <tr>
                   <td className="py-2 pe-4 font-semibold">Q1</td>
-                  <td className="py-2 pe-4">4 marks (list 4 things)</td>
+                  <td className="py-2 pe-4">4 marks (four multiple-choice parts)</td>
                   <td className="py-2 pe-4">4 marks (shade 4 true statements)</td>
                   <td className="py-2 pe-4">{tr(`Reading and retrieval (AO1)`)}</td>
                 </tr>
                 <tr>
                   <td className="py-2 pe-4 font-semibold">Q2</td>
                   <td className="py-2 pe-4">8 marks (language analysis)</td>
-                  <td className="py-2 pe-4">8 marks (summary / synthesis)</td>
+                  <td className="py-2 pe-4">8 marks (inference / synthesis)</td>
                   <td className="py-2 pe-4">
                     P1: Language and structure analysis (AO2) / P2: Reading and retrieval (AO1)
                   </td>
@@ -477,8 +478,8 @@ export default function GradeBoundariesPage() {
 
           <p className="mt-4 text-sm text-muted-foreground">
             Notice that Q5 on each paper is worth <strong>half the total marks</strong> for that
-            paper. This means your writing is just as important as your reading &mdash; if not more
-            so, since a strong piece of writing can be produced through preparation and practice
+            paper. This means your writing is just as important as your reading - if not more so,
+            since a strong piece of writing can be produced through preparation and practice
             regardless of what unseen text appears.
           </p>
         </Section>

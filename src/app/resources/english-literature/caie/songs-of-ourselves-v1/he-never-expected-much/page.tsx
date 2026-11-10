@@ -80,9 +80,9 @@ export default function HeNeverExpectedMuchPage() {
         <Card>
           <CardContent className="space-y-3 pt-6 text-sm text-muted-foreground">
             <p>
-              <strong className="text-foreground">Poet:</strong> Thomas Hardy &mdash; English
-              novelist and poet, born Higher Bockhampton, Dorset, 1840; died Max Gate, Dorchester,
-              11 January 1928.
+              <strong className="text-foreground">Poet:</strong> Thomas Hardy - English novelist and
+              poet, born Higher Bockhampton, Dorset, 1840; died Max Gate, Dorchester, 11 January
+              1928.
             </p>
             <p>
               <strong className="text-foreground">Year:</strong> Drafted around Hardy&rsquo;s 86th
@@ -120,7 +120,7 @@ export default function HeNeverExpectedMuchPage() {
               <p className="mt-2">
                 The opening line. Hardy addresses the World directly as a companion he has known all
                 his life. &lsquo;Kept faith&rsquo; is the language of human relationship and
-                contract &mdash; the speaker treats the World as a friend who has lived up to its
+                contract - the speaker treats the World as a friend who has lived up to its
                 promises, low as those promises were.
               </p>
             </div>
@@ -129,7 +129,7 @@ export default function HeNeverExpectedMuchPage() {
                 &ldquo;Twas then you said, and since have said&hellip;&rdquo;
               </blockquote>
               <p className="mt-2">
-                The World&rsquo;s message is recurrent &mdash; not a single lesson but a pattern of
+                The World&rsquo;s message is recurrent - not a single lesson but a pattern of
                 warnings the speaker has heard since childhood. The repetition of the message
                 reinforces the stoical, quiet wisdom of the poem.
               </p>
@@ -139,8 +139,8 @@ export default function HeNeverExpectedMuchPage() {
                 &ldquo;Just neutral-tinted haps and such&rdquo;
               </blockquote>
               <p className="mt-2">
-                A characteristic Hardy phrase. &lsquo;Neutral-tinted haps&rsquo; &mdash; events of
-                no special colour, neither tragic nor joyous. The line shrinks the World&rsquo;s
+                A characteristic Hardy phrase. &lsquo;Neutral-tinted haps&rsquo; - events of no
+                special colour, neither tragic nor joyous. The line shrinks the World&rsquo;s
                 offerings to a careful, modest middle range, which is exactly what the speaker says
                 he was promised and (importantly) did receive.
               </p>

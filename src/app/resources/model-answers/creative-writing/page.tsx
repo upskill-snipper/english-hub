@@ -12,19 +12,21 @@ import { hasActiveSubscription } from '@/lib/course-access'
 // GCSE model answers are gated by the global subscription/trial flag (NOT the
 // separate IELTS entitlement). Resolved server-side; anonymous + Googlebot
 // fall through to `false` and see only the free teaser grade band.
-async function resolveHasAccess(): Promise<boolean> {
+async function resolveAccess(): Promise<{ hasAccess: boolean; signedIn: boolean }> {
   try {
     const supabase = createServerSupabaseClient()
     const {
       data: { user },
     } = await supabase.auth.getUser()
     if (user) {
-      return await hasActiveSubscription(supabase, user.id)
+      // `signedIn` lets the lock panel offer plans, not sign-up, to a signed-in
+      // reader without a plan (10 November 2026, see LockedContent).
+      return { hasAccess: await hasActiveSubscription(supabase, user.id), signedIn: true }
     }
   } catch {
     // Signed out / auth unavailable → no access.
   }
-  return false
+  return { hasAccess: false, signedIn: false }
 }
 
 /* ─── Metadata ───────────────────────────────────────────────── */
@@ -152,7 +154,7 @@ export default async function CreativeWritingModelAnswersPage() {
     'study.skills.ma.cw.label.task',
     'study.skills.common.examiner_commentary',
   ])
-  const hasAccess = await resolveHasAccess()
+  const { hasAccess, signedIn } = await resolveAccess()
   return (
     <>
       {/* Hero */}
@@ -239,7 +241,7 @@ export default async function CreativeWritingModelAnswersPage() {
               <GradeTabs defaultGrade={hasAccess ? 9 : 3}>
                 {{
                   9: !hasAccess ? (
-                    <LockedContent label="the Grade 5, 7 and 9 model answers" />
+                    <LockedContent signedIn={signedIn} label="the Grade 5, 7 and 9 model answers" />
                   ) : (
                     <>
                       <div className="mb-4 flex items-center gap-3">
@@ -296,11 +298,11 @@ export default async function CreativeWritingModelAnswersPage() {
                           her size.
                         </p>
                         <p>
-                          And underneath everything &mdash; beneath the shouting, the shuffling, the
+                          And underneath everything - beneath the shouting, the shuffling, the
                           <Annotation note="Circular structure: returns to sound, creating a satisfying sense of wholeness. The final sentence is deliberately calm amid the chaos.">
-                            persistent bell of a cash register &mdash; there was a quieter rhythm:
-                            the steady, unhurried heartbeat of a place that had been doing this for
-                            a hundred years and fully intended to do it for a hundred more
+                            persistent bell of a cash register - there was a quieter rhythm: the
+                            steady, unhurried heartbeat of a place that had been doing this for a
+                            hundred years and fully intended to do it for a hundred more
                           </Annotation>
                           .
                         </p>
@@ -310,9 +312,9 @@ export default async function CreativeWritingModelAnswersPage() {
                           An exceptional response that demonstrates complete control of the craft of
                           descriptive writing. The piece opens with a striking single-sentence
                           paragraph, uses varied and sophisticated sentence structures throughout,
-                          and deploys figurative language with precision. The circular structure
-                          &mdash; opening and closing with sound &mdash; shows structural awareness.
-                          Vocabulary is ambitious but never overwrought. Full marks: 40/40.
+                          and deploys figurative language with precision. The circular structure -
+                          opening and closing with sound - shows structural awareness. Vocabulary is
+                          ambitious but never overwrought. Full marks: 40/40.
                         </p>
                       </ExaminerComment>
                       <GradeSummary
@@ -330,7 +332,7 @@ export default async function CreativeWritingModelAnswersPage() {
                   ),
 
                   7: !hasAccess ? (
-                    <LockedContent label="the Grade 5, 7 and 9 model answers" />
+                    <LockedContent signedIn={signedIn} label="the Grade 5, 7 and 9 model answers" />
                   ) : (
                     <>
                       <div className="mb-4 flex items-center gap-3">
@@ -413,7 +415,7 @@ export default async function CreativeWritingModelAnswersPage() {
                   ),
 
                   5: !hasAccess ? (
-                    <LockedContent label="the Grade 5, 7 and 9 model answers" />
+                    <LockedContent signedIn={signedIn} label="the Grade 5, 7 and 9 model answers" />
                   ) : (
                     <>
                       <div className="mb-4 flex items-center gap-3">
@@ -559,7 +561,7 @@ export default async function CreativeWritingModelAnswersPage() {
               <GradeTabs defaultGrade={hasAccess ? 9 : 3}>
                 {{
                   9: !hasAccess ? (
-                    <LockedContent label="the Grade 5, 7 and 9 model answers" />
+                    <LockedContent signedIn={signedIn} label="the Grade 5, 7 and 9 model answers" />
                   ) : (
                     <>
                       <div className="mb-4 flex items-center gap-3">
@@ -573,7 +575,7 @@ export default async function CreativeWritingModelAnswersPage() {
                           </Annotation>
                         </p>
                         <p>
-                          My mother was a creature of habit &mdash;
+                          My mother was a creature of habit -
                           <Annotation note="The rule of three establishes routine, making the disruption that follows more powerful.">
                             same mug, same chair, same radio station murmuring beneath the tick of
                             the kitchen clock
@@ -609,7 +611,7 @@ export default async function CreativeWritingModelAnswersPage() {
                             Three weeks later, I stood at the end of the street with a rucksack on
                             my back and a suitcase that pulled to the left.
                           </Annotation>{' '}
-                          Jake was there. He handed me a photograph without speaking &mdash;
+                          Jake was there. He handed me a photograph without speaking -
                           <Annotation note="Powerful restraint. The absence of dialogue says more than words could.">
                             the two of us at Whitby last July, sand in our hair, squinting against
                             the sun. I folded it carefully and put it in my coat pocket, where it
@@ -657,7 +659,7 @@ export default async function CreativeWritingModelAnswersPage() {
                   ),
 
                   7: !hasAccess ? (
-                    <LockedContent label="the Grade 5, 7 and 9 model answers" />
+                    <LockedContent signedIn={signedIn} label="the Grade 5, 7 and 9 model answers" />
                   ) : (
                     <>
                       <div className="mb-4 flex items-center gap-3">
@@ -732,7 +734,7 @@ export default async function CreativeWritingModelAnswersPage() {
                   ),
 
                   5: !hasAccess ? (
-                    <LockedContent label="the Grade 5, 7 and 9 model answers" />
+                    <LockedContent signedIn={signedIn} label="the Grade 5, 7 and 9 model answers" />
                   ) : (
                     <>
                       <div className="mb-4 flex items-center gap-3">

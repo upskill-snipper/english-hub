@@ -200,7 +200,7 @@ export default async function ReportsTextTypePage() {
           </h2>
           <p className="mb-4 text-sm leading-relaxed text-muted-foreground">
             A report sets out factual information about a subject in an organised, objective way.
-            Its purpose is usually to <em>{NON_FICTION_PURPOSES[3]}</em> &mdash; to give the reader
+            Its purpose is usually to <em>{NON_FICTION_PURPOSES[3]}</em> - to give the reader
             accurate knowledge rather than to entertain or persuade. Look for these features:
           </p>
           <ul className="space-y-3 text-sm leading-relaxed text-muted-foreground">
@@ -418,9 +418,8 @@ export default async function ReportsTextTypePage() {
             For a structure question, name the organisational choice (e.g. sub-headings,
             classification by topic, an introduction followed by findings then a conclusion) and
             explain its effect on the reader. For a language question, point to a specific
-            impersonal feature &mdash; the passive voice, third person, present tense, or a piece of
-            formal vocabulary &mdash; quote it, and explain how it creates an objective, factual
-            effect.
+            impersonal feature - the passive voice, third person, present tense, or a piece of
+            formal vocabulary - quote it, and explain how it creates an objective, factual effect.
           </p>
         </section>
 

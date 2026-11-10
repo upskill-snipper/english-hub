@@ -10,6 +10,7 @@ import { EnglishText } from '@/components/i18n/EnglishText'
 import type { PanelDescriptor, PortraitDescriptor } from '@/lib/comics/types'
 import type { DealtChallenge } from '@/lib/games/quest/deal'
 import type { Quest } from '@/lib/games/quest/types'
+import type { MomentRef } from '@/lib/games/text-games/types'
 import { cn } from '@/lib/utils'
 
 /** A translation lookup, as useT() returns it. */
@@ -38,6 +39,55 @@ export interface ChallengeProps {
 
 /** A translated sentence with {placeholders} filled by nodes (names stay marked English). */
 export { fill, fillText } from '@/components/games/fill'
+
+/**
+ * How wide a challenge is played. A question of words keeps the short measure
+ * every challenge had until 31 October 2026. A question with comic art is
+ * given the screen: in that column a desktop showed a panel 368 pixels wide
+ * and story-order cards 153, when the drawings are 860, and the founder found
+ * them too small to see. From a laptop's width up such a challenge sets its
+ * art beside what it asks (BESIDE), or across the stage, so a bigger drawing
+ * does not push the options off the bottom of the screen.
+ */
+export const TEXT_STAGE = 'max-w-xl'
+export const ART_STAGE = 'max-w-xl lg:max-w-5xl xl:max-w-6xl 2xl:max-w-7xl'
+
+/** From a laptop's width up: the art, wider, beside what is asked of it. Below that, above it. */
+export const BESIDE =
+  'lg:grid lg:grid-cols-[minmax(0,3fr)_minmax(0,2fr)] lg:items-start lg:gap-8 lg:space-y-0'
+
+/**
+ * Whether a challenge shows a panel or a portrait, by the same tests its view
+ * makes, so the player gives it the art stage exactly when it has art to show.
+ * src/__tests__/a-quest-shows-its-comics-at-a-size-to-see.test.tsx renders
+ * every challenge to hold the two together.
+ */
+export function showsArt({ challenge: c, options }: DealtChallenge, quest: Quest): boolean {
+  const drawn = (m: MomentRef | undefined) => !!(m?.panel && quest.art.panels[m.panel])
+  switch (c.type) {
+    case 'panel-line':
+    case 'theme-check':
+      return drawn(c.moment)
+    case 'line-panel': {
+      const byTitle = new Map(quest.moments.map((m) => [m.title, m]))
+      return options.some((title) => drawn(byTitle.get(title)))
+    }
+    case 'whose':
+      return options.some((name) => !!quest.art.portraits[name])
+    case 'marker':
+      return !!(quest.art.portraits[c.portrait] && quest.art.markers[c.portrait])
+    case 'item': {
+      const it = c.item
+      if (it.kind === 'order') return it.moments.some(drawn)
+      if (it.kind === 'theme') return drawn(it.moment)
+      if (it.kind === 'who' && it.mode === 'relation')
+        return it.portraits.some((name) => !!quest.art.portraits[name])
+      return false
+    }
+    default:
+      return false
+  }
+}
 
 export function Question({
   headingRef,
@@ -124,6 +174,39 @@ export function PlainPanel({
   return (
     <div className={className} dir="ltr">
       {motion ? <PlayOnView>{frame}</PlayOnView> : frame}
+    </div>
+  )
+}
+
+/**
+ * A moment as a challenge shows it: its panel without the boxes, then its
+ * title and where it comes. On a phone the panel keeps to 24rem, as it always
+ * has; beside the options on a desktop it fills its column.
+ */
+export function MomentCard({
+  panel,
+  title,
+  where,
+  motion = false,
+}: {
+  panel?: PanelDescriptor
+  title: string
+  where: string
+  motion?: boolean
+}) {
+  return (
+    <div className="overflow-hidden rounded-2xl border border-border/70 bg-card">
+      {panel && (
+        <PlainPanel panel={panel} motion={motion} className="mx-auto max-w-sm p-2 lg:max-w-none" />
+      )}
+      <div className={cn('px-4 pb-3', panel ? 'pt-1' : 'pt-3')}>
+        <En as="p" className="font-heading text-lg">
+          {title}
+        </En>
+        <En as="p" className="text-sm text-muted-foreground">
+          {where}
+        </En>
+      </div>
     </div>
   )
 }

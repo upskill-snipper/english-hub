@@ -357,7 +357,7 @@ export default function GradeBoundariesPage() {
                   writer&rsquo;s purpose.
                 </li>
                 <li>
-                  <strong>Terminology:</strong> Learn and use key literary terms accurately &mdash;
+                  <strong>Terminology:</strong> Learn and use key literary terms accurately -
                   metaphor, simile, pathetic fallacy, iambic pentameter, enjambment. Even basic
                   terminology used correctly lifts your analysis.
                 </li>
@@ -400,8 +400,8 @@ export default function GradeBoundariesPage() {
               <ul className="mt-2 ms-5 list-disc space-y-2 text-sm">
                 <li>
                   <strong>Conceptualised response:</strong> Frame your essay around a clear argument
-                  or interpretation. A Grade 9 response has a thesis &mdash; a thread that runs
-                  through every paragraph, not a series of disconnected points.
+                  or interpretation. A Grade 9 response has a thesis - a thread that runs through
+                  every paragraph, not a series of disconnected points.
                 </li>
                 <li>
                   <strong>Alternative interpretations:</strong> Explore how a text could be read
@@ -448,7 +448,7 @@ export default function GradeBoundariesPage() {
               </thead>
               <tbody className="divide-y divide-border">
                 <tr>
-                  <td className="py-2 pe-4 font-semibold">A &mdash; Shakespeare</td>
+                  <td className="py-2 pe-4 font-semibold">A - Shakespeare</td>
                   <td className="py-2 pe-4">{tr(`Extract + essay`)}</td>
                   <td className="py-2 pe-4">40 marks</td>
                   <td className="py-2 pe-4">
@@ -456,7 +456,7 @@ export default function GradeBoundariesPage() {
                   </td>
                 </tr>
                 <tr>
-                  <td className="py-2 pe-4 font-semibold">B &mdash; Post-1914 Literature</td>
+                  <td className="py-2 pe-4 font-semibold">B - Post-1914 Literature</td>
                   <td className="py-2 pe-4">Essay</td>
                   <td className="py-2 pe-4">40 marks</td>
                   <td className="py-2 pe-4">
@@ -495,7 +495,7 @@ export default function GradeBoundariesPage() {
                   20 marks, with no single-poem step. */}
               <tbody className="divide-y divide-border">
                 <tr>
-                  <td className="py-2 pe-4 font-semibold">A &mdash; 19th-Century Novel</td>
+                  <td className="py-2 pe-4 font-semibold">A - 19th-Century Novel</td>
                   <td className="py-2 pe-4">{tr(`Extract + essay`)}</td>
                   <td className="py-2 pe-4">40 marks</td>
                   <td className="py-2 pe-4">
@@ -504,7 +504,7 @@ export default function GradeBoundariesPage() {
                 </tr>
                 <tr>
                   <td className="py-2 pe-4 font-semibold" rowSpan={2}>
-                    B &mdash; Poetry
+                    B - Poetry
                   </td>
                   <td className="py-2 pe-4">Part 1</td>
                   <td className="py-2 pe-4">20 marks</td>

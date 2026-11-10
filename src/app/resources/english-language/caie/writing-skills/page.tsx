@@ -128,7 +128,23 @@ export default async function WritingSkillsPage() {
           <p className="mt-3 text-muted-foreground leading-relaxed">
             In directed writing, you must write in a specific format using ideas from a provided
             passage <strong>and</strong> your own ideas. Getting the format right is the foundation
-            &mdash; markers will immediately notice if you use the wrong conventions.
+            - markers will immediately notice if you use the wrong conventions.
+          </p>
+          {/* 31 October 2026: corrected to src/data/mark-scheme-guides/cambridge-0500-paper1.ts
+              and -paper2.ts. Journals and interviews were called directed writing formats;
+              they are Paper 1 Question 4 forms, and Paper 2's directed writing is a speech,
+              letter, article or report. The summary marks were 15 content points and 10 for
+              writing; the 2(a) summary is 10 for reading and 5 for writing, in no more than
+              120 words of Text B, each marked in levels. Second read, same day: the summary's
+              5 writing marks listed grammar and spelling, which Paper 1 does not mark (no W5,
+              guide docblock); and the November 2026 papers' question numbers are now given. */}
+          <p className="mt-3 text-muted-foreground leading-relaxed">
+            Paper 2&apos;s directed writing, Question 1(b), asks for a speech, letter, article or
+            report. Paper 1&apos;s Question 4 can ask for any of these, or a journal or an
+            interview, based on Text C. These are the papers for exams from 2027: on the November
+            2026 papers, which follow the older syllabus, Paper 2&apos;s directed writing is one
+            40-mark task (a speech, letter or article) and the extended response to reading is Paper
+            1 Question 3.
           </p>
 
           {/* ── Formal Letter ──────────────────────────────────── */}
@@ -157,7 +173,7 @@ export default async function WritingSkillsPage() {
                 </p>
                 <p className="mt-4">{_tr(`Dear Mr/Mrs/Ms [Surname],`)}</p>
                 <p className="italic text-muted-foreground mt-2">
-                  [Subject line &mdash; optional but useful]
+                  [Subject line - optional but useful]
                 </p>
                 <p className="italic text-muted-foreground mt-2">
                   [Opening paragraph: state your purpose clearly]
@@ -184,7 +200,7 @@ export default async function WritingSkillsPage() {
                   faithfully&rdquo; when you wrote &ldquo;Dear Sir/Madam&rdquo;
                 </li>
                 <li>
-                  &bull; Formal register throughout &mdash; no slang, no contractions
+                  &bull; Formal register throughout - no slang, no contractions
                   (&ldquo;don&rsquo;t&rdquo; &rarr; &ldquo;do not&rdquo;)
                 </li>
                 <li>&bull; Each paragraph should have a clear topic</li>
@@ -212,7 +228,7 @@ export default async function WritingSkillsPage() {
                   [Opening: reference to shared experience or reason for writing]
                 </p>
                 <p className="italic text-muted-foreground">
-                  [Body: share your thoughts, advice, news &mdash; conversational tone]
+                  [Body: share your thoughts, advice, news - conversational tone]
                 </p>
                 <p className="italic text-muted-foreground">
                   [Closing: look forward to hearing from them]
@@ -229,14 +245,14 @@ export default async function WritingSkillsPage() {
               <p className="text-sm font-semibold text-primary">Key points to remember:</p>
               <ul className="mt-2 space-y-1 text-sm text-muted-foreground">
                 <li>
-                  &bull; Warm, friendly tone &mdash; contractions, rhetorical questions, and
-                  exclamation marks are fine
+                  &bull; Warm, friendly tone - contractions, rhetorical questions, and exclamation
+                  marks are fine
                 </li>
                 <li>&bull; Personal anecdotes make it feel authentic</li>
                 <li>&bull; Still needs clear paragraphs and coherent structure</li>
                 <li>
-                  &bull; Do NOT be so informal that your writing becomes sloppy &mdash; you are
-                  still being assessed on language quality
+                  &bull; Do NOT be so informal that your writing becomes sloppy - you are still
+                  being assessed on language quality
                 </li>
               </ul>
             </div>
@@ -282,12 +298,10 @@ export default async function WritingSkillsPage() {
               <p className="text-sm font-semibold text-primary">Key points to remember:</p>
               <ul className="mt-2 space-y-1 text-sm text-muted-foreground">
                 <li>
-                  &bull; Formal, impersonal tone &mdash; third person preferred (&ldquo;It was found
+                  &bull; Formal, impersonal tone - third person preferred (&ldquo;It was found
                   that&hellip;&rdquo;)
                 </li>
-                <li>
-                  &bull; Use subheadings to organise &mdash; this is expected in report format
-                </li>
+                <li>&bull; Use subheadings to organise - this is expected in report format</li>
                 <li>&bull; Evidence-based: use facts, data, or observations from the passage</li>
                 <li>&bull; Recommendations should be practical and specific</li>
                 <li>&bull; Numbered sections look professional</li>
@@ -312,7 +326,7 @@ export default async function WritingSkillsPage() {
                 <p className="italic">[Optional subheading / strapline]</p>
                 <p>{_tr(`By [Your name]`)}</p>
                 <p className="italic text-muted-foreground mt-2">
-                  [Hook opening &mdash; grab the reader&rsquo;s attention immediately]
+                  [Hook opening - grab the reader&rsquo;s attention immediately]
                 </p>
                 <p className="italic text-muted-foreground">
                   [Body paragraphs: present information, opinions, expert views]
@@ -331,7 +345,7 @@ export default async function WritingSkillsPage() {
                   wordplay can work well)
                 </li>
                 <li>
-                  &bull; Engage the reader from the first sentence &mdash; a question, statistic, or
+                  &bull; Engage the reader from the first sentence - a question, statistic, or
                   surprising statement
                 </li>
                 <li>&bull; Balance facts and opinions</li>
@@ -340,8 +354,7 @@ export default async function WritingSkillsPage() {
                   perspectives
                 </li>
                 <li>
-                  &bull; Relatively formal but accessible language &mdash; write for a broad
-                  audience
+                  &bull; Relatively formal but accessible language - write for a broad audience
                 </li>
               </ul>
             </div>
@@ -416,7 +429,8 @@ export default async function WritingSkillsPage() {
             <h3 className="text-lg font-semibold text-primary">6. Journal / Diary Entry</h3>
             <p className="mt-2 text-sm text-muted-foreground leading-relaxed">
               A personal, reflective piece written from a character&rsquo;s perspective. The most
-              personal of all the directed writing formats.
+              personal of these forms. It is set in Paper 1 Question 4, not in Paper 2&apos;s
+              directed writing.
             </p>
 
             <div className="mt-4 rounded bg-muted p-4">
@@ -441,17 +455,17 @@ export default async function WritingSkillsPage() {
               <p className="text-sm font-semibold text-primary">Key points to remember:</p>
               <ul className="mt-2 space-y-1 text-sm text-muted-foreground">
                 <li>
-                  &bull; First person throughout &mdash; &ldquo;I&rdquo;, &ldquo;my&rdquo;,
+                  &bull; First person throughout - &ldquo;I&rdquo;, &ldquo;my&rdquo;,
                   &ldquo;me&rdquo;
                 </li>
-                <li>&bull; Deeply reflective &mdash; share honest thoughts and feelings</li>
+                <li>&bull; Deeply reflective - share honest thoughts and feelings</li>
                 <li>
                   &bull; Can use informal language, incomplete sentences, and stream of
                   consciousness
                 </li>
                 <li>
-                  &bull; Show emotional responses to events &mdash; not just what happened, but how
-                  it felt
+                  &bull; Show emotional responses to events - not just what happened, but how it
+                  felt
                 </li>
                 <li>
                   &bull; Still needs to be well-written and engaging despite the informal format
@@ -464,8 +478,8 @@ export default async function WritingSkillsPage() {
           <div className="mt-6 rounded-lg border border-border bg-card p-6">
             <h3 className="text-lg font-semibold text-primary">7. Interview (Q&amp;A Format)</h3>
             <p className="mt-2 text-sm text-muted-foreground leading-relaxed">
-              Less common but sometimes appears. You write both the questions and the answers,
-              typically for a magazine or newspaper feature.
+              Set in Paper 1 Question 4, not in Paper 2&apos;s directed writing. You write both the
+              questions and the answers, typically for a magazine or newspaper feature.
             </p>
 
             <div className="mt-4 rounded bg-muted p-4">
@@ -496,7 +510,7 @@ export default async function WritingSkillsPage() {
             <div className="mt-4 rounded bg-accent/5 border border-accent/20 p-4">
               <p className="text-sm font-semibold text-primary">Key points to remember:</p>
               <ul className="mt-2 space-y-1 text-sm text-muted-foreground">
-                <li>&bull; Questions should be varied &mdash; open-ended, probing, and relevant</li>
+                <li>&bull; Questions should be varied - open-ended, probing, and relevant</li>
                 <li>&bull; Answers should reveal personality and include specific details</li>
                 <li>&bull; Build from general questions to more personal or probing ones</li>
                 <li>&bull; Include an introduction that sets the context for the reader</li>
@@ -515,9 +529,11 @@ export default async function WritingSkillsPage() {
             Summary Writing Technique
           </h2>
           <p className="mt-3 text-muted-foreground leading-relaxed">
-            Summary writing is a core skill for the Cambridge IGCSE reading paper. You must
-            demonstrate the ability to identify relevant information, select key points, and
-            organise them into fluent, concise prose in your own words.
+            Summary writing is a core skill for the Cambridge IGCSE reading paper. In Question 2(a)
+            you must identify the information in Text B that fits the focus, select the key points,
+            and organise them into fluent, concise prose in your own words, in no more than 120
+            words. On the November 2026 paper the summary is part of Question 1, with the same text,
+            word limit and marks.
           </p>
 
           <div className="mt-8 rounded-lg border-2 border-primary/20 bg-primary/5 p-6">
@@ -538,8 +554,9 @@ export default async function WritingSkillsPage() {
                     highlight every piece of information that is relevant to that specific focus.
                   </p>
                   <div className="mt-2 rounded bg-card p-3 text-xs text-muted-foreground">
-                    <strong>Tip:</strong> Number each relevant point as you find it. Aim for
-                    12&ndash;15 points. More points = more content marks.
+                    <strong>Tip:</strong> Number each relevant point as you find it, including ideas
+                    the text only implies. The reading mark rewards the points that matter most, not
+                    the longest list.
                   </div>
                 </div>
               </div>
@@ -609,22 +626,22 @@ export default async function WritingSkillsPage() {
           {/* Summary marking guide */}
           <div className="mt-8 grid gap-4 sm:grid-cols-2">
             <div className="rounded-lg border border-border bg-card p-5">
-              <p className="text-2xl font-bold text-primary">15</p>
+              <p className="text-2xl font-bold text-primary">10</p>
               <p className="text-sm font-semibold text-foreground">{_tr(`Content Marks`)}</p>
               <p className="mt-2 text-sm text-muted-foreground leading-relaxed">
-                1 mark for each relevant content point identified from the passage. The marking
-                guide lists specific points &mdash; you get credit for each distinct idea you
-                include, up to 15.
+                Reading marks, given in five levels for how well you select the points that fit the
+                focus, including ideas the text only implies. The top level gathers the points that
+                matter most and never strays from the focus.
               </p>
             </div>
             <div className="rounded-lg border border-border bg-card p-5">
-              <p className="text-2xl font-bold text-accent">10</p>
+              <p className="text-2xl font-bold text-accent">5</p>
               <p className="text-sm font-semibold text-foreground">
                 {_tr(`Writing Quality Marks`)}
               </p>
               <p className="mt-2 text-sm text-muted-foreground leading-relaxed">
                 Assessed on: use of own words (not lifting), fluency and coherence of writing,
-                accuracy of grammar and spelling, and appropriate use of connectives to link ideas.
+                saying a lot in few words, and appropriate use of connectives to link ideas.
               </p>
             </div>
           </div>
@@ -649,8 +666,8 @@ export default async function WritingSkillsPage() {
             {_tr(`Opening Techniques`)}
           </h3>
           <p className="mt-2 text-sm text-muted-foreground">
-            Your opening is crucial &mdash; it sets the tone and determines whether the marker is
-            engaged from the start.
+            Your opening is crucial - it sets the tone and determines whether the marker is engaged
+            from the start.
           </p>
           <div className="mt-4 grid gap-4 sm:grid-cols-2">
             <div className="rounded-lg border border-border p-4">
@@ -765,8 +782,8 @@ export default async function WritingSkillsPage() {
           </h2>
           <p className="mt-3 text-muted-foreground leading-relaxed">
             Descriptive writing is about creating a vivid, immersive experience for the reader.
-            There is <strong>no plot</strong> &mdash; the entire focus is on using language to bring
-            a scene, person, or place to life.
+            There is <strong>no plot</strong> - the entire focus is on using language to bring a
+            scene, person, or place to life.
           </p>
 
           <h3 className="mt-8 text-lg font-semibold text-foreground">
@@ -793,8 +810,8 @@ export default async function WritingSkillsPage() {
             <div className="rounded-lg border border-border p-4 text-center">
               <p className="font-semibold text-primary">{_tr(`Time Progression`)}</p>
               <p className="mt-2 text-xs text-muted-foreground">
-                Describe the same scene at different times &mdash; dawn to dusk, or season to season
-                &mdash; showing how it changes.
+                Describe the same scene at different times - dawn to dusk, or season to season -
+                showing how it changes.
               </p>
             </div>
           </div>

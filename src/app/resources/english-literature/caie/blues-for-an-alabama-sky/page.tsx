@@ -299,7 +299,7 @@ export default function BluesForAnAlabamaSkyStudyGuide() {
             Cambridge IGCSE English Literature
           </p>
           <h1 className="mt-2 text-3xl font-bold tracking-tight sm:text-4xl md:text-5xl">
-            Blues for an Alabama Sky &mdash; Complete Study Guide
+            Blues for an Alabama Sky - Complete Study Guide
           </h1>
           <p className="mx-auto mt-4 max-w-2xl text-lg text-muted-foreground">
             Characters, themes, act-by-act summary with key quotations, dramatic techniques,
@@ -358,9 +358,7 @@ export default function BluesForAnAlabamaSkyStudyGuide() {
                             &ldquo;{q.quote}&rdquo;
                           </blockquote>
                           {'speaker' in q && q.speaker && (
-                            <p className="mt-1 text-xs font-semibold text-primary">
-                              &mdash; {q.speaker}
-                            </p>
+                            <p className="mt-1 text-xs font-semibold text-primary">- {q.speaker}</p>
                           )}
                           <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
                             {q.analysis}

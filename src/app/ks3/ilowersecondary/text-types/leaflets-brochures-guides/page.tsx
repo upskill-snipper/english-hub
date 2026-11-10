@@ -223,9 +223,9 @@ export default async function LeafletsBrochuresGuidesPage() {
           <p className="text-base leading-relaxed text-muted-foreground">
             Leaflets, brochures and guides are one of the non-fiction text types you may meet in
             Section A reading, and the kind of text you may be asked to write in Section B. Their
-            job is to inform a reader and, very often, to persuade them to do something &mdash;
-            visit a place, support a cause or take part in an activity. This guide shows you how to
-            read them closely and how to write your own.
+            job is to inform a reader and, very often, to persuade them to do something - visit a
+            place, support a cause or take part in an activity. This guide shows you how to read
+            them closely and how to write your own.
           </p>
         </header>
 
@@ -258,8 +258,8 @@ export default async function LeafletsBrochuresGuidesPage() {
             ))}
           </ul>
           <p className="text-sm leading-relaxed text-muted-foreground">
-            These texts typically combine two non-fiction purposes &mdash; most often{' '}
-            <strong>inform</strong> and <strong>persuade</strong> &mdash; chosen from the full list:{' '}
+            These texts typically combine two non-fiction purposes - most often{' '}
+            <strong>inform</strong> and <strong>persuade</strong> - chosen from the full list:{' '}
             {NON_FICTION_PURPOSES.join(', ')}.
           </p>
         </section>
@@ -270,8 +270,8 @@ export default async function LeafletsBrochuresGuidesPage() {
           </h2>
           <p className="mb-6 text-sm leading-relaxed text-muted-foreground">
             Every feature in a leaflet is a deliberate choice. In a reading answer, always link the
-            feature to its <em>effect on the reader</em> and to the writer&rsquo;s purpose &mdash;
-            that is what the structure and organisation marks reward.
+            feature to its <em>effect on the reader</em> and to the writer&rsquo;s purpose - that is
+            what the structure and organisation marks reward.
           </p>
           <div className="overflow-hidden rounded-lg border border-border/60">
             <table className="w-full border-collapse text-start text-sm">
@@ -429,7 +429,7 @@ export default async function LeafletsBrochuresGuidesPage() {
                 &bull; Warm up with hot chocolate in the Reedbed Caf&eacute;
                 <br />
                 <br />
-                Plan your spring visit today &mdash; Saltmere Marsh is waiting for you.&rdquo;
+                Plan your spring visit today - Saltmere Marsh is waiting for you.&rdquo;
               </p>
             </div>
           </div>

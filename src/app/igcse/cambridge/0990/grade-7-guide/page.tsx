@@ -162,8 +162,10 @@ export default async function Grade7GuidePage() {
         </div>
         <Card>
           <CardHeader className="pb-3">
+            {/* 31 October 2026: this said Q2. The language task is in Q3 from 2027 and in
+                Q2 in November 2026 (src/data/mark-scheme-guides/cambridge-0990-paper1.ts). */}
             <Badge variant="secondary" className="w-fit">
-              Language analysis - Q2
+              Paper 1 language task
             </Badge>
             <CardTitle className="mt-2 text-body font-semibold">
               Exploring imagery in a travel extract

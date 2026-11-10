@@ -1,7 +1,23 @@
 // @ts-nocheck
 // ─── OCR English Language J351: 15 Comprehensive Lesson Plans ────────────────
-// Component 01 (Communicative Skills) + Component 02 (Language Systems & Accuracy)
+// Component 01 (Communicating information and ideas) + Component 02 (Exploring
+// effects and impact), each 2 hours, 80 marks and 50% of the GCSE.
 // Ready-to-teach with full differentiation, model answers, and assessment
+//
+// 31 October 2026: corrected to the J351 guides in src/data/mark-scheme-guides/
+// ocr-lang-component01.ts and -component02.ts. These plans described a
+// specification OCR does not have: Component 01 "Communicative Skills" (written
+// and spoken communication, 60 marks) and Component 02 "Language Systems &
+// Accuracy" (40 marks of spelling, punctuation, grammar and vocabulary), with
+// mock papers to match, a writing task of two or three texts, and two writing
+// tasks plus a speaking task in Component 01. Each component has a reading
+// section (four questions on two unseen texts) and a writing section (one task,
+// Question 5 or 6, for 40 marks); spoken language is a separately reported
+// endorsement. The spelling, punctuation, grammar and vocabulary lessons now
+// serve technical accuracy (AO6, 16 of the 40 writing marks in each component),
+// and the "Score 7+ marks" objectives, which matched no OCR tariff, name levels.
+// Second read, 31 October 2026: lesson c2-06 gave the suggested 45 minutes of
+// writing as the paper's own timing; OCR advises about an hour on Section B.
 
 export interface OCRLessonPlan {
   id: string
@@ -44,39 +60,35 @@ export const ocrLanguageLessonPlans: OCRLessonPlan[] = [
     yearGroup: 'Year 10-11',
     examBoard: 'OCR',
     learningObjectives: [
-      'Understand the complete OCR J351 structure: Component 01 (50%) and Component 02 (50%)',
-      'Know assessment weightings: Communicative Skills (reading, writing, speaking, listening)',
-      'Identify the four language system areas tested in Component 02',
-      'Create a personalized revision plan based on exam weighting',
+      'Understand the complete OCR J351 structure: Component 01 (50%) and Component 02 (50%), each 2 hours and 80 marks',
+      'Know what each section asks for: four reading questions (40 marks) and one writing task, Question 5 or 6 (40 marks), in each component',
+      'Know the texts each component prints: non-fiction from the 19th and from the 20th or 21st century in Component 01, and 20th or 21st-century literary prose in Component 02',
+      'Create a personalised revision plan based on where the marks are',
     ],
     starterActivity: {
       description:
-        'Assessment Structure Puzzle: Divide the class into four groups. Give each group a card describing one part of OCR J351 (Component 01: Written Communication, Component 01: Spoken Communication, Component 02: Vocabulary & Spelling, Component 02: Grammar & Punctuation). Groups order themselves according to mark weighting (50%, 25%, 15%, 10%). Discuss why OCR weights communicative skills so heavily.',
+        'Assessment Structure Puzzle: Divide the class into four groups. Give each group a card describing one part of OCR J351 (Component 01 Section A: Reading; Component 01 Section B: Writing; Component 02 Section A: Reading; Component 02 Section B: Writing). Groups decide how many marks their part carries and what it asks for, then check against the sample papers: every section is 40 marks. Discuss why the writing is worth half of each paper.',
       duration: '10 mins',
-      resources: [
-        'Four assessment structure cards',
-        'Weighting reference sheet',
-        'Whiteboard timeline',
-      ],
+      resources: ['Four assessment structure cards', 'Mark reference sheet', 'Whiteboard timeline'],
     },
     mainActivity: {
       description:
-        'Build a comprehensive OCR J351 framework showing both components, assessment weightings, mark allocations per task, and time management strategy. Use OCR specimen papers to identify each component in context. Students work in pairs to complete a blank template, then compare in groups of four. Build a master version on the board together. Key teaching: Component 01 (60 marks) = Written Comm (40 marks) + Spoken Comm (20 marks); Component 02 (40 marks) = integrated language accuracy assessment. Run a "skill simulation": project extracts from different task types (formal email, persuasive text, speech transcript) and ask students to identify which component each would be assessed under and what weighting it carries. Debrief: What skills do you already have? What needs development? Students write personalised component focus plan.',
+        'Build a comprehensive OCR J351 framework showing both components, marks per question, and time management strategy. Use OCR sample papers to identify each question in context. Students work in pairs to complete a blank template, then compare in groups of four. Build a master version on the board together. Key teaching: each component is 80 marks in 2 hours. Section A is four questions: Q1 retrieval (4 marks), Q2 (6 marks: bringing the two texts together in Component 01, language and structure in a short section in Component 02), Q3 language and structure (12 marks) and Q4 evaluation and comparison of both texts (18 marks). Section B is one writing task, Question 5 or 6, chosen from two (40 marks: 24 for content and organisation, 16 for technical accuracy): non-fiction in Component 01, creative writing in Component 02. OCR advises about an hour on each section. Spoken language is a separately reported endorsement, not part of either paper. Run a "skill simulation": project extracts from different task types (formal letter, persuasive speech, story opening) and ask students which component\'s writing task each would suit. Debrief: What skills do you already have? What needs development? Students write personalised component focus plan.',
       duration: '35 mins',
       steps: [
         'Distribute blank OCR J351 framework with two rows (Component 01 and 02)',
-        'Using projected OCR specimen papers, students identify tasks and their marks',
-        'Fill in: component, task type, marks, weighting, suggested time allocation',
+        'Using projected OCR sample papers, students identify each question and its marks',
+        'Fill in: component, section, question, marks, suggested time allocation',
         'Pairs compare with groups of four, resolving differences',
-        'Teacher builds master version on board; discuss component weighting rationale',
-        'Project three extracts from different communicative tasks; students identify component and weighting',
+        'Teacher builds master version on board; discuss why the writing is half of each paper',
+        "Project three extracts from different writing forms; students identify which component's Section B each would suit",
         'Students write personalised component focus plan (which skills to prioritize)',
       ],
       differentiation: {
         support:
-          'Provide partially completed framework with Component 01 Written Comm pre-filled. Include visual diagram showing mark distribution. Offer percentage glossary. Allow extra time to process weighting information.',
+          'Provide partially completed framework with Component 01 Section A pre-filled. Include visual diagram showing mark distribution. Offer percentage glossary. Allow extra time to process mark information.',
         stretch:
-          'Students analyse past paper results to identify which component carries highest marks across multiple years. Create a "skills matrix" matching each OCR skill to a learning priority. Write brief explanations for why OCR weights each component as it does.',
+          'Students use OCR sample papers and mark schemes to show where each objective is assessed (for example, comparison only in Question 4). Create a "skills matrix" matching each OCR skill to a learning priority. Write brief explanations for why the writing carries half the marks.',
       },
     },
     plenary: {
@@ -87,9 +99,9 @@ export const ocrLanguageLessonPlans: OCRLessonPlan[] = [
     homework:
       'Create a revision poster showing OCR J351 structure: both components, marks, weightings, task types, and one key success criterion per component. Bring to next lesson for peer review.',
     resourcesNeeded: [
-      'OCR specimen papers (projected or printed)',
+      'OCR sample papers (projected or printed)',
       'Blank OCR J351 framework sheet',
-      'Component weighting diagram',
+      'Mark distribution diagram',
       'Percentage glossary for LA students',
       'Task type reference cards',
     ],
@@ -128,7 +140,7 @@ export const ocrLanguageLessonPlans: OCRLessonPlan[] = [
       'Understand the conventions of transactional writing for specific purposes',
       'Identify register, tone, and formality requirements for different recipient types',
       'Structure transactional texts with clear communication and appropriate detail',
-      'Score 7+ marks by achieving communicative purpose effectively',
+      'Reach the higher levels of the Section B mark scheme by achieving communicative purpose effectively',
     ],
     starterActivity: {
       description:
@@ -214,7 +226,7 @@ export const ocrLanguageLessonPlans: OCRLessonPlan[] = [
       'Construct a persuasive argument with multiple supporting points',
       'Use rhetorical devices to enhance persuasive effect (repetition, rhetorical questions, etc.)',
       'Structure a persuasive text with clear argument progression',
-      'Score 7+ marks by developing a sustained, engaging persuasive voice',
+      'Reach the higher levels of the Section B mark scheme by developing a sustained, engaging persuasive voice',
     ],
     starterActivity: {
       description:
@@ -298,7 +310,7 @@ export const ocrLanguageLessonPlans: OCRLessonPlan[] = [
       'Create vivid, engaging descriptive and narrative writing',
       'Use literary devices (imagery, symbolism, pacing) to enhance effect',
       'Show character and emotion through description and action, not telling',
-      'Score 7+ marks by balancing narrative/descriptive detail with linguistic quality',
+      "Know that creative writing is Component 02 Section B: one piece from a choice of two tasks, which in OCR's sample and June 2024 papers were a story from a given title and personal writing about an experience",
     ],
     starterActivity: {
       description:
@@ -338,7 +350,7 @@ export const ocrLanguageLessonPlans: OCRLessonPlan[] = [
       duration: '10 mins',
     },
     homework:
-      'Write a descriptive passage (300-400 words) describing either a place that holds emotional significance for you OR a person you know well. Focus on showing emotion/atmosphere through sensory detail and imagery rather than telling the reader how to feel. Bring to next lesson for peer feedback on imagery impact.',
+      'Write a piece of personal writing (300-400 words) about either a place that holds emotional significance for you OR a person you know well. Focus on showing emotion/atmosphere through sensory detail and imagery rather than telling the reader how to feel. Bring to next lesson for peer feedback on imagery impact.',
     resourcesNeeded: [
       'Show vs Tell comparison poster',
       'Literary device examples sheet',
@@ -380,15 +392,15 @@ export const ocrLanguageLessonPlans: OCRLessonPlan[] = [
 
   {
     id: 'ocr-lang-c1-05',
-    title: 'Integrated Task: Multi-Genre Response (Combining 2-3 Text Types)',
+    title: 'Register Drill: One Topic in Two or Three Text Types',
     duration: '1 hour',
     yearGroup: 'Year 10-11',
     examBoard: 'OCR',
     learningObjectives: [
       'Demonstrate understanding of multiple text types and their communicative purposes',
       'Switch register and style effectively between different text forms',
-      'Plan a multi-text response meeting all communicative objectives',
-      'Score 7+ marks by managing complexity and maintaining quality across formats',
+      'Plan the same content for two forms, as practice for choosing between the two Section B tasks',
+      'Reach the higher writing levels by keeping register and conventions right for each form',
     ],
     starterActivity: {
       description:
@@ -402,17 +414,17 @@ export const ocrLanguageLessonPlans: OCRLessonPlan[] = [
     },
     mainActivity: {
       description:
-        'Teach planning a multi-genre response: (1) Read the task carefully to identify how many texts are required and their types. (2) Brainstorm content and key points applicable across formats. (3) For each text, identify specific communicative purpose, register, and structure. (4) Draft texts separately, ensuring each maintains its own conventions while addressing overall task topic. Model a two-text response: task asks for "an email to local council about youth facilities + a speech to school assembly on same topic". Plan: Content (facilities needed, benefits, call to action). Text 1 - Email: formal register, transactional structure, specific requests. Text 2 - Speech: persuasive tone, rhetorical devices, call to action. Show Grade 6 response (both texts present, some register confusion, limited distinction) and Grade 8 response (clear register distinction, texts maintain individual conventions, all communicative purposes achieved). Complete one multi-genre task (30 mins planning + drafting) requiring two or three texts. Self-assess using mark scheme: Are all text types present? Does each maintain appropriate register and structure? Do all communicative objectives come through?',
+        'Teach planning across forms: (1) Remember that each OCR component asks for one piece of writing, Question 5 or 6, chosen from two tasks that each set a form, audience and purpose; this drill writes one topic in two or three forms to build the register control that choice needs. (2) Brainstorm content and key points applicable across formats. (3) For each text, identify specific communicative purpose, register, and structure. (4) Draft texts separately, ensuring each maintains its own conventions while addressing overall task topic. Model a two-text response: task asks for "an email to local council about youth facilities + a speech to school assembly on same topic". Plan: Content (facilities needed, benefits, call to action). Text 1 - Email: formal register, transactional structure, specific requests. Text 2 - Speech: persuasive tone, rhetorical devices, call to action. Show Grade 6 response (both texts present, some register confusion, limited distinction) and Grade 8 response (clear register distinction, texts maintain individual conventions, all communicative purposes achieved). Complete one drill (30 mins planning + drafting) in two or three forms. Self-assess: Does each text maintain appropriate register and structure? Do all communicative objectives come through?',
       duration: '35 mins',
       steps: [
-        'Introduce multi-genre task structure: two or three texts on same topic, different formats',
+        'Introduce the drill: one topic in two or three formats (the exam itself asks for one piece, Question 5 or 6)',
         'Display text type identification checklist: purpose, register, structure, audience',
         'Model planning a two-text response (email + speech): identify shared content vs format-specific choices',
         'Show how register and tone differ between the same message in two formats',
         'Show Grade 6 model response (both texts present, inconsistent register)',
         'Show Grade 8 model response (clear register distinction, strong individual conventions)',
         'Discuss why Grade 8 is higher: register clarity, format-specific conventions, maintained quality',
-        'Distribute multi-genre task requiring 2-3 texts',
+        'Distribute the drill scenario (two or three forms on one topic)',
         'Students plan (10 mins): identify content applicable across texts, then specific choices per format',
         'Students draft (20 mins): maintain quality while switching between formats',
       ],
@@ -429,7 +441,7 @@ export const ocrLanguageLessonPlans: OCRLessonPlan[] = [
       duration: '10 mins',
     },
     homework:
-      'Complete a multi-genre response task at home (provided scenario, 2-3 text types required). Annotate your response identifying the register and communicative purpose of each text. Bring to next lesson for peer analysis of register distinction and format convention accuracy.',
+      'Complete the register drill at home (provided scenario, two or three forms). Annotate your response identifying the register and communicative purpose of each text. Bring to next lesson for peer analysis of register distinction and format convention accuracy.',
     resourcesNeeded: [
       'Three short text type examples',
       'Text type identification checklist',
@@ -438,7 +450,7 @@ export const ocrLanguageLessonPlans: OCRLessonPlan[] = [
       'Structure frames for each text type (for support)',
       'Content planning sheet (for support)',
       'Grade 6 and Grade 8 model responses (showing register shifts)',
-      'Multi-genre mark scheme',
+      'Writing mark scheme (content and organisation 24, technical accuracy 16)',
     ],
     assessmentOpportunities: [
       'Text type identification in starter (quick check)',
@@ -478,7 +490,7 @@ export const ocrLanguageLessonPlans: OCRLessonPlan[] = [
     learningObjectives: [
       'Distinguish between explicit information (stated in text) and implicit information (inferred from text)',
       'Make supported inferences using textual evidence',
-      'Identify and analyze inference across complex texts',
+      'Identify and analyse inference across complex texts',
       'Develop inference skills to understand writer intent and implied meaning',
     ],
     starterActivity: {
@@ -654,7 +666,7 @@ export const ocrLanguageLessonPlans: OCRLessonPlan[] = [
     yearGroup: 'Year 10-11',
     examBoard: 'OCR',
     learningObjectives: [
-      'Integrate reading, writing, and speaking skills in a realistic exam scenario',
+      'Integrate reading and writing skills in a realistic Component 01 exam scenario',
       'Manage time effectively across multiple tasks within one session',
       'Demonstrate all communicative skills under assessment conditions',
       'Self-assess and identify areas for further development before final exam',
@@ -671,21 +683,20 @@ export const ocrLanguageLessonPlans: OCRLessonPlan[] = [
     },
     mainActivity: {
       description:
-        'Simulate a realistic Component 01 exam session: Students complete a shortened version of the full OCR J351 Component 01 assessment (with all reading comprehension, writing tasks, and speaking task). Time allocation mirrors actual exam: Reading task (15 mins), Writing tasks (2 × 20 mins), Speaking preparation and delivery (10 mins prep + 5 mins delivery). Scaffold initially: provide mark schemes, prompts for time management, and mid-session check-ins. Debrief after exam: students self-assess each section using mark schemes, identify what they did well, and pinpoint what needs development before the real exam. Discuss: Which task took longest? Where did you feel confident? Where would you like more practice? Create individual action plans: "Before the real exam, I will focus on [specific skill or task type]."',
+        'Simulate a realistic Component 01 exam session: Students complete a shortened version of OCR J351 Component 01, which on the full paper is four reading questions on two unseen non-fiction texts (one from the 19th century) and one writing task, Question 5 or 6, with about an hour on each section. Shortened here: Reading (15 mins): Questions 1 and 2 on two short texts; Writing (20 mins): choose Question 5 or 6 and write the opening section of the piece. The spoken presentation is not part of this paper: it belongs to the separately reported Spoken Language endorsement (lesson ocr-lang-c1-07). Scaffold initially: provide mark schemes, prompts for time management, and mid-session check-ins. Debrief after exam: students self-assess each section using mark schemes, identify what they did well, and pinpoint what needs development before the real exam. Discuss: Which task took longest? Where did you feel confident? Where would you like more practice? Create individual action plans: "Before the real exam, I will focus on [specific skill or task type]."',
       duration: '35 mins',
       steps: [
         'Explain that this is a mock-exam session simulating real conditions',
         'Display time allocations and expectations for each section',
-        'Provide detailed mark schemes for all writing and speaking tasks',
-        'Section 1 - Reading task (15 mins): Students complete reading comprehension questions',
-        'Section 2 - Writing tasks (2 × 20 mins): Students complete two different writing tasks under timed conditions',
-        'Section 3 - Speaking task (10 mins prep + 5 mins delivery): Students prepare and deliver a short presentation',
+        'Provide detailed mark schemes for the reading questions and the writing task',
+        'Section A - Reading (15 mins): Students answer Questions 1 and 2 on the two texts',
+        'Section B - Writing (20 mins): Students choose Question 5 or 6 and write the opening section under timed conditions',
         'Debrief: Students complete self-assessment sheet for each section using mark schemes',
         'Discuss challenges and successes; identify personal development priorities',
       ],
       differentiation: {
         support:
-          'Provide detailed mark schemes with visual hierarchy showing band descriptors. Offer time management cues (timer reminders at 5-minute intervals). Reduce writing task length or number of tasks. Allow extra 5 minutes per section. Pair with stronger peer for speaking task. Provide structure frames and word banks. Allow access to reference materials during writing sections.',
+          'Provide detailed mark schemes with visual hierarchy showing band descriptors. Offer time management cues (timer reminders at 5-minute intervals). Reduce writing task length. Allow extra 5 minutes per section. Provide structure frames and word banks. Allow access to reference materials during writing sections.',
         stretch:
           'Challenge students to improve from their previous self-assessed mark by targeting specific mark scheme criteria. Compare mock exam response with model answer and identify specific areas for improvement. Analyse time management choices and discuss how to optimize in real exam. Set stretch targets for each task type.',
       },
@@ -698,7 +709,7 @@ export const ocrLanguageLessonPlans: OCRLessonPlan[] = [
     homework:
       "Complete final self-reflection on your mock exam performance. Review your responses and compare with mark scheme. Identify one specific area where you'd like to improve before the real exam and complete one focused practice task on that skill. Bring both reflection and practice task to next lesson.",
     resourcesNeeded: [
-      'Shortened full Component 01 mock exam paper (reading, writing × 2, speaking)',
+      'Shortened Component 01 mock paper (two texts, Questions 1 and 2, and a choice of two writing tasks)',
       'Detailed mark schemes for all sections',
       'Time management cues/timer',
       'Self-assessment sheet template',
@@ -729,7 +740,7 @@ export const ocrLanguageLessonPlans: OCRLessonPlan[] = [
     ],
     crossCurricular: ['Self-awareness', 'Metacognition', 'Planning skills', 'Exam technique'],
     sendAdaptations:
-      'Provide detailed, visually clear mark schemes with band descriptors highlighted; offer frequent time management cues (5-minute interval reminders); reduce exam length or task number; allow extra time across all sections; provide structure frames and word banks for all writing tasks; pair with peer for speaking task; allow use of reference materials; provide detailed self-assessment sheet with yes/no questions to guide reflection; allow recorded speaking task if comfortable.',
+      'Provide detailed, visually clear mark schemes with band descriptors highlighted; offer frequent time management cues (5-minute interval reminders); reduce exam length; allow extra time across all sections; provide structure frames and word banks for the writing task; allow use of reference materials; provide detailed self-assessment sheet with yes/no questions to guide reflection.',
   },
 
   {
@@ -870,7 +881,7 @@ export const ocrLanguageLessonPlans: OCRLessonPlan[] = [
       duration: '10 mins',
     },
     homework:
-      "Take a paragraph you've written recently (from a previous assignment) and edit for punctuation accuracy. Identify any errors and correct them, writing the rule you applied next to each correction. If you find no errors, analyze your punctuation choices and explain why each is correct. Bring edited paragraph to next lesson.",
+      "Take a paragraph you've written recently (from a previous assignment) and edit for punctuation accuracy. Identify any errors and correct them, writing the rule you applied next to each correction. If you find no errors, analyse your punctuation choices and explain why each is correct. Bring edited paragraph to next lesson.",
     resourcesNeeded: [
       'Five sentences with deliberate punctuation errors',
       'Punctuation rules reference sheet (comprehensive)',
@@ -1105,7 +1116,7 @@ export const ocrLanguageLessonPlans: OCRLessonPlan[] = [
       'Apply spelling, punctuation, grammar, and vocabulary knowledge to own writing',
       'Identify and correct errors in multiple drafts without reliance on spell-checker',
       'Maintain accuracy under timed exam conditions across all task types',
-      'Secure maximum marks in Component 02 Language Systems & Accuracy',
+      'Secure the technical accuracy marks (AO6: 16 of the 40 writing marks in each component)',
     ],
     starterActivity: {
       description:
@@ -1187,23 +1198,22 @@ export const ocrLanguageLessonPlans: OCRLessonPlan[] = [
 
   {
     id: 'ocr-lang-c2-06',
-    title:
-      'Mock Assessment: Full OCR Component 02 Language Systems & Accuracy (Timed Exam Conditions)',
+    title: 'Timed Writing and Proofreading Practice: Technical Accuracy Under Exam Conditions',
     duration: '1 hour 15 mins',
     yearGroup: 'Year 10-11',
     examBoard: 'OCR',
     learningObjectives: [
       'Apply all spelling, punctuation, grammar, and vocabulary knowledge under exam conditions',
-      'Complete a full OCR Component 02 assessment task within the timed limit',
+      'Complete a timed writing task and proofread it within the time limit',
       'Self-assess and reflect on accuracy performance across all language systems',
       'Identify remaining areas for focused revision before the formal exam',
     ],
     starterActivity: {
       description:
-        'Assessment Briefing: Explain that this is a full mock assessment mirroring formal exam conditions. Review the task requirements and time allocation: 20 minutes for initial writing, 10 minutes for focused proofreading, 5 minutes for final reflection. Stress: No access to spell-checkers or reference materials. Use knowledge of language systems only. Reinforce accuracy checklist strategy.',
+        'Assessment Briefing: Explain that this is a timed accuracy drill under exam conditions. On the paper the writing task is one piece, with about an hour for Section B (in the suggested plan, about 45 minutes of writing and 5 of checking); this drill shortens the writing to concentrate on accuracy. Review the time allocation: 20 minutes for initial writing, 10 minutes for focused proofreading, 5 minutes for final reflection. Stress: No access to spell-checkers or reference materials. Use knowledge of language systems only. Reinforce accuracy checklist strategy.',
       duration: '5 mins',
       resources: [
-        'Mock assessment task (printed)',
+        'Timed writing task (printed)',
         'Blank answer booklet or lined paper',
         'Answer checklist sheet (if permitted by awarding body)',
         'Assessment conditions information sheet',
@@ -1211,11 +1221,11 @@ export const ocrLanguageLessonPlans: OCRLessonPlan[] = [
     },
     mainActivity: {
       description:
-        'Timed Mock Assessment: (1) Distribute mock task matching OCR Component 02 style and difficulty. (2) Students complete assessment task under full exam conditions - 20 minutes for writing a text requiring strong accuracy (e.g., formal letter, informative article, speech). (3) Following writing, students have 10 minutes for conscious proofreading using multi-pass strategy (spelling, punctuation, grammar, vocabulary, register). (4) Collect completed work. (5) Distribute completed paper back for 5-minute reflection: students analyze their accuracy performance against the detailed checklist, identify error patterns, and note which language systems they found challenging.',
+        'Timed Writing Drill: (1) Distribute a writing task in the style of an OCR Section B task. (2) Students complete assessment task under full exam conditions - 20 minutes for writing a text requiring strong accuracy (e.g., formal letter, informative article, speech). (3) Following writing, students have 10 minutes for conscious proofreading using multi-pass strategy (spelling, punctuation, grammar, vocabulary, register). (4) Collect completed work. (5) Distribute completed paper back for 5-minute reflection: students analyse their accuracy performance against the detailed checklist, identify error patterns, and note which language systems they found challenging.',
       duration: '45 mins',
       steps: [
         'Review assessment conditions and timing strategy',
-        'Distribute mock assessment task',
+        'Distribute the timed writing task',
         'Students begin writing (20 mins) - start timer, monitor for exam-like conditions',
         'Call time on writing; students transition to proofreading phase (10 mins)',
         'Collect completed assessments',
@@ -1226,7 +1236,7 @@ export const ocrLanguageLessonPlans: OCRLessonPlan[] = [
         support:
           'Provide a structured writing frame outlining key points to cover; offer vocabulary list with synonyms for common terms; allow 25 minutes for writing (instead of 20); extend proofreading time to 12 minutes; provide detailed accuracy checklist with yes/no questions; allow extra 2 minutes for reflection.',
         stretch:
-          'Extend writing task to 25 minutes to allow greater complexity; challenge: deliberately incorporate one sophisticated vocabulary choice and one complex sentence structure in addition to maintaining accuracy; after proofreading, provide peer exchange to identify errors they missed; analyze mistakes to develop personalized revision strategy for remaining weak areas.',
+          'Extend writing task to 25 minutes to allow greater complexity; challenge: deliberately incorporate one sophisticated vocabulary choice and one complex sentence structure in addition to maintaining accuracy; after proofreading, provide peer exchange to identify errors they missed; analyse mistakes to develop personalised revision strategy for remaining weak areas.',
       },
     },
     plenary: {
@@ -1235,9 +1245,9 @@ export const ocrLanguageLessonPlans: OCRLessonPlan[] = [
       duration: '5 mins',
     },
     homework:
-      'Analyze your mock assessment paper using the detailed accuracy checklist. Create a table with columns: Error Type | How Many Errors | Which Part of Writing | Strategy to Prevent in Formal Exam. Categorize all errors found; count by type; note where they occurred (opening, body, conclusion). Reflect: Which error type appeared most frequently? Design a personalized revision focus for the next 2 weeks targeting your weakest area. Bring error analysis and revision plan to next lesson.',
+      'Analyse your mock assessment paper using the detailed accuracy checklist. Create a table with columns: Error Type | How Many Errors | Which Part of Writing | Strategy to Prevent in Formal Exam. Categorise all errors found; count by type; note where they occurred (opening, body, conclusion). Reflect: Which error type appeared most frequently? Design a personalised revision focus for the next 2 weeks targeting your weakest area. Bring error analysis and revision plan to next lesson.',
     resourcesNeeded: [
-      'Full OCR Component 02 mock assessment task (exam-board approved format)',
+      'Timed writing task in the style of an OCR Section B task',
       'Blank answer booklets or lined paper',
       'Timers/stopwatch for exam conditions',
       'Detailed accuracy checklist (spelling, punctuation, grammar, vocabulary, register)',
@@ -1247,7 +1257,7 @@ export const ocrLanguageLessonPlans: OCRLessonPlan[] = [
       'Error analysis template (for homework)',
     ],
     assessmentOpportunities: [
-      'Full mock assessment paper (comprehensive assessment of all language systems under exam conditions)',
+      'Timed writing paper (assessment of technical accuracy under exam conditions)',
       'Timed proofreading performance (checks conscious checking strategy)',
       'In-exam reflection (identifies student confidence and perceived weak areas)',
       'Homework error analysis (metacognitive assessment of accuracy patterns)',

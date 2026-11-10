@@ -35,9 +35,12 @@ const CHECKLISTS: ChecklistBoard[] = [
         title: 'Paper 1: Explorations in Creative Reading and Writing',
         items: [
           {
+            // 31 October 2026: "list 4 things" and, below, "Summarise
+            // differences/similarities" were Q1 and Q2 before summer 2026 (see
+            // src/data/mark-scheme-guides/aqa-lang-paper1.ts, paper2.ts). Ids kept.
             id: 'aqa-l-1',
             label: 'Q1: Identify and interpret explicit information',
-            detail: '4 marks - list 4 things',
+            detail: '4 marks - four multiple-choice parts',
           },
           {
             id: 'aqa-l-2',
@@ -77,7 +80,7 @@ const CHECKLISTS: ChecklistBoard[] = [
           { id: 'aqa-l-8', label: 'Q1: True/false statements', detail: '4 marks - shade boxes' },
           {
             id: 'aqa-l-9',
-            label: 'Q2: Summarise differences/similarities',
+            label: 'Q2: Infer the differences between the sources',
             detail: '8 marks - use both sources',
           },
           {
@@ -385,44 +388,61 @@ const CHECKLISTS: ChecklistBoard[] = [
     slug: 'caie-language',
     label: 'Cambridge IGCSE First Language English',
     colour: 'border-primary',
+    // 31 October 2026: rewritten to src/data/mark-scheme-guides/cambridge-0500-paper1.ts
+    // and -paper2.ts. Paper 1 was Q1 15, Q2 25 and a 10-mark summary, 50 of its 80
+    // marks; Paper 2's directed writing and each composition were 25. Paper 1 is four
+    // questions of 20 (2027-2029 syllabus; the November 2026 paper is three, of 30,
+    // 25 and 25), Paper 2 two sections of 40, and Paper 1 does not mark spelling and
+    // grammar. Ids are kept so ticks survive; caie-l-11 is new. Second read: Paper 2's
+    // title now says what differs in November 2026 too, as Paper 1's does.
     sections: [
       {
-        title: 'Paper 1: Reading',
+        title: 'Paper 1: Reading (from 2027; November 2026 is three questions, of 30, 25 and 25)',
         items: [
           {
             id: 'caie-l-1',
-            label: 'Q1: Retrieve and organise information',
-            detail: '15 marks - select relevant points',
+            label: 'Q1: Comprehension (Text A)',
+            detail: '20 marks - short answers, in your own words where asked',
           },
           {
             id: 'caie-l-2',
-            label: 'Q2: Understand and analyse language',
-            detail: '25 marks - explain effects of language choices',
+            label: 'Q2: Summary task (Text B)',
+            detail:
+              "20 marks - a summary of no more than 120 words (15), the writer's attitude (5)",
           },
           {
             id: 'caie-l-3',
-            label: 'Q3: Summary writing',
-            detail: '10 marks - concise, own words',
+            label: 'Q3: Short answers and language task (Text C)',
+            detail: '20 marks - word meanings (10), then how the language creates effects (10)',
+          },
+          {
+            id: 'caie-l-11',
+            label: 'Q4: Extended response to reading (Text C)',
+            detail: '20 marks - about 250-300 words in a set form, such as a letter or speech',
           },
         ],
       },
       {
-        title: 'Paper 2: Directed Writing and Composition',
+        title:
+          'Paper 2: Directed Writing and Composition (from 2027; in November 2026 the directed writing is one 40-mark task)',
         items: [
           {
             id: 'caie-l-4',
-            label: 'Directed writing: respond to passage in given form',
-            detail: '25 marks - adapt style to audience/purpose',
+            label: 'Directed writing: respond to the text(s) in a given form',
+            detail:
+              '40 marks - a short answer on the text (5), then a speech, letter, article or report (35)',
           },
           {
             id: 'caie-l-5',
             label: 'Composition: descriptive writing',
-            detail: '25 marks - sensory detail, structure',
+            detail:
+              '40 marks if you choose one of the two descriptive titles - sensory detail, structure',
           },
           {
             id: 'caie-l-6',
             label: 'Composition: narrative writing',
-            detail: '25 marks - plot, characterisation, atmosphere',
+            detail:
+              '40 marks if you choose one of the two narrative titles - plot, characterisation, atmosphere',
           },
           {
             id: 'caie-l-7',
@@ -434,7 +454,7 @@ const CHECKLISTS: ChecklistBoard[] = [
       {
         title: 'Core Skills',
         items: [
-          { id: 'caie-l-8', label: 'Own-words paraphrasing', detail: 'Critical for Qs 1 and 3' },
+          { id: 'caie-l-8', label: 'Own-words paraphrasing', detail: 'Critical for Qs 1, 2 and 3' },
           {
             id: 'caie-l-9',
             label: 'Selecting and organising evidence',
@@ -443,7 +463,7 @@ const CHECKLISTS: ChecklistBoard[] = [
           {
             id: 'caie-l-10',
             label: 'Accuracy in spelling and grammar',
-            detail: 'Assessed across all papers',
+            detail: 'Marked in Paper 2, in the directed writing and the composition',
           },
         ],
       },

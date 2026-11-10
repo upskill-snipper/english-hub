@@ -294,10 +294,14 @@ export const REV_POETRY_LANG_DICTIONARY: Dictionary = {
   },
   'rev.lang.hub.paper1': { en: 'Paper 1', ar: 'Paper 1', es: 'Paper 1' },
   'rev.lang.hub.paper2': { en: 'Paper 2', ar: 'Paper 2', es: 'Paper 2' },
+  // 31 October 2026: this said "Both papers carry equal weight" on the hub for
+  // AQA, Edexcel, OCR and Eduqas. Edexcel (1EN0) and Eduqas (C700) weight their
+  // papers 40/60 (src/data/mark-scheme-guides/edexcel-lang-paper1.ts and
+  // eduqas-lang-comp1.ts); AQA and OCR are 50/50.
   'rev.lang.hub.papers_equal_note': {
-    en: 'Both papers carry equal weight and both test SPaG in the writing section.',
-    ar: 'الورقتين لهما نفس الوزن، وكلتاهما تختبر SPaG في قسم الكتابة.',
-    es: 'Ambas pruebas tienen el mismo peso y ambas evalúan SPaG en la sección de escritura.',
+    en: 'Both papers test spelling, punctuation and grammar in the writing section. AQA and OCR weight the two papers equally; Edexcel and Eduqas give the second paper 60% of the grade.',
+    ar: 'كلتا الورقتين تختبر الإملاء وعلامات الترقيم والقواعد في قسم الكتابة. تمنح AQA وOCR الورقتين الوزن نفسه، بينما تمنح Edexcel وEduqas الورقة الثانية 60% من الدرجة.',
+    es: 'Ambas pruebas evalúan la ortografía, la puntuación y la gramática en la sección de escritura. AQA y OCR dan el mismo peso a las dos pruebas; Edexcel y Eduqas dan a la segunda el 60% de la nota.',
   },
   'rev.lang.hub.quick_reminder_title': {
     en: 'Language Paper Quick Reminder',

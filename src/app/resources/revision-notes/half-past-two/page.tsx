@@ -106,7 +106,7 @@ function QuoteCard({
       ) : (
         <p className="text-sm font-semibold text-violet-800 dark:text-violet-200">{moment}</p>
       )}
-      {speaker && <p className="mt-1 text-xs font-medium text-violet-600">&mdash; {speaker}</p>}
+      {speaker && <p className="mt-1 text-xs font-medium text-violet-600">- {speaker}</p>}
       <p className="mt-2 text-sm text-muted-foreground">{analysis}</p>
     </div>
   )

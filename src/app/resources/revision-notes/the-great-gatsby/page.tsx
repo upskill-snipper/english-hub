@@ -57,7 +57,7 @@ function QuoteCard({
       <p className="text-sm font-semibold text-violet-800 dark:text-violet-200 italic">
         &ldquo;{quote}&rdquo;
       </p>
-      {speaker && <p className="mt-1 text-xs font-medium text-violet-600">&mdash; {speaker}</p>}
+      {speaker && <p className="mt-1 text-xs font-medium text-violet-600">- {speaker}</p>}
       <p className="mt-2 text-sm text-muted-foreground">{analysis}</p>
     </div>
   )
@@ -110,7 +110,7 @@ export default function TheGreatGatsbyPage() {
           </span>
         </div>
         <h1 className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
-          The Great Gatsby &mdash; A-Level Revision Notes
+          The Great Gatsby - A-Level Revision Notes
         </h1>
         <p className="mt-1 text-lg text-muted-foreground">F. Scott Fitzgerald, 1925</p>
         <p className="mt-3 max-w-3xl text-muted-foreground leading-relaxed">
@@ -175,8 +175,8 @@ export default function TheGreatGatsbyPage() {
                       reserving judgement
                     </li>
                     <li>
-                      &bull; The Buchanan dinner &mdash; Tom&apos;s racism, Daisy&apos;s
-                      &ldquo;beautiful little fool&rdquo; speech
+                      &bull; The Buchanan dinner - Tom&apos;s racism, Daisy&apos;s &ldquo;beautiful
+                      little fool&rdquo; speech
                     </li>
                     <li>&bull; First sighting of Gatsby and the green light</li>
                   </ul>
@@ -204,11 +204,10 @@ export default function TheGreatGatsbyPage() {
                   </p>
                   <ul className="mt-2 space-y-1 text-sm text-muted-foreground">
                     <li>
-                      &bull; First description of the Valley of Ashes &mdash; &ldquo;ash-gray
-                      men&rdquo;
+                      &bull; First description of the Valley of Ashes - &ldquo;ash-gray men&rdquo;
                     </li>
                     <li>&bull; The eyes of Doctor T. J. Eckleburg introduced</li>
-                    <li>&bull; Tom&apos;s violence &mdash; the broken nose</li>
+                    <li>&bull; Tom&apos;s violence - the broken nose</li>
                   </ul>
                 </div>
               </div>
@@ -232,7 +231,7 @@ export default function TheGreatGatsbyPage() {
                     Key Moments
                   </p>
                   <ul className="mt-2 space-y-1 text-sm text-muted-foreground">
-                    <li>&bull; The party &mdash; orchestral excess and anonymous crowds</li>
+                    <li>&bull; The party - orchestral excess and anonymous crowds</li>
                     <li>
                       &bull; &ldquo;Owl Eyes&rdquo; in the library marvels at the real, uncut books
                     </li>
@@ -263,8 +262,7 @@ export default function TheGreatGatsbyPage() {
                   <ul className="mt-2 space-y-1 text-sm text-muted-foreground">
                     <li>&bull; Gatsby&apos;s self-mythologising biography</li>
                     <li>
-                      &bull; Wolfsheim and the fixed World Series &mdash; corruption beneath the
-                      wealth
+                      &bull; Wolfsheim and the fixed World Series - corruption beneath the wealth
                     </li>
                     <li>&bull; Jordan reveals the Daisy backstory</li>
                   </ul>
@@ -291,10 +289,8 @@ export default function TheGreatGatsbyPage() {
                     Key Moments
                   </p>
                   <ul className="mt-2 space-y-1 text-sm text-muted-foreground">
-                    <li>
-                      &bull; The reunion in Nick&apos;s cottage &mdash; rain and broken clocks
-                    </li>
-                    <li>&bull; The shirt scene &mdash; wealth as substitute for self</li>
+                    <li>&bull; The reunion in Nick&apos;s cottage - rain and broken clocks</li>
+                    <li>&bull; The shirt scene - wealth as substitute for self</li>
                     <li>&bull; Nick&apos;s recognition that the dream exceeds the reality</li>
                   </ul>
                 </div>
@@ -312,15 +308,15 @@ export default function TheGreatGatsbyPage() {
                   North Dakota farmers, and reinvented himself at seventeen after meeting the
                   millionaire Dan Cody. Tom and Daisy attend one of Gatsby&apos;s parties; Daisy is
                   appalled by the crowd. Afterwards Gatsby insists to Nick that he can repeat the
-                  past. Nick&apos;s warning &mdash; &ldquo;You can&apos;t repeat the past&rdquo;
-                  &mdash; is dismissed.
+                  past. Nick&apos;s warning - &ldquo;You can&apos;t repeat the past&rdquo; - is
+                  dismissed.
                 </p>
                 <div className="mt-3 rounded-lg bg-muted p-3">
                   <p className="text-xs font-semibold text-muted-foreground uppercase tracking-wider">
                     Key Moments
                   </p>
                   <ul className="mt-2 space-y-1 text-sm text-muted-foreground">
-                    <li>&bull; The James Gatz / Dan Cody backstory &mdash; the self-made man</li>
+                    <li>&bull; The James Gatz / Dan Cody backstory - the self-made man</li>
                     <li>&bull; Daisy&apos;s recoil from the party</li>
                     <li>
                       &bull; &ldquo;Can&apos;t repeat the past?... Why of course you can!&rdquo;
@@ -341,20 +337,18 @@ export default function TheGreatGatsbyPage() {
                   lunches at the Buchanans&apos; before driving to the Plaza Hotel in New York.
                   There Tom confronts Gatsby, exposing him as a bootlegger and demanding Daisy
                   choose. Daisy cannot say she never loved Tom. Driving home, Gatsby&apos;s yellow
-                  car &mdash; with Daisy at the wheel &mdash; strikes and kills Myrtle Wilson, who
-                  has run into the road thinking the yellow car contains Tom (she had seen him
-                  driving it earlier that day). Gatsby resolves to take the blame.
+                  car - with Daisy at the wheel - strikes and kills Myrtle Wilson, who has run into
+                  the road thinking the yellow car contains Tom (she had seen him driving it earlier
+                  that day). Gatsby resolves to take the blame.
                 </p>
                 <div className="mt-3 rounded-lg bg-muted p-3">
                   <p className="text-xs font-semibold text-muted-foreground uppercase tracking-wider">
                     Key Moments
                   </p>
                   <ul className="mt-2 space-y-1 text-sm text-muted-foreground">
-                    <li>&bull; The Plaza Hotel confrontation &mdash; Tom dismantles Gatsby</li>
+                    <li>&bull; The Plaza Hotel confrontation - Tom dismantles Gatsby</li>
                     <li>&bull; Daisy&apos;s inability to deny loving Tom</li>
-                    <li>
-                      &bull; Myrtle&apos;s death &mdash; the climax of the novel&apos;s violence
-                    </li>
+                    <li>&bull; Myrtle&apos;s death - the climax of the novel&apos;s violence</li>
                   </ul>
                 </div>
               </div>
@@ -379,9 +373,7 @@ export default function TheGreatGatsbyPage() {
                   </p>
                   <ul className="mt-2 space-y-1 text-sm text-muted-foreground">
                     <li>&bull; Gatsby&apos;s confession of his Louisville love affair</li>
-                    <li>
-                      &bull; Wilson&apos;s breakdown &mdash; he sees God in Eckleburg&apos;s eyes
-                    </li>
+                    <li>&bull; Wilson&apos;s breakdown - he sees God in Eckleburg&apos;s eyes</li>
                     <li>&bull; The pool, the rifle, and the murder-suicide</li>
                   </ul>
                 </div>
@@ -396,7 +388,7 @@ export default function TheGreatGatsbyPage() {
                 </h4>
                 <p className="mt-2 text-sm text-muted-foreground leading-relaxed">
                   Two years later, Nick narrates the aftermath. Almost no one attends Gatsby&apos;s
-                  funeral &mdash; not Daisy, not Wolfsheim, only Nick, Owl Eyes, the servants, and
+                  funeral - not Daisy, not Wolfsheim, only Nick, Owl Eyes, the servants, and
                   Gatsby&apos;s father, who arrives with a schedule the boy James Gatz once wrote
                   for self-improvement. Nick breaks with Jordan, encounters Tom on Fifth Avenue and
                   refuses his hand at first, and returns to the Midwest. The novel ends on the beach
@@ -408,13 +400,10 @@ export default function TheGreatGatsbyPage() {
                     Key Moments
                   </p>
                   <ul className="mt-2 space-y-1 text-sm text-muted-foreground">
-                    <li>
-                      &bull; The empty funeral &mdash; the carelessness of Gatsby&apos;s world
-                    </li>
+                    <li>&bull; The empty funeral - the carelessness of Gatsby&apos;s world</li>
                     <li>&bull; James Gatz&apos;s boyhood schedule of self-improvement</li>
                     <li>
-                      &bull; Nick&apos;s closing meditation &mdash; the green light, the boats, the
-                      past
+                      &bull; Nick&apos;s closing meditation - the green light, the boats, the past
                     </li>
                   </ul>
                 </div>
@@ -433,11 +422,11 @@ export default function TheGreatGatsbyPage() {
               />
               <CharacterCard
                 name="Jay Gatsby (James Gatz)"
-                description="The title character: a self-made millionaire whose entire identity is an act of will. Born James Gatz to poor farmers in North Dakota, he reinvents himself at seventeen on Dan Cody's yacht and accumulates a bootlegging fortune in order to recover Daisy, whom he met and lost in Louisville in 1917. Fitzgerald presents him as 'a son of God' who 'sprang from his Platonic conception of himself' &mdash; an almost mythic figure of American self-creation. His repeated affectation 'old sport' marks the strain of the disguise. He is simultaneously a fraud and the most admirable figure in the novel, a criminal whose dream Nick calls 'incorruptible.' His tragedy is that the woman he has rebuilt his life around cannot match the idealised image he has carried for five years, and his refusal to accept this ('Can't repeat the past?... Why of course you can!') seals his ruin."
+                description="The title character: a self-made millionaire whose entire identity is an act of will. Born James Gatz to poor farmers in North Dakota, he reinvents himself at seventeen on Dan Cody's yacht and accumulates a bootlegging fortune in order to recover Daisy, whom he met and lost in Louisville in 1917. Fitzgerald presents him as 'a son of God' who 'sprang from his Platonic conception of himself' - an almost mythic figure of American self-creation. His repeated affectation 'old sport' marks the strain of the disguise. He is simultaneously a fraud and the most admirable figure in the novel, a criminal whose dream Nick calls 'incorruptible.' His tragedy is that the woman he has rebuilt his life around cannot match the idealised image he has carried for five years, and his refusal to accept this ('Can't repeat the past?... Why of course you can!') seals his ruin."
               />
               <CharacterCard
                 name="Daisy Buchanan"
-                description="Nick's second cousin once removed, Tom's wife, and the object of Gatsby's obsession. Her voice, Gatsby tells Nick, 'is full of money' &mdash; a metaphor that fuses her romantic appeal with her class status. Daisy is charming, sad, and morally hollow: she lets Gatsby take the blame for Myrtle's death and disappears with Tom rather than choose. Her famous wish that her daughter be 'a beautiful little fool' is both a critique of women's options in the 1920s and a confession of her own willed superficiality. She is not simply the shallow heiress some readings make her: there is genuine feeling in the reunion, and the cruelty of her choice in Chapter 7 carries the weight of someone who has glimpsed an alternative life and rejected it. Modern critics increasingly read her as trapped within Tom's wealth as much as protected by it."
+                description="Nick's second cousin once removed, Tom's wife, and the object of Gatsby's obsession. Her voice, Gatsby tells Nick, 'is full of money' - a metaphor that fuses her romantic appeal with her class status. Daisy is charming, sad, and morally hollow: she lets Gatsby take the blame for Myrtle's death and disappears with Tom rather than choose. Her famous wish that her daughter be 'a beautiful little fool' is both a critique of women's options in the 1920s and a confession of her own willed superficiality. She is not simply the shallow heiress some readings make her: there is genuine feeling in the reunion, and the cruelty of her choice in Chapter 7 carries the weight of someone who has glimpsed an alternative life and rejected it. Modern critics increasingly read her as trapped within Tom's wealth as much as protected by it."
               />
               <CharacterCard
                 name="Tom Buchanan"
@@ -445,11 +434,11 @@ export default function TheGreatGatsbyPage() {
               />
               <CharacterCard
                 name="Jordan Baker"
-                description="A professional golfer, friend of Daisy, and Nick's summer love interest. Jordan is poised, athletic, and 'incurably dishonest' &mdash; rumour has it she moved her ball from a bad lie at her first big tournament. Her sportsmanship and faint masculinity made her a model of the post-war 'New Woman' to Fitzgerald's first readers. She functions as a bridge between the Buchanan circle and Gatsby's, and as a foil for Daisy: cooler, more independent, less in thrall to Tom. The relationship ends in Chapter 9: Nick says he is 'five years too old to lie to myself and call it honor.' Jordan delivers the novel's final sting, accusing Nick of being just another careless driver."
+                description="A professional golfer, friend of Daisy, and Nick's summer love interest. Jordan is poised, athletic, and 'incurably dishonest' - rumour has it she moved her ball from a bad lie at her first big tournament. Her sportsmanship and faint masculinity made her a model of the post-war 'New Woman' to Fitzgerald's first readers. She functions as a bridge between the Buchanan circle and Gatsby's, and as a foil for Daisy: cooler, more independent, less in thrall to Tom. The relationship ends in Chapter 9: Nick says he is 'five years too old to lie to myself and call it honor.' Jordan delivers the novel's final sting, accusing Nick of being just another careless driver."
               />
               <CharacterCard
                 name="Myrtle Wilson"
-                description="George Wilson's wife and Tom's mistress, the only major character from the working class. Living above a garage in the Valley of Ashes, Myrtle aspires furiously to the wealth she sees in Tom. Fitzgerald describes her as having 'an immediately perceptible vitality' &mdash; a physical energy that contrasts with Daisy's languor. The Manhattan apartment, the change of dress, the puppy, the social pretensions: these are her attempt at class mobility, and Tom indulges them with cold enjoyment. Her death under Gatsby's car &mdash; struck while running toward what she thinks is Tom's vehicle &mdash; literalises the novel's central irony: she is killed by the very wealth she chases."
+                description="George Wilson's wife and Tom's mistress, the only major character from the working class. Living above a garage in the Valley of Ashes, Myrtle aspires furiously to the wealth she sees in Tom. Fitzgerald describes her as having 'an immediately perceptible vitality' - a physical energy that contrasts with Daisy's languor. The Manhattan apartment, the change of dress, the puppy, the social pretensions: these are her attempt at class mobility, and Tom indulges them with cold enjoyment. Her death under Gatsby's car - struck while running toward what she thinks is Tom's vehicle - literalises the novel's central irony: she is killed by the very wealth she chases."
               />
               <CharacterCard
                 name="George Wilson"
@@ -457,7 +446,7 @@ export default function TheGreatGatsbyPage() {
               />
               <CharacterCard
                 name="Meyer Wolfsheim"
-                description="A Jewish gangster, modelled on the real-life Arnold Rothstein, who fixed the 1919 World Series and serves as Gatsby's mentor in organised crime. He wears human molars as cuff-buttons. Wolfsheim provides the source of Gatsby's wealth and a glimpse of the underworld that financed the Jazz Age. His characterisation is uncomfortably antisemitic by modern standards &mdash; an aspect worth flagging in any exam answer that engages with the novel's representation of race and ethnicity. After Gatsby's death he refuses to come to the funeral, claiming a policy of not getting involved &lsquo;when a man gets killed.&rsquo; His absence completes the pattern of betrayal."
+                description="A Jewish gangster, modelled on the real-life Arnold Rothstein, who fixed the 1919 World Series and serves as Gatsby's mentor in organised crime. He wears human molars as cuff-buttons. Wolfsheim provides the source of Gatsby's wealth and a glimpse of the underworld that financed the Jazz Age. His characterisation is uncomfortably antisemitic by modern standards - an aspect worth flagging in any exam answer that engages with the novel's representation of race and ethnicity. After Gatsby's death he refuses to come to the funeral, claiming a policy of not getting involved &lsquo;when a man gets killed.&rsquo; His absence completes the pattern of betrayal."
               />
             </div>
           </Section>
@@ -469,11 +458,11 @@ export default function TheGreatGatsbyPage() {
             <div className="grid gap-4 sm:grid-cols-2">
               <ThemeCard
                 title={tr(`The American Dream`)}
-                description="Fitzgerald's most famous theme. Gatsby embodies the dream's most romantic version &mdash; that anyone, however humbly born, can remake himself through will and desire. James Gatz's boyhood schedule of self-improvement, recovered by his father in Chapter 9, is a Benjamin-Franklin-style document of American aspiration. But Gatsby's wealth is bootlegging money and his goal is another man's wife: the dream is corrupted at the source. The novel's ending pulls the dream backwards, comparing Gatsby's green light to the 'fresh, green breast of the new world' that the Dutch sailors saw &mdash; suggesting that the American Dream was always a backwards-looking fantasy of recovered innocence, doomed to outpace reality. Fitzgerald is both elegist and critic: he mourns the dream and exposes it."
+                description="Fitzgerald's most famous theme. Gatsby embodies the dream's most romantic version - that anyone, however humbly born, can remake himself through will and desire. James Gatz's boyhood schedule of self-improvement, recovered by his father in Chapter 9, is a Benjamin-Franklin-style document of American aspiration. But Gatsby's wealth is bootlegging money and his goal is another man's wife: the dream is corrupted at the source. The novel's ending pulls the dream backwards, comparing Gatsby's green light to the 'fresh, green breast of the new world' that the Dutch sailors saw - suggesting that the American Dream was always a backwards-looking fantasy of recovered innocence, doomed to outpace reality. Fitzgerald is both elegist and critic: he mourns the dream and exposes it."
               />
               <ThemeCard
                 title={tr(`Class and Wealth`)}
-                description="The novel's geography is the novel's class system. East Egg is old money; West Egg, where Gatsby builds his Norman-style mansion, is new money; the Valley of Ashes is the dust into which industrial wealth is converted. Tom's contempt for Gatsby is not really about morality &mdash; Tom is corrupt himself &mdash; but about lineage. Daisy chooses East Egg because it is permanent. Fitzgerald presents American class as a fortress with the door pulled shut behind those already inside: Gatsby's bootlegging buys him a house but never an identity. The novel anticipates later sociological accounts of how 'old money' polices its own borders by aesthetic means: dress, accent, sport, and casual cruelty."
+                description="The novel's geography is the novel's class system. East Egg is old money; West Egg, where Gatsby builds his Norman-style mansion, is new money; the Valley of Ashes is the dust into which industrial wealth is converted. Tom's contempt for Gatsby is not really about morality - Tom is corrupt himself - but about lineage. Daisy chooses East Egg because it is permanent. Fitzgerald presents American class as a fortress with the door pulled shut behind those already inside: Gatsby's bootlegging buys him a house but never an identity. The novel anticipates later sociological accounts of how 'old money' polices its own borders by aesthetic means: dress, accent, sport, and casual cruelty."
               />
               <ThemeCard
                 title={tr(`Love versus Obsession`)}
@@ -481,11 +470,11 @@ export default function TheGreatGatsbyPage() {
               />
               <ThemeCard
                 title={tr(`Time and Memory`)}
-                description="Clocks and calendars haunt the novel. Gatsby knocks Nick's mantel clock during the reunion in Chapter 5 &mdash; a comic image of his attempt to stop time. He insists, against Nick, that the past can be repeated. The book's recurring autumn imagery, its compression of action into a single summer, its closing image of 'boats against the current, borne back ceaselessly into the past' all dramatise the impossibility of recovering what is gone. Fitzgerald, writing in 1924&ndash;25, is also conscious of post-war time: the trenches have made innocence retrospectively impossible for an entire generation, and Gatsby's dream of Louisville-before-the-war shares in that wider grief."
+                description="Clocks and calendars haunt the novel. Gatsby knocks Nick's mantel clock during the reunion in Chapter 5 - a comic image of his attempt to stop time. He insists, against Nick, that the past can be repeated. The book's recurring autumn imagery, its compression of action into a single summer, its closing image of 'boats against the current, borne back ceaselessly into the past' all dramatise the impossibility of recovering what is gone. Fitzgerald, writing in 1924&ndash;25, is also conscious of post-war time: the trenches have made innocence retrospectively impossible for an entire generation, and Gatsby's dream of Louisville-before-the-war shares in that wider grief."
               />
               <ThemeCard
                 title={tr(`Moral Decay`)}
-                description="Beneath the surface glamour, the novel charts the rotting of post-war American values. Wolfsheim has fixed the World Series. Gatsby is a bootlegger. Tom is a casual racist and adulterer. Daisy lets a man die for her. Even Nick, who claims honesty, lies and looks the other way. The Valley of Ashes is the novel's literal symbol of this decay &mdash; the by-product of a society that produces wealth without producing meaning. Fitzgerald, who wrote during the Harding-administration corruption scandals, presents the Jazz Age as a society in moral free-fall, its hollowness exposed by the violence of one summer. The blue lawn parties exist because nothing else holds together."
+                description="Beneath the surface glamour, the novel charts the rotting of post-war American values. Wolfsheim has fixed the World Series. Gatsby is a bootlegger. Tom is a casual racist and adulterer. Daisy lets a man die for her. Even Nick, who claims honesty, lies and looks the other way. The Valley of Ashes is the novel's literal symbol of this decay - the by-product of a society that produces wealth without producing meaning. Fitzgerald, who wrote during the Harding-administration corruption scandals, presents the Jazz Age as a society in moral free-fall, its hollowness exposed by the violence of one summer. The blue lawn parties exist because nothing else holds together."
               />
               <ThemeCard
                 title={tr(`East versus West / Old Money versus New`)}
@@ -506,10 +495,9 @@ export default function TheGreatGatsbyPage() {
                   between the end of the First World War in 1918 and the Wall Street Crash of 1929.
                   Jazz, born in African-American communities in New Orleans and Chicago, became the
                   soundtrack of urban modernity: syncopated, improvisational, racially ambiguous,
-                  and threatening to the older generation. The flapper &mdash; bobbed hair, short
-                  skirts, cocktails &mdash; replaced the Victorian woman. Gatsby&apos;s parties,
-                  with their orchestras and dancers, are the novel&apos;s set-piece rendering of
-                  this culture.
+                  and threatening to the older generation. The flapper - bobbed hair, short skirts,
+                  cocktails - replaced the Victorian woman. Gatsby&apos;s parties, with their
+                  orchestras and dancers, are the novel&apos;s set-piece rendering of this culture.
                 </p>
               </div>
               <div className="rounded-lg bg-primary/10 p-4">
@@ -543,9 +531,9 @@ export default function TheGreatGatsbyPage() {
                   writers who had come of age during or just after the war and gathered as
                   expatriates in Paris in the 1920s. Fitzgerald wrote much of{' '}
                   <em>{tr(`The Great Gatsby`)}</em> on the French Riviera in 1924. The Lost
-                  Generation&apos;s themes &mdash; the failure of pre-war ideals, the search for
-                  meaning in style and sensation, the conviction that something fundamental had
-                  broken &mdash; shape the novel&apos;s whole atmosphere.
+                  Generation&apos;s themes - the failure of pre-war ideals, the search for meaning
+                  in style and sensation, the conviction that something fundamental had broken -
+                  shape the novel&apos;s whole atmosphere.
                 </p>
               </div>
               <div className="rounded-lg bg-primary/10 p-4">
@@ -568,10 +556,10 @@ export default function TheGreatGatsbyPage() {
                   engagement in 1919, citing his lack of prospects, and accepted him only after his
                   first novel,
                   <em> This Side of Paradise</em> (1920), made him famous. The parallel with
-                  Gatsby&apos;s courtship of Daisy &mdash; the soldier rejected by a wealthy
-                  Southern girl who only relents when he can match her class &mdash; is exact. The
-                  Fitzgeralds became international celebrities of the Jazz Age, then descended into
-                  alcoholism and Zelda&apos;s mental illness. Much of <em>Gatsby</em>
+                  Gatsby&apos;s courtship of Daisy - the soldier rejected by a wealthy Southern girl
+                  who only relents when he can match her class - is exact. The Fitzgeralds became
+                  international celebrities of the Jazz Age, then descended into alcoholism and
+                  Zelda&apos;s mental illness. Much of <em>Gatsby</em>
                   was written in 1924 on the Riviera while their marriage was already fraying.
                 </p>
               </div>
@@ -589,27 +577,27 @@ export default function TheGreatGatsbyPage() {
               <QuoteCard
                 quote="In my younger and more vulnerable years my father gave me some advice that I've been turning over in my mind ever since. &lsquo;Whenever you feel like criticising any one,&rsquo; he told me, &lsquo;just remember that all the people in this world haven't had the advantages that you've had.&rsquo;"
                 speaker="Nick (opening of Chapter 1)"
-                analysis="The novel's opening establishes Nick as a narrator who claims, unusually, to suspend judgement. The advice is paternal, Midwestern, and class-conscious (note &lsquo;advantages&rsquo;). It frames everything that follows: every cruelty Nick records is filtered through this stated tolerance. Whether the principle survives the summer is a central question of the book, and most readers conclude that Nick abandons it &mdash; he ends the novel with strong moral verdicts."
+                analysis="The novel's opening establishes Nick as a narrator who claims, unusually, to suspend judgement. The advice is paternal, Midwestern, and class-conscious (note &lsquo;advantages&rsquo;). It frames everything that follows: every cruelty Nick records is filtered through this stated tolerance. Whether the principle survives the summer is a central question of the book, and most readers conclude that Nick abandons it - he ends the novel with strong moral verdicts."
               />
               <QuoteCard
-                quote="I hope she'll be a fool&mdash;that's the best thing a girl can be in this world, a beautiful little fool."
+                quote="I hope she'll be a fool - that's the best thing a girl can be in this world, a beautiful little fool."
                 speaker="Daisy (Chapter 1)"
-                analysis="One of the most quoted lines in the novel. On the surface it is a piece of Jazz-Age cynicism, but it is also a confession: Daisy knows the female position in 1920s society is to be ornamental and unthinking, and she has chosen to inhabit it because the alternative &mdash; intelligence, awareness &mdash; is unbearable. The phrase prefigures her behaviour in Chapter 7: she refuses to know what she clearly knows."
+                analysis="One of the most quoted lines in the novel. On the surface it is a piece of Jazz-Age cynicism, but it is also a confession: Daisy knows the female position in 1920s society is to be ornamental and unthinking, and she has chosen to inhabit it because the alternative - intelligence, awareness - is unbearable. The phrase prefigures her behaviour in Chapter 7: she refuses to know what she clearly knows."
               />
               <QuoteCard
-                quote="This is a valley of ashes&mdash;a fantastic farm where ashes grow like wheat into ridges and hills and grotesque gardens."
+                quote="This is a valley of ashes - a fantastic farm where ashes grow like wheat into ridges and hills and grotesque gardens."
                 speaker="Nick (Chapter 2)"
                 analysis="The Valley of Ashes is the novel's great industrial wasteland. The simile &lsquo;like wheat&rsquo; turns industrial waste into a perverse harvest, suggesting that what the Jazz Age cultivates is dust. &lsquo;Grotesque&rsquo; is the key Gothic term: this is the underside of Tom and Daisy's lawns. T. S. Eliot's <em>{tr(`The Waste Land`)}</em> (1922) is a clear influence."
               />
               <QuoteCard
-                quote="The eyes of Doctor T. J. Eckleburg are blue and gigantic&mdash;their retinas are one yard high. They look out of no face, but, instead, from a pair of enormous yellow spectacles which pass over a nonexistent nose."
+                quote="The eyes of Doctor T. J. Eckleburg are blue and gigantic - their retinas are one yard high. They look out of no face, but, instead, from a pair of enormous yellow spectacles which pass over a nonexistent nose."
                 speaker="Nick (Chapter 2)"
-                analysis="The faded oculist's billboard is the novel's most discussed symbol: an absent God watching over the wasteland. The face is &lsquo;nonexistent&rsquo; &mdash; the divine has been reduced to advertising. Wilson, in his grief, is the only character who reads the eyes as God's eyes, and Fitzgerald uses that misreading to suggest that religion in this world has dwindled to a half-erased commercial image."
+                analysis="The faded oculist's billboard is the novel's most discussed symbol: an absent God watching over the wasteland. The face is &lsquo;nonexistent&rsquo; - the divine has been reduced to advertising. Wilson, in his grief, is the only character who reads the eyes as God's eyes, and Fitzgerald uses that misreading to suggest that religion in this world has dwindled to a half-erased commercial image."
               />
               <QuoteCard
-                quote="He smiled understandingly&mdash;much more than understandingly. It was one of those rare smiles with a quality of eternal reassurance in it."
+                quote="He smiled understandingly - much more than understandingly. It was one of those rare smiles with a quality of eternal reassurance in it."
                 speaker="Nick (Chapter 3)"
-                analysis="Nick's first close encounter with Gatsby. The smile is given mythic, almost religious weight (&lsquo;eternal reassurance&rsquo;), but it is also a performance &mdash; one that, Nick notes, &lsquo;concentrated on you with an irresistible prejudice in your favor.&rsquo; Gatsby's charm is both genuine and a tool. The passage establishes the novel's ambivalence: he is admirable, and he is fake, simultaneously."
+                analysis="Nick's first close encounter with Gatsby. The smile is given mythic, almost religious weight (&lsquo;eternal reassurance&rsquo;), but it is also a performance - one that, Nick notes, &lsquo;concentrated on you with an irresistible prejudice in your favor.&rsquo; Gatsby's charm is both genuine and a tool. The passage establishes the novel's ambivalence: he is admirable, and he is fake, simultaneously."
               />
               <QuoteCard
                 quote="I am one of the few honest people that I have ever known."
@@ -634,12 +622,12 @@ export default function TheGreatGatsbyPage() {
               <QuoteCard
                 quote="High in a white palace the king's daughter, the golden girl."
                 speaker="Nick (Chapter 7)"
-                analysis="Nick's gloss on Gatsby's observation about Daisy's voice. Fairy-tale imagery (palace, princess) reveals the mythic structure underneath Gatsby's desire. &lsquo;Golden girl&rsquo; gathers up the novel's recurrent yellow-and-gold imagery (Daisy's name, Gatsby's car, the &lsquo;yellow cocktail music&rsquo;), aligning Daisy with both wealth and the sun &mdash; a dazzling, untouchable object."
+                analysis="Nick's gloss on Gatsby's observation about Daisy's voice. Fairy-tale imagery (palace, princess) reveals the mythic structure underneath Gatsby's desire. &lsquo;Golden girl&rsquo; gathers up the novel's recurrent yellow-and-gold imagery (Daisy's name, Gatsby's car, the &lsquo;yellow cocktail music&rsquo;), aligning Daisy with both wealth and the sun - a dazzling, untouchable object."
               />
               <QuoteCard
                 quote="So we beat on, boats against the current, borne back ceaselessly into the past."
                 speaker="Nick (closing line, Chapter 9)"
-                analysis="The most famous closing sentence in twentieth-century American fiction. The first-person plural (&lsquo;we&rsquo;) extends Gatsby's tragedy to the reader and to America itself. The metaphor &mdash; rowing forward but pushed backward &mdash; captures the paradox of a culture committed to progress while still mourning a lost past. The rhythm is iambic and elegiac; Fitzgerald is consciously writing an epitaph not just for Gatsby but for the American Dream."
+                analysis="The most famous closing sentence in twentieth-century American fiction. The first-person plural (&lsquo;we&rsquo;) extends Gatsby's tragedy to the reader and to America itself. The metaphor - rowing forward but pushed backward - captures the paradox of a culture committed to progress while still mourning a lost past. The rhythm is iambic and elegiac; Fitzgerald is consciously writing an epitaph not just for Gatsby but for the American Dream."
               />
               <QuoteCard
                 quote="Gatsby believed in the green light, the orgastic future that year by year recedes before us."
@@ -647,9 +635,9 @@ export default function TheGreatGatsbyPage() {
                 analysis="The penultimate sentence of the novel. The green light at the end of Daisy's dock has expanded into a symbol of all American striving. &lsquo;Orgastic&rsquo; (often misquoted as &lsquo;orgiastic&rsquo;) fuses sexual longing with spiritual yearning. &lsquo;Recedes&rsquo; is crucial: the future is not approaching but retreating, faster than we can run after it."
               />
               <QuoteCard
-                quote="They were careless people, Tom and Daisy&mdash;they smashed up things and creatures and then retreated back into their money or their vast carelessness, or whatever it was that kept them together, and let other people clean up the mess they had made."
+                quote="They were careless people, Tom and Daisy - they smashed up things and creatures and then retreated back into their money or their vast carelessness, or whatever it was that kept them together, and let other people clean up the mess they had made."
                 speaker="Nick (Chapter 9)"
-                analysis="The novel's moral verdict on the Buchanans. The repetition of &lsquo;careless / carelessness&rsquo; turns negligence into a class trait. &lsquo;Smashed up things and creatures&rsquo; is deliberately childish, as if Tom and Daisy are spoiled children whose toys include human beings. &lsquo;Their money&rsquo; is the bunker they retreat into &mdash; old money insulating them from consequence."
+                analysis="The novel's moral verdict on the Buchanans. The repetition of &lsquo;careless / carelessness&rsquo; turns negligence into a class trait. &lsquo;Smashed up things and creatures&rsquo; is deliberately childish, as if Tom and Daisy are spoiled children whose toys include human beings. &lsquo;Their money&rsquo; is the bunker they retreat into - old money insulating them from consequence."
               />
               <QuoteCard
                 quote="The colossal vitality of his illusion."
@@ -664,17 +652,17 @@ export default function TheGreatGatsbyPage() {
               <QuoteCard
                 quote="If personality is an unbroken series of successful gestures, then there was something gorgeous about him, some heightened sensitivity to the promises of life."
                 speaker="Nick (Chapter 1)"
-                analysis="An early definition of Gatsby that prefigures his entire arc. &lsquo;Successful gestures&rsquo; reduces personality to performance &mdash; a deeply modernist idea. &lsquo;Promises of life&rsquo; is the romantic counter-weight: Gatsby is sensitive to what life keeps offering and never quite delivers. The sentence sets up Gatsby as a study of style and yearning together."
+                analysis="An early definition of Gatsby that prefigures his entire arc. &lsquo;Successful gestures&rsquo; reduces personality to performance - a deeply modernist idea. &lsquo;Promises of life&rsquo; is the romantic counter-weight: Gatsby is sensitive to what life keeps offering and never quite delivers. The sentence sets up Gatsby as a study of style and yearning together."
               />
               <QuoteCard
                 quote="No amount of fire or freshness can challenge what a man can store up in his ghostly heart."
                 speaker="Nick (Chapter 5)"
-                analysis="Nick's observation as he watches Gatsby with the actual Daisy after the reunion. &lsquo;Ghostly heart&rsquo; suggests that Gatsby's love has become a phantom &mdash; an object more powerful than anything real life can offer. This is the novel's most precise statement of how obsession works: the imagined version always outcompetes the real."
+                analysis="Nick's observation as he watches Gatsby with the actual Daisy after the reunion. &lsquo;Ghostly heart&rsquo; suggests that Gatsby's love has become a phantom - an object more powerful than anything real life can offer. This is the novel's most precise statement of how obsession works: the imagined version always outcompetes the real."
               />
               <QuoteCard
                 quote="So he waited, listening for a moment longer to the tuning fork that had been struck upon a star."
                 speaker="Nick, on Gatsby kissing Daisy (Chapter 6)"
-                analysis="Fitzgerald's description of the moment Gatsby commits himself to Daisy in Louisville. The metaphor is extraordinary: a tuning fork struck on a star turns desire into a cosmic, almost musical event. Just before the kiss, Nick says Gatsby's &lsquo;mind would never romp again like the mind of God&rsquo; &mdash; he has tied his entire imagination to one woman. The romantic absurdity is also the romantic grandeur."
+                analysis="Fitzgerald's description of the moment Gatsby commits himself to Daisy in Louisville. The metaphor is extraordinary: a tuning fork struck on a star turns desire into a cosmic, almost musical event. Just before the kiss, Nick says Gatsby's &lsquo;mind would never romp again like the mind of God&rsquo; - he has tied his entire imagination to one woman. The romantic absurdity is also the romantic grandeur."
               />
             </div>
           </Section>
@@ -690,11 +678,10 @@ export default function TheGreatGatsbyPage() {
                   At the end of Daisy&apos;s dock in East Egg, visible from Gatsby&apos;s lawn
                   across the bay. In Chapter 1 it is a private signal: Gatsby stretches his arms
                   toward it. In Chapter 5, with Daisy beside him, it becomes &ldquo;again a green
-                  light on a dock&rdquo; &mdash; the symbol collapses back into a domestic object.
-                  In the closing pages it expands again into a metaphor for the entire American
-                  future. The shifting size of the symbol &mdash; intimate, then trivial, then
-                  national &mdash; is the novel&apos;s structural argument about how desire inflates
-                  and deflates objects.
+                  light on a dock&rdquo; - the symbol collapses back into a domestic object. In the
+                  closing pages it expands again into a metaphor for the entire American future. The
+                  shifting size of the symbol - intimate, then trivial, then national - is the
+                  novel&apos;s structural argument about how desire inflates and deflates objects.
                 </p>
               </div>
               <div className="rounded-lg bg-muted p-4">
@@ -704,8 +691,8 @@ export default function TheGreatGatsbyPage() {
                   Corona Ash Dumps in Queens, it is the literal substrate of the novel&apos;s
                   wealth: someone has to burn the coal that powers the parties, and the ash collects
                   here. The Wilsons live in it and are formed by it. Symbolically the Valley is the
-                  consequence of the Jazz Age &mdash; the by-product nobody on Long Island will look
-                  at &mdash; and the literary heir of the wasteland in T. S. Eliot&apos;s 1922 poem.
+                  consequence of the Jazz Age - the by-product nobody on Long Island will look at -
+                  and the literary heir of the wasteland in T. S. Eliot&apos;s 1922 poem.
                 </p>
               </div>
               <div className="rounded-lg bg-muted p-4">
@@ -738,13 +725,13 @@ export default function TheGreatGatsbyPage() {
                 <h4 className="font-bold text-foreground">{tr(`Gatsby's Parties`)}</h4>
                 <p className="mt-1 text-sm text-muted-foreground leading-relaxed">
                   The Saturday-night spectacles thrown by Gatsby in the hope that Daisy will one day
-                  wander in. They are exhaustively catalogued in Chapter 3 &mdash; the orchestra,
-                  the cars, the crates of oranges juiced by a machine. Symbolically they are signal
+                  wander in. They are exhaustively catalogued in Chapter 3 - the orchestra, the
+                  cars, the crates of oranges juiced by a machine. Symbolically they are signal
                   flares, vast expensive gestures aimed at one woman. They are also
                   Fitzgerald&apos;s finest set-piece anatomy of Jazz-Age excess: people who do not
                   know the host eating his food, drinking his liquor, and inventing rumours about
-                  him. After Daisy attends one in Chapter 6 and is repelled, the parties stop
-                  &mdash; their function is exhausted.
+                  him. After Daisy attends one in Chapter 6 and is repelled, the parties stop -
+                  their function is exhausted.
                 </p>
               </div>
               <div className="rounded-lg bg-muted p-4">
@@ -752,11 +739,11 @@ export default function TheGreatGatsbyPage() {
                 <p className="mt-1 text-sm text-muted-foreground leading-relaxed">
                   The two peninsulas of Long Island in which the novel takes place: East Egg holds
                   old, inherited wealth (Tom and Daisy); West Egg holds new, often suspect wealth
-                  (Gatsby, Nick). The names are deliberately childish &mdash; eggs, not estates
-                  &mdash; gently mocking American pretension. Geographically they sit a few hundred
-                  yards apart across a small bay; socially they are uncrossable. Daisy&apos;s
-                  decision in Chapter 7 to remain in East Egg is, more than a romantic choice, a
-                  class one. The geography <em>is</em> the conflict.
+                  (Gatsby, Nick). The names are deliberately childish - eggs, not estates - gently
+                  mocking American pretension. Geographically they sit a few hundred yards apart
+                  across a small bay; socially they are uncrossable. Daisy&apos;s decision in
+                  Chapter 7 to remain in East Egg is, more than a romantic choice, a class one. The
+                  geography <em>is</em> the conflict.
                 </p>
               </div>
               <div className="rounded-lg bg-muted p-4">
@@ -816,7 +803,7 @@ export default function TheGreatGatsbyPage() {
                   </div>
                   <div>
                     <p className="text-xs font-semibold text-violet-700 dark:text-violet-300 uppercase tracking-wider">
-                      Paragraph 1 &mdash; Gatsby as the Dream personified
+                      Paragraph 1 - Gatsby as the Dream personified
                     </p>
                     <p className="mt-1 text-sm text-muted-foreground">
                       &ldquo;Sprang from his Platonic conception of himself.&rdquo; The James Gatz /
@@ -826,7 +813,7 @@ export default function TheGreatGatsbyPage() {
                   </div>
                   <div>
                     <p className="text-xs font-semibold text-violet-700 dark:text-violet-300 uppercase tracking-wider">
-                      Paragraph 2 &mdash; The romantic and the financial as one dream
+                      Paragraph 2 - The romantic and the financial as one dream
                     </p>
                     <p className="mt-1 text-sm text-muted-foreground">
                       &ldquo;Her voice is full of money.&rdquo; The shirts scene as the chapter
@@ -836,17 +823,17 @@ export default function TheGreatGatsbyPage() {
                   </div>
                   <div>
                     <p className="text-xs font-semibold text-violet-700 dark:text-violet-300 uppercase tracking-wider">
-                      Paragraph 3 &mdash; The structural failure
+                      Paragraph 3 - The structural failure
                     </p>
                     <p className="mt-1 text-sm text-muted-foreground">
                       Tom&apos;s exposure of bootlegging at the Plaza. East Egg protects its own.
                       Counter-argument: a critic such as Marius Bewley reads Gatsby&apos;s dream as
-                      &lsquo;incorruptible&rsquo; &mdash; engage with this and qualify it.
+                      &lsquo;incorruptible&rsquo; - engage with this and qualify it.
                     </p>
                   </div>
                   <div>
                     <p className="text-xs font-semibold text-violet-700 dark:text-violet-300 uppercase tracking-wider">
-                      Paragraph 4 &mdash; The closing pages
+                      Paragraph 4 - The closing pages
                     </p>
                     <p className="mt-1 text-sm text-muted-foreground">
                       &ldquo;Boats against the current, borne back ceaselessly into the past.&rdquo;
@@ -878,7 +865,7 @@ export default function TheGreatGatsbyPage() {
                   </div>
                   <div>
                     <p className="text-xs font-semibold text-violet-700 dark:text-violet-300 uppercase tracking-wider">
-                      Paragraph 1 &mdash; The opening claim of honesty
+                      Paragraph 1 - The opening claim of honesty
                     </p>
                     <p className="mt-1 text-sm text-muted-foreground">
                       &ldquo;I am one of the few honest people that I have ever known.&rdquo; Read
@@ -889,7 +876,7 @@ export default function TheGreatGatsbyPage() {
                   </div>
                   <div>
                     <p className="text-xs font-semibold text-violet-700 dark:text-violet-300 uppercase tracking-wider">
-                      Paragraph 2 &mdash; The retrospective frame
+                      Paragraph 2 - The retrospective frame
                     </p>
                     <p className="mt-1 text-sm text-muted-foreground">
                       Nick narrates two years after Gatsby&apos;s death. Time and grief have shaped
@@ -899,7 +886,7 @@ export default function TheGreatGatsbyPage() {
                   </div>
                   <div>
                     <p className="text-xs font-semibold text-violet-700 dark:text-violet-300 uppercase tracking-wider">
-                      Paragraph 3 &mdash; Nick&apos;s erotic ambivalence
+                      Paragraph 3 - Nick&apos;s erotic ambivalence
                     </p>
                     <p className="mt-1 text-sm text-muted-foreground">
                       The encounter with Mr McKee in Chapter 2 (often read by modern critics as
@@ -909,13 +896,13 @@ export default function TheGreatGatsbyPage() {
                   </div>
                   <div>
                     <p className="text-xs font-semibold text-violet-700 dark:text-violet-300 uppercase tracking-wider">
-                      Paragraph 4 &mdash; Nick as the moral voice
+                      Paragraph 4 - Nick as the moral voice
                     </p>
                     <p className="mt-1 text-sm text-muted-foreground">
                       Counter-argument: by the closing pages Nick&apos;s judgements (&ldquo;careless
                       people&rdquo;) are clearly endorsed by the structure of the novel. Conclude:
-                      Nick is unreliable about himself but largely reliable about everyone else
-                      &mdash; a productive contradiction Fitzgerald exploits.
+                      Nick is unreliable about himself but largely reliable about everyone else - a
+                      productive contradiction Fitzgerald exploits.
                     </p>
                   </div>
                 </div>
@@ -941,7 +928,7 @@ export default function TheGreatGatsbyPage() {
                   </div>
                   <div>
                     <p className="text-xs font-semibold text-violet-700 dark:text-violet-300 uppercase tracking-wider">
-                      Paragraph 1 &mdash; Industrial wasteland
+                      Paragraph 1 - Industrial wasteland
                     </p>
                     <p className="mt-1 text-sm text-muted-foreground">
                       &ldquo;Ashes grow like wheat into ridges and hills and grotesque
@@ -952,7 +939,7 @@ export default function TheGreatGatsbyPage() {
                   </div>
                   <div>
                     <p className="text-xs font-semibold text-violet-700 dark:text-violet-300 uppercase tracking-wider">
-                      Paragraph 2 &mdash; Class geography
+                      Paragraph 2 - Class geography
                     </p>
                     <p className="mt-1 text-sm text-muted-foreground">
                       The Wilsons are formed by the Valley as the Buchanans are formed by East Egg.
@@ -961,18 +948,17 @@ export default function TheGreatGatsbyPage() {
                   </div>
                   <div>
                     <p className="text-xs font-semibold text-violet-700 dark:text-violet-300 uppercase tracking-wider">
-                      Paragraph 3 &mdash; Eckleburg as commercial divinity
+                      Paragraph 3 - Eckleburg as commercial divinity
                     </p>
                     <p className="mt-1 text-sm text-muted-foreground">
                       &ldquo;Their retinas are one yard high.&rdquo; Wilson&apos;s identification of
                       the eyes with God in Chapter 8. Religion in Fitzgerald&apos;s America has been
-                      reduced to leftover advertising &mdash; the spiritual substituted by the
-                      commercial.
+                      reduced to leftover advertising - the spiritual substituted by the commercial.
                     </p>
                   </div>
                   <div>
                     <p className="text-xs font-semibold text-violet-700 dark:text-violet-300 uppercase tracking-wider">
-                      Paragraph 4 &mdash; The two symbols together
+                      Paragraph 4 - The two symbols together
                     </p>
                     <p className="mt-1 text-sm text-muted-foreground">
                       The Valley is the consequence of the parties; Eckleburg is the witness who
@@ -1002,17 +988,17 @@ export default function TheGreatGatsbyPage() {
                   </div>
                   <div>
                     <p className="text-xs font-semibold text-violet-700 dark:text-violet-300 uppercase tracking-wider">
-                      Paragraph 1 &mdash; Daisy as victim
+                      Paragraph 1 - Daisy as victim
                     </p>
                     <p className="mt-1 text-sm text-muted-foreground">
                       &ldquo;A beautiful little fool.&rdquo; The position of women in the Jazz Age.
-                      Tom&apos;s violence (the broken nose &mdash; Myrtle&apos;s, but witnessed).
-                      Feminist readings (Judith Fetterley, Sarah Beebe Fryer).
+                      Tom&apos;s violence (the broken nose - Myrtle&apos;s, but witnessed). Feminist
+                      readings (Judith Fetterley, Sarah Beebe Fryer).
                     </p>
                   </div>
                   <div>
                     <p className="text-xs font-semibold text-violet-700 dark:text-violet-300 uppercase tracking-wider">
-                      Paragraph 2 &mdash; Daisy as villain
+                      Paragraph 2 - Daisy as villain
                     </p>
                     <p className="mt-1 text-sm text-muted-foreground">
                       She lets Gatsby take the blame for Myrtle. She does not attend his funeral.
@@ -1022,7 +1008,7 @@ export default function TheGreatGatsbyPage() {
                   </div>
                   <div>
                     <p className="text-xs font-semibold text-violet-700 dark:text-violet-300 uppercase tracking-wider">
-                      Paragraph 3 &mdash; The Gatsby projection
+                      Paragraph 3 - The Gatsby projection
                     </p>
                     <p className="mt-1 text-sm text-muted-foreground">
                       Daisy is also a victim of Gatsby&apos;s fantasy of her: she cannot be the
@@ -1032,7 +1018,7 @@ export default function TheGreatGatsbyPage() {
                   </div>
                   <div>
                     <p className="text-xs font-semibold text-violet-700 dark:text-violet-300 uppercase tracking-wider">
-                      Paragraph 4 &mdash; Resolution
+                      Paragraph 4 - Resolution
                     </p>
                     <p className="mt-1 text-sm text-muted-foreground">
                       Conclude: Fitzgerald presents Daisy as someone whose limited options narrow
@@ -1058,13 +1044,13 @@ export default function TheGreatGatsbyPage() {
                     <p className="mt-1 text-sm text-muted-foreground">
                       Fitzgerald&apos;s great formal achievement is to keep his symbols (the green
                       light, Eckleburg&apos;s eyes, the Valley) simultaneously concrete and
-                      metaphysical &mdash; never letting them harden into allegory while still
-                      allowing them to carry the novel&apos;s philosophical weight.
+                      metaphysical - never letting them harden into allegory while still allowing
+                      them to carry the novel&apos;s philosophical weight.
                     </p>
                   </div>
                   <div>
                     <p className="text-xs font-semibold text-violet-700 dark:text-violet-300 uppercase tracking-wider">
-                      Paragraph 1 &mdash; The green light
+                      Paragraph 1 - The green light
                     </p>
                     <p className="mt-1 text-sm text-muted-foreground">
                       Track the light&apos;s three appearances (Chapters 1, 5, 9). In Chapter 5 it
@@ -1075,7 +1061,7 @@ export default function TheGreatGatsbyPage() {
                   </div>
                   <div>
                     <p className="text-xs font-semibold text-violet-700 dark:text-violet-300 uppercase tracking-wider">
-                      Paragraph 2 &mdash; The shirts
+                      Paragraph 2 - The shirts
                     </p>
                     <p className="mt-1 text-sm text-muted-foreground">
                       The shirt scene in Chapter 5: a stack of literal clothing becomes the climax
@@ -1085,7 +1071,7 @@ export default function TheGreatGatsbyPage() {
                   </div>
                   <div>
                     <p className="text-xs font-semibold text-violet-700 dark:text-violet-300 uppercase tracking-wider">
-                      Paragraph 3 &mdash; The car
+                      Paragraph 3 - The car
                     </p>
                     <p className="mt-1 text-sm text-muted-foreground">
                       Gatsby&apos;s yellow Rolls is a real machine; it kills Myrtle. It is also a
@@ -1096,14 +1082,14 @@ export default function TheGreatGatsbyPage() {
                   </div>
                   <div>
                     <p className="text-xs font-semibold text-violet-700 dark:text-violet-300 uppercase tracking-wider">
-                      Paragraph 4 &mdash; The closing pages
+                      Paragraph 4 - The closing pages
                     </p>
                     <p className="mt-1 text-sm text-muted-foreground">
                       In the final passage, the green light, the Dutch sailors&apos; &lsquo;fresh,
                       green breast of the new world,&rsquo; and the boats against the current are
                       stacked together. Fitzgerald is explicit about the symbolic system only after
-                      the story is over &mdash; the technique is to let the reader build it first,
-                      then to confirm it.
+                      the story is over - the technique is to let the reader build it first, then to
+                      confirm it.
                     </p>
                   </div>
                 </div>
