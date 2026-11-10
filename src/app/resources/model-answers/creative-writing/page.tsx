@@ -12,19 +12,21 @@ import { hasActiveSubscription } from '@/lib/course-access'
 // GCSE model answers are gated by the global subscription/trial flag (NOT the
 // separate IELTS entitlement). Resolved server-side; anonymous + Googlebot
 // fall through to `false` and see only the free teaser grade band.
-async function resolveHasAccess(): Promise<boolean> {
+async function resolveAccess(): Promise<{ hasAccess: boolean; signedIn: boolean }> {
   try {
     const supabase = createServerSupabaseClient()
     const {
       data: { user },
     } = await supabase.auth.getUser()
     if (user) {
-      return await hasActiveSubscription(supabase, user.id)
+      // `signedIn` lets the lock panel offer plans, not sign-up, to a signed-in
+      // reader without a plan (10 November 2026, see LockedContent).
+      return { hasAccess: await hasActiveSubscription(supabase, user.id), signedIn: true }
     }
   } catch {
     // Signed out / auth unavailable → no access.
   }
-  return false
+  return { hasAccess: false, signedIn: false }
 }
 
 /* ─── Metadata ───────────────────────────────────────────────── */
@@ -152,7 +154,7 @@ export default async function CreativeWritingModelAnswersPage() {
     'study.skills.ma.cw.label.task',
     'study.skills.common.examiner_commentary',
   ])
-  const hasAccess = await resolveHasAccess()
+  const { hasAccess, signedIn } = await resolveAccess()
   return (
     <>
       {/* Hero */}
@@ -239,7 +241,7 @@ export default async function CreativeWritingModelAnswersPage() {
               <GradeTabs defaultGrade={hasAccess ? 9 : 3}>
                 {{
                   9: !hasAccess ? (
-                    <LockedContent label="the Grade 5, 7 and 9 model answers" />
+                    <LockedContent signedIn={signedIn} label="the Grade 5, 7 and 9 model answers" />
                   ) : (
                     <>
                       <div className="mb-4 flex items-center gap-3">
@@ -330,7 +332,7 @@ export default async function CreativeWritingModelAnswersPage() {
                   ),
 
                   7: !hasAccess ? (
-                    <LockedContent label="the Grade 5, 7 and 9 model answers" />
+                    <LockedContent signedIn={signedIn} label="the Grade 5, 7 and 9 model answers" />
                   ) : (
                     <>
                       <div className="mb-4 flex items-center gap-3">
@@ -413,7 +415,7 @@ export default async function CreativeWritingModelAnswersPage() {
                   ),
 
                   5: !hasAccess ? (
-                    <LockedContent label="the Grade 5, 7 and 9 model answers" />
+                    <LockedContent signedIn={signedIn} label="the Grade 5, 7 and 9 model answers" />
                   ) : (
                     <>
                       <div className="mb-4 flex items-center gap-3">
@@ -559,7 +561,7 @@ export default async function CreativeWritingModelAnswersPage() {
               <GradeTabs defaultGrade={hasAccess ? 9 : 3}>
                 {{
                   9: !hasAccess ? (
-                    <LockedContent label="the Grade 5, 7 and 9 model answers" />
+                    <LockedContent signedIn={signedIn} label="the Grade 5, 7 and 9 model answers" />
                   ) : (
                     <>
                       <div className="mb-4 flex items-center gap-3">
@@ -657,7 +659,7 @@ export default async function CreativeWritingModelAnswersPage() {
                   ),
 
                   7: !hasAccess ? (
-                    <LockedContent label="the Grade 5, 7 and 9 model answers" />
+                    <LockedContent signedIn={signedIn} label="the Grade 5, 7 and 9 model answers" />
                   ) : (
                     <>
                       <div className="mb-4 flex items-center gap-3">
@@ -732,7 +734,7 @@ export default async function CreativeWritingModelAnswersPage() {
                   ),
 
                   5: !hasAccess ? (
-                    <LockedContent label="the Grade 5, 7 and 9 model answers" />
+                    <LockedContent signedIn={signedIn} label="the Grade 5, 7 and 9 model answers" />
                   ) : (
                     <>
                       <div className="mb-4 flex items-center gap-3">
