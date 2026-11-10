@@ -10114,6 +10114,10 @@ export const ES_MESSAGES: Record<string, string> = {
   'billing.notpro.keeps':
     'Los apuntes de repaso, las tarjetas y el contenido de los consejos examinadores siguen siendo gratuitos.',
   'billing.notpro.cta': 'Ver planes',
+  'account.billing.plan_trial': 'Prueba gratuita',
+  'account.billing.trial_ends': 'La prueba gratuita termina el',
+  'account.billing.trial_blurb':
+    'Tu prueba gratuita incluye todo lo de Premium. Elige un plan ahora para seguir usando la corrección con IA cuando termine.',
   'redeem.h1': 'Canjea tu código',
   'redeem.lead':
     'Introduce tu código promocional abajo para desbloquear tu plan con descuento y continuar al pago seguro.',

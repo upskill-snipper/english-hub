@@ -9875,6 +9875,10 @@ export const EN_MESSAGES: Record<string, string> = {
     'AI marking on your essays is part of a paid plan. Everything you have already had marked stays where it is.',
   'billing.notpro.keeps': 'Revision notes, flashcards and the exam-board content stay free.',
   'billing.notpro.cta': 'See plans',
+  'account.billing.plan_trial': 'Free trial',
+  'account.billing.trial_ends': 'Free trial ends',
+  'account.billing.trial_blurb':
+    'Your free trial includes everything in Premium. Choose a plan now to keep AI marking after it ends.',
   'redeem.h1': 'Redeem your code',
   'redeem.lead':
     'Enter your promo code below to unlock your discounted plan and continue to secure checkout.',

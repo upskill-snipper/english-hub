@@ -95,6 +95,27 @@ export const CONVERT_DICTIONARY: Record<string, { en: string; ar: string; es?: s
     ar: 'شوف الخطط',
     es: 'Ver planes',
   },
+  // ─── /account/billing for a no-card trialist ──────────────────────────
+  //
+  // Added 10 November 2026. A trialist holds subscription_status 'pro' like a
+  // payer, so this page told them "Premium, Renews {date}" and offered only a
+  // portal button that errors without a Stripe customer. They now see what
+  // they are on and the plans. Arabic and Spanish await a native speaker.
+  'account.billing.plan_trial': {
+    en: 'Free trial',
+    ar: 'فترة تجريبية مجانية',
+    es: 'Prueba gratuita',
+  },
+  'account.billing.trial_ends': {
+    en: 'Free trial ends',
+    ar: 'تنتهي الفترة التجريبية المجانية في',
+    es: 'La prueba gratuita termina el',
+  },
+  'account.billing.trial_blurb': {
+    en: 'Your free trial includes everything in Premium. Choose a plan now to keep AI marking after it ends.',
+    ar: 'تشمل فترتك التجريبية المجانية كل ما في بريميوم. اختر خطة الآن لتحتفظ بتصحيح المقالات بالذكاء الاصطناعي بعد انتهائها.',
+    es: 'Tu prueba gratuita incluye todo lo de Premium. Elige un plan ahora para seguir usando la corrección con IA cuando termine.',
+  },
   // ════════════════════════════════════════════════════════════════════
   //  redeem.*  - /redeem promo-code redemption (public checkout surface)
   //  EN written fresh from src/app/redeem/page.tsx render points.
